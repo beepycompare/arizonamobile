@@ -23,7 +23,7 @@ public final class ComposableSingletons$SettingsBottomBarKt {
     public static final ComposableSingletons$SettingsBottomBarKt INSTANCE = new ComposableSingletons$SettingsBottomBarKt();
 
     /* renamed from: lambda$-13006014  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f85lambda$13006014 = ComposableLambdaKt.composableLambdaInstance(-13006014, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda0
+    private static Function3<BoxScope, Composer, Integer, Unit> f79lambda$13006014 = ComposableLambdaKt.composableLambdaInstance(-13006014, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__13006014$lambda$0;
@@ -41,7 +41,7 @@ public final class ComposableSingletons$SettingsBottomBarKt {
     });
 
     /* renamed from: lambda$-473092742  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f86lambda$473092742 = ComposableLambdaKt.composableLambdaInstance(-473092742, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda2
+    private static Function3<BoxScope, Composer, Integer, Unit> f80lambda$473092742 = ComposableLambdaKt.composableLambdaInstance(-473092742, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__473092742$lambda$2;
@@ -50,17 +50,17 @@ public final class ComposableSingletons$SettingsBottomBarKt {
         }
     });
 
-    /* renamed from: getLambda$-13006014$settings_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8441getLambda$13006014$settings_release_web() {
-        return f85lambda$13006014;
+    /* renamed from: getLambda$-13006014$settings_release  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m9007getLambda$13006014$settings_release() {
+        return f79lambda$13006014;
     }
 
-    /* renamed from: getLambda$-473092742$settings_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8442getLambda$473092742$settings_release_web() {
-        return f86lambda$473092742;
+    /* renamed from: getLambda$-473092742$settings_release  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m9008getLambda$473092742$settings_release() {
+        return f80lambda$473092742;
     }
 
-    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$983320313$settings_release_web() {
+    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$983320313$settings_release() {
         return lambda$983320313;
     }
 

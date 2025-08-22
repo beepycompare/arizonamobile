@@ -1,11 +1,15 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class J9 {
+public enum J9 {
+    NATIVE(0),
+    JS(1),
+    SYSTEM(2);
+    
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f502a;
+    public final int f513a;
 
-    public J9(String str) {
-        this.f502a = str;
+    J9(int i) {
+        this.f513a = i;
     }
 }

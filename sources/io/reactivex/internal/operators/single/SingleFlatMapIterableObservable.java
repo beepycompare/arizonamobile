@@ -11,7 +11,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.observers.BasicIntQueueDisposable;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleFlatMapIterableObservable<T, R> extends Observable<R> {
     final Function<? super T, ? extends Iterable<? extends R>> mapper;
     final SingleSource<T> source;
@@ -26,7 +26,7 @@ public final class SingleFlatMapIterableObservable<T, R> extends Observable<R> {
         this.source.subscribe(new FlatMapIterableObserver(observer, this.mapper));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FlatMapIterableObserver<T, R> extends BasicIntQueueDisposable<R> implements SingleObserver<T> {
         private static final long serialVersionUID = -8938804753851907758L;
         volatile boolean cancelled;

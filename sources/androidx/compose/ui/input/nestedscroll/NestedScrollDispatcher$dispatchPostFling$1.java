@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NestedScrollModifier.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.input.nestedscroll.NestedScrollDispatcher", f = "NestedScrollModifier.kt", i = {}, l = {223, 225}, m = "dispatchPostFling-RZ2iAVY", n = {}, s = {})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.ui.input.nestedscroll.NestedScrollDispatcher", f = "NestedScrollModifier.kt", i = {}, l = {222, 224}, m = "dispatchPostFling-RZ2iAVY", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class NestedScrollDispatcher$dispatchPostFling$1 extends ContinuationImpl {
     int label;
@@ -25,6 +25,6 @@ public final class NestedScrollDispatcher$dispatchPostFling$1 extends Continuati
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.m5187dispatchPostFlingRZ2iAVY(0L, 0L, this);
+        return this.this$0.m5700dispatchPostFlingRZ2iAVY(0L, 0L, this);
     }
 }

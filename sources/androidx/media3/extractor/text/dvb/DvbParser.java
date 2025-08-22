@@ -22,7 +22,7 @@ import com.google.common.base.Ascii;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DvbParser implements SubtitleParser {
     public static final int CUE_REPLACEMENT_BEHAVIOR = 2;
     private static final int DATA_TYPE_24_TABLE_DATA = 32;
@@ -736,7 +736,7 @@ public final class DvbParser implements SubtitleParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class SubtitleService {
         public final int ancillaryPageId;
         public DisplayDefinition displayDefinition;
@@ -765,7 +765,7 @@ public final class DvbParser implements SubtitleParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class DisplayDefinition {
         public final int height;
         public final int horizontalPositionMaximum;
@@ -785,7 +785,7 @@ public final class DvbParser implements SubtitleParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class PageComposition {
         public final SparseArray<PageRegion> regions;
         public final int state;
@@ -801,7 +801,7 @@ public final class DvbParser implements SubtitleParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class PageRegion {
         public final int horizontalAddress;
         public final int verticalAddress;
@@ -813,7 +813,7 @@ public final class DvbParser implements SubtitleParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class RegionComposition {
         public final int clutId;
         public final int depth;
@@ -850,7 +850,7 @@ public final class DvbParser implements SubtitleParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class RegionObject {
         public final int backgroundPixelCode;
         public final int foregroundPixelCode;
@@ -870,7 +870,7 @@ public final class DvbParser implements SubtitleParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ClutDefinition {
         public final int[] clutEntries2Bit;
         public final int[] clutEntries4Bit;
@@ -886,7 +886,7 @@ public final class DvbParser implements SubtitleParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ObjectData {
         public final byte[] bottomFieldData;
         public final int id;

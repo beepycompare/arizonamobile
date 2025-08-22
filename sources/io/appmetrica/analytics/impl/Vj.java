@@ -1,16 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* loaded from: classes4.dex */
-public final class Vj implements InterfaceC0407lb {
+public final class Vj implements InterfaceC0454nb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ U f690a;
+    public final /* synthetic */ String f698a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ PluginErrorDetails c;
 
-    public Vj(U u) {
-        this.f690a = u;
+    public Vj(String str, String str2, PluginErrorDetails pluginErrorDetails) {
+        this.f698a = str;
+        this.b = str2;
+        this.c = pluginErrorDetails;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0407lb
-    public final void a(InterfaceC0432mb interfaceC0432mb) {
-        interfaceC0432mb.a(this.f690a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0454nb
+    public final void a(InterfaceC0479ob interfaceC0479ob) {
+        interfaceC0479ob.getPluginExtension().reportError(this.f698a, this.b, this.c);
     }
 }

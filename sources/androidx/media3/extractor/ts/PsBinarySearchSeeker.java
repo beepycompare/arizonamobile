@@ -8,7 +8,7 @@ import androidx.media3.extractor.BinarySearchSeeker;
 import androidx.media3.extractor.ExtractorInput;
 import java.io.IOException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PsBinarySearchSeeker extends BinarySearchSeeker {
     private static final int MINIMUM_SEARCH_RANGE_BYTES = 1000;
     private static final long SEEK_TOLERANCE_US = 100000;
@@ -18,7 +18,7 @@ public final class PsBinarySearchSeeker extends BinarySearchSeeker {
         super(new BinarySearchSeeker.DefaultSeekTimestampConverter(), new PsScrSeeker(timestampAdjuster), j, 0L, j + 1, 0L, j2, 188L, 1000);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class PsScrSeeker implements BinarySearchSeeker.TimestampSeeker {
         private final ParsableByteArray packetBuffer;
         private final TimestampAdjuster scrTimestampAdjuster;

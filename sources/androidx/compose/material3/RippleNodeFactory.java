@@ -34,7 +34,7 @@ final class RippleNodeFactory implements IndicationNodeFactory {
     }
 
     private RippleNodeFactory(boolean z, float f, ColorProducer colorProducer) {
-        this(z, f, colorProducer, Color.Companion.m4114getUnspecified0d7_KjU());
+        this(z, f, colorProducer, Color.Companion.m4573getUnspecified0d7_KjU());
     }
 
     private RippleNodeFactory(boolean z, float f, long j) {
@@ -48,7 +48,7 @@ final class RippleNodeFactory implements IndicationNodeFactory {
             colorProducer = new ColorProducer() { // from class: androidx.compose.material3.RippleNodeFactory$create$colorProducer$1
                 @Override // androidx.compose.ui.graphics.ColorProducer
                 /* renamed from: invoke-0d7_KjU */
-                public final long mo1864invoke0d7_KjU() {
+                public final long mo2171invoke0d7_KjU() {
                     long j;
                     j = RippleNodeFactory.this.color;
                     return j;
@@ -65,8 +65,8 @@ final class RippleNodeFactory implements IndicationNodeFactory {
         }
         if (obj instanceof RippleNodeFactory) {
             RippleNodeFactory rippleNodeFactory = (RippleNodeFactory) obj;
-            if (this.bounded == rippleNodeFactory.bounded && Dp.m6689equalsimpl0(this.radius, rippleNodeFactory.radius) && Intrinsics.areEqual(this.colorProducer, rippleNodeFactory.colorProducer)) {
-                return Color.m4079equalsimpl0(this.color, rippleNodeFactory.color);
+            if (this.bounded == rippleNodeFactory.bounded && Dp.m7256equalsimpl0(this.radius, rippleNodeFactory.radius) && Intrinsics.areEqual(this.colorProducer, rippleNodeFactory.colorProducer)) {
+                return Color.m4538equalsimpl0(this.color, rippleNodeFactory.color);
             }
             return false;
         }
@@ -75,8 +75,8 @@ final class RippleNodeFactory implements IndicationNodeFactory {
 
     @Override // androidx.compose.foundation.IndicationNodeFactory
     public int hashCode() {
-        int hashCode = ((Boolean.hashCode(this.bounded) * 31) + Dp.m6690hashCodeimpl(this.radius)) * 31;
+        int hashCode = ((Boolean.hashCode(this.bounded) * 31) + Dp.m7257hashCodeimpl(this.radius)) * 31;
         ColorProducer colorProducer = this.colorProducer;
-        return ((hashCode + (colorProducer != null ? colorProducer.hashCode() : 0)) * 31) + Color.m4085hashCodeimpl(this.color);
+        return ((hashCode + (colorProducer != null ? colorProducer.hashCode() : 0)) * 31) + Color.m4544hashCodeimpl(this.color);
     }
 }

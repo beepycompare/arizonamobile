@@ -188,23 +188,23 @@ public final class RoomSQLiteQuery implements SupportSQLiteQuery, SupportSQLiteP
         while (true) {
             int i2 = this.bindingTypes[i];
             if (i2 == 1) {
-                statement.mo7584bindNull(i);
+                statement.mo8150bindNull(i);
             } else if (i2 == 2) {
-                statement.mo7583bindLong(i, this.longBindings[i]);
+                statement.mo8149bindLong(i, this.longBindings[i]);
             } else if (i2 == 3) {
-                statement.mo7582bindDouble(i, this.doubleBindings[i]);
+                statement.mo8148bindDouble(i, this.doubleBindings[i]);
             } else if (i2 == 4) {
                 String str = this.stringBindings[i];
                 if (str == null) {
                     throw new IllegalArgumentException("Required value was null.".toString());
                 }
-                statement.mo7585bindText(i, str);
+                statement.mo8151bindText(i, str);
             } else if (i2 == 5) {
                 byte[] bArr = this.blobBindings[i];
                 if (bArr == null) {
                     throw new IllegalArgumentException("Required value was null.".toString());
                 }
-                statement.mo7581bindBlob(i, bArr);
+                statement.mo8147bindBlob(i, bArr);
             }
             if (i == argCount) {
                 return;

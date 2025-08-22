@@ -58,7 +58,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KFunction;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: RepairGameError.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a1\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0007\u001a1\u0010\b\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n2\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\f\u001a)\u0010\r\u001a\u00020\u00012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u000e¨\u0006\u000f²\u0006\n\u0010\t\u001a\u00020\nX\u008a\u0084\u0002"}, d2 = {"RepairGameErrorDialogRoute", "", "component", "Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;", "onBackClick", "Lkotlin/Function0;", "onConfirm", "(Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "RepairGameErrorDialogScreen", "uiState", "Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogUiState;", "onDismiss", "(Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "RepairGameErrorDialogContent", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "dialogs_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a1\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0007\u001a1\u0010\b\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n2\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\f\u001a)\u0010\r\u001a\u00020\u00012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u000e¨\u0006\u000f²\u0006\n\u0010\t\u001a\u00020\nX\u008a\u0084\u0002"}, d2 = {"RepairGameErrorDialogRoute", "", "component", "Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;", "onBackClick", "Lkotlin/Function0;", "onConfirm", "(Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "RepairGameErrorDialogScreen", "uiState", "Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogUiState;", "onDismiss", "(Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "RepairGameErrorDialogContent", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "dialogs_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class RepairGameErrorKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -85,7 +85,7 @@ public final class RepairGameErrorKt {
         Intrinsics.checkNotNullParameter(onBackClick, "onBackClick");
         Intrinsics.checkNotNullParameter(onConfirm, "onConfirm");
         Composer startRestartGroup = composer.startRestartGroup(2044412224);
-        ComposerKt.sourceInformation(startRestartGroup, "C(RepairGameErrorDialogRoute)31@1464L33,33@1559L183,33@1522L220,41@1781L29,44@1866L20,45@1908L20,43@1816L119:RepairGameError.kt#wxnm6r");
+        ComposerKt.sourceInformation(startRestartGroup, "C(RepairGameErrorDialogRoute)N(component,onBackClick,onConfirm)31@1464L33,33@1559L183,33@1522L220,41@1781L29,44@1866L20,45@1908L20,43@1816L119:RepairGameError.kt#wxnm6r");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
@@ -159,7 +159,7 @@ public final class RepairGameErrorKt {
         Intrinsics.checkNotNullParameter(onConfirm, "onConfirm");
         Intrinsics.checkNotNullParameter(onDismiss, "onDismiss");
         Composer startRestartGroup = composer.startRestartGroup(-1069905879);
-        ComposerKt.sourceInformation(startRestartGroup, "C(RepairGameErrorDialogScreen)P(2)56@2147L97:RepairGameError.kt#wxnm6r");
+        ComposerKt.sourceInformation(startRestartGroup, "C(RepairGameErrorDialogScreen)N(uiState,onConfirm,onDismiss)56@2147L97:RepairGameError.kt#wxnm6r");
         if ((i & 48) == 0) {
             i2 = (startRestartGroup.changedInstance(onConfirm) ? 32 : 16) | i;
         } else {
@@ -198,7 +198,7 @@ public final class RepairGameErrorKt {
         Intrinsics.checkNotNullParameter(onConfirm, "onConfirm");
         Intrinsics.checkNotNullParameter(onDismiss, "onDismiss");
         Composer startRestartGroup = composer.startRestartGroup(776871890);
-        ComposerKt.sourceInformation(startRestartGroup, "C(RepairGameErrorDialogContent)68@2458L691,68@2423L726:RepairGameError.kt#wxnm6r");
+        ComposerKt.sourceInformation(startRestartGroup, "C(RepairGameErrorDialogContent)N(onConfirm,onDismiss)68@2458L691,68@2423L726:RepairGameError.kt#wxnm6r");
         if ((i & 48) == 0) {
             i2 = (startRestartGroup.changedInstance(onDismiss) ? 32 : 16) | i;
         } else {
@@ -246,17 +246,17 @@ public final class RepairGameErrorKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2140470458, i, -1, "com.miami.game.feature.download.dialog.ui.repair.RepairGameErrorDialogContent.<anonymous> (RepairGameError.kt:69)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_check_files_error, composer, 0), (String) null, SizeKt.m785size3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(100)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, 432, (int) MenuKt.InTransitionDuration);
-            TextKt.m2497Text4IGK_g("ОШИБКА", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodyMedium(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_check_files_error, composer, 0), (String) null, SizeKt.m884size3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(100)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, 432, (int) MenuKt.InTransitionDuration);
+            TextKt.m2804Text4IGK_g("ОШИБКА", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodyMedium(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
             DialogDescriptionTextKt.DialogDescriptionText("Ты приближаешься к землям, где магия и сила стихий соединяются, образуя таинственные и непредсказуемые явления.", composer, 6);
-            ComposerKt.sourceInformationMarkerStart(composer, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
+            ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), composer, 0);
-            ComposerKt.sourceInformationMarkerStart(composer, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
-            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer, 0);
+            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
+            int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
             CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
             Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, Modifier.Companion);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(composer, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
             if (!(composer.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -266,16 +266,16 @@ public final class RepairGameErrorKt {
             } else {
                 composer.useNode();
             }
-            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer);
-            Updater.m3527setimpl(m3520constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer);
+            Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-            ComposerKt.sourceInformationMarkerStart(composer, -407735110, "C101@5232L9:Row.kt#2w3rfo");
+            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, 174424043, "C81@2972L43,81@2947L186:RepairGameError.kt#wxnm6r");
             ComposerKt.sourceInformationMarkerStart(composer, -2072582743, "CC(remember):RepairGameError.kt#9igjgp");
@@ -293,7 +293,7 @@ public final class RepairGameErrorKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$RepairGameErrorKt.INSTANCE.getLambda$2144985598$dialogs_release_web(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$RepairGameErrorKt.INSTANCE.getLambda$2144985598$dialogs_release(), composer, 48);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

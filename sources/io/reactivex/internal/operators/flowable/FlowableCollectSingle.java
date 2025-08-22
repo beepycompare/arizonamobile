@@ -14,7 +14,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableCollectSingle<T, U> extends Single<U> implements FuseToFlowable<U> {
     final BiConsumer<? super U, ? super T> collector;
     final Callable<? extends U> initialSupplier;
@@ -40,7 +40,7 @@ public final class FlowableCollectSingle<T, U> extends Single<U> implements Fuse
         return RxJavaPlugins.onAssembly(new FlowableCollect(this.source, this.initialSupplier, this.collector));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class CollectSubscriber<T, U> implements FlowableSubscriber<T>, Disposable {
         final BiConsumer<? super U, ? super T> collector;
         boolean done;

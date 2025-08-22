@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableWithLatestFrom<T, U, R> extends AbstractFlowableWithUpstream<T, R> {
     final BiFunction<? super T, ? super U, ? extends R> combiner;
     final Publisher<? extends U> other;
@@ -33,7 +33,7 @@ public final class FlowableWithLatestFrom<T, U, R> extends AbstractFlowableWithU
         this.source.subscribe((FlowableSubscriber) withLatestFromSubscriber);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WithLatestFromSubscriber<T, U, R> extends AtomicReference<U> implements ConditionalSubscriber<T>, Subscription {
         private static final long serialVersionUID = -312246233408980075L;
         final BiFunction<? super T, ? super U, ? extends R> combiner;
@@ -109,7 +109,7 @@ public final class FlowableWithLatestFrom<T, U, R> extends AbstractFlowableWithU
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class FlowableWithLatestSubscriber implements FlowableSubscriber<U> {
         private final WithLatestFromSubscriber<T, U, R> wlf;
 

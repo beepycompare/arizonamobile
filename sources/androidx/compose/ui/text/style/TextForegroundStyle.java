@@ -9,46 +9,49 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TextForegroundStyle.kt */
-@Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\b`\u0018\u0000 \u00122\u00020\u0001:\u0002\u0012\u0013J\u0010\u0010\u000e\u001a\u00020\u00002\u0006\u0010\u000f\u001a\u00020\u0000H\u0016J\u0016\u0010\u0010\u001a\u00020\u00002\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00000\u0011H\u0016R\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005R\u0014\u0010\u0006\u001a\u0004\u0018\u00010\u0007X¦\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\tR\u0018\u0010\n\u001a\u00020\u000bX¦\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\f\u0010\rø\u0001\u0002\u0082\u0002\u0011\n\u0005\b¡\u001e0\u0001\n\u0002\b!\n\u0004\b!0\u0001¨\u0006\u0014À\u0006\u0001"}, d2 = {"Landroidx/compose/ui/text/style/TextForegroundStyle;", "", "alpha", "", "getAlpha", "()F", "brush", "Landroidx/compose/ui/graphics/Brush;", "getBrush", "()Landroidx/compose/ui/graphics/Brush;", "color", "Landroidx/compose/ui/graphics/Color;", "getColor-0d7_KjU", "()J", "merge", "other", "takeOrElse", "Lkotlin/Function0;", "Companion", "Unspecified", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\b`\u0018\u0000 \u00132\u00020\u0001:\u0002\u0012\u0013J\u0010\u0010\u000e\u001a\u00020\u00002\u0006\u0010\u000f\u001a\u00020\u0000H\u0016J\u0016\u0010\u0010\u001a\u00020\u00002\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00000\u0011H\u0016R\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005R\u0014\u0010\u0006\u001a\u0004\u0018\u00010\u0007X¦\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\tR\u0012\u0010\n\u001a\u00020\u000bX¦\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\rø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0014À\u0006\u0001"}, d2 = {"Landroidx/compose/ui/text/style/TextForegroundStyle;", "", "color", "Landroidx/compose/ui/graphics/Color;", "getColor-0d7_KjU", "()J", "brush", "Landroidx/compose/ui/graphics/Brush;", "getBrush", "()Landroidx/compose/ui/graphics/Brush;", "alpha", "", "getAlpha", "()F", "merge", "other", "takeOrElse", "Lkotlin/Function0;", "Unspecified", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public interface TextForegroundStyle {
     public static final Companion Companion = Companion.$$INSTANCE;
+
+    /* JADX INFO: Access modifiers changed from: private */
+    static TextForegroundStyle merge$lambda$1(TextForegroundStyle textForegroundStyle) {
+        return textForegroundStyle;
+    }
 
     float getAlpha();
 
     Brush getBrush();
 
     /* renamed from: getColor-0d7_KjU */
-    long mo6454getColor0d7_KjU();
+    long mo7021getColor0d7_KjU();
 
     default TextForegroundStyle merge(TextForegroundStyle textForegroundStyle) {
         boolean z = textForegroundStyle instanceof BrushStyle;
-        if (z && (this instanceof BrushStyle)) {
-            return new BrushStyle(((BrushStyle) textForegroundStyle).getValue(), TextDrawStyleKt.access$takeOrElse(textForegroundStyle.getAlpha(), new Function0<Float>() { // from class: androidx.compose.ui.text.style.TextForegroundStyle$merge$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(0);
-                }
-
-                /* JADX WARN: Can't rename method to resolve collision */
+        if (!z || !(this instanceof BrushStyle)) {
+            return (!z || (this instanceof BrushStyle)) ? (z || !(this instanceof BrushStyle)) ? textForegroundStyle.takeOrElse(new Function0() { // from class: androidx.compose.ui.text.style.TextForegroundStyle$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
-                public final Float invoke() {
-                    return Float.valueOf(TextForegroundStyle.this.getAlpha());
+                public final Object invoke() {
+                    TextForegroundStyle merge$lambda$1;
+                    merge$lambda$1 = TextForegroundStyle.merge$lambda$1(TextForegroundStyle.this);
+                    return merge$lambda$1;
                 }
-            }));
+            }) : this : textForegroundStyle;
         }
-        return (!z || (this instanceof BrushStyle)) ? (z || !(this instanceof BrushStyle)) ? textForegroundStyle.takeOrElse(new Function0<TextForegroundStyle>() { // from class: androidx.compose.ui.text.style.TextForegroundStyle$merge$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        BrushStyle brushStyle = (BrushStyle) textForegroundStyle;
+        return new BrushStyle(brushStyle.getValue(), TextDrawStyleKt.access$takeOrElse(brushStyle.getAlpha(), new Function0() { // from class: androidx.compose.ui.text.style.TextForegroundStyle$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
-            public final TextForegroundStyle invoke() {
-                return TextForegroundStyle.this;
+            public final Object invoke() {
+                float merge$lambda$0;
+                merge$lambda$0 = TextForegroundStyle.merge$lambda$0(TextForegroundStyle.this);
+                return Float.valueOf(merge$lambda$0);
             }
-        }) : this : textForegroundStyle;
+        }));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    static float merge$lambda$0(TextForegroundStyle textForegroundStyle) {
+        return ((BrushStyle) textForegroundStyle).getAlpha();
     }
 
     default TextForegroundStyle takeOrElse(Function0<? extends TextForegroundStyle> function0) {
@@ -56,7 +59,7 @@ public interface TextForegroundStyle {
     }
 
     /* compiled from: TextForegroundStyle.kt */
-    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\bÇ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0014\u0010\u0003\u001a\u00020\u00048VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006R\u0016\u0010\u0007\u001a\u0004\u0018\u00010\b8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\t\u0010\nR\u001a\u0010\u000b\u001a\u00020\f8VX\u0096\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\r\u0010\u000e\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/text/style/TextForegroundStyle$Unspecified;", "Landroidx/compose/ui/text/style/TextForegroundStyle;", "()V", "alpha", "", "getAlpha", "()F", "brush", "Landroidx/compose/ui/graphics/Brush;", "getBrush", "()Landroidx/compose/ui/graphics/Brush;", "color", "Landroidx/compose/ui/graphics/Color;", "getColor-0d7_KjU", "()J", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0003\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0014\u0010\u0004\u001a\u00020\u00058VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0007R\u0016\u0010\b\u001a\u0004\u0018\u00010\t8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\n\u0010\u000bR\u0014\u0010\f\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000f¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/text/style/TextForegroundStyle$Unspecified;", "Landroidx/compose/ui/text/style/TextForegroundStyle;", "<init>", "()V", "color", "Landroidx/compose/ui/graphics/Color;", "getColor-0d7_KjU", "()J", "brush", "Landroidx/compose/ui/graphics/Brush;", "getBrush", "()Landroidx/compose/ui/graphics/Brush;", "alpha", "", "getAlpha", "()F", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Unspecified implements TextForegroundStyle {
         public static final int $stable = 0;
@@ -77,13 +80,13 @@ public interface TextForegroundStyle {
 
         @Override // androidx.compose.ui.text.style.TextForegroundStyle
         /* renamed from: getColor-0d7_KjU */
-        public long mo6454getColor0d7_KjU() {
-            return Color.Companion.m4114getUnspecified0d7_KjU();
+        public long mo7021getColor0d7_KjU() {
+            return Color.Companion.m4573getUnspecified0d7_KjU();
         }
     }
 
     /* compiled from: TextForegroundStyle.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0018\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\bJ\u0018\u0010\u0003\u001a\u00020\u00042\u0006\u0010\t\u001a\u00020\nø\u0001\u0000¢\u0006\u0004\b\u000b\u0010\f\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\r"}, d2 = {"Landroidx/compose/ui/text/style/TextForegroundStyle$Companion;", "", "()V", "from", "Landroidx/compose/ui/text/style/TextForegroundStyle;", "brush", "Landroidx/compose/ui/graphics/Brush;", "alpha", "", "color", "Landroidx/compose/ui/graphics/Color;", "from-8_81llA", "(J)Landroidx/compose/ui/text/style/TextForegroundStyle;", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0015\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u0018\u0010\u0004\u001a\u00020\u00052\b\u0010\n\u001a\u0004\u0018\u00010\u000b2\u0006\u0010\f\u001a\u00020\r¨\u0006\u000e"}, d2 = {"Landroidx/compose/ui/text/style/TextForegroundStyle$Companion;", "", "<init>", "()V", "from", "Landroidx/compose/ui/text/style/TextForegroundStyle;", "color", "Landroidx/compose/ui/graphics/Color;", "from-8_81llA", "(J)Landroidx/compose/ui/text/style/TextForegroundStyle;", "brush", "Landroidx/compose/ui/graphics/Brush;", "alpha", "", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
@@ -92,7 +95,7 @@ public interface TextForegroundStyle {
         }
 
         /* renamed from: from-8_81llA  reason: not valid java name */
-        public final TextForegroundStyle m6589from8_81llA(long j) {
+        public final TextForegroundStyle m7156from8_81llA(long j) {
             return j != 16 ? new ColorStyle(j, null) : Unspecified.INSTANCE;
         }
 
@@ -101,7 +104,7 @@ public interface TextForegroundStyle {
                 return Unspecified.INSTANCE;
             }
             if (brush instanceof SolidColor) {
-                return m6589from8_81llA(TextDrawStyleKt.m6588modulateDxMtmZc(((SolidColor) brush).m4414getValue0d7_KjU(), f));
+                return m7156from8_81llA(TextDrawStyleKt.m7155modulateDxMtmZc(((SolidColor) brush).m4889getValue0d7_KjU(), f));
             }
             if (brush instanceof ShaderBrush) {
                 return new BrushStyle((ShaderBrush) brush, f);

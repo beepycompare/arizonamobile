@@ -109,7 +109,7 @@ public final class SplashScreen {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: splashScreenWaitPredicate$lambda-0  reason: not valid java name */
-        public static final boolean m7196splashScreenWaitPredicate$lambda0() {
+        public static final boolean m7762splashScreenWaitPredicate$lambda0() {
             return false;
         }
 
@@ -119,9 +119,9 @@ public final class SplashScreen {
             this.splashScreenWaitPredicate = new KeepOnScreenCondition() { // from class: androidx.core.splashscreen.SplashScreen$Impl$$ExternalSyntheticLambda0
                 @Override // androidx.core.splashscreen.SplashScreen.KeepOnScreenCondition
                 public final boolean shouldKeepOnScreen() {
-                    boolean m7196splashScreenWaitPredicate$lambda0;
-                    m7196splashScreenWaitPredicate$lambda0 = SplashScreen.Impl.m7196splashScreenWaitPredicate$lambda0();
-                    return m7196splashScreenWaitPredicate$lambda0;
+                    boolean m7762splashScreenWaitPredicate$lambda0;
+                    m7762splashScreenWaitPredicate$lambda0 = SplashScreen.Impl.m7762splashScreenWaitPredicate$lambda0();
+                    return m7762splashScreenWaitPredicate$lambda0;
                 }
             };
         }
@@ -289,14 +289,14 @@ public final class SplashScreen {
             splashScreenViewProvider.getView().postOnAnimation(new Runnable() { // from class: androidx.core.splashscreen.SplashScreen$Impl$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SplashScreen.Impl.m7195dispatchOnExitAnimation$lambda3(SplashScreenViewProvider.this, onExitAnimationListener);
+                    SplashScreen.Impl.m7761dispatchOnExitAnimation$lambda3(SplashScreenViewProvider.this, onExitAnimationListener);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: dispatchOnExitAnimation$lambda-3  reason: not valid java name */
-        public static final void m7195dispatchOnExitAnimation$lambda3(SplashScreenViewProvider splashScreenViewProvider, OnExitAnimationListener finalListener) {
+        public static final void m7761dispatchOnExitAnimation$lambda3(SplashScreenViewProvider splashScreenViewProvider, OnExitAnimationListener finalListener) {
             Intrinsics.checkNotNullParameter(splashScreenViewProvider, "$splashScreenViewProvider");
             Intrinsics.checkNotNullParameter(finalListener, "$finalListener");
             splashScreenViewProvider.getView().bringToFront();
@@ -399,14 +399,14 @@ public final class SplashScreen {
             getActivity().getSplashScreen().setOnExitAnimationListener(new SplashScreen.OnExitAnimationListener() { // from class: androidx.core.splashscreen.SplashScreen$Impl31$$ExternalSyntheticLambda0
                 @Override // android.window.SplashScreen.OnExitAnimationListener
                 public final void onSplashScreenExit(SplashScreenView splashScreenView) {
-                    SplashScreen.Impl31.m7197setOnExitAnimationListener$lambda0(SplashScreen.Impl31.this, exitAnimationListener, splashScreenView);
+                    SplashScreen.Impl31.m7763setOnExitAnimationListener$lambda0(SplashScreen.Impl31.this, exitAnimationListener, splashScreenView);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: setOnExitAnimationListener$lambda-0  reason: not valid java name */
-        public static final void m7197setOnExitAnimationListener$lambda0(Impl31 this$0, OnExitAnimationListener exitAnimationListener, SplashScreenView splashScreenView) {
+        public static final void m7763setOnExitAnimationListener$lambda0(Impl31 this$0, OnExitAnimationListener exitAnimationListener, SplashScreenView splashScreenView) {
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(exitAnimationListener, "$exitAnimationListener");
             Intrinsics.checkNotNullParameter(splashScreenView, "splashScreenView");

@@ -6,55 +6,55 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: TextAlign.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u00112\u00020\u0001:\u0001\u0011B\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001a\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\t\u0010\nJ\u0010\u0010\u000b\u001a\u00020\u0003HÖ\u0001¢\u0006\u0004\b\f\u0010\u0005J\u000f\u0010\r\u001a\u00020\u000eH\u0016¢\u0006\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0012"}, d2 = {"Landroidx/compose/ui/text/style/TextAlign;", "", "value", "", "constructor-impl", "(I)I", "equals", "", "other", "equals-impl", "(ILjava/lang/Object;)Z", "hashCode", "hashCode-impl", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "Companion", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u000e2\u00020\u0001:\u0001\u000eB\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\r\u001a\u00020\u0003HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/text/style/TextAlign;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "equals", "", "other", "hashCode", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes2.dex */
 public final class TextAlign {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Left = m6562constructorimpl(1);
-    private static final int Right = m6562constructorimpl(2);
-    private static final int Center = m6562constructorimpl(3);
-    private static final int Justify = m6562constructorimpl(4);
-    private static final int Start = m6562constructorimpl(5);
-    private static final int End = m6562constructorimpl(6);
-    private static final int Unspecified = m6562constructorimpl(Integer.MIN_VALUE);
+    private static final int Left = m7129constructorimpl(1);
+    private static final int Right = m7129constructorimpl(2);
+    private static final int Center = m7129constructorimpl(3);
+    private static final int Justify = m7129constructorimpl(4);
+    private static final int Start = m7129constructorimpl(5);
+    private static final int End = m7129constructorimpl(6);
+    private static final int Unspecified = m7129constructorimpl(Integer.MIN_VALUE);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TextAlign m6561boximpl(int i) {
+    public static final /* synthetic */ TextAlign m7128boximpl(int i) {
         return new TextAlign(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m6562constructorimpl(int i) {
+    public static int m7129constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6563equalsimpl(int i, Object obj) {
-        return (obj instanceof TextAlign) && i == ((TextAlign) obj).m6567unboximpl();
+    public static boolean m7130equalsimpl(int i, Object obj) {
+        return (obj instanceof TextAlign) && i == ((TextAlign) obj).m7134unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6564equalsimpl0(int i, int i2) {
+    public static final boolean m7131equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6565hashCodeimpl(int i) {
+    public static int m7132hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m6563equalsimpl(this.value, obj);
+        return m7130equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6565hashCodeimpl(this.value);
+        return m7132hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6567unboximpl() {
+    public final /* synthetic */ int m7134unboximpl() {
         return this.value;
     }
 
@@ -63,16 +63,16 @@ public final class TextAlign {
     }
 
     public String toString() {
-        return m6566toStringimpl(this.value);
+        return m7133toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6566toStringimpl(int i) {
-        return m6564equalsimpl0(i, Left) ? "Left" : m6564equalsimpl0(i, Right) ? "Right" : m6564equalsimpl0(i, Center) ? "Center" : m6564equalsimpl0(i, Justify) ? "Justify" : m6564equalsimpl0(i, Start) ? "Start" : m6564equalsimpl0(i, End) ? "End" : m6564equalsimpl0(i, Unspecified) ? "Unspecified" : "Invalid";
+    public static String m7133toStringimpl(int i) {
+        return m7131equalsimpl0(i, Left) ? "Left" : m7131equalsimpl0(i, Right) ? "Right" : m7131equalsimpl0(i, Center) ? "Center" : m7131equalsimpl0(i, Justify) ? "Justify" : m7131equalsimpl0(i, Start) ? "Start" : m7131equalsimpl0(i, End) ? "End" : m7131equalsimpl0(i, Unspecified) ? "Unspecified" : "Invalid";
     }
 
     /* compiled from: TextAlign.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010 \n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00040\u0015R\u0019\u0010\u0003\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0005\u0010\u0006R\u0019\u0010\b\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\t\u0010\u0006R\u0019\u0010\n\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u000b\u0010\u0006R\u0019\u0010\f\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\r\u0010\u0006R\u0019\u0010\u000e\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u000f\u0010\u0006R\u0019\u0010\u0010\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0011\u0010\u0006R\u0019\u0010\u0012\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0013\u0010\u0006\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0016"}, d2 = {"Landroidx/compose/ui/text/style/TextAlign$Companion;", "", "()V", "Center", "Landroidx/compose/ui/text/style/TextAlign;", "getCenter-e0LSkKk", "()I", "I", "End", "getEnd-e0LSkKk", "Justify", "getJustify-e0LSkKk", "Left", "getLeft-e0LSkKk", "Right", "getRight-e0LSkKk", "Start", "getStart-e0LSkKk", "Unspecified", "getUnspecified-e0LSkKk", "values", "", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010 \n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00050\u0014R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007R\u0013\u0010\u000b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\f\u0010\u0007R\u0013\u0010\r\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u000e\u0010\u0007R\u0013\u0010\u000f\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0010\u0010\u0007R\u0013\u0010\u0011\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0012\u0010\u0007R\u0013\u0010\u0015\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0016\u0010\u0007¨\u0006\u0017"}, d2 = {"Landroidx/compose/ui/text/style/TextAlign$Companion;", "", "<init>", "()V", "Left", "Landroidx/compose/ui/text/style/TextAlign;", "getLeft-e0LSkKk", "()I", "I", "Right", "getRight-e0LSkKk", "Center", "getCenter-e0LSkKk", "Justify", "getJustify-e0LSkKk", "Start", "getStart-e0LSkKk", "End", "getEnd-e0LSkKk", "values", "", "Unspecified", "getUnspecified-e0LSkKk", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -83,41 +83,41 @@ public final class TextAlign {
         }
 
         /* renamed from: getLeft-e0LSkKk  reason: not valid java name */
-        public final int m6571getLefte0LSkKk() {
+        public final int m7138getLefte0LSkKk() {
             return TextAlign.Left;
         }
 
         /* renamed from: getRight-e0LSkKk  reason: not valid java name */
-        public final int m6572getRighte0LSkKk() {
+        public final int m7139getRighte0LSkKk() {
             return TextAlign.Right;
         }
 
         /* renamed from: getCenter-e0LSkKk  reason: not valid java name */
-        public final int m6568getCentere0LSkKk() {
+        public final int m7135getCentere0LSkKk() {
             return TextAlign.Center;
         }
 
         /* renamed from: getJustify-e0LSkKk  reason: not valid java name */
-        public final int m6570getJustifye0LSkKk() {
+        public final int m7137getJustifye0LSkKk() {
             return TextAlign.Justify;
         }
 
         /* renamed from: getStart-e0LSkKk  reason: not valid java name */
-        public final int m6573getStarte0LSkKk() {
+        public final int m7140getStarte0LSkKk() {
             return TextAlign.Start;
         }
 
         /* renamed from: getEnd-e0LSkKk  reason: not valid java name */
-        public final int m6569getEnde0LSkKk() {
+        public final int m7136getEnde0LSkKk() {
             return TextAlign.End;
         }
 
         public final List<TextAlign> values() {
-            return CollectionsKt.listOf((Object[]) new TextAlign[]{TextAlign.m6561boximpl(m6571getLefte0LSkKk()), TextAlign.m6561boximpl(m6572getRighte0LSkKk()), TextAlign.m6561boximpl(m6568getCentere0LSkKk()), TextAlign.m6561boximpl(m6570getJustifye0LSkKk()), TextAlign.m6561boximpl(m6573getStarte0LSkKk()), TextAlign.m6561boximpl(m6569getEnde0LSkKk())});
+            return CollectionsKt.listOf((Object[]) new TextAlign[]{TextAlign.m7128boximpl(m7138getLefte0LSkKk()), TextAlign.m7128boximpl(m7139getRighte0LSkKk()), TextAlign.m7128boximpl(m7135getCentere0LSkKk()), TextAlign.m7128boximpl(m7137getJustifye0LSkKk()), TextAlign.m7128boximpl(m7140getStarte0LSkKk()), TextAlign.m7128boximpl(m7136getEnde0LSkKk())});
         }
 
         /* renamed from: getUnspecified-e0LSkKk  reason: not valid java name */
-        public final int m6574getUnspecifiede0LSkKk() {
+        public final int m7141getUnspecifiede0LSkKk() {
             return TextAlign.Unspecified;
         }
     }

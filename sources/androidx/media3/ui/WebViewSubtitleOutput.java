@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class WebViewSubtitleOutput extends FrameLayout implements SubtitleView.Output {
     private static final float CSS_LINE_HEIGHT = 1.2f;
     private static final String DEFAULT_BACKGROUND_CSS_CLASS = "default_bg";
@@ -327,7 +327,7 @@ final class WebViewSubtitleOutput extends FrameLayout implements SubtitleView.Ou
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: androidx.media3.ui.WebViewSubtitleOutput$2  reason: invalid class name */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static /* synthetic */ class AnonymousClass2 {
         static final /* synthetic */ int[] $SwitchMap$android$text$Layout$Alignment;
 

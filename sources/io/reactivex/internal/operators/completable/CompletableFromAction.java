@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposables;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Action;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableFromAction extends Completable {
     final Action run;
 

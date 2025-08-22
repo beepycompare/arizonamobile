@@ -6,56 +6,56 @@ import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SlotTable.kt */
-@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0010\n\u0002\u0010\u000e\n\u0002\b\u0006\b\u0081@\u0018\u00002\u00020\u0001B\u0011\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0015\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\u001a\u0010\f\u001a\u00020\r2\b\u0010\u000e\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\u000f\u0010\u0010J\u0010\u0010\u0011\u001a\u00020\tHÖ\u0001¢\u0006\u0004\b\u0012\u0010\u0013J\r\u0010\u0014\u001a\u00020\r¢\u0006\u0004\b\u0015\u0010\u0016J\r\u0010\u0017\u001a\u00020\r¢\u0006\u0004\b\u0018\u0010\u0016J\r\u0010\u0019\u001a\u00020\t¢\u0006\u0004\b\u001a\u0010\u0013J\r\u0010\u001b\u001a\u00020\t¢\u0006\u0004\b\u001c\u0010\u0013J\u0010\u0010\u001d\u001a\u00020\u001eHÖ\u0001¢\u0006\u0004\b\u001f\u0010 J\r\u0010!\u001a\u00020\u0007¢\u0006\u0004\b\"\u0010#R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006$"}, d2 = {"Landroidx/compose/runtime/PrioritySet;", "", "list", "Landroidx/collection/MutableIntList;", "constructor-impl", "(Landroidx/collection/MutableIntList;)Landroidx/collection/MutableIntList;", "add", "", "value", "", "add-impl", "(Landroidx/collection/MutableIntList;I)V", "equals", "", "other", "equals-impl", "(Landroidx/collection/MutableIntList;Ljava/lang/Object;)Z", "hashCode", "hashCode-impl", "(Landroidx/collection/MutableIntList;)I", "isEmpty", "isEmpty-impl", "(Landroidx/collection/MutableIntList;)Z", "isNotEmpty", "isNotEmpty-impl", "peek", "peek-impl", "takeMax", "takeMax-impl", "toString", "", "toString-impl", "(Landroidx/collection/MutableIntList;)Ljava/lang/String;", "validateHeap", "validateHeap-impl", "(Landroidx/collection/MutableIntList;)V", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0010\n\u0002\u0010\u000e\n\u0000\b\u0081@\u0018\u00002\u00020\u0001B\u0011\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0015\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\r\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ\r\u0010\u0010\u001a\u00020\r¢\u0006\u0004\b\u0011\u0010\u000fJ\r\u0010\u0012\u001a\u00020\t¢\u0006\u0004\b\u0013\u0010\u0014J\r\u0010\u0015\u001a\u00020\t¢\u0006\u0004\b\u0016\u0010\u0014J\r\u0010\u0017\u001a\u00020\u0007¢\u0006\u0004\b\u0018\u0010\u0019J\u0013\u0010\u001a\u001a\u00020\r2\b\u0010\u001b\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u001c\u001a\u00020\tHÖ\u0001J\t\u0010\u001d\u001a\u00020\u001eHÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u001f"}, d2 = {"Landroidx/compose/runtime/PrioritySet;", "", "list", "Landroidx/collection/MutableIntList;", "constructor-impl", "(Landroidx/collection/MutableIntList;)Landroidx/collection/MutableIntList;", "add", "", "value", "", "add-impl", "(Landroidx/collection/MutableIntList;I)V", "isEmpty", "", "isEmpty-impl", "(Landroidx/collection/MutableIntList;)Z", "isNotEmpty", "isNotEmpty-impl", "peek", "peek-impl", "(Landroidx/collection/MutableIntList;)I", "takeMax", "takeMax-impl", "validateHeap", "validateHeap-impl", "(Landroidx/collection/MutableIntList;)V", "equals", "other", "hashCode", "toString", "", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class PrioritySet {
     private final MutableIntList list;
 
     /* renamed from: box-impl */
-    public static final /* synthetic */ PrioritySet m3480boximpl(MutableIntList mutableIntList) {
+    public static final /* synthetic */ PrioritySet m3808boximpl(MutableIntList mutableIntList) {
         return new PrioritySet(mutableIntList);
     }
 
     /* renamed from: constructor-impl */
-    public static MutableIntList m3481constructorimpl(MutableIntList mutableIntList) {
+    public static MutableIntList m3809constructorimpl(MutableIntList mutableIntList) {
         return mutableIntList;
     }
 
     /* renamed from: equals-impl */
-    public static boolean m3483equalsimpl(MutableIntList mutableIntList, Object obj) {
-        return (obj instanceof PrioritySet) && Intrinsics.areEqual(mutableIntList, ((PrioritySet) obj).m3492unboximpl());
+    public static boolean m3811equalsimpl(MutableIntList mutableIntList, Object obj) {
+        return (obj instanceof PrioritySet) && Intrinsics.areEqual(mutableIntList, ((PrioritySet) obj).m3820unboximpl());
     }
 
     /* renamed from: equals-impl0 */
-    public static final boolean m3484equalsimpl0(MutableIntList mutableIntList, MutableIntList mutableIntList2) {
+    public static final boolean m3812equalsimpl0(MutableIntList mutableIntList, MutableIntList mutableIntList2) {
         return Intrinsics.areEqual(mutableIntList, mutableIntList2);
     }
 
     /* renamed from: hashCode-impl */
-    public static int m3485hashCodeimpl(MutableIntList mutableIntList) {
+    public static int m3813hashCodeimpl(MutableIntList mutableIntList) {
         return mutableIntList.hashCode();
     }
 
     /* renamed from: toString-impl */
-    public static String m3490toStringimpl(MutableIntList mutableIntList) {
+    public static String m3818toStringimpl(MutableIntList mutableIntList) {
         return "PrioritySet(list=" + mutableIntList + ')';
     }
 
     public boolean equals(Object obj) {
-        return m3483equalsimpl(this.list, obj);
+        return m3811equalsimpl(this.list, obj);
     }
 
     public int hashCode() {
-        return m3485hashCodeimpl(this.list);
+        return m3813hashCodeimpl(this.list);
     }
 
     public String toString() {
-        return m3490toStringimpl(this.list);
+        return m3818toStringimpl(this.list);
     }
 
     /* renamed from: unbox-impl */
-    public final /* synthetic */ MutableIntList m3492unboximpl() {
+    public final /* synthetic */ MutableIntList m3820unboximpl() {
         return this.list;
     }
 
@@ -64,7 +64,7 @@ public final class PrioritySet {
     }
 
     /* renamed from: add-impl */
-    public static final void m3479addimpl(MutableIntList mutableIntList, int i) {
+    public static final void m3807addimpl(MutableIntList mutableIntList, int i) {
         MutableIntList mutableIntList2 = mutableIntList;
         if (mutableIntList2._size == 0 || !(mutableIntList.get(0) == i || mutableIntList.get(mutableIntList2._size - 1) == i)) {
             int i2 = mutableIntList2._size;
@@ -83,22 +83,22 @@ public final class PrioritySet {
     }
 
     /* renamed from: isEmpty-impl */
-    public static final boolean m3486isEmptyimpl(MutableIntList mutableIntList) {
+    public static final boolean m3814isEmptyimpl(MutableIntList mutableIntList) {
         return mutableIntList._size == 0;
     }
 
     /* renamed from: isNotEmpty-impl */
-    public static final boolean m3487isNotEmptyimpl(MutableIntList mutableIntList) {
+    public static final boolean m3815isNotEmptyimpl(MutableIntList mutableIntList) {
         return mutableIntList._size != 0;
     }
 
     /* renamed from: peek-impl */
-    public static final int m3488peekimpl(MutableIntList mutableIntList) {
+    public static final int m3816peekimpl(MutableIntList mutableIntList) {
         return mutableIntList.first();
     }
 
     /* renamed from: takeMax-impl */
-    public static final int m3489takeMaximpl(MutableIntList mutableIntList) {
+    public static final int m3817takeMaximpl(MutableIntList mutableIntList) {
         int i;
         MutableIntList mutableIntList2 = mutableIntList;
         int i2 = mutableIntList2._size;
@@ -131,7 +131,7 @@ public final class PrioritySet {
     }
 
     /* renamed from: validateHeap-impl */
-    public static final void m3491validateHeapimpl(MutableIntList mutableIntList) {
+    public static final void m3819validateHeapimpl(MutableIntList mutableIntList) {
         int i = mutableIntList._size;
         int i2 = i / 2;
         int i3 = 0;
@@ -153,10 +153,10 @@ public final class PrioritySet {
     }
 
     /* renamed from: constructor-impl$default */
-    public static /* synthetic */ MutableIntList m3482constructorimpl$default(MutableIntList mutableIntList, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ MutableIntList m3810constructorimpl$default(MutableIntList mutableIntList, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             mutableIntList = new MutableIntList(0, 1, null);
         }
-        return m3481constructorimpl(mutableIntList);
+        return m3809constructorimpl(mutableIntList);
     }
 }

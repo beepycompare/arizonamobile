@@ -15,7 +15,7 @@ import io.reactivex.internal.util.AtomicThrowable;
 import io.reactivex.internal.util.ExceptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableSwitchMapCompletable<T> extends Completable {
     final boolean delayErrors;
     final Function<? super T, ? extends CompletableSource> mapper;
@@ -35,7 +35,7 @@ public final class ObservableSwitchMapCompletable<T> extends Completable {
         this.source.subscribe(new SwitchMapCompletableObserver(completableObserver, this.mapper, this.delayErrors));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SwitchMapCompletableObserver<T> implements Observer<T>, Disposable {
         static final SwitchMapInnerObserver INNER_DISPOSED = new SwitchMapInnerObserver(null);
         final boolean delayErrors;
@@ -167,7 +167,7 @@ public final class ObservableSwitchMapCompletable<T> extends Completable {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class SwitchMapInnerObserver extends AtomicReference<Disposable> implements CompletableObserver {
             private static final long serialVersionUID = -8003404460084760287L;
             final SwitchMapCompletableObserver<?> parent;

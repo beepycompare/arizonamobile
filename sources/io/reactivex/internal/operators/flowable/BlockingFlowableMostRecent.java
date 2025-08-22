@@ -7,7 +7,7 @@ import io.reactivex.internal.util.NotificationLite;
 import io.reactivex.subscribers.DefaultSubscriber;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BlockingFlowableMostRecent<T> implements Iterable<T> {
     final T initialValue;
     final Flowable<T> source;
@@ -24,7 +24,7 @@ public final class BlockingFlowableMostRecent<T> implements Iterable<T> {
         return mostRecentSubscriber.getIterable();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MostRecentSubscriber<T> extends DefaultSubscriber<T> {
         volatile Object value;
 
@@ -52,7 +52,7 @@ public final class BlockingFlowableMostRecent<T> implements Iterable<T> {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public final class Iterator implements java.util.Iterator<T> {
             private Object buf;
 

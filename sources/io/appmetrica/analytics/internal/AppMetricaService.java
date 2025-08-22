@@ -6,20 +6,20 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.IBinder;
 import io.appmetrica.analytics.impl.A1;
-import io.appmetrica.analytics.impl.Aj;
 import io.appmetrica.analytics.impl.B1;
-import io.appmetrica.analytics.impl.BinderC0646v1;
-import io.appmetrica.analytics.impl.C0441mk;
-import io.appmetrica.analytics.impl.C0621u1;
-import io.appmetrica.analytics.impl.C0721y1;
-import io.appmetrica.analytics.impl.C0725y5;
-import io.appmetrica.analytics.impl.C0764zj;
+import io.appmetrica.analytics.impl.BinderC0643v1;
+import io.appmetrica.analytics.impl.C0562rk;
+import io.appmetrica.analytics.impl.C0618u1;
+import io.appmetrica.analytics.impl.C0718y1;
+import io.appmetrica.analytics.impl.C0722y5;
 import io.appmetrica.analytics.impl.C1;
 import io.appmetrica.analytics.impl.D1;
 import io.appmetrica.analytics.impl.E1;
+import io.appmetrica.analytics.impl.Ej;
+import io.appmetrica.analytics.impl.Fj;
 import io.appmetrica.analytics.impl.I1;
-import io.appmetrica.analytics.impl.Ia;
 import io.appmetrica.analytics.impl.J1;
+import io.appmetrica.analytics.impl.Ka;
 import io.appmetrica.analytics.impl.M1;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class AppMetricaService extends Service {
     private static I1 c;
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0621u1 f1178a = new C0621u1(this);
+    private final C0618u1 f1188a = new C0618u1(this);
     private final a b = new a();
 
     @Override // android.app.Service
@@ -38,12 +38,12 @@ public class AppMetricaService extends Service {
         IBinder iBinder;
         String action = intent.getAction();
         if (action != null && action.startsWith("io.appmetrica.analytics.ACTION_SERVICE_WAKELOCK")) {
-            iBinder = new BinderC0646v1();
+            iBinder = new BinderC0643v1();
         } else {
             iBinder = this.b;
         }
         I1 i1 = c;
-        i1.f481a.execute(new C1(i1, intent));
+        i1.f487a.execute(new C1(i1, intent));
         return iBinder;
     }
 
@@ -51,35 +51,35 @@ public class AppMetricaService extends Service {
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         I1 i1 = c;
-        i1.f481a.execute(new C0721y1(i1, configuration));
+        i1.f487a.execute(new C0718y1(i1, configuration));
     }
 
     @Override // android.app.Service
     public void onCreate() {
         super.onCreate();
-        Ia.a(getApplicationContext());
+        Ka.a(getApplicationContext());
         PublicLogger.init(getApplicationContext());
         I1 i1 = c;
         if (i1 == null) {
             Context applicationContext = getApplicationContext();
-            J1 j1 = new J1(applicationContext, this.f1178a, new C0725y5(applicationContext));
-            C0441mk c0441mk = Ia.F.v;
+            J1 j1 = new J1(applicationContext, this.f1188a, new C0722y5(applicationContext));
+            C0562rk c0562rk = Ka.F.v;
             M1 m1 = new M1(j1);
-            LinkedHashMap linkedHashMap = c0441mk.f957a;
+            LinkedHashMap linkedHashMap = c0562rk.f1048a;
             Object obj = linkedHashMap.get(1);
             if (obj == null) {
                 obj = new ArrayList();
                 linkedHashMap.put(1, obj);
             }
             ((List) obj).add(m1);
-            c = new I1(Ia.F.d.b(), j1);
+            c = new I1(Ka.F.d.b(), j1);
         } else {
-            i1.b.a(this.f1178a);
+            i1.b.a(this.f1188a);
         }
-        Ia ia = Ia.F;
-        Aj aj = new Aj(c);
-        synchronized (ia) {
-            ia.f = new C0764zj(ia.f489a, aj);
+        Ka ka = Ka.F;
+        Fj fj = new Fj(c);
+        synchronized (ka) {
+            ka.f = new Ej(ka.f529a, fj);
         }
         c.onCreate();
     }
@@ -94,26 +94,26 @@ public class AppMetricaService extends Service {
     public void onRebind(Intent intent) {
         super.onRebind(intent);
         I1 i1 = c;
-        i1.f481a.execute(new D1(i1, intent));
+        i1.f487a.execute(new D1(i1, intent));
     }
 
     @Override // android.app.Service
     public void onStart(Intent intent, int i) {
         I1 i1 = c;
-        i1.f481a.execute(new A1(i1, intent, i));
+        i1.f487a.execute(new A1(i1, intent, i));
     }
 
     @Override // android.app.Service
     public int onStartCommand(Intent intent, int i, int i2) {
         I1 i1 = c;
-        i1.f481a.execute(new B1(i1, intent, i, i2));
+        i1.f487a.execute(new B1(i1, intent, i, i2));
         return 2;
     }
 
     @Override // android.app.Service
     public boolean onUnbind(Intent intent) {
         I1 i1 = c;
-        i1.f481a.execute(new E1(i1, intent));
+        i1.f487a.execute(new E1(i1, intent));
         String action = intent.getAction();
         return (action == null || !action.startsWith("io.appmetrica.analytics.ACTION_SERVICE_WAKELOCK")) && intent.getData() != null;
     }

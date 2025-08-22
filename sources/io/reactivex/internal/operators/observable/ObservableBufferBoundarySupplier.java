@@ -16,7 +16,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.Collection;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableBufferBoundarySupplier<T, U extends Collection<? super T>, B> extends AbstractObservableWithUpstream<T, U> {
     final Callable<? extends ObservableSource<B>> boundarySupplier;
     final Callable<U> bufferSupplier;
@@ -32,7 +32,7 @@ public final class ObservableBufferBoundarySupplier<T, U extends Collection<? su
         this.source.subscribe(new BufferBoundarySupplierObserver(new SerializedObserver(observer), this.bufferSupplier, this.boundarySupplier));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BufferBoundarySupplierObserver<T, U extends Collection<? super T>, B> extends QueueDrainObserver<T, U, U> implements Observer<T>, Disposable {
         final Callable<? extends ObservableSource<B>> boundarySupplier;
         U buffer;
@@ -175,7 +175,7 @@ public final class ObservableBufferBoundarySupplier<T, U extends Collection<? su
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class BufferBoundaryObserver<T, U extends Collection<? super T>, B> extends DisposableObserver<B> {
         boolean once;
         final BufferBoundarySupplierObserver<T, U, B> parent;

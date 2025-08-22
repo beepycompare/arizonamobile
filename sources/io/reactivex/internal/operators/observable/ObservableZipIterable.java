@@ -10,7 +10,7 @@ import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableZipIterable<T, U, V> extends Observable<V> {
     final Iterable<U> other;
     final Observable<? extends T> source;
@@ -42,7 +42,7 @@ public final class ObservableZipIterable<T, U, V> extends Observable<V> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ZipIterableObserver<T, U, V> implements Observer<T>, Disposable {
         boolean done;
         final Observer<? super V> downstream;

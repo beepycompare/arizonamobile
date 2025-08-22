@@ -1,40 +1,13 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.data.StateSerializer;
-import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
-import java.io.IOException;
 /* loaded from: classes4.dex */
-public class U8 implements StateSerializer {
+public final class U8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final StateSerializer f666a;
-    public final AESEncrypter b;
+    public final C0399l6 f674a;
+    public final EnumC0196d9 b;
 
-    public U8(StateSerializer<Object> stateSerializer, AESEncrypter aESEncrypter) {
-        this.f666a = stateSerializer;
-        this.b = aESEncrypter;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final Object defaultValue() {
-        return this.f666a.defaultValue();
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final byte[] toByteArray(Object obj) {
-        try {
-            return this.b.encrypt(this.f666a.toByteArray(obj));
-        } catch (Throwable unused) {
-            return new byte[0];
-        }
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final Object toState(byte[] bArr) throws IOException {
-        try {
-            return this.f666a.toState(this.b.decrypt(bArr));
-        } catch (Throwable th) {
-            throw new IOException(th);
-        }
+    public U8(C0399l6 c0399l6, EnumC0196d9 enumC0196d9) {
+        this.f674a = c0399l6;
+        this.b = enumC0196d9;
     }
 }

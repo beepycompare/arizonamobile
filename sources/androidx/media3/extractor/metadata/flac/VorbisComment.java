@@ -5,7 +5,7 @@ import androidx.media3.common.Metadata;
 import com.google.common.base.Ascii;
 import com.google.common.primitives.Ints;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class VorbisComment implements Metadata.Entry {
     public final String key;
     public final String value;

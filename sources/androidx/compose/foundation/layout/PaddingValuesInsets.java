@@ -6,7 +6,7 @@ import androidx.compose.ui.unit.LayoutDirection;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WindowInsets.kt */
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\b\u0003\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\u0013\u0010\u0005\u001a\u00020\u00062\b\u0010\u0007\u001a\u0004\u0018\u00010\bH\u0096\u0002J\u0010\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0016J\u0018\u0010\r\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016J\u0018\u0010\u0010\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016J\u0010\u0010\u0011\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0016J\b\u0010\u0012\u001a\u00020\nH\u0016J\b\u0010\u0013\u001a\u00020\u0014H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Landroidx/compose/foundation/layout/PaddingValuesInsets;", "Landroidx/compose/foundation/layout/WindowInsets;", "paddingValues", "Landroidx/compose/foundation/layout/PaddingValues;", "(Landroidx/compose/foundation/layout/PaddingValues;)V", "equals", "", "other", "", "getBottom", "", "density", "Landroidx/compose/ui/unit/Density;", "getLeft", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getRight", "getTop", "hashCode", "toString", "", "foundation-layout_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\b\u0003\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0018\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0016J\u0010\u0010\f\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016J\u0018\u0010\r\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0016J\u0010\u0010\u000e\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016J\b\u0010\u000f\u001a\u00020\u0010H\u0016J\u0013\u0010\u0011\u001a\u00020\u00122\b\u0010\u0013\u001a\u0004\u0018\u00010\u0014H\u0096\u0002J\b\u0010\u0015\u001a\u00020\u0007H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Landroidx/compose/foundation/layout/PaddingValuesInsets;", "Landroidx/compose/foundation/layout/WindowInsets;", "paddingValues", "Landroidx/compose/foundation/layout/PaddingValues;", "<init>", "(Landroidx/compose/foundation/layout/PaddingValues;)V", "getLeft", "", "density", "Landroidx/compose/ui/unit/Density;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getTop", "getRight", "getBottom", "toString", "", "equals", "", "other", "", "hashCode", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class PaddingValuesInsets implements WindowInsets {
     private final PaddingValues paddingValues;
@@ -17,27 +17,27 @@ final class PaddingValuesInsets implements WindowInsets {
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getLeft(Density density, LayoutDirection layoutDirection) {
-        return density.mo383roundToPx0680j_4(this.paddingValues.mo688calculateLeftPaddingu2uoSUM(layoutDirection));
+        return density.mo413roundToPx0680j_4(this.paddingValues.mo776calculateLeftPaddingu2uoSUM(layoutDirection));
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getTop(Density density) {
-        return density.mo383roundToPx0680j_4(this.paddingValues.mo690calculateTopPaddingD9Ej5fM());
+        return density.mo413roundToPx0680j_4(this.paddingValues.mo778calculateTopPaddingD9Ej5fM());
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getRight(Density density, LayoutDirection layoutDirection) {
-        return density.mo383roundToPx0680j_4(this.paddingValues.mo689calculateRightPaddingu2uoSUM(layoutDirection));
+        return density.mo413roundToPx0680j_4(this.paddingValues.mo777calculateRightPaddingu2uoSUM(layoutDirection));
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getBottom(Density density) {
-        return density.mo383roundToPx0680j_4(this.paddingValues.mo687calculateBottomPaddingD9Ej5fM());
+        return density.mo413roundToPx0680j_4(this.paddingValues.mo775calculateBottomPaddingD9Ej5fM());
     }
 
     public String toString() {
         LayoutDirection layoutDirection = LayoutDirection.Ltr;
-        return "PaddingValues(" + ((Object) Dp.m6695toStringimpl(this.paddingValues.mo688calculateLeftPaddingu2uoSUM(layoutDirection))) + ", " + ((Object) Dp.m6695toStringimpl(this.paddingValues.mo690calculateTopPaddingD9Ej5fM())) + ", " + ((Object) Dp.m6695toStringimpl(this.paddingValues.mo689calculateRightPaddingu2uoSUM(layoutDirection))) + ", " + ((Object) Dp.m6695toStringimpl(this.paddingValues.mo687calculateBottomPaddingD9Ej5fM())) + ')';
+        return "PaddingValues(" + ((Object) Dp.m7262toStringimpl(this.paddingValues.mo776calculateLeftPaddingu2uoSUM(layoutDirection))) + ", " + ((Object) Dp.m7262toStringimpl(this.paddingValues.mo778calculateTopPaddingD9Ej5fM())) + ", " + ((Object) Dp.m7262toStringimpl(this.paddingValues.mo777calculateRightPaddingu2uoSUM(layoutDirection))) + ", " + ((Object) Dp.m7262toStringimpl(this.paddingValues.mo775calculateBottomPaddingD9Ej5fM())) + ')';
     }
 
     public boolean equals(Object obj) {

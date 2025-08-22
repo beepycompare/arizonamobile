@@ -10,7 +10,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class AspectRatioFrameLayout extends FrameLayout {
     private static final float MAX_ASPECT_RATIO_DEFORMATION_FRACTION = 0.01f;
     public static final int RESIZE_MODE_FILL = 3;
@@ -23,7 +23,7 @@ public final class AspectRatioFrameLayout extends FrameLayout {
     private int resizeMode;
     private float videoAspectRatio;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface AspectRatioListener {
         void onAspectRatioUpdated(float f, float f2, boolean z);
     }
@@ -31,7 +31,7 @@ public final class AspectRatioFrameLayout extends FrameLayout {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public @interface ResizeMode {
     }
 
@@ -121,7 +121,7 @@ public final class AspectRatioFrameLayout extends FrameLayout {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(measuredHeight, 1073741824));
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     private final class AspectRatioUpdateDispatcher implements Runnable {
         private boolean aspectRatioMismatch;
         private boolean isScheduled;

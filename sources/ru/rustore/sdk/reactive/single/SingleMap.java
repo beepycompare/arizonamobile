@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.rustore.sdk.reactive.core.Disposable;
 /* compiled from: SingleMap.kt */
 @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u0000*\u0004\b\u0000\u0010\u0001*\u0004\b\u0001\u0010\u00022\b\u0012\u0004\u0012\u0002H\u00020\u0003B'\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u0003\u0012\u0012\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u0006¢\u0006\u0002\u0010\u0007J\u0016\u0010\b\u001a\u00020\t2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00028\u00010\u000bH\u0016R\u001a\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lru/rustore/sdk/reactive/single/SingleMap;", ExifInterface.GPS_DIRECTION_TRUE, "R", "Lru/rustore/sdk/reactive/single/Single;", "upstream", "mapper", "Lkotlin/Function1;", "(Lru/rustore/sdk/reactive/single/Single;Lkotlin/jvm/functions/Function1;)V", "subscribe", "", "downstream", "Lru/rustore/sdk/reactive/single/SingleObserver;", "sdk-public-reactive_release"}, k = 1, mv = {1, 7, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 final class SingleMap<T, R> extends Single<R> {
     private final Function1<T, R> mapper;
     private final Single<T> upstream;
@@ -40,26 +40,26 @@ final class SingleMap<T, R> extends Single<R> {
 
             @Override // ru.rustore.sdk.reactive.single.SingleObserver
             public void onSuccess(T t) {
-                Object m8500constructorimpl;
+                Object m9065constructorimpl;
                 Function1 function1;
                 SingleMap<T, R> singleMap = this;
                 try {
                     Result.Companion companion = Result.Companion;
                     SingleMap$subscribe$wrappedObserver$1<T> singleMap$subscribe$wrappedObserver$1 = this;
                     function1 = ((SingleMap) singleMap).mapper;
-                    m8500constructorimpl = Result.m8500constructorimpl(function1.invoke(t));
+                    m9065constructorimpl = Result.m9065constructorimpl(function1.invoke(t));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m8500constructorimpl = Result.m8500constructorimpl(ResultKt.createFailure(th));
+                    m9065constructorimpl = Result.m9065constructorimpl(ResultKt.createFailure(th));
                 }
                 SingleObserver<R> singleObserver = downstream;
-                if (Result.m8507isSuccessimpl(m8500constructorimpl)) {
-                    singleObserver.onSuccess(m8500constructorimpl);
+                if (Result.m9072isSuccessimpl(m9065constructorimpl)) {
+                    singleObserver.onSuccess(m9065constructorimpl);
                 }
                 SingleObserver<R> singleObserver2 = downstream;
-                Throwable m8503exceptionOrNullimpl = Result.m8503exceptionOrNullimpl(m8500constructorimpl);
-                if (m8503exceptionOrNullimpl != null) {
-                    singleObserver2.onError(m8503exceptionOrNullimpl);
+                Throwable m9068exceptionOrNullimpl = Result.m9068exceptionOrNullimpl(m9065constructorimpl);
+                if (m9068exceptionOrNullimpl != null) {
+                    singleObserver2.onError(m9068exceptionOrNullimpl);
                 }
             }
         });

@@ -7,17 +7,17 @@ public final class R {
         public static int activityAction = 0x7f040028;
         public static int activityName = 0x7f04002a;
         public static int alwaysExpand = 0x7f04003a;
-        public static int clearTop = 0x7f040102;
-        public static int finishPrimaryWithSecondary = 0x7f040246;
-        public static int finishSecondaryWithPrimary = 0x7f040247;
-        public static int placeholderActivityName = 0x7f0404a4;
-        public static int primaryActivityName = 0x7f0404ca;
-        public static int secondaryActivityAction = 0x7f040518;
-        public static int secondaryActivityName = 0x7f040519;
-        public static int splitLayoutDirection = 0x7f04055d;
-        public static int splitMinSmallestWidth = 0x7f04055e;
-        public static int splitMinWidth = 0x7f04055f;
-        public static int splitRatio = 0x7f040560;
+        public static int clearTop = 0x7f040103;
+        public static int finishPrimaryWithSecondary = 0x7f040247;
+        public static int finishSecondaryWithPrimary = 0x7f040248;
+        public static int placeholderActivityName = 0x7f0404a5;
+        public static int primaryActivityName = 0x7f0404cb;
+        public static int secondaryActivityAction = 0x7f040519;
+        public static int secondaryActivityName = 0x7f04051a;
+        public static int splitLayoutDirection = 0x7f04055e;
+        public static int splitMinSmallestWidth = 0x7f04055f;
+        public static int splitMinWidth = 0x7f040560;
+        public static int splitRatio = 0x7f040561;
 
         private attr() {
         }
@@ -26,9 +26,9 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class id {
         public static int androidx_window_activity_scope = 0x7f0a00d0;
-        public static int locale = 0x7f0a07cd;
-        public static int ltr = 0x7f0a07df;
-        public static int rtl = 0x7f0a0b63;
+        public static int locale = 0x7f0a07cb;
+        public static int ltr = 0x7f0a07dd;
+        public static int rtl = 0x7f0a0b64;
 
         private id() {
         }
@@ -54,11 +54,11 @@ public final class R {
         public static int SplitPlaceholderRule_splitMinSmallestWidth = 0x00000002;
         public static int SplitPlaceholderRule_splitMinWidth = 0x00000003;
         public static int SplitPlaceholderRule_splitRatio = 0x00000004;
-        public static int[] ActivityFilter = {com.arizona21.game.web.R.attr.activityAction, com.arizona21.game.web.R.attr.activityName};
-        public static int[] ActivityRule = {com.arizona21.game.web.R.attr.alwaysExpand};
-        public static int[] SplitPairFilter = {com.arizona21.game.web.R.attr.primaryActivityName, com.arizona21.game.web.R.attr.secondaryActivityAction, com.arizona21.game.web.R.attr.secondaryActivityName};
-        public static int[] SplitPairRule = {com.arizona21.game.web.R.attr.clearTop, com.arizona21.game.web.R.attr.finishPrimaryWithSecondary, com.arizona21.game.web.R.attr.finishSecondaryWithPrimary, com.arizona21.game.web.R.attr.splitLayoutDirection, com.arizona21.game.web.R.attr.splitMinSmallestWidth, com.arizona21.game.web.R.attr.splitMinWidth, com.arizona21.game.web.R.attr.splitRatio};
-        public static int[] SplitPlaceholderRule = {com.arizona21.game.web.R.attr.placeholderActivityName, com.arizona21.game.web.R.attr.splitLayoutDirection, com.arizona21.game.web.R.attr.splitMinSmallestWidth, com.arizona21.game.web.R.attr.splitMinWidth, com.arizona21.game.web.R.attr.splitRatio};
+        public static int[] ActivityFilter = {com.arizona21.game.R.attr.activityAction, com.arizona21.game.R.attr.activityName};
+        public static int[] ActivityRule = {com.arizona21.game.R.attr.alwaysExpand};
+        public static int[] SplitPairFilter = {com.arizona21.game.R.attr.primaryActivityName, com.arizona21.game.R.attr.secondaryActivityAction, com.arizona21.game.R.attr.secondaryActivityName};
+        public static int[] SplitPairRule = {com.arizona21.game.R.attr.clearTop, com.arizona21.game.R.attr.finishPrimaryWithSecondary, com.arizona21.game.R.attr.finishSecondaryWithPrimary, com.arizona21.game.R.attr.splitLayoutDirection, com.arizona21.game.R.attr.splitMinSmallestWidth, com.arizona21.game.R.attr.splitMinWidth, com.arizona21.game.R.attr.splitRatio};
+        public static int[] SplitPlaceholderRule = {com.arizona21.game.R.attr.placeholderActivityName, com.arizona21.game.R.attr.splitLayoutDirection, com.arizona21.game.R.attr.splitMinSmallestWidth, com.arizona21.game.R.attr.splitMinWidth, com.arizona21.game.R.attr.splitRatio};
 
         private styleable() {
         }

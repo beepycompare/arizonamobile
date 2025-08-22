@@ -31,7 +31,7 @@ public final class ComposableSingletons$SelectServerScreenKt {
         }
     });
 
-    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$22973248$select_server_release_web() {
+    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$22973248$select_server_release() {
         return lambda$22973248;
     }
 
@@ -45,7 +45,7 @@ public final class ComposableSingletons$SelectServerScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(22973248, i, -1, "com.miami.game.feature.select.server.ui.compose.ComposableSingletons$SelectServerScreenKt.lambda$22973248.<anonymous> (SelectServerScreen.kt:164)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_next, composer, 0), (String) null, SizeKt.m771height3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(100)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_next, composer, 0), (String) null, SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(100)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

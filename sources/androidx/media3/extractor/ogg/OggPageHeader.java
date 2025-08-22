@@ -6,7 +6,7 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.ExtractorUtil;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class OggPageHeader {
     private static final int CAPTURE_PATTERN = 1332176723;
     private static final int CAPTURE_PATTERN_SIZE = 4;

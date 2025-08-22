@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.CompositeException;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Action;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeDoOnTerminate<T> extends Maybe<T> {
     final Action onTerminate;
     final MaybeSource<T> source;
@@ -22,7 +22,7 @@ public final class MaybeDoOnTerminate<T> extends Maybe<T> {
         this.source.subscribe(new DoOnTerminate(maybeObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class DoOnTerminate implements MaybeObserver<T> {
         final MaybeObserver<? super T> downstream;
 

@@ -11,7 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class LayoutItemSharpBinding implements ViewBinding {
     public final Button btnSharpenItem;
     public final ItemInfoCostBinding costField;

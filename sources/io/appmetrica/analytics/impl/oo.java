@@ -1,23 +1,16 @@
 package io.appmetrica.analytics.impl;
 
+import android.content.Context;
 import android.text.TextUtils;
-import java.util.LinkedList;
-import java.util.List;
+import io.appmetrica.analytics.internal.IdentifiersResult;
 /* loaded from: classes4.dex */
-public final class oo implements po {
-    @Override // io.appmetrica.analytics.impl.po
-    public final no a(List<no> list) {
-        LinkedList linkedList = new LinkedList();
-        boolean z = true;
-        for (no noVar : list) {
-            if (!noVar.f975a) {
-                linkedList.add(noVar.b);
-                z = false;
-            }
+public final class oo implements InterfaceC0301hb {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
+    public final String a(Context context) {
+        IdentifiersResult q = new C0408lf(C0649v7.a(context.getApplicationContext()).a()).q();
+        if (TextUtils.isEmpty(q.id)) {
+            return null;
         }
-        if (z) {
-            return new no(this, true, "");
-        }
-        return new no(this, false, TextUtils.join(", ", linkedList));
+        return q.id;
     }
 }

@@ -17,22 +17,25 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import org.xmlpull.v1.XmlPullParserException;
 /* compiled from: VectorResources.android.kt */
-@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a0\u0010\u0000\u001a\u00020\u00012\u000e\b\u0002\u0010\u0002\u001a\b\u0018\u00010\u0003R\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0000\u001a*\u0010\n\u001a\u00020\u000b*\u00020\f2\u000e\b\u0002\u0010\u0002\u001a\b\u0018\u00010\u0003R\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00042\u0006\u0010\r\u001a\u00020\t\u001a\u001b\u0010\n\u001a\u00020\u000b*\u00020\f2\b\b\u0001\u0010\u000e\u001a\u00020\tH\u0007¢\u0006\u0002\u0010\u000f¨\u0006\u0010"}, d2 = {"loadVectorResourceInner", "Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;", "theme", "Landroid/content/res/Resources$Theme;", "Landroid/content/res/Resources;", "res", "parser", "Landroid/content/res/XmlResourceParser;", "changingConfigurations", "", "vectorResource", "Landroidx/compose/ui/graphics/vector/ImageVector;", "Landroidx/compose/ui/graphics/vector/ImageVector$Companion;", "resId", "id", "(Landroidx/compose/ui/graphics/vector/ImageVector$Companion;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/graphics/vector/ImageVector;", "ui_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001b\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\b\b\u0001\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\u0005\u001a*\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u000e\b\u0002\u0010\u0006\u001a\b\u0018\u00010\u0007R\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\u0004\u001a0\u0010\u000b\u001a\u00020\f2\u000e\b\u0002\u0010\u0006\u001a\b\u0018\u00010\u0007R\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0004H\u0000¨\u0006\u0010"}, d2 = {"vectorResource", "Landroidx/compose/ui/graphics/vector/ImageVector;", "Landroidx/compose/ui/graphics/vector/ImageVector$Companion;", "id", "", "(Landroidx/compose/ui/graphics/vector/ImageVector$Companion;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/graphics/vector/ImageVector;", "theme", "Landroid/content/res/Resources$Theme;", "Landroid/content/res/Resources;", "res", "resId", "loadVectorResourceInner", "Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;", "parser", "Landroid/content/res/XmlResourceParser;", "changingConfigurations", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class VectorResources_androidKt {
     public static final ImageVector vectorResource(ImageVector.Companion companion, int i, Composer composer, int i2) {
-        ComposerKt.sourceInformationMarkerStart(composer, 44534090, "C(vectorResource)48@1966L7,49@1988L11,52@2042L78:VectorResources.android.kt#ccshc7");
+        ComposerKt.sourceInformationMarkerStart(composer, 44534090, "C(vectorResource)49@2017L7,50@2054L7,53@2104L78:VectorResources.android.kt#ccshc7");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(44534090, i2, -1, "androidx.compose.ui.res.vectorResource (VectorResources.android.kt:47)");
+            ComposerKt.traceEventStart(44534090, i2, -1, "androidx.compose.ui.res.vectorResource (VectorResources.android.kt:48)");
         }
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(AndroidCompositionLocals_androidKt.getLocalContext());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Resources resources = Resources_androidKt.resources(composer, 0);
+        ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+        Object consume2 = composer.consume(AndroidCompositionLocals_androidKt.getLocalResources());
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        Resources resources = (Resources) consume2;
         Resources.Theme theme = ((Context) consume).getTheme();
         Object configuration = resources.getConfiguration();
-        ComposerKt.sourceInformationMarkerStart(composer, -1769560570, "CC(remember):VectorResources.android.kt#9igjgp");
-        boolean changed = composer.changed(resources) | ((((i2 & 112) ^ 48) > 32 && composer.changed(i)) || (i2 & 48) == 32) | composer.changed(theme) | composer.changed(configuration);
+        ComposerKt.sourceInformationMarkerStart(composer, -152405736, "CC(remember):VectorResources.android.kt#9igjgp");
+        boolean changed = ((((i2 & 112) ^ 48) > 32 && composer.changed(i)) || (i2 & 48) == 32) | composer.changed(resources) | composer.changed(theme) | composer.changed(configuration);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = vectorResource(companion, theme, resources, i);
@@ -80,6 +83,6 @@ public final class VectorResources_androidKt {
             i2 = XmlVectorParser_androidKt.parseCurrentVectorNode(androidVectorParser, resources, asAttributeSet, theme, createVectorImageBuilder, i2);
             xmlResourceParser.next();
         }
-        return new ImageVectorCache.ImageVectorEntry(createVectorImageBuilder.build(), i);
+        return new ImageVectorCache.ImageVectorEntry(createVectorImageBuilder.build(), androidVectorParser.getConfig() | i);
     }
 }

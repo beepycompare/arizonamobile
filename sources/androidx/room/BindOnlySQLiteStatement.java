@@ -17,9 +17,9 @@ public final class BindOnlySQLiteStatement implements SQLiteStatement {
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindBlob */
-    public void mo7581bindBlob(int i, byte[] value) {
+    public void mo8147bindBlob(int i, byte[] value) {
         Intrinsics.checkNotNullParameter(value, "value");
-        this.$$delegate_0.mo7581bindBlob(i, value);
+        this.$$delegate_0.mo8147bindBlob(i, value);
     }
 
     @Override // androidx.sqlite.SQLiteStatement
@@ -29,8 +29,8 @@ public final class BindOnlySQLiteStatement implements SQLiteStatement {
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindDouble */
-    public void mo7582bindDouble(int i, double d) {
-        this.$$delegate_0.mo7582bindDouble(i, d);
+    public void mo8148bindDouble(int i, double d) {
+        this.$$delegate_0.mo8148bindDouble(i, d);
     }
 
     @Override // androidx.sqlite.SQLiteStatement
@@ -45,27 +45,27 @@ public final class BindOnlySQLiteStatement implements SQLiteStatement {
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindLong */
-    public void mo7583bindLong(int i, long j) {
-        this.$$delegate_0.mo7583bindLong(i, j);
+    public void mo8149bindLong(int i, long j) {
+        this.$$delegate_0.mo8149bindLong(i, j);
     }
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindNull */
-    public void mo7584bindNull(int i) {
-        this.$$delegate_0.mo7584bindNull(i);
+    public void mo8150bindNull(int i) {
+        this.$$delegate_0.mo8150bindNull(i);
     }
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindText */
-    public void mo7585bindText(int i, String value) {
+    public void mo8151bindText(int i, String value) {
         Intrinsics.checkNotNullParameter(value, "value");
-        this.$$delegate_0.mo7585bindText(i, value);
+        this.$$delegate_0.mo8151bindText(i, value);
     }
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: clearBindings */
-    public void mo7586clearBindings() {
-        this.$$delegate_0.mo7586clearBindings();
+    public void mo8152clearBindings() {
+        this.$$delegate_0.mo8152clearBindings();
     }
 
     @Override // androidx.sqlite.SQLiteStatement

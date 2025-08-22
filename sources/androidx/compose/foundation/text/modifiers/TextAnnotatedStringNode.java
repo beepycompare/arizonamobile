@@ -1,7 +1,7 @@
 package androidx.compose.foundation.text.modifiers;
 
+import android.os.Trace;
 import androidx.compose.foundation.text.TextAutoSize;
-import androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.geometry.Rect;
@@ -54,7 +54,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TextAnnotatedStringNode.kt */
-@Metadata(d1 = {"\u0000Î\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010!\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\t\b\u0000\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u0001mBÑ\u0001\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0016\b\u0002\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\f\u0012\b\b\u0002\u0010\u000f\u001a\u00020\u0010\u0012\b\b\u0002\u0010\u0011\u001a\u00020\u0012\u0012\b\b\u0002\u0010\u0013\u001a\u00020\u0014\u0012\b\b\u0002\u0010\u0015\u001a\u00020\u0014\u0012\u0016\b\u0002\u0010\u0016\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u0018\u0018\u00010\u0017\u0012\u001e\b\u0002\u0010\u001a\u001a\u0018\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u001b0\u0017\u0012\u0004\u0012\u00020\u000e\u0018\u00010\f\u0012\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u001d\u0012\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u001f\u0012\n\b\u0002\u0010 \u001a\u0004\u0018\u00010!\u0012\u0016\b\u0002\u0010\"\u001a\u0010\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020\u000e\u0018\u00010\f¢\u0006\u0002\u0010$J\r\u0010:\u001a\u00020\u000eH\u0000¢\u0006\u0002\b;J&\u0010<\u001a\u00020\u000e2\u0006\u0010=\u001a\u00020\u00122\u0006\u0010>\u001a\u00020\u00122\u0006\u0010?\u001a\u00020\u00122\u0006\u0010@\u001a\u00020\u0012J\u000e\u0010A\u001a\u00020\u000e2\u0006\u0010B\u001a\u00020CJ\u0010\u0010-\u001a\u00020&2\u0006\u0010D\u001a\u00020EH\u0002J\b\u0010F\u001a\u00020\u000eH\u0002J\u001e\u0010G\u001a\u00020\u00142\u0006\u0010H\u001a\u00020I2\u0006\u0010J\u001a\u00020K2\u0006\u0010L\u001a\u00020\u0014J\u001e\u0010M\u001a\u00020\u00142\u0006\u0010H\u001a\u00020I2\u0006\u0010J\u001a\u00020K2\u0006\u0010N\u001a\u00020\u0014J(\u0010O\u001a\u00020P2\u0006\u0010Q\u001a\u00020R2\u0006\u0010J\u001a\u00020S2\u0006\u0010T\u001a\u00020Uø\u0001\u0000¢\u0006\u0004\bV\u0010WJ\u001e\u0010X\u001a\u00020\u00142\u0006\u0010H\u001a\u00020I2\u0006\u0010J\u001a\u00020K2\u0006\u0010L\u001a\u00020\u0014J\u001e\u0010Y\u001a\u00020\u00142\u0006\u0010H\u001a\u00020I2\u0006\u0010J\u001a\u00020K2\u0006\u0010N\u001a\u00020\u0014J\u0010\u0010Z\u001a\u00020\u00122\u0006\u0010[\u001a\u00020\u0006H\u0002JZ\u0010\\\u001a\u00020\u00122\u0014\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\f2\u001c\u0010\u001a\u001a\u0018\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u001b0\u0017\u0012\u0004\u0012\u00020\u000e\u0018\u00010\f2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\u0014\u0010\"\u001a\u0010\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020\u000e\u0018\u00010\fJ\u0018\u0010]\u001a\u00020\u00122\b\u0010^\u001a\u0004\u0018\u00010\u001f2\u0006\u0010\u0007\u001a\u00020\bJ`\u0010_\u001a\u00020\u00122\u0006\u0010\u0007\u001a\u00020\b2\u0014\u0010\u0016\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u0018\u0018\u00010\u00172\u0006\u0010\u0015\u001a\u00020\u00142\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000f\u001a\u00020\u00102\b\u0010 \u001a\u0004\u0018\u00010!ø\u0001\u0000¢\u0006\u0004\b`\u0010aJ\u0015\u0010b\u001a\u00020\u00122\u0006\u0010\u0005\u001a\u00020\u0006H\u0000¢\u0006\u0002\bcJ\f\u0010d\u001a\u00020\u000e*\u00020eH\u0016J\f\u0010f\u001a\u00020\u000e*\u00020CH\u0016J\u001c\u0010g\u001a\u00020\u0014*\u00020I2\u0006\u0010J\u001a\u00020K2\u0006\u0010L\u001a\u00020\u0014H\u0016J\u001c\u0010h\u001a\u00020\u0014*\u00020I2\u0006\u0010J\u001a\u00020K2\u0006\u0010N\u001a\u00020\u0014H\u0016J&\u0010i\u001a\u00020P*\u00020R2\u0006\u0010J\u001a\u00020S2\u0006\u0010T\u001a\u00020UH\u0016ø\u0001\u0000¢\u0006\u0004\bj\u0010WJ\u001c\u0010k\u001a\u00020\u0014*\u00020I2\u0006\u0010J\u001a\u00020K2\u0006\u0010L\u001a\u00020\u0014H\u0016J\u001c\u0010l\u001a\u00020\u0014*\u00020I2\u0006\u0010J\u001a\u00020K2\u0006\u0010N\u001a\u00020\u0014H\u0016R\u0010\u0010%\u001a\u0004\u0018\u00010&X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010 \u001a\u0004\u0018\u00010!X\u0082\u000e¢\u0006\u0002\n\u0000R\"\u0010'\u001a\u0010\u0012\u0004\u0012\u00020)\u0012\u0004\u0012\u00020\u0014\u0018\u00010(X\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\b*\u0010+R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010,\u001a\u00020&8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b-\u0010.R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010\u001a\u001a\u0018\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u001b0\u0017\u0012\u0004\u0012\u00020\u000e\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\"\u001a\u0010\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020\u000e\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\u00020\u0010X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010/R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u0016\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u0018\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\"\u00100\u001a\u0016\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r01\u0012\u0004\u0012\u00020\u0012\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00102\u001a\u00020\u00128VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b3\u00104R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u00105\u001a\u0004\u0018\u00010#X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b6\u00107\"\u0004\b8\u00109\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006n"}, d2 = {"Landroidx/compose/foundation/text/modifiers/TextAnnotatedStringNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "text", "Landroidx/compose/ui/text/AnnotatedString;", "style", "Landroidx/compose/ui/text/TextStyle;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "onTextLayout", "Lkotlin/Function1;", "Landroidx/compose/ui/text/TextLayoutResult;", "", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "softWrap", "", "maxLines", "", "minLines", "placeholders", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/Placeholder;", "onPlaceholderLayout", "Landroidx/compose/ui/geometry/Rect;", "selectionController", "Landroidx/compose/foundation/text/modifiers/SelectionController;", "overrideColor", "Landroidx/compose/ui/graphics/ColorProducer;", "autoSize", "Landroidx/compose/foundation/text/TextAutoSize;", "onShowTranslation", "Landroidx/compose/foundation/text/modifiers/TextAnnotatedStringNode$TextSubstitutionValue;", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/font/FontFamily$Resolver;Lkotlin/jvm/functions/Function1;IZIILjava/util/List;Lkotlin/jvm/functions/Function1;Landroidx/compose/foundation/text/modifiers/SelectionController;Landroidx/compose/ui/graphics/ColorProducer;Landroidx/compose/foundation/text/TextAutoSize;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "_layoutCache", "Landroidx/compose/foundation/text/modifiers/MultiParagraphLayoutCache;", "baselineCache", "", "Landroidx/compose/ui/layout/AlignmentLine;", "getBaselineCache$annotations", "()V", "layoutCache", "getLayoutCache", "()Landroidx/compose/foundation/text/modifiers/MultiParagraphLayoutCache;", "I", "semanticsTextLayoutResult", "", "shouldAutoInvalidate", "getShouldAutoInvalidate", "()Z", "textSubstitution", "getTextSubstitution$foundation_release", "()Landroidx/compose/foundation/text/modifiers/TextAnnotatedStringNode$TextSubstitutionValue;", "setTextSubstitution$foundation_release", "(Landroidx/compose/foundation/text/modifiers/TextAnnotatedStringNode$TextSubstitutionValue;)V", "clearSubstitution", "clearSubstitution$foundation_release", "doInvalidations", "drawChanged", "textChanged", "layoutChanged", "callbacksChanged", "drawNonExtension", "contentDrawScope", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "density", "Landroidx/compose/ui/unit/Density;", "invalidateForTranslate", "maxIntrinsicHeightNonExtension", "intrinsicMeasureScope", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "measurable", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "width", "maxIntrinsicWidthNonExtension", "height", "measureNonExtension", "Landroidx/compose/ui/layout/MeasureResult;", "measureScope", "Landroidx/compose/ui/layout/MeasureScope;", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measureNonExtension-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "minIntrinsicHeightNonExtension", "minIntrinsicWidthNonExtension", "setSubstitution", "updatedText", "updateCallbacks", "updateDraw", "color", "updateLayoutRelatedArgs", "updateLayoutRelatedArgs-y0k-MQk", "(Landroidx/compose/ui/text/TextStyle;Ljava/util/List;IIZLandroidx/compose/ui/text/font/FontFamily$Resolver;ILandroidx/compose/foundation/text/TextAutoSize;)Z", "updateText", "updateText$foundation_release", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "draw", "maxIntrinsicHeight", "maxIntrinsicWidth", "measure", "measure-3p2s80s", "minIntrinsicHeight", "minIntrinsicWidth", "TextSubstitutionValue", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Ð\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010!\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u0001nBÓ\u0001\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0016\b\u0002\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\f\u0012\b\b\u0002\u0010\u000f\u001a\u00020\u0010\u0012\b\b\u0002\u0010\u0011\u001a\u00020\u0012\u0012\b\b\u0002\u0010\u0013\u001a\u00020\u0014\u0012\b\b\u0002\u0010\u0015\u001a\u00020\u0014\u0012\u0016\b\u0002\u0010\u0016\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u0018\u0018\u00010\u0017\u0012\u001e\b\u0002\u0010\u001a\u001a\u0018\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u001b0\u0017\u0012\u0004\u0012\u00020\u000e\u0018\u00010\f\u0012\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u001d\u0012\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u001f\u0012\n\b\u0002\u0010 \u001a\u0004\u0018\u00010!\u0012\u0016\b\u0002\u0010\"\u001a\u0010\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020\u000e\u0018\u00010\f¢\u0006\u0004\b$\u0010%J\u0010\u00102\u001a\u0002002\u0006\u00104\u001a\u000205H\u0002J\u0018\u00106\u001a\u00020\u00122\b\u00107\u001a\u0004\u0018\u00010\u001f2\u0006\u0010\u0007\u001a\u00020\bJ\u0015\u00108\u001a\u00020\u00122\u0006\u0010\u0005\u001a\u00020\u0006H\u0000¢\u0006\u0002\b9J]\u0010:\u001a\u00020\u00122\u0006\u0010\u0007\u001a\u00020\b2\u0014\u0010\u0016\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u0018\u0018\u00010\u00172\u0006\u0010\u0015\u001a\u00020\u00142\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000f\u001a\u00020\u00102\b\u0010 \u001a\u0004\u0018\u00010!¢\u0006\u0004\b;\u0010<JZ\u0010=\u001a\u00020\u00122\u0014\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\f2\u001c\u0010\u001a\u001a\u0018\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u001b0\u0017\u0012\u0004\u0012\u00020\u000e\u0018\u00010\f2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\u0014\u0010\"\u001a\u0010\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020\u000e\u0018\u00010\fJ&\u0010>\u001a\u00020\u000e2\u0006\u0010?\u001a\u00020\u00122\u0006\u0010@\u001a\u00020\u00122\u0006\u0010A\u001a\u00020\u00122\u0006\u0010B\u001a\u00020\u0012J\u0010\u0010J\u001a\u00020\u00122\u0006\u0010K\u001a\u00020\u0006H\u0002J\b\u0010L\u001a\u00020\u000eH\u0002J\r\u0010M\u001a\u00020\u000eH\u0000¢\u0006\u0002\bNJ\f\u0010O\u001a\u00020\u000e*\u00020PH\u0016J%\u0010Q\u001a\u00020R2\u0006\u0010S\u001a\u00020T2\u0006\u0010U\u001a\u00020V2\u0006\u0010W\u001a\u00020X¢\u0006\u0004\bY\u0010ZJ#\u0010[\u001a\u00020R*\u00020T2\u0006\u0010U\u001a\u00020V2\u0006\u0010W\u001a\u00020XH\u0016¢\u0006\u0004\b\\\u0010ZJ\u001e\u0010]\u001a\u00020\u00142\u0006\u0010^\u001a\u00020_2\u0006\u0010U\u001a\u00020`2\u0006\u0010a\u001a\u00020\u0014J\u001c\u0010b\u001a\u00020\u0014*\u00020_2\u0006\u0010U\u001a\u00020`2\u0006\u0010a\u001a\u00020\u0014H\u0016J\u001e\u0010c\u001a\u00020\u00142\u0006\u0010^\u001a\u00020_2\u0006\u0010U\u001a\u00020`2\u0006\u0010d\u001a\u00020\u0014J\u001c\u0010e\u001a\u00020\u0014*\u00020_2\u0006\u0010U\u001a\u00020`2\u0006\u0010d\u001a\u00020\u0014H\u0016J\u001e\u0010f\u001a\u00020\u00142\u0006\u0010^\u001a\u00020_2\u0006\u0010U\u001a\u00020`2\u0006\u0010a\u001a\u00020\u0014J\u001c\u0010g\u001a\u00020\u0014*\u00020_2\u0006\u0010U\u001a\u00020`2\u0006\u0010a\u001a\u00020\u0014H\u0016J\u001e\u0010h\u001a\u00020\u00142\u0006\u0010^\u001a\u00020_2\u0006\u0010U\u001a\u00020`2\u0006\u0010d\u001a\u00020\u0014J\u001c\u0010i\u001a\u00020\u0014*\u00020_2\u0006\u0010U\u001a\u00020`2\u0006\u0010d\u001a\u00020\u0014H\u0016J\u000e\u0010j\u001a\u00020\u000e2\u0006\u0010k\u001a\u00020lJ\f\u0010m\u001a\u00020\u000e*\u00020lH\u0016R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0004\n\u0002\u0010&R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u0016\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u0018\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010\u001a\u001a\u0018\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u001b0\u0017\u0012\u0004\u0012\u00020\u000e\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010 \u001a\u0004\u0018\u00010!X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\"\u001a\u0010\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020\u000e\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\u00020\u00128VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b(\u0010)R\"\u0010*\u001a\u0010\u0012\u0004\u0012\u00020,\u0012\u0004\u0012\u00020\u0014\u0018\u00010+X\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\b-\u0010.R\u0010\u0010/\u001a\u0004\u0018\u000100X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00101\u001a\u0002008BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b2\u00103R\"\u0010C\u001a\u0016\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0D\u0012\u0004\u0012\u00020\u0012\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010E\u001a\u0004\u0018\u00010#X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bF\u0010G\"\u0004\bH\u0010I¨\u0006o"}, d2 = {"Landroidx/compose/foundation/text/modifiers/TextAnnotatedStringNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "text", "Landroidx/compose/ui/text/AnnotatedString;", "style", "Landroidx/compose/ui/text/TextStyle;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "onTextLayout", "Lkotlin/Function1;", "Landroidx/compose/ui/text/TextLayoutResult;", "", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "softWrap", "", "maxLines", "", "minLines", "placeholders", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/Placeholder;", "onPlaceholderLayout", "Landroidx/compose/ui/geometry/Rect;", "selectionController", "Landroidx/compose/foundation/text/modifiers/SelectionController;", "overrideColor", "Landroidx/compose/ui/graphics/ColorProducer;", "autoSize", "Landroidx/compose/foundation/text/TextAutoSize;", "onShowTranslation", "Landroidx/compose/foundation/text/modifiers/TextAnnotatedStringNode$TextSubstitutionValue;", "<init>", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/font/FontFamily$Resolver;Lkotlin/jvm/functions/Function1;IZIILjava/util/List;Lkotlin/jvm/functions/Function1;Landroidx/compose/foundation/text/modifiers/SelectionController;Landroidx/compose/ui/graphics/ColorProducer;Landroidx/compose/foundation/text/TextAutoSize;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "I", "shouldAutoInvalidate", "getShouldAutoInvalidate", "()Z", "baselineCache", "", "Landroidx/compose/ui/layout/AlignmentLine;", "getBaselineCache$annotations", "()V", "_layoutCache", "Landroidx/compose/foundation/text/modifiers/MultiParagraphLayoutCache;", "layoutCache", "getLayoutCache", "()Landroidx/compose/foundation/text/modifiers/MultiParagraphLayoutCache;", "density", "Landroidx/compose/ui/unit/Density;", "updateDraw", "color", "updateText", "updateText$foundation_release", "updateLayoutRelatedArgs", "updateLayoutRelatedArgs-y0k-MQk", "(Landroidx/compose/ui/text/TextStyle;Ljava/util/List;IIZLandroidx/compose/ui/text/font/FontFamily$Resolver;ILandroidx/compose/foundation/text/TextAutoSize;)Z", "updateCallbacks", "doInvalidations", "drawChanged", "textChanged", "layoutChanged", "callbacksChanged", "semanticsTextLayoutResult", "", "textSubstitution", "getTextSubstitution$foundation_release", "()Landroidx/compose/foundation/text/modifiers/TextAnnotatedStringNode$TextSubstitutionValue;", "setTextSubstitution$foundation_release", "(Landroidx/compose/foundation/text/modifiers/TextAnnotatedStringNode$TextSubstitutionValue;)V", "setSubstitution", "updatedText", "invalidateForTranslate", "clearSubstitution", "clearSubstitution$foundation_release", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "measureNonExtension", "Landroidx/compose/ui/layout/MeasureResult;", "measureScope", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measureNonExtension-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "measure", "measure-3p2s80s", "minIntrinsicWidthNonExtension", "intrinsicMeasureScope", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "height", "minIntrinsicWidth", "minIntrinsicHeightNonExtension", "width", "minIntrinsicHeight", "maxIntrinsicWidthNonExtension", "maxIntrinsicWidth", "maxIntrinsicHeightNonExtension", "maxIntrinsicHeight", "drawNonExtension", "contentDrawScope", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "draw", "TextSubstitutionValue", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextAnnotatedStringNode extends Modifier.Node implements LayoutModifierNode, DrawModifierNode, SemanticsModifierNode {
     public static final int $stable = 8;
@@ -90,7 +90,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
     }
 
     public /* synthetic */ TextAnnotatedStringNode(AnnotatedString annotatedString, TextStyle textStyle, FontFamily.Resolver resolver, Function1 function1, int i, boolean z, int i2, int i3, List list, Function1 function12, SelectionController selectionController, ColorProducer colorProducer, TextAutoSize textAutoSize, Function1 function13, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(annotatedString, textStyle, resolver, (i4 & 8) != 0 ? null : function1, (i4 & 16) != 0 ? TextOverflow.Companion.m6619getClipgIe3tQ8() : i, (i4 & 32) != 0 ? true : z, (i4 & 64) != 0 ? Integer.MAX_VALUE : i2, (i4 & 128) != 0 ? 1 : i3, (i4 & 256) != 0 ? null : list, (i4 & 512) != 0 ? null : function12, (i4 & 1024) != 0 ? null : selectionController, (i4 & 2048) != 0 ? null : colorProducer, (i4 & 4096) != 0 ? null : textAutoSize, (i4 & 8192) != 0 ? null : function13, null);
+        this(annotatedString, textStyle, resolver, (i4 & 8) != 0 ? null : function1, (i4 & 16) != 0 ? TextOverflow.Companion.m7186getClipgIe3tQ8() : i, (i4 & 32) != 0 ? true : z, (i4 & 64) != 0 ? Integer.MAX_VALUE : i2, (i4 & 128) != 0 ? 1 : i3, (i4 & 256) != 0 ? null : list, (i4 & 512) != 0 ? null : function12, (i4 & 1024) != 0 ? null : selectionController, (i4 & 2048) != 0 ? null : colorProducer, (i4 & 4096) != 0 ? null : textAutoSize, (i4 & 8192) != 0 ? null : function13, null);
     }
 
     private TextAnnotatedStringNode(AnnotatedString annotatedString, TextStyle textStyle, FontFamily.Resolver resolver, Function1<? super TextLayoutResult, Unit> function1, int i, boolean z, int i2, int i3, List<AnnotatedString.Range<Placeholder>> list, Function1<? super List<Rect>, Unit> function12, SelectionController selectionController, ColorProducer colorProducer, TextAutoSize textAutoSize, Function1<? super TextSubstitutionValue, Unit> function13) {
@@ -110,8 +110,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
         this.onShowTranslation = function13;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final MultiParagraphLayoutCache getLayoutCache() {
+    private final MultiParagraphLayoutCache getLayoutCache() {
         if (this._layoutCache == null) {
             this._layoutCache = new MultiParagraphLayoutCache(this.text, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines, this.placeholders, this.autoSize, null);
         }
@@ -151,7 +150,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
     }
 
     /* renamed from: updateLayoutRelatedArgs-y0k-MQk  reason: not valid java name */
-    public final boolean m1446updateLayoutRelatedArgsy0kMQk(TextStyle textStyle, List<AnnotatedString.Range<Placeholder>> list, int i, int i2, boolean z, FontFamily.Resolver resolver, int i3, TextAutoSize textAutoSize) {
+    public final boolean m1718updateLayoutRelatedArgsy0kMQk(TextStyle textStyle, List<AnnotatedString.Range<Placeholder>> list, int i, int i2, boolean z, FontFamily.Resolver resolver, int i3, TextAutoSize textAutoSize) {
         boolean z2 = !this.style.hasSameLayoutAffectingAttributes(textStyle);
         this.style = textStyle;
         if (!Intrinsics.areEqual(this.placeholders, list)) {
@@ -174,7 +173,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
             this.fontFamilyResolver = resolver;
             z2 = true;
         }
-        if (!TextOverflow.m6610equalsimpl0(this.overflow, i3)) {
+        if (!TextOverflow.m7177equalsimpl0(this.overflow, i3)) {
             this.overflow = i3;
             z2 = true;
         }
@@ -210,7 +209,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
 
     public final void doInvalidations(boolean z, boolean z2, boolean z3, boolean z4) {
         if (z2 || z3 || z4) {
-            getLayoutCache().m1429updateJ2qo7bo(this.text, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines, this.placeholders, this.autoSize);
+            getLayoutCache().m1701updateJ2qo7bo(this.text, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines, this.placeholders, this.autoSize);
         }
         if (isAttached()) {
             if (z2 || (z && this.semanticsTextLayoutResult != null)) {
@@ -227,7 +226,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
     }
 
     /* compiled from: TextAnnotatedStringNode.kt */
-    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0015\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B+\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\u0002\u0010\tJ\t\u0010\u0016\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0017\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0018\u001a\u00020\u0006HÆ\u0003J\u000b\u0010\u0019\u001a\u0004\u0018\u00010\bHÆ\u0003J3\u0010\u001a\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\bHÆ\u0001J\u0013\u0010\u001b\u001a\u00020\u00062\b\u0010\u001c\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u001d\u001a\u00020\u001eHÖ\u0001J\t\u0010\u001f\u001a\u00020 HÖ\u0001R\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\n\"\u0004\b\u000b\u0010\fR\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u001a\u0010\u0004\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0012\"\u0004\b\u0014\u0010\u0015¨\u0006!"}, d2 = {"Landroidx/compose/foundation/text/modifiers/TextAnnotatedStringNode$TextSubstitutionValue;", "", "original", "Landroidx/compose/ui/text/AnnotatedString;", "substitution", "isShowingSubstitution", "", "layoutCache", "Landroidx/compose/foundation/text/modifiers/MultiParagraphLayoutCache;", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/AnnotatedString;ZLandroidx/compose/foundation/text/modifiers/MultiParagraphLayoutCache;)V", "()Z", "setShowingSubstitution", "(Z)V", "getLayoutCache", "()Landroidx/compose/foundation/text/modifiers/MultiParagraphLayoutCache;", "setLayoutCache", "(Landroidx/compose/foundation/text/modifiers/MultiParagraphLayoutCache;)V", "getOriginal", "()Landroidx/compose/ui/text/AnnotatedString;", "getSubstitution", "setSubstitution", "(Landroidx/compose/ui/text/AnnotatedString;)V", "component1", "component2", "component3", "component4", "copy", "equals", "other", "hashCode", "", "toString", "", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0016\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B-\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\u0004\b\t\u0010\nJ\t\u0010\u0017\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0018\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0019\u001a\u00020\u0006HÆ\u0003J\u000b\u0010\u001a\u001a\u0004\u0018\u00010\bHÆ\u0003J3\u0010\u001b\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\bHÆ\u0001J\u0013\u0010\u001c\u001a\u00020\u00062\b\u0010\u001d\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u001e\u001a\u00020\u001fHÖ\u0001J\t\u0010 \u001a\u00020!HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u001a\u0010\u0004\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\f\"\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016¨\u0006\""}, d2 = {"Landroidx/compose/foundation/text/modifiers/TextAnnotatedStringNode$TextSubstitutionValue;", "", "original", "Landroidx/compose/ui/text/AnnotatedString;", "substitution", "isShowingSubstitution", "", "layoutCache", "Landroidx/compose/foundation/text/modifiers/MultiParagraphLayoutCache;", "<init>", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/AnnotatedString;ZLandroidx/compose/foundation/text/modifiers/MultiParagraphLayoutCache;)V", "getOriginal", "()Landroidx/compose/ui/text/AnnotatedString;", "getSubstitution", "setSubstitution", "(Landroidx/compose/ui/text/AnnotatedString;)V", "()Z", "setShowingSubstitution", "(Z)V", "getLayoutCache", "()Landroidx/compose/foundation/text/modifiers/MultiParagraphLayoutCache;", "setLayoutCache", "(Landroidx/compose/foundation/text/modifiers/MultiParagraphLayoutCache;)V", "component1", "component2", "component3", "component4", "copy", "equals", "other", "hashCode", "", "toString", "", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class TextSubstitutionValue {
         public static final int $stable = 8;
@@ -341,9 +340,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
         this.textSubstitution = textSubstitutionValue;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final boolean setSubstitution(AnnotatedString annotatedString) {
-        Unit unit;
+    private final boolean setSubstitution(AnnotatedString annotatedString) {
         TextSubstitutionValue textSubstitutionValue = this.textSubstitution;
         if (textSubstitutionValue != null) {
             if (Intrinsics.areEqual(annotatedString, textSubstitutionValue.getSubstitution())) {
@@ -352,12 +349,10 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
             textSubstitutionValue.setSubstitution(annotatedString);
             MultiParagraphLayoutCache layoutCache = textSubstitutionValue.getLayoutCache();
             if (layoutCache != null) {
-                layoutCache.m1429updateJ2qo7bo(annotatedString, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines, CollectionsKt.emptyList(), this.autoSize);
-                unit = Unit.INSTANCE;
-            } else {
-                unit = null;
+                layoutCache.m1701updateJ2qo7bo(annotatedString, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines, CollectionsKt.emptyList(), this.autoSize);
+                return true;
             }
-            return unit != null;
+            return false;
         }
         TextSubstitutionValue textSubstitutionValue2 = new TextSubstitutionValue(this.text, annotatedString, false, null, 12, null);
         MultiParagraphLayoutCache multiParagraphLayoutCache = new MultiParagraphLayoutCache(annotatedString, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines, CollectionsKt.emptyList(), this.autoSize, null);
@@ -367,8 +362,7 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void invalidateForTranslate() {
+    private final void invalidateForTranslate() {
         SemanticsModifierNodeKt.invalidateSemantics(this);
         LayoutModifierNodeKt.invalidateMeasurement(this);
         DrawModifierNodeKt.invalidateDraw(this);
@@ -382,37 +376,12 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
     public void applySemantics(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         Function1<? super List<TextLayoutResult>, Boolean> function1 = this.semanticsTextLayoutResult;
         if (function1 == null) {
-            function1 = new Function1<List<TextLayoutResult>, Boolean>() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$applySemantics$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(1);
-                }
-
-                /* JADX WARN: Removed duplicated region for block: B:13:0x00ba  */
-                /* JADX WARN: Removed duplicated region for block: B:14:0x00bc  */
+            function1 = new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
-                /*
-                    Code decompiled incorrectly, please refer to instructions dump.
-                */
-                public final Boolean invoke(List<TextLayoutResult> list) {
-                    MultiParagraphLayoutCache layoutCache;
-                    TextLayoutResult textLayoutResult;
-                    TextStyle textStyle;
-                    ColorProducer colorProducer;
-                    layoutCache = TextAnnotatedStringNode.this.getLayoutCache();
-                    TextLayoutResult layoutOrNull = layoutCache.getLayoutOrNull();
-                    if (layoutOrNull != null) {
-                        AnnotatedString text = layoutOrNull.getLayoutInput().getText();
-                        textStyle = TextAnnotatedStringNode.this.style;
-                        colorProducer = TextAnnotatedStringNode.this.overrideColor;
-                        textLayoutResult = TextLayoutResult.m6115copyO0kMr_c$default(layoutOrNull, new TextLayoutInput(text, TextStyle.m6167mergedA7vx0o$default(textStyle, colorProducer != null ? colorProducer.mo1864invoke0d7_KjU() : Color.Companion.m4114getUnspecified0d7_KjU(), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, null, 0, 0, null, null, 16777214, null), layoutOrNull.getLayoutInput().getPlaceholders(), layoutOrNull.getLayoutInput().getMaxLines(), layoutOrNull.getLayoutInput().getSoftWrap(), layoutOrNull.getLayoutInput().m6114getOverflowgIe3tQ8(), layoutOrNull.getLayoutInput().getDensity(), layoutOrNull.getLayoutInput().getLayoutDirection(), layoutOrNull.getLayoutInput().getFontFamilyResolver(), layoutOrNull.getLayoutInput().m6113getConstraintsmsEJaDk(), (DefaultConstructorMarker) null), 0L, 2, null);
-                        if (textLayoutResult != null) {
-                            list.add(textLayoutResult);
-                            return Boolean.valueOf(textLayoutResult == null);
-                        }
-                    }
-                    textLayoutResult = null;
-                    return Boolean.valueOf(textLayoutResult == null);
+                public final Object invoke(Object obj) {
+                    boolean applySemantics$lambda$5;
+                    applySemantics$lambda$5 = TextAnnotatedStringNode.applySemantics$lambda$5(TextAnnotatedStringNode.this, (List) obj);
+                    return Boolean.valueOf(applySemantics$lambda$5);
                 }
             };
             this.semanticsTextLayoutResult = function1;
@@ -423,122 +392,148 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
             SemanticsPropertiesKt.setTextSubstitution(semanticsPropertyReceiver, textSubstitutionValue.getSubstitution());
             SemanticsPropertiesKt.setShowingTextSubstitution(semanticsPropertyReceiver, textSubstitutionValue.isShowingSubstitution());
         }
-        SemanticsPropertiesKt.setTextSubstitution$default(semanticsPropertyReceiver, null, new Function1<AnnotatedString, Boolean>() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$applySemantics$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        SemanticsPropertiesKt.setTextSubstitution$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
-            public final Boolean invoke(AnnotatedString annotatedString) {
-                TextAnnotatedStringNode.this.setSubstitution(annotatedString);
-                TextAnnotatedStringNode.this.invalidateForTranslate();
-                return true;
+            public final Object invoke(Object obj) {
+                boolean applySemantics$lambda$6;
+                applySemantics$lambda$6 = TextAnnotatedStringNode.applySemantics$lambda$6(TextAnnotatedStringNode.this, (AnnotatedString) obj);
+                return Boolean.valueOf(applySemantics$lambda$6);
             }
         }, 1, null);
-        SemanticsPropertiesKt.showTextSubstitution$default(semanticsPropertyReceiver, null, new Function1<Boolean, Boolean>() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$applySemantics$3
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        SemanticsPropertiesKt.showTextSubstitution$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Boolean invoke(Boolean bool) {
-                return invoke(bool.booleanValue());
-            }
-
-            public final Boolean invoke(boolean z) {
-                Function1 function12;
-                if (TextAnnotatedStringNode.this.getTextSubstitution$foundation_release() != null) {
-                    function12 = TextAnnotatedStringNode.this.onShowTranslation;
-                    if (function12 != null) {
-                        TextAnnotatedStringNode.TextSubstitutionValue textSubstitution$foundation_release = TextAnnotatedStringNode.this.getTextSubstitution$foundation_release();
-                        Intrinsics.checkNotNull(textSubstitution$foundation_release);
-                        function12.invoke(textSubstitution$foundation_release);
-                    }
-                    TextAnnotatedStringNode.TextSubstitutionValue textSubstitution$foundation_release2 = TextAnnotatedStringNode.this.getTextSubstitution$foundation_release();
-                    if (textSubstitution$foundation_release2 != null) {
-                        textSubstitution$foundation_release2.setShowingSubstitution(z);
-                    }
-                    TextAnnotatedStringNode.this.invalidateForTranslate();
-                    return true;
-                }
-                return false;
+            public final Object invoke(Object obj) {
+                boolean applySemantics$lambda$7;
+                applySemantics$lambda$7 = TextAnnotatedStringNode.applySemantics$lambda$7(TextAnnotatedStringNode.this, ((Boolean) obj).booleanValue());
+                return Boolean.valueOf(applySemantics$lambda$7);
             }
         }, 1, null);
-        SemanticsPropertiesKt.clearTextSubstitution$default(semanticsPropertyReceiver, null, new Function0<Boolean>() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$applySemantics$4
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        SemanticsPropertiesKt.clearTextSubstitution$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
-            public final Boolean invoke() {
-                TextAnnotatedStringNode.this.clearSubstitution$foundation_release();
-                TextAnnotatedStringNode.this.invalidateForTranslate();
-                return true;
+            public final Object invoke() {
+                boolean applySemantics$lambda$8;
+                applySemantics$lambda$8 = TextAnnotatedStringNode.applySemantics$lambda$8(TextAnnotatedStringNode.this);
+                return Boolean.valueOf(applySemantics$lambda$8);
             }
         }, 1, null);
         SemanticsPropertiesKt.getTextLayoutResult$default(semanticsPropertyReceiver, null, function1, 1, null);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x00b1 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00b3 A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final boolean applySemantics$lambda$5(TextAnnotatedStringNode textAnnotatedStringNode, List list) {
+        TextLayoutResult textLayoutResult;
+        TextLayoutResult layoutOrNull = textAnnotatedStringNode.getLayoutCache().getLayoutOrNull();
+        if (layoutOrNull != null) {
+            AnnotatedString text = layoutOrNull.getLayoutInput().getText();
+            TextStyle textStyle = textAnnotatedStringNode.style;
+            ColorProducer colorProducer = textAnnotatedStringNode.overrideColor;
+            textLayoutResult = TextLayoutResult.m6681copyO0kMr_c$default(layoutOrNull, new TextLayoutInput(text, TextStyle.m6733mergedA7vx0o$default(textStyle, colorProducer != null ? colorProducer.mo2171invoke0d7_KjU() : Color.Companion.m4573getUnspecified0d7_KjU(), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, null, 0, 0, null, null, 16777214, null), layoutOrNull.getLayoutInput().getPlaceholders(), layoutOrNull.getLayoutInput().getMaxLines(), layoutOrNull.getLayoutInput().getSoftWrap(), layoutOrNull.getLayoutInput().m6680getOverflowgIe3tQ8(), layoutOrNull.getLayoutInput().getDensity(), layoutOrNull.getLayoutInput().getLayoutDirection(), layoutOrNull.getLayoutInput().getFontFamilyResolver(), layoutOrNull.getLayoutInput().m6679getConstraintsmsEJaDk(), (DefaultConstructorMarker) null), 0L, 2, null);
+            if (textLayoutResult != null) {
+                list.add(textLayoutResult);
+                return textLayoutResult == null;
+            }
+        }
+        textLayoutResult = null;
+        if (textLayoutResult == null) {
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$6(TextAnnotatedStringNode textAnnotatedStringNode, AnnotatedString annotatedString) {
+        textAnnotatedStringNode.setSubstitution(annotatedString);
+        textAnnotatedStringNode.invalidateForTranslate();
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$7(TextAnnotatedStringNode textAnnotatedStringNode, boolean z) {
+        TextSubstitutionValue textSubstitutionValue = textAnnotatedStringNode.textSubstitution;
+        if (textSubstitutionValue == null) {
+            return false;
+        }
+        Function1<? super TextSubstitutionValue, Unit> function1 = textAnnotatedStringNode.onShowTranslation;
+        if (function1 != null) {
+            Intrinsics.checkNotNull(textSubstitutionValue);
+            function1.invoke(textSubstitutionValue);
+        }
+        TextSubstitutionValue textSubstitutionValue2 = textAnnotatedStringNode.textSubstitution;
+        if (textSubstitutionValue2 != null) {
+            textSubstitutionValue2.setShowingSubstitution(z);
+        }
+        textAnnotatedStringNode.invalidateForTranslate();
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$8(TextAnnotatedStringNode textAnnotatedStringNode) {
+        textAnnotatedStringNode.clearSubstitution$foundation_release();
+        textAnnotatedStringNode.invalidateForTranslate();
+        return true;
+    }
+
     /* renamed from: measureNonExtension-3p2s80s  reason: not valid java name */
-    public final MeasureResult m1445measureNonExtension3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+    public final MeasureResult m1717measureNonExtension3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         return mo70measure3p2s80s(measureScope, measurable, j);
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        MultiParagraphLayoutCache layoutCache = getLayoutCache(measureScope);
-        boolean m1428layoutWithConstraintsK40F9xA = layoutCache.m1428layoutWithConstraintsK40F9xA(j, measureScope.getLayoutDirection());
-        TextLayoutResult textLayoutResult = layoutCache.getTextLayoutResult();
-        textLayoutResult.getMultiParagraph().getIntrinsics().getHasStaleResolvedFonts();
-        if (m1428layoutWithConstraintsK40F9xA) {
-            LayoutModifierNodeKt.invalidateLayer(this);
-            Function1<? super TextLayoutResult, Unit> function1 = this.onTextLayout;
-            if (function1 != null) {
-                function1.invoke(textLayoutResult);
+        Trace.beginSection("TextAnnotatedStringNode:measure");
+        try {
+            MultiParagraphLayoutCache layoutCache = getLayoutCache(measureScope);
+            boolean m1700layoutWithConstraintsK40F9xA = layoutCache.m1700layoutWithConstraintsK40F9xA(j, measureScope.getLayoutDirection());
+            TextLayoutResult textLayoutResult = layoutCache.getTextLayoutResult();
+            textLayoutResult.getMultiParagraph().getIntrinsics().getHasStaleResolvedFonts();
+            if (m1700layoutWithConstraintsK40F9xA) {
+                LayoutModifierNodeKt.invalidateLayer(this);
+                Function1<? super TextLayoutResult, Unit> function1 = this.onTextLayout;
+                if (function1 != null) {
+                    function1.invoke(textLayoutResult);
+                }
+                SelectionController selectionController = this.selectionController;
+                if (selectionController != null) {
+                    selectionController.updateTextLayout(textLayoutResult);
+                }
+                LinkedHashMap linkedHashMap = this.baselineCache;
+                if (linkedHashMap == null) {
+                    linkedHashMap = new LinkedHashMap(2);
+                }
+                linkedHashMap.put(AlignmentLineKt.getFirstBaseline(), Integer.valueOf(Math.round(textLayoutResult.getFirstBaseline())));
+                linkedHashMap.put(AlignmentLineKt.getLastBaseline(), Integer.valueOf(Math.round(textLayoutResult.getLastBaseline())));
+                this.baselineCache = linkedHashMap;
             }
-            SelectionController selectionController = this.selectionController;
-            if (selectionController != null) {
-                selectionController.updateTextLayout(textLayoutResult);
+            Function1<? super List<Rect>, Unit> function12 = this.onPlaceholderLayout;
+            if (function12 != null) {
+                function12.invoke(textLayoutResult.getPlaceholderRects());
             }
-            LinkedHashMap linkedHashMap = this.baselineCache;
-            if (linkedHashMap == null) {
-                linkedHashMap = new LinkedHashMap(2);
-            }
-            linkedHashMap.put(AlignmentLineKt.getFirstBaseline(), Integer.valueOf(Math.round(textLayoutResult.getFirstBaseline())));
-            linkedHashMap.put(AlignmentLineKt.getLastBaseline(), Integer.valueOf(Math.round(textLayoutResult.getLastBaseline())));
-            this.baselineCache = linkedHashMap;
+            final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.Companion.m7213fitPrioritizingWidthZbe2FdA((int) (textLayoutResult.m6684getSizeYbymL2g() >> 32), (int) (textLayoutResult.m6684getSizeYbymL2g() >> 32), (int) (textLayoutResult.m6684getSizeYbymL2g() & 4294967295L), (int) (textLayoutResult.m6684getSizeYbymL2g() & 4294967295L)));
+            int m6684getSizeYbymL2g = (int) (textLayoutResult.m6684getSizeYbymL2g() >> 32);
+            int m6684getSizeYbymL2g2 = (int) (textLayoutResult.m6684getSizeYbymL2g() & 4294967295L);
+            Map<AlignmentLine, Integer> map = this.baselineCache;
+            Intrinsics.checkNotNull(map);
+            return measureScope.layout(m6684getSizeYbymL2g, m6684getSizeYbymL2g2, map, new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    Unit measure_3p2s80s$lambda$10$lambda$9;
+                    measure_3p2s80s$lambda$10$lambda$9 = TextAnnotatedStringNode.measure_3p2s80s$lambda$10$lambda$9(Placeable.this, (Placeable.PlacementScope) obj);
+                    return measure_3p2s80s$lambda$10$lambda$9;
+                }
+            });
+        } finally {
+            Trace.endSection();
         }
-        Function1<? super List<Rect>, Unit> function12 = this.onPlaceholderLayout;
-        if (function12 != null) {
-            function12.invoke(textLayoutResult.getPlaceholderRects());
-        }
-        final Placeable mo5438measureBRTryo0 = measurable.mo5438measureBRTryo0(Constraints.Companion.m6646fitPrioritizingWidthZbe2FdA((int) (textLayoutResult.m6118getSizeYbymL2g() >> 32), (int) (textLayoutResult.m6118getSizeYbymL2g() >> 32), (int) (textLayoutResult.m6118getSizeYbymL2g() & 4294967295L), (int) (textLayoutResult.m6118getSizeYbymL2g() & 4294967295L)));
-        int m6118getSizeYbymL2g = (int) (textLayoutResult.m6118getSizeYbymL2g() >> 32);
-        int m6118getSizeYbymL2g2 = (int) (textLayoutResult.m6118getSizeYbymL2g() & 4294967295L);
-        Map<AlignmentLine, Integer> map = this.baselineCache;
-        Intrinsics.checkNotNull(map);
-        return measureScope.layout(m6118getSizeYbymL2g, m6118getSizeYbymL2g2, map, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.foundation.text.modifiers.TextAnnotatedStringNode$measure$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
+    }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                invoke2(placementScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Placeable.PlacementScope placementScope) {
-                Placeable.PlacementScope.place$default(placementScope, Placeable.this, 0, 0, 0.0f, 4, null);
-            }
-        });
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit measure_3p2s80s$lambda$10$lambda$9(Placeable placeable, Placeable.PlacementScope placementScope) {
+        Placeable.PlacementScope.place$default(placementScope, placeable, 0, 0, 0.0f, 4, null);
+        return Unit.INSTANCE;
     }
 
     public final int minIntrinsicWidthNonExtension(IntrinsicMeasureScope intrinsicMeasureScope, IntrinsicMeasurable intrinsicMeasurable, int i) {
@@ -592,11 +587,11 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
             TextLayoutResult textLayoutResult = getLayoutCache(contentDrawScope).getTextLayoutResult();
             MultiParagraph multiParagraph = textLayoutResult.getMultiParagraph();
             boolean z = true;
-            boolean z2 = textLayoutResult.getHasVisualOverflow() && !TextOverflow.m6610equalsimpl0(this.overflow, TextOverflow.Companion.m6623getVisiblegIe3tQ8());
+            boolean z2 = textLayoutResult.getHasVisualOverflow() && !TextOverflow.m7177equalsimpl0(this.overflow, TextOverflow.Companion.m7190getVisiblegIe3tQ8());
             if (z2) {
-                Rect m3877Recttz77jQw = RectKt.m3877Recttz77jQw(Offset.Companion.m3853getZeroF1C5BW0(), Size.m3897constructorimpl((Float.floatToRawIntBits((int) (textLayoutResult.m6118getSizeYbymL2g() >> 32)) << 32) | (Float.floatToRawIntBits((int) (textLayoutResult.m6118getSizeYbymL2g() & 4294967295L)) & 4294967295L)));
+                Rect m4333Recttz77jQw = RectKt.m4333Recttz77jQw(Offset.Companion.m4309getZeroF1C5BW0(), Size.m4353constructorimpl((Float.floatToRawIntBits((int) (textLayoutResult.m6684getSizeYbymL2g() >> 32)) << 32) | (Float.floatToRawIntBits((int) (textLayoutResult.m6684getSizeYbymL2g() & 4294967295L)) & 4294967295L)));
                 canvas.save();
-                Canvas.m4051clipRectmtrdDE$default(canvas, m3877Recttz77jQw, 0, 2, null);
+                Canvas.m4510clipRectmtrdDE$default(canvas, m4333Recttz77jQw, 0, 2, null);
             }
             try {
                 TextDecoration textDecoration = this.style.getTextDecoration();
@@ -616,18 +611,18 @@ public final class TextAnnotatedStringNode extends Modifier.Node implements Layo
                 DrawStyle drawStyle2 = drawStyle;
                 Brush brush = this.style.getBrush();
                 if (brush != null) {
-                    MultiParagraph.m5996painthn5TExg$default(multiParagraph, canvas, brush, this.style.getAlpha(), shadow2, textDecoration2, drawStyle2, 0, 64, null);
+                    MultiParagraph.m6552painthn5TExg$default(multiParagraph, canvas, brush, this.style.getAlpha(), shadow2, textDecoration2, drawStyle2, 0, 64, null);
                 } else {
                     ColorProducer colorProducer = this.overrideColor;
-                    long mo1864invoke0d7_KjU = colorProducer != null ? colorProducer.mo1864invoke0d7_KjU() : Color.Companion.m4114getUnspecified0d7_KjU();
-                    if (mo1864invoke0d7_KjU == 16) {
-                        if (this.style.m6177getColor0d7_KjU() != 16) {
-                            mo1864invoke0d7_KjU = this.style.m6177getColor0d7_KjU();
+                    long mo2171invoke0d7_KjU = colorProducer != null ? colorProducer.mo2171invoke0d7_KjU() : Color.Companion.m4573getUnspecified0d7_KjU();
+                    if (mo2171invoke0d7_KjU == 16) {
+                        if (this.style.m6743getColor0d7_KjU() != 16) {
+                            mo2171invoke0d7_KjU = this.style.m6743getColor0d7_KjU();
                         } else {
-                            mo1864invoke0d7_KjU = Color.Companion.m4104getBlack0d7_KjU();
+                            mo2171invoke0d7_KjU = Color.Companion.m4563getBlack0d7_KjU();
                         }
                     }
-                    multiParagraph.m6001paintLG529CI(canvas, (r14 & 2) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : mo1864invoke0d7_KjU, (r14 & 4) != 0 ? null : shadow2, (r14 & 8) != 0 ? null : textDecoration2, (r14 & 16) == 0 ? drawStyle2 : null, (r14 & 32) != 0 ? DrawScope.Companion.m4642getDefaultBlendMode0nO6VwU() : 0);
+                    multiParagraph.m6557paintLG529CI(canvas, (r14 & 2) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : mo2171invoke0d7_KjU, (r14 & 4) != 0 ? null : shadow2, (r14 & 8) != 0 ? null : textDecoration2, (r14 & 16) == 0 ? drawStyle2 : null, (r14 & 32) != 0 ? DrawScope.Companion.m5118getDefaultBlendMode0nO6VwU() : 0);
                 }
                 TextSubstitutionValue textSubstitutionValue = this.textSubstitution;
                 if (!((textSubstitutionValue == null || !textSubstitutionValue.isShowingSubstitution()) ? TextAnnotatedStringNodeKt.hasLinks(this.text) : false)) {

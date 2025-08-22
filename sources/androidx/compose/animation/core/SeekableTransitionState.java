@@ -1,7 +1,6 @@
 package androidx.compose.animation.core;
 
 import androidx.collection.MutableObjectList;
-import androidx.compose.animation.core.SeekableTransitionState;
 import androidx.compose.runtime.MonotonicFrameClockKt;
 import androidx.compose.runtime.MutableFloatState;
 import androidx.compose.runtime.MutableState;
@@ -29,7 +28,7 @@ import kotlinx.coroutines.CancellableContinuationImpl;
 import kotlinx.coroutines.sync.Mutex;
 import kotlinx.coroutines.sync.MutexKt;
 /* compiled from: Transition.kt */
-@Metadata(d1 = {"\u0000d\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u001a\b\u0007\u0018\u0000 X*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u0002:\u0002XYB\r\u0012\u0006\u0010\u0003\u001a\u00028\u0000¢\u0006\u0002\u0010\u0004J\u000e\u0010<\u001a\u00020\bH\u0082@¢\u0006\u0002\u0010=J*\u0010>\u001a\u00020\b2\b\b\u0002\u00101\u001a\u00028\u00002\u0010\b\u0002\u0010?\u001a\n\u0012\u0004\u0012\u00020!\u0018\u00010@H\u0086@¢\u0006\u0002\u0010AJ\u000e\u0010B\u001a\u00020\bH\u0082@¢\u0006\u0002\u0010=J\b\u0010C\u001a\u00020\bH\u0002J\b\u0010D\u001a\u00020\bH\u0002J\r\u0010E\u001a\u00020\bH\u0000¢\u0006\u0002\bFJ\r\u0010G\u001a\u00020\bH\u0000¢\u0006\u0002\bHJ\u0018\u0010I\u001a\u00020\b2\u0006\u0010J\u001a\u00020\u00192\u0006\u0010K\u001a\u00020\u0007H\u0002J\u000e\u0010L\u001a\u00020\bH\u0082@¢\u0006\u0002\u0010=J\"\u0010M\u001a\u00020\b2\b\b\u0001\u0010#\u001a\u00020!2\b\b\u0002\u00101\u001a\u00028\u0000H\u0086@¢\u0006\u0002\u0010NJ\b\u0010O\u001a\u00020\bH\u0002J\u0016\u0010P\u001a\u00020\b2\u0006\u00101\u001a\u00028\u0000H\u0086@¢\u0006\u0002\u0010QJ\u001b\u0010R\u001a\u00020\b2\f\u0010:\u001a\b\u0012\u0004\u0012\u00028\u00000;H\u0010¢\u0006\u0002\bSJ\r\u0010T\u001a\u00020\bH\u0010¢\u0006\u0002\bUJ\u000e\u0010V\u001a\u00020\bH\u0082@¢\u0006\u0002\u0010=J\u000e\u0010W\u001a\u00020\bH\u0082@¢\u0006\u0002\u0010=R\u001a\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\t\u001a\u00028\u0000X\u0080\u000e¢\u0006\u0010\n\u0002\u0010\r\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\u0004R\"\u0010\u000e\u001a\n\u0012\u0004\u0012\u00028\u0000\u0018\u00010\u000fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u0015X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0010\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R+\u0010\u001b\u001a\u00028\u00002\u0006\u0010\u001a\u001a\u00028\u00008V@PX\u0096\u008e\u0002¢\u0006\u0012\n\u0004\b\u001e\u0010\u001f\u001a\u0004\b\u001c\u0010\u000b\"\u0004\b\u001d\u0010\u0004R\u000e\u0010 \u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R+\u0010#\u001a\u00020!2\u0006\u0010\u001a\u001a\u00020!8G@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b(\u0010)\u001a\u0004\b$\u0010%\"\u0004\b&\u0010'R\u0014\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00190+X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\b\u0012\u0004\u0012\u00020\b00X\u0082\u0004¢\u0006\u0002\n\u0000R+\u00101\u001a\u00028\u00002\u0006\u0010\u001a\u001a\u00028\u00008V@PX\u0096\u008e\u0002¢\u0006\u0012\n\u0004\b4\u0010\u001f\u001a\u0004\b2\u0010\u000b\"\u0004\b3\u0010\u0004R\u001a\u00105\u001a\u00020\u0007X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b6\u00107\"\u0004\b8\u00109R\u0016\u0010:\u001a\n\u0012\u0004\u0012\u00028\u0000\u0018\u00010;X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006Z"}, d2 = {"Landroidx/compose/animation/core/SeekableTransitionState;", ExifInterface.LATITUDE_SOUTH, "Landroidx/compose/animation/core/TransitionState;", "initialState", "(Ljava/lang/Object;)V", "animateOneFrameLambda", "Lkotlin/Function1;", "", "", "composedTargetState", "getComposedTargetState$animation_core_release", "()Ljava/lang/Object;", "setComposedTargetState$animation_core_release", "Ljava/lang/Object;", "compositionContinuation", "Lkotlinx/coroutines/CancellableContinuation;", "getCompositionContinuation$animation_core_release", "()Lkotlinx/coroutines/CancellableContinuation;", "setCompositionContinuation$animation_core_release", "(Lkotlinx/coroutines/CancellableContinuation;)V", "compositionContinuationMutex", "Lkotlinx/coroutines/sync/Mutex;", "getCompositionContinuationMutex$animation_core_release", "()Lkotlinx/coroutines/sync/Mutex;", "currentAnimation", "Landroidx/compose/animation/core/SeekableTransitionState$SeekingAnimationState;", "<set-?>", "currentState", "getCurrentState", "setCurrentState$animation_core_release", "currentState$delegate", "Landroidx/compose/runtime/MutableState;", "durationScale", "", "firstFrameLambda", "fraction", "getFraction", "()F", "setFraction", "(F)V", "fraction$delegate", "Landroidx/compose/runtime/MutableFloatState;", "initialValueAnimations", "Landroidx/collection/MutableObjectList;", "lastFrameTimeNanos", "mutatorMutex", "Landroidx/compose/animation/core/MutatorMutex;", "recalculateTotalDurationNanos", "Lkotlin/Function0;", "targetState", "getTargetState", "setTargetState$animation_core_release", "targetState$delegate", "totalDurationNanos", "getTotalDurationNanos$animation_core_release", "()J", "setTotalDurationNanos$animation_core_release", "(J)V", "transition", "Landroidx/compose/animation/core/Transition;", "animateOneFrame", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "animateTo", "animationSpec", "Landroidx/compose/animation/core/FiniteAnimationSpec;", "(Ljava/lang/Object;Landroidx/compose/animation/core/FiniteAnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "doOneFrame", "endAllAnimations", "moveAnimationToInitialState", "observeTotalDuration", "observeTotalDuration$animation_core_release", "onTotalDurationChanged", "onTotalDurationChanged$animation_core_release", "recalculateAnimationValue", "animation", "deltaPlayTimeNanos", "runAnimations", "seekTo", "(FLjava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "seekToFraction", "snapTo", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "transitionConfigured", "transitionConfigured$animation_core_release", "transitionRemoved", "transitionRemoved$animation_core_release", "waitForComposition", "waitForCompositionAfterTargetStateChange", "Companion", "SeekingAnimationState", "animation-core_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0010\u0007\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0002\b\r\b\u0007\u0018\u0000 Z*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u0002:\u0002YZB\u000f\u0012\u0006\u0010\u0003\u001a\u00028\u0000¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010=\u001a\u00020\u001fH\u0002J\u000e\u0010>\u001a\u00020\u001fH\u0082@¢\u0006\u0002\u0010?J\u000e\u0010@\u001a\u00020\u001fH\u0082@¢\u0006\u0002\u0010?J\u000e\u0010A\u001a\u00020\u001fH\u0082@¢\u0006\u0002\u0010?J\u0018\u0010B\u001a\u00020\u001f2\u0006\u0010C\u001a\u0002072\u0006\u0010D\u001a\u00020\u0018H\u0002J\u0016\u0010E\u001a\u00020\u001f2\u0006\u0010\u0007\u001a\u00028\u0000H\u0086@¢\u0006\u0002\u0010FJ\"\u0010G\u001a\u00020\u001f2\b\b\u0001\u0010!\u001a\u00020 2\b\b\u0002\u0010\u0007\u001a\u00028\u0000H\u0086@¢\u0006\u0002\u0010HJ\u000e\u0010I\u001a\u00020\u001fH\u0082@¢\u0006\u0002\u0010?J\u000e\u0010J\u001a\u00020\u001fH\u0082@¢\u0006\u0002\u0010?J\b\u0010K\u001a\u00020\u001fH\u0002J*\u0010L\u001a\u00020\u001f2\b\b\u0002\u0010\u0007\u001a\u00028\u00002\u0010\b\u0002\u0010M\u001a\n\u0012\u0004\u0012\u00020 \u0018\u00010NH\u0086@¢\u0006\u0002\u0010OJ\u001b\u0010P\u001a\u00020\u001f2\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00028\u00000\u0016H\u0010¢\u0006\u0002\bQJ\r\u0010R\u001a\u00020\u001fH\u0010¢\u0006\u0002\bSJ\r\u0010T\u001a\u00020\u001fH\u0000¢\u0006\u0002\bUJ\r\u0010V\u001a\u00020\u001fH\u0000¢\u0006\u0002\bWJ\b\u0010X\u001a\u00020\u001fH\u0002R+\u0010\u0007\u001a\u00028\u00002\u0006\u0010\u0006\u001a\u00028\u00008V@PX\u0096\u008e\u0002¢\u0006\u0012\n\u0004\b\u000b\u0010\f\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u0005R+\u0010\r\u001a\u00028\u00002\u0006\u0010\u0006\u001a\u00028\u00008V@PX\u0096\u008e\u0002¢\u0006\u0012\n\u0004\b\u0010\u0010\f\u001a\u0004\b\u000e\u0010\t\"\u0004\b\u000f\u0010\u0005R\u001c\u0010\u0011\u001a\u00028\u0000X\u0080\u000e¢\u0006\u0010\n\u0002\u0010\u0014\u001a\u0004\b\u0012\u0010\t\"\u0004\b\u0013\u0010\u0005R\u0016\u0010\u0015\u001a\n\u0012\u0004\u0012\u00028\u0000\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0017\u001a\u00020\u0018X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u001a\"\u0004\b\u001b\u0010\u001cR\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R+\u0010!\u001a\u00020 2\u0006\u0010\u0006\u001a\u00020 8G@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b&\u0010'\u001a\u0004\b\"\u0010#\"\u0004\b$\u0010%R\"\u0010(\u001a\n\u0012\u0004\u0012\u00028\u0000\u0018\u00010)X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-R\u0014\u0010.\u001a\u00020/X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b0\u00101R\u000e\u00102\u001a\u000203X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00105\u001a\b\u0012\u0004\u0012\u00020706X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u00108\u001a\u0004\u0018\u000107X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u00109\u001a\u000e\u0012\u0004\u0012\u00020\u0018\u0012\u0004\u0012\u00020\u001f0:X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010;\u001a\u00020 X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010<\u001a\u000e\u0012\u0004\u0012\u00020\u0018\u0012\u0004\u0012\u00020\u001f0:X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006["}, d2 = {"Landroidx/compose/animation/core/SeekableTransitionState;", ExifInterface.LATITUDE_SOUTH, "Landroidx/compose/animation/core/TransitionState;", "initialState", "<init>", "(Ljava/lang/Object;)V", "<set-?>", "targetState", "getTargetState", "()Ljava/lang/Object;", "setTargetState$animation_core", "targetState$delegate", "Landroidx/compose/runtime/MutableState;", "currentState", "getCurrentState", "setCurrentState$animation_core", "currentState$delegate", "composedTargetState", "getComposedTargetState$animation_core", "setComposedTargetState$animation_core", "Ljava/lang/Object;", "transition", "Landroidx/compose/animation/core/Transition;", "totalDurationNanos", "", "getTotalDurationNanos$animation_core", "()J", "setTotalDurationNanos$animation_core", "(J)V", "recalculateTotalDurationNanos", "Lkotlin/Function0;", "", "", "fraction", "getFraction", "()F", "setFraction", "(F)V", "fraction$delegate", "Landroidx/compose/runtime/MutableFloatState;", "compositionContinuation", "Lkotlinx/coroutines/CancellableContinuation;", "getCompositionContinuation$animation_core", "()Lkotlinx/coroutines/CancellableContinuation;", "setCompositionContinuation$animation_core", "(Lkotlinx/coroutines/CancellableContinuation;)V", "compositionContinuationMutex", "Lkotlinx/coroutines/sync/Mutex;", "getCompositionContinuationMutex$animation_core", "()Lkotlinx/coroutines/sync/Mutex;", "mutatorMutex", "Landroidx/compose/animation/core/MutatorMutex;", "lastFrameTimeNanos", "initialValueAnimations", "Landroidx/collection/MutableObjectList;", "Landroidx/compose/animation/core/SeekableTransitionState$SeekingAnimationState;", "currentAnimation", "firstFrameLambda", "Lkotlin/Function1;", "durationScale", "animateOneFrameLambda", "endAllAnimations", "runAnimations", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "doOneFrame", "animateOneFrame", "recalculateAnimationValue", "animation", "deltaPlayTimeNanos", "snapTo", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "seekTo", "(FLjava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "waitForCompositionAfterTargetStateChange", "waitForComposition", "moveAnimationToInitialState", "animateTo", "animationSpec", "Landroidx/compose/animation/core/FiniteAnimationSpec;", "(Ljava/lang/Object;Landroidx/compose/animation/core/FiniteAnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "transitionConfigured", "transitionConfigured$animation_core", "transitionRemoved", "transitionRemoved$animation_core", "observeTotalDuration", "observeTotalDuration$animation_core", "onTotalDurationChanged", "onTotalDurationChanged$animation_core", "seekToFraction", "SeekingAnimationState", "Companion", "animation-core"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SeekableTransitionState<S> extends TransitionState<S> {
     private final Function1<Long, Unit> animateOneFrameLambda;
@@ -62,28 +61,12 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(s, null, 2, null);
         this.currentState$delegate = mutableStateOf$default2;
         this.composedTargetState = s;
-        this.recalculateTotalDurationNanos = new Function0<Unit>(this) { // from class: androidx.compose.animation.core.SeekableTransitionState$recalculateTotalDurationNanos$1
-            final /* synthetic */ SeekableTransitionState<S> this$0;
-
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-                this.this$0 = this;
-            }
-
+        this.recalculateTotalDurationNanos = new Function0() { // from class: androidx.compose.animation.core.SeekableTransitionState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                Transition transition;
-                SeekableTransitionState<S> seekableTransitionState = this.this$0;
-                transition = ((SeekableTransitionState) seekableTransitionState).transition;
-                seekableTransitionState.setTotalDurationNanos$animation_core_release(transition != null ? transition.getTotalDurationNanos() : 0L);
+            public final Object invoke() {
+                Unit recalculateTotalDurationNanos$lambda$0;
+                recalculateTotalDurationNanos$lambda$0 = SeekableTransitionState.recalculateTotalDurationNanos$lambda$0(SeekableTransitionState.this);
+                return recalculateTotalDurationNanos$lambda$0;
             }
         };
         this.fraction$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
@@ -91,103 +74,20 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         this.mutatorMutex = new MutatorMutex();
         this.lastFrameTimeNanos = Long.MIN_VALUE;
         this.initialValueAnimations = new MutableObjectList<>(0, 1, null);
-        this.firstFrameLambda = new Function1<Long, Unit>(this) { // from class: androidx.compose.animation.core.SeekableTransitionState$firstFrameLambda$1
-            final /* synthetic */ SeekableTransitionState<S> this$0;
-
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-                this.this$0 = this;
-            }
-
+        this.firstFrameLambda = new Function1() { // from class: androidx.compose.animation.core.SeekableTransitionState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                invoke(l.longValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(long j) {
-                ((SeekableTransitionState) this.this$0).lastFrameTimeNanos = j;
+            public final Object invoke(Object obj) {
+                Unit firstFrameLambda$lambda$1;
+                firstFrameLambda$lambda$1 = SeekableTransitionState.firstFrameLambda$lambda$1(SeekableTransitionState.this, ((Long) obj).longValue());
+                return firstFrameLambda$lambda$1;
             }
         };
-        this.animateOneFrameLambda = new Function1<Long, Unit>(this) { // from class: androidx.compose.animation.core.SeekableTransitionState$animateOneFrameLambda$1
-            final /* synthetic */ SeekableTransitionState<S> this$0;
-
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-                this.this$0 = this;
-            }
-
+        this.animateOneFrameLambda = new Function1() { // from class: androidx.compose.animation.core.SeekableTransitionState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                invoke(l.longValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(long j) {
-                long j2;
-                float f;
-                MutableObjectList mutableObjectList;
-                SeekableTransitionState.SeekingAnimationState seekingAnimationState;
-                MutableObjectList mutableObjectList2;
-                Transition transition;
-                MutableObjectList mutableObjectList3;
-                j2 = ((SeekableTransitionState) this.this$0).lastFrameTimeNanos;
-                ((SeekableTransitionState) this.this$0).lastFrameTimeNanos = j;
-                double d = j - j2;
-                f = ((SeekableTransitionState) this.this$0).durationScale;
-                long roundToLong = MathKt.roundToLong(d / f);
-                mutableObjectList = ((SeekableTransitionState) this.this$0).initialValueAnimations;
-                if (mutableObjectList.isNotEmpty()) {
-                    mutableObjectList2 = ((SeekableTransitionState) this.this$0).initialValueAnimations;
-                    MutableObjectList mutableObjectList4 = mutableObjectList2;
-                    SeekableTransitionState<S> seekableTransitionState = this.this$0;
-                    Object[] objArr = mutableObjectList4.content;
-                    int i = mutableObjectList4._size;
-                    int i2 = 0;
-                    for (int i3 = 0; i3 < i; i3++) {
-                        SeekableTransitionState.SeekingAnimationState seekingAnimationState2 = (SeekableTransitionState.SeekingAnimationState) objArr[i3];
-                        seekableTransitionState.recalculateAnimationValue(seekingAnimationState2, roundToLong);
-                        seekingAnimationState2.setComplete(true);
-                    }
-                    transition = ((SeekableTransitionState) this.this$0).transition;
-                    if (transition != null) {
-                        transition.updateInitialValues$animation_core_release();
-                    }
-                    mutableObjectList3 = ((SeekableTransitionState) this.this$0).initialValueAnimations;
-                    int i4 = mutableObjectList3._size;
-                    Object[] objArr2 = mutableObjectList3.content;
-                    IntRange until = RangesKt.until(0, mutableObjectList3._size);
-                    int first = until.getFirst();
-                    int last = until.getLast();
-                    if (first <= last) {
-                        while (true) {
-                            objArr2[first - i2] = objArr2[first];
-                            if (((SeekableTransitionState.SeekingAnimationState) objArr2[first]).isComplete()) {
-                                i2++;
-                            }
-                            if (first == last) {
-                                break;
-                            }
-                            first++;
-                        }
-                    }
-                    ArraysKt.fill(objArr2, (Object) null, i4 - i2, i4);
-                    mutableObjectList3._size -= i2;
-                }
-                seekingAnimationState = ((SeekableTransitionState) this.this$0).currentAnimation;
-                if (seekingAnimationState != null) {
-                    seekingAnimationState.setDurationNanos(this.this$0.getTotalDurationNanos$animation_core_release());
-                    this.this$0.recalculateAnimationValue(seekingAnimationState, roundToLong);
-                    this.this$0.setFraction(seekingAnimationState.getValue());
-                    if (seekingAnimationState.getValue() == 1.0f) {
-                        ((SeekableTransitionState) this.this$0).currentAnimation = null;
-                    }
-                    this.this$0.seekToFraction();
-                }
+            public final Object invoke(Object obj) {
+                Unit animateOneFrameLambda$lambda$4;
+                animateOneFrameLambda$lambda$4 = SeekableTransitionState.animateOneFrameLambda$lambda$4(SeekableTransitionState.this, ((Long) obj).longValue());
+                return animateOneFrameLambda$lambda$4;
             }
         };
     }
@@ -198,7 +98,7 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
     }
 
     @Override // androidx.compose.animation.core.TransitionState
-    public void setTargetState$animation_core_release(S s) {
+    public void setTargetState$animation_core(S s) {
         this.targetState$delegate.setValue(s);
     }
 
@@ -208,24 +108,31 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
     }
 
     @Override // androidx.compose.animation.core.TransitionState
-    public void setCurrentState$animation_core_release(S s) {
+    public void setCurrentState$animation_core(S s) {
         this.currentState$delegate.setValue(s);
     }
 
-    public final S getComposedTargetState$animation_core_release() {
+    public final S getComposedTargetState$animation_core() {
         return this.composedTargetState;
     }
 
-    public final void setComposedTargetState$animation_core_release(S s) {
+    public final void setComposedTargetState$animation_core(S s) {
         this.composedTargetState = s;
     }
 
-    public final long getTotalDurationNanos$animation_core_release() {
+    public final long getTotalDurationNanos$animation_core() {
         return this.totalDurationNanos;
     }
 
-    public final void setTotalDurationNanos$animation_core_release(long j) {
+    public final void setTotalDurationNanos$animation_core(long j) {
         this.totalDurationNanos = j;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit recalculateTotalDurationNanos$lambda$0(SeekableTransitionState seekableTransitionState) {
+        Transition<S> transition = seekableTransitionState.transition;
+        seekableTransitionState.totalDurationNanos = transition != null ? transition.getTotalDurationNanos() : 0L;
+        return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -237,23 +144,81 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         return this.fraction$delegate.getFloatValue();
     }
 
-    public final CancellableContinuation<S> getCompositionContinuation$animation_core_release() {
+    public final CancellableContinuation<S> getCompositionContinuation$animation_core() {
         return (CancellableContinuation<? super S>) this.compositionContinuation;
     }
 
-    public final void setCompositionContinuation$animation_core_release(CancellableContinuation<? super S> cancellableContinuation) {
+    public final void setCompositionContinuation$animation_core(CancellableContinuation<? super S> cancellableContinuation) {
         this.compositionContinuation = cancellableContinuation;
     }
 
-    public final Mutex getCompositionContinuationMutex$animation_core_release() {
+    public final Mutex getCompositionContinuationMutex$animation_core() {
         return this.compositionContinuationMutex;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit firstFrameLambda$lambda$1(SeekableTransitionState seekableTransitionState, long j) {
+        seekableTransitionState.lastFrameTimeNanos = j;
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit animateOneFrameLambda$lambda$4(SeekableTransitionState seekableTransitionState, long j) {
+        seekableTransitionState.lastFrameTimeNanos = j;
+        long roundToLong = MathKt.roundToLong((j - seekableTransitionState.lastFrameTimeNanos) / seekableTransitionState.durationScale);
+        if (seekableTransitionState.initialValueAnimations.isNotEmpty()) {
+            MutableObjectList<SeekingAnimationState> mutableObjectList = seekableTransitionState.initialValueAnimations;
+            Object[] objArr = mutableObjectList.content;
+            int i = mutableObjectList._size;
+            int i2 = 0;
+            for (int i3 = 0; i3 < i; i3++) {
+                SeekingAnimationState seekingAnimationState = (SeekingAnimationState) objArr[i3];
+                seekableTransitionState.recalculateAnimationValue(seekingAnimationState, roundToLong);
+                seekingAnimationState.setComplete(true);
+            }
+            Transition<S> transition = seekableTransitionState.transition;
+            if (transition != null) {
+                transition.updateInitialValues$animation_core();
+            }
+            MutableObjectList<SeekingAnimationState> mutableObjectList2 = seekableTransitionState.initialValueAnimations;
+            int i4 = mutableObjectList2._size;
+            Object[] objArr2 = mutableObjectList2.content;
+            IntRange until = RangesKt.until(0, mutableObjectList2._size);
+            int first = until.getFirst();
+            int last = until.getLast();
+            if (first <= last) {
+                while (true) {
+                    objArr2[first - i2] = objArr2[first];
+                    if (((SeekingAnimationState) objArr2[first]).isComplete()) {
+                        i2++;
+                    }
+                    if (first == last) {
+                        break;
+                    }
+                    first++;
+                }
+            }
+            ArraysKt.fill(objArr2, (Object) null, i4 - i2, i4);
+            mutableObjectList2._size -= i2;
+        }
+        SeekingAnimationState seekingAnimationState2 = seekableTransitionState.currentAnimation;
+        if (seekingAnimationState2 != null) {
+            seekingAnimationState2.setDurationNanos(seekableTransitionState.totalDurationNanos);
+            seekableTransitionState.recalculateAnimationValue(seekingAnimationState2, roundToLong);
+            seekableTransitionState.setFraction(seekingAnimationState2.getValue());
+            if (seekingAnimationState2.getValue() == 1.0f) {
+                seekableTransitionState.currentAnimation = null;
+            }
+            seekableTransitionState.seekToFraction();
+        }
+        return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void endAllAnimations() {
         Transition<S> transition = this.transition;
         if (transition != null) {
-            transition.clearInitialAnimations$animation_core_release();
+            transition.clearInitialAnimations$animation_core();
         }
         this.initialValueAnimations.clear();
         if (this.currentAnimation != null) {
@@ -265,7 +230,7 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0038  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -273,7 +238,6 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         SeekableTransitionState$runAnimations$1 seekableTransitionState$runAnimations$1;
         Object coroutine_suspended;
         int i;
-        SeekableTransitionState<S> seekableTransitionState;
         if (continuation instanceof SeekableTransitionState$runAnimations$1) {
             seekableTransitionState$runAnimations$1 = (SeekableTransitionState$runAnimations$1) continuation;
             if ((seekableTransitionState$runAnimations$1.label & Integer.MIN_VALUE) != 0) {
@@ -290,31 +254,26 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
                         endAllAnimations();
                         this.lastFrameTimeNanos = Long.MIN_VALUE;
                         return Unit.INSTANCE;
-                    }
-                    if (this.lastFrameTimeNanos == Long.MIN_VALUE) {
+                    } else if (this.lastFrameTimeNanos == Long.MIN_VALUE) {
                         Function1<Long, Unit> function1 = this.firstFrameLambda;
-                        seekableTransitionState$runAnimations$1.L$0 = this;
                         seekableTransitionState$runAnimations$1.label = 1;
                         if (MonotonicFrameClockKt.withFrameNanos(function1, seekableTransitionState$runAnimations$1) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                     }
-                    seekableTransitionState = this;
                 } else if (i != 1 && i != 2) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    seekableTransitionState = (SeekableTransitionState) seekableTransitionState$runAnimations$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 do {
-                    if (!seekableTransitionState.initialValueAnimations.isNotEmpty() || seekableTransitionState.currentAnimation != null) {
-                        seekableTransitionState$runAnimations$1.L$0 = seekableTransitionState;
+                    if (!this.initialValueAnimations.isNotEmpty() || this.currentAnimation != null) {
                         seekableTransitionState$runAnimations$1.label = 2;
                     } else {
-                        seekableTransitionState.lastFrameTimeNanos = Long.MIN_VALUE;
+                        this.lastFrameTimeNanos = Long.MIN_VALUE;
                         return Unit.INSTANCE;
                     }
-                } while (seekableTransitionState.animateOneFrame(seekableTransitionState$runAnimations$1) != coroutine_suspended);
+                } while (animateOneFrame(seekableTransitionState$runAnimations$1) != coroutine_suspended);
                 return coroutine_suspended;
             }
         }
@@ -325,11 +284,10 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         if (i != 0) {
         }
         do {
-            if (!seekableTransitionState.initialValueAnimations.isNotEmpty()) {
+            if (!this.initialValueAnimations.isNotEmpty()) {
             }
-            seekableTransitionState$runAnimations$1.L$0 = seekableTransitionState;
             seekableTransitionState$runAnimations$1.label = 2;
-        } while (seekableTransitionState.animateOneFrame(seekableTransitionState$runAnimations$1) != coroutine_suspended);
+        } while (animateOneFrame(seekableTransitionState$runAnimations$1) != coroutine_suspended);
         return coroutine_suspended;
     }
 
@@ -355,8 +313,7 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         return withFrameNanos == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? withFrameNanos : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void recalculateAnimationValue(SeekingAnimationState seekingAnimationState, long j) {
+    private final void recalculateAnimationValue(SeekingAnimationState seekingAnimationState, long j) {
         long progressNanos = seekingAnimationState.getProgressNanos() + j;
         seekingAnimationState.setProgressNanos(progressNanos);
         long animationSpecDuration = seekingAnimationState.getAnimationSpecDuration();
@@ -372,11 +329,11 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
             if (initialVelocity == null) {
                 initialVelocity = ZeroVelocity;
             }
-            seekingAnimationState.setValue(RangesKt.coerceIn(animationSpec.getValueFromNanos(progressNanos, start, animationVector1D, initialVelocity).get$animation_core_release(0), 0.0f, 1.0f));
+            seekingAnimationState.setValue(RangesKt.coerceIn(animationSpec.getValueFromNanos(progressNanos, start, animationVector1D, initialVelocity).get$animation_core(0), 0.0f, 1.0f));
             return;
         }
         float f = ((float) progressNanos) / ((float) animationSpecDuration);
-        seekingAnimationState.setValue((seekingAnimationState.getStart().get$animation_core_release(0) * (1 - f)) + (f * 1.0f));
+        seekingAnimationState.setValue((seekingAnimationState.getStart().get$animation_core(0) * (1 - f)) + (f * 1.0f));
     }
 
     public final Object snapTo(S s, Continuation<? super Unit> continuation) {
@@ -416,11 +373,14 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0050, code lost:
+        if (kotlinx.coroutines.sync.Mutex.DefaultImpls.lock$default(r2, null, r0, 1, null) == r1) goto L28;
+     */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0048  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x003f  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x009b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -428,9 +388,7 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         SeekableTransitionState$waitForCompositionAfterTargetStateChange$1 seekableTransitionState$waitForCompositionAfterTargetStateChange$1;
         int i;
         Object targetState;
-        SeekableTransitionState<S> seekableTransitionState;
         Object obj;
-        SeekableTransitionState<S> seekableTransitionState2;
         if (continuation instanceof SeekableTransitionState$waitForCompositionAfterTargetStateChange$1) {
             seekableTransitionState$waitForCompositionAfterTargetStateChange$1 = (SeekableTransitionState$waitForCompositionAfterTargetStateChange$1) continuation;
             if ((seekableTransitionState$waitForCompositionAfterTargetStateChange$1.label & Integer.MIN_VALUE) != 0) {
@@ -442,43 +400,35 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
                     ResultKt.throwOnFailure(obj2);
                     targetState = getTargetState();
                     Mutex mutex = this.compositionContinuationMutex;
-                    seekableTransitionState$waitForCompositionAfterTargetStateChange$1.L$0 = this;
-                    seekableTransitionState$waitForCompositionAfterTargetStateChange$1.L$1 = targetState;
+                    seekableTransitionState$waitForCompositionAfterTargetStateChange$1.L$0 = targetState;
                     seekableTransitionState$waitForCompositionAfterTargetStateChange$1.label = 1;
-                    if (Mutex.DefaultImpls.lock$default(mutex, null, seekableTransitionState$waitForCompositionAfterTargetStateChange$1, 1, null) != coroutine_suspended) {
-                        seekableTransitionState = this;
-                    }
-                    return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
-                        obj = seekableTransitionState$waitForCompositionAfterTargetStateChange$1.L$1;
-                        seekableTransitionState2 = (SeekableTransitionState) seekableTransitionState$waitForCompositionAfterTargetStateChange$1.L$0;
+                        obj = seekableTransitionState$waitForCompositionAfterTargetStateChange$1.L$0;
                         ResultKt.throwOnFailure(obj2);
                         if (!Intrinsics.areEqual(obj2, obj)) {
-                            seekableTransitionState2.lastFrameTimeNanos = Long.MIN_VALUE;
+                            this.lastFrameTimeNanos = Long.MIN_VALUE;
                             throw new CancellationException("snapTo() was canceled because state was changed to " + obj2 + " instead of " + obj);
                         }
                         return Unit.INSTANCE;
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    Object obj3 = seekableTransitionState$waitForCompositionAfterTargetStateChange$1.L$1;
-                    seekableTransitionState = (SeekableTransitionState) seekableTransitionState$waitForCompositionAfterTargetStateChange$1.L$0;
+                    Object obj3 = seekableTransitionState$waitForCompositionAfterTargetStateChange$1.L$0;
                     ResultKt.throwOnFailure(obj2);
                     targetState = obj3;
                 }
-                if (!Intrinsics.areEqual(targetState, seekableTransitionState.composedTargetState)) {
-                    Mutex.DefaultImpls.unlock$default(seekableTransitionState.compositionContinuationMutex, null, 1, null);
+                if (!Intrinsics.areEqual(targetState, this.composedTargetState)) {
+                    Mutex.DefaultImpls.unlock$default(this.compositionContinuationMutex, null, 1, null);
                     return Unit.INSTANCE;
                 }
-                seekableTransitionState$waitForCompositionAfterTargetStateChange$1.L$0 = seekableTransitionState;
-                seekableTransitionState$waitForCompositionAfterTargetStateChange$1.L$1 = targetState;
+                seekableTransitionState$waitForCompositionAfterTargetStateChange$1.L$0 = targetState;
                 seekableTransitionState$waitForCompositionAfterTargetStateChange$1.label = 2;
                 SeekableTransitionState$waitForCompositionAfterTargetStateChange$1 seekableTransitionState$waitForCompositionAfterTargetStateChange$12 = seekableTransitionState$waitForCompositionAfterTargetStateChange$1;
                 CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(seekableTransitionState$waitForCompositionAfterTargetStateChange$12), 1);
                 cancellableContinuationImpl.initCancellability();
-                seekableTransitionState.setCompositionContinuation$animation_core_release(cancellableContinuationImpl);
-                Mutex.DefaultImpls.unlock$default(seekableTransitionState.getCompositionContinuationMutex$animation_core_release(), null, 1, null);
+                setCompositionContinuation$animation_core(cancellableContinuationImpl);
+                Mutex.DefaultImpls.unlock$default(getCompositionContinuationMutex$animation_core(), null, 1, null);
                 Object result = cancellableContinuationImpl.getResult();
                 if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
                     DebugProbesKt.probeCoroutineSuspended(seekableTransitionState$waitForCompositionAfterTargetStateChange$12);
@@ -486,7 +436,6 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
                 if (result != coroutine_suspended) {
                     obj = targetState;
                     obj2 = result;
-                    seekableTransitionState2 = seekableTransitionState;
                     if (!Intrinsics.areEqual(obj2, obj)) {
                     }
                     return Unit.INSTANCE;
@@ -500,17 +449,20 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         i = seekableTransitionState$waitForCompositionAfterTargetStateChange$1.label;
         if (i != 0) {
         }
-        if (!Intrinsics.areEqual(targetState, seekableTransitionState.composedTargetState)) {
+        if (!Intrinsics.areEqual(targetState, this.composedTargetState)) {
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0050, code lost:
+        if (kotlinx.coroutines.sync.Mutex.DefaultImpls.lock$default(r2, null, r0, 1, null) == r1) goto L25;
+     */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0047  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0089  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0098  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x009b  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x003f  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x008a  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x008d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -519,10 +471,8 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         Object coroutine_suspended;
         int i;
         Object targetState;
-        SeekableTransitionState<S> seekableTransitionState;
         Object result;
         Object obj;
-        SeekableTransitionState<S> seekableTransitionState2;
         if (continuation instanceof SeekableTransitionState$waitForComposition$1) {
             seekableTransitionState$waitForComposition$1 = (SeekableTransitionState$waitForComposition$1) continuation;
             if ((seekableTransitionState$waitForComposition$1.label & Integer.MIN_VALUE) != 0) {
@@ -534,39 +484,31 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
                     ResultKt.throwOnFailure(obj2);
                     targetState = getTargetState();
                     Mutex mutex = this.compositionContinuationMutex;
-                    seekableTransitionState$waitForComposition$1.L$0 = this;
-                    seekableTransitionState$waitForComposition$1.L$1 = targetState;
+                    seekableTransitionState$waitForComposition$1.L$0 = targetState;
                     seekableTransitionState$waitForComposition$1.label = 1;
-                    if (Mutex.DefaultImpls.lock$default(mutex, null, seekableTransitionState$waitForComposition$1, 1, null) != coroutine_suspended) {
-                        seekableTransitionState = this;
-                    }
-                    return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
-                        obj = seekableTransitionState$waitForComposition$1.L$1;
-                        seekableTransitionState2 = (SeekableTransitionState) seekableTransitionState$waitForComposition$1.L$0;
+                        obj = seekableTransitionState$waitForComposition$1.L$0;
                         ResultKt.throwOnFailure(obj2);
                         if (Intrinsics.areEqual(obj2, obj)) {
-                            seekableTransitionState2.lastFrameTimeNanos = Long.MIN_VALUE;
+                            this.lastFrameTimeNanos = Long.MIN_VALUE;
                             throw new CancellationException("targetState while waiting for composition");
                         }
                         return Unit.INSTANCE;
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    Object obj3 = seekableTransitionState$waitForComposition$1.L$1;
-                    seekableTransitionState = (SeekableTransitionState) seekableTransitionState$waitForComposition$1.L$0;
+                    Object obj3 = seekableTransitionState$waitForComposition$1.L$0;
                     ResultKt.throwOnFailure(obj2);
                     targetState = obj3;
                 }
-                seekableTransitionState$waitForComposition$1.L$0 = seekableTransitionState;
-                seekableTransitionState$waitForComposition$1.L$1 = targetState;
+                seekableTransitionState$waitForComposition$1.L$0 = targetState;
                 seekableTransitionState$waitForComposition$1.label = 2;
                 SeekableTransitionState$waitForComposition$1 seekableTransitionState$waitForComposition$12 = seekableTransitionState$waitForComposition$1;
                 CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(seekableTransitionState$waitForComposition$12), 1);
                 cancellableContinuationImpl.initCancellability();
-                seekableTransitionState.setCompositionContinuation$animation_core_release(cancellableContinuationImpl);
-                Mutex.DefaultImpls.unlock$default(seekableTransitionState.getCompositionContinuationMutex$animation_core_release(), null, 1, null);
+                setCompositionContinuation$animation_core(cancellableContinuationImpl);
+                Mutex.DefaultImpls.unlock$default(getCompositionContinuationMutex$animation_core(), null, 1, null);
                 result = cancellableContinuationImpl.getResult();
                 if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
                     DebugProbesKt.probeCoroutineSuspended(seekableTransitionState$waitForComposition$12);
@@ -574,7 +516,6 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
                 if (result != coroutine_suspended) {
                     obj = targetState;
                     obj2 = result;
-                    seekableTransitionState2 = seekableTransitionState;
                     if (Intrinsics.areEqual(obj2, obj)) {
                     }
                 }
@@ -587,14 +528,13 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         i = seekableTransitionState$waitForComposition$1.label;
         if (i != 0) {
         }
-        seekableTransitionState$waitForComposition$1.L$0 = seekableTransitionState;
-        seekableTransitionState$waitForComposition$1.L$1 = targetState;
+        seekableTransitionState$waitForComposition$1.L$0 = targetState;
         seekableTransitionState$waitForComposition$1.label = 2;
         SeekableTransitionState$waitForComposition$1 seekableTransitionState$waitForComposition$122 = seekableTransitionState$waitForComposition$1;
         CancellableContinuationImpl cancellableContinuationImpl2 = new CancellableContinuationImpl(IntrinsicsKt.intercepted(seekableTransitionState$waitForComposition$122), 1);
         cancellableContinuationImpl2.initCancellability();
-        seekableTransitionState.setCompositionContinuation$animation_core_release(cancellableContinuationImpl2);
-        Mutex.DefaultImpls.unlock$default(seekableTransitionState.getCompositionContinuationMutex$animation_core_release(), null, 1, null);
+        setCompositionContinuation$animation_core(cancellableContinuationImpl2);
+        Mutex.DefaultImpls.unlock$default(getCompositionContinuationMutex$animation_core(), null, 1, null);
         result = cancellableContinuationImpl2.getResult();
         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
         }
@@ -619,13 +559,13 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
                 long j = this.totalDurationNanos;
                 seekingAnimationState.setDurationNanos(j);
                 seekingAnimationState.setAnimationSpecDuration(MathKt.roundToLong(j * (1.0d - getFraction())));
-                seekingAnimationState.getStart().set$animation_core_release(0, getFraction());
+                seekingAnimationState.getStart().set$animation_core(0, getFraction());
             }
         }
         if (seekingAnimationState != null) {
             seekingAnimationState.setDurationNanos(this.totalDurationNanos);
             this.initialValueAnimations.add(seekingAnimationState);
-            transition.setInitialAnimations$animation_core_release(seekingAnimationState);
+            transition.setInitialAnimations$animation_core(seekingAnimationState);
         }
         this.currentAnimation = null;
     }
@@ -651,7 +591,7 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
     }
 
     @Override // androidx.compose.animation.core.TransitionState
-    public void transitionConfigured$animation_core_release(Transition<S> transition) {
+    public void transitionConfigured$animation_core(Transition<S> transition) {
         Transition<S> transition2 = this.transition;
         if (!(transition2 == null || Intrinsics.areEqual(transition, transition2))) {
             PreconditionsKt.throwIllegalStateException("An instance of SeekableTransitionState has been used in different Transitions. Previous instance: " + this.transition + ", new instance: " + transition);
@@ -660,18 +600,18 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
     }
 
     @Override // androidx.compose.animation.core.TransitionState
-    public void transitionRemoved$animation_core_release() {
+    public void transitionRemoved$animation_core() {
         this.transition = null;
         TransitionKt.getSeekableStateObserver().clear(this);
     }
 
-    public final void observeTotalDuration$animation_core_release() {
+    public final void observeTotalDuration$animation_core() {
         TransitionKt.getSeekableStateObserver().observeReads(this, TransitionKt.access$getSeekableTransitionStateTotalDurationChanged$p(), this.recalculateTotalDurationNanos);
     }
 
-    public final void onTotalDurationChanged$animation_core_release() {
+    public final void onTotalDurationChanged$animation_core() {
         long j = this.totalDurationNanos;
-        observeTotalDuration$animation_core_release();
+        observeTotalDuration$animation_core();
         long j2 = this.totalDurationNanos;
         if (j != j2) {
             SeekingAnimationState seekingAnimationState = this.currentAnimation;
@@ -690,7 +630,7 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
             }
             seekingAnimationState.setDurationNanos(j3);
             if (seekingAnimationState.getAnimationSpec() == null) {
-                seekingAnimationState.setAnimationSpecDuration(MathKt.roundToLong((1.0d - seekingAnimationState.getStart().get$animation_core_release(0)) * this.totalDurationNanos));
+                seekingAnimationState.setAnimationSpecDuration(MathKt.roundToLong((1.0d - seekingAnimationState.getStart().get$animation_core(0)) * this.totalDurationNanos));
             }
         }
     }
@@ -701,11 +641,11 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         if (transition == null) {
             return;
         }
-        transition.seekAnimations$animation_core_release(MathKt.roundToLong(getFraction() * transition.getTotalDurationNanos()));
+        transition.seekAnimations$animation_core(MathKt.roundToLong(getFraction() * transition.getTotalDurationNanos()));
     }
 
     /* compiled from: Transition.kt */
-    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\b\u0000\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\b\u0010)\u001a\u00020*H\u0016R\"\u0010\u0003\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0010\u001a\u00020\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\r\"\u0004\b\u0012\u0010\u000fR\u001c\u0010\u0013\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u001a\u0010\u0018\u001a\u00020\u0019X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u001a\"\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\u00020\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\r\"\u0004\b\u001f\u0010\u000fR\u001a\u0010 \u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\u0015\"\u0004\b\"\u0010\u0017R\u001a\u0010#\u001a\u00020$X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b%\u0010&\"\u0004\b'\u0010(¨\u0006+"}, d2 = {"Landroidx/compose/animation/core/SeekableTransitionState$SeekingAnimationState;", "", "()V", "animationSpec", "Landroidx/compose/animation/core/VectorizedAnimationSpec;", "Landroidx/compose/animation/core/AnimationVector1D;", "getAnimationSpec", "()Landroidx/compose/animation/core/VectorizedAnimationSpec;", "setAnimationSpec", "(Landroidx/compose/animation/core/VectorizedAnimationSpec;)V", "animationSpecDuration", "", "getAnimationSpecDuration", "()J", "setAnimationSpecDuration", "(J)V", "durationNanos", "getDurationNanos", "setDurationNanos", "initialVelocity", "getInitialVelocity", "()Landroidx/compose/animation/core/AnimationVector1D;", "setInitialVelocity", "(Landroidx/compose/animation/core/AnimationVector1D;)V", "isComplete", "", "()Z", "setComplete", "(Z)V", "progressNanos", "getProgressNanos", "setProgressNanos", TtmlNode.START, "getStart", "setStart", "value", "", "getValue", "()F", "setValue", "(F)V", "toString", "", "animation-core_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u0007\n\u0002\b\u0013\n\u0002\u0010\u000e\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010*\u001a\u00020+H\u0016R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\"\u0010\n\u001a\n\u0012\u0004\u0012\u00020\f\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0013\"\u0004\b\u0014\u0010\u0015R\u001a\u0010\u0016\u001a\u00020\u0017X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"\u0004\b\u001a\u0010\u001bR\u001a\u0010\u001c\u001a\u00020\fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001d\u0010\u001e\"\u0004\b\u001f\u0010 R\u001c\u0010!\u001a\u0004\u0018\u00010\fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\"\u0010\u001e\"\u0004\b#\u0010 R\u001a\u0010$\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b%\u0010\u0007\"\u0004\b&\u0010\tR\u001a\u0010'\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b(\u0010\u0007\"\u0004\b)\u0010\t¨\u0006,"}, d2 = {"Landroidx/compose/animation/core/SeekableTransitionState$SeekingAnimationState;", "", "<init>", "()V", "progressNanos", "", "getProgressNanos", "()J", "setProgressNanos", "(J)V", "animationSpec", "Landroidx/compose/animation/core/VectorizedAnimationSpec;", "Landroidx/compose/animation/core/AnimationVector1D;", "getAnimationSpec", "()Landroidx/compose/animation/core/VectorizedAnimationSpec;", "setAnimationSpec", "(Landroidx/compose/animation/core/VectorizedAnimationSpec;)V", "isComplete", "", "()Z", "setComplete", "(Z)V", "value", "", "getValue", "()F", "setValue", "(F)V", TtmlNode.START, "getStart", "()Landroidx/compose/animation/core/AnimationVector1D;", "setStart", "(Landroidx/compose/animation/core/AnimationVector1D;)V", "initialVelocity", "getInitialVelocity", "setInitialVelocity", "durationNanos", "getDurationNanos", "setDurationNanos", "animationSpecDuration", "getAnimationSpecDuration", "setAnimationSpecDuration", "toString", "", "animation-core"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class SeekingAnimationState {
         public static final int $stable = 8;
@@ -789,7 +729,7 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Transition.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0082\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006R\u0011\u0010\u0007\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0006¨\u0006\t"}, d2 = {"Landroidx/compose/animation/core/SeekableTransitionState$Companion;", "", "()V", "Target1", "Landroidx/compose/animation/core/AnimationVector1D;", "getTarget1", "()Landroidx/compose/animation/core/AnimationVector1D;", "ZeroVelocity", "getZeroVelocity", "animation-core_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007¨\u0006\n"}, d2 = {"Landroidx/compose/animation/core/SeekableTransitionState$Companion;", "", "<init>", "()V", "ZeroVelocity", "Landroidx/compose/animation/core/AnimationVector1D;", "getZeroVelocity", "()Landroidx/compose/animation/core/AnimationVector1D;", "Target1", "getTarget1", "animation-core"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

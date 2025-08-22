@@ -1,12 +1,7 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.StartupParamsCallback;
-import java.util.HashMap;
 /* loaded from: classes4.dex */
-public final class Ll extends HashMap {
-    public Ll() {
-        put(Jl.UNKNOWN, StartupParamsCallback.Reason.UNKNOWN);
-        put(Jl.NETWORK, StartupParamsCallback.Reason.NETWORK);
-        put(Jl.PARSE, StartupParamsCallback.Reason.INVALID_RESPONSE);
-    }
+public abstract class Ll {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final Ml f548a = new Ml();
 }

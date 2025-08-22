@@ -1,20 +1,21 @@
 package io.appmetrica.analytics.impl;
 
+import io.appmetrica.analytics.ModuleEvent;
 import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 /* loaded from: classes4.dex */
 public final class Bd extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Dd f356a;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Fd f362a;
+    public final /* synthetic */ ModuleEvent b;
 
-    public Bd(Dd dd, boolean z) {
-        this.f356a = dd;
-        this.b = z;
+    public Bd(Fd fd, ModuleEvent moduleEvent) {
+        this.f362a = fd;
+        this.b = moduleEvent;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        Dd.a(this.f356a).b(this.b);
+        Fd.a(this.f362a).reportEvent(this.b);
     }
 }

@@ -10,7 +10,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.internal.util.BackpressureHelper;
 import java.util.Iterator;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableFromIterable<T> extends Flowable<T> {
     final Iterable<? extends T> source;
 
@@ -43,7 +43,7 @@ public final class FlowableFromIterable<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static abstract class BaseRangeSubscription<T> extends BasicQueueSubscription<T> {
         private static final long serialVersionUID = -2252972430506210021L;
         volatile boolean cancelled;
@@ -106,7 +106,7 @@ public final class FlowableFromIterable<T> extends Flowable<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class IteratorSubscription<T> extends BaseRangeSubscription<T> {
         private static final long serialVersionUID = -6022804456014692607L;
         final Subscriber<? super T> downstream;
@@ -210,7 +210,7 @@ public final class FlowableFromIterable<T> extends Flowable<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class IteratorConditionalSubscription<T> extends BaseRangeSubscription<T> {
         private static final long serialVersionUID = -6022804456014692607L;
         final ConditionalSubscriber<? super T> downstream;

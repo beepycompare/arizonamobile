@@ -113,7 +113,7 @@ public final class ExposedDropdownMenu_androidKt$expandable$1 extends SuspendLam
                 ResultKt.throwOnFailure(obj);
             }
             PointerInputChange pointerInputChange = (PointerInputChange) obj;
-            if (MenuAnchorType.m2024equalsimpl0(this.$anchorType, MenuAnchorType.Companion.m2030getSecondaryEditableMg6Rgbw())) {
+            if (MenuAnchorType.m2331equalsimpl0(this.$anchorType, MenuAnchorType.Companion.m2337getSecondaryEditableMg6Rgbw())) {
                 pointerInputChange.consume();
             }
             this.L$0 = null;

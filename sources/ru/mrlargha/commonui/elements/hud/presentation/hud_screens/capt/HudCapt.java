@@ -20,9 +20,10 @@ import kotlinx.coroutines.Job;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.HudCaptBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: HudCapt.kt */
-@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\u0002\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015J\u0018\u0010\u0016\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0005H\u0002J\u0010\u0010\u0018\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\u0005H\u0002J\u001e\u0010\u0019\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bH\u0002J\u001e\u0010\u001d\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bH\u0002J\u001e\u0010\u001e\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bH\u0002J\u0018\u0010\u001f\u001a\u00020\u00112\u0006\u0010 \u001a\u00020!2\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J\u001e\u0010\"\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bH\u0002R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/capt/HudCapt;", "", "<init>", "()V", "currentModel", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/capt/HudCaptModel;", "adapter", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/capt/HudCaptItemAdapter;", "timerJob", "Lkotlinx/coroutines/Job;", "closeListJob", "scope", "Lkotlinx/coroutines/CoroutineScope;", "isOpenCapt", "", "isOpenList", "showCapt", "", "binding", "Lru/mrlargha/commonui/databinding/HudCaptBinding;", "data", "", "initialize", CommonUrlParts.MODEL, "updateCurrentModel", "checkListCount", "itemList", "", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/capt/HudCaptItemModel;", "setOnClickListeners", "checkOpenList", "startTimer", "time", "", "closeListAfterFiveSecond", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\u0002\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015J\u0018\u0010\u0016\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0005H\u0002J\u0010\u0010\u0018\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\u0005H\u0002J\u001e\u0010\u0019\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bH\u0002J\u001e\u0010\u001d\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bH\u0002J\u001e\u0010\u001e\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bH\u0002J\u0018\u0010\u001f\u001a\u00020\u00112\u0006\u0010 \u001a\u00020!2\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J\u001e\u0010\"\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bH\u0002R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/capt/HudCapt;", "", "<init>", "()V", "currentModel", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/capt/HudCaptModel;", "adapter", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/capt/HudCaptItemAdapter;", "timerJob", "Lkotlinx/coroutines/Job;", "closeListJob", "scope", "Lkotlinx/coroutines/CoroutineScope;", "isOpenCapt", "", "isOpenList", "showCapt", "", "binding", "Lru/mrlargha/commonui/databinding/HudCaptBinding;", "data", "", "initialize", CommonUrlParts.MODEL, "updateCurrentModel", "checkListCount", "itemList", "", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/capt/HudCaptItemModel;", "setOnClickListeners", "checkOpenList", "startTimer", "time", "", "closeListAfterFiveSecond", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes6.dex */
 public final class HudCapt {
     private static Job closeListJob;
     private static HudCaptModel currentModel;
@@ -81,6 +82,10 @@ public final class HudCapt {
         RecyclerView recyclerView = hudCaptBinding.rvItems;
         HudCaptItemAdapter hudCaptItemAdapter = adapter;
         recyclerView.setAdapter(hudCaptItemAdapter);
+        CustomCardView numberContainer = hudCaptBinding.numberContainer;
+        Intrinsics.checkNotNullExpressionValue(numberContainer, "numberContainer");
+        numberContainer.setVisibility(hudCaptModel.getTerritoryId() == -1 ? 4 : 0);
+        hudCaptBinding.tvNumber.setText(hudCaptBinding.getRoot().getContext().getString(R.string.number_i, Integer.valueOf(hudCaptModel.getTerritoryId())));
         Boolean ordinalNumbers = hudCaptModel.getOrdinalNumbers();
         if (ordinalNumbers != null) {
             hudCaptItemAdapter.setShowNumbering(ordinalNumbers.booleanValue());
@@ -89,6 +94,7 @@ public final class HudCapt {
         HudCapt hudCapt = INSTANCE;
         hudCapt.startTimer(hudCaptModel.getTime() * 1000, hudCaptBinding);
         hudCapt.checkListCount(hudCaptBinding, hudCaptModel.getItemList());
+        Log.d("CAPT_TAG", "initialize: model - " + hudCaptModel);
     }
 
     private final HudCaptModel updateCurrentModel(HudCaptModel hudCaptModel) {
@@ -110,14 +116,24 @@ public final class HudCapt {
             }
         }
         Boolean ordinalNumbers = hudCaptModel.getOrdinalNumbers();
+        int i = 0;
         Boolean valueOf = Boolean.valueOf((ordinalNumbers == null && ((hudCaptModel2 = currentModel) == null || (ordinalNumbers = hudCaptModel2.getOrdinalNumbers()) == null)) ? false : ordinalNumbers.booleanValue());
         List<HudCaptItemModel> itemList = hudCaptModel.getItemList();
         if (itemList.isEmpty() && ((hudCaptModel3 = currentModel) == null || (itemList = hudCaptModel3.getItemList()) == null)) {
             itemList = CollectionsKt.emptyList();
         }
-        HudCaptModel hudCaptModel6 = new HudCaptModel(str, j, valueOf, itemList, (hudCaptModel.getScoreIcon() > -1 || (hudCaptModel = currentModel) != null) ? hudCaptModel.getScoreIcon() : 0);
-        currentModel = hudCaptModel6;
-        return hudCaptModel6;
+        List<HudCaptItemModel> list = itemList;
+        if (hudCaptModel.getScoreIcon() > -1) {
+            i = hudCaptModel.getScoreIcon();
+        } else {
+            HudCaptModel hudCaptModel6 = currentModel;
+            if (hudCaptModel6 != null) {
+                i = hudCaptModel6.getScoreIcon();
+            }
+        }
+        HudCaptModel hudCaptModel7 = new HudCaptModel(str, j, valueOf, list, i, hudCaptModel.getTerritoryId());
+        currentModel = hudCaptModel7;
+        return hudCaptModel7;
     }
 
     private final void checkListCount(HudCaptBinding hudCaptBinding, List<HudCaptItemModel> list) {

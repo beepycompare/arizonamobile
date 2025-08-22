@@ -1,37 +1,49 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import java.nio.charset.Charset;
-import java.util.Map;
-import kotlin.text.Charsets;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkInfo;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
+import java.util.Locale;
 /* loaded from: classes4.dex */
-public final class We implements Converter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0502p6[] fromModel(Map<String, String> map) {
-        int size = map.size();
-        C0502p6[] c0502p6Arr = new C0502p6[size];
-        int i = 0;
-        for (int i2 = 0; i2 < size; i2++) {
-            c0502p6Arr[i2] = new C0502p6();
+public abstract class We {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final Re f709a = new Re();
+    public static final Se b = new Se();
+    public static final Te c = new Te(2);
+
+    public static String a(Locale locale) {
+        String language = locale.getLanguage();
+        String country = locale.getCountry();
+        StringBuilder sb = new StringBuilder(language);
+        String script = locale.getScript();
+        if (!TextUtils.isEmpty(script)) {
+            sb.append('-').append(script);
         }
-        for (Map.Entry<String, String> entry : map.entrySet()) {
-            C0502p6 c0502p6 = c0502p6Arr[i];
-            Charset charset = Charsets.UTF_8;
-            c0502p6.f997a = entry.getKey().getBytes(charset);
-            c0502p6Arr[i].b = entry.getValue().getBytes(charset);
-            i++;
+        if (!TextUtils.isEmpty(country)) {
+            sb.append('_').append(country);
         }
-        return c0502p6Arr;
+        return sb.toString();
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        C0502p6[] c0502p6Arr = (C0502p6[]) obj;
-        throw new UnsupportedOperationException();
-    }
-
-    public final Map<String, String> a(C0502p6[] c0502p6Arr) {
-        throw new UnsupportedOperationException();
+    public static Ve a(ConnectivityManager connectivityManager) {
+        NetworkInfo networkInfo;
+        Ve ve = Ve.UNDEFINED;
+        Network activeNetwork = connectivityManager.getActiveNetwork();
+        if (!AndroidUtils.isApiAchieved(29) ? !(activeNetwork != null && ((networkInfo = connectivityManager.getNetworkInfo(activeNetwork)) == null || networkInfo.isConnected())) : activeNetwork == null) {
+            return Ve.OFFLINE;
+        }
+        NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork);
+        if (networkCapabilities != null) {
+            for (Integer num : b.f776a.keySet()) {
+                if (networkCapabilities.hasTransport(num.intValue())) {
+                    return (Ve) b.a(num);
+                }
+            }
+        }
+        return ve;
     }
 }

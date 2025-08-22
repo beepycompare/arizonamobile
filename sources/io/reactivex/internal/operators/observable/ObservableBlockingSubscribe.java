@@ -13,7 +13,7 @@ import io.reactivex.internal.util.BlockingIgnoringReceiver;
 import io.reactivex.internal.util.ExceptionHelper;
 import io.reactivex.internal.util.NotificationLite;
 import java.util.concurrent.LinkedBlockingQueue;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableBlockingSubscribe {
     private ObservableBlockingSubscribe() {
         throw new IllegalStateException("No instances!");

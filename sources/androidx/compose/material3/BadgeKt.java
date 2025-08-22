@@ -61,10 +61,10 @@ import kotlin.math.MathKt;
 @Metadata(d1 = {"\u0000B\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0003\u001aR\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102 \b\u0002\u0010\u0012\u001a\u001a\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\f\u0018\u00010\u0013¢\u0006\u0002\b\u0015¢\u0006\u0002\b\u0016H\u0007ø\u0001\u0000¢\u0006\u0004\b\u0017\u0010\u0018\u001aS\u0010\u0019\u001a\u00020\f2\u001c\u0010\u001a\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\f0\u0013¢\u0006\u0002\b\u0015¢\u0006\u0002\b\u00162\b\b\u0002\u0010\r\u001a\u00020\u000e2\u001c\u0010\u0012\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\f0\u0013¢\u0006\u0002\b\u0015¢\u0006\u0002\b\u0016H\u0007¢\u0006\u0002\u0010\u001c\"\u0016\u0010\u0000\u001a\u00020\u0001X\u0080\u0004¢\u0006\n\n\u0002\u0010\u0004\u001a\u0004\b\u0002\u0010\u0003\"\u0016\u0010\u0005\u001a\u00020\u0001X\u0080\u0004¢\u0006\n\n\u0002\u0010\u0004\u001a\u0004\b\u0006\u0010\u0003\"\u0016\u0010\u0007\u001a\u00020\u0001X\u0080\u0004¢\u0006\n\n\u0002\u0010\u0004\u001a\u0004\b\b\u0010\u0003\"\u0016\u0010\t\u001a\u00020\u0001X\u0080\u0004¢\u0006\n\n\u0002\u0010\u0004\u001a\u0004\b\n\u0010\u0003\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u001d²\u0006\n\u0010\u001e\u001a\u00020\u001fX\u008a\u008e\u0002²\u0006\n\u0010 \u001a\u00020\u001fX\u008a\u008e\u0002²\u0006\n\u0010!\u001a\u00020\u001fX\u008a\u008e\u0002²\u0006\n\u0010\"\u001a\u00020\u001fX\u008a\u008e\u0002"}, d2 = {"BadgeOffset", "Landroidx/compose/ui/unit/Dp;", "getBadgeOffset", "()F", "F", "BadgeWithContentHorizontalOffset", "getBadgeWithContentHorizontalOffset", "BadgeWithContentHorizontalPadding", "getBadgeWithContentHorizontalPadding", "BadgeWithContentVerticalOffset", "getBadgeWithContentVerticalOffset", "Badge", "", "modifier", "Landroidx/compose/ui/Modifier;", "containerColor", "Landroidx/compose/ui/graphics/Color;", "contentColor", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/RowScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "Badge-eopBjH0", "(Landroidx/compose/ui/Modifier;JJLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "BadgedBox", "badge", "Landroidx/compose/foundation/layout/BoxScope;", "(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "material3_release", "layoutAbsoluteLeft", "", "layoutAbsoluteTop", "greatGrandParentAbsoluteRight", "greatGrandParentAbsoluteTop"}, k = 2, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BadgeKt {
-    private static final float BadgeWithContentHorizontalPadding = Dp.m6684constructorimpl(4);
-    private static final float BadgeWithContentHorizontalOffset = Dp.m6684constructorimpl(12);
-    private static final float BadgeWithContentVerticalOffset = Dp.m6684constructorimpl(14);
-    private static final float BadgeOffset = Dp.m6684constructorimpl(6);
+    private static final float BadgeWithContentHorizontalPadding = Dp.m7251constructorimpl(4);
+    private static final float BadgeWithContentHorizontalOffset = Dp.m7251constructorimpl(12);
+    private static final float BadgeWithContentVerticalOffset = Dp.m7251constructorimpl(14);
+    private static final float BadgeOffset = Dp.m7251constructorimpl(6);
 
     /* JADX WARN: Removed duplicated region for block: B:102:0x0370  */
     /* JADX WARN: Removed duplicated region for block: B:105:0x0379  */
@@ -103,11 +103,11 @@ public final class BadgeKt {
         Object rememberedValue5;
         MeasurePolicy rememberedValue6;
         int currentCompositeKeyHash;
-        Composer m3520constructorimpl;
+        Composer m3855constructorimpl;
         int currentCompositeKeyHash2;
-        Composer m3520constructorimpl2;
+        Composer m3855constructorimpl2;
         int currentCompositeKeyHash3;
-        Composer m3520constructorimpl3;
+        Composer m3855constructorimpl3;
         ScopeUpdateScope endRestartGroup;
         Composer startRestartGroup = composer.startRestartGroup(1404022535);
         ComposerKt.sourceInformation(startRestartGroup, "C(BadgedBox)P(!1,2)73@2898L36,74@2964L36,77@3183L57,78@3280L57,90@3679L680,102@4366L2713,80@3343L3736:Badge.kt#uh7d8r");
@@ -214,16 +214,16 @@ public final class BadgeKt {
                             for (int i5 = 0; i5 < size; i5++) {
                                 Measurable measurable = list.get(i5);
                                 if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable), "badge")) {
-                                    final Placeable mo5438measureBRTryo0 = measurable.mo5438measureBRTryo0(Constraints.m6627copyZbe2FdA$default(j, 0, 0, 0, 0, 11, null));
+                                    final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j, 0, 0, 0, 0, 11, null));
                                     int size2 = list.size();
                                     for (int i6 = 0; i6 < size2; i6++) {
                                         Measurable measurable2 = list.get(i6);
                                         if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable2), "anchor")) {
-                                            final Placeable mo5438measureBRTryo02 = measurable2.mo5438measureBRTryo0(j);
-                                            int i7 = mo5438measureBRTryo02.get(AlignmentLineKt.getFirstBaseline());
-                                            int i8 = mo5438measureBRTryo02.get(AlignmentLineKt.getLastBaseline());
-                                            int width = mo5438measureBRTryo02.getWidth();
-                                            int height = mo5438measureBRTryo02.getHeight();
+                                            final Placeable mo5954measureBRTryo02 = measurable2.mo5954measureBRTryo0(j);
+                                            int i7 = mo5954measureBRTryo02.get(AlignmentLineKt.getFirstBaseline());
+                                            int i8 = mo5954measureBRTryo02.get(AlignmentLineKt.getLastBaseline());
+                                            int width = mo5954measureBRTryo02.getWidth();
+                                            int height = mo5954measureBRTryo02.getHeight();
                                             Map<AlignmentLine, Integer> mapOf = MapsKt.mapOf(TuplesKt.to(AlignmentLineKt.getFirstBaseline(), Integer.valueOf(i7)), TuplesKt.to(AlignmentLineKt.getLastBaseline(), Integer.valueOf(i8)));
                                             final MutableFloatState mutableFloatState5 = MutableFloatState.this;
                                             final MutableFloatState mutableFloatState6 = mutableFloatState;
@@ -247,12 +247,12 @@ public final class BadgeKt {
                                                     float BadgedBox$lambda$1;
                                                     float BadgedBox$lambda$7;
                                                     float BadgedBox$lambda$10;
-                                                    boolean z = Placeable.this.getWidth() > measureScope.mo383roundToPx0680j_4(BadgeTokens.INSTANCE.m2819getSizeD9Ej5fM());
+                                                    boolean z = Placeable.this.getWidth() > measureScope.mo413roundToPx0680j_4(BadgeTokens.INSTANCE.m3126getSizeD9Ej5fM());
                                                     float badgeWithContentHorizontalOffset = z ? BadgeKt.getBadgeWithContentHorizontalOffset() : BadgeKt.getBadgeOffset();
                                                     float badgeWithContentVerticalOffset = z ? BadgeKt.getBadgeWithContentVerticalOffset() : BadgeKt.getBadgeOffset();
-                                                    Placeable.PlacementScope.placeRelative$default(placementScope, mo5438measureBRTryo02, 0, 0, 0.0f, 4, null);
-                                                    int width2 = mo5438measureBRTryo02.getWidth() - measureScope.mo383roundToPx0680j_4(badgeWithContentHorizontalOffset);
-                                                    int i9 = (-Placeable.this.getHeight()) + measureScope.mo383roundToPx0680j_4(badgeWithContentVerticalOffset);
+                                                    Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo02, 0, 0, 0.0f, 4, null);
+                                                    int width2 = mo5954measureBRTryo02.getWidth() - measureScope.mo413roundToPx0680j_4(badgeWithContentHorizontalOffset);
+                                                    int i9 = (-Placeable.this.getHeight()) + measureScope.mo413roundToPx0680j_4(badgeWithContentVerticalOffset);
                                                     BadgedBox$lambda$4 = BadgeKt.BadgedBox$lambda$4(mutableFloatState5);
                                                     BadgedBox$lambda$1 = BadgeKt.BadgedBox$lambda$1(mutableFloatState6);
                                                     float width3 = BadgedBox$lambda$1 + width2 + Placeable.this.getWidth();
@@ -297,15 +297,15 @@ public final class BadgeKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                Updater.m3527setimpl(m3520constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                Updater.m3862setimpl(m3855constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                if (!m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                 }
-                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -800356556, "C82@3373L161,87@3547L59:Badge.kt#uh7d8r");
                 Modifier layoutId = LayoutIdKt.layoutId(Modifier.Companion, "anchor");
                 Alignment center = Alignment.Companion.getCenter();
@@ -327,15 +327,15 @@ public final class BadgeKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                m3520constructorimpl2 = Updater.m3520constructorimpl(startRestartGroup);
-                Updater.m3527setimpl(m3520constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3527setimpl(m3520constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
+                Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m3520constructorimpl2.getInserting() || !Intrinsics.areEqual(m3520constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                    m3520constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                    m3520constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                if (!m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                    m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                    m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                 }
-                Updater.m3527setimpl(m3520constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                 function32.invoke(BoxScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i5 >> 6) & 112) | 6));
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -362,15 +362,15 @@ public final class BadgeKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                m3520constructorimpl3 = Updater.m3520constructorimpl(startRestartGroup);
-                Updater.m3527setimpl(m3520constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3527setimpl(m3520constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                m3855constructorimpl3 = Updater.m3855constructorimpl(startRestartGroup);
+                Updater.m3862setimpl(m3855constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m3520constructorimpl3.getInserting() || !Intrinsics.areEqual(m3520constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                    m3520constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                    m3520constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                if (!m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                    m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                    m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                 }
-                Updater.m3527setimpl(m3520constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                 function3.invoke(BoxScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i6 >> 6) & 112) | 6));
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -470,15 +470,15 @@ public final class BadgeKt {
         startRestartGroup.startReusableNode();
         if (!startRestartGroup.getInserting()) {
         }
-        m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-        Updater.m3527setimpl(m3520constructorimpl, measurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+        Updater.m3862setimpl(m3855constructorimpl, measurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (!m3520constructorimpl.getInserting()) {
+        if (!m3855constructorimpl.getInserting()) {
         }
-        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash4);
-        Updater.m3527setimpl(m3520constructorimpl, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash4);
+        Updater.m3862setimpl(m3855constructorimpl, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -800356556, "C82@3373L161,87@3547L59:Badge.kt#uh7d8r");
         Modifier layoutId3 = LayoutIdKt.layoutId(Modifier.Companion, "anchor");
         Alignment center2 = Alignment.Companion.getCenter();
@@ -496,15 +496,15 @@ public final class BadgeKt {
         startRestartGroup.startReusableNode();
         if (!startRestartGroup.getInserting()) {
         }
-        m3520constructorimpl2 = Updater.m3520constructorimpl(startRestartGroup);
-        Updater.m3527setimpl(m3520constructorimpl2, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3527setimpl(m3520constructorimpl2, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
+        Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash22 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (!m3520constructorimpl2.getInserting()) {
+        if (!m3855constructorimpl2.getInserting()) {
         }
-        m3520constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-        m3520constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash22);
-        Updater.m3527setimpl(m3520constructorimpl2, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
+        m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+        m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash22);
+        Updater.m3862setimpl(m3855constructorimpl2, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
         function32.invoke(BoxScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i52 >> 6) & 112) | 6));
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -527,15 +527,15 @@ public final class BadgeKt {
         startRestartGroup.startReusableNode();
         if (!startRestartGroup.getInserting()) {
         }
-        m3520constructorimpl3 = Updater.m3520constructorimpl(startRestartGroup);
-        Updater.m3527setimpl(m3520constructorimpl3, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3527setimpl(m3520constructorimpl3, currentCompositionLocalMap32, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        m3855constructorimpl3 = Updater.m3855constructorimpl(startRestartGroup);
+        Updater.m3862setimpl(m3855constructorimpl3, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap32, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash32 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (!m3520constructorimpl3.getInserting()) {
+        if (!m3855constructorimpl3.getInserting()) {
         }
-        m3520constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-        m3520constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash32);
-        Updater.m3527setimpl(m3520constructorimpl3, materializeModifier32, ComposeUiNode.Companion.getSetModifier());
+        m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+        m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash32);
+        Updater.m3862setimpl(m3855constructorimpl3, materializeModifier32, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
         function3.invoke(BoxScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i62 >> 6) & 112) | 6));
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -598,7 +598,7 @@ public final class BadgeKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1592BadgeeopBjH0(Modifier modifier, long j, long j2, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m1899BadgeeopBjH0(Modifier modifier, long j, long j2, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         long j3;
@@ -608,7 +608,7 @@ public final class BadgeKt {
         Shape value;
         Modifier.Companion companion2;
         int currentCompositeKeyHash;
-        Composer m3520constructorimpl;
+        Composer m3855constructorimpl;
         Composer composer2;
         final Modifier modifier2;
         ScopeUpdateScope endRestartGroup;
@@ -652,7 +652,7 @@ public final class BadgeKt {
                         i3 &= -113;
                     }
                     if ((i2 & 4) != 0) {
-                        j4 = ColorSchemeKt.m1733contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 3) & 14);
+                        j4 = ColorSchemeKt.m2040contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 3) & 14);
                         i3 &= -897;
                     }
                     if (i5 != 0) {
@@ -673,7 +673,7 @@ public final class BadgeKt {
                     ComposerKt.traceEventStart(1298144073, i3, -1, "androidx.compose.material3.Badge (Badge.kt:183)");
                 }
                 BadgeTokens badgeTokens = BadgeTokens.INSTANCE;
-                float m2818getLargeSizeD9Ej5fM = obj2 == null ? badgeTokens.m2818getLargeSizeD9Ej5fM() : badgeTokens.m2819getSizeD9Ej5fM();
+                float m3125getLargeSizeD9Ej5fM = obj2 == null ? badgeTokens.m3125getLargeSizeD9Ej5fM() : badgeTokens.m3126getSizeD9Ej5fM();
                 if (obj2 == null) {
                     startRestartGroup.startReplaceGroup(-1271801170);
                     ComposerKt.sourceInformation(startRestartGroup, "187@8325L5");
@@ -685,13 +685,13 @@ public final class BadgeKt {
                     value = ShapesKt.getValue(BadgeTokens.INSTANCE.getShape(), startRestartGroup, 6);
                     startRestartGroup.endReplaceGroup();
                 }
-                Modifier m246backgroundbw27NRU = BackgroundKt.m246backgroundbw27NRU(SizeKt.m769defaultMinSizeVpY3zN4(companion, m2818getLargeSizeD9Ej5fM, m2818getLargeSizeD9Ej5fM), j3, value);
+                Modifier m256backgroundbw27NRU = BackgroundKt.m256backgroundbw27NRU(SizeKt.m868defaultMinSizeVpY3zN4(companion, m3125getLargeSizeD9Ej5fM, m3125getLargeSizeD9Ej5fM), j3, value);
                 if (obj2 == null) {
-                    companion2 = PaddingKt.m740paddingVpY3zN4$default(Modifier.Companion, BadgeWithContentHorizontalPadding, 0.0f, 2, null);
+                    companion2 = PaddingKt.m834paddingVpY3zN4$default(Modifier.Companion, BadgeWithContentHorizontalPadding, 0.0f, 2, null);
                 } else {
                     companion2 = Modifier.Companion;
                 }
-                Modifier then = m246backgroundbw27NRU.then(companion2);
+                Modifier then = m256backgroundbw27NRU.then(companion2);
                 Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                 Arrangement.HorizontalOrVertical center = Arrangement.INSTANCE.getCenter();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)98@4939L58,99@5002L130:Row.kt#2w3rfo");
@@ -711,22 +711,22 @@ public final class BadgeKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                Updater.m3527setimpl(m3520constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                if (!m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                 }
-                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                 final RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1324532516, "C:Badge.kt#uh7d8r");
                 startRestartGroup.startReplaceGroup(-1705294841);
                 ComposerKt.sourceInformation(startRestartGroup, "208@9105L5,212@9259L13,209@9123L163");
                 if (obj2 == null) {
-                    ProvideContentColorTextStyleKt.m2707ProvideContentColorTextStyle3JVO9M(j4, TypographyKt.getValue(BadgeTokens.INSTANCE.getLargeLabelTextFont(), startRestartGroup, 6), ComposableLambdaKt.rememberComposableLambda(719214594, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.BadgeKt$Badge$1$1
+                    ProvideContentColorTextStyleKt.m3014ProvideContentColorTextStyle3JVO9M(j4, TypographyKt.getValue(BadgeTokens.INSTANCE.getLargeLabelTextFont(), startRestartGroup, 6), ComposableLambdaKt.rememberComposableLambda(719214594, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.BadgeKt$Badge$1$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         /* JADX WARN: Multi-variable type inference failed */
@@ -795,7 +795,7 @@ public final class BadgeKt {
                     }
 
                     public final void invoke(Composer composer3, int i6) {
-                        BadgeKt.m1592BadgeeopBjH0(Modifier.this, j5, j6, function32, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                        BadgeKt.m1899BadgeeopBjH0(Modifier.this, j5, j6, function32, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                     }
                 });
                 return;
@@ -824,10 +824,10 @@ public final class BadgeKt {
         }
         if (obj2 == null) {
         }
-        Modifier m246backgroundbw27NRU2 = BackgroundKt.m246backgroundbw27NRU(SizeKt.m769defaultMinSizeVpY3zN4(companion, m2818getLargeSizeD9Ej5fM, m2818getLargeSizeD9Ej5fM), j3, value);
+        Modifier m256backgroundbw27NRU2 = BackgroundKt.m256backgroundbw27NRU(SizeKt.m868defaultMinSizeVpY3zN4(companion, m3125getLargeSizeD9Ej5fM, m3125getLargeSizeD9Ej5fM), j3, value);
         if (obj2 == null) {
         }
-        Modifier then2 = m246backgroundbw27NRU2.then(companion2);
+        Modifier then2 = m256backgroundbw27NRU2.then(companion2);
         Alignment.Vertical centerVertically2 = Alignment.Companion.getCenterVertically();
         Arrangement.HorizontalOrVertical center2 = Arrangement.INSTANCE.getCenter();
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)98@4939L58,99@5002L130:Row.kt#2w3rfo");
@@ -843,15 +843,15 @@ public final class BadgeKt {
         startRestartGroup.startReusableNode();
         if (!startRestartGroup.getInserting()) {
         }
-        m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-        Updater.m3527setimpl(m3520constructorimpl, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+        Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (!m3520constructorimpl.getInserting()) {
+        if (!m3855constructorimpl.getInserting()) {
         }
-        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2);
-        Updater.m3527setimpl(m3520constructorimpl, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2);
+        Updater.m3862setimpl(m3855constructorimpl, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
         final RowScope rowScopeInstance2 = RowScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1324532516, "C:Badge.kt#uh7d8r");

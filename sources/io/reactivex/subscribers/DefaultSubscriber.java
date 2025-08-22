@@ -4,7 +4,7 @@ import io.reactivex.FlowableSubscriber;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.internal.util.EndConsumerHelper;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class DefaultSubscriber<T> implements FlowableSubscriber<T> {
     Subscription upstream;
 

@@ -217,8 +217,8 @@ public final class DiskLruCache implements Closeable, Flushable, Lockable {
         this.initialized = true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:87:0x00d2 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x00d3  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x00d1 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x00d2  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -257,14 +257,14 @@ public final class DiskLruCache implements Closeable, Flushable, Lockable {
                         } catch (Throwable th) {
                             th = th;
                             if (th == null) {
-                                throw th;
                             }
-                            return;
                         }
                     }
                     th = null;
                     if (th == null) {
+                        throw th;
                     }
+                    return;
                 }
             }
         } catch (Throwable th2) {

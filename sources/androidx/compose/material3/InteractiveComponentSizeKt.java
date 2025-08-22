@@ -23,12 +23,12 @@ public final class InteractiveComponentSizeKt {
     private static final ProvidableCompositionLocal<Dp> LocalMinimumInteractiveComponentSize = CompositionLocalKt.staticCompositionLocalOf(new Function0<Dp>() { // from class: androidx.compose.material3.InteractiveComponentSizeKt$LocalMinimumInteractiveComponentSize$1
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Dp invoke() {
-            return Dp.m6682boximpl(m1981invokeD9Ej5fM());
+            return Dp.m7249boximpl(m2288invokeD9Ej5fM());
         }
 
         /* renamed from: invoke-D9Ej5fM  reason: not valid java name */
-        public final float m1981invokeD9Ej5fM() {
-            return Dp.m6684constructorimpl(48);
+        public final float m2288invokeD9Ej5fM() {
+            return Dp.m7251constructorimpl(48);
         }
     });
 

@@ -1,6 +1,7 @@
 package androidx.compose.foundation.text;
 
 import androidx.compose.foundation.gestures.Orientation;
+import androidx.compose.ui.geometry.Rect;
 import androidx.compose.ui.layout.LayoutModifier;
 import androidx.compose.ui.layout.Measurable;
 import androidx.compose.ui.layout.MeasureResult;
@@ -14,10 +15,11 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldScroll.kt */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0082\b\u0018\u00002\u00020\u0001B-\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u000e\u0010\b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\n0\t¢\u0006\u0002\u0010\u000bJ\t\u0010\u0014\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0015\u001a\u00020\u0005HÆ\u0003J\t\u0010\u0016\u001a\u00020\u0007HÆ\u0003J\u0011\u0010\u0017\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\n0\tHÆ\u0003J9\u0010\u0018\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0010\b\u0002\u0010\b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\n0\tHÆ\u0001J\u0013\u0010\u0019\u001a\u00020\u001a2\b\u0010\u001b\u001a\u0004\u0018\u00010\u001cHÖ\u0003J\t\u0010\u001d\u001a\u00020\u0005HÖ\u0001J\t\u0010\u001e\u001a\u00020\u001fHÖ\u0001J&\u0010 \u001a\u00020!*\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0016ø\u0001\u0000¢\u0006\u0004\b'\u0010(R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0019\u0010\b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\n0\t¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006)"}, d2 = {"Landroidx/compose/foundation/text/HorizontalScrollLayoutModifier;", "Landroidx/compose/ui/layout/LayoutModifier;", "scrollerPosition", "Landroidx/compose/foundation/text/TextFieldScrollerPosition;", "cursorOffset", "", "transformedText", "Landroidx/compose/ui/text/input/TransformedText;", "textLayoutResultProvider", "Lkotlin/Function0;", "Landroidx/compose/foundation/text/TextLayoutResultProxy;", "(Landroidx/compose/foundation/text/TextFieldScrollerPosition;ILandroidx/compose/ui/text/input/TransformedText;Lkotlin/jvm/functions/Function0;)V", "getCursorOffset", "()I", "getScrollerPosition", "()Landroidx/compose/foundation/text/TextFieldScrollerPosition;", "getTextLayoutResultProvider", "()Lkotlin/jvm/functions/Function0;", "getTransformedText", "()Landroidx/compose/ui/text/input/TransformedText;", "component1", "component2", "component3", "component4", "copy", "equals", "", "other", "", "hashCode", "toString", "", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B/\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u000e\u0010\b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\n0\t¢\u0006\u0004\b\u000b\u0010\fJ#\u0010\u0015\u001a\u00020\u0016*\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bH\u0016¢\u0006\u0004\b\u001c\u0010\u001dJ\t\u0010\u001e\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001f\u001a\u00020\u0005HÆ\u0003J\t\u0010 \u001a\u00020\u0007HÆ\u0003J\u0011\u0010!\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\n0\tHÆ\u0003J9\u0010\"\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0010\b\u0002\u0010\b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\n0\tHÆ\u0001J\u0013\u0010#\u001a\u00020$2\b\u0010%\u001a\u0004\u0018\u00010&HÖ\u0003J\t\u0010'\u001a\u00020\u0005HÖ\u0001J\t\u0010(\u001a\u00020)HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0019\u0010\b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\n0\t¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014¨\u0006*"}, d2 = {"Landroidx/compose/foundation/text/HorizontalScrollLayoutModifier;", "Landroidx/compose/ui/layout/LayoutModifier;", "scrollerPosition", "Landroidx/compose/foundation/text/TextFieldScrollerPosition;", "cursorOffset", "", "transformedText", "Landroidx/compose/ui/text/input/TransformedText;", "textLayoutResultProvider", "Lkotlin/Function0;", "Landroidx/compose/foundation/text/TextLayoutResultProxy;", "<init>", "(Landroidx/compose/foundation/text/TextFieldScrollerPosition;ILandroidx/compose/ui/text/input/TransformedText;Lkotlin/jvm/functions/Function0;)V", "getScrollerPosition", "()Landroidx/compose/foundation/text/TextFieldScrollerPosition;", "getCursorOffset", "()I", "getTransformedText", "()Landroidx/compose/ui/text/input/TransformedText;", "getTextLayoutResultProvider", "()Lkotlin/jvm/functions/Function0;", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "component1", "component2", "component3", "component4", "copy", "equals", "", "other", "", "hashCode", "toString", "", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-final class HorizontalScrollLayoutModifier implements LayoutModifier {
+public final class HorizontalScrollLayoutModifier implements LayoutModifier {
     private final int cursorOffset;
     private final TextFieldScrollerPosition scrollerPosition;
     private final Function0<TextLayoutResultProxy> textLayoutResultProvider;
@@ -104,38 +106,36 @@ final class HorizontalScrollLayoutModifier implements LayoutModifier {
 
     @Override // androidx.compose.ui.layout.LayoutModifier
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo658measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo738measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
         long j2;
-        if (measurable.maxIntrinsicWidth(Constraints.m6636getMaxHeightimpl(j)) < Constraints.m6637getMaxWidthimpl(j)) {
+        if (measurable.maxIntrinsicWidth(Constraints.m7203getMaxHeightimpl(j)) < Constraints.m7204getMaxWidthimpl(j)) {
             j2 = j;
         } else {
             j2 = j;
-            j = Constraints.m6627copyZbe2FdA$default(j2, 0, Integer.MAX_VALUE, 0, 0, 13, null);
+            j = Constraints.m7194copyZbe2FdA$default(j2, 0, Integer.MAX_VALUE, 0, 0, 13, null);
         }
-        final Placeable mo5438measureBRTryo0 = measurable.mo5438measureBRTryo0(j);
-        final int min = Math.min(mo5438measureBRTryo0.getWidth(), Constraints.m6637getMaxWidthimpl(j2));
-        return MeasureScope.layout$default(measureScope, min, mo5438measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.foundation.text.HorizontalScrollLayoutModifier$measure$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
+        final int min = Math.min(mo5954measureBRTryo0.getWidth(), Constraints.m7204getMaxWidthimpl(j2));
+        return MeasureScope.layout$default(measureScope, min, mo5954measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.text.HorizontalScrollLayoutModifier$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                invoke2(placementScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Placeable.PlacementScope placementScope) {
-                MeasureScope measureScope2 = MeasureScope.this;
-                int cursorOffset = this.getCursorOffset();
-                TransformedText transformedText = this.getTransformedText();
-                TextLayoutResultProxy invoke = this.getTextLayoutResultProvider().invoke();
-                this.getScrollerPosition().update(Orientation.Horizontal, TextFieldScrollKt.access$getCursorRectInScroller(measureScope2, cursorOffset, transformedText, invoke != null ? invoke.getValue() : null, MeasureScope.this.getLayoutDirection() == LayoutDirection.Rtl, mo5438measureBRTryo0.getWidth()), min, mo5438measureBRTryo0.getWidth());
-                Placeable.PlacementScope.placeRelative$default(placementScope, mo5438measureBRTryo0, Math.round(-this.getScrollerPosition().getOffset()), 0, 0.0f, 4, null);
+            public final Object invoke(Object obj) {
+                Unit measure_3p2s80s$lambda$0;
+                measure_3p2s80s$lambda$0 = HorizontalScrollLayoutModifier.measure_3p2s80s$lambda$0(HorizontalScrollLayoutModifier.this, measureScope, mo5954measureBRTryo0, min, (Placeable.PlacementScope) obj);
+                return measure_3p2s80s$lambda$0;
             }
         }, 4, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit measure_3p2s80s$lambda$0(HorizontalScrollLayoutModifier horizontalScrollLayoutModifier, MeasureScope measureScope, Placeable placeable, int i, Placeable.PlacementScope placementScope) {
+        Rect cursorRectInScroller;
+        Placeable.PlacementScope placementScope2 = placementScope;
+        int i2 = horizontalScrollLayoutModifier.cursorOffset;
+        TransformedText transformedText = horizontalScrollLayoutModifier.transformedText;
+        TextLayoutResultProxy invoke = horizontalScrollLayoutModifier.textLayoutResultProvider.invoke();
+        cursorRectInScroller = TextFieldScrollKt.getCursorRectInScroller(placementScope2, i2, transformedText, invoke != null ? invoke.getValue() : null, measureScope.getLayoutDirection() == LayoutDirection.Rtl, placeable.getWidth());
+        horizontalScrollLayoutModifier.scrollerPosition.update(Orientation.Horizontal, cursorRectInScroller, i, placeable.getWidth());
+        Placeable.PlacementScope.placeRelative$default(placementScope, placeable, Math.round(-horizontalScrollLayoutModifier.scrollerPosition.getOffset()), 0, 0.0f, 4, null);
+        return Unit.INSTANCE;
     }
 }

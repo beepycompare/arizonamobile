@@ -8,7 +8,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableUnsubscribeOn<T> extends AbstractFlowableWithUpstream<T, T> {
     final Scheduler scheduler;
 
@@ -22,7 +22,7 @@ public final class FlowableUnsubscribeOn<T> extends AbstractFlowableWithUpstream
         this.source.subscribe((FlowableSubscriber) new UnsubscribeSubscriber(subscriber, this.scheduler));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class UnsubscribeSubscriber<T> extends AtomicBoolean implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = 1015244841293359600L;
         final Subscriber<? super T> downstream;
@@ -79,7 +79,7 @@ public final class FlowableUnsubscribeOn<T> extends AbstractFlowableWithUpstream
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class Cancellation implements Runnable {
             Cancellation() {
             }

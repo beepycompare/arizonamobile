@@ -6,21 +6,21 @@ import android.os.ResultReceiver;
 public final class P4 implements A4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f588a;
+    public final Context f598a;
     public final S4 b;
     public final ResultReceiver c;
 
     public P4(Context context, S4 s4, K4 k4) {
-        this.f588a = context;
+        this.f598a = context;
         this.b = s4;
         this.c = k4.c;
         s4.a(this);
     }
 
     @Override // io.appmetrica.analytics.impl.A4
-    public final void a(C0402l6 c0402l6, K4 k4) {
+    public final void a(C0399l6 c0399l6, K4 k4) {
         this.b.a(k4.b);
-        this.b.a(c0402l6, this);
+        this.b.a(c0399l6, this);
     }
 
     public final S4 b() {
@@ -28,15 +28,15 @@ public final class P4 implements A4 {
     }
 
     public final Context c() {
-        return this.f588a;
+        return this.f598a;
     }
 
     public final ResultReceiver d() {
         return this.c;
     }
 
-    public final void a(C0475o4 c0475o4) {
-        W6.a(this.c, c0475o4);
+    public final void a(C0472o4 c0472o4) {
+        X6.a(this.c, c0472o4);
     }
 
     @Override // io.appmetrica.analytics.impl.A4

@@ -7,7 +7,7 @@ import io.reactivex.internal.disposables.ListCompositeDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.util.EndConsumerHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class ResourceObserver<T> implements Observer<T>, Disposable {
     private final AtomicReference<Disposable> upstream = new AtomicReference<>();
     private final ListCompositeDisposable resources = new ListCompositeDisposable();

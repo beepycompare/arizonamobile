@@ -12,7 +12,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: AndroidDragAndDropSource.android.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/draganddrop/DragAndDropStartDetectorScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/draganddrop/DragAndDropStartDetectorScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.draganddrop.DragAndDropSourceDefaults$DefaultStartDetector$1", f = "AndroidDragAndDropSource.android.kt", i = {}, l = {33}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class DragAndDropSourceDefaults$DefaultStartDetector$1 extends SuspendLambda implements Function2<DragAndDropStartDetectorScope, Continuation<? super Unit>, Object> {
@@ -44,20 +44,12 @@ final class DragAndDropSourceDefaults$DefaultStartDetector$1 extends SuspendLamb
             ResultKt.throwOnFailure(obj);
             final DragAndDropStartDetectorScope dragAndDropStartDetectorScope = (DragAndDropStartDetectorScope) this.L$0;
             this.label = 1;
-            if (TapGestureDetectorKt.detectTapGestures$default(dragAndDropStartDetectorScope, null, new Function1<Offset, Unit>() { // from class: androidx.compose.foundation.draganddrop.DragAndDropSourceDefaults$DefaultStartDetector$1.1
-                {
-                    super(1);
-                }
-
+            if (TapGestureDetectorKt.detectTapGestures$default(dragAndDropStartDetectorScope, null, new Function1() { // from class: androidx.compose.foundation.draganddrop.DragAndDropSourceDefaults$DefaultStartDetector$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(Offset offset) {
-                    m376invokek4lQ0M(offset.m3847unboximpl());
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke-k-4lQ0M  reason: not valid java name */
-                public final void m376invokek4lQ0M(long j) {
-                    DragAndDropStartDetectorScope.this.mo381requestDragAndDropTransferk4lQ0M(j);
+                public final Object invoke(Object obj2) {
+                    Unit invokeSuspend$lambda$0;
+                    invokeSuspend$lambda$0 = DragAndDropSourceDefaults$DefaultStartDetector$1.invokeSuspend$lambda$0(DragAndDropStartDetectorScope.this, (Offset) obj2);
+                    return invokeSuspend$lambda$0;
                 }
             }, null, null, this, 13, null) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -67,6 +59,12 @@ final class DragAndDropSourceDefaults$DefaultStartDetector$1 extends SuspendLamb
         } else {
             ResultKt.throwOnFailure(obj);
         }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(DragAndDropStartDetectorScope dragAndDropStartDetectorScope, Offset offset) {
+        dragAndDropStartDetectorScope.mo411requestDragAndDropTransferk4lQ0M(offset.m4303unboximpl());
         return Unit.INSTANCE;
     }
 }

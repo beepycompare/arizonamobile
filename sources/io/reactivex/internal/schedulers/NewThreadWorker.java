@@ -11,7 +11,7 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class NewThreadWorker extends Scheduler.Worker implements Disposable {
     volatile boolean disposed;
     private final ScheduledExecutorService executor;

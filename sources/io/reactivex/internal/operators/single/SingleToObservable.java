@@ -7,7 +7,7 @@ import io.reactivex.SingleSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.observers.DeferredScalarDisposable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleToObservable<T> extends Observable<T> {
     final SingleSource<? extends T> source;
 
@@ -25,7 +25,7 @@ public final class SingleToObservable<T> extends Observable<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class SingleToObservableObserver<T> extends DeferredScalarDisposable<T> implements SingleObserver<T> {
         private static final long serialVersionUID = 3786543492451018833L;
         Disposable upstream;

@@ -1,117 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-import java.util.Arrays;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
-public final class Vi extends MessageNano {
-    public static volatile Vi[] e;
+public final class Vi implements InterfaceC0695x3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f689a;
-    public Wi b;
-    public int c;
-    public byte[] d;
+    public final Object f697a;
+    public final InterfaceC0695x3 b;
 
-    public Vi() {
-        a();
+    public Vi(Object obj, InterfaceC0695x3 interfaceC0695x3) {
+        this.f697a = obj;
+        this.b = interfaceC0695x3;
     }
 
-    public static Vi[] b() {
-        if (e == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (e == null) {
-                    e = new Vi[0];
-                }
-            }
-        }
-        return e;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0695x3
+    public final int getBytesTruncated() {
+        return this.b.getBytesTruncated();
     }
 
-    public final Vi a() {
-        this.f689a = 0L;
-        this.b = null;
-        this.c = 0;
-        this.d = WireFormatNano.EMPTY_BYTES;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        long j = this.f689a;
-        if (j != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(1, j);
-        }
-        Wi wi = this.b;
-        if (wi != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(2, wi);
-        }
-        int i = this.c;
-        if (i != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(3, i);
-        }
-        return !Arrays.equals(this.d, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(4, this.d) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        long j = this.f689a;
-        if (j != 0) {
-            codedOutputByteBufferNano.writeInt64(1, j);
-        }
-        Wi wi = this.b;
-        if (wi != null) {
-            codedOutputByteBufferNano.writeMessage(2, wi);
-        }
-        int i = this.c;
-        if (i != 0) {
-            codedOutputByteBufferNano.writeUInt32(3, i);
-        }
-        if (!Arrays.equals(this.d, WireFormatNano.EMPTY_BYTES)) {
-            codedOutputByteBufferNano.writeBytes(4, this.d);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final Vi mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 8) {
-                this.f689a = codedInputByteBufferNano.readInt64();
-            } else if (readTag == 18) {
-                if (this.b == null) {
-                    this.b = new Wi();
-                }
-                codedInputByteBufferNano.readMessage(this.b);
-            } else if (readTag == 24) {
-                this.c = codedInputByteBufferNano.readUInt32();
-            } else if (readTag != 34) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                this.d = codedInputByteBufferNano.readBytes();
-            }
-        }
-        return this;
-    }
-
-    public static Vi b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new Vi().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static Vi a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (Vi) MessageNano.mergeFrom(new Vi(), bArr);
+    public final String toString() {
+        return "Result{result=" + this.f697a + ", metaInfo=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

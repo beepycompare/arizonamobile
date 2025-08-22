@@ -4,7 +4,7 @@ import io.reactivex.Flowable;
 import io.reactivex.internal.operators.flowable.FlowableTake;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableTakePublisher<T> extends Flowable<T> {
     final long limit;
     final Publisher<T> source;

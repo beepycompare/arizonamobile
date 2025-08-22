@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.schedulers.Timed;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableTimeInterval<T> extends AbstractObservableWithUpstream<T, Timed<T>> {
     final Scheduler scheduler;
     final TimeUnit unit;
@@ -23,7 +23,7 @@ public final class ObservableTimeInterval<T> extends AbstractObservableWithUpstr
         this.source.subscribe(new TimeIntervalObserver(observer, this.unit, this.scheduler));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimeIntervalObserver<T> implements Observer<T>, Disposable {
         final Observer<? super Timed<T>> downstream;
         long lastTime;

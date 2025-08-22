@@ -5,7 +5,7 @@ import io.reactivex.FlowableSubscriber;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableHide<T> extends AbstractFlowableWithUpstream<T, T> {
     public FlowableHide(Flowable<T> flowable) {
         super(flowable);
@@ -16,7 +16,7 @@ public final class FlowableHide<T> extends AbstractFlowableWithUpstream<T, T> {
         this.source.subscribe((FlowableSubscriber) new HideSubscriber(subscriber));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class HideSubscriber<T> implements FlowableSubscriber<T>, Subscription {
         final Subscriber<? super T> downstream;
         Subscription upstream;

@@ -13,7 +13,7 @@ import androidx.media3.extractor.ts.TsPayloadReader;
 import com.google.common.base.Ascii;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Ac3Reader implements ElementaryStreamReader {
     private static final int HEADER_SIZE = 128;
     private static final int STATE_FINDING_SYNC = 0;

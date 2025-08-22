@@ -5,13 +5,11 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Composition.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposableSingletons$CompositionKt {
     public static final ComposableSingletons$CompositionKt INSTANCE = new ComposableSingletons$CompositionKt();
-
-    /* renamed from: lambda-1  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f57lambda1 = ComposableLambdaKt.composableLambdaInstance(954879418, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.runtime.ComposableSingletons$CompositionKt$lambda-1$1
+    private static Function2<Composer, Integer, Unit> lambda$954879418 = ComposableLambdaKt.composableLambdaInstance(954879418, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.runtime.ComposableSingletons$CompositionKt$lambda$954879418$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -25,16 +23,14 @@ public final class ComposableSingletons$CompositionKt {
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(954879418, i, -1, "androidx.compose.runtime.ComposableSingletons$CompositionKt.lambda-1.<anonymous> (Composition.kt:600)");
+                ComposerKt.traceEventStart(954879418, i, -1, "androidx.compose.runtime.ComposableSingletons$CompositionKt.lambda$954879418.<anonymous> (Composition.kt:620)");
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
     });
-
-    /* renamed from: lambda-2  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f58lambda2 = ComposableLambdaKt.composableLambdaInstance(1918065384, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.runtime.ComposableSingletons$CompositionKt$lambda-2$1
+    private static Function2<Composer, Integer, Unit> lambda$1918065384 = ComposableLambdaKt.composableLambdaInstance(1918065384, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.runtime.ComposableSingletons$CompositionKt$lambda$1918065384$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -48,7 +44,7 @@ public final class ComposableSingletons$CompositionKt {
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1918065384, i, -1, "androidx.compose.runtime.ComposableSingletons$CompositionKt.lambda-2.<anonymous> (Composition.kt:815)");
+                ComposerKt.traceEventStart(1918065384, i, -1, "androidx.compose.runtime.ComposableSingletons$CompositionKt.lambda$1918065384.<anonymous> (Composition.kt:854)");
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -56,13 +52,11 @@ public final class ComposableSingletons$CompositionKt {
         }
     });
 
-    /* renamed from: getLambda-1$runtime_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m3456getLambda1$runtime_release() {
-        return f57lambda1;
+    public final Function2<Composer, Integer, Unit> getLambda$1918065384$runtime() {
+        return lambda$1918065384;
     }
 
-    /* renamed from: getLambda-2$runtime_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m3457getLambda2$runtime_release() {
-        return f58lambda2;
+    public final Function2<Composer, Integer, Unit> getLambda$954879418$runtime() {
+        return lambda$954879418;
     }
 }

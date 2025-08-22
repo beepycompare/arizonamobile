@@ -4,7 +4,7 @@ import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.functions.Consumer;
 import io.reactivex.internal.observers.BasicFuseableObserver;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableDoAfterNext<T> extends AbstractObservableWithUpstream<T, T> {
     final Consumer<? super T> onAfterNext;
 
@@ -18,7 +18,7 @@ public final class ObservableDoAfterNext<T> extends AbstractObservableWithUpstre
         this.source.subscribe(new DoAfterObserver(observer, this.onAfterNext));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DoAfterObserver<T> extends BasicFuseableObserver<T, T> {
         final Consumer<? super T> onAfterNext;
 

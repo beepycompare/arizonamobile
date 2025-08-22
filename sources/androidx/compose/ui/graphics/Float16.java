@@ -11,7 +11,7 @@ import kotlin.jvm.internal.ShortCompanionObject;
 import kotlin.text.CharsKt;
 import kotlin.text.Regex;
 /* compiled from: Float16.kt */
-@Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0010\u000f\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u0006\n\u0002\b\u0002\n\u0002\u0010\n\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0011\n\u0002\u0010\u000b\n\u0002\u0010\u0000\n\u0002\b\u0014\n\u0002\u0010\u0005\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u000f\b\u0081@\u0018\u0000 R2\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001RB\u0011\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B\u0011\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0006¢\u0006\u0004\b\u0004\u0010\u0007B\u000f\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\u0004\u0010\nJ\u0013\u0010\u0015\u001a\u00020\u0000ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b\u0016\u0010\nJ\u0013\u0010\u0017\u001a\u00020\u0000ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b\u0018\u0010\nJ\u001b\u0010\u0019\u001a\u00020\f2\u0006\u0010\u001a\u001a\u00020\u0000H\u0096\u0002ø\u0001\u0000¢\u0006\u0004\b\u001b\u0010\u001cJ\u001a\u0010\u001d\u001a\u00020\u001e2\b\u0010\u001a\u001a\u0004\u0018\u00010\u001fHÖ\u0003¢\u0006\u0004\b \u0010!J\u0013\u0010\"\u001a\u00020\u0000ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b#\u0010\nJ\u0010\u0010$\u001a\u00020\fHÖ\u0001¢\u0006\u0004\b%\u0010\u000eJ\r\u0010&\u001a\u00020\u001e¢\u0006\u0004\b'\u0010(J\r\u0010)\u001a\u00020\u001e¢\u0006\u0004\b*\u0010(J\r\u0010+\u001a\u00020\u001e¢\u0006\u0004\b,\u0010(J\r\u0010-\u001a\u00020\u001e¢\u0006\u0004\b.\u0010(J\u0013\u0010/\u001a\u00020\u0000ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b0\u0010\nJ\r\u00101\u001a\u00020\f¢\u0006\u0004\b2\u0010\u000eJ\r\u00103\u001a\u000204¢\u0006\u0004\b5\u00106J\r\u00107\u001a\u00020\u0006¢\u0006\u0004\b8\u00109J\r\u0010:\u001a\u00020\u0003¢\u0006\u0004\b;\u0010<J\r\u0010=\u001a\u00020>¢\u0006\u0004\b?\u0010@J\r\u0010A\u001a\u00020\f¢\u0006\u0004\bB\u0010\u000eJ\r\u0010C\u001a\u00020D¢\u0006\u0004\bE\u0010FJ\r\u0010G\u001a\u00020\f¢\u0006\u0004\bH\u0010\u000eJ\r\u0010I\u001a\u00020\t¢\u0006\u0004\bJ\u0010\nJ\u000f\u0010K\u001a\u00020>H\u0016¢\u0006\u0004\bL\u0010@J\u0013\u0010M\u001a\u00020\u0000ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\bN\u0010\nJ\u0018\u0010O\u001a\u00020\u00002\u0006\u0010\u0011\u001a\u00020\u0000ø\u0001\u0000¢\u0006\u0004\bP\u0010QR\u0011\u0010\u000b\u001a\u00020\f8F¢\u0006\u0006\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0017\u0010\u0011\u001a\u00020\u00008Fø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\u0012\u0010\nR\u0011\u0010\u0013\u001a\u00020\f8F¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u000e\u0088\u0001\b\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006S"}, d2 = {"Landroidx/compose/ui/graphics/Float16;", "", "value", "", "constructor-impl", "(F)S", "", "(D)S", "halfValue", "", "(S)S", "exponent", "", "getExponent-impl", "(S)I", "getHalfValue", "()S", "sign", "getSign-slo4al4", "significand", "getSignificand-impl", "absoluteValue", "absoluteValue-slo4al4", "ceil", "ceil-slo4al4", "compareTo", "other", "compareTo-41bOqos", "(SS)I", "equals", "", "", "equals-impl", "(SLjava/lang/Object;)Z", "floor", "floor-slo4al4", "hashCode", "hashCode-impl", "isFinite", "isFinite-impl", "(S)Z", "isInfinite", "isInfinite-impl", "isNaN", "isNaN-impl", "isNormalized", "isNormalized-impl", "round", "round-slo4al4", "toBits", "toBits-impl", "toByte", "", "toByte-impl", "(S)B", "toDouble", "toDouble-impl", "(S)D", "toFloat", "toFloat-impl", "(S)F", "toHexString", "", "toHexString-impl", "(S)Ljava/lang/String;", "toInt", "toInt-impl", "toLong", "", "toLong-impl", "(S)J", "toRawBits", "toRawBits-impl", "toShort", "toShort-impl", "toString", "toString-impl", "trunc", "trunc-slo4al4", "withSign", "withSign-qCeQghg", "(SS)S", "Companion", "ui-graphics_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u000f\n\u0000\n\u0002\u0010\n\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0006\n\u0002\b\u0004\n\u0002\u0010\u0005\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\r\n\u0002\u0010\u000e\n\u0002\b\u001a\n\u0002\u0010\u000b\n\u0002\b\u000b\n\u0002\u0010\u0000\n\u0002\b\u0003\b\u0081@\u0018\u0000 O2\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001OB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B\u0011\b\u0016\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\u0004\u0010\bB\u0011\b\u0016\u0012\u0006\u0010\u0006\u001a\u00020\t¢\u0006\u0004\b\u0004\u0010\nJ\r\u0010\r\u001a\u00020\u000e¢\u0006\u0004\b\u000f\u0010\u0010J\r\u0010\u0011\u001a\u00020\u0003¢\u0006\u0004\b\u0012\u0010\u0005J\r\u0010\u0013\u001a\u00020\u0014¢\u0006\u0004\b\u0015\u0010\u0016J\r\u0010\u0017\u001a\u00020\u0018¢\u0006\u0004\b\u0019\u0010\u001aJ\r\u0010\u001b\u001a\u00020\u0007¢\u0006\u0004\b\u001c\u0010\u001dJ\r\u0010\u001e\u001a\u00020\t¢\u0006\u0004\b\u001f\u0010 J\r\u0010!\u001a\u00020\u0014¢\u0006\u0004\b\"\u0010\u0016J\r\u0010#\u001a\u00020\u0014¢\u0006\u0004\b$\u0010\u0016J\u000f\u0010%\u001a\u00020&H\u0016¢\u0006\u0004\b'\u0010(J\u0018\u0010)\u001a\u00020\u00142\u0006\u0010*\u001a\u00020\u0000H\u0096\u0002¢\u0006\u0004\b+\u0010,J\u0015\u0010/\u001a\u00020\u00002\u0006\u0010-\u001a\u00020\u0000¢\u0006\u0004\b0\u00101J\r\u00102\u001a\u00020\u0000¢\u0006\u0004\b3\u0010\u0005J\r\u00104\u001a\u00020\u0000¢\u0006\u0004\b5\u0010\u0005J\r\u00106\u001a\u00020\u0000¢\u0006\u0004\b7\u0010\u0005J\r\u00108\u001a\u00020\u0000¢\u0006\u0004\b9\u0010\u0005J\r\u0010:\u001a\u00020\u0000¢\u0006\u0004\b;\u0010\u0005J\r\u0010@\u001a\u00020A¢\u0006\u0004\bB\u0010CJ\r\u0010D\u001a\u00020A¢\u0006\u0004\bE\u0010CJ\r\u0010F\u001a\u00020A¢\u0006\u0004\bG\u0010CJ\r\u0010H\u001a\u00020A¢\u0006\u0004\bI\u0010CJ\r\u0010J\u001a\u00020&¢\u0006\u0004\bK\u0010(J\u0013\u0010L\u001a\u00020A2\b\u0010*\u001a\u0004\u0018\u00010MHÖ\u0003J\t\u0010N\u001a\u00020\u0014HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010-\u001a\u00020\u00008F¢\u0006\u0006\u001a\u0004\b.\u0010\u0005R\u0011\u0010<\u001a\u00020\u00148F¢\u0006\u0006\u001a\u0004\b=\u0010\u0016R\u0011\u0010>\u001a\u00020\u00148F¢\u0006\u0006\u001a\u0004\b?\u0010\u0016\u0088\u0001\u0002¨\u0006P"}, d2 = {"Landroidx/compose/ui/graphics/Float16;", "", "halfValue", "", "constructor-impl", "(S)S", "value", "", "(F)S", "", "(D)S", "getHalfValue", "()S", "toByte", "", "toByte-impl", "(S)B", "toShort", "toShort-impl", "toInt", "", "toInt-impl", "(S)I", "toLong", "", "toLong-impl", "(S)J", "toFloat", "toFloat-impl", "(S)F", "toDouble", "toDouble-impl", "(S)D", "toBits", "toBits-impl", "toRawBits", "toRawBits-impl", "toString", "", "toString-impl", "(S)Ljava/lang/String;", "compareTo", "other", "compareTo-41bOqos", "(SS)I", "sign", "getSign-slo4al4", "withSign", "withSign-qCeQghg", "(SS)S", "absoluteValue", "absoluteValue-slo4al4", "round", "round-slo4al4", "ceil", "ceil-slo4al4", "floor", "floor-slo4al4", "trunc", "trunc-slo4al4", "exponent", "getExponent-impl", "significand", "getSignificand-impl", "isNaN", "", "isNaN-impl", "(S)Z", "isInfinite", "isInfinite-impl", "isFinite", "isFinite-impl", "isNormalized", "isNormalized-impl", "toHexString", "toHexString-impl", "equals", "", "hashCode", "Companion", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class Float16 implements Comparable<Float16> {
@@ -20,94 +20,94 @@ public final class Float16 implements Comparable<Float16> {
     public static final int Size = 16;
     private final short halfValue;
     public static final Companion Companion = new Companion(null);
-    private static final short Epsilon = m4187constructorimpl((short) 5120);
-    private static final short LowestValue = m4187constructorimpl((short) -1025);
-    private static final short MaxValue = m4187constructorimpl((short) 31743);
-    private static final short MinNormal = m4187constructorimpl((short) SilenceSkippingAudioProcessor.DEFAULT_SILENCE_THRESHOLD_LEVEL);
-    private static final short MinValue = m4187constructorimpl((short) 1);
-    private static final short NaN = m4187constructorimpl((short) 32256);
-    private static final short NegativeInfinity = m4187constructorimpl((short) -1024);
-    private static final short NegativeZero = m4187constructorimpl((short) ShortCompanionObject.MIN_VALUE);
-    private static final short PositiveInfinity = m4187constructorimpl((short) 31744);
-    private static final short PositiveZero = m4187constructorimpl((short) 0);
+    private static final short Epsilon = m4647constructorimpl((short) 5120);
+    private static final short LowestValue = m4647constructorimpl((short) -1025);
+    private static final short MaxValue = m4647constructorimpl((short) 31743);
+    private static final short MinNormal = m4647constructorimpl((short) SilenceSkippingAudioProcessor.DEFAULT_SILENCE_THRESHOLD_LEVEL);
+    private static final short MinValue = m4647constructorimpl((short) 1);
+    private static final short NaN = m4647constructorimpl((short) 32256);
+    private static final short NegativeInfinity = m4647constructorimpl((short) -1024);
+    private static final short NegativeZero = m4647constructorimpl((short) ShortCompanionObject.MIN_VALUE);
+    private static final short PositiveInfinity = m4647constructorimpl((short) 31744);
+    private static final short PositiveZero = m4647constructorimpl((short) 0);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Float16 m4182boximpl(short s) {
+    public static final /* synthetic */ Float16 m4642boximpl(short s) {
         return new Float16(s);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static short m4187constructorimpl(short s) {
+    public static short m4647constructorimpl(short s) {
         return s;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4188equalsimpl(short s, Object obj) {
-        return (obj instanceof Float16) && s == ((Float16) obj).m4213unboximpl();
+    public static boolean m4648equalsimpl(short s, Object obj) {
+        return (obj instanceof Float16) && s == ((Float16) obj).m4673unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4189equalsimpl0(short s, short s2) {
+    public static final boolean m4649equalsimpl0(short s, short s2) {
         return s == s2;
     }
 
     /* renamed from: getExponent-impl  reason: not valid java name */
-    public static final int m4191getExponentimpl(short s) {
+    public static final int m4651getExponentimpl(short s) {
         return ((s >>> 10) & 31) - 15;
     }
 
     /* renamed from: getSignificand-impl  reason: not valid java name */
-    public static final int m4193getSignificandimpl(short s) {
+    public static final int m4653getSignificandimpl(short s) {
         return s & 1023;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4194hashCodeimpl(short s) {
+    public static int m4654hashCodeimpl(short s) {
         return Short.hashCode(s);
     }
 
     /* renamed from: isFinite-impl  reason: not valid java name */
-    public static final boolean m4195isFiniteimpl(short s) {
+    public static final boolean m4655isFiniteimpl(short s) {
         return (s & ShortCompanionObject.MAX_VALUE) != 31744;
     }
 
     /* renamed from: isInfinite-impl  reason: not valid java name */
-    public static final boolean m4196isInfiniteimpl(short s) {
+    public static final boolean m4656isInfiniteimpl(short s) {
         return (s & ShortCompanionObject.MAX_VALUE) == 31744;
     }
 
     /* renamed from: isNaN-impl  reason: not valid java name */
-    public static final boolean m4197isNaNimpl(short s) {
+    public static final boolean m4657isNaNimpl(short s) {
         return (s & ShortCompanionObject.MAX_VALUE) > 31744;
     }
 
     /* renamed from: isNormalized-impl  reason: not valid java name */
-    public static final boolean m4198isNormalizedimpl(short s) {
+    public static final boolean m4658isNormalizedimpl(short s) {
         int i = s & 31744;
         return (i != 0) & (i != 31744);
     }
 
     /* renamed from: toRawBits-impl  reason: not valid java name */
-    public static final int m4207toRawBitsimpl(short s) {
+    public static final int m4667toRawBitsimpl(short s) {
         return s & UShort.MAX_VALUE;
     }
 
     public boolean equals(Object obj) {
-        return m4188equalsimpl(this.halfValue, obj);
+        return m4648equalsimpl(this.halfValue, obj);
     }
 
     public int hashCode() {
-        return m4194hashCodeimpl(this.halfValue);
+        return m4654hashCodeimpl(this.halfValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ short m4213unboximpl() {
+    public final /* synthetic */ short m4673unboximpl() {
         return this.halfValue;
     }
 
     @Override // java.lang.Comparable
     public /* bridge */ /* synthetic */ int compareTo(Float16 float16) {
-        return m4212compareTo41bOqos(float16.m4213unboximpl());
+        return m4672compareTo41bOqos(float16.m4673unboximpl());
     }
 
     private /* synthetic */ Float16(short s) {
@@ -119,90 +119,90 @@ public final class Float16 implements Comparable<Float16> {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static short m4185constructorimpl(double d) {
-        return m4186constructorimpl((float) d);
+    public static short m4645constructorimpl(double d) {
+        return m4646constructorimpl((float) d);
     }
 
     /* renamed from: toByte-impl  reason: not valid java name */
-    public static final byte m4201toByteimpl(short s) {
-        return (byte) m4203toFloatimpl(s);
+    public static final byte m4661toByteimpl(short s) {
+        return (byte) m4663toFloatimpl(s);
     }
 
     /* renamed from: toShort-impl  reason: not valid java name */
-    public static final short m4208toShortimpl(short s) {
-        return (short) m4203toFloatimpl(s);
+    public static final short m4668toShortimpl(short s) {
+        return (short) m4663toFloatimpl(s);
     }
 
     /* renamed from: toInt-impl  reason: not valid java name */
-    public static final int m4205toIntimpl(short s) {
-        return (int) m4203toFloatimpl(s);
+    public static final int m4665toIntimpl(short s) {
+        return (int) m4663toFloatimpl(s);
     }
 
     /* renamed from: toLong-impl  reason: not valid java name */
-    public static final long m4206toLongimpl(short s) {
-        return m4203toFloatimpl(s);
+    public static final long m4666toLongimpl(short s) {
+        return m4663toFloatimpl(s);
     }
 
     /* renamed from: toDouble-impl  reason: not valid java name */
-    public static final double m4202toDoubleimpl(short s) {
-        return m4203toFloatimpl(s);
+    public static final double m4662toDoubleimpl(short s) {
+        return m4663toFloatimpl(s);
     }
 
     /* renamed from: toBits-impl  reason: not valid java name */
-    public static final int m4200toBitsimpl(short s) {
-        if (m4197isNaNimpl(s)) {
+    public static final int m4660toBitsimpl(short s) {
+        if (m4657isNaNimpl(s)) {
             return 32256;
         }
         return s & UShort.MAX_VALUE;
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4209toStringimpl(short s) {
-        return String.valueOf(m4203toFloatimpl(s));
+    public static String m4669toStringimpl(short s) {
+        return String.valueOf(m4663toFloatimpl(s));
     }
 
     public String toString() {
-        return m4209toStringimpl(this.halfValue);
+        return m4669toStringimpl(this.halfValue);
     }
 
     /* renamed from: compareTo-41bOqos  reason: not valid java name */
-    public int m4212compareTo41bOqos(short s) {
-        return m4184compareTo41bOqos(this.halfValue, s);
+    public int m4672compareTo41bOqos(short s) {
+        return m4644compareTo41bOqos(this.halfValue, s);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: compareTo-41bOqos  reason: not valid java name */
-    public static int m4184compareTo41bOqos(short s, short s2) {
-        if (m4197isNaNimpl(s)) {
-            return !m4197isNaNimpl(s2) ? 1 : 0;
+    public static int m4644compareTo41bOqos(short s, short s2) {
+        if (m4657isNaNimpl(s)) {
+            return !m4657isNaNimpl(s2) ? 1 : 0;
         }
-        if (m4197isNaNimpl(s2)) {
+        if (m4657isNaNimpl(s2)) {
             return -1;
         }
         return Intrinsics.compare((s & ShortCompanionObject.MIN_VALUE) != 0 ? 32768 - (s & UShort.MAX_VALUE) : s & UShort.MAX_VALUE, (s2 & ShortCompanionObject.MIN_VALUE) != 0 ? 32768 - (s2 & UShort.MAX_VALUE) : s2 & UShort.MAX_VALUE);
     }
 
     /* renamed from: getSign-slo4al4  reason: not valid java name */
-    public static final short m4192getSignslo4al4(short s) {
+    public static final short m4652getSignslo4al4(short s) {
         int i = s & ShortCompanionObject.MAX_VALUE;
         if (!((i > 31744) | (i == 0))) {
             i = (s & ShortCompanionObject.MIN_VALUE) | 15360;
         }
-        return m4187constructorimpl((short) i);
+        return m4647constructorimpl((short) i);
     }
 
     /* renamed from: withSign-qCeQghg  reason: not valid java name */
-    public static final short m4211withSignqCeQghg(short s, short s2) {
-        return m4187constructorimpl((short) ((s & ShortCompanionObject.MAX_VALUE) | (s2 & ShortCompanionObject.MIN_VALUE)));
+    public static final short m4671withSignqCeQghg(short s, short s2) {
+        return m4647constructorimpl((short) ((s & ShortCompanionObject.MAX_VALUE) | (s2 & ShortCompanionObject.MIN_VALUE)));
     }
 
     /* renamed from: absoluteValue-slo4al4  reason: not valid java name */
-    public static final short m4181absoluteValueslo4al4(short s) {
-        return m4187constructorimpl((short) (s & ShortCompanionObject.MAX_VALUE));
+    public static final short m4641absoluteValueslo4al4(short s) {
+        return m4647constructorimpl((short) (s & ShortCompanionObject.MAX_VALUE));
     }
 
     /* renamed from: round-slo4al4  reason: not valid java name */
-    public static final short m4199roundslo4al4(short s) {
+    public static final short m4659roundslo4al4(short s) {
         int i = s & UShort.MAX_VALUE;
         int i2 = s & ShortCompanionObject.MAX_VALUE;
         if (i2 < 15360) {
@@ -211,11 +211,11 @@ public final class Float16 implements Comparable<Float16> {
             int i3 = i2 >> 10;
             i = (i + (1 << (24 - i3))) & (~((1 << (25 - i3)) - 1));
         }
-        return m4187constructorimpl((short) i);
+        return m4647constructorimpl((short) i);
     }
 
     /* renamed from: ceil-slo4al4  reason: not valid java name */
-    public static final short m4183ceilslo4al4(short s) {
+    public static final short m4643ceilslo4al4(short s) {
         int i = 65535 & s;
         int i2 = s & ShortCompanionObject.MAX_VALUE;
         if (i2 < 15360) {
@@ -224,11 +224,11 @@ public final class Float16 implements Comparable<Float16> {
             int i3 = (1 << (25 - (i2 >> 10))) - 1;
             i = (i + (((i >> 15) - 1) & i3)) & (~i3);
         }
-        return m4187constructorimpl((short) i);
+        return m4647constructorimpl((short) i);
     }
 
     /* renamed from: floor-slo4al4  reason: not valid java name */
-    public static final short m4190floorslo4al4(short s) {
+    public static final short m4650floorslo4al4(short s) {
         int i = s & UShort.MAX_VALUE;
         int i2 = s & ShortCompanionObject.MAX_VALUE;
         if (i2 < 15360) {
@@ -237,11 +237,11 @@ public final class Float16 implements Comparable<Float16> {
             int i3 = (1 << (25 - (i2 >> 10))) - 1;
             i = (i + ((-(i >> 15)) & i3)) & (~i3);
         }
-        return m4187constructorimpl((short) i);
+        return m4647constructorimpl((short) i);
     }
 
     /* renamed from: trunc-slo4al4  reason: not valid java name */
-    public static final short m4210truncslo4al4(short s) {
+    public static final short m4670truncslo4al4(short s) {
         int i = 65535 & s;
         int i2 = s & ShortCompanionObject.MAX_VALUE;
         if (i2 < 15360) {
@@ -249,11 +249,11 @@ public final class Float16 implements Comparable<Float16> {
         } else if (i2 < 25600) {
             i &= ~((1 << (25 - (i2 >> 10))) - 1);
         }
-        return m4187constructorimpl((short) i);
+        return m4647constructorimpl((short) i);
     }
 
     /* renamed from: toHexString-impl  reason: not valid java name */
-    public static final String m4204toHexStringimpl(short s) {
+    public static final String m4664toHexStringimpl(short s) {
         StringBuilder sb = new StringBuilder();
         int i = 65535 & s;
         int i2 = i >>> 15;
@@ -291,7 +291,7 @@ public final class Float16 implements Comparable<Float16> {
     }
 
     /* compiled from: Float16.kt */
-    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\b\u0013\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0019\u0010\u0003\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0005\u0010\u0006R\u0019\u0010\b\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\t\u0010\u0006R\u000e\u0010\n\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000R\u0019\u0010\f\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\r\u0010\u0006R\u000e\u0010\u000e\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000R\u0019\u0010\u000f\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0010\u0010\u0006R\u0019\u0010\u0011\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0012\u0010\u0006R\u0019\u0010\u0013\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0014\u0010\u0006R\u0019\u0010\u0015\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0016\u0010\u0006R\u0019\u0010\u0017\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0018\u0010\u0006R\u0019\u0010\u0019\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u001a\u0010\u0006R\u0019\u0010\u001b\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u001c\u0010\u0006R\u000e\u0010\u001d\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u001e"}, d2 = {"Landroidx/compose/ui/graphics/Float16$Companion;", "", "()V", "Epsilon", "Landroidx/compose/ui/graphics/Float16;", "getEpsilon-slo4al4", "()S", ExifInterface.LATITUDE_SOUTH, "LowestValue", "getLowestValue-slo4al4", "MaxExponent", "", "MaxValue", "getMaxValue-slo4al4", "MinExponent", "MinNormal", "getMinNormal-slo4al4", "MinValue", "getMinValue-slo4al4", "NaN", "getNaN-slo4al4", "NegativeInfinity", "getNegativeInfinity-slo4al4", "NegativeZero", "getNegativeZero-slo4al4", "PositiveInfinity", "getPositiveInfinity-slo4al4", "PositiveZero", "getPositiveZero-slo4al4", "Size", "ui-graphics_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0018\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u0013\u0010\u0006\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\b\u0010\tR\u000e\u0010\u000b\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u0013\u0010\r\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u000e\u0010\tR\u0013\u0010\u000f\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u0010\u0010\tR\u0013\u0010\u0011\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u0012\u0010\tR\u0013\u0010\u0013\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u0014\u0010\tR\u0013\u0010\u0015\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u0016\u0010\tR\u0013\u0010\u0017\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u0018\u0010\tR\u0013\u0010\u0019\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u001a\u0010\tR\u0013\u0010\u001b\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u001c\u0010\tR\u0013\u0010\u001d\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u001e\u0010\t¨\u0006\u001f"}, d2 = {"Landroidx/compose/ui/graphics/Float16$Companion;", "", "<init>", "()V", "Size", "", "Epsilon", "Landroidx/compose/ui/graphics/Float16;", "getEpsilon-slo4al4", "()S", ExifInterface.LATITUDE_SOUTH, "MaxExponent", "MinExponent", "LowestValue", "getLowestValue-slo4al4", "MaxValue", "getMaxValue-slo4al4", "MinNormal", "getMinNormal-slo4al4", "MinValue", "getMinValue-slo4al4", "NaN", "getNaN-slo4al4", "NegativeInfinity", "getNegativeInfinity-slo4al4", "NegativeZero", "getNegativeZero-slo4al4", "PositiveInfinity", "getPositiveInfinity-slo4al4", "PositiveZero", "getPositiveZero-slo4al4", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -302,58 +302,58 @@ public final class Float16 implements Comparable<Float16> {
         }
 
         /* renamed from: getEpsilon-slo4al4  reason: not valid java name */
-        public final short m4214getEpsilonslo4al4() {
+        public final short m4674getEpsilonslo4al4() {
             return Float16.Epsilon;
         }
 
         /* renamed from: getLowestValue-slo4al4  reason: not valid java name */
-        public final short m4215getLowestValueslo4al4() {
+        public final short m4675getLowestValueslo4al4() {
             return Float16.LowestValue;
         }
 
         /* renamed from: getMaxValue-slo4al4  reason: not valid java name */
-        public final short m4216getMaxValueslo4al4() {
+        public final short m4676getMaxValueslo4al4() {
             return Float16.MaxValue;
         }
 
         /* renamed from: getMinNormal-slo4al4  reason: not valid java name */
-        public final short m4217getMinNormalslo4al4() {
+        public final short m4677getMinNormalslo4al4() {
             return Float16.MinNormal;
         }
 
         /* renamed from: getMinValue-slo4al4  reason: not valid java name */
-        public final short m4218getMinValueslo4al4() {
+        public final short m4678getMinValueslo4al4() {
             return Float16.MinValue;
         }
 
         /* renamed from: getNaN-slo4al4  reason: not valid java name */
-        public final short m4219getNaNslo4al4() {
+        public final short m4679getNaNslo4al4() {
             return Float16.NaN;
         }
 
         /* renamed from: getNegativeInfinity-slo4al4  reason: not valid java name */
-        public final short m4220getNegativeInfinityslo4al4() {
+        public final short m4680getNegativeInfinityslo4al4() {
             return Float16.NegativeInfinity;
         }
 
         /* renamed from: getNegativeZero-slo4al4  reason: not valid java name */
-        public final short m4221getNegativeZeroslo4al4() {
+        public final short m4681getNegativeZeroslo4al4() {
             return Float16.NegativeZero;
         }
 
         /* renamed from: getPositiveInfinity-slo4al4  reason: not valid java name */
-        public final short m4222getPositiveInfinityslo4al4() {
+        public final short m4682getPositiveInfinityslo4al4() {
             return Float16.PositiveInfinity;
         }
 
         /* renamed from: getPositiveZero-slo4al4  reason: not valid java name */
-        public final short m4223getPositiveZeroslo4al4() {
+        public final short m4683getPositiveZeroslo4al4() {
             return Float16.PositiveZero;
         }
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static short m4186constructorimpl(float f) {
+    public static short m4646constructorimpl(float f) {
         int i;
         int i2;
         int floatToRawIntBits = Float.floatToRawIntBits(f);
@@ -392,11 +392,11 @@ public final class Float16 implements Comparable<Float16> {
             }
             i = (i3 << 15) | (i6 << 10) | i7;
         }
-        return m4187constructorimpl((short) i);
+        return m4647constructorimpl((short) i);
     }
 
     /* renamed from: toFloat-impl  reason: not valid java name */
-    public static final float m4203toFloatimpl(short s) {
+    public static final float m4663toFloatimpl(short s) {
         int i;
         int i2;
         int i3;

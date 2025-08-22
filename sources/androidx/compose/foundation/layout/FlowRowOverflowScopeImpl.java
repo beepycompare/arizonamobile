@@ -10,25 +10,19 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 /* compiled from: FlowLayout.kt */
-@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\b\u0000\u0018\u00002\u00020\u00012\u00020\u0002B\r\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0002\u0010\u0005J\u0015\u0010\u000f\u001a\u00020\u0010*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0097\u0001J!\u0010\u0013\u001a\u00020\u0010*\u00020\u00102\u0012\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00070\u0015H\u0097\u0001J\u0015\u0010\u0013\u001a\u00020\u0010*\u00020\u00102\u0006\u0010\u0017\u001a\u00020\u0018H\u0097\u0001J\r\u0010\u0019\u001a\u00020\u0010*\u00020\u0010H\u0097\u0001J\u0017\u0010\u001a\u001a\u00020\u0010*\u00020\u00102\b\b\u0003\u0010\u001b\u001a\u00020\u001cH\u0097\u0001J\u001f\u0010\u001d\u001a\u00020\u0010*\u00020\u00102\b\b\u0001\u0010\u001d\u001a\u00020\u001c2\u0006\u0010\u001e\u001a\u00020\u001fH\u0097\u0001R\u001b\u0010\u0006\u001a\u00020\u00078VX\u0096\u0084\u0002¢\u0006\f\n\u0004\b\n\u0010\u000b\u001a\u0004\b\b\u0010\tR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\f\u001a\u00020\u00078VX\u0096\u0084\u0002¢\u0006\f\n\u0004\b\u000e\u0010\u000b\u001a\u0004\b\r\u0010\t¨\u0006 "}, d2 = {"Landroidx/compose/foundation/layout/FlowRowOverflowScopeImpl;", "Landroidx/compose/foundation/layout/FlowRowScope;", "Landroidx/compose/foundation/layout/FlowRowOverflowScope;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/layout/FlowLayoutOverflowState;", "(Landroidx/compose/foundation/layout/FlowLayoutOverflowState;)V", "shownItemCount", "", "getShownItemCount", "()I", "shownItemCount$delegate", "Lkotlin/Lazy;", "totalItemCount", "getTotalItemCount", "totalItemCount$delegate", "align", "Landroidx/compose/ui/Modifier;", "alignment", "Landroidx/compose/ui/Alignment$Vertical;", "alignBy", "alignmentLineBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/Measured;", "alignmentLine", "Landroidx/compose/ui/layout/HorizontalAlignmentLine;", "alignByBaseline", "fillMaxRowHeight", "fraction", "", "weight", "fill", "", "foundation-layout_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\b\u0001\u0018\u00002\u00020\u00012\u00020\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0015\u0010\u0010\u001a\u00020\u0011*\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0097\u0001J\u0015\u0010\u0014\u001a\u00020\u0011*\u00020\u00112\u0006\u0010\u0015\u001a\u00020\u0016H\u0097\u0001J!\u0010\u0014\u001a\u00020\u0011*\u00020\u00112\u0012\u0010\u0017\u001a\u000e\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\b0\u0018H\u0097\u0001J\r\u0010\u001a\u001a\u00020\u0011*\u00020\u0011H\u0097\u0001J\u0017\u0010\u001b\u001a\u00020\u0011*\u00020\u00112\b\b\u0001\u0010\u001c\u001a\u00020\u001dH\u0097\u0001J\u001f\u0010\u001e\u001a\u00020\u0011*\u00020\u00112\b\b\u0001\u0010\u001e\u001a\u00020\u001d2\u0006\u0010\u001f\u001a\u00020 H\u0097\u0001R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u0007\u001a\u00020\b8VX\u0096\u0084\u0002¢\u0006\f\n\u0004\b\u000b\u0010\f\u001a\u0004\b\t\u0010\nR\u001b\u0010\r\u001a\u00020\b8VX\u0096\u0084\u0002¢\u0006\f\n\u0004\b\u000f\u0010\f\u001a\u0004\b\u000e\u0010\n¨\u0006!"}, d2 = {"Landroidx/compose/foundation/layout/FlowRowOverflowScopeImpl;", "Landroidx/compose/foundation/layout/FlowRowScope;", "Landroidx/compose/foundation/layout/FlowRowOverflowScope;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/layout/FlowLayoutOverflowState;", "<init>", "(Landroidx/compose/foundation/layout/FlowLayoutOverflowState;)V", "totalItemCount", "", "getTotalItemCount", "()I", "totalItemCount$delegate", "Lkotlin/Lazy;", "shownItemCount", "getShownItemCount", "shownItemCount$delegate", "align", "Landroidx/compose/ui/Modifier;", "alignment", "Landroidx/compose/ui/Alignment$Vertical;", "alignBy", "alignmentLine", "Landroidx/compose/ui/layout/HorizontalAlignmentLine;", "alignmentLineBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/Measured;", "alignByBaseline", "fillMaxRowHeight", "fraction", "", "weight", "fill", "", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class FlowRowOverflowScopeImpl implements FlowRowScope, FlowRowOverflowScope {
     public static final int $stable = 0;
     private final Lazy shownItemCount$delegate;
     private final FlowLayoutOverflowState state;
     private final /* synthetic */ FlowRowScopeInstance $$delegate_0 = FlowRowScopeInstance.INSTANCE;
-    private final Lazy totalItemCount$delegate = FlowLayoutOverflowKt.lazyInt$default(null, new Function0<Integer>() { // from class: androidx.compose.foundation.layout.FlowRowOverflowScopeImpl$totalItemCount$2
-        /* JADX INFO: Access modifiers changed from: package-private */
-        {
-            super(0);
-        }
-
-        /* JADX WARN: Can't rename method to resolve collision */
+    private final Lazy totalItemCount$delegate = FlowLayoutOverflowKt.lazyInt$default(null, new Function0() { // from class: androidx.compose.foundation.layout.FlowRowOverflowScopeImpl$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
-        public final Integer invoke() {
-            FlowLayoutOverflowState flowLayoutOverflowState;
-            flowLayoutOverflowState = FlowRowOverflowScopeImpl.this.state;
-            return Integer.valueOf(flowLayoutOverflowState.getItemCount$foundation_layout_release());
+        public final Object invoke() {
+            int i;
+            i = FlowRowOverflowScopeImpl.totalItemCount_delegate$lambda$0(FlowRowOverflowScopeImpl.this);
+            return Integer.valueOf(i);
         }
     }, 1, null);
 
@@ -64,25 +58,29 @@ public final class FlowRowOverflowScopeImpl implements FlowRowScope, FlowRowOver
 
     public FlowRowOverflowScopeImpl(FlowLayoutOverflowState flowLayoutOverflowState) {
         this.state = flowLayoutOverflowState;
-        this.shownItemCount$delegate = FlowLayoutOverflowKt.lazyInt(flowLayoutOverflowState.getShownItemLazyErrorMessage$foundation_layout_release(), new Function0<Integer>() { // from class: androidx.compose.foundation.layout.FlowRowOverflowScopeImpl$shownItemCount$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        this.shownItemCount$delegate = FlowLayoutOverflowKt.lazyInt(flowLayoutOverflowState.getShownItemLazyErrorMessage$foundation_layout(), new Function0() { // from class: androidx.compose.foundation.layout.FlowRowOverflowScopeImpl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
-            public final Integer invoke() {
-                FlowLayoutOverflowState flowLayoutOverflowState2;
-                flowLayoutOverflowState2 = FlowRowOverflowScopeImpl.this.state;
-                return Integer.valueOf(flowLayoutOverflowState2.getItemShown$foundation_layout_release());
+            public final Object invoke() {
+                int shownItemCount_delegate$lambda$1;
+                shownItemCount_delegate$lambda$1 = FlowRowOverflowScopeImpl.shownItemCount_delegate$lambda$1(FlowRowOverflowScopeImpl.this);
+                return Integer.valueOf(shownItemCount_delegate$lambda$1);
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final int totalItemCount_delegate$lambda$0(FlowRowOverflowScopeImpl flowRowOverflowScopeImpl) {
+        return flowRowOverflowScopeImpl.state.getItemCount$foundation_layout();
     }
 
     @Override // androidx.compose.foundation.layout.FlowRowOverflowScope
     public int getTotalItemCount() {
         return ((Number) this.totalItemCount$delegate.getValue()).intValue();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final int shownItemCount_delegate$lambda$1(FlowRowOverflowScopeImpl flowRowOverflowScopeImpl) {
+        return flowRowOverflowScopeImpl.state.getItemShown$foundation_layout();
     }
 
     @Override // androidx.compose.foundation.layout.FlowRowOverflowScope

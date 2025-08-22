@@ -1,107 +1,56 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-import java.util.Arrays;
+import android.os.Handler;
+import com.google.android.vending.expansion.downloader.Constants;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.coreapi.internal.executors.InterruptionSafeThread;
+import io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider;
+import java.util.concurrent.Executor;
 /* loaded from: classes4.dex */
-public final class V9 extends MessageNano {
-    public static final int c = 0;
-    public static final int d = 1;
-    public static final int e = 2;
-    public static final int f = 3;
-    public static final int g = 4;
-    public static final int h = 5;
-    public static final int i = 6;
-    public static volatile V9[] j;
+public final class V9 implements ExecutorProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f683a;
-    public byte[] b;
+    public final C0687wk f691a;
+    public final IHandlerExecutor b;
 
     public V9() {
-        a();
+        C0687wk w = Ka.j().w();
+        this.f691a = w;
+        this.b = w.c();
     }
 
-    public static V9[] b() {
-        if (j == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (j == null) {
-                    j = new V9[0];
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
+    public final IHandlerExecutor getDefaultExecutor() {
+        return this.f691a.a();
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
+    public final InterruptionSafeThread getInterruptionThread(String str, String str2, Runnable runnable) {
+        return new InterruptionSafeThread(runnable, (str + '-' + str2) + Constants.FILENAME_SEQUENCE_SEPARATOR + Qd.f620a.incrementAndGet());
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
+    public final IHandlerExecutor getModuleExecutor() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
+    public final IHandlerExecutor getSupportIOExecutor() {
+        C0687wk c0687wk = this.f691a;
+        if (c0687wk.f == null) {
+            synchronized (c0687wk) {
+                if (c0687wk.f == null) {
+                    c0687wk.f1126a.getClass();
+                    HandlerThreadC0753zb a2 = W9.a("IAA-SIO");
+                    c0687wk.f = new W9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
             }
         }
-        return j;
+        return c0687wk.f;
     }
 
-    public final V9 a() {
-        this.f683a = 0;
-        this.b = WireFormatNano.EMPTY_BYTES;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        int i2 = this.f683a;
-        if (i2 != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(1, i2);
-        }
-        return !Arrays.equals(this.b, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(2, this.b) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i2 = this.f683a;
-        if (i2 != 0) {
-            codedOutputByteBufferNano.writeInt32(1, i2);
-        }
-        if (!Arrays.equals(this.b, WireFormatNano.EMPTY_BYTES)) {
-            codedOutputByteBufferNano.writeBytes(2, this.b);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final V9 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag != 0) {
-                if (readTag == 8) {
-                    int readInt32 = codedInputByteBufferNano.readInt32();
-                    switch (readInt32) {
-                        case 0:
-                        case 1:
-                        case 2:
-                        case 3:
-                        case 4:
-                        case 5:
-                        case 6:
-                            this.f683a = readInt32;
-                            continue;
-                    }
-                } else if (readTag != 18) {
-                    if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    }
-                } else {
-                    this.b = codedInputByteBufferNano.readBytes();
-                }
-            }
-        }
-        return this;
-    }
-
-    public static V9 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new V9().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static V9 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (V9) MessageNano.mergeFrom(new V9(), bArr);
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
+    public final Executor getUiExecutor() {
+        return this.f691a.f();
     }
 }

@@ -11,7 +11,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableDoOnLifecycle<T> extends AbstractFlowableWithUpstream<T, T> {
     private final Action onCancel;
     private final LongConsumer onRequest;
@@ -29,7 +29,7 @@ public final class FlowableDoOnLifecycle<T> extends AbstractFlowableWithUpstream
         this.source.subscribe((FlowableSubscriber) new SubscriptionLambdaSubscriber(subscriber, this.onSubscribe, this.onRequest, this.onCancel));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SubscriptionLambdaSubscriber<T> implements FlowableSubscriber<T>, Subscription {
         final Subscriber<? super T> downstream;
         final Action onCancel;

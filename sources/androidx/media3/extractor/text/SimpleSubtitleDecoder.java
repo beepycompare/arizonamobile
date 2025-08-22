@@ -3,7 +3,7 @@ package androidx.media3.extractor.text;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.decoder.SimpleDecoder;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class SimpleSubtitleDecoder extends SimpleDecoder<SubtitleInputBuffer, SubtitleOutputBuffer, SubtitleDecoderException> implements SubtitleDecoder {
     private final String name;
 

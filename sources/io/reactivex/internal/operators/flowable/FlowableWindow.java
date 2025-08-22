@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableWindow<T> extends AbstractFlowableWithUpstream<T, Flowable<T>> {
     final int bufferSize;
     final long size;
@@ -40,7 +40,7 @@ public final class FlowableWindow<T> extends AbstractFlowableWithUpstream<T, Flo
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WindowExactSubscriber<T> extends AtomicInteger implements FlowableSubscriber<T>, Subscription, Runnable {
         private static final long serialVersionUID = -2365647875069161133L;
         final int bufferSize;
@@ -130,7 +130,7 @@ public final class FlowableWindow<T> extends AbstractFlowableWithUpstream<T, Flo
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WindowSkipSubscriber<T> extends AtomicInteger implements FlowableSubscriber<T>, Subscription, Runnable {
         private static final long serialVersionUID = -8792836352386833856L;
         final int bufferSize;
@@ -232,7 +232,7 @@ public final class FlowableWindow<T> extends AbstractFlowableWithUpstream<T, Flo
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WindowOverlapSubscriber<T> extends AtomicInteger implements FlowableSubscriber<T>, Subscription, Runnable {
         private static final long serialVersionUID = 2428527070996323976L;
         final int bufferSize;

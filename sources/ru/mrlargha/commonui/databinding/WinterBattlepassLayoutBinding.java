@@ -13,7 +13,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class WinterBattlepassLayoutBinding implements ViewBinding {
     public final ImageView backButton;
     public final ImageView backWelcomeButton;

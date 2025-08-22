@@ -8,7 +8,7 @@ import io.reactivex.functions.Action;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeDoFinally<T> extends AbstractMaybeWithUpstream<T, T> {
     final Action onFinally;
 
@@ -22,7 +22,7 @@ public final class MaybeDoFinally<T> extends AbstractMaybeWithUpstream<T, T> {
         this.source.subscribe(new DoFinallyObserver(maybeObserver, this.onFinally));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DoFinallyObserver<T> extends AtomicInteger implements MaybeObserver<T>, Disposable {
         private static final long serialVersionUID = 4109457741734051389L;
         final MaybeObserver<? super T> downstream;

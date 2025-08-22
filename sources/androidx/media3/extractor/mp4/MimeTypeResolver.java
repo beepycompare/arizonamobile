@@ -4,7 +4,7 @@ import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class MimeTypeResolver {
     public static String getContainerMimeType(Format format) {
         String str = format.sampleMimeType;

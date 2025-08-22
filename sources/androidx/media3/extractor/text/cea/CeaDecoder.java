@@ -12,7 +12,7 @@ import androidx.media3.extractor.text.SubtitleOutputBuffer;
 import androidx.media3.extractor.text.cea.CeaDecoder;
 import java.util.ArrayDeque;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class CeaDecoder implements SubtitleDecoder {
     private static final int NUM_INPUT_BUFFERS = 10;
     private static final int NUM_OUTPUT_BUFFERS = 2;
@@ -155,7 +155,7 @@ public abstract class CeaDecoder implements SubtitleDecoder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class CeaInputBuffer extends SubtitleInputBuffer implements Comparable<CeaInputBuffer> {
         private long queuedInputBufferCount;
 
@@ -179,7 +179,7 @@ public abstract class CeaDecoder implements SubtitleDecoder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class CeaOutputBuffer extends SubtitleOutputBuffer {
         private DecoderOutputBuffer.Owner<CeaOutputBuffer> owner;
 

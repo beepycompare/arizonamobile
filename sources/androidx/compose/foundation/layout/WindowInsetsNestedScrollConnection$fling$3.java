@@ -3,7 +3,7 @@ package androidx.compose.foundation.layout;
 import android.view.WindowInsetsAnimationController;
 import androidx.compose.animation.core.Animatable;
 import androidx.compose.animation.core.AnimatableKt;
-import androidx.compose.animation.core.AnimationVector1D;
+import androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$fling$3;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -19,7 +19,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Job;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WindowInsetsConnection.android.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$fling$3", f = "WindowInsetsConnection.android.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class WindowInsetsNestedScrollConnection$fling$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -58,7 +58,7 @@ public final class WindowInsetsNestedScrollConnection$fling$3 extends SuspendLam
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: WindowInsetsConnection.android.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
     @DebugMetadata(c = "androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$fling$3$1", f = "WindowInsetsConnection.android.kt", i = {}, l = {355}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$fling$3$1  reason: invalid class name */
     /* loaded from: classes.dex */
@@ -103,20 +103,12 @@ public final class WindowInsetsNestedScrollConnection$fling$3 extends SuspendLam
                 Float boxFloat2 = Boxing.boxFloat(this.$flingAmount);
                 final WindowInsetsNestedScrollConnection windowInsetsNestedScrollConnection = this.this$0;
                 this.label = 1;
-                if (Animatable.animateTo$default(Animatable$default, boxFloat, null, boxFloat2, new Function1<Animatable<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection.fling.3.1.1
-                    {
-                        super(1);
-                    }
-
+                if (Animatable.animateTo$default(Animatable$default, boxFloat, null, boxFloat2, new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$fling$3$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(Animatable<Float, AnimationVector1D> animatable) {
-                        invoke2(animatable);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(Animatable<Float, AnimationVector1D> animatable) {
-                        WindowInsetsNestedScrollConnection.this.adjustInsets(animatable.getValue().floatValue());
+                    public final Object invoke(Object obj2) {
+                        Unit invokeSuspend$lambda$0;
+                        invokeSuspend$lambda$0 = WindowInsetsNestedScrollConnection$fling$3.AnonymousClass1.invokeSuspend$lambda$0(WindowInsetsNestedScrollConnection.this, (Animatable) obj2);
+                        return invokeSuspend$lambda$0;
                     }
                 }, this, 2, null) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -128,6 +120,12 @@ public final class WindowInsetsNestedScrollConnection$fling$3 extends SuspendLam
             }
             this.$animationController.finish(this.$targetShown);
             this.this$0.animationController = null;
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit invokeSuspend$lambda$0(WindowInsetsNestedScrollConnection windowInsetsNestedScrollConnection, Animatable animatable) {
+            windowInsetsNestedScrollConnection.adjustInsets(((Number) animatable.getValue()).floatValue());
             return Unit.INSTANCE;
         }
     }

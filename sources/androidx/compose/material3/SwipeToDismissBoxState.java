@@ -36,7 +36,7 @@ public final class SwipeToDismissBoxState {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(SwipeToDismissBoxState.this.getDensity$material3_release().mo389toPx0680j_4(SwipeToDismissBoxKt.access$getDismissVelocityThreshold$p()));
+                return Float.valueOf(SwipeToDismissBoxState.this.getDensity$material3_release().mo419toPx0680j_4(SwipeToDismissBoxKt.access$getDismissVelocityThreshold$p()));
             }
         }, AnchoredDraggableDefaults.INSTANCE.getAnimationSpec(), function1);
     }

@@ -31,7 +31,7 @@ public final class ActivityResultRegistryKt {
         }
         State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(activityResultContract, composer, i & 14);
         State rememberUpdatedState2 = SnapshotStateKt.rememberUpdatedState(function1, composer, (i >> 3) & 14);
-        String str2 = (String) RememberSaveableKt.m3635rememberSaveable(new Object[0], (Saver<Object, ? extends Object>) null, (String) null, (Function0<? extends Object>) new Function0<String>() { // from class: androidx.activity.compose.ActivityResultRegistryKt$rememberLauncherForActivityResult$key$1
+        String str2 = (String) RememberSaveableKt.m3982rememberSaveable(new Object[0], (Saver<Object, ? extends Object>) null, (String) null, (Function0<? extends Object>) new Function0<String>() { // from class: androidx.activity.compose.ActivityResultRegistryKt$rememberLauncherForActivityResult$key$1
             @Override // kotlin.jvm.functions.Function0
             public final String invoke() {
                 return UUID.randomUUID().toString();

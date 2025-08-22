@@ -3,31 +3,40 @@ package androidx.compose.ui.text;
 import androidx.compose.ui.graphics.Brush;
 import androidx.compose.ui.graphics.Shape;
 import androidx.compose.ui.graphics.drawscope.DrawStyle;
+import androidx.compose.ui.graphics.drawscope.Fill;
 import androidx.compose.ui.text.AnnotatedString;
 import androidx.compose.ui.unit.TextUnit;
+import androidx.compose.ui.unit.TextUnitKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Bullet.kt */
-@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0000\u0018\u00002\u00020\u0001B7\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\b\u0010\u0007\u001a\u0004\u0018\u00010\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\f¢\u0006\u0002\u0010\rJN\u0010\u001a\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00052\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\fø\u0001\u0000¢\u0006\u0004\b\u001b\u0010\u001cJ\u0013\u0010\u001d\u001a\u00020\u001e2\b\u0010\u001f\u001a\u0004\u0018\u00010 H\u0096\u0002J\b\u0010!\u001a\u00020\"H\u0016J\b\u0010#\u001a\u00020$H\u0016R\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0013\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0011\u0010\u000b\u001a\u00020\f¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0019\u0010\u0006\u001a\u00020\u0005ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0016\u001a\u0004\b\u0014\u0010\u0015R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u0019\u0010\u0004\u001a\u00020\u0005ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0016\u001a\u0004\b\u0019\u0010\u0015\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006%"}, d2 = {"Landroidx/compose/ui/text/Bullet;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "shape", "Landroidx/compose/ui/graphics/Shape;", "size", "Landroidx/compose/ui/unit/TextUnit;", "padding", "brush", "Landroidx/compose/ui/graphics/Brush;", "alpha", "", "drawStyle", "Landroidx/compose/ui/graphics/drawscope/DrawStyle;", "(Landroidx/compose/ui/graphics/Shape;JJLandroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/drawscope/DrawStyle;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getAlpha", "()F", "getBrush", "()Landroidx/compose/ui/graphics/Brush;", "getDrawStyle", "()Landroidx/compose/ui/graphics/drawscope/DrawStyle;", "getPadding-XSAIIZE", "()J", "J", "getShape", "()Landroidx/compose/ui/graphics/Shape;", "getSize-XSAIIZE", "copy", "copy-1XB3EBo", "(Landroidx/compose/ui/graphics/Shape;JJLandroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/drawscope/DrawStyle;)Landroidx/compose/ui/text/Bullet;", "equals", "", "other", "", "hashCode", "", "toString", "", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0007\u0018\u0000 (2\u00020\u0001:\u0001(BG\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\u0006\u0010\u0007\u001a\u00020\u0005\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t\u0012\b\b\u0002\u0010\n\u001a\u00020\u000b\u0012\b\b\u0002\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJU\u0010\u001d\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00052\b\b\u0002\u0010\u0007\u001a\u00020\u00052\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u001e\u0010\u001fJ\u0013\u0010 \u001a\u00020!2\b\u0010\"\u001a\u0004\u0018\u00010#H\u0096\u0002J\b\u0010$\u001a\u00020%H\u0016J\b\u0010&\u001a\u00020'H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\u0014\u001a\u0004\b\u0012\u0010\u0013R\u0013\u0010\u0006\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\u0014\u001a\u0004\b\u0015\u0010\u0013R\u0013\u0010\u0007\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\u0014\u001a\u0004\b\u0016\u0010\u0013R\u0013\u0010\b\u001a\u0004\u0018\u00010\t¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u0011\u0010\n\u001a\u00020\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u0011\u0010\f\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001c¨\u0006)"}, d2 = {"Landroidx/compose/ui/text/Bullet;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "shape", "Landroidx/compose/ui/graphics/Shape;", "width", "Landroidx/compose/ui/unit/TextUnit;", "height", "padding", "brush", "Landroidx/compose/ui/graphics/Brush;", "alpha", "", "drawStyle", "Landroidx/compose/ui/graphics/drawscope/DrawStyle;", "<init>", "(Landroidx/compose/ui/graphics/Shape;JJJLandroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/drawscope/DrawStyle;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getShape", "()Landroidx/compose/ui/graphics/Shape;", "getWidth-XSAIIZE", "()J", "J", "getHeight-XSAIIZE", "getPadding-XSAIIZE", "getBrush", "()Landroidx/compose/ui/graphics/Brush;", "getAlpha", "()F", "getDrawStyle", "()Landroidx/compose/ui/graphics/drawscope/DrawStyle;", "copy", "copy-w_4Rhrw", "(Landroidx/compose/ui/graphics/Shape;JJJLandroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/drawscope/DrawStyle;)Landroidx/compose/ui/text/Bullet;", "equals", "", "other", "", "hashCode", "", "toString", "", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class Bullet implements AnnotatedString.Annotation {
-    public static final int $stable = 8;
+    private static final Bullet Default;
+    private static final long DefaultPadding;
+    private static final long DefaultSize;
     private final float alpha;
     private final Brush brush;
     private final DrawStyle drawStyle;
+    private final long height;
     private final long padding;
     private final Shape shape;
-    private final long size;
+    private final long width;
+    public static final Companion Companion = new Companion(null);
+    public static final int $stable = 8;
+    private static final long DefaultIndentation = TextUnitKt.getEm(1);
 
-    public /* synthetic */ Bullet(Shape shape, long j, long j2, Brush brush, float f, DrawStyle drawStyle, DefaultConstructorMarker defaultConstructorMarker) {
-        this(shape, j, j2, brush, f, drawStyle);
+    public /* synthetic */ Bullet(Shape shape, long j, long j2, long j3, Brush brush, float f, DrawStyle drawStyle, DefaultConstructorMarker defaultConstructorMarker) {
+        this(shape, j, j2, j3, brush, f, drawStyle);
     }
 
-    private Bullet(Shape shape, long j, long j2, Brush brush, float f, DrawStyle drawStyle) {
+    private Bullet(Shape shape, long j, long j2, long j3, Brush brush, float f, DrawStyle drawStyle) {
         this.shape = shape;
-        this.size = j;
-        this.padding = j2;
+        this.width = j;
+        this.height = j2;
+        this.padding = j3;
         this.brush = brush;
         this.alpha = f;
         this.drawStyle = drawStyle;
@@ -37,13 +46,18 @@ public final class Bullet implements AnnotatedString.Annotation {
         return this.shape;
     }
 
-    /* renamed from: getSize-XSAIIZE  reason: not valid java name */
-    public final long m5983getSizeXSAIIZE() {
-        return this.size;
+    /* renamed from: getWidth-XSAIIZE  reason: not valid java name */
+    public final long m6536getWidthXSAIIZE() {
+        return this.width;
+    }
+
+    /* renamed from: getHeight-XSAIIZE  reason: not valid java name */
+    public final long m6534getHeightXSAIIZE() {
+        return this.height;
     }
 
     /* renamed from: getPadding-XSAIIZE  reason: not valid java name */
-    public final long m5982getPaddingXSAIIZE() {
+    public final long m6535getPaddingXSAIIZE() {
         return this.padding;
     }
 
@@ -55,39 +69,47 @@ public final class Bullet implements AnnotatedString.Annotation {
         return this.alpha;
     }
 
+    public /* synthetic */ Bullet(Shape shape, long j, long j2, long j3, Brush brush, float f, DrawStyle drawStyle, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(shape, j, j2, j3, (i & 16) != 0 ? null : brush, (i & 32) != 0 ? Float.NaN : f, (i & 64) != 0 ? Fill.INSTANCE : drawStyle, null);
+    }
+
     public final DrawStyle getDrawStyle() {
         return this.drawStyle;
     }
 
-    /* renamed from: copy-1XB3EBo$default  reason: not valid java name */
-    public static /* synthetic */ Bullet m5980copy1XB3EBo$default(Bullet bullet, Shape shape, long j, long j2, Brush brush, float f, DrawStyle drawStyle, int i, Object obj) {
+    /* renamed from: copy-w_4Rhrw$default  reason: not valid java name */
+    public static /* synthetic */ Bullet m6532copyw_4Rhrw$default(Bullet bullet, Shape shape, long j, long j2, long j3, Brush brush, float f, DrawStyle drawStyle, int i, Object obj) {
         if ((i & 1) != 0) {
             shape = bullet.shape;
         }
         if ((i & 2) != 0) {
-            j = bullet.size;
+            j = bullet.width;
         }
         if ((i & 4) != 0) {
-            j2 = bullet.padding;
+            j2 = bullet.height;
         }
         if ((i & 8) != 0) {
-            brush = bullet.brush;
+            j3 = bullet.padding;
         }
         if ((i & 16) != 0) {
-            f = bullet.alpha;
+            brush = bullet.brush;
         }
         if ((i & 32) != 0) {
+            f = bullet.alpha;
+        }
+        if ((i & 64) != 0) {
             drawStyle = bullet.drawStyle;
         }
         DrawStyle drawStyle2 = drawStyle;
         Brush brush2 = brush;
-        long j3 = j2;
-        return bullet.m5981copy1XB3EBo(shape, j, j3, brush2, f, drawStyle2);
+        long j4 = j3;
+        long j5 = j2;
+        return bullet.m6533copyw_4Rhrw(shape, j, j5, j4, brush2, f, drawStyle2);
     }
 
-    /* renamed from: copy-1XB3EBo  reason: not valid java name */
-    public final Bullet m5981copy1XB3EBo(Shape shape, long j, long j2, Brush brush, float f, DrawStyle drawStyle) {
-        return new Bullet(shape, j, j2, brush, f, drawStyle, null);
+    /* renamed from: copy-w_4Rhrw  reason: not valid java name */
+    public final Bullet m6533copyw_4Rhrw(Shape shape, long j, long j2, long j3, Brush brush, float f, DrawStyle drawStyle) {
+        return new Bullet(shape, j, j2, j3, brush, f, drawStyle, null);
     }
 
     public boolean equals(Object obj) {
@@ -96,18 +118,57 @@ public final class Bullet implements AnnotatedString.Annotation {
         }
         if (obj != null && (obj instanceof Bullet)) {
             Bullet bullet = (Bullet) obj;
-            return Intrinsics.areEqual(this.shape, bullet.shape) && TextUnit.m6875equalsimpl0(this.size, bullet.size) && TextUnit.m6875equalsimpl0(this.padding, bullet.padding) && Intrinsics.areEqual(this.brush, bullet.brush) && this.alpha == bullet.alpha && Intrinsics.areEqual(this.drawStyle, bullet.drawStyle);
+            return Intrinsics.areEqual(this.shape, bullet.shape) && TextUnit.m7442equalsimpl0(this.width, bullet.width) && TextUnit.m7442equalsimpl0(this.height, bullet.height) && TextUnit.m7442equalsimpl0(this.padding, bullet.padding) && Intrinsics.areEqual(this.brush, bullet.brush) && this.alpha == bullet.alpha && Intrinsics.areEqual(this.drawStyle, bullet.drawStyle);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((this.shape.hashCode() * 31) + TextUnit.m6879hashCodeimpl(this.size)) * 31) + TextUnit.m6879hashCodeimpl(this.padding)) * 31;
+        int hashCode = ((((((this.shape.hashCode() * 31) + TextUnit.m7446hashCodeimpl(this.width)) * 31) + TextUnit.m7446hashCodeimpl(this.height)) * 31) + TextUnit.m7446hashCodeimpl(this.padding)) * 31;
         Brush brush = this.brush;
         return ((((hashCode + (brush != null ? brush.hashCode() : 0)) * 31) + Float.hashCode(this.alpha)) * 31) + this.drawStyle.hashCode();
     }
 
     public String toString() {
-        return "Bullet(shape=" + this.shape + ", size=" + ((Object) TextUnit.m6885toStringimpl(this.size)) + ", padding=" + ((Object) TextUnit.m6885toStringimpl(this.padding)) + ", brush=" + this.brush + ", alpha=" + this.alpha + ", drawStyle=" + this.drawStyle + ')';
+        return "Bullet(shape=" + this.shape + ", size=(" + ((Object) TextUnit.m7452toStringimpl(this.width)) + ", " + ((Object) TextUnit.m7452toStringimpl(this.height)) + "), padding=" + ((Object) TextUnit.m7452toStringimpl(this.padding)) + ", brush=" + this.brush + ", alpha=" + this.alpha + ", drawStyle=" + this.drawStyle + ')';
+    }
+
+    /* compiled from: Bullet.kt */
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007R\u0013\u0010\u000b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\f\u0010\u0007R\u0011\u0010\r\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u0011"}, d2 = {"Landroidx/compose/ui/text/Bullet$Companion;", "", "<init>", "()V", "DefaultIndentation", "Landroidx/compose/ui/unit/TextUnit;", "getDefaultIndentation-XSAIIZE", "()J", "J", "DefaultSize", "getDefaultSize-XSAIIZE", "DefaultPadding", "getDefaultPadding-XSAIIZE", "Default", "Landroidx/compose/ui/text/Bullet;", "getDefault", "()Landroidx/compose/ui/text/Bullet;", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+
+        /* renamed from: getDefaultIndentation-XSAIIZE  reason: not valid java name */
+        public final long m6537getDefaultIndentationXSAIIZE() {
+            return Bullet.DefaultIndentation;
+        }
+
+        /* renamed from: getDefaultSize-XSAIIZE  reason: not valid java name */
+        public final long m6539getDefaultSizeXSAIIZE() {
+            return Bullet.DefaultSize;
+        }
+
+        /* renamed from: getDefaultPadding-XSAIIZE  reason: not valid java name */
+        public final long m6538getDefaultPaddingXSAIIZE() {
+            return Bullet.DefaultPadding;
+        }
+
+        public final Bullet getDefault() {
+            return Bullet.Default;
+        }
+    }
+
+    static {
+        long em = TextUnitKt.getEm(0.25d);
+        DefaultSize = em;
+        long em2 = TextUnitKt.getEm(0.25d);
+        DefaultPadding = em2;
+        Default = new Bullet(CircleShape.INSTANCE, em, em, em2, null, 0.0f, null, 112, null);
     }
 }

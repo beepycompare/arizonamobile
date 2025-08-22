@@ -4,7 +4,7 @@ import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.functions.Predicate;
 import io.reactivex.internal.observers.BasicFuseableObserver;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableFilter<T> extends AbstractObservableWithUpstream<T, T> {
     final Predicate<? super T> predicate;
 
@@ -18,7 +18,7 @@ public final class ObservableFilter<T> extends AbstractObservableWithUpstream<T,
         this.source.subscribe(new FilterObserver(observer, this.predicate));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FilterObserver<T> extends BasicFuseableObserver<T, T> {
         final Predicate<? super T> filter;
 

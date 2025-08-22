@@ -1,10 +1,10 @@
 package io.reactivex.internal.schedulers;
 
 import io.reactivex.Scheduler;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface SchedulerMultiWorkerSupport {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface WorkerCallback {
         void onWorker(int i, Scheduler.Worker worker);
     }

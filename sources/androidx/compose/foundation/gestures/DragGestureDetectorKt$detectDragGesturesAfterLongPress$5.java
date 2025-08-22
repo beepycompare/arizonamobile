@@ -16,11 +16,10 @@ import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
-import ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DragGestureDetector.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5", f = "DragGestureDetector.kt", i = {0, 1, 2}, l = {354, 355, RouletteView.PREMIUM_ROULETTE_WIDTH}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "$this$awaitEachGesture"}, s = {"L$0", "L$0", "L$0"})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5", f = "DragGestureDetector.kt", i = {0, 1, 2}, l = {362, 363, 368}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "$this$awaitEachGesture"}, s = {"L$0", "L$0", "L$0"})
 /* loaded from: classes.dex */
 public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<PointerInputChange, Offset, Unit> $onDrag;
@@ -53,9 +52,9 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
         return ((DragGestureDetectorKt$detectDragGesturesAfterLongPress$5) create(awaitPointerEventScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0065 A[Catch: CancellationException -> 0x00c8, TryCatch #0 {CancellationException -> 0x00c8, blocks: (B:8:0x0015, B:32:0x008e, B:34:0x0096, B:36:0x00a8, B:38:0x00b4, B:39:0x00b7, B:40:0x00ba, B:41:0x00c0, B:13:0x0026, B:26:0x0061, B:28:0x0065, B:16:0x002e, B:23:0x004d, B:19:0x003a), top: B:47:0x0009 }] */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0096 A[Catch: CancellationException -> 0x00c8, TryCatch #0 {CancellationException -> 0x00c8, blocks: (B:8:0x0015, B:32:0x008e, B:34:0x0096, B:36:0x00a8, B:38:0x00b4, B:39:0x00b7, B:40:0x00ba, B:41:0x00c0, B:13:0x0026, B:26:0x0061, B:28:0x0065, B:16:0x002e, B:23:0x004d, B:19:0x003a), top: B:47:0x0009 }] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00c0 A[Catch: CancellationException -> 0x00c8, TRY_LEAVE, TryCatch #0 {CancellationException -> 0x00c8, blocks: (B:8:0x0015, B:32:0x008e, B:34:0x0096, B:36:0x00a8, B:38:0x00b4, B:39:0x00b7, B:40:0x00ba, B:41:0x00c0, B:13:0x0026, B:26:0x0061, B:28:0x0065, B:16:0x002e, B:23:0x004d, B:19:0x003a), top: B:47:0x0009 }] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0065 A[Catch: CancellationException -> 0x00c6, TryCatch #0 {CancellationException -> 0x00c6, blocks: (B:8:0x0015, B:32:0x008c, B:34:0x0094, B:36:0x00a6, B:38:0x00b2, B:39:0x00b5, B:40:0x00b8, B:41:0x00be, B:13:0x0026, B:26:0x0061, B:28:0x0065, B:16:0x002e, B:23:0x004d, B:19:0x003a), top: B:47:0x0009 }] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0094 A[Catch: CancellationException -> 0x00c6, TryCatch #0 {CancellationException -> 0x00c6, blocks: (B:8:0x0015, B:32:0x008c, B:34:0x0094, B:36:0x00a6, B:38:0x00b2, B:39:0x00b5, B:40:0x00b8, B:41:0x00be, B:13:0x0026, B:26:0x0061, B:28:0x0065, B:16:0x002e, B:23:0x004d, B:19:0x003a), top: B:47:0x0009 }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00be A[Catch: CancellationException -> 0x00c6, TRY_LEAVE, TryCatch #0 {CancellationException -> 0x00c6, blocks: (B:8:0x0015, B:32:0x008c, B:34:0x0094, B:36:0x00a6, B:38:0x00b2, B:39:0x00b5, B:40:0x00b8, B:41:0x00be, B:13:0x0026, B:26:0x0061, B:28:0x0065, B:16:0x002e, B:23:0x004d, B:19:0x003a), top: B:47:0x0009 }] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -104,28 +103,17 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
                 ResultKt.throwOnFailure(obj);
                 pointerInputChange = (PointerInputChange) obj;
                 if (pointerInputChange != null) {
-                    this.$onDragStart.invoke(Offset.m3826boximpl(pointerInputChange.m5313getPositionF1C5BW0()));
-                    long m5311getIdJ3iCeTQ = pointerInputChange.m5311getIdJ3iCeTQ();
+                    this.$onDragStart.invoke(Offset.m4282boximpl(pointerInputChange.m5826getPositionF1C5BW0()));
+                    long m5824getIdJ3iCeTQ = pointerInputChange.m5824getIdJ3iCeTQ();
                     final Function2<PointerInputChange, Offset, Unit> function2 = this.$onDrag;
                     this.L$0 = awaitPointerEventScope;
                     this.label = 3;
-                    obj = DragGestureDetectorKt.m445dragjO51t88(awaitPointerEventScope, m5311getIdJ3iCeTQ, new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5.1
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        /* JADX WARN: Multi-variable type inference failed */
-                        {
-                            super(1);
-                        }
-
+                    obj = DragGestureDetectorKt.m487dragjO51t88(awaitPointerEventScope, m5824getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange3) {
-                            invoke2(pointerInputChange3);
-                            return Unit.INSTANCE;
-                        }
-
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(PointerInputChange pointerInputChange3) {
-                            function2.invoke(pointerInputChange3, Offset.m3826boximpl(PointerEventKt.positionChange(pointerInputChange3)));
-                            pointerInputChange3.consume();
+                        public final Object invoke(Object obj2) {
+                            Unit invokeSuspend$lambda$0;
+                            invokeSuspend$lambda$0 = DragGestureDetectorKt$detectDragGesturesAfterLongPress$5.invokeSuspend$lambda$0(Function2.this, (PointerInputChange) obj2);
+                            return invokeSuspend$lambda$0;
                         }
                     }, this);
                     if (obj != coroutine_suspended) {
@@ -142,7 +130,7 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
             }
             this.L$0 = awaitPointerEventScope;
             this.label = 2;
-            obj = DragGestureDetectorKt.m435awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, ((PointerInputChange) obj).m5311getIdJ3iCeTQ(), this);
+            obj = DragGestureDetectorKt.m477awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, ((PointerInputChange) obj).m5824getIdJ3iCeTQ(), this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
@@ -154,5 +142,12 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
             this.$onDragCancel.invoke();
             throw e;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(Function2 function2, PointerInputChange pointerInputChange) {
+        function2.invoke(pointerInputChange, Offset.m4282boximpl(PointerEventKt.positionChange(pointerInputChange)));
+        pointerInputChange.consume();
+        return Unit.INSTANCE;
     }
 }

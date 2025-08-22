@@ -3,7 +3,6 @@ package androidx.compose.ui.viewinterop;
 import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.Region;
-import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -16,7 +15,6 @@ import androidx.compose.ui.draw.DrawModifierKt;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.graphics.AndroidCanvas_androidKt;
 import androidx.compose.ui.graphics.Canvas;
-import androidx.compose.ui.graphics.GraphicsLayerModifierKt;
 import androidx.compose.ui.graphics.drawscope.DrawScope;
 import androidx.compose.ui.input.nestedscroll.NestedScrollDispatcher;
 import androidx.compose.ui.input.nestedscroll.NestedScrollModifierKt;
@@ -76,7 +74,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 /* compiled from: AndroidViewHolder.android.kt */
-@Metadata(d1 = {"\u0000ð\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0015\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\r\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0015\n\u0002\u0010\u0007\n\u0002\b\u0019\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0010\u0018\u0000 ´\u00012\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u0005:\u0002´\u0001B7\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011¢\u0006\u0002\u0010\u0012J\u0012\u0010c\u001a\u00020\u001b2\b\u0010d\u001a\u0004\u0018\u00010eH\u0016J\b\u0010f\u001a\u00020gH\u0016J\u000e\u0010h\u001a\n\u0018\u00010\u000fj\u0004\u0018\u0001`iJ\n\u0010j\u001a\u0004\u0018\u00010kH\u0016J\b\u0010l\u001a\u00020\u000bH\u0016J\u0010\u0010m\u001a\u00020n2\u0006\u0010o\u001a\u00020nH\u0002J\u0010\u0010p\u001a\u00020\u001d2\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J~\u0010q\u001a\u0002Hr\"\u0004\b\u0000\u0010r2\u0006\u0010\u0013\u001a\u0002Hr2`\u0010s\u001a\\\u0012\u0013\u0012\u00110\u000b¢\u0006\f\bu\u0012\b\bv\u0012\u0004\b\b(w\u0012\u0013\u0012\u00110\u000b¢\u0006\f\bu\u0012\b\bv\u0012\u0004\b\b(x\u0012\u0013\u0012\u00110\u000b¢\u0006\f\bu\u0012\b\bv\u0012\u0004\b\b(y\u0012\u0013\u0012\u00110\u000b¢\u0006\f\bu\u0012\b\bv\u0012\u0004\b\b(z\u0012\u0004\u0012\u0002Hr0tH\u0082\b¢\u0006\u0002\u0010{J\u001e\u0010|\u001a\u0004\u0018\u00010}2\b\u0010-\u001a\u0004\u0018\u00010.2\b\u0010~\u001a\u0004\u0018\u00010\u007fH\u0016J\u0007\u0010\u0080\u0001\u001a\u000209J\t\u0010\u0081\u0001\u001a\u00020\u001bH\u0016J$\u0010\u0082\u0001\u001a\u00020\u000b2\u0007\u0010\u0083\u0001\u001a\u00020\u000b2\u0007\u0010\u0084\u0001\u001a\u00020\u000b2\u0007\u0010\u0085\u0001\u001a\u00020\u000bH\u0002J\u001a\u0010\u0086\u0001\u001a\u00020\u001d2\u0007\u0010\u0087\u0001\u001a\u00020\u000f2\u0006\u0010\u001c\u001a\u00020\u001dH\u0016J\t\u0010\u0088\u0001\u001a\u000209H\u0014J\t\u0010\u0089\u0001\u001a\u000209H\u0016J\u001b\u0010\u008a\u0001\u001a\u0002092\u0007\u0010\u008b\u0001\u001a\u00020\u000f2\u0007\u0010\u008c\u0001\u001a\u00020\u000fH\u0016J\t\u0010\u008d\u0001\u001a\u000209H\u0014J2\u0010\u008e\u0001\u001a\u0002092\u0007\u0010\u008f\u0001\u001a\u00020\u001b2\u0006\u0010w\u001a\u00020\u000b2\u0006\u0010x\u001a\u00020\u000b2\u0006\u0010y\u001a\u00020\u000b2\u0006\u0010z\u001a\u00020\u000bH\u0014J\u001b\u0010\u0090\u0001\u001a\u0002092\u0007\u0010\u0091\u0001\u001a\u00020\u000b2\u0007\u0010\u0092\u0001\u001a\u00020\u000bH\u0014J/\u0010\u0093\u0001\u001a\u00020\u001b2\u0007\u0010\u008c\u0001\u001a\u00020\u000f2\b\u0010\u0094\u0001\u001a\u00030\u0095\u00012\b\u0010\u0096\u0001\u001a\u00030\u0095\u00012\u0007\u0010\u0097\u0001\u001a\u00020\u001bH\u0016J&\u0010\u0098\u0001\u001a\u00020\u001b2\u0007\u0010\u008c\u0001\u001a\u00020\u000f2\b\u0010\u0094\u0001\u001a\u00030\u0095\u00012\b\u0010\u0096\u0001\u001a\u00030\u0095\u0001H\u0016J6\u0010\u0099\u0001\u001a\u0002092\u0007\u0010\u008c\u0001\u001a\u00020\u000f2\u0007\u0010\u009a\u0001\u001a\u00020\u000b2\u0007\u0010\u009b\u0001\u001a\u00020\u000b2\u0007\u0010\u0097\u0001\u001a\u00020.2\u0007\u0010\u009c\u0001\u001a\u00020\u000bH\u0016J?\u0010\u009d\u0001\u001a\u0002092\u0007\u0010\u008c\u0001\u001a\u00020\u000f2\u0007\u0010\u009e\u0001\u001a\u00020\u000b2\u0007\u0010\u009f\u0001\u001a\u00020\u000b2\u0007\u0010 \u0001\u001a\u00020\u000b2\u0007\u0010¡\u0001\u001a\u00020\u000b2\u0007\u0010\u009c\u0001\u001a\u00020\u000bH\u0016JH\u0010\u009d\u0001\u001a\u0002092\u0007\u0010\u008c\u0001\u001a\u00020\u000f2\u0007\u0010\u009e\u0001\u001a\u00020\u000b2\u0007\u0010\u009f\u0001\u001a\u00020\u000b2\u0007\u0010 \u0001\u001a\u00020\u000b2\u0007\u0010¡\u0001\u001a\u00020\u000b2\u0007\u0010\u009c\u0001\u001a\u00020\u000b2\u0007\u0010\u0097\u0001\u001a\u00020.H\u0016J-\u0010¢\u0001\u001a\u0002092\u0007\u0010\u008b\u0001\u001a\u00020\u000f2\u0007\u0010\u008c\u0001\u001a\u00020\u000f2\u0007\u0010£\u0001\u001a\u00020\u000b2\u0007\u0010\u009c\u0001\u001a\u00020\u000bH\u0016J\t\u0010¤\u0001\u001a\u000209H\u0016J\t\u0010¥\u0001\u001a\u000209H\u0016J-\u0010¦\u0001\u001a\u00020\u001b2\u0007\u0010\u008b\u0001\u001a\u00020\u000f2\u0007\u0010\u008c\u0001\u001a\u00020\u000f2\u0007\u0010£\u0001\u001a\u00020\u000b2\u0007\u0010\u009c\u0001\u001a\u00020\u000bH\u0016J\u001b\u0010§\u0001\u001a\u0002092\u0007\u0010\u008c\u0001\u001a\u00020\u000f2\u0007\u0010\u009c\u0001\u001a\u00020\u000bH\u0016J\u0012\u0010¨\u0001\u001a\u0002092\u0007\u0010©\u0001\u001a\u00020\u000bH\u0014J\u0007\u0010ª\u0001\u001a\u000209J\u0012\u0010«\u0001\u001a\u0002092\u0007\u0010¬\u0001\u001a\u00020\u001bH\u0016J\t\u0010\u00ad\u0001\u001a\u00020\u001bH\u0016J3\u0010®\u0001\u001a\u00030¯\u0001*\u00030¯\u00012\u0007\u0010°\u0001\u001a\u00020\u000b2\u0007\u0010±\u0001\u001a\u00020\u000b2\u0007\u0010²\u0001\u001a\u00020\u000b2\u0007\u0010³\u0001\u001a\u00020\u000bH\u0002R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R$\u0010\u0015\u001a\u00020\u00142\u0006\u0010\u0013\u001a\u00020\u0014@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001f\u001a\u00020\u001b8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001f\u0010 R\u000e\u0010!\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010#\u001a\u00020$¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&R(\u0010(\u001a\u0004\u0018\u00010'2\b\u0010\u0013\u001a\u0004\u0018\u00010'@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b)\u0010*\"\u0004\b+\u0010,R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R$\u00100\u001a\u00020/2\u0006\u0010\u0013\u001a\u00020/@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b1\u00102\"\u0004\b3\u00104R\u000e\u00105\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R(\u00107\u001a\u0010\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u000209\u0018\u000108X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b:\u0010;\"\u0004\b<\u0010=R(\u0010>\u001a\u0010\u0012\u0004\u0012\u00020/\u0012\u0004\u0012\u000209\u0018\u000108X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b?\u0010;\"\u0004\b@\u0010=R(\u0010A\u001a\u0010\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u000209\u0018\u000108X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bB\u0010;\"\u0004\bC\u0010=R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010D\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R0\u0010G\u001a\b\u0012\u0004\u0012\u0002090F2\f\u0010E\u001a\b\u0012\u0004\u0012\u0002090F@DX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bH\u0010I\"\u0004\bJ\u0010KR0\u0010L\u001a\b\u0012\u0004\u0012\u0002090F2\f\u0010E\u001a\b\u0012\u0004\u0012\u0002090F@DX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bM\u0010I\"\u0004\bN\u0010KR\u0014\u0010O\u001a\b\u0012\u0004\u0012\u0002090FX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010P\u001a\b\u0012\u0004\u0012\u0002090FX\u0082\u0004¢\u0006\u0002\n\u0000R(\u0010R\u001a\u0004\u0018\u00010Q2\b\u0010\u0013\u001a\u0004\u0018\u00010Q@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bS\u0010T\"\u0004\bU\u0010VR\u0016\u0010W\u001a\u00020XX\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010YR\u0014\u0010Z\u001a\u00020[8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\\\u0010]R0\u0010^\u001a\b\u0012\u0004\u0012\u0002090F2\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u0002090F@DX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b_\u0010I\"\u0004\b`\u0010KR\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\ba\u0010b\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006µ\u0001"}, d2 = {"Landroidx/compose/ui/viewinterop/AndroidViewHolder;", "Landroid/view/ViewGroup;", "Landroidx/core/view/NestedScrollingParent3;", "Landroidx/compose/runtime/ComposeNodeLifecycleCallback;", "Landroidx/compose/ui/node/OwnerScope;", "Landroidx/core/view/OnApplyWindowInsetsListener;", "context", "Landroid/content/Context;", "parentContext", "Landroidx/compose/runtime/CompositionContext;", "compositeKeyHash", "", "dispatcher", "Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;", "view", "Landroid/view/View;", "owner", "Landroidx/compose/ui/node/Owner;", "(Landroid/content/Context;Landroidx/compose/runtime/CompositionContext;ILandroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;Landroid/view/View;Landroidx/compose/ui/node/Owner;)V", "value", "Landroidx/compose/ui/unit/Density;", "density", "getDensity", "()Landroidx/compose/ui/unit/Density;", "setDensity", "(Landroidx/compose/ui/unit/Density;)V", "hasUpdateBlock", "", "insets", "Landroidx/core/view/WindowInsetsCompat;", "isDrawing", "isValidOwnerScope", "()Z", "lastHeightMeasureSpec", "lastWidthMeasureSpec", "layoutNode", "Landroidx/compose/ui/node/LayoutNode;", "getLayoutNode", "()Landroidx/compose/ui/node/LayoutNode;", "Landroidx/lifecycle/LifecycleOwner;", "lifecycleOwner", "getLifecycleOwner", "()Landroidx/lifecycle/LifecycleOwner;", "setLifecycleOwner", "(Landroidx/lifecycle/LifecycleOwner;)V", FirebaseAnalytics.Param.LOCATION, "", "Landroidx/compose/ui/Modifier;", "modifier", "getModifier", "()Landroidx/compose/ui/Modifier;", "setModifier", "(Landroidx/compose/ui/Modifier;)V", "nestedScrollingParentHelper", "Landroidx/core/view/NestedScrollingParentHelper;", "onDensityChanged", "Lkotlin/Function1;", "", "getOnDensityChanged$ui_release", "()Lkotlin/jvm/functions/Function1;", "setOnDensityChanged$ui_release", "(Lkotlin/jvm/functions/Function1;)V", "onModifierChanged", "getOnModifierChanged$ui_release", "setOnModifierChanged$ui_release", "onRequestDisallowInterceptTouchEvent", "getOnRequestDisallowInterceptTouchEvent$ui_release", "setOnRequestDisallowInterceptTouchEvent$ui_release", "position", "<set-?>", "Lkotlin/Function0;", "release", "getRelease", "()Lkotlin/jvm/functions/Function0;", "setRelease", "(Lkotlin/jvm/functions/Function0;)V", "reset", "getReset", "setReset", "runInvalidate", "runUpdate", "Landroidx/savedstate/SavedStateRegistryOwner;", "savedStateRegistryOwner", "getSavedStateRegistryOwner", "()Landroidx/savedstate/SavedStateRegistryOwner;", "setSavedStateRegistryOwner", "(Landroidx/savedstate/SavedStateRegistryOwner;)V", "size", "Landroidx/compose/ui/unit/IntSize;", "J", "snapshotObserver", "Landroidx/compose/ui/node/OwnerSnapshotObserver;", "getSnapshotObserver", "()Landroidx/compose/ui/node/OwnerSnapshotObserver;", "update", "getUpdate", "setUpdate", "getView", "()Landroid/view/View;", "gatherTransparentRegion", TtmlNode.TAG_REGION, "Landroid/graphics/Region;", "getAccessibilityClassName", "", "getInteropView", "Landroidx/compose/ui/viewinterop/InteropView;", "getLayoutParams", "Landroid/view/ViewGroup$LayoutParams;", "getNestedScrollAxes", "insetBounds", "Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;", "bounds", "insetToLayoutPosition", "insetValue", ExifInterface.GPS_DIRECTION_TRUE, "block", "Lkotlin/Function4;", "Lkotlin/ParameterName;", "name", CmcdData.STREAM_TYPE_LIVE, "t", "r", "b", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function4;)Ljava/lang/Object;", "invalidateChildInParent", "Landroid/view/ViewParent;", "dirty", "Landroid/graphics/Rect;", "invalidateOrDefer", "isNestedScrollingEnabled", "obtainMeasureSpec", "min", "max", "preferred", "onApplyWindowInsets", "v", "onAttachedToWindow", "onDeactivate", "onDescendantInvalidated", "child", TypedValues.AttributesType.S_TARGET, "onDetachedFromWindow", "onLayout", "changed", "onMeasure", "widthMeasureSpec", "heightMeasureSpec", "onNestedFling", "velocityX", "", "velocityY", "consumed", "onNestedPreFling", "onNestedPreScroll", "dx", "dy", "type", "onNestedScroll", "dxConsumed", "dyConsumed", "dxUnconsumed", "dyUnconsumed", "onNestedScrollAccepted", "axes", "onRelease", "onReuse", "onStartNestedScroll", "onStopNestedScroll", "onWindowVisibilityChanged", "visibility", "remeasure", "requestDisallowInterceptTouchEvent", "disallowIntercept", "shouldDelayChildPressedState", "inset", "Landroidx/core/graphics/Insets;", TtmlNode.LEFT, "top", TtmlNode.RIGHT, "bottom", "Companion", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ö\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\r\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0010\u0007\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0011\u0018\u0000 ´\u00012\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u0005:\u0002´\u0001B9\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011¢\u0006\u0004\b\u0012\u0010\u0013J\u000e\u0010\u0016\u001a\n\u0018\u00010\u000fj\u0004\u0018\u0001`\u0017J\b\u0010a\u001a\u00020bH\u0016J\b\u0010c\u001a\u00020\u001aH\u0016J\b\u0010d\u001a\u00020\u001aH\u0016J\b\u0010e\u001a\u00020\u001aH\u0016J\u0018\u0010f\u001a\u00020\u001a2\u0006\u0010g\u001a\u00020\u000b2\u0006\u0010h\u001a\u00020\u000bH\u0014J\u0006\u0010i\u001a\u00020\u001aJ0\u0010j\u001a\u00020\u001a2\u0006\u0010k\u001a\u00020!2\u0006\u0010l\u001a\u00020\u000b2\u0006\u0010m\u001a\u00020\u000b2\u0006\u0010n\u001a\u00020\u000b2\u0006\u0010o\u001a\u00020\u000bH\u0014J\n\u0010p\u001a\u0004\u0018\u00010qH\u0016J\u0010\u0010r\u001a\u00020\u001a2\u0006\u0010s\u001a\u00020!H\u0016J\b\u0010t\u001a\u00020\u001aH\u0014J\b\u0010u\u001a\u00020\u001aH\u0014J\u001e\u0010v\u001a\u0004\u0018\u00010w2\b\u0010Y\u001a\u0004\u0018\u00010J2\b\u0010x\u001a\u0004\u0018\u00010yH\u0016J\u0018\u0010z\u001a\u00020\u001a2\u0006\u0010{\u001a\u00020\u000f2\u0006\u0010|\u001a\u00020\u000fH\u0016J\u0006\u0010}\u001a\u00020\u001aJ\u0010\u0010~\u001a\u00020\u001a2\u0006\u0010\u007f\u001a\u00020\u000bH\u0014J\u0015\u0010\u0080\u0001\u001a\u00020!2\n\u0010\u0081\u0001\u001a\u0005\u0018\u00010\u0082\u0001H\u0016J$\u0010\u0087\u0001\u001a\u00020\u000b2\u0007\u0010\u0088\u0001\u001a\u00020\u000b2\u0007\u0010\u0089\u0001\u001a\u00020\u000b2\u0007\u0010\u008a\u0001\u001a\u00020\u000bH\u0002J\t\u0010\u008b\u0001\u001a\u00020!H\u0016J+\u0010\u008c\u0001\u001a\u00020!2\u0006\u0010{\u001a\u00020\u000f2\u0006\u0010|\u001a\u00020\u000f2\u0007\u0010\u008d\u0001\u001a\u00020\u000b2\u0007\u0010\u008e\u0001\u001a\u00020\u000bH\u0016J\t\u0010\u008f\u0001\u001a\u00020\u000bH\u0016J+\u0010\u0090\u0001\u001a\u00020\u001a2\u0006\u0010{\u001a\u00020\u000f2\u0006\u0010|\u001a\u00020\u000f2\u0007\u0010\u008d\u0001\u001a\u00020\u000b2\u0007\u0010\u008e\u0001\u001a\u00020\u000bH\u0016J\u001a\u0010\u0091\u0001\u001a\u00020\u001a2\u0006\u0010|\u001a\u00020\u000f2\u0007\u0010\u008e\u0001\u001a\u00020\u000bH\u0016JG\u0010\u0092\u0001\u001a\u00020\u001a2\u0006\u0010|\u001a\u00020\u000f2\u0007\u0010\u0093\u0001\u001a\u00020\u000b2\u0007\u0010\u0094\u0001\u001a\u00020\u000b2\u0007\u0010\u0095\u0001\u001a\u00020\u000b2\u0007\u0010\u0096\u0001\u001a\u00020\u000b2\u0007\u0010\u008e\u0001\u001a\u00020\u000b2\u0007\u0010\u0097\u0001\u001a\u00020JH\u0016J>\u0010\u0092\u0001\u001a\u00020\u001a2\u0006\u0010|\u001a\u00020\u000f2\u0007\u0010\u0093\u0001\u001a\u00020\u000b2\u0007\u0010\u0094\u0001\u001a\u00020\u000b2\u0007\u0010\u0095\u0001\u001a\u00020\u000b2\u0007\u0010\u0096\u0001\u001a\u00020\u000b2\u0007\u0010\u008e\u0001\u001a\u00020\u000bH\u0016J5\u0010\u0098\u0001\u001a\u00020\u001a2\u0006\u0010|\u001a\u00020\u000f2\u0007\u0010\u0099\u0001\u001a\u00020\u000b2\u0007\u0010\u009a\u0001\u001a\u00020\u000b2\u0007\u0010\u0097\u0001\u001a\u00020J2\u0007\u0010\u008e\u0001\u001a\u00020\u000bH\u0016J.\u0010\u009b\u0001\u001a\u00020!2\u0006\u0010|\u001a\u00020\u000f2\b\u0010\u009c\u0001\u001a\u00030\u009d\u00012\b\u0010\u009e\u0001\u001a\u00030\u009d\u00012\u0007\u0010\u0097\u0001\u001a\u00020!H\u0016J%\u0010\u009f\u0001\u001a\u00020!2\u0006\u0010|\u001a\u00020\u000f2\b\u0010\u009c\u0001\u001a\u00030\u009d\u00012\b\u0010\u009e\u0001\u001a\u00030\u009d\u0001H\u0016J\t\u0010 \u0001\u001a\u00020!H\u0016J\u001a\u0010¡\u0001\u001a\u00020O2\u0007\u0010¢\u0001\u001a\u00020\u000f2\u0006\u0010N\u001a\u00020OH\u0016J\u0011\u0010£\u0001\u001a\u00020O2\u0006\u0010N\u001a\u00020OH\u0002J\u0014\u0010¤\u0001\u001a\u00030¥\u00012\b\u0010¦\u0001\u001a\u00030¥\u0001H\u0002J\u008e\u0001\u0010§\u0001\u001a\u0003H¨\u0001\"\u0005\b\u0000\u0010¨\u00012\u0007\u0010\u0018\u001a\u0003H¨\u00012k\u0010©\u0001\u001af\u0012\u0015\u0012\u00130\u000b¢\u0006\u000e\b«\u0001\u0012\t\b¬\u0001\u0012\u0004\b\b(l\u0012\u0015\u0012\u00130\u000b¢\u0006\u000e\b«\u0001\u0012\t\b¬\u0001\u0012\u0004\b\b(m\u0012\u0015\u0012\u00130\u000b¢\u0006\u000e\b«\u0001\u0012\t\b¬\u0001\u0012\u0004\b\b(n\u0012\u0015\u0012\u00130\u000b¢\u0006\u000e\b«\u0001\u0012\t\b¬\u0001\u0012\u0004\b\b(o\u0012\u0005\u0012\u0003H¨\u00010ª\u0001H\u0082\b¢\u0006\u0003\u0010\u00ad\u0001J3\u0010®\u0001\u001a\u00030¯\u0001*\u00030¯\u00012\u0007\u0010°\u0001\u001a\u00020\u000b2\u0007\u0010±\u0001\u001a\u00020\u000b2\u0007\u0010²\u0001\u001a\u00020\u000b2\u0007\u0010³\u0001\u001a\u00020\u000bH\u0002R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R0\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001a0\u00192\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019@DX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR\u000e\u0010 \u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R0\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u001a0\u00192\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019@DX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010\u001d\"\u0004\b$\u0010\u001fR0\u0010%\u001a\b\u0012\u0004\u0012\u00020\u001a0\u00192\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019@DX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b&\u0010\u001d\"\u0004\b'\u0010\u001fR$\u0010)\u001a\u00020(2\u0006\u0010\u0018\u001a\u00020(@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-R(\u0010.\u001a\u0010\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u001a\u0018\u00010/X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u00101\"\u0004\b2\u00103R$\u00105\u001a\u0002042\u0006\u0010\u0018\u001a\u000204@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b6\u00107\"\u0004\b8\u00109R(\u0010:\u001a\u0010\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u00020\u001a\u0018\u00010/X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b;\u00101\"\u0004\b<\u00103R(\u0010>\u001a\u0004\u0018\u00010=2\b\u0010\u0018\u001a\u0004\u0018\u00010=@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b?\u0010@\"\u0004\bA\u0010BR(\u0010D\u001a\u0004\u0018\u00010C2\b\u0010\u0018\u001a\u0004\u0018\u00010C@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bE\u0010F\"\u0004\bG\u0010HR\u000e\u0010I\u001a\u00020JX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010K\u001a\u00020LX\u0082\u000e¢\u0006\u0004\n\u0002\u0010MR\u0010\u0010N\u001a\u0004\u0018\u00010OX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010P\u001a\u00020Q8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bR\u0010SR\u0014\u0010T\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010U\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R(\u0010V\u001a\u0010\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\u001a\u0018\u00010/X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bW\u00101\"\u0004\bX\u00103R\u000e\u0010Y\u001a\u00020JX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010Z\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010[\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\\\u001a\u00020]X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010^\u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010_\u001a\u00020!8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b_\u0010`R\u0015\u0010\u0083\u0001\u001a\u00030\u0084\u0001¢\u0006\n\n\u0000\u001a\u0006\b\u0085\u0001\u0010\u0086\u0001¨\u0006µ\u0001"}, d2 = {"Landroidx/compose/ui/viewinterop/AndroidViewHolder;", "Landroid/view/ViewGroup;", "Landroidx/core/view/NestedScrollingParent3;", "Landroidx/compose/runtime/ComposeNodeLifecycleCallback;", "Landroidx/compose/ui/node/OwnerScope;", "Landroidx/core/view/OnApplyWindowInsetsListener;", "context", "Landroid/content/Context;", "parentContext", "Landroidx/compose/runtime/CompositionContext;", "compositeKeyHash", "", "dispatcher", "Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;", "view", "Landroid/view/View;", "owner", "Landroidx/compose/ui/node/Owner;", "<init>", "(Landroid/content/Context;Landroidx/compose/runtime/CompositionContext;ILandroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;Landroid/view/View;Landroidx/compose/ui/node/Owner;)V", "getView", "()Landroid/view/View;", "getInteropView", "Landroidx/compose/ui/viewinterop/InteropView;", "value", "Lkotlin/Function0;", "", "update", "getUpdate", "()Lkotlin/jvm/functions/Function0;", "setUpdate", "(Lkotlin/jvm/functions/Function0;)V", "hasUpdateBlock", "", "reset", "getReset", "setReset", "release", "getRelease", "setRelease", "Landroidx/compose/ui/Modifier;", "modifier", "getModifier", "()Landroidx/compose/ui/Modifier;", "setModifier", "(Landroidx/compose/ui/Modifier;)V", "onModifierChanged", "Lkotlin/Function1;", "getOnModifierChanged$ui_release", "()Lkotlin/jvm/functions/Function1;", "setOnModifierChanged$ui_release", "(Lkotlin/jvm/functions/Function1;)V", "Landroidx/compose/ui/unit/Density;", "density", "getDensity", "()Landroidx/compose/ui/unit/Density;", "setDensity", "(Landroidx/compose/ui/unit/Density;)V", "onDensityChanged", "getOnDensityChanged$ui_release", "setOnDensityChanged$ui_release", "Landroidx/lifecycle/LifecycleOwner;", "lifecycleOwner", "getLifecycleOwner", "()Landroidx/lifecycle/LifecycleOwner;", "setLifecycleOwner", "(Landroidx/lifecycle/LifecycleOwner;)V", "Landroidx/savedstate/SavedStateRegistryOwner;", "savedStateRegistryOwner", "getSavedStateRegistryOwner", "()Landroidx/savedstate/SavedStateRegistryOwner;", "setSavedStateRegistryOwner", "(Landroidx/savedstate/SavedStateRegistryOwner;)V", "position", "", "size", "Landroidx/compose/ui/unit/IntSize;", "J", "insets", "Landroidx/core/view/WindowInsetsCompat;", "snapshotObserver", "Landroidx/compose/ui/node/OwnerSnapshotObserver;", "getSnapshotObserver", "()Landroidx/compose/ui/node/OwnerSnapshotObserver;", "runUpdate", "runInvalidate", "onRequestDisallowInterceptTouchEvent", "getOnRequestDisallowInterceptTouchEvent$ui_release", "setOnRequestDisallowInterceptTouchEvent$ui_release", FirebaseAnalytics.Param.LOCATION, "lastWidthMeasureSpec", "lastHeightMeasureSpec", "nestedScrollingParentHelper", "Landroidx/core/view/NestedScrollingParentHelper;", "isDrawing", "isValidOwnerScope", "()Z", "getAccessibilityClassName", "", "onReuse", "onDeactivate", "onRelease", "onMeasure", "widthMeasureSpec", "heightMeasureSpec", "remeasure", "onLayout", "changed", CmcdData.STREAM_TYPE_LIVE, "t", "r", "b", "getLayoutParams", "Landroid/view/ViewGroup$LayoutParams;", "requestDisallowInterceptTouchEvent", "disallowIntercept", "onAttachedToWindow", "onDetachedFromWindow", "invalidateChildInParent", "Landroid/view/ViewParent;", "dirty", "Landroid/graphics/Rect;", "onDescendantInvalidated", "child", TypedValues.AttributesType.S_TARGET, "invalidateOrDefer", "onWindowVisibilityChanged", "visibility", "gatherTransparentRegion", TtmlNode.TAG_REGION, "Landroid/graphics/Region;", "layoutNode", "Landroidx/compose/ui/node/LayoutNode;", "getLayoutNode", "()Landroidx/compose/ui/node/LayoutNode;", "obtainMeasureSpec", "min", "max", "preferred", "shouldDelayChildPressedState", "onStartNestedScroll", "axes", "type", "getNestedScrollAxes", "onNestedScrollAccepted", "onStopNestedScroll", "onNestedScroll", "dxConsumed", "dyConsumed", "dxUnconsumed", "dyUnconsumed", "consumed", "onNestedPreScroll", "dx", "dy", "onNestedFling", "velocityX", "", "velocityY", "onNestedPreFling", "isNestedScrollingEnabled", "onApplyWindowInsets", "v", "insetToLayoutPosition", "insetBounds", "Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;", "bounds", "insetValue", ExifInterface.GPS_DIRECTION_TRUE, "block", "Lkotlin/Function4;", "Lkotlin/ParameterName;", "name", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function4;)Ljava/lang/Object;", "inset", "Landroidx/core/graphics/Insets;", TtmlNode.LEFT, "top", TtmlNode.RIGHT, "bottom", "Companion", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public class AndroidViewHolder extends ViewGroup implements NestedScrollingParent3, ComposeNodeLifecycleCallback, OwnerScope, OnApplyWindowInsetsListener {
     private final int compositeKeyHash;
@@ -188,7 +186,7 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
         this.modifier = Modifier.Companion;
         this.density = DensityKt.Density$default(1.0f, 0.0f, 2, null);
         this.position = new int[2];
-        this.size = IntSize.Companion.m6860getZeroYbymL2g();
+        this.size = IntSize.Companion.m7427getZeroYbymL2g();
         this.runUpdate = new Function0<Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidViewHolder$runUpdate$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -240,10 +238,9 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
         this.lastHeightMeasureSpec = Integer.MIN_VALUE;
         this.nestedScrollingParentHelper = new NestedScrollingParentHelper(this);
         final LayoutNode layoutNode = new LayoutNode(false, 0, 3, null);
-        layoutNode.setForceUseOldLayers(true);
         layoutNode.setInteropViewFactoryHolder$ui_release(this);
         androidViewHolder_androidKt$NoOpScrollConnection$1 = AndroidViewHolder_androidKt.NoOpScrollConnection;
-        final Modifier onGloballyPositioned = OnGloballyPositionedModifierKt.onGloballyPositioned(DrawModifierKt.drawBehind(GraphicsLayerModifierKt.m4239graphicsLayerAp8cVGQ$default(PointerInteropFilter_androidKt.pointerInteropFilter(SemanticsModifierKt.semantics(NestedScrollModifierKt.nestedScroll(Modifier.Companion, androidViewHolder_androidKt$NoOpScrollConnection$1, this.dispatcher), true, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidViewHolder$layoutNode$1$coreModifier$1
+        final Modifier onGloballyPositioned = OnGloballyPositionedModifierKt.onGloballyPositioned(DrawModifierKt.drawBehind(PointerInteropFilter_androidKt.pointerInteropFilter(SemanticsModifierKt.semantics(NestedScrollModifierKt.nestedScroll(Modifier.Companion, androidViewHolder_androidKt$NoOpScrollConnection$1, this.dispatcher), true, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidViewHolder$layoutNode$1$coreModifier$1
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
             }
@@ -253,7 +250,7 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
                 invoke2(semanticsPropertyReceiver);
                 return Unit.INSTANCE;
             }
-        }), this), 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, null, false, null, 0L, 0L, 0, 131071, null), new Function1<DrawScope, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidViewHolder$layoutNode$1$coreModifier$2
+        }), this), new Function1<DrawScope, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidViewHolder$layoutNode$1$coreModifier$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -317,7 +314,7 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
                 iArr3 = AndroidViewHolder.this.position;
                 view2.getLocationOnScreen(iArr3);
                 j = AndroidViewHolder.this.size;
-                AndroidViewHolder.this.size = layoutCoordinates.mo5446getSizeYbymL2g();
+                AndroidViewHolder.this.size = layoutCoordinates.mo5962getSizeYbymL2g();
                 windowInsetsCompat = AndroidViewHolder.this.insets;
                 if (windowInsetsCompat != null) {
                     iArr4 = AndroidViewHolder.this.position;
@@ -325,7 +322,7 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
                         iArr5 = AndroidViewHolder.this.position;
                         if (i3 == iArr5[1]) {
                             j2 = AndroidViewHolder.this.size;
-                            if (IntSize.m6853equalsimpl0(j, j2)) {
+                            if (IntSize.m7420equalsimpl0(j, j2)) {
                                 return;
                             }
                         }
@@ -432,7 +429,7 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
                 int obtainMeasureSpec;
                 int obtainMeasureSpec2;
                 if (AndroidViewHolder.this.getChildCount() == 0) {
-                    return MeasureScope.layout$default(measureScope, Constraints.m6639getMinWidthimpl(j), Constraints.m6638getMinHeightimpl(j), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidViewHolder$layoutNode$1$5$measure$1
+                    return MeasureScope.layout$default(measureScope, Constraints.m7206getMinWidthimpl(j), Constraints.m7205getMinHeightimpl(j), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidViewHolder$layoutNode$1$5$measure$1
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(Placeable.PlacementScope placementScope) {
                         }
@@ -444,24 +441,24 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
                         }
                     }, 4, null);
                 }
-                if (Constraints.m6639getMinWidthimpl(j) != 0) {
-                    AndroidViewHolder.this.getChildAt(0).setMinimumWidth(Constraints.m6639getMinWidthimpl(j));
+                if (Constraints.m7206getMinWidthimpl(j) != 0) {
+                    AndroidViewHolder.this.getChildAt(0).setMinimumWidth(Constraints.m7206getMinWidthimpl(j));
                 }
-                if (Constraints.m6638getMinHeightimpl(j) != 0) {
-                    AndroidViewHolder.this.getChildAt(0).setMinimumHeight(Constraints.m6638getMinHeightimpl(j));
+                if (Constraints.m7205getMinHeightimpl(j) != 0) {
+                    AndroidViewHolder.this.getChildAt(0).setMinimumHeight(Constraints.m7205getMinHeightimpl(j));
                 }
                 AndroidViewHolder androidViewHolder2 = AndroidViewHolder.this;
-                int m6639getMinWidthimpl = Constraints.m6639getMinWidthimpl(j);
-                int m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j);
+                int m7206getMinWidthimpl = Constraints.m7206getMinWidthimpl(j);
+                int m7204getMaxWidthimpl = Constraints.m7204getMaxWidthimpl(j);
                 ViewGroup.LayoutParams layoutParams = AndroidViewHolder.this.getLayoutParams();
                 Intrinsics.checkNotNull(layoutParams);
-                obtainMeasureSpec = androidViewHolder2.obtainMeasureSpec(m6639getMinWidthimpl, m6637getMaxWidthimpl, layoutParams.width);
+                obtainMeasureSpec = androidViewHolder2.obtainMeasureSpec(m7206getMinWidthimpl, m7204getMaxWidthimpl, layoutParams.width);
                 AndroidViewHolder androidViewHolder3 = AndroidViewHolder.this;
-                int m6638getMinHeightimpl = Constraints.m6638getMinHeightimpl(j);
-                int m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j);
+                int m7205getMinHeightimpl = Constraints.m7205getMinHeightimpl(j);
+                int m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j);
                 ViewGroup.LayoutParams layoutParams2 = AndroidViewHolder.this.getLayoutParams();
                 Intrinsics.checkNotNull(layoutParams2);
-                obtainMeasureSpec2 = androidViewHolder3.obtainMeasureSpec(m6638getMinHeightimpl, m6636getMaxHeightimpl, layoutParams2.height);
+                obtainMeasureSpec2 = androidViewHolder3.obtainMeasureSpec(m7205getMinHeightimpl, m7203getMaxHeightimpl, layoutParams2.height);
                 androidViewHolder2.measure(obtainMeasureSpec, obtainMeasureSpec2);
                 int measuredWidth = AndroidViewHolder.this.getMeasuredWidth();
                 int measuredHeight = AndroidViewHolder.this.getMeasuredHeight();
@@ -669,9 +666,6 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
     @Override // androidx.compose.runtime.ComposeNodeLifecycleCallback
     public void onDeactivate() {
         this.reset.invoke();
-        if (ComposeUiFlags.isRemoveFocusedViewFixEnabled && hasFocus() && isInTouchMode() && Build.VERSION.SDK_INT > 28) {
-            findFocus().clearFocus();
-        }
         removeAllViewsInLayout();
     }
 
@@ -824,14 +818,14 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
             NestedScrollDispatcher nestedScrollDispatcher = this.dispatcher;
             composeOffset = AndroidViewHolder_androidKt.toComposeOffset(i);
             composeOffset2 = AndroidViewHolder_androidKt.toComposeOffset(i2);
-            long m3829constructorimpl = Offset.m3829constructorimpl((Float.floatToRawIntBits(composeOffset2) & 4294967295L) | (Float.floatToRawIntBits(composeOffset) << 32));
+            long m4285constructorimpl = Offset.m4285constructorimpl((Float.floatToRawIntBits(composeOffset2) & 4294967295L) | (Float.floatToRawIntBits(composeOffset) << 32));
             composeOffset3 = AndroidViewHolder_androidKt.toComposeOffset(i3);
             composeOffset4 = AndroidViewHolder_androidKt.toComposeOffset(i4);
-            long m3829constructorimpl2 = Offset.m3829constructorimpl((Float.floatToRawIntBits(composeOffset4) & 4294967295L) | (Float.floatToRawIntBits(composeOffset3) << 32));
+            long m4285constructorimpl2 = Offset.m4285constructorimpl((Float.floatToRawIntBits(composeOffset4) & 4294967295L) | (Float.floatToRawIntBits(composeOffset3) << 32));
             nestedScrollSource = AndroidViewHolder_androidKt.toNestedScrollSource(i5);
-            long m5188dispatchPostScrollDzOQY0M = nestedScrollDispatcher.m5188dispatchPostScrollDzOQY0M(m3829constructorimpl, m3829constructorimpl2, nestedScrollSource);
-            iArr[0] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m5188dispatchPostScrollDzOQY0M >> 32)));
-            iArr[1] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m5188dispatchPostScrollDzOQY0M & 4294967295L)));
+            long m5701dispatchPostScrollDzOQY0M = nestedScrollDispatcher.m5701dispatchPostScrollDzOQY0M(m4285constructorimpl, m4285constructorimpl2, nestedScrollSource);
+            iArr[0] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m5701dispatchPostScrollDzOQY0M >> 32)));
+            iArr[1] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m5701dispatchPostScrollDzOQY0M & 4294967295L)));
         }
     }
 
@@ -846,12 +840,12 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
             NestedScrollDispatcher nestedScrollDispatcher = this.dispatcher;
             composeOffset = AndroidViewHolder_androidKt.toComposeOffset(i);
             composeOffset2 = AndroidViewHolder_androidKt.toComposeOffset(i2);
-            long m3829constructorimpl = Offset.m3829constructorimpl((Float.floatToRawIntBits(composeOffset2) & 4294967295L) | (Float.floatToRawIntBits(composeOffset) << 32));
+            long m4285constructorimpl = Offset.m4285constructorimpl((Float.floatToRawIntBits(composeOffset2) & 4294967295L) | (Float.floatToRawIntBits(composeOffset) << 32));
             composeOffset3 = AndroidViewHolder_androidKt.toComposeOffset(i3);
             composeOffset4 = AndroidViewHolder_androidKt.toComposeOffset(i4);
-            long m3829constructorimpl2 = Offset.m3829constructorimpl((Float.floatToRawIntBits(composeOffset4) & 4294967295L) | (Float.floatToRawIntBits(composeOffset3) << 32));
+            long m4285constructorimpl2 = Offset.m4285constructorimpl((Float.floatToRawIntBits(composeOffset4) & 4294967295L) | (Float.floatToRawIntBits(composeOffset3) << 32));
             nestedScrollSource = AndroidViewHolder_androidKt.toNestedScrollSource(i5);
-            nestedScrollDispatcher.m5188dispatchPostScrollDzOQY0M(m3829constructorimpl, m3829constructorimpl2, nestedScrollSource);
+            nestedScrollDispatcher.m5701dispatchPostScrollDzOQY0M(m4285constructorimpl, m4285constructorimpl2, nestedScrollSource);
         }
     }
 
@@ -864,11 +858,11 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
             NestedScrollDispatcher nestedScrollDispatcher = this.dispatcher;
             composeOffset = AndroidViewHolder_androidKt.toComposeOffset(i);
             composeOffset2 = AndroidViewHolder_androidKt.toComposeOffset(i2);
-            long m3829constructorimpl = Offset.m3829constructorimpl((Float.floatToRawIntBits(composeOffset2) & 4294967295L) | (Float.floatToRawIntBits(composeOffset) << 32));
+            long m4285constructorimpl = Offset.m4285constructorimpl((Float.floatToRawIntBits(composeOffset2) & 4294967295L) | (Float.floatToRawIntBits(composeOffset) << 32));
             nestedScrollSource = AndroidViewHolder_androidKt.toNestedScrollSource(i3);
-            long m5190dispatchPreScrollOzD1aCk = nestedScrollDispatcher.m5190dispatchPreScrollOzD1aCk(m3829constructorimpl, nestedScrollSource);
-            iArr[0] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m5190dispatchPreScrollOzD1aCk >> 32)));
-            iArr[1] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m5190dispatchPreScrollOzD1aCk & 4294967295L)));
+            long m5703dispatchPreScrollOzD1aCk = nestedScrollDispatcher.m5703dispatchPreScrollOzD1aCk(m4285constructorimpl, nestedScrollSource);
+            iArr[0] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m5703dispatchPreScrollOzD1aCk >> 32)));
+            iArr[1] = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (m5703dispatchPreScrollOzD1aCk & 4294967295L)));
         }
     }
 
@@ -915,27 +909,27 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
             NodeCoordinator innerCoordinator$ui_release = this.layoutNode.getInnerCoordinator$ui_release();
             if (innerCoordinator$ui_release.isAttached()) {
                 NodeCoordinator nodeCoordinator = innerCoordinator$ui_release;
-                long m6829roundk4lQ0M = IntOffsetKt.m6829roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(nodeCoordinator));
-                int m6812getXimpl = IntOffset.m6812getXimpl(m6829roundk4lQ0M);
-                if (m6812getXimpl < 0) {
-                    m6812getXimpl = 0;
+                long m7396roundk4lQ0M = IntOffsetKt.m7396roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(nodeCoordinator));
+                int m7379getXimpl = IntOffset.m7379getXimpl(m7396roundk4lQ0M);
+                if (m7379getXimpl < 0) {
+                    m7379getXimpl = 0;
                 }
-                int m6813getYimpl = IntOffset.m6813getYimpl(m6829roundk4lQ0M);
-                if (m6813getYimpl < 0) {
-                    m6813getYimpl = 0;
+                int m7380getYimpl = IntOffset.m7380getYimpl(m7396roundk4lQ0M);
+                if (m7380getYimpl < 0) {
+                    m7380getYimpl = 0;
                 }
-                long mo5446getSizeYbymL2g = LayoutCoordinatesKt.findRootCoordinates(nodeCoordinator).mo5446getSizeYbymL2g();
-                int i = (int) (mo5446getSizeYbymL2g & 4294967295L);
-                long mo5446getSizeYbymL2g2 = innerCoordinator$ui_release.mo5446getSizeYbymL2g();
-                long m6829roundk4lQ0M2 = IntOffsetKt.m6829roundk4lQ0M(innerCoordinator$ui_release.mo5449localToRootMKHz9U(Offset.m3829constructorimpl((Float.floatToRawIntBits((int) (mo5446getSizeYbymL2g2 & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo5446getSizeYbymL2g2 >> 32)) << 32))));
-                int m6812getXimpl2 = ((int) (mo5446getSizeYbymL2g >> 32)) - IntOffset.m6812getXimpl(m6829roundk4lQ0M2);
-                if (m6812getXimpl2 < 0) {
-                    m6812getXimpl2 = 0;
+                long mo5962getSizeYbymL2g = LayoutCoordinatesKt.findRootCoordinates(nodeCoordinator).mo5962getSizeYbymL2g();
+                int i = (int) (mo5962getSizeYbymL2g & 4294967295L);
+                long mo5962getSizeYbymL2g2 = innerCoordinator$ui_release.mo5962getSizeYbymL2g();
+                long m7396roundk4lQ0M2 = IntOffsetKt.m7396roundk4lQ0M(innerCoordinator$ui_release.mo5965localToRootMKHz9U(Offset.m4285constructorimpl((Float.floatToRawIntBits((int) (mo5962getSizeYbymL2g2 & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo5962getSizeYbymL2g2 >> 32)) << 32))));
+                int m7379getXimpl2 = ((int) (mo5962getSizeYbymL2g >> 32)) - IntOffset.m7379getXimpl(m7396roundk4lQ0M2);
+                if (m7379getXimpl2 < 0) {
+                    m7379getXimpl2 = 0;
                 }
-                int m6813getYimpl2 = i - IntOffset.m6813getYimpl(m6829roundk4lQ0M2);
-                int i2 = m6813getYimpl2 < 0 ? 0 : m6813getYimpl2;
-                if (m6812getXimpl != 0 || m6813getYimpl != 0 || m6812getXimpl2 != 0 || i2 != 0) {
-                    return windowInsetsCompat.inset(m6812getXimpl, m6813getYimpl, m6812getXimpl2, i2);
+                int m7380getYimpl2 = i - IntOffset.m7380getYimpl(m7396roundk4lQ0M2);
+                int i2 = m7380getYimpl2 < 0 ? 0 : m7380getYimpl2;
+                if (m7379getXimpl != 0 || m7380getYimpl != 0 || m7379getXimpl2 != 0 || i2 != 0) {
+                    return windowInsetsCompat.inset(m7379getXimpl, m7380getYimpl, m7379getXimpl2, i2);
                 }
             }
         }
@@ -946,27 +940,27 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
         NodeCoordinator innerCoordinator$ui_release = this.layoutNode.getInnerCoordinator$ui_release();
         if (innerCoordinator$ui_release.isAttached()) {
             NodeCoordinator nodeCoordinator = innerCoordinator$ui_release;
-            long m6829roundk4lQ0M = IntOffsetKt.m6829roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(nodeCoordinator));
-            int m6812getXimpl = IntOffset.m6812getXimpl(m6829roundk4lQ0M);
-            if (m6812getXimpl < 0) {
-                m6812getXimpl = 0;
+            long m7396roundk4lQ0M = IntOffsetKt.m7396roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(nodeCoordinator));
+            int m7379getXimpl = IntOffset.m7379getXimpl(m7396roundk4lQ0M);
+            if (m7379getXimpl < 0) {
+                m7379getXimpl = 0;
             }
-            int m6813getYimpl = IntOffset.m6813getYimpl(m6829roundk4lQ0M);
-            if (m6813getYimpl < 0) {
-                m6813getYimpl = 0;
+            int m7380getYimpl = IntOffset.m7380getYimpl(m7396roundk4lQ0M);
+            if (m7380getYimpl < 0) {
+                m7380getYimpl = 0;
             }
-            long mo5446getSizeYbymL2g = LayoutCoordinatesKt.findRootCoordinates(nodeCoordinator).mo5446getSizeYbymL2g();
-            int i = (int) (mo5446getSizeYbymL2g & 4294967295L);
-            long mo5446getSizeYbymL2g2 = innerCoordinator$ui_release.mo5446getSizeYbymL2g();
-            long m6829roundk4lQ0M2 = IntOffsetKt.m6829roundk4lQ0M(innerCoordinator$ui_release.mo5449localToRootMKHz9U(Offset.m3829constructorimpl((Float.floatToRawIntBits((int) (mo5446getSizeYbymL2g2 & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo5446getSizeYbymL2g2 >> 32)) << 32))));
-            int m6812getXimpl2 = ((int) (mo5446getSizeYbymL2g >> 32)) - IntOffset.m6812getXimpl(m6829roundk4lQ0M2);
-            if (m6812getXimpl2 < 0) {
-                m6812getXimpl2 = 0;
+            long mo5962getSizeYbymL2g = LayoutCoordinatesKt.findRootCoordinates(nodeCoordinator).mo5962getSizeYbymL2g();
+            int i = (int) (mo5962getSizeYbymL2g & 4294967295L);
+            long mo5962getSizeYbymL2g2 = innerCoordinator$ui_release.mo5962getSizeYbymL2g();
+            long m7396roundk4lQ0M2 = IntOffsetKt.m7396roundk4lQ0M(innerCoordinator$ui_release.mo5965localToRootMKHz9U(Offset.m4285constructorimpl((Float.floatToRawIntBits((int) (mo5962getSizeYbymL2g2 & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo5962getSizeYbymL2g2 >> 32)) << 32))));
+            int m7379getXimpl2 = ((int) (mo5962getSizeYbymL2g >> 32)) - IntOffset.m7379getXimpl(m7396roundk4lQ0M2);
+            if (m7379getXimpl2 < 0) {
+                m7379getXimpl2 = 0;
             }
-            int m6813getYimpl2 = i - IntOffset.m6813getYimpl(m6829roundk4lQ0M2);
-            int i2 = m6813getYimpl2 >= 0 ? m6813getYimpl2 : 0;
-            if (m6812getXimpl != 0 || m6813getYimpl != 0 || m6812getXimpl2 != 0 || i2 != 0) {
-                return function4.invoke(Integer.valueOf(m6812getXimpl), Integer.valueOf(m6813getYimpl), Integer.valueOf(m6812getXimpl2), Integer.valueOf(i2));
+            int m7380getYimpl2 = i - IntOffset.m7380getYimpl(m7396roundk4lQ0M2);
+            int i2 = m7380getYimpl2 >= 0 ? m7380getYimpl2 : 0;
+            if (m7379getXimpl != 0 || m7380getYimpl != 0 || m7379getXimpl2 != 0 || i2 != 0) {
+                return function4.invoke(Integer.valueOf(m7379getXimpl), Integer.valueOf(m7380getYimpl), Integer.valueOf(m7379getXimpl2), Integer.valueOf(i2));
             }
         }
         return t;
@@ -990,7 +984,7 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
     }
 
     /* compiled from: AndroidViewHolder.android.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Landroidx/compose/ui/viewinterop/AndroidViewHolder$Companion;", "", "()V", "OnCommitAffectingUpdate", "Lkotlin/Function1;", "Landroidx/compose/ui/viewinterop/AndroidViewHolder;", "", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Landroidx/compose/ui/viewinterop/AndroidViewHolder$Companion;", "", "<init>", "()V", "OnCommitAffectingUpdate", "Lkotlin/Function1;", "Landroidx/compose/ui/viewinterop/AndroidViewHolder;", "", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -1006,29 +1000,29 @@ public class AndroidViewHolder extends ViewGroup implements NestedScrollingParen
         NodeCoordinator innerCoordinator$ui_release = this.layoutNode.getInnerCoordinator$ui_release();
         if (innerCoordinator$ui_release.isAttached()) {
             NodeCoordinator nodeCoordinator = innerCoordinator$ui_release;
-            long m6829roundk4lQ0M = IntOffsetKt.m6829roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(nodeCoordinator));
-            int m6812getXimpl = IntOffset.m6812getXimpl(m6829roundk4lQ0M);
-            if (m6812getXimpl < 0) {
-                m6812getXimpl = 0;
+            long m7396roundk4lQ0M = IntOffsetKt.m7396roundk4lQ0M(LayoutCoordinatesKt.positionInRoot(nodeCoordinator));
+            int m7379getXimpl = IntOffset.m7379getXimpl(m7396roundk4lQ0M);
+            if (m7379getXimpl < 0) {
+                m7379getXimpl = 0;
             }
-            int m6813getYimpl = IntOffset.m6813getYimpl(m6829roundk4lQ0M);
-            if (m6813getYimpl < 0) {
-                m6813getYimpl = 0;
+            int m7380getYimpl = IntOffset.m7380getYimpl(m7396roundk4lQ0M);
+            if (m7380getYimpl < 0) {
+                m7380getYimpl = 0;
             }
-            long mo5446getSizeYbymL2g = LayoutCoordinatesKt.findRootCoordinates(nodeCoordinator).mo5446getSizeYbymL2g();
-            int i = (int) (mo5446getSizeYbymL2g & 4294967295L);
-            long mo5446getSizeYbymL2g2 = innerCoordinator$ui_release.mo5446getSizeYbymL2g();
-            long m6829roundk4lQ0M2 = IntOffsetKt.m6829roundk4lQ0M(innerCoordinator$ui_release.mo5449localToRootMKHz9U(Offset.m3829constructorimpl((Float.floatToRawIntBits((int) (mo5446getSizeYbymL2g2 & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo5446getSizeYbymL2g2 >> 32)) << 32))));
-            int m6812getXimpl2 = ((int) (mo5446getSizeYbymL2g >> 32)) - IntOffset.m6812getXimpl(m6829roundk4lQ0M2);
-            if (m6812getXimpl2 < 0) {
-                m6812getXimpl2 = 0;
+            long mo5962getSizeYbymL2g = LayoutCoordinatesKt.findRootCoordinates(nodeCoordinator).mo5962getSizeYbymL2g();
+            int i = (int) (mo5962getSizeYbymL2g & 4294967295L);
+            long mo5962getSizeYbymL2g2 = innerCoordinator$ui_release.mo5962getSizeYbymL2g();
+            long m7396roundk4lQ0M2 = IntOffsetKt.m7396roundk4lQ0M(innerCoordinator$ui_release.mo5965localToRootMKHz9U(Offset.m4285constructorimpl((Float.floatToRawIntBits((int) (mo5962getSizeYbymL2g2 & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo5962getSizeYbymL2g2 >> 32)) << 32))));
+            int m7379getXimpl2 = ((int) (mo5962getSizeYbymL2g >> 32)) - IntOffset.m7379getXimpl(m7396roundk4lQ0M2);
+            if (m7379getXimpl2 < 0) {
+                m7379getXimpl2 = 0;
             }
-            int m6813getYimpl2 = i - IntOffset.m6813getYimpl(m6829roundk4lQ0M2);
-            int i2 = m6813getYimpl2 >= 0 ? m6813getYimpl2 : 0;
-            if (m6812getXimpl != 0 || m6813getYimpl != 0 || m6812getXimpl2 != 0 || i2 != 0) {
-                int i3 = m6812getXimpl;
+            int m7380getYimpl2 = i - IntOffset.m7380getYimpl(m7396roundk4lQ0M2);
+            int i2 = m7380getYimpl2 >= 0 ? m7380getYimpl2 : 0;
+            if (m7379getXimpl != 0 || m7380getYimpl != 0 || m7379getXimpl2 != 0 || i2 != 0) {
+                int i3 = m7379getXimpl;
                 int i4 = i2;
-                return new WindowInsetsAnimationCompat.BoundsCompat(inset(boundsCompat.getLowerBound(), i3, m6813getYimpl, m6812getXimpl2, i4), inset(boundsCompat.getUpperBound(), i3, m6813getYimpl, m6812getXimpl2, i4));
+                return new WindowInsetsAnimationCompat.BoundsCompat(inset(boundsCompat.getLowerBound(), i3, m7380getYimpl, m7379getXimpl2, i4), inset(boundsCompat.getUpperBound(), i3, m7380getYimpl, m7379getXimpl2, i4));
             }
         }
         return boundsCompat;

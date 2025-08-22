@@ -18,8 +18,8 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.FlowKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldCoreModifier.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$startCursorJob$1", f = "TextFieldCoreModifier.kt", i = {}, l = {558}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$startCursorJob$1", f = "TextFieldCoreModifier.kt", i = {}, l = {618}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class TextFieldCoreModifierNode$startCursorJob$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -52,23 +52,12 @@ public final class TextFieldCoreModifierNode$startCursorJob$1 extends SuspendLam
             intRef.element = 1;
             final TextFieldCoreModifierNode textFieldCoreModifierNode = this.this$0;
             this.label = 1;
-            if (FlowKt.collectLatest(SnapshotStateKt.snapshotFlow(new Function0<Integer>() { // from class: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$startCursorJob$1.1
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(0);
-                }
-
-                /* JADX WARN: Can't rename method to resolve collision */
+            if (FlowKt.collectLatest(SnapshotStateKt.snapshotFlow(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$startCursorJob$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
-                public final Integer invoke() {
-                    TransformedTextFieldState transformedTextFieldState;
-                    transformedTextFieldState = TextFieldCoreModifierNode.this.textFieldState;
-                    transformedTextFieldState.getVisualText();
-                    Integer valueOf = Integer.valueOf(((TextFieldCoreModifierNode.this.isAttached() && ((WindowInfo) CompositionLocalConsumerModifierNodeKt.currentValueOf(TextFieldCoreModifierNode.this, CompositionLocalsKt.getLocalWindowInfo())).isWindowFocused()) ? 1 : 2) * intRef.element);
-                    Ref.IntRef intRef2 = intRef;
-                    valueOf.intValue();
-                    intRef2.element *= -1;
-                    return valueOf;
+                public final Object invoke() {
+                    int invokeSuspend$lambda$1;
+                    invokeSuspend$lambda$1 = TextFieldCoreModifierNode$startCursorJob$1.invokeSuspend$lambda$1(TextFieldCoreModifierNode.this, intRef);
+                    return Integer.valueOf(invokeSuspend$lambda$1);
                 }
             }), new AnonymousClass2(this.this$0, null), this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -81,10 +70,20 @@ public final class TextFieldCoreModifierNode$startCursorJob$1 extends SuspendLam
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final int invokeSuspend$lambda$1(TextFieldCoreModifierNode textFieldCoreModifierNode, Ref.IntRef intRef) {
+        TransformedTextFieldState transformedTextFieldState;
+        transformedTextFieldState = textFieldCoreModifierNode.textFieldState;
+        transformedTextFieldState.getVisualText();
+        int i = ((textFieldCoreModifierNode.isAttached() && ((WindowInfo) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldCoreModifierNode, CompositionLocalsKt.getLocalWindowInfo())).isWindowFocused()) ? 1 : 2) * intRef.element;
+        intRef.element *= -1;
+        return i;
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: TextFieldCoreModifier.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", "isWindowFocused", ""}, k = 3, mv = {1, 9, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$startCursorJob$1$2", f = "TextFieldCoreModifier.kt", i = {}, l = {560}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "isWindowFocused", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$startCursorJob$1$2", f = "TextFieldCoreModifier.kt", i = {}, l = {620}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$startCursorJob$1$2  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<Integer, Continuation<? super Unit>, Object> {

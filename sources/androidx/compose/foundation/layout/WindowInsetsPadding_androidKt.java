@@ -11,17 +11,11 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 /* compiled from: WindowInsetsPadding.android.kt */
-@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0002\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0003\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0004\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0005\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0006\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0007\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\b\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\t\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\n\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u000b\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\f\u001a\u00020\u0001*\u00020\u0001\u001aC\u0010\r\u001a\u00020\u0001*\u00020\u00012\u0019\b\b\u0010\u000e\u001a\u0013\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020\u00110\u000f¢\u0006\u0002\b\u00122\u0019\b\u0004\u0010\u0013\u001a\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u000f¢\u0006\u0002\b\u0012H\u0083\b¨\u0006\u0016"}, d2 = {"captionBarPadding", "Landroidx/compose/ui/Modifier;", "displayCutoutPadding", "imePadding", "mandatorySystemGesturesPadding", "navigationBarsPadding", "safeContentPadding", "safeDrawingPadding", "safeGesturesPadding", "statusBarsPadding", "systemBarsPadding", "systemGesturesPadding", "waterfallPadding", "windowInsetsPadding", "inspectorInfo", "Lkotlin/Function1;", "Landroidx/compose/ui/platform/InspectorInfo;", "", "Lkotlin/ExtensionFunctionType;", "insetsCalculation", "Landroidx/compose/foundation/layout/WindowInsetsHolder;", "Landroidx/compose/foundation/layout/WindowInsets;", "foundation-layout_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0002\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0003\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0004\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0005\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0006\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0007\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\b\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\t\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\n\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u000b\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\f\u001a\u00020\u0001*\u00020\u0001\u001aC\u0010\r\u001a\u00020\u0001*\u00020\u00012\u0019\b\b\u0010\u000e\u001a\u0013\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020\u00110\u000f¢\u0006\u0002\b\u00122\u0019\b\u0004\u0010\u0013\u001a\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u000f¢\u0006\u0002\b\u0012H\u0083\b¨\u0006\u0016"}, d2 = {"safeDrawingPadding", "Landroidx/compose/ui/Modifier;", "safeGesturesPadding", "safeContentPadding", "systemBarsPadding", "displayCutoutPadding", "statusBarsPadding", "imePadding", "navigationBarsPadding", "captionBarPadding", "waterfallPadding", "systemGesturesPadding", "mandatorySystemGesturesPadding", "windowInsetsPadding", "inspectorInfo", "Lkotlin/Function1;", "Landroidx/compose/ui/platform/InspectorInfo;", "", "Lkotlin/ExtensionFunctionType;", "insetsCalculation", "Landroidx/compose/foundation/layout/WindowInsetsHolder;", "Landroidx/compose/foundation/layout/WindowInsets;", "foundation-layout"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class WindowInsetsPadding_androidKt {
     private static final Modifier windowInsetsPadding(Modifier modifier, Function1<? super InspectorInfo, Unit> function1, final Function1<? super WindowInsetsHolder, ? extends WindowInsets> function12) {
         return ComposedModifierKt.composed(modifier, function1, new Function3<Modifier, Composer, Integer, Modifier>() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$windowInsetsPadding$1
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            /* JADX WARN: Multi-variable type inference failed */
-            {
-                super(3);
-            }
-
             @Override // kotlin.jvm.functions.Function3
             public /* bridge */ /* synthetic */ Modifier invoke(Modifier modifier2, Composer composer, Integer num) {
                 return invoke(modifier2, composer, num.intValue());
@@ -29,12 +23,12 @@ public final class WindowInsetsPadding_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(359872873);
-                ComposerKt.sourceInformation(composer, "C240@11403L9,241@11421L136:WindowInsetsPadding.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C240@11404L9,241@11422L136:WindowInsetsPadding.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(359872873, i, -1, "androidx.compose.foundation.layout.windowInsetsPadding.<anonymous> (WindowInsetsPadding.android.kt:240)");
                 }
                 WindowInsetsHolder current = WindowInsetsHolder.Companion.current(composer, 6);
-                ComposerKt.sourceInformationMarkerStart(composer, -324648120, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2054517743, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
                 boolean changed = composer.changed(current);
                 Function1<WindowInsetsHolder, WindowInsets> function13 = function12;
                 Object rememberedValue = composer.rememberedValue();
@@ -73,12 +67,12 @@ public final class WindowInsetsPadding_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(359872873);
-                ComposerKt.sourceInformation(composer, "C240@11403L9,241@11421L136:WindowInsetsPadding.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C240@11404L9,241@11422L136:WindowInsetsPadding.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(359872873, i, -1, "androidx.compose.foundation.layout.windowInsetsPadding.<anonymous> (WindowInsetsPadding.android.kt:240)");
                 }
                 WindowInsetsHolder current = WindowInsetsHolder.Companion.current(composer, 6);
-                ComposerKt.sourceInformationMarkerStart(composer, -324648120, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2054517743, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
                 boolean changed = composer.changed(current);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -116,12 +110,12 @@ public final class WindowInsetsPadding_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(359872873);
-                ComposerKt.sourceInformation(composer, "C240@11403L9,241@11421L136:WindowInsetsPadding.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C240@11404L9,241@11422L136:WindowInsetsPadding.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(359872873, i, -1, "androidx.compose.foundation.layout.windowInsetsPadding.<anonymous> (WindowInsetsPadding.android.kt:240)");
                 }
                 WindowInsetsHolder current = WindowInsetsHolder.Companion.current(composer, 6);
-                ComposerKt.sourceInformationMarkerStart(composer, -324648120, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2054517743, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
                 boolean changed = composer.changed(current);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -159,12 +153,12 @@ public final class WindowInsetsPadding_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(359872873);
-                ComposerKt.sourceInformation(composer, "C240@11403L9,241@11421L136:WindowInsetsPadding.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C240@11404L9,241@11422L136:WindowInsetsPadding.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(359872873, i, -1, "androidx.compose.foundation.layout.windowInsetsPadding.<anonymous> (WindowInsetsPadding.android.kt:240)");
                 }
                 WindowInsetsHolder current = WindowInsetsHolder.Companion.current(composer, 6);
-                ComposerKt.sourceInformationMarkerStart(composer, -324648120, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2054517743, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
                 boolean changed = composer.changed(current);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -202,12 +196,12 @@ public final class WindowInsetsPadding_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(359872873);
-                ComposerKt.sourceInformation(composer, "C240@11403L9,241@11421L136:WindowInsetsPadding.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C240@11404L9,241@11422L136:WindowInsetsPadding.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(359872873, i, -1, "androidx.compose.foundation.layout.windowInsetsPadding.<anonymous> (WindowInsetsPadding.android.kt:240)");
                 }
                 WindowInsetsHolder current = WindowInsetsHolder.Companion.current(composer, 6);
-                ComposerKt.sourceInformationMarkerStart(composer, -324648120, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2054517743, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
                 boolean changed = composer.changed(current);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -245,12 +239,12 @@ public final class WindowInsetsPadding_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(359872873);
-                ComposerKt.sourceInformation(composer, "C240@11403L9,241@11421L136:WindowInsetsPadding.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C240@11404L9,241@11422L136:WindowInsetsPadding.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(359872873, i, -1, "androidx.compose.foundation.layout.windowInsetsPadding.<anonymous> (WindowInsetsPadding.android.kt:240)");
                 }
                 WindowInsetsHolder current = WindowInsetsHolder.Companion.current(composer, 6);
-                ComposerKt.sourceInformationMarkerStart(composer, -324648120, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2054517743, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
                 boolean changed = composer.changed(current);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -288,12 +282,12 @@ public final class WindowInsetsPadding_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(359872873);
-                ComposerKt.sourceInformation(composer, "C240@11403L9,241@11421L136:WindowInsetsPadding.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C240@11404L9,241@11422L136:WindowInsetsPadding.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(359872873, i, -1, "androidx.compose.foundation.layout.windowInsetsPadding.<anonymous> (WindowInsetsPadding.android.kt:240)");
                 }
                 WindowInsetsHolder current = WindowInsetsHolder.Companion.current(composer, 6);
-                ComposerKt.sourceInformationMarkerStart(composer, -324648120, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2054517743, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
                 boolean changed = composer.changed(current);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -331,12 +325,12 @@ public final class WindowInsetsPadding_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(359872873);
-                ComposerKt.sourceInformation(composer, "C240@11403L9,241@11421L136:WindowInsetsPadding.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C240@11404L9,241@11422L136:WindowInsetsPadding.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(359872873, i, -1, "androidx.compose.foundation.layout.windowInsetsPadding.<anonymous> (WindowInsetsPadding.android.kt:240)");
                 }
                 WindowInsetsHolder current = WindowInsetsHolder.Companion.current(composer, 6);
-                ComposerKt.sourceInformationMarkerStart(composer, -324648120, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2054517743, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
                 boolean changed = composer.changed(current);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -374,12 +368,12 @@ public final class WindowInsetsPadding_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(359872873);
-                ComposerKt.sourceInformation(composer, "C240@11403L9,241@11421L136:WindowInsetsPadding.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C240@11404L9,241@11422L136:WindowInsetsPadding.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(359872873, i, -1, "androidx.compose.foundation.layout.windowInsetsPadding.<anonymous> (WindowInsetsPadding.android.kt:240)");
                 }
                 WindowInsetsHolder current = WindowInsetsHolder.Companion.current(composer, 6);
-                ComposerKt.sourceInformationMarkerStart(composer, -324648120, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2054517743, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
                 boolean changed = composer.changed(current);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -417,12 +411,12 @@ public final class WindowInsetsPadding_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(359872873);
-                ComposerKt.sourceInformation(composer, "C240@11403L9,241@11421L136:WindowInsetsPadding.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C240@11404L9,241@11422L136:WindowInsetsPadding.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(359872873, i, -1, "androidx.compose.foundation.layout.windowInsetsPadding.<anonymous> (WindowInsetsPadding.android.kt:240)");
                 }
                 WindowInsetsHolder current = WindowInsetsHolder.Companion.current(composer, 6);
-                ComposerKt.sourceInformationMarkerStart(composer, -324648120, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2054517743, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
                 boolean changed = composer.changed(current);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -460,12 +454,12 @@ public final class WindowInsetsPadding_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(359872873);
-                ComposerKt.sourceInformation(composer, "C240@11403L9,241@11421L136:WindowInsetsPadding.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C240@11404L9,241@11422L136:WindowInsetsPadding.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(359872873, i, -1, "androidx.compose.foundation.layout.windowInsetsPadding.<anonymous> (WindowInsetsPadding.android.kt:240)");
                 }
                 WindowInsetsHolder current = WindowInsetsHolder.Companion.current(composer, 6);
-                ComposerKt.sourceInformationMarkerStart(composer, -324648120, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2054517743, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
                 boolean changed = composer.changed(current);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -503,12 +497,12 @@ public final class WindowInsetsPadding_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(359872873);
-                ComposerKt.sourceInformation(composer, "C240@11403L9,241@11421L136:WindowInsetsPadding.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C240@11404L9,241@11422L136:WindowInsetsPadding.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(359872873, i, -1, "androidx.compose.foundation.layout.windowInsetsPadding.<anonymous> (WindowInsetsPadding.android.kt:240)");
                 }
                 WindowInsetsHolder current = WindowInsetsHolder.Companion.current(composer, 6);
-                ComposerKt.sourceInformationMarkerStart(composer, -324648120, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2054517743, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
                 boolean changed = composer.changed(current);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -546,12 +540,12 @@ public final class WindowInsetsPadding_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(359872873);
-                ComposerKt.sourceInformation(composer, "C240@11403L9,241@11421L136:WindowInsetsPadding.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C240@11404L9,241@11422L136:WindowInsetsPadding.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(359872873, i, -1, "androidx.compose.foundation.layout.windowInsetsPadding.<anonymous> (WindowInsetsPadding.android.kt:240)");
                 }
                 WindowInsetsHolder current = WindowInsetsHolder.Companion.current(composer, 6);
-                ComposerKt.sourceInformationMarkerStart(composer, -324648120, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2054517743, "CC(remember):WindowInsetsPadding.android.kt#9igjgp");
                 boolean changed = composer.changed(current);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {

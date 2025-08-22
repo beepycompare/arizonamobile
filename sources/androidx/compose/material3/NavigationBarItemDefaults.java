@@ -31,30 +31,30 @@ public final class NavigationBarItemDefaults {
     }
 
     /* renamed from: colors-69fazGs  reason: not valid java name */
-    public final NavigationBarItemColors m2075colors69fazGs(long j, long j2, long j3, long j4, long j5, long j6, long j7, Composer composer, int i, int i2) {
+    public final NavigationBarItemColors m2382colors69fazGs(long j, long j2, long j3, long j4, long j5, long j6, long j7, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -1618564327, "C(colors)P(3:c#ui.graphics.Color,4:c#ui.graphics.Color,2:c#ui.graphics.Color,5:c#ui.graphics.Color,6:c#ui.graphics.Color,0:c#ui.graphics.Color,1:c#ui.graphics.Color)335@14809L11:NavigationBar.kt#uh7d8r");
-        long m4114getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j;
-        long m4114getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j2;
-        long m4114getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j3;
-        long m4114getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j4;
-        long m4114getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j5;
-        long m4114getUnspecified0d7_KjU6 = (i2 & 32) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j6;
-        long m4114getUnspecified0d7_KjU7 = (i2 & 64) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j7;
+        long m4573getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
+        long m4573getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j2;
+        long m4573getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j3;
+        long m4573getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4;
+        long m4573getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j5;
+        long m4573getUnspecified0d7_KjU6 = (i2 & 32) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j6;
+        long m4573getUnspecified0d7_KjU7 = (i2 & 64) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j7;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1618564327, i, -1, "androidx.compose.material3.NavigationBarItemDefaults.colors (NavigationBar.kt:335)");
         }
-        NavigationBarItemColors m2064copy4JmcsL4 = getDefaultNavigationBarItemColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2064copy4JmcsL4(m4114getUnspecified0d7_KjU, m4114getUnspecified0d7_KjU2, m4114getUnspecified0d7_KjU3, m4114getUnspecified0d7_KjU4, m4114getUnspecified0d7_KjU5, m4114getUnspecified0d7_KjU6, m4114getUnspecified0d7_KjU7);
+        NavigationBarItemColors m2371copy4JmcsL4 = getDefaultNavigationBarItemColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2371copy4JmcsL4(m4573getUnspecified0d7_KjU, m4573getUnspecified0d7_KjU2, m4573getUnspecified0d7_KjU3, m4573getUnspecified0d7_KjU4, m4573getUnspecified0d7_KjU5, m4573getUnspecified0d7_KjU6, m4573getUnspecified0d7_KjU7);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2064copy4JmcsL4;
+        return m2371copy4JmcsL4;
     }
 
     public final NavigationBarItemColors getDefaultNavigationBarItemColors$material3_release(ColorScheme colorScheme) {
         NavigationBarItemColors defaultNavigationBarItemColorsCached$material3_release = colorScheme.getDefaultNavigationBarItemColorsCached$material3_release();
         if (defaultNavigationBarItemColorsCached$material3_release == null) {
-            NavigationBarItemColors navigationBarItemColors = new NavigationBarItemColors(ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getActiveIconColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getActiveLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getActiveIndicatorColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getInactiveIconColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getInactiveLabelTextColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getInactiveIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getInactiveLabelTextColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
+            NavigationBarItemColors navigationBarItemColors = new NavigationBarItemColors(ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getActiveIconColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getActiveLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getActiveIndicatorColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getInactiveIconColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getInactiveLabelTextColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getInactiveIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getInactiveLabelTextColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultNavigationBarItemColorsCached$material3_release(navigationBarItemColors);
             return navigationBarItemColors;
         }
@@ -63,7 +63,7 @@ public final class NavigationBarItemDefaults {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use overload with disabledIconColor and disabledTextColor")
     /* renamed from: colors-zjMxDiM  reason: not valid java name */
-    public final /* synthetic */ NavigationBarItemColors m2076colorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
+    public final /* synthetic */ NavigationBarItemColors m2383colorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -213647161, "C(colors)P(1:c#ui.graphics.Color,2:c#ui.graphics.Color,0:c#ui.graphics.Color,3:c#ui.graphics.Color,4:c#ui.graphics.Color)371@16664L5,372@16747L5,373@16827L5,374@16909L5,375@16996L5:NavigationBar.kt#uh7d8r");
         long value = (i2 & 1) != 0 ? ColorSchemeKt.getValue(NavigationBarTokens.INSTANCE.getActiveIconColor(), composer, 6) : j;
         long value2 = (i2 & 2) != 0 ? ColorSchemeKt.getValue(NavigationBarTokens.INSTANCE.getActiveLabelTextColor(), composer, 6) : j2;
@@ -73,7 +73,7 @@ public final class NavigationBarItemDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-213647161, i, -1, "androidx.compose.material3.NavigationBarItemDefaults.colors (NavigationBar.kt:377)");
         }
-        NavigationBarItemColors navigationBarItemColors = new NavigationBarItemColors(value, value2, value3, value4, value5, Color.m4077copywmQWz5c$default(value4, 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m4077copywmQWz5c$default(value5, 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
+        NavigationBarItemColors navigationBarItemColors = new NavigationBarItemColors(value, value2, value3, value4, value5, Color.m4536copywmQWz5c$default(value4, 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m4536copywmQWz5c$default(value5, 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

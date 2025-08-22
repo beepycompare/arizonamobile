@@ -111,14 +111,14 @@ public class FirebaseRemoteConfig {
         return fetch().onSuccessTask(this.executor, new SuccessContinuation() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda10
             @Override // com.google.android.gms.tasks.SuccessContinuation
             public final Task then(Object obj) {
-                return FirebaseRemoteConfig.this.m8295xebd5994c((Void) obj);
+                return FirebaseRemoteConfig.this.m8861xebd5994c((Void) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$fetchAndActivate$1$com-google-firebase-remoteconfig-FirebaseRemoteConfig  reason: not valid java name */
-    public /* synthetic */ Task m8295xebd5994c(Void r1) throws Exception {
+    public /* synthetic */ Task m8861xebd5994c(Void r1) throws Exception {
         return activate();
     }
 
@@ -128,14 +128,14 @@ public class FirebaseRemoteConfig {
         return Tasks.whenAllComplete(task, task2).continueWithTask(this.executor, new Continuation() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task3) {
-                return FirebaseRemoteConfig.this.m8294x98ca96b0(task, task2, task3);
+                return FirebaseRemoteConfig.this.m8860x98ca96b0(task, task2, task3);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$activate$2$com-google-firebase-remoteconfig-FirebaseRemoteConfig  reason: not valid java name */
-    public /* synthetic */ Task m8294x98ca96b0(Task task, Task task2, Task task3) throws Exception {
+    public /* synthetic */ Task m8860x98ca96b0(Task task, Task task2, Task task3) throws Exception {
         if (!task.isSuccessful() || task.getResult() == null) {
             return Tasks.forResult(false);
         }
@@ -213,14 +213,14 @@ public class FirebaseRemoteConfig {
         return Tasks.call(this.executor, new Callable() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda7
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                return FirebaseRemoteConfig.this.m8297xd6203cf5(firebaseRemoteConfigSettings);
+                return FirebaseRemoteConfig.this.m8863xd6203cf5(firebaseRemoteConfigSettings);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setConfigSettingsAsync$5$com-google-firebase-remoteconfig-FirebaseRemoteConfig  reason: not valid java name */
-    public /* synthetic */ Void m8297xd6203cf5(FirebaseRemoteConfigSettings firebaseRemoteConfigSettings) throws Exception {
+    public /* synthetic */ Void m8863xd6203cf5(FirebaseRemoteConfigSettings firebaseRemoteConfigSettings) throws Exception {
         this.frcSharedPrefs.setConfigSettings(firebaseRemoteConfigSettings);
         return null;
     }
@@ -246,14 +246,14 @@ public class FirebaseRemoteConfig {
         return Tasks.call(this.executor, new Callable() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda6
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                return FirebaseRemoteConfig.this.m8296xf98246b6();
+                return FirebaseRemoteConfig.this.m8862xf98246b6();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$reset$6$com-google-firebase-remoteconfig-FirebaseRemoteConfig  reason: not valid java name */
-    public /* synthetic */ Void m8296xf98246b6() throws Exception {
+    public /* synthetic */ Void m8862xf98246b6() throws Exception {
         this.activatedConfigsCache.clear();
         this.fetchedConfigsCache.clear();
         this.defaultConfigsCache.clear();
@@ -313,14 +313,14 @@ public class FirebaseRemoteConfig {
         return Tasks.call(this.executor, new Callable() { // from class: com.google.firebase.remoteconfig.FirebaseRemoteConfig$$ExternalSyntheticLambda5
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                return FirebaseRemoteConfig.this.m8298x5520461b(customSignals);
+                return FirebaseRemoteConfig.this.m8864x5520461b(customSignals);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setCustomSignals$8$com-google-firebase-remoteconfig-FirebaseRemoteConfig  reason: not valid java name */
-    public /* synthetic */ Void m8298x5520461b(CustomSignals customSignals) throws Exception {
+    public /* synthetic */ Void m8864x5520461b(CustomSignals customSignals) throws Exception {
         this.frcSharedPrefs.setCustomSignals(customSignals.customSignals);
         return null;
     }

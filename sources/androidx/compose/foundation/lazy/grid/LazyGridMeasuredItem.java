@@ -18,7 +18,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.ranges.RangesKt;
 /* compiled from: LazyGridMeasuredItem.kt */
-@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b#\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u00012\u00020\u0002B\u0093\u0001\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\u0004\u0012\u0006\u0010\n\u001a\u00020\u0004\u0012\u0006\u0010\u000b\u001a\u00020\b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u0004\u0012\u0006\u0010\u000f\u001a\u00020\u0004\u0012\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0006\u0010\u0013\u001a\u00020\u0014\u0012\b\u0010\u0015\u001a\u0004\u0018\u00010\u0006\u0012\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00000\u0017\u0012\u0006\u0010\u0018\u001a\u00020\u0019\u0012\u0006\u0010\u001a\u001a\u00020\u0004\u0012\u0006\u0010\u001b\u001a\u00020\u0004¢\u0006\u0002\u0010\u001cJ\u0016\u0010D\u001a\u00020E2\u0006\u0010F\u001a\u00020\u00042\u0006\u0010G\u001a\u00020\bJ\u001d\u0010H\u001a\u00020\u00142\u0006\u0010\u0003\u001a\u00020\u0004H\u0016ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\bI\u0010JJ\u0012\u0010K\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0003\u001a\u00020\u0004H\u0016J\u0016\u0010L\u001a\u00020E2\u0006\u0010M\u001a\u00020N2\u0006\u0010O\u001a\u00020\bJ(\u0010P\u001a\u00020E2\u0006\u0010Q\u001a\u00020\u00042\u0006\u0010R\u001a\u00020\u00042\u0006\u0010S\u001a\u00020\u00042\u0006\u0010T\u001a\u00020\u0004H\u0016J6\u0010P\u001a\u00020E2\u0006\u0010Q\u001a\u00020\u00042\u0006\u0010R\u001a\u00020\u00042\u0006\u0010S\u001a\u00020\u00042\u0006\u0010T\u001a\u00020\u00042\u0006\u0010:\u001a\u00020\u00042\u0006\u0010\u001e\u001a\u00020\u0004J\u000e\u0010U\u001a\u00020E2\u0006\u0010+\u001a\u00020\u0004J+\u0010V\u001a\u00020\u0014*\u00020\u00142\u0012\u0010W\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00040XH\u0082\bø\u0001\u0000¢\u0006\u0004\bY\u0010ZR\u000e\u0010\u000f\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00000\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u001e\u001a\u00020\u00042\u0006\u0010\u001d\u001a\u00020\u0004@RX\u0096\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 R\u001c\u0010\u0018\u001a\u00020\u0019X\u0096\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010#\u001a\u0004\b!\u0010\"R\u0016\u0010\u0015\u001a\u0004\u0018\u00010\u0006X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%R\u0011\u0010\t\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b&\u0010 R\u0014\u0010\u0003\u001a\u00020\u0004X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b'\u0010 R\u0014\u0010\u0007\u001a\u00020\bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010(R\u0014\u0010\u0005\u001a\u00020\u0006X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b)\u0010%R\u0014\u0010\u001a\u001a\u00020\u0004X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b*\u0010 R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010,\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b-\u0010 R\u0014\u0010.\u001a\u00020\u0004X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b/\u0010 R\u000e\u00100\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u00102\u001a\u00020\bX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b3\u0010(\"\u0004\b4\u00105R&\u00106\u001a\u00020\u00142\u0006\u0010\u001d\u001a\u00020\u0014@RX\u0096\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010#\u001a\u0004\b7\u0010\"R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00108\u001a\u00020\u00048VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b9\u0010 R\u000e\u0010\u000b\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010:\u001a\u00020\u00042\u0006\u0010\u001d\u001a\u00020\u0004@RX\u0096\u000e¢\u0006\b\n\u0000\u001a\u0004\b;\u0010 R\u001c\u0010<\u001a\u00020=X\u0096\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010#\u001a\u0004\b>\u0010\"R\u0014\u0010\u001b\u001a\u00020\u0004X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b?\u0010 R\u0016\u0010\u0013\u001a\u00020\u0014X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010#R\u0018\u0010@\u001a\u00020\u0004*\u00020\u00148BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bA\u0010BR\u0018\u0010,\u001a\u00020\u0004*\u00020\u00128BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b-\u0010C\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006["}, d2 = {"Landroidx/compose/foundation/lazy/grid/LazyGridMeasuredItem;", "Landroidx/compose/foundation/lazy/grid/LazyGridItemInfo;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;", FirebaseAnalytics.Param.INDEX, "", "key", "", "isVertical", "", "crossAxisSize", "mainAxisSpacing", "reverseLayout", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "beforeContentPadding", "afterContentPadding", "placeables", "", "Landroidx/compose/ui/layout/Placeable;", "visualOffset", "Landroidx/compose/ui/unit/IntOffset;", "contentType", "animator", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "lane", TtmlNode.TAG_SPAN, "(ILjava/lang/Object;ZIIZLandroidx/compose/ui/unit/LayoutDirection;IILjava/util/List;JLjava/lang/Object;Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;JIILkotlin/jvm/internal/DefaultConstructorMarker;)V", "<set-?>", "column", "getColumn", "()I", "getConstraints-msEJaDk", "()J", "J", "getContentType", "()Ljava/lang/Object;", "getCrossAxisSize", "getIndex", "()Z", "getKey", "getLane", "mainAxisLayoutSize", "mainAxisSize", "getMainAxisSize", "mainAxisSizeWithSpacings", "getMainAxisSizeWithSpacings", "maxMainAxisOffset", "minMainAxisOffset", "nonScrollableItem", "getNonScrollableItem", "setNonScrollableItem", "(Z)V", TypedValues.CycleType.S_WAVE_OFFSET, "getOffset-nOcc-ac", "placeablesCount", "getPlaceablesCount", "row", "getRow", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g", "getSpan", "mainAxis", "getMainAxis--gyyYBs", "(J)I", "(Landroidx/compose/ui/layout/Placeable;)I", "applyScrollDelta", "", "delta", "updateAnimations", "getOffset", "getOffset-Bjo55l4", "(I)J", "getParentData", "place", "scope", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "isLookingAhead", "position", "mainAxisOffset", "crossAxisOffset", "layoutWidth", "layoutHeight", "updateMainAxisLayoutSize", "copy", "mainAxisMap", "Lkotlin/Function1;", "copy-4Tuh3kE", "(JLkotlin/jvm/functions/Function1;)J", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u001b\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u00012\u00020\u0002B\u0095\u0001\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\u0004\u0012\u0006\u0010\n\u001a\u00020\u0004\u0012\u0006\u0010\u000b\u001a\u00020\b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u0004\u0012\u0006\u0010\u000f\u001a\u00020\u0004\u0012\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0006\u0010\u0013\u001a\u00020\u0014\u0012\b\u0010\u0015\u001a\u0004\u0018\u00010\u0006\u0012\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00000\u0017\u0012\u0006\u0010\u0018\u001a\u00020\u0019\u0012\u0006\u0010\u001a\u001a\u00020\u0004\u0012\u0006\u0010\u001b\u001a\u00020\u0004¢\u0006\u0004\b\u001c\u0010\u001dJ\u0012\u00103\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0003\u001a\u00020\u0004H\u0016J\u0017\u0010>\u001a\u00020\u00142\u0006\u0010\u0003\u001a\u00020\u0004H\u0016¢\u0006\u0004\b?\u0010@J(\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020\u00042\u0006\u0010H\u001a\u00020\u00042\u0006\u0010I\u001a\u00020\u00042\u0006\u0010J\u001a\u00020\u0004H\u0016J6\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020\u00042\u0006\u0010H\u001a\u00020\u00042\u0006\u0010I\u001a\u00020\u00042\u0006\u0010J\u001a\u00020\u00042\u0006\u0010:\u001a\u00020\u00042\u0006\u0010<\u001a\u00020\u0004J\u000e\u0010K\u001a\u00020F2\u0006\u00100\u001a\u00020\u0004J\u0016\u0010L\u001a\u00020F2\u0006\u0010M\u001a\u00020\u00042\u0006\u0010N\u001a\u00020\bJ\u0016\u0010O\u001a\u00020F2\u0006\u0010P\u001a\u00020Q2\u0006\u0010R\u001a\u00020\bJ(\u0010W\u001a\u00020\u0014*\u00020\u00142\u0012\u0010X\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00040YH\u0082\b¢\u0006\u0004\bZ\u0010[R\u0014\u0010\u0003\u001a\u00020\u0004X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010\u0005\u001a\u00020\u0006X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!R\u0014\u0010\u0007\u001a\u00020\bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\"R\u0011\u0010\t\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\u001fR\u000e\u0010\u000b\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0004\n\u0002\u0010$R\u0016\u0010\u0015\u001a\u0004\u0018\u00010\u0006X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b%\u0010!R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00000\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0018\u001a\u00020\u0019X\u0096\u0004¢\u0006\n\n\u0002\u0010$\u001a\u0004\b&\u0010'R\u0014\u0010\u001a\u001a\u00020\u0004X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b(\u0010\u001fR\u0014\u0010\u001b\u001a\u00020\u0004X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b)\u0010\u001fR\u0011\u0010*\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u001fR\u0014\u0010,\u001a\u00020\u0004X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b-\u0010\u001fR\u0014\u0010.\u001a\u00020\u00048VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b/\u0010\u001fR\u000e\u00100\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u00104\u001a\u000205X\u0096\u0004¢\u0006\n\n\u0002\u0010$\u001a\u0004\b6\u0010'R \u00108\u001a\u00020\u00142\u0006\u00107\u001a\u00020\u0014@RX\u0096\u000e¢\u0006\n\n\u0002\u0010$\u001a\u0004\b9\u0010'R\u001e\u0010:\u001a\u00020\u00042\u0006\u00107\u001a\u00020\u0004@RX\u0096\u000e¢\u0006\b\n\u0000\u001a\u0004\b;\u0010\u001fR\u001e\u0010<\u001a\u00020\u00042\u0006\u00107\u001a\u00020\u0004@RX\u0096\u000e¢\u0006\b\n\u0000\u001a\u0004\b=\u0010\u001fR\u001a\u0010A\u001a\u00020\bX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bB\u0010\"\"\u0004\bC\u0010DR\u0018\u0010S\u001a\u00020\u0004*\u00020\u00148BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bT\u0010UR\u0018\u0010*\u001a\u00020\u0004*\u00020\u00128BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b+\u0010V¨\u0006\\"}, d2 = {"Landroidx/compose/foundation/lazy/grid/LazyGridMeasuredItem;", "Landroidx/compose/foundation/lazy/grid/LazyGridItemInfo;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;", FirebaseAnalytics.Param.INDEX, "", "key", "", "isVertical", "", "crossAxisSize", "mainAxisSpacing", "reverseLayout", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "beforeContentPadding", "afterContentPadding", "placeables", "", "Landroidx/compose/ui/layout/Placeable;", "visualOffset", "Landroidx/compose/ui/unit/IntOffset;", "contentType", "animator", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "lane", TtmlNode.TAG_SPAN, "<init>", "(ILjava/lang/Object;ZIIZLandroidx/compose/ui/unit/LayoutDirection;IILjava/util/List;JLjava/lang/Object;Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;JIILkotlin/jvm/internal/DefaultConstructorMarker;)V", "getIndex", "()I", "getKey", "()Ljava/lang/Object;", "()Z", "getCrossAxisSize", "J", "getContentType", "getConstraints-msEJaDk", "()J", "getLane", "getSpan", "mainAxisSize", "getMainAxisSize", "mainAxisSizeWithSpacings", "getMainAxisSizeWithSpacings", "placeablesCount", "getPlaceablesCount", "mainAxisLayoutSize", "minMainAxisOffset", "maxMainAxisOffset", "getParentData", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g", "value", TypedValues.CycleType.S_WAVE_OFFSET, "getOffset-nOcc-ac", "row", "getRow", "column", "getColumn", "getOffset", "getOffset-Bjo55l4", "(I)J", "nonScrollableItem", "getNonScrollableItem", "setNonScrollableItem", "(Z)V", "position", "", "mainAxisOffset", "crossAxisOffset", "layoutWidth", "layoutHeight", "updateMainAxisLayoutSize", "applyScrollDelta", "delta", "updateAnimations", "place", "scope", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "isLookingAhead", "mainAxis", "getMainAxis--gyyYBs", "(J)I", "(Landroidx/compose/ui/layout/Placeable;)I", "copy", "mainAxisMap", "Lkotlin/Function1;", "copy-4Tuh3kE", "(JLkotlin/jvm/functions/Function1;)J", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutMeasuredItem {
     public static final int $stable = 8;
@@ -54,7 +54,7 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
 
     /* JADX WARN: Multi-variable type inference failed */
     private LazyGridMeasuredItem(int i, Object obj, boolean z, int i2, int i3, boolean z2, LayoutDirection layoutDirection, int i4, int i5, List<? extends Placeable> list, long j, Object obj2, LazyLayoutItemAnimator<LazyGridMeasuredItem> lazyLayoutItemAnimator, long j2, int i6, int i7) {
-        long m6850constructorimpl;
+        long m7417constructorimpl;
         this.index = i;
         this.key = obj;
         this.isVertical = z;
@@ -80,12 +80,12 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
         this.mainAxisSize = i8;
         this.mainAxisSizeWithSpacings = RangesKt.coerceAtLeast(i3 + i8, 0);
         if (isVertical()) {
-            m6850constructorimpl = IntSize.m6850constructorimpl((i8 & 4294967295L) | (this.crossAxisSize << 32));
+            m7417constructorimpl = IntSize.m7417constructorimpl((i8 & 4294967295L) | (this.crossAxisSize << 32));
         } else {
-            m6850constructorimpl = IntSize.m6850constructorimpl((this.crossAxisSize & 4294967295L) | (i8 << 32));
+            m7417constructorimpl = IntSize.m7417constructorimpl((this.crossAxisSize & 4294967295L) | (i8 << 32));
         }
-        this.size = m6850constructorimpl;
-        this.offset = IntOffset.Companion.m6823getZeronOccac();
+        this.size = m7417constructorimpl;
+        this.offset = IntOffset.Companion.m7390getZeronOccac();
         this.row = -1;
         this.column = -1;
     }
@@ -116,7 +116,7 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItem
     /* renamed from: getConstraints-msEJaDk */
-    public long mo851getConstraintsmsEJaDk() {
+    public long mo960getConstraintsmsEJaDk() {
         return this.constraints;
     }
 
@@ -151,13 +151,13 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
 
     @Override // androidx.compose.foundation.lazy.grid.LazyGridItemInfo
     /* renamed from: getSize-YbymL2g */
-    public long mo878getSizeYbymL2g() {
+    public long mo991getSizeYbymL2g() {
         return this.size;
     }
 
     @Override // androidx.compose.foundation.lazy.grid.LazyGridItemInfo
     /* renamed from: getOffset-nOcc-ac */
-    public long mo877getOffsetnOccac() {
+    public long mo990getOffsetnOccac() {
         return this.offset;
     }
 
@@ -173,8 +173,8 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItem
     /* renamed from: getOffset-Bjo55l4 */
-    public long mo852getOffsetBjo55l4(int i) {
-        return mo877getOffsetnOccac();
+    public long mo961getOffsetBjo55l4(int i) {
+        return mo990getOffsetnOccac();
     }
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItem
@@ -193,7 +193,7 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
     }
 
     public final void position(int i, int i2, int i3, int i4, int i5, int i6) {
-        long m6806constructorimpl;
+        long m7373constructorimpl;
         this.mainAxisLayoutSize = isVertical() ? i4 : i3;
         if (!isVertical()) {
             i3 = i4;
@@ -202,11 +202,11 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
             i2 = (i3 - i2) - this.crossAxisSize;
         }
         if (isVertical()) {
-            m6806constructorimpl = IntOffset.m6806constructorimpl((i2 << 32) | (4294967295L & i));
+            m7373constructorimpl = IntOffset.m7373constructorimpl((i2 << 32) | (4294967295L & i));
         } else {
-            m6806constructorimpl = IntOffset.m6806constructorimpl((i2 & 4294967295L) | (i << 32));
+            m7373constructorimpl = IntOffset.m7373constructorimpl((i2 & 4294967295L) | (i << 32));
         }
-        this.offset = m6806constructorimpl;
+        this.offset = m7373constructorimpl;
         this.row = i5;
         this.column = i6;
         this.minMainAxisOffset = -this.beforeContentPadding;
@@ -222,27 +222,27 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
         if (getNonScrollableItem()) {
             return;
         }
-        long mo877getOffsetnOccac = mo877getOffsetnOccac();
-        int m6812getXimpl = isVertical() ? IntOffset.m6812getXimpl(mo877getOffsetnOccac) : IntOffset.m6812getXimpl(mo877getOffsetnOccac) + i;
+        long mo990getOffsetnOccac = mo990getOffsetnOccac();
+        int m7379getXimpl = isVertical() ? IntOffset.m7379getXimpl(mo990getOffsetnOccac) : IntOffset.m7379getXimpl(mo990getOffsetnOccac) + i;
         boolean isVertical = isVertical();
-        int m6813getYimpl = IntOffset.m6813getYimpl(mo877getOffsetnOccac);
+        int m7380getYimpl = IntOffset.m7380getYimpl(mo990getOffsetnOccac);
         if (isVertical) {
-            m6813getYimpl += i;
+            m7380getYimpl += i;
         }
-        this.offset = IntOffset.m6806constructorimpl((m6812getXimpl << 32) | (m6813getYimpl & 4294967295L));
+        this.offset = IntOffset.m7373constructorimpl((m7379getXimpl << 32) | (m7380getYimpl & 4294967295L));
         if (z) {
             int placeablesCount = getPlaceablesCount();
             for (int i2 = 0; i2 < placeablesCount; i2++) {
                 LazyLayoutItemAnimation animation = this.animator.getAnimation(getKey(), i2);
                 if (animation != null) {
-                    long m901getRawOffsetnOccac = animation.m901getRawOffsetnOccac();
-                    int m6812getXimpl2 = isVertical() ? IntOffset.m6812getXimpl(m901getRawOffsetnOccac) : Integer.valueOf(IntOffset.m6812getXimpl(m901getRawOffsetnOccac) + i).intValue();
+                    long m1024getRawOffsetnOccac = animation.m1024getRawOffsetnOccac();
+                    int m7379getXimpl2 = isVertical() ? IntOffset.m7379getXimpl(m1024getRawOffsetnOccac) : Integer.valueOf(IntOffset.m7379getXimpl(m1024getRawOffsetnOccac) + i).intValue();
                     boolean isVertical2 = isVertical();
-                    int m6813getYimpl2 = IntOffset.m6813getYimpl(m901getRawOffsetnOccac);
+                    int m7380getYimpl2 = IntOffset.m7380getYimpl(m1024getRawOffsetnOccac);
                     if (isVertical2) {
-                        m6813getYimpl2 = Integer.valueOf(m6813getYimpl2 + i).intValue();
+                        m7380getYimpl2 = Integer.valueOf(m7380getYimpl2 + i).intValue();
                     }
-                    animation.m904setRawOffsetgyyYBs(IntOffset.m6806constructorimpl((m6813getYimpl2 & 4294967295L) | (m6812getXimpl2 << 32)));
+                    animation.m1027setRawOffsetgyyYBs(IntOffset.m7373constructorimpl((m7380getYimpl2 & 4294967295L) | (m7379getXimpl2 << 32)));
                 }
             }
         }
@@ -251,7 +251,7 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
     public final void place(Placeable.PlacementScope placementScope, boolean z) {
         GraphicsLayer graphicsLayer;
         Placeable.PlacementScope placementScope2;
-        int m6813getYimpl;
+        int m7380getYimpl;
         int i = 0;
         if (!(this.mainAxisLayoutSize != Integer.MIN_VALUE)) {
             InlineClassHelperKt.throwIllegalArgumentException("position() should be called first");
@@ -261,49 +261,49 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
             Placeable placeable = this.placeables.get(i);
             int mainAxisSize = this.minMainAxisOffset - getMainAxisSize(placeable);
             int i2 = this.maxMainAxisOffset;
-            long mo877getOffsetnOccac = mo877getOffsetnOccac();
+            long mo990getOffsetnOccac = mo990getOffsetnOccac();
             LazyLayoutItemAnimation animation = this.animator.getAnimation(getKey(), i);
             if (animation != null) {
                 if (z) {
-                    animation.m903setLookaheadOffsetgyyYBs(mo877getOffsetnOccac);
+                    animation.m1026setLookaheadOffsetgyyYBs(mo990getOffsetnOccac);
                 } else {
-                    long m6816plusqkQi6aY = IntOffset.m6816plusqkQi6aY(!IntOffset.m6811equalsimpl0(animation.m899getLookaheadOffsetnOccac(), LazyLayoutItemAnimation.Companion.m905getNotInitializednOccac()) ? animation.m899getLookaheadOffsetnOccac() : mo877getOffsetnOccac, animation.m900getPlacementDeltanOccac());
-                    if ((m884getMainAxisgyyYBs(mo877getOffsetnOccac) <= mainAxisSize && m884getMainAxisgyyYBs(m6816plusqkQi6aY) <= mainAxisSize) || (m884getMainAxisgyyYBs(mo877getOffsetnOccac) >= i2 && m884getMainAxisgyyYBs(m6816plusqkQi6aY) >= i2)) {
+                    long m7383plusqkQi6aY = IntOffset.m7383plusqkQi6aY(!IntOffset.m7378equalsimpl0(animation.m1022getLookaheadOffsetnOccac(), LazyLayoutItemAnimation.Companion.m1028getNotInitializednOccac()) ? animation.m1022getLookaheadOffsetnOccac() : mo990getOffsetnOccac, animation.m1023getPlacementDeltanOccac());
+                    if ((m999getMainAxisgyyYBs(mo990getOffsetnOccac) <= mainAxisSize && m999getMainAxisgyyYBs(m7383plusqkQi6aY) <= mainAxisSize) || (m999getMainAxisgyyYBs(mo990getOffsetnOccac) >= i2 && m999getMainAxisgyyYBs(m7383plusqkQi6aY) >= i2)) {
                         animation.cancelPlacementAnimation();
                     }
-                    mo877getOffsetnOccac = m6816plusqkQi6aY;
+                    mo990getOffsetnOccac = m7383plusqkQi6aY;
                 }
                 graphicsLayer = animation.getLayer();
             } else {
                 graphicsLayer = null;
             }
             if (this.reverseLayout) {
-                int m6812getXimpl = isVertical() ? IntOffset.m6812getXimpl(mo877getOffsetnOccac) : (this.mainAxisLayoutSize - IntOffset.m6812getXimpl(mo877getOffsetnOccac)) - getMainAxisSize(placeable);
+                int m7379getXimpl = isVertical() ? IntOffset.m7379getXimpl(mo990getOffsetnOccac) : (this.mainAxisLayoutSize - IntOffset.m7379getXimpl(mo990getOffsetnOccac)) - getMainAxisSize(placeable);
                 if (isVertical()) {
-                    m6813getYimpl = (this.mainAxisLayoutSize - IntOffset.m6813getYimpl(mo877getOffsetnOccac)) - getMainAxisSize(placeable);
+                    m7380getYimpl = (this.mainAxisLayoutSize - IntOffset.m7380getYimpl(mo990getOffsetnOccac)) - getMainAxisSize(placeable);
                 } else {
-                    m6813getYimpl = IntOffset.m6813getYimpl(mo877getOffsetnOccac);
+                    m7380getYimpl = IntOffset.m7380getYimpl(mo990getOffsetnOccac);
                 }
-                mo877getOffsetnOccac = IntOffset.m6806constructorimpl((m6813getYimpl & 4294967295L) | (m6812getXimpl << 32));
+                mo990getOffsetnOccac = IntOffset.m7373constructorimpl((m7380getYimpl & 4294967295L) | (m7379getXimpl << 32));
             }
-            long m6816plusqkQi6aY2 = IntOffset.m6816plusqkQi6aY(mo877getOffsetnOccac, this.visualOffset);
+            long m7383plusqkQi6aY2 = IntOffset.m7383plusqkQi6aY(mo990getOffsetnOccac, this.visualOffset);
             if (!z && animation != null) {
-                animation.m902setFinalOffsetgyyYBs(m6816plusqkQi6aY2);
+                animation.m1025setFinalOffsetgyyYBs(m7383plusqkQi6aY2);
             }
             if (!isVertical()) {
                 placementScope2 = placementScope;
                 GraphicsLayer graphicsLayer2 = graphicsLayer;
                 if (graphicsLayer2 != null) {
-                    Placeable.PlacementScope.m5505placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m6816plusqkQi6aY2, graphicsLayer2, 0.0f, 4, (Object) null);
+                    Placeable.PlacementScope.m6022placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m7383plusqkQi6aY2, graphicsLayer2, 0.0f, 4, (Object) null);
                 } else {
-                    Placeable.PlacementScope.m5504placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m6816plusqkQi6aY2, 0.0f, (Function1) null, 6, (Object) null);
+                    Placeable.PlacementScope.m6021placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m7383plusqkQi6aY2, 0.0f, (Function1) null, 6, (Object) null);
                 }
             } else if (graphicsLayer != null) {
                 placementScope2 = placementScope;
-                Placeable.PlacementScope.m5507placeWithLayeraW9wM$default(placementScope2, placeable, m6816plusqkQi6aY2, graphicsLayer, 0.0f, 4, (Object) null);
+                Placeable.PlacementScope.m6024placeWithLayeraW9wM$default(placementScope2, placeable, m7383plusqkQi6aY2, graphicsLayer, 0.0f, 4, (Object) null);
             } else {
                 placementScope2 = placementScope;
-                Placeable.PlacementScope.m5506placeWithLayeraW9wM$default(placementScope2, placeable, m6816plusqkQi6aY2, 0.0f, (Function1) null, 6, (Object) null);
+                Placeable.PlacementScope.m6023placeWithLayeraW9wM$default(placementScope2, placeable, m7383plusqkQi6aY2, 0.0f, (Function1) null, 6, (Object) null);
             }
             i++;
             placementScope = placementScope2;
@@ -311,8 +311,8 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
     }
 
     /* renamed from: getMainAxis--gyyYBs  reason: not valid java name */
-    private final int m884getMainAxisgyyYBs(long j) {
-        return isVertical() ? IntOffset.m6813getYimpl(j) : IntOffset.m6812getXimpl(j);
+    private final int m999getMainAxisgyyYBs(long j) {
+        return isVertical() ? IntOffset.m7380getYimpl(j) : IntOffset.m7379getXimpl(j);
     }
 
     private final int getMainAxisSize(Placeable placeable) {
@@ -320,13 +320,13 @@ public final class LazyGridMeasuredItem implements LazyGridItemInfo, LazyLayoutM
     }
 
     /* renamed from: copy-4Tuh3kE  reason: not valid java name */
-    private final long m883copy4Tuh3kE(long j, Function1<? super Integer, Integer> function1) {
-        int m6812getXimpl = isVertical() ? IntOffset.m6812getXimpl(j) : function1.invoke(Integer.valueOf(IntOffset.m6812getXimpl(j))).intValue();
+    private final long m998copy4Tuh3kE(long j, Function1<? super Integer, Integer> function1) {
+        int m7379getXimpl = isVertical() ? IntOffset.m7379getXimpl(j) : function1.invoke(Integer.valueOf(IntOffset.m7379getXimpl(j))).intValue();
         boolean isVertical = isVertical();
-        int m6813getYimpl = IntOffset.m6813getYimpl(j);
+        int m7380getYimpl = IntOffset.m7380getYimpl(j);
         if (isVertical) {
-            m6813getYimpl = function1.invoke(Integer.valueOf(m6813getYimpl)).intValue();
+            m7380getYimpl = function1.invoke(Integer.valueOf(m7380getYimpl)).intValue();
         }
-        return IntOffset.m6806constructorimpl((m6812getXimpl << 32) | (m6813getYimpl & 4294967295L));
+        return IntOffset.m7373constructorimpl((m7379getXimpl << 32) | (m7380getYimpl & 4294967295L));
     }
 }

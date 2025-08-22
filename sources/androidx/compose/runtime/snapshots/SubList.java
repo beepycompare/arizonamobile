@@ -16,11 +16,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlin.jvm.internal.markers.KMutableList;
 import kotlin.ranges.RangesKt;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SnapshotStateList.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u001e\n\u0002\b\t\n\u0002\u0010)\n\u0002\b\u0002\n\u0002\u0010+\n\u0002\b\t\b\u0002\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u0002B#\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006¢\u0006\u0002\u0010\bJ\u0015\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u0014J\u001d\u0010\u0011\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0013\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u0017J\u001e\u0010\u0018\u001a\u00020\u00122\u0006\u0010\u0016\u001a\u00020\u00062\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00028\u00000\u001aH\u0016J\u0016\u0010\u0018\u001a\u00020\u00122\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00028\u00000\u001aH\u0016J\b\u0010\u001b\u001a\u00020\u0015H\u0016J\u0016\u0010\u001c\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00028\u0000H\u0096\u0002¢\u0006\u0002\u0010\u0014J\u0016\u0010\u001d\u001a\u00020\u00122\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00028\u00000\u001aH\u0016J\u0016\u0010\u001e\u001a\u00028\u00002\u0006\u0010\u0016\u001a\u00020\u0006H\u0096\u0002¢\u0006\u0002\u0010\u001fJ\u0015\u0010 \u001a\u00020\u00062\u0006\u0010\u0013\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010!J\b\u0010\"\u001a\u00020\u0012H\u0016J\u000f\u0010#\u001a\b\u0012\u0004\u0012\u00028\u00000$H\u0096\u0002J\u0015\u0010%\u001a\u00020\u00062\u0006\u0010\u0013\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010!J\u000e\u0010&\u001a\b\u0012\u0004\u0012\u00028\u00000'H\u0016J\u0016\u0010&\u001a\b\u0012\u0004\u0012\u00028\u00000'2\u0006\u0010\u0016\u001a\u00020\u0006H\u0016J\u0015\u0010(\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u0014J\u0016\u0010)\u001a\u00020\u00122\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00028\u00000\u001aH\u0016J\u0015\u0010*\u001a\u00028\u00002\u0006\u0010\u0016\u001a\u00020\u0006H\u0016¢\u0006\u0002\u0010\u001fJ\u0016\u0010+\u001a\u00020\u00122\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00028\u00000\u001aH\u0016J\u001e\u0010,\u001a\u00028\u00002\u0006\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0013\u001a\u00028\u0000H\u0096\u0002¢\u0006\u0002\u0010-J\u001e\u0010.\u001a\b\u0012\u0004\u0012\u00028\u00000\u00022\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H\u0016J\b\u0010/\u001a\u00020\u0015H\u0002R\u000e\u0010\t\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0003\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u001e\u0010\r\u001a\u00020\u00062\u0006\u0010\f\u001a\u00020\u0006@RX\u0096\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u000e\u0010\u0010\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00060"}, d2 = {"Landroidx/compose/runtime/snapshots/SubList;", ExifInterface.GPS_DIRECTION_TRUE, "", "parentList", "Landroidx/compose/runtime/snapshots/SnapshotStateList;", "fromIndex", "", "toIndex", "(Landroidx/compose/runtime/snapshots/SnapshotStateList;II)V", TypedValues.CycleType.S_WAVE_OFFSET, "getParentList", "()Landroidx/compose/runtime/snapshots/SnapshotStateList;", "<set-?>", "size", "getSize", "()I", "structure", "add", "", "element", "(Ljava/lang/Object;)Z", "", FirebaseAnalytics.Param.INDEX, "(ILjava/lang/Object;)V", "addAll", "elements", "", "clear", "contains", "containsAll", "get", "(I)Ljava/lang/Object;", "indexOf", "(Ljava/lang/Object;)I", "isEmpty", "iterator", "", "lastIndexOf", "listIterator", "", "remove", "removeAll", "removeAt", "retainAll", "set", "(ILjava/lang/Object;)Ljava/lang/Object;", "subList", "validateModification", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u001e\n\u0002\b\u0007\n\u0002\u0010)\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010+\n\u0002\b\t\b\u0001\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u0002B%\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006¢\u0006\u0004\b\b\u0010\tJ\u0016\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00028\u0000H\u0096\u0002¢\u0006\u0002\u0010\u0015J\u0016\u0010\u0016\u001a\u00020\u00132\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00028\u00000\u0018H\u0016J\u0016\u0010\u0019\u001a\u00028\u00002\u0006\u0010\u001a\u001a\u00020\u0006H\u0096\u0002¢\u0006\u0002\u0010\u001bJ\u0015\u0010\u001c\u001a\u00020\u00062\u0006\u0010\u0014\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u001dJ\b\u0010\u001e\u001a\u00020\u0013H\u0016J\u000f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00028\u00000 H\u0096\u0002J\u0015\u0010!\u001a\u00020\u00062\u0006\u0010\u0014\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u001dJ\u0015\u0010\"\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u0015J\u001d\u0010\"\u001a\u00020#2\u0006\u0010\u001a\u001a\u00020\u00062\u0006\u0010\u0014\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010$J\u001e\u0010%\u001a\u00020\u00132\u0006\u0010\u001a\u001a\u00020\u00062\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00028\u00000\u0018H\u0016J\u0016\u0010%\u001a\u00020\u00132\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00028\u00000\u0018H\u0016J\b\u0010&\u001a\u00020#H\u0016J\u000e\u0010'\u001a\b\u0012\u0004\u0012\u00028\u00000(H\u0016J\u0016\u0010'\u001a\b\u0012\u0004\u0012\u00028\u00000(2\u0006\u0010\u001a\u001a\u00020\u0006H\u0016J\u0015\u0010)\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u0015J\u0016\u0010*\u001a\u00020\u00132\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00028\u00000\u0018H\u0016J\u0015\u0010+\u001a\u00028\u00002\u0006\u0010\u001a\u001a\u00020\u0006H\u0016¢\u0006\u0002\u0010\u001bJ\u0016\u0010,\u001a\u00020\u00132\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00028\u00000\u0018H\u0016J\u001e\u0010-\u001a\u00028\u00002\u0006\u0010\u001a\u001a\u00020\u00062\u0006\u0010\u0014\u001a\u00028\u0000H\u0096\u0002¢\u0006\u0002\u0010.J\u001e\u0010/\u001a\b\u0012\u0004\u0012\u00028\u00000\u00022\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H\u0016J\b\u00100\u001a\u00020#H\u0002R\u0017\u0010\u0003\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u000f\u001a\u00020\u00062\u0006\u0010\u000e\u001a\u00020\u0006@RX\u0096\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011¨\u00061"}, d2 = {"Landroidx/compose/runtime/snapshots/SubList;", ExifInterface.GPS_DIRECTION_TRUE, "", "parentList", "Landroidx/compose/runtime/snapshots/SnapshotStateList;", "fromIndex", "", "toIndex", "<init>", "(Landroidx/compose/runtime/snapshots/SnapshotStateList;II)V", "getParentList", "()Landroidx/compose/runtime/snapshots/SnapshotStateList;", TypedValues.CycleType.S_WAVE_OFFSET, "structure", "value", "size", "getSize", "()I", "contains", "", "element", "(Ljava/lang/Object;)Z", "containsAll", "elements", "", "get", FirebaseAnalytics.Param.INDEX, "(I)Ljava/lang/Object;", "indexOf", "(Ljava/lang/Object;)I", "isEmpty", "iterator", "", "lastIndexOf", "add", "", "(ILjava/lang/Object;)V", "addAll", "clear", "listIterator", "", "remove", "removeAll", "removeAt", "retainAll", "set", "(ILjava/lang/Object;)Ljava/lang/Object;", "subList", "validateModification", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SubList<T> implements List<T>, KMutableList {
+    public static final int $stable = 8;
     private final int offset;
     private final SnapshotStateList<T> parentList;
     private int size;
@@ -39,7 +39,7 @@ public final class SubList<T> implements List<T>, KMutableList {
     public SubList(SnapshotStateList<T> snapshotStateList, int i, int i2) {
         this.parentList = snapshotStateList;
         this.offset = i;
-        this.structure = snapshotStateList.getStructure$runtime_release();
+        this.structure = SnapshotStateListKt.getStructure(snapshotStateList);
         this.size = i2 - i;
     }
 
@@ -67,8 +67,8 @@ public final class SubList<T> implements List<T>, KMutableList {
     }
 
     @Override // java.util.List, java.util.Collection
-    public boolean containsAll(Collection<? extends Object> collection) {
-        Collection<? extends Object> collection2 = collection;
+    public boolean containsAll(Collection<?> collection) {
+        Collection<?> collection2 = collection;
         if ((collection2 instanceof Collection) && collection2.isEmpty()) {
             return true;
         }
@@ -132,7 +132,7 @@ public final class SubList<T> implements List<T>, KMutableList {
         validateModification();
         this.parentList.add(this.offset + size(), t);
         this.size = size() + 1;
-        this.structure = this.parentList.getStructure$runtime_release();
+        this.structure = SnapshotStateListKt.getStructure(this.parentList);
         return true;
     }
 
@@ -141,7 +141,7 @@ public final class SubList<T> implements List<T>, KMutableList {
         validateModification();
         this.parentList.add(this.offset + i, t);
         this.size = size() + 1;
-        this.structure = this.parentList.getStructure$runtime_release();
+        this.structure = SnapshotStateListKt.getStructure(this.parentList);
     }
 
     @Override // java.util.List
@@ -150,7 +150,7 @@ public final class SubList<T> implements List<T>, KMutableList {
         boolean addAll = this.parentList.addAll(i + this.offset, collection);
         if (addAll) {
             this.size = size() + collection.size();
-            this.structure = this.parentList.getStructure$runtime_release();
+            this.structure = SnapshotStateListKt.getStructure(this.parentList);
         }
         return addAll;
     }
@@ -168,7 +168,7 @@ public final class SubList<T> implements List<T>, KMutableList {
             int i = this.offset;
             snapshotStateList.removeRange(i, size() + i);
             this.size = 0;
-            this.structure = this.parentList.getStructure$runtime_release();
+            this.structure = SnapshotStateListKt.getStructure(this.parentList);
         }
     }
 
@@ -196,11 +196,14 @@ public final class SubList<T> implements List<T>, KMutableList {
     }
 
     @Override // java.util.List, java.util.Collection
-    public boolean removeAll(Collection<? extends Object> collection) {
-        boolean z;
+    public boolean removeAll(Collection<?> collection) {
+        Iterator<?> it = collection.iterator();
         while (true) {
-            for (Object obj : collection) {
-                z = remove(obj) || z;
+            boolean z = false;
+            while (it.hasNext()) {
+                if (remove(it.next()) || z) {
+                    z = true;
+                }
             }
             return z;
         }
@@ -210,21 +213,21 @@ public final class SubList<T> implements List<T>, KMutableList {
         validateModification();
         T remove = this.parentList.remove(this.offset + i);
         this.size = size() - 1;
-        this.structure = this.parentList.getStructure$runtime_release();
+        this.structure = SnapshotStateListKt.getStructure(this.parentList);
         return remove;
     }
 
     @Override // java.util.List, java.util.Collection
-    public boolean retainAll(Collection<? extends Object> collection) {
+    public boolean retainAll(Collection<?> collection) {
         validateModification();
         SnapshotStateList<T> snapshotStateList = this.parentList;
         int i = this.offset;
-        int retainAllInRange$runtime_release = snapshotStateList.retainAllInRange$runtime_release(collection, i, size() + i);
-        if (retainAllInRange$runtime_release > 0) {
-            this.structure = this.parentList.getStructure$runtime_release();
-            this.size = size() - retainAllInRange$runtime_release;
+        int retainAllInRange$runtime = snapshotStateList.retainAllInRange$runtime(collection, i, size() + i);
+        if (retainAllInRange$runtime > 0) {
+            this.structure = SnapshotStateListKt.getStructure(this.parentList);
+            this.size = size() - retainAllInRange$runtime;
         }
-        return retainAllInRange$runtime_release > 0;
+        return retainAllInRange$runtime > 0;
     }
 
     @Override // java.util.List
@@ -232,7 +235,7 @@ public final class SubList<T> implements List<T>, KMutableList {
         SnapshotStateListKt.validateRange(i, size());
         validateModification();
         T t2 = this.parentList.set(i + this.offset, t);
-        this.structure = this.parentList.getStructure$runtime_release();
+        this.structure = SnapshotStateListKt.getStructure(this.parentList);
         return t2;
     }
 
@@ -248,7 +251,7 @@ public final class SubList<T> implements List<T>, KMutableList {
     }
 
     private final void validateModification() {
-        if (this.parentList.getStructure$runtime_release() != this.structure) {
+        if (SnapshotStateListKt.getStructure(this.parentList) != this.structure) {
             throw new ConcurrentModificationException();
         }
     }

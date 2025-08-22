@@ -26,7 +26,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PopulateViewStructure.android.kt */
-@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a.\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\b\u0010\u0007\u001a\u0004\u0018\u00010\b2\u0006\u0010\t\u001a\u00020\nH\u0001¨\u0006\u000b"}, d2 = {"populate", "", "Landroid/view/ViewStructure;", "semanticsInfo", "Landroidx/compose/ui/semantics/SemanticsInfo;", "rootAutofillId", "Landroid/view/autofill/AutofillId;", RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME, "", "rectManager", "Landroidx/compose/ui/spatial/RectManager;", "ui_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a.\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\b\u0010\u0007\u001a\u0004\u0018\u00010\b2\u0006\u0010\t\u001a\u00020\nH\u0001¨\u0006\u000b"}, d2 = {"populate", "", "Landroid/view/ViewStructure;", "semanticsInfo", "Landroidx/compose/ui/semantics/SemanticsInfo;", "rootAutofillId", "Landroid/view/autofill/AutofillId;", RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME, "", "rectManager", "Landroidx/compose/ui/spatial/RectManager;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PopulateViewStructure_androidKt {
     /* JADX WARN: Removed duplicated region for block: B:100:0x0267  */
@@ -64,7 +64,7 @@ public final class PopulateViewStructure_androidKt {
         List list;
         Integer valueOf;
         boolean z3;
-        String m5885toLegacyClassNameV4PA4sw;
+        String m6436toLegacyClassNameV4PA4sw;
         String[] contentHints;
         String[] contentHints2;
         MutableScatterMap<SemanticsPropertyKey<?>, Object> props$ui_release;
@@ -294,7 +294,7 @@ public final class PopulateViewStructure_androidKt {
                     autofillApi26Helper.setCheckable(viewStructure, true);
                     autofillApi26Helper.setChecked(viewStructure, toggleableState == ToggleableState.On);
                 } else if (bool != null) {
-                    if (!(role == null ? false : Role.m5907equalsimpl0(role.m5910unboximpl(), Role.Companion.m5918getTabo7Vup1c()))) {
+                    if (!(role == null ? false : Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6468getTabo7Vup1c()))) {
                         autofillApi26Helper.setCheckable(viewStructure, true);
                         autofillApi26Helper.setChecked(viewStructure, bool.booleanValue());
                     }
@@ -312,8 +312,8 @@ public final class PopulateViewStructure_androidKt {
                     autofillApi26Helper.setText(viewStructure, str3);
                     autofillApi26Helper.setClassName(viewStructure, AndroidComposeViewAccessibilityDelegateCompat.TextClassName);
                 }
-                if (semanticsInfo.getChildrenInfo().isEmpty() && role != null && (m5885toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m5885toLegacyClassNameV4PA4sw(role.m5910unboximpl())) != null) {
-                    autofillApi26Helper.setClassName(viewStructure, m5885toLegacyClassNameV4PA4sw);
+                if (semanticsInfo.getChildrenInfo().isEmpty() && role != null && (m6436toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m6436toLegacyClassNameV4PA4sw(role.m6460unboximpl())) != null) {
+                    autofillApi26Helper.setClassName(viewStructure, m6436toLegacyClassNameV4PA4sw);
                 }
                 if (z) {
                     return;
@@ -377,7 +377,7 @@ public final class PopulateViewStructure_androidKt {
         if (list != null) {
         }
         if (semanticsInfo.getChildrenInfo().isEmpty()) {
-            autofillApi26Helper.setClassName(viewStructure, m5885toLegacyClassNameV4PA4sw);
+            autofillApi26Helper.setClassName(viewStructure, m6436toLegacyClassNameV4PA4sw);
         }
         if (z) {
         }

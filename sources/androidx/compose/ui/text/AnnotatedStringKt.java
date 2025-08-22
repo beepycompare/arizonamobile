@@ -3,11 +3,6 @@ package androidx.compose.ui.text;
 import androidx.compose.ui.text.AnnotatedString;
 import androidx.compose.ui.text.internal.InlineClassHelperKt;
 import androidx.compose.ui.text.intl.LocaleList;
-import androidx.compose.ui.text.style.LineHeightStyle;
-import androidx.compose.ui.text.style.TextIndent;
-import androidx.compose.ui.text.style.TextMotion;
-import androidx.compose.ui.unit.TextUnit;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import java.util.ArrayList;
@@ -15,7 +10,6 @@ import java.util.Comparator;
 import java.util.List;
 import kotlin.Deprecated;
 import kotlin.Metadata;
-import kotlin.Pair;
 import kotlin.ReplaceWith;
 import kotlin.Unit;
 import kotlin.collections.ArrayDeque;
@@ -24,11 +18,10 @@ import kotlin.comparisons.ComparisonsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
-import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* compiled from: AnnotatedString.kt */
-@Metadata(d1 = {"\u0000\u008e\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a\u0016\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006\u001a\"\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0007\u001a\u00020\b2\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u001a\"\u0010\t\u001a\u00020\u00012\u0017\u0010\n\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\r0\u000b¢\u0006\u0002\b\u000eH\u0086\b\u001a@\u0010\u000f\u001a\u0012\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00120\u0011\u0018\u00010\u00102\u0012\u0010\u0013\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00110\u00102\u0012\u0010\u0014\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u00110\u0010H\u0002\u001a(\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u00182\u0006\u0010\u001a\u001a\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u0018H\u0000\u001a\b\u0010\u001c\u001a\u00020\u0001H\u0000\u001aD\u0010\u001d\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u001e0\u0011\u0018\u00010\u0010\"\u0004\b\u0000\u0010\u001e2\u0016\u0010\u001f\u001a\u0012\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u0002H\u001e0\u0011\u0018\u00010\u00102\u0006\u0010 \u001a\u00020\u00182\u0006\u0010!\u001a\u00020\u0018H\u0002\u001a(\u0010\"\u001a\u00020\u00162\u0006\u0010#\u001a\u00020\u00182\u0006\u0010$\u001a\u00020\u00182\u0006\u0010%\u001a\u00020\u00182\u0006\u0010&\u001a\u00020\u0018H\u0000\u001a\u0014\u0010'\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010(\u001a\u00020)\u001a\u0014\u0010*\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010(\u001a\u00020)\u001aD\u0010+\u001a\u0012\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00120\u0011\u0018\u00010\u0010*\u00020\u00012\u0006\u0010 \u001a\u00020\u00182\u0006\u0010!\u001a\u00020\u00182\u0016\b\u0002\u0010,\u001a\u0010\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0016\u0018\u00010\u000bH\u0002\u001a*\u0010-\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u0011\u0018\u00010\u0010*\u00020\u00012\u0006\u0010 \u001a\u00020\u00182\u0006\u0010!\u001a\u00020\u0018H\u0002\u001aa\u0010.\u001a\b\u0012\u0004\u0012\u0002H\u001e0\u0010\"\u0004\b\u0000\u0010\u001e*\u00020\u00012\u0006\u0010/\u001a\u00020\u00062>\b\u0004\u00100\u001a8\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b2\u0012\b\b3\u0012\u0004\b\b(4\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020\u00060\u0011¢\u0006\f\b2\u0012\b\b3\u0012\u0004\b\b(\u0005\u0012\u0004\u0012\u0002H\u001e01H\u0080\b\u001a \u00105\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u00110\u0010*\u00020\u00012\u0006\u0010/\u001a\u00020\u0006H\u0000\u001a\u001c\u00106\u001a\u00020\u0001*\u00020\u00012\u0006\u0010 \u001a\u00020\u00182\u0006\u0010!\u001a\u00020\u0018H\u0002\u001a\u0014\u00107\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010(\u001a\u00020)\u001a\u0014\u00108\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010(\u001a\u00020)\u001a?\u00109\u001a\u0002H:\"\b\b\u0000\u0010:*\u00020;*\u00020\f2\u0006\u0010<\u001a\u00020=2\u0019\b\u0004\u00100\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u0002H:0\u000b¢\u0006\u0002\b\u000eH\u0086\b¢\u0006\u0002\u0010>\u001a?\u00109\u001a\u0002H:\"\b\b\u0000\u0010:*\u00020;*\u00020\f2\u0006\u0010?\u001a\u00020@2\u0019\b\u0004\u00100\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u0002H:0\u000b¢\u0006\u0002\b\u000eH\u0087\b¢\u0006\u0002\u0010A\u001aG\u00109\u001a\u0002H:\"\b\b\u0000\u0010:*\u00020;*\u00020\f2\u0006\u0010B\u001a\u00020\u00042\u0006\u0010C\u001a\u00020\u00042\u0019\b\u0004\u00100\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u0002H:0\u000b¢\u0006\u0002\b\u000eH\u0086\b¢\u0006\u0002\u0010D\u001a@\u0010E\u001a\u0002H:\"\b\b\u0000\u0010:*\u00020;*\u00020F2\n\b\u0002\u0010G\u001a\u0004\u0018\u00010H2\u0017\u00100\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u0002H:0\u000b¢\u0006\u0002\b\u000eH\u0000¢\u0006\u0002\u0010I\u001a=\u0010J\u001a\u0002H:\"\b\b\u0000\u0010:*\u00020;*\u00020\f2\u0006\u0010K\u001a\u00020L2\u0017\u00100\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u0002H:0\u000b¢\u0006\u0002\b\u000eH\u0086\b¢\u0006\u0002\u0010M\u001a?\u0010N\u001a\u0002H:\"\b\b\u0000\u0010:*\u00020;*\u00020\f2\u0006\u0010O\u001a\u00020\u00062\u0019\b\u0004\u00100\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u0002H:0\u000b¢\u0006\u0002\b\u000eH\u0086\b¢\u0006\u0002\u0010P\u001a=\u0010N\u001a\u0002H:\"\b\b\u0000\u0010:*\u00020;*\u00020\f2\u0006\u0010O\u001a\u00020\b2\u0017\u00100\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u0002H:0\u000b¢\u0006\u0002\b\u000eH\u0086\b¢\u0006\u0002\u0010Q\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006R"}, d2 = {"EmptyAnnotatedString", "Landroidx/compose/ui/text/AnnotatedString;", "AnnotatedString", "text", "", "paragraphStyle", "Landroidx/compose/ui/text/ParagraphStyle;", "spanStyle", "Landroidx/compose/ui/text/SpanStyle;", "buildAnnotatedString", "builder", "Lkotlin/Function1;", "Landroidx/compose/ui/text/AnnotatedString$Builder;", "", "Lkotlin/ExtensionFunctionType;", "constructAnnotationsFromSpansAndParagraphs", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "spanStyles", "paragraphStyles", "contains", "", "baseStart", "", "baseEnd", "targetStart", "targetEnd", "emptyAnnotatedString", "filterRanges", ExifInterface.GPS_DIRECTION_TRUE, "ranges", TtmlNode.START, TtmlNode.END, "intersect", "lStart", "lEnd", "rStart", "rEnd", "capitalize", "localeList", "Landroidx/compose/ui/text/intl/LocaleList;", "decapitalize", "getLocalAnnotations", "predicate", "getLocalParagraphStyles", "mapEachParagraphStyle", "defaultParagraphStyle", "block", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "annotatedString", "normalizedParagraphStyles", "substringWithoutParagraphStyles", "toLowerCase", "toUpperCase", "withAnnotation", "R", "", "ttsAnnotation", "Landroidx/compose/ui/text/TtsAnnotation;", "(Landroidx/compose/ui/text/AnnotatedString$Builder;Landroidx/compose/ui/text/TtsAnnotation;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "urlAnnotation", "Landroidx/compose/ui/text/UrlAnnotation;", "(Landroidx/compose/ui/text/AnnotatedString$Builder;Landroidx/compose/ui/text/UrlAnnotation;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "tag", "annotation", "(Landroidx/compose/ui/text/AnnotatedString$Builder;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "withBulletListItem", "Landroidx/compose/ui/text/AnnotatedString$Builder$BulletScope;", "bullet", "Landroidx/compose/ui/text/Bullet;", "(Landroidx/compose/ui/text/AnnotatedString$Builder$BulletScope;Landroidx/compose/ui/text/Bullet;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "withLink", "link", "Landroidx/compose/ui/text/LinkAnnotation;", "(Landroidx/compose/ui/text/AnnotatedString$Builder;Landroidx/compose/ui/text/LinkAnnotation;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "withStyle", "style", "(Landroidx/compose/ui/text/AnnotatedString$Builder;Landroidx/compose/ui/text/ParagraphStyle;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "(Landroidx/compose/ui/text/AnnotatedString$Builder;Landroidx/compose/ui/text/SpanStyle;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "ui-text_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0086\u0001\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\r\u001a@\u0010\u0000\u001a\u0012\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00030\u0002\u0018\u00010\u00012\u0012\u0010\u0004\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u00020\u00012\u0012\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00070\u00020\u0001H\u0002\u001a \u0010\b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00070\u00020\u0001*\u00020\t2\u0006\u0010\n\u001a\u00020\u0007H\u0000\u001a*\u0010\u000b\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00070\u0002\u0018\u00010\u0001*\u00020\t2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\rH\u0002\u001aD\u0010\u000f\u001a\u0012\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00030\u0002\u0018\u00010\u0001*\u00020\t2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\r2\u0016\b\u0002\u0010\u0010\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0012\u0018\u00010\u0011H\u0002\u001a\u001c\u0010\u0013\u001a\u00020\t*\u00020\t2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\rH\u0002\u001aa\u0010\u0014\u001a\b\u0012\u0004\u0012\u0002H\u00150\u0001\"\u0004\b\u0000\u0010\u0015*\u00020\t2\u0006\u0010\n\u001a\u00020\u00072>\b\u0004\u0010\u0016\u001a8\u0012\u0013\u0012\u00110\t¢\u0006\f\b\u0018\u0012\b\b\u0019\u0012\u0004\b\b(\u001a\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020\u00070\u0002¢\u0006\f\b\u0018\u0012\b\b\u0019\u0012\u0004\b\b(\u001b\u0012\u0004\u0012\u0002H\u00150\u0017H\u0080\b\u001a\u0014\u0010\u001c\u001a\u00020\t*\u00020\t2\b\b\u0002\u0010\u001d\u001a\u00020\u001e\u001a\u0014\u0010\u001f\u001a\u00020\t*\u00020\t2\b\b\u0002\u0010\u001d\u001a\u00020\u001e\u001a\u0014\u0010 \u001a\u00020\t*\u00020\t2\b\b\u0002\u0010\u001d\u001a\u00020\u001e\u001a\u0014\u0010!\u001a\u00020\t*\u00020\t2\b\b\u0002\u0010\u001d\u001a\u00020\u001e\u001a=\u0010\"\u001a\u0002H#\"\b\b\u0000\u0010#*\u00020$*\u00020%2\u0006\u0010&\u001a\u00020\u00052\u0017\u0010\u0016\u001a\u0013\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u0002H#0\u0011¢\u0006\u0002\b'H\u0086\b¢\u0006\u0002\u0010(\u001a?\u0010\"\u001a\u0002H#\"\b\b\u0000\u0010#*\u00020$*\u00020%2\u0006\u0010&\u001a\u00020\u00072\u0019\b\u0004\u0010\u0016\u001a\u0013\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u0002H#0\u0011¢\u0006\u0002\b'H\u0086\b¢\u0006\u0002\u0010)\u001aG\u0010*\u001a\u0002H#\"\b\b\u0000\u0010#*\u00020$*\u00020%2\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020,2\u0019\b\u0004\u0010\u0016\u001a\u0013\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u0002H#0\u0011¢\u0006\u0002\b'H\u0086\b¢\u0006\u0002\u0010.\u001a?\u0010*\u001a\u0002H#\"\b\b\u0000\u0010#*\u00020$*\u00020%2\u0006\u0010/\u001a\u0002002\u0019\b\u0004\u0010\u0016\u001a\u0013\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u0002H#0\u0011¢\u0006\u0002\b'H\u0086\b¢\u0006\u0002\u00101\u001a?\u0010*\u001a\u0002H#\"\b\b\u0000\u0010#*\u00020$*\u00020%2\u0006\u00102\u001a\u0002032\u0019\b\u0004\u0010\u0016\u001a\u0013\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u0002H#0\u0011¢\u0006\u0002\b'H\u0087\b¢\u0006\u0002\u00104\u001a=\u00105\u001a\u0002H#\"\b\b\u0000\u0010#*\u00020$*\u00020%2\u0006\u00106\u001a\u0002072\u0017\u0010\u0016\u001a\u0013\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u0002H#0\u0011¢\u0006\u0002\b'H\u0086\b¢\u0006\u0002\u00108\u001aD\u00109\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00150\u0002\u0018\u00010\u0001\"\u0004\b\u0000\u0010\u00152\u0016\u0010:\u001a\u0012\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u0002H\u00150\u0002\u0018\u00010\u00012\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\rH\u0002\u001a\"\u0010;\u001a\u00020\t2\u0006\u0010<\u001a\u00020,2\u0006\u0010=\u001a\u00020\u00052\n\b\u0002\u0010\u001b\u001a\u0004\u0018\u00010\u0007\u001a\u0016\u0010;\u001a\u00020\t2\u0006\u0010<\u001a\u00020,2\u0006\u0010\u001b\u001a\u00020\u0007\u001a\"\u0010>\u001a\u00020\t2\u0017\u0010?\u001a\u0013\u0012\u0004\u0012\u00020%\u0012\u0004\u0012\u00020@0\u0011¢\u0006\u0002\b'H\u0086\b\u001a(\u0010A\u001a\u00020\u00122\u0006\u0010B\u001a\u00020\r2\u0006\u0010C\u001a\u00020\r2\u0006\u0010D\u001a\u00020\r2\u0006\u0010E\u001a\u00020\rH\u0000\u001a(\u0010F\u001a\u00020\u00122\u0006\u0010G\u001a\u00020\r2\u0006\u0010H\u001a\u00020\r2\u0006\u0010I\u001a\u00020\r2\u0006\u0010J\u001a\u00020\rH\u0000\u001a\b\u0010L\u001a\u00020\tH\u0000\"\u000e\u0010K\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006M"}, d2 = {"constructAnnotationsFromSpansAndParagraphs", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "spanStyles", "Landroidx/compose/ui/text/SpanStyle;", "paragraphStyles", "Landroidx/compose/ui/text/ParagraphStyle;", "normalizedParagraphStyles", "Landroidx/compose/ui/text/AnnotatedString;", "defaultParagraphStyle", "getLocalParagraphStyles", TtmlNode.START, "", TtmlNode.END, "getLocalAnnotations", "predicate", "Lkotlin/Function1;", "", "substringWithoutParagraphStyles", "mapEachParagraphStyle", ExifInterface.GPS_DIRECTION_TRUE, "block", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "annotatedString", "paragraphStyle", "toUpperCase", "localeList", "Landroidx/compose/ui/text/intl/LocaleList;", "toLowerCase", "capitalize", "decapitalize", "withStyle", "R", "", "Landroidx/compose/ui/text/AnnotatedString$Builder;", "style", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/text/AnnotatedString$Builder;Landroidx/compose/ui/text/SpanStyle;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "(Landroidx/compose/ui/text/AnnotatedString$Builder;Landroidx/compose/ui/text/ParagraphStyle;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "withAnnotation", "tag", "", "annotation", "(Landroidx/compose/ui/text/AnnotatedString$Builder;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "ttsAnnotation", "Landroidx/compose/ui/text/TtsAnnotation;", "(Landroidx/compose/ui/text/AnnotatedString$Builder;Landroidx/compose/ui/text/TtsAnnotation;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "urlAnnotation", "Landroidx/compose/ui/text/UrlAnnotation;", "(Landroidx/compose/ui/text/AnnotatedString$Builder;Landroidx/compose/ui/text/UrlAnnotation;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "withLink", "link", "Landroidx/compose/ui/text/LinkAnnotation;", "(Landroidx/compose/ui/text/AnnotatedString$Builder;Landroidx/compose/ui/text/LinkAnnotation;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "filterRanges", "ranges", "AnnotatedString", "text", "spanStyle", "buildAnnotatedString", "builder", "", "contains", "baseStart", "baseEnd", "targetStart", "targetEnd", "intersect", "lStart", "lEnd", "rStart", "rEnd", "EmptyAnnotatedString", "emptyAnnotatedString", "ui-text"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AnnotatedStringKt {
     private static final AnnotatedString EmptyAnnotatedString = new AnnotatedString("", null, 2, null);
@@ -72,8 +65,8 @@ public final class AnnotatedStringKt {
 
     public static final List<AnnotatedString.Range<ParagraphStyle>> normalizedParagraphStyles(AnnotatedString annotatedString, ParagraphStyle paragraphStyle) {
         List emptyList;
-        List<AnnotatedString.Range<ParagraphStyle>> paragraphStylesOrNull$ui_text_release = annotatedString.getParagraphStylesOrNull$ui_text_release();
-        if (paragraphStylesOrNull$ui_text_release == null || (emptyList = CollectionsKt.sortedWith(paragraphStylesOrNull$ui_text_release, new Comparator() { // from class: androidx.compose.ui.text.AnnotatedStringKt$normalizedParagraphStyles$$inlined$sortedBy$1
+        List<AnnotatedString.Range<ParagraphStyle>> paragraphStylesOrNull$ui_text = annotatedString.getParagraphStylesOrNull$ui_text();
+        if (paragraphStylesOrNull$ui_text == null || (emptyList = CollectionsKt.sortedWith(paragraphStylesOrNull$ui_text, new Comparator() { // from class: androidx.compose.ui.text.AnnotatedStringKt$normalizedParagraphStyles$$inlined$sortedBy$1
             @Override // java.util.Comparator
             public final int compare(T t, T t2) {
                 return ComparisonsKt.compareValues(Integer.valueOf(((AnnotatedString.Range) t).getStart()), Integer.valueOf(((AnnotatedString.Range) t2).getStart()));
@@ -149,15 +142,15 @@ public final class AnnotatedStringKt {
     }
 
     private static final List<AnnotatedString.Range<ParagraphStyle>> getLocalParagraphStyles(AnnotatedString annotatedString, int i, int i2) {
-        List<AnnotatedString.Range<ParagraphStyle>> paragraphStylesOrNull$ui_text_release;
-        if (i == i2 || (paragraphStylesOrNull$ui_text_release = annotatedString.getParagraphStylesOrNull$ui_text_release()) == null) {
+        List<AnnotatedString.Range<ParagraphStyle>> paragraphStylesOrNull$ui_text;
+        if (i == i2 || (paragraphStylesOrNull$ui_text = annotatedString.getParagraphStylesOrNull$ui_text()) == null) {
             return null;
         }
         if (i != 0 || i2 < annotatedString.getText().length()) {
-            ArrayList arrayList = new ArrayList(paragraphStylesOrNull$ui_text_release.size());
-            int size = paragraphStylesOrNull$ui_text_release.size();
+            ArrayList arrayList = new ArrayList(paragraphStylesOrNull$ui_text.size());
+            int size = paragraphStylesOrNull$ui_text.size();
             for (int i3 = 0; i3 < size; i3++) {
-                AnnotatedString.Range<ParagraphStyle> range = paragraphStylesOrNull$ui_text_release.get(i3);
+                AnnotatedString.Range<ParagraphStyle> range = paragraphStylesOrNull$ui_text.get(i3);
                 if (intersect(i, i2, range.getStart(), range.getEnd())) {
                     ArrayList arrayList2 = arrayList;
                     ParagraphStyle item = range.getItem();
@@ -181,7 +174,7 @@ public final class AnnotatedStringKt {
             }
             return arrayList;
         }
-        return paragraphStylesOrNull$ui_text_release;
+        return paragraphStylesOrNull$ui_text;
     }
 
     public static /* synthetic */ List getLocalAnnotations$default(AnnotatedString annotatedString, int i, int i2, Function1 function1, int i3, Object obj) {
@@ -192,28 +185,28 @@ public final class AnnotatedStringKt {
     }
 
     private static final List<AnnotatedString.Range<? extends AnnotatedString.Annotation>> getLocalAnnotations(AnnotatedString annotatedString, int i, int i2, Function1<? super AnnotatedString.Annotation, Boolean> function1) {
-        List<AnnotatedString.Range<? extends AnnotatedString.Annotation>> annotations$ui_text_release;
-        if (i == i2 || (annotations$ui_text_release = annotatedString.getAnnotations$ui_text_release()) == null) {
+        List<AnnotatedString.Range<? extends AnnotatedString.Annotation>> annotations$ui_text;
+        if (i == i2 || (annotations$ui_text = annotatedString.getAnnotations$ui_text()) == null) {
             return null;
         }
         if (i == 0 && i2 >= annotatedString.getText().length()) {
             if (function1 == null) {
-                return annotations$ui_text_release;
+                return annotations$ui_text;
             }
-            ArrayList arrayList = new ArrayList(annotations$ui_text_release.size());
-            int size = annotations$ui_text_release.size();
+            ArrayList arrayList = new ArrayList(annotations$ui_text.size());
+            int size = annotations$ui_text.size();
             for (int i3 = 0; i3 < size; i3++) {
-                AnnotatedString.Range<? extends AnnotatedString.Annotation> range = annotations$ui_text_release.get(i3);
+                AnnotatedString.Range<? extends AnnotatedString.Annotation> range = annotations$ui_text.get(i3);
                 if (function1.invoke(range.getItem()).booleanValue()) {
                     arrayList.add(range);
                 }
             }
             return arrayList;
         }
-        ArrayList arrayList2 = new ArrayList(annotations$ui_text_release.size());
-        int size2 = annotations$ui_text_release.size();
+        ArrayList arrayList2 = new ArrayList(annotations$ui_text.size());
+        int size2 = annotations$ui_text.size();
         for (int i4 = 0; i4 < size2; i4++) {
-            AnnotatedString.Range<? extends AnnotatedString.Annotation> range2 = annotations$ui_text_release.get(i4);
+            AnnotatedString.Range<? extends AnnotatedString.Annotation> range2 = annotations$ui_text.get(i4);
             boolean z = true;
             if (((function1 != null ? function1.invoke(range2.getItem()).booleanValue() : true) && intersect(i, i2, range2.getStart(), range2.getEnd())) ? false : false) {
                 arrayList2.add(new AnnotatedString.Range(range2.getItem(), RangesKt.coerceIn(range2.getStart(), i, i2) - i, RangesKt.coerceIn(range2.getEnd(), i, i2) - i, range2.getTag()));
@@ -230,16 +223,22 @@ public final class AnnotatedStringKt {
         } else {
             str = "";
         }
-        List<AnnotatedString.Range<? extends AnnotatedString.Annotation>> localAnnotations = getLocalAnnotations(annotatedString, i, i2, new Function1<AnnotatedString.Annotation, Boolean>() { // from class: androidx.compose.ui.text.AnnotatedStringKt$substringWithoutParagraphStyles$1
+        List<AnnotatedString.Range<? extends AnnotatedString.Annotation>> localAnnotations = getLocalAnnotations(annotatedString, i, i2, new Function1() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
-            public final Boolean invoke(AnnotatedString.Annotation annotation) {
-                return Boolean.valueOf(!(annotation instanceof ParagraphStyle));
+            public final Object invoke(Object obj) {
+                boolean substringWithoutParagraphStyles$lambda$10;
+                substringWithoutParagraphStyles$lambda$10 = AnnotatedStringKt.substringWithoutParagraphStyles$lambda$10((AnnotatedString.Annotation) obj);
+                return Boolean.valueOf(substringWithoutParagraphStyles$lambda$10);
             }
         });
         if (localAnnotations == null) {
             localAnnotations = CollectionsKt.emptyList();
         }
         return new AnnotatedString(str, localAnnotations);
+    }
+
+    public static final boolean substringWithoutParagraphStyles$lambda$10(AnnotatedString.Annotation annotation) {
+        return !(annotation instanceof ParagraphStyle);
     }
 
     public static final <T> List<T> mapEachParagraphStyle(AnnotatedString annotatedString, ParagraphStyle paragraphStyle, Function2<? super AnnotatedString, ? super AnnotatedString.Range<ParagraphStyle>, ? extends T> function2) {
@@ -261,23 +260,20 @@ public final class AnnotatedStringKt {
     }
 
     public static final AnnotatedString toUpperCase(AnnotatedString annotatedString, final LocaleList localeList) {
-        return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3<String, Integer, Integer, String>() { // from class: androidx.compose.ui.text.AnnotatedStringKt$toUpperCase$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(3);
-            }
-
+        return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ String invoke(String str, Integer num, Integer num2) {
-                return invoke(str, num.intValue(), num2.intValue());
-            }
-
-            public final String invoke(String str, int i, int i2) {
-                String substring = str.substring(i, i2);
-                Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
-                return StringKt.toUpperCase(substring, LocaleList.this);
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                String upperCase$lambda$12;
+                upperCase$lambda$12 = AnnotatedStringKt.toUpperCase$lambda$12(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
+                return upperCase$lambda$12;
             }
         });
+    }
+
+    public static final String toUpperCase$lambda$12(LocaleList localeList, String str, int i, int i2) {
+        String substring = str.substring(i, i2);
+        Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
+        return StringKt.toUpperCase(substring, localeList);
     }
 
     public static /* synthetic */ AnnotatedString toLowerCase$default(AnnotatedString annotatedString, LocaleList localeList, int i, Object obj) {
@@ -288,23 +284,20 @@ public final class AnnotatedStringKt {
     }
 
     public static final AnnotatedString toLowerCase(AnnotatedString annotatedString, final LocaleList localeList) {
-        return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3<String, Integer, Integer, String>() { // from class: androidx.compose.ui.text.AnnotatedStringKt$toLowerCase$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(3);
-            }
-
+        return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ String invoke(String str, Integer num, Integer num2) {
-                return invoke(str, num.intValue(), num2.intValue());
-            }
-
-            public final String invoke(String str, int i, int i2) {
-                String substring = str.substring(i, i2);
-                Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
-                return StringKt.toLowerCase(substring, LocaleList.this);
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                String lowerCase$lambda$13;
+                lowerCase$lambda$13 = AnnotatedStringKt.toLowerCase$lambda$13(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
+                return lowerCase$lambda$13;
             }
         });
+    }
+
+    public static final String toLowerCase$lambda$13(LocaleList localeList, String str, int i, int i2) {
+        String substring = str.substring(i, i2);
+        Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
+        return StringKt.toLowerCase(substring, localeList);
     }
 
     public static /* synthetic */ AnnotatedString capitalize$default(AnnotatedString annotatedString, LocaleList localeList, int i, Object obj) {
@@ -315,28 +308,25 @@ public final class AnnotatedStringKt {
     }
 
     public static final AnnotatedString capitalize(AnnotatedString annotatedString, final LocaleList localeList) {
-        return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3<String, Integer, Integer, String>() { // from class: androidx.compose.ui.text.AnnotatedStringKt$capitalize$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(3);
-            }
-
+        return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ String invoke(String str, Integer num, Integer num2) {
-                return invoke(str, num.intValue(), num2.intValue());
-            }
-
-            public final String invoke(String str, int i, int i2) {
-                if (i == 0) {
-                    String substring = str.substring(i, i2);
-                    Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
-                    return StringKt.capitalize(substring, LocaleList.this);
-                }
-                String substring2 = str.substring(i, i2);
-                Intrinsics.checkNotNullExpressionValue(substring2, "substring(...)");
-                return substring2;
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                String capitalize$lambda$14;
+                capitalize$lambda$14 = AnnotatedStringKt.capitalize$lambda$14(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
+                return capitalize$lambda$14;
             }
         });
+    }
+
+    public static final String capitalize$lambda$14(LocaleList localeList, String str, int i, int i2) {
+        if (i == 0) {
+            String substring = str.substring(i, i2);
+            Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
+            return StringKt.capitalize(substring, localeList);
+        }
+        String substring2 = str.substring(i, i2);
+        Intrinsics.checkNotNullExpressionValue(substring2, "substring(...)");
+        return substring2;
     }
 
     public static /* synthetic */ AnnotatedString decapitalize$default(AnnotatedString annotatedString, LocaleList localeList, int i, Object obj) {
@@ -347,28 +337,25 @@ public final class AnnotatedStringKt {
     }
 
     public static final AnnotatedString decapitalize(AnnotatedString annotatedString, final LocaleList localeList) {
-        return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3<String, Integer, Integer, String>() { // from class: androidx.compose.ui.text.AnnotatedStringKt$decapitalize$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(3);
-            }
-
+        return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ String invoke(String str, Integer num, Integer num2) {
-                return invoke(str, num.intValue(), num2.intValue());
-            }
-
-            public final String invoke(String str, int i, int i2) {
-                if (i == 0) {
-                    String substring = str.substring(i, i2);
-                    Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
-                    return StringKt.decapitalize(substring, LocaleList.this);
-                }
-                String substring2 = str.substring(i, i2);
-                Intrinsics.checkNotNullExpressionValue(substring2, "substring(...)");
-                return substring2;
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                String decapitalize$lambda$15;
+                decapitalize$lambda$15 = AnnotatedStringKt.decapitalize$lambda$15(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
+                return decapitalize$lambda$15;
             }
         });
+    }
+
+    public static final String decapitalize$lambda$15(LocaleList localeList, String str, int i, int i2) {
+        if (i == 0) {
+            String substring = str.substring(i, i2);
+            Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
+            return StringKt.decapitalize(substring, localeList);
+        }
+        String substring2 = str.substring(i, i2);
+        Intrinsics.checkNotNullExpressionValue(substring2, "substring(...)");
+        return substring2;
     }
 
     public static final <R> R withStyle(AnnotatedString.Builder builder, SpanStyle spanStyle, Function1<? super AnnotatedString.Builder, ? extends R> function1) {
@@ -423,32 +410,6 @@ public final class AnnotatedStringKt {
             return function1.invoke(builder);
         } finally {
             builder.pop(pushLink);
-        }
-    }
-
-    public static /* synthetic */ Object withBulletListItem$default(AnnotatedString.Builder.BulletScope bulletScope, Bullet bullet, Function1 function1, int i, Object obj) {
-        if ((i & 1) != 0) {
-            bullet = null;
-        }
-        return withBulletListItem(bulletScope, bullet, function1);
-    }
-
-    public static final <R> R withBulletListItem(AnnotatedString.Builder.BulletScope bulletScope, Bullet bullet, Function1<? super AnnotatedString.Builder, ? extends R> function1) {
-        Bullet bullet2;
-        Pair pair = (Pair) CollectionsKt.lastOrNull((List<? extends Object>) bulletScope.getBulletListSettingStack$ui_text_release());
-        long m6887unboximpl = pair != null ? ((TextUnit) pair.getFirst()).m6887unboximpl() : BulletKt.getDefaultBulletIndentation();
-        if (bullet != null) {
-            bullet2 = bullet;
-        } else if (pair == null || (bullet2 = (Bullet) pair.getSecond()) == null) {
-            bullet2 = BulletKt.getDefaultBullet();
-        }
-        int pushStyle = bulletScope.getBuilder$ui_text_release().pushStyle(new ParagraphStyle(0, 0, 0L, new TextIndent(m6887unboximpl, m6887unboximpl, null), (PlatformParagraphStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, (int) TypedValues.PositionType.TYPE_PERCENT_WIDTH, (DefaultConstructorMarker) null));
-        int pushBullet$ui_text_release = bulletScope.getBuilder$ui_text_release().pushBullet$ui_text_release(bullet2);
-        try {
-            return function1.invoke(bulletScope.getBuilder$ui_text_release());
-        } finally {
-            bulletScope.getBuilder$ui_text_release().pop(pushBullet$ui_text_release);
-            bulletScope.getBuilder$ui_text_release().pop(pushStyle);
         }
     }
 

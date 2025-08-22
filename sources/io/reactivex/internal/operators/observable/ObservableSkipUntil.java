@@ -6,7 +6,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.ArrayCompositeDisposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.observers.SerializedObserver;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableSkipUntil<T, U> extends AbstractObservableWithUpstream<T, T> {
     final ObservableSource<U> other;
 
@@ -25,7 +25,7 @@ public final class ObservableSkipUntil<T, U> extends AbstractObservableWithUpstr
         this.source.subscribe(skipUntilObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SkipUntilObserver<T> implements Observer<T> {
         final Observer<? super T> downstream;
         final ArrayCompositeDisposable frc;
@@ -69,7 +69,7 @@ public final class ObservableSkipUntil<T, U> extends AbstractObservableWithUpstr
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class SkipUntil implements Observer<U> {
         final ArrayCompositeDisposable frc;
         final SerializedObserver<T> serial;

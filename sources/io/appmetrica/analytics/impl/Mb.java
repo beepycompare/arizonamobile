@@ -1,42 +1,42 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.executors.InterruptionSafeThread;
-import java.util.HashMap;
+import android.os.Handler;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import java.lang.ref.WeakReference;
+import java.util.Set;
 /* loaded from: classes4.dex */
-public final class Mb extends InterruptionSafeThread {
+public final class Mb implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Nb f547a;
+    public final WeakReference f559a;
+    public final WeakReference b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Mb(Nb nb, String str) {
-        super(str);
-        this.f547a = nb;
+    public Mb(Handler handler, V2 v2) {
+        this.f559a = new WeakReference(handler);
+        this.b = new WeakReference(v2);
     }
 
-    @Override // java.lang.Thread, java.lang.Runnable
+    @Override // java.lang.Runnable
     public final void run() {
-        HashMap hashMap;
-        synchronized (this.f547a.f562a) {
-            Nb.a(this.f547a);
-            this.f547a.e = true;
-            this.f547a.f562a.notifyAll();
+        Handler handler = (Handler) this.f559a.get();
+        V2 v2 = (V2) this.b.get();
+        if (handler == null || v2 == null) {
+            return;
         }
-        while (isRunning()) {
-            synchronized (this) {
-                if (this.f547a.b.size() == 0) {
-                    try {
-                        wait();
-                    } catch (InterruptedException unused) {
-                    }
-                }
-                hashMap = new HashMap(this.f547a.b);
-                this.f547a.b.clear();
-            }
-            if (hashMap.size() > 0) {
-                Nb.a(this.f547a, hashMap);
-                hashMap.clear();
-            }
+        boolean f = v2.b.f();
+        if (!f) {
+            PublicLogger publicLogger = v2.c;
+            Set set = T9.f659a;
+            EnumC0728yb enumC0728yb = EnumC0728yb.EVENT_TYPE_UNDEFINED;
+            C0320i4 c0320i4 = new C0320i4("", "", 3, 0, publicLogger);
+            Oi oi = v2.h;
+            Xh xh = v2.b;
+            oi.getClass();
+            oi.a(Oi.a(c0320i4, xh), xh, 1, null);
         }
+        if (f) {
+            return;
+        }
+        Lb.a(handler, v2, this);
     }
 }

@@ -22,6 +22,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.LazyThreadSafetyMode;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
@@ -33,7 +34,7 @@ import kotlin.jvm.internal.Ref;
 import kotlin.math.MathKt;
 /* compiled from: TextInputServiceAndroid.android.kt */
 @Deprecated(message = "Only exists to support the legacy TextInputService APIs. It is not used by any Compose code. A copy of this class in foundation is used by the legacy BasicTextField.")
-@Metadata(d1 = {"\u0000°\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u0001:\u0001RB\u0017\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0002\u0010\u0006B'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0005\u0012\u0006\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\u000b¢\u0006\u0002\u0010\fJ\u0010\u00102\u001a\u0004\u0018\u0001032\u0006\u00104\u001a\u000205J\b\u00106\u001a\u00020%H\u0016J\u0006\u00107\u001a\u00020\u0016J\u0010\u00108\u001a\u00020%2\u0006\u00109\u001a\u00020:H\u0017J\b\u0010;\u001a\u00020%H\u0002J\b\u0010<\u001a\u00020%H\u0002J\u0010\u0010=\u001a\u00020%2\u0006\u0010>\u001a\u00020/H\u0002J\u0010\u0010?\u001a\u00020%2\u0006\u0010@\u001a\u00020\u0016H\u0002J\b\u0010A\u001a\u00020%H\u0016J\b\u0010B\u001a\u00020%H\u0016JF\u0010B\u001a\u00020%2\u0006\u0010C\u001a\u00020)2\u0006\u0010\u001f\u001a\u00020 2\u0018\u0010!\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020$0#\u0012\u0004\u0012\u00020%0\"2\u0012\u0010&\u001a\u000e\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020%0\"H\u0016J\b\u0010D\u001a\u00020%H\u0016J\u001a\u0010E\u001a\u00020%2\b\u0010F\u001a\u0004\u0018\u00010)2\u0006\u0010G\u001a\u00020)H\u0016JD\u0010H\u001a\u00020%2\u0006\u0010I\u001a\u00020)2\u0006\u0010J\u001a\u00020K2\u0006\u0010L\u001a\u00020M2\u0012\u0010N\u001a\u000e\u0012\u0004\u0012\u00020O\u0012\u0004\u0012\u00020%0\"2\u0006\u0010P\u001a\u00020:2\u0006\u0010Q\u001a\u00020:H\u0016R\u001b\u0010\r\u001a\u00020\u000e8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0011\u0010\u0012\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001e0\u001d0\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R \u0010!\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020$0#\u0012\u0004\u0012\u00020%0\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010&\u001a\u000e\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020%0\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010*\u001a\u00020)2\u0006\u0010(\u001a\u00020)@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b+\u0010,R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020/0.X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b0\u00101¨\u0006S"}, d2 = {"Landroidx/compose/ui/text/input/TextInputServiceAndroid;", "Landroidx/compose/ui/text/input/PlatformTextInputService;", "view", "Landroid/view/View;", "positionCalculator", "Landroidx/compose/ui/input/pointer/MatrixPositionCalculator;", "(Landroid/view/View;Landroidx/compose/ui/input/pointer/MatrixPositionCalculator;)V", "rootPositionCalculator", "inputMethodManager", "Landroidx/compose/ui/text/input/InputMethodManager;", "inputCommandProcessorExecutor", "Ljava/util/concurrent/Executor;", "(Landroid/view/View;Landroidx/compose/ui/input/pointer/MatrixPositionCalculator;Landroidx/compose/ui/text/input/InputMethodManager;Ljava/util/concurrent/Executor;)V", "baseInputConnection", "Landroid/view/inputmethod/BaseInputConnection;", "getBaseInputConnection", "()Landroid/view/inputmethod/BaseInputConnection;", "baseInputConnection$delegate", "Lkotlin/Lazy;", "cursorAnchorInfoController", "Landroidx/compose/ui/text/input/CursorAnchorInfoController;", "editorHasFocus", "", "focusedRect", "Landroid/graphics/Rect;", "frameCallback", "Ljava/lang/Runnable;", "ics", "", "Ljava/lang/ref/WeakReference;", "Landroidx/compose/ui/text/input/RecordingInputConnection;", "imeOptions", "Landroidx/compose/ui/text/input/ImeOptions;", "onEditCommand", "Lkotlin/Function1;", "", "Landroidx/compose/ui/text/input/EditCommand;", "", "onImeActionPerformed", "Landroidx/compose/ui/text/input/ImeAction;", "<set-?>", "Landroidx/compose/ui/text/input/TextFieldValue;", RemoteConfigConstants.ResponseFieldKey.STATE, "getState$ui_release", "()Landroidx/compose/ui/text/input/TextFieldValue;", "textInputCommandQueue", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/text/input/TextInputServiceAndroid$TextInputCommand;", "getView", "()Landroid/view/View;", "createInputConnection", "Landroid/view/inputmethod/InputConnection;", "outAttrs", "Landroid/view/inputmethod/EditorInfo;", "hideSoftwareKeyboard", "isEditorFocused", "notifyFocusedRect", "rect", "Landroidx/compose/ui/geometry/Rect;", "processInputCommands", "restartInputImmediately", "sendInputCommand", "command", "setKeyboardVisibleImmediately", "visible", "showSoftwareKeyboard", "startInput", "value", "stopInput", "updateState", "oldValue", "newValue", "updateTextLayoutResult", "textFieldValue", "offsetMapping", "Landroidx/compose/ui/text/input/OffsetMapping;", "textLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "textFieldToRootTransform", "Landroidx/compose/ui/graphics/Matrix;", "innerTextFieldBounds", "decorationBoxBounds", "TextInputCommand", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¬\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0001\u0018\u00002\u00020\u0001:\u0001RB)\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bB\u0019\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\f\u001a\u00020\u0005¢\u0006\u0004\b\n\u0010\rJ\u0010\u00103\u001a\u0004\u0018\u0001042\u0006\u00105\u001a\u000206J\u0006\u00107\u001a\u00020\u0011JF\u00108\u001a\u00020\u00162\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001e\u001a\u00020\u001f2\u0018\u0010\u0012\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\u0014\u0012\u0004\u0012\u00020\u00160\u00132\u0012\u0010\u0017\u001a\u000e\u0012\u0004\u0012\u00020\u0018\u0012\u0004\u0012\u00020\u00160\u0013H\u0016J\b\u00108\u001a\u00020\u0016H\u0016J\b\u00109\u001a\u00020\u0016H\u0016J\b\u0010:\u001a\u00020\u0016H\u0016J\b\u0010;\u001a\u00020\u0016H\u0016J\u0010\u0010<\u001a\u00020\u00162\u0006\u0010=\u001a\u000200H\u0002J\b\u0010>\u001a\u00020\u0016H\u0002J\u001a\u0010?\u001a\u00020\u00162\b\u0010@\u001a\u0004\u0018\u00010\u001a2\u0006\u0010A\u001a\u00020\u001aH\u0016J\u0010\u0010B\u001a\u00020\u00162\u0006\u0010C\u001a\u00020DH\u0017JD\u0010E\u001a\u00020\u00162\u0006\u0010F\u001a\u00020\u001a2\u0006\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020J2\u0012\u0010K\u001a\u000e\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020\u00160\u00132\u0006\u0010M\u001a\u00020D2\u0006\u0010N\u001a\u00020DH\u0016J\b\u0010O\u001a\u00020\u0016H\u0002J\u0010\u0010P\u001a\u00020\u00162\u0006\u0010Q\u001a\u00020\u0011H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\u0012\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\u0014\u0012\u0004\u0012\u00020\u00160\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0017\u001a\u000e\u0012\u0004\u0012\u00020\u0018\u0012\u0004\u0012\u00020\u00160\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u001b\u001a\u00020\u001a2\u0006\u0010\u0019\u001a\u00020\u001a@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010 \u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020#0\"0!X\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010$\u001a\u00020%8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b(\u0010)\u001a\u0004\b&\u0010'R\u0010\u0010*\u001a\u0004\u0018\u00010+X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u0002000/X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u00101\u001a\u0004\u0018\u000102X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006S"}, d2 = {"Landroidx/compose/ui/text/input/TextInputServiceAndroid;", "Landroidx/compose/ui/text/input/PlatformTextInputService;", "view", "Landroid/view/View;", "rootPositionCalculator", "Landroidx/compose/ui/input/pointer/MatrixPositionCalculator;", "inputMethodManager", "Landroidx/compose/ui/text/input/InputMethodManager;", "inputCommandProcessorExecutor", "Ljava/util/concurrent/Executor;", "<init>", "(Landroid/view/View;Landroidx/compose/ui/input/pointer/MatrixPositionCalculator;Landroidx/compose/ui/text/input/InputMethodManager;Ljava/util/concurrent/Executor;)V", "positionCalculator", "(Landroid/view/View;Landroidx/compose/ui/input/pointer/MatrixPositionCalculator;)V", "getView", "()Landroid/view/View;", "editorHasFocus", "", "onEditCommand", "Lkotlin/Function1;", "", "Landroidx/compose/ui/text/input/EditCommand;", "", "onImeActionPerformed", "Landroidx/compose/ui/text/input/ImeAction;", "value", "Landroidx/compose/ui/text/input/TextFieldValue;", RemoteConfigConstants.ResponseFieldKey.STATE, "getState$ui_release", "()Landroidx/compose/ui/text/input/TextFieldValue;", "imeOptions", "Landroidx/compose/ui/text/input/ImeOptions;", "ics", "", "Ljava/lang/ref/WeakReference;", "Landroidx/compose/ui/text/input/RecordingInputConnection;", "baseInputConnection", "Landroid/view/inputmethod/BaseInputConnection;", "getBaseInputConnection", "()Landroid/view/inputmethod/BaseInputConnection;", "baseInputConnection$delegate", "Lkotlin/Lazy;", "focusedRect", "Landroid/graphics/Rect;", "cursorAnchorInfoController", "Landroidx/compose/ui/text/input/CursorAnchorInfoController;", "textInputCommandQueue", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/text/input/TextInputServiceAndroid$TextInputCommand;", "frameCallback", "Ljava/lang/Runnable;", "createInputConnection", "Landroid/view/inputmethod/InputConnection;", "outAttrs", "Landroid/view/inputmethod/EditorInfo;", "isEditorFocused", "startInput", "stopInput", "showSoftwareKeyboard", "hideSoftwareKeyboard", "sendInputCommand", "command", "processInputCommands", "updateState", "oldValue", "newValue", "notifyFocusedRect", "rect", "Landroidx/compose/ui/geometry/Rect;", "updateTextLayoutResult", "textFieldValue", "offsetMapping", "Landroidx/compose/ui/text/input/OffsetMapping;", "textLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "textFieldToRootTransform", "Landroidx/compose/ui/graphics/Matrix;", "innerTextFieldBounds", "decorationBoxBounds", "restartInputImmediately", "setKeyboardVisibleImmediately", "visible", "TextInputCommand", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class TextInputServiceAndroid implements PlatformTextInputService {
     public static final int $stable = 8;
@@ -53,7 +54,7 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
     private final View view;
 
     /* compiled from: TextInputServiceAndroid.android.kt */
-    @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -97,16 +98,16 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
         };
         this.onImeActionPerformed = new Function1<ImeAction, Unit>() { // from class: androidx.compose.ui.text.input.TextInputServiceAndroid$onImeActionPerformed$1
             /* renamed from: invoke-KlQnJC8  reason: not valid java name */
-            public final void m6398invokeKlQnJC8(int i) {
+            public final void m6966invokeKlQnJC8(int i) {
             }
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(ImeAction imeAction) {
-                m6398invokeKlQnJC8(imeAction.m6317unboximpl());
+                m6966invokeKlQnJC8(imeAction.m6885unboximpl());
                 return Unit.INSTANCE;
             }
         };
-        this.state = new TextFieldValue("", TextRange.Companion.m6152getZerod9O1mEE(), (TextRange) null, 4, (DefaultConstructorMarker) null);
+        this.state = new TextFieldValue("", TextRange.Companion.m6718getZerod9O1mEE(), (TextRange) null, 4, (DefaultConstructorMarker) null);
         this.imeOptions = ImeOptions.Companion.getDefault();
         this.ics = new ArrayList();
         this.baseInputConnection$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, (Function0) new Function0<BaseInputConnection>() { // from class: androidx.compose.ui.text.input.TextInputServiceAndroid$baseInputConnection$2
@@ -137,7 +138,7 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: TextInputServiceAndroid.android.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0006\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002j\u0002\b\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006¨\u0006\u0007"}, d2 = {"Landroidx/compose/ui/text/input/TextInputServiceAndroid$TextInputCommand;", "", "(Ljava/lang/String;I)V", "StartInput", "StopInput", "ShowKeyboard", "HideKeyboard", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0007\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/text/input/TextInputServiceAndroid$TextInputCommand;", "", "<init>", "(Ljava/lang/String;I)V", "StartInput", "StopInput", "ShowKeyboard", "HideKeyboard", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class TextInputCommand {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -155,14 +156,6 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
             return $ENTRIES;
         }
 
-        public static TextInputCommand valueOf(String str) {
-            return (TextInputCommand) Enum.valueOf(TextInputCommand.class, str);
-        }
-
-        public static TextInputCommand[] values() {
-            return (TextInputCommand[]) $VALUES.clone();
-        }
-
         private TextInputCommand(String str, int i) {
         }
 
@@ -170,6 +163,14 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
             TextInputCommand[] $values = $values();
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
+        }
+
+        public static TextInputCommand valueOf(String str) {
+            return (TextInputCommand) Enum.valueOf(TextInputCommand.class, str);
+        }
+
+        public static TextInputCommand[] values() {
+            return (TextInputCommand[]) $VALUES.clone();
         }
     }
 
@@ -200,10 +201,10 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
 
                 @Override // androidx.compose.ui.text.input.InputEventCallback2
                 /* renamed from: onImeAction-KlQnJC8 */
-                public void mo6346onImeActionKlQnJC8(int i) {
+                public void mo6914onImeActionKlQnJC8(int i) {
                     Function1 function1;
                     function1 = TextInputServiceAndroid.this.onImeActionPerformed;
-                    function1.invoke(ImeAction.m6311boximpl(i));
+                    function1.invoke(ImeAction.m6879boximpl(i));
                 }
 
                 @Override // androidx.compose.ui.text.input.InputEventCallback2
@@ -278,12 +279,12 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
         };
         this.onImeActionPerformed = new Function1<ImeAction, Unit>() { // from class: androidx.compose.ui.text.input.TextInputServiceAndroid$stopInput$2
             /* renamed from: invoke-KlQnJC8  reason: not valid java name */
-            public final void m6399invokeKlQnJC8(int i) {
+            public final void m6967invokeKlQnJC8(int i) {
             }
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(ImeAction imeAction) {
-                m6399invokeKlQnJC8(imeAction.m6317unboximpl());
+                m6967invokeKlQnJC8(imeAction.m6885unboximpl());
                 return Unit.INSTANCE;
             }
         };
@@ -360,14 +361,19 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
         } else if (i == 2) {
             objectRef.element = false;
             objectRef2.element = false;
-        } else if ((i == 3 || i == 4) && !Intrinsics.areEqual((Object) objectRef.element, (Object) false)) {
+        } else if (i != 3 && i != 4) {
+            throw new NoWhenBranchMatchedException();
+        } else {
+            if (Intrinsics.areEqual((Object) objectRef.element, (Object) false)) {
+                return;
+            }
             objectRef2.element = Boolean.valueOf(textInputCommand == TextInputCommand.ShowKeyboard);
         }
     }
 
     @Override // androidx.compose.ui.text.input.PlatformTextInputService
     public void updateState(TextFieldValue textFieldValue, TextFieldValue textFieldValue2) {
-        boolean z = (TextRange.m6140equalsimpl0(this.state.m6396getSelectiond9O1mEE(), textFieldValue2.m6396getSelectiond9O1mEE()) && Intrinsics.areEqual(this.state.m6395getCompositionMzsxiRA(), textFieldValue2.m6395getCompositionMzsxiRA())) ? false : true;
+        boolean z = (TextRange.m6706equalsimpl0(this.state.m6964getSelectiond9O1mEE(), textFieldValue2.m6964getSelectiond9O1mEE()) && Intrinsics.areEqual(this.state.m6963getCompositionMzsxiRA(), textFieldValue2.m6963getCompositionMzsxiRA())) ? false : true;
         this.state = textFieldValue2;
         int size = this.ics.size();
         for (int i = 0; i < size; i++) {
@@ -380,14 +386,14 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
         if (Intrinsics.areEqual(textFieldValue, textFieldValue2)) {
             if (z) {
                 InputMethodManager inputMethodManager = this.inputMethodManager;
-                int m6145getMinimpl = TextRange.m6145getMinimpl(textFieldValue2.m6396getSelectiond9O1mEE());
-                int m6144getMaximpl = TextRange.m6144getMaximpl(textFieldValue2.m6396getSelectiond9O1mEE());
-                TextRange m6395getCompositionMzsxiRA = this.state.m6395getCompositionMzsxiRA();
-                int m6145getMinimpl2 = m6395getCompositionMzsxiRA != null ? TextRange.m6145getMinimpl(m6395getCompositionMzsxiRA.m6151unboximpl()) : -1;
-                TextRange m6395getCompositionMzsxiRA2 = this.state.m6395getCompositionMzsxiRA();
-                inputMethodManager.updateSelection(m6145getMinimpl, m6144getMaximpl, m6145getMinimpl2, m6395getCompositionMzsxiRA2 != null ? TextRange.m6144getMaximpl(m6395getCompositionMzsxiRA2.m6151unboximpl()) : -1);
+                int m6711getMinimpl = TextRange.m6711getMinimpl(textFieldValue2.m6964getSelectiond9O1mEE());
+                int m6710getMaximpl = TextRange.m6710getMaximpl(textFieldValue2.m6964getSelectiond9O1mEE());
+                TextRange m6963getCompositionMzsxiRA = this.state.m6963getCompositionMzsxiRA();
+                int m6711getMinimpl2 = m6963getCompositionMzsxiRA != null ? TextRange.m6711getMinimpl(m6963getCompositionMzsxiRA.m6717unboximpl()) : -1;
+                TextRange m6963getCompositionMzsxiRA2 = this.state.m6963getCompositionMzsxiRA();
+                inputMethodManager.updateSelection(m6711getMinimpl, m6710getMaximpl, m6711getMinimpl2, m6963getCompositionMzsxiRA2 != null ? TextRange.m6710getMaximpl(m6963getCompositionMzsxiRA2.m6717unboximpl()) : -1);
             }
-        } else if (textFieldValue != null && (!Intrinsics.areEqual(textFieldValue.getText(), textFieldValue2.getText()) || (TextRange.m6140equalsimpl0(textFieldValue.m6396getSelectiond9O1mEE(), textFieldValue2.m6396getSelectiond9O1mEE()) && !Intrinsics.areEqual(textFieldValue.m6395getCompositionMzsxiRA(), textFieldValue2.m6395getCompositionMzsxiRA())))) {
+        } else if (textFieldValue != null && (!Intrinsics.areEqual(textFieldValue.getText(), textFieldValue2.getText()) || (TextRange.m6706equalsimpl0(textFieldValue.m6964getSelectiond9O1mEE(), textFieldValue2.m6964getSelectiond9O1mEE()) && !Intrinsics.areEqual(textFieldValue.m6963getCompositionMzsxiRA(), textFieldValue2.m6963getCompositionMzsxiRA())))) {
             restartInputImmediately();
         } else {
             int size2 = this.ics.size();

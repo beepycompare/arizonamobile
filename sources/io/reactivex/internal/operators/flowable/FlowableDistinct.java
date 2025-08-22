@@ -11,7 +11,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.Collection;
 import java.util.concurrent.Callable;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableDistinct<T, K> extends AbstractFlowableWithUpstream<T, T> {
     final Callable<? extends Collection<? super K>> collectionSupplier;
     final Function<? super T, K> keySelector;
@@ -32,7 +32,7 @@ public final class FlowableDistinct<T, K> extends AbstractFlowableWithUpstream<T
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DistinctSubscriber<T, K> extends BasicFuseableSubscriber<T, T> {
         final Collection<? super K> collection;
         final Function<? super T, K> keySelector;

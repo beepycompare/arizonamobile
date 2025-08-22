@@ -25,7 +25,7 @@ import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Job;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TapGestureDetector.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2", f = "TapGestureDetector.kt", i = {}, l = {104}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -83,7 +83,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: TapGestureDetector.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
     @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1", f = "TapGestureDetector.kt", i = {0, 1, 1, 2, 2, 2, 3, 4, 4, 4, 5, 5, 6, 6, 6, 6, 7}, l = {105, AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID, 119, 122, 149, 167, 169, 180}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "resetJob", "$this$awaitEachGesture", "down", "resetJob", "resetJob", "$this$awaitEachGesture", "upOrCancel", "cancelOrReleaseJob", "resetJob", "upOrCancel", "$this$awaitEachGesture", "resetJob", "upOrCancel", "secondDown", "resetJob"}, s = {"L$0", "L$0", "L$1", "L$0", "L$1", "L$2", "L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$0"})
     /* renamed from: androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1  reason: invalid class name */
     /* loaded from: classes.dex */
@@ -192,7 +192,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                         function3 = this.$onPress;
                         function32 = TapGestureDetectorKt.NoPressGesture;
                         if (function3 != function32) {
-                            TapGestureDetectorKt.launchAwaitingReset$default(this.$$this$coroutineScope, launch$default, null, new C00111(this.$onPress, this.$pressScope, pointerInputChange, null), 2, null);
+                            TapGestureDetectorKt.launchAwaitingReset$default(this.$$this$coroutineScope, launch$default, null, new C00071(this.$onPress, this.$pressScope, pointerInputChange, null), 2, null);
                         }
                         if (this.$onLongPress == null) {
                             this.L$0 = awaitPointerEventScope;
@@ -220,7 +220,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                                     if (this.$onDoubleTap == null) {
                                         Function1<Offset, Unit> function1 = this.$onTap;
                                         if (function1 != null) {
-                                            function1.invoke(Offset.m3826boximpl(pointerInputChange2.m5313getPositionF1C5BW0()));
+                                            function1.invoke(Offset.m4282boximpl(pointerInputChange2.m5826getPositionF1C5BW0()));
                                         }
                                     } else {
                                         this.L$0 = awaitPointerEventScope2;
@@ -237,7 +237,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                                             if (pointerInputChange4 != null) {
                                                 Function1<Offset, Unit> function12 = this.$onTap;
                                                 if (function12 != null) {
-                                                    function12.invoke(Offset.m3826boximpl(pointerInputChange3.m5313getPositionF1C5BW0()));
+                                                    function12.invoke(Offset.m4282boximpl(pointerInputChange3.m5826getPositionF1C5BW0()));
                                                 }
                                             } else {
                                                 CoroutineScope coroutineScope2 = this.$$this$coroutineScope;
@@ -261,12 +261,12 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                                                         if (pointerInputChange7 != null) {
                                                             pointerInputChange7.consume();
                                                             TapGestureDetectorKt.launchAwaitingReset$default(this.$$this$coroutineScope, job5, null, new AnonymousClass7(this.$pressScope, null), 2, null);
-                                                            this.$onDoubleTap.invoke(Offset.m3826boximpl(pointerInputChange7.m5313getPositionF1C5BW0()));
+                                                            this.$onDoubleTap.invoke(Offset.m4282boximpl(pointerInputChange7.m5826getPositionF1C5BW0()));
                                                         } else {
                                                             TapGestureDetectorKt.launchAwaitingReset$default(this.$$this$coroutineScope, job5, null, new AnonymousClass8(this.$pressScope, null), 2, null);
                                                             Function1<Offset, Unit> function13 = this.$onTap;
                                                             if (function13 != null) {
-                                                                function13.invoke(Offset.m3826boximpl(pointerInputChange6.m5313getPositionF1C5BW0()));
+                                                                function13.invoke(Offset.m4282boximpl(pointerInputChange6.m5826getPositionF1C5BW0()));
                                                             }
                                                         }
                                                     }
@@ -294,7 +294,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                                                             if (pointerInputChange7 != null) {
                                                             }
                                                         } else {
-                                                            this.$onLongPress.invoke(Offset.m3826boximpl(pointerInputChange4.m5313getPositionF1C5BW0()));
+                                                            this.$onLongPress.invoke(Offset.m4282boximpl(pointerInputChange4.m5826getPositionF1C5BW0()));
                                                             this.L$0 = launch$default2;
                                                             this.L$1 = null;
                                                             this.L$2 = null;
@@ -369,7 +369,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                         }
                         return Unit.INSTANCE;
                     }
-                    this.$onLongPress.invoke(Offset.m3826boximpl(pointerInputChange.m5313getPositionF1C5BW0()));
+                    this.$onLongPress.invoke(Offset.m4282boximpl(pointerInputChange.m5826getPositionF1C5BW0()));
                     this.L$0 = launch$default;
                     this.L$1 = null;
                     this.L$2 = null;
@@ -429,11 +429,11 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: TapGestureDetector.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
         @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$1", f = "TapGestureDetector.kt", i = {}, l = {110}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C00111 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+        public static final class C00071 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ PointerInputChange $down;
             final /* synthetic */ Function3<PressGestureScope, Offset, Continuation<? super Unit>, Object> $onPress;
             final /* synthetic */ PressGestureScopeImpl $pressScope;
@@ -441,7 +441,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
-            C00111(Function3<? super PressGestureScope, ? super Offset, ? super Continuation<? super Unit>, ? extends Object> function3, PressGestureScopeImpl pressGestureScopeImpl, PointerInputChange pointerInputChange, Continuation<? super C00111> continuation) {
+            C00071(Function3<? super PressGestureScope, ? super Offset, ? super Continuation<? super Unit>, ? extends Object> function3, PressGestureScopeImpl pressGestureScopeImpl, PointerInputChange pointerInputChange, Continuation<? super C00071> continuation) {
                 super(2, continuation);
                 this.$onPress = function3;
                 this.$pressScope = pressGestureScopeImpl;
@@ -450,12 +450,12 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                return new C00111(this.$onPress, this.$pressScope, this.$down, continuation);
+                return new C00071(this.$onPress, this.$pressScope, this.$down, continuation);
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                return ((C00111) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C00071) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -466,9 +466,9 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                     ResultKt.throwOnFailure(obj);
                     Function3<PressGestureScope, Offset, Continuation<? super Unit>, Object> function3 = this.$onPress;
                     PressGestureScopeImpl pressGestureScopeImpl = this.$pressScope;
-                    Offset m3826boximpl = Offset.m3826boximpl(this.$down.m5313getPositionF1C5BW0());
+                    Offset m4282boximpl = Offset.m4282boximpl(this.$down.m5826getPositionF1C5BW0());
                     this.label = 1;
-                    if (function3.invoke(pressGestureScopeImpl, m3826boximpl, this) == coroutine_suspended) {
+                    if (function3.invoke(pressGestureScopeImpl, m4282boximpl, this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (i != 1) {
@@ -482,7 +482,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: TapGestureDetector.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
         @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$2", f = "TapGestureDetector.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$2  reason: invalid class name */
         /* loaded from: classes.dex */
@@ -520,7 +520,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: TapGestureDetector.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
         @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$3", f = "TapGestureDetector.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$3  reason: invalid class name */
         /* loaded from: classes.dex */
@@ -558,7 +558,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: TapGestureDetector.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
         @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$4", f = "TapGestureDetector.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$4  reason: invalid class name */
         /* loaded from: classes.dex */
@@ -596,7 +596,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: TapGestureDetector.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
         @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$5", f = "TapGestureDetector.kt", i = {}, l = {157, 158}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$5  reason: invalid class name */
         /* loaded from: classes.dex */
@@ -656,7 +656,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: TapGestureDetector.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
         @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$6", f = "TapGestureDetector.kt", i = {}, l = {161}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$6  reason: invalid class name */
         /* loaded from: classes.dex */
@@ -693,9 +693,9 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
                     ResultKt.throwOnFailure(obj);
                     Function3<PressGestureScope, Offset, Continuation<? super Unit>, Object> function3 = this.$onPress;
                     PressGestureScopeImpl pressGestureScopeImpl = this.$pressScope;
-                    Offset m3826boximpl = Offset.m3826boximpl(this.$secondDown.m5313getPositionF1C5BW0());
+                    Offset m4282boximpl = Offset.m4282boximpl(this.$secondDown.m5826getPositionF1C5BW0());
                     this.label = 1;
-                    if (function3.invoke(pressGestureScopeImpl, m3826boximpl, this) == coroutine_suspended) {
+                    if (function3.invoke(pressGestureScopeImpl, m4282boximpl, this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (i != 1) {
@@ -709,7 +709,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: TapGestureDetector.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
         @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$7", f = "TapGestureDetector.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$7  reason: invalid class name */
         /* loaded from: classes.dex */
@@ -747,7 +747,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: TapGestureDetector.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
         @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$8", f = "TapGestureDetector.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1$8  reason: invalid class name */
         /* loaded from: classes.dex */

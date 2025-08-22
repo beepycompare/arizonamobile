@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class RadialMenuBottomItemsBinding implements ViewBinding {
     public final LinearLayout btnBackPage;
     public final LinearLayout btnNextPage;

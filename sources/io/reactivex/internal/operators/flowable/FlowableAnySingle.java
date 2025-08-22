@@ -11,7 +11,7 @@ import io.reactivex.internal.fuseable.FuseToFlowable;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableAnySingle<T> extends Single<Boolean> implements FuseToFlowable<Boolean> {
     final Predicate<? super T> predicate;
     final Flowable<T> source;
@@ -31,7 +31,7 @@ public final class FlowableAnySingle<T> extends Single<Boolean> implements FuseT
         return RxJavaPlugins.onAssembly(new FlowableAny(this.source, this.predicate));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class AnySubscriber<T> implements FlowableSubscriber<T>, Disposable {
         boolean done;
         final SingleObserver<? super Boolean> downstream;

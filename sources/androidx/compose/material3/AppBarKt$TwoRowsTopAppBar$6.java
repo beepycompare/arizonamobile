@@ -127,27 +127,27 @@ public final class AppBarKt$TwoRowsTopAppBar$6 extends Lambda implements Functio
             } else {
                 composer.useNode();
             }
-            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer);
-            Updater.m3527setimpl(m3520constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer);
+            Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, -384862393, "C87@4365L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, 251887626, "C2044@93264L1012,2073@94812L45,2064@94289L1237:AppBar.kt#uh7d8r");
-            AppBarKt.m1577TopAppBarLayoutkXwM9vE(SizeKt.m773heightInVpY3zN4$default(ClipKt.clipToBounds(WindowInsetsPaddingKt.windowInsetsPadding(Modifier.Companion, windowInsets)), 0.0f, f, 1, null), new ScrolledOffset() { // from class: androidx.compose.material3.AppBarKt$TwoRowsTopAppBar$6$$ExternalSyntheticLambda0
+            AppBarKt.m1884TopAppBarLayoutkXwM9vE(SizeKt.m872heightInVpY3zN4$default(ClipKt.clipToBounds(WindowInsetsPaddingKt.windowInsetsPadding(Modifier.Companion, windowInsets)), 0.0f, f, 1, null), new ScrolledOffset() { // from class: androidx.compose.material3.AppBarKt$TwoRowsTopAppBar$6$$ExternalSyntheticLambda0
                 @Override // androidx.compose.material3.ScrolledOffset
                 public final float offset() {
                     float invoke$lambda$3$lambda$0;
                     invoke$lambda$3$lambda$0 = AppBarKt$TwoRowsTopAppBar$6.invoke$lambda$3$lambda$0();
                     return invoke$lambda$3$lambda$0;
                 }
-            }, topAppBarColors.m2657getNavigationIconContentColor0d7_KjU(), topAppBarColors.m2659getTitleContentColor0d7_KjU(), topAppBarColors.m2655getActionIconContentColor0d7_KjU(), function2, textStyle, f2, Arrangement.INSTANCE.getCenter(), Arrangement.INSTANCE.getStart(), 0, z, function22, function23, composer, 905969712, 3078);
-            Modifier m773heightInVpY3zN4$default = SizeKt.m773heightInVpY3zN4$default(ClipKt.clipToBounds(WindowInsetsPaddingKt.windowInsetsPadding(Modifier.Companion, WindowInsetsKt.m811onlybOOhFvg(windowInsets, WindowInsetsSides.Companion.m833getHorizontalJoeWqyM()))), 0.0f, Dp.m6684constructorimpl(f3 - f), 1, null);
+            }, topAppBarColors.m2964getNavigationIconContentColor0d7_KjU(), topAppBarColors.m2966getTitleContentColor0d7_KjU(), topAppBarColors.m2962getActionIconContentColor0d7_KjU(), function2, textStyle, f2, Arrangement.INSTANCE.getCenter(), Arrangement.INSTANCE.getStart(), 0, z, function22, function23, composer, 905969712, 3078);
+            Modifier m872heightInVpY3zN4$default = SizeKt.m872heightInVpY3zN4$default(ClipKt.clipToBounds(WindowInsetsPaddingKt.windowInsetsPadding(Modifier.Companion, WindowInsetsKt.m912onlybOOhFvg(windowInsets, WindowInsetsSides.Companion.m936getHorizontalJoeWqyM()))), 0.0f, Dp.m7251constructorimpl(f3 - f), 1, null);
             ComposerKt.sourceInformationMarkerStart(composer, 1947835376, "CC(remember):AppBar.kt#9igjgp");
             boolean changed = composer.changed(topAppBarScrollBehavior);
             Object rememberedValue = composer.rememberedValue();
@@ -163,7 +163,7 @@ public final class AppBarKt$TwoRowsTopAppBar$6 extends Lambda implements Functio
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            AppBarKt.m1577TopAppBarLayoutkXwM9vE(m773heightInVpY3zN4$default, rememberedValue, topAppBarColors.m2657getNavigationIconContentColor0d7_KjU(), topAppBarColors.m2659getTitleContentColor0d7_KjU(), topAppBarColors.m2655getActionIconContentColor0d7_KjU(), function24, textStyle2, f4, Arrangement.INSTANCE.getBottom(), Arrangement.INSTANCE.getStart(), intRef.element, z2, ComposableSingletons$AppBarKt.INSTANCE.m1751getLambda17$material3_release(), ComposableSingletons$AppBarKt.INSTANCE.m1752getLambda18$material3_release(), composer, 905969664, 3456);
+            AppBarKt.m1884TopAppBarLayoutkXwM9vE(m872heightInVpY3zN4$default, rememberedValue, topAppBarColors.m2964getNavigationIconContentColor0d7_KjU(), topAppBarColors.m2966getTitleContentColor0d7_KjU(), topAppBarColors.m2962getActionIconContentColor0d7_KjU(), function24, textStyle2, f4, Arrangement.INSTANCE.getBottom(), Arrangement.INSTANCE.getStart(), intRef.element, z2, ComposableSingletons$AppBarKt.INSTANCE.m2058getLambda17$material3_release(), ComposableSingletons$AppBarKt.INSTANCE.m2059getLambda18$material3_release(), composer, 905969664, 3456);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

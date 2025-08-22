@@ -63,7 +63,7 @@ public class TransitionInflater {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:82:0x017b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x017f, code lost:
         return r3;
      */
     /*
@@ -217,7 +217,7 @@ public class TransitionInflater {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0052, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0054, code lost:
         return r1;
      */
     /*

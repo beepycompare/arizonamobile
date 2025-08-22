@@ -4,7 +4,7 @@ import io.reactivex.Scheduler;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.disposables.Disposables;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ImmediateThinScheduler extends Scheduler {
     static final Disposable DISPOSED;
     public static final Scheduler INSTANCE = new ImmediateThinScheduler();
@@ -40,7 +40,7 @@ public final class ImmediateThinScheduler extends Scheduler {
         return WORKER;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ImmediateThinWorker extends Scheduler.Worker {
         @Override // io.reactivex.disposables.Disposable
         public void dispose() {

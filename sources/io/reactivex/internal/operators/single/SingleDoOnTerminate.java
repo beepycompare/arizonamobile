@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.CompositeException;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Action;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleDoOnTerminate<T> extends Single<T> {
     final Action onTerminate;
     final SingleSource<T> source;
@@ -22,7 +22,7 @@ public final class SingleDoOnTerminate<T> extends Single<T> {
         this.source.subscribe(new DoOnTerminate(singleObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class DoOnTerminate implements SingleObserver<T> {
         final SingleObserver<? super T> downstream;
 

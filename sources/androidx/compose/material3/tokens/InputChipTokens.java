@@ -17,20 +17,20 @@ public final class InputChipTokens {
     private static final float LeadingIconSize;
     private static final float TrailingIconSize;
     public static final InputChipTokens INSTANCE = new InputChipTokens();
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
-    private static final float ContainerHeight = Dp.m6684constructorimpl((float) 32.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7251constructorimpl((float) 32.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerSmall;
     private static final ColorSchemeKeyTokens DisabledLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens DisabledSelectedContainerColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens DisabledUnselectedOutlineColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float DraggedContainerElevation = ElevationTokens.INSTANCE.m2981getLevel4D9Ej5fM();
+    private static final float DraggedContainerElevation = ElevationTokens.INSTANCE.m3288getLevel4D9Ej5fM();
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens SelectedContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedDraggedLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedFocusLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedHoverLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final float SelectedOutlineWidth = Dp.m6684constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
+    private static final float SelectedOutlineWidth = Dp.m7251constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
     private static final ColorSchemeKeyTokens SelectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens UnselectedDraggedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedFocusLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -38,10 +38,10 @@ public final class InputChipTokens {
     private static final ColorSchemeKeyTokens UnselectedHoverLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedOutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float UnselectedOutlineWidth = Dp.m6684constructorimpl((float) 1.0d);
+    private static final float UnselectedOutlineWidth = Dp.m7251constructorimpl((float) 1.0d);
     private static final ColorSchemeKeyTokens UnselectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ShapeKeyTokens AvatarShape = ShapeKeyTokens.CornerFull;
-    private static final float AvatarSize = Dp.m6684constructorimpl((float) 24.0d);
+    private static final float AvatarSize = Dp.m7251constructorimpl((float) 24.0d);
     private static final ColorSchemeKeyTokens DisabledLeadingIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens SelectedDraggedLeadingIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedFocusLeadingIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
@@ -70,17 +70,17 @@ public final class InputChipTokens {
 
     static {
         float f = (float) 18.0d;
-        LeadingIconSize = Dp.m6684constructorimpl(f);
-        TrailingIconSize = Dp.m6684constructorimpl(f);
+        LeadingIconSize = Dp.m7251constructorimpl(f);
+        TrailingIconSize = Dp.m7251constructorimpl(f);
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3097getContainerElevationD9Ej5fM() {
+    public final float m3404getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3098getContainerHeightD9Ej5fM() {
+    public final float m3405getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -101,7 +101,7 @@ public final class InputChipTokens {
     }
 
     /* renamed from: getDraggedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3099getDraggedContainerElevationD9Ej5fM() {
+    public final float m3406getDraggedContainerElevationD9Ej5fM() {
         return DraggedContainerElevation;
     }
 
@@ -130,7 +130,7 @@ public final class InputChipTokens {
     }
 
     /* renamed from: getSelectedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3101getSelectedOutlineWidthD9Ej5fM() {
+    public final float m3408getSelectedOutlineWidthD9Ej5fM() {
         return SelectedOutlineWidth;
     }
 
@@ -163,7 +163,7 @@ public final class InputChipTokens {
     }
 
     /* renamed from: getUnselectedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3103getUnselectedOutlineWidthD9Ej5fM() {
+    public final float m3410getUnselectedOutlineWidthD9Ej5fM() {
         return UnselectedOutlineWidth;
     }
 
@@ -176,7 +176,7 @@ public final class InputChipTokens {
     }
 
     /* renamed from: getAvatarSize-D9Ej5fM  reason: not valid java name */
-    public final float m3096getAvatarSizeD9Ej5fM() {
+    public final float m3403getAvatarSizeD9Ej5fM() {
         return AvatarSize;
     }
 
@@ -185,7 +185,7 @@ public final class InputChipTokens {
     }
 
     /* renamed from: getLeadingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3100getLeadingIconSizeD9Ej5fM() {
+    public final float m3407getLeadingIconSizeD9Ej5fM() {
         return LeadingIconSize;
     }
 
@@ -254,7 +254,7 @@ public final class InputChipTokens {
     }
 
     /* renamed from: getTrailingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3102getTrailingIconSizeD9Ej5fM() {
+    public final float m3409getTrailingIconSizeD9Ej5fM() {
         return TrailingIconSize;
     }
 

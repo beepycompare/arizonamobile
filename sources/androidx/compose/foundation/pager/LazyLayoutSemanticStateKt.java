@@ -9,7 +9,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 /* compiled from: LazyLayoutSemanticState.kt */
-@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0000¨\u0006\u0006"}, d2 = {"LazyLayoutSemanticState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/pager/PagerState;", "isVertical", "", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0000¨\u0006\u0006"}, d2 = {"LazyLayoutSemanticState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/pager/PagerState;", "isVertical", "", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyLayoutSemanticStateKt {
     public static final LazyLayoutSemanticState LazyLayoutSemanticState(final PagerState pagerState, final boolean z) {
@@ -40,13 +40,13 @@ public final class LazyLayoutSemanticStateKt {
 
             @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState
             public int getViewport() {
-                long mo987getViewportSizeYbymL2g;
+                long mo1140getViewportSizeYbymL2g;
                 if (PagerState.this.getLayoutInfo().getOrientation() == Orientation.Vertical) {
-                    mo987getViewportSizeYbymL2g = PagerState.this.getLayoutInfo().mo987getViewportSizeYbymL2g() & 4294967295L;
+                    mo1140getViewportSizeYbymL2g = PagerState.this.getLayoutInfo().mo1140getViewportSizeYbymL2g() & 4294967295L;
                 } else {
-                    mo987getViewportSizeYbymL2g = PagerState.this.getLayoutInfo().mo987getViewportSizeYbymL2g() >> 32;
+                    mo1140getViewportSizeYbymL2g = PagerState.this.getLayoutInfo().mo1140getViewportSizeYbymL2g() >> 32;
                 }
-                return (int) mo987getViewportSizeYbymL2g;
+                return (int) mo1140getViewportSizeYbymL2g;
             }
 
             @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState

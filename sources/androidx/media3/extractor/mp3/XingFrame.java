@@ -4,7 +4,7 @@ import androidx.media3.common.C;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.MpegAudioUtil;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class XingFrame {
     public final long dataSize;
     public final int encoderDelay;

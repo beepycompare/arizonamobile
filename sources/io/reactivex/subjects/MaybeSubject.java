@@ -9,7 +9,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeSubject<T> extends Maybe<T> implements MaybeObserver<T> {
     static final MaybeDisposable[] EMPTY = new MaybeDisposable[0];
     static final MaybeDisposable[] TERMINATED = new MaybeDisposable[0];
@@ -175,7 +175,7 @@ public final class MaybeSubject<T> extends Maybe<T> implements MaybeObserver<T> 
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class MaybeDisposable<T> extends AtomicReference<MaybeSubject<T>> implements Disposable {
         private static final long serialVersionUID = -7650903191002190468L;
         final MaybeObserver<? super T> downstream;

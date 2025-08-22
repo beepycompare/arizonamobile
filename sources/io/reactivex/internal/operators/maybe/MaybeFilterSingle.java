@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Predicate;
 import io.reactivex.internal.disposables.DisposableHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeFilterSingle<T> extends Maybe<T> {
     final Predicate<? super T> predicate;
     final SingleSource<T> source;
@@ -23,7 +23,7 @@ public final class MaybeFilterSingle<T> extends Maybe<T> {
         this.source.subscribe(new FilterMaybeObserver(maybeObserver, this.predicate));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FilterMaybeObserver<T> implements SingleObserver<T>, Disposable {
         final MaybeObserver<? super T> downstream;
         final Predicate<? super T> predicate;

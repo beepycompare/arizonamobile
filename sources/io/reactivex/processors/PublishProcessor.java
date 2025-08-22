@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class PublishProcessor<T> extends FlowableProcessor<T> {
     Throwable error;
     final AtomicReference<PublishSubscription<T>[]> subscribers = new AtomicReference<>(EMPTY);
@@ -180,7 +180,7 @@ public final class PublishProcessor<T> extends FlowableProcessor<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class PublishSubscription<T> extends AtomicLong implements Subscription {
         private static final long serialVersionUID = 3562861878281475070L;
         final Subscriber<? super T> downstream;

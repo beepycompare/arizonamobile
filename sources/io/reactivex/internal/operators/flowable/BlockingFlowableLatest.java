@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BlockingFlowableLatest<T> implements Iterable<T> {
     final Publisher<? extends T> source;
 
@@ -27,7 +27,7 @@ public final class BlockingFlowableLatest<T> implements Iterable<T> {
         return latestSubscriberIterator;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class LatestSubscriberIterator<T> extends DisposableSubscriber<Notification<T>> implements Iterator<T> {
         Notification<T> iteratorNotification;
         final Semaphore notify = new Semaphore(0);

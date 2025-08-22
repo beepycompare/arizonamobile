@@ -1,20 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import io.appmetrica.analytics.ecommerce.ECommerceEvent;
 /* loaded from: classes4.dex */
-public final class Pj implements InterfaceC0407lb {
+public final class Pj implements InterfaceC0454nb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f599a;
-    public final /* synthetic */ String b;
+    public final /* synthetic */ ECommerceEvent f608a;
 
-    public Pj(PluginErrorDetails pluginErrorDetails, String str) {
-        this.f599a = pluginErrorDetails;
-        this.b = str;
+    public Pj(ECommerceEvent eCommerceEvent) {
+        this.f608a = eCommerceEvent;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0407lb
-    public final void a(InterfaceC0432mb interfaceC0432mb) {
-        interfaceC0432mb.getPluginExtension().reportError(this.f599a, this.b);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0454nb
+    public final void a(InterfaceC0479ob interfaceC0479ob) {
+        interfaceC0479ob.reportECommerce(this.f608a);
     }
 }

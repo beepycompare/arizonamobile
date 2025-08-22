@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import androidx.media3.exoplayer.ExoPlayer;
 import ru.mrlargha.commonui.R;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class PausableProgressBar extends FrameLayout {
     private static final int DEFAULT_PROGRESS_DURATION = 2000;
     private PausableScaleAnimation animation;
@@ -22,7 +22,7 @@ public final class PausableProgressBar extends FrameLayout {
     private View maxProgressView;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface Callback {
         void onFinishProgress();
 
@@ -156,7 +156,7 @@ public final class PausableProgressBar extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public class PausableScaleAnimation extends ScaleAnimation {
         private long mElapsedAtPause;
         private boolean mPaused;

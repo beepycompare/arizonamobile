@@ -11,7 +11,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.observers.ResumeSingleObserver;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleResumeNext<T> extends Single<T> {
     final Function<? super Throwable, ? extends SingleSource<? extends T>> nextFunction;
     final SingleSource<? extends T> source;
@@ -26,7 +26,7 @@ public final class SingleResumeNext<T> extends Single<T> {
         this.source.subscribe(new ResumeMainSingleObserver(singleObserver, this.nextFunction));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ResumeMainSingleObserver<T> extends AtomicReference<Disposable> implements SingleObserver<T>, Disposable {
         private static final long serialVersionUID = -5314538511045349925L;
         final SingleObserver<? super T> downstream;

@@ -19,7 +19,7 @@ import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.flow.MutableSharedFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LegacyPlatformTextInputServiceAdapter.android.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0001\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/platform/PlatformTextInputSession;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0001\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/platform/PlatformTextInputSession;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.AndroidLegacyPlatformTextInputServiceAdapter$startInput$2", f = "LegacyPlatformTextInputServiceAdapter.android.kt", i = {}, l = {125}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class AndroidLegacyPlatformTextInputServiceAdapter$startInput$2 extends SuspendLambda implements Function2<PlatformTextInputSession, Continuation<?>, Object> {
@@ -53,7 +53,7 @@ public final class AndroidLegacyPlatformTextInputServiceAdapter$startInput$2 ext
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: LegacyPlatformTextInputServiceAdapter.android.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0001\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0001\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
     @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.AndroidLegacyPlatformTextInputServiceAdapter$startInput$2$1", f = "LegacyPlatformTextInputServiceAdapter.android.kt", i = {}, l = {149}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.foundation.text.input.internal.AndroidLegacyPlatformTextInputServiceAdapter$startInput$2$1  reason: invalid class name */
     /* loaded from: classes.dex */
@@ -98,7 +98,7 @@ public final class AndroidLegacyPlatformTextInputServiceAdapter$startInput$2 ext
                     InputMethodManager invoke = LegacyPlatformTextInputServiceAdapter_androidKt.getInputMethodManagerFactory().invoke(this.$$this$launchTextInputSession.getView());
                     LegacyTextInputMethodRequest legacyTextInputMethodRequest = new LegacyTextInputMethodRequest(this.$$this$launchTextInputSession.getView(), new AndroidLegacyPlatformTextInputServiceAdapter$startInput$2$1$request$1(this.$node), invoke);
                     if (StylusHandwriting_androidKt.isStylusHandwritingSupported()) {
-                        BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new C00221(this.this$0, invoke, null), 3, null);
+                        BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new C00161(this.this$0, invoke, null), 3, null);
                     }
                     Function1<LegacyTextInputMethodRequest, Unit> function1 = this.$initializeRequest;
                     if (function1 != null) {
@@ -123,17 +123,17 @@ public final class AndroidLegacyPlatformTextInputServiceAdapter$startInput$2 ext
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: LegacyPlatformTextInputServiceAdapter.android.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
         @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.AndroidLegacyPlatformTextInputServiceAdapter$startInput$2$1$1", f = "LegacyPlatformTextInputServiceAdapter.android.kt", i = {}, l = {140, 141}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: androidx.compose.foundation.text.input.internal.AndroidLegacyPlatformTextInputServiceAdapter$startInput$2$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C00221 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+        public static final class C00161 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ InputMethodManager $inputMethodManager;
             int label;
             final /* synthetic */ AndroidLegacyPlatformTextInputServiceAdapter this$0;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C00221(AndroidLegacyPlatformTextInputServiceAdapter androidLegacyPlatformTextInputServiceAdapter, InputMethodManager inputMethodManager, Continuation<? super C00221> continuation) {
+            C00161(AndroidLegacyPlatformTextInputServiceAdapter androidLegacyPlatformTextInputServiceAdapter, InputMethodManager inputMethodManager, Continuation<? super C00161> continuation) {
                 super(2, continuation);
                 this.this$0 = androidLegacyPlatformTextInputServiceAdapter;
                 this.$inputMethodManager = inputMethodManager;
@@ -141,21 +141,21 @@ public final class AndroidLegacyPlatformTextInputServiceAdapter$startInput$2 ext
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                return new C00221(this.this$0, this.$inputMethodManager, continuation);
+                return new C00161(this.this$0, this.$inputMethodManager, continuation);
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                return ((C00221) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C00161) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:11:0x002e, code lost:
-                if (androidx.compose.runtime.MonotonicFrameClockKt.withFrameMillis(androidx.compose.foundation.text.input.internal.AndroidLegacyPlatformTextInputServiceAdapter$startInput$2.AnonymousClass1.C00221.C00231.INSTANCE, r4) == r0) goto L16;
+            /* JADX WARN: Code restructure failed: missing block: B:11:0x002f, code lost:
+                if (androidx.compose.runtime.MonotonicFrameClockKt.withFrameMillis(new androidx.compose.foundation.text.input.internal.AndroidLegacyPlatformTextInputServiceAdapter$startInput$2$1$1$$ExternalSyntheticLambda0(), r4) == r0) goto L16;
              */
-            /* JADX WARN: Code restructure failed: missing block: B:16:0x004b, code lost:
-                if (r5.collect(new androidx.compose.foundation.text.input.internal.AndroidLegacyPlatformTextInputServiceAdapter$startInput$2.AnonymousClass1.C00221.AnonymousClass2(), r4) == r0) goto L16;
+            /* JADX WARN: Code restructure failed: missing block: B:16:0x004c, code lost:
+                if (r5.collect(new androidx.compose.foundation.text.input.internal.AndroidLegacyPlatformTextInputServiceAdapter$startInput$2.AnonymousClass1.C00161.AnonymousClass2(), r4) == r0) goto L16;
              */
-            /* JADX WARN: Code restructure failed: missing block: B:17:0x004d, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:17:0x004e, code lost:
                 return r0;
              */
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -184,6 +184,11 @@ public final class AndroidLegacyPlatformTextInputServiceAdapter$startInput$2 ext
                 }
                 final InputMethodManager inputMethodManager = this.$inputMethodManager;
                 this.label = 2;
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static final Unit invokeSuspend$lambda$0(long j) {
+                return Unit.INSTANCE;
             }
         }
     }

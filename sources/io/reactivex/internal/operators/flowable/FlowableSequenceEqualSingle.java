@@ -14,7 +14,7 @@ import io.reactivex.internal.util.AtomicThrowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.reactivestreams.Publisher;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSequenceEqualSingle<T> extends Single<Boolean> implements FuseToFlowable<Boolean> {
     final BiPredicate<? super T, ? super T> comparer;
     final Publisher<? extends T> first;
@@ -40,7 +40,7 @@ public final class FlowableSequenceEqualSingle<T> extends Single<Boolean> implem
         return RxJavaPlugins.onAssembly(new FlowableSequenceEqual(this.first, this.second, this.comparer, this.prefetch));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class EqualCoordinator<T> extends AtomicInteger implements Disposable, FlowableSequenceEqual.EqualCoordinatorHelper {
         private static final long serialVersionUID = -6178010334400373240L;
         final BiPredicate<? super T, ? super T> comparer;

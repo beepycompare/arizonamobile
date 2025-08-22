@@ -27,12 +27,12 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: TextFieldState.kt */
-@Metadata(d1 = {"\u0000>\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\u001aD\u0010\u0000\u001a\u0012\u0012\u000e\u0012\f\u0012\u0004\u0012\u00020\u00030\u0002j\u0002`\u00040\u00012\b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\u0018\u0010\u0007\u001a\u0014\u0012\u000e\u0012\f\u0012\u0004\u0012\u00020\u00030\u0002j\u0002`\u0004\u0018\u00010\bH\u0002ø\u0001\u0000¢\u0006\u0002\b\t\u001a&\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u0006H\u0007ø\u0001\u0000¢\u0006\u0004\b\u000f\u0010\u0010\u001a\n\u0010\u0011\u001a\u00020\u0012*\u00020\u000b\u001a\u0012\u0010\u0013\u001a\u00020\u0012*\u00020\u000b2\u0006\u0010\u0014\u001a\u00020\r\u001a\u0012\u0010\u0015\u001a\u00020\u0012*\u00020\u000b2\u0006\u0010\u0014\u001a\u00020\r\u001a\n\u0010\u0016\u001a\u00020\u0017*\u00020\u000b\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u0018"}, d2 = {"finalizeComposingAnnotations", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "Landroidx/compose/foundation/text/input/PlacedAnnotation;", "composition", "Landroidx/compose/ui/text/TextRange;", "annotationList", "Landroidx/compose/runtime/collection/MutableVector;", "finalizeComposingAnnotations-itr0ztk", "rememberTextFieldState", "Landroidx/compose/foundation/text/input/TextFieldState;", "initialText", "", "initialSelection", "rememberTextFieldState-Le-punE", "(Ljava/lang/String;JLandroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/text/input/TextFieldState;", "clearText", "", "setTextAndPlaceCursorAtEnd", "text", "setTextAndSelectAll", "toTextFieldBuffer", "Landroidx/compose/foundation/text/input/TextFieldBuffer;", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u001a#\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0004\b\u0006\u0010\u0007\u001a\u0012\u0010\b\u001a\u00020\t*\u00020\u00012\u0006\u0010\n\u001a\u00020\u0003\u001a\u0012\u0010\u000b\u001a\u00020\t*\u00020\u00012\u0006\u0010\n\u001a\u00020\u0003\u001a\n\u0010\f\u001a\u00020\t*\u00020\u0001\u001aA\u0010\r\u001a\u0012\u0012\u000e\u0012\f\u0012\u0004\u0012\u00020\u00100\u000fj\u0002`\u00110\u000e2\b\u0010\u0012\u001a\u0004\u0018\u00010\u00052\u0018\u0010\u0013\u001a\u0014\u0012\u000e\u0012\f\u0012\u0004\u0012\u00020\u00100\u000fj\u0002`\u0011\u0018\u00010\u0014H\u0002¢\u0006\u0002\b\u0015\u001a\n\u0010\u0016\u001a\u00020\u0017*\u00020\u0001¨\u0006\u0018"}, d2 = {"rememberTextFieldState", "Landroidx/compose/foundation/text/input/TextFieldState;", "initialText", "", "initialSelection", "Landroidx/compose/ui/text/TextRange;", "rememberTextFieldState-Le-punE", "(Ljava/lang/String;JLandroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/text/input/TextFieldState;", "setTextAndPlaceCursorAtEnd", "", "text", "setTextAndSelectAll", "clearText", "finalizeComposingAnnotations", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "Landroidx/compose/foundation/text/input/PlacedAnnotation;", "composition", "annotationList", "Landroidx/compose/runtime/collection/MutableVector;", "finalizeComposingAnnotations-itr0ztk", "toTextFieldBuffer", "Landroidx/compose/foundation/text/input/TextFieldBuffer;", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextFieldStateKt {
     /* renamed from: rememberTextFieldState-Le-punE */
-    public static final TextFieldState m1208rememberTextFieldStateLepunE(final String str, final long j, Composer composer, int i, int i2) {
-        ComposerKt.sourceInformationMarkerStart(composer, 1125389485, "C(rememberTextFieldState)P(1,0:c#ui.text.TextRange)644@28644L49,644@28597L96:TextFieldState.kt#hp9ohv");
+    public static final TextFieldState m1442rememberTextFieldStateLepunE(final String str, final long j, Composer composer, int i, int i2) {
+        ComposerKt.sourceInformationMarkerStart(composer, 1125389485, "C(rememberTextFieldState)N(initialText,initialSelection:c#ui.text.TextRange)660@29526L49,660@29479L96:TextFieldState.kt#hp9ohv");
         if ((i2 & 1) != 0) {
             str = "";
         }
@@ -40,31 +40,26 @@ public final class TextFieldStateKt {
             j = TextRangeKt.TextRange(str.length());
         }
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(1125389485, i, -1, "androidx.compose.foundation.text.input.rememberTextFieldState (TextFieldState.kt:644)");
+            ComposerKt.traceEventStart(1125389485, i, -1, "androidx.compose.foundation.text.input.rememberTextFieldState (TextFieldState.kt:660)");
         }
         Object[] objArr = new Object[0];
         TextFieldState.Saver saver = TextFieldState.Saver.INSTANCE;
-        ComposerKt.sourceInformationMarkerStart(composer, 975867757, "CC(remember):TextFieldState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -832456866, "CC(remember):TextFieldState.kt#9igjgp");
         boolean z = ((((i & 14) ^ 6) > 4 && composer.changed(str)) || (i & 6) == 4) | ((((i & 112) ^ 48) > 32 && composer.changed(j)) || (i & 48) == 32);
         Object rememberedValue = composer.rememberedValue();
         if (z || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = (Function0) new Function0<TextFieldState>() { // from class: androidx.compose.foundation.text.input.TextFieldStateKt$rememberTextFieldState$1$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(0);
-                }
-
-                /* JADX WARN: Can't rename method to resolve collision */
+            rememberedValue = new Function0() { // from class: androidx.compose.foundation.text.input.TextFieldStateKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
-                public final TextFieldState invoke() {
-                    return new TextFieldState(str, j, (DefaultConstructorMarker) null);
+                public final Object invoke() {
+                    TextFieldState rememberTextFieldState_Le_punE$lambda$1$lambda$0;
+                    rememberTextFieldState_Le_punE$lambda$1$lambda$0 = TextFieldStateKt.rememberTextFieldState_Le_punE$lambda$1$lambda$0(str, j);
+                    return rememberTextFieldState_Le_punE$lambda$1$lambda$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TextFieldState textFieldState = (TextFieldState) RememberSaveableKt.m3635rememberSaveable(objArr, (Saver<Object, ? extends Object>) saver, (String) null, (Function0<? extends Object>) rememberedValue, composer, 48, 4);
+        TextFieldState textFieldState = (TextFieldState) RememberSaveableKt.m3983rememberSaveable(objArr, (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) rememberedValue, composer, 48);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -72,8 +67,14 @@ public final class TextFieldStateKt {
         return textFieldState;
     }
 
+    public static final TextFieldState rememberTextFieldState_Le_punE$lambda$1$lambda$0(String str, long j) {
+        return new TextFieldState(str, j, (DefaultConstructorMarker) null);
+    }
+
     public static final TextFieldBuffer toTextFieldBuffer(TextFieldState textFieldState) {
-        return new TextFieldBuffer(textFieldState.getValue$foundation_release(), null, null, null, 14, null);
+        TextFieldBuffer textFieldBuffer = new TextFieldBuffer(textFieldState.getValue$foundation_release(), null, null, null, 14, null);
+        textFieldBuffer.setCanCallAddStyle$foundation_release(true);
+        return textFieldBuffer;
     }
 
     public static final void setTextAndPlaceCursorAtEnd(TextFieldState textFieldState, String str) {
@@ -110,12 +111,12 @@ public final class TextFieldStateKt {
     }
 
     /* renamed from: finalizeComposingAnnotations-itr0ztk */
-    public static final List<AnnotatedString.Range<AnnotatedString.Annotation>> m1207finalizeComposingAnnotationsitr0ztk(TextRange textRange, MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector) {
+    public static final List<AnnotatedString.Range<AnnotatedString.Annotation>> m1441finalizeComposingAnnotationsitr0ztk(TextRange textRange, MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector) {
         if (mutableVector != null && mutableVector.getSize() != 0) {
             return CollectionsKt.toList(mutableVector.asMutableList());
         }
-        if (textRange != null && !TextRange.m6141getCollapsedimpl(textRange.m6151unboximpl())) {
-            return CollectionsKt.listOf(new AnnotatedString.Range(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, TextDecoration.Companion.getUnderline(), (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 61439, (DefaultConstructorMarker) null), TextRange.m6145getMinimpl(textRange.m6151unboximpl()), TextRange.m6144getMaximpl(textRange.m6151unboximpl())));
+        if (textRange != null && !TextRange.m6707getCollapsedimpl(textRange.m6717unboximpl())) {
+            return CollectionsKt.listOf(new AnnotatedString.Range(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, TextDecoration.Companion.getUnderline(), (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 61439, (DefaultConstructorMarker) null), TextRange.m6711getMinimpl(textRange.m6717unboximpl()), TextRange.m6710getMaximpl(textRange.m6717unboximpl())));
         }
         return CollectionsKt.emptyList();
     }

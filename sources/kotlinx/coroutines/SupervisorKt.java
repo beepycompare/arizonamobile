@@ -24,16 +24,16 @@ public final class SupervisorKt {
     }
 
     /* renamed from: SupervisorJob$default */
-    public static /* synthetic */ Job m10008SupervisorJob$default(Job job, int i, Object obj) {
+    public static /* synthetic */ Job m10572SupervisorJob$default(Job job, int i, Object obj) {
         if ((i & 1) != 0) {
             job = null;
         }
-        return m10007SupervisorJob(job);
+        return m10571SupervisorJob(job);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Since 1.2.0, binary compatibility with versions <= 1.1.x")
     /* renamed from: SupervisorJob */
-    public static final /* synthetic */ Job m10007SupervisorJob(Job job) {
+    public static final /* synthetic */ Job m10571SupervisorJob(Job job) {
         return SupervisorJob(job);
     }
 

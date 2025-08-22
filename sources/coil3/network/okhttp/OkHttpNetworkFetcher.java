@@ -128,6 +128,6 @@ public final class OkHttpNetworkFetcher {
     }
 
     public static final NetworkClient asNetworkClient(Call.Factory factory) {
-        return CallFactoryNetworkClient.m7813boximpl(CallFactoryNetworkClient.m7814constructorimpl(factory));
+        return CallFactoryNetworkClient.m8379boximpl(CallFactoryNetworkClient.m8380constructorimpl(factory));
     }
 }

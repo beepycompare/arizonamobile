@@ -1,11 +1,5 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateSerializer;
-import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
 /* loaded from: classes4.dex */
-public final class T8 extends U8 implements ProtobufStateSerializer {
-    public T8(ProtobufStateSerializer<MessageNano> protobufStateSerializer, AESEncrypter aESEncrypter) {
-        super(protobufStateSerializer, aESEncrypter);
-    }
+public interface T8 {
+    int a(EnumC0196d9 enumC0196d9);
 }

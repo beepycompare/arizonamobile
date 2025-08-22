@@ -10,7 +10,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableResumeNext extends Completable {
     final Function<? super Throwable, ? extends CompletableSource> errorMapper;
     final CompletableSource source;
@@ -27,7 +27,7 @@ public final class CompletableResumeNext extends Completable {
         this.source.subscribe(resumeNextObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ResumeNextObserver extends AtomicReference<Disposable> implements CompletableObserver, Disposable {
         private static final long serialVersionUID = 5018523762564524046L;
         final CompletableObserver downstream;

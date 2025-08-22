@@ -7,7 +7,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleDefer<T> extends Single<T> {
     final Callable<? extends SingleSource<? extends T>> singleSupplier;
 

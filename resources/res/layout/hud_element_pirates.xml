@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/pirates" android:layout_width="wrap_content" android:layout_height="@dimen/_52sdp">
+    <ImageView android:layout_width="@dimen/_156sdp" android:layout_height="@dimen/_52sdp" android:src="@drawable/hud_element_pirates_bg" android:scaleType="fitEnd"/>
+    <ImageView android:layout_width="@dimen/_52sdp" android:layout_height="@dimen/_52sdp" android:src="@drawable/hud_element_pirates_image" android:scaleType="fitEnd"/>
+    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_54sdp" android:layout_marginBottom="@dimen/_4sdp">
+        <TextView android:textSize="@dimen/_7sdp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Кракен" android:textAllCaps="true" android:fontFamily="@font/heading_now_65"/>
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="@dimen/_94sdp" android:layout_height="@dimen/_5sdp">
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="#4db21e2d" app:corners="@dimen/_1sdp"/>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/progress_bar" android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="#b21e2d" app:backgroundSecondColor="#e84c59" app:corners="@dimen/_1sdp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView android:textSize="@dimen/_5sdp" android:textColor="#ffffff" android:id="@+id/progressText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="200 / 4000" android:textAllCaps="true" android:fontFamily="@font/heading_now_64_regular"/>
+    </LinearLayout>
+</FrameLayout>

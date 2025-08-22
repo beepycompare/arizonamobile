@@ -1,35 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import kotlin.NoWhenBranchMatchedException;
-import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
-public abstract class Be {
+public final class Be implements InterfaceC0378kb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f357a = -1;
-    public final int b = 0;
-    public final int c = 1;
+    public final InterfaceC0352jb f363a;
 
-    public final int a(Boolean bool) {
-        if (bool == null) {
-            return this.f357a;
-        }
-        if (Intrinsics.areEqual(bool, Boolean.FALSE)) {
-            return this.b;
-        }
-        if (Intrinsics.areEqual(bool, Boolean.TRUE)) {
-            return this.c;
-        }
-        throw new NoWhenBranchMatchedException();
+    public Be(InterfaceC0352jb interfaceC0352jb) {
+        this.f363a = interfaceC0352jb;
     }
 
-    public final Boolean a(int i) {
-        if (i == this.b) {
-            return Boolean.FALSE;
-        }
-        if (i == this.c) {
-            return Boolean.TRUE;
-        }
-        return null;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0378kb
+    public final boolean a(Fg fg) {
+        return (fg == null || ((Mc) this.f363a).C()) ? false : true;
     }
 }

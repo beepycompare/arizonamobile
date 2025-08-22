@@ -6,7 +6,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.QueueDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class BasicFuseableObserver<T, R> implements Observer<T>, QueueDisposable<R> {
     protected boolean done;
     protected final Observer<? super R> downstream;

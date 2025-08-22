@@ -18,7 +18,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TapGestureDetector.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$waitForLongPress$2", f = "TapGestureDetector.kt", i = {0, 1}, l = {386, 409}, m = "invokeSuspend", n = {"$this$withTimeout", "$this$withTimeout"}, s = {"L$0", "L$0"})
 /* loaded from: classes.dex */
 public final class TapGestureDetectorKt$waitForLongPress$2 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
@@ -68,7 +68,7 @@ public final class TapGestureDetectorKt$waitForLongPress$2 extends RestrictedSus
         if (r7.isConsumed() != false) goto L39;
      */
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0093, code lost:
-        if (androidx.compose.ui.input.pointer.PointerEventKt.m5258isOutOfBoundsjwHxaWs(r7, r1.mo5222getSizeYbymL2g(), r1.mo5221getExtendedTouchPaddingNHjbRc()) == false) goto L36;
+        if (androidx.compose.ui.input.pointer.PointerEventKt.m5771isOutOfBoundsjwHxaWs(r7, r1.mo5735getSizeYbymL2g(), r1.mo5734getExtendedTouchPaddingNHjbRc()) == false) goto L36;
      */
     /* JADX WARN: Code restructure failed: missing block: B:29:0x0096, code lost:
         r6 = r6 + 1;

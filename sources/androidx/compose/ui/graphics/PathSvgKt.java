@@ -4,14 +4,15 @@ import androidx.compose.ui.geometry.Rect;
 import androidx.compose.ui.graphics.PathSegment;
 import androidx.compose.ui.graphics.vector.PathParser;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PathSvg.kt */
-@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0003H\u0002\u001a\u0012\u0010\u0005\u001a\u00020\u0006*\u00020\u00072\u0006\u0010\b\u001a\u00020\u0001\u001a\u0014\u0010\t\u001a\u00020\u0001*\u00020\u00072\b\b\u0002\u0010\n\u001a\u00020\u000b¨\u0006\f"}, d2 = {"command", "", "type", "Landroidx/compose/ui/graphics/PathSegment$Type;", "lastType", "addSvg", "", "Landroidx/compose/ui/graphics/Path;", "pathData", "toSvg", "asDocument", "", "ui-graphics_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0012\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004\u001a\u0014\u0010\u0005\u001a\u00020\u0004*\u00020\u00022\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u001a\u0018\u0010\b\u001a\u00020\u00042\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\nH\u0002¨\u0006\f"}, d2 = {"addSvg", "", "Landroidx/compose/ui/graphics/Path;", "pathData", "", "toSvg", "asDocument", "", "command", "type", "Landroidx/compose/ui/graphics/PathSegment$Type;", "lastType", "ui-graphics_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PathSvgKt {
 
     /* compiled from: PathSvg.kt */
-    @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -68,7 +69,7 @@ public final class PathSvgKt {
         PathSegment.Type type = PathSegment.Type.Done;
         if (it.hasNext()) {
             if (z) {
-                if (PathFillType.m4357equalsimpl0(path.mo3969getFillTypeRgk1Os(), PathFillType.Companion.m4361getEvenOddRgk1Os())) {
+                if (PathFillType.m4827equalsimpl0(path.mo4426getFillTypeRgk1Os(), PathFillType.Companion.m4831getEvenOddRgk1Os())) {
                     sb.append("  <path fill-rule=\"evenodd\" d=\"");
                 } else {
                     sb.append("  <path d=\"");
@@ -87,6 +88,8 @@ public final class PathSvgKt {
                         sb.append(command(PathSegment.Type.Quadratic, type));
                         sb.append(new StringBuilder().append(fArr[2]).append(' ').append(fArr[3]).append(' ').append(fArr[4]).append(' ').append(fArr[5]).toString());
                         break;
+                    case 4:
+                    case 7:
                     case 5:
                         sb.append(command(PathSegment.Type.Cubic, type));
                         sb.append(new StringBuilder().append(fArr[2]).append(' ').append(fArr[3]).append(' ').toString());
@@ -96,6 +99,8 @@ public final class PathSvgKt {
                     case 6:
                         sb.append(command(PathSegment.Type.Close, type));
                         break;
+                    default:
+                        throw new NoWhenBranchMatchedException();
                 }
                 type = next$default;
             }

@@ -3,7 +3,7 @@ package androidx.media3.extractor;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.extractor.TrackOutput;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class TrueHdSampleRechunker {
     private int chunkFlags;
     private int chunkOffset;

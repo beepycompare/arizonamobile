@@ -8,7 +8,7 @@ import io.reactivex.internal.util.AtomicThrowable;
 import io.reactivex.internal.util.HalfSerializer;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableTakeUntil<T, U> extends AbstractObservableWithUpstream<T, T> {
     final ObservableSource<? extends U> other;
 
@@ -25,7 +25,7 @@ public final class ObservableTakeUntil<T, U> extends AbstractObservableWithUpstr
         this.source.subscribe(takeUntilMainObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TakeUntilMainObserver<T, U> extends AtomicInteger implements Observer<T>, Disposable {
         private static final long serialVersionUID = 1418547743690811973L;
         final Observer<? super T> downstream;
@@ -80,7 +80,7 @@ public final class ObservableTakeUntil<T, U> extends AbstractObservableWithUpstr
             HalfSerializer.onComplete(this.downstream, this, this.error);
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class OtherObserver extends AtomicReference<Disposable> implements Observer<U> {
             private static final long serialVersionUID = -8693423678067375039L;
 

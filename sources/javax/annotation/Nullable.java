@@ -7,6 +7,6 @@ import javax.annotation.meta.When;
 @Nonnull(when = When.UNKNOWN)
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public @interface Nullable {
 }

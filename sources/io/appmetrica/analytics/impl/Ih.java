@@ -1,25 +1,27 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.HashMap;
 /* loaded from: classes4.dex */
-public final class Ih {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final C0402l6 f491a;
-    public final boolean b;
-    public final int c;
-    public final HashMap d;
-    public final Sh e;
-
-    public Ih(C0402l6 c0402l6, boolean z, int i, HashMap hashMap, Sh sh) {
-        this.f491a = c0402l6;
-        this.b = z;
-        this.c = i;
-        this.d = hashMap;
-        this.e = sh;
+public final class Ih extends AbstractC0358jh {
+    public Ih(C0572s5 c0572s5) {
+        super(c0572s5);
     }
 
-    public final String toString() {
-        return "ReportToSend(report=" + this.f491a + ", serviceDataReporterType=" + this.c + ", environment=" + this.e + ", isCrashReport=" + this.b + ", trimmedFields=" + this.d + ')';
+    @Override // io.appmetrica.analytics.impl.AbstractC0358jh
+    public final boolean a(C0399l6 c0399l6) {
+        ((F5) this.f925a.p).e();
+        Xk xk = this.f925a.j;
+        synchronized (xk) {
+            Jk b = xk.b(c0399l6);
+            if (b.g) {
+                b.g = false;
+                C0130al c0130al = b.b;
+                c0130al.a(C0130al.i, Boolean.FALSE);
+                c0130al.b();
+            }
+            if (xk.g != 1) {
+                xk.b(xk.f, c0399l6);
+            }
+            xk.g = 1;
+        }
+        return true;
     }
 }

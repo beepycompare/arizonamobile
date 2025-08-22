@@ -11,7 +11,7 @@ import io.reactivex.internal.schedulers.TrampolineScheduler;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Schedulers {
     static final Scheduler SINGLE = RxJavaPlugins.initSingleScheduler(new SingleTask());
     static final Scheduler COMPUTATION = RxJavaPlugins.initComputationScheduler(new ComputationTask());
@@ -20,7 +20,7 @@ public final class Schedulers {
     static final Scheduler NEW_THREAD = RxJavaPlugins.initNewThreadScheduler(new NewThreadTask());
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class SingleHolder {
         static final Scheduler DEFAULT = new SingleScheduler();
 
@@ -29,7 +29,7 @@ public final class Schedulers {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ComputationHolder {
         static final Scheduler DEFAULT = new ComputationScheduler();
 
@@ -38,7 +38,7 @@ public final class Schedulers {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class IoHolder {
         static final Scheduler DEFAULT = new IoScheduler();
 
@@ -47,7 +47,7 @@ public final class Schedulers {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class NewThreadHolder {
         static final Scheduler DEFAULT = new NewThreadScheduler();
 
@@ -105,7 +105,7 @@ public final class Schedulers {
         SchedulerPoolFactory.start();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class IOTask implements Callable<Scheduler> {
         IOTask() {
         }
@@ -117,7 +117,7 @@ public final class Schedulers {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class NewThreadTask implements Callable<Scheduler> {
         NewThreadTask() {
         }
@@ -129,7 +129,7 @@ public final class Schedulers {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SingleTask implements Callable<Scheduler> {
         SingleTask() {
         }
@@ -141,7 +141,7 @@ public final class Schedulers {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ComputationTask implements Callable<Scheduler> {
         ComputationTask() {
         }

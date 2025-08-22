@@ -7,7 +7,7 @@ import io.reactivex.exceptions.CompositeException;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.BiConsumer;
 import io.reactivex.internal.disposables.DisposableHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeDoOnEvent<T> extends AbstractMaybeWithUpstream<T, T> {
     final BiConsumer<? super T, ? super Throwable> onEvent;
 
@@ -21,7 +21,7 @@ public final class MaybeDoOnEvent<T> extends AbstractMaybeWithUpstream<T, T> {
         this.source.subscribe(new DoOnEventMaybeObserver(maybeObserver, this.onEvent));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DoOnEventMaybeObserver<T> implements MaybeObserver<T>, Disposable {
         final MaybeObserver<? super T> downstream;
         final BiConsumer<? super T, ? super Throwable> onEvent;

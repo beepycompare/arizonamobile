@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class BaseTestConsumer<T, U extends BaseTestConsumer<T, U>> implements Disposable {
     protected boolean checkSubscriptionOnce;
     protected long completions;
@@ -432,7 +432,7 @@ public abstract class BaseTestConsumer<T, U extends BaseTestConsumer<T, U>> impl
         return this;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public enum TestWaitStrategy implements Runnable {
         SPIN { // from class: io.reactivex.observers.BaseTestConsumer.TestWaitStrategy.1
             @Override // io.reactivex.observers.BaseTestConsumer.TestWaitStrategy, java.lang.Runnable

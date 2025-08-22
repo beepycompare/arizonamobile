@@ -20,7 +20,7 @@ public final class CompatRippleTheme implements RippleTheme {
     @Override // androidx.compose.material.ripple.RippleTheme
     @Deprecated(message = "Super method is deprecated")
     /* renamed from: defaultColor-WaAFU9c */
-    public long mo1540defaultColorWaAFU9c(Composer composer, int i) {
+    public long mo1846defaultColorWaAFU9c(Composer composer, int i) {
         composer.startReplaceGroup(-1844533201);
         ComposerKt.sourceInformation(composer, "C(defaultColor)244@11142L7:Ripple.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
@@ -29,12 +29,12 @@ public final class CompatRippleTheme implements RippleTheme {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(ContentColorKt.getLocalContentColor());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        long m4088unboximpl = ((Color) consume).m4088unboximpl();
+        long m4547unboximpl = ((Color) consume).m4547unboximpl();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m4088unboximpl;
+        return m4547unboximpl;
     }
 
     @Override // androidx.compose.material.ripple.RippleTheme

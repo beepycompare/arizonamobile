@@ -10,7 +10,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.FuseToMaybe;
 import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeIsEmptySingle<T> extends Single<Boolean> implements HasUpstreamMaybeSource<T>, FuseToMaybe<Boolean> {
     final MaybeSource<T> source;
 
@@ -33,7 +33,7 @@ public final class MaybeIsEmptySingle<T> extends Single<Boolean> implements HasU
         this.source.subscribe(new IsEmptyMaybeObserver(singleObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class IsEmptyMaybeObserver<T> implements MaybeObserver<T>, Disposable {
         final SingleObserver<? super Boolean> downstream;
         Disposable upstream;

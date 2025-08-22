@@ -6,7 +6,7 @@ import io.reactivex.CompletableSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableAndThenCompletable extends Completable {
     final CompletableSource next;
     final CompletableSource source;
@@ -21,7 +21,7 @@ public final class CompletableAndThenCompletable extends Completable {
         this.source.subscribe(new SourceObserver(completableObserver, this.next));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SourceObserver extends AtomicReference<Disposable> implements CompletableObserver, Disposable {
         private static final long serialVersionUID = -4101678820158072998L;
         final CompletableObserver actualObserver;
@@ -60,7 +60,7 @@ public final class CompletableAndThenCompletable extends Completable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class NextObserver implements CompletableObserver {
         final CompletableObserver downstream;
         final AtomicReference<Disposable> parent;

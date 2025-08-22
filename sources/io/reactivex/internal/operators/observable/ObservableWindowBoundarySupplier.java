@@ -17,7 +17,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableWindowBoundarySupplier<T, B> extends AbstractObservableWithUpstream<T, Observable<T>> {
     final int capacityHint;
     final Callable<? extends ObservableSource<B>> other;
@@ -33,7 +33,7 @@ public final class ObservableWindowBoundarySupplier<T, B> extends AbstractObserv
         this.source.subscribe(new WindowBoundaryMainObserver(observer, this.capacityHint, this.other));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WindowBoundaryMainObserver<T, B> extends AtomicInteger implements Observer<T>, Disposable, Runnable {
         static final WindowBoundaryInnerObserver<Object, Object> BOUNDARY_DISPOSED = new WindowBoundaryInnerObserver<>(null);
         static final Object NEXT_WINDOW = new Object();
@@ -223,7 +223,7 @@ public final class ObservableWindowBoundarySupplier<T, B> extends AbstractObserv
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class WindowBoundaryInnerObserver<T, B> extends DisposableObserver<B> {
         boolean done;
         final WindowBoundaryMainObserver<T, B> parent;

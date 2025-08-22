@@ -17,7 +17,7 @@ import java.util.concurrent.Callable;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableBufferExactBoundary<T, U extends Collection<? super T>, B> extends AbstractFlowableWithUpstream<T, U> {
     final Publisher<B> boundary;
     final Callable<U> bufferSupplier;
@@ -33,7 +33,7 @@ public final class FlowableBufferExactBoundary<T, U extends Collection<? super T
         this.source.subscribe((FlowableSubscriber) new BufferExactBoundarySubscriber(new SerializedSubscriber(subscriber), this.bufferSupplier, this.boundary));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BufferExactBoundarySubscriber<T, U extends Collection<? super T>, B> extends QueueDrainSubscriber<T, U, U> implements FlowableSubscriber<T>, Subscription, Disposable {
         final Publisher<B> boundary;
         U buffer;
@@ -161,7 +161,7 @@ public final class FlowableBufferExactBoundary<T, U extends Collection<? super T
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BufferBoundarySubscriber<T, U extends Collection<? super T>, B> extends DisposableSubscriber<B> {
         final BufferExactBoundarySubscriber<T, U, B> parent;
 

@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableTimeoutTimed<T> extends AbstractFlowableWithUpstream<T, T> {
     final Publisher<? extends T> other;
     final Scheduler scheduler;
@@ -23,7 +23,7 @@ public final class FlowableTimeoutTimed<T> extends AbstractFlowableWithUpstream<
     final TimeUnit unit;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface TimeoutSupport {
         void onTimeout(long j);
     }
@@ -51,7 +51,7 @@ public final class FlowableTimeoutTimed<T> extends AbstractFlowableWithUpstream<
         this.source.subscribe((FlowableSubscriber) timeoutFallbackSubscriber);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimeoutSubscriber<T> extends AtomicLong implements FlowableSubscriber<T>, Subscription, TimeoutSupport {
         private static final long serialVersionUID = 3764492702657003550L;
         final Subscriber<? super T> downstream;
@@ -133,7 +133,7 @@ public final class FlowableTimeoutTimed<T> extends AbstractFlowableWithUpstream<
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class TimeoutTask implements Runnable {
         final long idx;
         final TimeoutSupport parent;
@@ -149,7 +149,7 @@ public final class FlowableTimeoutTimed<T> extends AbstractFlowableWithUpstream<
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimeoutFallbackSubscriber<T> extends SubscriptionArbiter implements FlowableSubscriber<T>, TimeoutSupport {
         private static final long serialVersionUID = 3764492702657003550L;
         long consumed;
@@ -241,7 +241,7 @@ public final class FlowableTimeoutTimed<T> extends AbstractFlowableWithUpstream<
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FallbackSubscriber<T> implements FlowableSubscriber<T> {
         final SubscriptionArbiter arbiter;
         final Subscriber<? super T> downstream;

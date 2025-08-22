@@ -7,7 +7,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeMap<T, R> extends AbstractMaybeWithUpstream<T, R> {
     final Function<? super T, ? extends R> mapper;
 
@@ -21,7 +21,7 @@ public final class MaybeMap<T, R> extends AbstractMaybeWithUpstream<T, R> {
         this.source.subscribe(new MapMaybeObserver(maybeObserver, this.mapper));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MapMaybeObserver<T, R> implements MaybeObserver<T>, Disposable {
         final MaybeObserver<? super R> downstream;
         final Function<? super T, ? extends R> mapper;

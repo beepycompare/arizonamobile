@@ -5,22 +5,22 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class attr {
         public static int action = 0x7f040002;
-        public static int argType = 0x7f040044;
-        public static int destination = 0x7f0401b0;
-        public static int enterAnim = 0x7f040211;
-        public static int exitAnim = 0x7f040222;
-        public static int launchSingleTop = 0x7f04033a;
-        public static int mimeType = 0x7f04042a;
-        public static int nullable = 0x7f040473;
-        public static int popEnterAnim = 0x7f0404ae;
-        public static int popExitAnim = 0x7f0404af;
-        public static int popUpTo = 0x7f0404b0;
-        public static int popUpToInclusive = 0x7f0404b1;
-        public static int popUpToSaveState = 0x7f0404b2;
-        public static int restoreState = 0x7f040501;
-        public static int route = 0x7f040508;
-        public static int startDestination = 0x7f04056c;
-        public static int uri = 0x7f04065f;
+        public static int argType = 0x7f040045;
+        public static int destination = 0x7f0401b1;
+        public static int enterAnim = 0x7f040212;
+        public static int exitAnim = 0x7f040223;
+        public static int launchSingleTop = 0x7f04033b;
+        public static int mimeType = 0x7f04042b;
+        public static int nullable = 0x7f040474;
+        public static int popEnterAnim = 0x7f0404af;
+        public static int popExitAnim = 0x7f0404b0;
+        public static int popUpTo = 0x7f0404b1;
+        public static int popUpToInclusive = 0x7f0404b2;
+        public static int popUpToSaveState = 0x7f0404b3;
+        public static int restoreState = 0x7f040502;
+        public static int route = 0x7f040509;
+        public static int startDestination = 0x7f04056d;
+        public static int uri = 0x7f040660;
 
         private attr() {
         }
@@ -51,11 +51,11 @@ public final class R {
         public static int Navigator_android_id = 0x00000001;
         public static int Navigator_android_label = 0x00000000;
         public static int Navigator_route = 0x00000002;
-        public static int[] NavAction = {16842960, com.arizona21.game.web.R.attr.destination, com.arizona21.game.web.R.attr.enterAnim, com.arizona21.game.web.R.attr.exitAnim, com.arizona21.game.web.R.attr.launchSingleTop, com.arizona21.game.web.R.attr.popEnterAnim, com.arizona21.game.web.R.attr.popExitAnim, com.arizona21.game.web.R.attr.popUpTo, com.arizona21.game.web.R.attr.popUpToInclusive, com.arizona21.game.web.R.attr.popUpToSaveState, com.arizona21.game.web.R.attr.restoreState};
-        public static int[] NavArgument = {16842755, 16843245, com.arizona21.game.web.R.attr.argType, com.arizona21.game.web.R.attr.nullable};
-        public static int[] NavDeepLink = {16844014, com.arizona21.game.web.R.attr.action, com.arizona21.game.web.R.attr.mimeType, com.arizona21.game.web.R.attr.uri};
-        public static int[] NavGraphNavigator = {com.arizona21.game.web.R.attr.startDestination};
-        public static int[] Navigator = {16842753, 16842960, com.arizona21.game.web.R.attr.route};
+        public static int[] NavAction = {16842960, com.arizona21.game.R.attr.destination, com.arizona21.game.R.attr.enterAnim, com.arizona21.game.R.attr.exitAnim, com.arizona21.game.R.attr.launchSingleTop, com.arizona21.game.R.attr.popEnterAnim, com.arizona21.game.R.attr.popExitAnim, com.arizona21.game.R.attr.popUpTo, com.arizona21.game.R.attr.popUpToInclusive, com.arizona21.game.R.attr.popUpToSaveState, com.arizona21.game.R.attr.restoreState};
+        public static int[] NavArgument = {16842755, 16843245, com.arizona21.game.R.attr.argType, com.arizona21.game.R.attr.nullable};
+        public static int[] NavDeepLink = {16844014, com.arizona21.game.R.attr.action, com.arizona21.game.R.attr.mimeType, com.arizona21.game.R.attr.uri};
+        public static int[] NavGraphNavigator = {com.arizona21.game.R.attr.startDestination};
+        public static int[] Navigator = {16842753, 16842960, com.arizona21.game.R.attr.route};
 
         private styleable() {
         }

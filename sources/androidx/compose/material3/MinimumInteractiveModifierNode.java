@@ -26,20 +26,20 @@ public final class MinimumInteractiveModifierNode extends Modifier.Node implemen
         int width;
         int height;
         float f = 0;
-        float m6684constructorimpl = Dp.m6684constructorimpl(RangesKt.coerceAtLeast(((Dp) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, InteractiveComponentSizeKt.getLocalMinimumInteractiveComponentSize())).m6698unboximpl(), Dp.m6684constructorimpl(f)));
-        final Placeable mo5438measureBRTryo0 = measurable.mo5438measureBRTryo0(j);
-        boolean z = isAttached() && !Float.isNaN(m6684constructorimpl) && Dp.m6683compareTo0680j_4(m6684constructorimpl, Dp.m6684constructorimpl(f)) > 0;
-        int i = Float.isNaN(m6684constructorimpl) ? 0 : measureScope.mo383roundToPx0680j_4(m6684constructorimpl);
+        float m7251constructorimpl = Dp.m7251constructorimpl(RangesKt.coerceAtLeast(((Dp) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, InteractiveComponentSizeKt.getLocalMinimumInteractiveComponentSize())).m7265unboximpl(), Dp.m7251constructorimpl(f)));
+        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
+        boolean z = isAttached() && !Float.isNaN(m7251constructorimpl) && Dp.m7250compareTo0680j_4(m7251constructorimpl, Dp.m7251constructorimpl(f)) > 0;
+        int i = Float.isNaN(m7251constructorimpl) ? 0 : measureScope.mo413roundToPx0680j_4(m7251constructorimpl);
         if (z) {
-            width = Math.max(mo5438measureBRTryo0.getWidth(), i);
+            width = Math.max(mo5954measureBRTryo0.getWidth(), i);
         } else {
-            width = mo5438measureBRTryo0.getWidth();
+            width = mo5954measureBRTryo0.getWidth();
         }
         final int i2 = width;
         if (z) {
-            height = Math.max(mo5438measureBRTryo0.getHeight(), i);
+            height = Math.max(mo5954measureBRTryo0.getHeight(), i);
         } else {
-            height = mo5438measureBRTryo0.getHeight();
+            height = mo5954measureBRTryo0.getHeight();
         }
         final int i3 = height;
         return MeasureScope.layout$default(measureScope, i2, i3, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.MinimumInteractiveModifierNode$measure$1
@@ -57,7 +57,7 @@ public final class MinimumInteractiveModifierNode extends Modifier.Node implemen
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(Placeable.PlacementScope placementScope) {
-                Placeable.PlacementScope.place$default(placementScope, mo5438measureBRTryo0, MathKt.roundToInt((i2 - mo5438measureBRTryo0.getWidth()) / 2.0f), MathKt.roundToInt((i3 - mo5438measureBRTryo0.getHeight()) / 2.0f), 0.0f, 4, null);
+                Placeable.PlacementScope.place$default(placementScope, mo5954measureBRTryo0, MathKt.roundToInt((i2 - mo5954measureBRTryo0.getWidth()) / 2.0f), MathKt.roundToInt((i3 - mo5954measureBRTryo0.getHeight()) / 2.0f), 0.0f, 4, null);
             }
         }, 4, null);
     }

@@ -9,7 +9,7 @@ import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableCollect<T, U> extends AbstractObservableWithUpstream<T, U> {
     final BiConsumer<? super U, ? super T> collector;
     final Callable<? extends U> initialSupplier;
@@ -29,7 +29,7 @@ public final class ObservableCollect<T, U> extends AbstractObservableWithUpstrea
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class CollectObserver<T, U> implements Observer<T>, Disposable {
         final BiConsumer<? super U, ? super T> collector;
         boolean done;

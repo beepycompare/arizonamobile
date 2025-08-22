@@ -42,67 +42,67 @@ public final class SegmentedButtonColors {
     }
 
     /* renamed from: getActiveContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2243getActiveContainerColor0d7_KjU() {
+    public final long m2550getActiveContainerColor0d7_KjU() {
         return this.activeContainerColor;
     }
 
     /* renamed from: getActiveContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2244getActiveContentColor0d7_KjU() {
+    public final long m2551getActiveContentColor0d7_KjU() {
         return this.activeContentColor;
     }
 
     /* renamed from: getActiveBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2242getActiveBorderColor0d7_KjU() {
+    public final long m2549getActiveBorderColor0d7_KjU() {
         return this.activeBorderColor;
     }
 
     /* renamed from: getInactiveContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2252getInactiveContainerColor0d7_KjU() {
+    public final long m2559getInactiveContainerColor0d7_KjU() {
         return this.inactiveContainerColor;
     }
 
     /* renamed from: getInactiveContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2253getInactiveContentColor0d7_KjU() {
+    public final long m2560getInactiveContentColor0d7_KjU() {
         return this.inactiveContentColor;
     }
 
     /* renamed from: getInactiveBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2251getInactiveBorderColor0d7_KjU() {
+    public final long m2558getInactiveBorderColor0d7_KjU() {
         return this.inactiveBorderColor;
     }
 
     /* renamed from: getDisabledActiveContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2246getDisabledActiveContainerColor0d7_KjU() {
+    public final long m2553getDisabledActiveContainerColor0d7_KjU() {
         return this.disabledActiveContainerColor;
     }
 
     /* renamed from: getDisabledActiveContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2247getDisabledActiveContentColor0d7_KjU() {
+    public final long m2554getDisabledActiveContentColor0d7_KjU() {
         return this.disabledActiveContentColor;
     }
 
     /* renamed from: getDisabledActiveBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2245getDisabledActiveBorderColor0d7_KjU() {
+    public final long m2552getDisabledActiveBorderColor0d7_KjU() {
         return this.disabledActiveBorderColor;
     }
 
     /* renamed from: getDisabledInactiveContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2249getDisabledInactiveContainerColor0d7_KjU() {
+    public final long m2556getDisabledInactiveContainerColor0d7_KjU() {
         return this.disabledInactiveContainerColor;
     }
 
     /* renamed from: getDisabledInactiveContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2250getDisabledInactiveContentColor0d7_KjU() {
+    public final long m2557getDisabledInactiveContentColor0d7_KjU() {
         return this.disabledInactiveContentColor;
     }
 
     /* renamed from: getDisabledInactiveBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2248getDisabledInactiveBorderColor0d7_KjU() {
+    public final long m2555getDisabledInactiveBorderColor0d7_KjU() {
         return this.disabledInactiveBorderColor;
     }
 
     /* renamed from: copy-2qZNXz8$default  reason: not valid java name */
-    public static /* synthetic */ SegmentedButtonColors m2237copy2qZNXz8$default(SegmentedButtonColors segmentedButtonColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, int i, Object obj) {
+    public static /* synthetic */ SegmentedButtonColors m2544copy2qZNXz8$default(SegmentedButtonColors segmentedButtonColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, int i, Object obj) {
         long j13;
         long j14;
         long j15 = (i & 1) != 0 ? segmentedButtonColors.activeContainerColor : j;
@@ -124,16 +124,16 @@ public final class SegmentedButtonColors {
             j13 = j12;
             j14 = j26;
         }
-        return segmentedButtonColors.m2241copy2qZNXz8(j22, j16, j17, j18, j19, j20, j21, j23, j24, j25, j14, j13);
+        return segmentedButtonColors.m2548copy2qZNXz8(j22, j16, j17, j18, j19, j20, j21, j23, j24, j25, j14, j13);
     }
 
     /* renamed from: copy-2qZNXz8  reason: not valid java name */
-    public final SegmentedButtonColors m2241copy2qZNXz8(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12) {
+    public final SegmentedButtonColors m2548copy2qZNXz8(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12) {
         return new SegmentedButtonColors(j != 16 ? j : this.activeContainerColor, j2 != 16 ? j2 : this.activeContentColor, j3 != 16 ? j3 : this.activeBorderColor, j4 != 16 ? j4 : this.inactiveContainerColor, j5 != 16 ? j5 : this.inactiveContentColor, j6 != 16 ? j6 : this.inactiveBorderColor, j7 != 16 ? j7 : this.disabledActiveContainerColor, j8 != 16 ? j8 : this.disabledActiveContentColor, j9 != 16 ? j9 : this.disabledActiveBorderColor, j10 != 16 ? j10 : this.disabledInactiveContainerColor, j11 != 16 ? j11 : this.disabledInactiveContentColor, j12 != 16 ? j12 : this.disabledInactiveBorderColor, null);
     }
 
     /* renamed from: borderColor-WaAFU9c$material3_release  reason: not valid java name */
-    public final long m2238borderColorWaAFU9c$material3_release(boolean z, boolean z2) {
+    public final long m2545borderColorWaAFU9c$material3_release(boolean z, boolean z2) {
         if (z && z2) {
             return this.activeBorderColor;
         }
@@ -147,7 +147,7 @@ public final class SegmentedButtonColors {
     }
 
     /* renamed from: contentColor-WaAFU9c$material3_release  reason: not valid java name */
-    public final long m2240contentColorWaAFU9c$material3_release(boolean z, boolean z2) {
+    public final long m2547contentColorWaAFU9c$material3_release(boolean z, boolean z2) {
         if (z && z2) {
             return this.activeContentColor;
         }
@@ -161,7 +161,7 @@ public final class SegmentedButtonColors {
     }
 
     /* renamed from: containerColor-WaAFU9c$material3_release  reason: not valid java name */
-    public final long m2239containerColorWaAFU9c$material3_release(boolean z, boolean z2) {
+    public final long m2546containerColorWaAFU9c$material3_release(boolean z, boolean z2) {
         if (z && z2) {
             return this.activeContainerColor;
         }
@@ -180,12 +180,12 @@ public final class SegmentedButtonColors {
         }
         if (obj != null && getClass() == obj.getClass()) {
             SegmentedButtonColors segmentedButtonColors = (SegmentedButtonColors) obj;
-            return Color.m4079equalsimpl0(this.activeBorderColor, segmentedButtonColors.activeBorderColor) && Color.m4079equalsimpl0(this.activeContentColor, segmentedButtonColors.activeContentColor) && Color.m4079equalsimpl0(this.activeContainerColor, segmentedButtonColors.activeContainerColor) && Color.m4079equalsimpl0(this.inactiveBorderColor, segmentedButtonColors.inactiveBorderColor) && Color.m4079equalsimpl0(this.inactiveContentColor, segmentedButtonColors.inactiveContentColor) && Color.m4079equalsimpl0(this.inactiveContainerColor, segmentedButtonColors.inactiveContainerColor) && Color.m4079equalsimpl0(this.disabledActiveBorderColor, segmentedButtonColors.disabledActiveBorderColor) && Color.m4079equalsimpl0(this.disabledActiveContentColor, segmentedButtonColors.disabledActiveContentColor) && Color.m4079equalsimpl0(this.disabledActiveContainerColor, segmentedButtonColors.disabledActiveContainerColor) && Color.m4079equalsimpl0(this.disabledInactiveBorderColor, segmentedButtonColors.disabledInactiveBorderColor) && Color.m4079equalsimpl0(this.disabledInactiveContentColor, segmentedButtonColors.disabledInactiveContentColor) && Color.m4079equalsimpl0(this.disabledInactiveContainerColor, segmentedButtonColors.disabledInactiveContainerColor);
+            return Color.m4538equalsimpl0(this.activeBorderColor, segmentedButtonColors.activeBorderColor) && Color.m4538equalsimpl0(this.activeContentColor, segmentedButtonColors.activeContentColor) && Color.m4538equalsimpl0(this.activeContainerColor, segmentedButtonColors.activeContainerColor) && Color.m4538equalsimpl0(this.inactiveBorderColor, segmentedButtonColors.inactiveBorderColor) && Color.m4538equalsimpl0(this.inactiveContentColor, segmentedButtonColors.inactiveContentColor) && Color.m4538equalsimpl0(this.inactiveContainerColor, segmentedButtonColors.inactiveContainerColor) && Color.m4538equalsimpl0(this.disabledActiveBorderColor, segmentedButtonColors.disabledActiveBorderColor) && Color.m4538equalsimpl0(this.disabledActiveContentColor, segmentedButtonColors.disabledActiveContentColor) && Color.m4538equalsimpl0(this.disabledActiveContainerColor, segmentedButtonColors.disabledActiveContainerColor) && Color.m4538equalsimpl0(this.disabledInactiveBorderColor, segmentedButtonColors.disabledInactiveBorderColor) && Color.m4538equalsimpl0(this.disabledInactiveContentColor, segmentedButtonColors.disabledInactiveContentColor) && Color.m4538equalsimpl0(this.disabledInactiveContainerColor, segmentedButtonColors.disabledInactiveContainerColor);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((Color.m4085hashCodeimpl(this.activeBorderColor) * 31) + Color.m4085hashCodeimpl(this.activeContentColor)) * 31) + Color.m4085hashCodeimpl(this.activeContainerColor)) * 31) + Color.m4085hashCodeimpl(this.inactiveBorderColor)) * 31) + Color.m4085hashCodeimpl(this.inactiveContentColor)) * 31) + Color.m4085hashCodeimpl(this.inactiveContainerColor)) * 31) + Color.m4085hashCodeimpl(this.disabledActiveBorderColor)) * 31) + Color.m4085hashCodeimpl(this.disabledActiveContentColor)) * 31) + Color.m4085hashCodeimpl(this.disabledActiveContainerColor)) * 31) + Color.m4085hashCodeimpl(this.disabledInactiveBorderColor)) * 31) + Color.m4085hashCodeimpl(this.disabledInactiveContentColor)) * 31) + Color.m4085hashCodeimpl(this.disabledInactiveContainerColor);
+        return (((((((((((((((((((((Color.m4544hashCodeimpl(this.activeBorderColor) * 31) + Color.m4544hashCodeimpl(this.activeContentColor)) * 31) + Color.m4544hashCodeimpl(this.activeContainerColor)) * 31) + Color.m4544hashCodeimpl(this.inactiveBorderColor)) * 31) + Color.m4544hashCodeimpl(this.inactiveContentColor)) * 31) + Color.m4544hashCodeimpl(this.inactiveContainerColor)) * 31) + Color.m4544hashCodeimpl(this.disabledActiveBorderColor)) * 31) + Color.m4544hashCodeimpl(this.disabledActiveContentColor)) * 31) + Color.m4544hashCodeimpl(this.disabledActiveContainerColor)) * 31) + Color.m4544hashCodeimpl(this.disabledInactiveBorderColor)) * 31) + Color.m4544hashCodeimpl(this.disabledInactiveContentColor)) * 31) + Color.m4544hashCodeimpl(this.disabledInactiveContainerColor);
     }
 }

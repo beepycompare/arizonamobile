@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableBufferBoundarySupplier<T, U extends Collection<? super T>, B> extends AbstractFlowableWithUpstream<T, U> {
     final Callable<? extends Publisher<B>> boundarySupplier;
     final Callable<U> bufferSupplier;
@@ -36,7 +36,7 @@ public final class FlowableBufferBoundarySupplier<T, U extends Collection<? supe
         this.source.subscribe((FlowableSubscriber) new BufferBoundarySupplierSubscriber(new SerializedSubscriber(subscriber), this.bufferSupplier, this.boundarySupplier));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BufferBoundarySupplierSubscriber<T, U extends Collection<? super T>, B> extends QueueDrainSubscriber<T, U, U> implements FlowableSubscriber<T>, Subscription, Disposable {
         final Callable<? extends Publisher<B>> boundarySupplier;
         U buffer;
@@ -192,7 +192,7 @@ public final class FlowableBufferBoundarySupplier<T, U extends Collection<? supe
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class BufferBoundarySubscriber<T, U extends Collection<? super T>, B> extends DisposableSubscriber<B> {
         boolean once;
         final BufferBoundarySupplierSubscriber<T, U, B> parent;

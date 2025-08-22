@@ -4,12 +4,12 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int assetName = 0x7f040048;
-        public static int panEnabled = 0x7f04048f;
-        public static int quickScaleEnabled = 0x7f0404d6;
-        public static int src = 0x7f040567;
-        public static int tileBackgroundColor = 0x7f040620;
-        public static int zoomEnabled = 0x7f04068b;
+        public static int assetName = 0x7f040049;
+        public static int panEnabled = 0x7f040490;
+        public static int quickScaleEnabled = 0x7f0404d7;
+        public static int src = 0x7f040568;
+        public static int tileBackgroundColor = 0x7f040621;
+        public static int zoomEnabled = 0x7f04068c;
 
         private attr() {
         }
@@ -17,7 +17,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class styleable {
-        public static int[] SubsamplingScaleImageView = {com.arizona21.game.web.R.attr.assetName, com.arizona21.game.web.R.attr.panEnabled, com.arizona21.game.web.R.attr.quickScaleEnabled, com.arizona21.game.web.R.attr.src, com.arizona21.game.web.R.attr.tileBackgroundColor, com.arizona21.game.web.R.attr.zoomEnabled};
+        public static int[] SubsamplingScaleImageView = {com.arizona21.game.R.attr.assetName, com.arizona21.game.R.attr.panEnabled, com.arizona21.game.R.attr.quickScaleEnabled, com.arizona21.game.R.attr.src, com.arizona21.game.R.attr.tileBackgroundColor, com.arizona21.game.R.attr.zoomEnabled};
         public static int SubsamplingScaleImageView_assetName = 0x00000000;
         public static int SubsamplingScaleImageView_panEnabled = 0x00000001;
         public static int SubsamplingScaleImageView_quickScaleEnabled = 0x00000002;

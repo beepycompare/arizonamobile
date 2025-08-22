@@ -11,12 +11,12 @@ import kotlin.jvm.internal.Reflection;
 public final class C6 implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Executor f372a;
-    public final C0314hh b;
+    public final Executor f375a;
+    public final C0435mh b;
 
-    public C6(Context context, InterfaceC0751z6 interfaceC0751z6, EnumC0681wb enumC0681wb, InterfaceC0138al interfaceC0138al, Executor executor, String str) {
-        this.f372a = executor;
-        this.b = new C0314hh(context, interfaceC0751z6, enumC0681wb, interfaceC0138al);
+    public C6(Context context, InterfaceC0748z6 interfaceC0748z6, EnumC0728yb enumC0728yb, InterfaceC0259fl interfaceC0259fl, Executor executor, String str) {
+        this.f375a = executor;
+        this.b = new C0435mh(context, interfaceC0748z6, enumC0728yb, interfaceC0259fl);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
@@ -25,24 +25,24 @@ public final class C6 implements Consumer {
         if (file == null) {
             return;
         }
-        Executor executor = this.f372a;
-        C0314hh c0314hh = this.b;
-        Ib ib = c0314hh.c;
-        Consumer consumer = c0314hh.e;
-        Context context = c0314hh.f886a;
-        if (C0630ua.c == null) {
-            synchronized (Reflection.getOrCreateKotlinClass(C0630ua.class)) {
-                if (C0630ua.c == null) {
-                    C0630ua.c = new C0630ua(context);
+        Executor executor = this.f375a;
+        C0435mh c0435mh = this.b;
+        Kb kb = c0435mh.c;
+        Consumer consumer = c0435mh.e;
+        Context context = c0435mh.f969a;
+        if (C0677wa.c == null) {
+            synchronized (Reflection.getOrCreateKotlinClass(C0677wa.class)) {
+                if (C0677wa.c == null) {
+                    C0677wa.c = new C0677wa(context);
                 }
                 Unit unit = Unit.INSTANCE;
             }
         }
-        C0630ua c0630ua = C0630ua.c;
-        if (c0630ua == null) {
+        C0677wa c0677wa = C0677wa.c;
+        if (c0677wa == null) {
             Intrinsics.throwUninitializedPropertyAccessException("INSTANCE");
-            c0630ua = null;
+            c0677wa = null;
         }
-        executor.execute(new RunnableC0288gg(file, ib, ib, consumer, c0630ua, c0314hh.b));
+        executor.execute(new RunnableC0409lg(file, kb, kb, consumer, c0677wa, c0435mh.b));
     }
 }

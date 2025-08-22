@@ -9,6 +9,7 @@ import android.graphics.fonts.FontFamily;
 import android.graphics.fonts.FontStyle;
 import android.os.CancellationSignal;
 import android.os.ParcelFileDescriptor;
+import android.text.TextUtils;
 import android.util.Log;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.core.content.res.FontResourcesParserCompat;
@@ -65,31 +66,52 @@ public class TypefaceCompatApi29Impl extends TypefaceCompatBaseImpl {
         }
     }
 
-    private static FontFamily getFontFamily(CancellationSignal cancellationSignal, FontsContractCompat.FontInfo[] fontInfoArr, ContentResolver contentResolver) {
-        int i;
-        ParcelFileDescriptor openFileDescriptor;
-        int length = fontInfoArr.length;
-        FontFamily.Builder builder = null;
-        while (i < length) {
-            FontsContractCompat.FontInfo fontInfo = fontInfoArr[i];
-            try {
-                openFileDescriptor = contentResolver.openFileDescriptor(fontInfo.getUri(), "r", cancellationSignal);
-            } catch (IOException e) {
-                Log.w(TAG, "Font load failed", e);
-            }
+    protected Font getFontFromSystemFont(FontsContractCompat.FontInfo fontInfo) {
+        throw new UnsupportedOperationException("Getting font from Typeface is not supported before API31");
+    }
+
+    private Font getFontFromProvider(CancellationSignal cancellationSignal, FontsContractCompat.FontInfo fontInfo, ContentResolver contentResolver) {
+        try {
+            ParcelFileDescriptor openFileDescriptor = contentResolver.openFileDescriptor(fontInfo.getUri(), "r", cancellationSignal);
             if (openFileDescriptor == null) {
-                i = openFileDescriptor == null ? i + 1 : 0;
-            } else {
-                Font build = new Font.Builder(openFileDescriptor).setWeight(fontInfo.getWeight()).setSlant(fontInfo.isItalic() ? 1 : 0).setTtcIndex(fontInfo.getTtcIndex()).build();
-                if (builder == null) {
-                    builder = new FontFamily.Builder(build);
-                } else {
-                    builder.addFont(build);
+                if (openFileDescriptor != null) {
+                    openFileDescriptor.close();
                 }
-                if (openFileDescriptor == null) {
+                return null;
+            }
+            Font.Builder ttcIndex = new Font.Builder(openFileDescriptor).setWeight(fontInfo.getWeight()).setSlant(fontInfo.isItalic() ? 1 : 0).setTtcIndex(fontInfo.getTtcIndex());
+            if (!TextUtils.isEmpty(fontInfo.getVariationSettings())) {
+                ttcIndex.setFontVariationSettings(fontInfo.getVariationSettings());
+            }
+            Font build = ttcIndex.build();
+            if (openFileDescriptor != null) {
+                openFileDescriptor.close();
+            }
+            return build;
+        } catch (IOException e) {
+            Log.w(TAG, "Font load failed", e);
+            return null;
+        }
+    }
+
+    private Font getFont(CancellationSignal cancellationSignal, FontsContractCompat.FontInfo fontInfo, ContentResolver contentResolver) {
+        if (fontInfo.isSystemFont()) {
+            return getFontFromSystemFont(fontInfo);
+        }
+        return getFontFromProvider(cancellationSignal, fontInfo, contentResolver);
+    }
+
+    protected FontFamily getFontFamily(CancellationSignal cancellationSignal, FontsContractCompat.FontInfo[] fontInfoArr, ContentResolver contentResolver) {
+        FontFamily.Builder builder = null;
+        for (FontsContractCompat.FontInfo fontInfo : fontInfoArr) {
+            Font font = getFont(cancellationSignal, fontInfo, contentResolver);
+            if (font != null) {
+                if (builder == null) {
+                    builder = new FontFamily.Builder(font);
+                } else {
+                    builder.addFont(font);
                 }
             }
-            openFileDescriptor.close();
         }
         if (builder == null) {
             return null;

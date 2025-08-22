@@ -14,7 +14,7 @@ import io.reactivex.internal.observers.BasicIntQueueDisposable;
 import io.reactivex.internal.util.AtomicThrowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableFlatMapCompletable<T> extends AbstractObservableWithUpstream<T, T> {
     final boolean delayErrors;
     final Function<? super T, ? extends CompletableSource> mapper;
@@ -30,7 +30,7 @@ public final class ObservableFlatMapCompletable<T> extends AbstractObservableWit
         this.source.subscribe(new FlatMapCompletableMainObserver(observer, this.mapper, this.delayErrors));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FlatMapCompletableMainObserver<T> extends BasicIntQueueDisposable<T> implements Observer<T> {
         private static final long serialVersionUID = 8443155186132538303L;
         final boolean delayErrors;
@@ -146,7 +146,7 @@ public final class ObservableFlatMapCompletable<T> extends AbstractObservableWit
             onError(th);
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class InnerObserver extends AtomicReference<Disposable> implements CompletableObserver, Disposable {
             private static final long serialVersionUID = 8606673141535671828L;
 

@@ -17,7 +17,7 @@ import io.reactivex.internal.util.AtomicThrowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableFlatMapSingle<T, R> extends AbstractObservableWithUpstream<T, R> {
     final boolean delayErrors;
     final Function<? super T, ? extends SingleSource<? extends R>> mapper;
@@ -33,7 +33,7 @@ public final class ObservableFlatMapSingle<T, R> extends AbstractObservableWithU
         this.source.subscribe(new FlatMapSingleObserver(observer, this.mapper, this.delayErrors));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FlatMapSingleObserver<T, R> extends AtomicInteger implements Observer<T>, Disposable {
         private static final long serialVersionUID = 8600231336733376951L;
         volatile boolean cancelled;
@@ -218,7 +218,7 @@ public final class ObservableFlatMapSingle<T, R> extends AbstractObservableWithU
             clear();
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class InnerObserver extends AtomicReference<Disposable> implements SingleObserver<R>, Disposable {
             private static final long serialVersionUID = -502562646270949838L;
 

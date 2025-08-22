@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableRefCount<T> extends Flowable<T> {
     RefConnection connection;
     final int n;
@@ -150,7 +150,7 @@ public final class FlowableRefCount<T> extends Flowable<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class RefConnection extends AtomicReference<Disposable> implements Runnable, Consumer<Disposable> {
         private static final long serialVersionUID = -4552101107598366241L;
         boolean connected;
@@ -179,7 +179,7 @@ public final class FlowableRefCount<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class RefCountSubscriber<T> extends AtomicBoolean implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = -7419642935409022375L;
         final RefConnection connection;

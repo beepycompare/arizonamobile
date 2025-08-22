@@ -16,7 +16,7 @@ import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class SubtitleView extends FrameLayout {
     public static final float DEFAULT_BOTTOM_PADDING_FRACTION = 0.08f;
     public static final float DEFAULT_TEXT_SIZE_FRACTION = 0.0533f;
@@ -34,7 +34,7 @@ public final class SubtitleView extends FrameLayout {
     private int viewType;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface Output {
         void update(List<Cue> list, CaptionStyleCompat captionStyleCompat, float f, int i, float f2);
     }
@@ -42,7 +42,7 @@ public final class SubtitleView extends FrameLayout {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public @interface ViewType {
     }
 

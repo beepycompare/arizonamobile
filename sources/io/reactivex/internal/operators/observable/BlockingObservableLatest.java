@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BlockingObservableLatest<T> implements Iterable<T> {
     final ObservableSource<T> source;
 
@@ -26,7 +26,7 @@ public final class BlockingObservableLatest<T> implements Iterable<T> {
         return blockingObservableLatestIterator;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BlockingObservableLatestIterator<T> extends DisposableObserver<Notification<T>> implements Iterator<T> {
         Notification<T> iteratorNotification;
         final Semaphore notify = new Semaphore(0);

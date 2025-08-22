@@ -8,10 +8,11 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
+import ru.mrlargha.commonui.utils.ui.CustomEditText;
+/* loaded from: classes3.dex */
 public final class InputDialogBinding implements ViewBinding {
     public final DialogBackgroundBinding bg;
     public final Button button1;
@@ -19,11 +20,12 @@ public final class InputDialogBinding implements ViewBinding {
     public final TextView caption;
     public final ConstraintLayout infoDialogLayout;
     public final TextView infoText;
+    public final CustomCardView inputContainer;
     private final ConstraintLayout rootView;
     public final TextInputLayout textInputLayout;
-    public final TextInputEditText userInput;
+    public final CustomEditText userInput;
 
-    private InputDialogBinding(ConstraintLayout rootView, DialogBackgroundBinding bg, Button button1, Button button2, TextView caption, ConstraintLayout infoDialogLayout, TextView infoText, TextInputLayout textInputLayout, TextInputEditText userInput) {
+    private InputDialogBinding(ConstraintLayout rootView, DialogBackgroundBinding bg, Button button1, Button button2, TextView caption, ConstraintLayout infoDialogLayout, TextView infoText, CustomCardView inputContainer, TextInputLayout textInputLayout, CustomEditText userInput) {
         this.rootView = rootView;
         this.bg = bg;
         this.button1 = button1;
@@ -31,6 +33,7 @@ public final class InputDialogBinding implements ViewBinding {
         this.caption = caption;
         this.infoDialogLayout = infoDialogLayout;
         this.infoText = infoText;
+        this.inputContainer = inputContainer;
         this.textInputLayout = textInputLayout;
         this.userInput = userInput;
     }
@@ -70,13 +73,17 @@ public final class InputDialogBinding implements ViewBinding {
                         i = R.id.infoText;
                         TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
                         if (textView2 != null) {
-                            i = R.id.textInputLayout;
-                            TextInputLayout textInputLayout = (TextInputLayout) ViewBindings.findChildViewById(rootView, i);
-                            if (textInputLayout != null) {
-                                i = R.id.user_input;
-                                TextInputEditText textInputEditText = (TextInputEditText) ViewBindings.findChildViewById(rootView, i);
-                                if (textInputEditText != null) {
-                                    return new InputDialogBinding(constraintLayout, bind, button, button2, textView, constraintLayout, textView2, textInputLayout, textInputEditText);
+                            i = R.id.input_container;
+                            CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                            if (customCardView != null) {
+                                i = R.id.textInputLayout;
+                                TextInputLayout textInputLayout = (TextInputLayout) ViewBindings.findChildViewById(rootView, i);
+                                if (textInputLayout != null) {
+                                    i = R.id.user_input;
+                                    CustomEditText customEditText = (CustomEditText) ViewBindings.findChildViewById(rootView, i);
+                                    if (customEditText != null) {
+                                        return new InputDialogBinding(constraintLayout, bind, button, button2, textView, constraintLayout, textView2, customCardView, textInputLayout, customEditText);
+                                    }
                                 }
                             }
                         }

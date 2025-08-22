@@ -459,7 +459,7 @@ public final class RealBufferedSource implements BufferedSource {
         r2 = java.lang.Integer.toString(r8, kotlin.text.CharsKt.checkRadix(16));
         kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r2, "toString(...)");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0050, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x004f, code lost:
         throw new java.lang.NumberFormatException(r1.append(r2).toString());
      */
     @Override // okio.BufferedSource
@@ -491,7 +491,7 @@ public final class RealBufferedSource implements BufferedSource {
         r2 = java.lang.Integer.toString(r2, kotlin.text.CharsKt.checkRadix(16));
         kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r2, "toString(...)");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0058, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0057, code lost:
         throw new java.lang.NumberFormatException(r1.append(r2).toString());
      */
     @Override // okio.BufferedSource

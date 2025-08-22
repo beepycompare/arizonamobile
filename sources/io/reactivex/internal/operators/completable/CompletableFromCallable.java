@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposables;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableFromCallable extends Completable {
     final Callable<?> callable;
 

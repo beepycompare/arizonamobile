@@ -20,7 +20,7 @@ public final class FilledTonalIconButtonTokens {
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ColorSchemeKeyTokens HoverColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens Color = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final float Size = Dp.m6684constructorimpl((float) 24.0d);
+    private static final float Size = Dp.m7251constructorimpl((float) 24.0d);
     private static final ColorSchemeKeyTokens PressedColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ColorSchemeKeyTokens ToggleSelectedFocusColor = ColorSchemeKeyTokens.OnSecondaryContainer;
@@ -38,8 +38,8 @@ public final class FilledTonalIconButtonTokens {
 
     static {
         float f = (float) 40.0d;
-        ContainerHeight = Dp.m6684constructorimpl(f);
-        ContainerWidth = Dp.m6684constructorimpl(f);
+        ContainerHeight = Dp.m7251constructorimpl(f);
+        ContainerWidth = Dp.m7251constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {
@@ -47,7 +47,7 @@ public final class FilledTonalIconButtonTokens {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3074getContainerHeightD9Ej5fM() {
+    public final float m3381getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -56,7 +56,7 @@ public final class FilledTonalIconButtonTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3075getContainerWidthD9Ej5fM() {
+    public final float m3382getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
@@ -93,7 +93,7 @@ public final class FilledTonalIconButtonTokens {
     }
 
     /* renamed from: getSize-D9Ej5fM  reason: not valid java name */
-    public final float m3076getSizeD9Ej5fM() {
+    public final float m3383getSizeD9Ej5fM() {
         return Size;
     }
 

@@ -1,19 +1,11 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
 /* loaded from: classes4.dex */
-public final class Wh implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Throwable f703a;
-    public final /* synthetic */ C0613ti b;
-
-    public Wh(C0613ti c0613ti, Throwable th) {
-        this.b = c0613ti;
-        this.f703a = th;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        C0613ti c0613ti = this.b;
-        C0613ti.a(c0613ti.f1068a, c0613ti.d, c0613ti.e).reportUnhandledException(this.f703a);
+public final class Wh implements InterfaceC0597t5 {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0597t5
+    /* renamed from: b */
+    public final Vh a(Context context, C0398l5 c0398l5, J4 j4, Gm gm) {
+        return new Vh(context, c0398l5, j4, Ka.F.g(), gm.e(), new Xg(gm), new C0372k5());
     }
 }

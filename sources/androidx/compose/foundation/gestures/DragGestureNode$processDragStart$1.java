@@ -7,13 +7,12 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Draggable.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureNode", f = "Draggable.kt", i = {0, 0, 1, 1, 1}, l = {534, 537}, m = "processDragStart", n = {"this", NotificationCompat.CATEGORY_EVENT, "this", NotificationCompat.CATEGORY_EVENT, "interaction"}, s = {"L$0", "L$1", "L$0", "L$1", "L$2"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureNode", f = "Draggable.kt", i = {0, 1, 1}, l = {565, 568}, m = "processDragStart", n = {NotificationCompat.CATEGORY_EVENT, NotificationCompat.CATEGORY_EVENT, "interaction"}, s = {"L$0", "L$0", "L$1"})
 /* loaded from: classes.dex */
 public final class DragGestureNode$processDragStart$1 extends ContinuationImpl {
     Object L$0;
     Object L$1;
-    Object L$2;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ DragGestureNode this$0;

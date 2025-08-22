@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableConcat extends Completable {
     final int prefetch;
     final Publisher<? extends CompletableSource> sources;
@@ -35,7 +35,7 @@ public final class CompletableConcat extends Completable {
         this.sources.subscribe(new CompletableConcatSubscriber(completableObserver, this.prefetch));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class CompletableConcatSubscriber extends AtomicInteger implements FlowableSubscriber<CompletableSource>, Disposable {
         private static final long serialVersionUID = 9032184911934499404L;
         volatile boolean active;
@@ -186,7 +186,7 @@ public final class CompletableConcat extends Completable {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class ConcatInnerObserver extends AtomicReference<Disposable> implements CompletableObserver {
             private static final long serialVersionUID = -5454794857847146511L;
             final CompletableConcatSubscriber parent;

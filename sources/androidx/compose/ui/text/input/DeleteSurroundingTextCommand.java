@@ -3,7 +3,7 @@ package androidx.compose.ui.text.input;
 import androidx.compose.ui.text.internal.InlineClassHelperKt;
 import kotlin.Metadata;
 /* compiled from: EditCommand.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0002\u0010\u0005J\u0010\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0016J\u0013\u0010\r\u001a\u00020\u000e2\b\u0010\u000f\u001a\u0004\u0018\u00010\u0010H\u0096\u0002J\b\u0010\u0011\u001a\u00020\u0003H\u0016J\b\u0010\u0012\u001a\u00020\u0013H\u0016R\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0007¨\u0006\u0014"}, d2 = {"Landroidx/compose/ui/text/input/DeleteSurroundingTextCommand;", "Landroidx/compose/ui/text/input/EditCommand;", "lengthBeforeCursor", "", "lengthAfterCursor", "(II)V", "getLengthAfterCursor", "()I", "getLengthBeforeCursor", "applyTo", "", "buffer", "Landroidx/compose/ui/text/input/EditingBuffer;", "equals", "", "other", "", "hashCode", "toString", "", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0010\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0016J\u0013\u0010\u000e\u001a\u00020\u000f2\b\u0010\u0010\u001a\u0004\u0018\u00010\u0011H\u0096\u0002J\b\u0010\u0012\u001a\u00020\u0003H\u0016J\b\u0010\u0013\u001a\u00020\u0014H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\b¨\u0006\u0015"}, d2 = {"Landroidx/compose/ui/text/input/DeleteSurroundingTextCommand;", "Landroidx/compose/ui/text/input/EditCommand;", "lengthBeforeCursor", "", "lengthAfterCursor", "<init>", "(II)V", "getLengthBeforeCursor", "()I", "getLengthAfterCursor", "applyTo", "", "buffer", "Landroidx/compose/ui/text/input/EditingBuffer;", "equals", "", "other", "", "hashCode", "toString", "", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class DeleteSurroundingTextCommand implements EditCommand {
     public static final int $stable = 0;
@@ -29,20 +29,20 @@ public final class DeleteSurroundingTextCommand implements EditCommand {
 
     @Override // androidx.compose.ui.text.input.EditCommand
     public void applyTo(EditingBuffer editingBuffer) {
-        int selectionEnd$ui_text_release = editingBuffer.getSelectionEnd$ui_text_release();
+        int selectionEnd$ui_text = editingBuffer.getSelectionEnd$ui_text();
         int i = this.lengthAfterCursor;
-        int i2 = selectionEnd$ui_text_release + i;
-        if (((selectionEnd$ui_text_release ^ i2) & (i ^ i2)) < 0) {
-            i2 = editingBuffer.getLength$ui_text_release();
+        int i2 = selectionEnd$ui_text + i;
+        if (((selectionEnd$ui_text ^ i2) & (i ^ i2)) < 0) {
+            i2 = editingBuffer.getLength$ui_text();
         }
-        editingBuffer.delete$ui_text_release(editingBuffer.getSelectionEnd$ui_text_release(), Math.min(i2, editingBuffer.getLength$ui_text_release()));
-        int selectionStart$ui_text_release = editingBuffer.getSelectionStart$ui_text_release();
+        editingBuffer.delete$ui_text(editingBuffer.getSelectionEnd$ui_text(), Math.min(i2, editingBuffer.getLength$ui_text()));
+        int selectionStart$ui_text = editingBuffer.getSelectionStart$ui_text();
         int i3 = this.lengthBeforeCursor;
-        int i4 = selectionStart$ui_text_release - i3;
-        if (((selectionStart$ui_text_release ^ i4) & (i3 ^ selectionStart$ui_text_release)) < 0) {
+        int i4 = selectionStart$ui_text - i3;
+        if (((selectionStart$ui_text ^ i4) & (i3 ^ selectionStart$ui_text)) < 0) {
             i4 = 0;
         }
-        editingBuffer.delete$ui_text_release(Math.max(0, i4), editingBuffer.getSelectionStart$ui_text_release());
+        editingBuffer.delete$ui_text(Math.max(0, i4), editingBuffer.getSelectionStart$ui_text());
     }
 
     public boolean equals(Object obj) {

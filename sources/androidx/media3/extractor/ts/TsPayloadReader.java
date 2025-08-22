@@ -12,13 +12,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface TsPayloadReader {
     public static final int FLAG_DATA_ALIGNMENT_INDICATOR = 4;
     public static final int FLAG_PAYLOAD_UNIT_START_INDICATOR = 1;
     public static final int FLAG_RANDOM_ACCESS_INDICATOR = 2;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Factory {
         SparseArray<TsPayloadReader> createInitialPayloadReaders();
 
@@ -28,7 +28,7 @@ public interface TsPayloadReader {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Flags {
     }
 
@@ -38,7 +38,7 @@ public interface TsPayloadReader {
 
     void seek();
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class EsInfo {
         public static final int AUDIO_TYPE_CLEAN_EFFECTS = 1;
         public static final int AUDIO_TYPE_HEARING_IMPAIRED = 2;
@@ -53,7 +53,7 @@ public interface TsPayloadReader {
         @Target({ElementType.TYPE_USE})
         @Documented
         @Retention(RetentionPolicy.SOURCE)
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public @interface AudioType {
         }
 
@@ -80,7 +80,7 @@ public interface TsPayloadReader {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class DvbSubtitleInfo {
         public final byte[] initializationData;
         public final String language;
@@ -93,7 +93,7 @@ public interface TsPayloadReader {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class TrackIdGenerator {
         private static final int ID_UNSET = Integer.MIN_VALUE;
         private final int firstTrackId;

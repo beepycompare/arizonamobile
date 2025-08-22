@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.CompositeException;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Predicate;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableOnErrorComplete extends Completable {
     final Predicate<? super Throwable> predicate;
     final CompletableSource source;
@@ -22,7 +22,7 @@ public final class CompletableOnErrorComplete extends Completable {
         this.source.subscribe(new OnError(completableObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class OnError implements CompletableObserver {
         private final CompletableObserver downstream;
 

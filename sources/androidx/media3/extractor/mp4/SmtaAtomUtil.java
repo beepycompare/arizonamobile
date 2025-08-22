@@ -5,7 +5,7 @@ import androidx.media3.common.C;
 import androidx.media3.common.Metadata;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.metadata.mp4.SmtaMetadataEntry;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SmtaAtomUtil {
     private static final int CAMCORDER_FRC_SUPERSLOW_MOTION = 9;
     private static final int CAMCORDER_FRC_SUPERSLOW_MOTION_HEVC = 22;

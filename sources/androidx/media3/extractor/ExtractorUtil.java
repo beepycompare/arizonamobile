@@ -5,7 +5,7 @@ import androidx.media3.common.ParserException;
 import java.io.EOFException;
 import java.io.IOException;
 import org.checkerframework.dataflow.qual.Pure;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ExtractorUtil {
     public static int getMaximumEncodedRateBytesPerSecond(int i) {
         if (i != 20) {

@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableWindowBoundary<T, B> extends AbstractFlowableWithUpstream<T, Flowable<T>> {
     final int capacityHint;
     final Publisher<B> other;
@@ -37,7 +37,7 @@ public final class FlowableWindowBoundary<T, B> extends AbstractFlowableWithUpst
         this.source.subscribe((FlowableSubscriber) windowBoundaryMainSubscriber);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WindowBoundaryMainSubscriber<T, B> extends AtomicInteger implements FlowableSubscriber<T>, Subscription, Runnable {
         static final Object NEXT_WINDOW = new Object();
         private static final long serialVersionUID = 2233020065421370272L;
@@ -209,7 +209,7 @@ public final class FlowableWindowBoundary<T, B> extends AbstractFlowableWithUpst
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class WindowBoundaryInnerSubscriber<T, B> extends DisposableSubscriber<B> {
         boolean done;
         final WindowBoundaryMainSubscriber<T, B> parent;

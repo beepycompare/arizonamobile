@@ -9,228 +9,204 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: Padding.kt */
-@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\n\u001a\u001a\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007ø\u0001\u0000¢\u0006\u0004\b\u0004\u0010\u0005\u001a&\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\u0003H\u0007ø\u0001\u0000¢\u0006\u0004\b\b\u0010\t\u001a:\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u0003H\u0007ø\u0001\u0000¢\u0006\u0004\b\u000e\u0010\u000f\u001a>\u0010\u0010\u001a\u00020\u0011*\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\u0013\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u0003H\u0007ø\u0001\u0000¢\u0006\u0004\b\u0014\u0010\u0015\u001a\u0019\u0010\u0016\u001a\u00020\u0003*\u00020\u00012\u0006\u0010\u0017\u001a\u00020\u0018H\u0007¢\u0006\u0002\u0010\u0019\u001a\u0019\u0010\u001a\u001a\u00020\u0003*\u00020\u00012\u0006\u0010\u0017\u001a\u00020\u0018H\u0007¢\u0006\u0002\u0010\u0019\u001a\u0014\u0010\u001b\u001a\u00020\u0011*\u00020\u00112\u0006\u0010\u001c\u001a\u00020\u0001H\u0007\u001a\u001e\u0010\u001b\u001a\u00020\u0011*\u00020\u00112\u0006\u0010\u0002\u001a\u00020\u0003H\u0007ø\u0001\u0000¢\u0006\u0004\b\u001d\u0010\u001e\u001a*\u0010\u001b\u001a\u00020\u0011*\u00020\u00112\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\u0003H\u0007ø\u0001\u0000¢\u0006\u0004\b\u001f\u0010 \u001a>\u0010\u001b\u001a\u00020\u0011*\u00020\u00112\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00032\b\b\u0002\u0010\f\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u0003H\u0007ø\u0001\u0000¢\u0006\u0004\b!\u0010\u0015\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\""}, d2 = {"PaddingValues", "Landroidx/compose/foundation/layout/PaddingValues;", TtmlNode.COMBINE_ALL, "Landroidx/compose/ui/unit/Dp;", "PaddingValues-0680j_4", "(F)Landroidx/compose/foundation/layout/PaddingValues;", "horizontal", "vertical", "PaddingValues-YgX7TsA", "(FF)Landroidx/compose/foundation/layout/PaddingValues;", TtmlNode.START, "top", TtmlNode.END, "bottom", "PaddingValues-a9UjIt4", "(FFFF)Landroidx/compose/foundation/layout/PaddingValues;", "absolutePadding", "Landroidx/compose/ui/Modifier;", TtmlNode.LEFT, TtmlNode.RIGHT, "absolutePadding-qDBjuR0", "(Landroidx/compose/ui/Modifier;FFFF)Landroidx/compose/ui/Modifier;", "calculateEndPadding", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "(Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/ui/unit/LayoutDirection;)F", "calculateStartPadding", "padding", "paddingValues", "padding-3ABfNKs", "(Landroidx/compose/ui/Modifier;F)Landroidx/compose/ui/Modifier;", "padding-VpY3zN4", "(Landroidx/compose/ui/Modifier;FF)Landroidx/compose/ui/Modifier;", "padding-qDBjuR0", "foundation-layout_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\n\u001a;\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u0003H\u0007¢\u0006\u0004\b\u0007\u0010\b\u001a'\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u0003H\u0007¢\u0006\u0004\b\u000b\u0010\f\u001a\u001b\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\r\u001a\u00020\u0003H\u0007¢\u0006\u0004\b\u000e\u0010\u000f\u001a\u0014\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0010\u001a\u00020\u0011H\u0007\u001a;\u0010\u0012\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010\u0013\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0014\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u0003H\u0007¢\u0006\u0004\b\u0015\u0010\b\u001a\u0019\u0010\u0016\u001a\u00020\u0003*\u00020\u00112\u0006\u0010\u0017\u001a\u00020\u0018H\u0007¢\u0006\u0002\u0010\u0019\u001a\u0019\u0010\u001a\u001a\u00020\u0003*\u00020\u00112\u0006\u0010\u0017\u001a\u00020\u0018H\u0007¢\u0006\u0002\u0010\u0019\u001a\u0017\u0010\u001b\u001a\u00020\u00112\u0006\u0010\r\u001a\u00020\u0003H\u0007¢\u0006\u0004\b\u001c\u0010\u001d\u001a#\u0010\u001b\u001a\u00020\u00112\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u0003H\u0007¢\u0006\u0004\b\u001e\u0010\u001f\u001a7\u0010\u001b\u001a\u00020\u00112\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u0003H\u0007¢\u0006\u0004\b \u0010!¨\u0006\""}, d2 = {"padding", "Landroidx/compose/ui/Modifier;", TtmlNode.START, "Landroidx/compose/ui/unit/Dp;", "top", TtmlNode.END, "bottom", "padding-qDBjuR0", "(Landroidx/compose/ui/Modifier;FFFF)Landroidx/compose/ui/Modifier;", "horizontal", "vertical", "padding-VpY3zN4", "(Landroidx/compose/ui/Modifier;FF)Landroidx/compose/ui/Modifier;", TtmlNode.COMBINE_ALL, "padding-3ABfNKs", "(Landroidx/compose/ui/Modifier;F)Landroidx/compose/ui/Modifier;", "paddingValues", "Landroidx/compose/foundation/layout/PaddingValues;", "absolutePadding", TtmlNode.LEFT, TtmlNode.RIGHT, "absolutePadding-qDBjuR0", "calculateStartPadding", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "(Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/ui/unit/LayoutDirection;)F", "calculateEndPadding", "PaddingValues", "PaddingValues-0680j_4", "(F)Landroidx/compose/foundation/layout/PaddingValues;", "PaddingValues-YgX7TsA", "(FF)Landroidx/compose/foundation/layout/PaddingValues;", "PaddingValues-a9UjIt4", "(FFFF)Landroidx/compose/foundation/layout/PaddingValues;", "foundation-layout"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PaddingKt {
     /* renamed from: padding-qDBjuR0 */
-    public static final Modifier m741paddingqDBjuR0(Modifier modifier, final float f, final float f2, final float f3, final float f4) {
-        return modifier.then(new PaddingElement(f, f2, f3, f4, true, new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.PaddingKt$padding$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+    public static final Modifier m835paddingqDBjuR0(Modifier modifier, final float f, final float f2, final float f3, final float f4) {
+        return modifier.then(new PaddingElement(f, f2, f3, f4, true, new Function1() { // from class: androidx.compose.foundation.layout.PaddingKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(InspectorInfo inspectorInfo) {
-                invoke2(inspectorInfo);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(InspectorInfo inspectorInfo) {
-                inspectorInfo.setName("padding");
-                inspectorInfo.getProperties().set(TtmlNode.START, Dp.m6682boximpl(f));
-                inspectorInfo.getProperties().set("top", Dp.m6682boximpl(f2));
-                inspectorInfo.getProperties().set(TtmlNode.END, Dp.m6682boximpl(f3));
-                inspectorInfo.getProperties().set("bottom", Dp.m6682boximpl(f4));
+            public final Object invoke(Object obj) {
+                Unit padding_qDBjuR0$lambda$0;
+                padding_qDBjuR0$lambda$0 = PaddingKt.padding_qDBjuR0$lambda$0(f, f2, f3, f4, (InspectorInfo) obj);
+                return padding_qDBjuR0$lambda$0;
             }
         }, null));
+    }
+
+    public static final Unit padding_qDBjuR0$lambda$0(float f, float f2, float f3, float f4, InspectorInfo inspectorInfo) {
+        inspectorInfo.setName("padding");
+        inspectorInfo.getProperties().set(TtmlNode.START, Dp.m7249boximpl(f));
+        inspectorInfo.getProperties().set("top", Dp.m7249boximpl(f2));
+        inspectorInfo.getProperties().set(TtmlNode.END, Dp.m7249boximpl(f3));
+        inspectorInfo.getProperties().set("bottom", Dp.m7249boximpl(f4));
+        return Unit.INSTANCE;
     }
 
     /* renamed from: padding-VpY3zN4 */
-    public static final Modifier m739paddingVpY3zN4(Modifier modifier, final float f, final float f2) {
-        return modifier.then(new PaddingElement(f, f2, f, f2, true, new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.PaddingKt$padding$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+    public static final Modifier m833paddingVpY3zN4(Modifier modifier, final float f, final float f2) {
+        return modifier.then(new PaddingElement(f, f2, f, f2, true, new Function1() { // from class: androidx.compose.foundation.layout.PaddingKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(InspectorInfo inspectorInfo) {
-                invoke2(inspectorInfo);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(InspectorInfo inspectorInfo) {
-                inspectorInfo.setName("padding");
-                inspectorInfo.getProperties().set("horizontal", Dp.m6682boximpl(f));
-                inspectorInfo.getProperties().set("vertical", Dp.m6682boximpl(f2));
+            public final Object invoke(Object obj) {
+                Unit padding_VpY3zN4$lambda$1;
+                padding_VpY3zN4$lambda$1 = PaddingKt.padding_VpY3zN4$lambda$1(f, f2, (InspectorInfo) obj);
+                return padding_VpY3zN4$lambda$1;
             }
         }, null));
+    }
+
+    public static final Unit padding_VpY3zN4$lambda$1(float f, float f2, InspectorInfo inspectorInfo) {
+        inspectorInfo.setName("padding");
+        inspectorInfo.getProperties().set("horizontal", Dp.m7249boximpl(f));
+        inspectorInfo.getProperties().set("vertical", Dp.m7249boximpl(f2));
+        return Unit.INSTANCE;
     }
 
     /* renamed from: padding-3ABfNKs */
-    public static final Modifier m738padding3ABfNKs(Modifier modifier, final float f) {
-        return modifier.then(new PaddingElement(f, f, f, f, true, new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.PaddingKt$padding$3
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+    public static final Modifier m832padding3ABfNKs(Modifier modifier, final float f) {
+        return modifier.then(new PaddingElement(f, f, f, f, true, new Function1() { // from class: androidx.compose.foundation.layout.PaddingKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(InspectorInfo inspectorInfo) {
-                invoke2(inspectorInfo);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(InspectorInfo inspectorInfo) {
-                inspectorInfo.setName("padding");
-                inspectorInfo.setValue(Dp.m6682boximpl(f));
+            public final Object invoke(Object obj) {
+                Unit padding_3ABfNKs$lambda$2;
+                padding_3ABfNKs$lambda$2 = PaddingKt.padding_3ABfNKs$lambda$2(f, (InspectorInfo) obj);
+                return padding_3ABfNKs$lambda$2;
             }
         }, null));
     }
 
+    public static final Unit padding_3ABfNKs$lambda$2(float f, InspectorInfo inspectorInfo) {
+        inspectorInfo.setName("padding");
+        inspectorInfo.setValue(Dp.m7249boximpl(f));
+        return Unit.INSTANCE;
+    }
+
     public static final Modifier padding(Modifier modifier, final PaddingValues paddingValues) {
-        return modifier.then(new PaddingValuesElement(paddingValues, new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.PaddingKt$padding$4
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        return modifier.then(new PaddingValuesElement(paddingValues, new Function1() { // from class: androidx.compose.foundation.layout.PaddingKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(InspectorInfo inspectorInfo) {
-                invoke2(inspectorInfo);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(InspectorInfo inspectorInfo) {
-                inspectorInfo.setName("padding");
-                inspectorInfo.getProperties().set("paddingValues", PaddingValues.this);
+            public final Object invoke(Object obj) {
+                Unit padding$lambda$3;
+                padding$lambda$3 = PaddingKt.padding$lambda$3(PaddingValues.this, (InspectorInfo) obj);
+                return padding$lambda$3;
             }
         }));
     }
 
+    public static final Unit padding$lambda$3(PaddingValues paddingValues, InspectorInfo inspectorInfo) {
+        inspectorInfo.setName("padding");
+        inspectorInfo.getProperties().set("paddingValues", paddingValues);
+        return Unit.INSTANCE;
+    }
+
     /* renamed from: absolutePadding-qDBjuR0 */
-    public static final Modifier m736absolutePaddingqDBjuR0(Modifier modifier, final float f, final float f2, final float f3, final float f4) {
-        return modifier.then(new PaddingElement(f, f2, f3, f4, false, new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.PaddingKt$absolutePadding$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+    public static final Modifier m830absolutePaddingqDBjuR0(Modifier modifier, final float f, final float f2, final float f3, final float f4) {
+        return modifier.then(new PaddingElement(f, f2, f3, f4, false, new Function1() { // from class: androidx.compose.foundation.layout.PaddingKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(InspectorInfo inspectorInfo) {
-                invoke2(inspectorInfo);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(InspectorInfo inspectorInfo) {
-                inspectorInfo.setName("absolutePadding");
-                inspectorInfo.getProperties().set(TtmlNode.LEFT, Dp.m6682boximpl(f));
-                inspectorInfo.getProperties().set("top", Dp.m6682boximpl(f2));
-                inspectorInfo.getProperties().set(TtmlNode.RIGHT, Dp.m6682boximpl(f3));
-                inspectorInfo.getProperties().set("bottom", Dp.m6682boximpl(f4));
+            public final Object invoke(Object obj) {
+                Unit absolutePadding_qDBjuR0$lambda$4;
+                absolutePadding_qDBjuR0$lambda$4 = PaddingKt.absolutePadding_qDBjuR0$lambda$4(f, f2, f3, f4, (InspectorInfo) obj);
+                return absolutePadding_qDBjuR0$lambda$4;
             }
         }, null));
     }
 
+    public static final Unit absolutePadding_qDBjuR0$lambda$4(float f, float f2, float f3, float f4, InspectorInfo inspectorInfo) {
+        inspectorInfo.setName("absolutePadding");
+        inspectorInfo.getProperties().set(TtmlNode.LEFT, Dp.m7249boximpl(f));
+        inspectorInfo.getProperties().set("top", Dp.m7249boximpl(f2));
+        inspectorInfo.getProperties().set(TtmlNode.RIGHT, Dp.m7249boximpl(f3));
+        inspectorInfo.getProperties().set("bottom", Dp.m7249boximpl(f4));
+        return Unit.INSTANCE;
+    }
+
     public static final float calculateStartPadding(PaddingValues paddingValues, LayoutDirection layoutDirection) {
         if (layoutDirection == LayoutDirection.Ltr) {
-            return paddingValues.mo688calculateLeftPaddingu2uoSUM(layoutDirection);
+            return paddingValues.mo776calculateLeftPaddingu2uoSUM(layoutDirection);
         }
-        return paddingValues.mo689calculateRightPaddingu2uoSUM(layoutDirection);
+        return paddingValues.mo777calculateRightPaddingu2uoSUM(layoutDirection);
     }
 
     public static final float calculateEndPadding(PaddingValues paddingValues, LayoutDirection layoutDirection) {
         if (layoutDirection == LayoutDirection.Ltr) {
-            return paddingValues.mo689calculateRightPaddingu2uoSUM(layoutDirection);
+            return paddingValues.mo777calculateRightPaddingu2uoSUM(layoutDirection);
         }
-        return paddingValues.mo688calculateLeftPaddingu2uoSUM(layoutDirection);
+        return paddingValues.mo776calculateLeftPaddingu2uoSUM(layoutDirection);
     }
 
     /* renamed from: PaddingValues-0680j_4 */
-    public static final PaddingValues m731PaddingValues0680j_4(float f) {
+    public static final PaddingValues m825PaddingValues0680j_4(float f) {
         return new PaddingValuesImpl(f, f, f, f, null);
     }
 
     /* renamed from: PaddingValues-YgX7TsA */
-    public static final PaddingValues m732PaddingValuesYgX7TsA(float f, float f2) {
+    public static final PaddingValues m826PaddingValuesYgX7TsA(float f, float f2) {
         return new PaddingValuesImpl(f, f2, f, f2, null);
     }
 
     /* renamed from: PaddingValues-a9UjIt4 */
-    public static final PaddingValues m734PaddingValuesa9UjIt4(float f, float f2, float f3, float f4) {
+    public static final PaddingValues m828PaddingValuesa9UjIt4(float f, float f2, float f3, float f4) {
         return new PaddingValuesImpl(f, f2, f3, f4, null);
     }
 
     /* renamed from: padding-qDBjuR0$default */
-    public static /* synthetic */ Modifier m742paddingqDBjuR0$default(Modifier modifier, float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ Modifier m836paddingqDBjuR0$default(Modifier modifier, float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m6684constructorimpl(0);
+            f = Dp.m7251constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m6684constructorimpl(0);
+            f2 = Dp.m7251constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m6684constructorimpl(0);
+            f3 = Dp.m7251constructorimpl(0);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m6684constructorimpl(0);
+            f4 = Dp.m7251constructorimpl(0);
         }
-        return m741paddingqDBjuR0(modifier, f, f2, f3, f4);
+        return m835paddingqDBjuR0(modifier, f, f2, f3, f4);
     }
 
     /* renamed from: padding-VpY3zN4$default */
-    public static /* synthetic */ Modifier m740paddingVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ Modifier m834paddingVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m6684constructorimpl(0);
+            f = Dp.m7251constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m6684constructorimpl(0);
+            f2 = Dp.m7251constructorimpl(0);
         }
-        return m739paddingVpY3zN4(modifier, f, f2);
+        return m833paddingVpY3zN4(modifier, f, f2);
     }
 
     /* renamed from: absolutePadding-qDBjuR0$default */
-    public static /* synthetic */ Modifier m737absolutePaddingqDBjuR0$default(Modifier modifier, float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ Modifier m831absolutePaddingqDBjuR0$default(Modifier modifier, float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m6684constructorimpl(0);
+            f = Dp.m7251constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m6684constructorimpl(0);
+            f2 = Dp.m7251constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m6684constructorimpl(0);
+            f3 = Dp.m7251constructorimpl(0);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m6684constructorimpl(0);
+            f4 = Dp.m7251constructorimpl(0);
         }
-        return m736absolutePaddingqDBjuR0(modifier, f, f2, f3, f4);
+        return m830absolutePaddingqDBjuR0(modifier, f, f2, f3, f4);
     }
 
     /* renamed from: PaddingValues-YgX7TsA$default */
-    public static /* synthetic */ PaddingValues m733PaddingValuesYgX7TsA$default(float f, float f2, int i, Object obj) {
+    public static /* synthetic */ PaddingValues m827PaddingValuesYgX7TsA$default(float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m6684constructorimpl(0);
+            f = Dp.m7251constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m6684constructorimpl(0);
+            f2 = Dp.m7251constructorimpl(0);
         }
-        return m732PaddingValuesYgX7TsA(f, f2);
+        return m826PaddingValuesYgX7TsA(f, f2);
     }
 
     /* renamed from: PaddingValues-a9UjIt4$default */
-    public static /* synthetic */ PaddingValues m735PaddingValuesa9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ PaddingValues m829PaddingValuesa9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m6684constructorimpl(0);
+            f = Dp.m7251constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m6684constructorimpl(0);
+            f2 = Dp.m7251constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m6684constructorimpl(0);
+            f3 = Dp.m7251constructorimpl(0);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m6684constructorimpl(0);
+            f4 = Dp.m7251constructorimpl(0);
         }
-        return m734PaddingValuesa9UjIt4(f, f2, f3, f4);
+        return m828PaddingValuesa9UjIt4(f, f2, f3, f4);
     }
 }

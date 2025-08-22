@@ -15,8 +15,8 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: Clickable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.CombinedClickableNode$onClickKeyUpEvent$2", f = "Clickable.kt", i = {0, 0}, l = {908, 912}, m = "invokeSuspend", n = {"minTime", "timeout"}, s = {"J$0", "J$1"})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.CombinedClickableNode$onClickKeyUpEvent$2", f = "Clickable.kt", i = {0, 0}, l = {1268, 1272}, m = "invokeSuspend", n = {"minTime", "timeout"}, s = {"J$0", "J$1"})
 /* loaded from: classes.dex */
 final class CombinedClickableNode$onClickKeyUpEvent$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ long $keyCode;
@@ -46,10 +46,10 @@ final class CombinedClickableNode$onClickKeyUpEvent$2 extends SuspendLambda impl
     /* JADX WARN: Code restructure failed: missing block: B:11:0x004a, code lost:
         if (kotlinx.coroutines.DelayKt.delay(r6, r10) == r0) goto L17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x006b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x006a, code lost:
         if (kotlinx.coroutines.DelayKt.delay(r4 - r6, r10) == r0) goto L17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x006d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x006c, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

@@ -1,1519 +1,8 @@
 [
     {
-        "number": 15,
-        "name": "Payson",
-        "ip": "185.169.134.174",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740041162
-            },
-            {
-                "online": 1000,
-                "time": 1740044821
-            },
-            {
-                "online": 1000,
-                "time": 1740048421
-            },
-            {
-                "online": 1000,
-                "time": 1740052021
-            },
-            {
-                "online": 1000,
-                "time": 1740055621
-            },
-            {
-                "online": 1000,
-                "time": 1740059221
-            },
-            {
-                "online": 1000,
-                "time": 1740062821
-            },
-            {
-                "online": 1000,
-                "time": 1740066421
-            },
-            {
-                "online": 1000,
-                "time": 1740070021
-            },
-            {
-                "online": 1000,
-                "time": 1740073621
-            },
-            {
-                "online": 1000,
-                "time": 1740077221
-            },
-            {
-                "online": 1000,
-                "time": 1740080821
-            },
-            {
-                "online": 1000,
-                "time": 1740084421
-            },
-            {
-                "online": 1000,
-                "time": 1740088022
-            },
-            {
-                "online": 1000,
-                "time": 1740091681
-            },
-            {
-                "online": 1000,
-                "time": 1740095281
-            },
-            {
-                "online": 1000,
-                "time": 1740098881
-            },
-            {
-                "online": 1000,
-                "time": 1740102481
-            },
-            {
-                "online": 1000,
-                "time": 1740106081
-            },
-            {
-                "online": 1000,
-                "time": 1740109681
-            },
-            {
-                "online": 1000,
-                "time": 1740113281
-            },
-            {
-                "online": 1000,
-                "time": 1740116881
-            },
-            {
-                "online": 1000,
-                "time": 1740120481
-            },
-            {
-                "online": 1000,
-                "time": 1740124081
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arizonapayson15",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/15.webp",
-        "additionalIps": [
-            "185.169.134.174"
-        ],
-        "recomend": true,
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 5,
-        "name": "Brainburg",
-        "ip": "185.169.134.45",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740040981
-            },
-            {
-                "online": 1000,
-                "time": 1740044581
-            },
-            {
-                "online": 1000,
-                "time": 1740048181
-            },
-            {
-                "online": 1000,
-                "time": 1740051781
-            },
-            {
-                "online": 1000,
-                "time": 1740055381
-            },
-            {
-                "online": 1000,
-                "time": 1740058981
-            },
-            {
-                "online": 1000,
-                "time": 1740062581
-            },
-            {
-                "online": 1000,
-                "time": 1740066182
-            },
-            {
-                "online": 1000,
-                "time": 1740069841
-            },
-            {
-                "online": 1000,
-                "time": 1740073441
-            },
-            {
-                "online": 1000,
-                "time": 1740077041
-            },
-            {
-                "online": 1000,
-                "time": 1740080641
-            },
-            {
-                "online": 1000,
-                "time": 1740084241
-            },
-            {
-                "online": 1000,
-                "time": 1740087841
-            },
-            {
-                "online": 1000,
-                "time": 1740091441
-            },
-            {
-                "online": 1000,
-                "time": 1740095041
-            },
-            {
-                "online": 1000,
-                "time": 1740098641
-            },
-            {
-                "online": 1000,
-                "time": 1740102242
-            },
-            {
-                "online": 1000,
-                "time": 1740105901
-            },
-            {
-                "online": 1000,
-                "time": 1740109501
-            },
-            {
-                "online": 1000,
-                "time": 1740113101
-            },
-            {
-                "online": 1000,
-                "time": 1740116701
-            },
-            {
-                "online": 1000,
-                "time": 1740120301
-            },
-            {
-                "online": 1000,
-                "time": 1740123901
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/brainburg_arizona",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/5.webp",
-        "additionalIps": [
-            "185.169.134.45"
-        ],
-        "recomend": true,
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 7,
-        "name": "Mesa",
-        "ip": "185.169.134.59",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740040981
-            },
-            {
-                "online": 1000,
-                "time": 1740044581
-            },
-            {
-                "online": 1000,
-                "time": 1740048181
-            },
-            {
-                "online": 1000,
-                "time": 1740051781
-            },
-            {
-                "online": 1000,
-                "time": 1740055381
-            },
-            {
-                "online": 1000,
-                "time": 1740058981
-            },
-            {
-                "online": 1000,
-                "time": 1740062581
-            },
-            {
-                "online": 1000,
-                "time": 1740066182
-            },
-            {
-                "online": 1000,
-                "time": 1740069841
-            },
-            {
-                "online": 1000,
-                "time": 1740073441
-            },
-            {
-                "online": 1000,
-                "time": 1740077041
-            },
-            {
-                "online": 1000,
-                "time": 1740080641
-            },
-            {
-                "online": 1000,
-                "time": 1740084241
-            },
-            {
-                "online": 1000,
-                "time": 1740087841
-            },
-            {
-                "online": 1000,
-                "time": 1740091441
-            },
-            {
-                "online": 1000,
-                "time": 1740095041
-            },
-            {
-                "online": 1000,
-                "time": 1740098641
-            },
-            {
-                "online": 1000,
-                "time": 1740102242
-            },
-            {
-                "online": 1000,
-                "time": 1740105901
-            },
-            {
-                "online": 1000,
-                "time": 1740109501
-            },
-            {
-                "online": 1000,
-                "time": 1740113101
-            },
-            {
-                "online": 1000,
-                "time": 1740116701
-            },
-            {
-                "online": 1000,
-                "time": 1740120301
-            },
-            {
-                "online": 1000,
-                "time": 1740123901
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arizonarpmesa7",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/7.webp",
-        "additionalIps": [
-            "185.169.134.59"
-        ],
-        "recomend": true,
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 17,
-        "name": "Show Low",
-        "ip": "80.66.82.190",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740041162
-            },
-            {
-                "online": 1000,
-                "time": 1740044821
-            },
-            {
-                "online": 1000,
-                "time": 1740048421
-            },
-            {
-                "online": 1000,
-                "time": 1740052021
-            },
-            {
-                "online": 1000,
-                "time": 1740055621
-            },
-            {
-                "online": 1000,
-                "time": 1740059221
-            },
-            {
-                "online": 1000,
-                "time": 1740062821
-            },
-            {
-                "online": 1000,
-                "time": 1740066421
-            },
-            {
-                "online": 1000,
-                "time": 1740070021
-            },
-            {
-                "online": 1000,
-                "time": 1740073621
-            },
-            {
-                "online": 1000,
-                "time": 1740077221
-            },
-            {
-                "online": 1000,
-                "time": 1740080821
-            },
-            {
-                "online": 1000,
-                "time": 1740084421
-            },
-            {
-                "online": 1000,
-                "time": 1740088022
-            },
-            {
-                "online": 1000,
-                "time": 1740091681
-            },
-            {
-                "online": 1000,
-                "time": 1740095281
-            },
-            {
-                "online": 1000,
-                "time": 1740098881
-            },
-            {
-                "online": 1000,
-                "time": 1740102481
-            },
-            {
-                "online": 1000,
-                "time": 1740106081
-            },
-            {
-                "online": 1000,
-                "time": 1740109681
-            },
-            {
-                "online": 1000,
-                "time": 1740113281
-            },
-            {
-                "online": 1000,
-                "time": 1740116881
-            },
-            {
-                "online": 1000,
-                "time": 1740120481
-            },
-            {
-                "online": 1000,
-                "time": 1740124081
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/showlowazrp",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/17.webp",
-        "additionalIps": [
-            "80.66.82.190"
-        ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 21,
-        "name": "Queen-Creek",
-        "ip": "80.66.82.200",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740041162
-            },
-            {
-                "online": 1000,
-                "time": 1740044821
-            },
-            {
-                "online": 1000,
-                "time": 1740048421
-            },
-            {
-                "online": 1000,
-                "time": 1740052021
-            },
-            {
-                "online": 1000,
-                "time": 1740055621
-            },
-            {
-                "online": 1000,
-                "time": 1740059221
-            },
-            {
-                "online": 1000,
-                "time": 1740062822
-            },
-            {
-                "online": 1000,
-                "time": 1740066481
-            },
-            {
-                "online": 1000,
-                "time": 1740070081
-            },
-            {
-                "online": 1000,
-                "time": 1740073681
-            },
-            {
-                "online": 1000,
-                "time": 1740077281
-            },
-            {
-                "online": 1000,
-                "time": 1740080881
-            },
-            {
-                "online": 1000,
-                "time": 1740084481
-            },
-            {
-                "online": 1000,
-                "time": 1740088081
-            },
-            {
-                "online": 1000,
-                "time": 1740091681
-            },
-            {
-                "online": 1000,
-                "time": 1740095281
-            },
-            {
-                "online": 1000,
-                "time": 1740098881
-            },
-            {
-                "online": 1000,
-                "time": 1740102481
-            },
-            {
-                "online": 1000,
-                "time": 1740106081
-            },
-            {
-                "online": 1000,
-                "time": 1740109681
-            },
-            {
-                "online": 1000,
-                "time": 1740113281
-            },
-            {
-                "online": 1000,
-                "time": 1740116881
-            },
-            {
-                "online": 1000,
-                "time": 1740120481
-            },
-            {
-                "online": 1000,
-                "time": 1740124081
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arizonaqueen21",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/21.webp",
-        "additionalIps": [
-            "80.66.82.200"
-        ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 10,
-        "name": "Surprise",
-        "ip": "185.169.134.109",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740040981
-            },
-            {
-                "online": 1000,
-                "time": 1740044581
-            },
-            {
-                "online": 1000,
-                "time": 1740048181
-            },
-            {
-                "online": 1000,
-                "time": 1740051781
-            },
-            {
-                "online": 1000,
-                "time": 1740055381
-            },
-            {
-                "online": 1000,
-                "time": 1740058981
-            },
-            {
-                "online": 1000,
-                "time": 1740062581
-            },
-            {
-                "online": 1000,
-                "time": 1740066182
-            },
-            {
-                "online": 1000,
-                "time": 1740069841
-            },
-            {
-                "online": 1000,
-                "time": 1740073441
-            },
-            {
-                "online": 1000,
-                "time": 1740077041
-            },
-            {
-                "online": 1000,
-                "time": 1740080641
-            },
-            {
-                "online": 1000,
-                "time": 1740084241
-            },
-            {
-                "online": 1000,
-                "time": 1740087841
-            },
-            {
-                "online": 1000,
-                "time": 1740091441
-            },
-            {
-                "online": 1000,
-                "time": 1740095041
-            },
-            {
-                "online": 1000,
-                "time": 1740098641
-            },
-            {
-                "online": 1000,
-                "time": 1740102242
-            },
-            {
-                "online": 1000,
-                "time": 1740105901
-            },
-            {
-                "online": 1000,
-                "time": 1740109501
-            },
-            {
-                "online": 1000,
-                "time": 1740113101
-            },
-            {
-                "online": 1000,
-                "time": 1740116701
-            },
-            {
-                "online": 1000,
-                "time": 1740120301
-            },
-            {
-                "online": 1000,
-                "time": 1740123901
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/surprize_official",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/10.webp",
-        "additionalIps": [
-            "185.169.134.109"
-        ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 26,
-        "name": "Faraway",
-        "ip": "80.66.82.82",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740041162
-            },
-            {
-                "online": 1000,
-                "time": 1740044821
-            },
-            {
-                "online": 1000,
-                "time": 1740048421
-            },
-            {
-                "online": 1000,
-                "time": 1740052021
-            },
-            {
-                "online": 1000,
-                "time": 1740055621
-            },
-            {
-                "online": 1000,
-                "time": 1740059221
-            },
-            {
-                "online": 1000,
-                "time": 1740062822
-            },
-            {
-                "online": 1000,
-                "time": 1740066481
-            },
-            {
-                "online": 1000,
-                "time": 1740070081
-            },
-            {
-                "online": 1000,
-                "time": 1740073681
-            },
-            {
-                "online": 1000,
-                "time": 1740077281
-            },
-            {
-                "online": 1000,
-                "time": 1740080881
-            },
-            {
-                "online": 1000,
-                "time": 1740084481
-            },
-            {
-                "online": 1000,
-                "time": 1740088081
-            },
-            {
-                "online": 1000,
-                "time": 1740091681
-            },
-            {
-                "online": 1000,
-                "time": 1740095281
-            },
-            {
-                "online": 1000,
-                "time": 1740098881
-            },
-            {
-                "online": 1000,
-                "time": 1740102481
-            },
-            {
-                "online": 1000,
-                "time": 1740106081
-            },
-            {
-                "online": 1000,
-                "time": 1740109681
-            },
-            {
-                "online": 1000,
-                "time": 1740113281
-            },
-            {
-                "online": 1000,
-                "time": 1740116881
-            },
-            {
-                "online": 1000,
-                "time": 1740120481
-            },
-            {
-                "online": 1000,
-                "time": 1740124081
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arzfaraway",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/26.webp",
-        "additionalIps": [
-            "80.66.82.82"
-        ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 16,
-        "name": "Gilbert",
-        "ip": "80.66.82.191",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740041162
-            },
-            {
-                "online": 1000,
-                "time": 1740044821
-            },
-            {
-                "online": 1000,
-                "time": 1740048421
-            },
-            {
-                "online": 1000,
-                "time": 1740052021
-            },
-            {
-                "online": 1000,
-                "time": 1740055621
-            },
-            {
-                "online": 1000,
-                "time": 1740059221
-            },
-            {
-                "online": 1000,
-                "time": 1740062821
-            },
-            {
-                "online": 1000,
-                "time": 1740066421
-            },
-            {
-                "online": 1000,
-                "time": 1740070021
-            },
-            {
-                "online": 1000,
-                "time": 1740073621
-            },
-            {
-                "online": 1000,
-                "time": 1740077221
-            },
-            {
-                "online": 1000,
-                "time": 1740080821
-            },
-            {
-                "online": 1000,
-                "time": 1740084421
-            },
-            {
-                "online": 1000,
-                "time": 1740088022
-            },
-            {
-                "online": 1000,
-                "time": 1740091681
-            },
-            {
-                "online": 1000,
-                "time": 1740095281
-            },
-            {
-                "online": 1000,
-                "time": 1740098881
-            },
-            {
-                "online": 1000,
-                "time": 1740102481
-            },
-            {
-                "online": 1000,
-                "time": 1740106081
-            },
-            {
-                "online": 1000,
-                "time": 1740109681
-            },
-            {
-                "online": 1000,
-                "time": 1740113281
-            },
-            {
-                "online": 1000,
-                "time": 1740116881
-            },
-            {
-                "online": 1000,
-                "time": 1740120481
-            },
-            {
-                "online": 1000,
-                "time": 1740124081
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arizonagilbert16",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/16.webp",
-        "additionalIps": [
-            "80.66.82.191"
-        ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 12,
-        "name": "Glendale",
-        "ip": "185.169.134.171",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740040981
-            },
-            {
-                "online": 1000,
-                "time": 1740044581
-            },
-            {
-                "online": 1000,
-                "time": 1740048181
-            },
-            {
-                "online": 1000,
-                "time": 1740051781
-            },
-            {
-                "online": 1000,
-                "time": 1740055381
-            },
-            {
-                "online": 1000,
-                "time": 1740058981
-            },
-            {
-                "online": 1000,
-                "time": 1740062581
-            },
-            {
-                "online": 1000,
-                "time": 1740066182
-            },
-            {
-                "online": 1000,
-                "time": 1740069841
-            },
-            {
-                "online": 1000,
-                "time": 1740073441
-            },
-            {
-                "online": 1000,
-                "time": 1740077041
-            },
-            {
-                "online": 1000,
-                "time": 1740080641
-            },
-            {
-                "online": 1000,
-                "time": 1740084241
-            },
-            {
-                "online": 1000,
-                "time": 1740087841
-            },
-            {
-                "online": 1000,
-                "time": 1740091441
-            },
-            {
-                "online": 1000,
-                "time": 1740095041
-            },
-            {
-                "online": 1000,
-                "time": 1740098641
-            },
-            {
-                "online": 1000,
-                "time": 1740102242
-            },
-            {
-                "online": 1000,
-                "time": 1740105901
-            },
-            {
-                "online": 1000,
-                "time": 1740109501
-            },
-            {
-                "online": 1000,
-                "time": 1740113101
-            },
-            {
-                "online": 1000,
-                "time": 1740116701
-            },
-            {
-                "online": 1000,
-                "time": 1740120301
-            },
-            {
-                "online": 1000,
-                "time": 1740123901
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/glendalearz",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/12.webp",
-        "additionalIps": [
-            "185.169.134.171"
-        ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 23,
-        "name": "Holiday",
-        "ip": "80.66.82.132",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740041162
-            },
-            {
-                "online": 1000,
-                "time": 1740044821
-            },
-            {
-                "online": 1000,
-                "time": 1740048421
-            },
-            {
-                "online": 1000,
-                "time": 1740052021
-            },
-            {
-                "online": 1000,
-                "time": 1740055621
-            },
-            {
-                "online": 1000,
-                "time": 1740059221
-            },
-            {
-                "online": 1000,
-                "time": 1740062822
-            },
-            {
-                "online": 1000,
-                "time": 1740066481
-            },
-            {
-                "online": 1000,
-                "time": 1740070081
-            },
-            {
-                "online": 1000,
-                "time": 1740073681
-            },
-            {
-                "online": 1000,
-                "time": 1740077281
-            },
-            {
-                "online": 1000,
-                "time": 1740080881
-            },
-            {
-                "online": 1000,
-                "time": 1740084481
-            },
-            {
-                "online": 1000,
-                "time": 1740088081
-            },
-            {
-                "online": 1000,
-                "time": 1740091681
-            },
-            {
-                "online": 1000,
-                "time": 1740095281
-            },
-            {
-                "online": 1000,
-                "time": 1740098881
-            },
-            {
-                "online": 1000,
-                "time": 1740102481
-            },
-            {
-                "online": 1000,
-                "time": 1740106081
-            },
-            {
-                "online": 1000,
-                "time": 1740109681
-            },
-            {
-                "online": 1000,
-                "time": 1740113281
-            },
-            {
-                "online": 1000,
-                "time": 1740116881
-            },
-            {
-                "online": 1000,
-                "time": 1740120481
-            },
-            {
-                "online": 1000,
-                "time": 1740124081
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arzholiday23",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/23.webp",
-        "additionalIps": [
-            "80.66.82.132"
-        ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 28,
-        "name": "Christmas",
-        "ip": "80.66.82.54",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740041162
-            },
-            {
-                "online": 1000,
-                "time": 1740044821
-            },
-            {
-                "online": 1000,
-                "time": 1740048421
-            },
-            {
-                "online": 1000,
-                "time": 1740052021
-            },
-            {
-                "online": 1000,
-                "time": 1740055621
-            },
-            {
-                "online": 1000,
-                "time": 1740059221
-            },
-            {
-                "online": 1000,
-                "time": 1740062822
-            },
-            {
-                "online": 1000,
-                "time": 1740066481
-            },
-            {
-                "online": 1000,
-                "time": 1740070081
-            },
-            {
-                "online": 1000,
-                "time": 1740073681
-            },
-            {
-                "online": 1000,
-                "time": 1740077281
-            },
-            {
-                "online": 1000,
-                "time": 1740080881
-            },
-            {
-                "online": 1000,
-                "time": 1740084481
-            },
-            {
-                "online": 1000,
-                "time": 1740088081
-            },
-            {
-                "online": 1000,
-                "time": 1740091681
-            },
-            {
-                "online": 1000,
-                "time": 1740095281
-            },
-            {
-                "online": 1000,
-                "time": 1740098881
-            },
-            {
-                "online": 1000,
-                "time": 1740102481
-            },
-            {
-                "online": 1000,
-                "time": 1740106081
-            },
-            {
-                "online": 1000,
-                "time": 1740109681
-            },
-            {
-                "online": 1000,
-                "time": 1740113281
-            },
-            {
-                "online": 1000,
-                "time": 1740116881
-            },
-            {
-                "online": 1000,
-                "time": 1740120481
-            },
-            {
-                "online": 1000,
-                "time": 1740124081
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arizonachristmas28",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/28.webp",
-        "additionalIps": [
-            "80.66.82.54"
-        ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 19,
-        "name": "Page",
-        "ip": "80.66.82.168",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740041162
-            },
-            {
-                "online": 1000,
-                "time": 1740044821
-            },
-            {
-                "online": 1000,
-                "time": 1740048421
-            },
-            {
-                "online": 1000,
-                "time": 1740052021
-            },
-            {
-                "online": 1000,
-                "time": 1740055621
-            },
-            {
-                "online": 1000,
-                "time": 1740059221
-            },
-            {
-                "online": 1000,
-                "time": 1740062822
-            },
-            {
-                "online": 1000,
-                "time": 1740066481
-            },
-            {
-                "online": 1000,
-                "time": 1740070081
-            },
-            {
-                "online": 1000,
-                "time": 1740073681
-            },
-            {
-                "online": 1000,
-                "time": 1740077281
-            },
-            {
-                "online": 1000,
-                "time": 1740080881
-            },
-            {
-                "online": 1000,
-                "time": 1740084481
-            },
-            {
-                "online": 1000,
-                "time": 1740088081
-            },
-            {
-                "online": 1000,
-                "time": 1740091681
-            },
-            {
-                "online": 1000,
-                "time": 1740095281
-            },
-            {
-                "online": 1000,
-                "time": 1740098881
-            },
-            {
-                "online": 1000,
-                "time": 1740102481
-            },
-            {
-                "online": 1000,
-                "time": 1740106081
-            },
-            {
-                "online": 1000,
-                "time": 1740109681
-            },
-            {
-                "online": 1000,
-                "time": 1740113281
-            },
-            {
-                "online": 1000,
-                "time": 1740116881
-            },
-            {
-                "online": 1000,
-                "time": 1740120481
-            },
-            {
-                "online": 1000,
-                "time": 1740124081
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/azrppage",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/19.webp",
-        "additionalIps": [
-            "80.66.82.168"
-        ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 14,
-        "name": "Winslow",
-        "ip": "185.169.134.173",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740041162
-            },
-            {
-                "online": 1000,
-                "time": 1740044821
-            },
-            {
-                "online": 1000,
-                "time": 1740048421
-            },
-            {
-                "online": 1000,
-                "time": 1740052021
-            },
-            {
-                "online": 1000,
-                "time": 1740055621
-            },
-            {
-                "online": 1000,
-                "time": 1740059221
-            },
-            {
-                "online": 1000,
-                "time": 1740062821
-            },
-            {
-                "online": 1000,
-                "time": 1740066421
-            },
-            {
-                "online": 1000,
-                "time": 1740070021
-            },
-            {
-                "online": 1000,
-                "time": 1740073621
-            },
-            {
-                "online": 1000,
-                "time": 1740077221
-            },
-            {
-                "online": 1000,
-                "time": 1740080821
-            },
-            {
-                "online": 1000,
-                "time": 1740084421
-            },
-            {
-                "online": 1000,
-                "time": 1740088022
-            },
-            {
-                "online": 1000,
-                "time": 1740091681
-            },
-            {
-                "online": 1000,
-                "time": 1740095281
-            },
-            {
-                "online": 1000,
-                "time": 1740098881
-            },
-            {
-                "online": 1000,
-                "time": 1740102481
-            },
-            {
-                "online": 1000,
-                "time": 1740106081
-            },
-            {
-                "online": 1000,
-                "time": 1740109681
-            },
-            {
-                "online": 1000,
-                "time": 1740113281
-            },
-            {
-                "online": 1000,
-                "time": 1740116881
-            },
-            {
-                "online": 1000,
-                "time": 1740120481
-            },
-            {
-                "online": 1000,
-                "time": 1740124081
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/azwinslow",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/14.webp",
-        "additionalIps": [
-            "185.169.134.173"
-        ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
         "number": 11,
         "name": "Prescott",
-        "ip": "185.169.134.166",
+        "ip": "prescott.arizona-rp.com",
         "port": 7777,
         "online": 1000,
         "maxplayers": 1000,
@@ -1521,99 +10,99 @@
         "plotPoints": [
             {
                 "online": 1000,
-                "time": 1740040981
+                "time": 1754803921
             },
             {
                 "online": 1000,
-                "time": 1740044581
+                "time": 1754807521
             },
             {
                 "online": 1000,
-                "time": 1740048181
+                "time": 1754811122
             },
             {
                 "online": 1000,
-                "time": 1740051781
+                "time": 1754814781
             },
             {
                 "online": 1000,
-                "time": 1740055381
+                "time": 1754818381
             },
             {
                 "online": 1000,
-                "time": 1740058981
+                "time": 1754821981
             },
             {
                 "online": 1000,
-                "time": 1740062581
+                "time": 1754825581
             },
             {
                 "online": 1000,
-                "time": 1740066182
+                "time": 1754829181
             },
             {
                 "online": 1000,
-                "time": 1740069841
+                "time": 1754832781
             },
             {
                 "online": 1000,
-                "time": 1740073441
+                "time": 1754836382
             },
             {
                 "online": 1000,
-                "time": 1740077041
+                "time": 1754840041
             },
             {
                 "online": 1000,
-                "time": 1740080641
+                "time": 1754843641
             },
             {
                 "online": 1000,
-                "time": 1740084241
+                "time": 1754847241
             },
             {
                 "online": 1000,
-                "time": 1740087841
+                "time": 1754850841
             },
             {
                 "online": 1000,
-                "time": 1740091441
+                "time": 1754854441
             },
             {
                 "online": 1000,
-                "time": 1740095041
+                "time": 1754858041
             },
             {
                 "online": 1000,
-                "time": 1740098641
+                "time": 1754861641
             },
             {
                 "online": 1000,
-                "time": 1740102242
+                "time": 1754865241
             },
             {
                 "online": 1000,
-                "time": 1740105901
+                "time": 1754868841
             },
             {
                 "online": 1000,
-                "time": 1740109501
+                "time": 1754872441
             },
             {
                 "online": 1000,
-                "time": 1740113101
+                "time": 1754876041
             },
             {
                 "online": 1000,
-                "time": 1740116701
+                "time": 1754879641
             },
             {
                 "online": 1000,
-                "time": 1740120301
+                "time": 1754883241
             },
             {
                 "online": 1000,
-                "time": 1740123901
+                "time": 1754886841
             }
         ],
         "tg": "https://t.me/arizona_rpcom",
@@ -1621,15 +110,16 @@
         "inst": "https://instagram.com/arizonagames_",
         "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/11.webp",
         "additionalIps": [
-            "185.169.134.166"
+            "prescott.arizona-rp.com"
         ],
-        "donateMultiplier": 2,
+        "recomend": true,
+        "donateMultiplier": 3,
         "experienceMultiplier": 0
     },
     {
-        "number": 22,
-        "name": "Sedona",
-        "ip": "80.66.82.144",
+        "number": 23,
+        "name": "Holiday",
+        "ip": "holiday.arizona-rp.com",
         "port": 7777,
         "online": 1000,
         "maxplayers": 1000,
@@ -1637,115 +127,116 @@
         "plotPoints": [
             {
                 "online": 1000,
-                "time": 1740041162
+                "time": 1754803981
             },
             {
                 "online": 1000,
-                "time": 1740044821
+                "time": 1754807581
             },
             {
                 "online": 1000,
-                "time": 1740048421
+                "time": 1754811181
             },
             {
                 "online": 1000,
-                "time": 1740052021
+                "time": 1754814781
             },
             {
                 "online": 1000,
-                "time": 1740055621
+                "time": 1754818381
             },
             {
                 "online": 1000,
-                "time": 1740059221
+                "time": 1754821981
             },
             {
                 "online": 1000,
-                "time": 1740062822
+                "time": 1754825581
             },
             {
                 "online": 1000,
-                "time": 1740066481
+                "time": 1754829181
             },
             {
                 "online": 1000,
-                "time": 1740070081
+                "time": 1754832781
             },
             {
                 "online": 1000,
-                "time": 1740073681
+                "time": 1754836382
             },
             {
                 "online": 1000,
-                "time": 1740077281
+                "time": 1754840041
             },
             {
                 "online": 1000,
-                "time": 1740080881
+                "time": 1754843641
             },
             {
                 "online": 1000,
-                "time": 1740084481
+                "time": 1754847241
             },
             {
                 "online": 1000,
-                "time": 1740088081
+                "time": 1754850841
             },
             {
                 "online": 1000,
-                "time": 1740091681
+                "time": 1754854441
             },
             {
                 "online": 1000,
-                "time": 1740095281
+                "time": 1754858041
             },
             {
                 "online": 1000,
-                "time": 1740098881
+                "time": 1754861641
             },
             {
                 "online": 1000,
-                "time": 1740102481
+                "time": 1754865241
             },
             {
                 "online": 1000,
-                "time": 1740106081
+                "time": 1754868841
             },
             {
                 "online": 1000,
-                "time": 1740109681
+                "time": 1754872441
             },
             {
                 "online": 1000,
-                "time": 1740113281
+                "time": 1754876041
             },
             {
                 "online": 1000,
-                "time": 1740116881
+                "time": 1754879641
             },
             {
                 "online": 1000,
-                "time": 1740120481
+                "time": 1754883241
             },
             {
                 "online": 1000,
-                "time": 1740124081
+                "time": 1754886841
             }
         ],
         "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arzsedona22",
+        "vk": "https://vk.com/arzholiday23",
         "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/22.webp",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/23.webp",
         "additionalIps": [
-            "80.66.82.144"
+            "holiday.arizona-rp.com"
         ],
-        "donateMultiplier": 2,
+        "recomend": true,
+        "donateMultiplier": 3,
         "experienceMultiplier": 0
     },
     {
-        "number": 20,
-        "name": "Sun-City",
-        "ip": "80.66.82.159",
+        "number": 26,
+        "name": "Faraway",
+        "ip": "faraway.arizona-rp.com",
         "port": 7777,
         "online": 1000,
         "maxplayers": 1000,
@@ -1753,115 +244,696 @@
         "plotPoints": [
             {
                 "online": 1000,
-                "time": 1740041162
+                "time": 1754803981
             },
             {
                 "online": 1000,
-                "time": 1740044821
+                "time": 1754807581
             },
             {
                 "online": 1000,
-                "time": 1740048421
+                "time": 1754811181
             },
             {
                 "online": 1000,
-                "time": 1740052021
+                "time": 1754814781
             },
             {
                 "online": 1000,
-                "time": 1740055621
+                "time": 1754818381
             },
             {
                 "online": 1000,
-                "time": 1740059221
+                "time": 1754821981
             },
             {
                 "online": 1000,
-                "time": 1740062822
+                "time": 1754825581
             },
             {
                 "online": 1000,
-                "time": 1740066481
+                "time": 1754829181
             },
             {
                 "online": 1000,
-                "time": 1740070081
+                "time": 1754832781
             },
             {
                 "online": 1000,
-                "time": 1740073681
+                "time": 1754836382
             },
             {
                 "online": 1000,
-                "time": 1740077281
+                "time": 1754840041
             },
             {
                 "online": 1000,
-                "time": 1740080881
+                "time": 1754843641
             },
             {
                 "online": 1000,
-                "time": 1740084481
+                "time": 1754847241
             },
             {
                 "online": 1000,
-                "time": 1740088081
+                "time": 1754850841
             },
             {
                 "online": 1000,
-                "time": 1740091681
+                "time": 1754854441
             },
             {
                 "online": 1000,
-                "time": 1740095281
+                "time": 1754858041
             },
             {
                 "online": 1000,
-                "time": 1740098881
+                "time": 1754861641
             },
             {
                 "online": 1000,
-                "time": 1740102481
+                "time": 1754865241
             },
             {
                 "online": 1000,
-                "time": 1740106081
+                "time": 1754868841
             },
             {
                 "online": 1000,
-                "time": 1740109681
+                "time": 1754872441
             },
             {
                 "online": 1000,
-                "time": 1740113281
+                "time": 1754876041
             },
             {
                 "online": 1000,
-                "time": 1740116881
+                "time": 1754879641
             },
             {
                 "online": 1000,
-                "time": 1740120481
+                "time": 1754883241
             },
             {
                 "online": 1000,
-                "time": 1740124081
+                "time": 1754886841
             }
         ],
         "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arizona_sun20",
+        "vk": "https://vk.com/arzfaraway",
         "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/20.webp",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/26.webp",
         "additionalIps": [
-            "80.66.82.159"
+            "faraway.arizona-rp.com"
         ],
-        "donateMultiplier": 2,
+        "recomend": true,
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 10,
+        "name": "Surprise",
+        "ip": "surprise.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803921
+            },
+            {
+                "online": 1000,
+                "time": 1754807521
+            },
+            {
+                "online": 1000,
+                "time": 1754811122
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/surprize_official",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/10.webp",
+        "additionalIps": [
+            "surprise.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 12,
+        "name": "Glendale",
+        "ip": "glendale.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803921
+            },
+            {
+                "online": 1000,
+                "time": 1754807521
+            },
+            {
+                "online": 1000,
+                "time": 1754811122
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/glendalearz",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/12.webp",
+        "additionalIps": [
+            "glendale.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 21,
+        "name": "Queen-Creek",
+        "ip": "queencreek.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803981
+            },
+            {
+                "online": 1000,
+                "time": 1754807581
+            },
+            {
+                "online": 1000,
+                "time": 1754811181
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arizonaqueen21",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/21.webp",
+        "additionalIps": [
+            "queencreek.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 16,
+        "name": "Gilbert",
+        "ip": "gilbert.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803921
+            },
+            {
+                "online": 1000,
+                "time": 1754807521
+            },
+            {
+                "online": 1000,
+                "time": 1754811122
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arizonagilbert16",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/16.webp",
+        "additionalIps": [
+            "gilbert.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 17,
+        "name": "Show Low",
+        "ip": "showlow.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803921
+            },
+            {
+                "online": 1000,
+                "time": 1754807521
+            },
+            {
+                "online": 1000,
+                "time": 1754811122
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/showlowazrp",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/17.webp",
+        "additionalIps": [
+            "showlow.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
         "experienceMultiplier": 0
     },
     {
         "number": 13,
         "name": "Kingman",
-        "ip": "185.169.134.172",
+        "ip": "kingman.arizona-rp.com",
         "port": 7777,
         "online": 1000,
         "maxplayers": 1000,
@@ -1869,99 +941,99 @@
         "plotPoints": [
             {
                 "online": 1000,
-                "time": 1740040981
+                "time": 1754803921
             },
             {
                 "online": 1000,
-                "time": 1740044581
+                "time": 1754807521
             },
             {
                 "online": 1000,
-                "time": 1740048181
+                "time": 1754811122
             },
             {
                 "online": 1000,
-                "time": 1740051781
+                "time": 1754814781
             },
             {
                 "online": 1000,
-                "time": 1740055381
+                "time": 1754818381
             },
             {
                 "online": 1000,
-                "time": 1740058981
+                "time": 1754821981
             },
             {
                 "online": 1000,
-                "time": 1740062581
+                "time": 1754825581
             },
             {
                 "online": 1000,
-                "time": 1740066182
+                "time": 1754829181
             },
             {
                 "online": 1000,
-                "time": 1740069841
+                "time": 1754832781
             },
             {
                 "online": 1000,
-                "time": 1740073441
+                "time": 1754836382
             },
             {
                 "online": 1000,
-                "time": 1740077041
+                "time": 1754840041
             },
             {
                 "online": 1000,
-                "time": 1740080641
+                "time": 1754843641
             },
             {
                 "online": 1000,
-                "time": 1740084241
+                "time": 1754847241
             },
             {
                 "online": 1000,
-                "time": 1740087841
+                "time": 1754850841
             },
             {
                 "online": 1000,
-                "time": 1740091441
+                "time": 1754854441
             },
             {
                 "online": 1000,
-                "time": 1740095041
+                "time": 1754858041
             },
             {
                 "online": 1000,
-                "time": 1740098641
+                "time": 1754861641
             },
             {
                 "online": 1000,
-                "time": 1740102242
+                "time": 1754865241
             },
             {
                 "online": 1000,
-                "time": 1740105901
+                "time": 1754868841
             },
             {
                 "online": 1000,
-                "time": 1740109501
+                "time": 1754872441
             },
             {
                 "online": 1000,
-                "time": 1740113101
+                "time": 1754876041
             },
             {
                 "online": 1000,
-                "time": 1740116701
+                "time": 1754879641
             },
             {
                 "online": 1000,
-                "time": 1740120301
+                "time": 1754883241
             },
             {
                 "online": 1000,
-                "time": 1740123901
+                "time": 1754886841
             }
         ],
         "tg": "https://t.me/arizona_rpcom",
@@ -1969,15 +1041,15 @@
         "inst": "https://instagram.com/arizonagames_",
         "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/13.webp",
         "additionalIps": [
-            "185.169.134.172"
+            "kingman.arizona-rp.com"
         ],
-        "donateMultiplier": 2,
+        "donateMultiplier": 3,
         "experienceMultiplier": 0
     },
     {
-        "number": 25,
-        "name": "Yava",
-        "ip": "80.66.82.113",
+        "number": 20,
+        "name": "Sun-City",
+        "ip": "suncity.arizona-rp.com",
         "port": 7777,
         "online": 1000,
         "maxplayers": 1000,
@@ -1985,115 +1057,115 @@
         "plotPoints": [
             {
                 "online": 1000,
-                "time": 1740041162
+                "time": 1754803981
             },
             {
                 "online": 1000,
-                "time": 1740044821
+                "time": 1754807581
             },
             {
                 "online": 1000,
-                "time": 1740048421
+                "time": 1754811181
             },
             {
                 "online": 1000,
-                "time": 1740052021
+                "time": 1754814781
             },
             {
                 "online": 1000,
-                "time": 1740055621
+                "time": 1754818381
             },
             {
                 "online": 1000,
-                "time": 1740059221
+                "time": 1754821981
             },
             {
                 "online": 1000,
-                "time": 1740062822
+                "time": 1754825581
             },
             {
                 "online": 1000,
-                "time": 1740066481
+                "time": 1754829181
             },
             {
                 "online": 1000,
-                "time": 1740070081
+                "time": 1754832781
             },
             {
                 "online": 1000,
-                "time": 1740073681
+                "time": 1754836382
             },
             {
                 "online": 1000,
-                "time": 1740077281
+                "time": 1754840041
             },
             {
                 "online": 1000,
-                "time": 1740080881
+                "time": 1754843641
             },
             {
                 "online": 1000,
-                "time": 1740084481
+                "time": 1754847241
             },
             {
                 "online": 1000,
-                "time": 1740088081
+                "time": 1754850841
             },
             {
                 "online": 1000,
-                "time": 1740091681
+                "time": 1754854441
             },
             {
                 "online": 1000,
-                "time": 1740095281
+                "time": 1754858041
             },
             {
                 "online": 1000,
-                "time": 1740098881
+                "time": 1754861641
             },
             {
                 "online": 1000,
-                "time": 1740102481
+                "time": 1754865241
             },
             {
                 "online": 1000,
-                "time": 1740106081
+                "time": 1754868841
             },
             {
                 "online": 1000,
-                "time": 1740109681
+                "time": 1754872441
             },
             {
                 "online": 1000,
-                "time": 1740113281
+                "time": 1754876041
             },
             {
                 "online": 1000,
-                "time": 1740116881
+                "time": 1754879641
             },
             {
                 "online": 1000,
-                "time": 1740120481
+                "time": 1754883241
             },
             {
                 "online": 1000,
-                "time": 1740124081
+                "time": 1754886841
             }
         ],
         "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arizonayava25",
+        "vk": "https://vk.com/arizona_sun20",
         "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/25.webp",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/20.webp",
         "additionalIps": [
-            "80.66.82.113"
+            "suncity.arizona-rp.com"
         ],
-        "donateMultiplier": 2,
+        "donateMultiplier": 3,
         "experienceMultiplier": 0
     },
     {
-        "number": 4,
-        "name": "Chandler",
-        "ip": "185.169.134.44",
+        "number": 22,
+        "name": "Sedona",
+        "ip": "sedona.arizona-rp.com",
         "port": 7777,
         "online": 1000,
         "maxplayers": 1000,
@@ -2101,463 +1173,115 @@
         "plotPoints": [
             {
                 "online": 1000,
-                "time": 1740040981
+                "time": 1754803981
             },
             {
                 "online": 1000,
-                "time": 1740044581
+                "time": 1754807581
             },
             {
                 "online": 1000,
-                "time": 1740048181
+                "time": 1754811181
             },
             {
                 "online": 1000,
-                "time": 1740051781
+                "time": 1754814781
             },
             {
                 "online": 1000,
-                "time": 1740055381
+                "time": 1754818381
             },
             {
                 "online": 1000,
-                "time": 1740058981
+                "time": 1754821981
             },
             {
                 "online": 1000,
-                "time": 1740062581
+                "time": 1754825581
             },
             {
                 "online": 1000,
-                "time": 1740066182
+                "time": 1754829181
             },
             {
                 "online": 1000,
-                "time": 1740069841
+                "time": 1754832781
             },
             {
                 "online": 1000,
-                "time": 1740073441
+                "time": 1754836382
             },
             {
                 "online": 1000,
-                "time": 1740077041
+                "time": 1754840041
             },
             {
                 "online": 1000,
-                "time": 1740080641
+                "time": 1754843641
             },
             {
                 "online": 1000,
-                "time": 1740084241
+                "time": 1754847241
             },
             {
                 "online": 1000,
-                "time": 1740087841
+                "time": 1754850841
             },
             {
                 "online": 1000,
-                "time": 1740091441
+                "time": 1754854441
             },
             {
                 "online": 1000,
-                "time": 1740095041
+                "time": 1754858041
             },
             {
                 "online": 1000,
-                "time": 1740098641
+                "time": 1754861641
             },
             {
                 "online": 1000,
-                "time": 1740102242
+                "time": 1754865241
             },
             {
                 "online": 1000,
-                "time": 1740105901
+                "time": 1754868841
             },
             {
                 "online": 1000,
-                "time": 1740109501
+                "time": 1754872441
             },
             {
                 "online": 1000,
-                "time": 1740113101
+                "time": 1754876041
             },
             {
                 "online": 1000,
-                "time": 1740116701
+                "time": 1754879641
             },
             {
                 "online": 1000,
-                "time": 1740120301
+                "time": 1754883241
             },
             {
                 "online": 1000,
-                "time": 1740123901
+                "time": 1754886841
             }
         ],
         "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/azrpchandler",
+        "vk": "https://vk.com/arzsedona22",
         "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/4.webp",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/22.webp",
         "additionalIps": [
-            "185.169.134.44"
+            "sedona.arizona-rp.com"
         ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 24,
-        "name": "Wednesday",
-        "ip": "80.66.82.128",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740041162
-            },
-            {
-                "online": 1000,
-                "time": 1740044821
-            },
-            {
-                "online": 1000,
-                "time": 1740048421
-            },
-            {
-                "online": 1000,
-                "time": 1740052021
-            },
-            {
-                "online": 1000,
-                "time": 1740055621
-            },
-            {
-                "online": 1000,
-                "time": 1740059221
-            },
-            {
-                "online": 1000,
-                "time": 1740062822
-            },
-            {
-                "online": 1000,
-                "time": 1740066481
-            },
-            {
-                "online": 1000,
-                "time": 1740070081
-            },
-            {
-                "online": 1000,
-                "time": 1740073681
-            },
-            {
-                "online": 1000,
-                "time": 1740077281
-            },
-            {
-                "online": 1000,
-                "time": 1740080881
-            },
-            {
-                "online": 1000,
-                "time": 1740084481
-            },
-            {
-                "online": 1000,
-                "time": 1740088081
-            },
-            {
-                "online": 1000,
-                "time": 1740091681
-            },
-            {
-                "online": 1000,
-                "time": 1740095281
-            },
-            {
-                "online": 1000,
-                "time": 1740098881
-            },
-            {
-                "online": 1000,
-                "time": 1740102481
-            },
-            {
-                "online": 1000,
-                "time": 1740106081
-            },
-            {
-                "online": 1000,
-                "time": 1740109681
-            },
-            {
-                "online": 1000,
-                "time": 1740113281
-            },
-            {
-                "online": 1000,
-                "time": 1740116881
-            },
-            {
-                "online": 1000,
-                "time": 1740120481
-            },
-            {
-                "online": 1000,
-                "time": 1740124081
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arz24wednesday",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/24.webp",
-        "additionalIps": [
-            "80.66.82.128"
-        ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 29,
-        "name": "Mirage",
-        "ip": "80.66.82.39",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740041162
-            },
-            {
-                "online": 1000,
-                "time": 1740044821
-            },
-            {
-                "online": 1000,
-                "time": 1740048421
-            },
-            {
-                "online": 1000,
-                "time": 1740052021
-            },
-            {
-                "online": 1000,
-                "time": 1740055621
-            },
-            {
-                "online": 1000,
-                "time": 1740059221
-            },
-            {
-                "online": 1000,
-                "time": 1740062822
-            },
-            {
-                "online": 1000,
-                "time": 1740066481
-            },
-            {
-                "online": 1000,
-                "time": 1740070081
-            },
-            {
-                "online": 1000,
-                "time": 1740073681
-            },
-            {
-                "online": 1000,
-                "time": 1740077281
-            },
-            {
-                "online": 1000,
-                "time": 1740080881
-            },
-            {
-                "online": 1000,
-                "time": 1740084481
-            },
-            {
-                "online": 1000,
-                "time": 1740088081
-            },
-            {
-                "online": 1000,
-                "time": 1740091681
-            },
-            {
-                "online": 1000,
-                "time": 1740095281
-            },
-            {
-                "online": 1000,
-                "time": 1740098881
-            },
-            {
-                "online": 1000,
-                "time": 1740102481
-            },
-            {
-                "online": 1000,
-                "time": 1740106081
-            },
-            {
-                "online": 1000,
-                "time": 1740109681
-            },
-            {
-                "online": 1000,
-                "time": 1740113281
-            },
-            {
-                "online": 1000,
-                "time": 1740116881
-            },
-            {
-                "online": 1000,
-                "time": 1740120481
-            },
-            {
-                "online": 1000,
-                "time": 1740124081
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/miragearz29",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/29.webp",
-        "additionalIps": [
-            "80.66.82.39"
-        ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 6,
-        "name": "Saint-Rose",
-        "ip": "185.169.134.5",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740040981
-            },
-            {
-                "online": 1000,
-                "time": 1740044581
-            },
-            {
-                "online": 1000,
-                "time": 1740048181
-            },
-            {
-                "online": 1000,
-                "time": 1740051781
-            },
-            {
-                "online": 1000,
-                "time": 1740055381
-            },
-            {
-                "online": 1000,
-                "time": 1740058981
-            },
-            {
-                "online": 1000,
-                "time": 1740062581
-            },
-            {
-                "online": 1000,
-                "time": 1740066182
-            },
-            {
-                "online": 1000,
-                "time": 1740069841
-            },
-            {
-                "online": 1000,
-                "time": 1740073441
-            },
-            {
-                "online": 1000,
-                "time": 1740077041
-            },
-            {
-                "online": 1000,
-                "time": 1740080641
-            },
-            {
-                "online": 1000,
-                "time": 1740084241
-            },
-            {
-                "online": 1000,
-                "time": 1740087841
-            },
-            {
-                "online": 1000,
-                "time": 1740091441
-            },
-            {
-                "online": 1000,
-                "time": 1740095041
-            },
-            {
-                "online": 1000,
-                "time": 1740098641
-            },
-            {
-                "online": 1000,
-                "time": 1740102242
-            },
-            {
-                "online": 1000,
-                "time": 1740105901
-            },
-            {
-                "online": 1000,
-                "time": 1740109501
-            },
-            {
-                "online": 1000,
-                "time": 1740113101
-            },
-            {
-                "online": 1000,
-                "time": 1740116701
-            },
-            {
-                "online": 1000,
-                "time": 1740120301
-            },
-            {
-                "online": 1000,
-                "time": 1740123901
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/saint_rose_official",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/6.webp",
-        "additionalIps": [
-            "185.169.134.5"
-        ],
-        "donateMultiplier": 2,
+        "donateMultiplier": 3,
         "experienceMultiplier": 0
     },
     {
         "number": 3,
         "name": "Scottdale",
-        "ip": "185.169.134.43",
+        "ip": "scottdale.arizona-rp.com",
         "port": 7777,
         "online": 1000,
         "maxplayers": 1000,
@@ -2565,99 +1289,99 @@
         "plotPoints": [
             {
                 "online": 1000,
-                "time": 1740040981
+                "time": 1754803921
             },
             {
                 "online": 1000,
-                "time": 1740044581
+                "time": 1754807521
             },
             {
                 "online": 1000,
-                "time": 1740048181
+                "time": 1754811122
             },
             {
                 "online": 1000,
-                "time": 1740051781
+                "time": 1754814781
             },
             {
                 "online": 1000,
-                "time": 1740055381
+                "time": 1754818381
             },
             {
                 "online": 1000,
-                "time": 1740058981
+                "time": 1754821981
             },
             {
                 "online": 1000,
-                "time": 1740062581
+                "time": 1754825581
             },
             {
                 "online": 1000,
-                "time": 1740066182
+                "time": 1754829181
             },
             {
                 "online": 1000,
-                "time": 1740069841
+                "time": 1754832781
             },
             {
                 "online": 1000,
-                "time": 1740073441
+                "time": 1754836382
             },
             {
                 "online": 1000,
-                "time": 1740077041
+                "time": 1754840041
             },
             {
                 "online": 1000,
-                "time": 1740080641
+                "time": 1754843641
             },
             {
                 "online": 1000,
-                "time": 1740084241
+                "time": 1754847241
             },
             {
                 "online": 1000,
-                "time": 1740087841
+                "time": 1754850841
             },
             {
                 "online": 1000,
-                "time": 1740091441
+                "time": 1754854441
             },
             {
                 "online": 1000,
-                "time": 1740095041
+                "time": 1754858041
             },
             {
                 "online": 1000,
-                "time": 1740098641
+                "time": 1754861641
             },
             {
                 "online": 1000,
-                "time": 1740102242
+                "time": 1754865241
             },
             {
                 "online": 1000,
-                "time": 1740105901
+                "time": 1754868841
             },
             {
                 "online": 1000,
-                "time": 1740109501
+                "time": 1754872441
             },
             {
                 "online": 1000,
-                "time": 1740113101
+                "time": 1754876041
             },
             {
                 "online": 1000,
-                "time": 1740116701
+                "time": 1754879641
             },
             {
                 "online": 1000,
-                "time": 1740120301
+                "time": 1754883241
             },
             {
                 "online": 1000,
-                "time": 1740123901
+                "time": 1754886841
             }
         ],
         "tg": "https://t.me/arizona_rpcom",
@@ -2665,15 +1389,15 @@
         "inst": "https://instagram.com/arizonagames_",
         "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/3.webp",
         "additionalIps": [
-            "185.169.134.43"
+            "scottdale.arizona-rp.com"
         ],
-        "donateMultiplier": 2,
+        "donateMultiplier": 3,
         "experienceMultiplier": 0
     },
     {
-        "number": 9,
-        "name": "Yuma",
-        "ip": "185.169.134.107",
+        "number": 14,
+        "name": "Winslow",
+        "ip": "winslow.arizona-rp.com",
         "port": 7777,
         "online": 1000,
         "maxplayers": 1000,
@@ -2681,115 +1405,115 @@
         "plotPoints": [
             {
                 "online": 1000,
-                "time": 1740040981
+                "time": 1754803921
             },
             {
                 "online": 1000,
-                "time": 1740044581
+                "time": 1754807521
             },
             {
                 "online": 1000,
-                "time": 1740048181
+                "time": 1754811122
             },
             {
                 "online": 1000,
-                "time": 1740051781
+                "time": 1754814781
             },
             {
                 "online": 1000,
-                "time": 1740055381
+                "time": 1754818381
             },
             {
                 "online": 1000,
-                "time": 1740058981
+                "time": 1754821981
             },
             {
                 "online": 1000,
-                "time": 1740062581
+                "time": 1754825581
             },
             {
                 "online": 1000,
-                "time": 1740066182
+                "time": 1754829181
             },
             {
                 "online": 1000,
-                "time": 1740069841
+                "time": 1754832781
             },
             {
                 "online": 1000,
-                "time": 1740073441
+                "time": 1754836382
             },
             {
                 "online": 1000,
-                "time": 1740077041
+                "time": 1754840041
             },
             {
                 "online": 1000,
-                "time": 1740080641
+                "time": 1754843641
             },
             {
                 "online": 1000,
-                "time": 1740084241
+                "time": 1754847241
             },
             {
                 "online": 1000,
-                "time": 1740087841
+                "time": 1754850841
             },
             {
                 "online": 1000,
-                "time": 1740091441
+                "time": 1754854441
             },
             {
                 "online": 1000,
-                "time": 1740095041
+                "time": 1754858041
             },
             {
                 "online": 1000,
-                "time": 1740098641
+                "time": 1754861641
             },
             {
                 "online": 1000,
-                "time": 1740102242
+                "time": 1754865241
             },
             {
                 "online": 1000,
-                "time": 1740105901
+                "time": 1754868841
             },
             {
                 "online": 1000,
-                "time": 1740109501
+                "time": 1754872441
             },
             {
                 "online": 1000,
-                "time": 1740113101
+                "time": 1754876041
             },
             {
                 "online": 1000,
-                "time": 1740116701
+                "time": 1754879641
             },
             {
                 "online": 1000,
-                "time": 1740120301
+                "time": 1754883241
             },
             {
                 "online": 1000,
-                "time": 1740123901
+                "time": 1754886841
             }
         ],
         "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arizonarpyuma",
+        "vk": "https://vk.com/azwinslow",
         "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/9.webp",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/14.webp",
         "additionalIps": [
-            "185.169.134.107"
+            "winslow.arizona-rp.com"
         ],
-        "donateMultiplier": 2,
+        "donateMultiplier": 3,
         "experienceMultiplier": 0
     },
     {
-        "number": 1,
-        "name": "Phoenix",
-        "ip": "185.169.134.3",
+        "number": 4,
+        "name": "Chandler",
+        "ip": "chandler.arizona-rp.com",
         "port": 7777,
         "online": 1000,
         "maxplayers": 1000,
@@ -2797,115 +1521,695 @@
         "plotPoints": [
             {
                 "online": 1000,
-                "time": 1740040981
+                "time": 1754803921
             },
             {
                 "online": 1000,
-                "time": 1740044581
+                "time": 1754807521
             },
             {
                 "online": 1000,
-                "time": 1740048181
+                "time": 1754811122
             },
             {
                 "online": 1000,
-                "time": 1740051781
+                "time": 1754814781
             },
             {
                 "online": 1000,
-                "time": 1740055381
+                "time": 1754818381
             },
             {
                 "online": 1000,
-                "time": 1740058981
+                "time": 1754821981
             },
             {
                 "online": 1000,
-                "time": 1740062581
+                "time": 1754825581
             },
             {
                 "online": 1000,
-                "time": 1740066181
+                "time": 1754829181
             },
             {
                 "online": 1000,
-                "time": 1740069781
+                "time": 1754832781
             },
             {
                 "online": 1000,
-                "time": 1740073381
+                "time": 1754836382
             },
             {
                 "online": 1000,
-                "time": 1740076981
+                "time": 1754840041
             },
             {
                 "online": 1000,
-                "time": 1740080582
+                "time": 1754843641
             },
             {
                 "online": 1000,
-                "time": 1740084241
+                "time": 1754847241
             },
             {
                 "online": 1000,
-                "time": 1740087841
+                "time": 1754850841
             },
             {
                 "online": 1000,
-                "time": 1740091441
+                "time": 1754854441
             },
             {
                 "online": 1000,
-                "time": 1740095041
+                "time": 1754858041
             },
             {
                 "online": 1000,
-                "time": 1740098641
+                "time": 1754861641
             },
             {
                 "online": 1000,
-                "time": 1740102242
+                "time": 1754865241
             },
             {
                 "online": 1000,
-                "time": 1740105901
+                "time": 1754868841
             },
             {
                 "online": 1000,
-                "time": 1740109501
+                "time": 1754872441
             },
             {
                 "online": 1000,
-                "time": 1740113101
+                "time": 1754876041
             },
             {
                 "online": 1000,
-                "time": 1740116701
+                "time": 1754879641
             },
             {
                 "online": 1000,
-                "time": 1740120301
+                "time": 1754883241
             },
             {
                 "online": 1000,
-                "time": 1740123901
+                "time": 1754886841
             }
         ],
         "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arizona1phoenix",
+        "vk": "https://vk.com/azrpchandler",
         "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/1.webp",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/4.webp",
         "additionalIps": [
-            "185.169.134.3"
+            "chandler.arizona-rp.com"
         ],
-        "donateMultiplier": 2,
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 19,
+        "name": "Page",
+        "ip": "page.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803981
+            },
+            {
+                "online": 1000,
+                "time": 1754807581
+            },
+            {
+                "online": 1000,
+                "time": 1754811181
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/azrppage",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/19.webp",
+        "additionalIps": [
+            "page.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 15,
+        "name": "Payson",
+        "ip": "payson.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803921
+            },
+            {
+                "online": 1000,
+                "time": 1754807521
+            },
+            {
+                "online": 1000,
+                "time": 1754811122
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arizonapayson15",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/15.webp",
+        "additionalIps": [
+            "payson.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 6,
+        "name": "Saint-Rose",
+        "ip": "saintrose.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803921
+            },
+            {
+                "online": 1000,
+                "time": 1754807521
+            },
+            {
+                "online": 1000,
+                "time": 1754811122
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/saint_rose_official",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/6.webp",
+        "additionalIps": [
+            "saintrose.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 5,
+        "name": "Brainburg",
+        "ip": "brainburg.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803921
+            },
+            {
+                "online": 1000,
+                "time": 1754807521
+            },
+            {
+                "online": 1000,
+                "time": 1754811122
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/brainburg_arizona",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/5.webp",
+        "additionalIps": [
+            "brainburg.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 25,
+        "name": "Yava",
+        "ip": "yava.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754804822
+            },
+            {
+                "online": 1000,
+                "time": 1754808481
+            },
+            {
+                "online": 1000,
+                "time": 1754812081
+            },
+            {
+                "online": 1000,
+                "time": 1754815681
+            },
+            {
+                "online": 1000,
+                "time": 1754819281
+            },
+            {
+                "online": 1000,
+                "time": 1754822881
+            },
+            {
+                "online": 1000,
+                "time": 1754826482
+            },
+            {
+                "online": 1000,
+                "time": 1754830141
+            },
+            {
+                "online": 1000,
+                "time": 1754833741
+            },
+            {
+                "online": 1000,
+                "time": 1754837341
+            },
+            {
+                "online": 1000,
+                "time": 1754840941
+            },
+            {
+                "online": 1000,
+                "time": 1754844541
+            },
+            {
+                "online": 1000,
+                "time": 1754848141
+            },
+            {
+                "online": 1000,
+                "time": 1754851741
+            },
+            {
+                "online": 1000,
+                "time": 1754855341
+            },
+            {
+                "online": 1000,
+                "time": 1754858941
+            },
+            {
+                "online": 1000,
+                "time": 1754862541
+            },
+            {
+                "online": 1000,
+                "time": 1754866141
+            },
+            {
+                "online": 1000,
+                "time": 1754869742
+            },
+            {
+                "online": 1000,
+                "time": 1754873401
+            },
+            {
+                "online": 1000,
+                "time": 1754877001
+            },
+            {
+                "online": 1000,
+                "time": 1754880601
+            },
+            {
+                "online": 1000,
+                "time": 1754884201
+            },
+            {
+                "online": 1000,
+                "time": 1754887801
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arizonayava25",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/25.webp",
+        "additionalIps": [
+            "yava.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
         "experienceMultiplier": 0
     },
     {
         "number": 8,
         "name": "Red-Rock",
-        "ip": "185.169.134.61",
+        "ip": "redrock.arizona-rp.com",
         "port": 7777,
         "online": 1000,
         "maxplayers": 1000,
@@ -2913,99 +2217,99 @@
         "plotPoints": [
             {
                 "online": 1000,
-                "time": 1740040981
+                "time": 1754803921
             },
             {
                 "online": 1000,
-                "time": 1740044581
+                "time": 1754807521
             },
             {
                 "online": 1000,
-                "time": 1740048181
+                "time": 1754811122
             },
             {
                 "online": 1000,
-                "time": 1740051781
+                "time": 1754814781
             },
             {
                 "online": 1000,
-                "time": 1740055381
+                "time": 1754818381
             },
             {
                 "online": 1000,
-                "time": 1740058981
+                "time": 1754821981
             },
             {
                 "online": 1000,
-                "time": 1740062581
+                "time": 1754825581
             },
             {
                 "online": 1000,
-                "time": 1740066182
+                "time": 1754829181
             },
             {
                 "online": 1000,
-                "time": 1740069841
+                "time": 1754832781
             },
             {
                 "online": 1000,
-                "time": 1740073441
+                "time": 1754836382
             },
             {
                 "online": 1000,
-                "time": 1740077041
+                "time": 1754840041
             },
             {
                 "online": 1000,
-                "time": 1740080641
+                "time": 1754843641
             },
             {
                 "online": 1000,
-                "time": 1740084241
+                "time": 1754847241
             },
             {
                 "online": 1000,
-                "time": 1740087841
+                "time": 1754850841
             },
             {
                 "online": 1000,
-                "time": 1740091441
+                "time": 1754854441
             },
             {
                 "online": 1000,
-                "time": 1740095041
+                "time": 1754858041
             },
             {
                 "online": 1000,
-                "time": 1740098641
+                "time": 1754861641
             },
             {
                 "online": 1000,
-                "time": 1740102242
+                "time": 1754865241
             },
             {
                 "online": 1000,
-                "time": 1740105901
+                "time": 1754868841
             },
             {
                 "online": 1000,
-                "time": 1740109501
+                "time": 1754872441
             },
             {
                 "online": 1000,
-                "time": 1740113101
+                "time": 1754876041
             },
             {
                 "online": 1000,
-                "time": 1740116701
+                "time": 1754879641
             },
             {
                 "online": 1000,
-                "time": 1740120301
+                "time": 1754883241
             },
             {
                 "online": 1000,
-                "time": 1740123901
+                "time": 1754886841
             }
         ],
         "tg": "https://t.me/arizona_rpcom",
@@ -3013,15 +2317,15 @@
         "inst": "https://instagram.com/arizonagames_",
         "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/8.webp",
         "additionalIps": [
-            "185.169.134.61"
+            "redrock.arizona-rp.com"
         ],
-        "donateMultiplier": 2,
+        "donateMultiplier": 3,
         "experienceMultiplier": 0
     },
     {
-        "number": 18,
-        "name": "Casa-Grande",
-        "ip": "80.66.82.188",
+        "number": 24,
+        "name": "Wednesday",
+        "ip": "wednesday.arizona-rp.com",
         "port": 7777,
         "online": 1000,
         "maxplayers": 1000,
@@ -3029,99 +2333,563 @@
         "plotPoints": [
             {
                 "online": 1000,
-                "time": 1740041162
+                "time": 1754803981
             },
             {
                 "online": 1000,
-                "time": 1740044821
+                "time": 1754807581
             },
             {
                 "online": 1000,
-                "time": 1740048421
+                "time": 1754811181
             },
             {
                 "online": 1000,
-                "time": 1740052021
+                "time": 1754814781
             },
             {
                 "online": 1000,
-                "time": 1740055621
+                "time": 1754818381
             },
             {
                 "online": 1000,
-                "time": 1740059221
+                "time": 1754821981
             },
             {
                 "online": 1000,
-                "time": 1740062821
+                "time": 1754825581
             },
             {
                 "online": 1000,
-                "time": 1740066421
+                "time": 1754829181
             },
             {
                 "online": 1000,
-                "time": 1740070021
+                "time": 1754832781
             },
             {
                 "online": 1000,
-                "time": 1740073621
+                "time": 1754836382
             },
             {
                 "online": 1000,
-                "time": 1740077221
+                "time": 1754840041
             },
             {
                 "online": 1000,
-                "time": 1740080821
+                "time": 1754843641
             },
             {
                 "online": 1000,
-                "time": 1740084421
+                "time": 1754847241
             },
             {
                 "online": 1000,
-                "time": 1740088022
+                "time": 1754850841
             },
             {
                 "online": 1000,
-                "time": 1740091681
+                "time": 1754854441
             },
             {
                 "online": 1000,
-                "time": 1740095281
+                "time": 1754858041
             },
             {
                 "online": 1000,
-                "time": 1740098881
+                "time": 1754861641
             },
             {
                 "online": 1000,
-                "time": 1740102481
+                "time": 1754865241
             },
             {
                 "online": 1000,
-                "time": 1740106081
+                "time": 1754868841
             },
             {
                 "online": 1000,
-                "time": 1740109681
+                "time": 1754872441
             },
             {
                 "online": 1000,
-                "time": 1740113281
+                "time": 1754876041
             },
             {
                 "online": 1000,
-                "time": 1740116881
+                "time": 1754879641
             },
             {
                 "online": 1000,
-                "time": 1740120481
+                "time": 1754883241
             },
             {
                 "online": 1000,
-                "time": 1740124081
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arz24wednesday",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/24.webp",
+        "additionalIps": [
+            "wednesday.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 28,
+        "name": "Christmas",
+        "ip": "christmas.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803981
+            },
+            {
+                "online": 1000,
+                "time": 1754807581
+            },
+            {
+                "online": 1000,
+                "time": 1754811181
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arizonachristmas28",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/28.webp",
+        "additionalIps": [
+            "christmas.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 29,
+        "name": "Mirage",
+        "ip": "mirage.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803981
+            },
+            {
+                "online": 1000,
+                "time": 1754807581
+            },
+            {
+                "online": 1000,
+                "time": 1754811181
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/miragearz29",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/29.webp",
+        "additionalIps": [
+            "mirage.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 1,
+        "name": "Phoenix",
+        "ip": "phoenix.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803921
+            },
+            {
+                "online": 1000,
+                "time": 1754807521
+            },
+            {
+                "online": 1000,
+                "time": 1754811122
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arizona1phoenix",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/1.webp",
+        "additionalIps": [
+            "phoenix.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 18,
+        "name": "Casa-Grande",
+        "ip": "casagrande.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803981
+            },
+            {
+                "online": 1000,
+                "time": 1754807581
+            },
+            {
+                "online": 1000,
+                "time": 1754811181
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
             }
         ],
         "tg": "https://t.me/arizona_rpcom",
@@ -3129,15 +2897,15 @@
         "inst": "https://instagram.com/arizonagames_",
         "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/18.webp",
         "additionalIps": [
-            "80.66.82.188"
+            "casagrande.arizona-rp.com"
         ],
-        "donateMultiplier": 2,
+        "donateMultiplier": 3,
         "experienceMultiplier": 0
     },
     {
-        "number": 27,
-        "name": "Bumble Bee",
-        "ip": "80.66.82.87",
+        "number": 7,
+        "name": "Mesa",
+        "ip": "mesa.arizona-rp.com",
         "port": 7777,
         "online": 1000,
         "maxplayers": 1000,
@@ -3145,99 +2913,331 @@
         "plotPoints": [
             {
                 "online": 1000,
-                "time": 1740041162
+                "time": 1754803921
             },
             {
                 "online": 1000,
-                "time": 1740044821
+                "time": 1754807521
             },
             {
                 "online": 1000,
-                "time": 1740048421
+                "time": 1754811122
             },
             {
                 "online": 1000,
-                "time": 1740052021
+                "time": 1754814781
             },
             {
                 "online": 1000,
-                "time": 1740055621
+                "time": 1754818381
             },
             {
                 "online": 1000,
-                "time": 1740059221
+                "time": 1754821981
             },
             {
                 "online": 1000,
-                "time": 1740062822
+                "time": 1754825581
             },
             {
                 "online": 1000,
-                "time": 1740066481
+                "time": 1754829181
             },
             {
                 "online": 1000,
-                "time": 1740070081
+                "time": 1754832781
             },
             {
                 "online": 1000,
-                "time": 1740073681
+                "time": 1754836382
             },
             {
                 "online": 1000,
-                "time": 1740077281
+                "time": 1754840041
             },
             {
                 "online": 1000,
-                "time": 1740080881
+                "time": 1754843641
             },
             {
                 "online": 1000,
-                "time": 1740084481
+                "time": 1754847241
             },
             {
                 "online": 1000,
-                "time": 1740088081
+                "time": 1754850841
             },
             {
                 "online": 1000,
-                "time": 1740091681
+                "time": 1754854441
             },
             {
                 "online": 1000,
-                "time": 1740095281
+                "time": 1754858041
             },
             {
                 "online": 1000,
-                "time": 1740098881
+                "time": 1754861641
             },
             {
                 "online": 1000,
-                "time": 1740102481
+                "time": 1754865241
             },
             {
                 "online": 1000,
-                "time": 1740106081
+                "time": 1754868841
             },
             {
                 "online": 1000,
-                "time": 1740109681
+                "time": 1754872441
             },
             {
                 "online": 1000,
-                "time": 1740113281
+                "time": 1754876041
             },
             {
                 "online": 1000,
-                "time": 1740116881
+                "time": 1754879641
             },
             {
                 "online": 1000,
-                "time": 1740120481
+                "time": 1754883241
             },
             {
                 "online": 1000,
-                "time": 1740124081
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arizonarpmesa7",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/7.webp",
+        "additionalIps": [
+            "mesa.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 9,
+        "name": "Yuma",
+        "ip": "yuma.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803921
+            },
+            {
+                "online": 1000,
+                "time": 1754807521
+            },
+            {
+                "online": 1000,
+                "time": 1754811122
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arizonarpyuma",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/9.webp",
+        "additionalIps": [
+            "yuma.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 27,
+        "name": "Bumble Bee",
+        "ip": "bumblebee.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803981
+            },
+            {
+                "online": 1000,
+                "time": 1754807581
+            },
+            {
+                "online": 1000,
+                "time": 1754811181
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
             }
         ],
         "tg": "https://t.me/arizona_rpcom",
@@ -3245,247 +3245,15 @@
         "inst": "https://instagram.com/arizonagames_",
         "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/27.webp",
         "additionalIps": [
-            "80.66.82.87"
+            "bumblebee.arizona-rp.com"
         ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 30,
-        "name": "Love",
-        "ip": "80.66.82.33",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740041162
-            },
-            {
-                "online": 1000,
-                "time": 1740044821
-            },
-            {
-                "online": 1000,
-                "time": 1740048421
-            },
-            {
-                "online": 1000,
-                "time": 1740052021
-            },
-            {
-                "online": 1000,
-                "time": 1740055621
-            },
-            {
-                "online": 1000,
-                "time": 1740059221
-            },
-            {
-                "online": 1000,
-                "time": 1740062822
-            },
-            {
-                "online": 1000,
-                "time": 1740066481
-            },
-            {
-                "online": 1000,
-                "time": 1740070081
-            },
-            {
-                "online": 1000,
-                "time": 1740073681
-            },
-            {
-                "online": 1000,
-                "time": 1740077281
-            },
-            {
-                "online": 1000,
-                "time": 1740080881
-            },
-            {
-                "online": 1000,
-                "time": 1740084481
-            },
-            {
-                "online": 1000,
-                "time": 1740088081
-            },
-            {
-                "online": 1000,
-                "time": 1740091681
-            },
-            {
-                "online": 1000,
-                "time": 1740095281
-            },
-            {
-                "online": 1000,
-                "time": 1740098881
-            },
-            {
-                "online": 1000,
-                "time": 1740102481
-            },
-            {
-                "online": 1000,
-                "time": 1740106081
-            },
-            {
-                "online": 1000,
-                "time": 1740109681
-            },
-            {
-                "online": 1000,
-                "time": 1740113281
-            },
-            {
-                "online": 1000,
-                "time": 1740116881
-            },
-            {
-                "online": 1000,
-                "time": 1740120481
-            },
-            {
-                "online": 1000,
-                "time": 1740124081
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arizonalove30",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/30.webp",
-        "additionalIps": [
-            "80.66.82.33"
-        ],
-        "donateMultiplier": 2,
-        "experienceMultiplier": 0
-    },
-    {
-        "number": 31,
-        "name": "Drake",
-        "ip": "80.66.82.22",
-        "port": 7777,
-        "online": 1000,
-        "maxplayers": 1000,
-        "password": false,
-        "plotPoints": [
-            {
-                "online": 1000,
-                "time": 1740041162
-            },
-            {
-                "online": 1000,
-                "time": 1740044821
-            },
-            {
-                "online": 1000,
-                "time": 1740048421
-            },
-            {
-                "online": 1000,
-                "time": 1740052021
-            },
-            {
-                "online": 1000,
-                "time": 1740055621
-            },
-            {
-                "online": 1000,
-                "time": 1740059221
-            },
-            {
-                "online": 1000,
-                "time": 1740062822
-            },
-            {
-                "online": 1000,
-                "time": 1740066481
-            },
-            {
-                "online": 1000,
-                "time": 1740070081
-            },
-            {
-                "online": 1000,
-                "time": 1740073681
-            },
-            {
-                "online": 1000,
-                "time": 1740077281
-            },
-            {
-                "online": 1000,
-                "time": 1740080881
-            },
-            {
-                "online": 1000,
-                "time": 1740084481
-            },
-            {
-                "online": 1000,
-                "time": 1740088081
-            },
-            {
-                "online": 1000,
-                "time": 1740091681
-            },
-            {
-                "online": 1000,
-                "time": 1740095281
-            },
-            {
-                "online": 1000,
-                "time": 1740098881
-            },
-            {
-                "online": 1000,
-                "time": 1740102481
-            },
-            {
-                "online": 1000,
-                "time": 1740106081
-            },
-            {
-                "online": 1000,
-                "time": 1740109681
-            },
-            {
-                "online": 1000,
-                "time": 1740113281
-            },
-            {
-                "online": 1000,
-                "time": 1740116881
-            },
-            {
-                "online": 1000,
-                "time": 1740120481
-            },
-            {
-                "online": 1000,
-                "time": 1740124081
-            }
-        ],
-        "tg": "https://t.me/arizona_rpcom",
-        "vk": "https://vk.com/arzdrake31",
-        "inst": "https://instagram.com/arizonagames_",
-        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/31.webp",
-        "additionalIps": [
-            "80.66.82.22"
-        ],
-        "donateMultiplier": 2,
+        "donateMultiplier": 3,
         "experienceMultiplier": 0
     },
     {
         "number": 2,
         "name": "Tucson",
-        "ip": "185.169.134.4",
+        "ip": "tucson.arizona-rp.com",
         "port": 7777,
         "online": 1000,
         "maxplayers": 1000,
@@ -3493,99 +3261,99 @@
         "plotPoints": [
             {
                 "online": 1000,
-                "time": 1740040981
+                "time": 1754803921
             },
             {
                 "online": 1000,
-                "time": 1740044581
+                "time": 1754807521
             },
             {
                 "online": 1000,
-                "time": 1740048181
+                "time": 1754811122
             },
             {
                 "online": 1000,
-                "time": 1740051781
+                "time": 1754814781
             },
             {
                 "online": 1000,
-                "time": 1740055381
+                "time": 1754818381
             },
             {
                 "online": 1000,
-                "time": 1740058981
+                "time": 1754821981
             },
             {
                 "online": 1000,
-                "time": 1740062581
+                "time": 1754825581
             },
             {
                 "online": 1000,
-                "time": 1740066181
+                "time": 1754829181
             },
             {
                 "online": 1000,
-                "time": 1740069781
+                "time": 1754832781
             },
             {
                 "online": 1000,
-                "time": 1740073381
+                "time": 1754836382
             },
             {
                 "online": 1000,
-                "time": 1740076981
+                "time": 1754840041
             },
             {
                 "online": 1000,
-                "time": 1740080582
+                "time": 1754843641
             },
             {
                 "online": 1000,
-                "time": 1740084241
+                "time": 1754847241
             },
             {
                 "online": 1000,
-                "time": 1740087841
+                "time": 1754850841
             },
             {
                 "online": 1000,
-                "time": 1740091441
+                "time": 1754854441
             },
             {
                 "online": 1000,
-                "time": 1740095041
+                "time": 1754858041
             },
             {
                 "online": 1000,
-                "time": 1740098641
+                "time": 1754861641
             },
             {
                 "online": 1000,
-                "time": 1740102242
+                "time": 1754865241
             },
             {
                 "online": 1000,
-                "time": 1740105901
+                "time": 1754868841
             },
             {
                 "online": 1000,
-                "time": 1740109501
+                "time": 1754872441
             },
             {
                 "online": 1000,
-                "time": 1740113101
+                "time": 1754876041
             },
             {
                 "online": 1000,
-                "time": 1740116701
+                "time": 1754879641
             },
             {
                 "online": 1000,
-                "time": 1740120301
+                "time": 1754883241
             },
             {
                 "online": 1000,
-                "time": 1740123901
+                "time": 1754886841
             }
         ],
         "tg": "https://t.me/arizona_rpcom",
@@ -3593,9 +3361,357 @@
         "inst": "https://instagram.com/arizonagames_",
         "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/2.webp",
         "additionalIps": [
-            "185.169.134.4"
+            "tucson.arizona-rp.com"
         ],
-        "donateMultiplier": 2,
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 30,
+        "name": "Love",
+        "ip": "love.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803981
+            },
+            {
+                "online": 1000,
+                "time": 1754807581
+            },
+            {
+                "online": 1000,
+                "time": 1754811181
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arizonalove30",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/30.webp",
+        "additionalIps": [
+            "love.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 31,
+        "name": "Drake",
+        "ip": "drake.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803981
+            },
+            {
+                "online": 1000,
+                "time": 1754807581
+            },
+            {
+                "online": 1000,
+                "time": 1754811181
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arzdrake31",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/31.webp",
+        "additionalIps": [
+            "drake.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
+        "experienceMultiplier": 0
+    },
+    {
+        "number": 32,
+        "name": "Space",
+        "ip": "space.arizona-rp.com",
+        "port": 7777,
+        "online": 1000,
+        "maxplayers": 1000,
+        "password": false,
+        "plotPoints": [
+            {
+                "online": 1000,
+                "time": 1754803981
+            },
+            {
+                "online": 1000,
+                "time": 1754807581
+            },
+            {
+                "online": 1000,
+                "time": 1754811181
+            },
+            {
+                "online": 1000,
+                "time": 1754814781
+            },
+            {
+                "online": 1000,
+                "time": 1754818381
+            },
+            {
+                "online": 1000,
+                "time": 1754821981
+            },
+            {
+                "online": 1000,
+                "time": 1754825581
+            },
+            {
+                "online": 1000,
+                "time": 1754829181
+            },
+            {
+                "online": 1000,
+                "time": 1754832781
+            },
+            {
+                "online": 1000,
+                "time": 1754836382
+            },
+            {
+                "online": 1000,
+                "time": 1754840041
+            },
+            {
+                "online": 1000,
+                "time": 1754843641
+            },
+            {
+                "online": 1000,
+                "time": 1754847241
+            },
+            {
+                "online": 1000,
+                "time": 1754850841
+            },
+            {
+                "online": 1000,
+                "time": 1754854441
+            },
+            {
+                "online": 1000,
+                "time": 1754858041
+            },
+            {
+                "online": 1000,
+                "time": 1754861641
+            },
+            {
+                "online": 1000,
+                "time": 1754865241
+            },
+            {
+                "online": 1000,
+                "time": 1754868841
+            },
+            {
+                "online": 1000,
+                "time": 1754872441
+            },
+            {
+                "online": 1000,
+                "time": 1754876041
+            },
+            {
+                "online": 1000,
+                "time": 1754879641
+            },
+            {
+                "online": 1000,
+                "time": 1754883241
+            },
+            {
+                "online": 1000,
+                "time": 1754886841
+            }
+        ],
+        "tg": "https://t.me/arizona_rpcom",
+        "vk": "https://vk.com/arzspace32",
+        "inst": "https://instagram.com/arizonagames_",
+        "icon": "https://cdn.azresources.cloud/projects/arizona-rp/assets/images/project_icons/32.webp",
+        "additionalIps": [
+            "space.arizona-rp.com"
+        ],
+        "donateMultiplier": 3,
         "experienceMultiplier": 0
     }
 ]

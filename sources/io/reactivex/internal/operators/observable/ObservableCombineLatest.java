@@ -14,7 +14,7 @@ import io.reactivex.internal.util.AtomicThrowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableCombineLatest<T, R> extends Observable<R> {
     final int bufferSize;
     final Function<? super Object[], ? extends R> combiner;
@@ -57,7 +57,7 @@ public final class ObservableCombineLatest<T, R> extends Observable<R> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class LatestCoordinator<T, R> extends AtomicInteger implements Disposable {
         private static final long serialVersionUID = 8567835998786448817L;
         int active;
@@ -260,7 +260,7 @@ public final class ObservableCombineLatest<T, R> extends Observable<R> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class CombinerObserver<T, R> extends AtomicReference<Disposable> implements Observer<T> {
         private static final long serialVersionUID = -4823716997131257941L;
         final int index;

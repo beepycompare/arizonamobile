@@ -7,7 +7,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SafeObserver<T> implements Observer<T>, Disposable {
     boolean done;
     final Observer<? super T> downstream;

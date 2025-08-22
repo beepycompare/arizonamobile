@@ -3,7 +3,7 @@ package io.reactivex.internal.operators.single;
 import io.reactivex.Single;
 import io.reactivex.SingleObserver;
 import io.reactivex.internal.disposables.EmptyDisposable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleNever extends Single<Object> {
     public static final Single<Object> INSTANCE = new SingleNever();
 

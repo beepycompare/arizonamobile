@@ -157,8 +157,8 @@ public final class Settings {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x00a1 A[Catch: Exception -> 0x0113, TRY_ENTER, TryCatch #1 {Exception -> 0x0113, blocks: (B:5:0x0009, B:7:0x004a, B:8:0x004d, B:12:0x0094, B:16:0x00a1, B:18:0x00b7, B:21:0x00bf, B:23:0x00c9, B:25:0x00de, B:27:0x00e8, B:28:0x00f7, B:30:0x00fb, B:31:0x0102, B:32:0x0103, B:33:0x010a, B:34:0x010b, B:35:0x0112), top: B:42:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00b7 A[Catch: Exception -> 0x0113, TryCatch #1 {Exception -> 0x0113, blocks: (B:5:0x0009, B:7:0x004a, B:8:0x004d, B:12:0x0094, B:16:0x00a1, B:18:0x00b7, B:21:0x00bf, B:23:0x00c9, B:25:0x00de, B:27:0x00e8, B:28:0x00f7, B:30:0x00fb, B:31:0x0102, B:32:0x0103, B:33:0x010a, B:34:0x010b, B:35:0x0112), top: B:42:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x00a1 A[Catch: Exception -> 0x0114, TRY_ENTER, TryCatch #0 {Exception -> 0x0114, blocks: (B:5:0x0009, B:7:0x004a, B:8:0x004d, B:12:0x0094, B:16:0x00a1, B:18:0x00b8, B:21:0x00c0, B:23:0x00ca, B:25:0x00df, B:27:0x00e9, B:28:0x00f8, B:30:0x00fc, B:31:0x0103, B:32:0x0104, B:33:0x010b, B:34:0x010c, B:35:0x0113), top: B:40:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00b8 A[Catch: Exception -> 0x0114, TryCatch #0 {Exception -> 0x0114, blocks: (B:5:0x0009, B:7:0x004a, B:8:0x004d, B:12:0x0094, B:16:0x00a1, B:18:0x00b8, B:21:0x00c0, B:23:0x00ca, B:25:0x00df, B:27:0x00e9, B:28:0x00f8, B:30:0x00fc, B:31:0x0103, B:32:0x0104, B:33:0x010b, B:34:0x010c, B:35:0x0113), top: B:40:0x0005 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

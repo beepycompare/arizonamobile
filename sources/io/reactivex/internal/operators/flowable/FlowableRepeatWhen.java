@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableRepeatWhen<T> extends AbstractFlowableWithUpstream<T, T> {
     final Function<? super Flowable<Object>, ? extends Publisher<?>> handler;
 
@@ -44,7 +44,7 @@ public final class FlowableRepeatWhen<T> extends AbstractFlowableWithUpstream<T,
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WhenReceiver<T, U> extends AtomicInteger implements FlowableSubscriber<Object>, Subscription {
         private static final long serialVersionUID = 2827772011130406689L;
         final Publisher<T> source;
@@ -98,7 +98,7 @@ public final class FlowableRepeatWhen<T> extends AbstractFlowableWithUpstream<T,
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static abstract class WhenSourceSubscriber<T, U> extends SubscriptionArbiter implements FlowableSubscriber<T> {
         private static final long serialVersionUID = -5604623027276966720L;
         protected final Subscriber<? super T> downstream;
@@ -144,7 +144,7 @@ public final class FlowableRepeatWhen<T> extends AbstractFlowableWithUpstream<T,
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class RepeatWhenSubscriber<T> extends WhenSourceSubscriber<T, Object> {
         private static final long serialVersionUID = -2680129890138081029L;
 

@@ -8,7 +8,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.schedulers.TrampolineScheduler;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableIntervalRange extends Observable<Long> {
     final long end;
     final long initialDelay;
@@ -40,7 +40,7 @@ public final class ObservableIntervalRange extends Observable<Long> {
         intervalRangeObserver.setResource(scheduler.schedulePeriodicallyDirect(intervalRangeObserver, this.initialDelay, this.period, this.unit));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class IntervalRangeObserver extends AtomicReference<Disposable> implements Disposable, Runnable {
         private static final long serialVersionUID = 1891866368734007884L;
         long count;

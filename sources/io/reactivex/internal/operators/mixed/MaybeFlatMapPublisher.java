@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeFlatMapPublisher<T, R> extends Flowable<R> {
     final Function<? super T, ? extends Publisher<? extends R>> mapper;
     final MaybeSource<T> source;
@@ -30,7 +30,7 @@ public final class MaybeFlatMapPublisher<T, R> extends Flowable<R> {
         this.source.subscribe(new FlatMapPublisherSubscriber(subscriber, this.mapper));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FlatMapPublisherSubscriber<T, R> extends AtomicReference<Subscription> implements FlowableSubscriber<R>, MaybeObserver<T>, Subscription {
         private static final long serialVersionUID = -8948264376121066672L;
         final Subscriber<? super R> downstream;

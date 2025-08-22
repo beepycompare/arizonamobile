@@ -15,7 +15,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: AnimationModifier.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.animation.SizeAnimationModifierNode$animateTo$data$1$1", f = "AnimationModifier.kt", i = {}, l = {230}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class SizeAnimationModifierNode$animateTo$data$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -52,7 +52,7 @@ final class SizeAnimationModifierNode$animateTo$data$1$1 extends SuspendLambda i
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            obj = Animatable.animateTo$default(this.$this_apply.getAnim(), IntSize.m6847boximpl(this.$targetSize), this.this$0.getAnimationSpec(), null, null, this, 12, null);
+            obj = Animatable.animateTo$default(this.$this_apply.getAnim(), IntSize.m7414boximpl(this.$targetSize), this.this$0.getAnimationSpec(), null, null, this, 12, null);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
@@ -63,7 +63,7 @@ final class SizeAnimationModifierNode$animateTo$data$1$1 extends SuspendLambda i
         }
         AnimationResult animationResult = (AnimationResult) obj;
         if (animationResult.getEndReason() == AnimationEndReason.Finished && (listener = this.this$0.getListener()) != null) {
-            listener.invoke(IntSize.m6847boximpl(this.$this_apply.m131getStartSizeYbymL2g()), animationResult.getEndState().getValue());
+            listener.invoke(IntSize.m7414boximpl(this.$this_apply.m127getStartSizeYbymL2g()), animationResult.getEndState().getValue());
         }
         return Unit.INSTANCE;
     }

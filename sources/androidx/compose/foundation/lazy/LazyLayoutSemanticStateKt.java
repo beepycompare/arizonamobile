@@ -10,7 +10,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 /* compiled from: LazyLayoutSemanticState.kt */
-@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0000¨\u0006\u0006"}, d2 = {"LazyLayoutSemanticState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/LazyListState;", "isVertical", "", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0000¨\u0006\u0006"}, d2 = {"LazyLayoutSemanticState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/LazyListState;", "isVertical", "", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyLayoutSemanticStateKt {
     public static final LazyLayoutSemanticState LazyLayoutSemanticState(final LazyListState lazyListState, final boolean z) {
@@ -34,20 +34,20 @@ public final class LazyLayoutSemanticStateKt {
             @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState
             public CollectionInfo collectionInfo() {
                 if (z) {
-                    return new CollectionInfo(-1, 1);
+                    return new CollectionInfo(LazyListState.this.getLayoutInfo().getTotalItemsCount(), 1);
                 }
-                return new CollectionInfo(1, -1);
+                return new CollectionInfo(1, LazyListState.this.getLayoutInfo().getTotalItemsCount());
             }
 
             @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState
             public int getViewport() {
-                long mo845getViewportSizeYbymL2g;
+                long mo952getViewportSizeYbymL2g;
                 if (LazyListState.this.getLayoutInfo().getOrientation() == Orientation.Vertical) {
-                    mo845getViewportSizeYbymL2g = LazyListState.this.getLayoutInfo().mo845getViewportSizeYbymL2g() & 4294967295L;
+                    mo952getViewportSizeYbymL2g = LazyListState.this.getLayoutInfo().mo952getViewportSizeYbymL2g() & 4294967295L;
                 } else {
-                    mo845getViewportSizeYbymL2g = LazyListState.this.getLayoutInfo().mo845getViewportSizeYbymL2g() >> 32;
+                    mo952getViewportSizeYbymL2g = LazyListState.this.getLayoutInfo().mo952getViewportSizeYbymL2g() >> 32;
                 }
-                return (int) mo845getViewportSizeYbymL2g;
+                return (int) mo952getViewportSizeYbymL2g;
             }
 
             @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState

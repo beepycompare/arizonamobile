@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableIntervalRange extends Flowable<Long> {
     final long end;
     final long initialDelay;
@@ -45,7 +45,7 @@ public final class FlowableIntervalRange extends Flowable<Long> {
         intervalRangeSubscriber.setResource(scheduler.schedulePeriodicallyDirect(intervalRangeSubscriber, this.initialDelay, this.period, this.unit));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class IntervalRangeSubscriber extends AtomicLong implements Subscription, Runnable {
         private static final long serialVersionUID = -2809475196591179431L;
         long count;

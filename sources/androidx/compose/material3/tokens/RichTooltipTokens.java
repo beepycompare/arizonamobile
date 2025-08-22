@@ -13,7 +13,7 @@ public final class RichTooltipTokens {
     private static final TypographyKeyTokens ActionLabelTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens ActionPressedLabelTextColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m2979getLevel2D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3286getLevel2D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerMedium;
     private static final ColorSchemeKeyTokens SubheadColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens SubheadFont = TypographyKeyTokens.TitleSmall;
@@ -48,7 +48,7 @@ public final class RichTooltipTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3275getContainerElevationD9Ej5fM() {
+    public final float m3582getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 

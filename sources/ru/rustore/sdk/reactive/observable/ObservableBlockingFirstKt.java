@@ -14,7 +14,7 @@ import kotlin.jvm.internal.Ref;
 import ru.rustore.sdk.reactive.core.Disposable;
 /* compiled from: ObservableBlockingFirst.kt */
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a!\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003¢\u0006\u0002\u0010\u0004¨\u0006\u0005"}, d2 = {"blockingFirst", "Lkotlin/Result;", ExifInterface.GPS_DIRECTION_TRUE, "Lru/rustore/sdk/reactive/observable/Observable;", "(Lru/rustore/sdk/reactive/observable/Observable;)Ljava/lang/Object;", "sdk-public-reactive_release"}, k = 2, mv = {1, 7, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class ObservableBlockingFirstKt {
     public static final <T> Object blockingFirst(Observable<T> observable) {
         Intrinsics.checkNotNullParameter(observable, "<this>");
@@ -41,7 +41,7 @@ public final class ObservableBlockingFirstKt {
                 if (atomicBoolean.compareAndSet(false, true)) {
                     Ref.ObjectRef<Result<T>> objectRef2 = objectRef;
                     Result.Companion companion = Result.Companion;
-                    objectRef2.element = Result.m8499boximpl(Result.m8500constructorimpl(ResultKt.createFailure(error)));
+                    objectRef2.element = Result.m9064boximpl(Result.m9065constructorimpl(ResultKt.createFailure(error)));
                     countDownLatch.countDown();
                 }
             }
@@ -64,7 +64,7 @@ public final class ObservableBlockingFirstKt {
                 if (atomicBoolean.compareAndSet(false, true)) {
                     Ref.ObjectRef<Result<T>> objectRef2 = objectRef;
                     Result.Companion companion = Result.Companion;
-                    objectRef2.element = Result.m8499boximpl(Result.m8500constructorimpl(ResultKt.createFailure(new IllegalStateException("onComplete() called before value was received in blockingFirst()"))));
+                    objectRef2.element = Result.m9064boximpl(Result.m9065constructorimpl(ResultKt.createFailure(new IllegalStateException("onComplete() called before value was received in blockingFirst()"))));
                     countDownLatch.countDown();
                 }
             }
@@ -87,7 +87,7 @@ public final class ObservableBlockingFirstKt {
                 if (atomicBoolean.compareAndSet(false, true)) {
                     Ref.ObjectRef<Result<T>> objectRef2 = objectRef;
                     Result.Companion companion = Result.Companion;
-                    objectRef2.element = (T) Result.m8499boximpl(Result.m8500constructorimpl(t));
+                    objectRef2.element = (T) Result.m9064boximpl(Result.m9065constructorimpl(t));
                     countDownLatch.countDown();
                 }
             }
@@ -97,7 +97,7 @@ public final class ObservableBlockingFirstKt {
             subscribe.dispose();
             T t = objectRef.element;
             if (t != null) {
-                return ((Result) t).m8509unboximpl();
+                return ((Result) t).m9074unboximpl();
             }
             throw new IllegalArgumentException("Required value was null.".toString());
         } catch (Throwable th) {

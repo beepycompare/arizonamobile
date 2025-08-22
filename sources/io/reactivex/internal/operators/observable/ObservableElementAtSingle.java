@@ -10,7 +10,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.FuseToObservable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.NoSuchElementException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableElementAtSingle<T> extends Single<T> implements FuseToObservable<T> {
     final T defaultValue;
     final long index;
@@ -32,7 +32,7 @@ public final class ObservableElementAtSingle<T> extends Single<T> implements Fus
         return RxJavaPlugins.onAssembly(new ObservableElementAt(this.source, this.index, this.defaultValue, true));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ElementAtObserver<T> implements Observer<T>, Disposable {
         long count;
         final T defaultValue;

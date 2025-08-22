@@ -3,7 +3,7 @@ package androidx.media3.extractor.jpeg;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.ForwardingExtractorInput;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class StartOffsetExtractorInput extends ForwardingExtractorInput {
     private final long startOffset;
 

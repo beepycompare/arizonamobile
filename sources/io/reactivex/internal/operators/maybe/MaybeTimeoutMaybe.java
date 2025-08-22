@@ -7,7 +7,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeTimeoutMaybe<T, U> extends AbstractMaybeWithUpstream<T, T> {
     final MaybeSource<? extends T> fallback;
     final MaybeSource<U> other;
@@ -26,7 +26,7 @@ public final class MaybeTimeoutMaybe<T, U> extends AbstractMaybeWithUpstream<T, 
         this.source.subscribe(timeoutMainMaybeObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimeoutMainMaybeObserver<T, U> extends AtomicReference<Disposable> implements MaybeObserver<T>, Disposable {
         private static final long serialVersionUID = -5955289211445418871L;
         final MaybeObserver<? super T> downstream;
@@ -106,7 +106,7 @@ public final class MaybeTimeoutMaybe<T, U> extends AbstractMaybeWithUpstream<T, 
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimeoutOtherMaybeObserver<T, U> extends AtomicReference<Disposable> implements MaybeObserver<Object> {
         private static final long serialVersionUID = 8663801314800248617L;
         final TimeoutMainMaybeObserver<T, U> parent;
@@ -137,7 +137,7 @@ public final class MaybeTimeoutMaybe<T, U> extends AbstractMaybeWithUpstream<T, 
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class TimeoutFallbackMaybeObserver<T> extends AtomicReference<Disposable> implements MaybeObserver<T> {
         private static final long serialVersionUID = 8663801314800248617L;
         final MaybeObserver<? super T> downstream;

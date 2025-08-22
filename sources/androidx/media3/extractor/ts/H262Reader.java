@@ -14,7 +14,7 @@ import androidx.media3.extractor.ts.TsPayloadReader;
 import com.google.common.base.Ascii;
 import java.util.Arrays;
 import java.util.Collections;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class H262Reader implements ElementaryStreamReader {
     private static final double[] FRAME_RATE_VALUES = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
     private static final int START_EXTENSION = 181;
@@ -263,7 +263,7 @@ public final class H262Reader implements ElementaryStreamReader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class CsdBuffer {
         private static final byte[] START_CODE = {0, 0, 1};
         public byte[] data;

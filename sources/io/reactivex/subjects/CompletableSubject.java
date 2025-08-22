@@ -9,7 +9,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableSubject extends Completable implements CompletableObserver {
     static final CompletableDisposable[] EMPTY = new CompletableDisposable[0];
     static final CompletableDisposable[] TERMINATED = new CompletableDisposable[0];
@@ -147,7 +147,7 @@ public final class CompletableSubject extends Completable implements Completable
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class CompletableDisposable extends AtomicReference<CompletableSubject> implements Disposable {
         private static final long serialVersionUID = -7650903191002190468L;
         final CompletableObserver downstream;

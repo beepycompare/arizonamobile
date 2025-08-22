@@ -208,7 +208,7 @@ public final class SavedStateHandle {
             ClassLoader classLoader = SavedStateHandle.class.getClassLoader();
             Intrinsics.checkNotNull(classLoader);
             bundle.setClassLoader(classLoader);
-            return new SavedStateHandle(SavedStateReader.m7676toMapimpl(SavedStateReader.m7595constructorimpl(bundle)));
+            return new SavedStateHandle(SavedStateReader.m8242toMapimpl(SavedStateReader.m8161constructorimpl(bundle)));
         }
 
         public final boolean validateValue(Object obj) {

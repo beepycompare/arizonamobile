@@ -16,56 +16,56 @@ import kotlin.jvm.internal.TypeIntrinsics;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt;
 /* compiled from: MultiValueMap.kt */
-@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0010\n\u0002\u0010\u000e\n\u0002\b\u0006\b\u0081@\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u0002*\b\b\u0001\u0010\u0003*\u00020\u00022\u00020\u0002B\u001d\u0012\u0014\b\u0002\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u001d\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00028\u00002\u0006\u0010\u000b\u001a\u00028\u0001¢\u0006\u0004\b\f\u0010\rJ\r\u0010\u000e\u001a\u00020\t¢\u0006\u0004\b\u000f\u0010\u0010J\u0018\u0010\u0011\u001a\u00020\u00122\u0006\u0010\n\u001a\u00028\u0000H\u0086\u0002¢\u0006\u0004\b\u0013\u0010\u0014J\u001a\u0010\u0015\u001a\u00020\u00122\b\u0010\u0016\u001a\u0004\u0018\u00010\u0002HÖ\u0003¢\u0006\u0004\b\u0017\u0010\u0014J;\u0010\u0018\u001a\u00020\t2\u0006\u0010\n\u001a\u00028\u00002!\u0010\u0019\u001a\u001d\u0012\u0013\u0012\u00118\u0001¢\u0006\f\b\u001b\u0012\b\b\u001c\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\t0\u001aH\u0086\b¢\u0006\u0004\b\u001d\u0010\u001eJ\u001e\u0010\u001f\u001a\b\u0012\u0004\u0012\u00028\u00010 2\u0006\u0010\n\u001a\u00028\u0000H\u0086\u0002¢\u0006\u0004\b!\u0010\"J\u0010\u0010#\u001a\u00020$HÖ\u0001¢\u0006\u0004\b%\u0010&J\r\u0010'\u001a\u00020\u0012¢\u0006\u0004\b(\u0010)J\r\u0010*\u001a\u00020\u0012¢\u0006\u0004\b+\u0010)J\u0017\u0010,\u001a\u0004\u0018\u00018\u00012\u0006\u0010\n\u001a\u00028\u0000¢\u0006\u0004\b-\u0010.J\u0017\u0010/\u001a\u0004\u0018\u00018\u00012\u0006\u0010\n\u001a\u00028\u0000¢\u0006\u0004\b0\u0010.J8\u00101\u001a\u00020\t2\u0006\u0010\n\u001a\u00028\u00002!\u00102\u001a\u001d\u0012\u0013\u0012\u00118\u0001¢\u0006\f\b\u001b\u0012\b\b\u001c\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\u00120\u001a¢\u0006\u0004\b3\u0010\u001eJ\u0010\u00104\u001a\u000205HÖ\u0001¢\u0006\u0004\b6\u00107J\u0013\u00108\u001a\b\u0012\u0004\u0012\u00028\u00010 ¢\u0006\u0004\b9\u0010:R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0004\u0092\u0001\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00020\u0005¨\u0006;"}, d2 = {"Landroidx/compose/runtime/collection/MultiValueMap;", "K", "", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "map", "Landroidx/collection/MutableScatterMap;", "constructor-impl", "(Landroidx/collection/MutableScatterMap;)Landroidx/collection/MutableScatterMap;", "add", "", "key", "value", "add-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;Ljava/lang/Object;)V", "clear", "clear-impl", "(Landroidx/collection/MutableScatterMap;)V", "contains", "", "contains-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;)Z", "equals", "other", "equals-impl", "forEachValue", "block", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "forEachValue-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V", "get", "Landroidx/collection/ObjectList;", "get-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;)Landroidx/collection/ObjectList;", "hashCode", "", "hashCode-impl", "(Landroidx/collection/MutableScatterMap;)I", "isEmpty", "isEmpty-impl", "(Landroidx/collection/MutableScatterMap;)Z", "isNotEmpty", "isNotEmpty-impl", "removeFirst", "removeFirst-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;)Ljava/lang/Object;", "removeLast", "removeLast-impl", "removeValueIf", "condition", "removeValueIf-impl", "toString", "", "toString-impl", "(Landroidx/collection/MutableScatterMap;)Ljava/lang/String;", "values", "values-impl", "(Landroidx/collection/MutableScatterMap;)Landroidx/collection/ObjectList;", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0081@\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u0002*\b\b\u0001\u0010\u0003*\u00020\u00022\u00020\u0002B\u001d\u0012\u0014\b\u0002\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u001d\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00028\u00002\u0006\u0010\u000b\u001a\u00028\u0001¢\u0006\u0004\b\f\u0010\rJ\r\u0010\u000e\u001a\u00020\t¢\u0006\u0004\b\u000f\u0010\u0010J\u0018\u0010\u0011\u001a\u00020\u00122\u0006\u0010\n\u001a\u00028\u0000H\u0086\u0002¢\u0006\u0004\b\u0013\u0010\u0014J\u001e\u0010\u0015\u001a\b\u0012\u0004\u0012\u00028\u00010\u00162\u0006\u0010\n\u001a\u00028\u0000H\u0086\u0002¢\u0006\u0004\b\u0017\u0010\u0018J\r\u0010\u0019\u001a\u00020\u0012¢\u0006\u0004\b\u001a\u0010\u001bJ\r\u0010\u001c\u001a\u00020\u0012¢\u0006\u0004\b\u001d\u0010\u001bJ\u0017\u0010\u001e\u001a\u0004\u0018\u00018\u00012\u0006\u0010\n\u001a\u00028\u0000¢\u0006\u0004\b\u001f\u0010 J\u0017\u0010!\u001a\u0004\u0018\u00018\u00012\u0006\u0010\n\u001a\u00028\u0000¢\u0006\u0004\b\"\u0010 J\u0013\u0010#\u001a\b\u0012\u0004\u0012\u00028\u00010\u0016¢\u0006\u0004\b$\u0010%J;\u0010&\u001a\u00020\t2\u0006\u0010\n\u001a\u00028\u00002!\u0010'\u001a\u001d\u0012\u0013\u0012\u00118\u0001¢\u0006\f\b)\u0012\b\b*\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\t0(H\u0086\b¢\u0006\u0004\b+\u0010,J8\u0010-\u001a\u00020\t2\u0006\u0010\n\u001a\u00028\u00002!\u0010.\u001a\u001d\u0012\u0013\u0012\u00118\u0001¢\u0006\f\b)\u0012\b\b*\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\u00120(¢\u0006\u0004\b/\u0010,J\u0013\u00100\u001a\u00020\u00122\b\u00101\u001a\u0004\u0018\u00010\u0002HÖ\u0003J\t\u00102\u001a\u000203HÖ\u0001J\t\u00104\u001a\u000205HÖ\u0001R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0004\u0092\u0001\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00020\u0005¨\u00066"}, d2 = {"Landroidx/compose/runtime/collection/MultiValueMap;", "K", "", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "map", "Landroidx/collection/MutableScatterMap;", "constructor-impl", "(Landroidx/collection/MutableScatterMap;)Landroidx/collection/MutableScatterMap;", "add", "", "key", "value", "add-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;Ljava/lang/Object;)V", "clear", "clear-impl", "(Landroidx/collection/MutableScatterMap;)V", "contains", "", "contains-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;)Z", "get", "Landroidx/collection/ObjectList;", "get-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;)Landroidx/collection/ObjectList;", "isEmpty", "isEmpty-impl", "(Landroidx/collection/MutableScatterMap;)Z", "isNotEmpty", "isNotEmpty-impl", "removeLast", "removeLast-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;)Ljava/lang/Object;", "removeFirst", "removeFirst-impl", "values", "values-impl", "(Landroidx/collection/MutableScatterMap;)Landroidx/collection/ObjectList;", "forEachValue", "block", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "forEachValue-impl", "(Landroidx/collection/MutableScatterMap;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V", "removeValueIf", "condition", "removeValueIf-impl", "equals", "other", "hashCode", "", "toString", "", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class MultiValueMap<K, V> {
     private final MutableScatterMap<Object, Object> map;
 
     /* renamed from: box-impl */
-    public static final /* synthetic */ MultiValueMap m3596boximpl(MutableScatterMap mutableScatterMap) {
+    public static final /* synthetic */ MultiValueMap m3932boximpl(MutableScatterMap mutableScatterMap) {
         return new MultiValueMap(mutableScatterMap);
     }
 
     /* renamed from: constructor-impl */
-    public static <K, V> MutableScatterMap<Object, Object> m3598constructorimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static <K, V> MutableScatterMap<Object, Object> m3934constructorimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap;
     }
 
     /* renamed from: equals-impl */
-    public static boolean m3601equalsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
-        return (obj instanceof MultiValueMap) && Intrinsics.areEqual(mutableScatterMap, ((MultiValueMap) obj).m3613unboximpl());
+    public static boolean m3937equalsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
+        return (obj instanceof MultiValueMap) && Intrinsics.areEqual(mutableScatterMap, ((MultiValueMap) obj).m3949unboximpl());
     }
 
     /* renamed from: equals-impl0 */
-    public static final boolean m3602equalsimpl0(MutableScatterMap<Object, Object> mutableScatterMap, MutableScatterMap<Object, Object> mutableScatterMap2) {
+    public static final boolean m3938equalsimpl0(MutableScatterMap<Object, Object> mutableScatterMap, MutableScatterMap<Object, Object> mutableScatterMap2) {
         return Intrinsics.areEqual(mutableScatterMap, mutableScatterMap2);
     }
 
     /* renamed from: hashCode-impl */
-    public static int m3605hashCodeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static int m3941hashCodeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap.hashCode();
     }
 
     /* renamed from: toString-impl */
-    public static String m3611toStringimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static String m3947toStringimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return "MultiValueMap(map=" + mutableScatterMap + ')';
     }
 
     public boolean equals(Object obj) {
-        return m3601equalsimpl(this.map, obj);
+        return m3937equalsimpl(this.map, obj);
     }
 
     public int hashCode() {
-        return m3605hashCodeimpl(this.map);
+        return m3941hashCodeimpl(this.map);
     }
 
     public String toString() {
-        return m3611toStringimpl(this.map);
+        return m3947toStringimpl(this.map);
     }
 
     /* renamed from: unbox-impl */
-    public final /* synthetic */ MutableScatterMap m3613unboximpl() {
+    public final /* synthetic */ MutableScatterMap m3949unboximpl() {
         return this.map;
     }
 
@@ -74,25 +74,25 @@ public final class MultiValueMap<K, V> {
     }
 
     /* renamed from: constructor-impl$default */
-    public static /* synthetic */ MutableScatterMap m3599constructorimpl$default(MutableScatterMap mutableScatterMap, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ MutableScatterMap m3935constructorimpl$default(MutableScatterMap mutableScatterMap, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             mutableScatterMap = new MutableScatterMap(0, 1, null);
         }
-        return m3598constructorimpl(mutableScatterMap);
+        return m3934constructorimpl(mutableScatterMap);
     }
 
     /* renamed from: clear-impl */
-    public static final void m3597clearimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final void m3933clearimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         mutableScatterMap.clear();
     }
 
     /* renamed from: contains-impl */
-    public static final boolean m3600containsimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
+    public static final boolean m3936containsimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
         return mutableScatterMap.contains(k);
     }
 
     /* renamed from: get-impl */
-    public static final ObjectList<V> m3604getimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
+    public static final ObjectList<V> m3940getimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
         Object obj = mutableScatterMap.get(k);
         if (obj == null) {
             return ObjectListKt.emptyObjectList();
@@ -101,17 +101,17 @@ public final class MultiValueMap<K, V> {
     }
 
     /* renamed from: isEmpty-impl */
-    public static final boolean m3606isEmptyimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final boolean m3942isEmptyimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap.isEmpty();
     }
 
     /* renamed from: isNotEmpty-impl */
-    public static final boolean m3607isNotEmptyimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final boolean m3943isNotEmptyimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap.isNotEmpty();
     }
 
     /* renamed from: removeLast-impl */
-    public static final V m3609removeLastimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
+    public static final V m3945removeLastimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
         V v = (V) mutableScatterMap.get(k);
         if (v == null) {
             return null;
@@ -133,7 +133,7 @@ public final class MultiValueMap<K, V> {
     }
 
     /* renamed from: removeFirst-impl */
-    public static final V m3608removeFirstimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
+    public static final V m3944removeFirstimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
         V v = (V) mutableScatterMap.get(k);
         if (v == null) {
             return null;
@@ -154,7 +154,7 @@ public final class MultiValueMap<K, V> {
     }
 
     /* renamed from: values-impl */
-    public static final ObjectList<V> m3612valuesimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final ObjectList<V> m3948valuesimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         if (mutableScatterMap.isEmpty()) {
             return ObjectListKt.emptyObjectList();
         }
@@ -196,7 +196,7 @@ public final class MultiValueMap<K, V> {
     }
 
     /* renamed from: forEachValue-impl */
-    public static final void m3603forEachValueimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, Function1<? super V, Unit> function1) {
+    public static final void m3939forEachValueimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, Function1<? super V, Unit> function1) {
         Object obj = mutableScatterMap.get(k);
         if (obj != null) {
             if (obj instanceof MutableObjectList) {
@@ -215,7 +215,7 @@ public final class MultiValueMap<K, V> {
     }
 
     /* renamed from: removeValueIf-impl */
-    public static final void m3610removeValueIfimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, Function1<? super V, Boolean> function1) {
+    public static final void m3946removeValueIfimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, Function1<? super V, Boolean> function1) {
         Object obj = mutableScatterMap.get(k);
         if (obj != null) {
             if (obj instanceof MutableObjectList) {
@@ -254,7 +254,7 @@ public final class MultiValueMap<K, V> {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: add-impl */
-    public static final void m3595addimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, V v) {
+    public static final void m3931addimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, V v) {
         int findInsertIndex = mutableScatterMap.findInsertIndex(k);
         boolean z = findInsertIndex < 0;
         Object obj = z ? null : mutableScatterMap.values[findInsertIndex];

@@ -10,7 +10,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableGenerate<T, S> extends Observable<T> {
     final Consumer<? super S> disposeState;
     final BiFunction<S, Emitter<T>, S> generator;
@@ -34,7 +34,7 @@ public final class ObservableGenerate<T, S> extends Observable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class GeneratorDisposable<T, S> implements Emitter<T>, Disposable {
         volatile boolean cancelled;
         final Consumer<? super S> disposeState;

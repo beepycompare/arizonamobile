@@ -17,7 +17,7 @@ import kotlin.jvm.internal.StringCompanionObject;
 /* loaded from: classes.dex */
 public final class Strings_androidKt {
     /* renamed from: getString-2EP1pXo  reason: not valid java name */
-    public static final String m2779getString2EP1pXo(int i, Composer composer, int i2) {
+    public static final String m3086getString2EP1pXo(int i, Composer composer, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -907677715, "C(getString)P(0:c#material3.internal.Strings)31@1161L7,32@1202L7:Strings.android.kt#mqatfk");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-907677715, i2, -1, "androidx.compose.material3.internal.getString (Strings.android.kt:30)");
@@ -37,12 +37,12 @@ public final class Strings_androidKt {
     }
 
     /* renamed from: getString-qBjtwXw  reason: not valid java name */
-    public static final String m2780getStringqBjtwXw(int i, Object[] objArr, Composer composer, int i2) {
+    public static final String m3087getStringqBjtwXw(int i, Object[] objArr, Composer composer, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -1427268608, "C(getString)P(1:c#material3.internal.Strings)39@1395L17,41@1488L7:Strings.android.kt#mqatfk");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1427268608, i2, -1, "androidx.compose.material3.internal.getString (Strings.android.kt:38)");
         }
-        String m2779getString2EP1pXo = m2779getString2EP1pXo(i, composer, i2 & 14);
+        String m3086getString2EP1pXo = m3086getString2EP1pXo(i, composer, i2 & 14);
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(AndroidCompositionLocals_androidKt.getLocalConfiguration());
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -52,7 +52,7 @@ public final class Strings_androidKt {
         }
         StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
         Object[] copyOf = Arrays.copyOf(objArr, objArr.length);
-        String format = String.format(locale, m2779getString2EP1pXo, Arrays.copyOf(copyOf, copyOf.length));
+        String format = String.format(locale, m3086getString2EP1pXo, Arrays.copyOf(copyOf, copyOf.length));
         Intrinsics.checkNotNullExpressionValue(format, "format(locale, format, *args)");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();

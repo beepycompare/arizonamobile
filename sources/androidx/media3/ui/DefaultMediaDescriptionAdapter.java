@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory;
 import android.text.TextUtils;
 import androidx.media3.common.Player;
 import androidx.media3.ui.PlayerNotificationManager;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class DefaultMediaDescriptionAdapter implements PlayerNotificationManager.MediaDescriptionAdapter {
     private final PendingIntent pendingIntent;
 

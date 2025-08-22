@@ -7,7 +7,7 @@ import io.reactivex.MaybeObserver;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.HasUpstreamCompletableSource;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeFromCompletable<T> extends Maybe<T> implements HasUpstreamCompletableSource {
     final CompletableSource source;
 
@@ -25,7 +25,7 @@ public final class MaybeFromCompletable<T> extends Maybe<T> implements HasUpstre
         this.source.subscribe(new FromCompletableObserver(maybeObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FromCompletableObserver<T> implements CompletableObserver, Disposable {
         final MaybeObserver<? super T> downstream;
         Disposable upstream;

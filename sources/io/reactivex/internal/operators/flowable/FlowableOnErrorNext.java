@@ -11,7 +11,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableOnErrorNext<T> extends AbstractFlowableWithUpstream<T, T> {
     final boolean allowFatal;
     final Function<? super Throwable, ? extends Publisher<? extends T>> nextSupplier;
@@ -29,7 +29,7 @@ public final class FlowableOnErrorNext<T> extends AbstractFlowableWithUpstream<T
         this.source.subscribe((FlowableSubscriber) onErrorNextSubscriber);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OnErrorNextSubscriber<T> extends SubscriptionArbiter implements FlowableSubscriber<T> {
         private static final long serialVersionUID = 4063763155303814625L;
         final boolean allowFatal;

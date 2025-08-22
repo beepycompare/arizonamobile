@@ -1,18 +1,27 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
+import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 /* loaded from: classes4.dex */
-public final class Cj implements InterfaceC0407lb {
+public final class Cj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f381a;
-    public final /* synthetic */ Throwable b;
+    public final String f382a;
+    public final Context b;
+    public final CounterConfigurationReporterType c;
+    public final Fj d;
 
-    public Cj(String str, Throwable th) {
-        this.f381a = str;
-        this.b = th;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0407lb
-    public final void a(InterfaceC0432mb interfaceC0432mb) {
-        interfaceC0432mb.reportError(this.f381a, this.b);
+    public Cj(String str, Context context, CounterConfigurationReporterType counterConfigurationReporterType, Fj fj) {
+        this.f382a = str;
+        this.b = context;
+        int i = Bj.f367a[counterConfigurationReporterType.ordinal()];
+        if (i == 1) {
+            this.c = CounterConfigurationReporterType.SELF_DIAGNOSTIC_MAIN;
+        } else if (i != 2) {
+            this.c = null;
+        } else {
+            this.c = CounterConfigurationReporterType.SELF_DIAGNOSTIC_MANUAL;
+        }
+        this.d = fj;
     }
 }

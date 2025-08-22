@@ -6,7 +6,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Track {
     public static final int TRANSFORMATION_CEA608_CDAT = 1;
     public static final int TRANSFORMATION_NONE = 0;
@@ -26,7 +26,7 @@ public final class Track {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Transformation {
     }
 

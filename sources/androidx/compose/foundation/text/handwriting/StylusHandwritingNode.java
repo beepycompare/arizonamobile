@@ -21,6 +21,7 @@ import androidx.compose.ui.input.pointer.SuspendingPointerInputModifierNode;
 import androidx.compose.ui.node.DelegatableNodeKt;
 import androidx.compose.ui.node.DelegatingNode;
 import androidx.compose.ui.node.PointerInputModifierNode;
+import androidx.media3.extractor.metadata.dvbsi.AppInfoTableDecoder;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -32,7 +33,7 @@ import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 /* compiled from: StylusHandwriting.kt */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0010\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004B\u0013\u0012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\u0002\u0010\bJ\b\u0010\u0014\u001a\u00020\u0007H\u0016J\u0010\u0010\u0015\u001a\u00020\u00072\u0006\u0010\u0016\u001a\u00020\u0017H\u0016J*\u0010\u0018\u001a\u00020\u00072\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001eH\u0016ø\u0001\u0000¢\u0006\u0004\b\u001f\u0010 J\u0006\u0010!\u001a\u00020\u0007R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\bR\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0010\u001a\u00020\u00118VX\u0096\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\""}, d2 = {"Landroidx/compose/foundation/text/handwriting/StylusHandwritingNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/PointerInputModifierNode;", "Landroidx/compose/ui/focus/FocusEventModifierNode;", "Landroidx/compose/ui/focus/FocusRequesterModifierNode;", "onHandwritingSlopExceeded", "Lkotlin/Function0;", "", "(Lkotlin/jvm/functions/Function0;)V", "focused", "", "getOnHandwritingSlopExceeded", "()Lkotlin/jvm/functions/Function0;", "setOnHandwritingSlopExceeded", "suspendingPointerInputModifierNode", "Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNode;", "touchBoundsExpansion", "Landroidx/compose/ui/node/TouchBoundsExpansion;", "getTouchBoundsExpansion-RZrCHBk", "()J", "onCancelPointerInput", "onFocusEvent", "focusState", "Landroidx/compose/ui/focus/FocusState;", "onPointerEvent", "pointerEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "bounds", "Landroidx/compose/ui/unit/IntSize;", "onPointerEvent-H0pRuoY", "(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "resetPointerInputHandler", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0011\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004B\u0015\u0012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\u0004\b\b\u0010\tJ\u0010\u0010\u000f\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J'\u0010\u0018\u001a\u00020\u00072\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001eH\u0016¢\u0006\u0004\b\u001f\u0010 J\b\u0010!\u001a\u00020\u0007H\u0016J\u0006\u0010\"\u001a\u00020\u0007R \u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\tR\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\u00020\u00138VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"Landroidx/compose/foundation/text/handwriting/StylusHandwritingNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/PointerInputModifierNode;", "Landroidx/compose/ui/focus/FocusEventModifierNode;", "Landroidx/compose/ui/focus/FocusRequesterModifierNode;", "onHandwritingSlopExceeded", "Lkotlin/Function0;", "", "<init>", "(Lkotlin/jvm/functions/Function0;)V", "getOnHandwritingSlopExceeded", "()Lkotlin/jvm/functions/Function0;", "setOnHandwritingSlopExceeded", "focused", "", "onFocusEvent", "focusState", "Landroidx/compose/ui/focus/FocusState;", "touchBoundsExpansion", "Landroidx/compose/ui/node/TouchBoundsExpansion;", "getTouchBoundsExpansion-RZrCHBk", "()J", "suspendingPointerInputModifierNode", "Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNode;", "onPointerEvent", "pointerEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "bounds", "Landroidx/compose/ui/unit/IntSize;", "onPointerEvent-H0pRuoY", "(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "onCancelPointerInput", "resetPointerInputHandler", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public class StylusHandwritingNode extends DelegatingNode implements PointerInputModifierNode, FocusEventModifierNode, FocusRequesterModifierNode {
     public static final int $stable = 8;
@@ -41,8 +42,8 @@ public class StylusHandwritingNode extends DelegatingNode implements PointerInpu
     private final SuspendingPointerInputModifierNode suspendingPointerInputModifierNode = (SuspendingPointerInputModifierNode) delegate(SuspendingPointerInputFilterKt.SuspendingPointerInputModifierNode(new PointerInputEventHandler() { // from class: androidx.compose.foundation.text.handwriting.StylusHandwritingNode$suspendingPointerInputModifierNode$1
 
         /* compiled from: StylusHandwriting.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-        @DebugMetadata(c = "androidx.compose.foundation.text.handwriting.StylusHandwritingNode$suspendingPointerInputModifierNode$1$1", f = "StylusHandwriting.kt", i = {0, 1, 1, 1, 2, 2}, l = {105, 133, 171}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "firstDown", "pass", "$this$awaitEachGesture", "firstDown"}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1"})
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+        @DebugMetadata(c = "androidx.compose.foundation.text.handwriting.StylusHandwritingNode$suspendingPointerInputModifierNode$1$1", f = "StylusHandwriting.kt", i = {0, 1, 1, 1, 2, 2}, l = {AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID, 144, 182}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "firstDown", "pass", "$this$awaitEachGesture", "firstDown"}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1"})
         /* renamed from: androidx.compose.foundation.text.handwriting.StylusHandwritingNode$suspendingPointerInputModifierNode$1$1  reason: invalid class name */
         /* loaded from: classes.dex */
         static final class AnonymousClass1 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
@@ -140,7 +141,7 @@ public class StylusHandwritingNode extends DelegatingNode implements PointerInpu
                         PointerInputChange pointerInputChange8 = pointerInputChange4;
                         if (!pointerInputChange8.isConsumed()) {
                             pointerInputChange3 = pointerInputChange;
-                            if (PointerId.m5295equalsimpl0(pointerInputChange8.m5311getIdJ3iCeTQ(), pointerInputChange3.m5311getIdJ3iCeTQ()) && pointerInputChange8.getPressed()) {
+                            if (PointerId.m5808equalsimpl0(pointerInputChange8.m5824getIdJ3iCeTQ(), pointerInputChange3.m5824getIdJ3iCeTQ()) && pointerInputChange8.getPressed()) {
                                 break;
                             }
                         } else {
@@ -151,7 +152,7 @@ public class StylusHandwritingNode extends DelegatingNode implements PointerInpu
                     }
                     PointerInputChange pointerInputChange9 = pointerInputChange4;
                     if (pointerInputChange9 != null && pointerInputChange9.getUptimeMillis() - pointerInputChange3.getUptimeMillis() < awaitPointerEventScope2.getViewConfiguration().getLongPressTimeoutMillis() && !TapGestureDetector_androidKt.isDeepPress(pointerEvent)) {
-                        if (Offset.m3835getDistanceimpl(Offset.m3841minusMKHz9U(pointerInputChange9.m5313getPositionF1C5BW0(), pointerInputChange3.m5313getPositionF1C5BW0())) > awaitPointerEventScope2.getViewConfiguration().getHandwritingSlop()) {
+                        if (Offset.m4291getDistanceimpl(Offset.m4297minusMKHz9U(pointerInputChange9.m5826getPositionF1C5BW0(), pointerInputChange3.m5826getPositionF1C5BW0())) > awaitPointerEventScope2.getViewConfiguration().getHandwritingSlop()) {
                             pointerInputChange2 = pointerInputChange9;
                         } else {
                             pointerInputChange = pointerInputChange3;
@@ -198,7 +199,7 @@ public class StylusHandwritingNode extends DelegatingNode implements PointerInpu
                         }
                         pointerInputChange7 = changes2.get(i4);
                         PointerInputChange pointerInputChange10 = pointerInputChange7;
-                        if (!pointerInputChange10.isConsumed() && PointerId.m5295equalsimpl0(pointerInputChange10.m5311getIdJ3iCeTQ(), pointerInputChange5.m5311getIdJ3iCeTQ()) && pointerInputChange10.getPressed()) {
+                        if (!pointerInputChange10.isConsumed() && PointerId.m5808equalsimpl0(pointerInputChange10.m5824getIdJ3iCeTQ(), pointerInputChange5.m5824getIdJ3iCeTQ()) && pointerInputChange10.getPressed()) {
                             break;
                         }
                         i4++;
@@ -216,10 +217,10 @@ public class StylusHandwritingNode extends DelegatingNode implements PointerInpu
                     awaitPointerEvent2 = awaitPointerEventScope3.awaitPointerEvent(PointerEventPass.Initial, this);
                 }
                 PointerInputChange pointerInputChange12 = (PointerInputChange) awaitFirstDown;
-                if (!PointerType.m5384equalsimpl0(pointerInputChange12.m5316getTypeT8wyACA(), PointerType.Companion.m5390getStylusT8wyACA()) && !PointerType.m5384equalsimpl0(pointerInputChange12.m5316getTypeT8wyACA(), PointerType.Companion.m5388getEraserT8wyACA())) {
+                if (!PointerType.m5897equalsimpl0(pointerInputChange12.m5829getTypeT8wyACA(), PointerType.Companion.m5903getStylusT8wyACA()) && !PointerType.m5897equalsimpl0(pointerInputChange12.m5829getTypeT8wyACA(), PointerType.Companion.m5901getEraserT8wyACA())) {
                     return Unit.INSTANCE;
                 }
-                z3 = (Float.intBitsToFloat((int) (pointerInputChange12.m5313getPositionF1C5BW0() >> 32)) < 0.0f || Float.intBitsToFloat((int) (pointerInputChange12.m5313getPositionF1C5BW0() >> 32)) >= ((float) ((int) (awaitPointerEventScope.mo5222getSizeYbymL2g() >> 32))) || Float.intBitsToFloat((int) (pointerInputChange12.m5313getPositionF1C5BW0() & 4294967295L)) < 0.0f || Float.intBitsToFloat((int) (pointerInputChange12.m5313getPositionF1C5BW0() & 4294967295L)) >= ((float) ((int) (awaitPointerEventScope.mo5222getSizeYbymL2g() & 4294967295L)))) ? false : false;
+                z3 = (Float.intBitsToFloat((int) (pointerInputChange12.m5826getPositionF1C5BW0() >> 32)) < 0.0f || Float.intBitsToFloat((int) (pointerInputChange12.m5826getPositionF1C5BW0() >> 32)) >= ((float) ((int) (awaitPointerEventScope.mo5735getSizeYbymL2g() >> 32))) || Float.intBitsToFloat((int) (pointerInputChange12.m5826getPositionF1C5BW0() & 4294967295L)) < 0.0f || Float.intBitsToFloat((int) (pointerInputChange12.m5826getPositionF1C5BW0() & 4294967295L)) >= ((float) ((int) (awaitPointerEventScope.mo5735getSizeYbymL2g() & 4294967295L)))) ? false : false;
                 z = this.this$0.focused;
                 awaitPointerEventScope2 = awaitPointerEventScope;
                 pointerEventPass = (z || z3) ? PointerEventPass.Initial : PointerEventPass.Main;
@@ -259,14 +260,14 @@ public class StylusHandwritingNode extends DelegatingNode implements PointerInpu
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: getTouchBoundsExpansion-RZrCHBk */
-    public long mo1189getTouchBoundsExpansionRZrCHBk() {
-        return StylusHandwritingKt.getHandwritingBoundsExpansion().m5596roundToTouchBoundsExpansionTW6G1oQ(DelegatableNodeKt.requireDensity(this));
+    public long mo1421getTouchBoundsExpansionRZrCHBk() {
+        return StylusHandwritingKt.getHandwritingBoundsExpansion().m6135roundToTouchBoundsExpansionTW6G1oQ(DelegatableNodeKt.requireDensity(this));
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo217onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
-        this.suspendingPointerInputModifierNode.mo217onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+    public void mo227onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        this.suspendingPointerInputModifierNode.mo227onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode

@@ -3,7 +3,7 @@ package androidx.compose.ui.text;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: AndroidTextStyle.android.kt */
-@Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0007\u0018\u0000 \u00172\u00020\u0001:\u0001\u0017B\u0011\b\u0016\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004B\u001b\b\u0016\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0007B\u0011\b\u0016\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006¢\u0006\u0002\u0010\bB\u0007\b\u0016¢\u0006\u0002\u0010\tJ\u0013\u0010\u0010\u001a\u00020\u00032\b\u0010\u0011\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\u0012\u001a\u00020\u0013H\u0016J\u0010\u0010\u0014\u001a\u00020\u00002\b\u0010\u0011\u001a\u0004\u0018\u00010\u0000J\b\u0010\u0015\u001a\u00020\u0016H\u0016R\u0019\u0010\u0005\u001a\u00020\u0006ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bR\u0019\u0010\u0002\u001a\u00020\u00038F¢\u0006\u000e\n\u0000\u0012\u0004\b\r\u0010\t\u001a\u0004\b\u000e\u0010\u000f\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0018"}, d2 = {"Landroidx/compose/ui/text/PlatformParagraphStyle;", "", "includeFontPadding", "", "(Z)V", "emojiSupportMatch", "Landroidx/compose/ui/text/EmojiSupportMatch;", "(IZLkotlin/jvm/internal/DefaultConstructorMarker;)V", "(ILkotlin/jvm/internal/DefaultConstructorMarker;)V", "()V", "getEmojiSupportMatch-_3YsG6Y", "()I", "I", "getIncludeFontPadding$annotations", "getIncludeFontPadding", "()Z", "equals", "other", "hashCode", "", "merge", "toString", "", "Companion", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0007\u0018\u0000 \u00182\u00020\u0001:\u0001\u0018B\u0013\b\u0016\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B\u001d\b\u0016\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\bB\u0013\b\u0016\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\u0004\u0010\tB\t\b\u0016¢\u0006\u0004\b\u0004\u0010\nJ\u0013\u0010\u0011\u001a\u00020\u00032\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\u0013\u001a\u00020\u0014H\u0016J\b\u0010\u0015\u001a\u00020\u0016H\u0016J\u0010\u0010\u0017\u001a\u00020\u00002\b\u0010\u0012\u001a\u0004\u0018\u00010\u0000R\u0017\u0010\u0002\u001a\u00020\u0003¢\u0006\u000e\n\u0000\u0012\u0004\b\u000b\u0010\n\u001a\u0004\b\f\u0010\rR\u0013\u0010\u0006\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010\u0010\u001a\u0004\b\u000e\u0010\u000f¨\u0006\u0019"}, d2 = {"Landroidx/compose/ui/text/PlatformParagraphStyle;", "", "includeFontPadding", "", "<init>", "(Z)V", "emojiSupportMatch", "Landroidx/compose/ui/text/EmojiSupportMatch;", "(IZLkotlin/jvm/internal/DefaultConstructorMarker;)V", "(ILkotlin/jvm/internal/DefaultConstructorMarker;)V", "()V", "getIncludeFontPadding$annotations", "getIncludeFontPadding", "()Z", "getEmojiSupportMatch-_3YsG6Y", "()I", "I", "equals", "other", "hashCode", "", "toString", "", "merge", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class PlatformParagraphStyle {
     public static final int $stable = 0;
@@ -28,7 +28,7 @@ public final class PlatformParagraphStyle {
     }
 
     /* compiled from: AndroidTextStyle.android.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006¨\u0006\u0007"}, d2 = {"Landroidx/compose/ui/text/PlatformParagraphStyle$Companion;", "", "()V", "Default", "Landroidx/compose/ui/text/PlatformParagraphStyle;", "getDefault", "()Landroidx/compose/ui/text/PlatformParagraphStyle;", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/text/PlatformParagraphStyle$Companion;", "", "<init>", "()V", "Default", "Landroidx/compose/ui/text/PlatformParagraphStyle;", "getDefault", "()Landroidx/compose/ui/text/PlatformParagraphStyle;", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -48,13 +48,13 @@ public final class PlatformParagraphStyle {
     }
 
     /* renamed from: getEmojiSupportMatch-_3YsG6Y  reason: not valid java name */
-    public final int m6065getEmojiSupportMatch_3YsG6Y() {
+    public final int m6622getEmojiSupportMatch_3YsG6Y() {
         return this.emojiSupportMatch;
     }
 
     public PlatformParagraphStyle(boolean z) {
         this.includeFontPadding = z;
-        this.emojiSupportMatch = EmojiSupportMatch.Companion.m5992getDefault_3YsG6Y();
+        this.emojiSupportMatch = EmojiSupportMatch.Companion.m6548getDefault_3YsG6Y();
     }
 
     public /* synthetic */ PlatformParagraphStyle(boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -62,7 +62,7 @@ public final class PlatformParagraphStyle {
     }
 
     public /* synthetic */ PlatformParagraphStyle(int i, boolean z, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i2 & 1) != 0 ? EmojiSupportMatch.Companion.m5992getDefault_3YsG6Y() : i, (i2 & 2) != 0 ? false : z, (DefaultConstructorMarker) null);
+        this((i2 & 1) != 0 ? EmojiSupportMatch.Companion.m6548getDefault_3YsG6Y() : i, (i2 & 2) != 0 ? false : z, (DefaultConstructorMarker) null);
     }
 
     private PlatformParagraphStyle(int i, boolean z) {
@@ -76,11 +76,11 @@ public final class PlatformParagraphStyle {
     }
 
     public /* synthetic */ PlatformParagraphStyle(int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i2 & 1) != 0 ? EmojiSupportMatch.Companion.m5992getDefault_3YsG6Y() : i, (DefaultConstructorMarker) null);
+        this((i2 & 1) != 0 ? EmojiSupportMatch.Companion.m6548getDefault_3YsG6Y() : i, (DefaultConstructorMarker) null);
     }
 
     public PlatformParagraphStyle() {
-        this(EmojiSupportMatch.Companion.m5992getDefault_3YsG6Y(), false, (DefaultConstructorMarker) null);
+        this(EmojiSupportMatch.Companion.m6548getDefault_3YsG6Y(), false, (DefaultConstructorMarker) null);
     }
 
     public boolean equals(Object obj) {
@@ -89,16 +89,16 @@ public final class PlatformParagraphStyle {
         }
         if (obj instanceof PlatformParagraphStyle) {
             PlatformParagraphStyle platformParagraphStyle = (PlatformParagraphStyle) obj;
-            return this.includeFontPadding == platformParagraphStyle.includeFontPadding && EmojiSupportMatch.m5987equalsimpl0(this.emojiSupportMatch, platformParagraphStyle.emojiSupportMatch);
+            return this.includeFontPadding == platformParagraphStyle.includeFontPadding && EmojiSupportMatch.m6543equalsimpl0(this.emojiSupportMatch, platformParagraphStyle.emojiSupportMatch);
         }
         return false;
     }
 
     public int hashCode() {
-        return (Boolean.hashCode(this.includeFontPadding) * 31) + EmojiSupportMatch.m5988hashCodeimpl(this.emojiSupportMatch);
+        return (Boolean.hashCode(this.includeFontPadding) * 31) + EmojiSupportMatch.m6544hashCodeimpl(this.emojiSupportMatch);
     }
 
     public String toString() {
-        return "PlatformParagraphStyle(includeFontPadding=" + this.includeFontPadding + ", emojiSupportMatch=" + ((Object) EmojiSupportMatch.m5989toStringimpl(this.emojiSupportMatch)) + ')';
+        return "PlatformParagraphStyle(includeFontPadding=" + this.includeFontPadding + ", emojiSupportMatch=" + ((Object) EmojiSupportMatch.m6545toStringimpl(this.emojiSupportMatch)) + ')';
     }
 }

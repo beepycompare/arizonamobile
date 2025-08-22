@@ -1,21 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
+import java.util.List;
 /* loaded from: classes4.dex */
-public final class Xn extends AbstractC0237eh {
-    public Xn(C0575s5 c0575s5) {
-        super(c0575s5);
+public final class Xn extends La {
+    public Xn(Ji ji) {
+        super(ji);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0237eh
-    public final boolean a(C0402l6 c0402l6) {
-        String i = this.f831a.c.i();
-        String str = c0402l6.h;
-        this.f831a.c.j(str).b();
-        if (TextUtils.equals(i, str)) {
-            return false;
-        }
-        this.f831a.a(C0326i4.o());
-        return false;
+    @Override // io.appmetrica.analytics.impl.La
+    public final void a(List<AbstractC0358jh> list) {
+        list.add(this.f541a.h);
+        list.add(this.f541a.n);
     }
 }

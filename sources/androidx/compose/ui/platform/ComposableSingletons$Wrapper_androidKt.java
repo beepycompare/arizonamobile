@@ -7,13 +7,13 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Wrapper.android.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ComposableSingletons$Wrapper_androidKt {
     public static final ComposableSingletons$Wrapper_androidKt INSTANCE = new ComposableSingletons$Wrapper_androidKt();
 
-    /* renamed from: lambda-1  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f61lambda1 = ComposableLambdaKt.composableLambdaInstance(-1759434350, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.platform.ComposableSingletons$Wrapper_androidKt$lambda-1$1
+    /* renamed from: lambda$-1759434350  reason: not valid java name */
+    private static Function2<Composer, Integer, Unit> f56lambda$1759434350 = ComposableLambdaKt.composableLambdaInstance(-1759434350, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.platform.ComposableSingletons$Wrapper_androidKt$lambda$-1759434350$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -27,7 +27,7 @@ public final class ComposableSingletons$Wrapper_androidKt {
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1759434350, i, -1, "androidx.compose.ui.platform.ComposableSingletons$Wrapper_androidKt.lambda-1.<anonymous> (Wrapper.android.kt:110)");
+                ComposerKt.traceEventStart(-1759434350, i, -1, "androidx.compose.ui.platform.ComposableSingletons$Wrapper_androidKt.lambda$-1759434350.<anonymous> (Wrapper.android.kt:110)");
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -35,8 +35,8 @@ public final class ComposableSingletons$Wrapper_androidKt {
         }
     });
 
-    /* renamed from: getLambda-1$ui_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m5830getLambda1$ui_release() {
-        return f61lambda1;
+    /* renamed from: getLambda$-1759434350$ui_release  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m6373getLambda$1759434350$ui_release() {
+        return f56lambda$1759434350;
     }
 }

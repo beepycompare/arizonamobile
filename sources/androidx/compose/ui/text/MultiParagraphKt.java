@@ -11,7 +11,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: MultiParagraph.kt */
-@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a\u001e\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\u0005\u001a\u00020\u0001H\u0000\u001a\u001e\u0010\u0006\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\u0007\u001a\u00020\u0001H\u0000\u001a\u001e\u0010\b\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\t\u001a\u00020\nH\u0000\u001a<\u0010\u000b\u001a\u00020\f2\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\r\u001a\u00020\u000e2\u0012\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\f0\u0010H\u0000ø\u0001\u0000¢\u0006\u0004\b\u0011\u0010\u0012\u001a-\u0010\u0013\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0014*\b\u0012\u0004\u0012\u0002H\u00140\u00032\u0012\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u0002H\u0014\u0012\u0004\u0012\u00020\u00010\u0010H\u0082\b\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u0016"}, d2 = {"findParagraphByIndex", "", "paragraphInfoList", "", "Landroidx/compose/ui/text/ParagraphInfo;", FirebaseAnalytics.Param.INDEX, "findParagraphByLineIndex", "lineIndex", "findParagraphByY", "y", "", "findParagraphsByRange", "", "range", "Landroidx/compose/ui/text/TextRange;", "action", "Lkotlin/Function1;", "findParagraphsByRange-Sb-Bc2M", "(Ljava/util/List;JLkotlin/jvm/functions/Function1;)V", "fastBinarySearch", ExifInterface.GPS_DIRECTION_TRUE, "comparison", "ui-text_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\u001a\u001e\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\u0005\u001a\u00020\u0001H\u0000\u001a\u001e\u0010\u0006\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\u0007\u001a\u00020\bH\u0000\u001a9\u0010\t\u001a\u00020\n2\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\u000b\u001a\u00020\f2\u0012\u0010\r\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\n0\u000eH\u0000¢\u0006\u0004\b\u000f\u0010\u0010\u001a\u001e\u0010\u0011\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\u0012\u001a\u00020\u0001H\u0000\u001a-\u0010\u0013\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0014*\b\u0012\u0004\u0012\u0002H\u00140\u00032\u0012\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u0002H\u0014\u0012\u0004\u0012\u00020\u00010\u000eH\u0082\b¨\u0006\u0016"}, d2 = {"findParagraphByIndex", "", "paragraphInfoList", "", "Landroidx/compose/ui/text/ParagraphInfo;", FirebaseAnalytics.Param.INDEX, "findParagraphByY", "y", "", "findParagraphsByRange", "", "range", "Landroidx/compose/ui/text/TextRange;", "action", "Lkotlin/Function1;", "findParagraphsByRange-Sb-Bc2M", "(Ljava/util/List;JLkotlin/jvm/functions/Function1;)V", "findParagraphByLineIndex", "lineIndex", "fastBinarySearch", ExifInterface.GPS_DIRECTION_TRUE, "comparison", "ui-text"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class MultiParagraphKt {
     public static final int findParagraphByIndex(List<ParagraphInfo> list, int i) {
@@ -49,14 +49,21 @@ public final class MultiParagraphKt {
             z = true;
         }
         if (!z) {
-            InlineClassHelperKt.throwIllegalArgumentException("Found paragraph index " + i2 + " should be in range [0, " + list.size() + ").\nDebug info: index=" + i + ", paragraphs=[" + ListUtilsKt.fastJoinToString$default(list, null, null, null, 0, null, new Function1<ParagraphInfo, CharSequence>() { // from class: androidx.compose.ui.text.MultiParagraphKt$findParagraphByIndex$2$1
+            InlineClassHelperKt.throwIllegalArgumentException("Found paragraph index " + i2 + " should be in range [0, " + list.size() + ").\nDebug info: index=" + i + ", paragraphs=[" + ListUtilsKt.fastJoinToString$default(list, null, null, null, 0, null, new Function1() { // from class: androidx.compose.ui.text.MultiParagraphKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public final CharSequence invoke(ParagraphInfo paragraphInfo2) {
-                    return "[" + paragraphInfo2.getStartIndex() + ", " + paragraphInfo2.getEndIndex() + ')';
+                public final Object invoke(Object obj) {
+                    CharSequence findParagraphByIndex$lambda$3$lambda$2;
+                    findParagraphByIndex$lambda$3$lambda$2 = MultiParagraphKt.findParagraphByIndex$lambda$3$lambda$2((ParagraphInfo) obj);
+                    return findParagraphByIndex$lambda$3$lambda$2;
                 }
             }, 31, null) + AbstractJsonLexerKt.END_LIST);
         }
         return i2;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final CharSequence findParagraphByIndex$lambda$3$lambda$2(ParagraphInfo paragraphInfo) {
+        return "[" + paragraphInfo.getStartIndex() + ", " + paragraphInfo.getEndIndex() + ')';
     }
 
     public static final int findParagraphByY(List<ParagraphInfo> list, float f) {
@@ -89,11 +96,11 @@ public final class MultiParagraphKt {
     }
 
     /* renamed from: findParagraphsByRange-Sb-Bc2M  reason: not valid java name */
-    public static final void m6004findParagraphsByRangeSbBc2M(List<ParagraphInfo> list, long j, Function1<? super ParagraphInfo, Unit> function1) {
+    public static final void m6561findParagraphsByRangeSbBc2M(List<ParagraphInfo> list, long j, Function1<? super ParagraphInfo, Unit> function1) {
         int size = list.size();
-        for (int findParagraphByIndex = findParagraphByIndex(list, TextRange.m6145getMinimpl(j)); findParagraphByIndex < size; findParagraphByIndex++) {
+        for (int findParagraphByIndex = findParagraphByIndex(list, TextRange.m6711getMinimpl(j)); findParagraphByIndex < size; findParagraphByIndex++) {
             ParagraphInfo paragraphInfo = list.get(findParagraphByIndex);
-            if (paragraphInfo.getStartIndex() >= TextRange.m6144getMaximpl(j)) {
+            if (paragraphInfo.getStartIndex() >= TextRange.m6710getMaximpl(j)) {
                 return;
             }
             if (paragraphInfo.getStartIndex() != paragraphInfo.getEndIndex()) {

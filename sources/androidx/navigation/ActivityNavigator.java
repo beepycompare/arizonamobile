@@ -119,10 +119,10 @@ public class ActivityNavigator extends Navigator<Destination> {
                     StringBuffer stringBuffer = new StringBuffer();
                     Matcher matcher = Pattern.compile("\\{(.+?)\\}").matcher(str);
                     while (matcher.find()) {
-                        Bundle m7595constructorimpl = SavedStateReader.m7595constructorimpl(bundle);
+                        Bundle m8161constructorimpl = SavedStateReader.m8161constructorimpl(bundle);
                         String group = matcher.group(1);
                         Intrinsics.checkNotNull(group);
-                        if (!SavedStateReader.m7596containsimpl(m7595constructorimpl, group)) {
+                        if (!SavedStateReader.m8162containsimpl(m8161constructorimpl, group)) {
                             throw new IllegalArgumentException(("Could not find " + group + " in " + bundle + " to fill data pattern " + dataPattern).toString());
                         }
                         matcher.appendReplacement(stringBuffer, "");

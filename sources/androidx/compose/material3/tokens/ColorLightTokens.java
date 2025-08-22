@@ -30,299 +30,299 @@ public final class ColorLightTokens {
     private static final long TertiaryFixed;
     private static final long TertiaryFixedDim;
     public static final ColorLightTokens INSTANCE = new ColorLightTokens();
-    private static final long Background = PaletteTokens.INSTANCE.m3207getNeutral980d7_KjU();
-    private static final long Error = PaletteTokens.INSTANCE.m3177getError400d7_KjU();
-    private static final long ErrorContainer = PaletteTokens.INSTANCE.m3182getError900d7_KjU();
-    private static final long InverseOnSurface = PaletteTokens.INSTANCE.m3205getNeutral950d7_KjU();
-    private static final long InversePrimary = PaletteTokens.INSTANCE.m3231getPrimary800d7_KjU();
-    private static final long InverseSurface = PaletteTokens.INSTANCE.m3190getNeutral200d7_KjU();
-    private static final long OnBackground = PaletteTokens.INSTANCE.m3186getNeutral100d7_KjU();
-    private static final long OnError = PaletteTokens.INSTANCE.m3174getError1000d7_KjU();
-    private static final long OnErrorContainer = PaletteTokens.INSTANCE.m3173getError100d7_KjU();
-    private static final long OnPrimary = PaletteTokens.INSTANCE.m3224getPrimary1000d7_KjU();
-    private static final long OnPrimaryContainer = PaletteTokens.INSTANCE.m3223getPrimary100d7_KjU();
-    private static final long OnPrimaryFixed = PaletteTokens.INSTANCE.m3223getPrimary100d7_KjU();
-    private static final long OnPrimaryFixedVariant = PaletteTokens.INSTANCE.m3226getPrimary300d7_KjU();
-    private static final long OnSecondary = PaletteTokens.INSTANCE.m3237getSecondary1000d7_KjU();
-    private static final long OnSecondaryContainer = PaletteTokens.INSTANCE.m3236getSecondary100d7_KjU();
-    private static final long OnSecondaryFixed = PaletteTokens.INSTANCE.m3236getSecondary100d7_KjU();
-    private static final long OnSecondaryFixedVariant = PaletteTokens.INSTANCE.m3239getSecondary300d7_KjU();
-    private static final long OnSurface = PaletteTokens.INSTANCE.m3186getNeutral100d7_KjU();
-    private static final long OnSurfaceVariant = PaletteTokens.INSTANCE.m3213getNeutralVariant300d7_KjU();
-    private static final long OnTertiary = PaletteTokens.INSTANCE.m3250getTertiary1000d7_KjU();
-    private static final long OnTertiaryContainer = PaletteTokens.INSTANCE.m3249getTertiary100d7_KjU();
-    private static final long OnTertiaryFixed = PaletteTokens.INSTANCE.m3249getTertiary100d7_KjU();
-    private static final long OnTertiaryFixedVariant = PaletteTokens.INSTANCE.m3252getTertiary300d7_KjU();
-    private static final long Outline = PaletteTokens.INSTANCE.m3215getNeutralVariant500d7_KjU();
-    private static final long OutlineVariant = PaletteTokens.INSTANCE.m3218getNeutralVariant800d7_KjU();
+    private static final long Background = PaletteTokens.INSTANCE.m3514getNeutral980d7_KjU();
+    private static final long Error = PaletteTokens.INSTANCE.m3484getError400d7_KjU();
+    private static final long ErrorContainer = PaletteTokens.INSTANCE.m3489getError900d7_KjU();
+    private static final long InverseOnSurface = PaletteTokens.INSTANCE.m3512getNeutral950d7_KjU();
+    private static final long InversePrimary = PaletteTokens.INSTANCE.m3538getPrimary800d7_KjU();
+    private static final long InverseSurface = PaletteTokens.INSTANCE.m3497getNeutral200d7_KjU();
+    private static final long OnBackground = PaletteTokens.INSTANCE.m3493getNeutral100d7_KjU();
+    private static final long OnError = PaletteTokens.INSTANCE.m3481getError1000d7_KjU();
+    private static final long OnErrorContainer = PaletteTokens.INSTANCE.m3480getError100d7_KjU();
+    private static final long OnPrimary = PaletteTokens.INSTANCE.m3531getPrimary1000d7_KjU();
+    private static final long OnPrimaryContainer = PaletteTokens.INSTANCE.m3530getPrimary100d7_KjU();
+    private static final long OnPrimaryFixed = PaletteTokens.INSTANCE.m3530getPrimary100d7_KjU();
+    private static final long OnPrimaryFixedVariant = PaletteTokens.INSTANCE.m3533getPrimary300d7_KjU();
+    private static final long OnSecondary = PaletteTokens.INSTANCE.m3544getSecondary1000d7_KjU();
+    private static final long OnSecondaryContainer = PaletteTokens.INSTANCE.m3543getSecondary100d7_KjU();
+    private static final long OnSecondaryFixed = PaletteTokens.INSTANCE.m3543getSecondary100d7_KjU();
+    private static final long OnSecondaryFixedVariant = PaletteTokens.INSTANCE.m3546getSecondary300d7_KjU();
+    private static final long OnSurface = PaletteTokens.INSTANCE.m3493getNeutral100d7_KjU();
+    private static final long OnSurfaceVariant = PaletteTokens.INSTANCE.m3520getNeutralVariant300d7_KjU();
+    private static final long OnTertiary = PaletteTokens.INSTANCE.m3557getTertiary1000d7_KjU();
+    private static final long OnTertiaryContainer = PaletteTokens.INSTANCE.m3556getTertiary100d7_KjU();
+    private static final long OnTertiaryFixed = PaletteTokens.INSTANCE.m3556getTertiary100d7_KjU();
+    private static final long OnTertiaryFixedVariant = PaletteTokens.INSTANCE.m3559getTertiary300d7_KjU();
+    private static final long Outline = PaletteTokens.INSTANCE.m3522getNeutralVariant500d7_KjU();
+    private static final long OutlineVariant = PaletteTokens.INSTANCE.m3525getNeutralVariant800d7_KjU();
 
     private ColorLightTokens() {
     }
 
     static {
-        long m3227getPrimary400d7_KjU = PaletteTokens.INSTANCE.m3227getPrimary400d7_KjU();
-        Primary = m3227getPrimary400d7_KjU;
-        PrimaryContainer = PaletteTokens.INSTANCE.m3232getPrimary900d7_KjU();
-        PrimaryFixed = PaletteTokens.INSTANCE.m3232getPrimary900d7_KjU();
-        PrimaryFixedDim = PaletteTokens.INSTANCE.m3231getPrimary800d7_KjU();
-        Scrim = PaletteTokens.INSTANCE.m3185getNeutral00d7_KjU();
-        Secondary = PaletteTokens.INSTANCE.m3240getSecondary400d7_KjU();
-        SecondaryContainer = PaletteTokens.INSTANCE.m3245getSecondary900d7_KjU();
-        SecondaryFixed = PaletteTokens.INSTANCE.m3245getSecondary900d7_KjU();
-        SecondaryFixedDim = PaletteTokens.INSTANCE.m3244getSecondary800d7_KjU();
-        Surface = PaletteTokens.INSTANCE.m3207getNeutral980d7_KjU();
-        SurfaceBright = PaletteTokens.INSTANCE.m3207getNeutral980d7_KjU();
-        SurfaceContainer = PaletteTokens.INSTANCE.m3204getNeutral940d7_KjU();
-        SurfaceContainerHigh = PaletteTokens.INSTANCE.m3203getNeutral920d7_KjU();
-        SurfaceContainerHighest = PaletteTokens.INSTANCE.m3202getNeutral900d7_KjU();
-        SurfaceContainerLow = PaletteTokens.INSTANCE.m3206getNeutral960d7_KjU();
-        SurfaceContainerLowest = PaletteTokens.INSTANCE.m3187getNeutral1000d7_KjU();
-        SurfaceDim = PaletteTokens.INSTANCE.m3201getNeutral870d7_KjU();
-        SurfaceTint = m3227getPrimary400d7_KjU;
-        SurfaceVariant = PaletteTokens.INSTANCE.m3219getNeutralVariant900d7_KjU();
-        Tertiary = PaletteTokens.INSTANCE.m3253getTertiary400d7_KjU();
-        TertiaryContainer = PaletteTokens.INSTANCE.m3258getTertiary900d7_KjU();
-        TertiaryFixed = PaletteTokens.INSTANCE.m3258getTertiary900d7_KjU();
-        TertiaryFixedDim = PaletteTokens.INSTANCE.m3257getTertiary800d7_KjU();
+        long m3534getPrimary400d7_KjU = PaletteTokens.INSTANCE.m3534getPrimary400d7_KjU();
+        Primary = m3534getPrimary400d7_KjU;
+        PrimaryContainer = PaletteTokens.INSTANCE.m3539getPrimary900d7_KjU();
+        PrimaryFixed = PaletteTokens.INSTANCE.m3539getPrimary900d7_KjU();
+        PrimaryFixedDim = PaletteTokens.INSTANCE.m3538getPrimary800d7_KjU();
+        Scrim = PaletteTokens.INSTANCE.m3492getNeutral00d7_KjU();
+        Secondary = PaletteTokens.INSTANCE.m3547getSecondary400d7_KjU();
+        SecondaryContainer = PaletteTokens.INSTANCE.m3552getSecondary900d7_KjU();
+        SecondaryFixed = PaletteTokens.INSTANCE.m3552getSecondary900d7_KjU();
+        SecondaryFixedDim = PaletteTokens.INSTANCE.m3551getSecondary800d7_KjU();
+        Surface = PaletteTokens.INSTANCE.m3514getNeutral980d7_KjU();
+        SurfaceBright = PaletteTokens.INSTANCE.m3514getNeutral980d7_KjU();
+        SurfaceContainer = PaletteTokens.INSTANCE.m3511getNeutral940d7_KjU();
+        SurfaceContainerHigh = PaletteTokens.INSTANCE.m3510getNeutral920d7_KjU();
+        SurfaceContainerHighest = PaletteTokens.INSTANCE.m3509getNeutral900d7_KjU();
+        SurfaceContainerLow = PaletteTokens.INSTANCE.m3513getNeutral960d7_KjU();
+        SurfaceContainerLowest = PaletteTokens.INSTANCE.m3494getNeutral1000d7_KjU();
+        SurfaceDim = PaletteTokens.INSTANCE.m3508getNeutral870d7_KjU();
+        SurfaceTint = m3534getPrimary400d7_KjU;
+        SurfaceVariant = PaletteTokens.INSTANCE.m3526getNeutralVariant900d7_KjU();
+        Tertiary = PaletteTokens.INSTANCE.m3560getTertiary400d7_KjU();
+        TertiaryContainer = PaletteTokens.INSTANCE.m3565getTertiary900d7_KjU();
+        TertiaryFixed = PaletteTokens.INSTANCE.m3565getTertiary900d7_KjU();
+        TertiaryFixedDim = PaletteTokens.INSTANCE.m3564getTertiary800d7_KjU();
     }
 
     /* renamed from: getBackground-0d7_KjU  reason: not valid java name */
-    public final long m2890getBackground0d7_KjU() {
+    public final long m3197getBackground0d7_KjU() {
         return Background;
     }
 
     /* renamed from: getError-0d7_KjU  reason: not valid java name */
-    public final long m2891getError0d7_KjU() {
+    public final long m3198getError0d7_KjU() {
         return Error;
     }
 
     /* renamed from: getErrorContainer-0d7_KjU  reason: not valid java name */
-    public final long m2892getErrorContainer0d7_KjU() {
+    public final long m3199getErrorContainer0d7_KjU() {
         return ErrorContainer;
     }
 
     /* renamed from: getInverseOnSurface-0d7_KjU  reason: not valid java name */
-    public final long m2893getInverseOnSurface0d7_KjU() {
+    public final long m3200getInverseOnSurface0d7_KjU() {
         return InverseOnSurface;
     }
 
     /* renamed from: getInversePrimary-0d7_KjU  reason: not valid java name */
-    public final long m2894getInversePrimary0d7_KjU() {
+    public final long m3201getInversePrimary0d7_KjU() {
         return InversePrimary;
     }
 
     /* renamed from: getInverseSurface-0d7_KjU  reason: not valid java name */
-    public final long m2895getInverseSurface0d7_KjU() {
+    public final long m3202getInverseSurface0d7_KjU() {
         return InverseSurface;
     }
 
     /* renamed from: getOnBackground-0d7_KjU  reason: not valid java name */
-    public final long m2896getOnBackground0d7_KjU() {
+    public final long m3203getOnBackground0d7_KjU() {
         return OnBackground;
     }
 
     /* renamed from: getOnError-0d7_KjU  reason: not valid java name */
-    public final long m2897getOnError0d7_KjU() {
+    public final long m3204getOnError0d7_KjU() {
         return OnError;
     }
 
     /* renamed from: getOnErrorContainer-0d7_KjU  reason: not valid java name */
-    public final long m2898getOnErrorContainer0d7_KjU() {
+    public final long m3205getOnErrorContainer0d7_KjU() {
         return OnErrorContainer;
     }
 
     /* renamed from: getOnPrimary-0d7_KjU  reason: not valid java name */
-    public final long m2899getOnPrimary0d7_KjU() {
+    public final long m3206getOnPrimary0d7_KjU() {
         return OnPrimary;
     }
 
     /* renamed from: getOnPrimaryContainer-0d7_KjU  reason: not valid java name */
-    public final long m2900getOnPrimaryContainer0d7_KjU() {
+    public final long m3207getOnPrimaryContainer0d7_KjU() {
         return OnPrimaryContainer;
     }
 
     /* renamed from: getOnPrimaryFixed-0d7_KjU  reason: not valid java name */
-    public final long m2901getOnPrimaryFixed0d7_KjU() {
+    public final long m3208getOnPrimaryFixed0d7_KjU() {
         return OnPrimaryFixed;
     }
 
     /* renamed from: getOnPrimaryFixedVariant-0d7_KjU  reason: not valid java name */
-    public final long m2902getOnPrimaryFixedVariant0d7_KjU() {
+    public final long m3209getOnPrimaryFixedVariant0d7_KjU() {
         return OnPrimaryFixedVariant;
     }
 
     /* renamed from: getOnSecondary-0d7_KjU  reason: not valid java name */
-    public final long m2903getOnSecondary0d7_KjU() {
+    public final long m3210getOnSecondary0d7_KjU() {
         return OnSecondary;
     }
 
     /* renamed from: getOnSecondaryContainer-0d7_KjU  reason: not valid java name */
-    public final long m2904getOnSecondaryContainer0d7_KjU() {
+    public final long m3211getOnSecondaryContainer0d7_KjU() {
         return OnSecondaryContainer;
     }
 
     /* renamed from: getOnSecondaryFixed-0d7_KjU  reason: not valid java name */
-    public final long m2905getOnSecondaryFixed0d7_KjU() {
+    public final long m3212getOnSecondaryFixed0d7_KjU() {
         return OnSecondaryFixed;
     }
 
     /* renamed from: getOnSecondaryFixedVariant-0d7_KjU  reason: not valid java name */
-    public final long m2906getOnSecondaryFixedVariant0d7_KjU() {
+    public final long m3213getOnSecondaryFixedVariant0d7_KjU() {
         return OnSecondaryFixedVariant;
     }
 
     /* renamed from: getOnSurface-0d7_KjU  reason: not valid java name */
-    public final long m2907getOnSurface0d7_KjU() {
+    public final long m3214getOnSurface0d7_KjU() {
         return OnSurface;
     }
 
     /* renamed from: getOnSurfaceVariant-0d7_KjU  reason: not valid java name */
-    public final long m2908getOnSurfaceVariant0d7_KjU() {
+    public final long m3215getOnSurfaceVariant0d7_KjU() {
         return OnSurfaceVariant;
     }
 
     /* renamed from: getOnTertiary-0d7_KjU  reason: not valid java name */
-    public final long m2909getOnTertiary0d7_KjU() {
+    public final long m3216getOnTertiary0d7_KjU() {
         return OnTertiary;
     }
 
     /* renamed from: getOnTertiaryContainer-0d7_KjU  reason: not valid java name */
-    public final long m2910getOnTertiaryContainer0d7_KjU() {
+    public final long m3217getOnTertiaryContainer0d7_KjU() {
         return OnTertiaryContainer;
     }
 
     /* renamed from: getOnTertiaryFixed-0d7_KjU  reason: not valid java name */
-    public final long m2911getOnTertiaryFixed0d7_KjU() {
+    public final long m3218getOnTertiaryFixed0d7_KjU() {
         return OnTertiaryFixed;
     }
 
     /* renamed from: getOnTertiaryFixedVariant-0d7_KjU  reason: not valid java name */
-    public final long m2912getOnTertiaryFixedVariant0d7_KjU() {
+    public final long m3219getOnTertiaryFixedVariant0d7_KjU() {
         return OnTertiaryFixedVariant;
     }
 
     /* renamed from: getOutline-0d7_KjU  reason: not valid java name */
-    public final long m2913getOutline0d7_KjU() {
+    public final long m3220getOutline0d7_KjU() {
         return Outline;
     }
 
     /* renamed from: getOutlineVariant-0d7_KjU  reason: not valid java name */
-    public final long m2914getOutlineVariant0d7_KjU() {
+    public final long m3221getOutlineVariant0d7_KjU() {
         return OutlineVariant;
     }
 
     /* renamed from: getPrimary-0d7_KjU  reason: not valid java name */
-    public final long m2915getPrimary0d7_KjU() {
+    public final long m3222getPrimary0d7_KjU() {
         return Primary;
     }
 
     /* renamed from: getPrimaryContainer-0d7_KjU  reason: not valid java name */
-    public final long m2916getPrimaryContainer0d7_KjU() {
+    public final long m3223getPrimaryContainer0d7_KjU() {
         return PrimaryContainer;
     }
 
     /* renamed from: getPrimaryFixed-0d7_KjU  reason: not valid java name */
-    public final long m2917getPrimaryFixed0d7_KjU() {
+    public final long m3224getPrimaryFixed0d7_KjU() {
         return PrimaryFixed;
     }
 
     /* renamed from: getPrimaryFixedDim-0d7_KjU  reason: not valid java name */
-    public final long m2918getPrimaryFixedDim0d7_KjU() {
+    public final long m3225getPrimaryFixedDim0d7_KjU() {
         return PrimaryFixedDim;
     }
 
     /* renamed from: getScrim-0d7_KjU  reason: not valid java name */
-    public final long m2919getScrim0d7_KjU() {
+    public final long m3226getScrim0d7_KjU() {
         return Scrim;
     }
 
     /* renamed from: getSecondary-0d7_KjU  reason: not valid java name */
-    public final long m2920getSecondary0d7_KjU() {
+    public final long m3227getSecondary0d7_KjU() {
         return Secondary;
     }
 
     /* renamed from: getSecondaryContainer-0d7_KjU  reason: not valid java name */
-    public final long m2921getSecondaryContainer0d7_KjU() {
+    public final long m3228getSecondaryContainer0d7_KjU() {
         return SecondaryContainer;
     }
 
     /* renamed from: getSecondaryFixed-0d7_KjU  reason: not valid java name */
-    public final long m2922getSecondaryFixed0d7_KjU() {
+    public final long m3229getSecondaryFixed0d7_KjU() {
         return SecondaryFixed;
     }
 
     /* renamed from: getSecondaryFixedDim-0d7_KjU  reason: not valid java name */
-    public final long m2923getSecondaryFixedDim0d7_KjU() {
+    public final long m3230getSecondaryFixedDim0d7_KjU() {
         return SecondaryFixedDim;
     }
 
     /* renamed from: getSurface-0d7_KjU  reason: not valid java name */
-    public final long m2924getSurface0d7_KjU() {
+    public final long m3231getSurface0d7_KjU() {
         return Surface;
     }
 
     /* renamed from: getSurfaceBright-0d7_KjU  reason: not valid java name */
-    public final long m2925getSurfaceBright0d7_KjU() {
+    public final long m3232getSurfaceBright0d7_KjU() {
         return SurfaceBright;
     }
 
     /* renamed from: getSurfaceContainer-0d7_KjU  reason: not valid java name */
-    public final long m2926getSurfaceContainer0d7_KjU() {
+    public final long m3233getSurfaceContainer0d7_KjU() {
         return SurfaceContainer;
     }
 
     /* renamed from: getSurfaceContainerHigh-0d7_KjU  reason: not valid java name */
-    public final long m2927getSurfaceContainerHigh0d7_KjU() {
+    public final long m3234getSurfaceContainerHigh0d7_KjU() {
         return SurfaceContainerHigh;
     }
 
     /* renamed from: getSurfaceContainerHighest-0d7_KjU  reason: not valid java name */
-    public final long m2928getSurfaceContainerHighest0d7_KjU() {
+    public final long m3235getSurfaceContainerHighest0d7_KjU() {
         return SurfaceContainerHighest;
     }
 
     /* renamed from: getSurfaceContainerLow-0d7_KjU  reason: not valid java name */
-    public final long m2929getSurfaceContainerLow0d7_KjU() {
+    public final long m3236getSurfaceContainerLow0d7_KjU() {
         return SurfaceContainerLow;
     }
 
     /* renamed from: getSurfaceContainerLowest-0d7_KjU  reason: not valid java name */
-    public final long m2930getSurfaceContainerLowest0d7_KjU() {
+    public final long m3237getSurfaceContainerLowest0d7_KjU() {
         return SurfaceContainerLowest;
     }
 
     /* renamed from: getSurfaceDim-0d7_KjU  reason: not valid java name */
-    public final long m2931getSurfaceDim0d7_KjU() {
+    public final long m3238getSurfaceDim0d7_KjU() {
         return SurfaceDim;
     }
 
     /* renamed from: getSurfaceTint-0d7_KjU  reason: not valid java name */
-    public final long m2932getSurfaceTint0d7_KjU() {
+    public final long m3239getSurfaceTint0d7_KjU() {
         return SurfaceTint;
     }
 
     /* renamed from: getSurfaceVariant-0d7_KjU  reason: not valid java name */
-    public final long m2933getSurfaceVariant0d7_KjU() {
+    public final long m3240getSurfaceVariant0d7_KjU() {
         return SurfaceVariant;
     }
 
     /* renamed from: getTertiary-0d7_KjU  reason: not valid java name */
-    public final long m2934getTertiary0d7_KjU() {
+    public final long m3241getTertiary0d7_KjU() {
         return Tertiary;
     }
 
     /* renamed from: getTertiaryContainer-0d7_KjU  reason: not valid java name */
-    public final long m2935getTertiaryContainer0d7_KjU() {
+    public final long m3242getTertiaryContainer0d7_KjU() {
         return TertiaryContainer;
     }
 
     /* renamed from: getTertiaryFixed-0d7_KjU  reason: not valid java name */
-    public final long m2936getTertiaryFixed0d7_KjU() {
+    public final long m3243getTertiaryFixed0d7_KjU() {
         return TertiaryFixed;
     }
 
     /* renamed from: getTertiaryFixedDim-0d7_KjU  reason: not valid java name */
-    public final long m2937getTertiaryFixedDim0d7_KjU() {
+    public final long m3244getTertiaryFixedDim0d7_KjU() {
         return TertiaryFixedDim;
     }
 }

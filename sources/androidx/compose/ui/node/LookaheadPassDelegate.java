@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.IntSize;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.AdRevenueConstants;
 import java.util.List;
 import java.util.Map;
+import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.enums.EnumEntries;
@@ -22,8 +23,8 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LookaheadPassDelegate.kt */
-@Metadata(d1 = {"\u0000¶\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\r\n\u0002\u0010\u0000\n\u0002\b\u000e\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\b?\b\u0000\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u0002³\u0001B\r\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0002\u0010\u0007J\u0014\u0010s\u001a\u000e\u0012\u0004\u0012\u00020u\u0012\u0004\u0012\u00020W0tH\u0016J\b\u0010v\u001a\u00020-H\u0002J\b\u0010w\u001a\u00020-H\u0002J\u001c\u0010x\u001a\u00020-2\u0012\u0010y\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020-0+H\u0016J\u001d\u0010z\u001a\u00020-2\u0012\u0010y\u001a\u000e\u0012\u0004\u0012\u00020\u0000\u0012\u0004\u0012\u00020-0+H\u0082\bJ\u0011\u0010{\u001a\u00020W2\u0006\u0010|\u001a\u00020uH\u0096\u0002J\u000e\u0010}\u001a\u00020-2\u0006\u0010~\u001a\u00020\u0015J\u0006\u0010\u007f\u001a\u00020-J\t\u0010\u0080\u0001\u001a\u00020-H\u0016J\u000f\u0010\u0081\u0001\u001a\u00020-H\u0000¢\u0006\u0003\b\u0082\u0001J\u000f\u0010\u0083\u0001\u001a\u00020-H\u0000¢\u0006\u0003\b\u0084\u0001J\u0018\u0010\u0085\u0001\u001a\u00020-2\u0007\u0010\u0086\u0001\u001a\u00020\u0015H\u0000¢\u0006\u0003\b\u0087\u0001J\t\u0010\u0088\u0001\u001a\u00020-H\u0002J\u0012\u0010\u0089\u0001\u001a\u00020W2\u0007\u0010\u008a\u0001\u001a\u00020WH\u0016J\u0012\u0010\u008b\u0001\u001a\u00020W2\u0007\u0010\u008c\u0001\u001a\u00020WH\u0016J\u001e\u0010\u008d\u0001\u001a\u00020\u00012\u0007\u0010\u008e\u0001\u001a\u00020%H\u0016ø\u0001\u0000¢\u0006\u0006\b\u008f\u0001\u0010\u0090\u0001J\u0012\u0010\u0091\u0001\u001a\u00020W2\u0007\u0010\u008a\u0001\u001a\u00020WH\u0016J\u0012\u0010\u0092\u0001\u001a\u00020W2\u0007\u0010\u008c\u0001\u001a\u00020WH\u0016J\u0007\u0010\u0093\u0001\u001a\u00020-J\u0007\u0010\u0094\u0001\u001a\u00020-J\t\u0010\u0095\u0001\u001a\u00020-H\u0002J\t\u0010\u0096\u0001\u001a\u00020-H\u0002J\u0007\u0010\u0097\u0001\u001a\u00020-J\u000f\u0010\u0098\u0001\u001a\u00020-H\u0000¢\u0006\u0003\b\u0099\u0001J\u001e\u0010\u009a\u0001\u001a\u00020-2\u0007\u0010\u008e\u0001\u001a\u00020%H\u0000ø\u0001\u0000¢\u0006\u0006\b\u009b\u0001\u0010\u009c\u0001JC\u0010\u009d\u0001\u001a\u00020-2\u0007\u0010\u009e\u0001\u001a\u0002002\u0007\u0010\u009f\u0001\u001a\u0002032\u001a\u0010 \u0001\u001a\u0015\u0012\u0004\u0012\u00020,\u0012\u0004\u0012\u00020-\u0018\u00010+¢\u0006\u0002\b.H\u0014ø\u0001\u0000¢\u0006\u0006\b¡\u0001\u0010¢\u0001J0\u0010\u009d\u0001\u001a\u00020-2\u0007\u0010\u009e\u0001\u001a\u0002002\u0007\u0010\u009f\u0001\u001a\u0002032\u0007\u0010£\u0001\u001a\u00020)H\u0014ø\u0001\u0000¢\u0006\u0006\b¡\u0001\u0010¤\u0001JN\u0010¥\u0001\u001a\u00020-2\u0007\u0010\u009e\u0001\u001a\u0002002\u0007\u0010\u009f\u0001\u001a\u0002032\u001a\u0010 \u0001\u001a\u0015\u0012\u0004\u0012\u00020,\u0012\u0004\u0012\u00020-\u0018\u00010+¢\u0006\u0002\b.2\t\u0010£\u0001\u001a\u0004\u0018\u00010)H\u0002ø\u0001\u0000¢\u0006\u0006\b¦\u0001\u0010§\u0001J\u001c\u0010¨\u0001\u001a\u00020\u00152\u0007\u0010\u008e\u0001\u001a\u00020%ø\u0001\u0000¢\u0006\u0006\b©\u0001\u0010ª\u0001J\u0007\u0010«\u0001\u001a\u00020-J\t\u0010¬\u0001\u001a\u00020-H\u0016J\t\u0010\u00ad\u0001\u001a\u00020-H\u0016J\u0012\u0010®\u0001\u001a\u00020-2\u0007\u0010¯\u0001\u001a\u000208H\u0002J\u0007\u0010°\u0001\u001a\u00020\u0015J\u0012\u0010±\u0001\u001a\u00020-2\u0007\u0010²\u0001\u001a\u00020\u0015H\u0016R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00000\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\u00020\rX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00000\u00118@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013R\u001a\u0010\u0014\u001a\u00020\u0015X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R\u0014\u0010\u001a\u001a\u00020\u00158BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001b\u0010\u0017R\u000e\u0010\u001c\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\u00020\u001e8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001f\u0010 R\u0014\u0010!\u001a\u00020\u00158VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b!\u0010\u0017R\u001a\u0010\"\u001a\u00020\u0015X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\"\u0010\u0017\"\u0004\b#\u0010\u0019R\u0019\u0010$\u001a\u0004\u0018\u00010%8Fø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b&\u0010'R\u0010\u0010(\u001a\u0004\u0018\u00010)X\u0082\u000e¢\u0006\u0002\n\u0000R!\u0010*\u001a\u0015\u0012\u0004\u0012\u00020,\u0012\u0004\u0012\u00020-\u0018\u00010+¢\u0006\u0002\b.X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010/\u001a\u000200X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u00101R\u000e\u00102\u001a\u000203X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u00105\u001a\u00020\u00152\u0006\u00104\u001a\u00020\u0015@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b6\u0010\u0017R\u0014\u00107\u001a\u0002088BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b9\u0010:R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R$\u0010<\u001a\u00020\u00152\u0006\u0010;\u001a\u00020\u00158B@BX\u0082\u000e¢\u0006\f\u001a\u0004\b=\u0010\u0017\"\u0004\b>\u0010\u0019R$\u0010?\u001a\u00020\u00152\u0006\u0010;\u001a\u00020\u00158B@BX\u0082\u000e¢\u0006\f\u001a\u0004\b@\u0010\u0017\"\u0004\bA\u0010\u0019R$\u0010C\u001a\u00020B2\u0006\u0010;\u001a\u00020B8B@BX\u0082\u000e¢\u0006\f\u001a\u0004\bD\u0010E\"\u0004\bF\u0010GR\u0016\u0010H\u001a\u0004\u0018\u00010%X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0002\n\u0000R\u0014\u0010I\u001a\u00020J8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bK\u0010LR$\u0010M\u001a\u00020\u00152\u0006\u0010;\u001a\u00020\u00158B@BX\u0082\u000e¢\u0006\f\u001a\u0004\bN\u0010\u0017\"\u0004\bO\u0010\u0019R\u001a\u0010P\u001a\u00020QX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bR\u0010S\"\u0004\bT\u0010UR\u0014\u0010V\u001a\u00020W8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bX\u0010YR\u000e\u0010Z\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010[\u001a\u00020W8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\\\u0010YR\u0011\u0010]\u001a\u00020\u00158F¢\u0006\u0006\u001a\u0004\b^\u0010\u0017R\u000e\u0010_\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010`\u001a\u00020\u001e8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\ba\u0010 R\u0016\u0010b\u001a\u0004\u0018\u00010\u00038VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bc\u0010dR\"\u0010f\u001a\u0004\u0018\u00010e2\b\u00104\u001a\u0004\u0018\u00010e@RX\u0096\u000e¢\u0006\b\n\u0000\u001a\u0004\bg\u0010hR\u000e\u0010i\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010j\u001a\u00020WX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bk\u0010Y\"\u0004\bl\u0010mR\u001a\u0010n\u001a\u00020\u0015X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bo\u0010\u0017\"\u0004\bp\u0010\u0019R\u000e\u0010q\u001a\u00020WX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010r\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006´\u0001"}, d2 = {"Landroidx/compose/ui/node/LookaheadPassDelegate;", "Landroidx/compose/ui/layout/Placeable;", "Landroidx/compose/ui/layout/Measurable;", "Landroidx/compose/ui/node/AlignmentLinesOwner;", "Landroidx/compose/ui/node/MotionReferencePlacementDelegate;", "layoutNodeLayoutDelegate", "Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;", "(Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;)V", "_childDelegates", "Landroidx/compose/runtime/collection/MutableVector;", "_placedState", "Landroidx/compose/ui/node/LookaheadPassDelegate$PlacedState;", "alignmentLines", "Landroidx/compose/ui/node/AlignmentLines;", "getAlignmentLines", "()Landroidx/compose/ui/node/AlignmentLines;", "childDelegates", "", "getChildDelegates$ui_release", "()Ljava/util/List;", "childDelegatesDirty", "", "getChildDelegatesDirty$ui_release", "()Z", "setChildDelegatesDirty$ui_release", "(Z)V", "detachedFromParentLookaheadPlacement", "getDetachedFromParentLookaheadPlacement", "duringAlignmentLinesQuery", "innerCoordinator", "Landroidx/compose/ui/node/NodeCoordinator;", "getInnerCoordinator", "()Landroidx/compose/ui/node/NodeCoordinator;", "isPlaced", "isPlacedUnderMotionFrameOfReference", "setPlacedUnderMotionFrameOfReference", "lastConstraints", "Landroidx/compose/ui/unit/Constraints;", "getLastConstraints-DWUhwKw", "()Landroidx/compose/ui/unit/Constraints;", "lastExplicitLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "lastLayerBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/GraphicsLayerScope;", "", "Lkotlin/ExtensionFunctionType;", "lastPosition", "Landroidx/compose/ui/unit/IntOffset;", "J", "lastZIndex", "", "<set-?>", "layingOutChildren", "getLayingOutChildren", "layoutNode", "Landroidx/compose/ui/node/LayoutNode;", "getLayoutNode", "()Landroidx/compose/ui/node/LayoutNode;", "value", "layoutPending", "getLayoutPending", "setLayoutPending", "layoutPendingForAlignment", "getLayoutPendingForAlignment", "setLayoutPendingForAlignment", "Landroidx/compose/ui/node/LayoutNode$LayoutState;", "layoutState", "getLayoutState", "()Landroidx/compose/ui/node/LayoutNode$LayoutState;", "setLayoutState", "(Landroidx/compose/ui/node/LayoutNode$LayoutState;)V", "lookaheadConstraints", "measurePassDelegate", "Landroidx/compose/ui/node/MeasurePassDelegate;", "getMeasurePassDelegate$ui_release", "()Landroidx/compose/ui/node/MeasurePassDelegate;", "measurePending", "getMeasurePending", "setMeasurePending", "measuredByParent", "Landroidx/compose/ui/node/LayoutNode$UsageByParent;", "getMeasuredByParent$ui_release", "()Landroidx/compose/ui/node/LayoutNode$UsageByParent;", "setMeasuredByParent$ui_release", "(Landroidx/compose/ui/node/LayoutNode$UsageByParent;)V", "measuredHeight", "", "getMeasuredHeight", "()I", "measuredOnce", "measuredWidth", "getMeasuredWidth", "needsToBePlacedInApproach", "getNeedsToBePlacedInApproach", "onNodePlacedCalled", "outerCoordinator", "getOuterCoordinator", "parentAlignmentLinesOwner", "getParentAlignmentLinesOwner", "()Landroidx/compose/ui/node/AlignmentLinesOwner;", "", "parentData", "getParentData", "()Ljava/lang/Object;", "parentDataDirty", "placeOrder", "getPlaceOrder$ui_release", "setPlaceOrder$ui_release", "(I)V", "placedOnce", "getPlacedOnce$ui_release", "setPlacedOnce$ui_release", "previousPlaceOrder", "relayoutWithoutParentInProgress", "calculateAlignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "checkChildrenPlaceOrderForUpdates", "clearPlaceOrder", "forEachChildAlignmentLinesOwner", "block", "forEachChildDelegate", "get", "alignmentLine", "invalidateIntrinsicsParent", "forceRequest", "invalidateParentData", "layoutChildren", "markLayoutPending", "markLayoutPending$ui_release", "markMeasurePending", "markMeasurePending$ui_release", "markNodeAndSubtreeAsNotPlaced", "inLookahead", "markNodeAndSubtreeAsNotPlaced$ui_release", "markNodeAndSubtreeAsPlaced", "maxIntrinsicHeight", "width", "maxIntrinsicWidth", "height", "measure", "constraints", "measure-BRTryo0", "(J)Landroidx/compose/ui/layout/Placeable;", "minIntrinsicHeight", "minIntrinsicWidth", "notifyChildrenUsingLookaheadCoordinatesWhilePlacing", "onAttachedToNullParent", "onBeforeLayoutChildren", "onIntrinsicsQueried", "onNodeDetached", "onNodePlaced", "onNodePlaced$ui_release", "performMeasure", "performMeasure-BRTryo0$ui_release", "(J)V", "placeAt", "position", "zIndex", "layerBlock", "placeAt-f8xVGno", "(JFLkotlin/jvm/functions/Function1;)V", AdRevenueConstants.LAYER_KEY, "(JFLandroidx/compose/ui/graphics/layer/GraphicsLayer;)V", "placeSelf", "placeSelf-MLgxB_4", "(JFLkotlin/jvm/functions/Function1;Landroidx/compose/ui/graphics/layer/GraphicsLayer;)V", "remeasure", "remeasure-BRTryo0", "(J)Z", "replace", "requestLayout", "requestMeasure", "trackLookaheadMeasurementByParent", "node", "updateParentData", "updatePlacedUnderMotionFrameOfReference", "newMFR", "PlacedState", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000¾\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\u000e\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u0000\n\u0002\b4\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u0002³\u0001B\u000f\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\r\u0010\u001a\u001a\u00020\u001bH\u0000¢\u0006\u0002\b\u001cJ\r\u0010\u001d\u001a\u00020\u001bH\u0000¢\u0006\u0002\b\u001eJ\u001d\u0010f\u001a\u00020\u001b2\u0012\u0010g\u001a\u000e\u0012\u0004\u0012\u00020\u0000\u0012\u0004\u0012\u00020\u001b0KH\u0082\bJ\b\u0010h\u001a\u00020\u001bH\u0016J\b\u0010k\u001a\u00020\u001bH\u0002J\u0015\u0010l\u001a\u00020\u001b2\u0006\u0010m\u001a\u00020\nH\u0000¢\u0006\u0002\bnJ\u0014\u0010o\u001a\u000e\u0012\u0004\u0012\u00020q\u0012\u0004\u0012\u00020!0pH\u0016J\u001c\u0010u\u001a\u00020\u001b2\u0012\u0010g\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u001b0KH\u0016J\b\u0010v\u001a\u00020\u001bH\u0016J\b\u0010w\u001a\u00020\u001bH\u0016J\u0006\u0010x\u001a\u00020\u001bJ\u0017\u0010y\u001a\u00020\u00012\u0006\u0010z\u001a\u00020AH\u0016¢\u0006\u0004\b{\u0010|J\u0010\u0010}\u001a\u00020\u001b2\u0006\u0010~\u001a\u00020\u0017H\u0002J\u001a\u0010\u0084\u0001\u001a\u00020\u001b2\u0006\u0010z\u001a\u00020AH\u0000¢\u0006\u0006\b\u0085\u0001\u0010\u0086\u0001J\u0018\u0010\u0087\u0001\u001a\u00020\n2\u0006\u0010z\u001a\u00020A¢\u0006\u0006\b\u0088\u0001\u0010\u0089\u0001J@\u0010\u008a\u0001\u001a\u00020\u001b2\u0007\u0010\u008b\u0001\u001a\u00020F2\u0007\u0010\u008c\u0001\u001a\u00020I2\u001a\u0010\u008d\u0001\u001a\u0015\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020\u001b\u0018\u00010K¢\u0006\u0002\bMH\u0014¢\u0006\u0006\b\u008e\u0001\u0010\u008f\u0001J-\u0010\u008a\u0001\u001a\u00020\u001b2\u0007\u0010\u008b\u0001\u001a\u00020F2\u0007\u0010\u008c\u0001\u001a\u00020I2\u0007\u0010\u0090\u0001\u001a\u00020OH\u0014¢\u0006\u0006\b\u008e\u0001\u0010\u0091\u0001J\u0012\u0010\u0094\u0001\u001a\u00020\u001b2\u0007\u0010\u0095\u0001\u001a\u00020\nH\u0016JK\u0010\u0096\u0001\u001a\u00020\u001b2\u0007\u0010\u008b\u0001\u001a\u00020F2\u0007\u0010\u008c\u0001\u001a\u00020I2\u001a\u0010\u008d\u0001\u001a\u0015\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020\u001b\u0018\u00010K¢\u0006\u0002\bM2\t\u0010\u0090\u0001\u001a\u0004\u0018\u00010OH\u0002¢\u0006\u0006\b\u0097\u0001\u0010\u0098\u0001J\u0013\u0010\u009d\u0001\u001a\u00020!2\u0007\u0010\u009e\u0001\u001a\u00020qH\u0096\u0002J\u0012\u0010\u009f\u0001\u001a\u00020!2\u0007\u0010 \u0001\u001a\u00020!H\u0016J\u0012\u0010¡\u0001\u001a\u00020!2\u0007\u0010 \u0001\u001a\u00020!H\u0016J\u0012\u0010¢\u0001\u001a\u00020!2\u0007\u0010£\u0001\u001a\u00020!H\u0016J\u0012\u0010¤\u0001\u001a\u00020!2\u0007\u0010£\u0001\u001a\u00020!H\u0016J\t\u0010¥\u0001\u001a\u00020\u001bH\u0002J\u0010\u0010¦\u0001\u001a\u00020\u001b2\u0007\u0010§\u0001\u001a\u00020\nJ\u0007\u0010¨\u0001\u001a\u00020\u001bJ\u0007\u0010©\u0001\u001a\u00020\nJ\u000f\u0010«\u0001\u001a\u00020\u001bH\u0000¢\u0006\u0003\b¬\u0001J\t\u0010\u00ad\u0001\u001a\u00020\u001bH\u0002J\t\u0010®\u0001\u001a\u00020\u001bH\u0002J\t\u0010¯\u0001\u001a\u00020\u001bH\u0002J\u0007\u0010°\u0001\u001a\u00020\u001bJ\u0007\u0010±\u0001\u001a\u00020\u001bJ\u0007\u0010²\u0001\u001a\u00020\u001bR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R$\u0010\u000b\u001a\u00020\n2\u0006\u0010\t\u001a\u00020\n8B@BX\u0082\u000e¢\u0006\f\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR$\u0010\u0010\u001a\u00020\n2\u0006\u0010\t\u001a\u00020\n8B@BX\u0082\u000e¢\u0006\f\u001a\u0004\b\u0011\u0010\r\"\u0004\b\u0012\u0010\u000fR$\u0010\u0013\u001a\u00020\n2\u0006\u0010\t\u001a\u00020\n8B@BX\u0082\u000e¢\u0006\f\u001a\u0004\b\u0014\u0010\r\"\u0004\b\u0015\u0010\u000fR\u0014\u0010\u0016\u001a\u00020\u00178BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0019R\u000e\u0010\u001f\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\"\u001a\u00020!X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010$\"\u0004\b%\u0010&R\u001a\u0010'\u001a\u00020(X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b)\u0010*\"\u0004\b+\u0010,R\u0014\u0010-\u001a\u00020.8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b/\u00100R\u0014\u00101\u001a\u0002028BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b3\u00104R$\u00106\u001a\u0002052\u0006\u0010\t\u001a\u0002058B@BX\u0082\u000e¢\u0006\f\u001a\u0004\b7\u00108\"\u0004\b9\u0010:R\u000e\u0010;\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010<\u001a\u00020\nX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b=\u0010\r\"\u0004\b>\u0010\u000fR\u000e\u0010?\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0013\u0010@\u001a\u0004\u0018\u00010A8F¢\u0006\u0006\u001a\u0004\bB\u0010CR\u0010\u0010D\u001a\u0004\u0018\u00010AX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010E\u001a\u00020FX\u0082\u000e¢\u0006\u0004\n\u0002\u0010GR\u000e\u0010H\u001a\u00020IX\u0082\u000e¢\u0006\u0002\n\u0000R!\u0010J\u001a\u0015\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020\u001b\u0018\u00010K¢\u0006\u0002\bMX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010N\u001a\u0004\u0018\u00010OX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010P\u001a\u00020\n8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bP\u0010\rR\u000e\u0010Q\u001a\u00020RX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010S\u001a\u0002028VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bT\u00104R\u0014\u0010U\u001a\u00020VX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bW\u0010XR\u0014\u0010Y\u001a\b\u0012\u0004\u0012\u00020\u00000ZX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010[\u001a\u00020\n8F¢\u0006\u0006\u001a\u0004\b\\\u0010\rR\u001a\u0010]\u001a\u00020\nX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b^\u0010\r\"\u0004\b_\u0010\u000fR\u001a\u0010`\u001a\b\u0012\u0004\u0012\u00020\u00000a8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bb\u0010cR\u001e\u0010d\u001a\u00020\n2\u0006\u0010\t\u001a\u00020\n@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\be\u0010\rR\u0014\u0010i\u001a\u00020\n8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bj\u0010\rR\u0016\u0010r\u001a\u0004\u0018\u00010\u00038VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bs\u0010tR\u000e\u0010\u007f\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R'\u0010\u0081\u0001\u001a\u0005\u0018\u00010\u0080\u00012\t\u0010\t\u001a\u0005\u0018\u00010\u0080\u0001@RX\u0096\u000e¢\u0006\n\n\u0000\u001a\u0006\b\u0082\u0001\u0010\u0083\u0001R\u001d\u0010\u0092\u0001\u001a\u00020\nX\u0096\u000e¢\u0006\u0010\n\u0000\u001a\u0005\b\u0092\u0001\u0010\r\"\u0005\b\u0093\u0001\u0010\u000fR\u0016\u0010\u0099\u0001\u001a\u00020!8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\b\u009a\u0001\u0010$R\u0016\u0010\u009b\u0001\u001a\u00020!8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\b\u009c\u0001\u0010$R\u000f\u0010ª\u0001\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006´\u0001"}, d2 = {"Landroidx/compose/ui/node/LookaheadPassDelegate;", "Landroidx/compose/ui/layout/Placeable;", "Landroidx/compose/ui/layout/Measurable;", "Landroidx/compose/ui/node/AlignmentLinesOwner;", "Landroidx/compose/ui/node/MotionReferencePlacementDelegate;", "layoutNodeLayoutDelegate", "Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;", "<init>", "(Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;)V", "value", "", "measurePending", "getMeasurePending", "()Z", "setMeasurePending", "(Z)V", "layoutPending", "getLayoutPending", "setLayoutPending", "layoutPendingForAlignment", "getLayoutPendingForAlignment", "setLayoutPendingForAlignment", "layoutNode", "Landroidx/compose/ui/node/LayoutNode;", "getLayoutNode", "()Landroidx/compose/ui/node/LayoutNode;", "markLayoutPending", "", "markLayoutPending$ui_release", "markMeasurePending", "markMeasurePending$ui_release", "relayoutWithoutParentInProgress", "previousPlaceOrder", "", "placeOrder", "getPlaceOrder$ui_release", "()I", "setPlaceOrder$ui_release", "(I)V", "measuredByParent", "Landroidx/compose/ui/node/LayoutNode$UsageByParent;", "getMeasuredByParent$ui_release", "()Landroidx/compose/ui/node/LayoutNode$UsageByParent;", "setMeasuredByParent$ui_release", "(Landroidx/compose/ui/node/LayoutNode$UsageByParent;)V", "measurePassDelegate", "Landroidx/compose/ui/node/MeasurePassDelegate;", "getMeasurePassDelegate$ui_release", "()Landroidx/compose/ui/node/MeasurePassDelegate;", "outerCoordinator", "Landroidx/compose/ui/node/NodeCoordinator;", "getOuterCoordinator", "()Landroidx/compose/ui/node/NodeCoordinator;", "Landroidx/compose/ui/node/LayoutNode$LayoutState;", "layoutState", "getLayoutState", "()Landroidx/compose/ui/node/LayoutNode$LayoutState;", "setLayoutState", "(Landroidx/compose/ui/node/LayoutNode$LayoutState;)V", "duringAlignmentLinesQuery", "placedOnce", "getPlacedOnce$ui_release", "setPlacedOnce$ui_release", "measuredOnce", "lastConstraints", "Landroidx/compose/ui/unit/Constraints;", "getLastConstraints-DWUhwKw", "()Landroidx/compose/ui/unit/Constraints;", "lookaheadConstraints", "lastPosition", "Landroidx/compose/ui/unit/IntOffset;", "J", "lastZIndex", "", "lastLayerBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/GraphicsLayerScope;", "Lkotlin/ExtensionFunctionType;", "lastExplicitLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "isPlaced", "_placedState", "Landroidx/compose/ui/node/LookaheadPassDelegate$PlacedState;", "innerCoordinator", "getInnerCoordinator", "alignmentLines", "Landroidx/compose/ui/node/AlignmentLines;", "getAlignmentLines", "()Landroidx/compose/ui/node/AlignmentLines;", "_childDelegates", "Landroidx/compose/runtime/collection/MutableVector;", "needsToBePlacedInApproach", "getNeedsToBePlacedInApproach", "childDelegatesDirty", "getChildDelegatesDirty$ui_release", "setChildDelegatesDirty$ui_release", "childDelegates", "", "getChildDelegates$ui_release", "()Ljava/util/List;", "layingOutChildren", "getLayingOutChildren", "forEachChildDelegate", "block", "layoutChildren", "detachedFromParentLookaheadPlacement", "getDetachedFromParentLookaheadPlacement", "checkChildrenPlaceOrderForUpdates", "markNodeAndSubtreeAsNotPlaced", "inLookahead", "markNodeAndSubtreeAsNotPlaced$ui_release", "calculateAlignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "parentAlignmentLinesOwner", "getParentAlignmentLinesOwner", "()Landroidx/compose/ui/node/AlignmentLinesOwner;", "forEachChildAlignmentLinesOwner", "requestLayout", "requestMeasure", "notifyChildrenUsingLookaheadCoordinatesWhilePlacing", "measure", "constraints", "measure-BRTryo0", "(J)Landroidx/compose/ui/layout/Placeable;", "trackLookaheadMeasurementByParent", "node", "parentDataDirty", "", "parentData", "getParentData", "()Ljava/lang/Object;", "performMeasure", "performMeasure-BRTryo0$ui_release", "(J)V", "remeasure", "remeasure-BRTryo0", "(J)Z", "placeAt", "position", "zIndex", "layerBlock", "placeAt-f8xVGno", "(JFLkotlin/jvm/functions/Function1;)V", AdRevenueConstants.LAYER_KEY, "(JFLandroidx/compose/ui/graphics/layer/GraphicsLayer;)V", "isPlacedUnderMotionFrameOfReference", "setPlacedUnderMotionFrameOfReference", "updatePlacedUnderMotionFrameOfReference", "newMFR", "placeSelf", "placeSelf-MLgxB_4", "(JFLkotlin/jvm/functions/Function1;Landroidx/compose/ui/graphics/layer/GraphicsLayer;)V", "measuredWidth", "getMeasuredWidth", "measuredHeight", "getMeasuredHeight", "get", "alignmentLine", "minIntrinsicWidth", "height", "maxIntrinsicWidth", "minIntrinsicHeight", "width", "maxIntrinsicHeight", "onIntrinsicsQueried", "invalidateIntrinsicsParent", "forceRequest", "invalidateParentData", "updateParentData", "onNodePlacedCalled", "onNodePlaced", "onNodePlaced$ui_release", "clearPlaceOrder", "markNodeAndSubtreeAsPlaced", "onBeforeLayoutChildren", "replace", "onNodeDetached", "onAttachedToNullParent", "PlacedState", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class LookaheadPassDelegate extends Placeable implements Measurable, AlignmentLinesOwner, MotionReferencePlacementDelegate {
     public static final int $stable = 8;
     private boolean duringAlignmentLinesQuery;
@@ -41,7 +42,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     private int previousPlaceOrder = Integer.MAX_VALUE;
     private int placeOrder = Integer.MAX_VALUE;
     private LayoutNode.UsageByParent measuredByParent = LayoutNode.UsageByParent.NotUsed;
-    private long lastPosition = IntOffset.Companion.m6823getZeronOccac();
+    private long lastPosition = IntOffset.Companion.m7390getZeronOccac();
     private PlacedState _placedState = PlacedState.IsNotPlaced;
     private final AlignmentLines alignmentLines = new LookaheadAlignmentLines(this);
     private final MutableVector<LookaheadPassDelegate> _childDelegates = new MutableVector<>(new LookaheadPassDelegate[16], 0);
@@ -50,8 +51,8 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     private Object parentData = getMeasurePassDelegate$ui_release().getParentData();
 
     /* compiled from: LookaheadPassDelegate.kt */
-    @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
         public static final /* synthetic */ int[] $EnumSwitchMapping$1;
@@ -96,8 +97,8 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: LookaheadPassDelegate.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0005\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002j\u0002\b\u0003j\u0002\b\u0004j\u0002\b\u0005¨\u0006\u0006"}, d2 = {"Landroidx/compose/ui/node/LookaheadPassDelegate$PlacedState;", "", "(Ljava/lang/String;I)V", "IsPlacedInLookahead", "IsPlacedInApproach", "IsNotPlaced", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0006\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006¨\u0006\u0007"}, d2 = {"Landroidx/compose/ui/node/LookaheadPassDelegate$PlacedState;", "", "<init>", "(Ljava/lang/String;I)V", "IsPlacedInLookahead", "IsPlacedInApproach", "IsNotPlaced", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public static final class PlacedState {
         private static final /* synthetic */ EnumEntries $ENTRIES;
         private static final /* synthetic */ PlacedState[] $VALUES;
@@ -113,14 +114,6 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
             return $ENTRIES;
         }
 
-        public static PlacedState valueOf(String str) {
-            return (PlacedState) Enum.valueOf(PlacedState.class, str);
-        }
-
-        public static PlacedState[] values() {
-            return (PlacedState[]) $VALUES.clone();
-        }
-
         private PlacedState(String str, int i) {
         }
 
@@ -128,6 +121,14 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
             PlacedState[] $values = $values();
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
+        }
+
+        public static PlacedState valueOf(String str) {
+            return (PlacedState) Enum.valueOf(PlacedState.class, str);
+        }
+
+        public static PlacedState[] values() {
+            return (PlacedState[]) $VALUES.clone();
         }
     }
 
@@ -211,7 +212,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     }
 
     /* renamed from: getLastConstraints-DWUhwKw  reason: not valid java name */
-    public final Constraints m5643getLastConstraintsDWUhwKw() {
+    public final Constraints m6188getLastConstraintsDWUhwKw() {
         return this.lookaheadConstraints;
     }
 
@@ -496,7 +497,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Placeable mo5438measureBRTryo0(long j) {
+    public Placeable mo5954measureBRTryo0(long j) {
         LayoutNode parent$ui_release = getLayoutNode().getParent$ui_release();
         if ((parent$ui_release != null ? parent$ui_release.getLayoutState$ui_release() : null) != LayoutNode.LayoutState.LookaheadMeasuring) {
             LayoutNode parent$ui_release2 = getLayoutNode().getParent$ui_release();
@@ -506,7 +507,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
         if (getLayoutNode().getIntrinsicsUsageByParent$ui_release() == LayoutNode.UsageByParent.NotUsed) {
             getLayoutNode().clearSubtreeIntrinsicsUsage$ui_release();
         }
-        m5645remeasureBRTryo0(j);
+        m6190remeasureBRTryo0(j);
         return this;
     }
 
@@ -537,7 +538,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     }
 
     /* renamed from: performMeasure-BRTryo0$ui_release  reason: not valid java name */
-    public final void m5644performMeasureBRTryo0$ui_release(final long j) {
+    public final void m6189performMeasureBRTryo0$ui_release(final long j) {
         setLayoutState(LayoutNode.LayoutState.LookaheadMeasuring);
         setMeasurePending(false);
         OwnerSnapshotObserver.observeMeasureSnapshotReads$ui_release$default(LayoutNodeKt.requireOwner(getLayoutNode()).getSnapshotObserver(), getLayoutNode(), false, new Function0<Unit>() { // from class: androidx.compose.ui.node.LookaheadPassDelegate$performMeasure$1
@@ -559,7 +560,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
                 outerCoordinator = LookaheadPassDelegate.this.getOuterCoordinator();
                 LookaheadDelegate lookaheadDelegate = outerCoordinator.getLookaheadDelegate();
                 Intrinsics.checkNotNull(lookaheadDelegate);
-                lookaheadDelegate.mo5438measureBRTryo0(j);
+                lookaheadDelegate.mo5954measureBRTryo0(j);
             }
         }, 2, null);
         markLayoutPending$ui_release();
@@ -571,68 +572,118 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
         setLayoutState(LayoutNode.LayoutState.Idle);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0044 A[Catch: all -> 0x00e4, TryCatch #0 {all -> 0x00e4, blocks: (B:3:0x0004, B:5:0x000e, B:6:0x0013, B:9:0x002d, B:14:0x0037, B:16:0x0044, B:22:0x0055, B:24:0x005f, B:25:0x0066, B:19:0x004a, B:27:0x006e, B:29:0x0090, B:31:0x00a0, B:36:0x00b1, B:37:0x00b6, B:39:0x00d8, B:30:0x0095), top: B:47:0x0004 }] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0090 A[Catch: all -> 0x00e4, TryCatch #0 {all -> 0x00e4, blocks: (B:3:0x0004, B:5:0x000e, B:6:0x0013, B:9:0x002d, B:14:0x0037, B:16:0x0044, B:22:0x0055, B:24:0x005f, B:25:0x0066, B:19:0x004a, B:27:0x006e, B:29:0x0090, B:31:0x00a0, B:36:0x00b1, B:37:0x00b6, B:39:0x00d8, B:30:0x0095), top: B:47:0x0004 }] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0095 A[Catch: all -> 0x00e4, TryCatch #0 {all -> 0x00e4, blocks: (B:3:0x0004, B:5:0x000e, B:6:0x0013, B:9:0x002d, B:14:0x0037, B:16:0x0044, B:22:0x0055, B:24:0x005f, B:25:0x0066, B:19:0x004a, B:27:0x006e, B:29:0x0090, B:31:0x00a0, B:36:0x00b1, B:37:0x00b6, B:39:0x00d8, B:30:0x0095), top: B:47:0x0004 }] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00ac  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00b1 A[Catch: all -> 0x00e4, TryCatch #0 {all -> 0x00e4, blocks: (B:3:0x0004, B:5:0x000e, B:6:0x0013, B:9:0x002d, B:14:0x0037, B:16:0x0044, B:22:0x0055, B:24:0x005f, B:25:0x0066, B:19:0x004a, B:27:0x006e, B:29:0x0090, B:31:0x00a0, B:36:0x00b1, B:37:0x00b6, B:39:0x00d8, B:30:0x0095), top: B:47:0x0004 }] */
     /* renamed from: remeasure-BRTryo0  reason: not valid java name */
-    public final boolean m5645remeasureBRTryo0(long j) {
-        long m6850constructorimpl;
-        if (getLayoutNode().isDeactivated()) {
-            InlineClassHelperKt.throwIllegalArgumentException("measure is called on a deactivated node");
-        }
-        LayoutNode parent$ui_release = getLayoutNode().getParent$ui_release();
-        getLayoutNode().setCanMultiMeasure$ui_release(getLayoutNode().getCanMultiMeasure$ui_release() || (parent$ui_release != null && parent$ui_release.getCanMultiMeasure$ui_release()));
-        if (!getLayoutNode().getLookaheadMeasurePending$ui_release()) {
-            Constraints constraints = this.lookaheadConstraints;
-            if (constraints == null ? false : Constraints.m6630equalsimpl0(constraints.m6643unboximpl(), j)) {
-                Owner owner$ui_release = getLayoutNode().getOwner$ui_release();
-                if (owner$ui_release != null) {
-                    owner$ui_release.forceMeasureTheSubtree(getLayoutNode(), true);
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean m6190remeasureBRTryo0(long j) {
+        boolean z;
+        long m7417constructorimpl;
+        LookaheadDelegate lookaheadDelegate;
+        LayoutNode layoutNode = getLayoutNode();
+        try {
+            if (getLayoutNode().isDeactivated()) {
+                InlineClassHelperKt.throwIllegalArgumentException("measure is called on a deactivated node");
+            }
+            LayoutNode parent$ui_release = getLayoutNode().getParent$ui_release();
+            LayoutNode layoutNode2 = getLayoutNode();
+            if (!getLayoutNode().getCanMultiMeasure$ui_release() && (parent$ui_release == null || !parent$ui_release.getCanMultiMeasure$ui_release())) {
+                z = false;
+                layoutNode2.setCanMultiMeasure$ui_release(z);
+                if (!getLayoutNode().getLookaheadMeasurePending$ui_release()) {
+                    Constraints constraints = this.lookaheadConstraints;
+                    if (constraints == null ? false : Constraints.m7197equalsimpl0(constraints.m7210unboximpl(), j)) {
+                        Owner owner$ui_release = getLayoutNode().getOwner$ui_release();
+                        if (owner$ui_release != null) {
+                            owner$ui_release.forceMeasureTheSubtree(getLayoutNode(), true);
+                        }
+                        getLayoutNode().resetSubtreeIntrinsicsUsage$ui_release();
+                        return false;
+                    }
                 }
-                getLayoutNode().resetSubtreeIntrinsicsUsage$ui_release();
-                return false;
-            }
-        }
-        this.lookaheadConstraints = Constraints.m6624boximpl(j);
-        m5501setMeasurementConstraintsBRTryo0(j);
-        getAlignmentLines().setUsedByModifierMeasurement$ui_release(false);
-        forEachChildAlignmentLinesOwner(new Function1<AlignmentLinesOwner, Unit>() { // from class: androidx.compose.ui.node.LookaheadPassDelegate$remeasure$2
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(AlignmentLinesOwner alignmentLinesOwner) {
-                invoke2(alignmentLinesOwner);
-                return Unit.INSTANCE;
-            }
+                this.lookaheadConstraints = Constraints.m7191boximpl(j);
+                m6018setMeasurementConstraintsBRTryo0(j);
+                getAlignmentLines().setUsedByModifierMeasurement$ui_release(false);
+                forEachChildAlignmentLinesOwner(new Function1<AlignmentLinesOwner, Unit>() { // from class: androidx.compose.ui.node.LookaheadPassDelegate$remeasure$1$2
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(AlignmentLinesOwner alignmentLinesOwner) {
+                        invoke2(alignmentLinesOwner);
+                        return Unit.INSTANCE;
+                    }
 
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(AlignmentLinesOwner alignmentLinesOwner) {
-                alignmentLinesOwner.getAlignmentLines().setUsedDuringParentMeasurement$ui_release(false);
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(AlignmentLinesOwner alignmentLinesOwner) {
+                        alignmentLinesOwner.getAlignmentLines().setUsedDuringParentMeasurement$ui_release(false);
+                    }
+                });
+                if (this.measuredOnce) {
+                    long j2 = Integer.MIN_VALUE;
+                    m7417constructorimpl = IntSize.m7417constructorimpl((j2 & 4294967295L) | (j2 << 32));
+                } else {
+                    m7417constructorimpl = m6014getMeasuredSizeYbymL2g();
+                }
+                this.measuredOnce = true;
+                lookaheadDelegate = getOuterCoordinator().getLookaheadDelegate();
+                if (!(lookaheadDelegate == null)) {
+                    InlineClassHelperKt.throwIllegalStateException("Lookahead result from lookaheadRemeasure cannot be null");
+                }
+                this.layoutNodeLayoutDelegate.m6171performLookaheadMeasureBRTryo0$ui_release(j);
+                m6017setMeasuredSizeozmzZPI(IntSize.m7417constructorimpl((lookaheadDelegate.getHeight() & 4294967295L) | (lookaheadDelegate.getWidth() << 32)));
+                return ((int) (m7417constructorimpl >> 32)) == lookaheadDelegate.getWidth() || ((int) (m7417constructorimpl & 4294967295L)) != lookaheadDelegate.getHeight();
             }
-        });
-        if (this.measuredOnce) {
-            m6850constructorimpl = m5497getMeasuredSizeYbymL2g();
-        } else {
-            long j2 = Integer.MIN_VALUE;
-            m6850constructorimpl = IntSize.m6850constructorimpl((j2 & 4294967295L) | (j2 << 32));
+            z = true;
+            layoutNode2.setCanMultiMeasure$ui_release(z);
+            if (!getLayoutNode().getLookaheadMeasurePending$ui_release()) {
+            }
+            this.lookaheadConstraints = Constraints.m7191boximpl(j);
+            m6018setMeasurementConstraintsBRTryo0(j);
+            getAlignmentLines().setUsedByModifierMeasurement$ui_release(false);
+            forEachChildAlignmentLinesOwner(new Function1<AlignmentLinesOwner, Unit>() { // from class: androidx.compose.ui.node.LookaheadPassDelegate$remeasure$1$2
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(AlignmentLinesOwner alignmentLinesOwner) {
+                    invoke2(alignmentLinesOwner);
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2(AlignmentLinesOwner alignmentLinesOwner) {
+                    alignmentLinesOwner.getAlignmentLines().setUsedDuringParentMeasurement$ui_release(false);
+                }
+            });
+            if (this.measuredOnce) {
+            }
+            this.measuredOnce = true;
+            lookaheadDelegate = getOuterCoordinator().getLookaheadDelegate();
+            if (!(lookaheadDelegate == null)) {
+            }
+            this.layoutNodeLayoutDelegate.m6171performLookaheadMeasureBRTryo0$ui_release(j);
+            m6017setMeasuredSizeozmzZPI(IntSize.m7417constructorimpl((lookaheadDelegate.getHeight() & 4294967295L) | (lookaheadDelegate.getWidth() << 32)));
+            if (((int) (m7417constructorimpl >> 32)) == lookaheadDelegate.getWidth()) {
+            }
+        } catch (Throwable th) {
+            layoutNode.rethrowWithComposeStackTrace(th);
+            throw new KotlinNothingValueException();
         }
-        this.measuredOnce = true;
-        LookaheadDelegate lookaheadDelegate = getOuterCoordinator().getLookaheadDelegate();
-        if (!(lookaheadDelegate != null)) {
-            InlineClassHelperKt.throwIllegalStateException("Lookahead result from lookaheadRemeasure cannot be null");
-        }
-        this.layoutNodeLayoutDelegate.m5632performLookaheadMeasureBRTryo0$ui_release(j);
-        m5500setMeasuredSizeozmzZPI(IntSize.m6850constructorimpl((lookaheadDelegate.getHeight() & 4294967295L) | (lookaheadDelegate.getWidth() << 32)));
-        return (((int) (m6850constructorimpl >> 32)) == lookaheadDelegate.getWidth() && ((int) (m6850constructorimpl & 4294967295L)) == lookaheadDelegate.getHeight()) ? false : true;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.compose.ui.layout.Placeable
     /* renamed from: placeAt-f8xVGno */
-    public void mo5439placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
-        m5642placeSelfMLgxB_4(j, f, function1, null);
+    public void mo5955placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
+        m6187placeSelfMLgxB_4(j, f, function1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.compose.ui.layout.Placeable
     /* renamed from: placeAt-f8xVGno */
-    public void mo5499placeAtf8xVGno(long j, float f, GraphicsLayer graphicsLayer) {
-        m5642placeSelfMLgxB_4(j, f, null, graphicsLayer);
+    public void mo6016placeAtf8xVGno(long j, float f, GraphicsLayer graphicsLayer) {
+        m6187placeSelfMLgxB_4(j, f, null, graphicsLayer);
     }
 
     @Override // androidx.compose.ui.node.MotionReferencePlacementDelegate
@@ -655,99 +706,106 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
     }
 
     /* renamed from: placeSelf-MLgxB_4  reason: not valid java name */
-    private final void m5642placeSelfMLgxB_4(final long j, float f, Function1<? super GraphicsLayerScope, Unit> function1, GraphicsLayer graphicsLayer) {
-        LayoutNode parent$ui_release = getLayoutNode().getParent$ui_release();
-        if ((parent$ui_release != null ? parent$ui_release.getLayoutState$ui_release() : null) == LayoutNode.LayoutState.LookaheadLayingOut) {
-            this.layoutNodeLayoutDelegate.setDetachedFromParentLookaheadPlacement$ui_release(false);
-        }
-        if (getLayoutNode().isDeactivated()) {
-            InlineClassHelperKt.throwIllegalArgumentException("place is called on a deactivated node");
-        }
-        setLayoutState(LayoutNode.LayoutState.LookaheadLayingOut);
-        this.placedOnce = true;
-        this.onNodePlacedCalled = false;
-        if (!IntOffset.m6811equalsimpl0(j, this.lastPosition)) {
-            if (this.layoutNodeLayoutDelegate.getLookaheadCoordinatesAccessedDuringModifierPlacement() || this.layoutNodeLayoutDelegate.getLookaheadCoordinatesAccessedDuringPlacement()) {
-                setLayoutPending(true);
+    private final void m6187placeSelfMLgxB_4(final long j, float f, Function1<? super GraphicsLayerScope, Unit> function1, GraphicsLayer graphicsLayer) {
+        LayoutNode layoutNode = getLayoutNode();
+        try {
+            LayoutNode parent$ui_release = getLayoutNode().getParent$ui_release();
+            if ((parent$ui_release != null ? parent$ui_release.getLayoutState$ui_release() : null) == LayoutNode.LayoutState.LookaheadLayingOut) {
+                this.layoutNodeLayoutDelegate.setDetachedFromParentLookaheadPlacement$ui_release(false);
             }
-            notifyChildrenUsingLookaheadCoordinatesWhilePlacing();
-        }
-        final Owner requireOwner = LayoutNodeKt.requireOwner(getLayoutNode());
-        if (!getLayoutPending() && isPlaced()) {
-            LookaheadDelegate lookaheadDelegate = getOuterCoordinator().getLookaheadDelegate();
-            Intrinsics.checkNotNull(lookaheadDelegate);
-            lookaheadDelegate.m5639placeSelfApparentToRealOffsetgyyYBs$ui_release(j);
-            onNodePlaced$ui_release();
-        } else {
-            this.layoutNodeLayoutDelegate.setLookaheadCoordinatesAccessedDuringModifierPlacement(false);
-            getAlignmentLines().setUsedByModifierLayout$ui_release(false);
-            OwnerSnapshotObserver.observeLayoutModifierSnapshotReads$ui_release$default(requireOwner.getSnapshotObserver(), getLayoutNode(), false, new Function0<Unit>() { // from class: androidx.compose.ui.node.LookaheadPassDelegate$placeSelf$2
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(0);
+            if (getLayoutNode().isDeactivated()) {
+                InlineClassHelperKt.throwIllegalArgumentException("place is called on a deactivated node");
+            }
+            setLayoutState(LayoutNode.LayoutState.LookaheadLayingOut);
+            this.placedOnce = true;
+            this.onNodePlacedCalled = false;
+            if (!IntOffset.m7378equalsimpl0(j, this.lastPosition)) {
+                if (this.layoutNodeLayoutDelegate.getLookaheadCoordinatesAccessedDuringModifierPlacement() || this.layoutNodeLayoutDelegate.getLookaheadCoordinatesAccessedDuringPlacement()) {
+                    setLayoutPending(true);
                 }
+                notifyChildrenUsingLookaheadCoordinatesWhilePlacing();
+            }
+            final Owner requireOwner = LayoutNodeKt.requireOwner(getLayoutNode());
+            if (!getLayoutPending() && isPlaced()) {
+                LookaheadDelegate lookaheadDelegate = getOuterCoordinator().getLookaheadDelegate();
+                Intrinsics.checkNotNull(lookaheadDelegate);
+                lookaheadDelegate.m6184placeSelfApparentToRealOffsetgyyYBs$ui_release(j);
+                onNodePlaced$ui_release();
+            } else {
+                this.layoutNodeLayoutDelegate.setLookaheadCoordinatesAccessedDuringModifierPlacement(false);
+                getAlignmentLines().setUsedByModifierLayout$ui_release(false);
+                OwnerSnapshotObserver.observeLayoutModifierSnapshotReads$ui_release$default(requireOwner.getSnapshotObserver(), getLayoutNode(), false, new Function0<Unit>() { // from class: androidx.compose.ui.node.LookaheadPassDelegate$placeSelf$1$2
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
 
-                @Override // kotlin.jvm.functions.Function0
-                public /* bridge */ /* synthetic */ Unit invoke() {
-                    invoke2();
-                    return Unit.INSTANCE;
-                }
+                    @Override // kotlin.jvm.functions.Function0
+                    public /* bridge */ /* synthetic */ Unit invoke() {
+                        invoke2();
+                        return Unit.INSTANCE;
+                    }
 
-                /* JADX WARN: Removed duplicated region for block: B:15:0x0042  */
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                /*
-                    Code decompiled incorrectly, please refer to instructions dump.
-                */
-                public final void invoke2() {
-                    LayoutNode layoutNode;
-                    NodeCoordinator outerCoordinator;
-                    NodeCoordinator outerCoordinator2;
-                    LayoutNodeLayoutDelegate layoutNodeLayoutDelegate;
-                    NodeCoordinator outerCoordinator3;
-                    LookaheadDelegate lookaheadDelegate2;
-                    layoutNode = LookaheadPassDelegate.this.getLayoutNode();
-                    Placeable.PlacementScope placementScope = null;
-                    if (!LayoutNodeLayoutDelegateKt.isOutMostLookaheadRoot(layoutNode)) {
-                        layoutNodeLayoutDelegate = LookaheadPassDelegate.this.layoutNodeLayoutDelegate;
-                        if (!layoutNodeLayoutDelegate.getDetachedFromParentLookaheadPlacement$ui_release()) {
-                            outerCoordinator3 = LookaheadPassDelegate.this.getOuterCoordinator();
-                            NodeCoordinator wrappedBy$ui_release = outerCoordinator3.getWrappedBy$ui_release();
-                            if (wrappedBy$ui_release != null && (lookaheadDelegate2 = wrappedBy$ui_release.getLookaheadDelegate()) != null) {
-                                placementScope = lookaheadDelegate2.getPlacementScope();
+                    /* JADX WARN: Removed duplicated region for block: B:15:0x0042  */
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    /*
+                        Code decompiled incorrectly, please refer to instructions dump.
+                    */
+                    public final void invoke2() {
+                        LayoutNode layoutNode2;
+                        NodeCoordinator outerCoordinator;
+                        NodeCoordinator outerCoordinator2;
+                        LayoutNodeLayoutDelegate layoutNodeLayoutDelegate;
+                        NodeCoordinator outerCoordinator3;
+                        LookaheadDelegate lookaheadDelegate2;
+                        layoutNode2 = LookaheadPassDelegate.this.getLayoutNode();
+                        Placeable.PlacementScope placementScope = null;
+                        if (!LayoutNodeLayoutDelegateKt.isOutMostLookaheadRoot(layoutNode2)) {
+                            layoutNodeLayoutDelegate = LookaheadPassDelegate.this.layoutNodeLayoutDelegate;
+                            if (!layoutNodeLayoutDelegate.getDetachedFromParentLookaheadPlacement$ui_release()) {
+                                outerCoordinator3 = LookaheadPassDelegate.this.getOuterCoordinator();
+                                NodeCoordinator wrappedBy$ui_release = outerCoordinator3.getWrappedBy$ui_release();
+                                if (wrappedBy$ui_release != null && (lookaheadDelegate2 = wrappedBy$ui_release.getLookaheadDelegate()) != null) {
+                                    placementScope = lookaheadDelegate2.getPlacementScope();
+                                }
+                                if (placementScope == null) {
+                                    placementScope = requireOwner.getPlacementScope();
+                                }
+                                LookaheadPassDelegate lookaheadPassDelegate = LookaheadPassDelegate.this;
+                                long j2 = j;
+                                outerCoordinator2 = lookaheadPassDelegate.getOuterCoordinator();
+                                LookaheadDelegate lookaheadDelegate3 = outerCoordinator2.getLookaheadDelegate();
+                                Intrinsics.checkNotNull(lookaheadDelegate3);
+                                Placeable.PlacementScope.m6019place70tqf50$default(placementScope, lookaheadDelegate3, j2, 0.0f, 2, null);
                             }
-                            if (placementScope == null) {
-                                placementScope = requireOwner.getPlacementScope();
-                            }
-                            LookaheadPassDelegate lookaheadPassDelegate = LookaheadPassDelegate.this;
-                            long j2 = j;
-                            outerCoordinator2 = lookaheadPassDelegate.getOuterCoordinator();
-                            LookaheadDelegate lookaheadDelegate3 = outerCoordinator2.getLookaheadDelegate();
-                            Intrinsics.checkNotNull(lookaheadDelegate3);
-                            Placeable.PlacementScope.m5502place70tqf50$default(placementScope, lookaheadDelegate3, j2, 0.0f, 2, null);
                         }
+                        outerCoordinator = LookaheadPassDelegate.this.getOuterCoordinator();
+                        NodeCoordinator wrappedBy$ui_release2 = outerCoordinator.getWrappedBy$ui_release();
+                        if (wrappedBy$ui_release2 != null) {
+                            placementScope = wrappedBy$ui_release2.getPlacementScope();
+                        }
+                        if (placementScope == null) {
+                        }
+                        LookaheadPassDelegate lookaheadPassDelegate2 = LookaheadPassDelegate.this;
+                        long j22 = j;
+                        outerCoordinator2 = lookaheadPassDelegate2.getOuterCoordinator();
+                        LookaheadDelegate lookaheadDelegate32 = outerCoordinator2.getLookaheadDelegate();
+                        Intrinsics.checkNotNull(lookaheadDelegate32);
+                        Placeable.PlacementScope.m6019place70tqf50$default(placementScope, lookaheadDelegate32, j22, 0.0f, 2, null);
                     }
-                    outerCoordinator = LookaheadPassDelegate.this.getOuterCoordinator();
-                    NodeCoordinator wrappedBy$ui_release2 = outerCoordinator.getWrappedBy$ui_release();
-                    if (wrappedBy$ui_release2 != null) {
-                        placementScope = wrappedBy$ui_release2.getPlacementScope();
-                    }
-                    if (placementScope == null) {
-                    }
-                    LookaheadPassDelegate lookaheadPassDelegate2 = LookaheadPassDelegate.this;
-                    long j22 = j;
-                    outerCoordinator2 = lookaheadPassDelegate2.getOuterCoordinator();
-                    LookaheadDelegate lookaheadDelegate32 = outerCoordinator2.getLookaheadDelegate();
-                    Intrinsics.checkNotNull(lookaheadDelegate32);
-                    Placeable.PlacementScope.m5502place70tqf50$default(placementScope, lookaheadDelegate32, j22, 0.0f, 2, null);
-                }
-            }, 2, null);
+                }, 2, null);
+            }
+            this.lastPosition = j;
+            this.lastZIndex = f;
+            this.lastLayerBlock = function1;
+            this.lastExplicitLayer = graphicsLayer;
+            setLayoutState(LayoutNode.LayoutState.Idle);
+            Unit unit = Unit.INSTANCE;
+        } catch (Throwable th) {
+            layoutNode.rethrowWithComposeStackTrace(th);
+            throw new KotlinNothingValueException();
         }
-        this.lastPosition = j;
-        this.lastZIndex = f;
-        this.lastLayerBlock = function1;
-        this.lastExplicitLayer = graphicsLayer;
-        setLayoutState(LayoutNode.LayoutState.Idle);
     }
 
     @Override // androidx.compose.ui.layout.Placeable, androidx.compose.ui.layout.Measured
@@ -964,9 +1022,9 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
             if (layoutNode.getLookaheadMeasurePending$ui_release() && layoutNode.getMeasuredByParentInLookahead$ui_release() == LayoutNode.UsageByParent.InMeasureBlock) {
                 LookaheadPassDelegate lookaheadPassDelegate$ui_release = layoutNode.getLayoutDelegate$ui_release().getLookaheadPassDelegate$ui_release();
                 Intrinsics.checkNotNull(lookaheadPassDelegate$ui_release);
-                Constraints m5631getLastLookaheadConstraintsDWUhwKw = layoutNode.getLayoutDelegate$ui_release().m5631getLastLookaheadConstraintsDWUhwKw();
-                Intrinsics.checkNotNull(m5631getLastLookaheadConstraintsDWUhwKw);
-                if (lookaheadPassDelegate$ui_release.m5645remeasureBRTryo0(m5631getLastLookaheadConstraintsDWUhwKw.m6643unboximpl())) {
+                Constraints m6170getLastLookaheadConstraintsDWUhwKw = layoutNode.getLayoutDelegate$ui_release().m6170getLastLookaheadConstraintsDWUhwKw();
+                Intrinsics.checkNotNull(m6170getLastLookaheadConstraintsDWUhwKw);
+                if (lookaheadPassDelegate$ui_release.m6190remeasureBRTryo0(m6170getLastLookaheadConstraintsDWUhwKw.m7210unboximpl())) {
                     LayoutNode.requestLookaheadRemeasure$ui_release$default(getLayoutNode(), false, false, false, 7, null);
                 }
             }
@@ -985,7 +1043,7 @@ public final class LookaheadPassDelegate extends Placeable implements Measurable
             boolean isPlaced = isPlaced();
             lookaheadPassDelegate = this;
             try {
-                lookaheadPassDelegate.m5642placeSelfMLgxB_4(this.lastPosition, 0.0f, this.lastLayerBlock, this.lastExplicitLayer);
+                lookaheadPassDelegate.m6187placeSelfMLgxB_4(this.lastPosition, 0.0f, this.lastLayerBlock, this.lastExplicitLayer);
                 if (isPlaced && !lookaheadPassDelegate.onNodePlacedCalled && (parent$ui_release = getLayoutNode().getParent$ui_release()) != null) {
                     LayoutNode.requestLookaheadRelayout$ui_release$default(parent$ui_release, false, 1, null);
                 }

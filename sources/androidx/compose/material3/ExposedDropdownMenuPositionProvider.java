@@ -66,7 +66,7 @@ public final class ExposedDropdownMenuPositionProvider implements PopupPositionP
     }
 
     public /* synthetic */ ExposedDropdownMenuPositionProvider(Density density, int i, State state, int i2, AnonymousClass2 anonymousClass2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-        this(density, i, (i3 & 4) != 0 ? null : state, (i3 & 8) != 0 ? density.mo383roundToPx0680j_4(MenuKt.getMenuVerticalMargin()) : i2, (i3 & 16) != 0 ? new Function2<IntRect, IntRect, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuPositionProvider.2
+        this(density, i, (i3 & 4) != 0 ? null : state, (i3 & 8) != 0 ? density.mo413roundToPx0680j_4(MenuKt.getMenuVerticalMargin()) : i2, (i3 & 16) != 0 ? new Function2<IntRect, IntRect, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuPositionProvider.2
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(IntRect intRect, IntRect intRect2) {
             }
@@ -89,7 +89,7 @@ public final class ExposedDropdownMenuPositionProvider implements PopupPositionP
 
     @Override // androidx.compose.ui.window.PopupPositionProvider
     /* renamed from: calculatePosition-llwVHH4 */
-    public long mo358calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+    public long mo383calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
         MenuPosition.Horizontal horizontal;
         int i;
         MenuPosition.Vertical vertical;
@@ -97,12 +97,12 @@ public final class ExposedDropdownMenuPositionProvider implements PopupPositionP
         if (state != null) {
             state.getValue();
         }
-        long IntSize = IntSizeKt.IntSize(IntSize.m6855getWidthimpl(j), IntSize.m6854getHeightimpl(j) + this.topWindowInsets);
+        long IntSize = IntSizeKt.IntSize(IntSize.m7422getWidthimpl(j), IntSize.m7421getHeightimpl(j) + this.topWindowInsets);
         MenuPosition.Horizontal[] horizontalArr = new MenuPosition.Horizontal[3];
         int i2 = 0;
         horizontalArr[0] = this.startToAnchorStart;
         horizontalArr[1] = this.endToAnchorEnd;
-        if (IntOffset.m6812getXimpl(intRect.m6836getCenternOccac()) < IntSize.m6855getWidthimpl(IntSize) / 2) {
+        if (IntOffset.m7379getXimpl(intRect.m7403getCenternOccac()) < IntSize.m7422getWidthimpl(IntSize) / 2) {
             horizontal = this.leftToWindowLeft;
         } else {
             horizontal = this.rightToWindowRight;
@@ -116,8 +116,8 @@ public final class ExposedDropdownMenuPositionProvider implements PopupPositionP
                 i = 0;
                 break;
             }
-            i = ((MenuPosition.Horizontal) listOf.get(i3)).mo2695position95KtPRI(intRect, IntSize, IntSize.m6855getWidthimpl(j2), layoutDirection);
-            if (i3 == CollectionsKt.getLastIndex(listOf) || (i >= 0 && IntSize.m6855getWidthimpl(j2) + i <= IntSize.m6855getWidthimpl(IntSize))) {
+            i = ((MenuPosition.Horizontal) listOf.get(i3)).mo3002position95KtPRI(intRect, IntSize, IntSize.m7422getWidthimpl(j2), layoutDirection);
+            if (i3 == CollectionsKt.getLastIndex(listOf) || (i >= 0 && IntSize.m7422getWidthimpl(j2) + i <= IntSize.m7422getWidthimpl(IntSize))) {
                 break;
             }
             i3++;
@@ -125,7 +125,7 @@ public final class ExposedDropdownMenuPositionProvider implements PopupPositionP
         MenuPosition.Vertical[] verticalArr = new MenuPosition.Vertical[3];
         verticalArr[0] = this.topToAnchorBottom;
         verticalArr[1] = this.bottomToAnchorTop;
-        if (IntOffset.m6813getYimpl(intRect.m6836getCenternOccac()) < IntSize.m6854getHeightimpl(IntSize) / 2) {
+        if (IntOffset.m7380getYimpl(intRect.m7403getCenternOccac()) < IntSize.m7421getHeightimpl(IntSize) / 2) {
             vertical = this.topToWindowTop;
         } else {
             vertical = this.bottomToWindowBottom;
@@ -134,14 +134,14 @@ public final class ExposedDropdownMenuPositionProvider implements PopupPositionP
         List listOf2 = CollectionsKt.listOf((Object[]) verticalArr);
         int size2 = listOf2.size();
         for (int i4 = 0; i4 < size2; i4++) {
-            int mo2696positionJVtK1S4 = ((MenuPosition.Vertical) listOf2.get(i4)).mo2696positionJVtK1S4(intRect, IntSize, IntSize.m6854getHeightimpl(j2));
-            if (i4 == CollectionsKt.getLastIndex(listOf2) || (mo2696positionJVtK1S4 >= 0 && IntSize.m6854getHeightimpl(j2) + mo2696positionJVtK1S4 <= IntSize.m6854getHeightimpl(IntSize))) {
-                i2 = mo2696positionJVtK1S4;
+            int mo3003positionJVtK1S4 = ((MenuPosition.Vertical) listOf2.get(i4)).mo3003positionJVtK1S4(intRect, IntSize, IntSize.m7421getHeightimpl(j2));
+            if (i4 == CollectionsKt.getLastIndex(listOf2) || (mo3003positionJVtK1S4 >= 0 && IntSize.m7421getHeightimpl(j2) + mo3003positionJVtK1S4 <= IntSize.m7421getHeightimpl(IntSize))) {
+                i2 = mo3003positionJVtK1S4;
                 break;
             }
         }
         long IntOffset = IntOffsetKt.IntOffset(i, i2);
-        this.onPositionCalculated.invoke(intRect, IntRectKt.m6845IntRectVbeCjmY(IntOffset, j2));
+        this.onPositionCalculated.invoke(intRect, IntRectKt.m7412IntRectVbeCjmY(IntOffset, j2));
         return IntOffset;
     }
 }

@@ -9,11 +9,11 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
 final class ClassValueReferences<T> extends ClassValue<MutableSoftReference<T>> {
     public /* bridge */ /* synthetic */ Object computeValue(Class cls) {
-        return m10204computeValue((Class<?>) cls);
+        return m10768computeValue((Class<?>) cls);
     }
 
     /* renamed from: computeValue  reason: collision with other method in class */
-    protected MutableSoftReference<T> m10204computeValue(Class<?> type) {
+    protected MutableSoftReference<T> m10768computeValue(Class<?> type) {
         Intrinsics.checkNotNullParameter(type, "type");
         return new MutableSoftReference<>();
     }

@@ -13,7 +13,7 @@ import java.util.Queue;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class QueueDrainHelper {
     static final long COMPLETED_MASK = Long.MIN_VALUE;
     static final long REQUESTED_MASK = Long.MAX_VALUE;

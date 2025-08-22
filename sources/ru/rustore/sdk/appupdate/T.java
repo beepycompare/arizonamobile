@@ -10,46 +10,46 @@ import ru.rustore.sdk.core.tasks.Task;
 import ru.rustore.sdk.reactive.core.Disposable;
 import ru.rustore.sdk.reactive.single.Single;
 import ru.rustore.sdk.reactive.single.SingleSubscribeKt;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class T {
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class a extends Lambda implements Function1<Throwable, Unit> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Task<T>.TaskResultProvider f1349a;
+        public final /* synthetic */ Task<T>.TaskResultProvider f1359a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public a(Task<T>.TaskResultProvider taskResultProvider) {
             super(1);
-            this.f1349a = taskResultProvider;
+            this.f1359a = taskResultProvider;
         }
 
         @Override // kotlin.jvm.functions.Function1
         public final Unit invoke(Throwable th) {
             Throwable error = th;
             Intrinsics.checkNotNullParameter(error, "error");
-            this.f1349a.setTaskErrorResult(error);
+            this.f1359a.setTaskErrorResult(error);
             return Unit.INSTANCE;
         }
     }
 
     /* JADX INFO: Add missing generic type declarations: [T] */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class b<T> extends Lambda implements Function1<T, Unit> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Task<T>.TaskResultProvider f1350a;
+        public final /* synthetic */ Task<T>.TaskResultProvider f1360a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public b(Task<T>.TaskResultProvider taskResultProvider) {
             super(1);
-            this.f1350a = taskResultProvider;
+            this.f1360a = taskResultProvider;
         }
 
         @Override // kotlin.jvm.functions.Function1
         public final Unit invoke(Object obj) {
-            this.f1350a.setTaskSuccessResult(obj);
+            this.f1360a.setTaskSuccessResult(obj);
             return Unit.INSTANCE;
         }
     }

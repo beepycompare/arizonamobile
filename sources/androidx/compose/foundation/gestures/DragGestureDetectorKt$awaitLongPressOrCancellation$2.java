@@ -19,8 +19,8 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DragGestureDetector.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureDetectorKt$awaitLongPressOrCancellation$2", f = "DragGestureDetector.kt", i = {0, 0, 1, 1, 1}, l = {971, 993}, m = "invokeSuspend", n = {"$this$withTimeout", "finished", "$this$withTimeout", NotificationCompat.CATEGORY_EVENT, "finished"}, s = {"L$0", "I$0", "L$0", "L$1", "I$0"})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureDetectorKt$awaitLongPressOrCancellation$2", f = "DragGestureDetector.kt", i = {0, 0, 1, 1, 1}, l = {1015, 1037}, m = "invokeSuspend", n = {"$this$withTimeout", "finished", "$this$withTimeout", NotificationCompat.CATEGORY_EVENT, "finished"}, s = {"L$0", "I$0", "L$0", "L$1", "I$0"})
 /* loaded from: classes.dex */
 public final class DragGestureDetectorKt$awaitLongPressOrCancellation$2 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Ref.ObjectRef<PointerInputChange> $currentDown;
@@ -120,7 +120,7 @@ public final class DragGestureDetectorKt$awaitLongPressOrCancellation$2 extends 
             int size3 = changes2.size();
             for (int i5 = 0; i5 < size3; i5++) {
                 PointerInputChange pointerInputChange2 = changes2.get(i5);
-                if (pointerInputChange2.isConsumed() || PointerEventKt.m5258isOutOfBoundsjwHxaWs(pointerInputChange2, awaitPointerEventScope.mo5222getSizeYbymL2g(), awaitPointerEventScope.mo5221getExtendedTouchPaddingNHjbRc())) {
+                if (pointerInputChange2.isConsumed() || PointerEventKt.m5771isOutOfBoundsjwHxaWs(pointerInputChange2, awaitPointerEventScope.mo5735getSizeYbymL2g(), awaitPointerEventScope.mo5734getExtendedTouchPaddingNHjbRc())) {
                     break;
                 }
             }
@@ -144,7 +144,7 @@ public final class DragGestureDetectorKt$awaitLongPressOrCancellation$2 extends 
                     }
                     i2++;
                 }
-                if (!DragGestureDetectorKt.m447isPointerUpDmW0f2w(pointerEvent, this.$currentDown.element.m5311getIdJ3iCeTQ())) {
+                if (!DragGestureDetectorKt.m489isPointerUpDmW0f2w(pointerEvent, this.$currentDown.element.m5824getIdJ3iCeTQ())) {
                 }
                 awaitPointerEventScope = awaitPointerEventScope2;
                 obj3 = null;
@@ -174,7 +174,7 @@ public final class DragGestureDetectorKt$awaitLongPressOrCancellation$2 extends 
                     i2++;
                 }
             }
-            if (!DragGestureDetectorKt.m447isPointerUpDmW0f2w(pointerEvent, this.$currentDown.element.m5311getIdJ3iCeTQ())) {
+            if (!DragGestureDetectorKt.m489isPointerUpDmW0f2w(pointerEvent, this.$currentDown.element.m5824getIdJ3iCeTQ())) {
                 List<PointerInputChange> changes4 = pointerEvent.getChanges();
                 int size4 = changes4.size();
                 int i6 = 0;
@@ -220,7 +220,7 @@ public final class DragGestureDetectorKt$awaitLongPressOrCancellation$2 extends 
                     }
                     t = changes5.get(i7);
                     Ref.ObjectRef<PointerInputChange> objectRef3 = objectRef2;
-                    if (PointerId.m5295equalsimpl0(((PointerInputChange) t).m5311getIdJ3iCeTQ(), objectRef2.element.m5311getIdJ3iCeTQ())) {
+                    if (PointerId.m5808equalsimpl0(((PointerInputChange) t).m5824getIdJ3iCeTQ(), objectRef2.element.m5824getIdJ3iCeTQ())) {
                         break;
                     }
                     i7++;

@@ -2,7 +2,7 @@ package androidx.media3.extractor.mp4;
 
 import androidx.media3.extractor.SniffFailure;
 import com.google.common.primitives.ImmutableIntArray;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class UnsupportedBrandsSniffFailure implements SniffFailure {
     public final ImmutableIntArray compatibleBrands;
     public final int majorBrand;

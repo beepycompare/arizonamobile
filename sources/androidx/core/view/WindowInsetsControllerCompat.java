@@ -440,7 +440,7 @@ public final class WindowInsetsControllerCompat {
             WindowInsetsController.OnControllableInsetsChangedListener onControllableInsetsChangedListener2 = new WindowInsetsController.OnControllableInsetsChangedListener() { // from class: androidx.core.view.WindowInsetsControllerCompat$Impl30$$ExternalSyntheticLambda0
                 @Override // android.view.WindowInsetsController.OnControllableInsetsChangedListener
                 public final void onControllableInsetsChanged(WindowInsetsController windowInsetsController, int i) {
-                    WindowInsetsControllerCompat.Impl30.this.m7201xe96d8c51(onControllableInsetsChangedListener, windowInsetsController, i);
+                    WindowInsetsControllerCompat.Impl30.this.m7767xe96d8c51(onControllableInsetsChangedListener, windowInsetsController, i);
                 }
             };
             this.mListeners.put(onControllableInsetsChangedListener, onControllableInsetsChangedListener2);
@@ -449,7 +449,7 @@ public final class WindowInsetsControllerCompat {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$addOnControllableInsetsChangedListener$0$androidx-core-view-WindowInsetsControllerCompat$Impl30  reason: not valid java name */
-        public /* synthetic */ void m7201xe96d8c51(OnControllableInsetsChangedListener onControllableInsetsChangedListener, WindowInsetsController windowInsetsController, int i) {
+        public /* synthetic */ void m7767xe96d8c51(OnControllableInsetsChangedListener onControllableInsetsChangedListener, WindowInsetsController windowInsetsController, int i) {
             if (this.mInsetsController == windowInsetsController) {
                 onControllableInsetsChangedListener.onControllableInsetsChanged(this.mCompatController, i);
             }

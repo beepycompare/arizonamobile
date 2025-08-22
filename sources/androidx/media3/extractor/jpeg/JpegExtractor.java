@@ -11,7 +11,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class JpegExtractor implements Extractor {
     public static final int FLAG_READ_IMAGE = 1;
     private static final int JPEG_FILE_SIGNATURE = 65496;
@@ -21,7 +21,7 @@ public final class JpegExtractor implements Extractor {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Flags {
     }
 

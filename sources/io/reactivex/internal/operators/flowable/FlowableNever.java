@@ -3,7 +3,7 @@ package io.reactivex.internal.operators.flowable;
 import io.reactivex.Flowable;
 import io.reactivex.internal.subscriptions.EmptySubscription;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableNever extends Flowable<Object> {
     public static final Flowable<Object> INSTANCE = new FlowableNever();
 

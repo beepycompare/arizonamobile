@@ -1,7 +1,6 @@
 package androidx.compose.foundation.lazy.layout;
 
 import androidx.compose.animation.core.Animatable;
-import androidx.compose.animation.core.AnimationVector1D;
 import androidx.compose.animation.core.FiniteAnimationSpec;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.ui.graphics.layer.GraphicsLayer;
@@ -19,7 +18,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LazyLayoutItemAnimation.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animateDisappearance$1", f = "LazyLayoutItemAnimation.kt", i = {}, l = {ComposerKt.providerMapsKey}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class LazyLayoutItemAnimation$animateDisappearance$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -56,27 +55,17 @@ public final class LazyLayoutItemAnimation$animateDisappearance$1 extends Suspen
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 animatable = this.this$0.visibilityAnimation;
+                Float boxFloat = Boxing.boxFloat(0.0f);
+                FiniteAnimationSpec<Float> finiteAnimationSpec = this.$spec;
                 final GraphicsLayer graphicsLayer = this.$layer;
                 final LazyLayoutItemAnimation lazyLayoutItemAnimation = this.this$0;
                 this.label = 1;
-                if (Animatable.animateTo$default(animatable, Boxing.boxFloat(0.0f), this.$spec, null, new Function1<Animatable<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animateDisappearance$1.1
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(1);
-                    }
-
+                if (Animatable.animateTo$default(animatable, boxFloat, finiteAnimationSpec, null, new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animateDisappearance$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(Animatable<Float, AnimationVector1D> animatable2) {
-                        invoke2(animatable2);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(Animatable<Float, AnimationVector1D> animatable2) {
-                        Function0 function0;
-                        GraphicsLayer.this.setAlpha(animatable2.getValue().floatValue());
-                        function0 = lazyLayoutItemAnimation.onLayerPropertyChanged;
-                        function0.invoke();
+                    public final Object invoke(Object obj2) {
+                        Unit invokeSuspend$lambda$0;
+                        invokeSuspend$lambda$0 = LazyLayoutItemAnimation$animateDisappearance$1.invokeSuspend$lambda$0(GraphicsLayer.this, lazyLayoutItemAnimation, (Animatable) obj2);
+                        return invokeSuspend$lambda$0;
                     }
                 }, this, 4, null) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -93,5 +82,14 @@ public final class LazyLayoutItemAnimation$animateDisappearance$1 extends Suspen
             this.this$0.setDisappearanceAnimationInProgress(false);
             throw th;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(GraphicsLayer graphicsLayer, LazyLayoutItemAnimation lazyLayoutItemAnimation, Animatable animatable) {
+        Function0 function0;
+        graphicsLayer.setAlpha(((Number) animatable.getValue()).floatValue());
+        function0 = lazyLayoutItemAnimation.onLayerPropertyChanged;
+        function0.invoke();
+        return Unit.INSTANCE;
     }
 }

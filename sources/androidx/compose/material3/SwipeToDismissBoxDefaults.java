@@ -39,7 +39,7 @@ public final class SwipeToDismissBoxDefaults {
                 }
 
                 public final Float invoke(float f) {
-                    return Float.valueOf(Density.this.mo389toPx0680j_4(Dp.m6684constructorimpl(56)));
+                    return Float.valueOf(Density.this.mo419toPx0680j_4(Dp.m7251constructorimpl(56)));
                 }
 
                 @Override // kotlin.jvm.functions.Function1

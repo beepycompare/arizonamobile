@@ -4,16 +4,16 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int fastScrollEnabled = 0x7f04023f;
-        public static int fastScrollHorizontalThumbDrawable = 0x7f040240;
-        public static int fastScrollHorizontalTrackDrawable = 0x7f040241;
-        public static int fastScrollVerticalThumbDrawable = 0x7f040242;
-        public static int fastScrollVerticalTrackDrawable = 0x7f040243;
-        public static int layoutManager = 0x7f04033e;
-        public static int recyclerViewStyle = 0x7f0404f5;
-        public static int reverseLayout = 0x7f040502;
-        public static int spanCount = 0x7f040558;
-        public static int stackFromEnd = 0x7f040569;
+        public static int fastScrollEnabled = 0x7f040240;
+        public static int fastScrollHorizontalThumbDrawable = 0x7f040241;
+        public static int fastScrollHorizontalTrackDrawable = 0x7f040242;
+        public static int fastScrollVerticalThumbDrawable = 0x7f040243;
+        public static int fastScrollVerticalTrackDrawable = 0x7f040244;
+        public static int layoutManager = 0x7f04033f;
+        public static int recyclerViewStyle = 0x7f0404f6;
+        public static int reverseLayout = 0x7f040503;
+        public static int spanCount = 0x7f040559;
+        public static int stackFromEnd = 0x7f04056a;
 
         private attr() {
         }
@@ -34,7 +34,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int item_touch_helper_previous_elevation = 0x7f0a06fe;
+        public static int item_touch_helper_previous_elevation = 0x7f0a06fa;
 
         private id() {
         }
@@ -42,7 +42,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class styleable {
-        public static int[] RecyclerView = {16842948, 16842987, 16842993, com.arizona21.game.web.R.attr.fastScrollEnabled, com.arizona21.game.web.R.attr.fastScrollHorizontalThumbDrawable, com.arizona21.game.web.R.attr.fastScrollHorizontalTrackDrawable, com.arizona21.game.web.R.attr.fastScrollVerticalThumbDrawable, com.arizona21.game.web.R.attr.fastScrollVerticalTrackDrawable, com.arizona21.game.web.R.attr.layoutManager, com.arizona21.game.web.R.attr.reverseLayout, com.arizona21.game.web.R.attr.spanCount, com.arizona21.game.web.R.attr.stackFromEnd};
+        public static int[] RecyclerView = {16842948, 16842987, 16842993, com.arizona21.game.R.attr.fastScrollEnabled, com.arizona21.game.R.attr.fastScrollHorizontalThumbDrawable, com.arizona21.game.R.attr.fastScrollHorizontalTrackDrawable, com.arizona21.game.R.attr.fastScrollVerticalThumbDrawable, com.arizona21.game.R.attr.fastScrollVerticalTrackDrawable, com.arizona21.game.R.attr.layoutManager, com.arizona21.game.R.attr.reverseLayout, com.arizona21.game.R.attr.spanCount, com.arizona21.game.R.attr.stackFromEnd};
         public static int RecyclerView_android_clipToPadding = 0x00000001;
         public static int RecyclerView_android_descendantFocusability = 0x00000002;
         public static int RecyclerView_android_orientation = 0x00000000;

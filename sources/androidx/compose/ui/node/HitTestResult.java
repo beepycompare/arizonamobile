@@ -19,8 +19,8 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
 /* compiled from: HitTestResult.kt */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u001e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0010(\n\u0002\b\u0002\n\u0002\u0010*\n\u0002\b\u000e\b\u0000\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002;<B\u0005¢\u0006\u0002\u0010\u0003J\u0006\u0010\u000e\u001a\u00020\u000fJ\u0006\u0010\u0010\u001a\u00020\u000fJ\u0011\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0002H\u0096\u0002J\u0016\u0010\u0014\u001a\u00020\u00122\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00020\u0016H\u0016J\u0015\u0010\u0017\u001a\u00020\u0018H\u0002ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b\u0019\u0010\u001aJ\u0011\u0010\u001b\u001a\u00020\u00022\u0006\u0010\u001c\u001a\u00020\u0007H\u0096\u0002J\u0006\u0010\u001d\u001a\u00020\u0012J'\u0010\u001e\u001a\u00020\u000f2\u0006\u0010\u001f\u001a\u00020\u00022\u0006\u0010 \u001a\u00020\u00122\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u000f0\"H\u0086\bJ$\u0010#\u001a\u00020\u000f2\u0006\u0010\u001f\u001a\u00020\u00022\u0006\u0010 \u001a\u00020\u00122\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u000f0\"J/\u0010$\u001a\u00020\u000f2\u0006\u0010\u001f\u001a\u00020\u00022\u0006\u0010%\u001a\u00020&2\u0006\u0010 \u001a\u00020\u00122\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u000f0\"H\u0086\bJ7\u0010$\u001a\u00020\u000f2\u0006\u0010\u001f\u001a\u00020\u00022\u0006\u0010%\u001a\u00020&2\u0006\u0010 \u001a\u00020\u00122\u0006\u0010'\u001a\u00020\u00122\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u000f0\"H\u0086\bJ\u0010\u0010(\u001a\u00020\u00072\u0006\u0010\u0013\u001a\u00020\u0002H\u0016J\b\u0010)\u001a\u00020\u0012H\u0016J\u0016\u0010*\u001a\u00020\u00122\u0006\u0010%\u001a\u00020&2\u0006\u0010 \u001a\u00020\u0012J\u000f\u0010+\u001a\b\u0012\u0004\u0012\u00020\u00020,H\u0096\u0002J\u0010\u0010-\u001a\u00020\u00072\u0006\u0010\u0013\u001a\u00020\u0002H\u0016J\u000e\u0010.\u001a\b\u0012\u0004\u0012\u00020\u00020/H\u0016J\u0016\u0010.\u001a\b\u0012\u0004\u0012\u00020\u00020/2\u0006\u0010\u001c\u001a\u00020\u0007H\u0016J\u0010\u00100\u001a\u00020\u000f2\u0006\u00101\u001a\u00020\u0007H\u0002J\u0018\u00102\u001a\u00020\u000f2\u0006\u00103\u001a\u00020\u00072\u0006\u00104\u001a\u00020\u0007H\u0002J\u0017\u00105\u001a\u00020\u000f2\f\u00106\u001a\b\u0012\u0004\u0012\u00020\u000f0\"H\u0086\bJ,\u00107\u001a\u00020\u000f2\u0006\u0010\u001f\u001a\u00020\u00022\u0006\u0010%\u001a\u00020&2\u0006\u0010 \u001a\u00020\u00122\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u000f0\"J\u001e\u00108\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\u0006\u00109\u001a\u00020\u00072\u0006\u0010:\u001a\u00020\u0007H\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\b\u001a\u00020\u00078VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\t\u0010\nR\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\fX\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0002\b!\n\u0005\b¡\u001e0\u0001¨\u0006="}, d2 = {"Landroidx/compose/ui/node/HitTestResult;", "", "Landroidx/compose/ui/Modifier$Node;", "()V", "distanceFromEdgeAndFlags", "Landroidx/collection/MutableLongList;", "hitDepth", "", "size", "getSize", "()I", "values", "Landroidx/collection/MutableObjectList;", "", "acceptHits", "", "clear", "contains", "", "element", "containsAll", "elements", "", "findBestHitDistance", "Landroidx/compose/ui/node/DistanceAndFlags;", "findBestHitDistance-fn2tFes", "()J", "get", FirebaseAnalytics.Param.INDEX, "hasHit", "hit", "node", "isInLayer", "childHitTest", "Lkotlin/Function0;", "hitExpandedTouchBounds", "hitInMinimumTouchTarget", "distanceFromEdge", "", "isInExpandedBounds", "indexOf", "isEmpty", "isHitInMinimumTouchTargetBetter", "iterator", "", "lastIndexOf", "listIterator", "", "removeNodeAtDepth", "depth", "removeNodesInRange", "startDepth", "endDepth", "siblingHits", "block", "speculativeHit", "subList", "fromIndex", "toIndex", "HitTestResultIterator", "SubList", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u001e\n\u0002\b\u0005\n\u0002\u0010(\n\u0002\b\u0002\n\u0002\u0010*\n\u0002\b\u0007\b\u0001\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002<=B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u0006\u0010\u000f\u001a\u00020\u0010J\u0006\u0010\u0011\u001a\u00020\u0012J\u0016\u0010\u0013\u001a\u00020\u00102\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0010J\u000f\u0010\u0017\u001a\u00020\u0018H\u0002¢\u0006\u0004\b\u0019\u0010\u001aJ'\u0010\u001b\u001a\u00020\u00122\u0006\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u0016\u001a\u00020\u00102\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00120\u001eH\u0086\bJ/\u0010\u001f\u001a\u00020\u00122\u0006\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00102\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00120\u001eH\u0086\bJ7\u0010\u001f\u001a\u00020\u00122\u0006\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00102\u0006\u0010 \u001a\u00020\u00102\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00120\u001eH\u0086\bJ$\u0010!\u001a\u00020\u00122\u0006\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u0016\u001a\u00020\u00102\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00120\u001eJ,\u0010\"\u001a\u00020\u00122\u0006\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00102\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00120\u001eJ\u0010\u0010#\u001a\u00020\u00122\u0006\u0010$\u001a\u00020\u000bH\u0002J\u0018\u0010%\u001a\u00020\u00122\u0006\u0010&\u001a\u00020\u000b2\u0006\u0010'\u001a\u00020\u000bH\u0002J\u0017\u0010(\u001a\u00020\u00122\f\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00120\u001eH\u0086\bJ\u0011\u0010*\u001a\u00020\u00102\u0006\u0010+\u001a\u00020\u0002H\u0096\u0002J\u0016\u0010,\u001a\u00020\u00102\f\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00020.H\u0016J\u0011\u0010/\u001a\u00020\u00022\u0006\u00100\u001a\u00020\u000bH\u0096\u0002J\u0010\u00101\u001a\u00020\u000b2\u0006\u0010+\u001a\u00020\u0002H\u0016J\b\u00102\u001a\u00020\u0010H\u0016J\u000f\u00103\u001a\b\u0012\u0004\u0012\u00020\u000204H\u0096\u0002J\u0010\u00105\u001a\u00020\u000b2\u0006\u0010+\u001a\u00020\u0002H\u0016J\u000e\u00106\u001a\b\u0012\u0004\u0012\u00020\u000207H\u0016J\u0016\u00106\u001a\b\u0012\u0004\u0012\u00020\u0002072\u0006\u00100\u001a\u00020\u000bH\u0016J\u001e\u00108\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\u0006\u00109\u001a\u00020\u000b2\u0006\u0010:\u001a\u00020\u000bH\u0016J\u0006\u0010;\u001a\u00020\u0012R\u0014\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\u00020\u000b8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\r\u0010\u000e¨\u0006>"}, d2 = {"Landroidx/compose/ui/node/HitTestResult;", "", "Landroidx/compose/ui/Modifier$Node;", "<init>", "()V", "values", "Landroidx/collection/MutableObjectList;", "", "distanceFromEdgeAndFlags", "Landroidx/collection/MutableLongList;", "hitDepth", "", "size", "getSize", "()I", "hasHit", "", "acceptHits", "", "isHitInMinimumTouchTargetBetter", "distanceFromEdge", "", "isInLayer", "findBestHitDistance", "Landroidx/compose/ui/node/DistanceAndFlags;", "findBestHitDistance-fn2tFes", "()J", "hit", "node", "childHitTest", "Lkotlin/Function0;", "hitInMinimumTouchTarget", "isInExpandedBounds", "hitExpandedTouchBounds", "speculativeHit", "removeNodeAtDepth", "depth", "removeNodesInRange", "startDepth", "endDepth", "siblingHits", "block", "contains", "element", "containsAll", "elements", "", "get", FirebaseAnalytics.Param.INDEX, "indexOf", "isEmpty", "iterator", "", "lastIndexOf", "listIterator", "", "subList", "fromIndex", "toIndex", "clear", "HitTestResultIterator", "SubList", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
     public static final int $stable = 8;
     private MutableObjectList<Object> values = new MutableObjectList<>(16);
@@ -88,7 +88,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
     }
 
     @Override // java.util.List, java.util.Collection
-    public boolean removeAll(Collection<? extends Object> collection) {
+    public boolean removeAll(Collection<?> collection) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -97,7 +97,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
     }
 
     /* renamed from: removeFirst */
-    public /* bridge */ /* synthetic */ Object m5600removeFirst() {
+    public /* bridge */ /* synthetic */ Object m6139removeFirst() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -106,7 +106,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
     }
 
     /* renamed from: removeLast */
-    public /* bridge */ /* synthetic */ Object m5601removeLast() {
+    public /* bridge */ /* synthetic */ Object m6140removeLast() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -116,7 +116,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
     }
 
     @Override // java.util.List, java.util.Collection
-    public boolean retainAll(Collection<? extends Object> collection) {
+    public boolean retainAll(Collection<?> collection) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -199,8 +199,8 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
     }
 
     public final boolean hasHit() {
-        long m5599findBestHitDistancefn2tFes = m5599findBestHitDistancefn2tFes();
-        return DistanceAndFlags.m5580getDistanceimpl(m5599findBestHitDistancefn2tFes) < 0.0f && DistanceAndFlags.m5583isInLayerimpl(m5599findBestHitDistancefn2tFes) && !DistanceAndFlags.m5582isInExpandedBoundsimpl(m5599findBestHitDistancefn2tFes);
+        long m6138findBestHitDistancefn2tFes = m6138findBestHitDistancefn2tFes();
+        return DistanceAndFlags.m6119getDistanceimpl(m6138findBestHitDistancefn2tFes) < 0.0f && DistanceAndFlags.m6122isInLayerimpl(m6138findBestHitDistancefn2tFes) && !DistanceAndFlags.m6121isInExpandedBoundsimpl(m6138findBestHitDistancefn2tFes);
     }
 
     public final void acceptHits() {
@@ -211,21 +211,21 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
         if (this.hitDepth == CollectionsKt.getLastIndex(this)) {
             return true;
         }
-        return DistanceAndFlags.m5576compareTo9YPOF3E(m5599findBestHitDistancefn2tFes(), HitTestResultKt.DistanceAndFlags$default(f, z, false, 4, null)) > 0;
+        return DistanceAndFlags.m6115compareTo9YPOF3E(m6138findBestHitDistancefn2tFes(), HitTestResultKt.DistanceAndFlags$default(f, z, false, 4, null)) > 0;
     }
 
     /* renamed from: findBestHitDistance-fn2tFes */
-    private final long m5599findBestHitDistancefn2tFes() {
+    private final long m6138findBestHitDistancefn2tFes() {
         long DistanceAndFlags$default = HitTestResultKt.DistanceAndFlags$default(Float.POSITIVE_INFINITY, false, false, 4, null);
         int i = this.hitDepth + 1;
         int lastIndex = CollectionsKt.getLastIndex(this);
         if (i <= lastIndex) {
             while (true) {
-                long m5577constructorimpl = DistanceAndFlags.m5577constructorimpl(this.distanceFromEdgeAndFlags.get(i));
-                if (DistanceAndFlags.m5576compareTo9YPOF3E(m5577constructorimpl, DistanceAndFlags$default) < 0) {
-                    DistanceAndFlags$default = m5577constructorimpl;
+                long m6116constructorimpl = DistanceAndFlags.m6116constructorimpl(this.distanceFromEdgeAndFlags.get(i));
+                if (DistanceAndFlags.m6115compareTo9YPOF3E(m6116constructorimpl, DistanceAndFlags$default) < 0) {
+                    DistanceAndFlags$default = m6116constructorimpl;
                 }
-                if ((DistanceAndFlags.m5580getDistanceimpl(DistanceAndFlags$default) < 0.0f && DistanceAndFlags.m5583isInLayerimpl(DistanceAndFlags$default)) || i == lastIndex) {
+                if ((DistanceAndFlags.m6119getDistanceimpl(DistanceAndFlags$default) < 0.0f && DistanceAndFlags.m6122isInLayerimpl(DistanceAndFlags$default)) || i == lastIndex) {
                     break;
                 }
                 i++;
@@ -264,9 +264,9 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
             this.hitDepth = i;
             return;
         }
-        long m5599findBestHitDistancefn2tFes = m5599findBestHitDistancefn2tFes();
+        long m6138findBestHitDistancefn2tFes = m6138findBestHitDistancefn2tFes();
         int i2 = this.hitDepth;
-        if (DistanceAndFlags.m5582isInExpandedBoundsimpl(m5599findBestHitDistancefn2tFes)) {
+        if (DistanceAndFlags.m6121isInExpandedBoundsimpl(m6138findBestHitDistancefn2tFes)) {
             this.hitDepth = CollectionsKt.getLastIndex(hitTestResult);
             int i3 = this.hitDepth;
             removeNodesInRange(this.hitDepth + 1, size());
@@ -277,11 +277,11 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
             mutableLongList2.add(DistanceAndFlags2);
             function0.invoke();
             this.hitDepth = i3;
-            if (DistanceAndFlags.m5580getDistanceimpl(m5599findBestHitDistancefn2tFes()) < 0.0f) {
+            if (DistanceAndFlags.m6119getDistanceimpl(m6138findBestHitDistancefn2tFes()) < 0.0f) {
                 removeNodesInRange(i2 + 1, this.hitDepth + 1);
             }
             this.hitDepth = i2;
-        } else if (DistanceAndFlags.m5580getDistanceimpl(m5599findBestHitDistancefn2tFes) > 0.0f) {
+        } else if (DistanceAndFlags.m6119getDistanceimpl(m6138findBestHitDistancefn2tFes) > 0.0f) {
             int i4 = this.hitDepth;
             removeNodesInRange(this.hitDepth + 1, size());
             this.hitDepth++;
@@ -309,13 +309,13 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
             mutableLongList.add(DistanceAndFlags2);
             function0.invoke();
             this.hitDepth = i2;
-            if (this.hitDepth + 1 == CollectionsKt.getLastIndex(hitTestResult) || DistanceAndFlags.m5582isInExpandedBoundsimpl(m5599findBestHitDistancefn2tFes())) {
+            if (this.hitDepth + 1 == CollectionsKt.getLastIndex(hitTestResult) || DistanceAndFlags.m6121isInExpandedBoundsimpl(m6138findBestHitDistancefn2tFes())) {
                 removeNodeAtDepth(this.hitDepth + 1);
                 return;
             }
             return;
         }
-        long m5599findBestHitDistancefn2tFes = m5599findBestHitDistancefn2tFes();
+        long m6138findBestHitDistancefn2tFes = m6138findBestHitDistancefn2tFes();
         int i3 = this.hitDepth;
         this.hitDepth = CollectionsKt.getLastIndex(hitTestResult);
         int i4 = this.hitDepth;
@@ -327,10 +327,10 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
         mutableLongList2.add(DistanceAndFlags);
         function0.invoke();
         this.hitDepth = i4;
-        long m5599findBestHitDistancefn2tFes2 = m5599findBestHitDistancefn2tFes();
-        if (this.hitDepth + 1 < CollectionsKt.getLastIndex(hitTestResult) && DistanceAndFlags.m5576compareTo9YPOF3E(m5599findBestHitDistancefn2tFes, m5599findBestHitDistancefn2tFes2) > 0) {
+        long m6138findBestHitDistancefn2tFes2 = m6138findBestHitDistancefn2tFes();
+        if (this.hitDepth + 1 < CollectionsKt.getLastIndex(hitTestResult) && DistanceAndFlags.m6115compareTo9YPOF3E(m6138findBestHitDistancefn2tFes, m6138findBestHitDistancefn2tFes2) > 0) {
             int i5 = i3 + 1;
-            if (DistanceAndFlags.m5582isInExpandedBoundsimpl(m5599findBestHitDistancefn2tFes2)) {
+            if (DistanceAndFlags.m6121isInExpandedBoundsimpl(m6138findBestHitDistancefn2tFes2)) {
                 i = this.hitDepth + 2;
             } else {
                 i = this.hitDepth + 1;
@@ -366,7 +366,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
     }
 
     @Override // java.util.List, java.util.Collection
-    public boolean containsAll(Collection<? extends Object> collection) {
+    public boolean containsAll(Collection<?> collection) {
         Iterator<T> it = collection.iterator();
         while (it.hasNext()) {
             if (!contains((Object) ((Modifier.Node) it.next()))) {
@@ -440,8 +440,8 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
     }
 
     /* compiled from: HitTestResult.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010*\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0006\b\u0082\u0004\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B#\u0012\b\b\u0002\u0010\u0003\u001a\u00020\u0004\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0004\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0004¢\u0006\u0002\u0010\u0007J\t\u0010\u000e\u001a\u00020\u000fH\u0096\u0002J\b\u0010\u0010\u001a\u00020\u000fH\u0016J\t\u0010\u0011\u001a\u00020\u0002H\u0096\u0002J\b\u0010\u0012\u001a\u00020\u0004H\u0016J\b\u0010\u0013\u001a\u00020\u0002H\u0016J\b\u0010\u0014\u001a\u00020\u0004H\u0016R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u0011\u0010\u0006\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\tR\u0011\u0010\u0005\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\t¨\u0006\u0015"}, d2 = {"Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;", "", "Landroidx/compose/ui/Modifier$Node;", FirebaseAnalytics.Param.INDEX, "", "minIndex", "maxIndex", "(Landroidx/compose/ui/node/HitTestResult;III)V", "getIndex", "()I", "setIndex", "(I)V", "getMaxIndex", "getMinIndex", "hasNext", "", "hasPrevious", "next", "nextIndex", "previous", "previousIndex", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010*\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0006\b\u0082\u0004\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B%\u0012\b\b\u0002\u0010\u0003\u001a\u00020\u0004\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0004\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0004¢\u0006\u0004\b\u0007\u0010\bJ\t\u0010\u000f\u001a\u00020\u0010H\u0096\u0002J\b\u0010\u0011\u001a\u00020\u0010H\u0016J\t\u0010\u0012\u001a\u00020\u0002H\u0096\u0002J\b\u0010\u0013\u001a\u00020\u0004H\u0016J\b\u0010\u0014\u001a\u00020\u0002H\u0016J\b\u0010\u0015\u001a\u00020\u0004H\u0016R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\fR\u0011\u0010\u0005\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\nR\u0011\u0010\u0006\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\n¨\u0006\u0016"}, d2 = {"Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;", "", "Landroidx/compose/ui/Modifier$Node;", FirebaseAnalytics.Param.INDEX, "", "minIndex", "maxIndex", "<init>", "(Landroidx/compose/ui/node/HitTestResult;III)V", "getIndex", "()I", "setIndex", "(I)V", "getMinIndex", "getMaxIndex", "hasNext", "", "hasPrevious", "next", "nextIndex", "previous", "previousIndex", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     private final class HitTestResultIterator implements ListIterator<Modifier.Node>, KMappedMarker {
         private int index;
         private final int maxIndex;
@@ -541,8 +541,8 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
     }
 
     /* compiled from: HitTestResult.kt */
-    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u001e\n\u0002\b\u0005\n\u0002\u0010(\n\u0002\b\u0002\n\u0002\u0010*\n\u0002\b\u0004\b\u0082\u0004\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0015\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0004¢\u0006\u0002\u0010\u0006J\u0011\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u0002H\u0096\u0002J\u0016\u0010\u000f\u001a\u00020\r2\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00020\u0011H\u0016J\u0011\u0010\u0012\u001a\u00020\u00022\u0006\u0010\u0013\u001a\u00020\u0004H\u0096\u0002J\u0010\u0010\u0014\u001a\u00020\u00042\u0006\u0010\u000e\u001a\u00020\u0002H\u0016J\b\u0010\u0015\u001a\u00020\rH\u0016J\u000f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00020\u0017H\u0096\u0002J\u0010\u0010\u0018\u001a\u00020\u00042\u0006\u0010\u000e\u001a\u00020\u0002H\u0016J\u000e\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00020\u001aH\u0016J\u0016\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\u0004H\u0016J\u001e\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\u0006\u0010\u001c\u001a\u00020\u00042\u0006\u0010\u001d\u001a\u00020\u0004H\u0016R\u0011\u0010\u0005\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\bR\u0014\u0010\n\u001a\u00020\u00048VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000b\u0010\b¨\u0006\u001e"}, d2 = {"Landroidx/compose/ui/node/HitTestResult$SubList;", "", "Landroidx/compose/ui/Modifier$Node;", "minIndex", "", "maxIndex", "(Landroidx/compose/ui/node/HitTestResult;II)V", "getMaxIndex", "()I", "getMinIndex", "size", "getSize", "contains", "", "element", "containsAll", "elements", "", "get", FirebaseAnalytics.Param.INDEX, "indexOf", "isEmpty", "iterator", "", "lastIndexOf", "listIterator", "", "subList", "fromIndex", "toIndex", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u001e\n\u0002\b\u0005\n\u0002\u0010(\n\u0002\b\u0002\n\u0002\u0010*\n\u0002\b\u0004\b\u0082\u0004\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0004¢\u0006\u0004\b\u0006\u0010\u0007J\u0011\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0002H\u0096\u0002J\u0016\u0010\u0010\u001a\u00020\u000e2\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00020\u0012H\u0016J\u0011\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u0004H\u0096\u0002J\u0010\u0010\u0015\u001a\u00020\u00042\u0006\u0010\u000f\u001a\u00020\u0002H\u0016J\b\u0010\u0016\u001a\u00020\u000eH\u0016J\u000f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00020\u0018H\u0096\u0002J\u0010\u0010\u0019\u001a\u00020\u00042\u0006\u0010\u000f\u001a\u00020\u0002H\u0016J\u000e\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00020\u001bH\u0016J\u0016\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00020\u001b2\u0006\u0010\u0014\u001a\u00020\u0004H\u0016J\u001e\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\u0006\u0010\u001d\u001a\u00020\u00042\u0006\u0010\u001e\u001a\u00020\u0004H\u0016R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0005\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\tR\u0014\u0010\u000b\u001a\u00020\u00048VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\t¨\u0006\u001f"}, d2 = {"Landroidx/compose/ui/node/HitTestResult$SubList;", "", "Landroidx/compose/ui/Modifier$Node;", "minIndex", "", "maxIndex", "<init>", "(Landroidx/compose/ui/node/HitTestResult;II)V", "getMinIndex", "()I", "getMaxIndex", "size", "getSize", "contains", "", "element", "containsAll", "elements", "", "get", FirebaseAnalytics.Param.INDEX, "indexOf", "isEmpty", "iterator", "", "lastIndexOf", "listIterator", "", "subList", "fromIndex", "toIndex", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     private final class SubList implements List<Modifier.Node>, KMappedMarker {
         private final int maxIndex;
         private final int minIndex;
@@ -613,7 +613,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
         }
 
         @Override // java.util.List, java.util.Collection
-        public boolean removeAll(Collection<? extends Object> collection) {
+        public boolean removeAll(Collection<?> collection) {
             throw new UnsupportedOperationException("Operation is not supported for read-only collection");
         }
 
@@ -622,7 +622,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
         }
 
         /* renamed from: removeFirst */
-        public /* bridge */ /* synthetic */ Object m5602removeFirst() {
+        public /* bridge */ /* synthetic */ Object m6141removeFirst() {
             throw new UnsupportedOperationException("Operation is not supported for read-only collection");
         }
 
@@ -631,7 +631,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
         }
 
         /* renamed from: removeLast */
-        public /* bridge */ /* synthetic */ Object m5603removeLast() {
+        public /* bridge */ /* synthetic */ Object m6142removeLast() {
             throw new UnsupportedOperationException("Operation is not supported for read-only collection");
         }
 
@@ -641,7 +641,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
         }
 
         @Override // java.util.List, java.util.Collection
-        public boolean retainAll(Collection<? extends Object> collection) {
+        public boolean retainAll(Collection<?> collection) {
             throw new UnsupportedOperationException("Operation is not supported for read-only collection");
         }
 
@@ -722,7 +722,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
         }
 
         @Override // java.util.List, java.util.Collection
-        public boolean containsAll(Collection<? extends Object> collection) {
+        public boolean containsAll(Collection<?> collection) {
             Iterator<T> it = collection.iterator();
             while (it.hasNext()) {
                 if (!contains((Object) ((Modifier.Node) it.next()))) {

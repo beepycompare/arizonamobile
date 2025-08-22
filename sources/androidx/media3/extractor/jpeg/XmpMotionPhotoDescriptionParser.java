@@ -13,7 +13,7 @@ import java.io.StringReader;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class XmpMotionPhotoDescriptionParser {
     private static final String TAG = "MotionPhotoXmpParser";
     private static final String[] MOTION_PHOTO_ATTRIBUTE_NAMES = {"Camera:MotionPhoto", "GCamera:MotionPhoto", "Camera:MicroVideo", "GCamera:MicroVideo"};

@@ -9,7 +9,7 @@ import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class ItemTradeBinding implements ViewBinding {
     public final CardView cvColoredItem;
     public final CardView item;

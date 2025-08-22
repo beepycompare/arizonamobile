@@ -11,7 +11,7 @@ import ru.rustore.sdk.reactive.core.Disposable;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: SingleOnErrorReturn.kt */
 @Metadata(d1 = {"\u00001\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0003\n\u0002\b\u0006*\u0001\u0000\b\n\u0018\u00002\b\u0012\u0004\u0012\u00028\u00000\u00012\u00020\u0002J\b\u0010\u0007\u001a\u00020\bH\u0016J\b\u0010\t\u001a\u00020\nH\u0016J\u0010\u0010\u000b\u001a\u00020\b2\u0006\u0010\f\u001a\u00020\rH\u0016J\u0010\u0010\u000e\u001a\u00020\b2\u0006\u0010\u000f\u001a\u00020\u0002H\u0016J\u0015\u0010\u0010\u001a\u00020\b2\u0006\u0010\u0011\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u0012R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0005\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"ru/rustore/sdk/reactive/single/SingleOnErrorReturn$subscribe$wrappedObserver$1", "Lru/rustore/sdk/reactive/single/SingleObserver;", "Lru/rustore/sdk/reactive/core/Disposable;", "disposed", "Ljava/util/concurrent/atomic/AtomicBoolean;", "upstreamDisposable", "Ljava/util/concurrent/atomic/AtomicReference;", "dispose", "", "isDisposed", "", "onError", "e", "", "onSubscribe", "d", "onSuccess", "item", "(Ljava/lang/Object;)V", "sdk-public-reactive_release"}, k = 1, mv = {1, 7, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class SingleOnErrorReturn$subscribe$wrappedObserver$1<T> implements SingleObserver<T>, Disposable {
     final /* synthetic */ SingleObserver<T> $downstream;
     final /* synthetic */ SingleOnErrorReturn<T> this$0;
@@ -33,26 +33,26 @@ public final class SingleOnErrorReturn$subscribe$wrappedObserver$1<T> implements
     /* JADX WARN: Multi-variable type inference failed */
     @Override // ru.rustore.sdk.reactive.single.SingleObserver
     public void onError(Throwable e) {
-        Object m8500constructorimpl;
+        Object m9065constructorimpl;
         Function1 function1;
         Intrinsics.checkNotNullParameter(e, "e");
         if (this.disposed.compareAndSet(false, true)) {
             try {
                 Result.Companion companion = Result.Companion;
                 function1 = ((SingleOnErrorReturn) this.this$0).mapper;
-                m8500constructorimpl = Result.m8500constructorimpl(function1.invoke(e));
+                m9065constructorimpl = Result.m9065constructorimpl(function1.invoke(e));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m8500constructorimpl = Result.m8500constructorimpl(ResultKt.createFailure(th));
+                m9065constructorimpl = Result.m9065constructorimpl(ResultKt.createFailure(th));
             }
             SingleObserver<T> singleObserver = this.$downstream;
-            if (Result.m8507isSuccessimpl(m8500constructorimpl)) {
-                singleObserver.onSuccess(m8500constructorimpl);
+            if (Result.m9072isSuccessimpl(m9065constructorimpl)) {
+                singleObserver.onSuccess(m9065constructorimpl);
             }
             SingleObserver<T> singleObserver2 = this.$downstream;
-            Throwable m8503exceptionOrNullimpl = Result.m8503exceptionOrNullimpl(m8500constructorimpl);
-            if (m8503exceptionOrNullimpl != null) {
-                singleObserver2.onError(m8503exceptionOrNullimpl);
+            Throwable m9068exceptionOrNullimpl = Result.m9068exceptionOrNullimpl(m9065constructorimpl);
+            if (m9068exceptionOrNullimpl != null) {
+                singleObserver2.onError(m9068exceptionOrNullimpl);
             }
         }
     }

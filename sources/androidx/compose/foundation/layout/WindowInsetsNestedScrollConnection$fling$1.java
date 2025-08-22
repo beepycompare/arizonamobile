@@ -6,14 +6,13 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WindowInsetsConnection.android.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection", f = "WindowInsetsConnection.android.kt", i = {0, 0, 0, 1, 1, 1, 2, 2}, l = {301, 327, 352}, m = "fling-huYlsQE", n = {"this", "available", "flingAmount", "this", "endVelocity", "available", "this", "available"}, s = {"L$0", "J$0", "F$0", "L$0", "L$1", "J$0", "L$0", "J$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection", f = "WindowInsetsConnection.android.kt", i = {0, 0, 1, 1, 2}, l = {301, 327, 352}, m = "fling-huYlsQE", n = {"available", "flingAmount", "endVelocity", "available", "available"}, s = {"J$0", "F$0", "L$0", "J$0", "J$0"})
 /* loaded from: classes.dex */
 public final class WindowInsetsNestedScrollConnection$fling$1 extends ContinuationImpl {
     float F$0;
     long J$0;
     Object L$0;
-    Object L$1;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ WindowInsetsNestedScrollConnection this$0;
@@ -27,10 +26,10 @@ public final class WindowInsetsNestedScrollConnection$fling$1 extends Continuati
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m813flinghuYlsQE;
+        Object m915flinghuYlsQE;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        m813flinghuYlsQE = this.this$0.m813flinghuYlsQE(0L, 0.0f, false, this);
-        return m813flinghuYlsQE;
+        m915flinghuYlsQE = this.this$0.m915flinghuYlsQE(0L, 0.0f, false, this);
+        return m915flinghuYlsQE;
     }
 }

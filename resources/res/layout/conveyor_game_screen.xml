@@ -12,10 +12,12 @@
             </LinearLayout>
             <LinearLayout android:layout_gravity="end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_12sdp">
                 <TextView android:textSize="@dimen/_12sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/_6sdp" android:text="Осталось" android:fontFamily="@font/heading_now_trial_66_bold"/>
-                <LinearLayout android:gravity="center" android:id="@+id/left_container" android:background="@drawable/conveyor_game_left_container_bg" android:paddingLeft="@dimen/_6sdp" android:paddingTop="@dimen/_4sdp" android:paddingRight="@dimen/_6sdp" android:paddingBottom="@dimen/_4sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/_6sdp" android:paddingVertical="@dimen/_4sdp">
-                    <ImageView android:id="@+id/iv_default_item" android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:layout_marginRight="@dimen/_4sdp" android:src="@drawable/conveyor_game_egg_empty"/>
-                    <TextView android:textSize="@dimen/_12sdp" android:textColor="@color/black" android:id="@+id/left_item" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 / 0" android:fontFamily="@font/pfdindisplaypro_black"/>
-                </LinearLayout>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/left_container" android:layout_width="wrap_content" android:layout_height="wrap_content" app:backgroundMainColor="#83d1ef" app:corners="@dimen/_5sdp">
+                    <LinearLayout android:gravity="center" android:paddingLeft="@dimen/_6sdp" android:paddingTop="@dimen/_4sdp" android:paddingRight="@dimen/_6sdp" android:paddingBottom="@dimen/_4sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/_6sdp" android:paddingVertical="@dimen/_4sdp">
+                        <ImageView android:id="@+id/iv_default_item" android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:layout_marginRight="@dimen/_4sdp" android:src="@drawable/conveyor_game_egg_empty"/>
+                        <TextView android:textSize="@dimen/_12sdp" android:textColor="@color/black" android:id="@+id/left_item" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 / 0" android:fontFamily="@font/pfdindisplaypro_black"/>
+                    </LinearLayout>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>

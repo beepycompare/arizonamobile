@@ -1,13 +1,25 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Il extends J5 {
-    public Il(C0139am c0139am, C0268fm c0268fm, Zl zl) {
-        super(c0139am, c0268fm, zl);
+public final class Il {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f501a;
+    public final String b;
+    public final Integer c;
+    public final Integer d;
+    public final String e;
+    public final Boolean f;
+
+    public Il(String str, String str2, Integer num, Integer num2, String str3, Boolean bool) {
+        this.f501a = str;
+        this.b = str2;
+        this.c = num;
+        this.d = num2;
+        this.e = str3;
+        this.f = bool;
     }
 
-    @Override // io.appmetrica.analytics.impl.J5
-    public final synchronized void a(Zl zl) {
-        a(new C0303h6(c(), Ia.F.u(), Ia.F.r(), ((Zl) b()).mergeFrom(zl)));
-        e();
+    public Il(StackTraceElement stackTraceElement) {
+        this(stackTraceElement.getClassName(), stackTraceElement.getFileName(), Integer.valueOf(stackTraceElement.getLineNumber()), null, stackTraceElement.getMethodName(), Boolean.valueOf(stackTraceElement.isNativeMethod()));
     }
 }

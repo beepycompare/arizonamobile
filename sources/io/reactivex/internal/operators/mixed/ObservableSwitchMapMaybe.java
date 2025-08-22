@@ -14,7 +14,7 @@ import io.reactivex.internal.util.AtomicThrowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableSwitchMapMaybe<T, R> extends Observable<R> {
     final boolean delayErrors;
     final Function<? super T, ? extends MaybeSource<? extends R>> mapper;
@@ -34,7 +34,7 @@ public final class ObservableSwitchMapMaybe<T, R> extends Observable<R> {
         this.source.subscribe(new SwitchMapMaybeMainObserver(observer, this.mapper, this.delayErrors));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SwitchMapMaybeMainObserver<T, R> extends AtomicInteger implements Observer<T>, Disposable {
         static final SwitchMapMaybeObserver<Object> INNER_DISPOSED = new SwitchMapMaybeObserver<>(null);
         private static final long serialVersionUID = -5402190102429853762L;
@@ -184,7 +184,7 @@ public final class ObservableSwitchMapMaybe<T, R> extends Observable<R> {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class SwitchMapMaybeObserver<R> extends AtomicReference<Disposable> implements MaybeObserver<R> {
             private static final long serialVersionUID = 8042919737683345351L;
             volatile R item;

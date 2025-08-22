@@ -6,7 +6,7 @@ import io.reactivex.Scheduler;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableSubscribeOn<T> extends AbstractObservableWithUpstream<T, T> {
     final Scheduler scheduler;
 
@@ -22,7 +22,7 @@ public final class ObservableSubscribeOn<T> extends AbstractObservableWithUpstre
         subscribeOnObserver.setDisposable(this.scheduler.scheduleDirect(new SubscribeTask(subscribeOnObserver)));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SubscribeOnObserver<T> extends AtomicReference<Disposable> implements Observer<T>, Disposable {
         private static final long serialVersionUID = 8094547886072529208L;
         final Observer<? super T> downstream;
@@ -68,7 +68,7 @@ public final class ObservableSubscribeOn<T> extends AbstractObservableWithUpstre
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class SubscribeTask implements Runnable {
         private final SubscribeOnObserver<T> parent;
 

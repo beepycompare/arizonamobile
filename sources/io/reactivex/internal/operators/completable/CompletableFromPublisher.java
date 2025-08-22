@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableFromPublisher<T> extends Completable {
     final Publisher<T> flowable;
 
@@ -20,7 +20,7 @@ public final class CompletableFromPublisher<T> extends Completable {
         this.flowable.subscribe(new FromPublisherSubscriber(completableObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FromPublisherSubscriber<T> implements FlowableSubscriber<T>, Disposable {
         final CompletableObserver downstream;
         Subscription upstream;

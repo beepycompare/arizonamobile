@@ -4,44 +4,44 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class attr {
-        public static int isb_clear_default_padding = 0x7f0402ea;
-        public static int isb_indicator_color = 0x7f0402eb;
-        public static int isb_indicator_content_layout = 0x7f0402ec;
-        public static int isb_indicator_text_color = 0x7f0402ed;
-        public static int isb_indicator_text_size = 0x7f0402ee;
-        public static int isb_indicator_top_content_layout = 0x7f0402ef;
-        public static int isb_max = 0x7f0402f0;
-        public static int isb_min = 0x7f0402f1;
-        public static int isb_only_thumb_draggable = 0x7f0402f2;
-        public static int isb_progress = 0x7f0402f3;
-        public static int isb_progress_value_float = 0x7f0402f4;
-        public static int isb_r2l = 0x7f0402f5;
-        public static int isb_seek_smoothly = 0x7f0402f6;
-        public static int isb_show_indicator = 0x7f0402f7;
-        public static int isb_show_thumb_text = 0x7f0402f8;
-        public static int isb_show_tick_marks_type = 0x7f0402f9;
-        public static int isb_show_tick_texts = 0x7f0402fa;
-        public static int isb_thumb_adjust_auto = 0x7f0402fb;
-        public static int isb_thumb_color = 0x7f0402fc;
-        public static int isb_thumb_drawable = 0x7f0402fd;
-        public static int isb_thumb_size = 0x7f0402fe;
-        public static int isb_thumb_text_color = 0x7f0402ff;
-        public static int isb_tick_marks_color = 0x7f040300;
-        public static int isb_tick_marks_drawable = 0x7f040301;
-        public static int isb_tick_marks_ends_hide = 0x7f040302;
-        public static int isb_tick_marks_size = 0x7f040303;
-        public static int isb_tick_marks_swept_hide = 0x7f040304;
-        public static int isb_tick_texts_array = 0x7f040305;
-        public static int isb_tick_texts_color = 0x7f040306;
-        public static int isb_tick_texts_size = 0x7f040307;
-        public static int isb_tick_texts_typeface = 0x7f040308;
-        public static int isb_ticks_count = 0x7f040309;
-        public static int isb_track_background_color = 0x7f04030a;
-        public static int isb_track_background_size = 0x7f04030b;
-        public static int isb_track_progress_color = 0x7f04030c;
-        public static int isb_track_progress_size = 0x7f04030d;
-        public static int isb_track_rounded_corners = 0x7f04030e;
-        public static int isb_user_seekable = 0x7f04030f;
+        public static int isb_clear_default_padding = 0x7f0402eb;
+        public static int isb_indicator_color = 0x7f0402ec;
+        public static int isb_indicator_content_layout = 0x7f0402ed;
+        public static int isb_indicator_text_color = 0x7f0402ee;
+        public static int isb_indicator_text_size = 0x7f0402ef;
+        public static int isb_indicator_top_content_layout = 0x7f0402f0;
+        public static int isb_max = 0x7f0402f1;
+        public static int isb_min = 0x7f0402f2;
+        public static int isb_only_thumb_draggable = 0x7f0402f3;
+        public static int isb_progress = 0x7f0402f4;
+        public static int isb_progress_value_float = 0x7f0402f5;
+        public static int isb_r2l = 0x7f0402f6;
+        public static int isb_seek_smoothly = 0x7f0402f7;
+        public static int isb_show_indicator = 0x7f0402f8;
+        public static int isb_show_thumb_text = 0x7f0402f9;
+        public static int isb_show_tick_marks_type = 0x7f0402fa;
+        public static int isb_show_tick_texts = 0x7f0402fb;
+        public static int isb_thumb_adjust_auto = 0x7f0402fc;
+        public static int isb_thumb_color = 0x7f0402fd;
+        public static int isb_thumb_drawable = 0x7f0402fe;
+        public static int isb_thumb_size = 0x7f0402ff;
+        public static int isb_thumb_text_color = 0x7f040300;
+        public static int isb_tick_marks_color = 0x7f040301;
+        public static int isb_tick_marks_drawable = 0x7f040302;
+        public static int isb_tick_marks_ends_hide = 0x7f040303;
+        public static int isb_tick_marks_size = 0x7f040304;
+        public static int isb_tick_marks_swept_hide = 0x7f040305;
+        public static int isb_tick_texts_array = 0x7f040306;
+        public static int isb_tick_texts_color = 0x7f040307;
+        public static int isb_tick_texts_size = 0x7f040308;
+        public static int isb_tick_texts_typeface = 0x7f040309;
+        public static int isb_ticks_count = 0x7f04030a;
+        public static int isb_track_background_color = 0x7f04030b;
+        public static int isb_track_background_size = 0x7f04030c;
+        public static int isb_track_progress_color = 0x7f04030d;
+        public static int isb_track_progress_size = 0x7f04030e;
+        public static int isb_track_rounded_corners = 0x7f04030f;
+        public static int isb_user_seekable = 0x7f040310;
 
         private attr() {
         }
@@ -49,8 +49,8 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class color {
-        public static int isb_selector_tick_marks_color = 0x7f0600ba;
-        public static int isb_selector_tick_texts_color = 0x7f0600bb;
+        public static int isb_selector_tick_marks_color = 0x7f0600bb;
+        public static int isb_selector_tick_texts_color = 0x7f0600bc;
 
         private color() {
         }
@@ -58,8 +58,8 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class drawable {
-        public static int isb_indicator_rounded_corners = 0x7f0809b2;
-        public static int isb_indicator_square_corners = 0x7f0809b3;
+        public static int isb_indicator_rounded_corners = 0x7f0809e8;
+        public static int isb_indicator_square_corners = 0x7f0809e9;
 
         private drawable() {
         }
@@ -68,20 +68,20 @@ public final class R {
     /* loaded from: classes4.dex */
     public static final class id {
         public static int circular_bubble = 0x7f0a0311;
-        public static int custom = 0x7f0a0392;
-        public static int divider = 0x7f0a03ec;
-        public static int indicator_arrow = 0x7f0a0694;
-        public static int indicator_container = 0x7f0a0695;
-        public static int isb_progress = 0x7f0a06c1;
-        public static int monospace = 0x7f0a0875;
-        public static int none = 0x7f0a0962;
-        public static int normal = 0x7f0a0964;
-        public static int oval = 0x7f0a099f;
-        public static int rectangle = 0x7f0a0a7b;
-        public static int rounded_rectangle = 0x7f0a0b57;
-        public static int sans = 0x7f0a0b97;
-        public static int serif = 0x7f0a0bf1;
-        public static int square = 0x7f0a0c86;
+        public static int custom = 0x7f0a0394;
+        public static int divider = 0x7f0a03ee;
+        public static int indicator_arrow = 0x7f0a068e;
+        public static int indicator_container = 0x7f0a068f;
+        public static int isb_progress = 0x7f0a06bb;
+        public static int monospace = 0x7f0a0873;
+        public static int none = 0x7f0a0960;
+        public static int normal = 0x7f0a0962;
+        public static int oval = 0x7f0a099e;
+        public static int rectangle = 0x7f0a0a7c;
+        public static int rounded_rectangle = 0x7f0a0b58;
+        public static int sans = 0x7f0a0b98;
+        public static int serif = 0x7f0a0be6;
+        public static int square = 0x7f0a0c82;
 
         private id() {
         }
@@ -89,7 +89,7 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class layout {
-        public static int isb_indicator = 0x7f0d0111;
+        public static int isb_indicator = 0x7f0d0115;
 
         private layout() {
         }
@@ -97,7 +97,7 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class styleable {
-        public static int[] IndicatorSeekBar = {com.arizona21.game.web.R.attr.isb_clear_default_padding, com.arizona21.game.web.R.attr.isb_indicator_color, com.arizona21.game.web.R.attr.isb_indicator_content_layout, com.arizona21.game.web.R.attr.isb_indicator_text_color, com.arizona21.game.web.R.attr.isb_indicator_text_size, com.arizona21.game.web.R.attr.isb_indicator_top_content_layout, com.arizona21.game.web.R.attr.isb_max, com.arizona21.game.web.R.attr.isb_min, com.arizona21.game.web.R.attr.isb_only_thumb_draggable, com.arizona21.game.web.R.attr.isb_progress, com.arizona21.game.web.R.attr.isb_progress_value_float, com.arizona21.game.web.R.attr.isb_r2l, com.arizona21.game.web.R.attr.isb_seek_smoothly, com.arizona21.game.web.R.attr.isb_show_indicator, com.arizona21.game.web.R.attr.isb_show_thumb_text, com.arizona21.game.web.R.attr.isb_show_tick_marks_type, com.arizona21.game.web.R.attr.isb_show_tick_texts, com.arizona21.game.web.R.attr.isb_thumb_adjust_auto, com.arizona21.game.web.R.attr.isb_thumb_color, com.arizona21.game.web.R.attr.isb_thumb_drawable, com.arizona21.game.web.R.attr.isb_thumb_size, com.arizona21.game.web.R.attr.isb_thumb_text_color, com.arizona21.game.web.R.attr.isb_tick_marks_color, com.arizona21.game.web.R.attr.isb_tick_marks_drawable, com.arizona21.game.web.R.attr.isb_tick_marks_ends_hide, com.arizona21.game.web.R.attr.isb_tick_marks_size, com.arizona21.game.web.R.attr.isb_tick_marks_swept_hide, com.arizona21.game.web.R.attr.isb_tick_texts_array, com.arizona21.game.web.R.attr.isb_tick_texts_color, com.arizona21.game.web.R.attr.isb_tick_texts_size, com.arizona21.game.web.R.attr.isb_tick_texts_typeface, com.arizona21.game.web.R.attr.isb_ticks_count, com.arizona21.game.web.R.attr.isb_track_background_color, com.arizona21.game.web.R.attr.isb_track_background_size, com.arizona21.game.web.R.attr.isb_track_progress_color, com.arizona21.game.web.R.attr.isb_track_progress_size, com.arizona21.game.web.R.attr.isb_track_rounded_corners, com.arizona21.game.web.R.attr.isb_user_seekable};
+        public static int[] IndicatorSeekBar = {com.arizona21.game.R.attr.isb_clear_default_padding, com.arizona21.game.R.attr.isb_indicator_color, com.arizona21.game.R.attr.isb_indicator_content_layout, com.arizona21.game.R.attr.isb_indicator_text_color, com.arizona21.game.R.attr.isb_indicator_text_size, com.arizona21.game.R.attr.isb_indicator_top_content_layout, com.arizona21.game.R.attr.isb_max, com.arizona21.game.R.attr.isb_min, com.arizona21.game.R.attr.isb_only_thumb_draggable, com.arizona21.game.R.attr.isb_progress, com.arizona21.game.R.attr.isb_progress_value_float, com.arizona21.game.R.attr.isb_r2l, com.arizona21.game.R.attr.isb_seek_smoothly, com.arizona21.game.R.attr.isb_show_indicator, com.arizona21.game.R.attr.isb_show_thumb_text, com.arizona21.game.R.attr.isb_show_tick_marks_type, com.arizona21.game.R.attr.isb_show_tick_texts, com.arizona21.game.R.attr.isb_thumb_adjust_auto, com.arizona21.game.R.attr.isb_thumb_color, com.arizona21.game.R.attr.isb_thumb_drawable, com.arizona21.game.R.attr.isb_thumb_size, com.arizona21.game.R.attr.isb_thumb_text_color, com.arizona21.game.R.attr.isb_tick_marks_color, com.arizona21.game.R.attr.isb_tick_marks_drawable, com.arizona21.game.R.attr.isb_tick_marks_ends_hide, com.arizona21.game.R.attr.isb_tick_marks_size, com.arizona21.game.R.attr.isb_tick_marks_swept_hide, com.arizona21.game.R.attr.isb_tick_texts_array, com.arizona21.game.R.attr.isb_tick_texts_color, com.arizona21.game.R.attr.isb_tick_texts_size, com.arizona21.game.R.attr.isb_tick_texts_typeface, com.arizona21.game.R.attr.isb_ticks_count, com.arizona21.game.R.attr.isb_track_background_color, com.arizona21.game.R.attr.isb_track_background_size, com.arizona21.game.R.attr.isb_track_progress_color, com.arizona21.game.R.attr.isb_track_progress_size, com.arizona21.game.R.attr.isb_track_rounded_corners, com.arizona21.game.R.attr.isb_user_seekable};
         public static int IndicatorSeekBar_isb_clear_default_padding = 0x00000000;
         public static int IndicatorSeekBar_isb_indicator_color = 0x00000001;
         public static int IndicatorSeekBar_isb_indicator_content_layout = 0x00000002;

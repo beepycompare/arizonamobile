@@ -7,7 +7,7 @@ import io.reactivex.exceptions.CompositeException;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Predicate;
 import io.reactivex.internal.disposables.DisposableHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeOnErrorComplete<T> extends AbstractMaybeWithUpstream<T, T> {
     final Predicate<? super Throwable> predicate;
 
@@ -21,7 +21,7 @@ public final class MaybeOnErrorComplete<T> extends AbstractMaybeWithUpstream<T, 
         this.source.subscribe(new OnErrorCompleteMaybeObserver(maybeObserver, this.predicate));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OnErrorCompleteMaybeObserver<T> implements MaybeObserver<T>, Disposable {
         final MaybeObserver<? super T> downstream;
         final Predicate<? super Throwable> predicate;

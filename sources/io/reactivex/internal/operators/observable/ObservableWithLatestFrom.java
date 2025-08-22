@@ -9,7 +9,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.observers.SerializedObserver;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableWithLatestFrom<T, U, R> extends AbstractObservableWithUpstream<T, R> {
     final BiFunction<? super T, ? super U, ? extends R> combiner;
     final ObservableSource<? extends U> other;
@@ -29,7 +29,7 @@ public final class ObservableWithLatestFrom<T, U, R> extends AbstractObservableW
         this.source.subscribe(withLatestFromObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WithLatestFromObserver<T, U, R> extends AtomicReference<U> implements Observer<T>, Disposable {
         private static final long serialVersionUID = -312246233408980075L;
         final BiFunction<? super T, ? super U, ? extends R> combiner;
@@ -94,7 +94,7 @@ public final class ObservableWithLatestFrom<T, U, R> extends AbstractObservableW
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class WithLatestFromOtherObserver implements Observer<U> {
         private final WithLatestFromObserver<T, U, R> parent;
 

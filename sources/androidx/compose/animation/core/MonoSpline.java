@@ -4,7 +4,7 @@ import androidx.media3.exoplayer.upstream.CmcdData;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 /* compiled from: MonoSpline.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0014\n\u0000\n\u0002\u0010\u0011\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\b\b\u0000\u0018\u00002\u00020\u0001B#\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00030\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0002\u0010\bJ \u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0002\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u0013J\u0016\u0010\u000e\u001a\u00020\u00072\u0006\u0010\u0014\u001a\u00020\u00072\u0006\u0010\u0015\u001a\u00020\u0013J \u0010\u0016\u001a\u00020\u000f2\u0006\u0010\u0002\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u0013J\u0018\u0010\u0016\u001a\u00020\u000f2\u0006\u0010\u0002\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\u0003H\u0002J\u0018\u0010\u0016\u001a\u00020\u00072\u0006\u0010\u0002\u001a\u00020\u00072\u0006\u0010\u0015\u001a\u00020\u0013H\u0002J#\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00030\u00052\u0006\u0010\u0018\u001a\u00020\u00132\u0006\u0010\u0019\u001a\u00020\u0013H\u0002¢\u0006\u0002\u0010\u001aR\u000e\u0010\t\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00030\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000bR\u000e\u0010\f\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u00030\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000b¨\u0006\u001b"}, d2 = {"Landroidx/compose/animation/core/MonoSpline;", "", "time", "", "y", "", "periodicBias", "", "([F[[FF)V", "slopeTemp", "tangents", "[[F", "timePoints", "values", "getPos", "", "v", "Landroidx/compose/animation/core/AnimationVector;", FirebaseAnalytics.Param.INDEX, "", "t", "j", "getSlope", "makeFloatArray", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "(II)[[F", "animation-core_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0014\n\u0000\n\u0002\u0010\u0011\n\u0000\n\u0002\u0010\u0007\n\u0002\b\t\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u0001B%\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00030\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ#\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00030\u00052\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0011H\u0002¢\u0006\u0002\u0010\u0013J\u0016\u0010\u0014\u001a\u00020\u00072\u0006\u0010\u0015\u001a\u00020\u00072\u0006\u0010\u0016\u001a\u00020\u0011J \u0010\u0014\u001a\u00020\u00172\u0006\u0010\u0002\u001a\u00020\u00072\u0006\u0010\u0018\u001a\u00020\u00192\b\b\u0002\u0010\u001a\u001a\u00020\u0011J\u0018\u0010\u001b\u001a\u00020\u00172\u0006\u0010\u0002\u001a\u00020\u00072\u0006\u0010\u0018\u001a\u00020\u0003H\u0002J \u0010\u001b\u001a\u00020\u00172\u0006\u0010\u0002\u001a\u00020\u00072\u0006\u0010\u0018\u001a\u00020\u00192\b\b\u0002\u0010\u001a\u001a\u00020\u0011J\u0018\u0010\u001b\u001a\u00020\u00072\u0006\u0010\u0002\u001a\u00020\u00072\u0006\u0010\u0016\u001a\u00020\u0011H\u0002R\u000e\u0010\n\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00030\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\fR\u0016\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u00030\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\fR\u000e\u0010\u000e\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Landroidx/compose/animation/core/MonoSpline;", "", "time", "", "y", "", "periodicBias", "", "<init>", "([F[[FF)V", "timePoints", "values", "[[F", "tangents", "slopeTemp", "makeFloatArray", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "", "b", "(II)[[F", "getPos", "t", "j", "", "v", "Landroidx/compose/animation/core/AnimationVector;", FirebaseAnalytics.Param.INDEX, "getSlope", "animation-core"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class MonoSpline {
     public static final int $stable = 8;
@@ -155,7 +155,7 @@ public final class MonoSpline {
         if (i2 != -1) {
             getSlope(fArr[i2], this.slopeTemp);
             while (i3 < length2) {
-                animationVector.set$animation_core_release(i3, this.values[i2][i3] + ((f - this.timePoints[i2]) * this.slopeTemp[i3]));
+                animationVector.set$animation_core(i3, this.values[i2][i3] + ((f - this.timePoints[i2]) * this.slopeTemp[i3]));
                 i3++;
             }
             return;
@@ -167,7 +167,7 @@ public final class MonoSpline {
             float f2 = fArr2[i5];
             if (f == f2) {
                 while (i3 < length2) {
-                    animationVector.set$animation_core_release(i3, this.values[i5][i3]);
+                    animationVector.set$animation_core(i3, this.values[i5][i3]);
                     i3++;
                 }
                 return;
@@ -182,7 +182,7 @@ public final class MonoSpline {
                     float f6 = fArr3[i5][i3];
                     float f7 = fArr3[i6][i3];
                     float[][] fArr4 = this.tangents;
-                    animationVector.set$animation_core_release(i3, MonoSplineKt.hermiteInterpolate(f4, f5, f6, f7, fArr4[i5][i3], fArr4[i6][i3]));
+                    animationVector.set$animation_core(i3, MonoSplineKt.hermiteInterpolate(f4, f5, f6, f7, fArr4[i5][i3], fArr4[i6][i3]));
                     i3++;
                 }
                 return;
@@ -258,7 +258,7 @@ public final class MonoSpline {
                 return;
             }
             while (i3 < length2) {
-                animationVector.set$animation_core_release(i3, fArr4[i3]);
+                animationVector.set$animation_core(i3, fArr4[i3]);
                 i3++;
             }
             return;
@@ -273,7 +273,7 @@ public final class MonoSpline {
                 float f4 = f2 - f3;
                 float f5 = (f - f3) / f4;
                 while (i3 < length2) {
-                    animationVector.set$animation_core_release(i3, MonoSplineKt.hermiteDifferential(f4, f5, fArr2[i5][i3], fArr2[i6][i3], fArr3[i5][i3], fArr3[i6][i3]) / f4);
+                    animationVector.set$animation_core(i3, MonoSplineKt.hermiteDifferential(f4, f5, fArr2[i5][i3], fArr2[i6][i3], fArr3[i5][i3], fArr3[i6][i3]) / f4);
                     i3++;
                 }
                 return;

@@ -88,7 +88,7 @@ public final class IconButtonKt {
         boolean z3;
         IconButtonColors iconButtonColors2;
         int currentCompositeKeyHash;
-        Composer m3520constructorimpl;
+        Composer m3855constructorimpl;
         final Modifier modifier2;
         final IconButtonColors iconButtonColors3;
         final MutableInteractionSource mutableInteractionSource2;
@@ -166,7 +166,7 @@ public final class IconButtonKt {
                                 int i9 = i6;
                                 MutableInteractionSource mutableInteractionSource3 = obj5;
                                 boolean z4 = z3;
-                                Modifier m279clickableO2vRcR0$default = ClickableKt.m279clickableO2vRcR0$default(BackgroundKt.m247backgroundbw27NRU$default(ClipKt.clip(SizeKt.m785size3ABfNKs(InteractiveComponentSizeKt.minimumInteractiveComponentSize(companion), IconButtonTokens.INSTANCE.m3095getStateLayerSizeD9Ej5fM()), ShapesKt.getValue(IconButtonTokens.INSTANCE.getStateLayerShape(), startRestartGroup, 6)), iconButtonColors2.m1933containerColorvNxB06k$material3_release(z3), null, 2, null), mutableInteractionSource3, RippleKt.m2211rippleOrFallbackImplementation9IZ8Weo(false, Dp.m6684constructorimpl(IconButtonTokens.INSTANCE.m3095getStateLayerSizeD9Ej5fM() / 2), 0L, startRestartGroup, 54, 4), z4, null, Role.m5904boximpl(Role.Companion.m5911getButtono7Vup1c()), obj, 8, null);
+                                Modifier m294clickableO2vRcR0$default = ClickableKt.m294clickableO2vRcR0$default(BackgroundKt.m257backgroundbw27NRU$default(ClipKt.clip(SizeKt.m884size3ABfNKs(InteractiveComponentSizeKt.minimumInteractiveComponentSize(companion), IconButtonTokens.INSTANCE.m3402getStateLayerSizeD9Ej5fM()), ShapesKt.getValue(IconButtonTokens.INSTANCE.getStateLayerShape(), startRestartGroup, 6)), iconButtonColors2.m2240containerColorvNxB06k$material3_release(z3), null, 2, null), mutableInteractionSource3, RippleKt.m2518rippleOrFallbackImplementation9IZ8Weo(false, Dp.m7251constructorimpl(IconButtonTokens.INSTANCE.m3402getStateLayerSizeD9Ej5fM() / 2), 0L, startRestartGroup, 54, 4), z4, null, Role.m6454boximpl(Role.Companion.m6461getButtono7Vup1c()), obj, 8, null);
                                 z2 = z4;
                                 Alignment center = Alignment.Companion.getCenter();
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -174,7 +174,7 @@ public final class IconButtonKt {
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                 currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                                 CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m279clickableO2vRcR0$default);
+                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m294clickableO2vRcR0$default);
                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                 if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -186,19 +186,19 @@ public final class IconButtonKt {
                                 } else {
                                     startRestartGroup.useNode();
                                 }
-                                m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                                Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (!m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (!m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 782643754, "C110@5014L84:IconButton.kt#uh7d8r");
-                                CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4068boximpl(iconButtonColors2.m1934contentColorvNxB06k$material3_release(z2))), function2, startRestartGroup, ProvidedValue.$stable | ((i9 >> 12) & 112));
+                                CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(iconButtonColors2.m2241contentColorvNxB06k$material3_release(z2))), function2, startRestartGroup, ProvidedValue.$stable | ((i9 >> 12) & 112));
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 startRestartGroup.endNode();
@@ -231,7 +231,7 @@ public final class IconButtonKt {
                         int i92 = i6;
                         MutableInteractionSource mutableInteractionSource32 = obj5;
                         boolean z42 = z3;
-                        Modifier m279clickableO2vRcR0$default2 = ClickableKt.m279clickableO2vRcR0$default(BackgroundKt.m247backgroundbw27NRU$default(ClipKt.clip(SizeKt.m785size3ABfNKs(InteractiveComponentSizeKt.minimumInteractiveComponentSize(companion), IconButtonTokens.INSTANCE.m3095getStateLayerSizeD9Ej5fM()), ShapesKt.getValue(IconButtonTokens.INSTANCE.getStateLayerShape(), startRestartGroup, 6)), iconButtonColors2.m1933containerColorvNxB06k$material3_release(z3), null, 2, null), mutableInteractionSource32, RippleKt.m2211rippleOrFallbackImplementation9IZ8Weo(false, Dp.m6684constructorimpl(IconButtonTokens.INSTANCE.m3095getStateLayerSizeD9Ej5fM() / 2), 0L, startRestartGroup, 54, 4), z42, null, Role.m5904boximpl(Role.Companion.m5911getButtono7Vup1c()), obj, 8, null);
+                        Modifier m294clickableO2vRcR0$default2 = ClickableKt.m294clickableO2vRcR0$default(BackgroundKt.m257backgroundbw27NRU$default(ClipKt.clip(SizeKt.m884size3ABfNKs(InteractiveComponentSizeKt.minimumInteractiveComponentSize(companion), IconButtonTokens.INSTANCE.m3402getStateLayerSizeD9Ej5fM()), ShapesKt.getValue(IconButtonTokens.INSTANCE.getStateLayerShape(), startRestartGroup, 6)), iconButtonColors2.m2240containerColorvNxB06k$material3_release(z3), null, 2, null), mutableInteractionSource32, RippleKt.m2518rippleOrFallbackImplementation9IZ8Weo(false, Dp.m7251constructorimpl(IconButtonTokens.INSTANCE.m3402getStateLayerSizeD9Ej5fM() / 2), 0L, startRestartGroup, 54, 4), z42, null, Role.m6454boximpl(Role.Companion.m6461getButtono7Vup1c()), obj, 8, null);
                         z2 = z42;
                         Alignment center2 = Alignment.Companion.getCenter();
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -239,7 +239,7 @@ public final class IconButtonKt {
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                         CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m279clickableO2vRcR0$default2);
+                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m294clickableO2vRcR0$default2);
                         Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -247,19 +247,19 @@ public final class IconButtonKt {
                         startRestartGroup.startReusableNode();
                         if (!startRestartGroup.getInserting()) {
                         }
-                        m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (!m3520constructorimpl.getInserting()) {
+                        if (!m3855constructorimpl.getInserting()) {
                         }
-                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2);
-                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2);
+                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 782643754, "C110@5014L84:IconButton.kt#uh7d8r");
-                        CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4068boximpl(iconButtonColors2.m1934contentColorvNxB06k$material3_release(z2))), function2, startRestartGroup, ProvidedValue.$stable | ((i92 >> 12) & 112));
+                        CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(iconButtonColors2.m2241contentColorvNxB06k$material3_release(z2))), function2, startRestartGroup, ProvidedValue.$stable | ((i92 >> 12) & 112));
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         startRestartGroup.endNode();
@@ -409,7 +409,7 @@ public final class IconButtonKt {
         IconToggleButtonColors iconToggleButtonColors3;
         Object obj2;
         int currentCompositeKeyHash;
-        Composer m3520constructorimpl;
+        Composer m3855constructorimpl;
         final MutableInteractionSource mutableInteractionSource2;
         final Modifier modifier4;
         int i7;
@@ -499,14 +499,14 @@ public final class IconButtonKt {
                                 int i10 = i6;
                                 iconToggleButtonColors2 = iconToggleButtonColors3;
                                 MutableInteractionSource mutableInteractionSource3 = obj2;
-                                Modifier m1005toggleableO2vRcR0 = ToggleableKt.m1005toggleableO2vRcR0(BackgroundKt.m247backgroundbw27NRU$default(ClipKt.clip(SizeKt.m785size3ABfNKs(InteractiveComponentSizeKt.minimumInteractiveComponentSize(modifier3), IconButtonTokens.INSTANCE.m3095getStateLayerSizeD9Ej5fM()), ShapesKt.getValue(IconButtonTokens.INSTANCE.getStateLayerShape(), startRestartGroup, 6)), iconToggleButtonColors3.containerColor$material3_release(z4, z, startRestartGroup, i9).getValue().m4088unboximpl(), null, 2, null), z, mutableInteractionSource3, RippleKt.m2211rippleOrFallbackImplementation9IZ8Weo(false, Dp.m6684constructorimpl(IconButtonTokens.INSTANCE.m3095getStateLayerSizeD9Ej5fM() / 2), 0L, startRestartGroup, 54, 4), z4, Role.m5904boximpl(Role.Companion.m5913getCheckboxo7Vup1c()), function12);
+                                Modifier m1166toggleableO2vRcR0 = ToggleableKt.m1166toggleableO2vRcR0(BackgroundKt.m257backgroundbw27NRU$default(ClipKt.clip(SizeKt.m884size3ABfNKs(InteractiveComponentSizeKt.minimumInteractiveComponentSize(modifier3), IconButtonTokens.INSTANCE.m3402getStateLayerSizeD9Ej5fM()), ShapesKt.getValue(IconButtonTokens.INSTANCE.getStateLayerShape(), startRestartGroup, 6)), iconToggleButtonColors3.containerColor$material3_release(z4, z, startRestartGroup, i9).getValue().m4547unboximpl(), null, 2, null), z, mutableInteractionSource3, RippleKt.m2518rippleOrFallbackImplementation9IZ8Weo(false, Dp.m7251constructorimpl(IconButtonTokens.INSTANCE.m3402getStateLayerSizeD9Ej5fM() / 2), 0L, startRestartGroup, 54, 4), z4, Role.m6454boximpl(Role.Companion.m6463getCheckboxo7Vup1c()), function12);
                                 Alignment center = Alignment.Companion.getCenter();
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(center, false);
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                 currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                                 CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m1005toggleableO2vRcR0);
+                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m1166toggleableO2vRcR0);
                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                 if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -518,19 +518,19 @@ public final class IconButtonKt {
                                 } else {
                                     startRestartGroup.useNode();
                                 }
-                                m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                                Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (!m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (!m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -131204793, "C175@8190L30,176@8235L84:IconButton.kt#uh7d8r");
-                                CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4068boximpl(iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i9).getValue().m4088unboximpl())), function2, startRestartGroup, ProvidedValue.$stable | ((i10 >> 15) & 112));
+                                CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i9).getValue().m4547unboximpl())), function2, startRestartGroup, ProvidedValue.$stable | ((i10 >> 15) & 112));
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 startRestartGroup.endNode();
@@ -561,14 +561,14 @@ public final class IconButtonKt {
                         int i102 = i6;
                         iconToggleButtonColors2 = iconToggleButtonColors3;
                         MutableInteractionSource mutableInteractionSource32 = obj2;
-                        Modifier m1005toggleableO2vRcR02 = ToggleableKt.m1005toggleableO2vRcR0(BackgroundKt.m247backgroundbw27NRU$default(ClipKt.clip(SizeKt.m785size3ABfNKs(InteractiveComponentSizeKt.minimumInteractiveComponentSize(modifier3), IconButtonTokens.INSTANCE.m3095getStateLayerSizeD9Ej5fM()), ShapesKt.getValue(IconButtonTokens.INSTANCE.getStateLayerShape(), startRestartGroup, 6)), iconToggleButtonColors3.containerColor$material3_release(z4, z, startRestartGroup, i92).getValue().m4088unboximpl(), null, 2, null), z, mutableInteractionSource32, RippleKt.m2211rippleOrFallbackImplementation9IZ8Weo(false, Dp.m6684constructorimpl(IconButtonTokens.INSTANCE.m3095getStateLayerSizeD9Ej5fM() / 2), 0L, startRestartGroup, 54, 4), z4, Role.m5904boximpl(Role.Companion.m5913getCheckboxo7Vup1c()), function12);
+                        Modifier m1166toggleableO2vRcR02 = ToggleableKt.m1166toggleableO2vRcR0(BackgroundKt.m257backgroundbw27NRU$default(ClipKt.clip(SizeKt.m884size3ABfNKs(InteractiveComponentSizeKt.minimumInteractiveComponentSize(modifier3), IconButtonTokens.INSTANCE.m3402getStateLayerSizeD9Ej5fM()), ShapesKt.getValue(IconButtonTokens.INSTANCE.getStateLayerShape(), startRestartGroup, 6)), iconToggleButtonColors3.containerColor$material3_release(z4, z, startRestartGroup, i92).getValue().m4547unboximpl(), null, 2, null), z, mutableInteractionSource32, RippleKt.m2518rippleOrFallbackImplementation9IZ8Weo(false, Dp.m7251constructorimpl(IconButtonTokens.INSTANCE.m3402getStateLayerSizeD9Ej5fM() / 2), 0L, startRestartGroup, 54, 4), z4, Role.m6454boximpl(Role.Companion.m6463getCheckboxo7Vup1c()), function12);
                         Alignment center2 = Alignment.Companion.getCenter();
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                         MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(center2, false);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                         CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m1005toggleableO2vRcR02);
+                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m1166toggleableO2vRcR02);
                         Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -576,19 +576,19 @@ public final class IconButtonKt {
                         startRestartGroup.startReusableNode();
                         if (!startRestartGroup.getInserting()) {
                         }
-                        m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (!m3520constructorimpl.getInserting()) {
+                        if (!m3855constructorimpl.getInserting()) {
                         }
-                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2);
-                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2);
+                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -131204793, "C175@8190L30,176@8235L84:IconButton.kt#uh7d8r");
-                        CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4068boximpl(iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i92).getValue().m4088unboximpl())), function2, startRestartGroup, ProvidedValue.$stable | ((i102 >> 15) & 112));
+                        CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i92).getValue().m4547unboximpl())), function2, startRestartGroup, ProvidedValue.$stable | ((i102 >> 15) & 112));
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         startRestartGroup.endNode();
@@ -861,7 +861,7 @@ public final class IconButtonKt {
                         IconButtonColors iconButtonColors4 = iconButtonColors2;
                         Modifier modifier3 = companion;
                         composer2 = startRestartGroup;
-                        SurfaceKt.m2350Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$1
+                        SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$1
                             @Override // kotlin.jvm.functions.Function1
                             public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                 invoke2(semanticsPropertyReceiver);
@@ -870,9 +870,9 @@ public final class IconButtonKt {
 
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5911getButtono7Vup1c());
+                                SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
                             }
-                        }, 1, null), z4, shape2, iconButtonColors2.m1933containerColorvNxB06k$material3_release(z4), iconButtonColors2.m1934contentColorvNxB06k$material3_release(z4), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1560623888, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$2
+                        }, 1, null), z4, shape2, iconButtonColors2.m2240containerColorvNxB06k$material3_release(z4), iconButtonColors2.m2241contentColorvNxB06k$material3_release(z4), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1560623888, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$2
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             /* JADX WARN: Multi-variable type inference failed */
@@ -892,7 +892,7 @@ public final class IconButtonKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(-1560623888, i10, -1, "androidx.compose.material3.FilledIconButton.<anonymous> (IconButton.kt:231)");
                                     }
-                                    Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3059getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3058getContainerHeightD9Ej5fM());
+                                    Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3366getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3365getContainerHeightD9Ej5fM());
                                     Alignment center = Alignment.Companion.getCenter();
                                     Function2<Composer, Integer, Unit> function22 = function2;
                                     ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -900,7 +900,7 @@ public final class IconButtonKt {
                                     ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                     CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m787sizeVpY3zN4);
+                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m886sizeVpY3zN4);
                                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                     ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                     if (!(composer3.getApplier() instanceof Applier)) {
@@ -912,15 +912,15 @@ public final class IconButtonKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer3, 1882507244, "C239@11116L9:IconButton.kt#uh7d8r");
@@ -1007,7 +1007,7 @@ public final class IconButtonKt {
                 IconButtonColors iconButtonColors42 = iconButtonColors2;
                 Modifier modifier32 = companion;
                 composer2 = startRestartGroup;
-                SurfaceKt.m2350Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$1
+                SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$1
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                         invoke2(semanticsPropertyReceiver);
@@ -1016,9 +1016,9 @@ public final class IconButtonKt {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5911getButtono7Vup1c());
+                        SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
                     }
-                }, 1, null), z42, shape2, iconButtonColors2.m1933containerColorvNxB06k$material3_release(z42), iconButtonColors2.m1934contentColorvNxB06k$material3_release(z42), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1560623888, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$2
+                }, 1, null), z42, shape2, iconButtonColors2.m2240containerColorvNxB06k$material3_release(z42), iconButtonColors2.m2241contentColorvNxB06k$material3_release(z42), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1560623888, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -1038,7 +1038,7 @@ public final class IconButtonKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-1560623888, i10, -1, "androidx.compose.material3.FilledIconButton.<anonymous> (IconButton.kt:231)");
                             }
-                            Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3059getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3058getContainerHeightD9Ej5fM());
+                            Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3366getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3365getContainerHeightD9Ej5fM());
                             Alignment center = Alignment.Companion.getCenter();
                             Function2<Composer, Integer, Unit> function22 = function2;
                             ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -1046,7 +1046,7 @@ public final class IconButtonKt {
                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                             CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m787sizeVpY3zN4);
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m886sizeVpY3zN4);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -1058,15 +1058,15 @@ public final class IconButtonKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                            Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer3, 1882507244, "C239@11116L9:IconButton.kt#uh7d8r");
@@ -1131,7 +1131,7 @@ public final class IconButtonKt {
             IconButtonColors iconButtonColors422 = iconButtonColors2;
             Modifier modifier322 = companion;
             composer2 = startRestartGroup;
-            SurfaceKt.m2350Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$1
+            SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                     invoke2(semanticsPropertyReceiver);
@@ -1140,9 +1140,9 @@ public final class IconButtonKt {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5911getButtono7Vup1c());
+                    SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
                 }
-            }, 1, null), z422, shape2, iconButtonColors2.m1933containerColorvNxB06k$material3_release(z422), iconButtonColors2.m1934contentColorvNxB06k$material3_release(z422), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1560623888, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$2
+            }, 1, null), z422, shape2, iconButtonColors2.m2240containerColorvNxB06k$material3_release(z422), iconButtonColors2.m2241contentColorvNxB06k$material3_release(z422), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1560623888, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -1162,7 +1162,7 @@ public final class IconButtonKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1560623888, i10, -1, "androidx.compose.material3.FilledIconButton.<anonymous> (IconButton.kt:231)");
                         }
-                        Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3059getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3058getContainerHeightD9Ej5fM());
+                        Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3366getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3365getContainerHeightD9Ej5fM());
                         Alignment center = Alignment.Companion.getCenter();
                         Function2<Composer, Integer, Unit> function22 = function2;
                         ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -1170,7 +1170,7 @@ public final class IconButtonKt {
                         ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                         CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m787sizeVpY3zN4);
+                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m886sizeVpY3zN4);
                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(composer3.getApplier() instanceof Applier)) {
@@ -1182,15 +1182,15 @@ public final class IconButtonKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer3, 1882507244, "C239@11116L9:IconButton.kt#uh7d8r");
@@ -1259,7 +1259,7 @@ public final class IconButtonKt {
         IconButtonColors iconButtonColors4222 = iconButtonColors2;
         Modifier modifier3222 = companion;
         composer2 = startRestartGroup;
-        SurfaceKt.m2350Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$1
+        SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                 invoke2(semanticsPropertyReceiver);
@@ -1268,9 +1268,9 @@ public final class IconButtonKt {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5911getButtono7Vup1c());
+                SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
             }
-        }, 1, null), z4222, shape2, iconButtonColors2.m1933containerColorvNxB06k$material3_release(z4222), iconButtonColors2.m1934contentColorvNxB06k$material3_release(z4222), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1560623888, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$2
+        }, 1, null), z4222, shape2, iconButtonColors2.m2240containerColorvNxB06k$material3_release(z4222), iconButtonColors2.m2241contentColorvNxB06k$material3_release(z4222), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1560623888, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconButton$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -1290,7 +1290,7 @@ public final class IconButtonKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-1560623888, i10, -1, "androidx.compose.material3.FilledIconButton.<anonymous> (IconButton.kt:231)");
                     }
-                    Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3059getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3058getContainerHeightD9Ej5fM());
+                    Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3366getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3365getContainerHeightD9Ej5fM());
                     Alignment center = Alignment.Companion.getCenter();
                     Function2<Composer, Integer, Unit> function22 = function2;
                     ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -1298,7 +1298,7 @@ public final class IconButtonKt {
                     ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                     CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m787sizeVpY3zN4);
+                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m886sizeVpY3zN4);
                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                     ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                     if (!(composer3.getApplier() instanceof Applier)) {
@@ -1310,15 +1310,15 @@ public final class IconButtonKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer3, 1882507244, "C239@11116L9:IconButton.kt#uh7d8r");
@@ -1513,7 +1513,7 @@ public final class IconButtonKt {
                         IconButtonColors iconButtonColors4 = iconButtonColors2;
                         Modifier modifier3 = companion;
                         composer2 = startRestartGroup;
-                        SurfaceKt.m2350Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$1
+                        SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$1
                             @Override // kotlin.jvm.functions.Function1
                             public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                 invoke2(semanticsPropertyReceiver);
@@ -1522,9 +1522,9 @@ public final class IconButtonKt {
 
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5911getButtono7Vup1c());
+                                SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
                             }
-                        }, 1, null), z4, shape2, iconButtonColors2.m1933containerColorvNxB06k$material3_release(z4), iconButtonColors2.m1934contentColorvNxB06k$material3_release(z4), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1772884636, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$2
+                        }, 1, null), z4, shape2, iconButtonColors2.m2240containerColorvNxB06k$material3_release(z4), iconButtonColors2.m2241contentColorvNxB06k$material3_release(z4), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1772884636, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$2
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             /* JADX WARN: Multi-variable type inference failed */
@@ -1544,7 +1544,7 @@ public final class IconButtonKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(-1772884636, i10, -1, "androidx.compose.material3.FilledTonalIconButton.<anonymous> (IconButton.kt:298)");
                                     }
-                                    Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3075getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3074getContainerHeightD9Ej5fM());
+                                    Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3382getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3381getContainerHeightD9Ej5fM());
                                     Alignment center = Alignment.Companion.getCenter();
                                     Function2<Composer, Integer, Unit> function22 = function2;
                                     ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -1552,7 +1552,7 @@ public final class IconButtonKt {
                                     ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                     CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m787sizeVpY3zN4);
+                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m886sizeVpY3zN4);
                                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                     ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                     if (!(composer3.getApplier() instanceof Applier)) {
@@ -1564,15 +1564,15 @@ public final class IconButtonKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer3, -507423912, "C306@14279L9:IconButton.kt#uh7d8r");
@@ -1659,7 +1659,7 @@ public final class IconButtonKt {
                 IconButtonColors iconButtonColors42 = iconButtonColors2;
                 Modifier modifier32 = companion;
                 composer2 = startRestartGroup;
-                SurfaceKt.m2350Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$1
+                SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$1
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                         invoke2(semanticsPropertyReceiver);
@@ -1668,9 +1668,9 @@ public final class IconButtonKt {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5911getButtono7Vup1c());
+                        SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
                     }
-                }, 1, null), z42, shape2, iconButtonColors2.m1933containerColorvNxB06k$material3_release(z42), iconButtonColors2.m1934contentColorvNxB06k$material3_release(z42), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1772884636, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$2
+                }, 1, null), z42, shape2, iconButtonColors2.m2240containerColorvNxB06k$material3_release(z42), iconButtonColors2.m2241contentColorvNxB06k$material3_release(z42), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1772884636, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -1690,7 +1690,7 @@ public final class IconButtonKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-1772884636, i10, -1, "androidx.compose.material3.FilledTonalIconButton.<anonymous> (IconButton.kt:298)");
                             }
-                            Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3075getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3074getContainerHeightD9Ej5fM());
+                            Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3382getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3381getContainerHeightD9Ej5fM());
                             Alignment center = Alignment.Companion.getCenter();
                             Function2<Composer, Integer, Unit> function22 = function2;
                             ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -1698,7 +1698,7 @@ public final class IconButtonKt {
                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                             CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m787sizeVpY3zN4);
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m886sizeVpY3zN4);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -1710,15 +1710,15 @@ public final class IconButtonKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                            Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer3, -507423912, "C306@14279L9:IconButton.kt#uh7d8r");
@@ -1783,7 +1783,7 @@ public final class IconButtonKt {
             IconButtonColors iconButtonColors422 = iconButtonColors2;
             Modifier modifier322 = companion;
             composer2 = startRestartGroup;
-            SurfaceKt.m2350Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$1
+            SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                     invoke2(semanticsPropertyReceiver);
@@ -1792,9 +1792,9 @@ public final class IconButtonKt {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5911getButtono7Vup1c());
+                    SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
                 }
-            }, 1, null), z422, shape2, iconButtonColors2.m1933containerColorvNxB06k$material3_release(z422), iconButtonColors2.m1934contentColorvNxB06k$material3_release(z422), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1772884636, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$2
+            }, 1, null), z422, shape2, iconButtonColors2.m2240containerColorvNxB06k$material3_release(z422), iconButtonColors2.m2241contentColorvNxB06k$material3_release(z422), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1772884636, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -1814,7 +1814,7 @@ public final class IconButtonKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1772884636, i10, -1, "androidx.compose.material3.FilledTonalIconButton.<anonymous> (IconButton.kt:298)");
                         }
-                        Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3075getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3074getContainerHeightD9Ej5fM());
+                        Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3382getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3381getContainerHeightD9Ej5fM());
                         Alignment center = Alignment.Companion.getCenter();
                         Function2<Composer, Integer, Unit> function22 = function2;
                         ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -1822,7 +1822,7 @@ public final class IconButtonKt {
                         ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                         CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m787sizeVpY3zN4);
+                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m886sizeVpY3zN4);
                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(composer3.getApplier() instanceof Applier)) {
@@ -1834,15 +1834,15 @@ public final class IconButtonKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer3, -507423912, "C306@14279L9:IconButton.kt#uh7d8r");
@@ -1911,7 +1911,7 @@ public final class IconButtonKt {
         IconButtonColors iconButtonColors4222 = iconButtonColors2;
         Modifier modifier3222 = companion;
         composer2 = startRestartGroup;
-        SurfaceKt.m2350Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$1
+        SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                 invoke2(semanticsPropertyReceiver);
@@ -1920,9 +1920,9 @@ public final class IconButtonKt {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5911getButtono7Vup1c());
+                SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
             }
-        }, 1, null), z4222, shape2, iconButtonColors2.m1933containerColorvNxB06k$material3_release(z4222), iconButtonColors2.m1934contentColorvNxB06k$material3_release(z4222), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1772884636, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$2
+        }, 1, null), z4222, shape2, iconButtonColors2.m2240containerColorvNxB06k$material3_release(z4222), iconButtonColors2.m2241contentColorvNxB06k$material3_release(z4222), 0.0f, 0.0f, null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1772884636, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconButton$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -1942,7 +1942,7 @@ public final class IconButtonKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-1772884636, i10, -1, "androidx.compose.material3.FilledTonalIconButton.<anonymous> (IconButton.kt:298)");
                     }
-                    Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3075getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3074getContainerHeightD9Ej5fM());
+                    Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3382getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3381getContainerHeightD9Ej5fM());
                     Alignment center = Alignment.Companion.getCenter();
                     Function2<Composer, Integer, Unit> function22 = function2;
                     ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -1950,7 +1950,7 @@ public final class IconButtonKt {
                     ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                     CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m787sizeVpY3zN4);
+                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m886sizeVpY3zN4);
                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                     ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                     if (!(composer3.getApplier() instanceof Applier)) {
@@ -1962,15 +1962,15 @@ public final class IconButtonKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer3, -507423912, "C306@14279L9:IconButton.kt#uh7d8r");
@@ -2151,7 +2151,7 @@ public final class IconButtonKt {
                                     Modifier modifier4 = modifier2;
                                     Shape shape3 = obj2;
                                     IconToggleButtonColors iconToggleButtonColors4 = iconToggleButtonColors2;
-                                    SurfaceKt.m2349Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$1
+                                    SurfaceKt.m2656Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$1
                                         @Override // kotlin.jvm.functions.Function1
                                         public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                             invoke2(semanticsPropertyReceiver);
@@ -2160,9 +2160,9 @@ public final class IconButtonKt {
 
                                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                         public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                            SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                                            SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                                         }
-                                    }, 1, null), z4, shape3, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i11).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i11).getValue().m4088unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1235871670, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$2
+                                    }, 1, null), z4, shape3, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i11).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i11).getValue().m4547unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1235871670, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$2
                                         /* JADX INFO: Access modifiers changed from: package-private */
                                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                         /* JADX WARN: Multi-variable type inference failed */
@@ -2182,7 +2182,7 @@ public final class IconButtonKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(1235871670, i12, -1, "androidx.compose.material3.FilledIconToggleButton.<anonymous> (IconButton.kt:364)");
                                                 }
-                                                Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3059getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3058getContainerHeightD9Ej5fM());
+                                                Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3366getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3365getContainerHeightD9Ej5fM());
                                                 Alignment center = Alignment.Companion.getCenter();
                                                 Function2<Composer, Integer, Unit> function22 = function2;
                                                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -2190,7 +2190,7 @@ public final class IconButtonKt {
                                                 ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                                 int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                                                 CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m787sizeVpY3zN4);
+                                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m886sizeVpY3zN4);
                                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                                 ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                                 if (!(composer2.getApplier() instanceof Applier)) {
@@ -2202,15 +2202,15 @@ public final class IconButtonKt {
                                                 } else {
                                                     composer2.useNode();
                                                 }
-                                                Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                                                Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                 }
-                                                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                 ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                 ComposerKt.sourceInformationMarkerStart(composer2, -1295472936, "C372@17345L9:IconButton.kt#uh7d8r");
@@ -2261,7 +2261,7 @@ public final class IconButtonKt {
                             Modifier modifier42 = modifier2;
                             Shape shape32 = obj2;
                             IconToggleButtonColors iconToggleButtonColors42 = iconToggleButtonColors2;
-                            SurfaceKt.m2349Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$1
+                            SurfaceKt.m2656Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$1
                                 @Override // kotlin.jvm.functions.Function1
                                 public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                     invoke2(semanticsPropertyReceiver);
@@ -2270,9 +2270,9 @@ public final class IconButtonKt {
 
                                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                    SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                                    SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                                 }
-                            }, 1, null), z4, shape32, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i112).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i112).getValue().m4088unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1235871670, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$2
+                            }, 1, null), z4, shape32, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i112).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i112).getValue().m4547unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1235871670, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$2
                                 /* JADX INFO: Access modifiers changed from: package-private */
                                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                 /* JADX WARN: Multi-variable type inference failed */
@@ -2292,7 +2292,7 @@ public final class IconButtonKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(1235871670, i12, -1, "androidx.compose.material3.FilledIconToggleButton.<anonymous> (IconButton.kt:364)");
                                         }
-                                        Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3059getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3058getContainerHeightD9Ej5fM());
+                                        Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3366getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3365getContainerHeightD9Ej5fM());
                                         Alignment center = Alignment.Companion.getCenter();
                                         Function2<Composer, Integer, Unit> function22 = function2;
                                         ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -2300,7 +2300,7 @@ public final class IconButtonKt {
                                         ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                                         CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m787sizeVpY3zN4);
+                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m886sizeVpY3zN4);
                                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                         ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                         if (!(composer2.getApplier() instanceof Applier)) {
@@ -2312,15 +2312,15 @@ public final class IconButtonKt {
                                         } else {
                                             composer2.useNode();
                                         }
-                                        Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                         }
-                                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                         ComposerKt.sourceInformationMarkerStart(composer2, -1295472936, "C372@17345L9:IconButton.kt#uh7d8r");
@@ -2410,7 +2410,7 @@ public final class IconButtonKt {
                     Modifier modifier422 = modifier2;
                     Shape shape322 = obj2;
                     IconToggleButtonColors iconToggleButtonColors422 = iconToggleButtonColors2;
-                    SurfaceKt.m2349Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$1
+                    SurfaceKt.m2656Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$1
                         @Override // kotlin.jvm.functions.Function1
                         public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                             invoke2(semanticsPropertyReceiver);
@@ -2419,9 +2419,9 @@ public final class IconButtonKt {
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                            SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                            SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                         }
-                    }, 1, null), z4, shape322, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i1122).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i1122).getValue().m4088unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1235871670, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$2
+                    }, 1, null), z4, shape322, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i1122).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i1122).getValue().m4547unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1235871670, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$2
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         /* JADX WARN: Multi-variable type inference failed */
@@ -2441,7 +2441,7 @@ public final class IconButtonKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(1235871670, i12, -1, "androidx.compose.material3.FilledIconToggleButton.<anonymous> (IconButton.kt:364)");
                                 }
-                                Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3059getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3058getContainerHeightD9Ej5fM());
+                                Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3366getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3365getContainerHeightD9Ej5fM());
                                 Alignment center = Alignment.Companion.getCenter();
                                 Function2<Composer, Integer, Unit> function22 = function2;
                                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -2449,7 +2449,7 @@ public final class IconButtonKt {
                                 ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                 int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                                 CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m787sizeVpY3zN4);
+                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m886sizeVpY3zN4);
                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                 if (!(composer2.getApplier() instanceof Applier)) {
@@ -2461,15 +2461,15 @@ public final class IconButtonKt {
                                 } else {
                                     composer2.useNode();
                                 }
-                                Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                                Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer2, -1295472936, "C372@17345L9:IconButton.kt#uh7d8r");
@@ -2539,7 +2539,7 @@ public final class IconButtonKt {
                 Modifier modifier4222 = modifier2;
                 Shape shape3222 = obj2;
                 IconToggleButtonColors iconToggleButtonColors4222 = iconToggleButtonColors2;
-                SurfaceKt.m2349Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$1
+                SurfaceKt.m2656Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$1
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                         invoke2(semanticsPropertyReceiver);
@@ -2548,9 +2548,9 @@ public final class IconButtonKt {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                        SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                     }
-                }, 1, null), z4, shape3222, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i11222).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i11222).getValue().m4088unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1235871670, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$2
+                }, 1, null), z4, shape3222, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i11222).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i11222).getValue().m4547unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1235871670, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -2570,7 +2570,7 @@ public final class IconButtonKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(1235871670, i12, -1, "androidx.compose.material3.FilledIconToggleButton.<anonymous> (IconButton.kt:364)");
                             }
-                            Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3059getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3058getContainerHeightD9Ej5fM());
+                            Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3366getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3365getContainerHeightD9Ej5fM());
                             Alignment center = Alignment.Companion.getCenter();
                             Function2<Composer, Integer, Unit> function22 = function2;
                             ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -2578,7 +2578,7 @@ public final class IconButtonKt {
                             ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                             CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m787sizeVpY3zN4);
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m886sizeVpY3zN4);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer2.getApplier() instanceof Applier)) {
@@ -2590,15 +2590,15 @@ public final class IconButtonKt {
                             } else {
                                 composer2.useNode();
                             }
-                            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                            Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer2, -1295472936, "C372@17345L9:IconButton.kt#uh7d8r");
@@ -2672,7 +2672,7 @@ public final class IconButtonKt {
             Modifier modifier42222 = modifier2;
             Shape shape32222 = obj2;
             IconToggleButtonColors iconToggleButtonColors42222 = iconToggleButtonColors2;
-            SurfaceKt.m2349Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$1
+            SurfaceKt.m2656Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                     invoke2(semanticsPropertyReceiver);
@@ -2681,9 +2681,9 @@ public final class IconButtonKt {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                    SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                 }
-            }, 1, null), z4, shape32222, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i112222).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i112222).getValue().m4088unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1235871670, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$2
+            }, 1, null), z4, shape32222, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i112222).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i112222).getValue().m4547unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1235871670, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -2703,7 +2703,7 @@ public final class IconButtonKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(1235871670, i12, -1, "androidx.compose.material3.FilledIconToggleButton.<anonymous> (IconButton.kt:364)");
                         }
-                        Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3059getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3058getContainerHeightD9Ej5fM());
+                        Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3366getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3365getContainerHeightD9Ej5fM());
                         Alignment center = Alignment.Companion.getCenter();
                         Function2<Composer, Integer, Unit> function22 = function2;
                         ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -2711,7 +2711,7 @@ public final class IconButtonKt {
                         ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                         CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m787sizeVpY3zN4);
+                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m886sizeVpY3zN4);
                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(composer2.getApplier() instanceof Applier)) {
@@ -2723,15 +2723,15 @@ public final class IconButtonKt {
                         } else {
                             composer2.useNode();
                         }
-                        Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer2, -1295472936, "C372@17345L9:IconButton.kt#uh7d8r");
@@ -2809,7 +2809,7 @@ public final class IconButtonKt {
         Modifier modifier422222 = modifier2;
         Shape shape322222 = obj2;
         IconToggleButtonColors iconToggleButtonColors422222 = iconToggleButtonColors2;
-        SurfaceKt.m2349Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$1
+        SurfaceKt.m2656Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                 invoke2(semanticsPropertyReceiver);
@@ -2818,9 +2818,9 @@ public final class IconButtonKt {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
             }
-        }, 1, null), z4, shape322222, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i1122222).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i1122222).getValue().m4088unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1235871670, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$2
+        }, 1, null), z4, shape322222, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i1122222).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i1122222).getValue().m4547unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1235871670, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledIconToggleButton$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -2840,7 +2840,7 @@ public final class IconButtonKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(1235871670, i12, -1, "androidx.compose.material3.FilledIconToggleButton.<anonymous> (IconButton.kt:364)");
                     }
-                    Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3059getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3058getContainerHeightD9Ej5fM());
+                    Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledIconButtonTokens.INSTANCE.m3366getContainerWidthD9Ej5fM(), FilledIconButtonTokens.INSTANCE.m3365getContainerHeightD9Ej5fM());
                     Alignment center = Alignment.Companion.getCenter();
                     Function2<Composer, Integer, Unit> function22 = function2;
                     ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -2848,7 +2848,7 @@ public final class IconButtonKt {
                     ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                     CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m787sizeVpY3zN4);
+                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m886sizeVpY3zN4);
                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                     ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                     if (!(composer2.getApplier() instanceof Applier)) {
@@ -2860,15 +2860,15 @@ public final class IconButtonKt {
                     } else {
                         composer2.useNode();
                     }
-                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer2, -1295472936, "C372@17345L9:IconButton.kt#uh7d8r");
@@ -3049,7 +3049,7 @@ public final class IconButtonKt {
                                     Modifier modifier4 = modifier2;
                                     Shape shape3 = obj2;
                                     IconToggleButtonColors iconToggleButtonColors4 = iconToggleButtonColors2;
-                                    SurfaceKt.m2349Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$1
+                                    SurfaceKt.m2656Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$1
                                         @Override // kotlin.jvm.functions.Function1
                                         public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                             invoke2(semanticsPropertyReceiver);
@@ -3058,9 +3058,9 @@ public final class IconButtonKt {
 
                                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                         public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                            SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                                            SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                                         }
-                                    }, 1, null), z4, shape3, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i11).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i11).getValue().m4088unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-58218680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$2
+                                    }, 1, null), z4, shape3, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i11).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i11).getValue().m4547unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-58218680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$2
                                         /* JADX INFO: Access modifiers changed from: package-private */
                                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                         /* JADX WARN: Multi-variable type inference failed */
@@ -3080,7 +3080,7 @@ public final class IconButtonKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(-58218680, i12, -1, "androidx.compose.material3.FilledTonalIconToggleButton.<anonymous> (IconButton.kt:435)");
                                                 }
-                                                Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3075getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3074getContainerHeightD9Ej5fM());
+                                                Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3382getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3381getContainerHeightD9Ej5fM());
                                                 Alignment center = Alignment.Companion.getCenter();
                                                 Function2<Composer, Integer, Unit> function22 = function2;
                                                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -3088,7 +3088,7 @@ public final class IconButtonKt {
                                                 ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                                 int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                                                 CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m787sizeVpY3zN4);
+                                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m886sizeVpY3zN4);
                                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                                 ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                                 if (!(composer2.getApplier() instanceof Applier)) {
@@ -3100,15 +3100,15 @@ public final class IconButtonKt {
                                                 } else {
                                                     composer2.useNode();
                                                 }
-                                                Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                                                Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                 }
-                                                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                 ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                 ComposerKt.sourceInformationMarkerStart(composer2, -1171714300, "C443@20782L9:IconButton.kt#uh7d8r");
@@ -3159,7 +3159,7 @@ public final class IconButtonKt {
                             Modifier modifier42 = modifier2;
                             Shape shape32 = obj2;
                             IconToggleButtonColors iconToggleButtonColors42 = iconToggleButtonColors2;
-                            SurfaceKt.m2349Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$1
+                            SurfaceKt.m2656Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$1
                                 @Override // kotlin.jvm.functions.Function1
                                 public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                     invoke2(semanticsPropertyReceiver);
@@ -3168,9 +3168,9 @@ public final class IconButtonKt {
 
                                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                    SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                                    SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                                 }
-                            }, 1, null), z4, shape32, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i112).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i112).getValue().m4088unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-58218680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$2
+                            }, 1, null), z4, shape32, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i112).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i112).getValue().m4547unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-58218680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$2
                                 /* JADX INFO: Access modifiers changed from: package-private */
                                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                 /* JADX WARN: Multi-variable type inference failed */
@@ -3190,7 +3190,7 @@ public final class IconButtonKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(-58218680, i12, -1, "androidx.compose.material3.FilledTonalIconToggleButton.<anonymous> (IconButton.kt:435)");
                                         }
-                                        Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3075getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3074getContainerHeightD9Ej5fM());
+                                        Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3382getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3381getContainerHeightD9Ej5fM());
                                         Alignment center = Alignment.Companion.getCenter();
                                         Function2<Composer, Integer, Unit> function22 = function2;
                                         ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -3198,7 +3198,7 @@ public final class IconButtonKt {
                                         ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                                         CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m787sizeVpY3zN4);
+                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m886sizeVpY3zN4);
                                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                         ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                         if (!(composer2.getApplier() instanceof Applier)) {
@@ -3210,15 +3210,15 @@ public final class IconButtonKt {
                                         } else {
                                             composer2.useNode();
                                         }
-                                        Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                         }
-                                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                         ComposerKt.sourceInformationMarkerStart(composer2, -1171714300, "C443@20782L9:IconButton.kt#uh7d8r");
@@ -3308,7 +3308,7 @@ public final class IconButtonKt {
                     Modifier modifier422 = modifier2;
                     Shape shape322 = obj2;
                     IconToggleButtonColors iconToggleButtonColors422 = iconToggleButtonColors2;
-                    SurfaceKt.m2349Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$1
+                    SurfaceKt.m2656Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$1
                         @Override // kotlin.jvm.functions.Function1
                         public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                             invoke2(semanticsPropertyReceiver);
@@ -3317,9 +3317,9 @@ public final class IconButtonKt {
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                            SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                            SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                         }
-                    }, 1, null), z4, shape322, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i1122).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i1122).getValue().m4088unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-58218680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$2
+                    }, 1, null), z4, shape322, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i1122).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i1122).getValue().m4547unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-58218680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$2
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         /* JADX WARN: Multi-variable type inference failed */
@@ -3339,7 +3339,7 @@ public final class IconButtonKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(-58218680, i12, -1, "androidx.compose.material3.FilledTonalIconToggleButton.<anonymous> (IconButton.kt:435)");
                                 }
-                                Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3075getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3074getContainerHeightD9Ej5fM());
+                                Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3382getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3381getContainerHeightD9Ej5fM());
                                 Alignment center = Alignment.Companion.getCenter();
                                 Function2<Composer, Integer, Unit> function22 = function2;
                                 ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -3347,7 +3347,7 @@ public final class IconButtonKt {
                                 ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                 int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                                 CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m787sizeVpY3zN4);
+                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m886sizeVpY3zN4);
                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                 if (!(composer2.getApplier() instanceof Applier)) {
@@ -3359,15 +3359,15 @@ public final class IconButtonKt {
                                 } else {
                                     composer2.useNode();
                                 }
-                                Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                                Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer2, -1171714300, "C443@20782L9:IconButton.kt#uh7d8r");
@@ -3437,7 +3437,7 @@ public final class IconButtonKt {
                 Modifier modifier4222 = modifier2;
                 Shape shape3222 = obj2;
                 IconToggleButtonColors iconToggleButtonColors4222 = iconToggleButtonColors2;
-                SurfaceKt.m2349Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$1
+                SurfaceKt.m2656Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$1
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                         invoke2(semanticsPropertyReceiver);
@@ -3446,9 +3446,9 @@ public final class IconButtonKt {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                        SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                     }
-                }, 1, null), z4, shape3222, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i11222).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i11222).getValue().m4088unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-58218680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$2
+                }, 1, null), z4, shape3222, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i11222).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i11222).getValue().m4547unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-58218680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -3468,7 +3468,7 @@ public final class IconButtonKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-58218680, i12, -1, "androidx.compose.material3.FilledTonalIconToggleButton.<anonymous> (IconButton.kt:435)");
                             }
-                            Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3075getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3074getContainerHeightD9Ej5fM());
+                            Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3382getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3381getContainerHeightD9Ej5fM());
                             Alignment center = Alignment.Companion.getCenter();
                             Function2<Composer, Integer, Unit> function22 = function2;
                             ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -3476,7 +3476,7 @@ public final class IconButtonKt {
                             ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                             CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m787sizeVpY3zN4);
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m886sizeVpY3zN4);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer2.getApplier() instanceof Applier)) {
@@ -3488,15 +3488,15 @@ public final class IconButtonKt {
                             } else {
                                 composer2.useNode();
                             }
-                            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                            Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer2, -1171714300, "C443@20782L9:IconButton.kt#uh7d8r");
@@ -3570,7 +3570,7 @@ public final class IconButtonKt {
             Modifier modifier42222 = modifier2;
             Shape shape32222 = obj2;
             IconToggleButtonColors iconToggleButtonColors42222 = iconToggleButtonColors2;
-            SurfaceKt.m2349Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$1
+            SurfaceKt.m2656Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                     invoke2(semanticsPropertyReceiver);
@@ -3579,9 +3579,9 @@ public final class IconButtonKt {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                    SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                 }
-            }, 1, null), z4, shape32222, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i112222).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i112222).getValue().m4088unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-58218680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$2
+            }, 1, null), z4, shape32222, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i112222).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i112222).getValue().m4547unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-58218680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -3601,7 +3601,7 @@ public final class IconButtonKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-58218680, i12, -1, "androidx.compose.material3.FilledTonalIconToggleButton.<anonymous> (IconButton.kt:435)");
                         }
-                        Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3075getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3074getContainerHeightD9Ej5fM());
+                        Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3382getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3381getContainerHeightD9Ej5fM());
                         Alignment center = Alignment.Companion.getCenter();
                         Function2<Composer, Integer, Unit> function22 = function2;
                         ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -3609,7 +3609,7 @@ public final class IconButtonKt {
                         ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                         CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m787sizeVpY3zN4);
+                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m886sizeVpY3zN4);
                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(composer2.getApplier() instanceof Applier)) {
@@ -3621,15 +3621,15 @@ public final class IconButtonKt {
                         } else {
                             composer2.useNode();
                         }
-                        Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer2, -1171714300, "C443@20782L9:IconButton.kt#uh7d8r");
@@ -3707,7 +3707,7 @@ public final class IconButtonKt {
         Modifier modifier422222 = modifier2;
         Shape shape322222 = obj2;
         IconToggleButtonColors iconToggleButtonColors422222 = iconToggleButtonColors2;
-        SurfaceKt.m2349Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$1
+        SurfaceKt.m2656Surfaced85dljk(z, obj, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                 invoke2(semanticsPropertyReceiver);
@@ -3716,9 +3716,9 @@ public final class IconButtonKt {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
             }
-        }, 1, null), z4, shape322222, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i1122222).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i1122222).getValue().m4088unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-58218680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$2
+        }, 1, null), z4, shape322222, iconToggleButtonColors2.containerColor$material3_release(z4, z, startRestartGroup, i1122222).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z4, z, startRestartGroup, i1122222).getValue().m4547unboximpl(), 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-58218680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$FilledTonalIconToggleButton$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -3738,7 +3738,7 @@ public final class IconButtonKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-58218680, i12, -1, "androidx.compose.material3.FilledTonalIconToggleButton.<anonymous> (IconButton.kt:435)");
                     }
-                    Modifier m787sizeVpY3zN4 = SizeKt.m787sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3075getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3074getContainerHeightD9Ej5fM());
+                    Modifier m886sizeVpY3zN4 = SizeKt.m886sizeVpY3zN4(Modifier.Companion, FilledTonalIconButtonTokens.INSTANCE.m3382getContainerWidthD9Ej5fM(), FilledTonalIconButtonTokens.INSTANCE.m3381getContainerHeightD9Ej5fM());
                     Alignment center = Alignment.Companion.getCenter();
                     Function2<Composer, Integer, Unit> function22 = function2;
                     ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -3746,7 +3746,7 @@ public final class IconButtonKt {
                     ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                     CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m787sizeVpY3zN4);
+                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m886sizeVpY3zN4);
                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                     ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                     if (!(composer2.getApplier() instanceof Applier)) {
@@ -3758,15 +3758,15 @@ public final class IconButtonKt {
                     } else {
                         composer2.useNode();
                     }
-                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer2, -1171714300, "C443@20782L9:IconButton.kt#uh7d8r");
@@ -3995,7 +3995,7 @@ public final class IconButtonKt {
                         int i11 = i6 & 8078;
                         int i12 = i6 << 9;
                         composer2 = startRestartGroup;
-                        SurfaceKt.m2350Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$1
+                        SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$1
                             @Override // kotlin.jvm.functions.Function1
                             public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                 invoke2(semanticsPropertyReceiver);
@@ -4004,9 +4004,9 @@ public final class IconButtonKt {
 
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5911getButtono7Vup1c());
+                                SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
                             }
-                        }, 1, null), z3, shape2, iconButtonColors2.m1933containerColorvNxB06k$material3_release(z3), iconButtonColors2.m1934contentColorvNxB06k$material3_release(z3), 0.0f, 0.0f, borderStroke2, obj6, ComposableLambdaKt.rememberComposableLambda(582332538, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$2
+                        }, 1, null), z3, shape2, iconButtonColors2.m2240containerColorvNxB06k$material3_release(z3), iconButtonColors2.m2241contentColorvNxB06k$material3_release(z3), 0.0f, 0.0f, borderStroke2, obj6, ComposableLambdaKt.rememberComposableLambda(582332538, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$2
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             /* JADX WARN: Multi-variable type inference failed */
@@ -4026,7 +4026,7 @@ public final class IconButtonKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(582332538, i13, -1, "androidx.compose.material3.OutlinedIconButton.<anonymous> (IconButton.kt:507)");
                                     }
-                                    Modifier m785size3ABfNKs = SizeKt.m785size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3158getContainerSizeD9Ej5fM());
+                                    Modifier m884size3ABfNKs = SizeKt.m884size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3465getContainerSizeD9Ej5fM());
                                     Alignment center = Alignment.Companion.getCenter();
                                     Function2<Composer, Integer, Unit> function22 = function2;
                                     ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -4034,7 +4034,7 @@ public final class IconButtonKt {
                                     ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                     CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m785size3ABfNKs);
+                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m884size3ABfNKs);
                                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                     ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                     if (!(composer3.getApplier() instanceof Applier)) {
@@ -4046,15 +4046,15 @@ public final class IconButtonKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer3, 1854043468, "C511@24047L9:IconButton.kt#uh7d8r");
@@ -4145,7 +4145,7 @@ public final class IconButtonKt {
                 int i112 = i6 & 8078;
                 int i122 = i6 << 9;
                 composer2 = startRestartGroup;
-                SurfaceKt.m2350Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$1
+                SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$1
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                         invoke2(semanticsPropertyReceiver);
@@ -4154,9 +4154,9 @@ public final class IconButtonKt {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5911getButtono7Vup1c());
+                        SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
                     }
-                }, 1, null), z3, shape2, iconButtonColors2.m1933containerColorvNxB06k$material3_release(z3), iconButtonColors2.m1934contentColorvNxB06k$material3_release(z3), 0.0f, 0.0f, borderStroke2, obj6, ComposableLambdaKt.rememberComposableLambda(582332538, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$2
+                }, 1, null), z3, shape2, iconButtonColors2.m2240containerColorvNxB06k$material3_release(z3), iconButtonColors2.m2241contentColorvNxB06k$material3_release(z3), 0.0f, 0.0f, borderStroke2, obj6, ComposableLambdaKt.rememberComposableLambda(582332538, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -4176,7 +4176,7 @@ public final class IconButtonKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(582332538, i13, -1, "androidx.compose.material3.OutlinedIconButton.<anonymous> (IconButton.kt:507)");
                             }
-                            Modifier m785size3ABfNKs = SizeKt.m785size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3158getContainerSizeD9Ej5fM());
+                            Modifier m884size3ABfNKs = SizeKt.m884size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3465getContainerSizeD9Ej5fM());
                             Alignment center = Alignment.Companion.getCenter();
                             Function2<Composer, Integer, Unit> function22 = function2;
                             ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -4184,7 +4184,7 @@ public final class IconButtonKt {
                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                             CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m785size3ABfNKs);
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m884size3ABfNKs);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -4196,15 +4196,15 @@ public final class IconButtonKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                            Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer3, 1854043468, "C511@24047L9:IconButton.kt#uh7d8r");
@@ -4274,7 +4274,7 @@ public final class IconButtonKt {
             int i1122 = i6 & 8078;
             int i1222 = i6 << 9;
             composer2 = startRestartGroup;
-            SurfaceKt.m2350Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$1
+            SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                     invoke2(semanticsPropertyReceiver);
@@ -4283,9 +4283,9 @@ public final class IconButtonKt {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5911getButtono7Vup1c());
+                    SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
                 }
-            }, 1, null), z3, shape2, iconButtonColors2.m1933containerColorvNxB06k$material3_release(z3), iconButtonColors2.m1934contentColorvNxB06k$material3_release(z3), 0.0f, 0.0f, borderStroke2, obj6, ComposableLambdaKt.rememberComposableLambda(582332538, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$2
+            }, 1, null), z3, shape2, iconButtonColors2.m2240containerColorvNxB06k$material3_release(z3), iconButtonColors2.m2241contentColorvNxB06k$material3_release(z3), 0.0f, 0.0f, borderStroke2, obj6, ComposableLambdaKt.rememberComposableLambda(582332538, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -4305,7 +4305,7 @@ public final class IconButtonKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(582332538, i13, -1, "androidx.compose.material3.OutlinedIconButton.<anonymous> (IconButton.kt:507)");
                         }
-                        Modifier m785size3ABfNKs = SizeKt.m785size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3158getContainerSizeD9Ej5fM());
+                        Modifier m884size3ABfNKs = SizeKt.m884size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3465getContainerSizeD9Ej5fM());
                         Alignment center = Alignment.Companion.getCenter();
                         Function2<Composer, Integer, Unit> function22 = function2;
                         ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -4313,7 +4313,7 @@ public final class IconButtonKt {
                         ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                         CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m785size3ABfNKs);
+                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m884size3ABfNKs);
                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(composer3.getApplier() instanceof Applier)) {
@@ -4325,15 +4325,15 @@ public final class IconButtonKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer3, 1854043468, "C511@24047L9:IconButton.kt#uh7d8r");
@@ -4407,7 +4407,7 @@ public final class IconButtonKt {
         int i11222 = i6 & 8078;
         int i12222 = i6 << 9;
         composer2 = startRestartGroup;
-        SurfaceKt.m2350Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$1
+        SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(companion, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                 invoke2(semanticsPropertyReceiver);
@@ -4416,9 +4416,9 @@ public final class IconButtonKt {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5911getButtono7Vup1c());
+                SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
             }
-        }, 1, null), z3, shape2, iconButtonColors2.m1933containerColorvNxB06k$material3_release(z3), iconButtonColors2.m1934contentColorvNxB06k$material3_release(z3), 0.0f, 0.0f, borderStroke2, obj6, ComposableLambdaKt.rememberComposableLambda(582332538, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$2
+        }, 1, null), z3, shape2, iconButtonColors2.m2240containerColorvNxB06k$material3_release(z3), iconButtonColors2.m2241contentColorvNxB06k$material3_release(z3), 0.0f, 0.0f, borderStroke2, obj6, ComposableLambdaKt.rememberComposableLambda(582332538, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconButton$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -4438,7 +4438,7 @@ public final class IconButtonKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(582332538, i13, -1, "androidx.compose.material3.OutlinedIconButton.<anonymous> (IconButton.kt:507)");
                     }
-                    Modifier m785size3ABfNKs = SizeKt.m785size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3158getContainerSizeD9Ej5fM());
+                    Modifier m884size3ABfNKs = SizeKt.m884size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3465getContainerSizeD9Ej5fM());
                     Alignment center = Alignment.Companion.getCenter();
                     Function2<Composer, Integer, Unit> function22 = function2;
                     ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -4446,7 +4446,7 @@ public final class IconButtonKt {
                     ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                     CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m785size3ABfNKs);
+                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m884size3ABfNKs);
                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                     ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                     if (!(composer3.getApplier() instanceof Applier)) {
@@ -4458,15 +4458,15 @@ public final class IconButtonKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer3, 1854043468, "C511@24047L9:IconButton.kt#uh7d8r");
@@ -4677,7 +4677,7 @@ public final class IconButtonKt {
                                 Modifier modifier4 = modifier2;
                                 IconToggleButtonColors iconToggleButtonColors4 = iconToggleButtonColors2;
                                 boolean z5 = z3;
-                                SurfaceKt.m2349Surfaced85dljk(z, function1, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$1
+                                SurfaceKt.m2656Surfaced85dljk(z, function1, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$1
                                     @Override // kotlin.jvm.functions.Function1
                                     public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                         invoke2(semanticsPropertyReceiver);
@@ -4686,9 +4686,9 @@ public final class IconButtonKt {
 
                                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                        SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                                        SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                                     }
-                                }, 1, null), z5, shape2, iconToggleButtonColors2.containerColor$material3_release(z3, z, startRestartGroup, i12).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z3, z, startRestartGroup, i12).getValue().m4088unboximpl(), 0.0f, 0.0f, borderStroke2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1207657396, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$2
+                                }, 1, null), z5, shape2, iconToggleButtonColors2.containerColor$material3_release(z3, z, startRestartGroup, i12).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z3, z, startRestartGroup, i12).getValue().m4547unboximpl(), 0.0f, 0.0f, borderStroke2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1207657396, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$2
                                     /* JADX INFO: Access modifiers changed from: package-private */
                                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                     /* JADX WARN: Multi-variable type inference failed */
@@ -4708,7 +4708,7 @@ public final class IconButtonKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(1207657396, i13, -1, "androidx.compose.material3.OutlinedIconToggleButton.<anonymous> (IconButton.kt:572)");
                                             }
-                                            Modifier m785size3ABfNKs = SizeKt.m785size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3158getContainerSizeD9Ej5fM());
+                                            Modifier m884size3ABfNKs = SizeKt.m884size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3465getContainerSizeD9Ej5fM());
                                             Alignment center = Alignment.Companion.getCenter();
                                             Function2<Composer, Integer, Unit> function22 = function2;
                                             ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -4716,7 +4716,7 @@ public final class IconButtonKt {
                                             ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                                             CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m785size3ABfNKs);
+                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m884size3ABfNKs);
                                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                             ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                             if (!(composer2.getApplier() instanceof Applier)) {
@@ -4728,15 +4728,15 @@ public final class IconButtonKt {
                                             } else {
                                                 composer2.useNode();
                                             }
-                                            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                                            Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                                            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                             }
-                                            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                             ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                             ComposerKt.sourceInformationMarkerStart(composer2, 278710712, "C576@27288L9:IconButton.kt#uh7d8r");
@@ -4792,7 +4792,7 @@ public final class IconButtonKt {
                         Modifier modifier42 = modifier2;
                         IconToggleButtonColors iconToggleButtonColors42 = iconToggleButtonColors2;
                         boolean z52 = z3;
-                        SurfaceKt.m2349Surfaced85dljk(z, function1, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$1
+                        SurfaceKt.m2656Surfaced85dljk(z, function1, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$1
                             @Override // kotlin.jvm.functions.Function1
                             public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                 invoke2(semanticsPropertyReceiver);
@@ -4801,9 +4801,9 @@ public final class IconButtonKt {
 
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                                SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                             }
-                        }, 1, null), z52, shape2, iconToggleButtonColors2.containerColor$material3_release(z3, z, startRestartGroup, i122).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z3, z, startRestartGroup, i122).getValue().m4088unboximpl(), 0.0f, 0.0f, borderStroke2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1207657396, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$2
+                        }, 1, null), z52, shape2, iconToggleButtonColors2.containerColor$material3_release(z3, z, startRestartGroup, i122).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z3, z, startRestartGroup, i122).getValue().m4547unboximpl(), 0.0f, 0.0f, borderStroke2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1207657396, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$2
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             /* JADX WARN: Multi-variable type inference failed */
@@ -4823,7 +4823,7 @@ public final class IconButtonKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(1207657396, i13, -1, "androidx.compose.material3.OutlinedIconToggleButton.<anonymous> (IconButton.kt:572)");
                                     }
-                                    Modifier m785size3ABfNKs = SizeKt.m785size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3158getContainerSizeD9Ej5fM());
+                                    Modifier m884size3ABfNKs = SizeKt.m884size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3465getContainerSizeD9Ej5fM());
                                     Alignment center = Alignment.Companion.getCenter();
                                     Function2<Composer, Integer, Unit> function22 = function2;
                                     ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -4831,7 +4831,7 @@ public final class IconButtonKt {
                                     ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                                     CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m785size3ABfNKs);
+                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m884size3ABfNKs);
                                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                     ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                     if (!(composer2.getApplier() instanceof Applier)) {
@@ -4843,15 +4843,15 @@ public final class IconButtonKt {
                                     } else {
                                         composer2.useNode();
                                     }
-                                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer2, 278710712, "C576@27288L9:IconButton.kt#uh7d8r");
@@ -4955,7 +4955,7 @@ public final class IconButtonKt {
                 Modifier modifier422 = modifier2;
                 IconToggleButtonColors iconToggleButtonColors422 = iconToggleButtonColors2;
                 boolean z522 = z3;
-                SurfaceKt.m2349Surfaced85dljk(z, function1, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$1
+                SurfaceKt.m2656Surfaced85dljk(z, function1, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$1
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                         invoke2(semanticsPropertyReceiver);
@@ -4964,9 +4964,9 @@ public final class IconButtonKt {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                        SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                     }
-                }, 1, null), z522, shape2, iconToggleButtonColors2.containerColor$material3_release(z3, z, startRestartGroup, i1222).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z3, z, startRestartGroup, i1222).getValue().m4088unboximpl(), 0.0f, 0.0f, borderStroke2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1207657396, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$2
+                }, 1, null), z522, shape2, iconToggleButtonColors2.containerColor$material3_release(z3, z, startRestartGroup, i1222).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z3, z, startRestartGroup, i1222).getValue().m4547unboximpl(), 0.0f, 0.0f, borderStroke2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1207657396, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -4986,7 +4986,7 @@ public final class IconButtonKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(1207657396, i13, -1, "androidx.compose.material3.OutlinedIconToggleButton.<anonymous> (IconButton.kt:572)");
                             }
-                            Modifier m785size3ABfNKs = SizeKt.m785size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3158getContainerSizeD9Ej5fM());
+                            Modifier m884size3ABfNKs = SizeKt.m884size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3465getContainerSizeD9Ej5fM());
                             Alignment center = Alignment.Companion.getCenter();
                             Function2<Composer, Integer, Unit> function22 = function2;
                             ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -4994,7 +4994,7 @@ public final class IconButtonKt {
                             ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                             CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m785size3ABfNKs);
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m884size3ABfNKs);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer2.getApplier() instanceof Applier)) {
@@ -5006,15 +5006,15 @@ public final class IconButtonKt {
                             } else {
                                 composer2.useNode();
                             }
-                            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                            Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer2, 278710712, "C576@27288L9:IconButton.kt#uh7d8r");
@@ -5093,7 +5093,7 @@ public final class IconButtonKt {
             Modifier modifier4222 = modifier2;
             IconToggleButtonColors iconToggleButtonColors4222 = iconToggleButtonColors2;
             boolean z5222 = z3;
-            SurfaceKt.m2349Surfaced85dljk(z, function1, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$1
+            SurfaceKt.m2656Surfaced85dljk(z, function1, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                     invoke2(semanticsPropertyReceiver);
@@ -5102,9 +5102,9 @@ public final class IconButtonKt {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                    SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
                 }
-            }, 1, null), z5222, shape2, iconToggleButtonColors2.containerColor$material3_release(z3, z, startRestartGroup, i12222).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z3, z, startRestartGroup, i12222).getValue().m4088unboximpl(), 0.0f, 0.0f, borderStroke2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1207657396, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$2
+            }, 1, null), z5222, shape2, iconToggleButtonColors2.containerColor$material3_release(z3, z, startRestartGroup, i12222).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z3, z, startRestartGroup, i12222).getValue().m4547unboximpl(), 0.0f, 0.0f, borderStroke2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1207657396, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -5124,7 +5124,7 @@ public final class IconButtonKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(1207657396, i13, -1, "androidx.compose.material3.OutlinedIconToggleButton.<anonymous> (IconButton.kt:572)");
                         }
-                        Modifier m785size3ABfNKs = SizeKt.m785size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3158getContainerSizeD9Ej5fM());
+                        Modifier m884size3ABfNKs = SizeKt.m884size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3465getContainerSizeD9Ej5fM());
                         Alignment center = Alignment.Companion.getCenter();
                         Function2<Composer, Integer, Unit> function22 = function2;
                         ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -5132,7 +5132,7 @@ public final class IconButtonKt {
                         ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                         CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m785size3ABfNKs);
+                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m884size3ABfNKs);
                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(composer2.getApplier() instanceof Applier)) {
@@ -5144,15 +5144,15 @@ public final class IconButtonKt {
                         } else {
                             composer2.useNode();
                         }
-                        Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer2, 278710712, "C576@27288L9:IconButton.kt#uh7d8r");
@@ -5234,7 +5234,7 @@ public final class IconButtonKt {
         Modifier modifier42222 = modifier2;
         IconToggleButtonColors iconToggleButtonColors42222 = iconToggleButtonColors2;
         boolean z52222 = z3;
-        SurfaceKt.m2349Surfaced85dljk(z, function1, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$1
+        SurfaceKt.m2656Surfaced85dljk(z, function1, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                 invoke2(semanticsPropertyReceiver);
@@ -5243,9 +5243,9 @@ public final class IconButtonKt {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                SemanticsPropertiesKt.m5930setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m5913getCheckboxo7Vup1c());
+                SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
             }
-        }, 1, null), z52222, shape2, iconToggleButtonColors2.containerColor$material3_release(z3, z, startRestartGroup, i122222).getValue().m4088unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z3, z, startRestartGroup, i122222).getValue().m4088unboximpl(), 0.0f, 0.0f, borderStroke2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1207657396, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$2
+        }, 1, null), z52222, shape2, iconToggleButtonColors2.containerColor$material3_release(z3, z, startRestartGroup, i122222).getValue().m4547unboximpl(), iconToggleButtonColors2.contentColor$material3_release(z3, z, startRestartGroup, i122222).getValue().m4547unboximpl(), 0.0f, 0.0f, borderStroke2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1207657396, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.IconButtonKt$OutlinedIconToggleButton$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -5265,7 +5265,7 @@ public final class IconButtonKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(1207657396, i13, -1, "androidx.compose.material3.OutlinedIconToggleButton.<anonymous> (IconButton.kt:572)");
                     }
-                    Modifier m785size3ABfNKs = SizeKt.m785size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3158getContainerSizeD9Ej5fM());
+                    Modifier m884size3ABfNKs = SizeKt.m884size3ABfNKs(Modifier.Companion, OutlinedIconButtonTokens.INSTANCE.m3465getContainerSizeD9Ej5fM());
                     Alignment center = Alignment.Companion.getCenter();
                     Function2<Composer, Integer, Unit> function22 = function2;
                     ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -5273,7 +5273,7 @@ public final class IconButtonKt {
                     ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                     CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m785size3ABfNKs);
+                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m884size3ABfNKs);
                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                     ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                     if (!(composer2.getApplier() instanceof Applier)) {
@@ -5285,15 +5285,15 @@ public final class IconButtonKt {
                     } else {
                         composer2.useNode();
                     }
-                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer2, 278710712, "C576@27288L9:IconButton.kt#uh7d8r");

@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StrictSubscriber<T> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
     private static final long serialVersionUID = -4945028590049415624L;
     volatile boolean done;

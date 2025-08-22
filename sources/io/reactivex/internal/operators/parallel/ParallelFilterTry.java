@@ -12,7 +12,7 @@ import io.reactivex.parallel.ParallelFlowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ParallelFilterTry<T> extends ParallelFlowable<T> {
     final BiFunction<? super Long, ? super Throwable, ParallelFailureHandling> errorHandler;
     final Predicate<? super T> predicate;
@@ -47,7 +47,7 @@ public final class ParallelFilterTry<T> extends ParallelFlowable<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static abstract class BaseFilterSubscriber<T> implements ConditionalSubscriber<T>, Subscription {
         boolean done;
         final BiFunction<? super Long, ? super Throwable, ParallelFailureHandling> errorHandler;
@@ -78,7 +78,7 @@ public final class ParallelFilterTry<T> extends ParallelFlowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ParallelFilterSubscriber<T> extends BaseFilterSubscriber<T> {
         final Subscriber<? super T> downstream;
 
@@ -164,7 +164,7 @@ public final class ParallelFilterTry<T> extends ParallelFlowable<T> {
     }
 
     /* renamed from: io.reactivex.internal.operators.parallel.ParallelFilterTry$1  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$io$reactivex$parallel$ParallelFailureHandling;
 
@@ -186,7 +186,7 @@ public final class ParallelFilterTry<T> extends ParallelFlowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ParallelFilterConditionalSubscriber<T> extends BaseFilterSubscriber<T> {
         final ConditionalSubscriber<? super T> downstream;
 

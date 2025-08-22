@@ -32,8 +32,8 @@ public final class NamedDispatcher extends CoroutineDispatcher implements Delay 
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo10081scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
-        this.$$delegate_0.mo10081scheduleResumeAfterDelay(j, cancellableContinuation);
+    public void mo10645scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
+        this.$$delegate_0.mo10645scheduleResumeAfterDelay(j, cancellableContinuation);
     }
 
     public NamedDispatcher(CoroutineDispatcher coroutineDispatcher, String str) {
@@ -50,8 +50,8 @@ public final class NamedDispatcher extends CoroutineDispatcher implements Delay 
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo10080dispatch(CoroutineContext coroutineContext, Runnable runnable) {
-        this.dispatcher.mo10080dispatch(coroutineContext, runnable);
+    public void mo10644dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+        this.dispatcher.mo10644dispatch(coroutineContext, runnable);
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher

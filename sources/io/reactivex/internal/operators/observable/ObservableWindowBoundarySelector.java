@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObservableWithUpstream<T, Observable<T>> {
     final int bufferSize;
     final Function<? super B, ? extends ObservableSource<V>> close;
@@ -41,7 +41,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class WindowBoundaryMainObserver<T, B, V> extends QueueDrainObserver<T, Object, Observable<T>> implements Disposable {
         final AtomicReference<Disposable> boundary;
         final int bufferSize;
@@ -246,7 +246,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class WindowOperation<T, B> {
         final B open;
         final UnicastSubject<T> w;
@@ -257,7 +257,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OperatorWindowBoundaryOpenObserver<T, B> extends DisposableObserver<B> {
         final WindowBoundaryMainObserver<T, B, ?> parent;
 
@@ -282,7 +282,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class OperatorWindowBoundaryCloseObserver<T, V> extends DisposableObserver<V> {
         boolean done;
         final WindowBoundaryMainObserver<T, ?, V> parent;

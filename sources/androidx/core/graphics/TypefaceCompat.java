@@ -2,28 +2,41 @@ package androidx.core.graphics;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.graphics.fonts.Font;
+import android.graphics.fonts.FontFamily;
+import android.graphics.text.PositionedGlyphs;
+import android.graphics.text.TextRunShaper;
 import android.os.Build;
 import android.os.CancellationSignal;
 import android.os.Handler;
+import android.text.TextUtils;
+import android.util.Log;
 import androidx.collection.LruCache;
 import androidx.core.content.res.FontResourcesParserCompat;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.core.provider.FontRequest;
 import androidx.core.provider.FontsContractCompat;
 import androidx.core.util.Preconditions;
 import androidx.tracing.Trace;
+import java.io.IOException;
 import java.util.List;
-import kotlin.UByte$$ExternalSyntheticBackport0;
 /* loaded from: classes2.dex */
 public class TypefaceCompat {
     public static final boolean DOWNLOADABLE_FALLBACK_DEBUG = false;
     public static final boolean DOWNLOADABLE_FONT_TRACING = true;
+    private static final String REFERENCE_CHAR_FOR_PRIMARY_FONT = " ";
+    private static final String TAG = "TypefaceCompat";
+    private static Paint sCachedPaint;
     private static final LruCache<String, Typeface> sTypefaceCache;
     private static final TypefaceCompatBaseImpl sTypefaceCompatImpl;
 
     static {
         Trace.beginSection("TypefaceCompat static init");
-        if (Build.VERSION.SDK_INT >= 29) {
+        if (Build.VERSION.SDK_INT >= 31) {
+            sTypefaceCompatImpl = new TypefaceCompatApi31Impl();
+        } else if (Build.VERSION.SDK_INT >= 29) {
             sTypefaceCompatImpl = new TypefaceCompatApi29Impl();
         } else if (Build.VERSION.SDK_INT >= 28) {
             sTypefaceCompatImpl = new TypefaceCompatApi28Impl();
@@ -35,6 +48,7 @@ public class TypefaceCompat {
             sTypefaceCompatImpl = new TypefaceCompatApi21Impl();
         }
         sTypefaceCache = new LruCache<>(16);
+        sCachedPaint = null;
         Trace.endSection();
     }
 
@@ -54,7 +68,20 @@ public class TypefaceCompat {
         return resources.getResourcePackageName(i) + '-' + str + '-' + i2 + '-' + i + '-' + i3;
     }
 
-    private static Typeface getSystemFontFamily(String str) {
+    public static Font guessPrimaryFont(Typeface typeface) {
+        if (sCachedPaint == null) {
+            sCachedPaint = new Paint();
+        }
+        sCachedPaint.setTextSize(10.0f);
+        sCachedPaint.setTypeface(typeface);
+        PositionedGlyphs shapeTextRun = TextRunShaper.shapeTextRun((CharSequence) REFERENCE_CHAR_FOR_PRIMARY_FONT, 0, REFERENCE_CHAR_FOR_PRIMARY_FONT.length(), 0, REFERENCE_CHAR_FOR_PRIMARY_FONT.length(), 0.0f, 0.0f, false, sCachedPaint);
+        if (shapeTextRun.glyphCount() == 0) {
+            return null;
+        }
+        return shapeTextRun.getFont(0);
+    }
+
+    public static Typeface getSystemFontFamily(String str) {
         if (str != null && !str.isEmpty()) {
             Typeface create = Typeface.create(str, 0);
             Typeface create2 = Typeface.create(Typeface.DEFAULT, 0);
@@ -65,18 +92,76 @@ public class TypefaceCompat {
         return null;
     }
 
+    private static Typeface getSystemFontFamilyWithFallback(FontResourcesParserCompat.ProviderResourceEntry providerResourceEntry) {
+        FontFamily build;
+        Typeface systemFontFamily;
+        String systemFontFamilyName = providerResourceEntry.getSystemFontFamilyName();
+        if (TextUtils.isEmpty(systemFontFamilyName) || (systemFontFamily = getSystemFontFamily(systemFontFamilyName)) == null) {
+            List<FontRequest> requests = providerResourceEntry.getRequests();
+            int i = 0;
+            if (requests.size() == 1) {
+                return getSystemFontFamily(requests.get(0).getSystemFont());
+            }
+            if (Build.VERSION.SDK_INT < 31) {
+                return null;
+            }
+            for (int i2 = 0; i2 < requests.size(); i2++) {
+                if (getSystemFontFamily(requests.get(i2).getSystemFont()) == null) {
+                    return null;
+                }
+            }
+            Typeface.CustomFallbackBuilder customFallbackBuilder = null;
+            while (true) {
+                if (i >= requests.size()) {
+                    break;
+                }
+                FontRequest fontRequest = requests.get(i);
+                if (i == requests.size() - 1 && TextUtils.isEmpty(fontRequest.getVariationSettings())) {
+                    customFallbackBuilder.setSystemFallback(fontRequest.getSystemFont());
+                    break;
+                }
+                Font guessPrimaryFont = guessPrimaryFont(getSystemFontFamily(fontRequest.getSystemFont()));
+                if (guessPrimaryFont == null) {
+                    Log.w(TAG, "Unable identify the primary font for " + fontRequest.getSystemFont() + ". Falling back to provider font.");
+                    return null;
+                }
+                if (TextUtils.isEmpty(fontRequest.getVariationSettings())) {
+                    try {
+                        build = new FontFamily.Builder(new Font.Builder(guessPrimaryFont).setFontVariationSettings(fontRequest.getVariationSettings()).build()).build();
+                    } catch (IOException unused) {
+                        Log.e(TAG, "Failed to clone Font instance. Fall back to provider font.");
+                        return null;
+                    }
+                } else {
+                    build = new FontFamily.Builder(guessPrimaryFont).build();
+                }
+                if (customFallbackBuilder == null) {
+                    customFallbackBuilder = new Typeface.CustomFallbackBuilder(build);
+                } else {
+                    customFallbackBuilder.addCustomFallback(build);
+                }
+                i++;
+            }
+            return customFallbackBuilder.build();
+        }
+        return systemFontFamily;
+    }
+
     public static Typeface createFromResourcesFamilyXml(Context context, FontResourcesParserCompat.FamilyResourceEntry familyResourceEntry, Resources resources, int i, String str, int i2, int i3, ResourcesCompat.FontCallback fontCallback, Handler handler, boolean z) {
         Typeface createFromFontFamilyFilesResourceEntry;
         if (familyResourceEntry instanceof FontResourcesParserCompat.ProviderResourceEntry) {
             FontResourcesParserCompat.ProviderResourceEntry providerResourceEntry = (FontResourcesParserCompat.ProviderResourceEntry) familyResourceEntry;
-            Typeface systemFontFamily = getSystemFontFamily(providerResourceEntry.getSystemFontFamilyName());
-            if (systemFontFamily != null) {
+            Typeface systemFontFamilyWithFallback = getSystemFontFamilyWithFallback(providerResourceEntry);
+            if (systemFontFamilyWithFallback != null) {
                 if (fontCallback != null) {
-                    fontCallback.callbackSuccessAsync(systemFontFamily, handler);
+                    fontCallback.callbackSuccessAsync(systemFontFamilyWithFallback, handler);
                 }
-                return systemFontFamily;
+                sTypefaceCache.put(createResourceUid(resources, i, str, i2, i3), systemFontFamilyWithFallback);
+                return systemFontFamilyWithFallback;
             }
-            createFromFontFamilyFilesResourceEntry = FontsContractCompat.requestFont(context, providerResourceEntry.getFallbackRequest() != null ? UByte$$ExternalSyntheticBackport0.m(new Object[]{providerResourceEntry.getRequest(), providerResourceEntry.getFallbackRequest()}) : UByte$$ExternalSyntheticBackport0.m(new Object[]{providerResourceEntry.getRequest()}), i3, !z ? fontCallback != null : providerResourceEntry.getFetchStrategy() != 0, z ? providerResourceEntry.getTimeout() : -1, ResourcesCompat.FontCallback.getHandler(handler), new ResourcesCallbackAdapter(fontCallback));
+            boolean z2 = !z ? fontCallback != null : providerResourceEntry.getFetchStrategy() != 0;
+            int timeout = z ? providerResourceEntry.getTimeout() : -1;
+            createFromFontFamilyFilesResourceEntry = FontsContractCompat.requestFont(context, providerResourceEntry.getRequests(), i3, z2, timeout, ResourcesCompat.FontCallback.getHandler(handler), new ResourcesCallbackAdapter(fontCallback));
         } else {
             createFromFontFamilyFilesResourceEntry = sTypefaceCompatImpl.createFromFontFamilyFilesResourceEntry(context, (FontResourcesParserCompat.FontFamilyFilesResourceEntry) familyResourceEntry, resources, i3);
             if (fontCallback != null) {
@@ -172,7 +257,7 @@ public class TypefaceCompat {
         public void onTypefaceRetrieved(Typeface typeface) {
             ResourcesCompat.FontCallback fontCallback = this.mFontCallback;
             if (fontCallback != null) {
-                fontCallback.m7176x46c88379(typeface);
+                fontCallback.m7742x46c88379(typeface);
             }
         }
 
@@ -180,7 +265,7 @@ public class TypefaceCompat {
         public void onTypefaceRequestFailed(int i) {
             ResourcesCompat.FontCallback fontCallback = this.mFontCallback;
             if (fontCallback != null) {
-                fontCallback.m7175xb24343b7(i);
+                fontCallback.m7741xb24343b7(i);
             }
         }
     }

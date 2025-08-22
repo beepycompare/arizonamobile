@@ -5,7 +5,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.util.EmptyComponent;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableDetach<T> extends AbstractObservableWithUpstream<T, T> {
     public ObservableDetach(ObservableSource<T> observableSource) {
         super(observableSource);
@@ -16,7 +16,7 @@ public final class ObservableDetach<T> extends AbstractObservableWithUpstream<T,
         this.source.subscribe(new DetachObserver(observer));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DetachObserver<T> implements Observer<T>, Disposable {
         Observer<? super T> downstream;
         Disposable upstream;

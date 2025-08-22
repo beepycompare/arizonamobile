@@ -26,10 +26,10 @@ public final class FragmentViewModelLazyKt$viewModels$8 extends Lambda implement
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final ViewModelProvider.Factory invoke() {
-        ViewModelStoreOwner m7229viewModels$lambda1;
+        ViewModelStoreOwner m7795viewModels$lambda1;
         ViewModelProvider.Factory defaultViewModelProviderFactory;
-        m7229viewModels$lambda1 = FragmentViewModelLazyKt.m7229viewModels$lambda1(this.$owner$delegate);
-        HasDefaultViewModelProviderFactory hasDefaultViewModelProviderFactory = m7229viewModels$lambda1 instanceof HasDefaultViewModelProviderFactory ? (HasDefaultViewModelProviderFactory) m7229viewModels$lambda1 : null;
+        m7795viewModels$lambda1 = FragmentViewModelLazyKt.m7795viewModels$lambda1(this.$owner$delegate);
+        HasDefaultViewModelProviderFactory hasDefaultViewModelProviderFactory = m7795viewModels$lambda1 instanceof HasDefaultViewModelProviderFactory ? (HasDefaultViewModelProviderFactory) m7795viewModels$lambda1 : null;
         if (hasDefaultViewModelProviderFactory == null || (defaultViewModelProviderFactory = hasDefaultViewModelProviderFactory.getDefaultViewModelProviderFactory()) == null) {
             ViewModelProvider.Factory defaultViewModelProviderFactory2 = this.$this_viewModels.getDefaultViewModelProviderFactory();
             Intrinsics.checkNotNullExpressionValue(defaultViewModelProviderFactory2, "defaultViewModelProviderFactory");

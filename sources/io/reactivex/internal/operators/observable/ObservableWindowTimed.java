@@ -15,7 +15,7 @@ import io.reactivex.subjects.UnicastSubject;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstream<T, Observable<T>> {
     final int bufferSize;
     final long maxSize;
@@ -51,7 +51,7 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
         this.source.subscribe(new WindowSkipObserver(serializedObserver, this.timespan, this.timeskip, this.unit, this.scheduler.createWorker(), this.bufferSize));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WindowExactUnboundedObserver<T> extends QueueDrainObserver<T, Object, Observable<T>> implements Observer<T>, Disposable, Runnable {
         static final Object NEXT = new Object();
         final int bufferSize;
@@ -205,7 +205,7 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WindowExactBoundedObserver<T> extends QueueDrainObserver<T, Object, Observable<T>> implements Disposable {
         final int bufferSize;
         long count;
@@ -407,7 +407,7 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class ConsumerIndexHolder implements Runnable {
             final long index;
             final WindowExactBoundedObserver<?> parent;
@@ -432,7 +432,7 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WindowSkipObserver<T> extends QueueDrainObserver<T, Object, Observable<T>> implements Disposable, Runnable {
         final int bufferSize;
         volatile boolean terminated;
@@ -595,7 +595,7 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class SubjectWork<T> {
             final boolean open;
             final UnicastSubject<T> w;
@@ -607,7 +607,7 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public final class CompletionTask implements Runnable {
             private final UnicastSubject<T> w;
 

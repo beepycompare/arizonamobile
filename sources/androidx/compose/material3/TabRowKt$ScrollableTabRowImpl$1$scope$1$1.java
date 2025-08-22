@@ -42,12 +42,12 @@ public final class TabRowKt$ScrollableTabRowImpl$1$scope$1$1 implements TabIndic
 
             @Override // kotlin.jvm.functions.Function3
             public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                return m2409invoke3p2s80s(measureScope, measurable, constraints.m6643unboximpl());
+                return m2716invoke3p2s80s(measureScope, measurable, constraints.m7210unboximpl());
             }
 
             /* renamed from: invoke-3p2s80s  reason: not valid java name */
-            public final MeasureResult m2409invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                return function4.invoke(measureScope, measurable, Constraints.m6624boximpl(j), this.getTabPositions().getValue());
+            public final MeasureResult m2716invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+                return function4.invoke(measureScope, measurable, Constraints.m7191boximpl(j), this.getTabPositions().getValue());
             }
         });
     }

@@ -28,7 +28,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialContent.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a)\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"SocialContent", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "onClickSocial", "Lkotlin/Function1;", "", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "home_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a)\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"SocialContent", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "onClickSocial", "Lkotlin/Function1;", "", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "home_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class SocialContentKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -42,7 +42,7 @@ public final class SocialContentKt {
         Intrinsics.checkNotNullParameter(uiState, "uiState");
         Intrinsics.checkNotNullParameter(onClickSocial, "onClickSocial");
         Composer startRestartGroup = composer.startRestartGroup(-1659282498);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SocialContent)P(1)18@646L586:SocialContent.kt#dswm0d");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SocialContent)N(uiState,onClickSocial)18@646L586:SocialContent.kt#dswm0d");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(uiState) ? 4 : 2) | i;
         } else {
@@ -58,16 +58,16 @@ public final class SocialContentKt {
                 ComposerKt.traceEventStart(-1659282498, i2, -1, "com.miami.game.feature.home.ui.compose.SocialContent (SocialContent.kt:17)");
             }
             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
-            Arrangement.HorizontalOrVertical m619spacedBy0680j_4 = Arrangement.INSTANCE.m619spacedBy0680j_4(Dp.m6684constructorimpl(-Dp.m6684constructorimpl(24)));
-            Modifier m698offsetVpY3zN4$default = OffsetKt.m698offsetVpY3zN4$default(Modifier.Companion, Dp.m6684constructorimpl(-Dp.m6684constructorimpl(12)), 0.0f, 2, null);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
-            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(m619spacedBy0680j_4, centerVertically, startRestartGroup, 54);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
-            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
+            Arrangement.HorizontalOrVertical m691spacedBy0680j_4 = Arrangement.INSTANCE.m691spacedBy0680j_4(Dp.m7251constructorimpl(-Dp.m7251constructorimpl(24)));
+            Modifier m787offsetVpY3zN4$default = OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, Dp.m7251constructorimpl(-Dp.m7251constructorimpl(12)), 0.0f, 2, null);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
+            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(m691spacedBy0680j_4, centerVertically, startRestartGroup, 54);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
+            int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m698offsetVpY3zN4$default);
+            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m787offsetVpY3zN4$default);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -77,16 +77,16 @@ public final class SocialContentKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
+            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 578044183, "C24@869L42,23@832L128,29@1006L40,28@969L127,34@1142L40,33@1105L121:SocialContent.kt#dswm0d");
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1681215404, "CC(remember):SocialContent.kt#9igjgp");
@@ -106,7 +106,7 @@ public final class SocialContentKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$SocialContentKt.INSTANCE.getLambda$1688114711$home_release_web(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$SocialContentKt.INSTANCE.getLambda$1688114711$home_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1681219786, "CC(remember):SocialContent.kt#9igjgp");
             boolean z2 = (i3 == 32) | (i4 == 4);
             Object rememberedValue2 = startRestartGroup.rememberedValue();
@@ -122,7 +122,7 @@ public final class SocialContentKt {
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue2, null, ComposableSingletons$SocialContentKt.INSTANCE.getLambda$2011919310$home_release_web(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue2, null, ComposableSingletons$SocialContentKt.INSTANCE.getLambda$2011919310$home_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1681224138, "CC(remember):SocialContent.kt#9igjgp");
             boolean z3 = (i3 == 32) | (i4 == 4);
             Object rememberedValue3 = startRestartGroup.rememberedValue();
@@ -138,7 +138,7 @@ public final class SocialContentKt {
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue3, null, ComposableSingletons$SocialContentKt.INSTANCE.m8412getLambda$2110633905$home_release_web(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue3, null, ComposableSingletons$SocialContentKt.INSTANCE.m8978getLambda$2110633905$home_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

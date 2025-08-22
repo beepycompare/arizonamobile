@@ -51,7 +51,7 @@ public final class FilledTextFieldTokens {
     private static final ColorSchemeKeyTokens ErrorSupportingColor = ColorSchemeKeyTokens.Error;
     private static final ColorSchemeKeyTokens ErrorTrailingIconColor = ColorSchemeKeyTokens.Error;
     private static final ColorSchemeKeyTokens FocusActiveIndicatorColor = ColorSchemeKeyTokens.Primary;
-    private static final float FocusActiveIndicatorHeight = Dp.m6684constructorimpl((float) 2.0d);
+    private static final float FocusActiveIndicatorHeight = Dp.m7251constructorimpl((float) 2.0d);
     private static final ColorSchemeKeyTokens FocusInputColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FocusLabelColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens FocusLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -80,12 +80,12 @@ public final class FilledTextFieldTokens {
 
     static {
         float f = (float) 1.0d;
-        ActiveIndicatorHeight = Dp.m6684constructorimpl(f);
-        DisabledActiveIndicatorHeight = Dp.m6684constructorimpl(f);
-        HoverActiveIndicatorHeight = Dp.m6684constructorimpl(f);
+        ActiveIndicatorHeight = Dp.m7251constructorimpl(f);
+        DisabledActiveIndicatorHeight = Dp.m7251constructorimpl(f);
+        HoverActiveIndicatorHeight = Dp.m7251constructorimpl(f);
         float f2 = (float) 24.0d;
-        LeadingIconSize = Dp.m6684constructorimpl(f2);
-        TrailingIconSize = Dp.m6684constructorimpl(f2);
+        LeadingIconSize = Dp.m7251constructorimpl(f2);
+        TrailingIconSize = Dp.m7251constructorimpl(f2);
     }
 
     public final ColorSchemeKeyTokens getActiveIndicatorColor() {
@@ -93,7 +93,7 @@ public final class FilledTextFieldTokens {
     }
 
     /* renamed from: getActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3061getActiveIndicatorHeightD9Ej5fM() {
+    public final float m3368getActiveIndicatorHeightD9Ej5fM() {
         return ActiveIndicatorHeight;
     }
 
@@ -114,7 +114,7 @@ public final class FilledTextFieldTokens {
     }
 
     /* renamed from: getDisabledActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3062getDisabledActiveIndicatorHeightD9Ej5fM() {
+    public final float m3369getDisabledActiveIndicatorHeightD9Ej5fM() {
         return DisabledActiveIndicatorHeight;
     }
 
@@ -251,7 +251,7 @@ public final class FilledTextFieldTokens {
     }
 
     /* renamed from: getFocusActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3063getFocusActiveIndicatorHeightD9Ej5fM() {
+    public final float m3370getFocusActiveIndicatorHeightD9Ej5fM() {
         return FocusActiveIndicatorHeight;
     }
 
@@ -280,7 +280,7 @@ public final class FilledTextFieldTokens {
     }
 
     /* renamed from: getHoverActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3064getHoverActiveIndicatorHeightD9Ej5fM() {
+    public final float m3371getHoverActiveIndicatorHeightD9Ej5fM() {
         return HoverActiveIndicatorHeight;
     }
 
@@ -337,7 +337,7 @@ public final class FilledTextFieldTokens {
     }
 
     /* renamed from: getLeadingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3065getLeadingIconSizeD9Ej5fM() {
+    public final float m3372getLeadingIconSizeD9Ej5fM() {
         return LeadingIconSize;
     }
 
@@ -354,7 +354,7 @@ public final class FilledTextFieldTokens {
     }
 
     /* renamed from: getTrailingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3066getTrailingIconSizeD9Ej5fM() {
+    public final float m3373getTrailingIconSizeD9Ej5fM() {
         return TrailingIconSize;
     }
 }

@@ -7,7 +7,7 @@ import io.reactivex.exceptions.CompositeException;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.disposables.DisposableHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableOnErrorReturn<T> extends AbstractObservableWithUpstream<T, T> {
     final Function<? super Throwable, ? extends T> valueSupplier;
 
@@ -21,7 +21,7 @@ public final class ObservableOnErrorReturn<T> extends AbstractObservableWithUpst
         this.source.subscribe(new OnErrorReturnObserver(observer, this.valueSupplier));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OnErrorReturnObserver<T> implements Observer<T>, Disposable {
         final Observer<? super T> downstream;
         Disposable upstream;

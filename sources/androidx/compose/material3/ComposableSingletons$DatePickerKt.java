@@ -22,7 +22,7 @@ public final class ComposableSingletons$DatePickerKt {
     public static final ComposableSingletons$DatePickerKt INSTANCE = new ComposableSingletons$DatePickerKt();
 
     /* renamed from: lambda-1  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f26lambda1 = ComposableLambdaKt.composableLambdaInstance(1244569435, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$DatePickerKt$lambda-1$1
+    public static Function2<Composer, Integer, Unit> f24lambda1 = ComposableLambdaKt.composableLambdaInstance(1244569435, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$DatePickerKt$lambda-1$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -37,7 +37,7 @@ public final class ComposableSingletons$DatePickerKt {
                 }
                 ImageVector edit = EditKt.getEdit(Icons.Filled.INSTANCE);
                 Strings.Companion companion = Strings.Companion;
-                IconKt.m1954Iconww6aTOc(edit, Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_picker_switch_to_input_mode), composer, 0), (Modifier) null, 0L, composer, 0, 12);
+                IconKt.m2261Iconww6aTOc(edit, Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_picker_switch_to_input_mode), composer, 0), (Modifier) null, 0L, composer, 0, 12);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -49,7 +49,7 @@ public final class ComposableSingletons$DatePickerKt {
     });
 
     /* renamed from: lambda-2  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f27lambda2 = ComposableLambdaKt.composableLambdaInstance(668820324, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$DatePickerKt$lambda-2$1
+    public static Function2<Composer, Integer, Unit> f25lambda2 = ComposableLambdaKt.composableLambdaInstance(668820324, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$DatePickerKt$lambda-2$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -64,7 +64,7 @@ public final class ComposableSingletons$DatePickerKt {
                 }
                 ImageVector dateRange = DateRangeKt.getDateRange(Icons.Filled.INSTANCE);
                 Strings.Companion companion = Strings.Companion;
-                IconKt.m1954Iconww6aTOc(dateRange, Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_picker_switch_to_calendar_mode), composer, 0), (Modifier) null, 0L, composer, 0, 12);
+                IconKt.m2261Iconww6aTOc(dateRange, Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_picker_switch_to_calendar_mode), composer, 0), (Modifier) null, 0L, composer, 0, 12);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -76,7 +76,7 @@ public final class ComposableSingletons$DatePickerKt {
     });
 
     /* renamed from: lambda-3  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f28lambda3 = ComposableLambdaKt.composableLambdaInstance(1233169686, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$DatePickerKt$lambda-3$1
+    public static Function2<Composer, Integer, Unit> f26lambda3 = ComposableLambdaKt.composableLambdaInstance(1233169686, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$DatePickerKt$lambda-3$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -91,7 +91,7 @@ public final class ComposableSingletons$DatePickerKt {
                 }
                 ImageVector keyboardArrowLeft = KeyboardArrowLeftKt.getKeyboardArrowLeft(Icons.AutoMirrored.Filled.INSTANCE);
                 Strings.Companion companion = Strings.Companion;
-                IconKt.m1954Iconww6aTOc(keyboardArrowLeft, Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_picker_switch_to_previous_month), composer, 0), (Modifier) null, 0L, composer, 0, 12);
+                IconKt.m2261Iconww6aTOc(keyboardArrowLeft, Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_picker_switch_to_previous_month), composer, 0), (Modifier) null, 0L, composer, 0, 12);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -103,7 +103,7 @@ public final class ComposableSingletons$DatePickerKt {
     });
 
     /* renamed from: lambda-4  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f29lambda4 = ComposableLambdaKt.composableLambdaInstance(412350847, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$DatePickerKt$lambda-4$1
+    public static Function2<Composer, Integer, Unit> f27lambda4 = ComposableLambdaKt.composableLambdaInstance(412350847, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$DatePickerKt$lambda-4$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -118,7 +118,7 @@ public final class ComposableSingletons$DatePickerKt {
                 }
                 ImageVector keyboardArrowRight = KeyboardArrowRightKt.getKeyboardArrowRight(Icons.AutoMirrored.Filled.INSTANCE);
                 Strings.Companion companion = Strings.Companion;
-                IconKt.m1954Iconww6aTOc(keyboardArrowRight, Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_picker_switch_to_next_month), composer, 0), (Modifier) null, 0L, composer, 0, 12);
+                IconKt.m2261Iconww6aTOc(keyboardArrowRight, Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_picker_switch_to_next_month), composer, 0), (Modifier) null, 0L, composer, 0, 12);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -130,22 +130,22 @@ public final class ComposableSingletons$DatePickerKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1764getLambda1$material3_release() {
-        return f26lambda1;
+    public final Function2<Composer, Integer, Unit> m2071getLambda1$material3_release() {
+        return f24lambda1;
     }
 
     /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1765getLambda2$material3_release() {
-        return f27lambda2;
+    public final Function2<Composer, Integer, Unit> m2072getLambda2$material3_release() {
+        return f25lambda2;
     }
 
     /* renamed from: getLambda-3$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1766getLambda3$material3_release() {
-        return f28lambda3;
+    public final Function2<Composer, Integer, Unit> m2073getLambda3$material3_release() {
+        return f26lambda3;
     }
 
     /* renamed from: getLambda-4$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1767getLambda4$material3_release() {
-        return f29lambda4;
+    public final Function2<Composer, Integer, Unit> m2074getLambda4$material3_release() {
+        return f27lambda4;
     }
 }

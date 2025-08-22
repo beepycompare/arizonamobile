@@ -26,17 +26,17 @@ final class PinnedScrollBehavior implements TopAppBarScrollBehavior {
         this.nestedScrollConnection = new NestedScrollConnection() { // from class: androidx.compose.material3.PinnedScrollBehavior$nestedScrollConnection$1
             @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
             /* renamed from: onPostScroll-DzOQY0M */
-            public long mo510onPostScrollDzOQY0M(long j, long j2, int i) {
+            public long mo567onPostScrollDzOQY0M(long j, long j2, int i) {
                 if (PinnedScrollBehavior.this.getCanScroll().invoke().booleanValue()) {
-                    if (Offset.m3838getYimpl(j) == 0.0f && Offset.m3838getYimpl(j2) > 0.0f) {
+                    if (Offset.m4294getYimpl(j) == 0.0f && Offset.m4294getYimpl(j2) > 0.0f) {
                         PinnedScrollBehavior.this.getState().setContentOffset(0.0f);
                     } else {
                         TopAppBarState state = PinnedScrollBehavior.this.getState();
-                        state.setContentOffset(state.getContentOffset() + Offset.m3838getYimpl(j));
+                        state.setContentOffset(state.getContentOffset() + Offset.m4294getYimpl(j));
                     }
-                    return Offset.Companion.m3853getZeroF1C5BW0();
+                    return Offset.Companion.m4309getZeroF1C5BW0();
                 }
-                return Offset.Companion.m3853getZeroF1C5BW0();
+                return Offset.Companion.m4309getZeroF1C5BW0();
             }
         };
     }

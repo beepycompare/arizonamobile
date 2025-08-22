@@ -1,11 +1,15 @@
 package androidx.compose.runtime;
 
 import androidx.collection.MutableScatterSet;
+import androidx.collection.ScatterSet;
 import androidx.collection.ScatterSetKt;
 import androidx.compose.runtime.collection.MutableVector;
 import androidx.compose.runtime.collection.ScatterSetWrapperKt;
 import androidx.compose.runtime.internal.Trace;
+import androidx.compose.runtime.snapshots.MutableSnapshot;
 import androidx.compose.runtime.snapshots.Snapshot;
+import androidx.compose.runtime.snapshots.TransparentObserverMutableSnapshot;
+import androidx.compose.runtime.snapshots.TransparentObserverSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -22,8 +26,8 @@ import kotlin.jvm.functions.Function3;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Recomposer.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "parentFrameClock", "Landroidx/compose/runtime/MonotonicFrameClock;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.runtime.Recomposer$runRecomposeAndApplyChanges$2", f = "Recomposer.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {580, 591}, m = "invokeSuspend", n = {"parentFrameClock", "toRecompose", "toInsert", "toApply", "toLateApply", "toComplete", "modifiedValues", "modifiedValuesSet", "alreadyComposed", "parentFrameClock", "toRecompose", "toInsert", "toApply", "toLateApply", "toComplete", "modifiedValues", "modifiedValuesSet", "alreadyComposed"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"})
+@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "parentFrameClock", "Landroidx/compose/runtime/MonotonicFrameClock;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.runtime.Recomposer$runRecomposeAndApplyChanges$2", f = "Recomposer.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {587, 598}, m = "invokeSuspend", n = {"parentFrameClock", "toRecompose", "toInsert", "toApply", "toLateApply", "toComplete", "modifiedValues", "modifiedValuesSet", "alreadyComposed", "parentFrameClock", "toRecompose", "toInsert", "toApply", "toLateApply", "toComplete", "modifiedValues", "modifiedValuesSet", "alreadyComposed"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"})
 /* loaded from: classes.dex */
 public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambda implements Function3<CoroutineScope, MonotonicFrameClock, Continuation<? super Unit>, Object> {
     /* synthetic */ Object L$0;
@@ -55,16 +59,16 @@ public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambd
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:14:0x00bd  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x00eb  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0120  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0129  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x011e  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0127  */
     /* JADX WARN: Type inference failed for: r10v6, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r10v8, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r11v12, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r11v15, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r9v12, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r9v9, types: [java.util.List] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x0112 -> B:24:0x011a). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x0120 -> B:12:0x00b5). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x0110 -> B:24:0x0118). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x011e -> B:12:0x00b5). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -191,256 +195,12 @@ public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambd
                         this.L$7 = set22;
                         this.L$8 = mutableScatterSet4;
                         this.label = 2;
-                        if (monotonicFrameClock.withFrameNanos(new Function1<Long, Unit>() { // from class: androidx.compose.runtime.Recomposer$runRecomposeAndApplyChanges$2.1
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            {
-                                super(1);
-                            }
-
+                        if (monotonicFrameClock.withFrameNanos(new Function1() { // from class: androidx.compose.runtime.Recomposer$runRecomposeAndApplyChanges$2$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function1
-                            public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                                invoke(l.longValue());
-                                return Unit.INSTANCE;
-                            }
-
-                            /* JADX WARN: Multi-variable type inference failed */
-                            /* JADX WARN: Removed duplicated region for block: B:171:0x02ee A[Catch: all -> 0x0307, TRY_ENTER, TryCatch #17 {all -> 0x0344, blocks: (B:11:0x004b, B:12:0x0052, B:17:0x007c, B:18:0x007d, B:19:0x0083, B:21:0x008c, B:24:0x0097, B:26:0x00a0, B:34:0x00d7, B:51:0x00ff, B:85:0x0183, B:89:0x018c, B:90:0x018f, B:76:0x0167, B:92:0x0194, B:111:0x01ec, B:125:0x020f, B:126:0x0213, B:128:0x0217, B:129:0x0218, B:140:0x0254, B:142:0x025d, B:169:0x02e8, B:146:0x026c, B:147:0x0270, B:168:0x02e7, B:148:0x0271, B:150:0x027f, B:152:0x028b, B:154:0x0291, B:155:0x0297, B:156:0x029a, B:158:0x02a6, B:160:0x02b2, B:162:0x02b8, B:166:0x02d3, B:165:0x02c7, B:167:0x02d8, B:13:0x0053, B:15:0x0060, B:16:0x0073, B:133:0x022e, B:135:0x0238, B:137:0x0244, B:138:0x024e, B:171:0x02ee, B:172:0x02f1, B:174:0x02fa, B:127:0x0214, B:94:0x019a, B:97:0x01a7, B:99:0x01b5, B:101:0x01c1, B:103:0x01c7, B:27:0x00ab, B:29:0x00b5, B:30:0x00c1, B:32:0x00cb), top: B:207:0x004b }] */
-                            /* JADX WARN: Removed duplicated region for block: B:214:0x031a A[SYNTHETIC] */
-                            /*
-                                Code decompiled incorrectly, please refer to instructions dump.
-                            */
-                            public final void invoke(long j) {
-                                boolean hasBroadcastFrameClockAwaiters;
-                                Object beginSection;
-                                Set<? extends Object> set3;
-                                Set<? extends Object> set4;
-                                List performInsertValues;
-                                ControlledComposition performRecompose;
-                                MutableScatterSet<Object> mutableScatterSet9;
-                                char c;
-                                long j2;
-                                BroadcastFrameClock broadcastFrameClock;
-                                hasBroadcastFrameClockAwaiters = Recomposer.this.getHasBroadcastFrameClockAwaiters();
-                                if (hasBroadcastFrameClockAwaiters) {
-                                    Recomposer recomposer2 = Recomposer.this;
-                                    beginSection = Trace.INSTANCE.beginSection("Recomposer:animation");
-                                    try {
-                                        broadcastFrameClock = recomposer2.broadcastFrameClock;
-                                        broadcastFrameClock.sendFrame(j);
-                                        Snapshot.Companion.sendApplyNotifications();
-                                        Unit unit = Unit.INSTANCE;
-                                    } finally {
-                                    }
-                                }
-                                Recomposer recomposer3 = Recomposer.this;
-                                MutableScatterSet<Object> mutableScatterSet10 = mutableScatterSet82;
-                                MutableScatterSet<ControlledComposition> mutableScatterSet11 = mutableScatterSet4;
-                                List<ControlledComposition> list = arrayList6;
-                                List<MovableContentStateReference> list2 = arrayList5;
-                                MutableScatterSet<ControlledComposition> mutableScatterSet12 = mutableScatterSet3;
-                                List<ControlledComposition> list3 = arrayList4;
-                                MutableScatterSet<ControlledComposition> mutableScatterSet13 = mutableScatterSet72;
-                                Set<? extends Object> set5 = set22;
-                                beginSection = Trace.INSTANCE.beginSection("Recomposer:recompose");
-                                try {
-                                    recomposer3.recordComposerModifications();
-                                    synchronized (recomposer3.stateLock) {
-                                        MutableVector mutableVector = recomposer3.compositionInvalidations;
-                                        Object[] objArr = mutableVector.content;
-                                        int i2 = 0;
-                                        for (int size = mutableVector.getSize(); i2 < size; size = size) {
-                                            list.add((ControlledComposition) objArr[i2]);
-                                            i2++;
-                                        }
-                                        recomposer3.compositionInvalidations.clear();
-                                        Unit unit2 = Unit.INSTANCE;
-                                    }
-                                    mutableScatterSet10.clear();
-                                    mutableScatterSet11.clear();
-                                    while (true) {
-                                        if (list.isEmpty() && list2.isEmpty()) {
-                                            break;
-                                        }
-                                        int size2 = list.size();
-                                        for (int i3 = 0; i3 < size2; i3++) {
-                                            ControlledComposition controlledComposition = list.get(i3);
-                                            performRecompose = recomposer3.performRecompose(controlledComposition, mutableScatterSet10);
-                                            if (performRecompose != null) {
-                                                list3.add(performRecompose);
-                                                Unit unit3 = Unit.INSTANCE;
-                                                Unit unit4 = Unit.INSTANCE;
-                                            }
-                                            mutableScatterSet11.add(controlledComposition);
-                                        }
-                                        list.clear();
-                                        if (!mutableScatterSet10.isNotEmpty() && recomposer3.compositionInvalidations.getSize() == 0) {
-                                            set3 = set5;
-                                            if (!list.isEmpty()) {
-                                                Recomposer$runRecomposeAndApplyChanges$2.invokeSuspend$fillToInsert(list2, recomposer3);
-                                                while (!list2.isEmpty()) {
-                                                    performInsertValues = recomposer3.performInsertValues(list2, mutableScatterSet10);
-                                                    mutableScatterSet12.plusAssign(performInsertValues);
-                                                    Recomposer$runRecomposeAndApplyChanges$2.invokeSuspend$fillToInsert(list2, recomposer3);
-                                                }
-                                            }
-                                            set5 = set3;
-                                        }
-                                        synchronized (recomposer3.stateLock) {
-                                            List knownCompositions = recomposer3.getKnownCompositions();
-                                            int size3 = knownCompositions.size();
-                                            for (int i4 = 0; i4 < size3; i4++) {
-                                                ControlledComposition controlledComposition2 = (ControlledComposition) knownCompositions.get(i4);
-                                                if (!mutableScatterSet11.contains(controlledComposition2) && controlledComposition2.observesAnyOf(set5)) {
-                                                    list.add(controlledComposition2);
-                                                }
-                                            }
-                                            MutableVector mutableVector2 = recomposer3.compositionInvalidations;
-                                            int size4 = mutableVector2.getSize();
-                                            int i5 = 0;
-                                            int i6 = 0;
-                                            while (i5 < size4) {
-                                                ControlledComposition controlledComposition3 = (ControlledComposition) mutableVector2.content[i5];
-                                                if (mutableScatterSet11.contains(controlledComposition3) || list.contains(controlledComposition3)) {
-                                                    set4 = set5;
-                                                    if (i6 > 0) {
-                                                        mutableVector2.content[i5 - i6] = mutableVector2.content[i5];
-                                                    }
-                                                } else {
-                                                    set4 = set5;
-                                                    list.add(controlledComposition3);
-                                                    i6++;
-                                                }
-                                                i5++;
-                                                set5 = set4;
-                                            }
-                                            set3 = set5;
-                                            int i7 = size4 - i6;
-                                            ArraysKt.fill(mutableVector2.content, (Object) null, i7, size4);
-                                            mutableVector2.setSize(i7);
-                                            Unit unit5 = Unit.INSTANCE;
-                                        }
-                                        if (!list.isEmpty()) {
-                                        }
-                                        set5 = set3;
-                                    }
-                                    if (!list3.isEmpty()) {
-                                        recomposer3.changeCount = recomposer3.getChangeCount() + 1;
-                                        int size5 = list3.size();
-                                        for (int i8 = 0; i8 < size5; i8++) {
-                                            mutableScatterSet13.add(list3.get(i8));
-                                        }
-                                        int size6 = list3.size();
-                                        for (int i9 = 0; i9 < size6; i9++) {
-                                            list3.get(i9).applyChanges();
-                                        }
-                                        list3.clear();
-                                    }
-                                    if (mutableScatterSet12.isNotEmpty()) {
-                                        try {
-                                            mutableScatterSet13.plusAssign(mutableScatterSet12);
-                                            MutableScatterSet<ControlledComposition> mutableScatterSet14 = mutableScatterSet12;
-                                            c = 7;
-                                            Object[] objArr2 = mutableScatterSet14.elements;
-                                            long[] jArr = mutableScatterSet14.metadata;
-                                            j2 = 128;
-                                            int length = jArr.length - 2;
-                                            if (length >= 0) {
-                                                int i10 = 0;
-                                                while (true) {
-                                                    int i11 = length;
-                                                    long j3 = jArr[i10];
-                                                    mutableScatterSet9 = mutableScatterSet10;
-                                                    if ((((~j3) << 7) & j3 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                                        int i12 = 8 - ((~(i10 - i11)) >>> 31);
-                                                        for (int i13 = 0; i13 < i12; i13++) {
-                                                            if ((j3 & 255) < 128) {
-                                                                try {
-                                                                    ((ControlledComposition) objArr2[(i10 << 3) + i13]).applyLateChanges();
-                                                                } catch (Throwable th) {
-                                                                    th = th;
-                                                                    try {
-                                                                        Recomposer.processCompositionError$default(recomposer3, th, null, false, 6, null);
-                                                                    } catch (Throwable th2) {
-                                                                        th = th2;
-                                                                    }
-                                                                    try {
-                                                                        Recomposer$runRecomposeAndApplyChanges$2.invokeSuspend$clearRecompositionState(recomposer3, list, list2, list3, mutableScatterSet12, mutableScatterSet13, mutableScatterSet9, mutableScatterSet11);
-                                                                        mutableScatterSet12.clear();
-                                                                    } catch (Throwable th3) {
-                                                                        th = th3;
-                                                                        mutableScatterSet12 = mutableScatterSet12;
-                                                                        mutableScatterSet12.clear();
-                                                                        throw th;
-                                                                    }
-                                                                }
-                                                            }
-                                                            j3 >>= 8;
-                                                        }
-                                                        if (i12 != 8) {
-                                                            break;
-                                                        }
-                                                    }
-                                                    length = i11;
-                                                    if (i10 == length) {
-                                                        break;
-                                                    }
-                                                    i10++;
-                                                    mutableScatterSet10 = mutableScatterSet9;
-                                                }
-                                            } else {
-                                                mutableScatterSet9 = mutableScatterSet10;
-                                            }
-                                            mutableScatterSet12.clear();
-                                            mutableScatterSet10 = mutableScatterSet9;
-                                        } catch (Throwable th4) {
-                                            th = th4;
-                                            mutableScatterSet9 = mutableScatterSet10;
-                                        }
-                                    } else {
-                                        c = 7;
-                                        j2 = 128;
-                                    }
-                                    if (mutableScatterSet13.isNotEmpty()) {
-                                        MutableScatterSet<ControlledComposition> mutableScatterSet15 = mutableScatterSet13;
-                                        Object[] objArr3 = mutableScatterSet15.elements;
-                                        long[] jArr2 = mutableScatterSet15.metadata;
-                                        int length2 = jArr2.length - 2;
-                                        if (length2 >= 0) {
-                                            int i14 = 0;
-                                            while (true) {
-                                                long j4 = jArr2[i14];
-                                                long[] jArr3 = jArr2;
-                                                if ((((~j4) << c) & j4 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                                    int i15 = 8 - ((~(i14 - length2)) >>> 31);
-                                                    for (int i16 = 0; i16 < i15; i16++) {
-                                                        if ((j4 & 255) < j2) {
-                                                            ((ControlledComposition) objArr3[(i14 << 3) + i16]).changesApplied();
-                                                        }
-                                                        j4 >>= 8;
-                                                    }
-                                                    if (i15 != 8) {
-                                                        break;
-                                                    }
-                                                }
-                                                if (i14 == length2) {
-                                                    break;
-                                                }
-                                                i14++;
-                                                jArr2 = jArr3;
-                                            }
-                                        }
-                                        mutableScatterSet13.clear();
-                                    }
-                                    synchronized (recomposer3.stateLock) {
-                                        recomposer3.deriveStateLocked();
-                                    }
-                                    Snapshot.Companion.notifyObjectsInitialized();
-                                    mutableScatterSet11.clear();
-                                    mutableScatterSet10.clear();
-                                    recomposer3.compositionsRemoved = null;
-                                    Unit unit6 = Unit.INSTANCE;
-                                } finally {
-                                }
+                            public final Object invoke(Object obj2) {
+                                Unit invokeSuspend$lambda$22;
+                                invokeSuspend$lambda$22 = Recomposer$runRecomposeAndApplyChanges$2.invokeSuspend$lambda$22(Recomposer.this, mutableScatterSet82, mutableScatterSet4, arrayList6, arrayList5, mutableScatterSet3, arrayList4, mutableScatterSet72, set22, ((Long) obj2).longValue());
+                                return invokeSuspend$lambda$22;
                             }
                         }, this) != coroutine_suspended) {
                             ArrayList arrayList12 = arrayList4;
@@ -468,8 +228,7 @@ public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambd
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void invokeSuspend$clearRecompositionState(Recomposer recomposer, List<ControlledComposition> list, List<MovableContentStateReference> list2, List<ControlledComposition> list3, MutableScatterSet<ControlledComposition> mutableScatterSet, MutableScatterSet<ControlledComposition> mutableScatterSet2, MutableScatterSet<Object> mutableScatterSet3, MutableScatterSet<ControlledComposition> mutableScatterSet4) {
+    private static final void invokeSuspend$clearRecompositionState(Recomposer recomposer, List<ControlledComposition> list, List<MovableContentStateReference> list2, List<ControlledComposition> list3, MutableScatterSet<ControlledComposition> mutableScatterSet, MutableScatterSet<ControlledComposition> mutableScatterSet2, MutableScatterSet<Object> mutableScatterSet3, MutableScatterSet<ControlledComposition> mutableScatterSet4) {
         long j;
         synchronized (recomposer.stateLock) {
             list.clear();
@@ -574,8 +333,7 @@ public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambd
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void invokeSuspend$fillToInsert(List<MovableContentStateReference> list, Recomposer recomposer) {
+    private static final void invokeSuspend$fillToInsert(List<MovableContentStateReference> list, Recomposer recomposer) {
         List list2;
         List list3;
         list.clear();
@@ -588,6 +346,218 @@ public final class Recomposer$runRecomposeAndApplyChanges$2 extends SuspendLambd
             list3 = recomposer.movableContentAwaitingInsert;
             list3.clear();
             Unit unit = Unit.INSTANCE;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0331 A[Catch: all -> 0x034a, TRY_ENTER, TryCatch #4 {all -> 0x03a2, blocks: (B:11:0x0039, B:12:0x0040, B:17:0x0066, B:18:0x0067, B:19:0x006d, B:21:0x0078, B:24:0x0084, B:26:0x008e, B:114:0x0237, B:115:0x023e, B:117:0x0242, B:118:0x0243, B:27:0x009d, B:138:0x0299, B:140:0x02a2, B:167:0x032b, B:144:0x02b1, B:145:0x02b5, B:166:0x032a, B:28:0x00a6, B:113:0x0234, B:125:0x025f, B:126:0x0262, B:169:0x0331, B:170:0x0334, B:172:0x033d, B:32:0x00bd, B:34:0x00c7, B:35:0x00d3, B:37:0x00dd, B:146:0x02b6, B:148:0x02c4, B:150:0x02d0, B:152:0x02d8, B:154:0x02e1, B:155:0x02e4, B:157:0x02f2, B:159:0x02fe, B:161:0x0304, B:164:0x0319, B:163:0x030f, B:165:0x031d, B:131:0x0272, B:133:0x027c, B:135:0x0288, B:136:0x0293, B:85:0x01b8, B:88:0x01c6, B:90:0x01d1, B:92:0x01db, B:94:0x01e1, B:116:0x023f, B:55:0x012a, B:57:0x0142, B:59:0x014f, B:61:0x0159, B:63:0x015f, B:13:0x0041, B:15:0x004f, B:16:0x005d), top: B:203:0x0039 }] */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x0367  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Unit invokeSuspend$lambda$22(Recomposer recomposer, MutableScatterSet mutableScatterSet, MutableScatterSet mutableScatterSet2, List list, List list2, MutableScatterSet mutableScatterSet3, List list3, MutableScatterSet mutableScatterSet4, Set set, long j) {
+        boolean hasBroadcastFrameClockAwaiters;
+        boolean z;
+        List performInsertValues;
+        ControlledComposition performRecompose;
+        char c;
+        long j2;
+        long j3;
+        BroadcastFrameClock broadcastFrameClock;
+        Recomposer recomposer2 = recomposer;
+        List list4 = list3;
+        MutableScatterSet mutableScatterSet5 = mutableScatterSet4;
+        hasBroadcastFrameClockAwaiters = recomposer2.getHasBroadcastFrameClockAwaiters();
+        if (hasBroadcastFrameClockAwaiters) {
+            Object beginSection = Trace.INSTANCE.beginSection("Recomposer:animation");
+            try {
+                broadcastFrameClock = recomposer2.broadcastFrameClock;
+                broadcastFrameClock.sendFrame(j);
+                Snapshot.Companion.sendApplyNotifications();
+                Unit unit = Unit.INSTANCE;
+            } finally {
+            }
+        }
+        Object beginSection2 = Trace.INSTANCE.beginSection("Recomposer:recompose");
+        try {
+            recomposer2.recordComposerModifications();
+            synchronized (recomposer2.stateLock) {
+                MutableVector mutableVector = recomposer2.compositionInvalidations;
+                Object[] objArr = mutableVector.content;
+                int size = mutableVector.getSize();
+                z = 0;
+                for (int i = 0; i < size; i++) {
+                    list.add((ControlledComposition) objArr[i]);
+                }
+                recomposer2.compositionInvalidations.clear();
+                Unit unit2 = Unit.INSTANCE;
+            }
+            mutableScatterSet.clear();
+            mutableScatterSet2.clear();
+            while (true) {
+                if (list.isEmpty() && list2.isEmpty()) {
+                    break;
+                }
+                int size2 = list.size();
+                for (int i2 = 0; i2 < size2; i2++) {
+                    ControlledComposition controlledComposition = (ControlledComposition) list.get(i2);
+                    performRecompose = recomposer2.performRecompose(controlledComposition, mutableScatterSet);
+                    if (performRecompose != null) {
+                        list3.add(performRecompose);
+                        Unit unit3 = Unit.INSTANCE;
+                        Unit unit4 = Unit.INSTANCE;
+                    }
+                    mutableScatterSet2.add(controlledComposition);
+                }
+                list.clear();
+                if (!mutableScatterSet.isNotEmpty() && recomposer2.compositionInvalidations.getSize() == 0) {
+                    if (list.isEmpty()) {
+                        recomposer2 = recomposer;
+                    } else {
+                        invokeSuspend$fillToInsert(list2, recomposer2);
+                        while (!list2.isEmpty()) {
+                            performInsertValues = recomposer2.performInsertValues(list2, mutableScatterSet);
+                            mutableScatterSet3.plusAssign((Iterable) performInsertValues);
+                            invokeSuspend$fillToInsert(list2, recomposer2);
+                        }
+                    }
+                    list4 = list3;
+                    mutableScatterSet5 = mutableScatterSet4;
+                    z = 0;
+                }
+                synchronized (recomposer2.stateLock) {
+                    List knownCompositionsLocked = recomposer2.knownCompositionsLocked();
+                    int size3 = knownCompositionsLocked.size();
+                    for (int i3 = 0; i3 < size3; i3++) {
+                        ControlledComposition controlledComposition2 = (ControlledComposition) knownCompositionsLocked.get(i3);
+                        if (!mutableScatterSet2.contains(controlledComposition2) && controlledComposition2.observesAnyOf(set)) {
+                            list.add(controlledComposition2);
+                        }
+                    }
+                    MutableVector mutableVector2 = recomposer2.compositionInvalidations;
+                    int size4 = mutableVector2.getSize();
+                    int i4 = 0;
+                    for (int i5 = 0; i5 < size4; i5++) {
+                        ControlledComposition controlledComposition3 = (ControlledComposition) mutableVector2.content[i5];
+                        if (!mutableScatterSet2.contains(controlledComposition3) && !list.contains(controlledComposition3)) {
+                            list.add(controlledComposition3);
+                            i4++;
+                        } else if (i4 > 0) {
+                            mutableVector2.content[i5 - i4] = mutableVector2.content[i5];
+                        }
+                    }
+                    int i6 = size4 - i4;
+                    ArraysKt.fill(mutableVector2.content, (Object) null, i6, size4);
+                    mutableVector2.setSize(i6);
+                    Unit unit5 = Unit.INSTANCE;
+                }
+                if (list.isEmpty()) {
+                }
+                list4 = list3;
+                mutableScatterSet5 = mutableScatterSet4;
+                z = 0;
+            }
+            Snapshot current = Snapshot.Companion.getCurrent();
+            TransparentObserverSnapshot transparentObserverMutableSnapshot = current instanceof MutableSnapshot ? new TransparentObserverMutableSnapshot((MutableSnapshot) current, null, null, true, false) : new TransparentObserverSnapshot(current, null, true, z);
+            Snapshot makeCurrent = transparentObserverMutableSnapshot.makeCurrent();
+            try {
+                if (!list4.isEmpty()) {
+                    recomposer2.changeCount = recomposer2.getChangeCount() + 1;
+                    int size5 = list4.size();
+                    for (int i7 = z; i7 < size5; i7++) {
+                        mutableScatterSet5.add((ControlledComposition) list4.get(i7));
+                    }
+                    int size6 = list4.size();
+                    for (int i8 = z; i8 < size6; i8++) {
+                        ((ControlledComposition) list4.get(i8)).applyChanges();
+                    }
+                    list4.clear();
+                }
+                if (mutableScatterSet3.isNotEmpty()) {
+                    mutableScatterSet5.plusAssign((ScatterSet) mutableScatterSet3);
+                    MutableScatterSet mutableScatterSet6 = mutableScatterSet3;
+                    Object[] objArr2 = mutableScatterSet6.elements;
+                    long[] jArr = mutableScatterSet6.metadata;
+                    c = 7;
+                    int length = jArr.length - 2;
+                    j2 = 128;
+                    int i9 = z;
+                    if (length >= 0) {
+                        while (true) {
+                            long j4 = jArr[i9];
+                            j3 = 255;
+                            if ((((~j4) << 7) & j4 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                int i10 = 8 - ((~(i9 - length)) >>> 31);
+                                for (int i11 = 0; i11 < i10; i11++) {
+                                    if ((j4 & 255) < 128) {
+                                        ((ControlledComposition) objArr2[(i9 << 3) + i11]).applyLateChanges();
+                                    }
+                                    j4 >>= 8;
+                                }
+                                if (i10 != 8) {
+                                    break;
+                                }
+                            }
+                            if (i9 == length) {
+                                break;
+                            }
+                            i9++;
+                        }
+                    } else {
+                        j3 = 255;
+                    }
+                    mutableScatterSet3.clear();
+                } else {
+                    c = 7;
+                    j2 = 128;
+                    j3 = 255;
+                }
+                if (mutableScatterSet4.isNotEmpty()) {
+                    MutableScatterSet mutableScatterSet7 = mutableScatterSet4;
+                    Object[] objArr3 = mutableScatterSet7.elements;
+                    long[] jArr2 = mutableScatterSet7.metadata;
+                    int length2 = jArr2.length - 2;
+                    if (length2 >= 0) {
+                        int i12 = 0;
+                        while (true) {
+                            long j5 = jArr2[i12];
+                            if ((((~j5) << c) & j5 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                int i13 = 8 - ((~(i12 - length2)) >>> 31);
+                                for (int i14 = 0; i14 < i13; i14++) {
+                                    if ((j5 & j3) < j2) {
+                                        ((ControlledComposition) objArr3[(i12 << 3) + i14]).changesApplied();
+                                    }
+                                    j5 >>= 8;
+                                }
+                                if (i13 != 8) {
+                                    break;
+                                }
+                            }
+                            if (i12 == length2) {
+                                break;
+                            }
+                            i12++;
+                        }
+                    }
+                    mutableScatterSet4.clear();
+                }
+                Unit unit6 = Unit.INSTANCE;
+                transparentObserverMutableSnapshot.dispose();
+                synchronized (recomposer.stateLock) {
+                    recomposer.deriveStateLocked();
+                }
+                Snapshot.Companion.notifyObjectsInitialized();
+                mutableScatterSet2.clear();
+                mutableScatterSet.clear();
+                recomposer.compositionsRemoved = null;
+                Unit unit7 = Unit.INSTANCE;
+                Trace.INSTANCE.endSection(beginSection2);
+                return Unit.INSTANCE;
+            } finally {
+                transparentObserverMutableSnapshot.restoreCurrent(makeCurrent);
+            }
+        } finally {
         }
     }
 }

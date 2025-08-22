@@ -1,31 +1,27 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+import android.content.Context;
+import javax.net.ssl.SSLSocketFactory;
 /* loaded from: classes4.dex */
-public final class Fl {
+public final class Fl implements X2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Hl f440a;
+    public final Context f440a;
 
-    public Fl(Hl hl) {
-        this.f440a = hl;
+    public Fl(Context context) {
+        this.f440a = context;
     }
 
-    public final void a(String str, Jl jl, C0268fm c0268fm) {
-        ArrayList arrayList;
-        synchronized (this.f440a.b) {
-            Collection collection = (Collection) this.f440a.f476a.f519a.get(str);
-            if (collection == null) {
-                arrayList = new ArrayList();
-            } else {
-                arrayList = new ArrayList(collection);
-            }
-        }
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            ((Ql) it.next()).a(jl, c0268fm);
-        }
+    @Override // io.appmetrica.analytics.impl.X2, io.appmetrica.analytics.impl.InterfaceC0515pm
+    public final void a(C0389km c0389km) {
+    }
+
+    public final Context b() {
+        return this.f440a;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider
+    public final SSLSocketFactory getSslSocketFactory() {
+        return null;
     }
 }

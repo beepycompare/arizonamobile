@@ -38,7 +38,7 @@ import kotlin.jvm.internal.Ref;
 import kotlin.ranges.RangesKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: MultiParagraph.kt */
-@Metadata(d1 = {"\u0000Þ\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0019\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0014\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\b\u0007\u0018\u00002\u00020\u0001B+\b\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t¢\u0006\u0002\u0010\nB+\b\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\u0006\u0010\u000b\u001a\u00020\f¢\u0006\u0002\u0010\rBY\b\u0017\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\u0014\b\u0002\u0010\u0012\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\u00140\u0013\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\u0016\u001a\u00020\u0017\u0012\u0006\u0010\u0018\u001a\u00020\u0019¢\u0006\u0002\u0010\u001aBY\b\u0017\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\u0016\u001a\u00020\u0017\u0012\u0006\u0010\u001b\u001a\u00020\u001c\u0012\u0014\b\u0002\u0010\u0012\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\u00140\u0013\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t¢\u0006\u0002\u0010\u001dBY\b\u0017\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0016\u001a\u00020\u0017\u0012\u0006\u0010\u001b\u001a\u00020\u001c\u0012\u0014\b\u0002\u0010\u0012\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\u00140\u0013\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t¢\u0006\u0002\u0010\u001eBY\b\u0016\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0016\u001a\u00020\u0017\u0012\u0006\u0010\u001b\u001a\u00020\u001c\u0012\u0014\b\u0002\u0010\u0012\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\u00140\u0013\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\u001f\u001a\u00020 ¢\u0006\u0002\u0010!B)\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\u001f\u001a\u00020 ¢\u0006\u0002\u0010\"J*\u0010A\u001a\u00020B2\u0006\u0010C\u001a\u00020D2\u0006\u0010E\u001a\u00020B2\b\b\u0001\u0010F\u001a\u00020\u0007ø\u0001\u0000¢\u0006\u0004\bG\u0010HJ\u000e\u0010I\u001a\u00020J2\u0006\u0010K\u001a\u00020\u0007J\u000e\u0010L\u001a\u00020>2\u0006\u0010K\u001a\u00020\u0007J\u000e\u0010M\u001a\u00020>2\u0006\u0010K\u001a\u00020\u0007J\u0016\u0010N\u001a\u00020\f2\u0006\u0010K\u001a\u00020\u00072\u0006\u0010O\u001a\u00020\tJ\u000e\u0010P\u001a\u00020\f2\u0006\u0010Q\u001a\u00020\u0007J\u000e\u0010R\u001a\u00020\f2\u0006\u0010Q\u001a\u00020\u0007J\u0018\u0010S\u001a\u00020\u00072\u0006\u0010Q\u001a\u00020\u00072\b\b\u0002\u0010T\u001a\u00020\tJ\u000e\u0010U\u001a\u00020\u00072\u0006\u0010K\u001a\u00020\u0007J\u000e\u0010V\u001a\u00020\u00072\u0006\u0010W\u001a\u00020\fJ\u000e\u0010X\u001a\u00020\f2\u0006\u0010Q\u001a\u00020\u0007J\u000e\u0010Y\u001a\u00020\f2\u0006\u0010Q\u001a\u00020\u0007J\u000e\u0010Z\u001a\u00020\f2\u0006\u0010Q\u001a\u00020\u0007J\u000e\u0010[\u001a\u00020\u00072\u0006\u0010Q\u001a\u00020\u0007J\u000e\u0010\\\u001a\u00020\f2\u0006\u0010Q\u001a\u00020\u0007J\u000e\u0010]\u001a\u00020\f2\u0006\u0010Q\u001a\u00020\u0007J\u0018\u0010^\u001a\u00020\u00072\u0006\u0010_\u001a\u00020`ø\u0001\u0000¢\u0006\u0004\ba\u0010bJ\u000e\u0010c\u001a\u00020J2\u0006\u0010K\u001a\u00020\u0007J\u0016\u0010d\u001a\u00020e2\u0006\u0010f\u001a\u00020\u00072\u0006\u0010g\u001a\u00020\u0007J(\u0010h\u001a\u00020D2\u0006\u0010i\u001a\u00020>2\u0006\u0010j\u001a\u00020k2\u0006\u0010l\u001a\u00020mø\u0001\u0000¢\u0006\u0004\bn\u0010oJ\u001b\u0010p\u001a\u00020D2\u0006\u0010K\u001a\u00020\u0007ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\bq\u0010rJ\u000e\u0010s\u001a\u00020\t2\u0006\u0010Q\u001a\u00020\u0007J]\u0010t\u001a\u00020u2\u0006\u0010v\u001a\u00020w2\u0006\u0010x\u001a\u00020y2\b\b\u0002\u0010z\u001a\u00020\f2\n\b\u0002\u0010{\u001a\u0004\u0018\u00010|2\n\b\u0002\u0010}\u001a\u0004\u0018\u00010~2\u000b\b\u0002\u0010\u007f\u001a\u0005\u0018\u00010\u0080\u00012\n\b\u0002\u0010\u0081\u0001\u001a\u00030\u0082\u0001ø\u0001\u0000¢\u0006\u0006\b\u0083\u0001\u0010\u0084\u0001J@\u0010t\u001a\u00020u2\u0006\u0010v\u001a\u00020w2\n\b\u0002\u0010\u0085\u0001\u001a\u00030\u0086\u00012\n\b\u0002\u0010{\u001a\u0004\u0018\u00010|2\n\b\u0002\u0010}\u001a\u0004\u0018\u00010~H\u0007ø\u0001\u0000¢\u0006\u0006\b\u0087\u0001\u0010\u0088\u0001JW\u0010t\u001a\u00020u2\u0006\u0010v\u001a\u00020w2\n\b\u0002\u0010\u0085\u0001\u001a\u00030\u0086\u00012\n\b\u0002\u0010{\u001a\u0004\u0018\u00010|2\n\b\u0002\u0010}\u001a\u0004\u0018\u00010~2\u000b\b\u0002\u0010\u007f\u001a\u0005\u0018\u00010\u0080\u00012\n\b\u0002\u0010\u0081\u0001\u001a\u00030\u0082\u0001ø\u0001\u0000¢\u0006\u0006\b\u0089\u0001\u0010\u008a\u0001J\u0011\u0010\u008b\u0001\u001a\u00020u2\u0006\u0010K\u001a\u00020\u0007H\u0002J\u0011\u0010\u008c\u0001\u001a\u00020u2\u0006\u0010K\u001a\u00020\u0007H\u0002J\u0011\u0010\u008d\u0001\u001a\u00020u2\u0006\u0010Q\u001a\u00020\u0007H\u0002R\u0014\u0010\u000e\u001a\u00020\u000f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b#\u0010$R\u0011\u0010%\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u0011\u0010(\u001a\u00020\f8F¢\u0006\u0006\u001a\u0004\b)\u0010*R\u0011\u0010+\u001a\u00020\f¢\u0006\b\n\u0000\u001a\u0004\b,\u0010*R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b-\u0010.R\u0011\u0010/\u001a\u00020\f8F¢\u0006\u0006\u001a\u0004\b0\u0010*R\u0011\u00101\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b2\u00103R\u0011\u00104\u001a\u00020\f8F¢\u0006\u0006\u001a\u0004\b5\u0010*R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b6\u00103R\u0011\u00107\u001a\u00020\f8F¢\u0006\u0006\u001a\u0004\b8\u0010*R\u001a\u00109\u001a\b\u0012\u0004\u0012\u00020:0\u0013X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b;\u0010<R\u0019\u0010=\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010>0\u0013¢\u0006\b\n\u0000\u001a\u0004\b?\u0010<R\u0011\u0010\u000b\u001a\u00020\f¢\u0006\b\n\u0000\u001a\u0004\b@\u0010*\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u008e\u0001"}, d2 = {"Landroidx/compose/ui/text/MultiParagraph;", "", "intrinsics", "Landroidx/compose/ui/text/MultiParagraphIntrinsics;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "maxLines", "", "ellipsis", "", "(Landroidx/compose/ui/text/MultiParagraphIntrinsics;JIZLkotlin/jvm/internal/DefaultConstructorMarker;)V", "width", "", "(Landroidx/compose/ui/text/MultiParagraphIntrinsics;IZF)V", "annotatedString", "Landroidx/compose/ui/text/AnnotatedString;", "style", "Landroidx/compose/ui/text/TextStyle;", "placeholders", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/Placeholder;", "density", "Landroidx/compose/ui/unit/Density;", "resourceLoader", "Landroidx/compose/ui/text/font/Font$ResourceLoader;", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;Ljava/util/List;IZFLandroidx/compose/ui/unit/Density;Landroidx/compose/ui/text/font/Font$ResourceLoader;)V", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;FLandroidx/compose/ui/unit/Density;Landroidx/compose/ui/text/font/FontFamily$Resolver;Ljava/util/List;IZ)V", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;JLandroidx/compose/ui/unit/Density;Landroidx/compose/ui/text/font/FontFamily$Resolver;Ljava/util/List;IZLkotlin/jvm/internal/DefaultConstructorMarker;)V", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;JLandroidx/compose/ui/unit/Density;Landroidx/compose/ui/text/font/FontFamily$Resolver;Ljava/util/List;IILkotlin/jvm/internal/DefaultConstructorMarker;)V", "(Landroidx/compose/ui/text/MultiParagraphIntrinsics;JIILkotlin/jvm/internal/DefaultConstructorMarker;)V", "getAnnotatedString", "()Landroidx/compose/ui/text/AnnotatedString;", "didExceedMaxLines", "getDidExceedMaxLines", "()Z", "firstBaseline", "getFirstBaseline", "()F", "height", "getHeight", "getIntrinsics", "()Landroidx/compose/ui/text/MultiParagraphIntrinsics;", "lastBaseline", "getLastBaseline", "lineCount", "getLineCount", "()I", "maxIntrinsicWidth", "getMaxIntrinsicWidth", "getMaxLines", "minIntrinsicWidth", "getMinIntrinsicWidth", "paragraphInfoList", "Landroidx/compose/ui/text/ParagraphInfo;", "getParagraphInfoList$ui_text_release", "()Ljava/util/List;", "placeholderRects", "Landroidx/compose/ui/geometry/Rect;", "getPlaceholderRects", "getWidth", "fillBoundingBoxes", "", "range", "Landroidx/compose/ui/text/TextRange;", "array", "arrayStart", "fillBoundingBoxes-8ffj60Q", "(J[FI)[F", "getBidiRunDirection", "Landroidx/compose/ui/text/style/ResolvedTextDirection;", TypedValues.CycleType.S_WAVE_OFFSET, "getBoundingBox", "getCursorRect", "getHorizontalPosition", "usePrimaryDirection", "getLineBaseline", "lineIndex", "getLineBottom", "getLineEnd", "visibleEnd", "getLineForOffset", "getLineForVerticalPosition", "vertical", "getLineHeight", "getLineLeft", "getLineRight", "getLineStart", "getLineTop", "getLineWidth", "getOffsetForPosition", "position", "Landroidx/compose/ui/geometry/Offset;", "getOffsetForPosition-k-4lQ0M", "(J)I", "getParagraphDirection", "getPathForRange", "Landroidx/compose/ui/graphics/Path;", TtmlNode.START, TtmlNode.END, "getRangeForRect", "rect", "granularity", "Landroidx/compose/ui/text/TextGranularity;", "inclusionStrategy", "Landroidx/compose/ui/text/TextInclusionStrategy;", "getRangeForRect-8-6BmAI", "(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/text/TextInclusionStrategy;)J", "getWordBoundary", "getWordBoundary--jx7JFs", "(I)J", "isLineEllipsized", "paint", "", "canvas", "Landroidx/compose/ui/graphics/Canvas;", "brush", "Landroidx/compose/ui/graphics/Brush;", "alpha", "shadow", "Landroidx/compose/ui/graphics/Shadow;", "decoration", "Landroidx/compose/ui/text/style/TextDecoration;", "drawStyle", "Landroidx/compose/ui/graphics/drawscope/DrawStyle;", "blendMode", "Landroidx/compose/ui/graphics/BlendMode;", "paint-hn5TExg", "(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/Shadow;Landroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/graphics/drawscope/DrawStyle;I)V", "color", "Landroidx/compose/ui/graphics/Color;", "paint-RPmYEkk", "(Landroidx/compose/ui/graphics/Canvas;JLandroidx/compose/ui/graphics/Shadow;Landroidx/compose/ui/text/style/TextDecoration;)V", "paint-LG529CI", "(Landroidx/compose/ui/graphics/Canvas;JLandroidx/compose/ui/graphics/Shadow;Landroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/graphics/drawscope/DrawStyle;I)V", "requireIndexInRange", "requireIndexInRangeInclusiveEnd", "requireLineIndexInRange", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000à\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u001b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0014\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0016\b\u0007\u0018\u00002\u00020\u0001B+\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bB-\b\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\f\u001a\u00020\r¢\u0006\u0004\b\n\u0010\u000eB-\b\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000f\u001a\u00020\u0010¢\u0006\u0004\b\n\u0010\u0011B[\b\u0017\u0012\u0006\u0010\u0012\u001a\u00020\u0013\u0012\u0006\u0010\u0014\u001a\u00020\u0015\u0012\u0014\b\u0002\u0010\u0016\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u00180\u0017\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000f\u001a\u00020\u0010\u0012\u0006\u0010\u001a\u001a\u00020\u001b\u0012\u0006\u0010\u001c\u001a\u00020\u001d¢\u0006\u0004\b\n\u0010\u001eB[\b\u0017\u0012\u0006\u0010\u0012\u001a\u00020\u0013\u0012\u0006\u0010\u0014\u001a\u00020\u0015\u0012\u0006\u0010\u000f\u001a\u00020\u0010\u0012\u0006\u0010\u001a\u001a\u00020\u001b\u0012\u0006\u0010\u001f\u001a\u00020 \u0012\u0014\b\u0002\u0010\u0016\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u00180\u0017\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\f\u001a\u00020\r¢\u0006\u0004\b\n\u0010!B[\b\u0017\u0012\u0006\u0010\u0012\u001a\u00020\u0013\u0012\u0006\u0010\u0014\u001a\u00020\u0015\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u001a\u001a\u00020\u001b\u0012\u0006\u0010\u001f\u001a\u00020 \u0012\u0014\b\u0002\u0010\u0016\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u00180\u0017\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\f\u001a\u00020\r¢\u0006\u0004\b\n\u0010\"B[\b\u0016\u0012\u0006\u0010\u0012\u001a\u00020\u0013\u0012\u0006\u0010\u0014\u001a\u00020\u0015\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u001a\u001a\u00020\u001b\u0012\u0006\u0010\u001f\u001a\u00020 \u0012\u0014\b\u0002\u0010\u0016\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u00180\u0017\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010#J9\u0010B\u001a\u00020C2\u0006\u0010D\u001a\u00020E2\b\b\u0002\u0010F\u001a\u00020G2\n\b\u0002\u0010H\u001a\u0004\u0018\u00010I2\n\b\u0002\u0010J\u001a\u0004\u0018\u00010KH\u0007¢\u0006\u0004\bL\u0010MJM\u0010B\u001a\u00020C2\u0006\u0010D\u001a\u00020E2\b\b\u0002\u0010F\u001a\u00020G2\n\b\u0002\u0010H\u001a\u0004\u0018\u00010I2\n\b\u0002\u0010J\u001a\u0004\u0018\u00010K2\n\b\u0002\u0010N\u001a\u0004\u0018\u00010O2\b\b\u0002\u0010P\u001a\u00020Q¢\u0006\u0004\bR\u0010SJU\u0010B\u001a\u00020C2\u0006\u0010D\u001a\u00020E2\u0006\u0010T\u001a\u00020U2\b\b\u0002\u0010V\u001a\u00020\u00102\n\b\u0002\u0010H\u001a\u0004\u0018\u00010I2\n\b\u0002\u0010J\u001a\u0004\u0018\u00010K2\n\b\u0002\u0010N\u001a\u0004\u0018\u00010O2\b\b\u0002\u0010P\u001a\u00020Q¢\u0006\u0004\bW\u0010XJ\u0016\u0010Y\u001a\u00020Z2\u0006\u0010[\u001a\u00020\u00072\u0006\u0010\\\u001a\u00020\u0007J\u000e\u0010]\u001a\u00020\u00072\u0006\u0010^\u001a\u00020\u0010J\u0015\u0010_\u001a\u00020\u00072\u0006\u0010`\u001a\u00020a¢\u0006\u0004\bb\u0010cJ%\u0010d\u001a\u00020e2\u0006\u0010f\u001a\u00020<2\u0006\u0010g\u001a\u00020h2\u0006\u0010i\u001a\u00020j¢\u0006\u0004\bk\u0010lJ\u000e\u0010m\u001a\u00020<2\u0006\u0010n\u001a\u00020\u0007J'\u0010o\u001a\u00020p2\u0006\u0010q\u001a\u00020e2\u0006\u0010r\u001a\u00020p2\b\b\u0001\u0010s\u001a\u00020\u0007¢\u0006\u0004\bt\u0010uJ\u0016\u0010v\u001a\u00020\u00102\u0006\u0010n\u001a\u00020\u00072\u0006\u0010w\u001a\u00020\rJ\u000e\u0010x\u001a\u00020y2\u0006\u0010n\u001a\u00020\u0007J\u000e\u0010z\u001a\u00020y2\u0006\u0010n\u001a\u00020\u0007J\u0015\u0010{\u001a\u00020e2\u0006\u0010n\u001a\u00020\u0007¢\u0006\u0004\b|\u0010}J\u000e\u0010~\u001a\u00020<2\u0006\u0010n\u001a\u00020\u0007J\u000e\u0010\u007f\u001a\u00020\u00072\u0006\u0010n\u001a\u00020\u0007J\u0010\u0010\u0080\u0001\u001a\u00020\u00102\u0007\u0010\u0081\u0001\u001a\u00020\u0007J\u0010\u0010\u0082\u0001\u001a\u00020\u00102\u0007\u0010\u0081\u0001\u001a\u00020\u0007J\u0010\u0010\u0083\u0001\u001a\u00020\u00102\u0007\u0010\u0081\u0001\u001a\u00020\u0007J\u0010\u0010\u0084\u0001\u001a\u00020\u00102\u0007\u0010\u0081\u0001\u001a\u00020\u0007J\u0010\u0010\u0085\u0001\u001a\u00020\u00102\u0007\u0010\u0081\u0001\u001a\u00020\u0007J\u0010\u0010\u0086\u0001\u001a\u00020\u00102\u0007\u0010\u0081\u0001\u001a\u00020\u0007J\u0010\u0010\u0087\u0001\u001a\u00020\u00102\u0007\u0010\u0081\u0001\u001a\u00020\u0007J\u0010\u0010\u0088\u0001\u001a\u00020\u00072\u0007\u0010\u0081\u0001\u001a\u00020\u0007J\u001b\u0010\u0089\u0001\u001a\u00020\u00072\u0007\u0010\u0081\u0001\u001a\u00020\u00072\t\b\u0002\u0010\u008a\u0001\u001a\u00020\rJ\u0010\u0010\u008b\u0001\u001a\u00020\r2\u0007\u0010\u0081\u0001\u001a\u00020\u0007J\u0011\u0010\u008c\u0001\u001a\u00020C2\u0006\u0010n\u001a\u00020\u0007H\u0002J\u0011\u0010\u008d\u0001\u001a\u00020C2\u0006\u0010n\u001a\u00020\u0007H\u0002J\u0012\u0010\u008e\u0001\u001a\u00020C2\u0007\u0010\u0081\u0001\u001a\u00020\u0007H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u0014\u0010\u0012\u001a\u00020\u00138BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b(\u0010)R\u0011\u0010*\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b+\u0010,R\u0011\u0010-\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b.\u0010,R\u0011\u0010/\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b0\u00101R\u0011\u0010\u000f\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b2\u0010,R\u0011\u00103\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b4\u0010,R\u0011\u00105\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b6\u0010,R\u0011\u00107\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b8\u0010,R\u0011\u00109\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b:\u0010'R\u0019\u0010;\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010<0\u0017¢\u0006\b\n\u0000\u001a\u0004\b=\u0010>R\u001a\u0010?\u001a\b\u0012\u0004\u0012\u00020@0\u0017X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bA\u0010>¨\u0006\u008f\u0001"}, d2 = {"Landroidx/compose/ui/text/MultiParagraph;", "", "intrinsics", "Landroidx/compose/ui/text/MultiParagraphIntrinsics;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "maxLines", "", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "<init>", "(Landroidx/compose/ui/text/MultiParagraphIntrinsics;JIILkotlin/jvm/internal/DefaultConstructorMarker;)V", "ellipsis", "", "(Landroidx/compose/ui/text/MultiParagraphIntrinsics;JIZLkotlin/jvm/internal/DefaultConstructorMarker;)V", "width", "", "(Landroidx/compose/ui/text/MultiParagraphIntrinsics;IZF)V", "annotatedString", "Landroidx/compose/ui/text/AnnotatedString;", "style", "Landroidx/compose/ui/text/TextStyle;", "placeholders", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/Placeholder;", "density", "Landroidx/compose/ui/unit/Density;", "resourceLoader", "Landroidx/compose/ui/text/font/Font$ResourceLoader;", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;Ljava/util/List;IZFLandroidx/compose/ui/unit/Density;Landroidx/compose/ui/text/font/Font$ResourceLoader;)V", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;FLandroidx/compose/ui/unit/Density;Landroidx/compose/ui/text/font/FontFamily$Resolver;Ljava/util/List;IZ)V", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;JLandroidx/compose/ui/unit/Density;Landroidx/compose/ui/text/font/FontFamily$Resolver;Ljava/util/List;IZLkotlin/jvm/internal/DefaultConstructorMarker;)V", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/text/TextStyle;JLandroidx/compose/ui/unit/Density;Landroidx/compose/ui/text/font/FontFamily$Resolver;Ljava/util/List;IILkotlin/jvm/internal/DefaultConstructorMarker;)V", "getIntrinsics", "()Landroidx/compose/ui/text/MultiParagraphIntrinsics;", "getMaxLines", "()I", "getAnnotatedString", "()Landroidx/compose/ui/text/AnnotatedString;", "minIntrinsicWidth", "getMinIntrinsicWidth", "()F", "maxIntrinsicWidth", "getMaxIntrinsicWidth", "didExceedMaxLines", "getDidExceedMaxLines", "()Z", "getWidth", "height", "getHeight", "firstBaseline", "getFirstBaseline", "lastBaseline", "getLastBaseline", "lineCount", "getLineCount", "placeholderRects", "Landroidx/compose/ui/geometry/Rect;", "getPlaceholderRects", "()Ljava/util/List;", "paragraphInfoList", "Landroidx/compose/ui/text/ParagraphInfo;", "getParagraphInfoList$ui_text", "paint", "", "canvas", "Landroidx/compose/ui/graphics/Canvas;", "color", "Landroidx/compose/ui/graphics/Color;", "shadow", "Landroidx/compose/ui/graphics/Shadow;", "decoration", "Landroidx/compose/ui/text/style/TextDecoration;", "paint-RPmYEkk", "(Landroidx/compose/ui/graphics/Canvas;JLandroidx/compose/ui/graphics/Shadow;Landroidx/compose/ui/text/style/TextDecoration;)V", "drawStyle", "Landroidx/compose/ui/graphics/drawscope/DrawStyle;", "blendMode", "Landroidx/compose/ui/graphics/BlendMode;", "paint-LG529CI", "(Landroidx/compose/ui/graphics/Canvas;JLandroidx/compose/ui/graphics/Shadow;Landroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/graphics/drawscope/DrawStyle;I)V", "brush", "Landroidx/compose/ui/graphics/Brush;", "alpha", "paint-hn5TExg", "(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/Shadow;Landroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/graphics/drawscope/DrawStyle;I)V", "getPathForRange", "Landroidx/compose/ui/graphics/Path;", TtmlNode.START, TtmlNode.END, "getLineForVerticalPosition", "vertical", "getOffsetForPosition", "position", "Landroidx/compose/ui/geometry/Offset;", "getOffsetForPosition-k-4lQ0M", "(J)I", "getRangeForRect", "Landroidx/compose/ui/text/TextRange;", "rect", "granularity", "Landroidx/compose/ui/text/TextGranularity;", "inclusionStrategy", "Landroidx/compose/ui/text/TextInclusionStrategy;", "getRangeForRect-8-6BmAI", "(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/text/TextInclusionStrategy;)J", "getBoundingBox", TypedValues.CycleType.S_WAVE_OFFSET, "fillBoundingBoxes", "", "range", "array", "arrayStart", "fillBoundingBoxes-8ffj60Q", "(J[FI)[F", "getHorizontalPosition", "usePrimaryDirection", "getParagraphDirection", "Landroidx/compose/ui/text/style/ResolvedTextDirection;", "getBidiRunDirection", "getWordBoundary", "getWordBoundary--jx7JFs", "(I)J", "getCursorRect", "getLineForOffset", "getLineLeft", "lineIndex", "getLineRight", "getLineTop", "getLineBaseline", "getLineBottom", "getLineHeight", "getLineWidth", "getLineStart", "getLineEnd", "visibleEnd", "isLineEllipsized", "requireIndexInRange", "requireIndexInRangeInclusiveEnd", "requireLineIndexInRange", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class MultiParagraph {
     public static final int $stable = 8;
@@ -70,33 +70,33 @@ public final class MultiParagraph {
     }
 
     private MultiParagraph(MultiParagraphIntrinsics multiParagraphIntrinsics, long j, int i, int i2) {
-        int m6636getMaxHeightimpl;
+        int m7203getMaxHeightimpl;
         this.intrinsics = multiParagraphIntrinsics;
         this.maxLines = i;
         boolean z = true;
-        if (!(Constraints.m6639getMinWidthimpl(j) == 0 && Constraints.m6638getMinHeightimpl(j) == 0)) {
+        if (!(Constraints.m7206getMinWidthimpl(j) == 0 && Constraints.m7205getMinHeightimpl(j) == 0)) {
             InlineClassHelperKt.throwIllegalArgumentException("Setting Constraints.minWidth and Constraints.minHeight is not supported, these should be the default zero values instead.");
         }
         ArrayList arrayList = new ArrayList();
-        List<ParagraphIntrinsicInfo> infoList$ui_text_release = multiParagraphIntrinsics.getInfoList$ui_text_release();
-        int size = infoList$ui_text_release.size();
+        List<ParagraphIntrinsicInfo> infoList$ui_text = multiParagraphIntrinsics.getInfoList$ui_text();
+        int size = infoList$ui_text.size();
         int i3 = 0;
         float f = 0.0f;
         int i4 = 0;
         while (i4 < size) {
-            ParagraphIntrinsicInfo paragraphIntrinsicInfo = infoList$ui_text_release.get(i4);
+            ParagraphIntrinsicInfo paragraphIntrinsicInfo = infoList$ui_text.get(i4);
             ParagraphIntrinsics intrinsics = paragraphIntrinsicInfo.getIntrinsics();
-            int m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j);
-            if (Constraints.m6632getHasBoundedHeightimpl(j)) {
-                m6636getMaxHeightimpl = RangesKt.coerceAtLeast(Constraints.m6636getMaxHeightimpl(j) - ParagraphKt.ceilToInt(f), 0);
+            int m7204getMaxWidthimpl = Constraints.m7204getMaxWidthimpl(j);
+            if (Constraints.m7199getHasBoundedHeightimpl(j)) {
+                m7203getMaxHeightimpl = RangesKt.coerceAtLeast(Constraints.m7203getMaxHeightimpl(j) - ParagraphKt.ceilToInt(f), 0);
             } else {
-                m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j);
+                m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j);
             }
-            Paragraph m6020ParagraphczeNHc = ParagraphKt.m6020ParagraphczeNHc(intrinsics, ConstraintsKt.Constraints$default(0, m6637getMaxWidthimpl, 0, m6636getMaxHeightimpl, 5, null), this.maxLines - i3, i2);
-            float height = f + m6020ParagraphczeNHc.getHeight();
-            int lineCount = i3 + m6020ParagraphczeNHc.getLineCount();
-            arrayList.add(new ParagraphInfo(m6020ParagraphczeNHc, paragraphIntrinsicInfo.getStartIndex(), paragraphIntrinsicInfo.getEndIndex(), i3, lineCount, f, height));
-            if (m6020ParagraphczeNHc.getDidExceedMaxLines() || (lineCount == this.maxLines && i4 != CollectionsKt.getLastIndex(this.intrinsics.getInfoList$ui_text_release()))) {
+            Paragraph m6577ParagraphczeNHc = ParagraphKt.m6577ParagraphczeNHc(intrinsics, ConstraintsKt.Constraints$default(0, m7204getMaxWidthimpl, 0, m7203getMaxHeightimpl, 5, null), this.maxLines - i3, i2);
+            float height = f + m6577ParagraphczeNHc.getHeight();
+            int lineCount = i3 + m6577ParagraphczeNHc.getLineCount();
+            arrayList.add(new ParagraphInfo(m6577ParagraphczeNHc, paragraphIntrinsicInfo.getStartIndex(), paragraphIntrinsicInfo.getEndIndex(), i3, lineCount, f, height));
+            if (m6577ParagraphczeNHc.getDidExceedMaxLines() || (lineCount == this.maxLines && i4 != CollectionsKt.getLastIndex(this.intrinsics.getInfoList$ui_text()))) {
                 i3 = lineCount;
                 f = height;
                 break;
@@ -110,7 +110,7 @@ public final class MultiParagraph {
         this.lineCount = i3;
         this.didExceedMaxLines = z;
         this.paragraphInfoList = arrayList;
-        this.width = Constraints.m6637getMaxWidthimpl(j);
+        this.width = Constraints.m7204getMaxWidthimpl(j);
         ArrayList arrayList2 = new ArrayList(arrayList.size());
         int size2 = arrayList.size();
         for (int i5 = 0; i5 < size2; i5++) {
@@ -147,7 +147,7 @@ public final class MultiParagraph {
     }
 
     public /* synthetic */ MultiParagraph(MultiParagraphIntrinsics multiParagraphIntrinsics, long j, int i, int i2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-        this(multiParagraphIntrinsics, j, (i3 & 4) != 0 ? Integer.MAX_VALUE : i, (i3 & 8) != 0 ? TextOverflow.Companion.m6619getClipgIe3tQ8() : i2, (DefaultConstructorMarker) null);
+        this(multiParagraphIntrinsics, j, (i3 & 4) != 0 ? Integer.MAX_VALUE : i, (i3 & 8) != 0 ? TextOverflow.Companion.m7186getClipgIe3tQ8() : i2, (DefaultConstructorMarker) null);
     }
 
     public /* synthetic */ MultiParagraph(MultiParagraphIntrinsics multiParagraphIntrinsics, long j, int i, boolean z, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -155,7 +155,7 @@ public final class MultiParagraph {
     }
 
     private MultiParagraph(MultiParagraphIntrinsics multiParagraphIntrinsics, long j, int i, boolean z) {
-        this(multiParagraphIntrinsics, j, i, z ? TextOverflow.Companion.m6620getEllipsisgIe3tQ8() : TextOverflow.Companion.m6619getClipgIe3tQ8(), (DefaultConstructorMarker) null);
+        this(multiParagraphIntrinsics, j, i, z ? TextOverflow.Companion.m7187getEllipsisgIe3tQ8() : TextOverflow.Companion.m7186getClipgIe3tQ8(), (DefaultConstructorMarker) null);
     }
 
     public /* synthetic */ MultiParagraph(MultiParagraphIntrinsics multiParagraphIntrinsics, int i, boolean z, float f, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -168,7 +168,7 @@ public final class MultiParagraph {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public MultiParagraph(MultiParagraphIntrinsics multiParagraphIntrinsics, int i, boolean z, float f) {
-        this(multiParagraphIntrinsics, r8, i, z ? r0.m6620getEllipsisgIe3tQ8() : r0.m6619getClipgIe3tQ8(), (DefaultConstructorMarker) null);
+        this(multiParagraphIntrinsics, r8, i, z ? r0.m7187getEllipsisgIe3tQ8() : r0.m7186getClipgIe3tQ8(), (DefaultConstructorMarker) null);
         long Constraints$default = ConstraintsKt.Constraints$default(0, ParagraphKt.ceilToInt(f), 0, 0, 13, null);
         TextOverflow.Companion companion = TextOverflow.Companion;
     }
@@ -183,7 +183,7 @@ public final class MultiParagraph {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public MultiParagraph(AnnotatedString annotatedString, TextStyle textStyle, List<AnnotatedString.Range<Placeholder>> list, int i, boolean z, float f, Density density, Font.ResourceLoader resourceLoader) {
-        this(r0, ConstraintsKt.Constraints$default(0, ParagraphKt.ceilToInt(f), 0, 0, 13, null), i, z ? r13.m6620getEllipsisgIe3tQ8() : r13.m6619getClipgIe3tQ8(), (DefaultConstructorMarker) null);
+        this(r0, ConstraintsKt.Constraints$default(0, ParagraphKt.ceilToInt(f), 0, 0, 13, null), i, z ? r13.m7187getEllipsisgIe3tQ8() : r13.m7186getClipgIe3tQ8(), (DefaultConstructorMarker) null);
         MultiParagraphIntrinsics multiParagraphIntrinsics = new MultiParagraphIntrinsics(annotatedString, textStyle, list, density, DelegatingFontLoaderForDeprecatedUsage_androidKt.createFontFamilyResolver(resourceLoader));
         TextOverflow.Companion companion = TextOverflow.Companion;
     }
@@ -198,7 +198,7 @@ public final class MultiParagraph {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public MultiParagraph(AnnotatedString annotatedString, TextStyle textStyle, float f, Density density, FontFamily.Resolver resolver, List<AnnotatedString.Range<Placeholder>> list, int i, boolean z) {
-        this(r0, ConstraintsKt.Constraints$default(0, ParagraphKt.ceilToInt(f), 0, 0, 13, null), i, z ? r7.m6620getEllipsisgIe3tQ8() : r7.m6619getClipgIe3tQ8(), (DefaultConstructorMarker) null);
+        this(r0, ConstraintsKt.Constraints$default(0, ParagraphKt.ceilToInt(f), 0, 0, 13, null), i, z ? r7.m7187getEllipsisgIe3tQ8() : r7.m7186getClipgIe3tQ8(), (DefaultConstructorMarker) null);
         MultiParagraphIntrinsics multiParagraphIntrinsics = new MultiParagraphIntrinsics(annotatedString, textStyle, list, density, resolver);
         TextOverflow.Companion companion = TextOverflow.Companion;
     }
@@ -212,13 +212,13 @@ public final class MultiParagraph {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private MultiParagraph(AnnotatedString annotatedString, TextStyle textStyle, long j, Density density, FontFamily.Resolver resolver, List<AnnotatedString.Range<Placeholder>> list, int i, boolean z) {
-        this(r0, j, i, z ? r7.m6620getEllipsisgIe3tQ8() : r7.m6619getClipgIe3tQ8(), (DefaultConstructorMarker) null);
+        this(r0, j, i, z ? r7.m7187getEllipsisgIe3tQ8() : r7.m7186getClipgIe3tQ8(), (DefaultConstructorMarker) null);
         MultiParagraphIntrinsics multiParagraphIntrinsics = new MultiParagraphIntrinsics(annotatedString, textStyle, list, density, resolver);
         TextOverflow.Companion companion = TextOverflow.Companion;
     }
 
     public /* synthetic */ MultiParagraph(AnnotatedString annotatedString, TextStyle textStyle, long j, Density density, FontFamily.Resolver resolver, List list, int i, int i2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-        this(annotatedString, textStyle, j, density, resolver, (i3 & 32) != 0 ? CollectionsKt.emptyList() : list, (i3 & 64) != 0 ? Integer.MAX_VALUE : i, (i3 & 128) != 0 ? TextOverflow.Companion.m6619getClipgIe3tQ8() : i2, (DefaultConstructorMarker) null);
+        this(annotatedString, textStyle, j, density, resolver, (i3 & 32) != 0 ? CollectionsKt.emptyList() : list, (i3 & 64) != 0 ? Integer.MAX_VALUE : i, (i3 & 128) != 0 ? TextOverflow.Companion.m7186getClipgIe3tQ8() : i2, (DefaultConstructorMarker) null);
     }
 
     private MultiParagraph(AnnotatedString annotatedString, TextStyle textStyle, long j, Density density, FontFamily.Resolver resolver, List<AnnotatedString.Range<Placeholder>> list, int i, int i2) {
@@ -272,62 +272,56 @@ public final class MultiParagraph {
         return this.placeholderRects;
     }
 
-    public final List<ParagraphInfo> getParagraphInfoList$ui_text_release() {
+    public final List<ParagraphInfo> getParagraphInfoList$ui_text() {
         return this.paragraphInfoList;
     }
 
     /* renamed from: paint-RPmYEkk$default  reason: not valid java name */
-    public static /* synthetic */ void m5995paintRPmYEkk$default(MultiParagraph multiParagraph, Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, int i, Object obj) {
+    public static /* synthetic */ void m6551paintRPmYEkk$default(MultiParagraph multiParagraph, Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, int i, Object obj) {
         if ((i & 2) != 0) {
-            j = Color.Companion.m4114getUnspecified0d7_KjU();
+            j = Color.Companion.m4573getUnspecified0d7_KjU();
         }
-        multiParagraph.m6002paintRPmYEkk(canvas, j, (i & 4) != 0 ? null : shadow, (i & 8) != 0 ? null : textDecoration);
+        multiParagraph.m6558paintRPmYEkk(canvas, j, (i & 4) != 0 ? null : shadow, (i & 8) != 0 ? null : textDecoration);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use the new paint function that takes canvas as the only required parameter.")
     /* renamed from: paint-RPmYEkk  reason: not valid java name */
-    public final /* synthetic */ void m6002paintRPmYEkk(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration) {
+    public final /* synthetic */ void m6558paintRPmYEkk(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration) {
         canvas.save();
         List<ParagraphInfo> list = this.paragraphInfoList;
         int size = list.size();
-        int i = 0;
-        while (i < size) {
+        for (int i = 0; i < size; i++) {
             ParagraphInfo paragraphInfo = list.get(i);
-            Canvas canvas2 = canvas;
-            long j2 = j;
-            paragraphInfo.getParagraph().mo5962paintRPmYEkk(canvas2, j2, shadow, textDecoration);
-            canvas2.translate(0.0f, paragraphInfo.getParagraph().getHeight());
-            i++;
-            canvas = canvas2;
-            j = j2;
+            Paragraph.m6562paintLG529CI$default(paragraphInfo.getParagraph(), canvas, j, shadow, textDecoration, null, 0, 48, null);
+            canvas.translate(0.0f, paragraphInfo.getParagraph().getHeight());
         }
         canvas.restore();
     }
 
     /* renamed from: paint-LG529CI  reason: not valid java name */
-    public final void m6001paintLG529CI(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
+    public final void m6557paintLG529CI(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
         canvas.save();
         List<ParagraphInfo> list = this.paragraphInfoList;
         int size = list.size();
         for (int i2 = 0; i2 < size; i2++) {
             ParagraphInfo paragraphInfo = list.get(i2);
-            paragraphInfo.getParagraph().mo5961paintLG529CI(canvas, j, shadow, textDecoration, drawStyle, i);
+            paragraphInfo.getParagraph().mo6510paintLG529CI(canvas, j, shadow, textDecoration, drawStyle, i);
             canvas.translate(0.0f, paragraphInfo.getParagraph().getHeight());
         }
         canvas.restore();
     }
 
     /* renamed from: paint-hn5TExg$default  reason: not valid java name */
-    public static /* synthetic */ void m5996painthn5TExg$default(MultiParagraph multiParagraph, Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i, int i2, Object obj) {
+    public static /* synthetic */ void m6552painthn5TExg$default(MultiParagraph multiParagraph, Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             f = Float.NaN;
         }
-        multiParagraph.m6003painthn5TExg(canvas, brush, f, (i2 & 8) != 0 ? null : shadow, (i2 & 16) != 0 ? null : textDecoration, (i2 & 32) != 0 ? null : drawStyle, (i2 & 64) != 0 ? DrawScope.Companion.m4642getDefaultBlendMode0nO6VwU() : i);
+        multiParagraph.m6559painthn5TExg(canvas, brush, f, (i2 & 8) != 0 ? null : shadow, (i2 & 16) != 0 ? null : textDecoration, (i2 & 32) != 0 ? null : drawStyle, (i2 & 64) != 0 ? DrawScope.Companion.m5118getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: paint-hn5TExg  reason: not valid java name */
-    public final void m6003painthn5TExg(Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
-        AndroidMultiParagraphDraw_androidKt.m6403drawMultiParagraph7AXcY_I(this, canvas, brush, f, shadow, textDecoration, drawStyle, i);
+    public final void m6559painthn5TExg(Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
+        AndroidMultiParagraphDraw_androidKt.m6971drawMultiParagraph7AXcY_I(this, canvas, brush, f, shadow, textDecoration, drawStyle, i);
     }
 
     public final Path getPathForRange(final int i, final int i2) {
@@ -338,25 +332,21 @@ public final class MultiParagraph {
             return AndroidPath_androidKt.Path();
         }
         final Path Path = AndroidPath_androidKt.Path();
-        MultiParagraphKt.m6004findParagraphsByRangeSbBc2M(this.paragraphInfoList, TextRangeKt.TextRange(i, i2), new Function1<ParagraphInfo, Unit>() { // from class: androidx.compose.ui.text.MultiParagraph$getPathForRange$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        MultiParagraphKt.m6561findParagraphsByRangeSbBc2M(this.paragraphInfoList, TextRangeKt.TextRange(i, i2), new Function1() { // from class: androidx.compose.ui.text.MultiParagraph$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(ParagraphInfo paragraphInfo) {
-                invoke2(paragraphInfo);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(ParagraphInfo paragraphInfo) {
-                Path.m4349addPathUv8p0NA$default(Path.this, paragraphInfo.toGlobal(paragraphInfo.getParagraph().getPathForRange(paragraphInfo.toLocalIndex(i), paragraphInfo.toLocalIndex(i2))), 0L, 2, null);
+            public final Object invoke(Object obj) {
+                Unit pathForRange$lambda$11;
+                pathForRange$lambda$11 = MultiParagraph.getPathForRange$lambda$11(Path.this, i, i2, (ParagraphInfo) obj);
+                return pathForRange$lambda$11;
             }
         });
         return Path;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit getPathForRange$lambda$11(Path path, int i, int i2, ParagraphInfo paragraphInfo) {
+        Path.m4819addPathUv8p0NA$default(path, paragraphInfo.toGlobal(paragraphInfo.getParagraph().getPathForRange(paragraphInfo.toLocalIndex(i), paragraphInfo.toLocalIndex(i2))), 0L, 2, null);
+        return Unit.INSTANCE;
     }
 
     public final int getLineForVerticalPosition(float f) {
@@ -368,38 +358,38 @@ public final class MultiParagraph {
     }
 
     /* renamed from: getOffsetForPosition-k-4lQ0M  reason: not valid java name */
-    public final int m5998getOffsetForPositionk4lQ0M(long j) {
+    public final int m6554getOffsetForPositionk4lQ0M(long j) {
         ParagraphInfo paragraphInfo = this.paragraphInfoList.get(MultiParagraphKt.findParagraphByY(this.paragraphInfoList, Float.intBitsToFloat((int) (4294967295L & j))));
         if (paragraphInfo.getLength() == 0) {
             return paragraphInfo.getStartIndex();
         }
-        return paragraphInfo.toGlobalIndex(paragraphInfo.getParagraph().mo5957getOffsetForPositionk4lQ0M(paragraphInfo.m6013toLocalMKHz9U(j)));
+        return paragraphInfo.toGlobalIndex(paragraphInfo.getParagraph().mo6506getOffsetForPositionk4lQ0M(paragraphInfo.m6570toLocalMKHz9U(j)));
     }
 
     /* renamed from: getRangeForRect-8-6BmAI  reason: not valid java name */
-    public final long m5999getRangeForRect86BmAI(Rect rect, int i, TextInclusionStrategy textInclusionStrategy) {
+    public final long m6555getRangeForRect86BmAI(Rect rect, int i, TextInclusionStrategy textInclusionStrategy) {
         int findParagraphByY = MultiParagraphKt.findParagraphByY(this.paragraphInfoList, rect.getTop());
         if (this.paragraphInfoList.get(findParagraphByY).getBottom() >= rect.getBottom() || findParagraphByY == CollectionsKt.getLastIndex(this.paragraphInfoList)) {
             ParagraphInfo paragraphInfo = this.paragraphInfoList.get(findParagraphByY);
-            return ParagraphInfo.m6011toGlobalxdX6G0$default(paragraphInfo, paragraphInfo.getParagraph().mo5959getRangeForRect86BmAI(paragraphInfo.toLocal(rect), i, textInclusionStrategy), false, 1, null);
+            return ParagraphInfo.m6568toGlobalxdX6G0$default(paragraphInfo, paragraphInfo.getParagraph().mo6508getRangeForRect86BmAI(paragraphInfo.toLocal(rect), i, textInclusionStrategy), false, 1, null);
         }
         int findParagraphByY2 = MultiParagraphKt.findParagraphByY(this.paragraphInfoList, rect.getBottom());
-        long m6152getZerod9O1mEE = TextRange.Companion.m6152getZerod9O1mEE();
-        while (TextRange.m6140equalsimpl0(m6152getZerod9O1mEE, TextRange.Companion.m6152getZerod9O1mEE()) && findParagraphByY <= findParagraphByY2) {
+        long m6718getZerod9O1mEE = TextRange.Companion.m6718getZerod9O1mEE();
+        while (TextRange.m6706equalsimpl0(m6718getZerod9O1mEE, TextRange.Companion.m6718getZerod9O1mEE()) && findParagraphByY <= findParagraphByY2) {
             ParagraphInfo paragraphInfo2 = this.paragraphInfoList.get(findParagraphByY);
-            m6152getZerod9O1mEE = ParagraphInfo.m6011toGlobalxdX6G0$default(paragraphInfo2, paragraphInfo2.getParagraph().mo5959getRangeForRect86BmAI(paragraphInfo2.toLocal(rect), i, textInclusionStrategy), false, 1, null);
+            m6718getZerod9O1mEE = ParagraphInfo.m6568toGlobalxdX6G0$default(paragraphInfo2, paragraphInfo2.getParagraph().mo6508getRangeForRect86BmAI(paragraphInfo2.toLocal(rect), i, textInclusionStrategy), false, 1, null);
             findParagraphByY++;
         }
-        if (TextRange.m6140equalsimpl0(m6152getZerod9O1mEE, TextRange.Companion.m6152getZerod9O1mEE())) {
-            return TextRange.Companion.m6152getZerod9O1mEE();
+        if (TextRange.m6706equalsimpl0(m6718getZerod9O1mEE, TextRange.Companion.m6718getZerod9O1mEE())) {
+            return TextRange.Companion.m6718getZerod9O1mEE();
         }
-        long m6152getZerod9O1mEE2 = TextRange.Companion.m6152getZerod9O1mEE();
-        while (TextRange.m6140equalsimpl0(m6152getZerod9O1mEE2, TextRange.Companion.m6152getZerod9O1mEE()) && findParagraphByY <= findParagraphByY2) {
+        long m6718getZerod9O1mEE2 = TextRange.Companion.m6718getZerod9O1mEE();
+        while (TextRange.m6706equalsimpl0(m6718getZerod9O1mEE2, TextRange.Companion.m6718getZerod9O1mEE()) && findParagraphByY <= findParagraphByY2) {
             ParagraphInfo paragraphInfo3 = this.paragraphInfoList.get(findParagraphByY2);
-            m6152getZerod9O1mEE2 = ParagraphInfo.m6011toGlobalxdX6G0$default(paragraphInfo3, paragraphInfo3.getParagraph().mo5959getRangeForRect86BmAI(paragraphInfo3.toLocal(rect), i, textInclusionStrategy), false, 1, null);
+            m6718getZerod9O1mEE2 = ParagraphInfo.m6568toGlobalxdX6G0$default(paragraphInfo3, paragraphInfo3.getParagraph().mo6508getRangeForRect86BmAI(paragraphInfo3.toLocal(rect), i, textInclusionStrategy), false, 1, null);
             findParagraphByY2--;
         }
-        return TextRange.m6140equalsimpl0(m6152getZerod9O1mEE2, TextRange.Companion.m6152getZerod9O1mEE()) ? m6152getZerod9O1mEE : TextRangeKt.TextRange(TextRange.m6147getStartimpl(m6152getZerod9O1mEE), TextRange.m6142getEndimpl(m6152getZerod9O1mEE2));
+        return TextRange.m6706equalsimpl0(m6718getZerod9O1mEE2, TextRange.Companion.m6718getZerod9O1mEE()) ? m6718getZerod9O1mEE : TextRangeKt.TextRange(TextRange.m6713getStartimpl(m6718getZerod9O1mEE), TextRange.m6708getEndimpl(m6718getZerod9O1mEE2));
     }
 
     public final Rect getBoundingBox(int i) {
@@ -409,45 +399,37 @@ public final class MultiParagraph {
     }
 
     /* renamed from: fillBoundingBoxes-8ffj60Q  reason: not valid java name */
-    public final float[] m5997fillBoundingBoxes8ffj60Q(final long j, final float[] fArr, int i) {
-        requireIndexInRange(TextRange.m6145getMinimpl(j));
-        requireIndexInRangeInclusiveEnd(TextRange.m6144getMaximpl(j));
+    public final float[] m6553fillBoundingBoxes8ffj60Q(final long j, final float[] fArr, int i) {
+        requireIndexInRange(TextRange.m6711getMinimpl(j));
+        requireIndexInRangeInclusiveEnd(TextRange.m6710getMaximpl(j));
         final Ref.IntRef intRef = new Ref.IntRef();
         intRef.element = i;
         final Ref.FloatRef floatRef = new Ref.FloatRef();
-        MultiParagraphKt.m6004findParagraphsByRangeSbBc2M(this.paragraphInfoList, j, new Function1<ParagraphInfo, Unit>() { // from class: androidx.compose.ui.text.MultiParagraph$fillBoundingBoxes$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        MultiParagraphKt.m6561findParagraphsByRangeSbBc2M(this.paragraphInfoList, j, new Function1() { // from class: androidx.compose.ui.text.MultiParagraph$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(ParagraphInfo paragraphInfo) {
-                invoke2(paragraphInfo);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(ParagraphInfo paragraphInfo) {
-                long j2 = j;
-                float[] fArr2 = fArr;
-                Ref.IntRef intRef2 = intRef;
-                Ref.FloatRef floatRef2 = floatRef;
-                long TextRange = TextRangeKt.TextRange(paragraphInfo.toLocalIndex(paragraphInfo.getStartIndex() > TextRange.m6145getMinimpl(j2) ? paragraphInfo.getStartIndex() : TextRange.m6145getMinimpl(j2)), paragraphInfo.toLocalIndex(paragraphInfo.getEndIndex() < TextRange.m6144getMaximpl(j2) ? paragraphInfo.getEndIndex() : TextRange.m6144getMaximpl(j2)));
-                paragraphInfo.getParagraph().mo5955fillBoundingBoxes8ffj60Q(TextRange, fArr2, intRef2.element);
-                int m6143getLengthimpl = intRef2.element + (TextRange.m6143getLengthimpl(TextRange) * 4);
-                for (int i2 = intRef2.element; i2 < m6143getLengthimpl; i2 += 4) {
-                    int i3 = i2 + 1;
-                    fArr2[i3] = fArr2[i3] + floatRef2.element;
-                    int i4 = i2 + 3;
-                    fArr2[i4] = fArr2[i4] + floatRef2.element;
-                }
-                intRef2.element = m6143getLengthimpl;
-                floatRef2.element += paragraphInfo.getParagraph().getHeight();
+            public final Object invoke(Object obj) {
+                Unit fillBoundingBoxes_8ffj60Q$lambda$19;
+                fillBoundingBoxes_8ffj60Q$lambda$19 = MultiParagraph.fillBoundingBoxes_8ffj60Q$lambda$19(j, fArr, intRef, floatRef, (ParagraphInfo) obj);
+                return fillBoundingBoxes_8ffj60Q$lambda$19;
             }
         });
         return fArr;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit fillBoundingBoxes_8ffj60Q$lambda$19(long j, float[] fArr, Ref.IntRef intRef, Ref.FloatRef floatRef, ParagraphInfo paragraphInfo) {
+        long TextRange = TextRangeKt.TextRange(paragraphInfo.toLocalIndex(paragraphInfo.getStartIndex() > TextRange.m6711getMinimpl(j) ? paragraphInfo.getStartIndex() : TextRange.m6711getMinimpl(j)), paragraphInfo.toLocalIndex(paragraphInfo.getEndIndex() < TextRange.m6710getMaximpl(j) ? paragraphInfo.getEndIndex() : TextRange.m6710getMaximpl(j)));
+        paragraphInfo.getParagraph().mo6504fillBoundingBoxes8ffj60Q(TextRange, fArr, intRef.element);
+        int m6709getLengthimpl = intRef.element + (TextRange.m6709getLengthimpl(TextRange) * 4);
+        for (int i = intRef.element; i < m6709getLengthimpl; i += 4) {
+            int i2 = i + 1;
+            fArr[i2] = fArr[i2] + floatRef.element;
+            int i3 = i + 3;
+            fArr[i3] = fArr[i3] + floatRef.element;
+        }
+        intRef.element = m6709getLengthimpl;
+        floatRef.element += paragraphInfo.getParagraph().getHeight();
+        return Unit.INSTANCE;
     }
 
     public final float getHorizontalPosition(int i, boolean z) {
@@ -487,7 +469,7 @@ public final class MultiParagraph {
     }
 
     /* renamed from: getWordBoundary--jx7JFs  reason: not valid java name */
-    public final long m6000getWordBoundaryjx7JFs(int i) {
+    public final long m6556getWordBoundaryjx7JFs(int i) {
         int findParagraphByIndex;
         requireIndexInRangeInclusiveEnd(i);
         if (i == getAnnotatedString().length()) {
@@ -496,7 +478,7 @@ public final class MultiParagraph {
             findParagraphByIndex = MultiParagraphKt.findParagraphByIndex(this.paragraphInfoList, i);
         }
         ParagraphInfo paragraphInfo = this.paragraphInfoList.get(findParagraphByIndex);
-        return paragraphInfo.m6012toGlobalxdX6G0(paragraphInfo.getParagraph().mo5960getWordBoundaryjx7JFs(paragraphInfo.toLocalIndex(i)), false);
+        return paragraphInfo.m6569toGlobalxdX6G0(paragraphInfo.getParagraph().mo6509getWordBoundaryjx7JFs(paragraphInfo.toLocalIndex(i)), false);
     }
 
     public final Rect getCursorRect(int i) {

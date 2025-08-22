@@ -9,12 +9,13 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Scrollable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollingLogic$doFlingAnimation$2", f = "Scrollable.kt", i = {}, l = {814}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollingLogic$doFlingAnimation$2", f = "Scrollable.kt", i = {}, l = {837}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda implements Function2<NestedScrollScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ long $available;
@@ -51,11 +52,11 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
     public final Object invokeSuspend(Object obj) {
         ScrollingLogic scrollingLogic;
         FlingBehavior flingBehavior;
-        float m520toFloatTH1AsA0;
+        float m578toFloatTH1AsA0;
         Ref.LongRef longRef;
         ScrollingLogic scrollingLogic2;
         long j;
-        long m521updateQWom1Mo;
+        long m579updateQWom1Mo;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -66,14 +67,18 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
                 @Override // androidx.compose.foundation.gestures.ScrollScope
                 public float scrollBy(float f) {
                     boolean shouldCancelFling;
-                    if (ComposeFoundationFlags.NewNestedFlingPropagationEnabled && Math.abs(f) != 0.0f) {
+                    Function0 function0;
+                    if (ComposeFoundationFlags.isFlingContinuationAtBoundsEnabled) {
+                        function0 = ScrollingLogic.this.isScrollableNodeAttached;
+                        shouldCancelFling = !((Boolean) function0.invoke()).booleanValue();
+                    } else {
                         shouldCancelFling = ScrollingLogic.this.shouldCancelFling(f);
-                        if (shouldCancelFling) {
-                            throw new FlingCancellationException();
-                        }
+                    }
+                    if (Math.abs(f) != 0.0f && shouldCancelFling) {
+                        throw new FlingCancellationException();
                     }
                     ScrollingLogic scrollingLogic4 = ScrollingLogic.this;
-                    return scrollingLogic4.reverseIfNeeded(scrollingLogic4.m527toFloatk4lQ0M(nestedScrollScope.mo482scrollByWithOverscrollOzD1aCk(scrollingLogic4.m525reverseIfNeededMKHz9U(scrollingLogic4.m528toOffsettuRUvjQ(f)), NestedScrollSource.Companion.m5205getSideEffectWNlRxjI())));
+                    return scrollingLogic4.reverseIfNeeded(scrollingLogic4.m583toFloatk4lQ0M(nestedScrollScope.mo524scrollByWithOverscrollOzD1aCk(scrollingLogic4.m581reverseIfNeededMKHz9U(scrollingLogic4.m584toOffsettuRUvjQ(f)), NestedScrollSource.Companion.m5718getSideEffectWNlRxjI())));
                 }
             };
             scrollingLogic = this.this$0;
@@ -81,8 +86,8 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
             long j2 = this.$available;
             flingBehavior = scrollingLogic.flingBehavior;
             long j3 = longRef2.element;
-            m520toFloatTH1AsA0 = scrollingLogic.m520toFloatTH1AsA0(j2);
-            float reverseIfNeeded = scrollingLogic.reverseIfNeeded(m520toFloatTH1AsA0);
+            m578toFloatTH1AsA0 = scrollingLogic.m578toFloatTH1AsA0(j2);
+            float reverseIfNeeded = scrollingLogic.reverseIfNeeded(m578toFloatTH1AsA0);
             this.L$0 = scrollingLogic;
             this.L$1 = scrollingLogic;
             this.L$2 = longRef2;
@@ -105,8 +110,8 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
             scrollingLogic2 = (ScrollingLogic) this.L$0;
             ResultKt.throwOnFailure(obj);
         }
-        m521updateQWom1Mo = scrollingLogic.m521updateQWom1Mo(j, scrollingLogic2.reverseIfNeeded(((Number) obj).floatValue()));
-        longRef.element = m521updateQWom1Mo;
+        m579updateQWom1Mo = scrollingLogic.m579updateQWom1Mo(j, scrollingLogic2.reverseIfNeeded(((Number) obj).floatValue()));
+        longRef.element = m579updateQWom1Mo;
         return Unit.INSTANCE;
     }
 }

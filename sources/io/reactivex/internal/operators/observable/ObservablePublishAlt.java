@@ -13,7 +13,7 @@ import io.reactivex.internal.util.ExceptionHelper;
 import io.reactivex.observables.ConnectableObservable;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservablePublishAlt<T> extends ConnectableObservable<T> implements HasUpstreamObservableSource<T>, ResettableConnectable {
     final AtomicReference<PublishConnection<T>> current = new AtomicReference<>();
     final ObservableSource<T> source;
@@ -92,7 +92,7 @@ public final class ObservablePublishAlt<T> extends ConnectableObservable<T> impl
         return this.source;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class PublishConnection<T> extends AtomicReference<InnerDisposable<T>[]> implements Observer<T>, Disposable {
         static final InnerDisposable[] EMPTY = new InnerDisposable[0];
         static final InnerDisposable[] TERMINATED = new InnerDisposable[0];
@@ -198,7 +198,7 @@ public final class ObservablePublishAlt<T> extends ConnectableObservable<T> impl
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class InnerDisposable<T> extends AtomicReference<PublishConnection<T>> implements Disposable {
         private static final long serialVersionUID = 7463222674719692880L;
         final Observer<? super T> downstream;

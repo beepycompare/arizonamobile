@@ -4,7 +4,7 @@ import io.reactivex.CompletableSource;
 import io.reactivex.Flowable;
 import io.reactivex.internal.observers.SubscriberCompletableObserver;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableToFlowable<T> extends Flowable<T> {
     final CompletableSource source;
 

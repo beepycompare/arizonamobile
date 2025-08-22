@@ -11,7 +11,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.regex.Pattern;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class TextEmphasis {
     public static final int MARK_SHAPE_AUTO = -1;
     public static final int POSITION_OUTSIDE = -2;
@@ -27,7 +27,7 @@ final class TextEmphasis {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Position {
     }
 

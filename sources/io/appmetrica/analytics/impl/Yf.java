@@ -1,19 +1,13 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import android.util.Base64;
+import io.appmetrica.analytics.billinginterface.internal.ProductInfo;
 /* loaded from: classes4.dex */
-public final class Yf implements qo, R8 {
-    @Override // io.appmetrica.analytics.impl.R8
-    public final int a(EnumC0152b9 enumC0152b9) {
-        return 2;
-    }
+public final class Yf {
 
-    @Override // io.appmetrica.analytics.impl.qo
-    public final byte[] a(C0281g9 c0281g9, C0712xh c0712xh) {
-        if (TextUtils.isEmpty(c0281g9.b)) {
-            return new byte[0];
-        }
-        return Base64.decode(c0281g9.b, 0);
+    /* renamed from: a  reason: collision with root package name */
+    public final ProductInfo f743a;
+
+    public Yf(ProductInfo productInfo) {
+        this.f743a = productInfo;
     }
 }

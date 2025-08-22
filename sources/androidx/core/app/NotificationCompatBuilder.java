@@ -138,6 +138,9 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
         if (Build.VERSION.SDK_INT >= 31 && builder.mFgsDeferBehavior != 0) {
             Api31Impl.setForegroundServiceBehavior(this.mBuilder, builder.mFgsDeferBehavior);
         }
+        if (Build.VERSION.SDK_INT >= 36) {
+            Api36Impl.setShortCriticalText(this.mBuilder, builder.mShortCriticalText);
+        }
         if (builder.mSilent) {
             if (this.mBuilderCompat.mGroupSummary) {
                 this.mGroupAlertBehavior = 2;
@@ -480,6 +483,16 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
 
         static Notification.Builder setForegroundServiceBehavior(Notification.Builder builder, int i) {
             return builder.setForegroundServiceBehavior(i);
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    static final class Api36Impl {
+        private Api36Impl() {
+        }
+
+        static Notification.Builder setShortCriticalText(Notification.Builder builder, String str) {
+            return builder.setShortCriticalText(str);
         }
     }
 }

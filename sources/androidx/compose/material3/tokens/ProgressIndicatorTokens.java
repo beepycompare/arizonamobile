@@ -18,18 +18,18 @@ public final class ProgressIndicatorTokens {
     private static final ColorSchemeKeyTokens StopColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens TrackColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ShapeKeyTokens TrackShape = ShapeKeyTokens.CornerFull;
-    private static final float Size = Dp.m6684constructorimpl((float) 48.0d);
+    private static final float Size = Dp.m7251constructorimpl((float) 48.0d);
 
     private ProgressIndicatorTokens() {
     }
 
     static {
         float f = (float) 4.0d;
-        ActiveThickness = Dp.m6684constructorimpl(f);
-        ActiveTrackSpace = Dp.m6684constructorimpl(f);
-        StopShape = Dp.m6684constructorimpl(f);
-        StopSize = Dp.m6684constructorimpl(f);
-        TrackThickness = Dp.m6684constructorimpl(f);
+        ActiveThickness = Dp.m7251constructorimpl(f);
+        ActiveTrackSpace = Dp.m7251constructorimpl(f);
+        StopShape = Dp.m7251constructorimpl(f);
+        StopSize = Dp.m7251constructorimpl(f);
+        TrackThickness = Dp.m7251constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getActiveIndicatorColor() {
@@ -41,12 +41,12 @@ public final class ProgressIndicatorTokens {
     }
 
     /* renamed from: getActiveThickness-D9Ej5fM  reason: not valid java name */
-    public final float m3267getActiveThicknessD9Ej5fM() {
+    public final float m3574getActiveThicknessD9Ej5fM() {
         return ActiveThickness;
     }
 
     /* renamed from: getActiveTrackSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3268getActiveTrackSpaceD9Ej5fM() {
+    public final float m3575getActiveTrackSpaceD9Ej5fM() {
         return ActiveTrackSpace;
     }
 
@@ -55,12 +55,12 @@ public final class ProgressIndicatorTokens {
     }
 
     /* renamed from: getStopShape-D9Ej5fM  reason: not valid java name */
-    public final float m3270getStopShapeD9Ej5fM() {
+    public final float m3577getStopShapeD9Ej5fM() {
         return StopShape;
     }
 
     /* renamed from: getStopSize-D9Ej5fM  reason: not valid java name */
-    public final float m3271getStopSizeD9Ej5fM() {
+    public final float m3578getStopSizeD9Ej5fM() {
         return StopSize;
     }
 
@@ -73,12 +73,12 @@ public final class ProgressIndicatorTokens {
     }
 
     /* renamed from: getTrackThickness-D9Ej5fM  reason: not valid java name */
-    public final float m3272getTrackThicknessD9Ej5fM() {
+    public final float m3579getTrackThicknessD9Ej5fM() {
         return TrackThickness;
     }
 
     /* renamed from: getSize-D9Ej5fM  reason: not valid java name */
-    public final float m3269getSizeD9Ej5fM() {
+    public final float m3576getSizeD9Ej5fM() {
         return Size;
     }
 }

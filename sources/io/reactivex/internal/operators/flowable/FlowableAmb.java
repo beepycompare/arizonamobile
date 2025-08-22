@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableAmb<T> extends Flowable<T> {
     final Publisher<? extends T>[] sources;
     final Iterable<? extends Publisher<? extends T>> sourcesIterable;
@@ -61,7 +61,7 @@ public final class FlowableAmb<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class AmbCoordinator<T> implements Subscription {
         final Subscriber<? super T> downstream;
         final AmbInnerSubscriber<T>[] subscribers;
@@ -131,7 +131,7 @@ public final class FlowableAmb<T> extends Flowable<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class AmbInnerSubscriber<T> extends AtomicReference<Subscription> implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = -1185974347409665484L;
         final Subscriber<? super T> downstream;

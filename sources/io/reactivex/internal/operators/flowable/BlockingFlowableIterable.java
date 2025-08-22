@@ -15,7 +15,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BlockingFlowableIterable<T> implements Iterable<T> {
     final int bufferSize;
     final Flowable<T> source;
@@ -32,7 +32,7 @@ public final class BlockingFlowableIterable<T> implements Iterable<T> {
         return blockingFlowableIterator;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BlockingFlowableIterator<T> extends AtomicReference<Subscription> implements FlowableSubscriber<T>, Iterator<T>, Runnable, Disposable {
         private static final long serialVersionUID = 6695226475494099826L;
         final long batchSize;

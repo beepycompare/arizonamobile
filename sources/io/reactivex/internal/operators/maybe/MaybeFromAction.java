@@ -8,7 +8,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Action;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeFromAction<T> extends Maybe<T> implements Callable<T> {
     final Action action;
 

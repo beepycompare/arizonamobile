@@ -6,29 +6,29 @@ import io.appmetrica.analytics.networktasks.internal.CacheControlHttpsConnection
 public final class A3 implements CacheControlHttpsConnectionPerformer.Client {
 
     /* renamed from: a  reason: collision with root package name */
-    public final NetworkClientWithCacheControl f330a;
+    public final NetworkClientWithCacheControl f338a;
 
     public A3(NetworkClientWithCacheControl networkClientWithCacheControl) {
-        this.f330a = networkClientWithCacheControl;
+        this.f338a = networkClientWithCacheControl;
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.CacheControlHttpsConnectionPerformer.Client
     public final String getOldETag() {
-        return this.f330a.getETag();
+        return this.f338a.getETag();
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.CacheControlHttpsConnectionPerformer.Client
     public final void onError() {
-        this.f330a.onError();
+        this.f338a.onError();
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.CacheControlHttpsConnectionPerformer.Client
     public final void onNotModified() {
-        this.f330a.onNotModified();
+        this.f338a.onNotModified();
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.CacheControlHttpsConnectionPerformer.Client
     public final void onResponse(String str, byte[] bArr) {
-        this.f330a.onResponse(str, bArr);
+        this.f338a.onResponse(str, bArr);
     }
 }

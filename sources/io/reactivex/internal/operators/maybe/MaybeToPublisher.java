@@ -3,7 +3,7 @@ package io.reactivex.internal.operators.maybe;
 import io.reactivex.MaybeSource;
 import io.reactivex.functions.Function;
 import org.reactivestreams.Publisher;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public enum MaybeToPublisher implements Function<MaybeSource<Object>, Publisher<Object>> {
     INSTANCE;
 

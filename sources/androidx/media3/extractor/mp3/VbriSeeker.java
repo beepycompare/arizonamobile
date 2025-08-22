@@ -6,7 +6,7 @@ import androidx.media3.common.util.Util;
 import androidx.media3.extractor.MpegAudioUtil;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.SeekPoint;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class VbriSeeker implements Seeker {
     private static final String TAG = "VbriSeeker";
     private final int bitrate;

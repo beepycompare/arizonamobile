@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSkipLastTimed<T> extends AbstractFlowableWithUpstream<T, T> {
     final int bufferSize;
     final boolean delayError;
@@ -33,7 +33,7 @@ public final class FlowableSkipLastTimed<T> extends AbstractFlowableWithUpstream
         this.source.subscribe((FlowableSubscriber) new SkipLastTimedSubscriber(subscriber, this.time, this.unit, this.scheduler, this.bufferSize, this.delayError));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SkipLastTimedSubscriber<T> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = -5677354903406201275L;
         volatile boolean cancelled;

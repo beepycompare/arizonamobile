@@ -8,7 +8,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import java.util.Queue;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class TestScheduler extends Scheduler {
     long counter;
     final Queue<TimedRunnable> queue = new PriorityBlockingQueue(11);
@@ -22,7 +22,7 @@ public final class TestScheduler extends Scheduler {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class TimedRunnable implements Comparable<TimedRunnable> {
         final long count;
         final Runnable run;
@@ -89,7 +89,7 @@ public final class TestScheduler extends Scheduler {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public final class TestWorker extends Scheduler.Worker {
         volatile boolean disposed;
 
@@ -138,7 +138,7 @@ public final class TestScheduler extends Scheduler {
             return TestScheduler.this.now(timeUnit);
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class QueueRemove implements Runnable {
             final TimedRunnable timedAction;
 

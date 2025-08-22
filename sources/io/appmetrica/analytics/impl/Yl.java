@@ -1,245 +1,44 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.billinginterface.internal.config.BillingConfig;
-import io.appmetrica.analytics.coreutils.internal.parsing.RemoteConfigJsonUtils;
-import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
-import io.appmetrica.analytics.networktasks.internal.RetryPolicyConfig;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import org.json.JSONObject;
+import io.appmetrica.analytics.StartupParamsItem;
+import io.appmetrica.analytics.StartupParamsItemStatus;
+import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
+import io.appmetrica.analytics.internal.IdentifiersResult;
 /* loaded from: classes4.dex */
 public final class Yl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Sa f738a;
-    public final C0555ra b;
-    public final Si c;
-    public final Ne d;
-    public final Im e;
-    public final C0647v2 f;
-    public final C3 g;
-    public final C0597t2 h;
-    public final Cb i;
-    public final Fm j;
-    public final Hd k;
-    public final Y9 l;
+    public final C0131am f747a = new C0131am();
 
-    public Yl() {
-        this(new Cb(), new Sa(), new C0555ra(), new Si(), new Ne(), new Im(), new C3(), new C0647v2(), new C0597t2(), new Fm(), new Hd(), new Y9());
-    }
-
-    public final void a(C0217dm c0217dm, Ab ab) {
-        String str;
-        long j;
-        long j2;
-        String str2;
-        ArrayList a2;
-        JSONObject optJSONObject;
-        JSONObject optJSONObject2;
-        JSONObject optJSONObject3;
-        JSONObject optJSONObject4 = ab.optJSONObject("queries");
-        if (optJSONObject4 != null && (optJSONObject2 = optJSONObject4.optJSONObject("list")) != null && (optJSONObject3 = optJSONObject2.optJSONObject("host")) != null) {
-            c0217dm.g = optJSONObject3.optString("url", null);
+    public final StartupParamsItem a(IdentifiersResult identifiersResult) {
+        StartupParamsItemStatus startupParamsItemStatus;
+        String str = identifiersResult.id;
+        C0131am c0131am = this.f747a;
+        IdentifierStatus identifierStatus = identifiersResult.status;
+        c0131am.getClass();
+        switch (Zl.f764a[identifierStatus.ordinal()]) {
+            case 1:
+                startupParamsItemStatus = StartupParamsItemStatus.OK;
+                break;
+            case 2:
+                startupParamsItemStatus = StartupParamsItemStatus.PROVIDER_UNAVAILABLE;
+                break;
+            case 3:
+                startupParamsItemStatus = StartupParamsItemStatus.INVALID_VALUE_FROM_PROVIDER;
+                break;
+            case 4:
+                startupParamsItemStatus = StartupParamsItemStatus.NETWORK_ERROR;
+                break;
+            case 5:
+                startupParamsItemStatus = StartupParamsItemStatus.FEATURE_DISABLED;
+                break;
+            case 6:
+                startupParamsItemStatus = StartupParamsItemStatus.FORBIDDEN_BY_CLIENT_CONFIG;
+                break;
+            default:
+                startupParamsItemStatus = StartupParamsItemStatus.UNKNOWN_ERROR;
+                break;
         }
-        Object jSONObject = new JSONObject();
-        try {
-            jSONObject = ab.get("distribution_customization");
-        } catch (Throwable unused) {
-        }
-        JSONObject optJSONObject5 = ((JSONObject) jSONObject).optJSONObject("clids");
-        if (optJSONObject5 != null) {
-            HashMap hashMap = new HashMap();
-            Iterator<String> keys = optJSONObject5.keys();
-            while (keys.hasNext()) {
-                String next = keys.next();
-                JSONObject optJSONObject6 = optJSONObject5.optJSONObject(next);
-                if (optJSONObject6 != null && optJSONObject6.has("value")) {
-                    hashMap.put(next, optJSONObject6.getString("value"));
-                }
-            }
-            c0217dm.j = Gm.a((Map) hashMap);
-        }
-        JSONObject optJSONObject7 = ab.optJSONObject(CommonUrlParts.LOCALE);
-        String str3 = "";
-        if (optJSONObject7 == null || (optJSONObject = optJSONObject7.optJSONObject("country")) == null || !optJSONObject.optBoolean("reliable", false)) {
-            str = "";
-        } else {
-            str = optJSONObject.optString("value", "");
-        }
-        c0217dm.m = str;
-        JSONObject optJSONObject8 = ab.optJSONObject("time");
-        if (optJSONObject8 != null) {
-            try {
-                c0217dm.l = Long.valueOf(optJSONObject8.getLong("max_valid_difference_seconds"));
-            } catch (Throwable unused2) {
-            }
-        }
-        C0692wm c0692wm = new C0692wm();
-        JSONObject optJSONObject9 = ab.optJSONObject("stat_sending");
-        if (optJSONObject9 != null) {
-            c0692wm.f1125a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject9, "disabled_reporting_interval_seconds", c0692wm.f1125a);
-        }
-        this.e.getClass();
-        c0217dm.p = new Hm(c0692wm.f1125a);
-        this.b.getClass();
-        C0592sm c0592sm = new C0592sm();
-        try {
-            Object jSONObject2 = new JSONObject();
-            try {
-                jSONObject2 = ab.get("features");
-            } catch (Throwable unused3) {
-            }
-            JSONObject optJSONObject10 = ((JSONObject) jSONObject2).optJSONObject("list");
-            if (optJSONObject10 != null) {
-                E4 e4 = new E4();
-                e4.f410a = C0555ra.a(optJSONObject10, "permissions_collecting", c0592sm.f1056a);
-                e4.b = C0555ra.a(optJSONObject10, "features_collecting", c0592sm.b);
-                e4.c = C0555ra.a(optJSONObject10, "google_aid", c0592sm.c);
-                e4.d = C0555ra.a(optJSONObject10, "sim_info", c0592sm.d);
-                e4.e = C0555ra.a(optJSONObject10, "huawei_oaid", c0592sm.e);
-                e4.f = optJSONObject10.has("ssl_pinning") ? Boolean.valueOf(optJSONObject10.getJSONObject("ssl_pinning").getBoolean("enabled")) : null;
-                c0217dm.b = new G4(e4);
-            }
-        } catch (Throwable unused4) {
-        }
-        this.f738a.getClass();
-        try {
-            Object jSONObject3 = new JSONObject();
-            try {
-                jSONObject3 = ab.get("query_hosts");
-            } catch (Throwable unused5) {
-            }
-            JSONObject optJSONObject11 = ((JSONObject) jSONObject3).optJSONObject("list");
-            if (optJSONObject11 != null) {
-                try {
-                    str2 = optJSONObject11.getJSONObject("get_ad").getJSONArray("urls").getString(0);
-                } catch (Throwable unused6) {
-                    str2 = "";
-                }
-                if (!TextUtils.isEmpty(str2)) {
-                    c0217dm.d = str2;
-                }
-                ArrayList a3 = Sa.a(optJSONObject11, "report");
-                if (!io.a((Collection) a3)) {
-                    c0217dm.e = a3;
-                }
-                try {
-                    str3 = optJSONObject11.getJSONObject("report_ad").getJSONArray("urls").getString(0);
-                } catch (Throwable unused7) {
-                }
-                if (!TextUtils.isEmpty(str3)) {
-                    c0217dm.f = str3;
-                }
-                ArrayList a4 = Sa.a(optJSONObject11, "startup");
-                if (!io.a((Collection) a4)) {
-                    c0217dm.c = a4;
-                }
-                ArrayList a5 = Sa.a(optJSONObject11, "diagnostic");
-                if (!io.a((Collection) a5)) {
-                    c0217dm.n = a5;
-                }
-                HashMap hashMap2 = new HashMap();
-                Iterator<String> keys2 = optJSONObject11.keys();
-                while (keys2.hasNext()) {
-                    String next2 = keys2.next();
-                    if (!Sa.f638a.contains(next2) && (a2 = Sa.a(optJSONObject11, next2)) != null) {
-                        hashMap2.put(next2, a2);
-                    }
-                }
-                c0217dm.o = hashMap2;
-            }
-        } catch (Throwable unused8) {
-        }
-        this.c.getClass();
-        C0717xm c0717xm = new C0717xm();
-        JSONObject optJSONObject12 = ab.optJSONObject("retry_policy");
-        int i = c0717xm.w;
-        int i2 = c0717xm.x;
-        if (optJSONObject12 != null) {
-            i = optJSONObject12.optInt("max_interval_seconds", i);
-            i2 = optJSONObject12.optInt("exponential_multiplier", c0717xm.x);
-        }
-        c0217dm.q = new RetryPolicyConfig(i, i2);
-        this.d.getClass();
-        if (c0217dm.b.f446a) {
-            JSONObject optJSONObject13 = ab.optJSONObject("permissions_collecting");
-            C0642um c0642um = new C0642um();
-            if (optJSONObject13 != null) {
-                j = optJSONObject13.optLong("check_interval_seconds", c0642um.f1089a);
-                j2 = optJSONObject13.optLong("force_send_interval_seconds", c0642um.b);
-            } else {
-                j = c0642um.f1089a;
-                j2 = c0642um.b;
-            }
-            c0217dm.k = new Le(j, j2);
-        }
-        C0622u2 c0622u2 = this.f.f1093a;
-        C0493om c0493om = new C0493om();
-        JSONObject optJSONObject14 = ab.optJSONObject("auto_inapp_collecting");
-        if (optJSONObject14 != null) {
-            c0493om.f992a = optJSONObject14.optInt("send_frequency_seconds", c0493om.f992a);
-            c0493om.b = optJSONObject14.optInt("first_collecting_inapp_max_age_seconds", c0493om.b);
-        }
-        c0622u2.getClass();
-        c0217dm.r = new BillingConfig(c0493om.f992a, c0493om.b);
-        C3 c3 = this.g;
-        c3.getClass();
-        C0518pm c0518pm = new C0518pm();
-        JSONObject optJSONObject15 = ab.optJSONObject("cache_control");
-        if (optJSONObject15 != null) {
-            c0518pm.f1007a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject15, "last_known_location_ttl", c0518pm.f1007a);
-        }
-        c3.f369a.getClass();
-        c0217dm.s = new C0748z3(c0518pm.f1007a);
-        this.h.getClass();
-        C0597t2.a(c0217dm, ab);
-        Fm fm = this.j;
-        fm.getClass();
-        JSONObject optJSONObject16 = ab.optJSONObject("startup_update");
-        C0667vm c0667vm = new C0667vm();
-        Integer a6 = Bb.a(optJSONObject16, "interval_seconds", null);
-        if (a6 != null) {
-            c0667vm.f1105a = a6.intValue();
-        }
-        fm.f441a.getClass();
-        c0217dm.u = new Dm(c0667vm.f1105a);
-        Map<String, C0608td> c = this.k.f470a.c();
-        Gd gd = new Gd(ab);
-        LinkedHashMap linkedHashMap = new LinkedHashMap();
-        for (Map.Entry<String, C0608td> entry : c.entrySet()) {
-            Object invoke = gd.invoke(entry);
-            if (invoke != null) {
-                linkedHashMap.put(entry.getKey(), invoke);
-            }
-        }
-        c0217dm.v = linkedHashMap;
-        X9 x9 = this.l.f731a;
-        C0567rm c0567rm = new C0567rm();
-        JSONObject optJSONObject17 = ab.optJSONObject("external_attribution");
-        if (optJSONObject17 != null) {
-            c0567rm.f1042a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject17, "collecting_interval_seconds", c0567rm.f1042a);
-        }
-        x9.getClass();
-        c0217dm.w = new W9(c0567rm.f1042a);
-    }
-
-    public Yl(Cb cb, Sa sa, C0555ra c0555ra, Si si, Ne ne, Im im, C3 c3, C0647v2 c0647v2, C0597t2 c0597t2, Fm fm, Hd hd, Y9 y9) {
-        this.f738a = sa;
-        this.b = c0555ra;
-        this.c = si;
-        this.d = ne;
-        this.e = im;
-        this.g = c3;
-        this.f = c0647v2;
-        this.h = c0597t2;
-        this.i = cb;
-        this.j = fm;
-        this.k = hd;
-        this.l = y9;
+        return new StartupParamsItem(str, startupParamsItemStatus, identifiersResult.errorExplanation);
     }
 }

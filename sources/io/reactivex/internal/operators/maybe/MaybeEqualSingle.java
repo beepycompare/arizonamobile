@@ -11,7 +11,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeEqualSingle<T> extends Single<Boolean> {
     final BiPredicate<? super T, ? super T> isEqual;
     final MaybeSource<? extends T> source1;
@@ -30,7 +30,7 @@ public final class MaybeEqualSingle<T> extends Single<Boolean> {
         equalCoordinator.subscribe(this.source1, this.source2);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class EqualCoordinator<T> extends AtomicInteger implements Disposable {
         final SingleObserver<? super Boolean> downstream;
         final BiPredicate<? super T, ? super T> isEqual;
@@ -95,7 +95,7 @@ public final class MaybeEqualSingle<T> extends Single<Boolean> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class EqualObserver<T> extends AtomicReference<Disposable> implements MaybeObserver<T> {
         private static final long serialVersionUID = -3031974433025990931L;
         final EqualCoordinator<T> parent;

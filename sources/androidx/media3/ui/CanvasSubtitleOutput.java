@@ -9,7 +9,7 @@ import androidx.media3.ui.SubtitleView;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class CanvasSubtitleOutput extends View implements SubtitleView.Output {
     private float bottomPaddingFraction;
     private List<Cue> cues;

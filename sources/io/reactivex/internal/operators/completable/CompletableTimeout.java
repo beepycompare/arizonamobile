@@ -11,7 +11,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableTimeout extends Completable {
     final CompletableSource other;
     final Scheduler scheduler;
@@ -36,7 +36,7 @@ public final class CompletableTimeout extends Completable {
         this.source.subscribe(new TimeOutObserver(compositeDisposable, atomicBoolean, completableObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimeOutObserver implements CompletableObserver {
         private final CompletableObserver downstream;
         private final AtomicBoolean once;
@@ -72,7 +72,7 @@ public final class CompletableTimeout extends Completable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class DisposeTask implements Runnable {
         final CompletableObserver downstream;
         private final AtomicBoolean once;
@@ -96,7 +96,7 @@ public final class CompletableTimeout extends Completable {
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class DisposeObserver implements CompletableObserver {
             DisposeObserver() {
             }

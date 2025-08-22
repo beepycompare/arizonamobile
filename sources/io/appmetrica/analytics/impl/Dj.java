@@ -1,20 +1,16 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
 /* loaded from: classes4.dex */
-public final class Dj implements InterfaceC0407lb {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f399a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ Throwable c;
-
-    public Dj(String str, String str2, Throwable th) {
-        this.f399a = str;
-        this.b = str2;
-        this.c = th;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0407lb
-    public final void a(InterfaceC0432mb interfaceC0432mb) {
-        interfaceC0432mb.reportError(this.f399a, this.b, this.c);
+public final class Dj implements B4 {
+    @Override // io.appmetrica.analytics.impl.B4
+    /* renamed from: b */
+    public final C0761zj a(Context context, C0722y5 c0722y5, C0397l4 c0397l4, K4 k4) {
+        Tg tg;
+        C0398l5 c0398l5 = new C0398l5(c0397l4.b, c0397l4.f948a);
+        synchronized (c0722y5) {
+            tg = (Tg) c0722y5.f1152a.get(c0398l5.toString());
+        }
+        return new C0761zj(tg);
     }
 }

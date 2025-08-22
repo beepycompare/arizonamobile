@@ -475,13 +475,13 @@ public final class RealImageLoader implements ImageLoader {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0041, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0042, code lost:
         r8.onError(r7.getImage());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x005c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x005d, code lost:
         if (r8 != null) goto L9;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x003f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0040, code lost:
         if (r8 != null) goto L9;
      */
     /*

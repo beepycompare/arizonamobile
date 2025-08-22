@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableTakeUntil<T, U> extends AbstractFlowableWithUpstream<T, T> {
     final Publisher<? extends U> other;
 
@@ -29,7 +29,7 @@ public final class FlowableTakeUntil<T, U> extends AbstractFlowableWithUpstream<
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class TakeUntilMainSubscriber<T> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = -4945480365982832967L;
         final Subscriber<? super T> downstream;
@@ -75,7 +75,7 @@ public final class FlowableTakeUntil<T, U> extends AbstractFlowableWithUpstream<
             SubscriptionHelper.cancel(this.other);
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class OtherSubscriber extends AtomicReference<Subscription> implements FlowableSubscriber<Object> {
             private static final long serialVersionUID = -3592821756711087922L;
 

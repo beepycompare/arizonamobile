@@ -23,7 +23,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: MainInventoryViewHolder.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInventoryViewHolder$bind$1$4", f = "MainInventoryViewHolder.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_AC3}, m = "invokeSuspend", n = {}, s = {})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class MainInventoryViewHolder$bind$1$4 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ InventoryItem $itemVal;
     final /* synthetic */ ItemInventoryBinding $this_with;

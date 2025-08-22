@@ -366,8 +366,8 @@ public class Facebook {
         this.pendingAuthorizationPermissions = null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x004c  */
     @Deprecated
     /*
         Code decompiled incorrectly, please refer to instructions dump.

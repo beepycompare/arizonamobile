@@ -12,7 +12,7 @@ import io.reactivex.internal.observers.BasicIntQueueDisposable;
 import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.internal.schedulers.TrampolineScheduler;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableObserveOn<T> extends AbstractObservableWithUpstream<T, T> {
     final int bufferSize;
     final boolean delayError;
@@ -35,7 +35,7 @@ public final class ObservableObserveOn<T> extends AbstractObservableWithUpstream
         this.source.subscribe(new ObserveOnObserver(observer, scheduler.createWorker(), this.delayError, this.bufferSize));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ObserveOnObserver<T> extends BasicIntQueueDisposable<T> implements Observer<T>, Runnable {
         private static final long serialVersionUID = 6576896619930983584L;
         final int bufferSize;

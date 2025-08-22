@@ -9,7 +9,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.observers.ResumeSingleObserver;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleDelayWithCompletable<T> extends Single<T> {
     final CompletableSource other;
     final SingleSource<T> source;
@@ -24,7 +24,7 @@ public final class SingleDelayWithCompletable<T> extends Single<T> {
         this.other.subscribe(new OtherObserver(singleObserver, this.source));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OtherObserver<T> extends AtomicReference<Disposable> implements CompletableObserver, Disposable {
         private static final long serialVersionUID = -8565274649390031272L;
         final SingleObserver<? super T> downstream;

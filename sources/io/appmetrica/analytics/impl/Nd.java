@@ -1,53 +1,21 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
 /* loaded from: classes4.dex */
-public abstract class Nd extends AbstractC0411lf implements InterfaceC0641ul {
-    public Nd(InterfaceC0180cb interfaceC0180cb, String str) {
-        super(interfaceC0180cb, str);
-    }
+public abstract class Nd {
 
-    public final String c(String str, String str2) {
-        return this.f938a.getString(f(str), str2);
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public static U9 f577a;
 
-    public final InterfaceC0641ul d(String str, String str2) {
-        return (InterfaceC0641ul) b(f(str), str2);
-    }
-
-    public final boolean e(String str) {
-        return this.f938a.a(f(str));
-    }
-
-    public abstract String f(String str);
-
-    public InterfaceC0641ul g(String str) {
-        return (InterfaceC0641ul) d(f(str));
-    }
-
-    public Nd(InterfaceC0180cb interfaceC0180cb) {
-        this(interfaceC0180cb, null);
-    }
-
-    public final InterfaceC0641ul d(String str, int i) {
-        return (InterfaceC0641ul) b(f(str), i);
-    }
-
-    public final int c(String str, int i) {
-        return this.f938a.getInt(f(str), i);
-    }
-
-    public final InterfaceC0641ul d(String str, long j) {
-        return (InterfaceC0641ul) b(f(str), j);
-    }
-
-    public final InterfaceC0641ul d(String str, boolean z) {
-        return (InterfaceC0641ul) b(f(str), z);
-    }
-
-    public final long c(String str, long j) {
-        return this.f938a.getLong(f(str), j);
-    }
-
-    public final boolean c(String str, boolean z) {
-        return this.f938a.getBoolean(f(str), z);
+    public static final synchronized U9 a(Context context) {
+        U9 u9;
+        synchronized (Nd.class) {
+            u9 = f577a;
+            if (u9 == null) {
+                u9 = new U9(context, "uuid.dat");
+                f577a = u9;
+            }
+        }
+        return u9;
     }
 }

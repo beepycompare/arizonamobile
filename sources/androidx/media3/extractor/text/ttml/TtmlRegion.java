@@ -1,5 +1,5 @@
 package androidx.media3.extractor.text.ttml;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class TtmlRegion {
     public final float height;
     public final String id;

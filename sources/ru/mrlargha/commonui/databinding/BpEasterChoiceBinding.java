@@ -9,7 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class BpEasterChoiceBinding implements ViewBinding {
     public final ImageView backButton;
     public final ConstraintLayout bpEventChoice;

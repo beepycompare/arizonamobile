@@ -6,7 +6,7 @@ import androidx.media3.extractor.text.Subtitle;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class TtmlSubtitle implements Subtitle {
     private final long[] eventTimesUs;
     private final Map<String, TtmlStyle> globalStyles;

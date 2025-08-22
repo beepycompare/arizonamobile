@@ -3,11 +3,11 @@ package io.appmetrica.analytics.impl;
 public abstract class W2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0498p2 f693a;
+    public final InterfaceC0495p2 f702a;
 
-    public W2(InterfaceC0498p2 interfaceC0498p2) {
-        this.f693a = interfaceC0498p2;
+    public W2(InterfaceC0495p2 interfaceC0495p2) {
+        this.f702a = interfaceC0495p2;
     }
 
-    public abstract C0193co a(C0141ao c0141ao, C0193co c0193co, InterfaceC0473o2 interfaceC0473o2);
+    public abstract C0314ho a(C0262fo c0262fo, C0314ho c0314ho, InterfaceC0470o2 interfaceC0470o2);
 }

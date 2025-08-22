@@ -19,16 +19,18 @@ import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Composer.kt */
-@Metadata(d1 = {"\u0000¼\u0001\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0001\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010!\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0000\u001a\u0010\u0010<\u001a\u00020=2\u0006\u0010>\u001a\u00020?H\u0000\u001a\u0010\u0010@\u001a\u00020A2\u0006\u0010>\u001a\u00020?H\u0000\u001a\u0011\u0010B\u001a\u00020=2\u0006\u0010C\u001a\u00020\u0001H\u0080\b\u001a\u001f\u0010B\u001a\u00020=2\u0006\u0010C\u001a\u00020\u00012\f\u0010D\u001a\b\u0012\u0004\u0012\u00020?0EH\u0080\b\u001a.\u0010F\u001a\u00020G2\u0006\u0010H\u001a\u00020I2\u0006\u0010(\u001a\u00020J2\u0006\u0010K\u001a\u0002032\f\u0010L\u001a\b\u0012\u0002\b\u0003\u0018\u00010MH\u0000\u001a(\u0010N\u001a\u0004\u0018\u00010\u00062\b\u0010C\u001a\u0004\u0018\u00010\u00062\b\u0010O\u001a\u0004\u0018\u00010\u00062\b\u0010P\u001a\u0004\u0018\u00010\u0006H\u0002\u001a\b\u0010Q\u001a\u00020\u0001H\u0007\u001a5\u0010R\u001a\u000e\u0012\u0004\u0012\u0002HT\u0012\u0004\u0012\u0002HU0S\"\b\b\u0000\u0010T*\u00020\u0006\"\b\b\u0001\u0010U*\u00020\u00062\u0006\u0010V\u001a\u00020\fH\u0002¢\u0006\u0002\u0010W\u001a\u0011\u0010X\u001a\u00020=2\u0006\u0010C\u001a\u00020\u0001H\u0080\b\u001a*\u0010X\u001a\u00020=2\u0006\u0010C\u001a\u00020\u00012\f\u0010D\u001a\b\u0012\u0004\u0012\u00020?0EH\u0080\b\u0082\u0002\b\n\u0006\b\u0000\u001a\u0002\u0010\u0001\u001a\u0018\u0010Y\u001a\u00020=2\u0006\u0010Z\u001a\u00020[2\u0006\u0010Y\u001a\u00020?H\u0007\u001a\u0010\u0010\\\u001a\u00020=2\u0006\u0010Z\u001a\u00020[H\u0007\u001a \u0010]\u001a\u00020=2\u0006\u0010Z\u001a\u00020[2\u0006\u0010^\u001a\u00020\f2\u0006\u0010Y\u001a\u00020?H\u0007\u001a\b\u0010_\u001a\u00020=H\u0007\u001a(\u0010`\u001a\u00020=2\u0006\u0010^\u001a\u00020\f2\u0006\u0010a\u001a\u00020\f2\u0006\u0010b\u001a\u00020\f2\u0006\u0010c\u001a\u00020?H\u0007\u001a\u0018\u0010`\u001a\u00020=2\u0006\u0010^\u001a\u00020\f2\u0006\u0010c\u001a\u00020?H\u0007\u001a\f\u0010d\u001a\u00020\u0001*\u00020\fH\u0002\u001a\f\u0010e\u001a\u00020\f*\u00020\u0001H\u0002\u001a3\u0010f\u001a\u0002Hg\"\u0004\b\u0000\u0010g*\u00020[2\u0006\u0010h\u001a\u00020\u00012\u0011\u0010i\u001a\r\u0012\u0004\u0012\u0002Hg0E¢\u0006\u0002\bjH\u0087\b¢\u0006\u0002\u0010k\u001a\u001c\u0010l\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060m*\u00020n2\u0006\u0010o\u001a\u00020pH\u0002\u001a\u0014\u0010q\u001a\u00020=*\u0002032\u0006\u0010r\u001a\u00020sH\u0000\u001a\u001c\u0010t\u001a\u00020\f*\u0002012\u0006\u0010u\u001a\u00020\f2\u0006\u0010v\u001a\u00020\fH\u0002\u001a(\u0010w\u001a\b\u0012\u0004\u0012\u00020\u00040x*\b\u0012\u0004\u0012\u00020\u00040x2\u0006\u0010y\u001a\u00020\f2\u0006\u0010z\u001a\u00020\fH\u0002\u001a\u001a\u0010{\u001a\u00020\f*\b\u0012\u0004\u0012\u00020\u00040x2\u0006\u0010|\u001a\u00020\fH\u0002\u001a\u001a\u0010}\u001a\u00020\f*\b\u0012\u0004\u0012\u00020\u00040x2\u0006\u0010|\u001a\u00020\fH\u0002\u001a$\u0010~\u001a\u0004\u0018\u00010\u0004*\b\u0012\u0004\u0012\u00020\u00040x2\u0006\u0010y\u001a\u00020\f2\u0006\u0010z\u001a\u00020\fH\u0002\u001a/\u0010\u007f\u001a\u00020=*\b\u0012\u0004\u0012\u00020\u00040x2\u0006\u0010|\u001a\u00020\f2\b\u0010\u0080\u0001\u001a\u00030\u0081\u00012\t\u0010\u0082\u0001\u001a\u0004\u0018\u00010\u0006H\u0002\u001a(\u0010\u0083\u0001\u001a\u00020\f*\u0002012\u0007\u0010\u0084\u0001\u001a\u00020\f2\u0007\u0010\u0085\u0001\u001a\u00020\f2\u0007\u0010\u0086\u0001\u001a\u00020\fH\u0002\u001a\u0015\u0010\u0087\u0001\u001a\u00020=*\u0002032\u0006\u0010r\u001a\u00020sH\u0000\u001a \u0010\u0088\u0001\u001a\u00020=*\u0002032\u0006\u0010u\u001a\u00020\f2\t\u0010\u0089\u0001\u001a\u0004\u0018\u00010\u0006H\u0002\u001a\u001d\u0010\u008a\u0001\u001a\u0004\u0018\u00010\u0004*\b\u0012\u0004\u0012\u00020\u00040x2\u0006\u0010|\u001a\u00020\fH\u0002\u001a#\u0010\u008b\u0001\u001a\u00020=*\b\u0012\u0004\u0012\u00020\u00040x2\u0006\u0010y\u001a\u00020\f2\u0006\u0010z\u001a\u00020\fH\u0002\u001a<\u0010\u008c\u0001\u001a\u00020=\"\u0005\b\u0000\u0010\u008d\u0001*\u0002032\b\u0010o\u001a\u0004\u0018\u00010p2\u001b\u0010\u008e\u0001\u001a\u0016\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\f\u0012\u0005\u0012\u0003H\u008d\u00010\u008f\u0001H\u0080\b\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u0014\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001c\u0010\u0005\u001a\u00020\u00068\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0007\u0010\b\u001a\u0004\b\t\u0010\n\"\u0016\u0010\u000b\u001a\u00020\f8\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\b\r\u0010\b\"\u0016\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\b\u0010\u0010\b\"\u000e\u0010\u0011\u001a\u00020\fX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0012\u001a\u00020\fX\u0082T¢\u0006\u0002\n\u0000\"\u001c\u0010\u0013\u001a\u00020\u00068\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0014\u0010\b\u001a\u0004\b\u0015\u0010\n\"\u0016\u0010\u0016\u001a\u00020\f8\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\b\u0017\u0010\b\"\u000e\u0010\u0018\u001a\u00020\fX\u0082T¢\u0006\u0002\n\u0000\"\u001c\u0010\u0019\u001a\u00020\u00068\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u001a\u0010\b\u001a\u0004\b\u001b\u0010\n\"\u0016\u0010\u001c\u001a\u00020\f8\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\b\u001d\u0010\b\"\u001c\u0010\u001e\u001a\u00020\u00068\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u001f\u0010\b\u001a\u0004\b \u0010\n\"\u0016\u0010!\u001a\u00020\f8\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\b\"\u0010\b\"\u001c\u0010#\u001a\u00020\u00068\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b$\u0010\b\u001a\u0004\b%\u0010\n\"\u0016\u0010&\u001a\u00020\f8\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\b'\u0010\b\"\u001c\u0010(\u001a\u00020\u00068\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b)\u0010\b\u001a\u0004\b*\u0010\n\"\u0016\u0010+\u001a\u00020\f8\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\b,\u0010\b\"\u0016\u0010-\u001a\u00020\f8\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\b.\u0010\b\"\u000e\u0010/\u001a\u00020\fX\u0082T¢\u0006\u0002\n\u0000\"\u0018\u00100\u001a\u00020\u0001*\u0002018@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b0\u00102\"\u0018\u00100\u001a\u00020\u0001*\u0002038@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b0\u00104\"\u0018\u00105\u001a\u00020\u0006*\u0002068BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b7\u00108\"\u0018\u00109\u001a\u00020\f*\u0002038BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b:\u0010;¨\u0006\u0090\u0001"}, d2 = {"EnableDebugRuntimeChecks", "", "InvalidationLocationAscending", "Ljava/util/Comparator;", "Landroidx/compose/runtime/Invalidation;", "compositionLocalMap", "", "getCompositionLocalMap$annotations", "()V", "getCompositionLocalMap", "()Ljava/lang/Object;", "compositionLocalMapKey", "", "getCompositionLocalMapKey$annotations", "compositionTracer", "Landroidx/compose/runtime/CompositionTracer;", "getCompositionTracer$annotations", "defaultsKey", "invalidGroupLocation", "invocation", "getInvocation$annotations", "getInvocation", "invocationKey", "getInvocationKey$annotations", "nodeKey", "provider", "getProvider$annotations", "getProvider", "providerKey", "getProviderKey$annotations", "providerMaps", "getProviderMaps$annotations", "getProviderMaps", "providerMapsKey", "getProviderMapsKey$annotations", "providerValues", "getProviderValues$annotations", "getProviderValues", "providerValuesKey", "getProviderValuesKey$annotations", TypedValues.Custom.S_REFERENCE, "getReference$annotations", "getReference", "referenceKey", "getReferenceKey$annotations", "reuseKey", "getReuseKey$annotations", "rootKey", "isAfterFirstChild", "Landroidx/compose/runtime/SlotReader;", "(Landroidx/compose/runtime/SlotReader;)Z", "Landroidx/compose/runtime/SlotWriter;", "(Landroidx/compose/runtime/SlotWriter;)Z", "joinedKey", "Landroidx/compose/runtime/KeyInfo;", "getJoinedKey", "(Landroidx/compose/runtime/KeyInfo;)Ljava/lang/Object;", "nextGroup", "getNextGroup", "(Landroidx/compose/runtime/SlotWriter;)I", "composeImmediateRuntimeError", "", "message", "", "composeRuntimeError", "", "debugRuntimeCheck", "value", "lazyMessage", "Lkotlin/Function0;", "extractMovableContentAtCurrent", "Landroidx/compose/runtime/MovableContentState;", "composition", "Landroidx/compose/runtime/ControlledComposition;", "Landroidx/compose/runtime/MovableContentStateReference;", "slots", "applier", "Landroidx/compose/runtime/Applier;", "getKey", TtmlNode.LEFT, TtmlNode.RIGHT, "isTraceInProgress", "multiMap", "Landroidx/compose/runtime/collection/MultiValueMap;", "K", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "initialCapacity", "(I)Landroidx/collection/MutableScatterMap;", "runtimeCheck", "sourceInformation", "composer", "Landroidx/compose/runtime/Composer;", "sourceInformationMarkerEnd", "sourceInformationMarkerStart", "key", "traceEventEnd", "traceEventStart", "dirty1", "dirty2", "info", "asBool", "asInt", "cache", ExifInterface.GPS_DIRECTION_TRUE, "invalid", "block", "Landroidx/compose/runtime/DisallowComposableCalls;", "(Landroidx/compose/runtime/Composer;ZLkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "collectNodesFrom", "", "Landroidx/compose/runtime/SlotTable;", "anchor", "Landroidx/compose/runtime/Anchor;", "deactivateCurrentGroup", "rememberManager", "Landroidx/compose/runtime/RememberManager;", "distanceFrom", FirebaseAnalytics.Param.INDEX, "root", "filterToRange", "", TtmlNode.START, TtmlNode.END, "findInsertLocation", FirebaseAnalytics.Param.LOCATION, "findLocation", "firstInRange", "insertIfMissing", "scope", "Landroidx/compose/runtime/RecomposeScopeImpl;", "instance", "nearestCommonRootOf", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "common", "removeCurrentGroup", "removeData", "data", "removeLocation", "removeRange", "withAfterAnchorInfo", "R", "cb", "Lkotlin/Function2;", "runtime_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Ä\u0001\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b,\n\u0002\u0010\u0001\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u001a3\u0010\u0005\u001a\u0002H\u0006\"\u0004\b\u0000\u0010\u0006*\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0011\u0010\n\u001a\r\u0012\u0004\u0012\u0002H\u00060\u000b¢\u0006\u0002\b\fH\u0087\b¢\u0006\u0002\u0010\r\u001a\u0018\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00072\u0006\u0010\u000e\u001a\u00020\u0011H\u0007\u001a \u0010\u0012\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00072\u0006\u0010\u0013\u001a\u00020\u00012\u0006\u0010\u000e\u001a\u00020\u0011H\u0007\u001a\b\u0010\u001d\u001a\u00020\tH\u0007\u001a\u0018\u0010\u001e\u001a\u00020\u000f2\u0006\u0010\u0013\u001a\u00020\u00012\u0006\u0010\u001f\u001a\u00020\u0011H\u0007\u001a(\u0010\u001e\u001a\u00020\u000f2\u0006\u0010\u0013\u001a\u00020\u00012\u0006\u0010 \u001a\u00020\u00012\u0006\u0010!\u001a\u00020\u00012\u0006\u0010\u001f\u001a\u00020\u0011H\u0007\u001a\b\u0010\"\u001a\u00020\u000fH\u0007\u001a\u0010\u0010#\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0007H\u0007\u001a\u0014\u0010$\u001a\u00020\u000f*\u00020\u00022\u0006\u0010%\u001a\u00020&H\u0000\u001a7\u0010'\u001a\u00020\u000f\"\u0004\b\u0000\u0010(*\u00020\u00022\b\u0010)\u001a\u0004\u0018\u00010*2\u0018\u0010+\u001a\u0014\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u0002H(0,H\u0080\b\u001a\u0014\u00101\u001a\u00020\u000f*\u00020\u00022\u0006\u0010%\u001a\u00020&H\u0000\u001a\u001e\u00102\u001a\u00020\u000f*\u00020\u00022\u0006\u00103\u001a\u00020\u00012\b\u00104\u001a\u0004\u0018\u000105H\u0002\u001a5\u00106\u001a\u000e\u0012\u0004\u0012\u0002H8\u0012\u0004\u0012\u0002H907\"\b\b\u0000\u00108*\u000205\"\b\b\u0001\u00109*\u0002052\u0006\u0010:\u001a\u00020\u0001H\u0002¢\u0006\u0002\u0010;\u001a(\u0010<\u001a\u0004\u0018\u0001052\b\u0010=\u001a\u0004\u0018\u0001052\b\u0010>\u001a\u0004\u0018\u0001052\b\u0010?\u001a\u0004\u0018\u000105H\u0002\u001a\u001a\u0010@\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020B0A2\u0006\u0010C\u001a\u00020\u0001H\u0002\u001a\u001a\u0010D\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020B0A2\u0006\u0010C\u001a\u00020\u0001H\u0002\u001a,\u0010E\u001a\u00020\u000f*\b\u0012\u0004\u0012\u00020B0F2\u0006\u0010C\u001a\u00020\u00012\u0006\u0010G\u001a\u00020H2\b\u0010I\u001a\u0004\u0018\u000105H\u0002\u001a$\u0010J\u001a\u0004\u0018\u00010B*\b\u0012\u0004\u0012\u00020B0F2\u0006\u0010K\u001a\u00020\u00012\u0006\u0010L\u001a\u00020\u0001H\u0002\u001a\u001c\u0010M\u001a\u0004\u0018\u00010B*\b\u0012\u0004\u0012\u00020B0F2\u0006\u0010C\u001a\u00020\u0001H\u0002\u001a\"\u0010N\u001a\u00020\u000f*\b\u0012\u0004\u0012\u00020B0F2\u0006\u0010K\u001a\u00020\u00012\u0006\u0010L\u001a\u00020\u0001H\u0002\u001a7\u0010O\u001a\u00020\u000f*\b\u0012\u0004\u0012\u00020B0A2\u0006\u0010K\u001a\u00020\u00012\u0006\u0010L\u001a\u00020\u00012\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020B\u0012\u0004\u0012\u00020\u000f0PH\u0082\b\u001a\f\u0010Q\u001a\u00020\u0001*\u00020\tH\u0002\u001a\f\u0010R\u001a\u00020\t*\u00020\u0001H\u0002\u001a\u001c\u0010S\u001a\n\u0012\u0006\u0012\u0004\u0018\u0001050A*\u00020T2\u0006\u0010)\u001a\u00020*H\u0002\u001a\u001c\u0010U\u001a\u00020\u0001*\u00020/2\u0006\u00103\u001a\u00020\u00012\u0006\u0010V\u001a\u00020\u0001H\u0002\u001a$\u0010W\u001a\u00020\u0001*\u00020/2\u0006\u0010X\u001a\u00020\u00012\u0006\u0010Y\u001a\u00020\u00012\u0006\u0010Z\u001a\u00020\u0001H\u0002\u001a,\u0010\u0084\u0001\u001a\u00020\u000f2\u0006\u0010=\u001a\u00020\t2\r\u0010\u0085\u0001\u001a\b\u0012\u0004\u0012\u00020\u00110\u000bH\u0080\b\u0082\u0002\b\n\u0006\b\u0000\u001a\u0002\u0010\u0001\u001a!\u0010\u0087\u0001\u001a\u00020\u000f2\u0006\u0010=\u001a\u00020\t2\r\u0010\u0085\u0001\u001a\b\u0012\u0004\u0012\u00020\u00110\u000bH\u0080\b\u001a\u0012\u0010\u0087\u0001\u001a\u00020\u000f2\u0006\u0010=\u001a\u00020\tH\u0080\b\u001a\u0012\u0010\u0084\u0001\u001a\u00020\u000f2\u0006\u0010=\u001a\u00020\tH\u0080\b\u001a\u0013\u0010\u0088\u0001\u001a\u00030\u0089\u00012\u0007\u0010\u008a\u0001\u001a\u00020\u0011H\u0000\u001a\u0012\u0010\u008b\u0001\u001a\u00020\u000f2\u0007\u0010\u008a\u0001\u001a\u00020\u0011H\u0000\u001a6\u0010\u008f\u0001\u001a\u00030\u0090\u00012\b\u0010\u0091\u0001\u001a\u00030\u0092\u00012\u0007\u0010~\u001a\u00030\u0093\u00012\u0007\u0010\u0094\u0001\u001a\u00020\u00022\u000e\u0010\u0095\u0001\u001a\t\u0012\u0002\b\u0003\u0018\u00010\u0096\u0001H\u0000\"\u0018\u0010\u0000\u001a\u00020\u0001*\u00020\u00028BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0003\u0010\u0004\"\u0016\u0010\u0014\u001a\u0004\u0018\u00010\u0015X\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\b\u0016\u0010\u0017\"\u001a\u0010\u0018\u001a\u00020\tX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u001a\"\u0004\b\u001b\u0010\u001c\"\u0018\u0010-\u001a\u00020\t*\u00020\u00028@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b-\u0010.\"\u0018\u0010-\u001a\u00020\t*\u00020/8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b-\u00100\"\u0018\u0010[\u001a\u000205*\u00020\\8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b]\u0010^\"\u000e\u0010_\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010`\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010a\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u0016\u0010b\u001a\u00020\u00018\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\bc\u0010\u0017\"\u001c\u0010d\u001a\u0002058\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\be\u0010\u0017\u001a\u0004\bf\u0010g\"\u0016\u0010h\u001a\u00020\u00018\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\bi\u0010\u0017\"\u001c\u0010j\u001a\u0002058\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\bk\u0010\u0017\u001a\u0004\bl\u0010g\"\u0016\u0010m\u001a\u00020\u00018\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\bn\u0010\u0017\"\u001c\u0010o\u001a\u0002058\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\bp\u0010\u0017\u001a\u0004\bq\u0010g\"\u0016\u0010r\u001a\u00020\u00018\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\bs\u0010\u0017\"\u001c\u0010t\u001a\u0002058\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\bu\u0010\u0017\u001a\u0004\bv\u0010g\"\u0016\u0010w\u001a\u00020\u00018\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\bx\u0010\u0017\"\u001c\u0010y\u001a\u0002058\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\bz\u0010\u0017\u001a\u0004\b{\u0010g\"\u0016\u0010|\u001a\u00020\u00018\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\b}\u0010\u0017\"\u001d\u0010~\u001a\u0002058\u0000X\u0081\u0004¢\u0006\u000f\n\u0000\u0012\u0004\b\u007f\u0010\u0017\u001a\u0005\b\u0080\u0001\u0010g\"\u0018\u0010\u0081\u0001\u001a\u00020\u00018\u0000X\u0081T¢\u0006\t\n\u0000\u0012\u0005\b\u0082\u0001\u0010\u0017\"\u000f\u0010\u0083\u0001\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000f\u0010\u0086\u0001\u001a\u00020\tX\u0080T¢\u0006\u0002\n\u0000\"!\u0010\u008c\u0001\u001a\u0014\u0012\u0004\u0012\u00020B0\u008d\u0001j\t\u0012\u0004\u0012\u00020B`\u008e\u0001X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0097\u0001"}, d2 = {"nextGroup", "", "Landroidx/compose/runtime/SlotWriter;", "getNextGroup", "(Landroidx/compose/runtime/SlotWriter;)I", "cache", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/runtime/Composer;", "invalid", "", "block", "Lkotlin/Function0;", "Landroidx/compose/runtime/DisallowComposableCalls;", "(Landroidx/compose/runtime/Composer;ZLkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "sourceInformation", "", "composer", "", "sourceInformationMarkerStart", "key", "compositionTracer", "Landroidx/compose/runtime/CompositionTracer;", "getCompositionTracer$annotations", "()V", "composeStackTraceEnabled", "getComposeStackTraceEnabled", "()Z", "setComposeStackTraceEnabled", "(Z)V", "isTraceInProgress", "traceEventStart", "info", "dirty1", "dirty2", "traceEventEnd", "sourceInformationMarkerEnd", "removeCurrentGroup", "rememberManager", "Landroidx/compose/runtime/RememberManager;", "withAfterAnchorInfo", "R", "anchor", "Landroidx/compose/runtime/Anchor;", "cb", "Lkotlin/Function2;", "isAfterFirstChild", "(Landroidx/compose/runtime/SlotWriter;)Z", "Landroidx/compose/runtime/SlotReader;", "(Landroidx/compose/runtime/SlotReader;)Z", "deactivateCurrentGroup", "removeData", FirebaseAnalytics.Param.INDEX, "data", "", "multiMap", "Landroidx/compose/runtime/collection/MultiValueMap;", "K", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "initialCapacity", "(I)Landroidx/collection/MutableScatterMap;", "getKey", "value", TtmlNode.LEFT, TtmlNode.RIGHT, "findLocation", "", "Landroidx/compose/runtime/Invalidation;", FirebaseAnalytics.Param.LOCATION, "findInsertLocation", "insertIfMissing", "", "scope", "Landroidx/compose/runtime/RecomposeScopeImpl;", "instance", "firstInRange", TtmlNode.START, TtmlNode.END, "removeLocation", "removeRange", "forEachInRange", "Lkotlin/Function1;", "asInt", "asBool", "collectNodesFrom", "Landroidx/compose/runtime/SlotTable;", "distanceFrom", "root", "nearestCommonRootOf", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "common", "joinedKey", "Landroidx/compose/runtime/KeyInfo;", "getJoinedKey", "(Landroidx/compose/runtime/KeyInfo;)Ljava/lang/Object;", "rootKey", "nodeKey", "defaultsKey", "invocationKey", "getInvocationKey$annotations", "invocation", "getInvocation$annotations", "getInvocation", "()Ljava/lang/Object;", "providerKey", "getProviderKey$annotations", "provider", "getProvider$annotations", "getProvider", "compositionLocalMapKey", "getCompositionLocalMapKey$annotations", "compositionLocalMap", "getCompositionLocalMap$annotations", "getCompositionLocalMap", "providerValuesKey", "getProviderValuesKey$annotations", "providerValues", "getProviderValues$annotations", "getProviderValues", "providerMapsKey", "getProviderMapsKey$annotations", "providerMaps", "getProviderMaps$annotations", "getProviderMaps", "referenceKey", "getReferenceKey$annotations", TypedValues.Custom.S_REFERENCE, "getReference$annotations", "getReference", "reuseKey", "getReuseKey$annotations", "invalidGroupLocation", "runtimeCheck", "lazyMessage", "EnableDebugRuntimeChecks", "debugRuntimeCheck", "composeRuntimeError", "", "message", "composeImmediateRuntimeError", "InvalidationLocationAscending", "Ljava/util/Comparator;", "Lkotlin/Comparator;", "extractMovableContentAtCurrent", "Landroidx/compose/runtime/MovableContentState;", "composition", "Landroidx/compose/runtime/ControlledComposition;", "Landroidx/compose/runtime/MovableContentStateReference;", "slots", "applier", "Landroidx/compose/runtime/Applier;", "runtime"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposerKt {
     public static final boolean EnableDebugRuntimeChecks = false;
+    private static boolean composeStackTraceEnabled = false;
     public static final int compositionLocalMapKey = 202;
     private static CompositionTracer compositionTracer = null;
-    private static final int defaultsKey = -127;
+    public static final int defaultsKey = -127;
     private static final int invalidGroupLocation = -2;
     public static final int invocationKey = 200;
     private static final int nodeKey = 125;
@@ -44,12 +46,12 @@ public final class ComposerKt {
     private static final Object providerValues = new OpaqueKey("providerValues");
     private static final Object providerMaps = new OpaqueKey("providers");
     private static final Object reference = new OpaqueKey(TypedValues.Custom.S_REFERENCE);
-    private static final Comparator<Invalidation> InvalidationLocationAscending = new Comparator() { // from class: androidx.compose.runtime.ComposerKt$$ExternalSyntheticLambda0
+    private static final Comparator<Invalidation> InvalidationLocationAscending = new Comparator() { // from class: androidx.compose.runtime.ComposerKt$$ExternalSyntheticLambda1
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int InvalidationLocationAscending$lambda$16;
-            InvalidationLocationAscending$lambda$16 = ComposerKt.InvalidationLocationAscending$lambda$16((Invalidation) obj, (Invalidation) obj2);
-            return InvalidationLocationAscending$lambda$16;
+            int InvalidationLocationAscending$lambda$13;
+            InvalidationLocationAscending$lambda$13 = ComposerKt.InvalidationLocationAscending$lambda$13((Invalidation) obj, (Invalidation) obj2);
+            return InvalidationLocationAscending$lambda$13;
         }
     };
 
@@ -134,6 +136,14 @@ public final class ComposerKt {
         composer.sourceInformationMarkerStart(i, str);
     }
 
+    public static final boolean getComposeStackTraceEnabled() {
+        return composeStackTraceEnabled;
+    }
+
+    public static final void setComposeStackTraceEnabled(boolean z) {
+        composeStackTraceEnabled = z;
+    }
+
     @ComposeCompilerApi
     public static final boolean isTraceInProgress() {
         CompositionTracer compositionTracer2 = compositionTracer;
@@ -161,32 +171,29 @@ public final class ComposerKt {
         composer.sourceInformationMarkerEnd();
     }
 
-    public static final void removeCurrentGroup(SlotWriter slotWriter, RememberManager rememberManager) {
-        int i;
-        int dataIndex = slotWriter.dataIndex(slotWriter.groups, slotWriter.groupIndexToAddress(slotWriter.getCurrentGroup() + slotWriter.groupSize(slotWriter.getCurrentGroup())));
-        for (int dataIndex2 = slotWriter.dataIndex(slotWriter.groups, slotWriter.groupIndexToAddress(slotWriter.getCurrentGroup())); dataIndex2 < dataIndex; dataIndex2++) {
-            Object obj = slotWriter.slots[slotWriter.dataIndexToDataAddress(dataIndex2)];
-            int i2 = -1;
-            if (obj instanceof ComposeNodeLifecycleCallback) {
-                rememberManager.releasing((ComposeNodeLifecycleCallback) obj, slotWriter.getSlotsSize() - dataIndex2, -1, -1);
+    public static final void removeCurrentGroup(SlotWriter slotWriter, final RememberManager rememberManager) {
+        slotWriter.forAllDataInRememberOrder(slotWriter.getCurrentGroup(), new Function2() { // from class: androidx.compose.runtime.ComposerKt$$ExternalSyntheticLambda2
+            @Override // kotlin.jvm.functions.Function2
+            public final Object invoke(Object obj, Object obj2) {
+                Unit removeCurrentGroup$lambda$2;
+                removeCurrentGroup$lambda$2 = ComposerKt.removeCurrentGroup$lambda$2(RememberManager.this, ((Integer) obj).intValue(), obj2);
+                return removeCurrentGroup$lambda$2;
             }
-            if (obj instanceof RememberObserverHolder) {
-                int slotsSize = slotWriter.getSlotsSize() - dataIndex2;
-                RememberObserverHolder rememberObserverHolder = (RememberObserverHolder) obj;
-                Anchor after = rememberObserverHolder.getAfter();
-                if (after == null || !after.getValid()) {
-                    i = -1;
-                } else {
-                    i2 = slotWriter.anchorIndex(after);
-                    i = slotWriter.getSlotsSize() - slotWriter.slotsEndAllIndex$runtime_release(i2);
-                }
-                rememberManager.forgetting(rememberObserverHolder, slotsSize, i2, i);
-            }
-            if (obj instanceof RecomposeScopeImpl) {
-                ((RecomposeScopeImpl) obj).release();
-            }
-        }
+        });
         slotWriter.removeGroup();
+    }
+
+    public static final Unit removeCurrentGroup$lambda$2(RememberManager rememberManager, int i, Object obj) {
+        if (obj instanceof ComposeNodeLifecycleCallback) {
+            rememberManager.releasing((ComposeNodeLifecycleCallback) obj);
+        }
+        if (obj instanceof RememberObserverHolder) {
+            rememberManager.forgetting((RememberObserverHolder) obj);
+        }
+        if (obj instanceof RecomposeScopeImpl) {
+            ((RecomposeScopeImpl) obj).release();
+        }
+        return Unit.INSTANCE;
     }
 
     public static final <R> void withAfterAnchorInfo(SlotWriter slotWriter, Anchor anchor, Function2<? super Integer, ? super Integer, ? extends R> function2) {
@@ -197,7 +204,7 @@ public final class ComposerKt {
             i2 = -1;
         } else {
             i = slotWriter.anchorIndex(anchor);
-            i2 = slotWriter.getSlotsSize() - slotWriter.slotsEndAllIndex$runtime_release(i);
+            i2 = slotWriter.getSlotsSize() - slotWriter.slotsEndAllIndex$runtime(i);
         }
         function2.invoke(Integer.valueOf(i), Integer.valueOf(i2));
     }
@@ -210,33 +217,31 @@ public final class ComposerKt {
         return slotReader.getCurrentGroup() > slotReader.getParent() + 1;
     }
 
-    public static final void deactivateCurrentGroup(SlotWriter slotWriter, RememberManager rememberManager) {
-        int i;
-        int dataIndex = slotWriter.dataIndex(slotWriter.groups, slotWriter.groupIndexToAddress(slotWriter.getCurrentGroup() + slotWriter.groupSize(slotWriter.getCurrentGroup())));
-        for (int dataIndex2 = slotWriter.dataIndex(slotWriter.groups, slotWriter.groupIndexToAddress(slotWriter.getCurrentGroup())); dataIndex2 < dataIndex; dataIndex2++) {
-            Object obj = slotWriter.slots[slotWriter.dataIndexToDataAddress(dataIndex2)];
-            int i2 = -1;
-            if (obj instanceof ComposeNodeLifecycleCallback) {
-                rememberManager.deactivating((ComposeNodeLifecycleCallback) obj, slotWriter.getSlotsSize() - dataIndex2, -1, -1);
-            } else if (obj instanceof RememberObserverHolder) {
-                RememberObserverHolder rememberObserverHolder = (RememberObserverHolder) obj;
-                if (!(rememberObserverHolder.getWrapped() instanceof ReusableRememberObserver)) {
-                    removeData(slotWriter, dataIndex2, obj);
-                    int slotsSize = slotWriter.getSlotsSize() - dataIndex2;
-                    Anchor after = rememberObserverHolder.getAfter();
-                    if (after == null || !after.getValid()) {
-                        i = -1;
-                    } else {
-                        i2 = slotWriter.anchorIndex(after);
-                        i = slotWriter.getSlotsSize() - slotWriter.slotsEndAllIndex$runtime_release(i2);
-                    }
-                    rememberManager.forgetting(rememberObserverHolder, slotsSize, i2, i);
-                }
-            } else if (obj instanceof RecomposeScopeImpl) {
-                removeData(slotWriter, dataIndex2, obj);
-                ((RecomposeScopeImpl) obj).release();
+    public static final void deactivateCurrentGroup(final SlotWriter slotWriter, final RememberManager rememberManager) {
+        slotWriter.forAllDataInRememberOrder(slotWriter.getCurrentGroup(), new Function2() { // from class: androidx.compose.runtime.ComposerKt$$ExternalSyntheticLambda0
+            @Override // kotlin.jvm.functions.Function2
+            public final Object invoke(Object obj, Object obj2) {
+                Unit deactivateCurrentGroup$lambda$3;
+                deactivateCurrentGroup$lambda$3 = ComposerKt.deactivateCurrentGroup$lambda$3(RememberManager.this, slotWriter, ((Integer) obj).intValue(), obj2);
+                return deactivateCurrentGroup$lambda$3;
             }
+        });
+    }
+
+    public static final Unit deactivateCurrentGroup$lambda$3(RememberManager rememberManager, SlotWriter slotWriter, int i, Object obj) {
+        if (obj instanceof ComposeNodeLifecycleCallback) {
+            rememberManager.deactivating((ComposeNodeLifecycleCallback) obj);
+        } else if (obj instanceof RememberObserverHolder) {
+            RememberObserverHolder rememberObserverHolder = (RememberObserverHolder) obj;
+            if (!(rememberObserverHolder.getWrapped() instanceof ReusableRememberObserver)) {
+                removeData(slotWriter, i, obj);
+                rememberManager.forgetting(rememberObserverHolder);
+            }
+        } else if (obj instanceof RecomposeScopeImpl) {
+            removeData(slotWriter, i, obj);
+            ((RecomposeScopeImpl) obj).release();
         }
+        return Unit.INSTANCE;
     }
 
     private static final void removeData(SlotWriter slotWriter, int i, Object obj) {
@@ -248,7 +253,7 @@ public final class ComposerKt {
     }
 
     public static final <K, V> MutableScatterMap<Object, Object> multiMap(int i) {
-        return MultiValueMap.m3598constructorimpl(new MutableScatterMap(i));
+        return MultiValueMap.m3934constructorimpl(new MutableScatterMap(i));
     }
 
     public static final Object getKey(Object obj, Object obj2, Object obj3) {
@@ -280,7 +285,7 @@ public final class ComposerKt {
         return -(i2 + 1);
     }
 
-    private static final int findInsertLocation(List<Invalidation> list, int i) {
+    public static final int findInsertLocation(List<Invalidation> list, int i) {
         int findLocation = findLocation(list, i);
         return findLocation < 0 ? -(findLocation + 1) : findLocation;
     }
@@ -339,23 +344,21 @@ public final class ComposerKt {
         }
     }
 
-    public static final List<Invalidation> filterToRange(List<Invalidation> list, int i, int i2) {
-        ArrayList arrayList = new ArrayList();
+    private static final void forEachInRange(List<Invalidation> list, int i, int i2, Function1<? super Invalidation, Unit> function1) {
         for (int findInsertLocation = findInsertLocation(list, i); findInsertLocation < list.size(); findInsertLocation++) {
             Invalidation invalidation = list.get(findInsertLocation);
             if (invalidation.getLocation() >= i2) {
-                break;
+                return;
             }
-            arrayList.add(invalidation);
+            function1.invoke(invalidation);
         }
-        return arrayList;
     }
 
     public static final List<Object> collectNodesFrom(SlotTable slotTable, Anchor anchor) {
         ArrayList arrayList = new ArrayList();
         SlotReader openReader = slotTable.openReader();
         try {
-            collectNodesFrom$lambda$10$collectFromGroup(openReader, arrayList, slotTable.anchorIndex(anchor));
+            collectNodesFrom$lambda$8$collectFromGroup(openReader, arrayList, slotTable.anchorIndex(anchor));
             Unit unit = Unit.INSTANCE;
             return arrayList;
         } finally {
@@ -363,7 +366,7 @@ public final class ComposerKt {
         }
     }
 
-    private static final void collectNodesFrom$lambda$10$collectFromGroup(SlotReader slotReader, List<Object> list, int i) {
+    private static final void collectNodesFrom$lambda$8$collectFromGroup(SlotReader slotReader, List<Object> list, int i) {
         if (slotReader.isNode(i)) {
             list.add(slotReader.node(i));
             return;
@@ -371,7 +374,7 @@ public final class ComposerKt {
         int i2 = i + 1;
         int groupSize = i + slotReader.groupSize(i);
         while (i2 < groupSize) {
-            collectNodesFrom$lambda$10$collectFromGroup(slotReader, list, i2);
+            collectNodesFrom$lambda$8$collectFromGroup(slotReader, list, i2);
             i2 += slotReader.groupSize(i2);
         }
     }
@@ -467,7 +470,7 @@ public final class ComposerKt {
         throw new ComposeRuntimeError("Compose Runtime internal error. Unexpected or incorrect use of the Compose internal runtime API (" + str + "). Please report to Google or use https://goo.gle/compose-feedback");
     }
 
-    public static final int InvalidationLocationAscending$lambda$16(Invalidation invalidation, Invalidation invalidation2) {
+    public static final int InvalidationLocationAscending$lambda$13(Invalidation invalidation, Invalidation invalidation2) {
         return Intrinsics.compare(invalidation.getLocation(), invalidation2.getLocation());
     }
 
@@ -507,16 +510,16 @@ public final class ComposerKt {
         SlotWriter openWriter = slotTable.openWriter();
         try {
             openWriter.beginInsert();
-            openWriter.startGroup(MovableContentKt.movableContentKey, movableContentStateReference.getContent$runtime_release());
+            openWriter.startGroup(MovableContentKt.movableContentKey, movableContentStateReference.getContent$runtime());
             SlotWriter.markGroup$default(openWriter, 0, 1, null);
-            openWriter.update(movableContentStateReference.getParameter$runtime_release());
-            List<Anchor> moveTo = slotWriter.moveTo(movableContentStateReference.getAnchor$runtime_release(), 1, openWriter);
+            openWriter.update(movableContentStateReference.getParameter$runtime());
+            List<Anchor> moveTo = slotWriter.moveTo(movableContentStateReference.getAnchor$runtime(), 1, openWriter);
             openWriter.skipGroup();
             openWriter.endGroup();
             openWriter.endInsert();
             openWriter.close(true);
             MovableContentState movableContentState = new MovableContentState(slotTable);
-            if (RecomposeScopeImpl.Companion.hasAnchoredRecomposeScopes$runtime_release(slotTable, moveTo)) {
+            if (RecomposeScopeImpl.Companion.hasAnchoredRecomposeScopes$runtime(slotTable, moveTo)) {
                 RecomposeScopeOwner recomposeScopeOwner = new RecomposeScopeOwner() { // from class: androidx.compose.runtime.ComposerKt$extractMovableContentAtCurrent$movableContentRecomposeScopeOwner$1
                     @Override // androidx.compose.runtime.RecomposeScopeOwner
                     public void recomposeScopeReleased(RecomposeScopeImpl recomposeScopeImpl) {
@@ -536,7 +539,7 @@ public final class ComposerKt {
                         }
                         if (invalidationResult == InvalidationResult.IGNORED) {
                             MovableContentStateReference movableContentStateReference2 = movableContentStateReference;
-                            movableContentStateReference2.setInvalidations$runtime_release(CollectionsKt.plus((Collection<? extends Pair>) movableContentStateReference2.getInvalidations$runtime_release(), TuplesKt.to(recomposeScopeImpl, obj)));
+                            movableContentStateReference2.setInvalidations$runtime(CollectionsKt.plus((Collection<? extends Pair>) movableContentStateReference2.getInvalidations$runtime(), TuplesKt.to(recomposeScopeImpl, obj)));
                             return InvalidationResult.SCHEDULED;
                         }
                         return invalidationResult;
@@ -544,7 +547,7 @@ public final class ComposerKt {
                 };
                 openWriter = slotTable.openWriter();
                 try {
-                    RecomposeScopeImpl.Companion.adoptAnchoredScopes$runtime_release(openWriter, moveTo, recomposeScopeOwner);
+                    RecomposeScopeImpl.Companion.adoptAnchoredScopes$runtime(openWriter, moveTo, recomposeScopeOwner);
                     Unit unit = Unit.INSTANCE;
                     openWriter.close(true);
                     return movableContentState;

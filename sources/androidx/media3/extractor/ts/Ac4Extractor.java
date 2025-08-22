@@ -12,7 +12,7 @@ import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.ts.TsPayloadReader;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Ac4Extractor implements Extractor {
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: androidx.media3.extractor.ts.Ac4Extractor$$ExternalSyntheticLambda0
         @Override // androidx.media3.extractor.ExtractorsFactory

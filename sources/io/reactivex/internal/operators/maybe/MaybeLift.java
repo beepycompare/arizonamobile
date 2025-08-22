@@ -6,7 +6,7 @@ import io.reactivex.MaybeSource;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeLift<T, R> extends AbstractMaybeWithUpstream<T, R> {
     final MaybeOperator<? extends R, ? super T> operator;
 

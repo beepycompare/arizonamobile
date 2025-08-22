@@ -8,7 +8,7 @@ import androidx.media3.extractor.text.CuesWithTiming;
 import androidx.media3.extractor.text.LegacySubtitleUtil;
 import androidx.media3.extractor.text.SubtitleParser;
 import java.util.ArrayList;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class WebvttParser implements SubtitleParser {
     private static final String COMMENT_START = "NOTE";
     public static final int CUE_REPLACEMENT_BEHAVIOR = 1;

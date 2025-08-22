@@ -9,7 +9,7 @@ import io.reactivex.observers.SerializedObserver;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableSampleTimed<T> extends AbstractObservableWithUpstream<T, T> {
     final boolean emitLast;
     final long period;
@@ -34,7 +34,7 @@ public final class ObservableSampleTimed<T> extends AbstractObservableWithUpstre
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static abstract class SampleTimedObserver<T> extends AtomicReference<T> implements Observer<T>, Disposable, Runnable {
         private static final long serialVersionUID = -3517602651313910099L;
         final Observer<? super T> downstream;
@@ -104,7 +104,7 @@ public final class ObservableSampleTimed<T> extends AbstractObservableWithUpstre
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SampleTimedNoLast<T> extends SampleTimedObserver<T> {
         private static final long serialVersionUID = -7139995637533111443L;
 
@@ -123,7 +123,7 @@ public final class ObservableSampleTimed<T> extends AbstractObservableWithUpstre
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SampleTimedEmitLast<T> extends SampleTimedObserver<T> {
         private static final long serialVersionUID = -7139995637533111443L;
         final AtomicInteger wip;

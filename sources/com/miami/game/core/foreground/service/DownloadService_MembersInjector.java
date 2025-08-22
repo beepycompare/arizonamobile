@@ -11,13 +11,13 @@ public final class DownloadService_MembersInjector implements MembersInjector<Do
         this.filesUpdaterInteractorProvider = provider;
     }
 
-    public static MembersInjector<DownloadService> create(Provider<FilesUpdaterInteractor> provider) {
-        return new DownloadService_MembersInjector(provider);
-    }
-
     @Override // dagger.MembersInjector
     public void injectMembers(DownloadService downloadService) {
         injectFilesUpdaterInteractor(downloadService, this.filesUpdaterInteractorProvider.get());
+    }
+
+    public static MembersInjector<DownloadService> create(Provider<FilesUpdaterInteractor> provider) {
+        return new DownloadService_MembersInjector(provider);
     }
 
     public static void injectFilesUpdaterInteractor(DownloadService downloadService, FilesUpdaterInteractor filesUpdaterInteractor) {

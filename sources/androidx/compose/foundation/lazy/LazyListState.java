@@ -8,8 +8,11 @@ import androidx.compose.foundation.interaction.InteractionSource;
 import androidx.compose.foundation.interaction.InteractionSourceKt;
 import androidx.compose.foundation.interaction.MutableInteractionSource;
 import androidx.compose.foundation.internal.InlineClassHelperKt;
+import androidx.compose.foundation.lazy.LazyListState;
 import androidx.compose.foundation.lazy.layout.AwaitFirstLayoutModifier;
+import androidx.compose.foundation.lazy.layout.CacheWindowLogic;
 import androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsInfo;
+import androidx.compose.foundation.lazy.layout.LazyLayoutCacheWindow;
 import androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator;
 import androidx.compose.foundation.lazy.layout.LazyLayoutPinnedItemList;
 import androidx.compose.foundation.lazy.layout.LazyLayoutPrefetchState;
@@ -26,6 +29,7 @@ import androidx.compose.runtime.snapshots.Snapshot;
 import androidx.compose.ui.layout.Remeasurement;
 import androidx.compose.ui.layout.RemeasurementModifier;
 import androidx.compose.ui.unit.Density;
+import androidx.compose.ui.util.AndroidTrace_androidKt;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.List;
 import kotlin.Metadata;
@@ -40,25 +44,24 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.ranges.IntRange;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 /* compiled from: LazyListState.kt */
-@Metadata(d1 = {"\u0000æ\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0007\u0018\u0000 \u0095\u00012\u00020\u0001:\u0002\u0095\u0001B\u001b\b\u0016\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003¢\u0006\u0002\u0010\u0005B%\b\u0007\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007¢\u0006\u0002\u0010\bJ\"\u0010q\u001a\u00020r2\b\b\u0001\u0010s\u001a\u00020\u00032\b\b\u0002\u0010t\u001a\u00020\u0003H\u0086@¢\u0006\u0002\u0010uJ'\u0010v\u001a\u00020r2\u0006\u0010w\u001a\u00020\f2\u0006\u0010x\u001a\u00020\u00182\b\b\u0002\u0010y\u001a\u00020\u0018H\u0000¢\u0006\u0002\bzJ\u0010\u0010{\u001a\u00020i2\u0006\u0010|\u001a\u00020iH\u0016J\u0018\u0010}\u001a\u00020r2\u0006\u0010|\u001a\u00020i2\u0006\u0010?\u001a\u00020@H\u0002J\u0016\u0010~\u001a\u00020i2\u0006\u0010\u007f\u001a\u00020iH\u0000¢\u0006\u0003\b\u0080\u0001J\u001b\u0010\u0081\u0001\u001a\u00020r2\b\b\u0001\u0010s\u001a\u00020\u00032\b\b\u0002\u0010t\u001a\u00020\u0003JI\u0010\u0082\u0001\u001a\u00020r2\b\u0010\u0083\u0001\u001a\u00030\u0084\u00012-\u0010\u0085\u0001\u001a(\b\u0001\u0012\u0005\u0012\u00030\u0087\u0001\u0012\u000b\u0012\t\u0012\u0004\u0012\u00020r0\u0088\u0001\u0012\u0007\u0012\u0005\u0018\u00010\u0089\u00010\u0086\u0001¢\u0006\u0003\b\u008a\u0001H\u0096@¢\u0006\u0003\u0010\u008b\u0001J#\u0010\u008c\u0001\u001a\u00020r2\b\b\u0001\u0010s\u001a\u00020\u00032\b\b\u0002\u0010t\u001a\u00020\u0003H\u0086@¢\u0006\u0002\u0010uJ(\u0010\u008d\u0001\u001a\u00020r2\u0006\u0010s\u001a\u00020\u00032\u0006\u0010t\u001a\u00020\u00032\u0007\u0010\u008e\u0001\u001a\u00020\u0018H\u0000¢\u0006\u0003\b\u008f\u0001J\"\u0010\u0090\u0001\u001a\u00020\u00032\b\u0010\u0091\u0001\u001a\u00030\u0092\u00012\u0007\u0010\u0093\u0001\u001a\u00020\u0003H\u0000¢\u0006\u0003\b\u0094\u0001R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\"\u0010\r\u001a\u0004\u0018\u00010\f2\b\u0010\u000b\u001a\u0004\u0018\u00010\f@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0010\u001a\u00020\u0011X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u0015X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R+\u0010\u0019\u001a\u00020\u00182\u0006\u0010\u000b\u001a\u00020\u00188V@RX\u0096\u008e\u0002¢\u0006\u0012\n\u0004\b\u001e\u0010\u001f\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR+\u0010 \u001a\u00020\u00182\u0006\u0010\u000b\u001a\u00020\u00188V@RX\u0096\u008e\u0002¢\u0006\u0012\n\u0004\b#\u0010\u001f\u001a\u0004\b!\u0010\u001b\"\u0004\b\"\u0010\u001dR\u0014\u0010$\u001a\u00020%8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b&\u0010'R\u0011\u0010\u0002\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b(\u0010)R\u0011\u0010\u0004\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b*\u0010)R\u001e\u0010+\u001a\u00020\u00182\u0006\u0010\u000b\u001a\u00020\u0018@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b,\u0010\u001bR\u0011\u0010-\u001a\u00020.8F¢\u0006\u0006\u001a\u0004\b/\u00100R\u0014\u00101\u001a\u000202X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b3\u00104R\u0014\u00105\u001a\u00020\u00188VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b5\u0010\u001bR\u001a\u00106\u001a\b\u0012\u0004\u0012\u00020807X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b9\u0010:R\u0014\u0010;\u001a\u00020\u00188VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b<\u0010\u001bR\u0014\u0010=\u001a\u00020\u00188VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b>\u0010\u001bR\u0011\u0010?\u001a\u00020@8F¢\u0006\u0006\u001a\u0004\bA\u0010BR\u0014\u0010C\u001a\b\u0012\u0004\u0012\u00020\f0DX\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010E\u001a\u00020FX\u0080\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u001f\u001a\u0004\bG\u0010HR\u001b\u0010I\u001a\u00020J8@X\u0080\u0084\u0002¢\u0006\f\u001a\u0004\bM\u0010N*\u0004\bK\u0010LR\u001e\u0010O\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\u0003@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\bP\u0010)R\u0014\u0010Q\u001a\u00020RX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bS\u0010TR\u001c\u0010U\u001a\u00020FX\u0080\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u001f\u001a\u0004\bV\u0010HR\u000e\u0010W\u001a\u00020XX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010Y\u001a\u00020ZX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b[\u0010\\R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010]\u001a\u00020\u0018X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b^\u0010\u001b\"\u0004\b_\u0010\u001dR\"\u0010a\u001a\u0004\u0018\u00010`2\b\u0010\u000b\u001a\u0004\u0018\u00010`@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\bb\u0010cR\u0014\u0010d\u001a\u00020eX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bf\u0010gR\u0014\u0010h\u001a\u00020i8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bj\u0010kR\u000e\u0010l\u001a\u00020mX\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010n\u001a\u00020i2\u0006\u0010\u000b\u001a\u00020i@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\bo\u0010kR\u000e\u0010p\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0096\u0001"}, d2 = {"Landroidx/compose/foundation/lazy/LazyListState;", "Landroidx/compose/foundation/gestures/ScrollableState;", "firstVisibleItemIndex", "", "firstVisibleItemScrollOffset", "(II)V", "prefetchStrategy", "Landroidx/compose/foundation/lazy/LazyListPrefetchStrategy;", "(IILandroidx/compose/foundation/lazy/LazyListPrefetchStrategy;)V", "_lazyLayoutScrollDeltaBetweenPasses", "Landroidx/compose/foundation/lazy/layout/LazyLayoutScrollDeltaBetweenPasses;", "<set-?>", "Landroidx/compose/foundation/lazy/LazyListMeasureResult;", "approachLayoutInfo", "getApproachLayoutInfo$foundation_release", "()Landroidx/compose/foundation/lazy/LazyListMeasureResult;", "awaitLayoutModifier", "Landroidx/compose/foundation/lazy/layout/AwaitFirstLayoutModifier;", "getAwaitLayoutModifier$foundation_release", "()Landroidx/compose/foundation/lazy/layout/AwaitFirstLayoutModifier;", "beyondBoundsInfo", "Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo;", "getBeyondBoundsInfo$foundation_release", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo;", "", "canScrollBackward", "getCanScrollBackward", "()Z", "setCanScrollBackward", "(Z)V", "canScrollBackward$delegate", "Landroidx/compose/runtime/MutableState;", "canScrollForward", "getCanScrollForward", "setCanScrollForward", "canScrollForward$delegate", "density", "Landroidx/compose/ui/unit/Density;", "getDensity$foundation_release", "()Landroidx/compose/ui/unit/Density;", "getFirstVisibleItemIndex", "()I", "getFirstVisibleItemScrollOffset", "hasLookaheadOccurred", "getHasLookaheadOccurred$foundation_release", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "getInteractionSource", "()Landroidx/compose/foundation/interaction/InteractionSource;", "internalInteractionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "getInternalInteractionSource$foundation_release", "()Landroidx/compose/foundation/interaction/MutableInteractionSource;", "isScrollInProgress", "itemAnimator", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;", "Landroidx/compose/foundation/lazy/LazyListMeasuredItem;", "getItemAnimator$foundation_release", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;", "lastScrolledBackward", "getLastScrolledBackward", "lastScrolledForward", "getLastScrolledForward", "layoutInfo", "Landroidx/compose/foundation/lazy/LazyListLayoutInfo;", "getLayoutInfo", "()Landroidx/compose/foundation/lazy/LazyListLayoutInfo;", "layoutInfoState", "Landroidx/compose/runtime/MutableState;", "measurementScopeInvalidator", "Landroidx/compose/foundation/lazy/layout/ObservableScopeInvalidator;", "getMeasurementScopeInvalidator-zYiylxw$foundation_release", "()Landroidx/compose/runtime/MutableState;", "nearestRange", "Lkotlin/ranges/IntRange;", "getNearestRange$foundation_release$delegate", "(Landroidx/compose/foundation/lazy/LazyListState;)Ljava/lang/Object;", "getNearestRange$foundation_release", "()Lkotlin/ranges/IntRange;", "numMeasurePasses", "getNumMeasurePasses$foundation_release", "pinnedItems", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPinnedItemList;", "getPinnedItems$foundation_release", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutPinnedItemList;", "placementScopeInvalidator", "getPlacementScopeInvalidator-zYiylxw$foundation_release", "prefetchScope", "Landroidx/compose/foundation/lazy/LazyListPrefetchScope;", "prefetchState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState;", "getPrefetchState$foundation_release", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState;", "prefetchingEnabled", "getPrefetchingEnabled$foundation_release", "setPrefetchingEnabled$foundation_release", "Landroidx/compose/ui/layout/Remeasurement;", "remeasurement", "getRemeasurement$foundation_release", "()Landroidx/compose/ui/layout/Remeasurement;", "remeasurementModifier", "Landroidx/compose/ui/layout/RemeasurementModifier;", "getRemeasurementModifier$foundation_release", "()Landroidx/compose/ui/layout/RemeasurementModifier;", "scrollDeltaBetweenPasses", "", "getScrollDeltaBetweenPasses$foundation_release", "()F", "scrollPosition", "Landroidx/compose/foundation/lazy/LazyListScrollPosition;", "scrollToBeConsumed", "getScrollToBeConsumed$foundation_release", "scrollableState", "animateScrollToItem", "", FirebaseAnalytics.Param.INDEX, "scrollOffset", "(IILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "applyMeasureResult", "result", "isLookingAhead", "visibleItemsStayedTheSame", "applyMeasureResult$foundation_release", "dispatchRawDelta", "delta", "notifyPrefetchOnScroll", "onScroll", "distance", "onScroll$foundation_release", "requestScrollToItem", "scroll", "scrollPriority", "Landroidx/compose/foundation/MutatePriority;", "block", "Lkotlin/Function2;", "Landroidx/compose/foundation/gestures/ScrollScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "scrollToItem", "snapToItemIndexInternal", "forceRemeasure", "snapToItemIndexInternal$foundation_release", "updateScrollPositionIfTheFirstItemWasMoved", "itemProvider", "Landroidx/compose/foundation/lazy/LazyListItemProvider;", "firstItemIndex", "updateScrollPositionIfTheFirstItemWasMoved$foundation_release", "Companion", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ð\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\"\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0007\u0018\u0000 ¡\u00012\u00020\u0001:\u0002¡\u0001B'\b\u0007\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bB%\b\u0017\u0012\u0006\u0010\t\u001a\u00020\n\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0007\u0010\u000bB\u001d\b\u0016\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0007\u0010\fJ\"\u0010b\u001a\u00020c2\b\b\u0001\u0010d\u001a\u00020\u00032\b\b\u0002\u0010e\u001a\u00020\u0003H\u0086@¢\u0006\u0002\u0010fJ\u001a\u0010l\u001a\u00020c2\b\b\u0001\u0010d\u001a\u00020\u00032\b\b\u0002\u0010e\u001a\u00020\u0003J%\u0010m\u001a\u00020c2\u0006\u0010d\u001a\u00020\u00032\u0006\u0010e\u001a\u00020\u00032\u0006\u0010n\u001a\u00020\u0010H\u0000¢\u0006\u0002\boJ?\u0010p\u001a\u00020c2\u0006\u0010q\u001a\u00020r2'\u0010s\u001a#\b\u0001\u0012\u0004\u0012\u00020u\u0012\n\u0012\b\u0012\u0004\u0012\u00020c0v\u0012\u0006\u0012\u0004\u0018\u00010w0t¢\u0006\u0002\bxH\u0096@¢\u0006\u0002\u0010yJ\u0010\u0010z\u001a\u00020,2\u0006\u0010{\u001a\u00020,H\u0016J\u0018\u0010\u008c\u0001\u001a\u00020,2\u0007\u0010\u008d\u0001\u001a\u00020,H\u0000¢\u0006\u0003\b\u008e\u0001J\u0019\u0010\u008f\u0001\u001a\u00020c2\u0006\u0010{\u001a\u00020,2\u0006\u0010 \u001a\u00020!H\u0002J#\u0010\u0090\u0001\u001a\u00020c2\b\b\u0001\u0010d\u001a\u00020\u00032\b\b\u0002\u0010e\u001a\u00020\u0003H\u0086@¢\u0006\u0002\u0010fJ,\u0010\u0091\u0001\u001a\u00020c2\u0007\u0010\u0092\u0001\u001a\u00020\u00142\u0007\u0010\u0093\u0001\u001a\u00020\u00102\t\b\u0002\u0010\u0094\u0001\u001a\u00020\u0010H\u0000¢\u0006\u0003\b\u0095\u0001J\u0012\u0010\u0096\u0001\u001a\u00020c2\u0007\u0010\u0097\u0001\u001a\u00020\u0014H\u0002J\"\u0010\u009c\u0001\u001a\u00020\u00032\b\u0010\u009d\u0001\u001a\u00030\u009e\u00012\u0007\u0010\u009f\u0001\u001a\u00020\u0003H\u0000¢\u0006\u0003\b \u0001R\u0014\u0010\u0005\u001a\u00020\u0006X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u001e\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u000f\u001a\u00020\u0010@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\"\u0010\u0015\u001a\u0004\u0018\u00010\u00142\b\u0010\u000f\u001a\u0004\u0018\u00010\u0014@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u000e\u0010\u0018\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0002\u001a\u00020\u00038G¢\u0006\u0006\u001a\u0004\b\u001b\u0010\u001cR\u0011\u0010\u0004\u001a\u00020\u00038G¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001cR\u0014\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u00140\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010 \u001a\u00020!8G¢\u0006\u0006\u001a\u0004\b\"\u0010#R\u0011\u0010$\u001a\u00020%8F¢\u0006\u0006\u001a\u0004\b&\u0010'R\u0014\u0010(\u001a\u00020)X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b*\u0010+R\u001e\u0010-\u001a\u00020,2\u0006\u0010\u000f\u001a\u00020,@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b.\u0010/R\u0014\u00100\u001a\u0002018@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b2\u00103R\u000e\u00104\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u00105\u001a\u00020\u00032\u0006\u0010\u000f\u001a\u00020\u0003@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b6\u0010\u001cR\u001a\u00107\u001a\u00020\u0010X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b8\u0010\u0013\"\u0004\b9\u0010:R\"\u0010<\u001a\u0004\u0018\u00010;2\b\u0010\u000f\u001a\u0004\u0018\u00010;@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b=\u0010>R\u0014\u0010?\u001a\u00020@X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bA\u0010BR\u0014\u0010C\u001a\u00020DX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bE\u0010FR\u001a\u0010G\u001a\b\u0012\u0004\u0012\u00020I0HX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bJ\u0010KR\u0014\u0010L\u001a\u00020MX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bN\u0010OR\u001a\u0010P\u001a\u00020QX\u0080\u0004¢\u0006\u000e\n\u0000\u0012\u0004\bR\u0010S\u001a\u0004\bT\u0010UR\u000e\u0010V\u001a\u00020WX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010X\u001a\u00020YX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bZ\u0010[R\u001b\u0010\\\u001a\u00020]8@X\u0080\u0084\u0002¢\u0006\f\u001a\u0004\b`\u0010a*\u0004\b^\u0010_R\u0016\u0010g\u001a\u00020hX\u0080\u0004¢\u0006\n\n\u0002\u0010k\u001a\u0004\bi\u0010jR\u0014\u0010|\u001a\u00020\u00108VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b|\u0010\u0013R-\u0010~\u001a\u00020\u00102\u0006\u0010}\u001a\u00020\u00108V@RX\u0096\u008e\u0002¢\u0006\u0014\n\u0005\b\u0081\u0001\u0010k\u001a\u0004\b\u007f\u0010\u0013\"\u0005\b\u0080\u0001\u0010:R/\u0010\u0082\u0001\u001a\u00020\u00102\u0006\u0010}\u001a\u00020\u00108V@RX\u0096\u008e\u0002¢\u0006\u0015\n\u0005\b\u0085\u0001\u0010k\u001a\u0005\b\u0083\u0001\u0010\u0013\"\u0005\b\u0084\u0001\u0010:R\u0016\u0010\u0086\u0001\u001a\u00020\u00108VX\u0096\u0004¢\u0006\u0007\u001a\u0005\b\u0087\u0001\u0010\u0013R\u0016\u0010\u0088\u0001\u001a\u00020\u00108VX\u0096\u0004¢\u0006\u0007\u001a\u0005\b\u0089\u0001\u0010\u0013R\u0018\u0010\u008a\u0001\u001a\u00020hX\u0080\u0004¢\u0006\u000b\n\u0002\u0010k\u001a\u0005\b\u008b\u0001\u0010jR\u0016\u0010\u0098\u0001\u001a\u00020,8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\b\u0099\u0001\u0010/R\u0010\u0010\u009a\u0001\u001a\u00030\u009b\u0001X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006¢\u0001"}, d2 = {"Landroidx/compose/foundation/lazy/LazyListState;", "Landroidx/compose/foundation/gestures/ScrollableState;", "firstVisibleItemIndex", "", "firstVisibleItemScrollOffset", "prefetchStrategy", "Landroidx/compose/foundation/lazy/LazyListPrefetchStrategy;", "<init>", "(IILandroidx/compose/foundation/lazy/LazyListPrefetchStrategy;)V", "cacheWindow", "Landroidx/compose/foundation/lazy/layout/LazyLayoutCacheWindow;", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutCacheWindow;II)V", "(II)V", "getPrefetchStrategy$foundation_release", "()Landroidx/compose/foundation/lazy/LazyListPrefetchStrategy;", "value", "", "hasLookaheadOccurred", "getHasLookaheadOccurred$foundation_release", "()Z", "Landroidx/compose/foundation/lazy/LazyListMeasureResult;", "approachLayoutInfo", "getApproachLayoutInfo$foundation_release", "()Landroidx/compose/foundation/lazy/LazyListMeasureResult;", "executeRequestsInHighPriorityMode", "scrollPosition", "Landroidx/compose/foundation/lazy/LazyListScrollPosition;", "getFirstVisibleItemIndex", "()I", "getFirstVisibleItemScrollOffset", "layoutInfoState", "Landroidx/compose/runtime/MutableState;", "layoutInfo", "Landroidx/compose/foundation/lazy/LazyListLayoutInfo;", "getLayoutInfo", "()Landroidx/compose/foundation/lazy/LazyListLayoutInfo;", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "getInteractionSource", "()Landroidx/compose/foundation/interaction/InteractionSource;", "internalInteractionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "getInternalInteractionSource$foundation_release", "()Landroidx/compose/foundation/interaction/MutableInteractionSource;", "", "scrollToBeConsumed", "getScrollToBeConsumed$foundation_release", "()F", "density", "Landroidx/compose/ui/unit/Density;", "getDensity$foundation_release", "()Landroidx/compose/ui/unit/Density;", "scrollableState", "numMeasurePasses", "getNumMeasurePasses$foundation_release", "prefetchingEnabled", "getPrefetchingEnabled$foundation_release", "setPrefetchingEnabled$foundation_release", "(Z)V", "Landroidx/compose/ui/layout/Remeasurement;", "remeasurement", "getRemeasurement$foundation_release", "()Landroidx/compose/ui/layout/Remeasurement;", "remeasurementModifier", "Landroidx/compose/ui/layout/RemeasurementModifier;", "getRemeasurementModifier$foundation_release", "()Landroidx/compose/ui/layout/RemeasurementModifier;", "awaitLayoutModifier", "Landroidx/compose/foundation/lazy/layout/AwaitFirstLayoutModifier;", "getAwaitLayoutModifier$foundation_release", "()Landroidx/compose/foundation/lazy/layout/AwaitFirstLayoutModifier;", "itemAnimator", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;", "Landroidx/compose/foundation/lazy/LazyListMeasuredItem;", "getItemAnimator$foundation_release", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;", "beyondBoundsInfo", "Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo;", "getBeyondBoundsInfo$foundation_release", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo;", "prefetchState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState;", "getPrefetchState$foundation_release$annotations", "()V", "getPrefetchState$foundation_release", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutPrefetchState;", "prefetchScope", "Landroidx/compose/foundation/lazy/LazyListPrefetchScope;", "pinnedItems", "Landroidx/compose/foundation/lazy/layout/LazyLayoutPinnedItemList;", "getPinnedItems$foundation_release", "()Landroidx/compose/foundation/lazy/layout/LazyLayoutPinnedItemList;", "nearestRange", "Lkotlin/ranges/IntRange;", "getNearestRange$foundation_release$delegate", "(Landroidx/compose/foundation/lazy/LazyListState;)Ljava/lang/Object;", "getNearestRange$foundation_release", "()Lkotlin/ranges/IntRange;", "scrollToItem", "", FirebaseAnalytics.Param.INDEX, "scrollOffset", "(IILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "measurementScopeInvalidator", "Landroidx/compose/foundation/lazy/layout/ObservableScopeInvalidator;", "getMeasurementScopeInvalidator-zYiylxw$foundation_release", "()Landroidx/compose/runtime/MutableState;", "Landroidx/compose/runtime/MutableState;", "requestScrollToItem", "snapToItemIndexInternal", "forceRemeasure", "snapToItemIndexInternal$foundation_release", "scroll", "scrollPriority", "Landroidx/compose/foundation/MutatePriority;", "block", "Lkotlin/Function2;", "Landroidx/compose/foundation/gestures/ScrollScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "dispatchRawDelta", "delta", "isScrollInProgress", "<set-?>", "canScrollForward", "getCanScrollForward", "setCanScrollForward", "canScrollForward$delegate", "canScrollBackward", "getCanScrollBackward", "setCanScrollBackward", "canScrollBackward$delegate", "lastScrolledForward", "getLastScrolledForward", "lastScrolledBackward", "getLastScrolledBackward", "placementScopeInvalidator", "getPlacementScopeInvalidator-zYiylxw$foundation_release", "onScroll", "distance", "onScroll$foundation_release", "notifyPrefetchOnScroll", "animateScrollToItem", "applyMeasureResult", "result", "isLookingAhead", "visibleItemsStayedTheSame", "applyMeasureResult$foundation_release", "traceVisibleItems", "measureResult", "scrollDeltaBetweenPasses", "getScrollDeltaBetweenPasses$foundation_release", "_lazyLayoutScrollDeltaBetweenPasses", "Landroidx/compose/foundation/lazy/layout/LazyLayoutScrollDeltaBetweenPasses;", "updateScrollPositionIfTheFirstItemWasMoved", "itemProvider", "Landroidx/compose/foundation/lazy/LazyListItemProvider;", "firstItemIndex", "updateScrollPositionIfTheFirstItemWasMoved$foundation_release", "Companion", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyListState implements ScrollableState {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final Saver<LazyListState, ?> Saver = ListSaverKt.listSaver(new Function2<SaverScope, LazyListState, List<? extends Integer>>() { // from class: androidx.compose.foundation.lazy.LazyListState$Companion$Saver$1
+    private static final Saver<LazyListState, ?> Saver = ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.foundation.lazy.LazyListState$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
-        public final List<Integer> invoke(SaverScope saverScope, LazyListState lazyListState) {
-            return CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(lazyListState.getFirstVisibleItemIndex()), Integer.valueOf(lazyListState.getFirstVisibleItemScrollOffset())});
+        public final Object invoke(Object obj, Object obj2) {
+            List Saver$lambda$8;
+            Saver$lambda$8 = LazyListState.Saver$lambda$8((SaverScope) obj, (LazyListState) obj2);
+            return Saver$lambda$8;
         }
-    }, new Function1<List<? extends Integer>, LazyListState>() { // from class: androidx.compose.foundation.lazy.LazyListState$Companion$Saver$2
+    }, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ LazyListState invoke(List<? extends Integer> list) {
-            return invoke2((List<Integer>) list);
-        }
-
-        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-        public final LazyListState invoke2(List<Integer> list) {
-            return new LazyListState(list.get(0).intValue(), list.get(1).intValue());
+        public final Object invoke(Object obj) {
+            LazyListState Saver$lambda$9;
+            Saver$lambda$9 = LazyListState.Saver$lambda$9((List) obj);
+            return Saver$lambda$9;
         }
     });
     private final LazyLayoutScrollDeltaBetweenPasses _lazyLayoutScrollDeltaBetweenPasses;
@@ -67,6 +70,7 @@ public final class LazyListState implements ScrollableState {
     private final LazyLayoutBeyondBoundsInfo beyondBoundsInfo;
     private final MutableState canScrollBackward$delegate;
     private final MutableState canScrollForward$delegate;
+    private boolean executeRequestsInHighPriorityMode;
     private boolean hasLookaheadOccurred;
     private final MutableInteractionSource internalInteractionSource;
     private final LazyLayoutItemAnimator<LazyListMeasuredItem> itemAnimator;
@@ -86,7 +90,10 @@ public final class LazyListState implements ScrollableState {
     private final ScrollableState scrollableState;
 
     public LazyListState() {
-        this(0, 0, null, 7, null);
+        this(0, 0, (LazyListPrefetchStrategy) null, 7, (DefaultConstructorMarker) null);
+    }
+
+    public static /* synthetic */ void getPrefetchState$foundation_release$annotations() {
     }
 
     public LazyListState(final int i, int i2, LazyListPrefetchStrategy lazyListPrefetchStrategy) {
@@ -99,19 +106,12 @@ public final class LazyListState implements ScrollableState {
         lazyListMeasureResult = LazyListStateKt.EmptyLazyListMeasureResult;
         this.layoutInfoState = SnapshotStateKt.mutableStateOf(lazyListMeasureResult, SnapshotStateKt.neverEqualPolicy());
         this.internalInteractionSource = InteractionSourceKt.MutableInteractionSource();
-        this.scrollableState = ScrollableStateKt.ScrollableState(new Function1<Float, Float>() { // from class: androidx.compose.foundation.lazy.LazyListState$scrollableState$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
-            public final Float invoke(float f) {
-                return Float.valueOf(-LazyListState.this.onScroll$foundation_release(-f));
-            }
-
+        this.scrollableState = ScrollableStateKt.ScrollableState(new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Float invoke(Float f) {
-                return invoke(f.floatValue());
+            public final Object invoke(Object obj) {
+                float scrollableState$lambda$0;
+                scrollableState$lambda$0 = LazyListState.scrollableState$lambda$0(LazyListState.this, ((Float) obj).floatValue());
+                return Float.valueOf(scrollableState$lambda$0);
             }
         });
         this.prefetchingEnabled = true;
@@ -124,63 +124,40 @@ public final class LazyListState implements ScrollableState {
         this.awaitLayoutModifier = new AwaitFirstLayoutModifier();
         this.itemAnimator = new LazyLayoutItemAnimator<>();
         this.beyondBoundsInfo = new LazyLayoutBeyondBoundsInfo();
-        this.prefetchState = new LazyLayoutPrefetchState(lazyListPrefetchStrategy.getPrefetchScheduler(), new Function1<NestedPrefetchScope, Unit>() { // from class: androidx.compose.foundation.lazy.LazyListState$prefetchState$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        this.prefetchState = new LazyLayoutPrefetchState(lazyListPrefetchStrategy.getPrefetchScheduler(), new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(NestedPrefetchScope nestedPrefetchScope) {
-                invoke2(nestedPrefetchScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(NestedPrefetchScope nestedPrefetchScope) {
-                LazyListPrefetchStrategy lazyListPrefetchStrategy2;
-                lazyListPrefetchStrategy2 = LazyListState.this.prefetchStrategy;
-                int i3 = i;
-                Snapshot.Companion companion = Snapshot.Companion;
-                Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
-                companion.restoreNonObservable(currentThreadSnapshot, companion.makeCurrentNonObservable(currentThreadSnapshot), currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null);
-                lazyListPrefetchStrategy2.onNestedPrefetch(nestedPrefetchScope, i3);
+            public final Object invoke(Object obj) {
+                Unit prefetchState$lambda$3;
+                prefetchState$lambda$3 = LazyListState.prefetchState$lambda$3(LazyListState.this, i, (NestedPrefetchScope) obj);
+                return prefetchState$lambda$3;
             }
         });
-        this.prefetchScope = new LazyListPrefetchScope() { // from class: androidx.compose.foundation.lazy.LazyListState$prefetchScope$1
-            @Override // androidx.compose.foundation.lazy.LazyListPrefetchScope
-            public LazyLayoutPrefetchState.PrefetchHandle schedulePrefetch(int i3) {
-                MutableState mutableState;
-                Snapshot.Companion companion = Snapshot.Companion;
-                LazyListState lazyListState = LazyListState.this;
-                Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
-                Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
-                Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
-                try {
-                    mutableState = lazyListState.layoutInfoState;
-                    long m848getChildConstraintsmsEJaDk = ((LazyListMeasureResult) mutableState.getValue()).m848getChildConstraintsmsEJaDk();
-                    companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                    return LazyListState.this.getPrefetchState$foundation_release().m916schedulePrefetch0kLqBqw(i3, m848getChildConstraintsmsEJaDk);
-                } catch (Throwable th) {
-                    companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                    throw th;
-                }
-            }
-        };
+        this.prefetchScope = new LazyListState$prefetchScope$1(this);
         this.pinnedItems = new LazyLayoutPinnedItemList();
         lazyListScrollPosition.getNearestRangeState();
-        this.measurementScopeInvalidator = ObservableScopeInvalidator.m921constructorimpl$default(null, 1, null);
+        this.measurementScopeInvalidator = ObservableScopeInvalidator.m1064constructorimpl$default(null, 1, null);
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.canScrollForward$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.canScrollBackward$delegate = mutableStateOf$default2;
-        this.placementScopeInvalidator = ObservableScopeInvalidator.m921constructorimpl$default(null, 1, null);
+        this.placementScopeInvalidator = ObservableScopeInvalidator.m1064constructorimpl$default(null, 1, null);
         this._lazyLayoutScrollDeltaBetweenPasses = new LazyLayoutScrollDeltaBetweenPasses();
     }
 
     public /* synthetic */ LazyListState(int i, int i2, LazyListPrefetchStrategy lazyListPrefetchStrategy, int i3, DefaultConstructorMarker defaultConstructorMarker) {
         this((i3 & 1) != 0 ? 0 : i, (i3 & 2) != 0 ? 0 : i2, (i3 & 4) != 0 ? LazyListPrefetchStrategyKt.LazyListPrefetchStrategy$default(0, 1, null) : lazyListPrefetchStrategy);
+    }
+
+    public final LazyListPrefetchStrategy getPrefetchStrategy$foundation_release() {
+        return this.prefetchStrategy;
+    }
+
+    public /* synthetic */ LazyListState(LazyLayoutCacheWindow lazyLayoutCacheWindow, int i, int i2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
+        this(lazyLayoutCacheWindow, (i3 & 2) != 0 ? 0 : i, (i3 & 4) != 0 ? 0 : i2);
+    }
+
+    public LazyListState(LazyLayoutCacheWindow lazyLayoutCacheWindow, int i, int i2) {
+        this(i, i2, new LazyListCacheWindowStrategy(lazyLayoutCacheWindow));
     }
 
     public /* synthetic */ LazyListState(int i, int i2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
@@ -227,6 +204,11 @@ public final class LazyListState implements ScrollableState {
         return this.layoutInfoState.getValue().getDensity();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final float scrollableState$lambda$0(LazyListState lazyListState, float f) {
+        return -lazyListState.onScroll$foundation_release(-f);
+    }
+
     public final int getNumMeasurePasses$foundation_release() {
         return this.numMeasurePasses;
     }
@@ -263,6 +245,16 @@ public final class LazyListState implements ScrollableState {
         return this.prefetchState;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit prefetchState$lambda$3(LazyListState lazyListState, int i, NestedPrefetchScope nestedPrefetchScope) {
+        LazyListPrefetchStrategy lazyListPrefetchStrategy = lazyListState.prefetchStrategy;
+        Snapshot.Companion companion = Snapshot.Companion;
+        Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
+        companion.restoreNonObservable(currentThreadSnapshot, companion.makeCurrentNonObservable(currentThreadSnapshot), currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null);
+        lazyListPrefetchStrategy.onNestedPrefetch(nestedPrefetchScope, i);
+        return Unit.INSTANCE;
+    }
+
     public final LazyLayoutPinnedItemList getPinnedItems$foundation_release() {
         return this.pinnedItems;
     }
@@ -284,7 +276,7 @@ public final class LazyListState implements ScrollableState {
     }
 
     /* renamed from: getMeasurementScopeInvalidator-zYiylxw$foundation_release  reason: not valid java name */
-    public final MutableState<Unit> m857getMeasurementScopeInvalidatorzYiylxw$foundation_release() {
+    public final MutableState<Unit> m969getMeasurementScopeInvalidatorzYiylxw$foundation_release() {
         return this.measurementScopeInvalidator;
     }
 
@@ -305,6 +297,11 @@ public final class LazyListState implements ScrollableState {
     public final void snapToItemIndexInternal$foundation_release(int i, int i2, boolean z) {
         if (this.scrollPosition.getIndex() != i || this.scrollPosition.getScrollOffset() != i2) {
             this.itemAnimator.reset();
+            LazyListPrefetchStrategy lazyListPrefetchStrategy = this.prefetchStrategy;
+            CacheWindowLogic cacheWindowLogic = lazyListPrefetchStrategy instanceof CacheWindowLogic ? (CacheWindowLogic) lazyListPrefetchStrategy : null;
+            if (cacheWindowLogic != null) {
+                cacheWindowLogic.resetStrategy();
+            }
         }
         this.scrollPosition.requestPositionAndForgetLastKnownKey(i, i2);
         if (z) {
@@ -315,14 +312,20 @@ public final class LazyListState implements ScrollableState {
             }
             return;
         }
-        ObservableScopeInvalidator.m925invalidateScopeimpl(this.measurementScopeInvalidator);
+        ObservableScopeInvalidator.m1068invalidateScopeimpl(this.measurementScopeInvalidator);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x006a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0051, code lost:
+        if (r8.waitForFirstLayout(r0) == r1) goto L19;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0061, code lost:
         if (r8.scroll(r6, r7, r0) != r1) goto L11;
      */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0063, code lost:
+        return r1;
+     */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0042  */
     @Override // androidx.compose.foundation.gestures.ScrollableState
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -330,7 +333,6 @@ public final class LazyListState implements ScrollableState {
     public Object scroll(MutatePriority mutatePriority, Function2<? super ScrollScope, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super Unit> continuation) {
         LazyListState$scroll$1 lazyListState$scroll$1;
         int i;
-        LazyListState lazyListState;
         if (continuation instanceof LazyListState$scroll$1) {
             lazyListState$scroll$1 = (LazyListState$scroll$1) continuation;
             if ((lazyListState$scroll$1.label & Integer.MIN_VALUE) != 0) {
@@ -341,14 +343,9 @@ public final class LazyListState implements ScrollableState {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     AwaitFirstLayoutModifier awaitFirstLayoutModifier = this.awaitLayoutModifier;
-                    lazyListState$scroll$1.L$0 = this;
-                    lazyListState$scroll$1.L$1 = mutatePriority;
-                    lazyListState$scroll$1.L$2 = function2;
+                    lazyListState$scroll$1.L$0 = mutatePriority;
+                    lazyListState$scroll$1.L$1 = function2;
                     lazyListState$scroll$1.label = 1;
-                    if (awaitFirstLayoutModifier.waitForFirstLayout(lazyListState$scroll$1) != coroutine_suspended) {
-                        lazyListState = this;
-                    }
-                    return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
                         ResultKt.throwOnFailure(obj);
@@ -356,15 +353,13 @@ public final class LazyListState implements ScrollableState {
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    function2 = (Function2) lazyListState$scroll$1.L$2;
-                    mutatePriority = (MutatePriority) lazyListState$scroll$1.L$1;
-                    lazyListState = (LazyListState) lazyListState$scroll$1.L$0;
+                    function2 = (Function2) lazyListState$scroll$1.L$1;
+                    mutatePriority = (MutatePriority) lazyListState$scroll$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                ScrollableState scrollableState = lazyListState.scrollableState;
+                ScrollableState scrollableState = this.scrollableState;
                 lazyListState$scroll$1.L$0 = null;
                 lazyListState$scroll$1.L$1 = null;
-                lazyListState$scroll$1.L$2 = null;
                 lazyListState$scroll$1.label = 2;
             }
         }
@@ -374,10 +369,9 @@ public final class LazyListState implements ScrollableState {
         i = lazyListState$scroll$1.label;
         if (i != 0) {
         }
-        ScrollableState scrollableState2 = lazyListState.scrollableState;
+        ScrollableState scrollableState2 = this.scrollableState;
         lazyListState$scroll$1.L$0 = null;
         lazyListState$scroll$1.L$1 = null;
-        lazyListState$scroll$1.L$2 = null;
         lazyListState$scroll$1.label = 2;
     }
 
@@ -420,7 +414,7 @@ public final class LazyListState implements ScrollableState {
     }
 
     /* renamed from: getPlacementScopeInvalidator-zYiylxw$foundation_release  reason: not valid java name */
-    public final MutableState<Unit> m858getPlacementScopeInvalidatorzYiylxw$foundation_release() {
+    public final MutableState<Unit> m970getPlacementScopeInvalidatorzYiylxw$foundation_release() {
         return this.placementScopeInvalidator;
     }
 
@@ -430,6 +424,7 @@ public final class LazyListState implements ScrollableState {
             if (!(Math.abs(this.scrollToBeConsumed) <= 0.5f)) {
                 InlineClassHelperKt.throwIllegalStateException("entered drag with non-zero pending scroll");
             }
+            this.executeRequestsInHighPriorityMode = true;
             float f2 = this.scrollToBeConsumed + f;
             this.scrollToBeConsumed = f2;
             if (Math.abs(f2) > 0.5f) {
@@ -446,7 +441,7 @@ public final class LazyListState implements ScrollableState {
                 }
                 if (copyWithScrollDeltaWithoutRemeasure != null) {
                     applyMeasureResult$foundation_release(copyWithScrollDeltaWithoutRemeasure, this.hasLookaheadOccurred, true);
-                    ObservableScopeInvalidator.m925invalidateScopeimpl(this.placementScopeInvalidator);
+                    ObservableScopeInvalidator.m1068invalidateScopeimpl(this.placementScopeInvalidator);
                     notifyPrefetchOnScroll(f3 - this.scrollToBeConsumed, copyWithScrollDeltaWithoutRemeasure);
                 } else {
                     Remeasurement remeasurement = this.remeasurement;
@@ -492,9 +487,23 @@ public final class LazyListState implements ScrollableState {
     }
 
     public final void applyMeasureResult$foundation_release(LazyListMeasureResult lazyListMeasureResult, boolean z, boolean z2) {
+        LazyListMeasuredItem firstVisibleItem;
+        this.prefetchState.setIdealNestedPrefetchCount$foundation_release(lazyListMeasureResult.getVisibleItemsInfo().size());
         if (!z && this.hasLookaheadOccurred) {
             this.approachLayoutInfo = lazyListMeasureResult;
-            return;
+            Snapshot.Companion companion = Snapshot.Companion;
+            Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
+            Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
+            Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
+            try {
+                if (this._lazyLayoutScrollDeltaBetweenPasses.isActive$foundation_release() && (firstVisibleItem = lazyListMeasureResult.getFirstVisibleItem()) != null && firstVisibleItem.getIndex() == this.scrollPosition.getIndex() && lazyListMeasureResult.getFirstVisibleItemScrollOffset() == this.scrollPosition.getScrollOffset()) {
+                    this._lazyLayoutScrollDeltaBetweenPasses.stop$foundation_release();
+                }
+                Unit unit = Unit.INSTANCE;
+                return;
+            } finally {
+                companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
+            }
         }
         if (z) {
             this.hasLookaheadOccurred = true;
@@ -506,6 +515,7 @@ public final class LazyListState implements ScrollableState {
         if (z2) {
             this.scrollPosition.updateScrollOffset(lazyListMeasureResult.getFirstVisibleItemScrollOffset());
         } else {
+            traceVisibleItems(lazyListMeasureResult);
             this.scrollPosition.updateFromMeasureResult(lazyListMeasureResult);
             if (this.prefetchingEnabled) {
                 this.prefetchStrategy.onVisibleItemsUpdated(this.prefetchScope, lazyListMeasureResult);
@@ -517,6 +527,13 @@ public final class LazyListState implements ScrollableState {
         this.numMeasurePasses++;
     }
 
+    private final void traceVisibleItems(LazyListMeasureResult lazyListMeasureResult) {
+        LazyListMeasuredItem lazyListMeasuredItem = (LazyListMeasuredItem) CollectionsKt.firstOrNull((List<? extends Object>) lazyListMeasureResult.getVisibleItemsInfo());
+        LazyListMeasuredItem lazyListMeasuredItem2 = (LazyListMeasuredItem) CollectionsKt.lastOrNull((List<? extends Object>) lazyListMeasureResult.getVisibleItemsInfo());
+        AndroidTrace_androidKt.traceValue("firstVisibleItem:index", lazyListMeasuredItem != null ? lazyListMeasuredItem.getIndex() : -1L);
+        AndroidTrace_androidKt.traceValue("lastVisibleItem:index", lazyListMeasuredItem2 != null ? lazyListMeasuredItem2.getIndex() : -1L);
+    }
+
     public final float getScrollDeltaBetweenPasses$foundation_release() {
         return this._lazyLayoutScrollDeltaBetweenPasses.getScrollDeltaBetweenPasses$foundation_release();
     }
@@ -526,7 +543,7 @@ public final class LazyListState implements ScrollableState {
     }
 
     /* compiled from: LazyListState.kt */
-    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u001f\u0010\b\u001a\f\u0012\u0004\u0012\u00020\u0005\u0012\u0002\b\u00030\u00042\u0006\u0010\t\u001a\u00020\nH\u0000¢\u0006\u0002\b\u000bR\u001b\u0010\u0003\u001a\f\u0012\u0004\u0012\u00020\u0005\u0012\u0002\b\u00030\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\f"}, d2 = {"Landroidx/compose/foundation/lazy/LazyListState$Companion;", "", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/foundation/lazy/LazyListState;", "getSaver", "()Landroidx/compose/runtime/saveable/Saver;", "saver", "prefetchStrategy", "Landroidx/compose/foundation/lazy/LazyListPrefetchStrategy;", "saver$foundation_release", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u001f\u0010\t\u001a\f\u0012\u0004\u0012\u00020\u0006\u0012\u0002\b\u00030\u00052\u0006\u0010\n\u001a\u00020\u000bH\u0000¢\u0006\u0002\b\fJ\u001f\u0010\t\u001a\f\u0012\u0004\u0012\u00020\u0006\u0012\u0002\b\u00030\u00052\u0006\u0010\r\u001a\u00020\u000eH\u0000¢\u0006\u0002\b\fR\u001b\u0010\u0004\u001a\f\u0012\u0004\u0012\u00020\u0006\u0012\u0002\b\u00030\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b¨\u0006\u000f"}, d2 = {"Landroidx/compose/foundation/lazy/LazyListState$Companion;", "", "<init>", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/foundation/lazy/LazyListState;", "getSaver", "()Landroidx/compose/runtime/saveable/Saver;", "saver", "prefetchStrategy", "Landroidx/compose/foundation/lazy/LazyListPrefetchStrategy;", "saver$foundation_release", "cacheWindow", "Landroidx/compose/foundation/lazy/layout/LazyLayoutCacheWindow;", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -541,27 +558,69 @@ public final class LazyListState implements ScrollableState {
         }
 
         public final Saver<LazyListState, ?> saver$foundation_release(final LazyListPrefetchStrategy lazyListPrefetchStrategy) {
-            return ListSaverKt.listSaver(new Function2<SaverScope, LazyListState, List<? extends Integer>>() { // from class: androidx.compose.foundation.lazy.LazyListState$Companion$saver$3
+            return ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.foundation.lazy.LazyListState$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
-                public final List<Integer> invoke(SaverScope saverScope, LazyListState lazyListState) {
-                    return CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(lazyListState.getFirstVisibleItemIndex()), Integer.valueOf(lazyListState.getFirstVisibleItemScrollOffset())});
+                public final Object invoke(Object obj, Object obj2) {
+                    List saver$lambda$0;
+                    saver$lambda$0 = LazyListState.Companion.saver$lambda$0((SaverScope) obj, (LazyListState) obj2);
+                    return saver$lambda$0;
                 }
-            }, new Function1<List<? extends Integer>, LazyListState>() { // from class: androidx.compose.foundation.lazy.LazyListState$Companion$saver$4
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(1);
-                }
-
+            }, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ LazyListState invoke(List<? extends Integer> list) {
-                    return invoke2((List<Integer>) list);
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final LazyListState invoke2(List<Integer> list) {
-                    return new LazyListState(list.get(0).intValue(), list.get(1).intValue(), LazyListPrefetchStrategy.this);
+                public final Object invoke(Object obj) {
+                    LazyListState saver$lambda$1;
+                    saver$lambda$1 = LazyListState.Companion.saver$lambda$1(LazyListPrefetchStrategy.this, (List) obj);
+                    return saver$lambda$1;
                 }
             });
         }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final List saver$lambda$0(SaverScope saverScope, LazyListState lazyListState) {
+            return CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(lazyListState.getFirstVisibleItemIndex()), Integer.valueOf(lazyListState.getFirstVisibleItemScrollOffset())});
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final LazyListState saver$lambda$1(LazyListPrefetchStrategy lazyListPrefetchStrategy, List list) {
+            return new LazyListState(((Number) list.get(0)).intValue(), ((Number) list.get(1)).intValue(), lazyListPrefetchStrategy);
+        }
+
+        public final Saver<LazyListState, ?> saver$foundation_release(final LazyLayoutCacheWindow lazyLayoutCacheWindow) {
+            return ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.foundation.lazy.LazyListState$Companion$$ExternalSyntheticLambda2
+                @Override // kotlin.jvm.functions.Function2
+                public final Object invoke(Object obj, Object obj2) {
+                    List saver$lambda$2;
+                    saver$lambda$2 = LazyListState.Companion.saver$lambda$2((SaverScope) obj, (LazyListState) obj2);
+                    return saver$lambda$2;
+                }
+            }, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$Companion$$ExternalSyntheticLambda3
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    LazyListState saver$lambda$3;
+                    saver$lambda$3 = LazyListState.Companion.saver$lambda$3(LazyLayoutCacheWindow.this, (List) obj);
+                    return saver$lambda$3;
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final List saver$lambda$2(SaverScope saverScope, LazyListState lazyListState) {
+            return CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(lazyListState.getFirstVisibleItemIndex()), Integer.valueOf(lazyListState.getFirstVisibleItemScrollOffset())});
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final LazyListState saver$lambda$3(LazyLayoutCacheWindow lazyLayoutCacheWindow, List list) {
+            return new LazyListState(lazyLayoutCacheWindow, ((Number) list.get(0)).intValue(), ((Number) list.get(1)).intValue());
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final List Saver$lambda$8(SaverScope saverScope, LazyListState lazyListState) {
+        return CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(lazyListState.getFirstVisibleItemIndex()), Integer.valueOf(lazyListState.getFirstVisibleItemScrollOffset())});
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final LazyListState Saver$lambda$9(List list) {
+        return new LazyListState(((Number) list.get(0)).intValue(), ((Number) list.get(1)).intValue());
     }
 }

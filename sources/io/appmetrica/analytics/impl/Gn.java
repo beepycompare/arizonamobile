@@ -1,28 +1,26 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.ValidationException;
 /* loaded from: classes4.dex */
-public class Gn implements Ti {
+public class Gn implements uo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f459a;
-    public final int b;
-    public int c = 0;
+    public final uo f463a;
 
-    public Gn(int i, int i2) {
-        this.f459a = i;
-        this.b = i2;
+    public Gn(uo uoVar) {
+        this.f463a = uoVar;
     }
 
-    public final int a() {
-        return this.b;
+    @Override // io.appmetrica.analytics.impl.uo
+    public final so a(Object obj) {
+        so a2 = this.f463a.a(obj);
+        if (a2.f1067a) {
+            return a2;
+        }
+        throw new ValidationException(a2.b);
     }
 
-    public final boolean b() {
-        int i = this.c;
-        this.c = i + 1;
-        return i < this.f459a;
-    }
-
-    public final void c() {
-        this.c = 0;
+    public final uo a() {
+        return this.f463a;
     }
 }

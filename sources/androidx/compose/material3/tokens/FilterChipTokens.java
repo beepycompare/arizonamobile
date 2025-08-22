@@ -9,36 +9,36 @@ import kotlin.Metadata;
 public final class FilterChipTokens {
     public static final int $stable = 0;
     public static final FilterChipTokens INSTANCE = new FilterChipTokens();
-    private static final float ContainerHeight = Dp.m6684constructorimpl((float) 32.0d);
+    private static final float ContainerHeight = Dp.m7251constructorimpl((float) 32.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerSmall;
     private static final ColorSchemeKeyTokens DisabledLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledLabelTextOpacity = 0.38f;
-    private static final float DraggedContainerElevation = ElevationTokens.INSTANCE.m2981getLevel4D9Ej5fM();
-    private static final float ElevatedContainerElevation = ElevationTokens.INSTANCE.m2978getLevel1D9Ej5fM();
+    private static final float DraggedContainerElevation = ElevationTokens.INSTANCE.m3288getLevel4D9Ej5fM();
+    private static final float ElevatedContainerElevation = ElevationTokens.INSTANCE.m3285getLevel1D9Ej5fM();
     private static final ColorSchemeKeyTokens ElevatedDisabledContainerColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float ElevatedDisabledContainerElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
+    private static final float ElevatedDisabledContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
     private static final float ElevatedDisabledContainerOpacity = 0.12f;
-    private static final float ElevatedFocusContainerElevation = ElevationTokens.INSTANCE.m2978getLevel1D9Ej5fM();
-    private static final float ElevatedHoverContainerElevation = ElevationTokens.INSTANCE.m2979getLevel2D9Ej5fM();
-    private static final float ElevatedPressedContainerElevation = ElevationTokens.INSTANCE.m2978getLevel1D9Ej5fM();
+    private static final float ElevatedFocusContainerElevation = ElevationTokens.INSTANCE.m3285getLevel1D9Ej5fM();
+    private static final float ElevatedHoverContainerElevation = ElevationTokens.INSTANCE.m3286getLevel2D9Ej5fM();
+    private static final float ElevatedPressedContainerElevation = ElevationTokens.INSTANCE.m3285getLevel1D9Ej5fM();
     private static final ColorSchemeKeyTokens ElevatedSelectedContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ColorSchemeKeyTokens ElevatedUnselectedContainerColor = ColorSchemeKeyTokens.SurfaceContainerLow;
-    private static final float FlatContainerElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
+    private static final float FlatContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens FlatDisabledSelectedContainerColor = ColorSchemeKeyTokens.OnSurface;
     private static final float FlatDisabledSelectedContainerOpacity = 0.12f;
     private static final ColorSchemeKeyTokens FlatDisabledUnselectedOutlineColor = ColorSchemeKeyTokens.OnSurface;
     private static final float FlatDisabledUnselectedOutlineOpacity = 0.12f;
     private static final ColorSchemeKeyTokens FlatSelectedContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
-    private static final float FlatSelectedFocusContainerElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
-    private static final float FlatSelectedHoverContainerElevation = ElevationTokens.INSTANCE.m2978getLevel1D9Ej5fM();
-    private static final float FlatSelectedOutlineWidth = Dp.m6684constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
-    private static final float FlatSelectedPressedContainerElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
-    private static final float FlatUnselectedFocusContainerElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
+    private static final float FlatSelectedFocusContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
+    private static final float FlatSelectedHoverContainerElevation = ElevationTokens.INSTANCE.m3285getLevel1D9Ej5fM();
+    private static final float FlatSelectedOutlineWidth = Dp.m7251constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
+    private static final float FlatSelectedPressedContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
+    private static final float FlatUnselectedFocusContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens FlatUnselectedFocusOutlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float FlatUnselectedHoverContainerElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
+    private static final float FlatUnselectedHoverContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens FlatUnselectedOutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float FlatUnselectedOutlineWidth = Dp.m6684constructorimpl((float) 1.0d);
-    private static final float FlatUnselectedPressedContainerElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
+    private static final float FlatUnselectedOutlineWidth = Dp.m7251constructorimpl((float) 1.0d);
+    private static final float FlatUnselectedPressedContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens SelectedDraggedLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
@@ -51,7 +51,7 @@ public final class FilterChipTokens {
     private static final ColorSchemeKeyTokens UnselectedHoverLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float IconSize = Dp.m6684constructorimpl((float) 18.0d);
+    private static final float IconSize = Dp.m7251constructorimpl((float) 18.0d);
     private static final ColorSchemeKeyTokens DisabledLeadingIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledLeadingIconOpacity = 0.38f;
     private static final ColorSchemeKeyTokens SelectedDraggedLeadingIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
@@ -81,7 +81,7 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3077getContainerHeightD9Ej5fM() {
+    public final float m3384getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -98,12 +98,12 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getDraggedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3078getDraggedContainerElevationD9Ej5fM() {
+    public final float m3385getDraggedContainerElevationD9Ej5fM() {
         return DraggedContainerElevation;
     }
 
     /* renamed from: getElevatedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3079getElevatedContainerElevationD9Ej5fM() {
+    public final float m3386getElevatedContainerElevationD9Ej5fM() {
         return ElevatedContainerElevation;
     }
 
@@ -112,7 +112,7 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getElevatedDisabledContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3080getElevatedDisabledContainerElevationD9Ej5fM() {
+    public final float m3387getElevatedDisabledContainerElevationD9Ej5fM() {
         return ElevatedDisabledContainerElevation;
     }
 
@@ -121,17 +121,17 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getElevatedFocusContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3081getElevatedFocusContainerElevationD9Ej5fM() {
+    public final float m3388getElevatedFocusContainerElevationD9Ej5fM() {
         return ElevatedFocusContainerElevation;
     }
 
     /* renamed from: getElevatedHoverContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3082getElevatedHoverContainerElevationD9Ej5fM() {
+    public final float m3389getElevatedHoverContainerElevationD9Ej5fM() {
         return ElevatedHoverContainerElevation;
     }
 
     /* renamed from: getElevatedPressedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3083getElevatedPressedContainerElevationD9Ej5fM() {
+    public final float m3390getElevatedPressedContainerElevationD9Ej5fM() {
         return ElevatedPressedContainerElevation;
     }
 
@@ -144,7 +144,7 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getFlatContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3084getFlatContainerElevationD9Ej5fM() {
+    public final float m3391getFlatContainerElevationD9Ej5fM() {
         return FlatContainerElevation;
     }
 
@@ -169,27 +169,27 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getFlatSelectedFocusContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3085getFlatSelectedFocusContainerElevationD9Ej5fM() {
+    public final float m3392getFlatSelectedFocusContainerElevationD9Ej5fM() {
         return FlatSelectedFocusContainerElevation;
     }
 
     /* renamed from: getFlatSelectedHoverContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3086getFlatSelectedHoverContainerElevationD9Ej5fM() {
+    public final float m3393getFlatSelectedHoverContainerElevationD9Ej5fM() {
         return FlatSelectedHoverContainerElevation;
     }
 
     /* renamed from: getFlatSelectedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3087getFlatSelectedOutlineWidthD9Ej5fM() {
+    public final float m3394getFlatSelectedOutlineWidthD9Ej5fM() {
         return FlatSelectedOutlineWidth;
     }
 
     /* renamed from: getFlatSelectedPressedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3088getFlatSelectedPressedContainerElevationD9Ej5fM() {
+    public final float m3395getFlatSelectedPressedContainerElevationD9Ej5fM() {
         return FlatSelectedPressedContainerElevation;
     }
 
     /* renamed from: getFlatUnselectedFocusContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3089getFlatUnselectedFocusContainerElevationD9Ej5fM() {
+    public final float m3396getFlatUnselectedFocusContainerElevationD9Ej5fM() {
         return FlatUnselectedFocusContainerElevation;
     }
 
@@ -198,7 +198,7 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getFlatUnselectedHoverContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3090getFlatUnselectedHoverContainerElevationD9Ej5fM() {
+    public final float m3397getFlatUnselectedHoverContainerElevationD9Ej5fM() {
         return FlatUnselectedHoverContainerElevation;
     }
 
@@ -207,12 +207,12 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getFlatUnselectedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3091getFlatUnselectedOutlineWidthD9Ej5fM() {
+    public final float m3398getFlatUnselectedOutlineWidthD9Ej5fM() {
         return FlatUnselectedOutlineWidth;
     }
 
     /* renamed from: getFlatUnselectedPressedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3092getFlatUnselectedPressedContainerElevationD9Ej5fM() {
+    public final float m3399getFlatUnselectedPressedContainerElevationD9Ej5fM() {
         return FlatUnselectedPressedContainerElevation;
     }
 
@@ -265,7 +265,7 @@ public final class FilterChipTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3093getIconSizeD9Ej5fM() {
+    public final float m3400getIconSizeD9Ej5fM() {
         return IconSize;
     }
 

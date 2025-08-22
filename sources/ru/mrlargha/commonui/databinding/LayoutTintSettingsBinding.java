@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class LayoutTintSettingsBinding implements ViewBinding {
     public final AppCompatButton btnMinus;
     public final AppCompatButton btnPlus;

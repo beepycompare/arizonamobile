@@ -99,67 +99,67 @@ public final class Address {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "url", imports = {}))
     /* renamed from: -deprecated_url  reason: not valid java name */
-    public final HttpUrl m10266deprecated_url() {
+    public final HttpUrl m10830deprecated_url() {
         return this.url;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "dns", imports = {}))
     /* renamed from: -deprecated_dns  reason: not valid java name */
-    public final Dns m10258deprecated_dns() {
+    public final Dns m10822deprecated_dns() {
         return this.dns;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "socketFactory", imports = {}))
     /* renamed from: -deprecated_socketFactory  reason: not valid java name */
-    public final SocketFactory m10264deprecated_socketFactory() {
+    public final SocketFactory m10828deprecated_socketFactory() {
         return this.socketFactory;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "proxyAuthenticator", imports = {}))
     /* renamed from: -deprecated_proxyAuthenticator  reason: not valid java name */
-    public final Authenticator m10262deprecated_proxyAuthenticator() {
+    public final Authenticator m10826deprecated_proxyAuthenticator() {
         return this.proxyAuthenticator;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "protocols", imports = {}))
     /* renamed from: -deprecated_protocols  reason: not valid java name */
-    public final List<Protocol> m10260deprecated_protocols() {
+    public final List<Protocol> m10824deprecated_protocols() {
         return this.protocols;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "connectionSpecs", imports = {}))
     /* renamed from: -deprecated_connectionSpecs  reason: not valid java name */
-    public final List<ConnectionSpec> m10257deprecated_connectionSpecs() {
+    public final List<ConnectionSpec> m10821deprecated_connectionSpecs() {
         return this.connectionSpecs;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "proxySelector", imports = {}))
     /* renamed from: -deprecated_proxySelector  reason: not valid java name */
-    public final ProxySelector m10263deprecated_proxySelector() {
+    public final ProxySelector m10827deprecated_proxySelector() {
         return this.proxySelector;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "proxy", imports = {}))
     /* renamed from: -deprecated_proxy  reason: not valid java name */
-    public final Proxy m10261deprecated_proxy() {
+    public final Proxy m10825deprecated_proxy() {
         return this.proxy;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "sslSocketFactory", imports = {}))
     /* renamed from: -deprecated_sslSocketFactory  reason: not valid java name */
-    public final SSLSocketFactory m10265deprecated_sslSocketFactory() {
+    public final SSLSocketFactory m10829deprecated_sslSocketFactory() {
         return this.sslSocketFactory;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "hostnameVerifier", imports = {}))
     /* renamed from: -deprecated_hostnameVerifier  reason: not valid java name */
-    public final HostnameVerifier m10259deprecated_hostnameVerifier() {
+    public final HostnameVerifier m10823deprecated_hostnameVerifier() {
         return this.hostnameVerifier;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "certificatePinner", imports = {}))
     /* renamed from: -deprecated_certificatePinner  reason: not valid java name */
-    public final CertificatePinner m10256deprecated_certificatePinner() {
+    public final CertificatePinner m10820deprecated_certificatePinner() {
         return this.certificatePinner;
     }
 

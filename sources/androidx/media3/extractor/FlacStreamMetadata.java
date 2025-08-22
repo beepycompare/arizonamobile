@@ -11,7 +11,7 @@ import androidx.media3.extractor.metadata.flac.PictureFrame;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class FlacStreamMetadata {
     public static final int NOT_IN_LOOKUP_TABLE = -1;
     private static final String TAG = "FlacStreamMetadata";
@@ -76,7 +76,7 @@ public final class FlacStreamMetadata {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static class SeekTable {
         public final long[] pointOffsets;
         public final long[] pointSampleNumbers;

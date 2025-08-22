@@ -4,11 +4,11 @@ import androidx.compose.foundation.gestures.Orientation;
 import java.util.List;
 import kotlin.Metadata;
 /* compiled from: LazyGridLayoutInfo.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0000\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0000¨\u0006\u0003"}, d2 = {"visibleLinesAverageMainAxisSize", "", "Landroidx/compose/foundation/lazy/grid/LazyGridLayoutInfo;", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0000\"\u0018\u0010\u0003\u001a\u00020\u0001*\u00020\u00028@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005¨\u0006\u0006"}, d2 = {"visibleLinesAverageMainAxisSize", "", "Landroidx/compose/foundation/lazy/grid/LazyGridLayoutInfo;", "singleAxisViewportSize", "getSingleAxisViewportSize", "(Landroidx/compose/foundation/lazy/grid/LazyGridLayoutInfo;)I", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyGridLayoutInfoKt {
     public static final int visibleLinesAverageMainAxisSize(LazyGridLayoutInfo lazyGridLayoutInfo) {
-        long mo878getSizeYbymL2g;
+        long mo991getSizeYbymL2g;
         boolean z = lazyGridLayoutInfo.getOrientation() == Orientation.Vertical;
         List<LazyGridItemInfo> visibleItemsInfo = lazyGridLayoutInfo.getVisibleItemsInfo();
         int i = 0;
@@ -22,11 +22,11 @@ public final class LazyGridLayoutInfoKt {
                 int i4 = 0;
                 while (i < visibleItemsInfo.size() && visibleLinesAverageMainAxisSize$lineOf(z, lazyGridLayoutInfo, i) == visibleLinesAverageMainAxisSize$lineOf) {
                     if (z) {
-                        mo878getSizeYbymL2g = visibleItemsInfo.get(i).mo878getSizeYbymL2g() & 4294967295L;
+                        mo991getSizeYbymL2g = visibleItemsInfo.get(i).mo991getSizeYbymL2g() & 4294967295L;
                     } else {
-                        mo878getSizeYbymL2g = visibleItemsInfo.get(i).mo878getSizeYbymL2g() >> 32;
+                        mo991getSizeYbymL2g = visibleItemsInfo.get(i).mo991getSizeYbymL2g() >> 32;
                     }
-                    i4 = Math.max(i4, (int) mo878getSizeYbymL2g);
+                    i4 = Math.max(i4, (int) mo991getSizeYbymL2g);
                     i++;
                 }
                 i2 += i4;
@@ -38,5 +38,9 @@ public final class LazyGridLayoutInfoKt {
 
     private static final int visibleLinesAverageMainAxisSize$lineOf(boolean z, LazyGridLayoutInfo lazyGridLayoutInfo, int i) {
         return z ? lazyGridLayoutInfo.getVisibleItemsInfo().get(i).getRow() : lazyGridLayoutInfo.getVisibleItemsInfo().get(i).getColumn();
+    }
+
+    public static final int getSingleAxisViewportSize(LazyGridLayoutInfo lazyGridLayoutInfo) {
+        return (int) (lazyGridLayoutInfo.getOrientation() == Orientation.Vertical ? lazyGridLayoutInfo.mo995getViewportSizeYbymL2g() & 4294967295L : lazyGridLayoutInfo.mo995getViewportSizeYbymL2g() >> 32);
     }
 }

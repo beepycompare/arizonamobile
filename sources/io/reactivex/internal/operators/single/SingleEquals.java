@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleEquals<T> extends Single<Boolean> {
     final SingleSource<? extends T> first;
     final SingleSource<? extends T> second;
@@ -28,7 +28,7 @@ public final class SingleEquals<T> extends Single<Boolean> {
         this.second.subscribe(new InnerObserver(1, compositeDisposable, objArr, singleObserver, atomicInteger));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static class InnerObserver<T> implements SingleObserver<T> {
         final AtomicInteger count;
         final SingleObserver<? super Boolean> downstream;

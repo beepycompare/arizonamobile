@@ -21,7 +21,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableConcatMapCompletable<T> extends Completable {
     final ErrorMode errorMode;
     final Function<? super T, ? extends CompletableSource> mapper;
@@ -40,7 +40,7 @@ public final class FlowableConcatMapCompletable<T> extends Completable {
         this.source.subscribe((FlowableSubscriber) new ConcatMapCompletableObserver(completableObserver, this.mapper, this.errorMode, this.prefetch));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ConcatMapCompletableObserver<T> extends AtomicInteger implements FlowableSubscriber<T>, Disposable {
         private static final long serialVersionUID = 3610901111000061034L;
         volatile boolean active;
@@ -207,7 +207,7 @@ public final class FlowableConcatMapCompletable<T> extends Completable {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class ConcatMapInnerObserver extends AtomicReference<Disposable> implements CompletableObserver {
             private static final long serialVersionUID = 5638352172918776687L;
             final ConcatMapCompletableObserver<?> parent;

@@ -26,7 +26,7 @@ public final class ComposableSingletons$ConnectionDialogKt {
     public static final ComposableSingletons$ConnectionDialogKt INSTANCE = new ComposableSingletons$ConnectionDialogKt();
 
     /* renamed from: lambda$-751471044  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f72lambda$751471044 = ComposableLambdaKt.composableLambdaInstance(-751471044, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$ConnectionDialogKt$$ExternalSyntheticLambda0
+    private static Function3<BoxScope, Composer, Integer, Unit> f66lambda$751471044 = ComposableLambdaKt.composableLambdaInstance(-751471044, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$ConnectionDialogKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__751471044$lambda$0;
@@ -36,7 +36,7 @@ public final class ComposableSingletons$ConnectionDialogKt {
     });
 
     /* renamed from: lambda$-1711092251  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f71lambda$1711092251 = ComposableLambdaKt.composableLambdaInstance(-1711092251, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$ConnectionDialogKt$$ExternalSyntheticLambda1
+    private static Function3<BoxScope, Composer, Integer, Unit> f65lambda$1711092251 = ComposableLambdaKt.composableLambdaInstance(-1711092251, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$ConnectionDialogKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__1711092251$lambda$1;
@@ -45,14 +45,14 @@ public final class ComposableSingletons$ConnectionDialogKt {
         }
     });
 
-    /* renamed from: getLambda$-1711092251$dialogs_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8357getLambda$1711092251$dialogs_release_web() {
-        return f71lambda$1711092251;
+    /* renamed from: getLambda$-1711092251$dialogs_release  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m8923getLambda$1711092251$dialogs_release() {
+        return f65lambda$1711092251;
     }
 
-    /* renamed from: getLambda$-751471044$dialogs_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8358getLambda$751471044$dialogs_release_web() {
-        return f72lambda$751471044;
+    /* renamed from: getLambda$-751471044$dialogs_release  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m8924getLambda$751471044$dialogs_release() {
+        return f66lambda$751471044;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -65,7 +65,7 @@ public final class ComposableSingletons$ConnectionDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-751471044, i, -1, "com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$ConnectionDialogKt.lambda$-751471044.<anonymous> (ConnectionDialog.kt:51)");
             }
-            TextKt.m2497Text4IGK_g("ОТМЕНА", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
+            TextKt.m2804Text4IGK_g("ОТМЕНА", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -83,7 +83,7 @@ public final class ComposableSingletons$ConnectionDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1711092251, i, -1, "com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$ConnectionDialogKt.lambda$-1711092251.<anonymous> (ConnectionDialog.kt:63)");
             }
-            TextKt.m2497Text4IGK_g("ПОДКЛЮЧИТЬСЯ", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
+            TextKt.m2804Text4IGK_g("ПОДКЛЮЧИТЬСЯ", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

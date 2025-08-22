@@ -11,13 +11,13 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class FlacMetadataReader {
     private static final int SEEK_POINT_SIZE = 18;
     private static final int STREAM_MARKER = 1716281667;
     private static final int SYNC_CODE = 16382;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class FlacStreamMetadataHolder {
         public FlacStreamMetadata flacStreamMetadata;
 

@@ -6,7 +6,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.SequentialDisposable;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableRepeat<T> extends AbstractObservableWithUpstream<T, T> {
     final long count;
 
@@ -23,7 +23,7 @@ public final class ObservableRepeat<T> extends AbstractObservableWithUpstream<T,
         new RepeatObserver(observer, j != Long.MAX_VALUE ? j - 1 : Long.MAX_VALUE, sequentialDisposable, this.source).subscribeNext();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class RepeatObserver<T> extends AtomicInteger implements Observer<T> {
         private static final long serialVersionUID = -7098360935104053232L;
         final Observer<? super T> downstream;

@@ -6,11 +6,12 @@ import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Point;
 import android.os.Build;
+import android.os.Handler;
+import android.os.StrictMode;
 import android.os.SystemClock;
 import android.os.Trace;
 import android.util.LongSparseArray;
 import android.util.SparseArray;
-import android.view.FocusFinder;
 import android.view.MotionEvent;
 import android.view.ScrollCaptureTarget;
 import android.view.View;
@@ -36,6 +37,7 @@ import androidx.compose.runtime.collection.MutableVector;
 import androidx.compose.runtime.snapshots.Snapshot;
 import androidx.compose.ui.ComposeUiFlags;
 import androidx.compose.ui.Modifier;
+import androidx.compose.ui.R;
 import androidx.compose.ui.SessionMutex;
 import androidx.compose.ui.autofill.AndroidAutofill;
 import androidx.compose.ui.autofill.AndroidAutofillManager;
@@ -55,6 +57,7 @@ import androidx.compose.ui.focus.FocusOwnerImpl;
 import androidx.compose.ui.focus.FocusOwnerImplKt;
 import androidx.compose.ui.focus.FocusTargetNode;
 import androidx.compose.ui.focus.FocusTraversalKt;
+import androidx.compose.ui.focus.PlatformFocusOwner;
 import androidx.compose.ui.focus.TwoDimensionalFocusSearchKt;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.geometry.Rect;
@@ -70,7 +73,9 @@ import androidx.compose.ui.hapticfeedback.PlatformHapticFeedback;
 import androidx.compose.ui.input.InputMode;
 import androidx.compose.ui.input.InputModeManager;
 import androidx.compose.ui.input.InputModeManagerImpl;
-import androidx.compose.ui.input.key.Key;
+import androidx.compose.ui.input.indirect.AndroidIndirectTouchEvent;
+import androidx.compose.ui.input.indirect.AndroidIndirectTouchEvent_androidKt;
+import androidx.compose.ui.input.indirect.IndirectTouchEvent;
 import androidx.compose.ui.input.key.KeyEvent;
 import androidx.compose.ui.input.key.KeyEventType;
 import androidx.compose.ui.input.key.KeyEvent_androidKt;
@@ -88,9 +93,11 @@ import androidx.compose.ui.input.pointer.SuspendingPointerInputModifierNode;
 import androidx.compose.ui.input.rotary.RotaryInputModifierKt;
 import androidx.compose.ui.input.rotary.RotaryScrollEvent;
 import androidx.compose.ui.internal.InlineClassHelperKt;
+import androidx.compose.ui.layout.InsetsListener;
 import androidx.compose.ui.layout.Placeable;
 import androidx.compose.ui.layout.PlaceableKt;
 import androidx.compose.ui.layout.RootMeasurePolicy;
+import androidx.compose.ui.layout.WindowInsetsRulers_androidKt;
 import androidx.compose.ui.modifier.ModifierLocalManager;
 import androidx.compose.ui.node.DelegatableNodeKt;
 import androidx.compose.ui.node.DelegatingNode;
@@ -99,6 +106,7 @@ import androidx.compose.ui.node.LayoutNodeDrawScope;
 import androidx.compose.ui.node.MeasureAndLayoutDelegate;
 import androidx.compose.ui.node.ModifierNodeElement;
 import androidx.compose.ui.node.NodeKind;
+import androidx.compose.ui.node.OutOfFrameExecutor;
 import androidx.compose.ui.node.OwnedLayer;
 import androidx.compose.ui.node.Owner;
 import androidx.compose.ui.node.OwnerSnapshotObserver;
@@ -162,19 +170,23 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.MutablePropertyReference0Impl;
 import kotlin.jvm.internal.Ref;
+import kotlin.jvm.internal.TypeIntrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: AndroidComposeView.android.kt */
-@Metadata(d1 = {"\u0000Í\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b#\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0016\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u001d\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0019\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\f*\u00034Õ\u0001\b\u0000\u0018\u0000 ®\u00042\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u0005:\u0004®\u0004¯\u0004B\u0015\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0002\u0010\nJ\u001b\u0010¯\u0002\u001a\u00020E2\b\u0010\u0096\u0002\u001a\u00030°\u00022\b\u0010±\u0002\u001a\u00030«\u0001J&\u0010²\u0002\u001a\u00020E2\u0007\u0010³\u0002\u001a\u00020V2\b\u0010´\u0002\u001a\u00030µ\u00022\b\u0010¶\u0002\u001a\u00030·\u0002H\u0002J\u0015\u0010¸\u0002\u001a\u00020E2\n\u0010¹\u0002\u001a\u0005\u0018\u00010\u0097\u0002H\u0016J!\u0010¸\u0002\u001a\u00020E2\n\u0010¹\u0002\u001a\u0005\u0018\u00010\u0097\u00022\n\u0010º\u0002\u001a\u0005\u0018\u00010»\u0002H\u0016J\u001e\u0010¸\u0002\u001a\u00020E2\n\u0010¹\u0002\u001a\u0005\u0018\u00010\u0097\u00022\u0007\u0010¼\u0002\u001a\u00020VH\u0016J*\u0010¸\u0002\u001a\u00020E2\n\u0010¹\u0002\u001a\u0005\u0018\u00010\u0097\u00022\u0007\u0010¼\u0002\u001a\u00020V2\n\u0010º\u0002\u001a\u0005\u0018\u00010»\u0002H\u0016J'\u0010¸\u0002\u001a\u00020E2\n\u0010¹\u0002\u001a\u0005\u0018\u00010\u0097\u00022\u0007\u0010½\u0002\u001a\u00020V2\u0007\u0010¾\u0002\u001a\u00020VH\u0016J\u0019\u0010'\u001a\u00020E2\u000f\u0010¿\u0002\u001a\n\u0012\u0005\u0012\u00030Á\u00020À\u0002H\u0016J\t\u0010Â\u0002\u001a\u00020zH\u0002J\u0010\u0010Ã\u0002\u001a\u00020EH\u0086@¢\u0006\u0003\u0010Ä\u0002J\u0010\u0010Å\u0002\u001a\u00020EH\u0086@¢\u0006\u0003\u0010Ä\u0002J \u0010Æ\u0002\u001a\u00030\u0098\u00012\b\u0010Ç\u0002\u001a\u00030\u0098\u0001H\u0016ø\u0001\u0000¢\u0006\u0006\bÈ\u0002\u0010É\u0002J \u0010Ê\u0002\u001a\u00030\u0098\u00012\b\u0010Ë\u0002\u001a\u00030\u0098\u0001H\u0016ø\u0001\u0000¢\u0006\u0006\bÌ\u0002\u0010É\u0002J\u0012\u0010Í\u0002\u001a\u00020z2\u0007\u0010Î\u0002\u001a\u00020VH\u0016J\u0012\u0010Ï\u0002\u001a\u00020z2\u0007\u0010Î\u0002\u001a\u00020VH\u0016J\u0012\u0010Ð\u0002\u001a\u00020E2\u0007\u0010Ñ\u0002\u001a\u00020\u0001H\u0002J\"\u0010Ò\u0002\u001a\u00030Ó\u00022\u0007\u0010Ô\u0002\u001a\u00020VH\u0002ø\u0001\u0001ø\u0001\u0000¢\u0006\u0006\bÕ\u0002\u0010Ö\u0002Jq\u0010×\u0002\u001a\u00020`2B\u0010Ø\u0002\u001a=\u0012\u0017\u0012\u00150Ú\u0002¢\u0006\u000f\bÛ\u0002\u0012\n\bÜ\u0002\u0012\u0005\b\b(Ý\u0002\u0012\u0019\u0012\u0017\u0018\u00010Þ\u0002¢\u0006\u000f\bÛ\u0002\u0012\n\bÜ\u0002\u0012\u0005\b\b(ß\u0002\u0012\u0004\u0012\u00020E0Ù\u00022\r\u0010à\u0002\u001a\b\u0012\u0004\u0012\u00020E0g2\n\u0010á\u0002\u001a\u0005\u0018\u00010Þ\u00022\u0007\u0010â\u0002\u001a\u00020zH\u0016J\t\u0010ã\u0002\u001a\u00020EH\u0016J\u0013\u0010ä\u0002\u001a\u00020E2\b\u0010Ý\u0002\u001a\u00030å\u0002H\u0014J\u0013\u0010æ\u0002\u001a\u00020z2\b\u0010ç\u0002\u001a\u00030Ì\u0001H\u0016J\u0013\u0010è\u0002\u001a\u00020z2\b\u0010é\u0002\u001a\u00030Ì\u0001H\u0016J\u0013\u0010ê\u0002\u001a\u00020z2\b\u0010é\u0002\u001a\u00030ë\u0002H\u0016J\u0013\u0010ì\u0002\u001a\u00020z2\b\u0010é\u0002\u001a\u00030ë\u0002H\u0016J\t\u0010í\u0002\u001a\u00020EH\u0002J\u0013\u0010î\u0002\u001a\u00020E2\b\u0010ï\u0002\u001a\u00030ð\u0002H\u0016J\u0013\u0010ñ\u0002\u001a\u00020z2\b\u0010ç\u0002\u001a\u00030Ì\u0001H\u0016J\u001b\u0010ò\u0002\u001a\u00020E2\b\u0010\u0096\u0002\u001a\u00030°\u00022\b\u0010Ý\u0002\u001a\u00030å\u0002J\u0015\u0010ó\u0002\u001a\u0005\u0018\u00010\u0097\u00022\u0007\u0010Î\u0002\u001a\u00020VH\u0002J\u001f\u0010ô\u0002\u001a\u0005\u0018\u00010\u0097\u00022\u0007\u0010õ\u0002\u001a\u00020V2\b\u0010ö\u0002\u001a\u00030\u0097\u0002H\u0002J\u0013\u0010÷\u0002\u001a\u0005\u0018\u00010\u0097\u00022\u0007\u0010õ\u0002\u001a\u00020VJ!\u0010ø\u0002\u001a\u0005\u0018\u00010\u0097\u00022\n\u0010ù\u0002\u001a\u0005\u0018\u00010\u0097\u00022\u0007\u0010Î\u0002\u001a\u00020VH\u0016J\u0012\u0010ú\u0002\u001a\u00020E2\u0007\u0010û\u0002\u001a\u00020zH\u0016J\u001c\u0010ü\u0002\u001a\u00020E2\b\u0010±\u0002\u001a\u00030«\u00012\u0007\u0010ý\u0002\u001a\u00020zH\u0016J\"\u0010þ\u0002\u001a\u0005\u0018\u00010ÿ\u00022\b\u0010\u0080\u0003\u001a\u00030\u0081\u0003H\u0016ø\u0001\u0000¢\u0006\u0006\b\u0082\u0003\u0010\u0083\u0003J\u0013\u0010\u0084\u0003\u001a\u00020E2\b\u0010\u0085\u0003\u001a\u00030\u0086\u0003H\u0016J\t\u0010\u0087\u0003\u001a\u00020VH\u0016J#\u0010\u0088\u0003\u001a\u00030\u0089\u00032\b\u0010ç\u0002\u001a\u00030Ì\u0001H\u0002ø\u0001\u0001ø\u0001\u0000¢\u0006\u0006\b\u008a\u0003\u0010\u008b\u0003J\u0013\u0010\u008c\u0003\u001a\u00020z2\b\u0010é\u0002\u001a\u00030Ì\u0001H\u0002J\u001d\u0010\u008d\u0003\u001a\u00020z2\b\u0010é\u0002\u001a\u00030Ì\u00012\b\u0010\u008e\u0003\u001a\u00030Ì\u0001H\u0002J\t\u0010\u008f\u0003\u001a\u00020EH\u0016J\t\u0010\u0090\u0003\u001a\u00020EH\u0016J\u0013\u0010\u0091\u0003\u001a\u00020E2\b\u0010\u0092\u0003\u001a\u00030«\u0001H\u0002J\u0013\u0010\u0093\u0003\u001a\u00020E2\b\u0010\u0092\u0003\u001a\u00030«\u0001H\u0002J\u0013\u0010\u0094\u0003\u001a\u00020z2\b\u0010é\u0002\u001a\u00030Ì\u0001H\u0002J\u0013\u0010\u0095\u0003\u001a\u00020z2\b\u0010é\u0002\u001a\u00030Ì\u0001H\u0002J\u0013\u0010\u0096\u0003\u001a\u00020z2\b\u0010ç\u0002\u001a\u00030Ì\u0001H\u0002J\u0013\u0010\u0097\u0003\u001a\u00020z2\b\u0010é\u0002\u001a\u00030Ì\u0001H\u0002J \u0010\u0098\u0003\u001a\u00030\u0098\u00012\b\u0010Ë\u0002\u001a\u00030\u0098\u0001H\u0016ø\u0001\u0000¢\u0006\u0006\b\u0099\u0003\u0010É\u0002J\u001f\u0010\u0098\u0003\u001a\u00020E2\b\u0010\u009a\u0003\u001a\u00030\u0090\u0002H\u0016ø\u0001\u0000¢\u0006\u0006\b\u009b\u0003\u0010\u009c\u0003J)\u0010\u009d\u0003\u001a\u00020E2\b\u0010±\u0002\u001a\u00030«\u00012\b\u0010\u009e\u0003\u001a\u00030¾\u0001H\u0016ø\u0001\u0000¢\u0006\u0006\b\u009f\u0003\u0010 \u0003J\u0012\u0010\u009d\u0003\u001a\u00020E2\u0007\u0010¡\u0003\u001a\u00020zH\u0016J\t\u0010¢\u0003\u001a\u00020EH\u0016J!\u0010£\u0003\u001a\u00020E2\u0007\u0010¤\u0003\u001a\u00020`2\u0007\u0010¥\u0003\u001a\u00020zH\u0000¢\u0006\u0003\b¦\u0003J\t\u0010§\u0003\u001a\u00020EH\u0014J\t\u0010¨\u0003\u001a\u00020zH\u0016J\t\u0010©\u0003\u001a\u00020EH\u0002J\u0012\u0010ª\u0003\u001a\u00020E2\u0007\u0010«\u0003\u001a\u00020DH\u0014J\u0016\u0010¬\u0003\u001a\u0005\u0018\u00010\u00ad\u00032\b\u0010®\u0003\u001a\u00030¯\u0003H\u0016J0\u0010°\u0003\u001a\u00020E2\b\u0010±\u0003\u001a\u00030²\u00032\b\u0010³\u0003\u001a\u00030\u0093\u00022\u0011\u0010´\u0003\u001a\f\u0012\u0007\u0012\u0005\u0018\u00010¶\u00030µ\u0003H\u0017J\u0013\u0010·\u0003\u001a\u00020E2\b\u0010\u0092\u0003\u001a\u00030«\u0001H\u0016J\t\u0010¸\u0003\u001a\u00020EH\u0014J\u0013\u0010¹\u0003\u001a\u00020E2\b\u0010Ý\u0002\u001a\u00030å\u0002H\u0014J\t\u0010º\u0003\u001a\u00020EH\u0016J\f\u0010»\u0003\u001a\u0005\u0018\u00010¼\u0003H\u0002J'\u0010½\u0003\u001a\u00020E2\u0007\u0010¾\u0003\u001a\u00020z2\u0007\u0010Î\u0002\u001a\u00020V2\n\u0010¿\u0003\u001a\u0005\u0018\u00010\u0086\u0003H\u0014J\u0018\u0010À\u0003\u001a\u00020E2\r\u0010\u0096\u0002\u001a\b0\u0097\u0002j\u0003`Á\u0003H\u0016J6\u0010Â\u0003\u001a\u00020E2\u0007\u0010Ã\u0003\u001a\u00020z2\u0007\u0010Ä\u0003\u001a\u00020V2\u0007\u0010Å\u0003\u001a\u00020V2\u0007\u0010Æ\u0003\u001a\u00020V2\u0007\u0010Ç\u0003\u001a\u00020VH\u0014J\u0013\u0010È\u0003\u001a\u00020E2\b\u0010±\u0002\u001a\u00030«\u0001H\u0016J\u0013\u0010É\u0003\u001a\u00020E2\b\u0010±\u0002\u001a\u00030«\u0001H\u0016J\u001b\u0010Ê\u0003\u001a\u00020E2\u0007\u0010Ë\u0003\u001a\u00020V2\u0007\u0010Ì\u0003\u001a\u00020VH\u0014J\u001f\u0010Í\u0003\u001a\u00020z2\b\u0010Î\u0003\u001a\u00030ÿ\u0002H\u0002ø\u0001\u0000¢\u0006\u0006\bÏ\u0003\u0010Ð\u0003J\u0013\u0010Ñ\u0003\u001a\u00020E2\b\u0010\u0092\u0003\u001a\u00030«\u0001H\u0016J\u001c\u0010Ò\u0003\u001a\u00020E2\b\u0010±\u0002\u001a\u00030«\u00012\u0007\u0010Ó\u0003\u001a\u00020VH\u0016J\u0013\u0010Ô\u0003\u001a\u00020E2\b\u0010\u0092\u0003\u001a\u00030«\u0001H\u0016J\u001c\u0010Õ\u0003\u001a\u00020E2\b\u0010±\u0002\u001a\u00030«\u00012\u0007\u0010Ó\u0003\u001a\u00020VH\u0016J\u001e\u0010Ö\u0003\u001a\u00020E2\n\u0010ï\u0002\u001a\u0005\u0018\u00010ð\u00022\u0007\u0010×\u0003\u001a\u00020VH\u0016J*\u0010Ø\u0003\u001a\u00020z2\n\u0010Î\u0003\u001a\u0005\u0018\u00010ÿ\u00022\n\u0010¿\u0003\u001a\u0005\u0018\u00010¼\u0003H\u0002ø\u0001\u0000¢\u0006\u0003\bÙ\u0003J.\u0010Ú\u0003\u001a\u00020E2\b\u0010±\u0002\u001a\u00030«\u00012\u0007\u0010ý\u0002\u001a\u00020z2\u0007\u0010Û\u0003\u001a\u00020z2\u0007\u0010Ü\u0003\u001a\u00020zH\u0016J%\u0010Ý\u0003\u001a\u00020E2\b\u0010±\u0002\u001a\u00030«\u00012\u0007\u0010ý\u0002\u001a\u00020z2\u0007\u0010Û\u0003\u001a\u00020zH\u0016J\u001d\u0010Þ\u0003\u001a\u00030ß\u00032\b\u0010é\u0002\u001a\u00030Ì\u00012\u0007\u0010à\u0003\u001a\u00020VH\u0017J\u0013\u0010á\u0003\u001a\u00020E2\b\u0010â\u0003\u001a\u00030ã\u0003H\u0016J\u0012\u0010ä\u0003\u001a\u00020E2\u0007\u0010£\u0001\u001a\u00020VH\u0016J.\u0010å\u0003\u001a\u00020E2\b\u0010æ\u0003\u001a\u00030\u0086\u00032\b\u0010ç\u0003\u001a\u00030è\u00032\u000f\u0010é\u0003\u001a\n\u0012\u0005\u0012\u00030ê\u00030µ\u0003H\u0016J\t\u0010ë\u0003\u001a\u00020EH\u0016J\u001c\u0010ì\u0003\u001a\u00020E2\u0011\u0010í\u0003\u001a\f\u0012\u0007\u0012\u0005\u0018\u00010ï\u00030î\u0003H\u0017J\u0012\u0010ð\u0003\u001a\u00020E2\u0007\u0010ñ\u0003\u001a\u00020zH\u0016J+\u0010ò\u0003\u001a\u00030Ó\u00022\u0007\u0010ó\u0003\u001a\u00020V2\u0007\u0010Ç\u0003\u001a\u00020VH\u0002ø\u0001\u0001ø\u0001\u0000¢\u0006\u0006\bô\u0003\u0010õ\u0003J\t\u0010ö\u0003\u001a\u00020EH\u0002J\u0013\u0010ö\u0003\u001a\u00020E2\b\u0010ç\u0002\u001a\u00030Ì\u0001H\u0002J\t\u0010÷\u0003\u001a\u00020EH\u0002J\u0018\u0010ø\u0003\u001a\u00020z2\u0007\u0010¤\u0003\u001a\u00020`H\u0000¢\u0006\u0003\bù\u0003J\u0018\u0010ú\u0003\u001a\u00020E2\r\u0010û\u0003\u001a\b\u0012\u0004\u0012\u00020E0gH\u0016J\u0013\u0010ü\u0003\u001a\u00020E2\b\u0010û\u0003\u001a\u00030ý\u0003H\u0016J\u0011\u0010þ\u0003\u001a\u00020E2\b\u0010\u0096\u0002\u001a\u00030°\u0002J\u0013\u0010ÿ\u0003\u001a\u00020E2\b\u0010\u0092\u0003\u001a\u00030«\u0001H\u0016J\u0007\u0010\u0080\u0004\u001a\u00020EJ\u001e\u0010\u0081\u0004\u001a\u00020z2\u0007\u0010Î\u0002\u001a\u00020V2\n\u0010¿\u0003\u001a\u0005\u0018\u00010\u0086\u0003H\u0016J\u0013\u0010\u0082\u0004\u001a\u00020E2\b\u0010±\u0002\u001a\u00030«\u0001H\u0016J\u0017\u0010Ü\u0003\u001a\u00020E2\f\b\u0002\u0010\u0083\u0004\u001a\u0005\u0018\u00010«\u0001H\u0002J \u0010\u0084\u0004\u001a\u00030\u0098\u00012\b\u0010\u0085\u0004\u001a\u00030\u0098\u0001H\u0016ø\u0001\u0000¢\u0006\u0006\b\u0086\u0004\u0010É\u0002J\u001f\u0010\u0087\u0004\u001a\u00020z2\b\u0010\u0080\u0003\u001a\u00030\u0081\u0003H\u0016ø\u0001\u0000¢\u0006\u0006\b\u0088\u0004\u0010\u0089\u0004J#\u0010\u008a\u0004\u001a\u00030\u0089\u00032\b\u0010ç\u0002\u001a\u00030Ì\u0001H\u0002ø\u0001\u0001ø\u0001\u0000¢\u0006\u0006\b\u008b\u0004\u0010\u008b\u0003J1\u0010\u008c\u0004\u001a\u00020E2\b\u0010ç\u0002\u001a\u00030Ì\u00012\u0007\u0010\u008d\u0004\u001a\u00020V2\b\u0010\u008e\u0004\u001a\u00030\u009a\u00012\t\b\u0002\u0010\u008f\u0004\u001a\u00020zH\u0002J\u0013\u0010\u0090\u0004\u001a\u00020E2\b\u0010\u0091\u0004\u001a\u00030\u009a\u0001H\u0016J\u001c\u0010\u0092\u0004\u001a\u00020E2\u0013\u0010\u0093\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020E0CJ\t\u0010\u0094\u0004\u001a\u00020zH\u0016JE\u0010\u0095\u0004\u001a\u00020z2\b\u0010\u0096\u0004\u001a\u00030\u0097\u00042\b\u0010\u0098\u0004\u001a\u00030\u0099\u00042\u001a\u0010\u009a\u0004\u001a\u0015\u0012\u0005\u0012\u00030\u009b\u0004\u0012\u0004\u0012\u00020E0C¢\u0006\u0003\b\u009c\u0004H\u0002ø\u0001\u0000¢\u0006\u0006\b\u009d\u0004\u0010\u009e\u0004JA\u0010\u009f\u0004\u001a\u00030 \u00042.\u0010¡\u0004\u001a)\b\u0001\u0012\u0005\u0012\u00030¢\u0004\u0012\f\u0012\n\u0012\u0005\u0012\u00030 \u00040£\u0004\u0012\u0007\u0012\u0005\u0018\u00010¤\u00040Ù\u0002¢\u0006\u0003\b\u009c\u0004H\u0096@¢\u0006\u0003\u0010¥\u0004J\t\u0010¦\u0004\u001a\u00020EH\u0002J\t\u0010§\u0004\u001a\u00020EH\u0002J\u000e\u0010¨\u0004\u001a\u00020z*\u00030«\u0001H\u0002J\u001b\u0010©\u0004\u001a\u00020V*\u00030Ó\u0002H\u0082\nø\u0001\u0000¢\u0006\u0006\bª\u0004\u0010«\u0004J\u001b\u0010¬\u0004\u001a\u00020V*\u00030Ó\u0002H\u0082\nø\u0001\u0000¢\u0006\u0006\b\u00ad\u0004\u0010«\u0004R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R/\u0010\u0017\u001a\u0004\u0018\u00010\u00162\b\u0010\u0015\u001a\u0004\u0018\u00010\u00168B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u001c\u0010\u001d\u001a\u0004\b\u0018\u0010\u0019\"\u0004\b\u001a\u0010\u001bR\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\u00020!X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#R\u0014\u0010$\u001a\u00020\f8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b%\u0010&R\u0016\u0010'\u001a\u0004\u0018\u00010(8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b)\u0010*R\u0016\u0010+\u001a\u0004\u0018\u00010,8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b-\u0010.R\u0014\u0010/\u001a\u000200X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b1\u00102R\u0010\u00103\u001a\u000204X\u0082\u0004¢\u0006\u0004\n\u0002\u00105R\u000e\u00106\u001a\u000207X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00108\u001a\u000209X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b:\u0010;R\u0014\u0010<\u001a\u00020=X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b>\u0010?R\u000e\u0010@\u001a\u00020AX\u0082\u0004¢\u0006\u0002\n\u0000R&\u0010B\u001a\u000e\u0012\u0004\u0012\u00020D\u0012\u0004\u0012\u00020E0CX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bF\u0010G\"\u0004\bH\u0010IR\u001a\u0010J\u001a\u00020KX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bL\u0010M\"\u0004\bN\u0010OR$\u0010\b\u001a\u00020\t2\u0006\u0010P\u001a\u00020\t@VX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bQ\u0010R\"\u0004\bS\u0010TR\u000e\u0010U\u001a\u00020VX\u0082\u000e¢\u0006\u0002\n\u0000R+\u0010X\u001a\u00020W2\u0006\u0010\u0015\u001a\u00020W8V@RX\u0096\u008e\u0002¢\u0006\u0012\n\u0004\b]\u0010\u001d\u001a\u0004\bY\u0010Z\"\u0004\b[\u0010\\R\u0014\u0010^\u001a\b\u0012\u0004\u0012\u00020`0_X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010a\u001a\u00020bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bc\u0010dR\u001c\u0010e\u001a\u0010\u0012\f\u0012\n\u0012\u0004\u0012\u00020E\u0018\u00010g0fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010h\u001a\u00020iX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bj\u0010kR+\u0010m\u001a\u00020l2\u0006\u0010\u0015\u001a\u00020l8V@RX\u0096\u008e\u0002¢\u0006\u0012\n\u0004\br\u0010\u001d\u001a\u0004\bn\u0010o\"\u0004\bp\u0010qR\u001c\u0010s\u001a\u00020t8\u0016X\u0097\u0004¢\u0006\u000e\n\u0000\u0012\u0004\bu\u0010v\u001a\u0004\bw\u0010xR\u000e\u0010y\u001a\u00020zX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010{\u001a\u00020|X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010}\u001a\u00020~X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\u007fR\u0018\u0010\u0080\u0001\u001a\u00030\u0081\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u0082\u0001\u0010\u0083\u0001R\u0018\u0010\u0084\u0001\u001a\u00030\u0085\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u0086\u0001\u0010\u0087\u0001R\u0017\u0010\u0088\u0001\u001a\u00020z8VX\u0096\u0004¢\u0006\b\u001a\u0006\b\u0089\u0001\u0010\u008a\u0001R\u000f\u0010\u008b\u0001\u001a\u00020zX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010\u008c\u0001\u001a\u00030\u008d\u00018VX\u0096\u0004¢\u0006\b\u001a\u0006\b\u008e\u0001\u0010\u008f\u0001R\u000f\u0010\u0090\u0001\u001a\u00020zX\u0082\u000e¢\u0006\u0002\n\u0000R\u0017\u0010\u0091\u0001\u001a\u00020z8VX\u0096\u0004¢\u0006\b\u001a\u0006\b\u0091\u0001\u0010\u008a\u0001R\u000f\u0010\u0092\u0001\u001a\u00020zX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0093\u0001\u001a\u00020zX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0094\u0001\u001a\u00030\u0095\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u000f\u0010\u0096\u0001\u001a\u00020zX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010\u0097\u0001\u001a\u00030\u0098\u0001X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\u007fR+\u0010\u0099\u0001\u001a\u00030\u009a\u00018\u0000@\u0000X\u0081\u000e¢\u0006\u0019\n\u0000\u0012\u0005\b\u009b\u0001\u0010v\u001a\u0006\b\u009c\u0001\u0010\u009d\u0001\"\u0006\b\u009e\u0001\u0010\u009f\u0001R\u0016\u0010 \u0001\u001a\t\u0012\u0004\u0012\u00020`0¡\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R3\u0010£\u0001\u001a\u00030¢\u00012\u0007\u0010\u0015\u001a\u00030¢\u00018V@RX\u0096\u008e\u0002¢\u0006\u0017\n\u0005\b¨\u0001\u0010\u001d\u001a\u0006\b¤\u0001\u0010¥\u0001\"\u0006\b¦\u0001\u0010§\u0001R\u001f\u0010©\u0001\u001a\n\u0012\u0005\u0012\u00030«\u00010ª\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b¬\u0001\u0010\u00ad\u0001R\u0010\u0010®\u0001\u001a\u00030¯\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010°\u0001\u001a\u00030±\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010²\u0001\u001a\u00030³\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010´\u0001\u001a\u00030\u009a\u00018VX\u0096\u0004¢\u0006\b\u001a\u0006\bµ\u0001\u0010\u009d\u0001R\u0018\u0010¶\u0001\u001a\u00030·\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b¸\u0001\u0010¹\u0001R\u0010\u0010º\u0001\u001a\u00030»\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u000f\u0010¼\u0001\u001a\u00020zX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010½\u0001\u001a\u0005\u0018\u00010¾\u0001X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0002\n\u0000R\u001d\u0010¿\u0001\u001a\u0010\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020E\u0018\u00010CX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010À\u0001\u001a\u00030Á\u00018VX\u0096\u0004¢\u0006\b\u001a\u0006\bÂ\u0001\u0010Ã\u0001R\u0018\u0010Ä\u0001\u001a\u00030Å\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\bÆ\u0001\u0010Ç\u0001R\u0010\u0010È\u0001\u001a\u00030É\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010Ê\u0001\u001a\n\u0012\u0004\u0012\u00020`\u0018\u00010_X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010Ë\u0001\u001a\u0005\u0018\u00010Ì\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010Í\u0001\u001a\u00020zX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010Î\u0001\u001a\u00030Ï\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\bÐ\u0001\u0010Ñ\u0001R\u0010\u0010Ò\u0001\u001a\u00030\u009a\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u0015\u0010Ó\u0001\u001a\b\u0012\u0004\u0012\u00020E0gX\u0082\u0004¢\u0006\u0002\n\u0000R\u0013\u0010Ô\u0001\u001a\u00030Õ\u0001X\u0082\u0004¢\u0006\u0005\n\u0003\u0010Ö\u0001R\u0018\u0010×\u0001\u001a\u00030«\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\bØ\u0001\u0010Ù\u0001R\u0018\u0010Ú\u0001\u001a\u00030Û\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\bÜ\u0001\u0010Ý\u0001R\u0010\u0010Þ\u0001\u001a\u00030ß\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010à\u0001\u001a\u00030\u0095\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010á\u0001\u001a\u0005\u0018\u00010â\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010ã\u0001\u001a\u00020z8@X\u0080\u0004¢\u0006\b\u001a\u0006\bä\u0001\u0010\u008a\u0001R\u0010\u0010å\u0001\u001a\u00030æ\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010ç\u0001\u001a\u00030è\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010é\u0001\u001a\u00030ê\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\bë\u0001\u0010ì\u0001R\u0010\u0010í\u0001\u001a\u00030î\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u000f\u0010ï\u0001\u001a\u00020VX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010ð\u0001\u001a\u00030ñ\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\bò\u0001\u0010ó\u0001R&\u0010ô\u0001\u001a\u00020zX\u0096\u000e¢\u0006\u0019\n\u0000\u0012\u0005\bõ\u0001\u0010v\u001a\u0006\bö\u0001\u0010\u008a\u0001\"\u0006\b÷\u0001\u0010ø\u0001R\u0018\u0010ù\u0001\u001a\u00030ú\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\bû\u0001\u0010ü\u0001R\u0018\u0010ý\u0001\u001a\u00030þ\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\bÿ\u0001\u0010\u0080\u0002R\u000f\u0010\u0081\u0002\u001a\u00020zX\u0082\u000e¢\u0006\u0002\n\u0000R!\u0010\u0082\u0002\u001a\u00030\u0083\u00028\u0016X\u0097\u0004¢\u0006\u0011\n\u0000\u0012\u0005\b\u0084\u0002\u0010v\u001a\u0006\b\u0085\u0002\u0010\u0086\u0002R \u0010\u0087\u0002\u001a\n\u0012\u0005\u0012\u00030\u0089\u00020\u0088\u0002X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0005\n\u0003\u0010\u008a\u0002R\u0018\u0010\u008b\u0002\u001a\u00030\u008c\u0002X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u008d\u0002\u0010\u008e\u0002R\u0019\u0010\u008f\u0002\u001a\u00030\u0090\u0002X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0005\n\u0003\u0010\u0091\u0002R\u0010\u0010\u0092\u0002\u001a\u00030\u0093\u0002X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0094\u0002\u001a\u00030\u0095\u0002X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u0096\u0002\u001a\u00030\u0097\u00028VX\u0096\u0004¢\u0006\b\u001a\u0006\b\u0098\u0002\u0010\u0099\u0002R\u0018\u0010\u009a\u0002\u001a\u00030\u009b\u0002X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u009c\u0002\u0010\u009d\u0002R\u0012\u0010\u009e\u0002\u001a\u0005\u0018\u00010\u009f\u0002X\u0082\u000e¢\u0006\u0002\n\u0000R\u0019\u0010 \u0002\u001a\u00030\u0090\u0002X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0005\n\u0003\u0010\u0091\u0002R!\u0010¡\u0002\u001a\u0004\u0018\u00010\u00168FX\u0086\u0084\u0002¢\u0006\u000f\n\u0006\b£\u0002\u0010¤\u0002\u001a\u0005\b¢\u0002\u0010\u0019R\u000f\u0010¥\u0002\u001a\u00020zX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010¦\u0002\u001a\u00030§\u00028VX\u0096\u0004¢\u0006\b\u001a\u0006\b¨\u0002\u0010©\u0002R\u0018\u0010ª\u0002\u001a\u00030\u0098\u0001X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\u007fR\u0019\u0010«\u0002\u001a\u00030\u0090\u0002X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0005\n\u0003\u0010\u0091\u0002R\u001b\u0010¬\u0002\u001a\u00020V*\u00020D8BX\u0082\u0004¢\u0006\b\u001a\u0006\b\u00ad\u0002\u0010®\u0002\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006°\u0004"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeView;", "Landroid/view/ViewGroup;", "Landroidx/compose/ui/node/Owner;", "Landroidx/compose/ui/platform/ViewRootForTest;", "Landroidx/compose/ui/input/pointer/MatrixPositionCalculator;", "Landroidx/lifecycle/DefaultLifecycleObserver;", "context", "Landroid/content/Context;", "coroutineContext", "Lkotlin/coroutines/CoroutineContext;", "(Landroid/content/Context;Lkotlin/coroutines/CoroutineContext;)V", "_androidViewsHandler", "Landroidx/compose/ui/platform/AndroidViewsHandler;", "_autofill", "Landroidx/compose/ui/autofill/AndroidAutofill;", "_autofillManager", "Landroidx/compose/ui/autofill/AndroidAutofillManager;", "get_autofillManager$ui_release", "()Landroidx/compose/ui/autofill/AndroidAutofillManager;", "_inputModeManager", "Landroidx/compose/ui/input/InputModeManagerImpl;", "<set-?>", "Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;", "_viewTreeOwners", "get_viewTreeOwners", "()Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;", "set_viewTreeOwners", "(Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;)V", "_viewTreeOwners$delegate", "Landroidx/compose/runtime/MutableState;", "_windowInfo", "Landroidx/compose/ui/platform/LazyWindowInfo;", "accessibilityManager", "Landroidx/compose/ui/platform/AndroidAccessibilityManager;", "getAccessibilityManager", "()Landroidx/compose/ui/platform/AndroidAccessibilityManager;", "androidViewsHandler", "getAndroidViewsHandler$ui_release", "()Landroidx/compose/ui/platform/AndroidViewsHandler;", "autofill", "Landroidx/compose/ui/autofill/Autofill;", "getAutofill", "()Landroidx/compose/ui/autofill/Autofill;", "autofillManager", "Landroidx/compose/ui/autofill/AutofillManager;", "getAutofillManager", "()Landroidx/compose/ui/autofill/AutofillManager;", "autofillTree", "Landroidx/compose/ui/autofill/AutofillTree;", "getAutofillTree", "()Landroidx/compose/ui/autofill/AutofillTree;", "bringIntoViewNode", "androidx/compose/ui/platform/AndroidComposeView$bringIntoViewNode$1", "Landroidx/compose/ui/platform/AndroidComposeView$bringIntoViewNode$1;", "canvasHolder", "Landroidx/compose/ui/graphics/CanvasHolder;", "clipboard", "Landroidx/compose/ui/platform/AndroidClipboard;", "getClipboard", "()Landroidx/compose/ui/platform/AndroidClipboard;", "clipboardManager", "Landroidx/compose/ui/platform/AndroidClipboardManager;", "getClipboardManager", "()Landroidx/compose/ui/platform/AndroidClipboardManager;", "composeAccessibilityDelegate", "Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;", "configurationChangeObserver", "Lkotlin/Function1;", "Landroid/content/res/Configuration;", "", "getConfigurationChangeObserver", "()Lkotlin/jvm/functions/Function1;", "setConfigurationChangeObserver", "(Lkotlin/jvm/functions/Function1;)V", "contentCaptureManager", "Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;", "getContentCaptureManager$ui_release", "()Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;", "setContentCaptureManager$ui_release", "(Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;)V", "value", "getCoroutineContext", "()Lkotlin/coroutines/CoroutineContext;", "setCoroutineContext", "(Lkotlin/coroutines/CoroutineContext;)V", "currentFontWeightAdjustment", "", "Landroidx/compose/ui/unit/Density;", "density", "getDensity", "()Landroidx/compose/ui/unit/Density;", "setDensity", "(Landroidx/compose/ui/unit/Density;)V", "density$delegate", "dirtyLayers", "", "Landroidx/compose/ui/node/OwnedLayer;", "dragAndDropManager", "Landroidx/compose/ui/draganddrop/AndroidDragAndDropManager;", "getDragAndDropManager", "()Landroidx/compose/ui/draganddrop/AndroidDragAndDropManager;", "endApplyChangesListeners", "Landroidx/collection/MutableObjectList;", "Lkotlin/Function0;", "focusOwner", "Landroidx/compose/ui/focus/FocusOwner;", "getFocusOwner", "()Landroidx/compose/ui/focus/FocusOwner;", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "fontFamilyResolver", "getFontFamilyResolver", "()Landroidx/compose/ui/text/font/FontFamily$Resolver;", "setFontFamilyResolver", "(Landroidx/compose/ui/text/font/FontFamily$Resolver;)V", "fontFamilyResolver$delegate", "fontLoader", "Landroidx/compose/ui/text/font/Font$ResourceLoader;", "getFontLoader$annotations", "()V", "getFontLoader", "()Landroidx/compose/ui/text/font/Font$ResourceLoader;", "forceUseMatrixCache", "", "globalLayoutListener", "Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;", "globalPosition", "Landroidx/compose/ui/unit/IntOffset;", "J", "graphicsContext", "Landroidx/compose/ui/graphics/GraphicsContext;", "getGraphicsContext", "()Landroidx/compose/ui/graphics/GraphicsContext;", "hapticFeedBack", "Landroidx/compose/ui/hapticfeedback/HapticFeedback;", "getHapticFeedBack", "()Landroidx/compose/ui/hapticfeedback/HapticFeedback;", "hasPendingMeasureOrLayout", "getHasPendingMeasureOrLayout", "()Z", "hoverExitReceived", "inputModeManager", "Landroidx/compose/ui/input/InputModeManager;", "getInputModeManager", "()Landroidx/compose/ui/input/InputModeManager;", "isDrawingContent", "isLifecycleInResumedState", "isPendingInteropViewLayoutChangeDispatch", "isRenderNodeCompatible", "keyInputModifier", "Landroidx/compose/ui/Modifier;", "keyboardModifiersRequireUpdate", "lastDownPointerPosition", "Landroidx/compose/ui/geometry/Offset;", "lastMatrixRecalculationAnimationTime", "", "getLastMatrixRecalculationAnimationTime$ui_release$annotations", "getLastMatrixRecalculationAnimationTime$ui_release", "()J", "setLastMatrixRecalculationAnimationTime$ui_release", "(J)V", "layerCache", "Landroidx/compose/ui/platform/WeakCache;", "Landroidx/compose/ui/unit/LayoutDirection;", "layoutDirection", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "setLayoutDirection", "(Landroidx/compose/ui/unit/LayoutDirection;)V", "layoutDirection$delegate", "layoutNodes", "Landroidx/collection/MutableIntObjectMap;", "Landroidx/compose/ui/node/LayoutNode;", "getLayoutNodes", "()Landroidx/collection/MutableIntObjectMap;", "legacyTextInputServiceAndroid", "Landroidx/compose/ui/text/input/TextInputServiceAndroid;", "matrixToWindow", "Landroidx/compose/ui/platform/CalculateMatrixToWindow;", "measureAndLayoutDelegate", "Landroidx/compose/ui/node/MeasureAndLayoutDelegate;", "measureIteration", "getMeasureIteration", "modifierLocalManager", "Landroidx/compose/ui/modifier/ModifierLocalManager;", "getModifierLocalManager", "()Landroidx/compose/ui/modifier/ModifierLocalManager;", "motionEventAdapter", "Landroidx/compose/ui/input/pointer/MotionEventAdapter;", "observationClearRequested", "onMeasureConstraints", "Landroidx/compose/ui/unit/Constraints;", "onViewTreeOwnersAvailable", "placementScope", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "getPlacementScope", "()Landroidx/compose/ui/layout/Placeable$PlacementScope;", "pointerIconService", "Landroidx/compose/ui/input/pointer/PointerIconService;", "getPointerIconService", "()Landroidx/compose/ui/input/pointer/PointerIconService;", "pointerInputEventProcessor", "Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;", "postponedDirtyLayers", "previousMotionEvent", "Landroid/view/MotionEvent;", "processingRequestFocusForNextNonChildView", "rectManager", "Landroidx/compose/ui/spatial/RectManager;", "getRectManager", "()Landroidx/compose/ui/spatial/RectManager;", "relayoutTime", "resendMotionEventOnLayout", "resendMotionEventRunnable", "androidx/compose/ui/platform/AndroidComposeView$resendMotionEventRunnable$1", "Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventRunnable$1;", "root", "getRoot", "()Landroidx/compose/ui/node/LayoutNode;", "rootForTest", "Landroidx/compose/ui/node/RootForTest;", "getRootForTest", "()Landroidx/compose/ui/node/RootForTest;", "rootSemanticsNode", "Landroidx/compose/ui/semantics/EmptySemanticsModifier;", "rotaryInputModifier", "scrollCapture", "Landroidx/compose/ui/scrollcapture/ScrollCapture;", "scrollCaptureInProgress", "getScrollCaptureInProgress$ui_release", "scrollChangedListener", "Landroid/view/ViewTreeObserver$OnScrollChangedListener;", "semanticsModifier", "Landroidx/compose/ui/semantics/EmptySemanticsElement;", "semanticsOwner", "Landroidx/compose/ui/semantics/SemanticsOwner;", "getSemanticsOwner", "()Landroidx/compose/ui/semantics/SemanticsOwner;", "sendHoverExitEvent", "Ljava/lang/Runnable;", "sensitiveComponentCount", "sharedDrawScope", "Landroidx/compose/ui/node/LayoutNodeDrawScope;", "getSharedDrawScope", "()Landroidx/compose/ui/node/LayoutNodeDrawScope;", "showLayoutBounds", "getShowLayoutBounds$annotations", "getShowLayoutBounds", "setShowLayoutBounds", "(Z)V", "snapshotObserver", "Landroidx/compose/ui/node/OwnerSnapshotObserver;", "getSnapshotObserver", "()Landroidx/compose/ui/node/OwnerSnapshotObserver;", "softwareKeyboardController", "Landroidx/compose/ui/platform/SoftwareKeyboardController;", "getSoftwareKeyboardController", "()Landroidx/compose/ui/platform/SoftwareKeyboardController;", "superclassInitComplete", "textInputService", "Landroidx/compose/ui/text/input/TextInputService;", "getTextInputService$annotations", "getTextInputService", "()Landroidx/compose/ui/text/input/TextInputService;", "textInputSessionMutex", "Landroidx/compose/ui/SessionMutex;", "Landroidx/compose/ui/platform/AndroidPlatformTextInputSession;", "Ljava/util/concurrent/atomic/AtomicReference;", "textToolbar", "Landroidx/compose/ui/platform/TextToolbar;", "getTextToolbar", "()Landroidx/compose/ui/platform/TextToolbar;", "tmpMatrix", "Landroidx/compose/ui/graphics/Matrix;", "[F", "tmpPositionArray", "", "touchModeChangeListener", "Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;", "view", "Landroid/view/View;", "getView", "()Landroid/view/View;", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "getViewConfiguration", "()Landroidx/compose/ui/platform/ViewConfiguration;", "viewLayersContainer", "Landroidx/compose/ui/platform/DrawChildContainer;", "viewToWindowMatrix", "viewTreeOwners", "getViewTreeOwners", "viewTreeOwners$delegate", "Landroidx/compose/runtime/State;", "wasMeasuredWithMultipleConstraints", "windowInfo", "Landroidx/compose/ui/platform/WindowInfo;", "getWindowInfo", "()Landroidx/compose/ui/platform/WindowInfo;", "windowPosition", "windowToViewMatrix", "fontWeightAdjustmentCompat", "getFontWeightAdjustmentCompat", "(Landroid/content/res/Configuration;)I", "addAndroidView", "Landroidx/compose/ui/viewinterop/AndroidViewHolder;", "layoutNode", "addExtraDataToAccessibilityNodeInfoHelper", "virtualViewId", "info", "Landroid/view/accessibility/AccessibilityNodeInfo;", "extraDataKey", "", "addView", "child", "params", "Landroid/view/ViewGroup$LayoutParams;", FirebaseAnalytics.Param.INDEX, "width", "height", "values", "Landroid/util/SparseArray;", "Landroid/view/autofill/AutofillValue;", "autofillSupported", "boundsUpdatesAccessibilityEventLoop", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "boundsUpdatesContentCaptureEventLoop", "calculateLocalPosition", "positionInWindow", "calculateLocalPosition-MK-Hz9U", "(J)J", "calculatePositionInWindow", "localPosition", "calculatePositionInWindow-MK-Hz9U", "canScrollHorizontally", "direction", "canScrollVertically", "clearChildInvalidObservations", "viewGroup", "convertMeasureSpec", "Lkotlin/ULong;", "measureSpec", "convertMeasureSpec-I7RO_PI", "(I)J", "createLayer", "drawBlock", "Lkotlin/Function2;", "Landroidx/compose/ui/graphics/Canvas;", "Lkotlin/ParameterName;", "name", "canvas", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "parentLayer", "invalidateParentLayer", "explicitLayer", "forceUseOldLayers", "decrementSensitiveComponentCount", "dispatchDraw", "Landroid/graphics/Canvas;", "dispatchGenericMotionEvent", "motionEvent", "dispatchHoverEvent", NotificationCompat.CATEGORY_EVENT, "dispatchKeyEvent", "Landroid/view/KeyEvent;", "dispatchKeyEventPreIme", "dispatchPendingInteropLayoutCallbacks", "dispatchProvideStructure", "structure", "Landroid/view/ViewStructure;", "dispatchTouchEvent", "drawAndroidView", "findNextNonChildView", "findViewByAccessibilityIdRootedAtCurrentView", "accessibilityId", "currentView", "findViewByAccessibilityIdTraversal", "focusSearch", "focused", "forceAccessibilityForTesting", "enable", "forceMeasureTheSubtree", "affectsLookahead", "getFocusDirection", "Landroidx/compose/ui/focus/FocusDirection;", "keyEvent", "Landroidx/compose/ui/input/key/KeyEvent;", "getFocusDirection-P8AzH3I", "(Landroid/view/KeyEvent;)Landroidx/compose/ui/focus/FocusDirection;", "getFocusedRect", "rect", "Landroid/graphics/Rect;", "getImportantForAutofill", "handleMotionEvent", "Landroidx/compose/ui/input/pointer/ProcessResult;", "handleMotionEvent-8iAsVTc", "(Landroid/view/MotionEvent;)I", "handleRotaryEvent", "hasChangedDevices", "lastEvent", "incrementSensitiveComponentCount", "invalidateDescendants", "invalidateLayers", "node", "invalidateLayoutNodeMeasurement", "isBadMotionEvent", "isDevicePressEvent", "isInBounds", "isPositionChanged", "localToScreen", "localToScreen-MK-Hz9U", "localTransform", "localToScreen-58bKbWc", "([F)V", "measureAndLayout", "constraints", "measureAndLayout-0kLqBqw", "(Landroidx/compose/ui/node/LayoutNode;J)V", "sendPointerUpdate", "measureAndLayoutForTest", "notifyLayerIsDirty", AdRevenueConstants.LAYER_KEY, "isDirty", "notifyLayerIsDirty$ui_release", "onAttachedToWindow", "onCheckIsTextEditor", "onClearFocusForOwner", "onConfigurationChanged", "newConfig", "onCreateInputConnection", "Landroid/view/inputmethod/InputConnection;", "outAttrs", "Landroid/view/inputmethod/EditorInfo;", "onCreateVirtualViewTranslationRequests", "virtualIds", "", "supportedFormats", "requestsCollector", "Ljava/util/function/Consumer;", "Landroid/view/translation/ViewTranslationRequest;", "onDetach", "onDetachedFromWindow", "onDraw", "onEndApplyChanges", "onFetchFocusRect", "Landroidx/compose/ui/geometry/Rect;", "onFocusChanged", "gainFocus", "previouslyFocusedRect", "onInteropViewLayoutChange", "Landroidx/compose/ui/viewinterop/InteropView;", "onLayout", "changed", CmcdData.STREAM_TYPE_LIVE, "t", "r", "b", "onLayoutChange", "onLayoutNodeDeactivated", "onMeasure", "widthMeasureSpec", "heightMeasureSpec", "onMoveFocusInChildren", "focusDirection", "onMoveFocusInChildren-3ESFkO8", "(I)Z", "onPostAttach", "onPostLayoutNodeReused", "oldSemanticsId", "onPreAttach", "onPreLayoutNodeReused", "onProvideAutofillVirtualStructure", DownloaderServiceMarshaller.PARAMS_FLAGS, "onRequestFocusForOwner", "onRequestFocusForOwner-7o62pno", "onRequestMeasure", "forceRequest", "scheduleMeasureAndLayout", "onRequestRelayout", "onResolvePointerIcon", "Landroid/view/PointerIcon;", "pointerIndex", "onResume", "owner", "Landroidx/lifecycle/LifecycleOwner;", "onRtlPropertiesChanged", "onScrollCaptureSearch", "localVisibleRect", "windowOffset", "Landroid/graphics/Point;", "targets", "Landroid/view/ScrollCaptureTarget;", "onSemanticsChange", "onVirtualViewTranslationResponses", "response", "Landroid/util/LongSparseArray;", "Landroid/view/translation/ViewTranslationResponse;", "onWindowFocusChanged", "hasWindowFocus", "pack", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "pack-ZIaKswc", "(II)J", "recalculateWindowPosition", "recalculateWindowViewTransforms", "recycle", "recycle$ui_release", "registerOnEndApplyChangesListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "registerOnLayoutCompletedListener", "Landroidx/compose/ui/node/Owner$OnLayoutCompletedListener;", "removeAndroidView", "requestAutofill", "requestClearInvalidObservations", "requestFocus", "requestOnPositionedCallback", "nodeToRemeasure", "screenToLocal", "positionOnScreen", "screenToLocal-MK-Hz9U", "sendKeyEvent", "sendKeyEvent-ZmokQxo", "(Landroid/view/KeyEvent;)Z", "sendMotionEvent", "sendMotionEvent-8iAsVTc", "sendSimulatedEvent", "action", "eventTime", "forceHover", "setAccessibilityEventBatchIntervalMillis", "intervalMillis", "setOnViewTreeOwnersAvailable", "callback", "shouldDelayChildPressedState", "startDrag", "transferData", "Landroidx/compose/ui/draganddrop/DragAndDropTransferData;", "decorationSize", "Landroidx/compose/ui/geometry/Size;", "drawDragDecoration", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "Lkotlin/ExtensionFunctionType;", "startDrag-12SF9DM", "(Landroidx/compose/ui/draganddrop/DragAndDropTransferData;JLkotlin/jvm/functions/Function1;)Z", "textInputSession", "", "session", "Landroidx/compose/ui/platform/PlatformTextInputSessionScope;", "Lkotlin/coroutines/Continuation;", "", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "updatePositionCacheAndDispatch", "updateWindowMetrics", "childSizeCanAffectParentSize", "component1", "component1-VKZWuLQ", "(J)I", "component2", "component2-VKZWuLQ", "Companion", "ViewTreeOwners", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ó\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0016\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u001d\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0018*\u0003-Ã\u0002\b\u0001\u0018\u0000 Ñ\u00042\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u00062\u00020\u0007:\u0004Ñ\u0004Ò\u0004B\u0017\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\f\u0010\rJ\b\u00103\u001a\u000204H\u0016J\u0017\u0010E\u001a\u00020\u00122\u0006\u0010F\u001a\u00020GH\u0016¢\u0006\u0004\bH\u0010IJ\n\u0010J\u001a\u0004\u0018\u00010KH\u0016J\u0012\u0010N\u001a\u0004\u0018\u00010\u00182\u0006\u0010O\u001a\u000204H\u0002JA\u0010\u0085\u0002\u001a\u00030\u0086\u00022.\u0010\u0087\u0002\u001a)\b\u0001\u0012\u0005\u0012\u00030\u0089\u0002\u0012\f\u0012\n\u0012\u0005\u0012\u00030\u0086\u00020\u008a\u0002\u0012\u0007\u0012\u0005\u0018\u00010\u008b\u00020\u0088\u0002¢\u0006\u0003\b\u008c\u0002H\u0096@¢\u0006\u0003\u0010\u008d\u0002J\u0014\u0010Ì\u0002\u001a\u00030\u0098\u00012\b\u0010Í\u0002\u001a\u00030Î\u0002H\u0016J\u0014\u0010Ï\u0002\u001a\u00030\u0098\u00012\b\u0010Ð\u0002\u001a\u00030Ñ\u0002H\u0016J/\u0010Ö\u0002\u001a\u00030\u0098\u00012\b\u0010×\u0002\u001a\u00030Î\u00022\b\u0010Ø\u0002\u001a\u00030Ù\u00022\u000f\u0010Ú\u0002\u001a\n\u0012\u0005\u0012\u00030Ü\u00020Û\u0002H\u0016J\u0014\u0010Ý\u0002\u001a\u00030\u0098\u00012\b\u0010Þ\u0002\u001a\u00030ß\u0002H\u0016J\u001e\u0010à\u0002\u001a\u0004\u0018\u00010\u00182\t\u0010á\u0002\u001a\u0004\u0018\u00010\u00182\u0006\u0010O\u001a\u000204H\u0016J\u001d\u0010â\u0002\u001a\u00020\u00122\u0006\u0010O\u001a\u0002042\n\u0010ã\u0002\u001a\u0005\u0018\u00010Î\u0002H\u0016J$\u0010ä\u0002\u001a\u00020\u00122\b\u0010F\u001a\u0004\u0018\u00010G2\t\u0010ã\u0002\u001a\u0004\u0018\u00010KH\u0016¢\u0006\u0003\bå\u0002J\n\u0010æ\u0002\u001a\u00030\u0098\u0001H\u0016J'\u0010ç\u0002\u001a\u00030\u0098\u00012\u0007\u0010è\u0002\u001a\u00020\u00122\u0006\u0010O\u001a\u0002042\n\u0010ã\u0002\u001a\u0005\u0018\u00010Î\u0002H\u0014J\u0013\u0010é\u0002\u001a\u00030\u0098\u00012\u0007\u0010ê\u0002\u001a\u00020\u0012H\u0016J\u001c\u0010ë\u0002\u001a\u00020\u00122\b\u0010ì\u0002\u001a\u00030í\u0002H\u0016¢\u0006\u0006\bî\u0002\u0010ï\u0002J\u0013\u0010ð\u0002\u001a\u00020\u00122\b\u0010ñ\u0002\u001a\u00030ò\u0002H\u0016J\u0013\u0010ó\u0002\u001a\u00020\u00122\b\u0010ô\u0002\u001a\u00030õ\u0002H\u0016J\u0013\u0010ö\u0002\u001a\u00020\u00122\b\u0010ô\u0002\u001a\u00030õ\u0002H\u0016J\u0013\u0010÷\u0002\u001a\u00030\u0098\u00012\u0007\u0010ø\u0002\u001a\u00020\u0012H\u0016J\u0014\u0010ù\u0002\u001a\u00030\u0098\u00012\b\u0010ú\u0002\u001a\u00030Ê\u0001H\u0016J\u0013\u0010û\u0002\u001a\u00030\u0098\u00012\u0007\u0010ü\u0002\u001a\u00020\\H\u0016J\u0013\u0010ý\u0002\u001a\u00030\u0098\u00012\u0007\u0010ü\u0002\u001a\u00020\\H\u0016J\u0013\u0010þ\u0002\u001a\u00030\u0098\u00012\u0007\u0010ü\u0002\u001a\u00020\\H\u0016J\u0013\u0010ÿ\u0002\u001a\u00030\u0098\u00012\u0007\u0010ü\u0002\u001a\u00020\\H\u0016J\b\u0010\u0080\u0003\u001a\u00030\u0098\u0001J\n\u0010\u0081\u0003\u001a\u00030\u0098\u0001H\u0016J\u001b\u0010\u0082\u0003\u001a\u00030\u0098\u00012\u000f\u0010\u0083\u0003\u001a\n\u0012\u0005\u0012\u00030\u0098\u00010¾\u0002H\u0016JD\u0010\u0084\u0003\u001a\u00020\u00122\b\u0010\u0085\u0003\u001a\u00030\u0086\u00032\b\u0010\u0087\u0003\u001a\u00030\u0088\u00032\u001c\u0010\u0089\u0003\u001a\u0017\u0012\u0005\u0012\u00030\u008a\u0003\u0012\u0005\u0012\u00030\u0098\u00010\u0096\u0001¢\u0006\u0003\b\u008c\u0002H\u0002¢\u0006\u0006\b\u008b\u0003\u0010\u008c\u0003J\u0013\u0010\u008d\u0003\u001a\u00030\u0098\u00012\u0007\u0010\u008e\u0003\u001a\u00020\u0001H\u0002J'\u0010\u008f\u0003\u001a\u00030\u0098\u00012\u0007\u0010\u0090\u0003\u001a\u0002042\b\u0010\u0091\u0003\u001a\u00030\u0092\u00032\b\u0010\u0093\u0003\u001a\u00030\u0094\u0003H\u0002J\u0015\u0010\u0095\u0003\u001a\u00030\u0098\u00012\t\u0010\u0096\u0003\u001a\u0004\u0018\u00010\u0018H\u0016J\u001e\u0010\u0095\u0003\u001a\u00030\u0098\u00012\t\u0010\u0096\u0003\u001a\u0004\u0018\u00010\u00182\u0007\u0010\u0097\u0003\u001a\u000204H\u0016J'\u0010\u0095\u0003\u001a\u00030\u0098\u00012\t\u0010\u0096\u0003\u001a\u0004\u0018\u00010\u00182\u0007\u0010\u0098\u0003\u001a\u0002042\u0007\u0010\u0099\u0003\u001a\u000204H\u0016J!\u0010\u0095\u0003\u001a\u00030\u0098\u00012\t\u0010\u0096\u0003\u001a\u0004\u0018\u00010\u00182\n\u0010\u009a\u0003\u001a\u0005\u0018\u00010\u009b\u0003H\u0016J*\u0010\u0095\u0003\u001a\u00030\u0098\u00012\t\u0010\u0096\u0003\u001a\u0004\u0018\u00010\u00182\u0007\u0010\u0097\u0003\u001a\u0002042\n\u0010\u009a\u0003\u001a\u0005\u0018\u00010\u009b\u0003H\u0016J\u001a\u0010\u009c\u0003\u001a\u00030\u0098\u00012\u0007\u0010\u0017\u001a\u00030\u009d\u00032\u0007\u0010\u009e\u0003\u001a\u00020\\J\u0011\u0010\u009f\u0003\u001a\u00030\u0098\u00012\u0007\u0010\u0017\u001a\u00030\u009d\u0003J\u001b\u0010 \u0003\u001a\u00030\u0098\u00012\u0007\u0010\u0017\u001a\u00030\u009d\u00032\b\u0010¡\u0003\u001a\u00030¢\u0003J\u0017\u0010£\u0003\u001a\u00030\u0098\u00012\u000b\b\u0002\u0010¤\u0003\u001a\u0004\u0018\u00010\\H\u0002J\r\u0010¥\u0003\u001a\u00020\u0012*\u00020\\H\u0002J\u0013\u0010¦\u0003\u001a\u00030\u0098\u00012\u0007\u0010§\u0003\u001a\u00020\u0012H\u0016J&\u0010¦\u0003\u001a\u00030\u0098\u00012\u0007\u0010\u009e\u0003\u001a\u00020\\2\b\u0010¨\u0003\u001a\u00030Å\u0001H\u0016¢\u0006\u0006\b©\u0003\u0010ª\u0003J\n\u0010«\u0003\u001a\u00030\u0098\u0001H\u0002J\u001c\u0010¬\u0003\u001a\u00030\u0098\u00012\u0007\u0010\u009e\u0003\u001a\u00020\\2\u0007\u0010\u00ad\u0003\u001a\u00020\u0012H\u0016J.\u0010®\u0003\u001a\u00030\u0098\u00012\u0007\u0010\u009e\u0003\u001a\u00020\\2\u0007\u0010\u00ad\u0003\u001a\u00020\u00122\u0007\u0010¯\u0003\u001a\u00020\u00122\u0007\u0010£\u0003\u001a\u00020\u0012H\u0016J%\u0010°\u0003\u001a\u00030\u0098\u00012\u0007\u0010\u009e\u0003\u001a\u00020\\2\u0007\u0010\u00ad\u0003\u001a\u00020\u00122\u0007\u0010¯\u0003\u001a\u00020\u0012H\u0016J\u0013\u0010±\u0003\u001a\u00030\u0098\u00012\u0007\u0010\u009e\u0003\u001a\u00020\\H\u0016J\n\u0010²\u0003\u001a\u00030\u0098\u0001H\u0016J\u0015\u0010³\u0003\u001a\u00030\u0098\u00012\t\u0010´\u0003\u001a\u0004\u0018\u00010nH\u0016J\u001c\u0010µ\u0003\u001a\u00030\u0098\u00012\u0007\u0010¶\u0003\u001a\u0002042\u0007\u0010·\u0003\u001a\u000204H\u0014J\u0018\u0010¸\u0003\u001a\u000204*\u00030¹\u0003H\u0082\n¢\u0006\u0006\bº\u0003\u0010»\u0003J\u0018\u0010¼\u0003\u001a\u000204*\u00030¹\u0003H\u0082\n¢\u0006\u0006\b½\u0003\u0010»\u0003J%\u0010¾\u0003\u001a\u00030¹\u00032\u0007\u0010¿\u0003\u001a\u0002042\u0007\u0010À\u0003\u001a\u000204H\u0002¢\u0006\u0006\bÁ\u0003\u0010Â\u0003J\u001c\u0010Ã\u0003\u001a\u00030¹\u00032\u0007\u0010Ä\u0003\u001a\u000204H\u0002¢\u0006\u0006\bÅ\u0003\u0010Æ\u0003J7\u0010Ç\u0003\u001a\u00030\u0098\u00012\u0007\u0010È\u0003\u001a\u00020\u00122\u0007\u0010É\u0003\u001a\u0002042\u0007\u0010Ê\u0003\u001a\u0002042\u0007\u0010Ë\u0003\u001a\u0002042\u0007\u0010À\u0003\u001a\u000204H\u0014J\n\u0010Í\u0003\u001a\u00030\u0098\u0001H\u0002J\u0014\u0010Î\u0003\u001a\u00030\u0098\u00012\b\u0010¡\u0003\u001a\u00030¢\u0003H\u0014Jl\u0010Ï\u0003\u001a\u00030\u008d\u00012C\u0010Ð\u0003\u001a>\u0012\u0017\u0012\u00150Ñ\u0003¢\u0006\u000f\bÒ\u0003\u0012\n\bÓ\u0003\u0012\u0005\b\b(¡\u0003\u0012\u0019\u0012\u0017\u0018\u00010Ô\u0003¢\u0006\u000f\bÒ\u0003\u0012\n\bÓ\u0003\u0012\u0005\b\b(Õ\u0003\u0012\u0005\u0012\u00030\u0098\u00010\u0088\u00022\u000f\u0010Ö\u0003\u001a\n\u0012\u0005\u0012\u00030\u0098\u00010¾\u00022\n\u0010×\u0003\u001a\u0005\u0018\u00010Ô\u0003H\u0016J\u0019\u0010Ø\u0003\u001a\u00020\u00122\b\u0010Ù\u0003\u001a\u00030\u008d\u0001H\u0000¢\u0006\u0003\bÚ\u0003J\n\u0010Û\u0003\u001a\u00030\u0098\u0001H\u0016J\u0013\u0010Ü\u0003\u001a\u00030\u0098\u00012\u0007\u0010\u009e\u0003\u001a\u00020\\H\u0016J\u0013\u0010Ý\u0003\u001a\u00030\u0098\u00012\u0007\u0010\u009e\u0003\u001a\u00020\\H\u0016J\u001c\u0010Þ\u0003\u001a\u00030\u0098\u00012\u0007\u0010\u009e\u0003\u001a\u00020\\2\u0007\u0010ß\u0003\u001a\u000204H\u0016J\u001c\u0010à\u0003\u001a\u00030\u0098\u00012\u0007\u0010\u009e\u0003\u001a\u00020\\2\u0007\u0010ß\u0003\u001a\u000204H\u0016J\u0017\u0010á\u0003\u001a\u00030\u0098\u00012\u000b\u0010\u0017\u001a\u00070\u0018j\u0003`â\u0003H\u0016J\u0014\u0010ã\u0003\u001a\u00030\u0098\u00012\b\u0010\u0083\u0003\u001a\u00030ä\u0003H\u0016J\u0014\u0010å\u0003\u001a\u00030\u0098\u00012\b\u0010¡\u0003\u001a\u00030¢\u0003H\u0014J#\u0010æ\u0003\u001a\u00030\u0098\u00012\b\u0010Ù\u0003\u001a\u00030\u008d\u00012\u0007\u0010ç\u0003\u001a\u00020\u0012H\u0000¢\u0006\u0003\bè\u0003J \u0010é\u0003\u001a\u00030\u0098\u00012\u0016\u0010ê\u0003\u001a\u0011\u0012\u0005\u0012\u00030à\u0001\u0012\u0005\u0012\u00030\u0098\u00010\u0096\u0001J\u0011\u0010ë\u0003\u001a\u00030\u0098\u0001H\u0086@¢\u0006\u0003\u0010ì\u0003J\u0011\u0010í\u0003\u001a\u00030\u0098\u0001H\u0086@¢\u0006\u0003\u0010ì\u0003J\u0013\u0010î\u0003\u001a\u00030\u0098\u00012\u0007\u0010ü\u0002\u001a\u00020\\H\u0002J\u0013\u0010ï\u0003\u001a\u00030\u0098\u00012\u0007\u0010ü\u0002\u001a\u00020\\H\u0002J\n\u0010ð\u0003\u001a\u00030\u0098\u0001H\u0016J\n\u0010ñ\u0003\u001a\u00030\u0098\u0001H\u0014J\n\u0010ò\u0003\u001a\u00030\u0098\u0001H\u0014J\u001f\u0010ó\u0003\u001a\u00030\u0098\u00012\n\u0010Ð\u0002\u001a\u0005\u0018\u00010Ñ\u00022\u0007\u0010ô\u0003\u001a\u000204H\u0016J\u001b\u0010£\u0001\u001a\u00030\u0098\u00012\u000f\u0010õ\u0003\u001a\n\u0012\u0005\u0012\u00030÷\u00030ö\u0003H\u0016J1\u0010ø\u0003\u001a\u00030\u0098\u00012\b\u0010ù\u0003\u001a\u00030ú\u00032\b\u0010û\u0003\u001a\u00030Ò\u00012\u0011\u0010ü\u0003\u001a\f\u0012\u0007\u0012\u0005\u0018\u00010ý\u00030Û\u0002H\u0017J\u001d\u0010þ\u0003\u001a\u00030\u0098\u00012\u0011\u0010ÿ\u0003\u001a\f\u0012\u0007\u0012\u0005\u0018\u00010\u0081\u00040\u0080\u0004H\u0017J\u0013\u0010\u0082\u0004\u001a\u00020\u00122\b\u0010\u0083\u0004\u001a\u00030¸\u0002H\u0016J\u0013\u0010\u0084\u0004\u001a\u00020\u00122\b\u0010\u0083\u0004\u001a\u00030¸\u0002H\u0016J\u0013\u0010\u0085\u0004\u001a\u00020\u00122\b\u0010ô\u0002\u001a\u00030¸\u0002H\u0002J\u001d\u0010\u0086\u0004\u001a\u00030\u0087\u00042\b\u0010\u0083\u0004\u001a\u00030¸\u0002H\u0002¢\u0006\u0006\b\u0088\u0004\u0010\u0089\u0004J\u001d\u0010\u008a\u0004\u001a\u00020\u00122\b\u0010ô\u0002\u001a\u00030¸\u00022\b\u0010\u008b\u0004\u001a\u00030¸\u0002H\u0002J\u0013\u0010\u008c\u0004\u001a\u00020\u00122\b\u0010ô\u0002\u001a\u00030¸\u0002H\u0002J\u001d\u0010\u008d\u0004\u001a\u00030\u0087\u00042\b\u0010\u0083\u0004\u001a\u00030¸\u0002H\u0002¢\u0006\u0006\b\u008e\u0004\u0010\u0089\u0004J2\u0010\u008f\u0004\u001a\u00030\u0098\u00012\b\u0010\u0083\u0004\u001a\u00030¸\u00022\u0007\u0010\u0090\u0004\u001a\u0002042\b\u0010\u0091\u0004\u001a\u00030Ê\u00012\t\b\u0002\u0010\u0092\u0004\u001a\u00020\u0012H\u0002J\u0011\u0010\u0093\u0004\u001a\u00020\u00122\u0006\u0010O\u001a\u000204H\u0016J\u0011\u0010\u0094\u0004\u001a\u00020\u00122\u0006\u0010O\u001a\u000204H\u0016J\u0013\u0010\u0095\u0004\u001a\u00020\u00122\b\u0010\u0083\u0004\u001a\u00030¸\u0002H\u0002J\u001b\u0010\u0096\u0004\u001a\u00020\u000f2\u0007\u0010\u0097\u0004\u001a\u00020\u000fH\u0016¢\u0006\u0006\b\u0098\u0004\u0010\u0099\u0004J\u001d\u0010\u0096\u0004\u001a\u00030\u0098\u00012\b\u0010\u009a\u0004\u001a\u00030Ô\u0001H\u0016¢\u0006\u0006\b\u009b\u0004\u0010\u009c\u0004J\u001b\u0010\u009d\u0004\u001a\u00020\u000f2\u0007\u0010\u009e\u0004\u001a\u00020\u000fH\u0016¢\u0006\u0006\b\u009f\u0004\u0010\u0099\u0004J\n\u0010 \u0004\u001a\u00030\u0098\u0001H\u0002J\u0014\u0010 \u0004\u001a\u00030\u0098\u00012\b\u0010\u0083\u0004\u001a\u00030¸\u0002H\u0002J\n\u0010¡\u0004\u001a\u00030\u0098\u0001H\u0002J\n\u0010¢\u0004\u001a\u00030\u0098\u0001H\u0002J\t\u0010£\u0004\u001a\u00020\u0012H\u0016J\u0016\u0010¤\u0004\u001a\u0005\u0018\u00010¥\u00042\b\u0010¦\u0004\u001a\u00030§\u0004H\u0016J\u001b\u0010¨\u0004\u001a\u00020\u000f2\u0007\u0010©\u0004\u001a\u00020\u000fH\u0016¢\u0006\u0006\bª\u0004\u0010\u0099\u0004J\u001b\u0010«\u0004\u001a\u00020\u000f2\u0007\u0010\u0097\u0004\u001a\u00020\u000fH\u0016¢\u0006\u0006\b¬\u0004\u0010\u0099\u0004J\u0014\u0010\u00ad\u0004\u001a\u00030\u0098\u00012\b\u0010®\u0004\u001a\u00030\u0097\u0001H\u0014J\u0013\u0010¯\u0004\u001a\u00030\u0098\u00012\u0007\u0010\u009f\u0002\u001a\u000204H\u0016J\t\u0010°\u0004\u001a\u00020\u0012H\u0002J\u0013\u0010±\u0004\u001a\u00020\u00122\b\u0010ô\u0002\u001a\u00030¸\u0002H\u0016J\u0013\u0010²\u0004\u001a\u00020\u00122\b\u0010ô\u0002\u001a\u00030¸\u0002H\u0002J\u0013\u0010³\u0004\u001a\u00020\u00122\b\u0010ô\u0002\u001a\u00030¸\u0002H\u0002J\u001d\u0010´\u0004\u001a\u0004\u0018\u00010\u00182\u0007\u0010µ\u0004\u001a\u0002042\u0007\u0010¶\u0004\u001a\u00020\u0018H\u0002J\u001d\u0010·\u0004\u001a\u00030¸\u00042\b\u0010ô\u0002\u001a\u00030¸\u00022\u0007\u0010¹\u0004\u001a\u000204H\u0017J\u0012\u0010¾\u0004\u001a\u0004\u0018\u00010\u00182\u0007\u0010µ\u0004\u001a\u000204J\t\u0010À\u0004\u001a\u00020\u0012H\u0016J\n\u0010Â\u0004\u001a\u00030\u0098\u0001H\u0016J\n\u0010Ã\u0004\u001a\u00030\u0098\u0001H\u0016J\n\u0010Å\u0004\u001a\u00030\u0098\u0001H\u0016J\n\u0010Æ\u0004\u001a\u00030\u0098\u0001H\u0016J\u001b\u0010Ê\u0004\u001a\u00030\u0098\u00012\u000f\u0010Ë\u0004\u001a\n\u0012\u0005\u0012\u00030\u0098\u00010¾\u0002H\u0016J\u0014\u0010Ì\u0004\u001a\u00030\u0098\u00012\b\u0010Í\u0004\u001a\u00030À\u0002H\u0017J\u001c\u0010Î\u0004\u001a\u00030\u0098\u00012\u0007\u0010Ï\u0004\u001a\u00020\u000fH\u0016¢\u0006\u0006\bÐ\u0004\u0010Ü\u0001R\u0010\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\u00020\u0014X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0014\u0010\u0017\u001a\u00020\u00188VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0019\u0010\u001aR+\u0010\u001d\u001a\u00020\u001c2\u0006\u0010\u001b\u001a\u00020\u001c8V@RX\u0096\u008e\u0002¢\u0006\u0012\n\u0004\b\"\u0010#\u001a\u0004\b\u001e\u0010\u001f\"\u0004\b \u0010!R\u000e\u0010$\u001a\u00020\u0018X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010%\u001a\u00020\u0012X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u000e\u0010(\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020+X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0004\n\u0002\u0010.R\u0014\u0010/\u001a\u000200X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b1\u00102R$\u0010\n\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b@VX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b6\u00107\"\u0004\b8\u00109R\u0014\u0010:\u001a\u00020;X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b<\u0010=R\u000e\u0010>\u001a\u00020?X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010@\u001a\u00020A8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bB\u0010CR\u000e\u0010D\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010L\u001a\u00020MX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010P\u001a\u00020MX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010Q\u001a\u00020RX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010S\u001a\u00020TX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bU\u0010VR\u0011\u0010W\u001a\u00020X¢\u0006\b\n\u0000\u001a\u0004\bY\u0010ZR\u001a\u0010[\u001a\u00020\\X\u0096\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b]\u0010^\u001a\u0004\b_\u0010`R\u001a\u0010a\u001a\b\u0012\u0004\u0012\u00020\\0bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bc\u0010dR\u0014\u0010e\u001a\u00020fX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bg\u0010hR\u0014\u0010i\u001a\u00020jX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bk\u0010lR\u001c\u0010m\u001a\u0004\u0018\u00010nX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bo\u0010p\"\u0004\bq\u0010rR\u0014\u0010s\u001a\u00020tX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bu\u0010vR\u000e\u0010w\u001a\u00020xX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010y\u001a\u00020zX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b{\u0010|\"\u0004\b}\u0010~R\u0017\u0010\u007f\u001a\u00030\u0080\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u0081\u0001\u0010\u0082\u0001R\u0018\u0010\u0083\u0001\u001a\u00030\u0084\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u0085\u0001\u0010\u0086\u0001R\u0018\u0010\u0087\u0001\u001a\u00030\u0088\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u0089\u0001\u0010\u008a\u0001R\u0017\u0010\u008b\u0001\u001a\n\u0012\u0005\u0012\u00030\u008d\u00010\u008c\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0019\u0010\u008e\u0001\u001a\f\u0012\u0005\u0012\u00030\u008d\u0001\u0018\u00010\u008c\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u008f\u0001\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0090\u0001\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0091\u0001\u001a\u00030\u0092\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0093\u0001\u001a\u00030\u0094\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R.\u0010\u0095\u0001\u001a\u0011\u0012\u0005\u0012\u00030\u0097\u0001\u0012\u0005\u0012\u00030\u0098\u00010\u0096\u0001X\u0086\u000e¢\u0006\u0012\n\u0000\u001a\u0006\b\u0099\u0001\u0010\u009a\u0001\"\u0006\b\u009b\u0001\u0010\u009c\u0001R\u0012\u0010\u009d\u0001\u001a\u0005\u0018\u00010\u009e\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u009f\u0001\u001a\u0005\u0018\u00010 \u0001X\u0080\u0004¢\u0006\n\n\u0000\u001a\u0006\b¡\u0001\u0010¢\u0001R\u001a\u0010£\u0001\u001a\u0005\u0018\u00010¤\u00018VX\u0096\u0004¢\u0006\b\u001a\u0006\b¥\u0001\u0010¦\u0001R\u001a\u0010§\u0001\u001a\u0005\u0018\u00010¨\u00018VX\u0096\u0004¢\u0006\b\u001a\u0006\b©\u0001\u0010ª\u0001R\u000f\u0010«\u0001\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010¬\u0001\u001a\u00030\u00ad\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b®\u0001\u0010¯\u0001R\u0018\u0010°\u0001\u001a\u00030±\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b²\u0001\u0010³\u0001R\u0018\u0010´\u0001\u001a\u00030µ\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b¶\u0001\u0010·\u0001R'\u0010¸\u0001\u001a\u00020\u00128VX\u0096\u000e¢\u0006\u0018\n\u0000\u0012\u0005\b¹\u0001\u0010^\u001a\u0005\bº\u0001\u0010'\"\u0006\b»\u0001\u0010¼\u0001R\u0012\u0010½\u0001\u001a\u0005\u0018\u00010¾\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010¿\u0001\u001a\u00030¾\u00018@X\u0080\u0004¢\u0006\b\u001a\u0006\bÀ\u0001\u0010Á\u0001R\u0012\u0010Â\u0001\u001a\u0005\u0018\u00010Ã\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010Ä\u0001\u001a\u0005\u0018\u00010Å\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010Æ\u0001\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010Ç\u0001\u001a\u00030È\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010É\u0001\u001a\u00030Ê\u00018VX\u0096\u0004¢\u0006\b\u001a\u0006\bË\u0001\u0010Ì\u0001R\u0016\u0010Í\u0001\u001a\u00020\u00128VX\u0096\u0004¢\u0006\u0007\u001a\u0005\bÎ\u0001\u0010'R\u0012\u0010Ï\u0001\u001a\u00030Ð\u0001X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0010R\u0010\u0010Ñ\u0001\u001a\u00030Ò\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0013\u0010Ó\u0001\u001a\u00030Ô\u0001X\u0082\u0004¢\u0006\u0005\n\u0003\u0010Õ\u0001R\u0013\u0010Ö\u0001\u001a\u00030Ô\u0001X\u0082\u0004¢\u0006\u0005\n\u0003\u0010Õ\u0001R\u0013\u0010×\u0001\u001a\u00030Ô\u0001X\u0082\u0004¢\u0006\u0005\n\u0003\u0010Õ\u0001R+\u0010Ø\u0001\u001a\u00030Ê\u00018\u0000@\u0000X\u0081\u000e¢\u0006\u0019\n\u0000\u0012\u0005\bÙ\u0001\u0010^\u001a\u0006\bÚ\u0001\u0010Ì\u0001\"\u0006\bÛ\u0001\u0010Ü\u0001R\u000f\u0010Ý\u0001\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010Þ\u0001\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0010R\u000f\u0010ß\u0001\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R7\u0010á\u0001\u001a\u0005\u0018\u00010à\u00012\t\u0010\u001b\u001a\u0005\u0018\u00010à\u00018B@BX\u0082\u008e\u0002¢\u0006\u0017\n\u0005\bæ\u0001\u0010#\u001a\u0006\bâ\u0001\u0010ã\u0001\"\u0006\bä\u0001\u0010å\u0001R#\u0010ç\u0001\u001a\u0005\u0018\u00010à\u00018FX\u0086\u0084\u0002¢\u0006\u0010\n\u0006\bé\u0001\u0010ê\u0001\u001a\u0006\bè\u0001\u0010ã\u0001R \u0010ë\u0001\u001a\u0013\u0012\u0005\u0012\u00030à\u0001\u0012\u0005\u0012\u00030\u0098\u0001\u0018\u00010\u0096\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010ì\u0001\u001a\u00030í\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010î\u0001\u001a\u00030ï\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010ð\u0001\u001a\u00030ñ\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010ò\u0001\u001a\u00030ó\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R!\u0010ô\u0001\u001a\u00030õ\u00018\u0016X\u0097\u0004¢\u0006\u0011\n\u0000\u0012\u0005\bö\u0001\u0010^\u001a\u0006\b÷\u0001\u0010ø\u0001R\u001a\u0010ù\u0001\u001a\n\u0012\u0005\u0012\u00030û\u00010ú\u0001X\u0082\u0004¢\u0006\u0005\n\u0003\u0010ü\u0001R\u0018\u0010ý\u0001\u001a\u00030þ\u0001X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\bÿ\u0001\u0010\u0080\u0002R\u0018\u0010\u0081\u0002\u001a\u00030\u0082\u00028VX\u0096\u0004¢\u0006\b\u001a\u0006\b\u0083\u0002\u0010\u0084\u0002R!\u0010\u008e\u0002\u001a\u00030\u008f\u00028\u0016X\u0097\u0004¢\u0006\u0011\n\u0000\u0012\u0005\b\u0090\u0002\u0010^\u001a\u0006\b\u0091\u0002\u0010\u0092\u0002R3\u0010\u0094\u0002\u001a\u00030\u0093\u00022\u0007\u0010\u001b\u001a\u00030\u0093\u00028V@RX\u0096\u008e\u0002¢\u0006\u0017\n\u0005\b\u0099\u0002\u0010#\u001a\u0006\b\u0095\u0002\u0010\u0096\u0002\"\u0006\b\u0097\u0002\u0010\u0098\u0002R\u000f\u0010\u009a\u0002\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u009b\u0002\u001a\u000204*\u00030\u0097\u00018BX\u0082\u0004¢\u0006\b\u001a\u0006\b\u009c\u0002\u0010\u009d\u0002R3\u0010\u009f\u0002\u001a\u00030\u009e\u00022\u0007\u0010\u001b\u001a\u00030\u009e\u00028V@RX\u0096\u008e\u0002¢\u0006\u0017\n\u0005\b¤\u0002\u0010#\u001a\u0006\b \u0002\u0010¡\u0002\"\u0006\b¢\u0002\u0010£\u0002R\u0018\u0010¥\u0002\u001a\u00030¦\u0002X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b§\u0002\u0010¨\u0002R\u0010\u0010©\u0002\u001a\u00030ª\u0002X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010«\u0002\u001a\u00030¬\u00028VX\u0096\u0004¢\u0006\b\u001a\u0006\b\u00ad\u0002\u0010®\u0002R\u0018\u0010¯\u0002\u001a\u00030°\u0002X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b±\u0002\u0010²\u0002R\u0018\u0010³\u0002\u001a\u00030´\u0002X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\bµ\u0002\u0010¶\u0002R\u0012\u0010·\u0002\u001a\u0005\u0018\u00010¸\u0002X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010¹\u0002\u001a\u00030Ê\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u0017\u0010º\u0002\u001a\n\u0012\u0005\u0012\u00030\u008d\u00010»\u0002X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010¼\u0002\u001a\u0013\u0012\u000e\u0012\f\u0012\u0005\u0012\u00030\u0098\u0001\u0018\u00010¾\u00020½\u0002X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010¿\u0002\u001a\u00030À\u0002X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010Á\u0002\u001a\u00030À\u0002X\u0082\u000e¢\u0006\u0002\n\u0000R\u0013\u0010Â\u0002\u001a\u00030Ã\u0002X\u0082\u0004¢\u0006\u0005\n\u0003\u0010Ä\u0002R\u0010\u0010Å\u0002\u001a\u00030Æ\u0002X\u0082\u0004¢\u0006\u0002\n\u0000R\u000f\u0010Ç\u0002\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0017\u0010È\u0002\u001a\n\u0012\u0005\u0012\u00030\u0098\u00010¾\u0002X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010É\u0002\u001a\u00030Ê\u0002X\u0082\u0004¢\u0006\u0002\n\u0000R\u000f\u0010Ë\u0002\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010Ò\u0002\u001a\u0005\u0018\u00010Ó\u0002X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010Ô\u0002\u001a\u00020\u00128@X\u0080\u0004¢\u0006\u0007\u001a\u0005\bÕ\u0002\u0010'R\u0011\u0010Ì\u0003\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010º\u0004\u001a\u00030»\u0004X\u0096\u0004¢\u0006\n\n\u0000\u001a\u0006\b¼\u0004\u0010½\u0004R\u0016\u0010¿\u0004\u001a\u00020\u00128VX\u0096\u0004¢\u0006\u0007\u001a\u0005\b¿\u0004\u0010'R\u000f\u0010Á\u0004\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010Ä\u0004\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u0019\u0010Ç\u0004\u001a\u0004\u0018\u00010\u00008VX\u0096\u0004¢\u0006\b\u001a\u0006\bÈ\u0004\u0010É\u0004¨\u0006Ó\u0004"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeView;", "Landroid/view/ViewGroup;", "Landroidx/compose/ui/node/Owner;", "Landroidx/compose/ui/focus/PlatformFocusOwner;", "Landroidx/compose/ui/platform/ViewRootForTest;", "Landroidx/compose/ui/input/pointer/MatrixPositionCalculator;", "Landroidx/lifecycle/DefaultLifecycleObserver;", "Landroidx/compose/ui/node/OutOfFrameExecutor;", "context", "Landroid/content/Context;", "coroutineContext", "Lkotlin/coroutines/CoroutineContext;", "<init>", "(Landroid/content/Context;Lkotlin/coroutines/CoroutineContext;)V", "lastDownPointerPosition", "Landroidx/compose/ui/geometry/Offset;", "J", "superclassInitComplete", "", "sharedDrawScope", "Landroidx/compose/ui/node/LayoutNodeDrawScope;", "getSharedDrawScope", "()Landroidx/compose/ui/node/LayoutNodeDrawScope;", "view", "Landroid/view/View;", "getView", "()Landroid/view/View;", "<set-?>", "Landroidx/compose/ui/unit/Density;", "density", "getDensity", "()Landroidx/compose/ui/unit/Density;", "setDensity", "(Landroidx/compose/ui/unit/Density;)V", "density$delegate", "Landroidx/compose/runtime/MutableState;", "frameRateCategoryView", "isArrEnabled", "isArrEnabled$ui_release", "()Z", "rootSemanticsNode", "Landroidx/compose/ui/semantics/EmptySemanticsModifier;", "semanticsModifier", "Landroidx/compose/ui/semantics/EmptySemanticsElement;", "bringIntoViewNode", "androidx/compose/ui/platform/AndroidComposeView$bringIntoViewNode$1", "Landroidx/compose/ui/platform/AndroidComposeView$bringIntoViewNode$1;", "focusOwner", "Landroidx/compose/ui/focus/FocusOwner;", "getFocusOwner", "()Landroidx/compose/ui/focus/FocusOwner;", "getImportantForAutofill", "", "value", "getCoroutineContext", "()Lkotlin/coroutines/CoroutineContext;", "setCoroutineContext", "(Lkotlin/coroutines/CoroutineContext;)V", "dragAndDropManager", "Landroidx/compose/ui/draganddrop/AndroidDragAndDropManager;", "getDragAndDropManager", "()Landroidx/compose/ui/draganddrop/AndroidDragAndDropManager;", "_windowInfo", "Landroidx/compose/ui/platform/LazyWindowInfo;", "windowInfo", "Landroidx/compose/ui/platform/WindowInfo;", "getWindowInfo", "()Landroidx/compose/ui/platform/WindowInfo;", "processingRequestFocusForNextNonChildView", "moveFocusInChildren", "focusDirection", "Landroidx/compose/ui/focus/FocusDirection;", "moveFocusInChildren-3ESFkO8", "(I)Z", "getEmbeddedViewFocusRect", "Landroidx/compose/ui/geometry/Rect;", "keyInputModifier", "Landroidx/compose/ui/Modifier;", "findNextNonChildView", "direction", "rotaryInputModifier", "canvasHolder", "Landroidx/compose/ui/graphics/CanvasHolder;", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "getViewConfiguration", "()Landroidx/compose/ui/platform/ViewConfiguration;", "insetsListener", "Landroidx/compose/ui/layout/InsetsListener;", "getInsetsListener", "()Landroidx/compose/ui/layout/InsetsListener;", "root", "Landroidx/compose/ui/node/LayoutNode;", "getRoot$annotations", "()V", "getRoot", "()Landroidx/compose/ui/node/LayoutNode;", "layoutNodes", "Landroidx/collection/MutableIntObjectMap;", "getLayoutNodes", "()Landroidx/collection/MutableIntObjectMap;", "rectManager", "Landroidx/compose/ui/spatial/RectManager;", "getRectManager", "()Landroidx/compose/ui/spatial/RectManager;", "rootForTest", "Landroidx/compose/ui/node/RootForTest;", "getRootForTest", "()Landroidx/compose/ui/node/RootForTest;", "uncaughtExceptionHandler", "Landroidx/compose/ui/node/RootForTest$UncaughtExceptionHandler;", "getUncaughtExceptionHandler$ui_release", "()Landroidx/compose/ui/node/RootForTest$UncaughtExceptionHandler;", "setUncaughtExceptionHandler$ui_release", "(Landroidx/compose/ui/node/RootForTest$UncaughtExceptionHandler;)V", "semanticsOwner", "Landroidx/compose/ui/semantics/SemanticsOwner;", "getSemanticsOwner", "()Landroidx/compose/ui/semantics/SemanticsOwner;", "composeAccessibilityDelegate", "Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;", "contentCaptureManager", "Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;", "getContentCaptureManager$ui_release", "()Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;", "setContentCaptureManager$ui_release", "(Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;)V", "accessibilityManager", "Landroidx/compose/ui/platform/AndroidAccessibilityManager;", "getAccessibilityManager", "()Landroidx/compose/ui/platform/AndroidAccessibilityManager;", "graphicsContext", "Landroidx/compose/ui/graphics/GraphicsContext;", "getGraphicsContext", "()Landroidx/compose/ui/graphics/GraphicsContext;", "autofillTree", "Landroidx/compose/ui/autofill/AutofillTree;", "getAutofillTree", "()Landroidx/compose/ui/autofill/AutofillTree;", "dirtyLayers", "", "Landroidx/compose/ui/node/OwnedLayer;", "postponedDirtyLayers", "isDrawingContent", "isPendingInteropViewLayoutChangeDispatch", "motionEventAdapter", "Landroidx/compose/ui/input/pointer/MotionEventAdapter;", "pointerInputEventProcessor", "Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;", "configurationChangeObserver", "Lkotlin/Function1;", "Landroid/content/res/Configuration;", "", "getConfigurationChangeObserver", "()Lkotlin/jvm/functions/Function1;", "setConfigurationChangeObserver", "(Lkotlin/jvm/functions/Function1;)V", "_autofill", "Landroidx/compose/ui/autofill/AndroidAutofill;", "_autofillManager", "Landroidx/compose/ui/autofill/AndroidAutofillManager;", "get_autofillManager$ui_release", "()Landroidx/compose/ui/autofill/AndroidAutofillManager;", "autofill", "Landroidx/compose/ui/autofill/Autofill;", "getAutofill", "()Landroidx/compose/ui/autofill/Autofill;", "autofillManager", "Landroidx/compose/ui/autofill/AutofillManager;", "getAutofillManager", "()Landroidx/compose/ui/autofill/AutofillManager;", "observationClearRequested", "clipboardManager", "Landroidx/compose/ui/platform/AndroidClipboardManager;", "getClipboardManager", "()Landroidx/compose/ui/platform/AndroidClipboardManager;", "clipboard", "Landroidx/compose/ui/platform/AndroidClipboard;", "getClipboard", "()Landroidx/compose/ui/platform/AndroidClipboard;", "snapshotObserver", "Landroidx/compose/ui/node/OwnerSnapshotObserver;", "getSnapshotObserver", "()Landroidx/compose/ui/node/OwnerSnapshotObserver;", "showLayoutBounds", "getShowLayoutBounds$annotations", "getShowLayoutBounds", "setShowLayoutBounds", "(Z)V", "_androidViewsHandler", "Landroidx/compose/ui/platform/AndroidViewsHandler;", "androidViewsHandler", "getAndroidViewsHandler$ui_release", "()Landroidx/compose/ui/platform/AndroidViewsHandler;", "viewLayersContainer", "Landroidx/compose/ui/platform/DrawChildContainer;", "onMeasureConstraints", "Landroidx/compose/ui/unit/Constraints;", "wasMeasuredWithMultipleConstraints", "measureAndLayoutDelegate", "Landroidx/compose/ui/node/MeasureAndLayoutDelegate;", "measureIteration", "", "getMeasureIteration", "()J", "hasPendingMeasureOrLayout", "getHasPendingMeasureOrLayout", "globalPosition", "Landroidx/compose/ui/unit/IntOffset;", "tmpPositionArray", "", "tmpMatrix", "Landroidx/compose/ui/graphics/Matrix;", "[F", "viewToWindowMatrix", "windowToViewMatrix", "lastMatrixRecalculationAnimationTime", "getLastMatrixRecalculationAnimationTime$ui_release$annotations", "getLastMatrixRecalculationAnimationTime$ui_release", "setLastMatrixRecalculationAnimationTime$ui_release", "(J)V", "forceUseMatrixCache", "windowPosition", "isRenderNodeCompatible", "Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;", "_viewTreeOwners", "get_viewTreeOwners", "()Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;", "set_viewTreeOwners", "(Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;)V", "_viewTreeOwners$delegate", "viewTreeOwners", "getViewTreeOwners", "viewTreeOwners$delegate", "Landroidx/compose/runtime/State;", "onViewTreeOwnersAvailable", "globalLayoutListener", "Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;", "scrollChangedListener", "Landroid/view/ViewTreeObserver$OnScrollChangedListener;", "touchModeChangeListener", "Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;", "legacyTextInputServiceAndroid", "Landroidx/compose/ui/text/input/TextInputServiceAndroid;", "textInputService", "Landroidx/compose/ui/text/input/TextInputService;", "getTextInputService$annotations", "getTextInputService", "()Landroidx/compose/ui/text/input/TextInputService;", "textInputSessionMutex", "Landroidx/compose/ui/SessionMutex;", "Landroidx/compose/ui/platform/AndroidPlatformTextInputSession;", "Ljava/util/concurrent/atomic/AtomicReference;", "softwareKeyboardController", "Landroidx/compose/ui/platform/SoftwareKeyboardController;", "getSoftwareKeyboardController", "()Landroidx/compose/ui/platform/SoftwareKeyboardController;", "placementScope", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "getPlacementScope", "()Landroidx/compose/ui/layout/Placeable$PlacementScope;", "textInputSession", "", "session", "Lkotlin/Function2;", "Landroidx/compose/ui/platform/PlatformTextInputSessionScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fontLoader", "Landroidx/compose/ui/text/font/Font$ResourceLoader;", "getFontLoader$annotations", "getFontLoader", "()Landroidx/compose/ui/text/font/Font$ResourceLoader;", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "fontFamilyResolver", "getFontFamilyResolver", "()Landroidx/compose/ui/text/font/FontFamily$Resolver;", "setFontFamilyResolver", "(Landroidx/compose/ui/text/font/FontFamily$Resolver;)V", "fontFamilyResolver$delegate", "currentFontWeightAdjustment", "fontWeightAdjustmentCompat", "getFontWeightAdjustmentCompat", "(Landroid/content/res/Configuration;)I", "Landroidx/compose/ui/unit/LayoutDirection;", "layoutDirection", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "setLayoutDirection", "(Landroidx/compose/ui/unit/LayoutDirection;)V", "layoutDirection$delegate", "hapticFeedBack", "Landroidx/compose/ui/hapticfeedback/HapticFeedback;", "getHapticFeedBack", "()Landroidx/compose/ui/hapticfeedback/HapticFeedback;", "_inputModeManager", "Landroidx/compose/ui/input/InputModeManagerImpl;", "inputModeManager", "Landroidx/compose/ui/input/InputModeManager;", "getInputModeManager", "()Landroidx/compose/ui/input/InputModeManager;", "modifierLocalManager", "Landroidx/compose/ui/modifier/ModifierLocalManager;", "getModifierLocalManager", "()Landroidx/compose/ui/modifier/ModifierLocalManager;", "textToolbar", "Landroidx/compose/ui/platform/TextToolbar;", "getTextToolbar", "()Landroidx/compose/ui/platform/TextToolbar;", "previousMotionEvent", "Landroid/view/MotionEvent;", "relayoutTime", "layerCache", "Landroidx/compose/ui/platform/WeakCache;", "endApplyChangesListeners", "Landroidx/collection/MutableObjectList;", "Lkotlin/Function0;", "currentFrameRate", "", "currentFrameRateCategory", "resendMotionEventRunnable", "androidx/compose/ui/platform/AndroidComposeView$resendMotionEventRunnable$1", "Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventRunnable$1;", "sendHoverExitEvent", "Ljava/lang/Runnable;", "hoverExitReceived", "resendMotionEventOnLayout", "matrixToWindow", "Landroidx/compose/ui/platform/CalculateMatrixToWindow;", "keyboardModifiersRequireUpdate", "getFocusedRect", "rect", "Landroid/graphics/Rect;", "dispatchProvideStructure", "structure", "Landroid/view/ViewStructure;", "scrollCapture", "Landroidx/compose/ui/scrollcapture/ScrollCapture;", "scrollCaptureInProgress", "getScrollCaptureInProgress$ui_release", "onScrollCaptureSearch", "localVisibleRect", "windowOffset", "Landroid/graphics/Point;", "targets", "Ljava/util/function/Consumer;", "Landroid/view/ScrollCaptureTarget;", "onResume", "owner", "Landroidx/lifecycle/LifecycleOwner;", "focusSearch", "focused", "requestFocus", "previouslyFocusedRect", "requestOwnerFocus", "requestOwnerFocus-7o62pno", "clearOwnerFocus", "onFocusChanged", "gainFocus", "onWindowFocusChanged", "hasWindowFocus", "sendKeyEvent", "keyEvent", "Landroidx/compose/ui/input/key/KeyEvent;", "sendKeyEvent-ZmokQxo", "(Landroid/view/KeyEvent;)Z", "sendIndirectTouchEvent", "indirectTouchEvent", "Landroidx/compose/ui/input/indirect/IndirectTouchEvent;", "dispatchKeyEvent", NotificationCompat.CATEGORY_EVENT, "Landroid/view/KeyEvent;", "dispatchKeyEventPreIme", "forceAccessibilityForTesting", "enable", "setAccessibilityEventBatchIntervalMillis", "intervalMillis", "onPreAttach", "node", "onPostAttach", "onDetach", "requestAutofill", "requestClearInvalidObservations", "onEndApplyChanges", "registerOnEndApplyChangesListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "startDrag", "transferData", "Landroidx/compose/ui/draganddrop/DragAndDropTransferData;", "decorationSize", "Landroidx/compose/ui/geometry/Size;", "drawDragDecoration", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "startDrag-12SF9DM", "(Landroidx/compose/ui/draganddrop/DragAndDropTransferData;JLkotlin/jvm/functions/Function1;)Z", "clearChildInvalidObservations", "viewGroup", "addExtraDataToAccessibilityNodeInfoHelper", "virtualViewId", "info", "Landroid/view/accessibility/AccessibilityNodeInfo;", "extraDataKey", "", "addView", "child", FirebaseAnalytics.Param.INDEX, "width", "height", "params", "Landroid/view/ViewGroup$LayoutParams;", "addAndroidView", "Landroidx/compose/ui/viewinterop/AndroidViewHolder;", "layoutNode", "removeAndroidView", "drawAndroidView", "canvas", "Landroid/graphics/Canvas;", "scheduleMeasureAndLayout", "nodeToRemeasure", "childSizeCanAffectParentSize", "measureAndLayout", "sendPointerUpdate", "constraints", "measureAndLayout-0kLqBqw", "(Landroidx/compose/ui/node/LayoutNode;J)V", "dispatchPendingInteropLayoutCallbacks", "forceMeasureTheSubtree", "affectsLookahead", "onRequestMeasure", "forceRequest", "onRequestRelayout", "requestOnPositionedCallback", "measureAndLayoutForTest", "setUncaughtExceptionHandler", "handler", "onMeasure", "widthMeasureSpec", "heightMeasureSpec", "component1", "Lkotlin/ULong;", "component1-VKZWuLQ", "(J)I", "component2", "component2-VKZWuLQ", "pack", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "pack-ZIaKswc", "(II)J", "convertMeasureSpec", "measureSpec", "convertMeasureSpec-I7RO_PI", "(I)J", "onLayout", "changed", CmcdData.STREAM_TYPE_LIVE, "t", "r", "_rootView", "updatePositionCacheAndDispatch", "onDraw", "createLayer", "drawBlock", "Landroidx/compose/ui/graphics/Canvas;", "Lkotlin/ParameterName;", "name", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "parentLayer", "invalidateParentLayer", "explicitLayer", "recycle", AdRevenueConstants.LAYER_KEY, "recycle$ui_release", "onSemanticsChange", "onLayoutChange", "onLayoutNodeDeactivated", "onPreLayoutNodeReused", "oldSemanticsId", "onPostLayoutNodeReused", "onInteropViewLayoutChange", "Landroidx/compose/ui/viewinterop/InteropView;", "registerOnLayoutCompletedListener", "Landroidx/compose/ui/node/Owner$OnLayoutCompletedListener;", "dispatchDraw", "notifyLayerIsDirty", "isDirty", "notifyLayerIsDirty$ui_release", "setOnViewTreeOwnersAvailable", "callback", "boundsUpdatesContentCaptureEventLoop", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "boundsUpdatesAccessibilityEventLoop", "invalidateLayoutNodeMeasurement", "invalidateLayers", "invalidateDescendants", "onAttachedToWindow", "onDetachedFromWindow", "onProvideAutofillVirtualStructure", DownloaderServiceMarshaller.PARAMS_FLAGS, "values", "Landroid/util/SparseArray;", "Landroid/view/autofill/AutofillValue;", "onCreateVirtualViewTranslationRequests", "virtualIds", "", "supportedFormats", "requestsCollector", "Landroid/view/translation/ViewTranslationRequest;", "onVirtualViewTranslationResponses", "response", "Landroid/util/LongSparseArray;", "Landroid/view/translation/ViewTranslationResponse;", "dispatchGenericMotionEvent", "motionEvent", "dispatchTouchEvent", "handleRotaryEvent", "handleMotionEvent", "Landroidx/compose/ui/input/pointer/ProcessResult;", "handleMotionEvent-8iAsVTc", "(Landroid/view/MotionEvent;)I", "hasChangedDevices", "lastEvent", "isDevicePressEvent", "sendMotionEvent", "sendMotionEvent-8iAsVTc", "sendSimulatedEvent", "action", "eventTime", "forceHover", "canScrollHorizontally", "canScrollVertically", "isInBounds", "localToScreen", "localPosition", "localToScreen-MK-Hz9U", "(J)J", "localTransform", "localToScreen-58bKbWc", "([F)V", "screenToLocal", "positionOnScreen", "screenToLocal-MK-Hz9U", "recalculateWindowPosition", "recalculateWindowViewTransforms", "updateWindowMetrics", "onCheckIsTextEditor", "onCreateInputConnection", "Landroid/view/inputmethod/InputConnection;", "outAttrs", "Landroid/view/inputmethod/EditorInfo;", "calculateLocalPosition", "positionInWindow", "calculateLocalPosition-MK-Hz9U", "calculatePositionInWindow", "calculatePositionInWindow-MK-Hz9U", "onConfigurationChanged", "newConfig", "onRtlPropertiesChanged", "autofillSupported", "dispatchHoverEvent", "isBadMotionEvent", "isPositionChanged", "findViewByAccessibilityIdRootedAtCurrentView", "accessibilityId", "currentView", "onResolvePointerIcon", "Landroid/view/PointerIcon;", "pointerIndex", "pointerIconService", "Landroidx/compose/ui/input/pointer/PointerIconService;", "getPointerIconService", "()Landroidx/compose/ui/input/pointer/PointerIconService;", "findViewByAccessibilityIdTraversal", "isLifecycleInResumedState", "shouldDelayChildPressedState", "sensitiveComponentCount", "incrementSensitiveComponentCount", "decrementSensitiveComponentCount", "keepScreenOnCount", "incrementKeepScreenOnCount", "decrementKeepScreenOnCount", "outOfFrameExecutor", "getOutOfFrameExecutor", "()Landroidx/compose/ui/platform/AndroidComposeView;", "schedule", "block", "voteFrameRate", "frameRate", "dispatchOnScrollChanged", "delta", "dispatchOnScrollChanged-k-4lQ0M", "Companion", "ViewTreeOwners", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
-public final class AndroidComposeView extends ViewGroup implements Owner, ViewRootForTest, MatrixPositionCalculator, DefaultLifecycleObserver {
+public final class AndroidComposeView extends ViewGroup implements Owner, PlatformFocusOwner, ViewRootForTest, MatrixPositionCalculator, DefaultLifecycleObserver, OutOfFrameExecutor {
+    private static Method addChangeCallbackMethod;
+    private static Method dispatchOnScrollChangedMethod;
     private static Method getBooleanMethod;
+    private static Runnable systemPropertiesChangedRunnable;
     private static Class<?> systemPropertiesClass;
     private AndroidViewsHandler _androidViewsHandler;
     private final AndroidAutofill _autofill;
     private final AndroidAutofillManager _autofillManager;
     private final InputModeManagerImpl _inputModeManager;
+    private View _rootView;
     private final MutableState _viewTreeOwners$delegate;
     private final LazyWindowInfo _windowInfo;
     private final AndroidAccessibilityManager accessibilityManager;
@@ -188,6 +200,8 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
     private AndroidContentCaptureManager contentCaptureManager;
     private CoroutineContext coroutineContext;
     private int currentFontWeightAdjustment;
+    private float currentFrameRate;
+    private float currentFrameRateCategory;
     private final MutableState density$delegate;
     private final List<OwnedLayer> dirtyLayers;
     private final AndroidDragAndDropManager dragAndDropManager;
@@ -196,14 +210,18 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
     private final MutableState fontFamilyResolver$delegate;
     private final Font.ResourceLoader fontLoader;
     private boolean forceUseMatrixCache;
+    private View frameRateCategoryView;
     private final ViewTreeObserver.OnGlobalLayoutListener globalLayoutListener;
     private long globalPosition;
     private final GraphicsContext graphicsContext;
     private final HapticFeedback hapticFeedBack;
     private boolean hoverExitReceived;
+    private final InsetsListener insetsListener;
+    private final boolean isArrEnabled;
     private boolean isDrawingContent;
     private boolean isPendingInteropViewLayoutChangeDispatch;
     private boolean isRenderNodeCompatible;
+    private int keepScreenOnCount;
     private final Modifier keyInputModifier;
     private boolean keyboardModifiersRequireUpdate;
     private long lastDownPointerPosition;
@@ -249,6 +267,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
     private final float[] tmpMatrix;
     private final int[] tmpPositionArray;
     private final ViewTreeObserver.OnTouchModeChangeListener touchModeChangeListener;
+    private RootForTest.UncaughtExceptionHandler uncaughtExceptionHandler;
     private final ViewConfiguration viewConfiguration;
     private DrawChildContainer viewLayersContainer;
     private final float[] viewToWindowMatrix;
@@ -258,12 +277,16 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
     private final float[] windowToViewMatrix;
     public static final Companion Companion = new Companion(null);
     public static final int $stable = 8;
+    private static final MutableObjectList<AndroidComposeView> composeViews = new MutableObjectList<>(0, 1, null);
 
     @Deprecated(message = "fontLoader is deprecated, use fontFamilyResolver", replaceWith = @ReplaceWith(expression = "fontFamilyResolver", imports = {}))
     public static /* synthetic */ void getFontLoader$annotations() {
     }
 
     public static /* synthetic */ void getLastMatrixRecalculationAnimationTime$ui_release$annotations() {
+    }
+
+    public static /* synthetic */ void getRoot$annotations() {
     }
 
     public static /* synthetic */ void getShowLayoutBounds$annotations() {
@@ -287,20 +310,23 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         return false;
     }
 
-    /* JADX WARN: Type inference failed for: r1v15, types: [androidx.compose.ui.platform.AndroidComposeView$resendMotionEventRunnable$1] */
-    /* JADX WARN: Type inference failed for: r6v0, types: [androidx.compose.ui.platform.AndroidComposeView$bringIntoViewNode$1] */
+    /* JADX WARN: Type inference failed for: r8v0, types: [androidx.compose.ui.platform.AndroidComposeView$bringIntoViewNode$1] */
+    /* JADX WARN: Type inference failed for: r8v27, types: [androidx.compose.ui.platform.AndroidComposeView$resendMotionEventRunnable$1] */
     public AndroidComposeView(Context context, CoroutineContext coroutineContext) {
         super(context);
+        Modifier.Companion companion;
         AndroidAutofillManager androidAutofillManager;
-        this.lastDownPointerPosition = Offset.Companion.m3852getUnspecifiedF1C5BW0();
+        this.lastDownPointerPosition = Offset.Companion.m4308getUnspecifiedF1C5BW0();
         this.superclassInitComplete = true;
         this.sharedDrawScope = new LayoutNodeDrawScope(null, 1, null);
         this.density$delegate = SnapshotStateKt.mutableStateOf(AndroidDensity_androidKt.Density(context), SnapshotStateKt.referentialEqualityPolicy());
+        boolean z = ComposeUiFlags.isAdaptiveRefreshRateEnabled && Build.VERSION.SDK_INT >= 35;
+        this.isArrEnabled = z;
         EmptySemanticsModifier emptySemanticsModifier = new EmptySemanticsModifier();
         this.rootSemanticsNode = emptySemanticsModifier;
         EmptySemanticsElement emptySemanticsElement = new EmptySemanticsElement(emptySemanticsModifier);
         this.semanticsModifier = emptySemanticsElement;
-        ?? r6 = new ModifierNodeElement<BringIntoViewOnScreenResponderNode>() { // from class: androidx.compose.ui.platform.AndroidComposeView$bringIntoViewNode$1
+        ?? r8 = new ModifierNodeElement<BringIntoViewOnScreenResponderNode>() { // from class: androidx.compose.ui.platform.AndroidComposeView$bringIntoViewNode$1
             @Override // androidx.compose.ui.node.ModifierNodeElement
             public boolean equals(Object obj) {
                 return obj == this;
@@ -326,18 +352,9 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
                 return AndroidComposeView.this.hashCode();
             }
         };
-        this.bringIntoViewNode = r6;
-        this.focusOwner = new FocusOwnerImpl(new AndroidComposeView$focusOwner$1(this), new AndroidComposeView$focusOwner$2(this), new AndroidComposeView$focusOwner$3(this), new AndroidComposeView$focusOwner$4(this), new AndroidComposeView$focusOwner$5(this), new MutablePropertyReference0Impl(this) { // from class: androidx.compose.ui.platform.AndroidComposeView$focusOwner$6
-            @Override // kotlin.jvm.internal.MutablePropertyReference0Impl, kotlin.reflect.KProperty0
-            public Object get() {
-                return ((AndroidComposeView) this.receiver).getLayoutDirection();
-            }
-
-            @Override // kotlin.jvm.internal.MutablePropertyReference0Impl, kotlin.reflect.KMutableProperty0
-            public void set(Object obj) {
-                ((AndroidComposeView) this.receiver).setLayoutDirection((LayoutDirection) obj);
-            }
-        });
+        this.bringIntoViewNode = r8;
+        AndroidComposeView androidComposeView = this;
+        this.focusOwner = new FocusOwnerImpl(this, androidComposeView);
         this.coroutineContext = coroutineContext;
         this.dragAndDropManager = new AndroidDragAndDropManager(new AndroidComposeView$dragAndDropManager$1(this));
         this._windowInfo = new LazyWindowInfo();
@@ -349,33 +366,22 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-                return m5815invokeZmokQxo(keyEvent.m5158unboximpl());
+                return m6357invokeZmokQxo(keyEvent.m5671unboximpl());
             }
 
             /* renamed from: invoke-ZmokQxo  reason: not valid java name */
-            public final Boolean m5815invokeZmokQxo(android.view.KeyEvent keyEvent) {
-                Rect onFetchFocusRect;
+            public final Boolean m6357invokeZmokQxo(android.view.KeyEvent keyEvent) {
                 View findNextNonChildView;
-                int[] iArr;
-                int[] iArr2;
-                int[] iArr3;
-                int[] iArr4;
-                int[] iArr5;
-                int[] iArr6;
-                boolean m5806onMoveFocusInChildren3ESFkO8;
-                final FocusDirection mo5760getFocusDirectionP8AzH3I = AndroidComposeView.this.mo5760getFocusDirectionP8AzH3I(keyEvent);
-                if (mo5760getFocusDirectionP8AzH3I == null || !KeyEventType.m5162equalsimpl0(KeyEvent_androidKt.m5170getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5166getKeyDownCS__XNY())) {
+                final FocusDirection m4185toFocusDirectionZmokQxo = FocusInteropUtils_androidKt.m4185toFocusDirectionZmokQxo(keyEvent);
+                if (m4185toFocusDirectionZmokQxo == null || !KeyEventType.m5675equalsimpl0(KeyEvent_androidKt.m5683getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5679getKeyDownCS__XNY())) {
                     return false;
                 }
-                Integer m3733toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m3733toAndroidFocusDirection3ESFkO8(mo5760getFocusDirectionP8AzH3I.m3724unboximpl());
-                if (ComposeUiFlags.isViewFocusFixEnabled && AndroidComposeView.this.hasFocus() && m3733toAndroidFocusDirection3ESFkO8 != null) {
-                    m5806onMoveFocusInChildren3ESFkO8 = AndroidComposeView.this.m5806onMoveFocusInChildren3ESFkO8(mo5760getFocusDirectionP8AzH3I.m3724unboximpl());
-                    if (m5806onMoveFocusInChildren3ESFkO8) {
-                        return true;
-                    }
+                Integer m4184toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4184toAndroidFocusDirection3ESFkO8(m4185toFocusDirectionZmokQxo.m4175unboximpl());
+                if (ComposeUiFlags.isViewFocusFixEnabled && AndroidComposeView.this.hasFocus() && m4184toAndroidFocusDirection3ESFkO8 != null && AndroidComposeView.this.mo4234moveFocusInChildren3ESFkO8(m4185toFocusDirectionZmokQxo.m4175unboximpl())) {
+                    return true;
                 }
-                onFetchFocusRect = AndroidComposeView.this.onFetchFocusRect();
-                Boolean mo3739focusSearchULY8qGw = AndroidComposeView.this.getFocusOwner().mo3739focusSearchULY8qGw(mo5760getFocusDirectionP8AzH3I.m3724unboximpl(), onFetchFocusRect, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$keyInputModifier$1$focusWasMovedOrCancelled$1
+                Rect embeddedViewFocusRect = AndroidComposeView.this.getEmbeddedViewFocusRect();
+                Boolean mo4191focusSearchULY8qGw = AndroidComposeView.this.getFocusOwner().mo4191focusSearchULY8qGw(m4185toFocusDirectionZmokQxo.m4175unboximpl(), embeddedViewFocusRect, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$keyInputModifier$1$focusWasMovedOrCancelled$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     {
                         super(1);
@@ -383,58 +389,49 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
                     @Override // kotlin.jvm.functions.Function1
                     public final Boolean invoke(FocusTargetNode focusTargetNode) {
-                        return Boolean.valueOf(focusTargetNode.mo3752requestFocus3ESFkO8(FocusDirection.this.m3724unboximpl()));
+                        return Boolean.valueOf(focusTargetNode.mo4204requestFocus3ESFkO8(FocusDirection.this.m4175unboximpl()));
                     }
                 });
-                if (mo3739focusSearchULY8qGw != null ? mo3739focusSearchULY8qGw.booleanValue() : true) {
+                if (mo4191focusSearchULY8qGw != null ? mo4191focusSearchULY8qGw.booleanValue() : true) {
                     return true;
                 }
-                if (!FocusOwnerImplKt.m3745is1dFocusSearch3ESFkO8(mo5760getFocusDirectionP8AzH3I.m3724unboximpl())) {
+                if (!FocusOwnerImplKt.m4197is1dFocusSearch3ESFkO8(m4185toFocusDirectionZmokQxo.m4175unboximpl())) {
                     return false;
                 }
-                if (m3733toAndroidFocusDirection3ESFkO8 != null) {
-                    findNextNonChildView = AndroidComposeView.this.findNextNonChildView(m3733toAndroidFocusDirection3ESFkO8.intValue());
+                if (m4184toAndroidFocusDirection3ESFkO8 != null) {
+                    findNextNonChildView = AndroidComposeView.this.findNextNonChildView(m4184toAndroidFocusDirection3ESFkO8.intValue());
                     if (Intrinsics.areEqual(findNextNonChildView, AndroidComposeView.this)) {
                         findNextNonChildView = null;
                     }
                     if (findNextNonChildView != null) {
-                        android.graphics.Rect androidRect = onFetchFocusRect != null ? RectHelper_androidKt.toAndroidRect(onFetchFocusRect) : null;
-                        if (androidRect != null) {
-                            iArr = AndroidComposeView.this.tmpPositionArray;
-                            findNextNonChildView.getLocationInWindow(iArr);
-                            iArr2 = AndroidComposeView.this.tmpPositionArray;
-                            int i = iArr2[0];
-                            iArr3 = AndroidComposeView.this.tmpPositionArray;
-                            int i2 = iArr3[1];
-                            AndroidComposeView androidComposeView = AndroidComposeView.this;
-                            iArr4 = androidComposeView.tmpPositionArray;
-                            androidComposeView.getLocationInWindow(iArr4);
-                            iArr5 = AndroidComposeView.this.tmpPositionArray;
-                            int i3 = iArr5[0];
-                            iArr6 = AndroidComposeView.this.tmpPositionArray;
-                            androidRect.offset(i3 - i, iArr6[1] - i2);
-                            if (FocusInteropUtils_androidKt.requestInteropFocus(findNextNonChildView, m3733toAndroidFocusDirection3ESFkO8, androidRect)) {
-                                return true;
-                            }
-                        } else {
+                        android.graphics.Rect androidRect = embeddedViewFocusRect != null ? RectHelper_androidKt.toAndroidRect(embeddedViewFocusRect) : null;
+                        if (androidRect == null) {
                             throw new IllegalStateException("Invalid rect".toString());
+                        }
+                        View rootView = AndroidComposeView.this.getRootView();
+                        Intrinsics.checkNotNull(rootView, "null cannot be cast to non-null type android.view.ViewGroup");
+                        ViewGroup viewGroup = (ViewGroup) rootView;
+                        viewGroup.offsetDescendantRectToMyCoords(AndroidComposeView.this, androidRect);
+                        viewGroup.offsetRectIntoDescendantCoords(findNextNonChildView, androidRect);
+                        if (FocusInteropUtils_androidKt.requestInteropFocus(findNextNonChildView, m4184toAndroidFocusDirection3ESFkO8, androidRect)) {
+                            return true;
                         }
                     }
                 }
-                if (!AndroidComposeView.this.getFocusOwner().mo3736clearFocusI7lrPNg(false, true, false, mo5760getFocusDirectionP8AzH3I.m3724unboximpl())) {
+                if (!AndroidComposeView.this.getFocusOwner().mo4188clearFocusI7lrPNg(false, true, false, m4185toFocusDirectionZmokQxo.m4175unboximpl())) {
                     return true;
                 }
-                Boolean mo3739focusSearchULY8qGw2 = AndroidComposeView.this.getFocusOwner().mo3739focusSearchULY8qGw(mo5760getFocusDirectionP8AzH3I.m3724unboximpl(), null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$keyInputModifier$1.1
+                Boolean mo4191focusSearchULY8qGw2 = AndroidComposeView.this.getFocusOwner().mo4191focusSearchULY8qGw(m4185toFocusDirectionZmokQxo.m4175unboximpl(), null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$keyInputModifier$1.1
                     {
                         super(1);
                     }
 
                     @Override // kotlin.jvm.functions.Function1
                     public final Boolean invoke(FocusTargetNode focusTargetNode) {
-                        return Boolean.valueOf(focusTargetNode.mo3752requestFocus3ESFkO8(FocusDirection.this.m3724unboximpl()));
+                        return Boolean.valueOf(focusTargetNode.mo4204requestFocus3ESFkO8(FocusDirection.this.m4175unboximpl()));
                     }
                 });
-                return Boolean.valueOf(mo3739focusSearchULY8qGw2 != null ? mo3739focusSearchULY8qGw2.booleanValue() : true);
+                return Boolean.valueOf(mo4191focusSearchULY8qGw2 != null ? mo4191focusSearchULY8qGw2.booleanValue() : true);
             }
         });
         this.keyInputModifier = onKeyEvent;
@@ -447,11 +444,18 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         this.rotaryInputModifier = onRotaryScrollEvent;
         this.canvasHolder = new CanvasHolder();
         this.viewConfiguration = new AndroidViewConfiguration(android.view.ViewConfiguration.get(context));
+        InsetsListener insetsListener = new InsetsListener(this);
+        this.insetsListener = insetsListener;
         LayoutNode layoutNode = new LayoutNode(false, 0, 3, null);
         layoutNode.setMeasurePolicy(RootMeasurePolicy.INSTANCE);
         layoutNode.setDensity(getDensity());
         layoutNode.setViewConfiguration(getViewConfiguration());
-        layoutNode.setModifier(Modifier.Companion.then(emptySemanticsElement).then(onRotaryScrollEvent).then(onKeyEvent).then(getFocusOwner().getModifier()).then(getDragAndDropManager().getModifier()).then((Modifier) r6));
+        if (ComposeUiFlags.areWindowInsetsRulersEnabled) {
+            companion = WindowInsetsRulers_androidKt.applyWindowInsetsRulers(Modifier.Companion, insetsListener);
+        } else {
+            companion = Modifier.Companion;
+        }
+        layoutNode.setModifier(companion.then(emptySemanticsElement).then(onRotaryScrollEvent).then(onKeyEvent).then(getFocusOwner().getModifier()).then(getDragAndDropManager().getModifier()).then((Modifier) r8));
         this.root = layoutNode;
         this.layoutNodes = IntObjectMapKt.mutableIntObjectMapOf();
         this.rectManager = new RectManager(getLayoutNodes());
@@ -495,14 +499,14 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         this.snapshotObserver = new OwnerSnapshotObserver(new AndroidComposeView$snapshotObserver$1(this));
         this.measureAndLayoutDelegate = new MeasureAndLayoutDelegate(getRoot());
         long j = Integer.MAX_VALUE;
-        this.globalPosition = IntOffset.m6806constructorimpl((j & 4294967295L) | (j << 32));
+        this.globalPosition = IntOffset.m7373constructorimpl((j & 4294967295L) | (j << 32));
         this.tmpPositionArray = new int[]{0, 0};
-        float[] m4309constructorimpl$default = Matrix.m4309constructorimpl$default(null, 1, null);
-        this.tmpMatrix = m4309constructorimpl$default;
-        this.viewToWindowMatrix = Matrix.m4309constructorimpl$default(null, 1, null);
-        this.windowToViewMatrix = Matrix.m4309constructorimpl$default(null, 1, null);
+        float[] m4779constructorimpl$default = Matrix.m4779constructorimpl$default(null, 1, null);
+        this.tmpMatrix = m4779constructorimpl$default;
+        this.viewToWindowMatrix = Matrix.m4779constructorimpl$default(null, 1, null);
+        this.windowToViewMatrix = Matrix.m4779constructorimpl$default(null, 1, null);
         this.lastMatrixRecalculationAnimationTime = -1L;
-        this.windowPosition = Offset.Companion.m3851getInfiniteF1C5BW0();
+        this.windowPosition = Offset.Companion.m4307getInfiniteF1C5BW0();
         this.isRenderNodeCompatible = true;
         this._viewTreeOwners$delegate = SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.viewTreeOwners$delegate = SnapshotStateKt.derivedStateOf(new Function0<ViewTreeOwners>() { // from class: androidx.compose.ui.platform.AndroidComposeView$viewTreeOwners$2
@@ -533,23 +537,23 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         };
         this.touchModeChangeListener = new ViewTreeObserver.OnTouchModeChangeListener() { // from class: androidx.compose.ui.platform.AndroidComposeView$$ExternalSyntheticLambda2
             @Override // android.view.ViewTreeObserver.OnTouchModeChangeListener
-            public final void onTouchModeChanged(boolean z) {
-                AndroidComposeView.touchModeChangeListener$lambda$8(AndroidComposeView.this, z);
+            public final void onTouchModeChanged(boolean z2) {
+                AndroidComposeView.touchModeChangeListener$lambda$8(AndroidComposeView.this, z2);
             }
         };
         TextInputServiceAndroid textInputServiceAndroid = new TextInputServiceAndroid(getView(), this);
         this.legacyTextInputServiceAndroid = textInputServiceAndroid;
         this.textInputService = new TextInputService(AndroidComposeView_androidKt.getPlatformTextInputServiceInterceptor().invoke(textInputServiceAndroid));
-        this.textInputSessionMutex = SessionMutex.m3657constructorimpl();
+        this.textInputSessionMutex = SessionMutex.m4030constructorimpl();
         this.softwareKeyboardController = new DelegatingSoftwareKeyboardController(getTextInputService());
         this.fontLoader = new AndroidFontResourceLoader(context);
         this.fontFamilyResolver$delegate = SnapshotStateKt.mutableStateOf(FontFamilyResolver_androidKt.createFontFamilyResolver(context), SnapshotStateKt.referentialEqualityPolicy());
         this.currentFontWeightAdjustment = getFontWeightAdjustmentCompat(context.getResources().getConfiguration());
         LayoutDirection layoutDirection = FocusInteropUtils_androidKt.toLayoutDirection(context.getResources().getConfiguration().getLayoutDirection());
         this.layoutDirection$delegate = SnapshotStateKt.mutableStateOf$default(layoutDirection == null ? LayoutDirection.Ltr : layoutDirection, null, 2, null);
-        AndroidComposeView androidComposeView = this;
-        this.hapticFeedBack = new PlatformHapticFeedback(androidComposeView);
-        this._inputModeManager = new InputModeManagerImpl(isInTouchMode() ? InputMode.Companion.m4852getTouchaOaMEAU() : InputMode.Companion.m4851getKeyboardaOaMEAU(), new Function1<InputMode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$_inputModeManager$1
+        AndroidComposeView androidComposeView2 = this;
+        this.hapticFeedBack = new PlatformHapticFeedback(androidComposeView2);
+        this._inputModeManager = new InputModeManagerImpl(isInTouchMode() ? InputMode.Companion.m5352getTouchaOaMEAU() : InputMode.Companion.m5351getKeyboardaOaMEAU(), new Function1<InputMode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$_inputModeManager$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -557,23 +561,22 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Boolean invoke(InputMode inputMode) {
-                return m5811invokeiuPiT84(inputMode.m4850unboximpl());
+                return m6355invokeiuPiT84(inputMode.m5350unboximpl());
             }
 
             /* renamed from: invoke-iuPiT84  reason: not valid java name */
-            public final Boolean m5811invokeiuPiT84(int i) {
+            public final Boolean m6355invokeiuPiT84(int i) {
                 boolean requestFocusFromTouch;
-                if (InputMode.m4847equalsimpl0(i, InputMode.Companion.m4852getTouchaOaMEAU())) {
+                if (InputMode.m5347equalsimpl0(i, InputMode.Companion.m5352getTouchaOaMEAU())) {
                     requestFocusFromTouch = AndroidComposeView.this.isInTouchMode();
                 } else {
-                    requestFocusFromTouch = InputMode.m4847equalsimpl0(i, InputMode.Companion.m4851getKeyboardaOaMEAU()) ? AndroidComposeView.this.isInTouchMode() ? AndroidComposeView.this.requestFocusFromTouch() : true : false;
+                    requestFocusFromTouch = InputMode.m5347equalsimpl0(i, InputMode.Companion.m5351getKeyboardaOaMEAU()) ? AndroidComposeView.this.isInTouchMode() ? AndroidComposeView.this.requestFocusFromTouch() : true : false;
                 }
                 return Boolean.valueOf(requestFocusFromTouch);
             }
         }, null);
-        AndroidComposeView androidComposeView2 = this;
-        this.modifierLocalManager = new ModifierLocalManager(androidComposeView2);
-        this.textToolbar = new AndroidTextToolbar(androidComposeView);
+        this.modifierLocalManager = new ModifierLocalManager(androidComposeView);
+        this.textToolbar = new AndroidTextToolbar(androidComposeView2);
         this.layerCache = new WeakCache<>();
         this.endApplyChangesListeners = new MutableObjectList<>(0, 1, null);
         this.resendMotionEventRunnable = new Runnable() { // from class: androidx.compose.ui.platform.AndroidComposeView$resendMotionEventRunnable$1
@@ -584,9 +587,9 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
                 AndroidComposeView.this.removeCallbacks(this);
                 motionEvent = AndroidComposeView.this.previousMotionEvent;
                 if (motionEvent != null) {
-                    boolean z = motionEvent.getToolType(0) == 3;
+                    boolean z2 = motionEvent.getToolType(0) == 3;
                     int actionMasked = motionEvent.getActionMasked();
-                    if (z) {
+                    if (z2) {
                         if (actionMasked == 10 || actionMasked == 1) {
                             return;
                         }
@@ -637,24 +640,31 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
                 }
             }
         };
-        this.matrixToWindow = Build.VERSION.SDK_INT < 29 ? new CalculateMatrixToWindowApi21(m4309constructorimpl$default, null) : new CalculateMatrixToWindowApi29();
+        this.matrixToWindow = Build.VERSION.SDK_INT < 29 ? new CalculateMatrixToWindowApi21(m4779constructorimpl$default, null) : new CalculateMatrixToWindowApi29();
         addOnAttachStateChangeListener(this.contentCaptureManager);
         setWillNotDraw(false);
         setFocusable(true);
         if (Build.VERSION.SDK_INT >= 26) {
-            AndroidComposeViewVerificationHelperMethodsO.INSTANCE.focusable(androidComposeView, 1, false);
+            AndroidComposeViewVerificationHelperMethodsO.INSTANCE.focusable(androidComposeView2, 1, false);
         }
         setFocusableInTouchMode(true);
         setClipChildren(false);
-        ViewCompat.setAccessibilityDelegate(androidComposeView, androidComposeViewAccessibilityDelegateCompat);
+        ViewCompat.setAccessibilityDelegate(androidComposeView2, androidComposeViewAccessibilityDelegateCompat);
         Function1<ViewRootForTest, Unit> onViewCreatedCallback = ViewRootForTest.Companion.getOnViewCreatedCallback();
         if (onViewCreatedCallback != null) {
             onViewCreatedCallback.invoke(this);
         }
         setOnDragListener(getDragAndDropManager());
-        getRoot().attach$ui_release(androidComposeView2);
+        getRoot().attach$ui_release(androidComposeView);
         if (Build.VERSION.SDK_INT >= 29) {
-            AndroidComposeViewForceDarkModeQ.INSTANCE.disallowForceDark(androidComposeView);
+            AndroidComposeViewForceDarkModeQ.INSTANCE.disallowForceDark(androidComposeView2);
+        }
+        if (z) {
+            View view = new View(context);
+            view.setLayoutParams(new ViewGroup.LayoutParams(1, 1));
+            view.setTag(R.id.hide_in_inspector_tag, true);
+            this.frameRateCategoryView = view;
+            addView(view);
         }
         this.scrollCapture = Build.VERSION.SDK_INT >= 31 ? new ScrollCapture() : null;
         this.pointerIconService = new PointerIconService() { // from class: androidx.compose.ui.platform.AndroidComposeView$pointerIconService$1
@@ -706,6 +716,10 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         return (Density) this.density$delegate.getValue();
     }
 
+    public final boolean isArrEnabled$ui_release() {
+        return this.isArrEnabled;
+    }
+
     @Override // androidx.compose.ui.node.Owner
     public FocusOwner getFocusOwner() {
         return this.focusOwner;
@@ -723,7 +737,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
             ((SuspendingPointerInputModifierNode) head$ui_release).resetPointerInputHandler();
         }
         Modifier.Node node = head$ui_release;
-        int m5700constructorimpl = NodeKind.m5700constructorimpl(16);
+        int m6245constructorimpl = NodeKind.m6245constructorimpl(16);
         if (!node.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitSubtreeIf called on an unattached node");
         }
@@ -736,9 +750,9 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         }
         while (mutableVector.getSize() != 0) {
             Modifier.Node node2 = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-            if ((node2.getAggregateChildKindSet$ui_release() & m5700constructorimpl) != 0) {
+            if ((node2.getAggregateChildKindSet$ui_release() & m6245constructorimpl) != 0) {
                 for (Modifier.Node node3 = node2; node3 != null; node3 = node3.getChild$ui_release()) {
-                    if ((node3.getKindSet$ui_release() & m5700constructorimpl) != 0) {
+                    if ((node3.getKindSet$ui_release() & m6245constructorimpl) != 0) {
                         Modifier.Node node4 = node3;
                         MutableVector mutableVector2 = null;
                         while (node4 != null) {
@@ -747,10 +761,10 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
                                 if (pointerInputModifierNode instanceof SuspendingPointerInputModifierNode) {
                                     ((SuspendingPointerInputModifierNode) pointerInputModifierNode).resetPointerInputHandler();
                                 }
-                            } else if ((node4.getKindSet$ui_release() & m5700constructorimpl) != 0 && (node4 instanceof DelegatingNode)) {
+                            } else if ((node4.getKindSet$ui_release() & m6245constructorimpl) != 0 && (node4 instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node4).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m5700constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node4 = delegate$ui_release;
@@ -792,41 +806,40 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         return this._windowInfo;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onMoveFocusInChildren-3ESFkO8  reason: not valid java name */
-    public final boolean m5806onMoveFocusInChildren3ESFkO8(int i) {
+    @Override // androidx.compose.ui.focus.PlatformFocusOwner
+    /* renamed from: moveFocusInChildren-3ESFkO8 */
+    public boolean mo4234moveFocusInChildren3ESFkO8(int i) {
         AndroidViewsHandler androidViewsHandler;
         View findNextFocusFromRect;
-        View findNextFocusFromRect2;
         if (!ComposeUiFlags.isViewFocusFixEnabled) {
-            if (FocusDirection.m3721equalsimpl0(i, FocusDirection.Companion.m3726getEnterdhqQ8s()) || FocusDirection.m3721equalsimpl0(i, FocusDirection.Companion.m3727getExitdhqQ8s())) {
+            if (FocusDirection.m4172equalsimpl0(i, FocusDirection.Companion.m4177getEnterdhqQ8s()) || FocusDirection.m4172equalsimpl0(i, FocusDirection.Companion.m4178getExitdhqQ8s())) {
                 return false;
             }
-            Integer m3733toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m3733toAndroidFocusDirection3ESFkO8(i);
-            if (m3733toAndroidFocusDirection3ESFkO8 == null) {
+            Integer m4184toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4184toAndroidFocusDirection3ESFkO8(i);
+            if (m4184toAndroidFocusDirection3ESFkO8 == null) {
                 throw new IllegalStateException("Invalid focus direction".toString());
             }
-            int intValue = m3733toAndroidFocusDirection3ESFkO8.intValue();
-            Rect onFetchFocusRect = onFetchFocusRect();
-            r2 = onFetchFocusRect != null ? RectHelper_androidKt.toAndroidRect(onFetchFocusRect) : null;
-            FocusFinder focusFinder = FocusFinder.getInstance();
+            int intValue = m4184toAndroidFocusDirection3ESFkO8.intValue();
+            Rect embeddedViewFocusRect = getEmbeddedViewFocusRect();
+            r2 = embeddedViewFocusRect != null ? RectHelper_androidKt.toAndroidRect(embeddedViewFocusRect) : null;
+            FocusFinderCompat companion = FocusFinderCompat.Companion.getInstance();
             if (r2 == null) {
-                findNextFocusFromRect2 = focusFinder.findNextFocus(this, findFocus(), intValue);
+                findNextFocusFromRect = companion.findNextFocus(this, findFocus(), intValue);
             } else {
-                findNextFocusFromRect2 = focusFinder.findNextFocusFromRect(this, r2, intValue);
+                findNextFocusFromRect = companion.findNextFocusFromRect(this, r2, intValue);
             }
-            if (findNextFocusFromRect2 != null) {
-                return FocusInteropUtils_androidKt.requestInteropFocus(findNextFocusFromRect2, Integer.valueOf(intValue), r2);
+            if (findNextFocusFromRect != null) {
+                return FocusInteropUtils_androidKt.requestInteropFocus(findNextFocusFromRect, Integer.valueOf(intValue), r2);
             }
             return false;
-        } else if (FocusDirection.m3721equalsimpl0(i, FocusDirection.Companion.m3726getEnterdhqQ8s()) || FocusDirection.m3721equalsimpl0(i, FocusDirection.Companion.m3727getExitdhqQ8s()) || !hasFocus() || (androidViewsHandler = this._androidViewsHandler) == null) {
+        } else if (FocusDirection.m4172equalsimpl0(i, FocusDirection.Companion.m4177getEnterdhqQ8s()) || FocusDirection.m4172equalsimpl0(i, FocusDirection.Companion.m4178getExitdhqQ8s()) || !hasFocus() || (androidViewsHandler = this._androidViewsHandler) == null) {
             return false;
         } else {
-            Integer m3733toAndroidFocusDirection3ESFkO82 = FocusInteropUtils_androidKt.m3733toAndroidFocusDirection3ESFkO8(i);
-            if (m3733toAndroidFocusDirection3ESFkO82 == null) {
+            Integer m4184toAndroidFocusDirection3ESFkO82 = FocusInteropUtils_androidKt.m4184toAndroidFocusDirection3ESFkO8(i);
+            if (m4184toAndroidFocusDirection3ESFkO82 == null) {
                 throw new IllegalStateException("Invalid focus direction".toString());
             }
-            int intValue2 = m3733toAndroidFocusDirection3ESFkO82.intValue();
+            int intValue2 = m4184toAndroidFocusDirection3ESFkO82.intValue();
             View rootView = getRootView();
             Intrinsics.checkNotNull(rootView, "null cannot be cast to non-null type android.view.ViewGroup");
             ViewGroup viewGroup = (ViewGroup) rootView;
@@ -834,42 +847,32 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
             if (findFocus == null) {
                 throw new IllegalStateException("view hasFocus but root can't find it".toString());
             }
-            FocusFinder focusFinder2 = FocusFinder.getInstance();
-            if (FocusOwnerImplKt.m3745is1dFocusSearch3ESFkO8(i) && androidViewsHandler.hasFocus()) {
-                findNextFocusFromRect = Build.VERSION.SDK_INT >= 26 ? focusFinder2.findNextFocus(viewGroup, findFocus, intValue2) : FocusFinderCompat.Companion.getInstance().findNextFocus1d(viewGroup, findFocus, intValue2);
-            } else {
-                Rect onFetchFocusRect2 = onFetchFocusRect();
-                r2 = onFetchFocusRect2 != null ? RectHelper_androidKt.toAndroidRect(onFetchFocusRect2) : null;
-                findNextFocusFromRect = focusFinder2.findNextFocusFromRect(viewGroup, r2, intValue2);
-                if (findNextFocusFromRect != null) {
-                    findNextFocusFromRect.getLocationInWindow(this.tmpPositionArray);
-                }
-                int[] iArr = this.tmpPositionArray;
-                int i2 = iArr[0];
-                int i3 = iArr[1];
-                getLocationInWindow(iArr);
-                if (r2 != null) {
-                    int[] iArr2 = this.tmpPositionArray;
-                    r2.offset(iArr2[0] - i2, iArr2[1] - i3);
+            View findNextFocus = FocusFinderCompat.Companion.getInstance().findNextFocus(viewGroup, findFocus, intValue2);
+            if (!FocusOwnerImplKt.m4197is1dFocusSearch3ESFkO8(i) || !androidViewsHandler.hasFocus()) {
+                Rect embeddedViewFocusRect2 = getEmbeddedViewFocusRect();
+                r2 = embeddedViewFocusRect2 != null ? RectHelper_androidKt.toAndroidRect(embeddedViewFocusRect2) : null;
+                if (findNextFocus != null && r2 != null) {
+                    viewGroup.offsetDescendantRectToMyCoords(this, r2);
+                    viewGroup.offsetRectIntoDescendantCoords(findNextFocus, r2);
                 }
             }
-            if (findNextFocusFromRect == null || findNextFocusFromRect == findFocus) {
+            if (findNextFocus == null || findNextFocus == findFocus) {
                 return false;
             }
             View focusedChild = androidViewsHandler.getFocusedChild();
-            ViewParent parent = findNextFocusFromRect.getParent();
+            ViewParent parent = findNextFocus.getParent();
             while (parent != null && parent != focusedChild) {
                 parent = parent.getParent();
             }
             if (parent == null) {
                 return false;
             }
-            return FocusInteropUtils_androidKt.requestInteropFocus(findNextFocusFromRect, Integer.valueOf(intValue2), r2);
+            return FocusInteropUtils_androidKt.requestInteropFocus(findNextFocus, Integer.valueOf(intValue2), r2);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final Rect onFetchFocusRect() {
+    @Override // androidx.compose.ui.focus.PlatformFocusOwner
+    public Rect getEmbeddedViewFocusRect() {
         if (isFocused()) {
             return getFocusOwner().getFocusRect();
         }
@@ -883,12 +886,12 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
     /* JADX INFO: Access modifiers changed from: private */
     public final View findNextNonChildView(int i) {
         AndroidComposeView androidComposeView = this;
-        FocusFinder focusFinder = FocusFinder.getInstance();
+        FocusFinderCompat companion = FocusFinderCompat.Companion.getInstance();
         View view = androidComposeView;
         while (view != null) {
             View rootView = getRootView();
             Intrinsics.checkNotNull(rootView, "null cannot be cast to non-null type android.view.ViewGroup");
-            view = focusFinder.findNextFocus((ViewGroup) rootView, view, i);
+            view = companion.findNextFocus((ViewGroup) rootView, view, i);
             if (view != null && !AndroidComposeView_androidKt.access$containsDescendant(androidComposeView, view)) {
                 return view;
             }
@@ -899,6 +902,10 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
     @Override // androidx.compose.ui.node.Owner
     public ViewConfiguration getViewConfiguration() {
         return this.viewConfiguration;
+    }
+
+    public final InsetsListener getInsetsListener() {
+        return this.insetsListener;
     }
 
     @Override // androidx.compose.ui.node.Owner
@@ -919,6 +926,14 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
     @Override // androidx.compose.ui.node.Owner
     public RootForTest getRootForTest() {
         return this.rootForTest;
+    }
+
+    public final RootForTest.UncaughtExceptionHandler getUncaughtExceptionHandler$ui_release() {
+        return this.uncaughtExceptionHandler;
+    }
+
+    public final void setUncaughtExceptionHandler$ui_release(RootForTest.UncaughtExceptionHandler uncaughtExceptionHandler) {
+        this.uncaughtExceptionHandler = uncaughtExceptionHandler;
     }
 
     @Override // androidx.compose.ui.node.Owner, androidx.compose.ui.node.RootForTest
@@ -987,13 +1002,13 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
     }
 
     @Override // androidx.compose.ui.node.Owner
-    public boolean getShowLayoutBounds() {
-        return this.showLayoutBounds;
+    public void setShowLayoutBounds(boolean z) {
+        this.showLayoutBounds = z;
     }
 
     @Override // androidx.compose.ui.node.Owner
-    public void setShowLayoutBounds(boolean z) {
-        this.showLayoutBounds = z;
+    public boolean getShowLayoutBounds() {
+        return Build.VERSION.SDK_INT >= 30 ? Api30Impl.INSTANCE.isShowingLayoutBounds(this) : this.showLayoutBounds;
     }
 
     public final AndroidViewsHandler getAndroidViewsHandler$ui_release() {
@@ -1041,7 +1056,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void touchModeChangeListener$lambda$8(AndroidComposeView androidComposeView, boolean z) {
-        androidComposeView._inputModeManager.m4855setInputModeiuPiT84(z ? InputMode.Companion.m4852getTouchaOaMEAU() : InputMode.Companion.m4851getKeyboardaOaMEAU());
+        androidComposeView._inputModeManager.m5355setInputModeiuPiT84(z ? InputMode.Companion.m5352getTouchaOaMEAU() : InputMode.Companion.m5351getKeyboardaOaMEAU());
     }
 
     @Override // androidx.compose.ui.node.Owner, androidx.compose.ui.node.RootForTest
@@ -1078,7 +1093,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     androidComposeView$textInputSession$1.label = 1;
-                    if (SessionMutex.m3664withSessionCancellingPreviousimpl(this.textInputSessionMutex, new Function1<CoroutineScope, AndroidPlatformTextInputSession>() { // from class: androidx.compose.ui.platform.AndroidComposeView$textInputSession$2
+                    if (SessionMutex.m4037withSessionCancellingPreviousimpl(this.textInputSessionMutex, new Function1<CoroutineScope, AndroidPlatformTextInputSession>() { // from class: androidx.compose.ui.platform.AndroidComposeView$textInputSession$2
                         /* JADX INFO: Access modifiers changed from: package-private */
                         {
                             super(1);
@@ -1130,8 +1145,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         return 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void setLayoutDirection(LayoutDirection layoutDirection) {
+    private void setLayoutDirection(LayoutDirection layoutDirection) {
         this.layoutDirection$delegate.setValue(layoutDirection);
     }
 
@@ -1168,18 +1182,18 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         if (motionEvent.getActionMasked() != 10) {
             throw new IllegalStateException("The ACTION_HOVER_EXIT event was not cleared.".toString());
         }
-        androidComposeView.m5809sendMotionEvent8iAsVTc(motionEvent);
+        androidComposeView.m6352sendMotionEvent8iAsVTc(motionEvent);
     }
 
     @Override // android.view.View
     public void getFocusedRect(android.graphics.Rect rect) {
-        Rect onFetchFocusRect = onFetchFocusRect();
-        if (onFetchFocusRect != null) {
-            rect.left = Math.round(onFetchFocusRect.getLeft());
-            rect.top = Math.round(onFetchFocusRect.getTop());
-            rect.right = Math.round(onFetchFocusRect.getRight());
-            rect.bottom = Math.round(onFetchFocusRect.getBottom());
-        } else if (!Intrinsics.areEqual((Object) getFocusOwner().mo3739focusSearchULY8qGw(FocusDirection.Companion.m3725getDowndhqQ8s(), null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$getFocusedRect$1
+        Rect embeddedViewFocusRect = getEmbeddedViewFocusRect();
+        if (embeddedViewFocusRect != null) {
+            rect.left = Math.round(embeddedViewFocusRect.getLeft());
+            rect.top = Math.round(embeddedViewFocusRect.getTop());
+            rect.right = Math.round(embeddedViewFocusRect.getRight());
+            rect.bottom = Math.round(embeddedViewFocusRect.getBottom());
+        } else if (!Intrinsics.areEqual((Object) getFocusOwner().mo4191focusSearchULY8qGw(FocusDirection.Companion.m4176getDowndhqQ8s(), null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$getFocusedRect$1
             @Override // kotlin.jvm.functions.Function1
             public final Boolean invoke(FocusTargetNode focusTargetNode) {
                 return true;
@@ -1219,7 +1233,9 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
     @Override // androidx.lifecycle.DefaultLifecycleObserver
     public void onResume(LifecycleOwner lifecycleOwner) {
-        setShowLayoutBounds(Companion.getIsShowingLayoutBounds());
+        if (Build.VERSION.SDK_INT < 30) {
+            setShowLayoutBounds(Companion.getIsShowingLayoutBounds());
+        }
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
@@ -1228,7 +1244,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         if (view == null || this.measureAndLayoutDelegate.getDuringMeasureLayout$ui_release()) {
             return super.focusSearch(view, i);
         }
-        View findNextFocus = FocusFinder.getInstance().findNextFocus(this, view, i);
+        View findNextFocus = FocusFinderCompat.Companion.getInstance().findNextFocus(this, view, i);
         if (view == this) {
             calculateBoundingRectRelativeTo = getFocusOwner().getFocusRect();
             if (calculateBoundingRectRelativeTo == null) {
@@ -1238,9 +1254,9 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
             calculateBoundingRectRelativeTo = FocusInteropUtils_androidKt.calculateBoundingRectRelativeTo(view, this);
         }
         FocusDirection focusDirection = FocusInteropUtils_androidKt.toFocusDirection(i);
-        int m3724unboximpl = focusDirection != null ? focusDirection.m3724unboximpl() : FocusDirection.Companion.m3725getDowndhqQ8s();
+        int m4175unboximpl = focusDirection != null ? focusDirection.m4175unboximpl() : FocusDirection.Companion.m4176getDowndhqQ8s();
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        if (getFocusOwner().mo3739focusSearchULY8qGw(m3724unboximpl, calculateBoundingRectRelativeTo, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$focusSearch$searchResult$1
+        if (getFocusOwner().mo4191focusSearchULY8qGw(m4175unboximpl, calculateBoundingRectRelativeTo, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$focusSearch$searchResult$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -1260,13 +1276,11 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
             } else if (findNextFocus == null) {
                 return this;
             } else {
-                if (FocusOwnerImplKt.m3745is1dFocusSearch3ESFkO8(m3724unboximpl)) {
+                if (FocusOwnerImplKt.m4197is1dFocusSearch3ESFkO8(m4175unboximpl)) {
                     return super.focusSearch(view, i);
                 }
-                T t = objectRef.element;
-                Intrinsics.checkNotNull(t);
                 AndroidComposeView androidComposeView = this;
-                if (TwoDimensionalFocusSearchKt.m3785isBetterCandidateI7lrPNg(FocusTraversalKt.focusRect((FocusTargetNode) t), FocusInteropUtils_androidKt.calculateBoundingRectRelativeTo(findNextFocus, androidComposeView), calculateBoundingRectRelativeTo, m3724unboximpl)) {
+                if (TwoDimensionalFocusSearchKt.m4241isBetterCandidateI7lrPNg(FocusTraversalKt.focusRect((FocusTargetNode) objectRef.element), FocusInteropUtils_androidKt.calculateBoundingRectRelativeTo(findNextFocus, androidComposeView), calculateBoundingRectRelativeTo, m4175unboximpl)) {
                     return androidComposeView;
                 }
             }
@@ -1286,8 +1300,8 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
                 return super.requestFocus(i, rect);
             }
             FocusDirection focusDirection = FocusInteropUtils_androidKt.toFocusDirection(i);
-            final int m3724unboximpl = focusDirection != null ? focusDirection.m3724unboximpl() : FocusDirection.Companion.m3726getEnterdhqQ8s();
-            return Intrinsics.areEqual((Object) getFocusOwner().mo3739focusSearchULY8qGw(m3724unboximpl, rect != null ? RectHelper_androidKt.toComposeRect(rect) : null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$requestFocus$1
+            final int m4175unboximpl = focusDirection != null ? focusDirection.m4175unboximpl() : FocusDirection.Companion.m4177getEnterdhqQ8s();
+            return Intrinsics.areEqual((Object) getFocusOwner().mo4191focusSearchULY8qGw(m4175unboximpl, rect != null ? RectHelper_androidKt.toComposeRect(rect) : null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$requestFocus$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -1296,22 +1310,22 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
                 @Override // kotlin.jvm.functions.Function1
                 public final Boolean invoke(FocusTargetNode focusTargetNode) {
-                    return Boolean.valueOf(focusTargetNode.mo3752requestFocus3ESFkO8(m3724unboximpl));
+                    return Boolean.valueOf(focusTargetNode.mo4204requestFocus3ESFkO8(m4175unboximpl));
                 }
             }), (Object) true);
         } else if (isFocused()) {
             return true;
         } else {
-            if (this.processingRequestFocusForNextNonChildView || getFocusOwner().getFocusTransactionManager().getOngoingTransaction()) {
+            if (this.processingRequestFocusForNextNonChildView) {
                 return false;
             }
             FocusDirection focusDirection2 = FocusInteropUtils_androidKt.toFocusDirection(i);
-            final int m3724unboximpl2 = focusDirection2 != null ? focusDirection2.m3724unboximpl() : FocusDirection.Companion.m3726getEnterdhqQ8s();
-            if (hasFocus() && m5806onMoveFocusInChildren3ESFkO8(m3724unboximpl2)) {
+            final int m4175unboximpl2 = focusDirection2 != null ? focusDirection2.m4175unboximpl() : FocusDirection.Companion.m4177getEnterdhqQ8s();
+            if (hasFocus() && mo4234moveFocusInChildren3ESFkO8(m4175unboximpl2)) {
                 return true;
             }
             final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
-            Boolean mo3739focusSearchULY8qGw = getFocusOwner().mo3739focusSearchULY8qGw(m3724unboximpl2, rect != null ? RectHelper_androidKt.toComposeRect(rect) : null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$requestFocus$focusSearchResult$1
+            Boolean mo4191focusSearchULY8qGw = getFocusOwner().mo4191focusSearchULY8qGw(m4175unboximpl2, rect != null ? RectHelper_androidKt.toComposeRect(rect) : null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$requestFocus$focusSearchResult$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -1321,19 +1335,19 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
                 @Override // kotlin.jvm.functions.Function1
                 public final Boolean invoke(FocusTargetNode focusTargetNode) {
                     Ref.BooleanRef.this.element = true;
-                    return Boolean.valueOf(focusTargetNode.mo3752requestFocus3ESFkO8(m3724unboximpl2));
+                    return Boolean.valueOf(focusTargetNode.mo4204requestFocus3ESFkO8(m4175unboximpl2));
                 }
             });
-            if (mo3739focusSearchULY8qGw == null) {
+            if (mo4191focusSearchULY8qGw == null) {
                 return false;
             }
-            if (mo3739focusSearchULY8qGw.booleanValue()) {
+            if (mo4191focusSearchULY8qGw.booleanValue()) {
                 return true;
             }
             if (booleanRef.element) {
                 return false;
             }
-            if ((rect != null && !hasFocus() && Intrinsics.areEqual((Object) getFocusOwner().mo3739focusSearchULY8qGw(m3724unboximpl2, null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$requestFocus$altFocus$1
+            if ((rect != null && !hasFocus() && Intrinsics.areEqual((Object) getFocusOwner().mo4191focusSearchULY8qGw(m4175unboximpl2, null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$requestFocus$altFocus$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -1342,7 +1356,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
                 @Override // kotlin.jvm.functions.Function1
                 public final Boolean invoke(FocusTargetNode focusTargetNode) {
-                    return Boolean.valueOf(focusTargetNode.mo3752requestFocus3ESFkO8(m3724unboximpl2));
+                    return Boolean.valueOf(focusTargetNode.mo4204requestFocus3ESFkO8(m4175unboximpl2));
                 }
             }), (Object) true)) || (findNextNonChildView = findNextNonChildView(i)) == null || findNextNonChildView == this) {
                 return true;
@@ -1354,18 +1368,18 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onRequestFocusForOwner-7o62pno  reason: not valid java name */
-    public final boolean m5807onRequestFocusForOwner7o62pno(FocusDirection focusDirection, Rect rect) {
-        Integer m3733toAndroidFocusDirection3ESFkO8;
+    @Override // androidx.compose.ui.focus.PlatformFocusOwner
+    /* renamed from: requestOwnerFocus-7o62pno */
+    public boolean mo4235requestOwnerFocus7o62pno(FocusDirection focusDirection, Rect rect) {
+        Integer m4184toAndroidFocusDirection3ESFkO8;
         if (isFocused() || hasFocus()) {
             return true;
         }
-        return super.requestFocus((focusDirection == null || (m3733toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m3733toAndroidFocusDirection3ESFkO8(focusDirection.m3724unboximpl())) == null) ? TsExtractor.TS_STREAM_TYPE_HDMV_DTS : m3733toAndroidFocusDirection3ESFkO8.intValue(), rect != null ? RectHelper_androidKt.toAndroidRect(rect) : null);
+        return super.requestFocus((focusDirection == null || (m4184toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4184toAndroidFocusDirection3ESFkO8(focusDirection.m4175unboximpl())) == null) ? TsExtractor.TS_STREAM_TYPE_HDMV_DTS : m4184toAndroidFocusDirection3ESFkO8.intValue(), rect != null ? RectHelper_androidKt.toAndroidRect(rect) : null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void onClearFocusForOwner() {
+    @Override // androidx.compose.ui.focus.PlatformFocusOwner
+    public void clearOwnerFocus() {
         if (isFocused() || (!ComposeUiFlags.isViewFocusFixEnabled && hasFocus())) {
             super.clearFocus();
         } else if (hasFocus()) {
@@ -1392,7 +1406,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         this._windowInfo.setWindowFocused(z);
         this.keyboardModifiersRequireUpdate = true;
         super.onWindowFocusChanged(z);
-        if (!z || getShowLayoutBounds() == (isShowingLayoutBounds = Companion.getIsShowingLayoutBounds())) {
+        if (!z || Build.VERSION.SDK_INT >= 30 || getShowLayoutBounds() == (isShowingLayoutBounds = Companion.getIsShowingLayoutBounds())) {
             return;
         }
         setShowLayoutBounds(isShowingLayoutBounds);
@@ -1401,17 +1415,22 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
     @Override // androidx.compose.ui.node.RootForTest
     /* renamed from: sendKeyEvent-ZmokQxo */
-    public boolean mo5762sendKeyEventZmokQxo(android.view.KeyEvent keyEvent) {
-        return getFocusOwner().mo3737dispatchInterceptedSoftKeyboardEventZmokQxo(keyEvent) || FocusOwner.m3735dispatchKeyEventYhN2O0w$default(getFocusOwner(), keyEvent, null, 2, null);
+    public boolean mo6309sendKeyEventZmokQxo(android.view.KeyEvent keyEvent) {
+        return getFocusOwner().mo4189dispatchInterceptedSoftKeyboardEventZmokQxo(keyEvent) || FocusOwner.m4187dispatchKeyEventYhN2O0w$default(getFocusOwner(), keyEvent, null, 2, null);
+    }
+
+    @Override // androidx.compose.ui.node.RootForTest
+    public boolean sendIndirectTouchEvent(IndirectTouchEvent indirectTouchEvent) {
+        return FocusOwner.dispatchIndirectTouchEvent$default(getFocusOwner(), indirectTouchEvent, null, 2, null);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchKeyEvent(final android.view.KeyEvent keyEvent) {
         if (isFocused()) {
-            this._windowInfo.m5861setKeyboardModifiers5xRPYO0(PointerKeyboardModifiers.m5375constructorimpl(keyEvent.getMetaState()));
-            return FocusOwner.m3735dispatchKeyEventYhN2O0w$default(getFocusOwner(), KeyEvent.m5153constructorimpl(keyEvent), null, 2, null) || super.dispatchKeyEvent(keyEvent);
+            this._windowInfo.m6409setKeyboardModifiers5xRPYO0(PointerKeyboardModifiers.m5888constructorimpl(keyEvent.getMetaState()));
+            return FocusOwner.m4187dispatchKeyEventYhN2O0w$default(getFocusOwner(), KeyEvent.m5666constructorimpl(keyEvent), null, 2, null) || super.dispatchKeyEvent(keyEvent);
         }
-        return getFocusOwner().mo3738dispatchKeyEventYhN2O0w(KeyEvent.m5153constructorimpl(keyEvent), new Function0<Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$dispatchKeyEvent$1
+        return getFocusOwner().mo4190dispatchKeyEventYhN2O0w(KeyEvent.m5666constructorimpl(keyEvent), new Function0<Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$dispatchKeyEvent$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -1430,7 +1449,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchKeyEventPreIme(android.view.KeyEvent keyEvent) {
-        return (isFocused() && getFocusOwner().mo3737dispatchInterceptedSoftKeyboardEventZmokQxo(KeyEvent.m5153constructorimpl(keyEvent))) || super.dispatchKeyEventPreIme(keyEvent);
+        return (isFocused() && getFocusOwner().mo4189dispatchInterceptedSoftKeyboardEventZmokQxo(KeyEvent.m5666constructorimpl(keyEvent))) || super.dispatchKeyEventPreIme(keyEvent);
     }
 
     @Override // androidx.compose.ui.node.RootForTest
@@ -1519,7 +1538,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: startDrag-12SF9DM  reason: not valid java name */
-    public final boolean m5810startDrag12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j, Function1<? super DrawScope, Unit> function1) {
+    public final boolean m6353startDrag12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j, Function1<? super DrawScope, Unit> function1) {
         Resources resources = getContext().getResources();
         return AndroidComposeViewStartDragAndDropN.INSTANCE.startDragAndDrop(this, dragAndDropTransferData, new ComposeDragShadowBuilder(DensityKt.Density(resources.getDisplayMetrics().density, resources.getConfiguration().fontScale), j, function1, null));
     }
@@ -1614,7 +1633,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
                     if (parent$ui_release == null) {
                         parent$ui_release = null;
                         break;
-                    } else if (parent$ui_release.getNodes$ui_release().m5661hasH91voCI$ui_release(NodeKind.m5700constructorimpl(8))) {
+                    } else if (parent$ui_release.getNodes$ui_release().m6206hasH91voCI$ui_release(NodeKind.m6245constructorimpl(8))) {
                         break;
                     } else {
                         parent$ui_release = parent$ui_release.getParent$ui_release();
@@ -1658,27 +1677,10 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         });
     }
 
-    public final void removeAndroidView(final AndroidViewHolder androidViewHolder) {
-        registerOnEndApplyChangesListener(new Function0<Unit>() { // from class: androidx.compose.ui.platform.AndroidComposeView$removeAndroidView$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
-
-            @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                AndroidComposeView.this.getAndroidViewsHandler$ui_release().removeViewInLayout(androidViewHolder);
-                AndroidComposeView.this.getAndroidViewsHandler$ui_release().getLayoutNodeToHolder().remove(AndroidComposeView.this.getAndroidViewsHandler$ui_release().getHolderToLayoutNode().remove(androidViewHolder));
-                androidViewHolder.setImportantForAccessibility(0);
-            }
-        });
+    public final void removeAndroidView(AndroidViewHolder androidViewHolder) {
+        getAndroidViewsHandler$ui_release().removeViewInLayout(androidViewHolder);
+        TypeIntrinsics.asMutableMap(getAndroidViewsHandler$ui_release().getLayoutNodeToHolder()).remove(getAndroidViewsHandler$ui_release().getHolderToLayoutNode().remove(androidViewHolder));
+        androidViewHolder.setImportantForAccessibility(0);
     }
 
     public final void drawAndroidView(AndroidViewHolder androidViewHolder, Canvas canvas) {
@@ -1747,10 +1749,10 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
     @Override // androidx.compose.ui.node.Owner
     /* renamed from: measureAndLayout-0kLqBqw */
-    public void mo5761measureAndLayout0kLqBqw(LayoutNode layoutNode, long j) {
+    public void mo6308measureAndLayout0kLqBqw(LayoutNode layoutNode, long j) {
         Trace.beginSection("AndroidOwner:measureAndLayout");
         try {
-            this.measureAndLayoutDelegate.m5648measureAndLayout0kLqBqw(layoutNode, j);
+            this.measureAndLayoutDelegate.m6193measureAndLayout0kLqBqw(layoutNode, j);
             if (!this.measureAndLayoutDelegate.getHasPendingMeasureOrLayout()) {
                 MeasureAndLayoutDelegate.dispatchOnPositionedCallbacks$default(this.measureAndLayoutDelegate, false, 1, null);
                 dispatchPendingInteropLayoutCallbacks();
@@ -1809,6 +1811,12 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         Owner.measureAndLayout$default(this, false, 1, null);
     }
 
+    @Override // androidx.compose.ui.node.RootForTest
+    public void setUncaughtExceptionHandler(RootForTest.UncaughtExceptionHandler uncaughtExceptionHandler) {
+        this.uncaughtExceptionHandler = uncaughtExceptionHandler;
+        this.measureAndLayoutDelegate.setUncaughtExceptionHandler$ui_release(uncaughtExceptionHandler);
+    }
+
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         Trace.beginSection("AndroidOwner:onMeasure");
@@ -1816,23 +1824,23 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
             if (!isAttachedToWindow()) {
                 invalidateLayoutNodeMeasurement(getRoot());
             }
-            long m5804convertMeasureSpecI7RO_PI = m5804convertMeasureSpecI7RO_PI(i);
-            long m5804convertMeasureSpecI7RO_PI2 = m5804convertMeasureSpecI7RO_PI(i2);
-            long m6645fitPrioritizingHeightZbe2FdA = Constraints.Companion.m6645fitPrioritizingHeightZbe2FdA((int) ULong.m8680constructorimpl(m5804convertMeasureSpecI7RO_PI >>> 32), (int) ULong.m8680constructorimpl(m5804convertMeasureSpecI7RO_PI & 4294967295L), (int) ULong.m8680constructorimpl(m5804convertMeasureSpecI7RO_PI2 >>> 32), (int) ULong.m8680constructorimpl(4294967295L & m5804convertMeasureSpecI7RO_PI2));
+            long m6349convertMeasureSpecI7RO_PI = m6349convertMeasureSpecI7RO_PI(i);
+            long m6349convertMeasureSpecI7RO_PI2 = m6349convertMeasureSpecI7RO_PI(i2);
+            long m7212fitPrioritizingHeightZbe2FdA = Constraints.Companion.m7212fitPrioritizingHeightZbe2FdA((int) ULong.m9244constructorimpl(m6349convertMeasureSpecI7RO_PI >>> 32), (int) ULong.m9244constructorimpl(m6349convertMeasureSpecI7RO_PI & 4294967295L), (int) ULong.m9244constructorimpl(m6349convertMeasureSpecI7RO_PI2 >>> 32), (int) ULong.m9244constructorimpl(4294967295L & m6349convertMeasureSpecI7RO_PI2));
             Constraints constraints = this.onMeasureConstraints;
             boolean z = false;
             if (constraints == null) {
-                this.onMeasureConstraints = Constraints.m6624boximpl(m6645fitPrioritizingHeightZbe2FdA);
+                this.onMeasureConstraints = Constraints.m7191boximpl(m7212fitPrioritizingHeightZbe2FdA);
                 this.wasMeasuredWithMultipleConstraints = false;
             } else {
                 if (constraints != null) {
-                    z = Constraints.m6630equalsimpl0(constraints.m6643unboximpl(), m6645fitPrioritizingHeightZbe2FdA);
+                    z = Constraints.m7197equalsimpl0(constraints.m7210unboximpl(), m7212fitPrioritizingHeightZbe2FdA);
                 }
                 if (!z) {
                     this.wasMeasuredWithMultipleConstraints = true;
                 }
             }
-            this.measureAndLayoutDelegate.m5649updateRootConstraintsBRTryo0(m6645fitPrioritizingHeightZbe2FdA);
+            this.measureAndLayoutDelegate.m6194updateRootConstraintsBRTryo0(m7212fitPrioritizingHeightZbe2FdA);
             this.measureAndLayoutDelegate.measureOnly();
             setMeasuredDimension(getRoot().getWidth(), getRoot().getHeight());
             if (this._androidViewsHandler != null) {
@@ -1845,34 +1853,34 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
     }
 
     /* renamed from: component1-VKZWuLQ  reason: not valid java name */
-    private final int m5802component1VKZWuLQ(long j) {
-        return (int) ULong.m8680constructorimpl(j >>> 32);
+    private final int m6347component1VKZWuLQ(long j) {
+        return (int) ULong.m9244constructorimpl(j >>> 32);
     }
 
     /* renamed from: component2-VKZWuLQ  reason: not valid java name */
-    private final int m5803component2VKZWuLQ(long j) {
-        return (int) ULong.m8680constructorimpl(j & 4294967295L);
+    private final int m6348component2VKZWuLQ(long j) {
+        return (int) ULong.m9244constructorimpl(j & 4294967295L);
     }
 
     /* renamed from: pack-ZIaKswc  reason: not valid java name */
-    private final long m5808packZIaKswc(int i, int i2) {
-        return ULong.m8680constructorimpl(ULong.m8680constructorimpl(i2) | ULong.m8680constructorimpl(ULong.m8680constructorimpl(i) << 32));
+    private final long m6351packZIaKswc(int i, int i2) {
+        return ULong.m9244constructorimpl(ULong.m9244constructorimpl(i2) | ULong.m9244constructorimpl(ULong.m9244constructorimpl(i) << 32));
     }
 
     /* renamed from: convertMeasureSpec-I7RO_PI  reason: not valid java name */
-    private final long m5804convertMeasureSpecI7RO_PI(int i) {
+    private final long m6349convertMeasureSpecI7RO_PI(int i) {
         int mode = View.MeasureSpec.getMode(i);
         int size = View.MeasureSpec.getSize(i);
         if (mode != Integer.MIN_VALUE) {
             if (mode != 0) {
                 if (mode == 1073741824) {
-                    return m5808packZIaKswc(size, size);
+                    return m6351packZIaKswc(size, size);
                 }
                 throw new IllegalStateException();
             }
-            return m5808packZIaKswc(0, Integer.MAX_VALUE);
+            return m6351packZIaKswc(0, Integer.MAX_VALUE);
         }
-        return m5808packZIaKswc(0, size);
+        return m6351packZIaKswc(0, size);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -1890,20 +1898,25 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
     public final void updatePositionCacheAndDispatch() {
         getLocationOnScreen(this.tmpPositionArray);
         long j = this.globalPosition;
-        int m6812getXimpl = IntOffset.m6812getXimpl(j);
-        int m6813getYimpl = IntOffset.m6813getYimpl(j);
+        int m7379getXimpl = IntOffset.m7379getXimpl(j);
+        int m7380getYimpl = IntOffset.m7380getYimpl(j);
         int[] iArr = this.tmpPositionArray;
         boolean z = false;
         int i = iArr[0];
-        if (m6812getXimpl != i || m6813getYimpl != iArr[1] || this.lastMatrixRecalculationAnimationTime < 0) {
-            this.globalPosition = IntOffset.m6806constructorimpl((i << 32) | (iArr[1] & 4294967295L));
-            if (m6812getXimpl != Integer.MAX_VALUE && m6813getYimpl != Integer.MAX_VALUE) {
+        if (m7379getXimpl != i || m7380getYimpl != iArr[1] || this.lastMatrixRecalculationAnimationTime < 0) {
+            this.globalPosition = IntOffset.m7373constructorimpl((i << 32) | (iArr[1] & 4294967295L));
+            if (m7379getXimpl != Integer.MAX_VALUE && m7380getYimpl != Integer.MAX_VALUE) {
                 getRoot().getLayoutDelegate$ui_release().getMeasurePassDelegate$ui_release().notifyChildrenUsingCoordinatesWhilePlacing();
                 z = true;
             }
         }
         recalculateWindowPosition();
-        getRectManager().m5936updateOffsetsucfNpQE(this.globalPosition, IntOffsetKt.m6829roundk4lQ0M(this.windowPosition), this.viewToWindowMatrix);
+        View view = this._rootView;
+        if (view == null) {
+            view = getRootView();
+            this._rootView = view;
+        }
+        getRectManager().m6483updateOffsetsgTq6Wqs(this.globalPosition, IntOffsetKt.m7396roundk4lQ0M(this.windowPosition), this.viewToWindowMatrix, view.getWidth(), view.getHeight());
         this.measureAndLayoutDelegate.dispatchOnPositionedCallbacks(z);
         if (ComposeUiFlags.isRectTrackingEnabled) {
             getRectManager().dispatchCallbacks();
@@ -1911,41 +1924,16 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
     }
 
     @Override // androidx.compose.ui.node.Owner
-    public OwnedLayer createLayer(Function2<? super androidx.compose.ui.graphics.Canvas, ? super GraphicsLayer, Unit> function2, Function0<Unit> function0, GraphicsLayer graphicsLayer, boolean z) {
-        ViewLayerContainer viewLayerContainer;
+    public OwnedLayer createLayer(Function2<? super androidx.compose.ui.graphics.Canvas, ? super GraphicsLayer, Unit> function2, Function0<Unit> function0, GraphicsLayer graphicsLayer) {
         if (graphicsLayer != null) {
             return new GraphicsLayerOwnerLayer(graphicsLayer, null, this, function2, function0);
         }
-        if (!z) {
-            OwnedLayer pop = this.layerCache.pop();
-            if (pop != null) {
-                pop.reuseLayer(function2, function0);
-                return pop;
-            }
-            return new GraphicsLayerOwnerLayer(getGraphicsContext().createGraphicsLayer(), getGraphicsContext(), this, function2, function0);
+        OwnedLayer pop = this.layerCache.pop();
+        if (pop != null) {
+            pop.reuseLayer(function2, function0);
+            return pop;
         }
-        if (isHardwareAccelerated() && this.isRenderNodeCompatible) {
-            try {
-                return new RenderNodeLayer(this, function2, function0);
-            } catch (Throwable unused) {
-                this.isRenderNodeCompatible = false;
-            }
-        }
-        if (this.viewLayersContainer == null) {
-            if (!ViewLayer.Companion.getHasRetrievedMethod()) {
-                ViewLayer.Companion.updateDisplayList(new View(getContext()));
-            }
-            if (ViewLayer.Companion.getShouldUseDispatchDraw()) {
-                viewLayerContainer = new DrawChildContainer(getContext());
-            } else {
-                viewLayerContainer = new ViewLayerContainer(getContext());
-            }
-            this.viewLayersContainer = viewLayerContainer;
-            addView(viewLayerContainer);
-        }
-        DrawChildContainer drawChildContainer = this.viewLayersContainer;
-        Intrinsics.checkNotNull(drawChildContainer);
-        return new ViewLayer(this, drawChildContainer, function2, function0);
+        return new GraphicsLayerOwnerLayer(getGraphicsContext().createGraphicsLayer(), getGraphicsContext(), this, function2, function0);
     }
 
     public final boolean recycle$ui_release(OwnedLayer ownedLayer) {
@@ -1992,7 +1980,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         if (autofillSupported() && ComposeUiFlags.isSemanticAutofillEnabled && (androidAutofillManager = this._autofillManager) != null) {
             androidAutofillManager.onPostLayoutNodeReused$ui_release(layoutNode, i);
         }
-        getRectManager().m5935onLayoutPositionChanged70tqf50(layoutNode, layoutNode.getLayoutDelegate$ui_release().getMeasurePassDelegate$ui_release().m5654getLastPositionnOccac$ui_release(), true);
+        getRectManager().onLayoutPositionChanged(layoutNode, true);
     }
 
     @Override // androidx.compose.ui.node.Owner
@@ -2006,66 +1994,73 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         scheduleMeasureAndLayout$default(this, null, 1, null);
     }
 
-    @Override // androidx.compose.ui.node.Owner
-    /* renamed from: getFocusDirection-P8AzH3I */
-    public FocusDirection mo5760getFocusDirectionP8AzH3I(android.view.KeyEvent keyEvent) {
-        long m5169getKeyZmokQxo = KeyEvent_androidKt.m5169getKeyZmokQxo(keyEvent);
-        if (Key.m4861equalsimpl0(m5169getKeyZmokQxo, Key.Companion.m5097getTabEK5gGoQ())) {
-            return FocusDirection.m3718boximpl(KeyEvent_androidKt.m5175isShiftPressedZmokQxo(keyEvent) ? FocusDirection.Companion.m3730getPreviousdhqQ8s() : FocusDirection.Companion.m3729getNextdhqQ8s());
-        } else if (Key.m4861equalsimpl0(m5169getKeyZmokQxo, Key.Companion.m4938getDirectionRightEK5gGoQ())) {
-            return FocusDirection.m3718boximpl(FocusDirection.Companion.m3731getRightdhqQ8s());
-        } else {
-            if (Key.m4861equalsimpl0(m5169getKeyZmokQxo, Key.Companion.m4937getDirectionLeftEK5gGoQ())) {
-                return FocusDirection.m3718boximpl(FocusDirection.Companion.m3728getLeftdhqQ8s());
-            }
-            if (Key.m4861equalsimpl0(m5169getKeyZmokQxo, Key.Companion.m4939getDirectionUpEK5gGoQ()) ? true : Key.m4861equalsimpl0(m5169getKeyZmokQxo, Key.Companion.m5050getPageUpEK5gGoQ())) {
-                return FocusDirection.m3718boximpl(FocusDirection.Companion.m3732getUpdhqQ8s());
-            }
-            if (Key.m4861equalsimpl0(m5169getKeyZmokQxo, Key.Companion.m4934getDirectionDownEK5gGoQ()) ? true : Key.m4861equalsimpl0(m5169getKeyZmokQxo, Key.Companion.m5049getPageDownEK5gGoQ())) {
-                return FocusDirection.m3718boximpl(FocusDirection.Companion.m3725getDowndhqQ8s());
-            }
-            if (Key.m4861equalsimpl0(m5169getKeyZmokQxo, Key.Companion.m4933getDirectionCenterEK5gGoQ()) ? true : Key.m4861equalsimpl0(m5169getKeyZmokQxo, Key.Companion.m4947getEnterEK5gGoQ()) ? true : Key.m4861equalsimpl0(m5169getKeyZmokQxo, Key.Companion.m5039getNumPadEnterEK5gGoQ())) {
-                return FocusDirection.m3718boximpl(FocusDirection.Companion.m3726getEnterdhqQ8s());
-            }
-            if (Key.m4861equalsimpl0(m5169getKeyZmokQxo, Key.Companion.m4876getBackEK5gGoQ()) ? true : Key.m4861equalsimpl0(m5169getKeyZmokQxo, Key.Companion.m4950getEscapeEK5gGoQ())) {
-                return FocusDirection.m3718boximpl(FocusDirection.Companion.m3727getExitdhqQ8s());
-            }
-            return null;
-        }
-    }
-
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         if (!isAttachedToWindow()) {
             invalidateLayers(getRoot());
         }
+        View view = null;
         Owner.measureAndLayout$default(this, false, 1, null);
         Snapshot.Companion.notifyObjectsInitialized();
         this.isDrawingContent = true;
-        CanvasHolder canvasHolder = this.canvasHolder;
-        Canvas internalCanvas = canvasHolder.getAndroidCanvas().getInternalCanvas();
-        canvasHolder.getAndroidCanvas().setInternalCanvas(canvas);
-        getRoot().draw$ui_release(canvasHolder.getAndroidCanvas(), null);
-        canvasHolder.getAndroidCanvas().setInternalCanvas(internalCanvas);
-        if (!this.dirtyLayers.isEmpty()) {
-            int size = this.dirtyLayers.size();
-            for (int i = 0; i < size; i++) {
-                this.dirtyLayers.get(i).updateDisplayList();
+        try {
+            CanvasHolder canvasHolder = this.canvasHolder;
+            Canvas internalCanvas = canvasHolder.getAndroidCanvas().getInternalCanvas();
+            canvasHolder.getAndroidCanvas().setInternalCanvas(canvas);
+            getRoot().draw$ui_release(canvasHolder.getAndroidCanvas(), null);
+            canvasHolder.getAndroidCanvas().setInternalCanvas(internalCanvas);
+            if (!this.dirtyLayers.isEmpty()) {
+                int size = this.dirtyLayers.size();
+                for (int i = 0; i < size; i++) {
+                    this.dirtyLayers.get(i).updateDisplayList();
+                }
             }
+            if (ViewLayer.Companion.getShouldUseDispatchDraw()) {
+                int save = canvas.save();
+                canvas.clipRect(0.0f, 0.0f, 0.0f, 0.0f);
+                super.dispatchDraw(canvas);
+                canvas.restoreToCount(save);
+            }
+            this.dirtyLayers.clear();
+            this.isDrawingContent = false;
+        } catch (Throwable th) {
+            RootForTest.UncaughtExceptionHandler uncaughtExceptionHandler = this.uncaughtExceptionHandler;
+            if (uncaughtExceptionHandler == null) {
+                throw th;
+            }
+            uncaughtExceptionHandler.onUncaughtException(th);
         }
-        if (ViewLayer.Companion.getShouldUseDispatchDraw()) {
-            int save = canvas.save();
-            canvas.clipRect(0.0f, 0.0f, 0.0f, 0.0f);
-            super.dispatchDraw(canvas);
-            canvas.restoreToCount(save);
-        }
-        this.dirtyLayers.clear();
-        this.isDrawingContent = false;
         List<OwnedLayer> list = this.postponedDirtyLayers;
         if (list != null) {
             Intrinsics.checkNotNull(list);
             this.dirtyLayers.addAll(list);
             list.clear();
+        }
+        if (this.isArrEnabled) {
+            Api35Impl.setRequestedFrameRate(this, this.currentFrameRate);
+            View view2 = this.frameRateCategoryView;
+            if (view2 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("frameRateCategoryView");
+                view2 = null;
+            }
+            Api35Impl.setRequestedFrameRate(view2, this.currentFrameRateCategory);
+            if (!Float.isNaN(this.currentFrameRateCategory)) {
+                View view3 = this.frameRateCategoryView;
+                if (view3 == null) {
+                    Intrinsics.throwUninitializedPropertyAccessException("frameRateCategoryView");
+                    view3 = null;
+                }
+                view3.invalidate();
+                View view4 = this.frameRateCategoryView;
+                if (view4 == null) {
+                    Intrinsics.throwUninitializedPropertyAccessException("frameRateCategoryView");
+                } else {
+                    view = view4;
+                }
+                drawChild(canvas, view, getDrawingTime());
+            }
+            this.currentFrameRate = Float.NaN;
+            this.currentFrameRateCategory = Float.NaN;
         }
         if (ComposeUiFlags.isRectTrackingEnabled) {
             getRectManager().dispatchCallbacks();
@@ -2147,6 +2142,13 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         LifecycleOwner lifecycleOwner2;
         AndroidAutofill androidAutofill;
         super.onAttachedToWindow();
+        if (Build.VERSION.SDK_INT < 30) {
+            setShowLayoutBounds(Companion.getIsShowingLayoutBounds());
+        }
+        if (ComposeUiFlags.areWindowInsetsRulersEnabled) {
+            this.insetsListener.onViewAttachedToWindow(this);
+        }
+        Companion.addNotificationForSysPropsChange(this);
         this._windowInfo.setWindowFocused(hasWindowFocus());
         this._windowInfo.setOnInitializeContainerSize(new Function0<IntSize>() { // from class: androidx.compose.ui.platform.AndroidComposeView$onAttachedToWindow$1
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -2156,11 +2158,11 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ IntSize invoke() {
-                return IntSize.m6847boximpl(m5816invokeYbymL2g());
+                return IntSize.m7414boximpl(m6358invokeYbymL2g());
             }
 
             /* renamed from: invoke-YbymL2g  reason: not valid java name */
-            public final long m5816invokeYbymL2g() {
+            public final long m6358invokeYbymL2g() {
                 return AndroidWindowInfo_androidKt.calculateWindowSize(AndroidComposeView.this);
             }
         });
@@ -2195,7 +2197,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
             }
             this.onViewTreeOwnersAvailable = null;
         }
-        this._inputModeManager.m4855setInputModeiuPiT84(isInTouchMode() ? InputMode.Companion.m4852getTouchaOaMEAU() : InputMode.Companion.m4851getKeyboardaOaMEAU());
+        this._inputModeManager.m5355setInputModeiuPiT84(isInTouchMode() ? InputMode.Companion.m5352getTouchaOaMEAU() : InputMode.Companion.m5351getKeyboardaOaMEAU());
         ViewTreeOwners viewTreeOwners3 = getViewTreeOwners();
         if (viewTreeOwners3 != null && (lifecycleOwner2 = viewTreeOwners3.getLifecycleOwner()) != null) {
             lifecycle2 = lifecycleOwner2.getLifecycle();
@@ -2226,8 +2228,20 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         AndroidAutofill androidAutofill;
         LifecycleOwner lifecycleOwner;
         super.onDetachedFromWindow();
-        getSnapshotObserver().stopObserving$ui_release();
+        if (ComposeUiFlags.areWindowInsetsRulersEnabled) {
+            this.insetsListener.onViewDetachedFromWindow(this);
+        }
         Lifecycle lifecycle = null;
+        if (this.isArrEnabled) {
+            View view = this.frameRateCategoryView;
+            if (view == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("frameRateCategoryView");
+                view = null;
+            }
+            removeView(view);
+        }
+        Companion.removeNotificationForSysPropsChange(this);
+        getSnapshotObserver().stopObserving$ui_release();
         this._windowInfo.setOnInitializeContainerSize(null);
         ViewTreeOwners viewTreeOwners = getViewTreeOwners();
         if (viewTreeOwners != null && (lifecycleOwner = viewTreeOwners.getLifecycleOwner()) != null) {
@@ -2299,6 +2313,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
     @Override // android.view.View
     public boolean dispatchGenericMotionEvent(MotionEvent motionEvent) {
+        final MotionEvent motionEvent2;
         if (this.hoverExitReceived) {
             removeCallbacks(this.sendHoverExitEvent);
             if (motionEvent.getActionMasked() == 8) {
@@ -2307,16 +2322,39 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
                 this.sendHoverExitEvent.run();
             }
         }
+        if (isBadMotionEvent(motionEvent) || !isAttachedToWindow()) {
+            return super.dispatchGenericMotionEvent(motionEvent);
+        }
         if (motionEvent.getActionMasked() == 8) {
-            if (isBadMotionEvent(motionEvent) || !isAttachedToWindow()) {
-                return super.dispatchGenericMotionEvent(motionEvent);
-            }
             if (motionEvent.isFromSource(4194304)) {
                 return handleRotaryEvent(motionEvent);
             }
-            return (m5805handleMotionEvent8iAsVTc(motionEvent) & 1) != 0;
+            return (m6350handleMotionEvent8iAsVTc(motionEvent) & 1) != 0;
         }
-        return super.dispatchGenericMotionEvent(motionEvent);
+        if (motionEvent.isFromSource(2)) {
+            motionEvent2 = motionEvent;
+        } else {
+            float x = motionEvent.getX();
+            motionEvent2 = motionEvent;
+            if (getFocusOwner().dispatchIndirectTouchEvent(new AndroidIndirectTouchEvent(Offset.m4285constructorimpl((Float.floatToRawIntBits(motionEvent.getY()) & 4294967295L) | (Float.floatToRawIntBits(x) << 32)), motionEvent.getEventTime(), AndroidIndirectTouchEvent_androidKt.convertActionToIndirectTouchEventType(motionEvent.getActionMasked()), motionEvent2, null), new Function0<Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeView$dispatchGenericMotionEvent$handled$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                /* JADX WARN: Can't rename method to resolve collision */
+                @Override // kotlin.jvm.functions.Function0
+                public final Boolean invoke() {
+                    boolean dispatchGenericMotionEvent;
+                    dispatchGenericMotionEvent = super/*android.view.ViewGroup*/.dispatchGenericMotionEvent(motionEvent2);
+                    return Boolean.valueOf(dispatchGenericMotionEvent);
+                }
+            })) {
+                return true;
+            }
+        }
+        return super.dispatchGenericMotionEvent(motionEvent2);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -2334,11 +2372,11 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         if (isBadMotionEvent(motionEvent) || !isAttachedToWindow() || (motionEvent.getActionMasked() == 2 && !isPositionChanged(motionEvent))) {
             return false;
         }
-        int m5805handleMotionEvent8iAsVTc = m5805handleMotionEvent8iAsVTc(motionEvent);
-        if ((m5805handleMotionEvent8iAsVTc & 2) != 0) {
+        int m6350handleMotionEvent8iAsVTc = m6350handleMotionEvent8iAsVTc(motionEvent);
+        if ((m6350handleMotionEvent8iAsVTc & 2) != 0) {
             getParent().requestDisallowInterceptTouchEvent(true);
         }
-        return (m5805handleMotionEvent8iAsVTc & 1) != 0;
+        return (m6350handleMotionEvent8iAsVTc & 1) != 0;
     }
 
     private final boolean handleRotaryEvent(final MotionEvent motionEvent) {
@@ -2378,7 +2416,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private final int m5805handleMotionEvent8iAsVTc(MotionEvent motionEvent) {
+    private final int m6350handleMotionEvent8iAsVTc(MotionEvent motionEvent) {
         MotionEvent motionEvent2;
         AndroidComposeView androidComposeView;
         int i;
@@ -2443,10 +2481,10 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
                                     }
                                 }
                                 androidComposeView.previousMotionEvent = MotionEvent.obtainNoHistory(motionEvent);
-                                int m5809sendMotionEvent8iAsVTc = m5809sendMotionEvent8iAsVTc(motionEvent);
+                                int m6352sendMotionEvent8iAsVTc = m6352sendMotionEvent8iAsVTc(motionEvent);
                                 Trace.endSection();
                                 androidComposeView.forceUseMatrixCache = false;
-                                return m5809sendMotionEvent8iAsVTc;
+                                return m6352sendMotionEvent8iAsVTc;
                             }
                         }
                     } catch (Throwable th) {
@@ -2491,10 +2529,10 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
                     }
                 }
                 androidComposeView.previousMotionEvent = MotionEvent.obtainNoHistory(motionEvent);
-                int m5809sendMotionEvent8iAsVTc2 = m5809sendMotionEvent8iAsVTc(motionEvent);
+                int m6352sendMotionEvent8iAsVTc2 = m6352sendMotionEvent8iAsVTc(motionEvent);
                 Trace.endSection();
                 androidComposeView.forceUseMatrixCache = false;
-                return m5809sendMotionEvent8iAsVTc2;
+                return m6352sendMotionEvent8iAsVTc2;
             } catch (Throwable th2) {
                 th = th2;
             }
@@ -2514,11 +2552,11 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
     }
 
     /* renamed from: sendMotionEvent-8iAsVTc  reason: not valid java name */
-    private final int m5809sendMotionEvent8iAsVTc(MotionEvent motionEvent) {
+    private final int m6352sendMotionEvent8iAsVTc(MotionEvent motionEvent) {
         PointerInputEventData pointerInputEventData;
         if (this.keyboardModifiersRequireUpdate) {
             this.keyboardModifiersRequireUpdate = false;
-            this._windowInfo.m5861setKeyboardModifiers5xRPYO0(PointerKeyboardModifiers.m5375constructorimpl(motionEvent.getMetaState()));
+            this._windowInfo.m6409setKeyboardModifiers5xRPYO0(PointerKeyboardModifiers.m5888constructorimpl(motionEvent.getMetaState()));
         }
         AndroidComposeView androidComposeView = this;
         PointerInputEvent convertToPointerInputEvent$ui_release = this.motionEventAdapter.convertToPointerInputEvent$ui_release(motionEvent, androidComposeView);
@@ -2541,18 +2579,19 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
             pointerInputEventData = null;
             PointerInputEventData pointerInputEventData2 = pointerInputEventData;
             if (pointerInputEventData2 != null) {
-                this.lastDownPointerPosition = pointerInputEventData2.m5329getPositionF1C5BW0();
+                this.lastDownPointerPosition = pointerInputEventData2.m5842getPositionF1C5BW0();
             }
-            int m5334processBIzXfog = this.pointerInputEventProcessor.m5334processBIzXfog(convertToPointerInputEvent$ui_release, androidComposeView, isInBounds(motionEvent));
+            int m5847processBIzXfog = this.pointerInputEventProcessor.m5847processBIzXfog(convertToPointerInputEvent$ui_release, androidComposeView, isInBounds(motionEvent));
+            convertToPointerInputEvent$ui_release.setMotionEvent(null);
             int actionMasked = motionEvent.getActionMasked();
-            if ((actionMasked == 0 || actionMasked == 5) && (m5334processBIzXfog & 1) == 0) {
+            if ((actionMasked == 0 || actionMasked == 5) && (m5847processBIzXfog & 1) == 0) {
                 this.motionEventAdapter.endStream(motionEvent.getPointerId(motionEvent.getActionIndex()));
-                return m5334processBIzXfog;
+                return m5847processBIzXfog;
             }
-            return m5334processBIzXfog;
+            return m5847processBIzXfog;
         }
         this.pointerInputEventProcessor.processCancel();
-        return PointerInputEventProcessorKt.ProcessResult(false, false);
+        return PointerInputEventProcessorKt.ProcessResult(false, false, false);
     }
 
     static /* synthetic */ void sendSimulatedEvent$default(AndroidComposeView androidComposeView, MotionEvent motionEvent, int i, long j, boolean z, int i2, Object obj) {
@@ -2592,27 +2631,27 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
             MotionEvent.PointerCoords pointerCoords = pointerCoordsArr[i5];
             motionEvent.getPointerCoords(i6, pointerCoords);
             float f = pointerCoords.x;
-            long mo5393localToScreenMKHz9U = mo5393localToScreenMKHz9U(Offset.m3829constructorimpl((Float.floatToRawIntBits(pointerCoords.y) & 4294967295L) | (Float.floatToRawIntBits(f) << 32)));
-            pointerCoords.x = Float.intBitsToFloat((int) (mo5393localToScreenMKHz9U >> 32));
-            pointerCoords.y = Float.intBitsToFloat((int) (mo5393localToScreenMKHz9U & 4294967295L));
+            long mo5906localToScreenMKHz9U = mo5906localToScreenMKHz9U(Offset.m4285constructorimpl((Float.floatToRawIntBits(pointerCoords.y) & 4294967295L) | (Float.floatToRawIntBits(f) << 32)));
+            pointerCoords.x = Float.intBitsToFloat((int) (mo5906localToScreenMKHz9U >> 32));
+            pointerCoords.y = Float.intBitsToFloat((int) (mo5906localToScreenMKHz9U & 4294967295L));
             i5++;
         }
         MotionEvent obtain = MotionEvent.obtain(motionEvent.getDownTime() == motionEvent.getEventTime() ? j : motionEvent.getDownTime(), j, i, pointerCount, pointerPropertiesArr, pointerCoordsArr, motionEvent.getMetaState(), z ? 0 : motionEvent.getButtonState(), motionEvent.getXPrecision(), motionEvent.getYPrecision(), motionEvent.getDeviceId(), motionEvent.getEdgeFlags(), motionEvent.getSource(), motionEvent.getFlags());
         AndroidComposeView androidComposeView = this;
         PointerInputEvent convertToPointerInputEvent$ui_release = this.motionEventAdapter.convertToPointerInputEvent$ui_release(obtain, androidComposeView);
         Intrinsics.checkNotNull(convertToPointerInputEvent$ui_release);
-        this.pointerInputEventProcessor.m5334processBIzXfog(convertToPointerInputEvent$ui_release, androidComposeView, true);
+        this.pointerInputEventProcessor.m5847processBIzXfog(convertToPointerInputEvent$ui_release, androidComposeView, true);
         obtain.recycle();
     }
 
     @Override // android.view.View
     public boolean canScrollHorizontally(int i) {
-        return this.composeAccessibilityDelegate.m5820canScroll0AR0LA0$ui_release(false, i, this.lastDownPointerPosition);
+        return this.composeAccessibilityDelegate.m6363canScroll0AR0LA0$ui_release(false, i, this.lastDownPointerPosition);
     }
 
     @Override // android.view.View
     public boolean canScrollVertically(int i) {
-        return this.composeAccessibilityDelegate.m5820canScroll0AR0LA0$ui_release(true, i, this.lastDownPointerPosition);
+        return this.composeAccessibilityDelegate.m6363canScroll0AR0LA0$ui_release(true, i, this.lastDownPointerPosition);
     }
 
     private final boolean isInBounds(MotionEvent motionEvent) {
@@ -2623,25 +2662,25 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
     @Override // androidx.compose.ui.input.pointer.PositionCalculator
     /* renamed from: localToScreen-MK-Hz9U */
-    public long mo5393localToScreenMKHz9U(long j) {
+    public long mo5906localToScreenMKHz9U(long j) {
         recalculateWindowPosition();
-        long m4315mapMKHz9U = Matrix.m4315mapMKHz9U(this.viewToWindowMatrix, j);
-        return Offset.m3829constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (m4315mapMKHz9U & 4294967295L)) + Float.intBitsToFloat((int) (this.windowPosition & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (m4315mapMKHz9U >> 32)) + Float.intBitsToFloat((int) (this.windowPosition >> 32))) << 32));
+        long m4785mapMKHz9U = Matrix.m4785mapMKHz9U(this.viewToWindowMatrix, j);
+        return Offset.m4285constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (m4785mapMKHz9U & 4294967295L)) + Float.intBitsToFloat((int) (this.windowPosition & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (m4785mapMKHz9U >> 32)) + Float.intBitsToFloat((int) (this.windowPosition >> 32))) << 32));
     }
 
     @Override // androidx.compose.ui.input.pointer.MatrixPositionCalculator
     /* renamed from: localToScreen-58bKbWc */
-    public void mo5242localToScreen58bKbWc(float[] fArr) {
+    public void mo5755localToScreen58bKbWc(float[] fArr) {
         recalculateWindowPosition();
-        Matrix.m4328timesAssign58bKbWc(fArr, this.viewToWindowMatrix);
-        AndroidComposeView_androidKt.m5822access$preTranslatecG2Xzmc(fArr, Float.intBitsToFloat((int) (this.windowPosition >> 32)), Float.intBitsToFloat((int) (this.windowPosition & 4294967295L)), this.tmpMatrix);
+        Matrix.m4798timesAssign58bKbWc(fArr, this.viewToWindowMatrix);
+        AndroidComposeView_androidKt.m6365access$preTranslatecG2Xzmc(fArr, Float.intBitsToFloat((int) (this.windowPosition >> 32)), Float.intBitsToFloat((int) (this.windowPosition & 4294967295L)), this.tmpMatrix);
     }
 
     @Override // androidx.compose.ui.input.pointer.PositionCalculator
     /* renamed from: screenToLocal-MK-Hz9U */
-    public long mo5394screenToLocalMKHz9U(long j) {
+    public long mo5907screenToLocalMKHz9U(long j) {
         recalculateWindowPosition();
-        return Matrix.m4315mapMKHz9U(this.windowToViewMatrix, Offset.m3829constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (this.windowPosition >> 32))) << 32) | (4294967295L & Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (this.windowPosition & 4294967295L))))));
+        return Matrix.m4785mapMKHz9U(this.windowToViewMatrix, Offset.m4285constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (this.windowPosition >> 32))) << 32) | (4294967295L & Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (this.windowPosition & 4294967295L))))));
     }
 
     private final void recalculateWindowPosition() {
@@ -2662,7 +2701,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
             int[] iArr = this.tmpPositionArray;
             androidComposeView.getLocationInWindow(iArr);
             int[] iArr2 = this.tmpPositionArray;
-            this.windowPosition = Offset.m3829constructorimpl((Float.floatToRawIntBits(iArr[0] - iArr2[0]) << 32) | (Float.floatToRawIntBits(iArr[1] - iArr2[1]) & 4294967295L));
+            this.windowPosition = Offset.m4285constructorimpl((Float.floatToRawIntBits(iArr[0] - iArr2[0]) << 32) | (Float.floatToRawIntBits(iArr[1] - iArr2[1]) & 4294967295L));
         }
     }
 
@@ -2672,25 +2711,25 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         float[] fArr = this.viewToWindowMatrix;
         float x = motionEvent.getX();
         float y = motionEvent.getY();
-        long m4315mapMKHz9U = Matrix.m4315mapMKHz9U(fArr, Offset.m3829constructorimpl((Float.floatToRawIntBits(y) & 4294967295L) | (Float.floatToRawIntBits(x) << 32)));
-        this.windowPosition = Offset.m3829constructorimpl((Float.floatToRawIntBits(motionEvent.getRawX() - Float.intBitsToFloat((int) (m4315mapMKHz9U >> 32))) << 32) | (Float.floatToRawIntBits(motionEvent.getRawY() - Float.intBitsToFloat((int) (m4315mapMKHz9U & 4294967295L))) & 4294967295L));
+        long m4785mapMKHz9U = Matrix.m4785mapMKHz9U(fArr, Offset.m4285constructorimpl((Float.floatToRawIntBits(y) & 4294967295L) | (Float.floatToRawIntBits(x) << 32)));
+        this.windowPosition = Offset.m4285constructorimpl((Float.floatToRawIntBits(motionEvent.getRawX() - Float.intBitsToFloat((int) (m4785mapMKHz9U >> 32))) << 32) | (Float.floatToRawIntBits(motionEvent.getRawY() - Float.intBitsToFloat((int) (m4785mapMKHz9U & 4294967295L))) & 4294967295L));
     }
 
     private final void recalculateWindowViewTransforms() {
-        this.matrixToWindow.mo5826calculateMatrixToWindowEL8BTi8(this, this.viewToWindowMatrix);
-        InvertMatrixKt.m5853invertToJiSxe2E(this.viewToWindowMatrix, this.windowToViewMatrix);
+        this.matrixToWindow.mo6369calculateMatrixToWindowEL8BTi8(this, this.viewToWindowMatrix);
+        InvertMatrixKt.m6401invertToJiSxe2E(this.viewToWindowMatrix, this.windowToViewMatrix);
     }
 
     private final void updateWindowMetrics() {
         MutableState access$get_containerSize$p = LazyWindowInfo.access$get_containerSize$p(this._windowInfo);
         if (access$get_containerSize$p != null) {
-            access$get_containerSize$p.setValue(IntSize.m6847boximpl(AndroidWindowInfo_androidKt.calculateWindowSize(this)));
+            access$get_containerSize$p.setValue(IntSize.m7414boximpl(AndroidWindowInfo_androidKt.calculateWindowSize(this)));
         }
     }
 
     @Override // android.view.View
     public boolean onCheckIsTextEditor() {
-        AndroidPlatformTextInputSession androidPlatformTextInputSession = (AndroidPlatformTextInputSession) SessionMutex.m3661getCurrentSessionimpl(this.textInputSessionMutex);
+        AndroidPlatformTextInputSession androidPlatformTextInputSession = (AndroidPlatformTextInputSession) SessionMutex.m4034getCurrentSessionimpl(this.textInputSessionMutex);
         if (androidPlatformTextInputSession == null) {
             return this.legacyTextInputServiceAndroid.isEditorFocused();
         }
@@ -2699,7 +2738,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
     @Override // android.view.View
     public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        AndroidPlatformTextInputSession androidPlatformTextInputSession = (AndroidPlatformTextInputSession) SessionMutex.m3661getCurrentSessionimpl(this.textInputSessionMutex);
+        AndroidPlatformTextInputSession androidPlatformTextInputSession = (AndroidPlatformTextInputSession) SessionMutex.m4034getCurrentSessionimpl(this.textInputSessionMutex);
         if (androidPlatformTextInputSession == null) {
             return this.legacyTextInputServiceAndroid.createInputConnection(editorInfo);
         }
@@ -2708,16 +2747,16 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
 
     @Override // androidx.compose.ui.node.Owner
     /* renamed from: calculateLocalPosition-MK-Hz9U */
-    public long mo5758calculateLocalPositionMKHz9U(long j) {
+    public long mo6305calculateLocalPositionMKHz9U(long j) {
         recalculateWindowPosition();
-        return Matrix.m4315mapMKHz9U(this.windowToViewMatrix, j);
+        return Matrix.m4785mapMKHz9U(this.windowToViewMatrix, j);
     }
 
     @Override // androidx.compose.ui.node.Owner
     /* renamed from: calculatePositionInWindow-MK-Hz9U */
-    public long mo5759calculatePositionInWindowMKHz9U(long j) {
+    public long mo6306calculatePositionInWindowMKHz9U(long j) {
         recalculateWindowPosition();
-        return Matrix.m4315mapMKHz9U(this.viewToWindowMatrix, j);
+        return Matrix.m4785mapMKHz9U(this.viewToWindowMatrix, j);
     }
 
     @Override // android.view.View
@@ -2773,7 +2812,7 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
             } else if (!isPositionChanged(motionEvent)) {
                 return false;
             }
-            if ((m5805handleMotionEvent8iAsVTc(motionEvent) & 1) != 0) {
+            if ((m6350handleMotionEvent8iAsVTc(motionEvent) & 1) != 0) {
                 return true;
             }
         }
@@ -2882,8 +2921,73 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
         }
     }
 
+    @Override // androidx.compose.ui.node.Owner
+    public void incrementKeepScreenOnCount() {
+        this.keepScreenOnCount++;
+        getView().setKeepScreenOn(this.keepScreenOnCount > 0);
+    }
+
+    @Override // androidx.compose.ui.node.Owner
+    public void decrementKeepScreenOnCount() {
+        this.keepScreenOnCount--;
+        getView().setKeepScreenOn(this.keepScreenOnCount > 0);
+    }
+
+    @Override // androidx.compose.ui.node.Owner
+    public AndroidComposeView getOutOfFrameExecutor() {
+        if (isAttachedToWindow()) {
+            return this;
+        }
+        return null;
+    }
+
+    @Override // androidx.compose.ui.node.OutOfFrameExecutor
+    public void schedule(final Function0<Unit> function0) {
+        Handler handler = getHandler();
+        if (handler == null) {
+            throw new IllegalArgumentException("schedule is called when outOfFrameExecutor is not available (view is detached)".toString());
+        }
+        handler.postAtFrontOfQueue(new Runnable() { // from class: androidx.compose.ui.platform.AndroidComposeView$$ExternalSyntheticLambda4
+            @Override // java.lang.Runnable
+            public final void run() {
+                AndroidComposeView.schedule$lambda$38(Function0.this);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void schedule$lambda$38(Function0 function0) {
+        Trace.beginSection("AndroidOwner:outOfFrameExecutor");
+        try {
+            function0.invoke();
+        } finally {
+            Trace.endSection();
+        }
+    }
+
+    @Override // androidx.compose.ui.node.Owner
+    public void voteFrameRate(float f) {
+        if (this.isArrEnabled) {
+            if (f > 0.0f) {
+                if (Float.isNaN(this.currentFrameRate) || f > this.currentFrameRate) {
+                    this.currentFrameRate = f;
+                }
+            } else if (f < 0.0f) {
+                if (Float.isNaN(this.currentFrameRateCategory) || f < this.currentFrameRateCategory) {
+                    this.currentFrameRateCategory = f;
+                }
+            }
+        }
+    }
+
+    @Override // androidx.compose.ui.node.Owner
+    /* renamed from: dispatchOnScrollChanged-k-4lQ0M */
+    public void mo6307dispatchOnScrollChangedk4lQ0M(long j) {
+        Companion.dispatchOnScrollChanged(getViewTreeObserver());
+    }
+
     /* compiled from: AndroidComposeView.android.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0007\u001a\u00020\bH\u0002R\u0010\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0005\u001a\b\u0012\u0002\b\u0003\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\t"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeView$Companion;", "", "()V", "getBooleanMethod", "Ljava/lang/reflect/Method;", "systemPropertiesClass", "Ljava/lang/Class;", "getIsShowingLayoutBounds", "", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u000f\u001a\u00020\u0010H\u0002J\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u000bH\u0002J\u0010\u0010\u0014\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u000bH\u0002J\u0010\u0010\u0015\u001a\u00020\u00122\u0006\u0010\u0016\u001a\u00020\u0017H\u0007R\u0014\u0010\u0004\u001a\b\u0012\u0002\b\u0003\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0006\u001a\u0004\u0018\u00010\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeView$Companion;", "", "<init>", "()V", "systemPropertiesClass", "Ljava/lang/Class;", "getBooleanMethod", "Ljava/lang/reflect/Method;", "addChangeCallbackMethod", "composeViews", "Landroidx/collection/MutableObjectList;", "Landroidx/compose/ui/platform/AndroidComposeView;", "systemPropertiesChangedRunnable", "Ljava/lang/Runnable;", "dispatchOnScrollChangedMethod", "getIsShowingLayoutBounds", "", "addNotificationForSysPropsChange", "", "composeView", "removeNotificationForSysPropsChange", "dispatchOnScrollChanged", "viewTreeObserver", "Landroid/view/ViewTreeObserver;", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -2898,24 +3002,117 @@ public final class AndroidComposeView extends ViewGroup implements Owner, ViewRo
             try {
                 if (AndroidComposeView.systemPropertiesClass == null) {
                     AndroidComposeView.systemPropertiesClass = Class.forName("android.os.SystemProperties");
+                }
+                if (AndroidComposeView.getBooleanMethod == null) {
                     Class cls = AndroidComposeView.systemPropertiesClass;
                     AndroidComposeView.getBooleanMethod = cls != null ? cls.getDeclaredMethod("getBoolean", String.class, Boolean.TYPE) : null;
                 }
                 Method method = AndroidComposeView.getBooleanMethod;
                 Object invoke = method != null ? method.invoke(null, "debug.layout", false) : null;
-                Boolean bool = invoke instanceof Boolean ? invoke : null;
-                if (bool != null) {
-                    return bool.booleanValue();
-                }
-                return false;
+                return Intrinsics.areEqual((Object) (invoke instanceof Boolean ? invoke : null), (Object) true);
             } catch (Exception unused) {
                 return false;
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final void addNotificationForSysPropsChange(AndroidComposeView androidComposeView) {
+            if (Build.VERSION.SDK_INT > 28) {
+                if (AndroidComposeView.systemPropertiesChangedRunnable == null) {
+                    Runnable runnable = new Runnable() { // from class: androidx.compose.ui.platform.AndroidComposeView$Companion$$ExternalSyntheticLambda0
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            AndroidComposeView.Companion.addNotificationForSysPropsChange$lambda$3();
+                        }
+                    };
+                    AndroidComposeView.systemPropertiesChangedRunnable = runnable;
+                    StrictMode.VmPolicy vmPolicy = StrictMode.getVmPolicy();
+                    try {
+                        try {
+                            if (AndroidComposeView.systemPropertiesClass == null) {
+                                AndroidComposeView.systemPropertiesClass = Class.forName("android.os.SystemProperties");
+                            }
+                            if (AndroidComposeView.addChangeCallbackMethod == null) {
+                                StrictMode.setVmPolicy(StrictMode.VmPolicy.LAX);
+                                Class cls = AndroidComposeView.systemPropertiesClass;
+                                AndroidComposeView.addChangeCallbackMethod = cls != null ? cls.getDeclaredMethod("addChangeCallback", Runnable.class) : null;
+                            }
+                            Method method = AndroidComposeView.addChangeCallbackMethod;
+                            if (method != null) {
+                                method.invoke(null, runnable);
+                            }
+                        } finally {
+                            StrictMode.setVmPolicy(vmPolicy);
+                        }
+                    } catch (Throwable unused) {
+                        Unit unit = Unit.INSTANCE;
+                    }
+                }
+                synchronized (AndroidComposeView.composeViews) {
+                    AndroidComposeView.composeViews.add(androidComposeView);
+                    Unit unit2 = Unit.INSTANCE;
+                }
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final void addNotificationForSysPropsChange$lambda$3() {
+            synchronized (AndroidComposeView.composeViews) {
+                int i = 0;
+                if (Build.VERSION.SDK_INT < 30) {
+                    MutableObjectList mutableObjectList = AndroidComposeView.composeViews;
+                    Object[] objArr = mutableObjectList.content;
+                    int i2 = mutableObjectList._size;
+                    while (i < i2) {
+                        AndroidComposeView androidComposeView = (AndroidComposeView) objArr[i];
+                        boolean showLayoutBounds = androidComposeView.getShowLayoutBounds();
+                        androidComposeView.setShowLayoutBounds(AndroidComposeView.Companion.getIsShowingLayoutBounds());
+                        if (showLayoutBounds != androidComposeView.getShowLayoutBounds()) {
+                            androidComposeView.invalidateDescendants();
+                        }
+                        i++;
+                    }
+                } else {
+                    MutableObjectList mutableObjectList2 = AndroidComposeView.composeViews;
+                    Object[] objArr2 = mutableObjectList2.content;
+                    int i3 = mutableObjectList2._size;
+                    while (i < i3) {
+                        ((AndroidComposeView) objArr2[i]).invalidateDescendants();
+                        i++;
+                    }
+                }
+                Unit unit = Unit.INSTANCE;
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final void removeNotificationForSysPropsChange(AndroidComposeView androidComposeView) {
+            if (Build.VERSION.SDK_INT > 28) {
+                synchronized (AndroidComposeView.composeViews) {
+                    AndroidComposeView.composeViews.remove(androidComposeView);
+                    Unit unit = Unit.INSTANCE;
+                }
+            }
+        }
+
+        public final void dispatchOnScrollChanged(ViewTreeObserver viewTreeObserver) {
+            try {
+                if (AndroidComposeView.dispatchOnScrollChangedMethod == null) {
+                    Method declaredMethod = viewTreeObserver.getClass().getDeclaredMethod("dispatchOnScrollChanged", new Class[0]);
+                    declaredMethod.setAccessible(true);
+                    AndroidComposeView.dispatchOnScrollChangedMethod = declaredMethod;
+                }
+                Method method = AndroidComposeView.dispatchOnScrollChangedMethod;
+                if (method != null) {
+                    method.invoke(viewTreeObserver, new Object[0]);
+                }
+            } catch (Exception unused) {
             }
         }
     }
 
     /* compiled from: AndroidComposeView.android.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0007\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0002\u0010\u0006R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\n¨\u0006\u000b"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;", "", "lifecycleOwner", "Landroidx/lifecycle/LifecycleOwner;", "savedStateRegistryOwner", "Landroidx/savedstate/SavedStateRegistryOwner;", "(Landroidx/lifecycle/LifecycleOwner;Landroidx/savedstate/SavedStateRegistryOwner;)V", "getLifecycleOwner", "()Landroidx/lifecycle/LifecycleOwner;", "getSavedStateRegistryOwner", "()Landroidx/savedstate/SavedStateRegistryOwner;", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0007\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000b¨\u0006\f"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;", "", "lifecycleOwner", "Landroidx/lifecycle/LifecycleOwner;", "savedStateRegistryOwner", "Landroidx/savedstate/SavedStateRegistryOwner;", "<init>", "(Landroidx/lifecycle/LifecycleOwner;Landroidx/savedstate/SavedStateRegistryOwner;)V", "getLifecycleOwner", "()Landroidx/lifecycle/LifecycleOwner;", "getSavedStateRegistryOwner", "()Landroidx/savedstate/SavedStateRegistryOwner;", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class ViewTreeOwners {
         public static final int $stable = 8;

@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableConcatArray<T> extends Flowable<T> {
     final boolean delayError;
     final Publisher<? extends T>[] sources;
@@ -27,7 +27,7 @@ public final class FlowableConcatArray<T> extends Flowable<T> {
         concatArraySubscriber.onComplete();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ConcatArraySubscriber<T> extends SubscriptionArbiter implements FlowableSubscriber<T> {
         private static final long serialVersionUID = -8158322871608889516L;
         final boolean delayError;

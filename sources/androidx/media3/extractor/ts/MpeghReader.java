@@ -14,7 +14,7 @@ import androidx.media3.extractor.ts.MpeghUtil;
 import androidx.media3.extractor.ts.TsPayloadReader;
 import com.google.common.collect.ImmutableList;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MpeghReader implements ElementaryStreamReader {
     private static final int MAX_MHAS_PACKET_HEADER_SIZE = 15;
     private static final int MHAS_SYNC_WORD_LENGTH = 3;

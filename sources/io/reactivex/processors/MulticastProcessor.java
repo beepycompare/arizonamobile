@@ -23,7 +23,7 @@ import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 @SchedulerSupport("none")
 @BackpressureSupport(BackpressureKind.FULL)
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MulticastProcessor<T> extends FlowableProcessor<T> {
     static final MulticastSubscription[] EMPTY = new MulticastSubscription[0];
     static final MulticastSubscription[] TERMINATED = new MulticastSubscription[0];
@@ -379,7 +379,7 @@ public final class MulticastProcessor<T> extends FlowableProcessor<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class MulticastSubscription<T> extends AtomicLong implements Subscription {
         private static final long serialVersionUID = -363282618957264509L;
         final Subscriber<? super T> downstream;

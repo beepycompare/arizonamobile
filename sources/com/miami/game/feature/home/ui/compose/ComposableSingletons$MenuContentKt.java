@@ -15,7 +15,7 @@ public final class ComposableSingletons$MenuContentKt {
     public static final ComposableSingletons$MenuContentKt INSTANCE = new ComposableSingletons$MenuContentKt();
 
     /* renamed from: lambda$-432014182  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f80lambda$432014182 = ComposableLambdaKt.composableLambdaInstance(-432014182, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$MenuContentKt$$ExternalSyntheticLambda0
+    private static Function3<BoxScope, Composer, Integer, Unit> f74lambda$432014182 = ComposableLambdaKt.composableLambdaInstance(-432014182, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$MenuContentKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__432014182$lambda$0;
@@ -25,7 +25,7 @@ public final class ComposableSingletons$MenuContentKt {
     });
 
     /* renamed from: lambda$-989998245  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f81lambda$989998245 = ComposableLambdaKt.composableLambdaInstance(-989998245, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$MenuContentKt$$ExternalSyntheticLambda1
+    private static Function3<BoxScope, Composer, Integer, Unit> f75lambda$989998245 = ComposableLambdaKt.composableLambdaInstance(-989998245, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$MenuContentKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__989998245$lambda$1;
@@ -42,17 +42,17 @@ public final class ComposableSingletons$MenuContentKt {
         }
     });
 
-    /* renamed from: getLambda$-432014182$home_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8408getLambda$432014182$home_release_web() {
-        return f80lambda$432014182;
+    /* renamed from: getLambda$-432014182$home_release  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m8974getLambda$432014182$home_release() {
+        return f74lambda$432014182;
     }
 
-    /* renamed from: getLambda$-989998245$home_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8409getLambda$989998245$home_release_web() {
-        return f81lambda$989998245;
+    /* renamed from: getLambda$-989998245$home_release  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m8975getLambda$989998245$home_release() {
+        return f75lambda$989998245;
     }
 
-    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$1483995263$home_release_web() {
+    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$1483995263$home_release() {
         return lambda$1483995263;
     }
 

@@ -4,7 +4,7 @@ import androidx.compose.ui.unit.Dp;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: ContextualFlowLayout.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010\u0002\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001B-\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006\u0012\b\b\u0002\u0010\u0007\u001a\u00020\u0006¢\u0006\u0002\u0010\bJ2\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H\u0000ø\u0001\u0000¢\u0006\u0004\b\u0018\u0010\u0019R\u001a\u0010\u0002\u001a\u00020\u0003X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\fR\"\u0010\u0007\u001a\u00020\u0006X\u0080\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\u0011\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\"\u0010\u0005\u001a\u00020\u0006X\u0080\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\u0011\u001a\u0004\b\u0012\u0010\u000e\"\u0004\b\u0013\u0010\u0010R\u001a\u0010\u0004\u001a\u00020\u0003X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\n\"\u0004\b\u0015\u0010\f\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u001a"}, d2 = {"Landroidx/compose/foundation/layout/FlowLineInfo;", "", "lineIndex", "", "positionInLine", "maxMainAxisSize", "Landroidx/compose/ui/unit/Dp;", "maxCrossAxisSize", "(IIFFLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getLineIndex$foundation_layout_release", "()I", "setLineIndex$foundation_layout_release", "(I)V", "getMaxCrossAxisSize-D9Ej5fM$foundation_layout_release", "()F", "setMaxCrossAxisSize-0680j_4$foundation_layout_release", "(F)V", "F", "getMaxMainAxisSize-D9Ej5fM$foundation_layout_release", "setMaxMainAxisSize-0680j_4$foundation_layout_release", "getPositionInLine$foundation_layout_release", "setPositionInLine$foundation_layout_release", "update", "", "update-4j6BHR0$foundation_layout_release", "(IIFF)V", "foundation-layout_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0010\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u0001B/\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006\u0012\b\b\u0002\u0010\u0007\u001a\u00020\u0006¢\u0006\u0004\b\b\u0010\tJ/\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H\u0000¢\u0006\u0004\b\u0019\u0010\u001aR\u001a\u0010\u0002\u001a\u00020\u0003X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\rR\u001a\u0010\u0004\u001a\u00020\u0003X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u000b\"\u0004\b\u000f\u0010\rR\u001c\u0010\u0005\u001a\u00020\u0006X\u0080\u000e¢\u0006\u0010\n\u0002\u0010\u0014\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u001c\u0010\u0007\u001a\u00020\u0006X\u0080\u000e¢\u0006\u0010\n\u0002\u0010\u0014\u001a\u0004\b\u0015\u0010\u0011\"\u0004\b\u0016\u0010\u0013¨\u0006\u001b"}, d2 = {"Landroidx/compose/foundation/layout/FlowLineInfo;", "", "lineIndex", "", "positionInLine", "maxMainAxisSize", "Landroidx/compose/ui/unit/Dp;", "maxCrossAxisSize", "<init>", "(IIFFLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getLineIndex$foundation_layout", "()I", "setLineIndex$foundation_layout", "(I)V", "getPositionInLine$foundation_layout", "setPositionInLine$foundation_layout", "getMaxMainAxisSize-D9Ej5fM$foundation_layout", "()F", "setMaxMainAxisSize-0680j_4$foundation_layout", "(F)V", "F", "getMaxCrossAxisSize-D9Ej5fM$foundation_layout", "setMaxCrossAxisSize-0680j_4$foundation_layout", "update", "", "update-4j6BHR0$foundation_layout", "(IIFF)V", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class FlowLineInfo {
     public static final int $stable = 8;
@@ -24,44 +24,44 @@ public final class FlowLineInfo {
         this.maxCrossAxisSize = f2;
     }
 
-    public final int getLineIndex$foundation_layout_release() {
+    public final int getLineIndex$foundation_layout() {
         return this.lineIndex;
     }
 
-    public final void setLineIndex$foundation_layout_release(int i) {
+    public final void setLineIndex$foundation_layout(int i) {
         this.lineIndex = i;
     }
 
-    public final int getPositionInLine$foundation_layout_release() {
+    public final int getPositionInLine$foundation_layout() {
         return this.positionInLine;
     }
 
-    public final void setPositionInLine$foundation_layout_release(int i) {
+    public final void setPositionInLine$foundation_layout(int i) {
         this.positionInLine = i;
     }
 
-    /* renamed from: getMaxMainAxisSize-D9Ej5fM$foundation_layout_release  reason: not valid java name */
-    public final float m670getMaxMainAxisSizeD9Ej5fM$foundation_layout_release() {
+    /* renamed from: getMaxMainAxisSize-D9Ej5fM$foundation_layout  reason: not valid java name */
+    public final float m757getMaxMainAxisSizeD9Ej5fM$foundation_layout() {
         return this.maxMainAxisSize;
     }
 
-    /* renamed from: setMaxMainAxisSize-0680j_4$foundation_layout_release  reason: not valid java name */
-    public final void m672setMaxMainAxisSize0680j_4$foundation_layout_release(float f) {
+    /* renamed from: setMaxMainAxisSize-0680j_4$foundation_layout  reason: not valid java name */
+    public final void m759setMaxMainAxisSize0680j_4$foundation_layout(float f) {
         this.maxMainAxisSize = f;
     }
 
-    /* renamed from: getMaxCrossAxisSize-D9Ej5fM$foundation_layout_release  reason: not valid java name */
-    public final float m669getMaxCrossAxisSizeD9Ej5fM$foundation_layout_release() {
+    /* renamed from: getMaxCrossAxisSize-D9Ej5fM$foundation_layout  reason: not valid java name */
+    public final float m756getMaxCrossAxisSizeD9Ej5fM$foundation_layout() {
         return this.maxCrossAxisSize;
     }
 
-    /* renamed from: setMaxCrossAxisSize-0680j_4$foundation_layout_release  reason: not valid java name */
-    public final void m671setMaxCrossAxisSize0680j_4$foundation_layout_release(float f) {
+    /* renamed from: setMaxCrossAxisSize-0680j_4$foundation_layout  reason: not valid java name */
+    public final void m758setMaxCrossAxisSize0680j_4$foundation_layout(float f) {
         this.maxCrossAxisSize = f;
     }
 
-    /* renamed from: update-4j6BHR0$foundation_layout_release  reason: not valid java name */
-    public final void m673update4j6BHR0$foundation_layout_release(int i, int i2, float f, float f2) {
+    /* renamed from: update-4j6BHR0$foundation_layout  reason: not valid java name */
+    public final void m760update4j6BHR0$foundation_layout(int i, int i2, float f, float f2) {
         this.lineIndex = i;
         this.positionInLine = i2;
         this.maxMainAxisSize = f;
@@ -69,6 +69,6 @@ public final class FlowLineInfo {
     }
 
     public /* synthetic */ FlowLineInfo(int i, int i2, float f, float f2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i3 & 1) != 0 ? 0 : i, (i3 & 2) != 0 ? 0 : i2, (i3 & 4) != 0 ? Dp.m6684constructorimpl(0) : f, (i3 & 8) != 0 ? Dp.m6684constructorimpl(0) : f2, null);
+        this((i3 & 1) != 0 ? 0 : i, (i3 & 2) != 0 ? 0 : i2, (i3 & 4) != 0 ? Dp.m7251constructorimpl(0) : f, (i3 & 8) != 0 ? Dp.m7251constructorimpl(0) : f2, null);
     }
 }

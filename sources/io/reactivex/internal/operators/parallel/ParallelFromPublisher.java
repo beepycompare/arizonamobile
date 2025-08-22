@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicLongArray;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ParallelFromPublisher<T> extends ParallelFlowable<T> {
     final int parallelism;
     final int prefetch;
@@ -38,7 +38,7 @@ public final class ParallelFromPublisher<T> extends ParallelFlowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ParallelDispatcher<T> extends AtomicInteger implements FlowableSubscriber<T> {
         private static final long serialVersionUID = -4470634016609963609L;
         volatile boolean cancelled;
@@ -109,7 +109,7 @@ public final class ParallelFromPublisher<T> extends ParallelFlowable<T> {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public final class RailSubscription implements Subscription {
             final int j;
             final int m;

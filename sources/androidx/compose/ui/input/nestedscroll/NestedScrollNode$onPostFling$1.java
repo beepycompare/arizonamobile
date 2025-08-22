@@ -6,13 +6,12 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NestedScrollNode.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.input.nestedscroll.NestedScrollNode", f = "NestedScrollNode.kt", i = {0, 0, 0, 1}, l = {103, 113}, m = "onPostFling-RZ2iAVY", n = {"this", "consumed", "available", "selfConsumed"}, s = {"L$0", "J$0", "J$1", "J$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.ui.input.nestedscroll.NestedScrollNode", f = "NestedScrollNode.kt", i = {0, 0, 1}, l = {122, 127}, m = "onPostFling-RZ2iAVY", n = {"consumed", "available", "selfConsumed"}, s = {"J$0", "J$1", "J$0"})
 /* loaded from: classes.dex */
 public final class NestedScrollNode$onPostFling$1 extends ContinuationImpl {
     long J$0;
     long J$1;
-    Object L$0;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ NestedScrollNode this$0;
@@ -28,6 +27,6 @@ public final class NestedScrollNode$onPostFling$1 extends ContinuationImpl {
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.mo509onPostFlingRZ2iAVY(0L, 0L, this);
+        return this.this$0.mo566onPostFlingRZ2iAVY(0L, 0L, this);
     }
 }

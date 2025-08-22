@@ -33,45 +33,45 @@ public final class IconToggleButtonColors {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m1961getContainerColor0d7_KjU() {
+    public final long m2268getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getContentColor-0d7_KjU  reason: not valid java name */
-    public final long m1962getContentColor0d7_KjU() {
+    public final long m2269getContentColor0d7_KjU() {
         return this.contentColor;
     }
 
     /* renamed from: getDisabledContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m1963getDisabledContainerColor0d7_KjU() {
+    public final long m2270getDisabledContainerColor0d7_KjU() {
         return this.disabledContainerColor;
     }
 
     /* renamed from: getDisabledContentColor-0d7_KjU  reason: not valid java name */
-    public final long m1964getDisabledContentColor0d7_KjU() {
+    public final long m2271getDisabledContentColor0d7_KjU() {
         return this.disabledContentColor;
     }
 
     /* renamed from: getCheckedContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m1959getCheckedContainerColor0d7_KjU() {
+    public final long m2266getCheckedContainerColor0d7_KjU() {
         return this.checkedContainerColor;
     }
 
     /* renamed from: getCheckedContentColor-0d7_KjU  reason: not valid java name */
-    public final long m1960getCheckedContentColor0d7_KjU() {
+    public final long m2267getCheckedContentColor0d7_KjU() {
         return this.checkedContentColor;
     }
 
     /* renamed from: copy-tNS2XkQ$default  reason: not valid java name */
-    public static /* synthetic */ IconToggleButtonColors m1957copytNS2XkQ$default(IconToggleButtonColors iconToggleButtonColors, long j, long j2, long j3, long j4, long j5, long j6, int i, Object obj) {
+    public static /* synthetic */ IconToggleButtonColors m2264copytNS2XkQ$default(IconToggleButtonColors iconToggleButtonColors, long j, long j2, long j3, long j4, long j5, long j6, int i, Object obj) {
         if ((i & 1) != 0) {
             j = iconToggleButtonColors.containerColor;
         }
-        return iconToggleButtonColors.m1958copytNS2XkQ(j, (i & 2) != 0 ? iconToggleButtonColors.contentColor : j2, (i & 4) != 0 ? iconToggleButtonColors.disabledContainerColor : j3, (i & 8) != 0 ? iconToggleButtonColors.disabledContentColor : j4, (i & 16) != 0 ? iconToggleButtonColors.checkedContainerColor : j5, (i & 32) != 0 ? iconToggleButtonColors.checkedContentColor : j6);
+        return iconToggleButtonColors.m2265copytNS2XkQ(j, (i & 2) != 0 ? iconToggleButtonColors.contentColor : j2, (i & 4) != 0 ? iconToggleButtonColors.disabledContainerColor : j3, (i & 8) != 0 ? iconToggleButtonColors.disabledContentColor : j4, (i & 16) != 0 ? iconToggleButtonColors.checkedContainerColor : j5, (i & 32) != 0 ? iconToggleButtonColors.checkedContentColor : j6);
     }
 
     /* renamed from: copy-tNS2XkQ  reason: not valid java name */
-    public final IconToggleButtonColors m1958copytNS2XkQ(long j, long j2, long j3, long j4, long j5, long j6) {
+    public final IconToggleButtonColors m2265copytNS2XkQ(long j, long j2, long j3, long j4, long j5, long j6) {
         return new IconToggleButtonColors(j != 16 ? j : this.containerColor, j2 != 16 ? j2 : this.contentColor, j3 != 16 ? j3 : this.disabledContainerColor, j4 != 16 ? j4 : this.disabledContentColor, j5 != 16 ? j5 : this.checkedContainerColor, j6 != 16 ? j6 : this.checkedContentColor, null);
     }
 
@@ -88,7 +88,7 @@ public final class IconToggleButtonColors {
         } else {
             j = this.checkedContainerColor;
         }
-        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m4068boximpl(j), composer, 0);
+        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m4527boximpl(j), composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -109,7 +109,7 @@ public final class IconToggleButtonColors {
         } else {
             j = this.checkedContentColor;
         }
-        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m4068boximpl(j), composer, 0);
+        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m4527boximpl(j), composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -125,10 +125,10 @@ public final class IconToggleButtonColors {
             return false;
         }
         IconToggleButtonColors iconToggleButtonColors = (IconToggleButtonColors) obj;
-        return Color.m4079equalsimpl0(this.containerColor, iconToggleButtonColors.containerColor) && Color.m4079equalsimpl0(this.contentColor, iconToggleButtonColors.contentColor) && Color.m4079equalsimpl0(this.disabledContainerColor, iconToggleButtonColors.disabledContainerColor) && Color.m4079equalsimpl0(this.disabledContentColor, iconToggleButtonColors.disabledContentColor) && Color.m4079equalsimpl0(this.checkedContainerColor, iconToggleButtonColors.checkedContainerColor) && Color.m4079equalsimpl0(this.checkedContentColor, iconToggleButtonColors.checkedContentColor);
+        return Color.m4538equalsimpl0(this.containerColor, iconToggleButtonColors.containerColor) && Color.m4538equalsimpl0(this.contentColor, iconToggleButtonColors.contentColor) && Color.m4538equalsimpl0(this.disabledContainerColor, iconToggleButtonColors.disabledContainerColor) && Color.m4538equalsimpl0(this.disabledContentColor, iconToggleButtonColors.disabledContentColor) && Color.m4538equalsimpl0(this.checkedContainerColor, iconToggleButtonColors.checkedContainerColor) && Color.m4538equalsimpl0(this.checkedContentColor, iconToggleButtonColors.checkedContentColor);
     }
 
     public int hashCode() {
-        return (((((((((Color.m4085hashCodeimpl(this.containerColor) * 31) + Color.m4085hashCodeimpl(this.contentColor)) * 31) + Color.m4085hashCodeimpl(this.disabledContainerColor)) * 31) + Color.m4085hashCodeimpl(this.disabledContentColor)) * 31) + Color.m4085hashCodeimpl(this.checkedContainerColor)) * 31) + Color.m4085hashCodeimpl(this.checkedContentColor);
+        return (((((((((Color.m4544hashCodeimpl(this.containerColor) * 31) + Color.m4544hashCodeimpl(this.contentColor)) * 31) + Color.m4544hashCodeimpl(this.disabledContainerColor)) * 31) + Color.m4544hashCodeimpl(this.disabledContentColor)) * 31) + Color.m4544hashCodeimpl(this.checkedContainerColor)) * 31) + Color.m4544hashCodeimpl(this.checkedContentColor);
     }
 }

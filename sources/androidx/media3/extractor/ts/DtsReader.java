@@ -14,7 +14,7 @@ import com.google.common.primitives.Ints;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DtsReader implements ElementaryStreamReader {
     private static final int CORE_HEADER_SIZE = 18;
     static final int EXTSS_HEADER_SIZE_MAX = 4096;

@@ -11,7 +11,7 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BlockingObservableNext<T> implements Iterable<T> {
     final ObservableSource<T> source;
 
@@ -24,7 +24,7 @@ public final class BlockingObservableNext<T> implements Iterable<T> {
         return new NextIterator(this.source, new NextObserver());
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class NextIterator<T> implements Iterator<T> {
         private Throwable error;
         private boolean hasNext = true;
@@ -98,7 +98,7 @@ public final class BlockingObservableNext<T> implements Iterable<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class NextObserver<T> extends DisposableObserver<Notification<T>> {
         private final BlockingQueue<Notification<T>> buf = new ArrayBlockingQueue(1);
         final AtomicInteger waiting = new AtomicInteger();

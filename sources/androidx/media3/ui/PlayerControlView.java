@@ -46,7 +46,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class PlayerControlView extends FrameLayout {
     public static final int DEFAULT_REPEAT_TOGGLE_MODES = 0;
     public static final int DEFAULT_SHOW_TIMEOUT_MS = 5000;
@@ -142,18 +142,18 @@ public class PlayerControlView extends FrameLayout {
     private final Timeline.Window window;
 
     @Deprecated
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface OnFullScreenModeChangedListener {
         void onFullScreenModeChanged(boolean z);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface ProgressUpdateListener {
         void onProgressUpdate(long j, long j2);
     }
 
     @Deprecated
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface VisibilityListener {
         void onVisibilityChange(int i);
     }
@@ -1847,7 +1847,7 @@ public class PlayerControlView extends FrameLayout {
         return (player == null || (cls = this.compositionPlayerClazz) == null || !cls.isAssignableFrom(player.getClass())) ? false : true;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     private final class ComponentListener implements Player.Listener, TimeBar.OnScrubListener, View.OnClickListener, PopupWindow.OnDismissListener {
         private ComponentListener() {
         }
@@ -2014,7 +2014,7 @@ public class PlayerControlView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class SettingsAdapter extends RecyclerView.Adapter<SettingViewHolder> {
         private final Drawable[] iconIds;
         private final String[] mainTexts;
@@ -2085,7 +2085,7 @@ public class PlayerControlView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public final class SettingViewHolder extends RecyclerView.ViewHolder {
         private final ImageView iconView;
         private final TextView mainTextView;
@@ -2102,20 +2102,20 @@ public class PlayerControlView extends FrameLayout {
             view.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$SettingViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    PlayerControlView.SettingViewHolder.this.m7485x7eeeb754(view2);
+                    PlayerControlView.SettingViewHolder.this.m8051x7eeeb754(view2);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$new$0$androidx-media3-ui-PlayerControlView$SettingViewHolder  reason: not valid java name */
-        public /* synthetic */ void m7485x7eeeb754(View view) {
+        public /* synthetic */ void m8051x7eeeb754(View view) {
             PlayerControlView.this.onSettingViewClicked(getBindingAdapterPosition());
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public final class PlaybackSpeedAdapter extends RecyclerView.Adapter<SubSettingViewHolder> {
         private final String[] playbackSpeedTexts;
         private final float[] playbackSpeeds;
@@ -2171,14 +2171,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$PlaybackSpeedAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.PlaybackSpeedAdapter.this.m7484x9de2ddb7(i, view);
+                    PlayerControlView.PlaybackSpeedAdapter.this.m8050x9de2ddb7(i, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolder$0$androidx-media3-ui-PlayerControlView$PlaybackSpeedAdapter  reason: not valid java name */
-        public /* synthetic */ void m7484x9de2ddb7(int i, View view) {
+        public /* synthetic */ void m8050x9de2ddb7(int i, View view) {
             if (i != this.selectedIndex) {
                 PlayerControlView.this.setPlaybackSpeed(this.playbackSpeeds[i]);
             }
@@ -2192,7 +2192,7 @@ public class PlayerControlView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class TrackInformation {
         public final Tracks.Group trackGroup;
         public final int trackIndex;
@@ -2210,7 +2210,7 @@ public class PlayerControlView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public final class TextTrackSelectionAdapter extends TrackSelectionAdapter {
         @Override // androidx.media3.ui.PlayerControlView.TrackSelectionAdapter
         public void onTrackSelection(String str) {
@@ -2263,14 +2263,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$TextTrackSelectionAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.TextTrackSelectionAdapter.this.m7486x7bd5d809(view);
+                    PlayerControlView.TextTrackSelectionAdapter.this.m8052x7bd5d809(view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolderAtZeroPosition$0$androidx-media3-ui-PlayerControlView$TextTrackSelectionAdapter  reason: not valid java name */
-        public /* synthetic */ void m7486x7bd5d809(View view) {
+        public /* synthetic */ void m8052x7bd5d809(View view) {
             if (PlayerControlView.this.player == null || !PlayerControlView.this.player.isCommandAvailable(29)) {
                 return;
             }
@@ -2289,7 +2289,7 @@ public class PlayerControlView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public final class AudioTrackSelectionAdapter extends TrackSelectionAdapter {
         private AudioTrackSelectionAdapter() {
             super();
@@ -2302,14 +2302,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$AudioTrackSelectionAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.AudioTrackSelectionAdapter.this.m7483xa84b12b0(view);
+                    PlayerControlView.AudioTrackSelectionAdapter.this.m8049xa84b12b0(view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolderAtZeroPosition$0$androidx-media3-ui-PlayerControlView$AudioTrackSelectionAdapter  reason: not valid java name */
-        public /* synthetic */ void m7483xa84b12b0(View view) {
+        public /* synthetic */ void m8049xa84b12b0(View view) {
             if (PlayerControlView.this.player == null || !PlayerControlView.this.player.isCommandAvailable(29)) {
                 return;
             }
@@ -2353,7 +2353,7 @@ public class PlayerControlView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public abstract class TrackSelectionAdapter extends RecyclerView.Adapter<SubSettingViewHolder> {
         protected List<TrackInformation> tracks = new ArrayList();
 
@@ -2394,14 +2394,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$TrackSelectionAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.TrackSelectionAdapter.this.m7487x45c3fb1a(player, mediaTrackGroup, trackInformation, view);
+                    PlayerControlView.TrackSelectionAdapter.this.m8053x45c3fb1a(player, mediaTrackGroup, trackInformation, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolder$0$androidx-media3-ui-PlayerControlView$TrackSelectionAdapter  reason: not valid java name */
-        public /* synthetic */ void m7487x45c3fb1a(Player player, TrackGroup trackGroup, TrackInformation trackInformation, View view) {
+        public /* synthetic */ void m8053x45c3fb1a(Player player, TrackGroup trackGroup, TrackInformation trackInformation, View view) {
             if (player.isCommandAvailable(29)) {
                 player.setTrackSelectionParameters(player.getTrackSelectionParameters().buildUpon().setOverrideForType(new TrackSelectionOverride(trackGroup, ImmutableList.of(Integer.valueOf(trackInformation.trackIndex)))).setTrackTypeDisabled(trackInformation.trackGroup.getType(), false).build());
                 onTrackSelection(trackInformation.trackName);
@@ -2423,7 +2423,7 @@ public class PlayerControlView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class SubSettingViewHolder extends RecyclerView.ViewHolder {
         public final View checkView;
         public final TextView textView;

@@ -21,8 +21,8 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SelectionMagnifier.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1", f = "SelectionMagnifier.kt", i = {}, l = {85}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1", f = "SelectionMagnifier.kt", i = {}, l = {83}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Animatable<Offset, AnimationVector2D> $animatable;
@@ -58,22 +58,12 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
             ResultKt.throwOnFailure(obj);
             final CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
             final State<Offset> state = this.$targetValue$delegate;
-            Flow snapshotFlow = SnapshotStateKt.snapshotFlow(new Function0<Offset>() { // from class: androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1.1
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(0);
-                }
-
+            Flow snapshotFlow = SnapshotStateKt.snapshotFlow(new Function0() { // from class: androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
-                public /* bridge */ /* synthetic */ Offset invoke() {
-                    return Offset.m3826boximpl(m1475invokeF1C5BW0());
-                }
-
-                /* renamed from: invoke-F1C5BW0  reason: not valid java name */
-                public final long m1475invokeF1C5BW0() {
-                    long rememberAnimatedMagnifierPosition$lambda$1;
-                    rememberAnimatedMagnifierPosition$lambda$1 = SelectionMagnifierKt.rememberAnimatedMagnifierPosition$lambda$1(state);
-                    return rememberAnimatedMagnifierPosition$lambda$1;
+                public final Object invoke() {
+                    Offset invokeSuspend$lambda$0;
+                    invokeSuspend$lambda$0 = SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1.invokeSuspend$lambda$0(State.this);
+                    return invokeSuspend$lambda$0;
                 }
             });
             final Animatable<Offset, AnimationVector2D> animatable = this.$animatable;
@@ -81,23 +71,23 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
             if (snapshotFlow.collect(new FlowCollector() { // from class: androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1.2
                 @Override // kotlinx.coroutines.flow.FlowCollector
                 public /* bridge */ /* synthetic */ Object emit(Object obj2, Continuation continuation) {
-                    return m1476emit3MmeM6k(((Offset) obj2).m3847unboximpl(), continuation);
+                    return m1764emit3MmeM6k(((Offset) obj2).m4303unboximpl(), continuation);
                 }
 
                 /* renamed from: emit-3MmeM6k  reason: not valid java name */
-                public final Object m1476emit3MmeM6k(long j, Continuation<? super Unit> continuation) {
-                    if ((animatable.getValue().m3847unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (j & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && Float.intBitsToFloat((int) (animatable.getValue().m3847unboximpl() & 4294967295L)) != Float.intBitsToFloat((int) (j & 4294967295L))) {
+                public final Object m1764emit3MmeM6k(long j, Continuation<? super Unit> continuation) {
+                    if ((animatable.getValue().m4303unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (j & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && Float.intBitsToFloat((int) (animatable.getValue().m4303unboximpl() & 4294967295L)) != Float.intBitsToFloat((int) (j & 4294967295L))) {
                         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new AnonymousClass1(animatable, j, null), 3, null);
                         return Unit.INSTANCE;
                     }
-                    Object snapTo = animatable.snapTo(Offset.m3826boximpl(j), continuation);
+                    Object snapTo = animatable.snapTo(Offset.m4282boximpl(j), continuation);
                     return snapTo == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? snapTo : Unit.INSTANCE;
                 }
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* compiled from: SelectionMagnifier.kt */
-                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-                @DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1$2$1", f = "SelectionMagnifier.kt", i = {}, l = {98}, m = "invokeSuspend", n = {}, s = {})
+                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+                @DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1$2$1", f = "SelectionMagnifier.kt", i = {}, l = {96}, m = "invokeSuspend", n = {}, s = {})
                 /* renamed from: androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1$2$1  reason: invalid class name */
                 /* loaded from: classes.dex */
                 public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -129,7 +119,7 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
                         if (i == 0) {
                             ResultKt.throwOnFailure(obj);
                             this.label = 1;
-                            if (Animatable.animateTo$default(this.$animatable, Offset.m3826boximpl(this.$targetValue), SelectionMagnifierKt.getMagnifierSpringSpec(), null, null, this, 12, null) == coroutine_suspended) {
+                            if (Animatable.animateTo$default(this.$animatable, Offset.m4282boximpl(this.$targetValue), SelectionMagnifierKt.getMagnifierSpringSpec(), null, null, this, 12, null) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         } else if (i != 1) {
@@ -149,5 +139,12 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
             ResultKt.throwOnFailure(obj);
         }
         return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Offset invokeSuspend$lambda$0(State state) {
+        long rememberAnimatedMagnifierPosition$lambda$3;
+        rememberAnimatedMagnifierPosition$lambda$3 = SelectionMagnifierKt.rememberAnimatedMagnifierPosition$lambda$3(state);
+        return Offset.m4282boximpl(rememberAnimatedMagnifierPosition$lambda$3);
     }
 }

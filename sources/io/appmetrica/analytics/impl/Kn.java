@@ -1,20 +1,12 @@
 package io.appmetrica.analytics.impl;
-
-import android.os.Bundle;
-import io.appmetrica.analytics.internal.IAppMetricaService;
 /* loaded from: classes4.dex */
-public final class Kn extends Kh {
-    public final int e;
-    public final Bundle f;
-
-    public Kn(C0421m0 c0421m0, Zk zk, int i, Bundle bundle) {
-        super(c0421m0, zk);
-        this.e = i;
-        this.f = bundle;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Kh
-    public final void a(IAppMetricaService iAppMetricaService) {
-        iAppMetricaService.reportData(this.e, this.f);
+public abstract class Kn {
+    public static long a() {
+        long j;
+        C0438mk c0438mk = AbstractC0413lk.f955a;
+        synchronized (c0438mk) {
+            j = c0438mk.f971a;
+        }
+        return j;
     }
 }

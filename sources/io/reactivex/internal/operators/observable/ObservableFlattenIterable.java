@@ -8,7 +8,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableFlattenIterable<T, R> extends AbstractObservableWithUpstream<T, R> {
     final Function<? super T, ? extends Iterable<? extends R>> mapper;
 
@@ -22,7 +22,7 @@ public final class ObservableFlattenIterable<T, R> extends AbstractObservableWit
         this.source.subscribe(new FlattenIterableObserver(observer, this.mapper));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FlattenIterableObserver<T, R> implements Observer<T>, Disposable {
         final Observer<? super R> downstream;
         final Function<? super T, ? extends Iterable<? extends R>> mapper;

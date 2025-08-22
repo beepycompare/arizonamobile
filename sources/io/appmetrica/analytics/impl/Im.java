@@ -1,27 +1,26 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* loaded from: classes4.dex */
-public final class Im implements ProtobufConverter {
-    public final C0692wm a(Hm hm) {
-        C0692wm c0692wm = new C0692wm();
-        c0692wm.f1125a = hm.f477a;
-        return c0692wm;
+public final class Im {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final int f502a;
+
+    public Im(int i) {
+        this.f502a = i;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object fromModel(Object obj) {
-        C0692wm c0692wm = new C0692wm();
-        c0692wm.f1125a = ((Hm) obj).f477a;
-        return c0692wm;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return (obj instanceof Im) && this.f502a == ((Im) obj).f502a;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        return new Hm(((C0692wm) obj).f1125a);
+    public final int hashCode() {
+        return Integer.hashCode(this.f502a);
     }
 
-    public final Hm a(C0692wm c0692wm) {
-        return new Hm(c0692wm.f1125a);
+    public final String toString() {
+        return "StartupUpdateConfig(intervalSeconds=" + this.f502a + ')';
     }
 }

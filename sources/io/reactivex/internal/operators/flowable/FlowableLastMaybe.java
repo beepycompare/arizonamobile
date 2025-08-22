@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableLastMaybe<T> extends Maybe<T> {
     final Publisher<T> source;
 
@@ -20,7 +20,7 @@ public final class FlowableLastMaybe<T> extends Maybe<T> {
         this.source.subscribe(new LastSubscriber(maybeObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class LastSubscriber<T> implements FlowableSubscriber<T>, Disposable {
         final MaybeObserver<? super T> downstream;
         T item;

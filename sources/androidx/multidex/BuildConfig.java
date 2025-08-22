@@ -1,5 +1,5 @@
 package androidx.multidex;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class BuildConfig {
     public static final String APPLICATION_ID = "androidx.multidex";
     public static final String BUILD_TYPE = "release";

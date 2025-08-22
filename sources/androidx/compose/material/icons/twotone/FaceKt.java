@@ -18,17 +18,17 @@ public final class FaceKt {
     private static ImageVector _face;
 
     public static final ImageVector getFace(Icons.TwoTone twoTone) {
-        ImageVector.Builder m4776addPathoIyEayM;
+        ImageVector.Builder m5274addPathoIyEayM;
         ImageVector imageVector = _face;
         if (imageVector != null) {
             Intrinsics.checkNotNull(imageVector);
             return imageVector;
         }
-        ImageVector.Builder builder = new ImageVector.Builder("TwoTone.Face", Dp.m6684constructorimpl(24.0f), Dp.m6684constructorimpl(24.0f), 24.0f, 24.0f, 0L, 0, false, 96, null);
+        ImageVector.Builder builder = new ImageVector.Builder("TwoTone.Face", Dp.m7251constructorimpl(24.0f), Dp.m7251constructorimpl(24.0f), 24.0f, 24.0f, 0L, 0, false, 96, null);
         int defaultFillType = VectorKt.getDefaultFillType();
-        SolidColor solidColor = new SolidColor(Color.Companion.m4104getBlack0d7_KjU(), null);
-        int m4432getButtKaPHkGw = StrokeCap.Companion.m4432getButtKaPHkGw();
-        int m4442getBevelLxFBmk8 = StrokeJoin.Companion.m4442getBevelLxFBmk8();
+        SolidColor solidColor = new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null);
+        int m4907getButtKaPHkGw = StrokeCap.Companion.m4907getButtKaPHkGw();
+        int m4917getBevelLxFBmk8 = StrokeJoin.Companion.m4917getBevelLxFBmk8();
         PathBuilder pathBuilder = new PathBuilder();
         pathBuilder.moveTo(17.5f, 8.0f);
         pathBuilder.curveToRelative(0.46f, 0.0f, 0.91f, -0.05f, 1.34f, -0.12f);
@@ -40,11 +40,11 @@ public final class FaceKt {
         pathBuilder.curveTo(6.37f, 6.0f, 5.05f, 7.58f, 4.42f, 9.47f);
         pathBuilder.curveToRelative(1.71f, -0.97f, 3.03f, -2.55f, 3.66f, -4.44f);
         pathBuilder.close();
-        builder.m4776addPathoIyEayM(pathBuilder.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor, (r30 & 16) != 0 ? 1.0f : 0.3f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 0.3f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4432getButtKaPHkGw, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4442getBevelLxFBmk8, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
+        builder.m5274addPathoIyEayM(pathBuilder.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor, (r30 & 16) != 0 ? 1.0f : 0.3f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 0.3f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4907getButtKaPHkGw, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4917getBevelLxFBmk8, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
         int defaultFillType2 = VectorKt.getDefaultFillType();
-        SolidColor solidColor2 = new SolidColor(Color.Companion.m4104getBlack0d7_KjU(), null);
-        int m4432getButtKaPHkGw2 = StrokeCap.Companion.m4432getButtKaPHkGw();
-        int m4442getBevelLxFBmk82 = StrokeJoin.Companion.m4442getBevelLxFBmk8();
+        SolidColor solidColor2 = new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null);
+        int m4907getButtKaPHkGw2 = StrokeCap.Companion.m4907getButtKaPHkGw();
+        int m4917getBevelLxFBmk82 = StrokeJoin.Companion.m4917getBevelLxFBmk8();
         PathBuilder pathBuilder2 = new PathBuilder();
         pathBuilder2.moveTo(12.0f, 2.0f);
         pathBuilder2.curveTo(6.48f, 2.0f, 2.0f, 6.48f, 2.0f, 12.0f);
@@ -71,28 +71,28 @@ public final class FaceKt {
         pathBuilder2.curveToRelative(0.21f, 0.71f, 0.33f, 1.46f, 0.33f, 2.24f);
         pathBuilder2.curveToRelative(0.0f, 4.41f, -3.59f, 8.0f, -8.0f, 8.0f);
         pathBuilder2.close();
-        builder.m4776addPathoIyEayM(pathBuilder2.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType2, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor2, (r30 & 16) != 0 ? 1.0f : 1.0f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 1.0f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4432getButtKaPHkGw2, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4442getBevelLxFBmk82, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
+        builder.m5274addPathoIyEayM(pathBuilder2.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType2, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor2, (r30 & 16) != 0 ? 1.0f : 1.0f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 1.0f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4907getButtKaPHkGw2, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4917getBevelLxFBmk82, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
         int defaultFillType3 = VectorKt.getDefaultFillType();
-        SolidColor solidColor3 = new SolidColor(Color.Companion.m4104getBlack0d7_KjU(), null);
-        int m4432getButtKaPHkGw3 = StrokeCap.Companion.m4432getButtKaPHkGw();
-        int m4442getBevelLxFBmk83 = StrokeJoin.Companion.m4442getBevelLxFBmk8();
+        SolidColor solidColor3 = new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null);
+        int m4907getButtKaPHkGw3 = StrokeCap.Companion.m4907getButtKaPHkGw();
+        int m4917getBevelLxFBmk83 = StrokeJoin.Companion.m4917getBevelLxFBmk8();
         PathBuilder pathBuilder3 = new PathBuilder();
         pathBuilder3.moveTo(9.0f, 13.0f);
         pathBuilder3.moveToRelative(-1.25f, 0.0f);
         pathBuilder3.arcToRelative(1.25f, 1.25f, 0.0f, true, true, 2.5f, 0.0f);
         pathBuilder3.arcToRelative(1.25f, 1.25f, 0.0f, true, true, -2.5f, 0.0f);
-        builder.m4776addPathoIyEayM(pathBuilder3.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType3, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor3, (r30 & 16) != 0 ? 1.0f : 1.0f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 1.0f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4432getButtKaPHkGw3, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4442getBevelLxFBmk83, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
+        builder.m5274addPathoIyEayM(pathBuilder3.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType3, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor3, (r30 & 16) != 0 ? 1.0f : 1.0f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 1.0f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4907getButtKaPHkGw3, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4917getBevelLxFBmk83, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
         int defaultFillType4 = VectorKt.getDefaultFillType();
-        SolidColor solidColor4 = new SolidColor(Color.Companion.m4104getBlack0d7_KjU(), null);
-        int m4432getButtKaPHkGw4 = StrokeCap.Companion.m4432getButtKaPHkGw();
-        int m4442getBevelLxFBmk84 = StrokeJoin.Companion.m4442getBevelLxFBmk8();
+        SolidColor solidColor4 = new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null);
+        int m4907getButtKaPHkGw4 = StrokeCap.Companion.m4907getButtKaPHkGw();
+        int m4917getBevelLxFBmk84 = StrokeJoin.Companion.m4917getBevelLxFBmk8();
         PathBuilder pathBuilder4 = new PathBuilder();
         pathBuilder4.moveTo(15.0f, 13.0f);
         pathBuilder4.moveToRelative(-1.25f, 0.0f);
         pathBuilder4.arcToRelative(1.25f, 1.25f, 0.0f, true, true, 2.5f, 0.0f);
         pathBuilder4.arcToRelative(1.25f, 1.25f, 0.0f, true, true, -2.5f, 0.0f);
-        m4776addPathoIyEayM = builder.m4776addPathoIyEayM(pathBuilder4.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType4, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor4, (r30 & 16) != 0 ? 1.0f : 1.0f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 1.0f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4432getButtKaPHkGw4, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4442getBevelLxFBmk84, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
-        ImageVector build = m4776addPathoIyEayM.build();
+        m5274addPathoIyEayM = builder.m5274addPathoIyEayM(pathBuilder4.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType4, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor4, (r30 & 16) != 0 ? 1.0f : 1.0f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 1.0f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4907getButtKaPHkGw4, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4917getBevelLxFBmk84, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
+        ImageVector build = m5274addPathoIyEayM.build();
         _face = build;
         Intrinsics.checkNotNull(build);
         return build;

@@ -17,7 +17,7 @@ import androidx.media3.extractor.metadata.id3.InternalFrame;
 import androidx.media3.extractor.metadata.id3.TextInformationFrame;
 import com.google.common.collect.ImmutableList;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MetadataUtil {
     private static final int PICTURE_TYPE_FRONT_COVER = 3;
     private static final int SHORT_TYPE_ALBUM = 6384738;

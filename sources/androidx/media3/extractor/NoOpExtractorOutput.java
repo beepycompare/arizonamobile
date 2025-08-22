@@ -1,5 +1,5 @@
 package androidx.media3.extractor;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class NoOpExtractorOutput implements ExtractorOutput {
     @Override // androidx.media3.extractor.ExtractorOutput
     public void endTracks() {

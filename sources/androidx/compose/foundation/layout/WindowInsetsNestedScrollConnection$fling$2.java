@@ -2,6 +2,7 @@ package androidx.compose.foundation.layout;
 
 import android.view.WindowInsetsAnimationController;
 import androidx.compose.animation.core.SuspendAnimationKt;
+import androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$fling$2;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -17,7 +18,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Job;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WindowInsetsConnection.android.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$fling$2", f = "WindowInsetsConnection.android.kt", i = {}, l = {345}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class WindowInsetsNestedScrollConnection$fling$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -62,7 +63,7 @@ public final class WindowInsetsNestedScrollConnection$fling$2 extends SuspendLam
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: WindowInsetsConnection.android.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
     @DebugMetadata(c = "androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$fling$2$1", f = "WindowInsetsConnection.android.kt", i = {}, l = {329}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$fling$2$1  reason: invalid class name */
     /* loaded from: classes.dex */
@@ -115,32 +116,12 @@ public final class WindowInsetsNestedScrollConnection$fling$2 extends SuspendLam
                 final WindowInsetsAnimationController windowInsetsAnimationController = this.$animationController;
                 final boolean z = this.$targetShown;
                 this.label = 1;
-                if (SuspendAnimationKt.animateDecay(this.$current, this.$flingAmount, this.$spec, new Function2<Float, Float, Unit>() { // from class: androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection.fling.2.1.1
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(2);
-                    }
-
+                if (SuspendAnimationKt.animateDecay(this.$current, this.$flingAmount, this.$spec, new Function2() { // from class: androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$fling$2$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function2
-                    public /* bridge */ /* synthetic */ Unit invoke(Float f, Float f2) {
-                        invoke(f.floatValue(), f2.floatValue());
-                        return Unit.INSTANCE;
-                    }
-
-                    public final void invoke(float f, float f2) {
-                        Job job;
-                        float f3 = i2;
-                        if (f <= i3 && f3 <= f) {
-                            windowInsetsNestedScrollConnection.adjustInsets(f);
-                            return;
-                        }
-                        floatRef.element = f2;
-                        windowInsetsAnimationController.finish(z);
-                        windowInsetsNestedScrollConnection.animationController = null;
-                        job = windowInsetsNestedScrollConnection.animationJob;
-                        if (job != null) {
-                            job.cancel((CancellationException) new WindowInsetsAnimationCancelledException());
-                        }
+                    public final Object invoke(Object obj2, Object obj3) {
+                        Unit invokeSuspend$lambda$0;
+                        invokeSuspend$lambda$0 = WindowInsetsNestedScrollConnection$fling$2.AnonymousClass1.invokeSuspend$lambda$0(i2, i3, windowInsetsNestedScrollConnection, floatRef, windowInsetsAnimationController, z, ((Float) obj2).floatValue(), ((Float) obj3).floatValue());
+                        return invokeSuspend$lambda$0;
                     }
                 }, this) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -149,6 +130,24 @@ public final class WindowInsetsNestedScrollConnection$fling$2 extends SuspendLam
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             } else {
                 ResultKt.throwOnFailure(obj);
+            }
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit invokeSuspend$lambda$0(int i, int i2, WindowInsetsNestedScrollConnection windowInsetsNestedScrollConnection, Ref.FloatRef floatRef, WindowInsetsAnimationController windowInsetsAnimationController, boolean z, float f, float f2) {
+            Job job;
+            float f3 = i;
+            if (f <= i2 && f3 <= f) {
+                windowInsetsNestedScrollConnection.adjustInsets(f);
+            } else {
+                floatRef.element = f2;
+                windowInsetsAnimationController.finish(z);
+                windowInsetsNestedScrollConnection.animationController = null;
+                job = windowInsetsNestedScrollConnection.animationJob;
+                if (job != null) {
+                    job.cancel((CancellationException) new WindowInsetsAnimationCancelledException());
+                }
             }
             return Unit.INSTANCE;
         }

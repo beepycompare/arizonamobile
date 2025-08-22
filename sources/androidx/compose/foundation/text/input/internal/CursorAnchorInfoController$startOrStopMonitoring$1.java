@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.FlowKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CursorAnchorInfoController.android.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.CursorAnchorInfoController$startOrStopMonitoring$1", f = "CursorAnchorInfoController.android.kt", i = {}, l = {154}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class CursorAnchorInfoController$startOrStopMonitoring$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -48,17 +48,12 @@ public final class CursorAnchorInfoController$startOrStopMonitoring$1 extends Su
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             final CursorAnchorInfoController cursorAnchorInfoController = this.this$0;
-            Flow filterNotNull = FlowKt.filterNotNull(FlowKt.drop(SnapshotStateKt.snapshotFlow(new Function0<CursorAnchorInfo>() { // from class: androidx.compose.foundation.text.input.internal.CursorAnchorInfoController$startOrStopMonitoring$1.1
-                {
-                    super(0);
-                }
-
-                /* JADX WARN: Can't rename method to resolve collision */
+            Flow filterNotNull = FlowKt.filterNotNull(FlowKt.drop(SnapshotStateKt.snapshotFlow(new Function0() { // from class: androidx.compose.foundation.text.input.internal.CursorAnchorInfoController$startOrStopMonitoring$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
-                public final CursorAnchorInfo invoke() {
-                    CursorAnchorInfo calculateCursorAnchorInfo;
-                    calculateCursorAnchorInfo = CursorAnchorInfoController.this.calculateCursorAnchorInfo();
-                    return calculateCursorAnchorInfo;
+                public final Object invoke() {
+                    CursorAnchorInfo access$calculateCursorAnchorInfo;
+                    access$calculateCursorAnchorInfo = CursorAnchorInfoController.access$calculateCursorAnchorInfo(CursorAnchorInfoController.this);
+                    return access$calculateCursorAnchorInfo;
                 }
             }), 1));
             final CursorAnchorInfoController cursorAnchorInfoController2 = this.this$0;

@@ -40,8 +40,8 @@ public final class PullToRefreshDefaults {
     public static final int $stable = 0;
     public static final PullToRefreshDefaults INSTANCE = new PullToRefreshDefaults();
     private static final Shape shape = RoundedCornerShapeKt.getCircleShape();
-    private static final float PositionalThreshold = Dp.m6684constructorimpl(80);
-    private static final float Elevation = ElevationTokens.INSTANCE.m2979getLevel2D9Ej5fM();
+    private static final float PositionalThreshold = Dp.m7251constructorimpl(80);
+    private static final float Elevation = ElevationTokens.INSTANCE.m3286getLevel2D9Ej5fM();
 
     private PullToRefreshDefaults() {
     }
@@ -55,12 +55,12 @@ public final class PullToRefreshDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1066257972, i, -1, "androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.<get-containerColor> (PullToRefresh.kt:419)");
         }
-        long m1722getSurfaceContainerHigh0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m1722getSurfaceContainerHigh0d7_KjU();
+        long m2029getSurfaceContainerHigh0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2029getSurfaceContainerHigh0d7_KjU();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m1722getSurfaceContainerHigh0d7_KjU;
+        return m2029getSurfaceContainerHigh0d7_KjU;
     }
 
     public final long getIndicatorColor(Composer composer, int i) {
@@ -68,21 +68,21 @@ public final class PullToRefreshDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1441334156, i, -1, "androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.<get-indicatorColor> (PullToRefresh.kt:423)");
         }
-        long m1709getOnSurfaceVariant0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m1709getOnSurfaceVariant0d7_KjU();
+        long m2016getOnSurfaceVariant0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2016getOnSurfaceVariant0d7_KjU();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m1709getOnSurfaceVariant0d7_KjU;
+        return m2016getOnSurfaceVariant0d7_KjU;
     }
 
     /* renamed from: getPositionalThreshold-D9Ej5fM  reason: not valid java name */
-    public final float m2790getPositionalThresholdD9Ej5fM() {
+    public final float m3097getPositionalThresholdD9Ej5fM() {
         return PositionalThreshold;
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2789getElevationD9Ej5fM() {
+    public final float m3096getElevationD9Ej5fM() {
         return Elevation;
     }
 
@@ -117,7 +117,7 @@ public final class PullToRefreshDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2788Indicator2poqoh4(final PullToRefreshState pullToRefreshState, final boolean z, Modifier modifier, long j, long j2, float f, Composer composer, final int i, final int i2) {
+    public final void m3095Indicator2poqoh4(final PullToRefreshState pullToRefreshState, final boolean z, Modifier modifier, long j, long j2, float f, Composer composer, final int i, final int i2) {
         int i3;
         int i4;
         Object obj;
@@ -130,7 +130,7 @@ public final class PullToRefreshDefaults {
         int i5;
         float f3;
         int currentCompositeKeyHash;
-        Composer m3520constructorimpl;
+        Composer m3855constructorimpl;
         Composer composer2;
         final Modifier modifier2;
         final long j7;
@@ -234,7 +234,7 @@ public final class PullToRefreshDefaults {
                                 final long j9 = j6;
                                 Modifier modifier3 = companion;
                                 int i9 = i5;
-                                Modifier m2804pullToRefreshIndicatorwUdLESc$default = PullToRefreshKt.m2804pullToRefreshIndicatorwUdLESc$default(modifier3, pullToRefreshState, z, f3, null, j5, 0.0f, 40, null);
+                                Modifier m3111pullToRefreshIndicatorwUdLESc$default = PullToRefreshKt.m3111pullToRefreshIndicatorwUdLESc$default(modifier3, pullToRefreshState, z, f3, null, j5, 0.0f, 40, null);
                                 float f5 = f3;
                                 long j10 = j5;
                                 Alignment center = Alignment.Companion.getCenter();
@@ -243,7 +243,7 @@ public final class PullToRefreshDefaults {
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                 currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                                 CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m2804pullToRefreshIndicatorwUdLESc$default);
+                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m3111pullToRefreshIndicatorwUdLESc$default);
                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                 if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -255,15 +255,15 @@ public final class PullToRefreshDefaults {
                                 } else {
                                     startRestartGroup.useNode();
                                 }
-                                m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                                Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (!m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (!m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 396611011, "C454@17197L504,451@17052L649:PullToRefresh.kt#djiw08");
@@ -294,7 +294,7 @@ public final class PullToRefreshDefaults {
                                                 composer3.startReplaceGroup(576835739);
                                                 ComposerKt.sourceInformation(composer3, "456@17267L201");
                                                 f6 = PullToRefreshKt.StrokeWidth;
-                                                ProgressIndicatorKt.m2171CircularProgressIndicatorLxG7B9w(SizeKt.m785size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), j9, f6, 0L, 0, composer3, 390, 24);
+                                                ProgressIndicatorKt.m2478CircularProgressIndicatorLxG7B9w(SizeKt.m884size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), j9, f6, 0L, 0, composer3, 390, 24);
                                                 composer3.endReplaceGroup();
                                             } else {
                                                 composer3.startReplaceGroup(577079337);
@@ -319,7 +319,7 @@ public final class PullToRefreshDefaults {
                                                     composer3.updateRememberedValue(rememberedValue);
                                                 }
                                                 ComposerKt.sourceInformationMarkerEnd(composer3);
-                                                PullToRefreshKt.m2795CircularArrowProgressIndicatorRPmYEkk((Function0) rememberedValue, j9, composer3, 0);
+                                                PullToRefreshKt.m3102CircularArrowProgressIndicatorRPmYEkk((Function0) rememberedValue, j9, composer3, 0);
                                                 composer3.endReplaceGroup();
                                             }
                                             if (ComposerKt.isTraceInProgress()) {
@@ -369,7 +369,7 @@ public final class PullToRefreshDefaults {
                         final long j92 = j6;
                         Modifier modifier32 = companion;
                         int i92 = i5;
-                        Modifier m2804pullToRefreshIndicatorwUdLESc$default2 = PullToRefreshKt.m2804pullToRefreshIndicatorwUdLESc$default(modifier32, pullToRefreshState, z, f3, null, j5, 0.0f, 40, null);
+                        Modifier m3111pullToRefreshIndicatorwUdLESc$default2 = PullToRefreshKt.m3111pullToRefreshIndicatorwUdLESc$default(modifier32, pullToRefreshState, z, f3, null, j5, 0.0f, 40, null);
                         float f52 = f3;
                         long j102 = j5;
                         Alignment center2 = Alignment.Companion.getCenter();
@@ -378,7 +378,7 @@ public final class PullToRefreshDefaults {
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                         CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m2804pullToRefreshIndicatorwUdLESc$default2);
+                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m3111pullToRefreshIndicatorwUdLESc$default2);
                         Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -386,15 +386,15 @@ public final class PullToRefreshDefaults {
                         startRestartGroup.startReusableNode();
                         if (startRestartGroup.getInserting()) {
                         }
-                        m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (!m3520constructorimpl.getInserting()) {
+                        if (!m3855constructorimpl.getInserting()) {
                         }
-                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2);
-                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2);
+                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 396611011, "C454@17197L504,451@17052L649:PullToRefresh.kt#djiw08");
@@ -425,7 +425,7 @@ public final class PullToRefreshDefaults {
                                         composer3.startReplaceGroup(576835739);
                                         ComposerKt.sourceInformation(composer3, "456@17267L201");
                                         f6 = PullToRefreshKt.StrokeWidth;
-                                        ProgressIndicatorKt.m2171CircularProgressIndicatorLxG7B9w(SizeKt.m785size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), j92, f6, 0L, 0, composer3, 390, 24);
+                                        ProgressIndicatorKt.m2478CircularProgressIndicatorLxG7B9w(SizeKt.m884size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), j92, f6, 0L, 0, composer3, 390, 24);
                                         composer3.endReplaceGroup();
                                     } else {
                                         composer3.startReplaceGroup(577079337);
@@ -450,7 +450,7 @@ public final class PullToRefreshDefaults {
                                             composer3.updateRememberedValue(rememberedValue);
                                         }
                                         ComposerKt.sourceInformationMarkerEnd(composer3);
-                                        PullToRefreshKt.m2795CircularArrowProgressIndicatorRPmYEkk((Function0) rememberedValue, j92, composer3, 0);
+                                        PullToRefreshKt.m3102CircularArrowProgressIndicatorRPmYEkk((Function0) rememberedValue, j92, composer3, 0);
                                         composer3.endReplaceGroup();
                                     }
                                     if (ComposerKt.isTraceInProgress()) {
@@ -499,7 +499,7 @@ public final class PullToRefreshDefaults {
                             }
 
                             public final void invoke(Composer composer3, int i10) {
-                                PullToRefreshDefaults.this.m2788Indicator2poqoh4(pullToRefreshState, z, modifier2, j8, j7, f4, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                PullToRefreshDefaults.this.m3095Indicator2poqoh4(pullToRefreshState, z, modifier2, j8, j7, f4, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                             }
                         });
                         return;
@@ -527,7 +527,7 @@ public final class PullToRefreshDefaults {
                 final long j922 = j6;
                 Modifier modifier322 = companion;
                 int i922 = i5;
-                Modifier m2804pullToRefreshIndicatorwUdLESc$default22 = PullToRefreshKt.m2804pullToRefreshIndicatorwUdLESc$default(modifier322, pullToRefreshState, z, f3, null, j5, 0.0f, 40, null);
+                Modifier m3111pullToRefreshIndicatorwUdLESc$default22 = PullToRefreshKt.m3111pullToRefreshIndicatorwUdLESc$default(modifier322, pullToRefreshState, z, f3, null, j5, 0.0f, 40, null);
                 float f522 = f3;
                 long j1022 = j5;
                 Alignment center22 = Alignment.Companion.getCenter();
@@ -536,7 +536,7 @@ public final class PullToRefreshDefaults {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                 currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                 CompositionLocalMap currentCompositionLocalMap22 = startRestartGroup.getCurrentCompositionLocalMap();
-                Modifier materializeModifier22 = ComposedModifierKt.materializeModifier(startRestartGroup, m2804pullToRefreshIndicatorwUdLESc$default22);
+                Modifier materializeModifier22 = ComposedModifierKt.materializeModifier(startRestartGroup, m3111pullToRefreshIndicatorwUdLESc$default22);
                 Function0<ComposeUiNode> constructor22 = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                 if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -544,15 +544,15 @@ public final class PullToRefreshDefaults {
                 startRestartGroup.startReusableNode();
                 if (startRestartGroup.getInserting()) {
                 }
-                m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash22 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m3520constructorimpl.getInserting()) {
+                if (!m3855constructorimpl.getInserting()) {
                 }
-                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash22);
-                Updater.m3527setimpl(m3520constructorimpl, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
+                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash22);
+                Updater.m3862setimpl(m3855constructorimpl, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance22 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 396611011, "C454@17197L504,451@17052L649:PullToRefresh.kt#djiw08");
@@ -583,7 +583,7 @@ public final class PullToRefreshDefaults {
                                 composer3.startReplaceGroup(576835739);
                                 ComposerKt.sourceInformation(composer3, "456@17267L201");
                                 f6 = PullToRefreshKt.StrokeWidth;
-                                ProgressIndicatorKt.m2171CircularProgressIndicatorLxG7B9w(SizeKt.m785size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), j922, f6, 0L, 0, composer3, 390, 24);
+                                ProgressIndicatorKt.m2478CircularProgressIndicatorLxG7B9w(SizeKt.m884size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), j922, f6, 0L, 0, composer3, 390, 24);
                                 composer3.endReplaceGroup();
                             } else {
                                 composer3.startReplaceGroup(577079337);
@@ -608,7 +608,7 @@ public final class PullToRefreshDefaults {
                                     composer3.updateRememberedValue(rememberedValue);
                                 }
                                 ComposerKt.sourceInformationMarkerEnd(composer3);
-                                PullToRefreshKt.m2795CircularArrowProgressIndicatorRPmYEkk((Function0) rememberedValue, j922, composer3, 0);
+                                PullToRefreshKt.m3102CircularArrowProgressIndicatorRPmYEkk((Function0) rememberedValue, j922, composer3, 0);
                                 composer3.endReplaceGroup();
                             }
                             if (ComposerKt.isTraceInProgress()) {
@@ -667,7 +667,7 @@ public final class PullToRefreshDefaults {
             final long j9222 = j6;
             Modifier modifier3222 = companion;
             int i9222 = i5;
-            Modifier m2804pullToRefreshIndicatorwUdLESc$default222 = PullToRefreshKt.m2804pullToRefreshIndicatorwUdLESc$default(modifier3222, pullToRefreshState, z, f3, null, j5, 0.0f, 40, null);
+            Modifier m3111pullToRefreshIndicatorwUdLESc$default222 = PullToRefreshKt.m3111pullToRefreshIndicatorwUdLESc$default(modifier3222, pullToRefreshState, z, f3, null, j5, 0.0f, 40, null);
             float f5222 = f3;
             long j10222 = j5;
             Alignment center222 = Alignment.Companion.getCenter();
@@ -676,7 +676,7 @@ public final class PullToRefreshDefaults {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
             currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap222 = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier222 = ComposedModifierKt.materializeModifier(startRestartGroup, m2804pullToRefreshIndicatorwUdLESc$default222);
+            Modifier materializeModifier222 = ComposedModifierKt.materializeModifier(startRestartGroup, m3111pullToRefreshIndicatorwUdLESc$default222);
             Function0<ComposeUiNode> constructor222 = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -684,15 +684,15 @@ public final class PullToRefreshDefaults {
             startRestartGroup.startReusableNode();
             if (startRestartGroup.getInserting()) {
             }
-            m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy222, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy222, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash222 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (!m3520constructorimpl.getInserting()) {
+            if (!m3855constructorimpl.getInserting()) {
             }
-            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash222);
-            Updater.m3527setimpl(m3520constructorimpl, materializeModifier222, ComposeUiNode.Companion.getSetModifier());
+            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash222);
+            Updater.m3862setimpl(m3855constructorimpl, materializeModifier222, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance222 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 396611011, "C454@17197L504,451@17052L649:PullToRefresh.kt#djiw08");
@@ -723,7 +723,7 @@ public final class PullToRefreshDefaults {
                             composer3.startReplaceGroup(576835739);
                             ComposerKt.sourceInformation(composer3, "456@17267L201");
                             f6 = PullToRefreshKt.StrokeWidth;
-                            ProgressIndicatorKt.m2171CircularProgressIndicatorLxG7B9w(SizeKt.m785size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), j9222, f6, 0L, 0, composer3, 390, 24);
+                            ProgressIndicatorKt.m2478CircularProgressIndicatorLxG7B9w(SizeKt.m884size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), j9222, f6, 0L, 0, composer3, 390, 24);
                             composer3.endReplaceGroup();
                         } else {
                             composer3.startReplaceGroup(577079337);
@@ -748,7 +748,7 @@ public final class PullToRefreshDefaults {
                                 composer3.updateRememberedValue(rememberedValue);
                             }
                             ComposerKt.sourceInformationMarkerEnd(composer3);
-                            PullToRefreshKt.m2795CircularArrowProgressIndicatorRPmYEkk((Function0) rememberedValue, j9222, composer3, 0);
+                            PullToRefreshKt.m3102CircularArrowProgressIndicatorRPmYEkk((Function0) rememberedValue, j9222, composer3, 0);
                             composer3.endReplaceGroup();
                         }
                         if (ComposerKt.isTraceInProgress()) {
@@ -810,7 +810,7 @@ public final class PullToRefreshDefaults {
         final long j92222 = j6;
         Modifier modifier32222 = companion;
         int i92222 = i5;
-        Modifier m2804pullToRefreshIndicatorwUdLESc$default2222 = PullToRefreshKt.m2804pullToRefreshIndicatorwUdLESc$default(modifier32222, pullToRefreshState, z, f3, null, j5, 0.0f, 40, null);
+        Modifier m3111pullToRefreshIndicatorwUdLESc$default2222 = PullToRefreshKt.m3111pullToRefreshIndicatorwUdLESc$default(modifier32222, pullToRefreshState, z, f3, null, j5, 0.0f, 40, null);
         float f52222 = f3;
         long j102222 = j5;
         Alignment center2222 = Alignment.Companion.getCenter();
@@ -819,7 +819,7 @@ public final class PullToRefreshDefaults {
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
         currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
         CompositionLocalMap currentCompositionLocalMap2222 = startRestartGroup.getCurrentCompositionLocalMap();
-        Modifier materializeModifier2222 = ComposedModifierKt.materializeModifier(startRestartGroup, m2804pullToRefreshIndicatorwUdLESc$default2222);
+        Modifier materializeModifier2222 = ComposedModifierKt.materializeModifier(startRestartGroup, m3111pullToRefreshIndicatorwUdLESc$default2222);
         Function0<ComposeUiNode> constructor2222 = ComposeUiNode.Companion.getConstructor();
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
         if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -827,15 +827,15 @@ public final class PullToRefreshDefaults {
         startRestartGroup.startReusableNode();
         if (startRestartGroup.getInserting()) {
         }
-        m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy2222, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap2222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy2222, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap2222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2222 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (!m3520constructorimpl.getInserting()) {
+        if (!m3855constructorimpl.getInserting()) {
         }
-        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2222);
-        Updater.m3527setimpl(m3520constructorimpl, materializeModifier2222, ComposeUiNode.Companion.getSetModifier());
+        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2222);
+        Updater.m3862setimpl(m3855constructorimpl, materializeModifier2222, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance2222 = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 396611011, "C454@17197L504,451@17052L649:PullToRefresh.kt#djiw08");
@@ -866,7 +866,7 @@ public final class PullToRefreshDefaults {
                         composer3.startReplaceGroup(576835739);
                         ComposerKt.sourceInformation(composer3, "456@17267L201");
                         f6 = PullToRefreshKt.StrokeWidth;
-                        ProgressIndicatorKt.m2171CircularProgressIndicatorLxG7B9w(SizeKt.m785size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), j92222, f6, 0L, 0, composer3, 390, 24);
+                        ProgressIndicatorKt.m2478CircularProgressIndicatorLxG7B9w(SizeKt.m884size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), j92222, f6, 0L, 0, composer3, 390, 24);
                         composer3.endReplaceGroup();
                     } else {
                         composer3.startReplaceGroup(577079337);
@@ -891,7 +891,7 @@ public final class PullToRefreshDefaults {
                             composer3.updateRememberedValue(rememberedValue);
                         }
                         ComposerKt.sourceInformationMarkerEnd(composer3);
-                        PullToRefreshKt.m2795CircularArrowProgressIndicatorRPmYEkk((Function0) rememberedValue, j92222, composer3, 0);
+                        PullToRefreshKt.m3102CircularArrowProgressIndicatorRPmYEkk((Function0) rememberedValue, j92222, composer3, 0);
                         composer3.endReplaceGroup();
                     }
                     if (ComposerKt.isTraceInProgress()) {

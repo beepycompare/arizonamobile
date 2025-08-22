@@ -53,8 +53,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BackwardsCompatNode.kt */
-@Metadata(d1 = {"\u0000\u0082\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0000\n\u0002\b\u0002\b\u0000\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u00062\u00020\u00072\u00020\b2\u00020\t2\u00020\n2\u00020\u000b2\u00020\f2\u00020\r2\u00020\u000e2\u00020\u000fB\r\u0012\u0006\u0010\u0010\u001a\u00020\u0011¢\u0006\u0002\u0010\u0012J\u0010\u0010;\u001a\u00020<2\u0006\u0010=\u001a\u00020>H\u0016J\u0010\u0010?\u001a\u00020<2\u0006\u0010@\u001a\u00020\u001eH\u0002J\b\u0010A\u001a\u00020\u001eH\u0016J\b\u0010B\u001a\u00020<H\u0016J\b\u0010C\u001a\u00020<H\u0016J\b\u0010D\u001a\u00020<H\u0016J\b\u0010E\u001a\u00020<H\u0016J\r\u0010F\u001a\u00020<H\u0000¢\u0006\u0002\bGJ\u0010\u0010H\u001a\u00020<2\u0006\u0010I\u001a\u00020JH\u0016J\u0010\u0010K\u001a\u00020<2\u0006\u0010L\u001a\u00020\"H\u0016J\b\u0010M\u001a\u00020<H\u0016J\u0010\u0010N\u001a\u00020<2\u0006\u0010L\u001a\u00020\"H\u0016J*\u0010O\u001a\u00020<2\u0006\u0010P\u001a\u00020Q2\u0006\u0010R\u001a\u00020S2\u0006\u0010T\u001a\u00020UH\u0016ø\u0001\u0000¢\u0006\u0004\bV\u0010WJ\u001a\u0010X\u001a\u00020<2\u0006\u00103\u001a\u00020UH\u0016ø\u0001\u0000¢\u0006\u0004\bY\u0010ZJ\b\u0010[\u001a\u00020\u001eH\u0016J\b\u0010\\\u001a\u00020]H\u0016J\b\u0010^\u001a\u00020<H\u0002J\b\u0010_\u001a\u00020<H\u0002J\u0006\u0010`\u001a\u00020<J\u0014\u0010a\u001a\u00020<2\n\u0010\u0010\u001a\u0006\u0012\u0002\b\u00030bH\u0002J\f\u0010c\u001a\u00020<*\u00020dH\u0016J\f\u0010e\u001a\u00020<*\u00020fH\u0016J\u001c\u0010g\u001a\u00020h*\u00020i2\u0006\u0010j\u001a\u00020k2\u0006\u0010l\u001a\u00020hH\u0016J\u001c\u0010m\u001a\u00020h*\u00020i2\u0006\u0010j\u001a\u00020k2\u0006\u0010n\u001a\u00020hH\u0016J&\u0010o\u001a\u00020p*\u00020q2\u0006\u0010j\u001a\u00020r2\u0006\u0010s\u001a\u00020tH\u0016ø\u0001\u0000¢\u0006\u0004\bu\u0010vJ\u001c\u0010w\u001a\u00020h*\u00020i2\u0006\u0010j\u001a\u00020k2\u0006\u0010l\u001a\u00020hH\u0016J\u001c\u0010x\u001a\u00020h*\u00020i2\u0006\u0010j\u001a\u00020k2\u0006\u0010n\u001a\u00020hH\u0016J\u0018\u0010y\u001a\u0004\u0018\u00010z*\u00020\u00162\b\u0010{\u001a\u0004\u0018\u00010zH\u0016R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\u00020\u00168VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0018R$\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0019\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u0012R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001f\u001a\u00020\u001e8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001f\u0010 R\u0010\u0010!\u001a\u0004\u0018\u00010\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\u00020$8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b%\u0010&R\u0014\u0010'\u001a\u00020(8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b)\u0010*R2\u0010+\u001a\u001a\u0012\b\u0012\u0006\u0012\u0002\b\u00030-0,j\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030-`.X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b/\u00100\"\u0004\b1\u00102R\u001a\u00103\u001a\u0002048VX\u0096\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b5\u00106R$\u00107\u001a\u0002H8\"\u0004\b\u0000\u00108*\b\u0012\u0004\u0012\u0002H80-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b9\u0010:\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006|"}, d2 = {"Landroidx/compose/ui/node/BackwardsCompatNode;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "Landroidx/compose/ui/node/PointerInputModifierNode;", "Landroidx/compose/ui/modifier/ModifierLocalModifierNode;", "Landroidx/compose/ui/modifier/ModifierLocalReadScope;", "Landroidx/compose/ui/node/ParentDataModifierNode;", "Landroidx/compose/ui/node/LayoutAwareModifierNode;", "Landroidx/compose/ui/node/GlobalPositionAwareModifierNode;", "Landroidx/compose/ui/focus/FocusEventModifierNode;", "Landroidx/compose/ui/focus/FocusPropertiesModifierNode;", "Landroidx/compose/ui/focus/FocusRequesterModifierNode;", "Landroidx/compose/ui/node/OwnerScope;", "Landroidx/compose/ui/draw/BuildDrawCacheParams;", "Landroidx/compose/ui/Modifier$Node;", "element", "Landroidx/compose/ui/Modifier$Element;", "(Landroidx/compose/ui/Modifier$Element;)V", "_providedValues", "Landroidx/compose/ui/modifier/BackwardsCompatLocalMap;", "density", "Landroidx/compose/ui/unit/Density;", "getDensity", "()Landroidx/compose/ui/unit/Density;", "value", "getElement", "()Landroidx/compose/ui/Modifier$Element;", "setElement", "invalidateCache", "", "isValidOwnerScope", "()Z", "lastOnPlacedCoordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "providedValues", "Landroidx/compose/ui/modifier/ModifierLocalMap;", "getProvidedValues", "()Landroidx/compose/ui/modifier/ModifierLocalMap;", "readValues", "Ljava/util/HashSet;", "Landroidx/compose/ui/modifier/ModifierLocal;", "Lkotlin/collections/HashSet;", "getReadValues", "()Ljava/util/HashSet;", "setReadValues", "(Ljava/util/HashSet;)V", "size", "Landroidx/compose/ui/geometry/Size;", "getSize-NH-jbRc", "()J", "current", ExifInterface.GPS_DIRECTION_TRUE, "getCurrent", "(Landroidx/compose/ui/modifier/ModifierLocal;)Ljava/lang/Object;", "applyFocusProperties", "", "focusProperties", "Landroidx/compose/ui/focus/FocusProperties;", "initializeModifier", "duringAttach", "interceptOutOfBoundsChildEvents", "onAttach", "onCancelPointerInput", "onDensityChange", "onDetach", "onDrawCacheReadsChanged", "onDrawCacheReadsChanged$ui_release", "onFocusEvent", "focusState", "Landroidx/compose/ui/focus/FocusState;", "onGloballyPositioned", "coordinates", "onMeasureResultChanged", "onPlaced", "onPointerEvent", "pointerEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "bounds", "Landroidx/compose/ui/unit/IntSize;", "onPointerEvent-H0pRuoY", "(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "onRemeasured", "onRemeasured-ozmzZPI", "(J)V", "sharePointerInputWithSiblings", "toString", "", "unInitializeModifier", "updateDrawCache", "updateModifierLocalConsumer", "updateModifierLocalProvider", "Landroidx/compose/ui/modifier/ModifierLocalProvider;", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "maxIntrinsicHeight", "", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "measurable", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "width", "maxIntrinsicWidth", "height", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "minIntrinsicHeight", "minIntrinsicWidth", "modifyParentData", "", "parentData", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000\u0084\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u00062\u00020\u00072\u00020\b2\u00020\t2\u00020\n2\u00020\u000b2\u00020\f2\u00020\r2\u00020\u000e2\u00020\u000fB\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011¢\u0006\u0004\b\u0012\u0010\u0013J\b\u0010\u0018\u001a\u00020\u0019H\u0016J\b\u0010\u001a\u001a\u00020\u0019H\u0016J\b\u0010\u001b\u001a\u00020\u0019H\u0002J\u0010\u0010\u001c\u001a\u00020\u00192\u0006\u0010\u001d\u001a\u00020\u001eH\u0002J\b\u0010,\u001a\u00020\u0019H\u0016J\b\u0010-\u001a\u00020\u0019H\u0002J\r\u0010.\u001a\u00020\u0019H\u0000¢\u0006\u0002\b/J\u0006\u0010B\u001a\u00020\u0019J\u0014\u0010C\u001a\u00020\u00192\n\u0010\u0010\u001a\u0006\u0012\u0002\b\u00030DH\u0002J#\u0010G\u001a\u00020H*\u00020I2\u0006\u0010J\u001a\u00020K2\u0006\u0010L\u001a\u00020MH\u0016¢\u0006\u0004\bN\u0010OJ\u001c\u0010P\u001a\u00020Q*\u00020R2\u0006\u0010J\u001a\u00020S2\u0006\u0010T\u001a\u00020QH\u0016J\u001c\u0010U\u001a\u00020Q*\u00020R2\u0006\u0010J\u001a\u00020S2\u0006\u0010V\u001a\u00020QH\u0016J\u001c\u0010W\u001a\u00020Q*\u00020R2\u0006\u0010J\u001a\u00020S2\u0006\u0010T\u001a\u00020QH\u0016J\u001c\u0010X\u001a\u00020Q*\u00020R2\u0006\u0010J\u001a\u00020S2\u0006\u0010V\u001a\u00020QH\u0016J\f\u0010Y\u001a\u00020\u0019*\u00020ZH\u0016J\f\u0010[\u001a\u00020\u0019*\u00020\\H\u0016J'\u0010]\u001a\u00020\u00192\u0006\u0010^\u001a\u00020_2\u0006\u0010`\u001a\u00020a2\u0006\u0010b\u001a\u00020cH\u0016¢\u0006\u0004\bd\u0010eJ\b\u0010f\u001a\u00020\u0019H\u0016J\b\u0010g\u001a\u00020\u0019H\u0016J\b\u0010h\u001a\u00020\u001eH\u0016J\b\u0010i\u001a\u00020\u001eH\u0016J\u0018\u0010j\u001a\u0004\u0018\u00010k*\u00020 2\b\u0010l\u001a\u0004\u0018\u00010kH\u0016J\u0010\u0010m\u001a\u00020\u00192\u0006\u0010n\u001a\u00020oH\u0016J\u0017\u0010p\u001a\u00020\u00192\u0006\u0010'\u001a\u00020cH\u0016¢\u0006\u0004\bq\u0010rJ\u0010\u0010t\u001a\u00020\u00192\u0006\u0010n\u001a\u00020oH\u0016J\u0010\u0010u\u001a\u00020\u00192\u0006\u0010v\u001a\u00020wH\u0016J\u0010\u0010x\u001a\u00020\u00192\u0006\u0010y\u001a\u00020zH\u0016J\b\u0010{\u001a\u00020|H\u0016R$\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0014\u001a\u00020\u0011@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0013R\u0014\u0010\u001f\u001a\u00020 8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b!\u0010\"R\u0014\u0010#\u001a\u00020$8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b%\u0010&R\u0014\u0010'\u001a\u00020(8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b)\u0010*R\u000e\u0010+\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00100\u001a\u0004\u0018\u000101X\u0082\u000e¢\u0006\u0002\n\u0000R2\u00102\u001a\u001a\u0012\b\u0012\u0006\u0012\u0002\b\u00030403j\f\u0012\b\u0012\u0006\u0012\u0002\b\u000304`5X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b6\u00107\"\u0004\b8\u00109R\u0014\u0010:\u001a\u00020;8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b<\u0010=R$\u0010>\u001a\u0002H?\"\u0004\b\u0000\u0010?*\b\u0012\u0004\u0012\u0002H?048VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b@\u0010AR\u0014\u0010E\u001a\u00020\u001e8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bE\u0010FR\u0010\u0010s\u001a\u0004\u0018\u00010oX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006}"}, d2 = {"Landroidx/compose/ui/node/BackwardsCompatNode;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "Landroidx/compose/ui/node/PointerInputModifierNode;", "Landroidx/compose/ui/modifier/ModifierLocalModifierNode;", "Landroidx/compose/ui/modifier/ModifierLocalReadScope;", "Landroidx/compose/ui/node/ParentDataModifierNode;", "Landroidx/compose/ui/node/LayoutAwareModifierNode;", "Landroidx/compose/ui/node/GlobalPositionAwareModifierNode;", "Landroidx/compose/ui/focus/FocusEventModifierNode;", "Landroidx/compose/ui/focus/FocusPropertiesModifierNode;", "Landroidx/compose/ui/focus/FocusRequesterModifierNode;", "Landroidx/compose/ui/node/OwnerScope;", "Landroidx/compose/ui/draw/BuildDrawCacheParams;", "Landroidx/compose/ui/Modifier$Node;", "element", "Landroidx/compose/ui/Modifier$Element;", "<init>", "(Landroidx/compose/ui/Modifier$Element;)V", "value", "getElement", "()Landroidx/compose/ui/Modifier$Element;", "setElement", "onAttach", "", "onDetach", "unInitializeModifier", "initializeModifier", "duringAttach", "", "density", "Landroidx/compose/ui/unit/Density;", "getDensity", "()Landroidx/compose/ui/unit/Density;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "size", "Landroidx/compose/ui/geometry/Size;", "getSize-NH-jbRc", "()J", "invalidateCache", "onMeasureResultChanged", "updateDrawCache", "onDrawCacheReadsChanged", "onDrawCacheReadsChanged$ui_release", "_providedValues", "Landroidx/compose/ui/modifier/BackwardsCompatLocalMap;", "readValues", "Ljava/util/HashSet;", "Landroidx/compose/ui/modifier/ModifierLocal;", "Lkotlin/collections/HashSet;", "getReadValues", "()Ljava/util/HashSet;", "setReadValues", "(Ljava/util/HashSet;)V", "providedValues", "Landroidx/compose/ui/modifier/ModifierLocalMap;", "getProvidedValues", "()Landroidx/compose/ui/modifier/ModifierLocalMap;", "current", ExifInterface.GPS_DIRECTION_TRUE, "getCurrent", "(Landroidx/compose/ui/modifier/ModifierLocal;)Ljava/lang/Object;", "updateModifierLocalConsumer", "updateModifierLocalProvider", "Landroidx/compose/ui/modifier/ModifierLocalProvider;", "isValidOwnerScope", "()Z", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "minIntrinsicWidth", "", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "height", "minIntrinsicHeight", "width", "maxIntrinsicWidth", "maxIntrinsicHeight", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "onPointerEvent", "pointerEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "bounds", "Landroidx/compose/ui/unit/IntSize;", "onPointerEvent-H0pRuoY", "(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "onDensityChange", "onCancelPointerInput", "sharePointerInputWithSiblings", "interceptOutOfBoundsChildEvents", "modifyParentData", "", "parentData", "onGloballyPositioned", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "onRemeasured", "onRemeasured-ozmzZPI", "(J)V", "lastOnPlacedCoordinates", "onPlaced", "onFocusEvent", "focusState", "Landroidx/compose/ui/focus/FocusState;", "applyFocusProperties", "focusProperties", "Landroidx/compose/ui/focus/FocusProperties;", "toString", "", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class BackwardsCompatNode extends Modifier.Node implements LayoutModifierNode, DrawModifierNode, SemanticsModifierNode, PointerInputModifierNode, ModifierLocalModifierNode, ModifierLocalReadScope, ParentDataModifierNode, LayoutAwareModifierNode, GlobalPositionAwareModifierNode, FocusEventModifierNode, FocusPropertiesModifierNode, FocusRequesterModifierNode, OwnerScope, BuildDrawCacheParams {
     public static final int $stable = 8;
     private BackwardsCompatLocalMap _providedValues;
@@ -101,7 +101,7 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
         }
         Modifier.Element element = this.element;
         BackwardsCompatNode backwardsCompatNode = this;
-        if ((NodeKind.m5700constructorimpl(32) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
+        if ((NodeKind.m6245constructorimpl(32) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
             if (element instanceof ModifierLocalProvider) {
                 DelegatableNodeKt.requireOwner(this).getModifierLocalManager().removedProvider(this, ((ModifierLocalProvider) element).getKey());
             }
@@ -109,7 +109,7 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
                 ((ModifierLocalConsumer) element).onModifierLocalsUpdated(BackwardsCompatNodeKt.access$getDetachedModifierLocalReadScope$p());
             }
         }
-        if ((backwardsCompatNode.getKindSet$ui_release() & NodeKind.m5700constructorimpl(8)) != 0) {
+        if ((backwardsCompatNode.getKindSet$ui_release() & NodeKind.m6245constructorimpl(8)) != 0) {
             DelegatableNodeKt.requireOwner(this).onSemanticsChange();
         }
         if (element instanceof FocusRequesterModifier) {
@@ -123,7 +123,7 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
         }
         Modifier.Element element = this.element;
         BackwardsCompatNode backwardsCompatNode = this;
-        if ((NodeKind.m5700constructorimpl(32) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
+        if ((NodeKind.m6245constructorimpl(32) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
             if (element instanceof ModifierLocalConsumer) {
                 sideEffect(new Function0<Unit>() { // from class: androidx.compose.ui.node.BackwardsCompatNode$initializeModifier$2
                     /* JADX INFO: Access modifiers changed from: package-private */
@@ -147,7 +147,7 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
                 updateModifierLocalProvider((ModifierLocalProvider) element);
             }
         }
-        if ((NodeKind.m5700constructorimpl(4) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
+        if ((NodeKind.m6245constructorimpl(4) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
             if (element instanceof DrawCacheModifier) {
                 this.invalidateCache = true;
             }
@@ -155,7 +155,7 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
                 LayoutModifierNodeKt.invalidateLayer(this);
             }
         }
-        if ((NodeKind.m5700constructorimpl(2) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
+        if ((NodeKind.m6245constructorimpl(2) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
             if (BackwardsCompatNodeKt.access$isChainUpdate(this)) {
                 NodeCoordinator coordinator$ui_release = getCoordinator$ui_release();
                 Intrinsics.checkNotNull(coordinator$ui_release);
@@ -170,7 +170,7 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
         if (element instanceof RemeasurementModifier) {
             ((RemeasurementModifier) element).onRemeasurementAvailable(DelegatableNodeKt.requireLayoutNode(this));
         }
-        if ((NodeKind.m5700constructorimpl(128) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
+        if ((NodeKind.m6245constructorimpl(128) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
             if ((element instanceof OnRemeasuredModifier) && BackwardsCompatNodeKt.access$isChainUpdate(this)) {
                 DelegatableNodeKt.requireLayoutNode(this).invalidateMeasurements$ui_release();
             }
@@ -184,23 +184,23 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
                             layoutCoordinates = BackwardsCompatNode.this.lastOnPlacedCoordinates;
                             if (layoutCoordinates == null) {
                                 BackwardsCompatNode backwardsCompatNode2 = BackwardsCompatNode.this;
-                                backwardsCompatNode2.onPlaced(DelegatableNodeKt.m5560requireCoordinator64DMado(backwardsCompatNode2, NodeKind.m5700constructorimpl(128)));
+                                backwardsCompatNode2.onPlaced(DelegatableNodeKt.m6099requireCoordinator64DMado(backwardsCompatNode2, NodeKind.m6245constructorimpl(128)));
                             }
                         }
                     });
                 }
             }
         }
-        if ((NodeKind.m5700constructorimpl(256) & backwardsCompatNode.getKindSet$ui_release()) != 0 && (element instanceof OnGloballyPositionedModifier) && BackwardsCompatNodeKt.access$isChainUpdate(this)) {
+        if ((NodeKind.m6245constructorimpl(256) & backwardsCompatNode.getKindSet$ui_release()) != 0 && (element instanceof OnGloballyPositionedModifier) && BackwardsCompatNodeKt.access$isChainUpdate(this)) {
             DelegatableNodeKt.requireLayoutNode(this).invalidateMeasurements$ui_release();
         }
         if (element instanceof FocusRequesterModifier) {
             ((FocusRequesterModifier) element).getFocusRequester().getFocusRequesterNodes$ui_release().add(this);
         }
-        if ((NodeKind.m5700constructorimpl(16) & backwardsCompatNode.getKindSet$ui_release()) != 0 && (element instanceof PointerInputModifier)) {
+        if ((NodeKind.m6245constructorimpl(16) & backwardsCompatNode.getKindSet$ui_release()) != 0 && (element instanceof PointerInputModifier)) {
             ((PointerInputModifier) element).getPointerInputFilter().setLayoutCoordinates$ui_release(getCoordinator$ui_release());
         }
-        if ((NodeKind.m5700constructorimpl(8) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
+        if ((NodeKind.m6245constructorimpl(8) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
             DelegatableNodeKt.requireOwner(this).onSemanticsChange();
         }
     }
@@ -217,8 +217,8 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
 
     @Override // androidx.compose.ui.draw.BuildDrawCacheParams
     /* renamed from: getSize-NH-jbRc */
-    public long mo3696getSizeNHjbRc() {
-        return IntSizeKt.m6867toSizeozmzZPI(DelegatableNodeKt.m5560requireCoordinator64DMado(this, NodeKind.m5700constructorimpl(128)).mo5446getSizeYbymL2g());
+    public long mo4075getSizeNHjbRc() {
+        return IntSizeKt.m7434toSizeozmzZPI(DelegatableNodeKt.m6099requireCoordinator64DMado(this, NodeKind.m6245constructorimpl(128)).mo5962getSizeYbymL2g());
     }
 
     @Override // androidx.compose.ui.node.DrawModifierNode
@@ -276,16 +276,16 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
         NodeChain nodes$ui_release;
         this.readValues.add(modifierLocal);
         BackwardsCompatNode backwardsCompatNode = this;
-        int m5700constructorimpl = NodeKind.m5700constructorimpl(32);
+        int m6245constructorimpl = NodeKind.m6245constructorimpl(32);
         if (!backwardsCompatNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
         Modifier.Node parent$ui_release = backwardsCompatNode.getNode().getParent$ui_release();
         LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(backwardsCompatNode);
         while (requireLayoutNode != null) {
-            if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m5700constructorimpl) != 0) {
+            if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6245constructorimpl) != 0) {
                 while (parent$ui_release != null) {
-                    if ((parent$ui_release.getKindSet$ui_release() & m5700constructorimpl) != 0) {
+                    if ((parent$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
                         Modifier.Node node = parent$ui_release;
                         MutableVector mutableVector = null;
                         while (node != null) {
@@ -294,10 +294,10 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
                                 if (modifierLocalModifierNode.getProvidedValues().contains$ui_release(modifierLocal)) {
                                     return (T) modifierLocalModifierNode.getProvidedValues().get$ui_release(modifierLocal);
                                 }
-                            } else if ((node.getKindSet$ui_release() & m5700constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui_release() & m6245constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m5700constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui_release;
@@ -381,7 +381,7 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
     public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         Modifier.Element element = this.element;
         Intrinsics.checkNotNull(element, "null cannot be cast to non-null type androidx.compose.ui.layout.LayoutModifier");
-        return ((LayoutModifier) element).mo658measure3p2s80s(measureScope, measurable, j);
+        return ((LayoutModifier) element).mo738measure3p2s80s(measureScope, measurable, j);
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
@@ -434,10 +434,10 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo217onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo227onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         Modifier.Element element = this.element;
         Intrinsics.checkNotNull(element, "null cannot be cast to non-null type androidx.compose.ui.input.pointer.PointerInputModifier");
-        ((PointerInputModifier) element).getPointerInputFilter().mo5336onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+        ((PointerInputModifier) element).getPointerInputFilter().mo5849onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
     }
 
     @Override // androidx.compose.ui.node.DelegatableNode, androidx.compose.ui.node.PointerInputModifierNode
@@ -484,10 +484,10 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI */
-    public void mo377onRemeasuredozmzZPI(long j) {
+    public void mo408onRemeasuredozmzZPI(long j) {
         Modifier.Element element = this.element;
         if (element instanceof OnRemeasuredModifier) {
-            ((OnRemeasuredModifier) element).m5492onRemeasuredozmzZPI(j);
+            ((OnRemeasuredModifier) element).m6009onRemeasuredozmzZPI(j);
         }
     }
 

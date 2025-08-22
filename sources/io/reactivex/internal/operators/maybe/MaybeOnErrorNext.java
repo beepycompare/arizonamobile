@@ -9,7 +9,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeOnErrorNext<T> extends AbstractMaybeWithUpstream<T, T> {
     final boolean allowFatal;
     final Function<? super Throwable, ? extends MaybeSource<? extends T>> resumeFunction;
@@ -25,7 +25,7 @@ public final class MaybeOnErrorNext<T> extends AbstractMaybeWithUpstream<T, T> {
         this.source.subscribe(new OnErrorNextMaybeObserver(maybeObserver, this.resumeFunction, this.allowFatal));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OnErrorNextMaybeObserver<T> extends AtomicReference<Disposable> implements MaybeObserver<T>, Disposable {
         private static final long serialVersionUID = 2026620218879969836L;
         final boolean allowFatal;
@@ -81,7 +81,7 @@ public final class MaybeOnErrorNext<T> extends AbstractMaybeWithUpstream<T, T> {
             this.downstream.onComplete();
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         static final class NextMaybeObserver<T> implements MaybeObserver<T> {
             final MaybeObserver<? super T> downstream;
             final AtomicReference<Disposable> upstream;

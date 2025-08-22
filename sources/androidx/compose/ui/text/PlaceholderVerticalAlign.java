@@ -4,55 +4,55 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: Placeholder.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u00112\u00020\u0001:\u0001\u0011B\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001a\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\t\u0010\nJ\u0010\u0010\u000b\u001a\u00020\u0003HÖ\u0001¢\u0006\u0004\b\f\u0010\u0005J\u000f\u0010\r\u001a\u00020\u000eH\u0016¢\u0006\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0012"}, d2 = {"Landroidx/compose/ui/text/PlaceholderVerticalAlign;", "", "value", "", "constructor-impl", "(I)I", "equals", "", "other", "equals-impl", "(ILjava/lang/Object;)Z", "hashCode", "hashCode-impl", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "Companion", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u000e2\u00020\u0001:\u0001\u000eB\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\r\u001a\u00020\u0003HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/text/PlaceholderVerticalAlign;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "equals", "", "other", "hashCode", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes2.dex */
 public final class PlaceholderVerticalAlign {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int AboveBaseline = m6052constructorimpl(1);
-    private static final int Top = m6052constructorimpl(2);
-    private static final int Bottom = m6052constructorimpl(3);
-    private static final int Center = m6052constructorimpl(4);
-    private static final int TextTop = m6052constructorimpl(5);
-    private static final int TextBottom = m6052constructorimpl(6);
-    private static final int TextCenter = m6052constructorimpl(7);
+    private static final int AboveBaseline = m6609constructorimpl(1);
+    private static final int Top = m6609constructorimpl(2);
+    private static final int Bottom = m6609constructorimpl(3);
+    private static final int Center = m6609constructorimpl(4);
+    private static final int TextTop = m6609constructorimpl(5);
+    private static final int TextBottom = m6609constructorimpl(6);
+    private static final int TextCenter = m6609constructorimpl(7);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ PlaceholderVerticalAlign m6051boximpl(int i) {
+    public static final /* synthetic */ PlaceholderVerticalAlign m6608boximpl(int i) {
         return new PlaceholderVerticalAlign(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m6052constructorimpl(int i) {
+    public static int m6609constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6053equalsimpl(int i, Object obj) {
-        return (obj instanceof PlaceholderVerticalAlign) && i == ((PlaceholderVerticalAlign) obj).m6057unboximpl();
+    public static boolean m6610equalsimpl(int i, Object obj) {
+        return (obj instanceof PlaceholderVerticalAlign) && i == ((PlaceholderVerticalAlign) obj).m6614unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6054equalsimpl0(int i, int i2) {
+    public static final boolean m6611equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6055hashCodeimpl(int i) {
+    public static int m6612hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m6053equalsimpl(this.value, obj);
+        return m6610equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6055hashCodeimpl(this.value);
+        return m6612hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6057unboximpl() {
+    public final /* synthetic */ int m6614unboximpl() {
         return this.value;
     }
 
@@ -61,16 +61,16 @@ public final class PlaceholderVerticalAlign {
     }
 
     public String toString() {
-        return m6056toStringimpl(this.value);
+        return m6613toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6056toStringimpl(int i) {
-        return m6054equalsimpl0(i, AboveBaseline) ? "AboveBaseline" : m6054equalsimpl0(i, Top) ? "Top" : m6054equalsimpl0(i, Bottom) ? "Bottom" : m6054equalsimpl0(i, Center) ? "Center" : m6054equalsimpl0(i, TextTop) ? "TextTop" : m6054equalsimpl0(i, TextBottom) ? "TextBottom" : m6054equalsimpl0(i, TextCenter) ? "TextCenter" : "Invalid";
+    public static String m6613toStringimpl(int i) {
+        return m6611equalsimpl0(i, AboveBaseline) ? "AboveBaseline" : m6611equalsimpl0(i, Top) ? "Top" : m6611equalsimpl0(i, Bottom) ? "Bottom" : m6611equalsimpl0(i, Center) ? "Center" : m6611equalsimpl0(i, TextTop) ? "TextTop" : m6611equalsimpl0(i, TextBottom) ? "TextBottom" : m6611equalsimpl0(i, TextCenter) ? "TextCenter" : "Invalid";
     }
 
     /* compiled from: Placeholder.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0010\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0019\u0010\u0003\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0005\u0010\u0006R\u0019\u0010\b\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\t\u0010\u0006R\u0019\u0010\n\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u000b\u0010\u0006R\u0019\u0010\f\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\r\u0010\u0006R\u0019\u0010\u000e\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u000f\u0010\u0006R\u0019\u0010\u0010\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0011\u0010\u0006R\u0019\u0010\u0012\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0013\u0010\u0006\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0014"}, d2 = {"Landroidx/compose/ui/text/PlaceholderVerticalAlign$Companion;", "", "()V", "AboveBaseline", "Landroidx/compose/ui/text/PlaceholderVerticalAlign;", "getAboveBaseline-J6kI3mc", "()I", "I", "Bottom", "getBottom-J6kI3mc", "Center", "getCenter-J6kI3mc", "TextBottom", "getTextBottom-J6kI3mc", "TextCenter", "getTextCenter-J6kI3mc", "TextTop", "getTextTop-J6kI3mc", "Top", "getTop-J6kI3mc", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0010\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007R\u0013\u0010\u000b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\f\u0010\u0007R\u0013\u0010\r\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u000e\u0010\u0007R\u0013\u0010\u000f\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0010\u0010\u0007R\u0013\u0010\u0011\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0012\u0010\u0007R\u0013\u0010\u0013\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0014\u0010\u0007¨\u0006\u0015"}, d2 = {"Landroidx/compose/ui/text/PlaceholderVerticalAlign$Companion;", "", "<init>", "()V", "AboveBaseline", "Landroidx/compose/ui/text/PlaceholderVerticalAlign;", "getAboveBaseline-J6kI3mc", "()I", "I", "Top", "getTop-J6kI3mc", "Bottom", "getBottom-J6kI3mc", "Center", "getCenter-J6kI3mc", "TextTop", "getTextTop-J6kI3mc", "TextBottom", "getTextBottom-J6kI3mc", "TextCenter", "getTextCenter-J6kI3mc", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -81,37 +81,37 @@ public final class PlaceholderVerticalAlign {
         }
 
         /* renamed from: getAboveBaseline-J6kI3mc  reason: not valid java name */
-        public final int m6058getAboveBaselineJ6kI3mc() {
+        public final int m6615getAboveBaselineJ6kI3mc() {
             return PlaceholderVerticalAlign.AboveBaseline;
         }
 
         /* renamed from: getTop-J6kI3mc  reason: not valid java name */
-        public final int m6064getTopJ6kI3mc() {
+        public final int m6621getTopJ6kI3mc() {
             return PlaceholderVerticalAlign.Top;
         }
 
         /* renamed from: getBottom-J6kI3mc  reason: not valid java name */
-        public final int m6059getBottomJ6kI3mc() {
+        public final int m6616getBottomJ6kI3mc() {
             return PlaceholderVerticalAlign.Bottom;
         }
 
         /* renamed from: getCenter-J6kI3mc  reason: not valid java name */
-        public final int m6060getCenterJ6kI3mc() {
+        public final int m6617getCenterJ6kI3mc() {
             return PlaceholderVerticalAlign.Center;
         }
 
         /* renamed from: getTextTop-J6kI3mc  reason: not valid java name */
-        public final int m6063getTextTopJ6kI3mc() {
+        public final int m6620getTextTopJ6kI3mc() {
             return PlaceholderVerticalAlign.TextTop;
         }
 
         /* renamed from: getTextBottom-J6kI3mc  reason: not valid java name */
-        public final int m6061getTextBottomJ6kI3mc() {
+        public final int m6618getTextBottomJ6kI3mc() {
             return PlaceholderVerticalAlign.TextBottom;
         }
 
         /* renamed from: getTextCenter-J6kI3mc  reason: not valid java name */
-        public final int m6062getTextCenterJ6kI3mc() {
+        public final int m6619getTextCenterJ6kI3mc() {
             return PlaceholderVerticalAlign.TextCenter;
         }
     }

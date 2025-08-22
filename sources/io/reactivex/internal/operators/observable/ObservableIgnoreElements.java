@@ -3,7 +3,7 @@ package io.reactivex.internal.operators.observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableIgnoreElements<T> extends AbstractObservableWithUpstream<T, T> {
     public ObservableIgnoreElements(ObservableSource<T> observableSource) {
         super(observableSource);
@@ -14,7 +14,7 @@ public final class ObservableIgnoreElements<T> extends AbstractObservableWithUps
         this.source.subscribe(new IgnoreObservable(observer));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class IgnoreObservable<T> implements Observer<T>, Disposable {
         final Observer<? super T> downstream;
         Disposable upstream;

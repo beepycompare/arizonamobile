@@ -21,7 +21,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class TrackSelectionView extends LinearLayout {
     private boolean allowAdaptiveSelections;
     private boolean allowMultipleOverrides;
@@ -38,7 +38,7 @@ public class TrackSelectionView extends LinearLayout {
     private TrackNameProvider trackNameProvider;
     private CheckedTextView[][] trackViews;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface TrackSelectionListener {
         void onTrackSelectionChanged(boolean z, Map<TrackGroup, TrackSelectionOverride> map);
     }
@@ -290,7 +290,7 @@ public class TrackSelectionView extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class ComponentListener implements View.OnClickListener {
         private ComponentListener() {
         }
@@ -302,7 +302,7 @@ public class TrackSelectionView extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class TrackInfo {
         public final Tracks.Group trackGroup;
         public final int trackIndex;

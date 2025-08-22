@@ -90,8 +90,8 @@ import kotlinx.coroutines.Job;
 @Metadata(d1 = {"\u0000\u0098\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\u001aÄ\u0001\u0010\u0007\u001a\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00042\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132\b\b\u0002\u0010\u0015\u001a\u00020\u00042\b\b\u0002\u0010\u0016\u001a\u00020\u00132\u0015\b\u0002\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\b\u0018\u00010\n¢\u0006\u0002\b\u00182\u0013\b\u0002\u0010\u0019\u001a\r\u0012\u0004\u0012\u00020\u001a0\n¢\u0006\u0002\b\u00182\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\u001c\u0010\u001d\u001a\u0018\u0012\u0004\u0012\u00020\u001f\u0012\u0004\u0012\u00020\b0\u001e¢\u0006\u0002\b\u0018¢\u0006\u0002\b H\u0007ø\u0001\u0000¢\u0006\u0004\b!\u0010\"\u001a0\u0010#\u001a\u00020\b2\u0006\u0010$\u001a\u00020\u00132\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\n2\u0006\u0010%\u001a\u00020&H\u0003ø\u0001\u0000¢\u0006\u0004\b'\u0010(\u001a-\u0010)\u001a\u00020\u000e2\b\b\u0002\u0010*\u001a\u00020&2\u0014\b\u0002\u0010+\u001a\u000e\u0012\u0004\u0012\u00020,\u0012\u0004\u0012\u00020&0\u001eH\u0007¢\u0006\u0002\u0010-\u001aó\u0001\u0010.\u001a\u00020\b*\u00020/2\u0012\u00100\u001a\u000e\u0012\u0004\u0012\u000202\u0012\u0004\u0012\u000203012\u0006\u00104\u001a\u0002052\f\u00106\u001a\b\u0012\u0004\u0012\u00020\b0\n2!\u00107\u001a\u001d\u0012\u0013\u0012\u001102¢\u0006\f\b8\u0012\b\b9\u0012\u0004\b\b(:\u0012\u0004\u0012\u00020\b0\u001e2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00042\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132\b\b\u0002\u0010\u0015\u001a\u00020\u00042\u0015\b\u0002\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\b\u0018\u00010\n¢\u0006\u0002\b\u00182\u0013\b\u0002\u0010\u0019\u001a\r\u0012\u0004\u0012\u00020\u001a0\n¢\u0006\u0002\b\u00182\u001c\u0010\u001d\u001a\u0018\u0012\u0004\u0012\u00020\u001f\u0012\u0004\u0012\u00020\b0\u001e¢\u0006\u0002\b\u0018¢\u0006\u0002\b H\u0001ø\u0001\u0000¢\u0006\u0004\b;\u0010<\u001a\u0014\u0010=\u001a\u000202*\u00020>2\u0006\u0010?\u001a\u000202H\u0002\u001a\u0014\u0010@\u001a\u000202*\u00020>2\u0006\u0010?\u001a\u000202H\u0002\"\u0010\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u0010\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0005\"\u0010\u0010\u0006\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0005\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006A²\u0006\n\u0010B\u001a\u000202X\u008a\u0084\u0002"}, d2 = {"PredictiveBackChildTransformOrigin", "Landroidx/compose/ui/graphics/TransformOrigin;", "J", "PredictiveBackMaxScaleXDistance", "Landroidx/compose/ui/unit/Dp;", "F", "PredictiveBackMaxScaleYDistance", "ModalBottomSheet", "", "onDismissRequest", "Lkotlin/Function0;", "modifier", "Landroidx/compose/ui/Modifier;", "sheetState", "Landroidx/compose/material3/SheetState;", "sheetMaxWidth", "shape", "Landroidx/compose/ui/graphics/Shape;", "containerColor", "Landroidx/compose/ui/graphics/Color;", "contentColor", "tonalElevation", "scrimColor", "dragHandle", "Landroidx/compose/runtime/Composable;", "contentWindowInsets", "Landroidx/compose/foundation/layout/WindowInsets;", "properties", "Landroidx/compose/material3/ModalBottomSheetProperties;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/ColumnScope;", "Lkotlin/ExtensionFunctionType;", "ModalBottomSheet-dYc4hso", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/material3/SheetState;FLandroidx/compose/ui/graphics/Shape;JJFJLkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/material3/ModalBottomSheetProperties;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;III)V", "Scrim", "color", "visible", "", "Scrim-3J-VO9M", "(JLkotlin/jvm/functions/Function0;ZLandroidx/compose/runtime/Composer;I)V", "rememberModalBottomSheetState", "skipPartiallyExpanded", "confirmValueChange", "Landroidx/compose/material3/SheetValue;", "(ZLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Landroidx/compose/material3/SheetState;", "ModalBottomSheetContent", "Landroidx/compose/foundation/layout/BoxScope;", "predictiveBackProgress", "Landroidx/compose/animation/core/Animatable;", "", "Landroidx/compose/animation/core/AnimationVector1D;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "animateToDismiss", "settleToDismiss", "Lkotlin/ParameterName;", "name", "velocity", "ModalBottomSheetContent-IQkwcL4", "(Landroidx/compose/foundation/layout/BoxScope;Landroidx/compose/animation/core/Animatable;Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Landroidx/compose/material3/SheetState;FLandroidx/compose/ui/graphics/Shape;JJFLkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;III)V", "calculatePredictiveBackScaleX", "Landroidx/compose/ui/graphics/GraphicsLayerScope;", "progress", "calculatePredictiveBackScaleY", "material3_release", "alpha"}, k = 2, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ModalBottomSheetKt {
-    private static final float PredictiveBackMaxScaleXDistance = Dp.m6684constructorimpl(48);
-    private static final float PredictiveBackMaxScaleYDistance = Dp.m6684constructorimpl(24);
+    private static final float PredictiveBackMaxScaleXDistance = Dp.m7251constructorimpl(48);
+    private static final float PredictiveBackMaxScaleYDistance = Dp.m7251constructorimpl(24);
     private static final long PredictiveBackChildTransformOrigin = TransformOriginKt.TransformOrigin(0.5f, 0.0f);
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -163,7 +163,7 @@ public final class ModalBottomSheetKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2046ModalBottomSheetdYc4hso(final Function0<Unit> function0, Modifier modifier, SheetState sheetState, float f, Shape shape, long j, long j2, float f2, long j3, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, ? extends WindowInsets> function22, ModalBottomSheetProperties modalBottomSheetProperties, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m2353ModalBottomSheetdYc4hso(final Function0<Unit> function0, Modifier modifier, SheetState sheetState, float f, Shape shape, long j, long j2, float f2, long j3, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, ? extends WindowInsets> function22, ModalBottomSheetProperties modalBottomSheetProperties, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Modifier.Companion companion;
         final SheetState sheetState2;
@@ -351,7 +351,7 @@ public final class ModalBottomSheetKt {
                                 i10 &= -897;
                                 sheetState2 = rememberModalBottomSheetState(false, null, startRestartGroup, 0, 3);
                             }
-                            float m1596getSheetMaxWidthD9Ej5fM = i5 == 0 ? BottomSheetDefaults.INSTANCE.m1596getSheetMaxWidthD9Ej5fM() : f3;
+                            float m1903getSheetMaxWidthD9Ej5fM = i5 == 0 ? BottomSheetDefaults.INSTANCE.m1903getSheetMaxWidthD9Ej5fM() : f3;
                             if ((i3 & 16) == 0) {
                                 i15 = 6;
                                 shape3 = BottomSheetDefaults.INSTANCE.getExpandedShape(startRestartGroup, 6);
@@ -367,21 +367,21 @@ public final class ModalBottomSheetKt {
                                 j5 = j;
                             }
                             if ((i3 & 64) != 0) {
-                                j4 = ColorSchemeKt.m1733contentColorForek8zF_U(j5, startRestartGroup, (i10 >> 15) & 14);
+                                j4 = ColorSchemeKt.m2040contentColorForek8zF_U(j5, startRestartGroup, (i10 >> 15) & 14);
                                 i10 &= -3670017;
                             }
                             int i23 = i10;
-                            float m6684constructorimpl = i11 == 0 ? Dp.m6684constructorimpl(0) : f2;
+                            float m7251constructorimpl = i11 == 0 ? Dp.m7251constructorimpl(0) : f2;
                             if ((i3 & 256) == 0) {
-                                f4 = m6684constructorimpl;
+                                f4 = m7251constructorimpl;
                                 j6 = BottomSheetDefaults.INSTANCE.getScrimColor(startRestartGroup, 6);
                                 i10 = i23 & (-234881025);
                             } else {
-                                f4 = m6684constructorimpl;
+                                f4 = m7251constructorimpl;
                                 i10 = i23;
                                 j6 = j3;
                             }
-                            Function2<Composer, Integer, Unit> m1773getLambda1$material3_release = i8 == 0 ? ComposableSingletons$ModalBottomSheetKt.INSTANCE.m1773getLambda1$material3_release() : function2;
+                            Function2<Composer, Integer, Unit> m2080getLambda1$material3_release = i8 == 0 ? ComposableSingletons$ModalBottomSheetKt.INSTANCE.m2080getLambda1$material3_release() : function2;
                             if ((i3 & 1024) == 0) {
                                 modalBottomSheetKt$ModalBottomSheet$1 = new Function2<Composer, Integer, WindowInsets>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheet$1
                                     public final WindowInsets invoke(Composer composer3, int i24) {
@@ -414,8 +414,8 @@ public final class ModalBottomSheetKt {
                                 f5 = f4;
                                 modalBottomSheetProperties2 = modalBottomSheetProperties;
                             }
-                            f6 = m1596getSheetMaxWidthD9Ej5fM;
-                            function23 = m1773getLambda1$material3_release;
+                            f6 = m1903getSheetMaxWidthD9Ej5fM;
+                            function23 = m2080getLambda1$material3_release;
                             function24 = modalBottomSheetKt$ModalBottomSheet$1;
                             shape4 = shape3;
                             j7 = j5;
@@ -919,20 +919,20 @@ public final class ModalBottomSheetKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer3, 1107507610, "C169@8345L169,174@8527L459:ModalBottomSheet.kt#uh7d8r");
-                                    ModalBottomSheetKt.m2048Scrim3JVO9M(j12, function03, sheetState5.getTargetValue() != SheetValue.Hidden, composer3, 0);
-                                    ModalBottomSheetKt.m2047ModalBottomSheetContentIQkwcL4(boxScopeInstance, animatable2, coroutineScope2, function03, function12, modifier3, sheetState5, f9, shape6, j13, j14, f10, function27, function28, function33, composer3, (Animatable.$stable << 3) | 6, 0, 0);
+                                    ModalBottomSheetKt.m2355Scrim3JVO9M(j12, function03, sheetState5.getTargetValue() != SheetValue.Hidden, composer3, 0);
+                                    ModalBottomSheetKt.m2354ModalBottomSheetContentIQkwcL4(boxScopeInstance, animatable2, coroutineScope2, function03, function12, modifier3, sheetState5, f9, shape6, j13, j14, f10, function27, function28, function33, composer3, (Animatable.$stable << 3) | 6, 0, 0);
                                     ComposerKt.sourceInformationMarkerEnd(composer3);
                                     ComposerKt.sourceInformationMarkerEnd(composer3);
                                     composer3.endNode();
@@ -1006,7 +1006,7 @@ public final class ModalBottomSheetKt {
                             }
 
                             public final void invoke(Composer composer3, int i26) {
-                                ModalBottomSheetKt.m2046ModalBottomSheetdYc4hso(function0, modifier3, sheetState3, f7, shape5, j10, j11, f8, j12, function25, function26, modalBottomSheetProperties3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+                                ModalBottomSheetKt.m2353ModalBottomSheetdYc4hso(function0, modifier3, sheetState3, f7, shape5, j10, j11, f8, j12, function25, function26, modalBottomSheetProperties3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
                             }
                         });
                         return;
@@ -1042,8 +1042,8 @@ public final class ModalBottomSheetKt {
                 }
                 if (i14 == 0) {
                 }
-                f6 = m1596getSheetMaxWidthD9Ej5fM;
-                function23 = m1773getLambda1$material3_release;
+                f6 = m1903getSheetMaxWidthD9Ej5fM;
+                function23 = m2080getLambda1$material3_release;
                 function24 = modalBottomSheetKt$ModalBottomSheet$1;
                 shape4 = shape3;
                 j7 = j5;
@@ -1510,20 +1510,20 @@ public final class ModalBottomSheetKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                            Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer3, 1107507610, "C169@8345L169,174@8527L459:ModalBottomSheet.kt#uh7d8r");
-                            ModalBottomSheetKt.m2048Scrim3JVO9M(j122, function03, sheetState5.getTargetValue() != SheetValue.Hidden, composer3, 0);
-                            ModalBottomSheetKt.m2047ModalBottomSheetContentIQkwcL4(boxScopeInstance, animatable22, coroutineScope22, function03, function122, modifier32, sheetState5, f9, shape6, j13, j14, f10, function27, function28, function33, composer3, (Animatable.$stable << 3) | 6, 0, 0);
+                            ModalBottomSheetKt.m2355Scrim3JVO9M(j122, function03, sheetState5.getTargetValue() != SheetValue.Hidden, composer3, 0);
+                            ModalBottomSheetKt.m2354ModalBottomSheetContentIQkwcL4(boxScopeInstance, animatable22, coroutineScope22, function03, function122, modifier32, sheetState5, f9, shape6, j13, j14, f10, function27, function28, function33, composer3, (Animatable.$stable << 3) | 6, 0, 0);
                             ComposerKt.sourceInformationMarkerEnd(composer3);
                             ComposerKt.sourceInformationMarkerEnd(composer3);
                             composer3.endNode();
@@ -1610,8 +1610,8 @@ public final class ModalBottomSheetKt {
             }
             if (i14 == 0) {
             }
-            f6 = m1596getSheetMaxWidthD9Ej5fM;
-            function23 = m1773getLambda1$material3_release;
+            f6 = m1903getSheetMaxWidthD9Ej5fM;
+            function23 = m2080getLambda1$material3_release;
             function24 = modalBottomSheetKt$ModalBottomSheet$1;
             shape4 = shape3;
             j7 = j5;
@@ -2078,20 +2078,20 @@ public final class ModalBottomSheetKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer3, 1107507610, "C169@8345L169,174@8527L459:ModalBottomSheet.kt#uh7d8r");
-                        ModalBottomSheetKt.m2048Scrim3JVO9M(j122, function03, sheetState5.getTargetValue() != SheetValue.Hidden, composer3, 0);
-                        ModalBottomSheetKt.m2047ModalBottomSheetContentIQkwcL4(boxScopeInstance, animatable222, coroutineScope222, function03, function1222, modifier32, sheetState5, f9, shape6, j13, j14, f10, function27, function28, function33, composer3, (Animatable.$stable << 3) | 6, 0, 0);
+                        ModalBottomSheetKt.m2355Scrim3JVO9M(j122, function03, sheetState5.getTargetValue() != SheetValue.Hidden, composer3, 0);
+                        ModalBottomSheetKt.m2354ModalBottomSheetContentIQkwcL4(boxScopeInstance, animatable222, coroutineScope222, function03, function1222, modifier32, sheetState5, f9, shape6, j13, j14, f10, function27, function28, function33, composer3, (Animatable.$stable << 3) | 6, 0, 0);
                         ComposerKt.sourceInformationMarkerEnd(composer3);
                         ComposerKt.sourceInformationMarkerEnd(composer3);
                         composer3.endNode();
@@ -2184,8 +2184,8 @@ public final class ModalBottomSheetKt {
         }
         if (i14 == 0) {
         }
-        f6 = m1596getSheetMaxWidthD9Ej5fM;
-        function23 = m1773getLambda1$material3_release;
+        f6 = m1903getSheetMaxWidthD9Ej5fM;
+        function23 = m2080getLambda1$material3_release;
         function24 = modalBottomSheetKt$ModalBottomSheet$1;
         shape4 = shape3;
         j7 = j5;
@@ -2652,20 +2652,20 @@ public final class ModalBottomSheetKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer3, 1107507610, "C169@8345L169,174@8527L459:ModalBottomSheet.kt#uh7d8r");
-                    ModalBottomSheetKt.m2048Scrim3JVO9M(j122, function03, sheetState5.getTargetValue() != SheetValue.Hidden, composer3, 0);
-                    ModalBottomSheetKt.m2047ModalBottomSheetContentIQkwcL4(boxScopeInstance, animatable2222, coroutineScope2222, function03, function12222, modifier32, sheetState5, f9, shape6, j13, j14, f10, function27, function28, function33, composer3, (Animatable.$stable << 3) | 6, 0, 0);
+                    ModalBottomSheetKt.m2355Scrim3JVO9M(j122, function03, sheetState5.getTargetValue() != SheetValue.Hidden, composer3, 0);
+                    ModalBottomSheetKt.m2354ModalBottomSheetContentIQkwcL4(boxScopeInstance, animatable2222, coroutineScope2222, function03, function12222, modifier32, sheetState5, f9, shape6, j13, j14, f10, function27, function28, function33, composer3, (Animatable.$stable << 3) | 6, 0, 0);
                     ComposerKt.sourceInformationMarkerEnd(composer3);
                     ComposerKt.sourceInformationMarkerEnd(composer3);
                     composer3.endNode();
@@ -2766,7 +2766,7 @@ public final class ModalBottomSheetKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2047ModalBottomSheetContentIQkwcL4(final BoxScope boxScope, final Animatable<Float, AnimationVector1D> animatable, final CoroutineScope coroutineScope, final Function0<Unit> function0, final Function1<? super Float, Unit> function1, Modifier modifier, SheetState sheetState, float f, Shape shape, long j, long j2, float f2, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, ? extends WindowInsets> function22, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m2354ModalBottomSheetContentIQkwcL4(final BoxScope boxScope, final Animatable<Float, AnimationVector1D> animatable, final CoroutineScope coroutineScope, final Function0<Unit> function0, final Function1<? super Float, Unit> function1, Modifier modifier, SheetState sheetState, float f, Shape shape, long j, long j2, float f2, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, ? extends WindowInsets> function22, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -2785,7 +2785,7 @@ public final class ModalBottomSheetKt {
         int i14;
         long j3;
         long j4;
-        Function2<Composer, Integer, Unit> m1774getLambda2$material3_release;
+        Function2<Composer, Integer, Unit> m2081getLambda2$material3_release;
         Shape shape3;
         long j5;
         int i15;
@@ -2945,7 +2945,7 @@ public final class ModalBottomSheetKt {
                                         i7 &= -3670017;
                                         sheetState2 = rememberModalBottomSheetState(false, null, startRestartGroup, 0, 3);
                                     }
-                                    float m1596getSheetMaxWidthD9Ej5fM = i6 == 0 ? BottomSheetDefaults.INSTANCE.m1596getSheetMaxWidthD9Ej5fM() : f;
+                                    float m1903getSheetMaxWidthD9Ej5fM = i6 == 0 ? BottomSheetDefaults.INSTANCE.m1903getSheetMaxWidthD9Ej5fM() : f;
                                     if ((i3 & 128) != 0) {
                                         shape2 = BottomSheetDefaults.INSTANCE.getExpandedShape(startRestartGroup, 6);
                                         i7 &= -234881025;
@@ -2957,18 +2957,18 @@ public final class ModalBottomSheetKt {
                                         j3 = j;
                                     }
                                     if ((i3 & 512) == 0) {
-                                        j4 = ColorSchemeKt.m1733contentColorForek8zF_U(j3, startRestartGroup, (i7 >> 27) & 14);
+                                        j4 = ColorSchemeKt.m2040contentColorForek8zF_U(j3, startRestartGroup, (i7 >> 27) & 14);
                                         i14 &= -15;
                                     } else {
                                         j4 = j2;
                                     }
-                                    float m1595getElevationD9Ej5fM = i10 == 0 ? BottomSheetDefaults.INSTANCE.m1595getElevationD9Ej5fM() : f2;
-                                    m1774getLambda2$material3_release = i13 == 0 ? ComposableSingletons$ModalBottomSheetKt.INSTANCE.m1774getLambda2$material3_release() : function2;
-                                    float f8 = m1596getSheetMaxWidthD9Ej5fM;
+                                    float m1902getElevationD9Ej5fM = i10 == 0 ? BottomSheetDefaults.INSTANCE.m1902getElevationD9Ej5fM() : f2;
+                                    m2081getLambda2$material3_release = i13 == 0 ? ComposableSingletons$ModalBottomSheetKt.INSTANCE.m2081getLambda2$material3_release() : function2;
+                                    float f8 = m1903getSheetMaxWidthD9Ej5fM;
                                     if ((i3 & 4096) == 0) {
                                         shape3 = shape2;
                                         j5 = j3;
-                                        float f9 = m1595getElevationD9Ej5fM;
+                                        float f9 = m1902getElevationD9Ej5fM;
                                         i15 = i14 & (-7169);
                                         modifier2 = companion;
                                         f3 = f9;
@@ -2996,7 +2996,7 @@ public final class ModalBottomSheetKt {
                                     } else {
                                         shape3 = shape2;
                                         j5 = j3;
-                                        float f10 = m1595getElevationD9Ej5fM;
+                                        float f10 = m1902getElevationD9Ej5fM;
                                         i15 = i14;
                                         modifier2 = companion;
                                         f3 = f10;
@@ -3024,7 +3024,7 @@ public final class ModalBottomSheetKt {
                                     j4 = j2;
                                     modalBottomSheetKt$ModalBottomSheetContent$1 = function22;
                                     i15 = i14;
-                                    m1774getLambda2$material3_release = obj2;
+                                    m2081getLambda2$material3_release = obj2;
                                     shape3 = shape2;
                                     modifier2 = companion;
                                     j5 = j;
@@ -3038,10 +3038,10 @@ public final class ModalBottomSheetKt {
                                     ComposerKt.traceEventStart(-1676960531, i7, i15, "androidx.compose.material3.ModalBottomSheetContent (ModalBottomSheet.kt:214)");
                                 }
                                 Strings.Companion companion2 = Strings.Companion;
-                                final String m2779getString2EP1pXo = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_pane_title), startRestartGroup, 0);
+                                final String m3086getString2EP1pXo = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_pane_title), startRestartGroup, 0);
                                 Modifier modifier4 = modifier2;
                                 Shape shape4 = shape3;
-                                Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(SizeKt.m792widthInVpY3zN4$default(boxScope.align(modifier2, Alignment.Companion.getTopCenter()), 0.0f, f4, 1, null), 0.0f, 1, null);
+                                Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(SizeKt.m891widthInVpY3zN4$default(boxScope.align(modifier2, Alignment.Companion.getTopCenter()), 0.0f, f4, 1, null), 0.0f, 1, null);
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1237857395, "CC(remember):ModalBottomSheet.kt#9igjgp");
                                 i16 = (3670016 & i7) ^ 1572864;
                                 if (i16 > 1048576 || !startRestartGroup.changed(sheetState2)) {
@@ -3095,13 +3095,13 @@ public final class ModalBottomSheetKt {
 
                                                 @Override // kotlin.jvm.functions.Function2
                                                 public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SheetValue>, ? extends SheetValue> invoke(IntSize intSize, Constraints constraints) {
-                                                    return m2050invokeGpV2Q24(intSize.m6859unboximpl(), constraints.m6643unboximpl());
+                                                    return m2357invokeGpV2Q24(intSize.m7426unboximpl(), constraints.m7210unboximpl());
                                                 }
 
                                                 /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-                                                public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2050invokeGpV2Q24(final long j9, long j10) {
+                                                public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2357invokeGpV2Q24(final long j9, long j10) {
                                                     SheetValue sheetValue;
-                                                    final float m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j10);
+                                                    final float m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j10);
                                                     final SheetState sheetState4 = SheetState.this;
                                                     DraggableAnchors DraggableAnchors = AnchoredDraggableKt.DraggableAnchors(new Function1<DraggableAnchorsConfig<SheetValue>, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$3$1$newAnchors$1
                                                         /* JADX INFO: Access modifiers changed from: package-private */
@@ -3118,12 +3118,12 @@ public final class ModalBottomSheetKt {
 
                                                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                                         public final void invoke2(DraggableAnchorsConfig<SheetValue> draggableAnchorsConfig) {
-                                                            draggableAnchorsConfig.at(SheetValue.Hidden, m6636getMaxHeightimpl);
-                                                            if (IntSize.m6854getHeightimpl(j9) > m6636getMaxHeightimpl / 2 && !sheetState4.getSkipPartiallyExpanded$material3_release()) {
-                                                                draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m6636getMaxHeightimpl / 2.0f);
+                                                            draggableAnchorsConfig.at(SheetValue.Hidden, m7203getMaxHeightimpl);
+                                                            if (IntSize.m7421getHeightimpl(j9) > m7203getMaxHeightimpl / 2 && !sheetState4.getSkipPartiallyExpanded$material3_release()) {
+                                                                draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m7203getMaxHeightimpl / 2.0f);
                                                             }
-                                                            if (IntSize.m6854getHeightimpl(j9) != 0) {
-                                                                draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m6636getMaxHeightimpl - IntSize.m6854getHeightimpl(j9)));
+                                                            if (IntSize.m7421getHeightimpl(j9) != 0) {
+                                                                draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m7203getMaxHeightimpl - IntSize.m7421getHeightimpl(j9)));
                                                             }
                                                         }
                                                     });
@@ -3160,7 +3160,7 @@ public final class ModalBottomSheetKt {
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                         Modifier draggable$default = DraggableKt.draggable$default(draggableAnchors, draggableState$material3_release, orientation2, isVisible, null, isAnimationRunning, null, (Function3) rememberedValue3, false, 168, null);
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1237931647, "CC(remember):ModalBottomSheet.kt#9igjgp");
-                                        changed = startRestartGroup.changed(m2779getString2EP1pXo);
+                                        changed = startRestartGroup.changed(m3086getString2EP1pXo);
                                         rememberedValue4 = startRestartGroup.rememberedValue();
                                         if (!changed || rememberedValue4 == Composer.Companion.getEmpty()) {
                                             rememberedValue4 = (Function1) new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$5$1
@@ -3178,7 +3178,7 @@ public final class ModalBottomSheetKt {
 
                                                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                                    SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m2779getString2EP1pXo);
+                                                    SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m3086getString2EP1pXo);
                                                     SemanticsPropertiesKt.setTraversalIndex(semanticsPropertyReceiver, 0.0f);
                                                 }
                                             };
@@ -3213,8 +3213,8 @@ public final class ModalBottomSheetKt {
                                                     float calculatePredictiveBackScaleX;
                                                     float calculatePredictiveBackScaleY;
                                                     float offset = SheetState.this.getAnchoredDraggableState$material3_release().getOffset();
-                                                    float m3903getHeightimpl = Size.m3903getHeightimpl(graphicsLayerScope.mo4265getSizeNHjbRc());
-                                                    if (Float.isNaN(offset) || Float.isNaN(m3903getHeightimpl) || m3903getHeightimpl == 0.0f) {
+                                                    float m4359getHeightimpl = Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc());
+                                                    if (Float.isNaN(offset) || Float.isNaN(m4359getHeightimpl) || m4359getHeightimpl == 0.0f) {
                                                         return;
                                                     }
                                                     float floatValue = animatable.getValue().floatValue();
@@ -3222,7 +3222,7 @@ public final class ModalBottomSheetKt {
                                                     graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX);
                                                     calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                                                     graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY);
-                                                    graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m3903getHeightimpl) / m3903getHeightimpl));
+                                                    graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m4359getHeightimpl) / m4359getHeightimpl));
                                                 }
                                             };
                                             startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -3231,13 +3231,13 @@ public final class ModalBottomSheetKt {
                                         Modifier graphicsLayer = GraphicsLayerModifierKt.graphicsLayer(semantics$default, (Function1) rememberedValue5);
                                         final SheetState sheetState4 = sheetState2;
                                         final Function0<Unit> function02 = obj;
-                                        final Function2<? super Composer, ? super Integer, Unit> function26 = m1774getLambda2$material3_release;
+                                        final Function2<? super Composer, ? super Integer, Unit> function26 = m2081getLambda2$material3_release;
                                         Function2<? super Composer, ? super Integer, ? extends WindowInsets> function27 = function23;
                                         int i23 = i7 >> 21;
                                         int i24 = i15 << 9;
                                         long j9 = j4;
                                         composer2 = startRestartGroup;
-                                        SurfaceKt.m2347SurfaceT9BRK9s(graphicsLayer, shape4, j8, j9, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
+                                        SurfaceKt.m2654SurfaceT9BRK9s(graphicsLayer, shape4, j8, j9, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
                                             /* JADX INFO: Access modifiers changed from: package-private */
                                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                             /* JADX WARN: Multi-variable type inference failed */
@@ -3287,7 +3287,7 @@ public final class ModalBottomSheetKt {
                                                                 calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                                                                 graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY == 0.0f ? 1.0f : calculatePredictiveBackScaleX / calculatePredictiveBackScaleY);
                                                                 j10 = ModalBottomSheetKt.PredictiveBackChildTransformOrigin;
-                                                                graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(j10);
+                                                                graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(j10);
                                                             }
                                                         };
                                                         composer3.updateRememberedValue(rememberedValue6);
@@ -3316,15 +3316,15 @@ public final class ModalBottomSheetKt {
                                                     } else {
                                                         composer3.useNode();
                                                     }
-                                                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                                                    Updater.m3527setimpl(m3520constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                                                    Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                     }
-                                                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                     ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                                                     ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                                                     ComposerKt.sourceInformationMarkerStart(composer3, 806123989, "C340@16116L9:ModalBottomSheet.kt#uh7d8r");
@@ -3332,14 +3332,14 @@ public final class ModalBottomSheetKt {
                                                     ComposerKt.sourceInformation(composer3, "303@14272L54,304@14368L48,305@14457L47,309@14672L1346,306@14521L1568");
                                                     if (function28 != null) {
                                                         Strings.Companion companion3 = Strings.Companion;
-                                                        final String m2779getString2EP1pXo2 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
+                                                        final String m3086getString2EP1pXo2 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
                                                         Strings.Companion companion4 = Strings.Companion;
-                                                        final String m2779getString2EP1pXo3 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
+                                                        final String m3086getString2EP1pXo3 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
                                                         Strings.Companion companion5 = Strings.Companion;
-                                                        final String m2779getString2EP1pXo4 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
+                                                        final String m3086getString2EP1pXo4 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
                                                         Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getCenterHorizontally());
                                                         ComposerKt.sourceInformationMarkerStart(composer3, -1636549585, "CC(remember):ModalBottomSheet.kt#9igjgp");
-                                                        boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m2779getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m2779getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m2779getString2EP1pXo2);
+                                                        boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m3086getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m3086getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m3086getString2EP1pXo2);
                                                         Object rememberedValue7 = composer3.rememberedValue();
                                                         if (changed2 || rememberedValue7 == Composer.Companion.getEmpty()) {
                                                             str = "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh";
@@ -3359,9 +3359,9 @@ public final class ModalBottomSheetKt {
                                                                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                                                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                                                     final SheetState sheetState6 = SheetState.this;
-                                                                    String str2 = m2779getString2EP1pXo3;
-                                                                    String str3 = m2779getString2EP1pXo4;
-                                                                    String str4 = m2779getString2EP1pXo2;
+                                                                    String str2 = m3086getString2EP1pXo3;
+                                                                    String str3 = m3086getString2EP1pXo4;
+                                                                    String str4 = m3086getString2EP1pXo2;
                                                                     final Function0<Unit> function04 = function03;
                                                                     final CoroutineScope coroutineScope3 = coroutineScope2;
                                                                     SemanticsPropertiesKt.dismiss(semanticsPropertyReceiver, str2, new Function0<Boolean>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$1$1$1
@@ -3528,15 +3528,15 @@ public final class ModalBottomSheetKt {
                                                         } else {
                                                             composer3.useNode();
                                                         }
-                                                        Composer m3520constructorimpl2 = Updater.m3520constructorimpl(composer3);
-                                                        Updater.m3527setimpl(m3520constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                        Updater.m3527setimpl(m3520constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                        Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
+                                                        Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                        Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                        if (m3520constructorimpl2.getInserting() || !Intrinsics.areEqual(m3520constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                            m3520constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                            m3520constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                                        if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                                            m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                                            m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                                         }
-                                                        Updater.m3527setimpl(m3520constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                                        Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                                         ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                         ComposerKt.sourceInformationMarkerStart(composer3, -760467413, "C337@16059L12:ModalBottomSheet.kt#uh7d8r");
@@ -3631,13 +3631,13 @@ public final class ModalBottomSheetKt {
 
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SheetValue>, ? extends SheetValue> invoke(IntSize intSize, Constraints constraints) {
-                                        return m2050invokeGpV2Q24(intSize.m6859unboximpl(), constraints.m6643unboximpl());
+                                        return m2357invokeGpV2Q24(intSize.m7426unboximpl(), constraints.m7210unboximpl());
                                     }
 
                                     /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-                                    public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2050invokeGpV2Q24(final long j92, long j10) {
+                                    public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2357invokeGpV2Q24(final long j92, long j10) {
                                         SheetValue sheetValue;
-                                        final float m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j10);
+                                        final float m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j10);
                                         final SheetState sheetState42 = SheetState.this;
                                         DraggableAnchors DraggableAnchors = AnchoredDraggableKt.DraggableAnchors(new Function1<DraggableAnchorsConfig<SheetValue>, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$3$1$newAnchors$1
                                             /* JADX INFO: Access modifiers changed from: package-private */
@@ -3654,12 +3654,12 @@ public final class ModalBottomSheetKt {
 
                                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                             public final void invoke2(DraggableAnchorsConfig<SheetValue> draggableAnchorsConfig) {
-                                                draggableAnchorsConfig.at(SheetValue.Hidden, m6636getMaxHeightimpl);
-                                                if (IntSize.m6854getHeightimpl(j92) > m6636getMaxHeightimpl / 2 && !sheetState42.getSkipPartiallyExpanded$material3_release()) {
-                                                    draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m6636getMaxHeightimpl / 2.0f);
+                                                draggableAnchorsConfig.at(SheetValue.Hidden, m7203getMaxHeightimpl);
+                                                if (IntSize.m7421getHeightimpl(j92) > m7203getMaxHeightimpl / 2 && !sheetState42.getSkipPartiallyExpanded$material3_release()) {
+                                                    draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m7203getMaxHeightimpl / 2.0f);
                                                 }
-                                                if (IntSize.m6854getHeightimpl(j92) != 0) {
-                                                    draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m6636getMaxHeightimpl - IntSize.m6854getHeightimpl(j92)));
+                                                if (IntSize.m7421getHeightimpl(j92) != 0) {
+                                                    draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m7203getMaxHeightimpl - IntSize.m7421getHeightimpl(j92)));
                                                 }
                                             }
                                         });
@@ -3696,7 +3696,7 @@ public final class ModalBottomSheetKt {
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 Modifier draggable$default2 = DraggableKt.draggable$default(draggableAnchors2, draggableState$material3_release2, orientation22, isVisible2, null, isAnimationRunning2, null, (Function3) rememberedValue3, false, 168, null);
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1237931647, "CC(remember):ModalBottomSheet.kt#9igjgp");
-                                changed = startRestartGroup.changed(m2779getString2EP1pXo);
+                                changed = startRestartGroup.changed(m3086getString2EP1pXo);
                                 rememberedValue4 = startRestartGroup.rememberedValue();
                                 if (!changed) {
                                 }
@@ -3715,7 +3715,7 @@ public final class ModalBottomSheetKt {
 
                                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                        SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m2779getString2EP1pXo);
+                                        SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m3086getString2EP1pXo);
                                         SemanticsPropertiesKt.setTraversalIndex(semanticsPropertyReceiver, 0.0f);
                                     }
                                 };
@@ -3751,8 +3751,8 @@ public final class ModalBottomSheetKt {
                                         float calculatePredictiveBackScaleX;
                                         float calculatePredictiveBackScaleY;
                                         float offset = SheetState.this.getAnchoredDraggableState$material3_release().getOffset();
-                                        float m3903getHeightimpl = Size.m3903getHeightimpl(graphicsLayerScope.mo4265getSizeNHjbRc());
-                                        if (Float.isNaN(offset) || Float.isNaN(m3903getHeightimpl) || m3903getHeightimpl == 0.0f) {
+                                        float m4359getHeightimpl = Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc());
+                                        if (Float.isNaN(offset) || Float.isNaN(m4359getHeightimpl) || m4359getHeightimpl == 0.0f) {
                                             return;
                                         }
                                         float floatValue = animatable.getValue().floatValue();
@@ -3760,7 +3760,7 @@ public final class ModalBottomSheetKt {
                                         graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX);
                                         calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                                         graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY);
-                                        graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m3903getHeightimpl) / m3903getHeightimpl));
+                                        graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m4359getHeightimpl) / m4359getHeightimpl));
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -3768,13 +3768,13 @@ public final class ModalBottomSheetKt {
                                 Modifier graphicsLayer2 = GraphicsLayerModifierKt.graphicsLayer(semantics$default2, (Function1) rememberedValue5);
                                 final SheetState sheetState42 = sheetState2;
                                 final Function0<Unit> function022 = obj;
-                                final Function2<? super Composer, ? super Integer, Unit> function262 = m1774getLambda2$material3_release;
+                                final Function2<? super Composer, ? super Integer, Unit> function262 = m2081getLambda2$material3_release;
                                 Function2<? super Composer, ? super Integer, ? extends WindowInsets> function272 = function23;
                                 int i232 = i7 >> 21;
                                 int i242 = i15 << 9;
                                 long j92 = j4;
                                 composer2 = startRestartGroup;
-                                SurfaceKt.m2347SurfaceT9BRK9s(graphicsLayer2, shape4, j82, j92, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
+                                SurfaceKt.m2654SurfaceT9BRK9s(graphicsLayer2, shape4, j82, j92, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
                                     /* JADX INFO: Access modifiers changed from: package-private */
                                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                     /* JADX WARN: Multi-variable type inference failed */
@@ -3824,7 +3824,7 @@ public final class ModalBottomSheetKt {
                                                         calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                                                         graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY == 0.0f ? 1.0f : calculatePredictiveBackScaleX / calculatePredictiveBackScaleY);
                                                         j10 = ModalBottomSheetKt.PredictiveBackChildTransformOrigin;
-                                                        graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(j10);
+                                                        graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(j10);
                                                     }
                                                 };
                                                 composer3.updateRememberedValue(rememberedValue6);
@@ -3853,15 +3853,15 @@ public final class ModalBottomSheetKt {
                                             } else {
                                                 composer3.useNode();
                                             }
-                                            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                                            Updater.m3527setimpl(m3520constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                                            Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                             }
-                                            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                             ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                                             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                                             ComposerKt.sourceInformationMarkerStart(composer3, 806123989, "C340@16116L9:ModalBottomSheet.kt#uh7d8r");
@@ -3869,14 +3869,14 @@ public final class ModalBottomSheetKt {
                                             ComposerKt.sourceInformation(composer3, "303@14272L54,304@14368L48,305@14457L47,309@14672L1346,306@14521L1568");
                                             if (function28 != null) {
                                                 Strings.Companion companion3 = Strings.Companion;
-                                                final String m2779getString2EP1pXo2 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
+                                                final String m3086getString2EP1pXo2 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
                                                 Strings.Companion companion4 = Strings.Companion;
-                                                final String m2779getString2EP1pXo3 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
+                                                final String m3086getString2EP1pXo3 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
                                                 Strings.Companion companion5 = Strings.Companion;
-                                                final String m2779getString2EP1pXo4 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
+                                                final String m3086getString2EP1pXo4 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
                                                 Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getCenterHorizontally());
                                                 ComposerKt.sourceInformationMarkerStart(composer3, -1636549585, "CC(remember):ModalBottomSheet.kt#9igjgp");
-                                                boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m2779getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m2779getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m2779getString2EP1pXo2);
+                                                boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m3086getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m3086getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m3086getString2EP1pXo2);
                                                 Object rememberedValue7 = composer3.rememberedValue();
                                                 if (changed2 || rememberedValue7 == Composer.Companion.getEmpty()) {
                                                     str = "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh";
@@ -3896,9 +3896,9 @@ public final class ModalBottomSheetKt {
                                                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                                         public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                                             final SheetState sheetState6 = SheetState.this;
-                                                            String str2 = m2779getString2EP1pXo3;
-                                                            String str3 = m2779getString2EP1pXo4;
-                                                            String str4 = m2779getString2EP1pXo2;
+                                                            String str2 = m3086getString2EP1pXo3;
+                                                            String str3 = m3086getString2EP1pXo4;
+                                                            String str4 = m3086getString2EP1pXo2;
                                                             final Function0<Unit> function04 = function03;
                                                             final CoroutineScope coroutineScope3 = coroutineScope2;
                                                             SemanticsPropertiesKt.dismiss(semanticsPropertyReceiver, str2, new Function0<Boolean>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$1$1$1
@@ -4065,15 +4065,15 @@ public final class ModalBottomSheetKt {
                                                 } else {
                                                     composer3.useNode();
                                                 }
-                                                Composer m3520constructorimpl2 = Updater.m3520constructorimpl(composer3);
-                                                Updater.m3527setimpl(m3520constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m3527setimpl(m3520constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
+                                                Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m3520constructorimpl2.getInserting() || !Intrinsics.areEqual(m3520constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                    m3520constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                    m3520constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                                if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                                    m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                                    m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                                 }
-                                                Updater.m3527setimpl(m3520constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                                Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                                 ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                 ComposerKt.sourceInformationMarkerStart(composer3, -760467413, "C337@16059L12:ModalBottomSheet.kt#uh7d8r");
@@ -4142,7 +4142,7 @@ public final class ModalBottomSheetKt {
                                     }
 
                                     public final void invoke(Composer composer3, int i25) {
-                                        ModalBottomSheetKt.m2047ModalBottomSheetContentIQkwcL4(BoxScope.this, animatable, coroutineScope, function0, function1, modifier3, sheetState3, f7, shape2, j7, j6, f6, function24, function25, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+                                        ModalBottomSheetKt.m2354ModalBottomSheetContentIQkwcL4(BoxScope.this, animatable, coroutineScope, function0, function1, modifier3, sheetState3, f7, shape2, j7, j6, f6, function24, function25, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
                                     }
                                 });
                                 return;
@@ -4170,17 +4170,17 @@ public final class ModalBottomSheetKt {
                         }
                         if (i13 == 0) {
                         }
-                        float f82 = m1596getSheetMaxWidthD9Ej5fM;
+                        float f82 = m1903getSheetMaxWidthD9Ej5fM;
                         if ((i3 & 4096) == 0) {
                         }
                         startRestartGroup.endDefaults();
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         Strings.Companion companion22 = Strings.Companion;
-                        final String m2779getString2EP1pXo2 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_pane_title), startRestartGroup, 0);
+                        final String m3086getString2EP1pXo2 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_pane_title), startRestartGroup, 0);
                         Modifier modifier42 = modifier2;
                         Shape shape42 = shape3;
-                        Modifier fillMaxWidth$default2 = SizeKt.fillMaxWidth$default(SizeKt.m792widthInVpY3zN4$default(boxScope.align(modifier2, Alignment.Companion.getTopCenter()), 0.0f, f4, 1, null), 0.0f, 1, null);
+                        Modifier fillMaxWidth$default2 = SizeKt.fillMaxWidth$default(SizeKt.m891widthInVpY3zN4$default(boxScope.align(modifier2, Alignment.Companion.getTopCenter()), 0.0f, f4, 1, null), 0.0f, 1, null);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1237857395, "CC(remember):ModalBottomSheet.kt#9igjgp");
                         i16 = (3670016 & i7) ^ 1572864;
                         if (i16 > 1048576) {
@@ -4238,13 +4238,13 @@ public final class ModalBottomSheetKt {
 
                             @Override // kotlin.jvm.functions.Function2
                             public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SheetValue>, ? extends SheetValue> invoke(IntSize intSize, Constraints constraints) {
-                                return m2050invokeGpV2Q24(intSize.m6859unboximpl(), constraints.m6643unboximpl());
+                                return m2357invokeGpV2Q24(intSize.m7426unboximpl(), constraints.m7210unboximpl());
                             }
 
                             /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-                            public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2050invokeGpV2Q24(final long j922, long j10) {
+                            public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2357invokeGpV2Q24(final long j922, long j10) {
                                 SheetValue sheetValue;
-                                final float m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j10);
+                                final float m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j10);
                                 final SheetState sheetState422 = SheetState.this;
                                 DraggableAnchors DraggableAnchors = AnchoredDraggableKt.DraggableAnchors(new Function1<DraggableAnchorsConfig<SheetValue>, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$3$1$newAnchors$1
                                     /* JADX INFO: Access modifiers changed from: package-private */
@@ -4261,12 +4261,12 @@ public final class ModalBottomSheetKt {
 
                                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                     public final void invoke2(DraggableAnchorsConfig<SheetValue> draggableAnchorsConfig) {
-                                        draggableAnchorsConfig.at(SheetValue.Hidden, m6636getMaxHeightimpl);
-                                        if (IntSize.m6854getHeightimpl(j922) > m6636getMaxHeightimpl / 2 && !sheetState422.getSkipPartiallyExpanded$material3_release()) {
-                                            draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m6636getMaxHeightimpl / 2.0f);
+                                        draggableAnchorsConfig.at(SheetValue.Hidden, m7203getMaxHeightimpl);
+                                        if (IntSize.m7421getHeightimpl(j922) > m7203getMaxHeightimpl / 2 && !sheetState422.getSkipPartiallyExpanded$material3_release()) {
+                                            draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m7203getMaxHeightimpl / 2.0f);
                                         }
-                                        if (IntSize.m6854getHeightimpl(j922) != 0) {
-                                            draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m6636getMaxHeightimpl - IntSize.m6854getHeightimpl(j922)));
+                                        if (IntSize.m7421getHeightimpl(j922) != 0) {
+                                            draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m7203getMaxHeightimpl - IntSize.m7421getHeightimpl(j922)));
                                         }
                                     }
                                 });
@@ -4303,7 +4303,7 @@ public final class ModalBottomSheetKt {
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         Modifier draggable$default22 = DraggableKt.draggable$default(draggableAnchors22, draggableState$material3_release22, orientation222, isVisible22, null, isAnimationRunning22, null, (Function3) rememberedValue3, false, 168, null);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1237931647, "CC(remember):ModalBottomSheet.kt#9igjgp");
-                        changed = startRestartGroup.changed(m2779getString2EP1pXo2);
+                        changed = startRestartGroup.changed(m3086getString2EP1pXo2);
                         rememberedValue4 = startRestartGroup.rememberedValue();
                         if (!changed) {
                         }
@@ -4322,7 +4322,7 @@ public final class ModalBottomSheetKt {
 
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m2779getString2EP1pXo2);
+                                SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m3086getString2EP1pXo2);
                                 SemanticsPropertiesKt.setTraversalIndex(semanticsPropertyReceiver, 0.0f);
                             }
                         };
@@ -4358,8 +4358,8 @@ public final class ModalBottomSheetKt {
                                 float calculatePredictiveBackScaleX;
                                 float calculatePredictiveBackScaleY;
                                 float offset = SheetState.this.getAnchoredDraggableState$material3_release().getOffset();
-                                float m3903getHeightimpl = Size.m3903getHeightimpl(graphicsLayerScope.mo4265getSizeNHjbRc());
-                                if (Float.isNaN(offset) || Float.isNaN(m3903getHeightimpl) || m3903getHeightimpl == 0.0f) {
+                                float m4359getHeightimpl = Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc());
+                                if (Float.isNaN(offset) || Float.isNaN(m4359getHeightimpl) || m4359getHeightimpl == 0.0f) {
                                     return;
                                 }
                                 float floatValue = animatable.getValue().floatValue();
@@ -4367,7 +4367,7 @@ public final class ModalBottomSheetKt {
                                 graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX);
                                 calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                                 graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY);
-                                graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m3903getHeightimpl) / m3903getHeightimpl));
+                                graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m4359getHeightimpl) / m4359getHeightimpl));
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -4375,13 +4375,13 @@ public final class ModalBottomSheetKt {
                         Modifier graphicsLayer22 = GraphicsLayerModifierKt.graphicsLayer(semantics$default22, (Function1) rememberedValue5);
                         final SheetState sheetState422 = sheetState2;
                         final Function0<Unit> function0222 = obj;
-                        final Function2<? super Composer, ? super Integer, Unit> function2622 = m1774getLambda2$material3_release;
+                        final Function2<? super Composer, ? super Integer, Unit> function2622 = m2081getLambda2$material3_release;
                         Function2<? super Composer, ? super Integer, ? extends WindowInsets> function2722 = function23;
                         int i2322 = i7 >> 21;
                         int i2422 = i15 << 9;
                         long j922 = j4;
                         composer2 = startRestartGroup;
-                        SurfaceKt.m2347SurfaceT9BRK9s(graphicsLayer22, shape42, j822, j922, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
+                        SurfaceKt.m2654SurfaceT9BRK9s(graphicsLayer22, shape42, j822, j922, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             /* JADX WARN: Multi-variable type inference failed */
@@ -4431,7 +4431,7 @@ public final class ModalBottomSheetKt {
                                                 calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                                                 graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY == 0.0f ? 1.0f : calculatePredictiveBackScaleX / calculatePredictiveBackScaleY);
                                                 j10 = ModalBottomSheetKt.PredictiveBackChildTransformOrigin;
-                                                graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(j10);
+                                                graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(j10);
                                             }
                                         };
                                         composer3.updateRememberedValue(rememberedValue6);
@@ -4460,15 +4460,15 @@ public final class ModalBottomSheetKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                                    Updater.m3527setimpl(m3520constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                                    Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                                     ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer3, 806123989, "C340@16116L9:ModalBottomSheet.kt#uh7d8r");
@@ -4476,14 +4476,14 @@ public final class ModalBottomSheetKt {
                                     ComposerKt.sourceInformation(composer3, "303@14272L54,304@14368L48,305@14457L47,309@14672L1346,306@14521L1568");
                                     if (function28 != null) {
                                         Strings.Companion companion3 = Strings.Companion;
-                                        final String m2779getString2EP1pXo22 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
+                                        final String m3086getString2EP1pXo22 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
                                         Strings.Companion companion4 = Strings.Companion;
-                                        final String m2779getString2EP1pXo3 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
+                                        final String m3086getString2EP1pXo3 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
                                         Strings.Companion companion5 = Strings.Companion;
-                                        final String m2779getString2EP1pXo4 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
+                                        final String m3086getString2EP1pXo4 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
                                         Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getCenterHorizontally());
                                         ComposerKt.sourceInformationMarkerStart(composer3, -1636549585, "CC(remember):ModalBottomSheet.kt#9igjgp");
-                                        boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m2779getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m2779getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m2779getString2EP1pXo22);
+                                        boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m3086getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m3086getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m3086getString2EP1pXo22);
                                         Object rememberedValue7 = composer3.rememberedValue();
                                         if (changed2 || rememberedValue7 == Composer.Companion.getEmpty()) {
                                             str = "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh";
@@ -4503,9 +4503,9 @@ public final class ModalBottomSheetKt {
                                                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                                     final SheetState sheetState6 = SheetState.this;
-                                                    String str2 = m2779getString2EP1pXo3;
-                                                    String str3 = m2779getString2EP1pXo4;
-                                                    String str4 = m2779getString2EP1pXo22;
+                                                    String str2 = m3086getString2EP1pXo3;
+                                                    String str3 = m3086getString2EP1pXo4;
+                                                    String str4 = m3086getString2EP1pXo22;
                                                     final Function0<Unit> function04 = function03;
                                                     final CoroutineScope coroutineScope3 = coroutineScope2;
                                                     SemanticsPropertiesKt.dismiss(semanticsPropertyReceiver, str2, new Function0<Boolean>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$1$1$1
@@ -4672,15 +4672,15 @@ public final class ModalBottomSheetKt {
                                         } else {
                                             composer3.useNode();
                                         }
-                                        Composer m3520constructorimpl2 = Updater.m3520constructorimpl(composer3);
-                                        Updater.m3527setimpl(m3520constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3527setimpl(m3520constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
+                                        Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3520constructorimpl2.getInserting() || !Intrinsics.areEqual(m3520constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                            m3520constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                            m3520constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                        if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                            m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                            m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                         }
-                                        Updater.m3527setimpl(m3520constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                         ComposerKt.sourceInformationMarkerStart(composer3, -760467413, "C337@16059L12:ModalBottomSheet.kt#uh7d8r");
@@ -4751,17 +4751,17 @@ public final class ModalBottomSheetKt {
                     }
                     if (i13 == 0) {
                     }
-                    float f822 = m1596getSheetMaxWidthD9Ej5fM;
+                    float f822 = m1903getSheetMaxWidthD9Ej5fM;
                     if ((i3 & 4096) == 0) {
                     }
                     startRestartGroup.endDefaults();
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     Strings.Companion companion222 = Strings.Companion;
-                    final String m2779getString2EP1pXo22 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_pane_title), startRestartGroup, 0);
+                    final String m3086getString2EP1pXo22 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_pane_title), startRestartGroup, 0);
                     Modifier modifier422 = modifier2;
                     Shape shape422 = shape3;
-                    Modifier fillMaxWidth$default22 = SizeKt.fillMaxWidth$default(SizeKt.m792widthInVpY3zN4$default(boxScope.align(modifier2, Alignment.Companion.getTopCenter()), 0.0f, f4, 1, null), 0.0f, 1, null);
+                    Modifier fillMaxWidth$default22 = SizeKt.fillMaxWidth$default(SizeKt.m891widthInVpY3zN4$default(boxScope.align(modifier2, Alignment.Companion.getTopCenter()), 0.0f, f4, 1, null), 0.0f, 1, null);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1237857395, "CC(remember):ModalBottomSheet.kt#9igjgp");
                     i16 = (3670016 & i7) ^ 1572864;
                     if (i16 > 1048576) {
@@ -4819,13 +4819,13 @@ public final class ModalBottomSheetKt {
 
                         @Override // kotlin.jvm.functions.Function2
                         public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SheetValue>, ? extends SheetValue> invoke(IntSize intSize, Constraints constraints) {
-                            return m2050invokeGpV2Q24(intSize.m6859unboximpl(), constraints.m6643unboximpl());
+                            return m2357invokeGpV2Q24(intSize.m7426unboximpl(), constraints.m7210unboximpl());
                         }
 
                         /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-                        public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2050invokeGpV2Q24(final long j9222, long j10) {
+                        public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2357invokeGpV2Q24(final long j9222, long j10) {
                             SheetValue sheetValue;
-                            final float m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j10);
+                            final float m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j10);
                             final SheetState sheetState4222 = SheetState.this;
                             DraggableAnchors DraggableAnchors = AnchoredDraggableKt.DraggableAnchors(new Function1<DraggableAnchorsConfig<SheetValue>, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$3$1$newAnchors$1
                                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -4842,12 +4842,12 @@ public final class ModalBottomSheetKt {
 
                                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                 public final void invoke2(DraggableAnchorsConfig<SheetValue> draggableAnchorsConfig) {
-                                    draggableAnchorsConfig.at(SheetValue.Hidden, m6636getMaxHeightimpl);
-                                    if (IntSize.m6854getHeightimpl(j9222) > m6636getMaxHeightimpl / 2 && !sheetState4222.getSkipPartiallyExpanded$material3_release()) {
-                                        draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m6636getMaxHeightimpl / 2.0f);
+                                    draggableAnchorsConfig.at(SheetValue.Hidden, m7203getMaxHeightimpl);
+                                    if (IntSize.m7421getHeightimpl(j9222) > m7203getMaxHeightimpl / 2 && !sheetState4222.getSkipPartiallyExpanded$material3_release()) {
+                                        draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m7203getMaxHeightimpl / 2.0f);
                                     }
-                                    if (IntSize.m6854getHeightimpl(j9222) != 0) {
-                                        draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m6636getMaxHeightimpl - IntSize.m6854getHeightimpl(j9222)));
+                                    if (IntSize.m7421getHeightimpl(j9222) != 0) {
+                                        draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m7203getMaxHeightimpl - IntSize.m7421getHeightimpl(j9222)));
                                     }
                                 }
                             });
@@ -4884,7 +4884,7 @@ public final class ModalBottomSheetKt {
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     Modifier draggable$default222 = DraggableKt.draggable$default(draggableAnchors222, draggableState$material3_release222, orientation2222, isVisible222, null, isAnimationRunning222, null, (Function3) rememberedValue3, false, 168, null);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1237931647, "CC(remember):ModalBottomSheet.kt#9igjgp");
-                    changed = startRestartGroup.changed(m2779getString2EP1pXo22);
+                    changed = startRestartGroup.changed(m3086getString2EP1pXo22);
                     rememberedValue4 = startRestartGroup.rememberedValue();
                     if (!changed) {
                     }
@@ -4903,7 +4903,7 @@ public final class ModalBottomSheetKt {
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                            SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m2779getString2EP1pXo22);
+                            SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m3086getString2EP1pXo22);
                             SemanticsPropertiesKt.setTraversalIndex(semanticsPropertyReceiver, 0.0f);
                         }
                     };
@@ -4939,8 +4939,8 @@ public final class ModalBottomSheetKt {
                             float calculatePredictiveBackScaleX;
                             float calculatePredictiveBackScaleY;
                             float offset = SheetState.this.getAnchoredDraggableState$material3_release().getOffset();
-                            float m3903getHeightimpl = Size.m3903getHeightimpl(graphicsLayerScope.mo4265getSizeNHjbRc());
-                            if (Float.isNaN(offset) || Float.isNaN(m3903getHeightimpl) || m3903getHeightimpl == 0.0f) {
+                            float m4359getHeightimpl = Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc());
+                            if (Float.isNaN(offset) || Float.isNaN(m4359getHeightimpl) || m4359getHeightimpl == 0.0f) {
                                 return;
                             }
                             float floatValue = animatable.getValue().floatValue();
@@ -4948,7 +4948,7 @@ public final class ModalBottomSheetKt {
                             graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX);
                             calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                             graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY);
-                            graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m3903getHeightimpl) / m3903getHeightimpl));
+                            graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m4359getHeightimpl) / m4359getHeightimpl));
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -4956,13 +4956,13 @@ public final class ModalBottomSheetKt {
                     Modifier graphicsLayer222 = GraphicsLayerModifierKt.graphicsLayer(semantics$default222, (Function1) rememberedValue5);
                     final SheetState sheetState4222 = sheetState2;
                     final Function0<Unit> function02222 = obj;
-                    final Function2<? super Composer, ? super Integer, Unit> function26222 = m1774getLambda2$material3_release;
+                    final Function2<? super Composer, ? super Integer, Unit> function26222 = m2081getLambda2$material3_release;
                     Function2<? super Composer, ? super Integer, ? extends WindowInsets> function27222 = function23;
                     int i23222 = i7 >> 21;
                     int i24222 = i15 << 9;
                     long j9222 = j4;
                     composer2 = startRestartGroup;
-                    SurfaceKt.m2347SurfaceT9BRK9s(graphicsLayer222, shape422, j8222, j9222, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
+                    SurfaceKt.m2654SurfaceT9BRK9s(graphicsLayer222, shape422, j8222, j9222, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         /* JADX WARN: Multi-variable type inference failed */
@@ -5012,7 +5012,7 @@ public final class ModalBottomSheetKt {
                                             calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                                             graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY == 0.0f ? 1.0f : calculatePredictiveBackScaleX / calculatePredictiveBackScaleY);
                                             j10 = ModalBottomSheetKt.PredictiveBackChildTransformOrigin;
-                                            graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(j10);
+                                            graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(j10);
                                         }
                                     };
                                     composer3.updateRememberedValue(rememberedValue6);
@@ -5041,15 +5041,15 @@ public final class ModalBottomSheetKt {
                                 } else {
                                     composer3.useNode();
                                 }
-                                Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                                Updater.m3527setimpl(m3520constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                                Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                                 ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer3, 806123989, "C340@16116L9:ModalBottomSheet.kt#uh7d8r");
@@ -5057,14 +5057,14 @@ public final class ModalBottomSheetKt {
                                 ComposerKt.sourceInformation(composer3, "303@14272L54,304@14368L48,305@14457L47,309@14672L1346,306@14521L1568");
                                 if (function28 != null) {
                                     Strings.Companion companion3 = Strings.Companion;
-                                    final String m2779getString2EP1pXo222 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
+                                    final String m3086getString2EP1pXo222 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
                                     Strings.Companion companion4 = Strings.Companion;
-                                    final String m2779getString2EP1pXo3 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
+                                    final String m3086getString2EP1pXo3 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
                                     Strings.Companion companion5 = Strings.Companion;
-                                    final String m2779getString2EP1pXo4 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
+                                    final String m3086getString2EP1pXo4 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
                                     Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getCenterHorizontally());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -1636549585, "CC(remember):ModalBottomSheet.kt#9igjgp");
-                                    boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m2779getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m2779getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m2779getString2EP1pXo222);
+                                    boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m3086getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m3086getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m3086getString2EP1pXo222);
                                     Object rememberedValue7 = composer3.rememberedValue();
                                     if (changed2 || rememberedValue7 == Composer.Companion.getEmpty()) {
                                         str = "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh";
@@ -5084,9 +5084,9 @@ public final class ModalBottomSheetKt {
                                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                                 final SheetState sheetState6 = SheetState.this;
-                                                String str2 = m2779getString2EP1pXo3;
-                                                String str3 = m2779getString2EP1pXo4;
-                                                String str4 = m2779getString2EP1pXo222;
+                                                String str2 = m3086getString2EP1pXo3;
+                                                String str3 = m3086getString2EP1pXo4;
+                                                String str4 = m3086getString2EP1pXo222;
                                                 final Function0<Unit> function04 = function03;
                                                 final CoroutineScope coroutineScope3 = coroutineScope2;
                                                 SemanticsPropertiesKt.dismiss(semanticsPropertyReceiver, str2, new Function0<Boolean>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$1$1$1
@@ -5253,15 +5253,15 @@ public final class ModalBottomSheetKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m3520constructorimpl2 = Updater.m3520constructorimpl(composer3);
-                                    Updater.m3527setimpl(m3520constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3527setimpl(m3520constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
+                                    Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3520constructorimpl2.getInserting() || !Intrinsics.areEqual(m3520constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                        m3520constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                        m3520constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                    if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                        m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                        m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                     }
-                                    Updater.m3527setimpl(m3520constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer3, -760467413, "C337@16059L12:ModalBottomSheet.kt#uh7d8r");
@@ -5336,17 +5336,17 @@ public final class ModalBottomSheetKt {
                 }
                 if (i13 == 0) {
                 }
-                float f8222 = m1596getSheetMaxWidthD9Ej5fM;
+                float f8222 = m1903getSheetMaxWidthD9Ej5fM;
                 if ((i3 & 4096) == 0) {
                 }
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 Strings.Companion companion2222 = Strings.Companion;
-                final String m2779getString2EP1pXo222 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_pane_title), startRestartGroup, 0);
+                final String m3086getString2EP1pXo222 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_pane_title), startRestartGroup, 0);
                 Modifier modifier4222 = modifier2;
                 Shape shape4222 = shape3;
-                Modifier fillMaxWidth$default222 = SizeKt.fillMaxWidth$default(SizeKt.m792widthInVpY3zN4$default(boxScope.align(modifier2, Alignment.Companion.getTopCenter()), 0.0f, f4, 1, null), 0.0f, 1, null);
+                Modifier fillMaxWidth$default222 = SizeKt.fillMaxWidth$default(SizeKt.m891widthInVpY3zN4$default(boxScope.align(modifier2, Alignment.Companion.getTopCenter()), 0.0f, f4, 1, null), 0.0f, 1, null);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1237857395, "CC(remember):ModalBottomSheet.kt#9igjgp");
                 i16 = (3670016 & i7) ^ 1572864;
                 if (i16 > 1048576) {
@@ -5404,13 +5404,13 @@ public final class ModalBottomSheetKt {
 
                     @Override // kotlin.jvm.functions.Function2
                     public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SheetValue>, ? extends SheetValue> invoke(IntSize intSize, Constraints constraints) {
-                        return m2050invokeGpV2Q24(intSize.m6859unboximpl(), constraints.m6643unboximpl());
+                        return m2357invokeGpV2Q24(intSize.m7426unboximpl(), constraints.m7210unboximpl());
                     }
 
                     /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-                    public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2050invokeGpV2Q24(final long j92222, long j10) {
+                    public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2357invokeGpV2Q24(final long j92222, long j10) {
                         SheetValue sheetValue;
-                        final float m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j10);
+                        final float m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j10);
                         final SheetState sheetState42222 = SheetState.this;
                         DraggableAnchors DraggableAnchors = AnchoredDraggableKt.DraggableAnchors(new Function1<DraggableAnchorsConfig<SheetValue>, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$3$1$newAnchors$1
                             /* JADX INFO: Access modifiers changed from: package-private */
@@ -5427,12 +5427,12 @@ public final class ModalBottomSheetKt {
 
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(DraggableAnchorsConfig<SheetValue> draggableAnchorsConfig) {
-                                draggableAnchorsConfig.at(SheetValue.Hidden, m6636getMaxHeightimpl);
-                                if (IntSize.m6854getHeightimpl(j92222) > m6636getMaxHeightimpl / 2 && !sheetState42222.getSkipPartiallyExpanded$material3_release()) {
-                                    draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m6636getMaxHeightimpl / 2.0f);
+                                draggableAnchorsConfig.at(SheetValue.Hidden, m7203getMaxHeightimpl);
+                                if (IntSize.m7421getHeightimpl(j92222) > m7203getMaxHeightimpl / 2 && !sheetState42222.getSkipPartiallyExpanded$material3_release()) {
+                                    draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m7203getMaxHeightimpl / 2.0f);
                                 }
-                                if (IntSize.m6854getHeightimpl(j92222) != 0) {
-                                    draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m6636getMaxHeightimpl - IntSize.m6854getHeightimpl(j92222)));
+                                if (IntSize.m7421getHeightimpl(j92222) != 0) {
+                                    draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m7203getMaxHeightimpl - IntSize.m7421getHeightimpl(j92222)));
                                 }
                             }
                         });
@@ -5469,7 +5469,7 @@ public final class ModalBottomSheetKt {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 Modifier draggable$default2222 = DraggableKt.draggable$default(draggableAnchors2222, draggableState$material3_release2222, orientation22222, isVisible2222, null, isAnimationRunning2222, null, (Function3) rememberedValue3, false, 168, null);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1237931647, "CC(remember):ModalBottomSheet.kt#9igjgp");
-                changed = startRestartGroup.changed(m2779getString2EP1pXo222);
+                changed = startRestartGroup.changed(m3086getString2EP1pXo222);
                 rememberedValue4 = startRestartGroup.rememberedValue();
                 if (!changed) {
                 }
@@ -5488,7 +5488,7 @@ public final class ModalBottomSheetKt {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m2779getString2EP1pXo222);
+                        SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m3086getString2EP1pXo222);
                         SemanticsPropertiesKt.setTraversalIndex(semanticsPropertyReceiver, 0.0f);
                     }
                 };
@@ -5524,8 +5524,8 @@ public final class ModalBottomSheetKt {
                         float calculatePredictiveBackScaleX;
                         float calculatePredictiveBackScaleY;
                         float offset = SheetState.this.getAnchoredDraggableState$material3_release().getOffset();
-                        float m3903getHeightimpl = Size.m3903getHeightimpl(graphicsLayerScope.mo4265getSizeNHjbRc());
-                        if (Float.isNaN(offset) || Float.isNaN(m3903getHeightimpl) || m3903getHeightimpl == 0.0f) {
+                        float m4359getHeightimpl = Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc());
+                        if (Float.isNaN(offset) || Float.isNaN(m4359getHeightimpl) || m4359getHeightimpl == 0.0f) {
                             return;
                         }
                         float floatValue = animatable.getValue().floatValue();
@@ -5533,7 +5533,7 @@ public final class ModalBottomSheetKt {
                         graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX);
                         calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                         graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY);
-                        graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m3903getHeightimpl) / m3903getHeightimpl));
+                        graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m4359getHeightimpl) / m4359getHeightimpl));
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -5541,13 +5541,13 @@ public final class ModalBottomSheetKt {
                 Modifier graphicsLayer2222 = GraphicsLayerModifierKt.graphicsLayer(semantics$default2222, (Function1) rememberedValue5);
                 final SheetState sheetState42222 = sheetState2;
                 final Function0<Unit> function022222 = obj;
-                final Function2<? super Composer, ? super Integer, Unit> function262222 = m1774getLambda2$material3_release;
+                final Function2<? super Composer, ? super Integer, Unit> function262222 = m2081getLambda2$material3_release;
                 Function2<? super Composer, ? super Integer, ? extends WindowInsets> function272222 = function23;
                 int i232222 = i7 >> 21;
                 int i242222 = i15 << 9;
                 long j92222 = j4;
                 composer2 = startRestartGroup;
-                SurfaceKt.m2347SurfaceT9BRK9s(graphicsLayer2222, shape4222, j82222, j92222, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
+                SurfaceKt.m2654SurfaceT9BRK9s(graphicsLayer2222, shape4222, j82222, j92222, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -5597,7 +5597,7 @@ public final class ModalBottomSheetKt {
                                         calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                                         graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY == 0.0f ? 1.0f : calculatePredictiveBackScaleX / calculatePredictiveBackScaleY);
                                         j10 = ModalBottomSheetKt.PredictiveBackChildTransformOrigin;
-                                        graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(j10);
+                                        graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(j10);
                                     }
                                 };
                                 composer3.updateRememberedValue(rememberedValue6);
@@ -5626,15 +5626,15 @@ public final class ModalBottomSheetKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                            Updater.m3527setimpl(m3520constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                            Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer3, 806123989, "C340@16116L9:ModalBottomSheet.kt#uh7d8r");
@@ -5642,14 +5642,14 @@ public final class ModalBottomSheetKt {
                             ComposerKt.sourceInformation(composer3, "303@14272L54,304@14368L48,305@14457L47,309@14672L1346,306@14521L1568");
                             if (function28 != null) {
                                 Strings.Companion companion3 = Strings.Companion;
-                                final String m2779getString2EP1pXo2222 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
+                                final String m3086getString2EP1pXo2222 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
                                 Strings.Companion companion4 = Strings.Companion;
-                                final String m2779getString2EP1pXo3 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
+                                final String m3086getString2EP1pXo3 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
                                 Strings.Companion companion5 = Strings.Companion;
-                                final String m2779getString2EP1pXo4 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
+                                final String m3086getString2EP1pXo4 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
                                 Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getCenterHorizontally());
                                 ComposerKt.sourceInformationMarkerStart(composer3, -1636549585, "CC(remember):ModalBottomSheet.kt#9igjgp");
-                                boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m2779getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m2779getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m2779getString2EP1pXo2222);
+                                boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m3086getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m3086getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m3086getString2EP1pXo2222);
                                 Object rememberedValue7 = composer3.rememberedValue();
                                 if (changed2 || rememberedValue7 == Composer.Companion.getEmpty()) {
                                     str = "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh";
@@ -5669,9 +5669,9 @@ public final class ModalBottomSheetKt {
                                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                         public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                             final SheetState sheetState6 = SheetState.this;
-                                            String str2 = m2779getString2EP1pXo3;
-                                            String str3 = m2779getString2EP1pXo4;
-                                            String str4 = m2779getString2EP1pXo2222;
+                                            String str2 = m3086getString2EP1pXo3;
+                                            String str3 = m3086getString2EP1pXo4;
+                                            String str4 = m3086getString2EP1pXo2222;
                                             final Function0<Unit> function04 = function03;
                                             final CoroutineScope coroutineScope3 = coroutineScope2;
                                             SemanticsPropertiesKt.dismiss(semanticsPropertyReceiver, str2, new Function0<Boolean>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$1$1$1
@@ -5838,15 +5838,15 @@ public final class ModalBottomSheetKt {
                                 } else {
                                     composer3.useNode();
                                 }
-                                Composer m3520constructorimpl2 = Updater.m3520constructorimpl(composer3);
-                                Updater.m3527setimpl(m3520constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3527setimpl(m3520constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
+                                Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3520constructorimpl2.getInserting() || !Intrinsics.areEqual(m3520constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                    m3520constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                    m3520constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                    m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                    m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                 }
-                                Updater.m3527setimpl(m3520constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer3, -760467413, "C337@16059L12:ModalBottomSheet.kt#uh7d8r");
@@ -5942,17 +5942,17 @@ public final class ModalBottomSheetKt {
             }
             if (i13 == 0) {
             }
-            float f82222 = m1596getSheetMaxWidthD9Ej5fM;
+            float f82222 = m1903getSheetMaxWidthD9Ej5fM;
             if ((i3 & 4096) == 0) {
             }
             startRestartGroup.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
             Strings.Companion companion22222 = Strings.Companion;
-            final String m2779getString2EP1pXo2222 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_pane_title), startRestartGroup, 0);
+            final String m3086getString2EP1pXo2222 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_pane_title), startRestartGroup, 0);
             Modifier modifier42222 = modifier2;
             Shape shape42222 = shape3;
-            Modifier fillMaxWidth$default2222 = SizeKt.fillMaxWidth$default(SizeKt.m792widthInVpY3zN4$default(boxScope.align(modifier2, Alignment.Companion.getTopCenter()), 0.0f, f4, 1, null), 0.0f, 1, null);
+            Modifier fillMaxWidth$default2222 = SizeKt.fillMaxWidth$default(SizeKt.m891widthInVpY3zN4$default(boxScope.align(modifier2, Alignment.Companion.getTopCenter()), 0.0f, f4, 1, null), 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1237857395, "CC(remember):ModalBottomSheet.kt#9igjgp");
             i16 = (3670016 & i7) ^ 1572864;
             if (i16 > 1048576) {
@@ -6010,13 +6010,13 @@ public final class ModalBottomSheetKt {
 
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SheetValue>, ? extends SheetValue> invoke(IntSize intSize, Constraints constraints) {
-                    return m2050invokeGpV2Q24(intSize.m6859unboximpl(), constraints.m6643unboximpl());
+                    return m2357invokeGpV2Q24(intSize.m7426unboximpl(), constraints.m7210unboximpl());
                 }
 
                 /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-                public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2050invokeGpV2Q24(final long j922222, long j10) {
+                public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2357invokeGpV2Q24(final long j922222, long j10) {
                     SheetValue sheetValue;
-                    final float m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j10);
+                    final float m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j10);
                     final SheetState sheetState422222 = SheetState.this;
                     DraggableAnchors DraggableAnchors = AnchoredDraggableKt.DraggableAnchors(new Function1<DraggableAnchorsConfig<SheetValue>, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$3$1$newAnchors$1
                         /* JADX INFO: Access modifiers changed from: package-private */
@@ -6033,12 +6033,12 @@ public final class ModalBottomSheetKt {
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(DraggableAnchorsConfig<SheetValue> draggableAnchorsConfig) {
-                            draggableAnchorsConfig.at(SheetValue.Hidden, m6636getMaxHeightimpl);
-                            if (IntSize.m6854getHeightimpl(j922222) > m6636getMaxHeightimpl / 2 && !sheetState422222.getSkipPartiallyExpanded$material3_release()) {
-                                draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m6636getMaxHeightimpl / 2.0f);
+                            draggableAnchorsConfig.at(SheetValue.Hidden, m7203getMaxHeightimpl);
+                            if (IntSize.m7421getHeightimpl(j922222) > m7203getMaxHeightimpl / 2 && !sheetState422222.getSkipPartiallyExpanded$material3_release()) {
+                                draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m7203getMaxHeightimpl / 2.0f);
                             }
-                            if (IntSize.m6854getHeightimpl(j922222) != 0) {
-                                draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m6636getMaxHeightimpl - IntSize.m6854getHeightimpl(j922222)));
+                            if (IntSize.m7421getHeightimpl(j922222) != 0) {
+                                draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m7203getMaxHeightimpl - IntSize.m7421getHeightimpl(j922222)));
                             }
                         }
                     });
@@ -6075,7 +6075,7 @@ public final class ModalBottomSheetKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Modifier draggable$default22222 = DraggableKt.draggable$default(draggableAnchors22222, draggableState$material3_release22222, orientation222222, isVisible22222, null, isAnimationRunning22222, null, (Function3) rememberedValue3, false, 168, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1237931647, "CC(remember):ModalBottomSheet.kt#9igjgp");
-            changed = startRestartGroup.changed(m2779getString2EP1pXo2222);
+            changed = startRestartGroup.changed(m3086getString2EP1pXo2222);
             rememberedValue4 = startRestartGroup.rememberedValue();
             if (!changed) {
             }
@@ -6094,7 +6094,7 @@ public final class ModalBottomSheetKt {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m2779getString2EP1pXo2222);
+                    SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m3086getString2EP1pXo2222);
                     SemanticsPropertiesKt.setTraversalIndex(semanticsPropertyReceiver, 0.0f);
                 }
             };
@@ -6130,8 +6130,8 @@ public final class ModalBottomSheetKt {
                     float calculatePredictiveBackScaleX;
                     float calculatePredictiveBackScaleY;
                     float offset = SheetState.this.getAnchoredDraggableState$material3_release().getOffset();
-                    float m3903getHeightimpl = Size.m3903getHeightimpl(graphicsLayerScope.mo4265getSizeNHjbRc());
-                    if (Float.isNaN(offset) || Float.isNaN(m3903getHeightimpl) || m3903getHeightimpl == 0.0f) {
+                    float m4359getHeightimpl = Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc());
+                    if (Float.isNaN(offset) || Float.isNaN(m4359getHeightimpl) || m4359getHeightimpl == 0.0f) {
                         return;
                     }
                     float floatValue = animatable.getValue().floatValue();
@@ -6139,7 +6139,7 @@ public final class ModalBottomSheetKt {
                     graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX);
                     calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                     graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY);
-                    graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m3903getHeightimpl) / m3903getHeightimpl));
+                    graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m4359getHeightimpl) / m4359getHeightimpl));
                 }
             };
             startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -6147,13 +6147,13 @@ public final class ModalBottomSheetKt {
             Modifier graphicsLayer22222 = GraphicsLayerModifierKt.graphicsLayer(semantics$default22222, (Function1) rememberedValue5);
             final SheetState sheetState422222 = sheetState2;
             final Function0<Unit> function0222222 = obj;
-            final Function2<? super Composer, ? super Integer, Unit> function2622222 = m1774getLambda2$material3_release;
+            final Function2<? super Composer, ? super Integer, Unit> function2622222 = m2081getLambda2$material3_release;
             Function2<? super Composer, ? super Integer, ? extends WindowInsets> function2722222 = function23;
             int i2322222 = i7 >> 21;
             int i2422222 = i15 << 9;
             long j922222 = j4;
             composer2 = startRestartGroup;
-            SurfaceKt.m2347SurfaceT9BRK9s(graphicsLayer22222, shape42222, j822222, j922222, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
+            SurfaceKt.m2654SurfaceT9BRK9s(graphicsLayer22222, shape42222, j822222, j922222, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -6203,7 +6203,7 @@ public final class ModalBottomSheetKt {
                                     calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                                     graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY == 0.0f ? 1.0f : calculatePredictiveBackScaleX / calculatePredictiveBackScaleY);
                                     j10 = ModalBottomSheetKt.PredictiveBackChildTransformOrigin;
-                                    graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(j10);
+                                    graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(j10);
                                 }
                             };
                             composer3.updateRememberedValue(rememberedValue6);
@@ -6232,15 +6232,15 @@ public final class ModalBottomSheetKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                        Updater.m3527setimpl(m3520constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                        Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                         ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer3, 806123989, "C340@16116L9:ModalBottomSheet.kt#uh7d8r");
@@ -6248,14 +6248,14 @@ public final class ModalBottomSheetKt {
                         ComposerKt.sourceInformation(composer3, "303@14272L54,304@14368L48,305@14457L47,309@14672L1346,306@14521L1568");
                         if (function28 != null) {
                             Strings.Companion companion3 = Strings.Companion;
-                            final String m2779getString2EP1pXo22222 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
+                            final String m3086getString2EP1pXo22222 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
                             Strings.Companion companion4 = Strings.Companion;
-                            final String m2779getString2EP1pXo3 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
+                            final String m3086getString2EP1pXo3 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
                             Strings.Companion companion5 = Strings.Companion;
-                            final String m2779getString2EP1pXo4 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
+                            final String m3086getString2EP1pXo4 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
                             Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getCenterHorizontally());
                             ComposerKt.sourceInformationMarkerStart(composer3, -1636549585, "CC(remember):ModalBottomSheet.kt#9igjgp");
-                            boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m2779getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m2779getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m2779getString2EP1pXo22222);
+                            boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m3086getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m3086getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m3086getString2EP1pXo22222);
                             Object rememberedValue7 = composer3.rememberedValue();
                             if (changed2 || rememberedValue7 == Composer.Companion.getEmpty()) {
                                 str = "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh";
@@ -6275,9 +6275,9 @@ public final class ModalBottomSheetKt {
                                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                         final SheetState sheetState6 = SheetState.this;
-                                        String str2 = m2779getString2EP1pXo3;
-                                        String str3 = m2779getString2EP1pXo4;
-                                        String str4 = m2779getString2EP1pXo22222;
+                                        String str2 = m3086getString2EP1pXo3;
+                                        String str3 = m3086getString2EP1pXo4;
+                                        String str4 = m3086getString2EP1pXo22222;
                                         final Function0<Unit> function04 = function03;
                                         final CoroutineScope coroutineScope3 = coroutineScope2;
                                         SemanticsPropertiesKt.dismiss(semanticsPropertyReceiver, str2, new Function0<Boolean>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$1$1$1
@@ -6444,15 +6444,15 @@ public final class ModalBottomSheetKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3520constructorimpl2 = Updater.m3520constructorimpl(composer3);
-                            Updater.m3527setimpl(m3520constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3527setimpl(m3520constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
+                            Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3520constructorimpl2.getInserting() || !Intrinsics.areEqual(m3520constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                m3520constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                m3520constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                             }
-                            Updater.m3527setimpl(m3520constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer3, -760467413, "C337@16059L12:ModalBottomSheet.kt#uh7d8r");
@@ -6551,17 +6551,17 @@ public final class ModalBottomSheetKt {
         }
         if (i13 == 0) {
         }
-        float f822222 = m1596getSheetMaxWidthD9Ej5fM;
+        float f822222 = m1903getSheetMaxWidthD9Ej5fM;
         if ((i3 & 4096) == 0) {
         }
         startRestartGroup.endDefaults();
         if (ComposerKt.isTraceInProgress()) {
         }
         Strings.Companion companion222222 = Strings.Companion;
-        final String m2779getString2EP1pXo22222 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_pane_title), startRestartGroup, 0);
+        final String m3086getString2EP1pXo22222 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_pane_title), startRestartGroup, 0);
         Modifier modifier422222 = modifier2;
         Shape shape422222 = shape3;
-        Modifier fillMaxWidth$default22222 = SizeKt.fillMaxWidth$default(SizeKt.m792widthInVpY3zN4$default(boxScope.align(modifier2, Alignment.Companion.getTopCenter()), 0.0f, f4, 1, null), 0.0f, 1, null);
+        Modifier fillMaxWidth$default22222 = SizeKt.fillMaxWidth$default(SizeKt.m891widthInVpY3zN4$default(boxScope.align(modifier2, Alignment.Companion.getTopCenter()), 0.0f, f4, 1, null), 0.0f, 1, null);
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1237857395, "CC(remember):ModalBottomSheet.kt#9igjgp");
         i16 = (3670016 & i7) ^ 1572864;
         if (i16 > 1048576) {
@@ -6619,13 +6619,13 @@ public final class ModalBottomSheetKt {
 
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SheetValue>, ? extends SheetValue> invoke(IntSize intSize, Constraints constraints) {
-                return m2050invokeGpV2Q24(intSize.m6859unboximpl(), constraints.m6643unboximpl());
+                return m2357invokeGpV2Q24(intSize.m7426unboximpl(), constraints.m7210unboximpl());
             }
 
             /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-            public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2050invokeGpV2Q24(final long j9222222, long j10) {
+            public final Pair<DraggableAnchors<SheetValue>, SheetValue> m2357invokeGpV2Q24(final long j9222222, long j10) {
                 SheetValue sheetValue;
-                final float m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j10);
+                final float m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j10);
                 final SheetState sheetState4222222 = SheetState.this;
                 DraggableAnchors DraggableAnchors = AnchoredDraggableKt.DraggableAnchors(new Function1<DraggableAnchorsConfig<SheetValue>, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$3$1$newAnchors$1
                     /* JADX INFO: Access modifiers changed from: package-private */
@@ -6642,12 +6642,12 @@ public final class ModalBottomSheetKt {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(DraggableAnchorsConfig<SheetValue> draggableAnchorsConfig) {
-                        draggableAnchorsConfig.at(SheetValue.Hidden, m6636getMaxHeightimpl);
-                        if (IntSize.m6854getHeightimpl(j9222222) > m6636getMaxHeightimpl / 2 && !sheetState4222222.getSkipPartiallyExpanded$material3_release()) {
-                            draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m6636getMaxHeightimpl / 2.0f);
+                        draggableAnchorsConfig.at(SheetValue.Hidden, m7203getMaxHeightimpl);
+                        if (IntSize.m7421getHeightimpl(j9222222) > m7203getMaxHeightimpl / 2 && !sheetState4222222.getSkipPartiallyExpanded$material3_release()) {
+                            draggableAnchorsConfig.at(SheetValue.PartiallyExpanded, m7203getMaxHeightimpl / 2.0f);
                         }
-                        if (IntSize.m6854getHeightimpl(j9222222) != 0) {
-                            draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m6636getMaxHeightimpl - IntSize.m6854getHeightimpl(j9222222)));
+                        if (IntSize.m7421getHeightimpl(j9222222) != 0) {
+                            draggableAnchorsConfig.at(SheetValue.Expanded, Math.max(0.0f, m7203getMaxHeightimpl - IntSize.m7421getHeightimpl(j9222222)));
                         }
                     }
                 });
@@ -6684,7 +6684,7 @@ public final class ModalBottomSheetKt {
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
         Modifier draggable$default222222 = DraggableKt.draggable$default(draggableAnchors222222, draggableState$material3_release222222, orientation2222222, isVisible222222, null, isAnimationRunning222222, null, (Function3) rememberedValue3, false, 168, null);
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1237931647, "CC(remember):ModalBottomSheet.kt#9igjgp");
-        changed = startRestartGroup.changed(m2779getString2EP1pXo22222);
+        changed = startRestartGroup.changed(m3086getString2EP1pXo22222);
         rememberedValue4 = startRestartGroup.rememberedValue();
         if (!changed) {
         }
@@ -6703,7 +6703,7 @@ public final class ModalBottomSheetKt {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m2779getString2EP1pXo22222);
+                SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, m3086getString2EP1pXo22222);
                 SemanticsPropertiesKt.setTraversalIndex(semanticsPropertyReceiver, 0.0f);
             }
         };
@@ -6739,8 +6739,8 @@ public final class ModalBottomSheetKt {
                 float calculatePredictiveBackScaleX;
                 float calculatePredictiveBackScaleY;
                 float offset = SheetState.this.getAnchoredDraggableState$material3_release().getOffset();
-                float m3903getHeightimpl = Size.m3903getHeightimpl(graphicsLayerScope.mo4265getSizeNHjbRc());
-                if (Float.isNaN(offset) || Float.isNaN(m3903getHeightimpl) || m3903getHeightimpl == 0.0f) {
+                float m4359getHeightimpl = Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc());
+                if (Float.isNaN(offset) || Float.isNaN(m4359getHeightimpl) || m4359getHeightimpl == 0.0f) {
                     return;
                 }
                 float floatValue = animatable.getValue().floatValue();
@@ -6748,7 +6748,7 @@ public final class ModalBottomSheetKt {
                 graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX);
                 calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                 graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY);
-                graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m3903getHeightimpl) / m3903getHeightimpl));
+                graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(0.5f, (offset + m4359getHeightimpl) / m4359getHeightimpl));
             }
         };
         startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -6756,13 +6756,13 @@ public final class ModalBottomSheetKt {
         Modifier graphicsLayer222222 = GraphicsLayerModifierKt.graphicsLayer(semantics$default222222, (Function1) rememberedValue5);
         final SheetState sheetState4222222 = sheetState2;
         final Function0<Unit> function02222222 = obj;
-        final Function2<? super Composer, ? super Integer, Unit> function26222222 = m1774getLambda2$material3_release;
+        final Function2<? super Composer, ? super Integer, Unit> function26222222 = m2081getLambda2$material3_release;
         Function2<? super Composer, ? super Integer, ? extends WindowInsets> function27222222 = function23;
         int i23222222 = i7 >> 21;
         int i24222222 = i15 << 9;
         long j9222222 = j4;
         composer2 = startRestartGroup;
-        SurfaceKt.m2347SurfaceT9BRK9s(graphicsLayer222222, shape422222, j8222222, j9222222, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
+        SurfaceKt.m2654SurfaceT9BRK9s(graphicsLayer222222, shape422222, j8222222, j9222222, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-692668920, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -6812,7 +6812,7 @@ public final class ModalBottomSheetKt {
                                 calculatePredictiveBackScaleY = ModalBottomSheetKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
                                 graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY == 0.0f ? 1.0f : calculatePredictiveBackScaleX / calculatePredictiveBackScaleY);
                                 j10 = ModalBottomSheetKt.PredictiveBackChildTransformOrigin;
-                                graphicsLayerScope.mo4271setTransformOrigin__ExYCQ(j10);
+                                graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(j10);
                             }
                         };
                         composer3.updateRememberedValue(rememberedValue6);
@@ -6841,15 +6841,15 @@ public final class ModalBottomSheetKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer3);
-                    Updater.m3527setimpl(m3520constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
+                    Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                     ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer3, 806123989, "C340@16116L9:ModalBottomSheet.kt#uh7d8r");
@@ -6857,14 +6857,14 @@ public final class ModalBottomSheetKt {
                     ComposerKt.sourceInformation(composer3, "303@14272L54,304@14368L48,305@14457L47,309@14672L1346,306@14521L1568");
                     if (function28 != null) {
                         Strings.Companion companion3 = Strings.Companion;
-                        final String m2779getString2EP1pXo222222 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
+                        final String m3086getString2EP1pXo222222 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_collapse_description), composer3, 0);
                         Strings.Companion companion4 = Strings.Companion;
-                        final String m2779getString2EP1pXo3 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
+                        final String m3086getString2EP1pXo3 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_dismiss_description), composer3, 0);
                         Strings.Companion companion5 = Strings.Companion;
-                        final String m2779getString2EP1pXo4 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
+                        final String m3086getString2EP1pXo4 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_expand_description), composer3, 0);
                         Modifier align = columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getCenterHorizontally());
                         ComposerKt.sourceInformationMarkerStart(composer3, -1636549585, "CC(remember):ModalBottomSheet.kt#9igjgp");
-                        boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m2779getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m2779getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m2779getString2EP1pXo222222);
+                        boolean changed2 = composer3.changed(sheetState5) | composer3.changed(m3086getString2EP1pXo3) | composer3.changed(function03) | composer3.changed(m3086getString2EP1pXo4) | composer3.changedInstance(coroutineScope2) | composer3.changed(m3086getString2EP1pXo222222);
                         Object rememberedValue7 = composer3.rememberedValue();
                         if (changed2 || rememberedValue7 == Composer.Companion.getEmpty()) {
                             str = "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh";
@@ -6884,9 +6884,9 @@ public final class ModalBottomSheetKt {
                                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                     final SheetState sheetState6 = SheetState.this;
-                                    String str2 = m2779getString2EP1pXo3;
-                                    String str3 = m2779getString2EP1pXo4;
-                                    String str4 = m2779getString2EP1pXo222222;
+                                    String str2 = m3086getString2EP1pXo3;
+                                    String str3 = m3086getString2EP1pXo4;
+                                    String str4 = m3086getString2EP1pXo222222;
                                     final Function0<Unit> function04 = function03;
                                     final CoroutineScope coroutineScope3 = coroutineScope2;
                                     SemanticsPropertiesKt.dismiss(semanticsPropertyReceiver, str2, new Function0<Boolean>() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$1$1$1
@@ -7053,15 +7053,15 @@ public final class ModalBottomSheetKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3520constructorimpl2 = Updater.m3520constructorimpl(composer3);
-                        Updater.m3527setimpl(m3520constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
+                        Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3520constructorimpl2.getInserting() || !Intrinsics.areEqual(m3520constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                            m3520constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                            m3520constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                        if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                            m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                            m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                         }
-                        Updater.m3527setimpl(m3520constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer3, -760467413, "C337@16059L12:ModalBottomSheet.kt#uh7d8r");
@@ -7108,20 +7108,20 @@ public final class ModalBottomSheetKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float calculatePredictiveBackScaleX(GraphicsLayerScope graphicsLayerScope, float f) {
-        float m3906getWidthimpl = Size.m3906getWidthimpl(graphicsLayerScope.mo4265getSizeNHjbRc());
-        if (Float.isNaN(m3906getWidthimpl) || m3906getWidthimpl == 0.0f) {
+        float m4362getWidthimpl = Size.m4362getWidthimpl(graphicsLayerScope.mo4732getSizeNHjbRc());
+        if (Float.isNaN(m4362getWidthimpl) || m4362getWidthimpl == 0.0f) {
             return 1.0f;
         }
-        return 1.0f - (MathHelpersKt.lerp(0.0f, Math.min(graphicsLayerScope.mo389toPx0680j_4(PredictiveBackMaxScaleXDistance), m3906getWidthimpl), f) / m3906getWidthimpl);
+        return 1.0f - (MathHelpersKt.lerp(0.0f, Math.min(graphicsLayerScope.mo419toPx0680j_4(PredictiveBackMaxScaleXDistance), m4362getWidthimpl), f) / m4362getWidthimpl);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float calculatePredictiveBackScaleY(GraphicsLayerScope graphicsLayerScope, float f) {
-        float m3903getHeightimpl = Size.m3903getHeightimpl(graphicsLayerScope.mo4265getSizeNHjbRc());
-        if (Float.isNaN(m3903getHeightimpl) || m3903getHeightimpl == 0.0f) {
+        float m4359getHeightimpl = Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc());
+        if (Float.isNaN(m4359getHeightimpl) || m4359getHeightimpl == 0.0f) {
             return 1.0f;
         }
-        return 1.0f - (MathHelpersKt.lerp(0.0f, Math.min(graphicsLayerScope.mo389toPx0680j_4(PredictiveBackMaxScaleYDistance), m3903getHeightimpl), f) / m3903getHeightimpl);
+        return 1.0f - (MathHelpersKt.lerp(0.0f, Math.min(graphicsLayerScope.mo419toPx0680j_4(PredictiveBackMaxScaleYDistance), m4359getHeightimpl), f) / m4359getHeightimpl);
     }
 
     public static final SheetState rememberModalBottomSheetState(boolean z, Function1<? super SheetValue, Boolean> function1, Composer composer, int i, int i2) {
@@ -7152,7 +7152,7 @@ public final class ModalBottomSheetKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: Scrim-3J-VO9M  reason: not valid java name */
-    public static final void m2048Scrim3JVO9M(final long j, final Function0<Unit> function0, final boolean z, Composer composer, final int i) {
+    public static final void m2355Scrim3JVO9M(final long j, final Function0<Unit> function0, final boolean z, Composer composer, final int i) {
         int i2;
         Modifier.Companion companion;
         Modifier then;
@@ -7177,7 +7177,7 @@ public final class ModalBottomSheetKt {
                 int i3 = i2;
                 final State<Float> animateFloatAsState = AnimateAsStateKt.animateFloatAsState(z ? 1.0f : 0.0f, new TweenSpec(0, 0, null, 7, null), 0.0f, null, null, startRestartGroup, 48, 28);
                 Strings.Companion companion2 = Strings.Companion;
-                final String m2779getString2EP1pXo = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(androidx.compose.ui.R.string.close_sheet), startRestartGroup, 0);
+                final String m3086getString2EP1pXo = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(androidx.compose.ui.R.string.close_sheet), startRestartGroup, 0);
                 startRestartGroup.startReplaceGroup(-1785653838);
                 ComposerKt.sourceInformation(startRestartGroup, "414@18629L44,415@18730L263");
                 if (z) {
@@ -7193,7 +7193,7 @@ public final class ModalBottomSheetKt {
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     then = companion3.then(new SuspendPointerInputElement(function0, null, null, new SuspendingPointerInputFilterKt$sam$androidx_compose_ui_input_pointer_PointerInputEventHandler$0((Function2) rememberedValue), 6, null));
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1785648566, "CC(remember):ModalBottomSheet.kt#9igjgp");
-                    boolean changed = (i4 == 32) | startRestartGroup.changed(m2779getString2EP1pXo);
+                    boolean changed = (i4 == 32) | startRestartGroup.changed(m3086getString2EP1pXo);
                     Object rememberedValue2 = startRestartGroup.rememberedValue();
                     if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
                         rememberedValue2 = (Function1) new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.ModalBottomSheetKt$Scrim$dismissSheet$2$1
@@ -7212,7 +7212,7 @@ public final class ModalBottomSheetKt {
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                 SemanticsPropertiesKt.setTraversalIndex(semanticsPropertyReceiver, 1.0f);
-                                SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m2779getString2EP1pXo);
+                                SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3086getString2EP1pXo);
                                 final Function0<Unit> function02 = function0;
                                 SemanticsPropertiesKt.onClick$default(semanticsPropertyReceiver, null, new Function0<Boolean>() { // from class: androidx.compose.material3.ModalBottomSheetKt$Scrim$dismissSheet$2$1.1
                                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -7260,7 +7260,7 @@ public final class ModalBottomSheetKt {
                             float Scrim_3J_VO9M$lambda$10;
                             long j2 = j;
                             Scrim_3J_VO9M$lambda$10 = ModalBottomSheetKt.Scrim_3J_VO9M$lambda$10(animateFloatAsState);
-                            DrawScope.m4634drawRectnJ9OG0$default(drawScope, j2, 0L, 0L, RangesKt.coerceIn(Scrim_3J_VO9M$lambda$10, 0.0f, 1.0f), null, null, 0, 118, null);
+                            DrawScope.m5110drawRectnJ9OG0$default(drawScope, j2, 0L, 0L, RangesKt.coerceIn(Scrim_3J_VO9M$lambda$10, 0.0f, 1.0f), null, null, 0, 118, null);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -7290,7 +7290,7 @@ public final class ModalBottomSheetKt {
                 }
 
                 public final void invoke(Composer composer2, int i5) {
-                    ModalBottomSheetKt.m2048Scrim3JVO9M(j, function0, z, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                    ModalBottomSheetKt.m2355Scrim3JVO9M(j, function0, z, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
                 }
             });
         }

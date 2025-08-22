@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SubscriptionArbiter extends AtomicInteger implements Subscription {
     private static final long serialVersionUID = -2189523197179400958L;
     Subscription actual;

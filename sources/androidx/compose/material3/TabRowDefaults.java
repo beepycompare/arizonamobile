@@ -30,7 +30,7 @@ import kotlin.jvm.functions.Function2;
 public final class TabRowDefaults {
     public static final int $stable = 0;
     public static final TabRowDefaults INSTANCE = new TabRowDefaults();
-    private static final float ScrollableTabRowEdgeStartPadding = Dp.m6684constructorimpl(52);
+    private static final float ScrollableTabRowEdgeStartPadding = Dp.m7251constructorimpl(52);
 
     @Deprecated(message = "Use TabRowDefaults.primaryContainerColor instead", replaceWith = @ReplaceWith(expression = "primaryContainerColor", imports = {}))
     public static /* synthetic */ void getContainerColor$annotations() {
@@ -44,7 +44,7 @@ public final class TabRowDefaults {
     }
 
     /* renamed from: getScrollableTabRowEdgeStartPadding-D9Ej5fM  reason: not valid java name */
-    public final float m2393getScrollableTabRowEdgeStartPaddingD9Ej5fM() {
+    public final float m2700getScrollableTabRowEdgeStartPaddingD9Ej5fM() {
         return ScrollableTabRowEdgeStartPadding;
     }
 
@@ -133,7 +133,7 @@ public final class TabRowDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2390Indicator9IZ8Weo(Modifier modifier, float f, long j, Composer composer, final int i, final int i2) {
+    public final void m2697Indicator9IZ8Weo(Modifier modifier, float f, long j, Composer composer, final int i, final int i2) {
         int i3;
         long j2;
         long fromToken;
@@ -167,7 +167,7 @@ public final class TabRowDefaults {
                     modifier = Modifier.Companion;
                 }
                 if (i5 != 0) {
-                    f = PrimaryNavigationTabTokens.INSTANCE.m3262getActiveIndicatorHeightD9Ej5fM();
+                    f = PrimaryNavigationTabTokens.INSTANCE.m3569getActiveIndicatorHeightD9Ej5fM();
                 }
                 if ((i2 & 4) != 0) {
                     i3 &= -897;
@@ -176,7 +176,7 @@ public final class TabRowDefaults {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(1454716052, i3, -1, "androidx.compose.material3.TabRowDefaults.Indicator (TabRow.kt:1209)");
                     }
-                    BoxKt.Box(BackgroundKt.m247backgroundbw27NRU$default(SizeKt.m771height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), f), fromToken, null, 2, null), startRestartGroup, 0);
+                    BoxKt.Box(BackgroundKt.m257backgroundbw27NRU$default(SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), f), fromToken, null, 2, null), startRestartGroup, 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -192,7 +192,7 @@ public final class TabRowDefaults {
             startRestartGroup.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
-            BoxKt.Box(BackgroundKt.m247backgroundbw27NRU$default(SizeKt.m771height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), f), fromToken, null, 2, null), startRestartGroup, 0);
+            BoxKt.Box(BackgroundKt.m257backgroundbw27NRU$default(SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), f), fromToken, null, 2, null), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             j3 = fromToken;
@@ -218,7 +218,7 @@ public final class TabRowDefaults {
                 }
 
                 public final void invoke(Composer composer2, int i6) {
-                    TabRowDefaults.this.m2390Indicator9IZ8Weo(modifier2, f2, j3, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                    TabRowDefaults.this.m2697Indicator9IZ8Weo(modifier2, f2, j3, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                 }
             });
         }
@@ -246,7 +246,7 @@ public final class TabRowDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2391PrimaryIndicator10LGxhE(Modifier modifier, float f, float f2, long j, Shape shape, Composer composer, final int i, final int i2) {
+    public final void m2698PrimaryIndicator10LGxhE(Modifier modifier, float f, float f2, long j, Shape shape, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         float f3;
@@ -309,10 +309,10 @@ public final class TabRowDefaults {
                         if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                             companion = i7 == 0 ? Modifier.Companion : obj;
                             if (i8 != 0) {
-                                f3 = Dp.m6684constructorimpl(24);
+                                f3 = Dp.m7251constructorimpl(24);
                             }
                             if (i4 != 0) {
-                                f4 = PrimaryNavigationTabTokens.INSTANCE.m3262getActiveIndicatorHeightD9Ej5fM();
+                                f4 = PrimaryNavigationTabTokens.INSTANCE.m3569getActiveIndicatorHeightD9Ej5fM();
                             }
                             if ((i2 & 8) != 0) {
                                 j2 = ColorSchemeKt.getValue(PrimaryNavigationTabTokens.INSTANCE.getActiveIndicatorColor(), startRestartGroup, 6);
@@ -332,7 +332,7 @@ public final class TabRowDefaults {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1895596205, i3, -1, "androidx.compose.material3.TabRowDefaults.PrimaryIndicator (TabRow.kt:1230)");
                         }
-                        SpacerKt.Spacer(BackgroundKt.m246backgroundbw27NRU(SizeKt.m782requiredWidth3ABfNKs(SizeKt.m774requiredHeight3ABfNKs(companion, f4), f3), j2, roundedCornerShape), startRestartGroup, 0);
+                        SpacerKt.Spacer(BackgroundKt.m256backgroundbw27NRU(SizeKt.m881requiredWidth3ABfNKs(SizeKt.m873requiredHeight3ABfNKs(companion, f4), f3), j2, roundedCornerShape), startRestartGroup, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -360,7 +360,7 @@ public final class TabRowDefaults {
                             }
 
                             public final void invoke(Composer composer2, int i9) {
-                                TabRowDefaults.this.m2391PrimaryIndicator10LGxhE(companion, f5, f6, j3, shape2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                TabRowDefaults.this.m2698PrimaryIndicator10LGxhE(companion, f5, f6, j3, shape2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                             }
                         });
                         return;
@@ -386,7 +386,7 @@ public final class TabRowDefaults {
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                SpacerKt.Spacer(BackgroundKt.m246backgroundbw27NRU(SizeKt.m782requiredWidth3ABfNKs(SizeKt.m774requiredHeight3ABfNKs(companion, f4), f3), j2, roundedCornerShape), startRestartGroup, 0);
+                SpacerKt.Spacer(BackgroundKt.m256backgroundbw27NRU(SizeKt.m881requiredWidth3ABfNKs(SizeKt.m873requiredHeight3ABfNKs(companion, f4), f3), j2, roundedCornerShape), startRestartGroup, 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 final float f52 = f3;
@@ -422,7 +422,7 @@ public final class TabRowDefaults {
             startRestartGroup.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
-            SpacerKt.Spacer(BackgroundKt.m246backgroundbw27NRU(SizeKt.m782requiredWidth3ABfNKs(SizeKt.m774requiredHeight3ABfNKs(companion, f4), f3), j2, roundedCornerShape), startRestartGroup, 0);
+            SpacerKt.Spacer(BackgroundKt.m256backgroundbw27NRU(SizeKt.m881requiredWidth3ABfNKs(SizeKt.m873requiredHeight3ABfNKs(companion, f4), f3), j2, roundedCornerShape), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             final float f522 = f3;
@@ -462,7 +462,7 @@ public final class TabRowDefaults {
         startRestartGroup.endDefaults();
         if (ComposerKt.isTraceInProgress()) {
         }
-        SpacerKt.Spacer(BackgroundKt.m246backgroundbw27NRU(SizeKt.m782requiredWidth3ABfNKs(SizeKt.m774requiredHeight3ABfNKs(companion, f4), f3), j2, roundedCornerShape), startRestartGroup, 0);
+        SpacerKt.Spacer(BackgroundKt.m256backgroundbw27NRU(SizeKt.m881requiredWidth3ABfNKs(SizeKt.m873requiredHeight3ABfNKs(companion, f4), f3), j2, roundedCornerShape), startRestartGroup, 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         final float f5222 = f3;
@@ -480,7 +480,7 @@ public final class TabRowDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2392SecondaryIndicator9IZ8Weo(Modifier modifier, float f, long j, Composer composer, final int i, final int i2) {
+    public final void m2699SecondaryIndicator9IZ8Weo(Modifier modifier, float f, long j, Composer composer, final int i, final int i2) {
         int i3;
         long j2;
         long value;
@@ -514,7 +514,7 @@ public final class TabRowDefaults {
                     modifier = Modifier.Companion;
                 }
                 if (i5 != 0) {
-                    f = PrimaryNavigationTabTokens.INSTANCE.m3262getActiveIndicatorHeightD9Ej5fM();
+                    f = PrimaryNavigationTabTokens.INSTANCE.m3569getActiveIndicatorHeightD9Ej5fM();
                 }
                 if ((i2 & 4) != 0) {
                     i3 &= -897;
@@ -523,7 +523,7 @@ public final class TabRowDefaults {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-1498258020, i3, -1, "androidx.compose.material3.TabRowDefaults.SecondaryIndicator (TabRow.kt:1252)");
                     }
-                    BoxKt.Box(BackgroundKt.m247backgroundbw27NRU$default(SizeKt.m771height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), f), value, null, 2, null), startRestartGroup, 0);
+                    BoxKt.Box(BackgroundKt.m257backgroundbw27NRU$default(SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), f), value, null, 2, null), startRestartGroup, 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -539,7 +539,7 @@ public final class TabRowDefaults {
             startRestartGroup.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
-            BoxKt.Box(BackgroundKt.m247backgroundbw27NRU$default(SizeKt.m771height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), f), value, null, 2, null), startRestartGroup, 0);
+            BoxKt.Box(BackgroundKt.m257backgroundbw27NRU$default(SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), f), value, null, 2, null), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             j3 = value;
@@ -565,7 +565,7 @@ public final class TabRowDefaults {
                 }
 
                 public final void invoke(Composer composer2, int i6) {
-                    TabRowDefaults.this.m2392SecondaryIndicator9IZ8Weo(modifier2, f2, j3, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                    TabRowDefaults.this.m2699SecondaryIndicator9IZ8Weo(modifier2, f2, j3, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                 }
             });
         }

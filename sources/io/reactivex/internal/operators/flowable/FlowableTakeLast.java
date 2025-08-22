@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableTakeLast<T> extends AbstractFlowableWithUpstream<T, T> {
     final int count;
 
@@ -23,7 +23,7 @@ public final class FlowableTakeLast<T> extends AbstractFlowableWithUpstream<T, T
         this.source.subscribe((FlowableSubscriber) new TakeLastSubscriber(subscriber, this.count));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TakeLastSubscriber<T> extends ArrayDeque<T> implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = 7240042530241604978L;
         volatile boolean cancelled;

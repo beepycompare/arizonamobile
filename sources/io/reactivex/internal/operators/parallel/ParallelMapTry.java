@@ -12,7 +12,7 @@ import io.reactivex.parallel.ParallelFlowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ParallelMapTry<T, R> extends ParallelFlowable<R> {
     final BiFunction<? super Long, ? super Throwable, ParallelFailureHandling> errorHandler;
     final Function<? super T, ? extends R> mapper;
@@ -46,7 +46,7 @@ public final class ParallelMapTry<T, R> extends ParallelFlowable<R> {
         return this.source.parallelism();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ParallelMapTrySubscriber<T, R> implements ConditionalSubscriber<T>, Subscription {
         boolean done;
         final Subscriber<? super R> downstream;
@@ -154,7 +154,7 @@ public final class ParallelMapTry<T, R> extends ParallelFlowable<R> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.reactivex.internal.operators.parallel.ParallelMapTry$1  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$io$reactivex$parallel$ParallelFailureHandling;
 
@@ -176,7 +176,7 @@ public final class ParallelMapTry<T, R> extends ParallelFlowable<R> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ParallelMapTryConditionalSubscriber<T, R> implements ConditionalSubscriber<T>, Subscription {
         boolean done;
         final ConditionalSubscriber<? super R> downstream;

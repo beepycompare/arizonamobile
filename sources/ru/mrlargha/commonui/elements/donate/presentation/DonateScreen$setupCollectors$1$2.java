@@ -2,8 +2,8 @@ package ru.mrlargha.commonui.elements.donate.presentation;
 
 import android.util.Log;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -35,8 +35,8 @@ import ru.mrlargha.commonui.utils.StringKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2", f = "DonateScreen.kt", i = {}, l = {DownloaderService.STATUS_PAUSED_BY_APP}, m = "invokeSuspend", n = {}, s = {})
-/* loaded from: classes5.dex */
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2", f = "DonateScreen.kt", i = {}, l = {198}, m = "invokeSuspend", n = {}, s = {})
+/* loaded from: classes6.dex */
 public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ DonateScreenBinding $this_with;
     int label;
@@ -63,9 +63,9 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: DonateScreen.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2$1", f = "DonateScreen.kt", i = {}, l = {DownloaderService.STATUS_WAITING_TO_RETRY}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2$1", f = "DonateScreen.kt", i = {}, l = {199}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2$1  reason: invalid class name */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ DonateScreenBinding $this_with;
         int label;
@@ -114,6 +114,8 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
                         Map map;
                         DonateScreen.Pages pages;
                         IBackendNotifier notifier;
+                        Map map2;
+                        DonateScreen.Pages pages2;
                         if (uiState instanceof UiState.Loading) {
                             FrameLayout pagesContainer = DonateScreenBinding.this.pagesContainer;
                             Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
@@ -121,6 +123,9 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
                             ProgressBar pageProgressBar = DonateScreenBinding.this.pageProgressBar;
                             Intrinsics.checkNotNullExpressionValue(pageProgressBar, "pageProgressBar");
                             pageProgressBar.setVisibility(0);
+                            LinearLayout errorPlaceholderItems = DonateScreenBinding.this.errorPlaceholderItems;
+                            Intrinsics.checkNotNullExpressionValue(errorPlaceholderItems, "errorPlaceholderItems");
+                            errorPlaceholderItems.setVisibility(8);
                             Boxing.boxInt(Log.d(DonateUtilsKt.DONATE_TAG, "loading"));
                         } else if (uiState instanceof UiState.Error) {
                             FrameLayout pagesContainer2 = DonateScreenBinding.this.pagesContainer;
@@ -129,26 +134,43 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
                             ProgressBar pageProgressBar2 = DonateScreenBinding.this.pageProgressBar;
                             Intrinsics.checkNotNullExpressionValue(pageProgressBar2, "pageProgressBar");
                             pageProgressBar2.setVisibility(8);
+                            LinearLayout errorPlaceholderItems2 = DonateScreenBinding.this.errorPlaceholderItems;
+                            Intrinsics.checkNotNullExpressionValue(errorPlaceholderItems2, "errorPlaceholderItems");
+                            errorPlaceholderItems2.setVisibility(0);
                             Boxing.boxInt(Log.e(DonateUtilsKt.DONATE_TAG, "error items: " + ((UiState.Error) uiState).getMessage()));
                         } else if (!(uiState instanceof UiState.Successful)) {
                             throw new NoWhenBranchMatchedException();
                         } else {
-                            UiState.Successful successful = (UiState.Successful) uiState;
-                            Log.e(DonateUtilsKt.DONATE_TAG, "updateItem: " + ((List) successful.getData()).size());
+                            LinearLayout errorPlaceholderItems3 = DonateScreenBinding.this.errorPlaceholderItems;
+                            Intrinsics.checkNotNullExpressionValue(errorPlaceholderItems3, "errorPlaceholderItems");
+                            errorPlaceholderItems3.setVisibility(8);
                             z = donateScreen.isHasUpdate;
                             if (!z) {
-                                donateScreen.isHasUpdate = true;
-                                notifier = donateScreen.getNotifier();
-                                notifier.clickedWrapper(donateScreen.getBackendID(), 0, 6);
-                            } else if (!((Collection) successful.getData()).isEmpty()) {
-                                map = donateScreen.pages;
-                                pages = donateScreen.currentPage;
-                                DonatePage donatePage = (DonatePage) map.get(pages);
-                                if (donatePage != null) {
-                                    donatePage.onBackendMessage(DonateSubIds.ITEM_INIT.getSubIds(), StringKt.toStringJson(successful.getData()));
+                                UiState.Successful successful = (UiState.Successful) uiState;
+                                if (!((Collection) successful.getData()).isEmpty()) {
+                                    Log.e(DonateUtilsKt.DONATE_TAG, "data: initData: " + ((List) successful.getData()).size());
+                                    donateScreen.isHasUpdate = true;
+                                    notifier = donateScreen.getNotifier();
+                                    notifier.clickedWrapper(donateScreen.getBackendID(), 0, 6);
+                                    map2 = donateScreen.pages;
+                                    pages2 = donateScreen.currentPage;
+                                    DonatePage donatePage = (DonatePage) map2.get(pages2);
+                                    if (donatePage != null) {
+                                        donatePage.onBackendMessage(DonateSubIds.ITEM_INIT.getSubIds(), StringKt.toStringJson(successful.getData()));
+                                    }
+                                    Unit unit = Unit.INSTANCE;
                                 }
                             }
-                            Unit unit = Unit.INSTANCE;
+                            UiState.Successful successful2 = (UiState.Successful) uiState;
+                            if (!((Collection) successful2.getData()).isEmpty()) {
+                                map = donateScreen.pages;
+                                pages = donateScreen.currentPage;
+                                DonatePage donatePage2 = (DonatePage) map.get(pages);
+                                if (donatePage2 != null) {
+                                    donatePage2.onBackendMessage(DonateSubIds.ITEM_INIT.getSubIds(), StringKt.toStringJson(successful2.getData()));
+                                }
+                            }
+                            Unit unit2 = Unit.INSTANCE;
                         }
                         return Unit.INSTANCE;
                     }

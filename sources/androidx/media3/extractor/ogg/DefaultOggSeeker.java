@@ -11,7 +11,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.math.BigInteger;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DefaultOggSeeker implements OggSeeker {
     private static final int DEFAULT_OFFSET = 30000;
     private static final int MATCH_BYTE_RANGE = 100000;
@@ -170,7 +170,7 @@ public final class DefaultOggSeeker implements OggSeeker {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class OggSeekMap implements SeekMap {
         @Override // androidx.media3.extractor.SeekMap
         public boolean isSeekable() {

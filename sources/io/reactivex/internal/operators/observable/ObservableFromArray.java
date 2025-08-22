@@ -4,7 +4,7 @@ import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.observers.BasicQueueDisposable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableFromArray<T> extends Observable<T> {
     final T[] array;
 
@@ -22,7 +22,7 @@ public final class ObservableFromArray<T> extends Observable<T> {
         fromArrayDisposable.run();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FromArrayDisposable<T> extends BasicQueueDisposable<T> {
         final T[] array;
         volatile boolean disposed;

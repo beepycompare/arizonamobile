@@ -27,8 +27,8 @@ import kotlinx.coroutines.flow.FlowCollector;
     	at jadx.core.dex.visitors.ClassModifier.visit(ClassModifier.java:55)
     */
 /* compiled from: AnchoredDraggable.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", "I", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableKt$restartable$2", f = "AnchoredDraggable.kt", i = {}, l = {1545}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableKt$restartable$2", f = "AnchoredDraggable.kt", i = {}, l = {1544}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class AnchoredDraggableKt$restartable$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<I, Continuation<? super Unit>, Object> $block;
@@ -83,7 +83,7 @@ final class AnchoredDraggableKt$restartable$2 extends SuspendLambda implements F
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: AnchoredDraggable.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u0002H\u008a@¢\u0006\u0004\b\u0004\u0010\u0005"}, d2 = {"<anonymous>", "", "I", "latestInputs", "emit", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* renamed from: androidx.compose.foundation.gestures.AnchoredDraggableKt$restartable$2$1  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass1<T> implements FlowCollector {
@@ -99,7 +99,7 @@ final class AnchoredDraggableKt$restartable$2 extends SuspendLambda implements F
         }
 
         /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-        /* JADX WARN: Removed duplicated region for block: B:14:0x003c  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
         @Override // kotlinx.coroutines.flow.FlowCollector
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -107,7 +107,6 @@ final class AnchoredDraggableKt$restartable$2 extends SuspendLambda implements F
         public final Object emit(I i, Continuation<? super Unit> continuation) {
             AnchoredDraggableKt$restartable$2$1$emit$1 anchoredDraggableKt$restartable$2$1$emit$1;
             int i2;
-            AnonymousClass1<T> anonymousClass1;
             Object obj;
             Job launch$default;
             if (continuation instanceof AnchoredDraggableKt$restartable$2$1$emit$1) {
@@ -120,29 +119,27 @@ final class AnchoredDraggableKt$restartable$2 extends SuspendLambda implements F
                     if (i2 != 0) {
                         ResultKt.throwOnFailure(obj2);
                         Job job = this.$previousDrag.element;
+                        obj = i;
                         if (job != null) {
                             job.cancel((CancellationException) new AnchoredDragFinishedSignal());
-                            anchoredDraggableKt$restartable$2$1$emit$1.L$0 = this;
-                            anchoredDraggableKt$restartable$2$1$emit$1.L$1 = i;
-                            anchoredDraggableKt$restartable$2$1$emit$1.L$2 = job;
+                            anchoredDraggableKt$restartable$2$1$emit$1.L$0 = i;
+                            anchoredDraggableKt$restartable$2$1$emit$1.L$1 = job;
                             anchoredDraggableKt$restartable$2$1$emit$1.label = 1;
+                            obj = i;
                             if (job.join(anchoredDraggableKt$restartable$2$1$emit$1) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         }
-                        anonymousClass1 = this;
-                        obj = i;
                     } else if (i2 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        Job job2 = (Job) anchoredDraggableKt$restartable$2$1$emit$1.L$2;
-                        Object obj3 = anchoredDraggableKt$restartable$2$1$emit$1.L$1;
-                        anonymousClass1 = (AnonymousClass1) anchoredDraggableKt$restartable$2$1$emit$1.L$0;
+                        Job job2 = (Job) anchoredDraggableKt$restartable$2$1$emit$1.L$1;
+                        Object obj3 = anchoredDraggableKt$restartable$2$1$emit$1.L$0;
                         ResultKt.throwOnFailure(obj2);
                         obj = obj3;
                     }
-                    Ref.ObjectRef<Job> objectRef = anonymousClass1.$previousDrag;
-                    launch$default = BuildersKt__Builders_commonKt.launch$default(anonymousClass1.$$this$coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass2(anonymousClass1.$block, obj, anonymousClass1.$$this$coroutineScope, null), 1, null);
+                    Ref.ObjectRef<Job> objectRef = this.$previousDrag;
+                    launch$default = BuildersKt__Builders_commonKt.launch$default(this.$$this$coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass2(this.$block, obj, this.$$this$coroutineScope, null), 1, null);
                     objectRef.element = (T) launch$default;
                     return Unit.INSTANCE;
                 }
@@ -153,16 +150,16 @@ final class AnchoredDraggableKt$restartable$2 extends SuspendLambda implements F
             i2 = anchoredDraggableKt$restartable$2$1$emit$1.label;
             if (i2 != 0) {
             }
-            Ref.ObjectRef<Job> objectRef2 = anonymousClass1.$previousDrag;
-            launch$default = BuildersKt__Builders_commonKt.launch$default(anonymousClass1.$$this$coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass2(anonymousClass1.$block, obj, anonymousClass1.$$this$coroutineScope, null), 1, null);
+            Ref.ObjectRef<Job> objectRef2 = this.$previousDrag;
+            launch$default = BuildersKt__Builders_commonKt.launch$default(this.$$this$coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass2(this.$block, obj, this.$$this$coroutineScope, null), 1, null);
             objectRef2.element = (T) launch$default;
             return Unit.INSTANCE;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: AnchoredDraggable.kt */
-        @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", "I", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-        @DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableKt$restartable$2$1$2", f = "AnchoredDraggable.kt", i = {}, l = {1552}, m = "invokeSuspend", n = {}, s = {})
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+        @DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableKt$restartable$2$1$2", f = "AnchoredDraggable.kt", i = {}, l = {1551}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: androidx.compose.foundation.gestures.AnchoredDraggableKt$restartable$2$1$2  reason: invalid class name */
         /* loaded from: classes.dex */
         public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

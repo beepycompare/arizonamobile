@@ -4,14 +4,14 @@ import io.reactivex.Observer;
 import io.reactivex.functions.BiPredicate;
 import io.reactivex.functions.Predicate;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AppendOnlyLinkedArrayList<T> {
     final int capacity;
     final Object[] head;
     int offset;
     Object[] tail;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface NonThrowingPredicate<T> extends Predicate<T> {
         @Override // io.reactivex.functions.Predicate
         boolean test(T t);

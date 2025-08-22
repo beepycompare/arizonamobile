@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSubscribeOn<T> extends AbstractFlowableWithUpstream<T, T> {
     final boolean nonScheduledRequests;
     final Scheduler scheduler;
@@ -29,7 +29,7 @@ public final class FlowableSubscribeOn<T> extends AbstractFlowableWithUpstream<T
         createWorker.schedule(subscribeOnSubscriber);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SubscribeOnSubscriber<T> extends AtomicReference<Thread> implements FlowableSubscriber<T>, Subscription, Runnable {
         private static final long serialVersionUID = 8094547886072529208L;
         final Subscriber<? super T> downstream;
@@ -115,7 +115,7 @@ public final class FlowableSubscribeOn<T> extends AbstractFlowableWithUpstream<T
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class Request implements Runnable {
             final long n;
             final Subscription upstream;

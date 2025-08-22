@@ -9,7 +9,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleAmb<T> extends Single<T> {
     private final SingleSource<? extends T>[] sources;
     private final Iterable<? extends SingleSource<? extends T>> sourcesIterable;
@@ -72,7 +72,7 @@ public final class SingleAmb<T> extends Single<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class AmbSingleObserver<T> implements SingleObserver<T> {
         final SingleObserver<? super T> downstream;
         final CompositeDisposable set;

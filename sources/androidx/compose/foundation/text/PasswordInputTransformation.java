@@ -9,7 +9,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 /* compiled from: BasicSecureTextField.kt */
-@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\b\u0000\u0018\u00002\u00020\u0001B\u0013\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0002\u0010\u0005J\u0006\u0010\u0011\u001a\u00020\u0004J\f\u0010\u0012\u001a\u00020\u0004*\u00020\u0013H\u0016R+\u0010\b\u001a\u00020\u00072\u0006\u0010\u0006\u001a\u00020\u00078@@BX\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b\r\u0010\u000e\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\fR\u0017\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u0014"}, d2 = {"Landroidx/compose/foundation/text/PasswordInputTransformation;", "Landroidx/compose/foundation/text/input/InputTransformation;", "scheduleHide", "Lkotlin/Function0;", "", "(Lkotlin/jvm/functions/Function0;)V", "<set-?>", "", "revealCodepointIndex", "getRevealCodepointIndex$foundation_release", "()I", "setRevealCodepointIndex", "(I)V", "revealCodepointIndex$delegate", "Landroidx/compose/runtime/MutableIntState;", "getScheduleHide", "()Lkotlin/jvm/functions/Function0;", "hide", "transformInput", "Landroidx/compose/foundation/text/input/TextFieldBuffer;", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001B\u0015\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\f\u0010\u0012\u001a\u00020\u0004*\u00020\u0013H\u0016J\u0006\u0010\u0014\u001a\u00020\u0004R\u0017\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR+\u0010\u000b\u001a\u00020\n2\u0006\u0010\t\u001a\u00020\n8@@BX\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b\u0010\u0010\u0011\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000f¨\u0006\u0015"}, d2 = {"Landroidx/compose/foundation/text/PasswordInputTransformation;", "Landroidx/compose/foundation/text/input/InputTransformation;", "scheduleHide", "Lkotlin/Function0;", "", "<init>", "(Lkotlin/jvm/functions/Function0;)V", "getScheduleHide", "()Lkotlin/jvm/functions/Function0;", "<set-?>", "", "revealCodepointIndex", "getRevealCodepointIndex$foundation_release", "()I", "setRevealCodepointIndex", "(I)V", "revealCodepointIndex$delegate", "Landroidx/compose/runtime/MutableIntState;", "transformInput", "Landroidx/compose/foundation/text/input/TextFieldBuffer;", "hide", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PasswordInputTransformation implements InputTransformation {
     public static final int $stable = 0;
@@ -34,14 +34,14 @@ public final class PasswordInputTransformation implements InputTransformation {
 
     @Override // androidx.compose.foundation.text.input.InputTransformation
     public void transformInput(TextFieldBuffer textFieldBuffer) {
-        if (textFieldBuffer.getChanges().getChangeCount() != 1 || TextRange.m6143getLengthimpl(textFieldBuffer.getChanges().mo1200getRangejx7JFs(0)) != 1 || TextRange.m6143getLengthimpl(textFieldBuffer.getChanges().mo1199getOriginalRangejx7JFs(0)) != 0 || textFieldBuffer.hasSelection()) {
+        if (textFieldBuffer.getChanges().getChangeCount() != 1 || TextRange.m6709getLengthimpl(textFieldBuffer.getChanges().mo1433getRangejx7JFs(0)) != 1 || textFieldBuffer.hasSelection()) {
             setRevealCodepointIndex(-1);
             return;
         }
-        int m6145getMinimpl = TextRange.m6145getMinimpl(textFieldBuffer.getChanges().mo1200getRangejx7JFs(0));
-        if (getRevealCodepointIndex$foundation_release() != m6145getMinimpl) {
+        int m6711getMinimpl = TextRange.m6711getMinimpl(textFieldBuffer.getChanges().mo1433getRangejx7JFs(0));
+        if (getRevealCodepointIndex$foundation_release() != m6711getMinimpl) {
             this.scheduleHide.invoke();
-            setRevealCodepointIndex(m6145getMinimpl);
+            setRevealCodepointIndex(m6711getMinimpl);
         }
     }
 

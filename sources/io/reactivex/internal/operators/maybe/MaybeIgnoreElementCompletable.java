@@ -9,7 +9,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.FuseToMaybe;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeIgnoreElementCompletable<T> extends Completable implements FuseToMaybe<T> {
     final MaybeSource<T> source;
 
@@ -27,7 +27,7 @@ public final class MaybeIgnoreElementCompletable<T> extends Completable implemen
         return RxJavaPlugins.onAssembly(new MaybeIgnoreElement(this.source));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class IgnoreMaybeObserver<T> implements MaybeObserver<T>, Disposable {
         final CompletableObserver downstream;
         Disposable upstream;

@@ -6,11 +6,10 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Hoverable.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.HoverableNode", f = "Hoverable.kt", i = {0}, l = {114}, m = "emitExit", n = {"this"}, s = {"L$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.HoverableNode", f = "Hoverable.kt", i = {}, l = {114}, m = "emitExit", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class HoverableNode$emitExit$1 extends ContinuationImpl {
-    Object L$0;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ HoverableNode this$0;

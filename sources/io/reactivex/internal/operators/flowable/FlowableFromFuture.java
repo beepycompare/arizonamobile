@@ -6,7 +6,7 @@ import io.reactivex.internal.subscriptions.DeferredScalarSubscription;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableFromFuture<T> extends Flowable<T> {
     final Future<? extends T> future;
     final long timeout;

@@ -9,7 +9,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.List;
 import org.checkerframework.dataflow.qual.SideEffectFree;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public interface Extractor {
     public static final int RESULT_CONTINUE = 0;
     public static final int RESULT_END_OF_INPUT = -1;
@@ -18,7 +18,7 @@ public interface Extractor {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public @interface ReadResult {
     }
 

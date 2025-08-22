@@ -22,14 +22,14 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LookaheadDelegate.kt */
-@Metadata(d1 = {"\u0000´\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010%\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000f\b \u0018\u00002\u00020\u00012\u00020\u0002B\r\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0002\u0010\u0005J\u0015\u0010M\u001a\u00020=2\u0006\u0010N\u001a\u00020\u0011H\u0000¢\u0006\u0002\bOJ\u0010\u0010P\u001a\u00020=2\u0006\u0010Q\u001a\u00020=H\u0016J\u0010\u0010R\u001a\u00020=2\u0006\u0010S\u001a\u00020=H\u0016J\u0010\u0010T\u001a\u00020=2\u0006\u0010Q\u001a\u00020=H\u0016J\u0010\u0010U\u001a\u00020=2\u0006\u0010S\u001a\u00020=H\u0016J)\u0010V\u001a\u00020W2\u0006\u0010\u0017\u001a\u00020\u00182\f\u0010X\u001a\b\u0012\u0004\u0012\u00020\u00070YH\u0086\bø\u0001\u0000¢\u0006\u0004\bZ\u0010[J=\u0010\\\u001a\u00020]2\u0006\u0010D\u001a\u00020E2\u0006\u0010^\u001a\u00020\"2\u0019\u0010_\u001a\u0015\u0012\u0004\u0012\u00020a\u0012\u0004\u0012\u00020]\u0018\u00010`¢\u0006\u0002\bbH\u0004ø\u0001\u0000¢\u0006\u0004\bc\u0010dJ\b\u0010e\u001a\u00020]H\u0014J\u001a\u0010f\u001a\u00020]2\u0006\u0010D\u001a\u00020EH\u0002ø\u0001\u0000¢\u0006\u0004\bg\u0010HJ\u001a\u0010h\u001a\u00020]2\u0006\u0010D\u001a\u00020EH\u0000ø\u0001\u0000¢\u0006\u0004\bi\u0010HJ%\u0010j\u001a\u00020E2\u0006\u0010k\u001a\u00020\u00002\u0006\u0010l\u001a\u00020(H\u0000ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\bm\u0010nJ\r\u0010o\u001a\u00020]H\u0010¢\u0006\u0002\bpR\"\u0010\b\u001a\u0004\u0018\u00010\u00072\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007@BX\u0082\u000e¢\u0006\b\n\u0000\"\u0004\b\t\u0010\nR\u0014\u0010\u000b\u001a\u00020\f8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0016\u0010\u0014\u001a\u0004\u0018\u00010\u00028VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0016R\u001a\u0010\u0017\u001a\u00020\u00188@X\u0080\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\u0019\u0010\u001aR\u0014\u0010\u001b\u001a\u00020\u001c8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001eR\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 R\u0014\u0010!\u001a\u00020\"8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b#\u0010$R\u0014\u0010%\u001a\u00020\"8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b&\u0010$R\u0014\u0010'\u001a\u00020(8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b)\u0010*R\u0014\u0010+\u001a\u00020(8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b+\u0010*R\u0014\u0010,\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b.\u0010/R\u0014\u00100\u001a\u0002018VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b2\u00103R\u0011\u00104\u001a\u000205¢\u0006\b\n\u0000\u001a\u0004\b6\u00107R\u0014\u00108\u001a\u00020\u00078PX\u0090\u0004¢\u0006\u0006\u001a\u0004\b9\u0010:R\u001c\u0010;\u001a\u0010\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020=\u0018\u00010<X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010>\u001a\u0004\u0018\u00010\u00028VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b?\u0010\u0016R\u0016\u0010@\u001a\u0004\u0018\u00010A8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bB\u0010CR\"\u0010D\u001a\u00020EX\u0096\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010I\u001a\u0004\bF\u0010\u001a\"\u0004\bG\u0010HR\u001a\u0010J\u001a\u00020K8@X\u0080\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\bL\u0010\u001a\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006q"}, d2 = {"Landroidx/compose/ui/node/LookaheadDelegate;", "Landroidx/compose/ui/layout/Measurable;", "Landroidx/compose/ui/node/LookaheadCapablePlaceable;", "coordinator", "Landroidx/compose/ui/node/NodeCoordinator;", "(Landroidx/compose/ui/node/NodeCoordinator;)V", "result", "Landroidx/compose/ui/layout/MeasureResult;", "_measureResult", "set_measureResult", "(Landroidx/compose/ui/layout/MeasureResult;)V", "alignmentLinesOwner", "Landroidx/compose/ui/node/AlignmentLinesOwner;", "getAlignmentLinesOwner", "()Landroidx/compose/ui/node/AlignmentLinesOwner;", "cachedAlignmentLinesMap", "Landroidx/collection/MutableObjectIntMap;", "Landroidx/compose/ui/layout/AlignmentLine;", "getCachedAlignmentLinesMap", "()Landroidx/collection/MutableObjectIntMap;", "child", "getChild", "()Landroidx/compose/ui/node/LookaheadCapablePlaceable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "getConstraints-msEJaDk$ui_release", "()J", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "getCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "getCoordinator", "()Landroidx/compose/ui/node/NodeCoordinator;", "density", "", "getDensity", "()F", "fontScale", "getFontScale", "hasMeasureResult", "", "getHasMeasureResult", "()Z", "isLookingAhead", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "layoutNode", "Landroidx/compose/ui/node/LayoutNode;", "getLayoutNode", "()Landroidx/compose/ui/node/LayoutNode;", "lookaheadLayoutCoordinates", "Landroidx/compose/ui/layout/LookaheadLayoutCoordinates;", "getLookaheadLayoutCoordinates", "()Landroidx/compose/ui/layout/LookaheadLayoutCoordinates;", "measureResult", "getMeasureResult$ui_release", "()Landroidx/compose/ui/layout/MeasureResult;", "oldAlignmentLines", "", "", "parent", "getParent", "parentData", "", "getParentData", "()Ljava/lang/Object;", "position", "Landroidx/compose/ui/unit/IntOffset;", "getPosition-nOcc-ac", "setPosition--gyyYBs", "(J)V", "J", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g$ui_release", "getCachedAlignmentLine", "alignmentLine", "getCachedAlignmentLine$ui_release", "maxIntrinsicHeight", "width", "maxIntrinsicWidth", "height", "minIntrinsicHeight", "minIntrinsicWidth", "performingMeasure", "Landroidx/compose/ui/layout/Placeable;", "block", "Lkotlin/Function0;", "performingMeasure-K40F9xA", "(JLkotlin/jvm/functions/Function0;)Landroidx/compose/ui/layout/Placeable;", "placeAt", "", "zIndex", "layerBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/GraphicsLayerScope;", "Lkotlin/ExtensionFunctionType;", "placeAt-f8xVGno", "(JFLkotlin/jvm/functions/Function1;)V", "placeChildren", "placeSelf", "placeSelf--gyyYBs", "placeSelfApparentToRealOffset", "placeSelfApparentToRealOffset--gyyYBs$ui_release", "positionIn", "ancestor", "excludingAgnosticOffset", "positionIn-iSbpLlY$ui_release", "(Landroidx/compose/ui/node/LookaheadDelegate;Z)J", "replace", "replace$ui_release", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000²\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0002\b\u000e\b!\u0018\u00002\u00020\u00012\u00020\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0015\u0010J\u001a\u00020\u001a2\u0006\u0010K\u001a\u00020\u0019H\u0000¢\u0006\u0002\bLJ\r\u0010M\u001a\u00020NH\u0010¢\u0006\u0002\bOJ:\u0010P\u001a\u00020N2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010Q\u001a\u00020%2\u0019\u0010R\u001a\u0015\u0012\u0004\u0012\u00020T\u0012\u0004\u0012\u00020N\u0018\u00010S¢\u0006\u0002\bUH\u0004¢\u0006\u0004\bV\u0010WJ\u0017\u0010X\u001a\u00020N2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002¢\u0006\u0004\bY\u0010\u0015J\u0017\u0010Z\u001a\u00020N2\u0006\u0010\u0010\u001a\u00020\u0011H\u0000¢\u0006\u0004\b[\u0010\u0015J\b\u0010\\\u001a\u00020NH\u0014J&\u0010]\u001a\u00020^2\u0006\u00107\u001a\u0002082\f\u0010_\u001a\b\u0012\u0004\u0012\u00020\u001c0`H\u0086\b¢\u0006\u0004\ba\u0010bJ\u0010\u0010g\u001a\u00020\u001a2\u0006\u0010h\u001a\u00020\u001aH\u0016J\u0010\u0010i\u001a\u00020\u001a2\u0006\u0010h\u001a\u00020\u001aH\u0016J\u0010\u0010j\u001a\u00020\u001a2\u0006\u0010k\u001a\u00020\u001aH\u0016J\u0010\u0010l\u001a\u00020\u001a2\u0006\u0010k\u001a\u00020\u001aH\u0016J\u001f\u0010m\u001a\u00020\u00112\u0006\u0010n\u001a\u00020\u00002\u0006\u0010o\u001a\u00020\rH\u0000¢\u0006\u0004\bp\u0010qR\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0016\u0010\t\u001a\u0004\u0018\u00010\u00028VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\n\u0010\u000bR\u0014\u0010\f\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u001c\u0010\u0010\u001a\u00020\u0011X\u0096\u000e¢\u0006\u0010\n\u0002\u0010\u0016\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R\u001c\u0010\u0017\u001a\u0010\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001b\u001a\u00020\u001c8PX\u0090\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001eR\u0014\u0010\u001f\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001f\u0010\u000fR\u0014\u0010 \u001a\u00020!8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\"\u0010#R\u0014\u0010$\u001a\u00020%8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b&\u0010'R\u0014\u0010(\u001a\u00020%8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b)\u0010'R\u0016\u0010*\u001a\u0004\u0018\u00010\u00028VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b+\u0010\u000bR\u0014\u0010,\u001a\u00020-8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b.\u0010/R\u0014\u00100\u001a\u0002018VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b2\u00103R\u0014\u00104\u001a\u0002058@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b6\u0010\u0013R\u0014\u00107\u001a\u0002088@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b9\u0010\u0013R\u0011\u0010:\u001a\u00020;¢\u0006\b\n\u0000\u001a\u0004\b<\u0010=R\u0014\u0010>\u001a\u00020?8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b@\u0010AR\"\u0010C\u001a\u0004\u0018\u00010\u001c2\b\u0010B\u001a\u0004\u0018\u00010\u001c@BX\u0082\u000e¢\u0006\b\n\u0000\"\u0004\bD\u0010ER\u001a\u0010F\u001a\b\u0012\u0004\u0012\u00020\u00190GX\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\bH\u0010IR\u0016\u0010c\u001a\u0004\u0018\u00010d8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\be\u0010f¨\u0006r"}, d2 = {"Landroidx/compose/ui/node/LookaheadDelegate;", "Landroidx/compose/ui/layout/Measurable;", "Landroidx/compose/ui/node/LookaheadCapablePlaceable;", "coordinator", "Landroidx/compose/ui/node/NodeCoordinator;", "<init>", "(Landroidx/compose/ui/node/NodeCoordinator;)V", "getCoordinator", "()Landroidx/compose/ui/node/NodeCoordinator;", "child", "getChild", "()Landroidx/compose/ui/node/LookaheadCapablePlaceable;", "hasMeasureResult", "", "getHasMeasureResult", "()Z", "position", "Landroidx/compose/ui/unit/IntOffset;", "getPosition-nOcc-ac", "()J", "setPosition--gyyYBs", "(J)V", "J", "oldAlignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "", "measureResult", "Landroidx/compose/ui/layout/MeasureResult;", "getMeasureResult$ui_release", "()Landroidx/compose/ui/layout/MeasureResult;", "isLookingAhead", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "density", "", "getDensity", "()F", "fontScale", "getFontScale", "parent", "getParent", "layoutNode", "Landroidx/compose/ui/node/LayoutNode;", "getLayoutNode", "()Landroidx/compose/ui/node/LayoutNode;", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "getCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g$ui_release", "constraints", "Landroidx/compose/ui/unit/Constraints;", "getConstraints-msEJaDk$ui_release", "lookaheadLayoutCoordinates", "Landroidx/compose/ui/layout/LookaheadLayoutCoordinates;", "getLookaheadLayoutCoordinates", "()Landroidx/compose/ui/layout/LookaheadLayoutCoordinates;", "alignmentLinesOwner", "Landroidx/compose/ui/node/AlignmentLinesOwner;", "getAlignmentLinesOwner", "()Landroidx/compose/ui/node/AlignmentLinesOwner;", "result", "_measureResult", "set_measureResult", "(Landroidx/compose/ui/layout/MeasureResult;)V", "cachedAlignmentLinesMap", "Landroidx/collection/MutableObjectIntMap;", "getCachedAlignmentLinesMap", "()Landroidx/collection/MutableObjectIntMap;", "getCachedAlignmentLine", "alignmentLine", "getCachedAlignmentLine$ui_release", "replace", "", "replace$ui_release", "placeAt", "zIndex", "layerBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/GraphicsLayerScope;", "Lkotlin/ExtensionFunctionType;", "placeAt-f8xVGno", "(JFLkotlin/jvm/functions/Function1;)V", "placeSelf", "placeSelf--gyyYBs", "placeSelfApparentToRealOffset", "placeSelfApparentToRealOffset--gyyYBs$ui_release", "placeChildren", "performingMeasure", "Landroidx/compose/ui/layout/Placeable;", "block", "Lkotlin/Function0;", "performingMeasure-K40F9xA", "(JLkotlin/jvm/functions/Function0;)Landroidx/compose/ui/layout/Placeable;", "parentData", "", "getParentData", "()Ljava/lang/Object;", "minIntrinsicWidth", "height", "maxIntrinsicWidth", "minIntrinsicHeight", "width", "maxIntrinsicHeight", "positionIn", "ancestor", "excludingAgnosticOffset", "positionIn-iSbpLlY$ui_release", "(Landroidx/compose/ui/node/LookaheadDelegate;Z)J", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implements Measurable {
     public static final int $stable = 0;
     private MeasureResult _measureResult;
     private final NodeCoordinator coordinator;
     private Map<AlignmentLine, Integer> oldAlignmentLines;
-    private long position = IntOffset.Companion.m6823getZeronOccac();
+    private long position = IntOffset.Companion.m7390getZeronOccac();
     private final LookaheadLayoutCoordinates lookaheadLayoutCoordinates = new LookaheadLayoutCoordinates(this);
     private final MutableObjectIntMap<AlignmentLine> cachedAlignmentLinesMap = ObjectIntMapKt.mutableObjectIntMapOf();
 
@@ -39,8 +39,8 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     }
 
     /* renamed from: access$setMeasurementConstraints-BRTryo0 */
-    public static final /* synthetic */ void m5634access$setMeasurementConstraintsBRTryo0(LookaheadDelegate lookaheadDelegate, long j) {
-        lookaheadDelegate.m5501setMeasurementConstraintsBRTryo0(j);
+    public static final /* synthetic */ void m6179access$setMeasurementConstraintsBRTryo0(LookaheadDelegate lookaheadDelegate, long j) {
+        lookaheadDelegate.m6018setMeasurementConstraintsBRTryo0(j);
     }
 
     public static final /* synthetic */ void access$set_measureResult(LookaheadDelegate lookaheadDelegate, MeasureResult measureResult) {
@@ -68,12 +68,12 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
 
     @Override // androidx.compose.ui.node.LookaheadCapablePlaceable
     /* renamed from: getPosition-nOcc-ac */
-    public long mo5633getPositionnOccac() {
+    public long mo6174getPositionnOccac() {
         return this.position;
     }
 
     /* renamed from: setPosition--gyyYBs */
-    public void m5641setPositiongyyYBs(long j) {
+    public void m6186setPositiongyyYBs(long j) {
         this.position = j;
     }
 
@@ -119,14 +119,14 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     }
 
     /* renamed from: getSize-YbymL2g$ui_release */
-    public final long m5637getSizeYbymL2g$ui_release() {
+    public final long m6182getSizeYbymL2g$ui_release() {
         int width = getWidth();
-        return IntSize.m6850constructorimpl((getHeight() & 4294967295L) | (width << 32));
+        return IntSize.m7417constructorimpl((getHeight() & 4294967295L) | (width << 32));
     }
 
     /* renamed from: getConstraints-msEJaDk$ui_release */
-    public final long m5636getConstraintsmsEJaDk$ui_release() {
-        return m5498getMeasurementConstraintsmsEJaDk();
+    public final long m6181getConstraintsmsEJaDk$ui_release() {
+        return m6015getMeasurementConstraintsmsEJaDk();
     }
 
     public final LookaheadLayoutCoordinates getLookaheadLayoutCoordinates() {
@@ -141,16 +141,11 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     }
 
     public final void set_measureResult(MeasureResult measureResult) {
-        Unit unit;
         Map<AlignmentLine, Integer> map;
         if (measureResult != null) {
-            m5500setMeasuredSizeozmzZPI(IntSize.m6850constructorimpl((measureResult.getHeight() & 4294967295L) | (measureResult.getWidth() << 32)));
-            unit = Unit.INSTANCE;
+            m6017setMeasuredSizeozmzZPI(IntSize.m7417constructorimpl((measureResult.getHeight() & 4294967295L) | (measureResult.getWidth() << 32)));
         } else {
-            unit = null;
-        }
-        if (unit == null) {
-            m5500setMeasuredSizeozmzZPI(IntSize.Companion.m6860getZeroYbymL2g());
+            m6017setMeasuredSizeozmzZPI(IntSize.Companion.m7427getZeroYbymL2g());
         }
         if (!Intrinsics.areEqual(this._measureResult, measureResult) && measureResult != null && ((((map = this.oldAlignmentLines) != null && !map.isEmpty()) || !measureResult.getAlignmentLines().isEmpty()) && !Intrinsics.areEqual(measureResult.getAlignmentLines(), this.oldAlignmentLines))) {
             getAlignmentLinesOwner().getAlignmentLines().onAlignmentsChanged();
@@ -175,13 +170,13 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
 
     @Override // androidx.compose.ui.node.LookaheadCapablePlaceable
     public void replace$ui_release() {
-        mo5439placeAtf8xVGno(mo5633getPositionnOccac(), 0.0f, (Function1<? super GraphicsLayerScope, Unit>) null);
+        mo5955placeAtf8xVGno(mo6174getPositionnOccac(), 0.0f, (Function1<? super GraphicsLayerScope, Unit>) null);
     }
 
     @Override // androidx.compose.ui.layout.Placeable
     /* renamed from: placeAt-f8xVGno */
-    public final void mo5439placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
-        m5635placeSelfgyyYBs(j);
+    public final void mo5955placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
+        m6180placeSelfgyyYBs(j);
         if (isShallowPlacing$ui_release()) {
             return;
         }
@@ -189,9 +184,9 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     }
 
     /* renamed from: placeSelf--gyyYBs */
-    private final void m5635placeSelfgyyYBs(long j) {
-        if (!IntOffset.m6811equalsimpl0(mo5633getPositionnOccac(), j)) {
-            m5641setPositiongyyYBs(j);
+    private final void m6180placeSelfgyyYBs(long j) {
+        if (!IntOffset.m7378equalsimpl0(mo6174getPositionnOccac(), j)) {
+            m6186setPositiongyyYBs(j);
             LookaheadPassDelegate lookaheadPassDelegate$ui_release = getLayoutNode().getLayoutDelegate$ui_release().getLookaheadPassDelegate$ui_release();
             if (lookaheadPassDelegate$ui_release != null) {
                 lookaheadPassDelegate$ui_release.notifyChildrenUsingLookaheadCoordinatesWhilePlacing();
@@ -201,12 +196,12 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
         if (isPlacingForAlignment$ui_release()) {
             return;
         }
-        captureRulers$ui_release(getMeasureResult$ui_release());
+        captureRulersIfNeeded$ui_release(getMeasureResult$ui_release());
     }
 
     /* renamed from: placeSelfApparentToRealOffset--gyyYBs$ui_release */
-    public final void m5639placeSelfApparentToRealOffsetgyyYBs$ui_release(long j) {
-        m5635placeSelfgyyYBs(IntOffset.m6816plusqkQi6aY(j, m5496getApparentToRealOffsetnOccac()));
+    public final void m6184placeSelfApparentToRealOffsetgyyYBs$ui_release(long j) {
+        m6180placeSelfgyyYBs(IntOffset.m7383plusqkQi6aY(j, m6013getApparentToRealOffsetnOccac()));
     }
 
     protected void placeChildren() {
@@ -214,8 +209,8 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     }
 
     /* renamed from: performingMeasure-K40F9xA */
-    public final Placeable m5638performingMeasureK40F9xA(long j, Function0<? extends MeasureResult> function0) {
-        m5501setMeasurementConstraintsBRTryo0(j);
+    public final Placeable m6183performingMeasureK40F9xA(long j, Function0<? extends MeasureResult> function0) {
+        m6018setMeasurementConstraintsBRTryo0(j);
         set_measureResult(function0.invoke());
         return this;
     }
@@ -258,18 +253,18 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     }
 
     /* renamed from: positionIn-iSbpLlY$ui_release */
-    public final long m5640positionIniSbpLlY$ui_release(LookaheadDelegate lookaheadDelegate, boolean z) {
-        long m6823getZeronOccac = IntOffset.Companion.m6823getZeronOccac();
+    public final long m6185positionIniSbpLlY$ui_release(LookaheadDelegate lookaheadDelegate, boolean z) {
+        long m7390getZeronOccac = IntOffset.Companion.m7390getZeronOccac();
         LookaheadDelegate lookaheadDelegate2 = this;
         while (!Intrinsics.areEqual(lookaheadDelegate2, lookaheadDelegate)) {
             if (!lookaheadDelegate2.isPlacedUnderMotionFrameOfReference() || !z) {
-                m6823getZeronOccac = IntOffset.m6816plusqkQi6aY(m6823getZeronOccac, lookaheadDelegate2.mo5633getPositionnOccac());
+                m7390getZeronOccac = IntOffset.m7383plusqkQi6aY(m7390getZeronOccac, lookaheadDelegate2.mo6174getPositionnOccac());
             }
             NodeCoordinator wrappedBy$ui_release = lookaheadDelegate2.coordinator.getWrappedBy$ui_release();
             Intrinsics.checkNotNull(wrappedBy$ui_release);
             lookaheadDelegate2 = wrappedBy$ui_release.getLookaheadDelegate();
             Intrinsics.checkNotNull(lookaheadDelegate2);
         }
-        return m6823getZeronOccac;
+        return m7390getZeronOccac;
     }
 }

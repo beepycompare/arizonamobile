@@ -10,7 +10,7 @@ import io.reactivex.functions.BiFunction;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableReduceSeedSingle<T, R> extends Single<R> {
     final BiFunction<R, ? super T, R> reducer;
     final R seed;
@@ -27,7 +27,7 @@ public final class ObservableReduceSeedSingle<T, R> extends Single<R> {
         this.source.subscribe(new ReduceSeedObserver(singleObserver, this.reducer, this.seed));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ReduceSeedObserver<T, R> implements Observer<T>, Disposable {
         final SingleObserver<? super R> downstream;
         final BiFunction<R, ? super T, R> reducer;

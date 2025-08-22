@@ -12,7 +12,7 @@ import io.reactivex.subscribers.SerializedSubscriber;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableRetryWhen<T> extends AbstractFlowableWithUpstream<T, T> {
     final Function<? super Flowable<Throwable>, ? extends Publisher<?>> handler;
 
@@ -39,7 +39,7 @@ public final class FlowableRetryWhen<T> extends AbstractFlowableWithUpstream<T, 
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class RetryWhenSubscriber<T> extends FlowableRepeatWhen.WhenSourceSubscriber<T, Throwable> {
         private static final long serialVersionUID = -2680129890138081029L;
 

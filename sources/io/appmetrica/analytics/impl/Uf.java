@@ -1,37 +1,13 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.ecommerce.ECommerceProduct;
-import java.util.List;
-import java.util.Map;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.app.Application;
+import androidx.media3.exoplayer.upstream.CmcdData;
+import kotlin.Metadata;
+@Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0004\u0010\u0005J\n\u0010\u0003\u001a\u0004\u0018\u00010\u0002H\u0016¨\u0006\u0006"}, d2 = {"Lio/appmetrica/analytics/impl/Uf;", "Lio/appmetrica/analytics/impl/Sf;", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "<init>", "()V", "analytics_binaryProdRelease"}, k = 1, mv = {1, 6, 0})
 /* loaded from: classes4.dex */
-public final class Uf {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f671a;
-    public final String b;
-    public final List c;
-    public final Map d;
-    public final Nf e;
-    public final Nf f;
-    public final List g;
-
-    public Uf(ECommerceProduct eCommerceProduct) {
-        this(eCommerceProduct.getSku(), eCommerceProduct.getName(), CollectionUtils.arrayListCopyOfNullableCollection(eCommerceProduct.getCategoriesPath()), CollectionUtils.mapCopyOfNullableMap(eCommerceProduct.getPayload()), eCommerceProduct.getActualPrice() == null ? null : new Nf(eCommerceProduct.getActualPrice()), eCommerceProduct.getOriginalPrice() != null ? new Nf(eCommerceProduct.getOriginalPrice()) : null, CollectionUtils.arrayListCopyOfNullableCollection(eCommerceProduct.getPromocodes()));
-    }
-
-    public final String toString() {
-        return "ProductWrapper{sku='" + this.f671a + "', name='" + this.b + "', categoriesPath=" + this.c + ", payload=" + this.d + ", actualPrice=" + this.e + ", originalPrice=" + this.f + ", promocodes=" + this.g + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public Uf(String str, String str2, List list, Map map, Nf nf, Nf nf2, List list2) {
-        this.f671a = str;
-        this.b = str2;
-        this.c = list;
-        this.d = map;
-        this.e = nf;
-        this.f = nf2;
-        this.g = list2;
+public final class Uf implements Sf {
+    @Override // io.appmetrica.analytics.impl.Sf
+    public String a() {
+        return Application.getProcessName();
     }
 }

@@ -5,19 +5,19 @@ import android.location.Location;
 public final class L0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Location f527a;
-    public final /* synthetic */ C0497p1 b;
+    public final /* synthetic */ Location f536a;
+    public final /* synthetic */ C0494p1 b;
 
-    public L0(C0497p1 c0497p1, Location location) {
-        this.b = c0497p1;
-        this.f527a = location;
+    public L0(C0494p1 c0494p1, Location location) {
+        this.b = c0494p1;
+        this.f536a = location;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0620u0 c0620u0 = this.b.f994a;
-        Location location = this.f527a;
-        c0620u0.getClass();
-        C0595t0.c().a(location);
+        C0617u0 c0617u0 = this.b.f1005a;
+        Location location = this.f536a;
+        c0617u0.getClass();
+        C0592t0.c().a(location);
     }
 }

@@ -4,7 +4,7 @@ import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableHide<T> extends AbstractObservableWithUpstream<T, T> {
     public ObservableHide(ObservableSource<T> observableSource) {
         super(observableSource);
@@ -15,7 +15,7 @@ public final class ObservableHide<T> extends AbstractObservableWithUpstream<T, T
         this.source.subscribe(new HideDisposable(observer));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class HideDisposable<T> implements Observer<T>, Disposable {
         final Observer<? super T> downstream;
         Disposable upstream;

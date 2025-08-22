@@ -11,7 +11,7 @@ import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.TrackOutput;
 import java.io.IOException;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class OggExtractor implements Extractor {
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: androidx.media3.extractor.ogg.OggExtractor$$ExternalSyntheticLambda0
         @Override // androidx.media3.extractor.ExtractorsFactory

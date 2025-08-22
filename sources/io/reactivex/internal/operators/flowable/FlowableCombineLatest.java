@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableCombineLatest<T, R> extends Flowable<R> {
     final Publisher<? extends T>[] array;
     final int bufferSize;
@@ -94,7 +94,7 @@ public final class FlowableCombineLatest<T, R> extends Flowable<R> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class CombineLatestCoordinator<T, R> extends BasicIntQueueSubscription<R> {
         private static final long serialVersionUID = -5082275438355852221L;
         volatile boolean cancelled;
@@ -362,7 +362,7 @@ public final class FlowableCombineLatest<T, R> extends Flowable<R> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class CombineLatestInnerSubscriber<T> extends AtomicReference<Subscription> implements FlowableSubscriber<T> {
         private static final long serialVersionUID = -8730235182291002949L;
         final int index;
@@ -413,7 +413,7 @@ public final class FlowableCombineLatest<T, R> extends Flowable<R> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class SingletonArrayFunc implements Function<T, R> {
         SingletonArrayFunc() {
         }

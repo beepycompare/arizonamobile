@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.colorspace.ColorSpaces;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 /* compiled from: ColorVectorConverter.kt */
-@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\"5\u0010\u0000\u001a)\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0003\u0012\b\b\u0004\u0012\u0004\b\b(\u0005\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u00060\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"<\u0010\t\u001a)\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0003\u0012\b\b\u0004\u0012\u0004\b\b(\u0005\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u00060\u0001*\u00020\n8F¢\u0006\u0006\u001a\u0004\b\u000b\u0010\f¨\u0006\r"}, d2 = {"ColorToVector", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/colorspace/ColorSpace;", "Lkotlin/ParameterName;", "name", "colorSpace", "Landroidx/compose/animation/core/TwoWayConverter;", "Landroidx/compose/ui/graphics/Color;", "Landroidx/compose/animation/core/AnimationVector4D;", "VectorConverter", "Landroidx/compose/ui/graphics/Color$Companion;", "getVectorConverter", "(Landroidx/compose/ui/graphics/Color$Companion;)Lkotlin/jvm/functions/Function1;", "animation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\"5\u0010\u0000\u001a)\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0003\u0012\b\b\u0004\u0012\u0004\b\b(\u0005\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u00060\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"<\u0010\t\u001a)\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0003\u0012\b\b\u0004\u0012\u0004\b\b(\u0005\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u00060\u0001*\u00020\n8F¢\u0006\u0006\u001a\u0004\b\u000b\u0010\f¨\u0006\r"}, d2 = {"ColorToVector", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/colorspace/ColorSpace;", "Lkotlin/ParameterName;", "name", "colorSpace", "Landroidx/compose/animation/core/TwoWayConverter;", "Landroidx/compose/ui/graphics/Color;", "Landroidx/compose/animation/core/AnimationVector4D;", "VectorConverter", "Landroidx/compose/ui/graphics/Color$Companion;", "getVectorConverter", "(Landroidx/compose/ui/graphics/Color$Companion;)Lkotlin/jvm/functions/Function1;", "animation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ColorVectorConverterKt {
     private static final Function1<ColorSpace, TwoWayConverter<Color, AnimationVector4D>> ColorToVector = new Function1<ColorSpace, TwoWayConverter<Color, AnimationVector4D>>() { // from class: androidx.compose.animation.ColorVectorConverterKt$ColorToVector$1
@@ -19,13 +19,13 @@ public final class ColorVectorConverterKt {
             return VectorConvertersKt.TwoWayConverter(new Function1<Color, AnimationVector4D>() { // from class: androidx.compose.animation.ColorVectorConverterKt$ColorToVector$1.1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ AnimationVector4D invoke(Color color) {
-                    return m83invoke8_81llA(color.m4088unboximpl());
+                    return m83invoke8_81llA(color.m4547unboximpl());
                 }
 
                 /* renamed from: invoke-8_81llA  reason: not valid java name */
                 public final AnimationVector4D m83invoke8_81llA(long j) {
-                    long m4075convertvNxB06k = Color.m4075convertvNxB06k(j, ColorSpaces.INSTANCE.getOklab());
-                    return new AnimationVector4D(Color.m4080getAlphaimpl(m4075convertvNxB06k), Color.m4084getRedimpl(m4075convertvNxB06k), Color.m4083getGreenimpl(m4075convertvNxB06k), Color.m4081getBlueimpl(m4075convertvNxB06k));
+                    long m4534convertvNxB06k = Color.m4534convertvNxB06k(j, ColorSpaces.INSTANCE.getOklab());
+                    return new AnimationVector4D(Color.m4539getAlphaimpl(m4534convertvNxB06k), Color.m4543getRedimpl(m4534convertvNxB06k), Color.m4542getGreenimpl(m4534convertvNxB06k), Color.m4540getBlueimpl(m4534convertvNxB06k));
                 }
             }, new Function1<AnimationVector4D, Color>() { // from class: androidx.compose.animation.ColorVectorConverterKt$ColorToVector$1.2
                 {
@@ -34,7 +34,7 @@ public final class ColorVectorConverterKt {
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Color invoke(AnimationVector4D animationVector4D) {
-                    return Color.m4068boximpl(m84invokevNxB06k(animationVector4D));
+                    return Color.m4527boximpl(m84invokevNxB06k(animationVector4D));
                 }
 
                 /* renamed from: invoke-vNxB06k  reason: not valid java name */
@@ -58,7 +58,7 @@ public final class ColorVectorConverterKt {
                     float f2 = f <= 0.5f ? f : 0.5f;
                     float v1 = animationVector4D.getV1();
                     float f3 = v1 >= 0.0f ? v1 : 0.0f;
-                    return Color.m4075convertvNxB06k(ColorKt.Color(v2, v3, f2, f3 <= 1.0f ? f3 : 1.0f, ColorSpaces.INSTANCE.getOklab()), ColorSpace.this);
+                    return Color.m4534convertvNxB06k(ColorKt.Color(v2, v3, f2, f3 <= 1.0f ? f3 : 1.0f, ColorSpaces.INSTANCE.getOklab()), ColorSpace.this);
                 }
             });
         }

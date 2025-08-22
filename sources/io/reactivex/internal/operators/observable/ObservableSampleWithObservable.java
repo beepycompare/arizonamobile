@@ -7,7 +7,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.observers.SerializedObserver;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableSampleWithObservable<T> extends AbstractObservableWithUpstream<T, T> {
     final boolean emitLast;
     final ObservableSource<?> other;
@@ -28,7 +28,7 @@ public final class ObservableSampleWithObservable<T> extends AbstractObservableW
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static abstract class SampleMainObserver<T> extends AtomicReference<T> implements Observer<T>, Disposable {
         private static final long serialVersionUID = -3517602651313910099L;
         final Observer<? super T> downstream;
@@ -106,7 +106,7 @@ public final class ObservableSampleWithObservable<T> extends AbstractObservableW
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SamplerObserver<T> implements Observer<Object> {
         final SampleMainObserver<T> parent;
 
@@ -135,7 +135,7 @@ public final class ObservableSampleWithObservable<T> extends AbstractObservableW
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SampleMainNoLast<T> extends SampleMainObserver<T> {
         private static final long serialVersionUID = -3029755663834015785L;
 
@@ -154,7 +154,7 @@ public final class ObservableSampleWithObservable<T> extends AbstractObservableW
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SampleMainEmitLast<T> extends SampleMainObserver<T> {
         private static final long serialVersionUID = -3029755663834015785L;
         volatile boolean done;

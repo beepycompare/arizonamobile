@@ -1,15 +1,13 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.List;
 /* loaded from: classes4.dex */
-public enum Jl {
-    UNKNOWN(0),
-    NETWORK(1),
-    PARSE(2);
-    
+public final class Jl extends La {
+    public Jl(Ji ji) {
+        super(ji);
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public final int f510a;
-
-    Jl(int i) {
-        this.f510a = i;
+    @Override // io.appmetrica.analytics.impl.La
+    public final void a(List<AbstractC0358jh> list) {
     }
 }

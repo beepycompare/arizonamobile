@@ -1,61 +1,53 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public abstract class Pd implements InterfaceC0167bo, InterfaceC0473o2 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f594a;
-    public final int b;
-    public final po c;
-    public final W2 d;
-    public PublicLogger e = PublicLogger.getAnonymousInstance();
-
-    public Pd(int i, String str, po poVar, W2 w2) {
-        this.b = i;
-        this.f594a = str;
-        this.c = poVar;
-        this.d = w2;
+public abstract class Pd extends AbstractC0458nf implements InterfaceC0763zl {
+    public Pd(InterfaceC0223eb interfaceC0223eb, String str) {
+        super(interfaceC0223eb, str);
     }
 
-    public final C0193co a() {
-        C0193co c0193co = new C0193co();
-        c0193co.b = this.b;
-        c0193co.f805a = this.f594a.getBytes();
-        c0193co.d = new C0244eo();
-        c0193co.c = new Cdo();
-        return c0193co;
+    public final String c(String str, String str2) {
+        return this.f983a.getString(f(str), str2);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0167bo
-    public abstract /* synthetic */ void a(C0141ao c0141ao);
-
-    public final W2 b() {
-        return this.d;
+    public final InterfaceC0763zl d(String str, String str2) {
+        return (InterfaceC0763zl) b(f(str), str2);
     }
 
-    public final String c() {
-        return this.f594a;
+    public final boolean e(String str) {
+        return this.f983a.a(f(str));
     }
 
-    public final po d() {
-        return this.c;
+    public abstract String f(String str);
+
+    public InterfaceC0763zl g(String str) {
+        return (InterfaceC0763zl) d(f(str));
     }
 
-    public final int e() {
-        return this.b;
+    public Pd(InterfaceC0223eb interfaceC0223eb) {
+        this(interfaceC0223eb, null);
     }
 
-    public final boolean f() {
-        no a2 = this.c.a(this.f594a);
-        if (a2.f975a) {
-            return true;
-        }
-        this.e.warning("Attribute " + this.f594a + " of type " + ((String) Ln.f537a.get(this.b)) + " is skipped because " + a2.b, new Object[0]);
-        return false;
+    public final InterfaceC0763zl d(String str, int i) {
+        return (InterfaceC0763zl) b(f(str), i);
     }
 
-    public final void a(PublicLogger publicLogger) {
-        this.e = publicLogger;
+    public final int c(String str, int i) {
+        return this.f983a.getInt(f(str), i);
+    }
+
+    public final InterfaceC0763zl d(String str, long j) {
+        return (InterfaceC0763zl) b(f(str), j);
+    }
+
+    public final InterfaceC0763zl d(String str, boolean z) {
+        return (InterfaceC0763zl) b(f(str), z);
+    }
+
+    public final long c(String str, long j) {
+        return this.f983a.getLong(f(str), j);
+    }
+
+    public final boolean c(String str, boolean z) {
+        return this.f983a.getBoolean(f(str), z);
     }
 }

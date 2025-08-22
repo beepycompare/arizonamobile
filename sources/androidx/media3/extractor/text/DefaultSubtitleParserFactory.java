@@ -13,7 +13,7 @@ import androidx.media3.extractor.text.vobsub.VobsubParser;
 import androidx.media3.extractor.text.webvtt.Mp4WebvttParser;
 import androidx.media3.extractor.text.webvtt.WebvttParser;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DefaultSubtitleParserFactory implements SubtitleParser.Factory {
     @Override // androidx.media3.extractor.text.SubtitleParser.Factory
     public boolean supportsFormat(Format format) {

@@ -11,7 +11,7 @@ import io.reactivex.internal.operators.single.SingleMap;
 import io.reactivex.internal.operators.single.SingleZipArray;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleZipIterable<T, R> extends Single<R> {
     final Iterable<? extends SingleSource<? extends T>> sources;
     final Function<? super Object[], ? extends R> zipper;
@@ -55,7 +55,7 @@ public final class SingleZipIterable<T, R> extends Single<R> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class SingletonArrayFunc implements Function<T, R> {
         SingletonArrayFunc() {
         }

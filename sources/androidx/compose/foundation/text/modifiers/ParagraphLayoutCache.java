@@ -29,7 +29,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: ParagraphLayoutCache.kt */
-@Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\b\b\u0000\u0018\u00002\u00020\u0001BE\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\u000b\u0012\b\b\u0002\u0010\f\u001a\u00020\r\u0012\b\b\u0002\u0010\u000e\u001a\u00020\r¢\u0006\u0002\u0010\u000fJ\u0016\u0010:\u001a\u00020\r2\u0006\u0010;\u001a\u00020\r2\u0006\u0010<\u001a\u00020\u001fJ\"\u0010=\u001a\u0002012\u0006\u0010>\u001a\u0002092\u0006\u0010<\u001a\u00020\u001fH\u0000ø\u0001\u0000¢\u0006\u0004\b?\u0010@J \u0010A\u001a\u00020\u000b2\u0006\u0010>\u001a\u0002092\u0006\u0010<\u001a\u00020\u001fø\u0001\u0000¢\u0006\u0004\bB\u0010CJ\b\u0010D\u001a\u00020,H\u0002J\u000e\u0010E\u001a\u00020\r2\u0006\u0010<\u001a\u00020\u001fJ\u000e\u0010F\u001a\u00020\r2\u0006\u0010<\u001a\u00020\u001fJ\"\u0010G\u001a\u00020\u000b2\u0006\u0010>\u001a\u0002092\u0006\u0010<\u001a\u00020\u001fH\u0002ø\u0001\u0000¢\u0006\u0004\bH\u0010CJ\u0010\u0010I\u001a\u0002072\u0006\u0010<\u001a\u00020\u001fH\u0002J\u0010\u0010J\u001a\u0004\u0018\u00010K2\u0006\u0010\u0004\u001a\u00020\u0005J\b\u0010L\u001a\u00020\u0003H\u0016JH\u0010M\u001a\u00020,2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\rø\u0001\u0000¢\u0006\u0004\bN\u0010OJ,\u0010P\u001a\u0002092\u0006\u0010>\u001a\u0002092\u0006\u0010<\u001a\u00020\u001f2\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0002ø\u0001\u0000¢\u0006\u0004\bQ\u0010RR\u000e\u0010\u0010\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R(\u0010\u0014\u001a\u0004\u0018\u00010\u00132\b\u0010\u0012\u001a\u0004\u0018\u00010\u0013@@X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R\u001a\u0010\u0019\u001a\u00020\u000bX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010 \u001a\u00020!X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\"R\"\u0010#\u001a\u00020$X\u0080\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\"\u001a\u0004\b%\u0010&\"\u0004\b'\u0010(R\u0010\u0010)\u001a\u0004\u0018\u00010*X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\u00020,8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b-\u0010.R\u0016\u0010\b\u001a\u00020\tX\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010/R\u001c\u00100\u001a\u0004\u0018\u000101X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b2\u00103\"\u0004\b4\u00105R\u0010\u00106\u001a\u0004\u0018\u000107X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u00108\u001a\u000209X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\"R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006S"}, d2 = {"Landroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;", "", "text", "", "style", "Landroidx/compose/ui/text/TextStyle;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "softWrap", "", "maxLines", "", "minLines", "(Ljava/lang/String;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/font/FontFamily$Resolver;IZIILkotlin/jvm/internal/DefaultConstructorMarker;)V", "cachedIntrinsicHeight", "cachedIntrinsicHeightInputWidth", "value", "Landroidx/compose/ui/unit/Density;", "density", "getDensity$foundation_release", "()Landroidx/compose/ui/unit/Density;", "setDensity$foundation_release", "(Landroidx/compose/ui/unit/Density;)V", "didOverflow", "getDidOverflow$foundation_release", "()Z", "setDidOverflow$foundation_release", "(Z)V", "intrinsicsLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "lastDensity", "Landroidx/compose/foundation/text/modifiers/InlineDensity;", "J", "layoutSize", "Landroidx/compose/ui/unit/IntSize;", "getLayoutSize-YbymL2g$foundation_release", "()J", "setLayoutSize-ozmzZPI$foundation_release", "(J)V", "mMinLinesConstrainer", "Landroidx/compose/foundation/text/modifiers/MinLinesConstrainer;", "observeFontChanges", "", "getObserveFontChanges$foundation_release", "()Lkotlin/Unit;", "I", "paragraph", "Landroidx/compose/ui/text/Paragraph;", "getParagraph$foundation_release", "()Landroidx/compose/ui/text/Paragraph;", "setParagraph$foundation_release", "(Landroidx/compose/ui/text/Paragraph;)V", "paragraphIntrinsics", "Landroidx/compose/ui/text/ParagraphIntrinsics;", "prevConstraints", "Landroidx/compose/ui/unit/Constraints;", "intrinsicHeight", "width", "layoutDirection", "layoutText", "constraints", "layoutText-K40F9xA$foundation_release", "(JLandroidx/compose/ui/unit/LayoutDirection;)Landroidx/compose/ui/text/Paragraph;", "layoutWithConstraints", "layoutWithConstraints-K40F9xA", "(JLandroidx/compose/ui/unit/LayoutDirection;)Z", "markDirty", "maxIntrinsicWidth", "minIntrinsicWidth", "newLayoutWillBeDifferent", "newLayoutWillBeDifferent-K40F9xA", "setLayoutDirection", "slowCreateTextLayoutResultOrNull", "Landroidx/compose/ui/text/TextLayoutResult;", "toString", "update", "update-L6sJoHM", "(Ljava/lang/String;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/font/FontFamily$Resolver;IZII)V", "useMinLinesConstrainer", "useMinLinesConstrainer-euUD3Qg", "(JLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/text/TextStyle;)J", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u008a\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u0001BG\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\u000b\u0012\b\b\u0002\u0010\f\u001a\u00020\r\u0012\b\b\u0002\u0010\u000e\u001a\u00020\r¢\u0006\u0004\b\u000f\u0010\u0010J\u0017\u0010A\u001a\u00020\u001d2\u0006\u0010B\u001a\u00020CH\u0002¢\u0006\u0004\bD\u00100J\u001d\u0010E\u001a\u00020\u000b2\u0006\u0010F\u001a\u0002082\u0006\u0010G\u001a\u000206¢\u0006\u0004\bH\u0010IJ)\u0010J\u001a\u0002082\u0006\u0010F\u001a\u0002082\u0006\u0010G\u001a\u0002062\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0002¢\u0006\u0004\bK\u0010LJ\u0016\u0010M\u001a\u00020\r2\u0006\u0010N\u001a\u00020\r2\u0006\u0010G\u001a\u000206JE\u0010O\u001a\u00020\u001d2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\r¢\u0006\u0004\bP\u0010QJ\u0010\u0010R\u001a\u0002042\u0006\u0010G\u001a\u000206H\u0002J\u001f\u0010S\u001a\u00020!2\u0006\u0010F\u001a\u0002082\u0006\u0010G\u001a\u000206H\u0000¢\u0006\u0004\bT\u0010UJ\u001f\u0010V\u001a\u00020\u000b2\u0006\u0010F\u001a\u0002082\u0006\u0010G\u001a\u000206H\u0002¢\u0006\u0004\bW\u0010IJ\b\u0010X\u001a\u00020\u001dH\u0002J\u0010\u0010Y\u001a\u0004\u0018\u00010Z2\u0006\u0010\u0004\u001a\u00020\u0005J\u000e\u0010[\u001a\u00020\r2\u0006\u0010G\u001a\u000206J\u000e\u0010\\\u001a\u00020\r2\u0006\u0010G\u001a\u000206J\b\u0010]\u001a\u00020\u0003H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0011R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0014R(\u0010\u0017\u001a\u0004\u0018\u00010\u00162\b\u0010\u0015\u001a\u0004\u0018\u00010\u0016@@X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\u00020\u001d8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u001e\u0010\u001fR\u001c\u0010 \u001a\u0004\u0018\u00010!X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\"\u0010#\"\u0004\b$\u0010%R\u001a\u0010&\u001a\u00020\u000bX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b'\u0010(\"\u0004\b)\u0010*R\u001c\u0010+\u001a\u00020,X\u0080\u000e¢\u0006\u0010\n\u0002\u0010\u0014\u001a\u0004\b-\u0010.\"\u0004\b/\u00100R\u0010\u00101\u001a\u0004\u0018\u000102X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00103\u001a\u0004\u0018\u000104X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00105\u001a\u0004\u0018\u000106X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00107\u001a\u000208X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0014R\u000e\u00109\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010:\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010;\u001a\u00020<8\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b=\u0010>\u001a\u0004\b?\u0010.\"\u0004\b@\u00100¨\u0006^"}, d2 = {"Landroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;", "", "text", "", "style", "Landroidx/compose/ui/text/TextStyle;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "softWrap", "", "maxLines", "", "minLines", "<init>", "(Ljava/lang/String;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/font/FontFamily$Resolver;IZIILkotlin/jvm/internal/DefaultConstructorMarker;)V", "I", "lastDensity", "Landroidx/compose/foundation/text/modifiers/InlineDensity;", "J", "value", "Landroidx/compose/ui/unit/Density;", "density", "getDensity$foundation_release", "()Landroidx/compose/ui/unit/Density;", "setDensity$foundation_release", "(Landroidx/compose/ui/unit/Density;)V", "observeFontChanges", "", "getObserveFontChanges$foundation_release", "()Lkotlin/Unit;", "paragraph", "Landroidx/compose/ui/text/Paragraph;", "getParagraph$foundation_release", "()Landroidx/compose/ui/text/Paragraph;", "setParagraph$foundation_release", "(Landroidx/compose/ui/text/Paragraph;)V", "didOverflow", "getDidOverflow$foundation_release", "()Z", "setDidOverflow$foundation_release", "(Z)V", "layoutSize", "Landroidx/compose/ui/unit/IntSize;", "getLayoutSize-YbymL2g$foundation_release", "()J", "setLayoutSize-ozmzZPI$foundation_release", "(J)V", "mMinLinesConstrainer", "Landroidx/compose/foundation/text/modifiers/MinLinesConstrainer;", "paragraphIntrinsics", "Landroidx/compose/ui/text/ParagraphIntrinsics;", "intrinsicsLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "prevConstraints", "Landroidx/compose/ui/unit/Constraints;", "cachedIntrinsicHeightInputWidth", "cachedIntrinsicHeight", "historyFlag", "", "getHistoryFlag$foundation_release$annotations", "()V", "getHistoryFlag$foundation_release", "setHistoryFlag$foundation_release", "recordHistory", "op", "Landroidx/compose/foundation/text/modifiers/LayoutCacheOperation;", "recordHistory-4ETZmGE", "layoutWithConstraints", "constraints", "layoutDirection", "layoutWithConstraints-K40F9xA", "(JLandroidx/compose/ui/unit/LayoutDirection;)Z", "useMinLinesConstrainer", "useMinLinesConstrainer-euUD3Qg", "(JLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/text/TextStyle;)J", "intrinsicHeight", "width", "update", "update-L6sJoHM", "(Ljava/lang/String;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/font/FontFamily$Resolver;IZII)V", "setLayoutDirection", "layoutText", "layoutText-K40F9xA$foundation_release", "(JLandroidx/compose/ui/unit/LayoutDirection;)Landroidx/compose/ui/text/Paragraph;", "newLayoutWillBeDifferent", "newLayoutWillBeDifferent-K40F9xA", "markDirty", "slowCreateTextLayoutResultOrNull", "Landroidx/compose/ui/text/TextLayoutResult;", "minIntrinsicWidth", "maxIntrinsicWidth", "toString", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ParagraphLayoutCache {
     public static final int $stable = 8;
@@ -38,6 +38,7 @@ public final class ParagraphLayoutCache {
     private Density density;
     private boolean didOverflow;
     private FontFamily.Resolver fontFamilyResolver;
+    private long historyFlag;
     private LayoutDirection intrinsicsLayoutDirection;
     private long lastDensity;
     private long layoutSize;
@@ -56,6 +57,9 @@ public final class ParagraphLayoutCache {
         this(str, textStyle, resolver, i, z, i2, i3);
     }
 
+    public static /* synthetic */ void getHistoryFlag$foundation_release$annotations() {
+    }
+
     private ParagraphLayoutCache(String str, TextStyle textStyle, FontFamily.Resolver resolver, int i, boolean z, int i2, int i3) {
         this.text = str;
         this.style = textStyle;
@@ -64,16 +68,16 @@ public final class ParagraphLayoutCache {
         this.softWrap = z;
         this.maxLines = i2;
         this.minLines = i3;
-        this.lastDensity = InlineDensity.Companion.m1414getUnspecifiedL26CHvs();
+        this.lastDensity = InlineDensity.Companion.m1674getUnspecifiedL26CHvs();
         long j = 0;
-        this.layoutSize = IntSize.m6850constructorimpl((j & 4294967295L) | (j << 32));
-        this.prevConstraints = Constraints.Companion.m6647fixedJhjzzOo(0, 0);
+        this.layoutSize = IntSize.m7417constructorimpl((j & 4294967295L) | (j << 32));
+        this.prevConstraints = Constraints.Companion.m7214fixedJhjzzOo(0, 0);
         this.cachedIntrinsicHeightInputWidth = -1;
         this.cachedIntrinsicHeight = -1;
     }
 
     public /* synthetic */ ParagraphLayoutCache(String str, TextStyle textStyle, FontFamily.Resolver resolver, int i, boolean z, int i2, int i3, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, textStyle, resolver, (i4 & 8) != 0 ? TextOverflow.Companion.m6619getClipgIe3tQ8() : i, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? Integer.MAX_VALUE : i2, (i4 & 64) != 0 ? 1 : i3, null);
+        this(str, textStyle, resolver, (i4 & 8) != 0 ? TextOverflow.Companion.m7186getClipgIe3tQ8() : i, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? Integer.MAX_VALUE : i2, (i4 & 64) != 0 ? 1 : i3, null);
     }
 
     public final Density getDensity$foundation_release() {
@@ -82,13 +86,14 @@ public final class ParagraphLayoutCache {
 
     public final void setDensity$foundation_release(Density density) {
         Density density2 = this.density;
-        long m1406constructorimpl = density != null ? InlineDensity.m1406constructorimpl(density) : InlineDensity.Companion.m1414getUnspecifiedL26CHvs();
+        long m1666constructorimpl = density != null ? InlineDensity.m1666constructorimpl(density) : InlineDensity.Companion.m1674getUnspecifiedL26CHvs();
         if (density2 == null) {
             this.density = density;
-            this.lastDensity = m1406constructorimpl;
-        } else if (density == null || !InlineDensity.m1408equalsimpl0(this.lastDensity, m1406constructorimpl)) {
+            this.lastDensity = m1666constructorimpl;
+        } else if (density == null || !InlineDensity.m1668equalsimpl0(this.lastDensity, m1666constructorimpl)) {
             this.density = density;
-            this.lastDensity = m1406constructorimpl;
+            this.lastDensity = m1666constructorimpl;
+            m1706recordHistory4ETZmGE(LayoutCacheOperation.Companion.m1683getMarkDirtyDensityDEKiAbY());
             markDirty();
         }
     }
@@ -118,37 +123,51 @@ public final class ParagraphLayoutCache {
     }
 
     /* renamed from: getLayoutSize-YbymL2g$foundation_release  reason: not valid java name */
-    public final long m1436getLayoutSizeYbymL2g$foundation_release() {
+    public final long m1709getLayoutSizeYbymL2g$foundation_release() {
         return this.layoutSize;
     }
 
     /* renamed from: setLayoutSize-ozmzZPI$foundation_release  reason: not valid java name */
-    public final void m1439setLayoutSizeozmzZPI$foundation_release(long j) {
+    public final void m1712setLayoutSizeozmzZPI$foundation_release(long j) {
         this.layoutSize = j;
     }
 
+    public final long getHistoryFlag$foundation_release() {
+        return this.historyFlag;
+    }
+
+    public final void setHistoryFlag$foundation_release(long j) {
+        this.historyFlag = j;
+    }
+
+    /* renamed from: recordHistory-4ETZmGE  reason: not valid java name */
+    private final void m1706recordHistory4ETZmGE(long j) {
+        this.historyFlag = j | (this.historyFlag << 2);
+    }
+
     /* renamed from: layoutWithConstraints-K40F9xA  reason: not valid java name */
-    public final boolean m1438layoutWithConstraintsK40F9xA(long j, LayoutDirection layoutDirection) {
+    public final boolean m1711layoutWithConstraintsK40F9xA(long j, LayoutDirection layoutDirection) {
         ParagraphLayoutCache paragraphLayoutCache;
         LayoutDirection layoutDirection2;
-        long m6651constrain4WqzIAM;
-        long m6651constrain4WqzIAM2;
+        long m7218constrain4WqzIAM;
+        long m7218constrain4WqzIAM2;
+        m1706recordHistory4ETZmGE(LayoutCacheOperation.Companion.m1682getLayoutWithConstraintsDEKiAbY());
         boolean z = true;
         if (this.minLines > 1) {
             paragraphLayoutCache = this;
             layoutDirection2 = layoutDirection;
-            j = m1435useMinLinesConstrainereuUD3Qg$default(paragraphLayoutCache, j, layoutDirection2, null, 4, null);
+            j = m1708useMinLinesConstrainereuUD3Qg$default(paragraphLayoutCache, j, layoutDirection2, null, 4, null);
         } else {
             paragraphLayoutCache = this;
             layoutDirection2 = layoutDirection;
         }
         boolean z2 = false;
-        if (!m1433newLayoutWillBeDifferentK40F9xA(j, layoutDirection2)) {
-            if (!Constraints.m6630equalsimpl0(j, paragraphLayoutCache.prevConstraints)) {
+        if (!m1705newLayoutWillBeDifferentK40F9xA(j, layoutDirection2)) {
+            if (!Constraints.m7197equalsimpl0(j, paragraphLayoutCache.prevConstraints)) {
                 Paragraph paragraph = paragraphLayoutCache.paragraph;
                 Intrinsics.checkNotNull(paragraph);
-                paragraphLayoutCache.layoutSize = ConstraintsKt.m6651constrain4WqzIAM(j, IntSize.m6850constructorimpl((TextDelegateKt.ceilToIntPx(Math.min(paragraph.getMaxIntrinsicWidth(), paragraph.getWidth())) << 32) | (TextDelegateKt.ceilToIntPx(paragraph.getHeight()) & 4294967295L)));
-                if (TextOverflow.m6610equalsimpl0(paragraphLayoutCache.overflow, TextOverflow.Companion.m6623getVisiblegIe3tQ8()) || (((int) (m6651constrain4WqzIAM2 >> 32)) >= paragraph.getWidth() && ((int) (4294967295L & m6651constrain4WqzIAM2)) >= paragraph.getHeight())) {
+                paragraphLayoutCache.layoutSize = ConstraintsKt.m7218constrain4WqzIAM(j, IntSize.m7417constructorimpl((TextDelegateKt.ceilToIntPx(Math.min(paragraph.getMaxIntrinsicWidth(), paragraph.getWidth())) << 32) | (TextDelegateKt.ceilToIntPx(paragraph.getHeight()) & 4294967295L)));
+                if (TextOverflow.m7177equalsimpl0(paragraphLayoutCache.overflow, TextOverflow.Companion.m7190getVisiblegIe3tQ8()) || (((int) (m7218constrain4WqzIAM2 >> 32)) >= paragraph.getWidth() && ((int) (4294967295L & m7218constrain4WqzIAM2)) >= paragraph.getHeight())) {
                     z = false;
                 }
                 paragraphLayoutCache.didOverflow = z;
@@ -156,34 +175,34 @@ public final class ParagraphLayoutCache {
             }
             return false;
         }
-        Paragraph m1437layoutTextK40F9xA$foundation_release = m1437layoutTextK40F9xA$foundation_release(j, layoutDirection2);
+        Paragraph m1710layoutTextK40F9xA$foundation_release = m1710layoutTextK40F9xA$foundation_release(j, layoutDirection2);
         paragraphLayoutCache.prevConstraints = j;
-        paragraphLayoutCache.layoutSize = ConstraintsKt.m6651constrain4WqzIAM(j, IntSize.m6850constructorimpl((TextDelegateKt.ceilToIntPx(m1437layoutTextK40F9xA$foundation_release.getWidth()) << 32) | (TextDelegateKt.ceilToIntPx(m1437layoutTextK40F9xA$foundation_release.getHeight()) & 4294967295L)));
-        if (!TextOverflow.m6610equalsimpl0(paragraphLayoutCache.overflow, TextOverflow.Companion.m6623getVisiblegIe3tQ8()) && (((int) (m6651constrain4WqzIAM >> 32)) < m1437layoutTextK40F9xA$foundation_release.getWidth() || ((int) (m6651constrain4WqzIAM & 4294967295L)) < m1437layoutTextK40F9xA$foundation_release.getHeight())) {
+        paragraphLayoutCache.layoutSize = ConstraintsKt.m7218constrain4WqzIAM(j, IntSize.m7417constructorimpl((TextDelegateKt.ceilToIntPx(m1710layoutTextK40F9xA$foundation_release.getWidth()) << 32) | (TextDelegateKt.ceilToIntPx(m1710layoutTextK40F9xA$foundation_release.getHeight()) & 4294967295L)));
+        if (!TextOverflow.m7177equalsimpl0(paragraphLayoutCache.overflow, TextOverflow.Companion.m7190getVisiblegIe3tQ8()) && (((int) (m7218constrain4WqzIAM >> 32)) < m1710layoutTextK40F9xA$foundation_release.getWidth() || ((int) (m7218constrain4WqzIAM & 4294967295L)) < m1710layoutTextK40F9xA$foundation_release.getHeight())) {
             z2 = true;
         }
         paragraphLayoutCache.didOverflow = z2;
-        paragraphLayoutCache.paragraph = m1437layoutTextK40F9xA$foundation_release;
+        paragraphLayoutCache.paragraph = m1710layoutTextK40F9xA$foundation_release;
         return true;
     }
 
     /* renamed from: useMinLinesConstrainer-euUD3Qg$default  reason: not valid java name */
-    static /* synthetic */ long m1435useMinLinesConstrainereuUD3Qg$default(ParagraphLayoutCache paragraphLayoutCache, long j, LayoutDirection layoutDirection, TextStyle textStyle, int i, Object obj) {
+    static /* synthetic */ long m1708useMinLinesConstrainereuUD3Qg$default(ParagraphLayoutCache paragraphLayoutCache, long j, LayoutDirection layoutDirection, TextStyle textStyle, int i, Object obj) {
         if ((i & 4) != 0) {
             textStyle = paragraphLayoutCache.style;
         }
-        return paragraphLayoutCache.m1434useMinLinesConstrainereuUD3Qg(j, layoutDirection, textStyle);
+        return paragraphLayoutCache.m1707useMinLinesConstrainereuUD3Qg(j, layoutDirection, textStyle);
     }
 
     /* renamed from: useMinLinesConstrainer-euUD3Qg  reason: not valid java name */
-    private final long m1434useMinLinesConstrainereuUD3Qg(long j, LayoutDirection layoutDirection, TextStyle textStyle) {
+    private final long m1707useMinLinesConstrainereuUD3Qg(long j, LayoutDirection layoutDirection, TextStyle textStyle) {
         MinLinesConstrainer.Companion companion = MinLinesConstrainer.Companion;
         MinLinesConstrainer minLinesConstrainer = this.mMinLinesConstrainer;
         Density density = this.density;
         Intrinsics.checkNotNull(density);
         MinLinesConstrainer from = companion.from(minLinesConstrainer, layoutDirection, textStyle, density, this.fontFamilyResolver);
         this.mMinLinesConstrainer = from;
-        return from.m1419coerceMinLinesOh53vG4$foundation_release(j, this.minLines);
+        return from.m1690coerceMinLinesOh53vG4$foundation_release(j, this.minLines);
     }
 
     public final int intrinsicHeight(int i, LayoutDirection layoutDirection) {
@@ -196,12 +215,12 @@ public final class ParagraphLayoutCache {
             if (this.minLines > 1) {
                 paragraphLayoutCache = this;
                 layoutDirection2 = layoutDirection;
-                Constraints = m1435useMinLinesConstrainereuUD3Qg$default(paragraphLayoutCache, Constraints, layoutDirection2, null, 4, null);
+                Constraints = m1708useMinLinesConstrainereuUD3Qg$default(paragraphLayoutCache, Constraints, layoutDirection2, null, 4, null);
             } else {
                 paragraphLayoutCache = this;
                 layoutDirection2 = layoutDirection;
             }
-            int coerceAtLeast = RangesKt.coerceAtLeast(TextDelegateKt.ceilToIntPx(m1437layoutTextK40F9xA$foundation_release(Constraints, layoutDirection2).getHeight()), Constraints.m6638getMinHeightimpl(Constraints));
+            int coerceAtLeast = RangesKt.coerceAtLeast(TextDelegateKt.ceilToIntPx(m1710layoutTextK40F9xA$foundation_release(Constraints, layoutDirection2).getHeight()), Constraints.m7205getMinHeightimpl(Constraints));
             paragraphLayoutCache.cachedIntrinsicHeightInputWidth = i;
             paragraphLayoutCache.cachedIntrinsicHeight = coerceAtLeast;
             return coerceAtLeast;
@@ -210,7 +229,7 @@ public final class ParagraphLayoutCache {
     }
 
     /* renamed from: update-L6sJoHM  reason: not valid java name */
-    public final void m1440updateL6sJoHM(String str, TextStyle textStyle, FontFamily.Resolver resolver, int i, boolean z, int i2, int i3) {
+    public final void m1713updateL6sJoHM(String str, TextStyle textStyle, FontFamily.Resolver resolver, int i, boolean z, int i2, int i3) {
         this.text = str;
         this.style = textStyle;
         this.fontFamilyResolver = resolver;
@@ -218,6 +237,7 @@ public final class ParagraphLayoutCache {
         this.softWrap = z;
         this.maxLines = i2;
         this.minLines = i3;
+        m1706recordHistory4ETZmGE(LayoutCacheOperation.Companion.m1684getMarkDirtyNodeDEKiAbY());
         markDirty();
     }
 
@@ -237,22 +257,22 @@ public final class ParagraphLayoutCache {
     }
 
     /* renamed from: layoutText-K40F9xA$foundation_release  reason: not valid java name */
-    public final Paragraph m1437layoutTextK40F9xA$foundation_release(long j, LayoutDirection layoutDirection) {
+    public final Paragraph m1710layoutTextK40F9xA$foundation_release(long j, LayoutDirection layoutDirection) {
         ParagraphIntrinsics layoutDirection2 = setLayoutDirection(layoutDirection);
-        return ParagraphKt.m6020ParagraphczeNHc(layoutDirection2, LayoutUtilsKt.m1415finalConstraintstfFHcEY(j, this.softWrap, this.overflow, layoutDirection2.getMaxIntrinsicWidth()), LayoutUtilsKt.m1416finalMaxLinesxdlQI24(this.softWrap, this.overflow, this.maxLines), this.overflow);
+        return ParagraphKt.m6577ParagraphczeNHc(layoutDirection2, LayoutUtilsKt.m1686finalConstraintstfFHcEY(j, this.softWrap, this.overflow, layoutDirection2.getMaxIntrinsicWidth()), LayoutUtilsKt.m1687finalMaxLinesxdlQI24(this.softWrap, this.overflow, this.maxLines), this.overflow);
     }
 
     /* renamed from: newLayoutWillBeDifferent-K40F9xA  reason: not valid java name */
-    private final boolean m1433newLayoutWillBeDifferentK40F9xA(long j, LayoutDirection layoutDirection) {
+    private final boolean m1705newLayoutWillBeDifferentK40F9xA(long j, LayoutDirection layoutDirection) {
         ParagraphIntrinsics paragraphIntrinsics;
         Paragraph paragraph = this.paragraph;
         if (paragraph == null || (paragraphIntrinsics = this.paragraphIntrinsics) == null || paragraphIntrinsics.getHasStaleResolvedFonts() || layoutDirection != this.intrinsicsLayoutDirection) {
             return true;
         }
-        if (Constraints.m6630equalsimpl0(j, this.prevConstraints)) {
+        if (Constraints.m7197equalsimpl0(j, this.prevConstraints)) {
             return false;
         }
-        return Constraints.m6637getMaxWidthimpl(j) != Constraints.m6637getMaxWidthimpl(this.prevConstraints) || Constraints.m6639getMinWidthimpl(j) != Constraints.m6639getMinWidthimpl(this.prevConstraints) || ((float) Constraints.m6636getMaxHeightimpl(j)) < paragraph.getHeight() || paragraph.getDidExceedMaxLines();
+        return Constraints.m7204getMaxWidthimpl(j) != Constraints.m7204getMaxWidthimpl(this.prevConstraints) || Constraints.m7206getMinWidthimpl(j) != Constraints.m7206getMinWidthimpl(this.prevConstraints) || ((float) Constraints.m7203getMaxHeightimpl(j)) < paragraph.getHeight() || paragraph.getDidExceedMaxLines();
     }
 
     private final void markDirty() {
@@ -261,9 +281,9 @@ public final class ParagraphLayoutCache {
         this.intrinsicsLayoutDirection = null;
         this.cachedIntrinsicHeightInputWidth = -1;
         this.cachedIntrinsicHeight = -1;
-        this.prevConstraints = Constraints.Companion.m6647fixedJhjzzOo(0, 0);
+        this.prevConstraints = Constraints.Companion.m7214fixedJhjzzOo(0, 0);
         long j = 0;
-        this.layoutSize = IntSize.m6850constructorimpl((j & 4294967295L) | (j << 32));
+        this.layoutSize = IntSize.m7417constructorimpl((j & 4294967295L) | (j << 32));
         this.didOverflow = false;
     }
 
@@ -277,8 +297,8 @@ public final class ParagraphLayoutCache {
         if (this.paragraph == null || this.paragraphIntrinsics == null) {
             return null;
         }
-        long m6625constructorimpl = Constraints.m6625constructorimpl(this.prevConstraints & ConstraintsKt.MaxDimensionsAndFocusMask);
-        return new TextLayoutResult(new TextLayoutInput(annotatedString, textStyle, CollectionsKt.emptyList(), this.maxLines, this.softWrap, this.overflow, density, layoutDirection, this.fontFamilyResolver, m6625constructorimpl, (DefaultConstructorMarker) null), new MultiParagraph(new MultiParagraphIntrinsics(annotatedString, textStyle, CollectionsKt.emptyList(), density, this.fontFamilyResolver), m6625constructorimpl, this.maxLines, this.overflow, (DefaultConstructorMarker) null), this.layoutSize, null);
+        long m7192constructorimpl = Constraints.m7192constructorimpl(this.prevConstraints & ConstraintsKt.MaxDimensionsAndFocusMask);
+        return new TextLayoutResult(new TextLayoutInput(annotatedString, textStyle, CollectionsKt.emptyList(), this.maxLines, this.softWrap, this.overflow, density, layoutDirection, this.fontFamilyResolver, m7192constructorimpl, (DefaultConstructorMarker) null), new MultiParagraph(new MultiParagraphIntrinsics(annotatedString, textStyle, CollectionsKt.emptyList(), density, this.fontFamilyResolver), m7192constructorimpl, this.maxLines, this.overflow, (DefaultConstructorMarker) null), this.layoutSize, null);
     }
 
     public final int minIntrinsicWidth(LayoutDirection layoutDirection) {
@@ -290,6 +310,6 @@ public final class ParagraphLayoutCache {
     }
 
     public String toString() {
-        return "ParagraphLayoutCache(paragraph=" + (this.paragraph != null ? "<paragraph>" : AbstractJsonLexerKt.NULL) + ", lastDensity=" + ((Object) InlineDensity.m1412toStringimpl(this.lastDensity)) + ')';
+        return "ParagraphLayoutCache(paragraph=" + (this.paragraph != null ? "<paragraph>" : AbstractJsonLexerKt.NULL) + ", lastDensity=" + ((Object) InlineDensity.m1672toStringimpl(this.lastDensity)) + ", history=" + this.historyFlag + ", constraints=$)";
     }
 }

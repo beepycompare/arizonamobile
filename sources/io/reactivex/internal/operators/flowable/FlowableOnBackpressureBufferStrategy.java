@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableOnBackpressureBufferStrategy<T> extends AbstractFlowableWithUpstream<T, T> {
     final long bufferSize;
     final Action onOverflow;
@@ -33,7 +33,7 @@ public final class FlowableOnBackpressureBufferStrategy<T> extends AbstractFlowa
         this.source.subscribe((FlowableSubscriber) new OnBackpressureBufferStrategySubscriber(subscriber, this.onOverflow, this.strategy, this.bufferSize));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OnBackpressureBufferStrategySubscriber<T> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = 3240706908776709697L;
         final long bufferSize;
@@ -259,7 +259,7 @@ public final class FlowableOnBackpressureBufferStrategy<T> extends AbstractFlowa
     }
 
     /* renamed from: io.reactivex.internal.operators.flowable.FlowableOnBackpressureBufferStrategy$1  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$io$reactivex$BackpressureOverflowStrategy;
 

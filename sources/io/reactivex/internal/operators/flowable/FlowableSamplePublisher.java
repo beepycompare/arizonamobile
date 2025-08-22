@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSamplePublisher<T> extends Flowable<T> {
     final boolean emitLast;
     final Publisher<?> other;
@@ -34,7 +34,7 @@ public final class FlowableSamplePublisher<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static abstract class SamplePublisherSubscriber<T> extends AtomicReference<T> implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = -3517602651313910099L;
         final Subscriber<? super T> downstream;
@@ -122,7 +122,7 @@ public final class FlowableSamplePublisher<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SamplerSubscriber<T> implements FlowableSubscriber<Object> {
         final SamplePublisherSubscriber<T> parent;
 
@@ -151,7 +151,7 @@ public final class FlowableSamplePublisher<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SampleMainNoLast<T> extends SamplePublisherSubscriber<T> {
         private static final long serialVersionUID = -3029755663834015785L;
 
@@ -170,7 +170,7 @@ public final class FlowableSamplePublisher<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SampleMainEmitLast<T> extends SamplePublisherSubscriber<T> {
         private static final long serialVersionUID = -3029755663834015785L;
         volatile boolean done;

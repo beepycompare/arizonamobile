@@ -21,7 +21,7 @@ import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class SubtitlePainter {
     private static final float INNER_PADDING_RATIO = 0.125f;
     private static final String TAG = "SubtitlePainter";

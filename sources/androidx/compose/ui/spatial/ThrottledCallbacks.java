@@ -11,30 +11,31 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ThrottledCallbacks.kt */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0002\n\u0002\b\r\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0013\b\u0000\u0018\u00002\u00020\u0001:\u0001RB\u0005¢\u0006\u0002\u0010\u0002J\u0014\u0010\"\u001a\u00020#2\n\u0010$\u001a\u00060\u0004R\u00020\u0000H\u0002JH\u0010%\u001a\u00020\n2\n\u0010$\u001a\u00060\u0004R\u00020\u00002\u0006\u0010\u001f\u001a\u00020\u00142\u0006\u0010\u0013\u001a\u00020\u00142\b\u0010\u0018\u001a\u0004\u0018\u00010\u00192\u0006\u0010&\u001a\u00020\n2\u0006\u0010'\u001a\u00020\nH\u0002ø\u0001\u0000¢\u0006\u0004\b(\u0010)J@\u0010*\u001a\u00020#2\n\u0010$\u001a\u00060\u0004R\u00020\u00002\u0006\u0010\u001f\u001a\u00020\u00142\u0006\u0010\u0013\u001a\u00020\u00142\b\u0010\u0018\u001a\u0004\u0018\u00010\u00192\u0006\u0010&\u001a\u00020\nH\u0002ø\u0001\u0000¢\u0006\u0004\b+\u0010,J\u000e\u0010-\u001a\u00020#2\u0006\u0010&\u001a\u00020\nJ\u000e\u0010.\u001a\u00020#2\u0006\u0010&\u001a\u00020\nJ&\u0010/\u001a\u00020#2\u0006\u00100\u001a\u0002012\u0006\u00102\u001a\u00020\n2\u0006\u00103\u001a\u00020\n2\u0006\u0010&\u001a\u00020\nJ,\u00104\u001a\u00020#2\n\u0010$\u001a\u00060\u0004R\u00020\u00002\u0006\u00102\u001a\u00020\n2\u0006\u00103\u001a\u00020\n2\u0006\u0010&\u001a\u00020\nH\u0002J:\u00105\u001a\u0002062\u0006\u00100\u001a\u0002012\u0006\u00107\u001a\u00020\n2\u0006\u00108\u001a\u00020\n2\u0006\u00109\u001a\u00020:2\u0012\u0010;\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020#0<J:\u0010>\u001a\u0002062\u0006\u00100\u001a\u0002012\u0006\u00107\u001a\u00020\n2\u0006\u00108\u001a\u00020\n2\u0006\u00109\u001a\u00020:2\u0012\u0010;\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020#0<J\u0014\u0010?\u001a\u00020@2\n\u0010$\u001a\u00060\u0004R\u00020\u0000H\u0002J\u0010\u0010A\u001a\u00020\n2\u0006\u0010B\u001a\u00020\nH\u0002J\u000e\u0010C\u001a\u00020#2\u0006\u0010&\u001a\u00020\nJ*\u0010D\u001a\u00020@2\u0006\u0010E\u001a\u00020\u00142\u0006\u0010F\u001a\u00020\u00142\b\u0010G\u001a\u0004\u0018\u00010\u0019ø\u0001\u0000¢\u0006\u0004\bH\u0010IJ)\u0010J\u001a\u00020#*\u00060\u0004R\u00020\u00002\u0016\u0010K\u001a\u0012\u0012\b\u0012\u00060\u0004R\u00020\u0000\u0012\u0004\u0012\u00020#0<H\u0082\bJ/\u0010L\u001a\u00020#*\f\u0012\b\u0012\u00060\u0004R\u00020\u00000\u00102\u0016\u0010K\u001a\u0012\u0012\b\u0012\u00060\u0004R\u00020\u0000\u0012\u0004\u0012\u00020#0<H\u0082\bJ.\u0010M\u001a\u00060\u0004R\u00020\u0000*\f\u0012\b\u0012\u00060\u0004R\u00020\u00000\u00102\u0006\u0010N\u001a\u0002012\n\u0010O\u001a\u00060\u0004R\u00020\u0000H\u0002J*\u0010P\u001a\u00020@*\f\u0012\b\u0012\u00060\u0004R\u00020\u00000\u00102\u0006\u0010N\u001a\u0002012\n\u0010O\u001a\u00060\u0004R\u00020\u0000H\u0002J7\u0010Q\u001a\u00020#*\f\u0012\b\u0012\u00060\u0004R\u00020\u00000\u00102\u0006\u00100\u001a\u0002012\u0016\u0010K\u001a\u0012\u0012\b\u0012\u00060\u0004R\u00020\u0000\u0012\u0004\u0012\u00020#0<H\u0082\bR \u0010\u0003\u001a\b\u0018\u00010\u0004R\u00020\u0000X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\u0006\"\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001b\u0010\u000f\u001a\f\u0012\b\u0012\u00060\u0004R\u00020\u00000\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\"\u0010\u0013\u001a\u00020\u0014X\u0086\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\u0017\u001a\u0004\b\u0015\u0010\f\"\u0004\b\u0016\u0010\u000eR$\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0086\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\u001e\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR\"\u0010\u001f\u001a\u00020\u0014X\u0086\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\u0017\u001a\u0004\b \u0010\f\"\u0004\b!\u0010\u000e\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006S"}, d2 = {"Landroidx/compose/ui/spatial/ThrottledCallbacks;", "", "()V", "globalChangeEntries", "Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;", "getGlobalChangeEntries", "()Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;", "setGlobalChangeEntries", "(Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;)V", "minDebounceDeadline", "", "getMinDebounceDeadline", "()J", "setMinDebounceDeadline", "(J)V", "rectChangedMap", "Landroidx/collection/MutableIntObjectMap;", "getRectChangedMap", "()Landroidx/collection/MutableIntObjectMap;", "screenOffset", "Landroidx/compose/ui/unit/IntOffset;", "getScreenOffset-nOcc-ac", "setScreenOffset--gyyYBs", "J", "viewToWindowMatrix", "Landroidx/compose/ui/graphics/Matrix;", "getViewToWindowMatrix-3i98HWw", "()[F", "setViewToWindowMatrix-Q8lPUPs", "([F)V", "[F", "windowOffset", "getWindowOffset-nOcc-ac", "setWindowOffset--gyyYBs", "addToGlobalEntries", "", "entry", "debounceEntry", "currentMillis", "minDeadline", "debounceEntry-b8qMvQI", "(Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;JJ[FJJ)J", "fire", "fire-WY9HvpM", "(Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;JJ[FJ)V", "fireGlobalChangeEntries", "fireOnRectChangedEntries", "fireOnUpdatedRect", "id", "", "topLeft", "bottomRight", "fireWithUpdatedRect", "registerOnGlobalChange", "Landroidx/compose/ui/node/DelegatableNode$RegistrationHandle;", "throttleMillis", "debounceMillis", "node", "Landroidx/compose/ui/node/DelegatableNode;", "callback", "Lkotlin/Function1;", "Landroidx/compose/ui/spatial/RelativeLayoutBounds;", "registerOnRectChanged", "removeFromGlobalEntries", "", "roundDownToMultipleOf8", "x", "triggerDebounced", "updateOffsets", "screen", "window", "matrix", "updateOffsets-bT0EZQs", "(JJ[F)Z", "linkedForEach", "block", "multiForEach", "multiPut", "key", "value", "multiRemove", "runFor", "Entry", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u001f\b\u0001\u0018\u00002\u00020\u0001:\u0001ZB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J7\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020\u00152\u0006\u0010)\u001a\u00020\u00152\b\u0010*\u001a\u0004\u0018\u00010 2\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020,¢\u0006\u0004\b.\u0010/J\u0010\u00100\u001a\u00020\u000f2\u0006\u00101\u001a\u00020\u000fH\u0002J:\u00102\u001a\u0002032\u0006\u00104\u001a\u00020,2\u0006\u00105\u001a\u00020\u000f2\u0006\u00106\u001a\u00020\u000f2\u0006\u00107\u001a\u0002082\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u00020;\u0012\u0004\u0012\u00020<0:J:\u0010=\u001a\u0002032\u0006\u00104\u001a\u00020,2\u0006\u00105\u001a\u00020\u000f2\u0006\u00106\u001a\u00020\u000f2\u0006\u00107\u001a\u0002082\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u00020;\u0012\u0004\u0012\u00020<0:J&\u0010>\u001a\u00020<2\u0006\u00104\u001a\u00020,2\u0006\u0010?\u001a\u00020\u000f2\u0006\u0010@\u001a\u00020\u000f2\u0006\u0010A\u001a\u00020\u000fJ!\u0010B\u001a\u00020<2\u0016\u00109\u001a\u0012\u0012\b\u0012\u00060\u0006R\u00020\u0000\u0012\u0004\u0012\u00020<0:H\u0086\bJ\u000e\u0010C\u001a\u00020<2\u0006\u0010A\u001a\u00020\u000fJ\u000e\u0010D\u001a\u00020<2\u0006\u0010A\u001a\u00020\u000fJ\u000e\u0010E\u001a\u00020<2\u0006\u0010A\u001a\u00020\u000fJ1\u0010F\u001a\u00020<2\n\u0010G\u001a\u00060\u0006R\u00020\u00002\u0006\u0010?\u001a\u00020\u000f2\u0006\u0010@\u001a\u00020\u000f2\u0006\u0010A\u001a\u00020\u000fH\u0000¢\u0006\u0002\bHJ=\u0010I\u001a\u00020<2\n\u0010G\u001a\u00060\u0006R\u00020\u00002\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0019\u001a\u00020\u00152\b\u0010\u001f\u001a\u0004\u0018\u00010 2\u0006\u0010A\u001a\u00020\u000fH\u0002¢\u0006\u0004\bJ\u0010KJE\u0010L\u001a\u00020\u000f2\n\u0010G\u001a\u00060\u0006R\u00020\u00002\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0019\u001a\u00020\u00152\b\u0010\u001f\u001a\u0004\u0018\u00010 2\u0006\u0010A\u001a\u00020\u000f2\u0006\u0010M\u001a\u00020\u000fH\u0002¢\u0006\u0004\bN\u0010OJ\u0014\u0010P\u001a\u00020<2\n\u0010G\u001a\u00060\u0006R\u00020\u0000H\u0002J\u0014\u0010Q\u001a\u00020'2\n\u0010G\u001a\u00060\u0006R\u00020\u0000H\u0002J)\u0010R\u001a\u00020<*\u00060\u0006R\u00020\u00002\u0016\u0010S\u001a\u0012\u0012\b\u0012\u00060\u0006R\u00020\u0000\u0012\u0004\u0012\u00020<0:H\u0082\bJ/\u0010T\u001a\u00020<*\f\u0012\b\u0012\u00060\u0006R\u00020\u00000\u00052\u0016\u0010S\u001a\u0012\u0012\b\u0012\u00060\u0006R\u00020\u0000\u0012\u0004\u0012\u00020<0:H\u0082\bJ7\u0010U\u001a\u00020<*\f\u0012\b\u0012\u00060\u0006R\u00020\u00000\u00052\u0006\u00104\u001a\u00020,2\u0016\u0010S\u001a\u0012\u0012\b\u0012\u00060\u0006R\u00020\u0000\u0012\u0004\u0012\u00020<0:H\u0082\bJ.\u0010V\u001a\u00060\u0006R\u00020\u0000*\f\u0012\b\u0012\u00060\u0006R\u00020\u00000\u00052\u0006\u0010W\u001a\u00020,2\n\u0010X\u001a\u00060\u0006R\u00020\u0000H\u0002J*\u0010Y\u001a\u00020'*\f\u0012\b\u0012\u00060\u0006R\u00020\u00000\u00052\u0006\u0010W\u001a\u00020,2\n\u0010X\u001a\u00060\u0006R\u00020\u0000H\u0002R\u001b\u0010\u0004\u001a\f\u0012\b\u0012\u00060\u0006R\u00020\u00000\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR \u0010\t\u001a\b\u0018\u00010\u0006R\u00020\u0000X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\rR\u001a\u0010\u000e\u001a\u00020\u000fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u001c\u0010\u0014\u001a\u00020\u0015X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u0018\u001a\u0004\b\u0016\u0010\u0011\"\u0004\b\u0017\u0010\u0013R\u001c\u0010\u0019\u001a\u00020\u0015X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u0018\u001a\u0004\b\u001a\u0010\u0011\"\u0004\b\u001b\u0010\u0013R\u001a\u0010\u001c\u001a\u00020\u000fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001d\u0010\u0011\"\u0004\b\u001e\u0010\u0013R\u001e\u0010\u001f\u001a\u0004\u0018\u00010 X\u0086\u000e¢\u0006\u0010\n\u0002\u0010%\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$¨\u0006["}, d2 = {"Landroidx/compose/ui/spatial/ThrottledCallbacks;", "", "<init>", "()V", "rectChangedMap", "Landroidx/collection/MutableIntObjectMap;", "Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;", "getRectChangedMap", "()Landroidx/collection/MutableIntObjectMap;", "globalChangeEntries", "getGlobalChangeEntries", "()Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;", "setGlobalChangeEntries", "(Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;)V", "minDebounceDeadline", "", "getMinDebounceDeadline", "()J", "setMinDebounceDeadline", "(J)V", "windowOffset", "Landroidx/compose/ui/unit/IntOffset;", "getWindowOffset-nOcc-ac", "setWindowOffset--gyyYBs", "J", "screenOffset", "getScreenOffset-nOcc-ac", "setScreenOffset--gyyYBs", "windowSize", "getWindowSize", "setWindowSize", "viewToWindowMatrix", "Landroidx/compose/ui/graphics/Matrix;", "getViewToWindowMatrix-3i98HWw", "()[F", "setViewToWindowMatrix-Q8lPUPs", "([F)V", "[F", "updateOffsets", "", "screen", "window", "matrix", "windowWidth", "", "windowHeight", "updateOffsets-LDcG7Xg", "(JJ[FII)Z", "roundDownToMultipleOf8", "x", "registerOnRectChanged", "Landroidx/compose/ui/node/DelegatableNode$RegistrationHandle;", "id", "throttleMillis", "debounceMillis", "node", "Landroidx/compose/ui/node/DelegatableNode;", "callback", "Lkotlin/Function1;", "Landroidx/compose/ui/spatial/RelativeLayoutBounds;", "", "registerOnGlobalChange", "fireOnUpdatedRect", "topLeft", "bottomRight", "currentMillis", "forEachNewCallbackNeverInvoked", "fireOnRectChangedEntries", "fireGlobalChangeEntries", "triggerDebounced", "fireWithUpdatedRect", "entry", "fireWithUpdatedRect$ui_release", "fire", "fire-WY9HvpM", "(Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;JJ[FJ)V", "debounceEntry", "minDeadline", "debounceEntry-b8qMvQI", "(Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;JJ[FJJ)J", "addToGlobalEntries", "removeFromGlobalEntries", "linkedForEach", "block", "multiForEach", "runFor", "multiPut", "key", "value", "multiRemove", "Entry", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ThrottledCallbacks {
     public static final int $stable = 8;
     private Entry globalChangeEntries;
     private float[] viewToWindowMatrix;
+    private long windowSize;
     private final MutableIntObjectMap<Entry> rectChangedMap = IntObjectMapKt.mutableIntObjectMapOf();
     private long minDebounceDeadline = -1;
-    private long windowOffset = IntOffset.Companion.m6823getZeronOccac();
-    private long screenOffset = IntOffset.Companion.m6823getZeronOccac();
+    private long windowOffset = IntOffset.Companion.m7390getZeronOccac();
+    private long screenOffset = IntOffset.Companion.m7390getZeronOccac();
 
     private final long roundDownToMultipleOf8(long j) {
         return (j >> 3) << 3;
     }
 
     /* compiled from: ThrottledCallbacks.kt */
-    @Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0086\u0004\u0018\u00002\u00020\u0001B9\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\f0\n¢\u0006\u0002\u0010\rJ:\u0010*\u001a\u00020\f2\u0006\u0010'\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u00052\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020,2\b\u0010.\u001a\u0004\u0018\u00010/ø\u0001\u0000¢\u0006\u0004\b0\u00101J\b\u00102\u001a\u00020\fH\u0016R\u001a\u0010\u000e\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u001d\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\f0\n¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\u0006\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u001a\u0010\u0018\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u0010\"\u0004\b\u001a\u0010\u0012R\u001a\u0010\u001b\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u0010\"\u0004\b\u001d\u0010\u0012R \u0010\u001e\u001a\b\u0018\u00010\u0000R\u00020\u001fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#R\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b&\u0010\u0010R\u001a\u0010'\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b(\u0010\u0010\"\u0004\b)\u0010\u0012\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u00063"}, d2 = {"Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;", "Landroidx/compose/ui/node/DelegatableNode$RegistrationHandle;", "id", "", "throttleMillis", "", "debounceMillis", "node", "Landroidx/compose/ui/node/DelegatableNode;", "callback", "Lkotlin/Function1;", "Landroidx/compose/ui/spatial/RelativeLayoutBounds;", "", "(Landroidx/compose/ui/spatial/ThrottledCallbacks;IJJLandroidx/compose/ui/node/DelegatableNode;Lkotlin/jvm/functions/Function1;)V", "bottomRight", "getBottomRight", "()J", "setBottomRight", "(J)V", "getCallback", "()Lkotlin/jvm/functions/Function1;", "getDebounceMillis", "getId", "()I", "lastInvokeMillis", "getLastInvokeMillis", "setLastInvokeMillis", "lastUninvokedFireMillis", "getLastUninvokedFireMillis", "setLastUninvokedFireMillis", "next", "Landroidx/compose/ui/spatial/ThrottledCallbacks;", "getNext", "()Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;", "setNext", "(Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;)V", "getNode", "()Landroidx/compose/ui/node/DelegatableNode;", "getThrottleMillis", "topLeft", "getTopLeft", "setTopLeft", "fire", "windowOffset", "Landroidx/compose/ui/unit/IntOffset;", "screenOffset", "viewToWindowMatrix", "Landroidx/compose/ui/graphics/Matrix;", "fire-9b-9wPM", "(JJJJ[F)V", "unregister", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0004\u0018\u00002\u00020\u0001B;\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\f0\n¢\u0006\u0004\b\r\u0010\u000eJ\b\u0010+\u001a\u00020\fH\u0016J7\u0010,\u001a\u00020\f2\u0006\u0010\u001e\u001a\u00020\u00052\u0006\u0010\"\u001a\u00020\u00052\u0006\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u00020.2\b\u00100\u001a\u0004\u0018\u000101¢\u0006\u0004\b2\u00103R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\u0006\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0012R\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u001d\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\f0\n¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R \u0010\u0018\u001a\b\u0018\u00010\u0000R\u00020\u0019X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR\u001a\u0010\u001e\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u0010\u0012\"\u0004\b \u0010!R\u001a\u0010\"\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010\u0012\"\u0004\b$\u0010!R\u001a\u0010%\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b&\u0010\u0012\"\u0004\b'\u0010!R\u001a\u0010(\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b)\u0010\u0012\"\u0004\b*\u0010!¨\u00064"}, d2 = {"Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;", "Landroidx/compose/ui/node/DelegatableNode$RegistrationHandle;", "id", "", "throttleMillis", "", "debounceMillis", "node", "Landroidx/compose/ui/node/DelegatableNode;", "callback", "Lkotlin/Function1;", "Landroidx/compose/ui/spatial/RelativeLayoutBounds;", "", "<init>", "(Landroidx/compose/ui/spatial/ThrottledCallbacks;IJJLandroidx/compose/ui/node/DelegatableNode;Lkotlin/jvm/functions/Function1;)V", "getId", "()I", "getThrottleMillis", "()J", "getDebounceMillis", "getNode", "()Landroidx/compose/ui/node/DelegatableNode;", "getCallback", "()Lkotlin/jvm/functions/Function1;", "next", "Landroidx/compose/ui/spatial/ThrottledCallbacks;", "getNext", "()Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;", "setNext", "(Landroidx/compose/ui/spatial/ThrottledCallbacks$Entry;)V", "topLeft", "getTopLeft", "setTopLeft", "(J)V", "bottomRight", "getBottomRight", "setBottomRight", "lastInvokeMillis", "getLastInvokeMillis", "setLastInvokeMillis", "lastUninvokedFireMillis", "getLastUninvokedFireMillis", "setLastUninvokedFireMillis", "unregister", "fire", "windowOffset", "Landroidx/compose/ui/unit/IntOffset;", "screenOffset", "viewToWindowMatrix", "Landroidx/compose/ui/graphics/Matrix;", "fire-9b-9wPM", "(JJJJ[F)V", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public final class Entry implements DelegatableNode.RegistrationHandle {
         private long bottomRight;
         private final Function1<RelativeLayoutBounds, Unit> callback;
         private final long debounceMillis;
         private final int id;
-        private long lastInvokeMillis;
+        private long lastInvokeMillis = Long.MIN_VALUE;
         private long lastUninvokedFireMillis = -1;
         private Entry next;
         private final DelegatableNode node;
@@ -48,7 +49,6 @@ public final class ThrottledCallbacks {
             this.debounceMillis = j2;
             this.node = delegatableNode;
             this.callback = function1;
-            this.lastInvokeMillis = -j;
         }
 
         public final int getId() {
@@ -121,12 +121,12 @@ public final class ThrottledCallbacks {
         }
 
         /* renamed from: fire-9b-9wPM  reason: not valid java name */
-        public final void m5953fire9b9wPM(long j, long j2, long j3, long j4, float[] fArr) {
-            RelativeLayoutBounds m5954rectInfoForQMZNJw = ThrottledCallbacksKt.m5954rectInfoForQMZNJw(this.node, j, j2, j3, j4, fArr);
-            if (m5954rectInfoForQMZNJw == null) {
+        public final void m6501fire9b9wPM(long j, long j2, long j3, long j4, float[] fArr) {
+            RelativeLayoutBounds m6502rectInfoForDg36KO4 = ThrottledCallbacksKt.m6502rectInfoForDg36KO4(this.node, j, j2, j3, j4, ThrottledCallbacks.this.getWindowSize(), fArr);
+            if (m6502rectInfoForDg36KO4 == null) {
                 return;
             }
-            this.callback.invoke(m5954rectInfoForQMZNJw);
+            this.callback.invoke(m6502rectInfoForDg36KO4);
         }
     }
 
@@ -151,50 +151,63 @@ public final class ThrottledCallbacks {
     }
 
     /* renamed from: getWindowOffset-nOcc-ac  reason: not valid java name */
-    public final long m5948getWindowOffsetnOccac() {
+    public final long m6496getWindowOffsetnOccac() {
         return this.windowOffset;
     }
 
     /* renamed from: setWindowOffset--gyyYBs  reason: not valid java name */
-    public final void m5951setWindowOffsetgyyYBs(long j) {
+    public final void m6499setWindowOffsetgyyYBs(long j) {
         this.windowOffset = j;
     }
 
     /* renamed from: getScreenOffset-nOcc-ac  reason: not valid java name */
-    public final long m5946getScreenOffsetnOccac() {
+    public final long m6494getScreenOffsetnOccac() {
         return this.screenOffset;
     }
 
     /* renamed from: setScreenOffset--gyyYBs  reason: not valid java name */
-    public final void m5949setScreenOffsetgyyYBs(long j) {
+    public final void m6497setScreenOffsetgyyYBs(long j) {
         this.screenOffset = j;
     }
 
+    public final long getWindowSize() {
+        return this.windowSize;
+    }
+
+    public final void setWindowSize(long j) {
+        this.windowSize = j;
+    }
+
     /* renamed from: getViewToWindowMatrix-3i98HWw  reason: not valid java name */
-    public final float[] m5947getViewToWindowMatrix3i98HWw() {
+    public final float[] m6495getViewToWindowMatrix3i98HWw() {
         return this.viewToWindowMatrix;
     }
 
     /* renamed from: setViewToWindowMatrix-Q8lPUPs  reason: not valid java name */
-    public final void m5950setViewToWindowMatrixQ8lPUPs(float[] fArr) {
+    public final void m6498setViewToWindowMatrixQ8lPUPs(float[] fArr) {
         this.viewToWindowMatrix = fArr;
     }
 
-    /* renamed from: updateOffsets-bT0EZQs  reason: not valid java name */
-    public final boolean m5952updateOffsetsbT0EZQs(long j, long j2, float[] fArr) {
+    /* renamed from: updateOffsets-LDcG7Xg  reason: not valid java name */
+    public final boolean m6500updateOffsetsLDcG7Xg(long j, long j2, float[] fArr, int i, int i2) {
         boolean z;
-        if (IntOffset.m6811equalsimpl0(j2, this.windowOffset)) {
+        if (IntOffset.m7378equalsimpl0(j2, this.windowOffset)) {
             z = false;
         } else {
             this.windowOffset = j2;
             z = true;
         }
-        if (!IntOffset.m6811equalsimpl0(j, this.screenOffset)) {
+        if (!IntOffset.m7378equalsimpl0(j, this.screenOffset)) {
             this.screenOffset = j;
             z = true;
         }
         if (fArr != null) {
             this.viewToWindowMatrix = fArr;
+            z = true;
+        }
+        long j3 = (i << 32) | (i2 & 4294967295L);
+        if (j3 != this.windowSize) {
+            this.windowSize = j3;
             return true;
         }
         return z;
@@ -212,7 +225,42 @@ public final class ThrottledCallbacks {
 
     public final void fireOnUpdatedRect(int i, long j, long j2, long j3) {
         for (Entry entry = this.rectChangedMap.get(i); entry != null; entry = entry.getNext()) {
-            fireWithUpdatedRect(entry, j, j2, j3);
+            fireWithUpdatedRect$ui_release(entry, j, j2, j3);
+        }
+    }
+
+    public final void forEachNewCallbackNeverInvoked(Function1<? super Entry, Unit> function1) {
+        MutableIntObjectMap<Entry> rectChangedMap = getRectChangedMap();
+        Object[] objArr = rectChangedMap.values;
+        long[] jArr = rectChangedMap.metadata;
+        int length = jArr.length - 2;
+        if (length < 0) {
+            return;
+        }
+        int i = 0;
+        while (true) {
+            long j = jArr[i];
+            if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                int i2 = 8 - ((~(i - length)) >>> 31);
+                for (int i3 = 0; i3 < i2; i3++) {
+                    if ((255 & j) < 128) {
+                        Entry entry = (Entry) objArr[(i << 3) + i3];
+                        for (Entry entry2 = entry; entry2 != null; entry2 = entry2.getNext()) {
+                            if (entry.getLastInvokeMillis() == Long.MIN_VALUE) {
+                                function1.invoke(entry);
+                            }
+                        }
+                    }
+                    j >>= 8;
+                }
+                if (i2 != 8) {
+                    return;
+                }
+            }
+            if (i == length) {
+                return;
+            }
+            i++;
         }
     }
 
@@ -241,7 +289,7 @@ public final class ThrottledCallbacks {
                         while (entry != null) {
                             int i4 = i3;
                             Entry entry2 = entry;
-                            throttledCallbacks.m5945fireWY9HvpM(entry2, j2, j3, fArr, j);
+                            throttledCallbacks.m6493fireWY9HvpM(entry2, j2, j3, fArr, j);
                             entry = entry2.getNext();
                             throttledCallbacks = this;
                             i3 = i4;
@@ -271,11 +319,11 @@ public final class ThrottledCallbacks {
         if (entry != null) {
             for (Entry entry2 = entry; entry2 != null; entry2 = entry2.getNext()) {
                 LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(entry2.getNode());
-                long m5613getOffsetFromRootnOccac$ui_release = requireLayoutNode.m5613getOffsetFromRootnOccac$ui_release();
-                long m5612getLastSizeYbymL2g$ui_release = requireLayoutNode.m5612getLastSizeYbymL2g$ui_release();
-                entry2.setTopLeft(m5613getOffsetFromRootnOccac$ui_release);
-                entry2.setBottomRight(((IntOffset.m6812getXimpl(m5613getOffsetFromRootnOccac$ui_release) + ((int) (m5612getLastSizeYbymL2g$ui_release >> 32))) << 32) | ((IntOffset.m6813getYimpl(m5613getOffsetFromRootnOccac$ui_release) + ((int) (m5612getLastSizeYbymL2g$ui_release & 4294967295L))) & 4294967295L));
-                m5945fireWY9HvpM(entry2, j2, j3, fArr, j);
+                long m6152getOffsetFromRootnOccac$ui_release = requireLayoutNode.m6152getOffsetFromRootnOccac$ui_release();
+                long m6151getLastSizeYbymL2g$ui_release = requireLayoutNode.m6151getLastSizeYbymL2g$ui_release();
+                entry2.setTopLeft(m6152getOffsetFromRootnOccac$ui_release);
+                entry2.setBottomRight(((IntOffset.m7379getXimpl(m6152getOffsetFromRootnOccac$ui_release) + ((int) (m6151getLastSizeYbymL2g$ui_release >> 32))) << 32) | ((IntOffset.m7380getYimpl(m6152getOffsetFromRootnOccac$ui_release) + ((int) (m6151getLastSizeYbymL2g$ui_release & 4294967295L))) & 4294967295L));
+                m6493fireWY9HvpM(entry2, j2, j3, fArr, j);
             }
         }
     }
@@ -310,7 +358,7 @@ public final class ThrottledCallbacks {
                             while (entry != null) {
                                 int i5 = i2;
                                 Entry entry2 = entry;
-                                j3 = m5944debounceEntryb8qMvQI(entry2, j4, j5, fArr, j, j3);
+                                j3 = m6492debounceEntryb8qMvQI(entry2, j4, j5, fArr, j, j3);
                                 i4 = i4;
                                 entry = entry2.getNext();
                                 i2 = i5;
@@ -342,7 +390,7 @@ public final class ThrottledCallbacks {
         if (entry3 != null) {
             long j8 = j3;
             while (entry3 != null) {
-                j8 = m5944debounceEntryb8qMvQI(entry3, j4, j5, fArr, j, j8);
+                j8 = m6492debounceEntryb8qMvQI(entry3, j4, j5, fArr, j, j8);
                 entry3 = entry3.getNext();
             }
             j3 = j8;
@@ -353,24 +401,21 @@ public final class ThrottledCallbacks {
         this.minDebounceDeadline = j3;
     }
 
-    private final void fireWithUpdatedRect(Entry entry, long j, long j2, long j3) {
+    public final void fireWithUpdatedRect$ui_release(Entry entry, long j, long j2, long j3) {
         long lastInvokeMillis = entry.getLastInvokeMillis();
         long throttleMillis = entry.getThrottleMillis();
         long debounceMillis = entry.getDebounceMillis();
-        boolean z = true;
-        boolean z2 = j3 - lastInvokeMillis >= throttleMillis;
-        boolean z3 = debounceMillis == 0;
-        boolean z4 = throttleMillis == 0;
+        boolean z = j3 - lastInvokeMillis >= throttleMillis || lastInvokeMillis == Long.MIN_VALUE;
+        boolean z2 = debounceMillis == 0;
+        boolean z3 = throttleMillis == 0;
         entry.setTopLeft(j);
         entry.setBottomRight(j2);
-        if ((z3 || z4) && !z3) {
-            z = false;
-        }
-        if (z2 && z) {
+        boolean z4 = !(z2 || z3) || z2;
+        if (z && z4) {
             entry.setLastUninvokedFireMillis(-1L);
             entry.setLastInvokeMillis(j3);
-            entry.m5953fire9b9wPM(j, j2, this.windowOffset, this.screenOffset, this.viewToWindowMatrix);
-        } else if (z3) {
+            entry.m6501fire9b9wPM(j, j2, this.windowOffset, this.screenOffset, this.viewToWindowMatrix);
+        } else if (z2) {
         } else {
             entry.setLastUninvokedFireMillis(j3);
             long j4 = this.minDebounceDeadline;
@@ -383,13 +428,14 @@ public final class ThrottledCallbacks {
     }
 
     /* renamed from: fire-WY9HvpM  reason: not valid java name */
-    private final void m5945fireWY9HvpM(Entry entry, long j, long j2, float[] fArr, long j3) {
-        boolean z = j3 - entry.getLastInvokeMillis() > entry.getThrottleMillis();
+    private final void m6493fireWY9HvpM(Entry entry, long j, long j2, float[] fArr, long j3) {
+        long lastInvokeMillis = entry.getLastInvokeMillis();
+        boolean z = j3 - lastInvokeMillis > entry.getThrottleMillis() || lastInvokeMillis == Long.MIN_VALUE;
         boolean z2 = entry.getDebounceMillis() == 0;
         entry.setLastUninvokedFireMillis(j3);
         if (z && z2) {
             entry.setLastInvokeMillis(j3);
-            entry.m5953fire9b9wPM(entry.getTopLeft(), entry.getBottomRight(), j, j2, fArr);
+            entry.m6501fire9b9wPM(entry.getTopLeft(), entry.getBottomRight(), j, j2, fArr);
         }
         if (z2) {
             return;
@@ -403,14 +449,14 @@ public final class ThrottledCallbacks {
     }
 
     /* renamed from: debounceEntry-b8qMvQI  reason: not valid java name */
-    private final long m5944debounceEntryb8qMvQI(Entry entry, long j, long j2, float[] fArr, long j3, long j4) {
+    private final long m6492debounceEntryb8qMvQI(Entry entry, long j, long j2, float[] fArr, long j3, long j4) {
         if (entry.getDebounceMillis() <= 0 || entry.getLastUninvokedFireMillis() <= 0) {
             return j4;
         }
         if (j3 - entry.getLastUninvokedFireMillis() > entry.getDebounceMillis()) {
             entry.setLastInvokeMillis(j3);
             entry.setLastUninvokedFireMillis(-1L);
-            entry.m5953fire9b9wPM(entry.getTopLeft(), entry.getBottomRight(), j, j2, fArr);
+            entry.m6501fire9b9wPM(entry.getTopLeft(), entry.getBottomRight(), j, j2, fArr);
             return j4;
         }
         return Math.min(j4, entry.getLastUninvokedFireMillis() + entry.getDebounceMillis());

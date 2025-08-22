@@ -21,7 +21,7 @@ import kotlinx.serialization.json.JvmStreamsKt;
 public final class Utils_javaKt {
     public static final <T> byte[] serialize(T t, SerializationStrategy<? super T> strategy) {
         Intrinsics.checkNotNullParameter(strategy, "strategy");
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        BufferedOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         try {
             ByteArrayOutputStream byteArrayOutputStream2 = byteArrayOutputStream;
             ZipOutputStream zipOutputStream = new ZipOutputStream(byteArrayOutputStream2);
@@ -29,17 +29,24 @@ public final class Utils_javaKt {
             zipOutputStream2.setLevel(7);
             zipOutputStream2.putNextEntry(new ZipEntry("Entry"));
             ZipOutputStream zipOutputStream3 = zipOutputStream2;
-            BufferedOutputStream bufferedOutputStream = zipOutputStream3 instanceof BufferedOutputStream ? (BufferedOutputStream) zipOutputStream3 : new BufferedOutputStream(zipOutputStream3, 8192);
-            JvmStreamsKt.encodeToStream(UtilsKt.getEssentyJson(), strategy, t, bufferedOutputStream);
-            Unit unit = Unit.INSTANCE;
-            CloseableKt.closeFinally(bufferedOutputStream, null);
-            Unit unit2 = Unit.INSTANCE;
-            CloseableKt.closeFinally(zipOutputStream, null);
-            byte[] byteArray = byteArrayOutputStream2.toByteArray();
-            CloseableKt.closeFinally(byteArrayOutputStream, null);
-            Intrinsics.checkNotNullExpressionValue(byteArray, "use(...)");
-            return byteArray;
+            byteArrayOutputStream = zipOutputStream3 instanceof BufferedOutputStream ? (BufferedOutputStream) zipOutputStream3 : new BufferedOutputStream(zipOutputStream3, 8192);
+            try {
+                JvmStreamsKt.encodeToStream(UtilsKt.getEssentyJson(), strategy, t, byteArrayOutputStream);
+                Unit unit = Unit.INSTANCE;
+                CloseableKt.closeFinally(byteArrayOutputStream, null);
+                Unit unit2 = Unit.INSTANCE;
+                CloseableKt.closeFinally(zipOutputStream, null);
+                byte[] byteArray = byteArrayOutputStream2.toByteArray();
+                CloseableKt.closeFinally(byteArrayOutputStream, null);
+                Intrinsics.checkNotNullExpressionValue(byteArray, "use(...)");
+                return byteArray;
+            } finally {
+            }
         } finally {
+            try {
+                throw th;
+            } finally {
+            }
         }
     }
 

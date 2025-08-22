@@ -5,7 +5,7 @@ import androidx.media3.extractor.ForwardingSeekMap;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.SeekPoint;
 import androidx.media3.extractor.TrackOutput;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class StartOffsetExtractorOutput implements ExtractorOutput {
     private final ExtractorOutput extractorOutput;
     private final long startOffset;

@@ -5,7 +5,7 @@ import androidx.media3.common.Metadata;
 import androidx.media3.common.MimeTypes;
 import java.util.Arrays;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class EventMessage implements Metadata.Entry {
     public static final String ID3_SCHEME_ID_AOM = "https://aomedia.org/emsg/ID3";
     private static final String ID3_SCHEME_ID_APPLE = "https://developer.apple.com/streaming/emsg-id3";

@@ -9,7 +9,7 @@ import io.reactivex.functions.BiPredicate;
 import io.reactivex.internal.disposables.ArrayCompositeDisposable;
 import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableSequenceEqual<T> extends Observable<Boolean> {
     final int bufferSize;
     final BiPredicate<? super T, ? super T> comparer;
@@ -30,7 +30,7 @@ public final class ObservableSequenceEqual<T> extends Observable<Boolean> {
         equalCoordinator.subscribe();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class EqualCoordinator<T> extends AtomicInteger implements Disposable {
         private static final long serialVersionUID = -6178010334400373240L;
         volatile boolean cancelled;
@@ -163,7 +163,7 @@ public final class ObservableSequenceEqual<T> extends Observable<Boolean> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class EqualObserver<T> implements Observer<T> {
         volatile boolean done;
         Throwable error;

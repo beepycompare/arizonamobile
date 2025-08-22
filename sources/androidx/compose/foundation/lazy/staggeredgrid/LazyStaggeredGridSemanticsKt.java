@@ -12,15 +12,15 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 /* compiled from: LazyStaggeredGridSemantics.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0001¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"rememberLazyStaggeredGridSemanticState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState;", "reverseScrolling", "", "(Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState;ZLandroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0001¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"rememberLazyStaggeredGridSemanticState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState;", "reverseScrolling", "", "(Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState;ZLandroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyStaggeredGridSemanticsKt {
     public static final LazyLayoutSemanticState rememberLazyStaggeredGridSemanticState(final LazyStaggeredGridState lazyStaggeredGridState, boolean z, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 1629354903, "C(rememberLazyStaggeredGridSemanticState)P(1)31@1249L1313:LazyStaggeredGridSemantics.kt#fzvcnm");
+        ComposerKt.sourceInformationMarkerStart(composer, 1629354903, "C(rememberLazyStaggeredGridSemanticState)N(state,reverseScrolling)31@1250L1315:LazyStaggeredGridSemantics.kt#fzvcnm");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1629354903, i, -1, "androidx.compose.foundation.lazy.staggeredgrid.rememberLazyStaggeredGridSemanticState (LazyStaggeredGridSemantics.kt:31)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 518754807, "CC(remember):LazyStaggeredGridSemantics.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1852994694, "CC(remember):LazyStaggeredGridSemantics.kt#9igjgp");
         boolean z2 = ((((i & 14) ^ 6) > 4 && composer.changed(lazyStaggeredGridState)) || (i & 6) == 4) | ((((i & 112) ^ 48) > 32 && composer.changed(z)) || (i & 48) == 32);
         Object rememberedValue = composer.rememberedValue();
         if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
@@ -48,13 +48,13 @@ public final class LazyStaggeredGridSemanticsKt {
 
                 @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState
                 public int getViewport() {
-                    long mo948getViewportSizeYbymL2g;
+                    long mo1092getViewportSizeYbymL2g;
                     if (LazyStaggeredGridState.this.getLayoutInfo().getOrientation() == Orientation.Vertical) {
-                        mo948getViewportSizeYbymL2g = LazyStaggeredGridState.this.getLayoutInfo().mo948getViewportSizeYbymL2g() & 4294967295L;
+                        mo1092getViewportSizeYbymL2g = LazyStaggeredGridState.this.getLayoutInfo().mo1092getViewportSizeYbymL2g() & 4294967295L;
                     } else {
-                        mo948getViewportSizeYbymL2g = LazyStaggeredGridState.this.getLayoutInfo().mo948getViewportSizeYbymL2g() >> 32;
+                        mo1092getViewportSizeYbymL2g = LazyStaggeredGridState.this.getLayoutInfo().mo1092getViewportSizeYbymL2g() >> 32;
                     }
-                    return (int) mo948getViewportSizeYbymL2g;
+                    return (int) mo1092getViewportSizeYbymL2g;
                 }
 
                 @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState

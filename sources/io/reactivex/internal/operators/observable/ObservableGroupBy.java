@@ -16,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableGroupBy<T, K, V> extends AbstractObservableWithUpstream<T, GroupedObservable<K, V>> {
     final int bufferSize;
     final boolean delayError;
@@ -36,7 +36,7 @@ public final class ObservableGroupBy<T, K, V> extends AbstractObservableWithUpst
         this.source.subscribe(new GroupByObserver(observer, this.keySelector, this.valueSelector, this.bufferSize, this.delayError));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class GroupByObserver<T, K, V> extends AtomicInteger implements Observer<T>, Disposable {
         static final Object NULL_KEY = new Object();
         private static final long serialVersionUID = -3688291656102519502L;
@@ -140,7 +140,7 @@ public final class ObservableGroupBy<T, K, V> extends AbstractObservableWithUpst
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class GroupedUnicast<K, T> extends GroupedObservable<K, T> {
         final State<T, K> state;
 
@@ -172,7 +172,7 @@ public final class ObservableGroupBy<T, K, V> extends AbstractObservableWithUpst
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class State<T, K> extends AtomicInteger implements Disposable, ObservableSource<T> {
         private static final long serialVersionUID = -3852313036005250360L;
         final boolean delayError;

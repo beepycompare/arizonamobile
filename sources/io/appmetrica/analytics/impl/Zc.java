@@ -1,20 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.jvm.functions.Function0;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public final class Zc implements Y8 {
+public final class Zc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ie f747a;
-    public final Function0 b;
+    public final C0158bn f756a;
+    public final C0158bn b;
+    public final H4 c;
+    public final PublicLogger d;
+    public final String e;
 
-    public Zc(Ie ie, Function0<Integer> function0) {
-        this.f747a = ie;
-        this.b = function0;
+    public Zc(String str, PublicLogger publicLogger) {
+        this(new H4(30), new C0158bn(50, str.concat("map key"), publicLogger), new C0158bn(4000, str.concat("map value"), publicLogger), str, publicLogger);
     }
 
-    @Override // io.appmetrica.analytics.impl.Y8
-    public final boolean b() {
-        return ((He) this.f747a).b.get() >= ((long) ((Number) this.b.invoke()).intValue());
+    public Zc(H4 h4, C0158bn c0158bn, C0158bn c0158bn2, String str, PublicLogger publicLogger) {
+        this.c = h4;
+        this.f756a = c0158bn;
+        this.b = c0158bn2;
+        this.e = str;
+        this.d = publicLogger;
     }
 }

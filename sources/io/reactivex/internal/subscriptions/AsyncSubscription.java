@@ -5,7 +5,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class AsyncSubscription extends AtomicLong implements Subscription, Disposable {
     private static final long serialVersionUID = 7028635084060361255L;
     final AtomicReference<Subscription> actual;

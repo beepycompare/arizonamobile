@@ -5,15 +5,15 @@ import android.content.Context;
 public final class K2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f514a;
-    public final C0324i2 b;
+    public final Context f523a;
+    public final C0318i2 b;
 
     public K2(Context context) {
-        this(context, new C0324i2());
+        this(context, new C0318i2());
     }
 
-    public K2(Context context, C0324i2 c0324i2) {
-        this.f514a = context;
-        this.b = c0324i2;
+    public K2(Context context, C0318i2 c0318i2) {
+        this.f523a = context;
+        this.b = c0318i2;
     }
 }

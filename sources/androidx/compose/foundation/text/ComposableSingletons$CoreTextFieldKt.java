@@ -8,13 +8,11 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 /* compiled from: CoreTextField.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposableSingletons$CoreTextFieldKt {
     public static final ComposableSingletons$CoreTextFieldKt INSTANCE = new ComposableSingletons$CoreTextFieldKt();
-
-    /* renamed from: lambda-1  reason: not valid java name */
-    private static Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> f4lambda1 = ComposableLambdaKt.composableLambdaInstance(-813639903, false, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.ComposableSingletons$CoreTextFieldKt$lambda-1$1
+    private static Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> lambda$559628295 = ComposableLambdaKt.composableLambdaInstance(559628295, false, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.ComposableSingletons$CoreTextFieldKt$lambda$559628295$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(Function2<? super Composer, ? super Integer, ? extends Unit> function2, Composer composer, Integer num) {
             invoke((Function2<? super Composer, ? super Integer, Unit>) function2, composer, num.intValue());
@@ -22,7 +20,7 @@ public final class ComposableSingletons$CoreTextFieldKt {
         }
 
         public final void invoke(Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, int i) {
-            ComposerKt.sourceInformation(composer, "C202@11445L16:CoreTextField.kt#423gt5");
+            ComposerKt.sourceInformation(composer, "CN(innerTextField)209@11903L16:CoreTextField.kt#423gt5");
             if ((i & 6) == 0) {
                 i |= composer.changedInstance(function2) ? 4 : 2;
             }
@@ -31,7 +29,7 @@ public final class ComposableSingletons$CoreTextFieldKt {
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-813639903, i, -1, "androidx.compose.foundation.text.ComposableSingletons$CoreTextFieldKt.lambda-1.<anonymous> (CoreTextField.kt:202)");
+                ComposerKt.traceEventStart(559628295, i, -1, "androidx.compose.foundation.text.ComposableSingletons$CoreTextFieldKt.lambda$559628295.<anonymous> (CoreTextField.kt:209)");
             }
             function2.invoke(composer, Integer.valueOf(i & 14));
             if (ComposerKt.isTraceInProgress()) {
@@ -40,8 +38,7 @@ public final class ComposableSingletons$CoreTextFieldKt {
         }
     });
 
-    /* renamed from: getLambda-1$foundation_release  reason: not valid java name */
-    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m1060getLambda1$foundation_release() {
-        return f4lambda1;
+    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> getLambda$559628295$foundation_release() {
+        return lambda$559628295;
     }
 }

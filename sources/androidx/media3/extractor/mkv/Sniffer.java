@@ -4,7 +4,7 @@ import androidx.collection.SieveCacheKt;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.ExtractorInput;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class Sniffer {
     private static final int ID_EBML = 440786851;
     private static final int SEARCH_LENGTH = 1024;

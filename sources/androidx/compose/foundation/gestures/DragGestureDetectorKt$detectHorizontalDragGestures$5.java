@@ -4,6 +4,7 @@ import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.input.pointer.AwaitPointerEventScope;
 import androidx.compose.ui.input.pointer.PointerEventKt;
 import androidx.compose.ui.input.pointer.PointerInputChange;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -18,8 +19,8 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DragGestureDetector.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureDetectorKt$detectHorizontalDragGestures$5", f = "DragGestureDetector.kt", i = {0, 1, 1}, l = {661, 664, 672}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "overSlop"}, s = {"L$0", "L$0", "L$1"})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureDetectorKt$detectHorizontalDragGestures$5", f = "DragGestureDetector.kt", i = {0, 1, 1}, l = {TypedValues.TransitionType.TYPE_INTERPOLATOR, 708, 716}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "overSlop"}, s = {"L$0", "L$0", "L$1"})
 /* loaded from: classes.dex */
 public final class DragGestureDetectorKt$detectHorizontalDragGestures$5 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function0<Unit> $onDragCancel;
@@ -53,10 +54,10 @@ public final class DragGestureDetectorKt$detectHorizontalDragGestures$5 extends 
         return ((DragGestureDetectorKt$detectHorizontalDragGestures$5) create(awaitPointerEventScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x00ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x00a8, code lost:
         if (r12 == r0) goto L21;
      */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0077  */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -96,30 +97,19 @@ public final class DragGestureDetectorKt$detectHorizontalDragGestures$5 extends 
             ResultKt.throwOnFailure(obj);
             pointerInputChange = (PointerInputChange) obj;
             if (pointerInputChange != null) {
-                this.$onDragStart.invoke(Offset.m3826boximpl(pointerInputChange.m5313getPositionF1C5BW0()));
+                this.$onDragStart.invoke(Offset.m4282boximpl(pointerInputChange.m5826getPositionF1C5BW0()));
                 this.$onHorizontalDrag.invoke(pointerInputChange, Boxing.boxFloat(floatRef.element));
-                long m5311getIdJ3iCeTQ = pointerInputChange.m5311getIdJ3iCeTQ();
+                long m5824getIdJ3iCeTQ = pointerInputChange.m5824getIdJ3iCeTQ();
                 final Function2<PointerInputChange, Float, Unit> function2 = this.$onHorizontalDrag;
                 this.L$0 = null;
                 this.L$1 = null;
                 this.label = 3;
-                obj = DragGestureDetectorKt.m446horizontalDragjO51t88(awaitPointerEventScope2, m5311getIdJ3iCeTQ, new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectHorizontalDragGestures$5.1
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    /* JADX WARN: Multi-variable type inference failed */
-                    {
-                        super(1);
-                    }
-
+                obj = DragGestureDetectorKt.m488horizontalDragjO51t88(awaitPointerEventScope2, m5824getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectHorizontalDragGestures$5$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange2) {
-                        invoke2(pointerInputChange2);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(PointerInputChange pointerInputChange2) {
-                        function2.invoke(pointerInputChange2, Float.valueOf(Float.intBitsToFloat((int) (PointerEventKt.positionChange(pointerInputChange2) >> 32))));
-                        pointerInputChange2.consume();
+                    public final Object invoke(Object obj2) {
+                        Unit invokeSuspend$lambda$1;
+                        invokeSuspend$lambda$1 = DragGestureDetectorKt$detectHorizontalDragGestures$5.invokeSuspend$lambda$1(Function2.this, (PointerInputChange) obj2);
+                        return invokeSuspend$lambda$1;
                     }
                 }, this);
             }
@@ -133,21 +123,12 @@ public final class DragGestureDetectorKt$detectHorizontalDragGestures$5 extends 
         this.L$0 = awaitPointerEventScope;
         this.L$1 = floatRef;
         this.label = 2;
-        obj = DragGestureDetectorKt.m433awaitHorizontalPointerSlopOrCancellationgDDlDlE(awaitPointerEventScope, pointerInputChange2.m5311getIdJ3iCeTQ(), pointerInputChange2.m5316getTypeT8wyACA(), new Function2<PointerInputChange, Float, Unit>() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectHorizontalDragGestures$5$drag$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(2);
-            }
-
+        obj = DragGestureDetectorKt.m475awaitHorizontalPointerSlopOrCancellationgDDlDlE(awaitPointerEventScope, pointerInputChange2.m5824getIdJ3iCeTQ(), pointerInputChange2.m5829getTypeT8wyACA(), new Function2() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectHorizontalDragGestures$5$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange3, Float f) {
-                invoke(pointerInputChange3, f.floatValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(PointerInputChange pointerInputChange3, float f) {
-                pointerInputChange3.consume();
-                Ref.FloatRef.this.element = f;
+            public final Object invoke(Object obj2, Object obj3) {
+                Unit invokeSuspend$lambda$0;
+                invokeSuspend$lambda$0 = DragGestureDetectorKt$detectHorizontalDragGestures$5.invokeSuspend$lambda$0(Ref.FloatRef.this, (PointerInputChange) obj2, ((Float) obj3).floatValue());
+                return invokeSuspend$lambda$0;
             }
         }, this);
         if (obj != coroutine_suspended) {
@@ -158,5 +139,19 @@ public final class DragGestureDetectorKt$detectHorizontalDragGestures$5 extends 
             return Unit.INSTANCE;
         }
         return coroutine_suspended;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(Ref.FloatRef floatRef, PointerInputChange pointerInputChange, float f) {
+        pointerInputChange.consume();
+        floatRef.element = f;
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$1(Function2 function2, PointerInputChange pointerInputChange) {
+        function2.invoke(pointerInputChange, Float.valueOf(Float.intBitsToFloat((int) (PointerEventKt.positionChange(pointerInputChange) >> 32))));
+        pointerInputChange.consume();
+        return Unit.INSTANCE;
     }
 }

@@ -3,7 +3,7 @@ package androidx.media3.extractor.mp4;
 import androidx.media3.common.C;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TrackSampleTable {
     public final long durationUs;
     public final int[] flags;

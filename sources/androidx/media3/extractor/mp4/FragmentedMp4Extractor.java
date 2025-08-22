@@ -51,7 +51,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class FragmentedMp4Extractor implements Extractor {
     private static final int EXTRA_TRACKS_BASE_ID = 100;
     public static final int FLAG_EMIT_RAW_SUBTITLE_DATA = 32;
@@ -123,7 +123,7 @@ public class FragmentedMp4Extractor implements Extractor {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Flags {
     }
 
@@ -234,7 +234,7 @@ public class FragmentedMp4Extractor implements Extractor {
         this.reorderingBufferQueue = new ReorderingBufferQueue(new ReorderingBufferQueue.OutputConsumer() { // from class: androidx.media3.extractor.mp4.FragmentedMp4Extractor$$ExternalSyntheticLambda3
             @Override // androidx.media3.container.ReorderingBufferQueue.OutputConsumer
             public final void consume(long j, ParsableByteArray parsableByteArray) {
-                FragmentedMp4Extractor.this.m7473x40e97494(j, parsableByteArray);
+                FragmentedMp4Extractor.this.m8039x40e97494(j, parsableByteArray);
             }
         });
         this.chunkIndexMerger = new ChunkIndexMerger();
@@ -243,7 +243,7 @@ public class FragmentedMp4Extractor implements Extractor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$2$androidx-media3-extractor-mp4-FragmentedMp4Extractor  reason: not valid java name */
-    public /* synthetic */ void m7473x40e97494(long j, ParsableByteArray parsableByteArray) {
+    public /* synthetic */ void m8039x40e97494(long j, ParsableByteArray parsableByteArray) {
         CeaUtil.consume(j, parsableByteArray, this.ceaTrackOutputs);
     }
 
@@ -1346,7 +1346,7 @@ public class FragmentedMp4Extractor implements Extractor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MetadataSampleInfo {
         public final boolean sampleTimeIsRelative;
         public final long sampleTimeUs;
@@ -1360,7 +1360,7 @@ public class FragmentedMp4Extractor implements Extractor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class TrackBundle {
         private static final int SINGLE_SUBSAMPLE_ENCRYPTION_DATA_LENGTH = 8;
         private final Format baseFormat;

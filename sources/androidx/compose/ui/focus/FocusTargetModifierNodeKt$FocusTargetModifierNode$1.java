@@ -5,7 +5,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: FocusTargetModifierNode.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 /* synthetic */ class FocusTargetModifierNodeKt$FocusTargetModifierNode$1 extends FunctionReferenceImpl implements Function1<FocusTargetNode, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */

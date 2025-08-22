@@ -1,7 +1,7 @@
 package io.reactivex.internal.operators.flowable;
 
 import org.reactivestreams.Publisher;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface FlowablePublishClassic<T> {
     int publishBufferSize();
 

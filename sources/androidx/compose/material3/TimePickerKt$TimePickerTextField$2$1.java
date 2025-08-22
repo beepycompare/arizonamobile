@@ -47,7 +47,7 @@ public final class TimePickerKt$TimePickerTextField$2$1 extends SuspendLambda im
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        if (TimePickerSelectionMode.m2551equalsimpl0(this.$state.mo1562getSelectionyecRtBI(), this.$selection)) {
+        if (TimePickerSelectionMode.m2858equalsimpl0(this.$state.mo1869getSelectionyecRtBI(), this.$selection)) {
             this.$focusRequester.requestFocus();
         }
         return Unit.INSTANCE;

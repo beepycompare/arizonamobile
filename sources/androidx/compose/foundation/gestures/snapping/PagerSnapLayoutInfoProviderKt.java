@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function3;
 import kotlin.ranges.RangesKt;
 /* compiled from: PagerSnapLayoutInfoProvider.kt */
-@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\u001a8\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u001e\u0010\u0006\u001a\u001a\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b0\u0007H\u0000\u001a8\u0010\u0006\u001a\u00020\b2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\b2\u0006\u0010\f\u001a\u00020\b2\u0006\u0010\r\u001a\u00020\b2\u0006\u0010\u000e\u001a\u00020\bH\u0000\u001a\u0017\u0010\u000f\u001a\u00020\u00102\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012H\u0082\b\u001a\f\u0010\u0014\u001a\u00020\b*\u00020\u0003H\u0002\u001a\u0014\u0010\u0015\u001a\u00020\u0016*\u00020\u00032\u0006\u0010\u0017\u001a\u00020\bH\u0002¨\u0006\u0018"}, d2 = {"SnapLayoutInfoProvider", "Landroidx/compose/foundation/gestures/snapping/SnapLayoutInfoProvider;", "pagerState", "Landroidx/compose/foundation/pager/PagerState;", "pagerSnapDistance", "Landroidx/compose/foundation/pager/PagerSnapDistance;", "calculateFinalSnappingBound", "Lkotlin/Function3;", "", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "snapPositionalThreshold", "flingVelocity", "lowerBoundOffset", "upperBoundOffset", "debugLog", "", "generateMsg", "Lkotlin/Function0;", "", "dragGestureDelta", "isScrollingForward", "", "velocity", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a8\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u001e\u0010\u0006\u001a\u001a\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b0\u0007H\u0000\u001a\u0014\u0010\t\u001a\u00020\n*\u00020\u00032\u0006\u0010\u000b\u001a\u00020\bH\u0002\u001a\f\u0010\f\u001a\u00020\b*\u00020\u0003H\u0002\u001a\u0017\u0010\r\u001a\u00020\u000e2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0082\b\u001a8\u0010\u0006\u001a\u00020\b2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\bH\u0000¨\u0006\u0018"}, d2 = {"SnapLayoutInfoProvider", "Landroidx/compose/foundation/gestures/snapping/SnapLayoutInfoProvider;", "pagerState", "Landroidx/compose/foundation/pager/PagerState;", "pagerSnapDistance", "Landroidx/compose/foundation/pager/PagerSnapDistance;", "calculateFinalSnappingBound", "Lkotlin/Function3;", "", "isScrollingForward", "", "velocity", "dragGestureDelta", "debugLog", "", "generateMsg", "Lkotlin/Function0;", "", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "snapPositionalThreshold", "flingVelocity", "lowerBoundOffset", "upperBoundOffset", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PagerSnapLayoutInfoProviderKt {
     private static final void debugLog(Function0<String> function0) {
@@ -126,9 +126,9 @@ public final class PagerSnapLayoutInfoProviderKt {
 
     private static final float dragGestureDelta(PagerState pagerState) {
         if (pagerState.getLayoutInfo().getOrientation() == Orientation.Horizontal) {
-            return Float.intBitsToFloat((int) (pagerState.m996getUpDownDifferenceF1C5BW0$foundation_release() >> 32));
+            return Float.intBitsToFloat((int) (pagerState.m1151getUpDownDifferenceF1C5BW0$foundation_release() >> 32));
         }
-        return Float.intBitsToFloat((int) (pagerState.m996getUpDownDifferenceF1C5BW0$foundation_release() & 4294967295L));
+        return Float.intBitsToFloat((int) (pagerState.m1151getUpDownDifferenceF1C5BW0$foundation_release() & 4294967295L));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:33:0x008a A[RETURN] */
@@ -144,11 +144,11 @@ public final class PagerSnapLayoutInfoProviderKt {
         float dragGestureDelta = pageSize == 0 ? 0.0f : dragGestureDelta(pagerState) / pageSize;
         float f5 = dragGestureDelta - ((int) dragGestureDelta);
         int calculateFinalSnappingItem = LazyListSnapLayoutInfoProviderKt.calculateFinalSnappingItem(pagerState.getDensity$foundation_release(), f2);
-        if (FinalSnappingItem.m552equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m556getClosestItembbeMdSM())) {
+        if (FinalSnappingItem.m618equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m622getClosestItembbeMdSM())) {
             return (Math.abs(f5) <= f ? Math.abs(dragGestureDelta) < Math.abs(pagerState.getPositionThresholdFraction$foundation_release()) ? Math.abs(f3) >= Math.abs(f4) : !isScrollingForward : isScrollingForward) ? f4 : f3;
         }
-        if (!FinalSnappingItem.m552equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m557getNextItembbeMdSM())) {
-            if (!FinalSnappingItem.m552equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m558getPreviousItembbeMdSM())) {
+        if (!FinalSnappingItem.m618equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m623getNextItembbeMdSM())) {
+            if (!FinalSnappingItem.m618equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m624getPreviousItembbeMdSM())) {
                 return 0.0f;
             }
         }

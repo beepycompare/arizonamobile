@@ -10,7 +10,7 @@ import io.reactivex.functions.BiFunction;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableReduceMaybe<T> extends Maybe<T> {
     final BiFunction<T, T, T> reducer;
     final ObservableSource<T> source;
@@ -25,7 +25,7 @@ public final class ObservableReduceMaybe<T> extends Maybe<T> {
         this.source.subscribe(new ReduceObserver(maybeObserver, this.reducer));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ReduceObserver<T> implements Observer<T>, Disposable {
         boolean done;
         final MaybeObserver<? super T> downstream;

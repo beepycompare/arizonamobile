@@ -19,7 +19,7 @@ public final class ComposableSingletons$SnackbarKt {
     public static final ComposableSingletons$SnackbarKt INSTANCE = new ComposableSingletons$SnackbarKt();
 
     /* renamed from: lambda-1  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f47lambda1 = ComposableLambdaKt.composableLambdaInstance(-505750804, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SnackbarKt$lambda-1$1
+    public static Function2<Composer, Integer, Unit> f45lambda1 = ComposableLambdaKt.composableLambdaInstance(-505750804, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SnackbarKt$lambda-1$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -34,7 +34,7 @@ public final class ComposableSingletons$SnackbarKt {
                 }
                 ImageVector close = CloseKt.getClose(Icons.Filled.INSTANCE);
                 Strings.Companion companion = Strings.Companion;
-                IconKt.m1954Iconww6aTOc(close, Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_snackbar_dismiss), composer, 0), (Modifier) null, 0L, composer, 0, 12);
+                IconKt.m2261Iconww6aTOc(close, Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_snackbar_dismiss), composer, 0), (Modifier) null, 0L, composer, 0, 12);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -46,7 +46,7 @@ public final class ComposableSingletons$SnackbarKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1785getLambda1$material3_release() {
-        return f47lambda1;
+    public final Function2<Composer, Integer, Unit> m2092getLambda1$material3_release() {
+        return f45lambda1;
     }
 }

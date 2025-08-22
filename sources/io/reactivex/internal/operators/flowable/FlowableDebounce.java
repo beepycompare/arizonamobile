@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableDebounce<T, U> extends AbstractFlowableWithUpstream<T, T> {
     final Function<? super T, ? extends Publisher<U>> debounceSelector;
 
@@ -35,7 +35,7 @@ public final class FlowableDebounce<T, U> extends AbstractFlowableWithUpstream<T
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class DebounceSubscriber<T, U> extends AtomicLong implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = 6725975399620862591L;
         final Function<? super T, ? extends Publisher<U>> debounceSelector;
@@ -132,7 +132,7 @@ public final class FlowableDebounce<T, U> extends AbstractFlowableWithUpstream<T
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         static final class DebounceInnerSubscriber<T, U> extends DisposableSubscriber<U> {
             boolean done;
             final long index;

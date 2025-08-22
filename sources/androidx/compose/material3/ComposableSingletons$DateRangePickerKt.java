@@ -23,7 +23,7 @@ public final class ComposableSingletons$DateRangePickerKt {
     public static final ComposableSingletons$DateRangePickerKt INSTANCE = new ComposableSingletons$DateRangePickerKt();
 
     /* renamed from: lambda-1  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f30lambda1 = ComposableLambdaKt.composableLambdaInstance(766806659, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$DateRangePickerKt$lambda-1$1
+    public static Function2<Composer, Integer, Unit> f28lambda1 = ComposableLambdaKt.composableLambdaInstance(766806659, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$DateRangePickerKt$lambda-1$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -39,7 +39,7 @@ public final class ComposableSingletons$DateRangePickerKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(766806659, i, -1, "androidx.compose.material3.ComposableSingletons$DateRangePickerKt.lambda-1.<anonymous> (DateRangePicker.kt:379)");
             }
-            TextKt.m2497Text4IGK_g(Constants.FILENAME_SEQUENCE_SEPARATOR, (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer, 6, 0, 131070);
+            TextKt.m2804Text4IGK_g(Constants.FILENAME_SEQUENCE_SEPARATOR, (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -47,7 +47,7 @@ public final class ComposableSingletons$DateRangePickerKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1768getLambda1$material3_release() {
-        return f30lambda1;
+    public final Function2<Composer, Integer, Unit> m2075getLambda1$material3_release() {
+        return f28lambda1;
     }
 }

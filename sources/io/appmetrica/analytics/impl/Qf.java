@@ -1,5 +1,20 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.ContentValues;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.ResultReceiver;
 /* loaded from: classes4.dex */
-public abstract class Qf {
-    public abstract AbstractC0554r9 a(int i);
+public final class Qf implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        Bundle readBundle = parcel.readBundle(X6.class.getClassLoader());
+        return new Rf((ContentValues) readBundle.getParcelable("CFG_KEY_PROCESS_ENVIRONMENT"), (ResultReceiver) readBundle.getParcelable("CFG_KEY_PROCESS_ENVIRONMENT_RECEIVER"));
+    }
+
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i) {
+        return new Rf[i];
+    }
 }

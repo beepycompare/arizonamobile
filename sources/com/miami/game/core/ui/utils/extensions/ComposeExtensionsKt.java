@@ -37,7 +37,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ComposeExtensions.kt */
-@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\u001a8\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u000e\u0010\b\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\t\u001a.\u0010\u000b\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u000e\u0010\b\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\t\u001a\n\u0010\f\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\r\u001a\u00020\u0001*\u00020\u0001¨\u0006\u000e²\u0006\n\u0010\u000f\u001a\u00020\u0010X\u008a\u008e\u0002²\u0006\n\u0010\u0011\u001a\u00020\u0012X\u008a\u0084\u0002"}, d2 = {"clickWithDelay", "Landroidx/compose/ui/Modifier;", "enabled", "", "clicksDelayTimeMs", "", "indicationType", "Lcom/miami/game/core/ui/utils/extensions/ClickIndicationType;", "onClick", "Lkotlin/Function0;", "", "clickWithDelayNoRipple", "interceptClick", "shimmerEffect", "ui-utils_release_web", "size", "Landroidx/compose/ui/unit/IntSize;", "startOffsetX", ""}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\u001a8\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u000e\u0010\b\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\t\u001a.\u0010\u000b\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u000e\u0010\b\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\t\u001a\n\u0010\f\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\r\u001a\u00020\u0001*\u00020\u0001¨\u0006\u000e²\u0006\n\u0010\u000f\u001a\u00020\u0010X\u008a\u008e\u0002²\u0006\n\u0010\u0011\u001a\u00020\u0012X\u008a\u0084\u0002"}, d2 = {"clickWithDelay", "Landroidx/compose/ui/Modifier;", "enabled", "", "clicksDelayTimeMs", "", "indicationType", "Lcom/miami/game/core/ui/utils/extensions/ClickIndicationType;", "onClick", "Lkotlin/Function0;", "", "clickWithDelayNoRipple", "interceptClick", "shimmerEffect", "ui-utils_release", "size", "Landroidx/compose/ui/unit/IntSize;", "startOffsetX", ""}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ComposeExtensionsKt {
 
@@ -106,7 +106,7 @@ public final class ComposeExtensionsKt {
         } else if (i2 == 2) {
             composer.startReplaceGroup(-351485176);
             composer.endReplaceGroup();
-            indicationNodeFactory = RippleKt.m2208rippleH2RKhps$default(false, 0.0f, 0L, 6, null);
+            indicationNodeFactory = RippleKt.m2515rippleH2RKhps$default(false, 0.0f, 0L, 6, null);
         } else if (i2 != 3) {
             composer.startReplaceGroup(-351489068);
             composer.endReplaceGroup();
@@ -146,12 +146,12 @@ public final class ComposeExtensionsKt {
             composer.updateRememberedValue(rememberedValue3);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier m279clickableO2vRcR0$default = ClickableKt.m279clickableO2vRcR0$default(companion2, mutableInteractionSource, indication, z, null, null, rememberedValue3, 24, null);
+        Modifier m294clickableO2vRcR0$default = ClickableKt.m294clickableO2vRcR0$default(companion2, mutableInteractionSource, indication, z, null, null, rememberedValue3, 24, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m279clickableO2vRcR0$default;
+        return m294clickableO2vRcR0$default;
     }
 
     public static final Unit clickWithDelay$lambda$6$lambda$5$lambda$4(MultipleClicksCutter multipleClicksCutter, final Function0 function0) {
@@ -220,13 +220,13 @@ public final class ComposeExtensionsKt {
         ComposerKt.sourceInformationMarkerStart(composer, -1680139201, "CC(remember):ComposeExtensions.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m6847boximpl(IntSize.Companion.m6860getZeroYbymL2g()), null, 2, null);
+            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m7414boximpl(IntSize.Companion.m7427getZeroYbymL2g()), null, 2, null);
             composer.updateRememberedValue(rememberedValue);
         }
         final MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        State<Float> animateFloat = InfiniteTransitionKt.animateFloat(InfiniteTransitionKt.rememberInfiniteTransition("", composer, 6, 0), (-2) * ((int) (shimmerEffect$lambda$14$lambda$9(mutableState) >> 32)), 2 * ((int) (shimmerEffect$lambda$14$lambda$9(mutableState) >> 32)), AnimationSpecKt.m147infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(1000, 0, null, 6, null), null, 0L, 6, null), "", composer, (InfiniteRepeatableSpec.$stable << 9) | InfiniteTransition.$stable | 24576, 0);
-        Modifier background$default = BackgroundKt.background$default(composed, Brush.Companion.m4029linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4068boximpl(ColorKt.Color(4279446612L)), Color.m4068boximpl(ColorKt.Color(4280499561L)), Color.m4068boximpl(ColorKt.Color(4279446612L))}), Offset.m3829constructorimpl((Float.floatToRawIntBits(shimmerEffect$lambda$14$lambda$11(animateFloat)) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m3829constructorimpl((Float.floatToRawIntBits((int) (shimmerEffect$lambda$14$lambda$9(mutableState) & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits(shimmerEffect$lambda$14$lambda$11(animateFloat) + ((int) (shimmerEffect$lambda$14$lambda$9(mutableState) >> 32))) << 32)), 0, 8, (Object) null), null, 0.0f, 6, null);
+        State<Float> animateFloat = InfiniteTransitionKt.animateFloat(InfiniteTransitionKt.rememberInfiniteTransition("", composer, 6, 0), (-2) * ((int) (shimmerEffect$lambda$14$lambda$9(mutableState) >> 32)), 2 * ((int) (shimmerEffect$lambda$14$lambda$9(mutableState) >> 32)), AnimationSpecKt.m151infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(1000, 0, null, 6, null), null, 0L, 6, null), "", composer, (InfiniteRepeatableSpec.$stable << 9) | InfiniteTransition.$stable | 24576, 0);
+        Modifier background$default = BackgroundKt.background$default(composed, Brush.Companion.m4487linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4527boximpl(ColorKt.Color(4279446612L)), Color.m4527boximpl(ColorKt.Color(4280499561L)), Color.m4527boximpl(ColorKt.Color(4279446612L))}), Offset.m4285constructorimpl((Float.floatToRawIntBits(shimmerEffect$lambda$14$lambda$11(animateFloat)) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m4285constructorimpl((Float.floatToRawIntBits((int) (shimmerEffect$lambda$14$lambda$9(mutableState) & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits(shimmerEffect$lambda$14$lambda$11(animateFloat) + ((int) (shimmerEffect$lambda$14$lambda$9(mutableState) >> 32))) << 32)), 0, 8, (Object) null), null, 0.0f, 6, null);
         ComposerKt.sourceInformationMarkerStart(composer, -1680115216, "CC(remember):ComposeExtensions.kt#9igjgp");
         Object rememberedValue2 = composer.rememberedValue();
         if (rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -250,16 +250,16 @@ public final class ComposeExtensionsKt {
     }
 
     private static final void shimmerEffect$lambda$14$lambda$10(MutableState<IntSize> mutableState, long j) {
-        mutableState.setValue(IntSize.m6847boximpl(j));
+        mutableState.setValue(IntSize.m7414boximpl(j));
     }
 
     private static final long shimmerEffect$lambda$14$lambda$9(MutableState<IntSize> mutableState) {
-        return mutableState.getValue().m6859unboximpl();
+        return mutableState.getValue().m7426unboximpl();
     }
 
     public static final Unit shimmerEffect$lambda$14$lambda$13$lambda$12(MutableState mutableState, LayoutCoordinates it) {
         Intrinsics.checkNotNullParameter(it, "it");
-        shimmerEffect$lambda$14$lambda$10(mutableState, it.mo5446getSizeYbymL2g());
+        shimmerEffect$lambda$14$lambda$10(mutableState, it.mo5962getSizeYbymL2g());
         return Unit.INSTANCE;
     }
 

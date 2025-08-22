@@ -13,7 +13,7 @@ public final class ComposableSingletons$ListItemKt {
     public static final ComposableSingletons$ListItemKt INSTANCE = new ComposableSingletons$ListItemKt();
 
     /* renamed from: lambda-1  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f31lambda1 = ComposableLambdaKt.composableLambdaInstance(-1792460413, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ListItemKt$lambda-1$1
+    public static Function2<Composer, Integer, Unit> f29lambda1 = ComposableLambdaKt.composableLambdaInstance(-1792460413, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ListItemKt$lambda-1$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -36,7 +36,7 @@ public final class ComposableSingletons$ListItemKt {
     });
 
     /* renamed from: lambda-2  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f32lambda2 = ComposableLambdaKt.composableLambdaInstance(-1538071006, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ListItemKt$lambda-2$1
+    public static Function2<Composer, Integer, Unit> f30lambda2 = ComposableLambdaKt.composableLambdaInstance(-1538071006, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ListItemKt$lambda-2$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -59,7 +59,7 @@ public final class ComposableSingletons$ListItemKt {
     });
 
     /* renamed from: lambda-3  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f33lambda3 = ComposableLambdaKt.composableLambdaInstance(-1283681599, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ListItemKt$lambda-3$1
+    public static Function2<Composer, Integer, Unit> f31lambda3 = ComposableLambdaKt.composableLambdaInstance(-1283681599, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ListItemKt$lambda-3$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -82,7 +82,7 @@ public final class ComposableSingletons$ListItemKt {
     });
 
     /* renamed from: lambda-4  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f34lambda4 = ComposableLambdaKt.composableLambdaInstance(-1029292192, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ListItemKt$lambda-4$1
+    public static Function2<Composer, Integer, Unit> f32lambda4 = ComposableLambdaKt.composableLambdaInstance(-1029292192, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ListItemKt$lambda-4$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -105,22 +105,22 @@ public final class ComposableSingletons$ListItemKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1769getLambda1$material3_release() {
-        return f31lambda1;
+    public final Function2<Composer, Integer, Unit> m2076getLambda1$material3_release() {
+        return f29lambda1;
     }
 
     /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1770getLambda2$material3_release() {
-        return f32lambda2;
+    public final Function2<Composer, Integer, Unit> m2077getLambda2$material3_release() {
+        return f30lambda2;
     }
 
     /* renamed from: getLambda-3$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1771getLambda3$material3_release() {
-        return f33lambda3;
+    public final Function2<Composer, Integer, Unit> m2078getLambda3$material3_release() {
+        return f31lambda3;
     }
 
     /* renamed from: getLambda-4$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1772getLambda4$material3_release() {
-        return f34lambda4;
+    public final Function2<Composer, Integer, Unit> m2079getLambda4$material3_release() {
+        return f32lambda4;
     }
 }

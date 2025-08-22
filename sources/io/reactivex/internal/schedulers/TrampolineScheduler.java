@@ -9,7 +9,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class TrampolineScheduler extends Scheduler {
     private static final TrampolineScheduler INSTANCE = new TrampolineScheduler();
 
@@ -43,7 +43,7 @@ public final class TrampolineScheduler extends Scheduler {
         return EmptyDisposable.INSTANCE;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TrampolineWorker extends Scheduler.Worker implements Disposable {
         volatile boolean disposed;
         final PriorityBlockingQueue<TimedRunnable> queue = new PriorityBlockingQueue<>();
@@ -102,7 +102,7 @@ public final class TrampolineScheduler extends Scheduler {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public final class AppendToQueueTask implements Runnable {
             final TimedRunnable timedRunnable;
 
@@ -119,7 +119,7 @@ public final class TrampolineScheduler extends Scheduler {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class TimedRunnable implements Comparable<TimedRunnable> {
         final int count;
         volatile boolean disposed;
@@ -139,7 +139,7 @@ public final class TrampolineScheduler extends Scheduler {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SleepingRunnable implements Runnable {
         private final long execTime;
         private final Runnable run;

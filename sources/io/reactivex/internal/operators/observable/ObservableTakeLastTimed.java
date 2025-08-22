@@ -8,7 +8,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableTakeLastTimed<T> extends AbstractObservableWithUpstream<T, T> {
     final int bufferSize;
     final long count;
@@ -32,7 +32,7 @@ public final class ObservableTakeLastTimed<T> extends AbstractObservableWithUpst
         this.source.subscribe(new TakeLastTimedObserver(observer, this.count, this.time, this.unit, this.scheduler, this.bufferSize, this.delayError));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TakeLastTimedObserver<T> extends AtomicBoolean implements Observer<T>, Disposable {
         private static final long serialVersionUID = -5677354903406201275L;
         volatile boolean cancelled;

@@ -32,17 +32,17 @@ public final class TransitionHandler {
     }
 
     /* renamed from: onAcceptFirstDownForOnSwipe-k-4lQ0M  reason: not valid java name */
-    public final boolean m7154onAcceptFirstDownForOnSwipek4lQ0M(long j) {
-        return getTransition().isFirstDownAccepted(Offset.m3837getXimpl(j), Offset.m3838getYimpl(j));
+    public final boolean m7720onAcceptFirstDownForOnSwipek4lQ0M(long j) {
+        return getTransition().isFirstDownAccepted(Offset.m4293getXimpl(j), Offset.m4294getYimpl(j));
     }
 
     /* renamed from: updateProgressOnDrag-k-4lQ0M  reason: not valid java name */
-    public final void m7156updateProgressOnDragk4lQ0M(long j) {
-        this.motionProgress.setFloatValue(RangesKt.coerceIn(this.motionProgress.getFloatValue() + getTransition().dragToProgress(this.motionProgress.getFloatValue(), this.motionMeasurer.getLayoutCurrentWidth(), this.motionMeasurer.getLayoutCurrentHeight(), Offset.m3837getXimpl(j), Offset.m3838getYimpl(j)), 0.0f, 1.0f));
+    public final void m7722updateProgressOnDragk4lQ0M(long j) {
+        this.motionProgress.setFloatValue(RangesKt.coerceIn(this.motionProgress.getFloatValue() + getTransition().dragToProgress(this.motionProgress.getFloatValue(), this.motionMeasurer.getLayoutCurrentWidth(), this.motionMeasurer.getLayoutCurrentHeight(), Offset.m4293getXimpl(j), Offset.m4294getYimpl(j)), 0.0f, 1.0f));
     }
 
     /* renamed from: onTouchUp-sF-c-tU  reason: not valid java name */
-    public final Object m7155onTouchUpsFctU(final long j, Continuation<? super Unit> continuation) {
+    public final Object m7721onTouchUpsFctU(final long j, Continuation<? super Unit> continuation) {
         Object withFrameNanos = MonotonicFrameClockKt.withFrameNanos(new Function1<Long, Unit>() { // from class: androidx.constraintlayout.compose.TransitionHandler$onTouchUp$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -61,7 +61,7 @@ public final class TransitionHandler {
                 MutableFloatState mutableFloatState;
                 transition = TransitionHandler.this.getTransition();
                 mutableFloatState = TransitionHandler.this.motionProgress;
-                transition.setTouchUp(mutableFloatState.getFloatValue(), j2, Velocity.m6922getXimpl(j), Velocity.m6923getYimpl(j));
+                transition.setTouchUp(mutableFloatState.getFloatValue(), j2, Velocity.m7489getXimpl(j), Velocity.m7490getYimpl(j));
             }
         }, continuation);
         return withFrameNanos == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? withFrameNanos : Unit.INSTANCE;

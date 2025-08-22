@@ -6,7 +6,7 @@ import io.reactivex.SingleSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.BiPredicate;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleContains<T> extends Single<Boolean> {
     final BiPredicate<Object, Object> comparer;
     final SingleSource<T> source;
@@ -23,7 +23,7 @@ public final class SingleContains<T> extends Single<Boolean> {
         this.source.subscribe(new ContainsSingleObserver(singleObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class ContainsSingleObserver implements SingleObserver<T> {
         private final SingleObserver<? super Boolean> downstream;
 

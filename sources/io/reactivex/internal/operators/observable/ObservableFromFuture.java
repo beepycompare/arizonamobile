@@ -7,7 +7,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.observers.DeferredScalarDisposable;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableFromFuture<T> extends Observable<T> {
     final Future<? extends T> future;
     final long timeout;

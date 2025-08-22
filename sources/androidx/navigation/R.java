@@ -5,11 +5,11 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class attr {
         public static int action = 0x7f040002;
-        public static int data = 0x7f04019e;
-        public static int dataPattern = 0x7f04019f;
-        public static int graph = 0x7f040284;
-        public static int navGraph = 0x7f040467;
-        public static int targetPackage = 0x7f0405bf;
+        public static int data = 0x7f04019f;
+        public static int dataPattern = 0x7f0401a0;
+        public static int graph = 0x7f040285;
+        public static int navGraph = 0x7f040468;
+        public static int targetPackage = 0x7f0405c0;
 
         private attr() {
         }
@@ -17,7 +17,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int nav_controller_view_tag = 0x7f0a0947;
+        public static int nav_controller_view_tag = 0x7f0a0945;
 
         private id() {
         }
@@ -32,9 +32,9 @@ public final class R {
         public static int ActivityNavigator_targetPackage = 0x00000004;
         public static int NavHost_navGraph;
         public static int NavInclude_graph;
-        public static int[] ActivityNavigator = {16842755, com.arizona21.game.web.R.attr.action, com.arizona21.game.web.R.attr.data, com.arizona21.game.web.R.attr.dataPattern, com.arizona21.game.web.R.attr.targetPackage};
-        public static int[] NavHost = {com.arizona21.game.web.R.attr.navGraph};
-        public static int[] NavInclude = {com.arizona21.game.web.R.attr.graph};
+        public static int[] ActivityNavigator = {16842755, com.arizona21.game.R.attr.action, com.arizona21.game.R.attr.data, com.arizona21.game.R.attr.dataPattern, com.arizona21.game.R.attr.targetPackage};
+        public static int[] NavHost = {com.arizona21.game.R.attr.navGraph};
+        public static int[] NavInclude = {com.arizona21.game.R.attr.graph};
 
         private styleable() {
         }

@@ -25,11 +25,11 @@ public final class CenteredContentMeasurePolicy implements MeasurePolicy {
         int calculateCenteredContentHorizontalPadding;
         final ArrayList arrayList;
         int i;
-        int m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j);
-        int m6638getMinHeightimpl = Constraints.m6638getMinHeightimpl(j);
+        int m7204getMaxWidthimpl = Constraints.m7204getMaxWidthimpl(j);
+        int m7205getMinHeightimpl = Constraints.m7205getMinHeightimpl(j);
         int size = list.size();
         if (size < 1) {
-            return MeasureScope.layout$default(measureScope, m6637getMaxWidthimpl, m6638getMinHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.CenteredContentMeasurePolicy$measure$1
+            return MeasureScope.layout$default(measureScope, m7204getMaxWidthimpl, m7205getMinHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.CenteredContentMeasurePolicy$measure$1
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(Placeable.PlacementScope placementScope) {
                 }
@@ -43,16 +43,16 @@ public final class CenteredContentMeasurePolicy implements MeasurePolicy {
         }
         final Ref.IntRef intRef = new Ref.IntRef();
         int i2 = 0;
-        if (Constraints.m6633getHasBoundedWidthimpl(j)) {
-            int i3 = m6637getMaxWidthimpl / size;
-            calculateCenteredContentHorizontalPadding = ExpressiveNavigationBarKt.calculateCenteredContentHorizontalPadding(size, m6637getMaxWidthimpl);
+        if (Constraints.m7200getHasBoundedWidthimpl(j)) {
+            int i3 = m7204getMaxWidthimpl / size;
+            calculateCenteredContentHorizontalPadding = ExpressiveNavigationBarKt.calculateCenteredContentHorizontalPadding(size, m7204getMaxWidthimpl);
             intRef.element = calculateCenteredContentHorizontalPadding;
-            int i4 = (m6637getMaxWidthimpl - (intRef.element * 2)) / size;
+            int i4 = (m7204getMaxWidthimpl - (intRef.element * 2)) / size;
             int size2 = list.size();
             for (int i5 = 0; i5 < size2; i5++) {
                 int maxIntrinsicHeight = list.get(i5).maxIntrinsicHeight(i4);
-                if (m6638getMinHeightimpl < maxIntrinsicHeight) {
-                    m6638getMinHeightimpl = RangesKt.coerceAtMost(maxIntrinsicHeight, Constraints.m6636getMaxHeightimpl(j));
+                if (m7205getMinHeightimpl < maxIntrinsicHeight) {
+                    m7205getMinHeightimpl = RangesKt.coerceAtMost(maxIntrinsicHeight, Constraints.m7203getMaxHeightimpl(j));
                 }
             }
             ArrayList arrayList2 = new ArrayList(list.size());
@@ -60,14 +60,14 @@ public final class CenteredContentMeasurePolicy implements MeasurePolicy {
             while (i2 < size3) {
                 ArrayList arrayList3 = arrayList2;
                 Measurable measurable = list.get(i2);
-                int maxIntrinsicWidth = measurable.maxIntrinsicWidth(Constraints.m6638getMinHeightimpl(j));
+                int maxIntrinsicWidth = measurable.maxIntrinsicWidth(Constraints.m7205getMinHeightimpl(j));
                 if (i4 < maxIntrinsicWidth) {
                     i = RangesKt.coerceAtMost(maxIntrinsicWidth, i3);
                     intRef.element -= (i - i4) / 2;
                 } else {
                     i = i4;
                 }
-                arrayList3.add(measurable.mo5438measureBRTryo0(ConstraintsKt.m6652constrainN9IONVI(j, Constraints.Companion.m6647fixedJhjzzOo(i, m6638getMinHeightimpl))));
+                arrayList3.add(measurable.mo5954measureBRTryo0(ConstraintsKt.m7219constrainN9IONVI(j, Constraints.Companion.m7214fixedJhjzzOo(i, m7205getMinHeightimpl))));
                 i2++;
             }
             arrayList = arrayList2;
@@ -75,12 +75,12 @@ public final class CenteredContentMeasurePolicy implements MeasurePolicy {
             ArrayList arrayList4 = new ArrayList(list.size());
             int size4 = list.size();
             while (i2 < size4) {
-                arrayList4.add(list.get(i2).mo5438measureBRTryo0(ConstraintsKt.m6652constrainN9IONVI(j, Constraints.Companion.m6648fixedHeightOenEA2s(m6638getMinHeightimpl))));
+                arrayList4.add(list.get(i2).mo5954measureBRTryo0(ConstraintsKt.m7219constrainN9IONVI(j, Constraints.Companion.m7215fixedHeightOenEA2s(m7205getMinHeightimpl))));
                 i2++;
             }
             arrayList = arrayList4;
         }
-        return MeasureScope.layout$default(measureScope, m6637getMaxWidthimpl, m6638getMinHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.CenteredContentMeasurePolicy$measure$5
+        return MeasureScope.layout$default(measureScope, m7204getMaxWidthimpl, m7205getMinHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.CenteredContentMeasurePolicy$measure$5
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */

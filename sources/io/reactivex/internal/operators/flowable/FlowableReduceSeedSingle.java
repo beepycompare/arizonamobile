@@ -11,7 +11,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableReduceSeedSingle<T, R> extends Single<R> {
     final BiFunction<R, ? super T, R> reducer;
     final R seed;
@@ -28,7 +28,7 @@ public final class FlowableReduceSeedSingle<T, R> extends Single<R> {
         this.source.subscribe(new ReduceSeedObserver(singleObserver, this.reducer, this.seed));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ReduceSeedObserver<T, R> implements FlowableSubscriber<T>, Disposable {
         final SingleObserver<? super R> downstream;
         final BiFunction<R, ? super T, R> reducer;

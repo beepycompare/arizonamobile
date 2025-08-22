@@ -9,7 +9,7 @@ import io.reactivex.observers.SerializedObserver;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableThrottleFirstTimed<T> extends AbstractObservableWithUpstream<T, T> {
     final Scheduler scheduler;
     final long timeout;
@@ -27,7 +27,7 @@ public final class ObservableThrottleFirstTimed<T> extends AbstractObservableWit
         this.source.subscribe(new DebounceTimedObserver(new SerializedObserver(observer), this.timeout, this.unit, this.scheduler.createWorker()));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DebounceTimedObserver<T> extends AtomicReference<Disposable> implements Observer<T>, Disposable, Runnable {
         private static final long serialVersionUID = 786994795061867455L;
         boolean done;

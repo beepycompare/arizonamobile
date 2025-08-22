@@ -4,50 +4,50 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: BasicMarquee.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u00112\u00020\u0001:\u0001\u0011B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001a\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\t\u0010\nJ\u0010\u0010\u000b\u001a\u00020\u0003HÖ\u0001¢\u0006\u0004\b\f\u0010\u0005J\u000f\u0010\r\u001a\u00020\u000eH\u0016¢\u0006\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0012"}, d2 = {"Landroidx/compose/foundation/MarqueeAnimationMode;", "", "value", "", "constructor-impl", "(I)I", "equals", "", "other", "equals-impl", "(ILjava/lang/Object;)Z", "hashCode", "hashCode-impl", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "Companion", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u000e2\u00020\u0001:\u0001\u000eB\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\r\u001a\u00020\u0003HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u000f"}, d2 = {"Landroidx/compose/foundation/MarqueeAnimationMode;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "equals", "", "other", "hashCode", "Companion", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class MarqueeAnimationMode {
     public static final Companion Companion = new Companion(null);
-    private static final int Immediately = m320constructorimpl(0);
-    private static final int WhileFocused = m320constructorimpl(1);
+    private static final int Immediately = m340constructorimpl(0);
+    private static final int WhileFocused = m340constructorimpl(1);
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ MarqueeAnimationMode m319boximpl(int i) {
+    public static final /* synthetic */ MarqueeAnimationMode m339boximpl(int i) {
         return new MarqueeAnimationMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m320constructorimpl(int i) {
+    private static int m340constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m321equalsimpl(int i, Object obj) {
-        return (obj instanceof MarqueeAnimationMode) && i == ((MarqueeAnimationMode) obj).m325unboximpl();
+    public static boolean m341equalsimpl(int i, Object obj) {
+        return (obj instanceof MarqueeAnimationMode) && i == ((MarqueeAnimationMode) obj).m345unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m322equalsimpl0(int i, int i2) {
+    public static final boolean m342equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m323hashCodeimpl(int i) {
+    public static int m343hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m321equalsimpl(this.value, obj);
+        return m341equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m323hashCodeimpl(this.value);
+        return m343hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m325unboximpl() {
+    public final /* synthetic */ int m345unboximpl() {
         return this.value;
     }
 
@@ -56,22 +56,22 @@ public final class MarqueeAnimationMode {
     }
 
     public String toString() {
-        return m324toStringimpl(this.value);
+        return m344toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m324toStringimpl(int i) {
-        if (m322equalsimpl0(i, Immediately)) {
+    public static String m344toStringimpl(int i) {
+        if (m342equalsimpl0(i, Immediately)) {
             return "Immediately";
         }
-        if (m322equalsimpl0(i, WhileFocused)) {
+        if (m342equalsimpl0(i, WhileFocused)) {
             return "WhileFocused";
         }
         throw new IllegalStateException(("invalid value: " + i).toString());
     }
 
     /* compiled from: BasicMarquee.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0019\u0010\u0003\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0005\u0010\u0006R\u0019\u0010\b\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\t\u0010\u0006\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\n"}, d2 = {"Landroidx/compose/foundation/MarqueeAnimationMode$Companion;", "", "()V", "Immediately", "Landroidx/compose/foundation/MarqueeAnimationMode;", "getImmediately-ZbEOnfQ", "()I", "I", "WhileFocused", "getWhileFocused-ZbEOnfQ", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007¨\u0006\u000b"}, d2 = {"Landroidx/compose/foundation/MarqueeAnimationMode$Companion;", "", "<init>", "()V", "Immediately", "Landroidx/compose/foundation/MarqueeAnimationMode;", "getImmediately-ZbEOnfQ", "()I", "I", "WhileFocused", "getWhileFocused-ZbEOnfQ", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -82,12 +82,12 @@ public final class MarqueeAnimationMode {
         }
 
         /* renamed from: getImmediately-ZbEOnfQ  reason: not valid java name */
-        public final int m326getImmediatelyZbEOnfQ() {
+        public final int m346getImmediatelyZbEOnfQ() {
             return MarqueeAnimationMode.Immediately;
         }
 
         /* renamed from: getWhileFocused-ZbEOnfQ  reason: not valid java name */
-        public final int m327getWhileFocusedZbEOnfQ() {
+        public final int m347getWhileFocusedZbEOnfQ() {
             return MarqueeAnimationMode.WhileFocused;
         }
     }

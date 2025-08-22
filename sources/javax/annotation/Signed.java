@@ -7,6 +7,6 @@ import javax.annotation.meta.When;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Nonnegative(when = When.UNKNOWN)
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public @interface Signed {
 }

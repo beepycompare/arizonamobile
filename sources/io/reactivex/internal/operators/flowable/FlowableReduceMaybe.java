@@ -14,7 +14,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableReduceMaybe<T> extends Maybe<T> implements HasUpstreamPublisher<T>, FuseToFlowable<T> {
     final BiFunction<T, T, T> reducer;
     final Flowable<T> source;
@@ -39,7 +39,7 @@ public final class FlowableReduceMaybe<T> extends Maybe<T> implements HasUpstrea
         this.source.subscribe((FlowableSubscriber) new ReduceSubscriber(maybeObserver, this.reducer));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ReduceSubscriber<T> implements FlowableSubscriber<T>, Disposable {
         boolean done;
         final MaybeObserver<? super T> downstream;

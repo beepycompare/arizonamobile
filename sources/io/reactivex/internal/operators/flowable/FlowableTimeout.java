@@ -17,14 +17,14 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableTimeout<T, U, V> extends AbstractFlowableWithUpstream<T, T> {
     final Publisher<U> firstTimeoutIndicator;
     final Function<? super T, ? extends Publisher<V>> itemTimeoutIndicator;
     final Publisher<? extends T> other;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface TimeoutSelectorSupport extends FlowableTimeoutTimed.TimeoutSupport {
         void onTimeoutError(long j, Throwable th);
     }
@@ -51,7 +51,7 @@ public final class FlowableTimeout<T, U, V> extends AbstractFlowableWithUpstream
         this.source.subscribe((FlowableSubscriber) timeoutFallbackSubscriber);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimeoutSubscriber<T> extends AtomicLong implements FlowableSubscriber<T>, Subscription, TimeoutSelectorSupport {
         private static final long serialVersionUID = 3764492702657003550L;
         final Subscriber<? super T> downstream;
@@ -154,7 +154,7 @@ public final class FlowableTimeout<T, U, V> extends AbstractFlowableWithUpstream
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimeoutFallbackSubscriber<T> extends SubscriptionArbiter implements FlowableSubscriber<T>, TimeoutSelectorSupport {
         private static final long serialVersionUID = 3764492702657003550L;
         long consumed;
@@ -271,7 +271,7 @@ public final class FlowableTimeout<T, U, V> extends AbstractFlowableWithUpstream
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class TimeoutConsumer extends AtomicReference<Subscription> implements FlowableSubscriber<Object>, Disposable {
         private static final long serialVersionUID = 8708641127342403073L;
         final long idx;

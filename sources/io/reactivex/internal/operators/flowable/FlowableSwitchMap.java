@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSwitchMap<T, R> extends AbstractFlowableWithUpstream<T, R> {
     final int bufferSize;
     final boolean delayErrors;
@@ -42,7 +42,7 @@ public final class FlowableSwitchMap<T, R> extends AbstractFlowableWithUpstream<
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class SwitchMapSubscriber<T, R> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
         static final SwitchMapInnerSubscriber<Object, Object> CANCELLED;
         private static final long serialVersionUID = -3491074160481096299L;
@@ -292,7 +292,7 @@ public final class FlowableSwitchMap<T, R> extends AbstractFlowableWithUpstream<
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class SwitchMapInnerSubscriber<T, R> extends AtomicReference<Subscription> implements FlowableSubscriber<R> {
         private static final long serialVersionUID = 3837284832786408377L;
         final int bufferSize;

@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableDelay extends Completable {
     final long delay;
     final boolean delayError;
@@ -29,7 +29,7 @@ public final class CompletableDelay extends Completable {
         this.source.subscribe(new Delay(completableObserver, this.delay, this.unit, this.scheduler, this.delayError));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class Delay extends AtomicReference<Disposable> implements CompletableObserver, Runnable, Disposable {
         private static final long serialVersionUID = 465972761105851022L;
         final long delay;

@@ -28,12 +28,12 @@ public final class SelectedRangeInfo {
     }
 
     /* renamed from: getGridStartCoordinates-nOcc-ac  reason: not valid java name */
-    public final long m2275getGridStartCoordinatesnOccac() {
+    public final long m2582getGridStartCoordinatesnOccac() {
         return this.gridStartCoordinates;
     }
 
     /* renamed from: getGridEndCoordinates-nOcc-ac  reason: not valid java name */
-    public final long m2274getGridEndCoordinatesnOccac() {
+    public final long m2581getGridEndCoordinatesnOccac() {
         return this.gridEndCoordinates;
     }
 

@@ -14,22 +14,22 @@ public final class SliderRange {
     private final long packedValue;
 
     /* renamed from: box-impl */
-    public static final /* synthetic */ SliderRange m2318boximpl(long j) {
+    public static final /* synthetic */ SliderRange m2625boximpl(long j) {
         return new SliderRange(j);
     }
 
     /* renamed from: constructor-impl */
-    public static long m2319constructorimpl(long j) {
+    public static long m2626constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl */
-    public static boolean m2320equalsimpl(long j, Object obj) {
-        return (obj instanceof SliderRange) && j == ((SliderRange) obj).m2326unboximpl();
+    public static boolean m2627equalsimpl(long j, Object obj) {
+        return (obj instanceof SliderRange) && j == ((SliderRange) obj).m2633unboximpl();
     }
 
     /* renamed from: equals-impl0 */
-    public static final boolean m2321equalsimpl0(long j, long j2) {
+    public static final boolean m2628equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
@@ -40,20 +40,20 @@ public final class SliderRange {
     }
 
     /* renamed from: hashCode-impl */
-    public static int m2324hashCodeimpl(long j) {
+    public static int m2631hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m2320equalsimpl(this.packedValue, obj);
+        return m2627equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m2324hashCodeimpl(this.packedValue);
+        return m2631hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl */
-    public final /* synthetic */ long m2326unboximpl() {
+    public final /* synthetic */ long m2633unboximpl() {
         return this.packedValue;
     }
 
@@ -66,7 +66,7 @@ public final class SliderRange {
     }
 
     /* renamed from: getStart-impl */
-    public static final float m2323getStartimpl(long j) {
+    public static final float m2630getStartimpl(long j) {
         if (j == Unspecified) {
             throw new IllegalStateException("SliderRange is unspecified".toString());
         }
@@ -74,7 +74,7 @@ public final class SliderRange {
     }
 
     /* renamed from: getEndInclusive-impl */
-    public static final float m2322getEndInclusiveimpl(long j) {
+    public static final float m2629getEndInclusiveimpl(long j) {
         if (j == Unspecified) {
             throw new IllegalStateException("SliderRange is unspecified".toString());
         }
@@ -90,26 +90,26 @@ public final class SliderRange {
         }
 
         /* renamed from: getUnspecified-FYbKRX4$annotations */
-        public static /* synthetic */ void m2327getUnspecifiedFYbKRX4$annotations() {
+        public static /* synthetic */ void m2634getUnspecifiedFYbKRX4$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getUnspecified-FYbKRX4 */
-        public final long m2328getUnspecifiedFYbKRX4() {
+        public final long m2635getUnspecifiedFYbKRX4() {
             return SliderRange.Unspecified;
         }
     }
 
     public String toString() {
-        return m2325toStringimpl(this.packedValue);
+        return m2632toStringimpl(this.packedValue);
     }
 
     /* renamed from: toString-impl */
-    public static String m2325toStringimpl(long j) {
-        if (SliderKt.m2309isSpecifiedIf1S1O4(j)) {
-            return m2323getStartimpl(j) + ".." + m2322getEndInclusiveimpl(j);
+    public static String m2632toStringimpl(long j) {
+        if (SliderKt.m2616isSpecifiedIf1S1O4(j)) {
+            return m2630getStartimpl(j) + ".." + m2629getEndInclusiveimpl(j);
         }
         return "FloatRange.Unspecified";
     }

@@ -7,7 +7,7 @@ import androidx.media3.extractor.metadata.SimpleMetadataDecoder;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AppInfoTableDecoder extends SimpleMetadataDecoder {
     public static final int APPLICATION_INFORMATION_TABLE_ID = 116;
     private static final int DESCRIPTOR_SIMPLE_APPLICATION_LOCATION = 21;

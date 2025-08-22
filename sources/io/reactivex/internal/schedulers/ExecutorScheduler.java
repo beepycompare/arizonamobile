@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ExecutorScheduler extends Scheduler {
     static final Scheduler HELPER = Schedulers.single();
     final Executor executor;
@@ -93,7 +93,7 @@ public final class ExecutorScheduler extends Scheduler {
         return super.schedulePeriodicallyDirect(runnable, j, j2, timeUnit);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ExecutorWorker extends Scheduler.Worker implements Runnable {
         volatile boolean disposed;
         final Executor executor;
@@ -222,7 +222,7 @@ public final class ExecutorScheduler extends Scheduler {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class BooleanRunnable extends AtomicBoolean implements Runnable, Disposable {
             private static final long serialVersionUID = -2421395018820541164L;
             final Runnable actual;
@@ -254,7 +254,7 @@ public final class ExecutorScheduler extends Scheduler {
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class SequentialDispose implements Runnable {
             private final Runnable decoratedRun;
             private final SequentialDisposable mar;
@@ -271,7 +271,7 @@ public final class ExecutorScheduler extends Scheduler {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class InterruptibleRunnable extends AtomicInteger implements Runnable, Disposable {
             static final int FINISHED = 2;
             static final int INTERRUPTED = 4;
@@ -361,7 +361,7 @@ public final class ExecutorScheduler extends Scheduler {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DelayedRunnable extends AtomicReference<Runnable> implements Runnable, Disposable, SchedulerRunnableIntrospection {
         private static final long serialVersionUID = -4101336210206799084L;
         final SequentialDisposable direct;
@@ -407,7 +407,7 @@ public final class ExecutorScheduler extends Scheduler {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class DelayedDispose implements Runnable {
         private final DelayedRunnable dr;
 

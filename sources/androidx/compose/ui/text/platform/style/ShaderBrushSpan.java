@@ -15,10 +15,10 @@ import androidx.compose.ui.text.platform.AndroidTextPaint_androidKt;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 /* compiled from: ShaderBrushSpan.android.kt */
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0000\u0018\u00002\u00020\u00012\u00020\u0002B\u0015\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0002\u0010\u0007J\u0010\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bH\u0016R\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0016\u0010\f\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000e0\rX\u0082\u0004¢\u0006\u0002\n\u0000R1\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u000f\u001a\u00020\u00108F@FX\u0086\u008e\u0002ø\u0001\u0000ø\u0001\u0001¢\u0006\u0012\n\u0004\b\u0016\u0010\u0017\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u001c"}, d2 = {"Landroidx/compose/ui/text/platform/style/ShaderBrushSpan;", "Landroid/text/style/CharacterStyle;", "Landroid/text/style/UpdateAppearance;", "shaderBrush", "Landroidx/compose/ui/graphics/ShaderBrush;", "alpha", "", "(Landroidx/compose/ui/graphics/ShaderBrush;F)V", "getAlpha", "()F", "getShaderBrush", "()Landroidx/compose/ui/graphics/ShaderBrush;", "shaderState", "Landroidx/compose/runtime/State;", "Landroid/graphics/Shader;", "<set-?>", "Landroidx/compose/ui/geometry/Size;", "size", "getSize-NH-jbRc", "()J", "setSize-uvyYCjk", "(J)V", "size$delegate", "Landroidx/compose/runtime/MutableState;", "updateDrawState", "", "textPaint", "Landroid/text/TextPaint;", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u00002\u00020\u00012\u00020\u0002B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001cH\u0016R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR+\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\r\u001a\u00020\u000e8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b\u0014\u0010\u0015\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u0016\u0010\u0016\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00180\u0017X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001d"}, d2 = {"Landroidx/compose/ui/text/platform/style/ShaderBrushSpan;", "Landroid/text/style/CharacterStyle;", "Landroid/text/style/UpdateAppearance;", "shaderBrush", "Landroidx/compose/ui/graphics/ShaderBrush;", "alpha", "", "<init>", "(Landroidx/compose/ui/graphics/ShaderBrush;F)V", "getShaderBrush", "()Landroidx/compose/ui/graphics/ShaderBrush;", "getAlpha", "()F", "<set-?>", "Landroidx/compose/ui/geometry/Size;", "size", "getSize-NH-jbRc", "()J", "setSize-uvyYCjk", "(J)V", "size$delegate", "Landroidx/compose/runtime/MutableState;", "shaderState", "Landroidx/compose/runtime/State;", "Landroid/graphics/Shader;", "updateDrawState", "", "textPaint", "Landroid/text/TextPaint;", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ShaderBrushSpan extends CharacterStyle implements UpdateAppearance {
-    public static final int $stable = 0;
+    public static final int $stable = 8;
     private final float alpha;
     private final ShaderBrush shaderBrush;
     private final State<Shader> shaderState;
@@ -36,33 +36,34 @@ public final class ShaderBrushSpan extends CharacterStyle implements UpdateAppea
         MutableState mutableStateOf$default;
         this.shaderBrush = shaderBrush;
         this.alpha = f;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m3894boximpl(Size.Companion.m3914getUnspecifiedNHjbRc()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m4350boximpl(Size.Companion.m4370getUnspecifiedNHjbRc()), null, 2, null);
         this.size$delegate = mutableStateOf$default;
-        this.shaderState = SnapshotStateKt.derivedStateOf(new Function0<Shader>() { // from class: androidx.compose.ui.text.platform.style.ShaderBrushSpan$shaderState$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        this.shaderState = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.ui.text.platform.style.ShaderBrushSpan$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
-            public final Shader invoke() {
-                if (ShaderBrushSpan.this.m6438getSizeNHjbRc() == InlineClassHelperKt.UnspecifiedPackedFloats || Size.m3908isEmptyimpl(ShaderBrushSpan.this.m6438getSizeNHjbRc())) {
-                    return null;
-                }
-                return ShaderBrushSpan.this.getShaderBrush().mo4047createShaderuvyYCjk(ShaderBrushSpan.this.m6438getSizeNHjbRc());
+            public final Object invoke() {
+                Shader shaderState$lambda$0;
+                shaderState$lambda$0 = ShaderBrushSpan.shaderState$lambda$0(ShaderBrushSpan.this);
+                return shaderState$lambda$0;
             }
         });
     }
 
     /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-    public final long m6438getSizeNHjbRc() {
-        return ((Size) this.size$delegate.getValue()).m3911unboximpl();
+    public final long m7005getSizeNHjbRc() {
+        return ((Size) this.size$delegate.getValue()).m4367unboximpl();
     }
 
     /* renamed from: setSize-uvyYCjk  reason: not valid java name */
-    public final void m6439setSizeuvyYCjk(long j) {
-        this.size$delegate.setValue(Size.m3894boximpl(j));
+    public final void m7006setSizeuvyYCjk(long j) {
+        this.size$delegate.setValue(Size.m4350boximpl(j));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Shader shaderState$lambda$0(ShaderBrushSpan shaderBrushSpan) {
+        if (shaderBrushSpan.m7005getSizeNHjbRc() == InlineClassHelperKt.UnspecifiedPackedFloats || Size.m4364isEmptyimpl(shaderBrushSpan.m7005getSizeNHjbRc())) {
+            return null;
+        }
+        return shaderBrushSpan.shaderBrush.mo4506createShaderuvyYCjk(shaderBrushSpan.m7005getSizeNHjbRc());
     }
 
     @Override // android.text.style.CharacterStyle

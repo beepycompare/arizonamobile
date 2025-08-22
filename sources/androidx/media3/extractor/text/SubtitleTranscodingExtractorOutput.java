@@ -5,7 +5,7 @@ import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.text.SubtitleParser;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SubtitleTranscodingExtractorOutput implements ExtractorOutput {
     private final ExtractorOutput delegate;
     private boolean hasNonTextTracks;

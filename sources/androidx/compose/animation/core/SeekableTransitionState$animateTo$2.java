@@ -1,8 +1,6 @@
 package androidx.compose.animation.core;
 
 import androidx.compose.animation.core.SeekableTransitionState;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import androidx.exifinterface.media.ExifInterface;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -28,8 +26,8 @@ import kotlinx.coroutines.sync.Mutex;
     */
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Transition.kt */
-@Metadata(d1 = {"\u0000\b\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.LATITUDE_SOUTH}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.animation.core.SeekableTransitionState$animateTo$2", f = "Transition.kt", i = {}, l = {599}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.animation.core.SeekableTransitionState$animateTo$2", f = "Transition.kt", i = {}, l = {600}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class SeekableTransitionState$animateTo$2 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
     final /* synthetic */ FiniteAnimationSpec<Float> $animationSpec;
@@ -65,8 +63,8 @@ public final class SeekableTransitionState$animateTo$2 extends SuspendLambda imp
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: Transition.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.LATITUDE_SOUTH, "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.animation.core.SeekableTransitionState$animateTo$2$1", f = "Transition.kt", i = {0}, l = {2147, TypedValues.MotionType.TYPE_QUANTIZE_INTERPOLATOR_ID, 614, 668, 670}, m = "invokeSuspend", n = {"$this$withLock_u24default$iv"}, s = {"L$0"})
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.compose.animation.core.SeekableTransitionState$animateTo$2$1", f = "Transition.kt", i = {0}, l = {2173, 613, 615, 669, 671}, m = "invokeSuspend", n = {"$this$withLock_u24default$iv"}, s = {"L$0"})
     /* renamed from: androidx.compose.animation.core.SeekableTransitionState$animateTo$2$1  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -143,18 +141,18 @@ public final class SeekableTransitionState$animateTo$2 extends SuspendLambda imp
                     if (!Intrinsics.areEqual(this.$targetState, targetState)) {
                         this.this$0.moveAnimationToInitialState();
                         this.this$0.setFraction(0.0f);
-                        this.$transition.updateTarget$animation_core_release(this.$targetState);
+                        this.$transition.updateTarget$animation_core(this.$targetState);
                         this.$transition.setPlayTimeNanos(0L);
-                        this.this$0.setCurrentState$animation_core_release(targetState);
-                        this.this$0.setTargetState$animation_core_release(this.$targetState);
+                        this.this$0.setCurrentState$animation_core(targetState);
+                        this.this$0.setTargetState$animation_core(this.$targetState);
                     }
-                    Mutex compositionContinuationMutex$animation_core_release = this.this$0.getCompositionContinuationMutex$animation_core_release();
+                    Mutex compositionContinuationMutex$animation_core = this.this$0.getCompositionContinuationMutex$animation_core();
                     SeekableTransitionState seekableTransitionState2 = this.this$0;
-                    this.L$0 = compositionContinuationMutex$animation_core_release;
+                    this.L$0 = compositionContinuationMutex$animation_core;
                     this.L$1 = seekableTransitionState2;
                     this.label = 1;
-                    if (compositionContinuationMutex$animation_core_release.lock(null, this) != coroutine_suspended) {
-                        mutex = compositionContinuationMutex$animation_core_release;
+                    if (compositionContinuationMutex$animation_core.lock(null, this) != coroutine_suspended) {
+                        mutex = compositionContinuationMutex$animation_core;
                         seekableTransitionState = seekableTransitionState2;
                     }
                     return coroutine_suspended;
@@ -192,7 +190,7 @@ public final class SeekableTransitionState$animateTo$2 extends SuspendLambda imp
                                 } else {
                                     long durationNanos = seekingAnimationState.getDurationNanos();
                                     if (durationNanos == Long.MIN_VALUE) {
-                                        durationNanos = this.this$0.getTotalDurationNanos$animation_core_release();
+                                        durationNanos = this.this$0.getTotalDurationNanos$animation_core();
                                     }
                                     float f = ((float) durationNanos) / 1.0E9f;
                                     if (f <= 0.0f) {
@@ -208,15 +206,15 @@ public final class SeekableTransitionState$animateTo$2 extends SuspendLambda imp
                                 seekingAnimationState.setAnimationSpec(vectorize);
                                 seekingAnimationState.setComplete(false);
                                 seekingAnimationState.setValue(this.this$0.getFraction());
-                                seekingAnimationState.getStart().set$animation_core_release(0, this.this$0.getFraction());
-                                seekingAnimationState.setDurationNanos(this.this$0.getTotalDurationNanos$animation_core_release());
+                                seekingAnimationState.getStart().set$animation_core(0, this.this$0.getFraction());
+                                seekingAnimationState.setDurationNanos(this.this$0.getTotalDurationNanos$animation_core());
                                 seekingAnimationState.setProgressNanos(0L);
                                 seekingAnimationState.setInitialVelocity(zeroVelocity);
                                 if (vectorize != null) {
                                     companion3 = SeekableTransitionState.Companion;
                                     roundToLong = vectorize.getDurationNanos(seekingAnimationState.getStart(), companion3.getTarget1(), zeroVelocity);
                                 } else {
-                                    roundToLong = MathKt.roundToLong(this.this$0.getTotalDurationNanos$animation_core_release() * (1.0d - this.this$0.getFraction()));
+                                    roundToLong = MathKt.roundToLong(this.this$0.getTotalDurationNanos$animation_core() * (1.0d - this.this$0.getFraction()));
                                 }
                                 seekingAnimationState.setAnimationSpecDuration(roundToLong);
                                 ((SeekableTransitionState) this.this$0).currentAnimation = seekingAnimationState;
@@ -237,13 +235,13 @@ public final class SeekableTransitionState$animateTo$2 extends SuspendLambda imp
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     ResultKt.throwOnFailure(obj);
-                    this.this$0.setCurrentState$animation_core_release(this.$targetState);
+                    this.this$0.setCurrentState$animation_core(this.$targetState);
                     this.label = 5;
                     waitForComposition = this.this$0.waitForComposition(this);
                 }
-                Object composedTargetState$animation_core_release = seekableTransitionState.getComposedTargetState$animation_core_release();
+                Object composedTargetState$animation_core = seekableTransitionState.getComposedTargetState$animation_core();
                 mutex.unlock(null);
-                if (!Intrinsics.areEqual(this.$targetState, composedTargetState$animation_core_release)) {
+                if (!Intrinsics.areEqual(this.$targetState, composedTargetState$animation_core)) {
                     this.L$0 = null;
                     this.L$1 = null;
                     this.label = 2;
@@ -274,7 +272,7 @@ public final class SeekableTransitionState$animateTo$2 extends SuspendLambda imp
         } else {
             ResultKt.throwOnFailure(obj);
         }
-        this.$transition.onTransitionEnd$animation_core_release();
+        this.$transition.onTransitionEnd$animation_core();
         return Unit.INSTANCE;
     }
 }

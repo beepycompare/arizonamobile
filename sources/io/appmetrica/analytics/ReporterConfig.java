@@ -1,8 +1,8 @@
 package io.appmetrica.analytics;
 
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.Bn;
-import io.appmetrica.analytics.impl.C0246f0;
+import io.appmetrica.analytics.impl.C0238f0;
+import io.appmetrica.analytics.impl.Gn;
 import io.appmetrica.analytics.impl.I5;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,10 +21,10 @@ public class ReporterConfig {
 
     /* loaded from: classes4.dex */
     public static class Builder {
-        private static final Bn l = new Bn(new C0246f0());
+        private static final Gn l = new Gn(new C0238f0());
 
         /* renamed from: a  reason: collision with root package name */
-        private final I5 f204a;
+        private final I5 f198a;
         private final String b;
         private Integer c;
         private Boolean d;
@@ -75,7 +75,7 @@ public class ReporterConfig {
         }
 
         public Builder withMaxReportsInDatabaseCount(int i) {
-            this.f = Integer.valueOf(this.f204a.a(i));
+            this.f = Integer.valueOf(this.f198a.a(i));
             return this;
         }
 
@@ -93,7 +93,7 @@ public class ReporterConfig {
             this.j = new HashMap();
             this.k = new HashMap();
             l.a(str);
-            this.f204a = new I5(str);
+            this.f198a = new I5(str);
             this.b = str;
         }
     }

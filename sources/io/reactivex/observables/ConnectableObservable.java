@@ -16,7 +16,7 @@ import io.reactivex.internal.util.ConnectConsumer;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class ConnectableObservable<T> extends Observable<T> {
     public abstract void connect(Consumer<? super Disposable> consumer);
 

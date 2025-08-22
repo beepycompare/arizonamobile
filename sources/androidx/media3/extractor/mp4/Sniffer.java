@@ -6,7 +6,7 @@ import androidx.media3.container.Mp4Box;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.SniffFailure;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Sniffer {
     public static final int BRAND_HEIC = 1751476579;
     public static final int BRAND_QUICKTIME = 1903435808;

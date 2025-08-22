@@ -20,8 +20,8 @@ import ru.mrlargha.commonui.databinding.UserBattlepassBinding;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.utils.GsonStore;
 /* compiled from: UserBattlePass.kt */
-@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0001\u001eB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0015H\u0016J\u0018\u0010\u0019\u001a\u00020\u00172\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u0006H\u0016J\b\u0010\u001d\u001a\u00020\u0017H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n \u0013*\u0004\u0018\u00010\u00120\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lru/mrlargha/commonui/elements/battlePassView/UserBattlePass;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/UserBattlepassBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "rewardItemAdapter", "Lru/mrlargha/commonui/elements/battlePassView/RewardItemAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "setVisible", "", "visible", "onBackendMessage", "data", "", "subId", "closeScreen", "Spawner", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0001\u001eB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0015H\u0016J\u0018\u0010\u0019\u001a\u00020\u00172\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u0006H\u0016J\b\u0010\u001d\u001a\u00020\u0017H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n \u0013*\u0004\u0018\u00010\u00120\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lru/mrlargha/commonui/elements/battlePassView/UserBattlePass;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/UserBattlepassBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "rewardItemAdapter", "Lru/mrlargha/commonui/elements/battlePassView/RewardItemAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "setVisible", "", "visible", "onBackendMessage", "data", "", "subId", "closeScreen", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes6.dex */
 public final class UserBattlePass extends SAMPUIElement implements InterfaceController {
     private final UserBattlepassBinding binding;
     private final IBackendNotifier frontendNotifier;
@@ -98,25 +98,32 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
                 this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), R.drawable.logo_path_of_dragon));
             } else if (type == 9) {
                 this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), R.drawable.item_ticket_gift));
-            } else if (type == 13) {
-                this.binding.tvTitleText.setTextColor(Color.parseColor("#FFCB3A"));
-                try {
-                    this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), R.drawable.easter_battle_pass_icon));
-                    Unit unit = Unit.INSTANCE;
-                } catch (Exception e) {
-                    Integer.valueOf(Log.e("Exception", String.valueOf(e.getMessage())));
+            } else if (type != 13) {
+                if (type == 14) {
+                    UserBattlepassBinding userBattlepassBinding = this.binding;
+                    userBattlepassBinding.ivMainImage.setImageResource(R.drawable.user_battle_pass_may_calendar_icon);
+                    userBattlepassBinding.tvTitleText.setTextColor(Color.parseColor("#A5AB53"));
+                    return;
                 }
-            } else if (type == 14) {
-                UserBattlepassBinding userBattlepassBinding = this.binding;
-                userBattlepassBinding.ivMainImage.setImageResource(R.drawable.user_battle_pass_may_calendar_icon);
-                userBattlepassBinding.tvTitleText.setTextColor(Color.parseColor("#A5AB53"));
-            } else {
                 if (this.isArizonaType) {
                     i2 = R.drawable.battlepass_logo;
                 } else {
                     i2 = R.drawable.battlepass_logo_rodina;
                 }
                 this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), i2));
+            } else {
+                try {
+                    UserBattlepassBinding userBattlepassBinding2 = this.binding;
+                    if (this.isArizonaType) {
+                        userBattlepassBinding2.tvTitleText.setTextColor(Color.parseColor("#D68FFF"));
+                    } else {
+                        userBattlepassBinding2.tvTitleText.setTextColor(Color.parseColor("#CEFF2C"));
+                    }
+                    this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), this.isArizonaType ? R.drawable.event_icon : R.drawable.event_pirates_icon));
+                    Unit unit = Unit.INSTANCE;
+                } catch (Exception e) {
+                    Integer.valueOf(Log.e("Exception", String.valueOf(e.getMessage())));
+                }
             }
         } catch (Exception e2) {
             e2.printStackTrace();
@@ -130,8 +137,8 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
     }
 
     /* compiled from: UserBattlePass.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/battlePassView/UserBattlePass$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/battlePassView/UserBattlePass$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         @Override // ru.mrlargha.commonui.core.UIElementAbstractSpawner
         public SAMPUIElement create(Activity targetActivity, int i) {

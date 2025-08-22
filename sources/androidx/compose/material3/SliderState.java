@@ -229,8 +229,8 @@ public final class SliderState implements DraggableState {
     }
 
     /* renamed from: onPress-k-4lQ0M$material3_release  reason: not valid java name */
-    public final void m2329onPressk4lQ0M$material3_release(long j) {
-        setPressOffset((this.isRtl ? getTotalWidth() - Offset.m3837getXimpl(j) : Offset.m3837getXimpl(j)) - getRawOffset());
+    public final void m2636onPressk4lQ0M$material3_release(long j) {
+        setPressOffset((this.isRtl ? getTotalWidth() - Offset.m4293getXimpl(j) : Offset.m4293getXimpl(j)) - getRawOffset());
     }
 
     private final float getRawOffset() {

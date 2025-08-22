@@ -99,7 +99,7 @@ public final class CarouselKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2688HorizontalMultiBrowseCarouselzCIJ0Nk(final CarouselState carouselState, final float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, float f3, float f4, PaddingValues paddingValues, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i, final int i2) {
+    public static final void m2995HorizontalMultiBrowseCarouselzCIJ0Nk(final CarouselState carouselState, final float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, float f3, float f4, PaddingValues paddingValues, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i, final int i2) {
         int i3;
         float f5;
         Object obj;
@@ -116,7 +116,7 @@ public final class CarouselKt {
         Composer composer2;
         int i9;
         CarouselState carouselState2;
-        PaddingValues m731PaddingValues0680j_4;
+        PaddingValues m825PaddingValues0680j_4;
         TargetedFlingBehavior targetedFlingBehavior2;
         int i10;
         Modifier modifier2;
@@ -208,7 +208,7 @@ public final class CarouselKt {
                             startRestartGroup.startDefaults();
                             if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                                 Modifier.Companion companion = i12 != 0 ? Modifier.Companion : obj;
-                                float m6684constructorimpl = i4 != 0 ? Dp.m6684constructorimpl(0) : f6;
+                                float m7251constructorimpl = i4 != 0 ? Dp.m7251constructorimpl(0) : f6;
                                 if ((i2 & 16) != 0) {
                                     composer2 = startRestartGroup;
                                     i9 = 0;
@@ -221,22 +221,22 @@ public final class CarouselKt {
                                     carouselState2 = carouselState;
                                 }
                                 if (i5 != 0) {
-                                    f7 = CarouselDefaults.INSTANCE.m2685getMinSmallItemSizeD9Ej5fM$material3_release();
+                                    f7 = CarouselDefaults.INSTANCE.m2992getMinSmallItemSizeD9Ej5fM$material3_release();
                                 }
                                 if (i6 != 0) {
-                                    f8 = CarouselDefaults.INSTANCE.m2684getMaxSmallItemSizeD9Ej5fM$material3_release();
+                                    f8 = CarouselDefaults.INSTANCE.m2991getMaxSmallItemSizeD9Ej5fM$material3_release();
                                 }
-                                m731PaddingValues0680j_4 = i7 != 0 ? PaddingKt.m731PaddingValues0680j_4(Dp.m6684constructorimpl(i9)) : obj3;
+                                m825PaddingValues0680j_4 = i7 != 0 ? PaddingKt.m825PaddingValues0680j_4(Dp.m7251constructorimpl(i9)) : obj3;
                                 targetedFlingBehavior2 = obj2;
                                 i10 = i8;
                                 modifier2 = companion;
-                                f9 = m6684constructorimpl;
+                                f9 = m7251constructorimpl;
                             } else {
                                 startRestartGroup.skipToGroupEnd();
                                 if ((i2 & 16) != 0) {
                                     i8 &= -57345;
                                 }
-                                m731PaddingValues0680j_4 = obj3;
+                                m825PaddingValues0680j_4 = obj3;
                                 targetedFlingBehavior2 = obj2;
                                 i10 = i8;
                                 f9 = f6;
@@ -254,7 +254,7 @@ public final class CarouselKt {
                             final Density density = (Density) consume;
                             Orientation orientation = Orientation.Horizontal;
                             ComposerKt.sourceInformationMarkerStart(composer2, 1995157598, "CC(remember):Carousel.kt#9igjgp");
-                            PaddingValues paddingValues3 = m731PaddingValues0680j_4;
+                            PaddingValues paddingValues3 = m825PaddingValues0680j_4;
                             changed = ((i10 & 112) == 32) | composer2.changed(density) | composer2.changedInstance(carouselState2) | ((i10 & 458752) == 131072) | ((3670016 & i10) == 1048576);
                             rememberedValue = composer2.rememberedValue();
                             if (!changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -276,7 +276,7 @@ public final class CarouselKt {
 
                                     public final KeylineList invoke(float f14, float f15) {
                                         Density density2 = Density.this;
-                                        return KeylinesKt.multiBrowseKeylineList(density2, f14, density2.mo389toPx0680j_4(f11), f15, carouselState3.getItemCountState().getValue().invoke().intValue(), density2.mo389toPx0680j_4(f13), density2.mo389toPx0680j_4(f12));
+                                        return KeylinesKt.multiBrowseKeylineList(density2, f14, density2.mo419toPx0680j_4(f11), f15, carouselState3.getItemCountState().getValue().invoke().intValue(), density2.mo419toPx0680j_4(f13), density2.mo419toPx0680j_4(f12));
                                     }
                                 };
                                 composer2.updateRememberedValue(rememberedValue);
@@ -284,7 +284,7 @@ public final class CarouselKt {
                             ComposerKt.sourceInformationMarkerEnd(composer2);
                             int i13 = i10 << 9;
                             Composer composer4 = composer2;
-                            m2687CarouselV95POc(carouselState, orientation, (Function2) rememberedValue, paddingValues3, 2, modifier2, f9, targetedFlingBehavior2, function4, composer4, (i10 & 14) | 24624 | ((i10 >> 12) & 7168) | (i13 & 458752) | (3670016 & i13) | (i13 & 29360128) | (234881024 & i10), 0);
+                            m2994CarouselV95POc(carouselState, orientation, (Function2) rememberedValue, paddingValues3, 2, modifier2, f9, targetedFlingBehavior2, function4, composer4, (i10 & 14) | 24624 | ((i10 >> 12) & 7168) | (i13 & 458752) | (3670016 & i13) | (i13 & 29360128) | (234881024 & i10), 0);
                             composer3 = composer4;
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
@@ -320,7 +320,7 @@ public final class CarouselKt {
                                 }
 
                                 public final void invoke(Composer composer5, int i14) {
-                                    CarouselKt.m2688HorizontalMultiBrowseCarouselzCIJ0Nk(CarouselState.this, f, modifier3, f10, targetedFlingBehavior3, f14, f15, paddingValues2, function4, composer5, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                    CarouselKt.m2995HorizontalMultiBrowseCarouselzCIJ0Nk(CarouselState.this, f, modifier3, f10, targetedFlingBehavior3, f14, f15, paddingValues2, function4, composer5, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                                 }
                             });
                             return;
@@ -347,7 +347,7 @@ public final class CarouselKt {
                     targetedFlingBehavior2 = obj2;
                     i10 = i8;
                     modifier2 = companion;
-                    f9 = m6684constructorimpl;
+                    f9 = m7251constructorimpl;
                     composer2.endDefaults();
                     if (ComposerKt.isTraceInProgress()) {
                     }
@@ -357,7 +357,7 @@ public final class CarouselKt {
                     final Density density2 = (Density) consume2;
                     Orientation orientation2 = Orientation.Horizontal;
                     ComposerKt.sourceInformationMarkerStart(composer2, 1995157598, "CC(remember):Carousel.kt#9igjgp");
-                    PaddingValues paddingValues32 = m731PaddingValues0680j_4;
+                    PaddingValues paddingValues32 = m825PaddingValues0680j_4;
                     changed = ((i10 & 112) == 32) | composer2.changed(density2) | composer2.changedInstance(carouselState2) | ((i10 & 458752) == 131072) | ((3670016 & i10) == 1048576);
                     rememberedValue = composer2.rememberedValue();
                     if (!changed) {
@@ -380,14 +380,14 @@ public final class CarouselKt {
 
                         public final KeylineList invoke(float f142, float f152) {
                             Density density22 = Density.this;
-                            return KeylinesKt.multiBrowseKeylineList(density22, f142, density22.mo389toPx0680j_4(f112), f152, carouselState32.getItemCountState().getValue().invoke().intValue(), density22.mo389toPx0680j_4(f132), density22.mo389toPx0680j_4(f122));
+                            return KeylinesKt.multiBrowseKeylineList(density22, f142, density22.mo419toPx0680j_4(f112), f152, carouselState32.getItemCountState().getValue().invoke().intValue(), density22.mo419toPx0680j_4(f132), density22.mo419toPx0680j_4(f122));
                         }
                     };
                     composer2.updateRememberedValue(rememberedValue);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     int i132 = i10 << 9;
                     Composer composer42 = composer2;
-                    m2687CarouselV95POc(carouselState, orientation2, (Function2) rememberedValue, paddingValues32, 2, modifier2, f9, targetedFlingBehavior2, function4, composer42, (i10 & 14) | 24624 | ((i10 >> 12) & 7168) | (i132 & 458752) | (3670016 & i132) | (i132 & 29360128) | (234881024 & i10), 0);
+                    m2994CarouselV95POc(carouselState, orientation2, (Function2) rememberedValue, paddingValues32, 2, modifier2, f9, targetedFlingBehavior2, function4, composer42, (i10 & 14) | 24624 | ((i10 >> 12) & 7168) | (i132 & 458752) | (3670016 & i132) | (i132 & 29360128) | (234881024 & i10), 0);
                     composer3 = composer42;
                     if (ComposerKt.isTraceInProgress()) {
                     }
@@ -428,7 +428,7 @@ public final class CarouselKt {
                 targetedFlingBehavior2 = obj2;
                 i10 = i8;
                 modifier2 = companion;
-                f9 = m6684constructorimpl;
+                f9 = m7251constructorimpl;
                 composer2.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
@@ -438,7 +438,7 @@ public final class CarouselKt {
                 final Density density22 = (Density) consume22;
                 Orientation orientation22 = Orientation.Horizontal;
                 ComposerKt.sourceInformationMarkerStart(composer2, 1995157598, "CC(remember):Carousel.kt#9igjgp");
-                PaddingValues paddingValues322 = m731PaddingValues0680j_4;
+                PaddingValues paddingValues322 = m825PaddingValues0680j_4;
                 changed = ((i10 & 112) == 32) | composer2.changed(density22) | composer2.changedInstance(carouselState2) | ((i10 & 458752) == 131072) | ((3670016 & i10) == 1048576);
                 rememberedValue = composer2.rememberedValue();
                 if (!changed) {
@@ -461,14 +461,14 @@ public final class CarouselKt {
 
                     public final KeylineList invoke(float f1422, float f152) {
                         Density density222 = Density.this;
-                        return KeylinesKt.multiBrowseKeylineList(density222, f1422, density222.mo389toPx0680j_4(f1122), f152, carouselState322.getItemCountState().getValue().invoke().intValue(), density222.mo389toPx0680j_4(f1322), density222.mo389toPx0680j_4(f1222));
+                        return KeylinesKt.multiBrowseKeylineList(density222, f1422, density222.mo419toPx0680j_4(f1122), f152, carouselState322.getItemCountState().getValue().invoke().intValue(), density222.mo419toPx0680j_4(f1322), density222.mo419toPx0680j_4(f1222));
                     }
                 };
                 composer2.updateRememberedValue(rememberedValue);
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 int i1322 = i10 << 9;
                 Composer composer422 = composer2;
-                m2687CarouselV95POc(carouselState, orientation22, (Function2) rememberedValue, paddingValues322, 2, modifier2, f9, targetedFlingBehavior2, function4, composer422, (i10 & 14) | 24624 | ((i10 >> 12) & 7168) | (i1322 & 458752) | (3670016 & i1322) | (i1322 & 29360128) | (234881024 & i10), 0);
+                m2994CarouselV95POc(carouselState, orientation22, (Function2) rememberedValue, paddingValues322, 2, modifier2, f9, targetedFlingBehavior2, function4, composer422, (i10 & 14) | 24624 | ((i10 >> 12) & 7168) | (i1322 & 458752) | (3670016 & i1322) | (i1322 & 29360128) | (234881024 & i10), 0);
                 composer3 = composer422;
                 if (ComposerKt.isTraceInProgress()) {
                 }
@@ -515,7 +515,7 @@ public final class CarouselKt {
             targetedFlingBehavior2 = obj2;
             i10 = i8;
             modifier2 = companion;
-            f9 = m6684constructorimpl;
+            f9 = m7251constructorimpl;
             composer2.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
@@ -525,7 +525,7 @@ public final class CarouselKt {
             final Density density222 = (Density) consume222;
             Orientation orientation222 = Orientation.Horizontal;
             ComposerKt.sourceInformationMarkerStart(composer2, 1995157598, "CC(remember):Carousel.kt#9igjgp");
-            PaddingValues paddingValues3222 = m731PaddingValues0680j_4;
+            PaddingValues paddingValues3222 = m825PaddingValues0680j_4;
             changed = ((i10 & 112) == 32) | composer2.changed(density222) | composer2.changedInstance(carouselState2) | ((i10 & 458752) == 131072) | ((3670016 & i10) == 1048576);
             rememberedValue = composer2.rememberedValue();
             if (!changed) {
@@ -548,14 +548,14 @@ public final class CarouselKt {
 
                 public final KeylineList invoke(float f14222, float f152) {
                     Density density2222 = Density.this;
-                    return KeylinesKt.multiBrowseKeylineList(density2222, f14222, density2222.mo389toPx0680j_4(f11222), f152, carouselState3222.getItemCountState().getValue().invoke().intValue(), density2222.mo389toPx0680j_4(f13222), density2222.mo389toPx0680j_4(f12222));
+                    return KeylinesKt.multiBrowseKeylineList(density2222, f14222, density2222.mo419toPx0680j_4(f11222), f152, carouselState3222.getItemCountState().getValue().invoke().intValue(), density2222.mo419toPx0680j_4(f13222), density2222.mo419toPx0680j_4(f12222));
                 }
             };
             composer2.updateRememberedValue(rememberedValue);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             int i13222 = i10 << 9;
             Composer composer4222 = composer2;
-            m2687CarouselV95POc(carouselState, orientation222, (Function2) rememberedValue, paddingValues3222, 2, modifier2, f9, targetedFlingBehavior2, function4, composer4222, (i10 & 14) | 24624 | ((i10 >> 12) & 7168) | (i13222 & 458752) | (3670016 & i13222) | (i13222 & 29360128) | (234881024 & i10), 0);
+            m2994CarouselV95POc(carouselState, orientation222, (Function2) rememberedValue, paddingValues3222, 2, modifier2, f9, targetedFlingBehavior2, function4, composer4222, (i10 & 14) | 24624 | ((i10 >> 12) & 7168) | (i13222 & 458752) | (3670016 & i13222) | (i13222 & 29360128) | (234881024 & i10), 0);
             composer3 = composer4222;
             if (ComposerKt.isTraceInProgress()) {
             }
@@ -606,7 +606,7 @@ public final class CarouselKt {
         targetedFlingBehavior2 = obj2;
         i10 = i8;
         modifier2 = companion;
-        f9 = m6684constructorimpl;
+        f9 = m7251constructorimpl;
         composer2.endDefaults();
         if (ComposerKt.isTraceInProgress()) {
         }
@@ -616,7 +616,7 @@ public final class CarouselKt {
         final Density density2222 = (Density) consume2222;
         Orientation orientation2222 = Orientation.Horizontal;
         ComposerKt.sourceInformationMarkerStart(composer2, 1995157598, "CC(remember):Carousel.kt#9igjgp");
-        PaddingValues paddingValues32222 = m731PaddingValues0680j_4;
+        PaddingValues paddingValues32222 = m825PaddingValues0680j_4;
         changed = ((i10 & 112) == 32) | composer2.changed(density2222) | composer2.changedInstance(carouselState2) | ((i10 & 458752) == 131072) | ((3670016 & i10) == 1048576);
         rememberedValue = composer2.rememberedValue();
         if (!changed) {
@@ -639,14 +639,14 @@ public final class CarouselKt {
 
             public final KeylineList invoke(float f142222, float f152) {
                 Density density22222 = Density.this;
-                return KeylinesKt.multiBrowseKeylineList(density22222, f142222, density22222.mo389toPx0680j_4(f112222), f152, carouselState32222.getItemCountState().getValue().invoke().intValue(), density22222.mo389toPx0680j_4(f132222), density22222.mo389toPx0680j_4(f122222));
+                return KeylinesKt.multiBrowseKeylineList(density22222, f142222, density22222.mo419toPx0680j_4(f112222), f152, carouselState32222.getItemCountState().getValue().invoke().intValue(), density22222.mo419toPx0680j_4(f132222), density22222.mo419toPx0680j_4(f122222));
             }
         };
         composer2.updateRememberedValue(rememberedValue);
         ComposerKt.sourceInformationMarkerEnd(composer2);
         int i132222 = i10 << 9;
         Composer composer42222 = composer2;
-        m2687CarouselV95POc(carouselState, orientation2222, (Function2) rememberedValue, paddingValues32222, 2, modifier2, f9, targetedFlingBehavior2, function4, composer42222, (i10 & 14) | 24624 | ((i10 >> 12) & 7168) | (i132222 & 458752) | (3670016 & i132222) | (i132222 & 29360128) | (234881024 & i10), 0);
+        m2994CarouselV95POc(carouselState, orientation2222, (Function2) rememberedValue, paddingValues32222, 2, modifier2, f9, targetedFlingBehavior2, function4, composer42222, (i10 & 14) | 24624 | ((i10 >> 12) & 7168) | (i132222 & 458752) | (3670016 & i132222) | (i132222 & 29360128) | (234881024 & i10), 0);
         composer3 = composer42222;
         if (ComposerKt.isTraceInProgress()) {
         }
@@ -684,7 +684,7 @@ public final class CarouselKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2689HorizontalUncontainedCarousel9QcgTRs(final CarouselState carouselState, final float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, PaddingValues paddingValues, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i, final int i2) {
+    public static final void m2996HorizontalUncontainedCarousel9QcgTRs(final CarouselState carouselState, final float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, PaddingValues paddingValues, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i, final int i2) {
         CarouselState carouselState2;
         int i3;
         Modifier.Companion companion;
@@ -694,7 +694,7 @@ public final class CarouselKt {
         int i5;
         Object obj;
         Object obj2;
-        PaddingValues m731PaddingValues0680j_4;
+        PaddingValues m825PaddingValues0680j_4;
         TargetedFlingBehavior targetedFlingBehavior3;
         boolean z;
         Object rememberedValue;
@@ -768,14 +768,14 @@ public final class CarouselKt {
                                     companion = Modifier.Companion;
                                 }
                                 if (i4 != 0) {
-                                    f3 = Dp.m6684constructorimpl(0);
+                                    f3 = Dp.m7251constructorimpl(0);
                                 }
                                 if ((i2 & 16) != 0) {
                                     i3 &= -57345;
                                     targetedFlingBehavior2 = CarouselDefaults.INSTANCE.noSnapFlingBehavior(startRestartGroup, 6);
                                 }
                                 if (i5 != 0) {
-                                    m731PaddingValues0680j_4 = PaddingKt.m731PaddingValues0680j_4(Dp.m6684constructorimpl(0));
+                                    m825PaddingValues0680j_4 = PaddingKt.m825PaddingValues0680j_4(Dp.m7251constructorimpl(0));
                                     targetedFlingBehavior3 = targetedFlingBehavior2;
                                     boolean z2 = false;
                                     float f5 = f3;
@@ -810,7 +810,7 @@ public final class CarouselKt {
 
                                             public final KeylineList invoke(float f6, float f7) {
                                                 Density density2 = Density.this;
-                                                return KeylinesKt.uncontainedKeylineList(density2, f6, density2.mo389toPx0680j_4(f), f7);
+                                                return KeylinesKt.uncontainedKeylineList(density2, f6, density2.mo419toPx0680j_4(f), f7);
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -820,11 +820,11 @@ public final class CarouselKt {
                                     composer2 = startRestartGroup;
                                     Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function42 = obj2;
                                     Modifier modifier3 = companion;
-                                    m2687CarouselV95POc(carouselState2, orientation, rememberedValue, m731PaddingValues0680j_4, 0, modifier3, f5, targetedFlingBehavior3, function42, composer2, (i3 & 14) | 24624 | ((i3 >> 6) & 7168) | (458752 & i8) | (3670016 & i8) | (i8 & 29360128) | ((i3 << 6) & 234881024), 0);
+                                    m2994CarouselV95POc(carouselState2, orientation, rememberedValue, m825PaddingValues0680j_4, 0, modifier3, f5, targetedFlingBehavior3, function42, composer2, (i3 & 14) | 24624 | ((i3 >> 6) & 7168) | (458752 & i8) | (3670016 & i8) | (i8 & 29360128) | ((i3 << 6) & 234881024), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
-                                    paddingValues2 = m731PaddingValues0680j_4;
+                                    paddingValues2 = m825PaddingValues0680j_4;
                                     modifier2 = modifier3;
                                     f4 = f5;
                                     targetedFlingBehavior4 = targetedFlingBehavior3;
@@ -836,7 +836,7 @@ public final class CarouselKt {
                                 }
                             }
                             targetedFlingBehavior3 = targetedFlingBehavior2;
-                            m731PaddingValues0680j_4 = obj;
+                            m825PaddingValues0680j_4 = obj;
                             boolean z22 = false;
                             float f52 = f3;
                             startRestartGroup.endDefaults();
@@ -869,7 +869,7 @@ public final class CarouselKt {
 
                                 public final KeylineList invoke(float f6, float f7) {
                                     Density density22 = Density.this;
-                                    return KeylinesKt.uncontainedKeylineList(density22, f6, density22.mo389toPx0680j_4(f), f7);
+                                    return KeylinesKt.uncontainedKeylineList(density22, f6, density22.mo419toPx0680j_4(f), f7);
                                 }
                             };
                             startRestartGroup.updateRememberedValue(rememberedValue);
@@ -878,10 +878,10 @@ public final class CarouselKt {
                             composer2 = startRestartGroup;
                             Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function422 = obj2;
                             Modifier modifier32 = companion;
-                            m2687CarouselV95POc(carouselState2, orientation2, rememberedValue, m731PaddingValues0680j_4, 0, modifier32, f52, targetedFlingBehavior3, function422, composer2, (i3 & 14) | 24624 | ((i3 >> 6) & 7168) | (458752 & i82) | (3670016 & i82) | (i82 & 29360128) | ((i3 << 6) & 234881024), 0);
+                            m2994CarouselV95POc(carouselState2, orientation2, rememberedValue, m825PaddingValues0680j_4, 0, modifier32, f52, targetedFlingBehavior3, function422, composer2, (i3 & 14) | 24624 | ((i3 >> 6) & 7168) | (458752 & i82) | (3670016 & i82) | (i82 & 29360128) | ((i3 << 6) & 234881024), 0);
                             if (ComposerKt.isTraceInProgress()) {
                             }
-                            paddingValues2 = m731PaddingValues0680j_4;
+                            paddingValues2 = m825PaddingValues0680j_4;
                             modifier2 = modifier32;
                             f4 = f52;
                             targetedFlingBehavior4 = targetedFlingBehavior3;
@@ -910,7 +910,7 @@ public final class CarouselKt {
                                 }
 
                                 public final void invoke(Composer composer3, int i9) {
-                                    CarouselKt.m2689HorizontalUncontainedCarousel9QcgTRs(CarouselState.this, f, modifier2, f4, targetedFlingBehavior4, paddingValues2, function4, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                    CarouselKt.m2996HorizontalUncontainedCarousel9QcgTRs(CarouselState.this, f, modifier2, f4, targetedFlingBehavior4, paddingValues2, function4, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                                 }
                             });
                             return;
@@ -932,7 +932,7 @@ public final class CarouselKt {
                     if (i5 != 0) {
                     }
                     targetedFlingBehavior3 = targetedFlingBehavior2;
-                    m731PaddingValues0680j_4 = obj;
+                    m825PaddingValues0680j_4 = obj;
                     boolean z222 = false;
                     float f522 = f3;
                     startRestartGroup.endDefaults();
@@ -965,7 +965,7 @@ public final class CarouselKt {
 
                         public final KeylineList invoke(float f6, float f7) {
                             Density density222 = Density.this;
-                            return KeylinesKt.uncontainedKeylineList(density222, f6, density222.mo389toPx0680j_4(f), f7);
+                            return KeylinesKt.uncontainedKeylineList(density222, f6, density222.mo419toPx0680j_4(f), f7);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -974,10 +974,10 @@ public final class CarouselKt {
                     composer2 = startRestartGroup;
                     Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4222 = obj2;
                     Modifier modifier322 = companion;
-                    m2687CarouselV95POc(carouselState2, orientation22, rememberedValue, m731PaddingValues0680j_4, 0, modifier322, f522, targetedFlingBehavior3, function4222, composer2, (i3 & 14) | 24624 | ((i3 >> 6) & 7168) | (458752 & i822) | (3670016 & i822) | (i822 & 29360128) | ((i3 << 6) & 234881024), 0);
+                    m2994CarouselV95POc(carouselState2, orientation22, rememberedValue, m825PaddingValues0680j_4, 0, modifier322, f522, targetedFlingBehavior3, function4222, composer2, (i3 & 14) | 24624 | ((i3 >> 6) & 7168) | (458752 & i822) | (3670016 & i822) | (i822 & 29360128) | ((i3 << 6) & 234881024), 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
-                    paddingValues2 = m731PaddingValues0680j_4;
+                    paddingValues2 = m825PaddingValues0680j_4;
                     modifier2 = modifier322;
                     f4 = f522;
                     targetedFlingBehavior4 = targetedFlingBehavior3;
@@ -1003,7 +1003,7 @@ public final class CarouselKt {
                 if (i5 != 0) {
                 }
                 targetedFlingBehavior3 = targetedFlingBehavior2;
-                m731PaddingValues0680j_4 = obj;
+                m825PaddingValues0680j_4 = obj;
                 boolean z2222 = false;
                 float f5222 = f3;
                 startRestartGroup.endDefaults();
@@ -1036,7 +1036,7 @@ public final class CarouselKt {
 
                     public final KeylineList invoke(float f6, float f7) {
                         Density density2222 = Density.this;
-                        return KeylinesKt.uncontainedKeylineList(density2222, f6, density2222.mo389toPx0680j_4(f), f7);
+                        return KeylinesKt.uncontainedKeylineList(density2222, f6, density2222.mo419toPx0680j_4(f), f7);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -1045,10 +1045,10 @@ public final class CarouselKt {
                 composer2 = startRestartGroup;
                 Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function42222 = obj2;
                 Modifier modifier3222 = companion;
-                m2687CarouselV95POc(carouselState2, orientation222, rememberedValue, m731PaddingValues0680j_4, 0, modifier3222, f5222, targetedFlingBehavior3, function42222, composer2, (i3 & 14) | 24624 | ((i3 >> 6) & 7168) | (458752 & i8222) | (3670016 & i8222) | (i8222 & 29360128) | ((i3 << 6) & 234881024), 0);
+                m2994CarouselV95POc(carouselState2, orientation222, rememberedValue, m825PaddingValues0680j_4, 0, modifier3222, f5222, targetedFlingBehavior3, function42222, composer2, (i3 & 14) | 24624 | ((i3 >> 6) & 7168) | (458752 & i8222) | (3670016 & i8222) | (i8222 & 29360128) | ((i3 << 6) & 234881024), 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                paddingValues2 = m731PaddingValues0680j_4;
+                paddingValues2 = m825PaddingValues0680j_4;
                 modifier2 = modifier3222;
                 f4 = f5222;
                 targetedFlingBehavior4 = targetedFlingBehavior3;
@@ -1080,7 +1080,7 @@ public final class CarouselKt {
             if (i5 != 0) {
             }
             targetedFlingBehavior3 = targetedFlingBehavior2;
-            m731PaddingValues0680j_4 = obj;
+            m825PaddingValues0680j_4 = obj;
             boolean z22222 = false;
             float f52222 = f3;
             startRestartGroup.endDefaults();
@@ -1113,7 +1113,7 @@ public final class CarouselKt {
 
                 public final KeylineList invoke(float f6, float f7) {
                     Density density22222 = Density.this;
-                    return KeylinesKt.uncontainedKeylineList(density22222, f6, density22222.mo389toPx0680j_4(f), f7);
+                    return KeylinesKt.uncontainedKeylineList(density22222, f6, density22222.mo419toPx0680j_4(f), f7);
                 }
             };
             startRestartGroup.updateRememberedValue(rememberedValue);
@@ -1122,10 +1122,10 @@ public final class CarouselKt {
             composer2 = startRestartGroup;
             Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function422222 = obj2;
             Modifier modifier32222 = companion;
-            m2687CarouselV95POc(carouselState2, orientation2222, rememberedValue, m731PaddingValues0680j_4, 0, modifier32222, f52222, targetedFlingBehavior3, function422222, composer2, (i3 & 14) | 24624 | ((i3 >> 6) & 7168) | (458752 & i82222) | (3670016 & i82222) | (i82222 & 29360128) | ((i3 << 6) & 234881024), 0);
+            m2994CarouselV95POc(carouselState2, orientation2222, rememberedValue, m825PaddingValues0680j_4, 0, modifier32222, f52222, targetedFlingBehavior3, function422222, composer2, (i3 & 14) | 24624 | ((i3 >> 6) & 7168) | (458752 & i82222) | (3670016 & i82222) | (i82222 & 29360128) | ((i3 << 6) & 234881024), 0);
             if (ComposerKt.isTraceInProgress()) {
             }
-            paddingValues2 = m731PaddingValues0680j_4;
+            paddingValues2 = m825PaddingValues0680j_4;
             modifier2 = modifier32222;
             f4 = f52222;
             targetedFlingBehavior4 = targetedFlingBehavior3;
@@ -1161,7 +1161,7 @@ public final class CarouselKt {
         if (i5 != 0) {
         }
         targetedFlingBehavior3 = targetedFlingBehavior2;
-        m731PaddingValues0680j_4 = obj;
+        m825PaddingValues0680j_4 = obj;
         boolean z222222 = false;
         float f522222 = f3;
         startRestartGroup.endDefaults();
@@ -1194,7 +1194,7 @@ public final class CarouselKt {
 
             public final KeylineList invoke(float f6, float f7) {
                 Density density222222 = Density.this;
-                return KeylinesKt.uncontainedKeylineList(density222222, f6, density222222.mo389toPx0680j_4(f), f7);
+                return KeylinesKt.uncontainedKeylineList(density222222, f6, density222222.mo419toPx0680j_4(f), f7);
             }
         };
         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -1203,10 +1203,10 @@ public final class CarouselKt {
         composer2 = startRestartGroup;
         Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4222222 = obj2;
         Modifier modifier322222 = companion;
-        m2687CarouselV95POc(carouselState2, orientation22222, rememberedValue, m731PaddingValues0680j_4, 0, modifier322222, f522222, targetedFlingBehavior3, function4222222, composer2, (i3 & 14) | 24624 | ((i3 >> 6) & 7168) | (458752 & i822222) | (3670016 & i822222) | (i822222 & 29360128) | ((i3 << 6) & 234881024), 0);
+        m2994CarouselV95POc(carouselState2, orientation22222, rememberedValue, m825PaddingValues0680j_4, 0, modifier322222, f522222, targetedFlingBehavior3, function4222222, composer2, (i3 & 14) | 24624 | ((i3 >> 6) & 7168) | (458752 & i822222) | (3670016 & i822222) | (i822222 & 29360128) | ((i3 << 6) & 234881024), 0);
         if (ComposerKt.isTraceInProgress()) {
         }
-        paddingValues2 = m731PaddingValues0680j_4;
+        paddingValues2 = m825PaddingValues0680j_4;
         modifier2 = modifier322222;
         f4 = f522222;
         targetedFlingBehavior4 = targetedFlingBehavior3;
@@ -1240,7 +1240,7 @@ public final class CarouselKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2687CarouselV95POc(CarouselState carouselState, final Orientation orientation, final Function2<? super Float, ? super Float, KeylineList> function2, final PaddingValues paddingValues, final int i, Modifier modifier, float f, TargetedFlingBehavior targetedFlingBehavior, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3) {
+    public static final void m2994CarouselV95POc(CarouselState carouselState, final Orientation orientation, final Function2<? super Float, ? super Float, KeylineList> function2, final PaddingValues paddingValues, final int i, Modifier modifier, float f, TargetedFlingBehavior targetedFlingBehavior, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3) {
         int i4;
         int i5;
         Object obj;
@@ -1329,7 +1329,7 @@ public final class CarouselKt {
                     if ((i2 & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                         Modifier.Companion companion = i9 != 0 ? Modifier.Companion : obj;
                         if (i6 != 0) {
-                            f2 = Dp.m6684constructorimpl(0);
+                            f2 = Dp.m7251constructorimpl(0);
                         }
                         if ((i3 & 128) != 0) {
                             z = false;
@@ -1377,7 +1377,7 @@ public final class CarouselKt {
                         ComposerKt.sourceInformation(startRestartGroup, "266@12589L1014,252@11960L1643");
                         int i11 = i5;
                         modifier2 = obj;
-                        PagerKt.m984HorizontalPageroI3XNZo(carouselState2.getPagerState$material3_release(), modifier2, PaddingKt.m735PaddingValuesa9UjIt4$default(0.0f, paddingValues.mo690calculateTopPaddingD9Ej5fM(), 0.0f, paddingValues.mo687calculateBottomPaddingD9Ej5fM(), 5, null), carouselPageSize, i11, f3, null, obj3, false, false, null, null, KeylineSnapPosition, ComposableLambdaKt.rememberComposableLambda(687111200, true, new Function4<PagerScope, Integer, Composer, Integer, Unit>() { // from class: androidx.compose.material3.carousel.CarouselKt$Carousel$1
+                        PagerKt.m1137HorizontalPageroI3XNZo(carouselState2.getPagerState$material3_release(), modifier2, PaddingKt.m829PaddingValuesa9UjIt4$default(0.0f, paddingValues.mo778calculateTopPaddingD9Ej5fM(), 0.0f, paddingValues.mo775calculateBottomPaddingD9Ej5fM(), 5, null), carouselPageSize, i11, f3, null, obj3, false, false, null, null, KeylineSnapPosition, ComposableLambdaKt.rememberComposableLambda(687111200, true, new Function4<PagerScope, Integer, Composer, Integer, Unit>() { // from class: androidx.compose.material3.carousel.CarouselKt$Carousel$1
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             /* JADX WARN: Multi-variable type inference failed */
@@ -1418,7 +1418,7 @@ public final class CarouselKt {
                                     rememberedValue4 = new Shape() { // from class: androidx.compose.material3.carousel.CarouselKt$Carousel$1$clipShape$1$1
                                         @Override // androidx.compose.ui.graphics.Shape
                                         /* renamed from: createOutline-Pq9zytI */
-                                        public Outline mo303createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+                                        public Outline mo321createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
                                             return new Outline.Rectangle(CarouselItemInfoImpl.this.getMaskRect());
                                         }
                                     };
@@ -1467,15 +1467,15 @@ public final class CarouselKt {
                                 } else {
                                     composer2.useNode();
                                 }
-                                Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                                Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer2, 1112607687, "C291@13566L13:Carousel.kt#dcf9yb");
@@ -1505,7 +1505,7 @@ public final class CarouselKt {
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                             Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            PagerKt.m986VerticalPageroI3XNZo(pagerState$material3_release, modifier2, PaddingKt.m735PaddingValuesa9UjIt4$default(calculateStartPadding, 0.0f, PaddingKt.calculateEndPadding(paddingValues, (LayoutDirection) consume2), 0.0f, 10, null), carouselPageSize, i, f3, null, obj3, false, false, null, null, KeylineSnapPosition, ComposableLambdaKt.rememberComposableLambda(-817308503, true, new Function4<PagerScope, Integer, Composer, Integer, Unit>() { // from class: androidx.compose.material3.carousel.CarouselKt$Carousel$2
+                            PagerKt.m1139VerticalPageroI3XNZo(pagerState$material3_release, modifier2, PaddingKt.m829PaddingValuesa9UjIt4$default(calculateStartPadding, 0.0f, PaddingKt.calculateEndPadding(paddingValues, (LayoutDirection) consume2), 0.0f, 10, null), carouselPageSize, i, f3, null, obj3, false, false, null, null, KeylineSnapPosition, ComposableLambdaKt.rememberComposableLambda(-817308503, true, new Function4<PagerScope, Integer, Composer, Integer, Unit>() { // from class: androidx.compose.material3.carousel.CarouselKt$Carousel$2
                                 /* JADX INFO: Access modifiers changed from: package-private */
                                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                 /* JADX WARN: Multi-variable type inference failed */
@@ -1546,7 +1546,7 @@ public final class CarouselKt {
                                         rememberedValue4 = new Shape() { // from class: androidx.compose.material3.carousel.CarouselKt$Carousel$2$clipShape$1$1
                                             @Override // androidx.compose.ui.graphics.Shape
                                             /* renamed from: createOutline-Pq9zytI */
-                                            public Outline mo303createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+                                            public Outline mo321createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
                                                 return new Outline.Rectangle(CarouselItemInfoImpl.this.getMaskRect());
                                             }
                                         };
@@ -1595,15 +1595,15 @@ public final class CarouselKt {
                                     } else {
                                         composer2.useNode();
                                     }
-                                    Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer2, 1114351623, "C334@15324L13:Carousel.kt#dcf9yb");
@@ -1655,7 +1655,7 @@ public final class CarouselKt {
                         }
 
                         public final void invoke(Composer composer2, int i12) {
-                            CarouselKt.m2687CarouselV95POc(CarouselState.this, orientation, function2, paddingValues, i, modifier3, f4, targetedFlingBehavior2, function4, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                            CarouselKt.m2994CarouselV95POc(CarouselState.this, orientation, function2, paddingValues, i, modifier3, f4, targetedFlingBehavior2, function4, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                         }
                     });
                     return;
@@ -1770,7 +1770,7 @@ public final class CarouselKt {
         composer.startReplaceGroup(295830617);
         ComposerKt.sourceInformation(composer, "346@15649L7");
         if (orientation == Orientation.Vertical) {
-            calculateStartPadding = paddingValues.mo690calculateTopPaddingD9Ej5fM();
+            calculateStartPadding = paddingValues.mo778calculateTopPaddingD9Ej5fM();
         } else {
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(CompositionLocalsKt.getLocalLayoutDirection());
@@ -1781,12 +1781,12 @@ public final class CarouselKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume2 = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float mo389toPx0680j_4 = ((Density) consume2).mo389toPx0680j_4(calculateStartPadding);
+        float mo419toPx0680j_4 = ((Density) consume2).mo419toPx0680j_4(calculateStartPadding);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return mo389toPx0680j_4;
+        return mo419toPx0680j_4;
     }
 
     private static final float calculateAfterContentPadding(PaddingValues paddingValues, Orientation orientation, Composer composer, int i) {
@@ -1798,7 +1798,7 @@ public final class CarouselKt {
         composer.startReplaceGroup(-587616383);
         ComposerKt.sourceInformation(composer, "358@16007L7");
         if (orientation == Orientation.Vertical) {
-            calculateEndPadding = paddingValues.mo687calculateBottomPaddingD9Ej5fM();
+            calculateEndPadding = paddingValues.mo775calculateBottomPaddingD9Ej5fM();
         } else {
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(CompositionLocalsKt.getLocalLayoutDirection());
@@ -1809,12 +1809,12 @@ public final class CarouselKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume2 = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float mo389toPx0680j_4 = ((Density) consume2).mo389toPx0680j_4(calculateEndPadding);
+        float mo419toPx0680j_4 = ((Density) consume2).mo419toPx0680j_4(calculateEndPadding);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return mo389toPx0680j_4;
+        return mo419toPx0680j_4;
     }
 
     public static final Modifier carouselItem(Modifier modifier, final int i, final CarouselState carouselState, final Function0<Strategy> function0, final CarouselItemInfoImpl carouselItemInfoImpl, final Shape shape) {
@@ -1827,12 +1827,12 @@ public final class CarouselKt {
 
             @Override // kotlin.jvm.functions.Function3
             public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                return m2690invoke3p2s80s(measureScope, measurable, constraints.m6643unboximpl());
+                return m2997invoke3p2s80s(measureScope, measurable, constraints.m7210unboximpl());
             }
 
             /* renamed from: invoke-3p2s80s  reason: not valid java name */
-            public final MeasureResult m2690invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                long m6626copyZbe2FdA;
+            public final MeasureResult m2997invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+                long m7193copyZbe2FdA;
                 final Strategy invoke = function0.invoke();
                 if (!invoke.isValid()) {
                     return MeasureScope.layout$default(measureScope, 0, 0, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.carousel.CarouselKt$carouselItem$1.1
@@ -1851,13 +1851,13 @@ public final class CarouselKt {
                 final boolean z2 = measureScope.getLayoutDirection() == LayoutDirection.Rtl;
                 float itemMainAxisSize = invoke.getItemMainAxisSize();
                 if (z) {
-                    m6626copyZbe2FdA = Constraints.m6626copyZbe2FdA(j, Constraints.m6639getMinWidthimpl(j), Constraints.m6637getMaxWidthimpl(j), MathKt.roundToInt(itemMainAxisSize), MathKt.roundToInt(itemMainAxisSize));
+                    m7193copyZbe2FdA = Constraints.m7193copyZbe2FdA(j, Constraints.m7206getMinWidthimpl(j), Constraints.m7204getMaxWidthimpl(j), MathKt.roundToInt(itemMainAxisSize), MathKt.roundToInt(itemMainAxisSize));
                 } else {
-                    m6626copyZbe2FdA = Constraints.m6626copyZbe2FdA(j, MathKt.roundToInt(itemMainAxisSize), MathKt.roundToInt(itemMainAxisSize), Constraints.m6638getMinHeightimpl(j), Constraints.m6636getMaxHeightimpl(j));
+                    m7193copyZbe2FdA = Constraints.m7193copyZbe2FdA(j, MathKt.roundToInt(itemMainAxisSize), MathKt.roundToInt(itemMainAxisSize), Constraints.m7205getMinHeightimpl(j), Constraints.m7203getMaxHeightimpl(j));
                 }
-                final Placeable mo5438measureBRTryo0 = measurable.mo5438measureBRTryo0(m6626copyZbe2FdA);
-                int width = mo5438measureBRTryo0.getWidth();
-                int height = mo5438measureBRTryo0.getHeight();
+                final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(m7193copyZbe2FdA);
+                int width = mo5954measureBRTryo0.getWidth();
+                int height = mo5954measureBRTryo0.getHeight();
                 final CarouselState carouselState2 = carouselState;
                 final int i2 = i;
                 final CarouselItemInfoImpl carouselItemInfoImpl2 = carouselItemInfoImpl;
@@ -1915,11 +1915,11 @@ public final class CarouselKt {
                                 progress = CarouselKt.getProgress(keylineBefore, keylineAfter, itemMainAxisSize2);
                                 Keyline lerp = KeylineListKt.lerp(keylineBefore, keylineAfter, progress);
                                 boolean areEqual = Intrinsics.areEqual(keylineBefore, keylineAfter);
-                                float m3903getHeightimpl = (z3 ? Size.m3903getHeightimpl(graphicsLayerScope.mo4265getSizeNHjbRc()) : strategy.getItemMainAxisSize()) / 2.0f;
-                                float itemMainAxisSize3 = (z3 ? strategy.getItemMainAxisSize() : Size.m3903getHeightimpl(graphicsLayerScope.mo4265getSizeNHjbRc())) / 2.0f;
-                                float m3906getWidthimpl = (z3 ? Size.m3906getWidthimpl(graphicsLayerScope.mo4265getSizeNHjbRc()) : lerp.getSize()) / 2.0f;
-                                float size = (z3 ? lerp.getSize() : Size.m3903getHeightimpl(graphicsLayerScope.mo4265getSizeNHjbRc())) / 2.0f;
-                                Rect rect = new Rect(m3903getHeightimpl - m3906getWidthimpl, itemMainAxisSize3 - size, m3903getHeightimpl + m3906getWidthimpl, itemMainAxisSize3 + size);
+                                float m4359getHeightimpl = (z3 ? Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc()) : strategy.getItemMainAxisSize()) / 2.0f;
+                                float itemMainAxisSize3 = (z3 ? strategy.getItemMainAxisSize() : Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc())) / 2.0f;
+                                float m4362getWidthimpl = (z3 ? Size.m4362getWidthimpl(graphicsLayerScope.mo4732getSizeNHjbRc()) : lerp.getSize()) / 2.0f;
+                                float size = (z3 ? lerp.getSize() : Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc())) / 2.0f;
+                                Rect rect = new Rect(m4359getHeightimpl - m4362getWidthimpl, itemMainAxisSize3 - size, m4359getHeightimpl + m4362getWidthimpl, itemMainAxisSize3 + size);
                                 carouselItemInfoImpl3.setSizeState(lerp.getSize());
                                 CarouselItemInfoImpl carouselItemInfoImpl4 = carouselItemInfoImpl3;
                                 Iterator<Keyline> it = keylineListForScrollOffset$material3_release.iterator();
@@ -1931,7 +1931,7 @@ public final class CarouselKt {
                                     carouselItemInfoImpl4.setMinSizeState(next.getSize());
                                     carouselItemInfoImpl3.setMaxSizeState(keylineListForScrollOffset$material3_release.getFirstFocal().getSize());
                                     carouselItemInfoImpl3.setMaskRectState(rect);
-                                    graphicsLayerScope.setClip(!Intrinsics.areEqual(rect, new Rect(0.0f, 0.0f, Size.m3906getWidthimpl(graphicsLayerScope.mo4265getSizeNHjbRc()), Size.m3903getHeightimpl(graphicsLayerScope.mo4265getSizeNHjbRc()))));
+                                    graphicsLayerScope.setClip(!Intrinsics.areEqual(rect, new Rect(0.0f, 0.0f, Size.m4362getWidthimpl(graphicsLayerScope.mo4732getSizeNHjbRc()), Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc()))));
                                     graphicsLayerScope.setShape(shape3);
                                     float offset = lerp.getOffset() - itemMainAxisSize2;
                                     if (areEqual) {
@@ -1959,7 +1959,7 @@ public final class CarouselKt {
                                 carouselItemInfoImpl4.setMinSizeState(next.getSize());
                                 carouselItemInfoImpl3.setMaxSizeState(keylineListForScrollOffset$material3_release.getFirstFocal().getSize());
                                 carouselItemInfoImpl3.setMaskRectState(rect);
-                                graphicsLayerScope.setClip(!Intrinsics.areEqual(rect, new Rect(0.0f, 0.0f, Size.m3906getWidthimpl(graphicsLayerScope.mo4265getSizeNHjbRc()), Size.m3903getHeightimpl(graphicsLayerScope.mo4265getSizeNHjbRc()))));
+                                graphicsLayerScope.setClip(!Intrinsics.areEqual(rect, new Rect(0.0f, 0.0f, Size.m4362getWidthimpl(graphicsLayerScope.mo4732getSizeNHjbRc()), Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc()))));
                                 graphicsLayerScope.setShape(shape3);
                                 float offset2 = lerp.getOffset() - itemMainAxisSize2;
                                 if (areEqual) {

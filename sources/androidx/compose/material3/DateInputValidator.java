@@ -65,7 +65,7 @@ public final class DateInputValidator {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final String m1797validateXivgLIo(CalendarDate calendarDate, int i, Locale locale) {
+    public final String m2104validateXivgLIo(CalendarDate calendarDate, int i, Locale locale) {
         if (calendarDate == null) {
             String str = this.errorDatePattern;
             String upperCase = this.dateInputFormat.getPatternWithDelimiters().toUpperCase(Locale.ROOT);
@@ -84,11 +84,11 @@ public final class DateInputValidator {
                 Intrinsics.checkNotNullExpressionValue(format3, "format(this, *args)");
                 return format3;
             }
-            if (InputIdentifier.m1974equalsimpl0(i, InputIdentifier.Companion.m1980getStartDateInputJ2x2o4M())) {
+            if (InputIdentifier.m2281equalsimpl0(i, InputIdentifier.Companion.m2287getStartDateInputJ2x2o4M())) {
                 long utcTimeMillis = calendarDate.getUtcTimeMillis();
                 Long l = this.currentEndDateMillis;
             }
-            if (InputIdentifier.m1974equalsimpl0(i, InputIdentifier.Companion.m1978getEndDateInputJ2x2o4M())) {
+            if (InputIdentifier.m2281equalsimpl0(i, InputIdentifier.Companion.m2285getEndDateInputJ2x2o4M())) {
                 long utcTimeMillis2 = calendarDate.getUtcTimeMillis();
                 Long l2 = this.currentStartDateMillis;
                 if (utcTimeMillis2 >= (l2 != null ? l2.longValue() : Long.MIN_VALUE)) {

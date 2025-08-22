@@ -1,14 +1,15 @@
 package androidx.compose.ui.platform;
 
+import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import androidx.collection.MutableObjectList;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 /* compiled from: FocusFinderCompat.android.kt */
-@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\"\u0010\u0000\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u0005H\u0002\u001a\"\u0010\u0006\u001a\u00020\u0007*\u00020\u00012\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00010\t2\u0006\u0010\n\u001a\u00020\u0005H\u0002\u001a*\u0010\u0006\u001a\u00020\u0007*\u00020\u00012\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00010\t2\u0006\u0010\n\u001a\u00020\u00052\u0006\u0010\u000b\u001a\u00020\fH\u0002\u001a\u001e\u0010\r\u001a\u0004\u0018\u00010\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\n\u001a\u00020\u0005H\u0002\u001a*\u0010\u000e\u001a\u0004\u0018\u00010\u0001*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00012\u0012\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\f0\u0010H\u0002\u001a,\u0010\u0011\u001a\u0004\u0018\u00010\u0001*\u00020\u00012\u0012\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\f0\u00102\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001H\u0002¨\u0006\u0013"}, d2 = {"findViewInsideOutShouldExist", "Landroid/view/View;", "root", TtmlNode.START, "id", "", "addFocusableViews", "", "views", "Landroidx/collection/MutableObjectList;", "direction", "inTouchMode", "", "findUserSetNextFocus", "findViewByPredicateInsideOut", "predicate", "Lkotlin/Function1;", "findViewByPredicateTraversal", "childToSkip", "ui_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001e\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0002\u001a\"\u0010\u0005\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0007\u001a\u00020\u0004H\u0002\u001a*\u0010\b\u001a\u0004\u0018\u00010\u0001*\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u000b0\nH\u0002\u001a,\u0010\f\u001a\u0004\u0018\u00010\u0001*\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u000b0\n2\b\u0010\r\u001a\u0004\u0018\u00010\u0001H\u0002\u001a,\u0010\u000e\u001a\u00020\u000f*\u00020\u00012\u0016\u0010\u0010\u001a\u0012\u0012\u0004\u0012\u00020\u00010\u0011j\b\u0012\u0004\u0012\u00020\u0001`\u00122\u0006\u0010\u0003\u001a\u00020\u0004H\u0002\u001a,\u0010\u000e\u001a\u00020\u000f*\u00020\u00012\u0016\u0010\u0010\u001a\u0012\u0012\u0004\u0012\u00020\u00010\u0011j\b\u0012\u0004\u0012\u00020\u0001`\u00122\u0006\u0010\u0013\u001a\u00020\u000bH\u0002¨\u0006\u0014"}, d2 = {"findUserSetNextFocus", "Landroid/view/View;", "root", "direction", "", "findViewInsideOutShouldExist", TtmlNode.START, "id", "findViewByPredicateInsideOut", "predicate", "Lkotlin/Function1;", "", "findViewByPredicateTraversal", "childToSkip", "addFocusableViews", "", "views", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "inTouchMode", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class FocusFinderCompat_androidKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -99,20 +100,42 @@ public final class FocusFinderCompat_androidKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void addFocusableViews(View view, MutableObjectList<View> mutableObjectList, int i) {
-        addFocusableViews(view, mutableObjectList, i, view.isInTouchMode());
+    public static final void addFocusableViews(View view, ArrayList<View> arrayList, int i) {
+        if (Build.VERSION.SDK_INT < 26) {
+            addFocusableViews(view, arrayList, view.isInTouchMode());
+        } else {
+            view.addFocusables(arrayList, i, view.isInTouchMode() ? 1 : 0);
+        }
     }
 
-    private static final void addFocusableViews(View view, MutableObjectList<View> mutableObjectList, int i, boolean z) {
-        if (view.getVisibility() == 0 && view.isFocusable() && view.isEnabled() && view.getWidth() > 0 && view.getHeight() > 0 && (!z || view.isFocusableInTouchMode())) {
-            mutableObjectList.add(view);
-        }
-        if (view instanceof ViewGroup) {
-            ViewGroup viewGroup = (ViewGroup) view;
-            int childCount = viewGroup.getChildCount();
-            for (int i2 = 0; i2 < childCount; i2++) {
-                addFocusableViews(viewGroup.getChildAt(i2), mutableObjectList, i, z);
+    private static final void addFocusableViews(View view, ArrayList<View> arrayList, boolean z) {
+        boolean z2 = view.getVisibility() == 0 && view.isFocusable() && view.isEnabled() && view.getWidth() > 0 && view.getHeight() > 0 && (!z || view.isFocusableInTouchMode());
+        if (!(view instanceof ViewGroup)) {
+            if (z2) {
+                arrayList.add(view);
+                return;
             }
+            return;
+        }
+        int size = arrayList.size();
+        ViewGroup viewGroup = (ViewGroup) view;
+        boolean z3 = viewGroup.getDescendantFocusability() == 131072;
+        if (z2 && z3) {
+            arrayList.add(view);
+        }
+        if (viewGroup.getDescendantFocusability() != 393216) {
+            int childCount = viewGroup.getChildCount();
+            View[] viewArr = new View[childCount];
+            for (int i = 0; i < childCount; i++) {
+                viewArr[i] = viewGroup.getChildAt(i);
+            }
+            FocusSorter.INSTANCE.sort(viewArr, viewGroup, viewGroup.getLayoutDirection() == 1);
+            for (int i2 = 0; i2 < childCount; i2++) {
+                addFocusableViews(viewArr[i2], arrayList, z);
+            }
+        }
+        if (z2 && !z3 && size == arrayList.size()) {
+            arrayList.add(view);
         }
     }
 }

@@ -8,7 +8,7 @@ import io.reactivex.subscribers.SerializedSubscriber;
 import java.util.concurrent.TimeUnit;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableDelay<T> extends AbstractFlowableWithUpstream<T, T> {
     final long delay;
     final boolean delayError;
@@ -28,7 +28,7 @@ public final class FlowableDelay<T> extends AbstractFlowableWithUpstream<T, T> {
         this.source.subscribe((FlowableSubscriber) new DelaySubscriber(this.delayError ? subscriber : new SerializedSubscriber(subscriber), this.delay, this.unit, this.scheduler.createWorker(), this.delayError));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DelaySubscriber<T> implements FlowableSubscriber<T>, Subscription {
         final long delay;
         final boolean delayError;
@@ -79,7 +79,7 @@ public final class FlowableDelay<T> extends AbstractFlowableWithUpstream<T, T> {
             this.w.dispose();
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class OnNext implements Runnable {
             private final T t;
 
@@ -93,7 +93,7 @@ public final class FlowableDelay<T> extends AbstractFlowableWithUpstream<T, T> {
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class OnError implements Runnable {
             private final Throwable t;
 
@@ -111,7 +111,7 @@ public final class FlowableDelay<T> extends AbstractFlowableWithUpstream<T, T> {
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class OnComplete implements Runnable {
             OnComplete() {
             }

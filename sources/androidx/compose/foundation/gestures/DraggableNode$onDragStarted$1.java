@@ -12,8 +12,8 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: Draggable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.DraggableNode$onDragStarted$1", f = "Draggable.kt", i = {}, l = {309}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.DraggableNode$onDragStarted$1", f = "Draggable.kt", i = {}, l = {312}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class DraggableNode$onDragStarted$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ long $startedPosition;
@@ -49,9 +49,9 @@ final class DraggableNode$onDragStarted$1 extends SuspendLambda implements Funct
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             function3 = this.this$0.onDragStarted;
-            Offset m3826boximpl = Offset.m3826boximpl(this.$startedPosition);
+            Offset m4282boximpl = Offset.m4282boximpl(this.$startedPosition);
             this.label = 1;
-            if (function3.invoke((CoroutineScope) this.L$0, m3826boximpl, this) == coroutine_suspended) {
+            if (function3.invoke((CoroutineScope) this.L$0, m4282boximpl, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

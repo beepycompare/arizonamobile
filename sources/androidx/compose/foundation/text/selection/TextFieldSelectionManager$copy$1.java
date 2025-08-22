@@ -18,8 +18,8 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionManager.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager$copy$1", f = "TextFieldSelectionManager.kt", i = {}, l = {623}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager$copy$1", f = "TextFieldSelectionManager.kt", i = {}, l = {816}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class TextFieldSelectionManager$copy$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ boolean $cancelSelection;
@@ -46,12 +46,12 @@ public final class TextFieldSelectionManager$copy$1 extends SuspendLambda implem
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        TextFieldValue m1518createTextFieldValueFDrldGo;
+        TextFieldValue m1815createTextFieldValueFDrldGo;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (TextRange.m6141getCollapsedimpl(this.this$0.getValue$foundation_release().m6396getSelectiond9O1mEE())) {
+            if (TextRange.m6707getCollapsedimpl(this.this$0.getValue$foundation_release().m6964getSelectiond9O1mEE())) {
                 return Unit.INSTANCE;
             }
             Clipboard clipboard$foundation_release = this.this$0.getClipboard$foundation_release();
@@ -67,10 +67,11 @@ public final class TextFieldSelectionManager$copy$1 extends SuspendLambda implem
             ResultKt.throwOnFailure(obj);
         }
         if (this.$cancelSelection) {
-            int m6144getMaximpl = TextRange.m6144getMaximpl(this.this$0.getValue$foundation_release().m6396getSelectiond9O1mEE());
+            int m6710getMaximpl = TextRange.m6710getMaximpl(this.this$0.getValue$foundation_release().m6964getSelectiond9O1mEE());
             TextFieldSelectionManager textFieldSelectionManager = this.this$0;
-            m1518createTextFieldValueFDrldGo = textFieldSelectionManager.m1518createTextFieldValueFDrldGo(textFieldSelectionManager.getValue$foundation_release().getAnnotatedString(), TextRangeKt.TextRange(m6144getMaximpl, m6144getMaximpl));
-            this.this$0.getOnValueChange$foundation_release().invoke(m1518createTextFieldValueFDrldGo);
+            m1815createTextFieldValueFDrldGo = textFieldSelectionManager.m1815createTextFieldValueFDrldGo(textFieldSelectionManager.getValue$foundation_release().getAnnotatedString(), TextRangeKt.TextRange(m6710getMaximpl, m6710getMaximpl));
+            this.this$0.getOnValueChange$foundation_release().invoke(m1815createTextFieldValueFDrldGo);
+            this.this$0.m1827setLatestSelectionOEnZFl4$foundation_release(TextRange.m6701boximpl(m1815createTextFieldValueFDrldGo.m6964getSelectiond9O1mEE()));
             this.this$0.setHandleState(HandleState.None);
             return Unit.INSTANCE;
         }

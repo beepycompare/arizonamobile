@@ -18,7 +18,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 import java.util.zip.Inflater;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class VobsubParser implements SubtitleParser {
     public static final int CUE_REPLACEMENT_BEHAVIOR = 2;
     private static final int DEFAULT_DURATION_US = 5000000;
@@ -64,7 +64,7 @@ public final class VobsubParser implements SubtitleParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class CueBuilder {
         private static final int CMD_ALPHA = 4;
         private static final int CMD_AREA = 5;
@@ -294,7 +294,7 @@ public final class VobsubParser implements SubtitleParser {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public static final class Run {
             public int colorIndex;
             public int length;

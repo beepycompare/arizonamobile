@@ -1,16 +1,30 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ModuleEvent;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
 /* loaded from: classes4.dex */
-public abstract /* synthetic */ class X8 {
+public final class X8 implements vo {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f715a;
+    public final C0170c9 f723a;
 
-    static {
-        int[] iArr = new int[ModuleEvent.Category.values().length];
-        iArr[ModuleEvent.Category.GENERAL.ordinal()] = 1;
-        iArr[ModuleEvent.Category.SYSTEM.ordinal()] = 2;
-        f715a = iArr;
+    public X8() {
+        this(new C0170c9());
+    }
+
+    @Override // io.appmetrica.analytics.impl.vo
+    public final byte[] a(C0325i9 c0325i9, Ch ch) {
+        byte[] bArr;
+        String str = c0325i9.b;
+        if (str != null) {
+            bArr = StringUtils.getUTF8Bytes(str);
+        } else {
+            bArr = new byte[0];
+        }
+        C0170c9 c0170c9 = this.f723a;
+        return ((InterfaceC0144b9) c0170c9.f808a.a(c0325i9.o)).a(bArr);
+    }
+
+    public X8(C0170c9 c0170c9) {
+        this.f723a = c0170c9;
     }
 }

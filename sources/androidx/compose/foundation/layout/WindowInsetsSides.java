@@ -5,7 +5,7 @@ import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WindowInsets.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\r\n\u0002\u0010\u000e\n\u0002\b\u0006\b\u0087@\u0018\u0000 \u001a2\u00020\u0001:\u0001\u001aB\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001a\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\t\u0010\nJ\u001a\u0010\u000b\u001a\u00020\u00072\u0006\u0010\f\u001a\u00020\u0000H\u0000ø\u0001\u0000¢\u0006\u0004\b\r\u0010\u000eJ\u0010\u0010\u000f\u001a\u00020\u0003HÖ\u0001¢\u0006\u0004\b\u0010\u0010\u0005J\u001b\u0010\u0011\u001a\u00020\u00002\u0006\u0010\f\u001a\u00020\u0000H\u0086\u0002ø\u0001\u0000¢\u0006\u0004\b\u0012\u0010\u0013J\u000f\u0010\u0014\u001a\u00020\u0015H\u0016¢\u0006\u0004\b\u0016\u0010\u0017J\u000f\u0010\u0018\u001a\u00020\u0015H\u0002¢\u0006\u0004\b\u0019\u0010\u0017R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u001b"}, d2 = {"Landroidx/compose/foundation/layout/WindowInsetsSides;", "", "value", "", "constructor-impl", "(I)I", "equals", "", "other", "equals-impl", "(ILjava/lang/Object;)Z", "hasAny", "sides", "hasAny-bkgdKaI$foundation_layout_release", "(II)Z", "hashCode", "hashCode-impl", "plus", "plus-gK_yJZ4", "(II)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "valueToString", "valueToString-impl", "Companion", "foundation-layout_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\t\b\u0087@\u0018\u0000 \u00172\u00020\u0001:\u0001\u0017B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0018\u0010\u0006\u001a\u00020\u00002\u0006\u0010\u0007\u001a\u00020\u0000H\u0086\u0002¢\u0006\u0004\b\b\u0010\tJ\u0017\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0007\u001a\u00020\u0000H\u0000¢\u0006\u0004\b\f\u0010\rJ\u000f\u0010\u000e\u001a\u00020\u000fH\u0016¢\u0006\u0004\b\u0010\u0010\u0011J\u000f\u0010\u0012\u001a\u00020\u000fH\u0002¢\u0006\u0004\b\u0013\u0010\u0011J\u0013\u0010\u0014\u001a\u00020\u000b2\b\u0010\u0015\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u0016\u001a\u00020\u0003HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0018"}, d2 = {"Landroidx/compose/foundation/layout/WindowInsetsSides;", "", "value", "", "constructor-impl", "(I)I", "plus", "sides", "plus-gK_yJZ4", "(II)I", "hasAny", "", "hasAny-bkgdKaI$foundation_layout", "(II)Z", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "valueToString", "valueToString-impl", "equals", "other", "hashCode", "Companion", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class WindowInsetsSides {
@@ -25,45 +25,45 @@ public final class WindowInsetsSides {
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ WindowInsetsSides m817boximpl(int i) {
+    public static final /* synthetic */ WindowInsetsSides m920boximpl(int i) {
         return new WindowInsetsSides(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m818constructorimpl(int i) {
+    private static int m921constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m819equalsimpl(int i, Object obj) {
-        return (obj instanceof WindowInsetsSides) && i == ((WindowInsetsSides) obj).m826unboximpl();
+    public static boolean m922equalsimpl(int i, Object obj) {
+        return (obj instanceof WindowInsetsSides) && i == ((WindowInsetsSides) obj).m929unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m820equalsimpl0(int i, int i2) {
+    public static final boolean m923equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
-    /* renamed from: hasAny-bkgdKaI$foundation_layout_release  reason: not valid java name */
-    public static final boolean m821hasAnybkgdKaI$foundation_layout_release(int i, int i2) {
+    /* renamed from: hasAny-bkgdKaI$foundation_layout  reason: not valid java name */
+    public static final boolean m924hasAnybkgdKaI$foundation_layout(int i, int i2) {
         return (i & i2) != 0;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m822hashCodeimpl(int i) {
+    public static int m925hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m819equalsimpl(this.value, obj);
+        return m922equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m822hashCodeimpl(this.value);
+        return m925hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m826unboximpl() {
+    public final /* synthetic */ int m929unboximpl() {
         return this.value;
     }
 
@@ -72,21 +72,21 @@ public final class WindowInsetsSides {
     }
 
     /* renamed from: plus-gK_yJZ4  reason: not valid java name */
-    public static final int m823plusgK_yJZ4(int i, int i2) {
-        return m818constructorimpl(i | i2);
+    public static final int m926plusgK_yJZ4(int i, int i2) {
+        return m921constructorimpl(i | i2);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m824toStringimpl(int i) {
-        return "WindowInsetsSides(" + m825valueToStringimpl(i) + ')';
+    public static String m927toStringimpl(int i) {
+        return "WindowInsetsSides(" + m928valueToStringimpl(i) + ')';
     }
 
     public String toString() {
-        return m824toStringimpl(this.value);
+        return m927toStringimpl(this.value);
     }
 
     /* renamed from: valueToString-impl  reason: not valid java name */
-    private static final String m825valueToStringimpl(int i) {
+    private static final String m928valueToStringimpl(int i) {
         StringBuilder sb = new StringBuilder();
         int i2 = Start;
         if ((i & i2) == i2) {
@@ -125,7 +125,7 @@ public final class WindowInsetsSides {
     }
 
     /* compiled from: WindowInsets.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u001a\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u001c\u0010\u0003\u001a\u00020\u0004X\u0080\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0005\u0010\u0006R\u001c\u0010\b\u001a\u00020\u0004X\u0080\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\t\u0010\u0006R\u001c\u0010\n\u001a\u00020\u0004X\u0080\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u000b\u0010\u0006R\u001c\u0010\f\u001a\u00020\u0004X\u0080\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\r\u0010\u0006R\u0019\u0010\u000e\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u000f\u0010\u0006R\u0019\u0010\u0010\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0011\u0010\u0006R\u0019\u0010\u0012\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0013\u0010\u0006R\u0019\u0010\u0014\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0015\u0010\u0006R\u0019\u0010\u0016\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0017\u0010\u0006R\u0019\u0010\u0018\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0019\u0010\u0006R\u0019\u0010\u001a\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u001b\u0010\u0006R\u0019\u0010\u001c\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u001d\u0010\u0006\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u001e"}, d2 = {"Landroidx/compose/foundation/layout/WindowInsetsSides$Companion;", "", "()V", "AllowLeftInLtr", "Landroidx/compose/foundation/layout/WindowInsetsSides;", "getAllowLeftInLtr-JoeWqyM$foundation_layout_release", "()I", "I", "AllowLeftInRtl", "getAllowLeftInRtl-JoeWqyM$foundation_layout_release", "AllowRightInLtr", "getAllowRightInLtr-JoeWqyM$foundation_layout_release", "AllowRightInRtl", "getAllowRightInRtl-JoeWqyM$foundation_layout_release", "Bottom", "getBottom-JoeWqyM", "End", "getEnd-JoeWqyM", "Horizontal", "getHorizontal-JoeWqyM", "Left", "getLeft-JoeWqyM", "Right", "getRight-JoeWqyM", "Start", "getStart-JoeWqyM", "Top", "getTop-JoeWqyM", "Vertical", "getVertical-JoeWqyM", "foundation-layout_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u001a\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0016\u0010\u0004\u001a\u00020\u0005X\u0080\u0004¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0016\u0010\t\u001a\u00020\u0005X\u0080\u0004¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007R\u0016\u0010\u000b\u001a\u00020\u0005X\u0080\u0004¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\f\u0010\u0007R\u0016\u0010\r\u001a\u00020\u0005X\u0080\u0004¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u000e\u0010\u0007R\u0013\u0010\u000f\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0010\u0010\u0007R\u0013\u0010\u0011\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0012\u0010\u0007R\u0013\u0010\u0013\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0014\u0010\u0007R\u0013\u0010\u0015\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0016\u0010\u0007R\u0013\u0010\u0017\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0018\u0010\u0007R\u0013\u0010\u0019\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u001a\u0010\u0007R\u0013\u0010\u001b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u001c\u0010\u0007R\u0013\u0010\u001d\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u001e\u0010\u0007¨\u0006\u001f"}, d2 = {"Landroidx/compose/foundation/layout/WindowInsetsSides$Companion;", "", "<init>", "()V", "AllowLeftInLtr", "Landroidx/compose/foundation/layout/WindowInsetsSides;", "getAllowLeftInLtr-JoeWqyM$foundation_layout", "()I", "I", "AllowRightInLtr", "getAllowRightInLtr-JoeWqyM$foundation_layout", "AllowLeftInRtl", "getAllowLeftInRtl-JoeWqyM$foundation_layout", "AllowRightInRtl", "getAllowRightInRtl-JoeWqyM$foundation_layout", "Start", "getStart-JoeWqyM", "End", "getEnd-JoeWqyM", "Top", "getTop-JoeWqyM", "Bottom", "getBottom-JoeWqyM", "Left", "getLeft-JoeWqyM", "Right", "getRight-JoeWqyM", "Horizontal", "getHorizontal-JoeWqyM", "Vertical", "getVertical-JoeWqyM", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -135,87 +135,87 @@ public final class WindowInsetsSides {
         private Companion() {
         }
 
-        /* renamed from: getAllowLeftInLtr-JoeWqyM$foundation_layout_release  reason: not valid java name */
-        public final int m827getAllowLeftInLtrJoeWqyM$foundation_layout_release() {
+        /* renamed from: getAllowLeftInLtr-JoeWqyM$foundation_layout  reason: not valid java name */
+        public final int m930getAllowLeftInLtrJoeWqyM$foundation_layout() {
             return WindowInsetsSides.AllowLeftInLtr;
         }
 
-        /* renamed from: getAllowRightInLtr-JoeWqyM$foundation_layout_release  reason: not valid java name */
-        public final int m829getAllowRightInLtrJoeWqyM$foundation_layout_release() {
+        /* renamed from: getAllowRightInLtr-JoeWqyM$foundation_layout  reason: not valid java name */
+        public final int m932getAllowRightInLtrJoeWqyM$foundation_layout() {
             return WindowInsetsSides.AllowRightInLtr;
         }
 
-        /* renamed from: getAllowLeftInRtl-JoeWqyM$foundation_layout_release  reason: not valid java name */
-        public final int m828getAllowLeftInRtlJoeWqyM$foundation_layout_release() {
+        /* renamed from: getAllowLeftInRtl-JoeWqyM$foundation_layout  reason: not valid java name */
+        public final int m931getAllowLeftInRtlJoeWqyM$foundation_layout() {
             return WindowInsetsSides.AllowLeftInRtl;
         }
 
-        /* renamed from: getAllowRightInRtl-JoeWqyM$foundation_layout_release  reason: not valid java name */
-        public final int m830getAllowRightInRtlJoeWqyM$foundation_layout_release() {
+        /* renamed from: getAllowRightInRtl-JoeWqyM$foundation_layout  reason: not valid java name */
+        public final int m933getAllowRightInRtlJoeWqyM$foundation_layout() {
             return WindowInsetsSides.AllowRightInRtl;
         }
 
         /* renamed from: getStart-JoeWqyM  reason: not valid java name */
-        public final int m836getStartJoeWqyM() {
+        public final int m939getStartJoeWqyM() {
             return WindowInsetsSides.Start;
         }
 
         /* renamed from: getEnd-JoeWqyM  reason: not valid java name */
-        public final int m832getEndJoeWqyM() {
+        public final int m935getEndJoeWqyM() {
             return WindowInsetsSides.End;
         }
 
         /* renamed from: getTop-JoeWqyM  reason: not valid java name */
-        public final int m837getTopJoeWqyM() {
+        public final int m940getTopJoeWqyM() {
             return WindowInsetsSides.Top;
         }
 
         /* renamed from: getBottom-JoeWqyM  reason: not valid java name */
-        public final int m831getBottomJoeWqyM() {
+        public final int m934getBottomJoeWqyM() {
             return WindowInsetsSides.Bottom;
         }
 
         /* renamed from: getLeft-JoeWqyM  reason: not valid java name */
-        public final int m834getLeftJoeWqyM() {
+        public final int m937getLeftJoeWqyM() {
             return WindowInsetsSides.Left;
         }
 
         /* renamed from: getRight-JoeWqyM  reason: not valid java name */
-        public final int m835getRightJoeWqyM() {
+        public final int m938getRightJoeWqyM() {
             return WindowInsetsSides.Right;
         }
 
         /* renamed from: getHorizontal-JoeWqyM  reason: not valid java name */
-        public final int m833getHorizontalJoeWqyM() {
+        public final int m936getHorizontalJoeWqyM() {
             return WindowInsetsSides.Horizontal;
         }
 
         /* renamed from: getVertical-JoeWqyM  reason: not valid java name */
-        public final int m838getVerticalJoeWqyM() {
+        public final int m941getVerticalJoeWqyM() {
             return WindowInsetsSides.Vertical;
         }
     }
 
     static {
-        int m818constructorimpl = m818constructorimpl(8);
-        AllowLeftInLtr = m818constructorimpl;
-        int m818constructorimpl2 = m818constructorimpl(4);
-        AllowRightInLtr = m818constructorimpl2;
-        int m818constructorimpl3 = m818constructorimpl(2);
-        AllowLeftInRtl = m818constructorimpl3;
-        int m818constructorimpl4 = m818constructorimpl(1);
-        AllowRightInRtl = m818constructorimpl4;
-        Start = m823plusgK_yJZ4(m818constructorimpl, m818constructorimpl4);
-        End = m823plusgK_yJZ4(m818constructorimpl2, m818constructorimpl3);
-        int m818constructorimpl5 = m818constructorimpl(16);
-        Top = m818constructorimpl5;
-        int m818constructorimpl6 = m818constructorimpl(32);
-        Bottom = m818constructorimpl6;
-        int m823plusgK_yJZ4 = m823plusgK_yJZ4(m818constructorimpl, m818constructorimpl3);
-        Left = m823plusgK_yJZ4;
-        int m823plusgK_yJZ42 = m823plusgK_yJZ4(m818constructorimpl2, m818constructorimpl4);
-        Right = m823plusgK_yJZ42;
-        Horizontal = m823plusgK_yJZ4(m823plusgK_yJZ4, m823plusgK_yJZ42);
-        Vertical = m823plusgK_yJZ4(m818constructorimpl5, m818constructorimpl6);
+        int m921constructorimpl = m921constructorimpl(8);
+        AllowLeftInLtr = m921constructorimpl;
+        int m921constructorimpl2 = m921constructorimpl(4);
+        AllowRightInLtr = m921constructorimpl2;
+        int m921constructorimpl3 = m921constructorimpl(2);
+        AllowLeftInRtl = m921constructorimpl3;
+        int m921constructorimpl4 = m921constructorimpl(1);
+        AllowRightInRtl = m921constructorimpl4;
+        Start = m926plusgK_yJZ4(m921constructorimpl, m921constructorimpl4);
+        End = m926plusgK_yJZ4(m921constructorimpl2, m921constructorimpl3);
+        int m921constructorimpl5 = m921constructorimpl(16);
+        Top = m921constructorimpl5;
+        int m921constructorimpl6 = m921constructorimpl(32);
+        Bottom = m921constructorimpl6;
+        int m926plusgK_yJZ4 = m926plusgK_yJZ4(m921constructorimpl, m921constructorimpl3);
+        Left = m926plusgK_yJZ4;
+        int m926plusgK_yJZ42 = m926plusgK_yJZ4(m921constructorimpl2, m921constructorimpl4);
+        Right = m926plusgK_yJZ42;
+        Horizontal = m926plusgK_yJZ4(m926plusgK_yJZ4, m926plusgK_yJZ42);
+        Vertical = m926plusgK_yJZ4(m921constructorimpl5, m921constructorimpl6);
     }
 }

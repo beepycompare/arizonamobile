@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicReferenceArray;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableWithLatestFromMany<T, R> extends AbstractObservableWithUpstream<T, R> {
     final Function<? super Object[], R> combiner;
     final ObservableSource<?>[] otherArray;
@@ -69,7 +69,7 @@ public final class ObservableWithLatestFromMany<T, R> extends AbstractObservable
         this.source.subscribe(withLatestFromObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WithLatestFromObserver<T, R> extends AtomicInteger implements Observer<T>, Disposable {
         private static final long serialVersionUID = 1577321883966341961L;
         final Function<? super Object[], R> combiner;
@@ -198,7 +198,7 @@ public final class ObservableWithLatestFromMany<T, R> extends AbstractObservable
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class WithLatestInnerObserver extends AtomicReference<Disposable> implements Observer<Object> {
         private static final long serialVersionUID = 3256684027868224024L;
         boolean hasValue;
@@ -238,7 +238,7 @@ public final class ObservableWithLatestFromMany<T, R> extends AbstractObservable
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class SingletonArrayFunc implements Function<T, R> {
         SingletonArrayFunc() {
         }

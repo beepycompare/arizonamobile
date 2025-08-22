@@ -13,7 +13,7 @@ import io.reactivex.processors.UnicastProcessor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SchedulerWhen extends Scheduler implements Disposable {
     private final Scheduler actualScheduler;
     private Disposable disposable;
@@ -54,7 +54,7 @@ public class SchedulerWhen extends Scheduler implements Disposable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static abstract class ScheduledAction extends AtomicReference<Disposable> implements Disposable {
         protected abstract Disposable callActual(Scheduler.Worker worker, CompletableObserver completableObserver);
 
@@ -94,7 +94,7 @@ public class SchedulerWhen extends Scheduler implements Disposable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static class ImmediateAction extends ScheduledAction {
         private final Runnable action;
 
@@ -108,7 +108,7 @@ public class SchedulerWhen extends Scheduler implements Disposable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static class DelayedAction extends ScheduledAction {
         private final Runnable action;
         private final long delayTime;
@@ -126,7 +126,7 @@ public class SchedulerWhen extends Scheduler implements Disposable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static class OnCompletedAction implements Runnable {
         final Runnable action;
         final CompletableObserver actionCompletable;
@@ -146,7 +146,7 @@ public class SchedulerWhen extends Scheduler implements Disposable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class CreateWorkerFunction implements Function<ScheduledAction, Completable> {
         final Scheduler.Worker actualWorker;
 
@@ -160,7 +160,7 @@ public class SchedulerWhen extends Scheduler implements Disposable {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public final class WorkerCompletable extends Completable {
             final ScheduledAction action;
 
@@ -176,7 +176,7 @@ public class SchedulerWhen extends Scheduler implements Disposable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class QueueWorker extends Scheduler.Worker {
         private final FlowableProcessor<ScheduledAction> actionProcessor;
         private final Scheduler.Worker actualWorker;
@@ -215,7 +215,7 @@ public class SchedulerWhen extends Scheduler implements Disposable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SubscribedDisposable implements Disposable {
         @Override // io.reactivex.disposables.Disposable
         public void dispose() {

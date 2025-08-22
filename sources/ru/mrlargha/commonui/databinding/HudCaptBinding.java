@@ -10,23 +10,28 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
+/* loaded from: classes3.dex */
 public final class HudCaptBinding implements ViewBinding {
     public final LinearLayout btnOpenList;
     public final ImageView ivArrow;
+    public final CustomCardView numberContainer;
     private final LinearLayout rootView;
     public final RecyclerView rvItems;
     public final TextView tvBtnTitle;
     public final TextView tvName;
+    public final TextView tvNumber;
     public final TextView tvTimer;
 
-    private HudCaptBinding(LinearLayout rootView, LinearLayout btnOpenList, ImageView ivArrow, RecyclerView rvItems, TextView tvBtnTitle, TextView tvName, TextView tvTimer) {
+    private HudCaptBinding(LinearLayout rootView, LinearLayout btnOpenList, ImageView ivArrow, CustomCardView numberContainer, RecyclerView rvItems, TextView tvBtnTitle, TextView tvName, TextView tvNumber, TextView tvTimer) {
         this.rootView = rootView;
         this.btnOpenList = btnOpenList;
         this.ivArrow = ivArrow;
+        this.numberContainer = numberContainer;
         this.rvItems = rvItems;
         this.tvBtnTitle = tvBtnTitle;
         this.tvName = tvName;
+        this.tvNumber = tvNumber;
         this.tvTimer = tvTimer;
     }
 
@@ -54,19 +59,27 @@ public final class HudCaptBinding implements ViewBinding {
             i = R.id.iv_arrow;
             ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
             if (imageView != null) {
-                i = R.id.rv_items;
-                RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
-                if (recyclerView != null) {
-                    i = R.id.tv_btn_title;
-                    TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-                    if (textView != null) {
-                        i = R.id.tv_name;
-                        TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                        if (textView2 != null) {
-                            i = R.id.tv_timer;
-                            TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                            if (textView3 != null) {
-                                return new HudCaptBinding((LinearLayout) rootView, linearLayout, imageView, recyclerView, textView, textView2, textView3);
+                i = R.id.number_container;
+                CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                if (customCardView != null) {
+                    i = R.id.rv_items;
+                    RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
+                    if (recyclerView != null) {
+                        i = R.id.tv_btn_title;
+                        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+                        if (textView != null) {
+                            i = R.id.tv_name;
+                            TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                            if (textView2 != null) {
+                                i = R.id.tv_number;
+                                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                if (textView3 != null) {
+                                    i = R.id.tv_timer;
+                                    TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                    if (textView4 != null) {
+                                        return new HudCaptBinding((LinearLayout) rootView, linearLayout, imageView, customCardView, recyclerView, textView, textView2, textView3, textView4);
+                                    }
+                                }
                             }
                         }
                     }

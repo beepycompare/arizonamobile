@@ -28,7 +28,7 @@ import java.lang.annotation.Target;
 import java.util.Arrays;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AmrExtractor implements Extractor {
     public static final int FLAG_ENABLE_CONSTANT_BITRATE_SEEKING = 1;
     public static final int FLAG_ENABLE_CONSTANT_BITRATE_SEEKING_ALWAYS = 2;
@@ -69,7 +69,7 @@ public final class AmrExtractor implements Extractor {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public @interface Flags {
     }
 

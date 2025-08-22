@@ -15,7 +15,7 @@ import io.reactivex.internal.fuseable.FuseToObservable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.Collection;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableToListSingle<T, U extends Collection<? super T>> extends Single<U> implements FuseToObservable<U> {
     final Callable<U> collectionSupplier;
     final ObservableSource<T> source;
@@ -45,7 +45,7 @@ public final class ObservableToListSingle<T, U extends Collection<? super T>> ex
         return RxJavaPlugins.onAssembly(new ObservableToList(this.source, this.collectionSupplier));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ToListObserver<T, U extends Collection<? super T>> implements Observer<T>, Disposable {
         U collection;
         final SingleObserver<? super U> downstream;

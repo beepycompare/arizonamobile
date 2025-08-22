@@ -21,10 +21,10 @@ import kotlin.ReplaceWith;
 public final class DrawerDefaults {
     public static final int $stable = 0;
     public static final DrawerDefaults INSTANCE = new DrawerDefaults();
-    private static final float ModalDrawerElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
-    private static final float PermanentDrawerElevation = NavigationDrawerTokens.INSTANCE.m3132getStandardContainerElevationD9Ej5fM();
-    private static final float DismissibleDrawerElevation = NavigationDrawerTokens.INSTANCE.m3132getStandardContainerElevationD9Ej5fM();
-    private static final float MaximumDrawerWidth = NavigationDrawerTokens.INSTANCE.m3129getContainerWidthD9Ej5fM();
+    private static final float ModalDrawerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
+    private static final float PermanentDrawerElevation = NavigationDrawerTokens.INSTANCE.m3439getStandardContainerElevationD9Ej5fM();
+    private static final float DismissibleDrawerElevation = NavigationDrawerTokens.INSTANCE.m3439getStandardContainerElevationD9Ej5fM();
+    private static final float MaximumDrawerWidth = NavigationDrawerTokens.INSTANCE.m3436getContainerWidthD9Ej5fM();
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Please use standardContainerColor or modalContainerColor instead.", replaceWith = @ReplaceWith(expression = "standardContainerColor", imports = {}))
     public static /* synthetic */ void getContainerColor$annotations() {
@@ -34,17 +34,17 @@ public final class DrawerDefaults {
     }
 
     /* renamed from: getModalDrawerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1880getModalDrawerElevationD9Ej5fM() {
+    public final float m2187getModalDrawerElevationD9Ej5fM() {
         return ModalDrawerElevation;
     }
 
     /* renamed from: getPermanentDrawerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1881getPermanentDrawerElevationD9Ej5fM() {
+    public final float m2188getPermanentDrawerElevationD9Ej5fM() {
         return PermanentDrawerElevation;
     }
 
     /* renamed from: getDismissibleDrawerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1878getDismissibleDrawerElevationD9Ej5fM() {
+    public final float m2185getDismissibleDrawerElevationD9Ej5fM() {
         return DismissibleDrawerElevation;
     }
 
@@ -66,12 +66,12 @@ public final class DrawerDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1055074989, i, -1, "androidx.compose.material3.DrawerDefaults.<get-scrimColor> (NavigationDrawer.kt:869)");
         }
-        long m4077copywmQWz5c$default = Color.m4077copywmQWz5c$default(ColorSchemeKt.getValue(ScrimTokens.INSTANCE.getContainerColor(), composer, 6), 0.32f, 0.0f, 0.0f, 0.0f, 14, null);
+        long m4536copywmQWz5c$default = Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(ScrimTokens.INSTANCE.getContainerColor(), composer, 6), 0.32f, 0.0f, 0.0f, 0.0f, 14, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m4077copywmQWz5c$default;
+        return m4536copywmQWz5c$default;
     }
 
     public final long getContainerColor(Composer composer, int i) {
@@ -114,7 +114,7 @@ public final class DrawerDefaults {
     }
 
     /* renamed from: getMaximumDrawerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m1879getMaximumDrawerWidthD9Ej5fM() {
+    public final float m2186getMaximumDrawerWidthD9Ej5fM() {
         return MaximumDrawerWidth;
     }
 
@@ -123,11 +123,11 @@ public final class DrawerDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-909973510, i, -1, "androidx.compose.material3.DrawerDefaults.<get-windowInsets> (NavigationDrawer.kt:897)");
         }
-        WindowInsets m811onlybOOhFvg = WindowInsetsKt.m811onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m823plusgK_yJZ4(WindowInsetsSides.Companion.m838getVerticalJoeWqyM(), WindowInsetsSides.Companion.m836getStartJoeWqyM()));
+        WindowInsets m912onlybOOhFvg = WindowInsetsKt.m912onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m926plusgK_yJZ4(WindowInsetsSides.Companion.m941getVerticalJoeWqyM(), WindowInsetsSides.Companion.m939getStartJoeWqyM()));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m811onlybOOhFvg;
+        return m912onlybOOhFvg;
     }
 }

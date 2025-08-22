@@ -14,7 +14,7 @@ public final class ComposableSingletons$ModalBottomSheet_androidKt {
     public static final ComposableSingletons$ModalBottomSheet_androidKt INSTANCE = new ComposableSingletons$ModalBottomSheet_androidKt();
 
     /* renamed from: lambda-1  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f37lambda1 = ComposableLambdaKt.composableLambdaInstance(-1187811352, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ModalBottomSheet_androidKt$lambda-1$1
+    public static Function2<Composer, Integer, Unit> f35lambda1 = ComposableLambdaKt.composableLambdaInstance(-1187811352, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ModalBottomSheet_androidKt$lambda-1$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -30,7 +30,7 @@ public final class ComposableSingletons$ModalBottomSheet_androidKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1187811352, i, -1, "androidx.compose.material3.ComposableSingletons$ModalBottomSheet_androidKt.lambda-1.<anonymous> (ModalBottomSheet.android.kt:242)");
             }
-            BottomSheetDefaults.INSTANCE.m1594DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+            BottomSheetDefaults.INSTANCE.m1901DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -38,7 +38,7 @@ public final class ComposableSingletons$ModalBottomSheet_androidKt {
     });
 
     /* renamed from: lambda-2  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f38lambda2 = ComposableLambdaKt.composableLambdaInstance(-91331245, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ModalBottomSheet_androidKt$lambda-2$1
+    public static Function2<Composer, Integer, Unit> f36lambda2 = ComposableLambdaKt.composableLambdaInstance(-91331245, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ModalBottomSheet_androidKt$lambda-2$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -61,12 +61,12 @@ public final class ComposableSingletons$ModalBottomSheet_androidKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1775getLambda1$material3_release() {
-        return f37lambda1;
+    public final Function2<Composer, Integer, Unit> m2082getLambda1$material3_release() {
+        return f35lambda1;
     }
 
     /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1776getLambda2$material3_release() {
-        return f38lambda2;
+    public final Function2<Composer, Integer, Unit> m2083getLambda2$material3_release() {
+        return f36lambda2;
     }
 }

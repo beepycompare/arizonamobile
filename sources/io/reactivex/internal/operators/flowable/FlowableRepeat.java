@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableRepeat<T> extends AbstractFlowableWithUpstream<T, T> {
     final long count;
 
@@ -24,7 +24,7 @@ public final class FlowableRepeat<T> extends AbstractFlowableWithUpstream<T, T> 
         new RepeatSubscriber(subscriber, j != Long.MAX_VALUE ? j - 1 : Long.MAX_VALUE, subscriptionArbiter, this.source).subscribeNext();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class RepeatSubscriber<T> extends AtomicInteger implements FlowableSubscriber<T> {
         private static final long serialVersionUID = -7098360935104053232L;
         final Subscriber<? super T> downstream;

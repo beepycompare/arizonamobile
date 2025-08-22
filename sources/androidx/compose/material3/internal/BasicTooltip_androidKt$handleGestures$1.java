@@ -92,7 +92,7 @@ final class BasicTooltip_androidKt$handleGestures$1 extends SuspendLambda implem
         @DebugMetadata(c = "androidx.compose.material3.internal.BasicTooltip_androidKt$handleGestures$1$1$1", f = "BasicTooltip.android.kt", i = {0, 0, 0, 0, 1, 1, 1, 2}, l = {171, 177, DownloaderService.STATUS_QUEUED_FOR_WIFI}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "isLongPressedFlow", "pass", "longPressTimeout", "$this$awaitEachGesture", "isLongPressedFlow", "pass", "isLongPressedFlow"}, s = {"L$0", "L$1", "L$2", "J$0", "L$0", "L$1", "L$2", "L$0"})
         /* renamed from: androidx.compose.material3.internal.BasicTooltip_androidKt$handleGestures$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C00441 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
+        public static final class C00361 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ CoroutineScope $$this$coroutineScope;
             final /* synthetic */ TooltipState $state;
             long J$0;
@@ -102,7 +102,7 @@ final class BasicTooltip_androidKt$handleGestures$1 extends SuspendLambda implem
             int label;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C00441(CoroutineScope coroutineScope, TooltipState tooltipState, Continuation<? super C00441> continuation) {
+            C00361(CoroutineScope coroutineScope, TooltipState tooltipState, Continuation<? super C00361> continuation) {
                 super(2, continuation);
                 this.$$this$coroutineScope = coroutineScope;
                 this.$state = tooltipState;
@@ -110,14 +110,14 @@ final class BasicTooltip_androidKt$handleGestures$1 extends SuspendLambda implem
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                C00441 c00441 = new C00441(this.$$this$coroutineScope, this.$state, continuation);
-                c00441.L$0 = obj;
-                return c00441;
+                C00361 c00361 = new C00361(this.$$this$coroutineScope, this.$state, continuation);
+                c00361.L$0 = obj;
+                return c00361;
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(AwaitPointerEventScope awaitPointerEventScope, Continuation<? super Unit> continuation) {
-                return ((C00441) create(awaitPointerEventScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C00361) create(awaitPointerEventScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             /* JADX WARN: Code restructure failed: missing block: B:38:0x00ff, code lost:
@@ -214,14 +214,14 @@ final class BasicTooltip_androidKt$handleGestures$1 extends SuspendLambda implem
                         mutableStateFlow = (MutableStateFlow) this.L$1;
                         awaitFirstDown$default = obj;
                     }
-                    int m5316getTypeT8wyACA = ((PointerInputChange) awaitFirstDown$default).m5316getTypeT8wyACA();
-                    if (PointerType.m5384equalsimpl0(m5316getTypeT8wyACA, PointerType.Companion.m5391getTouchT8wyACA()) || PointerType.m5384equalsimpl0(m5316getTypeT8wyACA, PointerType.Companion.m5390getStylusT8wyACA())) {
+                    int m5829getTypeT8wyACA = ((PointerInputChange) awaitFirstDown$default).m5829getTypeT8wyACA();
+                    if (PointerType.m5897equalsimpl0(m5829getTypeT8wyACA, PointerType.Companion.m5904getTouchT8wyACA()) || PointerType.m5897equalsimpl0(m5829getTypeT8wyACA, PointerType.Companion.m5903getStylusT8wyACA())) {
                         try {
                             this.L$0 = awaitPointerEventScope;
                             this.L$1 = mutableStateFlow;
                             this.L$2 = pointerEventPass;
                             this.label = 2;
-                            if (awaitPointerEventScope.withTimeout(longPressTimeoutMillis, new C00451(pointerEventPass, null), this) != coroutine_suspended) {
+                            if (awaitPointerEventScope.withTimeout(longPressTimeoutMillis, new C00371(pointerEventPass, null), this) != coroutine_suspended) {
                                 mutableStateFlow3 = mutableStateFlow;
                                 mutableStateFlow3.tryEmit(Boxing.boxBoolean(false));
                             }
@@ -256,27 +256,27 @@ final class BasicTooltip_androidKt$handleGestures$1 extends SuspendLambda implem
             @DebugMetadata(c = "androidx.compose.material3.internal.BasicTooltip_androidKt$handleGestures$1$1$1$1", f = "BasicTooltip.android.kt", i = {}, l = {178}, m = "invokeSuspend", n = {}, s = {})
             /* renamed from: androidx.compose.material3.internal.BasicTooltip_androidKt$handleGestures$1$1$1$1  reason: invalid class name and collision with other inner class name */
             /* loaded from: classes.dex */
-            public static final class C00451 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super PointerInputChange>, Object> {
+            public static final class C00371 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super PointerInputChange>, Object> {
                 final /* synthetic */ PointerEventPass $pass;
                 private /* synthetic */ Object L$0;
                 int label;
 
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                C00451(PointerEventPass pointerEventPass, Continuation<? super C00451> continuation) {
+                C00371(PointerEventPass pointerEventPass, Continuation<? super C00371> continuation) {
                     super(2, continuation);
                     this.$pass = pointerEventPass;
                 }
 
                 @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                 public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                    C00451 c00451 = new C00451(this.$pass, continuation);
-                    c00451.L$0 = obj;
-                    return c00451;
+                    C00371 c00371 = new C00371(this.$pass, continuation);
+                    c00371.L$0 = obj;
+                    return c00371;
                 }
 
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(AwaitPointerEventScope awaitPointerEventScope, Continuation<? super PointerInputChange> continuation) {
-                    return ((C00451) create(awaitPointerEventScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                    return ((C00371) create(awaitPointerEventScope, continuation)).invokeSuspend(Unit.INSTANCE);
                 }
 
                 @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -330,7 +330,7 @@ final class BasicTooltip_androidKt$handleGestures$1 extends SuspendLambda implem
                     if (r7.$state.show(androidx.compose.foundation.MutatePriority.PreventUserInput, r7) == r0) goto L18;
                  */
                 /* JADX WARN: Code restructure failed: missing block: B:20:0x005e, code lost:
-                    if (kotlinx.coroutines.flow.FlowKt.collectLatest(r7.$isLongPressedFlow, new androidx.compose.material3.internal.BasicTooltip_androidKt$handleGestures$1.AnonymousClass1.C00441.AnonymousClass2.C00461(r3, null), r2) == r0) goto L18;
+                    if (kotlinx.coroutines.flow.FlowKt.collectLatest(r7.$isLongPressedFlow, new androidx.compose.material3.internal.BasicTooltip_androidKt$handleGestures$1.AnonymousClass1.C00361.AnonymousClass2.C00381(r3, null), r2) == r0) goto L18;
                  */
                 /* JADX WARN: Code restructure failed: missing block: B:26:0x007e, code lost:
                     return r0;
@@ -372,7 +372,7 @@ final class BasicTooltip_androidKt$handleGestures$1 extends SuspendLambda implem
                     } catch (Throwable th2) {
                         this.L$0 = th2;
                         this.label = i2;
-                        if (FlowKt.collectLatest(this.$isLongPressedFlow, new C00461(this.$state, anonymousClass2), this) != coroutine_suspended) {
+                        if (FlowKt.collectLatest(this.$isLongPressedFlow, new C00381(this.$state, anonymousClass2), this) != coroutine_suspended) {
                             throw th2;
                         }
                     }
@@ -384,22 +384,22 @@ final class BasicTooltip_androidKt$handleGestures$1 extends SuspendLambda implem
                 @DebugMetadata(c = "androidx.compose.material3.internal.BasicTooltip_androidKt$handleGestures$1$1$1$2$1", f = "BasicTooltip.android.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
                 /* renamed from: androidx.compose.material3.internal.BasicTooltip_androidKt$handleGestures$1$1$1$2$1  reason: invalid class name and collision with other inner class name */
                 /* loaded from: classes.dex */
-                public static final class C00461 extends SuspendLambda implements Function2<Boolean, Continuation<? super Unit>, Object> {
+                public static final class C00381 extends SuspendLambda implements Function2<Boolean, Continuation<? super Unit>, Object> {
                     final /* synthetic */ TooltipState $state;
                     /* synthetic */ boolean Z$0;
                     int label;
 
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    C00461(TooltipState tooltipState, Continuation<? super C00461> continuation) {
+                    C00381(TooltipState tooltipState, Continuation<? super C00381> continuation) {
                         super(2, continuation);
                         this.$state = tooltipState;
                     }
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                        C00461 c00461 = new C00461(this.$state, continuation);
-                        c00461.Z$0 = ((Boolean) obj).booleanValue();
-                        return c00461;
+                        C00381 c00381 = new C00381(this.$state, continuation);
+                        c00381.Z$0 = ((Boolean) obj).booleanValue();
+                        return c00381;
                     }
 
                     @Override // kotlin.jvm.functions.Function2
@@ -408,7 +408,7 @@ final class BasicTooltip_androidKt$handleGestures$1 extends SuspendLambda implem
                     }
 
                     public final Object invoke(boolean z, Continuation<? super Unit> continuation) {
-                        return ((C00461) create(Boolean.valueOf(z), continuation)).invokeSuspend(Unit.INSTANCE);
+                        return ((C00381) create(Boolean.valueOf(z), continuation)).invokeSuspend(Unit.INSTANCE);
                     }
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -434,7 +434,7 @@ final class BasicTooltip_androidKt$handleGestures$1 extends SuspendLambda implem
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 this.label = 1;
-                if (ForEachGestureKt.awaitEachGesture(this.$$this$pointerInput, new C00441((CoroutineScope) this.L$0, this.$state, null), this) == coroutine_suspended) {
+                if (ForEachGestureKt.awaitEachGesture(this.$$this$pointerInput, new C00361((CoroutineScope) this.L$0, this.$state, null), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {

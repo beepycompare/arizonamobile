@@ -11,7 +11,7 @@ import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Ac4Reader implements ElementaryStreamReader {
     private static final int STATE_FINDING_SYNC = 0;
     private static final int STATE_READING_HEADER = 1;

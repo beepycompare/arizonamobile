@@ -1,5 +1,5 @@
 package io.reactivex.internal.util;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Pow2 {
     public static boolean isPowerOfTwo(int i) {
         return (i & (i + (-1))) == 0;

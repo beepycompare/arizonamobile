@@ -18,7 +18,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> extends AbstractObservableWithUpstream<TLeft, R> {
     final Function<? super TLeft, ? extends ObservableSource<TLeftEnd>> leftEnd;
     final ObservableSource<? extends TRight> other;
@@ -26,7 +26,7 @@ public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> ex
     final Function<? super TRight, ? extends ObservableSource<TRightEnd>> rightEnd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface JoinSupport {
         void innerClose(boolean z, LeftRightEndObserver leftRightEndObserver);
 
@@ -59,7 +59,7 @@ public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> ex
         this.other.subscribe(leftRightObserver2);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class GroupJoinDisposable<TLeft, TRight, TLeftEnd, TRightEnd, R> extends AtomicInteger implements Disposable, JoinSupport {
         private static final long serialVersionUID = -6071216598687999801L;
         volatile boolean cancelled;
@@ -271,7 +271,7 @@ public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> ex
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class LeftRightObserver extends AtomicReference<Disposable> implements Observer<Object>, Disposable {
         private static final long serialVersionUID = 1883890389173668373L;
         final boolean isLeft;
@@ -315,7 +315,7 @@ public final class ObservableGroupJoin<TLeft, TRight, TLeftEnd, TRightEnd, R> ex
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class LeftRightEndObserver extends AtomicReference<Disposable> implements Observer<Object>, Disposable {
         private static final long serialVersionUID = 1883890389173668373L;
         final int index;

@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TapGestureDetector.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt", f = "TapGestureDetector.kt", i = {0}, l = {RendererCapabilities.DECODER_SUPPORT_MASK}, m = "waitForLongPress", n = {"result"}, s = {"L$0"})
 /* loaded from: classes.dex */
 public final class TapGestureDetectorKt$waitForLongPress$1 extends ContinuationImpl {

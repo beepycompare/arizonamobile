@@ -1,59 +1,71 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
-import java.util.concurrent.atomic.AtomicLong;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.content.Context;
+import android.database.sqlite.SQLiteOpenHelper;
+import io.appmetrica.analytics.coreapi.internal.data.TempCacheStorage;
+import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
+import io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences;
+import io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider;
+import java.io.File;
 /* loaded from: classes4.dex */
-public final class Ek {
+public final class Ek implements ServiceStorageProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0575s5 f422a;
-    public final Vk b;
-    public final Hk c;
-    public long d;
-    public long e;
-    public AtomicLong f;
-    public boolean g;
-    public volatile Tk h;
-    public long i;
-    public long j;
-    public final SystemTimeProvider k;
+    public final Context f418a;
+    public final InterfaceC0763zl b;
+    public final SQLiteOpenHelper c;
 
-    public Ek(C0575s5 c0575s5, Vk vk, Hk hk, SystemTimeProvider systemTimeProvider) {
-        this.f422a = c0575s5;
-        this.b = vk;
-        this.c = hk;
-        this.k = systemTimeProvider;
-        a();
+    public Ek(Context context, InterfaceC0763zl interfaceC0763zl, SQLiteOpenHelper sQLiteOpenHelper) {
+        this.f418a = context;
+        this.b = interfaceC0763zl;
+        this.c = sQLiteOpenHelper;
     }
 
-    public final void a() {
-        Hk hk = this.c;
-        long elapsedRealtime = this.k.elapsedRealtime();
-        Long l = hk.c;
-        if (l != null) {
-            elapsedRealtime = l.longValue();
-        }
-        this.e = elapsedRealtime;
-        Long l2 = this.c.b;
-        this.d = l2 == null ? -1L : l2.longValue();
-        Long l3 = this.c.e;
-        this.f = new AtomicLong(l3 == null ? 0L : l3.longValue());
-        Boolean bool = this.c.f;
-        this.g = bool == null ? true : bool.booleanValue();
-        Long l4 = this.c.g;
-        long longValue = l4 != null ? l4.longValue() : 0L;
-        this.i = longValue;
-        Hk hk2 = this.c;
-        long j = longValue - this.e;
-        Long l5 = hk2.h;
-        if (l5 != null) {
-            j = l5.longValue();
-        }
-        this.j = j;
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final File getAppDataStorage() {
+        return FileUtils.getAppDataDir(this.f418a);
     }
 
-    public final String toString() {
-        return "Session{id=" + this.d + ", creationTime=" + this.e + ", currentReportId=" + this.f + ", sessionRequestParams=" + this.h + ", sleepStart=" + this.i + AbstractJsonLexerKt.END_OBJ;
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final File getAppFileStorage() {
+        return FileUtils.getAppStorageDirectory(this.f418a);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final SQLiteOpenHelper getDbStorage() {
+        return this.c;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final File getSdkDataStorage() {
+        return FileUtils.sdkStorage(this.f418a);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final TempCacheStorage getTempCacheStorage() {
+        C0665vn c0665vn;
+        C0649v7 a2 = C0649v7.a(this.f418a);
+        synchronized (a2) {
+            if (a2.o == null) {
+                Context context = a2.e;
+                Xm xm = Xm.SERVICE;
+                if (a2.n == null) {
+                    a2.n = new C0640un(new C0663vl(a2.h()), "temp_cache");
+                }
+                a2.o = new C0665vn(context, xm, a2.n);
+            }
+            c0665vn = a2.o;
+        }
+        return c0665vn;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final ModulePreferences legacyModulePreferences() {
+        return new Wb(this.b);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final ModulePreferences modulePreferences(String str) {
+        return new C0630ud(str, this.b);
     }
 }

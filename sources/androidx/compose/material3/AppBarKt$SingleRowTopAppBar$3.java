@@ -56,7 +56,7 @@ public final class AppBarKt$SingleRowTopAppBar$3 extends Lambda implements Funct
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1943739546, i, -1, "androidx.compose.material3.SingleRowTopAppBar.<anonymous> (AppBar.kt:1927)");
             }
-            Modifier m773heightInVpY3zN4$default = SizeKt.m773heightInVpY3zN4$default(ClipKt.clipToBounds(WindowInsetsPaddingKt.windowInsetsPadding(Modifier.Companion, this.$windowInsets)), 0.0f, this.$expandedHeight, 1, null);
+            Modifier m872heightInVpY3zN4$default = SizeKt.m872heightInVpY3zN4$default(ClipKt.clipToBounds(WindowInsetsPaddingKt.windowInsetsPadding(Modifier.Companion, this.$windowInsets)), 0.0f, this.$expandedHeight, 1, null);
             ComposerKt.sourceInformationMarkerStart(composer, 660708484, "CC(remember):AppBar.kt#9igjgp");
             boolean changed = composer.changed(this.$scrollBehavior);
             final TopAppBarScrollBehavior topAppBarScrollBehavior = this.$scrollBehavior;
@@ -74,7 +74,7 @@ public final class AppBarKt$SingleRowTopAppBar$3 extends Lambda implements Funct
             }
             ScrolledOffset scrolledOffset = (ScrolledOffset) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(composer);
-            AppBarKt.m1577TopAppBarLayoutkXwM9vE(m773heightInVpY3zN4$default, scrolledOffset, this.$colors.m2657getNavigationIconContentColor0d7_KjU(), this.$colors.m2659getTitleContentColor0d7_KjU(), this.$colors.m2655getActionIconContentColor0d7_KjU(), this.$title, this.$titleTextStyle, 1.0f, Arrangement.INSTANCE.getCenter(), this.$centeredTitle ? Arrangement.INSTANCE.getCenter() : Arrangement.INSTANCE.getStart(), 0, false, this.$navigationIcon, this.$actionsRow, composer, 113246208, 3126);
+            AppBarKt.m1884TopAppBarLayoutkXwM9vE(m872heightInVpY3zN4$default, scrolledOffset, this.$colors.m2964getNavigationIconContentColor0d7_KjU(), this.$colors.m2966getTitleContentColor0d7_KjU(), this.$colors.m2962getActionIconContentColor0d7_KjU(), this.$title, this.$titleTextStyle, 1.0f, Arrangement.INSTANCE.getCenter(), this.$centeredTitle ? Arrangement.INSTANCE.getCenter() : Arrangement.INSTANCE.getStart(), 0, false, this.$navigationIcon, this.$actionsRow, composer, 113246208, 3126);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
                 return;

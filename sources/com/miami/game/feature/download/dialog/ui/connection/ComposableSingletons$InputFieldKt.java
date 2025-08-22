@@ -15,7 +15,7 @@ public final class ComposableSingletons$InputFieldKt {
     public static final ComposableSingletons$InputFieldKt INSTANCE = new ComposableSingletons$InputFieldKt();
 
     /* renamed from: lambda$-1682333503  reason: not valid java name */
-    private static Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> f73lambda$1682333503 = ComposableLambdaKt.composableLambdaInstance(-1682333503, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$InputFieldKt$$ExternalSyntheticLambda0
+    private static Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> f67lambda$1682333503 = ComposableLambdaKt.composableLambdaInstance(-1682333503, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$InputFieldKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__1682333503$lambda$0;
@@ -24,15 +24,15 @@ public final class ComposableSingletons$InputFieldKt {
         }
     });
 
-    /* renamed from: getLambda$-1682333503$dialogs_release_web  reason: not valid java name */
-    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m8359getLambda$1682333503$dialogs_release_web() {
-        return f73lambda$1682333503;
+    /* renamed from: getLambda$-1682333503$dialogs_release  reason: not valid java name */
+    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m8925getLambda$1682333503$dialogs_release() {
+        return f67lambda$1682333503;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit lambda__1682333503$lambda$0(Function2 innerTextField, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(innerTextField, "innerTextField");
-        ComposerKt.sourceInformation(composer, "C56@2159L16:InputField.kt#yp5s1q");
+        ComposerKt.sourceInformation(composer, "CN(innerTextField)56@2159L16:InputField.kt#yp5s1q");
         if ((i & 6) == 0) {
             i |= composer.changedInstance(innerTextField) ? 4 : 2;
         }

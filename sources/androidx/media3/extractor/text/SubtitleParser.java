@@ -5,10 +5,10 @@ import androidx.media3.common.Format;
 import androidx.media3.common.util.Consumer;
 import com.google.common.collect.ImmutableList;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface SubtitleParser {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Factory {
         public static final Factory UNSUPPORTED = new Factory() { // from class: androidx.media3.extractor.text.SubtitleParser.Factory.1
             @Override // androidx.media3.extractor.text.SubtitleParser.Factory
@@ -41,7 +41,7 @@ public interface SubtitleParser {
     default void reset() {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class OutputOptions {
         private static final OutputOptions ALL = new OutputOptions(C.TIME_UNSET, false);
         public final boolean outputAllCues;

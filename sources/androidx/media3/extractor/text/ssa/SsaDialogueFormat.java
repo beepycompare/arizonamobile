@@ -6,7 +6,7 @@ import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.common.base.Ascii;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.AdRevenueConstants;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class SsaDialogueFormat {
     public final int endTimeIndex;
     public final int layerIndex;

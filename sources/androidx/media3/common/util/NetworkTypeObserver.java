@@ -57,7 +57,7 @@ public final class NetworkTypeObserver {
         executor.execute(new Runnable() { // from class: androidx.media3.common.util.NetworkTypeObserver$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                NetworkTypeObserver.this.m7302lambda$new$0$androidxmedia3commonutilNetworkTypeObserver(context);
+                NetworkTypeObserver.this.m7868lambda$new$0$androidxmedia3commonutilNetworkTypeObserver(context);
             }
         });
     }
@@ -96,7 +96,7 @@ public final class NetworkTypeObserver {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: init */
-    public void m7302lambda$new$0$androidxmedia3commonutilNetworkTypeObserver(Context context) {
+    public void m7868lambda$new$0$androidxmedia3commonutilNetworkTypeObserver(Context context) {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         context.registerReceiver(new Receiver(), intentFilter);
@@ -207,7 +207,7 @@ public final class NetworkTypeObserver {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onReceive$0$androidx-media3-common-util-NetworkTypeObserver$Receiver  reason: not valid java name */
-        public /* synthetic */ void m7304x90e623c9(Context context) {
+        public /* synthetic */ void m7870x90e623c9(Context context) {
             NetworkTypeObserver.this.handleConnectivityActionBroadcast(context);
         }
 
@@ -216,7 +216,7 @@ public final class NetworkTypeObserver {
             NetworkTypeObserver.this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.common.util.NetworkTypeObserver$Receiver$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NetworkTypeObserver.Receiver.this.m7304x90e623c9(context);
+                    NetworkTypeObserver.Receiver.this.m7870x90e623c9(context);
                 }
             });
         }
@@ -275,14 +275,14 @@ public final class NetworkTypeObserver {
             this.executor.execute(new Runnable() { // from class: androidx.media3.common.util.NetworkTypeObserver$ListenerHolder$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NetworkTypeObserver.ListenerHolder.this.m7303x7c19281b();
+                    NetworkTypeObserver.ListenerHolder.this.m7869x7c19281b();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$callOnNetworkTypeChanged$0$androidx-media3-common-util-NetworkTypeObserver$ListenerHolder  reason: not valid java name */
-        public /* synthetic */ void m7303x7c19281b() {
+        public /* synthetic */ void m7869x7c19281b() {
             Listener listener = this.listener.get();
             if (listener != null) {
                 listener.onNetworkTypeChanged(NetworkTypeObserver.this.getNetworkType());

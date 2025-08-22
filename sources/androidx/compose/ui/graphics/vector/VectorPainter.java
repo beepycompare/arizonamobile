@@ -16,7 +16,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: VectorPainter.kt */
-@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0011\b\u0000\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\u0010\u0010@\u001a\u00020\u00062\u0006\u0010A\u001a\u00020\u0019H\u0014J\u0012\u0010B\u001a\u00020\u00062\b\u0010C\u001a\u0004\u0018\u00010\u001bH\u0014J\f\u0010D\u001a\u00020E*\u00020FH\u0014R+\u0010\u0007\u001a\u00020\u00062\u0006\u0010\u0005\u001a\u00020\u00068@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b\f\u0010\r\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\u000e\u001a\u00020\u000f8@X\u0080\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0011R\u001c\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R(\u0010\u001f\u001a\u0004\u0018\u00010\u001b2\b\u0010\u001e\u001a\u0004\u0018\u00010\u001b8@@@X\u0080\u000e¢\u0006\f\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#R\u001a\u0010$\u001a\u00020%8VX\u0096\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b&\u0010'R+\u0010(\u001a\u00020\u001d2\u0006\u0010\u0005\u001a\u00020\u001d8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b,\u0010-\u001a\u0004\b)\u0010\u0011\"\u0004\b*\u0010+R$\u0010/\u001a\u00020.2\u0006\u0010\u001e\u001a\u00020.8@@@X\u0080\u000e¢\u0006\f\u001a\u0004\b0\u00101\"\u0004\b2\u00103R1\u00104\u001a\u00020%2\u0006\u0010\u0005\u001a\u00020%8@@@X\u0080\u008e\u0002ø\u0001\u0000ø\u0001\u0001¢\u0006\u0012\n\u0004\b8\u0010\r\u001a\u0004\b5\u0010'\"\u0004\b6\u00107R\u0014\u00109\u001a\u00020:X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b;\u0010<R*\u0010=\u001a\u00020%2\u0006\u0010\u001e\u001a\u00020%8@@@X\u0080\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\f\u001a\u0004\b>\u0010'\"\u0004\b?\u00107\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006G"}, d2 = {"Landroidx/compose/ui/graphics/vector/VectorPainter;", "Landroidx/compose/ui/graphics/painter/Painter;", "root", "Landroidx/compose/ui/graphics/vector/GroupComponent;", "(Landroidx/compose/ui/graphics/vector/GroupComponent;)V", "<set-?>", "", "autoMirror", "getAutoMirror$ui_release", "()Z", "setAutoMirror$ui_release", "(Z)V", "autoMirror$delegate", "Landroidx/compose/runtime/MutableState;", "bitmapConfig", "Landroidx/compose/ui/graphics/ImageBitmapConfig;", "getBitmapConfig-_sVssgQ$ui_release", "()I", "composition", "Landroidx/compose/runtime/Composition;", "getComposition$ui_release", "()Landroidx/compose/runtime/Composition;", "setComposition$ui_release", "(Landroidx/compose/runtime/Composition;)V", "currentAlpha", "", "currentColorFilter", "Landroidx/compose/ui/graphics/ColorFilter;", "drawCount", "", "value", "intrinsicColorFilter", "getIntrinsicColorFilter$ui_release", "()Landroidx/compose/ui/graphics/ColorFilter;", "setIntrinsicColorFilter$ui_release", "(Landroidx/compose/ui/graphics/ColorFilter;)V", "intrinsicSize", "Landroidx/compose/ui/geometry/Size;", "getIntrinsicSize-NH-jbRc", "()J", "invalidateCount", "getInvalidateCount", "setInvalidateCount", "(I)V", "invalidateCount$delegate", "Landroidx/compose/runtime/MutableIntState;", "", "name", "getName$ui_release", "()Ljava/lang/String;", "setName$ui_release", "(Ljava/lang/String;)V", "size", "getSize-NH-jbRc$ui_release", "setSize-uvyYCjk$ui_release", "(J)V", "size$delegate", "vector", "Landroidx/compose/ui/graphics/vector/VectorComponent;", "getVector$ui_release", "()Landroidx/compose/ui/graphics/vector/VectorComponent;", "viewportSize", "getViewportSize-NH-jbRc$ui_release", "setViewportSize-uvyYCjk$ui_release", "applyAlpha", "alpha", "applyColorFilter", "colorFilter", "onDraw", "", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001B\u0013\b\u0000\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\f\u0010A\u001a\u00020B*\u00020CH\u0014J\u0010\u0010D\u001a\u00020\u000f2\u0006\u0010E\u001a\u00020<H\u0014J\u0012\u0010F\u001a\u00020\u000f2\b\u0010G\u001a\u0004\u0018\u00010\u0017H\u0014R+\u0010\b\u001a\u00020\u00072\u0006\u0010\u0006\u001a\u00020\u00078@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b\r\u0010\u000e\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\fR+\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0006\u001a\u00020\u000f8@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b\u0015\u0010\u000e\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R(\u0010\u0018\u001a\u0004\u0018\u00010\u00172\b\u0010\u0016\u001a\u0004\u0018\u00010\u00178@@@X\u0080\u000e¢\u0006\f\u001a\u0004\b\u0019\u0010\u001a\"\u0004\b\u001b\u0010\u001cR$\u0010\u001d\u001a\u00020\u00072\u0006\u0010\u0016\u001a\u00020\u00078@@@X\u0080\u000e¢\u0006\f\u001a\u0004\b\u001e\u0010\n\"\u0004\b\u001f\u0010\fR$\u0010!\u001a\u00020 2\u0006\u0010\u0016\u001a\u00020 8@@@X\u0080\u000e¢\u0006\f\u001a\u0004\b\"\u0010#\"\u0004\b$\u0010%R\u0014\u0010&\u001a\u00020'X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b(\u0010)R\u0014\u0010*\u001a\u00020+8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b,\u0010-R\u001c\u0010.\u001a\u0004\u0018\u00010/X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u00101\"\u0004\b2\u00103R+\u00105\u001a\u0002042\u0006\u0010\u0006\u001a\u0002048B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b9\u0010:\u001a\u0004\b6\u0010-\"\u0004\b7\u00108R\u000e\u0010;\u001a\u00020<X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010=\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010>\u001a\u00020\u00078VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b?\u0010\nR\u000e\u0010@\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006H"}, d2 = {"Landroidx/compose/ui/graphics/vector/VectorPainter;", "Landroidx/compose/ui/graphics/painter/Painter;", "root", "Landroidx/compose/ui/graphics/vector/GroupComponent;", "<init>", "(Landroidx/compose/ui/graphics/vector/GroupComponent;)V", "<set-?>", "Landroidx/compose/ui/geometry/Size;", "size", "getSize-NH-jbRc$ui_release", "()J", "setSize-uvyYCjk$ui_release", "(J)V", "size$delegate", "Landroidx/compose/runtime/MutableState;", "", "autoMirror", "getAutoMirror$ui_release", "()Z", "setAutoMirror$ui_release", "(Z)V", "autoMirror$delegate", "value", "Landroidx/compose/ui/graphics/ColorFilter;", "intrinsicColorFilter", "getIntrinsicColorFilter$ui_release", "()Landroidx/compose/ui/graphics/ColorFilter;", "setIntrinsicColorFilter$ui_release", "(Landroidx/compose/ui/graphics/ColorFilter;)V", "viewportSize", "getViewportSize-NH-jbRc$ui_release", "setViewportSize-uvyYCjk$ui_release", "", "name", "getName$ui_release", "()Ljava/lang/String;", "setName$ui_release", "(Ljava/lang/String;)V", "vector", "Landroidx/compose/ui/graphics/vector/VectorComponent;", "getVector$ui_release", "()Landroidx/compose/ui/graphics/vector/VectorComponent;", "bitmapConfig", "Landroidx/compose/ui/graphics/ImageBitmapConfig;", "getBitmapConfig-_sVssgQ$ui_release", "()I", "composition", "Landroidx/compose/runtime/Composition;", "getComposition$ui_release", "()Landroidx/compose/runtime/Composition;", "setComposition$ui_release", "(Landroidx/compose/runtime/Composition;)V", "", "invalidateCount", "getInvalidateCount", "setInvalidateCount", "(I)V", "invalidateCount$delegate", "Landroidx/compose/runtime/MutableIntState;", "currentAlpha", "", "currentColorFilter", "intrinsicSize", "getIntrinsicSize-NH-jbRc", "drawCount", "onDraw", "", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "applyAlpha", "alpha", "applyColorFilter", "colorFilter", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class VectorPainter extends Painter {
     public static final int $stable = 8;
@@ -36,7 +36,7 @@ public final class VectorPainter extends Painter {
     public VectorPainter(GroupComponent groupComponent) {
         MutableState mutableStateOf$default;
         MutableState mutableStateOf$default2;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m3894boximpl(Size.Companion.m3915getZeroNHjbRc()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m4350boximpl(Size.Companion.m4371getZeroNHjbRc()), null, 2, null);
         this.size$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.autoMirror$delegate = mutableStateOf$default2;
@@ -61,9 +61,8 @@ public final class VectorPainter extends Painter {
                 i = VectorPainter.this.drawCount;
                 invalidateCount = VectorPainter.this.getInvalidateCount();
                 if (i == invalidateCount) {
-                    VectorPainter vectorPainter = VectorPainter.this;
-                    invalidateCount2 = vectorPainter.getInvalidateCount();
-                    vectorPainter.setInvalidateCount(invalidateCount2 + 1);
+                    invalidateCount2 = VectorPainter.this.getInvalidateCount();
+                    VectorPainter.this.setInvalidateCount(invalidateCount2 + 1);
                 }
             }
         });
@@ -78,13 +77,13 @@ public final class VectorPainter extends Painter {
     }
 
     /* renamed from: getSize-NH-jbRc$ui_release  reason: not valid java name */
-    public final long m4794getSizeNHjbRc$ui_release() {
-        return ((Size) this.size$delegate.getValue()).m3911unboximpl();
+    public final long m5292getSizeNHjbRc$ui_release() {
+        return ((Size) this.size$delegate.getValue()).m4367unboximpl();
     }
 
     /* renamed from: setSize-uvyYCjk$ui_release  reason: not valid java name */
-    public final void m4796setSizeuvyYCjk$ui_release(long j) {
-        this.size$delegate.setValue(Size.m3894boximpl(j));
+    public final void m5294setSizeuvyYCjk$ui_release(long j) {
+        this.size$delegate.setValue(Size.m4350boximpl(j));
     }
 
     public final boolean getAutoMirror$ui_release() {
@@ -104,13 +103,13 @@ public final class VectorPainter extends Painter {
     }
 
     /* renamed from: getViewportSize-NH-jbRc$ui_release  reason: not valid java name */
-    public final long m4795getViewportSizeNHjbRc$ui_release() {
-        return this.vector.m4786getViewportSizeNHjbRc$ui_release();
+    public final long m5293getViewportSizeNHjbRc$ui_release() {
+        return this.vector.m5284getViewportSizeNHjbRc$ui_release();
     }
 
     /* renamed from: setViewportSize-uvyYCjk$ui_release  reason: not valid java name */
-    public final void m4797setViewportSizeuvyYCjk$ui_release(long j) {
-        this.vector.m4787setViewportSizeuvyYCjk$ui_release(j);
+    public final void m5295setViewportSizeuvyYCjk$ui_release(long j) {
+        this.vector.m5285setViewportSizeuvyYCjk$ui_release(j);
     }
 
     public final String getName$ui_release() {
@@ -126,8 +125,8 @@ public final class VectorPainter extends Painter {
     }
 
     /* renamed from: getBitmapConfig-_sVssgQ$ui_release  reason: not valid java name */
-    public final int m4793getBitmapConfig_sVssgQ$ui_release() {
-        return this.vector.m4785getCacheBitmapConfig_sVssgQ$ui_release();
+    public final int m5291getBitmapConfig_sVssgQ$ui_release() {
+        return this.vector.m5283getCacheBitmapConfig_sVssgQ$ui_release();
     }
 
     public final Composition getComposition$ui_release() {
@@ -150,8 +149,8 @@ public final class VectorPainter extends Painter {
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo4761getIntrinsicSizeNHjbRc() {
-        return m4794getSizeNHjbRc$ui_release();
+    public long mo5236getIntrinsicSizeNHjbRc() {
+        return m5292getSizeNHjbRc$ui_release();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -165,16 +164,16 @@ public final class VectorPainter extends Painter {
         if (!getAutoMirror$ui_release() || drawScope.getLayoutDirection() != LayoutDirection.Rtl) {
             vectorComponent.draw(drawScope, this.currentAlpha, colorFilter);
         } else {
-            long mo4639getCenterF1C5BW0 = drawScope.mo4639getCenterF1C5BW0();
+            long mo5115getCenterF1C5BW0 = drawScope.mo5115getCenterF1C5BW0();
             DrawContext drawContext = drawScope.getDrawContext();
-            long mo4561getSizeNHjbRc = drawContext.mo4561getSizeNHjbRc();
+            long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
             drawContext.getCanvas().save();
             try {
-                drawContext.getTransform().mo4568scale0AR0LA0(-1.0f, 1.0f, mo4639getCenterF1C5BW0);
+                drawContext.getTransform().mo5044scale0AR0LA0(-1.0f, 1.0f, mo5115getCenterF1C5BW0);
                 vectorComponent.draw(drawScope, this.currentAlpha, colorFilter);
             } finally {
                 drawContext.getCanvas().restore();
-                drawContext.mo4562setSizeuvyYCjk(mo4561getSizeNHjbRc);
+                drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
             }
         }
         this.drawCount = getInvalidateCount();

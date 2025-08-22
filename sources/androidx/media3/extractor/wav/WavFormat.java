@@ -1,5 +1,5 @@
 package androidx.media3.extractor.wav;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class WavFormat {
     public final int averageBytesPerSecond;
     public final int bitsPerSample;

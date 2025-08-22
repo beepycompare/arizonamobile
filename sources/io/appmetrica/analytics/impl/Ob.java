@@ -1,84 +1,42 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Set;
+import io.appmetrica.analytics.coreapi.internal.executors.InterruptionSafeThread;
+import java.util.HashMap;
 /* loaded from: classes4.dex */
-public final class Ob implements InterfaceC0180cb {
+public final class Ob extends InterruptionSafeThread {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0180cb f576a;
+    public final /* synthetic */ Pb f589a;
 
-    public Ob(InterfaceC0180cb interfaceC0180cb) {
-        this.f576a = interfaceC0180cb;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public Ob(Pb pb, String str) {
+        super(str);
+        this.f589a = pb;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
-    public final InterfaceC0180cb a(String str, String str2) {
-        this.f576a.a(str, str2);
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
-    public final void b() {
-        this.f576a.b();
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
-    public final boolean getBoolean(String str, boolean z) {
-        return this.f576a.getBoolean(str, z);
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
-    public final int getInt(String str, int i) {
-        return this.f576a.getInt(str, i);
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
-    public final long getLong(String str, long j) {
-        return this.f576a.getLong(str, j);
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
-    public final String getString(String str, String str2) {
-        return this.f576a.getString(str, str2);
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
-    public final InterfaceC0180cb remove(String str) {
-        this.f576a.remove(str);
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
-    public final InterfaceC0180cb a(String str, long j) {
-        this.f576a.a(str, j);
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
-    public final InterfaceC0180cb a(int i, String str) {
-        this.f576a.a(i, str);
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
-    public final InterfaceC0180cb a(String str, boolean z) {
-        this.f576a.a(str, z);
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
-    public final InterfaceC0180cb a(String str, float f) {
-        this.f576a.a(str, f);
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
-    public final boolean a(String str) {
-        return this.f576a.a(str);
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0180cb
-    public final Set a() {
-        return this.f576a.a();
+    @Override // java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        HashMap hashMap;
+        synchronized (this.f589a.f603a) {
+            Pb.a(this.f589a);
+            this.f589a.e = true;
+            this.f589a.f603a.notifyAll();
+        }
+        while (isRunning()) {
+            synchronized (this) {
+                if (this.f589a.b.size() == 0) {
+                    try {
+                        wait();
+                    } catch (InterruptedException unused) {
+                    }
+                }
+                hashMap = new HashMap(this.f589a.b);
+                this.f589a.b.clear();
+            }
+            if (hashMap.size() > 0) {
+                Pb.a(this.f589a, hashMap);
+                hashMap.clear();
+            }
+        }
     }
 }

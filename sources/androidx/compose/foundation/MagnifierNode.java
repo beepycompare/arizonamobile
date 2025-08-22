@@ -35,7 +35,7 @@ import kotlinx.coroutines.channels.Channel;
 import kotlinx.coroutines.channels.ChannelKt;
 import kotlinx.coroutines.channels.ChannelResult;
 /* compiled from: Magnifier.android.kt */
-@Metadata(d1 = {"\u0000\u0092\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0000\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u0005B\u0099\u0001\u0012\u0017\u0010\u0006\u001a\u0013\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007¢\u0006\u0002\b\n\u0012\u001b\b\u0002\u0010\u000b\u001a\u0015\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t\u0018\u00010\u0007¢\u0006\u0002\b\n\u0012\u0016\b\u0002\u0010\f\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\u0007\u0012\b\b\u0002\u0010\u000f\u001a\u00020\u0010\u0012\b\b\u0002\u0010\u0011\u001a\u00020\u0012\u0012\b\b\u0002\u0010\u0013\u001a\u00020\r\u0012\b\b\u0002\u0010\u0014\u001a\u00020\u0015\u0012\b\b\u0002\u0010\u0016\u001a\u00020\u0015\u0012\b\b\u0002\u0010\u0017\u001a\u00020\u0012\u0012\b\b\u0002\u0010\u0018\u001a\u00020\u0019¢\u0006\u0002\u0010\u001aJ\b\u0010R\u001a\u00020\u000eH\u0016J\b\u0010S\u001a\u00020\u000eH\u0016J\u0010\u0010T\u001a\u00020\u000e2\u0006\u0010U\u001a\u00020/H\u0016J\b\u0010V\u001a\u00020\u000eH\u0016J\b\u0010W\u001a\u00020\u000eH\u0002J\u0092\u0001\u0010X\u001a\u00020\u000e2\u0017\u0010\u0006\u001a\u0013\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007¢\u0006\u0002\b\n2\u0019\u0010\u000b\u001a\u0015\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t\u0018\u00010\u0007¢\u0006\u0002\b\n2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\r2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00152\u0006\u0010\u0017\u001a\u00020\u00122\u0014\u0010\f\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\u00072\u0006\u0010\u0018\u001a\u00020\u0019ø\u0001\u0000¢\u0006\u0004\bY\u0010ZJ\b\u0010[\u001a\u00020\u000eH\u0002J\b\u0010\\\u001a\u00020\u000eH\u0002J\f\u0010]\u001a\u00020\u000e*\u00020^H\u0016J\f\u0010_\u001a\u00020\u000e*\u00020`H\u0016R\u001a\u0010\u001b\u001a\u00020\t8BX\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u001dR\u0016\u0010\u001e\u001a\n\u0012\u0004\u0012\u00020\t\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0017\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#R\"\u0010\u0014\u001a\u00020\u0015X\u0086\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010(\u001a\u0004\b$\u0010%\"\u0004\b&\u0010'R\u0010\u0010)\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010*\u001a\n\u0012\u0004\u0012\u00020\u000e\u0018\u00010+X\u0082\u000e¢\u0006\u0002\n\u0000R\"\u0010\u0016\u001a\u00020\u0015X\u0086\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010(\u001a\u0004\b,\u0010%\"\u0004\b-\u0010'R/\u00100\u001a\u0004\u0018\u00010/2\b\u0010.\u001a\u0004\u0018\u00010/8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b5\u00106\u001a\u0004\b1\u00102\"\u0004\b3\u00104R\u0010\u00107\u001a\u0004\u0018\u000108X\u0082\u000e¢\u0006\u0002\n\u0000R-\u0010\u000b\u001a\u0015\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t\u0018\u00010\u0007¢\u0006\u0002\b\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b9\u0010:\"\u0004\b;\u0010<R(\u0010\f\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b=\u0010:\"\u0004\b>\u0010<R\u001a\u0010\u0018\u001a\u00020\u0019X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b?\u0010@\"\u0004\bA\u0010BR\u0016\u0010C\u001a\u0004\u0018\u00010DX\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0002\n\u0000R\"\u0010\u0013\u001a\u00020\rX\u0086\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010H\u001a\u0004\bE\u0010\u001d\"\u0004\bF\u0010GR+\u0010\u0006\u001a\u0013\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007¢\u0006\u0002\b\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bI\u0010:\"\u0004\bJ\u0010<R\u0016\u0010K\u001a\u00020\tX\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010HR\u001a\u0010\u0011\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bL\u0010!\"\u0004\bM\u0010#R\u0010\u0010N\u001a\u0004\u0018\u00010OX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u00020\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bP\u0010%\"\u0004\bQ\u0010'\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006a"}, d2 = {"Landroidx/compose/foundation/MagnifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/GlobalPositionAwareModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "Landroidx/compose/ui/node/ObserverModifierNode;", "sourceCenter", "Lkotlin/Function1;", "Landroidx/compose/ui/unit/Density;", "Landroidx/compose/ui/geometry/Offset;", "Lkotlin/ExtensionFunctionType;", "magnifierCenter", "onSizeChanged", "Landroidx/compose/ui/unit/DpSize;", "", "zoom", "", "useTextDefault", "", "size", "cornerRadius", "Landroidx/compose/ui/unit/Dp;", "elevation", "clippingEnabled", "platformMagnifierFactory", "Landroidx/compose/foundation/PlatformMagnifierFactory;", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;FZJFFZLandroidx/compose/foundation/PlatformMagnifierFactory;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "anchorPositionInRoot", "getAnchorPositionInRoot-F1C5BW0", "()J", "anchorPositionInRootState", "Landroidx/compose/runtime/State;", "getClippingEnabled", "()Z", "setClippingEnabled", "(Z)V", "getCornerRadius-D9Ej5fM", "()F", "setCornerRadius-0680j_4", "(F)V", "F", "density", "drawSignalChannel", "Lkotlinx/coroutines/channels/Channel;", "getElevation-D9Ej5fM", "setElevation-0680j_4", "<set-?>", "Landroidx/compose/ui/layout/LayoutCoordinates;", "layoutCoordinates", "getLayoutCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "setLayoutCoordinates", "(Landroidx/compose/ui/layout/LayoutCoordinates;)V", "layoutCoordinates$delegate", "Landroidx/compose/runtime/MutableState;", "magnifier", "Landroidx/compose/foundation/PlatformMagnifier;", "getMagnifierCenter", "()Lkotlin/jvm/functions/Function1;", "setMagnifierCenter", "(Lkotlin/jvm/functions/Function1;)V", "getOnSizeChanged", "setOnSizeChanged", "getPlatformMagnifierFactory", "()Landroidx/compose/foundation/PlatformMagnifierFactory;", "setPlatformMagnifierFactory", "(Landroidx/compose/foundation/PlatformMagnifierFactory;)V", "previousSize", "Landroidx/compose/ui/unit/IntSize;", "getSize-MYxV2XQ", "setSize-EaSLcWc", "(J)V", "J", "getSourceCenter", "setSourceCenter", "sourceCenterInRoot", "getUseTextDefault", "setUseTextDefault", "view", "Landroid/view/View;", "getZoom", "setZoom", "onAttach", "onDetach", "onGloballyPositioned", "coordinates", "onObservedReadsChanged", "recreateMagnifier", "update", "update-5F03MCQ", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;FZJFFZLkotlin/jvm/functions/Function1;Landroidx/compose/foundation/PlatformMagnifierFactory;)V", "updateMagnifier", "updateSizeIfNecessary", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0090\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b#\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u0005B\u009b\u0001\u0012\u0017\u0010\u0006\u001a\u0013\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007¢\u0006\u0002\b\n\u0012\u001b\b\u0002\u0010\u000b\u001a\u0015\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t\u0018\u00010\u0007¢\u0006\u0002\b\n\u0012\u0016\b\u0002\u0010\f\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\u0007\u0012\b\b\u0002\u0010\u000f\u001a\u00020\u0010\u0012\b\b\u0002\u0010\u0011\u001a\u00020\u0012\u0012\b\b\u0002\u0010\u0013\u001a\u00020\r\u0012\b\b\u0002\u0010\u0014\u001a\u00020\u0015\u0012\b\b\u0002\u0010\u0016\u001a\u00020\u0015\u0012\b\b\u0002\u0010\u0017\u001a\u00020\u0012\u0012\b\b\u0002\u0010\u0018\u001a\u00020\u0019¢\u0006\u0004\b\u001a\u0010\u001bJ\u008f\u0001\u0010S\u001a\u00020\u000e2\u0017\u0010\u0006\u001a\u0013\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007¢\u0006\u0002\b\n2\u0019\u0010\u000b\u001a\u0015\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t\u0018\u00010\u0007¢\u0006\u0002\b\n2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\r2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00152\u0006\u0010\u0017\u001a\u00020\u00122\u0014\u0010\f\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\u00072\u0006\u0010\u0018\u001a\u00020\u0019¢\u0006\u0004\bT\u0010UJ\b\u0010V\u001a\u00020\u000eH\u0016J\b\u0010W\u001a\u00020\u000eH\u0016J\b\u0010X\u001a\u00020\u000eH\u0016J\b\u0010Y\u001a\u00020\u000eH\u0002J\b\u0010Z\u001a\u00020\u000eH\u0002J\b\u0010[\u001a\u00020\u000eH\u0002J\f\u0010\\\u001a\u00020\u000e*\u00020]H\u0016J\u0010\u0010^\u001a\u00020\u000e2\u0006\u0010_\u001a\u00020BH\u0016J\f\u0010`\u001a\u00020\u000e*\u00020aH\u0016R+\u0010\u0006\u001a\u0013\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007¢\u0006\u0002\b\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR-\u0010\u000b\u001a\u0015\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t\u0018\u00010\u0007¢\u0006\u0002\b\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b \u0010\u001d\"\u0004\b!\u0010\u001fR(\u0010\f\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\"\u0010\u001d\"\u0004\b#\u0010\u001fR\u001a\u0010\u000f\u001a\u00020\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b$\u0010%\"\u0004\b&\u0010'R\u001a\u0010\u0011\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b(\u0010)\"\u0004\b*\u0010+R\u001c\u0010\u0013\u001a\u00020\rX\u0086\u000e¢\u0006\u0010\n\u0002\u00100\u001a\u0004\b,\u0010-\"\u0004\b.\u0010/R\u001c\u0010\u0014\u001a\u00020\u0015X\u0086\u000e¢\u0006\u0010\n\u0002\u00103\u001a\u0004\b1\u0010%\"\u0004\b2\u0010'R\u001c\u0010\u0016\u001a\u00020\u0015X\u0086\u000e¢\u0006\u0010\n\u0002\u00103\u001a\u0004\b4\u0010%\"\u0004\b5\u0010'R\u001a\u0010\u0017\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b6\u0010)\"\u0004\b7\u0010+R\u001a\u0010\u0018\u001a\u00020\u0019X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b8\u00109\"\u0004\b:\u0010;R\u0010\u0010<\u001a\u0004\u0018\u00010=X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010>\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010?\u001a\u0004\u0018\u00010@X\u0082\u000e¢\u0006\u0002\n\u0000R/\u0010C\u001a\u0004\u0018\u00010B2\b\u0010A\u001a\u0004\u0018\u00010B8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bH\u0010I\u001a\u0004\bD\u0010E\"\u0004\bF\u0010GR\u0016\u0010J\u001a\n\u0012\u0004\u0012\u00020\t\u0018\u00010KX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010L\u001a\u00020\t8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bM\u0010-R\u0010\u0010N\u001a\u00020\tX\u0082\u000e¢\u0006\u0004\n\u0002\u00100R\u0010\u0010O\u001a\u0004\u0018\u00010PX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010Q\u001a\n\u0012\u0004\u0012\u00020\u000e\u0018\u00010RX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006b"}, d2 = {"Landroidx/compose/foundation/MagnifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/GlobalPositionAwareModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "Landroidx/compose/ui/node/ObserverModifierNode;", "sourceCenter", "Lkotlin/Function1;", "Landroidx/compose/ui/unit/Density;", "Landroidx/compose/ui/geometry/Offset;", "Lkotlin/ExtensionFunctionType;", "magnifierCenter", "onSizeChanged", "Landroidx/compose/ui/unit/DpSize;", "", "zoom", "", "useTextDefault", "", "size", "cornerRadius", "Landroidx/compose/ui/unit/Dp;", "elevation", "clippingEnabled", "platformMagnifierFactory", "Landroidx/compose/foundation/PlatformMagnifierFactory;", "<init>", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;FZJFFZLandroidx/compose/foundation/PlatformMagnifierFactory;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getSourceCenter", "()Lkotlin/jvm/functions/Function1;", "setSourceCenter", "(Lkotlin/jvm/functions/Function1;)V", "getMagnifierCenter", "setMagnifierCenter", "getOnSizeChanged", "setOnSizeChanged", "getZoom", "()F", "setZoom", "(F)V", "getUseTextDefault", "()Z", "setUseTextDefault", "(Z)V", "getSize-MYxV2XQ", "()J", "setSize-EaSLcWc", "(J)V", "J", "getCornerRadius-D9Ej5fM", "setCornerRadius-0680j_4", "F", "getElevation-D9Ej5fM", "setElevation-0680j_4", "getClippingEnabled", "setClippingEnabled", "getPlatformMagnifierFactory", "()Landroidx/compose/foundation/PlatformMagnifierFactory;", "setPlatformMagnifierFactory", "(Landroidx/compose/foundation/PlatformMagnifierFactory;)V", "view", "Landroid/view/View;", "density", "magnifier", "Landroidx/compose/foundation/PlatformMagnifier;", "<set-?>", "Landroidx/compose/ui/layout/LayoutCoordinates;", "layoutCoordinates", "getLayoutCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "setLayoutCoordinates", "(Landroidx/compose/ui/layout/LayoutCoordinates;)V", "layoutCoordinates$delegate", "Landroidx/compose/runtime/MutableState;", "anchorPositionInRootState", "Landroidx/compose/runtime/State;", "anchorPositionInRoot", "getAnchorPositionInRoot-F1C5BW0", "sourceCenterInRoot", "previousSize", "Landroidx/compose/ui/unit/IntSize;", "drawSignalChannel", "Lkotlinx/coroutines/channels/Channel;", "update", "update-5F03MCQ", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;FZJFFZLkotlin/jvm/functions/Function1;Landroidx/compose/foundation/PlatformMagnifierFactory;)V", "onAttach", "onDetach", "onObservedReadsChanged", "recreateMagnifier", "updateMagnifier", "updateSizeIfNecessary", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "onGloballyPositioned", "coordinates", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class MagnifierNode extends Modifier.Node implements GlobalPositionAwareModifierNode, DrawModifierNode, SemanticsModifierNode, ObserverModifierNode {
     public static final int $stable = 8;
@@ -103,36 +103,36 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
     }
 
     public /* synthetic */ MagnifierNode(Function1 function1, Function1 function12, Function1 function13, float f, boolean z, long j, float f2, float f3, boolean z2, PlatformMagnifierFactory platformMagnifierFactory, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(function1, (i & 2) != 0 ? null : function12, (i & 4) != 0 ? null : function13, (i & 8) != 0 ? Float.NaN : f, (i & 16) != 0 ? false : z, (i & 32) != 0 ? DpSize.Companion.m6791getUnspecifiedMYxV2XQ() : j, (i & 64) != 0 ? Dp.Companion.m6704getUnspecifiedD9Ej5fM() : f2, (i & 128) != 0 ? Dp.Companion.m6704getUnspecifiedD9Ej5fM() : f3, (i & 256) != 0 ? true : z2, (i & 512) != 0 ? PlatformMagnifierFactory.Companion.getForCurrentPlatform() : platformMagnifierFactory, null);
+        this(function1, (i & 2) != 0 ? null : function12, (i & 4) != 0 ? null : function13, (i & 8) != 0 ? Float.NaN : f, (i & 16) != 0 ? false : z, (i & 32) != 0 ? DpSize.Companion.m7358getUnspecifiedMYxV2XQ() : j, (i & 64) != 0 ? Dp.Companion.m7271getUnspecifiedD9Ej5fM() : f2, (i & 128) != 0 ? Dp.Companion.m7271getUnspecifiedD9Ej5fM() : f3, (i & 256) != 0 ? true : z2, (i & 512) != 0 ? PlatformMagnifierFactory.Companion.getForCurrentPlatform() : platformMagnifierFactory, null);
     }
 
     /* renamed from: getSize-MYxV2XQ  reason: not valid java name */
-    public final long m308getSizeMYxV2XQ() {
+    public final long m330getSizeMYxV2XQ() {
         return this.size;
     }
 
     /* renamed from: setSize-EaSLcWc  reason: not valid java name */
-    public final void m311setSizeEaSLcWc(long j) {
+    public final void m333setSizeEaSLcWc(long j) {
         this.size = j;
     }
 
     /* renamed from: getCornerRadius-D9Ej5fM  reason: not valid java name */
-    public final float m306getCornerRadiusD9Ej5fM() {
+    public final float m328getCornerRadiusD9Ej5fM() {
         return this.cornerRadius;
     }
 
     /* renamed from: setCornerRadius-0680j_4  reason: not valid java name */
-    public final void m309setCornerRadius0680j_4(float f) {
+    public final void m331setCornerRadius0680j_4(float f) {
         this.cornerRadius = f;
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m307getElevationD9Ej5fM() {
+    public final float m329getElevationD9Ej5fM() {
         return this.elevation;
     }
 
     /* renamed from: setElevation-0680j_4  reason: not valid java name */
-    public final void m310setElevation0680j_4(float f) {
+    public final void m332setElevation0680j_4(float f) {
         this.elevation = f;
     }
 
@@ -164,11 +164,10 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         this.clippingEnabled = z2;
         this.platformMagnifierFactory = platformMagnifierFactory;
         this.layoutCoordinates$delegate = SnapshotStateKt.mutableStateOf(null, SnapshotStateKt.neverEqualPolicy());
-        this.sourceCenterInRoot = Offset.Companion.m3852getUnspecifiedF1C5BW0();
+        this.sourceCenterInRoot = Offset.Companion.m4308getUnspecifiedF1C5BW0();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final LayoutCoordinates getLayoutCoordinates() {
+    private final LayoutCoordinates getLayoutCoordinates() {
         return (LayoutCoordinates) this.layoutCoordinates$delegate.getValue();
     }
 
@@ -177,33 +176,29 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
     }
 
     /* renamed from: getAnchorPositionInRoot-F1C5BW0  reason: not valid java name */
-    private final long m305getAnchorPositionInRootF1C5BW0() {
+    private final long m327getAnchorPositionInRootF1C5BW0() {
         if (this.anchorPositionInRootState == null) {
-            this.anchorPositionInRootState = SnapshotStateKt.derivedStateOf(new Function0<Offset>() { // from class: androidx.compose.foundation.MagnifierNode$anchorPositionInRoot$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(0);
-                }
-
+            this.anchorPositionInRootState = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.MagnifierNode$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
-                public /* bridge */ /* synthetic */ Offset invoke() {
-                    return Offset.m3826boximpl(m313invokeF1C5BW0());
-                }
-
-                /* renamed from: invoke-F1C5BW0  reason: not valid java name */
-                public final long m313invokeF1C5BW0() {
-                    LayoutCoordinates layoutCoordinates;
-                    layoutCoordinates = MagnifierNode.this.getLayoutCoordinates();
-                    return layoutCoordinates != null ? LayoutCoordinatesKt.positionInRoot(layoutCoordinates) : Offset.Companion.m3852getUnspecifiedF1C5BW0();
+                public final Object invoke() {
+                    Offset anchorPositionInRoot_F1C5BW0$lambda$0;
+                    anchorPositionInRoot_F1C5BW0$lambda$0 = MagnifierNode.getAnchorPositionInRoot_F1C5BW0$lambda$0(MagnifierNode.this);
+                    return anchorPositionInRoot_F1C5BW0$lambda$0;
                 }
             });
         }
         State<Offset> state = this.anchorPositionInRootState;
-        return state != null ? state.getValue().m3847unboximpl() : Offset.Companion.m3852getUnspecifiedF1C5BW0();
+        return state != null ? state.getValue().m4303unboximpl() : Offset.Companion.m4308getUnspecifiedF1C5BW0();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Offset getAnchorPositionInRoot_F1C5BW0$lambda$0(MagnifierNode magnifierNode) {
+        LayoutCoordinates layoutCoordinates = magnifierNode.getLayoutCoordinates();
+        return Offset.m4282boximpl(layoutCoordinates != null ? LayoutCoordinatesKt.positionInRoot(layoutCoordinates) : Offset.Companion.m4308getUnspecifiedF1C5BW0());
     }
 
     /* renamed from: update-5F03MCQ  reason: not valid java name */
-    public final void m312update5F03MCQ(Function1<? super Density, Offset> function1, Function1<? super Density, Offset> function12, float f, boolean z, long j, float f2, float f3, boolean z2, Function1<? super DpSize, Unit> function13, PlatformMagnifierFactory platformMagnifierFactory) {
+    public final void m334update5F03MCQ(Function1<? super Density, Offset> function1, Function1<? super Density, Offset> function12, float f, boolean z, long j, float f2, float f3, boolean z2, Function1<? super DpSize, Unit> function13, PlatformMagnifierFactory platformMagnifierFactory) {
         float f4 = this.zoom;
         long j2 = this.size;
         float f5 = this.cornerRadius;
@@ -226,7 +221,7 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         MagnifierNode magnifierNode = this;
         View requireView = DelegatableNode_androidKt.requireView(magnifierNode);
         Density requireDensity = DelegatableNodeKt.requireDensity(magnifierNode);
-        if (this.magnifier != null && ((!Magnifier_androidKt.equalsIncludingNaN(f, f4) && !platformMagnifierFactory.getCanUpdateZoom()) || !DpSize.m6779equalsimpl0(j, j2) || !Dp.m6689equalsimpl0(f2, f5) || !Dp.m6689equalsimpl0(f3, f6) || z != z3 || z2 != z4 || !Intrinsics.areEqual(platformMagnifierFactory, platformMagnifierFactory2) || !Intrinsics.areEqual(requireView, view) || !Intrinsics.areEqual(requireDensity, density))) {
+        if (this.magnifier != null && ((!Magnifier_androidKt.equalsIncludingNaN(f, f4) && !platformMagnifierFactory.getCanUpdateZoom()) || !DpSize.m7346equalsimpl0(j, j2) || !Dp.m7256equalsimpl0(f2, f5) || !Dp.m7256equalsimpl0(f3, f6) || z != z3 || z2 != z4 || !Intrinsics.areEqual(platformMagnifierFactory, platformMagnifierFactory2) || !Intrinsics.areEqual(requireView, view) || !Intrinsics.areEqual(requireDensity, density))) {
             recreateMagnifier();
         }
         updateMagnifier();
@@ -248,23 +243,20 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         this.magnifier = null;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit onObservedReadsChanged$lambda$1(MagnifierNode magnifierNode) {
+        magnifierNode.updateMagnifier();
+        return Unit.INSTANCE;
+    }
+
     @Override // androidx.compose.ui.node.ObserverModifierNode
     public void onObservedReadsChanged() {
-        ObserverModifierNodeKt.observeReads(this, new Function0<Unit>() { // from class: androidx.compose.foundation.MagnifierNode$onObservedReadsChanged$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
+        ObserverModifierNodeKt.observeReads(this, new Function0() { // from class: androidx.compose.foundation.MagnifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                MagnifierNode.this.updateMagnifier();
+            public final Object invoke() {
+                Unit onObservedReadsChanged$lambda$1;
+                onObservedReadsChanged$lambda$1 = MagnifierNode.onObservedReadsChanged$lambda$1(MagnifierNode.this);
+                return onObservedReadsChanged$lambda$1;
             }
         });
     }
@@ -286,49 +278,48 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         }
         Density density2 = density;
         this.density = density2;
-        this.magnifier = this.platformMagnifierFactory.mo339createnHHXs2Y(view2, this.useTextDefault, this.size, this.cornerRadius, this.elevation, this.clippingEnabled, density2, this.zoom);
+        this.magnifier = this.platformMagnifierFactory.mo361createnHHXs2Y(view2, this.useTextDefault, this.size, this.cornerRadius, this.elevation, this.clippingEnabled, density2, this.zoom);
         updateSizeIfNecessary();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:20:0x0073  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x007a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void updateMagnifier() {
-        long m3852getUnspecifiedF1C5BW0;
+    private final void updateMagnifier() {
+        long m4308getUnspecifiedF1C5BW0;
         PlatformMagnifier platformMagnifier;
         Density density = this.density;
         if (density == null) {
             density = DelegatableNodeKt.requireDensity(this);
             this.density = density;
         }
-        long m3847unboximpl = this.sourceCenter.invoke(density).m3847unboximpl();
-        if ((m3847unboximpl & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (m305getAnchorPositionInRootF1C5BW0() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-            this.sourceCenterInRoot = Offset.m3842plusMKHz9U(m305getAnchorPositionInRootF1C5BW0(), m3847unboximpl);
+        long m4303unboximpl = this.sourceCenter.invoke(density).m4303unboximpl();
+        if ((m4303unboximpl & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (m327getAnchorPositionInRootF1C5BW0() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+            this.sourceCenterInRoot = Offset.m4298plusMKHz9U(m327getAnchorPositionInRootF1C5BW0(), m4303unboximpl);
             Function1<? super Density, Offset> function1 = this.magnifierCenter;
             if (function1 != null) {
-                Offset m3826boximpl = Offset.m3826boximpl(function1.invoke(density).m3847unboximpl());
-                if ((m3826boximpl.m3847unboximpl() & 9223372034707292159L) == InlineClassHelperKt.UnspecifiedPackedFloats) {
-                    m3826boximpl = null;
+                Offset m4282boximpl = Offset.m4282boximpl(function1.invoke(density).m4303unboximpl());
+                if ((m4282boximpl.m4303unboximpl() & 9223372034707292159L) == InlineClassHelperKt.UnspecifiedPackedFloats) {
+                    m4282boximpl = null;
                 }
-                if (m3826boximpl != null) {
-                    m3852getUnspecifiedF1C5BW0 = Offset.m3842plusMKHz9U(m305getAnchorPositionInRootF1C5BW0(), m3826boximpl.m3847unboximpl());
-                    long j = m3852getUnspecifiedF1C5BW0;
+                if (m4282boximpl != null) {
+                    m4308getUnspecifiedF1C5BW0 = Offset.m4298plusMKHz9U(m327getAnchorPositionInRootF1C5BW0(), m4282boximpl.m4303unboximpl());
+                    long j = m4308getUnspecifiedF1C5BW0;
                     if (this.magnifier == null) {
                         recreateMagnifier();
                     }
                     platformMagnifier = this.magnifier;
                     if (platformMagnifier != null) {
-                        platformMagnifier.mo338updateWko1d7g(this.sourceCenterInRoot, j, this.zoom);
+                        platformMagnifier.mo360updateWko1d7g(this.sourceCenterInRoot, j, this.zoom);
                     }
                     updateSizeIfNecessary();
                     return;
                 }
             }
-            m3852getUnspecifiedF1C5BW0 = Offset.Companion.m3852getUnspecifiedF1C5BW0();
-            long j2 = m3852getUnspecifiedF1C5BW0;
+            m4308getUnspecifiedF1C5BW0 = Offset.Companion.m4308getUnspecifiedF1C5BW0();
+            long j2 = m4308getUnspecifiedF1C5BW0;
             if (this.magnifier == null) {
             }
             platformMagnifier = this.magnifier;
@@ -337,7 +328,7 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
             updateSizeIfNecessary();
             return;
         }
-        this.sourceCenterInRoot = Offset.Companion.m3852getUnspecifiedF1C5BW0();
+        this.sourceCenterInRoot = Offset.Companion.m4308getUnspecifiedF1C5BW0();
         PlatformMagnifier platformMagnifier2 = this.magnifier;
         if (platformMagnifier2 != null) {
             platformMagnifier2.dismiss();
@@ -347,14 +338,14 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
     private final void updateSizeIfNecessary() {
         Density density;
         PlatformMagnifier platformMagnifier = this.magnifier;
-        if (platformMagnifier == null || (density = this.density) == null || IntSize.m6852equalsimpl(platformMagnifier.mo337getSizeYbymL2g(), this.previousSize)) {
+        if (platformMagnifier == null || (density = this.density) == null || IntSize.m7419equalsimpl(platformMagnifier.mo359getSizeYbymL2g(), this.previousSize)) {
             return;
         }
         Function1<? super DpSize, Unit> function1 = this.onSizeChanged;
         if (function1 != null) {
-            function1.invoke(DpSize.m6770boximpl(density.mo387toDpSizekrfVVM(IntSizeKt.m6867toSizeozmzZPI(platformMagnifier.mo337getSizeYbymL2g()))));
+            function1.invoke(DpSize.m7337boximpl(density.mo417toDpSizekrfVVM(IntSizeKt.m7434toSizeozmzZPI(platformMagnifier.mo359getSizeYbymL2g()))));
         }
-        this.previousSize = IntSize.m6847boximpl(platformMagnifier.mo337getSizeYbymL2g());
+        this.previousSize = IntSize.m7414boximpl(platformMagnifier.mo359getSizeYbymL2g());
     }
 
     @Override // androidx.compose.ui.node.DrawModifierNode
@@ -362,7 +353,7 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         contentDrawScope.drawContent();
         Channel<Unit> channel = this.drawSignalChannel;
         if (channel != null) {
-            ChannelResult.m10027boximpl(channel.mo7559trySendJP2dKIU(Unit.INSTANCE));
+            ChannelResult.m10591boximpl(channel.mo8125trySendJP2dKIU(Unit.INSTANCE));
         }
     }
 
@@ -371,24 +362,19 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         setLayoutCoordinates(layoutCoordinates);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Offset applySemantics$lambda$8(MagnifierNode magnifierNode) {
+        return Offset.m4282boximpl(magnifierNode.sourceCenterInRoot);
+    }
+
     @Override // androidx.compose.ui.node.SemanticsModifierNode
     public void applySemantics(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        semanticsPropertyReceiver.set(Magnifier_androidKt.getMagnifierPositionInRoot(), new Function0<Offset>() { // from class: androidx.compose.foundation.MagnifierNode$applySemantics$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
+        semanticsPropertyReceiver.set(Magnifier_androidKt.getMagnifierPositionInRoot(), new Function0() { // from class: androidx.compose.foundation.MagnifierNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Offset invoke() {
-                return Offset.m3826boximpl(m314invokeF1C5BW0());
-            }
-
-            /* renamed from: invoke-F1C5BW0  reason: not valid java name */
-            public final long m314invokeF1C5BW0() {
-                long j;
-                j = MagnifierNode.this.sourceCenterInRoot;
-                return j;
+            public final Object invoke() {
+                Offset applySemantics$lambda$8;
+                applySemantics$lambda$8 = MagnifierNode.applySemantics$lambda$8(MagnifierNode.this);
+                return applySemantics$lambda$8;
             }
         });
     }

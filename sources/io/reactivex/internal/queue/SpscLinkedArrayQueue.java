@@ -4,7 +4,7 @@ import io.reactivex.internal.fuseable.SimplePlainQueue;
 import io.reactivex.internal.util.Pow2;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReferenceArray;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SpscLinkedArrayQueue<T> implements SimplePlainQueue<T> {
     AtomicReferenceArray<Object> consumerBuffer;
     final int consumerMask;

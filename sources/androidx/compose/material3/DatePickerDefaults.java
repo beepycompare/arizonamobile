@@ -51,7 +51,7 @@ public final class DatePickerDefaults {
     public static final String YearMonthWeekdayDaySkeleton = "yMMMMEEEEd";
     public static final DatePickerDefaults INSTANCE = new DatePickerDefaults();
     private static final IntRange YearRange = new IntRange(1900, 2100);
-    private static final float TonalElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
+    private static final float TonalElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
     private static final SelectableDates AllDates = new SelectableDates() { // from class: androidx.compose.material3.DatePickerDefaults$AllDates$1
     };
 
@@ -72,42 +72,42 @@ public final class DatePickerDefaults {
     }
 
     /* renamed from: colors-bSRYm20  reason: not valid java name */
-    public final DatePickerColors m1826colorsbSRYm20(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, TextFieldColors textFieldColors, Composer composer, int i, int i2, int i3, int i4) {
+    public final DatePickerColors m2133colorsbSRYm20(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, TextFieldColors textFieldColors, Composer composer, int i, int i2, int i3, int i4) {
         ComposerKt.sourceInformationMarkerStart(composer, 1991626358, "C(colors)P(0:c#ui.graphics.Color,20:c#ui.graphics.Color,13:c#ui.graphics.Color,23:c#ui.graphics.Color,19:c#ui.graphics.Color,14:c#ui.graphics.Color,24:c#ui.graphics.Color,11:c#ui.graphics.Color,1:c#ui.graphics.Color,18:c#ui.graphics.Color,10:c#ui.graphics.Color,17:c#ui.graphics.Color,9:c#ui.graphics.Color,3:c#ui.graphics.Color,6:c#ui.graphics.Color,16:c#ui.graphics.Color,8:c#ui.graphics.Color,15:c#ui.graphics.Color,7:c#ui.graphics.Color,21:c#ui.graphics.Color,22:c#ui.graphics.Color,5:c#ui.graphics.Color,4:c#ui.graphics.Color,12:c#ui.graphics.Color)501@23101L11,501@23113L23:DatePicker.kt#uh7d8r");
-        long m4114getUnspecified0d7_KjU = (i4 & 1) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j;
-        long m4114getUnspecified0d7_KjU2 = (i4 & 2) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j2;
-        long m4114getUnspecified0d7_KjU3 = (i4 & 4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j3;
-        long m4114getUnspecified0d7_KjU4 = (i4 & 8) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j4;
-        long m4114getUnspecified0d7_KjU5 = (i4 & 16) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j5;
-        long m4114getUnspecified0d7_KjU6 = (i4 & 32) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j6;
-        long m4114getUnspecified0d7_KjU7 = (i4 & 64) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j7;
-        long m4114getUnspecified0d7_KjU8 = (i4 & 128) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j8;
-        long m4114getUnspecified0d7_KjU9 = (i4 & 256) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j9;
-        long m4114getUnspecified0d7_KjU10 = (i4 & 512) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j10;
-        long m4114getUnspecified0d7_KjU11 = (i4 & 1024) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j11;
-        long m4114getUnspecified0d7_KjU12 = (i4 & 2048) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j12;
-        long m4114getUnspecified0d7_KjU13 = (i4 & 4096) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j13;
-        long m4114getUnspecified0d7_KjU14 = (i4 & 8192) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j14;
-        long m4114getUnspecified0d7_KjU15 = (i4 & 16384) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j15;
-        long m4114getUnspecified0d7_KjU16 = (32768 & i4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j16;
-        long m4114getUnspecified0d7_KjU17 = (65536 & i4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j17;
-        long m4114getUnspecified0d7_KjU18 = (131072 & i4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j18;
-        long m4114getUnspecified0d7_KjU19 = (262144 & i4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j19;
-        long m4114getUnspecified0d7_KjU20 = (524288 & i4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j20;
-        long m4114getUnspecified0d7_KjU21 = (1048576 & i4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j21;
-        long m4114getUnspecified0d7_KjU22 = (2097152 & i4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j22;
-        long m4114getUnspecified0d7_KjU23 = (4194304 & i4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j23;
-        long m4114getUnspecified0d7_KjU24 = (8388608 & i4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j24;
+        long m4573getUnspecified0d7_KjU = (i4 & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
+        long m4573getUnspecified0d7_KjU2 = (i4 & 2) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j2;
+        long m4573getUnspecified0d7_KjU3 = (i4 & 4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j3;
+        long m4573getUnspecified0d7_KjU4 = (i4 & 8) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4;
+        long m4573getUnspecified0d7_KjU5 = (i4 & 16) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j5;
+        long m4573getUnspecified0d7_KjU6 = (i4 & 32) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j6;
+        long m4573getUnspecified0d7_KjU7 = (i4 & 64) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j7;
+        long m4573getUnspecified0d7_KjU8 = (i4 & 128) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j8;
+        long m4573getUnspecified0d7_KjU9 = (i4 & 256) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j9;
+        long m4573getUnspecified0d7_KjU10 = (i4 & 512) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j10;
+        long m4573getUnspecified0d7_KjU11 = (i4 & 1024) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j11;
+        long m4573getUnspecified0d7_KjU12 = (i4 & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j12;
+        long m4573getUnspecified0d7_KjU13 = (i4 & 4096) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j13;
+        long m4573getUnspecified0d7_KjU14 = (i4 & 8192) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j14;
+        long m4573getUnspecified0d7_KjU15 = (i4 & 16384) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j15;
+        long m4573getUnspecified0d7_KjU16 = (32768 & i4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j16;
+        long m4573getUnspecified0d7_KjU17 = (65536 & i4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j17;
+        long m4573getUnspecified0d7_KjU18 = (131072 & i4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j18;
+        long m4573getUnspecified0d7_KjU19 = (262144 & i4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j19;
+        long m4573getUnspecified0d7_KjU20 = (524288 & i4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j20;
+        long m4573getUnspecified0d7_KjU21 = (1048576 & i4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j21;
+        long m4573getUnspecified0d7_KjU22 = (2097152 & i4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j22;
+        long m4573getUnspecified0d7_KjU23 = (4194304 & i4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j23;
+        long m4573getUnspecified0d7_KjU24 = (8388608 & i4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j24;
         TextFieldColors textFieldColors2 = (i4 & 16777216) != 0 ? null : textFieldColors;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1991626358, i, i2, "androidx.compose.material3.DatePickerDefaults.colors (DatePicker.kt:501)");
         }
-        DatePickerColors m1799copytNwlRmA = getDefaultDatePickerColors(MaterialTheme.INSTANCE.getColorScheme(composer, 6), composer, (i3 >> 12) & 112).m1799copytNwlRmA(m4114getUnspecified0d7_KjU, m4114getUnspecified0d7_KjU2, m4114getUnspecified0d7_KjU3, m4114getUnspecified0d7_KjU4, m4114getUnspecified0d7_KjU5, m4114getUnspecified0d7_KjU6, m4114getUnspecified0d7_KjU7, m4114getUnspecified0d7_KjU8, m4114getUnspecified0d7_KjU9, m4114getUnspecified0d7_KjU10, m4114getUnspecified0d7_KjU11, m4114getUnspecified0d7_KjU12, m4114getUnspecified0d7_KjU13, m4114getUnspecified0d7_KjU14, m4114getUnspecified0d7_KjU15, m4114getUnspecified0d7_KjU16, m4114getUnspecified0d7_KjU17, m4114getUnspecified0d7_KjU18, m4114getUnspecified0d7_KjU19, m4114getUnspecified0d7_KjU20, m4114getUnspecified0d7_KjU21, m4114getUnspecified0d7_KjU23, m4114getUnspecified0d7_KjU22, m4114getUnspecified0d7_KjU24, textFieldColors2);
+        DatePickerColors m2106copytNwlRmA = getDefaultDatePickerColors(MaterialTheme.INSTANCE.getColorScheme(composer, 6), composer, (i3 >> 12) & 112).m2106copytNwlRmA(m4573getUnspecified0d7_KjU, m4573getUnspecified0d7_KjU2, m4573getUnspecified0d7_KjU3, m4573getUnspecified0d7_KjU4, m4573getUnspecified0d7_KjU5, m4573getUnspecified0d7_KjU6, m4573getUnspecified0d7_KjU7, m4573getUnspecified0d7_KjU8, m4573getUnspecified0d7_KjU9, m4573getUnspecified0d7_KjU10, m4573getUnspecified0d7_KjU11, m4573getUnspecified0d7_KjU12, m4573getUnspecified0d7_KjU13, m4573getUnspecified0d7_KjU14, m4573getUnspecified0d7_KjU15, m4573getUnspecified0d7_KjU16, m4573getUnspecified0d7_KjU17, m4573getUnspecified0d7_KjU18, m4573getUnspecified0d7_KjU19, m4573getUnspecified0d7_KjU20, m4573getUnspecified0d7_KjU21, m4573getUnspecified0d7_KjU23, m4573getUnspecified0d7_KjU22, m4573getUnspecified0d7_KjU24, textFieldColors2);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m1799copytNwlRmA;
+        return m2106copytNwlRmA;
     }
 
     public final DatePickerColors getDefaultDatePickerColors(ColorScheme colorScheme, Composer composer, int i) {
@@ -119,7 +119,7 @@ public final class DatePickerDefaults {
         composer.startReplaceGroup(-653681037);
         ComposerKt.sourceInformation(composer, "*589@28839L30");
         if (defaultDatePickerColorsCached$material3_release == null) {
-            DatePickerColors datePickerColors = new DatePickerColors(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getContainerColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getHeaderSupportingTextColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getHeaderHeadlineColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getWeekdaysLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getRangeSelectionMonthSubheadColor()), colorScheme.m1709getOnSurfaceVariant0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionYearUnselectedLabelTextColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionYearUnselectedLabelTextColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateTodayLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionYearSelectedLabelTextColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionYearSelectedLabelTextColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionYearSelectedContainerColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionYearSelectedContainerColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateUnselectedLabelTextColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateUnselectedLabelTextColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateSelectedLabelTextColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateSelectedLabelTextColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateSelectedContainerColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateSelectedContainerColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateTodayLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateTodayContainerOutlineColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getRangeSelectionActiveIndicatorContainerColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionDateInRangeLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, DividerTokens.INSTANCE.getColor()), OutlinedTextFieldDefaults.INSTANCE.getDefaultOutlinedTextFieldColors(colorScheme, composer, (i & 14) | 48), null);
+            DatePickerColors datePickerColors = new DatePickerColors(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getContainerColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getHeaderSupportingTextColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getHeaderHeadlineColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getWeekdaysLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getRangeSelectionMonthSubheadColor()), colorScheme.m2016getOnSurfaceVariant0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionYearUnselectedLabelTextColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionYearUnselectedLabelTextColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateTodayLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionYearSelectedLabelTextColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionYearSelectedLabelTextColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionYearSelectedContainerColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionYearSelectedContainerColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateUnselectedLabelTextColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateUnselectedLabelTextColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateSelectedLabelTextColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateSelectedLabelTextColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateSelectedContainerColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateSelectedContainerColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateTodayLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getDateTodayContainerOutlineColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getRangeSelectionActiveIndicatorContainerColor()), ColorSchemeKt.fromToken(colorScheme, DatePickerModalTokens.INSTANCE.getSelectionDateInRangeLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, DividerTokens.INSTANCE.getColor()), OutlinedTextFieldDefaults.INSTANCE.getDefaultOutlinedTextFieldColors(colorScheme, composer, (i & 14) | 48), null);
             colorScheme.setDefaultDatePickerColorsCached$material3_release(datePickerColors);
             defaultDatePickerColorsCached$material3_release = datePickerColors;
         }
@@ -160,7 +160,7 @@ public final class DatePickerDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m1825DatePickerTitlehOD91z4(final int i, Modifier modifier, Composer composer, final int i2, final int i3) {
+    public final void m2132DatePickerTitlehOD91z4(final int i, Modifier modifier, Composer composer, final int i2, final int i3) {
         int i4;
         Object obj;
         Composer composer2;
@@ -186,20 +186,20 @@ public final class DatePickerDefaults {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(327413563, i4, -1, "androidx.compose.material3.DatePickerDefaults.DatePickerTitle (DatePicker.kt:629)");
                 }
-                if (!DisplayMode.m1868equalsimpl0(i, DisplayMode.Companion.m1873getPickerjFl4v0())) {
+                if (!DisplayMode.m2175equalsimpl0(i, DisplayMode.Companion.m2180getPickerjFl4v0())) {
                     startRestartGroup.startReplaceGroup(406439148);
                     ComposerKt.sourceInformation(startRestartGroup, "632@30821L43,632@30809L77");
                     Strings.Companion companion2 = Strings.Companion;
-                    TextKt.m2497Text4IGK_g(Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_picker_title), startRestartGroup, 0), companion, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, startRestartGroup, i4 & 112, 0, 131068);
+                    TextKt.m2804Text4IGK_g(Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_picker_title), startRestartGroup, 0), companion, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, startRestartGroup, i4 & 112, 0, 131068);
                     composer2 = startRestartGroup;
                     composer2.endReplaceGroup();
                 } else {
                     composer2 = startRestartGroup;
-                    if (DisplayMode.m1868equalsimpl0(i, DisplayMode.Companion.m1872getInputjFl4v0())) {
+                    if (DisplayMode.m2175equalsimpl0(i, DisplayMode.Companion.m2179getInputjFl4v0())) {
                         composer2.startReplaceGroup(406443211);
                         ComposerKt.sourceInformation(composer2, "634@30948L42,634@30936L76");
                         Strings.Companion companion3 = Strings.Companion;
-                        TextKt.m2497Text4IGK_g(Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_input_title), composer2, 0), companion, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer2, i4 & 112, 0, 131068);
+                        TextKt.m2804Text4IGK_g(Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_input_title), composer2, 0), companion, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer2, i4 & 112, 0, 131068);
                         composer2.endReplaceGroup();
                     } else {
                         composer2.startReplaceGroup(-285079389);
@@ -231,7 +231,7 @@ public final class DatePickerDefaults {
                     }
 
                     public final void invoke(Composer composer3, int i6) {
-                        DatePickerDefaults.this.m1825DatePickerTitlehOD91z4(i, modifier2, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                        DatePickerDefaults.this.m2132DatePickerTitlehOD91z4(i, modifier2, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                     }
                 });
                 return;
@@ -245,7 +245,7 @@ public final class DatePickerDefaults {
         }
         if (ComposerKt.isTraceInProgress()) {
         }
-        if (!DisplayMode.m1868equalsimpl0(i, DisplayMode.Companion.m1873getPickerjFl4v0())) {
+        if (!DisplayMode.m2175equalsimpl0(i, DisplayMode.Companion.m2180getPickerjFl4v0())) {
         }
         if (ComposerKt.isTraceInProgress()) {
         }
@@ -269,7 +269,7 @@ public final class DatePickerDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m1824DatePickerHeadline3kbWawI(final Long l, final int i, final DatePickerFormatter datePickerFormatter, Modifier modifier, Composer composer, final int i2, final int i3) {
+    public final void m2131DatePickerHeadline3kbWawI(final Long l, final int i, final DatePickerFormatter datePickerFormatter, Modifier modifier, Composer composer, final int i2, final int i3) {
         int i4;
         final Object obj;
         String formatDate$default;
@@ -315,17 +315,17 @@ public final class DatePickerDefaults {
                 String str = "";
                 ComposerKt.sourceInformation(startRestartGroup, "");
                 if (formatDate == null) {
-                    if (DisplayMode.m1868equalsimpl0(i, DisplayMode.Companion.m1873getPickerjFl4v0())) {
+                    if (DisplayMode.m2175equalsimpl0(i, DisplayMode.Companion.m2180getPickerjFl4v0())) {
                         startRestartGroup.startReplaceGroup(1148842944);
                         ComposerKt.sourceInformation(startRestartGroup, "665@32234L51");
                         Strings.Companion companion2 = Strings.Companion;
-                        formatDate = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_picker_no_selection_description), startRestartGroup, 0);
+                        formatDate = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_picker_no_selection_description), startRestartGroup, 0);
                         startRestartGroup.endReplaceGroup();
-                    } else if (DisplayMode.m1868equalsimpl0(i, DisplayMode.Companion.m1872getInputjFl4v0())) {
+                    } else if (DisplayMode.m2175equalsimpl0(i, DisplayMode.Companion.m2179getInputjFl4v0())) {
                         startRestartGroup.startReplaceGroup(1148845915);
                         ComposerKt.sourceInformation(startRestartGroup, "666@32327L46");
                         Strings.Companion companion3 = Strings.Companion;
-                        formatDate = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_input_no_input_description), startRestartGroup, 0);
+                        formatDate = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_input_no_input_description), startRestartGroup, 0);
                         startRestartGroup.endReplaceGroup();
                     } else {
                         startRestartGroup.startReplaceGroup(1254558033);
@@ -337,17 +337,17 @@ public final class DatePickerDefaults {
                 startRestartGroup.startReplaceGroup(1148850481);
                 ComposerKt.sourceInformation(startRestartGroup, "");
                 if (formatDate$default == null) {
-                    if (DisplayMode.m1868equalsimpl0(i, DisplayMode.Companion.m1873getPickerjFl4v0())) {
+                    if (DisplayMode.m2175equalsimpl0(i, DisplayMode.Companion.m2180getPickerjFl4v0())) {
                         startRestartGroup.startReplaceGroup(1148853330);
                         ComposerKt.sourceInformation(startRestartGroup, "673@32559L37");
                         Strings.Companion companion4 = Strings.Companion;
-                        formatDate$default = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_picker_headline), startRestartGroup, 0);
+                        formatDate$default = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_picker_headline), startRestartGroup, 0);
                         startRestartGroup.endReplaceGroup();
-                    } else if (DisplayMode.m1868equalsimpl0(i, DisplayMode.Companion.m1872getInputjFl4v0())) {
+                    } else if (DisplayMode.m2175equalsimpl0(i, DisplayMode.Companion.m2179getInputjFl4v0())) {
                         startRestartGroup.startReplaceGroup(1148855857);
                         ComposerKt.sourceInformation(startRestartGroup, "674@32638L36");
                         Strings.Companion companion5 = Strings.Companion;
-                        formatDate$default = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_input_headline), startRestartGroup, 0);
+                        formatDate$default = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_input_headline), startRestartGroup, 0);
                         startRestartGroup.endReplaceGroup();
                     } else {
                         startRestartGroup.startReplaceGroup(1254856625);
@@ -356,17 +356,17 @@ public final class DatePickerDefaults {
                     }
                 }
                 startRestartGroup.endReplaceGroup();
-                if (!DisplayMode.m1868equalsimpl0(i, DisplayMode.Companion.m1873getPickerjFl4v0())) {
+                if (!DisplayMode.m2175equalsimpl0(i, DisplayMode.Companion.m2180getPickerjFl4v0())) {
                     startRestartGroup.startReplaceGroup(1148862013);
                     ComposerKt.sourceInformation(startRestartGroup, "680@32830L48");
                     Strings.Companion companion6 = Strings.Companion;
-                    str = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_picker_headline_description), startRestartGroup, 0);
+                    str = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_picker_headline_description), startRestartGroup, 0);
                     startRestartGroup.endReplaceGroup();
-                } else if (DisplayMode.m1868equalsimpl0(i, DisplayMode.Companion.m1872getInputjFl4v0())) {
+                } else if (DisplayMode.m2175equalsimpl0(i, DisplayMode.Companion.m2179getInputjFl4v0())) {
                     startRestartGroup.startReplaceGroup(1148864764);
                     ComposerKt.sourceInformation(startRestartGroup, "681@32916L47");
                     Strings.Companion companion7 = Strings.Companion;
-                    str = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_input_headline_description), startRestartGroup, 0);
+                    str = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_input_headline_description), startRestartGroup, 0);
                     startRestartGroup.endReplaceGroup();
                 } else {
                     startRestartGroup.startReplaceGroup(1255139345);
@@ -393,7 +393,7 @@ public final class DatePickerDefaults {
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                            SemanticsPropertiesKt.m5929setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m5903getPolite0phEisY());
+                            SemanticsPropertiesKt.m6479setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m6453getPolite0phEisY());
                             SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, format);
                         }
                     };
@@ -402,7 +402,7 @@ public final class DatePickerDefaults {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 composer2 = startRestartGroup;
                 Modifier modifier2 = companion;
-                TextKt.m2497Text4IGK_g(formatDate$default, SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 1, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer2, 0, 3072, 122876);
+                TextKt.m2804Text4IGK_g(formatDate$default, SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 1, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer2, 0, 3072, 122876);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -427,7 +427,7 @@ public final class DatePickerDefaults {
                     }
 
                     public final void invoke(Composer composer3, int i6) {
-                        DatePickerDefaults.this.m1824DatePickerHeadline3kbWawI(l, i, datePickerFormatter, obj, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                        DatePickerDefaults.this.m2131DatePickerHeadline3kbWawI(l, i, datePickerFormatter, obj, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                     }
                 });
                 return;
@@ -455,7 +455,7 @@ public final class DatePickerDefaults {
         if (formatDate$default == null) {
         }
         startRestartGroup.endReplaceGroup();
-        if (!DisplayMode.m1868equalsimpl0(i, DisplayMode.Companion.m1873getPickerjFl4v0())) {
+        if (!DisplayMode.m2175equalsimpl0(i, DisplayMode.Companion.m2180getPickerjFl4v0())) {
         }
         final String format2 = String.format(str2, Arrays.copyOf(new Object[]{formatDate}, 1));
         Intrinsics.checkNotNullExpressionValue(format2, "format(this, *args)");
@@ -479,7 +479,7 @@ public final class DatePickerDefaults {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                SemanticsPropertiesKt.m5929setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m5903getPolite0phEisY());
+                SemanticsPropertiesKt.m6479setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m6453getPolite0phEisY());
                 SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, format2);
             }
         };
@@ -487,7 +487,7 @@ public final class DatePickerDefaults {
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
         composer2 = startRestartGroup;
         Modifier modifier22 = companion;
-        TextKt.m2497Text4IGK_g(formatDate$default, SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 1, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer2, 0, 3072, 122876);
+        TextKt.m2804Text4IGK_g(formatDate$default, SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 1, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer2, 0, 3072, 122876);
         if (ComposerKt.isTraceInProgress()) {
         }
         obj = modifier22;
@@ -536,7 +536,7 @@ public final class DatePickerDefaults {
     }
 
     /* renamed from: getTonalElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1827getTonalElevationD9Ej5fM() {
+    public final float m2134getTonalElevationD9Ej5fM() {
         return TonalElevation;
     }
 

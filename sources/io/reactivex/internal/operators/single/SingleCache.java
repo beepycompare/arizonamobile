@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleCache<T> extends Single<T> implements SingleObserver<T> {
     static final CacheDisposable[] EMPTY = new CacheDisposable[0];
     static final CacheDisposable[] TERMINATED = new CacheDisposable[0];
@@ -121,7 +121,7 @@ public final class SingleCache<T> extends Single<T> implements SingleObserver<T>
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class CacheDisposable<T> extends AtomicBoolean implements Disposable {
         private static final long serialVersionUID = 7514387411091976596L;
         final SingleObserver<? super T> downstream;

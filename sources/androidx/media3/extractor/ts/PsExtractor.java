@@ -18,7 +18,7 @@ import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.ts.TsPayloadReader;
 import java.io.IOException;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PsExtractor implements Extractor {
     public static final int AUDIO_STREAM = 192;
     public static final int AUDIO_STREAM_MASK = 224;
@@ -207,7 +207,7 @@ public final class PsExtractor implements Extractor {
         this.output.seekMap(new SeekMap.Unseekable(this.durationReader.getDurationUs()));
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class PesReader {
         private static final int PES_SCRATCH_SIZE = 64;
         private boolean dtsFlag;

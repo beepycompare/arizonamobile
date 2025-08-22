@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class VorbisReader extends StreamReader {
     private VorbisUtil.CommentHeader commentHeader;
     private int previousPacketBlockSize;
@@ -125,7 +125,7 @@ final class VorbisReader extends StreamReader {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class VorbisSetup {
         public final VorbisUtil.CommentHeader commentHeader;
         public final int iLogModes;

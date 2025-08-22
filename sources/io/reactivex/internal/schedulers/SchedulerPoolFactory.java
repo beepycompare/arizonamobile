@@ -12,7 +12,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SchedulerPoolFactory {
     public static final boolean PURGE_ENABLED;
     static final String PURGE_ENABLED_KEY = "rx2.purge-enabled";
@@ -90,7 +90,7 @@ public final class SchedulerPoolFactory {
         return z3;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SystemPropertyAccessor implements Function<String, String> {
         SystemPropertyAccessor() {
         }
@@ -114,7 +114,7 @@ public final class SchedulerPoolFactory {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ScheduledTask implements Runnable {
         ScheduledTask() {
         }

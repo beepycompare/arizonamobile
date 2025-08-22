@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableMerge extends Completable {
     final boolean delayErrors;
     final int maxConcurrency;
@@ -31,7 +31,7 @@ public final class CompletableMerge extends Completable {
         this.source.subscribe(new CompletableMergeSubscriber(completableObserver, this.maxConcurrency, this.delayErrors));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class CompletableMergeSubscriber extends AtomicInteger implements FlowableSubscriber<CompletableSource>, Disposable {
         private static final long serialVersionUID = -2108443387387077490L;
         final boolean delayErrors;
@@ -152,7 +152,7 @@ public final class CompletableMerge extends Completable {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public final class MergeInnerObserver extends AtomicReference<Disposable> implements CompletableObserver, Disposable {
             private static final long serialVersionUID = 251330541679988317L;
 

@@ -9,34 +9,36 @@ import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 /* loaded from: classes4.dex */
 public final class Bf extends MessageNano {
-    public static final int c = 0;
-    public static final int d = 1;
-    public static final int e = 2;
-    public static final int f = 3;
-    public static volatile Bf[] g;
+    public static volatile Bf[] f;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0760zf f358a;
-    public Af[] b;
+    public String f364a;
+    public String b;
+    public boolean c;
+    public boolean d;
+    public int e;
 
     public Bf() {
         a();
     }
 
     public static Bf[] b() {
-        if (g == null) {
+        if (f == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (g == null) {
-                    g = new Bf[0];
+                if (f == null) {
+                    f = new Bf[0];
                 }
             }
         }
-        return g;
+        return f;
     }
 
     public final Bf a() {
-        this.f358a = null;
-        this.b = Af.b();
+        this.f364a = "";
+        this.b = "";
+        this.c = false;
+        this.d = false;
+        this.e = 0;
         this.cachedSize = -1;
         return this;
     }
@@ -44,49 +46,40 @@ public final class Bf extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0760zf c0760zf = this.f358a;
-        if (c0760zf != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0760zf);
+        if (!this.f364a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f364a);
         }
-        Af[] afArr = this.b;
-        if (afArr != null && afArr.length > 0) {
-            int i = 0;
-            while (true) {
-                Af[] afArr2 = this.b;
-                if (i >= afArr2.length) {
-                    break;
-                }
-                Af af = afArr2[i];
-                if (af != null) {
-                    computeSerializedSize = CodedOutputByteBufferNano.computeMessageSize(2, af) + computeSerializedSize;
-                }
-                i++;
-            }
+        if (!this.b.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
         }
-        return computeSerializedSize;
+        boolean z = this.c;
+        if (z) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(3, z);
+        }
+        boolean z2 = this.d;
+        if (z2) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(4, z2);
+        }
+        return CodedOutputByteBufferNano.computeInt32Size(5, this.e) + computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0760zf c0760zf = this.f358a;
-        if (c0760zf != null) {
-            codedOutputByteBufferNano.writeMessage(1, c0760zf);
+        if (!this.f364a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f364a);
         }
-        Af[] afArr = this.b;
-        if (afArr != null && afArr.length > 0) {
-            int i = 0;
-            while (true) {
-                Af[] afArr2 = this.b;
-                if (i >= afArr2.length) {
-                    break;
-                }
-                Af af = afArr2[i];
-                if (af != null) {
-                    codedOutputByteBufferNano.writeMessage(2, af);
-                }
-                i++;
-            }
+        if (!this.b.equals("")) {
+            codedOutputByteBufferNano.writeString(2, this.b);
         }
+        boolean z = this.c;
+        if (z) {
+            codedOutputByteBufferNano.writeBool(3, z);
+        }
+        boolean z2 = this.d;
+        if (z2) {
+            codedOutputByteBufferNano.writeBool(4, z2);
+        }
+        codedOutputByteBufferNano.writeInt32(5, this.e);
         super.writeTo(codedOutputByteBufferNano);
     }
 
@@ -98,34 +91,22 @@ public final class Bf extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f358a == null) {
-                    this.f358a = new C0760zf();
-                }
-                codedInputByteBufferNano.readMessage(this.f358a);
-            } else if (readTag != 18) {
+                this.f364a = codedInputByteBufferNano.readString();
+            } else if (readTag == 18) {
+                this.b = codedInputByteBufferNano.readString();
+            } else if (readTag == 24) {
+                this.c = codedInputByteBufferNano.readBool();
+            } else if (readTag == 32) {
+                this.d = codedInputByteBufferNano.readBool();
+            } else if (readTag != 40) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 18);
-                Af[] afArr = this.b;
-                int length = afArr == null ? 0 : afArr.length;
-                int i = repeatedFieldArrayLength + length;
-                Af[] afArr2 = new Af[i];
-                if (length != 0) {
-                    System.arraycopy(afArr, 0, afArr2, 0, length);
+                int readInt32 = codedInputByteBufferNano.readInt32();
+                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2 || readInt32 == 3) {
+                    this.e = readInt32;
                 }
-                while (length < i - 1) {
-                    Af af = new Af();
-                    afArr2[length] = af;
-                    codedInputByteBufferNano.readMessage(af);
-                    codedInputByteBufferNano.readTag();
-                    length++;
-                }
-                Af af2 = new Af();
-                afArr2[length] = af2;
-                codedInputByteBufferNano.readMessage(af2);
-                this.b = afArr2;
             }
         }
         return this;

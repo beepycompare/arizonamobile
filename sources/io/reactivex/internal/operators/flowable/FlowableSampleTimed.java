@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSampleTimed<T> extends AbstractFlowableWithUpstream<T, T> {
     final boolean emitLast;
     final long period;
@@ -40,7 +40,7 @@ public final class FlowableSampleTimed<T> extends AbstractFlowableWithUpstream<T
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static abstract class SampleTimedSubscriber<T> extends AtomicReference<T> implements FlowableSubscriber<T>, Subscription, Runnable {
         private static final long serialVersionUID = -3517602651313910099L;
         final Subscriber<? super T> downstream;
@@ -121,7 +121,7 @@ public final class FlowableSampleTimed<T> extends AbstractFlowableWithUpstream<T
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SampleTimedNoLast<T> extends SampleTimedSubscriber<T> {
         private static final long serialVersionUID = -7139995637533111443L;
 
@@ -140,7 +140,7 @@ public final class FlowableSampleTimed<T> extends AbstractFlowableWithUpstream<T
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SampleTimedEmitLast<T> extends SampleTimedSubscriber<T> {
         private static final long serialVersionUID = -7139995637533111443L;
         final AtomicInteger wip;

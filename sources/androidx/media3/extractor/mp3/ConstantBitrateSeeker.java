@@ -2,7 +2,7 @@ package androidx.media3.extractor.mp3;
 
 import androidx.media3.extractor.ConstantBitrateSeekMap;
 import androidx.media3.extractor.MpegAudioUtil;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class ConstantBitrateSeeker extends ConstantBitrateSeekMap implements Seeker {
     private final boolean allowSeeksIfLengthUnknown;
     private final int bitrate;

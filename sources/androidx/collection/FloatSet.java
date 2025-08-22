@@ -282,11 +282,14 @@ public abstract class FloatSet {
                 }
                 i5++;
             }
+            String sb2 = sb.toString();
+            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+            return sb2;
         }
         sb.append(postfix);
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-        return sb2;
+        String sb22 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
+        return sb22;
     }
 
     public final String joinToString(CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function1<? super Float, ? extends CharSequence> transform) {

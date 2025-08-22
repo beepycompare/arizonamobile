@@ -7,7 +7,7 @@ import io.reactivex.internal.util.NotificationLite;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SerializedSubscriber<T> implements FlowableSubscriber<T>, Subscription {
     static final int QUEUE_LINK_SIZE = 4;
     final boolean delayError;

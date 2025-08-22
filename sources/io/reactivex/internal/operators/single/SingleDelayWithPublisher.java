@@ -12,7 +12,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleDelayWithPublisher<T, U> extends Single<T> {
     final Publisher<U> other;
     final SingleSource<T> source;
@@ -27,7 +27,7 @@ public final class SingleDelayWithPublisher<T, U> extends Single<T> {
         this.other.subscribe(new OtherSubscriber(singleObserver, this.source));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OtherSubscriber<T, U> extends AtomicReference<Disposable> implements FlowableSubscriber<U>, Disposable {
         private static final long serialVersionUID = -8565274649390031272L;
         boolean done;

@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.card.MaterialCardView;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class PromoElementBinding implements ViewBinding {
     public final MaterialCardView card;
     public final ImageView ic;
@@ -20,8 +20,9 @@ public final class PromoElementBinding implements ViewBinding {
     public final MaterialCardView promo;
     private final MaterialCardView rootView;
     public final TextView title;
+    public final TextView topText;
 
-    private PromoElementBinding(MaterialCardView rootView, MaterialCardView card, ImageView ic, ImageView ic2, LinearLayout main, TextView progress, MaterialCardView promo, TextView title) {
+    private PromoElementBinding(MaterialCardView rootView, MaterialCardView card, ImageView ic, ImageView ic2, LinearLayout main, TextView progress, MaterialCardView promo, TextView title, TextView topText) {
         this.rootView = rootView;
         this.card = card;
         this.ic = ic;
@@ -30,6 +31,7 @@ public final class PromoElementBinding implements ViewBinding {
         this.progress = progress;
         this.promo = promo;
         this.title = title;
+        this.topText = topText;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -69,7 +71,11 @@ public final class PromoElementBinding implements ViewBinding {
                             i = R.id.title;
                             TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
                             if (textView2 != null) {
-                                return new PromoElementBinding(materialCardView2, materialCardView, imageView, imageView2, linearLayout, textView, materialCardView2, textView2);
+                                i = R.id.top_text;
+                                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                if (textView3 != null) {
+                                    return new PromoElementBinding(materialCardView2, materialCardView, imageView, imageView2, linearLayout, textView, materialCardView2, textView2, textView3);
+                                }
                             }
                         }
                     }

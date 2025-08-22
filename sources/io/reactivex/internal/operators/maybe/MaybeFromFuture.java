@@ -8,7 +8,7 @@ import io.reactivex.exceptions.Exceptions;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeFromFuture<T> extends Maybe<T> {
     final Future<? extends T> future;
     final long timeout;

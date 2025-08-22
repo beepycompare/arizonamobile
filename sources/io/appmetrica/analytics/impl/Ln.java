@@ -1,17 +1,28 @@
 package io.appmetrica.analytics.impl;
-
-import android.util.SparseArray;
 /* loaded from: classes4.dex */
-public abstract class Ln {
+public class Ln implements Yi {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SparseArray f537a;
+    public final int f549a;
+    public final int b;
+    public int c = 0;
 
-    static {
-        SparseArray sparseArray = new SparseArray();
-        f537a = sparseArray;
-        sparseArray.put(0, "String");
-        sparseArray.put(1, "Number");
-        sparseArray.put(2, "Counter");
+    public Ln(int i, int i2) {
+        this.f549a = i;
+        this.b = i2;
+    }
+
+    public final int a() {
+        return this.b;
+    }
+
+    public final boolean b() {
+        int i = this.c;
+        this.c = i + 1;
+        return i < this.f549a;
+    }
+
+    public final void c() {
+        this.c = 0;
     }
 }

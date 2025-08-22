@@ -2,7 +2,7 @@ package io.reactivex.internal.util;
 
 import io.reactivex.functions.BiFunction;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public enum ListAddBiConsumer implements BiFunction<List, Object, List> {
     INSTANCE;
 

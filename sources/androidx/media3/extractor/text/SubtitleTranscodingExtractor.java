@@ -7,7 +7,7 @@ import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.text.SubtitleParser;
 import java.io.IOException;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class SubtitleTranscodingExtractor implements Extractor {
     private final Extractor delegate;
     private final SubtitleParser.Factory subtitleParserFactory;

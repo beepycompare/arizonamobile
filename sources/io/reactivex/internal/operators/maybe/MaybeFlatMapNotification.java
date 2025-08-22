@@ -10,7 +10,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeFlatMapNotification<T, R> extends AbstractMaybeWithUpstream<T, R> {
     final Callable<? extends MaybeSource<? extends R>> onCompleteSupplier;
     final Function<? super Throwable, ? extends MaybeSource<? extends R>> onErrorMapper;
@@ -28,7 +28,7 @@ public final class MaybeFlatMapNotification<T, R> extends AbstractMaybeWithUpstr
         this.source.subscribe(new FlatMapMaybeObserver(maybeObserver, this.onSuccessMapper, this.onErrorMapper, this.onCompleteSupplier));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FlatMapMaybeObserver<T, R> extends AtomicReference<Disposable> implements MaybeObserver<T>, Disposable {
         private static final long serialVersionUID = 4375739915521278546L;
         final MaybeObserver<? super R> downstream;
@@ -93,7 +93,7 @@ public final class MaybeFlatMapNotification<T, R> extends AbstractMaybeWithUpstr
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class InnerObserver implements MaybeObserver<R> {
             InnerObserver() {
             }

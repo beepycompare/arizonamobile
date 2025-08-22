@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class AsyncProcessor<T> extends FlowableProcessor<T> {
     static final AsyncSubscription[] EMPTY = new AsyncSubscription[0];
     static final AsyncSubscription[] TERMINATED = new AsyncSubscription[0];
@@ -218,7 +218,7 @@ public final class AsyncProcessor<T> extends FlowableProcessor<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class AsyncSubscription<T> extends DeferredScalarSubscription<T> {
         private static final long serialVersionUID = 5629876084736248016L;
         final AsyncProcessor<T> parent;

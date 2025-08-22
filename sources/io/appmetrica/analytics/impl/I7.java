@@ -1,301 +1,64 @@
 package io.appmetrica.analytics.impl;
 
-import androidx.compose.material3.MenuKt;
-import androidx.media3.extractor.ts.TsExtractor;
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-import java.util.Arrays;
+import com.google.firebase.remoteconfig.RemoteConfigConstants;
+import io.appmetrica.analytics.coreutils.internal.services.FrameworkDetector;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 /* loaded from: classes4.dex */
-public final class I7 extends MessageNano {
-    public static volatile I7[] s;
+public final class I7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f486a;
-    public String b;
-    public String c;
-    public long d;
-    public J7 e;
-    public String f;
-    public String g;
-    public long h;
-    public int i;
-    public int j;
-    public String k;
-    public int l;
-    public String m;
-    public int n;
-    public int o;
-    public int p;
-    public int q;
-    public byte[] r;
+    public final String f492a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final String f;
+    public final String g;
+    public final String h;
+    public final String i;
+    public final String j;
+    public final String k;
+    public final String l;
+    public final String m;
+    public final String n;
+
+    public I7(Cb cb) {
+        this.f492a = cb.b("dId");
+        this.b = cb.b("uId");
+        this.c = cb.b("analyticsSdkVersionName");
+        this.d = cb.b("kitBuildNumber");
+        this.e = cb.b("kitBuildType");
+        this.f = cb.b("appVer");
+        this.g = cb.optString("app_debuggable", "0");
+        this.h = cb.b(RemoteConfigConstants.RequestFieldKey.APP_BUILD);
+        this.i = cb.b("osVer");
+        this.k = cb.b("lang");
+        this.l = cb.b("root");
+        this.m = cb.optString(CommonUrlParts.APP_FRAMEWORK, FrameworkDetector.framework());
+        int optInt = cb.optInt("osApiLev", -1);
+        this.j = optInt == -1 ? null : String.valueOf(optInt);
+        int optInt2 = cb.optInt("attribution_id", 0);
+        this.n = optInt2 > 0 ? String.valueOf(optInt2) : null;
+    }
+
+    public final String toString() {
+        return "DbNetworkTaskConfig{deviceId='" + this.f492a + "', uuid='" + this.b + "', analyticsSdkVersionName='" + this.c + "', kitBuildNumber='" + this.d + "', kitBuildType='" + this.e + "', appVersion='" + this.f + "', appDebuggable='" + this.g + "', appBuildNumber='" + this.h + "', osVersion='" + this.i + "', osApiLevel='" + this.j + "', locale='" + this.k + "', deviceRootStatus='" + this.l + "', appFramework='" + this.m + "', attributionId='" + this.n + "'}";
+    }
 
     public I7() {
-        a();
-    }
-
-    public static I7[] b() {
-        if (s == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (s == null) {
-                    s = new I7[0];
-                }
-            }
-        }
-        return s;
-    }
-
-    public final I7 a() {
-        this.f486a = -1;
-        this.b = "";
-        this.c = "";
-        this.d = -1L;
+        this.f492a = null;
+        this.b = null;
+        this.c = null;
+        this.d = null;
         this.e = null;
-        this.f = "";
-        this.g = "";
-        this.h = -1L;
-        this.i = -1;
-        this.j = -1;
-        this.k = "";
-        this.l = -1;
-        this.m = "";
-        this.n = -1;
-        this.o = -1;
-        this.p = -1;
-        this.q = -1;
-        this.r = WireFormatNano.EMPTY_BYTES;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f486a;
-        if (i != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(1, i);
-        }
-        if (!this.b.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
-        }
-        if (!this.c.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(3, this.c);
-        }
-        long j = this.d;
-        if (j != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(4, j);
-        }
-        J7 j7 = this.e;
-        if (j7 != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(5, j7);
-        }
-        if (!this.f.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(6, this.f);
-        }
-        if (!this.g.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(7, this.g);
-        }
-        long j2 = this.h;
-        if (j2 != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(8, j2);
-        }
-        int i2 = this.i;
-        if (i2 != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(9, i2);
-        }
-        int i3 = this.j;
-        if (i3 != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(10, i3);
-        }
-        if (!this.k.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(11, this.k);
-        }
-        int i4 = this.l;
-        if (i4 != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(12, i4);
-        }
-        if (!this.m.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(13, this.m);
-        }
-        int i5 = this.n;
-        if (i5 != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(14, i5);
-        }
-        int i6 = this.o;
-        if (i6 != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(15, i6);
-        }
-        int i7 = this.p;
-        if (i7 != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(16, i7);
-        }
-        int i8 = this.q;
-        if (i8 != -1) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(17, i8);
-        }
-        return !Arrays.equals(this.r, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(18, this.r) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f486a;
-        if (i != -1) {
-            codedOutputByteBufferNano.writeInt32(1, i);
-        }
-        if (!this.b.equals("")) {
-            codedOutputByteBufferNano.writeString(2, this.b);
-        }
-        if (!this.c.equals("")) {
-            codedOutputByteBufferNano.writeString(3, this.c);
-        }
-        long j = this.d;
-        if (j != -1) {
-            codedOutputByteBufferNano.writeInt64(4, j);
-        }
-        J7 j7 = this.e;
-        if (j7 != null) {
-            codedOutputByteBufferNano.writeMessage(5, j7);
-        }
-        if (!this.f.equals("")) {
-            codedOutputByteBufferNano.writeString(6, this.f);
-        }
-        if (!this.g.equals("")) {
-            codedOutputByteBufferNano.writeString(7, this.g);
-        }
-        long j2 = this.h;
-        if (j2 != -1) {
-            codedOutputByteBufferNano.writeInt64(8, j2);
-        }
-        int i2 = this.i;
-        if (i2 != -1) {
-            codedOutputByteBufferNano.writeInt32(9, i2);
-        }
-        int i3 = this.j;
-        if (i3 != -1) {
-            codedOutputByteBufferNano.writeInt32(10, i3);
-        }
-        if (!this.k.equals("")) {
-            codedOutputByteBufferNano.writeString(11, this.k);
-        }
-        int i4 = this.l;
-        if (i4 != -1) {
-            codedOutputByteBufferNano.writeInt32(12, i4);
-        }
-        if (!this.m.equals("")) {
-            codedOutputByteBufferNano.writeString(13, this.m);
-        }
-        int i5 = this.n;
-        if (i5 != -1) {
-            codedOutputByteBufferNano.writeInt32(14, i5);
-        }
-        int i6 = this.o;
-        if (i6 != -1) {
-            codedOutputByteBufferNano.writeInt32(15, i6);
-        }
-        int i7 = this.p;
-        if (i7 != -1) {
-            codedOutputByteBufferNano.writeInt32(16, i7);
-        }
-        int i8 = this.q;
-        if (i8 != -1) {
-            codedOutputByteBufferNano.writeInt32(17, i8);
-        }
-        if (!Arrays.equals(this.r, WireFormatNano.EMPTY_BYTES)) {
-            codedOutputByteBufferNano.writeBytes(18, this.r);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    public static I7 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new I7().mergeFrom(codedInputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final I7 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            switch (readTag) {
-                case 0:
-                    break;
-                case 8:
-                    this.f486a = codedInputByteBufferNano.readInt32();
-                    break;
-                case 18:
-                    this.b = codedInputByteBufferNano.readString();
-                    break;
-                case 26:
-                    this.c = codedInputByteBufferNano.readString();
-                    break;
-                case 32:
-                    this.d = codedInputByteBufferNano.readInt64();
-                    break;
-                case 42:
-                    if (this.e == null) {
-                        this.e = new J7();
-                    }
-                    codedInputByteBufferNano.readMessage(this.e);
-                    break;
-                case 50:
-                    this.f = codedInputByteBufferNano.readString();
-                    break;
-                case 58:
-                    this.g = codedInputByteBufferNano.readString();
-                    break;
-                case 64:
-                    this.h = codedInputByteBufferNano.readInt64();
-                    break;
-                case 72:
-                    this.i = codedInputByteBufferNano.readInt32();
-                    break;
-                case 80:
-                    this.j = codedInputByteBufferNano.readInt32();
-                    break;
-                case 90:
-                    this.k = codedInputByteBufferNano.readString();
-                    break;
-                case 96:
-                    this.l = codedInputByteBufferNano.readInt32();
-                    break;
-                case 106:
-                    this.m = codedInputByteBufferNano.readString();
-                    break;
-                case 112:
-                    this.n = codedInputByteBufferNano.readInt32();
-                    break;
-                case MenuKt.InTransitionDuration /* 120 */:
-                    this.o = codedInputByteBufferNano.readInt32();
-                    break;
-                case 128:
-                    int readInt32 = codedInputByteBufferNano.readInt32();
-                    if (readInt32 != -1 && readInt32 != 0 && readInt32 != 1) {
-                        break;
-                    } else {
-                        this.p = readInt32;
-                        break;
-                    }
-                case TsExtractor.TS_STREAM_TYPE_DTS_HD /* 136 */:
-                    this.q = codedInputByteBufferNano.readInt32();
-                    break;
-                case 146:
-                    this.r = codedInputByteBufferNano.readBytes();
-                    break;
-                default:
-                    if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                        break;
-                    } else {
-                        break;
-                    }
-            }
-        }
-        return this;
-    }
-
-    public static I7 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (I7) MessageNano.mergeFrom(new I7(), bArr);
+        this.f = null;
+        this.g = null;
+        this.h = null;
+        this.i = null;
+        this.j = null;
+        this.k = null;
+        this.l = null;
+        this.m = null;
+        this.n = null;
     }
 }

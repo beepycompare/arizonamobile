@@ -16,11 +16,11 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class MpeghUtil {
     private static final int MHAS_SYNC_WORD = 12583333;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class MhasPacketHeader {
         public static final int PACTYPE_EARCON = 19;
         public static final int PACTYPE_PCMCONFIG = 20;
@@ -50,7 +50,7 @@ final class MpeghUtil {
         @Target({ElementType.TYPE_USE})
         @Documented
         @Retention(RetentionPolicy.SOURCE)
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public @interface Type {
         }
     }
@@ -444,7 +444,7 @@ final class MpeghUtil {
     private MpeghUtil() {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Mpegh3daConfig {
         public final byte[] compatibleProfileLevelSet;
         public final int profileLevelIndication;

@@ -4,7 +4,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class f0 {
     public static final PackageInfo a(PackageManager packageManager, String str) {
         PackageInfo packageInfo;

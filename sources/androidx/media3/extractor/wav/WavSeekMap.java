@@ -3,7 +3,7 @@ package androidx.media3.extractor.wav;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.SeekPoint;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class WavSeekMap implements SeekMap {
     private final long blockCount;
     private final long durationUs;

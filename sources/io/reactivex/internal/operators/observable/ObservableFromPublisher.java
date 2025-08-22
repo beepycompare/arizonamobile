@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableFromPublisher<T> extends Observable<T> {
     final Publisher<? extends T> source;
 
@@ -20,7 +20,7 @@ public final class ObservableFromPublisher<T> extends Observable<T> {
         this.source.subscribe(new PublisherSubscriber(observer));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class PublisherSubscriber<T> implements FlowableSubscriber<T>, Disposable {
         final Observer<? super T> downstream;
         Subscription upstream;

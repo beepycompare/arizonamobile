@@ -21,8 +21,8 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionManager.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager$paste$1", f = "TextFieldSelectionManager.kt", i = {}, l = {647}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager$paste$1", f = "TextFieldSelectionManager.kt", i = {}, l = {841, 841}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class TextFieldSelectionManager$paste$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -45,10 +45,21 @@ public final class TextFieldSelectionManager$paste$1 extends SuspendLambda imple
         return ((TextFieldSelectionManager$paste$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0032, code lost:
+        if (r5 == r0) goto L23;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0042, code lost:
+        if (r5 == r0) goto L23;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0044, code lost:
+        return r0;
+     */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final Object invokeSuspend(Object obj) {
-        AnnotatedString readAnnotatedString;
-        TextFieldValue m1518createTextFieldValueFDrldGo;
+        TextFieldValue m1815createTextFieldValueFDrldGo;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -57,28 +68,35 @@ public final class TextFieldSelectionManager$paste$1 extends SuspendLambda imple
             if (clipboard$foundation_release != null) {
                 this.label = 1;
                 obj = clipboard$foundation_release.getClipEntry(this);
-                if (obj == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
             }
             return Unit.INSTANCE;
         } else if (i != 1) {
+            if (i == 2) {
+                ResultKt.throwOnFailure(obj);
+                AnnotatedString annotatedString = (AnnotatedString) obj;
+                if (annotatedString != null) {
+                    AnnotatedString plus = TextFieldValueKt.getTextBeforeSelection(this.this$0.getValue$foundation_release(), this.this$0.getValue$foundation_release().getText().length()).plus(annotatedString).plus(TextFieldValueKt.getTextAfterSelection(this.this$0.getValue$foundation_release(), this.this$0.getValue$foundation_release().getText().length()));
+                    int m6711getMinimpl = TextRange.m6711getMinimpl(this.this$0.getValue$foundation_release().m6964getSelectiond9O1mEE()) + annotatedString.length();
+                    m1815createTextFieldValueFDrldGo = this.this$0.m1815createTextFieldValueFDrldGo(plus, TextRangeKt.TextRange(m6711getMinimpl, m6711getMinimpl));
+                    this.this$0.getOnValueChange$foundation_release().invoke(m1815createTextFieldValueFDrldGo);
+                    this.this$0.m1827setLatestSelectionOEnZFl4$foundation_release(TextRange.m6701boximpl(m1815createTextFieldValueFDrldGo.m6964getSelectiond9O1mEE()));
+                    this.this$0.setHandleState(HandleState.None);
+                    UndoManager undoManager = this.this$0.getUndoManager();
+                    if (undoManager != null) {
+                        undoManager.forceNextSnapshot();
+                    }
+                    return Unit.INSTANCE;
+                }
+                return Unit.INSTANCE;
+            }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.throwOnFailure(obj);
         }
         ClipEntry clipEntry = (ClipEntry) obj;
-        if (clipEntry != null && (readAnnotatedString = ClipboardUtils_androidKt.readAnnotatedString(clipEntry)) != null) {
-            AnnotatedString plus = TextFieldValueKt.getTextBeforeSelection(this.this$0.getValue$foundation_release(), this.this$0.getValue$foundation_release().getText().length()).plus(readAnnotatedString).plus(TextFieldValueKt.getTextAfterSelection(this.this$0.getValue$foundation_release(), this.this$0.getValue$foundation_release().getText().length()));
-            int m6145getMinimpl = TextRange.m6145getMinimpl(this.this$0.getValue$foundation_release().m6396getSelectiond9O1mEE()) + readAnnotatedString.length();
-            m1518createTextFieldValueFDrldGo = this.this$0.m1518createTextFieldValueFDrldGo(plus, TextRangeKt.TextRange(m6145getMinimpl, m6145getMinimpl));
-            this.this$0.getOnValueChange$foundation_release().invoke(m1518createTextFieldValueFDrldGo);
-            this.this$0.setHandleState(HandleState.None);
-            UndoManager undoManager = this.this$0.getUndoManager();
-            if (undoManager != null) {
-                undoManager.forceNextSnapshot();
-            }
-            return Unit.INSTANCE;
+        if (clipEntry != null) {
+            this.label = 2;
+            obj = ClipboardUtils_androidKt.readAnnotatedString(clipEntry, this);
         }
         return Unit.INSTANCE;
     }

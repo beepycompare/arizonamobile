@@ -74,11 +74,11 @@ public final class WindowAlignmentMarginPosition {
 
         @Override // androidx.compose.material3.internal.MenuPosition.Horizontal
         /* renamed from: position-95KtPRI */
-        public int mo2695position95KtPRI(IntRect intRect, long j, int i, LayoutDirection layoutDirection) {
-            if (i >= IntSize.m6855getWidthimpl(j) - (this.margin * 2)) {
-                return Alignment.Companion.getCenterHorizontally().align(i, IntSize.m6855getWidthimpl(j), layoutDirection);
+        public int mo3002position95KtPRI(IntRect intRect, long j, int i, LayoutDirection layoutDirection) {
+            if (i >= IntSize.m7422getWidthimpl(j) - (this.margin * 2)) {
+                return Alignment.Companion.getCenterHorizontally().align(i, IntSize.m7422getWidthimpl(j), layoutDirection);
             }
-            return RangesKt.coerceIn(this.alignment.align(i, IntSize.m6855getWidthimpl(j), layoutDirection), this.margin, (IntSize.m6855getWidthimpl(j) - this.margin) - i);
+            return RangesKt.coerceIn(this.alignment.align(i, IntSize.m7422getWidthimpl(j), layoutDirection), this.margin, (IntSize.m7422getWidthimpl(j) - this.margin) - i);
         }
     }
 
@@ -138,11 +138,11 @@ public final class WindowAlignmentMarginPosition {
 
         @Override // androidx.compose.material3.internal.MenuPosition.Vertical
         /* renamed from: position-JVtK1S4 */
-        public int mo2696positionJVtK1S4(IntRect intRect, long j, int i) {
-            if (i >= IntSize.m6854getHeightimpl(j) - (this.margin * 2)) {
-                return Alignment.Companion.getCenterVertically().align(i, IntSize.m6854getHeightimpl(j));
+        public int mo3003positionJVtK1S4(IntRect intRect, long j, int i) {
+            if (i >= IntSize.m7421getHeightimpl(j) - (this.margin * 2)) {
+                return Alignment.Companion.getCenterVertically().align(i, IntSize.m7421getHeightimpl(j));
             }
-            return RangesKt.coerceIn(this.alignment.align(i, IntSize.m6854getHeightimpl(j)), this.margin, (IntSize.m6854getHeightimpl(j) - this.margin) - i);
+            return RangesKt.coerceIn(this.alignment.align(i, IntSize.m7421getHeightimpl(j)), this.margin, (IntSize.m7421getHeightimpl(j) - this.margin) - i);
         }
     }
 }

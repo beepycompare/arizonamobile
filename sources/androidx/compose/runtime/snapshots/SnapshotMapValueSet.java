@@ -5,6 +5,7 @@ import androidx.compose.runtime.external.kotlinx.collections.immutable.Persisten
 import androidx.compose.runtime.snapshots.SnapshotStateMap;
 import androidx.exifinterface.media.ExifInterface;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import kotlin.KotlinNothingValueException;
@@ -14,7 +15,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SnapshotStateMap.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0001\n\u0002\b\u0004\n\u0002\u0010\u001e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0002\u0018\u0000*\u0004\b\u0000\u0010\u0001*\u0004\b\u0001\u0010\u00022\u0014\u0012\u0004\u0012\u0002H\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00020\u0003B\u0019\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u0005¢\u0006\u0002\u0010\u0006J\u0015\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00028\u0001H\u0016¢\u0006\u0002\u0010\nJ\u0016\u0010\u000b\u001a\u00020\b2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00028\u00010\rH\u0016J\u0016\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\t\u001a\u00028\u0001H\u0096\u0002¢\u0006\u0002\u0010\u0010J\u0016\u0010\u0011\u001a\u00020\u000f2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00028\u00010\rH\u0016J\u0015\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u0013H\u0096\u0002J\u0015\u0010\u0014\u001a\u00020\u000f2\u0006\u0010\t\u001a\u00028\u0001H\u0016¢\u0006\u0002\u0010\u0010J\u0016\u0010\u0015\u001a\u00020\u000f2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00028\u00010\rH\u0016J\u0016\u0010\u0016\u001a\u00020\u000f2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00028\u00010\rH\u0016¨\u0006\u0017"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotMapValueSet;", "K", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "Landroidx/compose/runtime/snapshots/SnapshotMapSet;", "map", "Landroidx/compose/runtime/snapshots/SnapshotStateMap;", "(Landroidx/compose/runtime/snapshots/SnapshotStateMap;)V", "add", "", "element", "(Ljava/lang/Object;)Ljava/lang/Void;", "addAll", "elements", "", "contains", "", "(Ljava/lang/Object;)Z", "containsAll", "iterator", "Landroidx/compose/runtime/snapshots/StateMapMutableValuesIterator;", "remove", "removeAll", "retainAll", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0002\b\u0004\n\u0002\u0010\u001e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\b\u0002\u0018\u0000*\u0004\b\u0000\u0010\u0001*\u0004\b\u0001\u0010\u00022\u0014\u0012\u0004\u0012\u0002H\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00020\u0003B\u001b\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0015\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00028\u0001H\u0016¢\u0006\u0002\u0010\u000bJ\u0016\u0010\f\u001a\u00020\t2\f\u0010\r\u001a\b\u0012\u0004\u0012\u00028\u00010\u000eH\u0016J\u0015\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u0010H\u0096\u0002J\u0015\u0010\u0011\u001a\u00020\u00122\u0006\u0010\n\u001a\u00028\u0001H\u0016¢\u0006\u0002\u0010\u0013J\u0016\u0010\u0014\u001a\u00020\u00122\f\u0010\r\u001a\b\u0012\u0004\u0012\u00028\u00010\u000eH\u0016J\u0016\u0010\u0015\u001a\u00020\u00122\f\u0010\r\u001a\b\u0012\u0004\u0012\u00028\u00010\u000eH\u0016J\u0016\u0010\u0016\u001a\u00020\u00122\u0006\u0010\n\u001a\u00028\u0001H\u0096\u0002¢\u0006\u0002\u0010\u0013J\u0016\u0010\u0017\u001a\u00020\u00122\f\u0010\r\u001a\b\u0012\u0004\u0012\u00028\u00010\u000eH\u0016¨\u0006\u0018"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotMapValueSet;", "K", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "Landroidx/compose/runtime/snapshots/SnapshotMapSet;", "map", "Landroidx/compose/runtime/snapshots/SnapshotStateMap;", "<init>", "(Landroidx/compose/runtime/snapshots/SnapshotStateMap;)V", "add", "", "element", "(Ljava/lang/Object;)Ljava/lang/Void;", "addAll", "elements", "", "iterator", "Landroidx/compose/runtime/snapshots/StateMapMutableValuesIterator;", "remove", "", "(Ljava/lang/Object;)Z", "removeAll", "retainAll", "contains", "containsAll", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
     /* JADX WARN: Multi-variable type inference failed */
@@ -46,20 +47,20 @@ public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
 
     @Override // java.util.Set, java.util.Collection, java.lang.Iterable
     public StateMapMutableValuesIterator<K, V> iterator() {
-        return new StateMapMutableValuesIterator<>(getMap(), ((ImmutableSet) getMap().getReadable$runtime_release().getMap$runtime_release().entrySet()).iterator());
+        return new StateMapMutableValuesIterator<>(getMap(), ((ImmutableSet) getMap().getReadable$runtime().getMap$runtime().entrySet()).iterator());
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // java.util.Set, java.util.Collection
     public boolean remove(Object obj) {
-        return getMap().removeValue$runtime_release(obj);
+        return getMap().removeValue$runtime(obj);
     }
 
     @Override // java.util.Set, java.util.Collection
-    public boolean removeAll(Collection<? extends Object> collection) {
+    public boolean removeAll(Collection<?> collection) {
         Object obj;
-        PersistentMap<K, V> map$runtime_release;
-        int modification$runtime_release;
+        PersistentMap<K, V> map$runtime;
+        int modification$runtime;
         Snapshot current;
         boolean attemptUpdate;
         Set set = CollectionsKt.toSet(collection);
@@ -71,12 +72,12 @@ public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
                 StateRecord firstStateRecord = map.getFirstStateRecord();
                 Intrinsics.checkNotNull(firstStateRecord, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
                 SnapshotStateMap.StateMapStateRecord stateMapStateRecord = (SnapshotStateMap.StateMapStateRecord) SnapshotKt.current((SnapshotStateMap.StateMapStateRecord) firstStateRecord);
-                map$runtime_release = stateMapStateRecord.getMap$runtime_release();
-                modification$runtime_release = stateMapStateRecord.getModification$runtime_release();
+                map$runtime = stateMapStateRecord.getMap$runtime();
+                modification$runtime = stateMapStateRecord.getModification$runtime();
                 Unit unit = Unit.INSTANCE;
             }
-            Intrinsics.checkNotNull(map$runtime_release);
-            PersistentMap.Builder<K, V> builder = map$runtime_release.builder();
+            Intrinsics.checkNotNull(map$runtime);
+            PersistentMap.Builder<K, V> builder = map$runtime.builder();
             PersistentMap.Builder<K, V> builder2 = builder;
             for (Map.Entry<K, V> entry : map.entrySet()) {
                 if (set.contains(entry.getValue())) {
@@ -86,7 +87,7 @@ public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
             }
             Unit unit2 = Unit.INSTANCE;
             PersistentMap<K, V> build = builder.build();
-            if (Intrinsics.areEqual(build, map$runtime_release)) {
+            if (Intrinsics.areEqual(build, map$runtime)) {
                 break;
             }
             StateRecord firstStateRecord2 = map.getFirstStateRecord();
@@ -94,7 +95,7 @@ public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
             SnapshotStateMap.StateMapStateRecord stateMapStateRecord2 = (SnapshotStateMap.StateMapStateRecord) firstStateRecord2;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = map.attemptUpdate((SnapshotStateMap.StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, map, current), modification$runtime_release, build);
+                attemptUpdate = map.attemptUpdate((SnapshotStateMap.StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, map, current), modification$runtime, build);
             }
             SnapshotKt.notifyWrite(current, map);
         } while (!attemptUpdate);
@@ -102,10 +103,10 @@ public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
     }
 
     @Override // java.util.Set, java.util.Collection
-    public boolean retainAll(Collection<? extends Object> collection) {
+    public boolean retainAll(Collection<?> collection) {
         Object obj;
-        PersistentMap<K, V> map$runtime_release;
-        int modification$runtime_release;
+        PersistentMap<K, V> map$runtime;
+        int modification$runtime;
         Snapshot current;
         boolean attemptUpdate;
         Set set = CollectionsKt.toSet(collection);
@@ -117,12 +118,12 @@ public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
                 StateRecord firstStateRecord = map.getFirstStateRecord();
                 Intrinsics.checkNotNull(firstStateRecord, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
                 SnapshotStateMap.StateMapStateRecord stateMapStateRecord = (SnapshotStateMap.StateMapStateRecord) SnapshotKt.current((SnapshotStateMap.StateMapStateRecord) firstStateRecord);
-                map$runtime_release = stateMapStateRecord.getMap$runtime_release();
-                modification$runtime_release = stateMapStateRecord.getModification$runtime_release();
+                map$runtime = stateMapStateRecord.getMap$runtime();
+                modification$runtime = stateMapStateRecord.getModification$runtime();
                 Unit unit = Unit.INSTANCE;
             }
-            Intrinsics.checkNotNull(map$runtime_release);
-            PersistentMap.Builder<K, V> builder = map$runtime_release.builder();
+            Intrinsics.checkNotNull(map$runtime);
+            PersistentMap.Builder<K, V> builder = map$runtime.builder();
             PersistentMap.Builder<K, V> builder2 = builder;
             for (Map.Entry<K, V> entry : map.entrySet()) {
                 if (!set.contains(entry.getValue())) {
@@ -132,7 +133,7 @@ public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
             }
             Unit unit2 = Unit.INSTANCE;
             PersistentMap<K, V> build = builder.build();
-            if (Intrinsics.areEqual(build, map$runtime_release)) {
+            if (Intrinsics.areEqual(build, map$runtime)) {
                 break;
             }
             StateRecord firstStateRecord2 = map.getFirstStateRecord();
@@ -140,7 +141,7 @@ public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
             SnapshotStateMap.StateMapStateRecord stateMapStateRecord2 = (SnapshotStateMap.StateMapStateRecord) firstStateRecord2;
             synchronized (SnapshotKt.getLock()) {
                 current = Snapshot.Companion.getCurrent();
-                attemptUpdate = map.attemptUpdate((SnapshotStateMap.StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, map, current), modification$runtime_release, build);
+                attemptUpdate = map.attemptUpdate((SnapshotStateMap.StateMapStateRecord) SnapshotKt.writableRecord(stateMapStateRecord2, map, current), modification$runtime, build);
             }
             SnapshotKt.notifyWrite(current, map);
         } while (!attemptUpdate);
@@ -153,13 +154,14 @@ public final class SnapshotMapValueSet<K, V> extends SnapshotMapSet<K, V, V> {
     }
 
     @Override // java.util.Set, java.util.Collection
-    public boolean containsAll(Collection<? extends Object> collection) {
-        Collection<? extends Object> collection2 = collection;
+    public boolean containsAll(Collection<?> collection) {
+        Collection<?> collection2 = collection;
         if ((collection2 instanceof Collection) && collection2.isEmpty()) {
             return true;
         }
-        for (Object obj : collection2) {
-            if (!getMap().containsValue(obj)) {
+        Iterator<T> it = collection2.iterator();
+        while (it.hasNext()) {
+            if (!getMap().containsValue(it.next())) {
                 return false;
             }
         }

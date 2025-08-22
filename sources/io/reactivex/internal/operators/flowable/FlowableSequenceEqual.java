@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSequenceEqual<T> extends Flowable<Boolean> {
     final BiPredicate<? super T, ? super T> comparer;
     final Publisher<? extends T> first;
@@ -25,7 +25,7 @@ public final class FlowableSequenceEqual<T> extends Flowable<Boolean> {
     final Publisher<? extends T> second;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface EqualCoordinatorHelper {
         void drain();
 
@@ -46,7 +46,7 @@ public final class FlowableSequenceEqual<T> extends Flowable<Boolean> {
         equalCoordinator.subscribe(this.first, this.second);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class EqualCoordinator<T> extends DeferredScalarSubscription<Boolean> implements EqualCoordinatorHelper {
         private static final long serialVersionUID = -6178010334400373240L;
         final BiPredicate<? super T, ? super T> comparer;
@@ -189,7 +189,7 @@ public final class FlowableSequenceEqual<T> extends Flowable<Boolean> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class EqualSubscriber<T> extends AtomicReference<Subscription> implements FlowableSubscriber<T> {
         private static final long serialVersionUID = 4804128302091633067L;
         volatile boolean done;

@@ -100,7 +100,7 @@ public final class BasicTooltip_androidKt {
         int i7;
         Object rememberedValue;
         int currentCompositeKeyHash;
-        Composer m3520constructorimpl;
+        Composer m3855constructorimpl;
         boolean z5;
         Object rememberedValue2;
         final boolean z6;
@@ -192,15 +192,15 @@ public final class BasicTooltip_androidKt {
                                 } else {
                                     startRestartGroup.useNode();
                                 }
-                                m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                                Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (!m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (!m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2072656365, "C98@4223L161:BasicTooltip.android.kt#mqatfk");
@@ -320,15 +320,15 @@ public final class BasicTooltip_androidKt {
                         startRestartGroup.startReusableNode();
                         if (!startRestartGroup.getInserting()) {
                         }
-                        m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (!m3520constructorimpl.getInserting()) {
+                        if (!m3855constructorimpl.getInserting()) {
                         }
-                        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2);
-                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2);
+                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2072656365, "C98@4223L161:BasicTooltip.android.kt#mqatfk");
@@ -421,15 +421,15 @@ public final class BasicTooltip_androidKt {
                     startRestartGroup.startReusableNode();
                     if (!startRestartGroup.getInserting()) {
                     }
-                    m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                    Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash22 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (!m3520constructorimpl.getInserting()) {
+                    if (!m3855constructorimpl.getInserting()) {
                     }
-                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash22);
-                    Updater.m3527setimpl(m3520constructorimpl, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
+                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash22);
+                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance22 = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2072656365, "C98@4223L161:BasicTooltip.android.kt#mqatfk");
@@ -526,15 +526,15 @@ public final class BasicTooltip_androidKt {
                 startRestartGroup.startReusableNode();
                 if (!startRestartGroup.getInserting()) {
                 }
-                m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy222, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy222, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash222 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m3520constructorimpl.getInserting()) {
+                if (!m3855constructorimpl.getInserting()) {
                 }
-                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash222);
-                Updater.m3527setimpl(m3520constructorimpl, materializeModifier222, ComposeUiNode.Companion.getSetModifier());
+                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash222);
+                Updater.m3862setimpl(m3855constructorimpl, materializeModifier222, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance222 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2072656365, "C98@4223L161:BasicTooltip.android.kt#mqatfk");
@@ -635,15 +635,15 @@ public final class BasicTooltip_androidKt {
             startRestartGroup.startReusableNode();
             if (!startRestartGroup.getInserting()) {
             }
-            m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy2222, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap2222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy2222, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap2222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2222 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (!m3520constructorimpl.getInserting()) {
+            if (!m3855constructorimpl.getInserting()) {
             }
-            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2222);
-            Updater.m3527setimpl(m3520constructorimpl, materializeModifier2222, ComposeUiNode.Companion.getSetModifier());
+            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2222);
+            Updater.m3862setimpl(m3855constructorimpl, materializeModifier2222, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2222 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2072656365, "C98@4223L161:BasicTooltip.android.kt#mqatfk");
@@ -750,15 +750,15 @@ public final class BasicTooltip_androidKt {
         startRestartGroup.startReusableNode();
         if (!startRestartGroup.getInserting()) {
         }
-        m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy22222, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap22222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy22222, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap22222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash22222 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (!m3520constructorimpl.getInserting()) {
+        if (!m3855constructorimpl.getInserting()) {
         }
-        m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-        m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash22222);
-        Updater.m3527setimpl(m3520constructorimpl, materializeModifier22222, ComposeUiNode.Companion.getSetModifier());
+        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash22222);
+        Updater.m3862setimpl(m3855constructorimpl, materializeModifier22222, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance22222 = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2072656365, "C98@4223L161:BasicTooltip.android.kt#mqatfk");
@@ -882,15 +882,15 @@ public final class BasicTooltip_androidKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 400210223, "C124@4934L9:BasicTooltip.android.kt#mqatfk");
@@ -1069,7 +1069,7 @@ public final class BasicTooltip_androidKt {
 
                                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                    SemanticsPropertiesKt.m5929setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m5902getAssertive0phEisY());
+                                    SemanticsPropertiesKt.m6479setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m6452getAssertive0phEisY());
                                     SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, str);
                                 }
                             };
@@ -1095,15 +1095,15 @@ public final class BasicTooltip_androidKt {
                         } else {
                             composer2.useNode();
                         }
-                        Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer2, -1900261851, "C153@5717L9:BasicTooltip.android.kt#mqatfk");
@@ -1194,24 +1194,24 @@ public final class BasicTooltip_androidKt {
                     @DebugMetadata(c = "androidx.compose.material3.internal.BasicTooltip_androidKt$anchorSemantics$1$1$1", f = "BasicTooltip.android.kt", i = {}, l = {241}, m = "invokeSuspend", n = {}, s = {})
                     /* renamed from: androidx.compose.material3.internal.BasicTooltip_androidKt$anchorSemantics$1$1$1  reason: invalid class name and collision with other inner class name */
                     /* loaded from: classes.dex */
-                    public static final class C00431 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+                    public static final class C00351 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                         final /* synthetic */ TooltipState $state;
                         int label;
 
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        C00431(TooltipState tooltipState, Continuation<? super C00431> continuation) {
+                        C00351(TooltipState tooltipState, Continuation<? super C00351> continuation) {
                             super(2, continuation);
                             this.$state = tooltipState;
                         }
 
                         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                            return new C00431(this.$state, continuation);
+                            return new C00351(this.$state, continuation);
                         }
 
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                            return ((C00431) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                            return ((C00351) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
                         }
 
                         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -1236,7 +1236,7 @@ public final class BasicTooltip_androidKt {
                     /* JADX WARN: Can't rename method to resolve collision */
                     @Override // kotlin.jvm.functions.Function0
                     public final Boolean invoke() {
-                        BuildersKt__Builders_commonKt.launch$default(CoroutineScope.this, null, null, new C00431(tooltipState2, null), 3, null);
+                        BuildersKt__Builders_commonKt.launch$default(CoroutineScope.this, null, null, new C00351(tooltipState2, null), 3, null);
                         return true;
                     }
                 });

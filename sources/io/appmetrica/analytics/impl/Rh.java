@@ -1,11 +1,11 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
 /* loaded from: classes4.dex */
-public final class Rh implements InterfaceC0600t5 {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0600t5
-    /* renamed from: b */
-    public final Qh a(Context context, C0401l5 c0401l5, J4 j4, Bm bm) {
-        return new Qh(context, c0401l5, j4, Ia.F.g(), bm.e(), new Sg(bm), new C0376k5());
+public final class Rh {
+
+    /* renamed from: a  reason: collision with root package name */
+    public J4 f637a;
+
+    public Rh(J4 j4) {
+        this.f637a = j4;
     }
 }

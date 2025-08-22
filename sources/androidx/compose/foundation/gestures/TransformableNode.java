@@ -39,7 +39,7 @@ import kotlinx.coroutines.channels.Channel;
 import kotlinx.coroutines.channels.ChannelKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Transformable.kt */
-@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0002\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B1\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007\u0012\u0006\u0010\n\u001a\u00020\t\u0012\u0006\u0010\u000b\u001a\u00020\t¢\u0006\u0002\u0010\fJ\b\u0010\u0016\u001a\u00020\u0017H\u0016J\b\u0010\u0018\u001a\u00020\u0017H\u0016J*\u0010\u0019\u001a\u00020\u00172\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001fH\u0016ø\u0001\u0000¢\u0006\u0004\b \u0010!J2\u0010\"\u001a\u00020\u00172\u0006\u0010\u0004\u001a\u00020\u00052\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u00072\u0006\u0010\n\u001a\u00020\t2\u0006\u0010\u000b\u001a\u00020\tR\u001a\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0002X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006#"}, d2 = {"Landroidx/compose/foundation/gestures/TransformableNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/PointerInputModifierNode;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/gestures/TransformableState;", "canPan", "Lkotlin/Function1;", "Landroidx/compose/ui/geometry/Offset;", "", "lockRotationOnZoomPan", "enabled", "(Landroidx/compose/foundation/gestures/TransformableState;Lkotlin/jvm/functions/Function1;ZZ)V", "channel", "Lkotlinx/coroutines/channels/Channel;", "Landroidx/compose/foundation/gestures/TransformEvent;", "pointerInputModifierMouse", "pointerInputNode", "Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNode;", "scrollConfig", "Landroidx/compose/foundation/gestures/ScrollConfig;", "updatedCanPan", "onAttach", "", "onCancelPointerInput", "onPointerEvent", "pointerEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "bounds", "Landroidx/compose/ui/unit/IntSize;", "onPointerEvent-H0pRuoY", "(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "update", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0002\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B3\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007\u0012\u0006\u0010\n\u001a\u00020\t\u0012\u0006\u0010\u000b\u001a\u00020\t¢\u0006\u0004\b\f\u0010\rJ\b\u0010\u0014\u001a\u00020\u0015H\u0016J2\u0010\u0019\u001a\u00020\u00152\u0006\u0010\u0004\u001a\u00020\u00052\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u00072\u0006\u0010\n\u001a\u00020\t2\u0006\u0010\u000b\u001a\u00020\tJ'\u0010\u001a\u001a\u00020\u00152\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0016¢\u0006\u0004\b!\u0010\"J\b\u0010#\u001a\u00020\u0015H\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0018\u001a\u0004\u0018\u00010\u0002X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Landroidx/compose/foundation/gestures/TransformableNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/PointerInputModifierNode;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/gestures/TransformableState;", "canPan", "Lkotlin/Function1;", "Landroidx/compose/ui/geometry/Offset;", "", "lockRotationOnZoomPan", "enabled", "<init>", "(Landroidx/compose/foundation/gestures/TransformableState;Lkotlin/jvm/functions/Function1;ZZ)V", "updatedCanPan", "channel", "Lkotlinx/coroutines/channels/Channel;", "Landroidx/compose/foundation/gestures/TransformEvent;", "scrollConfig", "Landroidx/compose/foundation/gestures/ScrollConfig;", "onAttach", "", "pointerInputNode", "Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNode;", "pointerInputModifierMouse", "update", "onPointerEvent", "pointerEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "bounds", "Landroidx/compose/ui/unit/IntSize;", "onPointerEvent-H0pRuoY", "(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "onCancelPointerInput", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TransformableNode extends DelegatingNode implements PointerInputModifierNode, CompositionLocalConsumerModifierNode {
     private Function1<? super Offset, Boolean> canPan;
@@ -48,29 +48,19 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
     private PointerInputModifierNode pointerInputModifierMouse;
     private ScrollConfig scrollConfig;
     private TransformableState state;
-    private final Function1<Offset, Boolean> updatedCanPan = new Function1<Offset, Boolean>() { // from class: androidx.compose.foundation.gestures.TransformableNode$updatedCanPan$1
-        /* JADX INFO: Access modifiers changed from: package-private */
-        {
-            super(1);
-        }
-
+    private final Function1<Offset, Boolean> updatedCanPan = new Function1() { // from class: androidx.compose.foundation.gestures.TransformableNode$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ Boolean invoke(Offset offset) {
-            return m542invokek4lQ0M(offset.m3847unboximpl());
-        }
-
-        /* renamed from: invoke-k-4lQ0M  reason: not valid java name */
-        public final Boolean m542invokek4lQ0M(long j) {
-            Function1 function1;
-            function1 = TransformableNode.this.canPan;
-            return (Boolean) function1.invoke(Offset.m3826boximpl(j));
+        public final Object invoke(Object obj) {
+            boolean updatedCanPan$lambda$0;
+            updatedCanPan$lambda$0 = TransformableNode.updatedCanPan$lambda$0(TransformableNode.this, (Offset) obj);
+            return Boolean.valueOf(updatedCanPan$lambda$0);
         }
     };
     private final Channel<TransformEvent> channel = ChannelKt.Channel$default(Integer.MAX_VALUE, null, null, 6, null);
     private final SuspendingPointerInputModifierNode pointerInputNode = (SuspendingPointerInputModifierNode) delegate(SuspendingPointerInputFilterKt.SuspendingPointerInputModifierNode(new PointerInputEventHandler() { // from class: androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1
 
         /* compiled from: Transformable.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
         @DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1", f = "Transformable.kt", i = {}, l = {DownloaderService.STATUS_QUEUED_FOR_WIFI_OR_CELLULAR_PERMISSION}, m = "invokeSuspend", n = {}, s = {})
         /* renamed from: androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1  reason: invalid class name */
         /* loaded from: classes.dex */
@@ -101,11 +91,11 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* compiled from: Transformable.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
             @DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$1", f = "Transformable.kt", i = {0, 0, 1}, l = {175, 178}, m = "invokeSuspend", n = {"$this$launch", NotificationCompat.CATEGORY_EVENT, "$this$launch"}, s = {"L$0", "L$1", "L$0"})
             /* renamed from: androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$1  reason: invalid class name and collision with other inner class name */
             /* loaded from: classes.dex */
-            public static final class C00121 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+            public static final class C00081 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                 private /* synthetic */ Object L$0;
                 Object L$1;
                 Object L$2;
@@ -113,25 +103,25 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
                 final /* synthetic */ TransformableNode this$0;
 
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                C00121(TransformableNode transformableNode, Continuation<? super C00121> continuation) {
+                C00081(TransformableNode transformableNode, Continuation<? super C00081> continuation) {
                     super(2, continuation);
                     this.this$0 = transformableNode;
                 }
 
                 @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                 public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                    C00121 c00121 = new C00121(this.this$0, continuation);
-                    c00121.L$0 = obj;
-                    return c00121;
+                    C00081 c00081 = new C00081(this.this$0, continuation);
+                    c00081.L$0 = obj;
+                    return c00081;
                 }
 
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                    return ((C00121) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                    return ((C00081) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
                 }
 
                 /* JADX WARN: Code restructure failed: missing block: B:22:0x0085, code lost:
-                    if (r10.transform(androidx.compose.foundation.MutatePriority.UserInput, new androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1.AnonymousClass1.C00121.C00131(r4, r9.this$0, null), r9) == r0) goto L22;
+                    if (r10.transform(androidx.compose.foundation.MutatePriority.UserInput, new androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1.AnonymousClass1.C00081.C00091(r4, r9.this$0, null), r9) == r0) goto L22;
                  */
                 /* JADX WARN: Multi-variable type inference failed */
                 /* JADX WARN: Removed duplicated region for block: B:15:0x003c  */
@@ -206,11 +196,11 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* compiled from: Transformable.kt */
-                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/TransformScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/TransformScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
                 @DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$1$1", f = "Transformable.kt", i = {0}, l = {187}, m = "invokeSuspend", n = {"$this$transform"}, s = {"L$0"})
                 /* renamed from: androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$1$1  reason: invalid class name and collision with other inner class name */
                 /* loaded from: classes.dex */
-                public static final class C00131 extends SuspendLambda implements Function2<TransformScope, Continuation<? super Unit>, Object> {
+                public static final class C00091 extends SuspendLambda implements Function2<TransformScope, Continuation<? super Unit>, Object> {
                     final /* synthetic */ Ref.ObjectRef<TransformEvent> $event;
                     private /* synthetic */ Object L$0;
                     Object L$1;
@@ -218,7 +208,7 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
                     final /* synthetic */ TransformableNode this$0;
 
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    C00131(Ref.ObjectRef<TransformEvent> objectRef, TransformableNode transformableNode, Continuation<? super C00131> continuation) {
+                    C00091(Ref.ObjectRef<TransformEvent> objectRef, TransformableNode transformableNode, Continuation<? super C00091> continuation) {
                         super(2, continuation);
                         this.$event = objectRef;
                         this.this$0 = transformableNode;
@@ -226,14 +216,14 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                        C00131 c00131 = new C00131(this.$event, this.this$0, continuation);
-                        c00131.L$0 = obj;
-                        return c00131;
+                        C00091 c00091 = new C00091(this.$event, this.this$0, continuation);
+                        c00091.L$0 = obj;
+                        return c00091;
                     }
 
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(TransformScope transformScope, Continuation<? super Unit> continuation) {
-                        return ((C00131) create(transformScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                        return ((C00091) create(transformScope, continuation)).invokeSuspend(Unit.INSTANCE);
                     }
 
                     /* JADX WARN: Multi-variable type inference failed */
@@ -266,7 +256,7 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
                                 TransformEvent transformEvent = this.$event.element;
                                 TransformEvent.TransformDelta transformDelta = transformEvent instanceof TransformEvent.TransformDelta ? (TransformEvent.TransformDelta) transformEvent : null;
                                 if (transformDelta != null) {
-                                    transformScope.mo425transformByd4ec7I(transformDelta.getZoomChange(), transformDelta.m537getPanChangeF1C5BW0(), transformDelta.getRotationChange());
+                                    transformScope.mo464transformByd4ec7I(transformDelta.getZoomChange(), transformDelta.m602getPanChangeF1C5BW0(), transformDelta.getRotationChange());
                                 }
                                 objectRef = this.$event;
                                 channel = this.this$0.channel;
@@ -295,7 +285,7 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
                 if (i == 0) {
                     ResultKt.throwOnFailure(obj);
                     CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
-                    BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, CoroutineStart.UNDISPATCHED, new C00121(this.this$0, null), 1, null);
+                    BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, CoroutineStart.UNDISPATCHED, new C00081(this.this$0, null), 1, null);
                     this.label = 1;
                     if (ForEachGestureKt.awaitEachGesture(this.$this_SuspendingPointerInputModifierNode, new AnonymousClass2(this.this$0, coroutineScope, null), this) == coroutine_suspended) {
                         return coroutine_suspended;
@@ -310,7 +300,7 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* compiled from: Transformable.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
             @DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$2", f = "Transformable.kt", i = {}, l = {198}, m = "invokeSuspend", n = {}, s = {})
             /* renamed from: androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$2  reason: invalid class name */
             /* loaded from: classes.dex */
@@ -374,7 +364,7 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
                         return Unit.INSTANCE;
                     } finally {
                         channel = this.this$0.channel;
-                        channel.mo7559trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
+                        channel.mo8125trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
                     }
                 }
             }
@@ -396,6 +386,11 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
         this.enabled = z2;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean updatedCanPan$lambda$0(TransformableNode transformableNode, Offset offset) {
+        return transformableNode.canPan.invoke(offset).booleanValue();
+    }
+
     @Override // androidx.compose.ui.Modifier.Node
     public void onAttach() {
         super.onAttach();
@@ -415,7 +410,7 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo217onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo227onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         final ScrollConfig scrollConfig = this.scrollConfig;
         if (this.enabled) {
             List<PointerInputChange> changes = pointerEvent.getChanges();
@@ -424,7 +419,7 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
             while (true) {
                 if (i >= size) {
                     break;
-                } else if (!PointerType.m5384equalsimpl0(changes.get(i).m5316getTypeT8wyACA(), PointerType.Companion.m5389getMouseT8wyACA())) {
+                } else if (!PointerType.m5897equalsimpl0(changes.get(i).m5829getTypeT8wyACA(), PointerType.Companion.m5902getMouseT8wyACA())) {
                     i++;
                 } else if (scrollConfig != null && this.pointerInputModifierMouse == null) {
                     this.pointerInputModifierMouse = (PointerInputModifierNode) delegate(SuspendingPointerInputFilterKt.SuspendingPointerInputModifierNode(new PointerInputEventHandler() { // from class: androidx.compose.foundation.gestures.TransformableNode$onPointerEvent$2
@@ -440,10 +435,10 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
                 }
             }
         }
-        this.pointerInputNode.mo217onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+        this.pointerInputNode.mo227onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
         PointerInputModifierNode pointerInputModifierNode = this.pointerInputModifierMouse;
         if (pointerInputModifierNode != null) {
-            pointerInputModifierNode.mo217onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+            pointerInputModifierNode.mo227onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
         }
     }
 

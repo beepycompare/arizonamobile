@@ -31,47 +31,47 @@ public final class NavigationRailItemColors {
     }
 
     /* renamed from: getSelectedIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2130getSelectedIconColor0d7_KjU() {
+    public final long m2437getSelectedIconColor0d7_KjU() {
         return this.selectedIconColor;
     }
 
     /* renamed from: getSelectedTextColor-0d7_KjU  reason: not valid java name */
-    public final long m2132getSelectedTextColor0d7_KjU() {
+    public final long m2439getSelectedTextColor0d7_KjU() {
         return this.selectedTextColor;
     }
 
     /* renamed from: getSelectedIndicatorColor-0d7_KjU  reason: not valid java name */
-    public final long m2131getSelectedIndicatorColor0d7_KjU() {
+    public final long m2438getSelectedIndicatorColor0d7_KjU() {
         return this.selectedIndicatorColor;
     }
 
     /* renamed from: getUnselectedIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2133getUnselectedIconColor0d7_KjU() {
+    public final long m2440getUnselectedIconColor0d7_KjU() {
         return this.unselectedIconColor;
     }
 
     /* renamed from: getUnselectedTextColor-0d7_KjU  reason: not valid java name */
-    public final long m2134getUnselectedTextColor0d7_KjU() {
+    public final long m2441getUnselectedTextColor0d7_KjU() {
         return this.unselectedTextColor;
     }
 
     /* renamed from: getDisabledIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2127getDisabledIconColor0d7_KjU() {
+    public final long m2434getDisabledIconColor0d7_KjU() {
         return this.disabledIconColor;
     }
 
     /* renamed from: getDisabledTextColor-0d7_KjU  reason: not valid java name */
-    public final long m2128getDisabledTextColor0d7_KjU() {
+    public final long m2435getDisabledTextColor0d7_KjU() {
         return this.disabledTextColor;
     }
 
     /* renamed from: copy-4JmcsL4  reason: not valid java name */
-    public final NavigationRailItemColors m2126copy4JmcsL4(long j, long j2, long j3, long j4, long j5, long j6, long j7) {
+    public final NavigationRailItemColors m2433copy4JmcsL4(long j, long j2, long j3, long j4, long j5, long j6, long j7) {
         return new NavigationRailItemColors(j != 16 ? j : this.selectedIconColor, j2 != 16 ? j2 : this.selectedTextColor, j3 != 16 ? j3 : this.selectedIndicatorColor, j4 != 16 ? j4 : this.unselectedIconColor, j5 != 16 ? j5 : this.unselectedTextColor, j6 != 16 ? j6 : this.disabledIconColor, j7 != 16 ? j7 : this.disabledTextColor, null);
     }
 
     /* renamed from: iconColor-WaAFU9c$material3_release  reason: not valid java name */
-    public final long m2135iconColorWaAFU9c$material3_release(boolean z, boolean z2) {
+    public final long m2442iconColorWaAFU9c$material3_release(boolean z, boolean z2) {
         if (z2) {
             if (z) {
                 return this.selectedIconColor;
@@ -82,7 +82,7 @@ public final class NavigationRailItemColors {
     }
 
     /* renamed from: textColor-WaAFU9c$material3_release  reason: not valid java name */
-    public final long m2136textColorWaAFU9c$material3_release(boolean z, boolean z2) {
+    public final long m2443textColorWaAFU9c$material3_release(boolean z, boolean z2) {
         if (z2) {
             if (z) {
                 return this.selectedTextColor;
@@ -93,7 +93,7 @@ public final class NavigationRailItemColors {
     }
 
     /* renamed from: getIndicatorColor-0d7_KjU$material3_release  reason: not valid java name */
-    public final long m2129getIndicatorColor0d7_KjU$material3_release() {
+    public final long m2436getIndicatorColor0d7_KjU$material3_release() {
         return this.selectedIndicatorColor;
     }
 
@@ -105,10 +105,10 @@ public final class NavigationRailItemColors {
             return false;
         }
         NavigationRailItemColors navigationRailItemColors = (NavigationRailItemColors) obj;
-        return Color.m4079equalsimpl0(this.selectedIconColor, navigationRailItemColors.selectedIconColor) && Color.m4079equalsimpl0(this.unselectedIconColor, navigationRailItemColors.unselectedIconColor) && Color.m4079equalsimpl0(this.selectedTextColor, navigationRailItemColors.selectedTextColor) && Color.m4079equalsimpl0(this.unselectedTextColor, navigationRailItemColors.unselectedTextColor) && Color.m4079equalsimpl0(this.selectedIndicatorColor, navigationRailItemColors.selectedIndicatorColor) && Color.m4079equalsimpl0(this.disabledIconColor, navigationRailItemColors.disabledIconColor) && Color.m4079equalsimpl0(this.disabledTextColor, navigationRailItemColors.disabledTextColor);
+        return Color.m4538equalsimpl0(this.selectedIconColor, navigationRailItemColors.selectedIconColor) && Color.m4538equalsimpl0(this.unselectedIconColor, navigationRailItemColors.unselectedIconColor) && Color.m4538equalsimpl0(this.selectedTextColor, navigationRailItemColors.selectedTextColor) && Color.m4538equalsimpl0(this.unselectedTextColor, navigationRailItemColors.unselectedTextColor) && Color.m4538equalsimpl0(this.selectedIndicatorColor, navigationRailItemColors.selectedIndicatorColor) && Color.m4538equalsimpl0(this.disabledIconColor, navigationRailItemColors.disabledIconColor) && Color.m4538equalsimpl0(this.disabledTextColor, navigationRailItemColors.disabledTextColor);
     }
 
     public int hashCode() {
-        return (((((((((((Color.m4085hashCodeimpl(this.selectedIconColor) * 31) + Color.m4085hashCodeimpl(this.unselectedIconColor)) * 31) + Color.m4085hashCodeimpl(this.selectedTextColor)) * 31) + Color.m4085hashCodeimpl(this.unselectedTextColor)) * 31) + Color.m4085hashCodeimpl(this.selectedIndicatorColor)) * 31) + Color.m4085hashCodeimpl(this.disabledIconColor)) * 31) + Color.m4085hashCodeimpl(this.disabledTextColor);
+        return (((((((((((Color.m4544hashCodeimpl(this.selectedIconColor) * 31) + Color.m4544hashCodeimpl(this.unselectedIconColor)) * 31) + Color.m4544hashCodeimpl(this.selectedTextColor)) * 31) + Color.m4544hashCodeimpl(this.unselectedTextColor)) * 31) + Color.m4544hashCodeimpl(this.selectedIndicatorColor)) * 31) + Color.m4544hashCodeimpl(this.disabledIconColor)) * 31) + Color.m4544hashCodeimpl(this.disabledTextColor);
     }
 }

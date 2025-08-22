@@ -10,7 +10,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleDematerialize<T, R> extends Maybe<R> {
     final Function<? super T, Notification<R>> selector;
     final Single<T> source;
@@ -25,7 +25,7 @@ public final class SingleDematerialize<T, R> extends Maybe<R> {
         this.source.subscribe(new DematerializeObserver(maybeObserver, this.selector));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DematerializeObserver<T, R> implements SingleObserver<T>, Disposable {
         final MaybeObserver<? super R> downstream;
         final Function<? super T, Notification<R>> selector;

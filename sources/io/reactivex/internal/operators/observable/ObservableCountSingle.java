@@ -9,7 +9,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.FuseToObservable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableCountSingle<T> extends Single<Long> implements FuseToObservable<Long> {
     final ObservableSource<T> source;
 
@@ -27,7 +27,7 @@ public final class ObservableCountSingle<T> extends Single<Long> implements Fuse
         return RxJavaPlugins.onAssembly(new ObservableCount(this.source));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class CountObserver implements Observer<Object>, Disposable {
         long count;
         final SingleObserver<? super Long> downstream;

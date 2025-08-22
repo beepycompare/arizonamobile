@@ -10,7 +10,7 @@ import io.reactivex.internal.util.AtomicThrowable;
 import io.reactivex.internal.util.HalfSerializer;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableMergeWithCompletable<T> extends AbstractObservableWithUpstream<T, T> {
     final CompletableSource other;
 
@@ -27,7 +27,7 @@ public final class ObservableMergeWithCompletable<T> extends AbstractObservableW
         this.other.subscribe(mergeWithObserver.otherObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MergeWithObserver<T> extends AtomicInteger implements Observer<T>, Disposable {
         private static final long serialVersionUID = -4592979584110982903L;
         final Observer<? super T> downstream;
@@ -88,7 +88,7 @@ public final class ObservableMergeWithCompletable<T> extends AbstractObservableW
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         static final class OtherObserver extends AtomicReference<Disposable> implements CompletableObserver {
             private static final long serialVersionUID = -2935427570954647017L;
             final MergeWithObserver<?> parent;

@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableThrottleLatest<T> extends AbstractFlowableWithUpstream<T, T> {
     final boolean emitLast;
     final Scheduler scheduler;
@@ -32,7 +32,7 @@ public final class FlowableThrottleLatest<T> extends AbstractFlowableWithUpstrea
         this.source.subscribe((FlowableSubscriber) new ThrottleLatestSubscriber(subscriber, this.timeout, this.unit, this.scheduler.createWorker(), this.emitLast));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ThrottleLatestSubscriber<T> extends AtomicInteger implements FlowableSubscriber<T>, Subscription, Runnable {
         private static final long serialVersionUID = -8296689127439125014L;
         volatile boolean cancelled;

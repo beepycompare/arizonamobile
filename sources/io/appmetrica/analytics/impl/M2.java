@@ -1,44 +1,44 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
 public final class M2 {
-    public final Bn A;
+    public final Gn A;
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0321i f541a;
-    public final Bn b = new Bn(new C0535qe("Config"));
-    public final Bn c = new Bn(new C0535qe("Activity"));
-    public final Bn d = new Bn(new C0535qe("Intent"));
-    public final Bn e = new Bn(new C0535qe("Application"));
-    public final Bn f = new Bn(new C0535qe("Context"));
-    public final Bn g = new Bn(new C0535qe("Deeplink listener"));
-    public final Bn h = new Bn(new C0535qe("Reporter Config"));
-    public final Bn i = new Bn(new C0485oe("Deeplink"));
-    public final Bn j = new Bn(new C0485oe("Referral url"));
-    public final Bn k = new Bn(new C0246f0());
-    public final Bn l = new Bn(new C0535qe("Key"));
-    public final Bn m = new Bn(new C0535qe("WebView"));
-    public final C0485oe n = new C0485oe("value");
-    public final C0485oe o = new C0485oe("name");
-    public final Bn p = new Bn(new C0535qe("AppMetricaDeviceIdentifiers callback"));
-    public final Bn q = new Bn(new C0535qe("ANR listener"));
-    public final Bn r = new Bn(new C0535qe("External attribution"));
-    public final Bn s = new Bn(new C0485oe("Event name"));
-    public final Bn t = new Bn(new C0485oe("Error message"));
-    public final Bn u = new Bn(new C0485oe("Error identifier"));
-    public final Bn v;
-    public final Bn w;
-    public final Bn x;
-    public final Bn y;
-    public final Bn z;
+    public final C0315i f553a;
+    public final Gn b = new Gn(new C0581se("Config"));
+    public final Gn c = new Gn(new C0581se("Activity"));
+    public final Gn d = new Gn(new C0581se("Intent"));
+    public final Gn e = new Gn(new C0581se("Application"));
+    public final Gn f = new Gn(new C0581se("Context"));
+    public final Gn g = new Gn(new C0581se("Deeplink listener"));
+    public final Gn h = new Gn(new C0581se("Reporter Config"));
+    public final Gn i = new Gn(new C0532qe("Deeplink"));
+    public final Gn j = new Gn(new C0532qe("Referral url"));
+    public final Gn k = new Gn(new C0238f0());
+    public final Gn l = new Gn(new C0581se("Key"));
+    public final Gn m = new Gn(new C0581se("WebView"));
+    public final C0532qe n = new C0532qe("value");
+    public final C0532qe o = new C0532qe("name");
+    public final Gn p = new Gn(new C0581se("AppMetricaDeviceIdentifiers callback"));
+    public final Gn q = new Gn(new C0581se("ANR listener"));
+    public final Gn r = new Gn(new C0581se("External attribution"));
+    public final Gn s = new Gn(new C0532qe("Event name"));
+    public final Gn t = new Gn(new C0532qe("Error message"));
+    public final Gn u = new Gn(new C0532qe("Error identifier"));
+    public final Gn v;
+    public final Gn w;
+    public final Gn x;
+    public final Gn y;
+    public final Gn z;
 
-    public M2(C0620u0 c0620u0) {
-        this.f541a = new C0321i(c0620u0);
-        new Bn(new C0535qe("Unhandled exception"));
-        this.v = new Bn(new C0535qe("Throwable"));
-        this.w = new Bn(new C0535qe("User profile"));
-        this.x = new Bn(new C0535qe("Revenue"));
-        this.y = new Bn(new C0535qe("AdRevenue"));
-        this.z = new Bn(new C0535qe("ECommerceEvent"));
-        this.A = new Bn(new C0535qe("Anr all threads"));
+    public M2(C0617u0 c0617u0) {
+        this.f553a = new C0315i(c0617u0);
+        new Gn(new C0581se("Unhandled exception"));
+        this.v = new Gn(new C0581se("Throwable"));
+        this.w = new Gn(new C0581se("User profile"));
+        this.x = new Gn(new C0581se("Revenue"));
+        this.y = new Gn(new C0581se("AdRevenue"));
+        this.z = new Gn(new C0581se("ECommerceEvent"));
+        this.A = new Gn(new C0581se("Anr all threads"));
     }
 }

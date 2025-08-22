@@ -1,18 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.ModuleEvent;
 /* loaded from: classes4.dex */
-public final class Rj implements InterfaceC0407lb {
+public final class Rj implements InterfaceC0454nb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ModuleEvent f625a;
+    public final /* synthetic */ Sn f638a;
 
-    public Rj(ModuleEvent moduleEvent) {
-        this.f625a = moduleEvent;
+    public Rj(Sn sn) {
+        this.f638a = sn;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0407lb
-    public final void a(InterfaceC0432mb interfaceC0432mb) {
-        interfaceC0432mb.reportEvent(this.f625a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0454nb
+    public final void a(InterfaceC0479ob interfaceC0479ob) {
+        interfaceC0479ob.a(this.f638a);
     }
 }

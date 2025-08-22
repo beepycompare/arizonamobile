@@ -4,19 +4,19 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class attr {
-        public static int dampingRatio = 0x7f04019d;
-        public static int dotsClickable = 0x7f0401d7;
-        public static int dotsColor = 0x7f0401d8;
-        public static int dotsCornerRadius = 0x7f0401d9;
-        public static int dotsElevation = 0x7f0401da;
-        public static int dotsSize = 0x7f0401db;
-        public static int dotsSpacing = 0x7f0401dc;
-        public static int dotsStrokeColor = 0x7f0401dd;
-        public static int dotsStrokeWidth = 0x7f0401de;
-        public static int dotsWidthFactor = 0x7f0401df;
-        public static int progressMode = 0x7f0404cf;
-        public static int selectedDotColor = 0x7f040520;
-        public static int stiffness = 0x7f040581;
+        public static int dampingRatio = 0x7f04019e;
+        public static int dotsClickable = 0x7f0401d8;
+        public static int dotsColor = 0x7f0401d9;
+        public static int dotsCornerRadius = 0x7f0401da;
+        public static int dotsElevation = 0x7f0401db;
+        public static int dotsSize = 0x7f0401dc;
+        public static int dotsSpacing = 0x7f0401dd;
+        public static int dotsStrokeColor = 0x7f0401de;
+        public static int dotsStrokeWidth = 0x7f0401df;
+        public static int dotsWidthFactor = 0x7f0401e0;
+        public static int progressMode = 0x7f0404d0;
+        public static int selectedDotColor = 0x7f040521;
+        public static int stiffness = 0x7f040582;
 
         private attr() {
         }
@@ -24,11 +24,11 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class drawable {
-        public static int dot_background = 0x7f080664;
-        public static int spring_dot_background = 0x7f080cb3;
-        public static int spring_dot_stroke_background = 0x7f080cb4;
-        public static int worm_dot_background = 0x7f080d0d;
-        public static int worm_dot_stroke_background = 0x7f080d0e;
+        public static int dot_background = 0x7f080680;
+        public static int spring_dot_background = 0x7f080ce8;
+        public static int spring_dot_stroke_background = 0x7f080ce9;
+        public static int worm_dot_background = 0x7f080d42;
+        public static int worm_dot_stroke_background = 0x7f080d43;
 
         private drawable() {
         }
@@ -36,9 +36,9 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class id {
-        public static int dot = 0x7f0a0428;
-        public static int spring_dot = 0x7f0a0c85;
-        public static int worm_dot = 0x7f0a0ef1;
+        public static int dot = 0x7f0a042a;
+        public static int spring_dot = 0x7f0a0c81;
+        public static int worm_dot = 0x7f0a0ef5;
 
         private id() {
         }
@@ -47,8 +47,8 @@ public final class R {
     /* loaded from: classes4.dex */
     public static final class layout {
         public static int dot_layout = 0x7f0d00a7;
-        public static int spring_dot_layout = 0x7f0d0209;
-        public static int worm_dot_layout = 0x7f0d022e;
+        public static int spring_dot_layout = 0x7f0d020e;
+        public static int worm_dot_layout = 0x7f0d0233;
 
         private layout() {
         }
@@ -81,9 +81,9 @@ public final class R {
         public static int WormDotsIndicator_dotsSpacing = 0x00000004;
         public static int WormDotsIndicator_dotsStrokeColor = 0x00000005;
         public static int WormDotsIndicator_dotsStrokeWidth = 0x00000006;
-        public static int[] DotsIndicator = {com.arizona21.game.web.R.attr.dotsClickable, com.arizona21.game.web.R.attr.dotsColor, com.arizona21.game.web.R.attr.dotsCornerRadius, com.arizona21.game.web.R.attr.dotsElevation, com.arizona21.game.web.R.attr.dotsSize, com.arizona21.game.web.R.attr.dotsSpacing, com.arizona21.game.web.R.attr.dotsWidthFactor, com.arizona21.game.web.R.attr.progressMode, com.arizona21.game.web.R.attr.selectedDotColor};
-        public static int[] SpringDotsIndicator = {com.arizona21.game.web.R.attr.dampingRatio, com.arizona21.game.web.R.attr.dotsClickable, com.arizona21.game.web.R.attr.dotsColor, com.arizona21.game.web.R.attr.dotsCornerRadius, com.arizona21.game.web.R.attr.dotsSize, com.arizona21.game.web.R.attr.dotsSpacing, com.arizona21.game.web.R.attr.dotsStrokeColor, com.arizona21.game.web.R.attr.dotsStrokeWidth, com.arizona21.game.web.R.attr.stiffness};
-        public static int[] WormDotsIndicator = {com.arizona21.game.web.R.attr.dotsClickable, com.arizona21.game.web.R.attr.dotsColor, com.arizona21.game.web.R.attr.dotsCornerRadius, com.arizona21.game.web.R.attr.dotsSize, com.arizona21.game.web.R.attr.dotsSpacing, com.arizona21.game.web.R.attr.dotsStrokeColor, com.arizona21.game.web.R.attr.dotsStrokeWidth};
+        public static int[] DotsIndicator = {com.arizona21.game.R.attr.dotsClickable, com.arizona21.game.R.attr.dotsColor, com.arizona21.game.R.attr.dotsCornerRadius, com.arizona21.game.R.attr.dotsElevation, com.arizona21.game.R.attr.dotsSize, com.arizona21.game.R.attr.dotsSpacing, com.arizona21.game.R.attr.dotsWidthFactor, com.arizona21.game.R.attr.progressMode, com.arizona21.game.R.attr.selectedDotColor};
+        public static int[] SpringDotsIndicator = {com.arizona21.game.R.attr.dampingRatio, com.arizona21.game.R.attr.dotsClickable, com.arizona21.game.R.attr.dotsColor, com.arizona21.game.R.attr.dotsCornerRadius, com.arizona21.game.R.attr.dotsSize, com.arizona21.game.R.attr.dotsSpacing, com.arizona21.game.R.attr.dotsStrokeColor, com.arizona21.game.R.attr.dotsStrokeWidth, com.arizona21.game.R.attr.stiffness};
+        public static int[] WormDotsIndicator = {com.arizona21.game.R.attr.dotsClickable, com.arizona21.game.R.attr.dotsColor, com.arizona21.game.R.attr.dotsCornerRadius, com.arizona21.game.R.attr.dotsSize, com.arizona21.game.R.attr.dotsSpacing, com.arizona21.game.R.attr.dotsStrokeColor, com.arizona21.game.R.attr.dotsStrokeWidth};
 
         private styleable() {
         }

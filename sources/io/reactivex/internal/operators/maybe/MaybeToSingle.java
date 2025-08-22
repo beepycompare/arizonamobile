@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
 import java.util.NoSuchElementException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeToSingle<T> extends Single<T> implements HasUpstreamMaybeSource<T> {
     final T defaultValue;
     final MaybeSource<T> source;
@@ -28,7 +28,7 @@ public final class MaybeToSingle<T> extends Single<T> implements HasUpstreamMayb
         this.source.subscribe(new ToSingleMaybeSubscriber(singleObserver, this.defaultValue));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ToSingleMaybeSubscriber<T> implements MaybeObserver<T>, Disposable {
         final T defaultValue;
         final SingleObserver<? super T> downstream;

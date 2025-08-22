@@ -1,22 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
-import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashClientModule;
-import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashClientModuleDummy;
+import io.appmetrica.analytics.coreapi.internal.executors.InterruptionSafeThread;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
 /* loaded from: classes4.dex */
-public final class Qd {
+public final class Qd implements ThreadFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Pf f610a;
-    public final NativeCrashClientModule b;
-    public final D0 c;
-    public C0 d;
+    public static final AtomicInteger f620a = new AtomicInteger(0);
 
-    public Qd(Pf pf) {
-        this.f610a = pf;
-        ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
-        NativeCrashClientModule nativeCrashClientModule = (NativeCrashClientModule) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor("io.appmetrica.analytics.ndkcrashes.NativeCrashClientModuleImpl", NativeCrashClientModule.class);
-        this.b = nativeCrashClientModule == null ? new NativeCrashClientModuleDummy() : nativeCrashClientModule;
-        this.c = new D0();
+    public static int a() {
+        return f620a.incrementAndGet();
+    }
+
+    @Override // java.util.concurrent.ThreadFactory
+    public final Thread newThread(Runnable runnable) {
+        return new InterruptionSafeThread(runnable, "null-" + f620a.incrementAndGet());
     }
 }

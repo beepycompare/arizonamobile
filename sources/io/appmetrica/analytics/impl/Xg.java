@@ -1,67 +1,12 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigMetaInfo;
 /* loaded from: classes4.dex */
-public final class Xg implements RemoteConfigMetaInfo {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final long f719a;
-    public final long b;
-
-    public Xg(long j, long j2) {
-        this.f719a = j;
-        this.b = j2;
+public final class Xg extends AbstractC0523q5 {
+    public Xg(Gm gm) {
+        super(gm);
     }
 
-    public final Xg a(long j, long j2) {
-        return new Xg(j, j2);
-    }
-
-    public final long b() {
-        return this.b;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof Xg) {
-            Xg xg = (Xg) obj;
-            return this.f719a == xg.f719a && this.b == xg.b;
-        }
-        return false;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigMetaInfo
-    public final long getFirstSendTime() {
-        return this.f719a;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigMetaInfo
-    public final long getLastUpdateTime() {
-        return this.b;
-    }
-
-    public final int hashCode() {
-        return Long.hashCode(this.b) + (Long.hashCode(this.f719a) * 31);
-    }
-
-    public final String toString() {
-        return "RemoteConfigMetaInfoModel(firstSendTime=" + this.f719a + ", lastUpdateTime=" + this.b + ')';
-    }
-
-    public final long a() {
-        return this.f719a;
-    }
-
-    public static Xg a(Xg xg, long j, long j2, int i, Object obj) {
-        if ((i & 1) != 0) {
-            j = xg.f719a;
-        }
-        if ((i & 2) != 0) {
-            j2 = xg.b;
-        }
-        xg.getClass();
-        return new Xg(j, j2);
+    @Override // io.appmetrica.analytics.impl.AbstractC0523q5
+    public final <C extends InterfaceC0146bb> Pl a() {
+        return new C0126ah(this.f1021a);
     }
 }

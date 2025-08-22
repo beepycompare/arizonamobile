@@ -14,7 +14,7 @@ import io.reactivex.internal.util.AtomicThrowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableCreate<T> extends Observable<T> {
     final ObservableOnSubscribe<T> source;
 
@@ -34,7 +34,7 @@ public final class ObservableCreate<T> extends Observable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class CreateEmitter<T> extends AtomicReference<Disposable> implements ObservableEmitter<T>, Disposable {
         private static final long serialVersionUID = -3434801548987643227L;
         final Observer<? super T> observer;
@@ -122,7 +122,7 @@ public final class ObservableCreate<T> extends Observable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SerializedEmitter<T> extends AtomicInteger implements ObservableEmitter<T> {
         private static final long serialVersionUID = 4883307006032401862L;
         volatile boolean done;

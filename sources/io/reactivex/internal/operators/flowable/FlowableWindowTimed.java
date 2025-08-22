@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableWindowTimed<T> extends AbstractFlowableWithUpstream<T, Flowable<T>> {
     final int bufferSize;
     final long maxSize;
@@ -54,7 +54,7 @@ public final class FlowableWindowTimed<T> extends AbstractFlowableWithUpstream<T
         this.source.subscribe((FlowableSubscriber) new WindowSkipSubscriber(serializedSubscriber, this.timespan, this.timeskip, this.unit, this.scheduler.createWorker(), this.bufferSize));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WindowExactUnboundedSubscriber<T> extends QueueDrainSubscriber<T, Object, Flowable<T>> implements FlowableSubscriber<T>, Subscription, Runnable {
         static final Object NEXT = new Object();
         final int bufferSize;
@@ -234,7 +234,7 @@ public final class FlowableWindowTimed<T> extends AbstractFlowableWithUpstream<T
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WindowExactBoundedSubscriber<T> extends QueueDrainSubscriber<T, Object, Flowable<T>> implements Subscription {
         final int bufferSize;
         long count;
@@ -486,7 +486,7 @@ public final class FlowableWindowTimed<T> extends AbstractFlowableWithUpstream<T
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class ConsumerIndexHolder implements Runnable {
             final long index;
             final WindowExactBoundedSubscriber<?> parent;
@@ -511,7 +511,7 @@ public final class FlowableWindowTimed<T> extends AbstractFlowableWithUpstream<T
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WindowSkipSubscriber<T> extends QueueDrainSubscriber<T, Object, Flowable<T>> implements Subscription, Runnable {
         final int bufferSize;
         volatile boolean terminated;
@@ -691,7 +691,7 @@ public final class FlowableWindowTimed<T> extends AbstractFlowableWithUpstream<T
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class SubjectWork<T> {
             final boolean open;
             final UnicastProcessor<T> w;
@@ -703,7 +703,7 @@ public final class FlowableWindowTimed<T> extends AbstractFlowableWithUpstream<T
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public final class Completion implements Runnable {
             private final UnicastProcessor<T> processor;
 

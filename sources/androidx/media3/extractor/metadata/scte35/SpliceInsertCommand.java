@@ -6,7 +6,7 @@ import androidx.media3.common.util.TimestampAdjuster;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SpliceInsertCommand extends SpliceCommand {
     public final boolean autoReturn;
     public final int availNum;
@@ -116,7 +116,7 @@ public final class SpliceInsertCommand extends SpliceCommand {
         return new SpliceInsertCommand(readUnsignedInt, z6, z, z2, z3, j4, timestampAdjuster.adjustTsTimestamp(j4), list, z4, j2, i, i2, i3);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ComponentSplice {
         public final long componentSplicePlaybackPositionUs;
         public final long componentSplicePts;

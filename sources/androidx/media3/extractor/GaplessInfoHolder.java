@@ -6,7 +6,7 @@ import androidx.media3.extractor.metadata.id3.CommentFrame;
 import androidx.media3.extractor.metadata.id3.InternalFrame;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class GaplessInfoHolder {
     private static final Pattern GAPLESS_COMMENT_PATTERN = Pattern.compile("^ [0-9a-fA-F]{8} ([0-9a-fA-F]{8}) ([0-9a-fA-F]{8})");
     private static final String GAPLESS_DESCRIPTION = "iTunSMPB";

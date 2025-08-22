@@ -33,7 +33,7 @@ public final class ComposableSingletons$SetupDialogKt {
         }
     });
 
-    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$1149507$dialogs_release_web() {
+    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$1149507$dialogs_release() {
         return lambda$1149507;
     }
 
@@ -47,7 +47,7 @@ public final class ComposableSingletons$SetupDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1149507, i, -1, "com.miami.game.feature.download.dialog.ui.setup.ComposableSingletons$SetupDialogKt.lambda$1149507.<anonymous> (SetupDialog.kt:110)");
             }
-            TextKt.m2497Text4IGK_g("ОТМЕНА", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
+            TextKt.m2804Text4IGK_g("ОТМЕНА", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

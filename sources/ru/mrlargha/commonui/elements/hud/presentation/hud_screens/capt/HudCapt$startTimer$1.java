@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.hud.presentation.hud_screens.capt;
 
 import android.widget.TextView;
-import androidx.media3.extractor.ts.TsExtractor;
 import java.util.Arrays;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -17,12 +16,11 @@ import kotlin.jvm.internal.StringCompanionObject;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
-import okhttp3.internal.ws.WebSocketProtocol;
 import ru.mrlargha.commonui.databinding.HudCaptBinding;
 /* compiled from: HudCapt.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.hud_screens.capt.HudCapt$startTimer$1", f = "HudCapt.kt", i = {0, 0, 0, 0, 1, 1, 1, 1}, l = {WebSocketProtocol.PAYLOAD_SHORT, TsExtractor.TS_STREAM_TYPE_HDMV_DTS}, m = "invokeSuspend", n = {"pastTime", "secondsLeft", "minutes", "seconds", "pastTime", "secondsLeft", "minutes", "seconds"}, s = {"I$0", "J$0", "J$1", "J$2", "I$0", "J$0", "J$1", "J$2"})
-/* loaded from: classes5.dex */
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.hud_screens.capt.HudCapt$startTimer$1", f = "HudCapt.kt", i = {0, 0, 0, 0, 1, 1, 1, 1}, l = {133, 137}, m = "invokeSuspend", n = {"pastTime", "secondsLeft", "minutes", "seconds", "pastTime", "secondsLeft", "minutes", "seconds"}, s = {"I$0", "J$0", "J$1", "J$2", "I$0", "J$0", "J$1", "J$2"})
+/* loaded from: classes6.dex */
 final class HudCapt$startTimer$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ HudCaptBinding $binding;
     final /* synthetic */ long $time;
@@ -126,7 +124,7 @@ final class HudCapt$startTimer$1 extends SuspendLambda implements Function2<Coro
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
     @DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.hud_screens.capt.HudCapt$startTimer$1$1", f = "HudCapt.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.capt.HudCapt$startTimer$1$1  reason: invalid class name */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ HudCaptBinding $binding;
         final /* synthetic */ long $minutes;

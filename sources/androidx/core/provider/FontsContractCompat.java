@@ -19,6 +19,7 @@ import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.Executor;
 import kotlin.UByte$$ExternalSyntheticBackport0;
 /* loaded from: classes2.dex */
@@ -136,20 +137,35 @@ public class FontsContractCompat {
         private final int mResultCode;
         private final int mTtcIndex;
         private final Uri mUri;
+        private final String mVariationSettings;
         private final int mWeight;
 
         @Deprecated
         public FontInfo(Uri uri, int i, int i2, boolean z, int i3) {
-            this.mUri = (Uri) Preconditions.checkNotNull(uri);
-            this.mTtcIndex = i;
-            this.mWeight = i2;
-            this.mItalic = z;
-            this.mResultCode = i3;
+            this(uri, i, i2, z, null, i3);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public static FontInfo create(Uri uri, int i, int i2, boolean z, int i3) {
             return new FontInfo(uri, i, i2, z, i3);
+        }
+
+        public FontInfo(Uri uri, int i, int i2, boolean z, String str, int i3) {
+            this.mUri = (Uri) Preconditions.checkNotNull(uri);
+            this.mTtcIndex = i;
+            this.mWeight = i2;
+            this.mItalic = z;
+            this.mVariationSettings = str;
+            this.mResultCode = i3;
+        }
+
+        public FontInfo(String str, String str2) {
+            this.mUri = new Uri.Builder().scheme("systemfont").authority(str).build();
+            this.mTtcIndex = 0;
+            this.mWeight = 400;
+            this.mItalic = false;
+            this.mVariationSettings = str2;
+            this.mResultCode = 0;
         }
 
         public Uri getUri() {
@@ -166,6 +182,21 @@ public class FontsContractCompat {
 
         public boolean isItalic() {
             return this.mItalic;
+        }
+
+        public String getVariationSettings() {
+            return this.mVariationSettings;
+        }
+
+        public String getSystemFont() {
+            if (isSystemFont()) {
+                return this.mUri.getAuthority();
+            }
+            return null;
+        }
+
+        public boolean isSystemFont() {
+            return Objects.equals(this.mUri.getScheme(), "systemfont");
         }
 
         public int getResultCode() {

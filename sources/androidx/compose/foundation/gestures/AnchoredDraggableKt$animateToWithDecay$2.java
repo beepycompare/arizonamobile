@@ -1,5 +1,6 @@
 package androidx.compose.foundation.gestures;
 
+import androidx.compose.animation.core.AnimationScope;
 import androidx.compose.animation.core.AnimationSpec;
 import androidx.compose.animation.core.AnimationState;
 import androidx.compose.animation.core.AnimationStateKt;
@@ -18,8 +19,8 @@ import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: AnchoredDraggable.kt */
-@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u0002H\u00020\u00052\u0006\u0010\u0006\u001a\u0002H\u0002H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/foundation/gestures/AnchoredDragScope;", "anchors", "Landroidx/compose/foundation/gestures/DraggableAnchors;", "latestTarget"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableKt$animateToWithDecay$2", f = "AnchoredDraggable.kt", i = {}, l = {1391, 1409, 1433}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u0002H\u00020\u00052\u0006\u0010\u0006\u001a\u0002H\u0002H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/foundation/gestures/AnchoredDragScope;", "anchors", "Landroidx/compose/foundation/gestures/DraggableAnchors;", "latestTarget"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableKt$animateToWithDecay$2", f = "AnchoredDraggable.kt", i = {}, l = {1389, 1407, 1431}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class AnchoredDraggableKt$animateToWithDecay$2<T> extends SuspendLambda implements Function4<AnchoredDragScope, DraggableAnchors<T>, T, Continuation<? super Unit>, Object> {
     final /* synthetic */ DecayAnimationSpec<Float> $decayAnimationSpec;
@@ -57,13 +58,13 @@ public final class AnchoredDraggableKt$animateToWithDecay$2<T> extends SuspendLa
         return invoke(anchoredDragScope, (DraggableAnchors<DraggableAnchors<T>>) obj, (DraggableAnchors<T>) obj2, continuation);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x00c8, code lost:
-        if (androidx.compose.animation.core.SuspendAnimationKt.animateDecay$default(r22, r3, false, new androidx.compose.foundation.gestures.AnchoredDraggableKt$animateToWithDecay$2.AnonymousClass3(), r29, 2, null) == r1) goto L33;
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x00c6, code lost:
+        if (androidx.compose.animation.core.SuspendAnimationKt.animateDecay$default(r22, r3, false, new androidx.compose.foundation.gestures.AnchoredDraggableKt$animateToWithDecay$2$$ExternalSyntheticLambda0(r2, r7, r9, r5), r29, 2, null) == r1) goto L33;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x00dd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x00db, code lost:
         if (r2 == r1) goto L33;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x00f9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x00f7, code lost:
         if (r2 == r1) goto L33;
      */
     /* JADX WARN: Multi-variable type inference failed */
@@ -121,6 +122,23 @@ public final class AnchoredDraggableKt$animateToWithDecay$2<T> extends SuspendLa
         } else {
             ResultKt.throwOnFailure(obj);
             this.$remainingVelocity.element = 0.0f;
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$2(float f, Ref.FloatRef floatRef, AnchoredDragScope anchoredDragScope, Ref.FloatRef floatRef2, AnimationScope animationScope) {
+        float coerceToTarget;
+        if ((((Number) animationScope.getValue()).floatValue() < f && floatRef.element > f) || (((Number) animationScope.getValue()).floatValue() > f && floatRef.element < f)) {
+            coerceToTarget = AnchoredDraggableKt.coerceToTarget(((Number) animationScope.getValue()).floatValue(), f);
+            anchoredDragScope.dragTo(coerceToTarget, ((Number) animationScope.getVelocity()).floatValue());
+            floatRef2.element = Float.isNaN(((Number) animationScope.getVelocity()).floatValue()) ? 0.0f : ((Number) animationScope.getVelocity()).floatValue();
+            floatRef.element = coerceToTarget;
+            animationScope.cancelAnimation();
+        } else {
+            anchoredDragScope.dragTo(((Number) animationScope.getValue()).floatValue(), ((Number) animationScope.getVelocity()).floatValue());
+            floatRef2.element = ((Number) animationScope.getVelocity()).floatValue();
+            floatRef.element = ((Number) animationScope.getValue()).floatValue();
         }
         return Unit.INSTANCE;
     }

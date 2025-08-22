@@ -97,6 +97,13 @@ public final class DisplayCompat {
         return Api23Impl.isCurrentModeTheLargestMode(display);
     }
 
+    public static RoundedCornerCompat getRoundedCorner(Display display, int i) {
+        if (Build.VERSION.SDK_INT >= 31) {
+            return RoundedCornerCompat.toRoundedCornerCompat(display.getRoundedCorner(i));
+        }
+        return null;
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes2.dex */
     public static class Api23Impl {

@@ -1,11 +1,11 @@
 package androidx.media3.extractor.mp4;
 
 import androidx.media3.common.util.Util;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class FixedSampleSizeRechunker {
     private static final int MAX_SAMPLE_SIZE = 8192;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Results {
         public final long duration;
         public final int[] flags;

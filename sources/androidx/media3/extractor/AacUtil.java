@@ -9,7 +9,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AacUtil {
     public static final int AAC_ELD_MAX_RATE_BYTES_PER_SECOND = 8000;
     public static final int AAC_HE_AUDIO_SAMPLE_COUNT = 2048;
@@ -37,11 +37,11 @@ public final class AacUtil {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public @interface AacAudioObjectType {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class Config {
         public final int channelCount;
         public final String codecs;

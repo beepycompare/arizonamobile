@@ -5,7 +5,7 @@ import io.reactivex.Observer;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.observers.BasicFuseableObserver;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableMap<T, U> extends AbstractObservableWithUpstream<T, U> {
     final Function<? super T, ? extends U> function;
 
@@ -19,7 +19,7 @@ public final class ObservableMap<T, U> extends AbstractObservableWithUpstream<T,
         this.source.subscribe(new MapObserver(observer, this.function));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MapObserver<T, U> extends BasicFuseableObserver<T, U> {
         final Function<? super T, ? extends U> mapper;
 

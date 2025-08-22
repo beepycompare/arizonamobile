@@ -12,7 +12,7 @@ import io.reactivex.internal.operators.maybe.MaybeMap;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeZipArray<T, R> extends Maybe<R> {
     final MaybeSource<? extends T>[] sources;
     final Function<? super Object[], ? extends R> zipper;
@@ -42,7 +42,7 @@ public final class MaybeZipArray<T, R> extends Maybe<R> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ZipCoordinator<T, R> extends AtomicInteger implements Disposable {
         private static final long serialVersionUID = -5556924161382950569L;
         final MaybeObserver<? super R> downstream;
@@ -122,7 +122,7 @@ public final class MaybeZipArray<T, R> extends Maybe<R> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ZipMaybeObserver<T> extends AtomicReference<Disposable> implements MaybeObserver<T> {
         private static final long serialVersionUID = 3323743579927613702L;
         final int index;
@@ -158,7 +158,7 @@ public final class MaybeZipArray<T, R> extends Maybe<R> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class SingletonArrayFunc implements Function<T, R> {
         SingletonArrayFunc() {
         }

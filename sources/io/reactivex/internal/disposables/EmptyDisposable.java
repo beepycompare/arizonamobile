@@ -5,7 +5,7 @@ import io.reactivex.MaybeObserver;
 import io.reactivex.Observer;
 import io.reactivex.SingleObserver;
 import io.reactivex.internal.fuseable.QueueDisposable;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public enum EmptyDisposable implements QueueDisposable<Object> {
     INSTANCE,
     NEVER;

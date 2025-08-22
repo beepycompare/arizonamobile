@@ -18,21 +18,21 @@ public interface RoutePlanner {
     /* loaded from: classes5.dex */
     public interface Plan {
         /* renamed from: cancel */
-        void mo10403cancel();
+        void mo10967cancel();
 
         /* renamed from: connectTcp */
-        ConnectResult mo10407connectTcp();
+        ConnectResult mo10971connectTcp();
 
         /* renamed from: connectTlsEtc */
-        ConnectResult mo10408connectTlsEtc();
+        ConnectResult mo10972connectTlsEtc();
 
         /* renamed from: handleSuccess */
-        RealConnection mo10404handleSuccess();
+        RealConnection mo10968handleSuccess();
 
         boolean isReady();
 
         /* renamed from: retry */
-        Plan mo10405retry();
+        Plan mo10969retry();
     }
 
     Address getAddress();

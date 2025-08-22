@@ -1,75 +1,85 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
-import java.util.List;
+import android.content.Context;
+import android.os.Bundle;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfo;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfoResult;
+import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
+import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 /* loaded from: classes4.dex */
-public final class Rg implements ProtobufConverter {
+public final class Rg implements J {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Cn f624a;
-    public final V b;
-    public final D6 c;
-    public final Bl d;
-    public final Ve e;
-    public final We f;
+    public final String f636a;
+    public final Qg b;
 
-    public Rg() {
-        this(new Cn(), new V(new C0643un()), new D6(), new Bl(), new Ve(), new We());
+    public Rg(String str) {
+        this(str, new Qg());
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0601t6 fromModel(Qg qg) {
-        C0601t6 c0601t6 = new C0601t6();
-        c0601t6.f = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(qg.f611a, c0601t6.f));
-        Nn nn = qg.b;
-        if (nn != null) {
-            Dn dn = nn.f568a;
-            if (dn != null) {
-                c0601t6.f1060a = this.f624a.fromModel(dn);
+    @Override // io.appmetrica.analytics.impl.J
+    public final AdTrackingInfoResult a(Context context) {
+        return a(context, new C0482oe());
+    }
+
+    public final AdTrackingInfoResult b(Context context) {
+        Method method = Class.forName("io.appmetrica.analytics.identifiers.internal.AdvIdentifiersProvider").getMethod("requestIdentifiers", Context.class, Bundle.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("io.appmetrica.analytics.identifiers.extra.PROVIDER", this.f636a);
+        Qg qg = this.b;
+        Object[] objArr = {context, bundle};
+        AdTrackingInfo adTrackingInfo = null;
+        Bundle bundle2 = (Bundle) method.invoke(null, objArr);
+        qg.getClass();
+        if (bundle2 != null) {
+            Bundle bundle3 = bundle2.getBundle("io.appmetrica.analytics.identifiers.extra.TRACKING_INFO");
+            if (bundle3 != null) {
+                Object obj = R5.f629a.get(bundle3.getString("io.appmetrica.analytics.identifiers.extra.PROVIDER"));
+                if (obj != null) {
+                    adTrackingInfo = new AdTrackingInfo((AdTrackingInfo.Provider) obj, bundle3.getString("io.appmetrica.analytics.identifiers.extra.ID"), bundle3.containsKey("io.appmetrica.analytics.identifiers.extra.LIMITED") ? Boolean.valueOf(bundle3.getBoolean("io.appmetrica.analytics.identifiers.extra.LIMITED")) : null);
+                } else {
+                    throw new IllegalArgumentException(("Provider " + bundle3.getString("io.appmetrica.analytics.identifiers.extra.PROVIDER") + " is invalid").toString());
+                }
             }
-            U u = nn.b;
-            if (u != null) {
-                c0601t6.b = this.b.fromModel(u);
-            }
-            List<Dl> list = nn.c;
-            if (list != null) {
-                c0601t6.e = this.d.fromModel(list);
-            }
-            c0601t6.c = (String) WrapUtils.getOrDefault(nn.g, c0601t6.c);
-            c0601t6.d = this.c.a(nn.h);
-            if (!TextUtils.isEmpty(nn.d)) {
-                c0601t6.i = this.e.fromModel(nn.d);
-            }
-            if (!TextUtils.isEmpty(nn.e)) {
-                c0601t6.j = nn.e.getBytes();
-            }
-            if (!io.a(nn.f)) {
-                c0601t6.k = this.f.fromModel(nn.f);
-            }
+            return new AdTrackingInfoResult(adTrackingInfo, IdentifierStatus.Companion.from(bundle2.getString("io.appmetrica.analytics.identifiers.extra.STATUS")), bundle2.getString("io.appmetrica.analytics.identifiers.extra.ERROR_MESSAGE"));
         }
-        return c0601t6;
+        return null;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        C0601t6 c0601t6 = (C0601t6) obj;
-        throw new UnsupportedOperationException();
+    public Rg(String str, Qg qg) {
+        this.f636a = str;
+        this.b = qg;
     }
 
-    public Rg(Cn cn, V v, D6 d6, Bl bl, Ve ve, We we) {
-        this.f624a = cn;
-        this.b = v;
-        this.c = d6;
-        this.d = bl;
-        this.e = ve;
-        this.f = we;
-    }
-
-    public final Qg a(C0601t6 c0601t6) {
-        throw new UnsupportedOperationException();
+    @Override // io.appmetrica.analytics.impl.J
+    public final AdTrackingInfoResult a(Context context, Yi yi) {
+        AdTrackingInfoResult adTrackingInfoResult;
+        AdTrackingInfoResult adTrackingInfoResult2;
+        if (ReflectionUtils.detectClassExists("io.appmetrica.analytics.identifiers.internal.AdvIdentifiersProvider")) {
+            Ln ln = (Ln) yi;
+            ln.c = 0;
+            adTrackingInfoResult = null;
+            while (ln.b()) {
+                try {
+                    return b(context);
+                } catch (InvocationTargetException e) {
+                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f636a + " adv_id: " + (e.getTargetException() != null ? e.getTargetException().getMessage() : null));
+                    adTrackingInfoResult = adTrackingInfoResult2;
+                    try {
+                        Thread.sleep(((Ln) yi).b);
+                    } catch (InterruptedException unused) {
+                    }
+                } catch (Throwable th) {
+                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f636a + " adv_id: " + th.getMessage());
+                    adTrackingInfoResult = adTrackingInfoResult2;
+                    Thread.sleep(((Ln) yi).b);
+                }
+            }
+        } else {
+            adTrackingInfoResult = new AdTrackingInfoResult(null, IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE, "Module io.appmetrica.analytics:analytics-identifiers does not exist");
+        }
+        return adTrackingInfoResult == null ? new AdTrackingInfoResult() : adTrackingInfoResult;
     }
 }

@@ -7,7 +7,7 @@ import androidx.media3.common.util.Log;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class IcyHeaders implements Metadata.Entry {
     public static final String REQUEST_HEADER_ENABLE_METADATA_NAME = "Icy-MetaData";
     public static final String REQUEST_HEADER_ENABLE_METADATA_VALUE = "1";

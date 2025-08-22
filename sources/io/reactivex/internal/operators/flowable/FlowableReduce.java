@@ -10,7 +10,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableReduce<T> extends AbstractFlowableWithUpstream<T, T> {
     final BiFunction<T, T, T> reducer;
 
@@ -24,7 +24,7 @@ public final class FlowableReduce<T> extends AbstractFlowableWithUpstream<T, T> 
         this.source.subscribe((FlowableSubscriber) new ReduceSubscriber(subscriber, this.reducer));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ReduceSubscriber<T> extends DeferredScalarSubscription<T> implements FlowableSubscriber<T> {
         private static final long serialVersionUID = -4663883003264602070L;
         final BiFunction<T, T, T> reducer;

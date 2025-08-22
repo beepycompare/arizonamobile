@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.disposables.SequentialDisposable;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleSubscribeOn<T> extends Single<T> {
     final Scheduler scheduler;
     final SingleSource<? extends T> source;
@@ -25,7 +25,7 @@ public final class SingleSubscribeOn<T> extends Single<T> {
         subscribeOnObserver.task.replace(this.scheduler.scheduleDirect(subscribeOnObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SubscribeOnObserver<T> extends AtomicReference<Disposable> implements SingleObserver<T>, Disposable, Runnable {
         private static final long serialVersionUID = 7000911171163930287L;
         final SingleObserver<? super T> downstream;

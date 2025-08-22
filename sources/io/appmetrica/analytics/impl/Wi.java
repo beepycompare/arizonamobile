@@ -1,99 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import android.os.Bundle;
+import io.appmetrica.analytics.internal.IAppMetricaService;
 /* loaded from: classes4.dex */
-public final class Wi extends MessageNano {
-    public static final int c = 0;
-    public static final int d = 1;
-    public static final int e = 2;
-    public static final int f = 3;
-    public static final int g = 4;
-    public static volatile Wi[] h;
+public final class Wi extends Ph {
+    public final Rf e;
 
-    /* renamed from: a  reason: collision with root package name */
-    public int f704a;
-    public int b;
-
-    public Wi() {
-        a();
+    public Wi(C0418m0 c0418m0, InterfaceC0233el interfaceC0233el, Rf rf) {
+        super(c0418m0, interfaceC0233el);
+        this.e = rf;
     }
 
-    public static Wi[] b() {
-        if (h == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (h == null) {
-                    h = new Wi[0];
-                }
-            }
+    @Override // io.appmetrica.analytics.impl.Ph
+    public final void a(IAppMetricaService iAppMetricaService) {
+        Bundle bundle = new Bundle();
+        Rf rf = this.e;
+        synchronized (rf) {
+            bundle.putParcelable("PROCESS_CFG_OBJ", rf);
         }
-        return h;
-    }
-
-    public final Wi a() {
-        this.f704a = 0;
-        this.b = 0;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f704a;
-        if (i != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(1, i);
-        }
-        int i2 = this.b;
-        return i2 != 0 ? CodedOutputByteBufferNano.computeInt32Size(2, i2) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f704a;
-        if (i != 0) {
-            codedOutputByteBufferNano.writeUInt32(1, i);
-        }
-        int i2 = this.b;
-        if (i2 != 0) {
-            codedOutputByteBufferNano.writeInt32(2, i2);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final Wi mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 8) {
-                this.f704a = codedInputByteBufferNano.readUInt32();
-            } else if (readTag != 16) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                int readInt32 = codedInputByteBufferNano.readInt32();
-                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2 || readInt32 == 3 || readInt32 == 4) {
-                    this.b = readInt32;
-                }
-            }
-        }
-        return this;
-    }
-
-    public static Wi b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new Wi().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static Wi a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (Wi) MessageNano.mergeFrom(new Wi(), bArr);
+        iAppMetricaService.resumeUserSession(bundle);
     }
 }

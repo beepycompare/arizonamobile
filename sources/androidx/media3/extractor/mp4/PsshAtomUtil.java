@@ -5,7 +5,7 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.container.Mp4Box;
 import java.nio.ByteBuffer;
 import java.util.UUID;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PsshAtomUtil {
     private static final String TAG = "PsshAtomUtil";
 
@@ -119,7 +119,7 @@ public final class PsshAtomUtil {
         return new PsshAtom(uuid, parseFullBoxVersion, bArr2, uuidArr);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class PsshAtom {
         public final UUID[] keyIds;
         public final byte[] schemeData;

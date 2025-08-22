@@ -4,7 +4,7 @@ import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.SequentialDisposable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableSwitchIfEmpty<T> extends AbstractObservableWithUpstream<T, T> {
     final ObservableSource<? extends T> other;
 
@@ -20,7 +20,7 @@ public final class ObservableSwitchIfEmpty<T> extends AbstractObservableWithUpst
         this.source.subscribe(switchIfEmptyObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SwitchIfEmptyObserver<T> implements Observer<T> {
         final Observer<? super T> downstream;
         final ObservableSource<? extends T> other;

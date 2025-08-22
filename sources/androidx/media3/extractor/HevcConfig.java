@@ -6,7 +6,7 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.container.NalUnitUtil;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class HevcConfig {
     public final int bitdepthChroma;
     public final int bitdepthLuma;

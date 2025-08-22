@@ -13,7 +13,7 @@ import io.reactivex.internal.fuseable.FuseToObservable;
 import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableSequenceEqualSingle<T> extends Single<Boolean> implements FuseToObservable<Boolean> {
     final int bufferSize;
     final BiPredicate<? super T, ? super T> comparer;
@@ -39,7 +39,7 @@ public final class ObservableSequenceEqualSingle<T> extends Single<Boolean> impl
         return RxJavaPlugins.onAssembly(new ObservableSequenceEqual(this.first, this.second, this.comparer, this.bufferSize));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class EqualCoordinator<T> extends AtomicInteger implements Disposable {
         private static final long serialVersionUID = -6178010334400373240L;
         volatile boolean cancelled;
@@ -169,7 +169,7 @@ public final class ObservableSequenceEqualSingle<T> extends Single<Boolean> impl
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class EqualObserver<T> implements Observer<T> {
         volatile boolean done;
         Throwable error;

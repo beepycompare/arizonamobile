@@ -11,7 +11,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableMergeIterable extends Completable {
     final Iterable<? extends CompletableSource> sources;
 
@@ -63,7 +63,7 @@ public final class CompletableMergeIterable extends Completable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MergeCompletableObserver extends AtomicBoolean implements CompletableObserver {
         private static final long serialVersionUID = -7730517613164279224L;
         final CompletableObserver downstream;

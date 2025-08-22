@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.util.AtomicThrowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableMergeDelayErrorArray extends Completable {
     final CompletableSource[] sources;
 
@@ -44,7 +44,7 @@ public final class CompletableMergeDelayErrorArray extends Completable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MergeInnerCompletableObserver implements CompletableObserver {
         final CompletableObserver downstream;
         final AtomicThrowable error;

@@ -36,7 +36,7 @@ final class TextFieldDefaults$sam$androidx_compose_ui_graphics_ColorProducer$0 i
 
     @Override // androidx.compose.ui.graphics.ColorProducer
     /* renamed from: invoke-0d7_KjU */
-    public final /* synthetic */ long mo1864invoke0d7_KjU() {
-        return ((Color) this.function.invoke()).m4088unboximpl();
+    public final /* synthetic */ long mo2171invoke0d7_KjU() {
+        return ((Color) this.function.invoke()).m4547unboximpl();
     }
 }

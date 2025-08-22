@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: DonateGetCategoriesUseCase.kt */
 @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetCategoriesUseCase", f = "DonateGetCategoriesUseCase.kt", i = {}, l = {10}, m = "invoke", n = {}, s = {})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class DonateGetCategoriesUseCase$invoke$1 extends ContinuationImpl {
     int label;
     /* synthetic */ Object result;

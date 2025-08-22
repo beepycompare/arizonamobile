@@ -10,7 +10,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.NoSuchElementException;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSingleSingle<T> extends Single<T> implements FuseToFlowable<T> {
     final T defaultValue;
     final Flowable<T> source;
@@ -30,7 +30,7 @@ public final class FlowableSingleSingle<T> extends Single<T> implements FuseToFl
         return RxJavaPlugins.onAssembly(new FlowableSingle(this.source, this.defaultValue, true));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SingleElementSubscriber<T> implements FlowableSubscriber<T>, Disposable {
         final T defaultValue;
         boolean done;

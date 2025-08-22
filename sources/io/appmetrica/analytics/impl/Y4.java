@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Y4 implements R2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ P4 f728a;
+    public final /* synthetic */ P4 f735a;
 
     public Y4(P4 p4) {
-        this.f728a = p4;
+        this.f735a = p4;
     }
 
     @Override // io.appmetrica.analytics.impl.R2
-    public final boolean a(Object obj, C0402l6 c0402l6) {
-        return ((V4) obj).a(c0402l6, this.f728a);
+    public final boolean a(Object obj, C0399l6 c0399l6) {
+        return ((V4) obj).a(c0399l6, this.f735a);
     }
 }

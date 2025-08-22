@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableScanSeed<T, R> extends AbstractFlowableWithUpstream<T, R> {
     final BiFunction<R, ? super T, R> accumulator;
     final Callable<R> seedSupplier;
@@ -37,7 +37,7 @@ public final class FlowableScanSeed<T, R> extends AbstractFlowableWithUpstream<T
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ScanSeedSubscriber<T, R> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = -1776795561228106469L;
         final BiFunction<R, ? super T, R> accumulator;

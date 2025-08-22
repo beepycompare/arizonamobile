@@ -14,7 +14,7 @@ public final class IFramePlayerOptions {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: default  reason: not valid java name */
-    private static final IFramePlayerOptions f88default = new Builder().controls(1).build();
+    private static final IFramePlayerOptions f82default = new Builder().controls(1).build();
     private final JSONObject playerOptions;
 
     public /* synthetic */ IFramePlayerOptions(JSONObject jSONObject, DefaultConstructorMarker defaultConstructorMarker) {
@@ -37,7 +37,7 @@ public final class IFramePlayerOptions {
         }
 
         public final IFramePlayerOptions getDefault() {
-            return IFramePlayerOptions.f88default;
+            return IFramePlayerOptions.f82default;
         }
     }
 

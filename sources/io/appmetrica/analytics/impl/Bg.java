@@ -1,119 +1,91 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import android.os.Bundle;
+import android.os.Handler;
+import androidx.core.view.InputDeviceCompat;
+import io.appmetrica.analytics.DeferredDeeplinkListener;
+import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import java.util.Set;
 /* loaded from: classes4.dex */
-public final class Bg extends MessageNano {
-    public static final int e = 0;
-    public static final int f = 1;
-    public static final int g = 2;
-    public static volatile Bg[] h;
+public final class Bg implements InterfaceC0708xg {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f359a;
-    public long b;
-    public long c;
-    public int d;
+    public final boolean f365a;
+    public final Oi b;
+    public final C0408lf c;
+    public final C0272g8 d;
+    public final Jg e;
+    public final Handler f;
 
-    public Bg() {
-        a();
+    public Bg(Oi oi, C0408lf c0408lf, Handler handler) {
+        this(oi, c0408lf, handler, c0408lf.s());
     }
 
-    public static Bg[] b() {
-        if (h == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (h == null) {
-                    h = new Bg[0];
-                }
-            }
+    public final void a() {
+        if (this.f365a) {
+            return;
         }
-        return h;
+        Oi oi = this.b;
+        Lg lg = new Lg(this.f, this);
+        oi.getClass();
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver", lg);
+        PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
+        Set set = T9.f659a;
+        EnumC0728yb enumC0728yb = EnumC0728yb.EVENT_TYPE_UNDEFINED;
+        C0320i4 c0320i4 = new C0320i4("", "", InputDeviceCompat.SOURCE_TOUCHSCREEN, 0, anonymousInstance);
+        c0320i4.m = bundle;
+        C0114a5 c0114a5 = oi.f591a;
+        oi.a(Oi.a(c0320i4, c0114a5), c0114a5, 1, null);
     }
 
-    public final Bg a() {
-        this.f359a = "";
-        this.b = 0L;
-        this.c = 0L;
-        this.d = 0;
-        this.cachedSize = -1;
-        return this;
+    public Bg(Oi oi, C0408lf c0408lf, Handler handler, boolean z) {
+        this(oi, c0408lf, handler, z, new C0272g8(z), new Jg());
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f359a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f359a);
-        }
-        long j = this.b;
-        if (j != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt64Size(2, j);
-        }
-        long j2 = this.c;
-        if (j2 != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt64Size(3, j2);
-        }
-        int i = this.d;
-        return i != 0 ? CodedOutputByteBufferNano.computeInt32Size(4, i) + computeSerializedSize : computeSerializedSize;
+    public Bg(Oi oi, C0408lf c0408lf, Handler handler, boolean z, C0272g8 c0272g8, Jg jg) {
+        this.b = oi;
+        this.c = c0408lf;
+        this.f365a = z;
+        this.d = c0272g8;
+        this.e = jg;
+        this.f = handler;
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f359a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f359a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0708xg
+    public final void a(Fg fg) {
+        String str = fg == null ? null : fg.f436a;
+        if (this.f365a) {
+            return;
         }
-        long j = this.b;
-        if (j != 0) {
-            codedOutputByteBufferNano.writeUInt64(2, j);
+        synchronized (this) {
+            C0272g8 c0272g8 = this.d;
+            this.e.getClass();
+            c0272g8.d = Jg.a(str);
+            c0272g8.a();
         }
-        long j2 = this.c;
-        if (j2 != 0) {
-            codedOutputByteBufferNano.writeUInt64(3, j2);
-        }
-        int i = this.d;
-        if (i != 0) {
-            codedOutputByteBufferNano.writeInt32(4, i);
-        }
-        super.writeTo(codedOutputByteBufferNano);
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final Bg mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 10) {
-                this.f359a = codedInputByteBufferNano.readString();
-            } else if (readTag == 16) {
-                this.b = codedInputByteBufferNano.readUInt64();
-            } else if (readTag == 24) {
-                this.c = codedInputByteBufferNano.readUInt64();
-            } else if (readTag != 32) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                int readInt32 = codedInputByteBufferNano.readInt32();
-                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2) {
-                    this.d = readInt32;
-                }
-            }
+    public final synchronized void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
+        C0272g8 c0272g8 = this.d;
+        c0272g8.c = deferredDeeplinkParametersListener;
+        if (c0272g8.f869a) {
+            c0272g8.a(1);
+        } else {
+            c0272g8.a();
         }
-        return this;
+        this.c.u();
     }
 
-    public static Bg b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new Bg().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static Bg a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (Bg) MessageNano.mergeFrom(new Bg(), bArr);
+    public final synchronized void a(DeferredDeeplinkListener deferredDeeplinkListener) {
+        C0272g8 c0272g8 = this.d;
+        c0272g8.b = deferredDeeplinkListener;
+        if (c0272g8.f869a) {
+            c0272g8.a(1);
+        } else {
+            c0272g8.a();
+        }
+        this.c.u();
     }
 }

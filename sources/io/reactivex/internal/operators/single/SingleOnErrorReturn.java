@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.CompositeException;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Function;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleOnErrorReturn<T> extends Single<T> {
     final SingleSource<? extends T> source;
     final T value;
@@ -24,7 +24,7 @@ public final class SingleOnErrorReturn<T> extends Single<T> {
         this.source.subscribe(new OnErrorReturn(singleObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class OnErrorReturn implements SingleObserver<T> {
         private final SingleObserver<? super T> observer;
 

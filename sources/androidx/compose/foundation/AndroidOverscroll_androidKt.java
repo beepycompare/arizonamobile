@@ -13,16 +13,16 @@ import androidx.compose.ui.platform.CompositionLocalsKt;
 import androidx.compose.ui.unit.Density;
 import kotlin.Metadata;
 /* compiled from: AndroidOverscroll.android.kt */
-@Metadata(d1 = {"\u00006\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\u001a\u001a\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\tH\u0002ø\u0001\u0000¢\u0006\u0004\b\n\u0010\u000b\u001a\u000f\u0010\f\u001a\u0004\u0018\u00010\rH\u0001¢\u0006\u0002\u0010\u000e\u001a&\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00012\b\b\u0002\u0010\u0012\u001a\u00020\u0004H\u0007ø\u0001\u0000¢\u0006\u0004\b\u0013\u0010\u0014\u001a\u000e\u0010\u0015\u001a\u0004\u0018\u00010\u0010*\u00020\u0016H\u0000\"\u0010\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\u0005\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u0017"}, d2 = {"DefaultGlowColor", "Landroidx/compose/ui/graphics/Color;", "J", "DefaultGlowPaddingValues", "Landroidx/compose/foundation/layout/PaddingValues;", "FlingDestretchFactor", "", "destretchMultiplier", "source", "Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;", "destretchMultiplier-GyEprt8", "(I)F", "rememberPlatformOverscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/OverscrollEffect;", "rememberPlatformOverscrollFactory", "Landroidx/compose/foundation/OverscrollFactory;", "glowColor", "glowDrawPadding", "rememberPlatformOverscrollFactory-3J-VO9M", "(JLandroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/OverscrollFactory;", "defaultOverscrollFactory", "Landroidx/compose/runtime/CompositionLocalAccessorScope;", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\u001a#\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0004\b\u0006\u0010\u0007\u001a\u000e\u0010\b\u001a\u0004\u0018\u00010\u0001*\u00020\tH\u0000\u001a\u000f\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0001¢\u0006\u0002\u0010\f\u001a\u0017\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010H\u0002¢\u0006\u0004\b\u0011\u0010\u0012\"\u000e\u0010\u0013\u001a\u00020\u000eX\u0082T¢\u0006\u0002\n\u0000\"\u0010\u0010\u0014\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0015\"\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"rememberPlatformOverscrollFactory", "Landroidx/compose/foundation/OverscrollFactory;", "glowColor", "Landroidx/compose/ui/graphics/Color;", "glowDrawPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "rememberPlatformOverscrollFactory-3J-VO9M", "(JLandroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/OverscrollFactory;", "defaultOverscrollFactory", "Landroidx/compose/runtime/CompositionLocalAccessorScope;", "rememberPlatformOverscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/OverscrollEffect;", "destretchMultiplier", "", "source", "Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;", "destretchMultiplier-GyEprt8", "(I)F", "FlingDestretchFactor", "DefaultGlowColor", "J", "DefaultGlowPaddingValues", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class AndroidOverscroll_androidKt {
     private static final long DefaultGlowColor = ColorKt.Color(4284900966L);
-    private static final PaddingValues DefaultGlowPaddingValues = PaddingKt.m733PaddingValuesYgX7TsA$default(0.0f, 0.0f, 3, null);
+    private static final PaddingValues DefaultGlowPaddingValues = PaddingKt.m827PaddingValuesYgX7TsA$default(0.0f, 0.0f, 3, null);
     private static final float FlingDestretchFactor = 4.0f;
 
     /* renamed from: rememberPlatformOverscrollFactory-3J-VO9M */
-    public static final OverscrollFactory m245rememberPlatformOverscrollFactory3JVO9M(long j, PaddingValues paddingValues, Composer composer, int i, int i2) {
-        ComposerKt.sourceInformationMarkerStart(composer, -2017030679, "C(rememberPlatformOverscrollFactory)P(0:c#ui.graphics.Color)86@3974L7,87@4013L7:AndroidOverscroll.android.kt#71ulvw");
+    public static final OverscrollFactory m255rememberPlatformOverscrollFactory3JVO9M(long j, PaddingValues paddingValues, Composer composer, int i, int i2) {
+        ComposerKt.sourceInformationMarkerStart(composer, -2017030679, "C(rememberPlatformOverscrollFactory)N(glowColor:c#ui.graphics.Color,glowDrawPadding)86@3975L7,87@4014L7:AndroidOverscroll.android.kt#71ulvw");
         if ((i2 & 1) != 0) {
             j = DefaultGlowColor;
         }
@@ -56,12 +56,12 @@ public final class AndroidOverscroll_androidKt {
         if (overscrollConfiguration == null) {
             return null;
         }
-        return new AndroidEdgeEffectOverscrollFactory(context, density, overscrollConfiguration.m336getGlowColor0d7_KjU(), overscrollConfiguration.getDrawPadding(), null);
+        return new AndroidEdgeEffectOverscrollFactory(context, density, overscrollConfiguration.m357getGlowColor0d7_KjU(), overscrollConfiguration.getDrawPadding(), null);
     }
 
     public static final OverscrollEffect rememberPlatformOverscrollEffect(Composer composer, int i) {
         AndroidEdgeEffectOverscrollEffect androidEdgeEffectOverscrollEffect;
-        ComposerKt.sourceInformationMarkerStart(composer, 1569526143, "C(rememberPlatformOverscrollEffect)108@4780L7,109@4819L7,110@4873L7:AndroidOverscroll.android.kt#71ulvw");
+        ComposerKt.sourceInformationMarkerStart(composer, 1569526143, "C(rememberPlatformOverscrollEffect)108@4781L7,109@4820L7,110@4874L7:AndroidOverscroll.android.kt#71ulvw");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1569526143, i, -1, "androidx.compose.foundation.rememberPlatformOverscrollEffect (AndroidOverscroll.android.kt:107)");
         }
@@ -78,17 +78,17 @@ public final class AndroidOverscroll_androidKt {
         ComposerKt.sourceInformationMarkerEnd(composer);
         OverscrollConfiguration overscrollConfiguration = (OverscrollConfiguration) consume3;
         if (overscrollConfiguration == null) {
-            composer.startReplaceGroup(-461477086);
+            composer.startReplaceGroup(-1555310353);
             composer.endReplaceGroup();
             androidEdgeEffectOverscrollEffect = null;
         } else {
-            composer.startReplaceGroup(-461444412);
-            ComposerKt.sourceInformation(composer, "114@4948L226");
-            ComposerKt.sourceInformationMarkerStart(composer, 1786230318, "CC(remember):AndroidOverscroll.android.kt#9igjgp");
+            composer.startReplaceGroup(-1555277648);
+            ComposerKt.sourceInformation(composer, "114@4949L227");
+            ComposerKt.sourceInformationMarkerStart(composer, 781114050, "CC(remember):AndroidOverscroll.android.kt#9igjgp");
             boolean changed = composer.changed(context) | composer.changed(density) | composer.changed(overscrollConfiguration);
             Object rememberedValue = composer.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                Object androidEdgeEffectOverscrollEffect2 = new AndroidEdgeEffectOverscrollEffect(context, density, overscrollConfiguration.m336getGlowColor0d7_KjU(), overscrollConfiguration.getDrawPadding(), null);
+                Object androidEdgeEffectOverscrollEffect2 = new AndroidEdgeEffectOverscrollEffect(context, density, overscrollConfiguration.m357getGlowColor0d7_KjU(), overscrollConfiguration.getDrawPadding(), null);
                 composer.updateRememberedValue(androidEdgeEffectOverscrollEffect2);
                 rememberedValue = androidEdgeEffectOverscrollEffect2;
             }
@@ -104,7 +104,7 @@ public final class AndroidOverscroll_androidKt {
     }
 
     /* renamed from: destretchMultiplier-GyEprt8 */
-    public static final float m244destretchMultiplierGyEprt8(int i) {
-        return NestedScrollSource.m5194equalsimpl0(i, NestedScrollSource.Companion.m5205getSideEffectWNlRxjI()) ? 4.0f : 1.0f;
+    public static final float m254destretchMultiplierGyEprt8(int i) {
+        return NestedScrollSource.m5707equalsimpl0(i, NestedScrollSource.Companion.m5718getSideEffectWNlRxjI()) ? 4.0f : 1.0f;
     }
 }

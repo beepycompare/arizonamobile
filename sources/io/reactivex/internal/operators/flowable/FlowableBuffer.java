@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableBuffer<T, C extends Collection<? super T>> extends AbstractFlowableWithUpstream<T, C> {
     final Callable<C> bufferSupplier;
     final int size;
@@ -44,7 +44,7 @@ public final class FlowableBuffer<T, C extends Collection<? super T>> extends Ab
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class PublisherBufferExactSubscriber<T, C extends Collection<? super T>> implements FlowableSubscriber<T>, Subscription {
         C buffer;
         final Callable<C> bufferSupplier;
@@ -132,7 +132,7 @@ public final class FlowableBuffer<T, C extends Collection<? super T>> extends Ab
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class PublisherBufferSkipSubscriber<T, C extends Collection<? super T>> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = -5616169793639412593L;
         C buffer;
@@ -233,7 +233,7 @@ public final class FlowableBuffer<T, C extends Collection<? super T>> extends Ab
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class PublisherBufferOverlappingSubscriber<T, C extends Collection<? super T>> extends AtomicLong implements FlowableSubscriber<T>, Subscription, BooleanSupplier {
         private static final long serialVersionUID = -7370244972039324525L;
         final Callable<C> bufferSupplier;

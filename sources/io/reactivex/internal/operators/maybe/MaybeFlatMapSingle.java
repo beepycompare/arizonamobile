@@ -12,7 +12,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.NoSuchElementException;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeFlatMapSingle<T, R> extends Single<R> {
     final Function<? super T, ? extends SingleSource<? extends R>> mapper;
     final MaybeSource<T> source;
@@ -27,7 +27,7 @@ public final class MaybeFlatMapSingle<T, R> extends Single<R> {
         this.source.subscribe(new FlatMapMaybeObserver(singleObserver, this.mapper));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FlatMapMaybeObserver<T, R> extends AtomicReference<Disposable> implements MaybeObserver<T>, Disposable {
         private static final long serialVersionUID = 4827726964688405508L;
         final SingleObserver<? super R> downstream;
@@ -80,7 +80,7 @@ public final class MaybeFlatMapSingle<T, R> extends Single<R> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FlatMapSingleObserver<R> implements SingleObserver<R> {
         final SingleObserver<? super R> downstream;
         final AtomicReference<Disposable> parent;

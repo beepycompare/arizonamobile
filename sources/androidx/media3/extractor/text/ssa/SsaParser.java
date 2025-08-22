@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SsaParser implements SubtitleParser {
     public static final int CUE_REPLACEMENT_BEHAVIOR = 1;
     private static final float DEFAULT_MARGIN = 0.05f;

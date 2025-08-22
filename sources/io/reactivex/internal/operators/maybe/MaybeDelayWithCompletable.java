@@ -8,7 +8,7 @@ import io.reactivex.MaybeSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeDelayWithCompletable<T> extends Maybe<T> {
     final CompletableSource other;
     final MaybeSource<T> source;
@@ -23,7 +23,7 @@ public final class MaybeDelayWithCompletable<T> extends Maybe<T> {
         this.other.subscribe(new OtherObserver(maybeObserver, this.source));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OtherObserver<T> extends AtomicReference<Disposable> implements CompletableObserver, Disposable {
         private static final long serialVersionUID = 703409937383992161L;
         final MaybeObserver<? super T> downstream;
@@ -62,7 +62,7 @@ public final class MaybeDelayWithCompletable<T> extends Maybe<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DelayWithMainObserver<T> implements MaybeObserver<T> {
         final MaybeObserver<? super T> downstream;
         final AtomicReference<Disposable> parent;

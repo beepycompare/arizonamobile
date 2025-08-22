@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
 public final class UByteArrayKt {
     /* renamed from: ubyteArrayOf-GBYM_sE  reason: not valid java name */
-    private static final byte[] m8593ubyteArrayOfGBYM_sE(byte... elements) {
+    private static final byte[] m9157ubyteArrayOfGBYM_sE(byte... elements) {
         Intrinsics.checkNotNullParameter(elements, "elements");
         return elements;
     }
@@ -16,8 +16,8 @@ public final class UByteArrayKt {
         Intrinsics.checkNotNullParameter(init, "init");
         byte[] bArr = new byte[i];
         for (int i2 = 0; i2 < i; i2++) {
-            bArr[i2] = init.invoke(Integer.valueOf(i2)).m8568unboximpl();
+            bArr[i2] = init.invoke(Integer.valueOf(i2)).m9133unboximpl();
         }
-        return UByteArray.m8577constructorimpl(bArr);
+        return UByteArray.m9141constructorimpl(bArr);
     }
 }

@@ -11,47 +11,21 @@ import androidx.compose.ui.semantics.SemanticsPropertiesKt;
 import androidx.compose.ui.semantics.SemanticsPropertyReceiver;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import kotlin.Metadata;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.DebugMetadata;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineScope;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LazyLayoutSemantics.kt */
-@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002B3\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\u000b¢\u0006\u0002\u0010\rJ4\u0010\u001d\u001a\u00020\u001e2\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000bJ\b\u0010\u001f\u001a\u00020\u001eH\u0002J\f\u0010 \u001a\u00020\u001e*\u00020!H\u0016R\u0014\u0010\u000e\u001a\u00020\u000f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0011R\u001a\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\u00020\u000b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017R\u0014\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082.¢\u0006\u0002\n\u0000R\u001c\u0010\u001a\u001a\u0010\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020\u000b\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001b\u001a\u00020\u000b8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u0017R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticsModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "itemProviderLambda", "Lkotlin/Function0;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemProvider;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "userScrollEnabled", "", "reverseScrolling", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;Landroidx/compose/foundation/gestures/Orientation;ZZ)V", "collectionInfo", "Landroidx/compose/ui/semantics/CollectionInfo;", "getCollectionInfo", "()Landroidx/compose/ui/semantics/CollectionInfo;", "indexForKeyMapping", "Lkotlin/Function1;", "", "", "isVertical", "()Z", "scrollAxisRange", "Landroidx/compose/ui/semantics/ScrollAxisRange;", "scrollToIndexAction", "shouldAutoInvalidate", "getShouldAutoInvalidate", "update", "", "updateCachedSemanticsValues", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002B5\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\u000b¢\u0006\u0004\b\r\u0010\u000eJ4\u0010\u001e\u001a\u00020\u001f2\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000bJ\f\u0010 \u001a\u00020\u001f*\u00020!H\u0016J\b\u0010\"\u001a\u00020\u001fH\u0002R\u0014\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\u00020\u000b8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0011R\u0014\u0010\u0012\u001a\u00020\u000b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0011R\u0014\u0010\u0013\u001a\u00020\u00148BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0016R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082.¢\u0006\u0002\n\u0000R\u001a\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u001c0\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u001d\u001a\u0010\u0012\u0004\u0012\u00020\u001c\u0012\u0004\u0012\u00020\u000b\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticsModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "itemProviderLambda", "Lkotlin/Function0;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemProvider;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "userScrollEnabled", "", "reverseScrolling", "<init>", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;Landroidx/compose/foundation/gestures/Orientation;ZZ)V", "shouldAutoInvalidate", "getShouldAutoInvalidate", "()Z", "isVertical", "collectionInfo", "Landroidx/compose/ui/semantics/CollectionInfo;", "getCollectionInfo", "()Landroidx/compose/ui/semantics/CollectionInfo;", "scrollAxisRange", "Landroidx/compose/ui/semantics/ScrollAxisRange;", "indexForKeyMapping", "Lkotlin/Function1;", "", "", "scrollToIndexAction", "update", "", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "updateCachedSemanticsValues", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-final class LazyLayoutSemanticsModifierNode extends Modifier.Node implements SemanticsModifierNode {
-    private final Function1<Object, Integer> indexForKeyMapping = new Function1<Object, Integer>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$indexForKeyMapping$1
-        /* JADX INFO: Access modifiers changed from: package-private */
-        {
-            super(1);
-        }
-
-        /* JADX WARN: Can't rename method to resolve collision */
+public final class LazyLayoutSemanticsModifierNode extends Modifier.Node implements SemanticsModifierNode {
+    private final Function1<Object, Integer> indexForKeyMapping = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
-        public final Integer invoke(Object obj) {
-            Function0 function0;
-            function0 = LazyLayoutSemanticsModifierNode.this.itemProviderLambda;
-            LazyLayoutItemProvider lazyLayoutItemProvider = (LazyLayoutItemProvider) function0.invoke();
-            int itemCount = lazyLayoutItemProvider.getItemCount();
-            int i = 0;
-            while (true) {
-                if (i >= itemCount) {
-                    i = -1;
-                    break;
-                } else if (Intrinsics.areEqual(lazyLayoutItemProvider.getKey(i), obj)) {
-                    break;
-                } else {
-                    i++;
-                }
-            }
-            return Integer.valueOf(i);
+        public final Object invoke(Object obj) {
+            int indexForKeyMapping$lambda$0;
+            indexForKeyMapping$lambda$0 = LazyLayoutSemanticsModifierNode.indexForKeyMapping$lambda$0(LazyLayoutSemanticsModifierNode.this, obj);
+            return Integer.valueOf(indexForKeyMapping$lambda$0);
         }
     };
     private Function0<? extends LazyLayoutItemProvider> itemProviderLambda;
@@ -82,6 +56,18 @@ final class LazyLayoutSemanticsModifierNode extends Modifier.Node implements Sem
 
     private final CollectionInfo getCollectionInfo() {
         return this.state.collectionInfo();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final int indexForKeyMapping$lambda$0(LazyLayoutSemanticsModifierNode lazyLayoutSemanticsModifierNode, Object obj) {
+        LazyLayoutItemProvider invoke = lazyLayoutSemanticsModifierNode.itemProviderLambda.invoke();
+        int itemCount = invoke.getItemCount();
+        for (int i = 0; i < itemCount; i++) {
+            if (Intrinsics.areEqual(invoke.getKey(i), obj)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public final void update(Function0<? extends LazyLayoutItemProvider> function0, LazyLayoutSemanticState lazyLayoutSemanticState, Orientation orientation, boolean z, boolean z2) {
@@ -123,124 +109,65 @@ final class LazyLayoutSemanticsModifierNode extends Modifier.Node implements Sem
         if (function1 != null) {
             SemanticsPropertiesKt.scrollToIndex$default(semanticsPropertyReceiver, null, function1, 1, null);
         }
-        SemanticsPropertiesKt.getScrollViewportLength$default(semanticsPropertyReceiver, null, new Function0<Float>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$applySemantics$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        SemanticsPropertiesKt.getScrollViewportLength$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
-            public final Float invoke() {
-                LazyLayoutSemanticState lazyLayoutSemanticState;
-                LazyLayoutSemanticState lazyLayoutSemanticState2;
-                lazyLayoutSemanticState = LazyLayoutSemanticsModifierNode.this.state;
-                int viewport = lazyLayoutSemanticState.getViewport();
-                lazyLayoutSemanticState2 = LazyLayoutSemanticsModifierNode.this.state;
-                return Float.valueOf(viewport - lazyLayoutSemanticState2.getContentPadding());
+            public final Object invoke() {
+                Float applySemantics$lambda$2;
+                applySemantics$lambda$2 = LazyLayoutSemanticsModifierNode.applySemantics$lambda$2(LazyLayoutSemanticsModifierNode.this);
+                return applySemantics$lambda$2;
             }
         }, 1, null);
         SemanticsPropertiesKt.setCollectionInfo(semanticsPropertyReceiver, getCollectionInfo());
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Float applySemantics$lambda$2(LazyLayoutSemanticsModifierNode lazyLayoutSemanticsModifierNode) {
+        return Float.valueOf(lazyLayoutSemanticsModifierNode.state.getViewport() - lazyLayoutSemanticsModifierNode.state.getContentPadding());
+    }
+
     private final void updateCachedSemanticsValues() {
-        this.scrollAxisRange = new ScrollAxisRange(new Function0<Float>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$updateCachedSemanticsValues$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        this.scrollAxisRange = new ScrollAxisRange(new Function0() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
-            public final Float invoke() {
-                LazyLayoutSemanticState lazyLayoutSemanticState;
-                lazyLayoutSemanticState = LazyLayoutSemanticsModifierNode.this.state;
-                return Float.valueOf(lazyLayoutSemanticState.getScrollOffset());
+            public final Object invoke() {
+                float updateCachedSemanticsValues$lambda$3;
+                updateCachedSemanticsValues$lambda$3 = LazyLayoutSemanticsModifierNode.updateCachedSemanticsValues$lambda$3(LazyLayoutSemanticsModifierNode.this);
+                return Float.valueOf(updateCachedSemanticsValues$lambda$3);
             }
-        }, new Function0<Float>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$updateCachedSemanticsValues$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        }, new Function0() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
-            public final Float invoke() {
-                LazyLayoutSemanticState lazyLayoutSemanticState;
-                lazyLayoutSemanticState = LazyLayoutSemanticsModifierNode.this.state;
-                return Float.valueOf(lazyLayoutSemanticState.getMaxScrollOffset());
+            public final Object invoke() {
+                float updateCachedSemanticsValues$lambda$4;
+                updateCachedSemanticsValues$lambda$4 = LazyLayoutSemanticsModifierNode.updateCachedSemanticsValues$lambda$4(LazyLayoutSemanticsModifierNode.this);
+                return Float.valueOf(updateCachedSemanticsValues$lambda$4);
             }
         }, this.reverseScrolling);
-        this.scrollToIndexAction = this.userScrollEnabled ? new Function1<Integer, Boolean>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$updateCachedSemanticsValues$3
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        this.scrollToIndexAction = this.userScrollEnabled ? new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Boolean invoke(Integer num) {
-                return invoke(num.intValue());
-            }
-
-            public final Boolean invoke(int i) {
-                Function0 function0;
-                function0 = LazyLayoutSemanticsModifierNode.this.itemProviderLambda;
-                LazyLayoutItemProvider lazyLayoutItemProvider = (LazyLayoutItemProvider) function0.invoke();
-                if (!(i >= 0 && i < lazyLayoutItemProvider.getItemCount())) {
-                    InlineClassHelperKt.throwIllegalArgumentException("Can't scroll to index " + i + ", it is out of bounds [0, " + lazyLayoutItemProvider.getItemCount() + ')');
-                }
-                BuildersKt__Builders_commonKt.launch$default(LazyLayoutSemanticsModifierNode.this.getCoroutineScope(), null, null, new AnonymousClass2(LazyLayoutSemanticsModifierNode.this, i, null), 3, null);
-                return true;
-            }
-
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* compiled from: LazyLayoutSemantics.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-            @DebugMetadata(c = "androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$updateCachedSemanticsValues$3$2", f = "LazyLayoutSemantics.kt", i = {}, l = {213}, m = "invokeSuspend", n = {}, s = {})
-            /* renamed from: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$updateCachedSemanticsValues$3$2  reason: invalid class name */
-            /* loaded from: classes.dex */
-            public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-                final /* synthetic */ int $index;
-                int label;
-                final /* synthetic */ LazyLayoutSemanticsModifierNode this$0;
-
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                AnonymousClass2(LazyLayoutSemanticsModifierNode lazyLayoutSemanticsModifierNode, int i, Continuation<? super AnonymousClass2> continuation) {
-                    super(2, continuation);
-                    this.this$0 = lazyLayoutSemanticsModifierNode;
-                    this.$index = i;
-                }
-
-                @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-                public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                    return new AnonymousClass2(this.this$0, this.$index, continuation);
-                }
-
-                @Override // kotlin.jvm.functions.Function2
-                public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                    return ((AnonymousClass2) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
-                }
-
-                @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-                public final Object invokeSuspend(Object obj) {
-                    LazyLayoutSemanticState lazyLayoutSemanticState;
-                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    int i = this.label;
-                    if (i == 0) {
-                        ResultKt.throwOnFailure(obj);
-                        lazyLayoutSemanticState = this.this$0.state;
-                        this.label = 1;
-                        if (lazyLayoutSemanticState.scrollToItem(this.$index, this) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                    } else if (i != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    } else {
-                        ResultKt.throwOnFailure(obj);
-                    }
-                    return Unit.INSTANCE;
-                }
+            public final Object invoke(Object obj) {
+                boolean updateCachedSemanticsValues$lambda$6;
+                updateCachedSemanticsValues$lambda$6 = LazyLayoutSemanticsModifierNode.updateCachedSemanticsValues$lambda$6(LazyLayoutSemanticsModifierNode.this, ((Integer) obj).intValue());
+                return Boolean.valueOf(updateCachedSemanticsValues$lambda$6);
             }
         } : null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final float updateCachedSemanticsValues$lambda$3(LazyLayoutSemanticsModifierNode lazyLayoutSemanticsModifierNode) {
+        return lazyLayoutSemanticsModifierNode.state.getScrollOffset();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final float updateCachedSemanticsValues$lambda$4(LazyLayoutSemanticsModifierNode lazyLayoutSemanticsModifierNode) {
+        return lazyLayoutSemanticsModifierNode.state.getMaxScrollOffset();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean updateCachedSemanticsValues$lambda$6(LazyLayoutSemanticsModifierNode lazyLayoutSemanticsModifierNode, int i) {
+        LazyLayoutItemProvider invoke = lazyLayoutSemanticsModifierNode.itemProviderLambda.invoke();
+        if (!(i >= 0 && i < invoke.getItemCount())) {
+            InlineClassHelperKt.throwIllegalArgumentException("Can't scroll to index " + i + ", it is out of bounds [0, " + invoke.getItemCount() + ')');
+        }
+        BuildersKt__Builders_commonKt.launch$default(lazyLayoutSemanticsModifierNode.getCoroutineScope(), null, null, new LazyLayoutSemanticsModifierNode$updateCachedSemanticsValues$3$2(lazyLayoutSemanticsModifierNode, i, null), 3, null);
+        return true;
     }
 }

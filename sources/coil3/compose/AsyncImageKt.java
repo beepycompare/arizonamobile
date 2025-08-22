@@ -39,12 +39,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class AsyncImageKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit AsyncImage_76YX9Dk$lambda$0(AsyncImageState asyncImageState, String str, Modifier modifier, Function1 function1, Function1 function12, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, int i2, int i3, Composer composer, int i4) {
-        m7746AsyncImage76YX9Dk(asyncImageState, str, modifier, function1, function12, alignment, contentScale, f, colorFilter, i, z, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3));
+        m8312AsyncImage76YX9Dk(asyncImageState, str, modifier, function1, function12, alignment, contentScale, f, colorFilter, i, z, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3));
         return Unit.INSTANCE;
     }
 
     /* renamed from: AsyncImage-nc27qi8  reason: not valid java name */
-    public static final void m7747AsyncImagenc27qi8(Object obj, String str, ImageLoader imageLoader, Modifier modifier, Painter painter, Painter painter2, Painter painter3, Function1<? super AsyncImagePainter.State.Loading, Unit> function1, Function1<? super AsyncImagePainter.State.Success, Unit> function12, Function1<? super AsyncImagePainter.State.Error, Unit> function13, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Composer composer, int i2, int i3, int i4) {
+    public static final void m8313AsyncImagenc27qi8(Object obj, String str, ImageLoader imageLoader, Modifier modifier, Painter painter, Painter painter2, Painter painter3, Function1<? super AsyncImagePainter.State.Loading, Unit> function1, Function1<? super AsyncImagePainter.State.Success, Unit> function12, Function1<? super AsyncImagePainter.State.Error, Unit> function13, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Composer composer, int i2, int i3, int i4) {
         Modifier modifier2;
         ComposerKt.sourceInformationMarkerStart(composer, -1128374444, "C(AsyncImage)P(10,4,9,11,15,6,7,13,14,12!1,5!1,3,8:c#ui.graphics.FilterQuality)73@3681L35,72@3657L425:AsyncImage.kt#8xxpns");
         Modifier.Companion companion = (i4 & 8) != 0 ? Modifier.Companion : modifier;
@@ -58,7 +58,7 @@ public final class AsyncImageKt {
         ContentScale fit = (i4 & 2048) != 0 ? ContentScale.Companion.getFit() : contentScale;
         float f2 = (i4 & 4096) != 0 ? 1.0f : f;
         ColorFilter colorFilter2 = (i4 & 8192) != 0 ? null : colorFilter;
-        int m4643getDefaultFilterQualityfv9h1I = (i4 & 16384) != 0 ? DrawScope.Companion.m4643getDefaultFilterQualityfv9h1I() : i;
+        int m5119getDefaultFilterQualityfv9h1I = (i4 & 16384) != 0 ? DrawScope.Companion.m5119getDefaultFilterQualityfv9h1I() : i;
         boolean z2 = (i4 & 32768) != 0 ? true : z;
         if (ComposerKt.isTraceInProgress()) {
             modifier2 = companion;
@@ -76,7 +76,7 @@ public final class AsyncImageKt {
         Alignment alignment2 = center;
         ContentScale contentScale2 = fit;
         float f3 = f2;
-        m7746AsyncImage76YX9Dk(asyncImageState, str, modifier2, UtilsKt.transformOf(painter4, painter5, painter6), UtilsKt.onStateOf(function14, function15, function16), alignment2, contentScale2, f3, colorFilter2, m4643getDefaultFilterQualityfv9h1I, z2, composer, ((i2 >> 3) & 896) | (i2 & 112) | (458752 & i5) | (3670016 & i5) | (29360128 & i5) | (234881024 & i5) | (i5 & 1879048192), (i3 >> 15) & 14);
+        m8312AsyncImage76YX9Dk(asyncImageState, str, modifier2, UtilsKt.transformOf(painter4, painter5, painter6), UtilsKt.onStateOf(function14, function15, function16), alignment2, contentScale2, f3, colorFilter2, m5119getDefaultFilterQualityfv9h1I, z2, composer, ((i2 >> 3) & 896) | (i2 & 112) | (458752 & i5) | (3670016 & i5) | (29360128 & i5) | (234881024 & i5) | (i5 & 1879048192), (i3 >> 15) & 14);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -84,7 +84,7 @@ public final class AsyncImageKt {
     }
 
     /* renamed from: AsyncImage-sKDTAoQ  reason: not valid java name */
-    public static final void m7748AsyncImagesKDTAoQ(Object obj, String str, ImageLoader imageLoader, Modifier modifier, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Composer composer, int i2, int i3, int i4) {
+    public static final void m8314AsyncImagesKDTAoQ(Object obj, String str, ImageLoader imageLoader, Modifier modifier, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, int i, boolean z, Composer composer, int i2, int i3, int i4) {
         ComposerKt.sourceInformationMarkerStart(composer, 40041566, "C(AsyncImage)P(8,4,7,9,11,10!1,5!1,3,6:c#ui.graphics.FilterQuality)126@6242L35,125@6218L360:AsyncImage.kt#8xxpns");
         Modifier.Companion companion = (i4 & 8) != 0 ? Modifier.Companion : modifier;
         Function1<AsyncImagePainter.State, AsyncImagePainter.State> defaultTransform = (i4 & 16) != 0 ? AsyncImagePainter.Companion.getDefaultTransform() : function1;
@@ -93,7 +93,7 @@ public final class AsyncImageKt {
         ContentScale fit = (i4 & 128) != 0 ? ContentScale.Companion.getFit() : contentScale;
         float f2 = (i4 & 256) != 0 ? 1.0f : f;
         ColorFilter colorFilter2 = (i4 & 512) == 0 ? colorFilter : null;
-        int m4643getDefaultFilterQualityfv9h1I = (i4 & 1024) != 0 ? DrawScope.Companion.m4643getDefaultFilterQualityfv9h1I() : i;
+        int m5119getDefaultFilterQualityfv9h1I = (i4 & 1024) != 0 ? DrawScope.Companion.m5119getDefaultFilterQualityfv9h1I() : i;
         boolean z2 = (i4 & 2048) != 0 ? true : z;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(40041566, i2, i3, "coil3.compose.AsyncImage (AsyncImage.kt:125)");
@@ -105,7 +105,7 @@ public final class AsyncImageKt {
         ComposerKt.sourceInformationMarkerEnd(composer);
         AsyncImageState asyncImageState = new AsyncImageState(obj, (AsyncImageModelEqualityDelegate) consume, imageLoader);
         ComposerKt.sourceInformationMarkerEnd(composer);
-        m7746AsyncImage76YX9Dk(asyncImageState, str, companion, defaultTransform, function13, center, fit, f2, colorFilter2, m4643getDefaultFilterQualityfv9h1I, z2, composer, (i5 & 234881024) | (i2 & 112) | (i5 & 896) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | (29360128 & i5) | ((i3 << 27) & 1879048192), (i3 >> 3) & 14);
+        m8312AsyncImage76YX9Dk(asyncImageState, str, companion, defaultTransform, function13, center, fit, f2, colorFilter2, m5119getDefaultFilterQualityfv9h1I, z2, composer, (i5 & 234881024) | (i2 & 112) | (i5 & 896) | (i5 & 7168) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | (29360128 & i5) | ((i3 << 27) & 1879048192), (i3 >> 3) & 14);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -113,7 +113,7 @@ public final class AsyncImageKt {
     }
 
     /* renamed from: AsyncImage-76YX9Dk  reason: not valid java name */
-    private static final void m7746AsyncImage76YX9Dk(final AsyncImageState asyncImageState, final String str, final Modifier modifier, final Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, final Function1<? super AsyncImagePainter.State, Unit> function12, final Alignment alignment, final ContentScale contentScale, final float f, final ColorFilter colorFilter, final int i, final boolean z, Composer composer, final int i2, final int i3) {
+    private static final void m8312AsyncImage76YX9Dk(final AsyncImageState asyncImageState, final String str, final Modifier modifier, final Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, final Function1<? super AsyncImagePainter.State, Unit> function12, final Alignment alignment, final ContentScale contentScale, final float f, final ColorFilter colorFilter, final int i, final boolean z, Composer composer, final int i2, final int i3) {
         AsyncImageState asyncImageState2;
         int i4;
         Object obj;
@@ -212,14 +212,14 @@ public final class AsyncImageKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl, useMinConstraintsMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl, useMinConstraintsMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

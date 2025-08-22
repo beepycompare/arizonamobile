@@ -3,7 +3,6 @@ package androidx.compose.foundation.lazy.layout;
 import androidx.compose.animation.core.AnimationScope;
 import androidx.compose.animation.core.AnimationState;
 import androidx.compose.animation.core.AnimationStateKt;
-import androidx.compose.animation.core.AnimationVector1D;
 import androidx.compose.animation.core.SuspendAnimationKt;
 import androidx.compose.foundation.internal.InlineClassHelperKt;
 import androidx.compose.ui.unit.Density;
@@ -22,13 +21,13 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Ref;
 import kotlin.ranges.RangesKt;
 /* compiled from: LazyLayoutScrollScope.kt */
-@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u0017\u0010\u0007\u001a\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH\u0082\b\u001a2\u0010\f\u001a\u00020\b*\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u0012\u001a\u00020\u0013H\u0080@¢\u0006\u0002\u0010\u0014\u001a\u0014\u0010\u0015\u001a\u00020\u0004*\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0000\"\u0010\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u0010\u0010\u0005\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u0010\u0010\u0006\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002¨\u0006\u0016"}, d2 = {"BoundDistance", "Landroidx/compose/ui/unit/Dp;", "F", "DEBUG", "", "MinimumDistance", "TargetDistance", "debugLog", "", "generateMsg", "Lkotlin/Function0;", "", "animateScrollToItem", "Landroidx/compose/foundation/lazy/layout/LazyLayoutScrollScope;", FirebaseAnalytics.Param.INDEX, "", "scrollOffset", "numOfItemsForTeleport", "density", "Landroidx/compose/ui/unit/Density;", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutScrollScope;IIILandroidx/compose/ui/unit/Density;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "isItemVisible", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0017\u0010\u0007\u001a\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH\u0082\b\u001a\u0014\u0010\f\u001a\u00020\u0006*\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0000\u001a2\u0010\u0010\u001a\u00020\b*\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u0012\u001a\u00020\u000f2\u0006\u0010\u0013\u001a\u00020\u0014H\u0080@¢\u0006\u0002\u0010\u0015\"\u0010\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u0010\u0010\u0003\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u0010\u0010\u0004\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u000e\u0010\u0005\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"TargetDistance", "Landroidx/compose/ui/unit/Dp;", "F", "BoundDistance", "MinimumDistance", "DEBUG", "", "debugLog", "", "generateMsg", "Lkotlin/Function0;", "", "isItemVisible", "Landroidx/compose/foundation/lazy/layout/LazyLayoutScrollScope;", FirebaseAnalytics.Param.INDEX, "", "animateScrollToItem", "scrollOffset", "numOfItemsForTeleport", "density", "Landroidx/compose/ui/unit/Density;", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutScrollScope;IIILandroidx/compose/ui/unit/Density;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyLayoutScrollScopeKt {
     private static final boolean DEBUG = false;
-    private static final float TargetDistance = Dp.m6684constructorimpl((float) DefaultRetryPolicy.DEFAULT_TIMEOUT_MS);
-    private static final float BoundDistance = Dp.m6684constructorimpl((float) ConnectionResult.DRIVE_EXTERNAL_STORAGE_REQUIRED);
-    private static final float MinimumDistance = Dp.m6684constructorimpl(50);
+    private static final float TargetDistance = Dp.m7251constructorimpl((float) DefaultRetryPolicy.DEFAULT_TIMEOUT_MS);
+    private static final float BoundDistance = Dp.m7251constructorimpl((float) ConnectionResult.DRIVE_EXTERNAL_STORAGE_REQUIRED);
+    private static final float MinimumDistance = Dp.m7251constructorimpl(50);
 
     private static final void debugLog(Function0<String> function0) {
     }
@@ -37,23 +36,30 @@ public final class LazyLayoutScrollScopeKt {
         return i <= lazyLayoutScrollScope.getLastVisibleItemIndex() && lazyLayoutScrollScope.getFirstVisibleItemIndex() <= i;
     }
 
+    /* JADX WARN: Can't wrap try/catch for region: R(19:(1:(2:30|31))|(1:(17:82|39|(1:41)(1:76)|42|(1:44)(1:75)|45|46|47|48|49|50|51|52|53|54|(8:56|21|22|23|24|25|26|(4:28|30|31|(0)(4:33|34|35|(1:37))))|57)(1:83))(0)|38|39|(0)(0)|42|(0)(0)|45|46|47|48|49|50|51|52|53|54|(0)|57) */
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x01da, code lost:
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x01db, code lost:
+        r21 = r5;
+     */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x027b  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0277  */
     /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
     /* JADX WARN: Removed duplicated region for block: B:21:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00eb A[Catch: ItemFoundInScroll -> 0x01ea, TryCatch #3 {ItemFoundInScroll -> 0x01ea, blocks: (B:35:0x00e7, B:37:0x00eb, B:39:0x00f1, B:53:0x0120, B:57:0x015c), top: B:112:0x00e7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00eb A[Catch: ItemFoundInScroll -> 0x01e8, TryCatch #4 {ItemFoundInScroll -> 0x01e8, blocks: (B:35:0x00e7, B:37:0x00eb, B:39:0x00f1, B:53:0x0120, B:57:0x015c, B:61:0x0164), top: B:115:0x00e7 }] */
     /* JADX WARN: Removed duplicated region for block: B:42:0x0102  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0118  */
     /* JADX WARN: Removed duplicated region for block: B:55:0x0159  */
     /* JADX WARN: Removed duplicated region for block: B:56:0x015b  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0161  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0164  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x01b6  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x024b  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x024e  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x015f  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0162  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01b4  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0249  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x024c  */
     /* JADX WARN: Type inference failed for: r8v0, types: [androidx.compose.animation.core.AnimationState, T] */
     /* JADX WARN: Type inference failed for: r8v16, types: [androidx.compose.animation.core.AnimationState, T] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:69:0x01b6 -> B:18:0x0073). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:70:0x01b4 -> B:18:0x0073). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -66,9 +72,9 @@ public final class LazyLayoutScrollScopeKt {
         int i5;
         int i6;
         int i7;
-        float mo389toPx0680j_4;
-        float mo389toPx0680j_42;
-        float mo389toPx0680j_43;
+        float mo419toPx0680j_4;
+        float mo419toPx0680j_42;
+        float mo419toPx0680j_43;
         Ref.BooleanRef booleanRef;
         Ref.ObjectRef objectRef;
         final int i8;
@@ -82,10 +88,9 @@ public final class LazyLayoutScrollScopeKt {
         int i11;
         LazyLayoutScrollScope lazyLayoutScrollScope3;
         AnimationState copy$default;
-        final float itemOffset;
-        final Ref.FloatRef floatRef;
         Float boxFloat;
         int i12;
+        Function1 function1;
         LazyLayoutScrollScope lazyLayoutScrollScope4;
         int i13;
         int i14;
@@ -96,10 +101,10 @@ public final class LazyLayoutScrollScopeKt {
         AnimationState animationState;
         Float boxFloat2;
         boolean z;
+        Function1 function12;
         final LazyLayoutScrollScope lazyLayoutScrollScope5;
         final int i15;
         int i16;
-        Function1<AnimationScope<Float, AnimationVector1D>, Unit> function1;
         if (continuation instanceof LazyLayoutScrollScopeKt$animateScrollToItem$1) {
             lazyLayoutScrollScopeKt$animateScrollToItem$1 = (LazyLayoutScrollScopeKt$animateScrollToItem$1) continuation;
             if ((lazyLayoutScrollScopeKt$animateScrollToItem$1.label & Integer.MIN_VALUE) != 0) {
@@ -116,9 +121,9 @@ public final class LazyLayoutScrollScopeKt {
                         InlineClassHelperKt.throwIllegalArgumentException("Index should be non-negative");
                     }
                     try {
-                        mo389toPx0680j_4 = density.mo389toPx0680j_4(TargetDistance);
-                        mo389toPx0680j_42 = density.mo389toPx0680j_4(BoundDistance);
-                        mo389toPx0680j_43 = density.mo389toPx0680j_4(MinimumDistance);
+                        mo419toPx0680j_4 = density.mo419toPx0680j_4(TargetDistance);
+                        mo419toPx0680j_42 = density.mo419toPx0680j_4(BoundDistance);
+                        mo419toPx0680j_43 = density.mo419toPx0680j_4(MinimumDistance);
                         booleanRef = new Ref.BooleanRef();
                         booleanRef.element = true;
                         objectRef = new Ref.ObjectRef();
@@ -138,11 +143,19 @@ public final class LazyLayoutScrollScopeKt {
                             i6 = i2;
                             i7 = i;
                             copy$default = AnimationStateKt.copy$default((AnimationState) e.getPreviousAnimation(), 0.0f, 0.0f, 0L, 0L, false, 30, (Object) null);
-                            itemOffset = e.getItemOffset() + i6;
-                            floatRef = new Ref.FloatRef();
+                            final float itemOffset = e.getItemOffset() + i6;
+                            final Ref.FloatRef floatRef = new Ref.FloatRef();
                             boxFloat = Boxing.boxFloat(itemOffset);
                             if (((Number) copy$default.getVelocity()).floatValue() == f) {
                             }
+                            function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
+                                @Override // kotlin.jvm.functions.Function1
+                                public final Object invoke(Object obj2) {
+                                    Unit animateScrollToItem$lambda$19;
+                                    animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset, floatRef, lazyLayoutScrollScope2, (AnimationScope) obj2);
+                                    return animateScrollToItem$lambda$19;
+                                }
+                            };
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.L$1 = null;
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.L$2 = null;
@@ -150,35 +163,7 @@ public final class LazyLayoutScrollScopeKt {
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.I$0 = i7;
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.I$1 = i6;
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.label = 2;
-                            if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, new Function1<AnimationScope<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$animateScrollToItem$6
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                {
-                                    super(1);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function1
-                                public /* bridge */ /* synthetic */ Unit invoke(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                    invoke2(animationScope);
-                                    return Unit.INSTANCE;
-                                }
-
-                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                public final void invoke2(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                    float f7 = itemOffset;
-                                    float f8 = 0.0f;
-                                    if (f7 > 0.0f) {
-                                        f8 = RangesKt.coerceAtMost(animationScope.getValue().floatValue(), itemOffset);
-                                    } else if (f7 < 0.0f) {
-                                        f8 = RangesKt.coerceAtLeast(animationScope.getValue().floatValue(), itemOffset);
-                                    }
-                                    float f9 = f8 - floatRef.element;
-                                    if (f9 != lazyLayoutScrollScope2.scrollBy(f9) || f8 != animationScope.getValue().floatValue()) {
-                                        animationScope.cancelAnimation();
-                                    }
-                                    floatRef.element += f9;
-                                }
-                            }, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
+                            if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, function1, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
                             }
                             return coroutine_suspended;
                         }
@@ -189,11 +174,11 @@ public final class LazyLayoutScrollScopeKt {
                         intRef2.element = 1;
                         i8 = i2;
                         i9 = i3;
-                        f2 = mo389toPx0680j_42;
+                        f2 = mo419toPx0680j_42;
                         intRef = intRef2;
-                        f3 = mo389toPx0680j_4;
+                        f3 = mo419toPx0680j_4;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12 = lazyLayoutScrollScopeKt$animateScrollToItem$1;
-                        f4 = mo389toPx0680j_43;
+                        f4 = mo419toPx0680j_43;
                         i10 = i;
                         i11 = i19;
                         lazyLayoutScrollScope3 = lazyLayoutScrollScope;
@@ -206,11 +191,19 @@ public final class LazyLayoutScrollScopeKt {
                         i7 = i;
                         i5 = 0;
                         copy$default = AnimationStateKt.copy$default((AnimationState) e.getPreviousAnimation(), 0.0f, 0.0f, 0L, 0L, false, 30, (Object) null);
-                        itemOffset = e.getItemOffset() + i6;
-                        floatRef = new Ref.FloatRef();
-                        boxFloat = Boxing.boxFloat(itemOffset);
+                        final float itemOffset2 = e.getItemOffset() + i6;
+                        final Ref.FloatRef floatRef2 = new Ref.FloatRef();
+                        boxFloat = Boxing.boxFloat(itemOffset2);
                         if (((Number) copy$default.getVelocity()).floatValue() == f) {
                         }
+                        function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
+                            @Override // kotlin.jvm.functions.Function1
+                            public final Object invoke(Object obj2) {
+                                Unit animateScrollToItem$lambda$19;
+                                animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset2, floatRef2, lazyLayoutScrollScope2, (AnimationScope) obj2);
+                                return animateScrollToItem$lambda$19;
+                            }
+                        };
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.L$1 = null;
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.L$2 = null;
@@ -218,35 +211,7 @@ public final class LazyLayoutScrollScopeKt {
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.I$0 = i7;
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.I$1 = i6;
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.label = 2;
-                        if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, new Function1<AnimationScope<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$animateScrollToItem$6
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            {
-                                super(1);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function1
-                            public /* bridge */ /* synthetic */ Unit invoke(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                invoke2(animationScope);
-                                return Unit.INSTANCE;
-                            }
-
-                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                            public final void invoke2(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                float f7 = itemOffset;
-                                float f8 = 0.0f;
-                                if (f7 > 0.0f) {
-                                    f8 = RangesKt.coerceAtMost(animationScope.getValue().floatValue(), itemOffset);
-                                } else if (f7 < 0.0f) {
-                                    f8 = RangesKt.coerceAtLeast(animationScope.getValue().floatValue(), itemOffset);
-                                }
-                                float f9 = f8 - floatRef.element;
-                                if (f9 != lazyLayoutScrollScope2.scrollBy(f9) || f8 != animationScope.getValue().floatValue()) {
-                                    animationScope.cancelAnimation();
-                                }
-                                floatRef.element += f9;
-                            }
-                        }, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
+                        if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, function1, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
                         }
                         return coroutine_suspended;
                     }
@@ -313,11 +278,19 @@ public final class LazyLayoutScrollScopeKt {
                         i5 = 0;
                         lazyLayoutScrollScope2 = lazyLayoutScrollScope3;
                         copy$default = AnimationStateKt.copy$default((AnimationState) e.getPreviousAnimation(), 0.0f, 0.0f, 0L, 0L, false, 30, (Object) null);
-                        itemOffset = e.getItemOffset() + i6;
-                        floatRef = new Ref.FloatRef();
-                        boxFloat = Boxing.boxFloat(itemOffset);
+                        final float itemOffset22 = e.getItemOffset() + i6;
+                        final Ref.FloatRef floatRef22 = new Ref.FloatRef();
+                        boxFloat = Boxing.boxFloat(itemOffset22);
                         if (((Number) copy$default.getVelocity()).floatValue() == f) {
                         }
+                        function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
+                            @Override // kotlin.jvm.functions.Function1
+                            public final Object invoke(Object obj2) {
+                                Unit animateScrollToItem$lambda$19;
+                                animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset22, floatRef22, lazyLayoutScrollScope2, (AnimationScope) obj2);
+                                return animateScrollToItem$lambda$19;
+                            }
+                        };
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.L$1 = null;
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.L$2 = null;
@@ -325,64 +298,39 @@ public final class LazyLayoutScrollScopeKt {
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.I$0 = i7;
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.I$1 = i6;
                         lazyLayoutScrollScopeKt$animateScrollToItem$1.label = 2;
-                        if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, new Function1<AnimationScope<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$animateScrollToItem$6
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            {
-                                super(1);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function1
-                            public /* bridge */ /* synthetic */ Unit invoke(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                invoke2(animationScope);
-                                return Unit.INSTANCE;
-                            }
-
-                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                            public final void invoke2(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                float f72 = itemOffset;
-                                float f82 = 0.0f;
-                                if (f72 > 0.0f) {
-                                    f82 = RangesKt.coerceAtMost(animationScope.getValue().floatValue(), itemOffset);
-                                } else if (f72 < 0.0f) {
-                                    f82 = RangesKt.coerceAtLeast(animationScope.getValue().floatValue(), itemOffset);
-                                }
-                                float f9 = f82 - floatRef.element;
-                                if (f9 != lazyLayoutScrollScope2.scrollBy(f9) || f82 != animationScope.getValue().floatValue()) {
-                                    animationScope.cancelAnimation();
-                                }
-                                floatRef.element += f9;
-                            }
-                        }, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
+                        if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, function1, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
                         }
                         return coroutine_suspended;
                     }
                     if (booleanRef.element && lazyLayoutScrollScope3.getItemCount() > 0) {
                         try {
                             try {
-                                try {
-                                    calculateDistanceTo$default = LazyLayoutScrollScope.calculateDistanceTo$default(lazyLayoutScrollScope3, i10, i17, 2, null) + i8;
-                                } catch (ItemFoundInScroll e7) {
-                                    e = e7;
-                                    lazyLayoutScrollScopeKt$animateScrollToItem$13 = lazyLayoutScrollScopeKt$animateScrollToItem$12;
-                                    lazyLayoutScrollScope2 = lazyLayoutScrollScope5;
-                                    i7 = i15;
-                                    i6 = i8;
-                                }
-                            } catch (ItemFoundInScroll e8) {
-                                e = e8;
+                                calculateDistanceTo$default = LazyLayoutScrollScope.calculateDistanceTo$default(lazyLayoutScrollScope3, i10, i17, 2, null) + i8;
+                            } catch (ItemFoundInScroll e7) {
+                                e = e7;
                                 lazyLayoutScrollScopeKt$animateScrollToItem$13 = lazyLayoutScrollScopeKt$animateScrollToItem$12;
+                                lazyLayoutScrollScope2 = lazyLayoutScrollScope5;
+                                i7 = i15;
+                                i6 = i8;
                             }
-                        } catch (ItemFoundInScroll e9) {
-                            e = e9;
+                        } catch (ItemFoundInScroll e8) {
+                            e = e8;
                             lazyLayoutScrollScopeKt$animateScrollToItem$1 = lazyLayoutScrollScopeKt$animateScrollToItem$13;
                             i5 = 0;
                             copy$default = AnimationStateKt.copy$default((AnimationState) e.getPreviousAnimation(), 0.0f, 0.0f, 0L, 0L, false, 30, (Object) null);
-                            itemOffset = e.getItemOffset() + i6;
-                            floatRef = new Ref.FloatRef();
-                            boxFloat = Boxing.boxFloat(itemOffset);
+                            final float itemOffset222 = e.getItemOffset() + i6;
+                            final Ref.FloatRef floatRef222 = new Ref.FloatRef();
+                            boxFloat = Boxing.boxFloat(itemOffset222);
                             if (((Number) copy$default.getVelocity()).floatValue() == f) {
                             }
+                            function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
+                                @Override // kotlin.jvm.functions.Function1
+                                public final Object invoke(Object obj2) {
+                                    Unit animateScrollToItem$lambda$19;
+                                    animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset222, floatRef222, lazyLayoutScrollScope2, (AnimationScope) obj2);
+                                    return animateScrollToItem$lambda$19;
+                                }
+                            };
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.L$1 = null;
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.L$2 = null;
@@ -390,35 +338,7 @@ public final class LazyLayoutScrollScopeKt {
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.I$0 = i7;
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.I$1 = i6;
                             lazyLayoutScrollScopeKt$animateScrollToItem$1.label = 2;
-                            if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, new Function1<AnimationScope<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$animateScrollToItem$6
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                {
-                                    super(1);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function1
-                                public /* bridge */ /* synthetic */ Unit invoke(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                    invoke2(animationScope);
-                                    return Unit.INSTANCE;
-                                }
-
-                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                public final void invoke2(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                    float f72 = itemOffset;
-                                    float f82 = 0.0f;
-                                    if (f72 > 0.0f) {
-                                        f82 = RangesKt.coerceAtMost(animationScope.getValue().floatValue(), itemOffset);
-                                    } else if (f72 < 0.0f) {
-                                        f82 = RangesKt.coerceAtLeast(animationScope.getValue().floatValue(), itemOffset);
-                                    }
-                                    float f9 = f82 - floatRef.element;
-                                    if (f9 != lazyLayoutScrollScope2.scrollBy(f9) || f82 != animationScope.getValue().floatValue()) {
-                                        animationScope.cancelAnimation();
-                                    }
-                                    floatRef.element += f9;
-                                }
-                            }, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
+                            if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, function1, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
                             }
                             return coroutine_suspended;
                         }
@@ -426,7 +346,7 @@ public final class LazyLayoutScrollScopeKt {
                             if (i11 != 0) {
                                 f6 = f3;
                                 objectRef.element = AnimationStateKt.copy$default((AnimationState) objectRef.element, 0.0f, 0.0f, 0L, 0L, false, 30, (Object) null);
-                                final Ref.FloatRef floatRef2 = new Ref.FloatRef();
+                                final Ref.FloatRef floatRef3 = new Ref.FloatRef();
                                 animationState = (AnimationState) objectRef.element;
                                 boxFloat2 = Boxing.boxFloat(f6);
                                 z = (((Number) ((AnimationState) objectRef.element).getVelocity()).floatValue() != f ? i18 : i17) ^ i18;
@@ -435,84 +355,20 @@ public final class LazyLayoutScrollScopeKt {
                                 i15 = i10;
                                 final Ref.BooleanRef booleanRef3 = booleanRef;
                                 final Ref.ObjectRef objectRef3 = objectRef;
+                                function12 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda0
+                                    @Override // kotlin.jvm.functions.Function1
+                                    public final Object invoke(Object obj2) {
+                                        Unit animateScrollToItem$lambda$15;
+                                        animateScrollToItem$lambda$15 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$15(LazyLayoutScrollScope.this, i15, f6, floatRef3, booleanRef3, z2, f2, intRef, i9, i8, objectRef3, (AnimationScope) obj2);
+                                        return animateScrollToItem$lambda$15;
+                                    }
+                                };
                                 lazyLayoutScrollScope2 = lazyLayoutScrollScope5;
                                 i7 = i15;
                                 float f9 = f2;
                                 intRef3 = intRef;
                                 i16 = i9;
                                 i6 = i8;
-                                function1 = new Function1<AnimationScope<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$animateScrollToItem$4
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                    {
-                                        super(1);
-                                    }
-
-                                    @Override // kotlin.jvm.functions.Function1
-                                    public /* bridge */ /* synthetic */ Unit invoke(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                        invoke2(animationScope);
-                                        return Unit.INSTANCE;
-                                    }
-
-                                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                    public final void invoke2(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                        boolean animateScrollToItem$isOvershot;
-                                        float coerceAtLeast;
-                                        boolean animateScrollToItem$isOvershot2;
-                                        if (!LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i15)) {
-                                            if (f6 > 0.0f) {
-                                                coerceAtLeast = RangesKt.coerceAtMost(animationScope.getValue().floatValue(), f6);
-                                            } else {
-                                                coerceAtLeast = RangesKt.coerceAtLeast(animationScope.getValue().floatValue(), f6);
-                                            }
-                                            float f10 = coerceAtLeast - floatRef2.element;
-                                            float scrollBy = LazyLayoutScrollScope.this.scrollBy(f10);
-                                            if (!LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i15)) {
-                                                animateScrollToItem$isOvershot2 = LazyLayoutScrollScopeKt.animateScrollToItem$isOvershot(z2, LazyLayoutScrollScope.this, i15, i8);
-                                                if (!animateScrollToItem$isOvershot2) {
-                                                    if (f10 != scrollBy) {
-                                                        animationScope.cancelAnimation();
-                                                        booleanRef3.element = false;
-                                                        return;
-                                                    }
-                                                    floatRef2.element += f10;
-                                                    if (z2) {
-                                                        if (animationScope.getValue().floatValue() > f2) {
-                                                            animationScope.cancelAnimation();
-                                                        }
-                                                    } else if (animationScope.getValue().floatValue() < (-f2)) {
-                                                        animationScope.cancelAnimation();
-                                                    }
-                                                    if (z2) {
-                                                        if (intRef.element >= 2) {
-                                                            int lastVisibleItemIndex = i15 - LazyLayoutScrollScope.this.getLastVisibleItemIndex();
-                                                            int i22 = i9;
-                                                            if (lastVisibleItemIndex > i22) {
-                                                                LazyLayoutScrollScope.this.snapToItem(i15 - i22, 0);
-                                                            }
-                                                        }
-                                                    } else if (intRef.element >= 2) {
-                                                        int firstVisibleItemIndex = LazyLayoutScrollScope.this.getFirstVisibleItemIndex();
-                                                        int i23 = i15;
-                                                        int i24 = firstVisibleItemIndex - i23;
-                                                        int i25 = i9;
-                                                        if (i24 > i25) {
-                                                            LazyLayoutScrollScope.this.snapToItem(i23 + i25, 0);
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        animateScrollToItem$isOvershot = LazyLayoutScrollScopeKt.animateScrollToItem$isOvershot(z2, LazyLayoutScrollScope.this, i15, i8);
-                                        if (animateScrollToItem$isOvershot) {
-                                            LazyLayoutScrollScope.this.snapToItem(i15, i8);
-                                            booleanRef3.element = false;
-                                            animationScope.cancelAnimation();
-                                        } else if (LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i15)) {
-                                            throw new ItemFoundInScroll(LazyLayoutScrollScope.calculateDistanceTo$default(LazyLayoutScrollScope.this, i15, 0, 2, null), objectRef3.element);
-                                        }
-                                    }
-                                };
                                 lazyLayoutScrollScopeKt$animateScrollToItem$12.L$0 = lazyLayoutScrollScope2;
                                 lazyLayoutScrollScopeKt$animateScrollToItem$12.L$1 = booleanRef3;
                                 lazyLayoutScrollScopeKt$animateScrollToItem$12.L$2 = objectRef3;
@@ -526,7 +382,7 @@ public final class LazyLayoutScrollScopeKt {
                                 lazyLayoutScrollScopeKt$animateScrollToItem$12.I$3 = i11;
                                 lazyLayoutScrollScopeKt$animateScrollToItem$12.label = 1;
                                 lazyLayoutScrollScopeKt$animateScrollToItem$13 = lazyLayoutScrollScopeKt$animateScrollToItem$12;
-                                if (SuspendAnimationKt.animateTo$default(animationState, boxFloat2, null, z, function1, lazyLayoutScrollScopeKt$animateScrollToItem$13, 2, null) != coroutine_suspended) {
+                                if (SuspendAnimationKt.animateTo$default(animationState, boxFloat2, null, z, function12, lazyLayoutScrollScopeKt$animateScrollToItem$13, 2, null) != coroutine_suspended) {
                                     objectRef = objectRef3;
                                     booleanRef = booleanRef3;
                                     lazyLayoutScrollScope3 = lazyLayoutScrollScope2;
@@ -547,19 +403,27 @@ public final class LazyLayoutScrollScopeKt {
                                                 if (i11 == 0) {
                                                     f5 = -f5;
                                                 }
-                                            } catch (ItemFoundInScroll e10) {
-                                                e = e10;
+                                            } catch (ItemFoundInScroll e9) {
+                                                e = e9;
                                                 i7 = i10;
                                                 lazyLayoutScrollScopeKt$animateScrollToItem$1 = lazyLayoutScrollScopeKt$animateScrollToItem$12;
                                                 i5 = i17;
                                                 i6 = i8;
                                                 lazyLayoutScrollScope2 = lazyLayoutScrollScope3;
                                                 copy$default = AnimationStateKt.copy$default((AnimationState) e.getPreviousAnimation(), 0.0f, 0.0f, 0L, 0L, false, 30, (Object) null);
-                                                itemOffset = e.getItemOffset() + i6;
-                                                floatRef = new Ref.FloatRef();
-                                                boxFloat = Boxing.boxFloat(itemOffset);
+                                                final float itemOffset2222 = e.getItemOffset() + i6;
+                                                final Ref.FloatRef floatRef2222 = new Ref.FloatRef();
+                                                boxFloat = Boxing.boxFloat(itemOffset2222);
                                                 if (((Number) copy$default.getVelocity()).floatValue() == f) {
                                                 }
+                                                function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
+                                                    @Override // kotlin.jvm.functions.Function1
+                                                    public final Object invoke(Object obj2) {
+                                                        Unit animateScrollToItem$lambda$19;
+                                                        animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset2222, floatRef2222, lazyLayoutScrollScope2, (AnimationScope) obj2);
+                                                        return animateScrollToItem$lambda$19;
+                                                    }
+                                                };
                                                 lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
                                                 lazyLayoutScrollScopeKt$animateScrollToItem$1.L$1 = null;
                                                 lazyLayoutScrollScopeKt$animateScrollToItem$1.L$2 = null;
@@ -567,35 +431,7 @@ public final class LazyLayoutScrollScopeKt {
                                                 lazyLayoutScrollScopeKt$animateScrollToItem$1.I$0 = i7;
                                                 lazyLayoutScrollScopeKt$animateScrollToItem$1.I$1 = i6;
                                                 lazyLayoutScrollScopeKt$animateScrollToItem$1.label = 2;
-                                                if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, new Function1<AnimationScope<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$animateScrollToItem$6
-                                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                    {
-                                                        super(1);
-                                                    }
-
-                                                    @Override // kotlin.jvm.functions.Function1
-                                                    public /* bridge */ /* synthetic */ Unit invoke(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                                        invoke2(animationScope);
-                                                        return Unit.INSTANCE;
-                                                    }
-
-                                                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                                    public final void invoke2(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                                        float f72 = itemOffset;
-                                                        float f82 = 0.0f;
-                                                        if (f72 > 0.0f) {
-                                                            f82 = RangesKt.coerceAtMost(animationScope.getValue().floatValue(), itemOffset);
-                                                        } else if (f72 < 0.0f) {
-                                                            f82 = RangesKt.coerceAtLeast(animationScope.getValue().floatValue(), itemOffset);
-                                                        }
-                                                        float f92 = f82 - floatRef.element;
-                                                        if (f92 != lazyLayoutScrollScope2.scrollBy(f92) || f82 != animationScope.getValue().floatValue()) {
-                                                            animationScope.cancelAnimation();
-                                                        }
-                                                        floatRef.element += f92;
-                                                    }
-                                                }, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
+                                                if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, function1, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
                                                 }
                                                 return coroutine_suspended;
                                             }
@@ -608,7 +444,7 @@ public final class LazyLayoutScrollScopeKt {
                         }
                         f6 = f5;
                         objectRef.element = AnimationStateKt.copy$default((AnimationState) objectRef.element, 0.0f, 0.0f, 0L, 0L, false, 30, (Object) null);
-                        final Ref.FloatRef floatRef22 = new Ref.FloatRef();
+                        final Ref.FloatRef floatRef32 = new Ref.FloatRef();
                         animationState = (AnimationState) objectRef.element;
                         boxFloat2 = Boxing.boxFloat(f6);
                         z = (((Number) ((AnimationState) objectRef.element).getVelocity()).floatValue() != f ? i18 : i17) ^ i18;
@@ -617,85 +453,21 @@ public final class LazyLayoutScrollScopeKt {
                         lazyLayoutScrollScope5 = lazyLayoutScrollScope3;
                         i15 = i10;
                         final Ref.BooleanRef booleanRef32 = booleanRef;
-                        final Ref.ObjectRef<AnimationState<Float, AnimationVector1D>> objectRef32 = objectRef;
+                        final Ref.ObjectRef objectRef32 = objectRef;
+                        function12 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda0
+                            @Override // kotlin.jvm.functions.Function1
+                            public final Object invoke(Object obj2) {
+                                Unit animateScrollToItem$lambda$15;
+                                animateScrollToItem$lambda$15 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$15(LazyLayoutScrollScope.this, i15, f6, floatRef32, booleanRef32, z2, f2, intRef, i9, i8, objectRef32, (AnimationScope) obj2);
+                                return animateScrollToItem$lambda$15;
+                            }
+                        };
                         lazyLayoutScrollScope2 = lazyLayoutScrollScope5;
                         i7 = i15;
                         float f92 = f2;
                         intRef3 = intRef;
                         i16 = i9;
                         i6 = i8;
-                        function1 = new Function1<AnimationScope<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$animateScrollToItem$4
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            {
-                                super(1);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function1
-                            public /* bridge */ /* synthetic */ Unit invoke(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                invoke2(animationScope);
-                                return Unit.INSTANCE;
-                            }
-
-                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                            public final void invoke2(AnimationScope<Float, AnimationVector1D> animationScope) {
-                                boolean animateScrollToItem$isOvershot;
-                                float coerceAtLeast;
-                                boolean animateScrollToItem$isOvershot2;
-                                if (!LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i15)) {
-                                    if (f6 > 0.0f) {
-                                        coerceAtLeast = RangesKt.coerceAtMost(animationScope.getValue().floatValue(), f6);
-                                    } else {
-                                        coerceAtLeast = RangesKt.coerceAtLeast(animationScope.getValue().floatValue(), f6);
-                                    }
-                                    float f10 = coerceAtLeast - floatRef22.element;
-                                    float scrollBy = LazyLayoutScrollScope.this.scrollBy(f10);
-                                    if (!LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i15)) {
-                                        animateScrollToItem$isOvershot2 = LazyLayoutScrollScopeKt.animateScrollToItem$isOvershot(z2, LazyLayoutScrollScope.this, i15, i8);
-                                        if (!animateScrollToItem$isOvershot2) {
-                                            if (f10 != scrollBy) {
-                                                animationScope.cancelAnimation();
-                                                booleanRef32.element = false;
-                                                return;
-                                            }
-                                            floatRef22.element += f10;
-                                            if (z2) {
-                                                if (animationScope.getValue().floatValue() > f2) {
-                                                    animationScope.cancelAnimation();
-                                                }
-                                            } else if (animationScope.getValue().floatValue() < (-f2)) {
-                                                animationScope.cancelAnimation();
-                                            }
-                                            if (z2) {
-                                                if (intRef.element >= 2) {
-                                                    int lastVisibleItemIndex = i15 - LazyLayoutScrollScope.this.getLastVisibleItemIndex();
-                                                    int i22 = i9;
-                                                    if (lastVisibleItemIndex > i22) {
-                                                        LazyLayoutScrollScope.this.snapToItem(i15 - i22, 0);
-                                                    }
-                                                }
-                                            } else if (intRef.element >= 2) {
-                                                int firstVisibleItemIndex = LazyLayoutScrollScope.this.getFirstVisibleItemIndex();
-                                                int i23 = i15;
-                                                int i24 = firstVisibleItemIndex - i23;
-                                                int i25 = i9;
-                                                if (i24 > i25) {
-                                                    LazyLayoutScrollScope.this.snapToItem(i23 + i25, 0);
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                animateScrollToItem$isOvershot = LazyLayoutScrollScopeKt.animateScrollToItem$isOvershot(z2, LazyLayoutScrollScope.this, i15, i8);
-                                if (animateScrollToItem$isOvershot) {
-                                    LazyLayoutScrollScope.this.snapToItem(i15, i8);
-                                    booleanRef32.element = false;
-                                    animationScope.cancelAnimation();
-                                } else if (LazyLayoutScrollScopeKt.isItemVisible(LazyLayoutScrollScope.this, i15)) {
-                                    throw new ItemFoundInScroll(LazyLayoutScrollScope.calculateDistanceTo$default(LazyLayoutScrollScope.this, i15, 0, 2, null), objectRef32.element);
-                                }
-                            }
-                        };
                         lazyLayoutScrollScopeKt$animateScrollToItem$12.L$0 = lazyLayoutScrollScope2;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12.L$1 = booleanRef32;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12.L$2 = objectRef32;
@@ -709,17 +481,25 @@ public final class LazyLayoutScrollScopeKt {
                         lazyLayoutScrollScopeKt$animateScrollToItem$12.I$3 = i11;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12.label = 1;
                         lazyLayoutScrollScopeKt$animateScrollToItem$13 = lazyLayoutScrollScopeKt$animateScrollToItem$12;
-                        if (SuspendAnimationKt.animateTo$default(animationState, boxFloat2, null, z, function1, lazyLayoutScrollScopeKt$animateScrollToItem$13, 2, null) != coroutine_suspended) {
+                        if (SuspendAnimationKt.animateTo$default(animationState, boxFloat2, null, z, function12, lazyLayoutScrollScopeKt$animateScrollToItem$13, 2, null) != coroutine_suspended) {
                         }
                         return coroutine_suspended;
                     }
                     return Unit.INSTANCE;
                 }
                 copy$default = AnimationStateKt.copy$default((AnimationState) e.getPreviousAnimation(), 0.0f, 0.0f, 0L, 0L, false, 30, (Object) null);
-                itemOffset = e.getItemOffset() + i6;
-                floatRef = new Ref.FloatRef();
-                boxFloat = Boxing.boxFloat(itemOffset);
+                final float itemOffset22222 = e.getItemOffset() + i6;
+                final Ref.FloatRef floatRef22222 = new Ref.FloatRef();
+                boxFloat = Boxing.boxFloat(itemOffset22222);
                 i12 = ((Number) copy$default.getVelocity()).floatValue() == f ? 1 : i5;
+                function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj2) {
+                        Unit animateScrollToItem$lambda$19;
+                        animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset22222, floatRef22222, lazyLayoutScrollScope2, (AnimationScope) obj2);
+                        return animateScrollToItem$lambda$19;
+                    }
+                };
                 lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
                 lazyLayoutScrollScopeKt$animateScrollToItem$1.L$1 = null;
                 lazyLayoutScrollScopeKt$animateScrollToItem$1.L$2 = null;
@@ -727,35 +507,7 @@ public final class LazyLayoutScrollScopeKt {
                 lazyLayoutScrollScopeKt$animateScrollToItem$1.I$0 = i7;
                 lazyLayoutScrollScopeKt$animateScrollToItem$1.I$1 = i6;
                 lazyLayoutScrollScopeKt$animateScrollToItem$1.label = 2;
-                if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, new Function1<AnimationScope<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$animateScrollToItem$6
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(1);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(AnimationScope<Float, AnimationVector1D> animationScope) {
-                        invoke2(animationScope);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(AnimationScope<Float, AnimationVector1D> animationScope) {
-                        float f72 = itemOffset;
-                        float f82 = 0.0f;
-                        if (f72 > 0.0f) {
-                            f82 = RangesKt.coerceAtMost(animationScope.getValue().floatValue(), itemOffset);
-                        } else if (f72 < 0.0f) {
-                            f82 = RangesKt.coerceAtLeast(animationScope.getValue().floatValue(), itemOffset);
-                        }
-                        float f922 = f82 - floatRef.element;
-                        if (f922 != lazyLayoutScrollScope2.scrollBy(f922) || f82 != animationScope.getValue().floatValue()) {
-                            animationScope.cancelAnimation();
-                        }
-                        floatRef.element += f922;
-                    }
-                }, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
+                if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, function1, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
                     lazyLayoutScrollScope4 = lazyLayoutScrollScope2;
                     i13 = i6;
                     i14 = i7;
@@ -774,11 +526,19 @@ public final class LazyLayoutScrollScopeKt {
         if (i4 != 0) {
         }
         copy$default = AnimationStateKt.copy$default((AnimationState) e.getPreviousAnimation(), 0.0f, 0.0f, 0L, 0L, false, 30, (Object) null);
-        itemOffset = e.getItemOffset() + i6;
-        floatRef = new Ref.FloatRef();
-        boxFloat = Boxing.boxFloat(itemOffset);
+        final float itemOffset222222 = e.getItemOffset() + i6;
+        final Ref.FloatRef floatRef222222 = new Ref.FloatRef();
+        boxFloat = Boxing.boxFloat(itemOffset222222);
         if (((Number) copy$default.getVelocity()).floatValue() == f) {
         }
+        function1 = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$$ExternalSyntheticLambda1
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj22) {
+                Unit animateScrollToItem$lambda$19;
+                animateScrollToItem$lambda$19 = LazyLayoutScrollScopeKt.animateScrollToItem$lambda$19(itemOffset222222, floatRef222222, lazyLayoutScrollScope2, (AnimationScope) obj22);
+                return animateScrollToItem$lambda$19;
+            }
+        };
         lazyLayoutScrollScopeKt$animateScrollToItem$1.L$0 = lazyLayoutScrollScope2;
         lazyLayoutScrollScopeKt$animateScrollToItem$1.L$1 = null;
         lazyLayoutScrollScopeKt$animateScrollToItem$1.L$2 = null;
@@ -786,41 +546,12 @@ public final class LazyLayoutScrollScopeKt {
         lazyLayoutScrollScopeKt$animateScrollToItem$1.I$0 = i7;
         lazyLayoutScrollScopeKt$animateScrollToItem$1.I$1 = i6;
         lazyLayoutScrollScopeKt$animateScrollToItem$1.label = 2;
-        if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, new Function1<AnimationScope<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutScrollScopeKt$animateScrollToItem$6
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(AnimationScope<Float, AnimationVector1D> animationScope) {
-                invoke2(animationScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(AnimationScope<Float, AnimationVector1D> animationScope) {
-                float f72 = itemOffset;
-                float f82 = 0.0f;
-                if (f72 > 0.0f) {
-                    f82 = RangesKt.coerceAtMost(animationScope.getValue().floatValue(), itemOffset);
-                } else if (f72 < 0.0f) {
-                    f82 = RangesKt.coerceAtLeast(animationScope.getValue().floatValue(), itemOffset);
-                }
-                float f922 = f82 - floatRef.element;
-                if (f922 != lazyLayoutScrollScope2.scrollBy(f922) || f82 != animationScope.getValue().floatValue()) {
-                    animationScope.cancelAnimation();
-                }
-                floatRef.element += f922;
-            }
-        }, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
+        if (SuspendAnimationKt.animateTo$default(copy$default, boxFloat, null, i12 ^ 1, function1, lazyLayoutScrollScopeKt$animateScrollToItem$1, 2, null) != coroutine_suspended) {
         }
         return coroutine_suspended;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean animateScrollToItem$isOvershot(boolean z, LazyLayoutScrollScope lazyLayoutScrollScope, int i, int i2) {
+    private static final boolean animateScrollToItem$isOvershot(boolean z, LazyLayoutScrollScope lazyLayoutScrollScope, int i, int i2) {
         if (z) {
             if (lazyLayoutScrollScope.getFirstVisibleItemIndex() > i) {
                 return true;
@@ -831,5 +562,67 @@ public final class LazyLayoutScrollScopeKt {
         } else {
             return lazyLayoutScrollScope.getFirstVisibleItemIndex() == i && lazyLayoutScrollScope.getFirstVisibleItemScrollOffset() < i2;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit animateScrollToItem$lambda$15(LazyLayoutScrollScope lazyLayoutScrollScope, int i, float f, Ref.FloatRef floatRef, Ref.BooleanRef booleanRef, boolean z, float f2, Ref.IntRef intRef, int i2, int i3, Ref.ObjectRef objectRef, AnimationScope animationScope) {
+        float coerceAtLeast;
+        if (!isItemVisible(lazyLayoutScrollScope, i)) {
+            if (f > 0.0f) {
+                coerceAtLeast = RangesKt.coerceAtMost(((Number) animationScope.getValue()).floatValue(), f);
+            } else {
+                coerceAtLeast = RangesKt.coerceAtLeast(((Number) animationScope.getValue()).floatValue(), f);
+            }
+            float f3 = coerceAtLeast - floatRef.element;
+            float scrollBy = lazyLayoutScrollScope.scrollBy(f3);
+            if (!isItemVisible(lazyLayoutScrollScope, i) && !animateScrollToItem$isOvershot(z, lazyLayoutScrollScope, i, i3)) {
+                if (f3 != scrollBy) {
+                    animationScope.cancelAnimation();
+                    booleanRef.element = false;
+                    return Unit.INSTANCE;
+                }
+                floatRef.element += f3;
+                if (z) {
+                    if (((Number) animationScope.getValue()).floatValue() > f2) {
+                        animationScope.cancelAnimation();
+                    }
+                } else if (((Number) animationScope.getValue()).floatValue() < (-f2)) {
+                    animationScope.cancelAnimation();
+                }
+                if (z) {
+                    if (intRef.element >= 2 && i - lazyLayoutScrollScope.getLastVisibleItemIndex() > i2) {
+                        lazyLayoutScrollScope.snapToItem(i - i2, 0);
+                    }
+                } else if (intRef.element >= 2 && lazyLayoutScrollScope.getFirstVisibleItemIndex() - i > i2) {
+                    lazyLayoutScrollScope.snapToItem(i2 + i, 0);
+                }
+            }
+        }
+        if (animateScrollToItem$isOvershot(z, lazyLayoutScrollScope, i, i3)) {
+            lazyLayoutScrollScope.snapToItem(i, i3);
+            booleanRef.element = false;
+            animationScope.cancelAnimation();
+            return Unit.INSTANCE;
+        } else if (isItemVisible(lazyLayoutScrollScope, i)) {
+            throw new ItemFoundInScroll(LazyLayoutScrollScope.calculateDistanceTo$default(lazyLayoutScrollScope, i, 0, 2, null), (AnimationState) objectRef.element);
+        } else {
+            return Unit.INSTANCE;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit animateScrollToItem$lambda$19(float f, Ref.FloatRef floatRef, LazyLayoutScrollScope lazyLayoutScrollScope, AnimationScope animationScope) {
+        float f2 = 0.0f;
+        if (f > 0.0f) {
+            f2 = RangesKt.coerceAtMost(((Number) animationScope.getValue()).floatValue(), f);
+        } else if (f < 0.0f) {
+            f2 = RangesKt.coerceAtLeast(((Number) animationScope.getValue()).floatValue(), f);
+        }
+        float f3 = f2 - floatRef.element;
+        if (f3 != lazyLayoutScrollScope.scrollBy(f3) || f2 != ((Number) animationScope.getValue()).floatValue()) {
+            animationScope.cancelAnimation();
+        }
+        floatRef.element += f3;
+        return Unit.INSTANCE;
     }
 }

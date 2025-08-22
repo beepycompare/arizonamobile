@@ -28,7 +28,7 @@ import java.util.Formatter;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class LegacyPlayerControlView extends FrameLayout {
     public static final int DEFAULT_REPEAT_TOGGLE_MODES = 0;
     public static final int DEFAULT_SHOW_TIMEOUT_MS = 5000;
@@ -91,12 +91,12 @@ public class LegacyPlayerControlView extends FrameLayout {
     private final View vrButton;
     private final Timeline.Window window;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface ProgressUpdateListener {
         void onProgressUpdate(long j, long j2);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface VisibilityListener {
         void onVisibilityChange(int i);
     }
@@ -892,7 +892,7 @@ public class LegacyPlayerControlView extends FrameLayout {
         return typedArray.getInt(R.styleable.LegacyPlayerControlView_repeat_toggle_modes, i);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     private final class ComponentListener implements Player.Listener, TimeBar.OnScrubListener, View.OnClickListener {
         private ComponentListener() {
         }

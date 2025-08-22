@@ -8,7 +8,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import java.util.NoSuchElementException;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableLastSingle<T> extends Single<T> {
     final T defaultItem;
     final Publisher<T> source;
@@ -23,7 +23,7 @@ public final class FlowableLastSingle<T> extends Single<T> {
         this.source.subscribe(new LastSubscriber(singleObserver, this.defaultItem));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class LastSubscriber<T> implements FlowableSubscriber<T>, Disposable {
         final T defaultItem;
         final SingleObserver<? super T> downstream;

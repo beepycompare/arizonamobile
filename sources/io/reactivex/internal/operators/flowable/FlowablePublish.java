@@ -24,7 +24,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowablePublish<T> extends ConnectableFlowable<T> implements HasUpstreamPublisher<T>, FlowablePublishClassic<T> {
     static final long CANCELLED = Long.MIN_VALUE;
     final int bufferSize;
@@ -93,7 +93,7 @@ public final class FlowablePublish<T> extends ConnectableFlowable<T> implements 
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class PublishSubscriber<T> extends AtomicInteger implements FlowableSubscriber<T>, Disposable {
         static final InnerSubscriber[] EMPTY = new InnerSubscriber[0];
         static final InnerSubscriber[] TERMINATED = new InnerSubscriber[0];
@@ -419,7 +419,7 @@ public final class FlowablePublish<T> extends ConnectableFlowable<T> implements 
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class InnerSubscriber<T> extends AtomicLong implements Subscription {
         private static final long serialVersionUID = -4453897557930727610L;
         final Subscriber<? super T> child;
@@ -453,7 +453,7 @@ public final class FlowablePublish<T> extends ConnectableFlowable<T> implements 
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class FlowablePublisher<T> implements Publisher<T> {
         private final int bufferSize;
         private final AtomicReference<PublishSubscriber<T>> curr;

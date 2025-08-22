@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModelProvider;
 import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
 import dagger.hilt.android.internal.managers.ActivityComponentManager;
 import dagger.hilt.android.internal.managers.SavedStateHandleHolder;
-import dagger.hilt.internal.GeneratedComponentManager;
 import dagger.hilt.internal.GeneratedComponentManagerHolder;
 import dagger.hilt.internal.UnsafeCasts;
 /* loaded from: classes3.dex */
@@ -42,12 +41,10 @@ public abstract class Hilt_MainEntrench extends AppCompatActivity implements Gen
     }
 
     private void initSavedStateHandleHolder() {
-        if (getApplication() instanceof GeneratedComponentManager) {
-            SavedStateHandleHolder savedStateHandleHolder = componentManager().getSavedStateHandleHolder();
-            this.savedStateHandleHolder = savedStateHandleHolder;
-            if (savedStateHandleHolder.isInvalid()) {
-                this.savedStateHandleHolder.setExtras(getDefaultViewModelCreationExtras());
-            }
+        SavedStateHandleHolder savedStateHandleHolder = componentManager().getSavedStateHandleHolder();
+        this.savedStateHandleHolder = savedStateHandleHolder;
+        if (savedStateHandleHolder.isInvalid()) {
+            this.savedStateHandleHolder.setExtras(getDefaultViewModelCreationExtras());
         }
     }
 

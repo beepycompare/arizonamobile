@@ -9,7 +9,7 @@ import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.operators.observable.ObservableReduceSeedSingle;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableReduceWithSingle<T, R> extends Single<R> {
     final BiFunction<R, ? super T, R> reducer;
     final Callable<R> seedSupplier;

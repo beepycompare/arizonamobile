@@ -13,8 +13,8 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Scrollable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollableKt$semanticsScrollBy$2", f = "Scrollable.kt", i = {}, l = {1024}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollableKt$semanticsScrollBy$2", f = "Scrollable.kt", i = {}, l = {1052}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class ScrollableKt$semanticsScrollBy$2 extends SuspendLambda implements Function2<NestedScrollScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ long $offset;
@@ -51,26 +51,16 @@ public final class ScrollableKt$semanticsScrollBy$2 extends SuspendLambda implem
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             final NestedScrollScope nestedScrollScope = (NestedScrollScope) this.L$0;
-            float m527toFloatk4lQ0M = this.$this_semanticsScrollBy.m527toFloatk4lQ0M(this.$offset);
+            float m583toFloatk4lQ0M = this.$this_semanticsScrollBy.m583toFloatk4lQ0M(this.$offset);
             final Ref.FloatRef floatRef = this.$previousValue;
             final ScrollingLogic scrollingLogic = this.$this_semanticsScrollBy;
             this.label = 1;
-            if (SuspendAnimationKt.animate$default(0.0f, m527toFloatk4lQ0M, 0.0f, null, new Function2<Float, Float, Unit>() { // from class: androidx.compose.foundation.gestures.ScrollableKt$semanticsScrollBy$2.1
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(2);
-                }
-
+            if (SuspendAnimationKt.animate$default(0.0f, m583toFloatk4lQ0M, 0.0f, null, new Function2() { // from class: androidx.compose.foundation.gestures.ScrollableKt$semanticsScrollBy$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Float f, Float f2) {
-                    invoke(f.floatValue(), f2.floatValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(float f, float f2) {
-                    float f3 = f - Ref.FloatRef.this.element;
-                    ScrollingLogic scrollingLogic2 = scrollingLogic;
-                    Ref.FloatRef.this.element += scrollingLogic2.reverseIfNeeded(scrollingLogic2.m527toFloatk4lQ0M(nestedScrollScope.mo481scrollByOzD1aCk(scrollingLogic2.m528toOffsettuRUvjQ(scrollingLogic2.reverseIfNeeded(f3)), NestedScrollSource.Companion.m5206getUserInputWNlRxjI())));
+                public final Object invoke(Object obj2, Object obj3) {
+                    Unit invokeSuspend$lambda$0;
+                    invokeSuspend$lambda$0 = ScrollableKt$semanticsScrollBy$2.invokeSuspend$lambda$0(Ref.FloatRef.this, scrollingLogic, nestedScrollScope, ((Float) obj2).floatValue(), ((Float) obj3).floatValue());
+                    return invokeSuspend$lambda$0;
                 }
             }, this, 12, null) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -80,6 +70,12 @@ public final class ScrollableKt$semanticsScrollBy$2 extends SuspendLambda implem
         } else {
             ResultKt.throwOnFailure(obj);
         }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(Ref.FloatRef floatRef, ScrollingLogic scrollingLogic, NestedScrollScope nestedScrollScope, float f, float f2) {
+        floatRef.element += scrollingLogic.reverseIfNeeded(scrollingLogic.m583toFloatk4lQ0M(nestedScrollScope.mo523scrollByOzD1aCk(scrollingLogic.m584toOffsettuRUvjQ(scrollingLogic.reverseIfNeeded(f - floatRef.element)), NestedScrollSource.Companion.m5719getUserInputWNlRxjI())));
         return Unit.INSTANCE;
     }
 }

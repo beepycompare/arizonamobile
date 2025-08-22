@@ -7,7 +7,7 @@ import io.reactivex.SingleObserver;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.NoSuchElementException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableLastSingle<T> extends Single<T> {
     final T defaultItem;
     final ObservableSource<T> source;
@@ -22,7 +22,7 @@ public final class ObservableLastSingle<T> extends Single<T> {
         this.source.subscribe(new LastObserver(singleObserver, this.defaultItem));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class LastObserver<T> implements Observer<T>, Disposable {
         final T defaultItem;
         final SingleObserver<? super T> downstream;

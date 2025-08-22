@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TestSubscriber<T> extends BaseTestConsumer<T, TestSubscriber<T>> implements FlowableSubscriber<T>, Subscription, Disposable {
     private volatile boolean cancelled;
     private final Subscriber<? super T> downstream;
@@ -20,7 +20,7 @@ public class TestSubscriber<T> extends BaseTestConsumer<T, TestSubscriber<T>> im
     private QueueSubscription<T> qs;
     private final AtomicReference<Subscription> upstream;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     enum EmptySubscriber implements FlowableSubscriber<Object> {
         INSTANCE;
 

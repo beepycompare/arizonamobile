@@ -9,34 +9,35 @@ import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 /* loaded from: classes4.dex */
 public final class C9 extends MessageNano {
-    public static volatile C9[] e;
+    public static final int d = 0;
+    public static final int e = 1;
+    public static final int f = 2;
+    public static volatile C9[] g;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f375a;
-    public int b;
-    public String c;
-    public boolean d;
+    public F9 f378a;
+    public String b;
+    public int c;
 
     public C9() {
         a();
     }
 
     public static C9[] b() {
-        if (e == null) {
+        if (g == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (e == null) {
-                    e = new C9[0];
+                if (g == null) {
+                    g = new C9[0];
                 }
             }
         }
-        return e;
+        return g;
     }
 
     public final C9 a() {
-        this.f375a = 0;
-        this.b = 0;
-        this.c = "";
-        this.d = false;
+        this.f378a = null;
+        this.b = "";
+        this.c = 0;
         this.cachedSize = -1;
         return this;
     }
@@ -44,37 +45,25 @@ public final class C9 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f375a;
-        if (i != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(1, i);
+        F9 f9 = this.f378a;
+        if (f9 != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, f9);
         }
-        int i2 = this.b;
-        if (i2 != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(2, i2);
-        }
-        if (!this.c.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(3, this.c);
-        }
-        boolean z = this.d;
-        return z ? CodedOutputByteBufferNano.computeBoolSize(4, z) + computeSerializedSize : computeSerializedSize;
+        int computeStringSize = CodedOutputByteBufferNano.computeStringSize(2, this.b) + computeSerializedSize;
+        int i = this.c;
+        return i != 0 ? CodedOutputByteBufferNano.computeInt32Size(5, i) + computeStringSize : computeStringSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f375a;
+        F9 f9 = this.f378a;
+        if (f9 != null) {
+            codedOutputByteBufferNano.writeMessage(1, f9);
+        }
+        codedOutputByteBufferNano.writeString(2, this.b);
+        int i = this.c;
         if (i != 0) {
-            codedOutputByteBufferNano.writeUInt32(1, i);
-        }
-        int i2 = this.b;
-        if (i2 != 0) {
-            codedOutputByteBufferNano.writeUInt32(2, i2);
-        }
-        if (!this.c.equals("")) {
-            codedOutputByteBufferNano.writeString(3, this.c);
-        }
-        boolean z = this.d;
-        if (z) {
-            codedOutputByteBufferNano.writeBool(4, z);
+            codedOutputByteBufferNano.writeInt32(5, i);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -86,18 +75,22 @@ public final class C9 extends MessageNano {
             int readTag = codedInputByteBufferNano.readTag();
             if (readTag == 0) {
                 break;
-            } else if (readTag == 8) {
-                this.f375a = codedInputByteBufferNano.readUInt32();
-            } else if (readTag == 16) {
-                this.b = codedInputByteBufferNano.readUInt32();
-            } else if (readTag == 26) {
-                this.c = codedInputByteBufferNano.readString();
-            } else if (readTag != 32) {
+            } else if (readTag == 10) {
+                if (this.f378a == null) {
+                    this.f378a = new F9();
+                }
+                codedInputByteBufferNano.readMessage(this.f378a);
+            } else if (readTag == 18) {
+                this.b = codedInputByteBufferNano.readString();
+            } else if (readTag != 40) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                this.d = codedInputByteBufferNano.readBool();
+                int readInt32 = codedInputByteBufferNano.readInt32();
+                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2) {
+                    this.c = readInt32;
+                }
             }
         }
         return this;

@@ -3,12 +3,12 @@ package io.appmetrica.analytics.internal;
 import android.content.ContentValues;
 import android.os.Parcel;
 import android.os.Parcelable;
-import io.appmetrica.analytics.impl.W6;
+import io.appmetrica.analytics.impl.X6;
 /* loaded from: classes4.dex */
 public final class b implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {
-        return new CounterConfiguration((ContentValues) parcel.readBundle(W6.class.getClassLoader()).getParcelable("io.appmetrica.analytics.internal.CounterConfiguration.data"), 0);
+        return new CounterConfiguration((ContentValues) parcel.readBundle(X6.class.getClassLoader()).getParcelable("io.appmetrica.analytics.internal.CounterConfiguration.data"), 0);
     }
 
     @Override // android.os.Parcelable.Creator

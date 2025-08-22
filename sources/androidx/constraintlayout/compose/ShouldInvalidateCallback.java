@@ -6,5 +6,5 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface ShouldInvalidateCallback {
     /* renamed from: invoke-N9IONVI */
-    boolean mo7063invokeN9IONVI(long j, long j2);
+    boolean mo7629invokeN9IONVI(long j, long j2);
 }

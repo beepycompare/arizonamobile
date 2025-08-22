@@ -26,7 +26,7 @@ public final class ComposableSingletons$RepairGameDialogKt {
     public static final ComposableSingletons$RepairGameDialogKt INSTANCE = new ComposableSingletons$RepairGameDialogKt();
 
     /* renamed from: lambda$-1796529959  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f78lambda$1796529959 = ComposableLambdaKt.composableLambdaInstance(-1796529959, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameDialogKt$$ExternalSyntheticLambda0
+    private static Function3<BoxScope, Composer, Integer, Unit> f72lambda$1796529959 = ComposableLambdaKt.composableLambdaInstance(-1796529959, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameDialogKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__1796529959$lambda$0;
@@ -36,7 +36,7 @@ public final class ComposableSingletons$RepairGameDialogKt {
     });
 
     /* renamed from: lambda$-277375600  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f79lambda$277375600 = ComposableLambdaKt.composableLambdaInstance(-277375600, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameDialogKt$$ExternalSyntheticLambda1
+    private static Function3<BoxScope, Composer, Integer, Unit> f73lambda$277375600 = ComposableLambdaKt.composableLambdaInstance(-277375600, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameDialogKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__277375600$lambda$1;
@@ -45,14 +45,14 @@ public final class ComposableSingletons$RepairGameDialogKt {
         }
     });
 
-    /* renamed from: getLambda$-1796529959$dialogs_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8381getLambda$1796529959$dialogs_release_web() {
-        return f78lambda$1796529959;
+    /* renamed from: getLambda$-1796529959$dialogs_release  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m8947getLambda$1796529959$dialogs_release() {
+        return f72lambda$1796529959;
     }
 
-    /* renamed from: getLambda$-277375600$dialogs_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8382getLambda$277375600$dialogs_release_web() {
-        return f79lambda$277375600;
+    /* renamed from: getLambda$-277375600$dialogs_release  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m8948getLambda$277375600$dialogs_release() {
+        return f73lambda$277375600;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -65,7 +65,7 @@ public final class ComposableSingletons$RepairGameDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1796529959, i, -1, "com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameDialogKt.lambda$-1796529959.<anonymous> (RepairGameDialog.kt:75)");
             }
-            TextKt.m2497Text4IGK_g("НЕТ", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
+            TextKt.m2804Text4IGK_g("НЕТ", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -83,7 +83,7 @@ public final class ComposableSingletons$RepairGameDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-277375600, i, -1, "com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameDialogKt.lambda$-277375600.<anonymous> (RepairGameDialog.kt:81)");
             }
-            TextKt.m2497Text4IGK_g("ДА", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
+            TextKt.m2804Text4IGK_g("ДА", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

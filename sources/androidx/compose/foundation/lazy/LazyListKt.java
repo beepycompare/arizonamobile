@@ -1,21 +1,18 @@
 package androidx.compose.foundation.lazy;
 
-import androidx.compose.foundation.CheckScrollableContainerConstraintsKt;
+import android.os.Trace;
 import androidx.compose.foundation.OverscrollEffect;
 import androidx.compose.foundation.ScrollingContainerKt;
 import androidx.compose.foundation.gestures.FlingBehavior;
 import androidx.compose.foundation.gestures.Orientation;
-import androidx.compose.foundation.internal.InlineClassHelperKt;
 import androidx.compose.foundation.layout.Arrangement;
-import androidx.compose.foundation.layout.PaddingKt;
 import androidx.compose.foundation.layout.PaddingValues;
+import androidx.compose.foundation.lazy.layout.CacheWindowLogic;
 import androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsModifierLocalKt;
-import androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsStateKt;
 import androidx.compose.foundation.lazy.layout.LazyLayoutKt;
-import androidx.compose.foundation.lazy.layout.LazyLayoutMeasureScope;
+import androidx.compose.foundation.lazy.layout.LazyLayoutMeasurePolicy;
 import androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState;
 import androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsKt;
-import androidx.compose.foundation.lazy.layout.ObservableScopeInvalidator;
 import androidx.compose.foundation.lazy.layout.StickyItemsPlacement;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
@@ -23,49 +20,57 @@ import androidx.compose.runtime.CompositionLocal;
 import androidx.compose.runtime.EffectsKt;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
-import androidx.compose.runtime.snapshots.Snapshot;
 import androidx.compose.ui.Alignment;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.graphics.GraphicsContext;
-import androidx.compose.ui.layout.MeasureResult;
-import androidx.compose.ui.layout.Placeable;
 import androidx.compose.ui.platform.CompositionLocalsKt;
-import androidx.compose.ui.unit.Constraints;
-import androidx.compose.ui.unit.ConstraintsKt;
-import androidx.compose.ui.unit.IntOffset;
 import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.profileinstaller.ProfileVerifier;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.util.List;
-import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.Unit;
-import kotlin.collections.MapsKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.EmptyCoroutineContext;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.functions.Function3;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: LazyList.kt */
-@Metadata(d1 = {"\u0000\u008e\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a¢\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\t2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\t2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u00132\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u00152\n\b\u0002\u0010\u0016\u001a\u0004\u0018\u00010\u00172\n\b\u0002\u0010\u0018\u001a\u0004\u0018\u00010\u00192\u0017\u0010\u001a\u001a\u0013\u0012\u0004\u0012\u00020\u001c\u0012\u0004\u0012\u00020\u00010\u001b¢\u0006\u0002\b\u001dH\u0001¢\u0006\u0002\u0010\u001e\u001a\u009c\u0001\u0010\u001f\u001a\u0019\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\"\u0012\u0004\u0012\u00020#0 ¢\u0006\u0002\b\u001d2\f\u0010$\u001a\b\u0012\u0004\u0012\u00020&0%2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\t2\u0006\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u00132\b\u0010\u0016\u001a\u0004\u0018\u00010\u00172\b\u0010\u0018\u001a\u0004\u0018\u00010\u00192\b\u0010\u0014\u001a\u0004\u0018\u00010\u00152\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020*2\b\u0010+\u001a\u0004\u0018\u00010,H\u0003¢\u0006\u0002\u0010-¨\u0006."}, d2 = {"LazyList", "", "modifier", "Landroidx/compose/ui/Modifier;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/LazyListState;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "reverseLayout", "", "isVertical", "flingBehavior", "Landroidx/compose/foundation/gestures/FlingBehavior;", "userScrollEnabled", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "beyondBoundsItemCount", "", "horizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "verticalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "verticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "horizontalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/lazy/LazyListScope;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/lazy/LazyListState;Landroidx/compose/foundation/layout/PaddingValues;ZZLandroidx/compose/foundation/gestures/FlingBehavior;ZLandroidx/compose/foundation/OverscrollEffect;ILandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;III)V", "rememberLazyListMeasurePolicy", "Lkotlin/Function2;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasureScope;", "Landroidx/compose/ui/unit/Constraints;", "Landroidx/compose/ui/layout/MeasureResult;", "itemProviderLambda", "Lkotlin/Function0;", "Landroidx/compose/foundation/lazy/LazyListItemProvider;", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "graphicsContext", "Landroidx/compose/ui/graphics/GraphicsContext;", "stickyItemsPlacement", "Landroidx/compose/foundation/lazy/layout/StickyItemsPlacement;", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/foundation/lazy/LazyListState;Landroidx/compose/foundation/layout/PaddingValues;ZZILandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/ui/graphics/GraphicsContext;Landroidx/compose/foundation/lazy/layout/StickyItemsPlacement;Landroidx/compose/runtime/Composer;II)Lkotlin/jvm/functions/Function2;", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0098\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a¢\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\t2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\t2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u00132\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u00152\n\b\u0002\u0010\u0016\u001a\u0004\u0018\u00010\u00172\n\b\u0002\u0010\u0018\u001a\u0004\u0018\u00010\u00192\u0017\u0010\u001a\u001a\u0013\u0012\u0004\u0012\u00020\u001c\u0012\u0004\u0012\u00020\u00010\u001b¢\u0006\u0002\b\u001dH\u0001¢\u0006\u0002\u0010\u001e\u001a\u0085\u0001\u0010\u001f\u001a\u00020 2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020#0\"2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\t2\u0006\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u00132\b\u0010\u0016\u001a\u0004\u0018\u00010\u00172\b\u0010\u0018\u001a\u0004\u0018\u00010\u00192\b\u0010\u0014\u001a\u0004\u0018\u00010\u00152\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020'2\b\u0010(\u001a\u0004\u0018\u00010)H\u0003¢\u0006\u0002\u0010*\u001a\"\u0010+\u001a\u00020\u0001*\u00020,2\f\u0010-\u001a\b\u0012\u0004\u0012\u00020/0.2\u0006\u00100\u001a\u000201H\u0002¨\u00062"}, d2 = {"LazyList", "", "modifier", "Landroidx/compose/ui/Modifier;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/LazyListState;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "reverseLayout", "", "isVertical", "flingBehavior", "Landroidx/compose/foundation/gestures/FlingBehavior;", "userScrollEnabled", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "beyondBoundsItemCount", "", "horizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "verticalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "verticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "horizontalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/lazy/LazyListScope;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/lazy/LazyListState;Landroidx/compose/foundation/layout/PaddingValues;ZZLandroidx/compose/foundation/gestures/FlingBehavior;ZLandroidx/compose/foundation/OverscrollEffect;ILandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;III)V", "rememberLazyListMeasurePolicy", "Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasurePolicy;", "itemProviderLambda", "Lkotlin/Function0;", "Landroidx/compose/foundation/lazy/LazyListItemProvider;", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "graphicsContext", "Landroidx/compose/ui/graphics/GraphicsContext;", "stickyItemsPlacement", "Landroidx/compose/foundation/lazy/layout/StickyItemsPlacement;", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/foundation/lazy/LazyListState;Landroidx/compose/foundation/layout/PaddingValues;ZZILandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/ui/graphics/GraphicsContext;Landroidx/compose/foundation/lazy/layout/StickyItemsPlacement;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasurePolicy;", "keepAroundItems", "Landroidx/compose/foundation/lazy/layout/CacheWindowLogic;", "visibleItemsList", "", "Landroidx/compose/foundation/lazy/LazyListMeasuredItem;", "measuredItemProvider", "Landroidx/compose/foundation/lazy/LazyListMeasuredItemProvider;", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyListKt {
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0140  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x0167  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x016c  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0189  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x018c  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x01aa  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x01ad  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x01c5  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x01d7  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0383  */
-    /* JADX WARN: Removed duplicated region for block: B:199:0x0396  */
-    /* JADX WARN: Removed duplicated region for block: B:201:? A[RETURN, SYNTHETIC] */
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit LazyList$lambda$0(Modifier modifier, LazyListState lazyListState, PaddingValues paddingValues, boolean z, boolean z2, FlingBehavior flingBehavior, boolean z3, OverscrollEffect overscrollEffect, int i, Alignment.Horizontal horizontal, Arrangement.Vertical vertical, Alignment.Vertical vertical2, Arrangement.Horizontal horizontal2, Function1 function1, int i2, int i3, int i4, Composer composer, int i5) {
+        LazyList(modifier, lazyListState, paddingValues, z, z2, flingBehavior, z3, overscrollEffect, i, horizontal, vertical, vertical2, horizontal2, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x013b  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0162  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x0167  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0184  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0187  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x01a4  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x01a7  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x01bf  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x01d1  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x022b  */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x026b  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x02b4  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x02bb  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x02fb  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x02fe  */
+    /* JADX WARN: Removed duplicated region for block: B:199:0x0303  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x0328  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x03a6  */
+    /* JADX WARN: Removed duplicated region for block: B:205:0x03b3  */
+    /* JADX WARN: Removed duplicated region for block: B:208:0x03c7  */
+    /* JADX WARN: Removed duplicated region for block: B:210:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:36:0x0079  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x007c  */
     /* JADX WARN: Removed duplicated region for block: B:46:0x0090  */
@@ -77,9 +82,8 @@ public final class LazyListKt {
     /* JADX WARN: Removed duplicated region for block: B:77:0x00e2  */
     /* JADX WARN: Removed duplicated region for block: B:78:0x00e5  */
     /* JADX WARN: Removed duplicated region for block: B:88:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0106  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x011f  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0117  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x011f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -87,7 +91,7 @@ public final class LazyListKt {
         int i5;
         Object obj;
         int i6;
-        final int i7;
+        int i7;
         int i8;
         int i9;
         int i10;
@@ -95,19 +99,25 @@ public final class LazyListKt {
         int i12;
         int i13;
         int i14;
-        int i15;
-        int i16;
         Composer composer2;
         LazyListState lazyListState2;
         final Alignment.Horizontal horizontal3;
         final Arrangement.Vertical vertical3;
         final Alignment.Vertical vertical4;
         final Arrangement.Horizontal horizontal4;
+        final int i15;
         ScopeUpdateScope endRestartGroup;
+        Alignment.Horizontal horizontal5;
+        Arrangement.Vertical vertical5;
+        int i16;
+        Alignment.Vertical vertical6;
+        Arrangement.Horizontal horizontal6;
+        Object rememberedValue;
         Modifier.Companion companion;
         Modifier scrollingContainer;
+        int i17;
         Composer startRestartGroup = composer.startRestartGroup(924924659);
-        ComposerKt.sourceInformation(startRestartGroup, "C(LazyList)P(7,10,2,9,6,3,11,8!1,4,13,12,5)85@4100L50,87@4176L48,88@4250L24,89@4322L7,90@4391L7,93@4432L483,132@5717L302,127@5548L1174:LazyList.kt#428nma");
+        ComposerKt.sourceInformation(startRestartGroup, "C(LazyList)N(modifier,state,contentPadding,reverseLayout,isVertical,flingBehavior,userScrollEnabled,overscrollEffect,beyondBoundsItemCount,horizontalAlignment,verticalArrangement,verticalAlignment,horizontalArrangement,content)86@4193L50,88@4269L48,89@4343L24,90@4415L7,91@4484L7,94@4525L484,133@5813L302,128@5644L1176:LazyList.kt#428nma");
         if ((i4 & 1) != 0) {
             i5 = i2 | 6;
         } else if ((i2 & 6) == 0) {
@@ -148,229 +158,272 @@ public final class LazyListKt {
                     i5 |= 12582912;
                 } else if ((i2 & 12582912) == 0) {
                     i5 |= startRestartGroup.changed(overscrollEffect) ? 8388608 : 4194304;
-                    i6 = i4 & 256;
-                    if (i6 == 0) {
-                        i5 |= 100663296;
-                        i7 = i;
-                    } else {
-                        i7 = i;
-                        if ((i2 & 100663296) == 0) {
-                            i5 |= startRestartGroup.changed(i7) ? 67108864 : 33554432;
+                    if ((i2 & 100663296) != 0) {
+                        if ((i4 & 256) == 0) {
+                            i6 = i;
+                            if (startRestartGroup.changed(i6)) {
+                                i17 = 67108864;
+                                i5 |= i17;
+                            }
+                        } else {
+                            i6 = i;
                         }
+                        i17 = 33554432;
+                        i5 |= i17;
+                    } else {
+                        i6 = i;
                     }
-                    i8 = i4 & 512;
-                    if (i8 == 0) {
+                    i7 = i4 & 512;
+                    if (i7 == 0) {
                         i5 |= 805306368;
                     } else if ((i2 & 805306368) == 0) {
-                        i9 = i8;
                         i5 |= startRestartGroup.changed(horizontal) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
-                        i10 = i4 & 1024;
-                        if (i10 != 0) {
-                            i12 = i3 | 6;
-                            i11 = i10;
-                        } else if ((i3 & 6) == 0) {
-                            i11 = i10;
-                            i12 = i3 | (startRestartGroup.changed(vertical) ? 4 : 2);
-                        } else {
-                            i11 = i10;
-                            i12 = i3;
+                    }
+                    i8 = i4 & 1024;
+                    if (i8 == 0) {
+                        i10 = i3 | 6;
+                        i9 = i8;
+                    } else if ((i3 & 6) == 0) {
+                        i9 = i8;
+                        i10 = i3 | (startRestartGroup.changed(vertical) ? 4 : 2);
+                    } else {
+                        i9 = i8;
+                        i10 = i3;
+                    }
+                    i11 = i4 & 2048;
+                    if (i11 == 0) {
+                        i10 |= 48;
+                        i12 = i11;
+                    } else if ((i3 & 48) == 0) {
+                        i12 = i11;
+                        i10 |= startRestartGroup.changed(vertical2) ? 32 : 16;
+                    } else {
+                        i12 = i11;
+                    }
+                    int i18 = i10;
+                    i13 = i4 & 4096;
+                    if (i13 == 0) {
+                        i14 = i18 | RendererCapabilities.DECODER_SUPPORT_MASK;
+                    } else {
+                        int i19 = i18;
+                        if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+                            i19 |= startRestartGroup.changed(horizontal2) ? 256 : 128;
                         }
-                        i13 = i4 & 2048;
-                        if (i13 != 0) {
-                            i12 |= 48;
-                            i14 = i13;
-                        } else if ((i3 & 48) == 0) {
-                            i14 = i13;
-                            i12 |= startRestartGroup.changed(vertical2) ? 32 : 16;
-                        } else {
-                            i14 = i13;
-                        }
-                        int i17 = i12;
-                        i15 = i4 & 4096;
-                        if (i15 != 0) {
-                            i16 = i17 | RendererCapabilities.DECODER_SUPPORT_MASK;
-                        } else {
-                            int i18 = i17;
-                            if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                                i18 |= startRestartGroup.changed(horizontal2) ? 256 : 128;
+                        i14 = i19;
+                    }
+                    if ((i4 & 8192) == 0) {
+                        i14 |= 3072;
+                    } else if ((i3 & 3072) == 0) {
+                        i14 |= startRestartGroup.changedInstance(function1) ? 2048 : 1024;
+                    }
+                    if (!startRestartGroup.shouldExecute((306783379 & i5) == 306783378 || (i14 & 1171) != 1170, i5 & 1)) {
+                        startRestartGroup.startDefaults();
+                        ComposerKt.sourceInformation(startRestartGroup, "74@3490L38");
+                        if ((i2 & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
+                            if ((i4 & 256) != 0) {
+                                i5 &= -234881025;
+                                i6 = LazyList_androidKt.defaultLazyListBeyondBoundsItemCount(startRestartGroup, 0);
                             }
-                            i16 = i18;
-                        }
-                        if ((i4 & 8192) != 0) {
-                            i16 |= 3072;
-                        } else if ((i3 & 3072) == 0) {
-                            i16 |= startRestartGroup.changedInstance(function1) ? 2048 : 1024;
-                        }
-                        if (startRestartGroup.shouldExecute((306783379 & i5) == 306783378 || (i16 & 1171) != 1170, i5 & 1)) {
-                            int i19 = i6 != 0 ? 0 : i7;
-                            Alignment.Horizontal horizontal5 = i9 != 0 ? null : horizontal;
-                            Arrangement.Vertical vertical5 = i11 != 0 ? null : vertical;
-                            Alignment.Vertical vertical6 = i14 != 0 ? null : vertical2;
-                            Arrangement.Horizontal horizontal6 = i15 != 0 ? null : horizontal2;
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(924924659, i5, i16, "androidx.compose.foundation.lazy.LazyList (LazyList.kt:84)");
-                            }
-                            int i20 = (i5 >> 3) & 14;
-                            Function0<LazyListItemProvider> rememberLazyListItemProviderLambda = LazyListItemProviderKt.rememberLazyListItemProviderLambda(lazyListState, function1, startRestartGroup, i20 | ((i16 >> 6) & 112));
-                            int i21 = i5 >> 9;
-                            int i22 = i16;
-                            LazyLayoutSemanticState rememberLazyListSemanticState = LazyListSemanticsKt.rememberLazyListSemanticState(lazyListState, z2, startRestartGroup, i20 | (i21 & 112));
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)558@25470L68:Effects.kt#9igjgp");
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -954203484, "CC(remember):Effects.kt#9igjgp");
-                            Object rememberedValue = startRestartGroup.rememberedValue();
-                            if (rememberedValue == Composer.Companion.getEmpty()) {
-                                rememberedValue = EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, startRestartGroup);
-                                startRestartGroup.updateRememberedValue(rememberedValue);
-                            }
-                            CoroutineScope coroutineScope = (CoroutineScope) rememberedValue;
-                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                            Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalGraphicsContext());
-                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            GraphicsContext graphicsContext = (GraphicsContext) consume;
-                            CompositionLocal<Boolean> localScrollCaptureInProgress = CompositionLocalsKt.getLocalScrollCaptureInProgress();
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                            Object consume2 = startRestartGroup.consume(localScrollCaptureInProgress);
-                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            int i23 = (65520 & i5) | (458752 & i21) | (3670016 & i21);
-                            int i24 = i22 << 18;
-                            StickyItemsPlacement stickToTopPlacement = !((Boolean) consume2).booleanValue() ? StickyItemsPlacement.Companion.getStickToTopPlacement() : null;
-                            int i25 = i5;
-                            Arrangement.Horizontal horizontal7 = horizontal6;
-                            Function2<LazyLayoutMeasureScope, Constraints, MeasureResult> rememberLazyListMeasurePolicy = rememberLazyListMeasurePolicy(rememberLazyListItemProviderLambda, lazyListState, obj, z, z2, i19, horizontal5, vertical6, horizontal7, vertical5, coroutineScope, graphicsContext, stickToTopPlacement, startRestartGroup, i23 | (29360128 & i24) | (i24 & 234881024) | ((i22 << 27) & 1879048192), 0);
-                            Alignment.Horizontal horizontal8 = horizontal5;
-                            Alignment.Vertical vertical7 = vertical6;
-                            Arrangement.Vertical vertical8 = vertical5;
-                            lazyListState2 = lazyListState;
-                            int i26 = i19;
-                            Orientation orientation = z2 ? Orientation.Vertical : Orientation.Horizontal;
-                            if (z3) {
-                                startRestartGroup.startReplaceGroup(-1513147781);
-                                ComposerKt.sourceInformation(startRestartGroup, "115@5166L165");
-                                companion = LazyLayoutBeyondBoundsModifierLocalKt.lazyLayoutBeyondBoundsModifier(Modifier.Companion, LazyListBeyondBoundsModifierKt.rememberLazyListBeyondBoundsState(lazyListState2, i26, startRestartGroup, i20 | ((i25 >> 21) & 112)), lazyListState2.getBeyondBoundsInfo$foundation_release(), z, orientation);
-                                startRestartGroup.endReplaceGroup();
-                            } else {
-                                startRestartGroup.startReplaceGroup(-1512720880);
-                                startRestartGroup.endReplaceGroup();
-                                companion = Modifier.Companion;
-                            }
-                            scrollingContainer = ScrollingContainerKt.scrollingContainer(LazyLayoutSemanticsKt.lazyLayoutSemantics(modifier.then(lazyListState2.getRemeasurementModifier$foundation_release()).then(lazyListState2.getAwaitLayoutModifier$foundation_release()), rememberLazyListItemProviderLambda, rememberLazyListSemanticState, orientation, z3, z, startRestartGroup, ((i25 >> 6) & 57344) | ((i25 << 6) & 458752)).then(companion).then(lazyListState2.getItemAnimator$foundation_release().getModifier()), lazyListState2, orientation, z3, z, flingBehavior, lazyListState2.getInternalInteractionSource$foundation_release(), false, overscrollEffect, (i & 256) != 0 ? null : null);
-                            composer2 = startRestartGroup;
-                            LazyLayoutKt.LazyLayout(rememberLazyListItemProviderLambda, scrollingContainer, lazyListState2.getPrefetchState$foundation_release(), rememberLazyListMeasurePolicy, composer2, 0, 0);
-                            if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventEnd();
-                            }
-                            i7 = i26;
-                            horizontal3 = horizontal8;
-                            vertical4 = vertical7;
-                            horizontal4 = horizontal7;
-                            vertical3 = vertical8;
-                        } else {
-                            composer2 = startRestartGroup;
-                            lazyListState2 = lazyListState;
-                            composer2.skipToGroupEnd();
-                            horizontal3 = horizontal;
-                            vertical3 = vertical;
-                            vertical4 = vertical2;
-                            horizontal4 = horizontal2;
-                        }
-                        endRestartGroup = composer2.endRestartGroup();
-                        if (endRestartGroup != null) {
-                            final LazyListState lazyListState3 = lazyListState2;
-                            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.lazy.LazyListKt$LazyList$1
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                /* JADX WARN: Multi-variable type inference failed */
-                                {
-                                    super(2);
+                            Alignment.Horizontal horizontal7 = i7 != 0 ? null : horizontal;
+                            horizontal5 = horizontal7;
+                            vertical5 = i9 != 0 ? null : vertical;
+                            i16 = i5;
+                            vertical6 = i12 != 0 ? null : vertical2;
+                            if (i13 != 0) {
+                                horizontal6 = null;
+                                startRestartGroup.endDefaults();
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventStart(924924659, i16, i14, "androidx.compose.foundation.lazy.LazyList (LazyList.kt:85)");
                                 }
-
-                                @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                    invoke(composer3, num.intValue());
-                                    return Unit.INSTANCE;
+                                int i20 = (i16 >> 3) & 14;
+                                Function0<LazyListItemProvider> rememberLazyListItemProviderLambda = LazyListItemProviderKt.rememberLazyListItemProviderLambda(lazyListState, function1, startRestartGroup, i20 | ((i14 >> 6) & 112));
+                                int i21 = i16 >> 9;
+                                int i22 = i14;
+                                LazyLayoutSemanticState rememberLazyListSemanticState = LazyListSemanticsKt.rememberLazyListSemanticState(lazyListState, z2, startRestartGroup, i20 | (i21 & 112));
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)608@27648L68:Effects.kt#9igjgp");
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 683737348, "CC(remember):Effects.kt#9igjgp");
+                                rememberedValue = startRestartGroup.rememberedValue();
+                                if (rememberedValue == Composer.Companion.getEmpty()) {
+                                    rememberedValue = EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, startRestartGroup);
+                                    startRestartGroup.updateRememberedValue(rememberedValue);
                                 }
-
-                                public final void invoke(Composer composer3, int i27) {
-                                    LazyListKt.LazyList(Modifier.this, lazyListState3, paddingValues, z, z2, flingBehavior, z3, overscrollEffect, i7, horizontal3, vertical3, vertical4, horizontal4, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+                                CoroutineScope coroutineScope = (CoroutineScope) rememberedValue;
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalGraphicsContext());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                GraphicsContext graphicsContext = (GraphicsContext) consume;
+                                CompositionLocal<Boolean> localScrollCaptureInProgress = CompositionLocalsKt.getLocalScrollCaptureInProgress();
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume2 = startRestartGroup.consume(localScrollCaptureInProgress);
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                int i23 = (65520 & i16) | (458752 & i21) | (3670016 & i21);
+                                int i24 = i22 << 18;
+                                int i25 = i6;
+                                StickyItemsPlacement stickToTopPlacement = ((Boolean) consume2).booleanValue() ? StickyItemsPlacement.Companion.getStickToTopPlacement() : null;
+                                int i26 = i16;
+                                LazyLayoutMeasurePolicy rememberLazyListMeasurePolicy = rememberLazyListMeasurePolicy(rememberLazyListItemProviderLambda, lazyListState, obj, z, z2, i25, horizontal5, vertical6, horizontal6, vertical5, coroutineScope, graphicsContext, stickToTopPlacement, startRestartGroup, i23 | (29360128 & i24) | (i24 & 234881024) | ((i22 << 27) & 1879048192), 0);
+                                Alignment.Horizontal horizontal8 = horizontal5;
+                                Alignment.Vertical vertical7 = vertical6;
+                                Arrangement.Horizontal horizontal9 = horizontal6;
+                                Arrangement.Vertical vertical8 = vertical5;
+                                lazyListState2 = lazyListState;
+                                Orientation orientation = !z2 ? Orientation.Vertical : Orientation.Horizontal;
+                                if (!z3) {
+                                    startRestartGroup.startReplaceGroup(-2077085864);
+                                    ComposerKt.sourceInformation(startRestartGroup, "116@5260L166");
+                                    companion = LazyLayoutBeyondBoundsModifierLocalKt.lazyLayoutBeyondBoundsModifier(Modifier.Companion, LazyListBeyondBoundsModifierKt.rememberLazyListBeyondBoundsState(lazyListState2, i25, startRestartGroup, i20 | ((i26 >> 21) & 112)), lazyListState2.getBeyondBoundsInfo$foundation_release(), z, orientation);
+                                    startRestartGroup.endReplaceGroup();
+                                } else {
+                                    startRestartGroup.startReplaceGroup(-2076657041);
+                                    startRestartGroup.endReplaceGroup();
+                                    companion = Modifier.Companion;
                                 }
-                            });
-                            return;
+                                scrollingContainer = ScrollingContainerKt.scrollingContainer(LazyLayoutSemanticsKt.lazyLayoutSemantics(modifier.then(lazyListState2.getRemeasurementModifier$foundation_release()).then(lazyListState2.getAwaitLayoutModifier$foundation_release()), rememberLazyListItemProviderLambda, rememberLazyListSemanticState, orientation, z3, z, startRestartGroup, ((i26 >> 6) & 57344) | ((i26 << 6) & 458752)).then(companion).then(lazyListState2.getItemAnimator$foundation_release().getModifier()), lazyListState2, orientation, z3, z, flingBehavior, lazyListState2.getInternalInteractionSource$foundation_release(), false, overscrollEffect, (i & 256) != 0 ? null : null);
+                                composer2 = startRestartGroup;
+                                LazyLayoutKt.LazyLayout(rememberLazyListItemProviderLambda, scrollingContainer, lazyListState2.getPrefetchState$foundation_release(), rememberLazyListMeasurePolicy, composer2, 0, 0);
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventEnd();
+                                }
+                                i15 = i25;
+                                horizontal3 = horizontal8;
+                                vertical4 = vertical7;
+                                horizontal4 = horizontal9;
+                                vertical3 = vertical8;
+                            }
+                        } else {
+                            startRestartGroup.skipToGroupEnd();
+                            if ((i4 & 256) != 0) {
+                                i5 &= -234881025;
+                            }
+                            horizontal5 = horizontal;
+                            vertical5 = vertical;
+                            vertical6 = vertical2;
+                            i16 = i5;
                         }
-                        return;
-                    }
-                    i9 = i8;
-                    i10 = i4 & 1024;
-                    if (i10 != 0) {
-                    }
-                    i13 = i4 & 2048;
-                    if (i13 != 0) {
-                    }
-                    int i172 = i12;
-                    i15 = i4 & 4096;
-                    if (i15 != 0) {
-                    }
-                    if ((i4 & 8192) != 0) {
-                    }
-                    if (startRestartGroup.shouldExecute((306783379 & i5) == 306783378 || (i16 & 1171) != 1170, i5 & 1)) {
+                        horizontal6 = horizontal2;
+                        startRestartGroup.endDefaults();
+                        if (ComposerKt.isTraceInProgress()) {
+                        }
+                        int i202 = (i16 >> 3) & 14;
+                        Function0<LazyListItemProvider> rememberLazyListItemProviderLambda2 = LazyListItemProviderKt.rememberLazyListItemProviderLambda(lazyListState, function1, startRestartGroup, i202 | ((i14 >> 6) & 112));
+                        int i212 = i16 >> 9;
+                        int i222 = i14;
+                        LazyLayoutSemanticState rememberLazyListSemanticState2 = LazyListSemanticsKt.rememberLazyListSemanticState(lazyListState, z2, startRestartGroup, i202 | (i212 & 112));
+                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)608@27648L68:Effects.kt#9igjgp");
+                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 683737348, "CC(remember):Effects.kt#9igjgp");
+                        rememberedValue = startRestartGroup.rememberedValue();
+                        if (rememberedValue == Composer.Companion.getEmpty()) {
+                        }
+                        CoroutineScope coroutineScope2 = (CoroutineScope) rememberedValue;
+                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                        Object consume3 = startRestartGroup.consume(CompositionLocalsKt.getLocalGraphicsContext());
+                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                        GraphicsContext graphicsContext2 = (GraphicsContext) consume3;
+                        CompositionLocal<Boolean> localScrollCaptureInProgress2 = CompositionLocalsKt.getLocalScrollCaptureInProgress();
+                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                        Object consume22 = startRestartGroup.consume(localScrollCaptureInProgress2);
+                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                        int i232 = (65520 & i16) | (458752 & i212) | (3670016 & i212);
+                        int i242 = i222 << 18;
+                        int i252 = i6;
+                        StickyItemsPlacement stickToTopPlacement2 = ((Boolean) consume22).booleanValue() ? StickyItemsPlacement.Companion.getStickToTopPlacement() : null;
+                        int i262 = i16;
+                        LazyLayoutMeasurePolicy rememberLazyListMeasurePolicy2 = rememberLazyListMeasurePolicy(rememberLazyListItemProviderLambda2, lazyListState, obj, z, z2, i252, horizontal5, vertical6, horizontal6, vertical5, coroutineScope2, graphicsContext2, stickToTopPlacement2, startRestartGroup, i232 | (29360128 & i242) | (i242 & 234881024) | ((i222 << 27) & 1879048192), 0);
+                        Alignment.Horizontal horizontal82 = horizontal5;
+                        Alignment.Vertical vertical72 = vertical6;
+                        Arrangement.Horizontal horizontal92 = horizontal6;
+                        Arrangement.Vertical vertical82 = vertical5;
+                        lazyListState2 = lazyListState;
+                        Orientation orientation2 = !z2 ? Orientation.Vertical : Orientation.Horizontal;
+                        if (!z3) {
+                        }
+                        scrollingContainer = ScrollingContainerKt.scrollingContainer(LazyLayoutSemanticsKt.lazyLayoutSemantics(modifier.then(lazyListState2.getRemeasurementModifier$foundation_release()).then(lazyListState2.getAwaitLayoutModifier$foundation_release()), rememberLazyListItemProviderLambda2, rememberLazyListSemanticState2, orientation2, z3, z, startRestartGroup, ((i262 >> 6) & 57344) | ((i262 << 6) & 458752)).then(companion).then(lazyListState2.getItemAnimator$foundation_release().getModifier()), lazyListState2, orientation2, z3, z, flingBehavior, lazyListState2.getInternalInteractionSource$foundation_release(), false, overscrollEffect, (i & 256) != 0 ? null : null);
+                        composer2 = startRestartGroup;
+                        LazyLayoutKt.LazyLayout(rememberLazyListItemProviderLambda2, scrollingContainer, lazyListState2.getPrefetchState$foundation_release(), rememberLazyListMeasurePolicy2, composer2, 0, 0);
+                        if (ComposerKt.isTraceInProgress()) {
+                        }
+                        i15 = i252;
+                        horizontal3 = horizontal82;
+                        vertical4 = vertical72;
+                        horizontal4 = horizontal92;
+                        vertical3 = vertical82;
+                    } else {
+                        composer2 = startRestartGroup;
+                        lazyListState2 = lazyListState;
+                        composer2.skipToGroupEnd();
+                        horizontal3 = horizontal;
+                        vertical3 = vertical;
+                        vertical4 = vertical2;
+                        horizontal4 = horizontal2;
+                        i15 = i6;
                     }
                     endRestartGroup = composer2.endRestartGroup();
-                    if (endRestartGroup != null) {
+                    if (endRestartGroup == null) {
+                        final LazyListState lazyListState3 = lazyListState2;
+                        endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.lazy.LazyListKt$$ExternalSyntheticLambda0
+                            @Override // kotlin.jvm.functions.Function2
+                            public final Object invoke(Object obj2, Object obj3) {
+                                Unit LazyList$lambda$0;
+                                LazyList$lambda$0 = LazyListKt.LazyList$lambda$0(Modifier.this, lazyListState3, paddingValues, z, z2, flingBehavior, z3, overscrollEffect, i15, horizontal3, vertical3, vertical4, horizontal4, function1, i2, i3, i4, (Composer) obj2, ((Integer) obj3).intValue());
+                                return LazyList$lambda$0;
+                            }
+                        });
+                        return;
                     }
+                    return;
                 }
-                i6 = i4 & 256;
-                if (i6 == 0) {
+                if ((i2 & 100663296) != 0) {
                 }
-                i8 = i4 & 512;
+                i7 = i4 & 512;
+                if (i7 == 0) {
+                }
+                i8 = i4 & 1024;
                 if (i8 == 0) {
                 }
-                i9 = i8;
-                i10 = i4 & 1024;
-                if (i10 != 0) {
+                i11 = i4 & 2048;
+                if (i11 == 0) {
                 }
-                i13 = i4 & 2048;
-                if (i13 != 0) {
+                int i182 = i10;
+                i13 = i4 & 4096;
+                if (i13 == 0) {
                 }
-                int i1722 = i12;
-                i15 = i4 & 4096;
-                if (i15 != 0) {
+                if ((i4 & 8192) == 0) {
                 }
-                if ((i4 & 8192) != 0) {
-                }
-                if (startRestartGroup.shouldExecute((306783379 & i5) == 306783378 || (i16 & 1171) != 1170, i5 & 1)) {
+                if (!startRestartGroup.shouldExecute((306783379 & i5) == 306783378 || (i14 & 1171) != 1170, i5 & 1)) {
                 }
                 endRestartGroup = composer2.endRestartGroup();
-                if (endRestartGroup != null) {
+                if (endRestartGroup == null) {
                 }
             }
             if ((i4 & 64) != 0) {
             }
             if ((i4 & 128) != 0) {
             }
-            i6 = i4 & 256;
-            if (i6 == 0) {
+            if ((i2 & 100663296) != 0) {
             }
-            i8 = i4 & 512;
+            i7 = i4 & 512;
+            if (i7 == 0) {
+            }
+            i8 = i4 & 1024;
             if (i8 == 0) {
             }
-            i9 = i8;
-            i10 = i4 & 1024;
-            if (i10 != 0) {
+            i11 = i4 & 2048;
+            if (i11 == 0) {
             }
-            i13 = i4 & 2048;
-            if (i13 != 0) {
+            int i1822 = i10;
+            i13 = i4 & 4096;
+            if (i13 == 0) {
             }
-            int i17222 = i12;
-            i15 = i4 & 4096;
-            if (i15 != 0) {
+            if ((i4 & 8192) == 0) {
             }
-            if ((i4 & 8192) != 0) {
-            }
-            if (startRestartGroup.shouldExecute((306783379 & i5) == 306783378 || (i16 & 1171) != 1170, i5 & 1)) {
+            if (!startRestartGroup.shouldExecute((306783379 & i5) == 306783378 || (i14 & 1171) != 1170, i5 & 1)) {
             }
             endRestartGroup = composer2.endRestartGroup();
-            if (endRestartGroup != null) {
+            if (endRestartGroup == null) {
             }
         }
         obj = paddingValues;
@@ -384,71 +437,69 @@ public final class LazyListKt {
         }
         if ((i4 & 128) != 0) {
         }
-        i6 = i4 & 256;
-        if (i6 == 0) {
+        if ((i2 & 100663296) != 0) {
         }
-        i8 = i4 & 512;
+        i7 = i4 & 512;
+        if (i7 == 0) {
+        }
+        i8 = i4 & 1024;
         if (i8 == 0) {
         }
-        i9 = i8;
-        i10 = i4 & 1024;
-        if (i10 != 0) {
+        i11 = i4 & 2048;
+        if (i11 == 0) {
         }
-        i13 = i4 & 2048;
-        if (i13 != 0) {
+        int i18222 = i10;
+        i13 = i4 & 4096;
+        if (i13 == 0) {
         }
-        int i172222 = i12;
-        i15 = i4 & 4096;
-        if (i15 != 0) {
+        if ((i4 & 8192) == 0) {
         }
-        if ((i4 & 8192) != 0) {
-        }
-        if (startRestartGroup.shouldExecute((306783379 & i5) == 306783378 || (i16 & 1171) != 1170, i5 & 1)) {
+        if (!startRestartGroup.shouldExecute((306783379 & i5) == 306783378 || (i14 & 1171) != 1170, i5 & 1)) {
         }
         endRestartGroup = composer2.endRestartGroup();
-        if (endRestartGroup != null) {
+        if (endRestartGroup == null) {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0079, code lost:
-        if (r34.changed(r4) == false) goto L80;
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0078, code lost:
+        if (r34.changed(r4) == false) goto L88;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x0096, code lost:
-        if (r34.changed(r9) == false) goto L76;
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x00af, code lost:
+        if (r34.changed(r9) == false) goto L81;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x00b2, code lost:
-        if (r34.changed(r12) == false) goto L72;
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x00cb, code lost:
+        if (r34.changed(r12) == false) goto L77;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x00ce, code lost:
-        if (r34.changed(r13) == false) goto L68;
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x00e7, code lost:
+        if (r34.changed(r13) == false) goto L73;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x00ea, code lost:
-        if (r34.changed(r14) == false) goto L64;
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x0103, code lost:
+        if (r34.changed(r5) == false) goto L69;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:82:0x0109, code lost:
-        if (r34.changed(r5) == false) goto L60;
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x0122, code lost:
+        if (r34.changed(r6) == false) goto L65;
      */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0090  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0099  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00ac  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00b5  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00bc  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x00d1  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00e4  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x00f4  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x010c  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x011f  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0165  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00b9  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00d5  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x010d  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x011c  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0138  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static final Function2<LazyLayoutMeasureScope, Constraints, MeasureResult> rememberLazyListMeasurePolicy(final Function0<? extends LazyListItemProvider> function0, final LazyListState lazyListState, final PaddingValues paddingValues, final boolean z, boolean z2, final int i, Alignment.Horizontal horizontal, Alignment.Vertical vertical, Arrangement.Horizontal horizontal2, Arrangement.Vertical vertical2, final CoroutineScope coroutineScope, final GraphicsContext graphicsContext, StickyItemsPlacement stickyItemsPlacement, Composer composer, int i2, int i3) {
+    private static final LazyLayoutMeasurePolicy rememberLazyListMeasurePolicy(Function0<? extends LazyListItemProvider> function0, LazyListState lazyListState, PaddingValues paddingValues, boolean z, boolean z2, int i, Alignment.Horizontal horizontal, Alignment.Vertical vertical, Arrangement.Horizontal horizontal2, Arrangement.Vertical vertical2, CoroutineScope coroutineScope, GraphicsContext graphicsContext, StickyItemsPlacement stickyItemsPlacement, Composer composer, int i2, int i3) {
         boolean z3;
         boolean z4;
         Object obj;
@@ -462,12 +513,12 @@ public final class LazyListKt {
         Object obj5;
         boolean z9;
         boolean z10;
-        Object rememberedValue;
-        ComposerKt.sourceInformationMarkerStart(composer, -739270660, "C(rememberLazyListMeasurePolicy)P(7,9,1,8,6!1,4,11,5,12)187@7988L9562:LazyList.kt#428nma");
+        LazyListKt$rememberLazyListMeasurePolicy$1$1 rememberedValue;
+        ComposerKt.sourceInformationMarkerStart(composer, 406165748, "C(rememberLazyListMeasurePolicy)N(itemProviderLambda,state,contentPadding,reverseLayout,isVertical,beyondBoundsItemCount,horizontalAlignment,verticalAlignment,horizontalArrangement,verticalArrangement,coroutineScope,graphicsContext,stickyItemsPlacement)188@8087L9831:LazyList.kt#428nma");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-739270660, i2, i3, "androidx.compose.foundation.lazy.rememberLazyListMeasurePolicy (LazyList.kt:187)");
+            ComposerKt.traceEventStart(406165748, i2, i3, "androidx.compose.foundation.lazy.rememberLazyListMeasurePolicy (LazyList.kt:188)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 581144747, "CC(remember):LazyList.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -516689861, "CC(remember):LazyList.kt#9igjgp");
         boolean z11 = ((((i2 & 112) ^ 48) > 32 && composer.changed(lazyListState)) || (i2 & 48) == 32) | ((((i2 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(paddingValues)) || (i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | ((((i2 & 7168) ^ 3072) > 2048 && composer.changed(z)) || (i2 & 3072) == 2048);
         if (((57344 & i2) ^ 24576) > 16384) {
             z3 = z2;
@@ -476,7 +527,7 @@ public final class LazyListKt {
         }
         if ((i2 & 24576) != 16384) {
             z4 = false;
-            boolean z12 = z11 | z4;
+            boolean z12 = z11 | z4 | ((((458752 & i2) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) <= 131072 && composer.changed(i)) || (i2 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 131072);
             if (((3670016 & i2) ^ 1572864) <= 1048576) {
                 obj = horizontal;
             } else {
@@ -519,386 +570,30 @@ public final class LazyListKt {
                                 z10 = changed | z9;
                                 rememberedValue = composer.rememberedValue();
                                 if (!z10 || rememberedValue == Composer.Companion.getEmpty()) {
-                                    final Arrangement.Vertical vertical3 = obj4;
-                                    final Arrangement.Horizontal horizontal3 = obj3;
-                                    final StickyItemsPlacement stickyItemsPlacement2 = obj5;
-                                    final Alignment.Horizontal horizontal4 = obj;
-                                    final Alignment.Vertical vertical4 = obj2;
-                                    final boolean z16 = z3;
-                                    rememberedValue = (Function2) new Function2<LazyLayoutMeasureScope, Constraints, LazyListMeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        /* JADX WARN: Multi-variable type inference failed */
-                                        {
-                                            super(2);
-                                        }
-
-                                        @Override // kotlin.jvm.functions.Function2
-                                        public /* bridge */ /* synthetic */ LazyListMeasureResult invoke(LazyLayoutMeasureScope lazyLayoutMeasureScope, Constraints constraints) {
-                                            return m842invoke0kLqBqw(lazyLayoutMeasureScope, constraints.m6643unboximpl());
-                                        }
-
-                                        /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                                        public final LazyListMeasureResult m842invoke0kLqBqw(final LazyLayoutMeasureScope lazyLayoutMeasureScope, final long j) {
-                                            int i4;
-                                            int i5;
-                                            final int i6;
-                                            float mo625getSpacingD9Ej5fM;
-                                            int m6637getMaxWidthimpl;
-                                            LazyListItemProvider lazyListItemProvider;
-                                            long m6806constructorimpl;
-                                            float scrollToBeConsumed$foundation_release;
-                                            ObservableScopeInvalidator.m918attachToScopeimpl(LazyListState.this.m857getMeasurementScopeInvalidatorzYiylxw$foundation_release());
-                                            boolean z17 = LazyListState.this.getHasLookaheadOccurred$foundation_release() || lazyLayoutMeasureScope.isLookingAhead();
-                                            CheckScrollableContainerConstraintsKt.m275checkScrollableContainerConstraintsK40F9xA(j, z16 ? Orientation.Vertical : Orientation.Horizontal);
-                                            if (z16) {
-                                                i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo688calculateLeftPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                                            } else {
-                                                i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateStartPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                                            }
-                                            if (z16) {
-                                                i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo689calculateRightPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                                            } else {
-                                                i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateEndPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                                            }
-                                            int i7 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo690calculateTopPaddingD9Ej5fM());
-                                            int i8 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo687calculateBottomPaddingD9Ej5fM());
-                                            final int i9 = i7 + i8;
-                                            final int i10 = i4 + i5;
-                                            boolean z18 = z16;
-                                            int i11 = z18 ? i9 : i10;
-                                            if (z18 && !z) {
-                                                i6 = i7;
-                                            } else if (z18 && z) {
-                                                i6 = i8;
-                                            } else {
-                                                i6 = (z18 || z) ? i5 : i4;
-                                            }
-                                            final int i12 = i11 - i6;
-                                            final long m6656offsetNN6EwU = ConstraintsKt.m6656offsetNN6EwU(j, -i10, -i9);
-                                            LazyListItemProvider invoke = function0.invoke();
-                                            invoke.getItemScope().setMaxSize(Constraints.m6637getMaxWidthimpl(m6656offsetNN6EwU), Constraints.m6636getMaxHeightimpl(m6656offsetNN6EwU));
-                                            if (z16) {
-                                                Arrangement.Vertical vertical5 = vertical3;
-                                                if (vertical5 != null) {
-                                                    mo625getSpacingD9Ej5fM = vertical5.mo625getSpacingD9Ej5fM();
-                                                } else {
-                                                    InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null verticalArrangement when isVertical == true");
-                                                    throw new KotlinNothingValueException();
-                                                }
-                                            } else {
-                                                Arrangement.Horizontal horizontal5 = horizontal3;
-                                                if (horizontal5 != null) {
-                                                    mo625getSpacingD9Ej5fM = horizontal5.mo625getSpacingD9Ej5fM();
-                                                } else {
-                                                    InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null horizontalAlignment when isVertical == false");
-                                                    throw new KotlinNothingValueException();
-                                                }
-                                            }
-                                            final int i13 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(mo625getSpacingD9Ej5fM);
-                                            final int itemCount = invoke.getItemCount();
-                                            if (z16) {
-                                                m6637getMaxWidthimpl = Constraints.m6636getMaxHeightimpl(j) - i9;
-                                            } else {
-                                                m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j) - i10;
-                                            }
-                                            int i14 = m6637getMaxWidthimpl;
-                                            if (z && i14 <= 0) {
-                                                boolean z19 = z16;
-                                                if (!z19) {
-                                                    i4 += i14;
-                                                }
-                                                if (z19) {
-                                                    i7 += i14;
-                                                }
-                                                lazyListItemProvider = invoke;
-                                                m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                                            } else {
-                                                lazyListItemProvider = invoke;
-                                                m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                                            }
-                                            final boolean z20 = z16;
-                                            final Alignment.Horizontal horizontal6 = horizontal4;
-                                            final long j2 = m6806constructorimpl;
-                                            final LazyListItemProvider lazyListItemProvider2 = lazyListItemProvider;
-                                            final Alignment.Vertical vertical6 = vertical4;
-                                            final boolean z21 = z;
-                                            final LazyListState lazyListState2 = LazyListState.this;
-                                            LazyListMeasuredItemProvider lazyListMeasuredItemProvider = new LazyListMeasuredItemProvider(m6656offsetNN6EwU, z20, lazyListItemProvider2, lazyLayoutMeasureScope, itemCount, i13, horizontal6, vertical6, z21, i6, i12, j2, lazyListState2) { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measuredItemProvider$1
-                                                final /* synthetic */ int $afterContentPadding;
-                                                final /* synthetic */ int $beforeContentPadding;
-                                                final /* synthetic */ Alignment.Horizontal $horizontalAlignment;
-                                                final /* synthetic */ boolean $isVertical;
-                                                final /* synthetic */ int $itemsCount;
-                                                final /* synthetic */ boolean $reverseLayout;
-                                                final /* synthetic */ int $spaceBetweenItems;
-                                                final /* synthetic */ LazyListState $state;
-                                                final /* synthetic */ LazyLayoutMeasureScope $this_null;
-                                                final /* synthetic */ Alignment.Vertical $verticalAlignment;
-                                                final /* synthetic */ long $visualItemOffset;
-
-                                                /* JADX INFO: Access modifiers changed from: package-private */
-                                                {
-                                                    this.$isVertical = z20;
-                                                    this.$this_null = lazyLayoutMeasureScope;
-                                                    this.$itemsCount = itemCount;
-                                                    this.$spaceBetweenItems = i13;
-                                                    this.$horizontalAlignment = horizontal6;
-                                                    this.$verticalAlignment = vertical6;
-                                                    this.$reverseLayout = z21;
-                                                    this.$beforeContentPadding = i6;
-                                                    this.$afterContentPadding = i12;
-                                                    this.$visualItemOffset = j2;
-                                                    this.$state = lazyListState2;
-                                                }
-
-                                                @Override // androidx.compose.foundation.lazy.LazyListMeasuredItemProvider
-                                                /* renamed from: createItem-X9ElhV4  reason: not valid java name */
-                                                public LazyListMeasuredItem mo843createItemX9ElhV4(int i15, Object obj6, Object obj7, List<? extends Placeable> list, long j3) {
-                                                    return new LazyListMeasuredItem(i15, list, this.$isVertical, this.$horizontalAlignment, this.$verticalAlignment, this.$this_null.getLayoutDirection(), this.$reverseLayout, this.$beforeContentPadding, this.$afterContentPadding, i15 == this.$itemsCount + (-1) ? 0 : this.$spaceBetweenItems, this.$visualItemOffset, obj6, obj7, this.$state.getItemAnimator$foundation_release(), j3, null);
-                                                }
-                                            };
-                                            Snapshot.Companion companion = Snapshot.Companion;
-                                            LazyListState lazyListState3 = LazyListState.this;
-                                            Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
-                                            Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
-                                            Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
-                                            try {
-                                                int updateScrollPositionIfTheFirstItemWasMoved$foundation_release = lazyListState3.updateScrollPositionIfTheFirstItemWasMoved$foundation_release(lazyListItemProvider2, lazyListState3.getFirstVisibleItemIndex());
-                                                int firstVisibleItemScrollOffset = lazyListState3.getFirstVisibleItemScrollOffset();
-                                                Unit unit = Unit.INSTANCE;
-                                                companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                                                List<Integer> calculateLazyLayoutPinnedIndices = LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(lazyListItemProvider2, LazyListState.this.getPinnedItems$foundation_release(), LazyListState.this.getBeyondBoundsInfo$foundation_release());
-                                                if (lazyLayoutMeasureScope.isLookingAhead() || !z17) {
-                                                    scrollToBeConsumed$foundation_release = LazyListState.this.getScrollToBeConsumed$foundation_release();
-                                                } else {
-                                                    scrollToBeConsumed$foundation_release = LazyListState.this.getScrollDeltaBetweenPasses$foundation_release();
-                                                }
-                                                LazyListMeasureResult m847measureLazyListLCrQqZ4 = LazyListMeasureKt.m847measureLazyListLCrQqZ4(itemCount, lazyListMeasuredItemProvider, i14, i6, i12, i13, updateScrollPositionIfTheFirstItemWasMoved$foundation_release, firstVisibleItemScrollOffset, scrollToBeConsumed$foundation_release, m6656offsetNN6EwU, z16, vertical3, horizontal3, z, lazyLayoutMeasureScope, LazyListState.this.getItemAnimator$foundation_release(), i, calculateLazyLayoutPinnedIndices, z17, lazyLayoutMeasureScope.isLookingAhead(), LazyListState.this.getApproachLayoutInfo$foundation_release(), coroutineScope, LazyListState.this.m858getPlacementScopeInvalidatorzYiylxw$foundation_release(), graphicsContext, stickyItemsPlacement2, new Function3<Integer, Integer, Function1<? super Placeable.PlacementScope, ? extends Unit>, MeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measureResult$1
-                                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                    {
-                                                        super(3);
-                                                    }
-
-                                                    @Override // kotlin.jvm.functions.Function3
-                                                    public /* bridge */ /* synthetic */ MeasureResult invoke(Integer num, Integer num2, Function1<? super Placeable.PlacementScope, ? extends Unit> function1) {
-                                                        return invoke(num.intValue(), num2.intValue(), (Function1<? super Placeable.PlacementScope, Unit>) function1);
-                                                    }
-
-                                                    public final MeasureResult invoke(int i15, int i16, Function1<? super Placeable.PlacementScope, Unit> function1) {
-                                                        return LazyLayoutMeasureScope.this.layout(ConstraintsKt.m6654constrainWidthK40F9xA(j, i15 + i10), ConstraintsKt.m6653constrainHeightK40F9xA(j, i16 + i9), MapsKt.emptyMap(), function1);
-                                                    }
-                                                });
-                                                LazyListState.applyMeasureResult$foundation_release$default(LazyListState.this, m847measureLazyListLCrQqZ4, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
-                                                return m847measureLazyListLCrQqZ4;
-                                            } catch (Throwable th) {
-                                                companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                                                throw th;
-                                            }
-                                        }
-                                    };
+                                    rememberedValue = new LazyListKt$rememberLazyListMeasurePolicy$1$1(lazyListState, z3, paddingValues, z, function0, obj4, obj3, i, coroutineScope, graphicsContext, obj5, obj, obj2);
                                     composer.updateRememberedValue(rememberedValue);
                                 }
-                                Function2<LazyLayoutMeasureScope, Constraints, MeasureResult> function2 = (Function2) rememberedValue;
+                                LazyLayoutMeasurePolicy lazyLayoutMeasurePolicy = (LazyLayoutMeasurePolicy) rememberedValue;
                                 ComposerKt.sourceInformationMarkerEnd(composer);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
                                 ComposerKt.sourceInformationMarkerEnd(composer);
-                                return function2;
+                                return lazyLayoutMeasurePolicy;
                             }
                             z9 = true;
                             z10 = changed | z9;
                             rememberedValue = composer.rememberedValue();
                             if (!z10) {
                             }
-                            final Arrangement.Vertical vertical32 = obj4;
-                            final Arrangement.Horizontal horizontal32 = obj3;
-                            final StickyItemsPlacement stickyItemsPlacement22 = obj5;
-                            final Alignment.Horizontal horizontal42 = obj;
-                            final Alignment.Vertical vertical42 = obj2;
-                            final boolean z162 = z3;
-                            rememberedValue = (Function2) new Function2<LazyLayoutMeasureScope, Constraints, LazyListMeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                /* JADX WARN: Multi-variable type inference failed */
-                                {
-                                    super(2);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function2
-                                public /* bridge */ /* synthetic */ LazyListMeasureResult invoke(LazyLayoutMeasureScope lazyLayoutMeasureScope, Constraints constraints) {
-                                    return m842invoke0kLqBqw(lazyLayoutMeasureScope, constraints.m6643unboximpl());
-                                }
-
-                                /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                                public final LazyListMeasureResult m842invoke0kLqBqw(final LazyLayoutMeasureScope lazyLayoutMeasureScope, final long j) {
-                                    int i4;
-                                    int i5;
-                                    final int i6;
-                                    float mo625getSpacingD9Ej5fM;
-                                    int m6637getMaxWidthimpl;
-                                    LazyListItemProvider lazyListItemProvider;
-                                    long m6806constructorimpl;
-                                    float scrollToBeConsumed$foundation_release;
-                                    ObservableScopeInvalidator.m918attachToScopeimpl(LazyListState.this.m857getMeasurementScopeInvalidatorzYiylxw$foundation_release());
-                                    boolean z17 = LazyListState.this.getHasLookaheadOccurred$foundation_release() || lazyLayoutMeasureScope.isLookingAhead();
-                                    CheckScrollableContainerConstraintsKt.m275checkScrollableContainerConstraintsK40F9xA(j, z162 ? Orientation.Vertical : Orientation.Horizontal);
-                                    if (z162) {
-                                        i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo688calculateLeftPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                                    } else {
-                                        i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateStartPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                                    }
-                                    if (z162) {
-                                        i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo689calculateRightPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                                    } else {
-                                        i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateEndPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                                    }
-                                    int i7 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo690calculateTopPaddingD9Ej5fM());
-                                    int i8 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo687calculateBottomPaddingD9Ej5fM());
-                                    final int i9 = i7 + i8;
-                                    final int i10 = i4 + i5;
-                                    boolean z18 = z162;
-                                    int i11 = z18 ? i9 : i10;
-                                    if (z18 && !z) {
-                                        i6 = i7;
-                                    } else if (z18 && z) {
-                                        i6 = i8;
-                                    } else {
-                                        i6 = (z18 || z) ? i5 : i4;
-                                    }
-                                    final int i12 = i11 - i6;
-                                    final long m6656offsetNN6EwU = ConstraintsKt.m6656offsetNN6EwU(j, -i10, -i9);
-                                    LazyListItemProvider invoke = function0.invoke();
-                                    invoke.getItemScope().setMaxSize(Constraints.m6637getMaxWidthimpl(m6656offsetNN6EwU), Constraints.m6636getMaxHeightimpl(m6656offsetNN6EwU));
-                                    if (z162) {
-                                        Arrangement.Vertical vertical5 = vertical32;
-                                        if (vertical5 != null) {
-                                            mo625getSpacingD9Ej5fM = vertical5.mo625getSpacingD9Ej5fM();
-                                        } else {
-                                            InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null verticalArrangement when isVertical == true");
-                                            throw new KotlinNothingValueException();
-                                        }
-                                    } else {
-                                        Arrangement.Horizontal horizontal5 = horizontal32;
-                                        if (horizontal5 != null) {
-                                            mo625getSpacingD9Ej5fM = horizontal5.mo625getSpacingD9Ej5fM();
-                                        } else {
-                                            InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null horizontalAlignment when isVertical == false");
-                                            throw new KotlinNothingValueException();
-                                        }
-                                    }
-                                    final int i13 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(mo625getSpacingD9Ej5fM);
-                                    final int itemCount = invoke.getItemCount();
-                                    if (z162) {
-                                        m6637getMaxWidthimpl = Constraints.m6636getMaxHeightimpl(j) - i9;
-                                    } else {
-                                        m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j) - i10;
-                                    }
-                                    int i14 = m6637getMaxWidthimpl;
-                                    if (z && i14 <= 0) {
-                                        boolean z19 = z162;
-                                        if (!z19) {
-                                            i4 += i14;
-                                        }
-                                        if (z19) {
-                                            i7 += i14;
-                                        }
-                                        lazyListItemProvider = invoke;
-                                        m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                                    } else {
-                                        lazyListItemProvider = invoke;
-                                        m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                                    }
-                                    final boolean z20 = z162;
-                                    final Alignment.Horizontal horizontal6 = horizontal42;
-                                    final long j2 = m6806constructorimpl;
-                                    final LazyListItemProvider lazyListItemProvider2 = lazyListItemProvider;
-                                    final Alignment.Vertical vertical6 = vertical42;
-                                    final boolean z21 = z;
-                                    final LazyListState lazyListState2 = LazyListState.this;
-                                    LazyListMeasuredItemProvider lazyListMeasuredItemProvider = new LazyListMeasuredItemProvider(m6656offsetNN6EwU, z20, lazyListItemProvider2, lazyLayoutMeasureScope, itemCount, i13, horizontal6, vertical6, z21, i6, i12, j2, lazyListState2) { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measuredItemProvider$1
-                                        final /* synthetic */ int $afterContentPadding;
-                                        final /* synthetic */ int $beforeContentPadding;
-                                        final /* synthetic */ Alignment.Horizontal $horizontalAlignment;
-                                        final /* synthetic */ boolean $isVertical;
-                                        final /* synthetic */ int $itemsCount;
-                                        final /* synthetic */ boolean $reverseLayout;
-                                        final /* synthetic */ int $spaceBetweenItems;
-                                        final /* synthetic */ LazyListState $state;
-                                        final /* synthetic */ LazyLayoutMeasureScope $this_null;
-                                        final /* synthetic */ Alignment.Vertical $verticalAlignment;
-                                        final /* synthetic */ long $visualItemOffset;
-
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        {
-                                            this.$isVertical = z20;
-                                            this.$this_null = lazyLayoutMeasureScope;
-                                            this.$itemsCount = itemCount;
-                                            this.$spaceBetweenItems = i13;
-                                            this.$horizontalAlignment = horizontal6;
-                                            this.$verticalAlignment = vertical6;
-                                            this.$reverseLayout = z21;
-                                            this.$beforeContentPadding = i6;
-                                            this.$afterContentPadding = i12;
-                                            this.$visualItemOffset = j2;
-                                            this.$state = lazyListState2;
-                                        }
-
-                                        @Override // androidx.compose.foundation.lazy.LazyListMeasuredItemProvider
-                                        /* renamed from: createItem-X9ElhV4  reason: not valid java name */
-                                        public LazyListMeasuredItem mo843createItemX9ElhV4(int i15, Object obj6, Object obj7, List<? extends Placeable> list, long j3) {
-                                            return new LazyListMeasuredItem(i15, list, this.$isVertical, this.$horizontalAlignment, this.$verticalAlignment, this.$this_null.getLayoutDirection(), this.$reverseLayout, this.$beforeContentPadding, this.$afterContentPadding, i15 == this.$itemsCount + (-1) ? 0 : this.$spaceBetweenItems, this.$visualItemOffset, obj6, obj7, this.$state.getItemAnimator$foundation_release(), j3, null);
-                                        }
-                                    };
-                                    Snapshot.Companion companion = Snapshot.Companion;
-                                    LazyListState lazyListState3 = LazyListState.this;
-                                    Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
-                                    Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
-                                    Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
-                                    try {
-                                        int updateScrollPositionIfTheFirstItemWasMoved$foundation_release = lazyListState3.updateScrollPositionIfTheFirstItemWasMoved$foundation_release(lazyListItemProvider2, lazyListState3.getFirstVisibleItemIndex());
-                                        int firstVisibleItemScrollOffset = lazyListState3.getFirstVisibleItemScrollOffset();
-                                        Unit unit = Unit.INSTANCE;
-                                        companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                                        List<Integer> calculateLazyLayoutPinnedIndices = LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(lazyListItemProvider2, LazyListState.this.getPinnedItems$foundation_release(), LazyListState.this.getBeyondBoundsInfo$foundation_release());
-                                        if (lazyLayoutMeasureScope.isLookingAhead() || !z17) {
-                                            scrollToBeConsumed$foundation_release = LazyListState.this.getScrollToBeConsumed$foundation_release();
-                                        } else {
-                                            scrollToBeConsumed$foundation_release = LazyListState.this.getScrollDeltaBetweenPasses$foundation_release();
-                                        }
-                                        LazyListMeasureResult m847measureLazyListLCrQqZ4 = LazyListMeasureKt.m847measureLazyListLCrQqZ4(itemCount, lazyListMeasuredItemProvider, i14, i6, i12, i13, updateScrollPositionIfTheFirstItemWasMoved$foundation_release, firstVisibleItemScrollOffset, scrollToBeConsumed$foundation_release, m6656offsetNN6EwU, z162, vertical32, horizontal32, z, lazyLayoutMeasureScope, LazyListState.this.getItemAnimator$foundation_release(), i, calculateLazyLayoutPinnedIndices, z17, lazyLayoutMeasureScope.isLookingAhead(), LazyListState.this.getApproachLayoutInfo$foundation_release(), coroutineScope, LazyListState.this.m858getPlacementScopeInvalidatorzYiylxw$foundation_release(), graphicsContext, stickyItemsPlacement22, new Function3<Integer, Integer, Function1<? super Placeable.PlacementScope, ? extends Unit>, MeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measureResult$1
-                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                            {
-                                                super(3);
-                                            }
-
-                                            @Override // kotlin.jvm.functions.Function3
-                                            public /* bridge */ /* synthetic */ MeasureResult invoke(Integer num, Integer num2, Function1<? super Placeable.PlacementScope, ? extends Unit> function1) {
-                                                return invoke(num.intValue(), num2.intValue(), (Function1<? super Placeable.PlacementScope, Unit>) function1);
-                                            }
-
-                                            public final MeasureResult invoke(int i15, int i16, Function1<? super Placeable.PlacementScope, Unit> function1) {
-                                                return LazyLayoutMeasureScope.this.layout(ConstraintsKt.m6654constrainWidthK40F9xA(j, i15 + i10), ConstraintsKt.m6653constrainHeightK40F9xA(j, i16 + i9), MapsKt.emptyMap(), function1);
-                                            }
-                                        });
-                                        LazyListState.applyMeasureResult$foundation_release$default(LazyListState.this, m847measureLazyListLCrQqZ4, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
-                                        return m847measureLazyListLCrQqZ4;
-                                    } catch (Throwable th) {
-                                        companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                                        throw th;
-                                    }
-                                }
-                            };
+                            rememberedValue = new LazyListKt$rememberLazyListMeasurePolicy$1$1(lazyListState, z3, paddingValues, z, function0, obj4, obj3, i, coroutineScope, graphicsContext, obj5, obj, obj2);
                             composer.updateRememberedValue(rememberedValue);
-                            Function2<LazyLayoutMeasureScope, Constraints, MeasureResult> function22 = (Function2) rememberedValue;
+                            LazyLayoutMeasurePolicy lazyLayoutMeasurePolicy2 = (LazyLayoutMeasurePolicy) rememberedValue;
                             ComposerKt.sourceInformationMarkerEnd(composer);
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             ComposerKt.sourceInformationMarkerEnd(composer);
-                            return function22;
+                            return lazyLayoutMeasurePolicy2;
                         }
                         z8 = true;
                         boolean changed2 = z8 | z15 | composer.changed(graphicsContext);
@@ -911,192 +606,14 @@ public final class LazyListKt {
                         rememberedValue = composer.rememberedValue();
                         if (!z10) {
                         }
-                        final Arrangement.Vertical vertical322 = obj4;
-                        final Arrangement.Horizontal horizontal322 = obj3;
-                        final StickyItemsPlacement stickyItemsPlacement222 = obj5;
-                        final Alignment.Horizontal horizontal422 = obj;
-                        final Alignment.Vertical vertical422 = obj2;
-                        final boolean z1622 = z3;
-                        rememberedValue = (Function2) new Function2<LazyLayoutMeasureScope, Constraints, LazyListMeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            /* JADX WARN: Multi-variable type inference failed */
-                            {
-                                super(2);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function2
-                            public /* bridge */ /* synthetic */ LazyListMeasureResult invoke(LazyLayoutMeasureScope lazyLayoutMeasureScope, Constraints constraints) {
-                                return m842invoke0kLqBqw(lazyLayoutMeasureScope, constraints.m6643unboximpl());
-                            }
-
-                            /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                            public final LazyListMeasureResult m842invoke0kLqBqw(final LazyLayoutMeasureScope lazyLayoutMeasureScope, final long j) {
-                                int i4;
-                                int i5;
-                                final int i6;
-                                float mo625getSpacingD9Ej5fM;
-                                int m6637getMaxWidthimpl;
-                                LazyListItemProvider lazyListItemProvider;
-                                long m6806constructorimpl;
-                                float scrollToBeConsumed$foundation_release;
-                                ObservableScopeInvalidator.m918attachToScopeimpl(LazyListState.this.m857getMeasurementScopeInvalidatorzYiylxw$foundation_release());
-                                boolean z17 = LazyListState.this.getHasLookaheadOccurred$foundation_release() || lazyLayoutMeasureScope.isLookingAhead();
-                                CheckScrollableContainerConstraintsKt.m275checkScrollableContainerConstraintsK40F9xA(j, z1622 ? Orientation.Vertical : Orientation.Horizontal);
-                                if (z1622) {
-                                    i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo688calculateLeftPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                                } else {
-                                    i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateStartPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                                }
-                                if (z1622) {
-                                    i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo689calculateRightPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                                } else {
-                                    i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateEndPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                                }
-                                int i7 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo690calculateTopPaddingD9Ej5fM());
-                                int i8 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo687calculateBottomPaddingD9Ej5fM());
-                                final int i9 = i7 + i8;
-                                final int i10 = i4 + i5;
-                                boolean z18 = z1622;
-                                int i11 = z18 ? i9 : i10;
-                                if (z18 && !z) {
-                                    i6 = i7;
-                                } else if (z18 && z) {
-                                    i6 = i8;
-                                } else {
-                                    i6 = (z18 || z) ? i5 : i4;
-                                }
-                                final int i12 = i11 - i6;
-                                final long m6656offsetNN6EwU = ConstraintsKt.m6656offsetNN6EwU(j, -i10, -i9);
-                                LazyListItemProvider invoke = function0.invoke();
-                                invoke.getItemScope().setMaxSize(Constraints.m6637getMaxWidthimpl(m6656offsetNN6EwU), Constraints.m6636getMaxHeightimpl(m6656offsetNN6EwU));
-                                if (z1622) {
-                                    Arrangement.Vertical vertical5 = vertical322;
-                                    if (vertical5 != null) {
-                                        mo625getSpacingD9Ej5fM = vertical5.mo625getSpacingD9Ej5fM();
-                                    } else {
-                                        InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null verticalArrangement when isVertical == true");
-                                        throw new KotlinNothingValueException();
-                                    }
-                                } else {
-                                    Arrangement.Horizontal horizontal5 = horizontal322;
-                                    if (horizontal5 != null) {
-                                        mo625getSpacingD9Ej5fM = horizontal5.mo625getSpacingD9Ej5fM();
-                                    } else {
-                                        InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null horizontalAlignment when isVertical == false");
-                                        throw new KotlinNothingValueException();
-                                    }
-                                }
-                                final int i13 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(mo625getSpacingD9Ej5fM);
-                                final int itemCount = invoke.getItemCount();
-                                if (z1622) {
-                                    m6637getMaxWidthimpl = Constraints.m6636getMaxHeightimpl(j) - i9;
-                                } else {
-                                    m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j) - i10;
-                                }
-                                int i14 = m6637getMaxWidthimpl;
-                                if (z && i14 <= 0) {
-                                    boolean z19 = z1622;
-                                    if (!z19) {
-                                        i4 += i14;
-                                    }
-                                    if (z19) {
-                                        i7 += i14;
-                                    }
-                                    lazyListItemProvider = invoke;
-                                    m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                                } else {
-                                    lazyListItemProvider = invoke;
-                                    m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                                }
-                                final boolean z20 = z1622;
-                                final Alignment.Horizontal horizontal6 = horizontal422;
-                                final long j2 = m6806constructorimpl;
-                                final LazyListItemProvider lazyListItemProvider2 = lazyListItemProvider;
-                                final Alignment.Vertical vertical6 = vertical422;
-                                final boolean z21 = z;
-                                final LazyListState lazyListState2 = LazyListState.this;
-                                LazyListMeasuredItemProvider lazyListMeasuredItemProvider = new LazyListMeasuredItemProvider(m6656offsetNN6EwU, z20, lazyListItemProvider2, lazyLayoutMeasureScope, itemCount, i13, horizontal6, vertical6, z21, i6, i12, j2, lazyListState2) { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measuredItemProvider$1
-                                    final /* synthetic */ int $afterContentPadding;
-                                    final /* synthetic */ int $beforeContentPadding;
-                                    final /* synthetic */ Alignment.Horizontal $horizontalAlignment;
-                                    final /* synthetic */ boolean $isVertical;
-                                    final /* synthetic */ int $itemsCount;
-                                    final /* synthetic */ boolean $reverseLayout;
-                                    final /* synthetic */ int $spaceBetweenItems;
-                                    final /* synthetic */ LazyListState $state;
-                                    final /* synthetic */ LazyLayoutMeasureScope $this_null;
-                                    final /* synthetic */ Alignment.Vertical $verticalAlignment;
-                                    final /* synthetic */ long $visualItemOffset;
-
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    {
-                                        this.$isVertical = z20;
-                                        this.$this_null = lazyLayoutMeasureScope;
-                                        this.$itemsCount = itemCount;
-                                        this.$spaceBetweenItems = i13;
-                                        this.$horizontalAlignment = horizontal6;
-                                        this.$verticalAlignment = vertical6;
-                                        this.$reverseLayout = z21;
-                                        this.$beforeContentPadding = i6;
-                                        this.$afterContentPadding = i12;
-                                        this.$visualItemOffset = j2;
-                                        this.$state = lazyListState2;
-                                    }
-
-                                    @Override // androidx.compose.foundation.lazy.LazyListMeasuredItemProvider
-                                    /* renamed from: createItem-X9ElhV4  reason: not valid java name */
-                                    public LazyListMeasuredItem mo843createItemX9ElhV4(int i15, Object obj6, Object obj7, List<? extends Placeable> list, long j3) {
-                                        return new LazyListMeasuredItem(i15, list, this.$isVertical, this.$horizontalAlignment, this.$verticalAlignment, this.$this_null.getLayoutDirection(), this.$reverseLayout, this.$beforeContentPadding, this.$afterContentPadding, i15 == this.$itemsCount + (-1) ? 0 : this.$spaceBetweenItems, this.$visualItemOffset, obj6, obj7, this.$state.getItemAnimator$foundation_release(), j3, null);
-                                    }
-                                };
-                                Snapshot.Companion companion = Snapshot.Companion;
-                                LazyListState lazyListState3 = LazyListState.this;
-                                Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
-                                Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
-                                Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
-                                try {
-                                    int updateScrollPositionIfTheFirstItemWasMoved$foundation_release = lazyListState3.updateScrollPositionIfTheFirstItemWasMoved$foundation_release(lazyListItemProvider2, lazyListState3.getFirstVisibleItemIndex());
-                                    int firstVisibleItemScrollOffset = lazyListState3.getFirstVisibleItemScrollOffset();
-                                    Unit unit = Unit.INSTANCE;
-                                    companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                                    List<Integer> calculateLazyLayoutPinnedIndices = LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(lazyListItemProvider2, LazyListState.this.getPinnedItems$foundation_release(), LazyListState.this.getBeyondBoundsInfo$foundation_release());
-                                    if (lazyLayoutMeasureScope.isLookingAhead() || !z17) {
-                                        scrollToBeConsumed$foundation_release = LazyListState.this.getScrollToBeConsumed$foundation_release();
-                                    } else {
-                                        scrollToBeConsumed$foundation_release = LazyListState.this.getScrollDeltaBetweenPasses$foundation_release();
-                                    }
-                                    LazyListMeasureResult m847measureLazyListLCrQqZ4 = LazyListMeasureKt.m847measureLazyListLCrQqZ4(itemCount, lazyListMeasuredItemProvider, i14, i6, i12, i13, updateScrollPositionIfTheFirstItemWasMoved$foundation_release, firstVisibleItemScrollOffset, scrollToBeConsumed$foundation_release, m6656offsetNN6EwU, z1622, vertical322, horizontal322, z, lazyLayoutMeasureScope, LazyListState.this.getItemAnimator$foundation_release(), i, calculateLazyLayoutPinnedIndices, z17, lazyLayoutMeasureScope.isLookingAhead(), LazyListState.this.getApproachLayoutInfo$foundation_release(), coroutineScope, LazyListState.this.m858getPlacementScopeInvalidatorzYiylxw$foundation_release(), graphicsContext, stickyItemsPlacement222, new Function3<Integer, Integer, Function1<? super Placeable.PlacementScope, ? extends Unit>, MeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measureResult$1
-                                        /* JADX INFO: Access modifiers changed from: package-private */
-                                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                        {
-                                            super(3);
-                                        }
-
-                                        @Override // kotlin.jvm.functions.Function3
-                                        public /* bridge */ /* synthetic */ MeasureResult invoke(Integer num, Integer num2, Function1<? super Placeable.PlacementScope, ? extends Unit> function1) {
-                                            return invoke(num.intValue(), num2.intValue(), (Function1<? super Placeable.PlacementScope, Unit>) function1);
-                                        }
-
-                                        public final MeasureResult invoke(int i15, int i16, Function1<? super Placeable.PlacementScope, Unit> function1) {
-                                            return LazyLayoutMeasureScope.this.layout(ConstraintsKt.m6654constrainWidthK40F9xA(j, i15 + i10), ConstraintsKt.m6653constrainHeightK40F9xA(j, i16 + i9), MapsKt.emptyMap(), function1);
-                                        }
-                                    });
-                                    LazyListState.applyMeasureResult$foundation_release$default(LazyListState.this, m847measureLazyListLCrQqZ4, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
-                                    return m847measureLazyListLCrQqZ4;
-                                } catch (Throwable th) {
-                                    companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                                    throw th;
-                                }
-                            }
-                        };
+                        rememberedValue = new LazyListKt$rememberLazyListMeasurePolicy$1$1(lazyListState, z3, paddingValues, z, function0, obj4, obj3, i, coroutineScope, graphicsContext, obj5, obj, obj2);
                         composer.updateRememberedValue(rememberedValue);
-                        Function2<LazyLayoutMeasureScope, Constraints, MeasureResult> function222 = (Function2) rememberedValue;
+                        LazyLayoutMeasurePolicy lazyLayoutMeasurePolicy22 = (LazyLayoutMeasurePolicy) rememberedValue;
                         ComposerKt.sourceInformationMarkerEnd(composer);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         ComposerKt.sourceInformationMarkerEnd(composer);
-                        return function222;
+                        return lazyLayoutMeasurePolicy22;
                     }
                     z7 = true;
                     boolean z152 = z14 | z7;
@@ -1115,192 +632,14 @@ public final class LazyListKt {
                     rememberedValue = composer.rememberedValue();
                     if (!z10) {
                     }
-                    final Arrangement.Vertical vertical3222 = obj4;
-                    final Arrangement.Horizontal horizontal3222 = obj3;
-                    final StickyItemsPlacement stickyItemsPlacement2222 = obj5;
-                    final Alignment.Horizontal horizontal4222 = obj;
-                    final Alignment.Vertical vertical4222 = obj2;
-                    final boolean z16222 = z3;
-                    rememberedValue = (Function2) new Function2<LazyLayoutMeasureScope, Constraints, LazyListMeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        /* JADX WARN: Multi-variable type inference failed */
-                        {
-                            super(2);
-                        }
-
-                        @Override // kotlin.jvm.functions.Function2
-                        public /* bridge */ /* synthetic */ LazyListMeasureResult invoke(LazyLayoutMeasureScope lazyLayoutMeasureScope, Constraints constraints) {
-                            return m842invoke0kLqBqw(lazyLayoutMeasureScope, constraints.m6643unboximpl());
-                        }
-
-                        /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                        public final LazyListMeasureResult m842invoke0kLqBqw(final LazyLayoutMeasureScope lazyLayoutMeasureScope, final long j) {
-                            int i4;
-                            int i5;
-                            final int i6;
-                            float mo625getSpacingD9Ej5fM;
-                            int m6637getMaxWidthimpl;
-                            LazyListItemProvider lazyListItemProvider;
-                            long m6806constructorimpl;
-                            float scrollToBeConsumed$foundation_release;
-                            ObservableScopeInvalidator.m918attachToScopeimpl(LazyListState.this.m857getMeasurementScopeInvalidatorzYiylxw$foundation_release());
-                            boolean z17 = LazyListState.this.getHasLookaheadOccurred$foundation_release() || lazyLayoutMeasureScope.isLookingAhead();
-                            CheckScrollableContainerConstraintsKt.m275checkScrollableContainerConstraintsK40F9xA(j, z16222 ? Orientation.Vertical : Orientation.Horizontal);
-                            if (z16222) {
-                                i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo688calculateLeftPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                            } else {
-                                i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateStartPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                            }
-                            if (z16222) {
-                                i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo689calculateRightPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                            } else {
-                                i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateEndPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                            }
-                            int i7 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo690calculateTopPaddingD9Ej5fM());
-                            int i8 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo687calculateBottomPaddingD9Ej5fM());
-                            final int i9 = i7 + i8;
-                            final int i10 = i4 + i5;
-                            boolean z18 = z16222;
-                            int i11 = z18 ? i9 : i10;
-                            if (z18 && !z) {
-                                i6 = i7;
-                            } else if (z18 && z) {
-                                i6 = i8;
-                            } else {
-                                i6 = (z18 || z) ? i5 : i4;
-                            }
-                            final int i12 = i11 - i6;
-                            final long m6656offsetNN6EwU = ConstraintsKt.m6656offsetNN6EwU(j, -i10, -i9);
-                            LazyListItemProvider invoke = function0.invoke();
-                            invoke.getItemScope().setMaxSize(Constraints.m6637getMaxWidthimpl(m6656offsetNN6EwU), Constraints.m6636getMaxHeightimpl(m6656offsetNN6EwU));
-                            if (z16222) {
-                                Arrangement.Vertical vertical5 = vertical3222;
-                                if (vertical5 != null) {
-                                    mo625getSpacingD9Ej5fM = vertical5.mo625getSpacingD9Ej5fM();
-                                } else {
-                                    InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null verticalArrangement when isVertical == true");
-                                    throw new KotlinNothingValueException();
-                                }
-                            } else {
-                                Arrangement.Horizontal horizontal5 = horizontal3222;
-                                if (horizontal5 != null) {
-                                    mo625getSpacingD9Ej5fM = horizontal5.mo625getSpacingD9Ej5fM();
-                                } else {
-                                    InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null horizontalAlignment when isVertical == false");
-                                    throw new KotlinNothingValueException();
-                                }
-                            }
-                            final int i13 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(mo625getSpacingD9Ej5fM);
-                            final int itemCount = invoke.getItemCount();
-                            if (z16222) {
-                                m6637getMaxWidthimpl = Constraints.m6636getMaxHeightimpl(j) - i9;
-                            } else {
-                                m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j) - i10;
-                            }
-                            int i14 = m6637getMaxWidthimpl;
-                            if (z && i14 <= 0) {
-                                boolean z19 = z16222;
-                                if (!z19) {
-                                    i4 += i14;
-                                }
-                                if (z19) {
-                                    i7 += i14;
-                                }
-                                lazyListItemProvider = invoke;
-                                m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                            } else {
-                                lazyListItemProvider = invoke;
-                                m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                            }
-                            final boolean z20 = z16222;
-                            final Alignment.Horizontal horizontal6 = horizontal4222;
-                            final long j2 = m6806constructorimpl;
-                            final LazyListItemProvider lazyListItemProvider2 = lazyListItemProvider;
-                            final Alignment.Vertical vertical6 = vertical4222;
-                            final boolean z21 = z;
-                            final LazyListState lazyListState2 = LazyListState.this;
-                            LazyListMeasuredItemProvider lazyListMeasuredItemProvider = new LazyListMeasuredItemProvider(m6656offsetNN6EwU, z20, lazyListItemProvider2, lazyLayoutMeasureScope, itemCount, i13, horizontal6, vertical6, z21, i6, i12, j2, lazyListState2) { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measuredItemProvider$1
-                                final /* synthetic */ int $afterContentPadding;
-                                final /* synthetic */ int $beforeContentPadding;
-                                final /* synthetic */ Alignment.Horizontal $horizontalAlignment;
-                                final /* synthetic */ boolean $isVertical;
-                                final /* synthetic */ int $itemsCount;
-                                final /* synthetic */ boolean $reverseLayout;
-                                final /* synthetic */ int $spaceBetweenItems;
-                                final /* synthetic */ LazyListState $state;
-                                final /* synthetic */ LazyLayoutMeasureScope $this_null;
-                                final /* synthetic */ Alignment.Vertical $verticalAlignment;
-                                final /* synthetic */ long $visualItemOffset;
-
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                {
-                                    this.$isVertical = z20;
-                                    this.$this_null = lazyLayoutMeasureScope;
-                                    this.$itemsCount = itemCount;
-                                    this.$spaceBetweenItems = i13;
-                                    this.$horizontalAlignment = horizontal6;
-                                    this.$verticalAlignment = vertical6;
-                                    this.$reverseLayout = z21;
-                                    this.$beforeContentPadding = i6;
-                                    this.$afterContentPadding = i12;
-                                    this.$visualItemOffset = j2;
-                                    this.$state = lazyListState2;
-                                }
-
-                                @Override // androidx.compose.foundation.lazy.LazyListMeasuredItemProvider
-                                /* renamed from: createItem-X9ElhV4  reason: not valid java name */
-                                public LazyListMeasuredItem mo843createItemX9ElhV4(int i15, Object obj6, Object obj7, List<? extends Placeable> list, long j3) {
-                                    return new LazyListMeasuredItem(i15, list, this.$isVertical, this.$horizontalAlignment, this.$verticalAlignment, this.$this_null.getLayoutDirection(), this.$reverseLayout, this.$beforeContentPadding, this.$afterContentPadding, i15 == this.$itemsCount + (-1) ? 0 : this.$spaceBetweenItems, this.$visualItemOffset, obj6, obj7, this.$state.getItemAnimator$foundation_release(), j3, null);
-                                }
-                            };
-                            Snapshot.Companion companion = Snapshot.Companion;
-                            LazyListState lazyListState3 = LazyListState.this;
-                            Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
-                            Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
-                            Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
-                            try {
-                                int updateScrollPositionIfTheFirstItemWasMoved$foundation_release = lazyListState3.updateScrollPositionIfTheFirstItemWasMoved$foundation_release(lazyListItemProvider2, lazyListState3.getFirstVisibleItemIndex());
-                                int firstVisibleItemScrollOffset = lazyListState3.getFirstVisibleItemScrollOffset();
-                                Unit unit = Unit.INSTANCE;
-                                companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                                List<Integer> calculateLazyLayoutPinnedIndices = LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(lazyListItemProvider2, LazyListState.this.getPinnedItems$foundation_release(), LazyListState.this.getBeyondBoundsInfo$foundation_release());
-                                if (lazyLayoutMeasureScope.isLookingAhead() || !z17) {
-                                    scrollToBeConsumed$foundation_release = LazyListState.this.getScrollToBeConsumed$foundation_release();
-                                } else {
-                                    scrollToBeConsumed$foundation_release = LazyListState.this.getScrollDeltaBetweenPasses$foundation_release();
-                                }
-                                LazyListMeasureResult m847measureLazyListLCrQqZ4 = LazyListMeasureKt.m847measureLazyListLCrQqZ4(itemCount, lazyListMeasuredItemProvider, i14, i6, i12, i13, updateScrollPositionIfTheFirstItemWasMoved$foundation_release, firstVisibleItemScrollOffset, scrollToBeConsumed$foundation_release, m6656offsetNN6EwU, z16222, vertical3222, horizontal3222, z, lazyLayoutMeasureScope, LazyListState.this.getItemAnimator$foundation_release(), i, calculateLazyLayoutPinnedIndices, z17, lazyLayoutMeasureScope.isLookingAhead(), LazyListState.this.getApproachLayoutInfo$foundation_release(), coroutineScope, LazyListState.this.m858getPlacementScopeInvalidatorzYiylxw$foundation_release(), graphicsContext, stickyItemsPlacement2222, new Function3<Integer, Integer, Function1<? super Placeable.PlacementScope, ? extends Unit>, MeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measureResult$1
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                    {
-                                        super(3);
-                                    }
-
-                                    @Override // kotlin.jvm.functions.Function3
-                                    public /* bridge */ /* synthetic */ MeasureResult invoke(Integer num, Integer num2, Function1<? super Placeable.PlacementScope, ? extends Unit> function1) {
-                                        return invoke(num.intValue(), num2.intValue(), (Function1<? super Placeable.PlacementScope, Unit>) function1);
-                                    }
-
-                                    public final MeasureResult invoke(int i15, int i16, Function1<? super Placeable.PlacementScope, Unit> function1) {
-                                        return LazyLayoutMeasureScope.this.layout(ConstraintsKt.m6654constrainWidthK40F9xA(j, i15 + i10), ConstraintsKt.m6653constrainHeightK40F9xA(j, i16 + i9), MapsKt.emptyMap(), function1);
-                                    }
-                                });
-                                LazyListState.applyMeasureResult$foundation_release$default(LazyListState.this, m847measureLazyListLCrQqZ4, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
-                                return m847measureLazyListLCrQqZ4;
-                            } catch (Throwable th) {
-                                companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                                throw th;
-                            }
-                        }
-                    };
+                    rememberedValue = new LazyListKt$rememberLazyListMeasurePolicy$1$1(lazyListState, z3, paddingValues, z, function0, obj4, obj3, i, coroutineScope, graphicsContext, obj5, obj, obj2);
                     composer.updateRememberedValue(rememberedValue);
-                    Function2<LazyLayoutMeasureScope, Constraints, MeasureResult> function2222 = (Function2) rememberedValue;
+                    LazyLayoutMeasurePolicy lazyLayoutMeasurePolicy222 = (LazyLayoutMeasurePolicy) rememberedValue;
                     ComposerKt.sourceInformationMarkerEnd(composer);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     ComposerKt.sourceInformationMarkerEnd(composer);
-                    return function2222;
+                    return lazyLayoutMeasurePolicy222;
                 }
                 z6 = true;
                 boolean z142 = z13 | z6;
@@ -1325,192 +664,14 @@ public final class LazyListKt {
                 rememberedValue = composer.rememberedValue();
                 if (!z10) {
                 }
-                final Arrangement.Vertical vertical32222 = obj4;
-                final Arrangement.Horizontal horizontal32222 = obj3;
-                final StickyItemsPlacement stickyItemsPlacement22222 = obj5;
-                final Alignment.Horizontal horizontal42222 = obj;
-                final Alignment.Vertical vertical42222 = obj2;
-                final boolean z162222 = z3;
-                rememberedValue = (Function2) new Function2<LazyLayoutMeasureScope, Constraints, LazyListMeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    /* JADX WARN: Multi-variable type inference failed */
-                    {
-                        super(2);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function2
-                    public /* bridge */ /* synthetic */ LazyListMeasureResult invoke(LazyLayoutMeasureScope lazyLayoutMeasureScope, Constraints constraints) {
-                        return m842invoke0kLqBqw(lazyLayoutMeasureScope, constraints.m6643unboximpl());
-                    }
-
-                    /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                    public final LazyListMeasureResult m842invoke0kLqBqw(final LazyLayoutMeasureScope lazyLayoutMeasureScope, final long j) {
-                        int i4;
-                        int i5;
-                        final int i6;
-                        float mo625getSpacingD9Ej5fM;
-                        int m6637getMaxWidthimpl;
-                        LazyListItemProvider lazyListItemProvider;
-                        long m6806constructorimpl;
-                        float scrollToBeConsumed$foundation_release;
-                        ObservableScopeInvalidator.m918attachToScopeimpl(LazyListState.this.m857getMeasurementScopeInvalidatorzYiylxw$foundation_release());
-                        boolean z17 = LazyListState.this.getHasLookaheadOccurred$foundation_release() || lazyLayoutMeasureScope.isLookingAhead();
-                        CheckScrollableContainerConstraintsKt.m275checkScrollableContainerConstraintsK40F9xA(j, z162222 ? Orientation.Vertical : Orientation.Horizontal);
-                        if (z162222) {
-                            i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo688calculateLeftPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                        } else {
-                            i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateStartPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                        }
-                        if (z162222) {
-                            i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo689calculateRightPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                        } else {
-                            i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateEndPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                        }
-                        int i7 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo690calculateTopPaddingD9Ej5fM());
-                        int i8 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo687calculateBottomPaddingD9Ej5fM());
-                        final int i9 = i7 + i8;
-                        final int i10 = i4 + i5;
-                        boolean z18 = z162222;
-                        int i11 = z18 ? i9 : i10;
-                        if (z18 && !z) {
-                            i6 = i7;
-                        } else if (z18 && z) {
-                            i6 = i8;
-                        } else {
-                            i6 = (z18 || z) ? i5 : i4;
-                        }
-                        final int i12 = i11 - i6;
-                        final long m6656offsetNN6EwU = ConstraintsKt.m6656offsetNN6EwU(j, -i10, -i9);
-                        LazyListItemProvider invoke = function0.invoke();
-                        invoke.getItemScope().setMaxSize(Constraints.m6637getMaxWidthimpl(m6656offsetNN6EwU), Constraints.m6636getMaxHeightimpl(m6656offsetNN6EwU));
-                        if (z162222) {
-                            Arrangement.Vertical vertical5 = vertical32222;
-                            if (vertical5 != null) {
-                                mo625getSpacingD9Ej5fM = vertical5.mo625getSpacingD9Ej5fM();
-                            } else {
-                                InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null verticalArrangement when isVertical == true");
-                                throw new KotlinNothingValueException();
-                            }
-                        } else {
-                            Arrangement.Horizontal horizontal5 = horizontal32222;
-                            if (horizontal5 != null) {
-                                mo625getSpacingD9Ej5fM = horizontal5.mo625getSpacingD9Ej5fM();
-                            } else {
-                                InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null horizontalAlignment when isVertical == false");
-                                throw new KotlinNothingValueException();
-                            }
-                        }
-                        final int i13 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(mo625getSpacingD9Ej5fM);
-                        final int itemCount = invoke.getItemCount();
-                        if (z162222) {
-                            m6637getMaxWidthimpl = Constraints.m6636getMaxHeightimpl(j) - i9;
-                        } else {
-                            m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j) - i10;
-                        }
-                        int i14 = m6637getMaxWidthimpl;
-                        if (z && i14 <= 0) {
-                            boolean z19 = z162222;
-                            if (!z19) {
-                                i4 += i14;
-                            }
-                            if (z19) {
-                                i7 += i14;
-                            }
-                            lazyListItemProvider = invoke;
-                            m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                        } else {
-                            lazyListItemProvider = invoke;
-                            m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                        }
-                        final boolean z20 = z162222;
-                        final Alignment.Horizontal horizontal6 = horizontal42222;
-                        final long j2 = m6806constructorimpl;
-                        final LazyListItemProvider lazyListItemProvider2 = lazyListItemProvider;
-                        final Alignment.Vertical vertical6 = vertical42222;
-                        final boolean z21 = z;
-                        final LazyListState lazyListState2 = LazyListState.this;
-                        LazyListMeasuredItemProvider lazyListMeasuredItemProvider = new LazyListMeasuredItemProvider(m6656offsetNN6EwU, z20, lazyListItemProvider2, lazyLayoutMeasureScope, itemCount, i13, horizontal6, vertical6, z21, i6, i12, j2, lazyListState2) { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measuredItemProvider$1
-                            final /* synthetic */ int $afterContentPadding;
-                            final /* synthetic */ int $beforeContentPadding;
-                            final /* synthetic */ Alignment.Horizontal $horizontalAlignment;
-                            final /* synthetic */ boolean $isVertical;
-                            final /* synthetic */ int $itemsCount;
-                            final /* synthetic */ boolean $reverseLayout;
-                            final /* synthetic */ int $spaceBetweenItems;
-                            final /* synthetic */ LazyListState $state;
-                            final /* synthetic */ LazyLayoutMeasureScope $this_null;
-                            final /* synthetic */ Alignment.Vertical $verticalAlignment;
-                            final /* synthetic */ long $visualItemOffset;
-
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            {
-                                this.$isVertical = z20;
-                                this.$this_null = lazyLayoutMeasureScope;
-                                this.$itemsCount = itemCount;
-                                this.$spaceBetweenItems = i13;
-                                this.$horizontalAlignment = horizontal6;
-                                this.$verticalAlignment = vertical6;
-                                this.$reverseLayout = z21;
-                                this.$beforeContentPadding = i6;
-                                this.$afterContentPadding = i12;
-                                this.$visualItemOffset = j2;
-                                this.$state = lazyListState2;
-                            }
-
-                            @Override // androidx.compose.foundation.lazy.LazyListMeasuredItemProvider
-                            /* renamed from: createItem-X9ElhV4  reason: not valid java name */
-                            public LazyListMeasuredItem mo843createItemX9ElhV4(int i15, Object obj6, Object obj7, List<? extends Placeable> list, long j3) {
-                                return new LazyListMeasuredItem(i15, list, this.$isVertical, this.$horizontalAlignment, this.$verticalAlignment, this.$this_null.getLayoutDirection(), this.$reverseLayout, this.$beforeContentPadding, this.$afterContentPadding, i15 == this.$itemsCount + (-1) ? 0 : this.$spaceBetweenItems, this.$visualItemOffset, obj6, obj7, this.$state.getItemAnimator$foundation_release(), j3, null);
-                            }
-                        };
-                        Snapshot.Companion companion = Snapshot.Companion;
-                        LazyListState lazyListState3 = LazyListState.this;
-                        Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
-                        Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
-                        Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
-                        try {
-                            int updateScrollPositionIfTheFirstItemWasMoved$foundation_release = lazyListState3.updateScrollPositionIfTheFirstItemWasMoved$foundation_release(lazyListItemProvider2, lazyListState3.getFirstVisibleItemIndex());
-                            int firstVisibleItemScrollOffset = lazyListState3.getFirstVisibleItemScrollOffset();
-                            Unit unit = Unit.INSTANCE;
-                            companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                            List<Integer> calculateLazyLayoutPinnedIndices = LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(lazyListItemProvider2, LazyListState.this.getPinnedItems$foundation_release(), LazyListState.this.getBeyondBoundsInfo$foundation_release());
-                            if (lazyLayoutMeasureScope.isLookingAhead() || !z17) {
-                                scrollToBeConsumed$foundation_release = LazyListState.this.getScrollToBeConsumed$foundation_release();
-                            } else {
-                                scrollToBeConsumed$foundation_release = LazyListState.this.getScrollDeltaBetweenPasses$foundation_release();
-                            }
-                            LazyListMeasureResult m847measureLazyListLCrQqZ4 = LazyListMeasureKt.m847measureLazyListLCrQqZ4(itemCount, lazyListMeasuredItemProvider, i14, i6, i12, i13, updateScrollPositionIfTheFirstItemWasMoved$foundation_release, firstVisibleItemScrollOffset, scrollToBeConsumed$foundation_release, m6656offsetNN6EwU, z162222, vertical32222, horizontal32222, z, lazyLayoutMeasureScope, LazyListState.this.getItemAnimator$foundation_release(), i, calculateLazyLayoutPinnedIndices, z17, lazyLayoutMeasureScope.isLookingAhead(), LazyListState.this.getApproachLayoutInfo$foundation_release(), coroutineScope, LazyListState.this.m858getPlacementScopeInvalidatorzYiylxw$foundation_release(), graphicsContext, stickyItemsPlacement22222, new Function3<Integer, Integer, Function1<? super Placeable.PlacementScope, ? extends Unit>, MeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measureResult$1
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                {
-                                    super(3);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function3
-                                public /* bridge */ /* synthetic */ MeasureResult invoke(Integer num, Integer num2, Function1<? super Placeable.PlacementScope, ? extends Unit> function1) {
-                                    return invoke(num.intValue(), num2.intValue(), (Function1<? super Placeable.PlacementScope, Unit>) function1);
-                                }
-
-                                public final MeasureResult invoke(int i15, int i16, Function1<? super Placeable.PlacementScope, Unit> function1) {
-                                    return LazyLayoutMeasureScope.this.layout(ConstraintsKt.m6654constrainWidthK40F9xA(j, i15 + i10), ConstraintsKt.m6653constrainHeightK40F9xA(j, i16 + i9), MapsKt.emptyMap(), function1);
-                                }
-                            });
-                            LazyListState.applyMeasureResult$foundation_release$default(LazyListState.this, m847measureLazyListLCrQqZ4, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
-                            return m847measureLazyListLCrQqZ4;
-                        } catch (Throwable th) {
-                            companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                            throw th;
-                        }
-                    }
-                };
+                rememberedValue = new LazyListKt$rememberLazyListMeasurePolicy$1$1(lazyListState, z3, paddingValues, z, function0, obj4, obj3, i, coroutineScope, graphicsContext, obj5, obj, obj2);
                 composer.updateRememberedValue(rememberedValue);
-                Function2<LazyLayoutMeasureScope, Constraints, MeasureResult> function22222 = (Function2) rememberedValue;
+                LazyLayoutMeasurePolicy lazyLayoutMeasurePolicy2222 = (LazyLayoutMeasurePolicy) rememberedValue;
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 ComposerKt.sourceInformationMarkerEnd(composer);
-                return function22222;
+                return lazyLayoutMeasurePolicy2222;
             }
             z5 = true;
             boolean z132 = z12 | z5;
@@ -1541,195 +702,17 @@ public final class LazyListKt {
             rememberedValue = composer.rememberedValue();
             if (!z10) {
             }
-            final Arrangement.Vertical vertical322222 = obj4;
-            final Arrangement.Horizontal horizontal322222 = obj3;
-            final StickyItemsPlacement stickyItemsPlacement222222 = obj5;
-            final Alignment.Horizontal horizontal422222 = obj;
-            final Alignment.Vertical vertical422222 = obj2;
-            final boolean z1622222 = z3;
-            rememberedValue = (Function2) new Function2<LazyLayoutMeasureScope, Constraints, LazyListMeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
-                @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ LazyListMeasureResult invoke(LazyLayoutMeasureScope lazyLayoutMeasureScope, Constraints constraints) {
-                    return m842invoke0kLqBqw(lazyLayoutMeasureScope, constraints.m6643unboximpl());
-                }
-
-                /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                public final LazyListMeasureResult m842invoke0kLqBqw(final LazyLayoutMeasureScope lazyLayoutMeasureScope, final long j) {
-                    int i4;
-                    int i5;
-                    final int i6;
-                    float mo625getSpacingD9Ej5fM;
-                    int m6637getMaxWidthimpl;
-                    LazyListItemProvider lazyListItemProvider;
-                    long m6806constructorimpl;
-                    float scrollToBeConsumed$foundation_release;
-                    ObservableScopeInvalidator.m918attachToScopeimpl(LazyListState.this.m857getMeasurementScopeInvalidatorzYiylxw$foundation_release());
-                    boolean z17 = LazyListState.this.getHasLookaheadOccurred$foundation_release() || lazyLayoutMeasureScope.isLookingAhead();
-                    CheckScrollableContainerConstraintsKt.m275checkScrollableContainerConstraintsK40F9xA(j, z1622222 ? Orientation.Vertical : Orientation.Horizontal);
-                    if (z1622222) {
-                        i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo688calculateLeftPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                    } else {
-                        i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateStartPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                    }
-                    if (z1622222) {
-                        i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo689calculateRightPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                    } else {
-                        i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateEndPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                    }
-                    int i7 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo690calculateTopPaddingD9Ej5fM());
-                    int i8 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo687calculateBottomPaddingD9Ej5fM());
-                    final int i9 = i7 + i8;
-                    final int i10 = i4 + i5;
-                    boolean z18 = z1622222;
-                    int i11 = z18 ? i9 : i10;
-                    if (z18 && !z) {
-                        i6 = i7;
-                    } else if (z18 && z) {
-                        i6 = i8;
-                    } else {
-                        i6 = (z18 || z) ? i5 : i4;
-                    }
-                    final int i12 = i11 - i6;
-                    final long m6656offsetNN6EwU = ConstraintsKt.m6656offsetNN6EwU(j, -i10, -i9);
-                    LazyListItemProvider invoke = function0.invoke();
-                    invoke.getItemScope().setMaxSize(Constraints.m6637getMaxWidthimpl(m6656offsetNN6EwU), Constraints.m6636getMaxHeightimpl(m6656offsetNN6EwU));
-                    if (z1622222) {
-                        Arrangement.Vertical vertical5 = vertical322222;
-                        if (vertical5 != null) {
-                            mo625getSpacingD9Ej5fM = vertical5.mo625getSpacingD9Ej5fM();
-                        } else {
-                            InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null verticalArrangement when isVertical == true");
-                            throw new KotlinNothingValueException();
-                        }
-                    } else {
-                        Arrangement.Horizontal horizontal5 = horizontal322222;
-                        if (horizontal5 != null) {
-                            mo625getSpacingD9Ej5fM = horizontal5.mo625getSpacingD9Ej5fM();
-                        } else {
-                            InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null horizontalAlignment when isVertical == false");
-                            throw new KotlinNothingValueException();
-                        }
-                    }
-                    final int i13 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(mo625getSpacingD9Ej5fM);
-                    final int itemCount = invoke.getItemCount();
-                    if (z1622222) {
-                        m6637getMaxWidthimpl = Constraints.m6636getMaxHeightimpl(j) - i9;
-                    } else {
-                        m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j) - i10;
-                    }
-                    int i14 = m6637getMaxWidthimpl;
-                    if (z && i14 <= 0) {
-                        boolean z19 = z1622222;
-                        if (!z19) {
-                            i4 += i14;
-                        }
-                        if (z19) {
-                            i7 += i14;
-                        }
-                        lazyListItemProvider = invoke;
-                        m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                    } else {
-                        lazyListItemProvider = invoke;
-                        m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                    }
-                    final boolean z20 = z1622222;
-                    final Alignment.Horizontal horizontal6 = horizontal422222;
-                    final long j2 = m6806constructorimpl;
-                    final LazyListItemProvider lazyListItemProvider2 = lazyListItemProvider;
-                    final Alignment.Vertical vertical6 = vertical422222;
-                    final boolean z21 = z;
-                    final LazyListState lazyListState2 = LazyListState.this;
-                    LazyListMeasuredItemProvider lazyListMeasuredItemProvider = new LazyListMeasuredItemProvider(m6656offsetNN6EwU, z20, lazyListItemProvider2, lazyLayoutMeasureScope, itemCount, i13, horizontal6, vertical6, z21, i6, i12, j2, lazyListState2) { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measuredItemProvider$1
-                        final /* synthetic */ int $afterContentPadding;
-                        final /* synthetic */ int $beforeContentPadding;
-                        final /* synthetic */ Alignment.Horizontal $horizontalAlignment;
-                        final /* synthetic */ boolean $isVertical;
-                        final /* synthetic */ int $itemsCount;
-                        final /* synthetic */ boolean $reverseLayout;
-                        final /* synthetic */ int $spaceBetweenItems;
-                        final /* synthetic */ LazyListState $state;
-                        final /* synthetic */ LazyLayoutMeasureScope $this_null;
-                        final /* synthetic */ Alignment.Vertical $verticalAlignment;
-                        final /* synthetic */ long $visualItemOffset;
-
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        {
-                            this.$isVertical = z20;
-                            this.$this_null = lazyLayoutMeasureScope;
-                            this.$itemsCount = itemCount;
-                            this.$spaceBetweenItems = i13;
-                            this.$horizontalAlignment = horizontal6;
-                            this.$verticalAlignment = vertical6;
-                            this.$reverseLayout = z21;
-                            this.$beforeContentPadding = i6;
-                            this.$afterContentPadding = i12;
-                            this.$visualItemOffset = j2;
-                            this.$state = lazyListState2;
-                        }
-
-                        @Override // androidx.compose.foundation.lazy.LazyListMeasuredItemProvider
-                        /* renamed from: createItem-X9ElhV4  reason: not valid java name */
-                        public LazyListMeasuredItem mo843createItemX9ElhV4(int i15, Object obj6, Object obj7, List<? extends Placeable> list, long j3) {
-                            return new LazyListMeasuredItem(i15, list, this.$isVertical, this.$horizontalAlignment, this.$verticalAlignment, this.$this_null.getLayoutDirection(), this.$reverseLayout, this.$beforeContentPadding, this.$afterContentPadding, i15 == this.$itemsCount + (-1) ? 0 : this.$spaceBetweenItems, this.$visualItemOffset, obj6, obj7, this.$state.getItemAnimator$foundation_release(), j3, null);
-                        }
-                    };
-                    Snapshot.Companion companion = Snapshot.Companion;
-                    LazyListState lazyListState3 = LazyListState.this;
-                    Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
-                    Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
-                    Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
-                    try {
-                        int updateScrollPositionIfTheFirstItemWasMoved$foundation_release = lazyListState3.updateScrollPositionIfTheFirstItemWasMoved$foundation_release(lazyListItemProvider2, lazyListState3.getFirstVisibleItemIndex());
-                        int firstVisibleItemScrollOffset = lazyListState3.getFirstVisibleItemScrollOffset();
-                        Unit unit = Unit.INSTANCE;
-                        companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                        List<Integer> calculateLazyLayoutPinnedIndices = LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(lazyListItemProvider2, LazyListState.this.getPinnedItems$foundation_release(), LazyListState.this.getBeyondBoundsInfo$foundation_release());
-                        if (lazyLayoutMeasureScope.isLookingAhead() || !z17) {
-                            scrollToBeConsumed$foundation_release = LazyListState.this.getScrollToBeConsumed$foundation_release();
-                        } else {
-                            scrollToBeConsumed$foundation_release = LazyListState.this.getScrollDeltaBetweenPasses$foundation_release();
-                        }
-                        LazyListMeasureResult m847measureLazyListLCrQqZ4 = LazyListMeasureKt.m847measureLazyListLCrQqZ4(itemCount, lazyListMeasuredItemProvider, i14, i6, i12, i13, updateScrollPositionIfTheFirstItemWasMoved$foundation_release, firstVisibleItemScrollOffset, scrollToBeConsumed$foundation_release, m6656offsetNN6EwU, z1622222, vertical322222, horizontal322222, z, lazyLayoutMeasureScope, LazyListState.this.getItemAnimator$foundation_release(), i, calculateLazyLayoutPinnedIndices, z17, lazyLayoutMeasureScope.isLookingAhead(), LazyListState.this.getApproachLayoutInfo$foundation_release(), coroutineScope, LazyListState.this.m858getPlacementScopeInvalidatorzYiylxw$foundation_release(), graphicsContext, stickyItemsPlacement222222, new Function3<Integer, Integer, Function1<? super Placeable.PlacementScope, ? extends Unit>, MeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measureResult$1
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            {
-                                super(3);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function3
-                            public /* bridge */ /* synthetic */ MeasureResult invoke(Integer num, Integer num2, Function1<? super Placeable.PlacementScope, ? extends Unit> function1) {
-                                return invoke(num.intValue(), num2.intValue(), (Function1<? super Placeable.PlacementScope, Unit>) function1);
-                            }
-
-                            public final MeasureResult invoke(int i15, int i16, Function1<? super Placeable.PlacementScope, Unit> function1) {
-                                return LazyLayoutMeasureScope.this.layout(ConstraintsKt.m6654constrainWidthK40F9xA(j, i15 + i10), ConstraintsKt.m6653constrainHeightK40F9xA(j, i16 + i9), MapsKt.emptyMap(), function1);
-                            }
-                        });
-                        LazyListState.applyMeasureResult$foundation_release$default(LazyListState.this, m847measureLazyListLCrQqZ4, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
-                        return m847measureLazyListLCrQqZ4;
-                    } catch (Throwable th) {
-                        companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                        throw th;
-                    }
-                }
-            };
+            rememberedValue = new LazyListKt$rememberLazyListMeasurePolicy$1$1(lazyListState, z3, paddingValues, z, function0, obj4, obj3, i, coroutineScope, graphicsContext, obj5, obj, obj2);
             composer.updateRememberedValue(rememberedValue);
-            Function2<LazyLayoutMeasureScope, Constraints, MeasureResult> function222222 = (Function2) rememberedValue;
+            LazyLayoutMeasurePolicy lazyLayoutMeasurePolicy22222 = (LazyLayoutMeasurePolicy) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(composer);
             if (ComposerKt.isTraceInProgress()) {
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            return function222222;
+            return lazyLayoutMeasurePolicy22222;
         }
         z4 = true;
-        boolean z122 = z11 | z4;
+        boolean z122 = z11 | z4 | ((((458752 & i2) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) <= 131072 && composer.changed(i)) || (i2 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 131072);
         if (((3670016 & i2) ^ 1572864) <= 1048576) {
         }
         if ((1572864 & i2) != 1048576) {
@@ -1763,191 +746,41 @@ public final class LazyListKt {
         rememberedValue = composer.rememberedValue();
         if (!z10) {
         }
-        final Arrangement.Vertical vertical3222222 = obj4;
-        final Arrangement.Horizontal horizontal3222222 = obj3;
-        final StickyItemsPlacement stickyItemsPlacement2222222 = obj5;
-        final Alignment.Horizontal horizontal4222222 = obj;
-        final Alignment.Vertical vertical4222222 = obj2;
-        final boolean z16222222 = z3;
-        rememberedValue = (Function2) new Function2<LazyLayoutMeasureScope, Constraints, LazyListMeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            /* JADX WARN: Multi-variable type inference failed */
-            {
-                super(2);
-            }
-
-            @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ LazyListMeasureResult invoke(LazyLayoutMeasureScope lazyLayoutMeasureScope, Constraints constraints) {
-                return m842invoke0kLqBqw(lazyLayoutMeasureScope, constraints.m6643unboximpl());
-            }
-
-            /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-            public final LazyListMeasureResult m842invoke0kLqBqw(final LazyLayoutMeasureScope lazyLayoutMeasureScope, final long j) {
-                int i4;
-                int i5;
-                final int i6;
-                float mo625getSpacingD9Ej5fM;
-                int m6637getMaxWidthimpl;
-                LazyListItemProvider lazyListItemProvider;
-                long m6806constructorimpl;
-                float scrollToBeConsumed$foundation_release;
-                ObservableScopeInvalidator.m918attachToScopeimpl(LazyListState.this.m857getMeasurementScopeInvalidatorzYiylxw$foundation_release());
-                boolean z17 = LazyListState.this.getHasLookaheadOccurred$foundation_release() || lazyLayoutMeasureScope.isLookingAhead();
-                CheckScrollableContainerConstraintsKt.m275checkScrollableContainerConstraintsK40F9xA(j, z16222222 ? Orientation.Vertical : Orientation.Horizontal);
-                if (z16222222) {
-                    i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo688calculateLeftPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                } else {
-                    i4 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateStartPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                }
-                if (z16222222) {
-                    i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo689calculateRightPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
-                } else {
-                    i5 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(PaddingKt.calculateEndPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
-                }
-                int i7 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo690calculateTopPaddingD9Ej5fM());
-                int i8 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(paddingValues.mo687calculateBottomPaddingD9Ej5fM());
-                final int i9 = i7 + i8;
-                final int i10 = i4 + i5;
-                boolean z18 = z16222222;
-                int i11 = z18 ? i9 : i10;
-                if (z18 && !z) {
-                    i6 = i7;
-                } else if (z18 && z) {
-                    i6 = i8;
-                } else {
-                    i6 = (z18 || z) ? i5 : i4;
-                }
-                final int i12 = i11 - i6;
-                final long m6656offsetNN6EwU = ConstraintsKt.m6656offsetNN6EwU(j, -i10, -i9);
-                LazyListItemProvider invoke = function0.invoke();
-                invoke.getItemScope().setMaxSize(Constraints.m6637getMaxWidthimpl(m6656offsetNN6EwU), Constraints.m6636getMaxHeightimpl(m6656offsetNN6EwU));
-                if (z16222222) {
-                    Arrangement.Vertical vertical5 = vertical3222222;
-                    if (vertical5 != null) {
-                        mo625getSpacingD9Ej5fM = vertical5.mo625getSpacingD9Ej5fM();
-                    } else {
-                        InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null verticalArrangement when isVertical == true");
-                        throw new KotlinNothingValueException();
-                    }
-                } else {
-                    Arrangement.Horizontal horizontal5 = horizontal3222222;
-                    if (horizontal5 != null) {
-                        mo625getSpacingD9Ej5fM = horizontal5.mo625getSpacingD9Ej5fM();
-                    } else {
-                        InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null horizontalAlignment when isVertical == false");
-                        throw new KotlinNothingValueException();
-                    }
-                }
-                final int i13 = lazyLayoutMeasureScope.mo383roundToPx0680j_4(mo625getSpacingD9Ej5fM);
-                final int itemCount = invoke.getItemCount();
-                if (z16222222) {
-                    m6637getMaxWidthimpl = Constraints.m6636getMaxHeightimpl(j) - i9;
-                } else {
-                    m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j) - i10;
-                }
-                int i14 = m6637getMaxWidthimpl;
-                if (z && i14 <= 0) {
-                    boolean z19 = z16222222;
-                    if (!z19) {
-                        i4 += i14;
-                    }
-                    if (z19) {
-                        i7 += i14;
-                    }
-                    lazyListItemProvider = invoke;
-                    m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                } else {
-                    lazyListItemProvider = invoke;
-                    m6806constructorimpl = IntOffset.m6806constructorimpl((i4 << 32) | (i7 & 4294967295L));
-                }
-                final boolean z20 = z16222222;
-                final Alignment.Horizontal horizontal6 = horizontal4222222;
-                final long j2 = m6806constructorimpl;
-                final LazyListItemProvider lazyListItemProvider2 = lazyListItemProvider;
-                final Alignment.Vertical vertical6 = vertical4222222;
-                final boolean z21 = z;
-                final LazyListState lazyListState2 = LazyListState.this;
-                LazyListMeasuredItemProvider lazyListMeasuredItemProvider = new LazyListMeasuredItemProvider(m6656offsetNN6EwU, z20, lazyListItemProvider2, lazyLayoutMeasureScope, itemCount, i13, horizontal6, vertical6, z21, i6, i12, j2, lazyListState2) { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measuredItemProvider$1
-                    final /* synthetic */ int $afterContentPadding;
-                    final /* synthetic */ int $beforeContentPadding;
-                    final /* synthetic */ Alignment.Horizontal $horizontalAlignment;
-                    final /* synthetic */ boolean $isVertical;
-                    final /* synthetic */ int $itemsCount;
-                    final /* synthetic */ boolean $reverseLayout;
-                    final /* synthetic */ int $spaceBetweenItems;
-                    final /* synthetic */ LazyListState $state;
-                    final /* synthetic */ LazyLayoutMeasureScope $this_null;
-                    final /* synthetic */ Alignment.Vertical $verticalAlignment;
-                    final /* synthetic */ long $visualItemOffset;
-
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    {
-                        this.$isVertical = z20;
-                        this.$this_null = lazyLayoutMeasureScope;
-                        this.$itemsCount = itemCount;
-                        this.$spaceBetweenItems = i13;
-                        this.$horizontalAlignment = horizontal6;
-                        this.$verticalAlignment = vertical6;
-                        this.$reverseLayout = z21;
-                        this.$beforeContentPadding = i6;
-                        this.$afterContentPadding = i12;
-                        this.$visualItemOffset = j2;
-                        this.$state = lazyListState2;
-                    }
-
-                    @Override // androidx.compose.foundation.lazy.LazyListMeasuredItemProvider
-                    /* renamed from: createItem-X9ElhV4  reason: not valid java name */
-                    public LazyListMeasuredItem mo843createItemX9ElhV4(int i15, Object obj6, Object obj7, List<? extends Placeable> list, long j3) {
-                        return new LazyListMeasuredItem(i15, list, this.$isVertical, this.$horizontalAlignment, this.$verticalAlignment, this.$this_null.getLayoutDirection(), this.$reverseLayout, this.$beforeContentPadding, this.$afterContentPadding, i15 == this.$itemsCount + (-1) ? 0 : this.$spaceBetweenItems, this.$visualItemOffset, obj6, obj7, this.$state.getItemAnimator$foundation_release(), j3, null);
-                    }
-                };
-                Snapshot.Companion companion = Snapshot.Companion;
-                LazyListState lazyListState3 = LazyListState.this;
-                Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
-                Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
-                Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
-                try {
-                    int updateScrollPositionIfTheFirstItemWasMoved$foundation_release = lazyListState3.updateScrollPositionIfTheFirstItemWasMoved$foundation_release(lazyListItemProvider2, lazyListState3.getFirstVisibleItemIndex());
-                    int firstVisibleItemScrollOffset = lazyListState3.getFirstVisibleItemScrollOffset();
-                    Unit unit = Unit.INSTANCE;
-                    companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                    List<Integer> calculateLazyLayoutPinnedIndices = LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(lazyListItemProvider2, LazyListState.this.getPinnedItems$foundation_release(), LazyListState.this.getBeyondBoundsInfo$foundation_release());
-                    if (lazyLayoutMeasureScope.isLookingAhead() || !z17) {
-                        scrollToBeConsumed$foundation_release = LazyListState.this.getScrollToBeConsumed$foundation_release();
-                    } else {
-                        scrollToBeConsumed$foundation_release = LazyListState.this.getScrollDeltaBetweenPasses$foundation_release();
-                    }
-                    LazyListMeasureResult m847measureLazyListLCrQqZ4 = LazyListMeasureKt.m847measureLazyListLCrQqZ4(itemCount, lazyListMeasuredItemProvider, i14, i6, i12, i13, updateScrollPositionIfTheFirstItemWasMoved$foundation_release, firstVisibleItemScrollOffset, scrollToBeConsumed$foundation_release, m6656offsetNN6EwU, z16222222, vertical3222222, horizontal3222222, z, lazyLayoutMeasureScope, LazyListState.this.getItemAnimator$foundation_release(), i, calculateLazyLayoutPinnedIndices, z17, lazyLayoutMeasureScope.isLookingAhead(), LazyListState.this.getApproachLayoutInfo$foundation_release(), coroutineScope, LazyListState.this.m858getPlacementScopeInvalidatorzYiylxw$foundation_release(), graphicsContext, stickyItemsPlacement2222222, new Function3<Integer, Integer, Function1<? super Placeable.PlacementScope, ? extends Unit>, MeasureResult>() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measureResult$1
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        {
-                            super(3);
-                        }
-
-                        @Override // kotlin.jvm.functions.Function3
-                        public /* bridge */ /* synthetic */ MeasureResult invoke(Integer num, Integer num2, Function1<? super Placeable.PlacementScope, ? extends Unit> function1) {
-                            return invoke(num.intValue(), num2.intValue(), (Function1<? super Placeable.PlacementScope, Unit>) function1);
-                        }
-
-                        public final MeasureResult invoke(int i15, int i16, Function1<? super Placeable.PlacementScope, Unit> function1) {
-                            return LazyLayoutMeasureScope.this.layout(ConstraintsKt.m6654constrainWidthK40F9xA(j, i15 + i10), ConstraintsKt.m6653constrainHeightK40F9xA(j, i16 + i9), MapsKt.emptyMap(), function1);
-                        }
-                    });
-                    LazyListState.applyMeasureResult$foundation_release$default(LazyListState.this, m847measureLazyListLCrQqZ4, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
-                    return m847measureLazyListLCrQqZ4;
-                } catch (Throwable th) {
-                    companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
-                    throw th;
-                }
-            }
-        };
+        rememberedValue = new LazyListKt$rememberLazyListMeasurePolicy$1$1(lazyListState, z3, paddingValues, z, function0, obj4, obj3, i, coroutineScope, graphicsContext, obj5, obj, obj2);
         composer.updateRememberedValue(rememberedValue);
-        Function2<LazyLayoutMeasureScope, Constraints, MeasureResult> function2222222 = (Function2) rememberedValue;
+        LazyLayoutMeasurePolicy lazyLayoutMeasurePolicy222222 = (LazyLayoutMeasurePolicy) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
         if (ComposerKt.isTraceInProgress()) {
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return function2222222;
+        return lazyLayoutMeasurePolicy222222;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void keepAroundItems(CacheWindowLogic cacheWindowLogic, List<LazyListMeasuredItem> list, LazyListMeasuredItemProvider lazyListMeasuredItemProvider) {
+        Trace.beginSection("compose:lazy:cache_window:keepAroundItems");
+        try {
+            if (cacheWindowLogic.hasValidBounds() && !list.isEmpty()) {
+                int index = ((LazyListMeasuredItem) CollectionsKt.first((List<? extends Object>) list)).getIndex();
+                int index2 = ((LazyListMeasuredItem) CollectionsKt.last((List<? extends Object>) list)).getIndex();
+                for (int prefetchWindowStartLine$foundation_release = cacheWindowLogic.getPrefetchWindowStartLine$foundation_release(); prefetchWindowStartLine$foundation_release < index; prefetchWindowStartLine$foundation_release++) {
+                    lazyListMeasuredItemProvider.keepAround(prefetchWindowStartLine$foundation_release);
+                }
+                int i = index2 + 1;
+                int prefetchWindowEndLine$foundation_release = cacheWindowLogic.getPrefetchWindowEndLine$foundation_release();
+                if (i <= prefetchWindowEndLine$foundation_release) {
+                    while (true) {
+                        lazyListMeasuredItemProvider.keepAround(i);
+                        if (i == prefetchWindowEndLine$foundation_release) {
+                            break;
+                        }
+                        i++;
+                    }
+                }
+            }
+            Unit unit = Unit.INSTANCE;
+        } finally {
+            Trace.endSection();
+        }
     }
 }

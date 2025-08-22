@@ -10,7 +10,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.operators.maybe.MaybeMap;
 import io.reactivex.internal.operators.maybe.MaybeZipArray;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeZipIterable<T, R> extends Maybe<R> {
     final Iterable<? extends MaybeSource<? extends T>> sources;
     final Function<? super Object[], ? extends R> zipper;
@@ -54,7 +54,7 @@ public final class MaybeZipIterable<T, R> extends Maybe<R> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class SingletonArrayFunc implements Function<T, R> {
         SingletonArrayFunc() {
         }

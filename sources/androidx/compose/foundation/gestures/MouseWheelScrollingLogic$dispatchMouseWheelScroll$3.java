@@ -19,7 +19,7 @@ import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.channels.Channel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MouseWheelScrollable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.gestures.MouseWheelScrollingLogic$dispatchMouseWheelScroll$3", f = "MouseWheelScrollable.kt", i = {0, 0, 1, 1, 1, 2, 2}, l = {253, 266, 283}, m = "invokeSuspend", n = {"$this$userScroll", "requiredAnimation", "$this$userScroll", "requiredAnimation", "durationMillis", "$this$userScroll", "requiredAnimation"}, s = {"L$0", "L$1", "L$0", "L$1", "I$0", "L$0", "L$1"})
 /* loaded from: classes.dex */
 public final class MouseWheelScrollingLogic$dispatchMouseWheelScroll$3 extends SuspendLambda implements Function2<NestedScrollScope, Continuation<? super Unit>, Object> {
@@ -62,12 +62,12 @@ public final class MouseWheelScrollingLogic$dispatchMouseWheelScroll$3 extends S
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x006a  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0130  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x019c  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x019a  */
     /* JADX WARN: Type inference failed for: r2v17, types: [androidx.compose.animation.core.AnimationState, T] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x012e -> B:14:0x0066). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:30:0x015a -> B:31:0x015b). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:36:0x0192 -> B:13:0x0065). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x012c -> B:14:0x0066). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:30:0x0158 -> B:31:0x0159). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:36:0x0190 -> B:13:0x0065). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -152,37 +152,12 @@ public final class MouseWheelScrollingLogic$dispatchMouseWheelScroll$3 extends S
                     this.L$2 = null;
                     this.I$0 = coerceAtMost;
                     this.label = 2;
-                    animateMouseWheelScroll = this.this$0.animateMouseWheelScroll(nestedScrollScope, this.$animationState.element, f, coerceAtMost, new Function1<Float, Boolean>() { // from class: androidx.compose.foundation.gestures.MouseWheelScrollingLogic$dispatchMouseWheelScroll$3.1
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        {
-                            super(1);
-                        }
-
+                    animateMouseWheelScroll = this.this$0.animateMouseWheelScroll(nestedScrollScope, this.$animationState.element, f, coerceAtMost, new Function1() { // from class: androidx.compose.foundation.gestures.MouseWheelScrollingLogic$dispatchMouseWheelScroll$3$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Boolean invoke(Float f2) {
-                            return invoke(f2.floatValue());
-                        }
-
-                        /* JADX WARN: Type inference failed for: r3v2, types: [T, androidx.compose.foundation.gestures.MouseWheelScrollingLogic$MouseWheelScrollDelta] */
-                        public final Boolean invoke(float f2) {
-                            Channel channel;
-                            MouseWheelScrollingLogic.MouseWheelScrollDelta sumOrNull;
-                            boolean isLowScrollingDelta;
-                            MouseWheelScrollingLogic mouseWheelScrollingLogic2 = MouseWheelScrollingLogic.this;
-                            channel = mouseWheelScrollingLogic2.channel;
-                            sumOrNull = mouseWheelScrollingLogic2.sumOrNull(channel);
-                            if (sumOrNull != null) {
-                                MouseWheelScrollingLogic.this.trackVelocity(sumOrNull);
-                                Ref.ObjectRef<MouseWheelScrollingLogic.MouseWheelScrollDelta> objectRef3 = objectRef2;
-                                objectRef3.element = objectRef3.element.plus(sumOrNull);
-                                Ref.FloatRef floatRef2 = floatRef;
-                                ScrollingLogic scrollingLogic2 = scrollingLogic;
-                                floatRef2.element = scrollingLogic2.m527toFloatk4lQ0M(scrollingLogic2.m525reverseIfNeededMKHz9U(objectRef2.element.m478getValueF1C5BW0()));
-                                Ref.BooleanRef booleanRef3 = booleanRef2;
-                                isLowScrollingDelta = MouseWheelScrollableKt.isLowScrollingDelta(floatRef.element - f2);
-                                booleanRef3.element = !isLowScrollingDelta;
-                            }
-                            return Boolean.valueOf(sumOrNull != null);
+                        public final Object invoke(Object obj3) {
+                            boolean invokeSuspend$lambda$0;
+                            invokeSuspend$lambda$0 = MouseWheelScrollingLogic$dispatchMouseWheelScroll$3.invokeSuspend$lambda$0(MouseWheelScrollingLogic.this, objectRef2, floatRef, scrollingLogic, booleanRef2, ((Float) obj3).floatValue());
+                            return Boolean.valueOf(invokeSuspend$lambda$0);
                         }
                     }, this);
                     if (animateMouseWheelScroll != coroutine_suspended) {
@@ -206,5 +181,23 @@ public final class MouseWheelScrollingLogic$dispatchMouseWheelScroll$3 extends S
                 return coroutine_suspended;
             }
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Type inference failed for: r2v4, types: [T, androidx.compose.foundation.gestures.MouseWheelScrollingLogic$MouseWheelScrollDelta] */
+    public static final boolean invokeSuspend$lambda$0(MouseWheelScrollingLogic mouseWheelScrollingLogic, Ref.ObjectRef objectRef, Ref.FloatRef floatRef, ScrollingLogic scrollingLogic, Ref.BooleanRef booleanRef, float f) {
+        Channel channel;
+        MouseWheelScrollingLogic.MouseWheelScrollDelta sumOrNull;
+        boolean isLowScrollingDelta;
+        channel = mouseWheelScrollingLogic.channel;
+        sumOrNull = mouseWheelScrollingLogic.sumOrNull(channel);
+        if (sumOrNull != null) {
+            mouseWheelScrollingLogic.trackVelocity(sumOrNull);
+            objectRef.element = ((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).plus(sumOrNull);
+            floatRef.element = scrollingLogic.m583toFloatk4lQ0M(scrollingLogic.m581reverseIfNeededMKHz9U(((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).m520getValueF1C5BW0()));
+            isLowScrollingDelta = MouseWheelScrollableKt.isLowScrollingDelta(floatRef.element - f);
+            booleanRef.element = !isLowScrollingDelta;
+        }
+        return sumOrNull != null;
     }
 }

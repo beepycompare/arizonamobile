@@ -13,7 +13,7 @@ import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.ogg.StreamReader;
 import java.util.Arrays;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class FlacReader extends StreamReader {
     private static final byte AUDIO_PACKET_TYPE = -1;
     private static final int FRAME_HEADER_SAMPLE_NUMBER_OFFSET = 4;
@@ -86,7 +86,7 @@ final class FlacReader extends StreamReader {
         return readFrameBlockSizeSamplesFromKey;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class FlacOggSeeker implements OggSeeker {
         private long firstFrameOffset = -1;
         private long pendingSeekGranule = -1;

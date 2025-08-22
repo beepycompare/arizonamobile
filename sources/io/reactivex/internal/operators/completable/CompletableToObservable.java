@@ -7,7 +7,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.observers.BasicQueueDisposable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableToObservable<T> extends Observable<T> {
     final CompletableSource source;
 
@@ -20,7 +20,7 @@ public final class CompletableToObservable<T> extends Observable<T> {
         this.source.subscribe(new ObserverCompletableObserver(observer));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ObserverCompletableObserver extends BasicQueueDisposable<Void> implements CompletableObserver {
         final Observer<?> observer;
         Disposable upstream;

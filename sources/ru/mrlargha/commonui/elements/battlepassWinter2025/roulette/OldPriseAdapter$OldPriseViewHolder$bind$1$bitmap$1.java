@@ -16,7 +16,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: OldPriseAdapter.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroid/graphics/Bitmap;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.OldPriseAdapter$OldPriseViewHolder$bind$1$bitmap$1", f = "OldPriseAdapter.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 final class OldPriseAdapter$OldPriseViewHolder$bind$1$bitmap$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Bitmap>, Object> {
     final /* synthetic */ OldPrise $prise;
     int label;

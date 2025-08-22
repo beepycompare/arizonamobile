@@ -12,8 +12,10 @@ import androidx.compose.runtime.ComposablesKt;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.CompositionLocalMap;
+import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.runtime.State;
 import androidx.compose.runtime.Updater;
+import androidx.compose.runtime.snapshots.Snapshot;
 import androidx.compose.ui.Alignment;
 import androidx.compose.ui.ComposedModifierKt;
 import androidx.compose.ui.Modifier;
@@ -21,7 +23,6 @@ import androidx.compose.ui.graphics.GraphicsLayerModifierKt;
 import androidx.compose.ui.graphics.GraphicsLayerScope;
 import androidx.compose.ui.layout.MeasurePolicy;
 import androidx.compose.ui.node.ComposeUiNode;
-import androidx.exifinterface.media.ExifInterface;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -33,7 +34,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Crossfade.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002H\u000b¢\u0006\u0004\b\u0003\u0010\u0004"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "invoke", "(Landroidx/compose/runtime/Composer;I)V"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u0001H\n¢\u0006\u0004\b\u0002\u0010\u0003"}, d2 = {"<anonymous>", "", "invoke", "(Landroidx/compose/runtime/Composer;I)V"}, k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class CrossfadeKt$Crossfade$5$1 extends Lambda implements Function2<Composer, Integer, Unit> {
     final /* synthetic */ FiniteAnimationSpec<Float> $animationSpec;
@@ -59,15 +60,16 @@ public final class CrossfadeKt$Crossfade$5$1 extends Lambda implements Function2
     }
 
     public final void invoke(Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C126@5768L134,129@5946L22,129@5919L79:Crossfade.kt#xbi5r1");
+        Object currentState;
+        ComposerKt.sourceInformation(composer, "C126@5771L134,129@5949L22,129@5922L79:Crossfade.kt#xbi5r1");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
             return;
         }
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-1426421288, i, -1, "androidx.compose.animation.Crossfade.<anonymous>.<anonymous> (Crossfade.kt:125)");
+            ComposerKt.traceEventStart(-934471669, i, -1, "androidx.compose.animation.Crossfade.<anonymous>.<anonymous> (Crossfade.kt:125)");
         }
-        Transition<T> transition = this.$this_Crossfade;
+        final Transition<T> transition = this.$this_Crossfade;
         final FiniteAnimationSpec<Float> finiteAnimationSpec = this.$animationSpec;
         Function3 function3 = new Function3<Transition.Segment<T>, Composer, Integer, FiniteAnimationSpec<Float>>() { // from class: androidx.compose.animation.CrossfadeKt$Crossfade$5$1$alpha$2
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -77,9 +79,9 @@ public final class CrossfadeKt$Crossfade$5$1 extends Lambda implements Function2
             }
 
             public final FiniteAnimationSpec<Float> invoke(Transition.Segment<T> segment, Composer composer2, int i2) {
-                composer2.startReplaceGroup(438406499);
+                composer2.startReplaceGroup(955869654);
                 if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(438406499, i2, -1, "androidx.compose.animation.Crossfade.<anonymous>.<anonymous>.<anonymous> (Crossfade.kt:126)");
+                    ComposerKt.traceEventStart(955869654, i2, -1, "androidx.compose.animation.Crossfade.<anonymous>.<anonymous>.<anonymous> (Crossfade.kt:126)");
                 }
                 FiniteAnimationSpec<Float> finiteAnimationSpec2 = finiteAnimationSpec;
                 if (ComposerKt.isTraceInProgress()) {
@@ -95,14 +97,41 @@ public final class CrossfadeKt$Crossfade$5$1 extends Lambda implements Function2
             }
         };
         T t = this.$stateForContent;
-        ComposerKt.sourceInformationMarkerStart(composer, -1338768149, "CC(animateFloat)P(2)1924@81822L78:Transition.kt#pdpnli");
+        ComposerKt.sourceInformationMarkerStart(composer, 844118987, "CC(animateFloat)N(transitionSpec,label,targetValueByState)1951@83597L78:Transition.kt#pdpnli");
         TwoWayConverter<Float, AnimationVector1D> vectorConverter = VectorConvertersKt.getVectorConverter(FloatCompanionObject.INSTANCE);
-        ComposerKt.sourceInformationMarkerStart(composer, -142660079, "CC(animateValue)P(3,2)1833@77788L32,1834@77843L31,1835@77899L23,1837@77935L89:Transition.kt#pdpnli");
-        Object currentState = transition.getCurrentState();
-        composer.startReplaceGroup(-438678252);
+        ComposerKt.sourceInformationMarkerStart(composer, 1143035377, "CC(animateValue)N(typeConverter,transitionSpec,label,targetValueByState)1848@78638L32,1855@79111L49,1855@79092L75,1856@79207L45,1856@79192L67,1858@79272L89:Transition.kt#pdpnli");
+        if (transition.isSeeking()) {
+            composer.startReplaceGroup(1666853325);
+            composer.endReplaceGroup();
+            currentState = transition.getCurrentState();
+        } else {
+            composer.startReplaceGroup(1666599280);
+            ComposerKt.sourceInformation(composer, "1844@78495L67");
+            ComposerKt.sourceInformationMarkerStart(composer, -1054611820, "CC(remember):Transition.kt#9igjgp");
+            boolean changed = composer.changed(transition);
+            currentState = composer.rememberedValue();
+            if (changed || currentState == Composer.Companion.getEmpty()) {
+                Snapshot.Companion companion = Snapshot.Companion;
+                Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
+                Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
+                Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
+                try {
+                    Object currentState2 = transition.getCurrentState();
+                    companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
+                    composer.updateRememberedValue(currentState2);
+                    currentState = currentState2;
+                } catch (Throwable th) {
+                    companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
+                    throw th;
+                }
+            }
+            ComposerKt.sourceInformationMarkerEnd(composer);
+            composer.endReplaceGroup();
+        }
+        composer.startReplaceGroup(1378811975);
         ComposerKt.sourceInformation(composer, "C:Crossfade.kt#xbi5r1");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-438678252, 0, -1, "androidx.compose.animation.Crossfade.<anonymous>.<anonymous>.<anonymous> (Crossfade.kt:127)");
+            ComposerKt.traceEventStart(1378811975, 0, -1, "androidx.compose.animation.Crossfade.<anonymous>.<anonymous>.<anonymous> (Crossfade.kt:127)");
         }
         float f = Intrinsics.areEqual(currentState, t) ? 1.0f : 0.0f;
         if (ComposerKt.isTraceInProgress()) {
@@ -110,26 +139,53 @@ public final class CrossfadeKt$Crossfade$5$1 extends Lambda implements Function2
         }
         composer.endReplaceGroup();
         Float valueOf = Float.valueOf(f);
-        Object targetState = transition.getTargetState();
-        composer.startReplaceGroup(-438678252);
+        ComposerKt.sourceInformationMarkerStart(composer, -1054592126, "CC(remember):Transition.kt#9igjgp");
+        boolean changed2 = composer.changed(transition);
+        Object rememberedValue = composer.rememberedValue();
+        if (changed2 || rememberedValue == Composer.Companion.getEmpty()) {
+            rememberedValue = SnapshotStateKt.derivedStateOf(new Function0<T>() { // from class: androidx.compose.animation.CrossfadeKt$Crossfade$5$1$invoke$$inlined$animateFloat$1
+                @Override // kotlin.jvm.functions.Function0
+                public final T invoke() {
+                    return (T) Transition.this.getTargetState();
+                }
+            });
+            composer.updateRememberedValue(rememberedValue);
+        }
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        Object value = ((State) rememberedValue).getValue();
+        composer.startReplaceGroup(1378811975);
         ComposerKt.sourceInformation(composer, "C:Crossfade.kt#xbi5r1");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-438678252, 0, -1, "androidx.compose.animation.Crossfade.<anonymous>.<anonymous>.<anonymous> (Crossfade.kt:127)");
+            ComposerKt.traceEventStart(1378811975, 0, -1, "androidx.compose.animation.Crossfade.<anonymous>.<anonymous>.<anonymous> (Crossfade.kt:127)");
         }
-        float f2 = Intrinsics.areEqual(targetState, t) ? 1.0f : 0.0f;
+        float f2 = Intrinsics.areEqual(value, t) ? 1.0f : 0.0f;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        final State createTransitionAnimation = androidx.compose.animation.core.TransitionKt.createTransitionAnimation(transition, valueOf, Float.valueOf(f2), (FiniteAnimationSpec) function3.invoke(transition.getSegment(), composer, 0), vectorConverter, "FloatAnimation", composer, 0);
+        Float valueOf2 = Float.valueOf(f2);
+        ComposerKt.sourceInformationMarkerStart(composer, -1054589058, "CC(remember):Transition.kt#9igjgp");
+        boolean changed3 = composer.changed(transition);
+        Object rememberedValue2 = composer.rememberedValue();
+        if (changed3 || rememberedValue2 == Composer.Companion.getEmpty()) {
+            rememberedValue2 = SnapshotStateKt.derivedStateOf(new Function0<Transition.Segment<T>>() { // from class: androidx.compose.animation.CrossfadeKt$Crossfade$5$1$invoke$$inlined$animateFloat$2
+                @Override // kotlin.jvm.functions.Function0
+                public final Transition.Segment<T> invoke() {
+                    return Transition.this.getSegment();
+                }
+            });
+            composer.updateRememberedValue(rememberedValue2);
+        }
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        final State createTransitionAnimation = androidx.compose.animation.core.TransitionKt.createTransitionAnimation(transition, valueOf, valueOf2, (FiniteAnimationSpec) function3.invoke(((State) rememberedValue2).getValue(), composer, 0), vectorConverter, "FloatAnimation", composer, 0);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier.Companion companion = Modifier.Companion;
-        ComposerKt.sourceInformationMarkerStart(composer, -1081870491, "CC(remember):Crossfade.kt#9igjgp");
-        boolean changed = composer.changed(createTransitionAnimation);
-        Object rememberedValue = composer.rememberedValue();
-        if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = (Function1) new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.compose.animation.CrossfadeKt$Crossfade$5$1$1$1
+        Modifier.Companion companion2 = Modifier.Companion;
+        ComposerKt.sourceInformationMarkerStart(composer, -379101695, "CC(remember):Crossfade.kt#9igjgp");
+        boolean changed4 = composer.changed(createTransitionAnimation);
+        Object rememberedValue3 = composer.rememberedValue();
+        if (changed4 || rememberedValue3 == Composer.Companion.getEmpty()) {
+            rememberedValue3 = (Function1) new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.compose.animation.CrossfadeKt$Crossfade$5$1$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -149,20 +205,20 @@ public final class CrossfadeKt$Crossfade$5$1 extends Lambda implements Function2
                     graphicsLayerScope.setAlpha(invoke$lambda$1);
                 }
             };
-            composer.updateRememberedValue(rememberedValue);
+            composer.updateRememberedValue(rememberedValue3);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier graphicsLayer = GraphicsLayerModifierKt.graphicsLayer(companion, (Function1) rememberedValue);
+        Modifier graphicsLayer = GraphicsLayerModifierKt.graphicsLayer(companion2, (Function1) rememberedValue3);
         Function3<T, Composer, Integer, Unit> function32 = this.$content;
         T t2 = this.$stateForContent;
-        ComposerKt.sourceInformationMarkerStart(composer, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
+        ComposerKt.sourceInformationMarkerStart(composer, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
         MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-        ComposerKt.sourceInformationMarkerStart(composer, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
-        int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer, 0);
+        ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
+        int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
         CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
         Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, graphicsLayer);
         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-        ComposerKt.sourceInformationMarkerStart(composer, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
         if (!(composer.getApplier() instanceof Applier)) {
             ComposablesKt.invalidApplier();
         }
@@ -172,18 +228,18 @@ public final class CrossfadeKt$Crossfade$5$1 extends Lambda implements Function2
         } else {
             composer.useNode();
         }
-        Composer m3520constructorimpl = Updater.m3520constructorimpl(composer);
-        Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer);
+        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+            m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+            m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
         }
-        Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-        ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
+        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-        ComposerKt.sourceInformationMarkerStart(composer, -1437522275, "C129@5972L24:Crossfade.kt#xbi5r1");
+        ComposerKt.sourceInformationMarkerStart(composer, -191227322, "C129@5975L24:Crossfade.kt#xbi5r1");
         function32.invoke(t2, composer, 0);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);

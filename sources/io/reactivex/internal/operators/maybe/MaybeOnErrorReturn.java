@@ -8,7 +8,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeOnErrorReturn<T> extends AbstractMaybeWithUpstream<T, T> {
     final Function<? super Throwable, ? extends T> valueSupplier;
 
@@ -22,7 +22,7 @@ public final class MaybeOnErrorReturn<T> extends AbstractMaybeWithUpstream<T, T>
         this.source.subscribe(new OnErrorReturnMaybeObserver(maybeObserver, this.valueSupplier));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OnErrorReturnMaybeObserver<T> implements MaybeObserver<T>, Disposable {
         final MaybeObserver<? super T> downstream;
         Disposable upstream;

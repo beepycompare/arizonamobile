@@ -3,7 +3,6 @@ package androidx.compose.foundation.gestures;
 import androidx.compose.animation.core.AnimationScope;
 import androidx.compose.animation.core.AnimationState;
 import androidx.compose.animation.core.AnimationStateKt;
-import androidx.compose.animation.core.AnimationVector1D;
 import androidx.compose.animation.core.DecayAnimationSpec;
 import androidx.compose.animation.core.SuspendAnimationKt;
 import java.util.concurrent.CancellationException;
@@ -20,8 +19,8 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: Scrollable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.DefaultFlingBehavior$performFling$2", f = "Scrollable.kt", i = {0, 0}, l = {953}, m = "invokeSuspend", n = {"velocityLeft", "animationState"}, s = {"L$0", "L$1"})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.DefaultFlingBehavior$performFling$2", f = "Scrollable.kt", i = {0, 0}, l = {981}, m = "invokeSuspend", n = {"velocityLeft", "animationState"}, s = {"L$0", "L$1"})
 /* loaded from: classes.dex */
 final class DefaultFlingBehavior$performFling$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Float>, Object> {
     final /* synthetic */ float $initialVelocity;
@@ -72,29 +71,12 @@ final class DefaultFlingBehavior$performFling$2 extends SuspendLambda implements
                     this.L$0 = floatRef;
                     this.L$1 = AnimationState$default;
                     this.label = 1;
-                    if (SuspendAnimationKt.animateDecay$default(AnimationState$default, decayAnimationSpec, false, new Function1<AnimationScope<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.gestures.DefaultFlingBehavior$performFling$2.1
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        {
-                            super(1);
-                        }
-
+                    if (SuspendAnimationKt.animateDecay$default(AnimationState$default, decayAnimationSpec, false, new Function1() { // from class: androidx.compose.foundation.gestures.DefaultFlingBehavior$performFling$2$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(AnimationScope<Float, AnimationVector1D> animationScope) {
-                            invoke2(animationScope);
-                            return Unit.INSTANCE;
-                        }
-
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(AnimationScope<Float, AnimationVector1D> animationScope) {
-                            float floatValue = animationScope.getValue().floatValue() - Ref.FloatRef.this.element;
-                            float scrollBy = scrollScope.scrollBy(floatValue);
-                            Ref.FloatRef.this.element = animationScope.getValue().floatValue();
-                            floatRef.element = animationScope.getVelocity().floatValue();
-                            if (Math.abs(floatValue - scrollBy) > 0.5f) {
-                                animationScope.cancelAnimation();
-                            }
-                            DefaultFlingBehavior defaultFlingBehavior2 = defaultFlingBehavior;
-                            defaultFlingBehavior2.setLastAnimationCycleCount(defaultFlingBehavior2.getLastAnimationCycleCount() + 1);
+                        public final Object invoke(Object obj2) {
+                            Unit invokeSuspend$lambda$0;
+                            invokeSuspend$lambda$0 = DefaultFlingBehavior$performFling$2.invokeSuspend$lambda$0(Ref.FloatRef.this, scrollScope, floatRef, defaultFlingBehavior, (AnimationScope) obj2);
+                            return invokeSuspend$lambda$0;
                         }
                     }, this, 2, null) == coroutine_suspended) {
                         return coroutine_suspended;
@@ -124,5 +106,18 @@ final class DefaultFlingBehavior$performFling$2 extends SuspendLambda implements
         }
         f = floatRef.element;
         return Boxing.boxFloat(f);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(Ref.FloatRef floatRef, ScrollScope scrollScope, Ref.FloatRef floatRef2, DefaultFlingBehavior defaultFlingBehavior, AnimationScope animationScope) {
+        float floatValue = ((Number) animationScope.getValue()).floatValue() - floatRef.element;
+        float scrollBy = scrollScope.scrollBy(floatValue);
+        floatRef.element = ((Number) animationScope.getValue()).floatValue();
+        floatRef2.element = ((Number) animationScope.getVelocity()).floatValue();
+        if (Math.abs(floatValue - scrollBy) > 0.5f) {
+            animationScope.cancelAnimation();
+        }
+        defaultFlingBehavior.setLastAnimationCycleCount(defaultFlingBehavior.getLastAnimationCycleCount() + 1);
+        return Unit.INSTANCE;
     }
 }

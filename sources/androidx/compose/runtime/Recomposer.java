@@ -9,7 +9,6 @@ import androidx.collection.ScatterMap;
 import androidx.collection.ScatterMapKt;
 import androidx.collection.ScatterSet;
 import androidx.collection.ScatterSetKt;
-import androidx.compose.runtime.Recomposer;
 import androidx.compose.runtime.collection.MultiValueMap;
 import androidx.compose.runtime.collection.MutableVector;
 import androidx.compose.runtime.collection.ScatterSetWrapperKt;
@@ -21,9 +20,13 @@ import androidx.compose.runtime.internal.Utils_androidKt;
 import androidx.compose.runtime.snapshots.MutableSnapshot;
 import androidx.compose.runtime.snapshots.Snapshot;
 import androidx.compose.runtime.snapshots.SnapshotApplyResult;
+import androidx.compose.runtime.snapshots.TransparentObserverMutableSnapshot;
+import androidx.compose.runtime.snapshots.TransparentObserverSnapshot;
 import androidx.compose.runtime.tooling.CompositionData;
 import androidx.compose.runtime.tooling.CompositionObserverHandle;
+import androidx.compose.runtime.tooling.CompositionObserverKt;
 import androidx.compose.runtime.tooling.CompositionRegistrationObserver;
+import androidx.compose.runtime.tooling.ObservableComposition;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.navigation.compose.ComposeNavigator;
@@ -75,7 +78,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.coroutines.flow.StateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 /* compiled from: Recomposer.kt */
-@Metadata(d1 = {"\u0000Ð\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0010\u0003\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010#\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\r\b\u0007\u0018\u0000 Ú\u00012\u00020\u0001:\nÚ\u0001Û\u0001Ü\u0001Ý\u0001Þ\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\u0015\u0010p\u001a\u00020q2\u0006\u0010r\u001a\u00020_H\u0001¢\u0006\u0002\bsJ\u0010\u0010t\u001a\u00020o2\u0006\u0010\u001e\u001a\u00020\u0007H\u0002J\u0010\u0010u\u001a\u00020o2\u0006\u0010v\u001a\u00020wH\u0002J\u0006\u0010x\u001a\u00020yJ\u000e\u0010z\u001a\u00020oH\u0086@¢\u0006\u0002\u0010{J\u000e\u0010|\u001a\u00020oH\u0082@¢\u0006\u0002\u0010{J\u0006\u0010}\u001a\u00020oJ\b\u0010~\u001a\u00020oH\u0002J\u0006\u0010\u007f\u001a\u00020oJ0\u0010\u0080\u0001\u001a\u00020o2\u0006\u0010\u001e\u001a\u00020\u00072\u0014\u0010\u0081\u0001\u001a\u000f\u0012\u0004\u0012\u00020o0\u0082\u0001¢\u0006\u0003\b\u0083\u0001H\u0010¢\u0006\u0006\b\u0084\u0001\u0010\u0085\u0001JA\u0010\u0086\u0001\u001a\t\u0012\u0004\u0012\u00020X0\u0087\u00012\u0006\u0010\u001e\u001a\u00020\u00072\b\u0010\u0088\u0001\u001a\u00030\u0089\u00012\u0014\u0010\u0081\u0001\u001a\u000f\u0012\u0004\u0012\u00020o0\u0082\u0001¢\u0006\u0003\b\u0083\u0001H\u0010¢\u0006\u0006\b\u008a\u0001\u0010\u008b\u0001JB\u0010\u008c\u0001\u001a\u0003H\u008d\u0001\"\u0005\b\u0000\u0010\u008d\u00012\u0006\u0010\u001e\u001a\u00020\u00072\u000f\u0010\u008e\u0001\u001a\n\u0012\u0004\u0012\u00020Q\u0018\u00010W2\u000f\u0010\u008f\u0001\u001a\n\u0012\u0005\u0012\u0003H\u008d\u00010\u0082\u0001H\u0082\b¢\u0006\u0003\u0010\u0090\u0001J\u0018\u0010\u0091\u0001\u001a\u00020o2\u0007\u0010\u0092\u0001\u001a\u00020IH\u0010¢\u0006\u0003\b\u0093\u0001J\u0011\u0010\u0094\u0001\u001a\n\u0012\u0004\u0012\u00020o\u0018\u00010nH\u0002J\t\u0010\u0095\u0001\u001a\u00020oH\u0002J\u0018\u0010\u0096\u0001\u001a\u00020o2\u0007\u0010\u0092\u0001\u001a\u00020IH\u0010¢\u0006\u0003\b\u0097\u0001J\u0017\u0010\u0098\u0001\u001a\u00020o2\u0006\u0010\u001e\u001a\u00020\u0007H\u0010¢\u0006\u0003\b\u0099\u0001J\u0018\u0010\u009a\u0001\u001a\u00020o2\u0007\u0010\u009b\u0001\u001a\u00020XH\u0010¢\u0006\u0003\b\u009c\u0001J\u000f\u0010\u009d\u0001\u001a\u00020oH\u0086@¢\u0006\u0002\u0010{J/\u0010\u009e\u0001\u001a\u00020o2\u0007\u0010\u0092\u0001\u001a\u00020I2\u0007\u0010\u009f\u0001\u001a\u00020T2\f\u0010 \u0001\u001a\u0007\u0012\u0002\b\u00030¡\u0001H\u0010¢\u0006\u0003\b¢\u0001J\u001a\u0010£\u0001\u001a\u0004\u0018\u00010T2\u0007\u0010\u0092\u0001\u001a\u00020IH\u0010¢\u0006\u0003\b¤\u0001J\u0007\u0010¥\u0001\u001a\u00020oJ\u0011\u0010¦\u0001\u001a\u00020o2\u0006\u0010\u001e\u001a\u00020\u0007H\u0002J/\u0010§\u0001\u001a\b\u0012\u0004\u0012\u00020\u00070\t2\r\u0010¨\u0001\u001a\b\u0012\u0004\u0012\u00020I0\t2\u000f\u0010\u008e\u0001\u001a\n\u0012\u0004\u0012\u00020Q\u0018\u00010WH\u0002J$\u0010©\u0001\u001a\u0004\u0018\u00010\u00072\u0006\u0010\u001e\u001a\u00020\u00072\u000f\u0010\u008e\u0001\u001a\n\u0012\u0004\u0012\u00020Q\u0018\u00010WH\u0002J*\u0010ª\u0001\u001a\u00020o2\u0007\u0010«\u0001\u001a\u00020\u00152\u000b\b\u0002\u0010¬\u0001\u001a\u0004\u0018\u00010\u00072\t\b\u0002\u0010\u00ad\u0001\u001a\u00020\u0017H\u0002J\u001e\u0010®\u0001\u001a\u000f\u0012\u0004\u0012\u00020Q\u0012\u0004\u0012\u00020o0¯\u00012\u0006\u0010\u001e\u001a\u00020\u0007H\u0002J8\u0010°\u0001\u001a\t\u0012\u0004\u0012\u00020X0\u0087\u00012\u0006\u0010\u001e\u001a\u00020\u00072\b\u0010\u0088\u0001\u001a\u00030\u0089\u00012\u000e\u0010±\u0001\u001a\t\u0012\u0004\u0012\u00020X0\u0087\u0001H\u0010¢\u0006\u0003\b²\u0001JW\u0010³\u0001\u001a\u00020o2E\u0010\u008f\u0001\u001a@\b\u0001\u0012\u0005\u0012\u00030µ\u0001\u0012\u0017\u0012\u00150¶\u0001¢\u0006\u000f\b·\u0001\u0012\n\b¸\u0001\u0012\u0005\b\b(¹\u0001\u0012\u000b\u0012\t\u0012\u0004\u0012\u00020o0º\u0001\u0012\u0006\u0012\u0004\u0018\u00010Q0´\u0001¢\u0006\u0003\b»\u0001H\u0082@¢\u0006\u0003\u0010¼\u0001J\t\u0010½\u0001\u001a\u00020\u0017H\u0002J \u0010½\u0001\u001a\u00020o2\u0014\u0010¾\u0001\u001a\u000f\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020o0¯\u0001H\u0082\bJ\u0011\u0010¿\u0001\u001a\u00020o2\u0006\u0010\u001e\u001a\u00020\u0007H\u0002J\u001f\u0010À\u0001\u001a\u00020o2\u000e\u0010Á\u0001\u001a\t\u0012\u0005\u0012\u00030Â\u00010&H\u0010¢\u0006\u0003\bÃ\u0001J\u0017\u0010Ä\u0001\u001a\u00020o2\u0006\u0010\u001e\u001a\u00020\u0007H\u0010¢\u0006\u0003\bÅ\u0001J\u0012\u0010Æ\u0001\u001a\u00020o2\u0007\u0010Ç\u0001\u001a\u00020cH\u0002J\u0011\u0010È\u0001\u001a\u00020o2\u0006\u0010\u001e\u001a\u00020\u0007H\u0002J\u0018\u0010É\u0001\u001a\u00020o2\u0007\u0010\u009b\u0001\u001a\u00020XH\u0010¢\u0006\u0003\bÊ\u0001J\u0017\u0010Ë\u0001\u001a\u00020o2\u0006\u0010\u001e\u001a\u00020\u0007H\u0010¢\u0006\u0003\bÌ\u0001J\u000b\u0010Í\u0001\u001a\u0004\u0018\u000105H\u0002J\u0007\u0010Î\u0001\u001a\u00020oJ\t\u0010Ï\u0001\u001a\u00020oH\u0002J$\u0010Ð\u0001\u001a\u00020o2\b\u0010¹\u0001\u001a\u00030¶\u00012\b\u0010Ñ\u0001\u001a\u00030Ò\u0001H\u0082@¢\u0006\u0003\u0010Ó\u0001J\u000f\u0010Ô\u0001\u001a\u00020oH\u0086@¢\u0006\u0002\u0010{J\u0018\u0010Õ\u0001\u001a\u00020o2\u0006\u0010Y\u001a\u00020\u0003H\u0087@¢\u0006\u0003\u0010Ö\u0001J\u0017\u0010×\u0001\u001a\u00020o2\u0006\u0010\u001e\u001a\u00020\u0007H\u0010¢\u0006\u0003\bØ\u0001J/\u0010Ù\u0001\u001a\u000f\u0012\u0004\u0012\u00020Q\u0012\u0004\u0012\u00020o0¯\u00012\u0006\u0010\u001e\u001a\u00020\u00072\u000f\u0010\u008e\u0001\u001a\n\u0012\u0004\u0012\u00020Q\u0018\u00010WH\u0002R\u0014\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n\u0012\u0004\u0012\u00020\u0007\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u000f\u001a\u00020\u0010@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0010\u0010\u0014\u001a\u0004\u0018\u00010\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\u00020\u00178PX\u0090\u0004¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0019R\u0014\u0010\u001a\u001a\u00020\u00178PX\u0090\u0004¢\u0006\u0006\u001a\u0004\b\u001b\u0010\u0019R\u0014\u0010\u001c\u001a\u00020\u00178PX\u0090\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u0019R\u0016\u0010\u001e\u001a\u0004\u0018\u00010\u001f8PX\u0090\u0004¢\u0006\u0006\u001a\u0004\b \u0010!R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u00070#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010%\u001a\n\u0012\u0004\u0012\u00020\u0007\u0018\u00010&X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\u00020(8PX\u0090\u0004¢\u0006\u0006\u001a\u0004\b)\u0010*R\u000e\u0010+\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u0017\u0010,\u001a\b\u0012\u0004\u0012\u00020\f0-8F¢\u0006\u0006\u001a\u0004\b.\u0010/R\u0014\u0010\u0002\u001a\u00020\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b0\u00101R\u000e\u00102\u001a\u000203X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u00104\u001a\u0004\u0018\u000105X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u00106\u001a\n\u0012\u0004\u0012\u00020\u0007\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00108\u001a\u00020\u00178BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b9\u0010\u0019R\u0014\u0010:\u001a\u00020\u00178BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b;\u0010\u0019R\u0014\u0010<\u001a\u00020\u00178BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b=\u0010\u0019R\u0014\u0010>\u001a\u00020\u00178BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b?\u0010\u0019R\u0011\u0010@\u001a\u00020\u00178F¢\u0006\u0006\u001a\u0004\bA\u0010\u0019R\u0014\u0010B\u001a\u00020\u00178BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bC\u0010\u0019R\u000e\u0010D\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010E\u001a\b\u0012\u0004\u0012\u00020\u00070\t8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bF\u0010GR\u0014\u0010H\u001a\b\u0012\u0004\u0012\u00020I0\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\"\u0010J\u001a\u000e\u0012\u0004\u0012\u00020I\u0012\u0004\u0012\u00020I0KX\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010LR\u000e\u0010M\u001a\u00020NX\u0082\u0004¢\u0006\u0002\n\u0000R*\u0010O\u001a\u0016\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010Q0P\u0012\u0004\u0012\u00020I0KX\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010LR\u001a\u0010R\u001a\u000e\u0012\u0004\u0012\u00020I\u0012\u0004\u0012\u00020T0SX\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010U\u001a\u0010\u0012\f\u0012\n\u0012\u0004\u0012\u00020X\u0018\u00010W0VX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010Y\u001a\u00020\u00038PX\u0090\u0004¢\u0006\u0006\u001a\u0004\bZ\u00101R\u0012\u0010[\u001a\u00060\\R\u00020\u0000X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010]\u001a\n\u0012\u0004\u0012\u00020_\u0018\u00010^8\u0002@\u0002X\u0083\u000e¢\u0006\b\n\u0000\u0012\u0004\b`\u0010aR\u0010\u0010b\u001a\u0004\u0018\u00010cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010d\u001a\u00020\u00178BX\u0082\u0004¢\u0006\u0006\u001a\u0004\be\u0010\u0019R\u0014\u0010f\u001a\b\u0012\u0004\u0012\u00020Q0WX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010g\u001a\b\u0012\u0004\u0012\u00020\f0h8FX\u0087\u0004¢\u0006\f\u0012\u0004\bi\u0010a\u001a\u0004\bj\u0010kR\u000e\u0010l\u001a\u00020QX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010m\u001a\n\u0012\u0004\u0012\u00020o\u0018\u00010nX\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006ß\u0001"}, d2 = {"Landroidx/compose/runtime/Recomposer;", "Landroidx/compose/runtime/CompositionContext;", "effectCoroutineContext", "Lkotlin/coroutines/CoroutineContext;", "(Lkotlin/coroutines/CoroutineContext;)V", "_knownCompositions", "", "Landroidx/compose/runtime/ControlledComposition;", "_knownCompositionsCache", "", "_state", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Landroidx/compose/runtime/Recomposer$State;", "broadcastFrameClock", "Landroidx/compose/runtime/BroadcastFrameClock;", "<set-?>", "", "changeCount", "getChangeCount", "()J", "closeCause", "", "collectingCallByInformation", "", "getCollectingCallByInformation$runtime_release", "()Z", "collectingParameterInformation", "getCollectingParameterInformation$runtime_release", "collectingSourceInformation", "getCollectingSourceInformation$runtime_release", "composition", "Landroidx/compose/runtime/Composition;", "getComposition$runtime_release", "()Landroidx/compose/runtime/Composition;", "compositionInvalidations", "Landroidx/compose/runtime/collection/MutableVector;", "compositionsAwaitingApply", "compositionsRemoved", "", "compoundHashKey", "", "getCompoundHashKey$runtime_release", "()I", "concurrentCompositionsOutstanding", "currentState", "Lkotlinx/coroutines/flow/StateFlow;", "getCurrentState", "()Lkotlinx/coroutines/flow/StateFlow;", "getEffectCoroutineContext", "()Lkotlin/coroutines/CoroutineContext;", "effectJob", "Lkotlinx/coroutines/CompletableJob;", "errorState", "Landroidx/compose/runtime/Recomposer$RecomposerErrorState;", "failedCompositions", "frameClockPaused", "hasBroadcastFrameClockAwaiters", "getHasBroadcastFrameClockAwaiters", "hasBroadcastFrameClockAwaitersLocked", "getHasBroadcastFrameClockAwaitersLocked", "hasConcurrentFrameWorkLocked", "getHasConcurrentFrameWorkLocked", "hasFrameWorkLocked", "getHasFrameWorkLocked", "hasPendingWork", "getHasPendingWork", "hasSchedulingWork", "getHasSchedulingWork", "isClosed", "knownCompositions", "getKnownCompositions", "()Ljava/util/List;", "movableContentAwaitingInsert", "Landroidx/compose/runtime/MovableContentStateReference;", "movableContentNestedExtractionsPending", "Landroidx/compose/runtime/collection/MultiValueMap;", "Landroidx/collection/MutableScatterMap;", "movableContentNestedStatesAvailable", "Landroidx/compose/runtime/NestedContentMap;", "movableContentRemoved", "Landroidx/compose/runtime/MovableContent;", "", "movableContentStatesAvailable", "Landroidx/collection/MutableScatterMap;", "Landroidx/compose/runtime/MovableContentState;", "pausedScopes", "Landroidx/compose/runtime/internal/SnapshotThreadLocal;", "Landroidx/collection/MutableScatterSet;", "Landroidx/compose/runtime/RecomposeScopeImpl;", "recomposeCoroutineContext", "getRecomposeCoroutineContext$runtime_release", "recomposerInfo", "Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;", "registrationObservers", "Landroidx/collection/MutableObjectList;", "Landroidx/compose/runtime/tooling/CompositionRegistrationObserver;", "getRegistrationObservers$annotations", "()V", "runnerJob", "Lkotlinx/coroutines/Job;", "shouldKeepRecomposing", "getShouldKeepRecomposing", "snapshotInvalidations", RemoteConfigConstants.ResponseFieldKey.STATE, "Lkotlinx/coroutines/flow/Flow;", "getState$annotations", "getState", "()Lkotlinx/coroutines/flow/Flow;", "stateLock", "workContinuation", "Lkotlinx/coroutines/CancellableContinuation;", "", "addCompositionRegistrationObserver", "Landroidx/compose/runtime/tooling/CompositionObserverHandle;", "observer", "addCompositionRegistrationObserver$runtime_release", "addKnownCompositionLocked", "applyAndCheck", "snapshot", "Landroidx/compose/runtime/snapshots/MutableSnapshot;", "asRecomposerInfo", "Landroidx/compose/runtime/RecomposerInfo;", "awaitIdle", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitWorkAvailable", FacebookDialog.COMPLETION_GESTURE_CANCEL, "clearKnownCompositionsLocked", "close", "composeInitial", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "composeInitial$runtime_release", "(Landroidx/compose/runtime/ControlledComposition;Lkotlin/jvm/functions/Function2;)V", "composeInitialPaused", "Landroidx/collection/ScatterSet;", "shouldPause", "Landroidx/compose/runtime/ShouldPauseCallback;", "composeInitialPaused$runtime_release", "(Landroidx/compose/runtime/ControlledComposition;Landroidx/compose/runtime/ShouldPauseCallback;Lkotlin/jvm/functions/Function2;)Landroidx/collection/ScatterSet;", "composing", ExifInterface.GPS_DIRECTION_TRUE, "modifiedValues", "block", "(Landroidx/compose/runtime/ControlledComposition;Landroidx/collection/MutableScatterSet;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "deletedMovableContent", TypedValues.Custom.S_REFERENCE, "deletedMovableContent$runtime_release", "deriveStateLocked", "discardUnusedMovableContentState", "insertMovableContent", "insertMovableContent$runtime_release", "invalidate", "invalidate$runtime_release", "invalidateScope", "scope", "invalidateScope$runtime_release", "join", "movableContentStateReleased", "data", "applier", "Landroidx/compose/runtime/Applier;", "movableContentStateReleased$runtime_release", "movableContentStateResolve", "movableContentStateResolve$runtime_release", "pauseCompositionFrameClock", "performInitialMovableContentInserts", "performInsertValues", "references", "performRecompose", "processCompositionError", "e", "failedInitialComposition", "recoverable", "readObserverOf", "Lkotlin/Function1;", "recomposePaused", "invalidScopes", "recomposePaused$runtime_release", "recompositionRunner", "Lkotlin/Function3;", "Lkotlinx/coroutines/CoroutineScope;", "Landroidx/compose/runtime/MonotonicFrameClock;", "Lkotlin/ParameterName;", "name", "parentFrameClock", "Lkotlin/coroutines/Continuation;", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "recordComposerModifications", "onEachInvalidComposition", "recordFailedCompositionLocked", "recordInspectionTable", "table", "Landroidx/compose/runtime/tooling/CompositionData;", "recordInspectionTable$runtime_release", "registerComposition", "registerComposition$runtime_release", "registerRunnerJob", "callingJob", "removeKnownCompositionLocked", "reportPausedScope", "reportPausedScope$runtime_release", "reportRemovedComposition", "reportRemovedComposition$runtime_release", "resetErrorState", "resumeCompositionFrameClock", "retryFailedCompositions", "runFrameLoop", "frameSignal", "Landroidx/compose/runtime/ProduceFrameSignal;", "(Landroidx/compose/runtime/MonotonicFrameClock;Landroidx/compose/runtime/ProduceFrameSignal;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "runRecomposeAndApplyChanges", "runRecomposeConcurrentlyAndApplyChanges", "(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "unregisterComposition", "unregisterComposition$runtime_release", "writeObserverOf", "Companion", "HotReloadable", "RecomposerErrorState", "RecomposerInfoImpl", "State", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000â\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010#\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\b\u0007\u0018\u0000 ã\u00012\u00020\u0001:\nß\u0001à\u0001á\u0001â\u0001ã\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010N\u001a\n\u0012\u0004\u0012\u000200\u0018\u00010/H\u0002J\u0006\u0010\\\u001a\u00020]J\b\u0010^\u001a\u000204H\u0002J\u001d\u0010^\u001a\u0002002\u0012\u0010_\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u0002000`H\u0082\bJ\u0010\u0010a\u001a\u0002002\u0006\u0010b\u001a\u00020\u0012H\u0002J\u000e\u0010c\u001a\u000200H\u0086@¢\u0006\u0002\u0010dJ&\u0010e\u001a\u0002002\u0006\u0010f\u001a\u00020\u00142\n\b\u0002\u0010g\u001a\u0004\u0018\u00010\u00172\b\b\u0002\u0010h\u001a\u000204H\u0002J\u0017\u0010i\u001a\u0002002\f\u0010j\u001a\b\u0012\u0004\u0012\u0002000kH\u0082\bJ\u000e\u0010l\u001a\b\u0012\u0004\u0012\u00020\u00170\u0019H\u0002J\u000e\u0010m\u001a\b\u0012\u0004\u0012\u00020\u00170\u0019H\u0002J\b\u0010n\u001a\u000200H\u0002J\u0010\u0010o\u001a\u0002002\u0006\u0010p\u001a\u00020\u0017H\u0002J\u0010\u0010q\u001a\u0002002\u0006\u0010p\u001a\u00020\u0017H\u0002J\u0010\u0010r\u001a\u0002002\u0006\u0010p\u001a\u00020\u0017H\u0002J\u0010\u0010s\u001a\u0002002\u0006\u0010p\u001a\u00020\u0017H\u0002J\u0015\u0010t\u001a\u00020u2\u0006\u0010v\u001a\u00020KH\u0000¢\u0006\u0002\bwJ\n\u0010x\u001a\u0004\u0018\u000106H\u0002J\b\u0010y\u001a\u000200H\u0002J\u0010\u0010z\u001a\u0002002\u0006\u0010p\u001a\u00020\u0017H\u0002J\u0016\u0010{\u001a\u0002002\u0006\u0010B\u001a\u00020\u0003H\u0087@¢\u0006\u0002\u0010|J!\u0010}\u001a\u0002002\u0006\u0010~\u001a\u00020\u007f2\b\u0010\u0080\u0001\u001a\u00030\u0081\u0001H\u0082@¢\u0006\u0003\u0010\u0082\u0001J\u000f\u0010\u0085\u0001\u001a\u000200H\u0082@¢\u0006\u0002\u0010dJT\u0010\u0086\u0001\u001a\u0002002B\u0010j\u001a>\b\u0001\u0012\u0005\u0012\u00030\u0088\u0001\u0012\u0015\u0012\u00130\u007f¢\u0006\u000e\b\u0089\u0001\u0012\t\b\u008a\u0001\u0012\u0004\b\b(~\u0012\u000b\u0012\t\u0012\u0004\u0012\u0002000\u008b\u0001\u0012\u0006\u0012\u0004\u0018\u00010\u000e0\u0087\u0001¢\u0006\u0003\b\u008c\u0001H\u0082@¢\u0006\u0003\u0010\u008d\u0001J\u0007\u0010\u008e\u0001\u001a\u000200J\u0007\u0010\u008f\u0001\u001a\u000200J\u000f\u0010\u0090\u0001\u001a\u000200H\u0086@¢\u0006\u0002\u0010dJ/\u0010\u0091\u0001\u001a\u0002002\u0006\u0010p\u001a\u00020\u00172\u0013\u0010\u0092\u0001\u001a\u000e\u0012\u0004\u0012\u0002000k¢\u0006\u0003\b\u0093\u0001H\u0010¢\u0006\u0006\b\u0094\u0001\u0010\u0095\u0001J@\u0010\u0096\u0001\u001a\t\u0012\u0004\u0012\u00020=0\u0097\u00012\u0006\u0010p\u001a\u00020\u00172\b\u0010\u0098\u0001\u001a\u00030\u0099\u00012\u0013\u0010\u0092\u0001\u001a\u000e\u0012\u0004\u0012\u0002000k¢\u0006\u0003\b\u0093\u0001H\u0010¢\u0006\u0006\b\u009a\u0001\u0010\u009b\u0001J8\u0010\u009c\u0001\u001a\t\u0012\u0004\u0012\u00020=0\u0097\u00012\u0006\u0010p\u001a\u00020\u00172\b\u0010\u0098\u0001\u001a\u00030\u0099\u00012\u000e\u0010\u009d\u0001\u001a\t\u0012\u0004\u0012\u00020=0\u0097\u0001H\u0010¢\u0006\u0003\b\u009e\u0001J\u0018\u0010\u009f\u0001\u001a\u0002002\u0007\u0010 \u0001\u001a\u00020=H\u0010¢\u0006\u0003\b¡\u0001J\u0011\u0010¢\u0001\u001a\u0002002\u0006\u0010p\u001a\u00020\u0017H\u0002J$\u0010£\u0001\u001a\u0004\u0018\u00010\u00172\u0006\u0010p\u001a\u00020\u00172\u000f\u0010¤\u0001\u001a\n\u0012\u0004\u0012\u00020\u000e\u0018\u00010\u001bH\u0002J/\u0010¥\u0001\u001a\b\u0012\u0004\u0012\u00020\u00170\u00192\r\u0010¦\u0001\u001a\b\u0012\u0004\u0012\u00020 0\u00192\u000f\u0010¤\u0001\u001a\n\u0012\u0004\u0012\u00020\u000e\u0018\u00010\u001bH\u0002J\t\u0010§\u0001\u001a\u000200H\u0002J\u001d\u0010¨\u0001\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u0002000`2\u0006\u0010p\u001a\u00020\u0017H\u0002J.\u0010©\u0001\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u0002000`2\u0006\u0010p\u001a\u00020\u00172\u000f\u0010¤\u0001\u001a\n\u0012\u0004\u0012\u00020\u000e\u0018\u00010\u001bH\u0002J@\u0010ª\u0001\u001a\u0003H«\u0001\"\u0005\b\u0000\u0010«\u00012\u0006\u0010p\u001a\u00020\u00172\u000f\u0010¤\u0001\u001a\n\u0012\u0004\u0012\u00020\u000e\u0018\u00010\u001b2\r\u0010j\u001a\t\u0012\u0005\u0012\u0003H«\u00010kH\u0082\b¢\u0006\u0003\u0010¬\u0001J\u0013\u0010\u00ad\u0001\u001a\u0002002\b\u0010®\u0001\u001a\u00030¯\u0001H\u0002J\u000f\u0010¶\u0001\u001a\u000200H\u0086@¢\u0006\u0002\u0010dJ\u0007\u0010·\u0001\u001a\u000200J\u0007\u0010¸\u0001\u001a\u000200J\u001f\u0010Â\u0001\u001a\u0002002\u000e\u0010Ã\u0001\u001a\t\u0012\u0005\u0012\u00030Ä\u00010-H\u0010¢\u0006\u0003\bÅ\u0001J\u0017\u0010Æ\u0001\u001a\u0002002\u0006\u0010p\u001a\u00020\u0017H\u0010¢\u0006\u0003\bÇ\u0001J\u0017\u0010È\u0001\u001a\u0002002\u0006\u0010p\u001a\u00020\u0017H\u0010¢\u0006\u0003\bÉ\u0001J\u0017\u0010Ê\u0001\u001a\u0002002\u0006\u0010p\u001a\u00020\u0017H\u0010¢\u0006\u0003\bË\u0001J\u0018\u0010Ì\u0001\u001a\u0002002\u0007\u0010 \u0001\u001a\u00020=H\u0010¢\u0006\u0003\bÍ\u0001J\u0018\u0010Î\u0001\u001a\u0002002\u0007\u0010Ï\u0001\u001a\u00020 H\u0010¢\u0006\u0003\bÐ\u0001J\u0018\u0010Ñ\u0001\u001a\u0002002\u0007\u0010Ï\u0001\u001a\u00020 H\u0010¢\u0006\u0003\bÒ\u0001J/\u0010Ó\u0001\u001a\u0002002\u0007\u0010Ï\u0001\u001a\u00020 2\u0007\u0010Ô\u0001\u001a\u00020)2\f\u0010Õ\u0001\u001a\u0007\u0012\u0002\b\u00030Ö\u0001H\u0010¢\u0006\u0003\b×\u0001J\u0017\u0010Ø\u0001\u001a\u0002002\u0006\u0010p\u001a\u00020\u0017H\u0010¢\u0006\u0003\bÙ\u0001J\u001a\u0010Ú\u0001\u001a\u0004\u0018\u00010)2\u0007\u0010Ï\u0001\u001a\u00020 H\u0010¢\u0006\u0003\bÛ\u0001R\u001e\u0010\b\u001a\u00020\u00072\u0006\u0010\u0006\u001a\u00020\u0007@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\u00060\u000ej\u0002`\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0018\u001a\n\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u000e0\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00170\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020 0\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R$\u0010!\u001a\u0016\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u000e0#\u0012\u0004\u0012\u00020 0\"X\u0082\u0004¢\u0006\u0004\n\u0002\u0010$R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010'\u001a\u000e\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020)0(X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010*\u001a\u000e\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020 0\"X\u0082\u0004¢\u0006\u0004\n\u0002\u0010$R\u0016\u0010+\u001a\n\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010,\u001a\n\u0012\u0004\u0012\u00020\u0017\u0018\u00010-X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010.\u001a\n\u0012\u0004\u0012\u000200\u0018\u00010/X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00105\u001a\u0004\u0018\u000106X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00108\u001a\b\u0012\u0004\u0012\u00020:09X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010;\u001a\u0010\u0012\f\u0012\n\u0012\u0004\u0012\u00020=\u0018\u00010\u001b0<X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010>\u001a\u00020?X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0002\u001a\u00020\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b@\u0010AR\u0014\u0010B\u001a\u00020\u00038PX\u0090\u0004¢\u0006\u0006\u001a\u0004\bC\u0010AR\u0014\u0010D\u001a\u0002048BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bE\u0010FR\u0014\u0010G\u001a\u0002048BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bH\u0010FR\u001c\u0010I\u001a\n\u0012\u0004\u0012\u00020K\u0018\u00010JX\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\bL\u0010MR\u0014\u0010O\u001a\u0002048BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bP\u0010FR \u0010Q\u001a\b\u0012\u0004\u0012\u00020:0R8FX\u0087\u0004¢\u0006\f\u0012\u0004\bS\u0010M\u001a\u0004\bT\u0010UR\u0017\u0010V\u001a\b\u0012\u0004\u0012\u00020:0W8F¢\u0006\u0006\u001a\u0004\bX\u0010YR\u0012\u0010Z\u001a\u00060[R\u00020\u0000X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0083\u0001\u001a\u0002048BX\u0082\u0004¢\u0006\u0007\u001a\u0005\b\u0084\u0001\u0010FR\u0013\u0010°\u0001\u001a\u0002048F¢\u0006\u0007\u001a\u0005\b±\u0001\u0010FR\u0016\u0010²\u0001\u001a\u0002048BX\u0082\u0004¢\u0006\u0007\u001a\u0005\b³\u0001\u0010FR\u0016\u0010´\u0001\u001a\u0002048BX\u0082\u0004¢\u0006\u0007\u001a\u0005\bµ\u0001\u0010FR\u001b\u0010¹\u0001\u001a\u00070\u0007j\u0003`º\u00018PX\u0090\u0004¢\u0006\u0007\u001a\u0005\b»\u0001\u0010\nR\u0016\u0010¼\u0001\u001a\u0002048PX\u0090\u0004¢\u0006\u0007\u001a\u0005\b½\u0001\u0010FR\u0016\u0010¾\u0001\u001a\u0002048PX\u0090\u0004¢\u0006\u0007\u001a\u0005\b¿\u0001\u0010FR\u0016\u0010À\u0001\u001a\u0002048PX\u0090\u0004¢\u0006\u0007\u001a\u0005\bÁ\u0001\u0010FR\u0019\u0010p\u001a\u0005\u0018\u00010Ü\u00018PX\u0090\u0004¢\u0006\b\u001a\u0006\bÝ\u0001\u0010Þ\u0001¨\u0006ä\u0001"}, d2 = {"Landroidx/compose/runtime/Recomposer;", "Landroidx/compose/runtime/CompositionContext;", "effectCoroutineContext", "Lkotlin/coroutines/CoroutineContext;", "<init>", "(Lkotlin/coroutines/CoroutineContext;)V", "value", "", "changeCount", "getChangeCount", "()J", "broadcastFrameClock", "Landroidx/compose/runtime/BroadcastFrameClock;", "stateLock", "", "Landroidx/compose/runtime/platform/SynchronizedObject;", "Ljava/lang/Object;", "runnerJob", "Lkotlinx/coroutines/Job;", "closeCause", "", "_knownCompositions", "", "Landroidx/compose/runtime/ControlledComposition;", "_knownCompositionsCache", "", "snapshotInvalidations", "Landroidx/collection/MutableScatterSet;", "compositionInvalidations", "Landroidx/compose/runtime/collection/MutableVector;", "compositionsAwaitingApply", "movableContentAwaitingInsert", "Landroidx/compose/runtime/MovableContentStateReference;", "movableContentRemoved", "Landroidx/compose/runtime/collection/MultiValueMap;", "Landroidx/compose/runtime/MovableContent;", "Landroidx/collection/MutableScatterMap;", "movableContentNestedStatesAvailable", "Landroidx/compose/runtime/NestedContentMap;", "movableContentStatesAvailable", "Landroidx/collection/MutableScatterMap;", "Landroidx/compose/runtime/MovableContentState;", "movableContentNestedExtractionsPending", "failedCompositions", "compositionsRemoved", "", "workContinuation", "Lkotlinx/coroutines/CancellableContinuation;", "", "concurrentCompositionsOutstanding", "", "isClosed", "", "errorState", "Landroidx/compose/runtime/Recomposer$RecomposerErrorState;", "frameClockPaused", "_state", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Landroidx/compose/runtime/Recomposer$State;", "pausedScopes", "Landroidx/compose/runtime/internal/SnapshotThreadLocal;", "Landroidx/compose/runtime/RecomposeScopeImpl;", "effectJob", "Lkotlinx/coroutines/CompletableJob;", "getEffectCoroutineContext", "()Lkotlin/coroutines/CoroutineContext;", "recomposeCoroutineContext", "getRecomposeCoroutineContext$runtime", "hasBroadcastFrameClockAwaitersLocked", "getHasBroadcastFrameClockAwaitersLocked", "()Z", "hasBroadcastFrameClockAwaiters", "getHasBroadcastFrameClockAwaiters", "registrationObservers", "Landroidx/collection/MutableObjectList;", "Landroidx/compose/runtime/tooling/CompositionRegistrationObserver;", "getRegistrationObservers$annotations", "()V", "deriveStateLocked", "shouldKeepRecomposing", "getShouldKeepRecomposing", RemoteConfigConstants.ResponseFieldKey.STATE, "Lkotlinx/coroutines/flow/Flow;", "getState$annotations", "getState", "()Lkotlinx/coroutines/flow/Flow;", "currentState", "Lkotlinx/coroutines/flow/StateFlow;", "getCurrentState", "()Lkotlinx/coroutines/flow/StateFlow;", "recomposerInfo", "Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;", "asRecomposerInfo", "Landroidx/compose/runtime/RecomposerInfo;", "recordComposerModifications", "onEachInvalidComposition", "Lkotlin/Function1;", "registerRunnerJob", "callingJob", "runRecomposeAndApplyChanges", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "processCompositionError", "e", "failedInitialComposition", "recoverable", "withTransparentSnapshot", "block", "Lkotlin/Function0;", "knownCompositions", "knownCompositionsLocked", "clearKnownCompositionsLocked", "removeKnownCompositionLocked", "composition", "addKnownCompositionLocked", "registerCompositionLocked", "unregisterCompositionLocked", "addCompositionRegistrationObserver", "Landroidx/compose/runtime/tooling/CompositionObserverHandle;", "observer", "addCompositionRegistrationObserver$runtime", "resetErrorState", "retryFailedCompositions", "recordFailedCompositionLocked", "runRecomposeConcurrentlyAndApplyChanges", "(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "runFrameLoop", "parentFrameClock", "Landroidx/compose/runtime/MonotonicFrameClock;", "frameSignal", "Landroidx/compose/runtime/ProduceFrameSignal;", "(Landroidx/compose/runtime/MonotonicFrameClock;Landroidx/compose/runtime/ProduceFrameSignal;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "hasSchedulingWork", "getHasSchedulingWork", "awaitWorkAvailable", "recompositionRunner", "Lkotlin/Function3;", "Lkotlinx/coroutines/CoroutineScope;", "Lkotlin/ParameterName;", "name", "Lkotlin/coroutines/Continuation;", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", FacebookDialog.COMPLETION_GESTURE_CANCEL, "close", "join", "composeInitial", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/runtime/Composable;", "composeInitial$runtime", "(Landroidx/compose/runtime/ControlledComposition;Lkotlin/jvm/functions/Function2;)V", "composeInitialPaused", "Landroidx/collection/ScatterSet;", "shouldPause", "Landroidx/compose/runtime/ShouldPauseCallback;", "composeInitialPaused$runtime", "(Landroidx/compose/runtime/ControlledComposition;Landroidx/compose/runtime/ShouldPauseCallback;Lkotlin/jvm/functions/Function2;)Landroidx/collection/ScatterSet;", "recomposePaused", "invalidScopes", "recomposePaused$runtime", "reportPausedScope", "scope", "reportPausedScope$runtime", "performInitialMovableContentInserts", "performRecompose", "modifiedValues", "performInsertValues", "references", "discardUnusedMovableContentState", "readObserverOf", "writeObserverOf", "composing", ExifInterface.GPS_DIRECTION_TRUE, "(Landroidx/compose/runtime/ControlledComposition;Landroidx/collection/MutableScatterSet;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "applyAndCheck", "snapshot", "Landroidx/compose/runtime/snapshots/MutableSnapshot;", "hasPendingWork", "getHasPendingWork", "hasFrameWorkLocked", "getHasFrameWorkLocked", "hasConcurrentFrameWorkLocked", "getHasConcurrentFrameWorkLocked", "awaitIdle", "pauseCompositionFrameClock", "resumeCompositionFrameClock", "compositeKeyHashCode", "Landroidx/compose/runtime/CompositeKeyHashCode;", "getCompositeKeyHashCode$runtime", "collectingCallByInformation", "getCollectingCallByInformation$runtime", "collectingParameterInformation", "getCollectingParameterInformation$runtime", "collectingSourceInformation", "getCollectingSourceInformation$runtime", "recordInspectionTable", "table", "Landroidx/compose/runtime/tooling/CompositionData;", "recordInspectionTable$runtime", "registerComposition", "registerComposition$runtime", "unregisterComposition", "unregisterComposition$runtime", "invalidate", "invalidate$runtime", "invalidateScope", "invalidateScope$runtime", "insertMovableContent", TypedValues.Custom.S_REFERENCE, "insertMovableContent$runtime", "deletedMovableContent", "deletedMovableContent$runtime", "movableContentStateReleased", "data", "applier", "Landroidx/compose/runtime/Applier;", "movableContentStateReleased$runtime", "reportRemovedComposition", "reportRemovedComposition$runtime", "movableContentStateResolve", "movableContentStateResolve$runtime", "Landroidx/compose/runtime/Composition;", "getComposition$runtime", "()Landroidx/compose/runtime/Composition;", "State", "RecomposerInfoImpl", "HotReloadable", "RecomposerErrorState", "Companion", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class Recomposer extends CompositionContext {
     private final List<ControlledComposition> _knownCompositions;
@@ -119,65 +122,35 @@ public final class Recomposer extends CompositionContext {
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public boolean getCollectingParameterInformation$runtime_release() {
+    public boolean getCollectingParameterInformation$runtime() {
         return false;
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public boolean getCollectingSourceInformation$runtime_release() {
-        return false;
-    }
-
-    @Override // androidx.compose.runtime.CompositionContext
-    public Composition getComposition$runtime_release() {
-        return null;
-    }
-
-    @Override // androidx.compose.runtime.CompositionContext
-    public int getCompoundHashKey$runtime_release() {
+    public long getCompositeKeyHashCode$runtime() {
         return 1000;
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public void recordInspectionTable$runtime_release(Set<CompositionData> set) {
+    public Composition getComposition$runtime() {
+        return null;
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public void registerComposition$runtime_release(ControlledComposition controlledComposition) {
+    public void recordInspectionTable$runtime(Set<CompositionData> set) {
+    }
+
+    @Override // androidx.compose.runtime.CompositionContext
+    public void registerComposition$runtime(ControlledComposition controlledComposition) {
     }
 
     public Recomposer(CoroutineContext coroutineContext) {
-        BroadcastFrameClock broadcastFrameClock = new BroadcastFrameClock(new Function0<Unit>() { // from class: androidx.compose.runtime.Recomposer$broadcastFrameClock$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
+        BroadcastFrameClock broadcastFrameClock = new BroadcastFrameClock(new Function0() { // from class: androidx.compose.runtime.Recomposer$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                CancellableContinuation deriveStateLocked;
-                MutableStateFlow mutableStateFlow;
-                Throwable th;
-                Object obj = Recomposer.this.stateLock;
-                Recomposer recomposer = Recomposer.this;
-                synchronized (obj) {
-                    deriveStateLocked = recomposer.deriveStateLocked();
-                    mutableStateFlow = recomposer._state;
-                    if (((Recomposer.State) mutableStateFlow.getValue()).compareTo(Recomposer.State.ShuttingDown) <= 0) {
-                        th = recomposer.closeCause;
-                        throw ExceptionsKt.CancellationException("Recomposer shutdown; frame clock awaiter will never resume", th);
-                    }
-                }
-                if (deriveStateLocked != null) {
-                    Result.Companion companion = Result.Companion;
-                    deriveStateLocked.resumeWith(Result.m8500constructorimpl(Unit.INSTANCE));
-                }
+            public final Object invoke() {
+                Unit broadcastFrameClock$lambda$2;
+                broadcastFrameClock$lambda$2 = Recomposer.broadcastFrameClock$lambda$2(Recomposer.this);
+                return broadcastFrameClock$lambda$2;
             }
         });
         this.broadcastFrameClock = broadcastFrameClock;
@@ -187,142 +160,19 @@ public final class Recomposer extends CompositionContext {
         this.compositionInvalidations = new MutableVector<>(new ControlledComposition[16], 0);
         this.compositionsAwaitingApply = new ArrayList();
         this.movableContentAwaitingInsert = new ArrayList();
-        this.movableContentRemoved = MultiValueMap.m3599constructorimpl$default(null, 1, null);
+        this.movableContentRemoved = MultiValueMap.m3935constructorimpl$default(null, 1, null);
         this.movableContentNestedStatesAvailable = new NestedContentMap();
         this.movableContentStatesAvailable = ScatterMapKt.mutableScatterMapOf();
-        this.movableContentNestedExtractionsPending = MultiValueMap.m3599constructorimpl$default(null, 1, null);
+        this.movableContentNestedExtractionsPending = MultiValueMap.m3935constructorimpl$default(null, 1, null);
         this._state = StateFlowKt.MutableStateFlow(State.Inactive);
         this.pausedScopes = new SnapshotThreadLocal<>();
         CompletableJob Job = JobKt.Job((Job) coroutineContext.get(Job.Key));
-        Job.invokeOnCompletion(new Function1<Throwable, Unit>() { // from class: androidx.compose.runtime.Recomposer$effectJob$1$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        Job.invokeOnCompletion(new Function1() { // from class: androidx.compose.runtime.Recomposer$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
-                invoke2(th);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(final Throwable th) {
-                Job job;
-                CancellableContinuation cancellableContinuation;
-                MutableStateFlow mutableStateFlow;
-                MutableStateFlow mutableStateFlow2;
-                boolean z;
-                CancellableContinuation cancellableContinuation2;
-                CancellableContinuation cancellableContinuation3;
-                CancellationException CancellationException = ExceptionsKt.CancellationException("Recomposer effect job completed", th);
-                Object obj = Recomposer.this.stateLock;
-                final Recomposer recomposer = Recomposer.this;
-                synchronized (obj) {
-                    job = recomposer.runnerJob;
-                    cancellableContinuation = null;
-                    if (job != null) {
-                        mutableStateFlow2 = recomposer._state;
-                        mutableStateFlow2.setValue(Recomposer.State.ShuttingDown);
-                        z = recomposer.isClosed;
-                        if (z) {
-                            cancellableContinuation2 = recomposer.workContinuation;
-                            if (cancellableContinuation2 != null) {
-                                cancellableContinuation3 = recomposer.workContinuation;
-                                recomposer.workContinuation = null;
-                                job.invokeOnCompletion(new Function1<Throwable, Unit>() { // from class: androidx.compose.runtime.Recomposer$effectJob$1$1$1$1
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                    {
-                                        super(1);
-                                    }
-
-                                    @Override // kotlin.jvm.functions.Function1
-                                    public /* bridge */ /* synthetic */ Unit invoke(Throwable th2) {
-                                        invoke2(th2);
-                                        return Unit.INSTANCE;
-                                    }
-
-                                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                    public final void invoke2(Throwable th2) {
-                                        MutableStateFlow mutableStateFlow3;
-                                        Object obj2 = Recomposer.this.stateLock;
-                                        Recomposer recomposer2 = Recomposer.this;
-                                        Throwable th3 = th;
-                                        synchronized (obj2) {
-                                            if (th3 == null) {
-                                                th3 = null;
-                                            } else if (th2 != null) {
-                                                if (th2 instanceof CancellationException) {
-                                                    th2 = null;
-                                                }
-                                                if (th2 != null) {
-                                                    kotlin.ExceptionsKt.addSuppressed(th3, th2);
-                                                }
-                                            }
-                                            recomposer2.closeCause = th3;
-                                            mutableStateFlow3 = recomposer2._state;
-                                            mutableStateFlow3.setValue(Recomposer.State.ShutDown);
-                                            Unit unit = Unit.INSTANCE;
-                                        }
-                                    }
-                                });
-                                cancellableContinuation = cancellableContinuation3;
-                            }
-                        } else {
-                            job.cancel(CancellationException);
-                        }
-                        cancellableContinuation3 = null;
-                        recomposer.workContinuation = null;
-                        job.invokeOnCompletion(new Function1<Throwable, Unit>() { // from class: androidx.compose.runtime.Recomposer$effectJob$1$1$1$1
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            {
-                                super(1);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function1
-                            public /* bridge */ /* synthetic */ Unit invoke(Throwable th2) {
-                                invoke2(th2);
-                                return Unit.INSTANCE;
-                            }
-
-                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                            public final void invoke2(Throwable th2) {
-                                MutableStateFlow mutableStateFlow3;
-                                Object obj2 = Recomposer.this.stateLock;
-                                Recomposer recomposer2 = Recomposer.this;
-                                Throwable th3 = th;
-                                synchronized (obj2) {
-                                    if (th3 == null) {
-                                        th3 = null;
-                                    } else if (th2 != null) {
-                                        if (th2 instanceof CancellationException) {
-                                            th2 = null;
-                                        }
-                                        if (th2 != null) {
-                                            kotlin.ExceptionsKt.addSuppressed(th3, th2);
-                                        }
-                                    }
-                                    recomposer2.closeCause = th3;
-                                    mutableStateFlow3 = recomposer2._state;
-                                    mutableStateFlow3.setValue(Recomposer.State.ShutDown);
-                                    Unit unit = Unit.INSTANCE;
-                                }
-                            }
-                        });
-                        cancellableContinuation = cancellableContinuation3;
-                    } else {
-                        recomposer.closeCause = CancellationException;
-                        mutableStateFlow = recomposer._state;
-                        mutableStateFlow.setValue(Recomposer.State.ShutDown);
-                        Unit unit = Unit.INSTANCE;
-                    }
-                }
-                if (cancellableContinuation != null) {
-                    Result.Companion companion = Result.Companion;
-                    cancellableContinuation.resumeWith(Result.m8500constructorimpl(Unit.INSTANCE));
-                }
+            public final Object invoke(Object obj) {
+                Unit effectJob$lambda$10$lambda$9;
+                effectJob$lambda$10$lambda$9 = Recomposer.effectJob$lambda$10$lambda$9(Recomposer.this, (Throwable) obj);
+                return effectJob$lambda$10$lambda$9;
             }
         });
         this.effectJob = Job;
@@ -334,10 +184,26 @@ public final class Recomposer extends CompositionContext {
         return this.changeCount;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit broadcastFrameClock$lambda$2(Recomposer recomposer) {
+        CancellableContinuation<Unit> deriveStateLocked;
+        synchronized (recomposer.stateLock) {
+            deriveStateLocked = recomposer.deriveStateLocked();
+            if (recomposer._state.getValue().compareTo(State.ShuttingDown) <= 0) {
+                throw ExceptionsKt.CancellationException("Recomposer shutdown; frame clock awaiter will never resume", recomposer.closeCause);
+            }
+        }
+        if (deriveStateLocked != null) {
+            Result.Companion companion = Result.Companion;
+            deriveStateLocked.resumeWith(Result.m9065constructorimpl(Unit.INSTANCE));
+        }
+        return Unit.INSTANCE;
+    }
+
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: Recomposer.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\b\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002j\u0002\b\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\b¨\u0006\t"}, d2 = {"Landroidx/compose/runtime/Recomposer$State;", "", "(Ljava/lang/String;I)V", "ShutDown", "ShuttingDown", "Inactive", "InactivePendingWork", "Idle", "PendingWork", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\t\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\t¨\u0006\n"}, d2 = {"Landroidx/compose/runtime/Recomposer$State;", "", "<init>", "(Ljava/lang/String;I)V", "ShutDown", "ShuttingDown", "Inactive", "InactivePendingWork", "Idle", "PendingWork", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class State {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -357,14 +223,6 @@ public final class Recomposer extends CompositionContext {
             return $ENTRIES;
         }
 
-        public static State valueOf(String str) {
-            return (State) Enum.valueOf(State.class, str);
-        }
-
-        public static State[] values() {
-            return (State[]) $VALUES.clone();
-        }
-
         private State(String str, int i) {
         }
 
@@ -373,17 +231,85 @@ public final class Recomposer extends CompositionContext {
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
         }
+
+        public static State valueOf(String str) {
+            return (State) Enum.valueOf(State.class, str);
+        }
+
+        public static State[] values() {
+            return (State[]) $VALUES.clone();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final List<ControlledComposition> getKnownCompositions() {
-        List list = this._knownCompositionsCache;
-        if (list == null) {
-            List<ControlledComposition> list2 = this._knownCompositions;
-            list = list2.isEmpty() ? CollectionsKt.emptyList() : new ArrayList(list2);
-            this._knownCompositionsCache = list;
+    public static final Unit effectJob$lambda$10$lambda$9(final Recomposer recomposer, final Throwable th) {
+        CancellableContinuation<? super Unit> cancellableContinuation;
+        CancellableContinuation<? super Unit> cancellableContinuation2;
+        CancellationException CancellationException = ExceptionsKt.CancellationException("Recomposer effect job completed", th);
+        synchronized (recomposer.stateLock) {
+            Job job = recomposer.runnerJob;
+            cancellableContinuation = null;
+            if (job != null) {
+                recomposer._state.setValue(State.ShuttingDown);
+                if (!recomposer.isClosed) {
+                    job.cancel(CancellationException);
+                } else {
+                    cancellableContinuation2 = recomposer.workContinuation;
+                    if (cancellableContinuation2 != null) {
+                        recomposer.workContinuation = null;
+                        job.invokeOnCompletion(new Function1() { // from class: androidx.compose.runtime.Recomposer$$ExternalSyntheticLambda0
+                            @Override // kotlin.jvm.functions.Function1
+                            public final Object invoke(Object obj) {
+                                Unit effectJob$lambda$10$lambda$9$lambda$8$lambda$7;
+                                effectJob$lambda$10$lambda$9$lambda$8$lambda$7 = Recomposer.effectJob$lambda$10$lambda$9$lambda$8$lambda$7(Recomposer.this, th, (Throwable) obj);
+                                return effectJob$lambda$10$lambda$9$lambda$8$lambda$7;
+                            }
+                        });
+                        cancellableContinuation = cancellableContinuation2;
+                    }
+                }
+                cancellableContinuation2 = null;
+                recomposer.workContinuation = null;
+                job.invokeOnCompletion(new Function1() { // from class: androidx.compose.runtime.Recomposer$$ExternalSyntheticLambda0
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj) {
+                        Unit effectJob$lambda$10$lambda$9$lambda$8$lambda$7;
+                        effectJob$lambda$10$lambda$9$lambda$8$lambda$7 = Recomposer.effectJob$lambda$10$lambda$9$lambda$8$lambda$7(Recomposer.this, th, (Throwable) obj);
+                        return effectJob$lambda$10$lambda$9$lambda$8$lambda$7;
+                    }
+                });
+                cancellableContinuation = cancellableContinuation2;
+            } else {
+                recomposer.closeCause = CancellationException;
+                recomposer._state.setValue(State.ShutDown);
+                Unit unit = Unit.INSTANCE;
+            }
         }
-        return list;
+        if (cancellableContinuation != null) {
+            Result.Companion companion = Result.Companion;
+            cancellableContinuation.resumeWith(Result.m9065constructorimpl(Unit.INSTANCE));
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit effectJob$lambda$10$lambda$9$lambda$8$lambda$7(Recomposer recomposer, Throwable th, Throwable th2) {
+        synchronized (recomposer.stateLock) {
+            if (th == null) {
+                th = null;
+            } else if (th2 != null) {
+                if (th2 instanceof CancellationException) {
+                    th2 = null;
+                }
+                if (th2 != null) {
+                    kotlin.ExceptionsKt.addSuppressed(th, th2);
+                }
+            }
+            recomposer.closeCause = th;
+            recomposer._state.setValue(State.ShutDown);
+            Unit unit = Unit.INSTANCE;
+        }
+        return Unit.INSTANCE;
     }
 
     @Override // androidx.compose.runtime.CompositionContext
@@ -392,7 +318,7 @@ public final class Recomposer extends CompositionContext {
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public CoroutineContext getRecomposeCoroutineContext$runtime_release() {
+    public CoroutineContext getRecomposeCoroutineContext$runtime() {
         return EmptyCoroutineContext.INSTANCE;
     }
 
@@ -433,7 +359,7 @@ public final class Recomposer extends CompositionContext {
             this.snapshotInvalidations = new MutableScatterSet<>(0, 1, null);
             this.compositionInvalidations.clear();
             state = getHasBroadcastFrameClockAwaitersLocked() ? State.InactivePendingWork : State.Inactive;
-        } else if (this.compositionInvalidations.getSize() != 0 || this.snapshotInvalidations.isNotEmpty() || !this.compositionsAwaitingApply.isEmpty() || !this.movableContentAwaitingInsert.isEmpty() || this.concurrentCompositionsOutstanding > 0 || getHasBroadcastFrameClockAwaitersLocked()) {
+        } else if (this.compositionInvalidations.getSize() != 0 || this.snapshotInvalidations.isNotEmpty() || !this.compositionsAwaitingApply.isEmpty() || !this.movableContentAwaitingInsert.isEmpty() || this.concurrentCompositionsOutstanding > 0 || getHasBroadcastFrameClockAwaitersLocked() || MultiValueMap.m3943isNotEmptyimpl(this.movableContentRemoved)) {
             state = State.PendingWork;
         } else {
             state = State.Idle;
@@ -474,7 +400,7 @@ public final class Recomposer extends CompositionContext {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Recomposer.kt */
-    @Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\u000e\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017J\b\u0010\u0018\u001a\u0004\u0018\u00010\u0019J\u0006\u0010\u001a\u001a\u00020\u0015J\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cR\u0014\u0010\u0003\u001a\u00020\u00048VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006R\u0013\u0010\u0007\u001a\u0004\u0018\u00010\b8F¢\u0006\u0006\u001a\u0004\b\t\u0010\nR\u0014\u0010\u000b\u001a\u00020\f8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u00108VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013¨\u0006\u001e"}, d2 = {"Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;", "Landroidx/compose/runtime/RecomposerInfo;", "(Landroidx/compose/runtime/Recomposer;)V", "changeCount", "", "getChangeCount", "()J", "currentError", "Landroidx/compose/runtime/RecomposerErrorInfo;", "getCurrentError", "()Landroidx/compose/runtime/RecomposerErrorInfo;", "hasPendingWork", "", "getHasPendingWork", "()Z", RemoteConfigConstants.ResponseFieldKey.STATE, "Lkotlinx/coroutines/flow/Flow;", "Landroidx/compose/runtime/Recomposer$State;", "getState", "()Lkotlinx/coroutines/flow/Flow;", "invalidateGroupsWithKey", "", "key", "", "resetErrorState", "Landroidx/compose/runtime/Recomposer$RecomposerErrorState;", "retryFailedCompositions", "saveStateAndDisposeForHotReload", "", "Landroidx/compose/runtime/Recomposer$HotReloadable;", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018H\u0016J\u000e\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001cJ\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eJ\b\u0010 \u001a\u0004\u0018\u00010!J\u0006\u0010\"\u001a\u00020\u001aR\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00058VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0007\u0010\bR\u0014\u0010\t\u001a\u00020\n8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000b\u0010\fR\u0014\u0010\r\u001a\u00020\u000e8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010R\u0013\u0010\u0011\u001a\u0004\u0018\u00010\u00128F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0014¨\u0006#"}, d2 = {"Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;", "Landroidx/compose/runtime/RecomposerInfo;", "<init>", "(Landroidx/compose/runtime/Recomposer;)V", RemoteConfigConstants.ResponseFieldKey.STATE, "Lkotlinx/coroutines/flow/Flow;", "Landroidx/compose/runtime/Recomposer$State;", "getState", "()Lkotlinx/coroutines/flow/Flow;", "hasPendingWork", "", "getHasPendingWork", "()Z", "changeCount", "", "getChangeCount", "()J", "currentError", "Landroidx/compose/runtime/RecomposerErrorInfo;", "getCurrentError", "()Landroidx/compose/runtime/RecomposerErrorInfo;", "observe", "Landroidx/compose/runtime/tooling/CompositionObserverHandle;", "observer", "Landroidx/compose/runtime/tooling/CompositionRegistrationObserver;", "invalidateGroupsWithKey", "", "key", "", "saveStateAndDisposeForHotReload", "", "Landroidx/compose/runtime/Recomposer$HotReloadable;", "resetErrorState", "Landroidx/compose/runtime/Recomposer$RecomposerErrorState;", "retryFailedCompositions", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public final class RecomposerInfoImpl implements RecomposerInfo {
         public RecomposerInfoImpl() {
@@ -505,13 +431,13 @@ public final class Recomposer extends CompositionContext {
             return recomposerErrorState;
         }
 
+        @Override // androidx.compose.runtime.RecomposerInfo
+        public CompositionObserverHandle observe(CompositionRegistrationObserver compositionRegistrationObserver) {
+            return CompositionObserverKt.observe(Recomposer.this, compositionRegistrationObserver);
+        }
+
         public final void invalidateGroupsWithKey(int i) {
-            List knownCompositions;
-            Object obj = Recomposer.this.stateLock;
-            Recomposer recomposer = Recomposer.this;
-            synchronized (obj) {
-                knownCompositions = recomposer.getKnownCompositions();
-            }
+            List knownCompositions = Recomposer.this.knownCompositions();
             ArrayList arrayList = new ArrayList(knownCompositions.size());
             int size = knownCompositions.size();
             for (int i2 = 0; i2 < size; i2++) {
@@ -529,12 +455,7 @@ public final class Recomposer extends CompositionContext {
         }
 
         public final List<HotReloadable> saveStateAndDisposeForHotReload() {
-            List knownCompositions;
-            Object obj = Recomposer.this.stateLock;
-            Recomposer recomposer = Recomposer.this;
-            synchronized (obj) {
-                knownCompositions = recomposer.getKnownCompositions();
-            }
+            List knownCompositions = Recomposer.this.knownCompositions();
             ArrayList arrayList = new ArrayList(knownCompositions.size());
             int size = knownCompositions.size();
             for (int i = 0; i < size; i++) {
@@ -566,7 +487,7 @@ public final class Recomposer extends CompositionContext {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Recomposer.kt */
-    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0002\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\u0006\u0010\n\u001a\u00020\u0007J\u0006\u0010\u000b\u001a\u00020\u0007J\u0006\u0010\f\u001a\u00020\u0007R\u001b\u0010\u0005\u001a\r\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\u0002\b\bX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\tR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Landroidx/compose/runtime/Recomposer$HotReloadable;", "", "composition", "Landroidx/compose/runtime/CompositionImpl;", "(Landroidx/compose/runtime/CompositionImpl;)V", ComposeNavigator.NAME, "Lkotlin/Function0;", "", "Landroidx/compose/runtime/Composable;", "Lkotlin/jvm/functions/Function2;", "clearContent", "recompose", "resetContent", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0002\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0006\u0010\u000b\u001a\u00020\bJ\u0006\u0010\f\u001a\u00020\bJ\u0006\u0010\r\u001a\u00020\bR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u0006\u001a\r\u0012\u0004\u0012\u00020\b0\u0007¢\u0006\u0002\b\tX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\n¨\u0006\u000e"}, d2 = {"Landroidx/compose/runtime/Recomposer$HotReloadable;", "", "composition", "Landroidx/compose/runtime/CompositionImpl;", "<init>", "(Landroidx/compose/runtime/CompositionImpl;)V", ComposeNavigator.NAME, "Lkotlin/Function0;", "", "Landroidx/compose/runtime/Composable;", "Lkotlin/jvm/functions/Function2;", "clearContent", "resetContent", "recompose", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class HotReloadable {
         private Function2<? super Composer, ? super Integer, Unit> composable;
@@ -579,7 +500,7 @@ public final class Recomposer extends CompositionContext {
 
         public final void clearContent() {
             if (this.composition.isRoot()) {
-                this.composition.setContent(ComposableSingletons$RecomposerKt.INSTANCE.m3458getLambda1$runtime_release());
+                this.composition.setContent(ComposableSingletons$RecomposerKt.INSTANCE.m3781getLambda$1091980426$runtime());
             }
         }
 
@@ -596,7 +517,7 @@ public final class Recomposer extends CompositionContext {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Recomposer.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0006\b\u0002\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0002\u0010\u0006R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0014\u0010\u0002\u001a\u00020\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\n¨\u0006\u000b"}, d2 = {"Landroidx/compose/runtime/Recomposer$RecomposerErrorState;", "Landroidx/compose/runtime/RecomposerErrorInfo;", "recoverable", "", "cause", "", "(ZLjava/lang/Throwable;)V", "getCause", "()Ljava/lang/Throwable;", "getRecoverable", "()Z", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0007\b\u0002\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0014\u0010\u0002\u001a\u00020\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000b¨\u0006\f"}, d2 = {"Landroidx/compose/runtime/Recomposer$RecomposerErrorState;", "Landroidx/compose/runtime/RecomposerErrorInfo;", "recoverable", "", "cause", "", "<init>", "(ZLjava/lang/Throwable;)V", "getRecoverable", "()Z", "getCause", "()Ljava/lang/Throwable;", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class RecomposerErrorState implements RecomposerErrorInfo {
         private final Throwable cause;
@@ -624,29 +545,23 @@ public final class Recomposer extends CompositionContext {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean recordComposerModifications() {
-        List<ControlledComposition> knownCompositions;
         boolean hasFrameWorkLocked;
+        CollectionsKt.emptyList();
         synchronized (this.stateLock) {
             if (this.snapshotInvalidations.isEmpty()) {
                 return getHasFrameWorkLocked();
             }
+            List<ControlledComposition> knownCompositionsLocked = knownCompositionsLocked();
             Set<? extends Object> wrapIntoSet = ScatterSetWrapperKt.wrapIntoSet(this.snapshotInvalidations);
             this.snapshotInvalidations = new MutableScatterSet<>(0, 1, null);
-            synchronized (this.stateLock) {
-                knownCompositions = getKnownCompositions();
-            }
             try {
                 Recomposer recomposer = this;
-                int size = knownCompositions.size();
+                int size = knownCompositionsLocked.size();
                 for (int i = 0; i < size; i++) {
-                    knownCompositions.get(i).recordModificationsOf(wrapIntoSet);
+                    knownCompositionsLocked.get(i).recordModificationsOf(wrapIntoSet);
                     if (this._state.getValue().compareTo(State.ShuttingDown) <= 0) {
                         break;
                     }
-                }
-                synchronized (this.stateLock) {
-                    this.snapshotInvalidations = new MutableScatterSet<>(0, 1, null);
-                    Unit unit = Unit.INSTANCE;
                 }
                 synchronized (this.stateLock) {
                     if (deriveStateLocked() != null) {
@@ -676,10 +591,10 @@ public final class Recomposer extends CompositionContext {
         }
         Set<? extends Object> wrapIntoSet = ScatterSetWrapperKt.wrapIntoSet(mutableScatterSet);
         if (!wrapIntoSet.isEmpty()) {
-            List knownCompositions = getKnownCompositions();
-            int size = knownCompositions.size();
+            List knownCompositionsLocked = knownCompositionsLocked();
+            int size = knownCompositionsLocked.size();
             for (int i2 = 0; i2 < size; i2++) {
-                ((ControlledComposition) knownCompositions.get(i2)).recordModificationsOf(wrapIntoSet);
+                ((ControlledComposition) knownCompositionsLocked.get(i2)).recordModificationsOf(wrapIntoSet);
             }
         }
         MutableVector mutableVector = this.compositionInvalidations;
@@ -739,7 +654,7 @@ public final class Recomposer extends CompositionContext {
                 this.compositionInvalidations.clear();
                 this.snapshotInvalidations = new MutableScatterSet<>(0, 1, null);
                 this.movableContentAwaitingInsert.clear();
-                MultiValueMap.m3597clearimpl(this.movableContentRemoved);
+                MultiValueMap.m3933clearimpl(this.movableContentRemoved);
                 this.movableContentStatesAvailable.clear();
                 this.errorState = new RecomposerErrorState(z, th);
                 if (controlledComposition != null) {
@@ -761,18 +676,47 @@ public final class Recomposer extends CompositionContext {
         throw th;
     }
 
+    private final void withTransparentSnapshot(Function0<Unit> function0) {
+        TransparentObserverSnapshot transparentObserverSnapshot;
+        Snapshot current = Snapshot.Companion.getCurrent();
+        if (current instanceof MutableSnapshot) {
+            transparentObserverSnapshot = new TransparentObserverMutableSnapshot((MutableSnapshot) current, null, null, true, false);
+        } else {
+            transparentObserverSnapshot = new TransparentObserverSnapshot(current, null, true, false);
+        }
+        try {
+            Snapshot makeCurrent = transparentObserverSnapshot.makeCurrent();
+            function0.invoke();
+            transparentObserverSnapshot.restoreCurrent(makeCurrent);
+        } finally {
+            transparentObserverSnapshot.dispose();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final List<ControlledComposition> knownCompositions() {
+        List<ControlledComposition> knownCompositionsLocked;
+        synchronized (this.stateLock) {
+            knownCompositionsLocked = knownCompositionsLocked();
+        }
+        return knownCompositionsLocked;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final List<ControlledComposition> knownCompositionsLocked() {
+        List list = this._knownCompositionsCache;
+        if (list != null) {
+            return list;
+        }
+        List<ControlledComposition> list2 = this._knownCompositions;
+        ArrayList emptyList = list2.isEmpty() ? CollectionsKt.emptyList() : new ArrayList(list2);
+        this._knownCompositionsCache = emptyList;
+        return emptyList;
+    }
+
     private final void clearKnownCompositionsLocked() {
-        MutableObjectList<CompositionRegistrationObserver> mutableObjectList = this.registrationObservers;
-        if (mutableObjectList != null) {
-            MutableObjectList<CompositionRegistrationObserver> mutableObjectList2 = mutableObjectList;
-            Object[] objArr = mutableObjectList2.content;
-            int i = mutableObjectList2._size;
-            for (int i2 = 0; i2 < i; i2++) {
-                CompositionRegistrationObserver compositionRegistrationObserver = (CompositionRegistrationObserver) objArr[i2];
-                for (ControlledComposition controlledComposition : getKnownCompositions()) {
-                    compositionRegistrationObserver.onCompositionUnregistered(this, controlledComposition);
-                }
-            }
+        for (ControlledComposition controlledComposition : knownCompositionsLocked()) {
+            unregisterCompositionLocked(controlledComposition);
         }
         this._knownCompositions.clear();
         this._knownCompositionsCache = CollectionsKt.emptyList();
@@ -781,33 +725,47 @@ public final class Recomposer extends CompositionContext {
     private final void removeKnownCompositionLocked(ControlledComposition controlledComposition) {
         if (this._knownCompositions.remove(controlledComposition)) {
             this._knownCompositionsCache = null;
-            MutableObjectList<CompositionRegistrationObserver> mutableObjectList = this.registrationObservers;
-            if (mutableObjectList != null) {
-                MutableObjectList<CompositionRegistrationObserver> mutableObjectList2 = mutableObjectList;
-                Object[] objArr = mutableObjectList2.content;
-                int i = mutableObjectList2._size;
-                for (int i2 = 0; i2 < i; i2++) {
-                    ((CompositionRegistrationObserver) objArr[i2]).onCompositionUnregistered(this, controlledComposition);
-                }
-            }
+            unregisterCompositionLocked(controlledComposition);
         }
     }
 
     private final void addKnownCompositionLocked(ControlledComposition controlledComposition) {
         this._knownCompositions.add(controlledComposition);
         this._knownCompositionsCache = null;
+        registerCompositionLocked(controlledComposition);
+    }
+
+    private final void registerCompositionLocked(ControlledComposition controlledComposition) {
         MutableObjectList<CompositionRegistrationObserver> mutableObjectList = this.registrationObservers;
         if (mutableObjectList != null) {
             MutableObjectList<CompositionRegistrationObserver> mutableObjectList2 = mutableObjectList;
             Object[] objArr = mutableObjectList2.content;
             int i = mutableObjectList2._size;
             for (int i2 = 0; i2 < i; i2++) {
-                ((CompositionRegistrationObserver) objArr[i2]).onCompositionRegistered(this, controlledComposition);
+                CompositionRegistrationObserver compositionRegistrationObserver = (CompositionRegistrationObserver) objArr[i2];
+                if (controlledComposition instanceof ObservableComposition) {
+                    compositionRegistrationObserver.onCompositionRegistered((ObservableComposition) controlledComposition);
+                }
             }
         }
     }
 
-    public final CompositionObserverHandle addCompositionRegistrationObserver$runtime_release(final CompositionRegistrationObserver compositionRegistrationObserver) {
+    private final void unregisterCompositionLocked(ControlledComposition controlledComposition) {
+        MutableObjectList<CompositionRegistrationObserver> mutableObjectList = this.registrationObservers;
+        if (mutableObjectList != null) {
+            MutableObjectList<CompositionRegistrationObserver> mutableObjectList2 = mutableObjectList;
+            Object[] objArr = mutableObjectList2.content;
+            int i = mutableObjectList2._size;
+            for (int i2 = 0; i2 < i; i2++) {
+                CompositionRegistrationObserver compositionRegistrationObserver = (CompositionRegistrationObserver) objArr[i2];
+                if (controlledComposition instanceof ObservableComposition) {
+                    compositionRegistrationObserver.onCompositionUnregistered((ObservableComposition) controlledComposition);
+                }
+            }
+        }
+    }
+
+    public final CompositionObserverHandle addCompositionRegistrationObserver$runtime(final CompositionRegistrationObserver compositionRegistrationObserver) {
         synchronized (this.stateLock) {
             MutableObjectList<CompositionRegistrationObserver> mutableObjectList = this.registrationObservers;
             if (mutableObjectList == null) {
@@ -818,7 +776,10 @@ public final class Recomposer extends CompositionContext {
             List<ControlledComposition> list = this._knownCompositions;
             int size = list.size();
             for (int i = 0; i < size; i++) {
-                compositionRegistrationObserver.onCompositionRegistered(this, list.get(i));
+                ControlledComposition controlledComposition = list.get(i);
+                if (controlledComposition instanceof ObservableComposition) {
+                    compositionRegistrationObserver.onCompositionRegistered((ObservableComposition) controlledComposition);
+                }
             }
             Unit unit = Unit.INSTANCE;
         }
@@ -871,8 +832,8 @@ public final class Recomposer extends CompositionContext {
                 }
                 ControlledComposition controlledComposition = (ControlledComposition) CollectionsKt.removeLast(list);
                 if (controlledComposition instanceof CompositionImpl) {
-                    controlledComposition.invalidateAll();
-                    controlledComposition.setContent(((CompositionImpl) controlledComposition).getComposable());
+                    ((CompositionImpl) controlledComposition).invalidateAll();
+                    ((CompositionImpl) controlledComposition).setContent(((CompositionImpl) controlledComposition).getComposable());
                     if (this.errorState != null) {
                         break;
                     }
@@ -923,18 +884,18 @@ public final class Recomposer extends CompositionContext {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x00a9, code lost:
-        if (r10 != r1) goto L11;
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0098, code lost:
+        if (r5.withFrameNanos(r9, r0) != r1) goto L11;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0066  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x005d  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0081  */
+    /* JADX WARN: Type inference failed for: r7v10, types: [java.util.List] */
+    /* JADX WARN: Type inference failed for: r7v7, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r8v10, types: [java.util.List] */
     /* JADX WARN: Type inference failed for: r8v7, types: [java.util.List] */
-    /* JADX WARN: Type inference failed for: r9v10, types: [java.util.List] */
-    /* JADX WARN: Type inference failed for: r9v7, types: [java.util.List] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x00a9 -> B:13:0x0040). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x0098 -> B:13:0x003c). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -943,10 +904,8 @@ public final class Recomposer extends CompositionContext {
         int i;
         ArrayList arrayList;
         ArrayList arrayList2;
-        Recomposer recomposer;
         final ArrayList arrayList3;
         final ArrayList arrayList4;
-        final Recomposer recomposer2;
         MonotonicFrameClock monotonicFrameClock2;
         final ProduceFrameSignal produceFrameSignal2;
         Object obj;
@@ -963,133 +922,50 @@ public final class Recomposer extends CompositionContext {
                     ResultKt.throwOnFailure(obj2);
                     arrayList = new ArrayList();
                     arrayList2 = new ArrayList();
-                    recomposer = this;
-                    obj = recomposer.stateLock;
-                    recomposer$runFrameLoop$1.L$0 = recomposer;
-                    recomposer$runFrameLoop$1.L$1 = monotonicFrameClock;
-                    recomposer$runFrameLoop$1.L$2 = produceFrameSignal;
-                    recomposer$runFrameLoop$1.L$3 = arrayList;
-                    recomposer$runFrameLoop$1.L$4 = arrayList2;
+                    obj = this.stateLock;
+                    recomposer$runFrameLoop$1.L$0 = monotonicFrameClock;
+                    recomposer$runFrameLoop$1.L$1 = produceFrameSignal;
+                    recomposer$runFrameLoop$1.L$2 = arrayList;
+                    recomposer$runFrameLoop$1.L$3 = arrayList2;
                     recomposer$runFrameLoop$1.label = 1;
                     if (produceFrameSignal.awaitFrameRequest(obj, recomposer$runFrameLoop$1) != coroutine_suspended) {
                     }
                     return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
-                        produceFrameSignal2 = (ProduceFrameSignal) recomposer$runFrameLoop$1.L$2;
-                        monotonicFrameClock2 = (MonotonicFrameClock) recomposer$runFrameLoop$1.L$1;
-                        recomposer2 = (Recomposer) recomposer$runFrameLoop$1.L$0;
+                        produceFrameSignal2 = (ProduceFrameSignal) recomposer$runFrameLoop$1.L$1;
+                        monotonicFrameClock2 = (MonotonicFrameClock) recomposer$runFrameLoop$1.L$0;
                         ResultKt.throwOnFailure(obj2);
-                        arrayList6 = (List) recomposer$runFrameLoop$1.L$4;
-                        arrayList5 = (List) recomposer$runFrameLoop$1.L$3;
+                        arrayList6 = (List) recomposer$runFrameLoop$1.L$3;
+                        arrayList5 = (List) recomposer$runFrameLoop$1.L$2;
                         arrayList = arrayList5;
                         produceFrameSignal = produceFrameSignal2;
                         arrayList2 = arrayList6;
                         monotonicFrameClock = monotonicFrameClock2;
-                        recomposer = recomposer2;
-                        obj = recomposer.stateLock;
-                        recomposer$runFrameLoop$1.L$0 = recomposer;
-                        recomposer$runFrameLoop$1.L$1 = monotonicFrameClock;
-                        recomposer$runFrameLoop$1.L$2 = produceFrameSignal;
-                        recomposer$runFrameLoop$1.L$3 = arrayList;
-                        recomposer$runFrameLoop$1.L$4 = arrayList2;
+                        obj = this.stateLock;
+                        recomposer$runFrameLoop$1.L$0 = monotonicFrameClock;
+                        recomposer$runFrameLoop$1.L$1 = produceFrameSignal;
+                        recomposer$runFrameLoop$1.L$2 = arrayList;
+                        recomposer$runFrameLoop$1.L$3 = arrayList2;
                         recomposer$runFrameLoop$1.label = 1;
                         if (produceFrameSignal.awaitFrameRequest(obj, recomposer$runFrameLoop$1) != coroutine_suspended) {
-                            recomposer2 = recomposer;
                             monotonicFrameClock2 = monotonicFrameClock;
                             arrayList4 = arrayList2;
                             produceFrameSignal2 = produceFrameSignal;
                             arrayList3 = arrayList;
-                            recomposer$runFrameLoop$1.L$0 = recomposer2;
-                            recomposer$runFrameLoop$1.L$1 = monotonicFrameClock2;
-                            recomposer$runFrameLoop$1.L$2 = produceFrameSignal2;
-                            recomposer$runFrameLoop$1.L$3 = arrayList3;
-                            recomposer$runFrameLoop$1.L$4 = arrayList4;
-                            recomposer$runFrameLoop$1.label = 2;
-                            Object withFrameNanos = monotonicFrameClock2.withFrameNanos(new Function1<Long, CancellableContinuation<? super Unit>>() { // from class: androidx.compose.runtime.Recomposer$runFrameLoop$2
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                {
-                                    super(1);
-                                }
-
+                            Function1 function1 = new Function1() { // from class: androidx.compose.runtime.Recomposer$$ExternalSyntheticLambda5
                                 @Override // kotlin.jvm.functions.Function1
-                                public /* bridge */ /* synthetic */ CancellableContinuation<? super Unit> invoke(Long l) {
-                                    return invoke(l.longValue());
+                                public final Object invoke(Object obj3) {
+                                    CancellableContinuation runFrameLoop$lambda$51;
+                                    runFrameLoop$lambda$51 = Recomposer.runFrameLoop$lambda$51(Recomposer.this, arrayList3, arrayList4, produceFrameSignal2, ((Long) obj3).longValue());
+                                    return runFrameLoop$lambda$51;
                                 }
-
-                                public final CancellableContinuation<Unit> invoke(long j) {
-                                    boolean hasBroadcastFrameClockAwaiters;
-                                    Object beginSection;
-                                    List list;
-                                    int i2;
-                                    List list2;
-                                    CancellableContinuation<Unit> deriveStateLocked;
-                                    ControlledComposition performRecompose;
-                                    BroadcastFrameClock broadcastFrameClock;
-                                    hasBroadcastFrameClockAwaiters = Recomposer.this.getHasBroadcastFrameClockAwaiters();
-                                    if (hasBroadcastFrameClockAwaiters) {
-                                        Recomposer recomposer3 = Recomposer.this;
-                                        beginSection = Trace.INSTANCE.beginSection("Recomposer:animation");
-                                        try {
-                                            broadcastFrameClock = recomposer3.broadcastFrameClock;
-                                            broadcastFrameClock.sendFrame(j);
-                                            Snapshot.Companion.sendApplyNotifications();
-                                            Unit unit = Unit.INSTANCE;
-                                            Trace.INSTANCE.endSection(beginSection);
-                                        } finally {
-                                        }
-                                    }
-                                    Recomposer recomposer4 = Recomposer.this;
-                                    List<ControlledComposition> list3 = arrayList3;
-                                    List<ControlledComposition> list4 = arrayList4;
-                                    ProduceFrameSignal produceFrameSignal3 = produceFrameSignal2;
-                                    beginSection = Trace.INSTANCE.beginSection("Recomposer:recompose");
-                                    try {
-                                        recomposer4.recordComposerModifications();
-                                        synchronized (recomposer4.stateLock) {
-                                            list = recomposer4.compositionsAwaitingApply;
-                                            int size = list.size();
-                                            for (int i3 = 0; i3 < size; i3++) {
-                                                list4.add((ControlledComposition) list.get(i3));
-                                            }
-                                            list2 = recomposer4.compositionsAwaitingApply;
-                                            list2.clear();
-                                            MutableVector mutableVector = recomposer4.compositionInvalidations;
-                                            Object[] objArr = mutableVector.content;
-                                            int size2 = mutableVector.getSize();
-                                            for (int i4 = 0; i4 < size2; i4++) {
-                                                list3.add((ControlledComposition) objArr[i4]);
-                                            }
-                                            recomposer4.compositionInvalidations.clear();
-                                            produceFrameSignal3.takeFrameRequestLocked();
-                                            Unit unit2 = Unit.INSTANCE;
-                                        }
-                                        MutableScatterSet mutableScatterSet = new MutableScatterSet(0, 1, null);
-                                        int size3 = list3.size();
-                                        for (int i5 = 0; i5 < size3; i5++) {
-                                            performRecompose = recomposer4.performRecompose(list3.get(i5), mutableScatterSet);
-                                            if (performRecompose != null) {
-                                                list4.add(performRecompose);
-                                            }
-                                        }
-                                        list3.clear();
-                                        if (!list4.isEmpty()) {
-                                            recomposer4.changeCount = recomposer4.getChangeCount() + 1;
-                                        }
-                                        int size4 = list4.size();
-                                        for (i2 = 0; i2 < size4; i2++) {
-                                            list4.get(i2).applyChanges();
-                                        }
-                                        list4.clear();
-                                        synchronized (recomposer4.stateLock) {
-                                            deriveStateLocked = recomposer4.deriveStateLocked();
-                                        }
-                                        return deriveStateLocked;
-                                    } finally {
-                                    }
-                                }
-                            }, recomposer$runFrameLoop$1);
+                            };
+                            recomposer$runFrameLoop$1.L$0 = monotonicFrameClock2;
+                            recomposer$runFrameLoop$1.L$1 = produceFrameSignal2;
+                            recomposer$runFrameLoop$1.L$2 = arrayList3;
+                            recomposer$runFrameLoop$1.L$3 = arrayList4;
+                            recomposer$runFrameLoop$1.label = 2;
                             arrayList6 = arrayList4;
                             arrayList5 = arrayList3;
                         }
@@ -1097,102 +973,24 @@ public final class Recomposer extends CompositionContext {
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    produceFrameSignal2 = (ProduceFrameSignal) recomposer$runFrameLoop$1.L$2;
-                    monotonicFrameClock2 = (MonotonicFrameClock) recomposer$runFrameLoop$1.L$1;
-                    recomposer2 = (Recomposer) recomposer$runFrameLoop$1.L$0;
+                    produceFrameSignal2 = (ProduceFrameSignal) recomposer$runFrameLoop$1.L$1;
+                    monotonicFrameClock2 = (MonotonicFrameClock) recomposer$runFrameLoop$1.L$0;
                     ResultKt.throwOnFailure(obj2);
-                    arrayList4 = (List) recomposer$runFrameLoop$1.L$4;
-                    arrayList3 = (List) recomposer$runFrameLoop$1.L$3;
-                    recomposer$runFrameLoop$1.L$0 = recomposer2;
-                    recomposer$runFrameLoop$1.L$1 = monotonicFrameClock2;
-                    recomposer$runFrameLoop$1.L$2 = produceFrameSignal2;
-                    recomposer$runFrameLoop$1.L$3 = arrayList3;
-                    recomposer$runFrameLoop$1.L$4 = arrayList4;
-                    recomposer$runFrameLoop$1.label = 2;
-                    Object withFrameNanos2 = monotonicFrameClock2.withFrameNanos(new Function1<Long, CancellableContinuation<? super Unit>>() { // from class: androidx.compose.runtime.Recomposer$runFrameLoop$2
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        {
-                            super(1);
-                        }
-
+                    arrayList4 = (List) recomposer$runFrameLoop$1.L$3;
+                    arrayList3 = (List) recomposer$runFrameLoop$1.L$2;
+                    Function1 function12 = new Function1() { // from class: androidx.compose.runtime.Recomposer$$ExternalSyntheticLambda5
                         @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ CancellableContinuation<? super Unit> invoke(Long l) {
-                            return invoke(l.longValue());
+                        public final Object invoke(Object obj3) {
+                            CancellableContinuation runFrameLoop$lambda$51;
+                            runFrameLoop$lambda$51 = Recomposer.runFrameLoop$lambda$51(Recomposer.this, arrayList3, arrayList4, produceFrameSignal2, ((Long) obj3).longValue());
+                            return runFrameLoop$lambda$51;
                         }
-
-                        public final CancellableContinuation<Unit> invoke(long j) {
-                            boolean hasBroadcastFrameClockAwaiters;
-                            Object beginSection;
-                            List list;
-                            int i2;
-                            List list2;
-                            CancellableContinuation<Unit> deriveStateLocked;
-                            ControlledComposition performRecompose;
-                            BroadcastFrameClock broadcastFrameClock;
-                            hasBroadcastFrameClockAwaiters = Recomposer.this.getHasBroadcastFrameClockAwaiters();
-                            if (hasBroadcastFrameClockAwaiters) {
-                                Recomposer recomposer3 = Recomposer.this;
-                                beginSection = Trace.INSTANCE.beginSection("Recomposer:animation");
-                                try {
-                                    broadcastFrameClock = recomposer3.broadcastFrameClock;
-                                    broadcastFrameClock.sendFrame(j);
-                                    Snapshot.Companion.sendApplyNotifications();
-                                    Unit unit = Unit.INSTANCE;
-                                    Trace.INSTANCE.endSection(beginSection);
-                                } finally {
-                                }
-                            }
-                            Recomposer recomposer4 = Recomposer.this;
-                            List<ControlledComposition> list3 = arrayList3;
-                            List<ControlledComposition> list4 = arrayList4;
-                            ProduceFrameSignal produceFrameSignal3 = produceFrameSignal2;
-                            beginSection = Trace.INSTANCE.beginSection("Recomposer:recompose");
-                            try {
-                                recomposer4.recordComposerModifications();
-                                synchronized (recomposer4.stateLock) {
-                                    list = recomposer4.compositionsAwaitingApply;
-                                    int size = list.size();
-                                    for (int i3 = 0; i3 < size; i3++) {
-                                        list4.add((ControlledComposition) list.get(i3));
-                                    }
-                                    list2 = recomposer4.compositionsAwaitingApply;
-                                    list2.clear();
-                                    MutableVector mutableVector = recomposer4.compositionInvalidations;
-                                    Object[] objArr = mutableVector.content;
-                                    int size2 = mutableVector.getSize();
-                                    for (int i4 = 0; i4 < size2; i4++) {
-                                        list3.add((ControlledComposition) objArr[i4]);
-                                    }
-                                    recomposer4.compositionInvalidations.clear();
-                                    produceFrameSignal3.takeFrameRequestLocked();
-                                    Unit unit2 = Unit.INSTANCE;
-                                }
-                                MutableScatterSet mutableScatterSet = new MutableScatterSet(0, 1, null);
-                                int size3 = list3.size();
-                                for (int i5 = 0; i5 < size3; i5++) {
-                                    performRecompose = recomposer4.performRecompose(list3.get(i5), mutableScatterSet);
-                                    if (performRecompose != null) {
-                                        list4.add(performRecompose);
-                                    }
-                                }
-                                list3.clear();
-                                if (!list4.isEmpty()) {
-                                    recomposer4.changeCount = recomposer4.getChangeCount() + 1;
-                                }
-                                int size4 = list4.size();
-                                for (i2 = 0; i2 < size4; i2++) {
-                                    list4.get(i2).applyChanges();
-                                }
-                                list4.clear();
-                                synchronized (recomposer4.stateLock) {
-                                    deriveStateLocked = recomposer4.deriveStateLocked();
-                                }
-                                return deriveStateLocked;
-                            } finally {
-                            }
-                        }
-                    }, recomposer$runFrameLoop$1);
+                    };
+                    recomposer$runFrameLoop$1.L$0 = monotonicFrameClock2;
+                    recomposer$runFrameLoop$1.L$1 = produceFrameSignal2;
+                    recomposer$runFrameLoop$1.L$2 = arrayList3;
+                    recomposer$runFrameLoop$1.L$3 = arrayList4;
+                    recomposer$runFrameLoop$1.label = 2;
                     arrayList6 = arrayList4;
                     arrayList5 = arrayList3;
                 }
@@ -1203,6 +1001,66 @@ public final class Recomposer extends CompositionContext {
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = recomposer$runFrameLoop$1.label;
         if (i != 0) {
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final CancellableContinuation runFrameLoop$lambda$51(Recomposer recomposer, List list, List list2, ProduceFrameSignal produceFrameSignal, long j) {
+        Object beginSection;
+        int i;
+        CancellableContinuation<Unit> deriveStateLocked;
+        if (recomposer.getHasBroadcastFrameClockAwaiters()) {
+            beginSection = Trace.INSTANCE.beginSection("Recomposer:animation");
+            try {
+                recomposer.broadcastFrameClock.sendFrame(j);
+                Snapshot.Companion.sendApplyNotifications();
+                Unit unit = Unit.INSTANCE;
+                Trace.INSTANCE.endSection(beginSection);
+            } finally {
+            }
+        }
+        beginSection = Trace.INSTANCE.beginSection("Recomposer:recompose");
+        try {
+            recomposer.recordComposerModifications();
+            synchronized (recomposer.stateLock) {
+                List<ControlledComposition> list3 = recomposer.compositionsAwaitingApply;
+                int size = list3.size();
+                for (int i2 = 0; i2 < size; i2++) {
+                    list2.add(list3.get(i2));
+                }
+                recomposer.compositionsAwaitingApply.clear();
+                MutableVector<ControlledComposition> mutableVector = recomposer.compositionInvalidations;
+                ControlledComposition[] controlledCompositionArr = mutableVector.content;
+                int size2 = mutableVector.getSize();
+                for (int i3 = 0; i3 < size2; i3++) {
+                    list.add(controlledCompositionArr[i3]);
+                }
+                recomposer.compositionInvalidations.clear();
+                produceFrameSignal.takeFrameRequestLocked();
+                Unit unit2 = Unit.INSTANCE;
+            }
+            MutableScatterSet<Object> mutableScatterSet = new MutableScatterSet<>(0, 1, null);
+            int size3 = list.size();
+            for (int i4 = 0; i4 < size3; i4++) {
+                ControlledComposition performRecompose = recomposer.performRecompose((ControlledComposition) list.get(i4), mutableScatterSet);
+                if (performRecompose != null) {
+                    list2.add(performRecompose);
+                }
+            }
+            list.clear();
+            if (!list2.isEmpty()) {
+                recomposer.changeCount++;
+            }
+            int size4 = list2.size();
+            for (i = 0; i < size4; i++) {
+                ((ControlledComposition) list2.get(i)).applyChanges();
+            }
+            list2.clear();
+            synchronized (recomposer.stateLock) {
+                deriveStateLocked = recomposer.deriveStateLocked();
+            }
+            return deriveStateLocked;
+        } finally {
         }
     }
 
@@ -1233,7 +1091,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (cancellableContinuationImpl2 != null) {
             Result.Companion companion = Result.Companion;
-            cancellableContinuationImpl2.resumeWith(Result.m8500constructorimpl(Unit.INSTANCE));
+            cancellableContinuationImpl2.resumeWith(Result.m9065constructorimpl(Unit.INSTANCE));
         }
         Object result = cancellableContinuationImpl.getResult();
         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
@@ -1273,35 +1131,40 @@ public final class Recomposer extends CompositionContext {
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public void composeInitial$runtime_release(ControlledComposition controlledComposition, Function2<? super Composer, ? super Integer, Unit> function2) {
+    public void composeInitial$runtime(ControlledComposition controlledComposition, Function2<? super Composer, ? super Integer, Unit> function2) {
         Throwable th;
+        boolean z;
+        Recomposer recomposer;
         boolean isComposing = controlledComposition.isComposing();
-        try {
-            MutableSnapshot takeMutableSnapshot = Snapshot.Companion.takeMutableSnapshot(readObserverOf(controlledComposition), writeObserverOf(controlledComposition, null));
+        synchronized (this.stateLock) {
             try {
-                MutableSnapshot mutableSnapshot = takeMutableSnapshot;
-                Snapshot makeCurrent = mutableSnapshot.makeCurrent();
-                try {
-                    controlledComposition.composeContent(function2);
-                    Unit unit = Unit.INSTANCE;
-                    mutableSnapshot.restoreCurrent(makeCurrent);
-                    applyAndCheck(takeMutableSnapshot);
-                    if (!isComposing) {
-                        Snapshot.Companion.notifyObjectsInitialized();
+                if (this._state.getValue().compareTo(State.ShuttingDown) > 0) {
+                    try {
+                        boolean contains = knownCompositionsLocked().contains(controlledComposition);
+                        z = !contains;
+                        if (!contains) {
+                            addKnownCompositionLocked(controlledComposition);
+                        }
+                    } catch (Throwable th2) {
+                        th = th2;
+                        throw th;
                     }
-                    synchronized (this.stateLock) {
+                } else {
+                    z = true;
+                }
+                try {
+                    MutableSnapshot takeMutableSnapshot = Snapshot.Companion.takeMutableSnapshot(readObserverOf(controlledComposition), writeObserverOf(controlledComposition, null));
+                    try {
+                        MutableSnapshot mutableSnapshot = takeMutableSnapshot;
+                        Snapshot makeCurrent = mutableSnapshot.makeCurrent();
                         try {
-                            if (this._state.getValue().compareTo(State.ShuttingDown) > 0) {
-                                try {
-                                    if (!getKnownCompositions().contains(controlledComposition)) {
-                                        addKnownCompositionLocked(controlledComposition);
-                                    }
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    throw th;
-                                }
+                            controlledComposition.composeContent(function2);
+                            Unit unit = Unit.INSTANCE;
+                            mutableSnapshot.restoreCurrent(makeCurrent);
+                            applyAndCheck(takeMutableSnapshot);
+                            if (!isComposing) {
+                                Snapshot.Companion.notifyObjectsInitialized();
                             }
-                            Unit unit2 = Unit.INSTANCE;
                             try {
                                 performInitialMovableContentInserts(controlledComposition);
                                 try {
@@ -1318,35 +1181,43 @@ public final class Recomposer extends CompositionContext {
                                 processCompositionError(th4, controlledComposition, true);
                             }
                         } catch (Throwable th5) {
-                            th = th5;
+                            recomposer = this;
+                            try {
+                                mutableSnapshot.restoreCurrent(makeCurrent);
+                                throw th5;
+                            } catch (Throwable th6) {
+                                th = th6;
+                                try {
+                                    applyAndCheck(takeMutableSnapshot);
+                                    throw th;
+                                } catch (Throwable th7) {
+                                    th = th7;
+                                    processCompositionError(th, controlledComposition, true);
+                                    if (z) {
+                                        synchronized (recomposer.stateLock) {
+                                            removeKnownCompositionLocked(controlledComposition);
+                                            Unit unit2 = Unit.INSTANCE;
+                                        }
+                                    }
+                                }
+                            }
                         }
+                    } catch (Throwable th8) {
+                        th = th8;
+                        recomposer = this;
                     }
-                } catch (Throwable th6) {
-                    try {
-                        mutableSnapshot.restoreCurrent(makeCurrent);
-                        throw th6;
-                    } catch (Throwable th7) {
-                        th = th7;
-                        Throwable th8 = th;
-                        try {
-                            applyAndCheck(takeMutableSnapshot);
-                            throw th8;
-                        } catch (Throwable th9) {
-                            th = th9;
-                            processCompositionError(th, controlledComposition, true);
-                        }
-                    }
+                } catch (Throwable th9) {
+                    th = th9;
+                    recomposer = this;
                 }
             } catch (Throwable th10) {
                 th = th10;
             }
-        } catch (Throwable th11) {
-            th = th11;
         }
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public ScatterSet<RecomposeScopeImpl> recomposePaused$runtime_release(ControlledComposition controlledComposition, ShouldPauseCallback shouldPauseCallback, ScatterSet<RecomposeScopeImpl> scatterSet) {
+    public ScatterSet<RecomposeScopeImpl> recomposePaused$runtime(ControlledComposition controlledComposition, ShouldPauseCallback shouldPauseCallback, ScatterSet<RecomposeScopeImpl> scatterSet) {
         try {
             recordComposerModifications();
             controlledComposition.recordModificationsOf(ScatterSetWrapperKt.wrapIntoSet(scatterSet));
@@ -1367,7 +1238,7 @@ public final class Recomposer extends CompositionContext {
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public void reportPausedScope$runtime_release(RecomposeScopeImpl recomposeScopeImpl) {
+    public void reportPausedScope$runtime(RecomposeScopeImpl recomposeScopeImpl) {
         MutableScatterSet<RecomposeScopeImpl> mutableScatterSet = this.pausedScopes.get();
         if (mutableScatterSet == null) {
             mutableScatterSet = ScatterSetKt.mutableScatterSetOf();
@@ -1381,7 +1252,7 @@ public final class Recomposer extends CompositionContext {
             List<MovableContentStateReference> list = this.movableContentAwaitingInsert;
             int size = list.size();
             for (int i = 0; i < size; i++) {
-                if (Intrinsics.areEqual(list.get(i).getComposition$runtime_release(), controlledComposition)) {
+                if (Intrinsics.areEqual(list.get(i).getComposition$runtime(), controlledComposition)) {
                     Unit unit = Unit.INSTANCE;
                     ArrayList arrayList = new ArrayList();
                     performInitialMovableContentInserts$fillToInsert(arrayList, this, controlledComposition);
@@ -1401,7 +1272,7 @@ public final class Recomposer extends CompositionContext {
             Iterator<MovableContentStateReference> it = recomposer.movableContentAwaitingInsert.iterator();
             while (it.hasNext()) {
                 MovableContentStateReference next = it.next();
-                if (Intrinsics.areEqual(next.getComposition$runtime_release(), controlledComposition)) {
+                if (Intrinsics.areEqual(next.getComposition$runtime(), controlledComposition)) {
                     list.add(next);
                     it.remove();
                 }
@@ -1421,49 +1292,12 @@ public final class Recomposer extends CompositionContext {
             MutableSnapshot mutableSnapshot = takeMutableSnapshot;
             Snapshot makeCurrent = mutableSnapshot.makeCurrent();
             if (mutableScatterSet != null && mutableScatterSet.isNotEmpty()) {
-                controlledComposition.prepareCompose(new Function0<Unit>() { // from class: androidx.compose.runtime.Recomposer$performRecompose$1$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(0);
-                    }
-
+                controlledComposition.prepareCompose(new Function0() { // from class: androidx.compose.runtime.Recomposer$$ExternalSyntheticLambda6
                     @Override // kotlin.jvm.functions.Function0
-                    public /* bridge */ /* synthetic */ Unit invoke() {
-                        invoke2();
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2() {
-                        MutableScatterSet<Object> mutableScatterSet2 = mutableScatterSet;
-                        ControlledComposition controlledComposition2 = controlledComposition;
-                        Object[] objArr = mutableScatterSet2.elements;
-                        long[] jArr = mutableScatterSet2.metadata;
-                        int length = jArr.length - 2;
-                        if (length < 0) {
-                            return;
-                        }
-                        int i = 0;
-                        while (true) {
-                            long j = jArr[i];
-                            if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                                int i2 = 8 - ((~(i - length)) >>> 31);
-                                for (int i3 = 0; i3 < i2; i3++) {
-                                    if ((255 & j) < 128) {
-                                        controlledComposition2.recordWriteOf(objArr[(i << 3) + i3]);
-                                    }
-                                    j >>= 8;
-                                }
-                                if (i2 != 8) {
-                                    return;
-                                }
-                            }
-                            if (i == length) {
-                                return;
-                            }
-                            i++;
-                        }
+                    public final Object invoke() {
+                        Unit performRecompose$lambda$68$lambda$67;
+                        performRecompose$lambda$68$lambda$67 = Recomposer.performRecompose$lambda$68$lambda$67(MutableScatterSet.this, controlledComposition);
+                        return performRecompose$lambda$68$lambda$67;
                     }
                 });
             }
@@ -1479,18 +1313,49 @@ public final class Recomposer extends CompositionContext {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit performRecompose$lambda$68$lambda$67(MutableScatterSet mutableScatterSet, ControlledComposition controlledComposition) {
+        MutableScatterSet mutableScatterSet2 = mutableScatterSet;
+        Object[] objArr = mutableScatterSet2.elements;
+        long[] jArr = mutableScatterSet2.metadata;
+        int length = jArr.length - 2;
+        if (length >= 0) {
+            int i = 0;
+            while (true) {
+                long j = jArr[i];
+                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i2 = 8 - ((~(i - length)) >>> 31);
+                    for (int i3 = 0; i3 < i2; i3++) {
+                        if ((255 & j) < 128) {
+                            controlledComposition.recordWriteOf(objArr[(i << 3) + i3]);
+                        }
+                        j >>= 8;
+                    }
+                    if (i2 != 8) {
+                        break;
+                    }
+                }
+                if (i == length) {
+                    break;
+                }
+                i++;
+            }
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public final void discardUnusedMovableContentState() {
         int i;
         MutableObjectList emptyObjectList;
         synchronized (this.stateLock) {
-            if (MultiValueMap.m3607isNotEmptyimpl(this.movableContentRemoved)) {
-                ObjectList m3612valuesimpl = MultiValueMap.m3612valuesimpl(this.movableContentRemoved);
-                MultiValueMap.m3597clearimpl(this.movableContentRemoved);
+            if (MultiValueMap.m3943isNotEmptyimpl(this.movableContentRemoved)) {
+                ObjectList m3948valuesimpl = MultiValueMap.m3948valuesimpl(this.movableContentRemoved);
+                MultiValueMap.m3933clearimpl(this.movableContentRemoved);
                 this.movableContentNestedStatesAvailable.clear();
-                MultiValueMap.m3597clearimpl(this.movableContentNestedExtractionsPending);
-                MutableObjectList mutableObjectList = new MutableObjectList(m3612valuesimpl.getSize());
-                Object[] objArr = m3612valuesimpl.content;
-                int i2 = m3612valuesimpl._size;
+                MultiValueMap.m3933clearimpl(this.movableContentNestedExtractionsPending);
+                MutableObjectList mutableObjectList = new MutableObjectList(m3948valuesimpl.getSize());
+                Object[] objArr = m3948valuesimpl.content;
+                int i2 = m3948valuesimpl._size;
                 for (int i3 = 0; i3 < i2; i3++) {
                     MovableContentStateReference movableContentStateReference = (MovableContentStateReference) objArr[i3];
                     mutableObjectList.add(TuplesKt.to(movableContentStateReference, this.movableContentStatesAvailable.get(movableContentStateReference)));
@@ -1508,54 +1373,46 @@ public final class Recomposer extends CompositionContext {
             MovableContentStateReference movableContentStateReference2 = (MovableContentStateReference) pair.component1();
             MovableContentState movableContentState = (MovableContentState) pair.component2();
             if (movableContentState != null) {
-                movableContentStateReference2.getComposition$runtime_release().disposeUnusedMovableContent(movableContentState);
+                movableContentStateReference2.getComposition$runtime().disposeUnusedMovableContent(movableContentState);
             }
         }
     }
 
     private final Function1<Object, Unit> readObserverOf(final ControlledComposition controlledComposition) {
-        return new Function1<Object, Unit>() { // from class: androidx.compose.runtime.Recomposer$readObserverOf$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        return new Function1() { // from class: androidx.compose.runtime.Recomposer$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj) {
-                invoke2(obj);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Object obj) {
-                ControlledComposition.this.recordReadOf(obj);
+            public final Object invoke(Object obj) {
+                Unit readObserverOf$lambda$85;
+                readObserverOf$lambda$85 = Recomposer.readObserverOf$lambda$85(ControlledComposition.this, obj);
+                return readObserverOf$lambda$85;
             }
         };
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit readObserverOf$lambda$85(ControlledComposition controlledComposition, Object obj) {
+        controlledComposition.recordReadOf(obj);
+        return Unit.INSTANCE;
+    }
+
     private final Function1<Object, Unit> writeObserverOf(final ControlledComposition controlledComposition, final MutableScatterSet<Object> mutableScatterSet) {
-        return new Function1<Object, Unit>() { // from class: androidx.compose.runtime.Recomposer$writeObserverOf$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        return new Function1() { // from class: androidx.compose.runtime.Recomposer$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Object obj) {
-                invoke2(obj);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Object obj) {
-                ControlledComposition.this.recordWriteOf(obj);
-                MutableScatterSet<Object> mutableScatterSet2 = mutableScatterSet;
-                if (mutableScatterSet2 != null) {
-                    mutableScatterSet2.add(obj);
-                }
+            public final Object invoke(Object obj) {
+                Unit writeObserverOf$lambda$86;
+                writeObserverOf$lambda$86 = Recomposer.writeObserverOf$lambda$86(ControlledComposition.this, mutableScatterSet, obj);
+                return writeObserverOf$lambda$86;
             }
         };
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit writeObserverOf$lambda$86(ControlledComposition controlledComposition, MutableScatterSet mutableScatterSet, Object obj) {
+        controlledComposition.recordWriteOf(obj);
+        if (mutableScatterSet != null) {
+            mutableScatterSet.add(obj);
+        }
+        return Unit.INSTANCE;
     }
 
     private final <T> T composing(ControlledComposition controlledComposition, MutableScatterSet<Object> mutableScatterSet, Function0<? extends T> function0) {
@@ -1584,15 +1441,15 @@ public final class Recomposer extends CompositionContext {
     public final boolean getHasPendingWork() {
         boolean z;
         synchronized (this.stateLock) {
-            if (!this.snapshotInvalidations.isNotEmpty() && this.compositionInvalidations.getSize() == 0 && this.concurrentCompositionsOutstanding <= 0 && this.compositionsAwaitingApply.isEmpty()) {
-                z = getHasBroadcastFrameClockAwaitersLocked();
+            if (!this.snapshotInvalidations.isNotEmpty() && this.compositionInvalidations.getSize() == 0 && this.concurrentCompositionsOutstanding <= 0 && this.compositionsAwaitingApply.isEmpty() && !getHasBroadcastFrameClockAwaitersLocked()) {
+                z = MultiValueMap.m3943isNotEmptyimpl(this.movableContentRemoved);
             }
         }
         return z;
     }
 
     private final boolean getHasFrameWorkLocked() {
-        return this.compositionInvalidations.getSize() != 0 || getHasBroadcastFrameClockAwaitersLocked();
+        return this.compositionInvalidations.getSize() != 0 || getHasBroadcastFrameClockAwaitersLocked() || MultiValueMap.m3943isNotEmptyimpl(this.movableContentRemoved);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1624,17 +1481,22 @@ public final class Recomposer extends CompositionContext {
         }
         if (cancellableContinuation != null) {
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m8500constructorimpl(Unit.INSTANCE));
+            cancellableContinuation.resumeWith(Result.m9065constructorimpl(Unit.INSTANCE));
         }
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public boolean getCollectingCallByInformation$runtime_release() {
+    public boolean getCollectingCallByInformation$runtime() {
         return _hotReloadEnabled.get().booleanValue();
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public void unregisterComposition$runtime_release(ControlledComposition controlledComposition) {
+    public boolean getCollectingSourceInformation$runtime() {
+        return ComposerKt.getComposeStackTraceEnabled();
+    }
+
+    @Override // androidx.compose.runtime.CompositionContext
+    public void unregisterComposition$runtime(ControlledComposition controlledComposition) {
         synchronized (this.stateLock) {
             removeKnownCompositionLocked(controlledComposition);
             this.compositionInvalidations.remove(controlledComposition);
@@ -1644,7 +1506,7 @@ public final class Recomposer extends CompositionContext {
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public void invalidate$runtime_release(ControlledComposition controlledComposition) {
+    public void invalidate$runtime(ControlledComposition controlledComposition) {
         CancellableContinuation<Unit> cancellableContinuation;
         synchronized (this.stateLock) {
             if (this.compositionInvalidations.contains(controlledComposition)) {
@@ -1656,12 +1518,12 @@ public final class Recomposer extends CompositionContext {
         }
         if (cancellableContinuation != null) {
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m8500constructorimpl(Unit.INSTANCE));
+            cancellableContinuation.resumeWith(Result.m9065constructorimpl(Unit.INSTANCE));
         }
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public void invalidateScope$runtime_release(RecomposeScopeImpl recomposeScopeImpl) {
+    public void invalidateScope$runtime(RecomposeScopeImpl recomposeScopeImpl) {
         CancellableContinuation<Unit> deriveStateLocked;
         synchronized (this.stateLock) {
             this.snapshotInvalidations.add(recomposeScopeImpl);
@@ -1669,12 +1531,12 @@ public final class Recomposer extends CompositionContext {
         }
         if (deriveStateLocked != null) {
             Result.Companion companion = Result.Companion;
-            deriveStateLocked.resumeWith(Result.m8500constructorimpl(Unit.INSTANCE));
+            deriveStateLocked.resumeWith(Result.m9065constructorimpl(Unit.INSTANCE));
         }
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public void insertMovableContent$runtime_release(MovableContentStateReference movableContentStateReference) {
+    public void insertMovableContent$runtime(MovableContentStateReference movableContentStateReference) {
         CancellableContinuation<Unit> deriveStateLocked;
         synchronized (this.stateLock) {
             this.movableContentAwaitingInsert.add(movableContentStateReference);
@@ -1682,43 +1544,48 @@ public final class Recomposer extends CompositionContext {
         }
         if (deriveStateLocked != null) {
             Result.Companion companion = Result.Companion;
-            deriveStateLocked.resumeWith(Result.m8500constructorimpl(Unit.INSTANCE));
+            deriveStateLocked.resumeWith(Result.m9065constructorimpl(Unit.INSTANCE));
         }
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public void deletedMovableContent$runtime_release(MovableContentStateReference movableContentStateReference) {
+    public void deletedMovableContent$runtime(MovableContentStateReference movableContentStateReference) {
+        CancellableContinuation<Unit> deriveStateLocked;
         synchronized (this.stateLock) {
-            MultiValueMap.m3595addimpl(this.movableContentRemoved, movableContentStateReference.getContent$runtime_release(), movableContentStateReference);
-            if (movableContentStateReference.getNestedReferences$runtime_release() != null) {
-                deletedMovableContent$lambda$73$recordNestedStatesOf(this, movableContentStateReference, movableContentStateReference);
+            MultiValueMap.m3931addimpl(this.movableContentRemoved, movableContentStateReference.getContent$runtime(), movableContentStateReference);
+            if (movableContentStateReference.getNestedReferences$runtime() != null) {
+                deletedMovableContent$lambda$95$recordNestedStatesOf(this, movableContentStateReference, movableContentStateReference);
             }
-            Unit unit = Unit.INSTANCE;
+            deriveStateLocked = deriveStateLocked();
+        }
+        if (deriveStateLocked != null) {
+            Result.Companion companion = Result.Companion;
+            deriveStateLocked.resumeWith(Result.m9065constructorimpl(Unit.INSTANCE));
         }
     }
 
-    private static final void deletedMovableContent$lambda$73$recordNestedStatesOf(Recomposer recomposer, MovableContentStateReference movableContentStateReference, MovableContentStateReference movableContentStateReference2) {
-        List<MovableContentStateReference> nestedReferences$runtime_release = movableContentStateReference2.getNestedReferences$runtime_release();
-        if (nestedReferences$runtime_release != null) {
-            int size = nestedReferences$runtime_release.size();
+    private static final void deletedMovableContent$lambda$95$recordNestedStatesOf(Recomposer recomposer, MovableContentStateReference movableContentStateReference, MovableContentStateReference movableContentStateReference2) {
+        List<MovableContentStateReference> nestedReferences$runtime = movableContentStateReference2.getNestedReferences$runtime();
+        if (nestedReferences$runtime != null) {
+            int size = nestedReferences$runtime.size();
             for (int i = 0; i < size; i++) {
-                MovableContentStateReference movableContentStateReference3 = nestedReferences$runtime_release.get(i);
-                recomposer.movableContentNestedStatesAvailable.add(movableContentStateReference3.getContent$runtime_release(), new NestedMovableContent(movableContentStateReference3, movableContentStateReference));
-                deletedMovableContent$lambda$73$recordNestedStatesOf(recomposer, movableContentStateReference, movableContentStateReference3);
+                MovableContentStateReference movableContentStateReference3 = nestedReferences$runtime.get(i);
+                recomposer.movableContentNestedStatesAvailable.add(movableContentStateReference3.getContent$runtime(), new NestedMovableContent(movableContentStateReference3, movableContentStateReference));
+                deletedMovableContent$lambda$95$recordNestedStatesOf(recomposer, movableContentStateReference, movableContentStateReference3);
             }
         }
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public void movableContentStateReleased$runtime_release(MovableContentStateReference movableContentStateReference, MovableContentState movableContentState, Applier<?> applier) {
+    public void movableContentStateReleased$runtime(MovableContentStateReference movableContentStateReference, MovableContentState movableContentState, Applier<?> applier) {
         synchronized (this.stateLock) {
             this.movableContentStatesAvailable.set(movableContentStateReference, movableContentState);
-            ObjectList<MovableContentStateReference> m3604getimpl = MultiValueMap.m3604getimpl(this.movableContentNestedExtractionsPending, movableContentStateReference);
-            if (m3604getimpl.isNotEmpty()) {
-                ScatterMap<MovableContentStateReference, MovableContentState> extractNestedStates$runtime_release = movableContentState.extractNestedStates$runtime_release(applier, m3604getimpl);
-                Object[] objArr = extractNestedStates$runtime_release.keys;
-                Object[] objArr2 = extractNestedStates$runtime_release.values;
-                long[] jArr = extractNestedStates$runtime_release.metadata;
+            ObjectList<MovableContentStateReference> m3940getimpl = MultiValueMap.m3940getimpl(this.movableContentNestedExtractionsPending, movableContentStateReference);
+            if (m3940getimpl.isNotEmpty()) {
+                ScatterMap<MovableContentStateReference, MovableContentState> extractNestedStates$runtime = movableContentState.extractNestedStates$runtime(applier, m3940getimpl);
+                Object[] objArr = extractNestedStates$runtime.keys;
+                Object[] objArr2 = extractNestedStates$runtime.values;
+                long[] jArr = extractNestedStates$runtime.metadata;
                 int length = jArr.length - 2;
                 if (length >= 0) {
                     int i = 0;
@@ -1749,7 +1616,7 @@ public final class Recomposer extends CompositionContext {
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public void reportRemovedComposition$runtime_release(ControlledComposition controlledComposition) {
+    public void reportRemovedComposition$runtime(ControlledComposition controlledComposition) {
         synchronized (this.stateLock) {
             LinkedHashSet linkedHashSet = this.compositionsRemoved;
             if (linkedHashSet == null) {
@@ -1761,7 +1628,7 @@ public final class Recomposer extends CompositionContext {
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public MovableContentState movableContentStateResolve$runtime_release(MovableContentStateReference movableContentStateReference) {
+    public MovableContentState movableContentStateResolve$runtime(MovableContentStateReference movableContentStateReference) {
         MovableContentState remove;
         synchronized (this.stateLock) {
             remove = this.movableContentStatesAvailable.remove(movableContentStateReference);
@@ -1770,7 +1637,7 @@ public final class Recomposer extends CompositionContext {
     }
 
     /* compiled from: Recomposer.kt */
-    @Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u000b\b\u0087\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0014\u0010\u0013\u001a\u00020\u00142\n\u0010\u0015\u001a\u00060\u000bR\u00020\fH\u0002J\r\u0010\u0016\u001a\u00020\u0014H\u0000¢\u0006\u0002\b\u0017J\u0013\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fH\u0000¢\u0006\u0002\b\u0019J\u0013\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bH\u0000¢\u0006\u0002\b\u001dJ\u0015\u0010\u001e\u001a\u00020\u00142\u0006\u0010\u001f\u001a\u00020 H\u0000¢\u0006\u0002\b!J\u0015\u0010\"\u001a\u00020\u00142\u0006\u0010#\u001a\u00020\u0001H\u0000¢\u0006\u0002\b$J\u0014\u0010%\u001a\u00020\u00142\n\u0010\u0015\u001a\u00060\u000bR\u00020\fH\u0002J\r\u0010&\u001a\u00020\u0001H\u0000¢\u0006\u0002\b'J\u0015\u0010(\u001a\u00020\u00142\u0006\u0010)\u001a\u00020\u0005H\u0000¢\u0006\u0002\b*R.\u0010\u0003\u001a\"\u0012\f\u0012\n \u0006*\u0004\u0018\u00010\u00050\u00050\u0004j\u0010\u0012\f\u0012\n \u0006*\u0004\u0018\u00010\u00050\u0005`\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\b\u001a\u0012\u0012\u000e\u0012\f\u0012\b\u0012\u00060\u000bR\u00020\f0\n0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001d\u0010\r\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u000f0\u000e8F¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u0012¨\u0006+"}, d2 = {"Landroidx/compose/runtime/Recomposer$Companion;", "", "()V", "_hotReloadEnabled", "Ljava/util/concurrent/atomic/AtomicReference;", "", "kotlin.jvm.PlatformType", "Landroidx/compose/runtime/internal/AtomicReference;", "_runningRecomposers", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;", "Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;", "Landroidx/compose/runtime/Recomposer;", "runningRecomposers", "Lkotlinx/coroutines/flow/StateFlow;", "", "Landroidx/compose/runtime/RecomposerInfo;", "getRunningRecomposers", "()Lkotlinx/coroutines/flow/StateFlow;", "addRunning", "", "info", "clearErrors", "clearErrors$runtime_release", "currentRunningRecomposers", "currentRunningRecomposers$runtime_release", "getCurrentErrors", "", "Landroidx/compose/runtime/RecomposerErrorInfo;", "getCurrentErrors$runtime_release", "invalidateGroupsWithKey", "key", "", "invalidateGroupsWithKey$runtime_release", "loadStateAndComposeForHotReload", "token", "loadStateAndComposeForHotReload$runtime_release", "removeRunning", "saveStateAndDisposeForHotReload", "saveStateAndDisposeForHotReload$runtime_release", "setHotReloadEnabled", "value", "setHotReloadEnabled$runtime_release", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0087\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0013\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0000¢\u0006\u0002\b\u0015J\u0015\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u000bH\u0000¢\u0006\u0002\b\u0019J\u0014\u0010\u001a\u001a\u00020\u00172\n\u0010\u001b\u001a\u00060\u0007R\u00020\bH\u0002J\u0014\u0010\u001c\u001a\u00020\u00172\n\u0010\u001b\u001a\u00060\u0007R\u00020\bH\u0002J\r\u0010\u001d\u001a\u00020\u0001H\u0000¢\u0006\u0002\b\u001eJ\u0015\u0010\u001f\u001a\u00020\u00172\u0006\u0010 \u001a\u00020\u0001H\u0000¢\u0006\u0002\b!J\u0015\u0010\"\u001a\u00020\u00172\u0006\u0010#\u001a\u00020$H\u0000¢\u0006\u0002\b%J\u0013\u0010&\u001a\b\u0012\u0004\u0012\u00020(0'H\u0000¢\u0006\u0002\b)J\r\u0010*\u001a\u00020\u0017H\u0000¢\u0006\u0002\b+R\u001e\u0010\u0004\u001a\u0012\u0012\u000e\u0012\f\u0012\b\u0012\u00060\u0007R\u00020\b0\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\t\u001a\u0012\u0012\u0004\u0012\u00020\u000b0\nj\b\u0012\u0004\u0012\u00020\u000b`\fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\rR\u001d\u0010\u000e\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\u00100\u000f8F¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013¨\u0006,"}, d2 = {"Landroidx/compose/runtime/Recomposer$Companion;", "", "<init>", "()V", "_runningRecomposers", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;", "Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;", "Landroidx/compose/runtime/Recomposer;", "_hotReloadEnabled", "Ljava/util/concurrent/atomic/AtomicReference;", "", "Landroidx/compose/runtime/internal/AtomicReference;", "Ljava/util/concurrent/atomic/AtomicReference;", "runningRecomposers", "Lkotlinx/coroutines/flow/StateFlow;", "", "Landroidx/compose/runtime/RecomposerInfo;", "getRunningRecomposers", "()Lkotlinx/coroutines/flow/StateFlow;", "currentRunningRecomposers", "currentRunningRecomposers$runtime", "setHotReloadEnabled", "", "value", "setHotReloadEnabled$runtime", "addRunning", "info", "removeRunning", "saveStateAndDisposeForHotReload", "saveStateAndDisposeForHotReload$runtime", "loadStateAndComposeForHotReload", "token", "loadStateAndComposeForHotReload$runtime", "invalidateGroupsWithKey", "key", "", "invalidateGroupsWithKey$runtime", "getCurrentErrors", "", "Landroidx/compose/runtime/RecomposerErrorInfo;", "getCurrentErrors$runtime", "clearErrors", "clearErrors$runtime", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -1784,11 +1651,11 @@ public final class Recomposer extends CompositionContext {
             return Recomposer._runningRecomposers;
         }
 
-        public final Set<RecomposerInfo> currentRunningRecomposers$runtime_release() {
+        public final Set<RecomposerInfo> currentRunningRecomposers$runtime() {
             return (Set) Recomposer._runningRecomposers.getValue();
         }
 
-        public final void setHotReloadEnabled$runtime_release(boolean z) {
+        public final void setHotReloadEnabled$runtime(boolean z) {
             Recomposer._hotReloadEnabled.set(Boolean.valueOf(z));
         }
 
@@ -1818,7 +1685,7 @@ public final class Recomposer extends CompositionContext {
             } while (!Recomposer._runningRecomposers.compareAndSet(persistentSet, remove));
         }
 
-        public final Object saveStateAndDisposeForHotReload$runtime_release() {
+        public final Object saveStateAndDisposeForHotReload$runtime() {
             Recomposer._hotReloadEnabled.set(true);
             ArrayList arrayList = new ArrayList();
             for (RecomposerInfoImpl recomposerInfoImpl : (Iterable) Recomposer._runningRecomposers.getValue()) {
@@ -1827,7 +1694,7 @@ public final class Recomposer extends CompositionContext {
             return arrayList;
         }
 
-        public final void loadStateAndComposeForHotReload$runtime_release(Object obj) {
+        public final void loadStateAndComposeForHotReload$runtime(Object obj) {
             Recomposer._hotReloadEnabled.set(true);
             for (RecomposerInfoImpl recomposerInfoImpl : (Iterable) Recomposer._runningRecomposers.getValue()) {
                 recomposerInfoImpl.resetErrorState();
@@ -1848,7 +1715,7 @@ public final class Recomposer extends CompositionContext {
             }
         }
 
-        public final void invalidateGroupsWithKey$runtime_release(int i) {
+        public final void invalidateGroupsWithKey$runtime(int i) {
             Recomposer._hotReloadEnabled.set(true);
             for (RecomposerInfoImpl recomposerInfoImpl : (Iterable) Recomposer._runningRecomposers.getValue()) {
                 RecomposerErrorInfo currentError = recomposerInfoImpl.getCurrentError();
@@ -1860,7 +1727,7 @@ public final class Recomposer extends CompositionContext {
             }
         }
 
-        public final List<RecomposerErrorInfo> getCurrentErrors$runtime_release() {
+        public final List<RecomposerErrorInfo> getCurrentErrors$runtime() {
             ArrayList arrayList = new ArrayList();
             for (RecomposerInfoImpl recomposerInfoImpl : (Iterable) Recomposer._runningRecomposers.getValue()) {
                 RecomposerErrorInfo currentError = recomposerInfoImpl.getCurrentError();
@@ -1871,7 +1738,7 @@ public final class Recomposer extends CompositionContext {
             return arrayList;
         }
 
-        public final void clearErrors$runtime_release() {
+        public final void clearErrors$runtime() {
             ArrayList arrayList = new ArrayList();
             for (RecomposerInfoImpl recomposerInfoImpl : (Iterable) Recomposer._runningRecomposers.getValue()) {
                 RecomposerErrorState resetErrorState = recomposerInfoImpl.resetErrorState();
@@ -1883,10 +1750,10 @@ public final class Recomposer extends CompositionContext {
     }
 
     @Override // androidx.compose.runtime.CompositionContext
-    public ScatterSet<RecomposeScopeImpl> composeInitialPaused$runtime_release(ControlledComposition controlledComposition, ShouldPauseCallback shouldPauseCallback, Function2<? super Composer, ? super Integer, Unit> function2) {
+    public ScatterSet<RecomposeScopeImpl> composeInitialPaused$runtime(ControlledComposition controlledComposition, ShouldPauseCallback shouldPauseCallback, Function2<? super Composer, ? super Integer, Unit> function2) {
         try {
             ShouldPauseCallback andSetShouldPauseCallback = controlledComposition.getAndSetShouldPauseCallback(shouldPauseCallback);
-            composeInitial$runtime_release(controlledComposition, function2);
+            composeInitial$runtime(controlledComposition, function2);
             MutableScatterSet<RecomposeScopeImpl> mutableScatterSet = this.pausedScopes.get();
             MutableScatterSet<RecomposeScopeImpl> emptyScatterSet = mutableScatterSet != null ? mutableScatterSet : ScatterSetKt.emptyScatterSet();
             controlledComposition.getAndSetShouldPauseCallback(andSetShouldPauseCallback);
@@ -1989,12 +1856,12 @@ public final class Recomposer extends CompositionContext {
         int size = list.size();
         for (int i = 0; i < size; i++) {
             MovableContentStateReference movableContentStateReference = list.get(i);
-            ControlledComposition composition$runtime_release = movableContentStateReference.getComposition$runtime_release();
+            ControlledComposition composition$runtime = movableContentStateReference.getComposition$runtime();
             HashMap hashMap4 = hashMap3;
-            Object obj = hashMap4.get(composition$runtime_release);
+            Object obj = hashMap4.get(composition$runtime);
             if (obj == null) {
                 obj = new ArrayList();
-                hashMap4.put(composition$runtime_release, obj);
+                hashMap4.put(composition$runtime, obj);
             }
             ((ArrayList) obj).add(movableContentStateReference);
         }
@@ -2019,15 +1886,15 @@ public final class Recomposer extends CompositionContext {
                         ArrayList arrayList3 = arrayList2;
                         MovableContentStateReference movableContentStateReference2 = (MovableContentStateReference) list2.get(i2);
                         Iterator it3 = it2;
-                        Object m3609removeLastimpl = MultiValueMap.m3609removeLastimpl(this.movableContentRemoved, movableContentStateReference2.getContent$runtime_release());
-                        MovableContentStateReference movableContentStateReference3 = (MovableContentStateReference) m3609removeLastimpl;
+                        Object m3945removeLastimpl = MultiValueMap.m3945removeLastimpl(this.movableContentRemoved, movableContentStateReference2.getContent$runtime());
+                        MovableContentStateReference movableContentStateReference3 = (MovableContentStateReference) m3945removeLastimpl;
                         if (movableContentStateReference3 != null) {
                             hashMap2 = hashMap5;
                             this.movableContentNestedStatesAvailable.usedContainer(movableContentStateReference3);
                         } else {
                             hashMap2 = hashMap5;
                         }
-                        arrayList3.add(TuplesKt.to(movableContentStateReference2, m3609removeLastimpl));
+                        arrayList3.add(TuplesKt.to(movableContentStateReference2, m3945removeLastimpl));
                         i2++;
                         it2 = it3;
                         hashMap5 = hashMap2;
@@ -2043,13 +1910,13 @@ public final class Recomposer extends CompositionContext {
                                 break;
                             }
                             Pair<MovableContentStateReference, MovableContentStateReference> pair = arrayList.get(i3);
-                            if (pair.getSecond() == null && this.movableContentNestedStatesAvailable.contains(pair.getFirst().getContent$runtime_release())) {
+                            if (pair.getSecond() == null && this.movableContentNestedStatesAvailable.contains(pair.getFirst().getContent$runtime())) {
                                 ArrayList<Pair> arrayList4 = arrayList;
                                 ArrayList arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList4, 10));
                                 for (Pair pair2 : arrayList4) {
-                                    if (pair2.getSecond() == null && (removeLast = this.movableContentNestedStatesAvailable.removeLast(((MovableContentStateReference) pair2.getFirst()).getContent$runtime_release())) != null) {
+                                    if (pair2.getSecond() == null && (removeLast = this.movableContentNestedStatesAvailable.removeLast(((MovableContentStateReference) pair2.getFirst()).getContent$runtime())) != null) {
                                         MovableContentStateReference content = removeLast.getContent();
-                                        MultiValueMap.m3595addimpl(this.movableContentNestedExtractionsPending, removeLast.getContainer(), content);
+                                        MultiValueMap.m3931addimpl(this.movableContentNestedExtractionsPending, removeLast.getContainer(), content);
                                         pair2 = TuplesKt.to(pair2.getFirst(), content);
                                     }
                                     arrayList5.add(pair2);

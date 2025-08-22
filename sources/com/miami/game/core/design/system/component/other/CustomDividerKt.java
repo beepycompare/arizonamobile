@@ -16,7 +16,7 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function2;
 /* compiled from: CustomDivider.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0017\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004¨\u0006\u0005"}, d2 = {"CustomDivider", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "design-system_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0017\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004¨\u0006\u0005"}, d2 = {"CustomDivider", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "design-system_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class CustomDividerKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -30,7 +30,7 @@ public final class CustomDividerKt {
         int i3;
         final Modifier.Companion companion;
         Composer startRestartGroup = composer.startRestartGroup(-2147212628);
-        ComposerKt.sourceInformation(startRestartGroup, "C(CustomDivider)16@607L386:CustomDivider.kt#8aq8qr");
+        ComposerKt.sourceInformation(startRestartGroup, "C(CustomDivider)N(modifier)16@607L386:CustomDivider.kt#8aq8qr");
         int i4 = i2 & 1;
         if (i4 != 0) {
             i3 = i | 6;
@@ -50,7 +50,7 @@ public final class CustomDividerKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-2147212628, i3, -1, "com.miami.game.core.design.system.component.other.CustomDivider (CustomDivider.kt:15)");
             }
-            BoxKt.Box(BackgroundKt.background$default(SizeKt.m771height3ABfNKs(SizeKt.fillMaxWidth(companion, 0.8f), Dp.m6684constructorimpl(1)), Brush.Companion.m4027horizontalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4068boximpl(Color.Companion.m4113getTransparent0d7_KjU()), Color.m4068boximpl(Color.m4077copywmQWz5c$default(Color.Companion.m4115getWhite0d7_KjU(), 0.3f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4068boximpl(Color.Companion.m4113getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), null, 0.0f, 6, null), startRestartGroup, 0);
+            BoxKt.Box(BackgroundKt.background$default(SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth(companion, 0.8f), Dp.m7251constructorimpl(1)), Brush.Companion.m4485horizontalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4527boximpl(Color.Companion.m4572getTransparent0d7_KjU()), Color.m4527boximpl(Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.3f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4527boximpl(Color.Companion.m4572getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), null, 0.0f, 6, null), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

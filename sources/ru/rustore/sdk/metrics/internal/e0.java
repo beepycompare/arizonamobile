@@ -9,14 +9,14 @@ import kotlin.ResultKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class e0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1434a;
+    public final Context f1444a;
     public final Lazy b;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class a extends Lambda implements Function0<d0> {
         public a() {
             super(0);
@@ -24,29 +24,29 @@ public final class e0 {
 
         @Override // kotlin.jvm.functions.Function0
         public final d0 invoke() {
-            Object m8500constructorimpl;
+            Object m9065constructorimpl;
             String value;
             e0 e0Var = e0.this;
             try {
                 Result.Companion companion = Result.Companion;
-                PackageManager packageManager = e0Var.f1434a.getPackageManager();
+                PackageManager packageManager = e0Var.f1444a.getPackageManager();
                 Intrinsics.checkNotNullExpressionValue(packageManager, "context.packageManager");
-                String packageName = e0Var.f1434a.getPackageName();
+                String packageName = e0Var.f1444a.getPackageName();
                 Intrinsics.checkNotNullExpressionValue(packageName, "context.packageName");
                 value = f0.a(packageManager, packageName).versionName;
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m8500constructorimpl = Result.m8500constructorimpl(ResultKt.createFailure(th));
+                m9065constructorimpl = Result.m9065constructorimpl(ResultKt.createFailure(th));
             }
             if (value != null) {
                 Intrinsics.checkNotNullExpressionValue(value, "requireNotNull(context.p…packageName).versionName)");
                 Intrinsics.checkNotNullParameter(value, "value");
-                m8500constructorimpl = Result.m8500constructorimpl(new d0(value));
-                if (Result.m8506isFailureimpl(m8500constructorimpl)) {
-                    m8500constructorimpl = null;
+                m9065constructorimpl = Result.m9065constructorimpl(new d0(value));
+                if (Result.m9071isFailureimpl(m9065constructorimpl)) {
+                    m9065constructorimpl = null;
                 }
-                d0 d0Var = (d0) m8500constructorimpl;
-                String str = d0Var != null ? d0Var.f1433a : null;
+                d0 d0Var = (d0) m9065constructorimpl;
+                String str = d0Var != null ? d0Var.f1443a : null;
                 if (str != null) {
                     return new d0(str);
                 }
@@ -58,7 +58,7 @@ public final class e0 {
 
     public e0(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        this.f1434a = context;
+        this.f1444a = context;
         this.b = LazyKt.lazy(new a());
     }
 }

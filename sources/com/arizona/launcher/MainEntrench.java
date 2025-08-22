@@ -143,7 +143,7 @@ import ru.rustore.sdk.core.tasks.OnFailureListener;
 import ru.rustore.sdk.core.tasks.OnSuccessListener;
 import timber.log.Timber;
 /* compiled from: MainEntrench.kt */
-@Metadata(d1 = {"\u0000\u008d\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0005*\u0001Z\b\u0007\u0018\u0000 \\2\u00020\u0001:\u0002\\]B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010%\u001a\u00020&2\b\u0010'\u001a\u0004\u0018\u00010(H\u0015J\b\u0010)\u001a\u00020&H\u0014J\r\u0010*\u001a\u00020&H\u0007¢\u0006\u0002\u0010+J\u0010\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0018H\u0002J\u001e\u0010/\u001a\u00020&2\u0014\u00100\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010-\u0012\u0004\u0012\u00020&01H\u0002J\b\u00102\u001a\u00020&H\u0002J\b\u00103\u001a\u00020&H\u0002J\b\u00104\u001a\u00020&H\u0002J\b\u00105\u001a\u00020&H\u0002J\b\u00106\u001a\u00020&H\u0002J\u0010\u00107\u001a\u00020\u00152\u0006\u00108\u001a\u000209H\u0002J\u0010\u0010:\u001a\u00020&2\u0006\u00108\u001a\u000209H\u0002J\b\u0010;\u001a\u00020&H\u0002J\b\u0010<\u001a\u00020&H\u0002J\b\u0010=\u001a\u00020&H\u0002J\u0018\u0010>\u001a\u00020&2\u0006\u0010?\u001a\u00020-2\u0006\u0010@\u001a\u00020-H\u0002J\b\u0010A\u001a\u00020&H\u0002J\b\u0010B\u001a\u00020&H\u0014J\b\u0010C\u001a\u00020&H\u0014J\b\u0010D\u001a\u00020&H\u0014J\b\u0010E\u001a\u00020&H\u0002J\b\u0010F\u001a\u00020&H\u0002J\b\u0010G\u001a\u00020\u0015H\u0002J\b\u0010H\u001a\u00020&H\u0002J\u000e\u0010I\u001a\u00020\u00152\u0006\u00108\u001a\u000209J\u0010\u0010J\u001a\u00020&2\u0006\u0010K\u001a\u00020\u0015H\u0002J\b\u0010L\u001a\u00020&H\u0002J\b\u0010M\u001a\u00020&H\u0002J\b\u0010N\u001a\u00020&H\u0002J\b\u0010O\u001a\u00020&H\u0002J\b\u0010P\u001a\u00020&H\u0002J&\u0010Q\u001a\u00020R*\u00020S2\u0006\u0010@\u001a\u00020-2\u0006\u0010T\u001a\u00020U2\b\b\u0002\u0010V\u001a\u00020WH\u0002J\b\u0010X\u001a\u00020&H\u0002R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u0007\u001a\u00020\b8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000b\u0010\f\u001a\u0004\b\t\u0010\nR\u001b\u0010\r\u001a\u00020\u000e8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0011\u0010\f\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u0019\u001a\u00020\u001a8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR\u001e\u0010\u001f\u001a\u00020 8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\u0010\u0010Y\u001a\u00020ZX\u0082\u0004¢\u0006\u0004\n\u0002\u0010[¨\u0006^"}, d2 = {"Lcom/arizona/launcher/MainEntrench;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "mService", "Landroid/os/Messenger;", "mMessenger", "mainViewModel", "Lcom/arizona/launcher/MainViewModel;", "getMainViewModel", "()Lcom/arizona/launcher/MainViewModel;", "mainViewModel$delegate", "Lkotlin/Lazy;", "notificationsViewModel", "Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "getNotificationsViewModel", "()Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "notificationsViewModel$delegate", "referrerClient", "Lcom/android/installreferrer/api/InstallReferrerClient;", "isStartApp", "", "permissionAsk", "lastStartGameTime", "", "rootFactory", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "getRootFactory", "()Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "setRootFactory", "(Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;)V", "notificationStateHolder", "Lcom/miami/game/feature/notifications/NotificationStateHolder;", "getNotificationStateHolder", "()Lcom/miami/game/feature/notifications/NotificationStateHolder;", "setNotificationStateHolder", "(Lcom/miami/game/feature/notifications/NotificationStateHolder;)V", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "onStart", "GLView", "(Landroidx/compose/runtime/Composer;I)V", "convertBytesToHumanReadable", "", "bytes", "getCurrentToken", "callback", "Lkotlin/Function1;", "checkRUStoreUpdate", "saveGameType", "getBuildType", "initTracking", "obtainReferrerDetails", "checkNotificationPermission", "context", "Landroid/content/Context;", "openNotificationSettings", "askPermission", "checkUpdate", "observeData", "createDialog", "message", "url", "startApp", "onResume", "onPause", "onDestroy", "check", "checkLauncherUpdate", "getFirstOpen", "checkGameUpdate", "isOnline", "setProgressVisible", "visible", "showDialog", "hideDialog", "checkGame", "connectToTestServer", "shareLogs", "sendRequests", "Lkotlinx/coroutines/Job;", "Landroidx/activity/ComponentActivity;", "iterations", "", "queue", "Lcom/android/volley/RequestQueue;", "startGame", "mConnection", "com/arizona/launcher/MainEntrench$mConnection$1", "Lcom/arizona/launcher/MainEntrench$mConnection$1;", "Companion", "IncomingHandler", "app_arizonaRelease_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u008d\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0005*\u0001Z\b\u0007\u0018\u0000 \\2\u00020\u0001:\u0002\\]B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010%\u001a\u00020&2\b\u0010'\u001a\u0004\u0018\u00010(H\u0015J\b\u0010)\u001a\u00020&H\u0014J\r\u0010*\u001a\u00020&H\u0007¢\u0006\u0002\u0010+J\u0010\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0018H\u0002J\u001e\u0010/\u001a\u00020&2\u0014\u00100\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010-\u0012\u0004\u0012\u00020&01H\u0002J\b\u00102\u001a\u00020&H\u0002J\b\u00103\u001a\u00020&H\u0002J\b\u00104\u001a\u00020&H\u0002J\b\u00105\u001a\u00020&H\u0002J\b\u00106\u001a\u00020&H\u0002J\u0010\u00107\u001a\u00020\u00152\u0006\u00108\u001a\u000209H\u0002J\u0010\u0010:\u001a\u00020&2\u0006\u00108\u001a\u000209H\u0002J\b\u0010;\u001a\u00020&H\u0002J\b\u0010<\u001a\u00020&H\u0002J\b\u0010=\u001a\u00020&H\u0002J\u0018\u0010>\u001a\u00020&2\u0006\u0010?\u001a\u00020-2\u0006\u0010@\u001a\u00020-H\u0002J\b\u0010A\u001a\u00020&H\u0002J\b\u0010B\u001a\u00020&H\u0014J\b\u0010C\u001a\u00020&H\u0014J\b\u0010D\u001a\u00020&H\u0014J\b\u0010E\u001a\u00020&H\u0002J\b\u0010F\u001a\u00020&H\u0002J\b\u0010G\u001a\u00020\u0015H\u0002J\b\u0010H\u001a\u00020&H\u0002J\u000e\u0010I\u001a\u00020\u00152\u0006\u00108\u001a\u000209J\u0010\u0010J\u001a\u00020&2\u0006\u0010K\u001a\u00020\u0015H\u0002J\b\u0010L\u001a\u00020&H\u0002J\b\u0010M\u001a\u00020&H\u0002J\b\u0010N\u001a\u00020&H\u0002J\b\u0010O\u001a\u00020&H\u0002J\b\u0010P\u001a\u00020&H\u0002J&\u0010Q\u001a\u00020R*\u00020S2\u0006\u0010@\u001a\u00020-2\u0006\u0010T\u001a\u00020U2\b\b\u0002\u0010V\u001a\u00020WH\u0002J\b\u0010X\u001a\u00020&H\u0002R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u0007\u001a\u00020\b8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000b\u0010\f\u001a\u0004\b\t\u0010\nR\u001b\u0010\r\u001a\u00020\u000e8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0011\u0010\f\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u0019\u001a\u00020\u001a8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR\u001e\u0010\u001f\u001a\u00020 8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\u0010\u0010Y\u001a\u00020ZX\u0082\u0004¢\u0006\u0004\n\u0002\u0010[¨\u0006^"}, d2 = {"Lcom/arizona/launcher/MainEntrench;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "mService", "Landroid/os/Messenger;", "mMessenger", "mainViewModel", "Lcom/arizona/launcher/MainViewModel;", "getMainViewModel", "()Lcom/arizona/launcher/MainViewModel;", "mainViewModel$delegate", "Lkotlin/Lazy;", "notificationsViewModel", "Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "getNotificationsViewModel", "()Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "notificationsViewModel$delegate", "referrerClient", "Lcom/android/installreferrer/api/InstallReferrerClient;", "isStartApp", "", "permissionAsk", "lastStartGameTime", "", "rootFactory", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "getRootFactory", "()Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "setRootFactory", "(Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;)V", "notificationStateHolder", "Lcom/miami/game/feature/notifications/NotificationStateHolder;", "getNotificationStateHolder", "()Lcom/miami/game/feature/notifications/NotificationStateHolder;", "setNotificationStateHolder", "(Lcom/miami/game/feature/notifications/NotificationStateHolder;)V", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "onStart", "GLView", "(Landroidx/compose/runtime/Composer;I)V", "convertBytesToHumanReadable", "", "bytes", "getCurrentToken", "callback", "Lkotlin/Function1;", "checkRUStoreUpdate", "saveGameType", "getBuildType", "initTracking", "obtainReferrerDetails", "checkNotificationPermission", "context", "Landroid/content/Context;", "openNotificationSettings", "askPermission", "checkUpdate", "observeData", "createDialog", "message", "url", "startApp", "onResume", "onPause", "onDestroy", "check", "checkLauncherUpdate", "getFirstOpen", "checkGameUpdate", "isOnline", "setProgressVisible", "visible", "showDialog", "hideDialog", "checkGame", "connectToTestServer", "shareLogs", "sendRequests", "Lkotlinx/coroutines/Job;", "Landroidx/activity/ComponentActivity;", "iterations", "", "queue", "Lcom/android/volley/RequestQueue;", "startGame", "mConnection", "com/arizona/launcher/MainEntrench$mConnection$1", "Lcom/arizona/launcher/MainEntrench$mConnection$1;", "Companion", "IncomingHandler", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
 public final class MainEntrench extends Hilt_MainEntrench {
@@ -211,7 +211,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* compiled from: MainEntrench.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcom/arizona/launcher/MainEntrench$Companion;", "", "<init>", "()V", "TAG", "", "app_arizonaRelease_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcom/arizona/launcher/MainEntrench$Companion;", "", "<init>", "()V", "TAG", "", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -405,7 +405,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v16.4.4 release_web", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v16.4.6 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -437,7 +437,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             }
         }), 1, null);
         File externalFilesDir = getExternalFilesDir(null);
-        File file = new File((externalFilesDir != null ? externalFilesDir.getPath() : null) + "/app-arizona-release_web.apk");
+        File file = new File((externalFilesDir != null ? externalFilesDir.getPath() : null) + "/app-arizona-release.apk");
         if (file.exists()) {
             file.delete();
         }
@@ -525,14 +525,14 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:247)");
             }
-            ComposerKt.sourceInformationMarkerStart(composer, -483455358, "CC(Column)P(2,3,1)87@4442L61,88@4508L133:Column.kt#2w3rfo");
+            ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer, 0);
-            ComposerKt.sourceInformationMarkerStart(composer, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
-            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer, 0);
+            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
+            int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
             CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
             Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, Modifier.Companion);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(composer, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
             if (!(composer.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -542,16 +542,16 @@ public final class MainEntrench extends Hilt_MainEntrench {
             } else {
                 composer.useNode();
             }
-            Composer m3520constructorimpl = Updater.m3520constructorimpl(composer);
-            Updater.m3527setimpl(m3520constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer);
+            Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-            ComposerKt.sourceInformationMarkerStart(composer, -384672921, "C89@4556L9:Column.kt#2w3rfo");
+            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C248@9463L8,252@9588L43,250@9493L160:MainEntrench.kt#5ji0rp");
             mainEntrench.GLView(composer, 0);
@@ -635,7 +635,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            AndroidView_androidKt.AndroidView(rememberedValue3, SizeKt.m771height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m6684constructorimpl(1)), null, startRestartGroup, 48, 4);
+            AndroidView_androidKt.AndroidView(rememberedValue3, SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7251constructorimpl(1)), null, startRestartGroup, 48, 4);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -811,11 +811,11 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     private final void getBuildType() {
-        if (Intrinsics.areEqual("release_web", getString(R.string.release)) || Intrinsics.areEqual("release_web", getString(R.string.release_ru))) {
+        if (Intrinsics.areEqual("release", getString(R.string.release)) || Intrinsics.areEqual("release", getString(R.string.release_ru))) {
             observeData();
-        } else if (Intrinsics.areEqual("release_web", getString(R.string.release_hw))) {
+        } else if (Intrinsics.areEqual("release", getString(R.string.release_hw))) {
             startApp();
-        } else if (Intrinsics.areEqual("release_web", getString(R.string.debug)) || Intrinsics.areEqual("release_web", getString(R.string.staging)) || Intrinsics.areEqual("release_web", getString(R.string.release_web)) || Intrinsics.areEqual("release_web", getString(R.string.public_debug)) || Intrinsics.areEqual("release_web", getString(R.string.release_old))) {
+        } else if (Intrinsics.areEqual("release", getString(R.string.debug)) || Intrinsics.areEqual("release", getString(R.string.staging)) || Intrinsics.areEqual("release", getString(R.string.release_web)) || Intrinsics.areEqual("release", getString(R.string.public_debug)) || Intrinsics.areEqual("release", getString(R.string.release_old))) {
             startApp();
         }
     }
@@ -1033,7 +1033,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     private final void observeData() {
-        if (Intrinsics.areEqual("release_web", getString(R.string.release))) {
+        if (Intrinsics.areEqual("release", getString(R.string.release))) {
             checkUpdate();
         } else {
             checkRUStoreUpdate();
@@ -1154,7 +1154,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void checkLauncherUpdate() {
-        if (!Intrinsics.areEqual("release_web", getString(R.string.release)) && !Intrinsics.areEqual("release_web", getString(R.string.release_hw)) && !Intrinsics.areEqual("release_web", getString(R.string.release_ru))) {
+        if (!Intrinsics.areEqual("release", getString(R.string.release)) && !Intrinsics.areEqual("release", getString(R.string.release_hw)) && !Intrinsics.areEqual("release", getString(R.string.release_ru))) {
             if (this.mService == null) {
                 return;
             }
@@ -1224,7 +1224,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     /* compiled from: MainEntrench.kt */
-    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0016R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00030\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/arizona/launcher/MainEntrench$IncomingHandler;", "Landroid/os/Handler;", "ref", "Lcom/arizona/launcher/MainEntrench;", "<init>", "(Lcom/arizona/launcher/MainEntrench;)V", "activityRef", "Ljava/lang/ref/WeakReference;", "handleMessage", "", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "app_arizonaRelease_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0016R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00030\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/arizona/launcher/MainEntrench$IncomingHandler;", "Landroid/os/Handler;", "ref", "Lcom/arizona/launcher/MainEntrench;", "<init>", "(Lcom/arizona/launcher/MainEntrench;)V", "activityRef", "Ljava/lang/ref/WeakReference;", "handleMessage", "", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     private static final class IncomingHandler extends Handler {
         private final WeakReference<MainEntrench> activityRef;
@@ -1569,7 +1569,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
         ArrayList<File> arrayList3 = arrayList2;
         ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList3, 10));
         for (File file5 : arrayList3) {
-            arrayList4.add(FileProvider.getUriForFile(this, "com.arizona21.game.web.fileprovider", file5));
+            arrayList4.add(FileProvider.getUriForFile(this, "com.arizona21.game.fileprovider", file5));
         }
         intent.putParcelableArrayListExtra("android.intent.extra.STREAM", arrayList4);
         intent.setType("*/*");

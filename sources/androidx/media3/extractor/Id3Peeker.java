@@ -5,7 +5,7 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.metadata.id3.Id3Decoder;
 import java.io.EOFException;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Id3Peeker {
     private final ParsableByteArray scratch = new ParsableByteArray(10);
 

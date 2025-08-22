@@ -1,146 +1,53 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.internal.CounterConfiguration;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import org.json.JSONArray;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 /* loaded from: classes4.dex */
 public final class Ji {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0122a5 f508a;
-    public final Pn b;
-    public final Li c;
-    public final C0421m0 d;
-    public Pl e;
-    public final C0341ik f;
+    public final C0684wh f517a;
+    public final Fh b;
+    public final Hh c;
+    public final Ih d;
+    public final C0229eh e;
+    public final C0204dh f;
+    public final C0485oh g;
+    public final C0634uh h;
+    public final C0609th i;
+    public final C0460nh j;
+    public final C0185co k;
+    public final C0281gh l;
+    public final C0510ph m;
+    public final C0410lh n;
+    public final C0487oj o;
+    public final C0445n2 p;
+    public final C0287gn q;
+    public final C0462nj r;
+    public final C0755zd s;
+    public final C0512pj t;
+    public final C0222ea u;
 
-    public Ji(C0421m0 c0421m0, Pn pn, C0122a5 c0122a5, C0341ik c0341ik) {
-        this(c0421m0, pn, c0122a5, c0341ik, new Li(c0421m0, c0341ik));
-    }
-
-    public final void a(Ih ih) {
-        Sh sh = ih.e;
-        Pl pl = this.e;
-        if (pl != null) {
-            sh.b.setUuid(((Ol) pl).g());
-        } else {
-            sh.getClass();
-        }
-        this.c.a(ih);
-    }
-
-    public final void b(String str) {
-        Pf pf = this.f508a.f811a;
-        synchronized (pf) {
-            pf.f595a.put("PROCESS_CFG_INSTALL_REFERRER_SOURCE", str);
-        }
-    }
-
-    public Ji(C0421m0 c0421m0, Pn pn, C0122a5 c0122a5, C0341ik c0341ik, Li li) {
-        this.d = c0421m0;
-        this.f508a = c0122a5;
-        this.b = pn;
-        this.f = c0341ik;
-        this.c = li;
-    }
-
-    public final void a(Ol ol) {
-        this.e = ol;
-        this.f508a.b.setUuid(ol.g());
-    }
-
-    public final void a(Boolean bool, Boolean bool2, Boolean bool3) {
-        if (io.a(bool)) {
-            this.f508a.b.setLocationTracking(bool.booleanValue());
-        }
-        if (io.a(bool2)) {
-            this.f508a.b.setDataSendingEnabled(bool2.booleanValue());
-        }
-        if (io.a(bool3)) {
-            this.f508a.b.setAdvIdentifiersTracking(bool3.booleanValue());
-        }
-        C0402l6 a2 = C0402l6.a();
-        C0122a5 c0122a5 = this.f508a;
-        a(a(a2, c0122a5), c0122a5, 1, null);
-    }
-
-    public final void a(C0402l6 c0402l6, Sh sh, int i, Map map) {
-        String str;
-        EnumC0681wb enumC0681wb = EnumC0681wb.EVENT_TYPE_UNDEFINED;
-        this.d.b();
-        if (!io.a(map)) {
-            c0402l6.setValue(Bb.b(map));
-            a(c0402l6, sh);
-        }
-        Pf pf = new Pf(sh.f811a);
-        CounterConfiguration counterConfiguration = new CounterConfiguration(sh.b);
-        W8 w8 = sh.c;
-        synchronized (sh) {
-            str = sh.f;
-        }
-        a(new Ih(c0402l6, false, i, null, new Sh(pf, counterConfiguration, w8, str)));
-    }
-
-    public static C0402l6 a(C0402l6 c0402l6, Sh sh) {
-        if (R9.f620a.contains(Integer.valueOf(c0402l6.d))) {
-            c0402l6.c = sh.d();
-        }
-        return c0402l6;
-    }
-
-    public final void a(List list) {
-        Pf pf = this.f508a.f811a;
-        synchronized (pf) {
-            pf.f595a.put("PROCESS_CFG_CUSTOM_HOSTS", io.a((Collection) list) ? null : new JSONArray((Collection) list).toString());
-        }
-    }
-
-    public final void a(HashMap hashMap) {
-        Pf pf = this.f508a.f811a;
-        synchronized (pf) {
-            pf.f595a.put("PROCESS_CFG_CLIDS", Bb.b(hashMap));
-        }
-    }
-
-    public final void a(String str) {
-        Pf pf = this.f508a.f811a;
-        synchronized (pf) {
-            pf.f595a.put("PROCESS_CFG_DISTRIBUTION_REFERRER", str);
-        }
-    }
-
-    public final Ih a(Nn nn, Sh sh) {
-        String str;
-        String str2;
-        this.d.b();
-        Pn pn = this.b;
-        pn.getClass();
-        Dn dn = nn.f568a;
-        if (dn == null) {
-            str = "";
-        } else {
-            str = (String) WrapUtils.getOrDefault(dn.f403a, "");
-        }
-        byte[] fromModel = pn.f602a.fromModel(nn);
-        PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(sh.b.getApiKey());
-        Set set = R9.f620a;
-        EnumC0681wb enumC0681wb = EnumC0681wb.EVENT_TYPE_UNDEFINED;
-        C0326i4 c0326i4 = new C0326i4(fromModel, str, 5891, orCreatePublicLogger);
-        c0326i4.c = sh.d();
-        HashMap hashMap = c0326i4.q;
-        Pf pf = new Pf(sh.f811a);
-        CounterConfiguration counterConfiguration = new CounterConfiguration(sh.b);
-        W8 w8 = sh.c;
-        synchronized (sh) {
-            str2 = sh.f;
-        }
-        return new Ih(c0326i4, true, 1, hashMap, new Sh(pf, counterConfiguration, w8, str2));
+    public Ji(C0572s5 c0572s5) {
+        this.f517a = new C0684wh(c0572s5);
+        this.b = new Fh(c0572s5);
+        this.c = new Hh(c0572s5);
+        this.d = new Ih(c0572s5);
+        this.e = new C0229eh(c0572s5);
+        this.f = new C0204dh(c0572s5);
+        this.g = new C0485oh(c0572s5);
+        this.h = new C0634uh(c0572s5);
+        this.i = new C0609th(c0572s5, new Me());
+        this.j = new C0460nh(c0572s5);
+        this.k = new C0185co(c0572s5);
+        this.l = new C0281gh(c0572s5);
+        this.m = new C0510ph(c0572s5);
+        this.n = new C0410lh(c0572s5, AbstractC0593t1.a());
+        this.o = new C0487oj(c0572s5);
+        this.p = new C0445n2(c0572s5);
+        this.q = new C0287gn(c0572s5);
+        this.r = new C0462nj(c0572s5);
+        this.s = new C0755zd(c0572s5);
+        this.t = new C0512pj(c0572s5);
+        this.u = new C0222ea(c0572s5, new SystemTimeProvider());
     }
 }

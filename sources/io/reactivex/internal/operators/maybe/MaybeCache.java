@@ -6,7 +6,7 @@ import io.reactivex.MaybeObserver;
 import io.reactivex.MaybeSource;
 import io.reactivex.disposables.Disposable;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeCache<T> extends Maybe<T> implements MaybeObserver<T> {
     static final CacheDisposable[] EMPTY = new CacheDisposable[0];
     static final CacheDisposable[] TERMINATED = new CacheDisposable[0];
@@ -135,7 +135,7 @@ public final class MaybeCache<T> extends Maybe<T> implements MaybeObserver<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class CacheDisposable<T> extends AtomicReference<MaybeCache<T>> implements Disposable {
         private static final long serialVersionUID = -5791853038359966195L;
         final MaybeObserver<? super T> downstream;

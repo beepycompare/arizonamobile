@@ -1,7 +1,9 @@
 package androidx.compose.animation.core;
 
+import androidx.compose.animation.core.InfiniteTransition;
 import androidx.compose.runtime.MutableState;
 import androidx.compose.runtime.State;
+import androidx.compose.runtime.collection.MutableVector;
 import androidx.media3.extractor.ts.TsExtractor;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import kotlin.Metadata;
@@ -17,7 +19,7 @@ import kotlin.jvm.internal.Ref;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: InfiniteTransition.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.animation.core.InfiniteTransition$run$1$1", f = "InfiniteTransition.kt", i = {0, 0, 1, 1}, l = {TsExtractor.TS_STREAM_TYPE_AC4, DownloaderService.STATUS_PAUSED_BY_APP}, m = "invokeSuspend", n = {"$this$LaunchedEffect", "durationScale", "$this$LaunchedEffect", "durationScale"}, s = {"L$0", "L$1", "L$0", "L$1"})
 /* loaded from: classes.dex */
 public final class InfiniteTransition$run$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -47,17 +49,17 @@ public final class InfiniteTransition$run$1$1 extends SuspendLambda implements F
         return ((InfiniteTransition$run$1$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0058, code lost:
-        if (androidx.compose.animation.core.InfiniteAnimationPolicyKt.withInfiniteAnimationFrameNanos(new androidx.compose.animation.core.InfiniteTransition$run$1$1.AnonymousClass1(), r7) == r0) goto L12;
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0056, code lost:
+        if (androidx.compose.animation.core.InfiniteAnimationPolicyKt.withInfiniteAnimationFrameNanos(new androidx.compose.animation.core.InfiniteTransition$run$1$1$$ExternalSyntheticLambda0(r4, r5, r1, r8), r7) == r0) goto L12;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0082, code lost:
-        if (kotlinx.coroutines.flow.FlowKt.first(androidx.compose.runtime.SnapshotStateKt.snapshotFlow(new androidx.compose.animation.core.InfiniteTransition$run$1$1.AnonymousClass2()), new androidx.compose.animation.core.InfiniteTransition$run$1$1.AnonymousClass3(null), r7) == r0) goto L12;
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x007e, code lost:
+        if (kotlinx.coroutines.flow.FlowKt.first(androidx.compose.runtime.SnapshotStateKt.snapshotFlow(new androidx.compose.animation.core.InfiniteTransition$run$1$1$$ExternalSyntheticLambda1(r8)), new androidx.compose.animation.core.InfiniteTransition$run$1$1.AnonymousClass3(null), r7) == r0) goto L12;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0084, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0080, code lost:
         return r0;
      */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0060 -> B:11:0x0040). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0082 -> B:11:0x0040). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x005e -> B:11:0x0040). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x007e -> B:11:0x0040). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -95,9 +97,43 @@ public final class InfiniteTransition$run$1$1 extends SuspendLambda implements F
         this.label = 1;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$2(MutableState mutableState, InfiniteTransition infiniteTransition, Ref.FloatRef floatRef, CoroutineScope coroutineScope, long j) {
+        long j2;
+        MutableVector mutableVector;
+        long j3;
+        MutableVector mutableVector2;
+        State state = (State) mutableState.getValue();
+        long longValue = state != null ? ((Number) state.getValue()).longValue() : j;
+        j2 = infiniteTransition.startTimeNanos;
+        int i = (j2 > Long.MIN_VALUE ? 1 : (j2 == Long.MIN_VALUE ? 0 : -1));
+        if (i == 0 || floatRef.element != SuspendAnimationKt.getDurationScale(coroutineScope.getCoroutineContext())) {
+            infiniteTransition.startTimeNanos = j;
+            mutableVector = infiniteTransition._animations;
+            Object[] objArr = mutableVector.content;
+            int size = mutableVector.getSize();
+            for (int i2 = 0; i2 < size; i2++) {
+                ((InfiniteTransition.TransitionAnimationState) objArr[i2]).reset$animation_core();
+            }
+            floatRef.element = SuspendAnimationKt.getDurationScale(coroutineScope.getCoroutineContext());
+        }
+        if (floatRef.element == 0.0f) {
+            mutableVector2 = infiniteTransition._animations;
+            Object[] objArr2 = mutableVector2.content;
+            int size2 = mutableVector2.getSize();
+            for (int i3 = 0; i3 < size2; i3++) {
+                ((InfiniteTransition.TransitionAnimationState) objArr2[i3]).skipToEnd$animation_core();
+            }
+        } else {
+            j3 = infiniteTransition.startTimeNanos;
+            infiniteTransition.onFrame(((float) (longValue - j3)) / floatRef.element);
+        }
+        return Unit.INSTANCE;
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: InfiniteTransition.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0007\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", "it", ""}, k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0007\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "it", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
     @DebugMetadata(c = "androidx.compose.animation.core.InfiniteTransition$run$1$1$3", f = "InfiniteTransition.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.animation.core.InfiniteTransition$run$1$1$3  reason: invalid class name */
     /* loaded from: classes.dex */
@@ -134,5 +170,10 @@ public final class InfiniteTransition$run$1$1 extends SuspendLambda implements F
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final float invokeSuspend$lambda$3(CoroutineScope coroutineScope) {
+        return SuspendAnimationKt.getDurationScale(coroutineScope.getCoroutineContext());
     }
 }

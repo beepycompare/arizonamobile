@@ -13,7 +13,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableGenerate<T, S> extends Flowable<T> {
     final Consumer<? super S> disposeState;
     final BiFunction<S, Emitter<T>, S> generator;
@@ -35,7 +35,7 @@ public final class FlowableGenerate<T, S> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class GeneratorSubscription<T, S> extends AtomicLong implements Emitter<T>, Subscription {
         private static final long serialVersionUID = 7565982551505011832L;
         volatile boolean cancelled;

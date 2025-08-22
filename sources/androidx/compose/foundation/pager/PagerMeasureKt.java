@@ -1,5 +1,6 @@
 package androidx.compose.foundation.pager;
 
+import androidx.collection.MutableIntObjectMap;
 import androidx.compose.foundation.gestures.Orientation;
 import androidx.compose.foundation.gestures.snapping.SnapPosition;
 import androidx.compose.foundation.gestures.snapping.SnapPositionKt;
@@ -9,6 +10,7 @@ import androidx.compose.foundation.lazy.layout.LazyLayoutMeasureScope;
 import androidx.compose.foundation.lazy.layout.ObservableScopeInvalidator;
 import androidx.compose.runtime.MutableState;
 import androidx.compose.ui.Alignment;
+import androidx.compose.ui.layout.Measurable;
 import androidx.compose.ui.layout.MeasureResult;
 import androidx.compose.ui.layout.Placeable;
 import androidx.compose.ui.unit.Constraints;
@@ -32,7 +34,7 @@ import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: PagerMeasure.kt */
-@Metadata(d1 = {"\u0000¬\u0001\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010 \n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aH\u0010\u0003\u001a\u0004\u0018\u00010\u00042\u0006\u0010\u0005\u001a\u00020\u00062\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00040\b2\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\u00062\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u0006H\u0002\u001aH\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00040\b2\u0006\u0010\u0010\u001a\u00020\u00062\u0006\u0010\u0011\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00062\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00060\b2\u0012\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00040\u0015H\u0002\u001a@\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00040\b2\u0006\u0010\u0017\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00062\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00060\b2\u0012\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00040\u0015H\u0002\u001a\u0017\u0010\u0018\u001a\u00020\u00192\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bH\u0082\b\u001a\u008c\u0001\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00040\u001e*\u00020\u001f2\f\u0010 \u001a\b\u0012\u0004\u0012\u00020\u00040\b2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u00040\b2\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u00040\b2\u0006\u0010#\u001a\u00020\u00062\u0006\u0010$\u001a\u00020\u00062\u0006\u0010%\u001a\u00020\u00062\u0006\u0010&\u001a\u00020\u00062\u0006\u0010'\u001a\u00020\u00062\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u00062\u0006\u0010/\u001a\u00020\u0006H\u0002\u001aj\u0010\u0014\u001a\u00020\u0004*\u00020\u001f2\u0006\u00100\u001a\u00020\u00062\u0006\u00101\u001a\u0002022\u0006\u00103\u001a\u0002042\u0006\u00105\u001a\u0002062\u0006\u0010(\u001a\u00020)2\b\u00107\u001a\u0004\u0018\u0001082\b\u00109\u001a\u0004\u0018\u00010:2\u0006\u0010;\u001a\u00020<2\u0006\u0010*\u001a\u00020+2\u0006\u0010/\u001a\u00020\u0006H\u0002ø\u0001\u0000¢\u0006\u0004\b=\u0010>\u001añ\u0001\u0010?\u001a\u00020@*\u00020\u001f2\u0006\u0010\u000e\u001a\u00020\u00062\u0006\u00103\u001a\u0002042\u0006\u0010A\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010.\u001a\u00020\u00062\u0006\u0010B\u001a\u00020\u00062\u0006\u0010C\u001a\u00020\u00062\u0006\u0010D\u001a\u0002022\u0006\u0010(\u001a\u00020)2\b\u00109\u001a\u0004\u0018\u00010:2\b\u00107\u001a\u0004\u0018\u0001082\u0006\u0010*\u001a\u00020+2\u0006\u00105\u001a\u0002062\u0006\u0010/\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00062\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00060\b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020H2/\u0010I\u001a+\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0006\u0012\u0015\u0012\u0013\u0012\u0004\u0012\u00020K\u0012\u0004\u0012\u00020\u00190\u0015¢\u0006\u0002\bL\u0012\u0004\u0012\u00020M0JH\u0000ø\u0001\u0000¢\u0006\u0004\bN\u0010O\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006P"}, d2 = {"MaxPageOffset", "", "MinPageOffset", "calculateNewCurrentPage", "Landroidx/compose/foundation/pager/MeasuredPage;", "viewportSize", "", "visiblePagesInfo", "", "beforeContentPadding", "afterContentPadding", "itemSize", "snapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "pageCount", "createPagesAfterList", "currentLastPage", "pagesCount", "beyondViewportPageCount", "pinnedPages", "getAndMeasure", "Lkotlin/Function1;", "createPagesBeforeList", "currentFirstPage", "debugLog", "", "generateMsg", "Lkotlin/Function0;", "", "calculatePagesOffsets", "", "Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasureScope;", "pages", "extraPagesBefore", "extraPagesAfter", "layoutWidth", "layoutHeight", "finalMainAxisOffset", "maxOffset", "pagesScrollOffset", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "reverseLayout", "", "density", "Landroidx/compose/ui/unit/Density;", "spaceBetweenPages", "pageAvailableSize", FirebaseAnalytics.Param.INDEX, "childConstraints", "Landroidx/compose/ui/unit/Constraints;", "pagerItemProvider", "Landroidx/compose/foundation/pager/PagerLazyLayoutItemProvider;", "visualPageOffset", "Landroidx/compose/ui/unit/IntOffset;", "horizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "verticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getAndMeasure-SGf7dI0", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasureScope;IJLandroidx/compose/foundation/pager/PagerLazyLayoutItemProvider;JLandroidx/compose/foundation/gestures/Orientation;Landroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/ui/Alignment$Vertical;Landroidx/compose/ui/unit/LayoutDirection;ZI)Landroidx/compose/foundation/pager/MeasuredPage;", "measurePager", "Landroidx/compose/foundation/pager/PagerMeasureResult;", "mainAxisAvailableSize", "currentPage", "currentPageOffset", "constraints", "placementScopeInvalidator", "Landroidx/compose/foundation/lazy/layout/ObservableScopeInvalidator;", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", TtmlNode.TAG_LAYOUT, "Lkotlin/Function3;", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "Lkotlin/ExtensionFunctionType;", "Landroidx/compose/ui/layout/MeasureResult;", "measurePager-bmk8ZPk", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasureScope;ILandroidx/compose/foundation/pager/PagerLazyLayoutItemProvider;IIIIIIJLandroidx/compose/foundation/gestures/Orientation;Landroidx/compose/ui/Alignment$Vertical;Landroidx/compose/ui/Alignment$Horizontal;ZJIILjava/util/List;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/runtime/MutableState;Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function3;)Landroidx/compose/foundation/pager/PagerMeasureResult;", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000®\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\u001a\u0082\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00042\u0006\u0010\b\u001a\u00020\u00042\u0006\u0010\t\u001a\u00020\u00042\u0006\u0010\n\u001a\u00020\u00042\u0006\u0010\u000b\u001a\u00020\u00042\u0006\u0010\f\u001a\u00020\u00042\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u00122\b\u0010\u0013\u001a\u0004\u0018\u00010\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u00042\u0006\u0010\u001a\u001a\u00020\u00042\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00040\u001c2\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2/\u0010#\u001a+\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u0004\u0012\u0015\u0012\u0013\u0012\u0004\u0012\u00020&\u0012\u0004\u0012\u00020'0%¢\u0006\u0002\b(\u0012\u0004\u0012\u00020)0$2\u0012\u0010*\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020,0\u001c0+H\u0000¢\u0006\u0004\b-\u0010.\u001aH\u0010/\u001a\b\u0012\u0004\u0012\u0002000\u001c2\u0006\u00101\u001a\u00020\u00042\u0006\u00102\u001a\u00020\u00042\u0006\u0010\u001a\u001a\u00020\u00042\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00040\u001c2\u0012\u00103\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u0002000%H\u0002\u001a@\u00104\u001a\b\u0012\u0004\u0012\u0002000\u001c2\u0006\u00105\u001a\u00020\u00042\u0006\u0010\u001a\u001a\u00020\u00042\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00040\u001c2\u0012\u00103\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u0002000%H\u0002\u001aH\u00106\u001a\u0004\u0018\u0001002\u0006\u00107\u001a\u00020\u00042\f\u00108\u001a\b\u0012\u0004\u0012\u0002000\u001c2\u0006\u0010\b\u001a\u00020\u00042\u0006\u0010\t\u001a\u00020\u00042\u0006\u00109\u001a\u00020\u00042\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u0003\u001a\u00020\u0004H\u0002\u001a{\u00103\u001a\u000200*\u00020\u00022\u0006\u0010:\u001a\u00020\u00042\u0006\u0010;\u001a\u00020\u000e2\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u000f\u001a\u00020\u00102\b\u0010\u0013\u001a\u0004\u0018\u00010\u00142\b\u0010\u0011\u001a\u0004\u0018\u00010\u00122\u0006\u0010<\u001a\u00020=2\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0019\u001a\u00020\u00042\u0012\u0010*\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020,0\u001c0+H\u0002¢\u0006\u0004\b>\u0010?\u001a\u008c\u0001\u0010@\u001a\b\u0012\u0004\u0012\u0002000A*\u00020\u00022\f\u0010B\u001a\b\u0012\u0004\u0012\u0002000\u001c2\f\u0010C\u001a\b\u0012\u0004\u0012\u0002000\u001c2\f\u0010D\u001a\b\u0012\u0004\u0012\u0002000\u001c2\u0006\u0010E\u001a\u00020\u00042\u0006\u0010F\u001a\u00020\u00042\u0006\u0010G\u001a\u00020\u00042\u0006\u0010H\u001a\u00020\u00042\u0006\u0010I\u001a\u00020\u00042\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010J\u001a\u00020K2\u0006\u0010\n\u001a\u00020\u00042\u0006\u0010\u0019\u001a\u00020\u0004H\u0002\u001a\u0017\u0010O\u001a\u00020'2\f\u0010P\u001a\b\u0012\u0004\u0012\u00020R0QH\u0082\b\"\u000e\u0010L\u001a\u00020MX\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010N\u001a\u00020MX\u0080T¢\u0006\u0002\n\u0000¨\u0006S"}, d2 = {"measurePager", "Landroidx/compose/foundation/pager/PagerMeasureResult;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasureScope;", "pageCount", "", "pagerItemProvider", "Landroidx/compose/foundation/pager/PagerLazyLayoutItemProvider;", "mainAxisAvailableSize", "beforeContentPadding", "afterContentPadding", "spaceBetweenPages", "currentPage", "currentPageOffset", "constraints", "Landroidx/compose/ui/unit/Constraints;", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "verticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "horizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "reverseLayout", "", "visualPageOffset", "Landroidx/compose/ui/unit/IntOffset;", "pageAvailableSize", "beyondViewportPageCount", "pinnedPages", "", "snapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "placementScopeInvalidator", "Landroidx/compose/foundation/lazy/layout/ObservableScopeInvalidator;", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", TtmlNode.TAG_LAYOUT, "Lkotlin/Function3;", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "", "Lkotlin/ExtensionFunctionType;", "Landroidx/compose/ui/layout/MeasureResult;", "placeablesCache", "Landroidx/collection/MutableIntObjectMap;", "Landroidx/compose/ui/layout/Placeable;", "measurePager-BiYVr7A", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasureScope;ILandroidx/compose/foundation/pager/PagerLazyLayoutItemProvider;IIIIIIJLandroidx/compose/foundation/gestures/Orientation;Landroidx/compose/ui/Alignment$Vertical;Landroidx/compose/ui/Alignment$Horizontal;ZJIILjava/util/List;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/runtime/MutableState;Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function3;Landroidx/collection/MutableIntObjectMap;)Landroidx/compose/foundation/pager/PagerMeasureResult;", "createPagesAfterList", "Landroidx/compose/foundation/pager/MeasuredPage;", "currentLastPage", "pagesCount", "getAndMeasure", "createPagesBeforeList", "currentFirstPage", "calculateNewCurrentPage", "viewportSize", "visiblePagesInfo", "itemSize", FirebaseAnalytics.Param.INDEX, "childConstraints", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getAndMeasure-G5IdpRk", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasureScope;IJLandroidx/compose/foundation/pager/PagerLazyLayoutItemProvider;JLandroidx/compose/foundation/gestures/Orientation;Landroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/ui/Alignment$Vertical;Landroidx/compose/ui/unit/LayoutDirection;ZILandroidx/collection/MutableIntObjectMap;)Landroidx/compose/foundation/pager/MeasuredPage;", "calculatePagesOffsets", "", "pages", "extraPagesBefore", "extraPagesAfter", "layoutWidth", "layoutHeight", "finalMainAxisOffset", "maxOffset", "pagesScrollOffset", "density", "Landroidx/compose/ui/unit/Density;", "MinPageOffset", "", "MaxPageOffset", "debugLog", "generateMsg", "Lkotlin/Function0;", "", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PagerMeasureKt {
     public static final float MaxPageOffset = 0.5f;
@@ -45,20 +47,20 @@ public final class PagerMeasureKt {
     private static final void debugLog(Function0<String> function0) {
     }
 
-    /* renamed from: measurePager-bmk8ZPk  reason: not valid java name */
-    public static final PagerMeasureResult m990measurePagerbmk8ZPk(final LazyLayoutMeasureScope lazyLayoutMeasureScope, int i, final PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, int i2, int i3, int i4, int i5, int i6, int i7, long j, final Orientation orientation, final Alignment.Vertical vertical, final Alignment.Horizontal horizontal, final boolean z, final long j2, final int i8, int i9, List<Integer> list, SnapPosition snapPosition, final MutableState<Unit> mutableState, CoroutineScope coroutineScope, Function3<? super Integer, ? super Integer, ? super Function1<? super Placeable.PlacementScope, Unit>, ? extends MeasureResult> function3) {
+    /* renamed from: measurePager-BiYVr7A  reason: not valid java name */
+    public static final PagerMeasureResult m1143measurePagerBiYVr7A(final LazyLayoutMeasureScope lazyLayoutMeasureScope, int i, final PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, int i2, int i3, int i4, int i5, int i6, int i7, long j, final Orientation orientation, final Alignment.Vertical vertical, final Alignment.Horizontal horizontal, final boolean z, final long j2, final int i8, int i9, List<Integer> list, SnapPosition snapPosition, final MutableState<Unit> mutableState, CoroutineScope coroutineScope, Function3<? super Integer, ? super Integer, ? super Function1<? super Placeable.PlacementScope, Unit>, ? extends MeasureResult> function3, final MutableIntObjectMap<List<Placeable>> mutableIntObjectMap) {
         int i10;
         boolean z2;
         int i11;
         int i12;
         int i13;
         int i14;
-        MeasuredPage measuredPage;
+        int i15;
         ArrayList arrayList;
         ArrayList arrayList2;
         ArrayList arrayList3;
-        int i15;
         int i16;
+        int i17;
         if (!(i3 >= 0)) {
             InlineClassHelperKt.throwIllegalArgumentException("negative beforeContentPadding");
         }
@@ -66,303 +68,275 @@ public final class PagerMeasureKt {
             InlineClassHelperKt.throwIllegalArgumentException("negative afterContentPadding");
         }
         int coerceAtLeast = RangesKt.coerceAtLeast(i8 + i5, 0);
+        int coerceAtMost = RangesKt.coerceAtMost(i9, i);
         if (i <= 0) {
-            return new PagerMeasureResult(CollectionsKt.emptyList(), i8, i5, i4, orientation, -i3, i2 + i4, false, i9, null, null, 0.0f, 0, false, snapPosition, function3.invoke(Integer.valueOf(Constraints.m6639getMinWidthimpl(j)), Integer.valueOf(Constraints.m6638getMinHeightimpl(j)), new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$measurePager$4
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(Placeable.PlacementScope placementScope) {
-                }
-
+            return new PagerMeasureResult(CollectionsKt.emptyList(), i8, i5, i4, orientation, -i3, i2 + i4, false, coerceAtMost, null, null, 0.0f, 0, false, snapPosition, function3.invoke(Integer.valueOf(Constraints.m7206getMinWidthimpl(j)), Integer.valueOf(Constraints.m7205getMinHeightimpl(j)), new Function1() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                    invoke2(placementScope);
-                    return Unit.INSTANCE;
+                public final Object invoke(Object obj) {
+                    Unit measurePager_BiYVr7A$lambda$3;
+                    measurePager_BiYVr7A$lambda$3 = PagerMeasureKt.measurePager_BiYVr7A$lambda$3((Placeable.PlacementScope) obj);
+                    return measurePager_BiYVr7A$lambda$3;
                 }
             }), false, null, null, coroutineScope, 393216, null);
         }
         Orientation orientation2 = orientation;
-        final long Constraints$default = ConstraintsKt.Constraints$default(0, orientation2 == Orientation.Vertical ? Constraints.m6637getMaxWidthimpl(j) : i8, 0, orientation2 != Orientation.Vertical ? Constraints.m6636getMaxHeightimpl(j) : i8, 5, null);
-        int i17 = i6;
-        int i18 = i7;
-        while (i17 > 0 && i18 > 0) {
-            i17--;
-            i18 -= coerceAtLeast;
+        final long Constraints$default = ConstraintsKt.Constraints$default(0, orientation2 == Orientation.Vertical ? Constraints.m7204getMaxWidthimpl(j) : i8, 0, orientation2 != Orientation.Vertical ? Constraints.m7203getMaxHeightimpl(j) : i8, 5, null);
+        int i18 = i6;
+        int i19 = i7;
+        while (i18 > 0 && i19 > 0) {
+            i18--;
+            i19 -= coerceAtLeast;
         }
-        int i19 = i18 * (-1);
-        if (i17 >= i) {
-            i17 = i - 1;
-            i19 = 0;
+        int i20 = i19 * (-1);
+        if (i18 >= i) {
+            i18 = i - 1;
+            i20 = 0;
         }
         ArrayDeque arrayDeque = new ArrayDeque();
-        int i20 = -i3;
-        int i21 = (i5 < 0 ? i5 : 0) + i20;
-        int i22 = i19 + i21;
-        int i23 = 0;
-        while (i22 < 0 && i17 > 0) {
-            int i24 = i17 - 1;
-            MeasuredPage m989getAndMeasureSGf7dI0 = m989getAndMeasureSGf7dI0(lazyLayoutMeasureScope, i24, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation2, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i8);
-            arrayDeque.add(0, m989getAndMeasureSGf7dI0);
-            i23 = Math.max(i23, m989getAndMeasureSGf7dI0.getCrossAxisSize());
-            i22 += coerceAtLeast;
-            i21 = i21;
-            i17 = i24;
+        int i21 = -i3;
+        int i22 = (i5 < 0 ? i5 : 0) + i21;
+        int i23 = i20 + i22;
+        int i24 = 0;
+        while (i23 < 0 && i18 > 0) {
+            int i25 = i18 - 1;
+            MeasuredPage m1142getAndMeasureG5IdpRk = m1142getAndMeasureG5IdpRk(lazyLayoutMeasureScope, i25, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation2, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i8, mutableIntObjectMap);
+            arrayDeque.add(0, m1142getAndMeasureG5IdpRk);
+            i24 = Math.max(i24, m1142getAndMeasureG5IdpRk.getCrossAxisSize());
+            i23 += coerceAtLeast;
+            i22 = i22;
+            i18 = i25;
             orientation2 = orientation;
         }
-        int i25 = i21;
-        int i26 = i23;
-        if (i22 < i25) {
-            i22 = i25;
+        int i26 = i22;
+        int i27 = i24;
+        if (i23 < i26) {
+            i23 = i26;
         }
-        int i27 = i22 - i25;
-        int i28 = i2 + i4;
-        int i29 = i17;
-        int coerceAtLeast2 = RangesKt.coerceAtLeast(i28, 0);
-        int i30 = -i27;
-        int i31 = i29;
-        int i32 = 0;
+        int i28 = i23 - i26;
+        int i29 = i2 + i4;
+        int i30 = i18;
+        int coerceAtLeast2 = RangesKt.coerceAtLeast(i29, 0);
+        int i31 = -i28;
+        int i32 = i30;
+        int i33 = 0;
         boolean z3 = false;
-        while (i32 < arrayDeque.size()) {
-            if (i30 >= coerceAtLeast2) {
-                arrayDeque.remove(i32);
+        while (i33 < arrayDeque.size()) {
+            if (i31 >= coerceAtLeast2) {
+                arrayDeque.remove(i33);
+                Unit unit = Unit.INSTANCE;
                 z3 = true;
             } else {
-                i31++;
-                i30 += coerceAtLeast;
                 i32++;
+                i31 += coerceAtLeast;
+                Integer.valueOf(i33);
+                i33++;
             }
         }
-        int i33 = i26;
-        int i34 = i31;
-        boolean z4 = z3;
+        int i34 = i28;
         int i35 = i27;
-        while (i34 < i && (i30 < coerceAtLeast2 || i30 <= 0 || arrayDeque.isEmpty())) {
-            int i36 = coerceAtLeast2;
-            int i37 = i34;
-            MeasuredPage m989getAndMeasureSGf7dI02 = m989getAndMeasureSGf7dI0(lazyLayoutMeasureScope, i37, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i8);
-            int i38 = i35;
-            int i39 = i - 1;
-            i30 += i37 == i39 ? i8 : coerceAtLeast;
-            if (i30 > i25 || i37 == i39) {
-                i33 = Math.max(i33, m989getAndMeasureSGf7dI02.getCrossAxisSize());
-                arrayDeque.add(m989getAndMeasureSGf7dI02);
-                i16 = i29;
-                i35 = i38;
-            } else {
-                i16 = i37 + 1;
-                i35 = i38 - coerceAtLeast;
+        int i36 = i32;
+        boolean z4 = z3;
+        while (i36 < i && (i31 < coerceAtLeast2 || i31 <= 0 || arrayDeque.isEmpty())) {
+            int i37 = coerceAtLeast2;
+            int i38 = i36;
+            MeasuredPage m1142getAndMeasureG5IdpRk2 = m1142getAndMeasureG5IdpRk(lazyLayoutMeasureScope, i38, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i8, mutableIntObjectMap);
+            int i39 = i34;
+            int i40 = i - 1;
+            i31 += i38 == i40 ? i8 : coerceAtLeast;
+            if (i31 <= i26 && i38 != i40) {
+                i17 = i38 + 1;
+                i34 = i39 - coerceAtLeast;
+                Unit unit2 = Unit.INSTANCE;
                 z4 = true;
+            } else {
+                i35 = Math.max(i35, m1142getAndMeasureG5IdpRk2.getCrossAxisSize());
+                Boolean.valueOf(arrayDeque.add(m1142getAndMeasureG5IdpRk2));
+                i17 = i30;
+                i34 = i39;
             }
-            i34 = i37 + 1;
-            i29 = i16;
-            coerceAtLeast2 = i36;
+            i36 = i38 + 1;
+            i30 = i17;
+            coerceAtLeast2 = i37;
         }
-        int i40 = i35;
-        if (i30 < i2) {
-            int i41 = i2 - i30;
-            i12 = i40 - i41;
-            i30 += i41;
-            i11 = i33;
-            i13 = i29;
+        int i41 = i34;
+        if (i31 < i2) {
+            int i42 = i2 - i31;
+            i12 = i41 - i42;
+            i31 += i42;
+            i11 = i35;
+            i13 = i30;
             while (i12 < i3 && i13 > 0) {
-                int i42 = i13 - 1;
-                MeasuredPage m989getAndMeasureSGf7dI03 = m989getAndMeasureSGf7dI0(lazyLayoutMeasureScope, i42, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i8);
-                arrayDeque.add(0, m989getAndMeasureSGf7dI03);
-                i11 = Math.max(i11, m989getAndMeasureSGf7dI03.getCrossAxisSize());
+                int i43 = i13 - 1;
+                MeasuredPage m1142getAndMeasureG5IdpRk3 = m1142getAndMeasureG5IdpRk(lazyLayoutMeasureScope, i43, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i8, mutableIntObjectMap);
+                arrayDeque.add(0, m1142getAndMeasureG5IdpRk3);
+                i11 = Math.max(i11, m1142getAndMeasureG5IdpRk3.getCrossAxisSize());
                 i12 += coerceAtLeast;
-                i34 = i34;
-                i13 = i42;
+                i36 = i36;
+                i13 = i43;
             }
-            i10 = i34;
+            i10 = i36;
             z2 = false;
             if (i12 < 0) {
-                i30 += i12;
+                i31 += i12;
                 i12 = 0;
             }
         } else {
-            i10 = i34;
+            i10 = i36;
             z2 = false;
-            i11 = i33;
-            i12 = i40;
-            i13 = i29;
+            i11 = i35;
+            i12 = i41;
+            i13 = i30;
         }
         if (!(i12 >= 0 ? true : z2)) {
             InlineClassHelperKt.throwIllegalArgumentException("invalid currentFirstPageScrollOffset");
         }
-        int i43 = i11;
-        int i44 = -i12;
-        MeasuredPage measuredPage2 = (MeasuredPage) arrayDeque.first();
+        int i44 = i11;
+        int i45 = -i12;
+        MeasuredPage measuredPage = (MeasuredPage) arrayDeque.first();
         if (i3 > 0 || i5 < 0) {
             int size = arrayDeque.size();
-            i14 = i44;
-            int i45 = 0;
-            while (i45 < size && i12 != 0 && coerceAtLeast <= i12 && i45 != CollectionsKt.getLastIndex(arrayDeque)) {
+            i14 = i45;
+            int i46 = 0;
+            while (i46 < size && i12 != 0 && coerceAtLeast <= i12 && i46 != CollectionsKt.getLastIndex(arrayDeque)) {
                 i12 -= coerceAtLeast;
-                i45++;
-                measuredPage2 = (MeasuredPage) arrayDeque.get(i45);
+                i46++;
+                measuredPage = (MeasuredPage) arrayDeque.get(i46);
             }
         } else {
-            i14 = i44;
+            i14 = i45;
         }
-        int i46 = i12;
-        MeasuredPage measuredPage3 = measuredPage2;
-        List<MeasuredPage> createPagesBeforeList = createPagesBeforeList(i13, i9, list, new Function1<Integer, MeasuredPage>() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$measurePager$extraPagesBefore$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        int i47 = i12;
+        MeasuredPage measuredPage2 = measuredPage;
+        List<MeasuredPage> createPagesBeforeList = createPagesBeforeList(i13, coerceAtMost, list, new Function1() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ MeasuredPage invoke(Integer num) {
-                return invoke(num.intValue());
-            }
-
-            public final MeasuredPage invoke(int i47) {
-                MeasuredPage m989getAndMeasureSGf7dI04;
-                LazyLayoutMeasureScope lazyLayoutMeasureScope2 = LazyLayoutMeasureScope.this;
-                m989getAndMeasureSGf7dI04 = PagerMeasureKt.m989getAndMeasureSGf7dI0(lazyLayoutMeasureScope2, i47, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope2.getLayoutDirection(), z, i8);
-                return m989getAndMeasureSGf7dI04;
+            public final Object invoke(Object obj) {
+                MeasuredPage measurePager_BiYVr7A$lambda$10;
+                measurePager_BiYVr7A$lambda$10 = PagerMeasureKt.measurePager_BiYVr7A$lambda$10(LazyLayoutMeasureScope.this, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, z, i8, mutableIntObjectMap, ((Integer) obj).intValue());
+                return measurePager_BiYVr7A$lambda$10;
             }
         });
-        int size2 = createPagesBeforeList.size();
-        int i47 = i43;
-        int i48 = 0;
-        while (i48 < size2) {
-            i47 = Math.max(i47, createPagesBeforeList.get(i48).getCrossAxisSize());
-            i48++;
-            createPagesBeforeList = createPagesBeforeList;
+        int i48 = i44;
+        int i49 = 0;
+        for (int size2 = createPagesBeforeList.size(); i49 < size2; size2 = size2) {
+            i48 = Math.max(i48, createPagesBeforeList.get(i49).getCrossAxisSize());
+            i49++;
         }
-        List<MeasuredPage> list2 = createPagesBeforeList;
-        List<MeasuredPage> createPagesAfterList = createPagesAfterList(((MeasuredPage) arrayDeque.last()).getIndex(), i, i9, list, new Function1<Integer, MeasuredPage>() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$measurePager$extraPagesAfter$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        List<MeasuredPage> createPagesAfterList = createPagesAfterList(((MeasuredPage) arrayDeque.last()).getIndex(), i, coerceAtMost, list, new Function1() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ MeasuredPage invoke(Integer num) {
-                return invoke(num.intValue());
-            }
-
-            public final MeasuredPage invoke(int i49) {
-                MeasuredPage m989getAndMeasureSGf7dI04;
-                LazyLayoutMeasureScope lazyLayoutMeasureScope2 = LazyLayoutMeasureScope.this;
-                m989getAndMeasureSGf7dI04 = PagerMeasureKt.m989getAndMeasureSGf7dI0(lazyLayoutMeasureScope2, i49, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope2.getLayoutDirection(), z, i8);
-                return m989getAndMeasureSGf7dI04;
+            public final Object invoke(Object obj) {
+                MeasuredPage measurePager_BiYVr7A$lambda$12;
+                measurePager_BiYVr7A$lambda$12 = PagerMeasureKt.measurePager_BiYVr7A$lambda$12(LazyLayoutMeasureScope.this, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, z, i8, mutableIntObjectMap, ((Integer) obj).intValue());
+                return measurePager_BiYVr7A$lambda$12;
             }
         });
         int size3 = createPagesAfterList.size();
-        for (int i49 = 0; i49 < size3; i49++) {
-            i47 = Math.max(i47, createPagesAfterList.get(i49).getCrossAxisSize());
+        int i50 = i48;
+        for (int i51 = 0; i51 < size3; i51++) {
+            i50 = Math.max(i50, createPagesAfterList.get(i51).getCrossAxisSize());
         }
-        boolean z5 = Intrinsics.areEqual(measuredPage3, arrayDeque.first()) && list2.isEmpty() && createPagesAfterList.isEmpty();
-        int m6654constrainWidthK40F9xA = ConstraintsKt.m6654constrainWidthK40F9xA(j, orientation == Orientation.Vertical ? i47 : i30);
+        boolean z5 = Intrinsics.areEqual(measuredPage2, arrayDeque.first()) && createPagesBeforeList.isEmpty() && createPagesAfterList.isEmpty();
+        int m7221constrainWidthK40F9xA = ConstraintsKt.m7221constrainWidthK40F9xA(j, orientation == Orientation.Vertical ? i50 : i31);
         if (orientation == Orientation.Vertical) {
-            i47 = i30;
+            i50 = i31;
         }
-        int m6653constrainHeightK40F9xA = ConstraintsKt.m6653constrainHeightK40F9xA(j, i47);
-        int i50 = i10;
-        int i51 = i30;
-        final List<MeasuredPage> calculatePagesOffsets = calculatePagesOffsets(lazyLayoutMeasureScope, arrayDeque, list2, createPagesAfterList, m6654constrainWidthK40F9xA, m6653constrainHeightK40F9xA, i51, i2, i14, orientation, z, lazyLayoutMeasureScope, i5, i8);
+        int m7220constrainHeightK40F9xA = ConstraintsKt.m7220constrainHeightK40F9xA(j, i50);
+        int i52 = i10;
+        int i53 = i31;
+        int i54 = coerceAtLeast;
+        final List<MeasuredPage> calculatePagesOffsets = calculatePagesOffsets(lazyLayoutMeasureScope, arrayDeque, createPagesBeforeList, createPagesAfterList, m7221constrainWidthK40F9xA, m7220constrainHeightK40F9xA, i53, i2, i14, orientation, z, lazyLayoutMeasureScope, i5, i8);
         if (z5) {
-            measuredPage = measuredPage3;
+            i15 = i54;
             arrayList = calculatePagesOffsets;
         } else {
             ArrayList arrayList4 = new ArrayList(calculatePagesOffsets.size());
             int size4 = calculatePagesOffsets.size();
-            int i52 = 0;
-            while (i52 < size4) {
-                MeasuredPage measuredPage4 = calculatePagesOffsets.get(i52);
-                MeasuredPage measuredPage5 = measuredPage4;
-                MeasuredPage measuredPage6 = measuredPage3;
+            int i55 = 0;
+            while (i55 < size4) {
+                MeasuredPage measuredPage3 = calculatePagesOffsets.get(i55);
+                MeasuredPage measuredPage4 = measuredPage3;
+                int i56 = i54;
                 ArrayList arrayList5 = arrayList4;
-                if (measuredPage5.getIndex() >= ((MeasuredPage) arrayDeque.first()).getIndex() && measuredPage5.getIndex() <= ((MeasuredPage) arrayDeque.last()).getIndex()) {
-                    arrayList5.add(measuredPage4);
+                if (measuredPage4.getIndex() >= ((MeasuredPage) arrayDeque.first()).getIndex() && measuredPage4.getIndex() <= ((MeasuredPage) arrayDeque.last()).getIndex()) {
+                    arrayList5.add(measuredPage3);
                 }
-                i52++;
+                i55++;
                 arrayList4 = arrayList5;
-                measuredPage3 = measuredPage6;
+                i54 = i56;
             }
-            measuredPage = measuredPage3;
+            i15 = i54;
             arrayList = arrayList4;
         }
-        if (list2.isEmpty()) {
+        if (createPagesBeforeList.isEmpty()) {
             arrayList2 = CollectionsKt.emptyList();
         } else {
             ArrayList arrayList6 = new ArrayList(calculatePagesOffsets.size());
             int size5 = calculatePagesOffsets.size();
-            int i53 = 0;
-            while (i53 < size5) {
-                MeasuredPage measuredPage7 = calculatePagesOffsets.get(i53);
-                ArrayList arrayList7 = arrayList6;
-                if (measuredPage7.getIndex() < ((MeasuredPage) arrayDeque.first()).getIndex()) {
-                    arrayList7.add(measuredPage7);
+            for (int i57 = 0; i57 < size5; i57++) {
+                MeasuredPage measuredPage5 = calculatePagesOffsets.get(i57);
+                if (measuredPage5.getIndex() < ((MeasuredPage) arrayDeque.first()).getIndex()) {
+                    arrayList6.add(measuredPage5);
                 }
-                i53++;
-                arrayList6 = arrayList7;
             }
             arrayList2 = arrayList6;
         }
-        List list3 = arrayList2;
+        List list2 = arrayList2;
         if (createPagesAfterList.isEmpty()) {
             arrayList3 = CollectionsKt.emptyList();
         } else {
-            ArrayList arrayList8 = new ArrayList(calculatePagesOffsets.size());
+            ArrayList arrayList7 = new ArrayList(calculatePagesOffsets.size());
             int size6 = calculatePagesOffsets.size();
-            for (int i54 = 0; i54 < size6; i54++) {
-                MeasuredPage measuredPage8 = calculatePagesOffsets.get(i54);
-                if (measuredPage8.getIndex() > ((MeasuredPage) arrayDeque.last()).getIndex()) {
-                    arrayList8.add(measuredPage8);
+            for (int i58 = 0; i58 < size6; i58++) {
+                MeasuredPage measuredPage6 = calculatePagesOffsets.get(i58);
+                if (measuredPage6.getIndex() > ((MeasuredPage) arrayDeque.last()).getIndex()) {
+                    arrayList7.add(measuredPage6);
                 }
             }
-            arrayList3 = arrayList8;
+            arrayList3 = arrayList7;
         }
-        List list4 = arrayList3;
-        MeasuredPage calculateNewCurrentPage = calculateNewCurrentPage(i2 + i3 + i4, arrayList, i3, i4, coerceAtLeast, snapPosition, i);
-        return new PagerMeasureResult(arrayList, i8, i5, i4, orientation, i20, i28, z, i9, measuredPage, calculateNewCurrentPage, coerceAtLeast == 0 ? 0.0f : RangesKt.coerceIn((snapPosition.position(i15, i8, i3, i4, calculateNewCurrentPage != null ? calculateNewCurrentPage.getIndex() : 0, i) - (calculateNewCurrentPage != null ? calculateNewCurrentPage.getOffset() : 0)) / coerceAtLeast, -0.5f, 0.5f), i46, i50 < i || i51 > i2, snapPosition, function3.invoke(Integer.valueOf(m6654constrainWidthK40F9xA), Integer.valueOf(m6653constrainHeightK40F9xA), new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$measurePager$14
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        List list3 = arrayList3;
+        int i59 = i15;
+        MeasuredPage calculateNewCurrentPage = calculateNewCurrentPage(i2 + i3 + i4, arrayList, i3, i4, i8, snapPosition, i);
+        return new PagerMeasureResult(arrayList, i8, i5, i4, orientation, i21, i29, z, coerceAtMost, measuredPage2, calculateNewCurrentPage, i59 == 0 ? 0.0f : RangesKt.coerceIn((snapPosition.position(i16, i8, i3, i4, calculateNewCurrentPage != null ? calculateNewCurrentPage.getIndex() : 0, i) - (calculateNewCurrentPage != null ? calculateNewCurrentPage.getOffset() : 0)) / i59, -0.5f, 0.5f), i47, i52 < i || i53 > i2, snapPosition, function3.invoke(Integer.valueOf(m7221constrainWidthK40F9xA), Integer.valueOf(m7220constrainHeightK40F9xA), new Function1() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                invoke2(placementScope);
-                return Unit.INSTANCE;
+            public final Object invoke(Object obj) {
+                Unit measurePager_BiYVr7A$lambda$20;
+                measurePager_BiYVr7A$lambda$20 = PagerMeasureKt.measurePager_BiYVr7A$lambda$20(MutableState.this, calculatePagesOffsets, (Placeable.PlacementScope) obj);
+                return measurePager_BiYVr7A$lambda$20;
             }
+        }), z4, list2, list3, coroutineScope);
+    }
 
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Placeable.PlacementScope placementScope) {
-                final List<MeasuredPage> list5 = calculatePagesOffsets;
-                placementScope.withMotionFrameOfReferencePlacement(new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$measurePager$14.1
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(1);
-                    }
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit measurePager_BiYVr7A$lambda$3(Placeable.PlacementScope placementScope) {
+        return Unit.INSTANCE;
+    }
 
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope2) {
-                        invoke2(placementScope2);
-                        return Unit.INSTANCE;
-                    }
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final MeasuredPage measurePager_BiYVr7A$lambda$10(LazyLayoutMeasureScope lazyLayoutMeasureScope, long j, PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, long j2, Orientation orientation, Alignment.Horizontal horizontal, Alignment.Vertical vertical, boolean z, int i, MutableIntObjectMap mutableIntObjectMap, int i2) {
+        return m1142getAndMeasureG5IdpRk(lazyLayoutMeasureScope, i2, j, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i, mutableIntObjectMap);
+    }
 
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(Placeable.PlacementScope placementScope2) {
-                        List<MeasuredPage> list6 = list5;
-                        int size7 = list6.size();
-                        for (int i55 = 0; i55 < size7; i55++) {
-                            list6.get(i55).place(placementScope2);
-                        }
-                    }
-                });
-                ObservableScopeInvalidator.m918attachToScopeimpl(mutableState);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final MeasuredPage measurePager_BiYVr7A$lambda$12(LazyLayoutMeasureScope lazyLayoutMeasureScope, long j, PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, long j2, Orientation orientation, Alignment.Horizontal horizontal, Alignment.Vertical vertical, boolean z, int i, MutableIntObjectMap mutableIntObjectMap, int i2) {
+        return m1142getAndMeasureG5IdpRk(lazyLayoutMeasureScope, i2, j, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i, mutableIntObjectMap);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit measurePager_BiYVr7A$lambda$20(MutableState mutableState, final List list, Placeable.PlacementScope placementScope) {
+        placementScope.withMotionFrameOfReferencePlacement(new Function1() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$$ExternalSyntheticLambda4
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit measurePager_BiYVr7A$lambda$20$lambda$19;
+                measurePager_BiYVr7A$lambda$20$lambda$19 = PagerMeasureKt.measurePager_BiYVr7A$lambda$20$lambda$19(list, (Placeable.PlacementScope) obj);
+                return measurePager_BiYVr7A$lambda$20$lambda$19;
             }
-        }), z4, list3, list4, coroutineScope);
+        });
+        ObservableScopeInvalidator.m1061attachToScopeimpl(mutableState);
+        return Unit.INSTANCE;
     }
 
     private static final List<MeasuredPage> createPagesAfterList(int i, int i2, int i3, List<Integer> list, Function1<? super Integer, MeasuredPage> function1) {
-        int min = Math.min(i3 + i, i2 - 1);
+        int min = Math.min(i3, (i2 - i) - 1) + i;
         int i4 = i + 1;
         ArrayList arrayList = null;
         if (i4 <= min) {
@@ -419,10 +393,21 @@ public final class PagerMeasureKt {
         return arrayList == null ? CollectionsKt.emptyList() : arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getAndMeasure-SGf7dI0  reason: not valid java name */
-    public static final MeasuredPage m989getAndMeasureSGf7dI0(LazyLayoutMeasureScope lazyLayoutMeasureScope, int i, long j, PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, long j2, Orientation orientation, Alignment.Horizontal horizontal, Alignment.Vertical vertical, LayoutDirection layoutDirection, boolean z, int i2) {
-        return new MeasuredPage(i, i2, lazyLayoutMeasureScope.mo912measure0kLqBqw(i, j), j2, pagerLazyLayoutItemProvider.getKey(i), orientation, horizontal, vertical, layoutDirection, z, null);
+    /* renamed from: getAndMeasure-G5IdpRk  reason: not valid java name */
+    private static final MeasuredPage m1142getAndMeasureG5IdpRk(LazyLayoutMeasureScope lazyLayoutMeasureScope, int i, long j, PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, long j2, Orientation orientation, Alignment.Horizontal horizontal, Alignment.Vertical vertical, LayoutDirection layoutDirection, boolean z, int i2, MutableIntObjectMap<List<Placeable>> mutableIntObjectMap) {
+        Object key = pagerLazyLayoutItemProvider.getKey(i);
+        ArrayList arrayList = mutableIntObjectMap.get(i);
+        if (arrayList == null) {
+            List<Measurable> compose = lazyLayoutMeasureScope.compose(i);
+            int size = compose.size();
+            ArrayList arrayList2 = new ArrayList(size);
+            for (int i3 = 0; i3 < size; i3++) {
+                arrayList2.add(compose.get(i3).mo5954measureBRTryo0(j));
+            }
+            arrayList = arrayList2;
+            mutableIntObjectMap.set(i, arrayList);
+        }
+        return new MeasuredPage(i, i2, arrayList, j2, key, orientation, horizontal, vertical, layoutDirection, z, null);
     }
 
     private static final List<MeasuredPage> calculatePagesOffsets(LazyLayoutMeasureScope lazyLayoutMeasureScope, List<MeasuredPage> list, List<MeasuredPage> list2, List<MeasuredPage> list3, int i, int i2, int i3, int i4, int i5, Orientation orientation, boolean z, Density density, int i6, int i7) {
@@ -448,13 +433,13 @@ public final class PagerMeasureKt {
                 iArr[i11] = i7;
             }
             int[] iArr2 = new int[size];
-            Arrangement.HorizontalOrVertical m622spacedBy0680j_4 = Arrangement.Absolute.INSTANCE.m622spacedBy0680j_4(lazyLayoutMeasureScope.mo386toDpu2uoSUM(i6));
+            Arrangement.HorizontalOrVertical m695spacedBy0680j_4 = Arrangement.Absolute.INSTANCE.m695spacedBy0680j_4(lazyLayoutMeasureScope.mo416toDpu2uoSUM(i6));
             if (orientation == Orientation.Vertical) {
-                m622spacedBy0680j_4.arrange(density, i10, iArr, iArr2);
+                m695spacedBy0680j_4.arrange(density, i10, iArr, iArr2);
                 arrayList = arrayList2;
             } else {
                 arrayList = arrayList2;
-                m622spacedBy0680j_4.arrange(density, i10, iArr, LayoutDirection.Ltr, iArr2);
+                m695spacedBy0680j_4.arrange(density, i10, iArr, LayoutDirection.Ltr, iArr2);
             }
             IntRange indices = ArraysKt.getIndices(iArr2);
             if (z) {
@@ -534,5 +519,14 @@ public final class PagerMeasureKt {
             measuredPage = measuredPage2;
         }
         return measuredPage;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit measurePager_BiYVr7A$lambda$20$lambda$19(List list, Placeable.PlacementScope placementScope) {
+        int size = list.size();
+        for (int i = 0; i < size; i++) {
+            ((MeasuredPage) list.get(i)).place(placementScope);
+        }
+        return Unit.INSTANCE;
     }
 }

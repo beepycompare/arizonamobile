@@ -5,7 +5,7 @@ import io.reactivex.Observer;
 import io.reactivex.functions.BiPredicate;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.observers.BasicFuseableObserver;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableDistinctUntilChanged<T, K> extends AbstractObservableWithUpstream<T, T> {
     final BiPredicate<? super K, ? super K> comparer;
     final Function<? super T, K> keySelector;
@@ -21,7 +21,7 @@ public final class ObservableDistinctUntilChanged<T, K> extends AbstractObservab
         this.source.subscribe(new DistinctUntilChangedObserver(observer, this.keySelector, this.comparer));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DistinctUntilChangedObserver<T, K> extends BasicFuseableObserver<T, T> {
         final BiPredicate<? super K, ? super K> comparer;
         boolean hasValue;

@@ -1,8 +1,8 @@
 package androidx.compose.foundation.gestures;
 
 import androidx.compose.animation.core.AnimationScope;
+import androidx.compose.animation.core.AnimationState;
 import androidx.compose.animation.core.AnimationStateKt;
-import androidx.compose.animation.core.AnimationVector4D;
 import androidx.compose.animation.core.SuspendAnimationKt;
 import androidx.compose.ui.geometry.Offset;
 import kotlin.Metadata;
@@ -17,7 +17,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TransformableState.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/TransformScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/TransformScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableStateKt$animateBy$3", f = "TransformableState.kt", i = {}, l = {230}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class TransformableStateKt$animateBy$3 extends SuspendLambda implements Function2<TransformScope, Continuation<? super Unit>, Object> {
@@ -59,26 +59,17 @@ public final class TransformableStateKt$animateBy$3 extends SuspendLambda implem
             AnimationDataConverter animationDataConverter = AnimationDataConverter.INSTANCE;
             AnimationData animationData2 = this.$previousState.element;
             animationData = TransformableStateKt.ZeroAnimationVelocity;
+            AnimationState AnimationState$default = AnimationStateKt.AnimationState$default(animationDataConverter, animationData2, animationData, 0L, 0L, false, 56, null);
+            AnimationData animationData3 = this.$targetState;
+            DelegatingAnimationSpec delegatingAnimationSpec = this.$animationSpec;
             final Ref.ObjectRef<AnimationData> objectRef = this.$previousState;
             this.label = 1;
-            if (SuspendAnimationKt.animateTo$default(AnimationStateKt.AnimationState$default(animationDataConverter, animationData2, animationData, 0L, 0L, false, 56, null), this.$targetState, this.$animationSpec, false, new Function1<AnimationScope<AnimationData, AnimationVector4D>, Unit>() { // from class: androidx.compose.foundation.gestures.TransformableStateKt$animateBy$3.1
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(1);
-                }
-
+            if (SuspendAnimationKt.animateTo$default(AnimationState$default, animationData3, delegatingAnimationSpec, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableStateKt$animateBy$3$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(AnimationScope<AnimationData, AnimationVector4D> animationScope) {
-                    invoke2(animationScope);
-                    return Unit.INSTANCE;
-                }
-
-                /* JADX WARN: Type inference failed for: r7v1, types: [T, java.lang.Object] */
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(AnimationScope<AnimationData, AnimationVector4D> animationScope) {
-                    float zoom = objectRef.element.getZoom() == 0.0f ? 1.0f : animationScope.getValue().getZoom() / objectRef.element.getZoom();
-                    transformScope.mo425transformByd4ec7I(zoom, Offset.m3841minusMKHz9U(animationScope.getValue().m415getOffsetF1C5BW0(), objectRef.element.m415getOffsetF1C5BW0()), animationScope.getValue().getDegrees() - objectRef.element.getDegrees());
-                    objectRef.element = animationScope.getValue();
+                public final Object invoke(Object obj2) {
+                    Unit invokeSuspend$lambda$0;
+                    invokeSuspend$lambda$0 = TransformableStateKt$animateBy$3.invokeSuspend$lambda$0(Ref.ObjectRef.this, transformScope, (AnimationScope) obj2);
+                    return invokeSuspend$lambda$0;
                 }
             }, this, 4, null) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -88,6 +79,14 @@ public final class TransformableStateKt$animateBy$3 extends SuspendLambda implem
         } else {
             ResultKt.throwOnFailure(obj);
         }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Type inference failed for: r7v1, types: [T, java.lang.Object] */
+    public static final Unit invokeSuspend$lambda$0(Ref.ObjectRef objectRef, TransformScope transformScope, AnimationScope animationScope) {
+        transformScope.mo464transformByd4ec7I(((AnimationData) objectRef.element).getZoom() == 0.0f ? 1.0f : ((AnimationData) animationScope.getValue()).getZoom() / ((AnimationData) objectRef.element).getZoom(), Offset.m4297minusMKHz9U(((AnimationData) animationScope.getValue()).m451getOffsetF1C5BW0(), ((AnimationData) objectRef.element).m451getOffsetF1C5BW0()), ((AnimationData) animationScope.getValue()).getDegrees() - ((AnimationData) objectRef.element).getDegrees());
+        objectRef.element = animationScope.getValue();
         return Unit.INSTANCE;
     }
 }

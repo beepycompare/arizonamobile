@@ -333,8 +333,8 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         try {
             String channelsState = FirebaseConfigHelper.INSTANCE.getChannelsState();
             String str = Build.MANUFACTURER + StringUtils.PROCESS_POSTFIX_DELIMITER + Build.MODEL + StringUtils.PROCESS_POSTFIX_DELIMITER + getUniqueID() + StringUtils.PROCESS_POSTFIX_DELIMITER + (this.notifyChecker.isNotificationEnabled() ? "notify_on" : "notify_off");
-            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false) + "\n5. Version: (release_web) 2.1 - v16.4.4\n6. Last element ID: " + UIElementID.getLastUIElementID() + "\n7. Device name: " + str + "\n8. Token: " + getSettingsPreferences().getString("token", "") + "\n9. Channels state: " + channelsState);
-            InitSetting(true, show_fps, true, PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false), "(release_web) 2.1 - v16.4.4", UIElementID.getLastUIElementID(), str, getSettingsPreferences().getString("token", ""), channelsState);
+            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false) + "\n5. Version: (release) 2.1 - v16.4.6\n6. Last element ID: " + UIElementID.getLastUIElementID() + "\n7. Device name: " + str + "\n8. Token: " + getSettingsPreferences().getString("token", "") + "\n9. Channels state: " + channelsState);
+            InitSetting(true, show_fps, true, PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false), "(release) 2.1 - v16.4.6", UIElementID.getLastUIElementID(), str, getSettingsPreferences().getString("token", ""), channelsState);
             FirebaseCrashlytics.getInstance().setUserId(getUniqueID());
         } catch (LinkageError e) {
             Log.w(TAG, "Unable to call native method", e);
@@ -435,7 +435,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void clickedWrapper(final int viewBackendID, final int elementID, final int subID, final byte[] payload) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda42
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda41
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$clickedWrapper$8(payload, viewBackendID, elementID, subID);
@@ -483,7 +483,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void switchStatusChangedWrapper(final int viewBackendID, final int elementID, final boolean state) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda43
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda42
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$switchStatusChangedWrapper$10(viewBackendID, elementID, state);
@@ -567,7 +567,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void setPlayerListDialogServerName(final byte[] serverName) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda45
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda44
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$setPlayerListDialogServerName$14(serverName);
@@ -610,7 +610,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void notifySubscribe(final boolean subscribe, final byte[] topic) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda44
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda43
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.lambda$notifySubscribe$17(subscribe, topic);
@@ -799,7 +799,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void setBinderName(final int index_binder, final byte[] name) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda1
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda45
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$setBinderName$24(index_binder, name);
@@ -1192,19 +1192,19 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         });
     }
 
-    public void showPlayerDialog(final int sampDialogID, final int style, final byte[] caption, final byte[] infoText, final byte[] leftButton, final byte[] rightButton) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda41
+    public void showPlayerDialog(final int sampDialogID, final int style, final byte[] caption, final byte[] infoText, final byte[] leftButton, final byte[] rightButton, final byte[] placeholder) {
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$showPlayerDialog$43(sampDialogID, style, caption, infoText, leftButton, rightButton);
+                GTASA.this.lambda$showPlayerDialog$43(sampDialogID, style, caption, infoText, leftButton, rightButton, placeholder);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showPlayerDialog$43(int i, int i2, byte[] bArr, byte[] bArr2, byte[] bArr3, byte[] bArr4) {
+    public /* synthetic */ void lambda$showPlayerDialog$43(int i, int i2, byte[] bArr, byte[] bArr2, byte[] bArr3, byte[] bArr4, byte[] bArr5) {
         destroyDialog();
-        this.uiElements.put(Integer.valueOf(UIElementID.DIALOG.getId()), DialogFactory.INSTANCE.createDialog(this, i, i2, new String(bArr), new String(bArr2), new String(bArr3), new String(bArr4), UIElementID.DIALOG.getId()));
+        this.uiElements.put(Integer.valueOf(UIElementID.DIALOG.getId()), DialogFactory.INSTANCE.createDialog(this, i, i2, new String(bArr), new String(bArr2), new String(bArr3), new String(bArr4), UIElementID.DIALOG.getId(), new String(bArr5)));
     }
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier

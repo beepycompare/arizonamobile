@@ -4,7 +4,7 @@ import io.reactivex.Flowable;
 import io.reactivex.functions.Function;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableFlatMapPublisher<T, U> extends Flowable<U> {
     final int bufferSize;
     final boolean delayErrors;

@@ -1,7 +1,7 @@
 package androidx.media3.extractor;
 
 import androidx.media3.common.util.Util;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class WavUtil {
     public static final int DATA_FOURCC = 1684108385;
     public static final int DS64_FOURCC = 1685272116;

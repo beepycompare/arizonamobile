@@ -6,10 +6,13 @@ import androidx.compose.foundation.text.input.internal.OffsetMappingCalculator;
 import androidx.compose.foundation.text.input.internal.PartialGapBuffer;
 import androidx.compose.runtime.collection.MutableVector;
 import androidx.compose.ui.text.AnnotatedString;
+import androidx.compose.ui.text.ParagraphStyle;
+import androidx.compose.ui.text.SpanStyle;
 import androidx.compose.ui.text.TextRange;
 import androidx.compose.ui.text.TextRangeKt;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Pair;
@@ -17,59 +20,55 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.ranges.RangesKt;
 /* compiled from: TextFieldBuffer.kt */
-@Metadata(d1 = {"\u0000\u0092\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010\r\n\u0002\b\f\n\u0002\u0010\f\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0002\b\u0019\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0005\b\u0007\u0018\u00002\u00060\u0001j\u0002`\u0002:\u0001sB1\b\u0000\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u0012\b\b\u0002\u0010\u0007\u001a\u00020\u0004\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t¢\u0006\u0002\u0010\nJ\u0014\u0010@\u001a\u00060\u0001j\u0002`\u00022\u0006\u0010A\u001a\u00020BH\u0016J\u0016\u0010@\u001a\u00060\u0001j\u0002`\u00022\b\u0010C\u001a\u0004\u0018\u000105H\u0016J&\u0010@\u001a\u00060\u0001j\u0002`\u00022\b\u0010C\u001a\u0004\u0018\u0001052\u0006\u0010D\u001a\u00020.2\u0006\u0010E\u001a\u00020.H\u0016J\u0006\u0010F\u001a\u000205J\u000e\u0010G\u001a\u00020B2\u0006\u0010H\u001a\u00020.J\b\u0010I\u001a\u00020JH\u0002J\r\u0010K\u001a\u00020JH\u0000¢\u0006\u0002\bLJ\r\u0010M\u001a\u00020JH\u0000¢\u0006\u0002\bNJ\r\u0010O\u001a\u00020&H\u0000¢\u0006\u0002\bPJ \u0010Q\u001a\u00020J2\u0006\u0010R\u001a\u00020.2\u0006\u0010S\u001a\u00020.2\u0006\u0010T\u001a\u00020.H\u0002J\u000e\u0010U\u001a\u00020J2\u0006\u0010H\u001a\u00020.J\u000e\u0010V\u001a\u00020J2\u0006\u0010H\u001a\u00020.J\u001e\u0010W\u001a\u00020J2\u0006\u0010D\u001a\u00020.2\u0006\u0010E\u001a\u00020.2\u0006\u0010C\u001a\u000205J9\u0010W\u001a\u00020J2\u0006\u0010D\u001a\u00020.2\u0006\u0010E\u001a\u00020.2\u0006\u0010C\u001a\u0002052\b\b\u0002\u0010X\u001a\u00020.2\b\b\u0002\u0010Y\u001a\u00020.H\u0000¢\u0006\u0002\bZJ \u0010[\u001a\u00020J2\u0006\u0010H\u001a\u00020.2\u0006\u0010\\\u001a\u00020&2\u0006\u0010]\u001a\u00020&H\u0002J\u001a\u0010^\u001a\u00020J2\u0006\u0010_\u001a\u00020\u001fH\u0002ø\u0001\u0000¢\u0006\u0004\b`\u0010=J\u0006\u0010a\u001a\u00020JJ9\u0010b\u001a\u00020J2\u0006\u0010D\u001a\u00020.2\u0006\u0010E\u001a\u00020.2\u001a\b\u0002\u0010c\u001a\u0014\u0012\u000e\u0012\f\u0012\u0004\u0012\u00020\u001a0\u0019j\u0002`e\u0018\u00010dH\u0000¢\u0006\u0002\bfJ*\u0010g\u001a\u00020J2\u0006\u0010h\u001a\u00020)2\u0006\u0010D\u001a\u00020.2\u0006\u0010E\u001a\u00020.H\u0000ø\u0001\u0000¢\u0006\u0004\bi\u0010jJ\u0015\u0010k\u001a\u00020J2\u0006\u0010l\u001a\u000205H\u0000¢\u0006\u0002\bmJ\b\u0010n\u001a\u00020oH\u0016JD\u0010p\u001a\u00020\u00042\b\b\u0002\u0010:\u001a\u00020\u001f2\n\b\u0002\u0010 \u001a\u0004\u0018\u00010\u001f2\u001a\b\u0002\u0010\u001b\u001a\u0014\u0012\u000e\u0012\f\u0012\u0004\u0012\u00020\u001a0\u0019j\u0002`e\u0018\u00010dH\u0000ø\u0001\u0000¢\u0006\u0004\bq\u0010rR\u0010\u0010\u000b\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\u00020\u00068@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u00128FX\u0087\u0004¢\u0006\f\u0012\u0004\b\u0013\u0010\u0014\u001a\u0004\b\u0015\u0010\u0016R:\u0010\u001b\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001a0\u0019\u0018\u00010\u00182\u0014\u0010\u0017\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001a0\u0019\u0018\u00010\u0018@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR.\u0010 \u001a\u0004\u0018\u00010\u001f2\b\u0010\u001e\u001a\u0004\u0018\u00010\u001f@BX\u0080\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\u0011\u0010%\u001a\u00020&8G¢\u0006\u0006\u001a\u0004\b%\u0010'R:\u0010*\u001a\u0010\u0012\u0004\u0012\u00020)\u0012\u0004\u0012\u00020\u001f\u0018\u00010(2\u0014\u0010\u0017\u001a\u0010\u0012\u0004\u0012\u00020)\u0012\u0004\u0012\u00020\u001f\u0018\u00010(@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b+\u0010,R\u0011\u0010-\u001a\u00020.8F¢\u0006\u0006\u001a\u0004\b/\u00100R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u00101\u001a\u00020\u001f8Fø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b2\u00103R\u0011\u00104\u001a\u0002058F¢\u0006\u0006\u001a\u0004\b6\u00107R\u0014\u0010\u0007\u001a\u00020\u0004X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b8\u00109R*\u0010:\u001a\u00020\u001f2\u0006\u0010\u001e\u001a\u00020\u001f8F@FX\u0086\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\f\u001a\u0004\b;\u00103\"\u0004\b<\u0010=R\u0016\u0010>\u001a\u00020\u001fX\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010?\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006t"}, d2 = {"Landroidx/compose/foundation/text/input/TextFieldBuffer;", "Ljava/lang/Appendable;", "Lkotlin/text/Appendable;", "initialValue", "Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "initialChanges", "Landroidx/compose/foundation/text/input/internal/ChangeTracker;", "originalValue", "offsetMappingCalculator", "Landroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;", "(Landroidx/compose/foundation/text/input/TextFieldCharSequence;Landroidx/compose/foundation/text/input/internal/ChangeTracker;Landroidx/compose/foundation/text/input/TextFieldCharSequence;Landroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;)V", "backingChangeTracker", "buffer", "Landroidx/compose/foundation/text/input/internal/PartialGapBuffer;", "changeTracker", "getChangeTracker$foundation_release", "()Landroidx/compose/foundation/text/input/internal/ChangeTracker;", "changes", "Landroidx/compose/foundation/text/input/TextFieldBuffer$ChangeList;", "getChanges$annotations", "()V", "getChanges", "()Landroidx/compose/foundation/text/input/TextFieldBuffer$ChangeList;", "<set-?>", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "composingAnnotations", "getComposingAnnotations$foundation_release", "()Landroidx/compose/runtime/collection/MutableVector;", "value", "Landroidx/compose/ui/text/TextRange;", "composition", "getComposition-MzsxiRA$foundation_release", "()Landroidx/compose/ui/text/TextRange;", "setComposition-OEnZFl4", "(Landroidx/compose/ui/text/TextRange;)V", "hasSelection", "", "()Z", "Lkotlin/Pair;", "Landroidx/compose/foundation/text/input/TextHighlightType;", "highlight", "getHighlight$foundation_release", "()Lkotlin/Pair;", "length", "", "getLength", "()I", "originalSelection", "getOriginalSelection-d9O1mEE", "()J", "originalText", "", "getOriginalText", "()Ljava/lang/CharSequence;", "getOriginalValue$foundation_release", "()Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "selection", "getSelection-d9O1mEE", "setSelection-5zc-tL8", "(J)V", "selectionInChars", "J", "append", "char", "", "text", TtmlNode.START, TtmlNode.END, "asCharSequence", "charAt", FirebaseAnalytics.Param.INDEX, "clearChangeList", "", "clearHighlight", "clearHighlight$foundation_release", "commitComposition", "commitComposition$foundation_release", "hasComposition", "hasComposition$foundation_release", "onTextWillChange", "replaceStart", "replaceEnd", "newLength", "placeCursorAfterCharAt", "placeCursorBeforeCharAt", "replace", "textStart", "textEnd", "replace$foundation_release", "requireValidIndex", "startExclusive", "endExclusive", "requireValidRange", "range", "requireValidRange-5zc-tL8", "revertAllChanges", "setComposition", "annotations", "", "Landroidx/compose/foundation/text/input/PlacedAnnotation;", "setComposition$foundation_release", "setHighlight", "type", "setHighlight-K7f2yys$foundation_release", "(III)V", "setTextIfChanged", "newText", "setTextIfChanged$foundation_release", "toString", "", "toTextFieldCharSequence", "toTextFieldCharSequence-I88jaVs$foundation_release", "(JLandroidx/compose/ui/text/TextRange;Ljava/util/List;)Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "ChangeList", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¨\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\r\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0010\f\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0002\b\u0014\n\u0002\u0010!\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u00002\u00060\u0001j\u0002`\u0002:\u0002\u0086\u0001B3\b\u0000\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u0012\b\b\u0002\u0010\u0007\u001a\u00020\u0004\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t¢\u0006\u0004\b\n\u0010\u000bJ\r\u0010;\u001a\u00020'H\u0000¢\u0006\u0002\b<J\r\u0010=\u001a\u00020>H\u0000¢\u0006\u0002\b?J9\u0010@\u001a\u00020>2\u0006\u0010A\u001a\u00020\u00152\u0006\u0010B\u001a\u00020\u00152\u001a\b\u0002\u0010C\u001a\u0014\u0012\u000e\u0012\f\u0012\u0004\u0012\u00020706j\u0002`E\u0018\u00010DH\u0000¢\u0006\u0002\bFJ'\u0010L\u001a\u00020>2\u0006\u0010M\u001a\u00020H2\u0006\u0010A\u001a\u00020\u00152\u0006\u0010B\u001a\u00020\u0015H\u0000¢\u0006\u0004\bN\u0010OJ\r\u0010P\u001a\u00020>H\u0000¢\u0006\u0002\bQJ\u001e\u0010R\u001a\u00020>2\u0006\u0010A\u001a\u00020\u00152\u0006\u0010B\u001a\u00020\u00152\u0006\u0010S\u001a\u00020\u0019J9\u0010R\u001a\u00020>2\u0006\u0010A\u001a\u00020\u00152\u0006\u0010B\u001a\u00020\u00152\u0006\u0010S\u001a\u00020\u00192\b\b\u0002\u0010T\u001a\u00020\u00152\b\b\u0002\u0010U\u001a\u00020\u0015H\u0000¢\u0006\u0002\bVJ\u0015\u0010W\u001a\u00020>2\u0006\u0010X\u001a\u00020\u0019H\u0000¢\u0006\u0002\bYJ\u0016\u0010Z\u001a\u00060\u0001j\u0002`\u00022\b\u0010S\u001a\u0004\u0018\u00010\u0019H\u0016J&\u0010Z\u001a\u00060\u0001j\u0002`\u00022\b\u0010S\u001a\u0004\u0018\u00010\u00192\u0006\u0010A\u001a\u00020\u00152\u0006\u0010B\u001a\u00020\u0015H\u0016J\u0014\u0010Z\u001a\u00060\u0001j\u0002`\u00022\u0006\u0010[\u001a\u00020\\H\u0016J \u0010]\u001a\u00020>2\u0006\u0010^\u001a\u00020\u00152\u0006\u0010_\u001a\u00020\u00152\u0006\u0010`\u001a\u00020\u0015H\u0002J\u000e\u0010a\u001a\u00020\\2\u0006\u0010b\u001a\u00020\u0015J\b\u0010c\u001a\u00020dH\u0016J\u0006\u0010e\u001a\u00020\u0019J\b\u0010f\u001a\u00020>H\u0002J\u0006\u0010g\u001a\u00020>J\u000e\u0010h\u001a\u00020>2\u0006\u0010b\u001a\u00020\u0015J\u000e\u0010i\u001a\u00020>2\u0006\u0010b\u001a\u00020\u0015J]\u0010j\u001a\u00020\u00042\b\b\u0002\u0010,\u001a\u00020\u001d2\n\b\u0002\u00100\u001a\u0004\u0018\u00010\u001d2\u001a\b\u0002\u00108\u001a\u0014\u0012\u000e\u0012\f\u0012\u0004\u0012\u00020706j\u0002`E\u0018\u00010D2\u001a\b\u0002\u0010k\u001a\u0014\u0012\u000e\u0012\f\u0012\u0004\u0012\u00020706j\u0002`E\u0018\u00010DH\u0000¢\u0006\u0004\bl\u0010mJ \u0010n\u001a\u00020>2\u0006\u0010b\u001a\u00020\u00152\u0006\u0010o\u001a\u00020'2\u0006\u0010p\u001a\u00020'H\u0002J\u0017\u0010q\u001a\u00020>2\u0006\u0010r\u001a\u00020\u001dH\u0002¢\u0006\u0004\bs\u0010/J&\u0010~\u001a\u00020>2\u0006\u0010\u007f\u001a\u0002072\u0006\u0010A\u001a\u00020\u00152\u0006\u0010B\u001a\u00020\u0015H\u0000¢\u0006\u0003\b\u0080\u0001J!\u0010\u0081\u0001\u001a\u00020>2\b\u0010\u0082\u0001\u001a\u00030\u0083\u00012\u0006\u0010A\u001a\u00020\u00152\u0006\u0010B\u001a\u00020\u0015J!\u0010\u0081\u0001\u001a\u00020>2\b\u0010\u0084\u0001\u001a\u00030\u0085\u00012\u0006\u0010A\u001a\u00020\u00152\u0006\u0010B\u001a\u00020\u0015R\u0014\u0010\u0007\u001a\u00020\u0004X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\u00020\u00068@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013R\u0011\u0010\u0014\u001a\u00020\u00158F¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017R\u0011\u0010\u0018\u001a\u00020\u00198F¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u0011\u0010\u001c\u001a\u00020\u001d8F¢\u0006\u0006\u001a\u0004\b\u001e\u0010\u001fR\u001a\u0010 \u001a\u00020!8FX\u0087\u0004¢\u0006\f\u0012\u0004\b\"\u0010#\u001a\u0004\b$\u0010%R\u0011\u0010&\u001a\u00020'8G¢\u0006\u0006\u001a\u0004\b&\u0010(R\u0010\u0010)\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0004\n\u0002\u0010*R$\u0010,\u001a\u00020\u001d2\u0006\u0010+\u001a\u00020\u001d8F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b-\u0010\u001f\"\u0004\b.\u0010/R(\u00100\u001a\u0004\u0018\u00010\u001d2\b\u0010+\u001a\u0004\u0018\u00010\u001d@BX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b1\u00102\"\u0004\b3\u00104R:\u00108\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020706\u0018\u0001052\u0014\u0010+\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020706\u0018\u000105@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b9\u0010:R:\u0010I\u001a\u0010\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020\u001d\u0018\u00010G2\u0014\u0010+\u001a\u0010\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020\u001d\u0018\u00010G@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\bJ\u0010KR\u001a\u0010t\u001a\u00020'X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bu\u0010(\"\u0004\bv\u0010wR,\u0010x\u001a\u0014\u0012\u000e\u0012\f\u0012\u0004\u0012\u00020706j\u0002`E\u0018\u00010yX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bz\u0010{\"\u0004\b|\u0010}¨\u0006\u0087\u0001"}, d2 = {"Landroidx/compose/foundation/text/input/TextFieldBuffer;", "Ljava/lang/Appendable;", "Lkotlin/text/Appendable;", "initialValue", "Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "initialChanges", "Landroidx/compose/foundation/text/input/internal/ChangeTracker;", "originalValue", "offsetMappingCalculator", "Landroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;", "<init>", "(Landroidx/compose/foundation/text/input/TextFieldCharSequence;Landroidx/compose/foundation/text/input/internal/ChangeTracker;Landroidx/compose/foundation/text/input/TextFieldCharSequence;Landroidx/compose/foundation/text/input/internal/OffsetMappingCalculator;)V", "getOriginalValue$foundation_release", "()Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "buffer", "Landroidx/compose/foundation/text/input/internal/PartialGapBuffer;", "backingChangeTracker", "changeTracker", "getChangeTracker$foundation_release", "()Landroidx/compose/foundation/text/input/internal/ChangeTracker;", "length", "", "getLength", "()I", "originalText", "", "getOriginalText", "()Ljava/lang/CharSequence;", "originalSelection", "Landroidx/compose/ui/text/TextRange;", "getOriginalSelection-d9O1mEE", "()J", "changes", "Landroidx/compose/foundation/text/input/TextFieldBuffer$ChangeList;", "getChanges$annotations", "()V", "getChanges", "()Landroidx/compose/foundation/text/input/TextFieldBuffer$ChangeList;", "hasSelection", "", "()Z", "selectionInChars", "J", "value", "selection", "getSelection-d9O1mEE", "setSelection-5zc-tL8", "(J)V", "composition", "getComposition-MzsxiRA$foundation_release", "()Landroidx/compose/ui/text/TextRange;", "setComposition-OEnZFl4", "(Landroidx/compose/ui/text/TextRange;)V", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "composingAnnotations", "getComposingAnnotations$foundation_release", "()Landroidx/compose/runtime/collection/MutableVector;", "hasComposition", "hasComposition$foundation_release", "commitComposition", "", "commitComposition$foundation_release", "setComposition", TtmlNode.START, TtmlNode.END, "annotations", "", "Landroidx/compose/foundation/text/input/PlacedAnnotation;", "setComposition$foundation_release", "Lkotlin/Pair;", "Landroidx/compose/foundation/text/input/TextHighlightType;", "highlight", "getHighlight$foundation_release", "()Lkotlin/Pair;", "setHighlight", "type", "setHighlight-K7f2yys$foundation_release", "(III)V", "clearHighlight", "clearHighlight$foundation_release", "replace", "text", "textStart", "textEnd", "replace$foundation_release", "setTextIfChanged", "newText", "setTextIfChanged$foundation_release", "append", "char", "", "onTextWillChange", "replaceStart", "replaceEnd", "newLength", "charAt", FirebaseAnalytics.Param.INDEX, "toString", "", "asCharSequence", "clearChangeList", "revertAllChanges", "placeCursorBeforeCharAt", "placeCursorAfterCharAt", "toTextFieldCharSequence", "outputAnnotations", "toTextFieldCharSequence-wFTz33Y$foundation_release", "(JLandroidx/compose/ui/text/TextRange;Ljava/util/List;Ljava/util/List;)Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "requireValidIndex", "startExclusive", "endExclusive", "requireValidRange", "range", "requireValidRange-5zc-tL8", "canCallAddStyle", "getCanCallAddStyle$foundation_release", "setCanCallAddStyle$foundation_release", "(Z)V", "outputTransformationAnnotations", "", "getOutputTransformationAnnotations$foundation_release", "()Ljava/util/List;", "setOutputTransformationAnnotations$foundation_release", "(Ljava/util/List;)V", "addAnnotation", "annotation", "addAnnotation$foundation_release", "addStyle", "spanStyle", "Landroidx/compose/ui/text/SpanStyle;", "paragraphStyle", "Landroidx/compose/ui/text/ParagraphStyle;", "ChangeList", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextFieldBuffer implements Appendable {
     public static final int $stable = 8;
     private ChangeTracker backingChangeTracker;
     private final PartialGapBuffer buffer;
+    private boolean canCallAddStyle;
     private MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> composingAnnotations;
     private TextRange composition;
     private Pair<TextHighlightType, TextRange> highlight;
     private final OffsetMappingCalculator offsetMappingCalculator;
     private final TextFieldCharSequence originalValue;
+    private List<AnnotatedString.Range<AnnotatedString.Annotation>> outputTransformationAnnotations;
     private long selectionInChars;
 
     /* compiled from: TextFieldBuffer.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\bf\u0018\u00002\u00020\u0001J\u001d\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0003H&ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b\t\u0010\nJ\u001d\u0010\u000b\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0003H&ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b\f\u0010\nR\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005ø\u0001\u0002\u0082\u0002\u0011\n\u0002\b!\n\u0005\b¡\u001e0\u0001\n\u0004\b!0\u0001¨\u0006\rÀ\u0006\u0001"}, d2 = {"Landroidx/compose/foundation/text/input/TextFieldBuffer$ChangeList;", "", "changeCount", "", "getChangeCount", "()I", "getOriginalRange", "Landroidx/compose/ui/text/TextRange;", "changeIndex", "getOriginalRange--jx7JFs", "(I)J", "getRange", "getRange--jx7JFs", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\bf\u0018\u00002\u00020\u0001J\u0017\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0003H&¢\u0006\u0004\b\t\u0010\nJ\u0017\u0010\u000b\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0003H&¢\u0006\u0004\b\f\u0010\nR\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\rÀ\u0006\u0001"}, d2 = {"Landroidx/compose/foundation/text/input/TextFieldBuffer$ChangeList;", "", "changeCount", "", "getChangeCount", "()I", "getRange", "Landroidx/compose/ui/text/TextRange;", "changeIndex", "getRange--jx7JFs", "(I)J", "getOriginalRange", "getOriginalRange--jx7JFs", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public interface ChangeList {
         int getChangeCount();
 
         /* renamed from: getOriginalRange--jx7JFs  reason: not valid java name */
-        long mo1199getOriginalRangejx7JFs(int i);
+        long mo1432getOriginalRangejx7JFs(int i);
 
         /* renamed from: getRange--jx7JFs  reason: not valid java name */
-        long mo1200getRangejx7JFs(int i);
+        long mo1433getRangejx7JFs(int i);
     }
 
     public static /* synthetic */ void getChanges$annotations() {
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public TextFieldBuffer(final TextFieldCharSequence textFieldCharSequence, ChangeTracker changeTracker, TextFieldCharSequence textFieldCharSequence2, OffsetMappingCalculator offsetMappingCalculator) {
         this.originalValue = textFieldCharSequence2;
         this.offsetMappingCalculator = offsetMappingCalculator;
         this.buffer = new PartialGapBuffer(textFieldCharSequence);
         MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = null;
         this.backingChangeTracker = changeTracker != null ? new ChangeTracker(changeTracker) : null;
-        this.selectionInChars = textFieldCharSequence.m1203getSelectiond9O1mEE();
-        this.composition = textFieldCharSequence.m1202getCompositionMzsxiRA();
+        this.selectionInChars = textFieldCharSequence.m1436getSelectiond9O1mEE();
+        this.composition = textFieldCharSequence.m1435getCompositionMzsxiRA();
         List<AnnotatedString.Range<AnnotatedString.Annotation>> composingAnnotations = textFieldCharSequence.getComposingAnnotations();
         if (composingAnnotations != null && !composingAnnotations.isEmpty()) {
             int size = textFieldCharSequence.getComposingAnnotations().size();
-            Function1<Integer, AnnotatedString.Range<AnnotatedString.Annotation>> function1 = new Function1<Integer, AnnotatedString.Range<AnnotatedString.Annotation>>() { // from class: androidx.compose.foundation.text.input.TextFieldBuffer$composingAnnotations$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(1);
-                }
-
+            Function1 function1 = new Function1() { // from class: androidx.compose.foundation.text.input.TextFieldBuffer$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ AnnotatedString.Range<AnnotatedString.Annotation> invoke(Integer num) {
-                    return invoke(num.intValue());
-                }
-
-                public final AnnotatedString.Range<AnnotatedString.Annotation> invoke(int i) {
-                    return TextFieldCharSequence.this.getComposingAnnotations().get(i);
+                public final Object invoke(Object obj) {
+                    AnnotatedString.Range composingAnnotations$lambda$2;
+                    composingAnnotations$lambda$2 = TextFieldBuffer.composingAnnotations$lambda$2(TextFieldCharSequence.this, ((Integer) obj).intValue());
+                    return composingAnnotations$lambda$2;
                 }
             };
             AnnotatedString.Range[] rangeArr = new AnnotatedString.Range[size];
@@ -79,6 +78,7 @@ public final class TextFieldBuffer implements Appendable {
             mutableVector = new MutableVector<>(rangeArr, size);
         }
         this.composingAnnotations = mutableVector;
+        this.canCallAddStyle = this.offsetMappingCalculator != null;
     }
 
     public /* synthetic */ TextFieldBuffer(TextFieldCharSequence textFieldCharSequence, ChangeTracker changeTracker, TextFieldCharSequence textFieldCharSequence2, OffsetMappingCalculator offsetMappingCalculator, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -108,8 +108,8 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     /* renamed from: getOriginalSelection-d9O1mEE  reason: not valid java name */
-    public final long m1194getOriginalSelectiond9O1mEE() {
-        return this.originalValue.m1203getSelectiond9O1mEE();
+    public final long m1427getOriginalSelectiond9O1mEE() {
+        return this.originalValue.m1436getSelectiond9O1mEE();
     }
 
     public final ChangeList getChanges() {
@@ -117,29 +117,29 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     public final boolean hasSelection() {
-        return !TextRange.m6141getCollapsedimpl(m1195getSelectiond9O1mEE());
+        return !TextRange.m6707getCollapsedimpl(m1428getSelectiond9O1mEE());
     }
 
     /* renamed from: getSelection-d9O1mEE  reason: not valid java name */
-    public final long m1195getSelectiond9O1mEE() {
+    public final long m1428getSelectiond9O1mEE() {
         return this.selectionInChars;
     }
 
     /* renamed from: setSelection-5zc-tL8  reason: not valid java name */
-    public final void m1197setSelection5zctL8(long j) {
-        m1190requireValidRange5zctL8(j);
+    public final void m1430setSelection5zctL8(long j) {
+        m1423requireValidRange5zctL8(j);
         this.selectionInChars = j;
         this.highlight = null;
     }
 
     /* renamed from: getComposition-MzsxiRA$foundation_release  reason: not valid java name */
-    public final TextRange m1193getCompositionMzsxiRA$foundation_release() {
+    public final TextRange m1426getCompositionMzsxiRA$foundation_release() {
         return this.composition;
     }
 
     /* renamed from: setComposition-OEnZFl4  reason: not valid java name */
-    private final void m1191setCompositionOEnZFl4(TextRange textRange) {
-        if (textRange == null || TextRange.m6141getCollapsedimpl(textRange.m6151unboximpl())) {
+    private final void m1424setCompositionOEnZFl4(TextRange textRange) {
+        if (textRange == null || TextRange.m6707getCollapsedimpl(textRange.m6717unboximpl())) {
             this.composition = null;
             MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = this.composingAnnotations;
             if (mutableVector != null) {
@@ -155,12 +155,17 @@ public final class TextFieldBuffer implements Appendable {
         return this.composingAnnotations;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final AnnotatedString.Range composingAnnotations$lambda$2(TextFieldCharSequence textFieldCharSequence, int i) {
+        return textFieldCharSequence.getComposingAnnotations().get(i);
+    }
+
     public final boolean hasComposition$foundation_release() {
         return this.composition != null;
     }
 
     public final void commitComposition$foundation_release() {
-        m1191setCompositionOEnZFl4(null);
+        m1424setCompositionOEnZFl4(null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -181,7 +186,7 @@ public final class TextFieldBuffer implements Appendable {
         if (i >= i2) {
             throw new IllegalArgumentException("Do not set reversed or empty range: " + i + " > " + i2);
         }
-        m1191setCompositionOEnZFl4(TextRange.m6135boximpl(TextRangeKt.TextRange(i, i2)));
+        m1424setCompositionOEnZFl4(TextRange.m6701boximpl(TextRangeKt.TextRange(i, i2)));
         MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = this.composingAnnotations;
         if (mutableVector != null) {
             mutableVector.clear();
@@ -208,11 +213,11 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     /* renamed from: setHighlight-K7f2yys$foundation_release  reason: not valid java name */
-    public final void m1196setHighlightK7f2yys$foundation_release(int i, int i2, int i3) {
+    public final void m1429setHighlightK7f2yys$foundation_release(int i, int i2, int i3) {
         if (i2 >= i3) {
             throw new IllegalArgumentException("Do not set reversed or empty range: " + i2 + " > " + i3);
         }
-        this.highlight = new Pair<>(TextHighlightType.m1209boximpl(i), TextRange.m6135boximpl(TextRangeKt.TextRange(RangesKt.coerceIn(i2, 0, getLength()), RangesKt.coerceIn(i3, 0, getLength()))));
+        this.highlight = new Pair<>(TextHighlightType.m1443boximpl(i), TextRange.m6701boximpl(TextRangeKt.TextRange(RangesKt.coerceIn(i2, 0, getLength()), RangesKt.coerceIn(i3, 0, getLength()))));
     }
 
     public final void clearHighlight$foundation_release() {
@@ -326,7 +331,7 @@ public final class TextFieldBuffer implements Appendable {
         if (offsetMappingCalculator != null) {
             offsetMappingCalculator.recordEditOperation(i, i2, i3);
         }
-        this.selectionInChars = TextFieldBufferKt.m1201adjustTextRangevJH6DeI(m1195getSelectiond9O1mEE(), i, i2, i3);
+        this.selectionInChars = TextFieldBufferKt.m1434adjustTextRangevJH6DeI(m1428getSelectiond9O1mEE(), i, i2, i3);
     }
 
     public final char charAt(int i) {
@@ -347,7 +352,7 @@ public final class TextFieldBuffer implements Appendable {
 
     public final void revertAllChanges() {
         replace(0, getLength(), this.originalValue.toString());
-        m1197setSelection5zctL8(this.originalValue.m1203getSelectiond9O1mEE());
+        m1430setSelection5zctL8(this.originalValue.m1436getSelectiond9O1mEE());
         clearChangeList();
     }
 
@@ -361,37 +366,27 @@ public final class TextFieldBuffer implements Appendable {
         this.selectionInChars = TextRangeKt.TextRange(RangesKt.coerceAtMost(i + 1, getLength()));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0024, code lost:
-        if (r6 == false) goto L16;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* renamed from: toTextFieldCharSequence-I88jaVs$foundation_release$default  reason: not valid java name */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static /* synthetic */ TextFieldCharSequence m1192toTextFieldCharSequenceI88jaVs$foundation_release$default(TextFieldBuffer textFieldBuffer, long j, TextRange textRange, List list, int i, Object obj) {
+    /* renamed from: toTextFieldCharSequence-wFTz33Y$foundation_release$default  reason: not valid java name */
+    public static /* synthetic */ TextFieldCharSequence m1425toTextFieldCharSequencewFTz33Y$foundation_release$default(TextFieldBuffer textFieldBuffer, long j, TextRange textRange, List list, List list2, int i, Object obj) {
         List<AnnotatedString.Range<AnnotatedString.Annotation>> asMutableList;
         if ((i & 1) != 0) {
-            j = textFieldBuffer.m1195getSelectiond9O1mEE();
+            j = textFieldBuffer.m1428getSelectiond9O1mEE();
         }
+        long j2 = j;
         if ((i & 2) != 0) {
             textRange = textFieldBuffer.composition;
         }
-        List<AnnotatedString.Range<AnnotatedString.Annotation>> list2 = list;
+        TextRange textRange2 = textRange;
         if ((i & 4) != 0) {
             MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = textFieldBuffer.composingAnnotations;
-            if (mutableVector != null && (asMutableList = mutableVector.asMutableList()) != null) {
-                boolean isEmpty = asMutableList.isEmpty();
-                list2 = asMutableList;
-            }
-            list2 = null;
+            list = (mutableVector == null || (asMutableList = mutableVector.asMutableList()) == null || asMutableList.isEmpty()) ? null : asMutableList;
         }
-        return textFieldBuffer.m1198toTextFieldCharSequenceI88jaVs$foundation_release(j, textRange, list2);
+        return textFieldBuffer.m1431toTextFieldCharSequencewFTz33Y$foundation_release(j2, textRange2, list, (i & 8) != 0 ? null : list2);
     }
 
-    /* renamed from: toTextFieldCharSequence-I88jaVs$foundation_release  reason: not valid java name */
-    public final TextFieldCharSequence m1198toTextFieldCharSequenceI88jaVs$foundation_release(long j, TextRange textRange, List<AnnotatedString.Range<AnnotatedString.Annotation>> list) {
-        return new TextFieldCharSequence(this.buffer.toString(), j, textRange, null, list, 8, null);
+    /* renamed from: toTextFieldCharSequence-wFTz33Y$foundation_release  reason: not valid java name */
+    public final TextFieldCharSequence m1431toTextFieldCharSequencewFTz33Y$foundation_release(long j, TextRange textRange, List<AnnotatedString.Range<AnnotatedString.Annotation>> list, List<AnnotatedString.Range<AnnotatedString.Annotation>> list2) {
+        return new TextFieldCharSequence(this.buffer.toString(), j, textRange, null, list, list2, 8, null);
     }
 
     private final void requireValidIndex(int i, boolean z, boolean z2) {
@@ -408,11 +403,48 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     /* renamed from: requireValidRange-5zc-tL8  reason: not valid java name */
-    private final void m1190requireValidRange5zctL8(long j) {
+    private final void m1423requireValidRange5zctL8(long j) {
         long TextRange = TextRangeKt.TextRange(0, getLength());
-        if (TextRange.m6137contains5zctL8(TextRange, j)) {
+        if (TextRange.m6703contains5zctL8(TextRange, j)) {
             return;
         }
-        InlineClassHelperKt.throwIllegalArgumentException("Expected " + ((Object) TextRange.m6150toStringimpl(j)) + " to be in " + ((Object) TextRange.m6150toStringimpl(TextRange)));
+        InlineClassHelperKt.throwIllegalArgumentException("Expected " + ((Object) TextRange.m6716toStringimpl(j)) + " to be in " + ((Object) TextRange.m6716toStringimpl(TextRange)));
+    }
+
+    public final boolean getCanCallAddStyle$foundation_release() {
+        return this.canCallAddStyle;
+    }
+
+    public final void setCanCallAddStyle$foundation_release(boolean z) {
+        this.canCallAddStyle = z;
+    }
+
+    public final List<AnnotatedString.Range<AnnotatedString.Annotation>> getOutputTransformationAnnotations$foundation_release() {
+        return this.outputTransformationAnnotations;
+    }
+
+    public final void setOutputTransformationAnnotations$foundation_release(List<AnnotatedString.Range<AnnotatedString.Annotation>> list) {
+        this.outputTransformationAnnotations = list;
+    }
+
+    public final void addAnnotation$foundation_release(AnnotatedString.Annotation annotation, int i, int i2) {
+        if (!this.canCallAddStyle) {
+            InlineClassHelperKt.throwIllegalStateException("You can add styling to a [TextFieldBuffer] only from an [OutputTransformation].");
+        }
+        if (this.outputTransformationAnnotations == null) {
+            this.outputTransformationAnnotations = new ArrayList();
+        }
+        List<AnnotatedString.Range<AnnotatedString.Annotation>> list = this.outputTransformationAnnotations;
+        if (list != null) {
+            list.add(new AnnotatedString.Range<>(annotation, i, i2));
+        }
+    }
+
+    public final void addStyle(SpanStyle spanStyle, int i, int i2) {
+        addAnnotation$foundation_release(spanStyle, i, i2);
+    }
+
+    public final void addStyle(ParagraphStyle paragraphStyle, int i, int i2) {
+        addAnnotation$foundation_release(paragraphStyle, i, i2);
     }
 }

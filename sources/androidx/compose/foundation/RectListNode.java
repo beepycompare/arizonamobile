@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.math.MathKt;
 /* compiled from: RectListNode.android.kt */
-@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0007\b \u0018\u00002\u00020\u00012\u00020\u0002B\u001b\u0012\u0014\u0010\u0003\u001a\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u0004¢\u0006\u0002\u0010\u0007J\u0018\u0010\u0011\u001a\u00020\t2\u0006\u0010\u0012\u001a\u00020\u00052\u0006\u0010\u0003\u001a\u00020\u0006H\u0002J\u000e\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\t0\u0014H&J\b\u0010\u0015\u001a\u00020\u0016H\u0016J\u0010\u0010\u0017\u001a\u00020\u00162\u0006\u0010\u0018\u001a\u00020\u0005H\u0016J\u0012\u0010\u0019\u001a\u00020\u00162\b\u0010\u001a\u001a\u0004\u0018\u00010\tH\u0002J\u0016\u0010\u001b\u001a\u00020\u00162\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\t0\u0014H&R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R(\u0010\u0003\u001a\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u0004X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\u0007R\u0014\u0010\r\u001a\u00020\u000e8DX\u0084\u0004¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u001d"}, d2 = {"Landroidx/compose/foundation/RectListNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/GlobalPositionAwareModifierNode;", "rect", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/LayoutCoordinates;", "Landroidx/compose/ui/geometry/Rect;", "(Lkotlin/jvm/functions/Function1;)V", "androidRect", "Landroid/graphics/Rect;", "getRect", "()Lkotlin/jvm/functions/Function1;", "setRect", "view", "Landroid/view/View;", "getView", "()Landroid/view/View;", "calcBounds", "layoutCoordinates", "currentRects", "Landroidx/compose/runtime/collection/MutableVector;", "onDetach", "", "onGloballyPositioned", "coordinates", "replaceRect", "newRect", "updateRects", "rects", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\b!\u0018\u00002\u00020\u00012\u00020\u0002B\u001d\u0012\u0014\u0010\u0003\u001a\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0005H\u0016J\b\u0010\u0015\u001a\u00020\u0013H\u0016J\u000e\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\r0\u0017H&J\u0016\u0010\u0018\u001a\u00020\u00132\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\r0\u0017H&J\u0012\u0010\u001a\u001a\u00020\u00132\b\u0010\u001b\u001a\u0004\u0018\u00010\rH\u0002J\u0018\u0010\u001c\u001a\u00020\r2\u0006\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u0003\u001a\u00020\u0006H\u0002R(\u0010\u0003\u001a\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u0004X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\bR\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\u00020\u000f8DX\u0084\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0011¨\u0006\u001e"}, d2 = {"Landroidx/compose/foundation/RectListNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/GlobalPositionAwareModifierNode;", "rect", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/LayoutCoordinates;", "Landroidx/compose/ui/geometry/Rect;", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getRect", "()Lkotlin/jvm/functions/Function1;", "setRect", "androidRect", "Landroid/graphics/Rect;", "view", "Landroid/view/View;", "getView", "()Landroid/view/View;", "onGloballyPositioned", "", "coordinates", "onDetach", "currentRects", "Landroidx/compose/runtime/collection/MutableVector;", "updateRects", "rects", "replaceRect", "newRect", "calcBounds", "layoutCoordinates", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public abstract class RectListNode extends Modifier.Node implements GlobalPositionAwareModifierNode {
     public static final int $stable = 8;
@@ -77,18 +77,18 @@ public abstract class RectListNode extends Modifier.Node implements GlobalPositi
 
     private final Rect calcBounds(LayoutCoordinates layoutCoordinates, androidx.compose.ui.geometry.Rect rect) {
         LayoutCoordinates findRootCoordinates = LayoutCoordinatesKt.findRootCoordinates(layoutCoordinates);
-        long mo5447localPositionOfR5De75A = findRootCoordinates.mo5447localPositionOfR5De75A(layoutCoordinates, rect.m3872getTopLeftF1C5BW0());
-        long mo5447localPositionOfR5De75A2 = findRootCoordinates.mo5447localPositionOfR5De75A(layoutCoordinates, rect.m3873getTopRightF1C5BW0());
-        long mo5447localPositionOfR5De75A3 = findRootCoordinates.mo5447localPositionOfR5De75A(layoutCoordinates, rect.m3865getBottomLeftF1C5BW0());
-        long mo5447localPositionOfR5De75A4 = findRootCoordinates.mo5447localPositionOfR5De75A(layoutCoordinates, rect.m3866getBottomRightF1C5BW0());
-        int i = (int) (mo5447localPositionOfR5De75A >> 32);
-        int i2 = (int) (mo5447localPositionOfR5De75A2 >> 32);
-        int i3 = (int) (mo5447localPositionOfR5De75A3 >> 32);
-        int i4 = (int) (mo5447localPositionOfR5De75A4 >> 32);
-        int i5 = (int) (mo5447localPositionOfR5De75A & 4294967295L);
-        int i6 = (int) (mo5447localPositionOfR5De75A2 & 4294967295L);
-        int i7 = (int) (mo5447localPositionOfR5De75A3 & 4294967295L);
-        int i8 = (int) (mo5447localPositionOfR5De75A4 & 4294967295L);
+        long mo5963localPositionOfR5De75A = findRootCoordinates.mo5963localPositionOfR5De75A(layoutCoordinates, rect.m4328getTopLeftF1C5BW0());
+        long mo5963localPositionOfR5De75A2 = findRootCoordinates.mo5963localPositionOfR5De75A(layoutCoordinates, rect.m4329getTopRightF1C5BW0());
+        long mo5963localPositionOfR5De75A3 = findRootCoordinates.mo5963localPositionOfR5De75A(layoutCoordinates, rect.m4321getBottomLeftF1C5BW0());
+        long mo5963localPositionOfR5De75A4 = findRootCoordinates.mo5963localPositionOfR5De75A(layoutCoordinates, rect.m4322getBottomRightF1C5BW0());
+        int i = (int) (mo5963localPositionOfR5De75A >> 32);
+        int i2 = (int) (mo5963localPositionOfR5De75A2 >> 32);
+        int i3 = (int) (mo5963localPositionOfR5De75A3 >> 32);
+        int i4 = (int) (mo5963localPositionOfR5De75A4 >> 32);
+        int i5 = (int) (mo5963localPositionOfR5De75A & 4294967295L);
+        int i6 = (int) (mo5963localPositionOfR5De75A2 & 4294967295L);
+        int i7 = (int) (mo5963localPositionOfR5De75A3 & 4294967295L);
+        int i8 = (int) (mo5963localPositionOfR5De75A4 & 4294967295L);
         return new Rect(MathKt.roundToInt(ComparisonsKt.minOf(Float.intBitsToFloat(i), Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i4))), MathKt.roundToInt(ComparisonsKt.minOf(Float.intBitsToFloat(i5), Float.intBitsToFloat(i6), Float.intBitsToFloat(i7), Float.intBitsToFloat(i8))), MathKt.roundToInt(ComparisonsKt.maxOf(Float.intBitsToFloat(i), Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i4))), MathKt.roundToInt(ComparisonsKt.maxOf(Float.intBitsToFloat(i5), Float.intBitsToFloat(i6), Float.intBitsToFloat(i7), Float.intBitsToFloat(i8))));
     }
 }

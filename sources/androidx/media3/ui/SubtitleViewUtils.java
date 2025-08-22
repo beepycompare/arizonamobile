@@ -9,7 +9,7 @@ import androidx.media3.common.text.Cue;
 import androidx.media3.common.text.LanguageFeatureSpan;
 import androidx.media3.common.util.Assertions;
 import com.google.common.base.Predicate;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class SubtitleViewUtils {
     public static float resolveTextSize(int i, float f, int i2, int i3) {
         float f2;

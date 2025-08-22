@@ -3,73 +3,145 @@ package androidx.compose.foundation;
 import android.view.KeyEvent;
 import androidx.compose.foundation.gestures.TapGestureDetectorKt;
 import androidx.compose.foundation.interaction.MutableInteractionSource;
-import androidx.compose.ui.geometry.Offset;
-import androidx.compose.ui.input.pointer.PointerInputScope;
+import androidx.compose.ui.geometry.Size;
+import androidx.compose.ui.input.pointer.PointerEvent;
+import androidx.compose.ui.input.pointer.PointerEventKt;
+import androidx.compose.ui.input.pointer.PointerEventPass;
+import androidx.compose.ui.input.pointer.PointerInputChange;
+import androidx.compose.ui.input.pointer.SuspendingPointerInputFilterKt;
+import androidx.compose.ui.input.pointer.SuspendingPointerInputModifierNode;
+import androidx.compose.ui.node.CompositionLocalConsumerModifierNodeKt;
+import androidx.compose.ui.node.DelegatableNodeKt;
+import androidx.compose.ui.platform.CompositionLocalsKt;
+import androidx.compose.ui.platform.ViewConfiguration;
 import androidx.compose.ui.semantics.Role;
 import androidx.core.app.NotificationCompat;
+import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function0;
-import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Clickable.kt */
-@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0010\u0018\u00002\u00020\u0001BC\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\t\u0012\b\u0010\n\u001a\u0004\u0018\u00010\u000b\u0012\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r¢\u0006\u0002\u0010\u000fJ\u001a\u0010\u0010\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0012H\u0004ø\u0001\u0000¢\u0006\u0004\b\u0013\u0010\u0014J\u001a\u0010\u0015\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0012H\u0004ø\u0001\u0000¢\u0006\u0004\b\u0016\u0010\u0014JL\u0010\u0017\u001a\u00020\u000e2\b\u0010\u0002\u001a\u0004\u0018\u00010\u00032\b\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000b2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rø\u0001\u0000¢\u0006\u0002\b\u0018J\u0012\u0010\u0019\u001a\u00020\u000e*\u00020\u001aH\u0096@¢\u0006\u0002\u0010\u001b\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u001c"}, d2 = {"Landroidx/compose/foundation/ClickableNode;", "Landroidx/compose/foundation/AbstractClickableNode;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "indicationNodeFactory", "Landroidx/compose/foundation/IndicationNodeFactory;", "enabled", "", "onClickLabel", "", "role", "Landroidx/compose/ui/semantics/Role;", "onClick", "Lkotlin/Function0;", "", "(Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/foundation/IndicationNodeFactory;ZLjava/lang/String;Landroidx/compose/ui/semantics/Role;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "onClickKeyDownEvent", NotificationCompat.CATEGORY_EVENT, "Landroidx/compose/ui/input/key/KeyEvent;", "onClickKeyDownEvent-ZmokQxo", "(Landroid/view/KeyEvent;)Z", "onClickKeyUpEvent", "onClickKeyUpEvent-ZmokQxo", "update", "update-QzZPfjk", "clickPointerInput", "Landroidx/compose/ui/input/pointer/PointerInputScope;", "(Landroidx/compose/ui/input/pointer/PointerInputScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0011\u0018\u00002\u00020\u0001BM\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\b\u0010\t\u001a\u0004\u0018\u00010\n\u0012\b\u0010\u000b\u001a\u0004\u0018\u00010\f\u0012\f\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000e¢\u0006\u0004\b\u0010\u0010\u0011J\n\u0010\u0015\u001a\u0004\u0018\u00010\u0016H\u0016J\u0017\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aH\u0002¢\u0006\u0004\b\u001b\u0010\u001cJ'\u0010\u001f\u001a\u00020\u000f2\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u001aH\u0016¢\u0006\u0004\b%\u0010&J\b\u0010'\u001a\u00020\u000fH\u0016JQ\u0010(\u001a\u00020\u000f2\b\u0010\u0002\u001a\u0004\u0018\u00010\u00032\b\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\b\u0010\t\u001a\u0004\u0018\u00010\n2\b\u0010\u000b\u001a\u0004\u0018\u00010\f2\f\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000e¢\u0006\u0002\b)J\u0017\u0010*\u001a\u00020\u00072\u0006\u0010+\u001a\u00020,H\u0004¢\u0006\u0004\b-\u0010.J\u0017\u0010/\u001a\u00020\u00072\u0006\u0010+\u001a\u00020,H\u0004¢\u0006\u0004\b0\u0010.R\u0014\u0010\u0012\u001a\u00020\u0007X\u0082\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u0013\u0010\u0014R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u00061"}, d2 = {"Landroidx/compose/foundation/ClickableNode;", "Landroidx/compose/foundation/AbstractClickableNode;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "indicationNodeFactory", "Landroidx/compose/foundation/IndicationNodeFactory;", "useLocalIndication", "", "enabled", "onClickLabel", "", "role", "Landroidx/compose/ui/semantics/Role;", "onClick", "Lkotlin/Function0;", "", "<init>", "(Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/foundation/IndicationNodeFactory;ZZLjava/lang/String;Landroidx/compose/ui/semantics/Role;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "isSuspendingPointerInputEnabled", "isSuspendingPointerInputEnabled$annotations", "()V", "createPointerInputNodeIfNeeded", "Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNode;", "getExtendedTouchPadding", "Landroidx/compose/ui/geometry/Size;", "size", "Landroidx/compose/ui/unit/IntSize;", "getExtendedTouchPadding-hWWAJMo", "(J)J", "downEvent", "Landroidx/compose/ui/input/pointer/PointerInputChange;", "onPointerEvent", "pointerEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "bounds", "onPointerEvent-H0pRuoY", "(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "onCancelPointerInput", "update", "update-O2vRcR0", "onClickKeyDownEvent", NotificationCompat.CATEGORY_EVENT, "Landroidx/compose/ui/input/key/KeyEvent;", "onClickKeyDownEvent-ZmokQxo", "(Landroid/view/KeyEvent;)Z", "onClickKeyUpEvent", "onClickKeyUpEvent-ZmokQxo", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public class ClickableNode extends AbstractClickableNode {
-    public static final int $stable = 0;
+    public static final int $stable = 8;
+    private PointerInputChange downEvent;
+    private final boolean isSuspendingPointerInputEnabled;
 
-    public /* synthetic */ ClickableNode(MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, String str, Role role, Function0 function0, DefaultConstructorMarker defaultConstructorMarker) {
-        this(mutableInteractionSource, indicationNodeFactory, z, str, role, function0);
+    public /* synthetic */ ClickableNode(MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, boolean z2, String str, Role role, Function0 function0, DefaultConstructorMarker defaultConstructorMarker) {
+        this(mutableInteractionSource, indicationNodeFactory, z, z2, str, role, function0);
     }
 
-    @Override // androidx.compose.foundation.AbstractClickableNode
-    public Object clickPointerInput(PointerInputScope pointerInputScope, Continuation<? super Unit> continuation) {
-        return clickPointerInput$suspendImpl(this, pointerInputScope, continuation);
+    private static /* synthetic */ void isSuspendingPointerInputEnabled$annotations() {
     }
 
     @Override // androidx.compose.foundation.AbstractClickableNode
     /* renamed from: onClickKeyDownEvent-ZmokQxo */
-    protected final boolean mo214onClickKeyDownEventZmokQxo(KeyEvent keyEvent) {
+    protected final boolean mo224onClickKeyDownEventZmokQxo(KeyEvent keyEvent) {
         return false;
     }
 
-    private ClickableNode(MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, String str, Role role, Function0<Unit> function0) {
-        super(mutableInteractionSource, indicationNodeFactory, z, str, role, function0, null);
+    private ClickableNode(MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, boolean z2, String str, Role role, Function0<Unit> function0) {
+        super(mutableInteractionSource, indicationNodeFactory, z, z2, str, role, function0, null);
+        this.isSuspendingPointerInputEnabled = (ComposeFoundationFlags.isDetectTapGesturesImmediateCoroutineDispatchEnabled && ComposeFoundationFlags.isNonSuspendingPointerInputInClickableEnabled) ? false : true;
     }
 
-    static /* synthetic */ Object clickPointerInput$suspendImpl(final ClickableNode clickableNode, PointerInputScope pointerInputScope, Continuation<? super Unit> continuation) {
-        Object detectTapAndPress = TapGestureDetectorKt.detectTapAndPress(pointerInputScope, new ClickableNode$clickPointerInput$2(clickableNode, null), new Function1<Offset, Unit>() { // from class: androidx.compose.foundation.ClickableNode$clickPointerInput$3
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
+    @Override // androidx.compose.foundation.AbstractClickableNode
+    public SuspendingPointerInputModifierNode createPointerInputNodeIfNeeded() {
+        if (this.isSuspendingPointerInputEnabled) {
+            return SuspendingPointerInputFilterKt.SuspendingPointerInputModifierNode(new ClickableNode$createPointerInputNodeIfNeeded$1(this));
+        }
+        return null;
+    }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Offset offset) {
-                m295invokek4lQ0M(offset.m3847unboximpl());
-                return Unit.INSTANCE;
-            }
+    /* renamed from: getExtendedTouchPadding-hWWAJMo  reason: not valid java name */
+    private final long m312getExtendedTouchPaddinghWWAJMo(long j) {
+        long mo420toSizeXkaWNTQ = DelegatableNodeKt.requireDensity(this).mo420toSizeXkaWNTQ(((ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalViewConfiguration())).mo6161getMinimumTouchTargetSizeMYxV2XQ());
+        return Size.m4353constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (mo420toSizeXkaWNTQ & 4294967295L)) - ((int) (j & 4294967295L))) / 2.0f) & 4294967295L) | (Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (mo420toSizeXkaWNTQ >> 32)) - ((int) (j >> 32))) / 2.0f) << 32));
+    }
 
-            /* renamed from: invoke-k-4lQ0M  reason: not valid java name */
-            public final void m295invokek4lQ0M(long j) {
-                if (ClickableNode.this.getEnabled()) {
-                    ClickableNode.this.getOnClick().invoke();
+    @Override // androidx.compose.foundation.AbstractClickableNode, androidx.compose.ui.node.PointerInputModifierNode
+    /* renamed from: onPointerEvent-H0pRuoY */
+    public void mo227onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        super.mo227onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+        if (this.isSuspendingPointerInputEnabled) {
+            return;
+        }
+        int i = 0;
+        if (pointerEventPass == PointerEventPass.Main) {
+            PointerInputChange pointerInputChange = this.downEvent;
+            if (pointerInputChange == null) {
+                if (TapGestureDetectorKt.isChangedToDown$default(pointerEvent, true, false, 2, null)) {
+                    PointerInputChange pointerInputChange2 = pointerEvent.getChanges().get(0);
+                    pointerInputChange2.consume();
+                    this.downEvent = pointerInputChange2;
+                    if (getEnabled()) {
+                        m223handlePressInteractionStartk4lQ0M(pointerInputChange2.m5826getPositionF1C5BW0());
+                        return;
+                    }
+                    return;
+                }
+                return;
+            }
+            List<PointerInputChange> changes = pointerEvent.getChanges();
+            int size = changes.size();
+            for (int i2 = 0; i2 < size; i2++) {
+                if (!PointerEventKt.changedToUp(changes.get(i2))) {
+                    long m312getExtendedTouchPaddinghWWAJMo = m312getExtendedTouchPaddinghWWAJMo(j);
+                    List<PointerInputChange> changes2 = pointerEvent.getChanges();
+                    int size2 = changes2.size();
+                    while (i < size2) {
+                        PointerInputChange pointerInputChange3 = changes2.get(i);
+                        if (pointerInputChange3.isConsumed() || PointerEventKt.m5771isOutOfBoundsjwHxaWs(pointerInputChange3, j, m312getExtendedTouchPaddinghWWAJMo)) {
+                            this.downEvent = null;
+                            handlePressInteractionCancel();
+                            return;
+                        }
+                        i++;
+                    }
+                    return;
                 }
             }
-        }, continuation);
-        return detectTapAndPress == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? detectTapAndPress : Unit.INSTANCE;
+            pointerEvent.getChanges().get(0).consume();
+            if (getEnabled()) {
+                m222handlePressInteractionReleasek4lQ0M(pointerInputChange.m5826getPositionF1C5BW0());
+                getOnClick().invoke();
+            }
+            this.downEvent = null;
+        } else if (pointerEventPass == PointerEventPass.Final && this.downEvent != null) {
+            List<PointerInputChange> changes3 = pointerEvent.getChanges();
+            int size3 = changes3.size();
+            while (i < size3) {
+                PointerInputChange pointerInputChange4 = changes3.get(i);
+                if (pointerInputChange4.isConsumed() && !Intrinsics.areEqual(pointerInputChange4, this.downEvent)) {
+                    this.downEvent = null;
+                    handlePressInteractionCancel();
+                    return;
+                }
+                i++;
+            }
+        }
     }
 
-    /* renamed from: update-QzZPfjk  reason: not valid java name */
-    public final void m293updateQzZPfjk(MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, String str, Role role, Function0<Unit> function0) {
-        m219updateCommonQzZPfjk(mutableInteractionSource, indicationNodeFactory, z, str, role, function0);
+    @Override // androidx.compose.foundation.AbstractClickableNode, androidx.compose.ui.node.PointerInputModifierNode
+    public void onCancelPointerInput() {
+        super.onCancelPointerInput();
+        if (this.downEvent != null) {
+            this.downEvent = null;
+            handlePressInteractionCancel();
+        }
+    }
+
+    /* renamed from: update-O2vRcR0  reason: not valid java name */
+    public final void m313updateO2vRcR0(MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, boolean z2, String str, Role role, Function0<Unit> function0) {
+        m229updateCommonO2vRcR0(mutableInteractionSource, indicationNodeFactory, z, z2, str, role, function0);
     }
 
     @Override // androidx.compose.foundation.AbstractClickableNode
     /* renamed from: onClickKeyUpEvent-ZmokQxo */
-    protected final boolean mo215onClickKeyUpEventZmokQxo(KeyEvent keyEvent) {
+    protected final boolean mo225onClickKeyUpEventZmokQxo(KeyEvent keyEvent) {
         getOnClick().invoke();
         return true;
     }

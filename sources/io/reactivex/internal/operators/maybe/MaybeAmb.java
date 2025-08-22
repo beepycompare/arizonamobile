@@ -9,7 +9,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeAmb<T> extends Maybe<T> {
     private final MaybeSource<? extends T>[] sources;
     private final Iterable<? extends MaybeSource<? extends T>> sourcesIterable;
@@ -75,7 +75,7 @@ public final class MaybeAmb<T> extends Maybe<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class AmbMaybeObserver<T> implements MaybeObserver<T> {
         final MaybeObserver<? super T> downstream;
         final CompositeDisposable set;

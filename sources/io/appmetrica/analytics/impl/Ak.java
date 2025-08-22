@@ -1,44 +1,87 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Process;
-import io.appmetrica.analytics.coreapi.internal.model.ScreenInfo;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import io.appmetrica.analytics.internal.AppMetricaService;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
+import io.appmetrica.analytics.coreutils.internal.io.CloseableUtilsKt;
+import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
 /* loaded from: classes4.dex */
-public abstract class Ak {
+public final class Ak implements InterfaceC0251fd {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SafePackageManager f342a = new SafePackageManager();
+    public final yo f349a;
+    public final String b = "startup_state";
+    public final AESEncrypter c;
 
-    public static Intent a(Context context) {
-        Bundle bundle;
-        C0490oj c0490oj;
-        Intent addFlags = new Intent(context, AppMetricaService.class).setAction("io.appmetrica.analytics.IAppMetricaService").setData(new Uri.Builder().scheme("appmetrica").authority(context.getPackageName()).build()).addFlags(32);
+    public Ak(yo yoVar) {
+        this.f349a = yoVar;
+        C0108a c0108a = new C0108a(Ka.j().f());
+        this.c = new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, c0108a.b(), c0108a.a());
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0251fd
+    public final void a(Context context) {
+        SQLiteDatabase readableDatabase = C0649v7.a(context).h().getReadableDatabase();
+        if (readableDatabase != null) {
+            try {
+                Xb a2 = a(readableDatabase);
+                C0465nm c0465nm = new C0465nm(new G4(new E4()));
+                if (a2 != null) {
+                    a(this.f349a, c0465nm, a2);
+                    c0465nm.p = a2.c;
+                    c0465nm.r = a2.b;
+                }
+                C0490om c0490om = new C0490om(c0465nm);
+                Wm a3 = Vm.a(C0490om.class);
+                a3.a(context, a3.d(context)).save(c0490om);
+            } catch (Throwable unused) {
+            }
+        }
+    }
+
+    public static void a(yo yoVar, C0465nm c0465nm, Xb xb) {
+        String optStringOrNull;
+        synchronized (yoVar) {
+            optStringOrNull = JsonUtils.optStringOrNull(yoVar.f1167a.a(), "device_id");
+        }
+        if (TextUtils.isEmpty(optStringOrNull)) {
+            if (!TextUtils.isEmpty(xb.d)) {
+                yoVar.a(xb.d);
+            }
+            if (!TextUtils.isEmpty(xb.e)) {
+                yoVar.b(xb.e);
+            }
+            if (TextUtils.isEmpty(xb.f725a)) {
+                return;
+            }
+            c0465nm.f988a = xb.f725a;
+        }
+    }
+
+    public final Xb a(SQLiteDatabase sQLiteDatabase) {
+        Cursor cursor;
         try {
-            bundle = f342a.getApplicationInfo(context, context.getPackageName(), 128).metaData;
-            if (bundle == null) {
-                bundle = new Bundle();
+            cursor = sQLiteDatabase.query("binary_data", new String[]{"value"}, "data_key = ?", new String[]{this.b}, null, null, null);
+            if (cursor != null) {
+                try {
+                    if (cursor.getCount() == 1 && cursor.moveToFirst()) {
+                        Xb xb = (Xb) MessageNano.mergeFrom(new Xb(), this.c.decrypt(cursor.getBlob(cursor.getColumnIndexOrThrow("value"))));
+                        CloseableUtilsKt.closeSafely(cursor);
+                        return xb;
+                    }
+                } catch (Throwable unused) {
+                }
             }
-        } catch (Throwable unused) {
-            bundle = new Bundle();
-        }
-        Intent putExtras = addFlags.putExtras(bundle);
-        putExtras.setData(putExtras.getData().buildUpon().path("client").appendQueryParameter("pid", String.valueOf(Process.myPid())).appendQueryParameter("psid", Pf.c).build());
-        C0699x4 l = C0699x4.l();
-        synchronized (l) {
-            if (l.o == null) {
-                C0490oj c0490oj2 = new C0490oj();
-                l.o = c0490oj2;
-                l.h.a(c0490oj2);
+            if (cursor != null) {
+                cursor.getCount();
             }
-            c0490oj = l.o;
+        } catch (Throwable unused2) {
+            cursor = null;
         }
-        ScreenInfo a2 = c0490oj.a(context);
-        putExtras.putExtra("screen_size", a2 == null ? null : Bb.a(a2));
-        return putExtras.setPackage(context.getApplicationContext().getPackageName());
+        CloseableUtilsKt.closeSafely(cursor);
+        return null;
     }
 }

@@ -8,7 +8,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
 import io.reactivex.internal.subscriptions.DeferredScalarSubscription;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeToFlowable<T> extends Flowable<T> implements HasUpstreamMaybeSource<T> {
     final MaybeSource<T> source;
 
@@ -26,7 +26,7 @@ public final class MaybeToFlowable<T> extends Flowable<T> implements HasUpstream
         this.source.subscribe(new MaybeToFlowableSubscriber(subscriber));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MaybeToFlowableSubscriber<T> extends DeferredScalarSubscription<T> implements MaybeObserver<T> {
         private static final long serialVersionUID = 7603343402964826922L;
         Disposable upstream;

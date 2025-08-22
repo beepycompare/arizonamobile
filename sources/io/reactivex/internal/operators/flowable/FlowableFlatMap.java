@@ -25,7 +25,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableFlatMap<T, U> extends AbstractFlowableWithUpstream<T, U> {
     final int bufferSize;
     final boolean delayErrors;
@@ -53,7 +53,7 @@ public final class FlowableFlatMap<T, U> extends AbstractFlowableWithUpstream<T,
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class MergeSubscriber<T, U> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = -2117620485640801370L;
         final int bufferSize;
@@ -614,7 +614,7 @@ public final class FlowableFlatMap<T, U> extends AbstractFlowableWithUpstream<T,
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class InnerSubscriber<T, U> extends AtomicReference<Subscription> implements FlowableSubscriber<U>, Disposable {
         private static final long serialVersionUID = -4606175640614850599L;
         final int bufferSize;

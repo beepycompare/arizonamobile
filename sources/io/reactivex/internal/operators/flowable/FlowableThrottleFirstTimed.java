@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableThrottleFirstTimed<T> extends AbstractFlowableWithUpstream<T, T> {
     final Scheduler scheduler;
     final long timeout;
@@ -32,7 +32,7 @@ public final class FlowableThrottleFirstTimed<T> extends AbstractFlowableWithUps
         this.source.subscribe((FlowableSubscriber) new DebounceTimedSubscriber(new SerializedSubscriber(subscriber), this.timeout, this.unit, this.scheduler.createWorker()));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DebounceTimedSubscriber<T> extends AtomicLong implements FlowableSubscriber<T>, Subscription, Runnable {
         private static final long serialVersionUID = -9102637559663639004L;
         boolean done;

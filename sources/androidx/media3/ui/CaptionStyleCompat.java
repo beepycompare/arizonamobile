@@ -8,7 +8,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CaptionStyleCompat {
     public static final CaptionStyleCompat DEFAULT = new CaptionStyleCompat(-1, ViewCompat.MEASURED_STATE_MASK, 0, 0, -1, null);
     public static final int EDGE_TYPE_DEPRESSED = 4;
@@ -27,7 +27,7 @@ public final class CaptionStyleCompat {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public @interface EdgeType {
     }
 

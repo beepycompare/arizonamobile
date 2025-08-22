@@ -10,7 +10,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.math.MathKt;
 /* compiled from: RowColumnMeasurePolicy.kt */
-@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0015\n\u0002\b\u0003\u001a\u0085\u0001\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0006\u001a\u00020\u00042\u0006\u0010\u0007\u001a\u00020\u00042\u0006\u0010\b\u001a\u00020\u00042\u0006\u0010\t\u001a\u00020\n2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\f2\u000e\u0010\u000e\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00100\u000f2\u0006\u0010\u0011\u001a\u00020\u00042\u0006\u0010\u0012\u001a\u00020\u00042\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\b\b\u0002\u0010\u0015\u001a\u00020\u0004H\u0000¢\u0006\u0002\u0010\u0016¨\u0006\u0017"}, d2 = {"measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/foundation/layout/RowColumnMeasurePolicy;", "mainAxisMin", "", "crossAxisMin", "mainAxisMax", "crossAxisMax", "arrangementSpacingInt", "measureScope", "Landroidx/compose/ui/layout/MeasureScope;", "measurables", "", "Landroidx/compose/ui/layout/Measurable;", "placeables", "", "Landroidx/compose/ui/layout/Placeable;", "startIndex", "endIndex", "crossAxisOffset", "", "currentLineIndex", "(Landroidx/compose/foundation/layout/RowColumnMeasurePolicy;IIIIILandroidx/compose/ui/layout/MeasureScope;Ljava/util/List;[Landroidx/compose/ui/layout/Placeable;II[II)Landroidx/compose/ui/layout/MeasureResult;", "foundation-layout_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0015\n\u0002\b\u0003\u001a\u0085\u0001\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0006\u001a\u00020\u00042\u0006\u0010\u0007\u001a\u00020\u00042\u0006\u0010\b\u001a\u00020\u00042\u0006\u0010\t\u001a\u00020\n2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\f2\u000e\u0010\u000e\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00100\u000f2\u0006\u0010\u0011\u001a\u00020\u00042\u0006\u0010\u0012\u001a\u00020\u00042\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\b\b\u0002\u0010\u0015\u001a\u00020\u0004H\u0000¢\u0006\u0002\u0010\u0016¨\u0006\u0017"}, d2 = {"measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/foundation/layout/RowColumnMeasurePolicy;", "mainAxisMin", "", "crossAxisMin", "mainAxisMax", "crossAxisMax", "arrangementSpacingInt", "measureScope", "Landroidx/compose/ui/layout/MeasureScope;", "measurables", "", "Landroidx/compose/ui/layout/Measurable;", "placeables", "", "Landroidx/compose/ui/layout/Placeable;", "startIndex", "endIndex", "crossAxisOffset", "", "currentLineIndex", "(Landroidx/compose/foundation/layout/RowColumnMeasurePolicy;IIIIILandroidx/compose/ui/layout/MeasureScope;Ljava/util/List;[Landroidx/compose/ui/layout/Placeable;II[II)Landroidx/compose/ui/layout/MeasureResult;", "foundation-layout"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class RowColumnMeasurePolicyKt {
     /* JADX WARN: Removed duplicated region for block: B:78:0x019d  */
@@ -74,7 +74,7 @@ public final class RowColumnMeasurePolicyKt {
                     i19 = i23;
                     iArr2 = iArr3;
                     rowColumnMeasurePolicy2 = rowColumnMeasurePolicy;
-                    placeable = measurable.mo5438measureBRTryo0(RowColumnMeasurePolicy.m765createConstraintsxF2OJ5Q$default(rowColumnMeasurePolicy2, 0, valueOf != null ? valueOf.intValue() : 0, i3 != Integer.MAX_VALUE ? i26 < 0 ? 0 : i26 : Integer.MAX_VALUE, valueOf != null ? valueOf.intValue() : i4, false, 16, null));
+                    placeable = measurable.mo5954measureBRTryo0(RowColumnMeasurePolicy.m862createConstraintsxF2OJ5Q$default(rowColumnMeasurePolicy2, 0, valueOf != null ? valueOf.intValue() : 0, i3 != Integer.MAX_VALUE ? i26 < 0 ? 0 : i26 : Integer.MAX_VALUE, valueOf != null ? valueOf.intValue() : i4, false, 16, null));
                 } else {
                     iArr2 = iArr3;
                     i18 = i21;
@@ -147,13 +147,13 @@ public final class RowColumnMeasurePolicyKt {
                                 i15 = i14;
                             }
                             rowColumnMeasurePolicy3 = rowColumnMeasurePolicy;
-                            Placeable mo5438measureBRTryo0 = measurable2.mo5438measureBRTryo0(rowColumnMeasurePolicy3.mo651createConstraintsxF2OJ5Q(i32, i15, max2, valueOf2 == null ? valueOf2.intValue() : i4, true));
-                            int mainAxisSize2 = rowColumnMeasurePolicy3.mainAxisSize(mo5438measureBRTryo0);
-                            int crossAxisSize2 = rowColumnMeasurePolicy3.crossAxisSize(mo5438measureBRTryo0);
+                            Placeable mo5954measureBRTryo0 = measurable2.mo5954measureBRTryo0(rowColumnMeasurePolicy3.mo726createConstraintsxF2OJ5Q(i32, i15, max2, valueOf2 == null ? valueOf2.intValue() : i4, true));
+                            int mainAxisSize2 = rowColumnMeasurePolicy3.mainAxisSize(mo5954measureBRTryo0);
+                            int crossAxisSize2 = rowColumnMeasurePolicy3.crossAxisSize(mo5954measureBRTryo0);
                             iArr4[i30 - i6] = mainAxisSize2;
                             i31 += mainAxisSize2;
                             int max3 = Math.max(i28, crossAxisSize2);
-                            placeableArr[i30] = mo5438measureBRTryo0;
+                            placeableArr[i30] = mo5954measureBRTryo0;
                             i28 = max3;
                             j5 = j6;
                         }
@@ -164,13 +164,13 @@ public final class RowColumnMeasurePolicyKt {
                     if (valueOf2 == null) {
                     }
                     rowColumnMeasurePolicy3 = rowColumnMeasurePolicy;
-                    Placeable mo5438measureBRTryo02 = measurable2.mo5438measureBRTryo0(rowColumnMeasurePolicy3.mo651createConstraintsxF2OJ5Q(i32, i15, max2, valueOf2 == null ? valueOf2.intValue() : i4, true));
-                    int mainAxisSize22 = rowColumnMeasurePolicy3.mainAxisSize(mo5438measureBRTryo02);
-                    int crossAxisSize22 = rowColumnMeasurePolicy3.crossAxisSize(mo5438measureBRTryo02);
+                    Placeable mo5954measureBRTryo02 = measurable2.mo5954measureBRTryo0(rowColumnMeasurePolicy3.mo726createConstraintsxF2OJ5Q(i32, i15, max2, valueOf2 == null ? valueOf2.intValue() : i4, true));
+                    int mainAxisSize22 = rowColumnMeasurePolicy3.mainAxisSize(mo5954measureBRTryo02);
+                    int crossAxisSize22 = rowColumnMeasurePolicy3.crossAxisSize(mo5954measureBRTryo02);
                     iArr4[i30 - i6] = mainAxisSize22;
                     i31 += mainAxisSize22;
                     int max32 = Math.max(i28, crossAxisSize22);
-                    placeableArr[i30] = mo5438measureBRTryo02;
+                    placeableArr[i30] = mo5954measureBRTryo02;
                     i28 = max32;
                     j5 = j6;
                 } else {
@@ -197,11 +197,11 @@ public final class RowColumnMeasurePolicyKt {
                 Placeable placeable2 = placeableArr[i37];
                 Intrinsics.checkNotNull(placeable2);
                 CrossAxisAlignment crossAxisAlignment = RowColumnImplKt.getCrossAxisAlignment(RowColumnImplKt.getRowColumnParentData(placeable2));
-                Integer calculateAlignmentLinePosition$foundation_layout_release = crossAxisAlignment != null ? crossAxisAlignment.calculateAlignmentLinePosition$foundation_layout_release(placeable2) : null;
-                if (calculateAlignmentLinePosition$foundation_layout_release != null) {
-                    int intValue = calculateAlignmentLinePosition$foundation_layout_release.intValue();
+                Integer calculateAlignmentLinePosition$foundation_layout = crossAxisAlignment != null ? crossAxisAlignment.calculateAlignmentLinePosition$foundation_layout(placeable2) : null;
+                if (calculateAlignmentLinePosition$foundation_layout != null) {
+                    int intValue = calculateAlignmentLinePosition$foundation_layout.intValue();
                     int crossAxisSize3 = rowColumnMeasurePolicy3.crossAxisSize(placeable2);
-                    i35 = Math.max(i35, intValue != Integer.MIN_VALUE ? calculateAlignmentLinePosition$foundation_layout_release.intValue() : i10);
+                    i35 = Math.max(i35, intValue != Integer.MIN_VALUE ? calculateAlignmentLinePosition$foundation_layout.intValue() : i10);
                     if (intValue == Integer.MIN_VALUE) {
                         intValue = crossAxisSize3;
                     }

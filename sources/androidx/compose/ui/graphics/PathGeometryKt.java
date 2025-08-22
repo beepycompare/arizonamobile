@@ -11,12 +11,12 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.ArraysKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PathGeometry.kt */
-@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\u0004\u001a\u0010\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0002\u001a\n\u0010\u0004\u001a\u00020\u0005*\u00020\u0006\u001a \u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00060\b*\u00020\u00062\u000e\b\u0002\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00060\b\u001a\u0014\u0010\n\u001a\u00020\u0006*\u00020\u00062\b\b\u0002\u0010\u000b\u001a\u00020\u0006¨\u0006\f"}, d2 = {"floatCountForType", "", "type", "Landroidx/compose/ui/graphics/PathSegment$Type;", "computeDirection", "Landroidx/compose/ui/graphics/Path$Direction;", "Landroidx/compose/ui/graphics/Path;", "divide", "", "contours", "reverse", FirebaseAnalytics.Param.DESTINATION, "ui-graphics_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\u0004\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0002\u001a \u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00020\u0004*\u00020\u00022\u000e\b\u0002\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00020\u0004\u001a\u0014\u0010\u0006\u001a\u00020\u0002*\u00020\u00022\b\b\u0002\u0010\u0007\u001a\u00020\u0002\u001a\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0002¨\u0006\f"}, d2 = {"computeDirection", "Landroidx/compose/ui/graphics/Path$Direction;", "Landroidx/compose/ui/graphics/Path;", "divide", "", "contours", "reverse", FirebaseAnalytics.Param.DESTINATION, "floatCountForType", "", "type", "Landroidx/compose/ui/graphics/PathSegment$Type;", "ui-graphics_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PathGeometryKt {
 
     /* compiled from: PathGeometry.kt */
-    @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -55,8 +55,8 @@ public final class PathGeometryKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00db  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00df  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -103,6 +103,7 @@ public final class PathGeometryKt {
                     f2 = f14;
                     f3 = f15;
                     break;
+                case 4:
                 case 5:
                     f += BezierKt.cubicArea(fArr[0], fArr[1], fArr[2], fArr[3], fArr[4], fArr[5], fArr[6], fArr[7]);
                     float f16 = fArr[6];
@@ -121,6 +122,8 @@ public final class PathGeometryKt {
                     if (f >= 0.0f) {
                     }
                     break;
+                default:
+                    throw new NoWhenBranchMatchedException();
             }
             next$default = PathIterator.next$default(it, fArr, 0, 2, null);
         }
@@ -162,6 +165,8 @@ public final class PathGeometryKt {
                     path2.quadraticTo(fArr[2], fArr[3], fArr[4], fArr[5]);
                     z2 = false;
                     break;
+                case 4:
+                case 7:
                 case 5:
                     path2.cubicTo(fArr[2], fArr[3], fArr[4], fArr[5], fArr[6], fArr[7]);
                     z2 = false;
@@ -169,6 +174,8 @@ public final class PathGeometryKt {
                 case 6:
                     path2.close();
                     break;
+                default:
+                    throw new NoWhenBranchMatchedException();
             }
             next$default = PathIterator.next$default(it, fArr, 0, 2, null);
         }
@@ -216,35 +223,41 @@ public final class PathGeometryKt {
                 fArr = (float[]) arrayList2.get(size);
             }
             int i = size;
-            int i2 = WhenMappings.$EnumSwitchMapping$0[((PathSegment.Type) arrayList.get(size2)).ordinal()];
-            if (i2 != 1) {
-                if (i2 == 2) {
+            switch (WhenMappings.$EnumSwitchMapping$0[((PathSegment.Type) arrayList.get(size2)).ordinal()]) {
+                case 1:
+                    if (z2) {
+                        path2.close();
+                        z2 = false;
+                    }
+                    z3 = true;
+                    size = i;
+                    continue;
+                case 2:
                     float[] fArr3 = fArr;
                     path2.lineTo(fArr3[0], fArr3[1]);
-                } else if (i2 == 3) {
+                    i--;
+                    break;
+                case 3:
                     float[] fArr4 = fArr;
                     path2.quadraticTo(fArr4[2], fArr4[3], fArr4[0], fArr4[1]);
-                } else if (i2 != 5) {
-                    if (i2 == 6) {
-                        z2 = true;
-                    }
-                    size = i;
-                    z3 = z;
-                } else {
+                    i--;
+                    break;
+                case 4:
+                case 7:
+                    break;
+                case 5:
                     float[] fArr5 = fArr;
                     path2.cubicTo(fArr[4], fArr[5], fArr[2], fArr5[3], fArr5[0], fArr5[1]);
-                }
-                i--;
-                size = i;
-                z3 = z;
-            } else {
-                if (z2) {
-                    path2.close();
-                    z2 = false;
-                }
-                z3 = true;
-                size = i;
+                    i--;
+                    break;
+                case 6:
+                    z2 = true;
+                    break;
+                default:
+                    throw new NoWhenBranchMatchedException();
             }
+            size = i;
+            z3 = z;
         }
         if (z2) {
             path2.close();

@@ -4,54 +4,54 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: TextDirection.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u00112\u00020\u0001:\u0001\u0011B\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001a\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\t\u0010\nJ\u0010\u0010\u000b\u001a\u00020\u0003HÖ\u0001¢\u0006\u0004\b\f\u0010\u0005J\u000f\u0010\r\u001a\u00020\u000eH\u0016¢\u0006\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0012"}, d2 = {"Landroidx/compose/ui/text/style/TextDirection;", "", "value", "", "constructor-impl", "(I)I", "equals", "", "other", "equals-impl", "(ILjava/lang/Object;)Z", "hashCode", "hashCode-impl", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "Companion", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u000e2\u00020\u0001:\u0001\u000eB\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\r\u001a\u00020\u0003HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/text/style/TextDirection;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "equals", "", "other", "hashCode", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes2.dex */
 public final class TextDirection {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Ltr = m6576constructorimpl(1);
-    private static final int Rtl = m6576constructorimpl(2);
-    private static final int Content = m6576constructorimpl(3);
-    private static final int ContentOrLtr = m6576constructorimpl(4);
-    private static final int ContentOrRtl = m6576constructorimpl(5);
-    private static final int Unspecified = m6576constructorimpl(Integer.MIN_VALUE);
+    private static final int Ltr = m7143constructorimpl(1);
+    private static final int Rtl = m7143constructorimpl(2);
+    private static final int Content = m7143constructorimpl(3);
+    private static final int ContentOrLtr = m7143constructorimpl(4);
+    private static final int ContentOrRtl = m7143constructorimpl(5);
+    private static final int Unspecified = m7143constructorimpl(Integer.MIN_VALUE);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TextDirection m6575boximpl(int i) {
+    public static final /* synthetic */ TextDirection m7142boximpl(int i) {
         return new TextDirection(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m6576constructorimpl(int i) {
+    public static int m7143constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6577equalsimpl(int i, Object obj) {
-        return (obj instanceof TextDirection) && i == ((TextDirection) obj).m6581unboximpl();
+    public static boolean m7144equalsimpl(int i, Object obj) {
+        return (obj instanceof TextDirection) && i == ((TextDirection) obj).m7148unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6578equalsimpl0(int i, int i2) {
+    public static final boolean m7145equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6579hashCodeimpl(int i) {
+    public static int m7146hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m6577equalsimpl(this.value, obj);
+        return m7144equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6579hashCodeimpl(this.value);
+        return m7146hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6581unboximpl() {
+    public final /* synthetic */ int m7148unboximpl() {
         return this.value;
     }
 
@@ -60,16 +60,16 @@ public final class TextDirection {
     }
 
     public String toString() {
-        return m6580toStringimpl(this.value);
+        return m7147toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6580toStringimpl(int i) {
-        return m6578equalsimpl0(i, Ltr) ? "Ltr" : m6578equalsimpl0(i, Rtl) ? "Rtl" : m6578equalsimpl0(i, Content) ? "Content" : m6578equalsimpl0(i, ContentOrLtr) ? "ContentOrLtr" : m6578equalsimpl0(i, ContentOrRtl) ? "ContentOrRtl" : m6578equalsimpl0(i, Unspecified) ? "Unspecified" : "Invalid";
+    public static String m7147toStringimpl(int i) {
+        return m7145equalsimpl0(i, Ltr) ? "Ltr" : m7145equalsimpl0(i, Rtl) ? "Rtl" : m7145equalsimpl0(i, Content) ? "Content" : m7145equalsimpl0(i, ContentOrLtr) ? "ContentOrLtr" : m7145equalsimpl0(i, ContentOrRtl) ? "ContentOrRtl" : m7145equalsimpl0(i, Unspecified) ? "Unspecified" : "Invalid";
     }
 
     /* compiled from: TextDirection.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0019\u0010\u0003\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0005\u0010\u0006R\u0019\u0010\b\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\t\u0010\u0006R\u0019\u0010\n\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u000b\u0010\u0006R\u0019\u0010\f\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\r\u0010\u0006R\u0019\u0010\u000e\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u000f\u0010\u0006R\u0019\u0010\u0010\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0011\u0010\u0006\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0012"}, d2 = {"Landroidx/compose/ui/text/style/TextDirection$Companion;", "", "()V", "Content", "Landroidx/compose/ui/text/style/TextDirection;", "getContent-s_7X-co", "()I", "I", "ContentOrLtr", "getContentOrLtr-s_7X-co", "ContentOrRtl", "getContentOrRtl-s_7X-co", "Ltr", "getLtr-s_7X-co", "Rtl", "getRtl-s_7X-co", "Unspecified", "getUnspecified-s_7X-co", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000e\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007R\u0013\u0010\u000b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\f\u0010\u0007R\u0013\u0010\r\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u000e\u0010\u0007R\u0013\u0010\u000f\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0010\u0010\u0007R\u0013\u0010\u0011\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0012\u0010\u0007¨\u0006\u0013"}, d2 = {"Landroidx/compose/ui/text/style/TextDirection$Companion;", "", "<init>", "()V", "Ltr", "Landroidx/compose/ui/text/style/TextDirection;", "getLtr-s_7X-co", "()I", "I", "Rtl", "getRtl-s_7X-co", "Content", "getContent-s_7X-co", "ContentOrLtr", "getContentOrLtr-s_7X-co", "ContentOrRtl", "getContentOrRtl-s_7X-co", "Unspecified", "getUnspecified-s_7X-co", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -80,32 +80,32 @@ public final class TextDirection {
         }
 
         /* renamed from: getLtr-s_7X-co  reason: not valid java name */
-        public final int m6585getLtrs_7Xco() {
+        public final int m7152getLtrs_7Xco() {
             return TextDirection.Ltr;
         }
 
         /* renamed from: getRtl-s_7X-co  reason: not valid java name */
-        public final int m6586getRtls_7Xco() {
+        public final int m7153getRtls_7Xco() {
             return TextDirection.Rtl;
         }
 
         /* renamed from: getContent-s_7X-co  reason: not valid java name */
-        public final int m6582getContents_7Xco() {
+        public final int m7149getContents_7Xco() {
             return TextDirection.Content;
         }
 
         /* renamed from: getContentOrLtr-s_7X-co  reason: not valid java name */
-        public final int m6583getContentOrLtrs_7Xco() {
+        public final int m7150getContentOrLtrs_7Xco() {
             return TextDirection.ContentOrLtr;
         }
 
         /* renamed from: getContentOrRtl-s_7X-co  reason: not valid java name */
-        public final int m6584getContentOrRtls_7Xco() {
+        public final int m7151getContentOrRtls_7Xco() {
             return TextDirection.ContentOrRtl;
         }
 
         /* renamed from: getUnspecified-s_7X-co  reason: not valid java name */
-        public final int m6587getUnspecifieds_7Xco() {
+        public final int m7154getUnspecifieds_7Xco() {
             return TextDirection.Unspecified;
         }
     }

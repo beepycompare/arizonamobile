@@ -11,13 +11,13 @@ public final class UpdateActivity_MembersInjector implements MembersInjector<Upd
         this.rootFactoryProvider = rootFactoryProvider;
     }
 
-    public static MembersInjector<UpdateActivity> create(Provider<DownloadScreenComponent.Factory> rootFactoryProvider) {
-        return new UpdateActivity_MembersInjector(rootFactoryProvider);
-    }
-
     @Override // dagger.MembersInjector
     public void injectMembers(UpdateActivity instance) {
         injectRootFactory(instance, this.rootFactoryProvider.get());
+    }
+
+    public static MembersInjector<UpdateActivity> create(Provider<DownloadScreenComponent.Factory> rootFactoryProvider) {
+        return new UpdateActivity_MembersInjector(rootFactoryProvider);
     }
 
     public static void injectRootFactory(UpdateActivity instance, DownloadScreenComponent.Factory rootFactory) {

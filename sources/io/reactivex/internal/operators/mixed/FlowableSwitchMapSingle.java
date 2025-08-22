@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSwitchMapSingle<T, R> extends Flowable<R> {
     final boolean delayErrors;
     final Function<? super T, ? extends SingleSource<? extends R>> mapper;
@@ -36,7 +36,7 @@ public final class FlowableSwitchMapSingle<T, R> extends Flowable<R> {
         this.source.subscribe((FlowableSubscriber) new SwitchMapSingleSubscriber(subscriber, this.mapper, this.delayErrors));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SwitchMapSingleSubscriber<T, R> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
         static final SwitchMapSingleObserver<Object> INNER_DISPOSED = new SwitchMapSingleObserver<>(null);
         private static final long serialVersionUID = -5402190102429853762L;
@@ -188,7 +188,7 @@ public final class FlowableSwitchMapSingle<T, R> extends Flowable<R> {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class SwitchMapSingleObserver<R> extends AtomicReference<Disposable> implements SingleObserver<R> {
             private static final long serialVersionUID = 8042919737683345351L;
             volatile R item;

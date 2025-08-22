@@ -9,7 +9,7 @@ import io.reactivex.internal.util.ExceptionHelper;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class BlockingMultiObserver<T> extends CountDownLatch implements SingleObserver<T>, CompletableObserver, MaybeObserver<T> {
     volatile boolean cancelled;
     Throwable error;

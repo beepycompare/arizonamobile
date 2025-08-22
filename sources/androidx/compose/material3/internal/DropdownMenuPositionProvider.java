@@ -42,7 +42,7 @@ public final class DropdownMenuPositionProvider implements PopupPositionProvider
     }
 
     /* renamed from: copy-uVxBXkw$default  reason: not valid java name */
-    public static /* synthetic */ DropdownMenuPositionProvider m2701copyuVxBXkw$default(DropdownMenuPositionProvider dropdownMenuPositionProvider, long j, Density density, int i, Function2 function2, int i2, Object obj) {
+    public static /* synthetic */ DropdownMenuPositionProvider m3008copyuVxBXkw$default(DropdownMenuPositionProvider dropdownMenuPositionProvider, long j, Density density, int i, Function2 function2, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             j = dropdownMenuPositionProvider.contentOffset;
         }
@@ -59,11 +59,11 @@ public final class DropdownMenuPositionProvider implements PopupPositionProvider
         if ((i2 & 8) != 0) {
             function22 = dropdownMenuPositionProvider.onPositionCalculated;
         }
-        return dropdownMenuPositionProvider.m2703copyuVxBXkw(j2, density2, i3, function22);
+        return dropdownMenuPositionProvider.m3010copyuVxBXkw(j2, density2, i3, function22);
     }
 
     /* renamed from: component1-RKDOV3M  reason: not valid java name */
-    public final long m2702component1RKDOV3M() {
+    public final long m3009component1RKDOV3M() {
         return this.contentOffset;
     }
 
@@ -80,7 +80,7 @@ public final class DropdownMenuPositionProvider implements PopupPositionProvider
     }
 
     /* renamed from: copy-uVxBXkw  reason: not valid java name */
-    public final DropdownMenuPositionProvider m2703copyuVxBXkw(long j, Density density, int i, Function2<? super IntRect, ? super IntRect, Unit> function2) {
+    public final DropdownMenuPositionProvider m3010copyuVxBXkw(long j, Density density, int i, Function2<? super IntRect, ? super IntRect, Unit> function2) {
         return new DropdownMenuPositionProvider(j, density, i, function2, null);
     }
 
@@ -90,17 +90,17 @@ public final class DropdownMenuPositionProvider implements PopupPositionProvider
         }
         if (obj instanceof DropdownMenuPositionProvider) {
             DropdownMenuPositionProvider dropdownMenuPositionProvider = (DropdownMenuPositionProvider) obj;
-            return DpOffset.m6744equalsimpl0(this.contentOffset, dropdownMenuPositionProvider.contentOffset) && Intrinsics.areEqual(this.density, dropdownMenuPositionProvider.density) && this.verticalMargin == dropdownMenuPositionProvider.verticalMargin && Intrinsics.areEqual(this.onPositionCalculated, dropdownMenuPositionProvider.onPositionCalculated);
+            return DpOffset.m7311equalsimpl0(this.contentOffset, dropdownMenuPositionProvider.contentOffset) && Intrinsics.areEqual(this.density, dropdownMenuPositionProvider.density) && this.verticalMargin == dropdownMenuPositionProvider.verticalMargin && Intrinsics.areEqual(this.onPositionCalculated, dropdownMenuPositionProvider.onPositionCalculated);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((DpOffset.m6749hashCodeimpl(this.contentOffset) * 31) + this.density.hashCode()) * 31) + Integer.hashCode(this.verticalMargin)) * 31) + this.onPositionCalculated.hashCode();
+        return (((((DpOffset.m7316hashCodeimpl(this.contentOffset) * 31) + this.density.hashCode()) * 31) + Integer.hashCode(this.verticalMargin)) * 31) + this.onPositionCalculated.hashCode();
     }
 
     public String toString() {
-        return "DropdownMenuPositionProvider(contentOffset=" + ((Object) DpOffset.m6752toStringimpl(this.contentOffset)) + ", density=" + this.density + ", verticalMargin=" + this.verticalMargin + ", onPositionCalculated=" + this.onPositionCalculated + ')';
+        return "DropdownMenuPositionProvider(contentOffset=" + ((Object) DpOffset.m7319toStringimpl(this.contentOffset)) + ", density=" + this.density + ", verticalMargin=" + this.verticalMargin + ", onPositionCalculated=" + this.onPositionCalculated + ')';
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -109,21 +109,21 @@ public final class DropdownMenuPositionProvider implements PopupPositionProvider
         this.density = density;
         this.verticalMargin = i;
         this.onPositionCalculated = function2;
-        int mo383roundToPx0680j_4 = density.mo383roundToPx0680j_4(DpOffset.m6745getXD9Ej5fM(j));
-        this.startToAnchorStart = MenuPosition.INSTANCE.startToAnchorStart(mo383roundToPx0680j_4);
-        this.endToAnchorEnd = MenuPosition.INSTANCE.endToAnchorEnd(mo383roundToPx0680j_4);
+        int mo413roundToPx0680j_4 = density.mo413roundToPx0680j_4(DpOffset.m7312getXD9Ej5fM(j));
+        this.startToAnchorStart = MenuPosition.INSTANCE.startToAnchorStart(mo413roundToPx0680j_4);
+        this.endToAnchorEnd = MenuPosition.INSTANCE.endToAnchorEnd(mo413roundToPx0680j_4);
         this.leftToWindowLeft = MenuPosition.INSTANCE.leftToWindowLeft(0);
         this.rightToWindowRight = MenuPosition.INSTANCE.rightToWindowRight(0);
-        int mo383roundToPx0680j_42 = density.mo383roundToPx0680j_4(DpOffset.m6747getYD9Ej5fM(j));
-        this.topToAnchorBottom = MenuPosition.INSTANCE.topToAnchorBottom(mo383roundToPx0680j_42);
-        this.bottomToAnchorTop = MenuPosition.INSTANCE.bottomToAnchorTop(mo383roundToPx0680j_42);
-        this.centerToAnchorTop = MenuPosition.INSTANCE.centerToAnchorTop(mo383roundToPx0680j_42);
+        int mo413roundToPx0680j_42 = density.mo413roundToPx0680j_4(DpOffset.m7314getYD9Ej5fM(j));
+        this.topToAnchorBottom = MenuPosition.INSTANCE.topToAnchorBottom(mo413roundToPx0680j_42);
+        this.bottomToAnchorTop = MenuPosition.INSTANCE.bottomToAnchorTop(mo413roundToPx0680j_42);
+        this.centerToAnchorTop = MenuPosition.INSTANCE.centerToAnchorTop(mo413roundToPx0680j_42);
         this.topToWindowTop = MenuPosition.INSTANCE.topToWindowTop(i);
         this.bottomToWindowBottom = MenuPosition.INSTANCE.bottomToWindowBottom(i);
     }
 
     /* renamed from: getContentOffset-RKDOV3M  reason: not valid java name */
-    public final long m2704getContentOffsetRKDOV3M() {
+    public final long m3011getContentOffsetRKDOV3M() {
         return this.contentOffset;
     }
 
@@ -132,7 +132,7 @@ public final class DropdownMenuPositionProvider implements PopupPositionProvider
     }
 
     public /* synthetic */ DropdownMenuPositionProvider(long j, Density density, int i, AnonymousClass2 anonymousClass2, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(j, density, (i2 & 4) != 0 ? density.mo383roundToPx0680j_4(MenuKt.getMenuVerticalMargin()) : i, (i2 & 8) != 0 ? new Function2<IntRect, IntRect, Unit>() { // from class: androidx.compose.material3.internal.DropdownMenuPositionProvider.2
+        this(j, density, (i2 & 4) != 0 ? density.mo413roundToPx0680j_4(MenuKt.getMenuVerticalMargin()) : i, (i2 & 8) != 0 ? new Function2<IntRect, IntRect, Unit>() { // from class: androidx.compose.material3.internal.DropdownMenuPositionProvider.2
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(IntRect intRect, IntRect intRect2) {
             }
@@ -155,7 +155,7 @@ public final class DropdownMenuPositionProvider implements PopupPositionProvider
 
     @Override // androidx.compose.ui.window.PopupPositionProvider
     /* renamed from: calculatePosition-llwVHH4 */
-    public long mo358calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+    public long mo383calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
         MenuPosition.Horizontal horizontal;
         int i;
         MenuPosition.Vertical vertical;
@@ -163,7 +163,7 @@ public final class DropdownMenuPositionProvider implements PopupPositionProvider
         int i2 = 0;
         horizontalArr[0] = this.startToAnchorStart;
         horizontalArr[1] = this.endToAnchorEnd;
-        if (IntOffset.m6812getXimpl(intRect.m6836getCenternOccac()) < IntSize.m6855getWidthimpl(j) / 2) {
+        if (IntOffset.m7379getXimpl(intRect.m7403getCenternOccac()) < IntSize.m7422getWidthimpl(j) / 2) {
             horizontal = this.leftToWindowLeft;
         } else {
             horizontal = this.rightToWindowRight;
@@ -177,8 +177,8 @@ public final class DropdownMenuPositionProvider implements PopupPositionProvider
                 i = 0;
                 break;
             }
-            i = ((MenuPosition.Horizontal) listOf.get(i3)).mo2695position95KtPRI(intRect, j, IntSize.m6855getWidthimpl(j2), layoutDirection);
-            if (i3 == CollectionsKt.getLastIndex(listOf) || (i >= 0 && IntSize.m6855getWidthimpl(j2) + i <= IntSize.m6855getWidthimpl(j))) {
+            i = ((MenuPosition.Horizontal) listOf.get(i3)).mo3002position95KtPRI(intRect, j, IntSize.m7422getWidthimpl(j2), layoutDirection);
+            if (i3 == CollectionsKt.getLastIndex(listOf) || (i >= 0 && IntSize.m7422getWidthimpl(j2) + i <= IntSize.m7422getWidthimpl(j))) {
                 break;
             }
             i3++;
@@ -187,7 +187,7 @@ public final class DropdownMenuPositionProvider implements PopupPositionProvider
         verticalArr[0] = this.topToAnchorBottom;
         verticalArr[1] = this.bottomToAnchorTop;
         verticalArr[2] = this.centerToAnchorTop;
-        if (IntOffset.m6813getYimpl(intRect.m6836getCenternOccac()) < IntSize.m6854getHeightimpl(j) / 2) {
+        if (IntOffset.m7380getYimpl(intRect.m7403getCenternOccac()) < IntSize.m7421getHeightimpl(j) / 2) {
             vertical = this.topToWindowTop;
         } else {
             vertical = this.bottomToWindowBottom;
@@ -196,14 +196,14 @@ public final class DropdownMenuPositionProvider implements PopupPositionProvider
         List listOf2 = CollectionsKt.listOf((Object[]) verticalArr);
         int size2 = listOf2.size();
         for (int i4 = 0; i4 < size2; i4++) {
-            int mo2696positionJVtK1S4 = ((MenuPosition.Vertical) listOf2.get(i4)).mo2696positionJVtK1S4(intRect, j, IntSize.m6854getHeightimpl(j2));
-            if (i4 == CollectionsKt.getLastIndex(listOf2) || (mo2696positionJVtK1S4 >= this.verticalMargin && IntSize.m6854getHeightimpl(j2) + mo2696positionJVtK1S4 <= IntSize.m6854getHeightimpl(j) - this.verticalMargin)) {
-                i2 = mo2696positionJVtK1S4;
+            int mo3003positionJVtK1S4 = ((MenuPosition.Vertical) listOf2.get(i4)).mo3003positionJVtK1S4(intRect, j, IntSize.m7421getHeightimpl(j2));
+            if (i4 == CollectionsKt.getLastIndex(listOf2) || (mo3003positionJVtK1S4 >= this.verticalMargin && IntSize.m7421getHeightimpl(j2) + mo3003positionJVtK1S4 <= IntSize.m7421getHeightimpl(j) - this.verticalMargin)) {
+                i2 = mo3003positionJVtK1S4;
                 break;
             }
         }
         long IntOffset = IntOffsetKt.IntOffset(i, i2);
-        this.onPositionCalculated.invoke(intRect, IntRectKt.m6845IntRectVbeCjmY(IntOffset, j2));
+        this.onPositionCalculated.invoke(intRect, IntRectKt.m7412IntRectVbeCjmY(IntOffset, j2));
         return IntOffset;
     }
 }

@@ -8,11 +8,11 @@ import com.google.common.collect.ComparisonChain;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SlowMotionData implements Metadata.Entry {
     public final List<Segment> segments;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Segment {
         public static final Comparator<Segment> BY_START_THEN_END_THEN_DIVISOR = new Comparator() { // from class: androidx.media3.extractor.metadata.mp4.SlowMotionData$Segment$$ExternalSyntheticLambda0
             @Override // java.util.Comparator

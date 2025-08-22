@@ -8,7 +8,7 @@ import io.reactivex.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.internal.subscribers.BasicFuseableConditionalSubscriber;
 import io.reactivex.internal.subscribers.BasicFuseableSubscriber;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableDistinctUntilChanged<T, K> extends AbstractFlowableWithUpstream<T, T> {
     final BiPredicate<? super K, ? super K> comparer;
     final Function<? super T, K> keySelector;
@@ -28,7 +28,7 @@ public final class FlowableDistinctUntilChanged<T, K> extends AbstractFlowableWi
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DistinctUntilChangedSubscriber<T, K> extends BasicFuseableSubscriber<T, T> implements ConditionalSubscriber<T> {
         final BiPredicate<? super K, ? super K> comparer;
         boolean hasValue;
@@ -108,7 +108,7 @@ public final class FlowableDistinctUntilChanged<T, K> extends AbstractFlowableWi
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DistinctUntilChangedConditionalSubscriber<T, K> extends BasicFuseableConditionalSubscriber<T, T> {
         final BiPredicate<? super K, ? super K> comparer;
         boolean hasValue;

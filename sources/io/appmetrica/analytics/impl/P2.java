@@ -5,55 +5,55 @@ import io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences;
 public abstract class P2 implements ModulePreferences {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0641ul f587a;
+    public final InterfaceC0763zl f597a;
 
-    public P2(InterfaceC0641ul interfaceC0641ul) {
-        this.f587a = interfaceC0641ul;
+    public P2(InterfaceC0763zl interfaceC0763zl) {
+        this.f597a = interfaceC0763zl;
     }
 
     public abstract String a(String str);
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
     public final boolean getBoolean(String str, boolean z) {
-        return ((Nd) this.f587a).c(str, z);
+        return ((Pd) this.f597a).c(str, z);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
     public final int getInt(String str, int i) {
-        return ((Nd) this.f587a).c(str, i);
+        return ((Pd) this.f597a).c(str, i);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
     public final long getLong(String str, long j) {
-        return ((Nd) this.f587a).c(a(str), j);
+        return ((Pd) this.f597a).c(a(str), j);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
     public final String getString(String str, String str2) {
-        return ((Nd) this.f587a).c(a(str), str2);
+        return ((Pd) this.f597a).c(a(str), str2);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
     public final void putBoolean(String str, boolean z) {
-        Nd nd = (Nd) this.f587a;
-        ((AbstractC0411lf) ((InterfaceC0641ul) nd.b(nd.f(a(str)), z))).b();
+        Pd pd = (Pd) this.f597a;
+        ((AbstractC0458nf) ((InterfaceC0763zl) pd.b(pd.f(a(str)), z))).b();
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
     public final void putInt(String str, int i) {
-        Nd nd = (Nd) this.f587a;
-        ((AbstractC0411lf) ((InterfaceC0641ul) nd.b(nd.f(str), i))).b();
+        Pd pd = (Pd) this.f597a;
+        ((AbstractC0458nf) ((InterfaceC0763zl) pd.b(pd.f(str), i))).b();
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
     public final void putLong(String str, long j) {
-        Nd nd = (Nd) this.f587a;
-        ((AbstractC0411lf) ((InterfaceC0641ul) nd.b(nd.f(a(str)), j))).b();
+        Pd pd = (Pd) this.f597a;
+        ((AbstractC0458nf) ((InterfaceC0763zl) pd.b(pd.f(a(str)), j))).b();
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
     public final void putString(String str, String str2) {
-        Nd nd = (Nd) this.f587a;
-        ((AbstractC0411lf) ((InterfaceC0641ul) nd.b(nd.f(a(str)), str2))).b();
+        Pd pd = (Pd) this.f597a;
+        ((AbstractC0458nf) ((InterfaceC0763zl) pd.b(pd.f(a(str)), str2))).b();
     }
 }

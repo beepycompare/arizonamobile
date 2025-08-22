@@ -33,7 +33,7 @@ public final class DividerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1876HorizontalDivider9IZ8Weo(Modifier modifier, final float f, final long j, Composer composer, final int i, final int i2) {
+    public static final void m2183HorizontalDivider9IZ8Weo(Modifier modifier, final float f, final long j, Composer composer, final int i, final int i2) {
         int i3;
         Composer startRestartGroup = composer.startRestartGroup(75144485);
         ComposerKt.sourceInformation(startRestartGroup, "C(HorizontalDivider)P(1,2:c#ui.unit.Dp,0:c#ui.graphics.Color)52@2069L5,54@2134L220,54@2084L270:Divider.kt#uh7d8r");
@@ -63,7 +63,7 @@ public final class DividerKt {
                     modifier = Modifier.Companion;
                 }
                 if (i5 != 0) {
-                    f = DividerDefaults.INSTANCE.m1874getThicknessD9Ej5fM();
+                    f = DividerDefaults.INSTANCE.m2181getThicknessD9Ej5fM();
                 }
                 if ((i2 & 4) != 0) {
                     j = DividerDefaults.INSTANCE.getColor(startRestartGroup, 6);
@@ -74,7 +74,7 @@ public final class DividerKt {
                     ComposerKt.traceEventStart(75144485, i3, -1, "androidx.compose.material3.HorizontalDivider (Divider.kt:54)");
                 }
                 boolean z = true;
-                Modifier m771height3ABfNKs = SizeKt.m771height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), f);
+                Modifier m870height3ABfNKs = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), f);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -873178642, "CC(remember):Divider.kt#9igjgp");
                 boolean z2 = (i3 & 112) == 32;
                 if ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !startRestartGroup.changed(j)) && (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
@@ -99,13 +99,13 @@ public final class DividerKt {
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(DrawScope drawScope) {
                             float f2 = 2;
-                            DrawScope.m4626drawLineNGM6Ib0$default(drawScope, j, OffsetKt.Offset(0.0f, drawScope.mo389toPx0680j_4(f) / f2), OffsetKt.Offset(Size.m3906getWidthimpl(drawScope.mo4640getSizeNHjbRc()), drawScope.mo389toPx0680j_4(f) / f2), drawScope.mo389toPx0680j_4(f), 0, null, 0.0f, null, 0, 496, null);
+                            DrawScope.m5102drawLineNGM6Ib0$default(drawScope, j, OffsetKt.Offset(0.0f, drawScope.mo419toPx0680j_4(f) / f2), OffsetKt.Offset(Size.m4362getWidthimpl(drawScope.mo5116getSizeNHjbRc()), drawScope.mo419toPx0680j_4(f) / f2), drawScope.mo419toPx0680j_4(f), 0, null, 0.0f, null, 0, 496, null);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                CanvasKt.Canvas(m771height3ABfNKs, (Function1) rememberedValue, startRestartGroup, 0);
+                CanvasKt.Canvas(m870height3ABfNKs, (Function1) rememberedValue, startRestartGroup, 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -132,7 +132,7 @@ public final class DividerKt {
                 }
 
                 public final void invoke(Composer composer2, int i6) {
-                    DividerKt.m1876HorizontalDivider9IZ8Weo(Modifier.this, f2, j2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                    DividerKt.m2183HorizontalDivider9IZ8Weo(Modifier.this, f2, j2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                 }
             });
         }
@@ -145,7 +145,7 @@ public final class DividerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1877VerticalDivider9IZ8Weo(Modifier modifier, final float f, final long j, Composer composer, final int i, final int i2) {
+    public static final void m2184VerticalDivider9IZ8Weo(Modifier modifier, final float f, final long j, Composer composer, final int i, final int i2) {
         int i3;
         Composer startRestartGroup = composer.startRestartGroup(-1534852205);
         ComposerKt.sourceInformation(startRestartGroup, "C(VerticalDivider)P(1,2:c#ui.unit.Dp,0:c#ui.graphics.Color)81@3089L5,83@3154L221,83@3104L271:Divider.kt#uh7d8r");
@@ -175,7 +175,7 @@ public final class DividerKt {
                     modifier = Modifier.Companion;
                 }
                 if (i5 != 0) {
-                    f = DividerDefaults.INSTANCE.m1874getThicknessD9Ej5fM();
+                    f = DividerDefaults.INSTANCE.m2181getThicknessD9Ej5fM();
                 }
                 if ((i2 & 4) != 0) {
                     j = DividerDefaults.INSTANCE.getColor(startRestartGroup, 6);
@@ -186,7 +186,7 @@ public final class DividerKt {
                     ComposerKt.traceEventStart(-1534852205, i3, -1, "androidx.compose.material3.VerticalDivider (Divider.kt:83)");
                 }
                 boolean z = true;
-                Modifier m790width3ABfNKs = SizeKt.m790width3ABfNKs(SizeKt.fillMaxHeight$default(modifier, 0.0f, 1, null), f);
+                Modifier m889width3ABfNKs = SizeKt.m889width3ABfNKs(SizeKt.fillMaxHeight$default(modifier, 0.0f, 1, null), f);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -662977123, "CC(remember):Divider.kt#9igjgp");
                 boolean z2 = (i3 & 112) == 32;
                 if ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !startRestartGroup.changed(j)) && (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
@@ -211,13 +211,13 @@ public final class DividerKt {
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(DrawScope drawScope) {
                             float f2 = 2;
-                            DrawScope.m4626drawLineNGM6Ib0$default(drawScope, j, OffsetKt.Offset(drawScope.mo389toPx0680j_4(f) / f2, 0.0f), OffsetKt.Offset(drawScope.mo389toPx0680j_4(f) / f2, Size.m3903getHeightimpl(drawScope.mo4640getSizeNHjbRc())), drawScope.mo389toPx0680j_4(f), 0, null, 0.0f, null, 0, 496, null);
+                            DrawScope.m5102drawLineNGM6Ib0$default(drawScope, j, OffsetKt.Offset(drawScope.mo419toPx0680j_4(f) / f2, 0.0f), OffsetKt.Offset(drawScope.mo419toPx0680j_4(f) / f2, Size.m4359getHeightimpl(drawScope.mo5116getSizeNHjbRc())), drawScope.mo419toPx0680j_4(f), 0, null, 0.0f, null, 0, 496, null);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                CanvasKt.Canvas(m790width3ABfNKs, (Function1) rememberedValue, startRestartGroup, 0);
+                CanvasKt.Canvas(m889width3ABfNKs, (Function1) rememberedValue, startRestartGroup, 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -244,7 +244,7 @@ public final class DividerKt {
                 }
 
                 public final void invoke(Composer composer2, int i6) {
-                    DividerKt.m1877VerticalDivider9IZ8Weo(Modifier.this, f2, j2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                    DividerKt.m2184VerticalDivider9IZ8Weo(Modifier.this, f2, j2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                 }
             });
         }
@@ -258,7 +258,7 @@ public final class DividerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1875Divider9IZ8Weo(Modifier modifier, float f, long j, Composer composer, final int i, final int i2) {
+    public static final void m2182Divider9IZ8Weo(Modifier modifier, float f, long j, Composer composer, final int i, final int i2) {
         int i3;
         float f2;
         final long j2;
@@ -290,7 +290,7 @@ public final class DividerKt {
                     modifier = Modifier.Companion;
                 }
                 if (i5 != 0) {
-                    f = DividerDefaults.INSTANCE.m1874getThicknessD9Ej5fM();
+                    f = DividerDefaults.INSTANCE.m2181getThicknessD9Ej5fM();
                 }
                 if ((i2 & 4) != 0) {
                     j = DividerDefaults.INSTANCE.getColor(startRestartGroup, 6);
@@ -303,16 +303,16 @@ public final class DividerKt {
                 }
                 startRestartGroup.startReplaceGroup(-433645095);
                 ComposerKt.sourceInformation(startRestartGroup, "*104@3767L7");
-                if (Dp.m6689equalsimpl0(f, Dp.Companion.m6702getHairlineD9Ej5fM())) {
+                if (Dp.m7256equalsimpl0(f, Dp.Companion.m7269getHairlineD9Ej5fM())) {
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                     Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    f2 = Dp.m6684constructorimpl(1.0f / ((Density) consume).getDensity());
+                    f2 = Dp.m7251constructorimpl(1.0f / ((Density) consume).getDensity());
                 } else {
                     f2 = f;
                 }
                 startRestartGroup.endReplaceGroup();
-                BoxKt.Box(BackgroundKt.m247backgroundbw27NRU$default(SizeKt.m771height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), f2), j3, null, 2, null), startRestartGroup, 0);
+                BoxKt.Box(BackgroundKt.m257backgroundbw27NRU$default(SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), f2), j3, null, 2, null), startRestartGroup, 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -340,7 +340,7 @@ public final class DividerKt {
                 }
 
                 public final void invoke(Composer composer2, int i6) {
-                    DividerKt.m1875Divider9IZ8Weo(Modifier.this, f3, j2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                    DividerKt.m2182Divider9IZ8Weo(Modifier.this, f3, j2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                 }
             });
         }

@@ -6,7 +6,7 @@ import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableLastMaybe<T> extends Maybe<T> {
     final ObservableSource<T> source;
 
@@ -19,7 +19,7 @@ public final class ObservableLastMaybe<T> extends Maybe<T> {
         this.source.subscribe(new LastObserver(maybeObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class LastObserver<T> implements Observer<T>, Disposable {
         final MaybeObserver<? super T> downstream;
         T item;

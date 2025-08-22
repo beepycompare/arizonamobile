@@ -12,8 +12,8 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Scrollable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollableNode$drag$2$1", f = "Scrollable.kt", i = {}, l = {330}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollableNode$drag$2$1", f = "Scrollable.kt", i = {}, l = {340}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class ScrollableNode$drag$2$1 extends SuspendLambda implements Function2<NestedScrollScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<Function1<? super DragEvent.DragDelta, Unit>, Continuation<? super Unit>, Object> $forEachDelta;
@@ -51,21 +51,12 @@ final class ScrollableNode$drag$2$1 extends SuspendLambda implements Function2<N
             final NestedScrollScope nestedScrollScope = (NestedScrollScope) this.L$0;
             Function2<Function1<? super DragEvent.DragDelta, Unit>, Continuation<? super Unit>, Object> function2 = this.$forEachDelta;
             final ScrollingLogic scrollingLogic = this.$this_with;
-            Function1<DragEvent.DragDelta, Unit> function1 = new Function1<DragEvent.DragDelta, Unit>() { // from class: androidx.compose.foundation.gestures.ScrollableNode$drag$2$1.1
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(1);
-                }
-
+            Function1<? super DragEvent.DragDelta, Unit> function1 = new Function1() { // from class: androidx.compose.foundation.gestures.ScrollableNode$drag$2$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(DragEvent.DragDelta dragDelta) {
-                    invoke2(dragDelta);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(DragEvent.DragDelta dragDelta) {
-                    NestedScrollScope.this.mo482scrollByWithOverscrollOzD1aCk(scrollingLogic.m526singleAxisOffsetMKHz9U(dragDelta.m426getDeltaF1C5BW0()), NestedScrollSource.Companion.m5206getUserInputWNlRxjI());
+                public final Object invoke(Object obj2) {
+                    Unit invokeSuspend$lambda$0;
+                    invokeSuspend$lambda$0 = ScrollableNode$drag$2$1.invokeSuspend$lambda$0(NestedScrollScope.this, scrollingLogic, (DragEvent.DragDelta) obj2);
+                    return invokeSuspend$lambda$0;
                 }
             };
             this.label = 1;
@@ -77,6 +68,12 @@ final class ScrollableNode$drag$2$1 extends SuspendLambda implements Function2<N
         } else {
             ResultKt.throwOnFailure(obj);
         }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(NestedScrollScope nestedScrollScope, ScrollingLogic scrollingLogic, DragEvent.DragDelta dragDelta) {
+        nestedScrollScope.mo524scrollByWithOverscrollOzD1aCk(scrollingLogic.m582singleAxisOffsetMKHz9U(dragDelta.m465getDeltaF1C5BW0()), NestedScrollSource.Companion.m5719getUserInputWNlRxjI());
         return Unit.INSTANCE;
     }
 }

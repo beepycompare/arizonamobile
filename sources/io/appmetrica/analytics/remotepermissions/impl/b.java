@@ -6,20 +6,20 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 public final class b implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final c f1266a = new c();
+    public final c f1276a = new c();
 
     public final byte[] a(a aVar) {
-        return MessageNano.toByteArray(this.f1266a.fromModel(aVar));
+        return MessageNano.toByteArray(this.f1276a.fromModel(aVar));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object fromModel(Object obj) {
-        return MessageNano.toByteArray(this.f1266a.fromModel((a) obj));
+        return MessageNano.toByteArray(this.f1276a.fromModel((a) obj));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final a toModel(byte[] bArr) {
-        return this.f1266a.toModel((f) MessageNano.mergeFrom(new f(), bArr));
+        return this.f1276a.toModel((f) MessageNano.mergeFrom(new f(), bArr));
     }
 }

@@ -2,6 +2,7 @@ package androidx.compose.foundation.lazy.layout;
 
 import android.os.Build;
 import android.view.View;
+import androidx.compose.foundation.R;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.ui.platform.AndroidCompositionLocals_androidKt;
@@ -9,7 +10,7 @@ import java.util.Locale;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PrefetchScheduler.android.kt */
-@Metadata(d1 = {"\u0000\u0011\n\u0000\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002*\u0001\u0001\u001a\r\u0010\u0005\u001a\u00020\u0006H\u0001¢\u0006\u0002\u0010\u0007\"\u001a\u0010\u0000\u001a\u0004\u0018\u00010\u00018\u0002X\u0083\u0004¢\u0006\n\n\u0002\u0010\u0004\u0012\u0004\b\u0002\u0010\u0003¨\u0006\b"}, d2 = {"RobolectricImpl", "androidx/compose/foundation/lazy/layout/PrefetchScheduler_androidKt$RobolectricImpl$1", "getRobolectricImpl$annotations", "()V", "Landroidx/compose/foundation/lazy/layout/PrefetchScheduler_androidKt$RobolectricImpl$1;", "rememberDefaultPrefetchScheduler", "Landroidx/compose/foundation/lazy/layout/PrefetchScheduler;", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/lazy/layout/PrefetchScheduler;", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0011\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0005*\u0001\u0004\u001a\r\u0010\u0000\u001a\u00020\u0001H\u0001¢\u0006\u0002\u0010\u0002\"\u001a\u0010\u0003\u001a\u0004\u0018\u00010\u00048\u0002X\u0083\u0004¢\u0006\n\n\u0002\u0010\u0007\u0012\u0004\b\u0005\u0010\u0006¨\u0006\b"}, d2 = {"rememberDefaultPrefetchScheduler", "Landroidx/compose/foundation/lazy/layout/PrefetchScheduler;", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/lazy/layout/PrefetchScheduler;", "RobolectricImpl", "androidx/compose/foundation/lazy/layout/PrefetchScheduler_androidKt$RobolectricImpl$1", "getRobolectricImpl$annotations", "()V", "Landroidx/compose/foundation/lazy/layout/PrefetchScheduler_androidKt$RobolectricImpl$1;", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PrefetchScheduler_androidKt {
     private static final PrefetchScheduler_androidKt$RobolectricImpl$1 RobolectricImpl;
@@ -18,39 +19,46 @@ public final class PrefetchScheduler_androidKt {
     }
 
     public static final PrefetchScheduler rememberDefaultPrefetchScheduler(Composer composer, int i) {
-        AndroidPrefetchScheduler androidPrefetchScheduler;
+        PrefetchScheduler_androidKt$RobolectricImpl$1 prefetchScheduler_androidKt$RobolectricImpl$1;
         ComposerKt.sourceInformationMarkerStart(composer, 1141871251, "C(rememberDefaultPrefetchScheduler):PrefetchScheduler.android.kt#wow0x6");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(1141871251, i, -1, "androidx.compose.foundation.lazy.layout.rememberDefaultPrefetchScheduler (PrefetchScheduler.android.kt:32)");
+            ComposerKt.traceEventStart(1141871251, i, -1, "androidx.compose.foundation.lazy.layout.rememberDefaultPrefetchScheduler (PrefetchScheduler.android.kt:36)");
         }
-        PrefetchScheduler_androidKt$RobolectricImpl$1 prefetchScheduler_androidKt$RobolectricImpl$1 = RobolectricImpl;
-        if (prefetchScheduler_androidKt$RobolectricImpl$1 != null) {
-            composer.startReplaceGroup(1213893039);
+        PrefetchScheduler_androidKt$RobolectricImpl$1 prefetchScheduler_androidKt$RobolectricImpl$12 = RobolectricImpl;
+        if (prefetchScheduler_androidKt$RobolectricImpl$12 != null) {
+            composer.startReplaceGroup(1345648624);
             composer.endReplaceGroup();
-            androidPrefetchScheduler = prefetchScheduler_androidKt$RobolectricImpl$1;
+            prefetchScheduler_androidKt$RobolectricImpl$1 = prefetchScheduler_androidKt$RobolectricImpl$12;
         } else {
-            composer.startReplaceGroup(1213931944);
-            ComposerKt.sourceInformation(composer, "36@1323L7,37@1339L49");
+            composer.startReplaceGroup(1345697697);
+            ComposerKt.sourceInformation(composer, "40@1441L7,41@1457L377");
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(AndroidCompositionLocals_androidKt.getLocalView());
             ComposerKt.sourceInformationMarkerEnd(composer);
             View view = (View) consume;
-            ComposerKt.sourceInformationMarkerStart(composer, -930670779, "CC(remember):PrefetchScheduler.android.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, 2121621036, "CC(remember):PrefetchScheduler.android.kt#9igjgp");
             boolean changed = composer.changed(view);
             Object rememberedValue = composer.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = new AndroidPrefetchScheduler(view);
+                Object tag = view.getTag(R.id.compose_prefetch_scheduler);
+                Object obj = tag instanceof PrefetchScheduler ? (PrefetchScheduler) tag : null;
+                if (obj == null) {
+                    Object androidPrefetchScheduler = new AndroidPrefetchScheduler(view);
+                    view.setTag(R.id.compose_prefetch_scheduler, androidPrefetchScheduler);
+                    obj = (PrefetchScheduler) androidPrefetchScheduler;
+                }
+                rememberedValue = obj;
                 composer.updateRememberedValue(rememberedValue);
             }
+            prefetchScheduler_androidKt$RobolectricImpl$1 = (PrefetchScheduler) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endReplaceGroup();
-            androidPrefetchScheduler = (AndroidPrefetchScheduler) rememberedValue;
         }
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return androidPrefetchScheduler;
+        return prefetchScheduler_androidKt$RobolectricImpl$1;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

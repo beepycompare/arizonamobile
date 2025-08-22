@@ -3,6 +3,8 @@ package androidx.core.view;
 import android.os.Build;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
+import java.util.Objects;
 /* loaded from: classes2.dex */
 public final class WindowCompat {
     public static final int FEATURE_ACTION_BAR = 8;
@@ -37,8 +39,29 @@ public final class WindowCompat {
         return new WindowInsetsControllerCompat(window, view);
     }
 
+    public static void enableEdgeToEdge(Window window) {
+        Objects.requireNonNull(window);
+        window.getDecorView();
+        setDecorFitsSystemWindows(window, false);
+        window.setStatusBarColor(0);
+        window.setNavigationBarColor(0);
+        if (Build.VERSION.SDK_INT >= 28) {
+            int i = Build.VERSION.SDK_INT >= 30 ? 3 : 1;
+            WindowManager.LayoutParams attributes = window.getAttributes();
+            if (attributes.layoutInDisplayCutoutMode != i) {
+                attributes.layoutInDisplayCutoutMode = i;
+                window.setAttributes(attributes);
+            }
+        }
+        if (Build.VERSION.SDK_INT >= 29) {
+            window.setStatusBarContrastEnforced(false);
+            window.setNavigationBarContrastEnforced(false);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes2.dex */
-    static class Api16Impl {
+    public static class Api16Impl {
         private Api16Impl() {
         }
 
@@ -49,8 +72,9 @@ public final class WindowCompat {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes2.dex */
-    static class Api30Impl {
+    public static class Api30Impl {
         private Api30Impl() {
         }
 
@@ -62,8 +86,9 @@ public final class WindowCompat {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes2.dex */
-    static class Api35Impl {
+    public static class Api35Impl {
         private Api35Impl() {
         }
 

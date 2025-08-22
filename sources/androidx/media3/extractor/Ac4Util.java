@@ -11,7 +11,7 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import com.google.common.primitives.SignedBytes;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Ac4Util {
     public static final int AC40_SYNCWORD = 44096;
     public static final int AC41_SYNCWORD = 44097;
@@ -74,7 +74,7 @@ public final class Ac4Util {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class SyncFrameInfo {
         public final int bitstreamVersion;
         public final int channelCount;
@@ -94,10 +94,10 @@ public final class Ac4Util {
     /* JADX WARN: Code restructure failed: missing block: B:61:0x0117, code lost:
         if (r5 == 2) goto L138;
      */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x027c  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x0287  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x02d9  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x030f  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x027d  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0288  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x02da  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0310  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -554,7 +554,7 @@ public final class Ac4Util {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class Ac4Presentation {
         public int channelMode;
         public boolean hasBackChannels;

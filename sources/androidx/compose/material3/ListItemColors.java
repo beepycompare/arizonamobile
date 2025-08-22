@@ -34,77 +34,77 @@ public final class ListItemColors {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m1983getContainerColor0d7_KjU() {
+    public final long m2290getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getHeadlineColor-0d7_KjU  reason: not valid java name */
-    public final long m1987getHeadlineColor0d7_KjU() {
+    public final long m2294getHeadlineColor0d7_KjU() {
         return this.headlineColor;
     }
 
     /* renamed from: getLeadingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m1988getLeadingIconColor0d7_KjU() {
+    public final long m2295getLeadingIconColor0d7_KjU() {
         return this.leadingIconColor;
     }
 
     /* renamed from: getOverlineColor-0d7_KjU  reason: not valid java name */
-    public final long m1989getOverlineColor0d7_KjU() {
+    public final long m2296getOverlineColor0d7_KjU() {
         return this.overlineColor;
     }
 
     /* renamed from: getSupportingTextColor-0d7_KjU  reason: not valid java name */
-    public final long m1990getSupportingTextColor0d7_KjU() {
+    public final long m2297getSupportingTextColor0d7_KjU() {
         return this.supportingTextColor;
     }
 
     /* renamed from: getTrailingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m1991getTrailingIconColor0d7_KjU() {
+    public final long m2298getTrailingIconColor0d7_KjU() {
         return this.trailingIconColor;
     }
 
     /* renamed from: getDisabledHeadlineColor-0d7_KjU  reason: not valid java name */
-    public final long m1984getDisabledHeadlineColor0d7_KjU() {
+    public final long m2291getDisabledHeadlineColor0d7_KjU() {
         return this.disabledHeadlineColor;
     }
 
     /* renamed from: getDisabledLeadingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m1985getDisabledLeadingIconColor0d7_KjU() {
+    public final long m2292getDisabledLeadingIconColor0d7_KjU() {
         return this.disabledLeadingIconColor;
     }
 
     /* renamed from: getDisabledTrailingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m1986getDisabledTrailingIconColor0d7_KjU() {
+    public final long m2293getDisabledTrailingIconColor0d7_KjU() {
         return this.disabledTrailingIconColor;
     }
 
     /* renamed from: containerColor-0d7_KjU$material3_release  reason: not valid java name */
-    public final long m1982containerColor0d7_KjU$material3_release() {
+    public final long m2289containerColor0d7_KjU$material3_release() {
         return this.containerColor;
     }
 
     /* renamed from: headlineColor-vNxB06k$material3_release  reason: not valid java name */
-    public final long m1992headlineColorvNxB06k$material3_release(boolean z) {
+    public final long m2299headlineColorvNxB06k$material3_release(boolean z) {
         return z ? this.headlineColor : this.disabledHeadlineColor;
     }
 
     /* renamed from: leadingIconColor-vNxB06k$material3_release  reason: not valid java name */
-    public final long m1993leadingIconColorvNxB06k$material3_release(boolean z) {
+    public final long m2300leadingIconColorvNxB06k$material3_release(boolean z) {
         return z ? this.leadingIconColor : this.disabledLeadingIconColor;
     }
 
     /* renamed from: overlineColor-0d7_KjU$material3_release  reason: not valid java name */
-    public final long m1994overlineColor0d7_KjU$material3_release() {
+    public final long m2301overlineColor0d7_KjU$material3_release() {
         return this.overlineColor;
     }
 
     /* renamed from: supportingColor-0d7_KjU$material3_release  reason: not valid java name */
-    public final long m1995supportingColor0d7_KjU$material3_release() {
+    public final long m2302supportingColor0d7_KjU$material3_release() {
         return this.supportingTextColor;
     }
 
     /* renamed from: trailingIconColor-vNxB06k$material3_release  reason: not valid java name */
-    public final long m1996trailingIconColorvNxB06k$material3_release(boolean z) {
+    public final long m2303trailingIconColorvNxB06k$material3_release(boolean z) {
         return z ? this.trailingIconColor : this.disabledTrailingIconColor;
     }
 }

@@ -21,11 +21,11 @@ final class EqualWeightContentMeasurePolicy implements MeasurePolicy {
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo42measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         final ArrayList arrayList;
-        int m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j);
-        int m6638getMinHeightimpl = Constraints.m6638getMinHeightimpl(j);
+        int m7204getMaxWidthimpl = Constraints.m7204getMaxWidthimpl(j);
+        int m7205getMinHeightimpl = Constraints.m7205getMinHeightimpl(j);
         int size = list.size();
         if (size < 1) {
-            return MeasureScope.layout$default(measureScope, m6637getMaxWidthimpl, m6638getMinHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.EqualWeightContentMeasurePolicy$measure$1
+            return MeasureScope.layout$default(measureScope, m7204getMaxWidthimpl, m7205getMinHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.EqualWeightContentMeasurePolicy$measure$1
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(Placeable.PlacementScope placementScope) {
                 }
@@ -38,19 +38,19 @@ final class EqualWeightContentMeasurePolicy implements MeasurePolicy {
             }, 4, null);
         }
         int i = 0;
-        if (Constraints.m6633getHasBoundedWidthimpl(j)) {
-            int i2 = m6637getMaxWidthimpl / size;
+        if (Constraints.m7200getHasBoundedWidthimpl(j)) {
+            int i2 = m7204getMaxWidthimpl / size;
             int size2 = list.size();
             for (int i3 = 0; i3 < size2; i3++) {
                 int maxIntrinsicHeight = list.get(i3).maxIntrinsicHeight(i2);
-                if (m6638getMinHeightimpl < maxIntrinsicHeight) {
-                    m6638getMinHeightimpl = RangesKt.coerceAtMost(maxIntrinsicHeight, Constraints.m6636getMaxHeightimpl(j));
+                if (m7205getMinHeightimpl < maxIntrinsicHeight) {
+                    m7205getMinHeightimpl = RangesKt.coerceAtMost(maxIntrinsicHeight, Constraints.m7203getMaxHeightimpl(j));
                 }
             }
             ArrayList arrayList2 = new ArrayList(list.size());
             int size3 = list.size();
             while (i < size3) {
-                arrayList2.add(list.get(i).mo5438measureBRTryo0(ConstraintsKt.m6652constrainN9IONVI(j, Constraints.Companion.m6647fixedJhjzzOo(i2, m6638getMinHeightimpl))));
+                arrayList2.add(list.get(i).mo5954measureBRTryo0(ConstraintsKt.m7219constrainN9IONVI(j, Constraints.Companion.m7214fixedJhjzzOo(i2, m7205getMinHeightimpl))));
                 i++;
             }
             arrayList = arrayList2;
@@ -58,12 +58,12 @@ final class EqualWeightContentMeasurePolicy implements MeasurePolicy {
             ArrayList arrayList3 = new ArrayList(list.size());
             int size4 = list.size();
             while (i < size4) {
-                arrayList3.add(list.get(i).mo5438measureBRTryo0(ConstraintsKt.m6652constrainN9IONVI(j, Constraints.Companion.m6648fixedHeightOenEA2s(m6638getMinHeightimpl))));
+                arrayList3.add(list.get(i).mo5954measureBRTryo0(ConstraintsKt.m7219constrainN9IONVI(j, Constraints.Companion.m7215fixedHeightOenEA2s(m7205getMinHeightimpl))));
                 i++;
             }
             arrayList = arrayList3;
         }
-        return MeasureScope.layout$default(measureScope, m6637getMaxWidthimpl, m6638getMinHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.EqualWeightContentMeasurePolicy$measure$5
+        return MeasureScope.layout$default(measureScope, m7204getMaxWidthimpl, m7205getMinHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.EqualWeightContentMeasurePolicy$measure$5
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */

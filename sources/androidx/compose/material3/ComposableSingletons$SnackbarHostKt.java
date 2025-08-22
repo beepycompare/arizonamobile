@@ -14,7 +14,7 @@ public final class ComposableSingletons$SnackbarHostKt {
     public static final ComposableSingletons$SnackbarHostKt INSTANCE = new ComposableSingletons$SnackbarHostKt();
 
     /* renamed from: lambda-1  reason: not valid java name */
-    public static Function3<SnackbarData, Composer, Integer, Unit> f46lambda1 = ComposableLambdaKt.composableLambdaInstance(818736383, false, new Function3<SnackbarData, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SnackbarHostKt$lambda-1$1
+    public static Function3<SnackbarData, Composer, Integer, Unit> f44lambda1 = ComposableLambdaKt.composableLambdaInstance(818736383, false, new Function3<SnackbarData, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SnackbarHostKt$lambda-1$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(SnackbarData snackbarData, Composer composer, Integer num) {
             invoke(snackbarData, composer, num.intValue());
@@ -39,7 +39,7 @@ public final class ComposableSingletons$SnackbarHostKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(818736383, i2, -1, "androidx.compose.material3.ComposableSingletons$SnackbarHostKt.lambda-1.<anonymous> (SnackbarHost.kt:220)");
             }
-            SnackbarKt.m2333SnackbarsDKtq54(snackbarData2, null, false, null, 0L, 0L, 0L, 0L, 0L, composer, i2 & 14, TypedValues.PositionType.TYPE_POSITION_TYPE);
+            SnackbarKt.m2640SnackbarsDKtq54(snackbarData2, null, false, null, 0L, 0L, 0L, 0L, 0L, composer, i2 & 14, TypedValues.PositionType.TYPE_POSITION_TYPE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -47,7 +47,7 @@ public final class ComposableSingletons$SnackbarHostKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function3<SnackbarData, Composer, Integer, Unit> m1784getLambda1$material3_release() {
-        return f46lambda1;
+    public final Function3<SnackbarData, Composer, Integer, Unit> m2091getLambda1$material3_release() {
+        return f44lambda1;
     }
 }

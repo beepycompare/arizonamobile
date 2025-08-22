@@ -1,15 +1,7 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class Bo implements Consumer {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f365a = "WebView interface setup failed because javascript is disabled for the WebView.";
-
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    public final void consume(Object obj) {
-        ((PublicLogger) obj).warning(this.f365a, new Object[0]);
-    }
+public interface Bo {
+    JSONObject a(JSONObject jSONObject, JSONObject jSONObject2);
 }

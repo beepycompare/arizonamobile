@@ -1,7 +1,7 @@
 package androidx.media3.extractor;
 
 import androidx.media3.common.util.Assertions;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class VorbisBitArray {
     private int bitOffset;
     private final int byteLimit;

@@ -18,12 +18,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeMergeArray<T> extends Flowable<T> {
     final MaybeSource<? extends T>[] sources;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface SimpleQueueWithConsumerIndex<T> extends SimpleQueue<T> {
         int consumerIndex();
 
@@ -62,7 +62,7 @@ public final class MaybeMergeArray<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MergeMaybeObserver<T> extends BasicIntQueueSubscription<T> implements MaybeObserver<T> {
         private static final long serialVersionUID = -660395290758764731L;
         volatile boolean cancelled;
@@ -269,7 +269,7 @@ public final class MaybeMergeArray<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MpscFillOnceSimpleQueue<T> extends AtomicReferenceArray<T> implements SimpleQueueWithConsumerIndex<T> {
         private static final long serialVersionUID = -7969063454040569579L;
         int consumerIndex;
@@ -352,7 +352,7 @@ public final class MaybeMergeArray<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ClqSimpleQueue<T> extends ConcurrentLinkedQueue<T> implements SimpleQueueWithConsumerIndex<T> {
         private static final long serialVersionUID = -4025173261791142821L;
         int consumerIndex;

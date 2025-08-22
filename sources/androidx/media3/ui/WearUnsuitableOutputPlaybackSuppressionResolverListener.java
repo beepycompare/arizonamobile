@@ -14,7 +14,7 @@ import androidx.media3.common.util.SystemClock;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.ts.TsExtractor;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class WearUnsuitableOutputPlaybackSuppressionResolverListener implements Player.Listener {
     public static final long DEFAULT_PLAYBACK_SUPPRESSION_AUTO_RESUME_TIMEOUT_MS = TimeUnit.MINUTES.toMillis(5);
     private static final String EXTRA_BLUETOOTH_SETTINGS_CLOSE_ON_CONNECT = "EXTRA_CLOSE_ON_CONNECT";

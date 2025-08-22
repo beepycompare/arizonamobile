@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicReferenceArray;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableWithLatestFromMany<T, R> extends AbstractFlowableWithUpstream<T, R> {
     final Function<? super Object[], R> combiner;
     final Publisher<?>[] otherArray;
@@ -73,7 +73,7 @@ public final class FlowableWithLatestFromMany<T, R> extends AbstractFlowableWith
         this.source.subscribe((FlowableSubscriber) withLatestFromSubscriber);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WithLatestFromSubscriber<T, R> extends AtomicInteger implements ConditionalSubscriber<T>, Subscription {
         private static final long serialVersionUID = 1577321883966341961L;
         final Function<? super Object[], R> combiner;
@@ -215,7 +215,7 @@ public final class FlowableWithLatestFromMany<T, R> extends AbstractFlowableWith
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class WithLatestInnerSubscriber extends AtomicReference<Subscription> implements FlowableSubscriber<Object> {
         private static final long serialVersionUID = 3256684027868224024L;
         boolean hasValue;
@@ -255,7 +255,7 @@ public final class FlowableWithLatestFromMany<T, R> extends AbstractFlowableWith
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class SingletonArrayFunc implements Function<T, R> {
         SingletonArrayFunc() {
         }

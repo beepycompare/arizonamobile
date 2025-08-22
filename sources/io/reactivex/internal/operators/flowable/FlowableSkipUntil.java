@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSkipUntil<T, U> extends AbstractFlowableWithUpstream<T, T> {
     final Publisher<U> other;
 
@@ -29,7 +29,7 @@ public final class FlowableSkipUntil<T, U> extends AbstractFlowableWithUpstream<
         this.source.subscribe((FlowableSubscriber) skipUntilMainSubscriber);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SkipUntilMainSubscriber<T> extends AtomicInteger implements ConditionalSubscriber<T>, Subscription {
         private static final long serialVersionUID = -6270983465606289181L;
         final Subscriber<? super T> downstream;
@@ -88,7 +88,7 @@ public final class FlowableSkipUntil<T, U> extends AbstractFlowableWithUpstream<
             SubscriptionHelper.cancel(this.other);
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class OtherSubscriber extends AtomicReference<Subscription> implements FlowableSubscriber<Object> {
             private static final long serialVersionUID = -5592042965931999169L;
 

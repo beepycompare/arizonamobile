@@ -3,7 +3,7 @@ package androidx.compose.ui.graphics;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: ColorFilter.kt */
-@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0017\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0002\u0010\u0006B#\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\n\u0010\u0007\u001a\u00060\bj\u0002`\t¢\u0006\u0002\u0010\nJ\u0013\u0010\u0011\u001a\u00020\u00122\b\u0010\u0013\u001a\u0004\u0018\u00010\u0014H\u0096\u0002J\b\u0010\u0015\u001a\u00020\u0016H\u0016J\b\u0010\u0017\u001a\u00020\u0018H\u0016R\u0019\u0010\u0004\u001a\u00020\u0005ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\u000b\u0010\fR\u0019\u0010\u0002\u001a\u00020\u0003ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0010\u001a\u0004\b\u000e\u0010\u000f\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0019"}, d2 = {"Landroidx/compose/ui/graphics/BlendModeColorFilter;", "Landroidx/compose/ui/graphics/ColorFilter;", "color", "Landroidx/compose/ui/graphics/Color;", "blendMode", "Landroidx/compose/ui/graphics/BlendMode;", "(JILkotlin/jvm/internal/DefaultConstructorMarker;)V", "nativeColorFilter", "Landroid/graphics/ColorFilter;", "Landroidx/compose/ui/graphics/NativeColorFilter;", "(JILandroid/graphics/ColorFilter;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getBlendMode-0nO6VwU", "()I", "I", "getColor-0d7_KjU", "()J", "J", "equals", "", "other", "", "hashCode", "", "toString", "", "ui-graphics_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B%\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\n\u0010\u0006\u001a\u00060\u0007j\u0002`\b¢\u0006\u0004\b\t\u0010\nB\u0019\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\t\u0010\u000bJ\u0013\u0010\u0012\u001a\u00020\u00132\b\u0010\u0014\u001a\u0004\u0018\u00010\u0015H\u0096\u0002J\b\u0010\u0016\u001a\u00020\u0017H\u0016J\b\u0010\u0018\u001a\u00020\u0019H\u0016R\u0013\u0010\u0002\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u000e\u001a\u0004\b\f\u0010\rR\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\u0011\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u001a"}, d2 = {"Landroidx/compose/ui/graphics/BlendModeColorFilter;", "Landroidx/compose/ui/graphics/ColorFilter;", "color", "Landroidx/compose/ui/graphics/Color;", "blendMode", "Landroidx/compose/ui/graphics/BlendMode;", "nativeColorFilter", "Landroid/graphics/ColorFilter;", "Landroidx/compose/ui/graphics/NativeColorFilter;", "<init>", "(JILandroid/graphics/ColorFilter;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "(JILkotlin/jvm/internal/DefaultConstructorMarker;)V", "getColor-0d7_KjU", "()J", "J", "getBlendMode-0nO6VwU", "()I", "I", "equals", "", "other", "", "hashCode", "", "toString", "", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BlendModeColorFilter extends ColorFilter {
     private final int blendMode;
@@ -18,12 +18,12 @@ public final class BlendModeColorFilter extends ColorFilter {
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m4023getColor0d7_KjU() {
+    public final long m4481getColor0d7_KjU() {
         return this.color;
     }
 
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    public final int m4022getBlendMode0nO6VwU() {
+    public final int m4480getBlendMode0nO6VwU() {
         return this.blendMode;
     }
 
@@ -34,7 +34,7 @@ public final class BlendModeColorFilter extends ColorFilter {
     }
 
     private BlendModeColorFilter(long j, int i) {
-        this(j, i, AndroidColorFilter_androidKt.m3944actualTintColorFilterxETnrds(j, i), null);
+        this(j, i, AndroidColorFilter_androidKt.m4400actualTintColorFilterxETnrds(j, i), null);
     }
 
     public boolean equals(Object obj) {
@@ -43,16 +43,16 @@ public final class BlendModeColorFilter extends ColorFilter {
         }
         if (obj instanceof BlendModeColorFilter) {
             BlendModeColorFilter blendModeColorFilter = (BlendModeColorFilter) obj;
-            return Color.m4079equalsimpl0(this.color, blendModeColorFilter.color) && BlendMode.m3989equalsimpl0(this.blendMode, blendModeColorFilter.blendMode);
+            return Color.m4538equalsimpl0(this.color, blendModeColorFilter.color) && BlendMode.m4447equalsimpl0(this.blendMode, blendModeColorFilter.blendMode);
         }
         return false;
     }
 
     public int hashCode() {
-        return (Color.m4085hashCodeimpl(this.color) * 31) + BlendMode.m3990hashCodeimpl(this.blendMode);
+        return (Color.m4544hashCodeimpl(this.color) * 31) + BlendMode.m4448hashCodeimpl(this.blendMode);
     }
 
     public String toString() {
-        return "BlendModeColorFilter(color=" + ((Object) Color.m4086toStringimpl(this.color)) + ", blendMode=" + ((Object) BlendMode.m3991toStringimpl(this.blendMode)) + ')';
+        return "BlendModeColorFilter(color=" + ((Object) Color.m4545toStringimpl(this.color)) + ", blendMode=" + ((Object) BlendMode.m4449toStringimpl(this.blendMode)) + ')';
     }
 }

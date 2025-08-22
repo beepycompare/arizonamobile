@@ -29,7 +29,7 @@ public abstract class MotionKey implements TypedValues {
 
     @Override // 
     /* renamed from: clone */
-    public abstract MotionKey mo7165clone();
+    public abstract MotionKey mo7731clone();
 
     public abstract void getAttributeNames(HashSet<String> hashSet);
 

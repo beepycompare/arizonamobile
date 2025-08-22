@@ -23,7 +23,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowablePublishAlt<T> extends ConnectableFlowable<T> implements HasUpstreamPublisher<T>, ResettableConnectable {
     final int bufferSize;
     final AtomicReference<PublishConnection<T>> current = new AtomicReference<>();
@@ -110,7 +110,7 @@ public final class FlowablePublishAlt<T> extends ConnectableFlowable<T> implemen
         MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.current, (PublishConnection) disposable, null);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class PublishConnection<T> extends AtomicInteger implements FlowableSubscriber<T>, Disposable {
         static final InnerSubscription[] EMPTY = new InnerSubscription[0];
         static final InnerSubscription[] TERMINATED = new InnerSubscription[0];
@@ -348,7 +348,7 @@ public final class FlowablePublishAlt<T> extends ConnectableFlowable<T> implemen
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class InnerSubscription<T> extends AtomicLong implements Subscription {
         private static final long serialVersionUID = 2845000326761540265L;
         final Subscriber<? super T> downstream;

@@ -6,6 +6,6 @@ import java.lang.annotation.RetentionPolicy;
 @Scope
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public @interface Singleton {
 }

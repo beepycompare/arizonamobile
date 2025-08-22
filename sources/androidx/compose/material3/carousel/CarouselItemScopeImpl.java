@@ -92,15 +92,15 @@ public final class CarouselItemScopeImpl implements CarouselItemScope {
 
                 @Override // kotlin.jvm.functions.Function3
                 public /* bridge */ /* synthetic */ Unit invoke(Path path, Size size, LayoutDirection layoutDirection) {
-                    m2686invoke12SF9DM(path, size.m3911unboximpl(), layoutDirection);
+                    m2993invoke12SF9DM(path, size.m4367unboximpl(), layoutDirection);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-12SF9DM  reason: not valid java name */
-                public final void m2686invoke12SF9DM(Path path, long j, LayoutDirection layoutDirection) {
-                    Rect intersect = CarouselItemScopeImpl.this.getCarouselItemInfo().getMaskRect().intersect(SizeKt.m3927toRectuvyYCjk(j));
-                    OutlineKt.addOutline(path, shape.mo303createOutlinePq9zytI(intersect.m3870getSizeNHjbRc(), layoutDirection, density));
-                    path.mo3973translatek4lQ0M(OffsetKt.Offset(intersect.getLeft(), intersect.getTop()));
+                public final void m2993invoke12SF9DM(Path path, long j, LayoutDirection layoutDirection) {
+                    Rect intersect = CarouselItemScopeImpl.this.getCarouselItemInfo().getMaskRect().intersect(SizeKt.m4383toRectuvyYCjk(j));
+                    OutlineKt.addOutline(path, shape.mo321createOutlinePq9zytI(intersect.m4326getSizeNHjbRc(), layoutDirection, density));
+                    path.mo4430translatek4lQ0M(OffsetKt.Offset(intersect.getLeft(), intersect.getTop()));
                 }
             });
             composer.updateRememberedValue(rememberedValue);

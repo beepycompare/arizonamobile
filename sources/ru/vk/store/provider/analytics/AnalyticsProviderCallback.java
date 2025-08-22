@@ -5,11 +5,11 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public interface AnalyticsProviderCallback extends IInterface {
     public static final String DESCRIPTOR = "ru.vk.store.provider.analytics.AnalyticsProviderCallback";
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static class Default implements AnalyticsProviderCallback {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -29,7 +29,7 @@ public interface AnalyticsProviderCallback extends IInterface {
 
     void onSuccess() throws RemoteException;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Stub extends Binder implements AnalyticsProviderCallback {
         static final int TRANSACTION_onError = 2;
         static final int TRANSACTION_onSuccess = 1;
@@ -75,7 +75,7 @@ public interface AnalyticsProviderCallback extends IInterface {
             return true;
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         private static class Proxy implements AnalyticsProviderCallback {
             private IBinder mRemote;
 

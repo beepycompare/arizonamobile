@@ -27,15 +27,34 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: ContextMenuArea.android.kt */
-@Metadata(d1 = {"\u0000:\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001aF\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0017\u0010\b\u001a\u0013\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\t¢\u0006\u0002\b\u000bH\u0001¢\u0006\u0002\u0010\f\u001as\u0010\r\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0017\u0010\b\u001a\u0013\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\t¢\u0006\u0002\b\u000b2\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\u000e\b\u0002\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0011\u0010\u0011\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0012H\u0001¢\u0006\u0002\u0010\u0013¨\u0006\u0014"}, d2 = {"ContextMenu", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/contextmenu/ContextMenuState;", "onDismiss", "Lkotlin/Function0;", "modifier", "Landroidx/compose/ui/Modifier;", "contextMenuBuilderBlock", "Lkotlin/Function1;", "Landroidx/compose/foundation/contextmenu/ContextMenuScope;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/foundation/contextmenu/ContextMenuState;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "ContextMenuArea", "enabled", "", "onOpenGesture", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/foundation/contextmenu/ContextMenuState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u001as\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0017\u0010\u0006\u001a\u0013\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u0007¢\u0006\u0002\b\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\u000e\b\u0002\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0011\u0010\u000f\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0010H\u0001¢\u0006\u0002\u0010\u0011\u001aF\u0010\u0012\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\b\b\u0002\u0010\n\u001a\u00020\u000b2\u0017\u0010\u0006\u001a\u0013\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u0007¢\u0006\u0002\b\tH\u0001¢\u0006\u0002\u0010\u0013¨\u0006\u0014"}, d2 = {"ContextMenuArea", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/contextmenu/ContextMenuState;", "onDismiss", "Lkotlin/Function0;", "contextMenuBuilderBlock", "Lkotlin/Function1;", "Landroidx/compose/foundation/contextmenu/ContextMenuScope;", "Lkotlin/ExtensionFunctionType;", "modifier", "Landroidx/compose/ui/Modifier;", "enabled", "", "onOpenGesture", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/foundation/contextmenu/ContextMenuState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "ContextMenu", "(Landroidx/compose/foundation/contextmenu/ContextMenuState;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ContextMenuArea_androidKt {
-    /* JADX WARN: Removed duplicated region for block: B:124:0x0244  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x024f  */
-    /* JADX WARN: Removed duplicated region for block: B:129:? A[RETURN, SYNTHETIC] */
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ContextMenu$lambda$6(ContextMenuState contextMenuState, Function0 function0, Modifier modifier, Function1 function1, int i, int i2, Composer composer, int i3) {
+        ContextMenu(contextMenuState, function0, modifier, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ContextMenu$lambda$8(ContextMenuState contextMenuState, Function0 function0, Modifier modifier, Function1 function1, int i, int i2, Composer composer, int i3) {
+        ContextMenu(contextMenuState, function0, modifier, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ContextMenuArea$lambda$5(ContextMenuState contextMenuState, Function0 function0, Function1 function1, Modifier modifier, boolean z, Function0 function02, Function2 function2, int i, int i2, Composer composer, int i3) {
+        ContextMenuArea(contextMenuState, function0, function1, modifier, z, function02, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0262  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x026d  */
+    /* JADX WARN: Removed duplicated region for block: B:135:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x004e  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0067  */
@@ -60,11 +79,13 @@ public final class ContextMenuArea_androidKt {
         int i5;
         boolean z2;
         int i6;
-        final ContextMenuArea_androidKt$ContextMenuArea$1 contextMenuArea_androidKt$ContextMenuArea$1;
+        Object obj2;
+        final Function0<Unit> function03;
         ScopeUpdateScope endRestartGroup;
+        final Function0<Unit> function04;
         Modifier modifier2;
-        Composer startRestartGroup = composer.startRestartGroup(1969259374);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ContextMenuArea)P(6,4,1,3,2,5)56@2150L231:ContextMenuArea.android.kt#3xeu6s");
+        Composer startRestartGroup = composer.startRestartGroup(1877873755);
+        ComposerKt.sourceInformation(startRestartGroup, "C(ContextMenuArea)N(state,onDismiss,contextMenuBuilderBlock,modifier,enabled,onOpenGesture,content)44@1861L2,56@2150L232:ContextMenuArea.android.kt#3xeu6s");
         if ((i2 & 1) != 0) {
             i3 = i | 6;
         } else if ((i & 6) == 0) {
@@ -97,8 +118,8 @@ public final class ContextMenuArea_androidKt {
                         if (i6 != 0) {
                             i3 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
                         } else if ((196608 & i) == 0) {
-                            contextMenuArea_androidKt$ContextMenuArea$1 = function02;
-                            i3 |= startRestartGroup.changedInstance(contextMenuArea_androidKt$ContextMenuArea$1) ? 131072 : 65536;
+                            obj2 = function02;
+                            i3 |= startRestartGroup.changedInstance(obj2) ? 131072 : 65536;
                             if ((i2 & 64) == 0) {
                                 i3 |= 1572864;
                             } else if ((i & 1572864) == 0) {
@@ -106,6 +127,7 @@ public final class ContextMenuArea_androidKt {
                             }
                             if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
                                 startRestartGroup.skipToGroupEnd();
+                                function03 = obj2;
                             } else {
                                 if (i4 != 0) {
                                     companion = Modifier.Companion;
@@ -114,65 +136,60 @@ public final class ContextMenuArea_androidKt {
                                     z2 = true;
                                 }
                                 if (i6 != 0) {
-                                    contextMenuArea_androidKt$ContextMenuArea$1 = new Function0<Unit>() { // from class: androidx.compose.foundation.contextmenu.ContextMenuArea_androidKt$ContextMenuArea$1
-                                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                        public final void invoke2() {
-                                        }
-
-                                        @Override // kotlin.jvm.functions.Function0
-                                        public /* bridge */ /* synthetic */ Unit invoke() {
-                                            invoke2();
-                                            return Unit.INSTANCE;
-                                        }
-                                    };
-                                }
-                                if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(1969259374, i3, -1, "androidx.compose.foundation.contextmenu.ContextMenuArea (ContextMenuArea.android.kt:46)");
-                                }
-                                if (z2) {
-                                    startRestartGroup.startReplaceGroup(1021907653);
-                                    ComposerKt.sourceInformation(startRestartGroup, "49@1994L103");
-                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2045243896, "CC(remember):ContextMenuArea.android.kt#9igjgp");
-                                    boolean z3 = ((458752 & i3) == 131072) | ((i3 & 14) == 4);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 750422301, "CC(remember):ContextMenuArea.android.kt#9igjgp");
                                     Object rememberedValue = startRestartGroup.rememberedValue();
-                                    if (z3 || rememberedValue == Composer.Companion.getEmpty()) {
-                                        rememberedValue = (Function1) new Function1<Offset, Unit>() { // from class: androidx.compose.foundation.contextmenu.ContextMenuArea_androidKt$ContextMenuArea$finalModifier$1$1
-                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                            {
-                                                super(1);
-                                            }
-
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public /* bridge */ /* synthetic */ Unit invoke(Offset offset) {
-                                                m351invokek4lQ0M(offset.m3847unboximpl());
-                                                return Unit.INSTANCE;
-                                            }
-
-                                            /* renamed from: invoke-k-4lQ0M  reason: not valid java name */
-                                            public final void m351invokek4lQ0M(long j) {
-                                                contextMenuArea_androidKt$ContextMenuArea$1.invoke();
-                                                contextMenuState.setStatus(new ContextMenuState.Status.Open(j, null));
+                                    if (rememberedValue == Composer.Companion.getEmpty()) {
+                                        rememberedValue = new Function0() { // from class: androidx.compose.foundation.contextmenu.ContextMenuArea_androidKt$$ExternalSyntheticLambda2
+                                            @Override // kotlin.jvm.functions.Function0
+                                            public final Object invoke() {
+                                                Unit unit;
+                                                unit = Unit.INSTANCE;
+                                                return unit;
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue);
                                     }
+                                    function04 = (Function0) rememberedValue;
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    modifier2 = ContextMenuGestures_androidKt.contextMenuGestures(companion, (Function1) rememberedValue);
+                                } else {
+                                    function04 = obj2;
+                                }
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventStart(1877873755, i3, -1, "androidx.compose.foundation.contextmenu.ContextMenuArea (ContextMenuArea.android.kt:46)");
+                                }
+                                if (z2) {
+                                    startRestartGroup.startReplaceGroup(1788348907);
+                                    ComposerKt.sourceInformation(startRestartGroup, "49@1994L103");
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 750426658, "CC(remember):ContextMenuArea.android.kt#9igjgp");
+                                    boolean z3 = ((458752 & i3) == 131072) | ((i3 & 14) == 4);
+                                    Object rememberedValue2 = startRestartGroup.rememberedValue();
+                                    if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
+                                        rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.contextmenu.ContextMenuArea_androidKt$$ExternalSyntheticLambda3
+                                            @Override // kotlin.jvm.functions.Function1
+                                            public final Object invoke(Object obj3) {
+                                                Unit ContextMenuArea$lambda$3$lambda$2;
+                                                ContextMenuArea$lambda$3$lambda$2 = ContextMenuArea_androidKt.ContextMenuArea$lambda$3$lambda$2(Function0.this, contextMenuState, (Offset) obj3);
+                                                return ContextMenuArea$lambda$3$lambda$2;
+                                            }
+                                        };
+                                        startRestartGroup.updateRememberedValue(rememberedValue2);
+                                    }
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    modifier2 = ContextMenuGestures_androidKt.contextMenuGestures(companion, (Function1) rememberedValue2);
                                     startRestartGroup.endReplaceGroup();
                                 } else {
-                                    startRestartGroup.startReplaceGroup(1022064513);
+                                    startRestartGroup.startReplaceGroup(1788505767);
                                     startRestartGroup.endReplaceGroup();
                                     modifier2 = companion;
                                 }
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
                                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), true);
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
-                                int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
+                                int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
                                 CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
                                 Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, modifier2);
                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
                                 if (!(startRestartGroup.getApplier() instanceof Applier)) {
                                     ComposablesKt.invalidApplier();
                                 }
@@ -182,18 +199,18 @@ public final class ContextMenuArea_androidKt {
                                 } else {
                                     startRestartGroup.useNode();
                                 }
-                                Composer m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                                Updater.m3527setimpl(m3520constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                    m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                 }
-                                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
+                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1754047841, "C57@2211L9,58@2229L146:ContextMenuArea.android.kt#3xeu6s");
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -620261367, "C57@2211L9,58@2229L147:ContextMenuArea.android.kt#3xeu6s");
                                 function2.invoke(startRestartGroup, Integer.valueOf((i3 >> 18) & 14));
                                 ContextMenu(contextMenuState, obj, null, function1, startRestartGroup, (i3 & WebSocketProtocol.PAYLOAD_SHORT) | ((i3 << 3) & 7168), 4);
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -205,41 +222,30 @@ public final class ContextMenuArea_androidKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
+                                function03 = function04;
                             }
                             final boolean z4 = z2;
-                            final Function0<Unit> function03 = contextMenuArea_androidKt$ContextMenuArea$1;
                             endRestartGroup = startRestartGroup.endRestartGroup();
                             if (endRestartGroup == null) {
                                 final Modifier modifier3 = companion;
-                                endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.contextmenu.ContextMenuArea_androidKt$ContextMenuArea$3
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                    /* JADX WARN: Multi-variable type inference failed */
-                                    {
-                                        super(2);
-                                    }
-
+                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.contextmenu.ContextMenuArea_androidKt$$ExternalSyntheticLambda4
                                     @Override // kotlin.jvm.functions.Function2
-                                    public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                                        invoke(composer2, num.intValue());
-                                        return Unit.INSTANCE;
-                                    }
-
-                                    public final void invoke(Composer composer2, int i7) {
-                                        ContextMenuArea_androidKt.ContextMenuArea(ContextMenuState.this, function0, function1, modifier3, z4, function03, function2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                    public final Object invoke(Object obj3, Object obj4) {
+                                        Unit ContextMenuArea$lambda$5;
+                                        ContextMenuArea$lambda$5 = ContextMenuArea_androidKt.ContextMenuArea$lambda$5(ContextMenuState.this, function0, function1, modifier3, z4, function03, function2, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
+                                        return ContextMenuArea$lambda$5;
                                     }
                                 });
                                 return;
                             }
                             return;
                         }
-                        contextMenuArea_androidKt$ContextMenuArea$1 = function02;
+                        obj2 = function02;
                         if ((i2 & 64) == 0) {
                         }
                         if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
                         }
                         final boolean z42 = z2;
-                        final Function0<Unit> function032 = contextMenuArea_androidKt$ContextMenuArea$1;
                         endRestartGroup = startRestartGroup.endRestartGroup();
                         if (endRestartGroup == null) {
                         }
@@ -248,13 +254,12 @@ public final class ContextMenuArea_androidKt {
                     i6 = i2 & 32;
                     if (i6 != 0) {
                     }
-                    contextMenuArea_androidKt$ContextMenuArea$1 = function02;
+                    obj2 = function02;
                     if ((i2 & 64) == 0) {
                     }
                     if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
                     }
                     final boolean z422 = z2;
-                    final Function0<Unit> function0322 = contextMenuArea_androidKt$ContextMenuArea$1;
                     endRestartGroup = startRestartGroup.endRestartGroup();
                     if (endRestartGroup == null) {
                     }
@@ -267,13 +272,12 @@ public final class ContextMenuArea_androidKt {
                 i6 = i2 & 32;
                 if (i6 != 0) {
                 }
-                contextMenuArea_androidKt$ContextMenuArea$1 = function02;
+                obj2 = function02;
                 if ((i2 & 64) == 0) {
                 }
                 if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
                 }
                 final boolean z4222 = z2;
-                final Function0<Unit> function03222 = contextMenuArea_androidKt$ContextMenuArea$1;
                 endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup == null) {
                 }
@@ -289,13 +293,12 @@ public final class ContextMenuArea_androidKt {
             i6 = i2 & 32;
             if (i6 != 0) {
             }
-            contextMenuArea_androidKt$ContextMenuArea$1 = function02;
+            obj2 = function02;
             if ((i2 & 64) == 0) {
             }
             if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
             }
             final boolean z42222 = z2;
-            final Function0<Unit> function032222 = contextMenuArea_androidKt$ContextMenuArea$1;
             endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup == null) {
             }
@@ -314,24 +317,32 @@ public final class ContextMenuArea_androidKt {
         i6 = i2 & 32;
         if (i6 != 0) {
         }
-        contextMenuArea_androidKt$ContextMenuArea$1 = function02;
+        obj2 = function02;
         if ((i2 & 64) == 0) {
         }
         if (startRestartGroup.shouldExecute((i3 & 599187) == 599186, i3 & 1)) {
         }
         final boolean z422222 = z2;
-        final Function0<Unit> function0322222 = contextMenuArea_androidKt$ContextMenuArea$1;
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup == null) {
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ContextMenuArea$lambda$3$lambda$2(Function0 function0, ContextMenuState contextMenuState, Offset offset) {
+        function0.invoke();
+        contextMenuState.setStatus(new ContextMenuState.Status.Open(offset.m4303unboximpl(), null));
+        return Unit.INSTANCE;
     }
 
     public static final void ContextMenu(final ContextMenuState contextMenuState, final Function0<Unit> function0, Modifier modifier, final Function1<? super ContextMenuScope, Unit> function1, Composer composer, final int i, final int i2) {
         int i3;
         Composer composer2;
         final Modifier modifier2;
+        ScopeUpdateScope endRestartGroup;
+        Function2<? super Composer, ? super Integer, Unit> function2;
         Composer startRestartGroup = composer.startRestartGroup(645832757);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ContextMenu)P(3,2,1)78@2705L76,80@2787L197:ContextMenuArea.android.kt#3xeu6s");
+        ComposerKt.sourceInformation(startRestartGroup, "C(ContextMenu)N(state,onDismiss,modifier,contextMenuBuilderBlock)78@2706L76,80@2788L197:ContextMenuArea.android.kt#3xeu6s");
         if ((i2 & 1) != 0) {
             i3 = i | 6;
         } else if ((i & 6) == 0) {
@@ -355,7 +366,11 @@ public final class ContextMenuArea_androidKt {
         } else if ((i & 3072) == 0) {
             i3 |= startRestartGroup.changedInstance(function1) ? 2048 : 1024;
         }
-        if (startRestartGroup.shouldExecute((i3 & 1171) != 1170, i3 & 1)) {
+        if (!startRestartGroup.shouldExecute((i3 & 1171) != 1170, i3 & 1)) {
+            composer2 = startRestartGroup;
+            composer2.skipToGroupEnd();
+            modifier2 = modifier;
+        } else {
             if (i4 != 0) {
                 modifier = Modifier.Companion;
             }
@@ -364,72 +379,52 @@ public final class ContextMenuArea_androidKt {
                 ComposerKt.traceEventStart(645832757, i3, -1, "androidx.compose.foundation.contextmenu.ContextMenu (ContextMenuArea.android.kt:73)");
             }
             ContextMenuState.Status status = contextMenuState.getStatus();
-            if (!(status instanceof ContextMenuState.Status.Open)) {
+            if (status instanceof ContextMenuState.Status.Open) {
+                ContextMenuState.Status.Open open = (ContextMenuState.Status.Open) status;
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2124968127, "CC(remember):ContextMenuArea.android.kt#9igjgp");
+                boolean changed = startRestartGroup.changed(open);
+                Object rememberedValue = startRestartGroup.rememberedValue();
+                if (changed || rememberedValue == Composer.Companion.getEmpty()) {
+                    ContextMenuPopupPositionProvider contextMenuPopupPositionProvider = new ContextMenuPopupPositionProvider(IntOffsetKt.m7396roundk4lQ0M(open.m399getOffsetF1C5BW0()), (Function2) null, 2, (DefaultConstructorMarker) null);
+                    startRestartGroup.updateRememberedValue(contextMenuPopupPositionProvider);
+                    rememberedValue = contextMenuPopupPositionProvider;
+                }
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                composer2 = startRestartGroup;
+                ContextMenuUi_androidKt.ContextMenuPopup((ContextMenuPopupPositionProvider) rememberedValue, function0, modifier2, function1, composer2, i3 & 8176, 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
-                ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
+            } else {
+                if (ComposerKt.isTraceInProgress()) {
+                    ComposerKt.traceEventEnd();
+                }
+                endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup != null) {
-                    endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.contextmenu.ContextMenuArea_androidKt$ContextMenu$1
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        /* JADX WARN: Multi-variable type inference failed */
-                        {
-                            super(2);
-                        }
-
+                    function2 = new Function2() { // from class: androidx.compose.foundation.contextmenu.ContextMenuArea_androidKt$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function2
-                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                            invoke(composer3, num.intValue());
-                            return Unit.INSTANCE;
+                        public final Object invoke(Object obj, Object obj2) {
+                            Unit ContextMenu$lambda$6;
+                            ContextMenu$lambda$6 = ContextMenuArea_androidKt.ContextMenu$lambda$6(ContextMenuState.this, function0, modifier2, function1, i, i2, (Composer) obj, ((Integer) obj2).intValue());
+                            return ContextMenu$lambda$6;
                         }
-
-                        public final void invoke(Composer composer3, int i5) {
-                            ContextMenuArea_androidKt.ContextMenu(ContextMenuState.this, function0, modifier2, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
-                        }
-                    });
-                    return;
+                    };
+                    endRestartGroup.updateScope(function2);
                 }
                 return;
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1573309600, "CC(remember):ContextMenuArea.android.kt#9igjgp");
-            boolean changed = startRestartGroup.changed(status);
-            Object rememberedValue = startRestartGroup.rememberedValue();
-            if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = new ContextMenuPopupPositionProvider(IntOffsetKt.m6829roundk4lQ0M(((ContextMenuState.Status.Open) status).m372getOffsetF1C5BW0()), null);
-                startRestartGroup.updateRememberedValue(rememberedValue);
-            }
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            composer2 = startRestartGroup;
-            ContextMenuUi_androidKt.ContextMenuPopup((ContextMenuPopupPositionProvider) rememberedValue, function0, modifier2, function1, composer2, i3 & 8176, 0);
-            if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventEnd();
-            }
-        } else {
-            composer2 = startRestartGroup;
-            composer2.skipToGroupEnd();
-            modifier2 = modifier;
         }
-        ScopeUpdateScope endRestartGroup2 = composer2.endRestartGroup();
-        if (endRestartGroup2 != null) {
-            endRestartGroup2.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.contextmenu.ContextMenuArea_androidKt$ContextMenu$2
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
+        endRestartGroup = composer2.endRestartGroup();
+        if (endRestartGroup != null) {
+            function2 = new Function2() { // from class: androidx.compose.foundation.contextmenu.ContextMenuArea_androidKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                    invoke(composer3, num.intValue());
-                    return Unit.INSTANCE;
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit ContextMenu$lambda$8;
+                    ContextMenu$lambda$8 = ContextMenuArea_androidKt.ContextMenu$lambda$8(ContextMenuState.this, function0, modifier2, function1, i, i2, (Composer) obj, ((Integer) obj2).intValue());
+                    return ContextMenu$lambda$8;
                 }
-
-                public final void invoke(Composer composer3, int i5) {
-                    ContextMenuArea_androidKt.ContextMenu(ContextMenuState.this, function0, modifier2, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
-                }
-            });
+            };
+            endRestartGroup.updateScope(function2);
         }
     }
 }

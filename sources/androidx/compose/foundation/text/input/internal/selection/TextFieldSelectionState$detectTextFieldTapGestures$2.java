@@ -15,8 +15,8 @@ import kotlin.jvm.functions.Function3;
 import kotlinx.coroutines.CoroutineScopeKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionState.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/PressGestureScope;", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/ui/geometry/Offset;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$detectTextFieldTapGestures$2", f = "TextFieldSelectionState.kt", i = {}, l = {489}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/PressGestureScope;", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/ui/geometry/Offset;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$detectTextFieldTapGestures$2", f = "TextFieldSelectionState.kt", i = {}, l = {TypedValues.PositionType.TYPE_PERCENT_WIDTH}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class TextFieldSelectionState$detectTextFieldTapGestures$2 extends SuspendLambda implements Function3<PressGestureScope, Offset, Continuation<? super Unit>, Object> {
     final /* synthetic */ MutableInteractionSource $interactionSource;
@@ -35,11 +35,11 @@ public final class TextFieldSelectionState$detectTextFieldTapGestures$2 extends 
 
     @Override // kotlin.jvm.functions.Function3
     public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-        return m1397invoked4ec7I(pressGestureScope, offset.m3847unboximpl(), continuation);
+        return m1653invoked4ec7I(pressGestureScope, offset.m4303unboximpl(), continuation);
     }
 
     /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-    public final Object m1397invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+    public final Object m1653invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
         TextFieldSelectionState$detectTextFieldTapGestures$2 textFieldSelectionState$detectTextFieldTapGestures$2 = new TextFieldSelectionState$detectTextFieldTapGestures$2(this.$interactionSource, this.this$0, continuation);
         textFieldSelectionState$detectTextFieldTapGestures$2.L$0 = pressGestureScope;
         textFieldSelectionState$detectTextFieldTapGestures$2.J$0 = j;

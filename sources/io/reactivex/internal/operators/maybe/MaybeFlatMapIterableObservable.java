@@ -11,7 +11,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.observers.BasicQueueDisposable;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeFlatMapIterableObservable<T, R> extends Observable<R> {
     final Function<? super T, ? extends Iterable<? extends R>> mapper;
     final MaybeSource<T> source;
@@ -26,7 +26,7 @@ public final class MaybeFlatMapIterableObservable<T, R> extends Observable<R> {
         this.source.subscribe(new FlatMapIterableObserver(observer, this.mapper));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FlatMapIterableObserver<T, R> extends BasicQueueDisposable<R> implements MaybeObserver<T> {
         volatile boolean cancelled;
         final Observer<? super R> downstream;

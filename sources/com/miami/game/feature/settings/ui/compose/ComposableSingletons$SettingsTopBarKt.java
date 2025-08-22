@@ -24,7 +24,7 @@ public final class ComposableSingletons$SettingsTopBarKt {
     public static final ComposableSingletons$SettingsTopBarKt INSTANCE = new ComposableSingletons$SettingsTopBarKt();
 
     /* renamed from: lambda$-1729539213  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f87lambda$1729539213 = ComposableLambdaKt.composableLambdaInstance(-1729539213, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsTopBarKt$$ExternalSyntheticLambda0
+    private static Function3<BoxScope, Composer, Integer, Unit> f81lambda$1729539213 = ComposableLambdaKt.composableLambdaInstance(-1729539213, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsTopBarKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__1729539213$lambda$0;
@@ -33,9 +33,9 @@ public final class ComposableSingletons$SettingsTopBarKt {
         }
     });
 
-    /* renamed from: getLambda$-1729539213$settings_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8444getLambda$1729539213$settings_release_web() {
-        return f87lambda$1729539213;
+    /* renamed from: getLambda$-1729539213$settings_release  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m9010getLambda$1729539213$settings_release() {
+        return f81lambda$1729539213;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -48,7 +48,7 @@ public final class ComposableSingletons$SettingsTopBarKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1729539213, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsTopBarKt.lambda$-1729539213.<anonymous> (SettingsTopBar.kt:48)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m771height3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(72)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(72)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

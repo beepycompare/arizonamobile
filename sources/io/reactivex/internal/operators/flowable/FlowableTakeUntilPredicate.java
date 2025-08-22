@@ -8,7 +8,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableTakeUntilPredicate<T> extends AbstractFlowableWithUpstream<T, T> {
     final Predicate<? super T> predicate;
 
@@ -22,7 +22,7 @@ public final class FlowableTakeUntilPredicate<T> extends AbstractFlowableWithUps
         this.source.subscribe((FlowableSubscriber) new InnerSubscriber(subscriber, this.predicate));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class InnerSubscriber<T> implements FlowableSubscriber<T>, Subscription {
         boolean done;
         final Subscriber<? super T> downstream;

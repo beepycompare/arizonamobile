@@ -8,14 +8,14 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.concurrent.Callable;
 import org.reactivestreams.Publisher;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleInternalHelper {
     private SingleInternalHelper() {
         throw new IllegalStateException("No instances!");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public enum NoSuchElementCallable implements Callable<NoSuchElementException> {
         INSTANCE;
 
@@ -30,7 +30,7 @@ public final class SingleInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public enum ToFlowable implements Function<SingleSource, Publisher> {
         INSTANCE;
 
@@ -44,7 +44,7 @@ public final class SingleInternalHelper {
         return ToFlowable.INSTANCE;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ToFlowableIterator<T> implements Iterator<Flowable<T>> {
         private final Iterator<? extends SingleSource<? extends T>> sit;
 
@@ -68,7 +68,7 @@ public final class SingleInternalHelper {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ToFlowableIterable<T> implements Iterable<Flowable<T>> {
         private final Iterable<? extends SingleSource<? extends T>> sources;
 
@@ -87,7 +87,7 @@ public final class SingleInternalHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public enum ToObservable implements Function<SingleSource, Observable> {
         INSTANCE;
 

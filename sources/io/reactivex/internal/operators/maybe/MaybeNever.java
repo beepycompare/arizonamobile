@@ -3,7 +3,7 @@ package io.reactivex.internal.operators.maybe;
 import io.reactivex.Maybe;
 import io.reactivex.MaybeObserver;
 import io.reactivex.internal.disposables.EmptyDisposable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeNever extends Maybe<Object> {
     public static final MaybeNever INSTANCE = new MaybeNever();
 

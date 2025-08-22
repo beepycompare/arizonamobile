@@ -2,11 +2,16 @@ package androidx.compose.foundation.text.input.internal;
 
 import androidx.compose.foundation.ScrollState;
 import androidx.compose.foundation.gestures.Orientation;
+import androidx.compose.foundation.internal.InlineClassHelperKt;
+import androidx.compose.foundation.text.contextmenu.modifier.TextContextMenuToolbarHandlerModifierKt;
+import androidx.compose.foundation.text.contextmenu.modifier.TextContextMenuToolbarHandlerNode;
+import androidx.compose.foundation.text.contextmenu.modifier.ToolbarRequester;
 import androidx.compose.foundation.text.input.TextFieldCharSequence;
 import androidx.compose.foundation.text.input.TextHighlightType;
 import androidx.compose.foundation.text.input.internal.selection.AndroidTextFieldMagnifier_androidKt;
 import androidx.compose.foundation.text.input.internal.selection.TextFieldMagnifierNode;
 import androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState;
+import androidx.compose.foundation.text.selection.PlatformSelectionBehaviors;
 import androidx.compose.foundation.text.selection.TextSelectionColors;
 import androidx.compose.foundation.text.selection.TextSelectionColorsKt;
 import androidx.compose.ui.geometry.Rect;
@@ -38,9 +43,15 @@ import androidx.compose.ui.unit.Constraints;
 import androidx.compose.ui.unit.Density;
 import androidx.compose.ui.unit.LayoutDirection;
 import java.util.concurrent.CancellationException;
+import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.Pair;
+import kotlin.ResultKt;
 import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.ClosedRange;
@@ -50,7 +61,7 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Job;
 /* compiled from: TextFieldCoreModifier.kt */
-@Metadata(d1 = {"\u0000Ô\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u0006BM\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\b\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\u0006\u0010\u0012\u001a\u00020\b\u0012\u0006\u0010\u0013\u001a\u00020\u0014\u0012\u0006\u0010\u0015\u001a\u00020\u0016¢\u0006\u0002\u0010\u0017J\"\u0010'\u001a\u00020!2\u0006\u0010(\u001a\u00020\u001f2\u0006\u0010)\u001a\u00020!H\u0002ø\u0001\u0000¢\u0006\u0004\b*\u0010+J\b\u0010,\u001a\u00020-H\u0016J\u0010\u0010.\u001a\u00020-2\u0006\u0010/\u001a\u000200H\u0016J\b\u00101\u001a\u00020-H\u0002JN\u00102\u001a\u00020-2\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\b2\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016J\f\u00103\u001a\u00020-*\u000204H\u0016J\f\u00105\u001a\u00020-*\u000206H\u0016J\f\u00107\u001a\u00020-*\u000208H\u0002J(\u00109\u001a\u00020-*\u0002082\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\u001f0;2\u0006\u0010=\u001a\u00020>H\u0002J&\u0010?\u001a\u00020-*\u0002082\u0006\u0010@\u001a\u00020\u001f2\u0006\u0010=\u001a\u00020>H\u0002ø\u0001\u0000¢\u0006\u0004\bA\u0010BJ\u0014\u0010C\u001a\u00020-*\u0002082\u0006\u0010=\u001a\u00020>H\u0002J&\u0010D\u001a\u00020E*\u00020F2\u0006\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020JH\u0016ø\u0001\u0000¢\u0006\u0004\bK\u0010LJ&\u0010M\u001a\u00020E*\u00020F2\u0006\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020JH\u0002ø\u0001\u0000¢\u0006\u0004\bN\u0010LJ&\u0010O\u001a\u00020E*\u00020F2\u0006\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020JH\u0002ø\u0001\u0000¢\u0006\u0004\bP\u0010LJ6\u0010Q\u001a\u00020-*\u00020R2\u0006\u0010S\u001a\u00020!2\u0006\u0010T\u001a\u00020!2\u0006\u0010(\u001a\u00020\u001f2\u0006\u0010U\u001a\u00020VH\u0002ø\u0001\u0000¢\u0006\u0004\bW\u0010XR\u0010\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\"\u001a\u00020\b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b#\u0010$R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006Y"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TextFieldCoreModifierNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "Landroidx/compose/ui/node/GlobalPositionAwareModifierNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "isFocused", "", "isDragHovered", "textLayoutState", "Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "textFieldState", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "textFieldSelectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "cursorBrush", "Landroidx/compose/ui/graphics/Brush;", "writeable", "scrollState", "Landroidx/compose/foundation/ScrollState;", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "(ZZLandroidx/compose/foundation/text/input/internal/TextLayoutState;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Landroidx/compose/ui/graphics/Brush;ZLandroidx/compose/foundation/ScrollState;Landroidx/compose/foundation/gestures/Orientation;)V", "changeObserverJob", "Lkotlinx/coroutines/Job;", "cursorAnimation", "Landroidx/compose/foundation/text/input/internal/CursorAnimationState;", "previousCursorRect", "Landroidx/compose/ui/geometry/Rect;", "previousSelection", "Landroidx/compose/ui/text/TextRange;", "previousTextLayoutSize", "", "showCursor", "getShowCursor", "()Z", "textFieldMagnifierNode", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldMagnifierNode;", "calculateOffsetToFollow", "currSelection", "currTextLayoutSize", "calculateOffsetToFollow-72CqOWE", "(JI)I", "onAttach", "", "onGloballyPositioned", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "startCursorJob", "updateNode", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "drawCursor", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "drawHighlight", "highlight", "Lkotlin/Pair;", "Landroidx/compose/foundation/text/input/TextHighlightType;", "textLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "drawSelection", "selection", "drawSelection-Sb-Bc2M", "(Landroidx/compose/ui/graphics/drawscope/DrawScope;JLandroidx/compose/ui/text/TextLayoutResult;)V", "drawText", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "measureHorizontalScroll", "measureHorizontalScroll-3p2s80s", "measureVerticalScroll", "measureVerticalScroll-3p2s80s", "updateScrollState", "Landroidx/compose/ui/unit/Density;", "containerSize", "textLayoutSize", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "updateScrollState-tIlFzwE", "(Landroidx/compose/ui/unit/Density;IIJLandroidx/compose/ui/unit/LayoutDirection;)V", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000â\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u0006Ba\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\b\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\u0006\u0010\u0012\u001a\u00020\b\u0012\u0006\u0010\u0013\u001a\u00020\u0014\u0012\u0006\u0010\u0015\u001a\u00020\u0016\u0012\u0006\u0010\u0017\u001a\u00020\u0018\u0012\b\u0010\u0019\u001a\u0004\u0018\u00010\u001a¢\u0006\u0004\b\u001b\u0010\u001cJ\b\u0010-\u001a\u00020.H\u0016J`\u0010/\u001a\u00020.2\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\b2\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\b\u0010\u0019\u001a\u0004\u0018\u00010\u001aJ#\u00100\u001a\u000201*\u0002022\u0006\u00103\u001a\u0002042\u0006\u00105\u001a\u000206H\u0016¢\u0006\u0004\b7\u00108J\f\u00109\u001a\u00020.*\u00020:H\u0016J#\u0010;\u001a\u000201*\u0002022\u0006\u00103\u001a\u0002042\u0006\u00105\u001a\u000206H\u0002¢\u0006\u0004\b<\u00108J#\u0010=\u001a\u000201*\u0002022\u0006\u00103\u001a\u0002042\u0006\u00105\u001a\u000206H\u0002¢\u0006\u0004\b>\u00108J'\u0010?\u001a\u00020)2\u0006\u0010@\u001a\u00020%2\u0006\u0010A\u001a\u00020)2\u0006\u0010B\u001a\u00020)H\u0002¢\u0006\u0004\bC\u0010DJ3\u0010E\u001a\u00020.*\u00020F2\u0006\u0010G\u001a\u00020)2\u0006\u0010H\u001a\u00020)2\u0006\u0010@\u001a\u00020%2\u0006\u0010I\u001a\u00020JH\u0002¢\u0006\u0004\bK\u0010LJ#\u0010M\u001a\u00020.*\u00020N2\u0006\u0010O\u001a\u00020%2\u0006\u0010P\u001a\u00020QH\u0002¢\u0006\u0004\bR\u0010SJ(\u0010T\u001a\u00020.*\u00020N2\u0012\u0010U\u001a\u000e\u0012\u0004\u0012\u00020W\u0012\u0004\u0012\u00020%0V2\u0006\u0010P\u001a\u00020QH\u0002J\u0014\u0010X\u001a\u00020.*\u00020N2\u0006\u0010P\u001a\u00020QH\u0002J\f\u0010Y\u001a\u00020.*\u00020NH\u0002J\b\u0010Z\u001a\u00020.H\u0002J\u0010\u0010[\u001a\u00020.2\u0006\u0010\\\u001a\u00020]H\u0016J\f\u0010^\u001a\u00020.*\u00020_H\u0016R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001f\u001a\u00020\b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b \u0010!R\u0010\u0010\"\u001a\u0004\u0018\u00010#X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u0004\u0018\u00010%X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020'X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020)X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020)X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006`"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TextFieldCoreModifierNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "Landroidx/compose/ui/node/GlobalPositionAwareModifierNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "isFocused", "", "isDragHovered", "textLayoutState", "Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "textFieldState", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "textFieldSelectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "cursorBrush", "Landroidx/compose/ui/graphics/Brush;", "writeable", "scrollState", "Landroidx/compose/foundation/ScrollState;", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "toolbarRequester", "Landroidx/compose/foundation/text/contextmenu/modifier/ToolbarRequester;", "platformSelectionBehaviors", "Landroidx/compose/foundation/text/selection/PlatformSelectionBehaviors;", "<init>", "(ZZLandroidx/compose/foundation/text/input/internal/TextLayoutState;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Landroidx/compose/ui/graphics/Brush;ZLandroidx/compose/foundation/ScrollState;Landroidx/compose/foundation/gestures/Orientation;Landroidx/compose/foundation/text/contextmenu/modifier/ToolbarRequester;Landroidx/compose/foundation/text/selection/PlatformSelectionBehaviors;)V", "cursorAnimation", "Landroidx/compose/foundation/text/input/internal/CursorAnimationState;", "showCursor", "getShowCursor", "()Z", "changeObserverJob", "Lkotlinx/coroutines/Job;", "previousSelection", "Landroidx/compose/ui/text/TextRange;", "previousCursorRect", "Landroidx/compose/ui/geometry/Rect;", "previousTextLayoutSize", "", "previousContainerSize", "textFieldMagnifierNode", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldMagnifierNode;", "onAttach", "", "updateNode", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "measureVerticalScroll", "measureVerticalScroll-3p2s80s", "measureHorizontalScroll", "measureHorizontalScroll-3p2s80s", "calculateOffsetToFollow", "currSelection", "currContainerSize", "currTextLayoutSize", "calculateOffsetToFollow-8ffj60Q", "(JII)I", "updateScrollState", "Landroidx/compose/ui/unit/Density;", "containerSize", "textLayoutSize", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "updateScrollState-tIlFzwE", "(Landroidx/compose/ui/unit/Density;IIJLandroidx/compose/ui/unit/LayoutDirection;)V", "drawSelection", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "selection", "textLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "drawSelection-Sb-Bc2M", "(Landroidx/compose/ui/graphics/drawscope/DrawScope;JLandroidx/compose/ui/text/TextLayoutResult;)V", "drawHighlight", "highlight", "Lkotlin/Pair;", "Landroidx/compose/foundation/text/input/TextHighlightType;", "drawText", "drawCursor", "startCursorJob", "onGloballyPositioned", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextFieldCoreModifierNode extends DelegatingNode implements LayoutModifierNode, DrawModifierNode, CompositionLocalConsumerModifierNode, GlobalPositionAwareModifierNode, SemanticsModifierNode {
     public static final int $stable = 8;
@@ -60,6 +71,8 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
     private boolean isDragHovered;
     private boolean isFocused;
     private Orientation orientation;
+    private PlatformSelectionBehaviors platformSelectionBehaviors;
+    private int previousContainerSize;
     private Rect previousCursorRect = new Rect(-1.0f, -1.0f, -1.0f, -1.0f);
     private TextRange previousSelection;
     private int previousTextLayoutSize;
@@ -68,9 +81,10 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
     private TextFieldSelectionState textFieldSelectionState;
     private TransformedTextFieldState textFieldState;
     private TextLayoutState textLayoutState;
+    private ToolbarRequester toolbarRequester;
     private boolean writeable;
 
-    public TextFieldCoreModifierNode(boolean z, boolean z2, TextLayoutState textLayoutState, TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, Brush brush, boolean z3, ScrollState scrollState, Orientation orientation) {
+    public TextFieldCoreModifierNode(boolean z, boolean z2, TextLayoutState textLayoutState, TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, Brush brush, boolean z3, ScrollState scrollState, Orientation orientation, ToolbarRequester toolbarRequester, PlatformSelectionBehaviors platformSelectionBehaviors) {
         this.isFocused = z;
         this.isDragHovered = z2;
         this.textLayoutState = textLayoutState;
@@ -80,7 +94,17 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
         this.writeable = z3;
         this.scrollState = scrollState;
         this.orientation = orientation;
+        this.toolbarRequester = toolbarRequester;
+        this.platformSelectionBehaviors = platformSelectionBehaviors;
         this.textFieldMagnifierNode = (TextFieldMagnifierNode) delegate(AndroidTextFieldMagnifier_androidKt.textFieldMagnifierNode(this.textFieldState, this.textFieldSelectionState, this.textLayoutState, this.isFocused || this.isDragHovered));
+        delegate(new TextContextMenuToolbarHandlerNode(this.toolbarRequester, new AnonymousClass1(null), new AnonymousClass2(null), new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$$ExternalSyntheticLambda1
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Rect _init_$lambda$0;
+                _init_$lambda$0 = TextFieldCoreModifierNode._init_$lambda$0(TextFieldCoreModifierNode.this, (LayoutCoordinates) obj);
+                return _init_$lambda$0;
+            }
+        }));
     }
 
     private final boolean getShowCursor() {
@@ -95,6 +119,114 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
         return false;
     }
 
+    /* compiled from: TextFieldCoreModifier.kt */
+    @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$1", f = "TextFieldCoreModifier.kt", i = {}, l = {209, 210}, m = "invokeSuspend", n = {}, s = {})
+    /* renamed from: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$1  reason: invalid class name */
+    /* loaded from: classes.dex */
+    static final class AnonymousClass1 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+        int label;
+
+        AnonymousClass1(Continuation<? super AnonymousClass1> continuation) {
+            super(1, continuation);
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Continuation<Unit> create(Continuation<?> continuation) {
+            return new AnonymousClass1(continuation);
+        }
+
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Continuation<? super Unit> continuation) {
+            return ((AnonymousClass1) create(continuation)).invokeSuspend(Unit.INSTANCE);
+        }
+
+        /* JADX WARN: Code restructure failed: missing block: B:11:0x0030, code lost:
+            if (r7.this$0.textFieldSelectionState.updateClipboardEntry(r7) == r0) goto L16;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:16:0x0068, code lost:
+            if (r8.mo1735onShowContextMenuSbBc2M(r7.this$0.textFieldSelectionState.getTextFieldState$foundation_release().getVisualText().getText(), r7.this$0.textFieldSelectionState.getTextFieldState$foundation_release().getVisualText().m1436getSelectiond9O1mEE(), r7) == r0) goto L16;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:17:0x006a, code lost:
+            return r0;
+         */
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
+        public final Object invokeSuspend(Object obj) {
+            Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            int i = this.label;
+            if (i == 0) {
+                ResultKt.throwOnFailure(obj);
+                this.label = 1;
+            } else if (i != 1) {
+                if (i == 2) {
+                    ResultKt.throwOnFailure(obj);
+                    TextFieldCoreModifierNode.this.textFieldSelectionState.setTextToolbarShown$foundation_release(true);
+                    return Unit.INSTANCE;
+                }
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            } else {
+                ResultKt.throwOnFailure(obj);
+            }
+            PlatformSelectionBehaviors platformSelectionBehaviors = TextFieldCoreModifierNode.this.platformSelectionBehaviors;
+            if (platformSelectionBehaviors != null) {
+                this.label = 2;
+            }
+            TextFieldCoreModifierNode.this.textFieldSelectionState.setTextToolbarShown$foundation_release(true);
+            return Unit.INSTANCE;
+        }
+    }
+
+    /* compiled from: TextFieldCoreModifier.kt */
+    @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$2", f = "TextFieldCoreModifier.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+    /* renamed from: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$2  reason: invalid class name */
+    /* loaded from: classes.dex */
+    static final class AnonymousClass2 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+        int label;
+
+        AnonymousClass2(Continuation<? super AnonymousClass2> continuation) {
+            super(1, continuation);
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Continuation<Unit> create(Continuation<?> continuation) {
+            return new AnonymousClass2(continuation);
+        }
+
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Continuation<? super Unit> continuation) {
+            return ((AnonymousClass2) create(continuation)).invokeSuspend(Unit.INSTANCE);
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Object invokeSuspend(Object obj) {
+            IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            if (this.label == 0) {
+                ResultKt.throwOnFailure(obj);
+                TextFieldCoreModifierNode.this.textFieldSelectionState.setTextToolbarShown$foundation_release(false);
+                return Unit.INSTANCE;
+            }
+            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Rect _init_$lambda$0(TextFieldCoreModifierNode textFieldCoreModifierNode, LayoutCoordinates layoutCoordinates) {
+        Rect derivedVisibleContentBounds$foundation_release = textFieldCoreModifierNode.textFieldSelectionState.getDerivedVisibleContentBounds$foundation_release();
+        if (derivedVisibleContentBounds$foundation_release == null) {
+            derivedVisibleContentBounds$foundation_release = Rect.Companion.getZero();
+        }
+        LayoutCoordinates textLayoutNodeCoordinates = textFieldCoreModifierNode.textLayoutState.getTextLayoutNodeCoordinates();
+        if (textLayoutNodeCoordinates != null) {
+            return TextContextMenuToolbarHandlerModifierKt.translateRootToDestination(derivedVisibleContentBounds$foundation_release, textLayoutNodeCoordinates, layoutCoordinates);
+        }
+        InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("Required value was null.");
+        throw new KotlinNothingValueException();
+    }
+
     @Override // androidx.compose.ui.Modifier.Node
     public void onAttach() {
         if (this.isFocused && getShowCursor()) {
@@ -102,7 +234,7 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
         }
     }
 
-    public final void updateNode(boolean z, boolean z2, TextLayoutState textLayoutState, TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, Brush brush, boolean z3, ScrollState scrollState, Orientation orientation) {
+    public final void updateNode(boolean z, boolean z2, TextLayoutState textLayoutState, TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, Brush brush, boolean z3, ScrollState scrollState, Orientation orientation, ToolbarRequester toolbarRequester, PlatformSelectionBehaviors platformSelectionBehaviors) {
         boolean showCursor = getShowCursor();
         boolean z4 = this.isFocused;
         TransformedTextFieldState transformedTextFieldState2 = this.textFieldState;
@@ -118,6 +250,8 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
         this.writeable = z3;
         this.scrollState = scrollState;
         this.orientation = orientation;
+        this.toolbarRequester = toolbarRequester;
+        this.platformSelectionBehaviors = platformSelectionBehaviors;
         this.textFieldMagnifierNode.update(transformedTextFieldState, textFieldSelectionState, textLayoutState, z || z2);
         if (!getShowCursor()) {
             Job job = this.changeObserverJob;
@@ -142,9 +276,9 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         if (this.orientation == Orientation.Vertical) {
-            return m1300measureVerticalScroll3p2s80s(measureScope, measurable, j);
+            return m1542measureVerticalScroll3p2s80s(measureScope, measurable, j);
         }
-        return m1299measureHorizontalScroll3p2s80s(measureScope, measurable, j);
+        return m1541measureHorizontalScroll3p2s80s(measureScope, measurable, j);
     }
 
     @Override // androidx.compose.ui.node.DrawModifierNode
@@ -159,7 +293,7 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
         if (highlight != null) {
             drawHighlight(contentDrawScope, highlight, layoutResult);
         }
-        if (TextRange.m6141getCollapsedimpl(visualText.m1203getSelectiond9O1mEE())) {
+        if (TextRange.m6707getCollapsedimpl(visualText.m1436getSelectiond9O1mEE())) {
             ContentDrawScope contentDrawScope2 = contentDrawScope;
             drawText(contentDrawScope2, layoutResult);
             if (visualText.shouldShowSelection()) {
@@ -167,7 +301,7 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
             }
         } else {
             if (visualText.shouldShowSelection()) {
-                m1298drawSelectionSbBc2M(contentDrawScope, visualText.m1203getSelectiond9O1mEE(), layoutResult);
+                m1540drawSelectionSbBc2M(contentDrawScope, visualText.m1436getSelectiond9O1mEE(), layoutResult);
             }
             drawText(contentDrawScope, layoutResult);
         }
@@ -175,145 +309,132 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
     }
 
     /* renamed from: measureVerticalScroll-3p2s80s  reason: not valid java name */
-    private final MeasureResult m1300measureVerticalScroll3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5438measureBRTryo0 = measurable.mo5438measureBRTryo0(Constraints.m6627copyZbe2FdA$default(j, 0, 0, 0, Integer.MAX_VALUE, 7, null));
-        final int min = Math.min(mo5438measureBRTryo0.getHeight(), Constraints.m6636getMaxHeightimpl(j));
-        return MeasureScope.layout$default(measureScope, mo5438measureBRTryo0.getWidth(), min, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$measureVerticalScroll$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+    private final MeasureResult m1542measureVerticalScroll3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j, 0, 0, 0, Integer.MAX_VALUE, 7, null));
+        final int min = Math.min(mo5954measureBRTryo0.getHeight(), Constraints.m7203getMaxHeightimpl(j));
+        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), min, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                invoke2(placementScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Placeable.PlacementScope placementScope) {
-                TransformedTextFieldState transformedTextFieldState;
-                ScrollState scrollState;
-                int i = min;
-                int height = mo5438measureBRTryo0.getHeight();
-                transformedTextFieldState = TextFieldCoreModifierNode.this.textFieldState;
-                TextFieldCoreModifierNode.this.m1301updateScrollStatetIlFzwE(measureScope, i, height, transformedTextFieldState.getVisualText().m1203getSelectiond9O1mEE(), measureScope.getLayoutDirection());
-                Placeable placeable = mo5438measureBRTryo0;
-                scrollState = TextFieldCoreModifierNode.this.scrollState;
-                Placeable.PlacementScope.placeRelative$default(placementScope, placeable, 0, -scrollState.getValue(), 0.0f, 4, null);
+            public final Object invoke(Object obj) {
+                Unit measureVerticalScroll_3p2s80s$lambda$3;
+                measureVerticalScroll_3p2s80s$lambda$3 = TextFieldCoreModifierNode.measureVerticalScroll_3p2s80s$lambda$3(TextFieldCoreModifierNode.this, min, mo5954measureBRTryo0, measureScope, (Placeable.PlacementScope) obj);
+                return measureVerticalScroll_3p2s80s$lambda$3;
             }
         }, 4, null);
-    }
-
-    /* renamed from: measureHorizontalScroll-3p2s80s  reason: not valid java name */
-    private final MeasureResult m1299measureHorizontalScroll3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5438measureBRTryo0 = measurable.mo5438measureBRTryo0(Constraints.m6627copyZbe2FdA$default(j, 0, Integer.MAX_VALUE, 0, 0, 13, null));
-        final int min = Math.min(mo5438measureBRTryo0.getWidth(), Constraints.m6637getMaxWidthimpl(j));
-        return MeasureScope.layout$default(measureScope, min, mo5438measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$measureHorizontalScroll$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                invoke2(placementScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Placeable.PlacementScope placementScope) {
-                TransformedTextFieldState transformedTextFieldState;
-                ScrollState scrollState;
-                int i = min;
-                int width = mo5438measureBRTryo0.getWidth();
-                transformedTextFieldState = TextFieldCoreModifierNode.this.textFieldState;
-                TextFieldCoreModifierNode.this.m1301updateScrollStatetIlFzwE(measureScope, i, width, transformedTextFieldState.getVisualText().m1203getSelectiond9O1mEE(), measureScope.getLayoutDirection());
-                Placeable placeable = mo5438measureBRTryo0;
-                scrollState = TextFieldCoreModifierNode.this.scrollState;
-                Placeable.PlacementScope.placeRelative$default(placementScope, placeable, -scrollState.getValue(), 0, 0.0f, 4, null);
-            }
-        }, 4, null);
-    }
-
-    /* renamed from: calculateOffsetToFollow-72CqOWE  reason: not valid java name */
-    private final int m1297calculateOffsetToFollow72CqOWE(long j, int i) {
-        TextRange textRange = this.previousSelection;
-        if (textRange == null || TextRange.m6142getEndimpl(j) != TextRange.m6142getEndimpl(textRange.m6151unboximpl())) {
-            return TextRange.m6142getEndimpl(j);
-        }
-        TextRange textRange2 = this.previousSelection;
-        if (textRange2 == null || TextRange.m6147getStartimpl(j) != TextRange.m6147getStartimpl(textRange2.m6151unboximpl())) {
-            return TextRange.m6147getStartimpl(j);
-        }
-        if (i != this.previousTextLayoutSize) {
-            return TextRange.m6147getStartimpl(j);
-        }
-        return -1;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit measureVerticalScroll_3p2s80s$lambda$3(TextFieldCoreModifierNode textFieldCoreModifierNode, int i, Placeable placeable, MeasureScope measureScope, Placeable.PlacementScope placementScope) {
+        textFieldCoreModifierNode.m1543updateScrollStatetIlFzwE(placementScope, i, placeable.getHeight(), textFieldCoreModifierNode.textFieldState.getVisualText().m1436getSelectiond9O1mEE(), measureScope.getLayoutDirection());
+        Placeable.PlacementScope.placeRelative$default(placementScope, placeable, 0, -textFieldCoreModifierNode.scrollState.getValue(), 0.0f, 4, null);
+        return Unit.INSTANCE;
+    }
+
+    /* renamed from: measureHorizontalScroll-3p2s80s  reason: not valid java name */
+    private final MeasureResult m1541measureHorizontalScroll3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j, 0, Integer.MAX_VALUE, 0, 0, 13, null));
+        final int min = Math.min(mo5954measureBRTryo0.getWidth(), Constraints.m7204getMaxWidthimpl(j));
+        return MeasureScope.layout$default(measureScope, min, mo5954measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$$ExternalSyntheticLambda0
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit measureHorizontalScroll_3p2s80s$lambda$4;
+                measureHorizontalScroll_3p2s80s$lambda$4 = TextFieldCoreModifierNode.measureHorizontalScroll_3p2s80s$lambda$4(TextFieldCoreModifierNode.this, min, mo5954measureBRTryo0, measureScope, (Placeable.PlacementScope) obj);
+                return measureHorizontalScroll_3p2s80s$lambda$4;
+            }
+        }, 4, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit measureHorizontalScroll_3p2s80s$lambda$4(TextFieldCoreModifierNode textFieldCoreModifierNode, int i, Placeable placeable, MeasureScope measureScope, Placeable.PlacementScope placementScope) {
+        textFieldCoreModifierNode.m1543updateScrollStatetIlFzwE(placementScope, i, placeable.getWidth(), textFieldCoreModifierNode.textFieldState.getVisualText().m1436getSelectiond9O1mEE(), measureScope.getLayoutDirection());
+        Placeable.PlacementScope.placeRelative$default(placementScope, placeable, -textFieldCoreModifierNode.scrollState.getValue(), 0, 0.0f, 4, null);
+        return Unit.INSTANCE;
+    }
+
+    /* renamed from: calculateOffsetToFollow-8ffj60Q  reason: not valid java name */
+    private final int m1539calculateOffsetToFollow8ffj60Q(long j, int i, int i2) {
+        TextRange textRange = this.previousSelection;
+        if (textRange == null || TextRange.m6708getEndimpl(j) != TextRange.m6708getEndimpl(textRange.m6717unboximpl())) {
+            return TextRange.m6708getEndimpl(j);
+        }
+        TextRange textRange2 = this.previousSelection;
+        if (textRange2 == null || TextRange.m6713getStartimpl(j) != TextRange.m6713getStartimpl(textRange2.m6717unboximpl())) {
+            return TextRange.m6713getStartimpl(j);
+        }
+        if (i2 == this.previousTextLayoutSize && i == this.previousContainerSize) {
+            return -1;
+        }
+        return TextRange.m6713getStartimpl(j);
+    }
+
     /* renamed from: updateScrollState-tIlFzwE  reason: not valid java name */
-    public final void m1301updateScrollStatetIlFzwE(Density density, int i, int i2, long j, LayoutDirection layoutDirection) {
+    private final void m1543updateScrollStatetIlFzwE(Density density, int i, int i2, long j, LayoutDirection layoutDirection) {
         TextLayoutResult layoutResult;
         Rect cursorRectInScroller;
+        long j2;
+        boolean z;
         float f;
         int i3;
+        this.scrollState.setViewportSize$foundation_release(i);
         this.scrollState.setMaxValue$foundation_release(i2 - i);
-        int m1297calculateOffsetToFollow72CqOWE = m1297calculateOffsetToFollow72CqOWE(j, i2);
-        if (m1297calculateOffsetToFollow72CqOWE < 0 || !getShowCursor() || (layoutResult = this.textLayoutState.getLayoutResult()) == null) {
+        int m1539calculateOffsetToFollow8ffj60Q = m1539calculateOffsetToFollow8ffj60Q(j, i, i2);
+        if (m1539calculateOffsetToFollow8ffj60Q < 0 || !getShowCursor() || (layoutResult = this.textLayoutState.getLayoutResult()) == null) {
             return;
         }
-        Rect cursorRect = layoutResult.getCursorRect(RangesKt.coerceIn(m1297calculateOffsetToFollow72CqOWE, (ClosedRange<Integer>) new IntRange(0, layoutResult.getLayoutInput().getText().length())));
+        Rect cursorRect = layoutResult.getCursorRect(RangesKt.coerceIn(m1539calculateOffsetToFollow8ffj60Q, (ClosedRange<Integer>) new IntRange(0, layoutResult.getLayoutInput().getText().length())));
         cursorRectInScroller = TextFieldCoreModifierKt.getCursorRectInScroller(density, cursorRect, layoutDirection == LayoutDirection.Rtl, i2);
         if (cursorRectInScroller.getLeft() == this.previousCursorRect.getLeft() && cursorRectInScroller.getTop() == this.previousCursorRect.getTop() && i2 == this.previousTextLayoutSize) {
-            return;
+            j2 = j;
+            z = false;
+        } else {
+            j2 = j;
+            z = true;
         }
-        boolean z = this.orientation == Orientation.Vertical;
-        float top = z ? cursorRectInScroller.getTop() : cursorRectInScroller.getLeft();
-        float bottom = z ? cursorRectInScroller.getBottom() : cursorRectInScroller.getRight();
-        int value = this.scrollState.getValue();
-        float f2 = value + i;
-        float f3 = (bottom <= f2 && (top >= (f = (float) value) || bottom - top <= ((float) i))) ? (i3 >= 0 || bottom - top > ((float) i)) ? 0.0f : top - f : bottom - f2;
-        this.previousSelection = TextRange.m6135boximpl(j);
-        this.previousCursorRect = cursorRectInScroller;
-        this.previousTextLayoutSize = i2;
-        BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, CoroutineStart.UNDISPATCHED, new TextFieldCoreModifierNode$updateScrollState$1(this, f3, cursorRect, null), 1, null);
+        if (z || i != this.previousContainerSize) {
+            boolean z2 = this.orientation == Orientation.Vertical;
+            float top = z2 ? cursorRectInScroller.getTop() : cursorRectInScroller.getLeft();
+            float bottom = z2 ? cursorRectInScroller.getBottom() : cursorRectInScroller.getRight();
+            int value = this.scrollState.getValue();
+            float f2 = value + i;
+            float f3 = (bottom <= f2 && (top >= (f = (float) value) || bottom - top <= ((float) i))) ? (i3 >= 0 || bottom - top > ((float) i)) ? 0.0f : top - f : bottom - f2;
+            this.previousSelection = TextRange.m6701boximpl(j2);
+            this.previousCursorRect = cursorRectInScroller;
+            this.previousContainerSize = i;
+            this.previousTextLayoutSize = i2;
+            BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, CoroutineStart.UNDISPATCHED, new TextFieldCoreModifierNode$updateScrollState$1(this, f3, z, cursorRect, null), 1, null);
+        }
     }
 
     /* renamed from: drawSelection-Sb-Bc2M  reason: not valid java name */
-    private final void m1298drawSelectionSbBc2M(DrawScope drawScope, long j, TextLayoutResult textLayoutResult) {
-        int m6145getMinimpl = TextRange.m6145getMinimpl(j);
-        int m6144getMaximpl = TextRange.m6144getMaximpl(j);
-        if (m6145getMinimpl != m6144getMaximpl) {
-            DrawScope.m4630drawPathLG529CI$default(drawScope, textLayoutResult.getPathForRange(m6145getMinimpl, m6144getMaximpl), ((TextSelectionColors) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, TextSelectionColorsKt.getLocalTextSelectionColors())).m1533getBackgroundColor0d7_KjU(), 0.0f, null, null, 0, 60, null);
+    private final void m1540drawSelectionSbBc2M(DrawScope drawScope, long j, TextLayoutResult textLayoutResult) {
+        int m6711getMinimpl = TextRange.m6711getMinimpl(j);
+        int m6710getMaximpl = TextRange.m6710getMaximpl(j);
+        if (m6711getMinimpl != m6710getMaximpl) {
+            DrawScope.m5106drawPathLG529CI$default(drawScope, textLayoutResult.getPathForRange(m6711getMinimpl, m6710getMaximpl), ((TextSelectionColors) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, TextSelectionColorsKt.getLocalTextSelectionColors())).m1839getBackgroundColor0d7_KjU(), 0.0f, null, null, 0, 60, null);
         }
     }
 
     private final void drawHighlight(DrawScope drawScope, Pair<TextHighlightType, TextRange> pair, TextLayoutResult textLayoutResult) {
-        int m1215unboximpl = pair.component1().m1215unboximpl();
-        long m6151unboximpl = pair.component2().m6151unboximpl();
-        if (TextRange.m6141getCollapsedimpl(m6151unboximpl)) {
+        int m1449unboximpl = pair.component1().m1449unboximpl();
+        long m6717unboximpl = pair.component2().m6717unboximpl();
+        if (TextRange.m6707getCollapsedimpl(m6717unboximpl)) {
             return;
         }
-        Path pathForRange = textLayoutResult.getPathForRange(TextRange.m6145getMinimpl(m6151unboximpl), TextRange.m6144getMaximpl(m6151unboximpl));
-        if (TextHighlightType.m1212equalsimpl0(m1215unboximpl, TextHighlightType.Companion.m1216getHandwritingDeletePreviewsxJuwY())) {
+        Path pathForRange = textLayoutResult.getPathForRange(TextRange.m6711getMinimpl(m6717unboximpl), TextRange.m6710getMaximpl(m6717unboximpl));
+        if (TextHighlightType.m1446equalsimpl0(m1449unboximpl, TextHighlightType.Companion.m1450getHandwritingDeletePreviewsxJuwY())) {
             Brush brush = textLayoutResult.getLayoutInput().getStyle().getBrush();
             if (brush != null) {
-                DrawScope.m4629drawPathGBMwjPU$default(drawScope, pathForRange, brush, 0.2f, null, null, 0, 56, null);
+                DrawScope.m5105drawPathGBMwjPU$default(drawScope, pathForRange, brush, 0.2f, null, null, 0, 56, null);
                 return;
             }
-            long m6177getColor0d7_KjU = textLayoutResult.getLayoutInput().getStyle().m6177getColor0d7_KjU();
-            if (m6177getColor0d7_KjU == 16) {
-                m6177getColor0d7_KjU = Color.Companion.m4104getBlack0d7_KjU();
+            long m6743getColor0d7_KjU = textLayoutResult.getLayoutInput().getStyle().m6743getColor0d7_KjU();
+            if (m6743getColor0d7_KjU == 16) {
+                m6743getColor0d7_KjU = Color.Companion.m4563getBlack0d7_KjU();
             }
-            long j = m6177getColor0d7_KjU;
-            DrawScope.m4630drawPathLG529CI$default(drawScope, pathForRange, Color.m4077copywmQWz5c$default(j, Color.m4080getAlphaimpl(j) * 0.2f, 0.0f, 0.0f, 0.0f, 14, null), 0.0f, null, null, 0, 60, null);
+            long j = m6743getColor0d7_KjU;
+            DrawScope.m5106drawPathLG529CI$default(drawScope, pathForRange, Color.m4536copywmQWz5c$default(j, Color.m4539getAlphaimpl(j) * 0.2f, 0.0f, 0.0f, 0.0f, 14, null), 0.0f, null, null, 0, 60, null);
             return;
         }
-        DrawScope.m4630drawPathLG529CI$default(drawScope, pathForRange, ((TextSelectionColors) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, TextSelectionColorsKt.getLocalTextSelectionColors())).m1533getBackgroundColor0d7_KjU(), 0.0f, null, null, 0, 60, null);
+        DrawScope.m5106drawPathLG529CI$default(drawScope, pathForRange, ((TextSelectionColors) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, TextSelectionColorsKt.getLocalTextSelectionColors())).m1839getBackgroundColor0d7_KjU(), 0.0f, null, null, 0, 60, null);
     }
 
     private final void drawCursor(DrawScope drawScope) {
@@ -321,7 +442,7 @@ public final class TextFieldCoreModifierNode extends DelegatingNode implements L
         float cursorAlpha = cursorAnimationState != null ? cursorAnimationState.getCursorAlpha() : 0.0f;
         if (cursorAlpha != 0.0f && getShowCursor()) {
             Rect cursorRect = this.textFieldSelectionState.getCursorRect();
-            DrawScope.m4625drawLine1RTmtNc$default(drawScope, this.cursorBrush, cursorRect.m3871getTopCenterF1C5BW0(), cursorRect.m3864getBottomCenterF1C5BW0(), cursorRect.getRight() - cursorRect.getLeft(), 0, null, cursorAlpha, null, 0, 432, null);
+            DrawScope.m5101drawLine1RTmtNc$default(drawScope, this.cursorBrush, cursorRect.m4327getTopCenterF1C5BW0(), cursorRect.m4320getBottomCenterF1C5BW0(), cursorRect.getRight() - cursorRect.getLeft(), 0, null, cursorAlpha, null, 0, 432, null);
         }
     }
 

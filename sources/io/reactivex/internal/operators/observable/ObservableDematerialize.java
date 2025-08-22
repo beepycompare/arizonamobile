@@ -9,7 +9,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableDematerialize<T, R> extends AbstractObservableWithUpstream<T, R> {
     final Function<? super T, ? extends Notification<R>> selector;
 
@@ -23,7 +23,7 @@ public final class ObservableDematerialize<T, R> extends AbstractObservableWithU
         this.source.subscribe(new DematerializeObserver(observer, this.selector));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DematerializeObserver<T, R> implements Observer<T>, Disposable {
         boolean done;
         final Observer<? super R> downstream;

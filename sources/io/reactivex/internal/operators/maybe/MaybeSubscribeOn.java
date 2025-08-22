@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.disposables.SequentialDisposable;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeSubscribeOn<T> extends AbstractMaybeWithUpstream<T, T> {
     final Scheduler scheduler;
 
@@ -23,7 +23,7 @@ public final class MaybeSubscribeOn<T> extends AbstractMaybeWithUpstream<T, T> {
         subscribeOnMaybeObserver.task.replace(this.scheduler.scheduleDirect(new SubscribeTask(subscribeOnMaybeObserver, this.source)));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SubscribeTask<T> implements Runnable {
         final MaybeObserver<? super T> observer;
         final MaybeSource<T> source;
@@ -39,7 +39,7 @@ public final class MaybeSubscribeOn<T> extends AbstractMaybeWithUpstream<T, T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SubscribeOnMaybeObserver<T> extends AtomicReference<Disposable> implements MaybeObserver<T>, Disposable {
         private static final long serialVersionUID = 8571289934935992137L;
         final MaybeObserver<? super T> downstream;

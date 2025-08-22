@@ -26,7 +26,7 @@ import kotlin.jvm.functions.Function4;
 import kotlin.jvm.functions.Function6;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: SelectionRegistrarImpl.kt */
-@Metadata(d1 = {"\u0000\u0084\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b \b\u0000\u0018\u0000 d2\u00020\u0001:\u0001dB\u0007\b\u0016¢\u0006\u0002\u0010\u0002B\u000f\b\u0002\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0002\u0010\u0005J\b\u0010L\u001a\u00020\u0004H\u0016J\u0010\u0010M\u001a\u00020\r2\u0006\u0010N\u001a\u00020\u0004H\u0016J\u0010\u0010O\u001a\u00020\r2\u0006\u0010N\u001a\u00020\u0004H\u0016JB\u0010P\u001a\u00020\u001d2\u0006\u0010Q\u001a\u00020\u001e2\u0006\u0010R\u001a\u00020\u001f2\u0006\u0010S\u001a\u00020\u001f2\u0006\u0010T\u001a\u00020\u001d2\u0006\u0010U\u001a\u00020 2\u0006\u0010V\u001a\u00020\u001dH\u0016ø\u0001\u0000¢\u0006\u0004\bW\u0010XJ\b\u0010Y\u001a\u00020\rH\u0016J\u0018\u0010Z\u001a\u00020\r2\u0006\u0010N\u001a\u00020\u00042\u0006\u0010V\u001a\u00020\u001dH\u0016J2\u0010[\u001a\u00020\r2\u0006\u0010Q\u001a\u00020\u001e2\u0006\u0010\\\u001a\u00020\u001f2\u0006\u0010U\u001a\u00020 2\u0006\u0010V\u001a\u00020\u001dH\u0016ø\u0001\u0000¢\u0006\u0004\b]\u0010^J\u0014\u0010_\u001a\b\u0012\u0004\u0012\u00020\b0<2\u0006\u0010`\u001a\u00020\u001eJ\u0010\u0010a\u001a\u00020\b2\u0006\u0010b\u001a\u00020\bH\u0016J\u0010\u0010c\u001a\u00020\r2\u0006\u0010b\u001a\u00020\bH\u0016R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\nX\u0082\u0004¢\u0006\u0002\n\u0000R(\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\r\u0018\u00010\fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u000f\"\u0004\b\u0010\u0010\u0011R\u0012\u0010\u0012\u001a\u00060\u0013j\u0002`\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R(\u0010\u0015\u001a\u0010\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\r\u0018\u00010\fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u000f\"\u0004\b\u0017\u0010\u0011R(\u0010\u0018\u001a\u0010\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\r\u0018\u00010\fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u000f\"\u0004\b\u001a\u0010\u0011RF\u0010\u001b\u001a.\u0012\u0004\u0012\u00020\u001d\u0012\u0004\u0012\u00020\u001e\u0012\u0004\u0012\u00020\u001f\u0012\u0004\u0012\u00020\u001f\u0012\u0004\u0012\u00020\u001d\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020\u001d\u0018\u00010\u001cX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\"\u0010%\u001a\n\u0012\u0004\u0012\u00020\r\u0018\u00010&X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b'\u0010(\"\u0004\b)\u0010*R.\u0010+\u001a\u0016\u0012\u0004\u0012\u00020\u001d\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\r\u0018\u00010,X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b-\u0010.\"\u0004\b/\u00100R:\u00101\u001a\"\u0012\u0004\u0012\u00020\u001d\u0012\u0004\u0012\u00020\u001e\u0012\u0004\u0012\u00020\u001f\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020\r\u0018\u000102X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b3\u00104\"\u0004\b5\u00106R\u001a\u00107\u001a\b\u0012\u0004\u0012\u00020\b088@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b9\u0010:R\u001a\u0010;\u001a\b\u0012\u0004\u0012\u00020\b0<8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b=\u0010>R\u001a\u0010?\u001a\u00020\u001dX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b@\u0010A\"\u0004\bB\u0010CR7\u0010F\u001a\b\u0012\u0004\u0012\u00020E082\f\u0010D\u001a\b\u0012\u0004\u0012\u00020E088V@VX\u0096\u008e\u0002¢\u0006\u0012\n\u0004\bJ\u0010K\u001a\u0004\bG\u0010:\"\u0004\bH\u0010I\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006e"}, d2 = {"Landroidx/compose/foundation/text/selection/SelectionRegistrarImpl;", "Landroidx/compose/foundation/text/selection/SelectionRegistrar;", "()V", "initialIncrementId", "", "(J)V", "_selectableMap", "Landroidx/collection/MutableLongObjectMap;", "Landroidx/compose/foundation/text/selection/Selectable;", "_selectables", "", "afterSelectableUnsubscribe", "Lkotlin/Function1;", "", "getAfterSelectableUnsubscribe$foundation_release", "()Lkotlin/jvm/functions/Function1;", "setAfterSelectableUnsubscribe$foundation_release", "(Lkotlin/jvm/functions/Function1;)V", "incrementId", "Ljava/util/concurrent/atomic/AtomicLong;", "Landroidx/compose/foundation/AtomicLong;", "onPositionChangeCallback", "getOnPositionChangeCallback$foundation_release", "setOnPositionChangeCallback$foundation_release", "onSelectableChangeCallback", "getOnSelectableChangeCallback$foundation_release", "setOnSelectableChangeCallback$foundation_release", "onSelectionUpdateCallback", "Lkotlin/Function6;", "", "Landroidx/compose/ui/layout/LayoutCoordinates;", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/foundation/text/selection/SelectionAdjustment;", "getOnSelectionUpdateCallback$foundation_release", "()Lkotlin/jvm/functions/Function6;", "setOnSelectionUpdateCallback$foundation_release", "(Lkotlin/jvm/functions/Function6;)V", "onSelectionUpdateEndCallback", "Lkotlin/Function0;", "getOnSelectionUpdateEndCallback$foundation_release", "()Lkotlin/jvm/functions/Function0;", "setOnSelectionUpdateEndCallback$foundation_release", "(Lkotlin/jvm/functions/Function0;)V", "onSelectionUpdateSelectAll", "Lkotlin/Function2;", "getOnSelectionUpdateSelectAll$foundation_release", "()Lkotlin/jvm/functions/Function2;", "setOnSelectionUpdateSelectAll$foundation_release", "(Lkotlin/jvm/functions/Function2;)V", "onSelectionUpdateStartCallback", "Lkotlin/Function4;", "getOnSelectionUpdateStartCallback$foundation_release", "()Lkotlin/jvm/functions/Function4;", "setOnSelectionUpdateStartCallback$foundation_release", "(Lkotlin/jvm/functions/Function4;)V", "selectableMap", "Landroidx/collection/LongObjectMap;", "getSelectableMap$foundation_release", "()Landroidx/collection/LongObjectMap;", "selectables", "", "getSelectables$foundation_release", "()Ljava/util/List;", "sorted", "getSorted$foundation_release", "()Z", "setSorted$foundation_release", "(Z)V", "<set-?>", "Landroidx/compose/foundation/text/selection/Selection;", "subselections", "getSubselections", "setSubselections", "(Landroidx/collection/LongObjectMap;)V", "subselections$delegate", "Landroidx/compose/runtime/MutableState;", "nextSelectableId", "notifyPositionChange", "selectableId", "notifySelectableChange", "notifySelectionUpdate", "layoutCoordinates", "newPosition", "previousPosition", "isStartHandle", "adjustment", "isInTouchMode", "notifySelectionUpdate-njBpvok", "(Landroidx/compose/ui/layout/LayoutCoordinates;JJZLandroidx/compose/foundation/text/selection/SelectionAdjustment;Z)Z", "notifySelectionUpdateEnd", "notifySelectionUpdateSelectAll", "notifySelectionUpdateStart", "startPosition", "notifySelectionUpdateStart-ubNVwUQ", "(Landroidx/compose/ui/layout/LayoutCoordinates;JLandroidx/compose/foundation/text/selection/SelectionAdjustment;Z)V", "sort", "containerLayoutCoordinates", "subscribe", "selectable", "unsubscribe", "Companion", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b \b\u0001\u0018\u0000 f2\u00020\u0001:\u0001fB\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B\t\b\u0016¢\u0006\u0004\b\u0004\u0010\u0006J\u0010\u0010N\u001a\u00020\u000f2\u0006\u0010O\u001a\u00020\u000fH\u0016J\u0010\u0010P\u001a\u00020 2\u0006\u0010O\u001a\u00020\u000fH\u0016J\b\u0010Q\u001a\u00020\u0003H\u0016J\u0014\u0010R\u001a\b\u0012\u0004\u0012\u00020\u000f0\u00112\u0006\u0010S\u001a\u00020'J\u0010\u0010T\u001a\u00020 2\u0006\u0010U\u001a\u00020\u0003H\u0016J/\u0010V\u001a\u00020 2\u0006\u0010W\u001a\u00020'2\u0006\u0010X\u001a\u00020(2\u0006\u0010Y\u001a\u00020)2\u0006\u0010Z\u001a\u00020\bH\u0016¢\u0006\u0004\b[\u0010\\J\u0018\u0010]\u001a\u00020 2\u0006\u0010U\u001a\u00020\u00032\u0006\u0010Z\u001a\u00020\bH\u0016J?\u0010^\u001a\u00020\b2\u0006\u0010W\u001a\u00020'2\u0006\u0010_\u001a\u00020(2\u0006\u0010`\u001a\u00020(2\u0006\u0010a\u001a\u00020\b2\u0006\u0010Y\u001a\u00020)2\u0006\u0010Z\u001a\u00020\bH\u0016¢\u0006\u0004\bb\u0010cJ\b\u0010d\u001a\u00020 H\u0016J\u0010\u0010e\u001a\u00020 2\u0006\u0010U\u001a\u00020\u0003H\u0016R\u001a\u0010\u0007\u001a\u00020\bX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\fR\u0014\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u000f0\u00118@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u000f0\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u000f0\u00178@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0019R\u0014\u0010\u001a\u001a\u00060\u001bj\u0002`\u001cX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u001dR(\u0010\u001e\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020 \u0018\u00010\u001fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R:\u0010%\u001a\"\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020)\u0012\u0004\u0012\u00020 \u0018\u00010&X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-R.\u0010.\u001a\u0016\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020 \u0018\u00010/X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u00101\"\u0004\b2\u00103RF\u00104\u001a.\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020)\u0012\u0004\u0012\u00020\b\u0018\u000105X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b6\u00107\"\u0004\b8\u00109R\"\u0010:\u001a\n\u0012\u0004\u0012\u00020 \u0018\u00010;X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b<\u0010=\"\u0004\b>\u0010?R(\u0010@\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020 \u0018\u00010\u001fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bA\u0010\"\"\u0004\bB\u0010$R(\u0010C\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020 \u0018\u00010\u001fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bD\u0010\"\"\u0004\bE\u0010$R7\u0010H\u001a\b\u0012\u0004\u0012\u00020G0\u00172\f\u0010F\u001a\b\u0012\u0004\u0012\u00020G0\u00178V@VX\u0096\u008e\u0002¢\u0006\u0012\n\u0004\bL\u0010M\u001a\u0004\bI\u0010\u0019\"\u0004\bJ\u0010K¨\u0006g"}, d2 = {"Landroidx/compose/foundation/text/selection/SelectionRegistrarImpl;", "Landroidx/compose/foundation/text/selection/SelectionRegistrar;", "initialIncrementId", "", "<init>", "(J)V", "()V", "sorted", "", "getSorted$foundation_release", "()Z", "setSorted$foundation_release", "(Z)V", "_selectables", "", "Landroidx/compose/foundation/text/selection/Selectable;", "selectables", "", "getSelectables$foundation_release", "()Ljava/util/List;", "_selectableMap", "Landroidx/collection/MutableLongObjectMap;", "selectableMap", "Landroidx/collection/LongObjectMap;", "getSelectableMap$foundation_release", "()Landroidx/collection/LongObjectMap;", "incrementId", "Ljava/util/concurrent/atomic/AtomicLong;", "Landroidx/compose/foundation/AtomicLong;", "Ljava/util/concurrent/atomic/AtomicLong;", "onPositionChangeCallback", "Lkotlin/Function1;", "", "getOnPositionChangeCallback$foundation_release", "()Lkotlin/jvm/functions/Function1;", "setOnPositionChangeCallback$foundation_release", "(Lkotlin/jvm/functions/Function1;)V", "onSelectionUpdateStartCallback", "Lkotlin/Function4;", "Landroidx/compose/ui/layout/LayoutCoordinates;", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/foundation/text/selection/SelectionAdjustment;", "getOnSelectionUpdateStartCallback$foundation_release", "()Lkotlin/jvm/functions/Function4;", "setOnSelectionUpdateStartCallback$foundation_release", "(Lkotlin/jvm/functions/Function4;)V", "onSelectionUpdateSelectAll", "Lkotlin/Function2;", "getOnSelectionUpdateSelectAll$foundation_release", "()Lkotlin/jvm/functions/Function2;", "setOnSelectionUpdateSelectAll$foundation_release", "(Lkotlin/jvm/functions/Function2;)V", "onSelectionUpdateCallback", "Lkotlin/Function6;", "getOnSelectionUpdateCallback$foundation_release", "()Lkotlin/jvm/functions/Function6;", "setOnSelectionUpdateCallback$foundation_release", "(Lkotlin/jvm/functions/Function6;)V", "onSelectionUpdateEndCallback", "Lkotlin/Function0;", "getOnSelectionUpdateEndCallback$foundation_release", "()Lkotlin/jvm/functions/Function0;", "setOnSelectionUpdateEndCallback$foundation_release", "(Lkotlin/jvm/functions/Function0;)V", "onSelectableChangeCallback", "getOnSelectableChangeCallback$foundation_release", "setOnSelectableChangeCallback$foundation_release", "afterSelectableUnsubscribe", "getAfterSelectableUnsubscribe$foundation_release", "setAfterSelectableUnsubscribe$foundation_release", "<set-?>", "Landroidx/compose/foundation/text/selection/Selection;", "subselections", "getSubselections", "setSubselections", "(Landroidx/collection/LongObjectMap;)V", "subselections$delegate", "Landroidx/compose/runtime/MutableState;", "subscribe", "selectable", "unsubscribe", "nextSelectableId", "sort", "containerLayoutCoordinates", "notifyPositionChange", "selectableId", "notifySelectionUpdateStart", "layoutCoordinates", "startPosition", "adjustment", "isInTouchMode", "notifySelectionUpdateStart-ubNVwUQ", "(Landroidx/compose/ui/layout/LayoutCoordinates;JLandroidx/compose/foundation/text/selection/SelectionAdjustment;Z)V", "notifySelectionUpdateSelectAll", "notifySelectionUpdate", "newPosition", "previousPosition", "isStartHandle", "notifySelectionUpdate-njBpvok", "(Landroidx/compose/ui/layout/LayoutCoordinates;JJZLandroidx/compose/foundation/text/selection/SelectionAdjustment;Z)Z", "notifySelectionUpdateEnd", "notifySelectableChange", "Companion", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SelectionRegistrarImpl implements SelectionRegistrar {
     private final MutableLongObjectMap<Selectable> _selectableMap;
@@ -43,27 +43,21 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
     private final MutableState subselections$delegate;
     public static final Companion Companion = new Companion(null);
     public static final int $stable = 8;
-    private static final Saver<SelectionRegistrarImpl, Long> Saver = SaverKt.Saver(new Function2<SaverScope, SelectionRegistrarImpl, Long>() { // from class: androidx.compose.foundation.text.selection.SelectionRegistrarImpl$Companion$Saver$1
+    private static final Saver<SelectionRegistrarImpl, Long> Saver = SaverKt.Saver(new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionRegistrarImpl$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
-        public final Long invoke(SaverScope saverScope, SelectionRegistrarImpl selectionRegistrarImpl) {
-            AtomicLong atomicLong;
-            atomicLong = selectionRegistrarImpl.incrementId;
-            return Long.valueOf(atomicLong.get());
+        public final Object invoke(Object obj, Object obj2) {
+            Long Saver$lambda$4;
+            Saver$lambda$4 = SelectionRegistrarImpl.Saver$lambda$4((SaverScope) obj, (SelectionRegistrarImpl) obj2);
+            return Saver$lambda$4;
         }
-    }, new Function1<Long, SelectionRegistrarImpl>() { // from class: androidx.compose.foundation.text.selection.SelectionRegistrarImpl$Companion$Saver$2
+    }, new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionRegistrarImpl$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ SelectionRegistrarImpl invoke(Long l) {
-            return invoke(l.longValue());
-        }
-
-        public final SelectionRegistrarImpl invoke(long j) {
-            return new SelectionRegistrarImpl(j, null);
+        public final Object invoke(Object obj) {
+            SelectionRegistrarImpl Saver$lambda$5;
+            Saver$lambda$5 = SelectionRegistrarImpl.Saver$lambda$5(((Long) obj).longValue());
+            return Saver$lambda$5;
         }
     });
-
-    public /* synthetic */ SelectionRegistrarImpl(long j, DefaultConstructorMarker defaultConstructorMarker) {
-        this(j);
-    }
 
     private SelectionRegistrarImpl(long j) {
         MutableState mutableStateOf$default;
@@ -75,7 +69,7 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
     }
 
     /* compiled from: SelectionRegistrarImpl.kt */
-    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u001d\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Landroidx/compose/foundation/text/selection/SelectionRegistrarImpl$Companion;", "", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/foundation/text/selection/SelectionRegistrarImpl;", "", "getSaver", "()Landroidx/compose/runtime/saveable/Saver;", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001d\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Landroidx/compose/foundation/text/selection/SelectionRegistrarImpl$Companion;", "", "<init>", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/foundation/text/selection/SelectionRegistrarImpl;", "", "getSaver", "()Landroidx/compose/runtime/saveable/Saver;", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -88,6 +82,16 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
         public final Saver<SelectionRegistrarImpl, Long> getSaver() {
             return SelectionRegistrarImpl.Saver;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Long Saver$lambda$4(SaverScope saverScope, SelectionRegistrarImpl selectionRegistrarImpl) {
+        return Long.valueOf(selectionRegistrarImpl.incrementId.get());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final SelectionRegistrarImpl Saver$lambda$5(long j) {
+        return new SelectionRegistrarImpl(j);
     }
 
     public SelectionRegistrarImpl() {
@@ -213,45 +217,20 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
     public final List<Selectable> sort(final LayoutCoordinates layoutCoordinates) {
         if (!this.sorted) {
             List<Selectable> list = this._selectables;
-            final Function2<Selectable, Selectable, Integer> function2 = new Function2<Selectable, Selectable, Integer>() { // from class: androidx.compose.foundation.text.selection.SelectionRegistrarImpl$sort$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(2);
-                }
-
+            final Function2 function2 = new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionRegistrarImpl$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
-                public final Integer invoke(Selectable selectable, Selectable selectable2) {
-                    long m3853getZeroF1C5BW0;
-                    long m3853getZeroF1C5BW02;
-                    int compareValues;
-                    LayoutCoordinates layoutCoordinates2 = selectable.getLayoutCoordinates();
-                    LayoutCoordinates layoutCoordinates3 = selectable2.getLayoutCoordinates();
-                    if (layoutCoordinates2 != null) {
-                        m3853getZeroF1C5BW0 = LayoutCoordinates.this.mo5447localPositionOfR5De75A(layoutCoordinates2, Offset.Companion.m3853getZeroF1C5BW0());
-                    } else {
-                        m3853getZeroF1C5BW0 = Offset.Companion.m3853getZeroF1C5BW0();
-                    }
-                    if (layoutCoordinates3 != null) {
-                        m3853getZeroF1C5BW02 = LayoutCoordinates.this.mo5447localPositionOfR5De75A(layoutCoordinates3, Offset.Companion.m3853getZeroF1C5BW0());
-                    } else {
-                        m3853getZeroF1C5BW02 = Offset.Companion.m3853getZeroF1C5BW0();
-                    }
-                    int i = (int) (m3853getZeroF1C5BW0 & 4294967295L);
-                    int i2 = (int) (4294967295L & m3853getZeroF1C5BW02);
-                    if (Float.intBitsToFloat(i) == Float.intBitsToFloat(i2)) {
-                        compareValues = ComparisonsKt.compareValues(Float.valueOf(Float.intBitsToFloat((int) (m3853getZeroF1C5BW0 >> 32))), Float.valueOf(Float.intBitsToFloat((int) (m3853getZeroF1C5BW02 >> 32))));
-                    } else {
-                        compareValues = ComparisonsKt.compareValues(Float.valueOf(Float.intBitsToFloat(i)), Float.valueOf(Float.intBitsToFloat(i2)));
-                    }
-                    return Integer.valueOf(compareValues);
+                public final Object invoke(Object obj, Object obj2) {
+                    int sort$lambda$2;
+                    sort$lambda$2 = SelectionRegistrarImpl.sort$lambda$2(LayoutCoordinates.this, (Selectable) obj, (Selectable) obj2);
+                    return Integer.valueOf(sort$lambda$2);
                 }
             };
-            CollectionsKt.sortWith(list, new Comparator() { // from class: androidx.compose.foundation.text.selection.SelectionRegistrarImpl$$ExternalSyntheticLambda0
+            CollectionsKt.sortWith(list, new Comparator() { // from class: androidx.compose.foundation.text.selection.SelectionRegistrarImpl$$ExternalSyntheticLambda3
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
-                    int sort$lambda$2;
-                    sort$lambda$2 = SelectionRegistrarImpl.sort$lambda$2(Function2.this, obj, obj2);
-                    return sort$lambda$2;
+                    int sort$lambda$3;
+                    sort$lambda$3 = SelectionRegistrarImpl.sort$lambda$3(Function2.this, obj, obj2);
+                    return sort$lambda$3;
                 }
             });
             this.sorted = true;
@@ -260,8 +239,32 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int sort$lambda$2(Function2 function2, Object obj, Object obj2) {
+    public static final int sort$lambda$3(Function2 function2, Object obj, Object obj2) {
         return ((Number) function2.invoke(obj, obj2)).intValue();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final int sort$lambda$2(LayoutCoordinates layoutCoordinates, Selectable selectable, Selectable selectable2) {
+        long m4309getZeroF1C5BW0;
+        long m4309getZeroF1C5BW02;
+        LayoutCoordinates layoutCoordinates2 = selectable.getLayoutCoordinates();
+        LayoutCoordinates layoutCoordinates3 = selectable2.getLayoutCoordinates();
+        if (layoutCoordinates2 != null) {
+            m4309getZeroF1C5BW0 = layoutCoordinates.mo5963localPositionOfR5De75A(layoutCoordinates2, Offset.Companion.m4309getZeroF1C5BW0());
+        } else {
+            m4309getZeroF1C5BW0 = Offset.Companion.m4309getZeroF1C5BW0();
+        }
+        if (layoutCoordinates3 != null) {
+            m4309getZeroF1C5BW02 = layoutCoordinates.mo5963localPositionOfR5De75A(layoutCoordinates3, Offset.Companion.m4309getZeroF1C5BW0());
+        } else {
+            m4309getZeroF1C5BW02 = Offset.Companion.m4309getZeroF1C5BW0();
+        }
+        int i = (int) (m4309getZeroF1C5BW0 & 4294967295L);
+        int i2 = (int) (4294967295L & m4309getZeroF1C5BW02);
+        if (Float.intBitsToFloat(i) == Float.intBitsToFloat(i2)) {
+            return ComparisonsKt.compareValues(Float.valueOf(Float.intBitsToFloat((int) (m4309getZeroF1C5BW0 >> 32))), Float.valueOf(Float.intBitsToFloat((int) (m4309getZeroF1C5BW02 >> 32))));
+        }
+        return ComparisonsKt.compareValues(Float.valueOf(Float.intBitsToFloat(i)), Float.valueOf(Float.intBitsToFloat(i2)));
     }
 
     @Override // androidx.compose.foundation.text.selection.SelectionRegistrar
@@ -275,10 +278,10 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
 
     @Override // androidx.compose.foundation.text.selection.SelectionRegistrar
     /* renamed from: notifySelectionUpdateStart-ubNVwUQ */
-    public void mo1514notifySelectionUpdateStartubNVwUQ(LayoutCoordinates layoutCoordinates, long j, SelectionAdjustment selectionAdjustment, boolean z) {
+    public void mo1802notifySelectionUpdateStartubNVwUQ(LayoutCoordinates layoutCoordinates, long j, SelectionAdjustment selectionAdjustment, boolean z) {
         Function4<? super Boolean, ? super LayoutCoordinates, ? super Offset, ? super SelectionAdjustment, Unit> function4 = this.onSelectionUpdateStartCallback;
         if (function4 != null) {
-            function4.invoke(Boolean.valueOf(z), layoutCoordinates, Offset.m3826boximpl(j), selectionAdjustment);
+            function4.invoke(Boolean.valueOf(z), layoutCoordinates, Offset.m4282boximpl(j), selectionAdjustment);
         }
     }
 
@@ -292,10 +295,10 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
 
     @Override // androidx.compose.foundation.text.selection.SelectionRegistrar
     /* renamed from: notifySelectionUpdate-njBpvok */
-    public boolean mo1513notifySelectionUpdatenjBpvok(LayoutCoordinates layoutCoordinates, long j, long j2, boolean z, SelectionAdjustment selectionAdjustment, boolean z2) {
+    public boolean mo1801notifySelectionUpdatenjBpvok(LayoutCoordinates layoutCoordinates, long j, long j2, boolean z, SelectionAdjustment selectionAdjustment, boolean z2) {
         Function6<? super Boolean, ? super LayoutCoordinates, ? super Offset, ? super Offset, ? super Boolean, ? super SelectionAdjustment, Boolean> function6 = this.onSelectionUpdateCallback;
         if (function6 != null) {
-            return function6.invoke(Boolean.valueOf(z2), layoutCoordinates, Offset.m3826boximpl(j), Offset.m3826boximpl(j2), Boolean.valueOf(z), selectionAdjustment).booleanValue();
+            return function6.invoke(Boolean.valueOf(z2), layoutCoordinates, Offset.m4282boximpl(j), Offset.m4282boximpl(j2), Boolean.valueOf(z), selectionAdjustment).booleanValue();
         }
         return true;
     }

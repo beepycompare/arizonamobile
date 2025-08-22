@@ -14,7 +14,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableUsing<R> extends Completable {
     final Function<? super R, ? extends CompletableSource> completableFunction;
     final Consumer<? super R> disposer;
@@ -62,7 +62,7 @@ public final class CompletableUsing<R> extends Completable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class UsingObserver<R> extends AtomicReference<Object> implements CompletableObserver, Disposable {
         private static final long serialVersionUID = -674404550052917487L;
         final Consumer<? super R> disposer;

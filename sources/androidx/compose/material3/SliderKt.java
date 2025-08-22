@@ -89,7 +89,7 @@ public final class SliderKt {
     private static final long ThumbSize;
     private static final float ThumbTrackGapSize;
     private static final float ThumbWidth;
-    private static final float TrackHeight = SliderTokens.INSTANCE.m3301getInactiveTrackHeightD9Ej5fM();
+    private static final float TrackHeight = SliderTokens.INSTANCE.m3608getInactiveTrackHeightD9Ej5fM();
     private static final float TrackInsideCornerSize;
 
     public static final /* synthetic */ float access$calcFraction(float f, float f2, float f3) {
@@ -101,8 +101,8 @@ public final class SliderKt {
     }
 
     /* renamed from: access$scale-ziovWd0 */
-    public static final /* synthetic */ long m2307access$scaleziovWd0(float f, float f2, long j, float f3, float f4) {
-        return m2311scaleziovWd0(f, f2, j, f3, f4);
+    public static final /* synthetic */ long m2614access$scaleziovWd0(float f, float f2, long j, float f3, float f4) {
+        return m2618scaleziovWd0(f, f2, j, f3, f4);
     }
 
     public static final /* synthetic */ float access$snapValueToTick(float f, float[] fArr, float f2, float f3) {
@@ -114,7 +114,7 @@ public final class SliderKt {
     }
 
     /* renamed from: isSpecified-If1S1O4$annotations */
-    public static /* synthetic */ void m2310isSpecifiedIf1S1O4$annotations(long j) {
+    public static /* synthetic */ void m2617isSpecifiedIf1S1O4$annotations(long j) {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:191:0x0068  */
@@ -343,7 +343,7 @@ public final class SliderKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(308249025, i21, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:180)");
                                         }
-                                        SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z4, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
+                                        SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z4, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -366,7 +366,7 @@ public final class SliderKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(-1843234110, i21, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:187)");
                                         }
-                                        SliderDefaults.INSTANCE.m2298Track4EFweAY(sliderState, (Modifier) null, z4, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i21 & 14) | 100663296, 242);
+                                        SliderDefaults.INSTANCE.m2605Track4EFweAY(sliderState, (Modifier) null, z4, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i21 & 14) | 100663296, 242);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -469,7 +469,7 @@ public final class SliderKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(308249025, i21, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:180)");
                                 }
-                                SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z42, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
+                                SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z42, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -492,7 +492,7 @@ public final class SliderKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(-1843234110, i21, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:187)");
                                 }
-                                SliderDefaults.INSTANCE.m2298Track4EFweAY(sliderState, (Modifier) null, z42, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i21 & 14) | 100663296, 242);
+                                SliderDefaults.INSTANCE.m2605Track4EFweAY(sliderState, (Modifier) null, z42, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i21 & 14) | 100663296, 242);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -569,7 +569,7 @@ public final class SliderKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(308249025, i21, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:180)");
                             }
-                            SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z422, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
+                            SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z422, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -592,7 +592,7 @@ public final class SliderKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-1843234110, i21, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:187)");
                             }
-                            SliderDefaults.INSTANCE.m2298Track4EFweAY(sliderState, (Modifier) null, z422, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i21 & 14) | 100663296, 242);
+                            SliderDefaults.INSTANCE.m2605Track4EFweAY(sliderState, (Modifier) null, z422, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i21 & 14) | 100663296, 242);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -673,7 +673,7 @@ public final class SliderKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(308249025, i21, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:180)");
                         }
-                        SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z4222, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
+                        SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z4222, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -696,7 +696,7 @@ public final class SliderKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1843234110, i21, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:187)");
                         }
-                        SliderDefaults.INSTANCE.m2298Track4EFweAY(sliderState, (Modifier) null, z4222, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i21 & 14) | 100663296, 242);
+                        SliderDefaults.INSTANCE.m2605Track4EFweAY(sliderState, (Modifier) null, z4222, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i21 & 14) | 100663296, 242);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -783,7 +783,7 @@ public final class SliderKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(308249025, i21, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:180)");
                     }
-                    SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z42222, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
+                    SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z42222, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -806,7 +806,7 @@ public final class SliderKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-1843234110, i21, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:187)");
                     }
-                    SliderDefaults.INSTANCE.m2298Track4EFweAY(sliderState, (Modifier) null, z42222, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i21 & 14) | 100663296, 242);
+                    SliderDefaults.INSTANCE.m2605Track4EFweAY(sliderState, (Modifier) null, z42222, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i21 & 14) | 100663296, 242);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -897,7 +897,7 @@ public final class SliderKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(308249025, i21, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:180)");
                 }
-                SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z422222, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
+                SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z422222, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -920,7 +920,7 @@ public final class SliderKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-1843234110, i21, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:187)");
                 }
-                SliderDefaults.INSTANCE.m2298Track4EFweAY(sliderState, (Modifier) null, z422222, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i21 & 14) | 100663296, 242);
+                SliderDefaults.INSTANCE.m2605Track4EFweAY(sliderState, (Modifier) null, z422222, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i21 & 14) | 100663296, 242);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -1161,7 +1161,7 @@ public final class SliderKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(-1756326375, i23, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:260)");
                                             }
-                                            SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z2, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
+                                            SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z2, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                             }
@@ -1187,7 +1187,7 @@ public final class SliderKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(2083675534, i23, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:267)");
                                                 }
-                                                SliderDefaults.INSTANCE.m2298Track4EFweAY(sliderState, (Modifier) null, z2, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i23 & 14) | 100663296, 242);
+                                                SliderDefaults.INSTANCE.m2605Track4EFweAY(sliderState, (Modifier) null, z2, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i23 & 14) | 100663296, 242);
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventEnd();
                                                 }
@@ -1878,7 +1878,7 @@ public final class SliderKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(1426271326, i10, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:342)");
                                                 }
-                                                SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z2, 0L, composer2, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
+                                                SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z2, 0L, composer2, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventEnd();
                                                 }
@@ -1904,7 +1904,7 @@ public final class SliderKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(577038345, i10, -1, "androidx.compose.material3.Slider.<anonymous> (Slider.kt:349)");
                                                 }
-                                                SliderDefaults.INSTANCE.m2298Track4EFweAY(sliderState3, (Modifier) null, z2, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer2, (i10 & 14) | 100663296, 242);
+                                                SliderDefaults.INSTANCE.m2605Track4EFweAY(sliderState3, (Modifier) null, z2, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer2, (i10 & 14) | 100663296, 242);
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventEnd();
                                                 }
@@ -2373,7 +2373,7 @@ public final class SliderKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(-811582901, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:424)");
                                     }
-                                    SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
+                                    SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -2396,7 +2396,7 @@ public final class SliderKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(-1832060001, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:431)");
                                     }
-                                    SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
+                                    SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -2419,7 +2419,7 @@ public final class SliderKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(377064480, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:438)");
                                     }
-                                    SliderDefaults.INSTANCE.m2297Track4EFweAY(rangeSliderState, (Modifier) null, z3, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i17 & 14) | 100663296, 242);
+                                    SliderDefaults.INSTANCE.m2604Track4EFweAY(rangeSliderState, (Modifier) null, z3, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i17 & 14) | 100663296, 242);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -2529,7 +2529,7 @@ public final class SliderKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-811582901, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:424)");
                             }
-                            SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
+                            SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -2552,7 +2552,7 @@ public final class SliderKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-1832060001, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:431)");
                             }
-                            SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
+                            SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -2575,7 +2575,7 @@ public final class SliderKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(377064480, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:438)");
                             }
-                            SliderDefaults.INSTANCE.m2297Track4EFweAY(rangeSliderState, (Modifier) null, z3, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i17 & 14) | 100663296, 242);
+                            SliderDefaults.INSTANCE.m2604Track4EFweAY(rangeSliderState, (Modifier) null, z3, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i17 & 14) | 100663296, 242);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -2658,7 +2658,7 @@ public final class SliderKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-811582901, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:424)");
                         }
-                        SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
+                        SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -2681,7 +2681,7 @@ public final class SliderKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1832060001, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:431)");
                         }
-                        SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
+                        SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -2704,7 +2704,7 @@ public final class SliderKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(377064480, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:438)");
                         }
-                        SliderDefaults.INSTANCE.m2297Track4EFweAY(rangeSliderState, (Modifier) null, z3, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i17 & 14) | 100663296, 242);
+                        SliderDefaults.INSTANCE.m2604Track4EFweAY(rangeSliderState, (Modifier) null, z3, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i17 & 14) | 100663296, 242);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -2793,7 +2793,7 @@ public final class SliderKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-811582901, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:424)");
                     }
-                    SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
+                    SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -2816,7 +2816,7 @@ public final class SliderKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-1832060001, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:431)");
                     }
-                    SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
+                    SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -2839,7 +2839,7 @@ public final class SliderKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(377064480, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:438)");
                     }
-                    SliderDefaults.INSTANCE.m2297Track4EFweAY(rangeSliderState, (Modifier) null, z3, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i17 & 14) | 100663296, 242);
+                    SliderDefaults.INSTANCE.m2604Track4EFweAY(rangeSliderState, (Modifier) null, z3, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i17 & 14) | 100663296, 242);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -2932,7 +2932,7 @@ public final class SliderKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-811582901, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:424)");
                 }
-                SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
+                SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -2955,7 +2955,7 @@ public final class SliderKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-1832060001, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:431)");
                 }
-                SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
+                SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z3, 0L, composer3, 196614, 18);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -2978,7 +2978,7 @@ public final class SliderKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(377064480, i17, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:438)");
                 }
-                SliderDefaults.INSTANCE.m2297Track4EFweAY(rangeSliderState, (Modifier) null, z3, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i17 & 14) | 100663296, 242);
+                SliderDefaults.INSTANCE.m2604Track4EFweAY(rangeSliderState, (Modifier) null, z3, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i17 & 14) | 100663296, 242);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -3278,7 +3278,7 @@ public final class SliderKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(-1963073082, i26, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:515)");
                                                 }
-                                                SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z2, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
+                                                SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z2, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventEnd();
                                                 }
@@ -3310,7 +3310,7 @@ public final class SliderKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(1908709951, i26, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:522)");
                                                 }
-                                                SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z2, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
+                                                SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z2, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventEnd();
                                                 }
@@ -3340,7 +3340,7 @@ public final class SliderKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(-429193201, i26, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:529)");
                                                 }
-                                                SliderDefaults.INSTANCE.m2297Track4EFweAY(rangeSliderState, (Modifier) null, z2, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i26 & 14) | 100663296, 242);
+                                                SliderDefaults.INSTANCE.m2604Track4EFweAY(rangeSliderState, (Modifier) null, z2, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i26 & 14) | 100663296, 242);
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventEnd();
                                                 }
@@ -3414,13 +3414,13 @@ public final class SliderKt {
 
                                         @Override // kotlin.jvm.functions.Function1
                                         public /* bridge */ /* synthetic */ Unit invoke(SliderRange sliderRange) {
-                                            m2312invokeIf1S1O4(sliderRange.m2326unboximpl());
+                                            m2619invokeIf1S1O4(sliderRange.m2633unboximpl());
                                             return Unit.INSTANCE;
                                         }
 
                                         /* renamed from: invoke-If1S1O4  reason: not valid java name */
-                                        public final void m2312invokeIf1S1O4(long j) {
-                                            function1.invoke(RangesKt.rangeTo(SliderRange.m2323getStartimpl(j), SliderRange.m2322getEndInclusiveimpl(j)));
+                                        public final void m2619invokeIf1S1O4(long j) {
+                                            function1.invoke(RangesKt.rangeTo(SliderRange.m2630getStartimpl(j), SliderRange.m2629getEndInclusiveimpl(j)));
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -3553,13 +3553,13 @@ public final class SliderKt {
 
                             @Override // kotlin.jvm.functions.Function1
                             public /* bridge */ /* synthetic */ Unit invoke(SliderRange sliderRange) {
-                                m2312invokeIf1S1O4(sliderRange.m2326unboximpl());
+                                m2619invokeIf1S1O4(sliderRange.m2633unboximpl());
                                 return Unit.INSTANCE;
                             }
 
                             /* renamed from: invoke-If1S1O4  reason: not valid java name */
-                            public final void m2312invokeIf1S1O4(long j) {
-                                function1.invoke(RangesKt.rangeTo(SliderRange.m2323getStartimpl(j), SliderRange.m2322getEndInclusiveimpl(j)));
+                            public final void m2619invokeIf1S1O4(long j) {
+                                function1.invoke(RangesKt.rangeTo(SliderRange.m2630getStartimpl(j), SliderRange.m2629getEndInclusiveimpl(j)));
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -3666,13 +3666,13 @@ public final class SliderKt {
 
                         @Override // kotlin.jvm.functions.Function1
                         public /* bridge */ /* synthetic */ Unit invoke(SliderRange sliderRange) {
-                            m2312invokeIf1S1O4(sliderRange.m2326unboximpl());
+                            m2619invokeIf1S1O4(sliderRange.m2633unboximpl());
                             return Unit.INSTANCE;
                         }
 
                         /* renamed from: invoke-If1S1O4  reason: not valid java name */
-                        public final void m2312invokeIf1S1O4(long j) {
-                            function1.invoke(RangesKt.rangeTo(SliderRange.m2323getStartimpl(j), SliderRange.m2322getEndInclusiveimpl(j)));
+                        public final void m2619invokeIf1S1O4(long j) {
+                            function1.invoke(RangesKt.rangeTo(SliderRange.m2630getStartimpl(j), SliderRange.m2629getEndInclusiveimpl(j)));
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -3783,13 +3783,13 @@ public final class SliderKt {
 
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(SliderRange sliderRange) {
-                        m2312invokeIf1S1O4(sliderRange.m2326unboximpl());
+                        m2619invokeIf1S1O4(sliderRange.m2633unboximpl());
                         return Unit.INSTANCE;
                     }
 
                     /* renamed from: invoke-If1S1O4  reason: not valid java name */
-                    public final void m2312invokeIf1S1O4(long j) {
-                        function1.invoke(RangesKt.rangeTo(SliderRange.m2323getStartimpl(j), SliderRange.m2322getEndInclusiveimpl(j)));
+                    public final void m2619invokeIf1S1O4(long j) {
+                        function1.invoke(RangesKt.rangeTo(SliderRange.m2630getStartimpl(j), SliderRange.m2629getEndInclusiveimpl(j)));
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -3914,13 +3914,13 @@ public final class SliderKt {
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(SliderRange sliderRange) {
-                    m2312invokeIf1S1O4(sliderRange.m2326unboximpl());
+                    m2619invokeIf1S1O4(sliderRange.m2633unboximpl());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-If1S1O4  reason: not valid java name */
-                public final void m2312invokeIf1S1O4(long j) {
-                    function1.invoke(RangesKt.rangeTo(SliderRange.m2323getStartimpl(j), SliderRange.m2322getEndInclusiveimpl(j)));
+                public final void m2619invokeIf1S1O4(long j) {
+                    function1.invoke(RangesKt.rangeTo(SliderRange.m2630getStartimpl(j), SliderRange.m2629getEndInclusiveimpl(j)));
                 }
             };
             startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -4049,13 +4049,13 @@ public final class SliderKt {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(SliderRange sliderRange) {
-                m2312invokeIf1S1O4(sliderRange.m2326unboximpl());
+                m2619invokeIf1S1O4(sliderRange.m2633unboximpl());
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke-If1S1O4  reason: not valid java name */
-            public final void m2312invokeIf1S1O4(long j) {
-                function1.invoke(RangesKt.rangeTo(SliderRange.m2323getStartimpl(j), SliderRange.m2322getEndInclusiveimpl(j)));
+            public final void m2619invokeIf1S1O4(long j) {
+                function1.invoke(RangesKt.rangeTo(SliderRange.m2630getStartimpl(j), SliderRange.m2629getEndInclusiveimpl(j)));
             }
         };
         startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -4277,7 +4277,7 @@ public final class SliderKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(1884205643, i14, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:620)");
                                                 }
-                                                SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z2, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
+                                                SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z2, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventEnd();
                                                 }
@@ -4301,7 +4301,7 @@ public final class SliderKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(1016457138, i14, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:627)");
                                                 }
-                                                SliderDefaults.INSTANCE.m2296Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z2, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
+                                                SliderDefaults.INSTANCE.m2603Thumb9LiSoMs(MutableInteractionSource.this, null, sliderColors2, z2, 0L, composer3, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 18);
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventEnd();
                                                 }
@@ -4325,7 +4325,7 @@ public final class SliderKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(-1617375262, i14, -1, "androidx.compose.material3.RangeSlider.<anonymous> (Slider.kt:634)");
                                                 }
-                                                SliderDefaults.INSTANCE.m2297Track4EFweAY(rangeSliderState3, (Modifier) null, z2, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i14 & 14) | 100663296, 242);
+                                                SliderDefaults.INSTANCE.m2604Track4EFweAY(rangeSliderState3, (Modifier) null, z2, sliderColors2, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, 0.0f, 0.0f, composer3, (i14 & 14) | 100663296, 242);
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventEnd();
                                                 }
@@ -4741,7 +4741,7 @@ public final class SliderKt {
             int i3 = i2;
             Modifier draggable$default = DraggableKt.draggable$default(companion2, sliderState2, orientation, z2, mutableInteractionSource, isDragging$material3_release, null, (Function3) rememberedValue, isRtl$material3_release, 32, null);
             mutableInteractionSource2 = mutableInteractionSource;
-            Modifier then = FocusableKt.focusable(sliderSemantics(SizeKt.m781requiredSizeInqDBjuR0$default(InteractiveComponentSizeKt.minimumInteractiveComponentSize(modifier), ThumbWidth, TrackHeight, 0.0f, 0.0f, 12, null), sliderState, z2), z2, mutableInteractionSource2).then(sliderTapModifier).then(draggable$default);
+            Modifier then = FocusableKt.focusable(sliderSemantics(SizeKt.m880requiredSizeInqDBjuR0$default(InteractiveComponentSizeKt.minimumInteractiveComponentSize(modifier), ThumbWidth, TrackHeight, 0.0f, 0.0f, 12, null), sliderState, z2), z2, mutableInteractionSource2).then(sliderTapModifier).then(draggable$default);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 174754537, "CC(remember):Slider.kt#9igjgp");
             boolean changedInstance2 = startRestartGroup.changedInstance(sliderState);
             MeasurePolicy rememberedValue2 = startRestartGroup.rememberedValue();
@@ -4756,19 +4756,19 @@ public final class SliderKt {
                             Measurable measurable = list.get(i5);
                             if (LayoutIdKt.getLayoutId(measurable) == SliderComponents.THUMB) {
                                 long j2 = j;
-                                final Placeable mo5438measureBRTryo0 = measurable.mo5438measureBRTryo0(j2);
+                                final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j2);
                                 int size2 = list.size();
                                 while (i4 < size2) {
                                     Measurable measurable2 = list.get(i4);
                                     if (LayoutIdKt.getLayoutId(measurable2) == SliderComponents.TRACK) {
-                                        final Placeable mo5438measureBRTryo02 = measurable2.mo5438measureBRTryo0(Constraints.m6627copyZbe2FdA$default(ConstraintsKt.m6657offsetNN6EwU$default(j2, -mo5438measureBRTryo0.getWidth(), 0, 2, null), 0, 0, 0, 0, 11, null));
-                                        int width = mo5438measureBRTryo0.getWidth() + mo5438measureBRTryo02.getWidth();
-                                        int max = Math.max(mo5438measureBRTryo02.getHeight(), mo5438measureBRTryo0.getHeight());
-                                        SliderState.this.updateDimensions$material3_release(mo5438measureBRTryo02.getHeight(), width);
-                                        final int width2 = mo5438measureBRTryo0.getWidth() / 2;
-                                        final int roundToInt = MathKt.roundToInt(mo5438measureBRTryo02.getWidth() * SliderState.this.getCoercedValueAsFraction$material3_release());
-                                        final int height = (max - mo5438measureBRTryo02.getHeight()) / 2;
-                                        final int height2 = (max - mo5438measureBRTryo0.getHeight()) / 2;
+                                        final Placeable mo5954measureBRTryo02 = measurable2.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(ConstraintsKt.m7224offsetNN6EwU$default(j2, -mo5954measureBRTryo0.getWidth(), 0, 2, null), 0, 0, 0, 0, 11, null));
+                                        int width = mo5954measureBRTryo0.getWidth() + mo5954measureBRTryo02.getWidth();
+                                        int max = Math.max(mo5954measureBRTryo02.getHeight(), mo5954measureBRTryo0.getHeight());
+                                        SliderState.this.updateDimensions$material3_release(mo5954measureBRTryo02.getHeight(), width);
+                                        final int width2 = mo5954measureBRTryo0.getWidth() / 2;
+                                        final int roundToInt = MathKt.roundToInt(mo5954measureBRTryo02.getWidth() * SliderState.this.getCoercedValueAsFraction$material3_release());
+                                        final int height = (max - mo5954measureBRTryo02.getHeight()) / 2;
+                                        final int height2 = (max - mo5954measureBRTryo0.getHeight()) / 2;
                                         return MeasureScope.layout$default(measureScope, width, max, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.SliderKt$SliderImpl$2$1.1
                                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                             {
@@ -4784,7 +4784,7 @@ public final class SliderKt {
                                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                             public final void invoke2(Placeable.PlacementScope placementScope) {
                                                 Placeable.PlacementScope.placeRelative$default(placementScope, Placeable.this, width2, height, 0.0f, 4, null);
-                                                Placeable.PlacementScope.placeRelative$default(placementScope, mo5438measureBRTryo0, roundToInt, height2, 0.0f, 4, null);
+                                                Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo0, roundToInt, height2, 0.0f, 4, null);
                                             }
                                         }, 4, null);
                                     }
@@ -4816,15 +4816,15 @@ public final class SliderKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -610171494, "C682@30354L85,680@30227L271,688@30511L74:Slider.kt#uh7d8r");
             Modifier wrapContentWidth$default = SizeKt.wrapContentWidth$default(LayoutIdKt.layoutId(Modifier.Companion, SliderComponents.THUMB), null, false, 3, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 534510168, "CC(remember):Slider.kt#9igjgp");
@@ -4839,13 +4839,13 @@ public final class SliderKt {
 
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(IntSize intSize) {
-                        m2315invokeozmzZPI(intSize.m6859unboximpl());
+                        m2622invokeozmzZPI(intSize.m7426unboximpl());
                         return Unit.INSTANCE;
                     }
 
                     /* renamed from: invoke-ozmzZPI  reason: not valid java name */
-                    public final void m2315invokeozmzZPI(long j) {
-                        SliderState.this.setThumbWidth$material3_release(IntSize.m6855getWidthimpl(j));
+                    public final void m2622invokeozmzZPI(long j) {
+                        SliderState.this.setThumbWidth$material3_release(IntSize.m7422getWidthimpl(j));
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -4869,15 +4869,15 @@ public final class SliderKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3520constructorimpl2 = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl2.getInserting() || !Intrinsics.areEqual(m3520constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m3520constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m3520constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
             }
-            Updater.m3527setimpl(m3520constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -469300363, "C686@30472L12:Slider.kt#uh7d8r");
@@ -4908,15 +4908,15 @@ public final class SliderKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3520constructorimpl3 = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3855constructorimpl3 = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl3.getInserting() || !Intrinsics.areEqual(m3520constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                m3520constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                m3520constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+            if (m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
             }
-            Updater.m3527setimpl(m3520constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -469202155, "C688@30571L12:Slider.kt#uh7d8r");
@@ -5011,10 +5011,10 @@ public final class SliderKt {
             rangeSliderState.setRtl$material3_release(consume == LayoutDirection.Rtl);
             Modifier rangeSliderPressDragModifier = rangeSliderPressDragModifier(Modifier.Companion, rangeSliderState, mutableInteractionSource, mutableInteractionSource2, z);
             Strings.Companion companion = Strings.Companion;
-            final String m2779getString2EP1pXo = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(androidx.compose.ui.R.string.range_start), startRestartGroup, 0);
+            final String m3086getString2EP1pXo = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(androidx.compose.ui.R.string.range_start), startRestartGroup, 0);
             Strings.Companion companion2 = Strings.Companion;
-            final String m2779getString2EP1pXo2 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(androidx.compose.ui.R.string.range_end), startRestartGroup, 0);
-            Modifier then = SizeKt.m781requiredSizeInqDBjuR0$default(InteractiveComponentSizeKt.minimumInteractiveComponentSize(modifier2), ThumbWidth, TrackHeight, 0.0f, 0.0f, 12, null).then(rangeSliderPressDragModifier);
+            final String m3086getString2EP1pXo2 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(androidx.compose.ui.R.string.range_end), startRestartGroup, 0);
+            Modifier then = SizeKt.m880requiredSizeInqDBjuR0$default(InteractiveComponentSizeKt.minimumInteractiveComponentSize(modifier2), ThumbWidth, TrackHeight, 0.0f, 0.0f, 12, null).then(rangeSliderPressDragModifier);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1662324209, "CC(remember):Slider.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(rangeSliderState);
             MeasurePolicy rememberedValue = startRestartGroup.rememberedValue();
@@ -5030,29 +5030,29 @@ public final class SliderKt {
                         while (i4 < size) {
                             Measurable measurable = list.get(i4);
                             if (LayoutIdKt.getLayoutId(measurable) == RangeSliderComponents.STARTTHUMB) {
-                                final Placeable mo5438measureBRTryo0 = measurable.mo5438measureBRTryo0(j2);
+                                final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j2);
                                 int size2 = list.size();
                                 int i5 = 0;
                                 while (i5 < size2) {
                                     Measurable measurable2 = list.get(i5);
                                     if (LayoutIdKt.getLayoutId(measurable2) == RangeSliderComponents.ENDTHUMB) {
-                                        final Placeable mo5438measureBRTryo02 = measurable2.mo5438measureBRTryo0(j2);
+                                        final Placeable mo5954measureBRTryo02 = measurable2.mo5954measureBRTryo0(j2);
                                         int size3 = list.size();
                                         while (i3 < size3) {
                                             Measurable measurable3 = list.get(i3);
                                             if (LayoutIdKt.getLayoutId(measurable3) == RangeSliderComponents.TRACK) {
-                                                final Placeable mo5438measureBRTryo03 = measurable3.mo5438measureBRTryo0(Constraints.m6627copyZbe2FdA$default(ConstraintsKt.m6657offsetNN6EwU$default(j2, (-(mo5438measureBRTryo0.getWidth() + mo5438measureBRTryo02.getWidth())) / 2, 0, 2, null), 0, 0, 0, 0, 11, null));
-                                                int width = mo5438measureBRTryo03.getWidth() + ((mo5438measureBRTryo0.getWidth() + mo5438measureBRTryo02.getWidth()) / 2);
-                                                int max = Math.max(mo5438measureBRTryo03.getHeight(), Math.max(mo5438measureBRTryo0.getHeight(), mo5438measureBRTryo02.getHeight()));
-                                                RangeSliderState.this.setTrackHeight$material3_release(mo5438measureBRTryo03.getHeight());
+                                                final Placeable mo5954measureBRTryo03 = measurable3.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(ConstraintsKt.m7224offsetNN6EwU$default(j2, (-(mo5954measureBRTryo0.getWidth() + mo5954measureBRTryo02.getWidth())) / 2, 0, 2, null), 0, 0, 0, 0, 11, null));
+                                                int width = mo5954measureBRTryo03.getWidth() + ((mo5954measureBRTryo0.getWidth() + mo5954measureBRTryo02.getWidth()) / 2);
+                                                int max = Math.max(mo5954measureBRTryo03.getHeight(), Math.max(mo5954measureBRTryo0.getHeight(), mo5954measureBRTryo02.getHeight()));
+                                                RangeSliderState.this.setTrackHeight$material3_release(mo5954measureBRTryo03.getHeight());
                                                 RangeSliderState.this.setTotalWidth$material3_release(width);
                                                 RangeSliderState.this.updateMinMaxPx$material3_release();
-                                                final int width2 = mo5438measureBRTryo0.getWidth() / 2;
-                                                final int roundToInt = MathKt.roundToInt(mo5438measureBRTryo03.getWidth() * RangeSliderState.this.getCoercedActiveRangeStartAsFraction$material3_release());
-                                                final int roundToInt2 = MathKt.roundToInt((mo5438measureBRTryo03.getWidth() * RangeSliderState.this.getCoercedActiveRangeEndAsFraction$material3_release()) + ((mo5438measureBRTryo0.getWidth() - mo5438measureBRTryo02.getWidth()) / 2));
-                                                final int height = (max - mo5438measureBRTryo03.getHeight()) / 2;
-                                                final int height2 = (max - mo5438measureBRTryo0.getHeight()) / 2;
-                                                final int height3 = (max - mo5438measureBRTryo02.getHeight()) / 2;
+                                                final int width2 = mo5954measureBRTryo0.getWidth() / 2;
+                                                final int roundToInt = MathKt.roundToInt(mo5954measureBRTryo03.getWidth() * RangeSliderState.this.getCoercedActiveRangeStartAsFraction$material3_release());
+                                                final int roundToInt2 = MathKt.roundToInt((mo5954measureBRTryo03.getWidth() * RangeSliderState.this.getCoercedActiveRangeEndAsFraction$material3_release()) + ((mo5954measureBRTryo0.getWidth() - mo5954measureBRTryo02.getWidth()) / 2));
+                                                final int height = (max - mo5954measureBRTryo03.getHeight()) / 2;
+                                                final int height2 = (max - mo5954measureBRTryo0.getHeight()) / 2;
+                                                final int height3 = (max - mo5954measureBRTryo02.getHeight()) / 2;
                                                 return MeasureScope.layout$default(measureScope, width, max, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.SliderKt$RangeSliderImpl$2$1.1
                                                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                                     {
@@ -5068,8 +5068,8 @@ public final class SliderKt {
                                                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                                     public final void invoke2(Placeable.PlacementScope placementScope) {
                                                         Placeable.PlacementScope.placeRelative$default(placementScope, Placeable.this, width2, height, 0.0f, 4, null);
-                                                        Placeable.PlacementScope.placeRelative$default(placementScope, mo5438measureBRTryo0, roundToInt, height2, 0.0f, 4, null);
-                                                        Placeable.PlacementScope.placeRelative$default(placementScope, mo5438measureBRTryo02, roundToInt2, height3, 0.0f, 4, null);
+                                                        Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo0, roundToInt, height2, 0.0f, 4, null);
+                                                        Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo02, roundToInt2, height3, 0.0f, 4, null);
                                                     }
                                                 }, 4, null);
                                             }
@@ -5109,15 +5109,15 @@ public final class SliderKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2110426496, "C755@33080L46,757@33259L100,751@32893L598,768@33689L44,770@33864L98,764@33504L586,777@34103L79:Slider.kt#uh7d8r");
             Modifier wrapContentWidth$default = SizeKt.wrapContentWidth$default(LayoutIdKt.layoutId(Modifier.Companion, RangeSliderComponents.STARTTHUMB), null, false, 3, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1176461672, "CC(remember):Slider.kt#9igjgp");
@@ -5132,13 +5132,13 @@ public final class SliderKt {
 
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(IntSize intSize) {
-                        m2313invokeozmzZPI(intSize.m6859unboximpl());
+                        m2620invokeozmzZPI(intSize.m7426unboximpl());
                         return Unit.INSTANCE;
                     }
 
                     /* renamed from: invoke-ozmzZPI  reason: not valid java name */
-                    public final void m2313invokeozmzZPI(long j) {
-                        RangeSliderState.this.setStartThumbWidth$material3_release(IntSize.m6855getWidthimpl(j));
+                    public final void m2620invokeozmzZPI(long j) {
+                        RangeSliderState.this.setStartThumbWidth$material3_release(IntSize.m7422getWidthimpl(j));
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -5146,7 +5146,7 @@ public final class SliderKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Modifier rangeSliderStartThumbSemantics = rangeSliderStartThumbSemantics(OnRemeasuredModifierKt.onSizeChanged(wrapContentWidth$default, (Function1) rememberedValue2), rangeSliderState, z);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1176467454, "CC(remember):Slider.kt#9igjgp");
-            boolean changed = startRestartGroup.changed(m2779getString2EP1pXo);
+            boolean changed = startRestartGroup.changed(m3086getString2EP1pXo);
             Object rememberedValue3 = startRestartGroup.rememberedValue();
             if (changed || rememberedValue3 == Composer.Companion.getEmpty()) {
                 rememberedValue3 = (Function1) new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.SliderKt$RangeSliderImpl$1$2$1
@@ -5164,7 +5164,7 @@ public final class SliderKt {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m2779getString2EP1pXo);
+                        SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3086getString2EP1pXo);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -5188,15 +5188,15 @@ public final class SliderKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3520constructorimpl2 = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl2.getInserting() || !Intrinsics.areEqual(m3520constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m3520constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m3520constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
             }
-            Updater.m3527setimpl(m3520constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 259534201, "C762@33460L17:Slider.kt#uh7d8r");
@@ -5221,13 +5221,13 @@ public final class SliderKt {
 
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(IntSize intSize) {
-                        m2314invokeozmzZPI(intSize.m6859unboximpl());
+                        m2621invokeozmzZPI(intSize.m7426unboximpl());
                         return Unit.INSTANCE;
                     }
 
                     /* renamed from: invoke-ozmzZPI  reason: not valid java name */
-                    public final void m2314invokeozmzZPI(long j) {
-                        RangeSliderState.this.setEndThumbWidth$material3_release(IntSize.m6855getWidthimpl(j));
+                    public final void m2621invokeozmzZPI(long j) {
+                        RangeSliderState.this.setEndThumbWidth$material3_release(IntSize.m7422getWidthimpl(j));
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue4);
@@ -5235,7 +5235,7 @@ public final class SliderKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Modifier rangeSliderEndThumbSemantics = rangeSliderEndThumbSemantics(OnRemeasuredModifierKt.onSizeChanged(wrapContentWidth$default2, (Function1) rememberedValue4), rangeSliderState, z);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1176486812, "CC(remember):Slider.kt#9igjgp");
-            boolean changed2 = startRestartGroup.changed(m2779getString2EP1pXo2);
+            boolean changed2 = startRestartGroup.changed(m3086getString2EP1pXo2);
             Object rememberedValue5 = startRestartGroup.rememberedValue();
             if (changed2 || rememberedValue5 == Composer.Companion.getEmpty()) {
                 rememberedValue5 = (Function1) new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.SliderKt$RangeSliderImpl$1$5$1
@@ -5253,7 +5253,7 @@ public final class SliderKt {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m2779getString2EP1pXo2);
+                        SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3086getString2EP1pXo2);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -5277,15 +5277,15 @@ public final class SliderKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3520constructorimpl3 = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3855constructorimpl3 = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl3.getInserting() || !Intrinsics.areEqual(m3520constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                m3520constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                m3520constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+            if (m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
             }
-            Updater.m3527setimpl(m3520constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 260130331, "C775@34061L15:Slider.kt#uh7d8r");
@@ -5315,15 +5315,15 @@ public final class SliderKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3520constructorimpl4 = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3855constructorimpl4 = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl4.getInserting() || !Intrinsics.areEqual(m3520constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                m3520constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                m3520constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
+            if (m3855constructorimpl4.getInserting() || !Intrinsics.areEqual(m3855constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                m3855constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                m3855constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
             }
-            Updater.m3527setimpl(m3520constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3862setimpl(m3855constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 260236382, "C777@34168L12:Slider.kt#uh7d8r");
@@ -5378,7 +5378,7 @@ public final class SliderKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m2308awaitSlop8vUncbI(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Continuation<? super Pair<PointerInputChange, Float>> continuation) {
+    public static final Object m2615awaitSlop8vUncbI(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Continuation<? super Pair<PointerInputChange, Float>> continuation) {
         SliderKt$awaitSlop$1 sliderKt$awaitSlop$1;
         int i2;
         Ref.FloatRef floatRef;
@@ -5396,7 +5396,7 @@ public final class SliderKt {
                     final Ref.FloatRef floatRef2 = new Ref.FloatRef();
                     sliderKt$awaitSlop$12.L$0 = floatRef2;
                     sliderKt$awaitSlop$12.label = 1;
-                    Object m2697awaitHorizontalPointerSlopOrCancellationgDDlDlE = DragGestureDetectorCopyKt.m2697awaitHorizontalPointerSlopOrCancellationgDDlDlE(awaitPointerEventScope, j, i, new Function2<PointerInputChange, Float, Unit>() { // from class: androidx.compose.material3.SliderKt$awaitSlop$postPointerSlop$1
+                    Object m3004awaitHorizontalPointerSlopOrCancellationgDDlDlE = DragGestureDetectorCopyKt.m3004awaitHorizontalPointerSlopOrCancellationgDDlDlE(awaitPointerEventScope, j, i, new Function2<PointerInputChange, Float, Unit>() { // from class: androidx.compose.material3.SliderKt$awaitSlop$postPointerSlop$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         {
                             super(2);
@@ -5413,10 +5413,10 @@ public final class SliderKt {
                             Ref.FloatRef.this.element = f;
                         }
                     }, sliderKt$awaitSlop$12);
-                    if (m2697awaitHorizontalPointerSlopOrCancellationgDDlDlE == coroutine_suspended) {
+                    if (m3004awaitHorizontalPointerSlopOrCancellationgDDlDlE == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    obj = m2697awaitHorizontalPointerSlopOrCancellationgDDlDlE;
+                    obj = m3004awaitHorizontalPointerSlopOrCancellationgDDlDlE;
                     floatRef = floatRef2;
                 } else if (i2 != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -5460,8 +5460,8 @@ public final class SliderKt {
     }
 
     /* renamed from: scale-ziovWd0 */
-    public static final long m2311scaleziovWd0(float f, float f2, long j, float f3, float f4) {
-        return SliderRange(scale(f, f2, SliderRange.m2323getStartimpl(j), f3, f4), scale(f, f2, SliderRange.m2322getEndInclusiveimpl(j), f3, f4));
+    public static final long m2618scaleziovWd0(float f, float f2, long j, float f3, float f4) {
+        return SliderRange(scale(f, f2, SliderRange.m2630getStartimpl(j), f3, f4), scale(f, f2, SliderRange.m2629getEndInclusiveimpl(j), f3, f4));
     }
 
     public static final float calcFraction(float f, float f2, float f3) {
@@ -5602,15 +5602,15 @@ public final class SliderKt {
                         }
                         if (coerceIn != rangeSliderState2.getActiveRangeStart()) {
                             long SliderRange = SliderKt.SliderRange(coerceIn, rangeSliderState2.getActiveRangeEnd());
-                            if (!SliderRange.m2321equalsimpl0(SliderRange, SliderKt.SliderRange(rangeSliderState2.getActiveRangeStart(), rangeSliderState2.getActiveRangeEnd()))) {
+                            if (!SliderRange.m2628equalsimpl0(SliderRange, SliderKt.SliderRange(rangeSliderState2.getActiveRangeStart(), rangeSliderState2.getActiveRangeEnd()))) {
                                 if (rangeSliderState2.getOnValueChange$material3_release() != null) {
                                     Function1<SliderRange, Unit> onValueChange$material3_release = rangeSliderState2.getOnValueChange$material3_release();
                                     if (onValueChange$material3_release != null) {
-                                        onValueChange$material3_release.invoke(SliderRange.m2318boximpl(SliderRange));
+                                        onValueChange$material3_release.invoke(SliderRange.m2625boximpl(SliderRange));
                                     }
                                 } else {
-                                    rangeSliderState2.setActiveRangeStart(SliderRange.m2323getStartimpl(SliderRange));
-                                    rangeSliderState2.setActiveRangeEnd(SliderRange.m2322getEndInclusiveimpl(SliderRange));
+                                    rangeSliderState2.setActiveRangeStart(SliderRange.m2630getStartimpl(SliderRange));
+                                    rangeSliderState2.setActiveRangeEnd(SliderRange.m2629getEndInclusiveimpl(SliderRange));
                                 }
                             }
                             Function0<Unit> onValueChangeFinished = rangeSliderState2.getOnValueChangeFinished();
@@ -5683,15 +5683,15 @@ public final class SliderKt {
                         }
                         if (coerceIn != rangeSliderState2.getActiveRangeEnd()) {
                             long SliderRange = SliderKt.SliderRange(rangeSliderState2.getActiveRangeStart(), coerceIn);
-                            if (!SliderRange.m2321equalsimpl0(SliderRange, SliderKt.SliderRange(rangeSliderState2.getActiveRangeStart(), rangeSliderState2.getActiveRangeEnd()))) {
+                            if (!SliderRange.m2628equalsimpl0(SliderRange, SliderKt.SliderRange(rangeSliderState2.getActiveRangeStart(), rangeSliderState2.getActiveRangeEnd()))) {
                                 if (rangeSliderState2.getOnValueChange$material3_release() != null) {
                                     Function1<SliderRange, Unit> onValueChange$material3_release = rangeSliderState2.getOnValueChange$material3_release();
                                     if (onValueChange$material3_release != null) {
-                                        onValueChange$material3_release.invoke(SliderRange.m2318boximpl(SliderRange));
+                                        onValueChange$material3_release.invoke(SliderRange.m2625boximpl(SliderRange));
                                     }
                                 } else {
-                                    rangeSliderState2.setActiveRangeStart(SliderRange.m2323getStartimpl(SliderRange));
-                                    rangeSliderState2.setActiveRangeEnd(SliderRange.m2322getEndInclusiveimpl(SliderRange));
+                                    rangeSliderState2.setActiveRangeStart(SliderRange.m2630getStartimpl(SliderRange));
+                                    rangeSliderState2.setActiveRangeEnd(SliderRange.m2629getEndInclusiveimpl(SliderRange));
                                 }
                             }
                             Function0<Unit> onValueChangeFinished = rangeSliderState2.getOnValueChangeFinished();
@@ -5726,13 +5726,13 @@ public final class SliderKt {
     }
 
     static {
-        float m3299getHandleWidthD9Ej5fM = SliderTokens.INSTANCE.m3299getHandleWidthD9Ej5fM();
-        ThumbWidth = m3299getHandleWidthD9Ej5fM;
-        float m3298getHandleHeightD9Ej5fM = SliderTokens.INSTANCE.m3298getHandleHeightD9Ej5fM();
-        ThumbHeight = m3298getHandleHeightD9Ej5fM;
-        ThumbSize = DpKt.m6706DpSizeYgX7TsA(m3299getHandleWidthD9Ej5fM, m3298getHandleHeightD9Ej5fM);
-        ThumbTrackGapSize = SliderTokens.INSTANCE.m3291getActiveHandleLeadingSpaceD9Ej5fM();
-        TrackInsideCornerSize = Dp.m6684constructorimpl(2);
+        float m3606getHandleWidthD9Ej5fM = SliderTokens.INSTANCE.m3606getHandleWidthD9Ej5fM();
+        ThumbWidth = m3606getHandleWidthD9Ej5fM;
+        float m3605getHandleHeightD9Ej5fM = SliderTokens.INSTANCE.m3605getHandleHeightD9Ej5fM();
+        ThumbHeight = m3605getHandleHeightD9Ej5fM;
+        ThumbSize = DpKt.m7273DpSizeYgX7TsA(m3606getHandleWidthD9Ej5fM, m3605getHandleHeightD9Ej5fM);
+        ThumbTrackGapSize = SliderTokens.INSTANCE.m3598getActiveHandleLeadingSpaceD9Ej5fM();
+        TrackInsideCornerSize = Dp.m7251constructorimpl(2);
     }
 
     public static final float getTrackHeight() {
@@ -5747,7 +5747,7 @@ public final class SliderKt {
         if ((!Float.isNaN(f) || !Float.isNaN(f2)) && f > f2 + SliderRangeTolerance) {
             throw new IllegalArgumentException(("start(" + f + ") must be <= endInclusive(" + f2 + ')').toString());
         }
-        return SliderRange.m2319constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return SliderRange.m2626constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     public static final long SliderRange(ClosedFloatingPointRange<Float> closedFloatingPointRange) {
@@ -5756,12 +5756,12 @@ public final class SliderKt {
         if ((!Float.isNaN(floatValue) || !Float.isNaN(floatValue2)) && floatValue > floatValue2 + SliderRangeTolerance) {
             throw new IllegalArgumentException(("ClosedFloatingPointRange<Float>.start(" + floatValue + ") must be <= ClosedFloatingPoint.endInclusive(" + floatValue2 + ')').toString());
         }
-        return SliderRange.m2319constructorimpl((Float.floatToRawIntBits(floatValue) << 32) | (Float.floatToRawIntBits(floatValue2) & 4294967295L));
+        return SliderRange.m2626constructorimpl((Float.floatToRawIntBits(floatValue) << 32) | (Float.floatToRawIntBits(floatValue2) & 4294967295L));
     }
 
     /* renamed from: isSpecified-If1S1O4 */
-    public static final boolean m2309isSpecifiedIf1S1O4(long j) {
-        return j != SliderRange.Companion.m2328getUnspecifiedFYbKRX4();
+    public static final boolean m2616isSpecifiedIf1S1O4(long j) {
+        return j != SliderRange.Companion.m2635getUnspecifiedFYbKRX4();
     }
 
     /* JADX WARN: Type inference failed for: r1v1, types: [kotlin.collections.IntIterator] */

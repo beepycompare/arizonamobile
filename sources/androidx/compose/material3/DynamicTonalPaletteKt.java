@@ -19,7 +19,7 @@ public final class DynamicTonalPaletteKt {
     }
 
     public static final TonalPalette dynamicTonalPalette(Context context) {
-        return new TonalPalette(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170461), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170462), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170469), 98.0f), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170469), 96.0f), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170463), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170469), 94.0f), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170469), 92.0f), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170464), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170469), 87.0f), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170465), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170466), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170467), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170468), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170469), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170470), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170469), 24.0f), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170469), 22.0f), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170471), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170469), 17.0f), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170469), 12.0f), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170472), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170469), 6.0f), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170469), 4.0f), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170473), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170474), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170475), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170482), 98.0f), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170482), 96.0f), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170476), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170482), 94.0f), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170482), 92.0f), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170477), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170482), 87.0f), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170478), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170479), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170480), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170481), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170482), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170483), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170482), 24.0f), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170482), 22.0f), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170484), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170482), 17.0f), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170482), 12.0f), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170485), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170482), 6.0f), m1882setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170482), 4.0f), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170486), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170487), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170488), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170489), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170490), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170491), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170492), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170493), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170494), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170495), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170496), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170497), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170498), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170499), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170500), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170501), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170502), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170503), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170504), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170505), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170506), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170507), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170508), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170509), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170510), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170511), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170512), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170513), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170514), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170515), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170516), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170517), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170518), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170519), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170520), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170521), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170522), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170523), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170524), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170525), null);
+        return new TonalPalette(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170461), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170462), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170469), 98.0f), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170469), 96.0f), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170463), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170469), 94.0f), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170469), 92.0f), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170464), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170469), 87.0f), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170465), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170466), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170467), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170468), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170469), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170470), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170469), 24.0f), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170469), 22.0f), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170471), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170469), 17.0f), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170469), 12.0f), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170472), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170469), 6.0f), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170469), 4.0f), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170473), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170474), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170475), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170482), 98.0f), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170482), 96.0f), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170476), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170482), 94.0f), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170482), 92.0f), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170477), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170482), 87.0f), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170478), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170479), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170480), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170481), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170482), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170483), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170482), 24.0f), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170482), 22.0f), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170484), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170482), 17.0f), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170482), 12.0f), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170485), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170482), 6.0f), m2189setLuminanceDxMtmZc(ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170482), 4.0f), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170486), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170487), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170488), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170489), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170490), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170491), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170492), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170493), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170494), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170495), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170496), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170497), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170498), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170499), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170500), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170501), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170502), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170503), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170504), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170505), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170506), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170507), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170508), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170509), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170510), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170511), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170512), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170513), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170514), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170515), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170516), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170517), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170518), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170519), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170520), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170521), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170522), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170523), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170524), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170525), null);
     }
 
     public static final ColorScheme dynamicLightColorScheme(Context context) {
@@ -37,14 +37,14 @@ public final class DynamicTonalPaletteKt {
     }
 
     /* renamed from: setLuminance-DxMtmZc  reason: not valid java name */
-    public static final long m1882setLuminanceDxMtmZc(long j, float f) {
+    public static final long m2189setLuminanceDxMtmZc(long j, float f) {
         double d = f;
         if ((d < 1.0E-4d) | (d > 99.9999d)) {
             int delinearized = delinearized(100 * labInvf((f + 16) / ((float) AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID)));
             return ColorKt.Color$default(delinearized, delinearized, delinearized, 0, 8, null);
         }
-        long m4075convertvNxB06k = Color.m4075convertvNxB06k(j, ColorSpaces.INSTANCE.getCieLab());
-        return Color.m4075convertvNxB06k(ColorKt.Color$default(f, Color.m4083getGreenimpl(m4075convertvNxB06k), Color.m4081getBlueimpl(m4075convertvNxB06k), 0.0f, ColorSpaces.INSTANCE.getCieLab(), 8, null), ColorSpaces.INSTANCE.getSrgb());
+        long m4534convertvNxB06k = Color.m4534convertvNxB06k(j, ColorSpaces.INSTANCE.getCieLab());
+        return Color.m4534convertvNxB06k(ColorKt.Color$default(f, Color.m4542getGreenimpl(m4534convertvNxB06k), Color.m4540getBlueimpl(m4534convertvNxB06k), 0.0f, ColorSpaces.INSTANCE.getCieLab(), 8, null), ColorSpaces.INSTANCE.getSrgb());
     }
 
     private static final int delinearized(float f) {
@@ -53,120 +53,120 @@ public final class DynamicTonalPaletteKt {
     }
 
     public static final ColorScheme dynamicLightColorScheme31(TonalPalette tonalPalette) {
-        long m2610getPrimary400d7_KjU = tonalPalette.m2610getPrimary400d7_KjU();
-        long m2607getPrimary1000d7_KjU = tonalPalette.m2607getPrimary1000d7_KjU();
-        long m2615getPrimary900d7_KjU = tonalPalette.m2615getPrimary900d7_KjU();
-        long m2606getPrimary100d7_KjU = tonalPalette.m2606getPrimary100d7_KjU();
-        long m2614getPrimary800d7_KjU = tonalPalette.m2614getPrimary800d7_KjU();
-        long m2623getSecondary400d7_KjU = tonalPalette.m2623getSecondary400d7_KjU();
-        long m2620getSecondary1000d7_KjU = tonalPalette.m2620getSecondary1000d7_KjU();
-        long m2628getSecondary900d7_KjU = tonalPalette.m2628getSecondary900d7_KjU();
-        long m2619getSecondary100d7_KjU = tonalPalette.m2619getSecondary100d7_KjU();
-        long m2636getTertiary400d7_KjU = tonalPalette.m2636getTertiary400d7_KjU();
-        long m2633getTertiary1000d7_KjU = tonalPalette.m2633getTertiary1000d7_KjU();
-        long m2641getTertiary900d7_KjU = tonalPalette.m2641getTertiary900d7_KjU();
-        long m2632getTertiary100d7_KjU = tonalPalette.m2632getTertiary100d7_KjU();
-        long m2603getNeutralVariant980d7_KjU = tonalPalette.m2603getNeutralVariant980d7_KjU();
-        long m2582getNeutralVariant100d7_KjU = tonalPalette.m2582getNeutralVariant100d7_KjU();
-        long m2603getNeutralVariant980d7_KjU2 = tonalPalette.m2603getNeutralVariant980d7_KjU();
-        long m2582getNeutralVariant100d7_KjU2 = tonalPalette.m2582getNeutralVariant100d7_KjU();
-        long m2598getNeutralVariant900d7_KjU = tonalPalette.m2598getNeutralVariant900d7_KjU();
-        long m2589getNeutralVariant300d7_KjU = tonalPalette.m2589getNeutralVariant300d7_KjU();
-        long m2586getNeutralVariant200d7_KjU = tonalPalette.m2586getNeutralVariant200d7_KjU();
-        long m2601getNeutralVariant950d7_KjU = tonalPalette.m2601getNeutralVariant950d7_KjU();
-        long m2592getNeutralVariant500d7_KjU = tonalPalette.m2592getNeutralVariant500d7_KjU();
-        long m2596getNeutralVariant800d7_KjU = tonalPalette.m2596getNeutralVariant800d7_KjU();
-        long m2581getNeutralVariant00d7_KjU = tonalPalette.m2581getNeutralVariant00d7_KjU();
-        long m2603getNeutralVariant980d7_KjU3 = tonalPalette.m2603getNeutralVariant980d7_KjU();
-        long m2597getNeutralVariant870d7_KjU = tonalPalette.m2597getNeutralVariant870d7_KjU();
-        return ColorSchemeKt.m1739lightColorSchemeCXl9yA$default(m2610getPrimary400d7_KjU, m2607getPrimary1000d7_KjU, m2615getPrimary900d7_KjU, m2606getPrimary100d7_KjU, m2614getPrimary800d7_KjU, m2623getSecondary400d7_KjU, m2620getSecondary1000d7_KjU, m2628getSecondary900d7_KjU, m2619getSecondary100d7_KjU, m2636getTertiary400d7_KjU, m2633getTertiary1000d7_KjU, m2641getTertiary900d7_KjU, m2632getTertiary100d7_KjU, m2603getNeutralVariant980d7_KjU, m2582getNeutralVariant100d7_KjU, m2603getNeutralVariant980d7_KjU2, m2582getNeutralVariant100d7_KjU2, m2598getNeutralVariant900d7_KjU, m2589getNeutralVariant300d7_KjU, tonalPalette.m2610getPrimary400d7_KjU(), m2586getNeutralVariant200d7_KjU, m2601getNeutralVariant950d7_KjU, 0L, 0L, 0L, 0L, m2592getNeutralVariant500d7_KjU, m2596getNeutralVariant800d7_KjU, m2581getNeutralVariant00d7_KjU, m2603getNeutralVariant980d7_KjU3, tonalPalette.m2600getNeutralVariant940d7_KjU(), tonalPalette.m2599getNeutralVariant920d7_KjU(), tonalPalette.m2598getNeutralVariant900d7_KjU(), tonalPalette.m2602getNeutralVariant960d7_KjU(), tonalPalette.m2583getNeutralVariant1000d7_KjU(), m2597getNeutralVariant870d7_KjU, 62914560, 0, null);
+        long m2917getPrimary400d7_KjU = tonalPalette.m2917getPrimary400d7_KjU();
+        long m2914getPrimary1000d7_KjU = tonalPalette.m2914getPrimary1000d7_KjU();
+        long m2922getPrimary900d7_KjU = tonalPalette.m2922getPrimary900d7_KjU();
+        long m2913getPrimary100d7_KjU = tonalPalette.m2913getPrimary100d7_KjU();
+        long m2921getPrimary800d7_KjU = tonalPalette.m2921getPrimary800d7_KjU();
+        long m2930getSecondary400d7_KjU = tonalPalette.m2930getSecondary400d7_KjU();
+        long m2927getSecondary1000d7_KjU = tonalPalette.m2927getSecondary1000d7_KjU();
+        long m2935getSecondary900d7_KjU = tonalPalette.m2935getSecondary900d7_KjU();
+        long m2926getSecondary100d7_KjU = tonalPalette.m2926getSecondary100d7_KjU();
+        long m2943getTertiary400d7_KjU = tonalPalette.m2943getTertiary400d7_KjU();
+        long m2940getTertiary1000d7_KjU = tonalPalette.m2940getTertiary1000d7_KjU();
+        long m2948getTertiary900d7_KjU = tonalPalette.m2948getTertiary900d7_KjU();
+        long m2939getTertiary100d7_KjU = tonalPalette.m2939getTertiary100d7_KjU();
+        long m2910getNeutralVariant980d7_KjU = tonalPalette.m2910getNeutralVariant980d7_KjU();
+        long m2889getNeutralVariant100d7_KjU = tonalPalette.m2889getNeutralVariant100d7_KjU();
+        long m2910getNeutralVariant980d7_KjU2 = tonalPalette.m2910getNeutralVariant980d7_KjU();
+        long m2889getNeutralVariant100d7_KjU2 = tonalPalette.m2889getNeutralVariant100d7_KjU();
+        long m2905getNeutralVariant900d7_KjU = tonalPalette.m2905getNeutralVariant900d7_KjU();
+        long m2896getNeutralVariant300d7_KjU = tonalPalette.m2896getNeutralVariant300d7_KjU();
+        long m2893getNeutralVariant200d7_KjU = tonalPalette.m2893getNeutralVariant200d7_KjU();
+        long m2908getNeutralVariant950d7_KjU = tonalPalette.m2908getNeutralVariant950d7_KjU();
+        long m2899getNeutralVariant500d7_KjU = tonalPalette.m2899getNeutralVariant500d7_KjU();
+        long m2903getNeutralVariant800d7_KjU = tonalPalette.m2903getNeutralVariant800d7_KjU();
+        long m2888getNeutralVariant00d7_KjU = tonalPalette.m2888getNeutralVariant00d7_KjU();
+        long m2910getNeutralVariant980d7_KjU3 = tonalPalette.m2910getNeutralVariant980d7_KjU();
+        long m2904getNeutralVariant870d7_KjU = tonalPalette.m2904getNeutralVariant870d7_KjU();
+        return ColorSchemeKt.m2046lightColorSchemeCXl9yA$default(m2917getPrimary400d7_KjU, m2914getPrimary1000d7_KjU, m2922getPrimary900d7_KjU, m2913getPrimary100d7_KjU, m2921getPrimary800d7_KjU, m2930getSecondary400d7_KjU, m2927getSecondary1000d7_KjU, m2935getSecondary900d7_KjU, m2926getSecondary100d7_KjU, m2943getTertiary400d7_KjU, m2940getTertiary1000d7_KjU, m2948getTertiary900d7_KjU, m2939getTertiary100d7_KjU, m2910getNeutralVariant980d7_KjU, m2889getNeutralVariant100d7_KjU, m2910getNeutralVariant980d7_KjU2, m2889getNeutralVariant100d7_KjU2, m2905getNeutralVariant900d7_KjU, m2896getNeutralVariant300d7_KjU, tonalPalette.m2917getPrimary400d7_KjU(), m2893getNeutralVariant200d7_KjU, m2908getNeutralVariant950d7_KjU, 0L, 0L, 0L, 0L, m2899getNeutralVariant500d7_KjU, m2903getNeutralVariant800d7_KjU, m2888getNeutralVariant00d7_KjU, m2910getNeutralVariant980d7_KjU3, tonalPalette.m2907getNeutralVariant940d7_KjU(), tonalPalette.m2906getNeutralVariant920d7_KjU(), tonalPalette.m2905getNeutralVariant900d7_KjU(), tonalPalette.m2909getNeutralVariant960d7_KjU(), tonalPalette.m2890getNeutralVariant1000d7_KjU(), m2904getNeutralVariant870d7_KjU, 62914560, 0, null);
     }
 
     public static final ColorScheme dynamicLightColorScheme34(Context context) {
-        long m1690getColorWaAFU9c = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170528);
-        long m1690getColorWaAFU9c2 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170529);
-        long m1690getColorWaAFU9c3 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170526);
-        long m1690getColorWaAFU9c4 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170527);
-        long m1690getColorWaAFU9c5 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170571);
-        long m1690getColorWaAFU9c6 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170532);
-        long m1690getColorWaAFU9c7 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170533);
-        long m1690getColorWaAFU9c8 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170530);
-        long m1690getColorWaAFU9c9 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170531);
-        long m1690getColorWaAFU9c10 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170536);
-        long m1690getColorWaAFU9c11 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170537);
-        long m1690getColorWaAFU9c12 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170534);
-        long m1690getColorWaAFU9c13 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170535);
-        long m1690getColorWaAFU9c14 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170538);
-        long m1690getColorWaAFU9c15 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170539);
-        long m1690getColorWaAFU9c16 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170540);
-        long m1690getColorWaAFU9c17 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170541);
-        long m1690getColorWaAFU9c18 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170549);
-        long m1690getColorWaAFU9c19 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170550);
-        long m1690getColorWaAFU9c20 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170583);
-        long m1690getColorWaAFU9c21 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170584);
-        long m1690getColorWaAFU9c22 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170551);
-        long m1690getColorWaAFU9c23 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170624);
-        long m1690getColorWaAFU9c24 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170547);
-        long m1690getColorWaAFU9c25 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170548);
-        return ColorSchemeKt.m1739lightColorSchemeCXl9yA$default(m1690getColorWaAFU9c, m1690getColorWaAFU9c2, m1690getColorWaAFU9c3, m1690getColorWaAFU9c4, m1690getColorWaAFU9c5, m1690getColorWaAFU9c6, m1690getColorWaAFU9c7, m1690getColorWaAFU9c8, m1690getColorWaAFU9c9, m1690getColorWaAFU9c10, m1690getColorWaAFU9c11, m1690getColorWaAFU9c12, m1690getColorWaAFU9c13, m1690getColorWaAFU9c14, m1690getColorWaAFU9c15, m1690getColorWaAFU9c16, m1690getColorWaAFU9c17, m1690getColorWaAFU9c18, m1690getColorWaAFU9c19, ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170528), m1690getColorWaAFU9c20, m1690getColorWaAFU9c21, 0L, 0L, 0L, 0L, m1690getColorWaAFU9c22, m1690getColorWaAFU9c23, 0L, m1690getColorWaAFU9c24, ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170544), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170545), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170546), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170542), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170543), m1690getColorWaAFU9c25, 331350016, 0, null);
+        long m1997getColorWaAFU9c = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170528);
+        long m1997getColorWaAFU9c2 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170529);
+        long m1997getColorWaAFU9c3 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170526);
+        long m1997getColorWaAFU9c4 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170527);
+        long m1997getColorWaAFU9c5 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170571);
+        long m1997getColorWaAFU9c6 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170532);
+        long m1997getColorWaAFU9c7 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170533);
+        long m1997getColorWaAFU9c8 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170530);
+        long m1997getColorWaAFU9c9 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170531);
+        long m1997getColorWaAFU9c10 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170536);
+        long m1997getColorWaAFU9c11 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170537);
+        long m1997getColorWaAFU9c12 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170534);
+        long m1997getColorWaAFU9c13 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170535);
+        long m1997getColorWaAFU9c14 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170538);
+        long m1997getColorWaAFU9c15 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170539);
+        long m1997getColorWaAFU9c16 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170540);
+        long m1997getColorWaAFU9c17 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170541);
+        long m1997getColorWaAFU9c18 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170549);
+        long m1997getColorWaAFU9c19 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170550);
+        long m1997getColorWaAFU9c20 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170583);
+        long m1997getColorWaAFU9c21 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170584);
+        long m1997getColorWaAFU9c22 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170551);
+        long m1997getColorWaAFU9c23 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170624);
+        long m1997getColorWaAFU9c24 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170547);
+        long m1997getColorWaAFU9c25 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170548);
+        return ColorSchemeKt.m2046lightColorSchemeCXl9yA$default(m1997getColorWaAFU9c, m1997getColorWaAFU9c2, m1997getColorWaAFU9c3, m1997getColorWaAFU9c4, m1997getColorWaAFU9c5, m1997getColorWaAFU9c6, m1997getColorWaAFU9c7, m1997getColorWaAFU9c8, m1997getColorWaAFU9c9, m1997getColorWaAFU9c10, m1997getColorWaAFU9c11, m1997getColorWaAFU9c12, m1997getColorWaAFU9c13, m1997getColorWaAFU9c14, m1997getColorWaAFU9c15, m1997getColorWaAFU9c16, m1997getColorWaAFU9c17, m1997getColorWaAFU9c18, m1997getColorWaAFU9c19, ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170528), m1997getColorWaAFU9c20, m1997getColorWaAFU9c21, 0L, 0L, 0L, 0L, m1997getColorWaAFU9c22, m1997getColorWaAFU9c23, 0L, m1997getColorWaAFU9c24, ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170544), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170545), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170546), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170542), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170543), m1997getColorWaAFU9c25, 331350016, 0, null);
     }
 
     public static final ColorScheme dynamicDarkColorScheme31(TonalPalette tonalPalette) {
-        long m2614getPrimary800d7_KjU = tonalPalette.m2614getPrimary800d7_KjU();
-        long m2608getPrimary200d7_KjU = tonalPalette.m2608getPrimary200d7_KjU();
-        long m2609getPrimary300d7_KjU = tonalPalette.m2609getPrimary300d7_KjU();
-        long m2615getPrimary900d7_KjU = tonalPalette.m2615getPrimary900d7_KjU();
-        long m2610getPrimary400d7_KjU = tonalPalette.m2610getPrimary400d7_KjU();
-        long m2627getSecondary800d7_KjU = tonalPalette.m2627getSecondary800d7_KjU();
-        long m2621getSecondary200d7_KjU = tonalPalette.m2621getSecondary200d7_KjU();
-        long m2622getSecondary300d7_KjU = tonalPalette.m2622getSecondary300d7_KjU();
-        long m2628getSecondary900d7_KjU = tonalPalette.m2628getSecondary900d7_KjU();
-        long m2640getTertiary800d7_KjU = tonalPalette.m2640getTertiary800d7_KjU();
-        long m2634getTertiary200d7_KjU = tonalPalette.m2634getTertiary200d7_KjU();
-        long m2635getTertiary300d7_KjU = tonalPalette.m2635getTertiary300d7_KjU();
-        long m2641getTertiary900d7_KjU = tonalPalette.m2641getTertiary900d7_KjU();
-        long m2593getNeutralVariant60d7_KjU = tonalPalette.m2593getNeutralVariant60d7_KjU();
-        long m2598getNeutralVariant900d7_KjU = tonalPalette.m2598getNeutralVariant900d7_KjU();
-        long m2593getNeutralVariant60d7_KjU2 = tonalPalette.m2593getNeutralVariant60d7_KjU();
-        long m2598getNeutralVariant900d7_KjU2 = tonalPalette.m2598getNeutralVariant900d7_KjU();
-        long m2589getNeutralVariant300d7_KjU = tonalPalette.m2589getNeutralVariant300d7_KjU();
-        long m2596getNeutralVariant800d7_KjU = tonalPalette.m2596getNeutralVariant800d7_KjU();
-        long m2598getNeutralVariant900d7_KjU3 = tonalPalette.m2598getNeutralVariant900d7_KjU();
-        long m2586getNeutralVariant200d7_KjU = tonalPalette.m2586getNeutralVariant200d7_KjU();
-        long m2594getNeutralVariant600d7_KjU = tonalPalette.m2594getNeutralVariant600d7_KjU();
-        long m2589getNeutralVariant300d7_KjU2 = tonalPalette.m2589getNeutralVariant300d7_KjU();
-        long m2581getNeutralVariant00d7_KjU = tonalPalette.m2581getNeutralVariant00d7_KjU();
-        long m2588getNeutralVariant240d7_KjU = tonalPalette.m2588getNeutralVariant240d7_KjU();
-        long m2593getNeutralVariant60d7_KjU3 = tonalPalette.m2593getNeutralVariant60d7_KjU();
-        return ColorSchemeKt.m1735darkColorSchemeCXl9yA$default(m2614getPrimary800d7_KjU, m2608getPrimary200d7_KjU, m2609getPrimary300d7_KjU, m2615getPrimary900d7_KjU, m2610getPrimary400d7_KjU, m2627getSecondary800d7_KjU, m2621getSecondary200d7_KjU, m2622getSecondary300d7_KjU, m2628getSecondary900d7_KjU, m2640getTertiary800d7_KjU, m2634getTertiary200d7_KjU, m2635getTertiary300d7_KjU, m2641getTertiary900d7_KjU, m2593getNeutralVariant60d7_KjU, m2598getNeutralVariant900d7_KjU, m2593getNeutralVariant60d7_KjU2, m2598getNeutralVariant900d7_KjU2, m2589getNeutralVariant300d7_KjU, m2596getNeutralVariant800d7_KjU, tonalPalette.m2614getPrimary800d7_KjU(), m2598getNeutralVariant900d7_KjU3, m2586getNeutralVariant200d7_KjU, 0L, 0L, 0L, 0L, m2594getNeutralVariant600d7_KjU, m2589getNeutralVariant300d7_KjU2, m2581getNeutralVariant00d7_KjU, m2588getNeutralVariant240d7_KjU, tonalPalette.m2584getNeutralVariant120d7_KjU(), tonalPalette.m2585getNeutralVariant170d7_KjU(), tonalPalette.m2587getNeutralVariant220d7_KjU(), tonalPalette.m2582getNeutralVariant100d7_KjU(), tonalPalette.m2590getNeutralVariant40d7_KjU(), m2593getNeutralVariant60d7_KjU3, 62914560, 0, null);
+        long m2921getPrimary800d7_KjU = tonalPalette.m2921getPrimary800d7_KjU();
+        long m2915getPrimary200d7_KjU = tonalPalette.m2915getPrimary200d7_KjU();
+        long m2916getPrimary300d7_KjU = tonalPalette.m2916getPrimary300d7_KjU();
+        long m2922getPrimary900d7_KjU = tonalPalette.m2922getPrimary900d7_KjU();
+        long m2917getPrimary400d7_KjU = tonalPalette.m2917getPrimary400d7_KjU();
+        long m2934getSecondary800d7_KjU = tonalPalette.m2934getSecondary800d7_KjU();
+        long m2928getSecondary200d7_KjU = tonalPalette.m2928getSecondary200d7_KjU();
+        long m2929getSecondary300d7_KjU = tonalPalette.m2929getSecondary300d7_KjU();
+        long m2935getSecondary900d7_KjU = tonalPalette.m2935getSecondary900d7_KjU();
+        long m2947getTertiary800d7_KjU = tonalPalette.m2947getTertiary800d7_KjU();
+        long m2941getTertiary200d7_KjU = tonalPalette.m2941getTertiary200d7_KjU();
+        long m2942getTertiary300d7_KjU = tonalPalette.m2942getTertiary300d7_KjU();
+        long m2948getTertiary900d7_KjU = tonalPalette.m2948getTertiary900d7_KjU();
+        long m2900getNeutralVariant60d7_KjU = tonalPalette.m2900getNeutralVariant60d7_KjU();
+        long m2905getNeutralVariant900d7_KjU = tonalPalette.m2905getNeutralVariant900d7_KjU();
+        long m2900getNeutralVariant60d7_KjU2 = tonalPalette.m2900getNeutralVariant60d7_KjU();
+        long m2905getNeutralVariant900d7_KjU2 = tonalPalette.m2905getNeutralVariant900d7_KjU();
+        long m2896getNeutralVariant300d7_KjU = tonalPalette.m2896getNeutralVariant300d7_KjU();
+        long m2903getNeutralVariant800d7_KjU = tonalPalette.m2903getNeutralVariant800d7_KjU();
+        long m2905getNeutralVariant900d7_KjU3 = tonalPalette.m2905getNeutralVariant900d7_KjU();
+        long m2893getNeutralVariant200d7_KjU = tonalPalette.m2893getNeutralVariant200d7_KjU();
+        long m2901getNeutralVariant600d7_KjU = tonalPalette.m2901getNeutralVariant600d7_KjU();
+        long m2896getNeutralVariant300d7_KjU2 = tonalPalette.m2896getNeutralVariant300d7_KjU();
+        long m2888getNeutralVariant00d7_KjU = tonalPalette.m2888getNeutralVariant00d7_KjU();
+        long m2895getNeutralVariant240d7_KjU = tonalPalette.m2895getNeutralVariant240d7_KjU();
+        long m2900getNeutralVariant60d7_KjU3 = tonalPalette.m2900getNeutralVariant60d7_KjU();
+        return ColorSchemeKt.m2042darkColorSchemeCXl9yA$default(m2921getPrimary800d7_KjU, m2915getPrimary200d7_KjU, m2916getPrimary300d7_KjU, m2922getPrimary900d7_KjU, m2917getPrimary400d7_KjU, m2934getSecondary800d7_KjU, m2928getSecondary200d7_KjU, m2929getSecondary300d7_KjU, m2935getSecondary900d7_KjU, m2947getTertiary800d7_KjU, m2941getTertiary200d7_KjU, m2942getTertiary300d7_KjU, m2948getTertiary900d7_KjU, m2900getNeutralVariant60d7_KjU, m2905getNeutralVariant900d7_KjU, m2900getNeutralVariant60d7_KjU2, m2905getNeutralVariant900d7_KjU2, m2896getNeutralVariant300d7_KjU, m2903getNeutralVariant800d7_KjU, tonalPalette.m2921getPrimary800d7_KjU(), m2905getNeutralVariant900d7_KjU3, m2893getNeutralVariant200d7_KjU, 0L, 0L, 0L, 0L, m2901getNeutralVariant600d7_KjU, m2896getNeutralVariant300d7_KjU2, m2888getNeutralVariant00d7_KjU, m2895getNeutralVariant240d7_KjU, tonalPalette.m2891getNeutralVariant120d7_KjU(), tonalPalette.m2892getNeutralVariant170d7_KjU(), tonalPalette.m2894getNeutralVariant220d7_KjU(), tonalPalette.m2889getNeutralVariant100d7_KjU(), tonalPalette.m2897getNeutralVariant40d7_KjU(), m2900getNeutralVariant60d7_KjU3, 62914560, 0, null);
     }
 
     public static final ColorScheme dynamicDarkColorScheme34(Context context) {
-        long m1690getColorWaAFU9c = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170571);
-        long m1690getColorWaAFU9c2 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170572);
-        long m1690getColorWaAFU9c3 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170569);
-        long m1690getColorWaAFU9c4 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170570);
-        long m1690getColorWaAFU9c5 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170528);
-        long m1690getColorWaAFU9c6 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170575);
-        long m1690getColorWaAFU9c7 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170576);
-        long m1690getColorWaAFU9c8 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170573);
-        long m1690getColorWaAFU9c9 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170574);
-        long m1690getColorWaAFU9c10 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170579);
-        long m1690getColorWaAFU9c11 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170580);
-        long m1690getColorWaAFU9c12 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170577);
-        long m1690getColorWaAFU9c13 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170578);
-        long m1690getColorWaAFU9c14 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170581);
-        long m1690getColorWaAFU9c15 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170582);
-        long m1690getColorWaAFU9c16 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170583);
-        long m1690getColorWaAFU9c17 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170584);
-        long m1690getColorWaAFU9c18 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170592);
-        long m1690getColorWaAFU9c19 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170593);
-        long m1690getColorWaAFU9c20 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170540);
-        long m1690getColorWaAFU9c21 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170541);
-        long m1690getColorWaAFU9c22 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170594);
-        long m1690getColorWaAFU9c23 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170625);
-        long m1690getColorWaAFU9c24 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170590);
-        long m1690getColorWaAFU9c25 = ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170591);
-        return ColorSchemeKt.m1735darkColorSchemeCXl9yA$default(m1690getColorWaAFU9c, m1690getColorWaAFU9c2, m1690getColorWaAFU9c3, m1690getColorWaAFU9c4, m1690getColorWaAFU9c5, m1690getColorWaAFU9c6, m1690getColorWaAFU9c7, m1690getColorWaAFU9c8, m1690getColorWaAFU9c9, m1690getColorWaAFU9c10, m1690getColorWaAFU9c11, m1690getColorWaAFU9c12, m1690getColorWaAFU9c13, m1690getColorWaAFU9c14, m1690getColorWaAFU9c15, m1690getColorWaAFU9c16, m1690getColorWaAFU9c17, m1690getColorWaAFU9c18, m1690getColorWaAFU9c19, ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170571), m1690getColorWaAFU9c20, m1690getColorWaAFU9c21, 0L, 0L, 0L, 0L, m1690getColorWaAFU9c22, m1690getColorWaAFU9c23, 0L, m1690getColorWaAFU9c24, ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170587), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170588), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170589), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170585), ColorResourceHelper.INSTANCE.m1690getColorWaAFU9c(context, 17170586), m1690getColorWaAFU9c25, 331350016, 0, null);
+        long m1997getColorWaAFU9c = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170571);
+        long m1997getColorWaAFU9c2 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170572);
+        long m1997getColorWaAFU9c3 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170569);
+        long m1997getColorWaAFU9c4 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170570);
+        long m1997getColorWaAFU9c5 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170528);
+        long m1997getColorWaAFU9c6 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170575);
+        long m1997getColorWaAFU9c7 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170576);
+        long m1997getColorWaAFU9c8 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170573);
+        long m1997getColorWaAFU9c9 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170574);
+        long m1997getColorWaAFU9c10 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170579);
+        long m1997getColorWaAFU9c11 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170580);
+        long m1997getColorWaAFU9c12 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170577);
+        long m1997getColorWaAFU9c13 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170578);
+        long m1997getColorWaAFU9c14 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170581);
+        long m1997getColorWaAFU9c15 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170582);
+        long m1997getColorWaAFU9c16 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170583);
+        long m1997getColorWaAFU9c17 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170584);
+        long m1997getColorWaAFU9c18 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170592);
+        long m1997getColorWaAFU9c19 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170593);
+        long m1997getColorWaAFU9c20 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170540);
+        long m1997getColorWaAFU9c21 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170541);
+        long m1997getColorWaAFU9c22 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170594);
+        long m1997getColorWaAFU9c23 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170625);
+        long m1997getColorWaAFU9c24 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170590);
+        long m1997getColorWaAFU9c25 = ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170591);
+        return ColorSchemeKt.m2042darkColorSchemeCXl9yA$default(m1997getColorWaAFU9c, m1997getColorWaAFU9c2, m1997getColorWaAFU9c3, m1997getColorWaAFU9c4, m1997getColorWaAFU9c5, m1997getColorWaAFU9c6, m1997getColorWaAFU9c7, m1997getColorWaAFU9c8, m1997getColorWaAFU9c9, m1997getColorWaAFU9c10, m1997getColorWaAFU9c11, m1997getColorWaAFU9c12, m1997getColorWaAFU9c13, m1997getColorWaAFU9c14, m1997getColorWaAFU9c15, m1997getColorWaAFU9c16, m1997getColorWaAFU9c17, m1997getColorWaAFU9c18, m1997getColorWaAFU9c19, ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170571), m1997getColorWaAFU9c20, m1997getColorWaAFU9c21, 0L, 0L, 0L, 0L, m1997getColorWaAFU9c22, m1997getColorWaAFU9c23, 0L, m1997getColorWaAFU9c24, ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170587), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170588), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170589), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170585), ColorResourceHelper.INSTANCE.m1997getColorWaAFU9c(context, 17170586), m1997getColorWaAFU9c25, 331350016, 0, null);
     }
 }

@@ -10,7 +10,7 @@ import io.reactivex.parallel.ParallelFlowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ParallelMap<T, R> extends ParallelFlowable<R> {
     final Function<? super T, ? extends R> mapper;
     final ParallelFlowable<T> source;
@@ -42,7 +42,7 @@ public final class ParallelMap<T, R> extends ParallelFlowable<R> {
         return this.source.parallelism();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ParallelMapSubscriber<T, R> implements FlowableSubscriber<T>, Subscription {
         boolean done;
         final Subscriber<? super R> downstream;
@@ -106,7 +106,7 @@ public final class ParallelMap<T, R> extends ParallelFlowable<R> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ParallelMapConditionalSubscriber<T, R> implements ConditionalSubscriber<T>, Subscription {
         boolean done;
         final ConditionalSubscriber<? super R> downstream;

@@ -11,7 +11,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BitmapPainter.kt */
-@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B!\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007¢\u0006\u0002\u0010\bJ\u0010\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\t\u001a\u00020\nH\u0014J\u0012\u0010\u001c\u001a\u00020\u001b2\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0014J\u0013\u0010\u001d\u001a\u00020\u001b2\b\u0010\u001e\u001a\u0004\u0018\u00010\u001fH\u0096\u0002J\b\u0010 \u001a\u00020!H\u0016J\b\u0010\"\u001a\u00020#H\u0016J\"\u0010$\u001a\u00020\u00072\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0002ø\u0001\u0000¢\u0006\u0004\b%\u0010&J\f\u0010'\u001a\u00020(*\u00020)H\u0014R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\"\u0010\r\u001a\u00020\u000eX\u0080\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\u0013\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0014\u001a\u00020\u00158VX\u0096\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017R\u0016\u0010\u0018\u001a\u00020\u0007X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\u0019R\u0016\u0010\u0004\u001a\u00020\u0005X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\u0019R\u0016\u0010\u0006\u001a\u00020\u0007X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\u0019\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006*"}, d2 = {"Landroidx/compose/ui/graphics/painter/BitmapPainter;", "Landroidx/compose/ui/graphics/painter/Painter;", "image", "Landroidx/compose/ui/graphics/ImageBitmap;", "srcOffset", "Landroidx/compose/ui/unit/IntOffset;", "srcSize", "Landroidx/compose/ui/unit/IntSize;", "(Landroidx/compose/ui/graphics/ImageBitmap;JJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "alpha", "", "colorFilter", "Landroidx/compose/ui/graphics/ColorFilter;", "filterQuality", "Landroidx/compose/ui/graphics/FilterQuality;", "getFilterQuality-f-v9h1I$ui_graphics_release", "()I", "setFilterQuality-vDHp3xo$ui_graphics_release", "(I)V", "I", "intrinsicSize", "Landroidx/compose/ui/geometry/Size;", "getIntrinsicSize-NH-jbRc", "()J", "size", "J", "applyAlpha", "", "applyColorFilter", "equals", "other", "", "hashCode", "", "toString", "", "validateSize", "validateSize-N5eqBDc", "(JJ)J", "onDraw", "", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "ui-graphics_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\u0018\u00002\u00020\u0001B#\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\f\u0010\u0017\u001a\u00020\u0018*\u00020\u0019H\u0014J\u0010\u0010\u001e\u001a\u00020\u001f2\u0006\u0010\u0013\u001a\u00020\u0014H\u0014J\u0012\u0010 \u001a\u00020\u001f2\b\u0010\u0015\u001a\u0004\u0018\u00010\u0016H\u0014J\u001f\u0010!\u001a\u00020\u00072\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0002¢\u0006\u0004\b\"\u0010#J\u0013\u0010$\u001a\u00020\u001f2\b\u0010%\u001a\u0004\u0018\u00010&H\u0096\u0002J\b\u0010'\u001a\u00020(H\u0016J\b\u0010)\u001a\u00020*H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\nR\u0010\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\nR\u001c\u0010\u000b\u001a\u00020\fX\u0080\u000e¢\u0006\u0010\n\u0002\u0010\u0011\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u0010\u0010\u0012\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\nR\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001a\u001a\u00020\u001b8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u001d¨\u0006+"}, d2 = {"Landroidx/compose/ui/graphics/painter/BitmapPainter;", "Landroidx/compose/ui/graphics/painter/Painter;", "image", "Landroidx/compose/ui/graphics/ImageBitmap;", "srcOffset", "Landroidx/compose/ui/unit/IntOffset;", "srcSize", "Landroidx/compose/ui/unit/IntSize;", "<init>", "(Landroidx/compose/ui/graphics/ImageBitmap;JJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "J", "filterQuality", "Landroidx/compose/ui/graphics/FilterQuality;", "getFilterQuality-f-v9h1I$ui_graphics_release", "()I", "setFilterQuality-vDHp3xo$ui_graphics_release", "(I)V", "I", "size", "alpha", "", "colorFilter", "Landroidx/compose/ui/graphics/ColorFilter;", "onDraw", "", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "intrinsicSize", "Landroidx/compose/ui/geometry/Size;", "getIntrinsicSize-NH-jbRc", "()J", "applyAlpha", "", "applyColorFilter", "validateSize", "validateSize-N5eqBDc", "(JJ)J", "equals", "other", "", "hashCode", "", "toString", "", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BitmapPainter extends Painter {
     private float alpha;
@@ -32,9 +32,9 @@ public final class BitmapPainter extends Painter {
     */
     public /* synthetic */ BitmapPainter(ImageBitmap imageBitmap, long j, long j2, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this(imageBitmap, r2, j2, null);
-        long m6823getZeronOccac = (i & 2) != 0 ? IntOffset.Companion.m6823getZeronOccac() : j;
+        long m7390getZeronOccac = (i & 2) != 0 ? IntOffset.Companion.m7390getZeronOccac() : j;
         if ((i & 4) != 0) {
-            j2 = IntSize.m6850constructorimpl((imageBitmap.getHeight() & 4294967295L) | (imageBitmap.getWidth() << 32));
+            j2 = IntSize.m7417constructorimpl((imageBitmap.getHeight() & 4294967295L) | (imageBitmap.getWidth() << 32));
         }
     }
 
@@ -42,18 +42,18 @@ public final class BitmapPainter extends Painter {
         this.image = imageBitmap;
         this.srcOffset = j;
         this.srcSize = j2;
-        this.filterQuality = FilterQuality.Companion.m4178getLowfv9h1I();
-        this.size = m4759validateSizeN5eqBDc(j, j2);
+        this.filterQuality = FilterQuality.Companion.m4638getLowfv9h1I();
+        this.size = m5234validateSizeN5eqBDc(j, j2);
         this.alpha = 1.0f;
     }
 
     /* renamed from: getFilterQuality-f-v9h1I$ui_graphics_release  reason: not valid java name */
-    public final int m4760getFilterQualityfv9h1I$ui_graphics_release() {
+    public final int m5235getFilterQualityfv9h1I$ui_graphics_release() {
         return this.filterQuality;
     }
 
     /* renamed from: setFilterQuality-vDHp3xo$ui_graphics_release  reason: not valid java name */
-    public final void m4762setFilterQualityvDHp3xo$ui_graphics_release(int i) {
+    public final void m5237setFilterQualityvDHp3xo$ui_graphics_release(int i) {
         this.filterQuality = i;
     }
 
@@ -63,14 +63,14 @@ public final class BitmapPainter extends Painter {
         ImageBitmap imageBitmap = this.image;
         long j = this.srcOffset;
         long j2 = this.srcSize;
-        int round = Math.round(Float.intBitsToFloat((int) (drawScope.mo4640getSizeNHjbRc() >> 32)));
-        DrawScope.m4623drawImageAZ2fEMs$default(drawScope, imageBitmap, j, j2, 0L, IntSize.m6850constructorimpl((Math.round(Float.intBitsToFloat((int) (drawScope.mo4640getSizeNHjbRc() & 4294967295L))) & 4294967295L) | (round << 32)), this.alpha, null, this.colorFilter, 0, this.filterQuality, 328, null);
+        int round = Math.round(Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() >> 32)));
+        DrawScope.m5099drawImageAZ2fEMs$default(drawScope, imageBitmap, j, j2, 0L, IntSize.m7417constructorimpl((Math.round(Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() & 4294967295L))) & 4294967295L) | (round << 32)), this.alpha, null, this.colorFilter, 0, this.filterQuality, 328, null);
     }
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc  reason: not valid java name */
-    public long mo4761getIntrinsicSizeNHjbRc() {
-        return IntSizeKt.m6867toSizeozmzZPI(this.size);
+    public long mo5236getIntrinsicSizeNHjbRc() {
+        return IntSizeKt.m7434toSizeozmzZPI(this.size);
     }
 
     @Override // androidx.compose.ui.graphics.painter.Painter
@@ -86,10 +86,10 @@ public final class BitmapPainter extends Painter {
     }
 
     /* renamed from: validateSize-N5eqBDc  reason: not valid java name */
-    private final long m4759validateSizeN5eqBDc(long j, long j2) {
+    private final long m5234validateSizeN5eqBDc(long j, long j2) {
         int i;
         int i2;
-        if (IntOffset.m6812getXimpl(j) < 0 || IntOffset.m6813getYimpl(j) < 0 || (i = (int) (j2 >> 32)) < 0 || (i2 = (int) (4294967295L & j2)) < 0 || i > this.image.getWidth() || i2 > this.image.getHeight()) {
+        if (IntOffset.m7379getXimpl(j) < 0 || IntOffset.m7380getYimpl(j) < 0 || (i = (int) (j2 >> 32)) < 0 || (i2 = (int) (4294967295L & j2)) < 0 || i > this.image.getWidth() || i2 > this.image.getHeight()) {
             throw new IllegalArgumentException("Failed requirement.".toString());
         }
         return j2;
@@ -101,16 +101,16 @@ public final class BitmapPainter extends Painter {
         }
         if (obj instanceof BitmapPainter) {
             BitmapPainter bitmapPainter = (BitmapPainter) obj;
-            return Intrinsics.areEqual(this.image, bitmapPainter.image) && IntOffset.m6811equalsimpl0(this.srcOffset, bitmapPainter.srcOffset) && IntSize.m6853equalsimpl0(this.srcSize, bitmapPainter.srcSize) && FilterQuality.m4173equalsimpl0(this.filterQuality, bitmapPainter.filterQuality);
+            return Intrinsics.areEqual(this.image, bitmapPainter.image) && IntOffset.m7378equalsimpl0(this.srcOffset, bitmapPainter.srcOffset) && IntSize.m7420equalsimpl0(this.srcSize, bitmapPainter.srcSize) && FilterQuality.m4633equalsimpl0(this.filterQuality, bitmapPainter.filterQuality);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((this.image.hashCode() * 31) + IntOffset.m6814hashCodeimpl(this.srcOffset)) * 31) + IntSize.m6856hashCodeimpl(this.srcSize)) * 31) + FilterQuality.m4174hashCodeimpl(this.filterQuality);
+        return (((((this.image.hashCode() * 31) + IntOffset.m7381hashCodeimpl(this.srcOffset)) * 31) + IntSize.m7423hashCodeimpl(this.srcSize)) * 31) + FilterQuality.m4634hashCodeimpl(this.filterQuality);
     }
 
     public String toString() {
-        return "BitmapPainter(image=" + this.image + ", srcOffset=" + ((Object) IntOffset.m6819toStringimpl(this.srcOffset)) + ", srcSize=" + ((Object) IntSize.m6858toStringimpl(this.srcSize)) + ", filterQuality=" + ((Object) FilterQuality.m4175toStringimpl(this.filterQuality)) + ')';
+        return "BitmapPainter(image=" + this.image + ", srcOffset=" + ((Object) IntOffset.m7386toStringimpl(this.srcOffset)) + ", srcSize=" + ((Object) IntSize.m7425toStringimpl(this.srcSize)) + ", filterQuality=" + ((Object) FilterQuality.m4635toStringimpl(this.filterQuality)) + ')';
     }
 }

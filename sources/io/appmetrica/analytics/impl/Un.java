@@ -1,11 +1,11 @@
 package io.appmetrica.analytics.impl;
-
-import android.os.UserManager;
-import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
 /* loaded from: classes4.dex */
-public final class Un implements FunctionWithThrowable {
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
-    public final Object apply(Object obj) {
-        return Boolean.valueOf(((UserManager) obj).isUserUnlocked());
+public final class Un {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Ib f684a;
+
+    public Un(Ib ib) {
+        this.f684a = ib;
     }
 }

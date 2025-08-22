@@ -76,8 +76,8 @@ public final class ModalBottomSheetDialogWrapper extends ComponentDialog impleme
         this.onDismissRequest = function0;
         this.properties = modalBottomSheetProperties;
         this.composeView = view;
-        float m6684constructorimpl = Dp.m6684constructorimpl(8);
-        this.maxSupportedElevation = m6684constructorimpl;
+        float m7251constructorimpl = Dp.m7251constructorimpl(8);
+        this.maxSupportedElevation = m7251constructorimpl;
         Window window = getWindow();
         if (window == null) {
             throw new IllegalStateException("Dialog has no window".toString());
@@ -88,7 +88,7 @@ public final class ModalBottomSheetDialogWrapper extends ComponentDialog impleme
         ModalBottomSheetDialogLayout modalBottomSheetDialogLayout = new ModalBottomSheetDialogLayout(getContext(), window, this.properties.getShouldDismissOnBackPress(), this.onDismissRequest, animatable, coroutineScope);
         modalBottomSheetDialogLayout.setTag(androidx.compose.ui.R.id.compose_view_saveable_id_tag, "Dialog:" + uuid);
         modalBottomSheetDialogLayout.setClipChildren(false);
-        modalBottomSheetDialogLayout.setElevation(density.mo389toPx0680j_4(m6684constructorimpl));
+        modalBottomSheetDialogLayout.setElevation(density.mo419toPx0680j_4(m7251constructorimpl));
         modalBottomSheetDialogLayout.setOutlineProvider(new ViewOutlineProvider() { // from class: androidx.compose.material3.ModalBottomSheetDialogWrapper$1$2
             @Override // android.view.ViewOutlineProvider
             public void getOutline(View view2, Outline outline) {

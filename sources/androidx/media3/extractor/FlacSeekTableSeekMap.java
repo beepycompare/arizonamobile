@@ -3,7 +3,7 @@ package androidx.media3.extractor;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.SeekMap;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class FlacSeekTableSeekMap implements SeekMap {
     private final long firstFrameOffset;
     private final FlacStreamMetadata flacStreamMetadata;

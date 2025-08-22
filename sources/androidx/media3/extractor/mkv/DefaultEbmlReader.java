@@ -7,7 +7,7 @@ import androidx.media3.extractor.ExtractorInput;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class DefaultEbmlReader implements EbmlReader {
     private static final int ELEMENT_STATE_READ_CONTENT = 2;
     private static final int ELEMENT_STATE_READ_CONTENT_SIZE = 1;
@@ -153,7 +153,7 @@ final class DefaultEbmlReader implements EbmlReader {
         return new String(bArr, 0, i);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class MasterElement {
         private final long elementEndPosition;
         private final int elementId;

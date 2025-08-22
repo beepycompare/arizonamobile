@@ -5,7 +5,7 @@ import androidx.media3.common.util.TimestampAdjuster;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SectionReader implements TsPayloadReader {
     private static final int DEFAULT_SECTION_BUFFER_LENGTH = 32;
     private static final int MAX_SECTION_LENGTH = 4098;

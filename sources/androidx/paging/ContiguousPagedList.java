@@ -109,13 +109,13 @@ public class ContiguousPagedList<K, V> extends PagedList<V> implements PagedStor
         return this.pager.isDetached();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0067, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0068, code lost:
         if (r0.isEmpty() == false) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0091, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0092, code lost:
         if (r0.isEmpty() == false) goto L15;
      */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x009a  */
     @Override // androidx.paging.LegacyPageFetcher.PageConsumer
     /*
         Code decompiled incorrectly, please refer to instructions dump.

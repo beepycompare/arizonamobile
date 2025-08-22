@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int defaultNavHost = 0x7f0401a6;
+        public static int defaultNavHost = 0x7f0401a7;
 
         private attr() {
         }
@@ -20,9 +20,9 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int nav_host_fragment_container = 0x7f0a094a;
-        public static int sliding_pane_detail_container = 0x7f0a0c44;
-        public static int sliding_pane_layout = 0x7f0a0c45;
+        public static int nav_host_fragment_container = 0x7f0a0948;
+        public static int sliding_pane_detail_container = 0x7f0a0c40;
+        public static int sliding_pane_layout = 0x7f0a0c41;
 
         private id() {
         }
@@ -35,7 +35,7 @@ public final class R {
         public static int NavHostFragment_defaultNavHost;
         public static int[] DialogFragmentNavigator = {16842755};
         public static int[] FragmentNavigator = {16842755};
-        public static int[] NavHostFragment = {com.arizona21.game.web.R.attr.defaultNavHost};
+        public static int[] NavHostFragment = {com.arizona21.game.R.attr.defaultNavHost};
 
         private styleable() {
         }

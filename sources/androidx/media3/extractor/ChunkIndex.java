@@ -3,7 +3,7 @@ package androidx.media3.extractor;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.SeekMap;
 import java.util.Arrays;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ChunkIndex implements SeekMap {
     private final long durationUs;
     public final long[] durationsUs;

@@ -5,11 +5,11 @@ import androidx.media3.common.util.ParsableByteArray;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SpliceScheduleCommand extends SpliceCommand {
     public final List<Event> events;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Event {
         public final boolean autoReturn;
         public final int availNum;
@@ -115,7 +115,7 @@ public final class SpliceScheduleCommand extends SpliceCommand {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ComponentSplice {
         public final int componentTag;
         public final long utcSpliceTime;

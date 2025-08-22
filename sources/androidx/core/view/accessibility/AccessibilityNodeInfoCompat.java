@@ -69,7 +69,9 @@ public class AccessibilityNodeInfoCompat {
     private static final int BOOLEAN_PROPERTY_SUPPORTS_GRANULAR_SCROLLING = 67108864;
     private static final int BOOLEAN_PROPERTY_TEXT_SELECTABLE = 8388608;
     private static final String BOUNDS_IN_WINDOW_KEY = "androidx.view.accessibility.AccessibilityNodeInfoCompat.BOUNDS_IN_WINDOW_KEY";
+    private static final String CHECKED_KEY = "androidx.view.accessibility.AccessibilityNodeInfoCompat.CHECKED_KEY";
     private static final String CONTAINER_TITLE_KEY = "androidx.view.accessibility.AccessibilityNodeInfoCompat.CONTAINER_TITLE_KEY";
+    private static final String EXPANDED_STATE_KEY = "androidx.view.accessibility.AccessibilityNodeInfoCompat.EXPANDED_STATE_KEY";
     public static final String EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_LENGTH = "android.view.accessibility.extra.DATA_TEXT_CHARACTER_LOCATION_ARG_LENGTH";
     public static final int EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_MAX_LENGTH = 20000;
     public static final String EXTRA_DATA_TEXT_CHARACTER_LOCATION_ARG_START_INDEX = "android.view.accessibility.extra.DATA_TEXT_CHARACTER_LOCATION_ARG_START_INDEX";
@@ -100,6 +102,7 @@ public class AccessibilityNodeInfoCompat {
     private static final String SPANS_ID_KEY = "androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_ID_KEY";
     private static final String SPANS_START_KEY = "androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_START_KEY";
     private static final String STATE_DESCRIPTION_KEY = "androidx.view.accessibility.AccessibilityNodeInfoCompat.STATE_DESCRIPTION_KEY";
+    private static final String SUPPLEMENTAL_DESCRIPTION_KEY = "androidx.view.accessibility.AccessibilityNodeInfoCompat.SUPPLEMENTAL_DESCRIPTION_KEY";
     private static final String TOOLTIP_TEXT_KEY = "androidx.view.accessibility.AccessibilityNodeInfoCompat.TOOLTIP_TEXT_KEY";
     private static final String UNIQUE_ID_KEY = "androidx.view.accessibility.AccessibilityNodeInfoCompat.UNIQUE_ID_KEY";
     private static int sClickableSpanId;
@@ -710,6 +713,21 @@ public class AccessibilityNodeInfoCompat {
         return this.mInfo.getMovementGranularities();
     }
 
+    public int getExpandedState() {
+        if (Build.VERSION.SDK_INT >= 36) {
+            return Api36Impl.getExpandedState(this.mInfo);
+        }
+        return this.mInfo.getExtras().getInt(EXPANDED_STATE_KEY, 0);
+    }
+
+    public void setExpandedState(int i) {
+        if (Build.VERSION.SDK_INT >= 36) {
+            Api36Impl.setExpandedState(this.mInfo, i);
+        } else {
+            this.mInfo.getExtras().putInt(EXPANDED_STATE_KEY, i);
+        }
+    }
+
     public List<AccessibilityNodeInfoCompat> findAccessibilityNodeInfosByText(String str) {
         ArrayList arrayList = new ArrayList();
         List<AccessibilityNodeInfo> findAccessibilityNodeInfosByText = this.mInfo.findAccessibilityNodeInfosByText(str);
@@ -786,20 +804,49 @@ public class AccessibilityNodeInfoCompat {
         this.mInfo.setCheckable(z);
     }
 
+    @Deprecated
     public boolean isChecked() {
         return this.mInfo.isChecked();
     }
 
+    @Deprecated
     public void setChecked(boolean z) {
         this.mInfo.setChecked(z);
     }
 
+    public int getChecked() {
+        if (Build.VERSION.SDK_INT < 36) {
+            return this.mInfo.getExtras().getInt(CHECKED_KEY, this.mInfo.isChecked() ? 1 : 0);
+        }
+        return Api36Impl.getChecked(this.mInfo);
+    }
+
+    public void setChecked(int i) {
+        if (Build.VERSION.SDK_INT >= 36) {
+            Api36Impl.setChecked(this.mInfo, i);
+            return;
+        }
+        if (i == 1 || i == 2 || i == 0) {
+            this.mInfo.setChecked(i == 1);
+            this.mInfo.getExtras().putInt(CHECKED_KEY, i);
+            return;
+        }
+        throw new IllegalArgumentException("Unknown checked argument: " + i);
+    }
+
     public boolean isFieldRequired() {
+        if (Build.VERSION.SDK_INT >= 36) {
+            return Api36Impl.isFieldRequired(this.mInfo);
+        }
         return this.mInfo.getExtras().getBoolean(IS_REQUIRED_KEY);
     }
 
     public void setFieldRequired(boolean z) {
-        this.mInfo.getExtras().putBoolean(IS_REQUIRED_KEY, z);
+        if (Build.VERSION.SDK_INT >= 36) {
+            Api36Impl.setFieldRequired(this.mInfo, z);
+        } else {
+            this.mInfo.getExtras().putBoolean(IS_REQUIRED_KEY, z);
+        }
     }
 
     public boolean isFocusable() {
@@ -1244,14 +1291,52 @@ public class AccessibilityNodeInfoCompat {
         return wrapNonNullInstance(this.mInfo.getLabelFor());
     }
 
+    public void addLabeledBy(View view) {
+        addLabeledBy(view, -1);
+    }
+
+    public void addLabeledBy(View view, int i) {
+        if (Build.VERSION.SDK_INT < 36) {
+            setLabeledBy(view, i);
+        } else {
+            Api36Impl.addLabeledBy(this.mInfo, view, i);
+        }
+    }
+
+    public List<AccessibilityNodeInfoCompat> getLabeledByList() {
+        if (Build.VERSION.SDK_INT < 36) {
+            ArrayList arrayList = new ArrayList(1);
+            AccessibilityNodeInfoCompat labeledBy = getLabeledBy();
+            if (labeledBy != null) {
+                arrayList.add(labeledBy);
+            }
+            return arrayList;
+        }
+        return Api36Impl.getLabeledByList(this.mInfo);
+    }
+
+    public boolean removeLabeledBy(View view) {
+        return removeLabeledBy(view, -1);
+    }
+
+    public boolean removeLabeledBy(View view, int i) {
+        if (Build.VERSION.SDK_INT >= 36) {
+            return Api36Impl.removeLabeledBy(this.mInfo, view, i);
+        }
+        return false;
+    }
+
+    @Deprecated
     public void setLabeledBy(View view) {
         this.mInfo.setLabeledBy(view);
     }
 
+    @Deprecated
     public void setLabeledBy(View view, int i) {
         this.mInfo.setLabeledBy(view, i);
     }
 
+    @Deprecated
     public AccessibilityNodeInfoCompat getLabeledBy() {
         return wrapNonNullInstance(this.mInfo.getLabeledBy());
     }
@@ -1511,6 +1596,21 @@ public class AccessibilityNodeInfoCompat {
         }
     }
 
+    public CharSequence getSupplementalDescription() {
+        if (Build.VERSION.SDK_INT >= 36) {
+            return Api36Impl.getSupplementalDescription(this.mInfo);
+        }
+        return this.mInfo.getExtras().getCharSequence(SUPPLEMENTAL_DESCRIPTION_KEY);
+    }
+
+    public void setSupplementalDescription(CharSequence charSequence) {
+        if (Build.VERSION.SDK_INT >= 36) {
+            Api36Impl.setSupplementalDescription(this.mInfo, charSequence);
+        } else {
+            this.mInfo.getExtras().putCharSequence(SUPPLEMENTAL_DESCRIPTION_KEY, charSequence);
+        }
+    }
+
     public int hashCode() {
         AccessibilityNodeInfo accessibilityNodeInfo = this.mInfo;
         if (accessibilityNodeInfo == null) {
@@ -1555,11 +1655,12 @@ public class AccessibilityNodeInfoCompat {
         sb.append("; maxTextLength: ").append(getMaxTextLength());
         sb.append("; stateDescription: ").append(getStateDescription());
         sb.append("; contentDescription: ").append(getContentDescription());
+        sb.append("; supplementalDescription: ").append(getSupplementalDescription());
         sb.append("; tooltipText: ").append(getTooltipText());
         sb.append("; viewIdResName: ").append(getViewIdResourceName());
         sb.append("; uniqueId: ").append(getUniqueId());
         sb.append("; checkable: ").append(isCheckable());
-        sb.append("; checked: ").append(isChecked());
+        sb.append("; checked: ").append(getCheckedString());
         sb.append("; fieldRequired: ").append(isFieldRequired());
         sb.append("; focusable: ").append(isFocusable());
         sb.append("; focused: ").append(isFocused());
@@ -1567,6 +1668,7 @@ public class AccessibilityNodeInfoCompat {
         sb.append("; clickable: ").append(isClickable());
         sb.append("; longClickable: ").append(isLongClickable());
         sb.append("; contextClickable: ").append(isContextClickable());
+        sb.append("; expandedState: ").append(getExpandedStateSymbolicName(getExpandedState()));
         sb.append("; enabled: ").append(isEnabled());
         sb.append("; password: ").append(isPassword());
         sb.append("; scrollable: " + isScrollable());
@@ -1607,6 +1709,17 @@ public class AccessibilityNodeInfoCompat {
     private boolean getBooleanProperty(int i) {
         Bundle extras = getExtras();
         return extras != null && (extras.getInt(BOOLEAN_PROPERTY_KEY, 0) & i) == i;
+    }
+
+    private String getCheckedString() {
+        int checked = getChecked();
+        if (checked == 1) {
+            return "TRUE";
+        }
+        if (checked == 2) {
+            return "PARTIAL";
+        }
+        return "FALSE";
     }
 
     static String getActionSymbolicName(int i) {
@@ -1709,6 +1822,22 @@ public class AccessibilityNodeInfoCompat {
             }
         }
         return "ACTION_FOCUS";
+    }
+
+    static String getExpandedStateSymbolicName(int i) {
+        if (i != 0) {
+            if (i != 1) {
+                if (i != 2) {
+                    if (i == 3) {
+                        return "FULL";
+                    }
+                    return "UNKNOWN";
+                }
+                return "PARTIAL";
+            }
+            return "COLLAPSED";
+        }
+        return "UNDEFINED";
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1847,6 +1976,67 @@ public class AccessibilityNodeInfoCompat {
 
         public static CollectionInfoCompat buildCollectionInfoCompat(int i, int i2, boolean z, int i3, int i4, int i5) {
             return new CollectionInfoCompat(new AccessibilityNodeInfo.CollectionInfo.Builder().setRowCount(i).setColumnCount(i2).setHierarchical(z).setSelectionMode(i3).setItemCount(i4).setImportantForAccessibilityItemCount(i5).build());
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes2.dex */
+    public static class Api36Impl {
+        private Api36Impl() {
+        }
+
+        public static int getExpandedState(AccessibilityNodeInfo accessibilityNodeInfo) {
+            return accessibilityNodeInfo.getExpandedState();
+        }
+
+        public static void setExpandedState(AccessibilityNodeInfo accessibilityNodeInfo, int i) {
+            accessibilityNodeInfo.setExpandedState(i);
+        }
+
+        public static boolean isFieldRequired(AccessibilityNodeInfo accessibilityNodeInfo) {
+            return accessibilityNodeInfo.isFieldRequired();
+        }
+
+        public static void setFieldRequired(AccessibilityNodeInfo accessibilityNodeInfo, boolean z) {
+            accessibilityNodeInfo.setFieldRequired(z);
+        }
+
+        public static CharSequence getSupplementalDescription(AccessibilityNodeInfo accessibilityNodeInfo) {
+            return accessibilityNodeInfo.getSupplementalDescription();
+        }
+
+        public static void setSupplementalDescription(AccessibilityNodeInfo accessibilityNodeInfo, CharSequence charSequence) {
+            accessibilityNodeInfo.setSupplementalDescription(charSequence);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static int getChecked(AccessibilityNodeInfo accessibilityNodeInfo) {
+            return accessibilityNodeInfo.getChecked();
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static void setChecked(AccessibilityNodeInfo accessibilityNodeInfo, int i) {
+            accessibilityNodeInfo.setChecked(i);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static void addLabeledBy(AccessibilityNodeInfo accessibilityNodeInfo, View view, int i) {
+            accessibilityNodeInfo.addLabeledBy(view, i);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static List<AccessibilityNodeInfoCompat> getLabeledByList(AccessibilityNodeInfo accessibilityNodeInfo) {
+            List<AccessibilityNodeInfo> labeledByList = accessibilityNodeInfo.getLabeledByList();
+            ArrayList arrayList = new ArrayList(labeledByList.size());
+            for (AccessibilityNodeInfo accessibilityNodeInfo2 : labeledByList) {
+                arrayList.add(AccessibilityNodeInfoCompat.wrap(accessibilityNodeInfo2));
+            }
+            return arrayList;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static boolean removeLabeledBy(AccessibilityNodeInfo accessibilityNodeInfo, View view, int i) {
+            return accessibilityNodeInfo.removeLabeledBy(view, i);
         }
     }
 }

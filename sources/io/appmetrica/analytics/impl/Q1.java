@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Q1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ka f605a = new Ka();
+    public final Ma f612a = new Ma();
     public final LinkedHashMap b = new LinkedHashMap();
     public final LinkedHashMap c = new LinkedHashMap();
 
@@ -36,7 +36,7 @@ public final class Q1 {
         if (intent != null) {
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                this.f605a.a(action, Integer.valueOf(a(intent)));
+                this.f612a.a(action, Integer.valueOf(a(intent)));
             }
             for (Map.Entry entry : this.b.entrySet()) {
                 P1 p1 = (P1) entry.getKey();
@@ -51,12 +51,12 @@ public final class Q1 {
         if (intent != null) {
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                Ka ka = this.f605a;
+                Ma ma = this.f612a;
                 Integer valueOf = Integer.valueOf(a(intent));
-                Collection collection = (Collection) ka.f519a.get(action);
+                Collection collection = (Collection) ma.f558a.get(action);
                 if (collection != null && collection.remove(valueOf)) {
-                    if (collection.isEmpty() && ka.b) {
-                        ka.f519a.remove(action);
+                    if (collection.isEmpty() && ma.b) {
+                        ma.f558a.remove(action);
                     }
                     new ArrayList(collection);
                 }
@@ -74,7 +74,7 @@ public final class Q1 {
         if (intent != null) {
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                this.f605a.a(action, Integer.valueOf(a(intent)));
+                this.f612a.a(action, Integer.valueOf(a(intent)));
             }
             for (Map.Entry entry : this.b.entrySet()) {
                 P1 p1 = (P1) entry.getKey();
@@ -97,7 +97,7 @@ public final class Q1 {
     public static final boolean a(Q1 q1, Intent intent) {
         q1.getClass();
         if (Intrinsics.areEqual("io.appmetrica.analytics.IAppMetricaService", intent.getAction())) {
-            Collection collection = (Collection) q1.f605a.f519a.get("io.appmetrica.analytics.IAppMetricaService");
+            Collection collection = (Collection) q1.f612a.f558a.get("io.appmetrica.analytics.IAppMetricaService");
             return collection == null || collection.size() == 0;
         }
         return false;
@@ -143,6 +143,6 @@ public final class Q1 {
     public static final boolean b(Q1 q1, Intent intent) {
         Collection collection;
         q1.getClass();
-        return Intrinsics.areEqual("io.appmetrica.analytics.IAppMetricaService", intent.getAction()) && (collection = (Collection) q1.f605a.f519a.get("io.appmetrica.analytics.IAppMetricaService")) != null && collection.size() == 1;
+        return Intrinsics.areEqual("io.appmetrica.analytics.IAppMetricaService", intent.getAction()) && (collection = (Collection) q1.f612a.f558a.get("io.appmetrica.analytics.IAppMetricaService")) != null && collection.size() == 1;
     }
 }

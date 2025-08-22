@@ -15,7 +15,7 @@ import kotlinx.coroutines.JobKt;
 import kotlinx.coroutines.channels.Channel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MouseWheelScrollable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.gestures.MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1", f = "MouseWheelScrollable.kt", i = {0, 1}, l = {107, 110}, m = "invokeSuspend", n = {"$this$launch", "$this$launch"}, s = {"L$0", "L$0"})
 /* loaded from: classes.dex */
 public final class MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -75,15 +75,15 @@ public final class MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1 ext
                 ResultKt.throwOnFailure(obj);
                 density = this.this$0.density;
                 f = MouseWheelScrollableKt.AnimationThreshold;
-                float mo389toPx0680j_4 = density.mo389toPx0680j_4(f);
+                float mo419toPx0680j_4 = density.mo419toPx0680j_4(f);
                 density2 = this.this$0.density;
                 f2 = MouseWheelScrollableKt.AnimationSpeed;
-                float mo389toPx0680j_42 = density2.mo389toPx0680j_4(f2);
+                float mo419toPx0680j_42 = density2.mo419toPx0680j_4(f2);
                 MouseWheelScrollingLogic mouseWheelScrollingLogic = this.this$0;
                 scrollingLogic = mouseWheelScrollingLogic.scrollingLogic;
                 this.L$0 = coroutineScope2;
                 this.label = 2;
-                dispatchMouseWheelScroll = mouseWheelScrollingLogic.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo389toPx0680j_4, mo389toPx0680j_42, this);
+                dispatchMouseWheelScroll = mouseWheelScrollingLogic.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo419toPx0680j_4, mo419toPx0680j_42, this);
             } else if (i != 2) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             } else {
@@ -102,15 +102,15 @@ public final class MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1 ext
                     obj = receive;
                     density = this.this$0.density;
                     f = MouseWheelScrollableKt.AnimationThreshold;
-                    float mo389toPx0680j_43 = density.mo389toPx0680j_4(f);
+                    float mo419toPx0680j_43 = density.mo419toPx0680j_4(f);
                     density2 = this.this$0.density;
                     f2 = MouseWheelScrollableKt.AnimationSpeed;
-                    float mo389toPx0680j_422 = density2.mo389toPx0680j_4(f2);
+                    float mo419toPx0680j_422 = density2.mo419toPx0680j_4(f2);
                     MouseWheelScrollingLogic mouseWheelScrollingLogic2 = this.this$0;
                     scrollingLogic = mouseWheelScrollingLogic2.scrollingLogic;
                     this.L$0 = coroutineScope2;
                     this.label = 2;
-                    dispatchMouseWheelScroll = mouseWheelScrollingLogic2.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo389toPx0680j_43, mo389toPx0680j_422, this);
+                    dispatchMouseWheelScroll = mouseWheelScrollingLogic2.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo419toPx0680j_43, mo419toPx0680j_422, this);
                 } else {
                     this.this$0.receivingMouseWheelEventsJob = null;
                     return Unit.INSTANCE;

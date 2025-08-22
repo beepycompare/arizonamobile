@@ -4,37 +4,37 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 /* loaded from: classes4.dex */
-public final class F5 implements L9 {
+public final class F5 implements N9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Q9 f430a;
+    public final S9 f427a;
     public final List b;
     public final List c;
     public final AtomicBoolean d;
 
-    public F5(Q9 q9, List<? extends Y8> list, List<? extends Y8> list2, C0401l5 c0401l5) {
-        this.f430a = q9;
+    public F5(S9 s9, List<? extends InterfaceC0118a9> list, List<? extends InterfaceC0118a9> list2, C0398l5 c0398l5) {
+        this.f427a = s9;
         this.b = list;
         this.c = list2;
-        Objects.toString(c0401l5);
+        Objects.toString(c0398l5);
         this.d = new AtomicBoolean(true);
     }
 
     public final boolean a() {
-        List<Y8> list = this.c;
+        List<InterfaceC0118a9> list = this.c;
         if (!list.isEmpty() && !list.isEmpty()) {
-            for (Y8 y8 : list) {
-                if (!y8.b()) {
+            for (InterfaceC0118a9 interfaceC0118a9 : list) {
+                if (!interfaceC0118a9.b()) {
                     return false;
                 }
             }
         }
-        List<Y8> list2 = this.b;
+        List<InterfaceC0118a9> list2 = this.b;
         if (list2.isEmpty() || list2.isEmpty()) {
             return false;
         }
-        for (Y8 y82 : list2) {
-            if (y82.b()) {
+        for (InterfaceC0118a9 interfaceC0118a92 : list2) {
+            if (interfaceC0118a92.b()) {
                 return true;
             }
         }
@@ -51,27 +51,27 @@ public final class F5 implements L9 {
 
     public final void d() {
         if (this.d.get()) {
-            List<Y8> list = this.c;
+            List<InterfaceC0118a9> list = this.c;
             if (!list.isEmpty() && !list.isEmpty()) {
-                for (Y8 y8 : list) {
-                    if (!y8.b()) {
+                for (InterfaceC0118a9 interfaceC0118a9 : list) {
+                    if (!interfaceC0118a9.b()) {
                         return;
                     }
                 }
             }
-            ((C0369jn) this.f430a).c();
+            ((C0491on) this.f427a).c();
         }
     }
 
     public final void e() {
         if (this.d.get() && a()) {
-            ((C0369jn) this.f430a).c();
+            ((C0491on) this.f427a).c();
         }
     }
 
     public final void f() {
         if (this.d.get() && a()) {
-            ((C0369jn) this.f430a).b();
+            ((C0491on) this.f427a).b();
         }
     }
 }

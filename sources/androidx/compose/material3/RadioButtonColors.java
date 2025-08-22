@@ -31,27 +31,27 @@ public final class RadioButtonColors {
     }
 
     /* renamed from: getSelectedColor-0d7_KjU  reason: not valid java name */
-    public final long m2196getSelectedColor0d7_KjU() {
+    public final long m2503getSelectedColor0d7_KjU() {
         return this.selectedColor;
     }
 
     /* renamed from: getUnselectedColor-0d7_KjU  reason: not valid java name */
-    public final long m2197getUnselectedColor0d7_KjU() {
+    public final long m2504getUnselectedColor0d7_KjU() {
         return this.unselectedColor;
     }
 
     /* renamed from: getDisabledSelectedColor-0d7_KjU  reason: not valid java name */
-    public final long m2194getDisabledSelectedColor0d7_KjU() {
+    public final long m2501getDisabledSelectedColor0d7_KjU() {
         return this.disabledSelectedColor;
     }
 
     /* renamed from: getDisabledUnselectedColor-0d7_KjU  reason: not valid java name */
-    public final long m2195getDisabledUnselectedColor0d7_KjU() {
+    public final long m2502getDisabledUnselectedColor0d7_KjU() {
         return this.disabledUnselectedColor;
     }
 
     /* renamed from: copy-jRlVdoo$default  reason: not valid java name */
-    public static /* synthetic */ RadioButtonColors m2192copyjRlVdoo$default(RadioButtonColors radioButtonColors, long j, long j2, long j3, long j4, int i, Object obj) {
+    public static /* synthetic */ RadioButtonColors m2499copyjRlVdoo$default(RadioButtonColors radioButtonColors, long j, long j2, long j3, long j4, int i, Object obj) {
         if ((i & 1) != 0) {
             j = radioButtonColors.selectedColor;
         }
@@ -63,11 +63,11 @@ public final class RadioButtonColors {
         if ((i & 4) != 0) {
             j3 = radioButtonColors.disabledSelectedColor;
         }
-        return radioButtonColors.m2193copyjRlVdoo(j5, j6, j3, (i & 8) != 0 ? radioButtonColors.disabledUnselectedColor : j4);
+        return radioButtonColors.m2500copyjRlVdoo(j5, j6, j3, (i & 8) != 0 ? radioButtonColors.disabledUnselectedColor : j4);
     }
 
     /* renamed from: copy-jRlVdoo  reason: not valid java name */
-    public final RadioButtonColors m2193copyjRlVdoo(long j, long j2, long j3, long j4) {
+    public final RadioButtonColors m2500copyjRlVdoo(long j, long j2, long j3, long j4) {
         return new RadioButtonColors(j != 16 ? j : this.selectedColor, j2 != 16 ? j2 : this.unselectedColor, j3 != 16 ? j3 : this.disabledSelectedColor, j4 != 16 ? j4 : this.disabledUnselectedColor, null);
     }
 
@@ -93,13 +93,13 @@ public final class RadioButtonColors {
             composer.startReplaceGroup(350067971);
             ComposerKt.sourceInformation(composer, "240@10272L75");
             composer2 = composer;
-            rememberUpdatedState = SingleValueAnimationKt.m124animateColorAsStateeuL9pac(j2, AnimationSpecKt.tween$default(100, 0, null, 6, null), null, null, composer2, 48, 12);
+            rememberUpdatedState = SingleValueAnimationKt.m120animateColorAsStateeuL9pac(j2, AnimationSpecKt.tween$default(100, 0, null, 6, null), null, null, composer2, 48, 12);
             composer2.endReplaceGroup();
         } else {
             composer2 = composer;
             composer2.startReplaceGroup(350170674);
             ComposerKt.sourceInformation(composer2, "242@10377L28");
-            rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m4068boximpl(j2), composer2, 0);
+            rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m4527boximpl(j2), composer2, 0);
             composer2.endReplaceGroup();
         }
         if (ComposerKt.isTraceInProgress()) {
@@ -117,10 +117,10 @@ public final class RadioButtonColors {
             return false;
         }
         RadioButtonColors radioButtonColors = (RadioButtonColors) obj;
-        return Color.m4079equalsimpl0(this.selectedColor, radioButtonColors.selectedColor) && Color.m4079equalsimpl0(this.unselectedColor, radioButtonColors.unselectedColor) && Color.m4079equalsimpl0(this.disabledSelectedColor, radioButtonColors.disabledSelectedColor) && Color.m4079equalsimpl0(this.disabledUnselectedColor, radioButtonColors.disabledUnselectedColor);
+        return Color.m4538equalsimpl0(this.selectedColor, radioButtonColors.selectedColor) && Color.m4538equalsimpl0(this.unselectedColor, radioButtonColors.unselectedColor) && Color.m4538equalsimpl0(this.disabledSelectedColor, radioButtonColors.disabledSelectedColor) && Color.m4538equalsimpl0(this.disabledUnselectedColor, radioButtonColors.disabledUnselectedColor);
     }
 
     public int hashCode() {
-        return (((((Color.m4085hashCodeimpl(this.selectedColor) * 31) + Color.m4085hashCodeimpl(this.unselectedColor)) * 31) + Color.m4085hashCodeimpl(this.disabledSelectedColor)) * 31) + Color.m4085hashCodeimpl(this.disabledUnselectedColor);
+        return (((((Color.m4544hashCodeimpl(this.selectedColor) * 31) + Color.m4544hashCodeimpl(this.unselectedColor)) * 31) + Color.m4544hashCodeimpl(this.disabledSelectedColor)) * 31) + Color.m4544hashCodeimpl(this.disabledUnselectedColor);
     }
 }

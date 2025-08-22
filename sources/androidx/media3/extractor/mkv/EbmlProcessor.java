@@ -7,7 +7,7 @@ import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface EbmlProcessor {
     public static final int ELEMENT_TYPE_BINARY = 4;
     public static final int ELEMENT_TYPE_FLOAT = 5;
@@ -19,7 +19,7 @@ public interface EbmlProcessor {
     @Target({java.lang.annotation.ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface ElementType {
     }
 

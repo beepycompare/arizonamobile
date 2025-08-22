@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableTimeoutTimed<T> extends AbstractObservableWithUpstream<T, T> {
     final ObservableSource<? extends T> other;
     final Scheduler scheduler;
@@ -21,7 +21,7 @@ public final class ObservableTimeoutTimed<T> extends AbstractObservableWithUpstr
     final TimeUnit unit;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface TimeoutSupport {
         void onTimeout(long j);
     }
@@ -49,7 +49,7 @@ public final class ObservableTimeoutTimed<T> extends AbstractObservableWithUpstr
         this.source.subscribe(timeoutFallbackObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimeoutObserver<T> extends AtomicLong implements Observer<T>, Disposable, TimeoutSupport {
         private static final long serialVersionUID = 3764492702657003550L;
         final Observer<? super T> downstream;
@@ -130,7 +130,7 @@ public final class ObservableTimeoutTimed<T> extends AbstractObservableWithUpstr
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class TimeoutTask implements Runnable {
         final long idx;
         final TimeoutSupport parent;
@@ -146,7 +146,7 @@ public final class ObservableTimeoutTimed<T> extends AbstractObservableWithUpstr
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimeoutFallbackObserver<T> extends AtomicReference<Disposable> implements Observer<T>, Disposable, TimeoutSupport {
         private static final long serialVersionUID = 3764492702657003550L;
         final Observer<? super T> downstream;
@@ -232,7 +232,7 @@ public final class ObservableTimeoutTimed<T> extends AbstractObservableWithUpstr
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FallbackObserver<T> implements Observer<T> {
         final AtomicReference<Disposable> arbiter;
         final Observer<? super T> downstream;

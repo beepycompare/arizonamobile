@@ -12,7 +12,7 @@ import io.reactivex.internal.operators.single.SingleMap;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleZipArray<T, R> extends Single<R> {
     final SingleSource<? extends T>[] sources;
     final Function<? super Object[], ? extends R> zipper;
@@ -42,7 +42,7 @@ public final class SingleZipArray<T, R> extends Single<R> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ZipCoordinator<T, R> extends AtomicInteger implements Disposable {
         private static final long serialVersionUID = -5556924161382950569L;
         final SingleObserver<? super R> downstream;
@@ -115,7 +115,7 @@ public final class SingleZipArray<T, R> extends Single<R> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ZipSingleObserver<T> extends AtomicReference<Disposable> implements SingleObserver<T> {
         private static final long serialVersionUID = 3323743579927613702L;
         final int index;
@@ -146,7 +146,7 @@ public final class SingleZipArray<T, R> extends Single<R> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class SingletonArrayFunc implements Function<T, R> {
         SingletonArrayFunc() {
         }

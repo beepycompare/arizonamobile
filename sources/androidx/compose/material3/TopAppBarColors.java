@@ -29,32 +29,32 @@ public final class TopAppBarColors {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2656getContainerColor0d7_KjU() {
+    public final long m2963getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getScrolledContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2658getScrolledContainerColor0d7_KjU() {
+    public final long m2965getScrolledContainerColor0d7_KjU() {
         return this.scrolledContainerColor;
     }
 
     /* renamed from: getNavigationIconContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2657getNavigationIconContentColor0d7_KjU() {
+    public final long m2964getNavigationIconContentColor0d7_KjU() {
         return this.navigationIconContentColor;
     }
 
     /* renamed from: getTitleContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2659getTitleContentColor0d7_KjU() {
+    public final long m2966getTitleContentColor0d7_KjU() {
         return this.titleContentColor;
     }
 
     /* renamed from: getActionIconContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2655getActionIconContentColor0d7_KjU() {
+    public final long m2962getActionIconContentColor0d7_KjU() {
         return this.actionIconContentColor;
     }
 
     /* renamed from: copy-t635Npw$default  reason: not valid java name */
-    public static /* synthetic */ TopAppBarColors m2652copyt635Npw$default(TopAppBarColors topAppBarColors, long j, long j2, long j3, long j4, long j5, int i, Object obj) {
+    public static /* synthetic */ TopAppBarColors m2959copyt635Npw$default(TopAppBarColors topAppBarColors, long j, long j2, long j3, long j4, long j5, int i, Object obj) {
         if ((i & 1) != 0) {
             j = topAppBarColors.containerColor;
         }
@@ -62,17 +62,17 @@ public final class TopAppBarColors {
         if ((i & 2) != 0) {
             j2 = topAppBarColors.scrolledContainerColor;
         }
-        return topAppBarColors.m2654copyt635Npw(j6, j2, (i & 4) != 0 ? topAppBarColors.navigationIconContentColor : j3, (i & 8) != 0 ? topAppBarColors.titleContentColor : j4, (i & 16) != 0 ? topAppBarColors.actionIconContentColor : j5);
+        return topAppBarColors.m2961copyt635Npw(j6, j2, (i & 4) != 0 ? topAppBarColors.navigationIconContentColor : j3, (i & 8) != 0 ? topAppBarColors.titleContentColor : j4, (i & 16) != 0 ? topAppBarColors.actionIconContentColor : j5);
     }
 
     /* renamed from: copy-t635Npw  reason: not valid java name */
-    public final TopAppBarColors m2654copyt635Npw(long j, long j2, long j3, long j4, long j5) {
+    public final TopAppBarColors m2961copyt635Npw(long j, long j2, long j3, long j4, long j5) {
         return new TopAppBarColors(j != 16 ? j : this.containerColor, j2 != 16 ? j2 : this.scrolledContainerColor, j3 != 16 ? j3 : this.navigationIconContentColor, j4 != 16 ? j4 : this.titleContentColor, j5 != 16 ? j5 : this.actionIconContentColor, null);
     }
 
     /* renamed from: containerColor-vNxB06k$material3_release  reason: not valid java name */
-    public final long m2653containerColorvNxB06k$material3_release(float f) {
-        return ColorKt.m4129lerpjxsXWHM(this.containerColor, this.scrolledContainerColor, EasingKt.getFastOutLinearInEasing().transform(f));
+    public final long m2960containerColorvNxB06k$material3_release(float f) {
+        return ColorKt.m4588lerpjxsXWHM(this.containerColor, this.scrolledContainerColor, EasingKt.getFastOutLinearInEasing().transform(f));
     }
 
     public boolean equals(Object obj) {
@@ -83,10 +83,10 @@ public final class TopAppBarColors {
             return false;
         }
         TopAppBarColors topAppBarColors = (TopAppBarColors) obj;
-        return Color.m4079equalsimpl0(this.containerColor, topAppBarColors.containerColor) && Color.m4079equalsimpl0(this.scrolledContainerColor, topAppBarColors.scrolledContainerColor) && Color.m4079equalsimpl0(this.navigationIconContentColor, topAppBarColors.navigationIconContentColor) && Color.m4079equalsimpl0(this.titleContentColor, topAppBarColors.titleContentColor) && Color.m4079equalsimpl0(this.actionIconContentColor, topAppBarColors.actionIconContentColor);
+        return Color.m4538equalsimpl0(this.containerColor, topAppBarColors.containerColor) && Color.m4538equalsimpl0(this.scrolledContainerColor, topAppBarColors.scrolledContainerColor) && Color.m4538equalsimpl0(this.navigationIconContentColor, topAppBarColors.navigationIconContentColor) && Color.m4538equalsimpl0(this.titleContentColor, topAppBarColors.titleContentColor) && Color.m4538equalsimpl0(this.actionIconContentColor, topAppBarColors.actionIconContentColor);
     }
 
     public int hashCode() {
-        return (((((((Color.m4085hashCodeimpl(this.containerColor) * 31) + Color.m4085hashCodeimpl(this.scrolledContainerColor)) * 31) + Color.m4085hashCodeimpl(this.navigationIconContentColor)) * 31) + Color.m4085hashCodeimpl(this.titleContentColor)) * 31) + Color.m4085hashCodeimpl(this.actionIconContentColor);
+        return (((((((Color.m4544hashCodeimpl(this.containerColor) * 31) + Color.m4544hashCodeimpl(this.scrolledContainerColor)) * 31) + Color.m4544hashCodeimpl(this.navigationIconContentColor)) * 31) + Color.m4544hashCodeimpl(this.titleContentColor)) * 31) + Color.m4544hashCodeimpl(this.actionIconContentColor);
     }
 }

@@ -5,7 +5,7 @@ import io.reactivex.CompletableObserver;
 import io.reactivex.CompletableSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableDetach extends Completable {
     final CompletableSource source;
 
@@ -18,7 +18,7 @@ public final class CompletableDetach extends Completable {
         this.source.subscribe(new DetachCompletableObserver(completableObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DetachCompletableObserver implements CompletableObserver, Disposable {
         CompletableObserver downstream;
         Disposable upstream;

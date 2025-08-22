@@ -46,7 +46,7 @@ final class TooltipStateImpl implements TooltipState {
 
     @Override // androidx.compose.material3.TooltipState
     public void dismiss() {
-        getTransition().setTargetState$animation_core_release(false);
+        getTransition().setTargetState$animation_core(false);
     }
 
     @Override // androidx.compose.material3.TooltipState

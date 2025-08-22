@@ -57,7 +57,7 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KFunction;
 /* compiled from: SetupDialog.kt */
-@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0018\u0002\u001a1\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0007\u001ac\u0010\b\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\f\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u0012¨\u0006\u0013²\u0006\n\u0010\u0014\u001a\u00020\u0015X\u008a\u0084\u0002"}, d2 = {"SetupDialogRoute", "", "component", "Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;", "onBackClick", "Lkotlin/Function0;", "navigateToDownloadScreen", "(Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "SetupDialogContent", "isPrivacyAccepted", "", "updateSize", "", "onConfirm", "onDismiss", "onPolicy", "onTerms", "onAccept", "(ZLjava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "dialogs_release_web", "uiState", "Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogUiState;"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0018\u0002\u001a1\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0007\u001ac\u0010\b\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\f\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u0012¨\u0006\u0013²\u0006\n\u0010\u0014\u001a\u00020\u0015X\u008a\u0084\u0002"}, d2 = {"SetupDialogRoute", "", "component", "Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;", "onBackClick", "Lkotlin/Function0;", "navigateToDownloadScreen", "(Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "SetupDialogContent", "isPrivacyAccepted", "", "updateSize", "", "onConfirm", "onDismiss", "onPolicy", "onTerms", "onAccept", "(ZLjava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "dialogs_release", "uiState", "Lcom/miami/game/feature/download/dialog/ui/common/model/CommonDialogUiState;"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class SetupDialogKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -78,7 +78,7 @@ public final class SetupDialogKt {
         Intrinsics.checkNotNullParameter(onBackClick, "onBackClick");
         Intrinsics.checkNotNullParameter(navigateToDownloadScreen, "navigateToDownloadScreen");
         Composer startRestartGroup = composer.startRestartGroup(1304023394);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SetupDialogRoute)P(!1,2)47@2373L33,49@2468L198,49@2431L235,57@2707L34,60@2781L29,63@2856L20,64@2898L20,67@3040L21,68@3081L20,69@3122L19,62@2816L335:SetupDialog.kt#18sjrx");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SetupDialogRoute)N(component,onBackClick,navigateToDownloadScreen)47@2373L33,49@2468L198,49@2431L235,57@2707L34,60@2781L29,63@2856L20,64@2898L20,67@3040L21,68@3081L20,69@3122L19,62@2816L335:SetupDialog.kt#18sjrx");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
@@ -187,7 +187,7 @@ public final class SetupDialogKt {
         Intrinsics.checkNotNullParameter(onTerms, "onTerms");
         Intrinsics.checkNotNullParameter(onAccept, "onAccept");
         Composer startRestartGroup = composer.startRestartGroup(-1274880745);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SetupDialogContent)P(!1,6,2,3,4,5)86@3472L35,87@3585L1328,87@3512L1401:SetupDialog.kt#18sjrx");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SetupDialogContent)N(isPrivacyAccepted,updateSize,onConfirm,onDismiss,onPolicy,onTerms,onAccept)86@3472L35,87@3585L1328,87@3512L1401:SetupDialog.kt#18sjrx");
         if ((i & 6) == 0) {
             z2 = z;
             i2 = (startRestartGroup.changed(z2) ? 4 : 2) | i;
@@ -268,22 +268,22 @@ public final class SetupDialogKt {
             ComponentKt.AlertLabelDialog(composer2, 0);
             DescriptionTextKt.DescriptionText(str, composer2, 0);
             if (z) {
-                str2 = "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh";
-                str3 = "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo";
-                i2 = 693286680;
+                str2 = "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh";
+                str3 = "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo";
+                i2 = 844473419;
                 composer2.startReplaceGroup(970362851);
             } else {
                 composer2.startReplaceGroup(974034801);
                 ComposerKt.sourceInformation(composer2, "91@3696L570");
                 Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
-                ComposerKt.sourceInformationMarkerStart(composer2, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
-                MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m619spacedBy0680j_4(Dp.m6684constructorimpl(-Dp.m6684constructorimpl(12))), centerVertically, composer2, 54);
-                ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
-                int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
+                ComposerKt.sourceInformationMarkerStart(composer2, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
+                MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m691spacedBy0680j_4(Dp.m7251constructorimpl(-Dp.m7251constructorimpl(12))), centerVertically, composer2, 54);
+                ComposerKt.sourceInformationMarkerStart(composer2, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
+                int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer2, 0));
                 CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
                 Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, Modifier.Companion);
                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer2, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
                 if (!(composer2.getApplier() instanceof Applier)) {
                     ComposablesKt.invalidApplier();
                 }
@@ -293,16 +293,16 @@ public final class SetupDialogKt {
                 } else {
                     composer2.useNode();
                 }
-                Composer m3520constructorimpl = Updater.m3520constructorimpl(composer2);
-                Updater.m3527setimpl(m3520constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
+                Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                    m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                    m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                 }
-                Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                ComposerKt.sourceInformationMarkerStart(composer2, -407735110, "C101@5232L9:Row.kt#2w3rfo");
+                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                ComposerKt.sourceInformationMarkerStart(composer2, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer2, 1047564806, "C93@3860L93,95@3955L75,93@3836L194,98@4047L204:SetupDialog.kt#18sjrx");
                 ComposerKt.sourceInformationMarkerStart(composer2, 33792859, "CC(remember):SetupDialog.kt#9igjgp");
@@ -319,9 +319,9 @@ public final class SetupDialogKt {
                     composer2.updateRememberedValue(rememberedValue);
                 }
                 ComposerKt.sourceInformationMarkerEnd(composer2);
-                str3 = "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo";
-                str2 = "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh";
-                i2 = 693286680;
+                str3 = "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo";
+                str2 = "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh";
+                i2 = 844473419;
                 ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableLambdaKt.rememberComposableLambda(-1817021325, true, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda4
                     @Override // kotlin.jvm.functions.Function3
                     public final Object invoke(Object obj, Object obj2, Object obj3) {
@@ -342,12 +342,12 @@ public final class SetupDialogKt {
             composer2.endReplaceGroup();
             ComposerKt.sourceInformationMarkerStart(composer2, i2, str3);
             MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), composer2, 0);
-            ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, str2);
-            int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
+            ComposerKt.sourceInformationMarkerStart(composer2, -1159599143, str2);
+            int hashCode2 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer2, 0));
             CompositionLocalMap currentCompositionLocalMap2 = composer2.getCurrentCompositionLocalMap();
             Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer2, Modifier.Companion);
             Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer2, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
             if (!(composer2.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -357,16 +357,16 @@ public final class SetupDialogKt {
             } else {
                 composer2.useNode();
             }
-            Composer m3520constructorimpl2 = Updater.m3520constructorimpl(composer2);
-            Updater.m3527setimpl(m3520constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3527setimpl(m3520constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer2);
+            Updater.m3862setimpl(m3855constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl2.getInserting() || !Intrinsics.areEqual(m3520constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m3520constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m3520constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
+                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
+                m3855constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
             }
-            Updater.m3527setimpl(m3520constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-            ComposerKt.sourceInformationMarkerStart(composer2, -407735110, "C101@5232L9:Row.kt#2w3rfo");
+            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            ComposerKt.sourceInformationMarkerStart(composer2, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer2, 2071125742, "C107@4328L43,107@4303L187,113@4587L70,116@4659L238,113@4503L394:SetupDialog.kt#18sjrx");
             ComposerKt.sourceInformationMarkerStart(composer2, 1452284078, "CC(remember):SetupDialog.kt#9igjgp");
@@ -384,7 +384,7 @@ public final class SetupDialogKt {
                 composer2.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue2, ComposableSingletons$SetupDialogKt.INSTANCE.getLambda$1149507$dialogs_release_web(), composer2, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue2, ComposableSingletons$SetupDialogKt.INSTANCE.getLambda$1149507$dialogs_release(), composer2, 48);
             boolean z2 = ((Boolean) mutableState.getValue()).booleanValue() || z;
             ComposerKt.sourceInformationMarkerStart(composer2, 1452292393, "CC(remember):SetupDialog.kt#9igjgp");
             boolean changed2 = composer2.changed(function04) | composer2.changed(function05);
@@ -471,7 +471,7 @@ public final class SetupDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1429769364, i, -1, "com.miami.game.feature.download.dialog.ui.setup.SetupDialogContent.<anonymous>.<anonymous>.<anonymous> (SetupDialog.kt:117)");
             }
-            TextKt.m2497Text4IGK_g("ЗАГРУЗИТЬ", (Modifier) null, (((Boolean) mutableState.getValue()).booleanValue() || z) ? Color.Companion.m4115getWhite0d7_KjU() : Color.m4077copywmQWz5c$default(Color.Companion.m4115getWhite0d7_KjU(), 0.4f, 0.0f, 0.0f, 0.0f, 14, null), 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 65530);
+            TextKt.m2804Text4IGK_g("ЗАГРУЗИТЬ", (Modifier) null, (((Boolean) mutableState.getValue()).booleanValue() || z) ? Color.Companion.m4574getWhite0d7_KjU() : Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.4f, 0.0f, 0.0f, 0.0f, 14, null), 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 65530);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

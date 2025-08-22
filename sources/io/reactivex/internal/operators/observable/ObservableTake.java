@@ -6,7 +6,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableTake<T> extends AbstractObservableWithUpstream<T, T> {
     final long limit;
 
@@ -20,7 +20,7 @@ public final class ObservableTake<T> extends AbstractObservableWithUpstream<T, T
         this.source.subscribe(new TakeObserver(observer, this.limit));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TakeObserver<T> implements Observer<T>, Disposable {
         boolean done;
         final Observer<? super T> downstream;

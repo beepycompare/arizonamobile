@@ -1,14 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+import java.util.ArrayList;
+import java.util.List;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class Lh extends AbstractC0612th {
-    public Lh(Z6 z6) {
-        super(z6);
-    }
+public final class Lh {
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0612th, io.appmetrica.analytics.impl.InterfaceC0637uh
-    public final boolean a(Boolean bool) {
-        return !this.f1067a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
+    /* renamed from: a  reason: collision with root package name */
+    public final List f546a;
+    public final List b;
+    public final JSONObject c;
+
+    public Lh(ArrayList arrayList, ArrayList arrayList2, JSONObject jSONObject) {
+        this.f546a = arrayList;
+        this.b = arrayList2;
+        this.c = jSONObject;
     }
 }

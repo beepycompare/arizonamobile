@@ -2,7 +2,7 @@ package io.reactivex.internal.util;
 
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ConnectConsumer implements Consumer<Disposable> {
     public Disposable disposable;
 

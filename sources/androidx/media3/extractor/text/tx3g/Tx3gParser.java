@@ -19,7 +19,7 @@ import com.google.common.collect.ImmutableList;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Tx3gParser implements SubtitleParser {
     public static final int CUE_REPLACEMENT_BEHAVIOR = 2;
     private static final int DEFAULT_COLOR = -1;

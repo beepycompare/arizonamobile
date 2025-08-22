@@ -15,8 +15,8 @@ import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [T, V] */
 /* compiled from: Animatable.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00030\u0001\"\u0004\b\u0000\u0010\u0002\"\b\b\u0001\u0010\u0003*\u00020\u0004H\u008a@"}, d2 = {"<anonymous>", "Landroidx/compose/animation/core/AnimationResult;", ExifInterface.GPS_DIRECTION_TRUE, ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "Landroidx/compose/animation/core/AnimationVector;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.animation.core.Animatable$runAnimation$2", f = "Animatable.kt", i = {0, 0}, l = {305}, m = "invokeSuspend", n = {"endState", "clampingNeeded"}, s = {"L$0", "L$1"})
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00030\u0001\"\u0004\b\u0000\u0010\u0002\"\b\b\u0001\u0010\u0003*\u00020\u0004H\n"}, d2 = {"<anonymous>", "Landroidx/compose/animation/core/AnimationResult;", ExifInterface.GPS_DIRECTION_TRUE, ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "Landroidx/compose/animation/core/AnimationVector;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.animation.core.Animatable$runAnimation$2", f = "Animatable.kt", i = {0, 0}, l = {308}, m = "invokeSuspend", n = {"endState", "clampingNeeded"}, s = {"L$0", "L$1"})
 /* loaded from: classes.dex */
 public final class Animatable$runAnimation$2<T, V> extends SuspendLambda implements Function1<Continuation<? super AnimationResult<T, V>>, Object> {
     final /* synthetic */ Animation<T, V> $animation;
@@ -63,10 +63,10 @@ public final class Animatable$runAnimation$2<T, V> extends SuspendLambda impleme
         try {
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                this.this$0.getInternalState$animation_core_release().setVelocityVector$animation_core_release((V) ((AnimationVector) this.this$0.getTypeConverter().getConvertToVector().invoke(this.$initialVelocity)));
+                this.this$0.getInternalState$animation_core().setVelocityVector$animation_core((V) ((AnimationVector) this.this$0.getTypeConverter().getConvertToVector().invoke(this.$initialVelocity)));
                 this.this$0.setTargetValue(this.$animation.getTargetValue());
                 this.this$0.setRunning(true);
-                final AnimationState copy$default = AnimationStateKt.copy$default((AnimationState) this.this$0.getInternalState$animation_core_release(), (Object) null, (AnimationVector) null, 0L, Long.MIN_VALUE, false, 23, (Object) null);
+                final AnimationState copy$default = AnimationStateKt.copy$default((AnimationState) this.this$0.getInternalState$animation_core(), (Object) null, (AnimationVector) null, 0L, Long.MIN_VALUE, false, 23, (Object) null);
                 final Ref.BooleanRef booleanRef2 = new Ref.BooleanRef();
                 Animation<T, V> animation = this.$animation;
                 long j = this.$startTime;
@@ -75,39 +75,12 @@ public final class Animatable$runAnimation$2<T, V> extends SuspendLambda impleme
                 this.L$0 = copy$default;
                 this.L$1 = booleanRef2;
                 this.label = 1;
-                if (SuspendAnimationKt.animate(copy$default, animation, j, new Function1<AnimationScope<T, V>, Unit>() { // from class: androidx.compose.animation.core.Animatable$runAnimation$2.1
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    /* JADX WARN: Multi-variable type inference failed */
-                    {
-                        super(1);
-                    }
-
+                if (SuspendAnimationKt.animate(copy$default, animation, j, new Function1() { // from class: androidx.compose.animation.core.Animatable$runAnimation$2$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(Object obj2) {
-                        invoke((AnimationScope) ((AnimationScope) obj2));
-                        return Unit.INSTANCE;
-                    }
-
-                    /* JADX WARN: Multi-variable type inference failed */
-                    public final void invoke(AnimationScope<T, V> animationScope) {
-                        Object clampToBounds;
-                        SuspendAnimationKt.updateState(animationScope, animatable.getInternalState$animation_core_release());
-                        clampToBounds = animatable.clampToBounds(animationScope.getValue());
-                        if (!Intrinsics.areEqual(clampToBounds, animationScope.getValue())) {
-                            animatable.getInternalState$animation_core_release().setValue$animation_core_release(clampToBounds);
-                            copy$default.setValue$animation_core_release(clampToBounds);
-                            Function1<Animatable<T, V>, Unit> function12 = function1;
-                            if (function12 != null) {
-                                function12.invoke(animatable);
-                            }
-                            animationScope.cancelAnimation();
-                            booleanRef2.element = true;
-                            return;
-                        }
-                        Function1<Animatable<T, V>, Unit> function13 = function1;
-                        if (function13 != null) {
-                            function13.invoke(animatable);
-                        }
+                    public final Object invoke(Object obj2) {
+                        Unit invokeSuspend$lambda$0;
+                        invokeSuspend$lambda$0 = Animatable$runAnimation$2.invokeSuspend$lambda$0(Animatable.this, copy$default, function1, booleanRef2, (AnimationScope) obj2);
+                        return invokeSuspend$lambda$0;
                     }
                 }, this) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -128,5 +101,25 @@ public final class Animatable$runAnimation$2<T, V> extends SuspendLambda impleme
             this.this$0.endAnimation();
             throw e;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
+    public static final Unit invokeSuspend$lambda$0(Animatable animatable, AnimationState animationState, Function1 function1, Ref.BooleanRef booleanRef, AnimationScope animationScope) {
+        Object clampToBounds;
+        SuspendAnimationKt.updateState(animationScope, animatable.getInternalState$animation_core());
+        clampToBounds = animatable.clampToBounds(animationScope.getValue());
+        if (!Intrinsics.areEqual(clampToBounds, animationScope.getValue())) {
+            animatable.getInternalState$animation_core().setValue$animation_core(clampToBounds);
+            animationState.setValue$animation_core(clampToBounds);
+            if (function1 != null) {
+                function1.invoke(animatable);
+            }
+            animationScope.cancelAnimation();
+            booleanRef.element = true;
+        } else if (function1 != null) {
+            function1.invoke(animatable);
+        }
+        return Unit.INSTANCE;
     }
 }

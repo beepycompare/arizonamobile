@@ -1,36 +1,37 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback;
-import java.util.concurrent.TimeUnit;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import java.nio.charset.Charset;
+import java.util.Map;
+import kotlin.text.Charsets;
 /* loaded from: classes4.dex */
-public final class Ye implements Pc {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Oc f735a;
-    public final Oc b;
-
-    public Ye(final M9 m9, C0212dh c0212dh, J4 j4, C0386kf c0386kf) {
-        Oc oc = new Oc(c0212dh, j4, c0386kf);
-        this.f735a = oc;
-        this.b = oc;
-        if (oc.b()) {
-            return;
+public final class Ye implements Converter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0499p6[] fromModel(Map<String, String> map) {
+        int size = map.size();
+        C0499p6[] c0499p6Arr = new C0499p6[size];
+        int i = 0;
+        for (int i2 = 0; i2 < size; i2++) {
+            c0499p6Arr[i2] = new C0499p6();
         }
-        Ia.j().a().subscribe(TimeUnit.SECONDS.toMillis(AbstractC0177c8.f796a.longValue()), Ia.j().w().a(), new ActivationBarrierCallback() { // from class: io.appmetrica.analytics.impl.Ye$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback
-            public final void onWaitFinished() {
-                Ye.a(Ye.this, m9);
-            }
-        });
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            C0499p6 c0499p6 = c0499p6Arr[i];
+            Charset charset = Charsets.UTF_8;
+            c0499p6.f1008a = entry.getKey().getBytes(charset);
+            c0499p6Arr[i].b = entry.getValue().getBytes(charset);
+            i++;
+        }
+        return c0499p6Arr;
     }
 
-    @Override // io.appmetrica.analytics.impl.Pc
-    public final Y8 a() {
-        return this.b;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        C0499p6[] c0499p6Arr = (C0499p6[]) obj;
+        throw new UnsupportedOperationException();
     }
 
-    public static final void a(Ye ye, M9 m9) {
-        ye.f735a.a();
-        ((F5) m9.a()).e();
+    public final Map<String, String> a(C0499p6[] c0499p6Arr) {
+        throw new UnsupportedOperationException();
     }
 }

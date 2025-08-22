@@ -1,34 +1,39 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.ContentResolver;
-import android.database.Cursor;
-import android.net.Uri;
-import android.text.TextUtils;
-import java.util.concurrent.Callable;
+import io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider;
 /* loaded from: classes4.dex */
-public final class Ta implements Callable {
+public final class Ta implements HostRetryInfoProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Ua f650a;
+    public final C0508pf f660a;
+    public final EnumC0381ke b;
 
-    public Ta(Ua ua) {
-        this.f650a = ua;
+    public Ta(C0508pf c0508pf, EnumC0381ke enumC0381ke) {
+        this.f660a = c0508pf;
+        this.b = enumC0381ke;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        Uri parse = Uri.parse("content://com.huawei.appmarket.commondata/item/5");
-        ContentResolver contentResolver = this.f650a.f668a.getContentResolver();
-        Ua ua = this.f650a;
-        ua.b = contentResolver.query(parse, null, null, new String[]{ua.f668a.getPackageName()}, null);
-        Cursor cursor = this.f650a.b;
-        if (cursor == null || !cursor.moveToFirst()) {
-            return null;
-        }
-        String string = this.f650a.b.getString(0);
-        if (TextUtils.isEmpty(string)) {
-            return null;
-        }
-        return new Ag(string, this.f650a.b.getLong(1), this.f650a.b.getLong(2), EnumC0761zg.d);
+    public final EnumC0381ke a() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
+    public final long getLastAttemptTimeSeconds() {
+        return this.f660a.a(this.b, 0L);
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
+    public final int getNextSendAttemptNumber() {
+        return this.f660a.a(this.b, 1);
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
+    public final void saveLastAttemptTimeSeconds(long j) {
+        this.f660a.b(this.b, j).b();
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
+    public final void saveNextSendAttemptNumber(int i) {
+        this.f660a.b(this.b, i).b();
     }
 }

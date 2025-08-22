@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.concurrent.CancellationException;
 import kotlin.Deprecated;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -38,7 +39,7 @@ import kotlinx.coroutines.CancellableContinuationImpl;
 import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Job;
 /* compiled from: SuspendingPointerInputFilter.kt */
-@Metadata(d1 = {"\u0000\u0096\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\b\u0000\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u0001\\BX\b\u0017\u0012\b\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u0012\b\u0010\u0007\u001a\u0004\u0018\u00010\u0006\u0012\u0012\u0010\b\u001a\u000e\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u0006\u0018\u00010\t\u0012'\u0010\n\u001a#\b\u0001\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0\f\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u000b¢\u0006\u0002\b\u000e¢\u0006\u0002\u0010\u000fB;\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u0006\u0012\u0014\b\u0002\u0010\b\u001a\u000e\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u0006\u0018\u00010\t\u0012\u0006\u0010\u0010\u001a\u00020\u0011¢\u0006\u0002\u0010\u0012J=\u0010F\u001a\u0002HG\"\u0004\b\u0000\u0010G2'\u0010H\u001a#\b\u0001\u0012\u0004\u0012\u00020I\u0012\n\u0012\b\u0012\u0004\u0012\u0002HG0\f\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u000b¢\u0006\u0002\b\u000eH\u0096@¢\u0006\u0002\u0010JJ\u0018\u0010K\u001a\u00020\r2\u0006\u0010L\u001a\u00020\u001a2\u0006\u0010M\u001a\u00020NH\u0002J-\u0010O\u001a\u00020\r2\u0006\u0010M\u001a\u00020N2\u001a\u0010H\u001a\u0016\u0012\f\u0012\n\u0012\u0002\b\u00030!R\u00020\u0000\u0012\u0004\u0012\u00020\r0PH\u0082\bJ\b\u0010Q\u001a\u00020\rH\u0016J\b\u0010R\u001a\u00020\rH\u0016J\b\u0010S\u001a\u00020\rH\u0016J*\u0010T\u001a\u00020\r2\u0006\u0010L\u001a\u00020\u001a2\u0006\u0010M\u001a\u00020N2\u0006\u0010U\u001a\u00020\u0017H\u0016ø\u0001\u0000¢\u0006\u0004\bV\u0010WJ\b\u0010X\u001a\u00020\rH\u0016J\b\u0010Y\u001a\u00020\rH\u0016J?\u0010Z\u001a\u00020\r2\b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\b\u0010\u0007\u001a\u0004\u0018\u00010\u00062\u0012\u0010\b\u001a\u000e\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u0006\u0018\u00010\t2\u0006\u0010\u0010\u001a\u00020\u0011H\u0000¢\u0006\u0004\b[\u0010\u0012R3\u0010\u0013\u001a%\b\u0001\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0\f\u0012\u0006\u0012\u0004\u0018\u00010\u0006\u0018\u00010\u000b¢\u0006\u0002\b\u000eX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0014R\u000e\u0010\u0015\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0016\u001a\u00020\u0017X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001b\u001a\u00020\u001c8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001eR\u001c\u0010\u001f\u001a\u0010\u0012\f\u0012\n\u0012\u0002\b\u00030!R\u00020\u00000 X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\"\u001a\u00020#8VX\u0096\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b$\u0010%R\u0014\u0010&\u001a\u00020\u001c8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b'\u0010\u001eR\u001a\u0010(\u001a\u00020)X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-R\u0010\u0010\u0005\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\b\u001a\u000e\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u0006\u0018\u00010\tX\u0082\u000e¢\u0006\u0004\n\u0002\u0010.R\u0010\u0010/\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u00100\u001a\u0010\u0012\f\u0012\n\u0012\u0002\b\u00030!R\u00020\u00000 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R$\u0010\u0010\u001a\u00020\u00112\u0006\u00102\u001a\u00020\u00118V@VX\u0096\u000e¢\u0006\f\u001a\u0004\b3\u00104\"\u0004\b5\u00106Rl\u00107\u001a#\b\u0001\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0\f\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u000b¢\u0006\u0002\b\u000e2'\u00102\u001a#\b\u0001\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0\f\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u000b¢\u0006\u0002\b\u000e8V@VX\u0097\u000e¢\u0006\u0012\u0012\u0004\b8\u00109\u001a\u0004\b:\u0010;\"\u0004\b<\u0010=R\u0010\u0010>\u001a\u0004\u0018\u00010?X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010@\u001a\u00020\u00178VX\u0096\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\bA\u0010%R\u0014\u0010B\u001a\u00020C8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bD\u0010E\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006]"}, d2 = {"Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNode;", "Landroidx/compose/ui/input/pointer/PointerInputScope;", "Landroidx/compose/ui/unit/Density;", "key1", "", "key2", UserMetadata.KEYDATA_FILENAME, "", "pointerInputEvent", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V", "pointerInputEventHandler", "Landroidx/compose/ui/input/pointer/PointerInputEventHandler;", "(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;Landroidx/compose/ui/input/pointer/PointerInputEventHandler;)V", "_deprecatedPointerInputHandler", "Lkotlin/jvm/functions/Function2;", "_pointerInputEventHandler", "boundsSize", "Landroidx/compose/ui/unit/IntSize;", "J", "currentEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "density", "", "getDensity", "()F", "dispatchingPointerHandlers", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;", "extendedTouchPadding", "Landroidx/compose/ui/geometry/Size;", "getExtendedTouchPadding-NH-jbRc", "()J", "fontScale", "getFontScale", "interceptOutOfBoundsChildEvents", "", "getInterceptOutOfBoundsChildEvents", "()Z", "setInterceptOutOfBoundsChildEvents", "(Z)V", "[Ljava/lang/Object;", "lastPointerEvent", "pointerHandlers", "pointerHandlersLock", "value", "getPointerInputEventHandler", "()Landroidx/compose/ui/input/pointer/PointerInputEventHandler;", "setPointerInputEventHandler", "(Landroidx/compose/ui/input/pointer/PointerInputEventHandler;)V", "pointerInputHandler", "getPointerInputHandler$annotations", "()V", "getPointerInputHandler", "()Lkotlin/jvm/functions/Function2;", "setPointerInputHandler", "(Lkotlin/jvm/functions/Function2;)V", "pointerInputJob", "Lkotlinx/coroutines/Job;", "size", "getSize-YbymL2g", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "getViewConfiguration", "()Landroidx/compose/ui/platform/ViewConfiguration;", "awaitPointerEventScope", "R", "block", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "dispatchPointerEvent", "pointerEvent", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "forEachCurrentPointerHandler", "Lkotlin/Function1;", "onCancelPointerInput", "onDensityChange", "onDetach", "onPointerEvent", "bounds", "onPointerEvent-H0pRuoY", "(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "onViewConfigurationChange", "resetPointerInputHandler", "update", "update$ui_release", "PointerEventHandlerCoroutine", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u009c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0012\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u0001_B=\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u0006\u0012\u0014\b\u0002\u0010\b\u001a\u000e\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u0006\u0018\u00010\t\u0012\u0006\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\f\u0010\rBZ\b\u0017\u0012\b\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u0012\b\u0010\u0007\u001a\u0004\u0018\u00010\u0006\u0012\u0012\u0010\b\u001a\u000e\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u0006\u0018\u00010\t\u0012'\u0010\u000e\u001a#\b\u0001\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u000f¢\u0006\u0002\b\u0012¢\u0006\u0004\b\f\u0010\u0013J\b\u0010I\u001a\u00020\u0011H\u0016J\b\u0010J\u001a\u00020\u0011H\u0016J\b\u0010K\u001a\u00020\u0011H\u0016J\b\u0010L\u001a\u00020\u0011H\u0016J?\u0010M\u001a\u00020\u00112\b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\b\u0010\u0007\u001a\u0004\u0018\u00010\u00062\u0012\u0010\b\u001a\u000e\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u0006\u0018\u00010\t2\u0006\u0010\n\u001a\u00020\u000bH\u0000¢\u0006\u0004\bN\u0010\rJ-\u0010O\u001a\u00020\u00112\u0006\u0010P\u001a\u00020Q2\u001a\u0010R\u001a\u0016\u0012\f\u0012\n\u0012\u0002\b\u000308R\u00020\u0000\u0012\u0004\u0012\u00020\u00110SH\u0082\bJ\u0018\u0010T\u001a\u00020\u00112\u0006\u0010U\u001a\u0002052\u0006\u0010P\u001a\u00020QH\u0002J'\u0010V\u001a\u00020\u00112\u0006\u0010U\u001a\u0002052\u0006\u0010P\u001a\u00020Q2\u0006\u0010W\u001a\u00020/H\u0016¢\u0006\u0004\bX\u0010YJ\b\u0010Z\u001a\u00020\u0011H\u0016J=\u0010[\u001a\u0002H\\\"\u0004\b\u0000\u0010\\2'\u0010R\u001a#\b\u0001\u0012\u0004\u0012\u00020]\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\\0\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u000f¢\u0006\u0002\b\u0012H\u0096@¢\u0006\u0002\u0010^R\u0010\u0010\u0005\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\b\u001a\u000e\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u0006\u0018\u00010\tX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0014R3\u0010\u0015\u001a%\b\u0001\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0006\u0018\u00010\u000f¢\u0006\u0002\b\u0012X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0016R\u000e\u0010\u0017\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000Rl\u0010\u0019\u001a#\b\u0001\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u000f¢\u0006\u0002\b\u00122'\u0010\u0018\u001a#\b\u0001\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u000f¢\u0006\u0002\b\u00128V@VX\u0097\u000e¢\u0006\u0012\u0012\u0004\b\u001a\u0010\u001b\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR$\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0018\u001a\u00020\u000b8V@VX\u0096\u000e¢\u0006\f\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#R\u0014\u0010$\u001a\u00020%8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b&\u0010'R\u0014\u0010(\u001a\u00020%8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b)\u0010'R\u0014\u0010*\u001a\u00020+8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b,\u0010-R\u0014\u0010.\u001a\u00020/8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b0\u00101R\u0010\u00102\u001a\u0004\u0018\u000103X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u000205X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u00106\u001a\u0010\u0012\f\u0012\n\u0012\u0002\b\u000308R\u00020\u000007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00109\u001a\u00060\u0006j\u0002`:X\u0082\u0004¢\u0006\u0004\n\u0002\u0010;R\u001c\u0010<\u001a\u0010\u0012\f\u0012\n\u0012\u0002\b\u000308R\u00020\u000007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010=\u001a\u0004\u0018\u000105X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010>\u001a\u00020/X\u0082\u000e¢\u0006\u0004\n\u0002\u0010?R\u0014\u0010@\u001a\u00020A8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bB\u00101R\u001a\u0010C\u001a\u00020DX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bE\u0010F\"\u0004\bG\u0010H¨\u0006`"}, d2 = {"Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNode;", "Landroidx/compose/ui/input/pointer/PointerInputScope;", "Landroidx/compose/ui/unit/Density;", "key1", "", "key2", UserMetadata.KEYDATA_FILENAME, "", "pointerInputEventHandler", "Landroidx/compose/ui/input/pointer/PointerInputEventHandler;", "<init>", "(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;Landroidx/compose/ui/input/pointer/PointerInputEventHandler;)V", "pointerInputEvent", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V", "[Ljava/lang/Object;", "_deprecatedPointerInputHandler", "Lkotlin/jvm/functions/Function2;", "_pointerInputEventHandler", "value", "pointerInputHandler", "getPointerInputHandler$annotations", "()V", "getPointerInputHandler", "()Lkotlin/jvm/functions/Function2;", "setPointerInputHandler", "(Lkotlin/jvm/functions/Function2;)V", "getPointerInputEventHandler", "()Landroidx/compose/ui/input/pointer/PointerInputEventHandler;", "setPointerInputEventHandler", "(Landroidx/compose/ui/input/pointer/PointerInputEventHandler;)V", "density", "", "getDensity", "()F", "fontScale", "getFontScale", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "getViewConfiguration", "()Landroidx/compose/ui/platform/ViewConfiguration;", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g", "()J", "pointerInputJob", "Lkotlinx/coroutines/Job;", "currentEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "pointerHandlers", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;", "pointerHandlersLock", "Landroidx/compose/ui/platform/SynchronizedObject;", "Ljava/lang/Object;", "dispatchingPointerHandlers", "lastPointerEvent", "boundsSize", "J", "extendedTouchPadding", "Landroidx/compose/ui/geometry/Size;", "getExtendedTouchPadding-NH-jbRc", "interceptOutOfBoundsChildEvents", "", "getInterceptOutOfBoundsChildEvents", "()Z", "setInterceptOutOfBoundsChildEvents", "(Z)V", "onDetach", "onDensityChange", "onViewConfigurationChange", "resetPointerInputHandler", "update", "update$ui_release", "forEachCurrentPointerHandler", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "block", "Lkotlin/Function1;", "dispatchPointerEvent", "pointerEvent", "onPointerEvent", "bounds", "onPointerEvent-H0pRuoY", "(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "onCancelPointerInput", "awaitPointerEventScope", "R", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "PointerEventHandlerCoroutine", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node implements SuspendingPointerInputModifierNode, PointerInputScope, Density {
     public static final int $stable = 0;
@@ -57,7 +58,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
     private Job pointerInputJob;
 
     /* compiled from: SuspendingPointerInputFilter.kt */
-    @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -100,7 +101,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
         this.pointerHandlers = mutableVector;
         this.pointerHandlersLock = mutableVector;
         this.dispatchingPointerHandlers = new MutableVector<>(new PointerEventHandlerCoroutine[16], 0);
-        this.boundsSize = IntSize.Companion.m6860getZeroYbymL2g();
+        this.boundsSize = IntSize.Companion.m7427getZeroYbymL2g();
     }
 
     @Deprecated(message = "Exists to maintain compatibility with previous API shape")
@@ -155,16 +156,16 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
 
     @Override // androidx.compose.ui.input.pointer.PointerInputScope
     /* renamed from: getSize-YbymL2g */
-    public long mo380getSizeYbymL2g() {
+    public long mo410getSizeYbymL2g() {
         return this.boundsSize;
     }
 
     @Override // androidx.compose.ui.input.pointer.PointerInputScope
     /* renamed from: getExtendedTouchPadding-NH-jbRc */
-    public long mo379getExtendedTouchPaddingNHjbRc() {
-        long j = mo390toSizeXkaWNTQ(getViewConfiguration().mo5622getMinimumTouchTargetSizeMYxV2XQ());
-        long mo380getSizeYbymL2g = mo380getSizeYbymL2g();
-        return Size.m3897constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j >> 32)) - ((int) (mo380getSizeYbymL2g >> 32))) / 2.0f) << 32) | (Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j & 4294967295L)) - ((int) (mo380getSizeYbymL2g & 4294967295L))) / 2.0f) & 4294967295L));
+    public long mo409getExtendedTouchPaddingNHjbRc() {
+        long j = mo420toSizeXkaWNTQ(getViewConfiguration().mo6161getMinimumTouchTargetSizeMYxV2XQ());
+        long mo410getSizeYbymL2g = mo410getSizeYbymL2g();
+        return Size.m4353constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j >> 32)) - ((int) (mo410getSizeYbymL2g >> 32))) / 2.0f) << 32) | (Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j & 4294967295L)) - ((int) (mo410getSizeYbymL2g & 4294967295L))) / 2.0f) & 4294967295L));
     }
 
     @Override // androidx.compose.ui.input.pointer.PointerInputScope
@@ -240,7 +241,9 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
                 for (int i2 = 0; i2 < size; i2++) {
                     function1.invoke(pointerEventHandlerCoroutineArr[i2]);
                 }
-            } else if (i == 3) {
+            } else if (i != 3) {
+                throw new NoWhenBranchMatchedException();
+            } else {
                 MutableVector<PointerEventHandlerCoroutine<?>> mutableVector3 = this.dispatchingPointerHandlers;
                 int size2 = mutableVector3.getSize() - 1;
                 PointerEventHandlerCoroutine<?>[] pointerEventHandlerCoroutineArr2 = mutableVector3.content;
@@ -258,7 +261,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo217onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo227onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         Job launch$default;
         this.boundsSize = j;
         if (pointerEventPass == PointerEventPass.Initial) {
@@ -304,9 +307,9 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
                 int size2 = changes2.size();
                 for (int i2 = 0; i2 < size2; i2++) {
                     PointerInputChange pointerInputChange = changes2.get(i2);
-                    long m5311getIdJ3iCeTQ = pointerInputChange.m5311getIdJ3iCeTQ();
-                    long m5313getPositionF1C5BW0 = pointerInputChange.m5313getPositionF1C5BW0();
-                    arrayList.add(new PointerInputChange(m5311getIdJ3iCeTQ, pointerInputChange.getUptimeMillis(), m5313getPositionF1C5BW0, false, pointerInputChange.getPressure(), pointerInputChange.getUptimeMillis(), pointerInputChange.m5313getPositionF1C5BW0(), pointerInputChange.getPressed(), pointerInputChange.getPressed(), pointerInputChange.m5316getTypeT8wyACA(), 0L, 1024, (DefaultConstructorMarker) null));
+                    long m5824getIdJ3iCeTQ = pointerInputChange.m5824getIdJ3iCeTQ();
+                    long m5826getPositionF1C5BW0 = pointerInputChange.m5826getPositionF1C5BW0();
+                    arrayList.add(new PointerInputChange(m5824getIdJ3iCeTQ, pointerInputChange.getUptimeMillis(), m5826getPositionF1C5BW0, false, pointerInputChange.getPressure(), pointerInputChange.getUptimeMillis(), pointerInputChange.m5826getPositionF1C5BW0(), pointerInputChange.getPressed(), pointerInputChange.getPressed(), pointerInputChange.m5829getTypeT8wyACA(), 0L, 1024, (DefaultConstructorMarker) null));
                 }
                 PointerEvent pointerEvent2 = new PointerEvent(arrayList);
                 this.currentEvent = pointerEvent2;
@@ -321,7 +324,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: SuspendingPointerInputFilter.kt */
-    @Metadata(d1 = {"\u0000¦\u0001\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\b\u0082\u0004\u0018\u0000*\u0004\b\u0000\u0010\u00012\u00020\u00022\u00020\u00032\b\u0012\u0004\u0012\u0002H\u00010\u0004B\u0013\u0012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004¢\u0006\u0002\u0010\u0006J\u0016\u0010$\u001a\u00020\u000e2\u0006\u0010%\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010&J\u0010\u0010'\u001a\u00020(2\b\u0010)\u001a\u0004\u0018\u00010*J\u0016\u0010+\u001a\u00020(2\u0006\u0010,\u001a\u00020\u000e2\u0006\u0010%\u001a\u00020\bJ\u001b\u0010-\u001a\u00020(2\f\u0010.\u001a\b\u0012\u0004\u0012\u00028\u00000/H\u0016¢\u0006\u0002\u00100JE\u00101\u001a\u0002H2\"\u0004\b\u0001\u001022\u0006\u00103\u001a\u0002042'\u00105\u001a#\b\u0001\u0012\u0004\u0012\u00020\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u0002H20\u0004\u0012\u0006\u0012\u0004\u0018\u00010706¢\u0006\u0002\b8H\u0096@¢\u0006\u0002\u00109JG\u0010:\u001a\u0004\u0018\u0001H2\"\u0004\b\u0001\u001022\u0006\u00103\u001a\u0002042'\u00105\u001a#\b\u0001\u0012\u0004\u0012\u00020\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u0002H20\u0004\u0012\u0006\u0012\u0004\u0018\u00010706¢\u0006\u0002\b8H\u0096@¢\u0006\u0002\u00109J\u0017\u0010;\u001a\u00020<*\u00020=H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\b>\u0010?J\u0017\u0010;\u001a\u00020<*\u00020@H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\bA\u0010BJ\u0017\u0010C\u001a\u00020=*\u00020@H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\bD\u0010EJ\u001a\u0010C\u001a\u00020=*\u00020\u0012H\u0097\u0001ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\bF\u0010GJ\u001a\u0010C\u001a\u00020=*\u00020<H\u0097\u0001ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\bF\u0010HJ\u0017\u0010I\u001a\u00020J*\u00020\u0016H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\bK\u0010LJ\u0017\u0010M\u001a\u00020\u0012*\u00020=H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\bN\u0010GJ\u0017\u0010M\u001a\u00020\u0012*\u00020@H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\bO\u0010EJ\r\u0010P\u001a\u00020Q*\u00020RH\u0097\u0001J\u0017\u0010S\u001a\u00020\u0016*\u00020JH\u0097\u0001ø\u0001\u0000¢\u0006\u0004\bT\u0010LJ\u0017\u0010U\u001a\u00020@*\u00020=H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\bV\u0010WJ\u001a\u0010U\u001a\u00020@*\u00020\u0012H\u0097\u0001ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\bX\u0010WJ\u001a\u0010U\u001a\u00020@*\u00020<H\u0097\u0001ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\bX\u0010YR\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0005\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\u00020\nX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0014\u0010\r\u001a\u00020\u000e8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010R\u0014\u0010\u0011\u001a\u00020\u00128\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0014R\u001a\u0010\u0015\u001a\u00020\u00168VX\u0096\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0018R\u0014\u0010\u0019\u001a\u00020\u00128\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u0014R\u0016\u0010\u001b\u001a\n\u0012\u0004\u0012\u00020\u000e\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001d\u001a\u00020\u001e8VX\u0096\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\u001f\u0010\u0018R\u0014\u0010 \u001a\u00020!8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\"\u0010#\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006Z"}, d2 = {"Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;", "R", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "Landroidx/compose/ui/unit/Density;", "Lkotlin/coroutines/Continuation;", "completion", "(Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;Lkotlin/coroutines/Continuation;)V", "awaitPass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "context", "Lkotlin/coroutines/CoroutineContext;", "getContext", "()Lkotlin/coroutines/CoroutineContext;", "currentEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "getCurrentEvent", "()Landroidx/compose/ui/input/pointer/PointerEvent;", "density", "", "getDensity", "()F", "extendedTouchPadding", "Landroidx/compose/ui/geometry/Size;", "getExtendedTouchPadding-NH-jbRc", "()J", "fontScale", "getFontScale", "pointerAwaiter", "Lkotlinx/coroutines/CancellableContinuation;", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "getViewConfiguration", "()Landroidx/compose/ui/platform/ViewConfiguration;", "awaitPointerEvent", "pass", "(Landroidx/compose/ui/input/pointer/PointerEventPass;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "cause", "", "offerPointerEvent", NotificationCompat.CATEGORY_EVENT, "resumeWith", "result", "Lkotlin/Result;", "(Ljava/lang/Object;)V", "withTimeout", ExifInterface.GPS_DIRECTION_TRUE, "timeMillis", "", "block", "Lkotlin/Function2;", "", "Lkotlin/ExtensionFunctionType;", "(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "withTimeoutOrNull", "roundToPx", "", "Landroidx/compose/ui/unit/Dp;", "roundToPx-0680j_4", "(F)I", "Landroidx/compose/ui/unit/TextUnit;", "roundToPx--R2X_6o", "(J)I", "toDp", "toDp-GaN1DYA", "(J)F", "toDp-u2uoSUM", "(F)F", "(I)F", "toDpSize", "Landroidx/compose/ui/unit/DpSize;", "toDpSize-k-rfVVM", "(J)J", "toPx", "toPx-0680j_4", "toPx--R2X_6o", "toRect", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/unit/DpRect;", "toSize", "toSize-XkaWNTQ", "toSp", "toSp-0xMU5do", "(F)J", "toSp-kPz2Gy4", "(I)J", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000¤\u0001\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u0003\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\r\b\u0082\u0004\u0018\u0000*\u0004\b\u0000\u0010\u00012\u00020\u00022\u00020\u00032\b\u0012\u0004\u0012\u0002H\u00010\u0004B\u0015\u0012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\n2\u0006\u0010\u001e\u001a\u00020\fJ\u0010\u0010\u001f\u001a\u00020\u001c2\b\u0010 \u001a\u0004\u0018\u00010!J\u001b\u0010&\u001a\u00020\u001c2\f\u0010'\u001a\b\u0012\u0004\u0012\u00028\u00000(H\u0016¢\u0006\u0002\u0010)J\u0016\u0010*\u001a\u00020\n2\u0006\u0010\u001e\u001a\u00020\fH\u0096@¢\u0006\u0002\u0010+JG\u0010,\u001a\u0004\u0018\u0001H-\"\u0004\b\u0001\u0010-2\u0006\u0010.\u001a\u00020/2'\u00100\u001a#\b\u0001\u0012\u0004\u0012\u00020\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u0002H-0\u0004\u0012\u0006\u0012\u0004\u0018\u00010201¢\u0006\u0002\b3H\u0096@¢\u0006\u0002\u00104JE\u00105\u001a\u0002H-\"\u0004\b\u0001\u0010-2\u0006\u0010.\u001a\u00020/2'\u00100\u001a#\b\u0001\u0012\u0004\u0012\u00020\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u0002H-0\u0004\u0012\u0006\u0012\u0004\u0018\u00010201¢\u0006\u0002\b3H\u0096@¢\u0006\u0002\u00104J\u0014\u00106\u001a\u000207*\u000208H\u0097\u0001¢\u0006\u0004\b9\u0010:J\u0014\u00106\u001a\u000207*\u00020;H\u0097\u0001¢\u0006\u0004\b<\u0010=J\u0014\u0010>\u001a\u000208*\u000207H\u0097\u0001¢\u0006\u0004\b?\u0010@J\u0014\u0010>\u001a\u000208*\u00020AH\u0097\u0001¢\u0006\u0004\b?\u0010BJ\u0014\u0010>\u001a\u000208*\u00020;H\u0097\u0001¢\u0006\u0004\bC\u0010DJ\u0014\u0010E\u001a\u00020F*\u00020\u0019H\u0097\u0001¢\u0006\u0004\bG\u0010HJ\u0014\u0010I\u001a\u00020A*\u000208H\u0097\u0001¢\u0006\u0004\bJ\u0010BJ\u0014\u0010I\u001a\u00020A*\u00020;H\u0097\u0001¢\u0006\u0004\bK\u0010DJ\r\u0010L\u001a\u00020M*\u00020NH\u0097\u0001J\u0014\u0010O\u001a\u00020\u0019*\u00020FH\u0097\u0001¢\u0006\u0004\bP\u0010HJ\u0014\u0010Q\u001a\u00020;*\u000207H\u0097\u0001¢\u0006\u0004\bR\u0010SJ\u0014\u0010Q\u001a\u00020;*\u00020AH\u0097\u0001¢\u0006\u0004\bR\u0010TJ\u0014\u0010Q\u001a\u00020;*\u000208H\u0097\u0001¢\u0006\u0004\bU\u0010TR\u0014\u0010\u0005\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\u00020\n8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0010\u001a\u00020\u00118VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u00158VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017R\u0014\u0010\u0018\u001a\u00020\u00198VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u0013R\u0014\u0010\"\u001a\u00020#X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%R\u0014\u0010V\u001a\u00020A8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\bW\u0010XR\u0014\u0010Y\u001a\u00020A8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\bZ\u0010X¨\u0006["}, d2 = {"Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;", "R", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "Landroidx/compose/ui/unit/Density;", "Lkotlin/coroutines/Continuation;", "completion", "<init>", "(Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;Lkotlin/coroutines/Continuation;)V", "pointerAwaiter", "Lkotlinx/coroutines/CancellableContinuation;", "Landroidx/compose/ui/input/pointer/PointerEvent;", "awaitPass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "currentEvent", "getCurrentEvent", "()Landroidx/compose/ui/input/pointer/PointerEvent;", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g", "()J", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "getViewConfiguration", "()Landroidx/compose/ui/platform/ViewConfiguration;", "extendedTouchPadding", "Landroidx/compose/ui/geometry/Size;", "getExtendedTouchPadding-NH-jbRc", "offerPointerEvent", "", NotificationCompat.CATEGORY_EVENT, "pass", FacebookDialog.COMPLETION_GESTURE_CANCEL, "cause", "", "context", "Lkotlin/coroutines/CoroutineContext;", "getContext", "()Lkotlin/coroutines/CoroutineContext;", "resumeWith", "result", "Lkotlin/Result;", "(Ljava/lang/Object;)V", "awaitPointerEvent", "(Landroidx/compose/ui/input/pointer/PointerEventPass;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "withTimeoutOrNull", ExifInterface.GPS_DIRECTION_TRUE, "timeMillis", "", "block", "Lkotlin/Function2;", "", "Lkotlin/ExtensionFunctionType;", "(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "withTimeout", "roundToPx", "", "Landroidx/compose/ui/unit/Dp;", "roundToPx-0680j_4", "(F)I", "Landroidx/compose/ui/unit/TextUnit;", "roundToPx--R2X_6o", "(J)I", "toDp", "toDp-u2uoSUM", "(I)F", "", "(F)F", "toDp-GaN1DYA", "(J)F", "toDpSize", "Landroidx/compose/ui/unit/DpSize;", "toDpSize-k-rfVVM", "(J)J", "toPx", "toPx-0680j_4", "toPx--R2X_6o", "toRect", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/unit/DpRect;", "toSize", "toSize-XkaWNTQ", "toSp", "toSp-kPz2Gy4", "(I)J", "(F)J", "toSp-0xMU5do", "density", "getDensity", "()F", "fontScale", "getFontScale", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public final class PointerEventHandlerCoroutine<R> implements AwaitPointerEventScope, Density, Continuation<R> {
         private final /* synthetic */ SuspendingPointerInputModifierNodeImpl $$delegate_0;
@@ -342,50 +345,50 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: roundToPx--R2X_6o */
-        public int mo382roundToPxR2X_6o(long j) {
-            return this.$$delegate_0.mo382roundToPxR2X_6o(j);
+        public int mo412roundToPxR2X_6o(long j) {
+            return this.$$delegate_0.mo412roundToPxR2X_6o(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: roundToPx-0680j_4 */
-        public int mo383roundToPx0680j_4(float f) {
-            return this.$$delegate_0.mo383roundToPx0680j_4(f);
+        public int mo413roundToPx0680j_4(float f) {
+            return this.$$delegate_0.mo413roundToPx0680j_4(f);
         }
 
         @Override // androidx.compose.ui.unit.FontScaling
         /* renamed from: toDp-GaN1DYA */
-        public float mo384toDpGaN1DYA(long j) {
-            return this.$$delegate_0.mo384toDpGaN1DYA(j);
+        public float mo414toDpGaN1DYA(long j) {
+            return this.$$delegate_0.mo414toDpGaN1DYA(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toDp-u2uoSUM */
-        public float mo385toDpu2uoSUM(float f) {
-            return this.$$delegate_0.mo385toDpu2uoSUM(f);
+        public float mo415toDpu2uoSUM(float f) {
+            return this.$$delegate_0.mo415toDpu2uoSUM(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toDp-u2uoSUM */
-        public float mo386toDpu2uoSUM(int i) {
-            return this.$$delegate_0.mo386toDpu2uoSUM(i);
+        public float mo416toDpu2uoSUM(int i) {
+            return this.$$delegate_0.mo416toDpu2uoSUM(i);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toDpSize-k-rfVVM */
-        public long mo387toDpSizekrfVVM(long j) {
-            return this.$$delegate_0.mo387toDpSizekrfVVM(j);
+        public long mo417toDpSizekrfVVM(long j) {
+            return this.$$delegate_0.mo417toDpSizekrfVVM(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toPx--R2X_6o */
-        public float mo388toPxR2X_6o(long j) {
-            return this.$$delegate_0.mo388toPxR2X_6o(j);
+        public float mo418toPxR2X_6o(long j) {
+            return this.$$delegate_0.mo418toPxR2X_6o(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toPx-0680j_4 */
-        public float mo389toPx0680j_4(float f) {
-            return this.$$delegate_0.mo389toPx0680j_4(f);
+        public float mo419toPx0680j_4(float f) {
+            return this.$$delegate_0.mo419toPx0680j_4(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
@@ -395,32 +398,32 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toSize-XkaWNTQ */
-        public long mo390toSizeXkaWNTQ(long j) {
-            return this.$$delegate_0.mo390toSizeXkaWNTQ(j);
+        public long mo420toSizeXkaWNTQ(long j) {
+            return this.$$delegate_0.mo420toSizeXkaWNTQ(j);
         }
 
         @Override // androidx.compose.ui.unit.FontScaling
         /* renamed from: toSp-0xMU5do */
-        public long mo391toSp0xMU5do(float f) {
-            return this.$$delegate_0.mo391toSp0xMU5do(f);
+        public long mo421toSp0xMU5do(float f) {
+            return this.$$delegate_0.mo421toSp0xMU5do(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toSp-kPz2Gy4 */
-        public long mo392toSpkPz2Gy4(float f) {
-            return this.$$delegate_0.mo392toSpkPz2Gy4(f);
+        public long mo422toSpkPz2Gy4(float f) {
+            return this.$$delegate_0.mo422toSpkPz2Gy4(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toSp-kPz2Gy4 */
-        public long mo393toSpkPz2Gy4(int i) {
-            return this.$$delegate_0.mo393toSpkPz2Gy4(i);
+        public long mo423toSpkPz2Gy4(int i) {
+            return this.$$delegate_0.mo423toSpkPz2Gy4(i);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         public PointerEventHandlerCoroutine(Continuation<? super R> continuation) {
-            this.completion = continuation;
             this.$$delegate_0 = SuspendingPointerInputModifierNodeImpl.this;
+            this.completion = continuation;
         }
 
         @Override // androidx.compose.ui.input.pointer.AwaitPointerEventScope
@@ -430,7 +433,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
 
         @Override // androidx.compose.ui.input.pointer.AwaitPointerEventScope
         /* renamed from: getSize-YbymL2g */
-        public long mo5222getSizeYbymL2g() {
+        public long mo5735getSizeYbymL2g() {
             return SuspendingPointerInputModifierNodeImpl.this.boundsSize;
         }
 
@@ -441,8 +444,8 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
 
         @Override // androidx.compose.ui.input.pointer.AwaitPointerEventScope
         /* renamed from: getExtendedTouchPadding-NH-jbRc */
-        public long mo5221getExtendedTouchPaddingNHjbRc() {
-            return SuspendingPointerInputModifierNodeImpl.this.mo379getExtendedTouchPaddingNHjbRc();
+        public long mo5734getExtendedTouchPaddingNHjbRc() {
+            return SuspendingPointerInputModifierNodeImpl.this.mo409getExtendedTouchPaddingNHjbRc();
         }
 
         public final void offerPointerEvent(PointerEvent pointerEvent, PointerEventPass pointerEventPass) {
@@ -452,7 +455,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
             }
             this.pointerAwaiter = null;
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m8500constructorimpl(pointerEvent));
+            cancellableContinuation.resumeWith(Result.m9065constructorimpl(pointerEvent));
         }
 
         public final void cancel(Throwable th) {
@@ -549,7 +552,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
                             ResultKt.throwOnFailure(obj);
                             if (j <= 0 && (cancellableContinuation = this.pointerAwaiter) != null) {
                                 Result.Companion companion = Result.Companion;
-                                cancellableContinuation.resumeWith(Result.m8500constructorimpl(ResultKt.createFailure(new PointerEventTimeoutCancellationException(j))));
+                                cancellableContinuation.resumeWith(Result.m9065constructorimpl(ResultKt.createFailure(new PointerEventTimeoutCancellationException(j))));
                             }
                             launch$default = BuildersKt__Builders_commonKt.launch$default(SuspendingPointerInputModifierNodeImpl.this.getCoroutineScope(), null, null, new SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$job$1(j, this, null), 3, null);
                             suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.L$0 = launch$default;
@@ -612,7 +615,9 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
                 for (int i2 = 0; i2 < size; i2++) {
                     pointerEventHandlerCoroutineArr[i2].offerPointerEvent(pointerEvent, pointerEventPass);
                 }
-            } else if (i == 3) {
+            } else if (i != 3) {
+                throw new NoWhenBranchMatchedException();
+            } else {
                 MutableVector<PointerEventHandlerCoroutine<?>> mutableVector3 = this.dispatchingPointerHandlers;
                 int size2 = mutableVector3.getSize() - 1;
                 PointerEventHandlerCoroutine<?>[] pointerEventHandlerCoroutineArr2 = mutableVector3.content;
@@ -638,7 +643,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
             this.pointerHandlers.add(pointerEventHandlerCoroutine);
             Continuation<Unit> createCoroutine = ContinuationKt.createCoroutine(function2, pointerEventHandlerCoroutine, pointerEventHandlerCoroutine);
             Result.Companion companion = Result.Companion;
-            createCoroutine.resumeWith(Result.m8500constructorimpl(Unit.INSTANCE));
+            createCoroutine.resumeWith(Result.m9065constructorimpl(Unit.INSTANCE));
             Unit unit = Unit.INSTANCE;
         }
         cancellableContinuationImpl2.invokeOnCancellation(new Function1<Throwable, Unit>() { // from class: androidx.compose.ui.input.pointer.SuspendingPointerInputModifierNodeImpl$awaitPointerEventScope$2$2

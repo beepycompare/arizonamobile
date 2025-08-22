@@ -4,6 +4,7 @@ import android.accessibilityservice.AccessibilityServiceInfo;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Region;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,6 +20,7 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import androidx.collection.ArraySet;
+import androidx.collection.IntIntMapKt;
 import androidx.collection.IntList;
 import androidx.collection.IntListKt;
 import androidx.collection.IntObjectMap;
@@ -31,13 +33,18 @@ import androidx.collection.MutableIntSet;
 import androidx.collection.MutableObjectIntMap;
 import androidx.collection.MutableScatterMap;
 import androidx.collection.ObjectIntMapKt;
+import androidx.collection.ScatterSet;
 import androidx.collection.SparseArrayCompat;
+import androidx.compose.ui.ComposeUiFlags;
 import androidx.compose.ui.R;
 import androidx.compose.ui.focus.FocusDirection;
 import androidx.compose.ui.geometry.InlineClassHelperKt;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.geometry.RectKt;
-import androidx.compose.ui.graphics.RectHelper_androidKt;
+import androidx.compose.ui.graphics.AndroidPath;
+import androidx.compose.ui.graphics.Outline;
+import androidx.compose.ui.graphics.Path;
+import androidx.compose.ui.graphics.Shape;
 import androidx.compose.ui.layout.LayoutCoordinates;
 import androidx.compose.ui.layout.LayoutCoordinatesKt;
 import androidx.compose.ui.node.DelegatableNodeKt;
@@ -59,6 +66,8 @@ import androidx.compose.ui.semantics.SemanticsConfiguration;
 import androidx.compose.ui.semantics.SemanticsConfigurationKt;
 import androidx.compose.ui.semantics.SemanticsNode;
 import androidx.compose.ui.semantics.SemanticsNodeKt;
+import androidx.compose.ui.semantics.SemanticsNodeWithAdjustedBounds;
+import androidx.compose.ui.semantics.SemanticsOwnerKt;
 import androidx.compose.ui.semantics.SemanticsProperties;
 import androidx.compose.ui.semantics.SemanticsPropertiesAndroid;
 import androidx.compose.ui.semantics.SemanticsPropertyKey;
@@ -68,11 +77,15 @@ import androidx.compose.ui.text.TextLayoutResult;
 import androidx.compose.ui.text.TextRange;
 import androidx.compose.ui.text.platform.AndroidAccessibilitySpannableString_androidKt;
 import androidx.compose.ui.text.platform.URLSpanCache;
+import androidx.compose.ui.unit.IntRect;
+import androidx.compose.ui.unit.IntRectKt;
 import androidx.compose.ui.unit.IntSizeKt;
 import androidx.compose.ui.util.ListUtilsKt;
 import androidx.compose.ui.viewinterop.AndroidViewHolder;
 import androidx.core.app.NotificationCompat;
 import androidx.core.view.AccessibilityDelegateCompat;
+import androidx.core.view.accessibility.AccessibilityEventCompat;
+import androidx.core.view.accessibility.AccessibilityManagerCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeProviderCompat;
 import androidx.exifinterface.media.ExifInterface;
@@ -80,6 +93,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -98,18 +112,26 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.math.MathKt;
 import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.channels.Channel;
 import kotlinx.coroutines.channels.ChannelIterator;
 import kotlinx.coroutines.channels.ChannelKt;
 /* compiled from: AndroidComposeViewAccessibilityDelegateCompat.android.kt */
-@Metadata(d1 = {"\u0000Î\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\r\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b-\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0000\u0018\u0000 å\u00012\u00020\u0001:\nã\u0001ä\u0001å\u0001æ\u0001ç\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J*\u0010r\u001a\u00020\"2\u0006\u0010s\u001a\u00020\u00122\u0006\u0010t\u001a\u00020+2\u0006\u0010u\u001a\u00020\u00062\b\u0010v\u001a\u0004\u0018\u00010wH\u0002J\u0010\u0010x\u001a\u00020y2\u0006\u0010z\u001a\u00020&H\u0002J\u0010\u0010{\u001a\u00020\"H\u0080@¢\u0006\u0004\b|\u0010}J=\u0010~\u001a\u00020\u00152\f\u0010$\u001a\b\u0012\u0004\u0012\u00020&0%2\u0006\u0010\u007f\u001a\u00020\u00152\u0007\u0010\u0080\u0001\u001a\u00020\u00122\b\u0010\u0081\u0001\u001a\u00030\u0082\u0001H\u0002ø\u0001\u0000¢\u0006\u0006\b\u0083\u0001\u0010\u0084\u0001J/\u0010~\u001a\u00020\u00152\u0006\u0010\u007f\u001a\u00020\u00152\u0007\u0010\u0080\u0001\u001a\u00020\u00122\b\u0010\u0081\u0001\u001a\u00030\u0082\u0001H\u0000ø\u0001\u0000¢\u0006\u0006\b\u0085\u0001\u0010\u0086\u0001J\t\u0010\u0087\u0001\u001a\u00020\"H\u0002J\u0011\u0010\u0088\u0001\u001a\u00020\u00152\u0006\u0010s\u001a\u00020\u0012H\u0002J\u001a\u0010\u0089\u0001\u001a\u00020P2\u0006\u0010s\u001a\u00020\u00122\u0007\u0010\u008a\u0001\u001a\u00020\u0012H\u0003J\u0013\u0010\u008b\u0001\u001a\u0004\u0018\u00010+2\u0006\u0010s\u001a\u00020\u0012H\u0002JC\u0010\u008c\u0001\u001a\u00020P2\u0006\u0010s\u001a\u00020\u00122\t\u0010\u008d\u0001\u001a\u0004\u0018\u00010\u00122\t\u0010\u008e\u0001\u001a\u0004\u0018\u00010\u00122\t\u0010\u008f\u0001\u001a\u0004\u0018\u00010\u00122\t\u0010\u0090\u0001\u001a\u0004\u0018\u00010\u001fH\u0002¢\u0006\u0003\u0010\u0091\u0001J\u0019\u0010\u0092\u0001\u001a\u00020\u00152\b\u0010\u0093\u0001\u001a\u00030\u0094\u0001H\u0000¢\u0006\u0003\b\u0095\u0001J\u0014\u0010\u0096\u0001\u001a\u00030\u0097\u00012\b\u0010\u0098\u0001\u001a\u00030\u0099\u0001H\u0016J\u0012\u0010\u009a\u0001\u001a\u00020\u00122\u0007\u0010z\u001a\u00030\u009b\u0001H\u0002J\u0012\u0010\u009c\u0001\u001a\u00020\u00122\u0007\u0010z\u001a\u00030\u009b\u0001H\u0002J\u0016\u0010\u009d\u0001\u001a\u0004\u0018\u00010\u00062\t\u0010z\u001a\u0005\u0018\u00010\u009b\u0001H\u0002J \u0010\u009e\u0001\u001a\u0005\u0018\u00010\u009f\u00012\t\u0010z\u001a\u0005\u0018\u00010\u009b\u00012\u0007\u0010 \u0001\u001a\u00020\u0012H\u0002J#\u0010¡\u0001\u001a\u00020\u00122\b\u0010¢\u0001\u001a\u00030£\u00012\b\u0010¤\u0001\u001a\u00030£\u0001H\u0001¢\u0006\u0003\b¥\u0001J\u0011\u0010¦\u0001\u001a\u00020\u00152\u0006\u0010s\u001a\u00020\u0012H\u0002J\u0012\u0010§\u0001\u001a\u00020\u00152\u0007\u0010z\u001a\u00030\u009b\u0001H\u0002J\u0012\u0010¨\u0001\u001a\u00020\"2\u0007\u0010©\u0001\u001a\u00020kH\u0002J\u0018\u0010ª\u0001\u001a\u00020\"2\u0007\u0010©\u0001\u001a\u00020kH\u0000¢\u0006\u0003\b«\u0001J\u000f\u0010¬\u0001\u001a\u00020\"H\u0000¢\u0006\u0003\b\u00ad\u0001J$\u0010®\u0001\u001a\u00020\u00152\u0006\u0010s\u001a\u00020\u00122\u0007\u0010¯\u0001\u001a\u00020\u00122\b\u0010v\u001a\u0004\u0018\u00010wH\u0002J#\u0010°\u0001\u001a\u00020\"2\u0006\u0010s\u001a\u00020\u00122\u0006\u0010t\u001a\u00020+2\b\u0010±\u0001\u001a\u00030\u009b\u0001H\u0002J!\u0010²\u0001\u001a\u00020\u00152\u0007\u0010³\u0001\u001a\u00020\u00122\r\u0010´\u0001\u001a\b\u0012\u0004\u0012\u00020d01H\u0002J\u0011\u0010µ\u0001\u001a\u00020\u00152\u0006\u0010s\u001a\u00020\u0012H\u0002J\u0012\u0010¶\u0001\u001a\u00020\"2\u0007\u0010·\u0001\u001a\u00020dH\u0002J\u0012\u0010¸\u0001\u001a\u00020\u00122\u0007\u0010³\u0001\u001a\u00020\u0012H\u0002J\u001c\u0010¹\u0001\u001a\u00020\"2\b\u0010º\u0001\u001a\u00030\u009b\u00012\u0007\u0010»\u0001\u001a\u00020_H\u0002J\u0012\u0010¼\u0001\u001a\u00020\u00152\u0007\u0010\u0093\u0001\u001a\u00020PH\u0002J@\u0010½\u0001\u001a\u00020\u00152\u0006\u0010s\u001a\u00020\u00122\u0007\u0010\u008a\u0001\u001a\u00020\u00122\u000b\b\u0002\u0010¾\u0001\u001a\u0004\u0018\u00010\u00122\u0011\b\u0002\u0010¿\u0001\u001a\n\u0012\u0004\u0012\u00020\u0006\u0018\u000101H\u0002¢\u0006\u0003\u0010À\u0001J&\u0010Á\u0001\u001a\u00020\"2\u0007\u0010Â\u0001\u001a\u00020\u00122\u0007\u0010¾\u0001\u001a\u00020\u00122\t\u0010Ã\u0001\u001a\u0004\u0018\u00010\u0006H\u0002J\u0012\u0010Ä\u0001\u001a\u00020\"2\u0007\u0010Â\u0001\u001a\u00020\u0012H\u0002J\u0018\u0010Å\u0001\u001a\u00020\"2\r\u0010Æ\u0001\u001a\b\u0012\u0004\u0012\u00020&0%H\u0002J\u001b\u0010Ç\u0001\u001a\u00020\"2\u0007\u0010©\u0001\u001a\u00020k2\u0007\u0010È\u0001\u001a\u00020WH\u0002J\u0012\u0010É\u0001\u001a\u00020\"2\u0007\u0010©\u0001\u001a\u00020kH\u0002J-\u0010Ê\u0001\u001a\u00020\u00152\u0007\u0010z\u001a\u00030\u009b\u00012\u0007\u0010Ë\u0001\u001a\u00020\u00122\u0007\u0010Ì\u0001\u001a\u00020\u00122\u0007\u0010Í\u0001\u001a\u00020\u0015H\u0002J\u001a\u0010Î\u0001\u001a\u00020\"2\u0007\u0010z\u001a\u00030\u009b\u00012\u0006\u0010t\u001a\u00020+H\u0002J\u001a\u0010Ï\u0001\u001a\u00020\"2\u0007\u0010z\u001a\u00030\u009b\u00012\u0006\u0010t\u001a\u00020+H\u0002J\"\u0010Ð\u0001\u001a\u0005\u0018\u00010Ñ\u00012\n\u0010Ò\u0001\u001a\u0005\u0018\u00010\u009b\u00012\b\u0010Ó\u0001\u001a\u00030Ô\u0001H\u0002J-\u0010Õ\u0001\u001a\u00020\u00152\u0007\u0010z\u001a\u00030\u009b\u00012\u0007\u0010 \u0001\u001a\u00020\u00122\u0007\u0010Ö\u0001\u001a\u00020\u00152\u0007\u0010×\u0001\u001a\u00020\u0015H\u0002J4\u0010Ø\u0001\u001a\u0005\u0018\u0001HÙ\u0001\"\t\b\u0000\u0010Ù\u0001*\u00020\u001f2\n\u0010\u0090\u0001\u001a\u0005\u0018\u0001HÙ\u00012\t\b\u0001\u0010Ú\u0001\u001a\u00020\u0012H\u0002¢\u0006\u0003\u0010Û\u0001J\u0011\u0010Ü\u0001\u001a\u00020\"2\u0006\u0010s\u001a\u00020\u0012H\u0002J\t\u0010Ý\u0001\u001a\u00020\"H\u0002J\u0011\u0010Þ\u0001\u001a\u0005\u0018\u00010ß\u0001*\u00030à\u0001H\u0002J\u0011\u0010á\u0001\u001a\u0005\u0018\u00010â\u0001*\u00030ß\u0001H\u0002R\u0014\u0010\u0005\u001a\u00020\u0006X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0014\u0010\t\u001a\u00020\u0006X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\bR\u001a\u0010\u000b\u001a\u00020\fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010\u0016\u001a\u00020\u00152\u0006\u0010\u0014\u001a\u00020\u0015@@X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aR\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001d\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001f0\u001e0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\b\u0012\u0004\u0012\u00020\"0!X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010$\u001a\b\u0012\u0004\u0012\u00020&0%8BX\u0082\u000e¢\u0006\b\n\u0000\u001a\u0004\b'\u0010(R\u000e\u0010)\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010*\u001a\u0004\u0018\u00010+X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010,\u001a\u0004\u0018\u00010+X\u0082\u000e¢\u0006\u0002\n\u0000R2\u0010-\u001a&\u0012\f\u0012\n 0*\u0004\u0018\u00010/0/ 0*\u0012\u0012\f\u0012\n 0*\u0004\u0018\u00010/0/\u0018\u0001010.X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u000203X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R$\u00107\u001a\u00020\u00128\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b8\u00109\u001a\u0004\b:\u0010;\"\u0004\b<\u0010=R\u001a\u0010>\u001a\u00020?X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b@\u0010A\"\u0004\bB\u0010CR\u001a\u0010D\u001a\u00020?X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bE\u0010A\"\u0004\bF\u0010CR\u0014\u0010G\u001a\u00020\u00158@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bH\u0010\u0018R\u0014\u0010I\u001a\u00020\u00158BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bI\u0010\u0018R\u001a\u0010J\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001f0K0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010L\u001a\u00060MR\u00020\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R0\u0010N\u001a\u000e\u0012\u0004\u0012\u00020P\u0012\u0004\u0012\u00020\u00150O8\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\bQ\u00109\u001a\u0004\bR\u0010S\"\u0004\bT\u0010UR\u000e\u0010V\u001a\u00020WX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010X\u001a\b\u0012\u0004\u0012\u00020Z0YX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010[\u001a\u0004\u0018\u00010\\X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010]\u001a\b\u0012\u0004\u0012\u00020Z0YX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010^\u001a\b\u0012\u0004\u0012\u00020_0YX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010`\u001a\u00020_X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010a\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0004\n\u0002\u0010bR\u001a\u0010c\u001a\u000e\u0012\u0004\u0012\u00020d\u0012\u0004\u0012\u00020\"0OX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010e\u001a\b\u0012\u0004\u0012\u00020d0.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010f\u001a\u00020gX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010h\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010i\u001a\b\u0012\u0004\u0012\u00020k0jX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010l\u001a\u00020mX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010n\u001a\u00020oX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\bp\u0010q\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006è\u0001"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;", "Landroidx/core/view/AccessibilityDelegateCompat;", "view", "Landroidx/compose/ui/platform/AndroidComposeView;", "(Landroidx/compose/ui/platform/AndroidComposeView;)V", "ExtraDataTestTraversalAfterVal", "", "getExtraDataTestTraversalAfterVal$ui_release", "()Ljava/lang/String;", "ExtraDataTestTraversalBeforeVal", "getExtraDataTestTraversalBeforeVal$ui_release", "SendRecurringAccessibilityEventsIntervalMillis", "", "getSendRecurringAccessibilityEventsIntervalMillis$ui_release", "()J", "setSendRecurringAccessibilityEventsIntervalMillis$ui_release", "(J)V", "accessibilityCursorPosition", "", "accessibilityFocusedVirtualViewId", "value", "", "accessibilityForceEnabledForTesting", "getAccessibilityForceEnabledForTesting$ui_release", "()Z", "setAccessibilityForceEnabledForTesting$ui_release", "(Z)V", "accessibilityManager", "Landroid/view/accessibility/AccessibilityManager;", "actionIdToLabel", "Landroidx/collection/SparseArrayCompat;", "", "boundsUpdateChannel", "Lkotlinx/coroutines/channels/Channel;", "", "checkingForSemanticsChanges", "currentSemanticsNodes", "Landroidx/collection/IntObjectMap;", "Landroidx/compose/ui/platform/SemanticsNodeWithAdjustedBounds;", "getCurrentSemanticsNodes", "()Landroidx/collection/IntObjectMap;", "currentSemanticsNodesInvalidated", "currentlyAccessibilityFocusedANI", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;", "currentlyFocusedANI", "enabledServices", "", "Landroid/accessibilityservice/AccessibilityServiceInfo;", "kotlin.jvm.PlatformType", "", "enabledStateListener", "Landroid/view/accessibility/AccessibilityManager$AccessibilityStateChangeListener;", "focusedVirtualViewId", "handler", "Landroid/os/Handler;", "hoveredVirtualViewId", "getHoveredVirtualViewId$ui_release$annotations", "()V", "getHoveredVirtualViewId$ui_release", "()I", "setHoveredVirtualViewId$ui_release", "(I)V", "idToAfterMap", "Landroidx/collection/MutableIntIntMap;", "getIdToAfterMap$ui_release", "()Landroidx/collection/MutableIntIntMap;", "setIdToAfterMap$ui_release", "(Landroidx/collection/MutableIntIntMap;)V", "idToBeforeMap", "getIdToBeforeMap$ui_release", "setIdToBeforeMap$ui_release", "isEnabled", "isEnabled$ui_release", "isTouchExplorationEnabled", "labelToActionId", "Landroidx/collection/MutableObjectIntMap;", "nodeProvider", "Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$ComposeAccessibilityNodeProvider;", "onSendAccessibilityEvent", "Lkotlin/Function1;", "Landroid/view/accessibility/AccessibilityEvent;", "getOnSendAccessibilityEvent$ui_release$annotations", "getOnSendAccessibilityEvent$ui_release", "()Lkotlin/jvm/functions/Function1;", "setOnSendAccessibilityEvent$ui_release", "(Lkotlin/jvm/functions/Function1;)V", "paneDisplayed", "Landroidx/collection/MutableIntSet;", "pendingHorizontalScrollEvents", "Landroidx/collection/MutableIntObjectMap;", "Landroidx/compose/ui/semantics/ScrollAxisRange;", "pendingTextTraversedEvent", "Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$PendingTextTraversedEvent;", "pendingVerticalScrollEvents", "previousSemanticsNodes", "Landroidx/compose/ui/platform/SemanticsNodeCopy;", "previousSemanticsRoot", "previousTraversedNode", "Ljava/lang/Integer;", "scheduleScrollEventIfNeededLambda", "Landroidx/compose/ui/platform/ScrollObservationScope;", "scrollObservationScopes", "semanticsChangeChecker", "Ljava/lang/Runnable;", "sendingFocusAffectingEvent", "subtreeChangedLayoutNodes", "Landroidx/collection/ArraySet;", "Landroidx/compose/ui/node/LayoutNode;", "touchExplorationStateListener", "Landroid/view/accessibility/AccessibilityManager$TouchExplorationStateChangeListener;", "urlSpanCache", "Landroidx/compose/ui/text/platform/URLSpanCache;", "getView", "()Landroidx/compose/ui/platform/AndroidComposeView;", "addExtraDataToAccessibilityNodeInfoHelper", "virtualViewId", "info", "extraDataKey", "arguments", "Landroid/os/Bundle;", "boundsInScreen", "Landroid/graphics/Rect;", "node", "boundsUpdatesEventLoop", "boundsUpdatesEventLoop$ui_release", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "canScroll", "vertical", "direction", "position", "Landroidx/compose/ui/geometry/Offset;", "canScroll-moWRBKg", "(Landroidx/collection/IntObjectMap;ZIJ)Z", "canScroll-0AR0LA0$ui_release", "(ZIJ)Z", "checkForSemanticsChanges", "clearAccessibilityFocus", "createEvent", "eventType", "createNodeInfo", "createTextSelectionChangedEvent", "fromIndex", "toIndex", "itemCount", "text", "(ILjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/CharSequence;)Landroid/view/accessibility/AccessibilityEvent;", "dispatchHoverEvent", NotificationCompat.CATEGORY_EVENT, "Landroid/view/MotionEvent;", "dispatchHoverEvent$ui_release", "getAccessibilityNodeProvider", "Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;", "host", "Landroid/view/View;", "getAccessibilitySelectionEnd", "Landroidx/compose/ui/semantics/SemanticsNode;", "getAccessibilitySelectionStart", "getIterableTextForAccessibility", "getIteratorForGranularity", "Landroidx/compose/ui/platform/AccessibilityIterators$TextSegmentIterator;", "granularity", "hitTestSemanticsAt", "x", "", "y", "hitTestSemanticsAt$ui_release", "isAccessibilityFocused", "isAccessibilitySelectionExtendable", "notifySubtreeAccessibilityStateChangedIfNeeded", "layoutNode", "onLayoutChange", "onLayoutChange$ui_release", "onSemanticsChange", "onSemanticsChange$ui_release", "performActionHelper", "action", "populateAccessibilityNodeInfoProperties", "semanticsNode", "registerScrollingId", "id", "oldScrollObservationScopes", "requestAccessibilityFocus", "scheduleScrollEventIfNeeded", "scrollObservationScope", "semanticsNodeIdToAccessibilityVirtualNodeId", "sendAccessibilitySemanticsStructureChangeEvents", "newNode", "oldNode", "sendEvent", "sendEventForVirtualView", "contentChangeType", "contentDescription", "(IILjava/lang/Integer;Ljava/util/List;)Z", "sendPaneChangeEvents", "semanticsNodeId", "title", "sendPendingTextTraversedAtGranularityEvent", "sendSemanticsPropertyChangeEvents", "newSemanticsNodes", "sendSubtreeChangeAccessibilityEvents", "subtreeChangedSemanticsNodesIds", "sendTypeViewScrolledAccessibilityEvent", "setAccessibilitySelection", TtmlNode.START, TtmlNode.END, "traversalMode", "setContentInvalid", "setText", "toScreenCoords", "Landroid/graphics/RectF;", "textNode", "bounds", "Landroidx/compose/ui/geometry/Rect;", "traverseAtGranularity", "forward", "extendSelection", "trimToSize", ExifInterface.GPS_DIRECTION_TRUE, "size", "(Ljava/lang/CharSequence;I)Ljava/lang/CharSequence;", "updateHoveredVirtualView", "updateSemanticsNodesCopyAndPanes", "getTextForTextField", "Landroidx/compose/ui/text/AnnotatedString;", "Landroidx/compose/ui/semantics/SemanticsConfiguration;", "toSpannableString", "Landroid/text/SpannableString;", "Api24Impl", "Api29Impl", "Companion", "ComposeAccessibilityNodeProvider", "PendingTextTraversedEvent", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000è\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\r\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0014\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u001a\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0001\u0018\u0000 õ\u00012\u00020\u0001:\nõ\u0001ö\u0001÷\u0001ø\u0001ù\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J'\u0010u\u001a\u00020\u00132\u0006\u0010v\u001a\u00020\u00132\u0006\u0010w\u001a\u00020\t2\u0006\u0010x\u001a\u00020yH\u0000¢\u0006\u0004\bz\u0010{J5\u0010u\u001a\u00020\u00132\f\u0010X\u001a\b\u0012\u0004\u0012\u00020Z0Y2\u0006\u0010v\u001a\u00020\u00132\u0006\u0010w\u001a\u00020\t2\u0006\u0010x\u001a\u00020yH\u0002¢\u0006\u0004\b|\u0010}J\b\u0010~\u001a\u00020\u0013H\u0002J\u0013\u0010\u007f\u001a\u0004\u0018\u00010@2\u0007\u0010\u0080\u0001\u001a\u00020\tH\u0002J\u000b\u0010\u0081\u0001\u001a\u0004\u0018\u00010@H\u0002J\u0013\u0010\u0082\u0001\u001a\u00030\u0083\u00012\u0007\u0010\u0084\u0001\u001a\u00020ZH\u0002J%\u0010\u0085\u0001\u001a\u00020T2\u0007\u0010\u0080\u0001\u001a\u00020\t2\u0007\u0010\u0086\u0001\u001a\u00020@2\b\u0010\u0087\u0001\u001a\u00030\u0088\u0001H\u0002J\u001c\u0010\u0089\u0001\u001a\u00020T2\b\u0010\u0084\u0001\u001a\u00030\u0088\u00012\u0007\u0010\u0086\u0001\u001a\u00020@H\u0002J\u0011\u0010\u008a\u0001\u001a\u0005\u0018\u00010\u008b\u0001*\u00030\u008c\u0001H\u0002J\u001c\u0010\u008d\u0001\u001a\u00020T2\b\u0010\u0084\u0001\u001a\u00030\u0088\u00012\u0007\u0010\u0086\u0001\u001a\u00020@H\u0002J\u0012\u0010\u008e\u0001\u001a\u00020\u00132\u0007\u0010\u0080\u0001\u001a\u00020\tH\u0002J\u0012\u0010\u008f\u0001\u001a\u00020\u00132\u0007\u0010\u0080\u0001\u001a\u00020\tH\u0002JA\u0010\u0090\u0001\u001a\u00020\u00132\u0007\u0010\u0080\u0001\u001a\u00020\t2\u0007\u0010\u0091\u0001\u001a\u00020\t2\u000b\b\u0002\u0010\u0092\u0001\u001a\u0004\u0018\u00010\t2\u0011\b\u0002\u0010\u0093\u0001\u001a\n\u0012\u0004\u0012\u00020i\u0018\u00010/H\u0002¢\u0006\u0003\u0010\u0094\u0001J\u0012\u0010\u0095\u0001\u001a\u00020\u00132\u0007\u0010\u0096\u0001\u001a\u00020\u0012H\u0002J\u001b\u0010\u0097\u0001\u001a\u00020\u00122\u0007\u0010\u0080\u0001\u001a\u00020\t2\u0007\u0010\u0091\u0001\u001a\u00020\tH\u0003JD\u0010\u0098\u0001\u001a\u00020\u00122\u0007\u0010\u0080\u0001\u001a\u00020\t2\t\u0010\u0099\u0001\u001a\u0004\u0018\u00010\t2\t\u0010\u009a\u0001\u001a\u0004\u0018\u00010\t2\t\u0010\u009b\u0001\u001a\u0004\u0018\u00010\t2\t\u0010\u009c\u0001\u001a\u0004\u0018\u00010IH\u0002¢\u0006\u0003\u0010\u009d\u0001J\u0012\u0010\u009e\u0001\u001a\u00020\u00132\u0007\u0010\u0080\u0001\u001a\u00020\tH\u0002J'\u0010\u009f\u0001\u001a\u00020\u00132\u0007\u0010\u0080\u0001\u001a\u00020\t2\u0007\u0010 \u0001\u001a\u00020\t2\n\u0010¡\u0001\u001a\u0005\u0018\u00010¢\u0001H\u0002J0\u0010£\u0001\u001a\u00020T2\u0007\u0010\u0080\u0001\u001a\u00020\t2\u0007\u0010\u0086\u0001\u001a\u00020@2\u0007\u0010¤\u0001\u001a\u00020i2\n\u0010¡\u0001\u001a\u0005\u0018\u00010¢\u0001H\u0002J\"\u0010¥\u0001\u001a\u0005\u0018\u00010¦\u00012\n\u0010§\u0001\u001a\u0005\u0018\u00010\u0088\u00012\b\u0010¨\u0001\u001a\u00030©\u0001H\u0002J\u0019\u0010ª\u0001\u001a\u00030«\u0001*\u00030¬\u00012\b\u0010\u0084\u0001\u001a\u00030\u0088\u0001H\u0002J\u0011\u0010\u00ad\u0001\u001a\u0005\u0018\u00010\u0083\u0001*\u00030«\u0001H\u0002J\u0011\u0010®\u0001\u001a\u0005\u0018\u00010¯\u0001*\u00030«\u0001H\u0002J\u0011\u0010°\u0001\u001a\u0005\u0018\u00010±\u0001*\u00030«\u0001H\u0002J\u000f\u0010\u00ad\u0001\u001a\u00030\u0083\u0001*\u00030©\u0001H\u0002J\u0019\u0010²\u0001\u001a\u00020\u00132\b\u0010\u0096\u0001\u001a\u00030³\u0001H\u0000¢\u0006\u0003\b´\u0001J#\u0010µ\u0001\u001a\u00020\t2\b\u0010¶\u0001\u001a\u00030·\u00012\b\u0010¸\u0001\u001a\u00030·\u0001H\u0001¢\u0006\u0003\b¹\u0001J\u0012\u0010º\u0001\u001a\u00020T2\u0007\u0010\u0080\u0001\u001a\u00020\tH\u0002J\u0014\u0010»\u0001\u001a\u00030¼\u00012\b\u0010½\u0001\u001a\u00030¾\u0001H\u0016J4\u0010¿\u0001\u001a\u0005\u0018\u0001HÀ\u0001\"\t\b\u0000\u0010À\u0001*\u00020I2\n\u0010\u009c\u0001\u001a\u0005\u0018\u0001HÀ\u00012\t\b\u0001\u0010Á\u0001\u001a\u00020\tH\u0002¢\u0006\u0003\u0010Â\u0001J\u000f\u0010Å\u0001\u001a\u00020TH\u0000¢\u0006\u0003\bÆ\u0001J\u0013\u0010Ç\u0001\u001a\u00020TH\u0080@¢\u0006\u0006\bÈ\u0001\u0010É\u0001J\u0018\u0010Ê\u0001\u001a\u00020T2\u0007\u0010Ë\u0001\u001a\u00020QH\u0000¢\u0006\u0003\bÌ\u0001J\u0012\u0010Í\u0001\u001a\u00020T2\u0007\u0010Ë\u0001\u001a\u00020QH\u0002J\u0012\u0010Î\u0001\u001a\u00020T2\u0007\u0010Ë\u0001\u001a\u00020QH\u0002J\u001b\u0010Ï\u0001\u001a\u00020T2\u0007\u0010Ë\u0001\u001a\u00020Q2\u0007\u0010Ð\u0001\u001a\u00020^H\u0002J\t\u0010Ñ\u0001\u001a\u00020TH\u0002J\t\u0010Ò\u0001\u001a\u00020TH\u0002J\u0018\u0010Ó\u0001\u001a\u00020T2\r\u0010Ô\u0001\u001a\b\u0012\u0004\u0012\u00020Z0YH\u0002J\"\u0010Ø\u0001\u001a\u00020\u00132\u0007\u0010Ù\u0001\u001a\u00020\t2\u000e\u0010Ú\u0001\u001a\t\u0012\u0005\u0012\u00030Ö\u00010/H\u0002J\u0013\u0010Û\u0001\u001a\u00020T2\b\u0010Ü\u0001\u001a\u00030Ö\u0001H\u0002J&\u0010Ý\u0001\u001a\u00020T2\u0007\u0010Þ\u0001\u001a\u00020\t2\u0007\u0010\u0092\u0001\u001a\u00020\t2\t\u0010ß\u0001\u001a\u0004\u0018\u00010iH\u0002J\u001c\u0010à\u0001\u001a\u00020T2\b\u0010á\u0001\u001a\u00030\u0088\u00012\u0007\u0010â\u0001\u001a\u00020qH\u0002J\u0012\u0010ã\u0001\u001a\u00020\t2\u0007\u0010Ù\u0001\u001a\u00020\tH\u0002J.\u0010ä\u0001\u001a\u00020\u00132\b\u0010\u0084\u0001\u001a\u00030\u0088\u00012\u0007\u0010å\u0001\u001a\u00020\t2\u0007\u0010æ\u0001\u001a\u00020\u00132\u0007\u0010ç\u0001\u001a\u00020\u0013H\u0002J\u0012\u0010è\u0001\u001a\u00020T2\u0007\u0010Þ\u0001\u001a\u00020\tH\u0002J.\u0010é\u0001\u001a\u00020\u00132\b\u0010\u0084\u0001\u001a\u00030\u0088\u00012\u0007\u0010ê\u0001\u001a\u00020\t2\u0007\u0010ë\u0001\u001a\u00020\t2\u0007\u0010ì\u0001\u001a\u00020\u0013H\u0002J\u0013\u0010í\u0001\u001a\u00020\t2\b\u0010\u0084\u0001\u001a\u00030\u0088\u0001H\u0002J\u0013\u0010î\u0001\u001a\u00020\t2\b\u0010\u0084\u0001\u001a\u00030\u0088\u0001H\u0002J\u0013\u0010ï\u0001\u001a\u00020\u00132\b\u0010\u0084\u0001\u001a\u00030\u0088\u0001H\u0002J!\u0010ð\u0001\u001a\u0005\u0018\u00010ñ\u00012\n\u0010\u0084\u0001\u001a\u0005\u0018\u00010\u0088\u00012\u0007\u0010å\u0001\u001a\u00020\tH\u0002J\u0017\u0010ò\u0001\u001a\u0004\u0018\u00010i2\n\u0010\u0084\u0001\u001a\u0005\u0018\u00010\u0088\u0001H\u0002J\u0011\u0010ó\u0001\u001a\u0005\u0018\u00010\u008c\u0001*\u00030ô\u0001H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R$\u0010\b\u001a\u00020\t8\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b\n\u0010\u000b\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR0\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u00130\u00118\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b\u0014\u0010\u000b\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R$\u0010\u001c\u001a\u00020\u00132\u0006\u0010\u001b\u001a\u00020\u0013@@X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001d\u0010\u001e\"\u0004\b\u001f\u0010 R\u001a\u0010!\u001a\u00020\"X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010$\"\u0004\b%\u0010&R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R2\u0010+\u001a&\u0012\f\u0012\n .*\u0004\u0018\u00010-0- .*\u0012\u0012\f\u0012\n .*\u0004\u0018\u00010-0-\u0018\u00010/0,X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00100\u001a\u00020\u00138@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b1\u0010\u001eR\u0014\u00102\u001a\u00020\u00138BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b2\u0010\u001eR\u001e\u00103\u001a\u0004\u0018\u00010\u0013X\u0080\u000e¢\u0006\u0010\n\u0002\u00108\u001a\u0004\b4\u00105\"\u0004\b6\u00107R\u000e\u00109\u001a\u00020:X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010;\u001a\u00060<R\u00020\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010>\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010?\u001a\u0004\u0018\u00010@X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010A\u001a\u0004\u0018\u00010@X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010C\u001a\b\u0012\u0004\u0012\u00020E0DX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010F\u001a\b\u0012\u0004\u0012\u00020E0DX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010G\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020I0H0HX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010J\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020I0K0HX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010L\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010M\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0004\n\u0002\u0010NR\u0014\u0010O\u001a\b\u0012\u0004\u0012\u00020Q0PX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010R\u001a\b\u0012\u0004\u0012\u00020T0SX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010U\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010V\u001a\u0004\u0018\u00010WX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010X\u001a\b\u0012\u0004\u0012\u00020Z0Y8BX\u0082\u000e¢\u0006\b\n\u0000\u001a\u0004\b[\u0010\\R\u000e\u0010]\u001a\u00020^X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010_\u001a\u00020`X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\ba\u0010b\"\u0004\bc\u0010dR\u001a\u0010e\u001a\u00020`X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bf\u0010b\"\u0004\bg\u0010dR\u0014\u0010h\u001a\u00020iX\u0080D¢\u0006\b\n\u0000\u001a\u0004\bj\u0010kR\u0014\u0010l\u001a\u00020iX\u0080D¢\u0006\b\n\u0000\u001a\u0004\bm\u0010kR\u000e\u0010n\u001a\u00020oX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010p\u001a\b\u0012\u0004\u0012\u00020q0DX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010r\u001a\u00020qX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010s\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010t\u001a\u00020`X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010Ã\u0001\u001a\u00030Ä\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010Õ\u0001\u001a\t\u0012\u0005\u0012\u00030Ö\u00010,X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010×\u0001\u001a\u000f\u0012\u0005\u0012\u00030Ö\u0001\u0012\u0004\u0012\u00020T0\u0011X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006ú\u0001"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;", "Landroidx/core/view/AccessibilityDelegateCompat;", "view", "Landroidx/compose/ui/platform/AndroidComposeView;", "<init>", "(Landroidx/compose/ui/platform/AndroidComposeView;)V", "getView", "()Landroidx/compose/ui/platform/AndroidComposeView;", "hoveredVirtualViewId", "", "getHoveredVirtualViewId$ui_release$annotations", "()V", "getHoveredVirtualViewId$ui_release", "()I", "setHoveredVirtualViewId$ui_release", "(I)V", "onSendAccessibilityEvent", "Lkotlin/Function1;", "Landroid/view/accessibility/AccessibilityEvent;", "", "getOnSendAccessibilityEvent$ui_release$annotations", "getOnSendAccessibilityEvent$ui_release", "()Lkotlin/jvm/functions/Function1;", "setOnSendAccessibilityEvent$ui_release", "(Lkotlin/jvm/functions/Function1;)V", "accessibilityManager", "Landroid/view/accessibility/AccessibilityManager;", "value", "accessibilityForceEnabledForTesting", "getAccessibilityForceEnabledForTesting$ui_release", "()Z", "setAccessibilityForceEnabledForTesting$ui_release", "(Z)V", "SendRecurringAccessibilityEventsIntervalMillis", "", "getSendRecurringAccessibilityEventsIntervalMillis$ui_release", "()J", "setSendRecurringAccessibilityEventsIntervalMillis$ui_release", "(J)V", "enabledStateListener", "Landroid/view/accessibility/AccessibilityManager$AccessibilityStateChangeListener;", "touchExplorationStateListener", "Landroid/view/accessibility/AccessibilityManager$TouchExplorationStateChangeListener;", "enabledServices", "", "Landroid/accessibilityservice/AccessibilityServiceInfo;", "kotlin.jvm.PlatformType", "", "isEnabled", "isEnabled$ui_release", "isTouchExplorationEnabled", "requestFromAccessibilityToolForTesting", "getRequestFromAccessibilityToolForTesting$ui_release", "()Ljava/lang/Boolean;", "setRequestFromAccessibilityToolForTesting$ui_release", "(Ljava/lang/Boolean;)V", "Ljava/lang/Boolean;", "handler", "Landroid/os/Handler;", "nodeProvider", "Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$ComposeAccessibilityNodeProvider;", "accessibilityFocusedVirtualViewId", "focusedVirtualViewId", "currentlyAccessibilityFocusedANI", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;", "currentlyFocusedANI", "sendingFocusAffectingEvent", "pendingHorizontalScrollEvents", "Landroidx/collection/MutableIntObjectMap;", "Landroidx/compose/ui/semantics/ScrollAxisRange;", "pendingVerticalScrollEvents", "actionIdToLabel", "Landroidx/collection/SparseArrayCompat;", "", "labelToActionId", "Landroidx/collection/MutableObjectIntMap;", "accessibilityCursorPosition", "previousTraversedNode", "Ljava/lang/Integer;", "subtreeChangedLayoutNodes", "Landroidx/collection/ArraySet;", "Landroidx/compose/ui/node/LayoutNode;", "boundsUpdateChannel", "Lkotlinx/coroutines/channels/Channel;", "", "currentSemanticsNodesInvalidated", "pendingTextTraversedEvent", "Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$PendingTextTraversedEvent;", "currentSemanticsNodes", "Landroidx/collection/IntObjectMap;", "Landroidx/compose/ui/semantics/SemanticsNodeWithAdjustedBounds;", "getCurrentSemanticsNodes", "()Landroidx/collection/IntObjectMap;", "paneDisplayed", "Landroidx/collection/MutableIntSet;", "idToBeforeMap", "Landroidx/collection/MutableIntIntMap;", "getIdToBeforeMap$ui_release", "()Landroidx/collection/MutableIntIntMap;", "setIdToBeforeMap$ui_release", "(Landroidx/collection/MutableIntIntMap;)V", "idToAfterMap", "getIdToAfterMap$ui_release", "setIdToAfterMap$ui_release", "ExtraDataTestTraversalBeforeVal", "", "getExtraDataTestTraversalBeforeVal$ui_release", "()Ljava/lang/String;", "ExtraDataTestTraversalAfterVal", "getExtraDataTestTraversalAfterVal$ui_release", "urlSpanCache", "Landroidx/compose/ui/text/platform/URLSpanCache;", "previousSemanticsNodes", "Landroidx/compose/ui/platform/SemanticsNodeCopy;", "previousSemanticsRoot", "checkingForSemanticsChanges", "drawingOrder", "canScroll", "vertical", "direction", "position", "Landroidx/compose/ui/geometry/Offset;", "canScroll-0AR0LA0$ui_release", "(ZIJ)Z", "canScroll-moWRBKg", "(Landroidx/collection/IntObjectMap;ZIJ)Z", "isRequestFromAccessibilityTool", "createNodeInfo", "virtualViewId", "emptyNodeInfoOrNull", "boundsInScreen", "Landroid/graphics/Rect;", "node", "populateAccessibilityNodeInfoProperties", "info", "semanticsNode", "Landroidx/compose/ui/semantics/SemanticsNode;", "setContentInvalid", "toSpannableString", "Landroid/text/SpannableString;", "Landroidx/compose/ui/text/AnnotatedString;", "setText", "isAccessibilityFocused", "requestAccessibilityFocus", "sendEventForVirtualView", "eventType", "contentChangeType", "contentDescription", "(IILjava/lang/Integer;Ljava/util/List;)Z", "sendEvent", NotificationCompat.CATEGORY_EVENT, "createEvent", "createTextSelectionChangedEvent", "fromIndex", "toIndex", "itemCount", "text", "(ILjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/CharSequence;)Landroid/view/accessibility/AccessibilityEvent;", "clearAccessibilityFocus", "performActionHelper", "action", "arguments", "Landroid/os/Bundle;", "addExtraDataToAccessibilityNodeInfoHelper", "extraDataKey", "toScreenCoords", "Landroid/graphics/RectF;", "textNode", "bounds", "Landroidx/compose/ui/geometry/Rect;", "createOutline", "Landroidx/compose/ui/graphics/Outline;", "Landroidx/compose/ui/graphics/Shape;", "toAndroidRect", "toCornerArray", "", "toRegion", "Landroid/graphics/Region;", "dispatchHoverEvent", "Landroid/view/MotionEvent;", "dispatchHoverEvent$ui_release", "hitTestSemanticsAt", "x", "", "y", "hitTestSemanticsAt$ui_release", "updateHoveredVirtualView", "getAccessibilityNodeProvider", "Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;", "host", "Landroid/view/View;", "trimToSize", ExifInterface.GPS_DIRECTION_TRUE, "size", "(Ljava/lang/CharSequence;I)Ljava/lang/CharSequence;", "semanticsChangeChecker", "Ljava/lang/Runnable;", "onSemanticsChange", "onSemanticsChange$ui_release", "boundsUpdatesEventLoop", "boundsUpdatesEventLoop$ui_release", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onLayoutChange", "layoutNode", "onLayoutChange$ui_release", "notifySubtreeAccessibilityStateChangedIfNeeded", "sendTypeViewScrolledAccessibilityEvent", "sendSubtreeChangeAccessibilityEvents", "subtreeChangedSemanticsNodesIds", "checkForSemanticsChanges", "updateSemanticsNodesCopyAndPanes", "sendSemanticsPropertyChangeEvents", "newSemanticsNodes", "scrollObservationScopes", "Landroidx/compose/ui/platform/ScrollObservationScope;", "scheduleScrollEventIfNeededLambda", "registerScrollingId", "id", "oldScrollObservationScopes", "scheduleScrollEventIfNeeded", "scrollObservationScope", "sendPaneChangeEvents", "semanticsNodeId", "title", "sendAccessibilitySemanticsStructureChangeEvents", "newNode", "oldNode", "semanticsNodeIdToAccessibilityVirtualNodeId", "traverseAtGranularity", "granularity", "forward", "extendSelection", "sendPendingTextTraversedAtGranularityEvent", "setAccessibilitySelection", TtmlNode.START, TtmlNode.END, "traversalMode", "getAccessibilitySelectionStart", "getAccessibilitySelectionEnd", "isAccessibilitySelectionExtendable", "getIteratorForGranularity", "Landroidx/compose/ui/platform/AccessibilityIterators$TextSegmentIterator;", "getIterableTextForAccessibility", "getTextForTextField", "Landroidx/compose/ui/semantics/SemanticsConfiguration;", "Companion", "PendingTextTraversedEvent", "ComposeAccessibilityNodeProvider", "Api24Impl", "Api29Impl", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidComposeViewAccessibilityDelegateCompat extends AccessibilityDelegateCompat {
     public static final int AccessibilityCursorPositionUndefined = -1;
     public static final int AccessibilitySliderStepsCount = 20;
     public static final String ClassName = "android.view.View";
     public static final String ExtraDataIdKey = "androidx.compose.ui.semantics.id";
+    public static final String ExtraDataShapeRectCornersKey = "androidx.compose.ui.semantics.shapeCorners";
+    public static final String ExtraDataShapeRectKey = "androidx.compose.ui.semantics.shapeRect";
+    public static final String ExtraDataShapeRegionKey = "androidx.compose.ui.semantics.shapeRegion";
+    public static final int ExtraDataShapeTypeGeneric = 2;
+    public static final String ExtraDataShapeTypeKey = "androidx.compose.ui.semantics.shapeType";
+    public static final int ExtraDataShapeTypeRectangle = 0;
+    public static final int ExtraDataShapeTypeRounded = 1;
     public static final String ExtraDataTestTagKey = "androidx.compose.ui.semantics.testTag";
     public static final int InvalidId = Integer.MIN_VALUE;
     public static final String LogTag = "AccessibilityDelegate";
@@ -131,6 +153,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
     private boolean currentSemanticsNodesInvalidated;
     private AccessibilityNodeInfoCompat currentlyAccessibilityFocusedANI;
     private AccessibilityNodeInfoCompat currentlyFocusedANI;
+    private final MutableIntIntMap drawingOrder;
     private List<AccessibilityServiceInfo> enabledServices;
     private final AccessibilityManager.AccessibilityStateChangeListener enabledStateListener;
     private int focusedVirtualViewId;
@@ -146,6 +169,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
     private MutableIntObjectMap<SemanticsNodeCopy> previousSemanticsNodes;
     private SemanticsNodeCopy previousSemanticsRoot;
     private Integer previousTraversedNode;
+    private Boolean requestFromAccessibilityToolForTesting;
     private final Function1<ScrollObservationScope, Unit> scheduleScrollEventIfNeededLambda;
     private final List<ScrollObservationScope> scrollObservationScopes;
     private final Runnable semanticsChangeChecker;
@@ -181,7 +205,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
     }
 
     /* compiled from: AndroidComposeViewAccessibilityDelegateCompat.android.kt */
-    @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\t\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0006X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0006X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$Companion;", "", "()V", "AccessibilityActionsResourceIds", "Landroidx/collection/IntList;", "AccessibilityCursorPositionUndefined", "", "AccessibilitySliderStepsCount", "ClassName", "", "ExtraDataIdKey", "ExtraDataTestTagKey", "InvalidId", "LogTag", "ParcelSafeTextLength", "TextClassName", "TextFieldClassName", "TextTraversedEventTimeoutMillis", "", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0010\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$Companion;", "", "<init>", "()V", "InvalidId", "", "ClassName", "", "TextFieldClassName", "TextClassName", "LogTag", "ExtraDataTestTagKey", "ExtraDataIdKey", "ExtraDataShapeTypeKey", "ExtraDataShapeTypeRectangle", "ExtraDataShapeTypeRounded", "ExtraDataShapeTypeGeneric", "ExtraDataShapeRectKey", "ExtraDataShapeRectCornersKey", "ExtraDataShapeRegionKey", "ParcelSafeTextLength", "AccessibilityCursorPositionUndefined", "AccessibilitySliderStepsCount", "TextTraversedEventTimeoutMillis", "", "AccessibilityActionsResourceIds", "Landroidx/collection/IntList;", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -233,11 +257,13 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         this.urlSpanCache = new URLSpanCache();
         this.previousSemanticsNodes = IntObjectMapKt.mutableIntObjectMapOf();
         this.previousSemanticsRoot = new SemanticsNodeCopy(androidComposeView.getSemanticsOwner().getUnmergedRootSemanticsNode(), IntObjectMapKt.intObjectMapOf());
+        this.drawingOrder = IntIntMapKt.mutableIntIntMapOf();
         androidComposeView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat.1
             @Override // android.view.View.OnAttachStateChangeListener
             public void onViewAttachedToWindow(View view) {
                 android.view.accessibility.AccessibilityManager accessibilityManager2 = AndroidComposeViewAccessibilityDelegateCompat.this.accessibilityManager;
                 AndroidComposeViewAccessibilityDelegateCompat androidComposeViewAccessibilityDelegateCompat = AndroidComposeViewAccessibilityDelegateCompat.this;
+                androidComposeViewAccessibilityDelegateCompat.enabledServices = androidComposeViewAccessibilityDelegateCompat.accessibilityManager.getEnabledAccessibilityServiceList(-1);
                 accessibilityManager2.addAccessibilityStateChangeListener(androidComposeViewAccessibilityDelegateCompat.enabledStateListener);
                 accessibilityManager2.addTouchExplorationStateChangeListener(androidComposeViewAccessibilityDelegateCompat.touchExplorationStateListener);
             }
@@ -254,7 +280,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         this.semanticsChangeChecker = new Runnable() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                AndroidComposeViewAccessibilityDelegateCompat.semanticsChangeChecker$lambda$37(AndroidComposeViewAccessibilityDelegateCompat.this);
+                AndroidComposeViewAccessibilityDelegateCompat.semanticsChangeChecker$lambda$50(AndroidComposeViewAccessibilityDelegateCompat.this);
             }
         };
         this.scrollObservationScopes = new ArrayList();
@@ -340,9 +366,17 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         return this.accessibilityManager.isEnabled() && this.accessibilityManager.isTouchExplorationEnabled();
     }
 
+    public final Boolean getRequestFromAccessibilityToolForTesting$ui_release() {
+        return this.requestFromAccessibilityToolForTesting;
+    }
+
+    public final void setRequestFromAccessibilityToolForTesting$ui_release(Boolean bool) {
+        this.requestFromAccessibilityToolForTesting = bool;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: AndroidComposeViewAccessibilityDelegateCompat.android.kt */
-    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\u000b\b\u0002\u0018\u00002\u00020\u0001B5\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\u0006\u0010\u0007\u001a\u00020\u0005\u0012\u0006\u0010\b\u001a\u00020\u0005\u0012\u0006\u0010\t\u001a\u00020\n¢\u0006\u0002\u0010\u000bR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\u0007\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\rR\u0011\u0010\u0006\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\rR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0011\u0010\b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\rR\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014¨\u0006\u0015"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$PendingTextTraversedEvent;", "", "node", "Landroidx/compose/ui/semantics/SemanticsNode;", "action", "", "granularity", "fromIndex", "toIndex", "traverseTime", "", "(Landroidx/compose/ui/semantics/SemanticsNode;IIIIJ)V", "getAction", "()I", "getFromIndex", "getGranularity", "getNode", "()Landroidx/compose/ui/semantics/SemanticsNode;", "getToIndex", "getTraverseTime", "()J", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\f\b\u0002\u0018\u00002\u00020\u0001B7\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\u0006\u0010\u0007\u001a\u00020\u0005\u0012\u0006\u0010\b\u001a\u00020\u0005\u0012\u0006\u0010\t\u001a\u00020\n¢\u0006\u0004\b\u000b\u0010\fR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0006\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0010R\u0011\u0010\u0007\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0010R\u0011\u0010\b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0010R\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015¨\u0006\u0016"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$PendingTextTraversedEvent;", "", "node", "Landroidx/compose/ui/semantics/SemanticsNode;", "action", "", "granularity", "fromIndex", "toIndex", "traverseTime", "", "<init>", "(Landroidx/compose/ui/semantics/SemanticsNode;IIIIJ)V", "getNode", "()Landroidx/compose/ui/semantics/SemanticsNode;", "getAction", "()I", "getGranularity", "getFromIndex", "getToIndex", "getTraverseTime", "()J", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class PendingTextTraversedEvent {
         private final int action;
@@ -390,7 +424,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
     public final IntObjectMap<SemanticsNodeWithAdjustedBounds> getCurrentSemanticsNodes() {
         if (this.currentSemanticsNodesInvalidated) {
             this.currentSemanticsNodesInvalidated = false;
-            this.currentSemanticsNodes = SemanticsUtils_androidKt.getAllUncoveredSemanticsNodesToIntObjectMap(this.view.getSemanticsOwner());
+            this.currentSemanticsNodes = SemanticsOwnerKt.getAllUncoveredSemanticsNodesToIntObjectMap(this.view.getSemanticsOwner(), -1);
             if (isEnabled$ui_release()) {
                 AndroidComposeViewAccessibilityDelegateCompat_androidKt.setTraversalValues(this.currentSemanticsNodes, this.idToBeforeMap, this.idToAfterMap, this.view.getContext().getResources());
             }
@@ -423,26 +457,26 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
     }
 
     /* renamed from: canScroll-0AR0LA0$ui_release  reason: not valid java name */
-    public final boolean m5820canScroll0AR0LA0$ui_release(boolean z, int i, long j) {
+    public final boolean m6363canScroll0AR0LA0$ui_release(boolean z, int i, long j) {
         if (Intrinsics.areEqual(Looper.getMainLooper().getThread(), Thread.currentThread())) {
-            return m5819canScrollmoWRBKg(getCurrentSemanticsNodes(), z, i, j);
+            return m6362canScrollmoWRBKg(getCurrentSemanticsNodes(), z, i, j);
         }
         return false;
     }
 
     /* renamed from: canScroll-moWRBKg  reason: not valid java name */
-    private final boolean m5819canScrollmoWRBKg(IntObjectMap<SemanticsNodeWithAdjustedBounds> intObjectMap, boolean z, int i, long j) {
+    private final boolean m6362canScrollmoWRBKg(IntObjectMap<SemanticsNodeWithAdjustedBounds> intObjectMap, boolean z, int i, long j) {
         SemanticsPropertyKey<ScrollAxisRange> horizontalScrollAxisRange;
         ScrollAxisRange scrollAxisRange;
-        if (Offset.m3834equalsimpl0(j, Offset.Companion.m3852getUnspecifiedF1C5BW0()) || (((9223372034707292159L & j) + InlineClassHelperKt.DualLoadedSignificand) & (-9223372034707292160L)) != 0) {
+        if (Offset.m4290equalsimpl0(j, Offset.Companion.m4308getUnspecifiedF1C5BW0()) || (((9223372034707292159L & j) + InlineClassHelperKt.DualLoadedSignificand) & (-9223372034707292160L)) != 0) {
             return false;
         }
         if (z) {
             horizontalScrollAxisRange = SemanticsProperties.INSTANCE.getVerticalScrollAxisRange();
-        } else if (!z) {
-            horizontalScrollAxisRange = SemanticsProperties.INSTANCE.getHorizontalScrollAxisRange();
-        } else {
+        } else if (z) {
             throw new NoWhenBranchMatchedException();
+        } else {
+            horizontalScrollAxisRange = SemanticsProperties.INSTANCE.getHorizontalScrollAxisRange();
         }
         Object[] objArr = intObjectMap.values;
         long[] jArr = intObjectMap.metadata;
@@ -459,7 +493,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                 for (int i4 = 0; i4 < i3; i4++) {
                     if ((j2 & 255) < 128) {
                         SemanticsNodeWithAdjustedBounds semanticsNodeWithAdjustedBounds = (SemanticsNodeWithAdjustedBounds) objArr[(i2 << 3) + i4];
-                        if (RectHelper_androidKt.toComposeRect(semanticsNodeWithAdjustedBounds.getAdjustedBounds()).m3863containsk4lQ0M(j) && (scrollAxisRange = (ScrollAxisRange) SemanticsConfigurationKt.getOrNull(semanticsNodeWithAdjustedBounds.getSemanticsNode().getUnmergedConfig$ui_release(), horizontalScrollAxisRange)) != null) {
+                        if (IntRectKt.toRect(semanticsNodeWithAdjustedBounds.getAdjustedBounds()).m4319containsk4lQ0M(j) && (scrollAxisRange = (ScrollAxisRange) SemanticsConfigurationKt.getOrNull(semanticsNodeWithAdjustedBounds.getSemanticsNode().getUnmergedConfig$ui_release(), horizontalScrollAxisRange)) != null) {
                             int i5 = scrollAxisRange.getReverseScrolling() ? -i : i;
                             if (i == 0 && scrollAxisRange.getReverseScrolling()) {
                                 i5 = -1;
@@ -492,46 +526,73 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         }
     }
 
+    private final boolean isRequestFromAccessibilityTool() {
+        Boolean bool = this.requestFromAccessibilityToolForTesting;
+        if (Intrinsics.areEqual((Object) bool, (Object) true)) {
+            return true;
+        }
+        if (Intrinsics.areEqual((Object) bool, (Object) false)) {
+            return false;
+        }
+        return AccessibilityManagerCompat.isRequestFromAccessibilityTool(this.accessibilityManager);
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public final AccessibilityNodeInfoCompat createNodeInfo(int i) {
         LifecycleOwner lifecycleOwner;
         Lifecycle lifecycle;
         AndroidComposeView.ViewTreeOwners viewTreeOwners = this.view.getViewTreeOwners();
         if (((viewTreeOwners == null || (lifecycleOwner = viewTreeOwners.getLifecycleOwner()) == null || (lifecycle = lifecycleOwner.getLifecycle()) == null) ? null : lifecycle.getCurrentState()) == Lifecycle.State.DESTROYED) {
-            return null;
+            return emptyNodeInfoOrNull();
         }
-        AccessibilityNodeInfoCompat obtain = AccessibilityNodeInfoCompat.obtain();
         SemanticsNodeWithAdjustedBounds semanticsNodeWithAdjustedBounds = getCurrentSemanticsNodes().get(i);
         if (semanticsNodeWithAdjustedBounds == null) {
-            return null;
+            return emptyNodeInfoOrNull();
         }
         SemanticsNode semanticsNode = semanticsNodeWithAdjustedBounds.getSemanticsNode();
-        if (i == -1) {
-            ViewParent parentForAccessibility = this.view.getParentForAccessibility();
-            obtain.setParent(parentForAccessibility instanceof View ? (View) parentForAccessibility : null);
-        } else {
-            SemanticsNode parent = semanticsNode.getParent();
-            Integer valueOf = parent != null ? Integer.valueOf(parent.getId()) : null;
-            if (valueOf != null) {
-                int intValue = valueOf.intValue();
-                obtain.setParent(this.view, intValue != this.view.getSemanticsOwner().getUnmergedRootSemanticsNode().getId() ? intValue : -1);
+        boolean areEqual = Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(semanticsNode.getConfig(), SemanticsProperties.INSTANCE.getIsSensitiveData()), (Object) true);
+        if (!areEqual || isRequestFromAccessibilityTool()) {
+            AccessibilityNodeInfoCompat obtain = AccessibilityNodeInfoCompat.obtain();
+            obtain.setAccessibilityDataSensitive(areEqual);
+            if (i == -1) {
+                ViewParent parentForAccessibility = this.view.getParentForAccessibility();
+                obtain.setParent(parentForAccessibility instanceof View ? (View) parentForAccessibility : null);
             } else {
-                androidx.compose.ui.internal.InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("semanticsNode " + i + " has null parent");
-                throw new KotlinNothingValueException();
+                SemanticsNode parent = semanticsNode.getParent();
+                Integer valueOf = parent != null ? Integer.valueOf(parent.getId()) : null;
+                if (valueOf != null) {
+                    int intValue = valueOf.intValue();
+                    obtain.setParent(this.view, intValue != this.view.getSemanticsOwner().getUnmergedRootSemanticsNode().getId() ? intValue : -1);
+                } else {
+                    androidx.compose.ui.internal.InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("semanticsNode " + i + " has null parent");
+                    throw new KotlinNothingValueException();
+                }
             }
+            obtain.setSource(this.view, i);
+            obtain.setBoundsInScreen(boundsInScreen(semanticsNodeWithAdjustedBounds));
+            populateAccessibilityNodeInfoProperties(i, obtain, semanticsNode);
+            return obtain;
         }
-        obtain.setSource(this.view, i);
-        obtain.setBoundsInScreen(boundsInScreen(semanticsNodeWithAdjustedBounds));
-        populateAccessibilityNodeInfoProperties(i, obtain, semanticsNode);
-        return obtain;
+        return null;
+    }
+
+    private final AccessibilityNodeInfoCompat emptyNodeInfoOrNull() {
+        if (this.accessibilityManager.isEnabled()) {
+            return null;
+        }
+        return AccessibilityNodeInfoCompat.obtain();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Rect boundsInScreen(SemanticsNodeWithAdjustedBounds semanticsNodeWithAdjustedBounds) {
-        Rect adjustedBounds = semanticsNodeWithAdjustedBounds.getAdjustedBounds();
-        long mo5393localToScreenMKHz9U = this.view.mo5393localToScreenMKHz9U(Offset.m3829constructorimpl((Float.floatToRawIntBits(adjustedBounds.top) & 4294967295L) | (Float.floatToRawIntBits(adjustedBounds.left) << 32)));
-        long mo5393localToScreenMKHz9U2 = this.view.mo5393localToScreenMKHz9U(Offset.m3829constructorimpl((Float.floatToRawIntBits(adjustedBounds.right) << 32) | (Float.floatToRawIntBits(adjustedBounds.bottom) & 4294967295L)));
-        return new Rect((int) Math.floor(Float.intBitsToFloat((int) (mo5393localToScreenMKHz9U >> 32))), (int) Math.floor(Float.intBitsToFloat((int) (mo5393localToScreenMKHz9U & 4294967295L))), (int) Math.ceil(Float.intBitsToFloat((int) (mo5393localToScreenMKHz9U2 >> 32))), (int) Math.ceil(Float.intBitsToFloat((int) (mo5393localToScreenMKHz9U2 & 4294967295L))));
+        IntRect adjustedBounds = semanticsNodeWithAdjustedBounds.getAdjustedBounds();
+        long mo5906localToScreenMKHz9U = this.view.mo5906localToScreenMKHz9U(Offset.m4285constructorimpl((Float.floatToRawIntBits(adjustedBounds.getTop()) & 4294967295L) | (Float.floatToRawIntBits(adjustedBounds.getLeft()) << 32)));
+        long mo5906localToScreenMKHz9U2 = this.view.mo5906localToScreenMKHz9U(Offset.m4285constructorimpl((Float.floatToRawIntBits(adjustedBounds.getRight()) << 32) | (Float.floatToRawIntBits(adjustedBounds.getBottom()) & 4294967295L)));
+        int i = (int) (mo5906localToScreenMKHz9U >> 32);
+        int i2 = (int) (mo5906localToScreenMKHz9U2 >> 32);
+        int i3 = (int) (mo5906localToScreenMKHz9U & 4294967295L);
+        int i4 = (int) (mo5906localToScreenMKHz9U2 & 4294967295L);
+        return new Rect((int) Math.floor(Math.min(Float.intBitsToFloat(i), Float.intBitsToFloat(i2))), (int) Math.floor(Math.min(Float.intBitsToFloat(i3), Float.intBitsToFloat(i4))), (int) Math.ceil(Math.max(Float.intBitsToFloat(i), Float.intBitsToFloat(i2))), (int) Math.ceil(Math.max(Float.intBitsToFloat(i3), Float.intBitsToFloat(i4))));
     }
 
     private final void populateAccessibilityNodeInfoProperties(int i, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat, SemanticsNode semanticsNode) {
@@ -549,11 +610,14 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         boolean isRtl2;
         AccessibilityNodeInfoCompat.AccessibilityActionCompat accessibilityActionCompat2;
         boolean enabled6;
+        String accessibilityExtraKey$ui_release;
         boolean excludeLineAndPageGranularities;
         boolean enabled7;
         boolean z;
         boolean enabled8;
         boolean z2;
+        SemanticsNode semanticsNode2;
+        SemanticsConfiguration config;
         Resources resources = this.view.getContext().getResources();
         accessibilityNodeInfoCompat.setClassName(ClassName);
         if (semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsProperties.INSTANCE.getEditableText())) {
@@ -564,16 +628,16 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         }
         Role role = (Role) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getRole());
         if (role != null) {
-            role.m5910unboximpl();
+            role.m6460unboximpl();
             if (semanticsNode.isFake$ui_release() || semanticsNode.getReplacedChildren$ui_release().isEmpty()) {
-                if (Role.m5907equalsimpl0(role.m5910unboximpl(), Role.Companion.m5918getTabo7Vup1c())) {
+                if (Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6468getTabo7Vup1c())) {
                     accessibilityNodeInfoCompat.setRoleDescription(resources.getString(R.string.tab));
-                } else if (Role.m5907equalsimpl0(role.m5910unboximpl(), Role.Companion.m5917getSwitcho7Vup1c())) {
+                } else if (Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6467getSwitcho7Vup1c())) {
                     accessibilityNodeInfoCompat.setRoleDescription(resources.getString(R.string.switch_role));
                 } else {
-                    String m5885toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m5885toLegacyClassNameV4PA4sw(role.m5910unboximpl());
-                    if (!Role.m5907equalsimpl0(role.m5910unboximpl(), Role.Companion.m5915getImageo7Vup1c()) || semanticsNode.isUnmergedLeafNode$ui_release() || semanticsNode.getUnmergedConfig$ui_release().isMergingSemanticsOfDescendants()) {
-                        accessibilityNodeInfoCompat.setClassName(m5885toLegacyClassNameV4PA4sw);
+                    String m6436toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m6436toLegacyClassNameV4PA4sw(role.m6460unboximpl());
+                    if (!Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6465getImageo7Vup1c()) || semanticsNode.isUnmergedLeafNode$ui_release() || semanticsNode.getUnmergedConfig$ui_release().isMergingSemanticsOfDescendants()) {
+                        accessibilityNodeInfoCompat.setClassName(m6436toLegacyClassNameV4PA4sw);
                     }
                 }
             }
@@ -581,19 +645,27 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
             Unit unit2 = Unit.INSTANCE;
         }
         accessibilityNodeInfoCompat.setPackageName(this.view.getContext().getPackageName());
-        accessibilityNodeInfoCompat.setImportantForAccessibility(SemanticsUtils_androidKt.isImportantForAccessibility(semanticsNode));
+        accessibilityNodeInfoCompat.setImportantForAccessibility(SemanticsOwnerKt.isImportantForAccessibility(semanticsNode));
+        boolean isRequestFromAccessibilityTool = isRequestFromAccessibilityTool();
         List<SemanticsNode> replacedChildren$ui_release = semanticsNode.getReplacedChildren$ui_release();
         int size = replacedChildren$ui_release.size();
-        for (int i2 = 0; i2 < size; i2++) {
-            SemanticsNode semanticsNode2 = replacedChildren$ui_release.get(i2);
-            if (getCurrentSemanticsNodes().containsKey(semanticsNode2.getId())) {
-                AndroidViewHolder androidViewHolder = this.view.getAndroidViewsHandler$ui_release().getLayoutNodeToHolder().get(semanticsNode2.getLayoutNode$ui_release());
-                if (semanticsNode2.getId() != -1) {
+        int i2 = 0;
+        for (int i3 = 0; i3 < size; i3++) {
+            SemanticsNode semanticsNode3 = replacedChildren$ui_release.get(i3);
+            if (getCurrentSemanticsNodes().containsKey(semanticsNode3.getId())) {
+                AndroidViewHolder androidViewHolder = this.view.getAndroidViewsHandler$ui_release().getLayoutNodeToHolder().get(semanticsNode3.getLayoutNode$ui_release());
+                if (semanticsNode3.getId() != -1) {
                     if (androidViewHolder != null) {
                         accessibilityNodeInfoCompat.addChild(androidViewHolder);
                     } else {
-                        accessibilityNodeInfoCompat.addChild(this.view, semanticsNode2.getId());
+                        SemanticsNodeWithAdjustedBounds semanticsNodeWithAdjustedBounds = getCurrentSemanticsNodes().get(semanticsNode3.getId());
+                        boolean areEqual = (semanticsNodeWithAdjustedBounds == null || (semanticsNode2 = semanticsNodeWithAdjustedBounds.getSemanticsNode()) == null || (config = semanticsNode2.getConfig()) == null) ? false : Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(config, SemanticsProperties.INSTANCE.getIsSensitiveData()), (Object) true);
+                        if (isRequestFromAccessibilityTool || !areEqual) {
+                            accessibilityNodeInfoCompat.addChild(this.view, semanticsNode3.getId());
+                        }
                     }
+                    this.drawingOrder.put(semanticsNode3.getId(), i2);
+                    i2++;
                 }
             }
         }
@@ -623,7 +695,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         Boolean bool = (Boolean) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getSelected());
         if (bool != null) {
             boolean booleanValue = bool.booleanValue();
-            if (role == null ? false : Role.m5907equalsimpl0(role.m5910unboximpl(), Role.Companion.m5918getTabo7Vup1c())) {
+            if (role == null ? false : Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6468getTabo7Vup1c())) {
                 accessibilityNodeInfoCompat.setSelected(booleanValue);
             } else {
                 accessibilityNodeInfoCompat.setChecked(booleanValue);
@@ -637,16 +709,16 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         }
         String str = (String) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getTestTag());
         if (str != null) {
-            SemanticsNode semanticsNode3 = semanticsNode;
+            SemanticsNode semanticsNode4 = semanticsNode;
             while (true) {
-                if (semanticsNode3 == null) {
+                if (semanticsNode4 == null) {
                     z2 = false;
                     break;
-                } else if (semanticsNode3.getUnmergedConfig$ui_release().contains(SemanticsPropertiesAndroid.INSTANCE.getTestTagsAsResourceId())) {
-                    z2 = ((Boolean) semanticsNode3.getUnmergedConfig$ui_release().get(SemanticsPropertiesAndroid.INSTANCE.getTestTagsAsResourceId())).booleanValue();
+                } else if (semanticsNode4.getUnmergedConfig$ui_release().contains(SemanticsPropertiesAndroid.INSTANCE.getTestTagsAsResourceId())) {
+                    z2 = ((Boolean) semanticsNode4.getUnmergedConfig$ui_release().get(SemanticsPropertiesAndroid.INSTANCE.getTestTagsAsResourceId())).booleanValue();
                     break;
                 } else {
-                    semanticsNode3 = semanticsNode3.getParent();
+                    semanticsNode4 = semanticsNode4.getParent();
                 }
             }
             if (z2) {
@@ -657,6 +729,15 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
             accessibilityNodeInfoCompat.setHeading(true);
             Unit unit7 = Unit.INSTANCE;
             Unit unit8 = Unit.INSTANCE;
+        }
+        if (i != -1) {
+            int orDefault = this.drawingOrder.getOrDefault(semanticsNode.getId(), -1);
+            if (orDefault != -1) {
+                accessibilityNodeInfoCompat.setDrawingOrder(orDefault);
+                Unit unit9 = Unit.INSTANCE;
+            } else {
+                Integer.valueOf(Log.w(LogTag, "Drawing order is not available, was AccessibilityNodeInfo requested for a child node before its parent?"));
+            }
         }
         accessibilityNodeInfoCompat.setPassword(semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsProperties.INSTANCE.getPassword()));
         accessibilityNodeInfoCompat.setEditable(semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsProperties.INSTANCE.getIsEditable()));
@@ -674,38 +755,38 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                 accessibilityNodeInfoCompat.addAction(1);
             }
         }
-        accessibilityNodeInfoCompat.setVisibleToUser(!SemanticsUtils_androidKt.isHidden(semanticsNode));
+        accessibilityNodeInfoCompat.setVisibleToUser(!SemanticsOwnerKt.isHidden(semanticsNode));
         LiveRegionMode liveRegionMode = (LiveRegionMode) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getLiveRegion());
         if (liveRegionMode != null) {
-            int m5901unboximpl = liveRegionMode.m5901unboximpl();
-            accessibilityNodeInfoCompat.setLiveRegion((LiveRegionMode.m5898equalsimpl0(m5901unboximpl, LiveRegionMode.Companion.m5903getPolite0phEisY()) || !LiveRegionMode.m5898equalsimpl0(m5901unboximpl, LiveRegionMode.Companion.m5902getAssertive0phEisY())) ? 1 : 2);
-            Unit unit9 = Unit.INSTANCE;
+            int m6451unboximpl = liveRegionMode.m6451unboximpl();
+            accessibilityNodeInfoCompat.setLiveRegion((!LiveRegionMode.m6448equalsimpl0(m6451unboximpl, LiveRegionMode.Companion.m6453getPolite0phEisY()) && LiveRegionMode.m6448equalsimpl0(m6451unboximpl, LiveRegionMode.Companion.m6452getAssertive0phEisY())) ? 2 : 1);
             Unit unit10 = Unit.INSTANCE;
+            Unit unit11 = Unit.INSTANCE;
         }
         accessibilityNodeInfoCompat.setClickable(false);
         AccessibilityAction accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getOnClick());
         if (accessibilityAction != null) {
-            boolean areEqual = Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getSelected()), (Object) true);
-            if (!(role == null ? false : Role.m5907equalsimpl0(role.m5910unboximpl(), Role.Companion.m5918getTabo7Vup1c()))) {
-                if (!(role == null ? false : Role.m5907equalsimpl0(role.m5910unboximpl(), Role.Companion.m5916getRadioButtono7Vup1c()))) {
+            boolean areEqual2 = Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getSelected()), (Object) true);
+            if (!(role == null ? false : Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6468getTabo7Vup1c()))) {
+                if (!(role == null ? false : Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6466getRadioButtono7Vup1c()))) {
                     z = false;
-                    accessibilityNodeInfoCompat.setClickable(z || (z && !areEqual));
+                    accessibilityNodeInfoCompat.setClickable(z || (z && !areEqual2));
                     enabled8 = AndroidComposeViewAccessibilityDelegateCompat_androidKt.enabled(semanticsNode);
                     if (enabled8 && accessibilityNodeInfoCompat.isClickable()) {
                         accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(16, accessibilityAction.getLabel()));
                     }
-                    Unit unit11 = Unit.INSTANCE;
                     Unit unit12 = Unit.INSTANCE;
+                    Unit unit13 = Unit.INSTANCE;
                 }
             }
             z = true;
-            accessibilityNodeInfoCompat.setClickable(z || (z && !areEqual));
+            accessibilityNodeInfoCompat.setClickable(z || (z && !areEqual2));
             enabled8 = AndroidComposeViewAccessibilityDelegateCompat_androidKt.enabled(semanticsNode);
             if (enabled8) {
                 accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(16, accessibilityAction.getLabel()));
             }
-            Unit unit112 = Unit.INSTANCE;
             Unit unit122 = Unit.INSTANCE;
+            Unit unit132 = Unit.INSTANCE;
         }
         accessibilityNodeInfoCompat.setLongClickable(false);
         AccessibilityAction accessibilityAction2 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getOnLongClick());
@@ -715,42 +796,42 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
             if (enabled7) {
                 accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(32, accessibilityAction2.getLabel()));
             }
-            Unit unit13 = Unit.INSTANCE;
             Unit unit14 = Unit.INSTANCE;
+            Unit unit15 = Unit.INSTANCE;
         }
         AccessibilityAction accessibilityAction3 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getCopyText());
         if (accessibilityAction3 != null) {
             accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(16384, accessibilityAction3.getLabel()));
-            Unit unit15 = Unit.INSTANCE;
             Unit unit16 = Unit.INSTANCE;
+            Unit unit17 = Unit.INSTANCE;
         }
         enabled2 = AndroidComposeViewAccessibilityDelegateCompat_androidKt.enabled(semanticsNode);
         if (enabled2) {
             AccessibilityAction accessibilityAction4 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getSetText());
             if (accessibilityAction4 != null) {
                 accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(2097152, accessibilityAction4.getLabel()));
-                Unit unit17 = Unit.INSTANCE;
                 Unit unit18 = Unit.INSTANCE;
+                Unit unit19 = Unit.INSTANCE;
             }
             AccessibilityAction accessibilityAction5 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getOnImeAction());
             if (accessibilityAction5 != null) {
                 accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(16908372, accessibilityAction5.getLabel()));
-                Unit unit19 = Unit.INSTANCE;
                 Unit unit20 = Unit.INSTANCE;
+                Unit unit21 = Unit.INSTANCE;
             }
             AccessibilityAction accessibilityAction6 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getCutText());
             if (accessibilityAction6 != null) {
                 accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(65536, accessibilityAction6.getLabel()));
-                Unit unit21 = Unit.INSTANCE;
                 Unit unit22 = Unit.INSTANCE;
+                Unit unit23 = Unit.INSTANCE;
             }
             AccessibilityAction accessibilityAction7 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPasteText());
             if (accessibilityAction7 != null) {
                 if (accessibilityNodeInfoCompat.isFocused() && this.view.getClipboardManager().hasText()) {
                     accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(32768, accessibilityAction7.getLabel()));
                 }
-                Unit unit23 = Unit.INSTANCE;
                 Unit unit24 = Unit.INSTANCE;
+                Unit unit25 = Unit.INSTANCE;
             }
         }
         String iterableTextForAccessibility = getIterableTextForAccessibility(semanticsNode);
@@ -778,6 +859,44 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
             }
             if (semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsProperties.INSTANCE.getTestTag())) {
                 arrayList.add(ExtraDataTestTagKey);
+            }
+            if (semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsProperties.INSTANCE.getShape())) {
+                arrayList.add(ExtraDataShapeTypeKey);
+                arrayList.add(ExtraDataShapeRectKey);
+                arrayList.add(ExtraDataShapeRectCornersKey);
+                arrayList.add(ExtraDataShapeRegionKey);
+            }
+            ScatterSet<SemanticsPropertyKey<?>> accessibilityExtraKeys$ui_release = semanticsNode.getUnmergedConfig$ui_release().getAccessibilityExtraKeys$ui_release();
+            if (accessibilityExtraKeys$ui_release != null) {
+                Object[] objArr = accessibilityExtraKeys$ui_release.elements;
+                long[] jArr = accessibilityExtraKeys$ui_release.metadata;
+                int length = jArr.length - 2;
+                if (length >= 0) {
+                    int i4 = 0;
+                    while (true) {
+                        long j = jArr[i4];
+                        if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                            int i5 = 8 - ((~(i4 - length)) >>> 31);
+                            long j2 = j;
+                            for (int i6 = 0; i6 < i5; i6++) {
+                                if (((j2 & 255) < 128) && (accessibilityExtraKey$ui_release = ((SemanticsPropertyKey) objArr[(i4 << 3) + i6]).getAccessibilityExtraKey$ui_release()) != null) {
+                                    arrayList.add(accessibilityExtraKey$ui_release);
+                                    Unit unit26 = Unit.INSTANCE;
+                                    Unit unit27 = Unit.INSTANCE;
+                                }
+                                j2 >>= 8;
+                            }
+                            if (i5 != 8) {
+                                break;
+                            }
+                        }
+                        if (i4 == length) {
+                            break;
+                        }
+                        i4++;
+                    }
+                }
+                Unit unit28 = Unit.INSTANCE;
             }
             accessibilityNodeInfoCompat.setAvailableExtraData(arrayList);
         }
@@ -868,20 +987,20 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
             AccessibilityAction accessibilityAction10 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getExpand());
             if (accessibilityAction10 != null) {
                 accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(262144, accessibilityAction10.getLabel()));
-                Unit unit25 = Unit.INSTANCE;
-                Unit unit26 = Unit.INSTANCE;
+                Unit unit29 = Unit.INSTANCE;
+                Unit unit30 = Unit.INSTANCE;
             }
             AccessibilityAction accessibilityAction11 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getCollapse());
             if (accessibilityAction11 != null) {
                 accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(524288, accessibilityAction11.getLabel()));
-                Unit unit27 = Unit.INSTANCE;
-                Unit unit28 = Unit.INSTANCE;
+                Unit unit31 = Unit.INSTANCE;
+                Unit unit32 = Unit.INSTANCE;
             }
             AccessibilityAction accessibilityAction12 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getDismiss());
             if (accessibilityAction12 != null) {
                 accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(1048576, accessibilityAction12.getLabel()));
-                Unit unit29 = Unit.INSTANCE;
-                Unit unit30 = Unit.INSTANCE;
+                Unit unit33 = Unit.INSTANCE;
+                Unit unit34 = Unit.INSTANCE;
             }
             if (semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsActions.INSTANCE.getCustomActions())) {
                 List list3 = (List) semanticsNode.getUnmergedConfig$ui_release().get(SemanticsActions.INSTANCE.getCustomActions());
@@ -896,41 +1015,42 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                     MutableObjectIntMap<CharSequence> mutableObjectIntMap = this.labelToActionId.get(i);
                     MutableIntList mutableIntList = new MutableIntList(0, 1, null);
                     int[] iArr = intList.content;
-                    int i3 = intList._size;
-                    for (int i4 = 0; i4 < i3; i4++) {
-                        mutableIntList.add(iArr[i4]);
+                    int i7 = intList._size;
+                    for (int i8 = 0; i8 < i7; i8++) {
+                        mutableIntList.add(iArr[i8]);
                     }
                     ArrayList arrayList2 = new ArrayList();
                     int size3 = list3.size();
-                    for (int i5 = 0; i5 < size3; i5++) {
-                        CustomAccessibilityAction customAccessibilityAction = (CustomAccessibilityAction) list3.get(i5);
+                    for (int i9 = 0; i9 < size3; i9++) {
+                        CustomAccessibilityAction customAccessibilityAction = (CustomAccessibilityAction) list3.get(i9);
                         Intrinsics.checkNotNull(mutableObjectIntMap);
                         if (mutableObjectIntMap.containsKey(customAccessibilityAction.getLabel())) {
-                            int i6 = mutableObjectIntMap.get(customAccessibilityAction.getLabel());
-                            sparseArrayCompat.put(i6, customAccessibilityAction.getLabel());
-                            mutableObjectIntMapOf.set(customAccessibilityAction.getLabel(), i6);
-                            mutableIntList.remove(i6);
-                            accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(i6, customAccessibilityAction.getLabel()));
+                            int i10 = mutableObjectIntMap.get(customAccessibilityAction.getLabel());
+                            sparseArrayCompat.put(i10, customAccessibilityAction.getLabel());
+                            mutableObjectIntMapOf.set(customAccessibilityAction.getLabel(), i10);
+                            mutableIntList.remove(i10);
+                            accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(i10, customAccessibilityAction.getLabel()));
+                            Unit unit35 = Unit.INSTANCE;
                         } else {
-                            arrayList2.add(customAccessibilityAction);
+                            Boolean.valueOf(arrayList2.add(customAccessibilityAction));
                         }
                     }
                     int size4 = arrayList2.size();
-                    for (int i7 = 0; i7 < size4; i7++) {
-                        CustomAccessibilityAction customAccessibilityAction2 = (CustomAccessibilityAction) arrayList2.get(i7);
-                        int i8 = mutableIntList.get(i7);
-                        sparseArrayCompat.put(i8, customAccessibilityAction2.getLabel());
-                        mutableObjectIntMapOf.set(customAccessibilityAction2.getLabel(), i8);
-                        accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(i8, customAccessibilityAction2.getLabel()));
+                    for (int i11 = 0; i11 < size4; i11++) {
+                        CustomAccessibilityAction customAccessibilityAction2 = (CustomAccessibilityAction) arrayList2.get(i11);
+                        int i12 = mutableIntList.get(i11);
+                        sparseArrayCompat.put(i12, customAccessibilityAction2.getLabel());
+                        mutableObjectIntMapOf.set(customAccessibilityAction2.getLabel(), i12);
+                        accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(i12, customAccessibilityAction2.getLabel()));
                     }
                 } else {
                     int size5 = list3.size();
-                    for (int i9 = 0; i9 < size5; i9++) {
-                        CustomAccessibilityAction customAccessibilityAction3 = (CustomAccessibilityAction) list3.get(i9);
-                        int i10 = AccessibilityActionsResourceIds.get(i9);
-                        sparseArrayCompat.put(i10, customAccessibilityAction3.getLabel());
-                        mutableObjectIntMapOf.set(customAccessibilityAction3.getLabel(), i10);
-                        accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(i10, customAccessibilityAction3.getLabel()));
+                    for (int i13 = 0; i13 < size5; i13++) {
+                        CustomAccessibilityAction customAccessibilityAction3 = (CustomAccessibilityAction) list3.get(i13);
+                        int i14 = AccessibilityActionsResourceIds.get(i13);
+                        sparseArrayCompat.put(i14, customAccessibilityAction3.getLabel());
+                        mutableObjectIntMapOf.set(customAccessibilityAction3.getLabel(), i14);
+                        accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(i14, customAccessibilityAction3.getLabel()));
                     }
                 }
                 this.actionIdToLabel.put(i, sparseArrayCompat);
@@ -939,22 +1059,27 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         }
         isScreenReaderFocusable = AndroidComposeViewAccessibilityDelegateCompat_androidKt.isScreenReaderFocusable(semanticsNode, resources);
         accessibilityNodeInfoCompat.setScreenReaderFocusable(isScreenReaderFocusable);
-        int orDefault = this.idToBeforeMap.getOrDefault(i, -1);
-        if (orDefault != -1) {
-            View semanticsIdToView2 = SemanticsUtils_androidKt.semanticsIdToView(this.view.getAndroidViewsHandler$ui_release(), orDefault);
+        int orDefault2 = this.idToBeforeMap.getOrDefault(i, -1);
+        if (orDefault2 != -1) {
+            View semanticsIdToView2 = SemanticsUtils_androidKt.semanticsIdToView(this.view.getAndroidViewsHandler$ui_release(), orDefault2);
             if (semanticsIdToView2 != null) {
                 accessibilityNodeInfoCompat.setTraversalBefore(semanticsIdToView2);
             } else {
-                accessibilityNodeInfoCompat.setTraversalBefore(this.view, orDefault);
+                accessibilityNodeInfoCompat.setTraversalBefore(this.view, orDefault2);
             }
             addExtraDataToAccessibilityNodeInfoHelper(i, accessibilityNodeInfoCompat, this.ExtraDataTestTraversalBeforeVal, null);
         }
-        int orDefault2 = this.idToAfterMap.getOrDefault(i, -1);
-        if (orDefault2 == -1 || (semanticsIdToView = SemanticsUtils_androidKt.semanticsIdToView(this.view.getAndroidViewsHandler$ui_release(), orDefault2)) == null) {
-            return;
+        int orDefault3 = this.idToAfterMap.getOrDefault(i, -1);
+        if (orDefault3 != -1 && (semanticsIdToView = SemanticsUtils_androidKt.semanticsIdToView(this.view.getAndroidViewsHandler$ui_release(), orDefault3)) != null) {
+            accessibilityNodeInfoCompat.setTraversalAfter(semanticsIdToView);
+            addExtraDataToAccessibilityNodeInfoHelper(i, accessibilityNodeInfoCompat, this.ExtraDataTestTraversalAfterVal, null);
         }
-        accessibilityNodeInfoCompat.setTraversalAfter(semanticsIdToView);
-        addExtraDataToAccessibilityNodeInfoHelper(i, accessibilityNodeInfoCompat, this.ExtraDataTestTraversalAfterVal, null);
+        String str2 = (String) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsPropertiesAndroid.INSTANCE.getAccessibilityClassName());
+        if (str2 != null) {
+            accessibilityNodeInfoCompat.setClassName(str2);
+            Unit unit36 = Unit.INSTANCE;
+            Unit unit37 = Unit.INSTANCE;
+        }
     }
 
     private static final boolean populateAccessibilityNodeInfoProperties$canScrollForward(ScrollAxisRange scrollAxisRange) {
@@ -1054,6 +1179,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         obtain.setSource(this.view, i);
         if (isEnabled$ui_release() && (semanticsNodeWithAdjustedBounds = getCurrentSemanticsNodes().get(i)) != null) {
             obtain.setPassword(semanticsNodeWithAdjustedBounds.getSemanticsNode().getUnmergedConfig$ui_release().contains(SemanticsProperties.INSTANCE.getPassword()));
+            AccessibilityEventCompat.setAccessibilityDataSensitive(obtain, Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(semanticsNodeWithAdjustedBounds.getSemanticsNode().getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getIsSensitiveData()), (Object) true));
         }
         return obtain;
     }
@@ -1088,10 +1214,10 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x01d0 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x01d1  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x01b2 A[ADDED_TO_REGION] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:96:0x01af -> B:97:0x01b0). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x01d1 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x01ef  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0231  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:101:0x01ce -> B:102:0x01cf). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1136,328 +1262,332 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         if (semanticsNodeWithAdjustedBounds == null || (semanticsNode = semanticsNodeWithAdjustedBounds.getSemanticsNode()) == null) {
             return false;
         }
-        if (i2 != 64) {
-            if (i2 != 128) {
-                if (i2 == 256 || i2 == 512) {
-                    if (bundle != null) {
-                        return traverseAtGranularity(semanticsNode, bundle.getInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT), i2 == 256, bundle.getBoolean(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN));
-                    }
-                    return false;
-                } else if (i2 == 16384) {
-                    AccessibilityAction accessibilityAction5 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getCopyText());
-                    if (accessibilityAction5 == null || (function0 = (Function0) accessibilityAction5.getAction()) == null) {
+        if (!Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getIsSensitiveData()), (Object) true) || isRequestFromAccessibilityTool()) {
+            if (i2 != 64) {
+                if (i2 != 128) {
+                    if (i2 == 256 || i2 == 512) {
+                        if (bundle != null) {
+                            return traverseAtGranularity(semanticsNode, bundle.getInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT), i2 == 256, bundle.getBoolean(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN));
+                        }
                         return false;
-                    }
-                    return ((Boolean) function0.invoke()).booleanValue();
-                } else if (i2 != 131072) {
-                    enabled = AndroidComposeViewAccessibilityDelegateCompat_androidKt.enabled(semanticsNode);
-                    if (enabled) {
-                        if (i2 == 1) {
-                            AccessibilityAction accessibilityAction6 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getRequestFocus());
-                            if (accessibilityAction6 == null || (function02 = (Function0) accessibilityAction6.getAction()) == null) {
-                                return false;
-                            }
-                            return ((Boolean) function02.invoke()).booleanValue();
-                        } else if (i2 != 2) {
-                            Boolean bool = null;
-                            switch (i2) {
-                                case 16:
-                                    AccessibilityAction accessibilityAction7 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getOnClick());
-                                    if (accessibilityAction7 != null && (function03 = (Function0) accessibilityAction7.getAction()) != null) {
-                                        bool = (Boolean) function03.invoke();
-                                    }
-                                    sendEventForVirtualView$default(this, i, 1, null, null, 12, null);
-                                    if (bool != null) {
-                                        return bool.booleanValue();
-                                    }
+                    } else if (i2 == 16384) {
+                        AccessibilityAction accessibilityAction5 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getCopyText());
+                        if (accessibilityAction5 == null || (function0 = (Function0) accessibilityAction5.getAction()) == null) {
+                            return false;
+                        }
+                        return ((Boolean) function0.invoke()).booleanValue();
+                    } else if (i2 != 131072) {
+                        enabled = AndroidComposeViewAccessibilityDelegateCompat_androidKt.enabled(semanticsNode);
+                        if (enabled) {
+                            if (i2 == 1) {
+                                if (ComposeUiFlags.isFocusActionExitsTouchModeEnabled && this.view.isInTouchMode()) {
+                                    this.view.requestFocusFromTouch();
+                                }
+                                AccessibilityAction accessibilityAction6 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getRequestFocus());
+                                if (accessibilityAction6 == null || (function02 = (Function0) accessibilityAction6.getAction()) == null) {
                                     return false;
-                                case 32:
-                                    AccessibilityAction accessibilityAction8 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getOnLongClick());
-                                    if (accessibilityAction8 == null || (function04 = (Function0) accessibilityAction8.getAction()) == null) {
+                                }
+                                return ((Boolean) function02.invoke()).booleanValue();
+                            } else if (i2 != 2) {
+                                Boolean bool = null;
+                                switch (i2) {
+                                    case 16:
+                                        AccessibilityAction accessibilityAction7 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getOnClick());
+                                        if (accessibilityAction7 != null && (function03 = (Function0) accessibilityAction7.getAction()) != null) {
+                                            bool = (Boolean) function03.invoke();
+                                        }
+                                        sendEventForVirtualView$default(this, i, 1, null, null, 12, null);
+                                        if (bool != null) {
+                                            return bool.booleanValue();
+                                        }
                                         return false;
-                                    }
-                                    return ((Boolean) function04.invoke()).booleanValue();
-                                case 4096:
-                                case 8192:
-                                    break;
-                                case 32768:
-                                    AccessibilityAction accessibilityAction9 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPasteText());
-                                    if (accessibilityAction9 == null || (function07 = (Function0) accessibilityAction9.getAction()) == null) {
-                                        return false;
-                                    }
-                                    return ((Boolean) function07.invoke()).booleanValue();
-                                case 65536:
-                                    AccessibilityAction accessibilityAction10 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getCutText());
-                                    if (accessibilityAction10 == null || (function08 = (Function0) accessibilityAction10.getAction()) == null) {
-                                        return false;
-                                    }
-                                    return ((Boolean) function08.invoke()).booleanValue();
-                                case 262144:
-                                    AccessibilityAction accessibilityAction11 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getExpand());
-                                    if (accessibilityAction11 == null || (function09 = (Function0) accessibilityAction11.getAction()) == null) {
-                                        return false;
-                                    }
-                                    return ((Boolean) function09.invoke()).booleanValue();
-                                case 524288:
-                                    AccessibilityAction accessibilityAction12 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getCollapse());
-                                    if (accessibilityAction12 == null || (function010 = (Function0) accessibilityAction12.getAction()) == null) {
-                                        return false;
-                                    }
-                                    return ((Boolean) function010.invoke()).booleanValue();
-                                case 1048576:
-                                    AccessibilityAction accessibilityAction13 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getDismiss());
-                                    if (accessibilityAction13 == null || (function011 = (Function0) accessibilityAction13.getAction()) == null) {
-                                        return false;
-                                    }
-                                    return ((Boolean) function011.invoke()).booleanValue();
-                                case 2097152:
-                                    String string = bundle != null ? bundle.getString(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE) : null;
-                                    AccessibilityAction accessibilityAction14 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getSetText());
-                                    if (accessibilityAction14 == null || (function1 = (Function1) accessibilityAction14.getAction()) == null) {
-                                        return false;
-                                    }
-                                    if (string == null) {
-                                        string = "";
-                                    }
-                                    return ((Boolean) function1.invoke(new AnnotatedString(string, null, 2, null))).booleanValue();
-                                case 16908342:
-                                    SemanticsNode parent = semanticsNode.getParent();
-                                    if (parent != null && (unmergedConfig$ui_release2 = parent.getUnmergedConfig$ui_release()) != null) {
-                                        accessibilityAction3 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release2, SemanticsActions.INSTANCE.getScrollBy());
-                                        while (parent != null && accessibilityAction3 == null) {
-                                            parent = parent.getParent();
-                                            if (parent != null && (unmergedConfig$ui_release = parent.getUnmergedConfig$ui_release()) != null) {
-                                                accessibilityAction3 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsActions.INSTANCE.getScrollBy());
+                                    case 32:
+                                        AccessibilityAction accessibilityAction8 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getOnLongClick());
+                                        if (accessibilityAction8 == null || (function04 = (Function0) accessibilityAction8.getAction()) == null) {
+                                            return false;
+                                        }
+                                        return ((Boolean) function04.invoke()).booleanValue();
+                                    case 4096:
+                                    case 8192:
+                                        break;
+                                    case 32768:
+                                        AccessibilityAction accessibilityAction9 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPasteText());
+                                        if (accessibilityAction9 == null || (function07 = (Function0) accessibilityAction9.getAction()) == null) {
+                                            return false;
+                                        }
+                                        return ((Boolean) function07.invoke()).booleanValue();
+                                    case 65536:
+                                        AccessibilityAction accessibilityAction10 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getCutText());
+                                        if (accessibilityAction10 == null || (function08 = (Function0) accessibilityAction10.getAction()) == null) {
+                                            return false;
+                                        }
+                                        return ((Boolean) function08.invoke()).booleanValue();
+                                    case 262144:
+                                        AccessibilityAction accessibilityAction11 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getExpand());
+                                        if (accessibilityAction11 == null || (function09 = (Function0) accessibilityAction11.getAction()) == null) {
+                                            return false;
+                                        }
+                                        return ((Boolean) function09.invoke()).booleanValue();
+                                    case 524288:
+                                        AccessibilityAction accessibilityAction12 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getCollapse());
+                                        if (accessibilityAction12 == null || (function010 = (Function0) accessibilityAction12.getAction()) == null) {
+                                            return false;
+                                        }
+                                        return ((Boolean) function010.invoke()).booleanValue();
+                                    case 1048576:
+                                        AccessibilityAction accessibilityAction13 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getDismiss());
+                                        if (accessibilityAction13 == null || (function011 = (Function0) accessibilityAction13.getAction()) == null) {
+                                            return false;
+                                        }
+                                        return ((Boolean) function011.invoke()).booleanValue();
+                                    case 2097152:
+                                        String string = bundle != null ? bundle.getString(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE) : null;
+                                        AccessibilityAction accessibilityAction14 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getSetText());
+                                        if (accessibilityAction14 == null || (function1 = (Function1) accessibilityAction14.getAction()) == null) {
+                                            return false;
+                                        }
+                                        if (string == null) {
+                                            string = "";
+                                        }
+                                        return ((Boolean) function1.invoke(new AnnotatedString(string, null, 2, null))).booleanValue();
+                                    case 16908342:
+                                        SemanticsNode parent = semanticsNode.getParent();
+                                        if (parent != null && (unmergedConfig$ui_release2 = parent.getUnmergedConfig$ui_release()) != null) {
+                                            accessibilityAction3 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release2, SemanticsActions.INSTANCE.getScrollBy());
+                                            while (parent != null && accessibilityAction3 == null) {
+                                                parent = parent.getParent();
+                                                if (parent != null && (unmergedConfig$ui_release = parent.getUnmergedConfig$ui_release()) != null) {
+                                                    accessibilityAction3 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsActions.INSTANCE.getScrollBy());
+                                                }
                                             }
-                                        }
-                                        if (parent != null) {
-                                            return false;
-                                        }
-                                        androidx.compose.ui.geometry.Rect boundsInParent = LayoutCoordinatesKt.boundsInParent(parent.getLayoutInfo().getCoordinates());
-                                        LayoutCoordinates parentLayoutCoordinates = parent.getLayoutInfo().getCoordinates().getParentLayoutCoordinates();
-                                        androidx.compose.ui.geometry.Rect m3874translatek4lQ0M = boundsInParent.m3874translatek4lQ0M(parentLayoutCoordinates != null ? LayoutCoordinatesKt.positionInRoot(parentLayoutCoordinates) : Offset.Companion.m3853getZeroF1C5BW0());
-                                        androidx.compose.ui.geometry.Rect m3877Recttz77jQw = RectKt.m3877Recttz77jQw(semanticsNode.m5921getPositionInRootF1C5BW0(), IntSizeKt.m6867toSizeozmzZPI(semanticsNode.m5924getSizeYbymL2g()));
-                                        ScrollAxisRange scrollAxisRange = (ScrollAxisRange) SemanticsConfigurationKt.getOrNull(parent.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getHorizontalScrollAxisRange());
-                                        ScrollAxisRange scrollAxisRange2 = (ScrollAxisRange) SemanticsConfigurationKt.getOrNull(parent.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getVerticalScrollAxisRange());
-                                        float performActionHelper$scrollDelta = performActionHelper$scrollDelta(m3877Recttz77jQw.getLeft() - m3874translatek4lQ0M.getLeft(), m3877Recttz77jQw.getRight() - m3874translatek4lQ0M.getRight());
-                                        if (scrollAxisRange != null && scrollAxisRange.getReverseScrolling()) {
-                                            performActionHelper$scrollDelta = -performActionHelper$scrollDelta;
-                                        }
-                                        isRtl2 = AndroidComposeViewAccessibilityDelegateCompat_androidKt.isRtl(semanticsNode);
-                                        if (isRtl2) {
-                                            performActionHelper$scrollDelta = -performActionHelper$scrollDelta;
-                                        }
-                                        float performActionHelper$scrollDelta2 = performActionHelper$scrollDelta(m3877Recttz77jQw.getTop() - m3874translatek4lQ0M.getTop(), m3877Recttz77jQw.getBottom() - m3874translatek4lQ0M.getBottom());
-                                        if (scrollAxisRange2 != null && scrollAxisRange2.getReverseScrolling()) {
-                                            performActionHelper$scrollDelta2 = -performActionHelper$scrollDelta2;
-                                        }
-                                        if (accessibilityAction3 == null || (function2 = (Function2) accessibilityAction3.getAction()) == null) {
-                                            return false;
-                                        }
-                                        return ((Boolean) function2.invoke(Float.valueOf(performActionHelper$scrollDelta), Float.valueOf(performActionHelper$scrollDelta2))).booleanValue();
-                                    }
-                                    accessibilityAction3 = null;
-                                    while (parent != null) {
-                                        parent = parent.getParent();
-                                        if (parent != null) {
-                                            accessibilityAction3 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsActions.INSTANCE.getScrollBy());
+                                            if (parent != null) {
+                                                androidx.compose.ui.geometry.Rect boundsInRoot = semanticsNode.getBoundsInRoot();
+                                                return this.view.requestRectangleOnScreen(new Rect((int) Math.floor(boundsInRoot.getLeft()), (int) Math.floor(boundsInRoot.getTop()), MathKt.roundToInt((float) Math.ceil(boundsInRoot.getRight())), MathKt.roundToInt((float) Math.ceil(boundsInRoot.getBottom()))));
+                                            }
+                                            androidx.compose.ui.geometry.Rect boundsInParent = LayoutCoordinatesKt.boundsInParent(parent.getLayoutInfo().getCoordinates());
+                                            LayoutCoordinates parentLayoutCoordinates = parent.getLayoutInfo().getCoordinates().getParentLayoutCoordinates();
+                                            androidx.compose.ui.geometry.Rect m4330translatek4lQ0M = boundsInParent.m4330translatek4lQ0M(parentLayoutCoordinates != null ? LayoutCoordinatesKt.positionInRoot(parentLayoutCoordinates) : Offset.Companion.m4309getZeroF1C5BW0());
+                                            androidx.compose.ui.geometry.Rect m4333Recttz77jQw = RectKt.m4333Recttz77jQw(semanticsNode.m6471getPositionInRootF1C5BW0(), IntSizeKt.m7434toSizeozmzZPI(semanticsNode.m6474getSizeYbymL2g()));
+                                            ScrollAxisRange scrollAxisRange = (ScrollAxisRange) SemanticsConfigurationKt.getOrNull(parent.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getHorizontalScrollAxisRange());
+                                            ScrollAxisRange scrollAxisRange2 = (ScrollAxisRange) SemanticsConfigurationKt.getOrNull(parent.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getVerticalScrollAxisRange());
+                                            float performActionHelper$scrollDelta = performActionHelper$scrollDelta(m4333Recttz77jQw.getLeft() - m4330translatek4lQ0M.getLeft(), m4333Recttz77jQw.getRight() - m4330translatek4lQ0M.getRight());
+                                            if (scrollAxisRange != null && scrollAxisRange.getReverseScrolling()) {
+                                                performActionHelper$scrollDelta = -performActionHelper$scrollDelta;
+                                            }
+                                            isRtl2 = AndroidComposeViewAccessibilityDelegateCompat_androidKt.isRtl(semanticsNode);
+                                            if (isRtl2) {
+                                                performActionHelper$scrollDelta = -performActionHelper$scrollDelta;
+                                            }
+                                            float performActionHelper$scrollDelta2 = performActionHelper$scrollDelta(m4333Recttz77jQw.getTop() - m4330translatek4lQ0M.getTop(), m4333Recttz77jQw.getBottom() - m4330translatek4lQ0M.getBottom());
+                                            if (scrollAxisRange2 != null && scrollAxisRange2.getReverseScrolling()) {
+                                                performActionHelper$scrollDelta2 = -performActionHelper$scrollDelta2;
+                                            }
+                                            return (accessibilityAction3 == null || (function2 = (Function2) accessibilityAction3.getAction()) == null || !((Boolean) function2.invoke(Float.valueOf(performActionHelper$scrollDelta), Float.valueOf(performActionHelper$scrollDelta2))).booleanValue()) ? false : true;
                                         }
                                         accessibilityAction3 = null;
                                         while (parent != null) {
-                                        }
-                                    }
-                                    if (parent != null) {
-                                    }
-                                    break;
-                                case 16908349:
-                                    if (bundle == null || !bundle.containsKey(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_PROGRESS_VALUE) || (accessibilityAction4 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getSetProgress())) == null || (function12 = (Function1) accessibilityAction4.getAction()) == null) {
-                                        return false;
-                                    }
-                                    return ((Boolean) function12.invoke(Float.valueOf(bundle.getFloat(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_PROGRESS_VALUE)))).booleanValue();
-                                case 16908372:
-                                    AccessibilityAction accessibilityAction15 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getOnImeAction());
-                                    if (accessibilityAction15 == null || (function012 = (Function0) accessibilityAction15.getAction()) == null) {
-                                        return false;
-                                    }
-                                    return ((Boolean) function012.invoke()).booleanValue();
-                                default:
-                                    switch (i2) {
-                                        case 16908344:
-                                        case 16908345:
-                                        case 16908346:
-                                        case 16908347:
-                                            break;
-                                        default:
-                                            switch (i2) {
-                                                case 16908358:
-                                                    AccessibilityAction accessibilityAction16 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageUp());
-                                                    if (accessibilityAction16 == null || (function013 = (Function0) accessibilityAction16.getAction()) == null) {
-                                                        return false;
-                                                    }
-                                                    return ((Boolean) function013.invoke()).booleanValue();
-                                                case 16908359:
-                                                    AccessibilityAction accessibilityAction17 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageDown());
-                                                    if (accessibilityAction17 == null || (function014 = (Function0) accessibilityAction17.getAction()) == null) {
-                                                        return false;
-                                                    }
-                                                    return ((Boolean) function014.invoke()).booleanValue();
-                                                case 16908360:
-                                                    AccessibilityAction accessibilityAction18 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageLeft());
-                                                    if (accessibilityAction18 == null || (function015 = (Function0) accessibilityAction18.getAction()) == null) {
-                                                        return false;
-                                                    }
-                                                    return ((Boolean) function015.invoke()).booleanValue();
-                                                case 16908361:
-                                                    AccessibilityAction accessibilityAction19 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageRight());
-                                                    if (accessibilityAction19 == null || (function016 = (Function0) accessibilityAction19.getAction()) == null) {
-                                                        return false;
-                                                    }
-                                                    return ((Boolean) function016.invoke()).booleanValue();
-                                                default:
-                                                    SparseArrayCompat<CharSequence> sparseArrayCompat = this.actionIdToLabel.get(i);
-                                                    if (sparseArrayCompat == null || (charSequence = sparseArrayCompat.get(i2)) == null || (list = (List) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getCustomActions())) == null) {
-                                                        return false;
-                                                    }
-                                                    int size = list.size();
-                                                    for (int i4 = 0; i4 < size; i4++) {
-                                                        CustomAccessibilityAction customAccessibilityAction = (CustomAccessibilityAction) list.get(i4);
-                                                        if (Intrinsics.areEqual(customAccessibilityAction.getLabel(), charSequence)) {
-                                                            return customAccessibilityAction.getAction().invoke().booleanValue();
-                                                        }
-                                                    }
-                                                    return false;
+                                            parent = parent.getParent();
+                                            if (parent != null) {
+                                                accessibilityAction3 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsActions.INSTANCE.getScrollBy());
                                             }
+                                            accessibilityAction3 = null;
+                                            while (parent != null) {
+                                            }
+                                        }
+                                        if (parent != null) {
+                                        }
+                                        break;
+                                    case 16908349:
+                                        if (bundle == null || !bundle.containsKey(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_PROGRESS_VALUE) || (accessibilityAction4 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getSetProgress())) == null || (function12 = (Function1) accessibilityAction4.getAction()) == null) {
+                                            return false;
+                                        }
+                                        return ((Boolean) function12.invoke(Float.valueOf(bundle.getFloat(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_PROGRESS_VALUE)))).booleanValue();
+                                    case 16908372:
+                                        AccessibilityAction accessibilityAction15 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getOnImeAction());
+                                        if (accessibilityAction15 == null || (function012 = (Function0) accessibilityAction15.getAction()) == null) {
+                                            return false;
+                                        }
+                                        return ((Boolean) function012.invoke()).booleanValue();
+                                    default:
+                                        switch (i2) {
+                                            case 16908344:
+                                            case 16908345:
+                                            case 16908346:
+                                            case 16908347:
+                                                break;
+                                            default:
+                                                switch (i2) {
+                                                    case 16908358:
+                                                        AccessibilityAction accessibilityAction16 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageUp());
+                                                        if (accessibilityAction16 == null || (function013 = (Function0) accessibilityAction16.getAction()) == null) {
+                                                            return false;
+                                                        }
+                                                        return ((Boolean) function013.invoke()).booleanValue();
+                                                    case 16908359:
+                                                        AccessibilityAction accessibilityAction17 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageDown());
+                                                        if (accessibilityAction17 == null || (function014 = (Function0) accessibilityAction17.getAction()) == null) {
+                                                            return false;
+                                                        }
+                                                        return ((Boolean) function014.invoke()).booleanValue();
+                                                    case 16908360:
+                                                        AccessibilityAction accessibilityAction18 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageLeft());
+                                                        if (accessibilityAction18 == null || (function015 = (Function0) accessibilityAction18.getAction()) == null) {
+                                                            return false;
+                                                        }
+                                                        return ((Boolean) function015.invoke()).booleanValue();
+                                                    case 16908361:
+                                                        AccessibilityAction accessibilityAction19 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageRight());
+                                                        if (accessibilityAction19 == null || (function016 = (Function0) accessibilityAction19.getAction()) == null) {
+                                                            return false;
+                                                        }
+                                                        return ((Boolean) function016.invoke()).booleanValue();
+                                                    default:
+                                                        SparseArrayCompat<CharSequence> sparseArrayCompat = this.actionIdToLabel.get(i);
+                                                        if (sparseArrayCompat == null || (charSequence = sparseArrayCompat.get(i2)) == null || (list = (List) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getCustomActions())) == null) {
+                                                            return false;
+                                                        }
+                                                        int size = list.size();
+                                                        for (int i4 = 0; i4 < size; i4++) {
+                                                            CustomAccessibilityAction customAccessibilityAction = (CustomAccessibilityAction) list.get(i4);
+                                                            if (Intrinsics.areEqual(customAccessibilityAction.getLabel(), charSequence)) {
+                                                                return customAccessibilityAction.getAction().invoke().booleanValue();
+                                                            }
+                                                        }
+                                                        return false;
+                                                }
+                                        }
+                                }
+                                boolean z = i2 == 4096;
+                                boolean z2 = i2 == 8192;
+                                boolean z3 = i2 == 16908345;
+                                boolean z4 = i2 == 16908347;
+                                boolean z5 = i2 == 16908344;
+                                boolean z6 = i2 == 16908346;
+                                boolean z7 = z3 || z4 || z || z2;
+                                boolean z8 = z5 || z6 || z || z2;
+                                if (z || z2) {
+                                    ProgressBarRangeInfo progressBarRangeInfo = (ProgressBarRangeInfo) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getProgressBarRangeInfo());
+                                    AccessibilityAction accessibilityAction20 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getSetProgress());
+                                    if (progressBarRangeInfo != null && accessibilityAction20 != null) {
+                                        float coerceAtLeast = RangesKt.coerceAtLeast(progressBarRangeInfo.getRange().getEndInclusive().floatValue(), progressBarRangeInfo.getRange().getStart().floatValue());
+                                        float coerceAtMost = RangesKt.coerceAtMost(progressBarRangeInfo.getRange().getStart().floatValue(), progressBarRangeInfo.getRange().getEndInclusive().floatValue());
+                                        if (progressBarRangeInfo.getSteps() > 0) {
+                                            f = coerceAtLeast - coerceAtMost;
+                                            i3 = progressBarRangeInfo.getSteps() + 1;
+                                        } else {
+                                            f = coerceAtLeast - coerceAtMost;
+                                            i3 = 20;
+                                        }
+                                        float f3 = f / i3;
+                                        if (z2) {
+                                            f3 = -f3;
+                                        }
+                                        Function1 function13 = (Function1) accessibilityAction20.getAction();
+                                        if (function13 != null) {
+                                            return ((Boolean) function13.invoke(Float.valueOf(progressBarRangeInfo.getCurrent() + f3))).booleanValue();
+                                        }
+                                        return false;
                                     }
-                            }
-                            boolean z = i2 == 4096;
-                            boolean z2 = i2 == 8192;
-                            boolean z3 = i2 == 16908345;
-                            boolean z4 = i2 == 16908347;
-                            boolean z5 = i2 == 16908344;
-                            boolean z6 = i2 == 16908346;
-                            boolean z7 = z3 || z4 || z || z2;
-                            boolean z8 = z5 || z6 || z || z2;
-                            if (z || z2) {
-                                ProgressBarRangeInfo progressBarRangeInfo = (ProgressBarRangeInfo) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getProgressBarRangeInfo());
-                                AccessibilityAction accessibilityAction20 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getSetProgress());
-                                if (progressBarRangeInfo != null && accessibilityAction20 != null) {
-                                    float coerceAtLeast = RangesKt.coerceAtLeast(progressBarRangeInfo.getRange().getEndInclusive().floatValue(), progressBarRangeInfo.getRange().getStart().floatValue());
-                                    float coerceAtMost = RangesKt.coerceAtMost(progressBarRangeInfo.getRange().getStart().floatValue(), progressBarRangeInfo.getRange().getEndInclusive().floatValue());
-                                    if (progressBarRangeInfo.getSteps() > 0) {
-                                        f = coerceAtLeast - coerceAtMost;
-                                        i3 = progressBarRangeInfo.getSteps() + 1;
-                                    } else {
-                                        f = coerceAtLeast - coerceAtMost;
-                                        i3 = 20;
-                                    }
-                                    float f3 = f / i3;
-                                    if (z2) {
-                                        f3 = -f3;
-                                    }
-                                    Function1 function13 = (Function1) accessibilityAction20.getAction();
-                                    if (function13 != null) {
-                                        return ((Boolean) function13.invoke(Float.valueOf(progressBarRangeInfo.getCurrent() + f3))).booleanValue();
-                                    }
+                                }
+                                long m4326getSizeNHjbRc = LayoutCoordinatesKt.boundsInParent(semanticsNode.getLayoutInfo().getCoordinates()).m4326getSizeNHjbRc();
+                                Float scrollViewportLength = SemanticsUtils_androidKt.getScrollViewportLength(semanticsNode.getUnmergedConfig$ui_release());
+                                AccessibilityAction accessibilityAction21 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getScrollBy());
+                                if (accessibilityAction21 == null) {
                                     return false;
                                 }
-                            }
-                            long m3870getSizeNHjbRc = LayoutCoordinatesKt.boundsInParent(semanticsNode.getLayoutInfo().getCoordinates()).m3870getSizeNHjbRc();
-                            Float scrollViewportLength = SemanticsUtils_androidKt.getScrollViewportLength(semanticsNode.getUnmergedConfig$ui_release());
-                            AccessibilityAction accessibilityAction21 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getScrollBy());
-                            if (accessibilityAction21 == null) {
+                                ScrollAxisRange scrollAxisRange3 = (ScrollAxisRange) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getHorizontalScrollAxisRange());
+                                if (scrollAxisRange3 == null || !z7) {
+                                    f2 = 0.0f;
+                                } else {
+                                    if (scrollViewportLength != null) {
+                                        intBitsToFloat2 = scrollViewportLength.floatValue();
+                                        f2 = 0.0f;
+                                    } else {
+                                        f2 = 0.0f;
+                                        intBitsToFloat2 = Float.intBitsToFloat((int) (m4326getSizeNHjbRc >> 32));
+                                    }
+                                    if (z3 || z2) {
+                                        intBitsToFloat2 = -intBitsToFloat2;
+                                    }
+                                    if (scrollAxisRange3.getReverseScrolling()) {
+                                        intBitsToFloat2 = -intBitsToFloat2;
+                                    }
+                                    isRtl = AndroidComposeViewAccessibilityDelegateCompat_androidKt.isRtl(semanticsNode);
+                                    if (isRtl && (z3 || z4)) {
+                                        intBitsToFloat2 = -intBitsToFloat2;
+                                    }
+                                    if (performActionHelper$canScroll(scrollAxisRange3, intBitsToFloat2)) {
+                                        if (!semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsActions.INSTANCE.getPageLeft()) && !semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsActions.INSTANCE.getPageRight())) {
+                                            Function2 function22 = (Function2) accessibilityAction21.getAction();
+                                            if (function22 != null) {
+                                                return ((Boolean) function22.invoke(Float.valueOf(intBitsToFloat2), Float.valueOf(f2))).booleanValue();
+                                            }
+                                            return false;
+                                        }
+                                        if (intBitsToFloat2 > f2) {
+                                            accessibilityAction2 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageRight());
+                                        } else {
+                                            accessibilityAction2 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageLeft());
+                                        }
+                                        if (accessibilityAction2 == null || (function06 = (Function0) accessibilityAction2.getAction()) == null) {
+                                            return false;
+                                        }
+                                        return ((Boolean) function06.invoke()).booleanValue();
+                                    }
+                                }
+                                ScrollAxisRange scrollAxisRange4 = (ScrollAxisRange) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getVerticalScrollAxisRange());
+                                if (scrollAxisRange4 != null && z8) {
+                                    if (scrollViewportLength != null) {
+                                        intBitsToFloat = scrollViewportLength.floatValue();
+                                    } else {
+                                        intBitsToFloat = Float.intBitsToFloat((int) (4294967295L & m4326getSizeNHjbRc));
+                                    }
+                                    if (z5 || z2) {
+                                        intBitsToFloat = -intBitsToFloat;
+                                    }
+                                    if (scrollAxisRange4.getReverseScrolling()) {
+                                        intBitsToFloat = -intBitsToFloat;
+                                    }
+                                    if (performActionHelper$canScroll(scrollAxisRange4, intBitsToFloat)) {
+                                        if (!semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsActions.INSTANCE.getPageUp()) && !semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsActions.INSTANCE.getPageDown())) {
+                                            Function2 function23 = (Function2) accessibilityAction21.getAction();
+                                            if (function23 != null) {
+                                                return ((Boolean) function23.invoke(Float.valueOf(f2), Float.valueOf(intBitsToFloat))).booleanValue();
+                                            }
+                                            return false;
+                                        }
+                                        if (intBitsToFloat > f2) {
+                                            accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageDown());
+                                        } else {
+                                            accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageUp());
+                                        }
+                                        if (accessibilityAction != null && (function05 = (Function0) accessibilityAction.getAction()) != null) {
+                                            return ((Boolean) function05.invoke()).booleanValue();
+                                        }
+                                    }
+                                }
+                                return false;
+                            } else if (Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getFocused()), (Object) true)) {
+                                this.view.getFocusOwner().mo4188clearFocusI7lrPNg(false, true, true, FocusDirection.Companion.m4178getExitdhqQ8s());
+                                return true;
+                            } else {
                                 return false;
                             }
-                            ScrollAxisRange scrollAxisRange3 = (ScrollAxisRange) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getHorizontalScrollAxisRange());
-                            if (scrollAxisRange3 == null || !z7) {
-                                f2 = 0.0f;
-                            } else {
-                                if (scrollViewportLength != null) {
-                                    intBitsToFloat2 = scrollViewportLength.floatValue();
-                                    f2 = 0.0f;
-                                } else {
-                                    f2 = 0.0f;
-                                    intBitsToFloat2 = Float.intBitsToFloat((int) (m3870getSizeNHjbRc >> 32));
-                                }
-                                if (z3 || z2) {
-                                    intBitsToFloat2 = -intBitsToFloat2;
-                                }
-                                if (scrollAxisRange3.getReverseScrolling()) {
-                                    intBitsToFloat2 = -intBitsToFloat2;
-                                }
-                                isRtl = AndroidComposeViewAccessibilityDelegateCompat_androidKt.isRtl(semanticsNode);
-                                if (isRtl && (z3 || z4)) {
-                                    intBitsToFloat2 = -intBitsToFloat2;
-                                }
-                                if (performActionHelper$canScroll(scrollAxisRange3, intBitsToFloat2)) {
-                                    if (!semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsActions.INSTANCE.getPageLeft()) && !semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsActions.INSTANCE.getPageRight())) {
-                                        Function2 function22 = (Function2) accessibilityAction21.getAction();
-                                        if (function22 != null) {
-                                            return ((Boolean) function22.invoke(Float.valueOf(intBitsToFloat2), Float.valueOf(f2))).booleanValue();
-                                        }
-                                        return false;
-                                    }
-                                    if (intBitsToFloat2 > f2) {
-                                        accessibilityAction2 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageRight());
-                                    } else {
-                                        accessibilityAction2 = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageLeft());
-                                    }
-                                    if (accessibilityAction2 == null || (function06 = (Function0) accessibilityAction2.getAction()) == null) {
-                                        return false;
-                                    }
-                                    return ((Boolean) function06.invoke()).booleanValue();
-                                }
-                            }
-                            ScrollAxisRange scrollAxisRange4 = (ScrollAxisRange) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getVerticalScrollAxisRange());
-                            if (scrollAxisRange4 != null && z8) {
-                                if (scrollViewportLength != null) {
-                                    intBitsToFloat = scrollViewportLength.floatValue();
-                                } else {
-                                    intBitsToFloat = Float.intBitsToFloat((int) (4294967295L & m3870getSizeNHjbRc));
-                                }
-                                if (z5 || z2) {
-                                    intBitsToFloat = -intBitsToFloat;
-                                }
-                                if (scrollAxisRange4.getReverseScrolling()) {
-                                    intBitsToFloat = -intBitsToFloat;
-                                }
-                                if (performActionHelper$canScroll(scrollAxisRange4, intBitsToFloat)) {
-                                    if (!semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsActions.INSTANCE.getPageUp()) && !semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsActions.INSTANCE.getPageDown())) {
-                                        Function2 function23 = (Function2) accessibilityAction21.getAction();
-                                        if (function23 != null) {
-                                            return ((Boolean) function23.invoke(Float.valueOf(f2), Float.valueOf(intBitsToFloat))).booleanValue();
-                                        }
-                                        return false;
-                                    }
-                                    if (intBitsToFloat > f2) {
-                                        accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageDown());
-                                    } else {
-                                        accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageUp());
-                                    }
-                                    if (accessibilityAction != null && (function05 = (Function0) accessibilityAction.getAction()) != null) {
-                                        return ((Boolean) function05.invoke()).booleanValue();
-                                    }
-                                }
-                            }
-                            return false;
-                        } else if (Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getFocused()), (Object) true)) {
-                            this.view.getFocusOwner().mo3736clearFocusI7lrPNg(false, true, true, FocusDirection.Companion.m3727getExitdhqQ8s());
-                            return true;
-                        } else {
-                            return false;
                         }
+                        return false;
+                    } else {
+                        boolean accessibilitySelection = setAccessibilitySelection(semanticsNode, bundle != null ? bundle.getInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_START_INT, -1) : -1, bundle != null ? bundle.getInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_END_INT, -1) : -1, false);
+                        if (accessibilitySelection) {
+                            sendEventForVirtualView$default(this, semanticsNodeIdToAccessibilityVirtualNodeId(semanticsNode.getId()), 0, null, null, 12, null);
+                        }
+                        return accessibilitySelection;
                     }
-                    return false;
-                } else {
-                    boolean accessibilitySelection = setAccessibilitySelection(semanticsNode, bundle != null ? bundle.getInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_START_INT, -1) : -1, bundle != null ? bundle.getInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_END_INT, -1) : -1, false);
-                    if (accessibilitySelection) {
-                        sendEventForVirtualView$default(this, semanticsNodeIdToAccessibilityVirtualNodeId(semanticsNode.getId()), 0, null, null, 12, null);
-                    }
-                    return accessibilitySelection;
                 }
+                return clearAccessibilityFocus(i);
             }
-            return clearAccessibilityFocus(i);
+            return requestAccessibilityFocus(i);
         }
-        return requestAccessibilityFocus(i);
+        return false;
     }
 
     private static final boolean performActionHelper$canScroll(ScrollAxisRange scrollAxisRange, float f) {
@@ -1477,6 +1607,9 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
     /* JADX INFO: Access modifiers changed from: private */
     public final void addExtraDataToAccessibilityNodeInfoHelper(int i, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat, String str, Bundle bundle) {
         SemanticsNode semanticsNode;
+        Region region;
+        float[] cornerArray;
+        Rect androidRect;
         SemanticsNodeWithAdjustedBounds semanticsNodeWithAdjustedBounds = getCurrentSemanticsNodes().get(i);
         if (semanticsNodeWithAdjustedBounds == null || (semanticsNode = semanticsNodeWithAdjustedBounds.getSemanticsNode()) == null) {
             return;
@@ -1522,6 +1655,86 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
             }
         } else if (Intrinsics.areEqual(str, ExtraDataIdKey)) {
             accessibilityNodeInfoCompat.getExtras().putInt(str, semanticsNode.getId());
+        } else if (Intrinsics.areEqual(str, ExtraDataShapeTypeKey)) {
+            Shape shape = (Shape) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getShape());
+            if (shape != null) {
+                Outline createOutline = createOutline(shape, semanticsNode);
+                if (createOutline instanceof Outline.Rectangle) {
+                    accessibilityNodeInfoCompat.getExtras().putInt(ExtraDataShapeTypeKey, 0);
+                    accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRectKey, toAndroidRect(createOutline));
+                } else if (createOutline instanceof Outline.Rounded) {
+                    accessibilityNodeInfoCompat.getExtras().putInt(ExtraDataShapeTypeKey, 1);
+                    accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRectKey, toAndroidRect(createOutline));
+                    accessibilityNodeInfoCompat.getExtras().putFloatArray(ExtraDataShapeRectCornersKey, toCornerArray(createOutline));
+                } else if (createOutline instanceof Outline.Generic) {
+                    accessibilityNodeInfoCompat.getExtras().putInt(ExtraDataShapeTypeKey, 2);
+                    accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRegionKey, toRegion(createOutline));
+                } else {
+                    throw new NoWhenBranchMatchedException();
+                }
+            }
+        } else if (Intrinsics.areEqual(str, ExtraDataShapeRectKey)) {
+            Shape shape2 = (Shape) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getShape());
+            if (shape2 == null || (androidRect = toAndroidRect(createOutline(shape2, semanticsNode))) == null) {
+                return;
+            }
+            accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRectKey, androidRect);
+        } else if (Intrinsics.areEqual(str, ExtraDataShapeRectCornersKey)) {
+            Shape shape3 = (Shape) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getShape());
+            if (shape3 == null || (cornerArray = toCornerArray(createOutline(shape3, semanticsNode))) == null) {
+                return;
+            }
+            accessibilityNodeInfoCompat.getExtras().putFloatArray(ExtraDataShapeRectCornersKey, cornerArray);
+        } else if (Intrinsics.areEqual(str, ExtraDataShapeRegionKey)) {
+            Shape shape4 = (Shape) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getShape());
+            if (shape4 == null || (region = toRegion(createOutline(shape4, semanticsNode))) == null) {
+                return;
+            }
+            accessibilityNodeInfoCompat.getExtras().putParcelable(ExtraDataShapeRegionKey, region);
+        } else {
+            ScatterSet<SemanticsPropertyKey<?>> accessibilityExtraKeys$ui_release = semanticsNode.getUnmergedConfig$ui_release().getAccessibilityExtraKeys$ui_release();
+            if (accessibilityExtraKeys$ui_release == null) {
+                return;
+            }
+            Object[] objArr = accessibilityExtraKeys$ui_release.elements;
+            long[] jArr = accessibilityExtraKeys$ui_release.metadata;
+            int length = jArr.length - 2;
+            if (length < 0) {
+                return;
+            }
+            int i6 = 0;
+            while (true) {
+                long j = jArr[i6];
+                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i7 = 8 - ((~(i6 - length)) >>> 31);
+                    for (int i8 = 0; i8 < i7; i8++) {
+                        if ((255 & j) < 128) {
+                            SemanticsPropertyKey semanticsPropertyKey = (SemanticsPropertyKey) objArr[(i6 << 3) + i8];
+                            String accessibilityExtraKey$ui_release = semanticsPropertyKey.getAccessibilityExtraKey$ui_release();
+                            if (Intrinsics.areEqual(accessibilityExtraKey$ui_release, str)) {
+                                Object orNull = SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), semanticsPropertyKey);
+                                if (orNull instanceof Serializable) {
+                                    accessibilityNodeInfoCompat.getExtras().putSerializable(accessibilityExtraKey$ui_release, (Serializable) orNull);
+                                } else if (!(orNull instanceof Parcelable)) {
+                                    throw new IllegalStateException("Accessibility extra values must be either Serializable or Parcelable.");
+                                } else {
+                                    accessibilityNodeInfoCompat.getExtras().putParcelable(accessibilityExtraKey$ui_release, (Parcelable) orNull);
+                                }
+                            } else {
+                                continue;
+                            }
+                        }
+                        j >>= 8;
+                    }
+                    if (i7 != 8) {
+                        return;
+                    }
+                }
+                if (i6 == length) {
+                    return;
+                }
+                i6++;
+            }
         }
     }
 
@@ -1529,17 +1742,59 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         if (semanticsNode == null) {
             return null;
         }
-        androidx.compose.ui.geometry.Rect m3874translatek4lQ0M = rect.m3874translatek4lQ0M(semanticsNode.m5921getPositionInRootF1C5BW0());
+        androidx.compose.ui.geometry.Rect m4330translatek4lQ0M = rect.m4330translatek4lQ0M(semanticsNode.m6471getPositionInRootF1C5BW0());
         androidx.compose.ui.geometry.Rect boundsInRoot = semanticsNode.getBoundsInRoot();
-        androidx.compose.ui.geometry.Rect intersect = m3874translatek4lQ0M.overlaps(boundsInRoot) ? m3874translatek4lQ0M.intersect(boundsInRoot) : null;
+        androidx.compose.ui.geometry.Rect intersect = m4330translatek4lQ0M.overlaps(boundsInRoot) ? m4330translatek4lQ0M.intersect(boundsInRoot) : null;
         if (intersect != null) {
             AndroidComposeView androidComposeView = this.view;
             float left = intersect.getLeft();
-            long mo5393localToScreenMKHz9U = androidComposeView.mo5393localToScreenMKHz9U(Offset.m3829constructorimpl((Float.floatToRawIntBits(intersect.getTop()) & 4294967295L) | (Float.floatToRawIntBits(left) << 32)));
-            long mo5393localToScreenMKHz9U2 = this.view.mo5393localToScreenMKHz9U(Offset.m3829constructorimpl((Float.floatToRawIntBits(intersect.getRight()) << 32) | (Float.floatToRawIntBits(intersect.getBottom()) & 4294967295L)));
-            return new RectF(Float.intBitsToFloat((int) (mo5393localToScreenMKHz9U >> 32)), Float.intBitsToFloat((int) (mo5393localToScreenMKHz9U & 4294967295L)), Float.intBitsToFloat((int) (mo5393localToScreenMKHz9U2 >> 32)), Float.intBitsToFloat((int) (mo5393localToScreenMKHz9U2 & 4294967295L)));
+            long mo5906localToScreenMKHz9U = androidComposeView.mo5906localToScreenMKHz9U(Offset.m4285constructorimpl((Float.floatToRawIntBits(intersect.getTop()) & 4294967295L) | (Float.floatToRawIntBits(left) << 32)));
+            long mo5906localToScreenMKHz9U2 = this.view.mo5906localToScreenMKHz9U(Offset.m4285constructorimpl((Float.floatToRawIntBits(intersect.getRight()) << 32) | (Float.floatToRawIntBits(intersect.getBottom()) & 4294967295L)));
+            int i = (int) (mo5906localToScreenMKHz9U >> 32);
+            int i2 = (int) (mo5906localToScreenMKHz9U2 >> 32);
+            int i3 = (int) (mo5906localToScreenMKHz9U & 4294967295L);
+            int i4 = (int) (mo5906localToScreenMKHz9U2 & 4294967295L);
+            return new RectF(Math.min(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.min(Float.intBitsToFloat(i3), Float.intBitsToFloat(i4)), Math.max(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.max(Float.intBitsToFloat(i3), Float.intBitsToFloat(i4)));
         }
         return null;
+    }
+
+    private final Outline createOutline(Shape shape, SemanticsNode semanticsNode) {
+        return shape.mo321createOutlinePq9zytI(IntSizeKt.m7434toSizeozmzZPI(semanticsNode.m6474getSizeYbymL2g()), semanticsNode.getLayoutInfo().getLayoutDirection(), this.view.getDensity());
+    }
+
+    private final Rect toAndroidRect(Outline outline) {
+        if ((outline instanceof Outline.Rectangle) || (outline instanceof Outline.Rounded)) {
+            return toAndroidRect(outline.getBounds());
+        }
+        return null;
+    }
+
+    private final float[] toCornerArray(Outline outline) {
+        if (outline instanceof Outline.Rounded) {
+            Outline.Rounded rounded = (Outline.Rounded) outline;
+            return new float[]{Float.intBitsToFloat((int) (rounded.getRoundRect().m4343getTopLeftCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (rounded.getRoundRect().m4343getTopLeftCornerRadiuskKHJgLs() & 4294967295L)), Float.intBitsToFloat((int) (rounded.getRoundRect().m4344getTopRightCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (rounded.getRoundRect().m4344getTopRightCornerRadiuskKHJgLs() & 4294967295L)), Float.intBitsToFloat((int) (rounded.getRoundRect().m4342getBottomRightCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (rounded.getRoundRect().m4342getBottomRightCornerRadiuskKHJgLs() & 4294967295L)), Float.intBitsToFloat((int) (rounded.getRoundRect().m4341getBottomLeftCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (rounded.getRoundRect().m4341getBottomLeftCornerRadiuskKHJgLs() & 4294967295L))};
+        }
+        return null;
+    }
+
+    private final Region toRegion(Outline outline) {
+        if (outline instanceof Outline.Generic) {
+            Outline.Generic generic = (Outline.Generic) outline;
+            Region region = new Region(toAndroidRect(generic.getBounds()));
+            Region region2 = new Region();
+            Path path = generic.getPath();
+            if (path instanceof AndroidPath) {
+                region2.setPath(((AndroidPath) path).getInternalPath(), region);
+                return region2;
+            }
+            throw new UnsupportedOperationException("Unable to obtain android.graphics.Path");
+        }
+        return null;
+    }
+
+    private final Rect toAndroidRect(androidx.compose.ui.geometry.Rect rect) {
+        return new Rect((int) rect.getLeft(), (int) rect.getTop(), (int) rect.getRight(), (int) rect.getBottom());
     }
 
     public final boolean dispatchHoverEvent$ui_release(MotionEvent motionEvent) {
@@ -1570,7 +1825,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         int i;
         Owner.measureAndLayout$default(this.view, false, 1, null);
         HitTestResult hitTestResult = new HitTestResult();
-        LayoutNode.m5609hitTestSemantics6fMxITs$ui_release$default(this.view.getRoot(), Offset.m3829constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32)), hitTestResult, 0, false, 12, null);
+        LayoutNode.m6148hitTestSemantics6fMxITs$ui_release$default(this.view.getRoot(), Offset.m4285constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32)), hitTestResult, 0, false, 12, null);
         int lastIndex = CollectionsKt.getLastIndex(hitTestResult);
         while (true) {
             i = Integer.MIN_VALUE;
@@ -1581,10 +1836,10 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
             if (this.view.getAndroidViewsHandler$ui_release().getLayoutNodeToHolder().get(requireLayoutNode) != null) {
                 return Integer.MIN_VALUE;
             }
-            if (requireLayoutNode.getNodes$ui_release().m5661hasH91voCI$ui_release(NodeKind.m5700constructorimpl(8))) {
+            if (requireLayoutNode.getNodes$ui_release().m6206hasH91voCI$ui_release(NodeKind.m6245constructorimpl(8))) {
                 i = semanticsNodeIdToAccessibilityVirtualNodeId(requireLayoutNode.getSemanticsId());
                 SemanticsNode SemanticsNode = SemanticsNodeKt.SemanticsNode(requireLayoutNode, false);
-                if (SemanticsUtils_androidKt.isImportantForAccessibility(SemanticsNode) && !SemanticsNode.getConfig().contains(SemanticsProperties.INSTANCE.getLinkTestMarker())) {
+                if (SemanticsOwnerKt.isImportantForAccessibility(SemanticsNode) && !SemanticsNode.getConfig().contains(SemanticsProperties.INSTANCE.getLinkTestMarker())) {
                     break;
                 }
             }
@@ -1625,7 +1880,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void semanticsChangeChecker$lambda$37(AndroidComposeViewAccessibilityDelegateCompat androidComposeViewAccessibilityDelegateCompat) {
+    public static final void semanticsChangeChecker$lambda$50(AndroidComposeViewAccessibilityDelegateCompat androidComposeViewAccessibilityDelegateCompat) {
         Trace.beginSection("measureAndLayout");
         try {
             Owner.measureAndLayout$default(androidComposeViewAccessibilityDelegateCompat.view, false, 1, null);
@@ -1652,23 +1907,22 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         this.handler.post(this.semanticsChangeChecker);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x00d2, code lost:
-        if (kotlinx.coroutines.DelayKt.delay(r8, r0) == r1) goto L17;
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x00c2, code lost:
+        if (kotlinx.coroutines.DelayKt.delay(r7, r0) == r1) goto L17;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0080 A[Catch: all -> 0x0053, TryCatch #0 {all -> 0x0053, blocks: (B:13:0x0036, B:25:0x0066, B:29:0x0078, B:31:0x0080, B:33:0x0089, B:35:0x0094, B:36:0x00a5, B:38:0x00ac, B:39:0x00b5, B:18:0x004f), top: B:48:0x0024 }] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00d5  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:40:0x00d2 -> B:14:0x0039). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0072 A[Catch: all -> 0x00cd, TryCatch #0 {all -> 0x00cd, blocks: (B:13:0x0032, B:22:0x005a, B:26:0x006a, B:28:0x0072, B:30:0x007b, B:32:0x0086, B:33:0x0097, B:35:0x009e, B:36:0x00a7, B:18:0x0047, B:21:0x004e), top: B:44:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00c5  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:37:0x00c2 -> B:14:0x0035). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object boundsUpdatesEventLoop$ui_release(Continuation<? super Unit> continuation) {
         AndroidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1 androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1;
         int i;
-        AndroidComposeViewAccessibilityDelegateCompat androidComposeViewAccessibilityDelegateCompat;
         MutableIntSet mutableIntSet;
         ChannelIterator<Unit> it;
         MutableIntSet mutableIntSet2;
@@ -1683,41 +1937,29 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                     i = androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        try {
-                            mutableIntSet = new MutableIntSet(0, 1, null);
-                            it = this.boundsUpdateChannel.iterator();
-                            androidComposeViewAccessibilityDelegateCompat = this;
-                            androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$0 = androidComposeViewAccessibilityDelegateCompat;
-                            androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$1 = mutableIntSet;
-                            androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$2 = it;
-                            androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.label = 1;
-                            hasNext = it.hasNext(androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1);
-                            if (hasNext != coroutine_suspended) {
-                            }
-                        } catch (Throwable th) {
-                            th = th;
-                            androidComposeViewAccessibilityDelegateCompat = this;
-                            androidComposeViewAccessibilityDelegateCompat.subtreeChangedLayoutNodes.clear();
-                            throw th;
+                        mutableIntSet = new MutableIntSet(0, 1, null);
+                        it = this.boundsUpdateChannel.iterator();
+                        androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$0 = mutableIntSet;
+                        androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$1 = it;
+                        androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.label = 1;
+                        hasNext = it.hasNext(androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1);
+                        if (hasNext != coroutine_suspended) {
                         }
                     } else if (i == 1) {
-                        it = (ChannelIterator) androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$2;
-                        mutableIntSet2 = (MutableIntSet) androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$1;
-                        androidComposeViewAccessibilityDelegateCompat = (AndroidComposeViewAccessibilityDelegateCompat) androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$0;
+                        it = (ChannelIterator) androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$1;
+                        mutableIntSet2 = (MutableIntSet) androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$0;
                         ResultKt.throwOnFailure(obj);
                         if (!((Boolean) obj).booleanValue()) {
                         }
                     } else if (i != 2) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        it = (ChannelIterator) androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$2;
-                        mutableIntSet2 = (MutableIntSet) androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$1;
-                        androidComposeViewAccessibilityDelegateCompat = (AndroidComposeViewAccessibilityDelegateCompat) androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$0;
+                        it = (ChannelIterator) androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$1;
+                        mutableIntSet2 = (MutableIntSet) androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$0;
                         ResultKt.throwOnFailure(obj);
                         mutableIntSet = mutableIntSet2;
-                        androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$0 = androidComposeViewAccessibilityDelegateCompat;
-                        androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$1 = mutableIntSet;
-                        androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$2 = it;
+                        androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$0 = mutableIntSet;
+                        androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$1 = it;
                         androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.label = 1;
                         hasNext = it.hasNext(androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1);
                         if (hasNext != coroutine_suspended) {
@@ -1727,29 +1969,28 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                         obj = hasNext;
                         if (!((Boolean) obj).booleanValue()) {
                             it.next();
-                            if (androidComposeViewAccessibilityDelegateCompat.isEnabled$ui_release()) {
-                                int size = androidComposeViewAccessibilityDelegateCompat.subtreeChangedLayoutNodes.size();
+                            if (isEnabled$ui_release()) {
+                                int size = this.subtreeChangedLayoutNodes.size();
                                 for (int i2 = 0; i2 < size; i2++) {
-                                    LayoutNode valueAt = androidComposeViewAccessibilityDelegateCompat.subtreeChangedLayoutNodes.valueAt(i2);
-                                    androidComposeViewAccessibilityDelegateCompat.sendSubtreeChangeAccessibilityEvents(valueAt, mutableIntSet2);
-                                    androidComposeViewAccessibilityDelegateCompat.sendTypeViewScrolledAccessibilityEvent(valueAt);
+                                    LayoutNode valueAt = this.subtreeChangedLayoutNodes.valueAt(i2);
+                                    sendSubtreeChangeAccessibilityEvents(valueAt, mutableIntSet2);
+                                    sendTypeViewScrolledAccessibilityEvent(valueAt);
                                 }
                                 mutableIntSet2.clear();
-                                if (!androidComposeViewAccessibilityDelegateCompat.checkingForSemanticsChanges) {
-                                    androidComposeViewAccessibilityDelegateCompat.checkingForSemanticsChanges = true;
-                                    androidComposeViewAccessibilityDelegateCompat.handler.post(androidComposeViewAccessibilityDelegateCompat.semanticsChangeChecker);
+                                if (!this.checkingForSemanticsChanges) {
+                                    this.checkingForSemanticsChanges = true;
+                                    this.handler.post(this.semanticsChangeChecker);
                                 }
                             }
-                            androidComposeViewAccessibilityDelegateCompat.subtreeChangedLayoutNodes.clear();
-                            androidComposeViewAccessibilityDelegateCompat.pendingHorizontalScrollEvents.clear();
-                            androidComposeViewAccessibilityDelegateCompat.pendingVerticalScrollEvents.clear();
-                            long j = androidComposeViewAccessibilityDelegateCompat.SendRecurringAccessibilityEventsIntervalMillis;
-                            androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$0 = androidComposeViewAccessibilityDelegateCompat;
-                            androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$1 = mutableIntSet2;
-                            androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$2 = it;
+                            this.subtreeChangedLayoutNodes.clear();
+                            this.pendingHorizontalScrollEvents.clear();
+                            this.pendingVerticalScrollEvents.clear();
+                            long j = this.SendRecurringAccessibilityEventsIntervalMillis;
+                            androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$0 = mutableIntSet2;
+                            androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.L$1 = it;
                             androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.label = 2;
                         } else {
-                            androidComposeViewAccessibilityDelegateCompat.subtreeChangedLayoutNodes.clear();
+                            this.subtreeChangedLayoutNodes.clear();
                             return Unit.INSTANCE;
                         }
                     }
@@ -1757,8 +1998,9 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
             }
             if (i != 0) {
             }
-        } catch (Throwable th2) {
-            th = th2;
+        } catch (Throwable th) {
+            this.subtreeChangedLayoutNodes.clear();
+            throw th;
         }
         androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1 = new AndroidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1(this, continuation);
         Object obj2 = androidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1.result;
@@ -1776,7 +2018,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
     /* JADX INFO: Access modifiers changed from: private */
     public final void notifySubtreeAccessibilityStateChangedIfNeeded(LayoutNode layoutNode) {
         if (this.subtreeChangedLayoutNodes.add(layoutNode)) {
-            this.boundsUpdateChannel.mo7559trySendJP2dKIU(Unit.INSTANCE);
+            this.boundsUpdateChannel.mo8125trySendJP2dKIU(Unit.INSTANCE);
         }
     }
 
@@ -1811,11 +2053,11 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         SemanticsConfiguration semanticsConfiguration;
         LayoutNode findClosestParentNode;
         if (layoutNode.isAttached() && !this.view.getAndroidViewsHandler$ui_release().getLayoutNodeToHolder().containsKey(layoutNode)) {
-            if (!layoutNode.getNodes$ui_release().m5661hasH91voCI$ui_release(NodeKind.m5700constructorimpl(8))) {
+            if (!layoutNode.getNodes$ui_release().m6206hasH91voCI$ui_release(NodeKind.m6245constructorimpl(8))) {
                 layoutNode = AndroidComposeViewAccessibilityDelegateCompat_androidKt.findClosestParentNode(layoutNode, new Function1<LayoutNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat$sendSubtreeChangeAccessibilityEvents$semanticsNode$1
                     @Override // kotlin.jvm.functions.Function1
                     public final Boolean invoke(LayoutNode layoutNode2) {
-                        return Boolean.valueOf(layoutNode2.getNodes$ui_release().m5661hasH91voCI$ui_release(NodeKind.m5700constructorimpl(8)));
+                        return Boolean.valueOf(layoutNode2.getNodes$ui_release().m6206hasH91voCI$ui_release(NodeKind.m6245constructorimpl(8)));
                     }
                 });
             }
@@ -1968,14 +2210,8 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         this.previousSemanticsRoot = new SemanticsNodeCopy(this.view.getSemanticsOwner().getUnmergedRootSemanticsNode(), getCurrentSemanticsNodes());
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:167:0x05be, code lost:
-        if (r1.containsAll(r3) != false) goto L179;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:175:0x05de, code lost:
-        if (r1 == false) goto L182;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:177:0x05e1, code lost:
-        r6 = false;
+    /* JADX WARN: Code restructure failed: missing block: B:172:0x059c, code lost:
+        if (r1.isEmpty() == false) goto L171;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1999,124 +2235,135 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         Object[] objArr;
         int i7;
         int i8;
-        Object[] objArr2;
-        ArrayList arrayList3;
         int i9;
+        ArrayList arrayList3;
         long[] jArr3;
-        SemanticsNode semanticsNode2;
-        int[] iArr3;
+        Object[] objArr2;
         int i10;
         int i11;
+        SemanticsNode semanticsNode2;
+        int[] iArr3;
         int i12;
-        boolean accessibilityEquals;
-        boolean z2;
-        String text;
         int i13;
+        boolean accessibilityEquals;
+        String text;
         int i14;
         int i15;
-        boolean z3;
+        int i16;
+        boolean z2;
         AccessibilityEvent createTextSelectionChangedEvent;
+        boolean sendEventForVirtualView$default;
         AndroidComposeViewAccessibilityDelegateCompat androidComposeViewAccessibilityDelegateCompat = this;
         IntObjectMap<SemanticsNodeWithAdjustedBounds> intObjectMap2 = intObjectMap;
         ArrayList arrayList4 = new ArrayList(androidComposeViewAccessibilityDelegateCompat.scrollObservationScopes);
         androidComposeViewAccessibilityDelegateCompat.scrollObservationScopes.clear();
         int[] iArr4 = intObjectMap2.keys;
         long[] jArr4 = intObjectMap2.metadata;
-        int i16 = 2;
+        int i17 = 2;
         int length = jArr4.length - 2;
         if (length < 0) {
             return;
         }
-        int i17 = 0;
+        int i18 = 0;
         while (true) {
-            long j = jArr4[i17];
+            long j = jArr4[i18];
             char c2 = 7;
             if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                int i18 = 8;
-                int i19 = 8 - ((~(i17 - length)) >>> 31);
+                int i19 = 8;
+                int i20 = 8 - ((~(i18 - length)) >>> 31);
                 long j2 = j;
-                int i20 = 0;
-                while (i20 < i19) {
+                int i21 = 0;
+                while (i21 < i20) {
                     if ((j2 & 255) < 128) {
-                        int i21 = iArr4[(i17 << 3) + i20];
-                        SemanticsNodeCopy semanticsNodeCopy = androidComposeViewAccessibilityDelegateCompat.previousSemanticsNodes.get(i21);
+                        int i22 = iArr4[(i18 << 3) + i21];
+                        SemanticsNodeCopy semanticsNodeCopy = androidComposeViewAccessibilityDelegateCompat.previousSemanticsNodes.get(i22);
                         if (semanticsNodeCopy == null) {
-                            i2 = i20;
+                            i2 = i21;
                             arrayList2 = arrayList4;
                             iArr2 = iArr4;
                             jArr2 = jArr4;
-                            i3 = i16;
+                            i3 = i17;
                             c = c2;
-                            i4 = i19;
+                            i4 = i20;
                         } else {
-                            SemanticsNodeWithAdjustedBounds semanticsNodeWithAdjustedBounds = intObjectMap2.get(i21);
+                            SemanticsNodeWithAdjustedBounds semanticsNodeWithAdjustedBounds = intObjectMap2.get(i22);
                             SemanticsNode semanticsNode3 = semanticsNodeWithAdjustedBounds != null ? semanticsNodeWithAdjustedBounds.getSemanticsNode() : null;
                             if (semanticsNode3 != null) {
                                 MutableScatterMap<SemanticsPropertyKey<?>, Object> props$ui_release = semanticsNode3.getUnmergedConfig$ui_release().getProps$ui_release();
-                                i3 = i16;
+                                i3 = i17;
                                 Object[] objArr3 = props$ui_release.keys;
                                 Object[] objArr4 = props$ui_release.values;
                                 long[] jArr5 = props$ui_release.metadata;
                                 c = c2;
                                 int length2 = jArr5.length - 2;
                                 if (length2 >= 0) {
-                                    int i22 = i18;
+                                    int i23 = i19;
                                     SemanticsNode semanticsNode4 = semanticsNode3;
                                     z = false;
-                                    int i23 = 0;
+                                    int i24 = 0;
                                     while (true) {
-                                        long j3 = jArr5[i23];
+                                        long j3 = jArr5[i24];
                                         long[] jArr6 = jArr5;
                                         if ((((~j3) << c) & j3 & (-9187201950435737472L)) != -9187201950435737472L) {
-                                            int i24 = 8 - ((~(i23 - length2)) >>> 31);
+                                            int i25 = 8 - ((~(i24 - length2)) >>> 31);
                                             long j4 = j3;
-                                            int i25 = 0;
-                                            while (i25 < i24) {
+                                            int i26 = 0;
+                                            while (i26 < i25) {
                                                 if ((j4 & 255) < 128) {
-                                                    int i26 = (i23 << 3) + i25;
-                                                    Object obj = objArr3[i26];
-                                                    Object obj2 = objArr4[i26];
-                                                    boolean z4 = true;
+                                                    int i27 = (i24 << 3) + i26;
+                                                    Object obj = objArr3[i27];
+                                                    Object obj2 = objArr4[i27];
+                                                    boolean z3 = true;
                                                     SemanticsPropertyKey semanticsPropertyKey = (SemanticsPropertyKey) obj;
-                                                    i8 = i20;
-                                                    if (((Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getHorizontalScrollAxisRange()) || Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getVerticalScrollAxisRange())) ? androidComposeViewAccessibilityDelegateCompat.registerScrollingId(i21, arrayList4) : false) || !Intrinsics.areEqual(obj2, SemanticsConfigurationKt.getOrNull(semanticsNodeCopy.getUnmergedConfig(), semanticsPropertyKey))) {
+                                                    i8 = i21;
+                                                    if (((Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getHorizontalScrollAxisRange()) || Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getVerticalScrollAxisRange())) ? androidComposeViewAccessibilityDelegateCompat.registerScrollingId(i22, arrayList4) : false) || !Intrinsics.areEqual(obj2, SemanticsConfigurationKt.getOrNull(semanticsNodeCopy.getUnmergedConfig(), semanticsPropertyKey))) {
                                                         if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getPaneTitle())) {
                                                             Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type kotlin.String");
                                                             String str = (String) obj2;
                                                             if (semanticsNodeCopy.getUnmergedConfig().contains(SemanticsProperties.INSTANCE.getPaneTitle())) {
-                                                                androidComposeViewAccessibilityDelegateCompat.sendPaneChangeEvents(i21, i22, str);
+                                                                androidComposeViewAccessibilityDelegateCompat.sendPaneChangeEvents(i22, i23, str);
                                                             }
+                                                            Unit unit = Unit.INSTANCE;
                                                         } else {
-                                                            if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getStateDescription()) ? true : Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getToggleableState())) {
-                                                                i9 = i25;
+                                                            if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getStateDescription()) || Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getToggleableState())) {
+                                                                i9 = i26;
                                                                 arrayList3 = arrayList4;
                                                                 jArr3 = jArr4;
                                                                 objArr2 = objArr3;
-                                                                i12 = i19;
-                                                                i10 = i23;
+                                                                i10 = i24;
+                                                                i11 = i20;
                                                                 semanticsNode2 = semanticsNode4;
                                                                 iArr3 = iArr4;
-                                                                i11 = i21;
-                                                                sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i21), 2048, 64, null, 8, null);
-                                                                sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i11), 2048, 0, null, 8, null);
+                                                                i12 = i22;
+                                                                sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 2048, 64, null, 8, null);
+                                                                Boolean.valueOf(sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 2048, 0, null, 8, null));
+                                                            } else if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getProgressBarRangeInfo())) {
+                                                                i9 = i26;
+                                                                arrayList3 = arrayList4;
+                                                                jArr3 = jArr4;
+                                                                objArr2 = objArr3;
+                                                                i11 = i20;
+                                                                i10 = i24;
+                                                                semanticsNode2 = semanticsNode4;
+                                                                iArr3 = iArr4;
+                                                                i12 = i22;
+                                                                sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i22), 2048, 64, null, 8, null);
+                                                                Boolean.valueOf(sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 2048, 0, null, 8, null));
                                                             } else {
-                                                                i9 = i25;
+                                                                i9 = i26;
                                                                 arrayList3 = arrayList4;
                                                                 jArr3 = jArr4;
                                                                 objArr2 = objArr3;
-                                                                i10 = i23;
-                                                                i12 = i19;
+                                                                i10 = i24;
+                                                                i11 = i20;
                                                                 semanticsNode2 = semanticsNode4;
                                                                 iArr3 = iArr4;
-                                                                i11 = i21;
-                                                                if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getProgressBarRangeInfo())) {
-                                                                    sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i11), 2048, 64, null, 8, null);
-                                                                    sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i11), 2048, 0, null, 8, null);
-                                                                } else if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getSelected())) {
+                                                                i12 = i22;
+                                                                if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getSelected())) {
                                                                     Role role = (Role) SemanticsConfigurationKt.getOrNull(semanticsNode2.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getRole());
-                                                                    if (role == null ? false : Role.m5907equalsimpl0(role.m5910unboximpl(), Role.Companion.m5918getTabo7Vup1c())) {
+                                                                    if (role == null ? false : Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6468getTabo7Vup1c())) {
                                                                         if (Intrinsics.areEqual(SemanticsConfigurationKt.getOrNull(semanticsNode2.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getSelected()), (Object) true)) {
-                                                                            AccessibilityEvent createEvent = androidComposeViewAccessibilityDelegateCompat.createEvent(androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i11), 4);
+                                                                            AccessibilityEvent createEvent = androidComposeViewAccessibilityDelegateCompat.createEvent(androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 4);
                                                                             SemanticsNode copyWithMergingEnabled$ui_release = semanticsNode2.copyWithMergingEnabled$ui_release();
                                                                             List list = (List) SemanticsConfigurationKt.getOrNull(copyWithMergingEnabled$ui_release.getConfig(), SemanticsProperties.INSTANCE.getContentDescription());
                                                                             String fastJoinToString$default = list != null ? ListUtilsKt.fastJoinToString$default(list, StringUtils.COMMA, null, null, 0, null, null, 62, null) : null;
@@ -2124,24 +2371,25 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                                                             String fastJoinToString$default2 = list2 != null ? ListUtilsKt.fastJoinToString$default(list2, StringUtils.COMMA, null, null, 0, null, null, 62, null) : null;
                                                                             if (fastJoinToString$default != null) {
                                                                                 createEvent.setContentDescription(fastJoinToString$default);
-                                                                                Unit unit = Unit.INSTANCE;
                                                                                 Unit unit2 = Unit.INSTANCE;
+                                                                                Unit unit3 = Unit.INSTANCE;
                                                                             }
                                                                             if (fastJoinToString$default2 != null) {
                                                                                 Boolean.valueOf(createEvent.getText().add(fastJoinToString$default2));
                                                                             }
-                                                                            androidComposeViewAccessibilityDelegateCompat.sendEvent(createEvent);
+                                                                            sendEventForVirtualView$default = androidComposeViewAccessibilityDelegateCompat.sendEvent(createEvent);
                                                                         } else {
-                                                                            sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i11), 2048, 0, null, 8, null);
+                                                                            sendEventForVirtualView$default = sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 2048, 0, null, 8, null);
                                                                         }
                                                                     } else {
-                                                                        sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i11), 2048, 64, null, 8, null);
-                                                                        sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i11), 2048, 0, null, 8, null);
+                                                                        sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 2048, 64, null, 8, null);
+                                                                        sendEventForVirtualView$default = sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 2048, 0, null, 8, null);
                                                                     }
+                                                                    Boolean.valueOf(sendEventForVirtualView$default);
                                                                 } else if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getContentDescription())) {
-                                                                    int semanticsNodeIdToAccessibilityVirtualNodeId = androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i11);
+                                                                    int semanticsNodeIdToAccessibilityVirtualNodeId = androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12);
                                                                     Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type kotlin.collections.List<kotlin.String>");
-                                                                    androidComposeViewAccessibilityDelegateCompat.sendEventForVirtualView(semanticsNodeIdToAccessibilityVirtualNodeId, 2048, 4, (List) obj2);
+                                                                    Boolean.valueOf(androidComposeViewAccessibilityDelegateCompat.sendEventForVirtualView(semanticsNodeIdToAccessibilityVirtualNodeId, 2048, 4, (List) obj2));
                                                                 } else {
                                                                     String str2 = "";
                                                                     if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getEditableText())) {
@@ -2154,201 +2402,207 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                                                                             int length3 = str3.length();
                                                                             int length4 = str4.length();
                                                                             int coerceAtMost = RangesKt.coerceAtMost(length3, length4);
-                                                                            int i27 = 0;
-                                                                            while (true) {
-                                                                                i13 = length3;
-                                                                                if (i27 >= coerceAtMost) {
-                                                                                    i14 = length4;
-                                                                                    break;
-                                                                                }
-                                                                                i14 = length4;
-                                                                                if (str3.charAt(i27) != str4.charAt(i27)) {
-                                                                                    break;
-                                                                                }
-                                                                                i27++;
-                                                                                length3 = i13;
-                                                                                length4 = i14;
-                                                                            }
                                                                             int i28 = 0;
                                                                             while (true) {
-                                                                                if (i28 >= coerceAtMost - i27) {
-                                                                                    i15 = i28;
+                                                                                i14 = length3;
+                                                                                if (i28 >= coerceAtMost) {
+                                                                                    i15 = length4;
                                                                                     break;
                                                                                 }
-                                                                                i15 = i28;
-                                                                                if (str3.charAt((i13 - 1) - i28) != str4.charAt((i14 - 1) - i15)) {
+                                                                                i15 = length4;
+                                                                                if (str3.charAt(i28) != str4.charAt(i28)) {
                                                                                     break;
                                                                                 }
-                                                                                i28 = i15 + 1;
+                                                                                i28++;
+                                                                                length3 = i14;
+                                                                                length4 = i15;
                                                                             }
-                                                                            int i29 = (i13 - i15) - i27;
-                                                                            int i30 = (i14 - i15) - i27;
+                                                                            int i29 = 0;
+                                                                            while (true) {
+                                                                                if (i29 >= coerceAtMost - i28) {
+                                                                                    i16 = i29;
+                                                                                    break;
+                                                                                }
+                                                                                i16 = i29;
+                                                                                if (str3.charAt((i14 - 1) - i29) != str4.charAt((i15 - 1) - i16)) {
+                                                                                    break;
+                                                                                }
+                                                                                i29 = i16 + 1;
+                                                                            }
+                                                                            int i30 = (i14 - i16) - i28;
+                                                                            int i31 = (i15 - i16) - i28;
                                                                             boolean contains = semanticsNodeCopy.getUnmergedConfig().contains(SemanticsProperties.INSTANCE.getPassword());
                                                                             boolean contains2 = semanticsNode2.getUnmergedConfig$ui_release().contains(SemanticsProperties.INSTANCE.getPassword());
                                                                             boolean contains3 = semanticsNodeCopy.getUnmergedConfig().contains(SemanticsProperties.INSTANCE.getEditableText());
-                                                                            boolean z5 = contains3 && !contains && contains2;
-                                                                            z4 = (contains3 && contains && !contains2) ? false : false;
-                                                                            if (z5 || z4) {
-                                                                                z3 = z5;
-                                                                                createTextSelectionChangedEvent = androidComposeViewAccessibilityDelegateCompat.createTextSelectionChangedEvent(androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i11), 0, 0, Integer.valueOf(i14), trimToSize);
+                                                                            boolean z4 = contains3 && !contains && contains2;
+                                                                            z3 = (contains3 && contains && !contains2) ? false : false;
+                                                                            if (z4 || z3) {
+                                                                                z2 = z4;
+                                                                                createTextSelectionChangedEvent = androidComposeViewAccessibilityDelegateCompat.createTextSelectionChangedEvent(androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 0, 0, Integer.valueOf(i15), trimToSize);
                                                                             } else {
-                                                                                z3 = z5;
-                                                                                createTextSelectionChangedEvent = androidComposeViewAccessibilityDelegateCompat.createEvent(androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i11), 16);
-                                                                                createTextSelectionChangedEvent.setFromIndex(i27);
-                                                                                createTextSelectionChangedEvent.setRemovedCount(i29);
-                                                                                createTextSelectionChangedEvent.setAddedCount(i30);
+                                                                                z2 = z4;
+                                                                                createTextSelectionChangedEvent = androidComposeViewAccessibilityDelegateCompat.createEvent(androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 16);
+                                                                                createTextSelectionChangedEvent.setFromIndex(i28);
+                                                                                createTextSelectionChangedEvent.setRemovedCount(i30);
+                                                                                createTextSelectionChangedEvent.setAddedCount(i31);
                                                                                 createTextSelectionChangedEvent.setBeforeText(str3);
                                                                                 createTextSelectionChangedEvent.getText().add(trimToSize);
                                                                             }
                                                                             createTextSelectionChangedEvent.setClassName(TextFieldClassName);
                                                                             androidComposeViewAccessibilityDelegateCompat.sendEvent(createTextSelectionChangedEvent);
-                                                                            if (z3 || z4) {
-                                                                                long m6151unboximpl = ((TextRange) semanticsNode2.getUnmergedConfig$ui_release().get(SemanticsProperties.INSTANCE.getTextSelectionRange())).m6151unboximpl();
-                                                                                createTextSelectionChangedEvent.setFromIndex(TextRange.m6147getStartimpl(m6151unboximpl));
-                                                                                createTextSelectionChangedEvent.setToIndex(TextRange.m6142getEndimpl(m6151unboximpl));
+                                                                            if (z2 || z3) {
+                                                                                long m6717unboximpl = ((TextRange) semanticsNode2.getUnmergedConfig$ui_release().get(SemanticsProperties.INSTANCE.getTextSelectionRange())).m6717unboximpl();
+                                                                                createTextSelectionChangedEvent.setFromIndex(TextRange.m6713getStartimpl(m6717unboximpl));
+                                                                                createTextSelectionChangedEvent.setToIndex(TextRange.m6708getEndimpl(m6717unboximpl));
                                                                                 androidComposeViewAccessibilityDelegateCompat.sendEvent(createTextSelectionChangedEvent);
                                                                             }
+                                                                            Unit unit4 = Unit.INSTANCE;
                                                                         } else {
-                                                                            sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i11), 2048, Integer.valueOf(i3), null, 8, null);
+                                                                            Boolean.valueOf(sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), 2048, Integer.valueOf(i3), null, 8, null));
                                                                         }
                                                                     } else if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getTextSelectionRange())) {
                                                                         AnnotatedString textForTextField3 = androidComposeViewAccessibilityDelegateCompat.getTextForTextField(semanticsNode2.getUnmergedConfig$ui_release());
                                                                         if (textForTextField3 != null && (text = textForTextField3.getText()) != null) {
                                                                             str2 = text;
                                                                         }
-                                                                        long m6151unboximpl2 = ((TextRange) semanticsNode2.getUnmergedConfig$ui_release().get(SemanticsProperties.INSTANCE.getTextSelectionRange())).m6151unboximpl();
-                                                                        androidComposeViewAccessibilityDelegateCompat.sendEvent(androidComposeViewAccessibilityDelegateCompat.createTextSelectionChangedEvent(androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i11), Integer.valueOf(TextRange.m6147getStartimpl(m6151unboximpl2)), Integer.valueOf(TextRange.m6142getEndimpl(m6151unboximpl2)), Integer.valueOf(str2.length()), androidComposeViewAccessibilityDelegateCompat.trimToSize(str2, 100000)));
+                                                                        long m6717unboximpl2 = ((TextRange) semanticsNode2.getUnmergedConfig$ui_release().get(SemanticsProperties.INSTANCE.getTextSelectionRange())).m6717unboximpl();
+                                                                        androidComposeViewAccessibilityDelegateCompat.sendEvent(androidComposeViewAccessibilityDelegateCompat.createTextSelectionChangedEvent(androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(i12), Integer.valueOf(TextRange.m6713getStartimpl(m6717unboximpl2)), Integer.valueOf(TextRange.m6708getEndimpl(m6717unboximpl2)), Integer.valueOf(str2.length()), androidComposeViewAccessibilityDelegateCompat.trimToSize(str2, 100000)));
                                                                         androidComposeViewAccessibilityDelegateCompat.sendPendingTextTraversedAtGranularityEvent(semanticsNode2.getId());
-                                                                    } else if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getHorizontalScrollAxisRange()) ? true : Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getVerticalScrollAxisRange())) {
+                                                                        Unit unit5 = Unit.INSTANCE;
+                                                                    } else if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getHorizontalScrollAxisRange()) || Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getVerticalScrollAxisRange())) {
                                                                         androidComposeViewAccessibilityDelegateCompat.notifySubtreeAccessibilityStateChangedIfNeeded(semanticsNode2.getLayoutNode$ui_release());
-                                                                        ScrollObservationScope findById = SemanticsUtils_androidKt.findById(androidComposeViewAccessibilityDelegateCompat.scrollObservationScopes, i11);
+                                                                        ScrollObservationScope findById = SemanticsUtils_androidKt.findById(androidComposeViewAccessibilityDelegateCompat.scrollObservationScopes, i12);
                                                                         Intrinsics.checkNotNull(findById);
                                                                         findById.setHorizontalScrollAxisRange((ScrollAxisRange) SemanticsConfigurationKt.getOrNull(semanticsNode2.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getHorizontalScrollAxisRange()));
                                                                         findById.setVerticalScrollAxisRange((ScrollAxisRange) SemanticsConfigurationKt.getOrNull(semanticsNode2.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getVerticalScrollAxisRange()));
                                                                         androidComposeViewAccessibilityDelegateCompat.scheduleScrollEventIfNeeded(findById);
+                                                                        Unit unit6 = Unit.INSTANCE;
                                                                     } else if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsProperties.INSTANCE.getFocused())) {
                                                                         Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type kotlin.Boolean");
                                                                         if (((Boolean) obj2).booleanValue()) {
                                                                             androidComposeViewAccessibilityDelegateCompat.sendEvent(androidComposeViewAccessibilityDelegateCompat.createEvent(androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(semanticsNode2.getId()), 8));
                                                                         }
-                                                                        sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(semanticsNode2.getId()), 2048, 0, null, 8, null);
-                                                                    } else {
-                                                                        if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsActions.INSTANCE.getCustomActions())) {
-                                                                            List list3 = (List) semanticsNode2.getUnmergedConfig$ui_release().get(SemanticsActions.INSTANCE.getCustomActions());
-                                                                            List list4 = (List) SemanticsConfigurationKt.getOrNull(semanticsNodeCopy.getUnmergedConfig(), SemanticsActions.INSTANCE.getCustomActions());
-                                                                            if (list4 != null) {
-                                                                                LinkedHashSet linkedHashSet = new LinkedHashSet();
-                                                                                int size = list3.size();
-                                                                                for (int i31 = 0; i31 < size; i31++) {
-                                                                                    linkedHashSet.add(((CustomAccessibilityAction) list3.get(i31)).getLabel());
-                                                                                }
-                                                                                LinkedHashSet linkedHashSet2 = new LinkedHashSet();
-                                                                                int size2 = list4.size();
-                                                                                for (int i32 = 0; i32 < size2; i32++) {
-                                                                                    linkedHashSet2.add(((CustomAccessibilityAction) list4.get(i32)).getLabel());
-                                                                                }
-                                                                                if (linkedHashSet.containsAll(linkedHashSet2)) {
-                                                                                }
-                                                                                z2 = true;
-                                                                            } else if (!list3.isEmpty()) {
-                                                                                z = true;
+                                                                        Boolean.valueOf(sendEventForVirtualView$default(androidComposeViewAccessibilityDelegateCompat, androidComposeViewAccessibilityDelegateCompat.semanticsNodeIdToAccessibilityVirtualNodeId(semanticsNode2.getId()), 2048, 0, null, 8, null));
+                                                                    } else if (Intrinsics.areEqual(semanticsPropertyKey, SemanticsActions.INSTANCE.getCustomActions())) {
+                                                                        List list3 = (List) semanticsNode2.getUnmergedConfig$ui_release().get(SemanticsActions.INSTANCE.getCustomActions());
+                                                                        List list4 = (List) SemanticsConfigurationKt.getOrNull(semanticsNodeCopy.getUnmergedConfig(), SemanticsActions.INSTANCE.getCustomActions());
+                                                                        if (list4 != null) {
+                                                                            LinkedHashSet linkedHashSet = new LinkedHashSet();
+                                                                            int size = list3.size();
+                                                                            for (int i32 = 0; i32 < size; i32++) {
+                                                                                linkedHashSet.add(((CustomAccessibilityAction) list3.get(i32)).getLabel());
                                                                             }
-                                                                        } else {
-                                                                            if (obj2 instanceof AccessibilityAction) {
-                                                                                accessibilityEquals = AndroidComposeViewAccessibilityDelegateCompat_androidKt.accessibilityEquals((AccessibilityAction) obj2, SemanticsConfigurationKt.getOrNull(semanticsNodeCopy.getUnmergedConfig(), semanticsPropertyKey));
+                                                                            LinkedHashSet linkedHashSet2 = new LinkedHashSet();
+                                                                            int size2 = list4.size();
+                                                                            for (int i33 = 0; i33 < size2; i33++) {
+                                                                                linkedHashSet2.add(((CustomAccessibilityAction) list4.get(i33)).getLabel());
                                                                             }
-                                                                            z2 = true;
+                                                                            if (linkedHashSet.containsAll(linkedHashSet2) && linkedHashSet2.containsAll(linkedHashSet)) {
+                                                                                z = false;
+                                                                                Unit unit7 = Unit.INSTANCE;
+                                                                            }
+                                                                            z = true;
+                                                                            Unit unit72 = Unit.INSTANCE;
                                                                         }
-                                                                        z = z2;
+                                                                    } else {
+                                                                        if (obj2 instanceof AccessibilityAction) {
+                                                                            accessibilityEquals = AndroidComposeViewAccessibilityDelegateCompat_androidKt.accessibilityEquals((AccessibilityAction) obj2, SemanticsConfigurationKt.getOrNull(semanticsNodeCopy.getUnmergedConfig(), semanticsPropertyKey));
+                                                                            if (accessibilityEquals) {
+                                                                                z = false;
+                                                                                Unit unit8 = Unit.INSTANCE;
+                                                                            }
+                                                                        }
+                                                                        z = true;
+                                                                        Unit unit82 = Unit.INSTANCE;
                                                                     }
                                                                 }
                                                             }
-                                                            j4 >>= 8;
-                                                            i25 = i9 + 1;
-                                                            i19 = i12;
-                                                            i21 = i11;
-                                                            i22 = 8;
-                                                            iArr4 = iArr3;
-                                                            semanticsNode4 = semanticsNode2;
-                                                            i20 = i8;
-                                                            arrayList4 = arrayList3;
-                                                            objArr3 = objArr2;
-                                                            i23 = i10;
-                                                            jArr4 = jArr3;
+                                                            i13 = 8;
                                                         }
                                                     }
+                                                    i9 = i26;
+                                                    arrayList3 = arrayList4;
+                                                    jArr3 = jArr4;
+                                                    objArr2 = objArr3;
+                                                    i10 = i24;
+                                                    i11 = i20;
+                                                    semanticsNode2 = semanticsNode4;
+                                                    iArr3 = iArr4;
+                                                    i12 = i22;
+                                                    i13 = 8;
                                                 } else {
-                                                    i8 = i20;
+                                                    i8 = i21;
+                                                    i9 = i26;
+                                                    arrayList3 = arrayList4;
+                                                    jArr3 = jArr4;
+                                                    objArr2 = objArr3;
+                                                    i10 = i24;
+                                                    i11 = i20;
+                                                    semanticsNode2 = semanticsNode4;
+                                                    iArr3 = iArr4;
+                                                    i12 = i22;
+                                                    i13 = i23;
                                                 }
-                                                i9 = i25;
-                                                arrayList3 = arrayList4;
-                                                jArr3 = jArr4;
-                                                objArr2 = objArr3;
-                                                i10 = i23;
-                                                i12 = i19;
-                                                semanticsNode2 = semanticsNode4;
-                                                iArr3 = iArr4;
-                                                i11 = i21;
-                                                j4 >>= 8;
-                                                i25 = i9 + 1;
-                                                i19 = i12;
-                                                i21 = i11;
-                                                i22 = 8;
+                                                j4 >>= i13;
+                                                i26 = i9 + 1;
+                                                i20 = i11;
+                                                i22 = i12;
+                                                i23 = i13;
                                                 iArr4 = iArr3;
                                                 semanticsNode4 = semanticsNode2;
-                                                i20 = i8;
+                                                i21 = i8;
                                                 arrayList4 = arrayList3;
                                                 objArr3 = objArr2;
-                                                i23 = i10;
+                                                i24 = i10;
                                                 jArr4 = jArr3;
                                             }
-                                            i2 = i20;
+                                            i2 = i21;
                                             arrayList2 = arrayList4;
                                             jArr2 = jArr4;
                                             objArr = objArr3;
-                                            i7 = i23;
-                                            i4 = i19;
+                                            i7 = i24;
+                                            i4 = i20;
                                             semanticsNode = semanticsNode4;
                                             iArr2 = iArr4;
-                                            i6 = i21;
-                                            if (i24 != i22) {
+                                            i6 = i22;
+                                            if (i25 != i23) {
                                                 break;
                                             }
                                         } else {
-                                            i2 = i20;
+                                            i2 = i21;
                                             arrayList2 = arrayList4;
                                             jArr2 = jArr4;
                                             objArr = objArr3;
-                                            i7 = i23;
-                                            i4 = i19;
+                                            i7 = i24;
+                                            i4 = i20;
                                             semanticsNode = semanticsNode4;
                                             iArr2 = iArr4;
-                                            i6 = i21;
+                                            i6 = i22;
                                         }
                                         if (i7 == length2) {
                                             break;
                                         }
-                                        int i33 = i7 + 1;
-                                        i19 = i4;
-                                        i21 = i6;
+                                        int i34 = i7 + 1;
+                                        i20 = i4;
+                                        i22 = i6;
                                         iArr4 = iArr2;
                                         semanticsNode4 = semanticsNode;
                                         jArr5 = jArr6;
                                         jArr4 = jArr2;
                                         arrayList4 = arrayList2;
                                         objArr3 = objArr;
-                                        i22 = 8;
-                                        i23 = i33;
-                                        i20 = i2;
+                                        i23 = 8;
+                                        i24 = i34;
+                                        i21 = i2;
                                     }
                                 } else {
-                                    i2 = i20;
+                                    i2 = i21;
                                     semanticsNode = semanticsNode3;
                                     arrayList2 = arrayList4;
                                     iArr2 = iArr4;
                                     jArr2 = jArr4;
-                                    i6 = i21;
-                                    i4 = i19;
+                                    i6 = i22;
+                                    i4 = i20;
                                     z = false;
                                 }
                                 if (!z) {
@@ -2364,22 +2618,22 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                         }
                         i5 = 8;
                     } else {
-                        i2 = i20;
+                        i2 = i21;
                         arrayList2 = arrayList4;
                         iArr2 = iArr4;
                         jArr2 = jArr4;
-                        i3 = i16;
+                        i3 = i17;
                         c = c2;
-                        i4 = i19;
-                        i5 = i18;
+                        i4 = i20;
+                        i5 = i19;
                     }
                     j2 >>= i5;
-                    i20 = i2 + 1;
+                    i21 = i2 + 1;
                     androidComposeViewAccessibilityDelegateCompat = this;
                     intObjectMap2 = intObjectMap;
-                    i19 = i4;
-                    i18 = i5;
-                    i16 = i3;
+                    i20 = i4;
+                    i19 = i5;
+                    i17 = i3;
                     c2 = c;
                     iArr4 = iArr2;
                     jArr4 = jArr2;
@@ -2388,23 +2642,23 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
                 arrayList = arrayList4;
                 iArr = iArr4;
                 jArr = jArr4;
-                i = i16;
-                if (i19 != i18) {
+                i = i17;
+                if (i20 != i19) {
                     return;
                 }
             } else {
                 arrayList = arrayList4;
                 iArr = iArr4;
                 jArr = jArr4;
-                i = i16;
+                i = i17;
             }
-            if (i17 == length) {
+            if (i18 == length) {
                 return;
             }
-            i17++;
+            i18++;
             androidComposeViewAccessibilityDelegateCompat = this;
             intObjectMap2 = intObjectMap;
-            i16 = i;
+            i17 = i;
             iArr4 = iArr;
             jArr4 = jArr;
             arrayList4 = arrayList;
@@ -2574,9 +2828,8 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         int size2 = replacedChildren$ui_release2.size();
         for (int i5 = 0; i5 < size2; i5++) {
             SemanticsNode semanticsNode3 = replacedChildren$ui_release2.get(i5);
-            if (getCurrentSemanticsNodes().containsKey(semanticsNode3.getId())) {
-                SemanticsNodeCopy semanticsNodeCopy2 = this.previousSemanticsNodes.get(semanticsNode3.getId());
-                Intrinsics.checkNotNull(semanticsNodeCopy2);
+            SemanticsNodeCopy semanticsNodeCopy2 = this.previousSemanticsNodes.get(semanticsNode3.getId());
+            if (semanticsNodeCopy2 != null && getCurrentSemanticsNodes().containsKey(semanticsNode3.getId())) {
                 sendAccessibilitySemanticsStructureChangeEvents(semanticsNode3, semanticsNodeCopy2);
             }
         }
@@ -2675,14 +2928,14 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
 
     private final int getAccessibilitySelectionStart(SemanticsNode semanticsNode) {
         if (!semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsProperties.INSTANCE.getContentDescription()) && semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsProperties.INSTANCE.getTextSelectionRange())) {
-            return TextRange.m6147getStartimpl(((TextRange) semanticsNode.getUnmergedConfig$ui_release().get(SemanticsProperties.INSTANCE.getTextSelectionRange())).m6151unboximpl());
+            return TextRange.m6713getStartimpl(((TextRange) semanticsNode.getUnmergedConfig$ui_release().get(SemanticsProperties.INSTANCE.getTextSelectionRange())).m6717unboximpl());
         }
         return this.accessibilityCursorPosition;
     }
 
     private final int getAccessibilitySelectionEnd(SemanticsNode semanticsNode) {
         if (!semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsProperties.INSTANCE.getContentDescription()) && semanticsNode.getUnmergedConfig$ui_release().contains(SemanticsProperties.INSTANCE.getTextSelectionRange())) {
-            return TextRange.m6142getEndimpl(((TextRange) semanticsNode.getUnmergedConfig$ui_release().get(SemanticsProperties.INSTANCE.getTextSelectionRange())).m6151unboximpl());
+            return TextRange.m6708getEndimpl(((TextRange) semanticsNode.getUnmergedConfig$ui_release().get(SemanticsProperties.INSTANCE.getTextSelectionRange())).m6717unboximpl());
         }
         return this.accessibilityCursorPosition;
     }
@@ -2704,10 +2957,10 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
         }
         if (i == 1) {
             companion = AccessibilityIterators.CharacterTextSegmentIterator.Companion.getInstance(this.view.getContext().getResources().getConfiguration().locale);
-            companion.initialize(iterableTextForAccessibility);
+            ((AccessibilityIterators.CharacterTextSegmentIterator) companion).initialize(iterableTextForAccessibility);
         } else if (i == 2) {
             companion = AccessibilityIterators.WordTextSegmentIterator.Companion.getInstance(this.view.getContext().getResources().getConfiguration().locale);
-            companion.initialize(iterableTextForAccessibility);
+            ((AccessibilityIterators.WordTextSegmentIterator) companion).initialize(iterableTextForAccessibility);
         } else {
             if (i != 4) {
                 if (i == 8) {
@@ -2759,7 +3012,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
     }
 
     /* compiled from: AndroidComposeViewAccessibilityDelegateCompat.android.kt */
-    @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J*\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0016J\u0012\u0010\r\u001a\u0004\u0018\u00010\b2\u0006\u0010\u0005\u001a\u00020\u0006H\u0016J\u0012\u0010\u000e\u001a\u0004\u0018\u00010\b2\u0006\u0010\u000f\u001a\u00020\u0006H\u0016J\"\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00062\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0016¨\u0006\u0013"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$ComposeAccessibilityNodeProvider;", "Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;", "(Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;)V", "addExtraDataToAccessibilityNodeInfo", "", "virtualViewId", "", "info", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;", "extraDataKey", "", "arguments", "Landroid/os/Bundle;", "createAccessibilityNodeInfo", "findFocus", "focus", "performAction", "", "action", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0016J\"\u0010\b\u001a\u00020\t2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\n\u001a\u00020\u00072\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0016J*\u0010\r\u001a\u00020\u000e2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u000f\u001a\u00020\u00052\u0006\u0010\u0010\u001a\u00020\u00112\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0016J\u0012\u0010\u0012\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0013\u001a\u00020\u0007H\u0016¨\u0006\u0014"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$ComposeAccessibilityNodeProvider;", "Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;", "<init>", "(Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;)V", "createAccessibilityNodeInfo", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;", "virtualViewId", "", "performAction", "", "action", "arguments", "Landroid/os/Bundle;", "addExtraDataToAccessibilityNodeInfo", "", "info", "extraDataKey", "", "findFocus", "focus", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     private final class ComposeAccessibilityNodeProvider extends AccessibilityNodeProviderCompat {
         public ComposeAccessibilityNodeProvider() {
@@ -2807,7 +3060,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: AndroidComposeViewAccessibilityDelegateCompat.android.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bÃ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0018\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0007¨\u0006\t"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$Api24Impl;", "", "()V", "addSetProgressAction", "", "info", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;", "semanticsNode", "Landroidx/compose/ui/semantics/SemanticsNode;", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bÃ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0007¨\u0006\n"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$Api24Impl;", "", "<init>", "()V", "addSetProgressAction", "", "info", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;", "semanticsNode", "Landroidx/compose/ui/semantics/SemanticsNode;", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Api24Impl {
         public static final Api24Impl INSTANCE = new Api24Impl();
@@ -2829,7 +3082,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: AndroidComposeViewAccessibilityDelegateCompat.android.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bÃ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0018\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0007¨\u0006\t"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$Api29Impl;", "", "()V", "addPageActions", "", "info", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;", "semanticsNode", "Landroidx/compose/ui/semantics/SemanticsNode;", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bÃ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0007¨\u0006\n"}, d2 = {"Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$Api29Impl;", "", "<init>", "()V", "addPageActions", "", "info", "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;", "semanticsNode", "Landroidx/compose/ui/semantics/SemanticsNode;", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Api29Impl {
         public static final Api29Impl INSTANCE = new Api29Impl();
@@ -2843,7 +3096,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat extends Accessi
             Role role = (Role) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getRole());
             enabled = AndroidComposeViewAccessibilityDelegateCompat_androidKt.enabled(semanticsNode);
             if (enabled) {
-                if (role == null ? false : Role.m5907equalsimpl0(role.m5910unboximpl(), Role.Companion.m5912getCarouselo7Vup1c())) {
+                if (role == null ? false : Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6462getCarouselo7Vup1c())) {
                     return;
                 }
                 AccessibilityAction accessibilityAction = (AccessibilityAction) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsActions.INSTANCE.getPageUp());

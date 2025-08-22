@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableBufferTimed<T, U extends Collection<? super T>> extends AbstractFlowableWithUpstream<T, U> {
     final Callable<U> bufferSupplier;
     final int maxSize;
@@ -58,7 +58,7 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BufferExactUnboundedSubscriber<T, U extends Collection<? super T>> extends QueueDrainSubscriber<T, U, U> implements Subscription, Runnable, Disposable {
         U buffer;
         final Callable<U> bufferSupplier;
@@ -191,7 +191,7 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BufferSkipBoundedSubscriber<T, U extends Collection<? super T>> extends QueueDrainSubscriber<T, U, U> implements Subscription, Runnable {
         final Callable<U> bufferSupplier;
         final List<U> buffers;
@@ -319,7 +319,7 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
             return true;
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class RemoveFromBuffer implements Runnable {
             private final U buffer;
 
@@ -338,7 +338,7 @@ public final class FlowableBufferTimed<T, U extends Collection<? super T>> exten
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BufferExactBoundedSubscriber<T, U extends Collection<? super T>> extends QueueDrainSubscriber<T, U, U> implements Subscription, Runnable, Disposable {
         U buffer;
         final Callable<U> bufferSupplier;

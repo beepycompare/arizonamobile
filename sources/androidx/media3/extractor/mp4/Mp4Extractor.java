@@ -41,7 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Mp4Extractor implements Extractor, SeekMap {
     @Deprecated
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: androidx.media3.extractor.mp4.Mp4Extractor$$ExternalSyntheticLambda2
@@ -103,7 +103,7 @@ public final class Mp4Extractor implements Extractor, SeekMap {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Flags {
     }
 
@@ -641,7 +641,7 @@ public final class Mp4Extractor implements Extractor, SeekMap {
     /* JADX WARN: Type inference failed for: r1v14 */
     /* JADX WARN: Type inference failed for: r1v15 */
     /* JADX WARN: Type inference failed for: r1v8 */
-    /* JADX WARN: Type inference failed for: r1v9, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r1v9, types: [int, boolean] */
     private int readSample(ExtractorInput extractorInput, PositionHolder positionHolder) throws IOException {
         ?? r1;
         int i;
@@ -904,7 +904,7 @@ public final class Mp4Extractor implements Extractor, SeekMap {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Mp4Track {
         public int sampleIndex;
         public final TrackSampleTable sampleTable;

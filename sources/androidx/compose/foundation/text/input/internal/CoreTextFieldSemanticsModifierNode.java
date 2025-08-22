@@ -14,7 +14,6 @@ import androidx.compose.ui.node.SemanticsModifierNodeKt;
 import androidx.compose.ui.semantics.SemanticsPropertiesKt;
 import androidx.compose.ui.semantics.SemanticsPropertyReceiver;
 import androidx.compose.ui.text.AnnotatedString;
-import androidx.compose.ui.text.TextLayoutResult;
 import androidx.compose.ui.text.TextRange;
 import androidx.compose.ui.text.TextRangeKt;
 import androidx.compose.ui.text.input.CommitTextCommand;
@@ -38,7 +37,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* compiled from: CoreTextFieldSemanticsModifier.kt */
-@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b'\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0000\u0018\u00002\u00020\u00012\u00020\u0002BU\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\n\u0012\u0006\u0010\f\u001a\u00020\n\u0012\u0006\u0010\r\u001a\u00020\u000e\u0012\u0006\u0010\u000f\u001a\u00020\u0010\u0012\u0006\u0010\u0011\u001a\u00020\u0012\u0012\u0006\u0010\u0013\u001a\u00020\u0014¢\u0006\u0002\u0010\u0015J(\u0010;\u001a\u00020<2\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010=\u001a\u00020>2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\nH\u0002JV\u0010?\u001a\u00020<2\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\n2\u0006\u0010\f\u001a\u00020\n2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014J\f\u0010@\u001a\u00020<*\u00020AH\u0016R\u001a\u0010\u000b\u001a\u00020\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R\u001a\u0010\u0013\u001a\u00020\u0014X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR\u001a\u0010\u0011\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u001f\"\u0004\b \u0010!R\u001a\u0010\f\u001a\u00020\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\u0017\"\u0004\b\"\u0010\u0019R\u001a\u0010\u000f\u001a\u00020\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010$\"\u0004\b%\u0010&R\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b'\u0010(\"\u0004\b)\u0010*R\u001a\u0010\t\u001a\u00020\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b+\u0010\u0017\"\u0004\b,\u0010\u0019R\u0014\u0010-\u001a\u00020\n8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b.\u0010\u0017R\u001a\u0010\u0007\u001a\u00020\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b/\u00100\"\u0004\b1\u00102R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b3\u00104\"\u0004\b5\u00106R\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b7\u00108\"\u0004\b9\u0010:¨\u0006B"}, d2 = {"Landroidx/compose/foundation/text/input/internal/CoreTextFieldSemanticsModifierNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "transformedText", "Landroidx/compose/ui/text/input/TransformedText;", "value", "Landroidx/compose/ui/text/input/TextFieldValue;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/text/LegacyTextFieldState;", "readOnly", "", "enabled", "isPassword", "offsetMapping", "Landroidx/compose/ui/text/input/OffsetMapping;", "manager", "Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;", "imeOptions", "Landroidx/compose/ui/text/input/ImeOptions;", "focusRequester", "Landroidx/compose/ui/focus/FocusRequester;", "(Landroidx/compose/ui/text/input/TransformedText;Landroidx/compose/ui/text/input/TextFieldValue;Landroidx/compose/foundation/text/LegacyTextFieldState;ZZZLandroidx/compose/ui/text/input/OffsetMapping;Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;Landroidx/compose/ui/text/input/ImeOptions;Landroidx/compose/ui/focus/FocusRequester;)V", "getEnabled", "()Z", "setEnabled", "(Z)V", "getFocusRequester", "()Landroidx/compose/ui/focus/FocusRequester;", "setFocusRequester", "(Landroidx/compose/ui/focus/FocusRequester;)V", "getImeOptions", "()Landroidx/compose/ui/text/input/ImeOptions;", "setImeOptions", "(Landroidx/compose/ui/text/input/ImeOptions;)V", "setPassword", "getManager", "()Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;", "setManager", "(Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;)V", "getOffsetMapping", "()Landroidx/compose/ui/text/input/OffsetMapping;", "setOffsetMapping", "(Landroidx/compose/ui/text/input/OffsetMapping;)V", "getReadOnly", "setReadOnly", "shouldMergeDescendantSemantics", "getShouldMergeDescendantSemantics", "getState", "()Landroidx/compose/foundation/text/LegacyTextFieldState;", "setState", "(Landroidx/compose/foundation/text/LegacyTextFieldState;)V", "getTransformedText", "()Landroidx/compose/ui/text/input/TransformedText;", "setTransformedText", "(Landroidx/compose/ui/text/input/TransformedText;)V", "getValue", "()Landroidx/compose/ui/text/input/TextFieldValue;", "setValue", "(Landroidx/compose/ui/text/input/TextFieldValue;)V", "handleTextUpdateFromSemantics", "", "text", "", "updateNodeSemantics", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b(\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0001\u0018\u00002\u00020\u00012\u00020\u0002BW\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\n\u0012\u0006\u0010\f\u001a\u00020\n\u0012\u0006\u0010\r\u001a\u00020\u000e\u0012\u0006\u0010\u000f\u001a\u00020\u0010\u0012\u0006\u0010\u0011\u001a\u00020\u0012\u0012\u0006\u0010\u0013\u001a\u00020\u0014¢\u0006\u0004\b\u0015\u0010\u0016J\f\u0010<\u001a\u00020=*\u00020>H\u0016JV\u0010?\u001a\u00020=2\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\n2\u0006\u0010\f\u001a\u00020\n2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014J(\u0010@\u001a\u00020=2\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010A\u001a\u00020B2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\nH\u0002R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aR\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR\u001a\u0010\u0007\u001a\u00020\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u0010 \"\u0004\b!\u0010\"R\u001a\u0010\t\u001a\u00020\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010$\"\u0004\b%\u0010&R\u001a\u0010\u000b\u001a\u00020\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b'\u0010$\"\u0004\b(\u0010&R\u001a\u0010\f\u001a\u00020\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010$\"\u0004\b)\u0010&R\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-R\u001a\u0010\u000f\u001a\u00020\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b.\u0010/\"\u0004\b0\u00101R\u001a\u0010\u0011\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b2\u00103\"\u0004\b4\u00105R\u001a\u0010\u0013\u001a\u00020\u0014X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b6\u00107\"\u0004\b8\u00109R\u0014\u0010:\u001a\u00020\n8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b;\u0010$¨\u0006C"}, d2 = {"Landroidx/compose/foundation/text/input/internal/CoreTextFieldSemanticsModifierNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "transformedText", "Landroidx/compose/ui/text/input/TransformedText;", "value", "Landroidx/compose/ui/text/input/TextFieldValue;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/text/LegacyTextFieldState;", "readOnly", "", "enabled", "isPassword", "offsetMapping", "Landroidx/compose/ui/text/input/OffsetMapping;", "manager", "Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;", "imeOptions", "Landroidx/compose/ui/text/input/ImeOptions;", "focusRequester", "Landroidx/compose/ui/focus/FocusRequester;", "<init>", "(Landroidx/compose/ui/text/input/TransformedText;Landroidx/compose/ui/text/input/TextFieldValue;Landroidx/compose/foundation/text/LegacyTextFieldState;ZZZLandroidx/compose/ui/text/input/OffsetMapping;Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;Landroidx/compose/ui/text/input/ImeOptions;Landroidx/compose/ui/focus/FocusRequester;)V", "getTransformedText", "()Landroidx/compose/ui/text/input/TransformedText;", "setTransformedText", "(Landroidx/compose/ui/text/input/TransformedText;)V", "getValue", "()Landroidx/compose/ui/text/input/TextFieldValue;", "setValue", "(Landroidx/compose/ui/text/input/TextFieldValue;)V", "getState", "()Landroidx/compose/foundation/text/LegacyTextFieldState;", "setState", "(Landroidx/compose/foundation/text/LegacyTextFieldState;)V", "getReadOnly", "()Z", "setReadOnly", "(Z)V", "getEnabled", "setEnabled", "setPassword", "getOffsetMapping", "()Landroidx/compose/ui/text/input/OffsetMapping;", "setOffsetMapping", "(Landroidx/compose/ui/text/input/OffsetMapping;)V", "getManager", "()Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;", "setManager", "(Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;)V", "getImeOptions", "()Landroidx/compose/ui/text/input/ImeOptions;", "setImeOptions", "(Landroidx/compose/ui/text/input/ImeOptions;)V", "getFocusRequester", "()Landroidx/compose/ui/focus/FocusRequester;", "setFocusRequester", "(Landroidx/compose/ui/focus/FocusRequester;)V", "shouldMergeDescendantSemantics", "getShouldMergeDescendantSemantics", "applySemantics", "", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "updateNodeSemantics", "handleTextUpdateFromSemantics", "text", "", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class CoreTextFieldSemanticsModifierNode extends DelegatingNode implements SemanticsModifierNode {
     public static final int $stable = 8;
@@ -149,43 +148,34 @@ public final class CoreTextFieldSemanticsModifierNode extends DelegatingNode imp
         this.manager = textFieldSelectionManager;
         this.imeOptions = imeOptions;
         this.focusRequester = focusRequester;
-        textFieldSelectionManager.setRequestAutofillAction$foundation_release(new Function0<Unit>() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode.1
-            {
-                super(0);
-            }
-
+        textFieldSelectionManager.setRequestAutofillAction$foundation_release(new Function0() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                DelegatableNodeKt.requestAutofill(CoreTextFieldSemanticsModifierNode.this);
+            public final Object invoke() {
+                Unit _init_$lambda$0;
+                _init_$lambda$0 = CoreTextFieldSemanticsModifierNode._init_$lambda$0(CoreTextFieldSemanticsModifierNode.this);
+                return _init_$lambda$0;
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit _init_$lambda$0(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode) {
+        DelegatableNodeKt.requestAutofill(coreTextFieldSemanticsModifierNode);
+        return Unit.INSTANCE;
     }
 
     @Override // androidx.compose.ui.node.SemanticsModifierNode
     public void applySemantics(final SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setInputText(semanticsPropertyReceiver, this.value.getAnnotatedString());
         SemanticsPropertiesKt.setEditableText(semanticsPropertyReceiver, this.transformedText.getText());
-        SemanticsPropertiesKt.m5931setTextSelectionRangeFDrldGo(semanticsPropertyReceiver, this.value.m6396getSelectiond9O1mEE());
+        SemanticsPropertiesKt.m6481setTextSelectionRangeFDrldGo(semanticsPropertyReceiver, this.value.m6964getSelectiond9O1mEE());
         SemanticsPropertiesKt.setContentDataType(semanticsPropertyReceiver, ContentDataType.Companion.getText());
-        SemanticsPropertiesKt.onAutofillText$default(semanticsPropertyReceiver, null, new Function1<AnnotatedString, Boolean>() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$applySemantics$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        SemanticsPropertiesKt.onAutofillText$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
-            public final Boolean invoke(AnnotatedString annotatedString) {
-                CoreTextFieldSemanticsModifierNode.this.getState().setJustAutofilled(true);
-                CoreTextFieldSemanticsModifierNode.this.getState().setAutofillHighlightOn(true);
-                CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode = CoreTextFieldSemanticsModifierNode.this;
-                coreTextFieldSemanticsModifierNode.handleTextUpdateFromSemantics(coreTextFieldSemanticsModifierNode.getState(), annotatedString.getText(), CoreTextFieldSemanticsModifierNode.this.getReadOnly(), CoreTextFieldSemanticsModifierNode.this.getEnabled());
-                return true;
+            public final Object invoke(Object obj) {
+                boolean applySemantics$lambda$1;
+                applySemantics$lambda$1 = CoreTextFieldSemanticsModifierNode.applySemantics$lambda$1(CoreTextFieldSemanticsModifierNode.this, (AnnotatedString) obj);
+                return Boolean.valueOf(applySemantics$lambda$1);
             }
         }, 1, null);
         if (!this.enabled) {
@@ -196,169 +186,80 @@ public final class CoreTextFieldSemanticsModifierNode extends DelegatingNode imp
         }
         boolean z = this.enabled && !this.readOnly;
         SemanticsPropertiesKt.setEditable(semanticsPropertyReceiver, z);
-        SemanticsPropertiesKt.getTextLayoutResult$default(semanticsPropertyReceiver, null, new Function1<List<TextLayoutResult>, Boolean>() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$applySemantics$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        SemanticsPropertiesKt.getTextLayoutResult$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
-            public final Boolean invoke(List<TextLayoutResult> list) {
-                boolean z2;
-                if (CoreTextFieldSemanticsModifierNode.this.getState().getLayoutResult() != null) {
-                    TextLayoutResultProxy layoutResult = CoreTextFieldSemanticsModifierNode.this.getState().getLayoutResult();
-                    Intrinsics.checkNotNull(layoutResult);
-                    list.add(layoutResult.getValue());
-                    z2 = true;
-                } else {
-                    z2 = false;
-                }
-                return Boolean.valueOf(z2);
+            public final Object invoke(Object obj) {
+                boolean applySemantics$lambda$2;
+                applySemantics$lambda$2 = CoreTextFieldSemanticsModifierNode.applySemantics$lambda$2(CoreTextFieldSemanticsModifierNode.this, (List) obj);
+                return Boolean.valueOf(applySemantics$lambda$2);
             }
         }, 1, null);
         if (z) {
-            SemanticsPropertiesKt.setText$default(semanticsPropertyReceiver, null, new Function1<AnnotatedString, Boolean>() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$applySemantics$3
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(1);
-                }
-
+            SemanticsPropertiesKt.setText$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function1
-                public final Boolean invoke(AnnotatedString annotatedString) {
-                    CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode = CoreTextFieldSemanticsModifierNode.this;
-                    coreTextFieldSemanticsModifierNode.handleTextUpdateFromSemantics(coreTextFieldSemanticsModifierNode.getState(), annotatedString.getText(), CoreTextFieldSemanticsModifierNode.this.getReadOnly(), CoreTextFieldSemanticsModifierNode.this.getEnabled());
-                    return true;
+                public final Object invoke(Object obj) {
+                    boolean applySemantics$lambda$3;
+                    applySemantics$lambda$3 = CoreTextFieldSemanticsModifierNode.applySemantics$lambda$3(CoreTextFieldSemanticsModifierNode.this, (AnnotatedString) obj);
+                    return Boolean.valueOf(applySemantics$lambda$3);
                 }
             }, 1, null);
-            SemanticsPropertiesKt.insertTextAtCursor$default(semanticsPropertyReceiver, null, new Function1<AnnotatedString, Boolean>() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$applySemantics$4
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(1);
-                }
-
+            SemanticsPropertiesKt.insertTextAtCursor$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function1
-                public final Boolean invoke(AnnotatedString annotatedString) {
-                    Unit unit;
-                    if (CoreTextFieldSemanticsModifierNode.this.getReadOnly() || !CoreTextFieldSemanticsModifierNode.this.getEnabled()) {
-                        return false;
-                    }
-                    androidx.compose.ui.text.input.TextInputSession inputSession = CoreTextFieldSemanticsModifierNode.this.getState().getInputSession();
-                    if (inputSession != null) {
-                        CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode = CoreTextFieldSemanticsModifierNode.this;
-                        TextFieldDelegate.Companion.onEditCommand$foundation_release(CollectionsKt.listOf((Object[]) new EditCommand[]{new FinishComposingTextCommand(), new CommitTextCommand(annotatedString, 1)}), coreTextFieldSemanticsModifierNode.getState().getProcessor(), coreTextFieldSemanticsModifierNode.getState().getOnValueChange(), inputSession);
-                        unit = Unit.INSTANCE;
-                    } else {
-                        unit = null;
-                    }
-                    if (unit == null) {
-                        CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode2 = CoreTextFieldSemanticsModifierNode.this;
-                        coreTextFieldSemanticsModifierNode2.getState().getOnValueChange().invoke(new TextFieldValue(StringsKt.replaceRange((CharSequence) coreTextFieldSemanticsModifierNode2.getValue().getText(), TextRange.m6147getStartimpl(coreTextFieldSemanticsModifierNode2.getValue().m6396getSelectiond9O1mEE()), TextRange.m6142getEndimpl(coreTextFieldSemanticsModifierNode2.getValue().m6396getSelectiond9O1mEE()), (CharSequence) annotatedString).toString(), TextRangeKt.TextRange(TextRange.m6147getStartimpl(coreTextFieldSemanticsModifierNode2.getValue().m6396getSelectiond9O1mEE()) + annotatedString.length()), (TextRange) null, 4, (DefaultConstructorMarker) null));
-                    }
-                    return true;
+                public final Object invoke(Object obj) {
+                    boolean applySemantics$lambda$6;
+                    applySemantics$lambda$6 = CoreTextFieldSemanticsModifierNode.applySemantics$lambda$6(CoreTextFieldSemanticsModifierNode.this, semanticsPropertyReceiver, (AnnotatedString) obj);
+                    return Boolean.valueOf(applySemantics$lambda$6);
                 }
             }, 1, null);
         }
-        SemanticsPropertiesKt.setSelection$default(semanticsPropertyReceiver, null, new Function3<Integer, Integer, Boolean, Boolean>() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$applySemantics$5
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(3);
-            }
-
+        SemanticsPropertiesKt.setSelection$default(semanticsPropertyReceiver, null, new Function3() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function3
-            public /* bridge */ /* synthetic */ Boolean invoke(Integer num, Integer num2, Boolean bool) {
-                return invoke(num.intValue(), num2.intValue(), bool.booleanValue());
-            }
-
-            public final Boolean invoke(int i, int i2, boolean z2) {
-                if (!z2) {
-                    i = CoreTextFieldSemanticsModifierNode.this.getOffsetMapping().transformedToOriginal(i);
-                }
-                if (!z2) {
-                    i2 = CoreTextFieldSemanticsModifierNode.this.getOffsetMapping().transformedToOriginal(i2);
-                }
-                boolean z3 = false;
-                if (CoreTextFieldSemanticsModifierNode.this.getEnabled() && (i != TextRange.m6147getStartimpl(CoreTextFieldSemanticsModifierNode.this.getValue().m6396getSelectiond9O1mEE()) || i2 != TextRange.m6142getEndimpl(CoreTextFieldSemanticsModifierNode.this.getValue().m6396getSelectiond9O1mEE()))) {
-                    if (Math.min(i, i2) >= 0 && Math.max(i, i2) <= CoreTextFieldSemanticsModifierNode.this.getValue().getAnnotatedString().length()) {
-                        if (z2 || i == i2) {
-                            CoreTextFieldSemanticsModifierNode.this.getManager().exitSelectionMode$foundation_release();
-                        } else {
-                            TextFieldSelectionManager.enterSelectionMode$foundation_release$default(CoreTextFieldSemanticsModifierNode.this.getManager(), false, 1, null);
-                        }
-                        CoreTextFieldSemanticsModifierNode.this.getState().getOnValueChange().invoke(new TextFieldValue(CoreTextFieldSemanticsModifierNode.this.getValue().getAnnotatedString(), TextRangeKt.TextRange(i, i2), (TextRange) null, 4, (DefaultConstructorMarker) null));
-                        z3 = true;
-                    } else {
-                        CoreTextFieldSemanticsModifierNode.this.getManager().exitSelectionMode$foundation_release();
-                    }
-                }
-                return Boolean.valueOf(z3);
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                boolean applySemantics$lambda$7;
+                applySemantics$lambda$7 = CoreTextFieldSemanticsModifierNode.applySemantics$lambda$7(CoreTextFieldSemanticsModifierNode.this, ((Integer) obj).intValue(), ((Integer) obj2).intValue(), ((Boolean) obj3).booleanValue());
+                return Boolean.valueOf(applySemantics$lambda$7);
             }
         }, 1, null);
-        SemanticsPropertiesKt.m5927onImeAction9UiTYpY$default(semanticsPropertyReceiver, this.imeOptions.m6343getImeActioneUduSuo(), null, new Function0<Boolean>() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$applySemantics$6
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        SemanticsPropertiesKt.m6477onImeAction9UiTYpY$default(semanticsPropertyReceiver, this.imeOptions.m6911getImeActioneUduSuo(), null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function0
-            public final Boolean invoke() {
-                CoreTextFieldSemanticsModifierNode.this.getState().getOnImeActionPerformed().invoke(ImeAction.m6311boximpl(CoreTextFieldSemanticsModifierNode.this.getImeOptions().m6343getImeActioneUduSuo()));
-                return true;
+            public final Object invoke() {
+                boolean applySemantics$lambda$8;
+                applySemantics$lambda$8 = CoreTextFieldSemanticsModifierNode.applySemantics$lambda$8(CoreTextFieldSemanticsModifierNode.this);
+                return Boolean.valueOf(applySemantics$lambda$8);
             }
         }, 2, null);
-        SemanticsPropertiesKt.onClick$default(semanticsPropertyReceiver, null, new Function0<Boolean>() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$applySemantics$7
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        SemanticsPropertiesKt.onClick$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function0
-            public final Boolean invoke() {
-                CoreTextFieldKt.tapToFocus(CoreTextFieldSemanticsModifierNode.this.getState(), CoreTextFieldSemanticsModifierNode.this.getFocusRequester(), !CoreTextFieldSemanticsModifierNode.this.getReadOnly());
-                return true;
+            public final Object invoke() {
+                boolean applySemantics$lambda$9;
+                applySemantics$lambda$9 = CoreTextFieldSemanticsModifierNode.applySemantics$lambda$9(CoreTextFieldSemanticsModifierNode.this);
+                return Boolean.valueOf(applySemantics$lambda$9);
             }
         }, 1, null);
-        SemanticsPropertiesKt.onLongClick$default(semanticsPropertyReceiver, null, new Function0<Boolean>() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$applySemantics$8
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        SemanticsPropertiesKt.onLongClick$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
-            public final Boolean invoke() {
-                TextFieldSelectionManager.enterSelectionMode$foundation_release$default(CoreTextFieldSemanticsModifierNode.this.getManager(), false, 1, null);
-                return true;
+            public final Object invoke() {
+                boolean applySemantics$lambda$10;
+                applySemantics$lambda$10 = CoreTextFieldSemanticsModifierNode.applySemantics$lambda$10(CoreTextFieldSemanticsModifierNode.this);
+                return Boolean.valueOf(applySemantics$lambda$10);
             }
         }, 1, null);
-        if (!TextRange.m6141getCollapsedimpl(this.value.m6396getSelectiond9O1mEE()) && !this.isPassword) {
-            SemanticsPropertiesKt.copyText$default(semanticsPropertyReceiver, null, new Function0<Boolean>() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$applySemantics$9
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(0);
-                }
-
-                /* JADX WARN: Can't rename method to resolve collision */
+        if (!TextRange.m6707getCollapsedimpl(this.value.m6964getSelectiond9O1mEE()) && !this.isPassword) {
+            SemanticsPropertiesKt.copyText$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
-                public final Boolean invoke() {
-                    TextFieldSelectionManager.copy$foundation_release$default(CoreTextFieldSemanticsModifierNode.this.getManager(), false, 1, null);
-                    return true;
+                public final Object invoke() {
+                    boolean applySemantics$lambda$11;
+                    applySemantics$lambda$11 = CoreTextFieldSemanticsModifierNode.applySemantics$lambda$11(CoreTextFieldSemanticsModifierNode.this);
+                    return Boolean.valueOf(applySemantics$lambda$11);
                 }
             }, 1, null);
             if (this.enabled && !this.readOnly) {
-                SemanticsPropertiesKt.cutText$default(semanticsPropertyReceiver, null, new Function0<Boolean>() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$applySemantics$10
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    {
-                        super(0);
-                    }
-
-                    /* JADX WARN: Can't rename method to resolve collision */
+                SemanticsPropertiesKt.cutText$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function0
-                    public final Boolean invoke() {
-                        CoreTextFieldSemanticsModifierNode.this.getManager().cut$foundation_release();
-                        return true;
+                    public final Object invoke() {
+                        boolean applySemantics$lambda$12;
+                        applySemantics$lambda$12 = CoreTextFieldSemanticsModifierNode.applySemantics$lambda$12(CoreTextFieldSemanticsModifierNode.this);
+                        return Boolean.valueOf(applySemantics$lambda$12);
                     }
                 }, 1, null);
             }
@@ -366,19 +267,116 @@ public final class CoreTextFieldSemanticsModifierNode extends DelegatingNode imp
         if (!this.enabled || this.readOnly) {
             return;
         }
-        SemanticsPropertiesKt.pasteText$default(semanticsPropertyReceiver, null, new Function0<Boolean>() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$applySemantics$11
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        SemanticsPropertiesKt.pasteText$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
-            public final Boolean invoke() {
-                CoreTextFieldSemanticsModifierNode.this.getManager().paste$foundation_release();
-                return true;
+            public final Object invoke() {
+                boolean applySemantics$lambda$13;
+                applySemantics$lambda$13 = CoreTextFieldSemanticsModifierNode.applySemantics$lambda$13(CoreTextFieldSemanticsModifierNode.this);
+                return Boolean.valueOf(applySemantics$lambda$13);
             }
         }, 1, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$1(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode, AnnotatedString annotatedString) {
+        coreTextFieldSemanticsModifierNode.state.setJustAutofilled(true);
+        coreTextFieldSemanticsModifierNode.state.setAutofillHighlightOn(true);
+        coreTextFieldSemanticsModifierNode.handleTextUpdateFromSemantics(coreTextFieldSemanticsModifierNode.state, annotatedString.getText(), coreTextFieldSemanticsModifierNode.readOnly, coreTextFieldSemanticsModifierNode.enabled);
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$2(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode, List list) {
+        if (coreTextFieldSemanticsModifierNode.state.getLayoutResult() != null) {
+            TextLayoutResultProxy layoutResult = coreTextFieldSemanticsModifierNode.state.getLayoutResult();
+            Intrinsics.checkNotNull(layoutResult);
+            list.add(layoutResult.getValue());
+            return true;
+        }
+        return false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$3(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode, AnnotatedString annotatedString) {
+        coreTextFieldSemanticsModifierNode.handleTextUpdateFromSemantics(coreTextFieldSemanticsModifierNode.state, annotatedString.getText(), coreTextFieldSemanticsModifierNode.readOnly, coreTextFieldSemanticsModifierNode.enabled);
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$6(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode, SemanticsPropertyReceiver semanticsPropertyReceiver, AnnotatedString annotatedString) {
+        if (coreTextFieldSemanticsModifierNode.readOnly || !coreTextFieldSemanticsModifierNode.enabled) {
+            return false;
+        }
+        androidx.compose.ui.text.input.TextInputSession inputSession = coreTextFieldSemanticsModifierNode.state.getInputSession();
+        if (inputSession != null) {
+            TextFieldDelegate.Companion.onEditCommand$foundation_release(CollectionsKt.listOf((Object[]) new EditCommand[]{new FinishComposingTextCommand(), new CommitTextCommand(annotatedString, 1)}), coreTextFieldSemanticsModifierNode.state.getProcessor(), coreTextFieldSemanticsModifierNode.state.getOnValueChange(), inputSession);
+        } else {
+            coreTextFieldSemanticsModifierNode.state.getOnValueChange().invoke(new TextFieldValue(StringsKt.replaceRange((CharSequence) coreTextFieldSemanticsModifierNode.value.getText(), TextRange.m6713getStartimpl(coreTextFieldSemanticsModifierNode.value.m6964getSelectiond9O1mEE()), TextRange.m6708getEndimpl(coreTextFieldSemanticsModifierNode.value.m6964getSelectiond9O1mEE()), (CharSequence) annotatedString).toString(), TextRangeKt.TextRange(TextRange.m6713getStartimpl(coreTextFieldSemanticsModifierNode.value.m6964getSelectiond9O1mEE()) + annotatedString.length()), (TextRange) null, 4, (DefaultConstructorMarker) null));
+        }
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$7(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode, int i, int i2, boolean z) {
+        if (!z) {
+            i = coreTextFieldSemanticsModifierNode.offsetMapping.transformedToOriginal(i);
+        }
+        if (!z) {
+            i2 = coreTextFieldSemanticsModifierNode.offsetMapping.transformedToOriginal(i2);
+        }
+        if (coreTextFieldSemanticsModifierNode.enabled) {
+            if (i == TextRange.m6713getStartimpl(coreTextFieldSemanticsModifierNode.value.m6964getSelectiond9O1mEE()) && i2 == TextRange.m6708getEndimpl(coreTextFieldSemanticsModifierNode.value.m6964getSelectiond9O1mEE())) {
+                return false;
+            }
+            if (Math.min(i, i2) >= 0 && Math.max(i, i2) <= coreTextFieldSemanticsModifierNode.value.getAnnotatedString().length()) {
+                if (z || i == i2) {
+                    coreTextFieldSemanticsModifierNode.manager.exitSelectionMode$foundation_release();
+                } else {
+                    TextFieldSelectionManager.enterSelectionMode$foundation_release$default(coreTextFieldSemanticsModifierNode.manager, false, 1, null);
+                }
+                coreTextFieldSemanticsModifierNode.state.getOnValueChange().invoke(new TextFieldValue(coreTextFieldSemanticsModifierNode.value.getAnnotatedString(), TextRangeKt.TextRange(i, i2), (TextRange) null, 4, (DefaultConstructorMarker) null));
+                return true;
+            }
+            coreTextFieldSemanticsModifierNode.manager.exitSelectionMode$foundation_release();
+            return false;
+        }
+        return false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$8(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode) {
+        coreTextFieldSemanticsModifierNode.state.getOnImeActionPerformed().invoke(ImeAction.m6879boximpl(coreTextFieldSemanticsModifierNode.imeOptions.m6911getImeActioneUduSuo()));
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$9(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode) {
+        CoreTextFieldKt.tapToFocus(coreTextFieldSemanticsModifierNode.state, coreTextFieldSemanticsModifierNode.focusRequester, !coreTextFieldSemanticsModifierNode.readOnly);
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$10(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode) {
+        TextFieldSelectionManager.enterSelectionMode$foundation_release$default(coreTextFieldSemanticsModifierNode.manager, false, 1, null);
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$11(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode) {
+        TextFieldSelectionManager.copy$foundation_release$default(coreTextFieldSemanticsModifierNode.manager, false, 1, null);
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$12(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode) {
+        coreTextFieldSemanticsModifierNode.manager.cut$foundation_release();
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean applySemantics$lambda$13(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode) {
+        coreTextFieldSemanticsModifierNode.manager.paste$foundation_release();
+        return true;
     }
 
     public final void updateNodeSemantics(TransformedText transformedText, TextFieldValue textFieldValue, LegacyTextFieldState legacyTextFieldState, boolean z, boolean z2, boolean z3, OffsetMapping offsetMapping, TextFieldSelectionManager textFieldSelectionManager, ImeOptions imeOptions, FocusRequester focusRequester) {
@@ -400,45 +398,36 @@ public final class CoreTextFieldSemanticsModifierNode extends DelegatingNode imp
         this.manager = textFieldSelectionManager;
         this.imeOptions = imeOptions;
         this.focusRequester = focusRequester;
-        if (z2 != z4 || z5 != z6 || !Intrinsics.areEqual(imeOptions, imeOptions2) || z3 != z7 || !TextRange.m6141getCollapsedimpl(textFieldValue.m6396getSelectiond9O1mEE())) {
+        if (z2 != z4 || z5 != z6 || !Intrinsics.areEqual(imeOptions, imeOptions2) || z3 != z7 || !TextRange.m6707getCollapsedimpl(textFieldValue.m6964getSelectiond9O1mEE())) {
             SemanticsModifierNodeKt.invalidateSemantics(this);
         }
         if (Intrinsics.areEqual(textFieldSelectionManager, textFieldSelectionManager2)) {
             return;
         }
-        textFieldSelectionManager.setRequestAutofillAction$foundation_release(new Function0<Unit>() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$updateNodeSemantics$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
+        textFieldSelectionManager.setRequestAutofillAction$foundation_release(new Function0() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                DelegatableNodeKt.requestAutofill(CoreTextFieldSemanticsModifierNode.this);
+            public final Object invoke() {
+                Unit updateNodeSemantics$lambda$14;
+                updateNodeSemantics$lambda$14 = CoreTextFieldSemanticsModifierNode.updateNodeSemantics$lambda$14(CoreTextFieldSemanticsModifierNode.this);
+                return updateNodeSemantics$lambda$14;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void handleTextUpdateFromSemantics(LegacyTextFieldState legacyTextFieldState, String str, boolean z, boolean z2) {
-        Unit unit;
+    public static final Unit updateNodeSemantics$lambda$14(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode) {
+        DelegatableNodeKt.requestAutofill(coreTextFieldSemanticsModifierNode);
+        return Unit.INSTANCE;
+    }
+
+    private final void handleTextUpdateFromSemantics(LegacyTextFieldState legacyTextFieldState, String str, boolean z, boolean z2) {
         if (z || !z2) {
             return;
         }
         androidx.compose.ui.text.input.TextInputSession inputSession = legacyTextFieldState.getInputSession();
         if (inputSession != null) {
             TextFieldDelegate.Companion.onEditCommand$foundation_release(CollectionsKt.listOf((Object[]) new EditCommand[]{new DeleteAllCommand(), new CommitTextCommand(str, 1)}), legacyTextFieldState.getProcessor(), legacyTextFieldState.getOnValueChange(), inputSession);
-            unit = Unit.INSTANCE;
         } else {
-            unit = null;
-        }
-        if (unit == null) {
             legacyTextFieldState.getOnValueChange().invoke(new TextFieldValue(str, TextRangeKt.TextRange(str.length()), (TextRange) null, 4, (DefaultConstructorMarker) null));
         }
     }

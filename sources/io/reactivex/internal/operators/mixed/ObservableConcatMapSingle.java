@@ -16,7 +16,7 @@ import io.reactivex.internal.util.ErrorMode;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableConcatMapSingle<T, R> extends Observable<R> {
     final ErrorMode errorMode;
     final Function<? super T, ? extends SingleSource<? extends R>> mapper;
@@ -38,7 +38,7 @@ public final class ObservableConcatMapSingle<T, R> extends Observable<R> {
         this.source.subscribe(new ConcatMapSingleMainObserver(observer, this.mapper, this.prefetch, this.errorMode));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ConcatMapSingleMainObserver<T, R> extends AtomicInteger implements Observer<T>, Disposable {
         static final int STATE_ACTIVE = 1;
         static final int STATE_INACTIVE = 0;
@@ -191,7 +191,7 @@ public final class ObservableConcatMapSingle<T, R> extends Observable<R> {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class ConcatMapSingleObserver<R> extends AtomicReference<Disposable> implements SingleObserver<R> {
             private static final long serialVersionUID = -3051469169682093892L;
             final ConcatMapSingleMainObserver<?, R> parent;

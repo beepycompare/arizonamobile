@@ -6,7 +6,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.util.AppendOnlyLinkedArrayList;
 import io.reactivex.internal.util.NotificationLite;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SerializedObserver<T> implements Observer<T>, Disposable {
     static final int QUEUE_LINK_SIZE = 4;
     final boolean delayError;

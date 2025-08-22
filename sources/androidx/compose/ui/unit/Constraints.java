@@ -8,7 +8,7 @@ import kotlin.ReplaceWith;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: Constraints.kt */
-@Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b#\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0087@\u0018\u0000 22\u00020\u0001:\u00012B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J;\u0010#\u001a\u00020\u00002\b\b\u0002\u0010 \u001a\u00020\u00072\b\b\u0002\u0010\u001c\u001a\u00020\u00072\b\b\u0002\u0010\u001e\u001a\u00020\u00072\b\b\u0002\u0010\u001a\u001a\u00020\u0007ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b$\u0010%J\u0016\u0010&\u001a\u00020\u0000H\u0086\bø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b'\u0010\u0005J\u001a\u0010(\u001a\u00020\u000b2\b\u0010)\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b*\u0010+J\u0010\u0010,\u001a\u00020\u0007HÖ\u0001¢\u0006\u0004\b-\u0010\tJ\u000f\u0010.\u001a\u00020/H\u0016¢\u0006\u0004\b0\u00101R\u0015\u0010\u0006\u001a\u00020\u00078Â\u0002X\u0082\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\tR\u0011\u0010\n\u001a\u00020\u000b8F¢\u0006\u0006\u001a\u0004\b\f\u0010\rR\u0011\u0010\u000e\u001a\u00020\u000b8F¢\u0006\u0006\u001a\u0004\b\u000f\u0010\rR\u001a\u0010\u0010\u001a\u00020\u000b8FX\u0087\u0004¢\u0006\f\u0012\u0004\b\u0011\u0010\u0012\u001a\u0004\b\u0013\u0010\rR\u001a\u0010\u0014\u001a\u00020\u000b8FX\u0087\u0004¢\u0006\f\u0012\u0004\b\u0015\u0010\u0012\u001a\u0004\b\u0016\u0010\rR\u001a\u0010\u0017\u001a\u00020\u000b8FX\u0087\u0004¢\u0006\f\u0012\u0004\b\u0018\u0010\u0012\u001a\u0004\b\u0019\u0010\rR\u0011\u0010\u001a\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b\u001b\u0010\tR\u0011\u0010\u001c\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b\u001d\u0010\tR\u0011\u0010\u001e\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b\u001f\u0010\tR\u0011\u0010 \u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b!\u0010\tR\u0016\u0010\u0002\u001a\u00020\u00038\u0000X\u0081\u0004¢\u0006\b\n\u0000\u0012\u0004\b\"\u0010\u0012\u0088\u0001\u0002\u0092\u0001\u00020\u0003\u0082\u0002\u000b\n\u0002\b!\n\u0005\b¡\u001e0\u0001¨\u00063"}, d2 = {"Landroidx/compose/ui/unit/Constraints;", "", "value", "", "constructor-impl", "(J)J", "focusIndex", "", "getFocusIndex-impl", "(J)I", "hasBoundedHeight", "", "getHasBoundedHeight-impl", "(J)Z", "hasBoundedWidth", "getHasBoundedWidth-impl", "hasFixedHeight", "getHasFixedHeight$annotations", "()V", "getHasFixedHeight-impl", "hasFixedWidth", "getHasFixedWidth$annotations", "getHasFixedWidth-impl", "isZero", "isZero$annotations", "isZero-impl", "maxHeight", "getMaxHeight-impl", "maxWidth", "getMaxWidth-impl", "minHeight", "getMinHeight-impl", "minWidth", "getMinWidth-impl", "getValue$annotations", "copy", "copy-Zbe2FdA", "(JIIII)J", "copyMaxDimensions", "copyMaxDimensions-msEJaDk", "equals", "other", "equals-impl", "(JLjava/lang/Object;)Z", "hashCode", "hashCode-impl", "toString", "", "toString-impl", "(J)Ljava/lang/String;", "Companion", "ui-unit_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0013\n\u0002\u0010\u000e\n\u0002\b\u0007\b\u0087@\u0018\u0000 /2\u00020\u0001:\u0001/B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J5\u0010#\u001a\u00020\u00002\b\b\u0002\u0010\f\u001a\u00020\t2\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u0010\u001a\u00020\t2\b\b\u0002\u0010\u0012\u001a\u00020\t¢\u0006\u0004\b$\u0010%J\u0010\u0010&\u001a\u00020\u0000H\u0086\b¢\u0006\u0004\b'\u0010\u0005J\u000f\u0010(\u001a\u00020)H\u0016¢\u0006\u0004\b*\u0010+J\u0013\u0010,\u001a\u00020\u00152\b\u0010-\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010.\u001a\u00020\tHÖ\u0001R\u0016\u0010\u0002\u001a\u00020\u00038\u0000X\u0081\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u0006\u0010\u0007R\u0015\u0010\b\u001a\u00020\t8Â\u0002X\u0082\u0004¢\u0006\u0006\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\f\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\r\u0010\u000bR\u0011\u0010\u000e\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u000bR\u0011\u0010\u0010\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u000bR\u0011\u0010\u0012\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u000bR\u0011\u0010\u0014\u001a\u00020\u00158F¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017R\u0011\u0010\u0018\u001a\u00020\u00158F¢\u0006\u0006\u001a\u0004\b\u0019\u0010\u0017R\u001a\u0010\u001a\u001a\u00020\u00158FX\u0087\u0004¢\u0006\f\u0012\u0004\b\u001b\u0010\u0007\u001a\u0004\b\u001c\u0010\u0017R\u001a\u0010\u001d\u001a\u00020\u00158FX\u0087\u0004¢\u0006\f\u0012\u0004\b\u001e\u0010\u0007\u001a\u0004\b\u001f\u0010\u0017R\u001a\u0010 \u001a\u00020\u00158FX\u0087\u0004¢\u0006\f\u0012\u0004\b!\u0010\u0007\u001a\u0004\b\"\u0010\u0017\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u00060"}, d2 = {"Landroidx/compose/ui/unit/Constraints;", "", "value", "", "constructor-impl", "(J)J", "getValue$annotations", "()V", "focusIndex", "", "getFocusIndex-impl", "(J)I", "minWidth", "getMinWidth-impl", "maxWidth", "getMaxWidth-impl", "minHeight", "getMinHeight-impl", "maxHeight", "getMaxHeight-impl", "hasBoundedWidth", "", "getHasBoundedWidth-impl", "(J)Z", "hasBoundedHeight", "getHasBoundedHeight-impl", "hasFixedWidth", "getHasFixedWidth$annotations", "getHasFixedWidth-impl", "hasFixedHeight", "getHasFixedHeight$annotations", "getHasFixedHeight-impl", "isZero", "isZero$annotations", "isZero-impl", "copy", "copy-Zbe2FdA", "(JIIII)J", "copyMaxDimensions", "copyMaxDimensions-msEJaDk", "toString", "", "toString-impl", "(J)Ljava/lang/String;", "equals", "other", "hashCode", "Companion", "ui-unit"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes2.dex */
 public final class Constraints {
@@ -17,39 +17,39 @@ public final class Constraints {
     private final long value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Constraints m6624boximpl(long j) {
+    public static final /* synthetic */ Constraints m7191boximpl(long j) {
         return new Constraints(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m6625constructorimpl(long j) {
+    public static long m7192constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6629equalsimpl(long j, Object obj) {
-        return (obj instanceof Constraints) && j == ((Constraints) obj).m6643unboximpl();
+    public static boolean m7196equalsimpl(long j, Object obj) {
+        return (obj instanceof Constraints) && j == ((Constraints) obj).m7210unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6630equalsimpl0(long j, long j2) {
+    public static final boolean m7197equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: getFocusIndex-impl  reason: not valid java name */
-    private static final int m6631getFocusIndeximpl(long j) {
+    private static final int m7198getFocusIndeximpl(long j) {
         return (int) (j & 3);
     }
 
     /* renamed from: getHasBoundedHeight-impl  reason: not valid java name */
-    public static final boolean m6632getHasBoundedHeightimpl(long j) {
+    public static final boolean m7199getHasBoundedHeightimpl(long j) {
         int i = (int) (3 & j);
         int i2 = ((i & 1) << 1) + (((i & 2) >> 1) * 3);
         return (((int) (j >> (i2 + 46))) & ((1 << (18 - i2)) - 1)) != 0;
     }
 
     /* renamed from: getHasBoundedWidth-impl  reason: not valid java name */
-    public static final boolean m6633getHasBoundedWidthimpl(long j) {
+    public static final boolean m7200getHasBoundedWidthimpl(long j) {
         int i = (int) (3 & j);
         return (((int) (j >> 33)) & ((1 << ((((i & 1) << 1) + (((i & 2) >> 1) * 3)) + 13)) - 1)) != 0;
     }
@@ -58,7 +58,7 @@ public final class Constraints {
     }
 
     /* renamed from: getHasFixedHeight-impl  reason: not valid java name */
-    public static final boolean m6634getHasFixedHeightimpl(long j) {
+    public static final boolean m7201getHasFixedHeightimpl(long j) {
         int i = (int) (3 & j);
         int i2 = ((i & 1) << 1) + (((i & 2) >> 1) * 3);
         int i3 = (1 << (18 - i2)) - 1;
@@ -71,7 +71,7 @@ public final class Constraints {
     }
 
     /* renamed from: getHasFixedWidth-impl  reason: not valid java name */
-    public static final boolean m6635getHasFixedWidthimpl(long j) {
+    public static final boolean m7202getHasFixedWidthimpl(long j) {
         int i = (int) (3 & j);
         int i2 = (1 << ((((i & 1) << 1) + (((i & 2) >> 1) * 3)) + 13)) - 1;
         int i3 = ((int) (j >> 2)) & i2;
@@ -80,7 +80,7 @@ public final class Constraints {
     }
 
     /* renamed from: getMaxHeight-impl  reason: not valid java name */
-    public static final int m6636getMaxHeightimpl(long j) {
+    public static final int m7203getMaxHeightimpl(long j) {
         int i = (int) (3 & j);
         int i2 = ((i & 1) << 1) + (((i & 2) >> 1) * 3);
         int i3 = ((int) (j >> (i2 + 46))) & ((1 << (18 - i2)) - 1);
@@ -91,7 +91,7 @@ public final class Constraints {
     }
 
     /* renamed from: getMaxWidth-impl  reason: not valid java name */
-    public static final int m6637getMaxWidthimpl(long j) {
+    public static final int m7204getMaxWidthimpl(long j) {
         int i = (int) (3 & j);
         int i2 = ((int) (j >> 33)) & ((1 << ((((i & 1) << 1) + (((i & 2) >> 1) * 3)) + 13)) - 1);
         if (i2 == 0) {
@@ -101,14 +101,14 @@ public final class Constraints {
     }
 
     /* renamed from: getMinHeight-impl  reason: not valid java name */
-    public static final int m6638getMinHeightimpl(long j) {
+    public static final int m7205getMinHeightimpl(long j) {
         int i = (int) (3 & j);
         int i2 = ((i & 1) << 1) + (((i & 2) >> 1) * 3);
         return ((int) (j >> (i2 + 15))) & ((1 << (18 - i2)) - 1);
     }
 
     /* renamed from: getMinWidth-impl  reason: not valid java name */
-    public static final int m6639getMinWidthimpl(long j) {
+    public static final int m7206getMinWidthimpl(long j) {
         int i = (int) (3 & j);
         return ((int) (j >> 2)) & ((1 << ((((i & 1) << 1) + (((i & 2) >> 1) * 3)) + 13)) - 1);
     }
@@ -117,7 +117,7 @@ public final class Constraints {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6640hashCodeimpl(long j) {
+    public static int m7207hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
@@ -125,22 +125,22 @@ public final class Constraints {
     }
 
     /* renamed from: isZero-impl  reason: not valid java name */
-    public static final boolean m6641isZeroimpl(long j) {
+    public static final boolean m7208isZeroimpl(long j) {
         int i = (int) (3 & j);
         int i2 = ((i & 1) << 1) + (((i & 2) >> 1) * 3);
         return ((((int) (j >> 33)) & ((1 << (i2 + 13)) - 1)) - 1 == 0) | ((((int) (j >> (i2 + 46))) & ((1 << (18 - i2)) - 1)) - 1 == 0);
     }
 
     public boolean equals(Object obj) {
-        return m6629equalsimpl(this.value, obj);
+        return m7196equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6640hashCodeimpl(this.value);
+        return m7207hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m6643unboximpl() {
+    public final /* synthetic */ long m7210unboximpl() {
         return this.value;
     }
 
@@ -149,27 +149,27 @@ public final class Constraints {
     }
 
     /* renamed from: copy-Zbe2FdA$default  reason: not valid java name */
-    public static /* synthetic */ long m6627copyZbe2FdA$default(long j, int i, int i2, int i3, int i4, int i5, Object obj) {
+    public static /* synthetic */ long m7194copyZbe2FdA$default(long j, int i, int i2, int i3, int i4, int i5, Object obj) {
         if ((i5 & 1) != 0) {
-            i = m6639getMinWidthimpl(j);
+            i = m7206getMinWidthimpl(j);
         }
         int i6 = i;
         if ((i5 & 2) != 0) {
-            i2 = m6637getMaxWidthimpl(j);
+            i2 = m7204getMaxWidthimpl(j);
         }
         int i7 = i2;
         if ((i5 & 4) != 0) {
-            i3 = m6638getMinHeightimpl(j);
+            i3 = m7205getMinHeightimpl(j);
         }
         int i8 = i3;
         if ((i5 & 8) != 0) {
-            i4 = m6636getMaxHeightimpl(j);
+            i4 = m7203getMaxHeightimpl(j);
         }
-        return m6626copyZbe2FdA(j, i6, i7, i8, i4);
+        return m7193copyZbe2FdA(j, i6, i7, i8, i4);
     }
 
     /* renamed from: copy-Zbe2FdA  reason: not valid java name */
-    public static final long m6626copyZbe2FdA(long j, int i, int i2, int i3, int i4) {
+    public static final long m7193copyZbe2FdA(long j, int i, int i2, int i3, int i4) {
         if (!(i2 >= i && i4 >= i3 && i >= 0 && i3 >= 0)) {
             InlineClassHelperKt.throwIllegalArgumentException("maxWidth must be >= than minWidth,\nmaxHeight must be >= than minHeight,\nminWidth and minHeight must be >= 0");
         }
@@ -177,28 +177,28 @@ public final class Constraints {
     }
 
     /* renamed from: copyMaxDimensions-msEJaDk  reason: not valid java name */
-    public static final long m6628copyMaxDimensionsmsEJaDk(long j) {
-        return m6625constructorimpl(j & ConstraintsKt.MaxDimensionsAndFocusMask);
+    public static final long m7195copyMaxDimensionsmsEJaDk(long j) {
+        return m7192constructorimpl(j & ConstraintsKt.MaxDimensionsAndFocusMask);
     }
 
     public String toString() {
-        return m6642toStringimpl(this.value);
+        return m7209toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6642toStringimpl(long j) {
-        int m6637getMaxWidthimpl = m6637getMaxWidthimpl(j);
+    public static String m7209toStringimpl(long j) {
+        int m7204getMaxWidthimpl = m7204getMaxWidthimpl(j);
         String str = "Infinity";
-        String valueOf = m6637getMaxWidthimpl == Integer.MAX_VALUE ? "Infinity" : String.valueOf(m6637getMaxWidthimpl);
-        int m6636getMaxHeightimpl = m6636getMaxHeightimpl(j);
-        if (m6636getMaxHeightimpl != Integer.MAX_VALUE) {
-            str = String.valueOf(m6636getMaxHeightimpl);
+        String valueOf = m7204getMaxWidthimpl == Integer.MAX_VALUE ? "Infinity" : String.valueOf(m7204getMaxWidthimpl);
+        int m7203getMaxHeightimpl = m7203getMaxHeightimpl(j);
+        if (m7203getMaxHeightimpl != Integer.MAX_VALUE) {
+            str = String.valueOf(m7203getMaxHeightimpl);
         }
-        return "Constraints(minWidth = " + m6639getMinWidthimpl(j) + ", maxWidth = " + valueOf + ", minHeight = " + m6638getMinHeightimpl(j) + ", maxHeight = " + str + ')';
+        return "Constraints(minWidth = " + m7206getMinWidthimpl(j) + ", maxWidth = " + valueOf + ", minHeight = " + m7205getMinHeightimpl(j) + ", maxHeight = " + str + ')';
     }
 
     /* compiled from: Constraints.kt */
-    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J5\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00042\u0006\u0010\b\u001a\u00020\u00042\u0006\u0010\t\u001a\u00020\u00042\u0006\u0010\n\u001a\u00020\u0004H\u0007ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b\u000b\u0010\fJ5\u0010\r\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00042\u0006\u0010\b\u001a\u00020\u00042\u0006\u0010\t\u001a\u00020\u00042\u0006\u0010\n\u001a\u00020\u0004H\u0007ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b\u000e\u0010\fJ%\u0010\u000f\u001a\u00020\u00062\u0006\u0010\u0010\u001a\u00020\u00042\u0006\u0010\u0011\u001a\u00020\u0004H\u0007ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b\u0012\u0010\u0013J\u001d\u0010\u0014\u001a\u00020\u00062\u0006\u0010\u0011\u001a\u00020\u0004H\u0007ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b\u0015\u0010\u0016J\u001d\u0010\u0017\u001a\u00020\u00062\u0006\u0010\u0010\u001a\u00020\u0004H\u0007ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b\u0018\u0010\u0016J?\u0010\u0019\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00042\u0006\u0010\b\u001a\u00020\u00042\u0006\u0010\t\u001a\u00020\u00042\u0006\u0010\n\u001a\u00020\u00042\b\b\u0002\u0010\u001a\u001a\u00020\u001bH\u0007ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b\u001c\u0010\u001dR\u000e\u0010\u0003\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0002\b!\n\u0005\b¡\u001e0\u0001¨\u0006\u001e"}, d2 = {"Landroidx/compose/ui/unit/Constraints$Companion;", "", "()V", "Infinity", "", "fitPrioritizingHeight", "Landroidx/compose/ui/unit/Constraints;", "minWidth", "maxWidth", "minHeight", "maxHeight", "fitPrioritizingHeight-Zbe2FdA", "(IIII)J", "fitPrioritizingWidth", "fitPrioritizingWidth-Zbe2FdA", "fixed", "width", "height", "fixed-JhjzzOo", "(II)J", "fixedHeight", "fixedHeight-OenEA2s", "(I)J", "fixedWidth", "fixedWidth-OenEA2s", "restrictConstraints", "prioritizeWidth", "", "restrictConstraints-xF2OJ5Q", "(IIIIZ)J", "ui-unit_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\b\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u001f\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u0005H\u0007¢\u0006\u0004\b\n\u0010\u000bJ\u0017\u0010\f\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0005H\u0007¢\u0006\u0004\b\r\u0010\u000eJ\u0017\u0010\u000f\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\u0005H\u0007¢\u0006\u0004\b\u0010\u0010\u000eJ9\u0010\u0011\u001a\u00020\u00072\u0006\u0010\u0012\u001a\u00020\u00052\u0006\u0010\u0013\u001a\u00020\u00052\u0006\u0010\u0014\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u00052\b\b\u0002\u0010\u0016\u001a\u00020\u0017H\u0007¢\u0006\u0004\b\u0018\u0010\u0019J/\u0010\u001a\u001a\u00020\u00072\u0006\u0010\u0012\u001a\u00020\u00052\u0006\u0010\u0013\u001a\u00020\u00052\u0006\u0010\u0014\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u0005H\u0007¢\u0006\u0004\b\u001b\u0010\u001cJ/\u0010\u001d\u001a\u00020\u00072\u0006\u0010\u0012\u001a\u00020\u00052\u0006\u0010\u0013\u001a\u00020\u00052\u0006\u0010\u0014\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u0005H\u0007¢\u0006\u0004\b\u001e\u0010\u001cR\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Landroidx/compose/ui/unit/Constraints$Companion;", "", "<init>", "()V", "Infinity", "", "fixed", "Landroidx/compose/ui/unit/Constraints;", "width", "height", "fixed-JhjzzOo", "(II)J", "fixedWidth", "fixedWidth-OenEA2s", "(I)J", "fixedHeight", "fixedHeight-OenEA2s", "restrictConstraints", "minWidth", "maxWidth", "minHeight", "maxHeight", "prioritizeWidth", "", "restrictConstraints-xF2OJ5Q", "(IIIIZ)J", "fitPrioritizingWidth", "fitPrioritizingWidth-Zbe2FdA", "(IIII)J", "fitPrioritizingHeight", "fitPrioritizingHeight-Zbe2FdA", "ui-unit"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -209,7 +209,7 @@ public final class Constraints {
         }
 
         /* renamed from: fixed-JhjzzOo  reason: not valid java name */
-        public final long m6647fixedJhjzzOo(int i, int i2) {
+        public final long m7214fixedJhjzzOo(int i, int i2) {
             if (!((i2 >= 0) & (i >= 0))) {
                 InlineClassHelperKt.throwIllegalArgumentException("width and height must be >= 0");
             }
@@ -217,7 +217,7 @@ public final class Constraints {
         }
 
         /* renamed from: fixedWidth-OenEA2s  reason: not valid java name */
-        public final long m6649fixedWidthOenEA2s(int i) {
+        public final long m7216fixedWidthOenEA2s(int i) {
             if (!(i >= 0)) {
                 InlineClassHelperKt.throwIllegalArgumentException("width must be >= 0");
             }
@@ -225,7 +225,7 @@ public final class Constraints {
         }
 
         /* renamed from: fixedHeight-OenEA2s  reason: not valid java name */
-        public final long m6648fixedHeightOenEA2s(int i) {
+        public final long m7215fixedHeightOenEA2s(int i) {
             if (!(i >= 0)) {
                 InlineClassHelperKt.throwIllegalArgumentException("height must be >= 0");
             }
@@ -233,24 +233,24 @@ public final class Constraints {
         }
 
         /* renamed from: restrictConstraints-xF2OJ5Q$default  reason: not valid java name */
-        public static /* synthetic */ long m6644restrictConstraintsxF2OJ5Q$default(Companion companion, int i, int i2, int i3, int i4, boolean z, int i5, Object obj) {
+        public static /* synthetic */ long m7211restrictConstraintsxF2OJ5Q$default(Companion companion, int i, int i2, int i3, int i4, boolean z, int i5, Object obj) {
             if ((i5 & 16) != 0) {
                 z = true;
             }
-            return companion.m6650restrictConstraintsxF2OJ5Q(i, i2, i3, i4, z);
+            return companion.m7217restrictConstraintsxF2OJ5Q(i, i2, i3, i4, z);
         }
 
         @Deprecated(message = "Replace with fitPrioritizingWidth", replaceWith = @ReplaceWith(expression = "Constraints.fitPrioritizingWidth(minWidth, maxWidth, minHeight, maxHeight)", imports = {}))
         /* renamed from: restrictConstraints-xF2OJ5Q  reason: not valid java name */
-        public final long m6650restrictConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
+        public final long m7217restrictConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
             if (z) {
-                return m6646fitPrioritizingWidthZbe2FdA(i, i2, i3, i4);
+                return m7213fitPrioritizingWidthZbe2FdA(i, i2, i3, i4);
             }
-            return m6645fitPrioritizingHeightZbe2FdA(i, i2, i3, i4);
+            return m7212fitPrioritizingHeightZbe2FdA(i, i2, i3, i4);
         }
 
         /* renamed from: fitPrioritizingWidth-Zbe2FdA  reason: not valid java name */
-        public final long m6646fitPrioritizingWidthZbe2FdA(int i, int i2, int i3, int i4) {
+        public final long m7213fitPrioritizingWidthZbe2FdA(int i, int i2, int i3, int i4) {
             int i5 = 262142;
             int min = Math.min(i, 262142);
             int min2 = i2 == Integer.MAX_VALUE ? Integer.MAX_VALUE : Math.min(i2, 262142);
@@ -271,7 +271,7 @@ public final class Constraints {
         }
 
         /* renamed from: fitPrioritizingHeight-Zbe2FdA  reason: not valid java name */
-        public final long m6645fitPrioritizingHeightZbe2FdA(int i, int i2, int i3, int i4) {
+        public final long m7212fitPrioritizingHeightZbe2FdA(int i, int i2, int i3, int i4) {
             int i5 = 262142;
             int min = Math.min(i3, 262142);
             int min2 = i4 == Integer.MAX_VALUE ? Integer.MAX_VALUE : Math.min(i4, 262142);

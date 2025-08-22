@@ -10,7 +10,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableConcatWithCompletable<T> extends AbstractFlowableWithUpstream<T, T> {
     final CompletableSource other;
 
@@ -24,7 +24,7 @@ public final class FlowableConcatWithCompletable<T> extends AbstractFlowableWith
         this.source.subscribe((FlowableSubscriber) new ConcatWithSubscriber(subscriber, this.other));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ConcatWithSubscriber<T> extends AtomicReference<Disposable> implements FlowableSubscriber<T>, CompletableObserver, Subscription {
         private static final long serialVersionUID = -7346385463600070225L;
         final Subscriber<? super T> downstream;

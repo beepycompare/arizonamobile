@@ -1,9 +1,9 @@
 package androidx.compose.foundation.text.input.internal.selection;
 
 import androidx.compose.foundation.text.Handle;
+import androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2;
 import androidx.compose.foundation.text.selection.SelectionHandlesKt;
 import androidx.compose.ui.input.pointer.PointerInputScope;
-import com.google.android.vending.expansion.downloader.Constants;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -19,7 +19,7 @@ import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Job;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionState.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "Lkotlinx/coroutines/Job;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lkotlinx/coroutines/Job;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2", f = "TextFieldSelectionState.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class TextFieldSelectionState$selectionHandleGestures$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Job>, Object> {
@@ -52,8 +52,8 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: TextFieldSelectionState.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$1", f = "TextFieldSelectionState.kt", i = {}, l = {392}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$1", f = "TextFieldSelectionState.kt", i = {}, l = {408}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$1  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -114,8 +114,8 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: TextFieldSelectionState.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$2", f = "TextFieldSelectionState.kt", i = {}, l = {394}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$2", f = "TextFieldSelectionState.kt", i = {}, l = {410}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$2  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -156,9 +156,9 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
                 if (PressDownGestureKt.detectPressDownGesture(pointerInputScope, new TapOnPosition() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState.selectionHandleGestures.2.2.1
                     @Override // androidx.compose.foundation.text.input.internal.selection.TapOnPosition
                     /* renamed from: onEvent-k-4lQ0M */
-                    public final void mo1356onEventk4lQ0M(long j) {
+                    public final void mo1615onEventk4lQ0M(long j) {
                         Handle handle;
-                        long m1376getHandlePositiontuRUvjQ;
+                        long m1635getHandlePositiontuRUvjQ;
                         TextFieldSelectionState.this.markStartContentVisibleOffset();
                         TextFieldSelectionState textFieldSelectionState3 = TextFieldSelectionState.this;
                         if (z) {
@@ -166,23 +166,15 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
                         } else {
                             handle = Handle.SelectionEnd;
                         }
-                        m1376getHandlePositiontuRUvjQ = TextFieldSelectionState.this.m1376getHandlePositiontuRUvjQ(z);
-                        textFieldSelectionState3.m1386updateHandleDraggingUv8p0NA(handle, SelectionHandlesKt.m1468getAdjustedCoordinatesk4lQ0M(m1376getHandlePositiontuRUvjQ));
+                        m1635getHandlePositiontuRUvjQ = TextFieldSelectionState.this.m1635getHandlePositiontuRUvjQ(z);
+                        textFieldSelectionState3.m1645updateHandleDraggingUv8p0NA(handle, SelectionHandlesKt.m1757getAdjustedCoordinatesk4lQ0M(m1635getHandlePositiontuRUvjQ));
                     }
-                }, new Function0<Unit>() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState.selectionHandleGestures.2.2.2
-                    {
-                        super(0);
-                    }
-
+                }, new Function0() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$2$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
-                    public /* bridge */ /* synthetic */ Unit invoke() {
-                        invoke2();
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2() {
-                        TextFieldSelectionState.this.clearHandleDragging();
+                    public final Object invoke() {
+                        Unit invokeSuspend$lambda$0;
+                        invokeSuspend$lambda$0 = TextFieldSelectionState$selectionHandleGestures$2.AnonymousClass2.invokeSuspend$lambda$0(TextFieldSelectionState.this);
+                        return invokeSuspend$lambda$0;
                     }
                 }, this) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -194,12 +186,18 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
             }
             return Unit.INSTANCE;
         }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final Unit invokeSuspend$lambda$0(TextFieldSelectionState textFieldSelectionState) {
+            textFieldSelectionState.clearHandleDragging();
+            return Unit.INSTANCE;
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: TextFieldSelectionState.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$3", f = "TextFieldSelectionState.kt", i = {}, l = {Constants.STATUS_LENGTH_REQUIRED}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$3", f = "TextFieldSelectionState.kt", i = {}, l = {427}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$3  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

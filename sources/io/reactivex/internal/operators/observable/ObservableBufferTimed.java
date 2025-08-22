@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableBufferTimed<T, U extends Collection<? super T>> extends AbstractObservableWithUpstream<T, U> {
     final Callable<U> bufferSupplier;
     final int maxSize;
@@ -55,7 +55,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BufferExactUnboundedObserver<T, U extends Collection<? super T>> extends QueueDrainObserver<T, U, U> implements Runnable, Disposable {
         U buffer;
         final Callable<U> bufferSupplier;
@@ -180,7 +180,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BufferSkipBoundedObserver<T, U extends Collection<? super T>> extends QueueDrainObserver<T, U, U> implements Runnable, Disposable {
         final Callable<U> bufferSupplier;
         final List<U> buffers;
@@ -309,7 +309,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
             observer.onNext(u);
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class RemoveFromBuffer implements Runnable {
             private final U b;
 
@@ -327,7 +327,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class RemoveFromBufferEmit implements Runnable {
             private final U buffer;
 
@@ -346,7 +346,7 @@ public final class ObservableBufferTimed<T, U extends Collection<? super T>> ext
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BufferExactBoundedObserver<T, U extends Collection<? super T>> extends QueueDrainObserver<T, U, U> implements Runnable, Disposable {
         U buffer;
         final Callable<U> bufferSupplier;

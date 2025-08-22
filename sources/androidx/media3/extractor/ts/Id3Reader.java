@@ -9,7 +9,7 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Id3Reader implements ElementaryStreamReader {
     private static final String TAG = "Id3Reader";
     private final String containerMimeType;

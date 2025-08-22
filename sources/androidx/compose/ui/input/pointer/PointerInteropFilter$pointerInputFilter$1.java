@@ -2,6 +2,7 @@ package androidx.compose.ui.input.pointer;
 
 import android.os.SystemClock;
 import android.view.MotionEvent;
+import androidx.compose.ui.ComposeUiFlags;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.input.pointer.PointerInteropFilter;
 import androidx.compose.ui.layout.LayoutCoordinates;
@@ -10,10 +11,12 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PointerInteropFilter.android.kt */
-@Metadata(d1 = {"\u00005\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004*\u0001\u0000\b\n\u0018\u00002\u00020\u0001J\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0002J\b\u0010\f\u001a\u00020\tH\u0016J*\u0010\r\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016ø\u0001\u0000¢\u0006\u0004\b\u0012\u0010\u0013J\b\u0010\u0014\u001a\u00020\tH\u0002R\u0014\u0010\u0002\u001a\u00020\u00038VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u0015"}, d2 = {"androidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1", "Landroidx/compose/ui/input/pointer/PointerInputFilter;", "shareWithSiblings", "", "getShareWithSiblings", "()Z", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;", "dispatchToView", "", "pointerEvent", "Landroidx/compose/ui/input/pointer/PointerEvent;", "onCancel", "onPointerEvent", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "bounds", "Landroidx/compose/ui/unit/IntSize;", "onPointerEvent-H0pRuoY", "(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "reset", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00005\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b*\u0001\u0000\b\n\u0018\u00002\u00020\u0001J'\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\t2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016¢\u0006\u0004\b\u0011\u0010\u0012J\b\u0010\u0013\u001a\u00020\u000bH\u0016J\b\u0010\u0014\u001a\u00020\u000bH\u0002J\u0018\u0010\u0015\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\t2\u0006\u0010\u0016\u001a\u00020\u0005H\u0002J\u0010\u0010\u0017\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\tH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0004\u001a\u00020\u00058VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0007R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"androidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1", "Landroidx/compose/ui/input/pointer/PointerInputFilter;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;", "shareWithSiblings", "", "getShareWithSiblings", "()Z", "lastEventDispatchedToInitialPass", "Landroidx/compose/ui/input/pointer/PointerEvent;", "onPointerEvent", "", "pointerEvent", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "bounds", "Landroidx/compose/ui/unit/IntSize;", "onPointerEvent-H0pRuoY", "(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "onCancel", "reset", "dispatchToView", "shouldConsume", "stopDispatching", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PointerInteropFilter$pointerInputFilter$1 extends PointerInputFilter {
+    private PointerEvent lastEventDispatchedToInitialPass;
     private PointerInteropFilter.DispatchToViewState state = PointerInteropFilter.DispatchToViewState.Unknown;
     final /* synthetic */ PointerInteropFilter this$0;
 
@@ -27,46 +30,111 @@ public final class PointerInteropFilter$pointerInputFilter$1 extends PointerInpu
         this.this$0 = pointerInteropFilter;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004c  */
-    /* JADX WARN: Removed duplicated region for block: B:39:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x013b A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x00df  */
     @Override // androidx.compose.ui.input.pointer.PointerInputFilter
     /* renamed from: onPointerEvent-H0pRuoY */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void mo5336onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo5849onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         boolean z;
+        boolean z2;
+        boolean z3;
         List<PointerInputChange> changes = pointerEvent.getChanges();
-        if (!this.this$0.getDisallowIntercept$ui_release()) {
-            int size = changes.size();
-            for (int i = 0; i < size; i++) {
-                PointerInputChange pointerInputChange = changes.get(i);
-                if (!PointerEventKt.changedToDownIgnoreConsumed(pointerInputChange) && !PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange)) {
+        List<PointerInputChange> list = changes;
+        int size = list.size();
+        for (int i = 0; i < size; i++) {
+            PointerInputChange pointerInputChange = changes.get(i);
+            if (PointerEventKt.changedToDownIgnoreConsumed(pointerInputChange) || PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange)) {
+                z = false;
+                break;
+            }
+        }
+        z = true;
+        if (z) {
+            int size2 = list.size();
+            for (int i2 = 0; i2 < size2; i2++) {
+                if (!changes.get(i2).isConsumed()) {
                 }
             }
-            z = false;
-            if (this.state != PointerInteropFilter.DispatchToViewState.NotDispatching) {
-                if (pointerEventPass == PointerEventPass.Initial && z) {
-                    dispatchToView(pointerEvent);
+            z2 = true;
+            if (!this.this$0.getDisallowIntercept$ui_release()) {
+                int size3 = list.size();
+                int i3 = 0;
+                while (true) {
+                    if (i3 >= size3) {
+                        if (!z2 || !ComposeUiFlags.isPointerInteropFilterDispatchingFixEnabled) {
+                            z3 = false;
+                        }
+                    } else {
+                        PointerInputChange pointerInputChange2 = changes.get(i3);
+                        if (PointerEventKt.changedToDownIgnoreConsumed(pointerInputChange2) || PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange2)) {
+                            break;
+                        }
+                        i3++;
+                    }
                 }
-                if (pointerEventPass == PointerEventPass.Final && !z) {
-                    dispatchToView(pointerEvent);
+            }
+            z3 = true;
+            if (this.state != PointerInteropFilter.DispatchToViewState.NotDispatching) {
+                if (pointerEventPass == PointerEventPass.Initial && z3) {
+                    this.lastEventDispatchedToInitialPass = pointerEvent;
+                    dispatchToView(pointerEvent, !z || this.this$0.getDisallowIntercept$ui_release());
+                }
+                if (pointerEventPass == PointerEventPass.Main && z && Intrinsics.areEqual(pointerEvent, this.lastEventDispatchedToInitialPass) && this.this$0.getDisallowIntercept$ui_release() && ComposeUiFlags.isPointerInteropFilterDispatchingFixEnabled) {
+                    int size4 = list.size();
+                    for (int i4 = 0; i4 < size4; i4++) {
+                        changes.get(i4).consume();
+                    }
+                }
+                if (!ComposeUiFlags.isPointerInteropFilterDispatchingFixEnabled ? !(pointerEventPass != PointerEventPass.Final || z3) : !(pointerEventPass != PointerEventPass.Final || z3 || Intrinsics.areEqual(pointerEvent, this.lastEventDispatchedToInitialPass))) {
+                    dispatchToView(pointerEvent, true);
                 }
             }
             if (pointerEventPass != PointerEventPass.Final) {
-                int size2 = changes.size();
-                for (int i2 = 0; i2 < size2; i2++) {
-                    if (!PointerEventKt.changedToUpIgnoreConsumed(changes.get(i2))) {
-                        return;
+                int size5 = list.size();
+                int i5 = 0;
+                while (true) {
+                    if (i5 < size5) {
+                        if (!PointerEventKt.changedToUpIgnoreConsumed(changes.get(i5))) {
+                            break;
+                        }
+                        i5++;
+                    } else {
+                        reset();
+                        break;
                     }
                 }
-                reset();
+                if (Intrinsics.areEqual(pointerEvent, this.lastEventDispatchedToInitialPass) && z && ComposeUiFlags.isPointerInteropFilterDispatchingFixEnabled) {
+                    int size6 = list.size();
+                    int i6 = 0;
+                    while (true) {
+                        if (i6 >= size6) {
+                            break;
+                        } else if (!changes.get(i6).isConsumed()) {
+                            i6++;
+                        } else if (!this.this$0.getDisallowIntercept$ui_release()) {
+                            stopDispatching(pointerEvent);
+                            return;
+                        }
+                    }
+                    int size7 = list.size();
+                    for (int i7 = 0; i7 < size7; i7++) {
+                        changes.get(i7).consume();
+                    }
+                    return;
+                }
                 return;
             }
             return;
         }
-        z = true;
+        z2 = false;
+        if (!this.this$0.getDisallowIntercept$ui_release()) {
+        }
+        z3 = true;
         if (this.state != PointerInteropFilter.DispatchToViewState.NotDispatching) {
         }
         if (pointerEventPass != PointerEventPass.Final) {
@@ -102,49 +170,25 @@ public final class PointerInteropFilter$pointerInputFilter$1 extends PointerInpu
     private final void reset() {
         this.state = PointerInteropFilter.DispatchToViewState.Unknown;
         this.this$0.setDisallowIntercept$ui_release(false);
+        this.lastEventDispatchedToInitialPass = null;
     }
 
-    private final void dispatchToView(PointerEvent pointerEvent) {
+    private final void dispatchToView(PointerEvent pointerEvent, boolean z) {
         List<PointerInputChange> changes = pointerEvent.getChanges();
         List<PointerInputChange> list = changes;
         int size = list.size();
-        for (int i = 0; i < size; i++) {
-            if (changes.get(i).isConsumed()) {
-                if (this.state == PointerInteropFilter.DispatchToViewState.Dispatching) {
-                    LayoutCoordinates layoutCoordinates$ui_release = getLayoutCoordinates$ui_release();
-                    if (layoutCoordinates$ui_release != null) {
-                        long mo5449localToRootMKHz9U = layoutCoordinates$ui_release.mo5449localToRootMKHz9U(Offset.Companion.m3853getZeroF1C5BW0());
-                        final PointerInteropFilter pointerInteropFilter = this.this$0;
-                        PointerInteropUtils_androidKt.m5371toCancelMotionEventScoped4ec7I(pointerEvent, mo5449localToRootMKHz9U, new Function1<MotionEvent, Unit>() { // from class: androidx.compose.ui.input.pointer.PointerInteropFilter$pointerInputFilter$1$dispatchToView$2
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            {
-                                super(1);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function1
-                            public /* bridge */ /* synthetic */ Unit invoke(MotionEvent motionEvent) {
-                                invoke2(motionEvent);
-                                return Unit.INSTANCE;
-                            }
-
-                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                            public final void invoke2(MotionEvent motionEvent) {
-                                PointerInteropFilter.this.getOnTouchEvent().invoke(motionEvent);
-                            }
-                        });
-                    } else {
-                        throw new IllegalStateException("layoutCoordinates not set".toString());
-                    }
-                }
-                this.state = PointerInteropFilter.DispatchToViewState.NotDispatching;
+        int i = 0;
+        for (int i2 = 0; i2 < size; i2++) {
+            if (changes.get(i2).isConsumed()) {
+                stopDispatching(pointerEvent);
                 return;
             }
         }
-        LayoutCoordinates layoutCoordinates$ui_release2 = getLayoutCoordinates$ui_release();
-        if (layoutCoordinates$ui_release2 != null) {
-            long mo5449localToRootMKHz9U2 = layoutCoordinates$ui_release2.mo5449localToRootMKHz9U(Offset.Companion.m3853getZeroF1C5BW0());
-            final PointerInteropFilter pointerInteropFilter2 = this.this$0;
-            PointerInteropUtils_androidKt.m5372toMotionEventScoped4ec7I(pointerEvent, mo5449localToRootMKHz9U2, new Function1<MotionEvent, Unit>() { // from class: androidx.compose.ui.input.pointer.PointerInteropFilter$pointerInputFilter$1$dispatchToView$3
+        LayoutCoordinates layoutCoordinates$ui_release = getLayoutCoordinates$ui_release();
+        if (layoutCoordinates$ui_release != null) {
+            long mo5965localToRootMKHz9U = layoutCoordinates$ui_release.mo5965localToRootMKHz9U(Offset.Companion.m4309getZeroF1C5BW0());
+            final PointerInteropFilter pointerInteropFilter = this.this$0;
+            PointerInteropUtils_androidKt.m5885toMotionEventScoped4ec7I(pointerEvent, mo5965localToRootMKHz9U, new Function1<MotionEvent, Unit>() { // from class: androidx.compose.ui.input.pointer.PointerInteropFilter$pointerInputFilter$1$dispatchToView$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -162,7 +206,7 @@ public final class PointerInteropFilter$pointerInputFilter$1 extends PointerInpu
                     PointerInteropFilter.DispatchToViewState dispatchToViewState;
                     if (motionEvent.getActionMasked() == 0) {
                         PointerInteropFilter$pointerInputFilter$1 pointerInteropFilter$pointerInputFilter$1 = PointerInteropFilter$pointerInputFilter$1.this;
-                        if (pointerInteropFilter2.getOnTouchEvent().invoke(motionEvent).booleanValue()) {
+                        if (pointerInteropFilter.getOnTouchEvent().invoke(motionEvent).booleanValue()) {
                             dispatchToViewState = PointerInteropFilter.DispatchToViewState.Dispatching;
                         } else {
                             dispatchToViewState = PointerInteropFilter.DispatchToViewState.NotDispatching;
@@ -170,23 +214,62 @@ public final class PointerInteropFilter$pointerInputFilter$1 extends PointerInpu
                         pointerInteropFilter$pointerInputFilter$1.state = dispatchToViewState;
                         return;
                     }
-                    pointerInteropFilter2.getOnTouchEvent().invoke(motionEvent);
+                    pointerInteropFilter.getOnTouchEvent().invoke(motionEvent);
                 }
             });
             if (this.state == PointerInteropFilter.DispatchToViewState.Dispatching) {
-                int size2 = list.size();
-                for (int i2 = 0; i2 < size2; i2++) {
-                    changes.get(i2).consume();
+                if (!ComposeUiFlags.isPointerInteropFilterDispatchingFixEnabled) {
+                    int size2 = list.size();
+                    while (i < size2) {
+                        changes.get(i).consume();
+                        i++;
+                    }
+                } else if (z) {
+                    int size3 = list.size();
+                    while (i < size3) {
+                        changes.get(i).consume();
+                        i++;
+                    }
                 }
                 InternalPointerEvent internalPointerEvent$ui_release = pointerEvent.getInternalPointerEvent$ui_release();
-                if (internalPointerEvent$ui_release == null) {
+                if (internalPointerEvent$ui_release != null) {
+                    internalPointerEvent$ui_release.setSuppressMovementConsumption(!this.this$0.getDisallowIntercept$ui_release());
                     return;
                 }
-                internalPointerEvent$ui_release.setSuppressMovementConsumption(!this.this$0.getDisallowIntercept$ui_release());
                 return;
             }
             return;
         }
         throw new IllegalStateException("layoutCoordinates not set".toString());
+    }
+
+    private final void stopDispatching(PointerEvent pointerEvent) {
+        if (this.state == PointerInteropFilter.DispatchToViewState.Dispatching) {
+            LayoutCoordinates layoutCoordinates$ui_release = getLayoutCoordinates$ui_release();
+            if (layoutCoordinates$ui_release != null) {
+                long mo5965localToRootMKHz9U = layoutCoordinates$ui_release.mo5965localToRootMKHz9U(Offset.Companion.m4309getZeroF1C5BW0());
+                final PointerInteropFilter pointerInteropFilter = this.this$0;
+                PointerInteropUtils_androidKt.m5884toCancelMotionEventScoped4ec7I(pointerEvent, mo5965localToRootMKHz9U, new Function1<MotionEvent, Unit>() { // from class: androidx.compose.ui.input.pointer.PointerInteropFilter$pointerInputFilter$1$stopDispatching$1
+                    /* JADX INFO: Access modifiers changed from: package-private */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public /* bridge */ /* synthetic */ Unit invoke(MotionEvent motionEvent) {
+                        invoke2(motionEvent);
+                        return Unit.INSTANCE;
+                    }
+
+                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                    public final void invoke2(MotionEvent motionEvent) {
+                        PointerInteropFilter.this.getOnTouchEvent().invoke(motionEvent);
+                    }
+                });
+            } else {
+                throw new IllegalStateException("layoutCoordinates not set".toString());
+            }
+        }
+        this.state = PointerInteropFilter.DispatchToViewState.NotDispatching;
     }
 }

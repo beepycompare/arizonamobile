@@ -23,7 +23,7 @@ public interface ExchangeCodec {
     /* loaded from: classes5.dex */
     public interface Carrier {
         /* renamed from: cancel */
-        void mo10403cancel();
+        void mo10967cancel();
 
         Route getRoute();
 

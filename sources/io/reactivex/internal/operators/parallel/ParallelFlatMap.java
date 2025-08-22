@@ -5,7 +5,7 @@ import io.reactivex.internal.operators.flowable.FlowableFlatMap;
 import io.reactivex.parallel.ParallelFlowable;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ParallelFlatMap<T, R> extends ParallelFlowable<R> {
     final boolean delayError;
     final Function<? super T, ? extends Publisher<? extends R>> mapper;

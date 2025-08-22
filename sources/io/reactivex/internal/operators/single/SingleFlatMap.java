@@ -9,7 +9,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleFlatMap<T, R> extends Single<R> {
     final Function<? super T, ? extends SingleSource<? extends R>> mapper;
     final SingleSource<? extends T> source;
@@ -24,7 +24,7 @@ public final class SingleFlatMap<T, R> extends Single<R> {
         this.source.subscribe(new SingleFlatMapCallback(singleObserver, this.mapper));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SingleFlatMapCallback<T, R> extends AtomicReference<Disposable> implements SingleObserver<T>, Disposable {
         private static final long serialVersionUID = 3258103020495908596L;
         final SingleObserver<? super R> downstream;
@@ -71,7 +71,7 @@ public final class SingleFlatMap<T, R> extends Single<R> {
             this.downstream.onError(th);
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         static final class FlatMapSingleObserver<R> implements SingleObserver<R> {
             final SingleObserver<? super R> downstream;
             final AtomicReference<Disposable> parent;

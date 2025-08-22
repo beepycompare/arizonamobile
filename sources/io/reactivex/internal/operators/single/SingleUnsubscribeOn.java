@@ -7,7 +7,7 @@ import io.reactivex.SingleSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleUnsubscribeOn<T> extends Single<T> {
     final Scheduler scheduler;
     final SingleSource<T> source;
@@ -22,7 +22,7 @@ public final class SingleUnsubscribeOn<T> extends Single<T> {
         this.source.subscribe(new UnsubscribeOnSingleObserver(singleObserver, this.scheduler));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class UnsubscribeOnSingleObserver<T> extends AtomicReference<Disposable> implements SingleObserver<T>, Disposable, Runnable {
         private static final long serialVersionUID = 3256698449646456986L;
         final SingleObserver<? super T> downstream;

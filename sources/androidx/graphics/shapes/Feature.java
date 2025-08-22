@@ -67,12 +67,12 @@ public abstract class Feature {
         }
 
         /* renamed from: getVertex-1ufDz9w  reason: not valid java name */
-        public final long m7234getVertex1ufDz9w() {
+        public final long m7800getVertex1ufDz9w() {
             return this.vertex;
         }
 
         /* renamed from: getRoundedCenter-1ufDz9w  reason: not valid java name */
-        public final long m7233getRoundedCenter1ufDz9w() {
+        public final long m7799getRoundedCenter1ufDz9w() {
             return this.roundedCenter;
         }
 
@@ -97,7 +97,7 @@ public abstract class Feature {
             for (int i = 0; i < size; i++) {
                 createListBuilder.add(getCubics().get(i).transformed(f));
             }
-            return new Corner(CollectionsKt.build(createListBuilder), PointKt.m7251transformedso9K2fw(this.vertex, f), PointKt.m7251transformedso9K2fw(this.roundedCenter, f), this.convex, null);
+            return new Corner(CollectionsKt.build(createListBuilder), PointKt.m7817transformedso9K2fw(this.vertex, f), PointKt.m7817transformedso9K2fw(this.roundedCenter, f), this.convex, null);
         }
 
         public String toString() {

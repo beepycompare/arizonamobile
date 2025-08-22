@@ -10,7 +10,7 @@ import kotlin.Metadata;
 import kotlin.collections.AbstractMutableSet;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PersistentHashSetBuilder.kt */
-@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u001e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010)\n\u0002\b\u0004\b\u0000\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003B\u0013\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u0005¢\u0006\u0002\u0010\u0006J\u0015\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u001cJ\u0016\u0010\u001d\u001a\u00020\u001a2\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00028\u00000\u001fH\u0016J\u000e\u0010 \u001a\b\u0012\u0004\u0012\u00028\u00000\u0005H\u0016J\b\u0010!\u001a\u00020\"H\u0016J\u0016\u0010#\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00028\u0000H\u0096\u0002¢\u0006\u0002\u0010\u001cJ\u0016\u0010$\u001a\u00020\u001a2\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00028\u00000\u001fH\u0016J\u000f\u0010%\u001a\b\u0012\u0004\u0012\u00028\u00000&H\u0096\u0002J\u0015\u0010'\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u001cJ\u0016\u0010(\u001a\u00020\u001a2\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00028\u00000\u001fH\u0016J\u0016\u0010)\u001a\u00020\u001a2\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00028\u00000\u001fH\u0016R\u001e\u0010\t\u001a\u00020\b2\u0006\u0010\u0007\u001a\u00020\b@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR*\u0010\r\u001a\b\u0012\u0004\u0012\u00028\u00000\f2\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00028\u00000\f@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u001e\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u0007\u001a\u00020\u0010@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\b@VX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u000b\"\u0004\b\u0017\u0010\u0018¨\u0006*"}, d2 = {"Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;", ExifInterface.LONGITUDE_EAST, "Lkotlin/collections/AbstractMutableSet;", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet$Builder;", "set", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;", "(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;)V", "<set-?>", "", "modCount", "getModCount$runtime_release", "()I", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "node", "getNode$runtime_release", "()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;", "ownership", "getOwnership$runtime_release", "()Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;", "value", "size", "getSize", "setSize", "(I)V", "add", "", "element", "(Ljava/lang/Object;)Z", "addAll", "elements", "", "build", "clear", "", "contains", "containsAll", "iterator", "", "remove", "removeAll", "retainAll", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\u001e\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010)\n\u0000\b\u0001\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003B\u0015\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u0019\u001a\b\u0012\u0004\u0012\u00028\u00000\u0005H\u0016J\u0016\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00028\u0000H\u0096\u0002¢\u0006\u0002\u0010\u001dJ\u0015\u0010\u001e\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u001dJ\u0016\u0010\u001f\u001a\u00020\u001b2\f\u0010 \u001a\b\u0012\u0004\u0012\u00028\u00000!H\u0016J\u0016\u0010\"\u001a\u00020\u001b2\f\u0010 \u001a\b\u0012\u0004\u0012\u00028\u00000!H\u0016J\u0016\u0010#\u001a\u00020\u001b2\f\u0010 \u001a\b\u0012\u0004\u0012\u00028\u00000!H\u0016J\u0016\u0010$\u001a\u00020\u001b2\f\u0010 \u001a\b\u0012\u0004\u0012\u00028\u00000!H\u0016J\u0015\u0010%\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u001dJ\b\u0010&\u001a\u00020'H\u0016J\u000f\u0010(\u001a\b\u0012\u0004\u0012\u00028\u00000)H\u0096\u0002R\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\n\u001a\u00020\t2\u0006\u0010\b\u001a\u00020\t@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR*\u0010\u000e\u001a\b\u0012\u0004\u0012\u00028\u00000\r2\f\u0010\b\u001a\b\u0012\u0004\u0012\u00028\u00000\r@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001e\u0010\u0012\u001a\u00020\u00112\u0006\u0010\b\u001a\u00020\u0011@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R$\u0010\u0015\u001a\u00020\u00112\u0006\u0010\b\u001a\u00020\u0011@VX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0014\"\u0004\b\u0017\u0010\u0018¨\u0006*"}, d2 = {"Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;", ExifInterface.LONGITUDE_EAST, "Lkotlin/collections/AbstractMutableSet;", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet$Builder;", "set", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;", "<init>", "(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;)V", "value", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;", "ownership", "getOwnership$runtime", "()Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "node", "getNode$runtime", "()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "", "modCount", "getModCount$runtime", "()I", "size", "getSize", "setSize", "(I)V", "build", "contains", "", "element", "(Ljava/lang/Object;)Z", "add", "addAll", "elements", "", "retainAll", "removeAll", "containsAll", "remove", "clear", "", "iterator", "", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PersistentHashSetBuilder<E> extends AbstractMutableSet<E> implements PersistentSet.Builder<E> {
     public static final int $stable = 8;
@@ -22,19 +22,19 @@ public final class PersistentHashSetBuilder<E> extends AbstractMutableSet<E> imp
 
     public PersistentHashSetBuilder(PersistentHashSet<E> persistentHashSet) {
         this.set = persistentHashSet;
-        this.node = this.set.getNode$runtime_release();
+        this.node = this.set.getNode$runtime();
         this.size = this.set.size();
     }
 
-    public final MutabilityOwnership getOwnership$runtime_release() {
+    public final MutabilityOwnership getOwnership$runtime() {
         return this.ownership;
     }
 
-    public final TrieNode<E> getNode$runtime_release() {
+    public final TrieNode<E> getNode$runtime() {
         return this.node;
     }
 
-    public final int getModCount$runtime_release() {
+    public final int getModCount$runtime() {
         return this.modCount;
     }
 
@@ -51,7 +51,7 @@ public final class PersistentHashSetBuilder<E> extends AbstractMutableSet<E> imp
     @Override // androidx.compose.runtime.external.kotlinx.collections.immutable.PersistentSet.Builder, androidx.compose.runtime.external.kotlinx.collections.immutable.PersistentCollection.Builder
     public PersistentHashSet<E> build() {
         PersistentHashSet<E> persistentHashSet;
-        if (this.node == this.set.getNode$runtime_release()) {
+        if (this.node == this.set.getNode$runtime()) {
             persistentHashSet = this.set;
         } else {
             this.ownership = new MutabilityOwnership();
@@ -83,7 +83,7 @@ public final class PersistentHashSetBuilder<E> extends AbstractMutableSet<E> imp
         if (persistentHashSet != null) {
             DeltaCounter deltaCounter = new DeltaCounter(0, 1, null);
             int size = size();
-            TrieNode<E> mutableAddAll = this.node.mutableAddAll(persistentHashSet.getNode$runtime_release(), 0, deltaCounter, this);
+            TrieNode<E> mutableAddAll = this.node.mutableAddAll(persistentHashSet.getNode$runtime(), 0, deltaCounter, this);
             int size2 = (collection.size() + size) - deltaCounter.getCount();
             if (size != size2) {
                 this.node = mutableAddAll;
@@ -95,7 +95,7 @@ public final class PersistentHashSetBuilder<E> extends AbstractMutableSet<E> imp
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public boolean retainAll(Collection<? extends Object> collection) {
+    public boolean retainAll(Collection<?> collection) {
         PersistentHashSet<E> persistentHashSet = collection instanceof PersistentHashSet ? (PersistentHashSet) collection : null;
         if (persistentHashSet == null) {
             PersistentHashSetBuilder persistentHashSetBuilder = collection instanceof PersistentHashSetBuilder ? (PersistentHashSetBuilder) collection : null;
@@ -104,7 +104,7 @@ public final class PersistentHashSetBuilder<E> extends AbstractMutableSet<E> imp
         if (persistentHashSet != null) {
             DeltaCounter deltaCounter = new DeltaCounter(0, 1, null);
             int size = size();
-            Object mutableRetainAll = this.node.mutableRetainAll(persistentHashSet.getNode$runtime_release(), 0, deltaCounter, this);
+            Object mutableRetainAll = this.node.mutableRetainAll(persistentHashSet.getNode$runtime(), 0, deltaCounter, this);
             int count = deltaCounter.getCount();
             if (count == 0) {
                 clear();
@@ -119,7 +119,7 @@ public final class PersistentHashSetBuilder<E> extends AbstractMutableSet<E> imp
     }
 
     @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public boolean removeAll(Collection<? extends Object> collection) {
+    public boolean removeAll(Collection<?> collection) {
         PersistentHashSet<E> persistentHashSet = collection instanceof PersistentHashSet ? (PersistentHashSet) collection : null;
         if (persistentHashSet == null) {
             PersistentHashSetBuilder persistentHashSetBuilder = collection instanceof PersistentHashSetBuilder ? (PersistentHashSetBuilder) collection : null;
@@ -128,7 +128,7 @@ public final class PersistentHashSetBuilder<E> extends AbstractMutableSet<E> imp
         if (persistentHashSet != null) {
             DeltaCounter deltaCounter = new DeltaCounter(0, 1, null);
             int size = size();
-            Object mutableRemoveAll = this.node.mutableRemoveAll(persistentHashSet.getNode$runtime_release(), 0, deltaCounter, this);
+            Object mutableRemoveAll = this.node.mutableRemoveAll(persistentHashSet.getNode$runtime(), 0, deltaCounter, this);
             int count = size - deltaCounter.getCount();
             if (count == 0) {
                 clear();
@@ -143,9 +143,9 @@ public final class PersistentHashSetBuilder<E> extends AbstractMutableSet<E> imp
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public boolean containsAll(Collection<? extends Object> collection) {
+    public boolean containsAll(Collection<?> collection) {
         if (collection instanceof PersistentHashSet) {
-            return this.node.containsAll(((PersistentHashSet) collection).getNode$runtime_release(), 0);
+            return this.node.containsAll(((PersistentHashSet) collection).getNode$runtime(), 0);
         }
         if (collection instanceof PersistentHashSetBuilder) {
             return this.node.containsAll(((PersistentHashSetBuilder) collection).node, 0);
@@ -162,9 +162,9 @@ public final class PersistentHashSetBuilder<E> extends AbstractMutableSet<E> imp
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public void clear() {
-        TrieNode<E> eMPTY$runtime_release = TrieNode.Companion.getEMPTY$runtime_release();
-        Intrinsics.checkNotNull(eMPTY$runtime_release, "null cannot be cast to non-null type androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.PersistentHashSetBuilder>");
-        this.node = eMPTY$runtime_release;
+        TrieNode<E> eMPTY$runtime = TrieNode.Companion.getEMPTY$runtime();
+        Intrinsics.checkNotNull(eMPTY$runtime, "null cannot be cast to non-null type androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.PersistentHashSetBuilder>");
+        this.node = eMPTY$runtime;
         setSize(0);
     }
 

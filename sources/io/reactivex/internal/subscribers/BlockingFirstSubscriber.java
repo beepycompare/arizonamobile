@@ -1,7 +1,7 @@
 package io.reactivex.internal.subscribers;
 
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BlockingFirstSubscriber<T> extends BlockingBaseSubscriber<T> {
     @Override // org.reactivestreams.Subscriber
     public void onNext(T t) {

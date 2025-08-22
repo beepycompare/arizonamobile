@@ -6,7 +6,7 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.TrackOutput;
 import java.io.EOFException;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DiscardingTrackOutput implements TrackOutput {
     private final byte[] readBuffer = new byte[4096];
 

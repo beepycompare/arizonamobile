@@ -52,7 +52,7 @@ import java.util.Objects;
 import java.util.UUID;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class MatroskaExtractor implements Extractor {
     private static final int BLOCK_ADDITIONAL_ID_VP9_ITU_T_35 = 4;
     private static final int BLOCK_ADD_ID_TYPE_DVCC = 1685480259;
@@ -291,7 +291,7 @@ public class MatroskaExtractor implements Extractor {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Flags {
     }
 
@@ -1857,7 +1857,7 @@ public class MatroskaExtractor implements Extractor {
         Assertions.checkStateNotNull(this.extractorOutput);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class InnerEbmlProcessor implements EbmlProcessor {
         private InnerEbmlProcessor() {
         }
@@ -1904,7 +1904,7 @@ public class MatroskaExtractor implements Extractor {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Track {
         private static final int DEFAULT_MAX_CLL = 1000;
         private static final int DEFAULT_MAX_FALL = 200;
@@ -1968,14 +1968,14 @@ public class MatroskaExtractor implements Extractor {
         }
 
         /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-        /* JADX WARN: Removed duplicated region for block: B:222:0x0438  */
-        /* JADX WARN: Removed duplicated region for block: B:227:0x0452  */
-        /* JADX WARN: Removed duplicated region for block: B:228:0x0454  */
-        /* JADX WARN: Removed duplicated region for block: B:231:0x0461  */
-        /* JADX WARN: Removed duplicated region for block: B:232:0x0473  */
-        /* JADX WARN: Removed duplicated region for block: B:299:0x05a0  */
-        /* JADX WARN: Removed duplicated region for block: B:304:0x05bb  */
-        /* JADX WARN: Removed duplicated region for block: B:305:0x05bf  */
+        /* JADX WARN: Removed duplicated region for block: B:222:0x043a  */
+        /* JADX WARN: Removed duplicated region for block: B:227:0x0454  */
+        /* JADX WARN: Removed duplicated region for block: B:228:0x0456  */
+        /* JADX WARN: Removed duplicated region for block: B:231:0x0463  */
+        /* JADX WARN: Removed duplicated region for block: B:232:0x0475  */
+        /* JADX WARN: Removed duplicated region for block: B:299:0x05a2  */
+        /* JADX WARN: Removed duplicated region for block: B:304:0x05bd  */
+        /* JADX WARN: Removed duplicated region for block: B:305:0x05c1  */
         @EnsuresNonNull({"this.output"})
         @RequiresNonNull({"codecId"})
         /*

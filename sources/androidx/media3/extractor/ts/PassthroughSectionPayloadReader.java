@@ -10,7 +10,7 @@ import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PassthroughSectionPayloadReader implements SectionPayloadReader {
     private Format format;
     private TrackOutput output;

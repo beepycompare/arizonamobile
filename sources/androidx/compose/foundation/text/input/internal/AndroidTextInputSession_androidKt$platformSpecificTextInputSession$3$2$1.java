@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.MutableSharedFlow;
 /* compiled from: AndroidTextInputSession.android.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$2$1", f = "AndroidTextInputSession.android.kt", i = {}, l = {111, 112}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -38,13 +38,13 @@ final class AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3
         return ((AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$2$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x002e, code lost:
-        if (androidx.compose.runtime.MonotonicFrameClockKt.withFrameMillis(androidx.compose.foundation.text.input.internal.AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$2$1.AnonymousClass1.INSTANCE, r4) == r0) goto L14;
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x002f, code lost:
+        if (androidx.compose.runtime.MonotonicFrameClockKt.withFrameMillis(new androidx.compose.foundation.text.input.internal.AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$2$1$$ExternalSyntheticLambda0(), r4) == r0) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0045, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0046, code lost:
         if (r5.collect(new androidx.compose.foundation.text.input.internal.AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$2$1.AnonymousClass2<>(), r4) == r0) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0047, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0048, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -69,5 +69,10 @@ final class AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3
         MutableSharedFlow<Unit> mutableSharedFlow = this.$it;
         final ComposeInputMethodManager composeInputMethodManager = this.$composeImm;
         this.label = 2;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(long j) {
+        return Unit.INSTANCE;
     }
 }

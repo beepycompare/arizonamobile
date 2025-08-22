@@ -28,7 +28,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KFunction;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: DownloadScreen.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004\u001a#\u0010\u0005\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00010\tH\u0007¢\u0006\u0002\u0010\n¨\u0006\u000b²\u0006\n\u0010\u0006\u001a\u00020\u0007X\u008a\u0084\u0002"}, d2 = {"DownloadScreenRoute", "", "component", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;", "(Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;Landroidx/compose/runtime/Composer;I)V", "DownloadScreen", "uiState", "Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;", "onSoundClick", "Lkotlin/Function0;", "(Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "download-screen_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004\u001a#\u0010\u0005\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00010\tH\u0007¢\u0006\u0002\u0010\n¨\u0006\u000b²\u0006\n\u0010\u0006\u001a\u00020\u0007X\u008a\u0084\u0002"}, d2 = {"DownloadScreenRoute", "", "component", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;", "(Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;Landroidx/compose/runtime/Composer;I)V", "DownloadScreen", "uiState", "Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;", "onSoundClick", "Lkotlin/Function0;", "(Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "download-screen_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class DownloadScreenKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -48,7 +48,7 @@ public final class DownloadScreenKt {
         Composer composer2;
         Intrinsics.checkNotNullParameter(component, "component");
         Composer startRestartGroup = composer.startRestartGroup(-1785886338);
-        ComposerKt.sourceInformation(startRestartGroup, "C(DownloadScreenRoute)26@1179L2,25@1148L39,29@1249L260,29@1212L297,35@1541L7,36@1574L192,36@1553L213,45@1805L29,51@1985L23,47@1840L174:DownloadScreen.kt#k3v2wi");
+        ComposerKt.sourceInformation(startRestartGroup, "C(DownloadScreenRoute)N(component)26@1179L2,25@1148L39,29@1249L260,29@1212L297,35@1541L7,36@1574L192,36@1553L213,45@1805L29,51@1985L23,47@1840L174:DownloadScreen.kt#k3v2wi");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
@@ -156,7 +156,7 @@ public final class DownloadScreenKt {
         Intrinsics.checkNotNullParameter(uiState, "uiState");
         Intrinsics.checkNotNullParameter(onSoundClick, "onSoundClick");
         Composer startRestartGroup = composer.startRestartGroup(1958056837);
-        ComposerKt.sourceInformation(startRestartGroup, "C(DownloadScreen)P(1)62@2213L38:DownloadScreen.kt#k3v2wi");
+        ComposerKt.sourceInformation(startRestartGroup, "C(DownloadScreen)N(uiState,onSoundClick)62@2213L38:DownloadScreen.kt#k3v2wi");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(uiState) ? 4 : 2) | i;
         } else {

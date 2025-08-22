@@ -10,11 +10,10 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.crashlytics.internal.metadata.UserMetadata;
 import kotlin.Metadata;
 import kotlin.Unit;
-import kotlin.collections.ArraysKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.ranges.IntRange;
 /* compiled from: LazyLayoutKeyIndexMap.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0000\u0018\u00002\u00020\u0001B\u0019\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\n\u0010\u0004\u001a\u0006\u0012\u0002\b\u00030\u0005¢\u0006\u0002\u0010\u0006J\u0010\u0010\u000f\u001a\u00020\f2\u0006\u0010\u0010\u001a\u00020\tH\u0016J\u0012\u0010\u0011\u001a\u0004\u0018\u00010\t2\u0006\u0010\u0012\u001a\u00020\fH\u0016R\u0018\u0010\u0007\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\t0\bX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\nR\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\b\u0012\u0004\u0012\u00020\t0\u000eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"Landroidx/compose/foundation/lazy/layout/NearestRangeKeyIndexMap;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutKeyIndexMap;", "nearestRange", "Lkotlin/ranges/IntRange;", "intervalContent", "Landroidx/compose/foundation/lazy/layout/LazyLayoutIntervalContent;", "(Lkotlin/ranges/IntRange;Landroidx/compose/foundation/lazy/layout/LazyLayoutIntervalContent;)V", UserMetadata.KEYDATA_FILENAME, "", "", "[Ljava/lang/Object;", "keysStartIndex", "", "map", "Landroidx/collection/ObjectIntMap;", "getIndex", "key", "getKey", FirebaseAnalytics.Param.INDEX, "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0011\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\b\u0001\u0018\u00002\u00020\u0001B\u001b\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\n\u0010\u0004\u001a\u0006\u0012\u0002\b\u00030\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\nH\u0016J\u0012\u0010\u0012\u001a\u0004\u0018\u00010\n2\u0006\u0010\u0013\u001a\u00020\u000fH\u0016R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\n0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u000b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\n0\fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\rR\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Landroidx/compose/foundation/lazy/layout/NearestRangeKeyIndexMap;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutKeyIndexMap;", "nearestRange", "Lkotlin/ranges/IntRange;", "intervalContent", "Landroidx/compose/foundation/lazy/layout/LazyLayoutIntervalContent;", "<init>", "(Lkotlin/ranges/IntRange;Landroidx/compose/foundation/lazy/layout/LazyLayoutIntervalContent;)V", "map", "Landroidx/collection/ObjectIntMap;", "", UserMetadata.KEYDATA_FILENAME, "", "[Ljava/lang/Object;", "keysStartIndex", "", "getIndex", "key", "getKey", FirebaseAnalytics.Param.INDEX, "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class NearestRangeKeyIndexMap implements LazyLayoutKeyIndexMap {
     public static final int $stable = 8;
@@ -39,53 +38,42 @@ public final class NearestRangeKeyIndexMap implements LazyLayoutKeyIndexMap {
         this.keys = new Object[i];
         this.keysStartIndex = first;
         final MutableObjectIntMap mutableObjectIntMap = new MutableObjectIntMap(i);
-        intervals.forEach(first, min, new Function1<IntervalList.Interval<? extends LazyLayoutIntervalContent.Interval>, Unit>() { // from class: androidx.compose.foundation.lazy.layout.NearestRangeKeyIndexMap$2$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        intervals.forEach(first, min, new Function1() { // from class: androidx.compose.foundation.lazy.layout.NearestRangeKeyIndexMap$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(IntervalList.Interval<? extends LazyLayoutIntervalContent.Interval> interval) {
-                invoke2(interval);
-                return Unit.INSTANCE;
-            }
-
-            /* JADX WARN: Code restructure failed: missing block: B:6:0x0037, code lost:
-                if (r3 == null) goto L12;
-             */
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-            */
-            public final void invoke2(IntervalList.Interval<? extends LazyLayoutIntervalContent.Interval> interval) {
-                Object defaultLazyLayoutKey;
-                Object[] objArr;
-                int i2;
-                Function1<Integer, Object> key = interval.getValue().getKey();
-                int max = Math.max(first, interval.getStartIndex());
-                int min2 = Math.min(min, (interval.getStartIndex() + interval.getSize()) - 1);
-                if (max > min2) {
-                    return;
-                }
-                while (true) {
-                    if (key != null) {
-                        defaultLazyLayoutKey = key.invoke(Integer.valueOf(max - interval.getStartIndex()));
-                    }
-                    defaultLazyLayoutKey = Lazy_androidKt.getDefaultLazyLayoutKey(max);
-                    mutableObjectIntMap.set(defaultLazyLayoutKey, max);
-                    objArr = this.keys;
-                    i2 = this.keysStartIndex;
-                    objArr[max - i2] = defaultLazyLayoutKey;
-                    if (max == min2) {
-                        return;
-                    }
-                    max++;
-                }
+            public final Object invoke(Object obj) {
+                return NearestRangeKeyIndexMap.lambda$2$lambda$1(first, min, mutableObjectIntMap, this, (IntervalList.Interval) obj);
             }
         });
         this.map = mutableObjectIntMap;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0033, code lost:
+        if (r1 == null) goto L10;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Unit lambda$2$lambda$1(int i, int i2, MutableObjectIntMap mutableObjectIntMap, NearestRangeKeyIndexMap nearestRangeKeyIndexMap, IntervalList.Interval interval) {
+        Object defaultLazyLayoutKey;
+        Function1<Integer, Object> key = ((LazyLayoutIntervalContent.Interval) interval.getValue()).getKey();
+        int max = Math.max(i, interval.getStartIndex());
+        int min = Math.min(i2, (interval.getStartIndex() + interval.getSize()) - 1);
+        if (max <= min) {
+            while (true) {
+                if (key != null) {
+                    defaultLazyLayoutKey = key.invoke(Integer.valueOf(max - interval.getStartIndex()));
+                }
+                defaultLazyLayoutKey = Lazy_androidKt.getDefaultLazyLayoutKey(max);
+                mutableObjectIntMap.set(defaultLazyLayoutKey, max);
+                nearestRangeKeyIndexMap.keys[max - nearestRangeKeyIndexMap.keysStartIndex] = defaultLazyLayoutKey;
+                if (max == min) {
+                    break;
+                }
+                max++;
+            }
+        }
+        return Unit.INSTANCE;
     }
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutKeyIndexMap
@@ -102,7 +90,7 @@ public final class NearestRangeKeyIndexMap implements LazyLayoutKeyIndexMap {
     public Object getKey(int i) {
         Object[] objArr = this.keys;
         int i2 = i - this.keysStartIndex;
-        if (i2 < 0 || i2 > ArraysKt.getLastIndex(objArr)) {
+        if (i2 < 0 || i2 >= objArr.length) {
             return null;
         }
         return objArr[i2];

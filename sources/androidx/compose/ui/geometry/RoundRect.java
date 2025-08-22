@@ -5,12 +5,12 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: RoundRect.kt */
-@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b!\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0087\b\u0018\u0000 >2\u00020\u0001:\u0001>BM\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0007\u001a\u00020\b\u0012\b\b\u0002\u0010\t\u001a\u00020\b\u0012\b\b\u0002\u0010\n\u001a\u00020\b\u0012\b\b\u0002\u0010\u000b\u001a\u00020\b¢\u0006\u0002\u0010\fJ\t\u0010\u001d\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001e\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001f\u001a\u00020\u0003HÆ\u0003J\t\u0010 \u001a\u00020\u0003HÆ\u0003J\u0016\u0010!\u001a\u00020\bHÆ\u0003ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b\"\u0010\u0011J\u0016\u0010#\u001a\u00020\bHÆ\u0003ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b$\u0010\u0011J\u0016\u0010%\u001a\u00020\bHÆ\u0003ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b&\u0010\u0011J\u0016\u0010'\u001a\u00020\bHÆ\u0003ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b(\u0010\u0011J\u001b\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020,H\u0086\u0002ø\u0001\u0000¢\u0006\u0004\b-\u0010.Jc\u0010/\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\b2\b\b\u0002\u0010\n\u001a\u00020\b2\b\b\u0002\u0010\u000b\u001a\u00020\bHÆ\u0001ø\u0001\u0000¢\u0006\u0004\b0\u00101J\u0013\u00102\u001a\u00020*2\b\u00103\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u00104\u001a\u000205HÖ\u0001J(\u00106\u001a\u00020\u00032\u0006\u00107\u001a\u00020\u00032\u0006\u00108\u001a\u00020\u00032\u0006\u00109\u001a\u00020\u00032\u0006\u0010:\u001a\u00020\u0003H\u0002J\b\u0010;\u001a\u00020\u0000H\u0002J\b\u0010<\u001a\u00020=H\u0016R\u0010\u0010\r\u001a\u0004\u0018\u00010\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u0006\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0019\u0010\u000b\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0010\u0010\u0011R\u0019\u0010\n\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0013\u0010\u0011R\u0011\u0010\u0014\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u000fR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u000fR\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u000fR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u000fR\u0019\u0010\u0007\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0019\u0010\u0011R\u0019\u0010\t\u001a\u00020\bø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u001a\u0010\u0011R\u0011\u0010\u001b\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u000f\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006?"}, d2 = {"Landroidx/compose/ui/geometry/RoundRect;", "", TtmlNode.LEFT, "", "top", TtmlNode.RIGHT, "bottom", "topLeftCornerRadius", "Landroidx/compose/ui/geometry/CornerRadius;", "topRightCornerRadius", "bottomRightCornerRadius", "bottomLeftCornerRadius", "(FFFFJJJJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "_scaledRadiiRect", "getBottom", "()F", "getBottomLeftCornerRadius-kKHJgLs", "()J", "J", "getBottomRightCornerRadius-kKHJgLs", "height", "getHeight", "getLeft", "getRight", "getTop", "getTopLeftCornerRadius-kKHJgLs", "getTopRightCornerRadius-kKHJgLs", "width", "getWidth", "component1", "component2", "component3", "component4", "component5", "component5-kKHJgLs", "component6", "component6-kKHJgLs", "component7", "component7-kKHJgLs", "component8", "component8-kKHJgLs", "contains", "", "point", "Landroidx/compose/ui/geometry/Offset;", "contains-k-4lQ0M", "(J)Z", "copy", "copy-MDFrsts", "(FFFFJJJJ)Landroidx/compose/ui/geometry/RoundRect;", "equals", "other", "hashCode", "", "minRadius", "min", "radius1", "radius2", "limit", "scaledRadiiRect", "toString", "", "Companion", "ui-geometry_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u001c\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0012\n\u0002\u0010\b\n\u0002\b\u0002\b\u0087\b\u0018\u0000 ?2\u00020\u0001:\u0001?BO\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0007\u001a\u00020\b\u0012\b\b\u0002\u0010\t\u001a\u00020\b\u0012\b\b\u0002\u0010\n\u001a\u00020\b\u0012\b\b\u0002\u0010\u000b\u001a\u00020\b¢\u0006\u0004\b\f\u0010\rJ\b\u0010\u001e\u001a\u00020\u0000H\u0002J(\u0010\u001f\u001a\u00020\u00032\u0006\u0010 \u001a\u00020\u00032\u0006\u0010!\u001a\u00020\u00032\u0006\u0010\"\u001a\u00020\u00032\u0006\u0010#\u001a\u00020\u0003H\u0002J\u0018\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020'H\u0086\u0002¢\u0006\u0004\b(\u0010)J\b\u0010*\u001a\u00020+H\u0016J\t\u0010,\u001a\u00020\u0003HÆ\u0003J\t\u0010-\u001a\u00020\u0003HÆ\u0003J\t\u0010.\u001a\u00020\u0003HÆ\u0003J\t\u0010/\u001a\u00020\u0003HÆ\u0003J\u0010\u00100\u001a\u00020\bHÆ\u0003¢\u0006\u0004\b1\u0010\u0014J\u0010\u00102\u001a\u00020\bHÆ\u0003¢\u0006\u0004\b3\u0010\u0014J\u0010\u00104\u001a\u00020\bHÆ\u0003¢\u0006\u0004\b5\u0010\u0014J\u0010\u00106\u001a\u00020\bHÆ\u0003¢\u0006\u0004\b7\u0010\u0014J`\u00108\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\b2\b\b\u0002\u0010\n\u001a\u00020\b2\b\b\u0002\u0010\u000b\u001a\u00020\bHÆ\u0001¢\u0006\u0004\b9\u0010:J\u0013\u0010;\u001a\u00020%2\b\u0010<\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010=\u001a\u00020>HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u000fR\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u000fR\u0011\u0010\u0006\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u000fR\u0013\u0010\u0007\u001a\u00020\b¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b\u0013\u0010\u0014R\u0013\u0010\t\u001a\u00020\b¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b\u0016\u0010\u0014R\u0013\u0010\n\u001a\u00020\b¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b\u0017\u0010\u0014R\u0013\u0010\u000b\u001a\u00020\b¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b\u0018\u0010\u0014R\u0011\u0010\u0019\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u000fR\u0011\u0010\u001b\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u000fR\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u0000X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006@"}, d2 = {"Landroidx/compose/ui/geometry/RoundRect;", "", TtmlNode.LEFT, "", "top", TtmlNode.RIGHT, "bottom", "topLeftCornerRadius", "Landroidx/compose/ui/geometry/CornerRadius;", "topRightCornerRadius", "bottomRightCornerRadius", "bottomLeftCornerRadius", "<init>", "(FFFFJJJJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getLeft", "()F", "getTop", "getRight", "getBottom", "getTopLeftCornerRadius-kKHJgLs", "()J", "J", "getTopRightCornerRadius-kKHJgLs", "getBottomRightCornerRadius-kKHJgLs", "getBottomLeftCornerRadius-kKHJgLs", "width", "getWidth", "height", "getHeight", "_scaledRadiiRect", "scaledRadiiRect", "minRadius", "min", "radius1", "radius2", "limit", "contains", "", "point", "Landroidx/compose/ui/geometry/Offset;", "contains-k-4lQ0M", "(J)Z", "toString", "", "component1", "component2", "component3", "component4", "component5", "component5-kKHJgLs", "component6", "component6-kKHJgLs", "component7", "component7-kKHJgLs", "component8", "component8-kKHJgLs", "copy", "copy-MDFrsts", "(FFFFJJJJ)Landroidx/compose/ui/geometry/RoundRect;", "equals", "other", "hashCode", "", "Companion", "ui-geometry"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class RoundRect {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final RoundRect Zero = RoundRectKt.m3891RoundRectgG7oq9Y(0.0f, 0.0f, 0.0f, 0.0f, CornerRadius.Companion.m3809getZerokKHJgLs());
+    private static final RoundRect Zero = RoundRectKt.m4347RoundRectgG7oq9Y(0.0f, 0.0f, 0.0f, 0.0f, CornerRadius.Companion.m4265getZerokKHJgLs());
     private RoundRect _scaledRadiiRect;
     private final float bottom;
     private final long bottomLeftCornerRadius;
@@ -26,7 +26,7 @@ public final class RoundRect {
     }
 
     /* renamed from: copy-MDFrsts$default  reason: not valid java name */
-    public static /* synthetic */ RoundRect m3878copyMDFrsts$default(RoundRect roundRect, float f, float f2, float f3, float f4, long j, long j2, long j3, long j4, int i, Object obj) {
+    public static /* synthetic */ RoundRect m4334copyMDFrsts$default(RoundRect roundRect, float f, float f2, float f3, float f4, long j, long j2, long j3, long j4, int i, Object obj) {
         if ((i & 1) != 0) {
             f = roundRect.left;
         }
@@ -55,7 +55,7 @@ public final class RoundRect {
         long j6 = j3;
         long j7 = j2;
         long j8 = j;
-        return roundRect.m3884copyMDFrsts(f, f2, f3, f4, j8, j7, j6, j5);
+        return roundRect.m4340copyMDFrsts(f, f2, f3, f4, j8, j7, j6, j5);
     }
 
     public static final RoundRect getZero() {
@@ -79,27 +79,27 @@ public final class RoundRect {
     }
 
     /* renamed from: component5-kKHJgLs  reason: not valid java name */
-    public final long m3879component5kKHJgLs() {
+    public final long m4335component5kKHJgLs() {
         return this.topLeftCornerRadius;
     }
 
     /* renamed from: component6-kKHJgLs  reason: not valid java name */
-    public final long m3880component6kKHJgLs() {
+    public final long m4336component6kKHJgLs() {
         return this.topRightCornerRadius;
     }
 
     /* renamed from: component7-kKHJgLs  reason: not valid java name */
-    public final long m3881component7kKHJgLs() {
+    public final long m4337component7kKHJgLs() {
         return this.bottomRightCornerRadius;
     }
 
     /* renamed from: component8-kKHJgLs  reason: not valid java name */
-    public final long m3882component8kKHJgLs() {
+    public final long m4338component8kKHJgLs() {
         return this.bottomLeftCornerRadius;
     }
 
     /* renamed from: copy-MDFrsts  reason: not valid java name */
-    public final RoundRect m3884copyMDFrsts(float f, float f2, float f3, float f4, long j, long j2, long j3, long j4) {
+    public final RoundRect m4340copyMDFrsts(float f, float f2, float f3, float f4, long j, long j2, long j3, long j4) {
         return new RoundRect(f, f2, f3, f4, j, j2, j3, j4, null);
     }
 
@@ -109,13 +109,13 @@ public final class RoundRect {
         }
         if (obj instanceof RoundRect) {
             RoundRect roundRect = (RoundRect) obj;
-            return Float.compare(this.left, roundRect.left) == 0 && Float.compare(this.top, roundRect.top) == 0 && Float.compare(this.right, roundRect.right) == 0 && Float.compare(this.bottom, roundRect.bottom) == 0 && CornerRadius.m3796equalsimpl0(this.topLeftCornerRadius, roundRect.topLeftCornerRadius) && CornerRadius.m3796equalsimpl0(this.topRightCornerRadius, roundRect.topRightCornerRadius) && CornerRadius.m3796equalsimpl0(this.bottomRightCornerRadius, roundRect.bottomRightCornerRadius) && CornerRadius.m3796equalsimpl0(this.bottomLeftCornerRadius, roundRect.bottomLeftCornerRadius);
+            return Float.compare(this.left, roundRect.left) == 0 && Float.compare(this.top, roundRect.top) == 0 && Float.compare(this.right, roundRect.right) == 0 && Float.compare(this.bottom, roundRect.bottom) == 0 && CornerRadius.m4252equalsimpl0(this.topLeftCornerRadius, roundRect.topLeftCornerRadius) && CornerRadius.m4252equalsimpl0(this.topRightCornerRadius, roundRect.topRightCornerRadius) && CornerRadius.m4252equalsimpl0(this.bottomRightCornerRadius, roundRect.bottomRightCornerRadius) && CornerRadius.m4252equalsimpl0(this.bottomLeftCornerRadius, roundRect.bottomLeftCornerRadius);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((Float.hashCode(this.left) * 31) + Float.hashCode(this.top)) * 31) + Float.hashCode(this.right)) * 31) + Float.hashCode(this.bottom)) * 31) + CornerRadius.m3799hashCodeimpl(this.topLeftCornerRadius)) * 31) + CornerRadius.m3799hashCodeimpl(this.topRightCornerRadius)) * 31) + CornerRadius.m3799hashCodeimpl(this.bottomRightCornerRadius)) * 31) + CornerRadius.m3799hashCodeimpl(this.bottomLeftCornerRadius);
+        return (((((((((((((Float.hashCode(this.left) * 31) + Float.hashCode(this.top)) * 31) + Float.hashCode(this.right)) * 31) + Float.hashCode(this.bottom)) * 31) + CornerRadius.m4255hashCodeimpl(this.topLeftCornerRadius)) * 31) + CornerRadius.m4255hashCodeimpl(this.topRightCornerRadius)) * 31) + CornerRadius.m4255hashCodeimpl(this.bottomRightCornerRadius)) * 31) + CornerRadius.m4255hashCodeimpl(this.bottomLeftCornerRadius);
     }
 
     private RoundRect(float f, float f2, float f3, float f4, long j, long j2, long j3, long j4) {
@@ -146,26 +146,26 @@ public final class RoundRect {
     }
 
     public /* synthetic */ RoundRect(float f, float f2, float f3, float f4, long j, long j2, long j3, long j4, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(f, f2, f3, f4, (i & 16) != 0 ? CornerRadius.Companion.m3809getZerokKHJgLs() : j, (i & 32) != 0 ? CornerRadius.Companion.m3809getZerokKHJgLs() : j2, (i & 64) != 0 ? CornerRadius.Companion.m3809getZerokKHJgLs() : j3, (i & 128) != 0 ? CornerRadius.Companion.m3809getZerokKHJgLs() : j4, null);
+        this(f, f2, f3, f4, (i & 16) != 0 ? CornerRadius.Companion.m4265getZerokKHJgLs() : j, (i & 32) != 0 ? CornerRadius.Companion.m4265getZerokKHJgLs() : j2, (i & 64) != 0 ? CornerRadius.Companion.m4265getZerokKHJgLs() : j3, (i & 128) != 0 ? CornerRadius.Companion.m4265getZerokKHJgLs() : j4, null);
     }
 
     /* renamed from: getTopLeftCornerRadius-kKHJgLs  reason: not valid java name */
-    public final long m3887getTopLeftCornerRadiuskKHJgLs() {
+    public final long m4343getTopLeftCornerRadiuskKHJgLs() {
         return this.topLeftCornerRadius;
     }
 
     /* renamed from: getTopRightCornerRadius-kKHJgLs  reason: not valid java name */
-    public final long m3888getTopRightCornerRadiuskKHJgLs() {
+    public final long m4344getTopRightCornerRadiuskKHJgLs() {
         return this.topRightCornerRadius;
     }
 
     /* renamed from: getBottomRightCornerRadius-kKHJgLs  reason: not valid java name */
-    public final long m3886getBottomRightCornerRadiuskKHJgLs() {
+    public final long m4342getBottomRightCornerRadiuskKHJgLs() {
         return this.bottomRightCornerRadius;
     }
 
     /* renamed from: getBottomLeftCornerRadius-kKHJgLs  reason: not valid java name */
-    public final long m3885getBottomLeftCornerRadiuskKHJgLs() {
+    public final long m4341getBottomLeftCornerRadiuskKHJgLs() {
         return this.bottomLeftCornerRadius;
     }
 
@@ -181,7 +181,7 @@ public final class RoundRect {
         RoundRect roundRect = this._scaledRadiiRect;
         if (roundRect == null) {
             float minRadius = minRadius(minRadius(minRadius(minRadius(1.0f, Float.intBitsToFloat((int) (this.bottomLeftCornerRadius & 4294967295L)), Float.intBitsToFloat((int) (this.topLeftCornerRadius & 4294967295L)), getHeight()), Float.intBitsToFloat((int) (this.topLeftCornerRadius >> 32)), Float.intBitsToFloat((int) (this.topRightCornerRadius >> 32)), getWidth()), Float.intBitsToFloat((int) (this.topRightCornerRadius & 4294967295L)), Float.intBitsToFloat((int) (this.bottomRightCornerRadius & 4294967295L)), getHeight()), Float.intBitsToFloat((int) (this.bottomRightCornerRadius >> 32)), Float.intBitsToFloat((int) (this.bottomLeftCornerRadius >> 32)), getWidth());
-            RoundRect roundRect2 = new RoundRect(this.left * minRadius, this.top * minRadius, this.right * minRadius, this.bottom * minRadius, CornerRadius.m3791constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topLeftCornerRadius & 4294967295L)) * minRadius) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topLeftCornerRadius >> 32)) * minRadius) << 32)), CornerRadius.m3791constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topRightCornerRadius & 4294967295L)) * minRadius) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topRightCornerRadius >> 32)) * minRadius) << 32)), CornerRadius.m3791constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomRightCornerRadius & 4294967295L)) * minRadius) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomRightCornerRadius >> 32)) * minRadius) << 32)), CornerRadius.m3791constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomLeftCornerRadius >> 32)) * minRadius) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomLeftCornerRadius & 4294967295L)) * minRadius) & 4294967295L)), null);
+            RoundRect roundRect2 = new RoundRect(this.left * minRadius, this.top * minRadius, this.right * minRadius, this.bottom * minRadius, CornerRadius.m4247constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topLeftCornerRadius & 4294967295L)) * minRadius) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topLeftCornerRadius >> 32)) * minRadius) << 32)), CornerRadius.m4247constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topRightCornerRadius & 4294967295L)) * minRadius) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.topRightCornerRadius >> 32)) * minRadius) << 32)), CornerRadius.m4247constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomRightCornerRadius & 4294967295L)) * minRadius) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomRightCornerRadius >> 32)) * minRadius) << 32)), CornerRadius.m4247constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomLeftCornerRadius >> 32)) * minRadius) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (this.bottomLeftCornerRadius & 4294967295L)) * minRadius) & 4294967295L)), null);
             this._scaledRadiiRect = roundRect2;
             return roundRect2;
         }
@@ -201,14 +201,14 @@ public final class RoundRect {
         long j3 = this.bottomRightCornerRadius;
         long j4 = this.bottomLeftCornerRadius;
         String str = GeometryUtilsKt.toStringAsFixed(this.left, 1) + ", " + GeometryUtilsKt.toStringAsFixed(this.top, 1) + ", " + GeometryUtilsKt.toStringAsFixed(this.right, 1) + ", " + GeometryUtilsKt.toStringAsFixed(this.bottom, 1);
-        if (CornerRadius.m3796equalsimpl0(j, j2) && CornerRadius.m3796equalsimpl0(j2, j3) && CornerRadius.m3796equalsimpl0(j3, j4)) {
+        if (CornerRadius.m4252equalsimpl0(j, j2) && CornerRadius.m4252equalsimpl0(j2, j3) && CornerRadius.m4252equalsimpl0(j3, j4)) {
             return Float.intBitsToFloat((int) (j >> 32)) == Float.intBitsToFloat((int) (j & 4294967295L)) ? "RoundRect(rect=" + str + ", radius=" + GeometryUtilsKt.toStringAsFixed(Float.intBitsToFloat(i), 1) + ')' : "RoundRect(rect=" + str + ", x=" + GeometryUtilsKt.toStringAsFixed(Float.intBitsToFloat(i), 1) + ", y=" + GeometryUtilsKt.toStringAsFixed(Float.intBitsToFloat(i2), 1) + ')';
         }
-        return "RoundRect(rect=" + str + ", topLeft=" + ((Object) CornerRadius.m3805toStringimpl(j)) + ", topRight=" + ((Object) CornerRadius.m3805toStringimpl(j2)) + ", bottomRight=" + ((Object) CornerRadius.m3805toStringimpl(j3)) + ", bottomLeft=" + ((Object) CornerRadius.m3805toStringimpl(j4)) + ')';
+        return "RoundRect(rect=" + str + ", topLeft=" + ((Object) CornerRadius.m4261toStringimpl(j)) + ", topRight=" + ((Object) CornerRadius.m4261toStringimpl(j2)) + ", bottomRight=" + ((Object) CornerRadius.m4261toStringimpl(j3)) + ", bottomLeft=" + ((Object) CornerRadius.m4261toStringimpl(j4)) + ')';
     }
 
     /* compiled from: RoundRect.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u001c\u0010\u0003\u001a\u00020\u00048\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0005\u0010\u0002\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/geometry/RoundRect$Companion;", "", "()V", "Zero", "Landroidx/compose/ui/geometry/RoundRect;", "getZero$annotations", "getZero", "()Landroidx/compose/ui/geometry/RoundRect;", "ui-geometry_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Landroidx/compose/ui/geometry/RoundRect$Companion;", "", "<init>", "()V", "Zero", "Landroidx/compose/ui/geometry/RoundRect;", "getZero$annotations", "getZero", "()Landroidx/compose/ui/geometry/RoundRect;", "ui-geometry"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -228,7 +228,7 @@ public final class RoundRect {
     }
 
     /* renamed from: contains-k-4lQ0M  reason: not valid java name */
-    public final boolean m3883containsk4lQ0M(long j) {
+    public final boolean m4339containsk4lQ0M(long j) {
         float intBitsToFloat;
         float intBitsToFloat2;
         float intBitsToFloat3;

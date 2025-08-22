@@ -1,88 +1,25 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
-import kotlin.jvm.internal.Intrinsics;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class Ef implements InterfaceC0429m8 {
+public final class Ef implements InterfaceC0386kj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f418a;
-    public final JSONObject b;
-    public final boolean c;
-    public final boolean d;
-    public final EnumC0404l8 e;
+    public final C0508pf f414a;
 
-    public Ef(String str, JSONObject jSONObject, boolean z, boolean z2, EnumC0404l8 enumC0404l8) {
-        this.f418a = str;
-        this.b = jSONObject;
-        this.c = z;
-        this.d = z2;
-        this.e = enumC0404l8;
+    public Ef(C0508pf c0508pf) {
+        this.f414a = c0508pf;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0429m8
-    public final EnumC0404l8 a() {
-        return this.e;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0386kj
+    public final boolean a() {
+        return this.f414a.i();
     }
 
-    public final JSONObject b() {
-        if (this.c) {
-            JSONObject jSONObject = new JSONObject();
-            try {
-                jSONObject.put("trackingId", this.f418a);
-                if (this.b.length() > 0) {
-                    jSONObject.put("additionalParams", this.b);
-                }
-            } catch (Throwable unused) {
-            }
-            return jSONObject;
-        }
-        return null;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0386kj
+    public final void b() {
+        this.f414a.h().b();
     }
 
-    public final JSONObject c() {
-        JSONObject jSONObject = new JSONObject();
-        try {
-            jSONObject.put("trackingId", this.f418a);
-            jSONObject.put("additionalParams", this.b);
-            jSONObject.put("wasSet", this.c);
-            jSONObject.put("autoTracking", this.d);
-            jSONObject.put("source", this.e.f936a);
-        } catch (Throwable unused) {
-        }
-        return jSONObject;
-    }
-
-    public final String toString() {
-        return "PreloadInfoState{trackingId='" + this.f418a + "', additionalParameters=" + this.b + ", wasSet=" + this.c + ", autoTrackingEnabled=" + this.d + ", source=" + this.e + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public static Ef a(JSONObject jSONObject) {
-        EnumC0404l8 enumC0404l8;
-        String optStringOrNull = JsonUtils.optStringOrNull(jSONObject, "trackingId");
-        JSONObject optJsonObjectOrDefault = JsonUtils.optJsonObjectOrDefault(jSONObject, "additionalParams", new JSONObject());
-        int i = 0;
-        boolean optBooleanOrDefault = JsonUtils.optBooleanOrDefault(jSONObject, "wasSet", false);
-        boolean optBooleanOrDefault2 = JsonUtils.optBooleanOrDefault(jSONObject, "autoTracking", false);
-        String optStringOrNull2 = JsonUtils.optStringOrNull(jSONObject, "source");
-        EnumC0404l8[] values = EnumC0404l8.values();
-        int length = values.length;
-        while (true) {
-            if (i >= length) {
-                enumC0404l8 = null;
-                break;
-            }
-            enumC0404l8 = values[i];
-            if (Intrinsics.areEqual(enumC0404l8.f936a, optStringOrNull2)) {
-                break;
-            }
-            i++;
-        }
-        if (enumC0404l8 == null) {
-            enumC0404l8 = EnumC0404l8.b;
-        }
-        return new Ef(optStringOrNull, optJsonObjectOrDefault, optBooleanOrDefault, optBooleanOrDefault2, enumC0404l8);
+    public Ef() {
+        this(Ka.j().x());
     }
 }

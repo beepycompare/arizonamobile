@@ -1,62 +1,66 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import io.appmetrica.analytics.coreutils.internal.services.FrameworkDetector;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
-import kotlin.jvm.internal.Intrinsics;
-import org.json.JSONObject;
+import android.content.Context;
+import io.appmetrica.analytics.billinginterface.internal.BillingType;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
+import java.lang.reflect.Field;
+import java.util.Objects;
+import java.util.concurrent.Executor;
+import kotlin.text.StringsKt;
 /* loaded from: classes4.dex */
-public final class Oc implements Y8 {
+public final class Oc extends C0697x5 {
+    public final C0687wk n;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final C0212dh f577a;
-    public final C0386kf b;
-    public final String c = "activation_unlock_event_sending";
-    public final AtomicBoolean d;
-
-    public Oc(C0212dh c0212dh, J4 j4, C0386kf c0386kf) {
-        this.f577a = c0212dh;
-        this.b = c0386kf;
-        boolean z = false;
-        this.d = new AtomicBoolean((c0386kf.a(false) || a(j4)) ? true : true);
+    public Oc(Context context, C0398l5 c0398l5, J4 j4, AbstractC0523q5 abstractC0523q5, C0389km c0389km, InterfaceC0759zh interfaceC0759zh, ICommonExecutor iCommonExecutor, int i, C0687wk c0687wk, C0173cc c0173cc, P9 p9) {
+        super(context, c0398l5, j4, abstractC0523q5, c0389km, interfaceC0759zh, iCommonExecutor, i, c0173cc, p9);
+        this.n = c0687wk;
     }
 
-    public final void a(String str) {
-        try {
-            C0189ck c0189ck = Bj.f361a;
-            String str2 = this.c;
-            JSONObject put = new JSONObject().put("source", str).put("framework", FrameworkDetector.framework());
-            C0307ha h = Ia.F.h();
-            Bundle applicationMetaData = h.d.getApplicationMetaData(h.f881a);
-            JSONObject put2 = put.put("appmetrica_plugin_id", applicationMetaData != null ? applicationMetaData.getString("io.appmetrica.analytics.plugin_id") : null);
-            C0615tk c0615tk = Ia.F.D;
-            String jSONObject = put2.put("activation_offset", TimeUnit.SECONDS.convert(c0615tk.f1069a.currentTimeMillis() - c0615tk.b, TimeUnit.MILLISECONDS)).toString();
-            c0189ck.getClass();
-            c0189ck.a(new C0137ak(str2, jSONObject));
-        } catch (Throwable unused) {
-        }
-    }
-
-    @Override // io.appmetrica.analytics.impl.Y8
-    public final boolean b() {
+    public final C0446n3 a(Mc mc) {
         String str;
-        if (!this.d.get() && (str = ((C0712xh) this.f577a.a()).m) != null && !Intrinsics.areEqual(str, "629a824d-c717-4ba5-bc0f-3f3968554d01") && this.d.compareAndSet(false, true)) {
-            this.b.b(true);
-            a("activation");
+        BillingType billingType;
+        Field field;
+        Context context = this.c;
+        IHandlerExecutor a2 = this.n.a();
+        Executor f = this.n.f();
+        try {
+            Class<?> findClass = ReflectionUtils.findClass("com.android.billingclient.BuildConfig");
+            str = (String) ((findClass == null || (field = findClass.getField("VERSION_NAME")) == null) ? null : field.get(null));
+        } catch (Throwable unused) {
+            str = null;
         }
-        return this.d.get();
+        if (str != null && !StringsKt.isBlank(str)) {
+            if (StringsKt.startsWith$default(str, "2.", false, 2, (Object) null)) {
+                billingType = BillingType.NONE;
+            } else if (StringsKt.startsWith$default(str, "3.", false, 2, (Object) null)) {
+                billingType = BillingType.NONE;
+            } else if (StringsKt.startsWith$default(str, "4.", false, 2, (Object) null)) {
+                billingType = BillingType.NONE;
+            } else if (StringsKt.startsWith$default(str, "5.", false, 2, (Object) null)) {
+                billingType = BillingType.LIBRARY_V6;
+            } else if (StringsKt.startsWith$default(str, "6.", false, 2, (Object) null)) {
+                billingType = BillingType.LIBRARY_V6;
+            } else if (StringsKt.startsWith$default(str, "7.", false, 2, (Object) null)) {
+                billingType = BillingType.LIBRARY_V6;
+            } else {
+                billingType = StringsKt.startsWith$default(str, "8.", false, 2, (Object) null) ? BillingType.LIBRARY_V8 : BillingType.LIBRARY_V8;
+            }
+        } else {
+            billingType = BillingType.NONE;
+        }
+        return new C0446n3(context, a2, f, billingType, new C0344j3(Vm.a(C0669w2.class).a(this.c)), new C0319i3(mc, Ka.j().w().e()));
     }
 
-    public final void a() {
-        if (this.d.compareAndSet(false, true)) {
-            this.b.b(true);
-            a("timer");
-        }
+    public final Hg b(Mc mc) {
+        Be be = new Be(mc);
+        Objects.requireNonNull(mc);
+        return new Hg(be, new Lc(mc), mc);
     }
 
-    public static boolean a(J4 j4) {
-        String str = j4.f497a;
-        return (str == null || Intrinsics.areEqual(str, "629a824d-c717-4ba5-bc0f-3f3968554d01")) ? false : true;
+    @Override // io.appmetrica.analytics.impl.C0697x5
+    public final N9 a(S9 s9, C0297h7 c0297h7, C0332ih c0332ih, J4 j4, C0398l5 c0398l5, C0433mf c0433mf) {
+        return this.l.a(s9, c0297h7, c0332ih, j4, c0398l5, c0433mf).a();
     }
 }

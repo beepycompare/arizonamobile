@@ -2,7 +2,7 @@ package androidx.media3.extractor.ts;
 
 import androidx.media3.common.C;
 import androidx.media3.common.util.ParsableByteArray;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TsUtil {
     public static boolean isStartOfTsPacket(byte[] bArr, int i, int i2, int i3) {
         int i4 = 0;

@@ -12,6 +12,8 @@ import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.CompositionContext;
 import androidx.compose.runtime.MutableState;
+import androidx.compose.runtime.RecomposeScopeImplKt;
+import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.runtime.SnapshotStateKt__SnapshotStateKt;
 import androidx.compose.runtime.State;
@@ -45,7 +47,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 /* compiled from: AndroidPopup.android.kt */
-@Metadata(d1 = {"\u0000Ä\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\r\b\u0001\u0018\u0000 \u0083\u00012\u00020\u00012\u00020\u0002:\u0002\u0083\u0001BO\u0012\u000e\u0010\u0003\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\u0004\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\b\b\u0002\u0010\u0012\u001a\u00020\u0013¢\u0006\u0002\u0010\u0014J\r\u0010[\u001a\u00020\u0005H\u0017¢\u0006\u0002\u0010\\J\b\u0010]\u001a\u00020,H\u0002J\u0006\u0010^\u001a\u00020\u0005J\u0010\u0010_\u001a\u00020\u00182\u0006\u0010`\u001a\u00020aH\u0016J\b\u0010b\u001a\u000202H\u0002J5\u0010c\u001a\u00020\u00052\u0006\u0010d\u001a\u00020\u00182\u0006\u0010e\u001a\u00020f2\u0006\u0010g\u001a\u00020f2\u0006\u0010h\u001a\u00020f2\u0006\u0010i\u001a\u00020fH\u0010¢\u0006\u0002\bjJ\u001d\u0010k\u001a\u00020\u00052\u0006\u0010l\u001a\u00020f2\u0006\u0010m\u001a\u00020fH\u0010¢\u0006\u0002\bnJ\b\u0010o\u001a\u00020\u0005H\u0002J\b\u0010p\u001a\u00020\u0005H\u0002J\b\u0010q\u001a\u00020\u0005H\u0014J\b\u0010r\u001a\u00020\u0005H\u0014J\u0012\u0010s\u001a\u00020\u00182\b\u0010`\u001a\u0004\u0018\u00010tH\u0016J\u0006\u0010u\u001a\u00020\u0005J&\u0010\"\u001a\u00020\u00052\u0006\u0010v\u001a\u00020w2\u0011\u0010\u001f\u001a\r\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0002\b\u001e¢\u0006\u0002\u0010xJ\u0010\u0010y\u001a\u00020\u00052\u0006\u0010z\u001a\u00020fH\u0016J\u0006\u0010{\u001a\u00020\u0005J\u0010\u0010|\u001a\u00020\u00052\u0006\u0010z\u001a\u00020;H\u0002J.\u0010}\u001a\u00020\u00052\u000e\u0010\u0003\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\u00042\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010z\u001a\u00020;J\r\u0010~\u001a\u00020\u0005H\u0001¢\u0006\u0002\b\u007fJ\u000f\u0010\u0080\u0001\u001a\u00020\u00052\u0006\u00104\u001a\u000203J\u0011\u0010\u0081\u0001\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0002J\u0007\u0010\u0082\u0001\u001a\u00020\u0005R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\u0017\u001a\u00020\u00188FX\u0086\u0084\u0002¢\u0006\f\n\u0004\b\u001b\u0010\u001c\u001a\u0004\b\u0019\u0010\u001aR\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000RA\u0010\u001f\u001a\r\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0002\b\u001e2\u0011\u0010\u001d\u001a\r\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0002\b\u001e8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b$\u0010%\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#R\u000e\u0010&\u001a\u00020'X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010(\u001a\u00020)X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010*R\u0016\u0010\u0003\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010+\u001a\u00020,8\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b-\u0010.\u001a\u0004\b/\u00100R\u0010\u00101\u001a\u0004\u0018\u000102X\u0082\u000e¢\u0006\u0002\n\u0000R/\u00104\u001a\u0004\u0018\u0001032\b\u0010\u001d\u001a\u0004\u0018\u0001038B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b9\u0010%\u001a\u0004\b5\u00106\"\u0004\b7\u00108R\u001a\u0010:\u001a\u00020;X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b<\u0010=\"\u0004\b>\u0010?R5\u0010A\u001a\u0004\u0018\u00010@2\b\u0010\u001d\u001a\u0004\u0018\u00010@8F@FX\u0086\u008e\u0002ø\u0001\u0000ø\u0001\u0001¢\u0006\u0012\n\u0004\bF\u0010%\u001a\u0004\bB\u0010C\"\u0004\bD\u0010ER\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010G\u001a\u00020\u000fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bH\u0010I\"\u0004\bJ\u0010KR\u000e\u0010L\u001a\u00020MX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010N\u001a\u00020\u00182\u0006\u0010\u001d\u001a\u00020\u0018@RX\u0094\u000e¢\u0006\b\n\u0000\u001a\u0004\bO\u0010\u001aR\u000e\u0010P\u001a\u00020QX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010R\u001a\u00020\u00018VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bS\u0010TR\u001a\u0010\b\u001a\u00020\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bU\u0010V\"\u0004\bW\u0010XR\u000e\u0010Y\u001a\u00020ZX\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0084\u0001"}, d2 = {"Landroidx/compose/ui/window/PopupLayout;", "Landroidx/compose/ui/platform/AbstractComposeView;", "Landroidx/compose/ui/platform/ViewRootForInspector;", "onDismissRequest", "Lkotlin/Function0;", "", "properties", "Landroidx/compose/ui/window/PopupProperties;", "testTag", "", "composeView", "Landroid/view/View;", "density", "Landroidx/compose/ui/unit/Density;", "initialPositionProvider", "Landroidx/compose/ui/window/PopupPositionProvider;", "popupId", "Ljava/util/UUID;", "popupLayoutHelper", "Landroidx/compose/ui/window/PopupLayoutHelper;", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/window/PopupProperties;Ljava/lang/String;Landroid/view/View;Landroidx/compose/ui/unit/Density;Landroidx/compose/ui/window/PopupPositionProvider;Ljava/util/UUID;Landroidx/compose/ui/window/PopupLayoutHelper;)V", "backCallback", "", "canCalculatePosition", "", "getCanCalculatePosition", "()Z", "canCalculatePosition$delegate", "Landroidx/compose/runtime/State;", "<set-?>", "Landroidx/compose/runtime/Composable;", FirebaseAnalytics.Param.CONTENT, "getContent", "()Lkotlin/jvm/functions/Function2;", "setContent", "(Lkotlin/jvm/functions/Function2;)V", "content$delegate", "Landroidx/compose/runtime/MutableState;", "locationOnScreen", "", "maxSupportedElevation", "Landroidx/compose/ui/unit/Dp;", "F", "params", "Landroid/view/WindowManager$LayoutParams;", "getParams$ui_release$annotations", "()V", "getParams$ui_release", "()Landroid/view/WindowManager$LayoutParams;", "parentBounds", "Landroidx/compose/ui/unit/IntRect;", "Landroidx/compose/ui/layout/LayoutCoordinates;", "parentLayoutCoordinates", "getParentLayoutCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "setParentLayoutCoordinates", "(Landroidx/compose/ui/layout/LayoutCoordinates;)V", "parentLayoutCoordinates$delegate", "parentLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getParentLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "setParentLayoutDirection", "(Landroidx/compose/ui/unit/LayoutDirection;)V", "Landroidx/compose/ui/unit/IntSize;", "popupContentSize", "getPopupContentSize-bOM6tXw", "()Landroidx/compose/ui/unit/IntSize;", "setPopupContentSize-fhxjrPA", "(Landroidx/compose/ui/unit/IntSize;)V", "popupContentSize$delegate", "positionProvider", "getPositionProvider", "()Landroidx/compose/ui/window/PopupPositionProvider;", "setPositionProvider", "(Landroidx/compose/ui/window/PopupPositionProvider;)V", "previousWindowVisibleFrame", "Landroid/graphics/Rect;", "shouldCreateCompositionOnAttachedToWindow", "getShouldCreateCompositionOnAttachedToWindow", "snapshotStateObserver", "Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "subCompositionView", "getSubCompositionView", "()Landroidx/compose/ui/platform/AbstractComposeView;", "getTestTag", "()Ljava/lang/String;", "setTestTag", "(Ljava/lang/String;)V", "windowManager", "Landroid/view/WindowManager;", "Content", "(Landroidx/compose/runtime/Composer;I)V", "createLayoutParams", "dismiss", "dispatchKeyEvent", NotificationCompat.CATEGORY_EVENT, "Landroid/view/KeyEvent;", "getVisibleDisplayBounds", "internalOnLayout", "changed", TtmlNode.LEFT, "", "top", TtmlNode.RIGHT, "bottom", "internalOnLayout$ui_release", "internalOnMeasure", "widthMeasureSpec", "heightMeasureSpec", "internalOnMeasure$ui_release", "maybeRegisterBackCallback", "maybeUnregisterBackCallback", "onAttachedToWindow", "onDetachedFromWindow", "onTouchEvent", "Landroid/view/MotionEvent;", "pollForLocationOnScreenChange", "parent", "Landroidx/compose/runtime/CompositionContext;", "(Landroidx/compose/runtime/CompositionContext;Lkotlin/jvm/functions/Function2;)V", "setLayoutDirection", "layoutDirection", "show", "superSetLayoutDirection", "updateParameters", "updateParentBounds", "updateParentBounds$ui_release", "updateParentLayoutCoordinates", "updatePopupProperties", "updatePosition", "Companion", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Â\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\b\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0015\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0001\u0018\u0000 \u0085\u00012\u00020\u00012\u00020\u0002:\u0002\u0085\u0001BQ\u0012\u000e\u0010\u0003\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\u0004\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\b\b\u0002\u0010\u0012\u001a\u00020\u0013¢\u0006\u0004\b\u0014\u0010\u0015J\u0006\u0010[\u001a\u00020\u0005J&\u0010U\u001a\u00020\u00052\u0006\u0010\\\u001a\u00020]2\u0011\u0010R\u001a\r\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0002\bQ¢\u0006\u0002\u0010^J\r\u0010_\u001a\u00020\u0005H\u0017¢\u0006\u0002\u0010`J\b\u0010a\u001a\u00020\u0005H\u0014J\b\u0010b\u001a\u00020\u0005H\u0014J\u001d\u0010c\u001a\u00020\u00052\u0006\u0010d\u001a\u00020e2\u0006\u0010f\u001a\u00020eH\u0010¢\u0006\u0002\bgJ5\u0010h\u001a\u00020\u00052\u0006\u0010i\u001a\u00020@2\u0006\u0010j\u001a\u00020e2\u0006\u0010k\u001a\u00020e2\u0006\u0010l\u001a\u00020e2\u0006\u0010m\u001a\u00020eH\u0010¢\u0006\u0002\bnJ\u0010\u0010o\u001a\u00020@2\u0006\u0010p\u001a\u00020qH\u0016J\b\u0010r\u001a\u00020\u0005H\u0002J\b\u0010s\u001a\u00020\u0005H\u0002J.\u0010t\u001a\u00020\u00052\u000e\u0010\u0003\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\u00042\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010u\u001a\u00020(J\u0010\u0010v\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0002J\u000e\u0010w\u001a\u00020\u00052\u0006\u00107\u001a\u000206J\u0006\u0010z\u001a\u00020\u0005J\r\u0010{\u001a\u00020\u0005H\u0001¢\u0006\u0002\b|J\u0006\u0010}\u001a\u00020\u0005J\u0006\u0010~\u001a\u00020\u0005J\u0013\u0010\u007f\u001a\u00020@2\t\u0010p\u001a\u0005\u0018\u00010\u0080\u0001H\u0016J\u0011\u0010\u0081\u0001\u001a\u00020\u00052\u0006\u0010u\u001a\u00020eH\u0016J\u0011\u0010\u0082\u0001\u001a\u00020\u00052\u0006\u0010u\u001a\u00020(H\u0002J\t\u0010\u0083\u0001\u001a\u00020\u001dH\u0002J\t\u0010\u0084\u0001\u001a\u00020>H\u0002R\u0016\u0010\u0003\u001a\n\u0012\u0004\u0012\u00020\u0005\u0018\u00010\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u00020\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u001c\u001a\u00020\u001d8\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u001e\u0010\u001f\u001a\u0004\b \u0010!R\u001a\u0010\"\u001a\u00020\u000fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010$\"\u0004\b%\u0010&R\u001a\u0010'\u001a\u00020(X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b)\u0010*\"\u0004\b+\u0010,R/\u0010/\u001a\u0004\u0018\u00010.2\b\u0010-\u001a\u0004\u0018\u00010.8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b4\u00105\u001a\u0004\b0\u00101\"\u0004\b2\u00103R/\u00107\u001a\u0004\u0018\u0001062\b\u0010-\u001a\u0004\u0018\u0001068B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b<\u00105\u001a\u0004\b8\u00109\"\u0004\b:\u0010;R\u0010\u0010=\u001a\u0004\u0018\u00010>X\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010?\u001a\u00020@8FX\u0086\u0084\u0002¢\u0006\f\n\u0004\bC\u0010D\u001a\u0004\bA\u0010BR\u0010\u0010E\u001a\u00020FX\u0082\u0004¢\u0006\u0004\n\u0002\u0010GR\u000e\u0010H\u001a\u00020IX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010J\u001a\u00020\u00018VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bK\u0010LR\u000e\u0010M\u001a\u00020NX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010O\u001a\u0004\u0018\u00010PX\u0082\u000e¢\u0006\u0002\n\u0000RA\u0010R\u001a\r\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0002\bQ2\u0011\u0010-\u001a\r\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0002\bQ8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bW\u00105\u001a\u0004\bS\u0010T\"\u0004\bU\u0010VR\u001e\u0010Y\u001a\u00020@2\u0006\u0010X\u001a\u00020@@RX\u0094\u000e¢\u0006\b\n\u0000\u001a\u0004\bZ\u0010BR\u000e\u0010x\u001a\u00020yX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0086\u0001"}, d2 = {"Landroidx/compose/ui/window/PopupLayout;", "Landroidx/compose/ui/platform/AbstractComposeView;", "Landroidx/compose/ui/platform/ViewRootForInspector;", "onDismissRequest", "Lkotlin/Function0;", "", "properties", "Landroidx/compose/ui/window/PopupProperties;", "testTag", "", "composeView", "Landroid/view/View;", "density", "Landroidx/compose/ui/unit/Density;", "initialPositionProvider", "Landroidx/compose/ui/window/PopupPositionProvider;", "popupId", "Ljava/util/UUID;", "popupLayoutHelper", "Landroidx/compose/ui/window/PopupLayoutHelper;", "<init>", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/window/PopupProperties;Ljava/lang/String;Landroid/view/View;Landroidx/compose/ui/unit/Density;Landroidx/compose/ui/window/PopupPositionProvider;Ljava/util/UUID;Landroidx/compose/ui/window/PopupLayoutHelper;)V", "getTestTag", "()Ljava/lang/String;", "setTestTag", "(Ljava/lang/String;)V", "windowManager", "Landroid/view/WindowManager;", "params", "Landroid/view/WindowManager$LayoutParams;", "getParams$ui_release$annotations", "()V", "getParams$ui_release", "()Landroid/view/WindowManager$LayoutParams;", "positionProvider", "getPositionProvider", "()Landroidx/compose/ui/window/PopupPositionProvider;", "setPositionProvider", "(Landroidx/compose/ui/window/PopupPositionProvider;)V", "parentLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getParentLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "setParentLayoutDirection", "(Landroidx/compose/ui/unit/LayoutDirection;)V", "<set-?>", "Landroidx/compose/ui/unit/IntSize;", "popupContentSize", "getPopupContentSize-bOM6tXw", "()Landroidx/compose/ui/unit/IntSize;", "setPopupContentSize-fhxjrPA", "(Landroidx/compose/ui/unit/IntSize;)V", "popupContentSize$delegate", "Landroidx/compose/runtime/MutableState;", "Landroidx/compose/ui/layout/LayoutCoordinates;", "parentLayoutCoordinates", "getParentLayoutCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "setParentLayoutCoordinates", "(Landroidx/compose/ui/layout/LayoutCoordinates;)V", "parentLayoutCoordinates$delegate", "parentBounds", "Landroidx/compose/ui/unit/IntRect;", "canCalculatePosition", "", "getCanCalculatePosition", "()Z", "canCalculatePosition$delegate", "Landroidx/compose/runtime/State;", "maxSupportedElevation", "Landroidx/compose/ui/unit/Dp;", "F", "previousWindowVisibleFrame", "Landroid/graphics/Rect;", "subCompositionView", "getSubCompositionView", "()Landroidx/compose/ui/platform/AbstractComposeView;", "snapshotStateObserver", "Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "backCallback", "", "Landroidx/compose/runtime/Composable;", FirebaseAnalytics.Param.CONTENT, "getContent", "()Lkotlin/jvm/functions/Function2;", "setContent", "(Lkotlin/jvm/functions/Function2;)V", "content$delegate", "value", "shouldCreateCompositionOnAttachedToWindow", "getShouldCreateCompositionOnAttachedToWindow", "show", "parent", "Landroidx/compose/runtime/CompositionContext;", "(Landroidx/compose/runtime/CompositionContext;Lkotlin/jvm/functions/Function2;)V", "Content", "(Landroidx/compose/runtime/Composer;I)V", "onAttachedToWindow", "onDetachedFromWindow", "internalOnMeasure", "widthMeasureSpec", "", "heightMeasureSpec", "internalOnMeasure$ui_release", "internalOnLayout", "changed", TtmlNode.LEFT, "top", TtmlNode.RIGHT, "bottom", "internalOnLayout$ui_release", "dispatchKeyEvent", NotificationCompat.CATEGORY_EVENT, "Landroid/view/KeyEvent;", "maybeRegisterBackCallback", "maybeUnregisterBackCallback", "updateParameters", "layoutDirection", "updatePopupProperties", "updateParentLayoutCoordinates", "locationOnScreen", "", "pollForLocationOnScreenChange", "updateParentBounds", "updateParentBounds$ui_release", "updatePosition", "dismiss", "onTouchEvent", "Landroid/view/MotionEvent;", "setLayoutDirection", "superSetLayoutDirection", "createLayoutParams", "getVisibleDisplayBounds", "Companion", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class PopupLayout extends AbstractComposeView implements ViewRootForInspector {
     private Object backCallback;
@@ -86,7 +88,7 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
     };
 
     /* compiled from: AndroidPopup.android.kt */
-    @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -174,11 +176,11 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
                 if (parentLayoutCoordinates == null || !parentLayoutCoordinates.isAttached()) {
                     parentLayoutCoordinates = null;
                 }
-                return Boolean.valueOf((parentLayoutCoordinates == null || PopupLayout.this.m6940getPopupContentSizebOM6tXw() == null) ? false : true);
+                return Boolean.valueOf((parentLayoutCoordinates == null || PopupLayout.this.m7506getPopupContentSizebOM6tXw() == null) ? false : true);
             }
         });
-        float m6684constructorimpl = Dp.m6684constructorimpl(8);
-        this.maxSupportedElevation = m6684constructorimpl;
+        float m7251constructorimpl = Dp.m7251constructorimpl(8);
+        this.maxSupportedElevation = m7251constructorimpl;
         this.previousWindowVisibleFrame = new Rect();
         this.snapshotStateObserver = new SnapshotStateObserver(new PopupLayout$snapshotStateObserver$1(this));
         setId(16908290);
@@ -188,7 +190,7 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
         ViewTreeSavedStateRegistryOwner.set(popupLayout, ViewTreeSavedStateRegistryOwner.get(view));
         setTag(R.id.compose_view_saveable_id_tag, "Popup:" + uuid);
         setClipChildren(false);
-        setElevation(density.mo389toPx0680j_4(m6684constructorimpl));
+        setElevation(density.mo419toPx0680j_4(m7251constructorimpl));
         setOutlineProvider(new ViewOutlineProvider() { // from class: androidx.compose.ui.window.PopupLayout.2
             @Override // android.view.ViewOutlineProvider
             public void getOutline(View view2, Outline outline) {
@@ -196,7 +198,7 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
                 outline.setAlpha(0.0f);
             }
         });
-        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ComposableSingletons$AndroidPopup_androidKt.INSTANCE.m6939getLambda1$ui_release(), null, 2, null);
+        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ComposableSingletons$AndroidPopup_androidKt.INSTANCE.m7505getLambda$1131826196$ui_release(), null, 2, null);
         this.content$delegate = mutableStateOf$default3;
         this.locationOnScreen = new int[2];
     }
@@ -222,12 +224,12 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
     }
 
     /* renamed from: getPopupContentSize-bOM6tXw  reason: not valid java name */
-    public final IntSize m6940getPopupContentSizebOM6tXw() {
+    public final IntSize m7506getPopupContentSizebOM6tXw() {
         return (IntSize) this.popupContentSize$delegate.getValue();
     }
 
     /* renamed from: setPopupContentSize-fhxjrPA  reason: not valid java name */
-    public final void m6941setPopupContentSizefhxjrPA(IntSize intSize) {
+    public final void m7507setPopupContentSizefhxjrPA(IntSize intSize) {
         this.popupContentSize$delegate.setValue(intSize);
     }
 
@@ -273,17 +275,46 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
     }
 
     @Override // androidx.compose.ui.platform.AbstractComposeView
-    public void Content(Composer composer, int i) {
-        composer.startReplaceGroup(-857613600);
-        ComposerKt.sourceInformation(composer, "C(Content)573@24168L9:AndroidPopup.android.kt#2oxthz");
-        if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-857613600, i, -1, "androidx.compose.ui.window.PopupLayout.Content (AndroidPopup.android.kt:572)");
+    public void Content(Composer composer, final int i) {
+        int i2;
+        Composer startRestartGroup = composer.startRestartGroup(-857613600);
+        ComposerKt.sourceInformation(startRestartGroup, "C(Content)573@24177L9:AndroidPopup.android.kt#2oxthz");
+        if ((i & 6) == 0) {
+            i2 = (startRestartGroup.changedInstance(this) ? 4 : 2) | i;
+        } else {
+            i2 = i;
         }
-        getContent().invoke(composer, 0);
-        if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventEnd();
+        if (!startRestartGroup.shouldExecute((i2 & 3) != 2, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(-857613600, i2, -1, "androidx.compose.ui.window.PopupLayout.Content (AndroidPopup.android.kt:572)");
+            }
+            getContent().invoke(startRestartGroup, 0);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
         }
-        composer.endReplaceGroup();
+        ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
+        if (endRestartGroup != null) {
+            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.window.PopupLayout$Content$4
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(2);
+                }
+
+                @Override // kotlin.jvm.functions.Function2
+                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
+                    invoke(composer2, num.intValue());
+                    return Unit.INSTANCE;
+                }
+
+                public final void invoke(Composer composer2, int i3) {
+                    PopupLayout.this.Content(composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                }
+            });
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -414,28 +445,28 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
             if (parentLayoutCoordinates == null) {
                 return;
             }
-            long mo5446getSizeYbymL2g = parentLayoutCoordinates.mo5446getSizeYbymL2g();
+            long mo5962getSizeYbymL2g = parentLayoutCoordinates.mo5962getSizeYbymL2g();
             long positionInWindow = LayoutCoordinatesKt.positionInWindow(parentLayoutCoordinates);
-            IntRect m6845IntRectVbeCjmY = IntRectKt.m6845IntRectVbeCjmY(IntOffset.m6806constructorimpl((Math.round(Float.intBitsToFloat((int) (positionInWindow >> 32))) << 32) | (4294967295L & Math.round(Float.intBitsToFloat((int) (positionInWindow & 4294967295L))))), mo5446getSizeYbymL2g);
-            if (Intrinsics.areEqual(m6845IntRectVbeCjmY, this.parentBounds)) {
+            IntRect m7412IntRectVbeCjmY = IntRectKt.m7412IntRectVbeCjmY(IntOffset.m7373constructorimpl((Math.round(Float.intBitsToFloat((int) (positionInWindow >> 32))) << 32) | (4294967295L & Math.round(Float.intBitsToFloat((int) (positionInWindow & 4294967295L))))), mo5962getSizeYbymL2g);
+            if (Intrinsics.areEqual(m7412IntRectVbeCjmY, this.parentBounds)) {
                 return;
             }
-            this.parentBounds = m6845IntRectVbeCjmY;
+            this.parentBounds = m7412IntRectVbeCjmY;
             updatePosition();
         }
     }
 
     public final void updatePosition() {
-        IntSize m6940getPopupContentSizebOM6tXw;
+        IntSize m7506getPopupContentSizebOM6tXw;
         final IntRect intRect = this.parentBounds;
-        if (intRect == null || (m6940getPopupContentSizebOM6tXw = m6940getPopupContentSizebOM6tXw()) == null) {
+        if (intRect == null || (m7506getPopupContentSizebOM6tXw = m7506getPopupContentSizebOM6tXw()) == null) {
             return;
         }
-        final long m6859unboximpl = m6940getPopupContentSizebOM6tXw.m6859unboximpl();
+        final long m7426unboximpl = m7506getPopupContentSizebOM6tXw.m7426unboximpl();
         IntRect visibleDisplayBounds = getVisibleDisplayBounds();
-        final long m6850constructorimpl = IntSize.m6850constructorimpl((visibleDisplayBounds.getWidth() << 32) | (visibleDisplayBounds.getHeight() & 4294967295L));
+        final long m7417constructorimpl = IntSize.m7417constructorimpl((visibleDisplayBounds.getWidth() << 32) | (visibleDisplayBounds.getHeight() & 4294967295L));
         final Ref.LongRef longRef = new Ref.LongRef();
-        longRef.element = IntOffset.Companion.m6823getZeronOccac();
+        longRef.element = IntOffset.Companion.m7390getZeronOccac();
         this.snapshotStateObserver.observeReads(this, onCommitAffectingPopupPosition, new Function0<Unit>() { // from class: androidx.compose.ui.window.PopupLayout$updatePosition$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -451,13 +482,13 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2() {
-                Ref.LongRef.this.element = this.getPositionProvider().mo358calculatePositionllwVHH4(intRect, m6850constructorimpl, this.getParentLayoutDirection(), m6859unboximpl);
+                Ref.LongRef.this.element = this.getPositionProvider().mo383calculatePositionllwVHH4(intRect, m7417constructorimpl, this.getParentLayoutDirection(), m7426unboximpl);
             }
         });
-        this.params.x = IntOffset.m6812getXimpl(longRef.element);
-        this.params.y = IntOffset.m6813getYimpl(longRef.element);
+        this.params.x = IntOffset.m7379getXimpl(longRef.element);
+        this.params.y = IntOffset.m7380getYimpl(longRef.element);
         if (this.properties.getExcludeFromSystemGesture()) {
-            this.popupLayoutHelper.setGestureExclusionRects(this, (int) (m6850constructorimpl >> 32), (int) (m6850constructorimpl & 4294967295L));
+            this.popupLayoutHelper.setGestureExclusionRects(this, (int) (m7417constructorimpl >> 32), (int) (m7417constructorimpl & 4294967295L));
         }
         this.popupLayoutHelper.updateViewLayout(this.windowManager, this, this.params);
     }
@@ -525,7 +556,7 @@ public final class PopupLayout extends AbstractComposeView implements ViewRootFo
     }
 
     /* compiled from: AndroidPopup.android.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\b\u0082\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Landroidx/compose/ui/window/PopupLayout$Companion;", "", "()V", "onCommitAffectingPopupPosition", "Lkotlin/Function1;", "Landroidx/compose/ui/window/PopupLayout;", "", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Landroidx/compose/ui/window/PopupLayout$Companion;", "", "<init>", "()V", "onCommitAffectingPopupPosition", "Lkotlin/Function1;", "Landroidx/compose/ui/window/PopupLayout;", "", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     private static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

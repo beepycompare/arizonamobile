@@ -8,12 +8,15 @@ import android.content.pm.ProviderInfo;
 import android.content.pm.Signature;
 import android.content.res.Resources;
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.net.Uri;
+import android.os.Build;
 import android.os.CancellationSignal;
 import android.os.RemoteException;
 import android.util.Log;
 import androidx.collection.LruCache;
 import androidx.core.content.res.FontResourcesParserCompat;
+import androidx.core.graphics.TypefaceCompat;
 import androidx.core.provider.FontsContractCompat;
 import androidx.tracing.Trace;
 import com.android.vending.expansion.zipfile.APEZProvider;
@@ -40,17 +43,23 @@ public class FontProvider {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static FontsContractCompat.FontFamilyResult getFontFamilyResult(Context context, List<FontRequest> list, CancellationSignal cancellationSignal) throws PackageManager.NameNotFoundException {
+        String systemFont;
+        Typeface systemFontFamily;
         Trace.beginSection("FontProvider.getFontFamilyResult");
         try {
             ArrayList arrayList = new ArrayList();
             for (int i = 0; i < list.size(); i++) {
                 FontRequest fontRequest = list.get(i);
-                ProviderInfo provider = getProvider(context.getPackageManager(), fontRequest, context.getResources());
-                if (provider == null) {
-                    FontsContractCompat.FontInfo[] fontInfoArr = null;
-                    return FontsContractCompat.FontFamilyResult.create(1, (FontsContractCompat.FontInfo[]) null);
+                if (Build.VERSION.SDK_INT >= 31 && (systemFontFamily = TypefaceCompat.getSystemFontFamily((systemFont = fontRequest.getSystemFont()))) != null && TypefaceCompat.guessPrimaryFont(systemFontFamily) != null) {
+                    arrayList.add(new FontsContractCompat.FontInfo[]{new FontsContractCompat.FontInfo(systemFont, fontRequest.getVariationSettings())});
+                } else {
+                    ProviderInfo provider = getProvider(context.getPackageManager(), fontRequest, context.getResources());
+                    if (provider == null) {
+                        FontsContractCompat.FontInfo[] fontInfoArr = null;
+                        return FontsContractCompat.FontFamilyResult.create(1, (FontsContractCompat.FontInfo[]) null);
+                    }
+                    arrayList.add(query(context, fontRequest, provider.authority, cancellationSignal));
                 }
-                arrayList.add(query(context, fontRequest, provider.authority, cancellationSignal));
             }
             return FontsContractCompat.FontFamilyResult.create(0, arrayList);
         } finally {

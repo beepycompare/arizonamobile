@@ -552,7 +552,7 @@ public class KeyTimeCycle extends Key {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     /* renamed from: clone */
-    public Key mo7168clone() {
+    public Key mo7734clone() {
         return new KeyTimeCycle().copy(this);
     }
 

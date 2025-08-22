@@ -21,7 +21,7 @@ public final class ComposableSingletons$MainScaffoldKt {
     });
 
     /* renamed from: lambda$-863503316  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f69lambda$863503316 = ComposableLambdaKt.composableLambdaInstance(-863503316, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda1
+    private static Function2<Composer, Integer, Unit> f63lambda$863503316 = ComposableLambdaKt.composableLambdaInstance(-863503316, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             Unit lambda__863503316$lambda$1;
@@ -31,7 +31,7 @@ public final class ComposableSingletons$MainScaffoldKt {
     });
 
     /* renamed from: lambda$-1632204659  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f68lambda$1632204659 = ComposableLambdaKt.composableLambdaInstance(-1632204659, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda2
+    private static Function2<Composer, Integer, Unit> f62lambda$1632204659 = ComposableLambdaKt.composableLambdaInstance(-1632204659, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             Unit lambda__1632204659$lambda$2;
@@ -40,17 +40,17 @@ public final class ComposableSingletons$MainScaffoldKt {
         }
     });
 
-    /* renamed from: getLambda$-1632204659$app_root_release_web  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m8323getLambda$1632204659$app_root_release_web() {
-        return f68lambda$1632204659;
+    /* renamed from: getLambda$-1632204659$app_root_release  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m8889getLambda$1632204659$app_root_release() {
+        return f62lambda$1632204659;
     }
 
-    /* renamed from: getLambda$-863503316$app_root_release_web  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m8324getLambda$863503316$app_root_release_web() {
-        return f69lambda$863503316;
+    /* renamed from: getLambda$-863503316$app_root_release  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m8890getLambda$863503316$app_root_release() {
+        return f63lambda$863503316;
     }
 
-    public final Function2<Composer, Integer, Unit> getLambda$1170228028$app_root_release_web() {
+    public final Function2<Composer, Integer, Unit> getLambda$1170228028$app_root_release() {
         return lambda$1170228028;
     }
 

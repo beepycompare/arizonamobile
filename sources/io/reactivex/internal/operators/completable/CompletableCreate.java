@@ -11,7 +11,7 @@ import io.reactivex.internal.disposables.CancellableDisposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableCreate extends Completable {
     final CompletableOnSubscribe source;
 
@@ -31,7 +31,7 @@ public final class CompletableCreate extends Completable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class Emitter extends AtomicReference<Disposable> implements CompletableEmitter, Disposable {
         private static final long serialVersionUID = -2467358622224974244L;
         final CompletableObserver downstream;

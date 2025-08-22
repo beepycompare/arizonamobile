@@ -5,7 +5,7 @@ import io.reactivex.Notification;
 import io.reactivex.Single;
 import io.reactivex.SingleObserver;
 import io.reactivex.internal.operators.mixed.MaterializeSingleObserver;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableMaterialize<T> extends Single<Notification<T>> {
     final Completable source;
 

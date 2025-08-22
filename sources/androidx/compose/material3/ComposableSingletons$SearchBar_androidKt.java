@@ -13,7 +13,7 @@ public final class ComposableSingletons$SearchBar_androidKt {
     public static final ComposableSingletons$SearchBar_androidKt INSTANCE = new ComposableSingletons$SearchBar_androidKt();
 
     /* renamed from: lambda-1  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f43lambda1 = ComposableLambdaKt.composableLambdaInstance(159817819, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SearchBar_androidKt$lambda-1$1
+    public static Function2<Composer, Integer, Unit> f41lambda1 = ComposableLambdaKt.composableLambdaInstance(159817819, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SearchBar_androidKt$lambda-1$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -36,7 +36,7 @@ public final class ComposableSingletons$SearchBar_androidKt {
     });
 
     /* renamed from: lambda-2  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f44lambda2 = ComposableLambdaKt.composableLambdaInstance(-480309201, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SearchBar_androidKt$lambda-2$1
+    public static Function2<Composer, Integer, Unit> f42lambda2 = ComposableLambdaKt.composableLambdaInstance(-480309201, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SearchBar_androidKt$lambda-2$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -59,12 +59,12 @@ public final class ComposableSingletons$SearchBar_androidKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1781getLambda1$material3_release() {
-        return f43lambda1;
+    public final Function2<Composer, Integer, Unit> m2088getLambda1$material3_release() {
+        return f41lambda1;
     }
 
     /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1782getLambda2$material3_release() {
-        return f44lambda2;
+    public final Function2<Composer, Integer, Unit> m2089getLambda2$material3_release() {
+        return f42lambda2;
     }
 }

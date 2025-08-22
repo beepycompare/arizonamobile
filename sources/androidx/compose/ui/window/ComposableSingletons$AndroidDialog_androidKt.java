@@ -7,13 +7,11 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: AndroidDialog.android.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ComposableSingletons$AndroidDialog_androidKt {
     public static final ComposableSingletons$AndroidDialog_androidKt INSTANCE = new ComposableSingletons$AndroidDialog_androidKt();
-
-    /* renamed from: lambda-1  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f62lambda1 = ComposableLambdaKt.composableLambdaInstance(210148896, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.window.ComposableSingletons$AndroidDialog_androidKt$lambda-1$1
+    private static Function2<Composer, Integer, Unit> lambda$210148896 = ComposableLambdaKt.composableLambdaInstance(210148896, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.window.ComposableSingletons$AndroidDialog_androidKt$lambda$210148896$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -27,7 +25,7 @@ public final class ComposableSingletons$AndroidDialog_androidKt {
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(210148896, i, -1, "androidx.compose.ui.window.ComposableSingletons$AndroidDialog_androidKt.lambda-1.<anonymous> (AndroidDialog.android.kt:228)");
+                ComposerKt.traceEventStart(210148896, i, -1, "androidx.compose.ui.window.ComposableSingletons$AndroidDialog_androidKt.lambda$210148896.<anonymous> (AndroidDialog.android.kt:247)");
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -35,8 +33,7 @@ public final class ComposableSingletons$AndroidDialog_androidKt {
         }
     });
 
-    /* renamed from: getLambda-1$ui_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m6938getLambda1$ui_release() {
-        return f62lambda1;
+    public final Function2<Composer, Integer, Unit> getLambda$210148896$ui_release() {
+        return lambda$210148896;
     }
 }

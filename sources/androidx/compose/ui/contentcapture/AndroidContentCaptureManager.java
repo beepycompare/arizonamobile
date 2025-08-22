@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.Trace;
 import android.util.LongSparseArray;
 import android.view.View;
 import android.view.autofill.AutofillId;
@@ -22,7 +23,6 @@ import androidx.compose.ui.node.Owner;
 import androidx.compose.ui.platform.AndroidComposeView;
 import androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat;
 import androidx.compose.ui.platform.SemanticsNodeCopy;
-import androidx.compose.ui.platform.SemanticsNodeWithAdjustedBounds;
 import androidx.compose.ui.platform.SemanticsUtils_androidKt;
 import androidx.compose.ui.platform.coreshims.AutofillIdCompat;
 import androidx.compose.ui.platform.coreshims.ContentCaptureSessionCompat;
@@ -34,6 +34,8 @@ import androidx.compose.ui.semantics.SemanticsActions;
 import androidx.compose.ui.semantics.SemanticsConfiguration;
 import androidx.compose.ui.semantics.SemanticsConfigurationKt;
 import androidx.compose.ui.semantics.SemanticsNode;
+import androidx.compose.ui.semantics.SemanticsNodeWithAdjustedBounds;
+import androidx.compose.ui.semantics.SemanticsOwnerKt;
 import androidx.compose.ui.semantics.SemanticsProperties;
 import androidx.compose.ui.semantics.SemanticsPropertyKey;
 import androidx.compose.ui.text.AnnotatedString;
@@ -50,6 +52,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
@@ -66,7 +69,7 @@ import kotlinx.coroutines.channels.Channel;
 import kotlinx.coroutines.channels.ChannelIterator;
 import kotlinx.coroutines.channels.ChannelKt;
 /* compiled from: AndroidContentCaptureManager.android.kt */
-@Metadata(d1 = {"\u0000Ú\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0016\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0000\u0018\u0000 \u0082\u00012\u00020\u00012\u00020\u00022\u00020\u0003:\u0006\u0082\u0001\u0083\u0001\u0084\u0001B\u001d\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u000e\u0010\u0006\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\b0\u0007¢\u0006\u0002\u0010\tJ\u0010\u00109\u001a\u00020\u000eH\u0080@¢\u0006\u0004\b:\u0010;J\u001a\u0010<\u001a\u00020\u000e2\u0006\u0010=\u001a\u00020>2\b\u0010?\u001a\u0004\u0018\u00010@H\u0002J\u0010\u0010A\u001a\u00020\u000e2\u0006\u0010=\u001a\u00020>H\u0002J\u0016\u0010B\u001a\u00020\u000e2\f\u0010C\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eH\u0002J\b\u0010D\u001a\u00020\u000eH\u0002J\b\u0010E\u001a\u00020\u000eH\u0002J\b\u0010F\u001a\u00020\u000eH\u0002J\b\u0010G\u001a\u00020\u000eH\u0002J\r\u0010H\u001a\u00020\u000eH\u0000¢\u0006\u0002\bIJ-\u0010J\u001a\u00020\u000e2\u0006\u0010K\u001a\u00020L2\u0006\u0010M\u001a\u00020N2\u000e\u0010O\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010Q0PH\u0001¢\u0006\u0002\bRJ\r\u0010S\u001a\u00020\u000eH\u0000¢\u0006\u0002\bTJ\r\u0010U\u001a\u00020\u000eH\u0000¢\u0006\u0002\bVJ\r\u0010W\u001a\u00020\u000eH\u0000¢\u0006\u0002\bXJ\r\u0010Y\u001a\u00020\u000eH\u0000¢\u0006\u0002\bZJ\u0010\u0010[\u001a\u00020\u000e2\u0006\u0010\\\u001a\u00020]H\u0016J\u0010\u0010^\u001a\u00020\u000e2\u0006\u0010\\\u001a\u00020]H\u0016J\u0010\u0010_\u001a\u00020\u000e2\u0006\u0010`\u001a\u00020aH\u0016J\u0010\u0010b\u001a\u00020\u000e2\u0006\u0010`\u001a\u00020aH\u0016J%\u0010c\u001a\u00020\u000e2\u0006\u0010d\u001a\u00020\u00002\u000e\u0010e\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010g0fH\u0001¢\u0006\u0002\bhJ\u0018\u0010i\u001a\u00020\u000e2\u0006\u0010j\u001a\u00020k2\u0006\u0010l\u001a\u000203H\u0002J\b\u0010m\u001a\u00020\u000eH\u0002J\u0018\u0010n\u001a\u00020\u000e2\u0006\u0010o\u001a\u00020>2\u0006\u0010p\u001a\u00020qH\u0002J\b\u0010r\u001a\u00020\u000eH\u0002J\u0018\u0010s\u001a\u00020\u000e2\u0006\u0010t\u001a\u00020>2\u0006\u0010u\u001a\u00020kH\u0002J\u0010\u0010v\u001a\u00020\u000e2\u0006\u0010u\u001a\u00020kH\u0002J\b\u0010w\u001a\u00020\u000eH\u0002J\u0010\u0010x\u001a\u00020\u000e2\u0006\u0010u\u001a\u00020kH\u0002JG\u0010y\u001a\u00020\u000e\"\u0004\b\u0000\u0010z*\b\u0012\u0004\u0012\u0002Hz0{2\u0018\u0010|\u001a\u0014\u0012\u0004\u0012\u00020>\u0012\u0004\u0012\u0002Hz\u0012\u0004\u0012\u00020\u000e0}2\u0012\u0010~\u001a\u000e\u0012\u0004\u0012\u0002Hz\u0012\u0004\u0012\u00020\u00130\u007fH\u0082\bJ'\u0010\u0080\u0001\u001a\u00020\u000e*\u00020k2\u0018\u0010|\u001a\u0014\u0012\u0004\u0012\u00020>\u0012\u0004\u0012\u00020k\u0012\u0004\u0012\u00020\u000e0}H\u0002J\u0017\u0010\u0081\u0001\u001a\u0004\u0018\u00010@*\u00020k2\u0006\u0010t\u001a\u00020>H\u0002R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R&\u0010\u0016\u001a\u0004\u0018\u00010\b8\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b\u0017\u0010\u0018\u001a\u0004\b\u0019\u0010\u001a\"\u0004\b\u001b\u0010\u001cR\"\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001e8@X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#R\u000e\u0010$\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\u00020'X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b(\u0010)R\u0014\u0010*\u001a\u00020\u00138@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b+\u0010,R\"\u0010\u0006\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\b0\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b-\u0010.\"\u0004\b/\u00100R\u0014\u00101\u001a\b\u0012\u0004\u0012\u00020302X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u000203X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b7\u00108¨\u0006\u0085\u0001"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;", "Landroidx/compose/ui/contentcapture/ContentCaptureManager;", "Landroidx/lifecycle/DefaultLifecycleObserver;", "Landroid/view/View$OnAttachStateChangeListener;", "view", "Landroidx/compose/ui/platform/AndroidComposeView;", "onContentCaptureSession", "Lkotlin/Function0;", "Landroidx/compose/ui/platform/coreshims/ContentCaptureSessionCompat;", "(Landroidx/compose/ui/platform/AndroidComposeView;Lkotlin/jvm/functions/Function0;)V", "SendRecurringContentCaptureEventsIntervalMillis", "", "boundsUpdateChannel", "Lkotlinx/coroutines/channels/Channel;", "", "bufferedEvents", "", "Landroidx/compose/ui/contentcapture/ContentCaptureEvent;", "checkingForSemanticsChanges", "", "contentCaptureChangeChecker", "Ljava/lang/Runnable;", "contentCaptureSession", "getContentCaptureSession$ui_release$annotations", "()V", "getContentCaptureSession$ui_release", "()Landroidx/compose/ui/platform/coreshims/ContentCaptureSessionCompat;", "setContentCaptureSession$ui_release", "(Landroidx/compose/ui/platform/coreshims/ContentCaptureSessionCompat;)V", "currentSemanticsNodes", "Landroidx/collection/IntObjectMap;", "Landroidx/compose/ui/platform/SemanticsNodeWithAdjustedBounds;", "getCurrentSemanticsNodes$ui_release", "()Landroidx/collection/IntObjectMap;", "setCurrentSemanticsNodes$ui_release", "(Landroidx/collection/IntObjectMap;)V", "currentSemanticsNodesInvalidated", "currentSemanticsNodesSnapshotTimestampMillis", "handler", "Landroid/os/Handler;", "getHandler$ui_release", "()Landroid/os/Handler;", "isEnabled", "isEnabled$ui_release", "()Z", "getOnContentCaptureSession", "()Lkotlin/jvm/functions/Function0;", "setOnContentCaptureSession", "(Lkotlin/jvm/functions/Function0;)V", "previousSemanticsNodes", "Landroidx/collection/MutableIntObjectMap;", "Landroidx/compose/ui/platform/SemanticsNodeCopy;", "previousSemanticsRoot", "translateStatus", "Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$TranslateStatus;", "getView", "()Landroidx/compose/ui/platform/AndroidComposeView;", "boundsUpdatesEventLoop", "boundsUpdatesEventLoop$ui_release", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "bufferContentCaptureViewAppeared", "virtualId", "", "viewStructure", "Landroidx/compose/ui/platform/coreshims/ViewStructureCompat;", "bufferContentCaptureViewDisappeared", "checkForContentCapturePropertyChanges", "newSemanticsNodes", "clearTranslatedText", "hideTranslatedText", "notifyContentCaptureChanges", "notifySubtreeStateChangeIfNeeded", "onClearTranslation", "onClearTranslation$ui_release", "onCreateVirtualViewTranslationRequests", "virtualIds", "", "supportedFormats", "", "requestsCollector", "Ljava/util/function/Consumer;", "Landroid/view/translation/ViewTranslationRequest;", "onCreateVirtualViewTranslationRequests$ui_release", "onHideTranslation", "onHideTranslation$ui_release", "onLayoutChange", "onLayoutChange$ui_release", "onSemanticsChange", "onSemanticsChange$ui_release", "onShowTranslation", "onShowTranslation$ui_release", "onStart", "owner", "Landroidx/lifecycle/LifecycleOwner;", "onStop", "onViewAttachedToWindow", "v", "Landroid/view/View;", "onViewDetachedFromWindow", "onVirtualViewTranslationResponses", "contentCaptureManager", "response", "Landroid/util/LongSparseArray;", "Landroid/view/translation/ViewTranslationResponse;", "onVirtualViewTranslationResponses$ui_release", "sendContentCaptureAppearEvents", "newNode", "Landroidx/compose/ui/semantics/SemanticsNode;", "oldNode", "sendContentCaptureDisappearEvents", "sendContentCaptureTextUpdateEvent", "id", "newText", "", "showTranslatedText", "updateBuffersOnAppeared", FirebaseAnalytics.Param.INDEX, "node", "updateBuffersOnDisappeared", "updateSemanticsCopy", "updateTranslationOnAppeared", "fastForEachIndexedWithFilter", ExifInterface.GPS_DIRECTION_TRUE, "", "action", "Lkotlin/Function2;", "predicate", "Lkotlin/Function1;", "fastForEachReplacedVisibleChildren", "toViewStructure", "Companion", "TranslateStatus", "ViewTranslationHelperMethods", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Ú\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0010\u0016\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u0000 \u0085\u00012\u00020\u00012\u00020\u00022\u00020\u0003:\u0006\u0083\u0001\u0084\u0001\u0085\u0001B\u001f\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u000e\u0010\u0006\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\b0\u0007¢\u0006\u0004\b\t\u0010\nJ\u0010\u00107\u001a\u00020#2\u0006\u00108\u001a\u000209H\u0016J\u0010\u0010:\u001a\u00020#2\u0006\u00108\u001a\u000209H\u0016J\u0010\u0010>\u001a\u00020#2\u0006\u0010?\u001a\u00020@H\u0016J\u0010\u0010A\u001a\u00020#2\u0006\u0010?\u001a\u00020@H\u0016J\u0010\u0010B\u001a\u00020#H\u0080@¢\u0006\u0004\bC\u0010DJ\r\u0010E\u001a\u00020#H\u0000¢\u0006\u0002\bFJ\r\u0010G\u001a\u00020#H\u0000¢\u0006\u0002\bHJ\b\u0010I\u001a\u00020#H\u0002J\u0018\u0010J\u001a\u00020#2\u0006\u0010K\u001a\u00020L2\u0006\u0010M\u001a\u000202H\u0002J\u0016\u0010N\u001a\u00020#2\f\u0010O\u001a\b\u0012\u0004\u0012\u00020*0)H\u0002J\u0018\u0010P\u001a\u00020#2\u0006\u0010Q\u001a\u00020R2\u0006\u0010S\u001a\u00020TH\u0002J\b\u0010U\u001a\u00020#H\u0002J\b\u0010V\u001a\u00020#H\u0002J\u0016\u0010W\u001a\u0004\u0018\u00010X*\u00020L2\u0006\u0010Y\u001a\u00020RH\u0002J&\u0010Z\u001a\u00020#*\u00020L2\u0018\u0010[\u001a\u0014\u0012\u0004\u0012\u00020R\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020#0\\H\u0002JG\u0010]\u001a\u00020#\"\u0004\b\u0000\u0010^*\b\u0012\u0004\u0012\u0002H^0_2\u0018\u0010[\u001a\u0014\u0012\u0004\u0012\u00020R\u0012\u0004\u0012\u0002H^\u0012\u0004\u0012\u00020#0\\2\u0012\u0010`\u001a\u000e\u0012\u0004\u0012\u0002H^\u0012\u0004\u0012\u00020 0aH\u0082\bJ\u001a\u0010b\u001a\u00020#2\u0006\u0010c\u001a\u00020R2\b\u0010d\u001a\u0004\u0018\u00010XH\u0002J\u0010\u0010e\u001a\u00020#2\u0006\u0010c\u001a\u00020RH\u0002J\b\u0010f\u001a\u00020#H\u0002J\u0018\u0010g\u001a\u00020#2\u0006\u0010Y\u001a\u00020R2\u0006\u0010h\u001a\u00020LH\u0002J\u0010\u0010i\u001a\u00020#2\u0006\u0010h\u001a\u00020LH\u0002J\u0010\u0010j\u001a\u00020#2\u0006\u0010h\u001a\u00020LH\u0002J\r\u0010k\u001a\u00020#H\u0000¢\u0006\u0002\blJ\r\u0010m\u001a\u00020#H\u0000¢\u0006\u0002\bnJ\r\u0010o\u001a\u00020#H\u0000¢\u0006\u0002\bpJ\b\u0010q\u001a\u00020#H\u0002J\b\u0010r\u001a\u00020#H\u0002J\b\u0010s\u001a\u00020#H\u0002J-\u0010t\u001a\u00020#2\u0006\u0010u\u001a\u00020v2\u0006\u0010w\u001a\u00020x2\u000e\u0010y\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010{0zH\u0001¢\u0006\u0002\b|J(\u0010}\u001a\u00020#2\u0006\u0010~\u001a\u00020\u00002\u0010\u0010\u007f\u001a\f\u0012\u0007\u0012\u0005\u0018\u00010\u0081\u00010\u0080\u0001H\u0001¢\u0006\u0003\b\u0082\u0001R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\"\u0010\u0006\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\b0\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R&\u0010\u0011\u001a\u0004\u0018\u00010\b8\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b\u0012\u0010\u0013\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u0014\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010!\u001a\b\u0012\u0004\u0012\u00020#0\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\u00020%X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\"\u0010(\u001a\b\u0012\u0004\u0012\u00020*0)8@X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b+\u0010,\"\u0004\b-\u0010.R\u000e\u0010/\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00100\u001a\b\u0012\u0004\u0012\u00020201X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020 X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010;\u001a\u00020 8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b<\u0010=¨\u0006\u0086\u0001"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;", "Landroidx/compose/ui/contentcapture/ContentCaptureManager;", "Landroidx/lifecycle/DefaultLifecycleObserver;", "Landroid/view/View$OnAttachStateChangeListener;", "view", "Landroidx/compose/ui/platform/AndroidComposeView;", "onContentCaptureSession", "Lkotlin/Function0;", "Landroidx/compose/ui/platform/coreshims/ContentCaptureSessionCompat;", "<init>", "(Landroidx/compose/ui/platform/AndroidComposeView;Lkotlin/jvm/functions/Function0;)V", "getView", "()Landroidx/compose/ui/platform/AndroidComposeView;", "getOnContentCaptureSession", "()Lkotlin/jvm/functions/Function0;", "setOnContentCaptureSession", "(Lkotlin/jvm/functions/Function0;)V", "contentCaptureSession", "getContentCaptureSession$ui_release$annotations", "()V", "getContentCaptureSession$ui_release", "()Landroidx/compose/ui/platform/coreshims/ContentCaptureSessionCompat;", "setContentCaptureSession$ui_release", "(Landroidx/compose/ui/platform/coreshims/ContentCaptureSessionCompat;)V", "bufferedEvents", "", "Landroidx/compose/ui/contentcapture/ContentCaptureEvent;", "SendRecurringContentCaptureEventsIntervalMillis", "", "translateStatus", "Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$TranslateStatus;", "currentSemanticsNodesInvalidated", "", "boundsUpdateChannel", "Lkotlinx/coroutines/channels/Channel;", "", "handler", "Landroid/os/Handler;", "getHandler$ui_release", "()Landroid/os/Handler;", "currentSemanticsNodes", "Landroidx/collection/IntObjectMap;", "Landroidx/compose/ui/semantics/SemanticsNodeWithAdjustedBounds;", "getCurrentSemanticsNodes$ui_release", "()Landroidx/collection/IntObjectMap;", "setCurrentSemanticsNodes$ui_release", "(Landroidx/collection/IntObjectMap;)V", "currentSemanticsNodesSnapshotTimestampMillis", "previousSemanticsNodes", "Landroidx/collection/MutableIntObjectMap;", "Landroidx/compose/ui/platform/SemanticsNodeCopy;", "previousSemanticsRoot", "checkingForSemanticsChanges", "contentCaptureChangeChecker", "Ljava/lang/Runnable;", "onViewAttachedToWindow", "v", "Landroid/view/View;", "onViewDetachedFromWindow", "isEnabled", "isEnabled$ui_release", "()Z", "onStart", "owner", "Landroidx/lifecycle/LifecycleOwner;", "onStop", "boundsUpdatesEventLoop", "boundsUpdatesEventLoop$ui_release", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onSemanticsChange", "onSemanticsChange$ui_release", "onLayoutChange", "onLayoutChange$ui_release", "sendContentCaptureDisappearEvents", "sendContentCaptureAppearEvents", "newNode", "Landroidx/compose/ui/semantics/SemanticsNode;", "oldNode", "checkForContentCapturePropertyChanges", "newSemanticsNodes", "sendContentCaptureTextUpdateEvent", "id", "", "newText", "", "updateSemanticsCopy", "notifySubtreeStateChangeIfNeeded", "toViewStructure", "Landroidx/compose/ui/platform/coreshims/ViewStructureCompat;", FirebaseAnalytics.Param.INDEX, "fastForEachReplacedVisibleChildren", "action", "Lkotlin/Function2;", "fastForEachIndexedWithFilter", ExifInterface.GPS_DIRECTION_TRUE, "", "predicate", "Lkotlin/Function1;", "bufferContentCaptureViewAppeared", "virtualId", "viewStructure", "bufferContentCaptureViewDisappeared", "notifyContentCaptureChanges", "updateBuffersOnAppeared", "node", "updateBuffersOnDisappeared", "updateTranslationOnAppeared", "onShowTranslation", "onShowTranslation$ui_release", "onHideTranslation", "onHideTranslation$ui_release", "onClearTranslation", "onClearTranslation$ui_release", "showTranslatedText", "hideTranslatedText", "clearTranslatedText", "onCreateVirtualViewTranslationRequests", "virtualIds", "", "supportedFormats", "", "requestsCollector", "Ljava/util/function/Consumer;", "Landroid/view/translation/ViewTranslationRequest;", "onCreateVirtualViewTranslationRequests$ui_release", "onVirtualViewTranslationResponses", "contentCaptureManager", "response", "Landroid/util/LongSparseArray;", "Landroid/view/translation/ViewTranslationResponse;", "onVirtualViewTranslationResponses$ui_release", "TranslateStatus", "ViewTranslationHelperMethods", "Companion", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class AndroidContentCaptureManager implements ContentCaptureManager, DefaultLifecycleObserver, View.OnAttachStateChangeListener {
     public static final String VIEW_STRUCTURE_BUNDLE_KEY_ADDITIONAL_INDEX = "android.view.ViewStructure.extra.EXTRA_VIEW_NODE_INDEX";
@@ -90,12 +93,12 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     private final Runnable contentCaptureChangeChecker = new Runnable() { // from class: androidx.compose.ui.contentcapture.AndroidContentCaptureManager$$ExternalSyntheticLambda0
         @Override // java.lang.Runnable
         public final void run() {
-            AndroidContentCaptureManager.contentCaptureChangeChecker$lambda$0(AndroidContentCaptureManager.this);
+            AndroidContentCaptureManager.contentCaptureChangeChecker$lambda$2(AndroidContentCaptureManager.this);
         }
     };
 
     /* compiled from: AndroidContentCaptureManager.android.kt */
-    @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -151,7 +154,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: AndroidContentCaptureManager.android.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0004\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002j\u0002\b\u0003j\u0002\b\u0004¨\u0006\u0005"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$TranslateStatus;", "", "(Ljava/lang/String;I)V", "SHOW_ORIGINAL", "SHOW_TRANSLATED", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0005\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005¨\u0006\u0006"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$TranslateStatus;", "", "<init>", "(Ljava/lang/String;I)V", "SHOW_ORIGINAL", "SHOW_TRANSLATED", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class TranslateStatus {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -167,14 +170,6 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
             return $ENTRIES;
         }
 
-        public static TranslateStatus valueOf(String str) {
-            return (TranslateStatus) Enum.valueOf(TranslateStatus.class, str);
-        }
-
-        public static TranslateStatus[] values() {
-            return (TranslateStatus[]) $VALUES.clone();
-        }
-
         private TranslateStatus(String str, int i) {
         }
 
@@ -182,6 +177,14 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
             TranslateStatus[] $values = $values();
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
+        }
+
+        public static TranslateStatus valueOf(String str) {
+            return (TranslateStatus) Enum.valueOf(TranslateStatus.class, str);
+        }
+
+        public static TranslateStatus[] values() {
+            return (TranslateStatus[]) $VALUES.clone();
         }
     }
 
@@ -196,21 +199,30 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     public final IntObjectMap<SemanticsNodeWithAdjustedBounds> getCurrentSemanticsNodes$ui_release() {
         if (this.currentSemanticsNodesInvalidated) {
             this.currentSemanticsNodesInvalidated = false;
-            this.currentSemanticsNodes = SemanticsUtils_androidKt.getAllUncoveredSemanticsNodesToIntObjectMap(this.view.getSemanticsOwner());
+            this.currentSemanticsNodes = SemanticsOwnerKt.getAllUncoveredSemanticsNodesToIntObjectMap(this.view.getSemanticsOwner(), -1);
             this.currentSemanticsNodesSnapshotTimestampMillis = System.currentTimeMillis();
         }
         return this.currentSemanticsNodes;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void contentCaptureChangeChecker$lambda$0(AndroidContentCaptureManager androidContentCaptureManager) {
+    public static final void contentCaptureChangeChecker$lambda$2(AndroidContentCaptureManager androidContentCaptureManager) {
         if (androidContentCaptureManager.isEnabled$ui_release()) {
-            Owner.measureAndLayout$default(androidContentCaptureManager.view, false, 1, null);
-            androidContentCaptureManager.sendContentCaptureDisappearEvents();
-            androidContentCaptureManager.sendContentCaptureAppearEvents(androidContentCaptureManager.view.getSemanticsOwner().getUnmergedRootSemanticsNode(), androidContentCaptureManager.previousSemanticsRoot);
-            androidContentCaptureManager.checkForContentCapturePropertyChanges(androidContentCaptureManager.getCurrentSemanticsNodes$ui_release());
-            androidContentCaptureManager.updateSemanticsCopy();
-            androidContentCaptureManager.checkingForSemanticsChanges = false;
+            Trace.beginSection("ContentCapture:changeChecker");
+            try {
+                Owner.measureAndLayout$default(androidContentCaptureManager.view, false, 1, null);
+                androidContentCaptureManager.sendContentCaptureDisappearEvents();
+                Trace.beginSection("ContentCapture:sendAppearEvents");
+                androidContentCaptureManager.sendContentCaptureAppearEvents(androidContentCaptureManager.view.getSemanticsOwner().getUnmergedRootSemanticsNode(), androidContentCaptureManager.previousSemanticsRoot);
+                Unit unit = Unit.INSTANCE;
+                Trace.endSection();
+                androidContentCaptureManager.checkForContentCapturePropertyChanges(androidContentCaptureManager.getCurrentSemanticsNodes$ui_release());
+                androidContentCaptureManager.updateSemanticsCopy();
+                androidContentCaptureManager.checkingForSemanticsChanges = false;
+                Unit unit2 = Unit.INSTANCE;
+            } finally {
+                Trace.endSection();
+            }
         }
     }
 
@@ -238,15 +250,15 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
         this.contentCaptureSession = null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0093, code lost:
-        if (kotlinx.coroutines.DelayKt.delay(r6, r0) == r1) goto L28;
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0084, code lost:
+        if (kotlinx.coroutines.DelayKt.delay(r5, r0) == r1) goto L28;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0096  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x0093 -> B:13:0x0034). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0042  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0087  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x0084 -> B:13:0x0030). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -254,8 +266,6 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
         AndroidContentCaptureManager$boundsUpdatesEventLoop$1 androidContentCaptureManager$boundsUpdatesEventLoop$1;
         int i;
         ChannelIterator<Unit> it;
-        AndroidContentCaptureManager androidContentCaptureManager;
-        AndroidContentCaptureManager androidContentCaptureManager2;
         ChannelIterator<Unit> channelIterator;
         Object hasNext;
         if (continuation instanceof AndroidContentCaptureManager$boundsUpdatesEventLoop$1) {
@@ -268,9 +278,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     it = this.boundsUpdateChannel.iterator();
-                    androidContentCaptureManager = this;
-                    androidContentCaptureManager$boundsUpdatesEventLoop$1.L$0 = androidContentCaptureManager;
-                    androidContentCaptureManager$boundsUpdatesEventLoop$1.L$1 = it;
+                    androidContentCaptureManager$boundsUpdatesEventLoop$1.L$0 = it;
                     androidContentCaptureManager$boundsUpdatesEventLoop$1.label = 1;
                     hasNext = it.hasNext(androidContentCaptureManager$boundsUpdatesEventLoop$1);
                     if (hasNext != coroutine_suspended) {
@@ -278,32 +286,26 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                     return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
-                        channelIterator = (ChannelIterator) androidContentCaptureManager$boundsUpdatesEventLoop$1.L$1;
-                        androidContentCaptureManager2 = (AndroidContentCaptureManager) androidContentCaptureManager$boundsUpdatesEventLoop$1.L$0;
+                        channelIterator = (ChannelIterator) androidContentCaptureManager$boundsUpdatesEventLoop$1.L$0;
                         ResultKt.throwOnFailure(obj);
                         it = channelIterator;
-                        androidContentCaptureManager = androidContentCaptureManager2;
-                        androidContentCaptureManager$boundsUpdatesEventLoop$1.L$0 = androidContentCaptureManager;
-                        androidContentCaptureManager$boundsUpdatesEventLoop$1.L$1 = it;
+                        androidContentCaptureManager$boundsUpdatesEventLoop$1.L$0 = it;
                         androidContentCaptureManager$boundsUpdatesEventLoop$1.label = 1;
                         hasNext = it.hasNext(androidContentCaptureManager$boundsUpdatesEventLoop$1);
                         if (hasNext != coroutine_suspended) {
-                            AndroidContentCaptureManager androidContentCaptureManager3 = androidContentCaptureManager;
                             channelIterator = it;
                             obj = hasNext;
-                            androidContentCaptureManager2 = androidContentCaptureManager3;
                             if (!((Boolean) obj).booleanValue()) {
                                 channelIterator.next();
-                                if (androidContentCaptureManager2.isEnabled$ui_release()) {
-                                    androidContentCaptureManager2.notifyContentCaptureChanges();
+                                if (isEnabled$ui_release()) {
+                                    notifyContentCaptureChanges();
                                 }
-                                if (!androidContentCaptureManager2.checkingForSemanticsChanges) {
-                                    androidContentCaptureManager2.checkingForSemanticsChanges = true;
-                                    androidContentCaptureManager2.handler.post(androidContentCaptureManager2.contentCaptureChangeChecker);
+                                if (!this.checkingForSemanticsChanges) {
+                                    this.checkingForSemanticsChanges = true;
+                                    this.handler.post(this.contentCaptureChangeChecker);
                                 }
-                                long j = androidContentCaptureManager2.SendRecurringContentCaptureEventsIntervalMillis;
-                                androidContentCaptureManager$boundsUpdatesEventLoop$1.L$0 = androidContentCaptureManager2;
-                                androidContentCaptureManager$boundsUpdatesEventLoop$1.L$1 = channelIterator;
+                                long j = this.SendRecurringContentCaptureEventsIntervalMillis;
+                                androidContentCaptureManager$boundsUpdatesEventLoop$1.L$0 = channelIterator;
                                 androidContentCaptureManager$boundsUpdatesEventLoop$1.label = 2;
                             } else {
                                 return Unit.INSTANCE;
@@ -313,8 +315,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    channelIterator = (ChannelIterator) androidContentCaptureManager$boundsUpdatesEventLoop$1.L$1;
-                    androidContentCaptureManager2 = (AndroidContentCaptureManager) androidContentCaptureManager$boundsUpdatesEventLoop$1.L$0;
+                    channelIterator = (ChannelIterator) androidContentCaptureManager$boundsUpdatesEventLoop$1.L$0;
                     ResultKt.throwOnFailure(obj);
                     if (!((Boolean) obj).booleanValue()) {
                     }
@@ -465,13 +466,13 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void notifySubtreeStateChangeIfNeeded() {
-        this.boundsUpdateChannel.mo7559trySendJP2dKIU(Unit.INSTANCE);
+        this.boundsUpdateChannel.mo8125trySendJP2dKIU(Unit.INSTANCE);
     }
 
     private final ViewStructureCompat toViewStructure(SemanticsNode semanticsNode, int i) {
         AutofillIdCompat autofillId;
         AutofillId autofillId2;
-        String m5885toLegacyClassNameV4PA4sw;
+        String m6436toLegacyClassNameV4PA4sw;
         ContentCaptureSessionCompat contentCaptureSessionCompat = this.contentCaptureSession;
         if (contentCaptureSessionCompat == null || Build.VERSION.SDK_INT < 29 || (autofillId = ViewCompatShims.getAutofillId(this.view)) == null) {
             return null;
@@ -522,13 +523,13 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
             newVirtualViewStructure.setContentDescription(ListUtilsKt.fastJoinToString$default(list2, "\n", null, null, 0, null, null, 62, null));
         }
         Role role = (Role) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui_release, SemanticsProperties.INSTANCE.getRole());
-        if (role != null && (m5885toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m5885toLegacyClassNameV4PA4sw(role.m5910unboximpl())) != null) {
-            newVirtualViewStructure.setClassName(m5885toLegacyClassNameV4PA4sw);
+        if (role != null && (m6436toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m6436toLegacyClassNameV4PA4sw(role.m6460unboximpl())) != null) {
+            newVirtualViewStructure.setClassName(m6436toLegacyClassNameV4PA4sw);
         }
         TextLayoutResult textLayoutResult = SemanticsUtils_androidKt.getTextLayoutResult(unmergedConfig$ui_release);
         if (textLayoutResult != null) {
             TextLayoutInput layoutInput = textLayoutResult.getLayoutInput();
-            newVirtualViewStructure.setTextStyle(TextUnit.m6878getValueimpl(layoutInput.getStyle().m6178getFontSizeXSAIIZE()) * layoutInput.getDensity().getDensity() * layoutInput.getDensity().getFontScale(), 0, 0, 0);
+            newVirtualViewStructure.setTextStyle(TextUnit.m7445getValueimpl(layoutInput.getStyle().m6744getFontSizeXSAIIZE()) * layoutInput.getDensity().getDensity() * layoutInput.getDensity().getFontScale(), 0, 0, 0);
         }
         Rect boundsInParent$ui_release = semanticsNode.getBoundsInParent$ui_release();
         newVirtualViewStructure.setDimens((int) boundsInParent$ui_release.getLeft(), (int) boundsInParent$ui_release.getTop(), 0, 0, (int) (boundsInParent$ui_release.getRight() - boundsInParent$ui_release.getLeft()), (int) (boundsInParent$ui_release.getBottom() - boundsInParent$ui_release.getTop()));
@@ -572,7 +573,6 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     }
 
     private final void notifyContentCaptureChanges() {
-        AutofillId newAutofillId;
         ContentCaptureSessionCompat contentCaptureSessionCompat = this.contentCaptureSession;
         if (contentCaptureSessionCompat == null || Build.VERSION.SDK_INT < 29 || this.bufferedEvents.isEmpty()) {
             return;
@@ -587,8 +587,13 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
                 if (structureCompat != null) {
                     contentCaptureSessionCompat.notifyViewAppeared(structureCompat.toViewStructure());
                 }
-            } else if (i2 == 2 && (newAutofillId = contentCaptureSessionCompat.newAutofillId(contentCaptureEvent.getId())) != null) {
-                contentCaptureSessionCompat.notifyViewDisappeared(newAutofillId);
+            } else if (i2 != 2) {
+                throw new NoWhenBranchMatchedException();
+            } else {
+                AutofillId newAutofillId = contentCaptureSessionCompat.newAutofillId(contentCaptureEvent.getId());
+                if (newAutofillId != null) {
+                    contentCaptureSessionCompat.notifyViewDisappeared(newAutofillId);
+                }
             }
         }
         contentCaptureSessionCompat.flush();
@@ -769,7 +774,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     }
 
     /* compiled from: AndroidContentCaptureManager.android.kt */
-    @Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0016\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\bÃ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J \u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u000e\u0010\u0007\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\t0\bH\u0002J0\u0010\n\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u000e\u0010\u000f\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00110\u0010H\u0007J \u0010\u0012\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u000e\u0010\u0007\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\t0\bH\u0007¨\u0006\u0013"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$ViewTranslationHelperMethods;", "", "()V", "doTranslation", "", "contentCaptureManager", "Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;", "response", "Landroid/util/LongSparseArray;", "Landroid/view/translation/ViewTranslationResponse;", "onCreateVirtualViewTranslationRequests", "virtualIds", "", "supportedFormats", "", "requestsCollector", "Ljava/util/function/Consumer;", "Landroid/view/translation/ViewTranslationRequest;", "onVirtualViewTranslationResponses", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0016\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\bÃ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J0\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u000e\u0010\f\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000e0\rH\u0007J \u0010\u000f\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u000e\u0010\u0010\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00120\u0011H\u0007J \u0010\u0013\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u000e\u0010\u0010\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00120\u0011H\u0002¨\u0006\u0014"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$ViewTranslationHelperMethods;", "", "<init>", "()V", "onCreateVirtualViewTranslationRequests", "", "contentCaptureManager", "Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager;", "virtualIds", "", "supportedFormats", "", "requestsCollector", "Ljava/util/function/Consumer;", "Landroid/view/translation/ViewTranslationRequest;", "onVirtualViewTranslationResponses", "response", "Landroid/util/LongSparseArray;", "Landroid/view/translation/ViewTranslationResponse;", "doTranslation", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     private static final class ViewTranslationHelperMethods {
         public static final ViewTranslationHelperMethods INSTANCE = new ViewTranslationHelperMethods();
@@ -841,7 +846,7 @@ public final class AndroidContentCaptureManager implements ContentCaptureManager
     }
 
     /* compiled from: AndroidContentCaptureManager.android.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$Companion;", "", "()V", "VIEW_STRUCTURE_BUNDLE_KEY_ADDITIONAL_INDEX", "", "VIEW_STRUCTURE_BUNDLE_KEY_TIMESTAMP", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Landroidx/compose/ui/contentcapture/AndroidContentCaptureManager$Companion;", "", "<init>", "()V", "VIEW_STRUCTURE_BUNDLE_KEY_TIMESTAMP", "", "VIEW_STRUCTURE_BUNDLE_KEY_ADDITIONAL_INDEX", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

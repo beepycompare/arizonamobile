@@ -4,7 +4,7 @@ import io.reactivex.Observer;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class HalfSerializer {
     private HalfSerializer() {
         throw new IllegalStateException("No instances!");

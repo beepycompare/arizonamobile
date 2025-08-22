@@ -8,7 +8,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.NoSuchElementException;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSingle<T> extends AbstractFlowableWithUpstream<T, T> {
     final T defaultValue;
     final boolean failOnEmpty;
@@ -24,7 +24,7 @@ public final class FlowableSingle<T> extends AbstractFlowableWithUpstream<T, T> 
         this.source.subscribe((FlowableSubscriber) new SingleElementSubscriber(subscriber, this.defaultValue, this.failOnEmpty));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SingleElementSubscriber<T> extends DeferredScalarSubscription<T> implements FlowableSubscriber<T> {
         private static final long serialVersionUID = -5526049321428043809L;
         final T defaultValue;

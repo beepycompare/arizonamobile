@@ -5,7 +5,7 @@ import io.reactivex.FlowableSubscriber;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSkip<T> extends AbstractFlowableWithUpstream<T, T> {
     final long n;
 
@@ -19,7 +19,7 @@ public final class FlowableSkip<T> extends AbstractFlowableWithUpstream<T, T> {
         this.source.subscribe((FlowableSubscriber) new SkipSubscriber(subscriber, this.n));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SkipSubscriber<T> implements FlowableSubscriber<T>, Subscription {
         final Subscriber<? super T> downstream;
         long remaining;

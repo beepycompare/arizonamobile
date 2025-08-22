@@ -17,7 +17,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableFlatMapCompletable<T> extends AbstractFlowableWithUpstream<T, T> {
     final boolean delayErrors;
     final Function<? super T, ? extends CompletableSource> mapper;
@@ -35,7 +35,7 @@ public final class FlowableFlatMapCompletable<T> extends AbstractFlowableWithUps
         this.source.subscribe((FlowableSubscriber) new FlatMapCompletableMainSubscriber(subscriber, this.mapper, this.delayErrors, this.maxConcurrency));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FlatMapCompletableMainSubscriber<T> extends BasicIntQueueSubscription<T> implements FlowableSubscriber<T> {
         private static final long serialVersionUID = 8443155186132538303L;
         volatile boolean cancelled;
@@ -164,7 +164,7 @@ public final class FlowableFlatMapCompletable<T> extends AbstractFlowableWithUps
             onError(th);
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class InnerConsumer extends AtomicReference<Disposable> implements CompletableObserver, Disposable {
             private static final long serialVersionUID = 8606673141535671828L;
 

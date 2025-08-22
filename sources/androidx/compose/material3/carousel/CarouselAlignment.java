@@ -10,54 +10,54 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class CarouselAlignment {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Start = m2674constructorimpl(-1);
-    private static final int Center = m2674constructorimpl(0);
-    private static final int End = m2674constructorimpl(1);
+    private static final int Start = m2981constructorimpl(-1);
+    private static final int Center = m2981constructorimpl(0);
+    private static final int End = m2981constructorimpl(1);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ CarouselAlignment m2673boximpl(int i) {
+    public static final /* synthetic */ CarouselAlignment m2980boximpl(int i) {
         return new CarouselAlignment(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m2674constructorimpl(int i) {
+    private static int m2981constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2675equalsimpl(int i, Object obj) {
-        return (obj instanceof CarouselAlignment) && i == ((CarouselAlignment) obj).m2679unboximpl();
+    public static boolean m2982equalsimpl(int i, Object obj) {
+        return (obj instanceof CarouselAlignment) && i == ((CarouselAlignment) obj).m2986unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m2676equalsimpl0(int i, int i2) {
+    public static final boolean m2983equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2677hashCodeimpl(int i) {
+    public static int m2984hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2678toStringimpl(int i) {
+    public static String m2985toStringimpl(int i) {
         return "CarouselAlignment(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m2675equalsimpl(this.value, obj);
+        return m2982equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m2677hashCodeimpl(this.value);
+        return m2984hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m2678toStringimpl(this.value);
+        return m2985toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m2679unboximpl() {
+    public final /* synthetic */ int m2986unboximpl() {
         return this.value;
     }
 
@@ -73,17 +73,17 @@ public final class CarouselAlignment {
         }
 
         /* renamed from: getStart-NUL3oTo  reason: not valid java name */
-        public final int m2682getStartNUL3oTo() {
+        public final int m2989getStartNUL3oTo() {
             return CarouselAlignment.Start;
         }
 
         /* renamed from: getCenter-NUL3oTo  reason: not valid java name */
-        public final int m2680getCenterNUL3oTo() {
+        public final int m2987getCenterNUL3oTo() {
             return CarouselAlignment.Center;
         }
 
         /* renamed from: getEnd-NUL3oTo  reason: not valid java name */
-        public final int m2681getEndNUL3oTo() {
+        public final int m2988getEndNUL3oTo() {
             return CarouselAlignment.End;
         }
     }

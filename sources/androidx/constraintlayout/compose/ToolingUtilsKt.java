@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.MutablePropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
@@ -32,7 +34,7 @@ public final class ToolingUtilsKt {
     private static final int CONSTRAINTS = 0;
     private static final int CONSTRAINTS_JSON_VERSION = 1;
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.mutableProperty1(new MutablePropertyReference1Impl(ToolingUtilsKt.class, "designInfoProvider", "getDesignInfoProvider(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Landroidx/constraintlayout/compose/DesignInfoProvider;", 1))};
-    private static final SemanticsPropertyKey<DesignInfoProvider> DesignInfoDataKey = new SemanticsPropertyKey<>("DesignInfoProvider", null, 2, null);
+    private static final SemanticsPropertyKey<DesignInfoProvider> DesignInfoDataKey = new SemanticsPropertyKey<>("DesignInfoProvider", (Function2) null, 2, (DefaultConstructorMarker) null);
 
     public static /* synthetic */ void getDesignInfoProvider$annotations(SemanticsPropertyReceiver semanticsPropertyReceiver) {
     }

@@ -26,7 +26,7 @@ public final class ComposableSingletons$ErrorDialogScreenKt {
     public static final ComposableSingletons$ErrorDialogScreenKt INSTANCE = new ComposableSingletons$ErrorDialogScreenKt();
 
     /* renamed from: lambda$-1032883188  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f76lambda$1032883188 = ComposableLambdaKt.composableLambdaInstance(-1032883188, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$ErrorDialogScreenKt$$ExternalSyntheticLambda0
+    private static Function3<BoxScope, Composer, Integer, Unit> f70lambda$1032883188 = ComposableLambdaKt.composableLambdaInstance(-1032883188, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$ErrorDialogScreenKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__1032883188$lambda$0;
@@ -43,12 +43,12 @@ public final class ComposableSingletons$ErrorDialogScreenKt {
         }
     });
 
-    /* renamed from: getLambda$-1032883188$dialogs_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8373getLambda$1032883188$dialogs_release_web() {
-        return f76lambda$1032883188;
+    /* renamed from: getLambda$-1032883188$dialogs_release  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m8939getLambda$1032883188$dialogs_release() {
+        return f70lambda$1032883188;
     }
 
-    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$24227829$dialogs_release_web() {
+    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$24227829$dialogs_release() {
         return lambda$24227829;
     }
 
@@ -62,7 +62,7 @@ public final class ComposableSingletons$ErrorDialogScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1032883188, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$ErrorDialogScreenKt.lambda$-1032883188.<anonymous> (ErrorDialogScreen.kt:69)");
             }
-            TextKt.m2497Text4IGK_g("ЗАКРЫТЬ", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
+            TextKt.m2804Text4IGK_g("ЗАКРЫТЬ", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -80,7 +80,7 @@ public final class ComposableSingletons$ErrorDialogScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(24227829, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$ErrorDialogScreenKt.lambda$24227829.<anonymous> (ErrorDialogScreen.kt:75)");
             }
-            TextKt.m2497Text4IGK_g("ПОВТОРИТЬ", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
+            TextKt.m2804Text4IGK_g("ПОВТОРИТЬ", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

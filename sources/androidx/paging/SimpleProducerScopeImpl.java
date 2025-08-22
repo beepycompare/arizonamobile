@@ -44,9 +44,9 @@ public final class SimpleProducerScopeImpl<T> implements SimpleProducerScope<T>,
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: invokeOnClose */
-    public void mo10096invokeOnClose(Function1<? super Throwable, Unit> handler) {
+    public void mo10660invokeOnClose(Function1<? super Throwable, Unit> handler) {
         Intrinsics.checkNotNullParameter(handler, "handler");
-        this.channel.mo10096invokeOnClose(handler);
+        this.channel.mo10660invokeOnClose(handler);
     }
 
     @Override // kotlinx.coroutines.channels.SendChannel
@@ -67,8 +67,8 @@ public final class SimpleProducerScopeImpl<T> implements SimpleProducerScope<T>,
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: trySend-JP2dKIU  reason: not valid java name */
-    public Object mo7559trySendJP2dKIU(T t) {
-        return this.channel.mo7559trySendJP2dKIU(t);
+    public Object mo8125trySendJP2dKIU(T t) {
+        return this.channel.mo8125trySendJP2dKIU(t);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -131,7 +131,7 @@ public final class SimpleProducerScopeImpl<T> implements SimpleProducerScope<T>,
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(Throwable th) {
                                 Result.Companion companion = Result.Companion;
-                                cancellableContinuationImpl2.resumeWith(Result.m8500constructorimpl(Unit.INSTANCE));
+                                cancellableContinuationImpl2.resumeWith(Result.m9065constructorimpl(Unit.INSTANCE));
                             }
                         });
                         Object result = cancellableContinuationImpl.getResult();

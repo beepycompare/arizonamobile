@@ -1,102 +1,15 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Intent;
-import android.os.RemoteException;
-import io.appmetrica.analytics.internal.IAppMetricaService;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicBoolean;
-import kotlin.Unit;
 /* loaded from: classes4.dex */
-public abstract class Kh implements Callable {
-    public static final Jh d = new Jh();
+public final class Kh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0421m0 f523a;
-    public final Zk b;
-    public boolean c;
+    public final D9 f531a;
+    public final C0264g0 b;
+    public final boolean c;
 
-    public Kh(C0421m0 c0421m0, Zk zk) {
-        this.f523a = c0421m0;
-        this.b = zk;
-    }
-
-    public abstract void a(IAppMetricaService iAppMetricaService);
-
-    public void a(Throwable th) {
-    }
-
-    public final C0421m0 b() {
-        return this.f523a;
-    }
-
-    public boolean c() {
-        C0421m0 c0421m0 = this.f523a;
-        synchronized (c0421m0) {
-            if (c0421m0.d == null) {
-                c0421m0.e = new CountDownLatch(1);
-                Intent a2 = Ak.a(c0421m0.f945a);
-                try {
-                    c0421m0.g.b(c0421m0.f945a);
-                    c0421m0.f945a.bindService(a2, c0421m0.i, 1);
-                } catch (Throwable unused) {
-                }
-            }
-        }
-        this.f523a.a(5000L);
-        return true;
-    }
-
-    @Override // java.util.concurrent.Callable
-    public /* bridge */ /* synthetic */ Object call() {
-        a();
-        return Unit.INSTANCE;
-    }
-
-    public final boolean d() {
-        return this.c;
-    }
-
-    public final void a(boolean z) {
+    public Kh(D9 d9, C0264g0 c0264g0, boolean z) {
+        this.f531a = d9;
+        this.b = c0264g0;
         this.c = z;
-    }
-
-    public void a() {
-        IAppMetricaService iAppMetricaService;
-        try {
-            if (this.c) {
-                return;
-            }
-            this.c = true;
-            int i = 0;
-            do {
-                C0421m0 c0421m0 = this.f523a;
-                synchronized (c0421m0) {
-                    iAppMetricaService = c0421m0.d;
-                }
-                if (iAppMetricaService != null) {
-                    try {
-                        a(iAppMetricaService);
-                        Zk zk = this.b;
-                        if (zk == null || ((C0663vi) zk).a()) {
-                            this.f523a.c();
-                            return;
-                        }
-                        return;
-                    } catch (RemoteException unused) {
-                    }
-                }
-                i++;
-                if (!c()) {
-                    return;
-                }
-                AtomicBoolean atomicBoolean = U1.e;
-                if (U1.e.get()) {
-                    return;
-                }
-            } while (i < 3);
-        } catch (Throwable th) {
-            a(th);
-        }
     }
 }

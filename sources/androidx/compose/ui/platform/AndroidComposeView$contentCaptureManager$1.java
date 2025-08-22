@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AndroidComposeView.android.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public /* synthetic */ class AndroidComposeView$contentCaptureManager$1 extends FunctionReferenceImpl implements Function0<ContentCaptureSessionCompat> {
     /* JADX INFO: Access modifiers changed from: package-private */

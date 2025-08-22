@@ -5,23 +5,30 @@ import androidx.collection.LongObjectMap;
 import androidx.collection.LongObjectMapKt;
 import androidx.collection.MutableLongIntMap;
 import androidx.collection.MutableLongObjectMap;
+import androidx.compose.foundation.ComposeFoundationFlags;
 import androidx.compose.foundation.FocusableKt;
 import androidx.compose.foundation.gestures.DragGestureDetectorKt;
 import androidx.compose.foundation.gestures.ForEachGestureKt;
 import androidx.compose.foundation.gestures.TapGestureDetectorKt;
+import androidx.compose.foundation.internal.InlineClassHelperKt;
 import androidx.compose.foundation.text.Handle;
 import androidx.compose.foundation.text.TextDragObserver;
 import androidx.compose.foundation.text.TextLayoutHelperKt;
+import androidx.compose.foundation.text.contextmenu.modifier.TextContextMenuGesturesModifierKt;
+import androidx.compose.foundation.text.contextmenu.modifier.TextContextMenuToolbarHandlerModifierKt;
+import androidx.compose.foundation.text.contextmenu.modifier.ToolbarRequester;
+import androidx.compose.foundation.text.contextmenu.modifier.ToolbarRequesterImpl;
 import androidx.compose.foundation.text.input.internal.TextLayoutStateKt;
 import androidx.compose.foundation.text.selection.Selection;
 import androidx.compose.runtime.MutableState;
+import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.runtime.SnapshotStateKt__SnapshotStateKt;
+import androidx.compose.runtime.State;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.focus.FocusChangedModifierKt;
 import androidx.compose.ui.focus.FocusRequester;
 import androidx.compose.ui.focus.FocusRequesterModifierKt;
 import androidx.compose.ui.focus.FocusState;
-import androidx.compose.ui.geometry.InlineClassHelperKt;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.geometry.Rect;
 import androidx.compose.ui.hapticfeedback.HapticFeedback;
@@ -42,10 +49,12 @@ import androidx.compose.ui.platform.TextToolbarStatus;
 import androidx.compose.ui.text.AnnotatedString;
 import androidx.compose.ui.text.TextLayoutResult;
 import androidx.compose.ui.text.TextRange;
+import androidx.compose.ui.text.TextRangeKt;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.ListIterator;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.Pair;
@@ -63,15 +72,20 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.functions.Function6;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Ref;
+import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.CoroutineScope;
 /* compiled from: SelectionManager.kt */
-@Metadata(d1 = {"\u0000¸\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0000\b\u0000\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\"\u0010w\u001a\u00020\u00122\u0006\u0010x\u001a\u00020\u000b2\u0006\u0010y\u001a\u00020\u0012H\u0002ø\u0001\u0000¢\u0006\u0004\bz\u0010{J\r\u0010|\u001a\u00020OH\u0000¢\u0006\u0002\b}J\u001a\u0010~\u001a\u0004\u0018\u00010\u007f2\b\u0010\u0080\u0001\u001a\u00030\u0081\u0001H\u0000¢\u0006\u0003\b\u0082\u0001J\f\u0010\u0083\u0001\u001a\u0005\u0018\u00010\u0084\u0001H\u0002J\u0011\u0010\u0085\u0001\u001a\u0004\u0018\u00010NH\u0000¢\u0006\u0003\b\u0086\u0001J2\u0010\u0087\u0001\u001a\u0004\u0018\u00010Z2\u0007\u0010\u0088\u0001\u001a\u00020\u00122\u0007\u0010\u0089\u0001\u001a\u00020\u00122\u0007\u0010\u008a\u0001\u001a\u00020\u0007H\u0002ø\u0001\u0000¢\u0006\u0006\b\u008b\u0001\u0010\u008c\u0001J\u0011\u0010\u008d\u0001\u001a\u00030\u008e\u00012\u0007\u0010\u008a\u0001\u001a\u00020\u0007J\u000f\u0010\u008f\u0001\u001a\u00020\u0007H\u0000¢\u0006\u0003\b\u0090\u0001J\u000f\u0010\u0091\u0001\u001a\u00020\u0007H\u0000¢\u0006\u0003\b\u0092\u0001J\u000f\u0010\u0093\u0001\u001a\u00020\u0007H\u0000¢\u0006\u0003\b\u0094\u0001J\u0007\u0010\u0095\u0001\u001a\u00020OJ\u000f\u0010\u0096\u0001\u001a\u00020\u000bH\u0000¢\u0006\u0003\b\u0097\u0001J\u000f\u0010\u0098\u0001\u001a\u00020OH\u0000¢\u0006\u0003\b\u0099\u0001J:\u0010\u009a\u0001\u001a\u0018\u0012\u0006\u0012\u0004\u0018\u00010\t\u0012\u000b\u0012\t\u0012\u0004\u0012\u00020\t0\u009c\u00010\u009b\u00012\b\u0010\u009d\u0001\u001a\u00030\u009e\u00012\t\u0010\u009f\u0001\u001a\u0004\u0018\u00010\tH\u0000¢\u0006\u0003\b \u0001J\u001b\u0010¡\u0001\u001a\u00020O2\u0007\u0010\u0088\u0001\u001a\u00020\u0012ø\u0001\u0000¢\u0006\u0005\b¢\u0001\u0010\u001eJ\u001b\u0010£\u0001\u001a\u00020O2\u0007\u0010¤\u0001\u001a\u00020Z2\u0007\u0010¥\u0001\u001a\u00020\tH\u0002J\u000f\u0010¦\u0001\u001a\u00020\u0007H\u0001¢\u0006\u0003\b§\u0001J1\u0010¨\u0001\u001a\u00020O2\u0007\u0010\u0088\u0001\u001a\u00020\u00122\u0007\u0010\u008a\u0001\u001a\u00020\u00072\b\u0010©\u0001\u001a\u00030ª\u0001H\u0002ø\u0001\u0000¢\u0006\u0006\b«\u0001\u0010¬\u0001J\t\u0010\u00ad\u0001\u001a\u00020OH\u0002J\t\u0010®\u0001\u001a\u00020OH\u0002J:\u0010¯\u0001\u001a\u00020\u00072\u0007\u0010\u0088\u0001\u001a\u00020\u00122\u0007\u0010\u0089\u0001\u001a\u00020\u00122\u0007\u0010\u008a\u0001\u001a\u00020\u00072\b\u0010©\u0001\u001a\u00030ª\u0001H\u0000ø\u0001\u0000¢\u0006\u0006\b°\u0001\u0010±\u0001J;\u0010¯\u0001\u001a\u00020\u00072\t\u0010²\u0001\u001a\u0004\u0018\u00010\u00122\u0006\u0010X\u001a\u00020\u00122\u0007\u0010\u008a\u0001\u001a\u00020\u00072\b\u0010©\u0001\u001a\u00030ª\u0001H\u0000ø\u0001\u0000¢\u0006\u0006\b³\u0001\u0010´\u0001J\t\u0010µ\u0001\u001a\u00020OH\u0002J\u001d\u0010¶\u0001\u001a\u00020I*\u00020I2\u000e\u0010·\u0001\u001a\t\u0012\u0004\u0012\u00020O0¸\u0001H\u0002R\u0014\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\t0\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R(\u0010\f\u001a\u0004\u0018\u00010\u000b2\b\u0010\n\u001a\u0004\u0018\u00010\u000b@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R5\u0010\u0013\u001a\u0004\u0018\u00010\u00122\b\u0010\u0011\u001a\u0004\u0018\u00010\u00128F@BX\u0086\u008e\u0002ø\u0001\u0000ø\u0001\u0001¢\u0006\u0012\n\u0004\b\u0018\u0010\u0019\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R1\u0010\u001a\u001a\u00020\u00122\u0006\u0010\u0011\u001a\u00020\u00128@@BX\u0080\u008e\u0002ø\u0001\u0000ø\u0001\u0001¢\u0006\u0012\n\u0004\b\u001f\u0010\u0019\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR1\u0010 \u001a\u00020\u00122\u0006\u0010\u0011\u001a\u00020\u00128@@BX\u0080\u008e\u0002ø\u0001\u0000ø\u0001\u0001¢\u0006\u0012\n\u0004\b#\u0010\u0019\u001a\u0004\b!\u0010\u001c\"\u0004\b\"\u0010\u001eR/\u0010%\u001a\u0004\u0018\u00010$2\b\u0010\u0011\u001a\u0004\u0018\u00010$8F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b*\u0010\u0019\u001a\u0004\b&\u0010'\"\u0004\b(\u0010)R\u0011\u0010+\u001a\u00020,8F¢\u0006\u0006\u001a\u0004\b-\u0010.R5\u0010/\u001a\u0004\u0018\u00010\u00122\b\u0010\u0011\u001a\u0004\u0018\u00010\u00128F@BX\u0086\u008e\u0002ø\u0001\u0000ø\u0001\u0001¢\u0006\u0012\n\u0004\b2\u0010\u0019\u001a\u0004\b0\u0010\u0015\"\u0004\b1\u0010\u0017R\u001a\u00103\u001a\u000204X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b5\u00106\"\u0004\b7\u00108R\u001c\u00109\u001a\u0004\u0018\u00010:X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b;\u0010<\"\u0004\b=\u0010>R+\u0010?\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u00078F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bD\u0010\u0019\u001a\u0004\b@\u0010A\"\u0004\bB\u0010CR\u0014\u0010E\u001a\u00020\u00078BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bE\u0010AR$\u0010F\u001a\u00020\u00072\u0006\u0010\n\u001a\u00020\u00078F@FX\u0086\u000e¢\u0006\f\u001a\u0004\bF\u0010A\"\u0004\bG\u0010CR\u0011\u0010H\u001a\u00020I8F¢\u0006\u0006\u001a\u0004\bJ\u0010KR(\u0010L\u001a\u0010\u0012\u0004\u0012\u00020N\u0012\u0004\u0012\u00020O\u0018\u00010MX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bP\u0010Q\"\u0004\bR\u0010SR@\u0010U\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\t\u0012\u0004\u0012\u00020O0M2\u0014\u0010T\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\t\u0012\u0004\u0012\u00020O0M@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bV\u0010Q\"\u0004\bW\u0010SR\u0016\u0010X\u001a\u0004\u0018\u00010\u0012X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0002\n\u0000R&\u0010Y\u001a\u0004\u0018\u00010Z8\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b[\u0010\\\u001a\u0004\b]\u0010^\"\u0004\b_\u0010`R(\u0010a\u001a\u0004\u0018\u00010\t2\b\u0010\n\u001a\u0004\u0018\u00010\t8F@FX\u0086\u000e¢\u0006\f\u001a\u0004\bb\u0010c\"\u0004\bd\u0010eR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010f\u001a\u00020\u00078BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bg\u0010AR$\u0010h\u001a\u00020\u00072\u0006\u0010\n\u001a\u00020\u0007@@X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bi\u0010A\"\u0004\bj\u0010CR\u0011\u0010k\u001a\u00020,8F¢\u0006\u0006\u001a\u0004\bl\u0010.R5\u0010m\u001a\u0004\u0018\u00010\u00122\b\u0010\u0011\u001a\u0004\u0018\u00010\u00128F@BX\u0086\u008e\u0002ø\u0001\u0000ø\u0001\u0001¢\u0006\u0012\n\u0004\bp\u0010\u0019\u001a\u0004\bn\u0010\u0015\"\u0004\bo\u0010\u0017R\u001c\u0010q\u001a\u0004\u0018\u00010rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bs\u0010t\"\u0004\bu\u0010v\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006¹\u0001"}, d2 = {"Landroidx/compose/foundation/text/selection/SelectionManager;", "", "selectionRegistrar", "Landroidx/compose/foundation/text/selection/SelectionRegistrarImpl;", "(Landroidx/compose/foundation/text/selection/SelectionRegistrarImpl;)V", "_isInTouchMode", "Landroidx/compose/runtime/MutableState;", "", "_selection", "Landroidx/compose/foundation/text/selection/Selection;", "value", "Landroidx/compose/ui/layout/LayoutCoordinates;", "containerLayoutCoordinates", "getContainerLayoutCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "setContainerLayoutCoordinates", "(Landroidx/compose/ui/layout/LayoutCoordinates;)V", "<set-?>", "Landroidx/compose/ui/geometry/Offset;", "currentDragPosition", "getCurrentDragPosition-_m7T9-E", "()Landroidx/compose/ui/geometry/Offset;", "setCurrentDragPosition-_kEHs6E", "(Landroidx/compose/ui/geometry/Offset;)V", "currentDragPosition$delegate", "Landroidx/compose/runtime/MutableState;", "dragBeginPosition", "getDragBeginPosition-F1C5BW0$foundation_release", "()J", "setDragBeginPosition-k-4lQ0M", "(J)V", "dragBeginPosition$delegate", "dragTotalDistance", "getDragTotalDistance-F1C5BW0$foundation_release", "setDragTotalDistance-k-4lQ0M", "dragTotalDistance$delegate", "Landroidx/compose/foundation/text/Handle;", "draggingHandle", "getDraggingHandle", "()Landroidx/compose/foundation/text/Handle;", "setDraggingHandle", "(Landroidx/compose/foundation/text/Handle;)V", "draggingHandle$delegate", "endHandleLineHeight", "", "getEndHandleLineHeight", "()F", "endHandlePosition", "getEndHandlePosition-_m7T9-E", "setEndHandlePosition-_kEHs6E", "endHandlePosition$delegate", "focusRequester", "Landroidx/compose/ui/focus/FocusRequester;", "getFocusRequester", "()Landroidx/compose/ui/focus/FocusRequester;", "setFocusRequester", "(Landroidx/compose/ui/focus/FocusRequester;)V", "hapticFeedBack", "Landroidx/compose/ui/hapticfeedback/HapticFeedback;", "getHapticFeedBack", "()Landroidx/compose/ui/hapticfeedback/HapticFeedback;", "setHapticFeedBack", "(Landroidx/compose/ui/hapticfeedback/HapticFeedback;)V", "hasFocus", "getHasFocus", "()Z", "setHasFocus", "(Z)V", "hasFocus$delegate", "isDraggingInProgress", "isInTouchMode", "setInTouchMode", "modifier", "Landroidx/compose/ui/Modifier;", "getModifier", "()Landroidx/compose/ui/Modifier;", "onCopyHandler", "Lkotlin/Function1;", "Landroidx/compose/ui/text/AnnotatedString;", "", "getOnCopyHandler", "()Lkotlin/jvm/functions/Function1;", "setOnCopyHandler", "(Lkotlin/jvm/functions/Function1;)V", "newOnSelectionChange", "onSelectionChange", "getOnSelectionChange", "setOnSelectionChange", "previousPosition", "previousSelectionLayout", "Landroidx/compose/foundation/text/selection/SelectionLayout;", "getPreviousSelectionLayout$foundation_release$annotations", "()V", "getPreviousSelectionLayout$foundation_release", "()Landroidx/compose/foundation/text/selection/SelectionLayout;", "setPreviousSelectionLayout$foundation_release", "(Landroidx/compose/foundation/text/selection/SelectionLayout;)V", "selection", "getSelection", "()Landroidx/compose/foundation/text/selection/Selection;", "setSelection", "(Landroidx/compose/foundation/text/selection/Selection;)V", "shouldShowMagnifier", "getShouldShowMagnifier", "showToolbar", "getShowToolbar$foundation_release", "setShowToolbar$foundation_release", "startHandleLineHeight", "getStartHandleLineHeight", "startHandlePosition", "getStartHandlePosition-_m7T9-E", "setStartHandlePosition-_kEHs6E", "startHandlePosition$delegate", "textToolbar", "Landroidx/compose/ui/platform/TextToolbar;", "getTextToolbar", "()Landroidx/compose/ui/platform/TextToolbar;", "setTextToolbar", "(Landroidx/compose/ui/platform/TextToolbar;)V", "convertToContainerCoordinates", "layoutCoordinates", TypedValues.CycleType.S_WAVE_OFFSET, "convertToContainerCoordinates-R5De75A", "(Landroidx/compose/ui/layout/LayoutCoordinates;J)J", "copy", "copy$foundation_release", "getAnchorSelectable", "Landroidx/compose/foundation/text/selection/Selectable;", "anchor", "Landroidx/compose/foundation/text/selection/Selection$AnchorInfo;", "getAnchorSelectable$foundation_release", "getContentRect", "Landroidx/compose/ui/geometry/Rect;", "getSelectedText", "getSelectedText$foundation_release", "getSelectionLayout", "position", "previousHandlePosition", "isStartHandle", "getSelectionLayout-Wko1d7g", "(JJZ)Landroidx/compose/foundation/text/selection/SelectionLayout;", "handleDragObserver", "Landroidx/compose/foundation/text/TextDragObserver;", "isEntireContainerSelected", "isEntireContainerSelected$foundation_release", "isNonEmptySelection", "isNonEmptySelection$foundation_release", "isTriviallyCollapsedSelection", "isTriviallyCollapsedSelection$foundation_release", "onRelease", "requireContainerCoordinates", "requireContainerCoordinates$foundation_release", "selectAll", "selectAll$foundation_release", "selectAllInSelectable", "Lkotlin/Pair;", "Landroidx/collection/LongObjectMap;", "selectableId", "", "previousSelection", "selectAllInSelectable$foundation_release", "selectWordAtPositionIfNotAlreadySelected", "selectWordAtPositionIfNotAlreadySelected-k-4lQ0M", "selectionChanged", "selectionLayout", "newSelection", "shouldPerformHaptics", "shouldPerformHaptics$foundation_release", "startSelection", "adjustment", "Landroidx/compose/foundation/text/selection/SelectionAdjustment;", "startSelection-9KIMszo", "(JZLandroidx/compose/foundation/text/selection/SelectionAdjustment;)V", "toolbarCopy", "updateHandleOffsets", "updateSelection", "updateSelection-jyLRC_s$foundation_release", "(JJZLandroidx/compose/foundation/text/selection/SelectionAdjustment;)Z", "newPosition", "updateSelection-qNKwrvQ$foundation_release", "(Landroidx/compose/ui/geometry/Offset;JZLandroidx/compose/foundation/text/selection/SelectionAdjustment;)Z", "updateSelectionToolbar", "onClearSelectionRequested", "block", "Lkotlin/Function0;", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ê\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u001f\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0014\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0097\u0001\u001a\u00020\u0017H\u0082@¢\u0006\u0003\u0010\u0098\u0001J\t\u0010\u0099\u0001\u001a\u00020\u0017H\u0002J\u001c\u0010\u009a\u0001\u001a\u0005\u0018\u00010\u009b\u00012\b\u0010\u009c\u0001\u001a\u00030\u009d\u0001H\u0000¢\u0006\u0003\b\u009e\u0001J\t\u0010\u009f\u0001\u001a\u00020\u0017H\u0002J\u000f\u0010 \u0001\u001a\u00020PH\u0000¢\u0006\u0003\b¡\u0001J:\u0010¢\u0001\u001a\u0018\u0012\u0006\u0012\u0004\u0018\u00010\b\u0012\u000b\u0012\t\u0012\u0004\u0012\u00020\b0¤\u00010£\u00012\b\u0010¥\u0001\u001a\u00030¦\u00012\t\u0010§\u0001\u001a\u0004\u0018\u00010\bH\u0000¢\u0006\u0003\b¨\u0001J\u000f\u0010©\u0001\u001a\u00020\u0010H\u0000¢\u0006\u0003\bª\u0001J\u000f\u0010«\u0001\u001a\u00020\u0017H\u0000¢\u0006\u0003\b¬\u0001J\u000f\u0010\u00ad\u0001\u001a\u00020\u0010H\u0000¢\u0006\u0003\b®\u0001J\u000f\u0010¯\u0001\u001a\u00020\u0010H\u0000¢\u0006\u0003\b°\u0001J\u0011\u0010±\u0001\u001a\u0004\u0018\u00010$H\u0000¢\u0006\u0003\b²\u0001J\u001f\u0010³\u0001\u001a\u0012\u0012\u0004\u0012\u00020$\u0012\u0005\u0012\u00030´\u0001\u0018\u00010£\u0001H\u0000¢\u0006\u0003\bµ\u0001J\u0083\u0001\u0010¶\u0001\u001a\u00020\u00172q\b\u0004\u0010·\u0001\u001aj\u0012\u0017\u0012\u00150¦\u0001¢\u0006\u000f\b¹\u0001\u0012\n\bº\u0001\u0012\u0005\b\b(¥\u0001\u0012\u0016\u0012\u00140$¢\u0006\u000f\b¹\u0001\u0012\n\bº\u0001\u0012\u0005\b\b(»\u0001\u0012\u0016\u0012\u00140´\u0001¢\u0006\u000e\b¹\u0001\u0012\t\bº\u0001\u0012\u0004\b\b(\n\u0012\u0016\u0012\u00140\u0010¢\u0006\u000f\b¹\u0001\u0012\n\bº\u0001\u0012\u0005\b\b(¼\u0001\u0012\u0004\u0012\u00020\u00100¸\u0001H\u0080\b¢\u0006\u0003\b½\u0001J\u000f\u0010¾\u0001\u001a\u00020\u0017H\u0000¢\u0006\u0003\b¿\u0001J\t\u0010Ã\u0001\u001a\u00020\u0017H\u0002J\t\u0010Ä\u0001\u001a\u00020\u0017H\u0002J\t\u0010Å\u0001\u001a\u00020\u0017H\u0002J\u000b\u0010Æ\u0001\u001a\u0004\u0018\u00010GH\u0002J\u0007\u0010Ç\u0001\u001a\u00020\u0017J\u0011\u0010È\u0001\u001a\u00030É\u00012\u0007\u0010Ê\u0001\u001a\u00020\u0010J\r\u0010Ë\u0001\u001a\u00020C*\u00020CH\u0002J\u001d\u0010Ì\u0001\u001a\u00020C*\u00020C2\u000e\u0010·\u0001\u001a\t\u0012\u0004\u0012\u00020\u00170Í\u0001H\u0002J$\u0010Î\u0001\u001a\u00020O2\u0007\u0010Ï\u0001\u001a\u00020P2\u0007\u0010Ð\u0001\u001a\u00020OH\u0002¢\u0006\u0006\bÑ\u0001\u0010Ò\u0001J.\u0010Ó\u0001\u001a\u00020\u00172\u0007\u0010Ô\u0001\u001a\u00020O2\u0007\u0010Ê\u0001\u001a\u00020\u00102\b\u0010Õ\u0001\u001a\u00030Ö\u0001H\u0002¢\u0006\u0006\b×\u0001\u0010Ø\u0001J8\u0010Ù\u0001\u001a\u00020\u00102\t\u0010Ú\u0001\u001a\u0004\u0018\u00010O2\u0006\u0010N\u001a\u00020O2\u0007\u0010Ê\u0001\u001a\u00020\u00102\b\u0010Õ\u0001\u001a\u00030Ö\u0001H\u0000¢\u0006\u0006\bÛ\u0001\u0010Ü\u0001J7\u0010Ù\u0001\u001a\u00020\u00102\u0007\u0010Ô\u0001\u001a\u00020O2\u0007\u0010Ý\u0001\u001a\u00020O2\u0007\u0010Ê\u0001\u001a\u00020\u00102\b\u0010Õ\u0001\u001a\u00030Ö\u0001H\u0000¢\u0006\u0006\bÞ\u0001\u0010ß\u0001J0\u0010à\u0001\u001a\u0005\u0018\u00010\u0084\u00012\u0007\u0010Ô\u0001\u001a\u00020O2\u0007\u0010Ý\u0001\u001a\u00020O2\u0007\u0010Ê\u0001\u001a\u00020\u0010H\u0002¢\u0006\u0006\bá\u0001\u0010â\u0001J\u001c\u0010ã\u0001\u001a\u00020\u00172\b\u0010ä\u0001\u001a\u00030\u0084\u00012\u0007\u0010å\u0001\u001a\u00020\bH\u0002J\u000f\u0010æ\u0001\u001a\u00020\u0010H\u0001¢\u0006\u0003\bç\u0001J\u0018\u0010è\u0001\u001a\u00020\u00172\u0007\u0010Ô\u0001\u001a\u00020O¢\u0006\u0005\bé\u0001\u0010`R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0006\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R(\u0010\n\u001a\u0004\u0018\u00010\b2\b\u0010\t\u001a\u0004\u0018\u00010\b8F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00100\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R$\u0010\u0011\u001a\u00020\u00102\u0006\u0010\t\u001a\u00020\u00108F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R@\u0010\u0018\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\b\u0012\u0004\u0012\u00020\u00170\u00162\u0014\u0010\u0015\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\b\u0012\u0004\u0012\u00020\u00170\u0016@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u001a\"\u0004\b\u001b\u0010\u001cR\u001c\u0010\u001d\u001a\u0004\u0018\u00010\u001eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u0010 \"\u0004\b!\u0010\"R(\u0010#\u001a\u0010\u0012\u0004\u0012\u00020$\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u0016X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b%\u0010\u001a\"\u0004\b&\u0010\u001cR\u001c\u0010'\u001a\u0004\u0018\u00010(X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b)\u0010*\"\u0004\b+\u0010,R$\u0010-\u001a\u00020.8\u0000@\u0000X\u0081\u000e¢\u0006\u0014\n\u0000\u0012\u0004\b/\u00100\u001a\u0004\b1\u00102\"\u0004\b3\u00104R\u001a\u00105\u001a\u000206X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b7\u00108\"\u0004\b9\u0010:R+\u0010<\u001a\u00020\u00102\u0006\u0010;\u001a\u00020\u00108F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b?\u0010@\u001a\u0004\b=\u0010\u0012\"\u0004\b>\u0010\u0014R\u0014\u0010A\u001a\u00020\u00108BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bA\u0010\u0012R\u0011\u0010B\u001a\u00020C8F¢\u0006\u0006\u001a\u0004\bD\u0010ER\u001d\u0010F\u001a\u0004\u0018\u00010G8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bJ\u0010K\u001a\u0004\bH\u0010IR\u0011\u0010L\u001a\u00020C8F¢\u0006\u0006\u001a\u0004\bM\u0010ER\u0010\u0010N\u001a\u0004\u0018\u00010OX\u0082\u000e¢\u0006\u0002\n\u0000R(\u0010Q\u001a\u0004\u0018\u00010P2\b\u0010\t\u001a\u0004\u0018\u00010P@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bR\u0010S\"\u0004\bT\u0010UR+\u0010V\u001a\u00020\u00172\u0006\u0010;\u001a\u00020\u00178B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b[\u0010@\u001a\u0004\bW\u0010X\"\u0004\bY\u0010ZR+\u0010\\\u001a\u00020O2\u0006\u0010;\u001a\u00020O8@@BX\u0080\u008e\u0002¢\u0006\u0012\n\u0004\ba\u0010@\u001a\u0004\b]\u0010^\"\u0004\b_\u0010`R+\u0010b\u001a\u00020O2\u0006\u0010;\u001a\u00020O8@@BX\u0080\u008e\u0002¢\u0006\u0012\n\u0004\be\u0010@\u001a\u0004\bc\u0010^\"\u0004\bd\u0010`R/\u0010f\u001a\u0004\u0018\u00010O2\b\u0010;\u001a\u0004\u0018\u00010O8F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bk\u0010@\u001a\u0004\bg\u0010h\"\u0004\bi\u0010jR/\u0010l\u001a\u0004\u0018\u00010O2\b\u0010;\u001a\u0004\u0018\u00010O8F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bo\u0010@\u001a\u0004\bm\u0010h\"\u0004\bn\u0010jR/\u0010q\u001a\u0004\u0018\u00010p2\b\u0010;\u001a\u0004\u0018\u00010p8F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\bv\u0010@\u001a\u0004\br\u0010s\"\u0004\bt\u0010uR\u0011\u0010w\u001a\u00020x8F¢\u0006\u0006\u001a\u0004\by\u0010zR\u0011\u0010{\u001a\u00020x8F¢\u0006\u0006\u001a\u0004\b|\u0010zR0\u0010}\u001a\u0004\u0018\u00010O2\b\u0010;\u001a\u0004\u0018\u00010O8F@BX\u0086\u008e\u0002¢\u0006\u0013\n\u0005\b\u0080\u0001\u0010@\u001a\u0004\b~\u0010h\"\u0004\b\u007f\u0010jR\u0016\u0010\u0081\u0001\u001a\u00020\u00108BX\u0082\u0004¢\u0006\u0007\u001a\u0005\b\u0082\u0001\u0010\u0012R-\u0010\u0083\u0001\u001a\u0005\u0018\u00010\u0084\u00018\u0000@\u0000X\u0081\u000e¢\u0006\u0019\n\u0000\u0012\u0005\b\u0085\u0001\u00100\u001a\u0006\b\u0086\u0001\u0010\u0087\u0001\"\u0006\b\u0088\u0001\u0010\u0089\u0001R\u000f\u0010\u008a\u0001\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\"\u0010\u008b\u0001\u001a\u0005\u0018\u00010\u008c\u0001X\u0080\u000e¢\u0006\u0012\n\u0000\u001a\u0006\b\u008d\u0001\u0010\u008e\u0001\"\u0006\b\u008f\u0001\u0010\u0090\u0001R\"\u0010\u0091\u0001\u001a\u0005\u0018\u00010\u0092\u0001X\u0080\u000e¢\u0006\u0012\n\u0000\u001a\u0006\b\u0093\u0001\u0010\u0094\u0001\"\u0006\b\u0095\u0001\u0010\u0096\u0001R'\u0010À\u0001\u001a\u00020\u00102\u0006\u0010\t\u001a\u00020\u0010@@X\u0080\u000e¢\u0006\u0010\n\u0000\u001a\u0005\bÁ\u0001\u0010\u0012\"\u0005\bÂ\u0001\u0010\u0014¨\u0006ê\u0001"}, d2 = {"Landroidx/compose/foundation/text/selection/SelectionManager;", "", "selectionRegistrar", "Landroidx/compose/foundation/text/selection/SelectionRegistrarImpl;", "<init>", "(Landroidx/compose/foundation/text/selection/SelectionRegistrarImpl;)V", "_selection", "Landroidx/compose/runtime/MutableState;", "Landroidx/compose/foundation/text/selection/Selection;", "value", "selection", "getSelection", "()Landroidx/compose/foundation/text/selection/Selection;", "setSelection", "(Landroidx/compose/foundation/text/selection/Selection;)V", "_isInTouchMode", "", "isInTouchMode", "()Z", "setInTouchMode", "(Z)V", "newOnSelectionChange", "Lkotlin/Function1;", "", "onSelectionChange", "getOnSelectionChange", "()Lkotlin/jvm/functions/Function1;", "setOnSelectionChange", "(Lkotlin/jvm/functions/Function1;)V", "hapticFeedBack", "Landroidx/compose/ui/hapticfeedback/HapticFeedback;", "getHapticFeedBack", "()Landroidx/compose/ui/hapticfeedback/HapticFeedback;", "setHapticFeedBack", "(Landroidx/compose/ui/hapticfeedback/HapticFeedback;)V", "onCopyHandler", "Landroidx/compose/ui/text/AnnotatedString;", "getOnCopyHandler", "setOnCopyHandler", "textToolbar", "Landroidx/compose/ui/platform/TextToolbar;", "getTextToolbar", "()Landroidx/compose/ui/platform/TextToolbar;", "setTextToolbar", "(Landroidx/compose/ui/platform/TextToolbar;)V", "toolbarRequester", "Landroidx/compose/foundation/text/contextmenu/modifier/ToolbarRequester;", "getToolbarRequester$foundation_release$annotations", "()V", "getToolbarRequester$foundation_release", "()Landroidx/compose/foundation/text/contextmenu/modifier/ToolbarRequester;", "setToolbarRequester$foundation_release", "(Landroidx/compose/foundation/text/contextmenu/modifier/ToolbarRequester;)V", "focusRequester", "Landroidx/compose/ui/focus/FocusRequester;", "getFocusRequester", "()Landroidx/compose/ui/focus/FocusRequester;", "setFocusRequester", "(Landroidx/compose/ui/focus/FocusRequester;)V", "<set-?>", "hasFocus", "getHasFocus", "setHasFocus", "hasFocus$delegate", "Landroidx/compose/runtime/MutableState;", "isDraggingInProgress", "modifier", "Landroidx/compose/ui/Modifier;", "getModifier", "()Landroidx/compose/ui/Modifier;", "derivedContentRect", "Landroidx/compose/ui/geometry/Rect;", "getDerivedContentRect", "()Landroidx/compose/ui/geometry/Rect;", "derivedContentRect$delegate", "Landroidx/compose/runtime/State;", "contextMenuAreaModifier", "getContextMenuAreaModifier", "previousPosition", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/ui/layout/LayoutCoordinates;", "containerLayoutCoordinates", "getContainerLayoutCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "setContainerLayoutCoordinates", "(Landroidx/compose/ui/layout/LayoutCoordinates;)V", "positionChangeState", "getPositionChangeState", "()Lkotlin/Unit;", "setPositionChangeState", "(Lkotlin/Unit;)V", "positionChangeState$delegate", "dragBeginPosition", "getDragBeginPosition-F1C5BW0$foundation_release", "()J", "setDragBeginPosition-k-4lQ0M", "(J)V", "dragBeginPosition$delegate", "dragTotalDistance", "getDragTotalDistance-F1C5BW0$foundation_release", "setDragTotalDistance-k-4lQ0M", "dragTotalDistance$delegate", "startHandlePosition", "getStartHandlePosition-_m7T9-E", "()Landroidx/compose/ui/geometry/Offset;", "setStartHandlePosition-_kEHs6E", "(Landroidx/compose/ui/geometry/Offset;)V", "startHandlePosition$delegate", "endHandlePosition", "getEndHandlePosition-_m7T9-E", "setEndHandlePosition-_kEHs6E", "endHandlePosition$delegate", "Landroidx/compose/foundation/text/Handle;", "draggingHandle", "getDraggingHandle", "()Landroidx/compose/foundation/text/Handle;", "setDraggingHandle", "(Landroidx/compose/foundation/text/Handle;)V", "draggingHandle$delegate", "startHandleLineHeight", "", "getStartHandleLineHeight", "()F", "endHandleLineHeight", "getEndHandleLineHeight", "currentDragPosition", "getCurrentDragPosition-_m7T9-E", "setCurrentDragPosition-_kEHs6E", "currentDragPosition$delegate", "shouldShowMagnifier", "getShouldShowMagnifier", "previousSelectionLayout", "Landroidx/compose/foundation/text/selection/SelectionLayout;", "getPreviousSelectionLayout$foundation_release$annotations", "getPreviousSelectionLayout$foundation_release", "()Landroidx/compose/foundation/text/selection/SelectionLayout;", "setPreviousSelectionLayout$foundation_release", "(Landroidx/compose/foundation/text/selection/SelectionLayout;)V", "isLongPressOrClickSelection", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "getCoroutineScope$foundation_release", "()Lkotlinx/coroutines/CoroutineScope;", "setCoroutineScope$foundation_release", "(Lkotlinx/coroutines/CoroutineScope;)V", "platformSelectionBehaviors", "Landroidx/compose/foundation/text/selection/PlatformSelectionBehaviors;", "getPlatformSelectionBehaviors$foundation_release", "()Landroidx/compose/foundation/text/selection/PlatformSelectionBehaviors;", "setPlatformSelectionBehaviors$foundation_release", "(Landroidx/compose/foundation/text/selection/PlatformSelectionBehaviors;)V", "notifyPlatformSelectionBehaviorsOnShowContextMenu", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "suggestSelectionForLongPressOrDoubleClick", "getAnchorSelectable", "Landroidx/compose/foundation/text/selection/Selectable;", "anchor", "Landroidx/compose/foundation/text/selection/Selection$AnchorInfo;", "getAnchorSelectable$foundation_release", "updateHandleOffsets", "requireContainerCoordinates", "requireContainerCoordinates$foundation_release", "selectAllInSelectable", "Lkotlin/Pair;", "Landroidx/collection/LongObjectMap;", "selectableId", "", "previousSelection", "selectAllInSelectable$foundation_release", "isEntireContainerSelected", "isEntireContainerSelected$foundation_release", "selectAll", "selectAll$foundation_release", "isTriviallyCollapsedSelection", "isTriviallyCollapsedSelection$foundation_release", "isNonEmptySelection", "isNonEmptySelection$foundation_release", "getSelectedText", "getSelectedText$foundation_release", "getContextTextAndSelection", "Landroidx/compose/ui/text/TextRange;", "getContextTextAndSelection$foundation_release", "forEachSelectableWithSelection", "block", "Lkotlin/Function4;", "Lkotlin/ParameterName;", "name", "text", "isLastSelectable", "forEachSelectableWithSelection$foundation_release", "copy", "copy$foundation_release", "showToolbar", "getShowToolbar$foundation_release", "setShowToolbar$foundation_release", "toolbarCopy", "updateSelectionToolbar", "updateSelectionTextToolbar", "getContentRect", "onRelease", "handleDragObserver", "Landroidx/compose/foundation/text/TextDragObserver;", "isStartHandle", "addContextMenuComponents", "onClearSelectionRequested", "Lkotlin/Function0;", "convertToContainerCoordinates", "layoutCoordinates", TypedValues.CycleType.S_WAVE_OFFSET, "convertToContainerCoordinates-R5De75A", "(Landroidx/compose/ui/layout/LayoutCoordinates;J)J", "startSelection", "position", "adjustment", "Landroidx/compose/foundation/text/selection/SelectionAdjustment;", "startSelection-9KIMszo", "(JZLandroidx/compose/foundation/text/selection/SelectionAdjustment;)V", "updateSelection", "newPosition", "updateSelection-qNKwrvQ$foundation_release", "(Landroidx/compose/ui/geometry/Offset;JZLandroidx/compose/foundation/text/selection/SelectionAdjustment;)Z", "previousHandlePosition", "updateSelection-jyLRC_s$foundation_release", "(JJZLandroidx/compose/foundation/text/selection/SelectionAdjustment;)Z", "getSelectionLayout", "getSelectionLayout-Wko1d7g", "(JJZ)Landroidx/compose/foundation/text/selection/SelectionLayout;", "selectionChanged", "selectionLayout", "newSelection", "shouldPerformHaptics", "shouldPerformHaptics$foundation_release", "selectWordAtPositionIfNotAlreadySelected", "selectWordAtPositionIfNotAlreadySelected-k-4lQ0M", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SelectionManager {
     public static final int $stable = 8;
     private final MutableState<Boolean> _isInTouchMode;
     private final MutableState<Selection> _selection;
     private LayoutCoordinates containerLayoutCoordinates;
+    private CoroutineScope coroutineScope;
     private final MutableState currentDragPosition$delegate;
+    private final State derivedContentRect$delegate;
     private final MutableState dragBeginPosition$delegate;
     private final MutableState dragTotalDistance$delegate;
     private final MutableState draggingHandle$delegate;
@@ -79,16 +93,23 @@ public final class SelectionManager {
     private FocusRequester focusRequester;
     private HapticFeedback hapticFeedBack;
     private final MutableState hasFocus$delegate;
+    private boolean isLongPressOrClickSelection;
     private Function1<? super AnnotatedString, Unit> onCopyHandler;
     private Function1<? super Selection, Unit> onSelectionChange;
+    private PlatformSelectionBehaviors platformSelectionBehaviors;
+    private final MutableState positionChangeState$delegate;
     private Offset previousPosition;
     private SelectionLayout previousSelectionLayout;
     private final SelectionRegistrarImpl selectionRegistrar;
     private boolean showToolbar;
     private final MutableState startHandlePosition$delegate;
     private TextToolbar textToolbar;
+    private ToolbarRequester toolbarRequester;
 
     public static /* synthetic */ void getPreviousSelectionLayout$foundation_release$annotations() {
+    }
+
+    public static /* synthetic */ void getToolbarRequester$foundation_release$annotations() {
     }
 
     public SelectionManager(SelectionRegistrarImpl selectionRegistrarImpl) {
@@ -106,29 +127,30 @@ public final class SelectionManager {
         this._selection = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(true, null, 2, null);
         this._isInTouchMode = mutableStateOf$default2;
-        this.onSelectionChange = new Function1<Selection, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionManager$onSelectionChange$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        this.onSelectionChange = new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Selection selection) {
-                invoke2(selection);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Selection selection) {
-                SelectionManager.this.setSelection(selection);
+            public final Object invoke(Object obj) {
+                Unit onSelectionChange$lambda$0;
+                onSelectionChange$lambda$0 = SelectionManager.onSelectionChange$lambda$0(SelectionManager.this, (Selection) obj);
+                return onSelectionChange$lambda$0;
             }
         };
+        this.toolbarRequester = new ToolbarRequesterImpl();
         this.focusRequester = new FocusRequester();
         mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.hasFocus$delegate = mutableStateOf$default3;
-        mutableStateOf$default4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m3826boximpl(Offset.Companion.m3853getZeroF1C5BW0()), null, 2, null);
+        this.derivedContentRect$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda11
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                Rect contentRect;
+                contentRect = SelectionManager.this.getContentRect();
+                return contentRect;
+            }
+        });
+        this.positionChangeState$delegate = SnapshotStateKt.mutableStateOf(Unit.INSTANCE, SnapshotStateKt.neverEqualPolicy());
+        mutableStateOf$default4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m4282boximpl(Offset.Companion.m4309getZeroF1C5BW0()), null, 2, null);
         this.dragBeginPosition$delegate = mutableStateOf$default4;
-        mutableStateOf$default5 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m3826boximpl(Offset.Companion.m3853getZeroF1C5BW0()), null, 2, null);
+        mutableStateOf$default5 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m4282boximpl(Offset.Companion.m4309getZeroF1C5BW0()), null, 2, null);
         this.dragTotalDistance$delegate = mutableStateOf$default5;
         mutableStateOf$default6 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.startHandlePosition$delegate = mutableStateOf$default6;
@@ -138,155 +160,60 @@ public final class SelectionManager {
         this.draggingHandle$delegate = mutableStateOf$default8;
         mutableStateOf$default9 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.currentDragPosition$delegate = mutableStateOf$default9;
-        selectionRegistrarImpl.setOnPositionChangeCallback$foundation_release(new Function1<Long, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionManager.1
-            {
-                super(1);
-            }
-
+        selectionRegistrarImpl.setOnPositionChangeCallback$foundation_release(new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                invoke(l.longValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(long j) {
-                if (SelectionManager.this.selectionRegistrar.getSubselections().containsKey(j)) {
-                    SelectionManager.this.updateHandleOffsets();
-                    SelectionManager.this.updateSelectionToolbar();
-                }
+            public final Object invoke(Object obj) {
+                Unit _init_$lambda$9;
+                _init_$lambda$9 = SelectionManager._init_$lambda$9(SelectionManager.this, ((Long) obj).longValue());
+                return _init_$lambda$9;
             }
         });
-        selectionRegistrarImpl.setOnSelectionUpdateStartCallback$foundation_release(new Function4<Boolean, LayoutCoordinates, Offset, SelectionAdjustment, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionManager.2
-            {
-                super(4);
-            }
-
+        selectionRegistrarImpl.setOnSelectionUpdateStartCallback$foundation_release(new Function4() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function4
-            public /* bridge */ /* synthetic */ Unit invoke(Boolean bool, LayoutCoordinates layoutCoordinates, Offset offset, SelectionAdjustment selectionAdjustment) {
-                m1500invokeRg1IO4c(bool.booleanValue(), layoutCoordinates, offset.m3847unboximpl(), selectionAdjustment);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke-Rg1IO4c  reason: not valid java name */
-            public final void m1500invokeRg1IO4c(boolean z, LayoutCoordinates layoutCoordinates, long j, SelectionAdjustment selectionAdjustment) {
-                long mo5446getSizeYbymL2g = layoutCoordinates.mo5446getSizeYbymL2g();
-                Rect rect = new Rect(0.0f, 0.0f, (int) (mo5446getSizeYbymL2g >> 32), (int) (mo5446getSizeYbymL2g & 4294967295L));
-                if (!SelectionManagerKt.m1504containsInclusiveUv8p0NA(rect, j)) {
-                    j = TextLayoutStateKt.m1323coerceIn3MmeM6k(j, rect);
-                }
-                long m1484convertToContainerCoordinatesR5De75A = SelectionManager.this.m1484convertToContainerCoordinatesR5De75A(layoutCoordinates, j);
-                if ((9223372034707292159L & m1484convertToContainerCoordinatesR5De75A) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                    SelectionManager.this.setInTouchMode(z);
-                    SelectionManager.this.m1491startSelection9KIMszo(m1484convertToContainerCoordinatesR5De75A, false, selectionAdjustment);
-                    FocusRequester.m3748requestFocus3ESFkO8$default(SelectionManager.this.getFocusRequester(), 0, 1, null);
-                    SelectionManager.this.setShowToolbar$foundation_release(false);
-                }
+            public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
+                Unit _init_$lambda$11;
+                _init_$lambda$11 = SelectionManager._init_$lambda$11(SelectionManager.this, ((Boolean) obj).booleanValue(), (LayoutCoordinates) obj2, (Offset) obj3, (SelectionAdjustment) obj4);
+                return _init_$lambda$11;
             }
         });
-        selectionRegistrarImpl.setOnSelectionUpdateSelectAll$foundation_release(new Function2<Boolean, Long, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionManager.3
-            {
-                super(2);
-            }
-
+        selectionRegistrarImpl.setOnSelectionUpdateSelectAll$foundation_release(new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Unit invoke(Boolean bool, Long l) {
-                invoke(bool.booleanValue(), l.longValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(boolean z, long j) {
-                SelectionManager selectionManager = SelectionManager.this;
-                Pair<Selection, LongObjectMap<Selection>> selectAllInSelectable$foundation_release = selectionManager.selectAllInSelectable$foundation_release(j, selectionManager.getSelection());
-                Selection component1 = selectAllInSelectable$foundation_release.component1();
-                LongObjectMap<Selection> component2 = selectAllInSelectable$foundation_release.component2();
-                if (!Intrinsics.areEqual(component1, SelectionManager.this.getSelection())) {
-                    SelectionManager.this.selectionRegistrar.setSubselections(component2);
-                    SelectionManager.this.getOnSelectionChange().invoke(component1);
-                }
-                SelectionManager.this.setInTouchMode(z);
-                FocusRequester.m3748requestFocus3ESFkO8$default(SelectionManager.this.getFocusRequester(), 0, 1, null);
-                SelectionManager.this.setShowToolbar$foundation_release(false);
+            public final Object invoke(Object obj, Object obj2) {
+                Unit _init_$lambda$12;
+                _init_$lambda$12 = SelectionManager._init_$lambda$12(SelectionManager.this, ((Boolean) obj).booleanValue(), ((Long) obj2).longValue());
+                return _init_$lambda$12;
             }
         });
-        selectionRegistrarImpl.setOnSelectionUpdateCallback$foundation_release(new Function6<Boolean, LayoutCoordinates, Offset, Offset, Boolean, SelectionAdjustment, Boolean>() { // from class: androidx.compose.foundation.text.selection.SelectionManager.4
-            {
-                super(6);
-            }
-
+        selectionRegistrarImpl.setOnSelectionUpdateCallback$foundation_release(new Function6() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function6
-            public /* bridge */ /* synthetic */ Boolean invoke(Boolean bool, LayoutCoordinates layoutCoordinates, Offset offset, Offset offset2, Boolean bool2, SelectionAdjustment selectionAdjustment) {
-                return m1501invokepGV3PM0(bool.booleanValue(), layoutCoordinates, offset.m3847unboximpl(), offset2.m3847unboximpl(), bool2.booleanValue(), selectionAdjustment);
-            }
-
-            /* renamed from: invoke-pGV3PM0  reason: not valid java name */
-            public final Boolean m1501invokepGV3PM0(boolean z, LayoutCoordinates layoutCoordinates, long j, long j2, boolean z2, SelectionAdjustment selectionAdjustment) {
-                long m1484convertToContainerCoordinatesR5De75A = SelectionManager.this.m1484convertToContainerCoordinatesR5De75A(layoutCoordinates, j);
-                long m1484convertToContainerCoordinatesR5De75A2 = SelectionManager.this.m1484convertToContainerCoordinatesR5De75A(layoutCoordinates, j2);
-                SelectionManager.this.setInTouchMode(z);
-                return Boolean.valueOf(SelectionManager.this.m1499updateSelectionqNKwrvQ$foundation_release(Offset.m3826boximpl(m1484convertToContainerCoordinatesR5De75A), m1484convertToContainerCoordinatesR5De75A2, z2, selectionAdjustment));
+            public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6) {
+                boolean _init_$lambda$13;
+                _init_$lambda$13 = SelectionManager._init_$lambda$13(SelectionManager.this, ((Boolean) obj).booleanValue(), (LayoutCoordinates) obj2, (Offset) obj3, (Offset) obj4, ((Boolean) obj5).booleanValue(), (SelectionAdjustment) obj6);
+                return Boolean.valueOf(_init_$lambda$13);
             }
         });
-        selectionRegistrarImpl.setOnSelectionUpdateEndCallback$foundation_release(new Function0<Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionManager.5
-            {
-                super(0);
-            }
-
+        selectionRegistrarImpl.setOnSelectionUpdateEndCallback$foundation_release(new Function0() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                SelectionManager.this.setShowToolbar$foundation_release(true);
-                SelectionManager.this.setDraggingHandle(null);
-                SelectionManager.this.m1486setCurrentDragPosition_kEHs6E(null);
+            public final Object invoke() {
+                Unit _init_$lambda$14;
+                _init_$lambda$14 = SelectionManager._init_$lambda$14(SelectionManager.this);
+                return _init_$lambda$14;
             }
         });
-        selectionRegistrarImpl.setOnSelectableChangeCallback$foundation_release(new Function1<Long, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionManager.6
-            {
-                super(1);
-            }
-
+        selectionRegistrarImpl.setOnSelectableChangeCallback$foundation_release(new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                invoke(l.longValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(long j) {
-                if (SelectionManager.this.selectionRegistrar.getSubselections().containsKey(j)) {
-                    SelectionManager.this.onRelease();
-                    SelectionManager.this.setSelection(null);
-                }
+            public final Object invoke(Object obj) {
+                Unit _init_$lambda$15;
+                _init_$lambda$15 = SelectionManager._init_$lambda$15(SelectionManager.this, ((Long) obj).longValue());
+                return _init_$lambda$15;
             }
         });
-        selectionRegistrarImpl.setAfterSelectableUnsubscribe$foundation_release(new Function1<Long, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionManager.7
-            {
-                super(1);
-            }
-
+        selectionRegistrarImpl.setAfterSelectableUnsubscribe$foundation_release(new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                invoke(l.longValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(long j) {
-                Selection.AnchorInfo end;
-                Selection.AnchorInfo start;
-                Selection selection = SelectionManager.this.getSelection();
-                if (selection != null && (start = selection.getStart()) != null && j == start.getSelectableId()) {
-                    SelectionManager.this.m1490setStartHandlePosition_kEHs6E(null);
-                }
-                Selection selection2 = SelectionManager.this.getSelection();
-                if (selection2 != null && (end = selection2.getEnd()) != null && j == end.getSelectableId()) {
-                    SelectionManager.this.m1489setEndHandlePosition_kEHs6E(null);
-                }
-                if (SelectionManager.this.selectionRegistrar.getSubselections().containsKey(j)) {
-                    SelectionManager.this.updateSelectionToolbar();
-                }
+            public final Object invoke(Object obj) {
+                Unit _init_$lambda$16;
+                _init_$lambda$16 = SelectionManager._init_$lambda$16(SelectionManager.this, ((Long) obj).longValue());
+                return _init_$lambda$16;
             }
         });
     }
@@ -313,31 +240,32 @@ public final class SelectionManager {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit onSelectionChange$lambda$0(SelectionManager selectionManager, Selection selection) {
+        selectionManager.setSelection(selection);
+        return Unit.INSTANCE;
+    }
+
     public final Function1<Selection, Unit> getOnSelectionChange() {
         return this.onSelectionChange;
     }
 
     public final void setOnSelectionChange(final Function1<? super Selection, Unit> function1) {
-        this.onSelectionChange = new Function1<Selection, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionManager$onSelectionChange$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            /* JADX WARN: Multi-variable type inference failed */
-            {
-                super(1);
-            }
-
+        this.onSelectionChange = new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Selection selection) {
-                invoke2(selection);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Selection selection) {
-                SelectionManager.this.setSelection(selection);
-                function1.invoke(selection);
+            public final Object invoke(Object obj) {
+                Unit _set_onSelectionChange_$lambda$1;
+                _set_onSelectionChange_$lambda$1 = SelectionManager._set_onSelectionChange_$lambda$1(SelectionManager.this, function1, (Selection) obj);
+                return _set_onSelectionChange_$lambda$1;
             }
         };
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit _set_onSelectionChange_$lambda$1(SelectionManager selectionManager, Function1 function1, Selection selection) {
+        selectionManager.setSelection(selection);
+        function1.invoke(selection);
+        return Unit.INSTANCE;
     }
 
     public final HapticFeedback getHapticFeedBack() {
@@ -364,6 +292,14 @@ public final class SelectionManager {
         this.textToolbar = textToolbar;
     }
 
+    public final ToolbarRequester getToolbarRequester$foundation_release() {
+        return this.toolbarRequester;
+    }
+
+    public final void setToolbarRequester$foundation_release(ToolbarRequester toolbarRequester) {
+        this.toolbarRequester = toolbarRequester;
+    }
+
     public final FocusRequester getFocusRequester() {
         return this.focusRequester;
     }
@@ -385,88 +321,51 @@ public final class SelectionManager {
         return getDraggingHandle() != null;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit _get_modifier_$lambda$2(SelectionManager selectionManager) {
+        selectionManager.onRelease();
+        return Unit.INSTANCE;
+    }
+
     public final Modifier getModifier() {
-        return KeyInputModifierKt.onKeyEvent(SelectionGesturesKt.updateSelectionTouchMode(FocusableKt.focusable$default(FocusChangedModifierKt.onFocusChanged(FocusRequesterModifierKt.focusRequester(OnGloballyPositionedModifierKt.onGloballyPositioned(onClearSelectionRequested(Modifier.Companion, new Function0<Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionManager$modifier$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
+        return addContextMenuComponents(KeyInputModifierKt.onKeyEvent(SelectionGesturesKt.updateSelectionTouchMode(FocusableKt.focusable$default(FocusChangedModifierKt.onFocusChanged(FocusRequesterModifierKt.focusRequester(OnGloballyPositionedModifierKt.onGloballyPositioned(onClearSelectionRequested(Modifier.Companion, new Function0() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
+            public final Object invoke() {
+                Unit _get_modifier_$lambda$2;
+                _get_modifier_$lambda$2 = SelectionManager._get_modifier_$lambda$2(SelectionManager.this);
+                return _get_modifier_$lambda$2;
             }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                SelectionManager.this.onRelease();
-            }
-        }), new Function1<LayoutCoordinates, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionManager$modifier$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        }), new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(LayoutCoordinates layoutCoordinates) {
-                invoke2(layoutCoordinates);
-                return Unit.INSTANCE;
+            public final Object invoke(Object obj) {
+                Unit _get_modifier_$lambda$3;
+                _get_modifier_$lambda$3 = SelectionManager._get_modifier_$lambda$3(SelectionManager.this, (LayoutCoordinates) obj);
+                return _get_modifier_$lambda$3;
             }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(LayoutCoordinates layoutCoordinates) {
-                SelectionManager.this.setContainerLayoutCoordinates(layoutCoordinates);
-            }
-        }), this.focusRequester), new Function1<FocusState, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionManager$modifier$3
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        }), this.focusRequester), new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(FocusState focusState) {
-                invoke2(focusState);
-                return Unit.INSTANCE;
+            public final Object invoke(Object obj) {
+                Unit _get_modifier_$lambda$4;
+                _get_modifier_$lambda$4 = SelectionManager._get_modifier_$lambda$4(SelectionManager.this, (FocusState) obj);
+                return _get_modifier_$lambda$4;
             }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(FocusState focusState) {
-                if (!focusState.getHasFocus() && SelectionManager.this.getHasFocus()) {
-                    SelectionManager.this.onRelease();
-                }
-                SelectionManager.this.setHasFocus(focusState.getHasFocus());
-            }
-        }), false, null, 3, null), new Function1<Boolean, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionManager$modifier$4
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        }), false, null, 3, null), new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
-                invoke(bool.booleanValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(boolean z) {
-                SelectionManager.this.setInTouchMode(z);
+            public final Object invoke(Object obj) {
+                Unit _get_modifier_$lambda$5;
+                _get_modifier_$lambda$5 = SelectionManager._get_modifier_$lambda$5(SelectionManager.this, ((Boolean) obj).booleanValue());
+                return _get_modifier_$lambda$5;
             }
         }), new Function1<KeyEvent, Boolean>() { // from class: androidx.compose.foundation.text.selection.SelectionManager$modifier$5
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-                return m1502invokeZmokQxo(keyEvent.m5158unboximpl());
+                return m1790invokeZmokQxo(keyEvent.m5671unboximpl());
             }
 
             /* renamed from: invoke-ZmokQxo  reason: not valid java name */
-            public final Boolean m1502invokeZmokQxo(android.view.KeyEvent keyEvent) {
+            public final Boolean m1790invokeZmokQxo(android.view.KeyEvent keyEvent) {
                 boolean z;
-                if (SelectionManager_androidKt.m1506isCopyKeyEventZmokQxo(keyEvent)) {
+                if (SelectionManager_androidKt.m1796isCopyKeyEventZmokQxo(keyEvent)) {
                     SelectionManager.this.copy$foundation_release();
                     z = true;
                 } else {
@@ -474,7 +373,57 @@ public final class SelectionManager {
                 }
                 return Boolean.valueOf(z);
             }
-        }).then(getShouldShowMagnifier() ? SelectionManager_androidKt.selectionMagnifier(Modifier.Companion, this) : Modifier.Companion);
+        }).then(getShouldShowMagnifier() ? SelectionManager_androidKt.selectionMagnifier(Modifier.Companion, this) : Modifier.Companion));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit _get_modifier_$lambda$3(SelectionManager selectionManager, LayoutCoordinates layoutCoordinates) {
+        selectionManager.setContainerLayoutCoordinates(layoutCoordinates);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit _get_modifier_$lambda$4(SelectionManager selectionManager, FocusState focusState) {
+        if (!focusState.getHasFocus() && selectionManager.getHasFocus()) {
+            selectionManager.onRelease();
+        }
+        selectionManager.setHasFocus(focusState.getHasFocus());
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit _get_modifier_$lambda$5(SelectionManager selectionManager, boolean z) {
+        selectionManager.setInTouchMode(z);
+        return Unit.INSTANCE;
+    }
+
+    private final Rect getDerivedContentRect() {
+        return (Rect) this.derivedContentRect$delegate.getValue();
+    }
+
+    public final Modifier getContextMenuAreaModifier() {
+        return TextContextMenuToolbarHandlerModifierKt.textContextMenuToolbarHandler$default(TextContextMenuGesturesModifierKt.textContextMenuGestures(Modifier.Companion, new SelectionManager$contextMenuAreaModifier$1(this, null)), this.toolbarRequester, new SelectionManager$contextMenuAreaModifier$2(this, null), null, new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager$$ExternalSyntheticLambda9
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Rect _get_contextMenuAreaModifier_$lambda$7;
+                _get_contextMenuAreaModifier_$lambda$7 = SelectionManager._get_contextMenuAreaModifier_$lambda$7(SelectionManager.this, (LayoutCoordinates) obj);
+                return _get_contextMenuAreaModifier_$lambda$7;
+            }
+        }, 4, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Rect _get_contextMenuAreaModifier_$lambda$7(SelectionManager selectionManager, LayoutCoordinates layoutCoordinates) {
+        Rect derivedContentRect = selectionManager.getDerivedContentRect();
+        if (derivedContentRect == null) {
+            return null;
+        }
+        LayoutCoordinates layoutCoordinates2 = selectionManager.containerLayoutCoordinates;
+        if (layoutCoordinates2 != null) {
+            return TextContextMenuToolbarHandlerModifierKt.translateRootToDestination(derivedContentRect, layoutCoordinates2, layoutCoordinates);
+        }
+        InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("Required value was null.");
+        throw new KotlinNothingValueException();
     }
 
     public final LayoutCoordinates getContainerLayoutCoordinates() {
@@ -486,56 +435,63 @@ public final class SelectionManager {
         if (!getHasFocus() || getSelection() == null) {
             return;
         }
-        Offset m3826boximpl = layoutCoordinates != null ? Offset.m3826boximpl(LayoutCoordinatesKt.positionInWindow(layoutCoordinates)) : null;
-        if (Intrinsics.areEqual(this.previousPosition, m3826boximpl)) {
+        Offset m4282boximpl = layoutCoordinates != null ? Offset.m4282boximpl(LayoutCoordinatesKt.positionInWindow(layoutCoordinates)) : null;
+        if (Intrinsics.areEqual(this.previousPosition, m4282boximpl)) {
             return;
         }
-        this.previousPosition = m3826boximpl;
+        this.previousPosition = m4282boximpl;
         updateHandleOffsets();
         updateSelectionToolbar();
     }
 
+    private final Unit getPositionChangeState() {
+        this.positionChangeState$delegate.getValue();
+        return Unit.INSTANCE;
+    }
+
+    private final void setPositionChangeState(Unit unit) {
+        this.positionChangeState$delegate.setValue(unit);
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setDragBeginPosition-k-4lQ0M  reason: not valid java name */
-    public final void m1487setDragBeginPositionk4lQ0M(long j) {
-        this.dragBeginPosition$delegate.setValue(Offset.m3826boximpl(j));
+    public final void m1777setDragBeginPositionk4lQ0M(long j) {
+        this.dragBeginPosition$delegate.setValue(Offset.m4282boximpl(j));
     }
 
     /* renamed from: getDragBeginPosition-F1C5BW0$foundation_release  reason: not valid java name */
-    public final long m1493getDragBeginPositionF1C5BW0$foundation_release() {
-        return ((Offset) this.dragBeginPosition$delegate.getValue()).m3847unboximpl();
+    public final long m1783getDragBeginPositionF1C5BW0$foundation_release() {
+        return ((Offset) this.dragBeginPosition$delegate.getValue()).m4303unboximpl();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setDragTotalDistance-k-4lQ0M  reason: not valid java name */
-    public final void m1488setDragTotalDistancek4lQ0M(long j) {
-        this.dragTotalDistance$delegate.setValue(Offset.m3826boximpl(j));
+    public final void m1778setDragTotalDistancek4lQ0M(long j) {
+        this.dragTotalDistance$delegate.setValue(Offset.m4282boximpl(j));
     }
 
     /* renamed from: getDragTotalDistance-F1C5BW0$foundation_release  reason: not valid java name */
-    public final long m1494getDragTotalDistanceF1C5BW0$foundation_release() {
-        return ((Offset) this.dragTotalDistance$delegate.getValue()).m3847unboximpl();
+    public final long m1784getDragTotalDistanceF1C5BW0$foundation_release() {
+        return ((Offset) this.dragTotalDistance$delegate.getValue()).m4303unboximpl();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setStartHandlePosition-_kEHs6E  reason: not valid java name */
-    public final void m1490setStartHandlePosition_kEHs6E(Offset offset) {
+    private final void m1780setStartHandlePosition_kEHs6E(Offset offset) {
         this.startHandlePosition$delegate.setValue(offset);
     }
 
     /* renamed from: getStartHandlePosition-_m7T9-E  reason: not valid java name */
-    public final Offset m1496getStartHandlePosition_m7T9E() {
+    public final Offset m1786getStartHandlePosition_m7T9E() {
         return (Offset) this.startHandlePosition$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setEndHandlePosition-_kEHs6E  reason: not valid java name */
-    public final void m1489setEndHandlePosition_kEHs6E(Offset offset) {
+    private final void m1779setEndHandlePosition_kEHs6E(Offset offset) {
         this.endHandlePosition$delegate.setValue(offset);
     }
 
     /* renamed from: getEndHandlePosition-_m7T9-E  reason: not valid java name */
-    public final Offset m1495getEndHandlePosition_m7T9E() {
+    public final Offset m1785getEndHandlePosition_m7T9E() {
         return (Offset) this.endHandlePosition$delegate.getValue();
     }
 
@@ -568,12 +524,12 @@ public final class SelectionManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setCurrentDragPosition-_kEHs6E  reason: not valid java name */
-    public final void m1486setCurrentDragPosition_kEHs6E(Offset offset) {
+    public final void m1776setCurrentDragPosition_kEHs6E(Offset offset) {
         this.currentDragPosition$delegate.setValue(offset);
     }
 
     /* renamed from: getCurrentDragPosition-_m7T9-E  reason: not valid java name */
-    public final Offset m1492getCurrentDragPosition_m7T9E() {
+    public final Offset m1782getCurrentDragPosition_m7T9E() {
         return (Offset) this.currentDragPosition$delegate.getValue();
     }
 
@@ -589,19 +545,194 @@ public final class SelectionManager {
         this.previousSelectionLayout = selectionLayout;
     }
 
+    public final CoroutineScope getCoroutineScope$foundation_release() {
+        return this.coroutineScope;
+    }
+
+    public final void setCoroutineScope$foundation_release(CoroutineScope coroutineScope) {
+        this.coroutineScope = coroutineScope;
+    }
+
+    public final PlatformSelectionBehaviors getPlatformSelectionBehaviors$foundation_release() {
+        return this.platformSelectionBehaviors;
+    }
+
+    public final void setPlatformSelectionBehaviors$foundation_release(PlatformSelectionBehaviors platformSelectionBehaviors) {
+        this.platformSelectionBehaviors = platformSelectionBehaviors;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit _init_$lambda$9(SelectionManager selectionManager, long j) {
+        if (selectionManager.selectionRegistrar.getSubselections().containsKey(j)) {
+            selectionManager.setPositionChangeState(Unit.INSTANCE);
+            selectionManager.updateHandleOffsets();
+            selectionManager.updateSelectionToolbar();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit _init_$lambda$11(SelectionManager selectionManager, boolean z, LayoutCoordinates layoutCoordinates, Offset offset, SelectionAdjustment selectionAdjustment) {
+        long m1578coerceIn3MmeM6k;
+        long mo5962getSizeYbymL2g = layoutCoordinates.mo5962getSizeYbymL2g();
+        Rect rect = new Rect(0.0f, 0.0f, (int) (mo5962getSizeYbymL2g >> 32), (int) (mo5962getSizeYbymL2g & 4294967295L));
+        if (SelectionManagerKt.m1792containsInclusiveUv8p0NA(rect, offset.m4303unboximpl())) {
+            m1578coerceIn3MmeM6k = offset.m4303unboximpl();
+        } else {
+            m1578coerceIn3MmeM6k = TextLayoutStateKt.m1578coerceIn3MmeM6k(offset.m4303unboximpl(), rect);
+        }
+        long m1774convertToContainerCoordinatesR5De75A = selectionManager.m1774convertToContainerCoordinatesR5De75A(layoutCoordinates, m1578coerceIn3MmeM6k);
+        if ((9223372034707292159L & m1774convertToContainerCoordinatesR5De75A) != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
+            selectionManager.setInTouchMode(z);
+            selectionManager.m1781startSelection9KIMszo(m1774convertToContainerCoordinatesR5De75A, false, selectionAdjustment);
+            FocusRequester.m4200requestFocus3ESFkO8$default(selectionManager.focusRequester, 0, 1, null);
+            selectionManager.setShowToolbar$foundation_release(false);
+            selectionManager.isLongPressOrClickSelection = true;
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit _init_$lambda$12(SelectionManager selectionManager, boolean z, long j) {
+        Pair<Selection, LongObjectMap<Selection>> selectAllInSelectable$foundation_release = selectionManager.selectAllInSelectable$foundation_release(j, selectionManager.getSelection());
+        Selection component1 = selectAllInSelectable$foundation_release.component1();
+        LongObjectMap<Selection> component2 = selectAllInSelectable$foundation_release.component2();
+        if (!Intrinsics.areEqual(component1, selectionManager.getSelection())) {
+            selectionManager.selectionRegistrar.setSubselections(component2);
+            selectionManager.onSelectionChange.invoke(component1);
+        }
+        selectionManager.setInTouchMode(z);
+        FocusRequester.m4200requestFocus3ESFkO8$default(selectionManager.focusRequester, 0, 1, null);
+        selectionManager.setShowToolbar$foundation_release(false);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean _init_$lambda$13(SelectionManager selectionManager, boolean z, LayoutCoordinates layoutCoordinates, Offset offset, Offset offset2, boolean z2, SelectionAdjustment selectionAdjustment) {
+        long m1774convertToContainerCoordinatesR5De75A = selectionManager.m1774convertToContainerCoordinatesR5De75A(layoutCoordinates, offset.m4303unboximpl());
+        long m1774convertToContainerCoordinatesR5De75A2 = selectionManager.m1774convertToContainerCoordinatesR5De75A(layoutCoordinates, offset2.m4303unboximpl());
+        selectionManager.setInTouchMode(z);
+        return selectionManager.m1789updateSelectionqNKwrvQ$foundation_release(Offset.m4282boximpl(m1774convertToContainerCoordinatesR5De75A), m1774convertToContainerCoordinatesR5De75A2, z2, selectionAdjustment);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit _init_$lambda$14(SelectionManager selectionManager) {
+        selectionManager.setShowToolbar$foundation_release(true);
+        selectionManager.setDraggingHandle(null);
+        selectionManager.m1776setCurrentDragPosition_kEHs6E(null);
+        if (selectionManager.isLongPressOrClickSelection && selectionManager.isNonEmptySelection$foundation_release()) {
+            selectionManager.suggestSelectionForLongPressOrDoubleClick();
+        }
+        selectionManager.isLongPressOrClickSelection = false;
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit _init_$lambda$15(SelectionManager selectionManager, long j) {
+        if (selectionManager.selectionRegistrar.getSubselections().containsKey(j)) {
+            selectionManager.onRelease();
+            selectionManager.setSelection(null);
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit _init_$lambda$16(SelectionManager selectionManager, long j) {
+        Selection.AnchorInfo end;
+        Selection.AnchorInfo start;
+        Selection selection = selectionManager.getSelection();
+        if (selection != null && (start = selection.getStart()) != null && j == start.getSelectableId()) {
+            selectionManager.m1780setStartHandlePosition_kEHs6E(null);
+        }
+        Selection selection2 = selectionManager.getSelection();
+        if (selection2 != null && (end = selection2.getEnd()) != null && j == end.getSelectableId()) {
+            selectionManager.m1779setEndHandlePosition_kEHs6E(null);
+        }
+        if (selectionManager.selectionRegistrar.getSubselections().containsKey(j)) {
+            selectionManager.updateSelectionToolbar();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final Object notifyPlatformSelectionBehaviorsOnShowContextMenu(Continuation<? super Unit> continuation) {
+        Pair<AnnotatedString, TextRange> contextTextAndSelection$foundation_release = getContextTextAndSelection$foundation_release();
+        if (contextTextAndSelection$foundation_release == null) {
+            return Unit.INSTANCE;
+        }
+        AnnotatedString component1 = contextTextAndSelection$foundation_release.component1();
+        long m6717unboximpl = contextTextAndSelection$foundation_release.component2().m6717unboximpl();
+        PlatformSelectionBehaviors platformSelectionBehaviors = this.platformSelectionBehaviors;
+        if (platformSelectionBehaviors != null) {
+            Object mo1735onShowContextMenuSbBc2M = platformSelectionBehaviors.mo1735onShowContextMenuSbBc2M(component1, m6717unboximpl, continuation);
+            return mo1735onShowContextMenuSbBc2M == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? mo1735onShowContextMenuSbBc2M : Unit.INSTANCE;
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Type inference failed for: r0v10, types: [T, androidx.compose.ui.text.AnnotatedString] */
+    /* JADX WARN: Type inference failed for: r0v11, types: [androidx.compose.ui.text.TextRange, T] */
+    private final void suggestSelectionForLongPressOrDoubleClick() {
+        int i;
+        CoroutineScope coroutineScope;
+        Ref.ObjectRef objectRef = new Ref.ObjectRef();
+        Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
+        Ref.LongRef longRef = new Ref.LongRef();
+        List<Selectable> sort = this.selectionRegistrar.sort(requireContainerCoordinates$foundation_release());
+        ListIterator<Selectable> listIterator = sort.listIterator(sort.size());
+        while (true) {
+            if (!listIterator.hasPrevious()) {
+                i = -1;
+                break;
+            }
+            Selection selection = this.selectionRegistrar.getSubselections().get(listIterator.previous().getSelectableId());
+            if (selection != null && selection.getStart().getOffset() != selection.getEnd().getOffset()) {
+                i = listIterator.nextIndex();
+                break;
+            }
+        }
+        if (i != -1) {
+            int size = sort.size();
+            int i2 = 0;
+            while (true) {
+                if (i2 >= size) {
+                    break;
+                }
+                Selectable selectable = sort.get(i2);
+                Selection selection2 = this.selectionRegistrar.getSubselections().get(selectable.getSelectableId());
+                if (selection2 != null) {
+                    ?? text = selectable.getText();
+                    long TextRange = TextRangeKt.TextRange(selection2.getStart().getOffset(), selection2.getEnd().getOffset());
+                    boolean z = i2 >= i;
+                    long selectableId = selectable.getSelectableId();
+                    if (z) {
+                        objectRef.element = text;
+                        objectRef2.element = TextRange.m6701boximpl(TextRange);
+                        longRef.element = selectableId;
+                    }
+                } else {
+                    i2++;
+                }
+            }
+        }
+        if (objectRef.element == 0 || objectRef2.element == 0 || longRef.element == 0 || ((CharSequence) objectRef.element).length() <= 0 || (coroutineScope = this.coroutineScope) == null) {
+            return;
+        }
+        BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new SelectionManager$suggestSelectionForLongPressOrDoubleClick$2(this, objectRef, objectRef2, longRef, null), 3, null);
+    }
+
     public final Selectable getAnchorSelectable$foundation_release(Selection.AnchorInfo anchorInfo) {
         return this.selectionRegistrar.getSelectableMap$foundation_release().get(anchorInfo.getSelectableId());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:34:0x0078, code lost:
-        if (androidx.compose.foundation.text.selection.SelectionManagerKt.m1504containsInclusiveUv8p0NA(r8, r13) == false) goto L40;
+        if (androidx.compose.foundation.text.selection.SelectionManagerKt.m1792containsInclusiveUv8p0NA(r8, r13) == false) goto L40;
      */
     /* JADX WARN: Removed duplicated region for block: B:39:0x0081  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void updateHandleOffsets() {
+    private final void updateHandleOffsets() {
         Offset offset;
         Selection.AnchorInfo end;
         Selection.AnchorInfo start;
@@ -613,48 +744,48 @@ public final class SelectionManager {
         LayoutCoordinates layoutCoordinates2 = anchorSelectable$foundation_release != null ? anchorSelectable$foundation_release.getLayoutCoordinates() : null;
         LayoutCoordinates layoutCoordinates3 = anchorSelectable$foundation_release2 != null ? anchorSelectable$foundation_release2.getLayoutCoordinates() : null;
         if (selection == null || layoutCoordinates == null || !layoutCoordinates.isAttached() || (layoutCoordinates2 == null && layoutCoordinates3 == null)) {
-            m1490setStartHandlePosition_kEHs6E(null);
-            m1489setEndHandlePosition_kEHs6E(null);
+            m1780setStartHandlePosition_kEHs6E(null);
+            m1779setEndHandlePosition_kEHs6E(null);
             return;
         }
         Rect visibleBounds = SelectionManagerKt.visibleBounds(layoutCoordinates);
         if (layoutCoordinates2 != null) {
-            long mo1453getHandlePositiondBAh8RU = anchorSelectable$foundation_release.mo1453getHandlePositiondBAh8RU(selection, true);
-            if ((mo1453getHandlePositiondBAh8RU & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                offset = Offset.m3826boximpl(layoutCoordinates.mo5447localPositionOfR5De75A(layoutCoordinates2, mo1453getHandlePositiondBAh8RU));
-                long m3847unboximpl = offset.m3847unboximpl();
+            long mo1729getHandlePositiondBAh8RU = anchorSelectable$foundation_release.mo1729getHandlePositiondBAh8RU(selection, true);
+            if ((mo1729getHandlePositiondBAh8RU & 9223372034707292159L) != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
+                offset = Offset.m4282boximpl(layoutCoordinates.mo5963localPositionOfR5De75A(layoutCoordinates2, mo1729getHandlePositiondBAh8RU));
+                long m4303unboximpl = offset.m4303unboximpl();
                 if (getDraggingHandle() != Handle.SelectionStart) {
                 }
-                m1490setStartHandlePosition_kEHs6E(offset);
+                m1780setStartHandlePosition_kEHs6E(offset);
                 if (layoutCoordinates3 != null) {
-                    long mo1453getHandlePositiondBAh8RU2 = anchorSelectable$foundation_release2.mo1453getHandlePositiondBAh8RU(selection, false);
-                    if ((9223372034707292159L & mo1453getHandlePositiondBAh8RU2) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                        Offset m3826boximpl = Offset.m3826boximpl(layoutCoordinates.mo5447localPositionOfR5De75A(layoutCoordinates3, mo1453getHandlePositiondBAh8RU2));
-                        long m3847unboximpl2 = m3826boximpl.m3847unboximpl();
-                        if (getDraggingHandle() == Handle.SelectionEnd || SelectionManagerKt.m1504containsInclusiveUv8p0NA(visibleBounds, m3847unboximpl2)) {
-                            offset2 = m3826boximpl;
+                    long mo1729getHandlePositiondBAh8RU2 = anchorSelectable$foundation_release2.mo1729getHandlePositiondBAh8RU(selection, false);
+                    if ((9223372034707292159L & mo1729getHandlePositiondBAh8RU2) != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
+                        Offset m4282boximpl = Offset.m4282boximpl(layoutCoordinates.mo5963localPositionOfR5De75A(layoutCoordinates3, mo1729getHandlePositiondBAh8RU2));
+                        long m4303unboximpl2 = m4282boximpl.m4303unboximpl();
+                        if (getDraggingHandle() == Handle.SelectionEnd || SelectionManagerKt.m1792containsInclusiveUv8p0NA(visibleBounds, m4303unboximpl2)) {
+                            offset2 = m4282boximpl;
                         }
                     }
                 }
-                m1489setEndHandlePosition_kEHs6E(offset2);
+                m1779setEndHandlePosition_kEHs6E(offset2);
             }
         }
         offset = null;
-        m1490setStartHandlePosition_kEHs6E(offset);
+        m1780setStartHandlePosition_kEHs6E(offset);
         if (layoutCoordinates3 != null) {
         }
-        m1489setEndHandlePosition_kEHs6E(offset2);
+        m1779setEndHandlePosition_kEHs6E(offset2);
     }
 
     public final LayoutCoordinates requireContainerCoordinates$foundation_release() {
         LayoutCoordinates layoutCoordinates = this.containerLayoutCoordinates;
         if (layoutCoordinates != null) {
             if (!layoutCoordinates.isAttached()) {
-                androidx.compose.foundation.internal.InlineClassHelperKt.throwIllegalArgumentException("unattached coordinates");
+                InlineClassHelperKt.throwIllegalArgumentException("unattached coordinates");
             }
             return layoutCoordinates;
         }
-        androidx.compose.foundation.internal.InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null coordinates");
+        InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null coordinates");
         throw new KotlinNothingValueException();
     }
 
@@ -673,7 +804,7 @@ public final class SelectionManager {
             selection2 = SelectionManagerKt.merge(selection2, selectAllSelection);
         }
         if (isInTouchMode() && !Intrinsics.areEqual(selection2, selection) && (hapticFeedback = this.hapticFeedBack) != null) {
-            hapticFeedback.mo4812performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m4828getTextHandleMove5zf0vsI());
+            hapticFeedback.mo5310performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m5327getTextHandleMove5zf0vsI());
         }
         return new Pair<>(selection2, mutableLongObjectMapOf);
     }
@@ -757,27 +888,137 @@ public final class SelectionManager {
     }
 
     public final AnnotatedString getSelectedText$foundation_release() {
-        AnnotatedString subSequence;
+        int i;
         if (getSelection() == null || this.selectionRegistrar.getSubselections().isEmpty()) {
             return null;
         }
         AnnotatedString.Builder builder = new AnnotatedString.Builder(0, 1, null);
         List<Selectable> sort = this.selectionRegistrar.sort(requireContainerCoordinates$foundation_release());
-        int size = sort.size();
-        for (int i = 0; i < size; i++) {
-            Selectable selectable = sort.get(i);
-            Selection selection = this.selectionRegistrar.getSubselections().get(selectable.getSelectableId());
-            if (selection != null) {
-                AnnotatedString text = selectable.getText();
-                if (selection.getHandlesCrossed()) {
-                    subSequence = text.subSequence(selection.getEnd().getOffset(), selection.getStart().getOffset());
-                } else {
-                    subSequence = text.subSequence(selection.getStart().getOffset(), selection.getEnd().getOffset());
+        ListIterator<Selectable> listIterator = sort.listIterator(sort.size());
+        while (true) {
+            if (!listIterator.hasPrevious()) {
+                i = -1;
+                break;
+            }
+            Selection selection = this.selectionRegistrar.getSubselections().get(listIterator.previous().getSelectableId());
+            if (selection != null && selection.getStart().getOffset() != selection.getEnd().getOffset()) {
+                i = listIterator.nextIndex();
+                break;
+            }
+        }
+        if (i != -1) {
+            int size = sort.size();
+            int i2 = 0;
+            while (i2 < size) {
+                Selectable selectable = sort.get(i2);
+                Selection selection2 = this.selectionRegistrar.getSubselections().get(selectable.getSelectableId());
+                if (selection2 != null) {
+                    AnnotatedString text = selectable.getText();
+                    long TextRange = TextRangeKt.TextRange(selection2.getStart().getOffset(), selection2.getEnd().getOffset());
+                    boolean z = i2 >= i;
+                    selectable.getSelectableId();
+                    builder.append(text, TextRange.m6711getMinimpl(TextRange), TextRange.m6710getMaximpl(TextRange));
+                    if (!z) {
+                        builder.append('\n');
+                    }
                 }
-                builder.append(subSequence);
+                i2++;
             }
         }
         return builder.toAnnotatedString();
+    }
+
+    public final Pair<AnnotatedString, TextRange> getContextTextAndSelection$foundation_release() {
+        int i;
+        int i2;
+        int i3;
+        Pair<AnnotatedString, TextRange> pair;
+        Pair<AnnotatedString, TextRange> pair2 = null;
+        if (getSelection() != null && !this.selectionRegistrar.getSelectables$foundation_release().isEmpty()) {
+            AnnotatedString.Builder builder = new AnnotatedString.Builder(0, 1, null);
+            List<Selectable> sort = this.selectionRegistrar.sort(requireContainerCoordinates$foundation_release());
+            ListIterator<Selectable> listIterator = sort.listIterator(sort.size());
+            while (true) {
+                if (!listIterator.hasPrevious()) {
+                    i = -1;
+                    break;
+                }
+                Selection selection = this.selectionRegistrar.getSubselections().get(listIterator.previous().getSelectableId());
+                if (selection != null && selection.getStart().getOffset() != selection.getEnd().getOffset()) {
+                    i = listIterator.nextIndex();
+                    break;
+                }
+            }
+            if (i != -1) {
+                int size = sort.size();
+                int i4 = 0;
+                i2 = -1;
+                i3 = -1;
+                while (i4 < size) {
+                    Selectable selectable = sort.get(i4);
+                    Selection selection2 = this.selectionRegistrar.getSubselections().get(selectable.getSelectableId());
+                    if (selection2 != null) {
+                        AnnotatedString text = selectable.getText();
+                        long TextRange = TextRangeKt.TextRange(selection2.getStart().getOffset(), selection2.getEnd().getOffset());
+                        boolean z = i4 >= i;
+                        selectable.getSelectableId();
+                        if (i2 == -1) {
+                            i2 = TextRange.m6711getMinimpl(TextRange);
+                            builder.append(text, 0, TextRange.m6711getMinimpl(TextRange));
+                        }
+                        pair = pair2;
+                        builder.append(text, TextRange.m6711getMinimpl(TextRange), TextRange.m6710getMaximpl(TextRange));
+                        if (!z) {
+                            builder.append('\n');
+                        } else {
+                            i3 = builder.getLength();
+                            builder.append(text, TextRange.m6710getMaximpl(TextRange), text.length());
+                        }
+                    } else {
+                        pair = pair2;
+                    }
+                    i4++;
+                    pair2 = pair;
+                }
+            } else {
+                i2 = -1;
+                i3 = -1;
+            }
+            return (i2 == -1 || i3 == -1) ? pair2 : new Pair<>(builder.toAnnotatedString(), TextRange.m6701boximpl(TextRangeKt.TextRange(i2, i3)));
+        }
+        return null;
+    }
+
+    public final void forEachSelectableWithSelection$foundation_release(Function4<? super Long, ? super AnnotatedString, ? super TextRange, ? super Boolean, Boolean> function4) {
+        int i;
+        List<Selectable> sort = this.selectionRegistrar.sort(requireContainerCoordinates$foundation_release());
+        ListIterator<Selectable> listIterator = sort.listIterator(sort.size());
+        while (true) {
+            if (!listIterator.hasPrevious()) {
+                i = -1;
+                break;
+            }
+            Selection selection = this.selectionRegistrar.getSubselections().get(listIterator.previous().getSelectableId());
+            if (selection != null && selection.getStart().getOffset() != selection.getEnd().getOffset()) {
+                i = listIterator.nextIndex();
+                break;
+            }
+        }
+        if (i == -1) {
+            return;
+        }
+        int size = sort.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Selectable selectable = sort.get(i2);
+            Selection selection2 = this.selectionRegistrar.getSubselections().get(selectable.getSelectableId());
+            if (selection2 != null) {
+                if (!function4.invoke(Long.valueOf(selectable.getSelectableId()), selectable.getText(), TextRange.m6701boximpl(TextRangeKt.TextRange(selection2.getStart().getOffset(), selection2.getEnd().getOffset())), Boolean.valueOf(i2 >= i)).booleanValue()) {
+                    return;
+                }
+            }
+            i2++;
+        }
     }
 
     public final void copy$foundation_release() {
@@ -809,26 +1050,45 @@ public final class SelectionManager {
         onRelease();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void updateSelectionToolbar() {
-        TextToolbar textToolbar;
-        if (getHasFocus() && (textToolbar = this.textToolbar) != null) {
-            if (this.showToolbar && isInTouchMode()) {
-                Rect contentRect = getContentRect();
-                if (contentRect == null) {
+    private final void updateSelectionToolbar() {
+        if (getHasFocus()) {
+            if (ComposeFoundationFlags.isNewContextMenuEnabled) {
+                if (this.showToolbar && isInTouchMode()) {
+                    if (getDerivedContentRect() == null) {
+                        return;
+                    }
+                    this.toolbarRequester.show();
                     return;
                 }
-                TextToolbar.showMenu$default(textToolbar, contentRect, (Function0) (isNonEmptySelection$foundation_release() ? new SelectionManager$updateSelectionToolbar$1(this) : null), null, null, isEntireContainerSelected$foundation_release() ? null : new SelectionManager$updateSelectionToolbar$2(this), null, 12, null);
-            } else if (textToolbar.getStatus() == TextToolbarStatus.Shown) {
-                textToolbar.hide();
+                this.toolbarRequester.hide();
+                return;
             }
+            updateSelectionTextToolbar();
         }
     }
 
-    private final Rect getContentRect() {
+    private final void updateSelectionTextToolbar() {
+        TextToolbar textToolbar = this.textToolbar;
+        if (textToolbar == null) {
+            return;
+        }
+        if (this.showToolbar && isInTouchMode()) {
+            Rect contentRect = getContentRect();
+            if (contentRect == null) {
+                return;
+            }
+            TextToolbar.showMenu$default(textToolbar, contentRect, (Function0) (isNonEmptySelection$foundation_release() ? new SelectionManager$updateSelectionTextToolbar$1(this) : null), null, null, isEntireContainerSelected$foundation_release() ? null : new SelectionManager$updateSelectionTextToolbar$2(this), null, 12, null);
+        } else if (textToolbar.getStatus() == TextToolbarStatus.Shown) {
+            textToolbar.hide();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final Rect getContentRect() {
         LayoutCoordinates layoutCoordinates;
         List firstAndLast;
         Rect rect;
+        getPositionChangeState();
         if (getSelection() == null || (layoutCoordinates = this.containerLayoutCoordinates) == null || !layoutCoordinates.isAttached()) {
             return null;
         }
@@ -856,8 +1116,8 @@ public final class SelectionManager {
         if (intersect.getRight() - intersect.getLeft() < 0.0f || intersect.getBottom() - intersect.getTop() < 0.0f) {
             return null;
         }
-        Rect m3874translatek4lQ0M = intersect.m3874translatek4lQ0M(LayoutCoordinatesKt.positionInRoot(layoutCoordinates));
-        return Rect.copy$default(m3874translatek4lQ0M, 0.0f, 0.0f, 0.0f, m3874translatek4lQ0M.getBottom() + (SelectionHandlesKt.getHandleHeight() * 4), 7, null);
+        Rect m4330translatek4lQ0M = intersect.m4330translatek4lQ0M(LayoutCoordinatesKt.positionInRoot(layoutCoordinates));
+        return Rect.copy$default(m4330translatek4lQ0M, 0.0f, 0.0f, 0.0f, m4330translatek4lQ0M.getBottom() + (SelectionHandlesKt.getHandleHeight() * 4), 7, null);
     }
 
     public final void onRelease() {
@@ -869,7 +1129,7 @@ public final class SelectionManager {
             if (!isInTouchMode() || (hapticFeedback = this.hapticFeedBack) == null) {
                 return;
             }
-            hapticFeedback.mo4812performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m4828getTextHandleMove5zf0vsI());
+            hapticFeedback.mo5310performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m5327getTextHandleMove5zf0vsI());
         }
     }
 
@@ -877,11 +1137,11 @@ public final class SelectionManager {
         return new TextDragObserver() { // from class: androidx.compose.foundation.text.selection.SelectionManager$handleDragObserver$1
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onDown-k-4lQ0M */
-            public void mo1146onDownk4lQ0M(long j) {
+            public void mo1337onDownk4lQ0M(long j) {
                 LayoutCoordinates layoutCoordinates;
-                Offset m1496getStartHandlePosition_m7T9E = z ? this.m1496getStartHandlePosition_m7T9E() : this.m1495getEndHandlePosition_m7T9E();
-                if (m1496getStartHandlePosition_m7T9E != null) {
-                    m1496getStartHandlePosition_m7T9E.m3847unboximpl();
+                Offset m1786getStartHandlePosition_m7T9E = z ? this.m1786getStartHandlePosition_m7T9E() : this.m1785getEndHandlePosition_m7T9E();
+                if (m1786getStartHandlePosition_m7T9E != null) {
+                    m1786getStartHandlePosition_m7T9E.m4303unboximpl();
                     Selection selection = this.getSelection();
                     if (selection == null) {
                         return;
@@ -890,13 +1150,13 @@ public final class SelectionManager {
                     if (anchorSelectable$foundation_release == null || (layoutCoordinates = anchorSelectable$foundation_release.getLayoutCoordinates()) == null) {
                         return;
                     }
-                    long mo1453getHandlePositiondBAh8RU = anchorSelectable$foundation_release.mo1453getHandlePositiondBAh8RU(selection, z);
-                    if ((9223372034707292159L & mo1453getHandlePositiondBAh8RU) == InlineClassHelperKt.UnspecifiedPackedFloats) {
+                    long mo1729getHandlePositiondBAh8RU = anchorSelectable$foundation_release.mo1729getHandlePositiondBAh8RU(selection, z);
+                    if ((9223372034707292159L & mo1729getHandlePositiondBAh8RU) == androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
                         return;
                     }
-                    long m1468getAdjustedCoordinatesk4lQ0M = SelectionHandlesKt.m1468getAdjustedCoordinatesk4lQ0M(mo1453getHandlePositiondBAh8RU);
+                    long m1757getAdjustedCoordinatesk4lQ0M = SelectionHandlesKt.m1757getAdjustedCoordinatesk4lQ0M(mo1729getHandlePositiondBAh8RU);
                     SelectionManager selectionManager = this;
-                    selectionManager.m1486setCurrentDragPosition_kEHs6E(Offset.m3826boximpl(selectionManager.requireContainerCoordinates$foundation_release().mo5447localPositionOfR5De75A(layoutCoordinates, m1468getAdjustedCoordinatesk4lQ0M)));
+                    selectionManager.m1776setCurrentDragPosition_kEHs6E(Offset.m4282boximpl(selectionManager.requireContainerCoordinates$foundation_release().mo5963localPositionOfR5De75A(layoutCoordinates, m1757getAdjustedCoordinatesk4lQ0M)));
                     this.setDraggingHandle(z ? Handle.SelectionStart : Handle.SelectionEnd);
                     this.setShowToolbar$foundation_release(false);
                 }
@@ -904,7 +1164,7 @@ public final class SelectionManager {
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onStart-k-4lQ0M */
-            public void mo1148onStartk4lQ0M(long j) {
+            public void mo1339onStartk4lQ0M(long j) {
                 if (this.getDraggingHandle() == null) {
                     return;
                 }
@@ -915,42 +1175,42 @@ public final class SelectionManager {
                     Selectable selectable2 = selectable;
                     LayoutCoordinates layoutCoordinates = selectable2.getLayoutCoordinates();
                     if (layoutCoordinates != null) {
-                        long mo1453getHandlePositiondBAh8RU = selectable2.mo1453getHandlePositiondBAh8RU(selection, z);
-                        if ((9223372034707292159L & mo1453getHandlePositiondBAh8RU) == InlineClassHelperKt.UnspecifiedPackedFloats) {
+                        long mo1729getHandlePositiondBAh8RU = selectable2.mo1729getHandlePositiondBAh8RU(selection, z);
+                        if ((9223372034707292159L & mo1729getHandlePositiondBAh8RU) == androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
                             return;
                         }
-                        long m1468getAdjustedCoordinatesk4lQ0M = SelectionHandlesKt.m1468getAdjustedCoordinatesk4lQ0M(mo1453getHandlePositiondBAh8RU);
+                        long m1757getAdjustedCoordinatesk4lQ0M = SelectionHandlesKt.m1757getAdjustedCoordinatesk4lQ0M(mo1729getHandlePositiondBAh8RU);
                         SelectionManager selectionManager = this;
-                        selectionManager.m1487setDragBeginPositionk4lQ0M(selectionManager.requireContainerCoordinates$foundation_release().mo5447localPositionOfR5De75A(layoutCoordinates, m1468getAdjustedCoordinatesk4lQ0M));
-                        this.m1488setDragTotalDistancek4lQ0M(Offset.Companion.m3853getZeroF1C5BW0());
+                        selectionManager.m1777setDragBeginPositionk4lQ0M(selectionManager.requireContainerCoordinates$foundation_release().mo5963localPositionOfR5De75A(layoutCoordinates, m1757getAdjustedCoordinatesk4lQ0M));
+                        this.m1778setDragTotalDistancek4lQ0M(Offset.Companion.m4309getZeroF1C5BW0());
                         return;
                     }
-                    androidx.compose.foundation.internal.InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("Current selectable should have layout coordinates.");
+                    InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("Current selectable should have layout coordinates.");
                     throw new KotlinNothingValueException();
                 }
-                androidx.compose.foundation.internal.InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("SelectionRegistrar should contain the current selection's selectableIds");
+                InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("SelectionRegistrar should contain the current selection's selectableIds");
                 throw new KotlinNothingValueException();
             }
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onDrag-k-4lQ0M */
-            public void mo1147onDragk4lQ0M(long j) {
+            public void mo1338onDragk4lQ0M(long j) {
                 if (this.getDraggingHandle() == null) {
                     return;
                 }
                 SelectionManager selectionManager = this;
-                selectionManager.m1488setDragTotalDistancek4lQ0M(Offset.m3842plusMKHz9U(selectionManager.m1494getDragTotalDistanceF1C5BW0$foundation_release(), j));
-                long m3842plusMKHz9U = Offset.m3842plusMKHz9U(this.m1493getDragBeginPositionF1C5BW0$foundation_release(), this.m1494getDragTotalDistanceF1C5BW0$foundation_release());
-                if (this.m1499updateSelectionqNKwrvQ$foundation_release(Offset.m3826boximpl(m3842plusMKHz9U), this.m1493getDragBeginPositionF1C5BW0$foundation_release(), z, SelectionAdjustment.Companion.getCharacterWithWordAccelerate())) {
-                    this.m1487setDragBeginPositionk4lQ0M(m3842plusMKHz9U);
-                    this.m1488setDragTotalDistancek4lQ0M(Offset.Companion.m3853getZeroF1C5BW0());
+                selectionManager.m1778setDragTotalDistancek4lQ0M(Offset.m4298plusMKHz9U(selectionManager.m1784getDragTotalDistanceF1C5BW0$foundation_release(), j));
+                long m4298plusMKHz9U = Offset.m4298plusMKHz9U(this.m1783getDragBeginPositionF1C5BW0$foundation_release(), this.m1784getDragTotalDistanceF1C5BW0$foundation_release());
+                if (this.m1789updateSelectionqNKwrvQ$foundation_release(Offset.m4282boximpl(m4298plusMKHz9U), this.m1783getDragBeginPositionF1C5BW0$foundation_release(), z, SelectionAdjustment.Companion.getCharacterWithWordAccelerate())) {
+                    this.m1777setDragBeginPositionk4lQ0M(m4298plusMKHz9U);
+                    this.m1778setDragTotalDistancek4lQ0M(Offset.Companion.m4309getZeroF1C5BW0());
                 }
             }
 
             private final void done() {
                 this.setShowToolbar$foundation_release(true);
                 this.setDraggingHandle(null);
-                this.m1486setCurrentDragPosition_kEHs6E(null);
+                this.m1776setCurrentDragPosition_kEHs6E(null);
             }
 
             @Override // androidx.compose.foundation.text.TextDragObserver
@@ -970,12 +1230,16 @@ public final class SelectionManager {
         };
     }
 
+    private final Modifier addContextMenuComponents(Modifier modifier) {
+        return ComposeFoundationFlags.isNewContextMenuEnabled ? SelectionManager_androidKt.addSelectionContainerTextContextMenuComponents(modifier, this) : modifier;
+    }
+
     private final Modifier onClearSelectionRequested(Modifier modifier, final Function0<Unit> function0) {
         return SuspendingPointerInputFilterKt.pointerInput(modifier, Unit.INSTANCE, new PointerInputEventHandler() { // from class: androidx.compose.foundation.text.selection.SelectionManager$onClearSelectionRequested$1
 
             /* compiled from: SelectionManager.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-            @DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionManager$onClearSelectionRequested$1$1", f = "SelectionManager.kt", i = {0}, l = {754, 760}, m = "invokeSuspend", n = {"$this$awaitEachGesture"}, s = {"L$0"})
+            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+            @DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionManager$onClearSelectionRequested$1$1", f = "SelectionManager.kt", i = {0}, l = {979, 985}, m = "invokeSuspend", n = {"$this$awaitEachGesture"}, s = {"L$0"})
             /* renamed from: androidx.compose.foundation.text.selection.SelectionManager$onClearSelectionRequested$1$1  reason: invalid class name */
             /* loaded from: classes.dex */
             static final class AnonymousClass1 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
@@ -1055,49 +1319,48 @@ public final class SelectionManager {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: convertToContainerCoordinates-R5De75A  reason: not valid java name */
-    public final long m1484convertToContainerCoordinatesR5De75A(LayoutCoordinates layoutCoordinates, long j) {
+    private final long m1774convertToContainerCoordinatesR5De75A(LayoutCoordinates layoutCoordinates, long j) {
         LayoutCoordinates layoutCoordinates2 = this.containerLayoutCoordinates;
         if (layoutCoordinates2 == null || !layoutCoordinates2.isAttached()) {
-            return Offset.Companion.m3852getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4308getUnspecifiedF1C5BW0();
         }
-        return requireContainerCoordinates$foundation_release().mo5447localPositionOfR5De75A(layoutCoordinates, j);
+        return requireContainerCoordinates$foundation_release().mo5963localPositionOfR5De75A(layoutCoordinates, j);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: startSelection-9KIMszo  reason: not valid java name */
-    public final void m1491startSelection9KIMszo(long j, boolean z, SelectionAdjustment selectionAdjustment) {
+    private final void m1781startSelection9KIMszo(long j, boolean z, SelectionAdjustment selectionAdjustment) {
         this.previousSelectionLayout = null;
-        m1498updateSelectionjyLRC_s$foundation_release(j, Offset.Companion.m3852getUnspecifiedF1C5BW0(), z, selectionAdjustment);
+        m1788updateSelectionjyLRC_s$foundation_release(j, Offset.Companion.m4308getUnspecifiedF1C5BW0(), z, selectionAdjustment);
     }
 
     /* renamed from: updateSelection-qNKwrvQ$foundation_release  reason: not valid java name */
-    public final boolean m1499updateSelectionqNKwrvQ$foundation_release(Offset offset, long j, boolean z, SelectionAdjustment selectionAdjustment) {
+    public final boolean m1789updateSelectionqNKwrvQ$foundation_release(Offset offset, long j, boolean z, SelectionAdjustment selectionAdjustment) {
         if (offset == null) {
             return false;
         }
-        return m1498updateSelectionjyLRC_s$foundation_release(offset.m3847unboximpl(), j, z, selectionAdjustment);
+        return m1788updateSelectionjyLRC_s$foundation_release(offset.m4303unboximpl(), j, z, selectionAdjustment);
     }
 
     /* renamed from: updateSelection-jyLRC_s$foundation_release  reason: not valid java name */
-    public final boolean m1498updateSelectionjyLRC_s$foundation_release(long j, long j2, boolean z, SelectionAdjustment selectionAdjustment) {
+    public final boolean m1788updateSelectionjyLRC_s$foundation_release(long j, long j2, boolean z, SelectionAdjustment selectionAdjustment) {
         setDraggingHandle(z ? Handle.SelectionStart : Handle.SelectionEnd);
-        m1486setCurrentDragPosition_kEHs6E(Offset.m3826boximpl(j));
-        SelectionLayout m1485getSelectionLayoutWko1d7g = m1485getSelectionLayoutWko1d7g(j, j2, z);
-        if (m1485getSelectionLayoutWko1d7g != null && m1485getSelectionLayoutWko1d7g.shouldRecomputeSelection(this.previousSelectionLayout)) {
-            Selection adjust = selectionAdjustment.adjust(m1485getSelectionLayoutWko1d7g);
+        m1776setCurrentDragPosition_kEHs6E(Offset.m4282boximpl(j));
+        SelectionLayout m1775getSelectionLayoutWko1d7g = m1775getSelectionLayoutWko1d7g(j, j2, z);
+        if (m1775getSelectionLayoutWko1d7g != null && m1775getSelectionLayoutWko1d7g.shouldRecomputeSelection(this.previousSelectionLayout)) {
+            Selection adjust = selectionAdjustment.adjust(m1775getSelectionLayoutWko1d7g);
             if (!Intrinsics.areEqual(adjust, getSelection())) {
-                selectionChanged(m1485getSelectionLayoutWko1d7g, adjust);
+                selectionChanged(m1775getSelectionLayoutWko1d7g, adjust);
+                this.isLongPressOrClickSelection = false;
             }
-            this.previousSelectionLayout = m1485getSelectionLayoutWko1d7g;
+            this.previousSelectionLayout = m1775getSelectionLayoutWko1d7g;
             return true;
         }
         return false;
     }
 
     /* renamed from: getSelectionLayout-Wko1d7g  reason: not valid java name */
-    private final SelectionLayout m1485getSelectionLayoutWko1d7g(long j, long j2, boolean z) {
+    private final SelectionLayout m1775getSelectionLayoutWko1d7g(long j, long j2, boolean z) {
         LayoutCoordinates requireContainerCoordinates$foundation_release = requireContainerCoordinates$foundation_release();
         List<Selectable> sort = this.selectionRegistrar.sort(requireContainerCoordinates$foundation_release);
         final MutableLongIntMap mutableLongIntMapOf = LongIntMapKt.mutableLongIntMapOf();
@@ -1106,7 +1369,7 @@ public final class SelectionManager {
         for (int i = 0; i < size; i++) {
             mutableLongIntMapOf.set(sort.get(i).getSelectableId(), i);
         }
-        SelectionLayoutBuilder selectionLayoutBuilder = new SelectionLayoutBuilder(j, j2, requireContainerCoordinates$foundation_release, z, (j2 & 9223372034707292159L) == InlineClassHelperKt.UnspecifiedPackedFloats ? null : getSelection(), new Comparator() { // from class: androidx.compose.foundation.text.selection.SelectionManager$getSelectionLayout-Wko1d7g$$inlined$compareBy$1
+        SelectionLayoutBuilder selectionLayoutBuilder = new SelectionLayoutBuilder(j, j2, requireContainerCoordinates$foundation_release, z, (j2 & 9223372034707292159L) == androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats ? null : getSelection(), new Comparator() { // from class: androidx.compose.foundation.text.selection.SelectionManager$getSelectionLayout-Wko1d7g$$inlined$compareBy$1
             @Override // java.util.Comparator
             public final int compare(T t, T t2) {
                 return ComparisonsKt.compareValues(Integer.valueOf(MutableLongIntMap.this.get(((Number) t).longValue())), Integer.valueOf(MutableLongIntMap.this.get(((Number) t2).longValue())));
@@ -1122,7 +1385,7 @@ public final class SelectionManager {
     private final void selectionChanged(SelectionLayout selectionLayout, Selection selection) {
         HapticFeedback hapticFeedback;
         if (shouldPerformHaptics$foundation_release() && (hapticFeedback = this.hapticFeedBack) != null) {
-            hapticFeedback.mo4812performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m4828getTextHandleMove5zf0vsI());
+            hapticFeedback.mo5310performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m5327getTextHandleMove5zf0vsI());
         }
         this.selectionRegistrar.setSubselections(selectionLayout.createSubSelections(selection));
         this.onSelectionChange.invoke(selection);
@@ -1147,9 +1410,9 @@ public final class SelectionManager {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m1497selectWordAtPositionIfNotAlreadySelectedk4lQ0M(long j) {
+    public final void m1787selectWordAtPositionIfNotAlreadySelectedk4lQ0M(long j) {
         LayoutCoordinates layoutCoordinates;
-        boolean m1177isPositionInsideSelectionuaM50fQ;
+        boolean m1374isPositionInsideSelectionuaM50fQ;
         LayoutCoordinates layoutCoordinates2 = this.containerLayoutCoordinates;
         if (layoutCoordinates2 != null && layoutCoordinates2.isAttached()) {
             List<Selectable> selectables$foundation_release = this.selectionRegistrar.getSelectables$foundation_release();
@@ -1158,20 +1421,20 @@ public final class SelectionManager {
                 Selectable selectable = selectables$foundation_release.get(i);
                 Selection selection = this.selectionRegistrar.getSubselections().get(selectable.getSelectableId());
                 if (selection != null && (layoutCoordinates = selectable.getLayoutCoordinates()) != null) {
-                    long mo5447localPositionOfR5De75A = layoutCoordinates.mo5447localPositionOfR5De75A(layoutCoordinates2, j);
+                    long mo5963localPositionOfR5De75A = layoutCoordinates.mo5963localPositionOfR5De75A(layoutCoordinates2, j);
                     TextLayoutResult textLayoutResult = selectable.textLayoutResult();
                     if (textLayoutResult != null) {
-                        m1177isPositionInsideSelectionuaM50fQ = TextLayoutHelperKt.m1177isPositionInsideSelectionuaM50fQ(textLayoutResult, mo5447localPositionOfR5De75A, TextRange.m6135boximpl(selection.m1459toTextRanged9O1mEE()));
-                        if (!m1177isPositionInsideSelectionuaM50fQ) {
+                        m1374isPositionInsideSelectionuaM50fQ = TextLayoutHelperKt.m1374isPositionInsideSelectionuaM50fQ(textLayoutResult, mo5963localPositionOfR5De75A, TextRange.m6701boximpl(selection.m1745toTextRanged9O1mEE()));
+                        if (!m1374isPositionInsideSelectionuaM50fQ) {
                             return;
                         }
                     }
                 }
-                m1177isPositionInsideSelectionuaM50fQ = false;
-                if (!m1177isPositionInsideSelectionuaM50fQ) {
+                m1374isPositionInsideSelectionuaM50fQ = false;
+                if (!m1374isPositionInsideSelectionuaM50fQ) {
                 }
             }
-            m1491startSelection9KIMszo(j, true, SelectionAdjustment.Companion.getWord());
+            m1781startSelection9KIMszo(j, true, SelectionAdjustment.Companion.getWord());
         }
     }
 }

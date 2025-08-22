@@ -45,7 +45,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KFunction;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: MainRoute.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006\u001a'\u0010\u0007\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\b\u001a\u00020\tH\u0003¢\u0006\u0002\u0010\n¨\u0006\u000b"}, d2 = {"MainRoute", "", "component", "Lcom/miami/game/core/app/root/nav/main/MainComponent;", "windowSizeClass", "Landroidx/compose/material3/windowsizeclass/WindowSizeClass;", "(Lcom/miami/game/core/app/root/nav/main/MainComponent;Landroidx/compose/material3/windowsizeclass/WindowSizeClass;Landroidx/compose/runtime/Composer;I)V", "Children", "modifier", "Landroidx/compose/ui/Modifier;", "(Lcom/miami/game/core/app/root/nav/main/MainComponent;Landroidx/compose/material3/windowsizeclass/WindowSizeClass;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "app-root_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006\u001a'\u0010\u0007\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\b\u001a\u00020\tH\u0003¢\u0006\u0002\u0010\n¨\u0006\u000b"}, d2 = {"MainRoute", "", "component", "Lcom/miami/game/core/app/root/nav/main/MainComponent;", "windowSizeClass", "Landroidx/compose/material3/windowsizeclass/WindowSizeClass;", "(Lcom/miami/game/core/app/root/nav/main/MainComponent;Landroidx/compose/material3/windowsizeclass/WindowSizeClass;Landroidx/compose/runtime/Composer;I)V", "Children", "modifier", "Landroidx/compose/ui/Modifier;", "(Lcom/miami/game/core/app/root/nav/main/MainComponent;Landroidx/compose/material3/windowsizeclass/WindowSizeClass;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "app-root_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class MainRouteKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -67,7 +67,7 @@ public final class MainRouteKt {
         Intrinsics.checkNotNullParameter(component, "component");
         Intrinsics.checkNotNullParameter(windowSizeClass, "windowSizeClass");
         Composer startRestartGroup = composer.startRestartGroup(-990346649);
-        ComposerKt.sourceInformation(startRestartGroup, "C(MainRoute)28@1437L89:MainRoute.kt#v8698m");
+        ComposerKt.sourceInformation(startRestartGroup, "C(MainRoute)N(component,windowSizeClass)28@1437L89:MainRoute.kt#v8698m");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(component) ? 4 : 2) | i;
         } else {
@@ -107,7 +107,7 @@ public final class MainRouteKt {
     private static final void Children(final MainComponent mainComponent, final WindowSizeClass windowSizeClass, Modifier modifier, Composer composer, final int i, final int i2) {
         int i3;
         Composer startRestartGroup = composer.startRestartGroup(1274878273);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Children)P(!1,2)43@1750L4730,40@1675L4805:MainRoute.kt#v8698m");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Children)N(component,windowSizeClass,modifier)43@1750L4730,40@1675L4805:MainRoute.kt#v8698m");
         if ((i & 6) == 0) {
             i3 = (startRestartGroup.changedInstance(mainComponent) ? 4 : 2) | i;
         } else {
@@ -157,7 +157,7 @@ public final class MainRouteKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Children$lambda$34(final MainComponent mainComponent, PaddingValues it, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(it, "it");
-        ComposerKt.sourceInformation(composer, "C48@1881L2310,44@1760L2431,102@4328L2146,98@4201L2273:MainRoute.kt#v8698m");
+        ComposerKt.sourceInformation(composer, "CN(it)48@1881L2310,44@1760L2431,102@4328L2146,98@4201L2273:MainRoute.kt#v8698m");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
@@ -190,7 +190,7 @@ public final class MainRouteKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Children$lambda$34$lambda$15(MainComponent mainComponent, Child.Created it, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(it, "it");
-        ComposerKt.sourceInformation(composer, "C:MainRoute.kt#v8698m");
+        ComposerKt.sourceInformation(composer, "CN(it):MainRoute.kt#v8698m");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1130363621, i, -1, "com.miami.game.core.app.root.nav.main.compose.Children.<anonymous>.<anonymous> (MainRoute.kt:49)");
         }
@@ -360,7 +360,7 @@ public final class MainRouteKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Children$lambda$34$lambda$33(MainComponent mainComponent, Child.Created it, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(it, "it");
-        ComposerKt.sourceInformation(composer, "C:MainRoute.kt#v8698m");
+        ComposerKt.sourceInformation(composer, "CN(it):MainRoute.kt#v8698m");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-326115246, i, -1, "com.miami.game.core.app.root.nav.main.compose.Children.<anonymous>.<anonymous> (MainRoute.kt:103)");
         }

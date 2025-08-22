@@ -1,36 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
+import android.os.Bundle;
+import io.appmetrica.analytics.internal.IAppMetricaService;
 /* loaded from: classes4.dex */
-public final class He implements InterfaceC0405l9, Ie {
+public final class He extends Ph {
+    public final Rf e;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final C0279g7 f471a;
-    public final AtomicLong b;
-
-    public He(C0279g7 c0279g7) {
-        this.f471a = c0279g7;
-        this.b = new AtomicLong(c0279g7.b());
-        c0279g7.a(this);
+    public He(C0418m0 c0418m0, InterfaceC0233el interfaceC0233el, Rf rf) {
+        super(c0418m0, interfaceC0233el);
+        this.e = rf;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0405l9
-    public final void a(List<Integer> list) {
-        this.b.addAndGet(list.size());
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0405l9
-    public final void b(List<Integer> list) {
-        this.b.addAndGet(-list.size());
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0405l9
-    public final void a() {
-        this.b.set(this.f471a.b());
-    }
-
-    public final long b() {
-        return this.b.get();
+    @Override // io.appmetrica.analytics.impl.Ph
+    public final void a(IAppMetricaService iAppMetricaService) {
+        Bundle bundle = new Bundle();
+        Rf rf = this.e;
+        synchronized (rf) {
+            bundle.putParcelable("PROCESS_CFG_OBJ", rf);
+        }
+        iAppMetricaService.pauseUserSession(bundle);
     }
 }

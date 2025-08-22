@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.utils.ui.GradientText.ArizonaGradientTextView;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class WinterBattlepassRouletteLayoutBinding implements ViewBinding {
     public final LinearLayout battlepass2025WinterRoulettePremButton;
     public final TextView battlepass2025WinterRoulettePremCount;

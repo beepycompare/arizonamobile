@@ -10,7 +10,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableOnBackpressureDrop<T> extends AbstractFlowableWithUpstream<T, T> implements Consumer<T> {
     final Consumer<? super T> onDrop;
 
@@ -33,7 +33,7 @@ public final class FlowableOnBackpressureDrop<T> extends AbstractFlowableWithUps
         this.source.subscribe((FlowableSubscriber) new BackpressureDropSubscriber(subscriber, this.onDrop));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BackpressureDropSubscriber<T> extends AtomicLong implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = -6246093802440953054L;
         boolean done;

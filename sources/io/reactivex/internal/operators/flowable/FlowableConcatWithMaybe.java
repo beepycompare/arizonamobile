@@ -10,7 +10,7 @@ import io.reactivex.internal.subscribers.SinglePostCompleteSubscriber;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableConcatWithMaybe<T> extends AbstractFlowableWithUpstream<T, T> {
     final MaybeSource<? extends T> other;
 
@@ -24,7 +24,7 @@ public final class FlowableConcatWithMaybe<T> extends AbstractFlowableWithUpstre
         this.source.subscribe((FlowableSubscriber) new ConcatWithSubscriber(subscriber, this.other));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ConcatWithSubscriber<T> extends SinglePostCompleteSubscriber<T, T> implements MaybeObserver<T> {
         private static final long serialVersionUID = -7346385463600070225L;
         boolean inMaybe;

@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function4;
 import kotlin.ranges.RangesKt;
 /* compiled from: TextFieldBuffer.kt */
-@Metadata(d1 = {"\u0000J\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\r\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0004\u001a2\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0006\u001a\u00020\u0004H\u0000ø\u0001\u0000¢\u0006\u0004\b\u0007\u0010\b\u001a{\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\f2`\u0010\u000e\u001a\\\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0013\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0014\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0015\u0012\u0004\u0012\u00020\n0\u000fH\u0080\b\u001a\u001a\u0010\u0016\u001a\u00020\n*\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u00042\u0006\u0010\u0019\u001a\u00020\u0004\u001aE\u0010\u001a\u001a\u00020\n*\u00020\u001b26\u0010\u001c\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u001e\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0002\u0012\u0004\u0012\u00020\n0\u001dH\u0087\b\u001aE\u0010\u001f\u001a\u00020\n*\u00020\u001b26\u0010\u001c\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u001e\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0002\u0012\u0004\u0012\u00020\n0\u001dH\u0087\b\u001a\u001a\u0010 \u001a\u00020\n*\u00020\u00172\u0006\u0010!\u001a\u00020\u00042\u0006\u0010\"\u001a\u00020#\u001a\n\u0010$\u001a\u00020\n*\u00020\u0017\u001a\n\u0010%\u001a\u00020\n*\u00020\u0017\u001a\u001e\u0010&\u001a\u00020\n*\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u00042\b\b\u0002\u0010\u0019\u001a\u00020\u0004H\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006'"}, d2 = {"adjustTextRange", "Landroidx/compose/ui/text/TextRange;", "originalRange", "replaceStart", "", "replaceEnd", "insertedTextLength", "adjustTextRange-vJH6DeI", "(JIII)J", "findCommonPrefixAndSuffix", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "", "b", "onFound", "Lkotlin/Function4;", "Lkotlin/ParameterName;", "name", "aPrefixStart", "aSuffixStart", "bPrefixStart", "bSuffixStart", "delete", "Landroidx/compose/foundation/text/input/TextFieldBuffer;", TtmlNode.START, TtmlNode.END, "forEachChange", "Landroidx/compose/foundation/text/input/TextFieldBuffer$ChangeList;", "block", "Lkotlin/Function2;", "range", "forEachChangeReversed", "insert", FirebaseAnalytics.Param.INDEX, "text", "", "placeCursorAtEnd", "selectAll", "setSelectionCoerced", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\r\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a/\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0006\u001a\u00020\u0004H\u0000¢\u0006\u0004\b\u0007\u0010\b\u001a\u001a\u0010\t\u001a\u00020\n*\u00020\u000b2\u0006\u0010\f\u001a\u00020\u00042\u0006\u0010\r\u001a\u00020\u000e\u001a\u001a\u0010\u000f\u001a\u00020\n*\u00020\u000b2\u0006\u0010\u0010\u001a\u00020\u00042\u0006\u0010\u0011\u001a\u00020\u0004\u001a\n\u0010\u0012\u001a\u00020\n*\u00020\u000b\u001a\n\u0010\u0013\u001a\u00020\n*\u00020\u000b\u001aE\u0010\u0014\u001a\u00020\n*\u00020\u001526\u0010\u0016\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0018\u0012\b\b\u0019\u0012\u0004\b\b(\u001a\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0018\u0012\b\b\u0019\u0012\u0004\b\b(\u0002\u0012\u0004\u0012\u00020\n0\u0017H\u0087\b\u001aE\u0010\u001b\u001a\u00020\n*\u00020\u001526\u0010\u0016\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0018\u0012\b\b\u0019\u0012\u0004\b\b(\u001a\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0018\u0012\b\b\u0019\u0012\u0004\b\b(\u0002\u0012\u0004\u0012\u00020\n0\u0017H\u0087\b\u001a{\u0010\u001c\u001a\u00020\n2\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020\u001e2`\u0010 \u001a\\\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\u0018\u0012\b\b\u0019\u0012\u0004\b\b(\"\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\u0018\u0012\b\b\u0019\u0012\u0004\b\b(#\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\u0018\u0012\b\b\u0019\u0012\u0004\b\b($\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\u0018\u0012\b\b\u0019\u0012\u0004\b\b(%\u0012\u0004\u0012\u00020\n0!H\u0080\b\u001a\u001e\u0010&\u001a\u00020\n*\u00020\u000b2\u0006\u0010\u0010\u001a\u00020\u00042\b\b\u0002\u0010\u0011\u001a\u00020\u0004H\u0000¨\u0006'"}, d2 = {"adjustTextRange", "Landroidx/compose/ui/text/TextRange;", "originalRange", "replaceStart", "", "replaceEnd", "insertedTextLength", "adjustTextRange-vJH6DeI", "(JIII)J", "insert", "", "Landroidx/compose/foundation/text/input/TextFieldBuffer;", FirebaseAnalytics.Param.INDEX, "text", "", "delete", TtmlNode.START, TtmlNode.END, "placeCursorAtEnd", "selectAll", "forEachChange", "Landroidx/compose/foundation/text/input/TextFieldBuffer$ChangeList;", "block", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "range", "forEachChangeReversed", "findCommonPrefixAndSuffix", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "", "b", "onFound", "Lkotlin/Function4;", "aPrefixStart", "aSuffixStart", "bPrefixStart", "bSuffixStart", "setSelectionCoerced", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextFieldBufferKt {
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0011, code lost:
@@ -22,27 +22,27 @@ public final class TextFieldBufferKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final long m1201adjustTextRangevJH6DeI(long j, int i, int i2, int i3) {
+    public static final long m1434adjustTextRangevJH6DeI(long j, int i, int i2, int i3) {
         int i4;
-        int m6145getMinimpl = TextRange.m6145getMinimpl(j);
-        int m6144getMaximpl = TextRange.m6144getMaximpl(j);
-        if (m6144getMaximpl < i) {
+        int m6711getMinimpl = TextRange.m6711getMinimpl(j);
+        int m6710getMaximpl = TextRange.m6710getMaximpl(j);
+        if (m6710getMaximpl < i) {
             return j;
         }
-        if (m6145getMinimpl > i || i2 > m6144getMaximpl) {
-            if (m6145getMinimpl > i && m6144getMaximpl < i2) {
+        if (m6711getMinimpl > i || i2 > m6710getMaximpl) {
+            if (m6711getMinimpl > i && m6710getMaximpl < i2) {
                 i += i3;
-                m6145getMinimpl = i;
-            } else if (m6145getMinimpl >= i2) {
+                m6711getMinimpl = i;
+            } else if (m6711getMinimpl >= i2) {
                 i4 = i3 - (i2 - i);
-                m6145getMinimpl += i4;
-                i = m6144getMaximpl + i4;
-            } else if (i < m6145getMinimpl) {
-                m6145getMinimpl = i + i3;
+                m6711getMinimpl += i4;
+                i = m6710getMaximpl + i4;
+            } else if (i < m6711getMinimpl) {
+                m6711getMinimpl = i + i3;
                 i4 = i3 - (i2 - i);
-                i = m6144getMaximpl + i4;
+                i = m6710getMaximpl + i4;
             }
-            return TextRangeKt.TextRange(m6145getMinimpl, i);
+            return TextRangeKt.TextRange(m6711getMinimpl, i);
         }
         i4 = i3 - (i2 - i);
     }
@@ -60,18 +60,18 @@ public final class TextFieldBufferKt {
     }
 
     public static final void selectAll(TextFieldBuffer textFieldBuffer) {
-        textFieldBuffer.m1197setSelection5zctL8(TextRangeKt.TextRange(0, textFieldBuffer.getLength()));
+        textFieldBuffer.m1430setSelection5zctL8(TextRangeKt.TextRange(0, textFieldBuffer.getLength()));
     }
 
     public static final void forEachChange(TextFieldBuffer.ChangeList changeList, Function2<? super TextRange, ? super TextRange, Unit> function2) {
         for (int i = 0; i < changeList.getChangeCount(); i++) {
-            function2.invoke(TextRange.m6135boximpl(changeList.mo1200getRangejx7JFs(i)), TextRange.m6135boximpl(changeList.mo1199getOriginalRangejx7JFs(i)));
+            function2.invoke(TextRange.m6701boximpl(changeList.mo1433getRangejx7JFs(i)), TextRange.m6701boximpl(changeList.mo1432getOriginalRangejx7JFs(i)));
         }
     }
 
     public static final void forEachChangeReversed(TextFieldBuffer.ChangeList changeList, Function2<? super TextRange, ? super TextRange, Unit> function2) {
         for (int changeCount = changeList.getChangeCount() - 1; changeCount >= 0; changeCount--) {
-            function2.invoke(TextRange.m6135boximpl(changeList.mo1200getRangejx7JFs(changeCount)), TextRange.m6135boximpl(changeList.mo1199getOriginalRangejx7JFs(changeCount)));
+            function2.invoke(TextRange.m6701boximpl(changeList.mo1433getRangejx7JFs(changeCount)), TextRange.m6701boximpl(changeList.mo1432getOriginalRangejx7JFs(changeCount)));
         }
     }
 
@@ -122,6 +122,6 @@ public final class TextFieldBufferKt {
     }
 
     public static final void setSelectionCoerced(TextFieldBuffer textFieldBuffer, int i, int i2) {
-        textFieldBuffer.m1197setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i, 0, textFieldBuffer.getLength()), RangesKt.coerceIn(i2, 0, textFieldBuffer.getLength())));
+        textFieldBuffer.m1430setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i, 0, textFieldBuffer.getLength()), RangesKt.coerceIn(i2, 0, textFieldBuffer.getLength())));
     }
 }

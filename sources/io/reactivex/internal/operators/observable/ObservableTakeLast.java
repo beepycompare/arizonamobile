@@ -5,7 +5,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.ArrayDeque;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableTakeLast<T> extends AbstractObservableWithUpstream<T, T> {
     final int count;
 
@@ -19,7 +19,7 @@ public final class ObservableTakeLast<T> extends AbstractObservableWithUpstream<
         this.source.subscribe(new TakeLastObserver(observer, this.count));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TakeLastObserver<T> extends ArrayDeque<T> implements Observer<T>, Disposable {
         private static final long serialVersionUID = 7240042530241604978L;
         volatile boolean cancelled;

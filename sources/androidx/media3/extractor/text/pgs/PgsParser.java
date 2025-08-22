@@ -11,7 +11,7 @@ import androidx.media3.extractor.text.SubtitleParser;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.zip.Inflater;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PgsParser implements SubtitleParser {
     public static final int CUE_REPLACEMENT_BEHAVIOR = 2;
     private static final int SECTION_TYPE_BITMAP_PICTURE = 21;
@@ -80,7 +80,7 @@ public final class PgsParser implements SubtitleParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class CueBuilder {
         private int bitmapHeight;
         private int bitmapWidth;

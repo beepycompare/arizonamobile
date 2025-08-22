@@ -3,7 +3,7 @@ package androidx.media3.ui;
 import android.graphics.Color;
 import androidx.media3.common.util.Util;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class HtmlUtils {
     private HtmlUtils() {
     }

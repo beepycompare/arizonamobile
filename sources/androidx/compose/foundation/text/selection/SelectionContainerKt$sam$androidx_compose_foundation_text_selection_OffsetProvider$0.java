@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionAdapter;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SelectionContainer.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class SelectionContainerKt$sam$androidx_compose_foundation_text_selection_OffsetProvider$0 implements OffsetProvider, FunctionAdapter {
     private final /* synthetic */ Function0 function;
@@ -35,7 +35,7 @@ final class SelectionContainerKt$sam$androidx_compose_foundation_text_selection_
 
     @Override // androidx.compose.foundation.text.selection.OffsetProvider
     /* renamed from: provide-F1C5BW0 */
-    public final /* synthetic */ long mo1042provideF1C5BW0() {
-        return ((Offset) this.function.invoke()).m3847unboximpl();
+    public final /* synthetic */ long mo1219provideF1C5BW0() {
+        return ((Offset) this.function.invoke()).m4303unboximpl();
     }
 }

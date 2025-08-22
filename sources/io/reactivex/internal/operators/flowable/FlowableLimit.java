@@ -8,7 +8,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableLimit<T> extends AbstractFlowableWithUpstream<T, T> {
     final long n;
 
@@ -22,7 +22,7 @@ public final class FlowableLimit<T> extends AbstractFlowableWithUpstream<T, T> {
         this.source.subscribe((FlowableSubscriber) new LimitSubscriber(subscriber, this.n));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class LimitSubscriber<T> extends AtomicLong implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = 2288246011222124525L;
         final Subscriber<? super T> downstream;

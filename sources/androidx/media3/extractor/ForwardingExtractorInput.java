@@ -1,7 +1,7 @@
 package androidx.media3.extractor;
 
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public class ForwardingExtractorInput implements ExtractorInput {
     private final ExtractorInput input;
 

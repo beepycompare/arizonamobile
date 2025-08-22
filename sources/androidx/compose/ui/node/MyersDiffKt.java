@@ -3,8 +3,8 @@ package androidx.compose.ui.node;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import kotlin.Metadata;
 /* compiled from: MyersDiff.kt */
-@Metadata(d1 = {"\u00002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0015\n\u0002\b\u0016\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0002\u001aZ\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\t2\u0006\u0010\u000b\u001a\u00020\t2\u0006\u0010\f\u001a\u00020\t2\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0006\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\t2\u0006\u0010\u0011\u001a\u00020\u0012H\u0002ø\u0001\u0000¢\u0006\u0004\b\u0013\u0010\u0014\u001a \u0010\u0015\u001a\u00020\u00032\u0006\u0010\u0016\u001a\u00020\t2\u0006\u0010\u0017\u001a\u00020\t2\u0006\u0010\r\u001a\u00020\u0005H\u0002\u001a \u0010\u0018\u001a\u00020\u00012\u0006\u0010\u0016\u001a\u00020\t2\u0006\u0010\u0017\u001a\u00020\t2\u0006\u0010\u0004\u001a\u00020\u0005H\u0000\u001a8\u0010\u0019\u001a\u00020\u00012\u0006\u0010\u001a\u001a\u00020\t2\u0006\u0010\u001b\u001a\u00020\t2\u0006\u0010\u001c\u001a\u00020\t2\u0006\u0010\u001d\u001a\u00020\t2\u0006\u0010\u001e\u001a\u00020\u00072\u0006\u0010\u001f\u001a\u00020\u0012H\u0000\u001aZ\u0010\u000e\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\t2\u0006\u0010\u000b\u001a\u00020\t2\u0006\u0010\f\u001a\u00020\t2\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0006\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\t2\u0006\u0010\u0011\u001a\u00020\u0012H\u0002ø\u0001\u0000¢\u0006\u0004\b \u0010\u0014\u001aR\u0010!\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\t2\u0006\u0010\u000b\u001a\u00020\t2\u0006\u0010\f\u001a\u00020\t2\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0006\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u0012H\u0002ø\u0001\u0000¢\u0006\u0004\b\"\u0010#\u001a\u001c\u0010$\u001a\u00020\u0001*\u00020\u00122\u0006\u0010%\u001a\u00020\t2\u0006\u0010&\u001a\u00020\tH\u0002\u001a\r\u0010'\u001a\u00020\t*\u00020\u0007H\u0082\b\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006("}, d2 = {"applyDiff", "", "diagonals", "Landroidx/compose/ui/node/IntStack;", "callback", "Landroidx/compose/ui/node/DiffCallback;", "backward", "", "oldStart", "", "oldEnd", "newStart", "newEnd", "cb", "forward", "Landroidx/compose/ui/node/CenteredArray;", "d", "snake", "", "backward-4l5_RBY", "(IIIILandroidx/compose/ui/node/DiffCallback;[I[II[I)Z", "calculateDiff", "oldSize", "newSize", "executeDiff", "fillSnake", "startX", "startY", "endX", "endY", "reverse", "data", "forward-4l5_RBY", "midPoint", "midPoint-q5eDKzI", "(IIIILandroidx/compose/ui/node/DiffCallback;[I[I[I)Z", "swap", CmcdData.OBJECT_TYPE_INIT_SEGMENT, "j", "toInt", "ui_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u00006\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0015\n\u0002\b\u0012\u001a \u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u0006H\u0002\u001a\u0018\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u00012\u0006\u0010\n\u001a\u00020\u0006H\u0002\u001a \u0010\u000b\u001a\u00020\b2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u0006H\u0000\u001aO\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u00032\u0006\u0010\u000f\u001a\u00020\u00032\u0006\u0010\u0010\u001a\u00020\u00032\u0006\u0010\u0011\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00132\u0006\u0010\u0015\u001a\u00020\u0016H\u0002¢\u0006\u0004\b\u0017\u0010\u0018\u001aW\u0010\u0012\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u00032\u0006\u0010\u000f\u001a\u00020\u00032\u0006\u0010\u0010\u001a\u00020\u00032\u0006\u0010\u0011\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00132\u0006\u0010\u0019\u001a\u00020\u00032\u0006\u0010\u0015\u001a\u00020\u0016H\u0002¢\u0006\u0004\b\u001a\u0010\u001b\u001aW\u0010\u0014\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u00032\u0006\u0010\u000f\u001a\u00020\u00032\u0006\u0010\u0010\u001a\u00020\u00032\u0006\u0010\u0011\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00132\u0006\u0010\u0019\u001a\u00020\u00032\u0006\u0010\u0015\u001a\u00020\u0016H\u0002¢\u0006\u0004\b\u001c\u0010\u001b\u001a\r\u0010\u001d\u001a\u00020\u0003*\u00020\rH\u0082\b\u001a8\u0010\u001e\u001a\u00020\b2\u0006\u0010\u001f\u001a\u00020\u00032\u0006\u0010 \u001a\u00020\u00032\u0006\u0010!\u001a\u00020\u00032\u0006\u0010\"\u001a\u00020\u00032\u0006\u0010#\u001a\u00020\r2\u0006\u0010$\u001a\u00020\u0016H\u0000\u001a\u001c\u0010%\u001a\u00020\b*\u00020\u00162\u0006\u0010&\u001a\u00020\u00032\u0006\u0010'\u001a\u00020\u0003H\u0002¨\u0006("}, d2 = {"calculateDiff", "Landroidx/compose/ui/node/IntStack;", "oldSize", "", "newSize", "cb", "Landroidx/compose/ui/node/DiffCallback;", "applyDiff", "", "diagonals", "callback", "executeDiff", "midPoint", "", "oldStart", "oldEnd", "newStart", "newEnd", "forward", "Landroidx/compose/ui/node/CenteredArray;", "backward", "snake", "", "midPoint-q5eDKzI", "(IIIILandroidx/compose/ui/node/DiffCallback;[I[I[I)Z", "d", "forward-4l5_RBY", "(IIIILandroidx/compose/ui/node/DiffCallback;[I[II[I)Z", "backward-4l5_RBY", "toInt", "fillSnake", "startX", "startY", "endX", "endY", "reverse", "data", "swap", CmcdData.OBJECT_TYPE_INIT_SEGMENT, "j", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class MyersDiffKt {
     public static final /* synthetic */ void access$swap(int[] iArr, int i, int i2) {
         swap(iArr, i, i2);
@@ -21,26 +21,26 @@ public final class MyersDiffKt {
         IntStack intStack2 = new IntStack(i3 * 4);
         intStack2.pushRange(0, i, 0, i2);
         int i4 = (i3 * 2) + 1;
-        int[] m5547constructorimpl = CenteredArray.m5547constructorimpl(new int[i4]);
-        int[] m5547constructorimpl2 = CenteredArray.m5547constructorimpl(new int[i4]);
-        int[] m5765constructorimpl = Snake.m5765constructorimpl(new int[5]);
+        int[] m6085constructorimpl = CenteredArray.m6085constructorimpl(new int[i4]);
+        int[] m6085constructorimpl2 = CenteredArray.m6085constructorimpl(new int[i4]);
+        int[] m6312constructorimpl = Snake.m6312constructorimpl(new int[5]);
         while (intStack2.isNotEmpty()) {
             int pop = intStack2.pop();
             int pop2 = intStack2.pop();
             int pop3 = intStack2.pop();
             int pop4 = intStack2.pop();
-            int[] iArr = m5765constructorimpl;
-            if (m5659midPointq5eDKzI(pop4, pop3, pop2, pop, diffCallback, m5547constructorimpl, m5547constructorimpl2, m5765constructorimpl)) {
+            int[] iArr = m6312constructorimpl;
+            if (m6204midPointq5eDKzI(pop4, pop3, pop2, pop, diffCallback, m6085constructorimpl, m6085constructorimpl2, m6312constructorimpl)) {
                 char c2 = c;
                 if (Math.min(iArr[2] - iArr[0], iArr[3] - iArr[c]) > 0) {
-                    Snake.m5763addDiagonalToStackimpl(iArr, intStack);
+                    Snake.m6310addDiagonalToStackimpl(iArr, intStack);
                 }
                 intStack2.pushRange(pop4, iArr[0], pop2, iArr[c2]);
                 intStack2.pushRange(iArr[2], pop3, iArr[3], pop);
-                m5765constructorimpl = iArr;
+                m6312constructorimpl = iArr;
                 c = c2;
             } else {
-                m5765constructorimpl = iArr;
+                m6312constructorimpl = iArr;
             }
         }
         intStack.sortDiagonals();
@@ -83,18 +83,18 @@ public final class MyersDiffKt {
     }
 
     /* renamed from: midPoint-q5eDKzI  reason: not valid java name */
-    private static final boolean m5659midPointq5eDKzI(int i, int i2, int i3, int i4, DiffCallback diffCallback, int[] iArr, int[] iArr2, int[] iArr3) {
+    private static final boolean m6204midPointq5eDKzI(int i, int i2, int i3, int i4, DiffCallback diffCallback, int[] iArr, int[] iArr2, int[] iArr3) {
         int i5 = i2 - i;
         int i6 = i4 - i3;
         if (i5 >= 1 && i6 >= 1) {
             int i7 = ((i5 + i6) + 1) / 2;
             int[] iArr4 = iArr;
-            CenteredArray.m5553setimpl(iArr4, 1, i);
+            CenteredArray.m6091setimpl(iArr4, 1, i);
             int[] iArr5 = iArr2;
-            CenteredArray.m5553setimpl(iArr5, 1, i2);
+            CenteredArray.m6091setimpl(iArr5, 1, i2);
             int i8 = 0;
             while (i8 < i7) {
-                if (m5658forward4l5_RBY(i, i2, i3, i4, diffCallback, iArr4, iArr5, i8, iArr3) || m5657backward4l5_RBY(i, i2, i3, i4, diffCallback, iArr, iArr2, i8, iArr3)) {
+                if (m6203forward4l5_RBY(i, i2, i3, i4, diffCallback, iArr4, iArr5, i8, iArr3) || m6202backward4l5_RBY(i, i2, i3, i4, diffCallback, iArr, iArr2, i8, iArr3)) {
                     return true;
                 }
                 i8++;
@@ -112,8 +112,8 @@ public final class MyersDiffKt {
     /* JADX WARN: Type inference failed for: r16v4 */
     /* JADX WARN: Type inference failed for: r16v5 */
     /* renamed from: forward-4l5_RBY  reason: not valid java name */
-    private static final boolean m5658forward4l5_RBY(int i, int i2, int i3, int i4, DiffCallback diffCallback, int[] iArr, int[] iArr2, int i5, int[] iArr3) {
-        int m5550getimpl;
+    private static final boolean m6203forward4l5_RBY(int i, int i2, int i3, int i4, DiffCallback diffCallback, int[] iArr, int[] iArr2, int i5, int[] iArr3) {
+        int m6088getimpl;
         int i6;
         int i7;
         int i8 = (i2 - i) - (i4 - i3);
@@ -122,15 +122,15 @@ public final class MyersDiffKt {
         int i10 = -i5;
         int i11 = i10;
         while (i11 <= i5) {
-            if (i11 == i10 || (i11 != i5 && CenteredArray.m5550getimpl(iArr, i11 + 1) > CenteredArray.m5550getimpl(iArr, i11 - 1))) {
-                m5550getimpl = CenteredArray.m5550getimpl(iArr, i11 + 1);
-                i6 = m5550getimpl;
+            if (i11 == i10 || (i11 != i5 && CenteredArray.m6088getimpl(iArr, i11 + 1) > CenteredArray.m6088getimpl(iArr, i11 - 1))) {
+                m6088getimpl = CenteredArray.m6088getimpl(iArr, i11 + 1);
+                i6 = m6088getimpl;
             } else {
-                m5550getimpl = CenteredArray.m5550getimpl(iArr, i11 - 1);
-                i6 = m5550getimpl + 1;
+                m6088getimpl = CenteredArray.m6088getimpl(iArr, i11 - 1);
+                i6 = m6088getimpl + 1;
             }
             int i12 = (i3 + (i6 - i)) - i11;
-            int i13 = i12 - ((i5 != 0 ? i9 : 0) & (i6 == m5550getimpl ? i9 : 0));
+            int i13 = i12 - ((i5 != 0 ? i9 : 0) & (i6 == m6088getimpl ? i9 : 0));
             while (i6 < i2 && i12 < i4) {
                 if (!diffCallback.areItemsTheSame(i6, i12)) {
                     break;
@@ -138,7 +138,7 @@ public final class MyersDiffKt {
                 i6++;
                 i12++;
             }
-            CenteredArray.m5553setimpl(iArr, i11, i6);
+            CenteredArray.m6091setimpl(iArr, i11, i6);
             if (z) {
                 int i14 = i8 - i11;
                 i7 = i9;
@@ -146,8 +146,8 @@ public final class MyersDiffKt {
                 if (i14 >= i10 + 1) {
                     i7 = i7;
                     if (i14 <= i5 - 1) {
-                        if (CenteredArray.m5550getimpl(iArr2, i14) <= i6) {
-                            fillSnake(m5550getimpl, i13, i6, i12, false, iArr3);
+                        if (CenteredArray.m6088getimpl(iArr2, i14) <= i6) {
+                            fillSnake(m6088getimpl, i13, i6, i12, false, iArr3);
                             return i7;
                         }
                         i11 += 2;
@@ -164,23 +164,23 @@ public final class MyersDiffKt {
     }
 
     /* renamed from: backward-4l5_RBY  reason: not valid java name */
-    private static final boolean m5657backward4l5_RBY(int i, int i2, int i3, int i4, DiffCallback diffCallback, int[] iArr, int[] iArr2, int i5, int[] iArr3) {
-        int m5550getimpl;
+    private static final boolean m6202backward4l5_RBY(int i, int i2, int i3, int i4, DiffCallback diffCallback, int[] iArr, int[] iArr2, int i5, int[] iArr3) {
+        int m6088getimpl;
         int i6;
         int i7;
         int i8 = (i2 - i) - (i4 - i3);
         boolean z = (i8 & 1) == 0;
         int i9 = -i5;
         for (int i10 = i9; i10 <= i5; i10 += 2) {
-            if (i10 == i9 || (i10 != i5 && CenteredArray.m5550getimpl(iArr2, i10 + 1) < CenteredArray.m5550getimpl(iArr2, i10 - 1))) {
-                m5550getimpl = CenteredArray.m5550getimpl(iArr2, i10 + 1);
-                i6 = m5550getimpl;
+            if (i10 == i9 || (i10 != i5 && CenteredArray.m6088getimpl(iArr2, i10 + 1) < CenteredArray.m6088getimpl(iArr2, i10 - 1))) {
+                m6088getimpl = CenteredArray.m6088getimpl(iArr2, i10 + 1);
+                i6 = m6088getimpl;
             } else {
-                m5550getimpl = CenteredArray.m5550getimpl(iArr2, i10 - 1);
-                i6 = m5550getimpl - 1;
+                m6088getimpl = CenteredArray.m6088getimpl(iArr2, i10 - 1);
+                i6 = m6088getimpl - 1;
             }
             int i11 = i4 - ((i2 - i6) - i10);
-            int i12 = ((i5 != 0 ? 1 : 0) & (i6 == m5550getimpl ? 1 : 0)) + i11;
+            int i12 = ((i5 != 0 ? 1 : 0) & (i6 == m6088getimpl ? 1 : 0)) + i11;
             while (i6 > i && i11 > i3) {
                 if (!diffCallback.areItemsTheSame(i6 - 1, i11 - 1)) {
                     break;
@@ -188,10 +188,10 @@ public final class MyersDiffKt {
                 i6--;
                 i11--;
             }
-            CenteredArray.m5553setimpl(iArr2, i10, i6);
+            CenteredArray.m6091setimpl(iArr2, i10, i6);
             if (z && (i7 = i8 - i10) >= i9 && i7 <= i5) {
-                if (CenteredArray.m5550getimpl(iArr, i7) >= i6) {
-                    fillSnake(i6, i11, m5550getimpl, i12, true, iArr3);
+                if (CenteredArray.m6088getimpl(iArr, i7) >= i6) {
+                    fillSnake(i6, i11, m6088getimpl, i12, true, iArr3);
                     return true;
                 }
             }

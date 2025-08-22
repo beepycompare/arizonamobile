@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ReplaySubject<T> extends Subject<T> {
     final ReplayBuffer<T> buffer;
     boolean done;
@@ -24,7 +24,7 @@ public final class ReplaySubject<T> extends Subject<T> {
     private static final Object[] EMPTY_ARRAY = new Object[0];
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface ReplayBuffer<T> {
         void add(T t);
 
@@ -255,7 +255,7 @@ public final class ReplaySubject<T> extends Subject<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ReplayDisposable<T> extends AtomicInteger implements Disposable {
         private static final long serialVersionUID = 466549804534799122L;
         volatile boolean cancelled;
@@ -283,7 +283,7 @@ public final class ReplaySubject<T> extends Subject<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class UnboundedReplayBuffer<T> extends AtomicReference<Object> implements ReplayBuffer<T> {
         private static final long serialVersionUID = -733876083048047795L;
         final List<Object> buffer;
@@ -423,7 +423,7 @@ public final class ReplaySubject<T> extends Subject<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class Node<T> extends AtomicReference<Node<T>> {
         private static final long serialVersionUID = 6404226426336033100L;
         final T value;
@@ -434,7 +434,7 @@ public final class ReplaySubject<T> extends Subject<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class TimedNode<T> extends AtomicReference<TimedNode<T>> {
         private static final long serialVersionUID = 6404226426336033100L;
         final long time;
@@ -446,7 +446,7 @@ public final class ReplaySubject<T> extends Subject<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SizeBoundReplayBuffer<T> extends AtomicReference<Object> implements ReplayBuffer<T> {
         private static final long serialVersionUID = 1107649250281456395L;
         volatile boolean done;
@@ -612,7 +612,7 @@ public final class ReplaySubject<T> extends Subject<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SizeAndTimeBoundReplayBuffer<T> extends AtomicReference<Object> implements ReplayBuffer<T> {
         private static final long serialVersionUID = -8056260896137901749L;
         volatile boolean done;

@@ -5,7 +5,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class SubscriberCompletableObserver<T> implements CompletableObserver, Subscription {
     final Subscriber<? super T> subscriber;
     Disposable upstream;

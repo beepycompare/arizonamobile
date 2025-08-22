@@ -11,7 +11,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleFlatMapCompletable<T> extends Completable {
     final Function<? super T, ? extends CompletableSource> mapper;
     final SingleSource<T> source;
@@ -28,7 +28,7 @@ public final class SingleFlatMapCompletable<T> extends Completable {
         this.source.subscribe(flatMapCompletableObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FlatMapCompletableObserver<T> extends AtomicReference<Disposable> implements SingleObserver<T>, CompletableObserver, Disposable {
         private static final long serialVersionUID = -2177128922851101253L;
         final CompletableObserver downstream;

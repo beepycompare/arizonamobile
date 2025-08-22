@@ -12,15 +12,15 @@ import kotlinx.coroutines.CoroutineScope;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ProduceState.kt */
-@Metadata(d1 = {"\u00002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0011\n\u0002\b\u0003\u001an\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022\b\u0010\u0004\u001a\u0004\u0018\u00010\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u00052\b\u0010\u0007\u001a\u0004\u0018\u00010\u00052-\u0010\b\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\n\u0012\n\u0012\b\u0012\u0004\u0012\u00020\f0\u000b\u0012\u0006\u0012\u0004\u0018\u00010\u00050\t¢\u0006\u0002\b\rH\u0007¢\u0006\u0002\u0010\u000e\u001ad\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022\b\u0010\u0004\u001a\u0004\u0018\u00010\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u00052-\u0010\b\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\n\u0012\n\u0012\b\u0012\u0004\u0012\u00020\f0\u000b\u0012\u0006\u0012\u0004\u0018\u00010\u00050\t¢\u0006\u0002\b\rH\u0007¢\u0006\u0002\u0010\u000f\u001aZ\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022\b\u0010\u0004\u001a\u0004\u0018\u00010\u00052-\u0010\b\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\n\u0012\n\u0012\b\u0012\u0004\u0012\u00020\f0\u000b\u0012\u0006\u0012\u0004\u0018\u00010\u00050\t¢\u0006\u0002\b\rH\u0007¢\u0006\u0002\u0010\u0010\u001ah\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022\u0016\u0010\u0011\u001a\f\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u00050\u0012\"\u0004\u0018\u00010\u00052-\u0010\b\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\n\u0012\n\u0012\b\u0012\u0004\u0012\u00020\f0\u000b\u0012\u0006\u0012\u0004\u0018\u00010\u00050\t¢\u0006\u0002\b\rH\u0007¢\u0006\u0002\u0010\u0013\u001aP\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022-\u0010\b\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\n\u0012\n\u0012\b\u0012\u0004\u0012\u00020\f0\u000b\u0012\u0006\u0012\u0004\u0018\u00010\u00050\t¢\u0006\u0002\b\rH\u0007¢\u0006\u0002\u0010\u0014¨\u0006\u0015"}, d2 = {"produceState", "Landroidx/compose/runtime/State;", ExifInterface.GPS_DIRECTION_TRUE, "initialValue", "key1", "", "key2", "key3", "producer", "Lkotlin/Function2;", "Landroidx/compose/runtime/ProduceStateScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", UserMetadata.KEYDATA_FILENAME, "", "(Ljava/lang/Object;[Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "runtime_release"}, k = 5, mv = {1, 9, 0}, xi = 48, xs = "androidx/compose/runtime/SnapshotStateKt")
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0011\n\u0002\b\u0002\u001aP\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022-\u0010\u0004\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0006\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u0007\u0012\u0006\u0012\u0004\u0018\u00010\t0\u0005¢\u0006\u0002\b\nH\u0007¢\u0006\u0002\u0010\u000b\u001aZ\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022\b\u0010\f\u001a\u0004\u0018\u00010\t2-\u0010\u0004\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0006\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u0007\u0012\u0006\u0012\u0004\u0018\u00010\t0\u0005¢\u0006\u0002\b\nH\u0007¢\u0006\u0002\u0010\r\u001ad\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022\b\u0010\f\u001a\u0004\u0018\u00010\t2\b\u0010\u000e\u001a\u0004\u0018\u00010\t2-\u0010\u0004\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0006\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u0007\u0012\u0006\u0012\u0004\u0018\u00010\t0\u0005¢\u0006\u0002\b\nH\u0007¢\u0006\u0002\u0010\u000f\u001an\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022\b\u0010\f\u001a\u0004\u0018\u00010\t2\b\u0010\u000e\u001a\u0004\u0018\u00010\t2\b\u0010\u0010\u001a\u0004\u0018\u00010\t2-\u0010\u0004\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0006\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u0007\u0012\u0006\u0012\u0004\u0018\u00010\t0\u0005¢\u0006\u0002\b\nH\u0007¢\u0006\u0002\u0010\u0011\u001ah\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022\u0016\u0010\u0012\u001a\f\u0012\b\b\u0001\u0012\u0004\u0018\u00010\t0\u0013\"\u0004\u0018\u00010\t2-\u0010\u0004\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0006\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u0007\u0012\u0006\u0012\u0004\u0018\u00010\t0\u0005¢\u0006\u0002\b\nH\u0007¢\u0006\u0002\u0010\u0014¨\u0006\u0015"}, d2 = {"produceState", "Landroidx/compose/runtime/State;", ExifInterface.GPS_DIRECTION_TRUE, "initialValue", "producer", "Lkotlin/Function2;", "Landroidx/compose/runtime/ProduceStateScope;", "Lkotlin/coroutines/Continuation;", "", "", "Lkotlin/ExtensionFunctionType;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "key1", "(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "key2", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "key3", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", UserMetadata.KEYDATA_FILENAME, "", "(Ljava/lang/Object;[Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "runtime"}, k = 5, mv = {2, 0, 0}, xi = 48, xs = "androidx/compose/runtime/SnapshotStateKt")
 /* loaded from: classes.dex */
 public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
     public static final <T> State<T> produceState(T t, Function2<? super ProduceStateScope<T>, ? super Continuation<? super Unit>, ? extends Object> function2, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 10454275, "C(produceState)75@2894L41,76@2961L62,76@2940L83:ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 10454275, "C(produceState)N(initialValue,producer)78@2927L41,79@2994L62,79@2973L83:ProduceState.kt#9igjgp");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(10454275, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:74)");
+            ComposerKt.traceEventStart(10454275, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:77)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 2142999697, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1456628460, "CC(remember):ProduceState.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(t, null, 2, null);
@@ -29,7 +29,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
         Unit unit = Unit.INSTANCE;
-        ComposerKt.sourceInformationMarkerStart(composer, 2143001862, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1456630625, "CC(remember):ProduceState.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(function2);
         SnapshotStateKt__ProduceStateKt$produceState$1$1 rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -46,11 +46,11 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
     }
 
     public static final <T> State<T> produceState(T t, Object obj, Function2<? super ProduceStateScope<T>, ? super Continuation<? super Unit>, ? extends Object> function2, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -1928268701, "C(produceState)105@4191L41,106@4258L62,106@4237L83:ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1928268701, "C(produceState)N(initialValue,key1,producer)108@4232L41,109@4299L62,109@4278L83:ProduceState.kt#9igjgp");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-1928268701, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:104)");
+            ComposerKt.traceEventStart(-1928268701, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:107)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 2143041201, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1935311796, "CC(remember):ProduceState.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(t, null, 2, null);
@@ -58,7 +58,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         }
         MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, 2143043366, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1935309631, "CC(remember):ProduceState.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(function2);
         SnapshotStateKt__ProduceStateKt$produceState$2$1 rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -75,11 +75,11 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
     }
 
     public static final <T> State<T> produceState(T t, Object obj, Object obj2, Function2<? super ProduceStateScope<T>, ? super Continuation<? super Unit>, ? extends Object> function2, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -1703169085, "C(produceState)136@5524L41,137@5597L62,137@5570L89:ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1703169085, "C(produceState)N(initialValue,key1,key2,producer)139@5573L41,140@5646L62,140@5619L89:ProduceState.kt#9igjgp");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-1703169085, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:135)");
+            ComposerKt.traceEventStart(-1703169085, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:138)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 2143083857, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -362945108, "CC(remember):ProduceState.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(t, null, 2, null);
@@ -87,7 +87,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         }
         MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, 2143086214, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -362942751, "CC(remember):ProduceState.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(function2);
         SnapshotStateKt__ProduceStateKt$produceState$3$1 rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -104,11 +104,11 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
     }
 
     public static final <T> State<T> produceState(T t, Object obj, Object obj2, Object obj3, Function2<? super ProduceStateScope<T>, ? super Continuation<? super Unit>, ? extends Object> function2, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 1807205155, "C(produceState)168@6894L41,169@6973L62,169@6940L95:ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1807205155, "C(produceState)N(initialValue,key1,key2,key3,producer)171@6951L41,172@7030L62,172@6997L95:ProduceState.kt#9igjgp");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(1807205155, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:167)");
+            ComposerKt.traceEventStart(1807205155, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:170)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 2143127697, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1557372684, "CC(remember):ProduceState.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(t, null, 2, null);
@@ -116,7 +116,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         }
         MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, 2143130246, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 1557375233, "CC(remember):ProduceState.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(function2);
         SnapshotStateKt__ProduceStateKt$produceState$4$1 rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -133,11 +133,11 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
     }
 
     public static final <T> State<T> produceState(T t, Object[] objArr, Function2<? super ProduceStateScope<T>, ? super Continuation<? super Unit>, ? extends Object> function2, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 490154582, "C(produceState)198@8209L41,200@8353L62,200@8325L90:ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 490154582, "C(produceState)N(initialValue,keys,producer)201@8274L41,203@8418L62,203@8390L90:ProduceState.kt#9igjgp");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(490154582, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:197)");
+            ComposerKt.traceEventStart(490154582, i, -1, "androidx.compose.runtime.produceState (ProduceState.kt:200)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 2143169777, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1407843745, "CC(remember):ProduceState.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(t, null, 2, null);
@@ -146,7 +146,7 @@ public final /* synthetic */ class SnapshotStateKt__ProduceStateKt {
         MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
         Object[] copyOf = Arrays.copyOf(objArr, objArr.length);
-        ComposerKt.sourceInformationMarkerStart(composer, 2143174406, "CC(remember):ProduceState.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1407839116, "CC(remember):ProduceState.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(function2);
         SnapshotStateKt__ProduceStateKt$produceState$5$1 rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {

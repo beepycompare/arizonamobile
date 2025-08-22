@@ -6,7 +6,7 @@ import io.reactivex.CompletableOperator;
 import io.reactivex.CompletableSource;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableLift extends Completable {
     final CompletableOperator onLift;
     final CompletableSource source;

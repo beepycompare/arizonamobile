@@ -6,7 +6,7 @@ import io.reactivex.internal.subscriptions.DeferredScalarSubscription;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableTakeLastOne<T> extends AbstractFlowableWithUpstream<T, T> {
     public FlowableTakeLastOne(Flowable<T> flowable) {
         super(flowable);
@@ -17,7 +17,7 @@ public final class FlowableTakeLastOne<T> extends AbstractFlowableWithUpstream<T
         this.source.subscribe((FlowableSubscriber) new TakeLastOneSubscriber(subscriber));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TakeLastOneSubscriber<T> extends DeferredScalarSubscription<T> implements FlowableSubscriber<T> {
         private static final long serialVersionUID = -5467847744262967226L;
         Subscription upstream;

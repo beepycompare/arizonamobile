@@ -1039,16 +1039,16 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00aa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00a8, code lost:
         if (drainAndUpdateCodecDrmSessionV23() == false) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00dc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x00da, code lost:
         if (drainAndUpdateCodecDrmSessionV23() == false) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x00f7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x00f5, code lost:
         r9 = 2;
      */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x00ff  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

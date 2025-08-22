@@ -1,8 +1,8 @@
 package androidx.media3.ui;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class R {
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class array {
         public static int exo_controls_playback_speeds = 0x7f030006;
 
@@ -10,119 +10,119 @@ public final class R {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class attr {
         public static int ad_marker_color = 0x7f04002b;
         public static int ad_marker_width = 0x7f04002c;
         public static int alpha = 0x7f040037;
-        public static int animation_enabled = 0x7f040040;
-        public static int artwork_display_mode = 0x7f040047;
-        public static int auto_show = 0x7f040055;
-        public static int backgroundTint = 0x7f040062;
-        public static int bar_gravity = 0x7f040077;
-        public static int bar_height = 0x7f040078;
-        public static int buffered_color = 0x7f0400a6;
-        public static int controller_layout_id = 0x7f040175;
-        public static int default_artwork = 0x7f0401ab;
-        public static int fastScrollEnabled = 0x7f04023f;
-        public static int fastScrollHorizontalThumbDrawable = 0x7f040240;
-        public static int fastScrollHorizontalTrackDrawable = 0x7f040241;
-        public static int fastScrollVerticalThumbDrawable = 0x7f040242;
-        public static int fastScrollVerticalTrackDrawable = 0x7f040243;
-        public static int fastforward_icon = 0x7f040244;
-        public static int font = 0x7f04026b;
-        public static int fontProviderAuthority = 0x7f04026d;
-        public static int fontProviderCerts = 0x7f04026e;
-        public static int fontProviderFetchStrategy = 0x7f040270;
-        public static int fontProviderFetchTimeout = 0x7f040271;
-        public static int fontProviderPackage = 0x7f040272;
-        public static int fontProviderQuery = 0x7f040273;
-        public static int fontProviderSystemFontFamily = 0x7f040274;
-        public static int fontStyle = 0x7f040275;
-        public static int fontVariationSettings = 0x7f040276;
-        public static int fontWeight = 0x7f040277;
-        public static int fullscreen_enter_icon = 0x7f04027d;
-        public static int fullscreen_exit_icon = 0x7f04027e;
-        public static int hide_during_ads = 0x7f0402bb;
-        public static int hide_on_touch = 0x7f0402bc;
-        public static int image_display_mode = 0x7f0402d9;
-        public static int keep_content_on_player_reset = 0x7f04032e;
-        public static int lStar = 0x7f040333;
-        public static int layoutManager = 0x7f04033e;
-        public static int nestedScrollViewStyle = 0x7f040470;
-        public static int next_icon = 0x7f040472;
-        public static int pause_icon = 0x7f04049a;
-        public static int play_icon = 0x7f0404a9;
-        public static int played_ad_marker_color = 0x7f0404aa;
-        public static int played_color = 0x7f0404ab;
-        public static int player_layout_id = 0x7f0404ac;
-        public static int previous_icon = 0x7f0404c9;
-        public static int queryPatterns = 0x7f0404d5;
-        public static int recyclerViewStyle = 0x7f0404f5;
-        public static int repeat_all_icon = 0x7f0404fc;
-        public static int repeat_off_icon = 0x7f0404fd;
-        public static int repeat_one_icon = 0x7f0404fe;
-        public static int repeat_toggle_modes = 0x7f0404ff;
-        public static int resize_mode = 0x7f040500;
-        public static int reverseLayout = 0x7f040502;
-        public static int rewind_icon = 0x7f040503;
-        public static int scrubber_color = 0x7f04050f;
-        public static int scrubber_disabled_size = 0x7f040510;
-        public static int scrubber_dragged_size = 0x7f040511;
-        public static int scrubber_drawable = 0x7f040512;
-        public static int scrubber_enabled_size = 0x7f040513;
-        public static int shortcutMatchRequired = 0x7f04052f;
-        public static int show_buffering = 0x7f04053c;
-        public static int show_fastforward_button = 0x7f04053d;
-        public static int show_next_button = 0x7f04053e;
-        public static int show_previous_button = 0x7f04053f;
-        public static int show_rewind_button = 0x7f040540;
-        public static int show_shuffle_button = 0x7f040541;
-        public static int show_subtitle_button = 0x7f040542;
-        public static int show_timeout = 0x7f040543;
-        public static int show_vr_button = 0x7f040544;
-        public static int shuffle_off_icon = 0x7f040546;
-        public static int shuffle_on_icon = 0x7f040547;
-        public static int shutter_background_color = 0x7f040548;
-        public static int spanCount = 0x7f040558;
-        public static int stackFromEnd = 0x7f040569;
-        public static int subtitle_off_icon = 0x7f04058f;
-        public static int subtitle_on_icon = 0x7f040590;
-        public static int surface_type = 0x7f040598;
-        public static int time_bar_min_update_interval = 0x7f040621;
-        public static int time_bar_scrubbing_enabled = 0x7f040622;
-        public static int touch_target_height = 0x7f040643;
-        public static int ttcIndex = 0x7f04065b;
-        public static int unplayed_color = 0x7f04065c;
-        public static int use_artwork = 0x7f040664;
-        public static int use_controller = 0x7f040665;
-        public static int vr_icon = 0x7f040671;
+        public static int animation_enabled = 0x7f040041;
+        public static int artwork_display_mode = 0x7f040048;
+        public static int auto_show = 0x7f040056;
+        public static int backgroundTint = 0x7f040063;
+        public static int bar_gravity = 0x7f040078;
+        public static int bar_height = 0x7f040079;
+        public static int buffered_color = 0x7f0400a7;
+        public static int controller_layout_id = 0x7f040176;
+        public static int default_artwork = 0x7f0401ac;
+        public static int fastScrollEnabled = 0x7f040240;
+        public static int fastScrollHorizontalThumbDrawable = 0x7f040241;
+        public static int fastScrollHorizontalTrackDrawable = 0x7f040242;
+        public static int fastScrollVerticalThumbDrawable = 0x7f040243;
+        public static int fastScrollVerticalTrackDrawable = 0x7f040244;
+        public static int fastforward_icon = 0x7f040245;
+        public static int font = 0x7f04026c;
+        public static int fontProviderAuthority = 0x7f04026e;
+        public static int fontProviderCerts = 0x7f04026f;
+        public static int fontProviderFetchStrategy = 0x7f040271;
+        public static int fontProviderFetchTimeout = 0x7f040272;
+        public static int fontProviderPackage = 0x7f040273;
+        public static int fontProviderQuery = 0x7f040274;
+        public static int fontProviderSystemFontFamily = 0x7f040275;
+        public static int fontStyle = 0x7f040276;
+        public static int fontVariationSettings = 0x7f040277;
+        public static int fontWeight = 0x7f040278;
+        public static int fullscreen_enter_icon = 0x7f04027e;
+        public static int fullscreen_exit_icon = 0x7f04027f;
+        public static int hide_during_ads = 0x7f0402bc;
+        public static int hide_on_touch = 0x7f0402bd;
+        public static int image_display_mode = 0x7f0402da;
+        public static int keep_content_on_player_reset = 0x7f04032f;
+        public static int lStar = 0x7f040334;
+        public static int layoutManager = 0x7f04033f;
+        public static int nestedScrollViewStyle = 0x7f040471;
+        public static int next_icon = 0x7f040473;
+        public static int pause_icon = 0x7f04049b;
+        public static int play_icon = 0x7f0404aa;
+        public static int played_ad_marker_color = 0x7f0404ab;
+        public static int played_color = 0x7f0404ac;
+        public static int player_layout_id = 0x7f0404ad;
+        public static int previous_icon = 0x7f0404ca;
+        public static int queryPatterns = 0x7f0404d6;
+        public static int recyclerViewStyle = 0x7f0404f6;
+        public static int repeat_all_icon = 0x7f0404fd;
+        public static int repeat_off_icon = 0x7f0404fe;
+        public static int repeat_one_icon = 0x7f0404ff;
+        public static int repeat_toggle_modes = 0x7f040500;
+        public static int resize_mode = 0x7f040501;
+        public static int reverseLayout = 0x7f040503;
+        public static int rewind_icon = 0x7f040504;
+        public static int scrubber_color = 0x7f040510;
+        public static int scrubber_disabled_size = 0x7f040511;
+        public static int scrubber_dragged_size = 0x7f040512;
+        public static int scrubber_drawable = 0x7f040513;
+        public static int scrubber_enabled_size = 0x7f040514;
+        public static int shortcutMatchRequired = 0x7f040530;
+        public static int show_buffering = 0x7f04053d;
+        public static int show_fastforward_button = 0x7f04053e;
+        public static int show_next_button = 0x7f04053f;
+        public static int show_previous_button = 0x7f040540;
+        public static int show_rewind_button = 0x7f040541;
+        public static int show_shuffle_button = 0x7f040542;
+        public static int show_subtitle_button = 0x7f040543;
+        public static int show_timeout = 0x7f040544;
+        public static int show_vr_button = 0x7f040545;
+        public static int shuffle_off_icon = 0x7f040547;
+        public static int shuffle_on_icon = 0x7f040548;
+        public static int shutter_background_color = 0x7f040549;
+        public static int spanCount = 0x7f040559;
+        public static int stackFromEnd = 0x7f04056a;
+        public static int subtitle_off_icon = 0x7f040590;
+        public static int subtitle_on_icon = 0x7f040591;
+        public static int surface_type = 0x7f040599;
+        public static int time_bar_min_update_interval = 0x7f040622;
+        public static int time_bar_scrubbing_enabled = 0x7f040623;
+        public static int touch_target_height = 0x7f040644;
+        public static int ttcIndex = 0x7f04065c;
+        public static int unplayed_color = 0x7f04065d;
+        public static int use_artwork = 0x7f040665;
+        public static int use_controller = 0x7f040666;
+        public static int vr_icon = 0x7f040672;
 
         private attr() {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class color {
         public static int androidx_core_ripple_material_light = 0x7f06001b;
         public static int androidx_core_secondary_text_default_material_light = 0x7f06001c;
-        public static int exo_black_opacity_60 = 0x7f060094;
-        public static int exo_black_opacity_70 = 0x7f060095;
-        public static int exo_bottom_bar_background = 0x7f060096;
-        public static int exo_edit_mode_background_color = 0x7f060097;
-        public static int exo_styled_error_message_background = 0x7f060098;
-        public static int exo_white = 0x7f060099;
-        public static int exo_white_opacity_70 = 0x7f06009a;
-        public static int notification_action_color_filter = 0x7f06034c;
-        public static int notification_icon_bg_color = 0x7f06034d;
-        public static int ripple_material_light = 0x7f060363;
-        public static int secondary_text_default_material_light = 0x7f06036d;
+        public static int exo_black_opacity_60 = 0x7f060095;
+        public static int exo_black_opacity_70 = 0x7f060096;
+        public static int exo_bottom_bar_background = 0x7f060097;
+        public static int exo_edit_mode_background_color = 0x7f060098;
+        public static int exo_styled_error_message_background = 0x7f060099;
+        public static int exo_white = 0x7f06009a;
+        public static int exo_white_opacity_70 = 0x7f06009b;
+        public static int notification_action_color_filter = 0x7f06034f;
+        public static int notification_icon_bg_color = 0x7f060350;
+        public static int ripple_material_light = 0x7f060366;
+        public static int secondary_text_default_material_light = 0x7f060371;
 
         private color() {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class dimen {
         public static int compat_button_inset_horizontal_material = 0x7f0702f2;
         public static int compat_button_inset_vertical_material = 0x7f0702f3;
@@ -192,115 +192,115 @@ public final class R {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int exo_edit_mode_logo = 0x7f0806aa;
-        public static int exo_ic_audiotrack = 0x7f0806ab;
-        public static int exo_ic_check = 0x7f0806ac;
-        public static int exo_ic_chevron_left = 0x7f0806ad;
-        public static int exo_ic_chevron_right = 0x7f0806ae;
-        public static int exo_ic_default_album_image = 0x7f0806af;
-        public static int exo_ic_forward = 0x7f0806b0;
-        public static int exo_ic_fullscreen_enter = 0x7f0806b1;
-        public static int exo_ic_fullscreen_exit = 0x7f0806b2;
-        public static int exo_ic_pause_circle_filled = 0x7f0806b3;
-        public static int exo_ic_play_circle_filled = 0x7f0806b4;
-        public static int exo_ic_rewind = 0x7f0806b5;
-        public static int exo_ic_settings = 0x7f0806b6;
-        public static int exo_ic_skip_next = 0x7f0806b7;
-        public static int exo_ic_skip_previous = 0x7f0806b8;
-        public static int exo_ic_speed = 0x7f0806b9;
-        public static int exo_ic_subtitle_off = 0x7f0806ba;
-        public static int exo_ic_subtitle_on = 0x7f0806bb;
-        public static int exo_icon_circular_play = 0x7f0806bc;
-        public static int exo_icon_fastforward = 0x7f0806bd;
-        public static int exo_icon_fullscreen_enter = 0x7f0806be;
-        public static int exo_icon_fullscreen_exit = 0x7f0806bf;
-        public static int exo_icon_next = 0x7f0806c0;
-        public static int exo_icon_pause = 0x7f0806c1;
-        public static int exo_icon_play = 0x7f0806c2;
-        public static int exo_icon_previous = 0x7f0806c3;
-        public static int exo_icon_repeat_all = 0x7f0806c4;
-        public static int exo_icon_repeat_off = 0x7f0806c5;
-        public static int exo_icon_repeat_one = 0x7f0806c6;
-        public static int exo_icon_rewind = 0x7f0806c7;
-        public static int exo_icon_shuffle_off = 0x7f0806c8;
-        public static int exo_icon_shuffle_on = 0x7f0806c9;
-        public static int exo_icon_stop = 0x7f0806ca;
-        public static int exo_icon_vr = 0x7f0806cb;
-        public static int exo_legacy_controls_fastforward = 0x7f0806cc;
-        public static int exo_legacy_controls_fullscreen_enter = 0x7f0806cd;
-        public static int exo_legacy_controls_fullscreen_exit = 0x7f0806ce;
-        public static int exo_legacy_controls_next = 0x7f0806cf;
-        public static int exo_legacy_controls_pause = 0x7f0806d0;
-        public static int exo_legacy_controls_play = 0x7f0806d1;
-        public static int exo_legacy_controls_previous = 0x7f0806d2;
-        public static int exo_legacy_controls_repeat_all = 0x7f0806d3;
-        public static int exo_legacy_controls_repeat_off = 0x7f0806d4;
-        public static int exo_legacy_controls_repeat_one = 0x7f0806d5;
-        public static int exo_legacy_controls_rewind = 0x7f0806d6;
-        public static int exo_legacy_controls_shuffle_off = 0x7f0806d7;
-        public static int exo_legacy_controls_shuffle_on = 0x7f0806d8;
-        public static int exo_legacy_controls_vr = 0x7f0806d9;
-        public static int exo_notification_fastforward = 0x7f0806da;
-        public static int exo_notification_next = 0x7f0806db;
-        public static int exo_notification_pause = 0x7f0806dc;
-        public static int exo_notification_play = 0x7f0806dd;
-        public static int exo_notification_previous = 0x7f0806de;
-        public static int exo_notification_rewind = 0x7f0806df;
-        public static int exo_notification_small_icon = 0x7f0806e0;
-        public static int exo_notification_stop = 0x7f0806e1;
-        public static int exo_rounded_rectangle = 0x7f0806e2;
-        public static int exo_styled_controls_audiotrack = 0x7f0806e3;
-        public static int exo_styled_controls_check = 0x7f0806e4;
-        public static int exo_styled_controls_fastforward = 0x7f0806e5;
-        public static int exo_styled_controls_fullscreen_enter = 0x7f0806e6;
-        public static int exo_styled_controls_fullscreen_exit = 0x7f0806e7;
-        public static int exo_styled_controls_next = 0x7f0806e8;
-        public static int exo_styled_controls_overflow_hide = 0x7f0806e9;
-        public static int exo_styled_controls_overflow_show = 0x7f0806ea;
-        public static int exo_styled_controls_pause = 0x7f0806eb;
-        public static int exo_styled_controls_play = 0x7f0806ec;
-        public static int exo_styled_controls_previous = 0x7f0806ed;
-        public static int exo_styled_controls_repeat_all = 0x7f0806ee;
-        public static int exo_styled_controls_repeat_off = 0x7f0806ef;
-        public static int exo_styled_controls_repeat_one = 0x7f0806f0;
-        public static int exo_styled_controls_rewind = 0x7f0806f1;
-        public static int exo_styled_controls_settings = 0x7f0806f2;
-        public static int exo_styled_controls_shuffle_off = 0x7f0806f3;
-        public static int exo_styled_controls_shuffle_on = 0x7f0806f4;
-        public static int exo_styled_controls_simple_fastforward = 0x7f0806f5;
-        public static int exo_styled_controls_simple_rewind = 0x7f0806f6;
-        public static int exo_styled_controls_speed = 0x7f0806f7;
-        public static int exo_styled_controls_subtitle_off = 0x7f0806f8;
-        public static int exo_styled_controls_subtitle_on = 0x7f0806f9;
-        public static int exo_styled_controls_vr = 0x7f0806fa;
-        public static int notification_action_background = 0x7f080ac0;
-        public static int notification_bg = 0x7f080ac1;
-        public static int notification_bg_low = 0x7f080ac2;
-        public static int notification_bg_low_normal = 0x7f080ac3;
-        public static int notification_bg_low_pressed = 0x7f080ac4;
-        public static int notification_bg_normal = 0x7f080ac5;
-        public static int notification_bg_normal_pressed = 0x7f080ac6;
-        public static int notification_icon_background = 0x7f080ac8;
-        public static int notification_template_icon_bg = 0x7f080aca;
-        public static int notification_template_icon_low_bg = 0x7f080acb;
-        public static int notification_tile_bg = 0x7f080acd;
-        public static int notify_panel_notification_icon_bg = 0x7f080acf;
+        public static int exo_edit_mode_logo = 0x7f0806c8;
+        public static int exo_ic_audiotrack = 0x7f0806c9;
+        public static int exo_ic_check = 0x7f0806ca;
+        public static int exo_ic_chevron_left = 0x7f0806cb;
+        public static int exo_ic_chevron_right = 0x7f0806cc;
+        public static int exo_ic_default_album_image = 0x7f0806cd;
+        public static int exo_ic_forward = 0x7f0806ce;
+        public static int exo_ic_fullscreen_enter = 0x7f0806cf;
+        public static int exo_ic_fullscreen_exit = 0x7f0806d0;
+        public static int exo_ic_pause_circle_filled = 0x7f0806d1;
+        public static int exo_ic_play_circle_filled = 0x7f0806d2;
+        public static int exo_ic_rewind = 0x7f0806d3;
+        public static int exo_ic_settings = 0x7f0806d4;
+        public static int exo_ic_skip_next = 0x7f0806d5;
+        public static int exo_ic_skip_previous = 0x7f0806d6;
+        public static int exo_ic_speed = 0x7f0806d7;
+        public static int exo_ic_subtitle_off = 0x7f0806d8;
+        public static int exo_ic_subtitle_on = 0x7f0806d9;
+        public static int exo_icon_circular_play = 0x7f0806da;
+        public static int exo_icon_fastforward = 0x7f0806db;
+        public static int exo_icon_fullscreen_enter = 0x7f0806dc;
+        public static int exo_icon_fullscreen_exit = 0x7f0806dd;
+        public static int exo_icon_next = 0x7f0806de;
+        public static int exo_icon_pause = 0x7f0806df;
+        public static int exo_icon_play = 0x7f0806e0;
+        public static int exo_icon_previous = 0x7f0806e1;
+        public static int exo_icon_repeat_all = 0x7f0806e2;
+        public static int exo_icon_repeat_off = 0x7f0806e3;
+        public static int exo_icon_repeat_one = 0x7f0806e4;
+        public static int exo_icon_rewind = 0x7f0806e5;
+        public static int exo_icon_shuffle_off = 0x7f0806e6;
+        public static int exo_icon_shuffle_on = 0x7f0806e7;
+        public static int exo_icon_stop = 0x7f0806e8;
+        public static int exo_icon_vr = 0x7f0806e9;
+        public static int exo_legacy_controls_fastforward = 0x7f0806ea;
+        public static int exo_legacy_controls_fullscreen_enter = 0x7f0806eb;
+        public static int exo_legacy_controls_fullscreen_exit = 0x7f0806ec;
+        public static int exo_legacy_controls_next = 0x7f0806ed;
+        public static int exo_legacy_controls_pause = 0x7f0806ee;
+        public static int exo_legacy_controls_play = 0x7f0806ef;
+        public static int exo_legacy_controls_previous = 0x7f0806f0;
+        public static int exo_legacy_controls_repeat_all = 0x7f0806f1;
+        public static int exo_legacy_controls_repeat_off = 0x7f0806f2;
+        public static int exo_legacy_controls_repeat_one = 0x7f0806f3;
+        public static int exo_legacy_controls_rewind = 0x7f0806f4;
+        public static int exo_legacy_controls_shuffle_off = 0x7f0806f5;
+        public static int exo_legacy_controls_shuffle_on = 0x7f0806f6;
+        public static int exo_legacy_controls_vr = 0x7f0806f7;
+        public static int exo_notification_fastforward = 0x7f0806f8;
+        public static int exo_notification_next = 0x7f0806f9;
+        public static int exo_notification_pause = 0x7f0806fa;
+        public static int exo_notification_play = 0x7f0806fb;
+        public static int exo_notification_previous = 0x7f0806fc;
+        public static int exo_notification_rewind = 0x7f0806fd;
+        public static int exo_notification_small_icon = 0x7f0806fe;
+        public static int exo_notification_stop = 0x7f0806ff;
+        public static int exo_rounded_rectangle = 0x7f080700;
+        public static int exo_styled_controls_audiotrack = 0x7f080701;
+        public static int exo_styled_controls_check = 0x7f080702;
+        public static int exo_styled_controls_fastforward = 0x7f080703;
+        public static int exo_styled_controls_fullscreen_enter = 0x7f080704;
+        public static int exo_styled_controls_fullscreen_exit = 0x7f080705;
+        public static int exo_styled_controls_next = 0x7f080706;
+        public static int exo_styled_controls_overflow_hide = 0x7f080707;
+        public static int exo_styled_controls_overflow_show = 0x7f080708;
+        public static int exo_styled_controls_pause = 0x7f080709;
+        public static int exo_styled_controls_play = 0x7f08070a;
+        public static int exo_styled_controls_previous = 0x7f08070b;
+        public static int exo_styled_controls_repeat_all = 0x7f08070c;
+        public static int exo_styled_controls_repeat_off = 0x7f08070d;
+        public static int exo_styled_controls_repeat_one = 0x7f08070e;
+        public static int exo_styled_controls_rewind = 0x7f08070f;
+        public static int exo_styled_controls_settings = 0x7f080710;
+        public static int exo_styled_controls_shuffle_off = 0x7f080711;
+        public static int exo_styled_controls_shuffle_on = 0x7f080712;
+        public static int exo_styled_controls_simple_fastforward = 0x7f080713;
+        public static int exo_styled_controls_simple_rewind = 0x7f080714;
+        public static int exo_styled_controls_speed = 0x7f080715;
+        public static int exo_styled_controls_subtitle_off = 0x7f080716;
+        public static int exo_styled_controls_subtitle_on = 0x7f080717;
+        public static int exo_styled_controls_vr = 0x7f080718;
+        public static int notification_action_background = 0x7f080af5;
+        public static int notification_bg = 0x7f080af6;
+        public static int notification_bg_low = 0x7f080af7;
+        public static int notification_bg_low_normal = 0x7f080af8;
+        public static int notification_bg_low_pressed = 0x7f080af9;
+        public static int notification_bg_normal = 0x7f080afa;
+        public static int notification_bg_normal_pressed = 0x7f080afb;
+        public static int notification_icon_background = 0x7f080afd;
+        public static int notification_template_icon_bg = 0x7f080aff;
+        public static int notification_template_icon_low_bg = 0x7f080b00;
+        public static int notification_tile_bg = 0x7f080b02;
+        public static int notify_panel_notification_icon_bg = 0x7f080b04;
 
         private drawable() {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class font {
-        public static int roboto_medium_numbers = 0x7f09003f;
+        public static int roboto_medium_numbers = 0x7f090043;
 
         private font() {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class id {
         public static int accessibility_action_clickable_span = 0x7f0a0022;
         public static int accessibility_custom_action_0 = 0x7f0a0023;
@@ -346,111 +346,111 @@ public final class R {
         public static int bottom = 0x7f0a01c1;
         public static int center = 0x7f0a02d4;
         public static int chronometer = 0x7f0a030a;
-        public static int dialog_button = 0x7f0a03cc;
-        public static int exo_ad_overlay = 0x7f0a049c;
-        public static int exo_artwork = 0x7f0a049d;
-        public static int exo_audio_track = 0x7f0a049e;
-        public static int exo_basic_controls = 0x7f0a049f;
-        public static int exo_bottom_bar = 0x7f0a04a0;
-        public static int exo_buffering = 0x7f0a04a1;
-        public static int exo_center_controls = 0x7f0a04a2;
-        public static int exo_check = 0x7f0a04a3;
-        public static int exo_content_frame = 0x7f0a04a4;
-        public static int exo_controller = 0x7f0a04a5;
-        public static int exo_controller_placeholder = 0x7f0a04a6;
-        public static int exo_controls_background = 0x7f0a04a7;
-        public static int exo_duration = 0x7f0a04a8;
-        public static int exo_error_message = 0x7f0a04a9;
-        public static int exo_extra_controls = 0x7f0a04aa;
-        public static int exo_extra_controls_scroll_view = 0x7f0a04ab;
-        public static int exo_ffwd = 0x7f0a04ac;
-        public static int exo_ffwd_with_amount = 0x7f0a04ad;
-        public static int exo_fullscreen = 0x7f0a04ae;
-        public static int exo_icon = 0x7f0a04af;
-        public static int exo_image = 0x7f0a04b0;
-        public static int exo_main_text = 0x7f0a04b1;
-        public static int exo_minimal_controls = 0x7f0a04b2;
-        public static int exo_minimal_fullscreen = 0x7f0a04b3;
-        public static int exo_next = 0x7f0a04b4;
-        public static int exo_overflow_hide = 0x7f0a04b5;
-        public static int exo_overflow_show = 0x7f0a04b6;
-        public static int exo_overlay = 0x7f0a04b7;
-        public static int exo_pause = 0x7f0a04b8;
-        public static int exo_play = 0x7f0a04b9;
-        public static int exo_play_pause = 0x7f0a04ba;
-        public static int exo_playback_speed = 0x7f0a04bb;
-        public static int exo_position = 0x7f0a04bc;
-        public static int exo_prev = 0x7f0a04bd;
-        public static int exo_progress = 0x7f0a04be;
-        public static int exo_progress_placeholder = 0x7f0a04bf;
-        public static int exo_repeat_toggle = 0x7f0a04c0;
-        public static int exo_rew = 0x7f0a04c1;
-        public static int exo_rew_with_amount = 0x7f0a04c2;
-        public static int exo_settings = 0x7f0a04c3;
-        public static int exo_settings_listview = 0x7f0a04c4;
-        public static int exo_shuffle = 0x7f0a04c5;
-        public static int exo_shutter = 0x7f0a04c6;
-        public static int exo_sub_text = 0x7f0a04c7;
-        public static int exo_subtitle = 0x7f0a04c8;
-        public static int exo_subtitles = 0x7f0a04c9;
-        public static int exo_text = 0x7f0a04ca;
-        public static int exo_time = 0x7f0a04cb;
-        public static int exo_track_selection_view = 0x7f0a04cc;
-        public static int exo_vr = 0x7f0a04cd;
-        public static int fill = 0x7f0a04e2;
-        public static int fit = 0x7f0a0508;
-        public static int fixed_height = 0x7f0a050f;
-        public static int fixed_width = 0x7f0a0510;
-        public static int forever = 0x7f0a0519;
-        public static int icon = 0x7f0a065e;
-        public static int icon_group = 0x7f0a0660;
-        public static int info = 0x7f0a0696;
-        public static int italic = 0x7f0a06c2;
-        public static int item1 = 0x7f0a06c4;
-        public static int item2 = 0x7f0a06c5;
-        public static int item3 = 0x7f0a06c8;
-        public static int item_touch_helper_previous_elevation = 0x7f0a06fe;
-        public static int line1 = 0x7f0a07b0;
-        public static int line3 = 0x7f0a07b1;
-        public static int never = 0x7f0a0955;
-        public static int none = 0x7f0a0962;
-        public static int normal = 0x7f0a0964;
-        public static int notification_background = 0x7f0a096e;
-        public static int notification_main_column = 0x7f0a0972;
-        public static int notification_main_column_container = 0x7f0a0973;
-        public static int off = 0x7f0a097a;
-        public static int right_icon = 0x7f0a0aec;
-        public static int right_side = 0x7f0a0af2;
-        public static int spherical_gl_surface_view = 0x7f0a0c69;
-        public static int surface_view = 0x7f0a0cdd;
-        public static int tag_accessibility_actions = 0x7f0a0cf3;
-        public static int tag_accessibility_clickable_spans = 0x7f0a0cf4;
-        public static int tag_accessibility_heading = 0x7f0a0cf5;
-        public static int tag_accessibility_pane_title = 0x7f0a0cf6;
-        public static int tag_on_apply_window_listener = 0x7f0a0cf8;
-        public static int tag_on_receive_content_listener = 0x7f0a0cf9;
-        public static int tag_on_receive_content_mime_types = 0x7f0a0cfa;
-        public static int tag_screen_reader_focusable = 0x7f0a0cfb;
-        public static int tag_state_description = 0x7f0a0cfc;
-        public static int tag_transition_group = 0x7f0a0cfe;
-        public static int tag_unhandled_key_event_manager = 0x7f0a0cff;
-        public static int tag_unhandled_key_listeners = 0x7f0a0d00;
-        public static int tag_window_insets_animation_callback = 0x7f0a0d01;
-        public static int text = 0x7f0a0d2d;
-        public static int text2 = 0x7f0a0d2f;
-        public static int texture_view = 0x7f0a0d70;
-        public static int time = 0x7f0a0d7f;
-        public static int title = 0x7f0a0d8d;
-        public static int video_decoder_gl_surface_view = 0x7f0a0eaf;
-        public static int view_tree_lifecycle_owner = 0x7f0a0ec6;
-        public static int when_playing = 0x7f0a0ee5;
-        public static int zoom = 0x7f0a0efc;
+        public static int dialog_button = 0x7f0a03ce;
+        public static int exo_ad_overlay = 0x7f0a04a0;
+        public static int exo_artwork = 0x7f0a04a1;
+        public static int exo_audio_track = 0x7f0a04a2;
+        public static int exo_basic_controls = 0x7f0a04a3;
+        public static int exo_bottom_bar = 0x7f0a04a4;
+        public static int exo_buffering = 0x7f0a04a5;
+        public static int exo_center_controls = 0x7f0a04a6;
+        public static int exo_check = 0x7f0a04a7;
+        public static int exo_content_frame = 0x7f0a04a8;
+        public static int exo_controller = 0x7f0a04a9;
+        public static int exo_controller_placeholder = 0x7f0a04aa;
+        public static int exo_controls_background = 0x7f0a04ab;
+        public static int exo_duration = 0x7f0a04ac;
+        public static int exo_error_message = 0x7f0a04ad;
+        public static int exo_extra_controls = 0x7f0a04ae;
+        public static int exo_extra_controls_scroll_view = 0x7f0a04af;
+        public static int exo_ffwd = 0x7f0a04b0;
+        public static int exo_ffwd_with_amount = 0x7f0a04b1;
+        public static int exo_fullscreen = 0x7f0a04b2;
+        public static int exo_icon = 0x7f0a04b3;
+        public static int exo_image = 0x7f0a04b4;
+        public static int exo_main_text = 0x7f0a04b5;
+        public static int exo_minimal_controls = 0x7f0a04b6;
+        public static int exo_minimal_fullscreen = 0x7f0a04b7;
+        public static int exo_next = 0x7f0a04b8;
+        public static int exo_overflow_hide = 0x7f0a04b9;
+        public static int exo_overflow_show = 0x7f0a04ba;
+        public static int exo_overlay = 0x7f0a04bb;
+        public static int exo_pause = 0x7f0a04bc;
+        public static int exo_play = 0x7f0a04bd;
+        public static int exo_play_pause = 0x7f0a04be;
+        public static int exo_playback_speed = 0x7f0a04bf;
+        public static int exo_position = 0x7f0a04c0;
+        public static int exo_prev = 0x7f0a04c1;
+        public static int exo_progress = 0x7f0a04c2;
+        public static int exo_progress_placeholder = 0x7f0a04c3;
+        public static int exo_repeat_toggle = 0x7f0a04c4;
+        public static int exo_rew = 0x7f0a04c5;
+        public static int exo_rew_with_amount = 0x7f0a04c6;
+        public static int exo_settings = 0x7f0a04c7;
+        public static int exo_settings_listview = 0x7f0a04c8;
+        public static int exo_shuffle = 0x7f0a04c9;
+        public static int exo_shutter = 0x7f0a04ca;
+        public static int exo_sub_text = 0x7f0a04cb;
+        public static int exo_subtitle = 0x7f0a04cc;
+        public static int exo_subtitles = 0x7f0a04cd;
+        public static int exo_text = 0x7f0a04ce;
+        public static int exo_time = 0x7f0a04cf;
+        public static int exo_track_selection_view = 0x7f0a04d0;
+        public static int exo_vr = 0x7f0a04d1;
+        public static int fill = 0x7f0a04e6;
+        public static int fit = 0x7f0a0500;
+        public static int fixed_height = 0x7f0a0507;
+        public static int fixed_width = 0x7f0a0508;
+        public static int forever = 0x7f0a0511;
+        public static int icon = 0x7f0a0656;
+        public static int icon_group = 0x7f0a0658;
+        public static int info = 0x7f0a0690;
+        public static int italic = 0x7f0a06bc;
+        public static int item1 = 0x7f0a06be;
+        public static int item2 = 0x7f0a06bf;
+        public static int item3 = 0x7f0a06c2;
+        public static int item_touch_helper_previous_elevation = 0x7f0a06fa;
+        public static int line1 = 0x7f0a07ae;
+        public static int line3 = 0x7f0a07af;
+        public static int never = 0x7f0a0953;
+        public static int none = 0x7f0a0960;
+        public static int normal = 0x7f0a0962;
+        public static int notification_background = 0x7f0a096c;
+        public static int notification_main_column = 0x7f0a0970;
+        public static int notification_main_column_container = 0x7f0a0971;
+        public static int off = 0x7f0a0979;
+        public static int right_icon = 0x7f0a0aed;
+        public static int right_side = 0x7f0a0af3;
+        public static int spherical_gl_surface_view = 0x7f0a0c65;
+        public static int surface_view = 0x7f0a0cd9;
+        public static int tag_accessibility_actions = 0x7f0a0cef;
+        public static int tag_accessibility_clickable_spans = 0x7f0a0cf0;
+        public static int tag_accessibility_heading = 0x7f0a0cf1;
+        public static int tag_accessibility_pane_title = 0x7f0a0cf2;
+        public static int tag_on_apply_window_listener = 0x7f0a0cf4;
+        public static int tag_on_receive_content_listener = 0x7f0a0cf5;
+        public static int tag_on_receive_content_mime_types = 0x7f0a0cf6;
+        public static int tag_screen_reader_focusable = 0x7f0a0cf7;
+        public static int tag_state_description = 0x7f0a0cf8;
+        public static int tag_transition_group = 0x7f0a0cfa;
+        public static int tag_unhandled_key_event_manager = 0x7f0a0cfb;
+        public static int tag_unhandled_key_listeners = 0x7f0a0cfc;
+        public static int tag_window_insets_animation_callback = 0x7f0a0cfd;
+        public static int text = 0x7f0a0d29;
+        public static int text2 = 0x7f0a0d2b;
+        public static int texture_view = 0x7f0a0d6e;
+        public static int time = 0x7f0a0d7d;
+        public static int title = 0x7f0a0d8b;
+        public static int video_decoder_gl_surface_view = 0x7f0a0eb3;
+        public static int view_tree_lifecycle_owner = 0x7f0a0eca;
+        public static int when_playing = 0x7f0a0ee9;
+        public static int zoom = 0x7f0a0f00;
 
         private id() {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class integer {
         public static int exo_media_button_opacity_percentage_disabled = 0x7f0b000a;
         public static int exo_media_button_opacity_percentage_enabled = 0x7f0b000b;
@@ -460,31 +460,31 @@ public final class R {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class layout {
         public static int custom_dialog = 0x7f0d0073;
-        public static int exo_legacy_player_control_view = 0x7f0d00ba;
-        public static int exo_list_divider = 0x7f0d00bb;
-        public static int exo_player_control_ffwd_button = 0x7f0d00bc;
-        public static int exo_player_control_rewind_button = 0x7f0d00bd;
-        public static int exo_player_control_view = 0x7f0d00be;
-        public static int exo_player_view = 0x7f0d00bf;
-        public static int exo_styled_settings_list = 0x7f0d00c0;
-        public static int exo_styled_settings_list_item = 0x7f0d00c1;
-        public static int exo_styled_sub_settings_list_item = 0x7f0d00c2;
-        public static int exo_track_selection_dialog = 0x7f0d00c3;
-        public static int notification_action = 0x7f0d01b7;
-        public static int notification_action_tombstone = 0x7f0d01b8;
-        public static int notification_template_custom_big = 0x7f0d01c0;
-        public static int notification_template_icon_group = 0x7f0d01c1;
-        public static int notification_template_part_chronometer = 0x7f0d01c5;
-        public static int notification_template_part_time = 0x7f0d01c6;
+        public static int exo_legacy_player_control_view = 0x7f0d00bb;
+        public static int exo_list_divider = 0x7f0d00bc;
+        public static int exo_player_control_ffwd_button = 0x7f0d00bd;
+        public static int exo_player_control_rewind_button = 0x7f0d00be;
+        public static int exo_player_control_view = 0x7f0d00bf;
+        public static int exo_player_view = 0x7f0d00c0;
+        public static int exo_styled_settings_list = 0x7f0d00c1;
+        public static int exo_styled_settings_list_item = 0x7f0d00c2;
+        public static int exo_styled_sub_settings_list_item = 0x7f0d00c3;
+        public static int exo_track_selection_dialog = 0x7f0d00c4;
+        public static int notification_action = 0x7f0d01bb;
+        public static int notification_action_tombstone = 0x7f0d01bc;
+        public static int notification_template_custom_big = 0x7f0d01c4;
+        public static int notification_template_icon_group = 0x7f0d01c5;
+        public static int notification_template_part_chronometer = 0x7f0d01c9;
+        public static int notification_template_part_time = 0x7f0d01ca;
 
         private layout() {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class plurals {
         public static int exo_controls_fastforward_by_amount_description = 0x7f110000;
         public static int exo_controls_rewind_by_amount_description = 0x7f110001;
@@ -493,58 +493,58 @@ public final class R {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class string {
-        public static int exo_controls_cc_disabled_description = 0x7f130086;
-        public static int exo_controls_cc_enabled_description = 0x7f130087;
-        public static int exo_controls_custom_playback_speed = 0x7f130088;
-        public static int exo_controls_fastforward_description = 0x7f130089;
-        public static int exo_controls_fullscreen_enter_description = 0x7f13008a;
-        public static int exo_controls_fullscreen_exit_description = 0x7f13008b;
-        public static int exo_controls_hide = 0x7f13008c;
-        public static int exo_controls_next_description = 0x7f13008d;
-        public static int exo_controls_overflow_hide_description = 0x7f13008e;
-        public static int exo_controls_overflow_show_description = 0x7f13008f;
-        public static int exo_controls_pause_description = 0x7f130090;
-        public static int exo_controls_play_description = 0x7f130091;
-        public static int exo_controls_playback_speed = 0x7f130092;
-        public static int exo_controls_previous_description = 0x7f130093;
-        public static int exo_controls_repeat_all_description = 0x7f130094;
-        public static int exo_controls_repeat_off_description = 0x7f130095;
-        public static int exo_controls_repeat_one_description = 0x7f130096;
-        public static int exo_controls_rewind_description = 0x7f130097;
-        public static int exo_controls_seek_bar_description = 0x7f130098;
-        public static int exo_controls_settings_description = 0x7f130099;
-        public static int exo_controls_show = 0x7f13009a;
-        public static int exo_controls_shuffle_off_description = 0x7f13009b;
-        public static int exo_controls_shuffle_on_description = 0x7f13009c;
-        public static int exo_controls_stop_description = 0x7f13009d;
-        public static int exo_controls_time_placeholder = 0x7f13009e;
-        public static int exo_controls_vr_description = 0x7f13009f;
-        public static int exo_item_list = 0x7f1300a9;
-        public static int exo_track_bitrate = 0x7f1300aa;
-        public static int exo_track_mono = 0x7f1300ab;
-        public static int exo_track_resolution = 0x7f1300ac;
-        public static int exo_track_role_alternate = 0x7f1300ad;
-        public static int exo_track_role_closed_captions = 0x7f1300ae;
-        public static int exo_track_role_commentary = 0x7f1300af;
-        public static int exo_track_role_supplementary = 0x7f1300b0;
-        public static int exo_track_selection_auto = 0x7f1300b1;
-        public static int exo_track_selection_none = 0x7f1300b2;
-        public static int exo_track_selection_title_audio = 0x7f1300b3;
-        public static int exo_track_stereo = 0x7f1300b4;
-        public static int exo_track_surround = 0x7f1300b5;
-        public static int exo_track_surround_5_point_1 = 0x7f1300b6;
-        public static int exo_track_surround_7_point_1 = 0x7f1300b7;
-        public static int exo_track_unknown = 0x7f1300b8;
-        public static int exo_track_unknown_name = 0x7f1300b9;
-        public static int status_bar_notification_info_overflow = 0x7f1301ff;
+        public static int exo_controls_cc_disabled_description = 0x7f130087;
+        public static int exo_controls_cc_enabled_description = 0x7f130088;
+        public static int exo_controls_custom_playback_speed = 0x7f130089;
+        public static int exo_controls_fastforward_description = 0x7f13008a;
+        public static int exo_controls_fullscreen_enter_description = 0x7f13008b;
+        public static int exo_controls_fullscreen_exit_description = 0x7f13008c;
+        public static int exo_controls_hide = 0x7f13008d;
+        public static int exo_controls_next_description = 0x7f13008e;
+        public static int exo_controls_overflow_hide_description = 0x7f13008f;
+        public static int exo_controls_overflow_show_description = 0x7f130090;
+        public static int exo_controls_pause_description = 0x7f130091;
+        public static int exo_controls_play_description = 0x7f130092;
+        public static int exo_controls_playback_speed = 0x7f130093;
+        public static int exo_controls_previous_description = 0x7f130094;
+        public static int exo_controls_repeat_all_description = 0x7f130095;
+        public static int exo_controls_repeat_off_description = 0x7f130096;
+        public static int exo_controls_repeat_one_description = 0x7f130097;
+        public static int exo_controls_rewind_description = 0x7f130098;
+        public static int exo_controls_seek_bar_description = 0x7f130099;
+        public static int exo_controls_settings_description = 0x7f13009a;
+        public static int exo_controls_show = 0x7f13009b;
+        public static int exo_controls_shuffle_off_description = 0x7f13009c;
+        public static int exo_controls_shuffle_on_description = 0x7f13009d;
+        public static int exo_controls_stop_description = 0x7f13009e;
+        public static int exo_controls_time_placeholder = 0x7f13009f;
+        public static int exo_controls_vr_description = 0x7f1300a0;
+        public static int exo_item_list = 0x7f1300aa;
+        public static int exo_track_bitrate = 0x7f1300ab;
+        public static int exo_track_mono = 0x7f1300ac;
+        public static int exo_track_resolution = 0x7f1300ad;
+        public static int exo_track_role_alternate = 0x7f1300ae;
+        public static int exo_track_role_closed_captions = 0x7f1300af;
+        public static int exo_track_role_commentary = 0x7f1300b0;
+        public static int exo_track_role_supplementary = 0x7f1300b1;
+        public static int exo_track_selection_auto = 0x7f1300b2;
+        public static int exo_track_selection_none = 0x7f1300b3;
+        public static int exo_track_selection_title_audio = 0x7f1300b4;
+        public static int exo_track_stereo = 0x7f1300b5;
+        public static int exo_track_surround = 0x7f1300b6;
+        public static int exo_track_surround_5_point_1 = 0x7f1300b7;
+        public static int exo_track_surround_7_point_1 = 0x7f1300b8;
+        public static int exo_track_unknown = 0x7f1300b9;
+        public static int exo_track_unknown_name = 0x7f1300ba;
+        public static int status_bar_notification_info_overflow = 0x7f130204;
 
         private string() {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class style {
         public static int ExoMediaButton = 0x7f140137;
         public static int ExoMediaButton_FastForward = 0x7f140138;
@@ -583,14 +583,14 @@ public final class R {
         public static int TextAppearance_Compat_Notification_Line2 = 0x7f140226;
         public static int TextAppearance_Compat_Notification_Time = 0x7f140229;
         public static int TextAppearance_Compat_Notification_Title = 0x7f14022b;
-        public static int Widget_Compat_NotificationActionContainer = 0x7f1403a1;
-        public static int Widget_Compat_NotificationActionText = 0x7f1403a2;
+        public static int Widget_Compat_NotificationActionContainer = 0x7f1403a2;
+        public static int Widget_Compat_NotificationActionText = 0x7f1403a3;
 
         private style() {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class styleable {
         public static int AspectRatioFrameLayout_resize_mode = 0x00000000;
         public static int Capability_queryPatterns = 0x00000000;
@@ -777,18 +777,18 @@ public final class R {
         public static int RecyclerView_reverseLayout = 0x00000009;
         public static int RecyclerView_spanCount = 0x0000000a;
         public static int RecyclerView_stackFromEnd = 0x0000000b;
-        public static int[] AspectRatioFrameLayout = {com.arizona21.game.web.R.attr.resize_mode};
-        public static int[] Capability = {com.arizona21.game.web.R.attr.queryPatterns, com.arizona21.game.web.R.attr.shortcutMatchRequired};
-        public static int[] ColorStateListItem = {16843173, 16843551, 16844359, com.arizona21.game.web.R.attr.alpha, com.arizona21.game.web.R.attr.lStar};
-        public static int[] DefaultTimeBar = {com.arizona21.game.web.R.attr.ad_marker_color, com.arizona21.game.web.R.attr.ad_marker_width, com.arizona21.game.web.R.attr.bar_gravity, com.arizona21.game.web.R.attr.bar_height, com.arizona21.game.web.R.attr.buffered_color, com.arizona21.game.web.R.attr.played_ad_marker_color, com.arizona21.game.web.R.attr.played_color, com.arizona21.game.web.R.attr.scrubber_color, com.arizona21.game.web.R.attr.scrubber_disabled_size, com.arizona21.game.web.R.attr.scrubber_dragged_size, com.arizona21.game.web.R.attr.scrubber_drawable, com.arizona21.game.web.R.attr.scrubber_enabled_size, com.arizona21.game.web.R.attr.touch_target_height, com.arizona21.game.web.R.attr.unplayed_color};
-        public static int[] FontFamily = {com.arizona21.game.web.R.attr.fontProviderAuthority, com.arizona21.game.web.R.attr.fontProviderCerts, com.arizona21.game.web.R.attr.fontProviderFallbackQuery, com.arizona21.game.web.R.attr.fontProviderFetchStrategy, com.arizona21.game.web.R.attr.fontProviderFetchTimeout, com.arizona21.game.web.R.attr.fontProviderPackage, com.arizona21.game.web.R.attr.fontProviderQuery, com.arizona21.game.web.R.attr.fontProviderSystemFontFamily};
-        public static int[] FontFamilyFont = {16844082, 16844083, 16844095, 16844143, 16844144, com.arizona21.game.web.R.attr.font, com.arizona21.game.web.R.attr.fontStyle, com.arizona21.game.web.R.attr.fontVariationSettings, com.arizona21.game.web.R.attr.fontWeight, com.arizona21.game.web.R.attr.ttcIndex};
+        public static int[] AspectRatioFrameLayout = {com.arizona21.game.R.attr.resize_mode};
+        public static int[] Capability = {com.arizona21.game.R.attr.queryPatterns, com.arizona21.game.R.attr.shortcutMatchRequired};
+        public static int[] ColorStateListItem = {16843173, 16843551, 16844359, com.arizona21.game.R.attr.alpha, com.arizona21.game.R.attr.lStar};
+        public static int[] DefaultTimeBar = {com.arizona21.game.R.attr.ad_marker_color, com.arizona21.game.R.attr.ad_marker_width, com.arizona21.game.R.attr.bar_gravity, com.arizona21.game.R.attr.bar_height, com.arizona21.game.R.attr.buffered_color, com.arizona21.game.R.attr.played_ad_marker_color, com.arizona21.game.R.attr.played_color, com.arizona21.game.R.attr.scrubber_color, com.arizona21.game.R.attr.scrubber_disabled_size, com.arizona21.game.R.attr.scrubber_dragged_size, com.arizona21.game.R.attr.scrubber_drawable, com.arizona21.game.R.attr.scrubber_enabled_size, com.arizona21.game.R.attr.touch_target_height, com.arizona21.game.R.attr.unplayed_color};
+        public static int[] FontFamily = {com.arizona21.game.R.attr.fontProviderAuthority, com.arizona21.game.R.attr.fontProviderCerts, com.arizona21.game.R.attr.fontProviderFallbackQuery, com.arizona21.game.R.attr.fontProviderFetchStrategy, com.arizona21.game.R.attr.fontProviderFetchTimeout, com.arizona21.game.R.attr.fontProviderPackage, com.arizona21.game.R.attr.fontProviderQuery, com.arizona21.game.R.attr.fontProviderSystemFontFamily};
+        public static int[] FontFamilyFont = {16844082, 16844083, 16844095, 16844143, 16844144, com.arizona21.game.R.attr.font, com.arizona21.game.R.attr.fontStyle, com.arizona21.game.R.attr.fontVariationSettings, com.arizona21.game.R.attr.fontWeight, com.arizona21.game.R.attr.ttcIndex};
         public static int[] GradientColor = {16843165, 16843166, 16843169, 16843170, 16843171, 16843172, 16843265, 16843275, 16844048, 16844049, 16844050, 16844051};
         public static int[] GradientColorItem = {16843173, 16844052};
-        public static int[] LegacyPlayerControlView = {com.arizona21.game.web.R.attr.ad_marker_color, com.arizona21.game.web.R.attr.ad_marker_width, com.arizona21.game.web.R.attr.bar_gravity, com.arizona21.game.web.R.attr.bar_height, com.arizona21.game.web.R.attr.buffered_color, com.arizona21.game.web.R.attr.controller_layout_id, com.arizona21.game.web.R.attr.played_ad_marker_color, com.arizona21.game.web.R.attr.played_color, com.arizona21.game.web.R.attr.repeat_toggle_modes, com.arizona21.game.web.R.attr.scrubber_color, com.arizona21.game.web.R.attr.scrubber_disabled_size, com.arizona21.game.web.R.attr.scrubber_dragged_size, com.arizona21.game.web.R.attr.scrubber_drawable, com.arizona21.game.web.R.attr.scrubber_enabled_size, com.arizona21.game.web.R.attr.show_fastforward_button, com.arizona21.game.web.R.attr.show_next_button, com.arizona21.game.web.R.attr.show_previous_button, com.arizona21.game.web.R.attr.show_rewind_button, com.arizona21.game.web.R.attr.show_shuffle_button, com.arizona21.game.web.R.attr.show_timeout, com.arizona21.game.web.R.attr.time_bar_min_update_interval, com.arizona21.game.web.R.attr.touch_target_height, com.arizona21.game.web.R.attr.unplayed_color};
-        public static int[] PlayerControlView = {com.arizona21.game.web.R.attr.ad_marker_color, com.arizona21.game.web.R.attr.ad_marker_width, com.arizona21.game.web.R.attr.animation_enabled, com.arizona21.game.web.R.attr.bar_gravity, com.arizona21.game.web.R.attr.bar_height, com.arizona21.game.web.R.attr.buffered_color, com.arizona21.game.web.R.attr.controller_layout_id, com.arizona21.game.web.R.attr.fastforward_icon, com.arizona21.game.web.R.attr.fullscreen_enter_icon, com.arizona21.game.web.R.attr.fullscreen_exit_icon, com.arizona21.game.web.R.attr.next_icon, com.arizona21.game.web.R.attr.pause_icon, com.arizona21.game.web.R.attr.play_icon, com.arizona21.game.web.R.attr.played_ad_marker_color, com.arizona21.game.web.R.attr.played_color, com.arizona21.game.web.R.attr.previous_icon, com.arizona21.game.web.R.attr.repeat_all_icon, com.arizona21.game.web.R.attr.repeat_off_icon, com.arizona21.game.web.R.attr.repeat_one_icon, com.arizona21.game.web.R.attr.repeat_toggle_modes, com.arizona21.game.web.R.attr.rewind_icon, com.arizona21.game.web.R.attr.scrubber_color, com.arizona21.game.web.R.attr.scrubber_disabled_size, com.arizona21.game.web.R.attr.scrubber_dragged_size, com.arizona21.game.web.R.attr.scrubber_drawable, com.arizona21.game.web.R.attr.scrubber_enabled_size, com.arizona21.game.web.R.attr.show_fastforward_button, com.arizona21.game.web.R.attr.show_next_button, com.arizona21.game.web.R.attr.show_previous_button, com.arizona21.game.web.R.attr.show_rewind_button, com.arizona21.game.web.R.attr.show_shuffle_button, com.arizona21.game.web.R.attr.show_subtitle_button, com.arizona21.game.web.R.attr.show_timeout, com.arizona21.game.web.R.attr.show_vr_button, com.arizona21.game.web.R.attr.shuffle_off_icon, com.arizona21.game.web.R.attr.shuffle_on_icon, com.arizona21.game.web.R.attr.subtitle_off_icon, com.arizona21.game.web.R.attr.subtitle_on_icon, com.arizona21.game.web.R.attr.time_bar_min_update_interval, com.arizona21.game.web.R.attr.time_bar_scrubbing_enabled, com.arizona21.game.web.R.attr.touch_target_height, com.arizona21.game.web.R.attr.unplayed_color, com.arizona21.game.web.R.attr.vr_icon};
-        public static int[] PlayerView = {com.arizona21.game.web.R.attr.ad_marker_color, com.arizona21.game.web.R.attr.ad_marker_width, com.arizona21.game.web.R.attr.animation_enabled, com.arizona21.game.web.R.attr.artwork_display_mode, com.arizona21.game.web.R.attr.auto_show, com.arizona21.game.web.R.attr.bar_gravity, com.arizona21.game.web.R.attr.bar_height, com.arizona21.game.web.R.attr.buffered_color, com.arizona21.game.web.R.attr.controller_layout_id, com.arizona21.game.web.R.attr.default_artwork, com.arizona21.game.web.R.attr.fastforward_icon, com.arizona21.game.web.R.attr.fullscreen_enter_icon, com.arizona21.game.web.R.attr.fullscreen_exit_icon, com.arizona21.game.web.R.attr.hide_during_ads, com.arizona21.game.web.R.attr.hide_on_touch, com.arizona21.game.web.R.attr.image_display_mode, com.arizona21.game.web.R.attr.keep_content_on_player_reset, com.arizona21.game.web.R.attr.next_icon, com.arizona21.game.web.R.attr.pause_icon, com.arizona21.game.web.R.attr.play_icon, com.arizona21.game.web.R.attr.played_ad_marker_color, com.arizona21.game.web.R.attr.played_color, com.arizona21.game.web.R.attr.player_layout_id, com.arizona21.game.web.R.attr.previous_icon, com.arizona21.game.web.R.attr.repeat_all_icon, com.arizona21.game.web.R.attr.repeat_off_icon, com.arizona21.game.web.R.attr.repeat_one_icon, com.arizona21.game.web.R.attr.repeat_toggle_modes, com.arizona21.game.web.R.attr.resize_mode, com.arizona21.game.web.R.attr.rewind_icon, com.arizona21.game.web.R.attr.scrubber_color, com.arizona21.game.web.R.attr.scrubber_disabled_size, com.arizona21.game.web.R.attr.scrubber_dragged_size, com.arizona21.game.web.R.attr.scrubber_drawable, com.arizona21.game.web.R.attr.scrubber_enabled_size, com.arizona21.game.web.R.attr.show_buffering, com.arizona21.game.web.R.attr.show_shuffle_button, com.arizona21.game.web.R.attr.show_subtitle_button, com.arizona21.game.web.R.attr.show_timeout, com.arizona21.game.web.R.attr.show_vr_button, com.arizona21.game.web.R.attr.shuffle_off_icon, com.arizona21.game.web.R.attr.shuffle_on_icon, com.arizona21.game.web.R.attr.shutter_background_color, com.arizona21.game.web.R.attr.subtitle_off_icon, com.arizona21.game.web.R.attr.subtitle_on_icon, com.arizona21.game.web.R.attr.surface_type, com.arizona21.game.web.R.attr.time_bar_min_update_interval, com.arizona21.game.web.R.attr.time_bar_scrubbing_enabled, com.arizona21.game.web.R.attr.touch_target_height, com.arizona21.game.web.R.attr.unplayed_color, com.arizona21.game.web.R.attr.use_artwork, com.arizona21.game.web.R.attr.use_controller, com.arizona21.game.web.R.attr.vr_icon};
-        public static int[] RecyclerView = {16842948, 16842987, 16842993, com.arizona21.game.web.R.attr.fastScrollEnabled, com.arizona21.game.web.R.attr.fastScrollHorizontalThumbDrawable, com.arizona21.game.web.R.attr.fastScrollHorizontalTrackDrawable, com.arizona21.game.web.R.attr.fastScrollVerticalThumbDrawable, com.arizona21.game.web.R.attr.fastScrollVerticalTrackDrawable, com.arizona21.game.web.R.attr.layoutManager, com.arizona21.game.web.R.attr.reverseLayout, com.arizona21.game.web.R.attr.spanCount, com.arizona21.game.web.R.attr.stackFromEnd};
+        public static int[] LegacyPlayerControlView = {com.arizona21.game.R.attr.ad_marker_color, com.arizona21.game.R.attr.ad_marker_width, com.arizona21.game.R.attr.bar_gravity, com.arizona21.game.R.attr.bar_height, com.arizona21.game.R.attr.buffered_color, com.arizona21.game.R.attr.controller_layout_id, com.arizona21.game.R.attr.played_ad_marker_color, com.arizona21.game.R.attr.played_color, com.arizona21.game.R.attr.repeat_toggle_modes, com.arizona21.game.R.attr.scrubber_color, com.arizona21.game.R.attr.scrubber_disabled_size, com.arizona21.game.R.attr.scrubber_dragged_size, com.arizona21.game.R.attr.scrubber_drawable, com.arizona21.game.R.attr.scrubber_enabled_size, com.arizona21.game.R.attr.show_fastforward_button, com.arizona21.game.R.attr.show_next_button, com.arizona21.game.R.attr.show_previous_button, com.arizona21.game.R.attr.show_rewind_button, com.arizona21.game.R.attr.show_shuffle_button, com.arizona21.game.R.attr.show_timeout, com.arizona21.game.R.attr.time_bar_min_update_interval, com.arizona21.game.R.attr.touch_target_height, com.arizona21.game.R.attr.unplayed_color};
+        public static int[] PlayerControlView = {com.arizona21.game.R.attr.ad_marker_color, com.arizona21.game.R.attr.ad_marker_width, com.arizona21.game.R.attr.animation_enabled, com.arizona21.game.R.attr.bar_gravity, com.arizona21.game.R.attr.bar_height, com.arizona21.game.R.attr.buffered_color, com.arizona21.game.R.attr.controller_layout_id, com.arizona21.game.R.attr.fastforward_icon, com.arizona21.game.R.attr.fullscreen_enter_icon, com.arizona21.game.R.attr.fullscreen_exit_icon, com.arizona21.game.R.attr.next_icon, com.arizona21.game.R.attr.pause_icon, com.arizona21.game.R.attr.play_icon, com.arizona21.game.R.attr.played_ad_marker_color, com.arizona21.game.R.attr.played_color, com.arizona21.game.R.attr.previous_icon, com.arizona21.game.R.attr.repeat_all_icon, com.arizona21.game.R.attr.repeat_off_icon, com.arizona21.game.R.attr.repeat_one_icon, com.arizona21.game.R.attr.repeat_toggle_modes, com.arizona21.game.R.attr.rewind_icon, com.arizona21.game.R.attr.scrubber_color, com.arizona21.game.R.attr.scrubber_disabled_size, com.arizona21.game.R.attr.scrubber_dragged_size, com.arizona21.game.R.attr.scrubber_drawable, com.arizona21.game.R.attr.scrubber_enabled_size, com.arizona21.game.R.attr.show_fastforward_button, com.arizona21.game.R.attr.show_next_button, com.arizona21.game.R.attr.show_previous_button, com.arizona21.game.R.attr.show_rewind_button, com.arizona21.game.R.attr.show_shuffle_button, com.arizona21.game.R.attr.show_subtitle_button, com.arizona21.game.R.attr.show_timeout, com.arizona21.game.R.attr.show_vr_button, com.arizona21.game.R.attr.shuffle_off_icon, com.arizona21.game.R.attr.shuffle_on_icon, com.arizona21.game.R.attr.subtitle_off_icon, com.arizona21.game.R.attr.subtitle_on_icon, com.arizona21.game.R.attr.time_bar_min_update_interval, com.arizona21.game.R.attr.time_bar_scrubbing_enabled, com.arizona21.game.R.attr.touch_target_height, com.arizona21.game.R.attr.unplayed_color, com.arizona21.game.R.attr.vr_icon};
+        public static int[] PlayerView = {com.arizona21.game.R.attr.ad_marker_color, com.arizona21.game.R.attr.ad_marker_width, com.arizona21.game.R.attr.animation_enabled, com.arizona21.game.R.attr.artwork_display_mode, com.arizona21.game.R.attr.auto_show, com.arizona21.game.R.attr.bar_gravity, com.arizona21.game.R.attr.bar_height, com.arizona21.game.R.attr.buffered_color, com.arizona21.game.R.attr.controller_layout_id, com.arizona21.game.R.attr.default_artwork, com.arizona21.game.R.attr.fastforward_icon, com.arizona21.game.R.attr.fullscreen_enter_icon, com.arizona21.game.R.attr.fullscreen_exit_icon, com.arizona21.game.R.attr.hide_during_ads, com.arizona21.game.R.attr.hide_on_touch, com.arizona21.game.R.attr.image_display_mode, com.arizona21.game.R.attr.keep_content_on_player_reset, com.arizona21.game.R.attr.next_icon, com.arizona21.game.R.attr.pause_icon, com.arizona21.game.R.attr.play_icon, com.arizona21.game.R.attr.played_ad_marker_color, com.arizona21.game.R.attr.played_color, com.arizona21.game.R.attr.player_layout_id, com.arizona21.game.R.attr.previous_icon, com.arizona21.game.R.attr.repeat_all_icon, com.arizona21.game.R.attr.repeat_off_icon, com.arizona21.game.R.attr.repeat_one_icon, com.arizona21.game.R.attr.repeat_toggle_modes, com.arizona21.game.R.attr.resize_mode, com.arizona21.game.R.attr.rewind_icon, com.arizona21.game.R.attr.scrubber_color, com.arizona21.game.R.attr.scrubber_disabled_size, com.arizona21.game.R.attr.scrubber_dragged_size, com.arizona21.game.R.attr.scrubber_drawable, com.arizona21.game.R.attr.scrubber_enabled_size, com.arizona21.game.R.attr.show_buffering, com.arizona21.game.R.attr.show_shuffle_button, com.arizona21.game.R.attr.show_subtitle_button, com.arizona21.game.R.attr.show_timeout, com.arizona21.game.R.attr.show_vr_button, com.arizona21.game.R.attr.shuffle_off_icon, com.arizona21.game.R.attr.shuffle_on_icon, com.arizona21.game.R.attr.shutter_background_color, com.arizona21.game.R.attr.subtitle_off_icon, com.arizona21.game.R.attr.subtitle_on_icon, com.arizona21.game.R.attr.surface_type, com.arizona21.game.R.attr.time_bar_min_update_interval, com.arizona21.game.R.attr.time_bar_scrubbing_enabled, com.arizona21.game.R.attr.touch_target_height, com.arizona21.game.R.attr.unplayed_color, com.arizona21.game.R.attr.use_artwork, com.arizona21.game.R.attr.use_controller, com.arizona21.game.R.attr.vr_icon};
+        public static int[] RecyclerView = {16842948, 16842987, 16842993, com.arizona21.game.R.attr.fastScrollEnabled, com.arizona21.game.R.attr.fastScrollHorizontalThumbDrawable, com.arizona21.game.R.attr.fastScrollHorizontalTrackDrawable, com.arizona21.game.R.attr.fastScrollVerticalThumbDrawable, com.arizona21.game.R.attr.fastScrollVerticalTrackDrawable, com.arizona21.game.R.attr.layoutManager, com.arizona21.game.R.attr.reverseLayout, com.arizona21.game.R.attr.spanCount, com.arizona21.game.R.attr.stackFromEnd};
 
         private styleable() {
         }

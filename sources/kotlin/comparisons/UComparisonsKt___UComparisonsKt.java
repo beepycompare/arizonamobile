@@ -15,169 +15,169 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
 public class UComparisonsKt___UComparisonsKt {
     /* renamed from: maxOf-J1ME1BU  reason: not valid java name */
-    public static final int m9693maxOfJ1ME1BU(int i, int i2) {
+    public static final int m10257maxOfJ1ME1BU(int i, int i2) {
         int compare;
         compare = Integer.compare(i ^ Integer.MIN_VALUE, i2 ^ Integer.MIN_VALUE);
         return compare >= 0 ? i : i2;
     }
 
     /* renamed from: maxOf-eb3DHEI  reason: not valid java name */
-    public static final long m9701maxOfeb3DHEI(long j, long j2) {
+    public static final long m10265maxOfeb3DHEI(long j, long j2) {
         int compare;
         compare = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
         return compare >= 0 ? j : j2;
     }
 
     /* renamed from: maxOf-Kr8caGY  reason: not valid java name */
-    public static final byte m9694maxOfKr8caGY(byte b, byte b2) {
+    public static final byte m10258maxOfKr8caGY(byte b, byte b2) {
         return Intrinsics.compare(b & 255, b2 & 255) >= 0 ? b : b2;
     }
 
     /* renamed from: maxOf-5PvTz6A  reason: not valid java name */
-    public static final short m9692maxOf5PvTz6A(short s, short s2) {
+    public static final short m10256maxOf5PvTz6A(short s, short s2) {
         return Intrinsics.compare(s & UShort.MAX_VALUE, 65535 & s2) >= 0 ? s : s2;
     }
 
     /* renamed from: maxOf-WZ9TVnA  reason: not valid java name */
-    private static final int m9698maxOfWZ9TVnA(int i, int i2, int i3) {
-        return UComparisonsKt.m9693maxOfJ1ME1BU(i, UComparisonsKt.m9693maxOfJ1ME1BU(i2, i3));
+    private static final int m10262maxOfWZ9TVnA(int i, int i2, int i3) {
+        return UComparisonsKt.m10257maxOfJ1ME1BU(i, UComparisonsKt.m10257maxOfJ1ME1BU(i2, i3));
     }
 
     /* renamed from: maxOf-sambcqE  reason: not valid java name */
-    private static final long m9702maxOfsambcqE(long j, long j2, long j3) {
-        return UComparisonsKt.m9701maxOfeb3DHEI(j, UComparisonsKt.m9701maxOfeb3DHEI(j2, j3));
+    private static final long m10266maxOfsambcqE(long j, long j2, long j3) {
+        return UComparisonsKt.m10265maxOfeb3DHEI(j, UComparisonsKt.m10265maxOfeb3DHEI(j2, j3));
     }
 
     /* renamed from: maxOf-b33U2AM  reason: not valid java name */
-    private static final byte m9700maxOfb33U2AM(byte b, byte b2, byte b3) {
-        return UComparisonsKt.m9694maxOfKr8caGY(b, UComparisonsKt.m9694maxOfKr8caGY(b2, b3));
+    private static final byte m10264maxOfb33U2AM(byte b, byte b2, byte b3) {
+        return UComparisonsKt.m10258maxOfKr8caGY(b, UComparisonsKt.m10258maxOfKr8caGY(b2, b3));
     }
 
     /* renamed from: maxOf-VKSA0NQ  reason: not valid java name */
-    private static final short m9697maxOfVKSA0NQ(short s, short s2, short s3) {
-        return UComparisonsKt.m9692maxOf5PvTz6A(s, UComparisonsKt.m9692maxOf5PvTz6A(s2, s3));
+    private static final short m10261maxOfVKSA0NQ(short s, short s2, short s3) {
+        return UComparisonsKt.m10256maxOf5PvTz6A(s, UComparisonsKt.m10256maxOf5PvTz6A(s2, s3));
     }
 
     /* renamed from: maxOf-Md2H83M  reason: not valid java name */
-    public static final int m9695maxOfMd2H83M(int i, int... other) {
+    public static final int m10259maxOfMd2H83M(int i, int... other) {
         Intrinsics.checkNotNullParameter(other, "other");
-        int m8662getSizeimpl = UIntArray.m8662getSizeimpl(other);
-        for (int i2 = 0; i2 < m8662getSizeimpl; i2++) {
-            i = UComparisonsKt.m9693maxOfJ1ME1BU(i, UIntArray.m8661getpVg5ArA(other, i2));
+        int m9226getSizeimpl = UIntArray.m9226getSizeimpl(other);
+        for (int i2 = 0; i2 < m9226getSizeimpl; i2++) {
+            i = UComparisonsKt.m10257maxOfJ1ME1BU(i, UIntArray.m9225getpVg5ArA(other, i2));
         }
         return i;
     }
 
     /* renamed from: maxOf-R03FKyM  reason: not valid java name */
-    public static final long m9696maxOfR03FKyM(long j, long... other) {
+    public static final long m10260maxOfR03FKyM(long j, long... other) {
         Intrinsics.checkNotNullParameter(other, "other");
-        int m8741getSizeimpl = ULongArray.m8741getSizeimpl(other);
-        for (int i = 0; i < m8741getSizeimpl; i++) {
-            j = UComparisonsKt.m9701maxOfeb3DHEI(j, ULongArray.m8740getsVKNKU(other, i));
+        int m9305getSizeimpl = ULongArray.m9305getSizeimpl(other);
+        for (int i = 0; i < m9305getSizeimpl; i++) {
+            j = UComparisonsKt.m10265maxOfeb3DHEI(j, ULongArray.m9304getsVKNKU(other, i));
         }
         return j;
     }
 
     /* renamed from: maxOf-Wr6uiD8  reason: not valid java name */
-    public static final byte m9699maxOfWr6uiD8(byte b, byte... other) {
+    public static final byte m10263maxOfWr6uiD8(byte b, byte... other) {
         Intrinsics.checkNotNullParameter(other, "other");
-        int m8583getSizeimpl = UByteArray.m8583getSizeimpl(other);
-        for (int i = 0; i < m8583getSizeimpl; i++) {
-            b = UComparisonsKt.m9694maxOfKr8caGY(b, UByteArray.m8582getw2LRezQ(other, i));
+        int m9147getSizeimpl = UByteArray.m9147getSizeimpl(other);
+        for (int i = 0; i < m9147getSizeimpl; i++) {
+            b = UComparisonsKt.m10258maxOfKr8caGY(b, UByteArray.m9146getw2LRezQ(other, i));
         }
         return b;
     }
 
     /* renamed from: maxOf-t1qELG4  reason: not valid java name */
-    public static final short m9703maxOft1qELG4(short s, short... other) {
+    public static final short m10267maxOft1qELG4(short s, short... other) {
         Intrinsics.checkNotNullParameter(other, "other");
-        int m8846getSizeimpl = UShortArray.m8846getSizeimpl(other);
-        for (int i = 0; i < m8846getSizeimpl; i++) {
-            s = UComparisonsKt.m9692maxOf5PvTz6A(s, UShortArray.m8845getMh2AYeg(other, i));
+        int m9410getSizeimpl = UShortArray.m9410getSizeimpl(other);
+        for (int i = 0; i < m9410getSizeimpl; i++) {
+            s = UComparisonsKt.m10256maxOf5PvTz6A(s, UShortArray.m9409getMh2AYeg(other, i));
         }
         return s;
     }
 
     /* renamed from: minOf-J1ME1BU  reason: not valid java name */
-    public static final int m9705minOfJ1ME1BU(int i, int i2) {
+    public static final int m10269minOfJ1ME1BU(int i, int i2) {
         int compare;
         compare = Integer.compare(i ^ Integer.MIN_VALUE, i2 ^ Integer.MIN_VALUE);
         return compare <= 0 ? i : i2;
     }
 
     /* renamed from: minOf-eb3DHEI  reason: not valid java name */
-    public static final long m9713minOfeb3DHEI(long j, long j2) {
+    public static final long m10277minOfeb3DHEI(long j, long j2) {
         int compare;
         compare = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
         return compare <= 0 ? j : j2;
     }
 
     /* renamed from: minOf-Kr8caGY  reason: not valid java name */
-    public static final byte m9706minOfKr8caGY(byte b, byte b2) {
+    public static final byte m10270minOfKr8caGY(byte b, byte b2) {
         return Intrinsics.compare(b & 255, b2 & 255) <= 0 ? b : b2;
     }
 
     /* renamed from: minOf-5PvTz6A  reason: not valid java name */
-    public static final short m9704minOf5PvTz6A(short s, short s2) {
+    public static final short m10268minOf5PvTz6A(short s, short s2) {
         return Intrinsics.compare(s & UShort.MAX_VALUE, 65535 & s2) <= 0 ? s : s2;
     }
 
     /* renamed from: minOf-WZ9TVnA  reason: not valid java name */
-    private static final int m9710minOfWZ9TVnA(int i, int i2, int i3) {
-        return UComparisonsKt.m9705minOfJ1ME1BU(i, UComparisonsKt.m9705minOfJ1ME1BU(i2, i3));
+    private static final int m10274minOfWZ9TVnA(int i, int i2, int i3) {
+        return UComparisonsKt.m10269minOfJ1ME1BU(i, UComparisonsKt.m10269minOfJ1ME1BU(i2, i3));
     }
 
     /* renamed from: minOf-sambcqE  reason: not valid java name */
-    private static final long m9714minOfsambcqE(long j, long j2, long j3) {
-        return UComparisonsKt.m9713minOfeb3DHEI(j, UComparisonsKt.m9713minOfeb3DHEI(j2, j3));
+    private static final long m10278minOfsambcqE(long j, long j2, long j3) {
+        return UComparisonsKt.m10277minOfeb3DHEI(j, UComparisonsKt.m10277minOfeb3DHEI(j2, j3));
     }
 
     /* renamed from: minOf-b33U2AM  reason: not valid java name */
-    private static final byte m9712minOfb33U2AM(byte b, byte b2, byte b3) {
-        return UComparisonsKt.m9706minOfKr8caGY(b, UComparisonsKt.m9706minOfKr8caGY(b2, b3));
+    private static final byte m10276minOfb33U2AM(byte b, byte b2, byte b3) {
+        return UComparisonsKt.m10270minOfKr8caGY(b, UComparisonsKt.m10270minOfKr8caGY(b2, b3));
     }
 
     /* renamed from: minOf-VKSA0NQ  reason: not valid java name */
-    private static final short m9709minOfVKSA0NQ(short s, short s2, short s3) {
-        return UComparisonsKt.m9704minOf5PvTz6A(s, UComparisonsKt.m9704minOf5PvTz6A(s2, s3));
+    private static final short m10273minOfVKSA0NQ(short s, short s2, short s3) {
+        return UComparisonsKt.m10268minOf5PvTz6A(s, UComparisonsKt.m10268minOf5PvTz6A(s2, s3));
     }
 
     /* renamed from: minOf-Md2H83M  reason: not valid java name */
-    public static final int m9707minOfMd2H83M(int i, int... other) {
+    public static final int m10271minOfMd2H83M(int i, int... other) {
         Intrinsics.checkNotNullParameter(other, "other");
-        int m8662getSizeimpl = UIntArray.m8662getSizeimpl(other);
-        for (int i2 = 0; i2 < m8662getSizeimpl; i2++) {
-            i = UComparisonsKt.m9705minOfJ1ME1BU(i, UIntArray.m8661getpVg5ArA(other, i2));
+        int m9226getSizeimpl = UIntArray.m9226getSizeimpl(other);
+        for (int i2 = 0; i2 < m9226getSizeimpl; i2++) {
+            i = UComparisonsKt.m10269minOfJ1ME1BU(i, UIntArray.m9225getpVg5ArA(other, i2));
         }
         return i;
     }
 
     /* renamed from: minOf-R03FKyM  reason: not valid java name */
-    public static final long m9708minOfR03FKyM(long j, long... other) {
+    public static final long m10272minOfR03FKyM(long j, long... other) {
         Intrinsics.checkNotNullParameter(other, "other");
-        int m8741getSizeimpl = ULongArray.m8741getSizeimpl(other);
-        for (int i = 0; i < m8741getSizeimpl; i++) {
-            j = UComparisonsKt.m9713minOfeb3DHEI(j, ULongArray.m8740getsVKNKU(other, i));
+        int m9305getSizeimpl = ULongArray.m9305getSizeimpl(other);
+        for (int i = 0; i < m9305getSizeimpl; i++) {
+            j = UComparisonsKt.m10277minOfeb3DHEI(j, ULongArray.m9304getsVKNKU(other, i));
         }
         return j;
     }
 
     /* renamed from: minOf-Wr6uiD8  reason: not valid java name */
-    public static final byte m9711minOfWr6uiD8(byte b, byte... other) {
+    public static final byte m10275minOfWr6uiD8(byte b, byte... other) {
         Intrinsics.checkNotNullParameter(other, "other");
-        int m8583getSizeimpl = UByteArray.m8583getSizeimpl(other);
-        for (int i = 0; i < m8583getSizeimpl; i++) {
-            b = UComparisonsKt.m9706minOfKr8caGY(b, UByteArray.m8582getw2LRezQ(other, i));
+        int m9147getSizeimpl = UByteArray.m9147getSizeimpl(other);
+        for (int i = 0; i < m9147getSizeimpl; i++) {
+            b = UComparisonsKt.m10270minOfKr8caGY(b, UByteArray.m9146getw2LRezQ(other, i));
         }
         return b;
     }
 
     /* renamed from: minOf-t1qELG4  reason: not valid java name */
-    public static final short m9715minOft1qELG4(short s, short... other) {
+    public static final short m10279minOft1qELG4(short s, short... other) {
         Intrinsics.checkNotNullParameter(other, "other");
-        int m8846getSizeimpl = UShortArray.m8846getSizeimpl(other);
-        for (int i = 0; i < m8846getSizeimpl; i++) {
-            s = UComparisonsKt.m9704minOf5PvTz6A(s, UShortArray.m8845getMh2AYeg(other, i));
+        int m9410getSizeimpl = UShortArray.m9410getSizeimpl(other);
+        for (int i = 0; i < m9410getSizeimpl; i++) {
+            s = UComparisonsKt.m10268minOf5PvTz6A(s, UShortArray.m9409getMh2AYeg(other, i));
         }
         return s;
     }

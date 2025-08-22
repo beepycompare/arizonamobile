@@ -9,7 +9,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleSubject<T> extends Single<T> implements SingleObserver<T> {
     static final SingleDisposable[] EMPTY = new SingleDisposable[0];
     static final SingleDisposable[] TERMINATED = new SingleDisposable[0];
@@ -157,7 +157,7 @@ public final class SingleSubject<T> extends Single<T> implements SingleObserver<
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class SingleDisposable<T> extends AtomicReference<SingleSubject<T>> implements Disposable {
         private static final long serialVersionUID = -7650903191002190468L;
         final SingleObserver<? super T> downstream;

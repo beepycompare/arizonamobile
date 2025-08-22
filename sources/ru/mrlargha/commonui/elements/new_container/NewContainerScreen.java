@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.arizona.common.utils.EasyAnimation;
@@ -29,8 +30,8 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.databinding.NewContainerLayoutBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
 /* compiled from: NewContainerScreen.kt */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000  2\u00020\u0001:\u0002 !B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0005H\u0002J\u0010\u0010\u001a\u001a\u00020\u00162\u0006\u0010\u001b\u001a\u00020\u001cH\u0002J\u0018\u0010\u001d\u001a\u00020\u00162\u0006\u0010\u001e\u001a\u00020\u00142\u0006\u0010\u001f\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"Lru/mrlargha/commonui/elements/new_container/NewContainerScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", TtmlNode.TAG_LAYOUT, "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/NewContainerLayoutBinding;", "awardsAdapter", "Lru/mrlargha/commonui/elements/new_container/NewContainerAwardsAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "imageCdnPath", "", "colorizeTextView", "", "textView", "Landroid/widget/TextView;", "color", "setContainerInfo", "info", "Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Companion$ContainerInfo;", "onBackendMessage", "data", "subId", "Companion", "Spawner", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000  2\u00020\u0001:\u0002 !B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0005H\u0002J\u0010\u0010\u001a\u001a\u00020\u00162\u0006\u0010\u001b\u001a\u00020\u001cH\u0002J\u0018\u0010\u001d\u001a\u00020\u00162\u0006\u0010\u001e\u001a\u00020\u00142\u0006\u0010\u001f\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"Lru/mrlargha/commonui/elements/new_container/NewContainerScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", TtmlNode.TAG_LAYOUT, "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/NewContainerLayoutBinding;", "awardsAdapter", "Lru/mrlargha/commonui/elements/new_container/NewContainerAwardsAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "imageCdnPath", "", "colorizeTextView", "", "textView", "Landroid/widget/TextView;", "color", "setContainerInfo", "info", "Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Companion$ContainerInfo;", "onBackendMessage", "data", "subId", "Companion", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes6.dex */
 public final class NewContainerScreen extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
     private final NewContainerAwardsAdapter awardsAdapter;
@@ -52,7 +53,8 @@ public final class NewContainerScreen extends SAMPUIElement {
         NewContainerLayoutBinding bind = NewContainerLayoutBinding.bind(constraintLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
-        this.awardsAdapter = new NewContainerAwardsAdapter();
+        NewContainerAwardsAdapter newContainerAwardsAdapter = new NewContainerAwardsAdapter();
+        this.awardsAdapter = newContainerAwardsAdapter;
         SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
         this.sharedPref = sharedPreferences;
         boolean z = sharedPreferences.getBoolean("isArizonaType", false);
@@ -65,8 +67,9 @@ public final class NewContainerScreen extends SAMPUIElement {
         this.imageCdnPath = str;
         constraintLayout.setClickable(true);
         addViewToConstraintLayout(constraintLayout, -1, -1);
+        bind.listAwardsPremium.setAdapter(newContainerAwardsAdapter);
         EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
-        ConstraintLayout actionButton = bind.actionButton;
+        CardView actionButton = bind.actionButton;
         Intrinsics.checkNotNullExpressionValue(actionButton, "actionButton");
         EasyAnimation.animateClick$default(easyAnimation, actionButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.new_container.NewContainerScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
@@ -116,6 +119,33 @@ public final class NewContainerScreen extends SAMPUIElement {
         String str = this.imageCdnPath;
         picasso.load(resourceUrl + str + containerInfo.getLogo()).into(newContainerLayoutBinding.mainImageContainer);
         this.awardsAdapter.addWinnerInfo(containerInfo.getItems());
+        String backgroundImage = containerInfo.getBackgroundImage();
+        if (backgroundImage != null && backgroundImage.length() != 0) {
+            NewContainerLayoutBinding newContainerLayoutBinding2 = this.binding;
+            newContainerLayoutBinding2.blurContainer.setVisibility(4);
+            Picasso picasso2 = Picasso.get();
+            String resourceUrl2 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
+            String str2 = this.imageCdnPath;
+            picasso2.load(resourceUrl2 + str2 + containerInfo.getBackgroundImage()).into(newContainerLayoutBinding2.imageBg);
+        } else {
+            NewContainerLayoutBinding newContainerLayoutBinding3 = this.binding;
+            newContainerLayoutBinding3.imageBg.setImageDrawable(null);
+            newContainerLayoutBinding3.blurContainer.setVisibility(0);
+        }
+        String buttonBackgroundImage = containerInfo.getButtonBackgroundImage();
+        if (buttonBackgroundImage != null && buttonBackgroundImage.length() != 0) {
+            NewContainerLayoutBinding newContainerLayoutBinding4 = this.binding;
+            Picasso picasso3 = Picasso.get();
+            String resourceUrl3 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
+            String str3 = this.imageCdnPath;
+            picasso3.load(resourceUrl3 + str3 + containerInfo.getButtonBackgroundImage()).into(newContainerLayoutBinding4.imageButtonBg);
+            newContainerLayoutBinding4.actionButtonText.setTextColor(-1);
+            newContainerLayoutBinding4.actionButton.setBackgroundTintList(null);
+            return;
+        }
+        NewContainerLayoutBinding newContainerLayoutBinding5 = this.binding;
+        newContainerLayoutBinding5.imageButtonBg.setImageDrawable(null);
+        newContainerLayoutBinding5.actionButtonText.setTextColor(Color.parseColor("#111111"));
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
@@ -129,8 +159,8 @@ public final class NewContainerScreen extends SAMPUIElement {
     }
 
     /* compiled from: NewContainerScreen.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0002\u0004\u0005B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0006"}, d2 = {"Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Companion;", "", "<init>", "()V", "ContainerInfo", "AwardInfo", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0002\u0004\u0005B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0006"}, d2 = {"Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Companion;", "", "<init>", "()V", "ContainerInfo", "AwardInfo", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -140,25 +170,35 @@ public final class NewContainerScreen extends SAMPUIElement {
         }
 
         /* compiled from: NewContainerScreen.kt */
-        @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001B%\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\u0004\b\b\u0010\tJ\t\u0010\u000f\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0010\u001a\u00020\u0003HÆ\u0003J\u000f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006HÆ\u0003J-\u0010\u0012\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\u000e\b\u0002\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006HÆ\u0001J\u0013\u0010\u0013\u001a\u00020\u00142\b\u0010\u0015\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u0016\u001a\u00020\u0017HÖ\u0001J\t\u0010\u0018\u001a\u00020\u0003HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u000bR\u0017\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u0019"}, d2 = {"Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Companion$ContainerInfo;", "", "mainColor", "", "logo", FirebaseAnalytics.Param.ITEMS, "", "Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Companion$AwardInfo;", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V", "getMainColor", "()Ljava/lang/String;", "getLogo", "getItems", "()Ljava/util/List;", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "", "toString", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
-        /* loaded from: classes5.dex */
+        @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0012\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001B9\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006\u0012\b\u0010\b\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\t\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\n\u0010\u000bJ\t\u0010\u0013\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0014\u001a\u00020\u0003HÆ\u0003J\u000f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006HÆ\u0003J\u000b\u0010\u0016\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u0017\u001a\u0004\u0018\u00010\u0003HÆ\u0003JE\u0010\u0018\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\u000e\b\u0002\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u00062\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\u0003HÆ\u0001J\u0013\u0010\u0019\u001a\u00020\u001a2\b\u0010\u001b\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u001c\u001a\u00020\u001dHÖ\u0001J\t\u0010\u001e\u001a\u00020\u0003HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\rR\u0017\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0013\u0010\b\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\rR\u0013\u0010\t\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\r¨\u0006\u001f"}, d2 = {"Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Companion$ContainerInfo;", "", "mainColor", "", "logo", FirebaseAnalytics.Param.ITEMS, "", "Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Companion$AwardInfo;", "buttonBackgroundImage", "backgroundImage", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V", "getMainColor", "()Ljava/lang/String;", "getLogo", "getItems", "()Ljava/util/List;", "getButtonBackgroundImage", "getBackgroundImage", "component1", "component2", "component3", "component4", "component5", "copy", "equals", "", "other", "hashCode", "", "toString", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+        /* loaded from: classes6.dex */
         public static final class ContainerInfo {
+            private final String backgroundImage;
+            private final String buttonBackgroundImage;
             private final List<AwardInfo> items;
             private final String logo;
             private final String mainColor;
 
-            /* JADX WARN: Multi-variable type inference failed */
-            public static /* synthetic */ ContainerInfo copy$default(ContainerInfo containerInfo, String str, String str2, List list, int i, Object obj) {
+            public static /* synthetic */ ContainerInfo copy$default(ContainerInfo containerInfo, String str, String str2, List list, String str3, String str4, int i, Object obj) {
                 if ((i & 1) != 0) {
                     str = containerInfo.mainColor;
                 }
                 if ((i & 2) != 0) {
                     str2 = containerInfo.logo;
                 }
+                List<AwardInfo> list2 = list;
                 if ((i & 4) != 0) {
-                    list = containerInfo.items;
+                    list2 = containerInfo.items;
                 }
-                return containerInfo.copy(str, str2, list);
+                if ((i & 8) != 0) {
+                    str3 = containerInfo.buttonBackgroundImage;
+                }
+                if ((i & 16) != 0) {
+                    str4 = containerInfo.backgroundImage;
+                }
+                String str5 = str4;
+                List list3 = list2;
+                return containerInfo.copy(str, str2, list3, str3, str5);
             }
 
             public final String component1() {
@@ -173,11 +213,19 @@ public final class NewContainerScreen extends SAMPUIElement {
                 return this.items;
             }
 
-            public final ContainerInfo copy(String mainColor, String logo, List<AwardInfo> items) {
+            public final String component4() {
+                return this.buttonBackgroundImage;
+            }
+
+            public final String component5() {
+                return this.backgroundImage;
+            }
+
+            public final ContainerInfo copy(String mainColor, String logo, List<AwardInfo> items, String str, String str2) {
                 Intrinsics.checkNotNullParameter(mainColor, "mainColor");
                 Intrinsics.checkNotNullParameter(logo, "logo");
                 Intrinsics.checkNotNullParameter(items, "items");
-                return new ContainerInfo(mainColor, logo, items);
+                return new ContainerInfo(mainColor, logo, items, str, str2);
             }
 
             public boolean equals(Object obj) {
@@ -186,28 +234,36 @@ public final class NewContainerScreen extends SAMPUIElement {
                 }
                 if (obj instanceof ContainerInfo) {
                     ContainerInfo containerInfo = (ContainerInfo) obj;
-                    return Intrinsics.areEqual(this.mainColor, containerInfo.mainColor) && Intrinsics.areEqual(this.logo, containerInfo.logo) && Intrinsics.areEqual(this.items, containerInfo.items);
+                    return Intrinsics.areEqual(this.mainColor, containerInfo.mainColor) && Intrinsics.areEqual(this.logo, containerInfo.logo) && Intrinsics.areEqual(this.items, containerInfo.items) && Intrinsics.areEqual(this.buttonBackgroundImage, containerInfo.buttonBackgroundImage) && Intrinsics.areEqual(this.backgroundImage, containerInfo.backgroundImage);
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((this.mainColor.hashCode() * 31) + this.logo.hashCode()) * 31) + this.items.hashCode();
+                int hashCode = ((((this.mainColor.hashCode() * 31) + this.logo.hashCode()) * 31) + this.items.hashCode()) * 31;
+                String str = this.buttonBackgroundImage;
+                int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
+                String str2 = this.backgroundImage;
+                return hashCode2 + (str2 != null ? str2.hashCode() : 0);
             }
 
             public String toString() {
                 String str = this.mainColor;
                 String str2 = this.logo;
-                return "ContainerInfo(mainColor=" + str + ", logo=" + str2 + ", items=" + this.items + ")";
+                List<AwardInfo> list = this.items;
+                String str3 = this.buttonBackgroundImage;
+                return "ContainerInfo(mainColor=" + str + ", logo=" + str2 + ", items=" + list + ", buttonBackgroundImage=" + str3 + ", backgroundImage=" + this.backgroundImage + ")";
             }
 
-            public ContainerInfo(String mainColor, String logo, List<AwardInfo> items) {
+            public ContainerInfo(String mainColor, String logo, List<AwardInfo> items, String str, String str2) {
                 Intrinsics.checkNotNullParameter(mainColor, "mainColor");
                 Intrinsics.checkNotNullParameter(logo, "logo");
                 Intrinsics.checkNotNullParameter(items, "items");
                 this.mainColor = mainColor;
                 this.logo = logo;
                 this.items = items;
+                this.buttonBackgroundImage = str;
+                this.backgroundImage = str2;
             }
 
             public final String getMainColor() {
@@ -221,11 +277,19 @@ public final class NewContainerScreen extends SAMPUIElement {
             public final List<AwardInfo> getItems() {
                 return this.items;
             }
+
+            public final String getButtonBackgroundImage() {
+                return this.buttonBackgroundImage;
+            }
+
+            public final String getBackgroundImage() {
+                return this.backgroundImage;
+            }
         }
 
         /* compiled from: NewContainerScreen.kt */
-        @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005¢\u0006\u0004\b\u0007\u0010\bJ\t\u0010\u000e\u001a\u00020\u0003HÆ\u0003J\t\u0010\u000f\u001a\u00020\u0005HÆ\u0003J\t\u0010\u0010\u001a\u00020\u0005HÆ\u0003J'\u0010\u0011\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0005HÆ\u0001J\u0013\u0010\u0012\u001a\u00020\u00132\b\u0010\u0014\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u0015\u001a\u00020\u0005HÖ\u0001J\t\u0010\u0016\u001a\u00020\u0003HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\u0006\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\f¨\u0006\u0017"}, d2 = {"Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Companion$AwardInfo;", "", "title", "", "sysName", "", "count", "<init>", "(Ljava/lang/String;II)V", "getTitle", "()Ljava/lang/String;", "getSysName", "()I", "getCount", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "toString", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
-        /* loaded from: classes5.dex */
+        @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005¢\u0006\u0004\b\u0007\u0010\bJ\t\u0010\u000e\u001a\u00020\u0003HÆ\u0003J\t\u0010\u000f\u001a\u00020\u0005HÆ\u0003J\t\u0010\u0010\u001a\u00020\u0005HÆ\u0003J'\u0010\u0011\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0005HÆ\u0001J\u0013\u0010\u0012\u001a\u00020\u00132\b\u0010\u0014\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u0015\u001a\u00020\u0005HÖ\u0001J\t\u0010\u0016\u001a\u00020\u0003HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\u0006\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\f¨\u0006\u0017"}, d2 = {"Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Companion$AwardInfo;", "", "title", "", "sysName", "", "count", "<init>", "(Ljava/lang/String;II)V", "getTitle", "()Ljava/lang/String;", "getSysName", "()I", "getCount", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "toString", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+        /* loaded from: classes6.dex */
         public static final class AwardInfo {
             private final int count;
             private final int sysName;
@@ -304,8 +368,8 @@ public final class NewContainerScreen extends SAMPUIElement {
     }
 
     /* compiled from: NewContainerScreen.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         @Override // ru.mrlargha.commonui.core.UIElementAbstractSpawner
         public SAMPUIElement create(Activity targetActivity, int i) {

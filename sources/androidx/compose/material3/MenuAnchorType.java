@@ -11,50 +11,50 @@ import kotlin.jvm.internal.Intrinsics;
 public final class MenuAnchorType {
     private final String name;
     public static final Companion Companion = new Companion(null);
-    private static final String PrimaryNotEditable = m2022constructorimpl("PrimaryNotEditable");
-    private static final String PrimaryEditable = m2022constructorimpl("PrimaryEditable");
-    private static final String SecondaryEditable = m2022constructorimpl("SecondaryEditable");
+    private static final String PrimaryNotEditable = m2329constructorimpl("PrimaryNotEditable");
+    private static final String PrimaryEditable = m2329constructorimpl("PrimaryEditable");
+    private static final String SecondaryEditable = m2329constructorimpl("SecondaryEditable");
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ MenuAnchorType m2021boximpl(String str) {
+    public static final /* synthetic */ MenuAnchorType m2328boximpl(String str) {
         return new MenuAnchorType(str);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static String m2022constructorimpl(String str) {
+    private static String m2329constructorimpl(String str) {
         return str;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2023equalsimpl(String str, Object obj) {
-        return (obj instanceof MenuAnchorType) && Intrinsics.areEqual(str, ((MenuAnchorType) obj).m2027unboximpl());
+    public static boolean m2330equalsimpl(String str, Object obj) {
+        return (obj instanceof MenuAnchorType) && Intrinsics.areEqual(str, ((MenuAnchorType) obj).m2334unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m2024equalsimpl0(String str, String str2) {
+    public static final boolean m2331equalsimpl0(String str, String str2) {
         return Intrinsics.areEqual(str, str2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2025hashCodeimpl(String str) {
+    public static int m2332hashCodeimpl(String str) {
         return str.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2026toStringimpl(String str) {
+    public static String m2333toStringimpl(String str) {
         return str;
     }
 
     public boolean equals(Object obj) {
-        return m2023equalsimpl(this.name, obj);
+        return m2330equalsimpl(this.name, obj);
     }
 
     public int hashCode() {
-        return m2025hashCodeimpl(this.name);
+        return m2332hashCodeimpl(this.name);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ String m2027unboximpl() {
+    public final /* synthetic */ String m2334unboximpl() {
         return this.name;
     }
 
@@ -70,17 +70,17 @@ public final class MenuAnchorType {
         }
 
         /* renamed from: getPrimaryNotEditable-Mg6Rgbw  reason: not valid java name */
-        public final String m2029getPrimaryNotEditableMg6Rgbw() {
+        public final String m2336getPrimaryNotEditableMg6Rgbw() {
             return MenuAnchorType.PrimaryNotEditable;
         }
 
         /* renamed from: getPrimaryEditable-Mg6Rgbw  reason: not valid java name */
-        public final String m2028getPrimaryEditableMg6Rgbw() {
+        public final String m2335getPrimaryEditableMg6Rgbw() {
             return MenuAnchorType.PrimaryEditable;
         }
 
         /* renamed from: getSecondaryEditable-Mg6Rgbw  reason: not valid java name */
-        public final String m2030getSecondaryEditableMg6Rgbw() {
+        public final String m2337getSecondaryEditableMg6Rgbw() {
             return MenuAnchorType.SecondaryEditable;
         }
     }
@@ -90,6 +90,6 @@ public final class MenuAnchorType {
     }
 
     public String toString() {
-        return m2026toStringimpl(this.name);
+        return m2333toStringimpl(this.name);
     }
 }

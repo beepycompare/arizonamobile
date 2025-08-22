@@ -46,7 +46,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class BoxParser {
     private static final int MAX_GAPLESS_TRIM_SIZE_SAMPLES = 4;
     private static final int SAMPLE_RATE_AMR_NB = 8000;
@@ -66,7 +66,7 @@ public final class BoxParser {
     private static final byte[] opusMagic = Util.getUtf8Bytes("OpusHead");
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface SampleSizeBox {
         int getFixedSampleSize();
 
@@ -2091,7 +2091,7 @@ public final class BoxParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ChunkIterator {
         private final ParsableByteArray chunkOffsets;
         private final boolean chunkOffsetsAreLongs;
@@ -2140,7 +2140,7 @@ public final class BoxParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class TkhdData {
         private final int alternateGroup;
         private final long duration;
@@ -2160,7 +2160,7 @@ public final class BoxParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class StsdData {
         public static final int STSD_HEADER_SIZE = 8;
         public Format format;
@@ -2174,7 +2174,7 @@ public final class BoxParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class EsdsData {
         private final long bitrate;
         private final byte[] initializationData;
@@ -2190,7 +2190,7 @@ public final class BoxParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class BtrtData {
         private final long avgBitrate;
         private final long maxBitrate;
@@ -2202,7 +2202,7 @@ public final class BoxParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class StriData {
         private final boolean eyeViewsReversed;
         private final boolean hasLeftEyeView;
@@ -2216,7 +2216,7 @@ public final class BoxParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class EyesData {
         private final StriData striData;
 
@@ -2226,7 +2226,7 @@ public final class BoxParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MdhdData {
         private final String language;
         private final long mediaDurationUs;
@@ -2240,7 +2240,7 @@ public final class BoxParser {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class VexuData {
         private final EyesData eyesData;
 
@@ -2255,7 +2255,7 @@ public final class BoxParser {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class StszSampleSizeBox implements SampleSizeBox {
         private final ParsableByteArray data;
         private final int fixedSampleSize;
@@ -2295,7 +2295,7 @@ public final class BoxParser {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Stz2SampleSizeBox implements SampleSizeBox {
         private int currentByte;
         private final ParsableByteArray data;

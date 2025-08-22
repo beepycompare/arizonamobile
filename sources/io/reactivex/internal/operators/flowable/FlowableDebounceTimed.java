@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableDebounceTimed<T> extends AbstractFlowableWithUpstream<T, T> {
     final Scheduler scheduler;
     final long timeout;
@@ -35,7 +35,7 @@ public final class FlowableDebounceTimed<T> extends AbstractFlowableWithUpstream
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class DebounceTimedSubscriber<T> extends AtomicLong implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = -9102637559663639004L;
         boolean done;
@@ -140,7 +140,7 @@ public final class FlowableDebounceTimed<T> extends AbstractFlowableWithUpstream
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class DebounceEmitter<T> extends AtomicReference<Disposable> implements Runnable, Disposable {
         private static final long serialVersionUID = 6812032969491025141L;
         final long idx;

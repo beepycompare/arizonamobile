@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleMap<T, R> extends Single<R> {
     final Function<? super T, ? extends R> mapper;
     final SingleSource<? extends T> source;
@@ -22,7 +22,7 @@ public final class SingleMap<T, R> extends Single<R> {
         this.source.subscribe(new MapSingleObserver(singleObserver, this.mapper));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MapSingleObserver<T, R> implements SingleObserver<T> {
         final Function<? super T, ? extends R> mapper;
         final SingleObserver<? super R> t;

@@ -13,7 +13,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableRefCount<T> extends Observable<T> {
     RefConnection connection;
     final int n;
@@ -147,7 +147,7 @@ public final class ObservableRefCount<T> extends Observable<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class RefConnection extends AtomicReference<Disposable> implements Runnable, Consumer<Disposable> {
         private static final long serialVersionUID = -4552101107598366241L;
         boolean connected;
@@ -176,7 +176,7 @@ public final class ObservableRefCount<T> extends Observable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class RefCountObserver<T> extends AtomicBoolean implements Observer<T>, Disposable {
         private static final long serialVersionUID = -7419642935409022375L;
         final RefConnection connection;

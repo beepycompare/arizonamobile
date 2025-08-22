@@ -28,8 +28,8 @@ import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: SnapshotFlow.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/FlowCollector;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.runtime.SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1", f = "SnapshotFlow.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {142, 146, 169}, m = "invokeSuspend", n = {"$this$flow", "readSet", "readObserver", "appliedChanges", "unregisterApplyObserver", "lastValue", "$this$flow", "readSet", "readObserver", "appliedChanges", "unregisterApplyObserver", "lastValue", "found", "$this$flow", "readSet", "readObserver", "appliedChanges", "unregisterApplyObserver", "lastValue"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"})
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/FlowCollector;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.runtime.SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1", f = "SnapshotFlow.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {143, 147, 170}, m = "invokeSuspend", n = {"$this$flow", "readSet", "readObserver", "appliedChanges", "unregisterApplyObserver", "lastValue", "$this$flow", "readSet", "readObserver", "appliedChanges", "unregisterApplyObserver", "lastValue", "found", "$this$flow", "readSet", "readObserver", "appliedChanges", "unregisterApplyObserver", "lastValue"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"})
 /* loaded from: classes.dex */
 public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends SuspendLambda implements Function2<FlowCollector<? super T>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function0<T> $block;
@@ -66,24 +66,24 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
         return ((SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1) create(flowCollector, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x0121, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x011c, code lost:
         if (r11.emit(r1, r13) == r0) goto L32;
      */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00ca  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00d5 A[Catch: all -> 0x0052, TryCatch #5 {all -> 0x0052, blocks: (B:13:0x004d, B:29:0x00d1, B:31:0x00d5, B:36:0x00df, B:39:0x00ed, B:43:0x0103, B:45:0x010c, B:40:0x00f8, B:42:0x0100, B:49:0x0125, B:50:0x0128), top: B:70:0x004d }] */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00ed A[Catch: all -> 0x0052, TRY_LEAVE, TryCatch #5 {all -> 0x0052, blocks: (B:13:0x004d, B:29:0x00d1, B:31:0x00d5, B:36:0x00df, B:39:0x00ed, B:43:0x0103, B:45:0x010c, B:40:0x00f8, B:42:0x0100, B:49:0x0125, B:50:0x0128), top: B:70:0x004d }] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:55:0x012f -> B:25:0x00b0). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00d0 A[Catch: all -> 0x0052, TryCatch #5 {all -> 0x0052, blocks: (B:13:0x004d, B:29:0x00cc, B:31:0x00d0, B:36:0x00da, B:39:0x00e8, B:43:0x00fe, B:45:0x0107, B:40:0x00f3, B:42:0x00fb, B:49:0x0120, B:50:0x0123), top: B:67:0x004d }] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00e8 A[Catch: all -> 0x0052, TRY_LEAVE, TryCatch #5 {all -> 0x0052, blocks: (B:13:0x004d, B:29:0x00cc, B:31:0x00d0, B:36:0x00da, B:39:0x00e8, B:43:0x00fe, B:45:0x0107, B:40:0x00f3, B:42:0x00fb, B:49:0x0120, B:50:0x0123), top: B:67:0x004d }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:55:0x012a -> B:25:0x00ab). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
+        ObserverHandle observerHandle;
         final MutableScatterSet mutableScatterSet;
         Function1<Object, Unit> function1;
         final Channel Channel$default;
-        ObserverHandle registerApplyObserver;
         Object invoke;
-        ObserverHandle observerHandle;
+        ObserverHandle observerHandle2;
         FlowCollector flowCollector;
         FlowCollector flowCollector2;
         MutableScatterSet mutableScatterSet2;
@@ -102,7 +102,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                     if (i2 == 2) {
                         i = this.I$0;
                         obj2 = this.L$5;
-                        observerHandle = (ObserverHandle) this.L$4;
+                        observerHandle2 = (ObserverHandle) this.L$4;
                         channel = (Channel) this.L$3;
                         function12 = (Function1) this.L$2;
                         mutableScatterSet2 = (MutableScatterSet) this.L$1;
@@ -116,11 +116,11 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                                     intersects$SnapshotStateKt__SnapshotFlowKt = SnapshotStateKt__SnapshotFlowKt.intersects$SnapshotStateKt__SnapshotFlowKt(mutableScatterSet2, set);
                                     if (!intersects$SnapshotStateKt__SnapshotFlowKt) {
                                         i = 0;
-                                        set = (Set) ChannelResult.m10032getOrNullimpl(channel.mo10020tryReceivePtdJZtk());
+                                        set = (Set) ChannelResult.m10596getOrNullimpl(channel.mo10584tryReceivePtdJZtk());
                                     }
                                 }
                                 i = 1;
-                                set = (Set) ChannelResult.m10032getOrNullimpl(channel.mo10020tryReceivePtdJZtk());
+                                set = (Set) ChannelResult.m10596getOrNullimpl(channel.mo10584tryReceivePtdJZtk());
                             } while (set != null);
                             if (i != 0) {
                                 try {
@@ -134,7 +134,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                                         this.L$1 = mutableScatterSet2;
                                         this.L$2 = function12;
                                         this.L$3 = channel;
-                                        this.L$4 = observerHandle;
+                                        this.L$4 = observerHandle2;
                                         this.L$5 = invoke;
                                         this.label = 3;
                                     }
@@ -143,15 +143,15 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                                 Snapshot makeCurrent = takeSnapshot.makeCurrent();
                             }
                             invoke = obj2;
-                            registerApplyObserver = observerHandle;
+                            observerHandle = observerHandle2;
                             Channel$default = channel;
                             function1 = function12;
                             mutableScatterSet = mutableScatterSet2;
                             flowCollector = flowCollector2;
                         } catch (Throwable th) {
                             th = th;
-                            ObserverHandle observerHandle2 = observerHandle;
-                            observerHandle2.dispose();
+                            observerHandle = observerHandle2;
+                            observerHandle.dispose();
                             throw th;
                         }
                     } else if (i2 != 3) {
@@ -159,7 +159,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                     }
                 }
                 invoke = this.L$5;
-                registerApplyObserver = (ObserverHandle) this.L$4;
+                observerHandle = (ObserverHandle) this.L$4;
                 Channel$default = (Channel) this.L$3;
                 function1 = (Function1) this.L$2;
                 mutableScatterSet = (MutableScatterSet) this.L$1;
@@ -170,121 +170,46 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                 ResultKt.throwOnFailure(obj);
                 FlowCollector flowCollector5 = (FlowCollector) this.L$0;
                 mutableScatterSet = new MutableScatterSet(0, 1, null);
-                function1 = new Function1<Object, Unit>() { // from class: androidx.compose.runtime.SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1$readObserver$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(1);
-                    }
-
+                function1 = new Function1() { // from class: androidx.compose.runtime.SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(Object obj3) {
-                        invoke2(obj3);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(Object obj3) {
-                        if (obj3 instanceof StateObjectImpl) {
-                            ReaderKind.Companion companion = ReaderKind.Companion;
-                            ((StateObjectImpl) obj3).m3653recordReadInh_f27i8$runtime_release(ReaderKind.m3640constructorimpl(4));
-                        }
-                        mutableScatterSet.add(obj3);
+                    public final Object invoke(Object obj3) {
+                        Unit invokeSuspend$lambda$0;
+                        invokeSuspend$lambda$0 = SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1.invokeSuspend$lambda$0(MutableScatterSet.this, obj3);
+                        return invokeSuspend$lambda$0;
                     }
                 };
                 Channel$default = ChannelKt.Channel$default(Integer.MAX_VALUE, null, null, 6, null);
-                registerApplyObserver = Snapshot.Companion.registerApplyObserver(new Function2<Set<? extends Object>, Snapshot, Unit>() { // from class: androidx.compose.runtime.SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1$unregisterApplyObserver$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(2);
-                    }
-
+                observerHandle = Snapshot.Companion.registerApplyObserver(new Function2() { // from class: androidx.compose.runtime.SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function2
-                    public /* bridge */ /* synthetic */ Unit invoke(Set<? extends Object> set2, Snapshot snapshot) {
-                        invoke2(set2, snapshot);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(Set<? extends Object> set2, Snapshot snapshot) {
-                        if (!(set2 instanceof ScatterSetWrapper)) {
-                            Set<? extends Object> set3 = set2;
-                            if ((set3 instanceof Collection) && set3.isEmpty()) {
-                                return;
-                            }
-                            for (Object obj3 : set3) {
-                                if (obj3 instanceof StateObjectImpl) {
-                                    ReaderKind.Companion companion = ReaderKind.Companion;
-                                    if (((StateObjectImpl) obj3).m3652isReadInh_f27i8$runtime_release(ReaderKind.m3640constructorimpl(4))) {
-                                    }
-                                }
-                            }
-                            return;
-                        }
-                        ScatterSet set$runtime_release = ((ScatterSetWrapper) set2).getSet$runtime_release();
-                        Object[] objArr = set$runtime_release.elements;
-                        long[] jArr = set$runtime_release.metadata;
-                        int length = jArr.length - 2;
-                        if (length < 0) {
-                            return;
-                        }
-                        int i3 = 0;
-                        loop0: while (true) {
-                            long j = jArr[i3];
-                            if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                                int i4 = 8 - ((~(i3 - length)) >>> 31);
-                                for (int i5 = 0; i5 < i4; i5++) {
-                                    if ((255 & j) < 128) {
-                                        Object obj4 = objArr[(i3 << 3) + i5];
-                                        if (!(obj4 instanceof StateObjectImpl)) {
-                                            break loop0;
-                                        }
-                                        ReaderKind.Companion companion2 = ReaderKind.Companion;
-                                        if (((StateObjectImpl) obj4).m3652isReadInh_f27i8$runtime_release(ReaderKind.m3640constructorimpl(4))) {
-                                            break loop0;
-                                        }
-                                    }
-                                    j >>= 8;
-                                }
-                                if (i4 != 8) {
-                                    return;
-                                }
-                            }
-                            if (i3 == length) {
-                                return;
-                            }
-                            i3++;
-                        }
-                        Channel$default.mo7559trySendJP2dKIU(set2);
+                    public final Object invoke(Object obj3, Object obj4) {
+                        Unit invokeSuspend$lambda$2;
+                        invokeSuspend$lambda$2 = SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1.invokeSuspend$lambda$2(Channel.this, (Set) obj3, (Snapshot) obj4);
+                        return invokeSuspend$lambda$2;
                     }
                 });
                 Snapshot takeSnapshot2 = Snapshot.Companion.takeSnapshot(function1);
                 Function0<T> function02 = this.$block;
                 Snapshot makeCurrent2 = takeSnapshot2.makeCurrent();
-                try {
-                    invoke = function02.invoke();
-                    takeSnapshot2.dispose();
-                    this.L$0 = flowCollector5;
-                    this.L$1 = mutableScatterSet;
-                    this.L$2 = function1;
-                    this.L$3 = Channel$default;
-                    this.L$4 = registerApplyObserver;
-                    this.L$5 = invoke;
-                    this.label = 1;
-                    Object emit = flowCollector5.emit(invoke, this);
-                    flowCollector = flowCollector5;
-                    if (emit == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                } finally {
+                invoke = function02.invoke();
+                takeSnapshot2.dispose();
+                this.L$0 = flowCollector5;
+                this.L$1 = mutableScatterSet;
+                this.L$2 = function1;
+                this.L$3 = Channel$default;
+                this.L$4 = observerHandle;
+                this.L$5 = invoke;
+                this.label = 1;
+                Object emit = flowCollector5.emit(invoke, this);
+                flowCollector = flowCollector5;
+                if (emit == coroutine_suspended) {
+                    return coroutine_suspended;
                 }
             }
             this.L$0 = flowCollector;
             this.L$1 = mutableScatterSet;
             this.L$2 = function1;
             this.L$3 = Channel$default;
-            this.L$4 = registerApplyObserver;
+            this.L$4 = observerHandle;
             this.L$5 = invoke;
             this.I$0 = 0;
             this.label = 2;
@@ -294,7 +219,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                 mutableScatterSet2 = mutableScatterSet;
                 function12 = function1;
                 channel = Channel$default;
-                observerHandle = registerApplyObserver;
+                observerHandle2 = observerHandle;
                 obj2 = invoke;
                 i = 0;
                 set = (Set) obj;
@@ -302,12 +227,12 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                     if (i == 0) {
                     }
                     i = 1;
-                    set = (Set) ChannelResult.m10032getOrNullimpl(channel.mo10020tryReceivePtdJZtk());
+                    set = (Set) ChannelResult.m10596getOrNullimpl(channel.mo10584tryReceivePtdJZtk());
                 } while (set != null);
                 if (i != 0) {
                 }
                 invoke = obj2;
-                registerApplyObserver = observerHandle;
+                observerHandle = observerHandle2;
                 Channel$default = channel;
                 function1 = function12;
                 mutableScatterSet = mutableScatterSet2;
@@ -316,7 +241,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                 this.L$1 = mutableScatterSet;
                 this.L$2 = function1;
                 this.L$3 = Channel$default;
-                this.L$4 = registerApplyObserver;
+                this.L$4 = observerHandle;
                 this.L$5 = invoke;
                 this.I$0 = 0;
                 this.label = 2;
@@ -328,5 +253,67 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
         } catch (Throwable th2) {
             th = th2;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(MutableScatterSet mutableScatterSet, Object obj) {
+        if (obj instanceof StateObjectImpl) {
+            ReaderKind.Companion companion = ReaderKind.Companion;
+            ((StateObjectImpl) obj).m4014recordReadInh_f27i8$runtime(ReaderKind.m3996constructorimpl(4));
+        }
+        mutableScatterSet.add(obj);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$2(Channel channel, Set set, Snapshot snapshot) {
+        if (set instanceof ScatterSetWrapper) {
+            ScatterSet<T> set$runtime = ((ScatterSetWrapper) set).getSet$runtime();
+            Object[] objArr = set$runtime.elements;
+            long[] jArr = set$runtime.metadata;
+            int length = jArr.length - 2;
+            if (length >= 0) {
+                int i = 0;
+                loop0: while (true) {
+                    long j = jArr[i];
+                    if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                        int i2 = 8 - ((~(i - length)) >>> 31);
+                        for (int i3 = 0; i3 < i2; i3++) {
+                            if ((255 & j) < 128) {
+                                Object obj = objArr[(i << 3) + i3];
+                                if (!(obj instanceof StateObjectImpl)) {
+                                    break loop0;
+                                }
+                                ReaderKind.Companion companion = ReaderKind.Companion;
+                                if (((StateObjectImpl) obj).m4013isReadInh_f27i8$runtime(ReaderKind.m3996constructorimpl(4))) {
+                                    break loop0;
+                                }
+                            }
+                            j >>= 8;
+                        }
+                        if (i2 != 8) {
+                            break;
+                        }
+                    }
+                    if (i == length) {
+                        break;
+                    }
+                    i++;
+                }
+            }
+        } else {
+            Set set2 = set;
+            if (!(set2 instanceof Collection) || !set2.isEmpty()) {
+                for (T t : set2) {
+                    if (t instanceof StateObjectImpl) {
+                        ReaderKind.Companion companion2 = ReaderKind.Companion;
+                        if (((StateObjectImpl) t).m4013isReadInh_f27i8$runtime(ReaderKind.m3996constructorimpl(4))) {
+                        }
+                    }
+                    channel.mo8125trySendJP2dKIU(set);
+                }
+            }
+        }
+        return Unit.INSTANCE;
     }
 }

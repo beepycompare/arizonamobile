@@ -1,5 +1,6 @@
 package androidx.compose.runtime;
 
+import androidx.collection.IntSetKt;
 import androidx.collection.MutableIntList;
 import androidx.collection.MutableIntObjectMap;
 import androidx.collection.MutableIntSet;
@@ -19,13 +20,14 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: SlotTable.kt */
-@Metadata(d1 = {"\u0000¨\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0015\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0011\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010(\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\bM\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0000\u0018\u0000 Î\u00012\u00020\u0001:\u0002Î\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\u000e\u0010D\u001a\u00020E2\u0006\u0010F\u001a\u00020\rJ\u0010\u0010G\u001a\u00020\u00072\b\b\u0002\u0010H\u001a\u00020\rJ\u000e\u0010I\u001a\u00020\r2\u0006\u0010G\u001a\u00020\u0007J\u0018\u0010J\u001a\u00020E2\u0006\u0010G\u001a\u00020\u00072\b\u0010K\u001a\u0004\u0018\u00010\u0001J\u0006\u0010L\u001a\u00020EJ\u0006\u0010M\u001a\u00020EJ\u0010\u0010N\u001a\u00020\u00112\u0006\u0010O\u001a\u00020\rH\u0002J\u0010\u0010P\u001a\u0004\u0018\u00010\u00012\u0006\u0010Q\u001a\u00020\rJ\b\u0010R\u001a\u00020EH\u0002J\u000e\u0010S\u001a\u00020E2\u0006\u0010T\u001a\u00020\u0011J\u0010\u0010U\u001a\u00020\u00112\u0006\u0010O\u001a\u00020\rH\u0002J\u0010\u0010V\u001a\u00020\u00112\u0006\u0010O\u001a\u00020\rH\u0002J \u0010W\u001a\u00020\r2\u0006\u0010G\u001a\u00020\r2\u0006\u0010X\u001a\u00020\r2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0010\u0010Y\u001a\u00020\r2\u0006\u0010H\u001a\u00020\rH\u0002J\u0010\u0010Z\u001a\u00020\r2\u0006\u0010Y\u001a\u00020\rH\u0002J(\u0010[\u001a\u00020\r2\u0006\u0010H\u001a\u00020\r2\u0006\u0010\\\u001a\u00020\r2\u0006\u0010X\u001a\u00020\r2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0006\u0010]\u001a\u00020\rJ\u0006\u0010^\u001a\u00020EJ\u000e\u0010_\u001a\u00020E2\u0006\u0010G\u001a\u00020\u0007J\u000e\u0010_\u001a\u00020E2\u0006\u0010H\u001a\u00020\rJ \u0010`\u001a\u00020E2\u0006\u0010.\u001a\u00020\r2\u0006\u0010]\u001a\u00020\r2\u0006\u0010a\u001a\u00020\rH\u0002JK\u0010b\u001a\u00020E2\u0006\u0010O\u001a\u00020\r28\u0010c\u001a4\u0012\u0013\u0012\u00110\r¢\u0006\f\be\u0012\b\bf\u0012\u0004\b\b(H\u0012\u0015\u0012\u0013\u0018\u00010\u0001¢\u0006\f\be\u0012\b\bf\u0012\u0004\b\b(g\u0012\u0004\u0012\u00020E0dH\u0086\bJ5\u0010h\u001a\u00020E2\u0006\u0010i\u001a\u00020\r2\u0006\u0010j\u001a\u00020\r2\u001a\u0010c\u001a\u0016\u0012\u0004\u0012\u00020\r\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0012\u0004\u0012\u00020E0dH\u0086\bJ\u0010\u0010k\u001a\u0004\u0018\u00010\u00012\u0006\u0010H\u001a\u00020\rJ\u0010\u0010l\u001a\u00020\r2\u0006\u0010H\u001a\u00020\rH\u0002J\u000e\u0010m\u001a\u00020\r2\u0006\u0010H\u001a\u00020\rJ\u0010\u0010n\u001a\u0004\u0018\u00010\u00012\u0006\u0010H\u001a\u00020\rJ\u000e\u0010o\u001a\u00020\r2\u0006\u0010H\u001a\u00020\rJ\u000e\u0010p\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00010qJ\u001c\u0010r\u001a\u0004\u0018\u00010?2\u0006\u0010.\u001a\u00020\r2\b\u0010s\u001a\u0004\u0018\u00010tH\u0002J\u000e\u0010u\u001a\u00020\u00112\u0006\u0010H\u001a\u00020\rJ\u0016\u0010v\u001a\u00020\u00112\u0006\u0010H\u001a\u00020\r2\u0006\u0010O\u001a\u00020\rJ\u000e\u0010w\u001a\u00020\u00112\u0006\u0010H\u001a\u00020\rJ\u0010\u0010x\u001a\u00020E2\b\u0010K\u001a\u0004\u0018\u00010\u0001J\u0010\u0010y\u001a\u00020E2\u0006\u00103\u001a\u00020\rH\u0002J\u0018\u0010z\u001a\u00020E2\u0006\u00103\u001a\u00020\r2\u0006\u0010O\u001a\u00020\rH\u0002J\u000e\u0010+\u001a\u00020\u00112\u0006\u0010H\u001a\u00020\rJ\u000e\u0010{\u001a\b\u0012\u0004\u0012\u00020\r0|H\u0002J\u0010\u0010}\u001a\u00020E2\b\b\u0002\u0010O\u001a\u00020\rJ!\u0010~\u001a\u00020E2\u0006\u0010\u007f\u001a\u00020\r2\u0007\u0010\u0080\u0001\u001a\u00020\r2\u0006\u00103\u001a\u00020\rH\u0002J(\u0010\u0081\u0001\u001a\b\u0012\u0004\u0012\u00020\u00070|2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010H\u001a\u00020\r2\t\b\u0002\u0010\u0082\u0001\u001a\u00020\u0011J\u0010\u0010\u0083\u0001\u001a\u00020E2\u0007\u0010\u0084\u0001\u001a\u00020\rJ\u0011\u0010\u0085\u0001\u001a\u00020E2\u0006\u0010H\u001a\u00020\rH\u0002J&\u0010\u0086\u0001\u001a\b\u0012\u0004\u0012\u00020\u00070|2\u0007\u0010\u0084\u0001\u001a\u00020\r2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010H\u001a\u00020\rJ\u0019\u0010\u0087\u0001\u001a\u00020E2\u0006\u0010H\u001a\u00020\r2\u0006\u0010O\u001a\u00020\rH\u0002J'\u0010\u0088\u0001\u001a\b\u0012\u0004\u0012\u00020\u00070|2\u0006\u0010G\u001a\u00020\u00072\u0007\u0010\u0084\u0001\u001a\u00020\r2\u0007\u0010\u0089\u0001\u001a\u00020\u0000J\u0011\u0010\u008a\u0001\u001a\u0004\u0018\u00010\u00012\u0006\u0010G\u001a\u00020\u0007J\u0011\u0010\u008a\u0001\u001a\u0004\u0018\u00010\u00012\u0006\u0010H\u001a\u00020\rJ\u000e\u0010,\u001a\u00020\r2\u0006\u0010H\u001a\u00020\rJ\u000e\u0010.\u001a\u00020\r2\u0006\u0010G\u001a\u00020\u0007J\u000e\u0010.\u001a\u00020\r2\u0006\u0010H\u001a\u00020\rJ\u0011\u0010\u008b\u0001\u001a\u00020\r2\u0006\u0010H\u001a\u00020\rH\u0002J\u0019\u0010\u008c\u0001\u001a\u00020\r2\u0006\u0010H\u001a\u00020\r2\u0006\u0010\\\u001a\u00020\rH\u0002J\u0015\u0010\u008d\u0001\u001a\u0004\u0018\u00010\u00012\b\u0010K\u001a\u0004\u0018\u00010\u0001H\u0002J\t\u0010\u008e\u0001\u001a\u00020EH\u0002J\u000f\u0010\u008f\u0001\u001a\u00020E2\u0006\u0010s\u001a\u00020tJ\u0007\u0010\u0090\u0001\u001a\u00020EJ\u0018\u0010\u0091\u0001\u001a\u00020E2\u0007\u0010\u0092\u0001\u001a\u00020\r2\u0006\u0010K\u001a\u00020tJA\u0010\u0093\u0001\u001a\u00020\u00112\u0006\u0010\\\u001a\u00020\r2\u0006\u00103\u001a\u00020\r2&\u0010=\u001a\"\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020?\u0018\u00010>j\u0010\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020?\u0018\u0001`@H\u0002J\u0007\u0010\u0094\u0001\u001a\u00020\u0011J\u001b\u0010\u0095\u0001\u001a\u00020\u00112\u0007\u0010\u0096\u0001\u001a\u00020\r2\u0007\u0010\u0097\u0001\u001a\u00020\rH\u0002J#\u0010\u0098\u0001\u001a\u00020E2\u0007\u0010\u0096\u0001\u001a\u00020\r2\u0007\u0010\u0097\u0001\u001a\u00020\r2\u0006\u0010O\u001a\u00020\rH\u0002J\u0007\u0010\u0099\u0001\u001a\u00020EJ\t\u0010\u009a\u0001\u001a\u00020\rH\u0002J\t\u0010\u009b\u0001\u001a\u00020EH\u0002J\u000f\u0010\u009c\u0001\u001a\u00020E2\u0006\u0010G\u001a\u00020\u0007J\u0011\u0010\u009d\u0001\u001a\u00020E2\b\u0010K\u001a\u0004\u0018\u00010\u0001J\u001e\u0010\u009d\u0001\u001a\u0004\u0018\u00010\u00012\u0006\u0010H\u001a\u00020\r2\b\u0010K\u001a\u0004\u0018\u00010\u0001H\u0086\bJ#\u0010\u009d\u0001\u001a\u0004\u0018\u00010\u00012\u0006\u0010O\u001a\u00020\r2\u0006\u0010H\u001a\u00020\r2\b\u0010K\u001a\u0004\u0018\u00010\u0001J\t\u0010\u009e\u0001\u001a\u0004\u0018\u00010\u0001J\u0007\u0010\u009f\u0001\u001a\u00020\rJ\u0007\u0010 \u0001\u001a\u00020EJ\u0019\u0010¡\u0001\u001a\u0004\u0018\u00010\u00012\u0006\u0010G\u001a\u00020\u00072\u0006\u0010H\u001a\u00020\rJ\u0019\u0010¡\u0001\u001a\u0004\u0018\u00010\u00012\u0006\u0010i\u001a\u00020\r2\u0006\u0010H\u001a\u00020\rJ\u0017\u0010¢\u0001\u001a\u00020\r2\u0006\u0010O\u001a\u00020\r2\u0006\u0010H\u001a\u00020\rJ\u0017\u0010£\u0001\u001a\u00020\r2\u0006\u0010i\u001a\u00020\rH\u0000¢\u0006\u0003\b¤\u0001J\u0017\u0010¥\u0001\u001a\u00020\r2\u0006\u0010i\u001a\u00020\rH\u0000¢\u0006\u0003\b¦\u0001J\u0017\u0010§\u0001\u001a\u00020\r2\u0006\u0010i\u001a\u00020\rH\u0000¢\u0006\u0003\b¨\u0001J\u0013\u0010©\u0001\u001a\u0004\u0018\u00010?2\u0006\u0010O\u001a\u00020\rH\u0002J\u001b\u0010ª\u0001\u001a\u00020E2\u0007\u0010\u0092\u0001\u001a\u00020\r2\t\u0010«\u0001\u001a\u0004\u0018\u00010\u0001J&\u0010ª\u0001\u001a\u00020E2\u0007\u0010\u0092\u0001\u001a\u00020\r2\t\u0010¬\u0001\u001a\u0004\u0018\u00010\u00012\t\u0010«\u0001\u001a\u0004\u0018\u00010\u0001J\u0007\u0010\u00ad\u0001\u001a\u00020EJ\u0010\u0010\u00ad\u0001\u001a\u00020E2\u0007\u0010\u0092\u0001\u001a\u00020\rJ\u001b\u0010\u00ad\u0001\u001a\u00020E2\u0007\u0010\u0092\u0001\u001a\u00020\r2\t\u0010®\u0001\u001a\u0004\u0018\u00010\u0001J0\u0010\u00ad\u0001\u001a\u00020E2\u0007\u0010\u0092\u0001\u001a\u00020\r2\t\u0010¬\u0001\u001a\u0004\u0018\u00010\u00012\u0006\u0010+\u001a\u00020\u00112\t\u0010«\u0001\u001a\u0004\u0018\u00010\u0001H\u0002J\u001b\u0010¯\u0001\u001a\u00020E2\u0007\u0010\u0092\u0001\u001a\u00020\r2\t\u0010¬\u0001\u001a\u0004\u0018\u00010\u0001J&\u0010¯\u0001\u001a\u00020E2\u0007\u0010\u0092\u0001\u001a\u00020\r2\t\u0010¬\u0001\u001a\u0004\u0018\u00010\u00012\t\u0010\u008a\u0001\u001a\u0004\u0018\u00010\u0001J\u0007\u0010°\u0001\u001a\u00020tJ\t\u0010±\u0001\u001a\u00020tH\u0016J\u000f\u0010²\u0001\u001a\u00020E2\u0006\u0010j\u001a\u00020\rJ\u0019\u0010³\u0001\u001a\u0004\u0018\u00010\u00072\u0006\u0010O\u001a\u00020\rH\u0000¢\u0006\u0003\b´\u0001J\u0013\u0010µ\u0001\u001a\u0004\u0018\u00010\u00012\b\u0010K\u001a\u0004\u0018\u00010\u0001J\u001b\u0010¶\u0001\u001a\u00020E2\u0007\u0010·\u0001\u001a\u00020\r2\u0007\u0010¸\u0001\u001a\u00020\rH\u0002J\u0011\u0010¹\u0001\u001a\u00020E2\b\u0010K\u001a\u0004\u0018\u00010\u0001J\u0011\u0010º\u0001\u001a\u00020E2\u0006\u0010O\u001a\u00020\rH\u0002J&\u0010»\u0001\u001a\u00020E2\u0006\u0010O\u001a\u00020\r2\u0007\u0010\u009d\u0001\u001a\u000201H\u0002ø\u0001\u0000¢\u0006\u0006\b¼\u0001\u0010½\u0001J\u0019\u0010¾\u0001\u001a\u00020E2\u0006\u0010G\u001a\u00020\u00072\b\u0010K\u001a\u0004\u0018\u00010\u0001J\u0011\u0010¾\u0001\u001a\u00020E2\b\u0010K\u001a\u0004\u0018\u00010\u0001J\u001b\u0010¿\u0001\u001a\u00020E2\u0006\u0010H\u001a\u00020\r2\b\u0010K\u001a\u0004\u0018\u00010\u0001H\u0002J\u0011\u0010À\u0001\u001a\u00020E2\b\u0010K\u001a\u0004\u0018\u00010\u0001J\u0007\u0010Á\u0001\u001a\u00020EJ\u000f\u0010Â\u0001\u001a\u00020EH\u0000¢\u0006\u0003\bÃ\u0001J\u000f\u0010Ä\u0001\u001a\u00020EH\u0000¢\u0006\u0003\bÅ\u0001J\u0016\u0010Æ\u0001\u001a\u00020\r*\u00020(2\u0007\u0010Ç\u0001\u001a\u00020\rH\u0002J\u0015\u0010Y\u001a\u00020\r*\u00020(2\u0007\u0010Ç\u0001\u001a\u00020\rH\u0002J\u0013\u0010È\u0001\u001a\b\u0012\u0004\u0012\u00020\r0|*\u00020(H\u0002J\u001b\u0010É\u0001\u001a\u00020E*\b0Ê\u0001j\u0003`Ë\u00012\u0006\u0010H\u001a\u00020\rH\u0002J\u0016\u0010Ì\u0001\u001a\u00020\r*\u00020(2\u0007\u0010Ç\u0001\u001a\u00020\rH\u0002J\u0014\u0010.\u001a\u00020\r*\u00020(2\u0006\u0010H\u001a\u00020\rH\u0002J\u0015\u0010Q\u001a\u00020\r*\u00020(2\u0007\u0010Ç\u0001\u001a\u00020\rH\u0002J\u001e\u0010Í\u0001\u001a\u00020E*\u00020(2\u0007\u0010Ç\u0001\u001a\u00020\r2\u0006\u0010Y\u001a\u00020\rH\u0002R\u001e\u0010\u0005\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0006j\b\u0012\u0004\u0012\u00020\u0007`\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\u00020\r8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u001e\u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0010\u001a\u00020\u0011@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\u0015\u001a\u00020\u00118F¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0014R\u0011\u0010\u0017\u001a\u00020\u00118F¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0014R\u001e\u0010\u0019\u001a\u00020\r2\u0006\u0010\u0010\u001a\u00020\r@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u000fR\u001e\u0010\u001b\u001a\u00020\r2\u0006\u0010\u0010\u001a\u00020\r@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u000fR\u0014\u0010\u001d\u001a\u00020\r8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001e\u0010\u000fR\u000e\u0010\u001f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010!\u001a\u0012\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u00010\"\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010*\u001a\u00020\u00118F¢\u0006\u0006\u001a\u0004\b*\u0010\u0014R\u0011\u0010+\u001a\u00020\u00118F¢\u0006\u0006\u001a\u0004\b+\u0010\u0014R\u000e\u0010,\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010.\u001a\u00020\r2\u0006\u0010\u0010\u001a\u00020\r@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b/\u0010\u000fR\u0018\u00100\u001a\u0004\u0018\u000101X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u00102R\u0014\u00103\u001a\u00020\r8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b4\u0010\u000fR\u0018\u00105\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000106X\u0082\u000e¢\u0006\u0004\n\u0002\u00107R\u000e\u00108\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010:\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010;\u001a\u00020\r8F¢\u0006\u0006\u001a\u0004\b<\u0010\u000fR.\u0010=\u001a\"\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020?\u0018\u00010>j\u0010\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020?\u0018\u0001`@X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bB\u0010C\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006Ï\u0001"}, d2 = {"Landroidx/compose/runtime/SlotWriter;", "", "table", "Landroidx/compose/runtime/SlotTable;", "(Landroidx/compose/runtime/SlotTable;)V", "anchors", "Ljava/util/ArrayList;", "Landroidx/compose/runtime/Anchor;", "Lkotlin/collections/ArrayList;", "calledByMap", "Landroidx/collection/MutableIntObjectMap;", "Landroidx/collection/MutableIntSet;", "capacity", "", "getCapacity", "()I", "<set-?>", "", "closed", "getClosed", "()Z", "collectingCalledInformation", "getCollectingCalledInformation", "collectingSourceInformation", "getCollectingSourceInformation", "currentGroup", "getCurrentGroup", "currentGroupEnd", "getCurrentGroupEnd", "currentGroupSlotIndex", "getCurrentGroupSlotIndex", "currentSlot", "currentSlotEnd", "deferredSlotWrites", "Landroidx/collection/MutableObjectList;", "endStack", "Landroidx/compose/runtime/IntStack;", "groupGapLen", "groupGapStart", "groups", "", "insertCount", "isGroupEnd", "isNode", "nodeCount", "nodeCountStack", "parent", "getParent", "pendingRecalculateMarks", "Landroidx/compose/runtime/PrioritySet;", "Landroidx/collection/MutableIntList;", "size", "getSize$runtime_release", "slots", "", "[Ljava/lang/Object;", "slotsGapLen", "slotsGapOwner", "slotsGapStart", "slotsSize", "getSlotsSize", "sourceInformationMap", "Ljava/util/HashMap;", "Landroidx/compose/runtime/GroupSourceInformation;", "Lkotlin/collections/HashMap;", "startStack", "getTable$runtime_release", "()Landroidx/compose/runtime/SlotTable;", "advanceBy", "", "amount", "anchor", FirebaseAnalytics.Param.INDEX, "anchorIndex", "appendSlot", "value", "bashCurrentGroup", "beginInsert", "childContainsAnyMarks", "group", "clear", "slotIndex", "clearSlotGap", "close", "normalClose", "containsAnyGroupMarks", "containsGroupMark", "dataAnchorToDataIndex", "gapLen", "dataIndex", "dataIndexToDataAddress", "dataIndexToDataAnchor", "gapStart", "endGroup", "endInsert", "ensureStarted", "fixParentAnchorsFor", "firstChild", "forAllData", "block", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "data", "forEachTailSlot", "groupIndex", "count", "groupAux", "groupIndexToAddress", "groupKey", "groupObjectKey", "groupSize", "groupSlots", "", "groupSourceInformationFor", "sourceInformation", "", "indexInCurrentGroup", "indexInGroup", "indexInParent", "insertAux", "insertGroups", "insertSlots", UserMetadata.KEYDATA_FILENAME, "", "markGroup", "moveAnchors", "originalLocation", "newLocation", "moveFrom", "removeSourceGroup", "moveGroup", TypedValues.CycleType.S_WAVE_OFFSET, "moveGroupGapTo", "moveIntoGroupFrom", "moveSlotGapTo", "moveTo", "writer", "node", "parentAnchorToIndex", "parentIndexToAnchor", "rawUpdate", "recalculateMarks", "recordGroupSourceInformation", "recordGrouplessCallSourceInformationEnd", "recordGrouplessCallSourceInformationStart", "key", "removeAnchors", "removeGroup", "removeGroups", TtmlNode.START, "len", "removeSlots", "reset", "restoreCurrentGroupEnd", "saveCurrentGroupEnd", "seek", "set", "skip", "skipGroup", "skipToGroupEnd", "slot", "slotIndexOfGroupSlotIndex", "slotsEndAllIndex", "slotsEndAllIndex$runtime_release", "slotsEndIndex", "slotsEndIndex$runtime_release", "slotsStartIndex", "slotsStartIndex$runtime_release", "sourceInformationOf", "startData", "aux", "objectKey", "startGroup", "dataKey", "startNode", "toDebugString", "toString", "trimTailSlots", "tryAnchor", "tryAnchor$runtime_release", "update", "updateAnchors", "previousGapStart", "newGapStart", "updateAux", "updateContainsMark", "updateContainsMarkNow", "updateContainsMarkNow-XpTMRCE", "(ILandroidx/collection/MutableIntList;)V", "updateNode", "updateNodeOfGroup", "updateParentNode", "updateToTableMaps", "verifyDataAnchors", "verifyDataAnchors$runtime_release", "verifyParentAnchors", "verifyParentAnchors$runtime_release", "auxIndex", "address", "dataIndexes", "groupAsString", "Ljava/lang/StringBuilder;", "Lkotlin/text/StringBuilder;", "nodeIndex", "updateDataIndex", "Companion", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000°\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0015\n\u0000\n\u0002\u0010\u0011\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0018\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u001a\n\u0002\u0010(\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0017\b\u0001\u0018\u0000 Ö\u00012\u00020\u0001:\u0002Ö\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u00103\u001a\u00020/2\u0006\u00108\u001a\u00020\u0019J\u000e\u0010!\u001a\u00020\u00192\u0006\u00108\u001a\u00020\u0019J\u000e\u00109\u001a\u00020\u00192\u0006\u00108\u001a\u00020\u0019J\u0010\u0010:\u001a\u0004\u0018\u00010\u00012\u0006\u00108\u001a\u00020\u0019J\u000e\u0010;\u001a\u00020\u00192\u0006\u00108\u001a\u00020\u0019J\u0010\u0010<\u001a\u0004\u0018\u00010\u00012\u0006\u00108\u001a\u00020\u0019J\u000e\u0010=\u001a\u00020/2\u0006\u00108\u001a\u00020\u0019J\u000e\u0010>\u001a\u00020/2\u0006\u00108\u001a\u00020\u0019J\u0016\u0010?\u001a\u00020/2\u0006\u00108\u001a\u00020\u00192\u0006\u0010@\u001a\u00020\u0019J\u0010\u0010A\u001a\u0004\u0018\u00010\u00012\u0006\u00108\u001a\u00020\u0019J\u0010\u0010A\u001a\u0004\u0018\u00010\u00012\u0006\u0010B\u001a\u00020\u000fJ\u000e\u0010C\u001a\u00020\u00192\u0006\u00108\u001a\u00020\u0019J\u000e\u0010C\u001a\u00020\u00192\u0006\u0010B\u001a\u00020\u000fJ\u000e\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020/J\u0006\u0010J\u001a\u00020HJ\u0012\u0010K\u001a\u0004\u0018\u00010\u00012\b\u0010(\u001a\u0004\u0018\u00010\u0001J\u0014\u0010L\u001a\u0004\u0018\u00010\u00012\b\u0010(\u001a\u0004\u0018\u00010\u0001H\u0002J\u0018\u0010M\u001a\u00020H2\u0006\u0010B\u001a\u00020\u000f2\b\u0010(\u001a\u0004\u0018\u00010\u0001J\u000e\u0010N\u001a\u00020H2\u0006\u0010O\u001a\u00020\u0019J\u0010\u0010P\u001a\u00020H2\b\u0010(\u001a\u0004\u0018\u00010\u0001J\u0010\u0010Q\u001a\u00020H2\b\u0010(\u001a\u0004\u0018\u00010\u0001J\u0006\u0010R\u001a\u00020HJ\u000e\u0010S\u001a\u00020H2\u0006\u0010T\u001a\u00020UJ\u0016\u0010V\u001a\u00020H2\u0006\u0010W\u001a\u00020\u00192\u0006\u0010(\u001a\u00020UJ\u0006\u0010X\u001a\u00020HJ\u001c\u0010Y\u001a\u0004\u0018\u00010\u00132\u0006\u0010C\u001a\u00020\u00192\b\u0010T\u001a\u0004\u0018\u00010UH\u0002J\u0010\u0010Z\u001a\u00020H2\b\u0010(\u001a\u0004\u0018\u00010\u0001J\u0018\u0010Z\u001a\u00020H2\u0006\u0010B\u001a\u00020\u000f2\b\u0010(\u001a\u0004\u0018\u00010\u0001J\u0010\u0010[\u001a\u00020H2\b\u0010(\u001a\u0004\u0018\u00010\u0001J\u0010\u0010\\\u001a\u00020H2\b\u0010(\u001a\u0004\u0018\u00010\u0001J\u001d\u0010\\\u001a\u0004\u0018\u00010\u00012\u0006\u00108\u001a\u00020\u00192\b\u0010(\u001a\u0004\u0018\u00010\u0001H\u0086\bJ\u0016\u0010]\u001a\u00020\u00192\u0006\u0010@\u001a\u00020\u00192\u0006\u00108\u001a\u00020\u0019J\"\u0010\\\u001a\u0004\u0018\u00010\u00012\u0006\u0010@\u001a\u00020\u00192\u0006\u00108\u001a\u00020\u00192\b\u0010(\u001a\u0004\u0018\u00010\u0001J\u0010\u0010^\u001a\u0004\u0018\u00010\u00012\u0006\u0010_\u001a\u00020\u0019J\b\u0010`\u001a\u0004\u0018\u00010\u0001J\u0018\u0010a\u001a\u0004\u0018\u00010\u00012\u0006\u0010B\u001a\u00020\u000f2\u0006\u00108\u001a\u00020\u0019J\u0018\u0010a\u001a\u0004\u0018\u00010\u00012\u0006\u0010b\u001a\u00020\u00192\u0006\u00108\u001a\u00020\u0019J5\u0010c\u001a\u00020H2\u0006\u0010b\u001a\u00020\u00192\u0006\u0010O\u001a\u00020\u00192\u001a\u0010d\u001a\u0016\u0012\u0004\u0012\u00020\u0019\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0012\u0004\u0012\u00020H0eH\u0086\bJ\u0015\u0010f\u001a\u00020\u00192\u0006\u0010b\u001a\u00020\u0019H\u0000¢\u0006\u0002\bgJ\u0015\u0010h\u001a\u00020\u00192\u0006\u0010b\u001a\u00020\u0019H\u0000¢\u0006\u0002\biJ\u0015\u0010j\u001a\u00020\u00192\u0006\u0010b\u001a\u00020\u0019H\u0000¢\u0006\u0002\bkJ\u000e\u0010n\u001a\u00020\u00192\u0006\u0010@\u001a\u00020\u0019J\u000e\u0010o\u001a\u00020H2\u0006\u0010p\u001a\u00020\u0019J\u000e\u0010q\u001a\u00020H2\u0006\u0010B\u001a\u00020\u000fJ\u0006\u0010r\u001a\u00020HJ\u0006\u0010s\u001a\u00020HJ\u0006\u0010t\u001a\u00020HJ\u0006\u0010u\u001a\u00020HJ\u000e\u0010u\u001a\u00020H2\u0006\u0010W\u001a\u00020\u0019J\u0018\u0010u\u001a\u00020H2\u0006\u0010W\u001a\u00020\u00192\b\u0010v\u001a\u0004\u0018\u00010\u0001J\u0018\u0010w\u001a\u00020H2\u0006\u0010W\u001a\u00020\u00192\b\u0010x\u001a\u0004\u0018\u00010\u0001J\"\u0010w\u001a\u00020H2\u0006\u0010W\u001a\u00020\u00192\b\u0010x\u001a\u0004\u0018\u00010\u00012\b\u0010A\u001a\u0004\u0018\u00010\u0001J\"\u0010y\u001a\u00020H2\u0006\u0010W\u001a\u00020\u00192\b\u0010x\u001a\u0004\u0018\u00010\u00012\b\u0010z\u001a\u0004\u0018\u00010\u0001J\u0018\u0010y\u001a\u00020H2\u0006\u0010W\u001a\u00020\u00192\b\u0010z\u001a\u0004\u0018\u00010\u0001J,\u0010u\u001a\u00020H2\u0006\u0010W\u001a\u00020\u00192\b\u0010x\u001a\u0004\u0018\u00010\u00012\u0006\u00103\u001a\u00020/2\b\u0010z\u001a\u0004\u0018\u00010\u0001H\u0002J\u0006\u0010{\u001a\u00020\u0019J\u000e\u0010|\u001a\u00020H2\u0006\u00108\u001a\u00020\u0019J\u000e\u0010|\u001a\u00020H2\u0006\u0010B\u001a\u00020\u000fJ\u0006\u0010}\u001a\u00020\u0019J\u0006\u0010~\u001a\u00020/J\u000f\u0010\u007f\u001a\u000b\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u0080\u0001JQ\u0010\u0081\u0001\u001a\u00020H2\u0006\u0010@\u001a\u00020\u00192=\u0010d\u001a9\u0012\u0015\u0012\u00130\u0019¢\u0006\u000e\b\u0082\u0001\u0012\t\b\u0083\u0001\u0012\u0004\b\b(8\u0012\u0018\u0012\u0016\u0018\u00010\u0001¢\u0006\u000f\b\u0082\u0001\u0012\n\b\u0083\u0001\u0012\u0005\b\b(\u0084\u0001\u0012\u0004\u0012\u00020H0eH\u0086\bJb\u0010\u0085\u0001\u001a\u00020H2\u0006\u0010@\u001a\u00020\u00192&\u0010\u0086\u0001\u001a!\u0012\u0016\u0012\u00140\u0019¢\u0006\u000f\b\u0082\u0001\u0012\n\b\u0083\u0001\u0012\u0005\b\b(\u0088\u0001\u0012\u0004\u0012\u00020H0\u0087\u00012&\u0010\u0089\u0001\u001a!\u0012\u0016\u0012\u00140\u0019¢\u0006\u000f\b\u0082\u0001\u0012\n\b\u0083\u0001\u0012\u0005\b\b(\u0088\u0001\u0012\u0004\u0012\u00020H0\u0087\u0001H\u0086\bJN\u0010\u008a\u0001\u001a\u00020H2\u0006\u0010@\u001a\u00020\u00192=\u0010d\u001a9\u0012\u0015\u0012\u00130\u0019¢\u0006\u000e\b\u0082\u0001\u0012\t\b\u0083\u0001\u0012\u0004\b\b(8\u0012\u0018\u0012\u0016\u0018\u00010\u0001¢\u0006\u000f\b\u0082\u0001\u0012\n\b\u0083\u0001\u0012\u0005\b\b(\u0084\u0001\u0012\u0004\u0012\u00020H0eJ\u0010\u0010\u008b\u0001\u001a\u00020H2\u0007\u0010\u008c\u0001\u001a\u00020\u0019J(\u0010\u008d\u0001\u001a\t\u0012\u0004\u0012\u00020\u000f0\u008e\u00012\u0006\u0010B\u001a\u00020\u000f2\u0007\u0010\u008c\u0001\u001a\u00020\u00192\u0007\u0010\u008f\u0001\u001a\u00020\u0000J)\u0010\u0090\u0001\u001a\t\u0012\u0004\u0012\u00020\u000f0\u008e\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u00108\u001a\u00020\u00192\t\b\u0002\u0010\u0091\u0001\u001a\u00020/J\u0007\u0010\u0092\u0001\u001a\u00020HJ'\u0010\u0093\u0001\u001a\t\u0012\u0004\u0012\u00020\u000f0\u008e\u00012\u0007\u0010\u008c\u0001\u001a\u00020\u00192\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u00108\u001a\u00020\u0019J\u0010\u0010B\u001a\u00020\u000f2\b\b\u0002\u00108\u001a\u00020\u0019J\u0011\u0010\u0094\u0001\u001a\u00020H2\b\b\u0002\u0010@\u001a\u00020\u0019J\u0011\u0010\u0095\u0001\u001a\u00020/2\u0006\u0010@\u001a\u00020\u0019H\u0002J\u0011\u0010\u0096\u0001\u001a\u00020/2\u0006\u0010@\u001a\u00020\u0019H\u0002J\t\u0010\u009a\u0001\u001a\u00020HH\u0002J\u0011\u0010\u009b\u0001\u001a\u00020H2\u0006\u0010@\u001a\u00020\u0019H\u0002J#\u0010\u009c\u0001\u001a\u00020H2\u0006\u0010@\u001a\u00020\u00192\u0007\u0010\\\u001a\u00030\u0098\u0001H\u0002¢\u0006\u0006\b\u009d\u0001\u0010\u009e\u0001J\u0011\u0010\u009f\u0001\u001a\u00020/2\u0006\u0010@\u001a\u00020\u0019H\u0002J\u000f\u0010 \u0001\u001a\u00020\u00192\u0006\u0010B\u001a\u00020\u000fJ\t\u0010¡\u0001\u001a\u00020UH\u0016J\t\u0010¢\u0001\u001a\u00020HH\u0002J\t\u0010£\u0001\u001a\u00020\u0019H\u0002J\"\u0010¤\u0001\u001a\u00020H2\u0006\u0010C\u001a\u00020\u00192\u0006\u0010{\u001a\u00020\u00192\u0007\u0010¥\u0001\u001a\u00020\u0019H\u0002J\u0011\u0010¦\u0001\u001a\u00020H2\u0006\u00108\u001a\u00020\u0019H\u0002J\u0019\u0010§\u0001\u001a\u00020H2\u0006\u00108\u001a\u00020\u00192\u0006\u0010@\u001a\u00020\u0019H\u0002J\t\u0010¨\u0001\u001a\u00020HH\u0002J\u0012\u0010©\u0001\u001a\u00020H2\u0007\u0010ª\u0001\u001a\u00020\u0019H\u0002J\u001a\u0010«\u0001\u001a\u00020H2\u0007\u0010ª\u0001\u001a\u00020\u00192\u0006\u0010@\u001a\u00020\u0019H\u0002J\u001b\u0010¬\u0001\u001a\u00020/2\u0007\u0010\u00ad\u0001\u001a\u00020\u00192\u0007\u0010®\u0001\u001a\u00020\u0019H\u0002J\u0019\u0010¯\u0001\u001a\u0004\u0018\u00010\u00132\u0006\u0010@\u001a\u00020\u0019H\u0000¢\u0006\u0003\b°\u0001J\u0019\u0010±\u0001\u001a\u0004\u0018\u00010\u000f2\u0006\u0010@\u001a\u00020\u0019H\u0000¢\u0006\u0003\b²\u0001J#\u0010³\u0001\u001a\u00020H2\u0007\u0010\u00ad\u0001\u001a\u00020\u00192\u0007\u0010®\u0001\u001a\u00020\u00192\u0006\u0010@\u001a\u00020\u0019H\u0002J\u001b\u0010´\u0001\u001a\u00020H2\u0006\u00108\u001a\u00020\u00192\b\u0010(\u001a\u0004\u0018\u00010\u0001H\u0002J\u001b\u0010µ\u0001\u001a\u00020H2\u0007\u0010¶\u0001\u001a\u00020\u00192\u0007\u0010·\u0001\u001a\u00020\u0019H\u0002JC\u0010¸\u0001\u001a\u00020/2\u0007\u0010¹\u0001\u001a\u00020\u00192\u0007\u0010ª\u0001\u001a\u00020\u00192&\u0010\u0011\u001a\"\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0013\u0018\u00010\u0012j\u0010\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0013\u0018\u0001`\u0014H\u0002J$\u0010º\u0001\u001a\u00020H2\u0007\u0010»\u0001\u001a\u00020\u00192\u0007\u0010¼\u0001\u001a\u00020\u00192\u0007\u0010ª\u0001\u001a\u00020\u0019H\u0002J\u0007\u0010½\u0001\u001a\u00020UJ\u001b\u0010¾\u0001\u001a\u00020H*\b0¿\u0001j\u0003`À\u00012\u0006\u00108\u001a\u00020\u0019H\u0002J\u000f\u0010Á\u0001\u001a\u00020HH\u0000¢\u0006\u0003\bÂ\u0001J\u000f\u0010Ã\u0001\u001a\u00020HH\u0000¢\u0006\u0003\bÄ\u0001J\u0011\u0010È\u0001\u001a\u00020\u00192\u0006\u00108\u001a\u00020\u0019H\u0002J\u0012\u0010É\u0001\u001a\u00020\u00192\u0007\u0010Ê\u0001\u001a\u00020\u0019H\u0002J\u0014\u0010C\u001a\u00020\u0019*\u00020\t2\u0006\u00108\u001a\u00020\u0019H\u0002J\u0011\u0010Ê\u0001\u001a\u00020\u00192\u0006\u00108\u001a\u00020\u0019H\u0002J\u0016\u0010Ê\u0001\u001a\u00020\u0019*\u00020\t2\u0007\u0010Ë\u0001\u001a\u00020\u0019H\u0002J\u0015\u0010_\u001a\u00020\u0019*\u00020\t2\u0007\u0010Ë\u0001\u001a\u00020\u0019H\u0002J\u001f\u0010Ì\u0001\u001a\u00020H*\u00020\t2\u0007\u0010Ë\u0001\u001a\u00020\u00192\u0007\u0010Ê\u0001\u001a\u00020\u0019H\u0002J\u0016\u0010Í\u0001\u001a\u00020\u0019*\u00020\t2\u0007\u0010Ë\u0001\u001a\u00020\u0019H\u0002J\u0016\u0010Î\u0001\u001a\u00020\u0019*\u00020\t2\u0007\u0010Ë\u0001\u001a\u00020\u0019H\u0002J\u0014\u0010Ï\u0001\u001a\t\u0012\u0004\u0012\u00020\u00190\u008e\u0001*\u00020\tH\u0002J\u0010\u0010Ð\u0001\u001a\t\u0012\u0004\u0012\u00020\u00190\u008e\u0001H\u0002J,\u0010Ñ\u0001\u001a\u00020\u00192\u0006\u00108\u001a\u00020\u00192\u0007\u0010¹\u0001\u001a\u00020\u00192\u0007\u0010Ò\u0001\u001a\u00020\u00192\u0007\u0010Æ\u0001\u001a\u00020\u0019H\u0002J#\u0010Ó\u0001\u001a\u00020\u00192\u0006\u0010B\u001a\u00020\u00192\u0007\u0010Ò\u0001\u001a\u00020\u00192\u0007\u0010Æ\u0001\u001a\u00020\u0019H\u0002J\u001a\u0010Ô\u0001\u001a\u00020\u00192\u0006\u00108\u001a\u00020\u00192\u0007\u0010¹\u0001\u001a\u00020\u0019H\u0002J\u0011\u0010Õ\u0001\u001a\u00020\u00192\u0006\u00108\u001a\u00020\u0019H\u0002R\u0014\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010\n\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u000bX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\fR\u001e\u0010\r\u001a\u0012\u0012\u0004\u0012\u00020\u000f0\u000ej\b\u0012\u0004\u0012\u00020\u000f`\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R.\u0010\u0011\u001a\"\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0013\u0018\u00010\u0012j\u0010\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0013\u0018\u0001`\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0015\u001a\n\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010&\u001a\u0012\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u00010'\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010)\u001a\u00020\u00192\u0006\u0010(\u001a\u00020\u0019@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b*\u0010+R\u001e\u0010,\u001a\u00020\u00192\u0006\u0010(\u001a\u00020\u0019@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b-\u0010+R\u0011\u0010.\u001a\u00020/8F¢\u0006\u0006\u001a\u0004\b.\u00100R\u0011\u00101\u001a\u00020\u00198F¢\u0006\u0006\u001a\u0004\b2\u0010+R\u0011\u00103\u001a\u00020/8F¢\u0006\u0006\u001a\u0004\b3\u00100R\u0011\u00104\u001a\u00020/8F¢\u0006\u0006\u001a\u0004\b5\u00100R\u0011\u00106\u001a\u00020/8F¢\u0006\u0006\u001a\u0004\b7\u00100R\u001e\u0010C\u001a\u00020\u00192\u0006\u0010(\u001a\u00020\u0019@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\bD\u0010+R\u001e\u0010E\u001a\u00020/2\u0006\u0010(\u001a\u00020/@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\bF\u00100R\u0014\u0010l\u001a\u00020\u00198BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bm\u0010+R\u0015\u0010\u0097\u0001\u001a\u0005\u0018\u00010\u0098\u0001X\u0082\u000e¢\u0006\u0005\n\u0003\u0010\u0099\u0001R\u0016\u0010ª\u0001\u001a\u00020\u00198@X\u0080\u0004¢\u0006\u0007\u001a\u0005\bÅ\u0001\u0010+R\u0016\u0010Æ\u0001\u001a\u00020\u00198BX\u0082\u0004¢\u0006\u0007\u001a\u0005\bÇ\u0001\u0010+¨\u0006×\u0001"}, d2 = {"Landroidx/compose/runtime/SlotWriter;", "", "table", "Landroidx/compose/runtime/SlotTable;", "<init>", "(Landroidx/compose/runtime/SlotTable;)V", "getTable$runtime", "()Landroidx/compose/runtime/SlotTable;", "groups", "", "slots", "", "[Ljava/lang/Object;", "anchors", "Ljava/util/ArrayList;", "Landroidx/compose/runtime/Anchor;", "Lkotlin/collections/ArrayList;", "sourceInformationMap", "Ljava/util/HashMap;", "Landroidx/compose/runtime/GroupSourceInformation;", "Lkotlin/collections/HashMap;", "calledByMap", "Landroidx/collection/MutableIntObjectMap;", "Landroidx/collection/MutableIntSet;", "groupGapStart", "", "groupGapLen", "currentSlot", "currentSlotEnd", "slotsGapStart", "slotsGapLen", "slotsGapOwner", "insertCount", "nodeCount", "startStack", "Landroidx/compose/runtime/IntStack;", "endStack", "nodeCountStack", "deferredSlotWrites", "Landroidx/collection/MutableObjectList;", "value", "currentGroup", "getCurrentGroup", "()I", "currentGroupEnd", "getCurrentGroupEnd", "isGroupEnd", "", "()Z", "slotsSize", "getSlotsSize", "isNode", "collectingSourceInformation", "getCollectingSourceInformation", "collectingCalledInformation", "getCollectingCalledInformation", FirebaseAnalytics.Param.INDEX, "groupKey", "groupObjectKey", "groupSize", "groupAux", "indexInParent", "indexInCurrentGroup", "indexInGroup", "group", "node", "anchor", "parent", "getParent", "closed", "getClosed", "close", "", "normalClose", "reset", "update", "rawUpdate", "appendSlot", "trimTailSlots", "count", "updateAux", "insertAux", "updateToTableMaps", "recordGroupSourceInformation", "sourceInformation", "", "recordGrouplessCallSourceInformationStart", "key", "recordGrouplessCallSourceInformationEnd", "groupSourceInformationFor", "updateNode", "updateParentNode", "set", "slotIndexOfGroupSlotIndex", "clear", "slotIndex", "skip", "slot", "groupIndex", "forEachTailSlot", "block", "Lkotlin/Function2;", "slotsStartIndex", "slotsStartIndex$runtime", "slotsEndIndex", "slotsEndIndex$runtime", "slotsEndAllIndex", "slotsEndAllIndex$runtime", "currentGroupSlotIndex", "getCurrentGroupSlotIndex", "groupSlotIndex", "advanceBy", "amount", "seek", "skipToGroupEnd", "beginInsert", "endInsert", "startGroup", "dataKey", "startNode", "objectKey", "startData", "aux", "endGroup", "ensureStarted", "skipGroup", "removeGroup", "groupSlots", "", "forAllData", "Lkotlin/ParameterName;", "name", "data", "traverseGroupAndChildren", "enter", "Lkotlin/Function1;", "child", "exit", "forAllDataInRememberOrder", "moveGroup", TypedValues.CycleType.S_WAVE_OFFSET, "moveTo", "", "writer", "moveFrom", "removeSourceGroup", "bashCurrentGroup", "moveIntoGroupFrom", "markGroup", "containsGroupMark", "containsAnyGroupMarks", "pendingRecalculateMarks", "Landroidx/compose/runtime/PrioritySet;", "Landroidx/collection/MutableIntList;", "recalculateMarks", "updateContainsMark", "updateContainsMarkNow", "updateContainsMarkNow-XpTMRCE", "(ILandroidx/collection/MutableIntList;)V", "childContainsAnyMarks", "anchorIndex", "toString", "saveCurrentGroupEnd", "restoreCurrentGroupEnd", "fixParentAnchorsFor", "firstChild", "moveGroupGapTo", "moveSlotGapTo", "clearSlotGap", "insertGroups", "size", "insertSlots", "removeGroups", TtmlNode.START, "len", "sourceInformationOf", "sourceInformationOf$runtime", "tryAnchor", "tryAnchor$runtime", "removeSlots", "updateNodeOfGroup", "updateAnchors", "previousGapStart", "newGapStart", "removeAnchors", "gapStart", "moveAnchors", "originalLocation", "newLocation", "toDebugString", "groupAsString", "Ljava/lang/StringBuilder;", "Lkotlin/text/StringBuilder;", "verifyDataAnchors", "verifyDataAnchors$runtime", "verifyParentAnchors", "verifyParentAnchors$runtime", "getSize$runtime", "capacity", "getCapacity", "groupIndexToAddress", "dataIndexToDataAddress", "dataIndex", "address", "updateDataIndex", "nodeIndex", "auxIndex", "dataIndexes", UserMetadata.KEYDATA_FILENAME, "dataIndexToDataAnchor", "gapLen", "dataAnchorToDataIndex", "parentIndexToAnchor", "parentAnchorToIndex", "Companion", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SlotWriter {
     private ArrayList<Anchor> anchors;
@@ -68,9 +70,9 @@ public final class SlotWriter {
         this.table = slotTable;
         this.groups = slotTable.getGroups();
         this.slots = slotTable.getSlots();
-        this.anchors = slotTable.getAnchors$runtime_release();
-        this.sourceInformationMap = slotTable.getSourceInformationMap$runtime_release();
-        this.calledByMap = slotTable.getCalledByMap$runtime_release();
+        this.anchors = slotTable.getAnchors$runtime();
+        this.sourceInformationMap = slotTable.getSourceInformationMap$runtime();
+        this.calledByMap = slotTable.getCalledByMap$runtime();
         this.groupGapStart = slotTable.getGroupsSize();
         this.groupGapLen = (this.groups.length / 5) - slotTable.getGroupsSize();
         this.slotsGapStart = slotTable.getSlotsSize();
@@ -79,7 +81,7 @@ public final class SlotWriter {
         this.currentGroupEnd = slotTable.getGroupsSize();
     }
 
-    public final SlotTable getTable$runtime_release() {
+    public final SlotTable getTable$runtime() {
         return this.table;
     }
 
@@ -211,12 +213,12 @@ public final class SlotWriter {
     public final void close(boolean z) {
         this.closed = true;
         if (z && this.startStack.tos == 0) {
-            moveGroupGapTo(getSize$runtime_release());
+            moveGroupGapTo(getSize$runtime());
             moveSlotGapTo(this.slots.length - this.slotsGapLen, this.groupGapStart);
             clearSlotGap();
             recalculateMarks();
         }
-        this.table.close$runtime_release(this, this.groups, this.groupGapStart, this.slots, this.slotsGapStart, this.anchors, this.sourceInformationMap, this.calledByMap);
+        this.table.close$runtime(this, this.groups, this.groupGapStart, this.slots, this.slotsGapStart, this.anchors, this.sourceInformationMap, this.calledByMap);
     }
 
     public final void reset() {
@@ -315,8 +317,8 @@ public final class SlotWriter {
     }
 
     public final void updateToTableMaps() {
-        this.sourceInformationMap = this.table.getSourceInformationMap$runtime_release();
-        this.calledByMap = this.table.getCalledByMap$runtime_release();
+        this.sourceInformationMap = this.table.getSourceInformationMap$runtime();
+        this.calledByMap = this.table.getCalledByMap$runtime();
     }
 
     public final void recordGroupSourceInformation(String str) {
@@ -442,30 +444,34 @@ public final class SlotWriter {
     }
 
     public final void forEachTailSlot(int i, int i2, Function2<? super Integer, Object, Unit> function2) {
-        int slotsStartIndex$runtime_release = slotsStartIndex$runtime_release(i);
-        int slotsEndIndex$runtime_release = slotsEndIndex$runtime_release(i);
-        for (int max = Math.max(slotsStartIndex$runtime_release, slotsEndIndex$runtime_release - i2); max < slotsEndIndex$runtime_release; max++) {
+        int slotsStartIndex$runtime = slotsStartIndex$runtime(i);
+        int slotsEndIndex$runtime = slotsEndIndex$runtime(i);
+        for (int max = Math.max(slotsStartIndex$runtime, slotsEndIndex$runtime - i2); max < slotsEndIndex$runtime; max++) {
             function2.invoke(Integer.valueOf(max), this.slots[dataIndexToDataAddress(max)]);
         }
     }
 
-    public final int slotsStartIndex$runtime_release(int i) {
+    public final int slotsStartIndex$runtime(int i) {
         return slotIndex(this.groups, groupIndexToAddress(i));
     }
 
-    public final int slotsEndIndex$runtime_release(int i) {
+    public final int slotsEndIndex$runtime(int i) {
         return dataIndex(this.groups, groupIndexToAddress(i + 1));
     }
 
-    public final int slotsEndAllIndex$runtime_release(int i) {
+    public final int slotsEndAllIndex$runtime(int i) {
         return dataIndex(this.groups, groupIndexToAddress(i + groupSize(i)));
     }
 
     private final int getCurrentGroupSlotIndex() {
+        return groupSlotIndex(this.parent);
+    }
+
+    public final int groupSlotIndex(int i) {
         MutableObjectList<Object> mutableObjectList;
-        int slotsStartIndex$runtime_release = this.currentSlot - slotsStartIndex$runtime_release(this.parent);
+        int slotsStartIndex$runtime = this.currentSlot - slotsStartIndex$runtime(i);
         MutableIntObjectMap<MutableObjectList<Object>> mutableIntObjectMap = this.deferredSlotWrites;
-        return slotsStartIndex$runtime_release + ((mutableIntObjectMap == null || (mutableObjectList = mutableIntObjectMap.get(this.parent)) == null) ? 0 : mutableObjectList.getSize());
+        return slotsStartIndex$runtime + ((mutableIntObjectMap == null || (mutableObjectList = mutableIntObjectMap.get(i)) == null) ? 0 : mutableObjectList.getSize());
     }
 
     public final void advanceBy(int i) {
@@ -556,14 +562,14 @@ public final class SlotWriter {
     }
 
     /* JADX WARN: Type inference failed for: r12v0 */
-    /* JADX WARN: Type inference failed for: r12v1, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r12v1, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r12v2 */
     /* JADX WARN: Type inference failed for: r13v0 */
-    /* JADX WARN: Type inference failed for: r13v1, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r13v1, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r13v2 */
     private final void startGroup(int i, Object obj, boolean z, Object obj2) {
         int access$groupSize;
-        GroupSourceInformation sourceInformationOf;
+        GroupSourceInformation sourceInformationOf$runtime;
         int i2 = this.parent;
         Object[] objArr = this.insertCount > 0 ? 1 : null;
         this.nodeCountStack.push(this.nodeCount);
@@ -604,8 +610,8 @@ public final class SlotWriter {
             access$groupSize = i3 + 1;
             this.parent = i3;
             this.currentGroup = access$groupSize;
-            if (i2 >= 0 && (sourceInformationOf = sourceInformationOf(i2)) != null) {
-                sourceInformationOf.reportGroup(this, i3);
+            if (i2 >= 0 && (sourceInformationOf$runtime = sourceInformationOf$runtime(i2)) != null) {
+                sourceInformationOf$runtime.reportGroup(this, i3);
             }
         } else {
             this.startStack.push(i2);
@@ -657,8 +663,8 @@ public final class SlotWriter {
             this.nodeCount = this.nodeCountStack.pop() + (z2 ? 1 : i4);
             int parent = parent(this.groups, i3);
             this.parent = parent;
-            int size$runtime_release = parent < 0 ? getSize$runtime_release() : groupIndexToAddress(parent + 1);
-            int dataIndex = size$runtime_release >= 0 ? dataIndex(this.groups, size$runtime_release) : 0;
+            int size$runtime = parent < 0 ? getSize$runtime() : groupIndexToAddress(parent + 1);
+            int dataIndex = size$runtime >= 0 ? dataIndex(this.groups, size$runtime) : 0;
             this.currentSlot = dataIndex;
             this.currentSlotEnd = dataIndex;
             return i4;
@@ -745,7 +751,7 @@ public final class SlotWriter {
     }
 
     public final boolean removeGroup() {
-        Anchor tryAnchor$runtime_release;
+        Anchor tryAnchor$runtime;
         if (!(this.insertCount == 0)) {
             ComposerKt.composeImmediateRuntimeError("Cannot remove group while inserting");
         }
@@ -753,14 +759,14 @@ public final class SlotWriter {
         int i2 = this.currentSlot;
         int dataIndex = dataIndex(this.groups, groupIndexToAddress(i));
         int skipGroup = skipGroup();
-        GroupSourceInformation sourceInformationOf = sourceInformationOf(this.parent);
-        if (sourceInformationOf != null && (tryAnchor$runtime_release = tryAnchor$runtime_release(i)) != null) {
-            sourceInformationOf.removeAnchor(tryAnchor$runtime_release);
+        GroupSourceInformation sourceInformationOf$runtime = sourceInformationOf$runtime(this.parent);
+        if (sourceInformationOf$runtime != null && (tryAnchor$runtime = tryAnchor$runtime(i)) != null) {
+            sourceInformationOf$runtime.removeAnchor(tryAnchor$runtime);
         }
         MutableIntList mutableIntList = this.pendingRecalculateMarks;
         if (mutableIntList != null) {
-            while (PrioritySet.m3487isNotEmptyimpl(mutableIntList) && PrioritySet.m3488peekimpl(mutableIntList) >= i) {
-                PrioritySet.m3489takeMaximpl(mutableIntList);
+            while (PrioritySet.m3815isNotEmptyimpl(mutableIntList) && PrioritySet.m3816peekimpl(mutableIntList) >= i) {
+                PrioritySet.m3817takeMaximpl(mutableIntList);
             }
         }
         boolean removeGroups = removeGroups(i, this.currentGroup - i);
@@ -782,6 +788,29 @@ public final class SlotWriter {
         int dataIndex = dataIndex(this.groups, groupIndexToAddress(getCurrentGroup() + groupSize(getCurrentGroup())));
         for (int dataIndex2 = dataIndex(this.groups, groupIndexToAddress(i)); dataIndex2 < dataIndex; dataIndex2++) {
             function2.invoke(Integer.valueOf(dataIndex2), this.slots[dataIndexToDataAddress(dataIndex2)]);
+        }
+    }
+
+    public final void traverseGroupAndChildren(int i, Function1<? super Integer, Unit> function1, Function1<? super Integer, Unit> function12) {
+        int parent = parent(i);
+        int size$runtime = getSize$runtime();
+        int groupSize = groupSize(i) + i;
+        int i2 = i;
+        while (i2 < groupSize) {
+            function1.invoke(Integer.valueOf(i2));
+            int i3 = i2 + 1;
+            int parent2 = i3 < size$runtime ? parent(i3) : -1;
+            if (parent2 != i2) {
+                while (true) {
+                    function12.invoke(Integer.valueOf(i2));
+                    if (i2 != i && parent != parent2) {
+                        i2 = parent;
+                        parent = parent(parent);
+                    }
+                }
+            }
+            i2 = i3;
+            parent = parent2;
         }
     }
 
@@ -851,7 +880,7 @@ public final class SlotWriter {
     }
 
     /* compiled from: SlotTable.kt */
-    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J@\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u00072\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\f2\b\b\u0002\u0010\u000e\u001a\u00020\fH\u0002¨\u0006\u000f"}, d2 = {"Landroidx/compose/runtime/SlotWriter$Companion;", "", "()V", "moveGroup", "", "Landroidx/compose/runtime/Anchor;", "fromWriter", "Landroidx/compose/runtime/SlotWriter;", "fromIndex", "", "toWriter", "updateFromCursor", "", "updateToCursor", "removeSourceGroup", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J@\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\r2\b\b\u0002\u0010\u000f\u001a\u00020\rH\u0002¨\u0006\u0010"}, d2 = {"Landroidx/compose/runtime/SlotWriter$Companion;", "", "<init>", "()V", "moveGroup", "", "Landroidx/compose/runtime/Anchor;", "fromWriter", "Landroidx/compose/runtime/SlotWriter;", "fromIndex", "", "toWriter", "updateFromCursor", "", "updateToCursor", "removeSourceGroup", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -924,17 +953,17 @@ public final class SlotWriter {
             }
             int[] iArr3 = iArr;
             slotWriter2.slotsGapOwner = i10;
-            int access$locationOf = SlotTableKt.access$locationOf(slotWriter.anchors, i, slotWriter.getSize$runtime_release());
-            int access$locationOf2 = SlotTableKt.access$locationOf(slotWriter.anchors, i2, slotWriter.getSize$runtime_release());
+            int access$locationOf = SlotTableKt.access$locationOf(slotWriter.anchors, i, slotWriter.getSize$runtime());
+            int access$locationOf2 = SlotTableKt.access$locationOf(slotWriter.anchors, i2, slotWriter.getSize$runtime());
             if (access$locationOf < access$locationOf2) {
                 ArrayList arrayList = slotWriter.anchors;
                 ArrayList arrayList2 = new ArrayList(access$locationOf2 - access$locationOf);
                 for (int i14 = access$locationOf; i14 < access$locationOf2; i14++) {
                     Anchor anchor = (Anchor) arrayList.get(i14);
-                    anchor.setLocation$runtime_release(anchor.getLocation$runtime_release() + i6);
+                    anchor.setLocation$runtime(anchor.getLocation$runtime() + i6);
                     arrayList2.add(anchor);
                 }
-                slotWriter2.anchors.addAll(SlotTableKt.access$locationOf(slotWriter2.anchors, slotWriter2.getCurrentGroup(), slotWriter2.getSize$runtime_release()), arrayList2);
+                slotWriter2.anchors.addAll(SlotTableKt.access$locationOf(slotWriter2.anchors, slotWriter2.getCurrentGroup(), slotWriter2.getSize$runtime()), arrayList2);
                 arrayList.subList(access$locationOf, access$locationOf2).clear();
                 emptyList = arrayList2;
             } else {
@@ -957,8 +986,8 @@ public final class SlotWriter {
                 }
             }
             int parent2 = slotWriter2.getParent();
-            GroupSourceInformation sourceInformationOf = slotWriter2.sourceInformationOf(parent);
-            if (sourceInformationOf != null) {
+            GroupSourceInformation sourceInformationOf$runtime = slotWriter2.sourceInformationOf$runtime(parent);
+            if (sourceInformationOf$runtime != null) {
                 int i16 = parent2 + 1;
                 int currentGroup2 = slotWriter2.getCurrentGroup();
                 int i17 = -1;
@@ -966,7 +995,7 @@ public final class SlotWriter {
                     i17 = i16;
                     i16 = SlotTableKt.access$groupSize(slotWriter2.groups, i16) + i16;
                 }
-                sourceInformationOf.addGroupAfter(slotWriter2, i17, currentGroup2);
+                sourceInformationOf$runtime.addGroupAfter(slotWriter2, i17, currentGroup2);
             }
             int parent3 = slotWriter.parent(i);
             if (z3) {
@@ -1074,19 +1103,19 @@ public final class SlotWriter {
             int groupsSize = slotTable.getGroupsSize();
             Object[] slots = slotTable.getSlots();
             int slotsSize = slotTable.getSlotsSize();
-            HashMap<Anchor, GroupSourceInformation> sourceInformationMap$runtime_release = slotTable.getSourceInformationMap$runtime_release();
-            MutableIntObjectMap<MutableIntSet> calledByMap$runtime_release = slotTable.getCalledByMap$runtime_release();
+            HashMap<Anchor, GroupSourceInformation> sourceInformationMap$runtime = slotTable.getSourceInformationMap$runtime();
+            MutableIntObjectMap<MutableIntSet> calledByMap$runtime = slotTable.getCalledByMap$runtime();
             this.groups = groups;
             this.slots = slots;
-            this.anchors = slotTable.getAnchors$runtime_release();
+            this.anchors = slotTable.getAnchors$runtime();
             this.groupGapStart = groupsSize;
             this.groupGapLen = (groups.length / 5) - groupsSize;
             this.slotsGapStart = slotsSize;
             this.slotsGapLen = slots.length - slotsSize;
             this.slotsGapOwner = groupsSize;
-            this.sourceInformationMap = sourceInformationMap$runtime_release;
-            this.calledByMap = calledByMap$runtime_release;
-            slotTable.setTo$runtime_release(iArr, 0, objArr, 0, arrayList, hashMap, mutableIntObjectMap);
+            this.sourceInformationMap = sourceInformationMap$runtime;
+            this.calledByMap = calledByMap$runtime;
+            slotTable.setTo$runtime(iArr, 0, objArr, 0, arrayList, hashMap, mutableIntObjectMap);
             return this.anchors;
         }
         SlotWriter openWriter = slotTable.openWriter();
@@ -1139,10 +1168,10 @@ public final class SlotWriter {
 
     public final Anchor anchor(int i) {
         ArrayList<Anchor> arrayList = this.anchors;
-        int access$search = SlotTableKt.access$search(arrayList, i, getSize$runtime_release());
+        int access$search = SlotTableKt.access$search(arrayList, i, getSize$runtime());
         if (access$search < 0) {
             if (i > this.groupGapStart) {
-                i = -(getSize$runtime_release() - i);
+                i = -(getSize$runtime() - i);
             }
             Anchor anchor = new Anchor(i);
             arrayList.add(-(access$search + 1), anchor);
@@ -1184,8 +1213,8 @@ public final class SlotWriter {
     private final void recalculateMarks() {
         MutableIntList mutableIntList = this.pendingRecalculateMarks;
         if (mutableIntList != null) {
-            while (PrioritySet.m3487isNotEmptyimpl(mutableIntList)) {
-                m3501updateContainsMarkNowXpTMRCE(PrioritySet.m3489takeMaximpl(mutableIntList), mutableIntList);
+            while (PrioritySet.m3815isNotEmptyimpl(mutableIntList)) {
+                m3833updateContainsMarkNowXpTMRCE(PrioritySet.m3817takeMaximpl(mutableIntList), mutableIntList);
             }
         }
     }
@@ -1195,15 +1224,15 @@ public final class SlotWriter {
         if (i >= 0) {
             MutableIntList mutableIntList = this.pendingRecalculateMarks;
             if (mutableIntList == null) {
-                mutableIntList = PrioritySet.m3482constructorimpl$default(null, 1, null);
+                mutableIntList = PrioritySet.m3810constructorimpl$default(null, 1, null);
                 this.pendingRecalculateMarks = mutableIntList;
             }
-            PrioritySet.m3479addimpl(mutableIntList, i);
+            PrioritySet.m3807addimpl(mutableIntList, i);
         }
     }
 
     /* renamed from: updateContainsMarkNow-XpTMRCE  reason: not valid java name */
-    private final void m3501updateContainsMarkNowXpTMRCE(int i, MutableIntList mutableIntList) {
+    private final void m3833updateContainsMarkNowXpTMRCE(int i, MutableIntList mutableIntList) {
         int groupIndexToAddress = groupIndexToAddress(i);
         boolean childContainsAnyMarks = childContainsAnyMarks(i);
         int[] iArr = this.groups;
@@ -1211,7 +1240,7 @@ public final class SlotWriter {
             SlotTableKt.access$updateContainsMark(iArr, groupIndexToAddress, childContainsAnyMarks);
             int parent = parent(i);
             if (parent >= 0) {
-                PrioritySet.m3479addimpl(mutableIntList, parent);
+                PrioritySet.m3807addimpl(mutableIntList, parent);
             }
         }
     }
@@ -1229,12 +1258,12 @@ public final class SlotWriter {
     }
 
     public final int anchorIndex(Anchor anchor) {
-        int location$runtime_release = anchor.getLocation$runtime_release();
-        return location$runtime_release < 0 ? getSize$runtime_release() + location$runtime_release : location$runtime_release;
+        int location$runtime = anchor.getLocation$runtime();
+        return location$runtime < 0 ? getSize$runtime() + location$runtime : location$runtime;
     }
 
     public String toString() {
-        return "SlotWriter(current = " + this.currentGroup + " end=" + this.currentGroupEnd + " size = " + getSize$runtime_release() + " gap=" + this.groupGapStart + '-' + (this.groupGapStart + this.groupGapLen) + ')';
+        return "SlotWriter(current = " + this.currentGroup + " end=" + this.currentGroupEnd + " size = " + getSize$runtime() + " gap=" + this.groupGapStart + '-' + (this.groupGapStart + this.groupGapLen) + ')';
     }
 
     private final void saveCurrentGroupEnd() {
@@ -1313,7 +1342,7 @@ public final class SlotWriter {
                 System.arraycopy(objArr, i6, objArr, i4, (i + i3) - i6);
             }
         }
-        int min = Math.min(i2 + 1, getSize$runtime_release());
+        int min = Math.min(i2 + 1, getSize$runtime());
         if (i5 != min) {
             int length = this.slots.length - i3;
             if (min < i5) {
@@ -1450,21 +1479,20 @@ public final class SlotWriter {
         return r0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final GroupSourceInformation sourceInformationOf(int i) {
-        Anchor tryAnchor$runtime_release;
+    public final GroupSourceInformation sourceInformationOf$runtime(int i) {
+        Anchor tryAnchor$runtime;
         HashMap<Anchor, GroupSourceInformation> hashMap = this.sourceInformationMap;
-        if (hashMap == null || (tryAnchor$runtime_release = tryAnchor$runtime_release(i)) == null) {
+        if (hashMap == null || (tryAnchor$runtime = tryAnchor$runtime(i)) == null) {
             return null;
         }
-        return hashMap.get(tryAnchor$runtime_release);
+        return hashMap.get(tryAnchor$runtime);
     }
 
-    public final Anchor tryAnchor$runtime_release(int i) {
-        if (i < 0 || i >= getSize$runtime_release()) {
+    public final Anchor tryAnchor$runtime(int i) {
+        if (i < 0 || i >= getSize$runtime()) {
             return null;
         }
-        return SlotTableKt.access$find(this.anchors, i, getSize$runtime_release());
+        return SlotTableKt.access$find(this.anchors, i, getSize$runtime());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1501,19 +1529,19 @@ public final class SlotWriter {
 
     private final void updateAnchors(int i, int i2) {
         Anchor anchor;
-        int location$runtime_release;
+        int location$runtime;
         Anchor anchor2;
-        int location$runtime_release2;
+        int location$runtime2;
         int i3;
         int capacity = getCapacity() - this.groupGapLen;
         if (i < i2) {
-            for (int access$locationOf = SlotTableKt.access$locationOf(this.anchors, i, capacity); access$locationOf < this.anchors.size() && (location$runtime_release2 = (anchor2 = this.anchors.get(access$locationOf)).getLocation$runtime_release()) < 0 && (i3 = location$runtime_release2 + capacity) < i2; access$locationOf++) {
-                anchor2.setLocation$runtime_release(i3);
+            for (int access$locationOf = SlotTableKt.access$locationOf(this.anchors, i, capacity); access$locationOf < this.anchors.size() && (location$runtime2 = (anchor2 = this.anchors.get(access$locationOf)).getLocation$runtime()) < 0 && (i3 = location$runtime2 + capacity) < i2; access$locationOf++) {
+                anchor2.setLocation$runtime(i3);
             }
             return;
         }
-        for (int access$locationOf2 = SlotTableKt.access$locationOf(this.anchors, i2, capacity); access$locationOf2 < this.anchors.size() && (location$runtime_release = (anchor = this.anchors.get(access$locationOf2)).getLocation$runtime_release()) >= 0; access$locationOf2++) {
-            anchor.setLocation$runtime_release(-(capacity - location$runtime_release));
+        for (int access$locationOf2 = SlotTableKt.access$locationOf(this.anchors, i2, capacity); access$locationOf2 < this.anchors.size() && (location$runtime = (anchor = this.anchors.get(access$locationOf2)).getLocation$runtime()) >= 0; access$locationOf2++) {
+            anchor.setLocation$runtime(-(capacity - location$runtime));
         }
     }
 
@@ -1532,7 +1560,7 @@ public final class SlotWriter {
                 break;
             }
             if (anchorIndex < i3) {
-                anchor.setLocation$runtime_release(Integer.MIN_VALUE);
+                anchor.setLocation$runtime(Integer.MIN_VALUE);
                 if (hashMap != null) {
                     hashMap.remove(anchor);
                 }
@@ -1554,8 +1582,8 @@ public final class SlotWriter {
         Anchor anchor;
         int anchorIndex;
         int i4 = i3 + i;
-        int size$runtime_release = getSize$runtime_release();
-        int access$locationOf = SlotTableKt.access$locationOf(this.anchors, i, size$runtime_release);
+        int size$runtime = getSize$runtime();
+        int access$locationOf = SlotTableKt.access$locationOf(this.anchors, i, size$runtime);
         ArrayList arrayList = new ArrayList();
         if (access$locationOf >= 0) {
             while (access$locationOf < this.anchors.size() && (anchorIndex = anchorIndex((anchor = this.anchors.get(access$locationOf)))) >= i && anchorIndex < i4) {
@@ -1569,11 +1597,11 @@ public final class SlotWriter {
             Anchor anchor2 = (Anchor) arrayList.get(i6);
             int anchorIndex2 = anchorIndex(anchor2) + i5;
             if (anchorIndex2 >= this.groupGapStart) {
-                anchor2.setLocation$runtime_release(-(size$runtime_release - anchorIndex2));
+                anchor2.setLocation$runtime(-(size$runtime - anchorIndex2));
             } else {
-                anchor2.setLocation$runtime_release(anchorIndex2);
+                anchor2.setLocation$runtime(anchorIndex2);
             }
-            this.anchors.add(SlotTableKt.access$locationOf(this.anchors, anchorIndex2, size$runtime_release), anchor2);
+            this.anchors.add(SlotTableKt.access$locationOf(this.anchors, anchorIndex2, size$runtime), anchor2);
         }
     }
 
@@ -1597,8 +1625,8 @@ public final class SlotWriter {
         StringBuilder append6 = sb.append("  gap owner: " + this.slotsGapOwner);
         Intrinsics.checkNotNullExpressionValue(append6, "append(...)");
         Intrinsics.checkNotNullExpressionValue(append6.append('\n'), "append(...)");
-        int size$runtime_release = getSize$runtime_release();
-        for (int i = 0; i < size$runtime_release; i++) {
+        int size$runtime = getSize$runtime();
+        for (int i = 0; i < size$runtime; i++) {
             groupAsString(sb, i);
             sb.append('\n');
         }
@@ -1658,14 +1686,14 @@ public final class SlotWriter {
         sb.append(")");
     }
 
-    public final void verifyDataAnchors$runtime_release() {
+    public final void verifyDataAnchors$runtime() {
         int i = this.slotsGapOwner;
         int length = this.slots.length - this.slotsGapLen;
-        int size$runtime_release = getSize$runtime_release();
+        int size$runtime = getSize$runtime();
         int i2 = 0;
         int i3 = 0;
         boolean z = false;
-        while (i2 < size$runtime_release) {
+        while (i2 < size$runtime) {
             int groupIndexToAddress = groupIndexToAddress(i2);
             int[] iArr = this.groups;
             int i4 = iArr[(groupIndexToAddress * 5) + 4];
@@ -1687,7 +1715,7 @@ public final class SlotWriter {
         }
     }
 
-    public final void verifyParentAnchors$runtime_release() {
+    public final void verifyParentAnchors$runtime() {
         int i = this.groupGapStart;
         int i2 = this.groupGapLen;
         int capacity = getCapacity();
@@ -1713,7 +1741,7 @@ public final class SlotWriter {
         }
     }
 
-    public final int getSize$runtime_release() {
+    public final int getSize$runtime() {
         return getCapacity() - this.groupGapLen;
     }
 
@@ -1788,11 +1816,11 @@ public final class SlotWriter {
     }
 
     private final int parentIndexToAnchor(int i, int i2) {
-        return i < i2 ? i : -((getSize$runtime_release() - i) + 2);
+        return i < i2 ? i : -((getSize$runtime() - i) + 2);
     }
 
     private final int parentAnchorToIndex(int i) {
-        return i > -2 ? i : (getSize$runtime_release() + i) - (-2);
+        return i > -2 ? i : (getSize$runtime() + i) - (-2);
     }
 
     public final void trimTailSlots(int i) {
@@ -1809,6 +1837,97 @@ public final class SlotWriter {
         int i3 = this.currentSlot;
         if (i3 >= slotIndex) {
             this.currentSlot = i3 - i;
+        }
+    }
+
+    public final void forAllDataInRememberOrder(int i, Function2<? super Integer, Object, Unit> function2) {
+        int i2;
+        int i3;
+        Anchor after;
+        Function2<? super Integer, Object, Unit> function22 = function2;
+        int parent = parent(i);
+        int size$runtime = getSize$runtime();
+        int groupSize = groupSize(i) + i;
+        DefaultConstructorMarker defaultConstructorMarker = null;
+        int i4 = i;
+        MutableIntSet mutableIntSet = null;
+        MutableIntList mutableIntList = null;
+        while (i4 < groupSize) {
+            int dataIndex = dataIndex(i4);
+            int i5 = i4 + 1;
+            int dataIndex2 = dataIndex(i5);
+            while (true) {
+                i2 = 0;
+                if (dataIndex >= dataIndex2) {
+                    break;
+                }
+                Object obj = this.slots[dataIndexToDataAddress(dataIndex)];
+                if ((obj instanceof RememberObserverHolder) && (after = ((RememberObserverHolder) obj).getAfter()) != null && after.getValid()) {
+                    int anchorIndex = anchorIndex(after);
+                    if (mutableIntSet == null) {
+                        mutableIntSet = IntSetKt.mutableIntSetOf();
+                    }
+                    if (mutableIntList == null) {
+                        mutableIntList = new MutableIntList(0, 1, defaultConstructorMarker);
+                    }
+                    mutableIntSet.add(anchorIndex);
+                    mutableIntList.add(anchorIndex);
+                    mutableIntList.add(dataIndex);
+                } else {
+                    function22.invoke(Integer.valueOf(dataIndex), obj);
+                }
+                dataIndex++;
+            }
+            int parent2 = i5 < size$runtime ? parent(i5) : -1;
+            if (parent2 != i4) {
+                while (true) {
+                    if (mutableIntList == null || mutableIntSet == null || !mutableIntSet.remove(i4)) {
+                        i3 = size$runtime;
+                    } else {
+                        int i6 = mutableIntList._size;
+                        int i7 = i6 / 2;
+                        int i8 = i2;
+                        int i9 = i8;
+                        while (i9 < i7) {
+                            int i10 = i9 * 2;
+                            int i11 = size$runtime;
+                            int i12 = mutableIntList.get(i10);
+                            if (i12 == i4) {
+                                int i13 = mutableIntList.get(i10 + 1);
+                                function22.invoke(Integer.valueOf(i13), this.slots[dataIndexToDataAddress(i13)]);
+                            } else if (i10 != i8) {
+                                int i14 = i8 + 1;
+                                mutableIntList.set(i8, i12);
+                                i8 += 2;
+                                mutableIntList.set(i14, mutableIntList.get(i10 + 1));
+                            } else {
+                                i8 += 2;
+                            }
+                            i9++;
+                            function22 = function2;
+                            size$runtime = i11;
+                        }
+                        i3 = size$runtime;
+                        if (i8 != i6) {
+                            mutableIntList.removeRange(i8, i6);
+                        }
+                    }
+                    if (i4 != i && parent != parent2) {
+                        i4 = parent;
+                        size$runtime = i3;
+                        i2 = 0;
+                        parent = parent(parent);
+                        function22 = function2;
+                    }
+                }
+            } else {
+                i3 = size$runtime;
+            }
+            function22 = function2;
+            parent = parent2;
+            i4 = i5;
+            size$runtime = i3;
+            defaultConstructorMarker = null;
         }
     }
 }

@@ -2,7 +2,7 @@ package io.reactivex.internal.disposables;
 
 import io.reactivex.disposables.Disposable;
 import java.util.concurrent.atomic.AtomicReferenceArray;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ArrayCompositeDisposable extends AtomicReferenceArray<Disposable> implements Disposable {
     private static final long serialVersionUID = 2746389416410565408L;
 

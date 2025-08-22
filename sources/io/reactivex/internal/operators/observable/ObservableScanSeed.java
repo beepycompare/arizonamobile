@@ -10,7 +10,7 @@ import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableScanSeed<T, R> extends AbstractObservableWithUpstream<T, R> {
     final BiFunction<R, ? super T, R> accumulator;
     final Callable<R> seedSupplier;
@@ -31,7 +31,7 @@ public final class ObservableScanSeed<T, R> extends AbstractObservableWithUpstre
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ScanSeedObserver<T, R> implements Observer<T>, Disposable {
         final BiFunction<R, ? super T, R> accumulator;
         boolean done;

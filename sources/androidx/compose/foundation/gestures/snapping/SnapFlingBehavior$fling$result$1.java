@@ -23,8 +23,8 @@ import kotlin.jvm.internal.Ref;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SnapFlingBehavior.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\u0004H\u008a@"}, d2 = {"<anonymous>", "Landroidx/compose/foundation/gestures/snapping/AnimationResult;", "", "Landroidx/compose/animation/core/AnimationVector1D;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.snapping.SnapFlingBehavior$fling$result$1", f = "SnapFlingBehavior.kt", i = {0}, l = {TsExtractor.TS_STREAM_TYPE_E_AC3, 151}, m = "invokeSuspend", n = {"remainingScrollOffset"}, s = {"L$0"})
+@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\u0004H\n"}, d2 = {"<anonymous>", "Landroidx/compose/foundation/gestures/snapping/AnimationResult;", "", "Landroidx/compose/animation/core/AnimationVector1D;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.snapping.SnapFlingBehavior$fling$result$1", f = "SnapFlingBehavior.kt", i = {0}, l = {TsExtractor.TS_STREAM_TYPE_SPLICE_INFO, 150}, m = "invokeSuspend", n = {"remainingScrollOffset"}, s = {"L$0"})
 /* loaded from: classes.dex */
 public final class SnapFlingBehavior$fling$result$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super AnimationResult<Float, AnimationVector1D>>, Object> {
     final /* synthetic */ float $initialVelocity;
@@ -55,7 +55,7 @@ public final class SnapFlingBehavior$fling$result$1 extends SuspendLambda implem
         return ((SnapFlingBehavior$fling$result$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0088, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0085, code lost:
         if (r2 == r1) goto L16;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -91,23 +91,12 @@ public final class SnapFlingBehavior$fling$result$1 extends SuspendLambda implem
             final Function1<Float, Unit> function1 = this.$onRemainingScrollOffsetUpdate;
             this.L$0 = floatRef;
             this.label = 1;
-            tryApproach = snapFlingBehavior.tryApproach(scrollScope, f, f2, new Function1<Float, Unit>() { // from class: androidx.compose.foundation.gestures.snapping.SnapFlingBehavior$fling$result$1$animationState$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(1);
-                }
-
+            tryApproach = snapFlingBehavior.tryApproach(scrollScope, f, f2, new Function1() { // from class: androidx.compose.foundation.gestures.snapping.SnapFlingBehavior$fling$result$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(Float f3) {
-                    invoke(f3.floatValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(float f3) {
-                    Ref.FloatRef.this.element -= f3;
-                    function1.invoke(Float.valueOf(Ref.FloatRef.this.element));
+                public final Object invoke(Object obj2) {
+                    Unit invokeSuspend$lambda$1;
+                    invokeSuspend$lambda$1 = SnapFlingBehavior$fling$result$1.invokeSuspend$lambda$1(Ref.FloatRef.this, function1, ((Float) obj2).floatValue());
+                    return invokeSuspend$lambda$1;
                 }
             }, this);
         } else if (i != 1) {
@@ -136,24 +125,28 @@ public final class SnapFlingBehavior$fling$result$1 extends SuspendLambda implem
         final Function1<Float, Unit> function12 = this.$onRemainingScrollOffsetUpdate;
         this.L$0 = null;
         this.label = 2;
-        animateWithTarget = SnapFlingBehaviorKt.animateWithTarget(scrollScope2, f3, f4, copy$default, animationSpec, new Function1<Float, Unit>() { // from class: androidx.compose.foundation.gestures.snapping.SnapFlingBehavior$fling$result$1.4
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            /* JADX WARN: Multi-variable type inference failed */
-            {
-                super(1);
-            }
-
+        animateWithTarget = SnapFlingBehaviorKt.animateWithTarget(scrollScope2, f3, f4, copy$default, animationSpec, new Function1() { // from class: androidx.compose.foundation.gestures.snapping.SnapFlingBehavior$fling$result$1$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Float f5) {
-                invoke(f5.floatValue());
-                return Unit.INSTANCE;
-            }
-
-            public final void invoke(float f5) {
-                Ref.FloatRef.this.element -= f5;
-                function12.invoke(Float.valueOf(Ref.FloatRef.this.element));
+            public final Object invoke(Object obj2) {
+                Unit invokeSuspend$lambda$4;
+                invokeSuspend$lambda$4 = SnapFlingBehavior$fling$result$1.invokeSuspend$lambda$4(Ref.FloatRef.this, function12, ((Float) obj2).floatValue());
+                return invokeSuspend$lambda$4;
             }
         }, this);
         return animateWithTarget == coroutine_suspended ? coroutine_suspended : animateWithTarget;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$1(Ref.FloatRef floatRef, Function1 function1, float f) {
+        floatRef.element -= f;
+        function1.invoke(Float.valueOf(floatRef.element));
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$4(Ref.FloatRef floatRef, Function1 function1, float f) {
+        floatRef.element -= f;
+        function1.invoke(Float.valueOf(floatRef.element));
+        return Unit.INSTANCE;
     }
 }

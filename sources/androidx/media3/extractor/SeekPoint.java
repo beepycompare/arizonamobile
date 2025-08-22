@@ -1,5 +1,5 @@
 package androidx.media3.extractor;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class SeekPoint {
     public static final SeekPoint START = new SeekPoint(0, 0);
     public final long position;

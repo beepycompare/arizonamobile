@@ -6,7 +6,7 @@ import io.reactivex.Scheduler;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeUnsubscribeOn<T> extends AbstractMaybeWithUpstream<T, T> {
     final Scheduler scheduler;
 
@@ -20,7 +20,7 @@ public final class MaybeUnsubscribeOn<T> extends AbstractMaybeWithUpstream<T, T>
         this.source.subscribe(new UnsubscribeOnMaybeObserver(maybeObserver, this.scheduler));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class UnsubscribeOnMaybeObserver<T> extends AtomicReference<Disposable> implements MaybeObserver<T>, Disposable, Runnable {
         private static final long serialVersionUID = 3256698449646456986L;
         final MaybeObserver<? super T> downstream;

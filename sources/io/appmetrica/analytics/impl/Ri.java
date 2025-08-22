@@ -1,23 +1,17 @@
 package io.appmetrica.analytics.impl;
 
 import android.os.Bundle;
-import io.appmetrica.analytics.internal.IAppMetricaService;
+import android.os.ResultReceiver;
 /* loaded from: classes4.dex */
-public final class Ri extends Kh {
-    public final Pf e;
-
-    public Ri(C0421m0 c0421m0, Zk zk, Pf pf) {
-        super(c0421m0, zk);
-        this.e = pf;
+public final class Ri extends V4 {
+    public Ri(S4 s4) {
+        super(s4);
     }
 
-    @Override // io.appmetrica.analytics.impl.Kh
-    public final void a(IAppMetricaService iAppMetricaService) {
-        Bundle bundle = new Bundle();
-        Pf pf = this.e;
-        synchronized (pf) {
-            bundle.putParcelable("PROCESS_CFG_OBJ", pf);
-        }
-        iAppMetricaService.resumeUserSession(bundle);
+    @Override // io.appmetrica.analytics.impl.V4
+    public final boolean a(C0399l6 c0399l6, P4 p4) {
+        Bundle bundle = c0399l6.m;
+        this.f689a.k.a(new R4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
+        return false;
     }
 }

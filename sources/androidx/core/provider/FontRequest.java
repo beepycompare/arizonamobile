@@ -12,14 +12,22 @@ public final class FontRequest {
     private final String mProviderAuthority;
     private final String mProviderPackage;
     private final String mQuery;
+    private final String mSystemFont;
+    private final String mVariationSettings;
 
     public FontRequest(String str, String str2, String str3, List<List<byte[]>> list) {
+        this(str, str2, str3, list, null, null);
+    }
+
+    public FontRequest(String str, String str2, String str3, List<List<byte[]>> list, String str4, String str5) {
         this.mProviderAuthority = (String) Preconditions.checkNotNull(str);
         this.mProviderPackage = (String) Preconditions.checkNotNull(str2);
         this.mQuery = (String) Preconditions.checkNotNull(str3);
         this.mCertificates = (List) Preconditions.checkNotNull(list);
         this.mCertificatesArray = 0;
-        this.mIdentifier = createIdentifier(str, str2, str3);
+        this.mSystemFont = str4;
+        this.mVariationSettings = str5;
+        this.mIdentifier = createIdentifier(str, str2, str3, str4, str5);
     }
 
     public FontRequest(String str, String str2, String str3, int i) {
@@ -29,11 +37,13 @@ public final class FontRequest {
         this.mCertificates = null;
         Preconditions.checkArgument(i != 0);
         this.mCertificatesArray = i;
-        this.mIdentifier = createIdentifier(str, str2, str3);
+        this.mSystemFont = null;
+        this.mVariationSettings = null;
+        this.mIdentifier = createIdentifier(str, str2, str3, null, null);
     }
 
-    private String createIdentifier(String str, String str2, String str3) {
-        return str + Constants.FILENAME_SEQUENCE_SEPARATOR + str2 + Constants.FILENAME_SEQUENCE_SEPARATOR + str3;
+    private String createIdentifier(String str, String str2, String str3, String str4, String str5) {
+        return str + Constants.FILENAME_SEQUENCE_SEPARATOR + str2 + Constants.FILENAME_SEQUENCE_SEPARATOR + str3 + Constants.FILENAME_SEQUENCE_SEPARATOR + str4 + Constants.FILENAME_SEQUENCE_SEPARATOR + str5;
     }
 
     public String getProviderAuthority() {
@@ -66,9 +76,17 @@ public final class FontRequest {
         return this.mIdentifier;
     }
 
+    public String getSystemFont() {
+        return this.mSystemFont;
+    }
+
+    public String getVariationSettings() {
+        return this.mVariationSettings;
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("FontRequest {mProviderAuthority: " + this.mProviderAuthority + ", mProviderPackage: " + this.mProviderPackage + ", mQuery: " + this.mQuery + ", mCertificates:");
+        sb.append("FontRequest {mProviderAuthority: " + this.mProviderAuthority + ", mProviderPackage: " + this.mProviderPackage + ", mQuery: " + this.mQuery + ", mSystemFont: " + this.mSystemFont + ", mVariationSettings: " + this.mVariationSettings + ", mCertificates:");
         for (int i = 0; i < this.mCertificates.size(); i++) {
             sb.append(" [");
             List<byte[]> list = this.mCertificates.get(i);

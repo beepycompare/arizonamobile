@@ -84,7 +84,7 @@ public final class ViewGroupCompat {
         } else {
             onApplyWindowInsetsListener = tag2 instanceof View.OnApplyWindowInsetsListener ? (View.OnApplyWindowInsetsListener) tag2 : null;
         }
-        final WindowInsets[] windowInsetsArr = new WindowInsets[1];
+        final WindowInsets[] windowInsetsArr = {CONSUMED};
         view.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: androidx.core.view.ViewGroupCompat$$ExternalSyntheticLambda0
             @Override // android.view.View.OnApplyWindowInsetsListener
             public final WindowInsets onApplyWindowInsets(View view2, WindowInsets windowInsets2) {
@@ -105,7 +105,8 @@ public final class ViewGroupCompat {
                 dispatchApplyWindowInsets(viewGroup.getChildAt(i), windowInsetsArr[0]);
             }
         }
-        return windowInsetsArr[0];
+        WindowInsets windowInsets3 = windowInsetsArr[0];
+        return windowInsets3 != null ? windowInsets3 : CONSUMED;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

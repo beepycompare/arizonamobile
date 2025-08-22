@@ -11,8 +11,8 @@ public final class TopAppBarMediumTokens {
     private static final float TrailingIconSize;
     public static final TopAppBarMediumTokens INSTANCE = new TopAppBarMediumTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
-    private static final float ContainerHeight = Dp.m6684constructorimpl((float) 112.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7251constructorimpl((float) 112.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
     private static final ColorSchemeKeyTokens ContainerSurfaceTintLayerColor = ColorSchemeKeyTokens.SurfaceTint;
     private static final ColorSchemeKeyTokens HeadlineColor = ColorSchemeKeyTokens.OnSurface;
@@ -25,8 +25,8 @@ public final class TopAppBarMediumTokens {
 
     static {
         float f = (float) 24.0d;
-        LeadingIconSize = Dp.m6684constructorimpl(f);
-        TrailingIconSize = Dp.m6684constructorimpl(f);
+        LeadingIconSize = Dp.m7251constructorimpl(f);
+        TrailingIconSize = Dp.m7251constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {
@@ -34,12 +34,12 @@ public final class TopAppBarMediumTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3360getContainerElevationD9Ej5fM() {
+    public final float m3667getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3361getContainerHeightD9Ej5fM() {
+    public final float m3668getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -64,7 +64,7 @@ public final class TopAppBarMediumTokens {
     }
 
     /* renamed from: getLeadingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3362getLeadingIconSizeD9Ej5fM() {
+    public final float m3669getLeadingIconSizeD9Ej5fM() {
         return LeadingIconSize;
     }
 
@@ -73,7 +73,7 @@ public final class TopAppBarMediumTokens {
     }
 
     /* renamed from: getTrailingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3363getTrailingIconSizeD9Ej5fM() {
+    public final float m3670getTrailingIconSizeD9Ej5fM() {
         return TrailingIconSize;
     }
 }

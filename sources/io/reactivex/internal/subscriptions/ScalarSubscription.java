@@ -3,7 +3,7 @@ package io.reactivex.internal.subscriptions;
 import io.reactivex.internal.fuseable.QueueSubscription;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ScalarSubscription<T> extends AtomicInteger implements QueueSubscription<T> {
     static final int CANCELLED = 2;
     static final int NO_REQUEST = 0;

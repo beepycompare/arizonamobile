@@ -5,7 +5,7 @@ import io.reactivex.CompletableObserver;
 import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableFromObservable<T> extends Completable {
     final ObservableSource<T> observable;
 
@@ -18,7 +18,7 @@ public final class CompletableFromObservable<T> extends Completable {
         this.observable.subscribe(new CompletableFromObservableObserver(completableObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class CompletableFromObservableObserver<T> implements Observer<T> {
         final CompletableObserver co;
 

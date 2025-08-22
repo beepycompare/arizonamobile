@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBindings;
 import androidx.viewpager2.widget.ViewPager2;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class DonateMainPageBinding implements ViewBinding {
     public final DotsIndicator dotsIndicator;
     private final LinearLayout rootView;

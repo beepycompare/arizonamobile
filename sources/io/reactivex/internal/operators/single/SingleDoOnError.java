@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.CompositeException;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleDoOnError<T> extends Single<T> {
     final Consumer<? super Throwable> onError;
     final SingleSource<T> source;
@@ -22,7 +22,7 @@ public final class SingleDoOnError<T> extends Single<T> {
         this.source.subscribe(new DoOnError(singleObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class DoOnError implements SingleObserver<T> {
         private final SingleObserver<? super T> downstream;
 

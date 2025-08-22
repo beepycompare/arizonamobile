@@ -7,7 +7,7 @@ import io.reactivex.internal.subscriptions.BasicQueueSubscription;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.internal.util.BackpressureHelper;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableFromArray<T> extends Flowable<T> {
     final T[] array;
 
@@ -24,7 +24,7 @@ public final class FlowableFromArray<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static abstract class BaseArraySubscription<T> extends BasicQueueSubscription<T> {
         private static final long serialVersionUID = -2252972430506210021L;
         final T[] array;
@@ -82,7 +82,7 @@ public final class FlowableFromArray<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ArraySubscription<T> extends BaseArraySubscription<T> {
         private static final long serialVersionUID = 2587302975077663557L;
         final Subscriber<? super T> downstream;
@@ -153,7 +153,7 @@ public final class FlowableFromArray<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ArrayConditionalSubscription<T> extends BaseArraySubscription<T> {
         private static final long serialVersionUID = 2587302975077663557L;
         final ConditionalSubscriber<? super T> downstream;

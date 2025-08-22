@@ -14,7 +14,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleUsing<T, U> extends Single<T> {
     final Consumer<? super U> disposer;
     final boolean eager;
@@ -62,7 +62,7 @@ public final class SingleUsing<T, U> extends Single<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class UsingSingleObserver<T, U> extends AtomicReference<Object> implements SingleObserver<T>, Disposable {
         private static final long serialVersionUID = -5331524057054083935L;
         final Consumer<? super U> disposer;

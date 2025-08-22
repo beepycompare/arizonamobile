@@ -1,26 +1,20 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import java.io.IOException;
 /* loaded from: classes4.dex */
-public final class Dm {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final int f402a;
-
-    public Dm(int i) {
-        this.f402a = i;
+public final class Dm extends Q2 {
+    @Override // io.appmetrica.analytics.impl.Q2, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    /* renamed from: b */
+    public final Cm defaultValue() {
+        Cm cm = new Cm();
+        cm.i = new C0714xm();
+        return cm;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return (obj instanceof Dm) && this.f402a == ((Dm) obj).f402a;
-    }
-
-    public final int hashCode() {
-        return Integer.hashCode(this.f402a);
-    }
-
-    public final String toString() {
-        return "StartupUpdateConfig(intervalSeconds=" + this.f402a + ')';
+    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    /* renamed from: a */
+    public final Cm toState(byte[] bArr) throws IOException {
+        return (Cm) MessageNano.mergeFrom(new Cm(), bArr);
     }
 }

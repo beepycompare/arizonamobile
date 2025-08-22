@@ -1,7 +1,7 @@
 package androidx.media3.extractor;
 
 import androidx.media3.common.util.Assertions;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public interface SeekMap {
     long getDurationUs();
 
@@ -9,7 +9,7 @@ public interface SeekMap {
 
     boolean isSeekable();
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static class Unseekable implements SeekMap {
         private final long durationUs;
         private final SeekPoints startSeekPoints;
@@ -39,7 +39,7 @@ public interface SeekMap {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class SeekPoints {
         public final SeekPoint first;
         public final SeekPoint second;

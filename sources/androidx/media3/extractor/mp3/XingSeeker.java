@@ -6,7 +6,7 @@ import androidx.media3.common.util.Util;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.SeekPoint;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class XingSeeker implements Seeker {
     private static final String TAG = "XingSeeker";
     private final int bitrate;

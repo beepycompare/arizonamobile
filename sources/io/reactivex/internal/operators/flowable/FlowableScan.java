@@ -9,7 +9,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableScan<T> extends AbstractFlowableWithUpstream<T, T> {
     final BiFunction<T, T, T> accumulator;
 
@@ -23,7 +23,7 @@ public final class FlowableScan<T> extends AbstractFlowableWithUpstream<T, T> {
         this.source.subscribe((FlowableSubscriber) new ScanSubscriber(subscriber, this.accumulator));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ScanSubscriber<T> implements FlowableSubscriber<T>, Subscription {
         final BiFunction<T, T, T> accumulator;
         boolean done;

@@ -3,23 +3,23 @@ package io.appmetrica.analytics.impl;
 public final class G5 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ InterfaceC0510pe f447a;
+    public final /* synthetic */ InterfaceC0556re f449a;
     public final /* synthetic */ H5 b;
 
-    public G5(H5 h5, InterfaceC0510pe interfaceC0510pe) {
+    public G5(H5 h5, InterfaceC0556re interfaceC0556re) {
         this.b = h5;
-        this.f447a = interfaceC0510pe;
+        this.f449a = interfaceC0556re;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         synchronized (this.b) {
             H5 h5 = this.b;
-            Object obj = h5.f465a;
+            Object obj = h5.f470a;
             if (obj == null) {
-                h5.b.add(this.f447a);
+                h5.b.add(this.f449a);
             } else {
-                this.f447a.consume(obj);
+                this.f449a.consume(obj);
             }
         }
     }

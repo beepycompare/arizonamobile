@@ -6,7 +6,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeTakeUntilMaybe<T, U> extends AbstractMaybeWithUpstream<T, T> {
     final MaybeSource<U> other;
 
@@ -23,7 +23,7 @@ public final class MaybeTakeUntilMaybe<T, U> extends AbstractMaybeWithUpstream<T
         this.source.subscribe(takeUntilMainMaybeObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TakeUntilMainMaybeObserver<T, U> extends AtomicReference<Disposable> implements MaybeObserver<T>, Disposable {
         private static final long serialVersionUID = -2187421758664251153L;
         final MaybeObserver<? super T> downstream;
@@ -89,7 +89,7 @@ public final class MaybeTakeUntilMaybe<T, U> extends AbstractMaybeWithUpstream<T
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         static final class TakeUntilOtherMaybeObserver<U> extends AtomicReference<Disposable> implements MaybeObserver<U> {
             private static final long serialVersionUID = -1266041316834525931L;
             final TakeUntilMainMaybeObserver<?, U> parent;

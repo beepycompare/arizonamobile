@@ -22,7 +22,7 @@ import kotlin.Metadata;
 public final class TooltipDefaults {
     public static final int $stable = 0;
     public static final TooltipDefaults INSTANCE = new TooltipDefaults();
-    private static final long caretSize = DpKt.m6706DpSizeYgX7TsA(Dp.m6684constructorimpl(16), Dp.m6684constructorimpl(8));
+    private static final long caretSize = DpKt.m7273DpSizeYgX7TsA(Dp.m7251constructorimpl(16), Dp.m7251constructorimpl(8));
 
     private TooltipDefaults() {
     }
@@ -80,7 +80,7 @@ public final class TooltipDefaults {
     }
 
     /* renamed from: getCaretSize-MYxV2XQ  reason: not valid java name */
-    public final long m2644getCaretSizeMYxV2XQ() {
+    public final long m2951getCaretSizeMYxV2XQ() {
         return caretSize;
     }
 
@@ -98,21 +98,21 @@ public final class TooltipDefaults {
     }
 
     /* renamed from: richTooltipColors-ro_MJ88  reason: not valid java name */
-    public final RichTooltipColors m2647richTooltipColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+    public final RichTooltipColors m2954richTooltipColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1498555081, "C(richTooltipColors)P(1:c#ui.graphics.Color,2:c#ui.graphics.Color,3:c#ui.graphics.Color,0:c#ui.graphics.Color)274@11844L11:Tooltip.kt#uh7d8r");
-        long m4114getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j;
-        long m4114getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j2;
-        long m4114getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j3;
-        long m4114getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j4;
+        long m4573getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
+        long m4573getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j2;
+        long m4573getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j3;
+        long m4573getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1498555081, i, -1, "androidx.compose.material3.TooltipDefaults.richTooltipColors (Tooltip.kt:274)");
         }
-        RichTooltipColors m2201copyjRlVdoo = getDefaultRichTooltipColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2201copyjRlVdoo(m4114getUnspecified0d7_KjU, m4114getUnspecified0d7_KjU2, m4114getUnspecified0d7_KjU3, m4114getUnspecified0d7_KjU4);
+        RichTooltipColors m2508copyjRlVdoo = getDefaultRichTooltipColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2508copyjRlVdoo(m4573getUnspecified0d7_KjU, m4573getUnspecified0d7_KjU2, m4573getUnspecified0d7_KjU3, m4573getUnspecified0d7_KjU4);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2201copyjRlVdoo;
+        return m2508copyjRlVdoo;
     }
 
     public final RichTooltipColors getDefaultRichTooltipColors$material3_release(ColorScheme colorScheme) {
@@ -126,7 +126,7 @@ public final class TooltipDefaults {
     }
 
     /* renamed from: rememberPlainTooltipPositionProvider-kHDZbjc  reason: not valid java name */
-    public final PopupPositionProvider m2645rememberPlainTooltipPositionProviderkHDZbjc(float f, Composer composer, int i, int i2) {
+    public final PopupPositionProvider m2952rememberPlainTooltipPositionProviderkHDZbjc(float f, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1047866909, "C(rememberPlainTooltipPositionProvider)P(0:c#ui.unit.Dp)*304@13227L7,305@13298L897:Tooltip.kt#uh7d8r");
         if ((i2 & 1) != 0) {
             f = TooltipKt.getSpacingBetweenTooltipAndAnchor();
@@ -137,19 +137,19 @@ public final class TooltipDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        final int mo383roundToPx0680j_4 = ((Density) consume).mo383roundToPx0680j_4(f);
+        final int mo413roundToPx0680j_4 = ((Density) consume).mo413roundToPx0680j_4(f);
         ComposerKt.sourceInformationMarkerStart(composer, 1994502237, "CC(remember):Tooltip.kt#9igjgp");
-        boolean changed = composer.changed(mo383roundToPx0680j_4);
+        boolean changed = composer.changed(mo413roundToPx0680j_4);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new PopupPositionProvider() { // from class: androidx.compose.material3.TooltipDefaults$rememberPlainTooltipPositionProvider$1$1
                 @Override // androidx.compose.ui.window.PopupPositionProvider
                 /* renamed from: calculatePosition-llwVHH4 */
-                public long mo358calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
-                    int left = intRect.getLeft() + ((intRect.getWidth() - IntSize.m6855getWidthimpl(j2)) / 2);
-                    int top = (intRect.getTop() - IntSize.m6854getHeightimpl(j2)) - mo383roundToPx0680j_4;
+                public long mo383calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+                    int left = intRect.getLeft() + ((intRect.getWidth() - IntSize.m7422getWidthimpl(j2)) / 2);
+                    int top = (intRect.getTop() - IntSize.m7421getHeightimpl(j2)) - mo413roundToPx0680j_4;
                     if (top < 0) {
-                        top = mo383roundToPx0680j_4 + intRect.getBottom();
+                        top = mo413roundToPx0680j_4 + intRect.getBottom();
                     }
                     return IntOffsetKt.IntOffset(left, top);
                 }
@@ -166,7 +166,7 @@ public final class TooltipDefaults {
     }
 
     /* renamed from: rememberRichTooltipPositionProvider-kHDZbjc  reason: not valid java name */
-    public final PopupPositionProvider m2646rememberRichTooltipPositionProviderkHDZbjc(float f, Composer composer, int i, int i2) {
+    public final PopupPositionProvider m2953rememberRichTooltipPositionProviderkHDZbjc(float f, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -1538806795, "C(rememberRichTooltipPositionProvider)P(0:c#ui.unit.Dp)*337@14707L7,338@14778L1457:Tooltip.kt#uh7d8r");
         if ((i2 & 1) != 0) {
             f = TooltipKt.getSpacingBetweenTooltipAndAnchor();
@@ -177,22 +177,22 @@ public final class TooltipDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        final int mo383roundToPx0680j_4 = ((Density) consume).mo383roundToPx0680j_4(f);
+        final int mo413roundToPx0680j_4 = ((Density) consume).mo413roundToPx0680j_4(f);
         ComposerKt.sourceInformationMarkerStart(composer, -1778011319, "CC(remember):Tooltip.kt#9igjgp");
-        boolean changed = composer.changed(mo383roundToPx0680j_4);
+        boolean changed = composer.changed(mo413roundToPx0680j_4);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new PopupPositionProvider() { // from class: androidx.compose.material3.TooltipDefaults$rememberRichTooltipPositionProvider$1$1
                 @Override // androidx.compose.ui.window.PopupPositionProvider
                 /* renamed from: calculatePosition-llwVHH4 */
-                public long mo358calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+                public long mo383calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
                     int left = intRect.getLeft();
-                    if (IntSize.m6855getWidthimpl(j2) + left > IntSize.m6855getWidthimpl(j) && (left = intRect.getRight() - IntSize.m6855getWidthimpl(j2)) < 0) {
-                        left = intRect.getLeft() + ((intRect.getWidth() - IntSize.m6855getWidthimpl(j2)) / 2);
+                    if (IntSize.m7422getWidthimpl(j2) + left > IntSize.m7422getWidthimpl(j) && (left = intRect.getRight() - IntSize.m7422getWidthimpl(j2)) < 0) {
+                        left = intRect.getLeft() + ((intRect.getWidth() - IntSize.m7422getWidthimpl(j2)) / 2);
                     }
-                    int top = (intRect.getTop() - IntSize.m6854getHeightimpl(j2)) - mo383roundToPx0680j_4;
+                    int top = (intRect.getTop() - IntSize.m7421getHeightimpl(j2)) - mo413roundToPx0680j_4;
                     if (top < 0) {
-                        top = mo383roundToPx0680j_4 + intRect.getBottom();
+                        top = mo413roundToPx0680j_4 + intRect.getBottom();
                     }
                     return IntOffsetKt.IntOffset(left, top);
                 }

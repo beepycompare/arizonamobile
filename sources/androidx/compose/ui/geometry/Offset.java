@@ -5,33 +5,33 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: Offset.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0013\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u000f\n\u0002\u0010\u000e\n\u0002\b\u0006\b\u0087@\u0018\u0000 ;2\u00020\u0001:\u0001;B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0011\u001a\u00020\tH\u0087\n¢\u0006\u0004\b\u0012\u0010\rJ\u0010\u0010\u0013\u001a\u00020\tH\u0087\n¢\u0006\u0004\b\u0014\u0010\rJ'\u0010\u0015\u001a\u00020\u00002\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\u000e\u001a\u00020\tø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b\u0016\u0010\u0017J\u001e\u0010\u0018\u001a\u00020\u00002\u0006\u0010\u0019\u001a\u00020\tH\u0087\u0002ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b\u001a\u0010\u001bJ\u001a\u0010\u001c\u001a\u00020\u001d2\b\u0010\u001e\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\u001f\u0010 J\u000f\u0010!\u001a\u00020\tH\u0007¢\u0006\u0004\b\"\u0010\rJ\u000f\u0010#\u001a\u00020\tH\u0007¢\u0006\u0004\b$\u0010\rJ\u0010\u0010%\u001a\u00020&HÖ\u0001¢\u0006\u0004\b'\u0010(J\u0010\u0010)\u001a\u00020\u001dH\u0087\b¢\u0006\u0004\b*\u0010+J\u001b\u0010,\u001a\u00020\u00002\u0006\u0010\u001e\u001a\u00020\u0000H\u0087\u0002ø\u0001\u0001¢\u0006\u0004\b-\u0010.J\u001b\u0010/\u001a\u00020\u00002\u0006\u0010\u001e\u001a\u00020\u0000H\u0087\u0002ø\u0001\u0001¢\u0006\u0004\b0\u0010.J\u001e\u00101\u001a\u00020\u00002\u0006\u0010\u0019\u001a\u00020\tH\u0087\u0002ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b2\u0010\u001bJ\u001e\u00103\u001a\u00020\u00002\u0006\u0010\u0019\u001a\u00020\tH\u0087\u0002ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b4\u0010\u001bJ\u000f\u00105\u001a\u000206H\u0016¢\u0006\u0004\b7\u00108J\u0016\u00109\u001a\u00020\u0000H\u0087\nø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b:\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u001b\u0010\b\u001a\u00020\t8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\n\u0010\u000b\u001a\u0004\b\f\u0010\rR\u001b\u0010\u000e\u001a\u00020\t8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\u000f\u0010\u000b\u001a\u0004\b\u0010\u0010\r\u0088\u0001\u0002\u0082\u0002\u000b\n\u0002\b!\n\u0005\b¡\u001e0\u0001¨\u0006<"}, d2 = {"Landroidx/compose/ui/geometry/Offset;", "", "packedValue", "", "constructor-impl", "(J)J", "getPackedValue", "()J", "x", "", "getX$annotations", "()V", "getX-impl", "(J)F", "y", "getY$annotations", "getY-impl", "component1", "component1-impl", "component2", "component2-impl", "copy", "copy-dBAh8RU", "(JFF)J", TtmlNode.TAG_DIV, "operand", "div-tuRUvjQ", "(JF)J", "equals", "", "other", "equals-impl", "(JLjava/lang/Object;)Z", "getDistance", "getDistance-impl", "getDistanceSquared", "getDistanceSquared-impl", "hashCode", "", "hashCode-impl", "(J)I", "isValid", "isValid-impl", "(J)Z", "minus", "minus-MK-Hz9U", "(JJ)J", "plus", "plus-MK-Hz9U", "rem", "rem-tuRUvjQ", "times", "times-tuRUvjQ", "toString", "", "toString-impl", "(J)Ljava/lang/String;", "unaryMinus", "unaryMinus-F1C5BW0", "Companion", "ui-geometry_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0017\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0002\b\u0087@\u0018\u0000 72\u00020\u0001:\u00017B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0011\u001a\u00020\tH\u0087\n¢\u0006\u0004\b\u0012\u0010\rJ\u0010\u0010\u0013\u001a\u00020\tH\u0087\n¢\u0006\u0004\b\u0014\u0010\rJ!\u0010\u0015\u001a\u00020\u00002\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\u000e\u001a\u00020\t¢\u0006\u0004\b\u0016\u0010\u0017J\u0010\u0010\u0018\u001a\u00020\u0019H\u0087\b¢\u0006\u0004\b\u001a\u0010\u001bJ\u000f\u0010\u001c\u001a\u00020\tH\u0007¢\u0006\u0004\b\u001d\u0010\rJ\u000f\u0010\u001e\u001a\u00020\tH\u0007¢\u0006\u0004\b\u001f\u0010\rJ\u0010\u0010 \u001a\u00020\u0000H\u0087\n¢\u0006\u0004\b!\u0010\u0005J\u0018\u0010\"\u001a\u00020\u00002\u0006\u0010#\u001a\u00020\u0000H\u0087\u0002¢\u0006\u0004\b$\u0010%J\u0018\u0010&\u001a\u00020\u00002\u0006\u0010#\u001a\u00020\u0000H\u0087\u0002¢\u0006\u0004\b'\u0010%J\u0018\u0010(\u001a\u00020\u00002\u0006\u0010)\u001a\u00020\tH\u0087\u0002¢\u0006\u0004\b*\u0010+J\u0018\u0010,\u001a\u00020\u00002\u0006\u0010)\u001a\u00020\tH\u0087\u0002¢\u0006\u0004\b-\u0010+J\u0018\u0010.\u001a\u00020\u00002\u0006\u0010)\u001a\u00020\tH\u0087\u0002¢\u0006\u0004\b/\u0010+J\u000f\u00100\u001a\u000201H\u0016¢\u0006\u0004\b2\u00103J\u0013\u00104\u001a\u00020\u00192\b\u0010#\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u00105\u001a\u000206HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u001b\u0010\b\u001a\u00020\t8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\n\u0010\u000b\u001a\u0004\b\f\u0010\rR\u001b\u0010\u000e\u001a\u00020\t8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\u000f\u0010\u000b\u001a\u0004\b\u0010\u0010\r\u0088\u0001\u0002¨\u00068"}, d2 = {"Landroidx/compose/ui/geometry/Offset;", "", "packedValue", "", "constructor-impl", "(J)J", "getPackedValue", "()J", "x", "", "getX$annotations", "()V", "getX-impl", "(J)F", "y", "getY$annotations", "getY-impl", "component1", "component1-impl", "component2", "component2-impl", "copy", "copy-dBAh8RU", "(JFF)J", "isValid", "", "isValid-impl", "(J)Z", "getDistance", "getDistance-impl", "getDistanceSquared", "getDistanceSquared-impl", "unaryMinus", "unaryMinus-F1C5BW0", "minus", "other", "minus-MK-Hz9U", "(JJ)J", "plus", "plus-MK-Hz9U", "times", "operand", "times-tuRUvjQ", "(JF)J", TtmlNode.TAG_DIV, "div-tuRUvjQ", "rem", "rem-tuRUvjQ", "toString", "", "toString-impl", "(J)Ljava/lang/String;", "equals", "hashCode", "", "Companion", "ui-geometry"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class Offset {
     private final long packedValue;
     public static final Companion Companion = new Companion(null);
-    private static final long Zero = m3829constructorimpl(0);
-    private static final long Infinite = m3829constructorimpl(InlineClassHelperKt.DualFloatInfinityBase);
-    private static final long Unspecified = m3829constructorimpl(InlineClassHelperKt.UnspecifiedPackedFloats);
+    private static final long Zero = m4285constructorimpl(0);
+    private static final long Infinite = m4285constructorimpl(InlineClassHelperKt.DualFloatInfinityBase);
+    private static final long Unspecified = m4285constructorimpl(InlineClassHelperKt.UnspecifiedPackedFloats);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Offset m3826boximpl(long j) {
+    public static final /* synthetic */ Offset m4282boximpl(long j) {
         return new Offset(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m3829constructorimpl(long j) {
+    public static long m4285constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m3833equalsimpl(long j, Object obj) {
-        return (obj instanceof Offset) && j == ((Offset) obj).m3847unboximpl();
+    public static boolean m4289equalsimpl(long j, Object obj) {
+        return (obj instanceof Offset) && j == ((Offset) obj).m4303unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m3834equalsimpl0(long j, long j2) {
+    public static final boolean m4290equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
@@ -42,25 +42,25 @@ public final class Offset {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m3839hashCodeimpl(long j) {
+    public static int m4295hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: isValid-impl  reason: not valid java name */
-    public static final boolean m3840isValidimpl(long j) {
+    public static final boolean m4296isValidimpl(long j) {
         return (((j & 9223372034707292159L) + InlineClassHelperKt.DualLoadedSignificand) & (-9223372034707292160L)) == 0;
     }
 
     public boolean equals(Object obj) {
-        return m3833equalsimpl(this.packedValue, obj);
+        return m4289equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m3839hashCodeimpl(this.packedValue);
+        return m4295hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m3847unboximpl() {
+    public final /* synthetic */ long m4303unboximpl() {
         return this.packedValue;
     }
 
@@ -73,7 +73,7 @@ public final class Offset {
     }
 
     /* compiled from: Offset.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R$\u0010\u0003\u001a\u00020\u00048\u0006X\u0087\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\b\u0012\u0004\b\u0005\u0010\u0002\u001a\u0004\b\u0006\u0010\u0007R$\u0010\t\u001a\u00020\u00048\u0006X\u0087\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\b\u0012\u0004\b\n\u0010\u0002\u001a\u0004\b\u000b\u0010\u0007R$\u0010\f\u001a\u00020\u00048\u0006X\u0087\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\b\u0012\u0004\b\r\u0010\u0002\u001a\u0004\b\u000e\u0010\u0007\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/geometry/Offset$Companion;", "", "()V", "Infinite", "Landroidx/compose/ui/geometry/Offset;", "getInfinite-F1C5BW0$annotations", "getInfinite-F1C5BW0", "()J", "J", "Unspecified", "getUnspecified-F1C5BW0$annotations", "getUnspecified-F1C5BW0", "Zero", "getZero-F1C5BW0$annotations", "getZero-F1C5BW0", "ui-geometry_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001e\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\bR\u001e\u0010\n\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u000b\u0010\u0003\u001a\u0004\b\f\u0010\bR\u001e\u0010\r\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u000e\u0010\u0003\u001a\u0004\b\u000f\u0010\b¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/geometry/Offset$Companion;", "", "<init>", "()V", "Zero", "Landroidx/compose/ui/geometry/Offset;", "getZero-F1C5BW0$annotations", "getZero-F1C5BW0", "()J", "J", "Infinite", "getInfinite-F1C5BW0$annotations", "getInfinite-F1C5BW0", "Unspecified", "getUnspecified-F1C5BW0$annotations", "getUnspecified-F1C5BW0", "ui-geometry"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -81,47 +81,47 @@ public final class Offset {
         }
 
         /* renamed from: getInfinite-F1C5BW0$annotations  reason: not valid java name */
-        public static /* synthetic */ void m3848getInfiniteF1C5BW0$annotations() {
+        public static /* synthetic */ void m4304getInfiniteF1C5BW0$annotations() {
         }
 
         /* renamed from: getUnspecified-F1C5BW0$annotations  reason: not valid java name */
-        public static /* synthetic */ void m3849getUnspecifiedF1C5BW0$annotations() {
+        public static /* synthetic */ void m4305getUnspecifiedF1C5BW0$annotations() {
         }
 
         /* renamed from: getZero-F1C5BW0$annotations  reason: not valid java name */
-        public static /* synthetic */ void m3850getZeroF1C5BW0$annotations() {
+        public static /* synthetic */ void m4306getZeroF1C5BW0$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getZero-F1C5BW0  reason: not valid java name */
-        public final long m3853getZeroF1C5BW0() {
+        public final long m4309getZeroF1C5BW0() {
             return Offset.Zero;
         }
 
         /* renamed from: getInfinite-F1C5BW0  reason: not valid java name */
-        public final long m3851getInfiniteF1C5BW0() {
+        public final long m4307getInfiniteF1C5BW0() {
             return Offset.Infinite;
         }
 
         /* renamed from: getUnspecified-F1C5BW0  reason: not valid java name */
-        public final long m3852getUnspecifiedF1C5BW0() {
+        public final long m4308getUnspecifiedF1C5BW0() {
             return Offset.Unspecified;
         }
     }
 
     /* renamed from: unaryMinus-F1C5BW0  reason: not valid java name */
-    public static final long m3846unaryMinusF1C5BW0(long j) {
-        return m3829constructorimpl(j ^ (-9223372034707292160L));
+    public static final long m4302unaryMinusF1C5BW0(long j) {
+        return m4285constructorimpl(j ^ (-9223372034707292160L));
     }
 
     public String toString() {
-        return m3845toStringimpl(this.packedValue);
+        return m4301toStringimpl(this.packedValue);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m3845toStringimpl(long j) {
+    public static String m4301toStringimpl(long j) {
         if ((9223372034707292159L & j) != InlineClassHelperKt.UnspecifiedPackedFloats) {
             return "Offset(" + GeometryUtilsKt.toStringAsFixed(Float.intBitsToFloat((int) (j >> 32)), 1) + ", " + GeometryUtilsKt.toStringAsFixed(Float.intBitsToFloat((int) (j & 4294967295L)), 1) + ')';
         }
@@ -129,77 +129,77 @@ public final class Offset {
     }
 
     /* renamed from: getX-impl  reason: not valid java name */
-    public static final float m3837getXimpl(long j) {
+    public static final float m4293getXimpl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: getY-impl  reason: not valid java name */
-    public static final float m3838getYimpl(long j) {
+    public static final float m4294getYimpl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 
     /* renamed from: component1-impl  reason: not valid java name */
-    public static final float m3827component1impl(long j) {
+    public static final float m4283component1impl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: component2-impl  reason: not valid java name */
-    public static final float m3828component2impl(long j) {
+    public static final float m4284component2impl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 
     /* renamed from: copy-dBAh8RU  reason: not valid java name */
-    public static final long m3830copydBAh8RU(long j, float f, float f2) {
-        return m3829constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
+    public static final long m4286copydBAh8RU(long j, float f, float f2) {
+        return m4285constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
     }
 
     /* renamed from: copy-dBAh8RU$default  reason: not valid java name */
-    public static /* synthetic */ long m3831copydBAh8RU$default(long j, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ long m4287copydBAh8RU$default(long j, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
             f = Float.intBitsToFloat((int) (j >> 32));
         }
         if ((i & 2) != 0) {
             f2 = Float.intBitsToFloat((int) (4294967295L & j));
         }
-        return m3830copydBAh8RU(j, f, f2);
+        return m4286copydBAh8RU(j, f, f2);
     }
 
     /* renamed from: getDistance-impl  reason: not valid java name */
-    public static final float m3835getDistanceimpl(long j) {
+    public static final float m4291getDistanceimpl(long j) {
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
         return (float) Math.sqrt((intBitsToFloat * intBitsToFloat) + (intBitsToFloat2 * intBitsToFloat2));
     }
 
     /* renamed from: getDistanceSquared-impl  reason: not valid java name */
-    public static final float m3836getDistanceSquaredimpl(long j) {
+    public static final float m4292getDistanceSquaredimpl(long j) {
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
         return (intBitsToFloat * intBitsToFloat) + (intBitsToFloat2 * intBitsToFloat2);
     }
 
     /* renamed from: minus-MK-Hz9U  reason: not valid java name */
-    public static final long m3841minusMKHz9U(long j, long j2) {
-        return m3829constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
+    public static final long m4297minusMKHz9U(long j, long j2) {
+        return m4285constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
     }
 
     /* renamed from: plus-MK-Hz9U  reason: not valid java name */
-    public static final long m3842plusMKHz9U(long j, long j2) {
-        return m3829constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) + Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) + Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
+    public static final long m4298plusMKHz9U(long j, long j2) {
+        return m4285constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) + Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) + Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
     }
 
     /* renamed from: times-tuRUvjQ  reason: not valid java name */
-    public static final long m3844timestuRUvjQ(long j, float f) {
-        return m3829constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) * f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) * f) & 4294967295L));
+    public static final long m4300timestuRUvjQ(long j, float f) {
+        return m4285constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) * f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) * f) & 4294967295L));
     }
 
     /* renamed from: div-tuRUvjQ  reason: not valid java name */
-    public static final long m3832divtuRUvjQ(long j, float f) {
-        return m3829constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / f) & 4294967295L));
+    public static final long m4288divtuRUvjQ(long j, float f) {
+        return m4285constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / f) & 4294967295L));
     }
 
     /* renamed from: rem-tuRUvjQ  reason: not valid java name */
-    public static final long m3843remtuRUvjQ(long j, float f) {
-        return m3829constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) % f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) % f) & 4294967295L));
+    public static final long m4299remtuRUvjQ(long j, float f) {
+        return m4285constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) % f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) % f) & 4294967295L));
     }
 }

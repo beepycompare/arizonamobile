@@ -177,7 +177,7 @@ public final class FacebookRequestError {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x007d A[Catch: JSONException -> 0x00af, TryCatch #0 {JSONException -> 0x00af, blocks: (B:3:0x000b, B:5:0x0011, B:7:0x001b, B:9:0x001f, B:12:0x002b, B:25:0x007d, B:28:0x008a, B:30:0x0093, B:32:0x0099, B:34:0x00a2, B:13:0x0049, B:16:0x0053, B:18:0x0059, B:22:0x0066), top: B:38:0x000b }] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x007e A[Catch: JSONException -> 0x00b0, TryCatch #0 {JSONException -> 0x00b0, blocks: (B:3:0x000b, B:5:0x0011, B:7:0x001b, B:9:0x001f, B:12:0x002b, B:25:0x007e, B:28:0x008b, B:30:0x0094, B:32:0x009a, B:34:0x00a3, B:13:0x004a, B:16:0x0054, B:18:0x005a, B:22:0x0067), top: B:38:0x000b }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

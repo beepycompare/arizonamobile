@@ -16,8 +16,8 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function4;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AnchoredDraggable.kt */
-@Metadata(d1 = {"\u0000\b\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableState$anchoredDrag$4", f = "AnchoredDraggable.kt", i = {}, l = {1172}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableState$anchoredDrag$4", f = "AnchoredDraggable.kt", i = {}, l = {1170}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class AnchoredDraggableState$anchoredDrag$4 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
     final /* synthetic */ Function4<AnchoredDragScope, DraggableAnchors<T>, T, Continuation<? super Unit>, Object> $block;
@@ -56,15 +56,12 @@ public final class AnchoredDraggableState$anchoredDrag$4 extends SuspendLambda i
             this.this$0.setDragTarget(this.$targetValue);
             final AnchoredDraggableState<T> anchoredDraggableState = this.this$0;
             this.label = 1;
-            restartable = AnchoredDraggableKt.restartable(new Function0<Pair<? extends DraggableAnchors<T>, ? extends T>>() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$anchoredDrag$4.1
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(0);
-                }
-
+            restartable = AnchoredDraggableKt.restartable(new Function0() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$anchoredDrag$4$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
-                public final Pair<DraggableAnchors<T>, T> invoke() {
-                    return TuplesKt.to(anchoredDraggableState.getAnchors(), anchoredDraggableState.getTargetValue());
+                public final Object invoke() {
+                    Pair invokeSuspend$lambda$0;
+                    invokeSuspend$lambda$0 = AnchoredDraggableState$anchoredDrag$4.invokeSuspend$lambda$0(AnchoredDraggableState.this);
+                    return invokeSuspend$lambda$0;
                 }
             }, new AnonymousClass2(this.$block, this.this$0, null), this);
             if (restartable == coroutine_suspended) {
@@ -88,8 +85,8 @@ public final class AnchoredDraggableState$anchoredDrag$4 extends SuspendLambda i
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX INFO: Add missing generic type declarations: [T] */
     /* compiled from: AnchoredDraggable.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0018\u0010\u0003\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0005\u0012\u0004\u0012\u0002H\u00020\u0004H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "<name for destructuring parameter 0>", "Lkotlin/Pair;", "Landroidx/compose/foundation/gestures/DraggableAnchors;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableState$anchoredDrag$4$2", f = "AnchoredDraggable.kt", i = {}, l = {1174}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0018\u0010\u0003\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0005\u0012\u0004\u0012\u0002H\u00020\u0004H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "<destruct>", "Lkotlin/Pair;", "Landroidx/compose/foundation/gestures/DraggableAnchors;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableState$anchoredDrag$4$2", f = "AnchoredDraggable.kt", i = {}, l = {1172}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.foundation.gestures.AnchoredDraggableState$anchoredDrag$4$2  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass2<T> extends SuspendLambda implements Function2<Pair<? extends DraggableAnchors<T>, ? extends T>, Continuation<? super Unit>, Object> {
@@ -145,5 +142,10 @@ public final class AnchoredDraggableState$anchoredDrag$4 extends SuspendLambda i
             }
             return Unit.INSTANCE;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Pair invokeSuspend$lambda$0(AnchoredDraggableState anchoredDraggableState) {
+        return TuplesKt.to(anchoredDraggableState.getAnchors(), anchoredDraggableState.getTargetValue());
     }
 }

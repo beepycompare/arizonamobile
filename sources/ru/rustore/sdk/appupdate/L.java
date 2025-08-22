@@ -1,14 +1,14 @@
 package ru.rustore.sdk.appupdate;
 
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class L {
 
     /* renamed from: a  reason: collision with root package name */
-    public final K f1342a;
+    public final K f1352a;
 
     public L(K dataSource) {
         Intrinsics.checkNotNullParameter(dataSource, "dataSource");
-        this.f1342a = dataSource;
+        this.f1352a = dataSource;
     }
 }

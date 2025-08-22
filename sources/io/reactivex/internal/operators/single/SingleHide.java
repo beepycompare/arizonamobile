@@ -5,7 +5,7 @@ import io.reactivex.SingleObserver;
 import io.reactivex.SingleSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleHide<T> extends Single<T> {
     final SingleSource<? extends T> source;
 
@@ -18,7 +18,7 @@ public final class SingleHide<T> extends Single<T> {
         this.source.subscribe(new HideSingleObserver(singleObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class HideSingleObserver<T> implements SingleObserver<T>, Disposable {
         final SingleObserver<? super T> downstream;
         Disposable upstream;

@@ -12,7 +12,7 @@ import androidx.media3.extractor.WavUtil;
 import com.google.common.base.Ascii;
 import java.io.IOException;
 import java.util.Arrays;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class WavHeaderReader {
     private static final String TAG = "WavHeaderReader";
     private static final byte[] WAVEEXT_SUBFORMAT = {0, 0, 0, 0, Ascii.DLE, 0, Byte.MIN_VALUE, 0, 0, -86, 0, 56, -101, 113};
@@ -124,7 +124,7 @@ final class WavHeaderReader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ChunkHeader {
         public static final int SIZE_IN_BYTES = 8;
         public final int id;

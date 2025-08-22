@@ -23,7 +23,7 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.zip.ZipFile;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class MultiDex {
     private static final String CODE_CACHE_NAME = "code_cache";
     private static final String CODE_CACHE_SECONDARY_FOLDER_NAME = "secondary-dexes";
@@ -268,7 +268,7 @@ public final class MultiDex {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class V19 {
         private V19() {
         }
@@ -305,18 +305,18 @@ public final class MultiDex {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     private static final class V14 {
         private static final int EXTRACTED_SUFFIX_LENGTH = ".zip".length();
         private final ElementConstructor elementConstructor;
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes.dex */
+        /* loaded from: classes3.dex */
         public interface ElementConstructor {
             Object newInstance(File file, DexFile dexFile) throws IllegalArgumentException, InstantiationException, IllegalAccessException, InvocationTargetException, IOException;
         }
 
-        /* loaded from: classes.dex */
+        /* loaded from: classes3.dex */
         private static class ICSElementConstructor implements ElementConstructor {
             private final Constructor<?> elementConstructor;
 
@@ -332,7 +332,7 @@ public final class MultiDex {
             }
         }
 
-        /* loaded from: classes.dex */
+        /* loaded from: classes3.dex */
         private static class JBMR11ElementConstructor implements ElementConstructor {
             private final Constructor<?> elementConstructor;
 
@@ -348,7 +348,7 @@ public final class MultiDex {
             }
         }
 
-        /* loaded from: classes.dex */
+        /* loaded from: classes3.dex */
         private static class JBMR2ElementConstructor implements ElementConstructor {
             private final Constructor<?> elementConstructor;
 
@@ -407,7 +407,7 @@ public final class MultiDex {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     private static final class V4 {
         private V4() {
         }

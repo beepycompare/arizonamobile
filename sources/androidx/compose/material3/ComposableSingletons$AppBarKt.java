@@ -15,7 +15,7 @@ public final class ComposableSingletons$AppBarKt {
     public static final ComposableSingletons$AppBarKt INSTANCE = new ComposableSingletons$AppBarKt();
 
     /* renamed from: lambda-1  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f5lambda1 = ComposableLambdaKt.composableLambdaInstance(-1023749866, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-1$1
+    public static Function2<Composer, Integer, Unit> f3lambda1 = ComposableLambdaKt.composableLambdaInstance(-1023749866, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-1$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -38,7 +38,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-2  reason: not valid java name */
-    public static Function3<RowScope, Composer, Integer, Unit> f15lambda2 = ComposableLambdaKt.composableLambdaInstance(-1394022792, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-2$1
+    public static Function3<RowScope, Composer, Integer, Unit> f13lambda2 = ComposableLambdaKt.composableLambdaInstance(-1394022792, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-2$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(RowScope rowScope, Composer composer, Integer num) {
             invoke(rowScope, composer, num.intValue());
@@ -61,7 +61,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-3  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f16lambda3 = ComposableLambdaKt.composableLambdaInstance(446723454, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-3$1
+    public static Function2<Composer, Integer, Unit> f14lambda3 = ComposableLambdaKt.composableLambdaInstance(446723454, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-3$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -84,7 +84,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-4  reason: not valid java name */
-    public static Function3<RowScope, Composer, Integer, Unit> f17lambda4 = ComposableLambdaKt.composableLambdaInstance(-877998884, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-4$1
+    public static Function3<RowScope, Composer, Integer, Unit> f15lambda4 = ComposableLambdaKt.composableLambdaInstance(-877998884, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-4$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(RowScope rowScope, Composer composer, Integer num) {
             invoke(rowScope, composer, num.intValue());
@@ -107,7 +107,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-5  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f18lambda5 = ComposableLambdaKt.composableLambdaInstance(1103559359, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-5$1
+    public static Function2<Composer, Integer, Unit> f16lambda5 = ComposableLambdaKt.composableLambdaInstance(1103559359, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-5$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -130,7 +130,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-6  reason: not valid java name */
-    public static Function3<RowScope, Composer, Integer, Unit> f19lambda6 = ComposableLambdaKt.composableLambdaInstance(319435933, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-6$1
+    public static Function3<RowScope, Composer, Integer, Unit> f17lambda6 = ComposableLambdaKt.composableLambdaInstance(319435933, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-6$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(RowScope rowScope, Composer composer, Integer num) {
             invoke(rowScope, composer, num.intValue());
@@ -153,7 +153,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-7  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f20lambda7 = ComposableLambdaKt.composableLambdaInstance(-1421574347, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-7$1
+    public static Function2<Composer, Integer, Unit> f18lambda7 = ComposableLambdaKt.composableLambdaInstance(-1421574347, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-7$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -176,7 +176,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-8  reason: not valid java name */
-    public static Function3<RowScope, Composer, Integer, Unit> f21lambda8 = ComposableLambdaKt.composableLambdaInstance(-915435369, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-8$1
+    public static Function3<RowScope, Composer, Integer, Unit> f19lambda8 = ComposableLambdaKt.composableLambdaInstance(-915435369, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-8$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(RowScope rowScope, Composer composer, Integer num) {
             invoke(rowScope, composer, num.intValue());
@@ -199,7 +199,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-9  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f22lambda9 = ComposableLambdaKt.composableLambdaInstance(1648696171, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-9$1
+    public static Function2<Composer, Integer, Unit> f20lambda9 = ComposableLambdaKt.composableLambdaInstance(1648696171, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-9$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -222,7 +222,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-10  reason: not valid java name */
-    public static Function3<RowScope, Composer, Integer, Unit> f6lambda10 = ComposableLambdaKt.composableLambdaInstance(-994959539, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-10$1
+    public static Function3<RowScope, Composer, Integer, Unit> f4lambda10 = ComposableLambdaKt.composableLambdaInstance(-994959539, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-10$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(RowScope rowScope, Composer composer, Integer num) {
             invoke(rowScope, composer, num.intValue());
@@ -245,7 +245,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-11  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f7lambda11 = ComposableLambdaKt.composableLambdaInstance(1291062955, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-11$1
+    public static Function2<Composer, Integer, Unit> f5lambda11 = ComposableLambdaKt.composableLambdaInstance(1291062955, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-11$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -268,7 +268,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-12  reason: not valid java name */
-    public static Function3<RowScope, Composer, Integer, Unit> f8lambda12 = ComposableLambdaKt.composableLambdaInstance(-812441331, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-12$1
+    public static Function3<RowScope, Composer, Integer, Unit> f6lambda12 = ComposableLambdaKt.composableLambdaInstance(-812441331, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-12$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(RowScope rowScope, Composer composer, Integer num) {
             invoke(rowScope, composer, num.intValue());
@@ -291,7 +291,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-13  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f9lambda13 = ComposableLambdaKt.composableLambdaInstance(1044424363, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-13$1
+    public static Function2<Composer, Integer, Unit> f7lambda13 = ComposableLambdaKt.composableLambdaInstance(1044424363, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-13$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -314,7 +314,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-14  reason: not valid java name */
-    public static Function3<RowScope, Composer, Integer, Unit> f10lambda14 = ComposableLambdaKt.composableLambdaInstance(-703422839, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-14$1
+    public static Function3<RowScope, Composer, Integer, Unit> f8lambda14 = ComposableLambdaKt.composableLambdaInstance(-703422839, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-14$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(RowScope rowScope, Composer composer, Integer num) {
             invoke(rowScope, composer, num.intValue());
@@ -337,7 +337,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-15  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f11lambda15 = ComposableLambdaKt.composableLambdaInstance(1013590507, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-15$1
+    public static Function2<Composer, Integer, Unit> f9lambda15 = ComposableLambdaKt.composableLambdaInstance(1013590507, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-15$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -360,7 +360,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-16  reason: not valid java name */
-    public static Function3<RowScope, Composer, Integer, Unit> f12lambda16 = ComposableLambdaKt.composableLambdaInstance(-162643127, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-16$1
+    public static Function3<RowScope, Composer, Integer, Unit> f10lambda16 = ComposableLambdaKt.composableLambdaInstance(-162643127, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-16$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(RowScope rowScope, Composer composer, Integer num) {
             invoke(rowScope, composer, num.intValue());
@@ -383,7 +383,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-17  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f13lambda17 = ComposableLambdaKt.composableLambdaInstance(-1148172257, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-17$1
+    public static Function2<Composer, Integer, Unit> f11lambda17 = ComposableLambdaKt.composableLambdaInstance(-1148172257, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-17$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -406,7 +406,7 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: lambda-18  reason: not valid java name */
-    public static Function2<Composer, Integer, Unit> f14lambda18 = ComposableLambdaKt.composableLambdaInstance(423062526, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-18$1
+    public static Function2<Composer, Integer, Unit> f12lambda18 = ComposableLambdaKt.composableLambdaInstance(423062526, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$AppBarKt$lambda-18$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -429,92 +429,92 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1743getLambda1$material3_release() {
-        return f5lambda1;
+    public final Function2<Composer, Integer, Unit> m2050getLambda1$material3_release() {
+        return f3lambda1;
     }
 
     /* renamed from: getLambda-10$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m1744getLambda10$material3_release() {
-        return f6lambda10;
+    public final Function3<RowScope, Composer, Integer, Unit> m2051getLambda10$material3_release() {
+        return f4lambda10;
     }
 
     /* renamed from: getLambda-11$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1745getLambda11$material3_release() {
-        return f7lambda11;
+    public final Function2<Composer, Integer, Unit> m2052getLambda11$material3_release() {
+        return f5lambda11;
     }
 
     /* renamed from: getLambda-12$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m1746getLambda12$material3_release() {
-        return f8lambda12;
+    public final Function3<RowScope, Composer, Integer, Unit> m2053getLambda12$material3_release() {
+        return f6lambda12;
     }
 
     /* renamed from: getLambda-13$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1747getLambda13$material3_release() {
-        return f9lambda13;
+    public final Function2<Composer, Integer, Unit> m2054getLambda13$material3_release() {
+        return f7lambda13;
     }
 
     /* renamed from: getLambda-14$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m1748getLambda14$material3_release() {
-        return f10lambda14;
+    public final Function3<RowScope, Composer, Integer, Unit> m2055getLambda14$material3_release() {
+        return f8lambda14;
     }
 
     /* renamed from: getLambda-15$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1749getLambda15$material3_release() {
-        return f11lambda15;
+    public final Function2<Composer, Integer, Unit> m2056getLambda15$material3_release() {
+        return f9lambda15;
     }
 
     /* renamed from: getLambda-16$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m1750getLambda16$material3_release() {
-        return f12lambda16;
+    public final Function3<RowScope, Composer, Integer, Unit> m2057getLambda16$material3_release() {
+        return f10lambda16;
     }
 
     /* renamed from: getLambda-17$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1751getLambda17$material3_release() {
-        return f13lambda17;
+    public final Function2<Composer, Integer, Unit> m2058getLambda17$material3_release() {
+        return f11lambda17;
     }
 
     /* renamed from: getLambda-18$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1752getLambda18$material3_release() {
-        return f14lambda18;
+    public final Function2<Composer, Integer, Unit> m2059getLambda18$material3_release() {
+        return f12lambda18;
     }
 
     /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m1753getLambda2$material3_release() {
-        return f15lambda2;
+    public final Function3<RowScope, Composer, Integer, Unit> m2060getLambda2$material3_release() {
+        return f13lambda2;
     }
 
     /* renamed from: getLambda-3$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1754getLambda3$material3_release() {
-        return f16lambda3;
+    public final Function2<Composer, Integer, Unit> m2061getLambda3$material3_release() {
+        return f14lambda3;
     }
 
     /* renamed from: getLambda-4$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m1755getLambda4$material3_release() {
-        return f17lambda4;
+    public final Function3<RowScope, Composer, Integer, Unit> m2062getLambda4$material3_release() {
+        return f15lambda4;
     }
 
     /* renamed from: getLambda-5$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1756getLambda5$material3_release() {
-        return f18lambda5;
+    public final Function2<Composer, Integer, Unit> m2063getLambda5$material3_release() {
+        return f16lambda5;
     }
 
     /* renamed from: getLambda-6$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m1757getLambda6$material3_release() {
-        return f19lambda6;
+    public final Function3<RowScope, Composer, Integer, Unit> m2064getLambda6$material3_release() {
+        return f17lambda6;
     }
 
     /* renamed from: getLambda-7$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1758getLambda7$material3_release() {
-        return f20lambda7;
+    public final Function2<Composer, Integer, Unit> m2065getLambda7$material3_release() {
+        return f18lambda7;
     }
 
     /* renamed from: getLambda-8$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m1759getLambda8$material3_release() {
-        return f21lambda8;
+    public final Function3<RowScope, Composer, Integer, Unit> m2066getLambda8$material3_release() {
+        return f19lambda8;
     }
 
     /* renamed from: getLambda-9$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1760getLambda9$material3_release() {
-        return f22lambda9;
+    public final Function2<Composer, Integer, Unit> m2067getLambda9$material3_release() {
+        return f20lambda9;
     }
 }

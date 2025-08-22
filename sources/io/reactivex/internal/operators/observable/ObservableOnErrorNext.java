@@ -8,7 +8,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.disposables.SequentialDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableOnErrorNext<T> extends AbstractObservableWithUpstream<T, T> {
     final boolean allowFatal;
     final Function<? super Throwable, ? extends ObservableSource<? extends T>> nextSupplier;
@@ -26,7 +26,7 @@ public final class ObservableOnErrorNext<T> extends AbstractObservableWithUpstre
         this.source.subscribe(onErrorNextObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OnErrorNextObserver<T> implements Observer<T> {
         final boolean allowFatal;
         final SequentialDisposable arbiter = new SequentialDisposable();

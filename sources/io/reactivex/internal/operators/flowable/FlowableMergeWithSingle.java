@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableMergeWithSingle<T> extends AbstractFlowableWithUpstream<T, T> {
     final SingleSource<? extends T> other;
 
@@ -34,7 +34,7 @@ public final class FlowableMergeWithSingle<T> extends AbstractFlowableWithUpstre
         this.other.subscribe(mergeWithObserver.otherObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MergeWithObserver<T> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
         static final int OTHER_STATE_CONSUMED_OR_EMPTY = 2;
         static final int OTHER_STATE_HAS_VALUE = 1;
@@ -309,7 +309,7 @@ public final class FlowableMergeWithSingle<T> extends AbstractFlowableWithUpstre
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         static final class OtherObserver<T> extends AtomicReference<Disposable> implements SingleObserver<T> {
             private static final long serialVersionUID = -2935427570954647017L;
             final MergeWithObserver<T> parent;

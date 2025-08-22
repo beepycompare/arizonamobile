@@ -9,7 +9,7 @@ import io.reactivex.internal.fuseable.FuseToFlowable;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableCountSingle<T> extends Single<Long> implements FuseToFlowable<Long> {
     final Flowable<T> source;
 
@@ -27,7 +27,7 @@ public final class FlowableCountSingle<T> extends Single<Long> implements FuseTo
         return RxJavaPlugins.onAssembly(new FlowableCount(this.source));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class CountSubscriber implements FlowableSubscriber<Object>, Disposable {
         long count;
         final SingleObserver<? super Long> downstream;

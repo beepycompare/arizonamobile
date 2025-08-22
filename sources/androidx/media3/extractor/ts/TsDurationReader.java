@@ -7,7 +7,7 @@ import androidx.media3.common.util.Util;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.PositionHolder;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class TsDurationReader {
     private static final String TAG = "TsDurationReader";
     private boolean isDurationRead;

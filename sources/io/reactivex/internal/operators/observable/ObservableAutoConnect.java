@@ -6,7 +6,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.observables.ConnectableObservable;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableAutoConnect<T> extends Observable<T> {
     final AtomicInteger clients = new AtomicInteger();
     final Consumer<? super Disposable> connection;

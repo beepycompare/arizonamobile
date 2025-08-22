@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SelectionGestures.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionGesturesKt", f = "SelectionGestures.kt", i = {0, 0, 0, 1, 1}, l = {WebSocketProtocol.PAYLOAD_SHORT, TsExtractor.TS_STREAM_TYPE_HDMV_DTS}, m = "touchSelection", n = {"$this$touchSelection", "observer", "firstDown", "$this$touchSelection", "observer"}, s = {"L$0", "L$1", "L$2", "L$0", "L$1"})
 /* loaded from: classes.dex */
 public final class SelectionGesturesKt$touchSelection$1 extends ContinuationImpl {

@@ -71,24 +71,24 @@ public final class ClockDialNode$pointerInputDragNode$1 extends SuspendLambda im
                 @DebugMetadata(c = "androidx.compose.material3.ClockDialNode$pointerInputDragNode$1$1$1", f = "TimePicker.kt", i = {}, l = {1462}, m = "invokeSuspend", n = {}, s = {})
                 /* renamed from: androidx.compose.material3.ClockDialNode$pointerInputDragNode$1$1$1  reason: invalid class name and collision with other inner class name */
                 /* loaded from: classes.dex */
-                public static final class C00291 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+                public static final class C00211 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                     int label;
                     final /* synthetic */ ClockDialNode this$0;
 
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    C00291(ClockDialNode clockDialNode, Continuation<? super C00291> continuation) {
+                    C00211(ClockDialNode clockDialNode, Continuation<? super C00211> continuation) {
                         super(2, continuation);
                         this.this$0 = clockDialNode;
                     }
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                        return new C00291(this.this$0, continuation);
+                        return new C00211(this.this$0, continuation);
                     }
 
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                        return ((C00291) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                        return ((C00211) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
                     }
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -103,7 +103,7 @@ public final class ClockDialNode$pointerInputDragNode$1 extends SuspendLambda im
                             z = this.this$0.autoSwitchToMinute;
                             if (z) {
                                 analogTimePickerState2 = this.this$0.state;
-                                analogTimePickerState2.mo1563setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m2556getMinuteyecRtBI());
+                                analogTimePickerState2.mo1870setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m2863getMinuteyecRtBI());
                             }
                             analogTimePickerState = this.this$0.state;
                             this.label = 1;
@@ -121,7 +121,7 @@ public final class ClockDialNode$pointerInputDragNode$1 extends SuspendLambda im
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2() {
-                    BuildersKt__Builders_commonKt.launch$default(ClockDialNode.this.getCoroutineScope(), null, null, new C00291(ClockDialNode.this, null), 3, null);
+                    BuildersKt__Builders_commonKt.launch$default(ClockDialNode.this.getCoroutineScope(), null, null, new C00211(ClockDialNode.this, null), 3, null);
                 }
             }, null, new Function2<PointerInputChange, Offset, Unit>() { // from class: androidx.compose.material3.ClockDialNode$pointerInputDragNode$1.2
                 {
@@ -130,7 +130,7 @@ public final class ClockDialNode$pointerInputDragNode$1 extends SuspendLambda im
 
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange, Offset offset) {
-                    m1687invokeUv8p0NA(pointerInputChange, offset.m3847unboximpl());
+                    m1994invokeUv8p0NA(pointerInputChange, offset.m4303unboximpl());
                     return Unit.INSTANCE;
                 }
 
@@ -178,17 +178,17 @@ public final class ClockDialNode$pointerInputDragNode$1 extends SuspendLambda im
                             ResultKt.throwOnFailure(obj);
                             ClockDialNode clockDialNode = this.this$0;
                             f = clockDialNode.offsetX;
-                            clockDialNode.offsetX = f + Offset.m3837getXimpl(this.$dragAmount);
+                            clockDialNode.offsetX = f + Offset.m4293getXimpl(this.$dragAmount);
                             ClockDialNode clockDialNode2 = this.this$0;
                             f2 = clockDialNode2.offsetY;
-                            clockDialNode2.offsetY = f2 + Offset.m3838getYimpl(this.$dragAmount);
+                            clockDialNode2.offsetY = f2 + Offset.m4294getYimpl(this.$dragAmount);
                             analogTimePickerState = this.this$0.state;
                             f3 = this.this$0.offsetY;
                             j = this.this$0.center;
-                            float m6813getYimpl = f3 - IntOffset.m6813getYimpl(j);
+                            float m7380getYimpl = f3 - IntOffset.m7380getYimpl(j);
                             f4 = this.this$0.offsetX;
                             j2 = this.this$0.center;
-                            atan = TimePickerKt.atan(m6813getYimpl, f4 - IntOffset.m6812getXimpl(j2));
+                            atan = TimePickerKt.atan(m7380getYimpl, f4 - IntOffset.m7379getXimpl(j2));
                             this.label = 1;
                             if (AnalogTimePickerState.rotateTo$default(analogTimePickerState, atan, false, this, 2, null) == coroutine_suspended) {
                                 return coroutine_suspended;
@@ -203,7 +203,7 @@ public final class ClockDialNode$pointerInputDragNode$1 extends SuspendLambda im
                 }
 
                 /* renamed from: invoke-Uv8p0NA  reason: not valid java name */
-                public final void m1687invokeUv8p0NA(PointerInputChange pointerInputChange, long j) {
+                public final void m1994invokeUv8p0NA(PointerInputChange pointerInputChange, long j) {
                     AnalogTimePickerState analogTimePickerState;
                     float f;
                     float f2;
@@ -215,7 +215,7 @@ public final class ClockDialNode$pointerInputDragNode$1 extends SuspendLambda im
                     f2 = ClockDialNode.this.offsetY;
                     maxDist = ClockDialNode.this.getMaxDist();
                     j2 = ClockDialNode.this.center;
-                    TimePickerKt.m2533moveSelectord3b8Pxo(analogTimePickerState, f, f2, maxDist, j2);
+                    TimePickerKt.m2840moveSelectord3b8Pxo(analogTimePickerState, f, f2, maxDist, j2);
                 }
             }, this, 5, null) == coroutine_suspended) {
                 return coroutine_suspended;

@@ -10,7 +10,7 @@ import io.reactivex.internal.disposables.SequentialDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableConcatIterable extends Completable {
     final Iterable<? extends CompletableSource> sources;
 
@@ -30,7 +30,7 @@ public final class CompletableConcatIterable extends Completable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ConcatInnerObserver extends AtomicInteger implements CompletableObserver {
         private static final long serialVersionUID = -7965400327305809232L;
         final CompletableObserver downstream;

@@ -11,7 +11,7 @@ import io.reactivex.internal.disposables.CancellableDisposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleCreate<T> extends Single<T> {
     final SingleOnSubscribe<T> source;
 
@@ -31,7 +31,7 @@ public final class SingleCreate<T> extends Single<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class Emitter<T> extends AtomicReference<Disposable> implements SingleEmitter<T>, Disposable {
         private static final long serialVersionUID = -2467358622224974244L;
         final SingleObserver<? super T> downstream;

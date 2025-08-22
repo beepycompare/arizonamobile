@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class H264Reader implements ElementaryStreamReader {
     private final boolean allowNonIdrKeyframes;
     private final String containerMimeType;
@@ -189,7 +189,7 @@ public final class H264Reader implements ElementaryStreamReader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class SampleReader {
         private static final int DEFAULT_BUFFER_SIZE = 128;
         private final boolean allowNonIdrKeyframes;
@@ -447,7 +447,7 @@ public final class H264Reader implements ElementaryStreamReader {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public static final class SliceHeaderData {
             private static final int SLICE_TYPE_ALL_I = 7;
             private static final int SLICE_TYPE_I = 2;

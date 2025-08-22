@@ -12,11 +12,11 @@ public final class OutlinedIconButtonTokens {
     public static final float DisabledUnselectedOutlineOpacity = 0.12f;
     public static final OutlinedIconButtonTokens INSTANCE = new OutlinedIconButtonTokens();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
-    private static final float ContainerSize = Dp.m6684constructorimpl((float) 40.0d);
+    private static final float ContainerSize = Dp.m7251constructorimpl((float) 40.0d);
     private static final ColorSchemeKeyTokens DisabledColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens DisabledSelectedContainerColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens DisabledUnselectedOutlineColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float Size = Dp.m6684constructorimpl((float) 24.0d);
+    private static final float Size = Dp.m7251constructorimpl((float) 24.0d);
     private static final ColorSchemeKeyTokens SelectedContainerColor = ColorSchemeKeyTokens.InverseSurface;
     private static final ColorSchemeKeyTokens SelectedFocusColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final ColorSchemeKeyTokens SelectedHoverColor = ColorSchemeKeyTokens.InverseOnSurface;
@@ -26,7 +26,7 @@ public final class OutlinedIconButtonTokens {
     private static final ColorSchemeKeyTokens UnselectedHoverColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedOutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float UnselectedOutlineWidth = Dp.m6684constructorimpl((float) 1.0d);
+    private static final float UnselectedOutlineWidth = Dp.m7251constructorimpl((float) 1.0d);
     private static final ColorSchemeKeyTokens UnselectedPressedColor = ColorSchemeKeyTokens.OnSurface;
 
     private OutlinedIconButtonTokens() {
@@ -37,7 +37,7 @@ public final class OutlinedIconButtonTokens {
     }
 
     /* renamed from: getContainerSize-D9Ej5fM  reason: not valid java name */
-    public final float m3158getContainerSizeD9Ej5fM() {
+    public final float m3465getContainerSizeD9Ej5fM() {
         return ContainerSize;
     }
 
@@ -54,7 +54,7 @@ public final class OutlinedIconButtonTokens {
     }
 
     /* renamed from: getSize-D9Ej5fM  reason: not valid java name */
-    public final float m3159getSizeD9Ej5fM() {
+    public final float m3466getSizeD9Ej5fM() {
         return Size;
     }
 
@@ -95,7 +95,7 @@ public final class OutlinedIconButtonTokens {
     }
 
     /* renamed from: getUnselectedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3160getUnselectedOutlineWidthD9Ej5fM() {
+    public final float m3467getUnselectedOutlineWidthD9Ej5fM() {
         return UnselectedOutlineWidth;
     }
 

@@ -49,7 +49,7 @@ final class TooltipStateImpl$show$cancellableShow$1 extends SuspendLambda implem
             TooltipStateImpl$show$cancellableShow$1 tooltipStateImpl$show$cancellableShow$1 = this;
             CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(tooltipStateImpl$show$cancellableShow$1), 1);
             cancellableContinuationImpl.initCancellability();
-            tooltipStateImpl.getTransition().setTargetState$animation_core_release(Boxing.boxBoolean(true));
+            tooltipStateImpl.getTransition().setTargetState$animation_core(Boxing.boxBoolean(true));
             tooltipStateImpl.job = cancellableContinuationImpl;
             Object result = cancellableContinuationImpl.getResult();
             if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {

@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowablePublishMulticast<T, R> extends AbstractFlowableWithUpstream<T, R> {
     final boolean delayError;
     final int prefetch;
@@ -46,7 +46,7 @@ public final class FlowablePublishMulticast<T, R> extends AbstractFlowableWithUp
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OutputCanceller<R> implements FlowableSubscriber<R>, Subscription {
         final Subscriber<? super R> downstream;
         final MulticastProcessor<?> processor;
@@ -94,7 +94,7 @@ public final class FlowablePublishMulticast<T, R> extends AbstractFlowableWithUp
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MulticastProcessor<T> extends Flowable<T> implements FlowableSubscriber<T>, Disposable {
         static final MulticastSubscription[] EMPTY = new MulticastSubscription[0];
         static final MulticastSubscription[] TERMINATED = new MulticastSubscription[0];
@@ -460,7 +460,7 @@ public final class FlowablePublishMulticast<T, R> extends AbstractFlowableWithUp
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class MulticastSubscription<T> extends AtomicLong implements Subscription {
         private static final long serialVersionUID = 8664815189257569791L;
         final Subscriber<? super T> downstream;

@@ -2,6 +2,7 @@ package ru.mrlargha.commonui.elements.donate.presentation;
 
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import androidx.media3.extractor.ts.TsExtractor;
 import java.util.List;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
@@ -27,8 +28,8 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.DonateCategoryMo
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1", f = "DonateScreen.kt", i = {}, l = {169}, m = "invokeSuspend", n = {}, s = {})
-/* loaded from: classes5.dex */
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1", f = "DonateScreen.kt", i = {}, l = {171}, m = "invokeSuspend", n = {}, s = {})
+/* loaded from: classes6.dex */
 public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ DonateScreenBinding $this_with;
     int label;
@@ -55,9 +56,9 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: DonateScreen.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1", f = "DonateScreen.kt", i = {}, l = {170}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1", f = "DonateScreen.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_AC4}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1  reason: invalid class name */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ DonateScreenBinding $this_with;
         int label;
@@ -110,6 +111,9 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
                             LinearLayout contentContainer = DonateScreenBinding.this.contentContainer;
                             Intrinsics.checkNotNullExpressionValue(contentContainer, "contentContainer");
                             contentContainer.setVisibility(8);
+                            LinearLayout errorPlaceholder = DonateScreenBinding.this.errorPlaceholder;
+                            Intrinsics.checkNotNullExpressionValue(errorPlaceholder, "errorPlaceholder");
+                            errorPlaceholder.setVisibility(8);
                         } else if (uiState instanceof UiState.Error) {
                             ProgressBar contentProgressBar2 = DonateScreenBinding.this.contentProgressBar;
                             Intrinsics.checkNotNullExpressionValue(contentProgressBar2, "contentProgressBar");
@@ -117,6 +121,9 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
                             LinearLayout contentContainer2 = DonateScreenBinding.this.contentContainer;
                             Intrinsics.checkNotNullExpressionValue(contentContainer2, "contentContainer");
                             contentContainer2.setVisibility(8);
+                            LinearLayout errorPlaceholder2 = DonateScreenBinding.this.errorPlaceholder;
+                            Intrinsics.checkNotNullExpressionValue(errorPlaceholder2, "errorPlaceholder");
+                            errorPlaceholder2.setVisibility(0);
                         } else if (uiState instanceof UiState.Successful) {
                             UiState.Successful successful = (UiState.Successful) uiState;
                             donateScreen.onCategoryClick((DonateCategoryModelUi) CollectionsKt.first((List<? extends Object>) successful.getData()));
@@ -128,6 +135,9 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
                             LinearLayout contentContainer3 = DonateScreenBinding.this.contentContainer;
                             Intrinsics.checkNotNullExpressionValue(contentContainer3, "contentContainer");
                             contentContainer3.setVisibility(0);
+                            LinearLayout errorPlaceholder3 = DonateScreenBinding.this.errorPlaceholder;
+                            Intrinsics.checkNotNullExpressionValue(errorPlaceholder3, "errorPlaceholder");
+                            errorPlaceholder3.setVisibility(8);
                         } else {
                             throw new NoWhenBranchMatchedException();
                         }

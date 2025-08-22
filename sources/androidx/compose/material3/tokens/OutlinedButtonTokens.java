@@ -11,7 +11,7 @@ public final class OutlinedButtonTokens {
     public static final float DisabledLabelTextOpacity = 0.38f;
     public static final float DisabledOutlineOpacity = 0.12f;
     public static final OutlinedButtonTokens INSTANCE = new OutlinedButtonTokens();
-    private static final float ContainerHeight = Dp.m6684constructorimpl((float) 40.0d);
+    private static final float ContainerHeight = Dp.m7251constructorimpl((float) 40.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens DisabledLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens DisabledOutlineColor = ColorSchemeKeyTokens.OnSurface;
@@ -22,21 +22,21 @@ public final class OutlinedButtonTokens {
     private static final ColorSchemeKeyTokens LabelTextColor = ColorSchemeKeyTokens.Primary;
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens OutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float OutlineWidth = Dp.m6684constructorimpl((float) 1.0d);
+    private static final float OutlineWidth = Dp.m7251constructorimpl((float) 1.0d);
     private static final ColorSchemeKeyTokens PressedLabelTextColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens PressedOutlineColor = ColorSchemeKeyTokens.Outline;
     private static final ColorSchemeKeyTokens DisabledIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FocusIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens HoverIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.Primary;
-    private static final float IconSize = Dp.m6684constructorimpl((float) 18.0d);
+    private static final float IconSize = Dp.m7251constructorimpl((float) 18.0d);
     private static final ColorSchemeKeyTokens PressedIconColor = ColorSchemeKeyTokens.Primary;
 
     private OutlinedButtonTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3147getContainerHeightD9Ej5fM() {
+    public final float m3454getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -81,7 +81,7 @@ public final class OutlinedButtonTokens {
     }
 
     /* renamed from: getOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3149getOutlineWidthD9Ej5fM() {
+    public final float m3456getOutlineWidthD9Ej5fM() {
         return OutlineWidth;
     }
 
@@ -110,7 +110,7 @@ public final class OutlinedButtonTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3148getIconSizeD9Ej5fM() {
+    public final float m3455getIconSizeD9Ej5fM() {
         return IconSize;
     }
 

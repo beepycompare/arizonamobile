@@ -8,7 +8,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.subscribers.SinglePostCompleteSubscriber;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableOnErrorReturn<T> extends AbstractFlowableWithUpstream<T, T> {
     final Function<? super Throwable, ? extends T> valueSupplier;
 
@@ -22,7 +22,7 @@ public final class FlowableOnErrorReturn<T> extends AbstractFlowableWithUpstream
         this.source.subscribe((FlowableSubscriber) new OnErrorReturnSubscriber(subscriber, this.valueSupplier));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OnErrorReturnSubscriber<T> extends SinglePostCompleteSubscriber<T, T> {
         private static final long serialVersionUID = -3740826063558713822L;
         final Function<? super Throwable, ? extends T> valueSupplier;

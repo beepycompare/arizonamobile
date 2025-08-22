@@ -19,8 +19,8 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CoreTextField.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$2$1", f = "CoreTextField.kt", i = {}, l = {347}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$2$1", f = "CoreTextField.kt", i = {}, l = {359}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class CoreTextFieldKt$CoreTextField$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ ImeOptions $imeOptions;
@@ -59,18 +59,12 @@ public final class CoreTextFieldKt$CoreTextField$2$1 extends SuspendLambda imple
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 final State<Boolean> state = this.$writeable$delegate;
-                Flow snapshotFlow = SnapshotStateKt.snapshotFlow(new Function0<Boolean>() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$2$1.1
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(0);
-                    }
-
-                    /* JADX WARN: Can't rename method to resolve collision */
+                Flow snapshotFlow = SnapshotStateKt.snapshotFlow(new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$2$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
-                    public final Boolean invoke() {
-                        boolean CoreTextField$lambda$11;
-                        CoreTextField$lambda$11 = CoreTextFieldKt.CoreTextField$lambda$11(state);
-                        return Boolean.valueOf(CoreTextField$lambda$11);
+                    public final Object invoke() {
+                        boolean access$CoreTextField$lambda$16;
+                        access$CoreTextField$lambda$16 = CoreTextFieldKt.access$CoreTextField$lambda$16(State.this);
+                        return Boolean.valueOf(access$CoreTextField$lambda$16);
                     }
                 });
                 final LegacyTextFieldState legacyTextFieldState = this.$state;

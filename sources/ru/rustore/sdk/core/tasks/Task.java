@@ -20,7 +20,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Task.kt */
 @Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u0003\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 ,*\u0004\b\u0000\u0010\u00012\u00020\u0002:\u0002,-B\u0007\b\u0002¢\u0006\u0002\u0010\u0003J\"\u0010\u000b\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\f\u001a\u00020\r2\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0002J8\u0010\u0010\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0010\b\u0002\u0010\u0011\u001a\n\u0012\u0004\u0012\u00028\u0000\u0018\u00010\u00122\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0002J\u001c\u0010\u0015\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\f\u001a\u00020\rJ\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\f\u001a\u00020\rJ\u001c\u0010\u0016\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0017\u001a\u00020\u0014J\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u0017\u001a\u00020\u0014J\"\u0010\u0018\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u000e\u001a\u00020\u000f2\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00028\u00000\u0012J\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00028\u00000\u0012J\u000b\u0010\u0019\u001a\u00028\u0000¢\u0006\u0002\u0010\u001aJ\u001b\u0010\u0019\u001a\u00028\u00002\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001e¢\u0006\u0002\u0010\u001fJ\u0006\u0010 \u001a\u00020!J\u0012\u0010\"\u001a\u00020!2\b\u0010#\u001a\u0004\u0018\u00010$H\u0002J\u0015\u0010%\u001a\u00020!2\u0006\u0010&\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010'J\u0010\u0010%\u001a\u00020!2\u0006\u0010(\u001a\u00020$H\u0002J\u001c\u0010)\u001a\u00020!*\u0004\u0018\u00010\u000f2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020!0+H\u0002R\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0007\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000\b0\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\t\u001a\n\u0012\u0004\u0012\u00028\u0000\u0018\u00010\nX\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006."}, d2 = {"Lru/rustore/sdk/core/tasks/Task;", ExifInterface.GPS_DIRECTION_TRUE, "", "()V", "completionHandlers", "", "Lru/rustore/sdk/core/tasks/CompletionHandler;", "listenerHandlers", "Lru/rustore/sdk/core/tasks/ListenerHandler;", "taskResult", "Lkotlin/Result;", "addCompletionListener", "onCompletionListener", "Lru/rustore/sdk/core/tasks/OnCompletionListener;", "executor", "Ljava/util/concurrent/Executor;", "addListener", "onSuccess", "Lru/rustore/sdk/core/tasks/OnSuccessListener;", "onFailure", "Lru/rustore/sdk/core/tasks/OnFailureListener;", "addOnCompletionListener", "addOnFailureListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "addOnSuccessListener", "await", "()Ljava/lang/Object;", "timeout", "", "unit", "Ljava/util/concurrent/TimeUnit;", "(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "notifyCompletionListeners", "cause", "", "setTaskResult", "data", "(Ljava/lang/Object;)V", "error", "runWithFallbackToMain", "block", "Lkotlin/Function0;", "Companion", "TaskResultProvider", "sdk-public-core_release"}, k = 1, mv = {1, 7, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class Task<T> {
     public static final Companion Companion = new Companion(null);
     private final List<CompletionHandler> completionHandlers;
@@ -60,7 +60,7 @@ public final class Task<T> {
         }
         Result<? extends T> result = this.taskResult;
         if (result != null) {
-            T t = (T) result.m8509unboximpl();
+            T t = (T) result.m9074unboximpl();
             ResultKt.throwOnFailure(t);
             return t;
         }
@@ -117,7 +117,7 @@ public final class Task<T> {
                 return;
             }
             Result.Companion companion = Result.Companion;
-            this.taskResult = Result.m8499boximpl(Result.m8500constructorimpl(t));
+            this.taskResult = Result.m9064boximpl(Result.m9065constructorimpl(t));
             TaskKt.forEachWithDeletion(this.listenerHandlers, new Function1<ListenerHandler<T>, Unit>(this) { // from class: ru.rustore.sdk.core.tasks.Task$setTaskResult$1$1
                 final /* synthetic */ Task<T> this$0;
 
@@ -173,7 +173,7 @@ public final class Task<T> {
                 return;
             }
             Result.Companion companion = Result.Companion;
-            this.taskResult = Result.m8499boximpl(Result.m8500constructorimpl(ResultKt.createFailure(th)));
+            this.taskResult = Result.m9064boximpl(Result.m9065constructorimpl(ResultKt.createFailure(th)));
             TaskKt.forEachWithDeletion(this.listenerHandlers, new Function1<ListenerHandler<T>, Unit>(this) { // from class: ru.rustore.sdk.core.tasks.Task$setTaskResult$2$1
                 final /* synthetic */ Task<T> this$0;
 
@@ -279,7 +279,7 @@ public final class Task<T> {
             if (result == null) {
                 this.completionHandlers.add(new CompletionHandler(onCompletionListener, executor));
             } else {
-                final Throwable m8503exceptionOrNullimpl = Result.m8503exceptionOrNullimpl(result.m8509unboximpl());
+                final Throwable m9068exceptionOrNullimpl = Result.m9068exceptionOrNullimpl(result.m9074unboximpl());
                 runWithFallbackToMain(executor, new Function0<Unit>() { // from class: ru.rustore.sdk.core.tasks.Task$addCompletionListener$1$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -295,7 +295,7 @@ public final class Task<T> {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2() {
-                        OnCompletionListener.this.onComplete(m8503exceptionOrNullimpl);
+                        OnCompletionListener.this.onComplete(m9068exceptionOrNullimpl);
                     }
                 });
             }
@@ -323,12 +323,12 @@ public final class Task<T> {
             if (result == null) {
                 this.listenerHandlers.add(new ListenerHandler<>(onSuccessListener, onFailureListener, executor));
             } else {
-                final Object m8509unboximpl = result.m8509unboximpl();
-                if (Result.m8506isFailureimpl(m8509unboximpl)) {
-                    m8509unboximpl = null;
+                final Object m9074unboximpl = result.m9074unboximpl();
+                if (Result.m9071isFailureimpl(m9074unboximpl)) {
+                    m9074unboximpl = null;
                 }
-                final Throwable m8503exceptionOrNullimpl = Result.m8503exceptionOrNullimpl(result.m8509unboximpl());
-                if (m8509unboximpl != null && onSuccessListener != null) {
+                final Throwable m9068exceptionOrNullimpl = Result.m9068exceptionOrNullimpl(result.m9074unboximpl());
+                if (m9074unboximpl != null && onSuccessListener != null) {
                     runWithFallbackToMain(executor, new Function0<Unit>() { // from class: ru.rustore.sdk.core.tasks.Task$addListener$1$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -344,11 +344,11 @@ public final class Task<T> {
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2() {
-                            onSuccessListener.onSuccess(m8509unboximpl);
+                            onSuccessListener.onSuccess(m9074unboximpl);
                         }
                     });
                 }
-                if (m8503exceptionOrNullimpl != null && onFailureListener != null) {
+                if (m9068exceptionOrNullimpl != null && onFailureListener != null) {
                     runWithFallbackToMain(executor, new Function0<Unit>() { // from class: ru.rustore.sdk.core.tasks.Task$addListener$1$2
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -364,7 +364,7 @@ public final class Task<T> {
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2() {
-                            OnFailureListener.this.onFailure(m8503exceptionOrNullimpl);
+                            OnFailureListener.this.onFailure(m9068exceptionOrNullimpl);
                         }
                     });
                 }
@@ -406,7 +406,7 @@ public final class Task<T> {
 
     /* compiled from: Task.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0004\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0007\b\u0000¢\u0006\u0002\u0010\u0002J\u000e\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006J\u0013\u0010\u0007\u001a\u00020\u00042\u0006\u0010\b\u001a\u00028\u0000¢\u0006\u0002\u0010\t¨\u0006\n"}, d2 = {"Lru/rustore/sdk/core/tasks/Task$TaskResultProvider;", "", "(Lru/rustore/sdk/core/tasks/Task;)V", "setTaskErrorResult", "", "error", "", "setTaskSuccessResult", "data", "(Ljava/lang/Object;)V", "sdk-public-core_release"}, k = 1, mv = {1, 7, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public final class TaskResultProvider {
         public TaskResultProvider() {
         }
@@ -423,7 +423,7 @@ public final class Task<T> {
 
     /* compiled from: Task.kt */
     @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J(\u0010\u0003\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00060\u0005\u0012\u000e\u0012\f0\u0007R\b\u0012\u0004\u0012\u0002H\u00060\u00050\u0004\"\u0004\b\u0001\u0010\u0006J5\u0010\u0003\u001a\b\u0012\u0004\u0012\u0002H\u00060\u0005\"\u0004\b\u0001\u0010\u00062!\u0010\b\u001a\u001d\u0012\u000e\u0012\f0\u0007R\b\u0012\u0004\u0012\u0002H\u00060\u0005\u0012\u0004\u0012\u00020\n0\t¢\u0006\u0002\b\u000b¨\u0006\f"}, d2 = {"Lru/rustore/sdk/core/tasks/Task$Companion;", "", "()V", "create", "Lkotlin/Pair;", "Lru/rustore/sdk/core/tasks/Task;", ExifInterface.GPS_DIRECTION_TRUE, "Lru/rustore/sdk/core/tasks/Task$TaskResultProvider;", "block", "Lkotlin/Function1;", "", "Lkotlin/ExtensionFunctionType;", "sdk-public-core_release"}, k = 1, mv = {1, 7, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

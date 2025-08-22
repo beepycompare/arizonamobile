@@ -5,7 +5,7 @@ import io.reactivex.MaybeSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeSwitchIfEmpty<T> extends AbstractMaybeWithUpstream<T, T> {
     final MaybeSource<? extends T> other;
 
@@ -19,7 +19,7 @@ public final class MaybeSwitchIfEmpty<T> extends AbstractMaybeWithUpstream<T, T>
         this.source.subscribe(new SwitchIfEmptyMaybeObserver(maybeObserver, this.other));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SwitchIfEmptyMaybeObserver<T> extends AtomicReference<Disposable> implements MaybeObserver<T>, Disposable {
         private static final long serialVersionUID = -2223459372976438024L;
         final MaybeObserver<? super T> downstream;
@@ -66,7 +66,7 @@ public final class MaybeSwitchIfEmpty<T> extends AbstractMaybeWithUpstream<T, T>
             this.other.subscribe(new OtherMaybeObserver(this.downstream, this));
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         static final class OtherMaybeObserver<T> implements MaybeObserver<T> {
             final MaybeObserver<? super T> downstream;
             final AtomicReference<Disposable> parent;

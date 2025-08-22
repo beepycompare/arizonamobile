@@ -5,7 +5,7 @@ import androidx.media3.common.text.Cue;
 import com.google.common.collect.ImmutableList;
 import java.util.Collection;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class CuesWithTiming {
     public final ImmutableList<Cue> cues;
     public final long durationUs;

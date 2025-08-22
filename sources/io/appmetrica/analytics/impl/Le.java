@@ -1,13 +1,11 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
 /* loaded from: classes4.dex */
-public final class Le {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final long f532a;
-    public final long b;
-
-    public Le(long j, long j2) {
-        this.f532a = j;
-        this.b = j2;
+public final class Le implements PermissionExtractor {
+    @Override // io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor
+    public final boolean hasPermission(Context context, String str) {
+        return false;
     }
 }

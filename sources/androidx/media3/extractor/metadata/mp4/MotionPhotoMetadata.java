@@ -2,7 +2,7 @@ package androidx.media3.extractor.metadata.mp4;
 
 import androidx.media3.common.Metadata;
 import com.google.common.primitives.Longs;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MotionPhotoMetadata implements Metadata.Entry {
     public final long photoPresentationTimestampUs;
     public final long photoSize;

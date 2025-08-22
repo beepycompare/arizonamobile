@@ -438,10 +438,10 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
     /* JADX WARN: Code restructure failed: missing block: B:21:0x005e, code lost:
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x00b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x00b9, code lost:
         if (r7 == null) goto L38;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x00b9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x00bc, code lost:
         return;
      */
     /* JADX WARN: Code restructure failed: missing block: B:51:?, code lost:

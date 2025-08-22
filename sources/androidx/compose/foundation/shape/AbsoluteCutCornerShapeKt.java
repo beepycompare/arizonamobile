@@ -3,7 +3,7 @@ package androidx.compose.foundation.shape;
 import androidx.compose.ui.unit.Dp;
 import kotlin.Metadata;
 /* compiled from: AbsoluteCutCornerShape.kt */
-@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\u001a\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u0005ø\u0001\u0000¢\u0006\u0004\b\u0006\u0010\u0007\u001a8\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\b\u001a\u00020\u00052\b\b\u0002\u0010\t\u001a\u00020\u00052\b\b\u0002\u0010\n\u001a\u00020\u00052\b\b\u0002\u0010\u000b\u001a\u00020\u0005ø\u0001\u0000¢\u0006\u0004\b\f\u0010\r\u001a\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u000e\u001a.\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\b\u001a\u00020\u000e2\b\b\u0002\u0010\t\u001a\u00020\u000e2\b\b\u0002\u0010\n\u001a\u00020\u000e2\b\b\u0002\u0010\u000b\u001a\u00020\u000e\u001a\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0010\u001a.\u0010\u0000\u001a\u00020\u00012\b\b\u0003\u0010\u0011\u001a\u00020\u00102\b\b\u0003\u0010\u0012\u001a\u00020\u00102\b\b\u0003\u0010\u0013\u001a\u00020\u00102\b\b\u0003\u0010\u0014\u001a\u00020\u0010\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u0015"}, d2 = {"AbsoluteCutCornerShape", "Landroidx/compose/foundation/shape/AbsoluteCutCornerShape;", "corner", "Landroidx/compose/foundation/shape/CornerSize;", "size", "Landroidx/compose/ui/unit/Dp;", "AbsoluteCutCornerShape-0680j_4", "(F)Landroidx/compose/foundation/shape/AbsoluteCutCornerShape;", "topLeft", "topRight", "bottomRight", "bottomLeft", "AbsoluteCutCornerShape-a9UjIt4", "(FFFF)Landroidx/compose/foundation/shape/AbsoluteCutCornerShape;", "", "percent", "", "topLeftPercent", "topRightPercent", "bottomRightPercent", "bottomLeftPercent", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0002\b\u000b\u001a\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007\u001a\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\b\u001a\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n\u001a5\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u000b\u001a\u00020\u00052\b\b\u0002\u0010\f\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00052\b\b\u0002\u0010\u000e\u001a\u00020\u0005¢\u0006\u0004\b\u000f\u0010\u0010\u001a.\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u000b\u001a\u00020\b2\b\b\u0002\u0010\f\u001a\u00020\b2\b\b\u0002\u0010\r\u001a\u00020\b2\b\b\u0002\u0010\u000e\u001a\u00020\b\u001a.\u0010\u0000\u001a\u00020\u00012\b\b\u0003\u0010\u0011\u001a\u00020\n2\b\b\u0003\u0010\u0012\u001a\u00020\n2\b\b\u0003\u0010\u0013\u001a\u00020\n2\b\b\u0003\u0010\u0014\u001a\u00020\n¨\u0006\u0015"}, d2 = {"AbsoluteCutCornerShape", "Landroidx/compose/foundation/shape/AbsoluteCutCornerShape;", "corner", "Landroidx/compose/foundation/shape/CornerSize;", "size", "Landroidx/compose/ui/unit/Dp;", "AbsoluteCutCornerShape-0680j_4", "(F)Landroidx/compose/foundation/shape/AbsoluteCutCornerShape;", "", "percent", "", "topLeft", "topRight", "bottomRight", "bottomLeft", "AbsoluteCutCornerShape-a9UjIt4", "(FFFF)Landroidx/compose/foundation/shape/AbsoluteCutCornerShape;", "topLeftPercent", "topRightPercent", "bottomRightPercent", "bottomLeftPercent", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class AbsoluteCutCornerShapeKt {
     public static final AbsoluteCutCornerShape AbsoluteCutCornerShape(CornerSize cornerSize) {
@@ -11,8 +11,8 @@ public final class AbsoluteCutCornerShapeKt {
     }
 
     /* renamed from: AbsoluteCutCornerShape-0680j_4  reason: not valid java name */
-    public static final AbsoluteCutCornerShape m1016AbsoluteCutCornerShape0680j_4(float f) {
-        return AbsoluteCutCornerShape(CornerSizeKt.m1024CornerSize0680j_4(f));
+    public static final AbsoluteCutCornerShape m1181AbsoluteCutCornerShape0680j_4(float f) {
+        return AbsoluteCutCornerShape(CornerSizeKt.m1189CornerSize0680j_4(f));
     }
 
     public static final AbsoluteCutCornerShape AbsoluteCutCornerShape(float f) {
@@ -24,8 +24,8 @@ public final class AbsoluteCutCornerShapeKt {
     }
 
     /* renamed from: AbsoluteCutCornerShape-a9UjIt4  reason: not valid java name */
-    public static final AbsoluteCutCornerShape m1017AbsoluteCutCornerShapea9UjIt4(float f, float f2, float f3, float f4) {
-        return new AbsoluteCutCornerShape(CornerSizeKt.m1024CornerSize0680j_4(f), CornerSizeKt.m1024CornerSize0680j_4(f2), CornerSizeKt.m1024CornerSize0680j_4(f3), CornerSizeKt.m1024CornerSize0680j_4(f4));
+    public static final AbsoluteCutCornerShape m1182AbsoluteCutCornerShapea9UjIt4(float f, float f2, float f3, float f4) {
+        return new AbsoluteCutCornerShape(CornerSizeKt.m1189CornerSize0680j_4(f), CornerSizeKt.m1189CornerSize0680j_4(f2), CornerSizeKt.m1189CornerSize0680j_4(f3), CornerSizeKt.m1189CornerSize0680j_4(f4));
     }
 
     public static /* synthetic */ AbsoluteCutCornerShape AbsoluteCutCornerShape$default(float f, float f2, float f3, float f4, int i, Object obj) {
@@ -69,19 +69,19 @@ public final class AbsoluteCutCornerShapeKt {
     }
 
     /* renamed from: AbsoluteCutCornerShape-a9UjIt4$default  reason: not valid java name */
-    public static /* synthetic */ AbsoluteCutCornerShape m1018AbsoluteCutCornerShapea9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ AbsoluteCutCornerShape m1183AbsoluteCutCornerShapea9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m6684constructorimpl(0);
+            f = Dp.m7251constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m6684constructorimpl(0);
+            f2 = Dp.m7251constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m6684constructorimpl(0);
+            f3 = Dp.m7251constructorimpl(0);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m6684constructorimpl(0);
+            f4 = Dp.m7251constructorimpl(0);
         }
-        return m1017AbsoluteCutCornerShapea9UjIt4(f, f2, f3, f4);
+        return m1182AbsoluteCutCornerShapea9UjIt4(f, f2, f3, f4);
     }
 }

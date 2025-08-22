@@ -23,7 +23,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SubcomposeLayout.kt */
-@Metadata(d1 = {"\u0000A\n\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000*\u0001\u0001\u001a6\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00062\u001d\u0010\u0007\u001a\u0019\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b0\b¢\u0006\u0002\b\fH\u0007¢\u0006\u0002\u0010\r\u001a>\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0005\u001a\u00020\u00062\u001d\u0010\u0007\u001a\u0019\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b0\b¢\u0006\u0002\b\fH\u0007¢\u0006\u0002\u0010\u0010\u001a\u000e\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014\"\u0010\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002¨\u0006\u0015"}, d2 = {"ReusedSlotId", "androidx/compose/ui/layout/SubcomposeLayoutKt$ReusedSlotId$1", "Landroidx/compose/ui/layout/SubcomposeLayoutKt$ReusedSlotId$1;", "SubcomposeLayout", "", "modifier", "Landroidx/compose/ui/Modifier;", "measurePolicy", "Lkotlin/Function2;", "Landroidx/compose/ui/layout/SubcomposeMeasureScope;", "Landroidx/compose/ui/unit/Constraints;", "Landroidx/compose/ui/layout/MeasureResult;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/ui/layout/SubcomposeLayoutState;", "(Landroidx/compose/ui/layout/SubcomposeLayoutState;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "SubcomposeSlotReusePolicy", "Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;", "maxSlotsToRetainForReuse", "", "ui_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000A\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\b\u0003*\u0001\u0013\u001a6\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u001d\u0010\u0004\u001a\u0019\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005¢\u0006\u0002\b\tH\u0007¢\u0006\u0002\u0010\n\u001a>\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u001d\u0010\u0004\u001a\u0019\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005¢\u0006\u0002\b\tH\u0007¢\u0006\u0002\u0010\r\u001a\u000e\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011\"\u0010\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0014¨\u0006\u0015"}, d2 = {"SubcomposeLayout", "", "modifier", "Landroidx/compose/ui/Modifier;", "measurePolicy", "Lkotlin/Function2;", "Landroidx/compose/ui/layout/SubcomposeMeasureScope;", "Landroidx/compose/ui/unit/Constraints;", "Landroidx/compose/ui/layout/MeasureResult;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/ui/layout/SubcomposeLayoutState;", "(Landroidx/compose/ui/layout/SubcomposeLayoutState;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "SubcomposeSlotReusePolicy", "Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;", "maxSlotsToRetainForReuse", "", "ReusedSlotId", "androidx/compose/ui/layout/SubcomposeLayoutKt$ReusedSlotId$1", "Landroidx/compose/ui/layout/SubcomposeLayoutKt$ReusedSlotId$1;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SubcomposeLayoutKt {
     private static final SubcomposeLayoutKt$ReusedSlotId$1 ReusedSlotId = new Object() { // from class: androidx.compose.ui.layout.SubcomposeLayoutKt$ReusedSlotId$1
@@ -40,7 +40,7 @@ public final class SubcomposeLayoutKt {
         int i3;
         final Function2<? super SubcomposeMeasureScope, ? super Constraints, ? extends MeasureResult> function22;
         Composer startRestartGroup = composer.startRestartGroup(-1298353104);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SubcomposeLayout)P(1)84@4114L36,83@4080L144:SubcomposeLayout.kt#80mrfh");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SubcomposeLayout)P(1)94@4643L36,93@4609L145:SubcomposeLayout.kt#80mrfh");
         int i4 = i2 & 1;
         if (i4 != 0) {
             i3 = i | 6;
@@ -54,15 +54,18 @@ public final class SubcomposeLayoutKt {
         } else if ((i & 48) == 0) {
             i3 |= startRestartGroup.changedInstance(function2) ? 32 : 16;
         }
-        if (startRestartGroup.shouldExecute((i3 & 19) != 18, i3 & 1)) {
+        if (!startRestartGroup.shouldExecute((i3 & 19) != 18, i3 & 1)) {
+            function22 = function2;
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (i4 != 0) {
                 modifier = Modifier.Companion;
             }
             Modifier modifier2 = modifier;
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1298353104, i3, -1, "androidx.compose.ui.layout.SubcomposeLayout (SubcomposeLayout.kt:82)");
+                ComposerKt.traceEventStart(-1298353104, i3, -1, "androidx.compose.ui.layout.SubcomposeLayout (SubcomposeLayout.kt:92)");
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1663485749, "CC(remember):SubcomposeLayout.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2118156148, "CC(remember):SubcomposeLayout.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new SubcomposeLayoutState();
@@ -75,9 +78,6 @@ public final class SubcomposeLayoutKt {
                 ComposerKt.traceEventEnd();
             }
             modifier = modifier2;
-        } else {
-            function22 = function2;
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
@@ -105,7 +105,7 @@ public final class SubcomposeLayoutKt {
     public static final void SubcomposeLayout(final SubcomposeLayoutState subcomposeLayoutState, Modifier modifier, final Function2<? super SubcomposeMeasureScope, ? super Constraints, ? extends MeasureResult> function2, Composer composer, final int i, final int i2) {
         int i3;
         Composer startRestartGroup = composer.startRestartGroup(-511989831);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SubcomposeLayout)P(2,1)116@5575L23,117@5628L28,120@5784L435:SubcomposeLayout.kt#80mrfh");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SubcomposeLayout)P(2,1)126@6106L27,127@6174L28,130@6330L436:SubcomposeLayout.kt#80mrfh");
         if ((i2 & 1) != 0) {
             i3 = i | 6;
         } else if ((i & 6) == 0) {
@@ -124,19 +124,21 @@ public final class SubcomposeLayoutKt {
         } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i3 |= startRestartGroup.changedInstance(function2) ? 256 : 128;
         }
-        if (startRestartGroup.shouldExecute((i3 & 147) != 146, i3 & 1)) {
+        if (!startRestartGroup.shouldExecute((i3 & 147) != 146, i3 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (i4 != 0) {
                 modifier = Modifier.Companion;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-511989831, i3, -1, "androidx.compose.ui.layout.SubcomposeLayout (SubcomposeLayout.kt:115)");
+                ComposerKt.traceEventStart(-511989831, i3, -1, "androidx.compose.ui.layout.SubcomposeLayout (SubcomposeLayout.kt:125)");
             }
-            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
+            int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionContext rememberCompositionContext = ComposablesKt.rememberCompositionContext(startRestartGroup, 0);
             Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, modifier);
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
             Function0<LayoutNode> constructor$ui_release = LayoutNode.Companion.getConstructor$ui_release();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1405779621, "CC(ReusableComposeNode):Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1405779621, "CC(ReusableComposeNode)N(factory,update):Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -146,23 +148,23 @@ public final class SubcomposeLayoutKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl, subcomposeLayoutState, subcomposeLayoutState.getSetRoot$ui_release());
-            Updater.m3527setimpl(m3520constructorimpl, rememberCompositionContext, subcomposeLayoutState.getSetCompositionContext$ui_release());
-            Updater.m3527setimpl(m3520constructorimpl, function2, subcomposeLayoutState.getSetMeasurePolicy$ui_release());
-            Updater.m3527setimpl(m3520constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m3527setimpl(m3520constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl, subcomposeLayoutState, subcomposeLayoutState.getSetRoot$ui_release());
+            Updater.m3862setimpl(m3855constructorimpl, rememberCompositionContext, subcomposeLayoutState.getSetCompositionContext$ui_release());
+            Updater.m3862setimpl(m3855constructorimpl, function2, subcomposeLayoutState.getSetMeasurePolicy$ui_release());
+            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             if (!startRestartGroup.getSkipping()) {
-                startRestartGroup.startReplaceGroup(-26326018);
-                ComposerKt.sourceInformation(startRestartGroup, "132@6276L34,132@6265L45");
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1663416567, "CC(remember):SubcomposeLayout.kt#9igjgp");
+                startRestartGroup.startReplaceGroup(-1259274676);
+                ComposerKt.sourceInformation(startRestartGroup, "142@6823L34,142@6812L45");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1899041531, "CC(remember):SubcomposeLayout.kt#9igjgp");
                 boolean changedInstance = startRestartGroup.changedInstance(subcomposeLayoutState);
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
@@ -189,14 +191,12 @@ public final class SubcomposeLayoutKt {
                 EffectsKt.SideEffect((Function0) rememberedValue, startRestartGroup, 0);
                 startRestartGroup.endReplaceGroup();
             } else {
-                startRestartGroup.startReplaceGroup(-26267397);
+                startRestartGroup.startReplaceGroup(-1259216055);
                 startRestartGroup.endReplaceGroup();
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         final Modifier modifier2 = modifier;
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();

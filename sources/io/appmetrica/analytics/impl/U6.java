@@ -1,7 +1,9 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 /* loaded from: classes4.dex */
 public interface U6 {
-    void a(Context context);
+    SQLiteDatabase a();
+
+    void a(SQLiteDatabase sQLiteDatabase);
 }

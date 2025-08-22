@@ -14,16 +14,16 @@ import kotlin.Metadata;
 public final class NavigationDrawerItemDefaults {
     public static final int $stable = 0;
     public static final NavigationDrawerItemDefaults INSTANCE = new NavigationDrawerItemDefaults();
-    private static final PaddingValues ItemPadding = PaddingKt.m733PaddingValuesYgX7TsA$default(Dp.m6684constructorimpl(12), 0.0f, 2, null);
+    private static final PaddingValues ItemPadding = PaddingKt.m827PaddingValuesYgX7TsA$default(Dp.m7251constructorimpl(12), 0.0f, 2, null);
 
     private NavigationDrawerItemDefaults() {
     }
 
     /* renamed from: colors-oq7We08  reason: not valid java name */
-    public final NavigationDrawerItemColors m2083colorsoq7We08(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, Composer composer, int i, int i2) {
+    public final NavigationDrawerItemColors m2390colorsoq7We08(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -1574983348, "C(colors)P(1:c#ui.graphics.Color,5:c#ui.graphics.Color,2:c#ui.graphics.Color,6:c#ui.graphics.Color,3:c#ui.graphics.Color,7:c#ui.graphics.Color,0:c#ui.graphics.Color,4:c#ui.graphics.Color)1020@42373L5,1022@42515L5,1023@42600L5,1024@42686L5,1025@42776L5:NavigationDrawer.kt#uh7d8r");
         long value = (i2 & 1) != 0 ? ColorSchemeKt.getValue(NavigationDrawerTokens.INSTANCE.getActiveIndicatorColor(), composer, 6) : j;
-        long m4113getTransparent0d7_KjU = (i2 & 2) != 0 ? Color.Companion.m4113getTransparent0d7_KjU() : j2;
+        long m4572getTransparent0d7_KjU = (i2 & 2) != 0 ? Color.Companion.m4572getTransparent0d7_KjU() : j2;
         long value2 = (i2 & 4) != 0 ? ColorSchemeKt.getValue(NavigationDrawerTokens.INSTANCE.getActiveIconColor(), composer, 6) : j3;
         long value3 = (i2 & 8) != 0 ? ColorSchemeKt.getValue(NavigationDrawerTokens.INSTANCE.getInactiveIconColor(), composer, 6) : j4;
         long value4 = (i2 & 16) != 0 ? ColorSchemeKt.getValue(NavigationDrawerTokens.INSTANCE.getActiveLabelTextColor(), composer, 6) : j5;
@@ -33,7 +33,7 @@ public final class NavigationDrawerItemDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1574983348, i, -1, "androidx.compose.material3.NavigationDrawerItemDefaults.colors (NavigationDrawer.kt:1029)");
         }
-        DefaultDrawerItemsColor defaultDrawerItemsColor = new DefaultDrawerItemsColor(value2, value3, value4, value5, value, m4113getTransparent0d7_KjU, j9, j10, null);
+        DefaultDrawerItemsColor defaultDrawerItemsColor = new DefaultDrawerItemsColor(value2, value3, value4, value5, value, m4572getTransparent0d7_KjU, j9, j10, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

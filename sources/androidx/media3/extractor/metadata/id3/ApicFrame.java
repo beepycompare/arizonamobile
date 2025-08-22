@@ -3,7 +3,7 @@ package androidx.media3.extractor.metadata.id3;
 import androidx.media3.common.MediaMetadata;
 import java.util.Arrays;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ApicFrame extends Id3Frame {
     public static final String ID = "APIC";
     public final String description;

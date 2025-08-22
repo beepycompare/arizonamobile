@@ -1,62 +1,226 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import io.appmetrica.analytics.internal.AppMetricaService;
-import io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock;
-import java.util.HashMap;
+import android.location.Location;
+import android.os.Bundle;
+import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
+import io.appmetrica.analytics.coreapi.internal.control.Toggle;
+import io.appmetrica.analytics.coreapi.internal.identifiers.SdkIdentifiers;
+import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
+import io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrategyModuleProvider;
+import io.appmetrica.analytics.modulesapi.internal.service.ClientConfigProvider;
+import io.appmetrica.analytics.modulesapi.internal.service.LocationServiceExtension;
+import io.appmetrica.analytics.modulesapi.internal.service.ModuleLocationSourcesServiceController;
+import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceEntryPoint;
+import io.appmetrica.analytics.modulesapi.internal.service.ModuleServicesDatabase;
+import io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration;
+import io.appmetrica.analytics.modulesapi.internal.service.ServiceContext;
+import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerFactory;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
+import kotlin.ExceptionsKt;
+import kotlin.Pair;
+import kotlin.TuplesKt;
+import kotlin.Unit;
+import kotlin.collections.CollectionsKt;
+import kotlin.collections.MapsKt;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
-public final class Dk implements ServiceWakeLock {
+public final class Dk implements InterfaceC0431md, InterfaceC0515pm, AskForPermissionStrategyModuleProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f400a;
-    public final Ck b;
-    public final HashMap c = new HashMap();
+    public final String f401a = "rp";
+    public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
+    public volatile AskForPermissionStrategyModuleProvider c = new X7();
 
-    public Dk(Context context, Ck ck) {
-        this.f400a = context;
-        this.b = ck;
-    }
-
-    public final String a(String str) {
-        return "io.appmetrica.analytics.ACTION_SERVICE_WAKELOCK." + str;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock
-    public final synchronized boolean acquireWakeLock(String str) {
-        if (this.c.get(str) == null) {
-            HashMap hashMap = this.c;
-            Ck ck = this.b;
-            Context context = this.f400a;
-            String a2 = a(str);
-            ck.f382a.getClass();
-            Intent intent = new Intent(context, AppMetricaService.class);
-            intent.setAction(a2);
-            Bk bk = new Bk();
-            try {
-                context.bindService(intent, bk, 1);
-            } catch (Throwable unused) {
-                bk = null;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0515pm
+    public final void a(C0389km c0389km) {
+        SdkIdentifiers sdkIdentifiers = new SdkIdentifiers(c0389km.e(), c0389km.a(), c0389km.b());
+        C0178ch c0178ch = new C0178ch(c0389km.c(), c0389km.d());
+        for (ModuleServiceEntryPoint moduleServiceEntryPoint : this.b) {
+            RemoteConfigExtensionConfiguration remoteConfigExtensionConfiguration = moduleServiceEntryPoint.getRemoteConfigExtensionConfiguration();
+            if (remoteConfigExtensionConfiguration != null) {
+                remoteConfigExtensionConfiguration.getRemoteConfigUpdateListener().onRemoteConfigUpdated(new Ck(sdkIdentifiers, c0178ch, c0389km.B.get(moduleServiceEntryPoint.getIdentifier())));
             }
-            hashMap.put(str, bk);
         }
-        return this.c.get(str) != null;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock
-    public final synchronized void releaseWakeLock(String str) {
-        ServiceConnection serviceConnection = (ServiceConnection) this.c.get(str);
-        if (serviceConnection != null) {
-            Ck ck = this.b;
-            a(str);
-            Context context = this.f400a;
-            ck.getClass();
+    @Override // io.appmetrica.analytics.impl.InterfaceC0431md
+    public final List<ModuleServicesDatabase> b() {
+        Object obj;
+        HashSet hashSet = new HashSet();
+        ArrayList arrayList = new ArrayList();
+        CopyOnWriteArrayList copyOnWriteArrayList = this.b;
+        ArrayList arrayList2 = new ArrayList();
+        Iterator it = copyOnWriteArrayList.iterator();
+        while (it.hasNext()) {
+            ModuleServiceEntryPoint moduleServiceEntryPoint = (ModuleServiceEntryPoint) it.next();
             try {
-                context.unbindService(serviceConnection);
-            } catch (Throwable unused) {
+                ModuleServicesDatabase moduleServicesDatabase = moduleServiceEntryPoint.getModuleServicesDatabase();
+                obj = moduleServicesDatabase != null ? Boolean.valueOf(arrayList.add(moduleServicesDatabase)) : null;
+            } catch (Throwable th) {
+                hashSet.add(moduleServiceEntryPoint);
+                String identifier = moduleServiceEntryPoint.getIdentifier();
+                C0310hk c0310hk = Gj.f460a;
+                Map mapOf = MapsKt.mapOf(TuplesKt.to(identifier, MapsKt.mapOf(TuplesKt.to("db", ExceptionsKt.stackTraceToString(th)))));
+                c0310hk.getClass();
+                c0310hk.a(new C0284gk("service_module_errors", mapOf));
+                obj = Unit.INSTANCE;
             }
-            ServiceConnection serviceConnection2 = (ServiceConnection) this.c.remove(str);
+            if (obj != null) {
+                arrayList2.add(obj);
+            }
         }
+        this.b.removeAll(hashSet);
+        return arrayList;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0431md
+    public final Map<String, C0655vd> c() {
+        CopyOnWriteArrayList<ModuleServiceEntryPoint> copyOnWriteArrayList = this.b;
+        ArrayList arrayList = new ArrayList();
+        for (ModuleServiceEntryPoint moduleServiceEntryPoint : copyOnWriteArrayList) {
+            RemoteConfigExtensionConfiguration remoteConfigExtensionConfiguration = moduleServiceEntryPoint.getRemoteConfigExtensionConfiguration();
+            Pair pair = remoteConfigExtensionConfiguration != null ? TuplesKt.to(moduleServiceEntryPoint.getIdentifier(), new C0655vd(remoteConfigExtensionConfiguration)) : null;
+            if (pair != null) {
+                arrayList.add(pair);
+            }
+        }
+        return MapsKt.toMap(arrayList);
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0431md
+    public final Map<String, Integer> d() {
+        List emptyList;
+        Map<String, Integer> blocks;
+        CopyOnWriteArrayList<ModuleServiceEntryPoint> copyOnWriteArrayList = this.b;
+        ArrayList arrayList = new ArrayList();
+        for (ModuleServiceEntryPoint moduleServiceEntryPoint : copyOnWriteArrayList) {
+            RemoteConfigExtensionConfiguration remoteConfigExtensionConfiguration = moduleServiceEntryPoint.getRemoteConfigExtensionConfiguration();
+            if (remoteConfigExtensionConfiguration == null || (blocks = remoteConfigExtensionConfiguration.getBlocks()) == null || (emptyList = MapsKt.toList(blocks)) == null) {
+                emptyList = CollectionsKt.emptyList();
+            }
+            CollectionsKt.addAll(arrayList, emptyList);
+        }
+        return MapsKt.toMap(arrayList);
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0431md
+    public final List<Consumer<Location>> e() {
+        CopyOnWriteArrayList<ModuleServiceEntryPoint> copyOnWriteArrayList = this.b;
+        ArrayList arrayList = new ArrayList();
+        for (ModuleServiceEntryPoint moduleServiceEntryPoint : copyOnWriteArrayList) {
+            LocationServiceExtension locationServiceExtension = moduleServiceEntryPoint.getLocationServiceExtension();
+            Consumer<Location> locationConsumer = locationServiceExtension != null ? locationServiceExtension.getLocationConsumer() : null;
+            if (locationConsumer != null) {
+                arrayList.add(locationConsumer);
+            }
+        }
+        return arrayList;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0431md
+    public final ModuleLocationSourcesServiceController f() {
+        ModuleLocationSourcesServiceController moduleLocationSourcesServiceController;
+        Iterator it = this.b.iterator();
+        do {
+            moduleLocationSourcesServiceController = null;
+            if (!it.hasNext()) {
+                break;
+            }
+            LocationServiceExtension locationServiceExtension = ((ModuleServiceEntryPoint) it.next()).getLocationServiceExtension();
+            if (locationServiceExtension != null) {
+                moduleLocationSourcesServiceController = locationServiceExtension.getLocationSourcesController();
+                continue;
+            }
+        } while (moduleLocationSourcesServiceController == null);
+        return moduleLocationSourcesServiceController;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0431md
+    public final Toggle g() {
+        Toggle toggle;
+        Iterator it = this.b.iterator();
+        do {
+            toggle = null;
+            if (!it.hasNext()) {
+                break;
+            }
+            LocationServiceExtension locationServiceExtension = ((ModuleServiceEntryPoint) it.next()).getLocationServiceExtension();
+            if (locationServiceExtension != null) {
+                toggle = locationServiceExtension.getLocationControllerAppStateToggle();
+                continue;
+            }
+        } while (toggle == null);
+        return toggle;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrategyModuleProvider
+    public final PermissionStrategy getAskForPermissionStrategy() {
+        return this.c.getAskForPermissionStrategy();
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0431md
+    public final List<String> h() {
+        List<String> emptyList;
+        CopyOnWriteArrayList<ModuleServiceEntryPoint> copyOnWriteArrayList = this.b;
+        ArrayList arrayList = new ArrayList();
+        for (ModuleServiceEntryPoint moduleServiceEntryPoint : copyOnWriteArrayList) {
+            RemoteConfigExtensionConfiguration remoteConfigExtensionConfiguration = moduleServiceEntryPoint.getRemoteConfigExtensionConfiguration();
+            if (remoteConfigExtensionConfiguration == null || (emptyList = remoteConfigExtensionConfiguration.getFeatures()) == null) {
+                emptyList = CollectionsKt.emptyList();
+            }
+            CollectionsKt.addAll(arrayList, emptyList);
+        }
+        return arrayList;
+    }
+
+    public final Bundle i() {
+        Bundle bundle = new Bundle();
+        for (ModuleServiceEntryPoint moduleServiceEntryPoint : this.b) {
+            ClientConfigProvider clientConfigProvider = moduleServiceEntryPoint.getClientConfigProvider();
+            Bundle configBundleForClient = clientConfigProvider != null ? clientConfigProvider.getConfigBundleForClient() : null;
+            if (configBundleForClient != null) {
+                bundle.putBundle(moduleServiceEntryPoint.getIdentifier(), configBundleForClient);
+            }
+        }
+        return bundle;
+    }
+
+    public final void a(ModuleServiceEntryPoint<Object> moduleServiceEntryPoint) {
+        this.b.add(moduleServiceEntryPoint);
+        if (Intrinsics.areEqual(this.f401a, moduleServiceEntryPoint.getIdentifier()) && (moduleServiceEntryPoint instanceof AskForPermissionStrategyModuleProvider)) {
+            this.c = (AskForPermissionStrategyModuleProvider) moduleServiceEntryPoint;
+        }
+    }
+
+    public final void a(ServiceContext serviceContext, C0389km c0389km) {
+        HashSet hashSet = new HashSet();
+        Iterator it = this.b.iterator();
+        while (it.hasNext()) {
+            ModuleServiceEntryPoint moduleServiceEntryPoint = (ModuleServiceEntryPoint) it.next();
+            try {
+                moduleServiceEntryPoint.initServiceSide(serviceContext, new Ck(new SdkIdentifiers(c0389km.d, c0389km.f942a, c0389km.b), new C0178ch(c0389km.v, c0389km.u), c0389km.B.get(moduleServiceEntryPoint.getIdentifier())));
+                ModuleEventServiceHandlerFactory moduleEventServiceHandlerFactory = moduleServiceEntryPoint.getModuleEventServiceHandlerFactory();
+                if (moduleEventServiceHandlerFactory != null) {
+                    C0555rd c0555rd = Ka.F.t;
+                    String identifier = moduleServiceEntryPoint.getIdentifier();
+                    synchronized (c0555rd) {
+                        c0555rd.f1043a.put(identifier, moduleEventServiceHandlerFactory);
+                    }
+                }
+            } catch (Throwable th) {
+                String identifier2 = moduleServiceEntryPoint.getIdentifier();
+                C0310hk c0310hk = Gj.f460a;
+                Map mapOf = MapsKt.mapOf(TuplesKt.to(identifier2, MapsKt.mapOf(TuplesKt.to("init", ExceptionsKt.stackTraceToString(th)))));
+                c0310hk.getClass();
+                c0310hk.a(new C0284gk("service_module_errors", mapOf));
+                hashSet.add(moduleServiceEntryPoint);
+            }
+        }
+        this.b.removeAll(hashSet);
     }
 }

@@ -9,7 +9,7 @@ import io.reactivex.functions.Action;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleDoOnDispose<T> extends Single<T> {
     final Action onDispose;
     final SingleSource<T> source;
@@ -24,7 +24,7 @@ public final class SingleDoOnDispose<T> extends Single<T> {
         this.source.subscribe(new DoOnDisposeObserver(singleObserver, this.onDispose));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DoOnDisposeObserver<T> extends AtomicReference<Action> implements SingleObserver<T>, Disposable {
         private static final long serialVersionUID = -8583764624474935784L;
         final SingleObserver<? super T> downstream;

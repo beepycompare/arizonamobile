@@ -13,7 +13,7 @@ import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
 import java.util.Collections;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class LatmReader implements ElementaryStreamReader {
     private static final int INITIAL_BUFFER_SIZE = 1024;
     private static final int STATE_FINDING_SYNC_1 = 0;

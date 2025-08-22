@@ -5,7 +5,7 @@ import com.google.common.primitives.Longs;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ChunkIndexMerger {
     private final Map<Long, ChunkIndex> chunkMap = new LinkedHashMap();
 

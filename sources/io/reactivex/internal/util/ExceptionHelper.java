@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ExceptionHelper {
     public static final Throwable TERMINATED = new Termination();
 
@@ -71,7 +71,7 @@ public final class ExceptionHelper {
         return "The source did not signal an event for " + j + " " + timeUnit.toString().toLowerCase() + " and has been terminated.";
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class Termination extends Throwable {
         private static final long serialVersionUID = -4649703670690200604L;
 

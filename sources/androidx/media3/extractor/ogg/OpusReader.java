@@ -13,7 +13,7 @@ import com.google.common.collect.ImmutableList;
 import java.util.Arrays;
 import java.util.List;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class OpusReader extends StreamReader {
     private boolean firstCommentHeaderSeen;
     private static final byte[] OPUS_ID_HEADER_SIGNATURE = {79, 112, 117, 115, 72, 101, 97, 100};

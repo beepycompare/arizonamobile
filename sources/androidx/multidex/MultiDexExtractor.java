@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class MultiDexExtractor implements Closeable {
     private static final int BUFFER_SIZE = 16384;
     private static final String DEX_PREFIX = "classes";
@@ -44,7 +44,7 @@ final class MultiDexExtractor implements Closeable {
     private final long sourceCrc;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class ExtractedDex extends File {
         public long crc;
 

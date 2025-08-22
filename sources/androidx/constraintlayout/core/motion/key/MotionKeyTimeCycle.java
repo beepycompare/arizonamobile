@@ -396,7 +396,7 @@ public class MotionKeyTimeCycle extends MotionKey {
 
     @Override // androidx.constraintlayout.core.motion.key.MotionKey
     /* renamed from: clone */
-    public MotionKey mo7165clone() {
+    public MotionKey mo7731clone() {
         return new MotionKeyTimeCycle().copy((MotionKey) this);
     }
 

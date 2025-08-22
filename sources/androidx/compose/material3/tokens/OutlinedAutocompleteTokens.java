@@ -14,7 +14,7 @@ public final class OutlinedAutocompleteTokens {
     private static final float TextFieldTrailingIconSize;
     public static final OutlinedAutocompleteTokens INSTANCE = new OutlinedAutocompleteTokens();
     private static final ColorSchemeKeyTokens MenuContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
-    private static final float MenuContainerElevation = ElevationTokens.INSTANCE.m2979getLevel2D9Ej5fM();
+    private static final float MenuContainerElevation = ElevationTokens.INSTANCE.m3286getLevel2D9Ej5fM();
     private static final ShapeKeyTokens MenuContainerShape = ShapeKeyTokens.CornerExtraSmall;
     private static final ColorSchemeKeyTokens TextFieldCaretColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens TextFieldContainerColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
@@ -54,7 +54,7 @@ public final class OutlinedAutocompleteTokens {
     private static final ColorSchemeKeyTokens FieldFocusLabelTextColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens TextFieldFocusLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TextFieldFocusOutlineColor = ColorSchemeKeyTokens.Primary;
-    private static final float TextFieldFocusOutlineWidth = Dp.m6684constructorimpl((float) 2.0d);
+    private static final float TextFieldFocusOutlineWidth = Dp.m7251constructorimpl((float) 2.0d);
     private static final ColorSchemeKeyTokens FieldFocusSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TextFieldFocusTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens FieldHoverInputTextColor = ColorSchemeKeyTokens.OnSurface;
@@ -78,12 +78,12 @@ public final class OutlinedAutocompleteTokens {
 
     static {
         float f = (float) 1.0d;
-        TextFieldDisabledOutlineWidth = Dp.m6684constructorimpl(f);
-        TextFieldHoverOutlineWidth = Dp.m6684constructorimpl(f);
+        TextFieldDisabledOutlineWidth = Dp.m7251constructorimpl(f);
+        TextFieldHoverOutlineWidth = Dp.m7251constructorimpl(f);
         float f2 = (float) 24.0d;
-        TextFieldLeadingIconSize = Dp.m6684constructorimpl(f2);
-        TextFieldOutlineWidth = Dp.m6684constructorimpl(f);
-        TextFieldTrailingIconSize = Dp.m6684constructorimpl(f2);
+        TextFieldLeadingIconSize = Dp.m7251constructorimpl(f2);
+        TextFieldOutlineWidth = Dp.m7251constructorimpl(f);
+        TextFieldTrailingIconSize = Dp.m7251constructorimpl(f2);
     }
 
     public final ColorSchemeKeyTokens getMenuContainerColor() {
@@ -91,7 +91,7 @@ public final class OutlinedAutocompleteTokens {
     }
 
     /* renamed from: getMenuContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3140getMenuContainerElevationD9Ej5fM() {
+    public final float m3447getMenuContainerElevationD9Ej5fM() {
         return MenuContainerElevation;
     }
 
@@ -144,7 +144,7 @@ public final class OutlinedAutocompleteTokens {
     }
 
     /* renamed from: getTextFieldDisabledOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3141getTextFieldDisabledOutlineWidthD9Ej5fM() {
+    public final float m3448getTextFieldDisabledOutlineWidthD9Ej5fM() {
         return TextFieldDisabledOutlineWidth;
     }
 
@@ -257,7 +257,7 @@ public final class OutlinedAutocompleteTokens {
     }
 
     /* renamed from: getTextFieldFocusOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3142getTextFieldFocusOutlineWidthD9Ej5fM() {
+    public final float m3449getTextFieldFocusOutlineWidthD9Ej5fM() {
         return TextFieldFocusOutlineWidth;
     }
 
@@ -286,7 +286,7 @@ public final class OutlinedAutocompleteTokens {
     }
 
     /* renamed from: getTextFieldHoverOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3143getTextFieldHoverOutlineWidthD9Ej5fM() {
+    public final float m3450getTextFieldHoverOutlineWidthD9Ej5fM() {
         return TextFieldHoverOutlineWidth;
     }
 
@@ -319,7 +319,7 @@ public final class OutlinedAutocompleteTokens {
     }
 
     /* renamed from: getTextFieldLeadingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3144getTextFieldLeadingIconSizeD9Ej5fM() {
+    public final float m3451getTextFieldLeadingIconSizeD9Ej5fM() {
         return TextFieldLeadingIconSize;
     }
 
@@ -328,7 +328,7 @@ public final class OutlinedAutocompleteTokens {
     }
 
     /* renamed from: getTextFieldOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3145getTextFieldOutlineWidthD9Ej5fM() {
+    public final float m3452getTextFieldOutlineWidthD9Ej5fM() {
         return TextFieldOutlineWidth;
     }
 
@@ -345,7 +345,7 @@ public final class OutlinedAutocompleteTokens {
     }
 
     /* renamed from: getTextFieldTrailingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3146getTextFieldTrailingIconSizeD9Ej5fM() {
+    public final float m3453getTextFieldTrailingIconSizeD9Ej5fM() {
         return TextFieldTrailingIconSize;
     }
 }

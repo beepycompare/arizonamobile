@@ -7,7 +7,7 @@ import io.reactivex.SingleSource;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleLift<T, R> extends Single<R> {
     final SingleOperator<? extends R, ? super T> onLift;
     final SingleSource<T> source;

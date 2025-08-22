@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableUsing<T, D> extends Flowable<T> {
     final Consumer<? super D> disposer;
     final boolean eager;
@@ -51,7 +51,7 @@ public final class FlowableUsing<T, D> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class UsingSubscriber<T, D> extends AtomicBoolean implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = 5904473792286235046L;
         final Consumer<? super D> disposer;

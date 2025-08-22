@@ -1,10 +1,42 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class Hf extends AbstractC0330i8 {
-    public Hf(Context context, ProtobufStateStorage<C0560rf> protobufStateStorage, AbstractC0379k8 abstractC0379k8, Yn yn, Jm jm, InterfaceC0316hj interfaceC0316hj, InterfaceC0265fj interfaceC0265fj, U6 u6, C0560rf c0560rf, String str) {
-        super(context, protobufStateStorage, abstractC0379k8, yn, jm, interfaceC0316hj, interfaceC0265fj, u6, c0560rf);
+public final class Hf implements ProtobufConverter {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Ff f477a = new Ff();
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Bf fromModel(Gf gf) {
+        Bf bf = new Bf();
+        if (!TextUtils.isEmpty(gf.f457a)) {
+            bf.f364a = gf.f457a;
+        }
+        bf.b = gf.b.toString();
+        bf.c = gf.c;
+        bf.d = gf.d;
+        bf.e = this.f477a.fromModel(gf.e).intValue();
+        return bf;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Gf toModel(Bf bf) {
+        JSONObject jSONObject;
+        String str = bf.f364a;
+        String str2 = bf.b;
+        if (!TextUtils.isEmpty(str2)) {
+            try {
+                jSONObject = new JSONObject(str2);
+            } catch (Throwable unused) {
+            }
+            return new Gf(str, jSONObject, bf.c, bf.d, this.f477a.toModel(Integer.valueOf(bf.e)));
+        }
+        jSONObject = new JSONObject();
+        return new Gf(str, jSONObject, bf.c, bf.d, this.f477a.toModel(Integer.valueOf(bf.e)));
     }
 }

@@ -4,17 +4,15 @@ import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
-import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: UpdatableAnimationState.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.UpdatableAnimationState", f = "UpdatableAnimationState.kt", i = {0, 0, 0, 0, 1, 1}, l = {102, BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER}, m = "animateToZero", n = {"this", "beforeFrame", "afterFrame", "durationScale", "this", "afterFrame"}, s = {"L$0", "L$1", "L$2", "F$0", "L$0", "L$1"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.UpdatableAnimationState", f = "UpdatableAnimationState.kt", i = {0, 0, 0, 1}, l = {100, 151}, m = "animateToZero", n = {"beforeFrame", "afterFrame", "durationScale", "afterFrame"}, s = {"L$0", "L$1", "F$0", "L$0"})
 /* loaded from: classes.dex */
 public final class UpdatableAnimationState$animateToZero$1 extends ContinuationImpl {
     float F$0;
     Object L$0;
     Object L$1;
-    Object L$2;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ UpdatableAnimationState this$0;

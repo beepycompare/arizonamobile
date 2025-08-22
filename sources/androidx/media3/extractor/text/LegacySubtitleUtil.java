@@ -5,7 +5,7 @@ import androidx.media3.common.text.Cue;
 import androidx.media3.common.util.Consumer;
 import androidx.media3.extractor.text.SubtitleParser;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class LegacySubtitleUtil {
     private LegacySubtitleUtil() {
     }

@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableRetryPredicate<T> extends AbstractFlowableWithUpstream<T, T> {
     final long count;
     final Predicate<? super Throwable> predicate;
@@ -28,7 +28,7 @@ public final class FlowableRetryPredicate<T> extends AbstractFlowableWithUpstrea
         new RetrySubscriber(subscriber, this.count, this.predicate, subscriptionArbiter, this.source).subscribeNext();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class RetrySubscriber<T> extends AtomicInteger implements FlowableSubscriber<T> {
         private static final long serialVersionUID = -7098360935104053232L;
         final Subscriber<? super T> downstream;

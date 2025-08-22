@@ -3,7 +3,7 @@ package io.reactivex.internal.operators.flowable;
 import io.reactivex.Flowable;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableFromPublisher<T> extends Flowable<T> {
     final Publisher<? extends T> publisher;
 

@@ -24,7 +24,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TextSettings.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001f\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"TextSettings", "", "text", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "settings_release_web"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001f\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"TextSettings", "", "text", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "settings_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class TextSettingsKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -49,7 +49,7 @@ public final class TextSettingsKt {
         ScopeUpdateScope endRestartGroup;
         Intrinsics.checkNotNullParameter(text, "text");
         Composer startRestartGroup = composer.startRestartGroup(-1473964271);
-        ComposerKt.sourceInformation(startRestartGroup, "C(TextSettings)P(1)19@691L10,20@732L13,16@612L237:TextSettings.kt#1gr92h");
+        ComposerKt.sourceInformation(startRestartGroup, "C(TextSettings)N(text,modifier)19@691L10,20@732L13,16@612L237:TextSettings.kt#1gr92h");
         if ((i & 6) == 0) {
             i3 = i | (startRestartGroup.changed(text) ? 4 : 2);
         } else {
@@ -71,7 +71,7 @@ public final class TextSettingsKt {
                 }
                 composer2 = startRestartGroup;
                 Modifier modifier2 = companion;
-                TextKt.m2497Text4IGK_g(text, OffsetKt.m698offsetVpY3zN4$default(companion, 0.0f, Dp.m6684constructorimpl(-Dp.m6684constructorimpl(1)), 1, null), Color.Companion.m4115getWhite0d7_KjU(), TypeKt.m8456dpToSp8Feqmps(Dp.m6684constructorimpl(20), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, TextAlign.m6561boximpl(TextAlign.Companion.m6568getCentere0LSkKk()), 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 65008);
+                TextKt.m2804Text4IGK_g(text, OffsetKt.m787offsetVpY3zN4$default(companion, 0.0f, Dp.m7251constructorimpl(-Dp.m7251constructorimpl(1)), 1, null), Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9022dpToSp8Feqmps(Dp.m7251constructorimpl(20), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, TextAlign.m7128boximpl(TextAlign.Companion.m7135getCentere0LSkKk()), 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 65008);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }

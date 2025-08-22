@@ -6,7 +6,7 @@ import androidx.media3.common.util.Util;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class WebvttParserUtil {
     private static final Pattern COMMENT = Pattern.compile("^NOTE([ \t].*)?$");
     private static final String WEBVTT_HEADER = "WEBVTT";

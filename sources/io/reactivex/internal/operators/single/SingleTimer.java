@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleTimer extends Single<Long> {
     final long delay;
     final Scheduler scheduler;
@@ -26,7 +26,7 @@ public final class SingleTimer extends Single<Long> {
         timerDisposable.setFuture(this.scheduler.scheduleDirect(timerDisposable, this.delay, this.unit));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimerDisposable extends AtomicReference<Disposable> implements Disposable, Runnable {
         private static final long serialVersionUID = 8465401857522493082L;
         final SingleObserver<? super Long> downstream;

@@ -1,7 +1,7 @@
 package androidx.media3.extractor.metadata.scte35;
 
 import androidx.media3.common.util.ParsableByteArray;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PrivateCommand extends SpliceCommand {
     public final byte[] commandBytes;
     public final long identifier;

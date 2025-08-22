@@ -1,31 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import org.json.JSONObject;
+import com.google.android.vending.expansion.downloader.Constants;
+import java.util.UUID;
 /* loaded from: classes4.dex */
-public final class ro implements qo {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final V8 f1044a;
-
-    public ro() {
-        this(new V8());
-    }
-
-    @Override // io.appmetrica.analytics.impl.qo
-    public final byte[] a(C0281g9 c0281g9, C0712xh c0712xh) {
-        if (!((C0575s5) c0712xh.l).A() && !TextUtils.isEmpty(c0281g9.b)) {
-            try {
-                JSONObject jSONObject = new JSONObject(c0281g9.b);
-                jSONObject.remove("preloadInfo");
-                c0281g9.b = jSONObject.toString();
-            } catch (Throwable unused) {
-            }
+public final class ro {
+    public static boolean a(String str) {
+        UUID uuid;
+        if (str == null || str.length() != 32) {
+            return false;
         }
-        return this.f1044a.a(c0281g9, c0712xh);
+        try {
+            uuid = UUID.fromString(b(str));
+        } catch (Throwable unused) {
+            uuid = null;
+        }
+        return uuid != null;
     }
 
-    public ro(V8 v8) {
-        this.f1044a = v8;
+    public static String b(String str) {
+        return str.substring(0, 8) + Constants.FILENAME_SEQUENCE_SEPARATOR + str.substring(8, 12) + Constants.FILENAME_SEQUENCE_SEPARATOR + str.substring(12, 16) + Constants.FILENAME_SEQUENCE_SEPARATOR + str.substring(16, 20) + Constants.FILENAME_SEQUENCE_SEPARATOR + str.substring(20, 32);
     }
 }

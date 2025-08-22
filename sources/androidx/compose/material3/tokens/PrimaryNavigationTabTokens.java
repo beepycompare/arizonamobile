@@ -14,15 +14,15 @@ public final class PrimaryNavigationTabTokens {
     public static final PrimaryNavigationTabTokens INSTANCE = new PrimaryNavigationTabTokens();
     private static final ColorSchemeKeyTokens ActiveIndicatorColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
-    private static final float ContainerHeight = Dp.m6684constructorimpl((float) 48.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7251constructorimpl((float) 48.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
     private static final ColorSchemeKeyTokens ActiveFocusIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens ActiveHoverIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens ActiveIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens ActivePressedIconColor = ColorSchemeKeyTokens.Primary;
-    private static final float IconAndLabelTextContainerHeight = Dp.m6684constructorimpl((float) 64.0d);
-    private static final float IconSize = Dp.m6684constructorimpl((float) 24.0d);
+    private static final float IconAndLabelTextContainerHeight = Dp.m7251constructorimpl((float) 64.0d);
+    private static final float IconSize = Dp.m7251constructorimpl((float) 24.0d);
     private static final ColorSchemeKeyTokens InactiveFocusIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens InactiveHoverIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens InactiveIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -42,8 +42,8 @@ public final class PrimaryNavigationTabTokens {
 
     static {
         float f = (float) 3.0d;
-        ActiveIndicatorHeight = Dp.m6684constructorimpl(f);
-        ActiveIndicatorShape = RoundedCornerShapeKt.m1032RoundedCornerShape0680j_4(Dp.m6684constructorimpl(f));
+        ActiveIndicatorHeight = Dp.m7251constructorimpl(f);
+        ActiveIndicatorShape = RoundedCornerShapeKt.m1197RoundedCornerShape0680j_4(Dp.m7251constructorimpl(f));
     }
 
     public final ColorSchemeKeyTokens getActiveIndicatorColor() {
@@ -51,7 +51,7 @@ public final class PrimaryNavigationTabTokens {
     }
 
     /* renamed from: getActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3262getActiveIndicatorHeightD9Ej5fM() {
+    public final float m3569getActiveIndicatorHeightD9Ej5fM() {
         return ActiveIndicatorHeight;
     }
 
@@ -64,12 +64,12 @@ public final class PrimaryNavigationTabTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3263getContainerElevationD9Ej5fM() {
+    public final float m3570getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3264getContainerHeightD9Ej5fM() {
+    public final float m3571getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -94,12 +94,12 @@ public final class PrimaryNavigationTabTokens {
     }
 
     /* renamed from: getIconAndLabelTextContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3265getIconAndLabelTextContainerHeightD9Ej5fM() {
+    public final float m3572getIconAndLabelTextContainerHeightD9Ej5fM() {
         return IconAndLabelTextContainerHeight;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3266getIconSizeD9Ej5fM() {
+    public final float m3573getIconSizeD9Ej5fM() {
         return IconSize;
     }
 

@@ -23,9 +23,9 @@ import kotlinx.coroutines.CoroutineScope;
 @Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a.\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0017\u0010\r\u001a\u0013\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\n0\u000e¢\u0006\u0002\b\u0010H\u0001¢\u0006\u0002\u0010\u0011\"\u0016\u0010\u0000\u001a\u00020\u0001X\u0080\u0004¢\u0006\n\n\u0002\u0010\u0004\u001a\u0004\b\u0002\u0010\u0003\"\u0016\u0010\u0005\u001a\u00020\u0001X\u0080\u0004¢\u0006\n\n\u0002\u0010\u0004\u001a\u0004\b\u0006\u0010\u0003\"\u0016\u0010\u0007\u001a\u00020\u0001X\u0080\u0004¢\u0006\n\n\u0002\u0010\u0004\u001a\u0004\b\b\u0010\u0003¨\u0006\u0012"}, d2 = {"PredictiveBackDrawerMaxScaleXDistanceGrow", "Landroidx/compose/ui/unit/Dp;", "getPredictiveBackDrawerMaxScaleXDistanceGrow", "()F", "F", "PredictiveBackDrawerMaxScaleXDistanceShrink", "getPredictiveBackDrawerMaxScaleXDistanceShrink", "PredictiveBackDrawerMaxScaleYDistance", "getPredictiveBackDrawerMaxScaleYDistance", "DrawerPredictiveBackHandler", "", "drawerState", "Landroidx/compose/material3/DrawerState;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/material3/DrawerPredictiveBackState;", "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/material3/DrawerState;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;I)V", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class NavigationDrawer_androidKt {
-    private static final float PredictiveBackDrawerMaxScaleXDistanceGrow = Dp.m6684constructorimpl(12);
-    private static final float PredictiveBackDrawerMaxScaleXDistanceShrink = Dp.m6684constructorimpl(24);
-    private static final float PredictiveBackDrawerMaxScaleYDistance = Dp.m6684constructorimpl(48);
+    private static final float PredictiveBackDrawerMaxScaleXDistanceGrow = Dp.m7251constructorimpl(12);
+    private static final float PredictiveBackDrawerMaxScaleXDistanceShrink = Dp.m7251constructorimpl(24);
+    private static final float PredictiveBackDrawerMaxScaleYDistance = Dp.m7251constructorimpl(48);
 
     public static final void DrawerPredictiveBackHandler(final DrawerState drawerState, final Function3<? super DrawerPredictiveBackState, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i) {
         int i2;
@@ -78,9 +78,9 @@ public final class NavigationDrawer_androidKt {
             Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Density density = (Density) consume2;
-            floatRef.element = density.mo389toPx0680j_4(PredictiveBackDrawerMaxScaleXDistanceGrow);
-            floatRef2.element = density.mo389toPx0680j_4(PredictiveBackDrawerMaxScaleXDistanceShrink);
-            floatRef3.element = density.mo389toPx0680j_4(PredictiveBackDrawerMaxScaleYDistance);
+            floatRef.element = density.mo419toPx0680j_4(PredictiveBackDrawerMaxScaleXDistanceGrow);
+            floatRef2.element = density.mo419toPx0680j_4(PredictiveBackDrawerMaxScaleXDistanceShrink);
+            floatRef3.element = density.mo419toPx0680j_4(PredictiveBackDrawerMaxScaleYDistance);
             boolean isOpen = drawerState.isOpen();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 228423264, "CC(remember):NavigationDrawer.android.kt#9igjgp");
             int i7 = i6 & 14;

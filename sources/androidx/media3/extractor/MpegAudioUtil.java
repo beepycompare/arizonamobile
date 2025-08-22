@@ -1,7 +1,7 @@
 package androidx.media3.extractor;
 
 import androidx.media3.common.MimeTypes;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class MpegAudioUtil {
     public static final int MAX_FRAME_SIZE_BYTES = 4096;
     private static final int SAMPLES_PER_FRAME_L1 = 384;
@@ -22,7 +22,7 @@ public final class MpegAudioUtil {
         return (i & (-2097152)) == -2097152;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class Header {
         public int bitrate;
         public int channels;

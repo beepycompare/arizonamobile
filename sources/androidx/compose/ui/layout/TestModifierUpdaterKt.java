@@ -21,43 +21,52 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TestModifierUpdater.kt */
-@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a!\u0010\u0000\u001a\u00020\u00012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00010\u0003H\u0007¢\u0006\u0002\u0010\u0005¨\u0006\u0006"}, d2 = {"TestModifierUpdaterLayout", "", "onAttached", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/TestModifierUpdater;", "(Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "ui_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a!\u0010\u0000\u001a\u00020\u00012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00010\u0003H\u0007¢\u0006\u0002\u0010\u0005¨\u0006\u0006"}, d2 = {"TestModifierUpdaterLayout", "", "onAttached", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/TestModifierUpdater;", "(Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TestModifierUpdaterKt {
     @Deprecated(level = DeprecationLevel.ERROR, message = "It is a test API, do not use it in the real applications")
     public static final void TestModifierUpdaterLayout(final Function1<? super TestModifierUpdater, Unit> function1, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(-1673066036);
-        ComposerKt.sourceInformation(startRestartGroup, "C(TestModifierUpdaterLayout)49@1764L23,53@1919L278:TestModifierUpdater.kt#80mrfh");
+        ComposerKt.sourceInformation(startRestartGroup, "C(TestModifierUpdaterLayout)49@1770L27,50@1833L102,53@1940L279:TestModifierUpdater.kt#80mrfh");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(function1) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
-        if (startRestartGroup.shouldExecute((i2 & 3) != 2, i2 & 1)) {
+        if (!startRestartGroup.shouldExecute((i2 & 3) != 2, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1673066036, i2, -1, "androidx.compose.ui.layout.TestModifierUpdaterLayout (TestModifierUpdater.kt:48)");
             }
-            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
-            TestModifierUpdaterKt$TestModifierUpdaterLayout$measurePolicy$1 testModifierUpdaterKt$TestModifierUpdaterLayout$measurePolicy$1 = new MeasurePolicy() { // from class: androidx.compose.ui.layout.TestModifierUpdaterKt$TestModifierUpdaterLayout$measurePolicy$1
-                @Override // androidx.compose.ui.layout.MeasurePolicy
-                /* renamed from: measure-3p2s80s */
-                public final MeasureResult mo42measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-                    return MeasureScope.layout$default(measureScope, Constraints.m6637getMaxWidthimpl(j), Constraints.m6636getMaxHeightimpl(j), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.TestModifierUpdaterKt$TestModifierUpdaterLayout$measurePolicy$1.1
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(Placeable.PlacementScope placementScope) {
-                        }
+            int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1498679502, "CC(remember):TestModifierUpdater.kt#9igjgp");
+            TestModifierUpdaterKt$TestModifierUpdaterLayout$measurePolicy$1$1 rememberedValue = startRestartGroup.rememberedValue();
+            if (rememberedValue == Composer.Companion.getEmpty()) {
+                rememberedValue = new MeasurePolicy() { // from class: androidx.compose.ui.layout.TestModifierUpdaterKt$TestModifierUpdaterLayout$measurePolicy$1$1
+                    @Override // androidx.compose.ui.layout.MeasurePolicy
+                    /* renamed from: measure-3p2s80s */
+                    public final MeasureResult mo42measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+                        return MeasureScope.layout$default(measureScope, Constraints.m7204getMaxWidthimpl(j), Constraints.m7203getMaxHeightimpl(j), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.TestModifierUpdaterKt$TestModifierUpdaterLayout$measurePolicy$1$1.1
+                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                            public final void invoke2(Placeable.PlacementScope placementScope) {
+                            }
 
-                        @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                            invoke2(placementScope);
-                            return Unit.INSTANCE;
-                        }
-                    }, 4, null);
-                }
-            };
+                            @Override // kotlin.jvm.functions.Function1
+                            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
+                                invoke2(placementScope);
+                                return Unit.INSTANCE;
+                            }
+                        }, 4, null);
+                    }
+                };
+                startRestartGroup.updateRememberedValue(rememberedValue);
+            }
+            MeasurePolicy measurePolicy = (MeasurePolicy) rememberedValue;
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Function0<LayoutNode> constructor$ui_release = LayoutNode.Companion.getConstructor$ui_release();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1886828752, "CC(ComposeNode):Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1886828752, "CC(ComposeNode)N(factory,update):Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -67,14 +76,14 @@ public final class TestModifierUpdaterKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-            Updater.m3527setimpl(m3520constructorimpl, testModifierUpdaterKt$TestModifierUpdaterLayout$measurePolicy$1, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+            Updater.m3862setimpl(m3855constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3520constructorimpl.getInserting() || !Intrinsics.areEqual(m3520constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m3520constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3520constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3524initimpl(m3520constructorimpl, new Function1<LayoutNode, Unit>() { // from class: androidx.compose.ui.layout.TestModifierUpdaterKt$TestModifierUpdaterLayout$1$1
+            Updater.m3859initimpl(m3855constructorimpl, new Function1<LayoutNode, Unit>() { // from class: androidx.compose.ui.layout.TestModifierUpdaterKt$TestModifierUpdaterLayout$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -98,8 +107,6 @@ public final class TestModifierUpdaterKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {

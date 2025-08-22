@@ -1,19 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
+import io.appmetrica.analytics.networktasks.internal.NetworkServiceLocator;
 /* loaded from: classes4.dex */
-public abstract class Ja {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Ei f503a;
-
-    public Ja(Ei ei) {
-        this.f503a = ei;
+public final class Ja implements InterfaceC0712xk {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0712xk
+    public final void onCreate() {
+        NetworkServiceLocator.getInstance().onCreate();
     }
 
-    public final Ei a() {
-        return this.f503a;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0712xk
+    public final void onDestroy() {
+        NetworkServiceLocator.getInstance().onDestroy();
     }
-
-    public abstract void a(List list);
 }

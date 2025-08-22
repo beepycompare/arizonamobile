@@ -115,14 +115,22 @@ public class NotificationCompat {
     public static final String EXTRA_PICTURE_CONTENT_DESCRIPTION = "android.pictureContentDescription";
     public static final String EXTRA_PICTURE_ICON = "android.pictureIcon";
     public static final String EXTRA_PROGRESS = "android.progress";
+    public static final String EXTRA_PROGRESS_END_ICON = "android.progressEndIcon";
     public static final String EXTRA_PROGRESS_INDETERMINATE = "android.progressIndeterminate";
     public static final String EXTRA_PROGRESS_MAX = "android.progressMax";
+    public static final String EXTRA_PROGRESS_POINTS = "android.progressPoints";
+    public static final String EXTRA_PROGRESS_SEGMENTS = "android.progressSegments";
+    public static final String EXTRA_PROGRESS_START_ICON = "android.progressStartIcon";
+    public static final String EXTRA_PROGRESS_TRACKER_ICON = "android.progressTrackerIcon";
     public static final String EXTRA_REMOTE_INPUT_HISTORY = "android.remoteInputHistory";
+    public static final String EXTRA_REQUEST_PROMOTED_ONGOING = "android.requestPromotedOngoing";
     public static final String EXTRA_SELF_DISPLAY_NAME = "android.selfDisplayName";
+    public static final String EXTRA_SHORT_CRITICAL_TEXT = "android.shortCriticalText";
     public static final String EXTRA_SHOW_BIG_PICTURE_WHEN_COLLAPSED = "android.showBigPictureWhenCollapsed";
     public static final String EXTRA_SHOW_CHRONOMETER = "android.showChronometer";
     public static final String EXTRA_SHOW_WHEN = "android.showWhen";
     public static final String EXTRA_SMALL_ICON = "android.icon";
+    public static final String EXTRA_STYLED_BY_PROGRESS = "android.styledByProgress";
     public static final String EXTRA_SUB_TEXT = "android.subText";
     public static final String EXTRA_SUMMARY_TEXT = "android.summaryText";
     public static final String EXTRA_TEMPLATE = "android.template";
@@ -238,6 +246,7 @@ public class NotificationCompat {
         Notification mPublicVersion;
         CharSequence[] mRemoteInputHistory;
         CharSequence mSettingsText;
+        String mShortCriticalText;
         String mShortcutId;
         boolean mShowWhen;
         boolean mSilent;
@@ -287,10 +296,13 @@ public class NotificationCompat {
             if (bundle.containsKey(NotificationCompat.EXTRA_CHRONOMETER_COUNT_DOWN)) {
                 setChronometerCountDown(bundle.getBoolean(NotificationCompat.EXTRA_CHRONOMETER_COUNT_DOWN));
             }
-            if (Build.VERSION.SDK_INT < 26 || !bundle.containsKey(NotificationCompat.EXTRA_COLORIZED)) {
+            if (Build.VERSION.SDK_INT >= 26 && bundle.containsKey(NotificationCompat.EXTRA_COLORIZED)) {
+                setColorized(bundle.getBoolean(NotificationCompat.EXTRA_COLORIZED));
+            }
+            if (Build.VERSION.SDK_INT < 36 || !bundle.containsKey(NotificationCompat.EXTRA_SHORT_CRITICAL_TEXT)) {
                 return;
             }
-            setColorized(bundle.getBoolean(NotificationCompat.EXTRA_COLORIZED));
+            setShortCriticalText(bundle.getString(NotificationCompat.EXTRA_SHORT_CRITICAL_TEXT));
         }
 
         private static Bundle getExtrasWithoutDuplicateData(Notification notification, Style style) {
@@ -302,6 +314,9 @@ public class NotificationCompat {
             bundle.remove(NotificationCompat.EXTRA_TEXT);
             bundle.remove(NotificationCompat.EXTRA_INFO_TEXT);
             bundle.remove(NotificationCompat.EXTRA_SUB_TEXT);
+            if (Build.VERSION.SDK_INT >= 36) {
+                bundle.remove(NotificationCompat.EXTRA_SHORT_CRITICAL_TEXT);
+            }
             bundle.remove(NotificationCompat.EXTRA_CHANNEL_ID);
             bundle.remove(NotificationCompat.EXTRA_CHANNEL_GROUP_ID);
             bundle.remove(NotificationCompat.EXTRA_SHOW_WHEN);
@@ -436,6 +451,19 @@ public class NotificationCompat {
 
         public Builder setContentInfo(CharSequence charSequence) {
             this.mContentInfo = limitCharSequenceLength(charSequence);
+            return this;
+        }
+
+        public Builder setShortCriticalText(String str) {
+            this.mShortCriticalText = str;
+            if (Build.VERSION.SDK_INT < 36) {
+                getExtras().putString(NotificationCompat.EXTRA_SHORT_CRITICAL_TEXT, str);
+            }
+            return this;
+        }
+
+        public Builder setRequestPromotedOngoing(boolean z) {
+            getExtras().putBoolean(NotificationCompat.EXTRA_REQUEST_PROMOTED_ONGOING, z);
             return this;
         }
 
@@ -1028,6 +1056,9 @@ public class NotificationCompat {
             if (str.equals(Notification.InboxStyle.class.getName())) {
                 return new InboxStyle();
             }
+            if (Build.VERSION.SDK_INT >= 36 && str.equals(Notification.ProgressStyle.class.getName())) {
+                return new ProgressStyle();
+            }
             if (str.equals(Notification.MessagingStyle.class.getName())) {
                 return new MessagingStyle();
             }
@@ -1042,55 +1073,63 @@ public class NotificationCompat {
                 str.hashCode();
                 char c = 65535;
                 switch (str.hashCode()) {
+                    case -1915466044:
+                        if (str.equals("androidx.core.app.NotificationCompat$ProgressStyle")) {
+                            c = 0;
+                            break;
+                        }
+                        break;
                     case -716705180:
                         if (str.equals("androidx.core.app.NotificationCompat$DecoratedCustomViewStyle")) {
-                            c = 0;
+                            c = 1;
                             break;
                         }
                         break;
                     case -171946061:
                         if (str.equals("androidx.core.app.NotificationCompat$BigPictureStyle")) {
-                            c = 1;
+                            c = 2;
                             break;
                         }
                         break;
                     case 714386739:
                         if (str.equals("androidx.core.app.NotificationCompat$CallStyle")) {
-                            c = 2;
+                            c = 3;
                             break;
                         }
                         break;
                     case 912942987:
                         if (str.equals("androidx.core.app.NotificationCompat$InboxStyle")) {
-                            c = 3;
+                            c = 4;
                             break;
                         }
                         break;
                     case 919595044:
                         if (str.equals("androidx.core.app.NotificationCompat$BigTextStyle")) {
-                            c = 4;
+                            c = 5;
                             break;
                         }
                         break;
                     case 2090799565:
                         if (str.equals("androidx.core.app.NotificationCompat$MessagingStyle")) {
-                            c = 5;
+                            c = 6;
                             break;
                         }
                         break;
                 }
                 switch (c) {
                     case 0:
-                        return new DecoratedCustomViewStyle();
+                        return new ProgressStyle();
                     case 1:
-                        return new BigPictureStyle();
+                        return new DecoratedCustomViewStyle();
                     case 2:
-                        return new CallStyle();
+                        return new BigPictureStyle();
                     case 3:
-                        return new InboxStyle();
+                        return new CallStyle();
                     case 4:
-                        return new BigTextStyle();
+                        return new InboxStyle();
                     case 5:
+                        return new BigTextStyle();
+                    case 6:
                         return new MessagingStyle();
                     default:
                         return null;
@@ -1118,6 +1157,9 @@ public class NotificationCompat {
             }
             if (bundle.containsKey(NotificationCompat.EXTRA_CALL_TYPE)) {
                 return new CallStyle();
+            }
+            if (bundle.containsKey(NotificationCompat.EXTRA_PROGRESS_SEGMENTS) || bundle.containsKey(NotificationCompat.EXTRA_PROGRESS_POINTS)) {
+                return new ProgressStyle();
             }
             return constructCompatStyleByPlatformName(bundle.getString(NotificationCompat.EXTRA_TEMPLATE));
         }
@@ -2280,7 +2322,7 @@ public class NotificationCompat {
                 for (Action action : arrayList2) {
                     if (action.isContextual()) {
                         arrayList.add(action);
-                    } else if (!isActionAddedByCallStyle(action) && i > 1) {
+                    } else if (!isActionAddedByCallStyle(action)) {
                         arrayList.add(action);
                         i--;
                     }
@@ -2477,6 +2519,430 @@ public class NotificationCompat {
         protected void clearCompatExtraKeys(Bundle bundle) {
             super.clearCompatExtraKeys(bundle);
             bundle.remove(NotificationCompat.EXTRA_TEXT_LINES);
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    public static class ProgressStyle extends Style {
+        private static final int DEFAULT_PROGRESS_MAX = 100;
+        private static final String KEY_ELEMENT_COLOR = "colorInt";
+        private static final String KEY_ELEMENT_ID = "id";
+        private static final String KEY_POINT_POSITION = "position";
+        private static final String KEY_SEGMENT_LENGTH = "length";
+        private static final int MAX_PROGRESS_POINT_LIMIT = 4;
+        private static final String TEMPLATE_CLASS_NAME = "androidx.core.app.NotificationCompat$ProgressStyle";
+        private IconCompat mEndIcon;
+        private boolean mIndeterminate;
+        private IconCompat mStartIcon;
+        private IconCompat mTrackerIcon;
+        private List<Segment> mProgressSegments = new ArrayList();
+        private List<Point> mProgressPoints = new ArrayList();
+        private int mProgress = 0;
+        private boolean mIsStyledByProgress = true;
+
+        @Override // androidx.core.app.NotificationCompat.Style
+        public boolean displayCustomViewInline() {
+            return true;
+        }
+
+        public List<Segment> getProgressSegments() {
+            return this.mProgressSegments;
+        }
+
+        public ProgressStyle setProgressSegments(List<Segment> list) {
+            if (this.mProgressSegments == null) {
+                this.mProgressSegments = new ArrayList();
+            }
+            this.mProgressSegments.clear();
+            for (Segment segment : list) {
+                addProgressSegment(segment);
+            }
+            return this;
+        }
+
+        public ProgressStyle addProgressSegment(Segment segment) {
+            if (this.mProgressSegments == null) {
+                this.mProgressSegments = new ArrayList();
+            }
+            if (segment.getLength() > 0) {
+                this.mProgressSegments.add(segment);
+            }
+            return this;
+        }
+
+        public List<Point> getProgressPoints() {
+            return this.mProgressPoints;
+        }
+
+        public ProgressStyle setProgressPoints(List<Point> list) {
+            if (this.mProgressPoints == null) {
+                this.mProgressPoints = new ArrayList();
+            }
+            this.mProgressPoints.clear();
+            for (Point point : list) {
+                addProgressPoint(point);
+            }
+            return this;
+        }
+
+        public ProgressStyle addProgressPoint(Point point) {
+            if (this.mProgressPoints == null) {
+                this.mProgressPoints = new ArrayList();
+            }
+            if (point.getPosition() > 0) {
+                this.mProgressPoints.add(point);
+            }
+            return this;
+        }
+
+        public int getProgress() {
+            return this.mProgress;
+        }
+
+        public ProgressStyle setProgress(int i) {
+            this.mProgress = i;
+            return this;
+        }
+
+        public int getProgressMax() {
+            List<Segment> list = this.mProgressSegments;
+            if (list == null || list.isEmpty()) {
+                return 100;
+            }
+            int i = 0;
+            int i2 = 0;
+            for (int i3 = 0; i3 < list.size(); i3++) {
+                int length = list.get(i3).getLength();
+                if (length > 0) {
+                    try {
+                        i2 = Math.addExact(i2, length);
+                        i++;
+                    } catch (ArithmeticException unused) {
+                        return 100;
+                    }
+                }
+            }
+            if (i == 0) {
+                return 100;
+            }
+            return i2;
+        }
+
+        public boolean isProgressIndeterminate() {
+            return this.mIndeterminate;
+        }
+
+        public ProgressStyle setProgressIndeterminate(boolean z) {
+            this.mIndeterminate = z;
+            return this;
+        }
+
+        public boolean isStyledByProgress() {
+            return this.mIsStyledByProgress;
+        }
+
+        public ProgressStyle setStyledByProgress(boolean z) {
+            this.mIsStyledByProgress = z;
+            return this;
+        }
+
+        public IconCompat getProgressTrackerIcon() {
+            return this.mTrackerIcon;
+        }
+
+        public ProgressStyle setProgressTrackerIcon(IconCompat iconCompat) {
+            this.mTrackerIcon = iconCompat;
+            return this;
+        }
+
+        public IconCompat getProgressStartIcon() {
+            return this.mStartIcon;
+        }
+
+        public ProgressStyle setProgressStartIcon(IconCompat iconCompat) {
+            this.mStartIcon = iconCompat;
+            return this;
+        }
+
+        public IconCompat getProgressEndIcon() {
+            return this.mEndIcon;
+        }
+
+        public ProgressStyle setProgressEndIcon(IconCompat iconCompat) {
+            this.mEndIcon = iconCompat;
+            return this;
+        }
+
+        @Override // androidx.core.app.NotificationCompat.Style
+        protected String getClassName() {
+            return TEMPLATE_CLASS_NAME;
+        }
+
+        @Override // androidx.core.app.NotificationCompat.Style
+        public void apply(NotificationBuilderWithBuilderAccessor notificationBuilderWithBuilderAccessor) {
+            Notification.Builder builder = notificationBuilderWithBuilderAccessor.getBuilder();
+            if (Build.VERSION.SDK_INT >= 36) {
+                Context context = notificationBuilderWithBuilderAccessor instanceof NotificationCompatBuilder ? ((NotificationCompatBuilder) notificationBuilderWithBuilderAccessor).getContext() : null;
+                Notification.ProgressStyle progressStyle = new Notification.ProgressStyle();
+                Api36Impl.setStyledByProgress(progressStyle, this.mIsStyledByProgress);
+                Api36Impl.setProgress(progressStyle, this.mProgress);
+                Api36Impl.setProgressIndeterminate(progressStyle, this.mIndeterminate);
+                IconCompat iconCompat = this.mStartIcon;
+                Api36Impl.setProgressStartIcon(progressStyle, iconCompat != null ? iconCompat.toIcon(context) : null);
+                IconCompat iconCompat2 = this.mEndIcon;
+                Api36Impl.setProgressEndIcon(progressStyle, iconCompat2 != null ? iconCompat2.toIcon(context) : null);
+                IconCompat iconCompat3 = this.mTrackerIcon;
+                Api36Impl.setProgressTrackerIcon(progressStyle, iconCompat3 != null ? iconCompat3.toIcon(context) : null);
+                Api36Impl.setProgressPoints(progressStyle, this.mProgressPoints);
+                Api36Impl.setProgressSegments(progressStyle, this.mProgressSegments);
+                builder.setStyle(progressStyle);
+                return;
+            }
+            int progressMax = getProgressMax();
+            builder.setProgress(progressMax, Math.min(this.mProgress, progressMax), this.mIndeterminate);
+        }
+
+        @Override // androidx.core.app.NotificationCompat.Style
+        public void addCompatExtras(Bundle bundle) {
+            super.addCompatExtras(bundle);
+            if (Build.VERSION.SDK_INT < 36) {
+                bundle.putParcelableArrayList(NotificationCompat.EXTRA_PROGRESS_SEGMENTS, getProgressSegmentsAsBundleList(this.mProgressSegments));
+                bundle.putParcelableArrayList(NotificationCompat.EXTRA_PROGRESS_POINTS, getProgressPointsAsBundleList(this.mProgressPoints));
+                bundle.putInt(NotificationCompat.EXTRA_PROGRESS, this.mProgress);
+                bundle.putBoolean(NotificationCompat.EXTRA_PROGRESS_INDETERMINATE, this.mIndeterminate);
+                bundle.putInt(NotificationCompat.EXTRA_PROGRESS_MAX, getProgressMax());
+                bundle.putBoolean(NotificationCompat.EXTRA_STYLED_BY_PROGRESS, this.mIsStyledByProgress);
+                Context context = this.mBuilder != null ? this.mBuilder.mContext : null;
+                if (context != null) {
+                    IconCompat iconCompat = this.mTrackerIcon;
+                    if (iconCompat != null) {
+                        bundle.putParcelable(NotificationCompat.EXTRA_PROGRESS_TRACKER_ICON, iconCompat.toIcon(context));
+                    } else {
+                        bundle.remove(NotificationCompat.EXTRA_PROGRESS_TRACKER_ICON);
+                    }
+                    IconCompat iconCompat2 = this.mStartIcon;
+                    if (iconCompat2 != null) {
+                        bundle.putParcelable(NotificationCompat.EXTRA_PROGRESS_START_ICON, iconCompat2.toIcon(context));
+                    } else {
+                        bundle.remove(NotificationCompat.EXTRA_PROGRESS_START_ICON);
+                    }
+                    IconCompat iconCompat3 = this.mEndIcon;
+                    if (iconCompat3 != null) {
+                        bundle.putParcelable(NotificationCompat.EXTRA_PROGRESS_END_ICON, iconCompat3.toIcon(context));
+                    } else {
+                        bundle.remove(NotificationCompat.EXTRA_PROGRESS_END_ICON);
+                    }
+                }
+            }
+        }
+
+        @Override // androidx.core.app.NotificationCompat.Style
+        protected void restoreFromCompatExtras(Bundle bundle) {
+            super.restoreFromCompatExtras(bundle);
+            this.mProgressSegments = getProgressSegmentsFromBundleList(androidx.core.os.BundleCompat.getParcelableArrayList(bundle, NotificationCompat.EXTRA_PROGRESS_SEGMENTS, Bundle.class));
+            this.mProgress = bundle.getInt(NotificationCompat.EXTRA_PROGRESS, 0);
+            this.mIndeterminate = bundle.getBoolean(NotificationCompat.EXTRA_PROGRESS_INDETERMINATE, false);
+            this.mIsStyledByProgress = bundle.getBoolean(NotificationCompat.EXTRA_STYLED_BY_PROGRESS, true);
+            this.mProgressPoints = getProgressPointsFromBundleList(androidx.core.os.BundleCompat.getParcelableArrayList(bundle, NotificationCompat.EXTRA_PROGRESS_POINTS, Bundle.class));
+            this.mTrackerIcon = asIconCompat((Parcelable) androidx.core.os.BundleCompat.getParcelable(bundle, NotificationCompat.EXTRA_PROGRESS_TRACKER_ICON, Icon.class));
+            this.mStartIcon = asIconCompat((Parcelable) androidx.core.os.BundleCompat.getParcelable(bundle, NotificationCompat.EXTRA_PROGRESS_START_ICON, Icon.class));
+            this.mEndIcon = asIconCompat((Parcelable) androidx.core.os.BundleCompat.getParcelable(bundle, NotificationCompat.EXTRA_PROGRESS_END_ICON, Icon.class));
+        }
+
+        @Override // androidx.core.app.NotificationCompat.Style
+        protected void clearCompatExtraKeys(Bundle bundle) {
+            super.clearCompatExtraKeys(bundle);
+            bundle.remove(NotificationCompat.EXTRA_PROGRESS_SEGMENTS);
+            bundle.remove(NotificationCompat.EXTRA_PROGRESS);
+            bundle.remove(NotificationCompat.EXTRA_STYLED_BY_PROGRESS);
+            bundle.remove(NotificationCompat.EXTRA_PROGRESS_TRACKER_ICON);
+            bundle.remove(NotificationCompat.EXTRA_PROGRESS_START_ICON);
+            bundle.remove(NotificationCompat.EXTRA_PROGRESS_END_ICON);
+            bundle.remove(NotificationCompat.EXTRA_PROGRESS_POINTS);
+            bundle.remove(NotificationCompat.EXTRA_PROGRESS_INDETERMINATE);
+        }
+
+        private static IconCompat asIconCompat(Parcelable parcelable) {
+            if (parcelable != null) {
+                if (parcelable instanceof Icon) {
+                    return IconCompat.createFromIcon((Icon) parcelable);
+                }
+                if (parcelable instanceof Bitmap) {
+                    return IconCompat.createWithBitmap((Bitmap) parcelable);
+                }
+                return null;
+            }
+            return null;
+        }
+
+        private static List<Segment> getProgressSegmentsFromBundleList(List<Bundle> list) {
+            ArrayList arrayList = new ArrayList();
+            if (list != null && !list.isEmpty()) {
+                for (int i = 0; i < list.size(); i++) {
+                    Bundle bundle = list.get(i);
+                    int i2 = bundle.getInt(KEY_SEGMENT_LENGTH);
+                    if (i2 > 0) {
+                        arrayList.add(new Segment(i2).setId(bundle.getInt("id")).setColor(bundle.getInt(KEY_ELEMENT_COLOR, 0)));
+                    }
+                }
+            }
+            return arrayList;
+        }
+
+        private static ArrayList<Bundle> getProgressPointsAsBundleList(List<Point> list) {
+            ArrayList<Bundle> arrayList = new ArrayList<>();
+            if (list != null && !list.isEmpty()) {
+                for (int i = 0; i < list.size(); i++) {
+                    Point point = list.get(i);
+                    if (point.getPosition() >= 0) {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt(KEY_POINT_POSITION, point.getPosition());
+                        bundle.putInt("id", point.getId());
+                        bundle.putInt(KEY_ELEMENT_COLOR, point.getColor());
+                        arrayList.add(bundle);
+                    }
+                }
+            }
+            return arrayList;
+        }
+
+        private static List<Point> getProgressPointsFromBundleList(List<Bundle> list) {
+            ArrayList arrayList = new ArrayList();
+            if (list != null && !list.isEmpty()) {
+                for (int i = 0; i < list.size(); i++) {
+                    Bundle bundle = list.get(i);
+                    int i2 = bundle.getInt(KEY_POINT_POSITION);
+                    if (i2 >= 0) {
+                        arrayList.add(new Point(i2).setId(bundle.getInt("id")).setColor(bundle.getInt(KEY_ELEMENT_COLOR, 0)));
+                    }
+                }
+            }
+            return arrayList;
+        }
+
+        private static ArrayList<Bundle> getProgressSegmentsAsBundleList(List<Segment> list) {
+            ArrayList<Bundle> arrayList = new ArrayList<>();
+            if (list != null && !list.isEmpty()) {
+                for (int i = 0; i < list.size(); i++) {
+                    Segment segment = list.get(i);
+                    if (segment.getLength() > 0) {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt(KEY_SEGMENT_LENGTH, segment.getLength());
+                        bundle.putInt("id", segment.getId());
+                        bundle.putInt(KEY_ELEMENT_COLOR, segment.getColor());
+                        arrayList.add(bundle);
+                    }
+                }
+            }
+            return arrayList;
+        }
+
+        /* loaded from: classes2.dex */
+        public static final class Segment {
+            private int mLength;
+            private int mId = 0;
+            private int mColor = 0;
+
+            public Segment(int i) {
+                this.mLength = i;
+            }
+
+            public int getLength() {
+                return this.mLength;
+            }
+
+            public int getId() {
+                return this.mId;
+            }
+
+            public Segment setId(int i) {
+                this.mId = i;
+                return this;
+            }
+
+            public int getColor() {
+                return this.mColor;
+            }
+
+            public Segment setColor(int i) {
+                this.mColor = i;
+                return this;
+            }
+        }
+
+        /* loaded from: classes2.dex */
+        public static final class Point {
+            private int mPosition;
+            private int mId = 0;
+            private int mColor = 0;
+
+            public Point(int i) {
+                this.mPosition = i;
+            }
+
+            public int getPosition() {
+                return this.mPosition;
+            }
+
+            public int getId() {
+                return this.mId;
+            }
+
+            public Point setId(int i) {
+                this.mId = i;
+                return this;
+            }
+
+            public int getColor() {
+                return this.mColor;
+            }
+
+            public Point setColor(int i) {
+                this.mColor = i;
+                return this;
+            }
+        }
+
+        /* loaded from: classes2.dex */
+        private static final class Api36Impl {
+            private Api36Impl() {
+            }
+
+            static void setStyledByProgress(Notification.ProgressStyle progressStyle, boolean z) {
+                progressStyle.setStyledByProgress(z);
+            }
+
+            static void setProgress(Notification.ProgressStyle progressStyle, int i) {
+                progressStyle.setProgress(i);
+            }
+
+            static void setProgressIndeterminate(Notification.ProgressStyle progressStyle, boolean z) {
+                progressStyle.setProgressIndeterminate(z);
+            }
+
+            static void setProgressStartIcon(Notification.ProgressStyle progressStyle, Icon icon) {
+                progressStyle.setProgressStartIcon(icon);
+            }
+
+            static void setProgressEndIcon(Notification.ProgressStyle progressStyle, Icon icon) {
+                progressStyle.setProgressEndIcon(icon);
+            }
+
+            static void setProgressTrackerIcon(Notification.ProgressStyle progressStyle, Icon icon) {
+                progressStyle.setProgressTrackerIcon(icon);
+            }
+
+            static void setProgressPoints(Notification.ProgressStyle progressStyle, List<Point> list) {
+                for (Point point : list) {
+                    progressStyle.addProgressPoint(new Notification.ProgressStyle.Point(point.getPosition()).setColor(point.getColor()).setId(point.getId()));
+                }
+            }
+
+            static void setProgressSegments(Notification.ProgressStyle progressStyle, List<Segment> list) {
+                for (Segment segment : list) {
+                    progressStyle.addProgressSegment(new Notification.ProgressStyle.Segment(segment.getLength()).setColor(segment.getColor()).setId(segment.getId()));
+                }
+            }
         }
     }
 
@@ -3021,7 +3487,7 @@ public class NotificationCompat {
             }
 
             /* renamed from: clone */
-            public WearableExtender m7172clone() {
+            public WearableExtender m7738clone() {
                 WearableExtender wearableExtender = new WearableExtender();
                 wearableExtender.mFlags = this.mFlags;
                 wearableExtender.mInProgressLabel = this.mInProgressLabel;
@@ -3300,7 +3766,7 @@ public class NotificationCompat {
         }
 
         /* renamed from: clone */
-        public WearableExtender m7173clone() {
+        public WearableExtender m7739clone() {
             WearableExtender wearableExtender = new WearableExtender();
             wearableExtender.mActions = new ArrayList<>(this.mActions);
             wearableExtender.mFlags = this.mFlags;
@@ -4408,6 +4874,14 @@ public class NotificationCompat {
         return notification.extras.getCharSequence(EXTRA_SUB_TEXT);
     }
 
+    public static String getShortCriticalText(Notification notification) {
+        return notification.extras.getString(EXTRA_SHORT_CRITICAL_TEXT);
+    }
+
+    public static boolean isRequestPromotedOngoing(Notification notification) {
+        return notification.extras.getBoolean(EXTRA_REQUEST_PROMOTED_ONGOING, false);
+    }
+
     public static String getCategory(Notification notification) {
         return notification.category;
     }
@@ -4532,6 +5006,13 @@ public class NotificationCompat {
             }
         }
         return bitmap;
+    }
+
+    public static boolean hasPromotableCharacteristics(Notification notification) {
+        if (Build.VERSION.SDK_INT >= 36) {
+            return Api36Impl.hasPromotableCharacteristics(notification);
+        }
+        return false;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -4676,6 +5157,16 @@ public class NotificationCompat {
 
         static boolean isAuthenticationRequired(Notification.Action action) {
             return action.isAuthenticationRequired();
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    static class Api36Impl {
+        private Api36Impl() {
+        }
+
+        static boolean hasPromotableCharacteristics(Notification notification) {
+            return notification.hasPromotableCharacteristics();
         }
     }
 }

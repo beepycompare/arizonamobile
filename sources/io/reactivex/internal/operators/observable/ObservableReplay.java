@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableReplay<T> extends ConnectableObservable<T> implements HasUpstreamObservableSource<T>, ResettableConnectable {
     static final BufferSupplier DEFAULT_UNBOUNDED_FACTORY = new UnBoundedFactory();
     final BufferSupplier<T> bufferFactory;
@@ -35,13 +35,13 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     final ObservableSource<T> source;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface BufferSupplier<T> {
         ReplayBuffer<T> call();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface ReplayBuffer<T> {
         void complete();
 
@@ -135,7 +135,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ReplayObserver<T> extends AtomicReference<Disposable> implements Observer<T>, Disposable {
         static final InnerDisposable[] EMPTY = new InnerDisposable[0];
         static final InnerDisposable[] TERMINATED = new InnerDisposable[0];
@@ -261,7 +261,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class InnerDisposable<T> extends AtomicInteger implements Disposable {
         private static final long serialVersionUID = 2728361546769921047L;
         volatile boolean cancelled;
@@ -294,7 +294,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class UnboundedReplayBuffer<T> extends ArrayList<Object> implements ReplayBuffer<T> {
         private static final long serialVersionUID = 7063189396499112664L;
         volatile int size;
@@ -348,7 +348,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class Node extends AtomicReference<Node> {
         private static final long serialVersionUID = 245354315435971818L;
         final Object value;
@@ -358,7 +358,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static abstract class BoundedReplayBuffer<T> extends AtomicReference<Node> implements ReplayBuffer<T> {
         private static final long serialVersionUID = 2346567790059478686L;
         int size;
@@ -498,7 +498,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SizeBoundReplayBuffer<T> extends BoundedReplayBuffer<T> {
         private static final long serialVersionUID = -5898283885385201806L;
         final int limit;
@@ -515,7 +515,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SizeAndTimeBoundReplayBuffer<T> extends BoundedReplayBuffer<T> {
         private static final long serialVersionUID = 3457957419649567404L;
         final int limit;
@@ -622,7 +622,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class UnBoundedFactory implements BufferSupplier<Object> {
         UnBoundedFactory() {
         }
@@ -633,7 +633,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DisposeConsumer<R> implements Consumer<Disposable> {
         private final ObserverResourceWrapper<R> srw;
 
@@ -648,7 +648,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ReplayBufferSupplier<T> implements BufferSupplier<T> {
         private final int bufferSize;
 
@@ -663,7 +663,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ScheduledReplaySupplier<T> implements BufferSupplier<T> {
         private final int bufferSize;
         private final long maxAge;
@@ -684,7 +684,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ReplaySource<T> implements ObservableSource<T> {
         private final BufferSupplier<T> bufferFactory;
         private final AtomicReference<ReplayObserver<T>> curr;
@@ -720,7 +720,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class MulticastReplay<R, U> extends Observable<R> {
         private final Callable<? extends ConnectableObservable<U>> connectableFactory;
         private final Function<? super Observable<U>, ? extends ObservableSource<R>> selector;
@@ -746,7 +746,7 @@ public final class ObservableReplay<T> extends ConnectableObservable<T> implemen
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class Replay<T> extends ConnectableObservable<T> {
         private final ConnectableObservable<T> co;
         private final Observable<T> observable;

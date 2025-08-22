@@ -4,8 +4,9 @@ import androidx.media3.exoplayer.upstream.CmcdData;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.collections.ArraysKt;
+import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SnapshotDoubleIndexHeap.kt */
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0015\n\u0002\b\u0006\n\u0002\u0010\u0016\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u000e\b\u0000\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\u0012\u0010\u000f\u001a\u00020\u00042\n\u0010\u0010\u001a\u00060\u0011j\u0002`\u0012J\b\u0010\u0013\u001a\u00020\u0004H\u0002J\u0010\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0004H\u0002J\u0010\u0010\u0017\u001a\u00020\u00152\u0006\u0010\u0018\u001a\u00020\u0004H\u0002J\u0014\u0010\u0019\u001a\u00020\u00112\f\b\u0002\u0010\u001a\u001a\u00060\u0011j\u0002`\u0012J\u000e\u0010\u001b\u001a\u00020\u00152\u0006\u0010\u0018\u001a\u00020\u0004J\u0010\u0010\u001c\u001a\u00020\u00152\u0006\u0010\u0007\u001a\u00020\u0004H\u0002J\u0010\u0010\u001d\u001a\u00020\u00152\u0006\u0010\u0007\u001a\u00020\u0004H\u0002J\u0018\u0010\u001e\u001a\u00020\u00152\u0006\u0010\u001f\u001a\u00020\u00042\u0006\u0010 \u001a\u00020\u0004H\u0002J\b\u0010!\u001a\u00020\u0015H\u0007J\u001c\u0010\"\u001a\u00020\u00152\u0006\u0010\u0018\u001a\u00020\u00042\n\u0010\u0010\u001a\u00060\u0011j\u0002`\u0012H\u0007R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\t\u001a\u00020\u00042\u0006\u0010\b\u001a\u00020\u0004@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0012\u0010\f\u001a\u00060\rj\u0002`\u000eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;", "", "()V", "firstFreeHandle", "", "handles", "", FirebaseAnalytics.Param.INDEX, "<set-?>", "size", "getSize", "()I", "values", "", "Landroidx/compose/runtime/snapshots/SnapshotIdArray;", "add", "value", "", "Landroidx/compose/runtime/snapshots/SnapshotId;", "allocateHandle", "ensure", "", "atLeast", "freeHandle", "handle", "lowestOrDefault", "default", "remove", "shiftDown", "shiftUp", "swap", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "validate", "validateHandle", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u0016\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0015\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u000e\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001d\u0010\u0011\u001a\u00060\u0012j\u0002`\u00132\f\b\u0002\u0010\u0014\u001a\u00060\u0012j\u0002`\u0013¢\u0006\u0002\u0010\u0015J\u0017\u0010\u0016\u001a\u00020\u00052\n\u0010\u0004\u001a\u00060\u0012j\u0002`\u0013¢\u0006\u0002\u0010\u0017J\u000e\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0005J\b\u0010\u001b\u001a\u00020\u0019H\u0007J!\u0010\u001c\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u00052\n\u0010\u0004\u001a\u00060\u0012j\u0002`\u0013H\u0007¢\u0006\u0002\u0010\u001dJ\u0010\u0010\u001e\u001a\u00020\u00192\u0006\u0010\r\u001a\u00020\u0005H\u0002J\u0010\u0010\u001f\u001a\u00020\u00192\u0006\u0010\r\u001a\u00020\u0005H\u0002J\u0018\u0010 \u001a\u00020\u00192\u0006\u0010!\u001a\u00020\u00052\u0006\u0010\"\u001a\u00020\u0005H\u0002J\u0010\u0010#\u001a\u00020\u00192\u0006\u0010$\u001a\u00020\u0005H\u0002J\b\u0010%\u001a\u00020\u0005H\u0002J\u0010\u0010&\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0005H\u0002R\u001e\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0004\u001a\u00020\u0005@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0014\u0010\t\u001a\u00060\nj\u0002`\u000bX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\fR\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006'"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;", "", "<init>", "()V", "value", "", "size", "getSize", "()I", "values", "", "Landroidx/compose/runtime/snapshots/SnapshotIdArray;", "[J", FirebaseAnalytics.Param.INDEX, "", "handles", "firstFreeHandle", "lowestOrDefault", "", "Landroidx/compose/runtime/snapshots/SnapshotId;", "default", "(J)J", "add", "(J)I", "remove", "", "handle", "validate", "validateHandle", "(IJ)V", "shiftUp", "shiftDown", "swap", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "ensure", "atLeast", "allocateHandle", "freeHandle", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SnapshotDoubleIndexHeap {
     public static final int $stable = 8;
@@ -68,7 +69,7 @@ public final class SnapshotDoubleIndexHeap {
         while (i2 < i) {
             int i3 = i2 + 1;
             long[] jArr = this.values;
-            if (jArr[(i3 >> 1) - 1] > jArr[i2]) {
+            if (Intrinsics.compare(jArr[(i3 >> 1) - 1], jArr[i2]) > 0) {
                 throw new IllegalStateException(("Index " + i2 + " is out of place").toString());
             }
             i2 = i3;
@@ -90,7 +91,7 @@ public final class SnapshotDoubleIndexHeap {
         long j = jArr[i];
         while (i > 0) {
             int i2 = ((i + 1) >> 1) - 1;
-            if (jArr[i2] <= j) {
+            if (Intrinsics.compare(jArr[i2], j) <= 0) {
                 return;
             }
             swap(i2, i);
@@ -104,21 +105,18 @@ public final class SnapshotDoubleIndexHeap {
         while (i < i2) {
             int i3 = (i + 1) << 1;
             int i4 = i3 - 1;
-            if (i3 < this.size) {
-                long j = jArr[i3];
-                if (j < jArr[i4]) {
-                    if (j >= jArr[i]) {
-                        return;
-                    }
-                    swap(i3, i);
-                    i = i3;
+            if (i3 < this.size && Intrinsics.compare(jArr[i3], jArr[i4]) < 0) {
+                if (Intrinsics.compare(jArr[i3], jArr[i]) >= 0) {
+                    return;
                 }
-            }
-            if (jArr[i4] >= jArr[i]) {
+                swap(i3, i);
+                i = i3;
+            } else if (Intrinsics.compare(jArr[i4], jArr[i]) >= 0) {
                 return;
+            } else {
+                swap(i4, i);
+                i = i4;
             }
-            swap(i4, i);
-            i = i4;
         }
     }
 

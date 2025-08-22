@@ -2,7 +2,7 @@ package androidx.media3.extractor.mp3;
 
 import androidx.media3.common.C;
 import androidx.media3.extractor.SeekMap;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 interface Seeker extends SeekMap {
     int getAverageBitrate();
 
@@ -12,7 +12,7 @@ interface Seeker extends SeekMap {
 
     long getTimeUs(long j);
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class UnseekableSeeker extends SeekMap.Unseekable implements Seeker {
         @Override // androidx.media3.extractor.mp3.Seeker
         public int getAverageBitrate() {

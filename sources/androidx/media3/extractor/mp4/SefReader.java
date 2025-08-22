@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class SefReader {
     private static final int LENGTH_OF_ONE_SDR = 12;
     private static final int SAMSUNG_TAIL_SIGNATURE = 1397048916;
@@ -184,7 +184,7 @@ final class SefReader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class DataReference {
         public final int dataType;
         public final int size;

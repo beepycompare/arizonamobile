@@ -18,7 +18,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: Vector.kt */
-@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0000\b\u0000\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\u0016\u0010I\u001a\u00020\u00142\u0006\u0010J\u001a\u00020&2\u0006\u0010K\u001a\u00020\u0001J\b\u0010L\u001a\u00020\u0014H\u0002J\u0012\u0010M\u001a\u00020\u00142\b\u0010N\u001a\u0004\u0018\u00010OH\u0002J\u001a\u0010P\u001a\u00020\u00142\u0006\u0010Q\u001a\u00020;H\u0002ø\u0001\u0000¢\u0006\u0004\bR\u0010SJ\u0010\u0010T\u001a\u00020\u00142\u0006\u0010U\u001a\u00020\u0001H\u0002J\u001e\u0010V\u001a\u00020\u00142\u0006\u0010W\u001a\u00020&2\u0006\u0010X\u001a\u00020&2\u0006\u0010Y\u001a\u00020&J\u0016\u0010Z\u001a\u00020\u00142\u0006\u0010J\u001a\u00020&2\u0006\u0010Y\u001a\u00020&J\b\u0010[\u001a\u00020\u001fH\u0016J\b\u0010\\\u001a\u00020\u0014H\u0002J\b\u0010]\u001a\u00020\u0014H\u0002J\f\u0010^\u001a\u00020\u0014*\u00020_H\u0016R\u0014\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00010\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0005\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R0\u0010\n\u001a\b\u0012\u0004\u0012\u00020\t0\b2\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\b@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u0018\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\u0011R(\u0010\u0012\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u0014\u0018\u00010\u0013X\u0090\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u001d\u001a\u00020\u001a2\u0006\u0010\u001c\u001a\u00020\u001a@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001eR$\u0010 \u001a\u00020\u001f2\u0006\u0010\u0007\u001a\u00020\u001f@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\u0011\u0010%\u001a\u00020&8F¢\u0006\u0006\u001a\u0004\b'\u0010(R$\u0010*\u001a\u00020)2\u0006\u0010\u0007\u001a\u00020)@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b+\u0010,\"\u0004\b-\u0010.R$\u0010/\u001a\u00020)2\u0006\u0010\u0007\u001a\u00020)@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u0010,\"\u0004\b1\u0010.R$\u00102\u001a\u00020)2\u0006\u0010\u0007\u001a\u00020)@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b3\u0010,\"\u0004\b4\u0010.R$\u00105\u001a\u00020)2\u0006\u0010\u0007\u001a\u00020)@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b6\u0010,\"\u0004\b7\u0010.R$\u00108\u001a\u00020)2\u0006\u0010\u0007\u001a\u00020)@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b9\u0010,\"\u0004\b:\u0010.R&\u0010<\u001a\u00020;2\u0006\u0010\u001c\u001a\u00020;@BX\u0086\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010?\u001a\u0004\b=\u0010>R$\u0010@\u001a\u00020)2\u0006\u0010\u0007\u001a\u00020)@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bA\u0010,\"\u0004\bB\u0010.R$\u0010C\u001a\u00020)2\u0006\u0010\u0007\u001a\u00020)@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bD\u0010,\"\u0004\bE\u0010.R\u0014\u0010F\u001a\u00020\u001a8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bG\u0010\u001eR\u001a\u0010H\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006`"}, d2 = {"Landroidx/compose/ui/graphics/vector/GroupComponent;", "Landroidx/compose/ui/graphics/vector/VNode;", "()V", "children", "", "clipPath", "Landroidx/compose/ui/graphics/Path;", "value", "", "Landroidx/compose/ui/graphics/vector/PathNode;", "clipPathData", "getClipPathData", "()Ljava/util/List;", "setClipPathData", "(Ljava/util/List;)V", "groupMatrix", "Landroidx/compose/ui/graphics/Matrix;", "[F", "invalidateListener", "Lkotlin/Function1;", "", "getInvalidateListener$ui_release", "()Lkotlin/jvm/functions/Function1;", "setInvalidateListener$ui_release", "(Lkotlin/jvm/functions/Function1;)V", "isClipPathDirty", "", "isMatrixDirty", "<set-?>", "isTintable", "()Z", "", "name", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "numChildren", "", "getNumChildren", "()I", "", "pivotX", "getPivotX", "()F", "setPivotX", "(F)V", "pivotY", "getPivotY", "setPivotY", Key.ROTATION, "getRotation", "setRotation", "scaleX", "getScaleX", "setScaleX", "scaleY", "getScaleY", "setScaleY", "Landroidx/compose/ui/graphics/Color;", "tintColor", "getTintColor-0d7_KjU", "()J", "J", "translationX", "getTranslationX", "setTranslationX", "translationY", "getTranslationY", "setTranslationY", "willClipPath", "getWillClipPath", "wrappedListener", "insertAt", FirebaseAnalytics.Param.INDEX, "instance", "markNotTintable", "markTintForBrush", "brush", "Landroidx/compose/ui/graphics/Brush;", "markTintForColor", "color", "markTintForColor-8_81llA", "(J)V", "markTintForVNode", "node", "move", "from", TypedValues.TransitionType.S_TO, "count", "remove", "toString", "updateClipPath", "updateMatrix", "draw", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0018\n\u0002\u0010\b\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0012\u001a\u00020\u00132\b\u0010\u0014\u001a\u0004\u0018\u00010\u0015H\u0002J\u0017\u0010\u0016\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\rH\u0002¢\u0006\u0004\b\u0018\u0010\u0019J\u0010\u0010\u001a\u001a\u00020\u00132\u0006\u0010\u001b\u001a\u00020\u0001H\u0002J\b\u0010\u001c\u001a\u00020\u0013H\u0002J\b\u00100\u001a\u00020\u0013H\u0002J\b\u0010T\u001a\u00020\u0013H\u0002J\u0016\u0010U\u001a\u00020\u00132\u0006\u0010V\u001a\u00020P2\u0006\u0010W\u001a\u00020\u0001J\u001e\u0010X\u001a\u00020\u00132\u0006\u0010Y\u001a\u00020P2\u0006\u0010Z\u001a\u00020P2\u0006\u0010[\u001a\u00020PJ\u0016\u0010\\\u001a\u00020\u00132\u0006\u0010V\u001a\u00020P2\u0006\u0010[\u001a\u00020PJ\f\u0010]\u001a\u00020\u0013*\u00020^H\u0016J\b\u0010_\u001a\u000201H\u0016R\u0012\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0006R\u0014\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00010\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u000b\u001a\u00020\n2\u0006\u0010\t\u001a\u00020\n@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR \u0010\u000e\u001a\u00020\r2\u0006\u0010\t\u001a\u00020\r@BX\u0086\u000e¢\u0006\n\n\u0002\u0010\u0011\u001a\u0004\b\u000f\u0010\u0010R0\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u001e0\u001d2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u001e0\u001d@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#R\u0014\u0010$\u001a\u00020\n8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b%\u0010\fR\u000e\u0010&\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010'\u001a\u0004\u0018\u00010(X\u0082\u000e¢\u0006\u0002\n\u0000R(\u0010)\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u0013\u0018\u00010*X\u0090\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b+\u0010,\"\u0004\b-\u0010.R\u001a\u0010/\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00130*X\u0082\u0004¢\u0006\u0002\n\u0000R$\u00102\u001a\u0002012\u0006\u0010\t\u001a\u000201@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b3\u00104\"\u0004\b5\u00106R$\u00108\u001a\u0002072\u0006\u0010\t\u001a\u000207@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b9\u0010:\"\u0004\b;\u0010<R$\u0010=\u001a\u0002072\u0006\u0010\t\u001a\u000207@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b>\u0010:\"\u0004\b?\u0010<R$\u0010@\u001a\u0002072\u0006\u0010\t\u001a\u000207@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bA\u0010:\"\u0004\bB\u0010<R$\u0010C\u001a\u0002072\u0006\u0010\t\u001a\u000207@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bD\u0010:\"\u0004\bE\u0010<R$\u0010F\u001a\u0002072\u0006\u0010\t\u001a\u000207@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bG\u0010:\"\u0004\bH\u0010<R$\u0010I\u001a\u0002072\u0006\u0010\t\u001a\u000207@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bJ\u0010:\"\u0004\bK\u0010<R$\u0010L\u001a\u0002072\u0006\u0010\t\u001a\u000207@FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bM\u0010:\"\u0004\bN\u0010<R\u0011\u0010O\u001a\u00020P8F¢\u0006\u0006\u001a\u0004\bQ\u0010RR\u000e\u0010S\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006`"}, d2 = {"Landroidx/compose/ui/graphics/vector/GroupComponent;", "Landroidx/compose/ui/graphics/vector/VNode;", "<init>", "()V", "groupMatrix", "Landroidx/compose/ui/graphics/Matrix;", "[F", "children", "", "value", "", "isTintable", "()Z", "Landroidx/compose/ui/graphics/Color;", "tintColor", "getTintColor-0d7_KjU", "()J", "J", "markTintForBrush", "", "brush", "Landroidx/compose/ui/graphics/Brush;", "markTintForColor", "color", "markTintForColor-8_81llA", "(J)V", "markTintForVNode", "node", "markNotTintable", "", "Landroidx/compose/ui/graphics/vector/PathNode;", "clipPathData", "getClipPathData", "()Ljava/util/List;", "setClipPathData", "(Ljava/util/List;)V", "willClipPath", "getWillClipPath", "isClipPathDirty", "clipPath", "Landroidx/compose/ui/graphics/Path;", "invalidateListener", "Lkotlin/Function1;", "getInvalidateListener$ui_release", "()Lkotlin/jvm/functions/Function1;", "setInvalidateListener$ui_release", "(Lkotlin/jvm/functions/Function1;)V", "wrappedListener", "updateClipPath", "", "name", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "", Key.ROTATION, "getRotation", "()F", "setRotation", "(F)V", "pivotX", "getPivotX", "setPivotX", "pivotY", "getPivotY", "setPivotY", "scaleX", "getScaleX", "setScaleX", "scaleY", "getScaleY", "setScaleY", "translationX", "getTranslationX", "setTranslationX", "translationY", "getTranslationY", "setTranslationY", "numChildren", "", "getNumChildren", "()I", "isMatrixDirty", "updateMatrix", "insertAt", FirebaseAnalytics.Param.INDEX, "instance", "move", "from", TypedValues.TransitionType.S_TO, "count", "remove", "draw", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "toString", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class GroupComponent extends VNode {
     public static final int $stable = 8;
@@ -45,7 +45,7 @@ public final class GroupComponent extends VNode {
         super(null);
         this.children = new ArrayList();
         this.isTintable = true;
-        this.tintColor = Color.Companion.m4114getUnspecified0d7_KjU();
+        this.tintColor = Color.Companion.m4573getUnspecified0d7_KjU();
         this.clipPathData = VectorKt.getEmptyPath();
         this.isClipPathDirty = true;
         this.wrappedListener = new Function1<VNode, Unit>() { // from class: androidx.compose.ui.graphics.vector.GroupComponent$wrappedListener$1
@@ -80,14 +80,14 @@ public final class GroupComponent extends VNode {
     }
 
     /* renamed from: getTintColor-0d7_KjU  reason: not valid java name */
-    public final long m4770getTintColor0d7_KjU() {
+    public final long m5268getTintColor0d7_KjU() {
         return this.tintColor;
     }
 
     private final void markTintForBrush(Brush brush) {
         if (this.isTintable && brush != null) {
             if (brush instanceof SolidColor) {
-                m4769markTintForColor8_81llA(((SolidColor) brush).m4414getValue0d7_KjU());
+                m5267markTintForColor8_81llA(((SolidColor) brush).m4889getValue0d7_KjU());
             } else {
                 markNotTintable();
             }
@@ -95,12 +95,12 @@ public final class GroupComponent extends VNode {
     }
 
     /* renamed from: markTintForColor-8_81llA  reason: not valid java name */
-    private final void m4769markTintForColor8_81llA(long j) {
+    private final void m5267markTintForColor8_81llA(long j) {
         if (this.isTintable && j != 16) {
             long j2 = this.tintColor;
             if (j2 == 16) {
                 this.tintColor = j;
-            } else if (VectorKt.m4792rgbEqualOWjLjI(j2, j)) {
+            } else if (VectorKt.m5290rgbEqualOWjLjI(j2, j)) {
             } else {
                 markNotTintable();
             }
@@ -116,7 +116,7 @@ public final class GroupComponent extends VNode {
         } else if (vNode instanceof GroupComponent) {
             GroupComponent groupComponent = (GroupComponent) vNode;
             if (groupComponent.isTintable && this.isTintable) {
-                m4769markTintForColor8_81llA(groupComponent.tintColor);
+                m5267markTintForColor8_81llA(groupComponent.tintColor);
             } else {
                 markNotTintable();
             }
@@ -125,7 +125,7 @@ public final class GroupComponent extends VNode {
 
     private final void markNotTintable() {
         this.isTintable = false;
-        this.tintColor = Color.Companion.m4114getUnspecified0d7_KjU();
+        this.tintColor = Color.Companion.m4573getUnspecified0d7_KjU();
     }
 
     public final List<PathNode> getClipPathData() {
@@ -249,16 +249,16 @@ public final class GroupComponent extends VNode {
     private final void updateMatrix() {
         float[] fArr = this.groupMatrix;
         if (fArr == null) {
-            fArr = Matrix.m4309constructorimpl$default(null, 1, null);
+            fArr = Matrix.m4779constructorimpl$default(null, 1, null);
             this.groupMatrix = fArr;
         } else {
-            Matrix.m4318resetimpl(fArr);
+            Matrix.m4788resetimpl(fArr);
         }
         float[] fArr2 = fArr;
-        Matrix.m4331translateimpl$default(fArr2, this.pivotX + this.translationX, this.pivotY + this.translationY, 0.0f, 4, null);
-        Matrix.m4323rotateZimpl(fArr2, this.rotation);
-        Matrix.m4324scaleimpl(fArr2, this.scaleX, this.scaleY, 1.0f);
-        Matrix.m4331translateimpl$default(fArr2, -this.pivotX, -this.pivotY, 0.0f, 4, null);
+        Matrix.m4801translateimpl$default(fArr2, this.pivotX + this.translationX, this.pivotY + this.translationY, 0.0f, 4, null);
+        Matrix.m4793rotateZimpl(fArr2, this.rotation);
+        Matrix.m4794scaleimpl(fArr2, this.scaleX, this.scaleY, 1.0f);
+        Matrix.m4801translateimpl$default(fArr2, -this.pivotX, -this.pivotY, 0.0f, 4, null);
     }
 
     public final void insertAt(int i, VNode vNode) {
@@ -312,17 +312,17 @@ public final class GroupComponent extends VNode {
             this.isClipPathDirty = false;
         }
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo4561getSizeNHjbRc = drawContext.mo4561getSizeNHjbRc();
+        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
             DrawTransform transform = drawContext.getTransform();
             float[] fArr = this.groupMatrix;
             if (fArr != null) {
-                transform.mo4569transform58bKbWc((fArr != null ? Matrix.m4307boximpl(fArr) : null).m4332unboximpl());
+                transform.mo5045transform58bKbWc((fArr != null ? Matrix.m4777boximpl(fArr) : null).m4802unboximpl());
             }
             Path path = this.clipPath;
             if (getWillClipPath() && path != null) {
-                DrawTransform.m4696clipPathmtrdDE$default(transform, path, 0, 2, null);
+                DrawTransform.m5172clipPathmtrdDE$default(transform, path, 0, 2, null);
             }
             List<VNode> list = this.children;
             int size = list.size();
@@ -331,7 +331,7 @@ public final class GroupComponent extends VNode {
             }
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo4562setSizeuvyYCjk(mo4561getSizeNHjbRc);
+            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
         }
     }
 

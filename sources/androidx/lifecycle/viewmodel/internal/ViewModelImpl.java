@@ -110,7 +110,7 @@ public final class ViewModelImpl {
     public final void closeWithRuntimeException(AutoCloseable autoCloseable) {
         if (autoCloseable != null) {
             try {
-                UByte$$ExternalSyntheticBackport0.m8574m((Object) autoCloseable);
+                UByte$$ExternalSyntheticBackport0.m9138m((Object) autoCloseable);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

@@ -7,14 +7,16 @@ import android.widget.FrameLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class HudTaximeterBinding implements ViewBinding {
+    public final HudCounterBinding counter;
     public final HudTaximeterStopwatchBinding hudTaximeterArmySecond;
     public final HudTaximeterContainerBinding hudTaximeterLayoutContainer;
     private final FrameLayout rootView;
 
-    private HudTaximeterBinding(FrameLayout rootView, HudTaximeterStopwatchBinding hudTaximeterArmySecond, HudTaximeterContainerBinding hudTaximeterLayoutContainer) {
+    private HudTaximeterBinding(FrameLayout rootView, HudCounterBinding counter, HudTaximeterStopwatchBinding hudTaximeterArmySecond, HudTaximeterContainerBinding hudTaximeterLayoutContainer) {
         this.rootView = rootView;
+        this.counter = counter;
         this.hudTaximeterArmySecond = hudTaximeterArmySecond;
         this.hudTaximeterLayoutContainer = hudTaximeterLayoutContainer;
     }
@@ -37,16 +39,23 @@ public final class HudTaximeterBinding implements ViewBinding {
     }
 
     public static HudTaximeterBinding bind(View rootView) {
-        int i = R.id.hud_taximeter_army_second;
+        int i = R.id.counter;
         View findChildViewById = ViewBindings.findChildViewById(rootView, i);
         if (findChildViewById != null) {
-            HudTaximeterStopwatchBinding bind = HudTaximeterStopwatchBinding.bind(findChildViewById);
-            int i2 = R.id.hud_taximeter_layout_container;
+            HudCounterBinding bind = HudCounterBinding.bind(findChildViewById);
+            int i2 = R.id.hud_taximeter_army_second;
             View findChildViewById2 = ViewBindings.findChildViewById(rootView, i2);
             if (findChildViewById2 != null) {
-                return new HudTaximeterBinding((FrameLayout) rootView, bind, HudTaximeterContainerBinding.bind(findChildViewById2));
+                HudTaximeterStopwatchBinding bind2 = HudTaximeterStopwatchBinding.bind(findChildViewById2);
+                int i3 = R.id.hud_taximeter_layout_container;
+                View findChildViewById3 = ViewBindings.findChildViewById(rootView, i3);
+                if (findChildViewById3 != null) {
+                    return new HudTaximeterBinding((FrameLayout) rootView, bind, bind2, HudTaximeterContainerBinding.bind(findChildViewById3));
+                }
+                i = i3;
+            } else {
+                i = i2;
             }
-            i = i2;
         }
         throw new NullPointerException("Missing required view with ID: ".concat(rootView.getResources().getResourceName(i)));
     }

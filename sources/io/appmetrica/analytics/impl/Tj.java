@@ -1,20 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AdRevenue;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* loaded from: classes4.dex */
-public final class Tj implements InterfaceC0407lb {
+public final class Tj implements InterfaceC0454nb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f656a;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ PluginErrorDetails f664a;
 
-    public Tj(AdRevenue adRevenue, boolean z) {
-        this.f656a = adRevenue;
-        this.b = z;
+    public Tj(PluginErrorDetails pluginErrorDetails) {
+        this.f664a = pluginErrorDetails;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0407lb
-    public final void a(InterfaceC0432mb interfaceC0432mb) {
-        interfaceC0432mb.reportAdRevenue(this.f656a, this.b);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0454nb
+    public final void a(InterfaceC0479ob interfaceC0479ob) {
+        interfaceC0479ob.getPluginExtension().reportUnhandledException(this.f664a);
     }
 }

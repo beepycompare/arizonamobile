@@ -13,7 +13,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteView;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class WinterBattlepassRouletteMainScreenBinding implements ViewBinding {
     public final TextView attempsCount;
     public final FrameLayout btn1;

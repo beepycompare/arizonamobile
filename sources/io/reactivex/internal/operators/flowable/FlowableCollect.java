@@ -12,7 +12,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableCollect<T, U> extends AbstractFlowableWithUpstream<T, U> {
     final BiConsumer<? super U, ? super T> collector;
     final Callable<? extends U> initialSupplier;
@@ -32,7 +32,7 @@ public final class FlowableCollect<T, U> extends AbstractFlowableWithUpstream<T,
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class CollectSubscriber<T, U> extends DeferredScalarSubscription<U> implements FlowableSubscriber<T> {
         private static final long serialVersionUID = -3589550218733891694L;
         final BiConsumer<? super U, ? super T> collector;

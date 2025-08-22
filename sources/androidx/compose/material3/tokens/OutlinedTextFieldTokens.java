@@ -20,7 +20,7 @@ public final class OutlinedTextFieldTokens {
     private static final float TrailingIconSize;
     public static final OutlinedTextFieldTokens INSTANCE = new OutlinedTextFieldTokens();
     private static final ColorSchemeKeyTokens CaretColor = ColorSchemeKeyTokens.Primary;
-    private static final float ContainerHeight = Dp.m6684constructorimpl((float) 56.0d);
+    private static final float ContainerHeight = Dp.m7251constructorimpl((float) 56.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraSmall;
     private static final ColorSchemeKeyTokens DisabledInputColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens DisabledLabelColor = ColorSchemeKeyTokens.OnSurface;
@@ -51,7 +51,7 @@ public final class OutlinedTextFieldTokens {
     private static final ColorSchemeKeyTokens FocusLabelColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens FocusLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens FocusOutlineColor = ColorSchemeKeyTokens.Primary;
-    private static final float FocusOutlineWidth = Dp.m6684constructorimpl((float) 2.0d);
+    private static final float FocusOutlineWidth = Dp.m7251constructorimpl((float) 2.0d);
     private static final ColorSchemeKeyTokens FocusSupportingColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens FocusTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens HoverInputColor = ColorSchemeKeyTokens.OnSurface;
@@ -78,12 +78,12 @@ public final class OutlinedTextFieldTokens {
 
     static {
         float f = (float) 1.0d;
-        DisabledOutlineWidth = Dp.m6684constructorimpl(f);
-        HoverOutlineWidth = Dp.m6684constructorimpl(f);
+        DisabledOutlineWidth = Dp.m7251constructorimpl(f);
+        HoverOutlineWidth = Dp.m7251constructorimpl(f);
         float f2 = (float) 24.0d;
-        LeadingIconSize = Dp.m6684constructorimpl(f2);
-        OutlineWidth = Dp.m6684constructorimpl(f);
-        TrailingIconSize = Dp.m6684constructorimpl(f2);
+        LeadingIconSize = Dp.m7251constructorimpl(f2);
+        OutlineWidth = Dp.m7251constructorimpl(f);
+        TrailingIconSize = Dp.m7251constructorimpl(f2);
     }
 
     public final ColorSchemeKeyTokens getCaretColor() {
@@ -91,7 +91,7 @@ public final class OutlinedTextFieldTokens {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3164getContainerHeightD9Ej5fM() {
+    public final float m3471getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -116,7 +116,7 @@ public final class OutlinedTextFieldTokens {
     }
 
     /* renamed from: getDisabledOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3165getDisabledOutlineWidthD9Ej5fM() {
+    public final float m3472getDisabledOutlineWidthD9Ej5fM() {
         return DisabledOutlineWidth;
     }
 
@@ -221,7 +221,7 @@ public final class OutlinedTextFieldTokens {
     }
 
     /* renamed from: getFocusOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3166getFocusOutlineWidthD9Ej5fM() {
+    public final float m3473getFocusOutlineWidthD9Ej5fM() {
         return FocusOutlineWidth;
     }
 
@@ -250,7 +250,7 @@ public final class OutlinedTextFieldTokens {
     }
 
     /* renamed from: getHoverOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3167getHoverOutlineWidthD9Ej5fM() {
+    public final float m3474getHoverOutlineWidthD9Ej5fM() {
         return HoverOutlineWidth;
     }
 
@@ -295,7 +295,7 @@ public final class OutlinedTextFieldTokens {
     }
 
     /* renamed from: getLeadingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3168getLeadingIconSizeD9Ej5fM() {
+    public final float m3475getLeadingIconSizeD9Ej5fM() {
         return LeadingIconSize;
     }
 
@@ -304,7 +304,7 @@ public final class OutlinedTextFieldTokens {
     }
 
     /* renamed from: getOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3169getOutlineWidthD9Ej5fM() {
+    public final float m3476getOutlineWidthD9Ej5fM() {
         return OutlineWidth;
     }
 
@@ -321,7 +321,7 @@ public final class OutlinedTextFieldTokens {
     }
 
     /* renamed from: getTrailingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3170getTrailingIconSizeD9Ej5fM() {
+    public final float m3477getTrailingIconSizeD9Ej5fM() {
         return TrailingIconSize;
     }
 }

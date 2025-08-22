@@ -47,7 +47,7 @@ final class TabIndicatorOffsetNode$measure$2 extends SuspendLambda implements Fu
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            if (Animatable.animateTo$default(this.$widthAnim, Dp.m6682boximpl(this.$currentTabWidth), TabRowKt.access$getTabRowIndicatorSpec$p(), null, null, this, 12, null) == coroutine_suspended) {
+            if (Animatable.animateTo$default(this.$widthAnim, Dp.m7249boximpl(this.$currentTabWidth), TabRowKt.access$getTabRowIndicatorSpec$p(), null, null, this, 12, null) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

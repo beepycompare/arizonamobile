@@ -10,7 +10,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.NoSuchElementException;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableElementAtSingle<T> extends Single<T> implements FuseToFlowable<T> {
     final T defaultValue;
     final long index;
@@ -32,7 +32,7 @@ public final class FlowableElementAtSingle<T> extends Single<T> implements FuseT
         return RxJavaPlugins.onAssembly(new FlowableElementAt(this.source, this.index, this.defaultValue, true));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ElementAtSubscriber<T> implements FlowableSubscriber<T>, Disposable {
         long count;
         final T defaultValue;

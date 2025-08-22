@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableTimer extends Flowable<Long> {
     final long delay;
     final Scheduler scheduler;
@@ -30,7 +30,7 @@ public final class FlowableTimer extends Flowable<Long> {
         timerSubscriber.setResource(this.scheduler.scheduleDirect(timerSubscriber, this.delay, this.unit));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimerSubscriber extends AtomicReference<Disposable> implements Subscription, Runnable {
         private static final long serialVersionUID = -2809475196591179431L;
         final Subscriber<? super Long> downstream;

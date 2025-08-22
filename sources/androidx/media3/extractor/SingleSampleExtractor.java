@@ -7,7 +7,7 @@ import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import java.io.IOException;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class SingleSampleExtractor implements Extractor {
     private static final int FIXED_READ_LENGTH = 1024;
     public static final int IMAGE_TRACK_ID = 1024;

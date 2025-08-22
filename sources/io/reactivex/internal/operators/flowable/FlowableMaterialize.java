@@ -6,7 +6,7 @@ import io.reactivex.Notification;
 import io.reactivex.internal.subscribers.SinglePostCompleteSubscriber;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableMaterialize<T> extends AbstractFlowableWithUpstream<T, Notification<T>> {
     public FlowableMaterialize(Flowable<T> flowable) {
         super(flowable);
@@ -17,7 +17,7 @@ public final class FlowableMaterialize<T> extends AbstractFlowableWithUpstream<T
         this.source.subscribe((FlowableSubscriber) new MaterializeSubscriber(subscriber));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MaterializeSubscriber<T> extends SinglePostCompleteSubscriber<T, Notification<T>> {
         private static final long serialVersionUID = -3740826063558713822L;
 

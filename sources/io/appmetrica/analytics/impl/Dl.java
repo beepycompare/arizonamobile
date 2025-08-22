@@ -1,25 +1,11 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.HashMap;
 /* loaded from: classes4.dex */
-public final class Dl {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f401a;
-    public final String b;
-    public final Integer c;
-    public final Integer d;
-    public final String e;
-    public final Boolean f;
-
-    public Dl(String str, String str2, Integer num, Integer num2, String str3, Boolean bool) {
-        this.f401a = str;
-        this.b = str2;
-        this.c = num;
-        this.d = num2;
-        this.e = str3;
-        this.f = bool;
-    }
-
-    public Dl(StackTraceElement stackTraceElement) {
-        this(stackTraceElement.getClassName(), stackTraceElement.getFileName(), Integer.valueOf(stackTraceElement.getLineNumber()), null, stackTraceElement.getMethodName(), Boolean.valueOf(stackTraceElement.isNativeMethod()));
+public final class Dl implements InterfaceC0495p2 {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0495p2
+    public final C0314ho a(C0262fo c0262fo, C0314ho c0314ho) {
+        ((HashMap) c0262fo.f860a.get(c0314ho.b)).put(new String(c0314ho.f896a), c0314ho);
+        return c0314ho;
     }
 }

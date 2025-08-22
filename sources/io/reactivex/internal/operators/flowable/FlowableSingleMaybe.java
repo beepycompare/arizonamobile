@@ -9,7 +9,7 @@ import io.reactivex.internal.fuseable.FuseToFlowable;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSingleMaybe<T> extends Maybe<T> implements FuseToFlowable<T> {
     final Flowable<T> source;
 
@@ -27,7 +27,7 @@ public final class FlowableSingleMaybe<T> extends Maybe<T> implements FuseToFlow
         return RxJavaPlugins.onAssembly(new FlowableSingle(this.source, null, false));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SingleElementSubscriber<T> implements FlowableSubscriber<T>, Disposable {
         boolean done;
         final MaybeObserver<? super T> downstream;

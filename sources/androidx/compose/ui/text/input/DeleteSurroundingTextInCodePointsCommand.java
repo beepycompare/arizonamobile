@@ -3,7 +3,7 @@ package androidx.compose.ui.text.input;
 import androidx.compose.ui.text.internal.InlineClassHelperKt;
 import kotlin.Metadata;
 /* compiled from: EditCommand.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0002\u0010\u0005J\u0010\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0016J\u0013\u0010\r\u001a\u00020\u000e2\b\u0010\u000f\u001a\u0004\u0018\u00010\u0010H\u0096\u0002J\b\u0010\u0011\u001a\u00020\u0003H\u0016J\b\u0010\u0012\u001a\u00020\u0013H\u0016R\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0007¨\u0006\u0014"}, d2 = {"Landroidx/compose/ui/text/input/DeleteSurroundingTextInCodePointsCommand;", "Landroidx/compose/ui/text/input/EditCommand;", "lengthBeforeCursor", "", "lengthAfterCursor", "(II)V", "getLengthAfterCursor", "()I", "getLengthBeforeCursor", "applyTo", "", "buffer", "Landroidx/compose/ui/text/input/EditingBuffer;", "equals", "", "other", "", "hashCode", "toString", "", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0010\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0016J\u0013\u0010\u000e\u001a\u00020\u000f2\b\u0010\u0010\u001a\u0004\u0018\u00010\u0011H\u0096\u0002J\b\u0010\u0012\u001a\u00020\u0003H\u0016J\b\u0010\u0013\u001a\u00020\u0014H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\b¨\u0006\u0015"}, d2 = {"Landroidx/compose/ui/text/input/DeleteSurroundingTextInCodePointsCommand;", "Landroidx/compose/ui/text/input/EditCommand;", "lengthBeforeCursor", "", "lengthAfterCursor", "<init>", "(II)V", "getLengthBeforeCursor", "()I", "getLengthAfterCursor", "applyTo", "", "buffer", "Landroidx/compose/ui/text/input/EditingBuffer;", "equals", "", "other", "", "hashCode", "toString", "", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class DeleteSurroundingTextInCodePointsCommand implements EditCommand {
     public static final int $stable = 0;
@@ -38,12 +38,12 @@ public final class DeleteSurroundingTextInCodePointsCommand implements EditComma
         while (true) {
             if (i3 < i) {
                 int i5 = i4 + 1;
-                if (editingBuffer.getSelectionStart$ui_text_release() > i5) {
-                    isSurrogatePair2 = EditCommandKt.isSurrogatePair(editingBuffer.get$ui_text_release((editingBuffer.getSelectionStart$ui_text_release() - i5) - 1), editingBuffer.get$ui_text_release(editingBuffer.getSelectionStart$ui_text_release() - i5));
+                if (editingBuffer.getSelectionStart$ui_text() > i5) {
+                    isSurrogatePair2 = EditCommandKt.isSurrogatePair(editingBuffer.get$ui_text((editingBuffer.getSelectionStart$ui_text() - i5) - 1), editingBuffer.get$ui_text(editingBuffer.getSelectionStart$ui_text() - i5));
                     i4 = isSurrogatePair2 ? i4 + 2 : i5;
                     i3++;
                 } else {
-                    i4 = editingBuffer.getSelectionStart$ui_text_release();
+                    i4 = editingBuffer.getSelectionStart$ui_text();
                     break;
                 }
             } else {
@@ -57,17 +57,17 @@ public final class DeleteSurroundingTextInCodePointsCommand implements EditComma
                 break;
             }
             int i8 = i7 + 1;
-            if (editingBuffer.getSelectionEnd$ui_text_release() + i8 < editingBuffer.getLength$ui_text_release()) {
-                isSurrogatePair = EditCommandKt.isSurrogatePair(editingBuffer.get$ui_text_release((editingBuffer.getSelectionEnd$ui_text_release() + i8) - 1), editingBuffer.get$ui_text_release(editingBuffer.getSelectionEnd$ui_text_release() + i8));
+            if (editingBuffer.getSelectionEnd$ui_text() + i8 < editingBuffer.getLength$ui_text()) {
+                isSurrogatePair = EditCommandKt.isSurrogatePair(editingBuffer.get$ui_text((editingBuffer.getSelectionEnd$ui_text() + i8) - 1), editingBuffer.get$ui_text(editingBuffer.getSelectionEnd$ui_text() + i8));
                 i7 = isSurrogatePair ? i7 + 2 : i8;
                 i2++;
             } else {
-                i7 = editingBuffer.getLength$ui_text_release() - editingBuffer.getSelectionEnd$ui_text_release();
+                i7 = editingBuffer.getLength$ui_text() - editingBuffer.getSelectionEnd$ui_text();
                 break;
             }
         }
-        editingBuffer.delete$ui_text_release(editingBuffer.getSelectionEnd$ui_text_release(), editingBuffer.getSelectionEnd$ui_text_release() + i7);
-        editingBuffer.delete$ui_text_release(editingBuffer.getSelectionStart$ui_text_release() - i4, editingBuffer.getSelectionStart$ui_text_release());
+        editingBuffer.delete$ui_text(editingBuffer.getSelectionEnd$ui_text(), editingBuffer.getSelectionEnd$ui_text() + i7);
+        editingBuffer.delete$ui_text(editingBuffer.getSelectionStart$ui_text() - i4, editingBuffer.getSelectionStart$ui_text());
     }
 
     public boolean equals(Object obj) {

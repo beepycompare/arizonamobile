@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TsExtractor implements Extractor {
     private static final long AC3_FORMAT_IDENTIFIER = 1094921523;
     private static final long AC4_FORMAT_IDENTIFIER = 1094921524;
@@ -99,14 +99,14 @@ public final class TsExtractor implements Extractor {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Flags {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Mode {
     }
 
@@ -408,7 +408,7 @@ public final class TsExtractor implements Extractor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class PatReader implements SectionPayloadReader {
         private final ParsableBitArray patScratch = new ParsableBitArray(new byte[4]);
 
@@ -445,7 +445,7 @@ public final class TsExtractor implements Extractor {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private class PmtReader implements SectionPayloadReader {
         private static final int TS_PMT_DESC_AC3 = 106;
         private static final int TS_PMT_DESC_AIT = 111;

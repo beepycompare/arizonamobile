@@ -1,74 +1,103 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
-import kotlin.NoWhenBranchMatchedException;
-import kotlin.Pair;
-import kotlin.TuplesKt;
-import kotlin.collections.CollectionsKt;
-import kotlin.collections.MapsKt;
-import kotlin.ranges.RangesKt;
-import kotlin.text.Charsets;
-import org.json.JSONObject;
+import android.app.Activity;
+import android.location.Location;
+import io.appmetrica.analytics.AdRevenue;
+import io.appmetrica.analytics.AnrListener;
+import io.appmetrica.analytics.ExternalAttribution;
+import io.appmetrica.analytics.ModuleEvent;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import java.util.ArrayList;
+import java.util.List;
 /* loaded from: classes4.dex */
-public final class Uc {
-    public static final V9 a(Uc uc, EnumC0230ea enumC0230ea, Map map) {
-        int i;
-        Object value;
-        uc.getClass();
-        V9 v9 = new V9();
-        switch (enumC0230ea.ordinal()) {
-            case 0:
-                i = 0;
-                break;
-            case 1:
-                i = 1;
-                break;
-            case 2:
-                i = 2;
-                break;
-            case 3:
-                i = 3;
-                break;
-            case 4:
-                i = 4;
-                break;
-            case 5:
-                i = 5;
-                break;
-            case 6:
-                i = 6;
-                break;
-            default:
-                throw new NoWhenBranchMatchedException();
-        }
-        v9.f683a = i;
-        Vc.b.getClass();
-        Set<Map.Entry> entrySet = map.entrySet();
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(entrySet, 10)), 16));
-        for (Map.Entry entry : entrySet) {
-            Object key = entry.getKey();
-            if (entry.getValue() instanceof Number) {
-                Object value2 = entry.getValue();
-                if (value2 == null) {
-                    throw new NullPointerException("null cannot be cast to non-null type kotlin.Number");
-                }
-                double doubleValue = ((Number) value2).doubleValue();
-                if (Double.isInfinite(doubleValue) || Double.isNaN(doubleValue)) {
-                    value = null;
-                    Pair pair = TuplesKt.to(key, value);
-                    linkedHashMap.put(pair.getFirst(), pair.getSecond());
-                }
-            }
-            value = entry.getValue();
-            Pair pair2 = TuplesKt.to(key, value);
-            linkedHashMap.put(pair2.getFirst(), pair2.getSecond());
-        }
-        String jSONObject = new JSONObject(linkedHashMap).toString();
-        if (jSONObject != null) {
-            v9.b = jSONObject.getBytes(Charsets.UTF_8);
-        }
-        return v9;
+public final class Uc extends C0760zi implements InterfaceC0249fb {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb
+    public final void a(Activity activity) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb, io.appmetrica.analytics.impl.InterfaceC0225ed
+    public final void a(Location location) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb
+    public final void a(AnrListener anrListener) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb
+    public final void a(ExternalAttribution externalAttribution) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb
+    public final void a(Io io2) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb
+    public final void a(EnumC0417m enumC0417m) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb, io.appmetrica.analytics.impl.InterfaceC0120ab
+    public final void a(String str) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb, io.appmetrica.analytics.impl.InterfaceC0225ed
+    public final void a(String str, String str2) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb
+    public final void a(String str, boolean z) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb, io.appmetrica.analytics.impl.InterfaceC0225ed
+    public final void a(boolean z) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb
+    public final void b(Activity activity) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb
+    public final void b(String str) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb, io.appmetrica.analytics.impl.InterfaceC0120ab
+    public final void b(String str, String str2) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb, io.appmetrica.analytics.impl.InterfaceC0225ed
+    public final void b(boolean z) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb, io.appmetrica.analytics.impl.InterfaceC0120ab
+    public final boolean b() {
+        return false;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb
+    public final void c() {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb
+    public final List<String> f() {
+        return new ArrayList();
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0760zi, io.appmetrica.analytics.IModuleReporter
+    public final void reportAdRevenue(AdRevenue adRevenue, boolean z) {
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0760zi, io.appmetrica.analytics.IModuleReporter
+    public final void reportEvent(ModuleEvent moduleEvent) {
+    }
+
+    @Override // io.appmetrica.analytics.plugins.IPluginReporter
+    public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
     }
 }

@@ -4,7 +4,7 @@ import io.reactivex.functions.Function;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SorterFunction<T> implements Function<List<T>, List<T>> {
     final Comparator<? super T> comparator;
 

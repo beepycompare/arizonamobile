@@ -1,5 +1,5 @@
 package io.reactivex.schedulers;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface SchedulerRunnableIntrospection {
     Runnable getWrappedRunnable();
 }

@@ -13,7 +13,7 @@ import androidx.viewbinding.ViewBindings;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class PlayerListDialogBinding implements ViewBinding {
     public final DialogBackgroundBinding bg;
     public final Guideline guideline3;
@@ -26,10 +26,11 @@ public final class PlayerListDialogBinding implements ViewBinding {
     public final RecyclerView rvPLayerList;
     public final TextInputLayout textInputLayout;
     public final TextView tvCaption;
+    public final TextView tvHint;
     public final TextView tvPlayersCount;
     public final TextInputEditText userInput;
 
-    private PlayerListDialogBinding(ConstraintLayout rootView, DialogBackgroundBinding bg, Guideline guideline3, Guideline guideline4, Guideline guideline5, Guideline guideline6, LinearLayout header, ConstraintLayout playerListDialogLayout, RecyclerView rvPLayerList, TextInputLayout textInputLayout, TextView tvCaption, TextView tvPlayersCount, TextInputEditText userInput) {
+    private PlayerListDialogBinding(ConstraintLayout rootView, DialogBackgroundBinding bg, Guideline guideline3, Guideline guideline4, Guideline guideline5, Guideline guideline6, LinearLayout header, ConstraintLayout playerListDialogLayout, RecyclerView rvPLayerList, TextInputLayout textInputLayout, TextView tvCaption, TextView tvHint, TextView tvPlayersCount, TextInputEditText userInput) {
         this.rootView = rootView;
         this.bg = bg;
         this.guideline3 = guideline3;
@@ -41,6 +42,7 @@ public final class PlayerListDialogBinding implements ViewBinding {
         this.rvPLayerList = rvPLayerList;
         this.textInputLayout = textInputLayout;
         this.tvCaption = tvCaption;
+        this.tvHint = tvHint;
         this.tvPlayersCount = tvPlayersCount;
         this.userInput = userInput;
     }
@@ -92,13 +94,17 @@ public final class PlayerListDialogBinding implements ViewBinding {
                                         i = R.id.tvCaption;
                                         TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
                                         if (textView != null) {
-                                            i = R.id.tvPlayersCount;
+                                            i = R.id.tv_hint;
                                             TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                             if (textView2 != null) {
-                                                i = R.id.user_input;
-                                                TextInputEditText textInputEditText = (TextInputEditText) ViewBindings.findChildViewById(rootView, i);
-                                                if (textInputEditText != null) {
-                                                    return new PlayerListDialogBinding(constraintLayout, bind, guideline, guideline2, guideline3, guideline4, linearLayout, constraintLayout, recyclerView, textInputLayout, textView, textView2, textInputEditText);
+                                                i = R.id.tvPlayersCount;
+                                                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                if (textView3 != null) {
+                                                    i = R.id.user_input;
+                                                    TextInputEditText textInputEditText = (TextInputEditText) ViewBindings.findChildViewById(rootView, i);
+                                                    if (textInputEditText != null) {
+                                                        return new PlayerListDialogBinding(constraintLayout, bind, guideline, guideline2, guideline3, guideline4, linearLayout, constraintLayout, recyclerView, textInputLayout, textView, textView2, textView3, textInputEditText);
+                                                    }
                                                 }
                                             }
                                         }

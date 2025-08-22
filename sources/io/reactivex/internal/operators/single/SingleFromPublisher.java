@@ -9,7 +9,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.NoSuchElementException;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleFromPublisher<T> extends Single<T> {
     final Publisher<? extends T> publisher;
 
@@ -22,7 +22,7 @@ public final class SingleFromPublisher<T> extends Single<T> {
         this.publisher.subscribe(new ToSingleObserver(singleObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ToSingleObserver<T> implements FlowableSubscriber<T>, Disposable {
         volatile boolean disposed;
         boolean done;

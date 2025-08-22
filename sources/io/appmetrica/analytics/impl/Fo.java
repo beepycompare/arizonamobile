@@ -1,11 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
+import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public final class Fo implements InterfaceC0569s {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0569s
-    public final Map<String, String> a(Map<String, String> map) {
-        map.put("source", "yandex");
-        return map;
+public final class Fo implements Consumer {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ String f443a = "WebView interface setup is successful.";
+
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
+    public final void consume(Object obj) {
+        ((PublicLogger) obj).info(this.f443a, new Object[0]);
     }
 }

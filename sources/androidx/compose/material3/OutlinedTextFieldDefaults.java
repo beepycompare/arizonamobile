@@ -46,10 +46,10 @@ import ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteView;
 public final class OutlinedTextFieldDefaults {
     public static final int $stable = 0;
     public static final OutlinedTextFieldDefaults INSTANCE = new OutlinedTextFieldDefaults();
-    private static final float MinHeight = Dp.m6684constructorimpl(56);
-    private static final float MinWidth = Dp.m6684constructorimpl((float) RouletteView.DEFAULT_ROULETTE_WIDTH);
-    private static final float UnfocusedBorderThickness = Dp.m6684constructorimpl(1);
-    private static final float FocusedBorderThickness = Dp.m6684constructorimpl(2);
+    private static final float MinHeight = Dp.m7251constructorimpl(56);
+    private static final float MinWidth = Dp.m7251constructorimpl((float) RouletteView.DEFAULT_ROULETTE_WIDTH);
+    private static final float UnfocusedBorderThickness = Dp.m7251constructorimpl(1);
+    private static final float FocusedBorderThickness = Dp.m7251constructorimpl(2);
 
     private OutlinedTextFieldDefaults() {
     }
@@ -68,22 +68,22 @@ public final class OutlinedTextFieldDefaults {
     }
 
     /* renamed from: getMinHeight-D9Ej5fM  reason: not valid java name */
-    public final float m2150getMinHeightD9Ej5fM() {
+    public final float m2457getMinHeightD9Ej5fM() {
         return MinHeight;
     }
 
     /* renamed from: getMinWidth-D9Ej5fM  reason: not valid java name */
-    public final float m2151getMinWidthD9Ej5fM() {
+    public final float m2458getMinWidthD9Ej5fM() {
         return MinWidth;
     }
 
     /* renamed from: getUnfocusedBorderThickness-D9Ej5fM  reason: not valid java name */
-    public final float m2152getUnfocusedBorderThicknessD9Ej5fM() {
+    public final float m2459getUnfocusedBorderThicknessD9Ej5fM() {
         return UnfocusedBorderThickness;
     }
 
     /* renamed from: getFocusedBorderThickness-D9Ej5fM  reason: not valid java name */
-    public final float m2149getFocusedBorderThicknessD9Ej5fM() {
+    public final float m2456getFocusedBorderThicknessD9Ej5fM() {
         return FocusedBorderThickness;
     }
 
@@ -113,7 +113,7 @@ public final class OutlinedTextFieldDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2145Container4EFweAY(final boolean z, final boolean z2, final InteractionSource interactionSource, Modifier modifier, TextFieldColors textFieldColors, Shape shape, float f, float f2, Composer composer, final int i, final int i2) {
+    public final void m2452Container4EFweAY(final boolean z, final boolean z2, final InteractionSource interactionSource, Modifier modifier, TextFieldColors textFieldColors, Shape shape, float f, float f2, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         Object obj2;
@@ -264,12 +264,12 @@ public final class OutlinedTextFieldDefaults {
                         }
                         int i10 = i4 >> 6;
                         boolean booleanValue = FocusInteractionKt.collectIsFocusedAsState(interactionSource, startRestartGroup, i10 & 14).getValue().booleanValue();
-                        State<BorderStroke> m2786animateBorderStrokeAsStateNuRrP5Q = TextFieldImplKt.m2786animateBorderStrokeAsStateNuRrP5Q(z, z2, booleanValue, obj5, f6, f7, startRestartGroup, (i10 & 458752) | ((i4 >> 3) & 7168) | (i4 & WebSocketProtocol.PAYLOAD_SHORT) | (57344 & i10));
+                        State<BorderStroke> m3093animateBorderStrokeAsStateNuRrP5Q = TextFieldImplKt.m3093animateBorderStrokeAsStateNuRrP5Q(z, z2, booleanValue, obj5, f6, f7, startRestartGroup, (i10 & 458752) | ((i4 >> 3) & 7168) | (i4 & WebSocketProtocol.PAYLOAD_SHORT) | (57344 & i10));
                         Modifier modifier3 = obj4;
                         Shape shape4 = obj6;
-                        final State<Color> m124animateColorAsStateeuL9pac = SingleValueAnimationKt.m124animateColorAsStateeuL9pac(obj5.m2414containerColorXeAY9LY$material3_release(z, z2, booleanValue), AnimationSpecKt.tween$default(150, 0, null, 6, null), null, null, startRestartGroup, 48, 12);
+                        final State<Color> m120animateColorAsStateeuL9pac = SingleValueAnimationKt.m120animateColorAsStateeuL9pac(obj5.m2721containerColorXeAY9LY$material3_release(z, z2, booleanValue), AnimationSpecKt.tween$default(150, 0, null, 6, null), null, null, startRestartGroup, 48, 12);
                         composer2 = startRestartGroup;
-                        BoxKt.Box(TextFieldImplKt.textFieldBackground(BorderKt.border(modifier3, m2786animateBorderStrokeAsStateNuRrP5Q.getValue(), shape4), new TextFieldDefaults$sam$androidx_compose_ui_graphics_ColorProducer$0(new PropertyReference0Impl(m124animateColorAsStateeuL9pac) { // from class: androidx.compose.material3.OutlinedTextFieldDefaults$Container$1
+                        BoxKt.Box(TextFieldImplKt.textFieldBackground(BorderKt.border(modifier3, m3093animateBorderStrokeAsStateNuRrP5Q.getValue(), shape4), new TextFieldDefaults$sam$androidx_compose_ui_graphics_ColorProducer$0(new PropertyReference0Impl(m120animateColorAsStateeuL9pac) { // from class: androidx.compose.material3.OutlinedTextFieldDefaults$Container$1
                             @Override // kotlin.jvm.internal.PropertyReference0Impl, kotlin.reflect.KProperty0
                             public Object get() {
                                 return ((State) this.receiver).getValue();
@@ -316,12 +316,12 @@ public final class OutlinedTextFieldDefaults {
                 }
                 int i102 = i4 >> 6;
                 boolean booleanValue2 = FocusInteractionKt.collectIsFocusedAsState(interactionSource, startRestartGroup, i102 & 14).getValue().booleanValue();
-                State<BorderStroke> m2786animateBorderStrokeAsStateNuRrP5Q2 = TextFieldImplKt.m2786animateBorderStrokeAsStateNuRrP5Q(z, z2, booleanValue2, obj5, f6, f7, startRestartGroup, (i102 & 458752) | ((i4 >> 3) & 7168) | (i4 & WebSocketProtocol.PAYLOAD_SHORT) | (57344 & i102));
+                State<BorderStroke> m3093animateBorderStrokeAsStateNuRrP5Q2 = TextFieldImplKt.m3093animateBorderStrokeAsStateNuRrP5Q(z, z2, booleanValue2, obj5, f6, f7, startRestartGroup, (i102 & 458752) | ((i4 >> 3) & 7168) | (i4 & WebSocketProtocol.PAYLOAD_SHORT) | (57344 & i102));
                 Modifier modifier32 = obj4;
                 Shape shape42 = obj6;
-                final Object m124animateColorAsStateeuL9pac2 = SingleValueAnimationKt.m124animateColorAsStateeuL9pac(obj5.m2414containerColorXeAY9LY$material3_release(z, z2, booleanValue2), AnimationSpecKt.tween$default(150, 0, null, 6, null), null, null, startRestartGroup, 48, 12);
+                final Object m120animateColorAsStateeuL9pac2 = SingleValueAnimationKt.m120animateColorAsStateeuL9pac(obj5.m2721containerColorXeAY9LY$material3_release(z, z2, booleanValue2), AnimationSpecKt.tween$default(150, 0, null, 6, null), null, null, startRestartGroup, 48, 12);
                 composer2 = startRestartGroup;
-                BoxKt.Box(TextFieldImplKt.textFieldBackground(BorderKt.border(modifier32, m2786animateBorderStrokeAsStateNuRrP5Q2.getValue(), shape42), new TextFieldDefaults$sam$androidx_compose_ui_graphics_ColorProducer$0(new PropertyReference0Impl(m124animateColorAsStateeuL9pac2) { // from class: androidx.compose.material3.OutlinedTextFieldDefaults$Container$1
+                BoxKt.Box(TextFieldImplKt.textFieldBackground(BorderKt.border(modifier32, m3093animateBorderStrokeAsStateNuRrP5Q2.getValue(), shape42), new TextFieldDefaults$sam$androidx_compose_ui_graphics_ColorProducer$0(new PropertyReference0Impl(m120animateColorAsStateeuL9pac2) { // from class: androidx.compose.material3.OutlinedTextFieldDefaults$Container$1
                     @Override // kotlin.jvm.internal.PropertyReference0Impl, kotlin.reflect.KProperty0
                     public Object get() {
                         return ((State) this.receiver).getValue();
@@ -360,7 +360,7 @@ public final class OutlinedTextFieldDefaults {
                     }
 
                     public final void invoke(Composer composer3, int i11) {
-                        OutlinedTextFieldDefaults.this.m2145Container4EFweAY(z, z2, interactionSource, modifier2, textFieldColors3, shape3, f8, f9, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                        OutlinedTextFieldDefaults.this.m2452Container4EFweAY(z, z2, interactionSource, modifier2, textFieldColors3, shape3, f8, f9, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                     }
                 });
                 return;
@@ -645,7 +645,7 @@ public final class OutlinedTextFieldDefaults {
                                             textFieldColors2 = textFieldColors;
                                         }
                                         if ((i3 & 32768) == 0) {
-                                            paddingValues2 = m2144contentPaddinga9UjIt4$default(this, 0.0f, 0.0f, 0.0f, 0.0f, 15, null);
+                                            paddingValues2 = m2451contentPaddinga9UjIt4$default(this, 0.0f, 0.0f, 0.0f, 0.0f, 15, null);
                                             i18 &= -458753;
                                         } else {
                                             paddingValues2 = paddingValues;
@@ -673,7 +673,7 @@ public final class OutlinedTextFieldDefaults {
                                                         if (ComposerKt.isTraceInProgress()) {
                                                             ComposerKt.traceEventStart(-1448570018, i23, -1, "androidx.compose.material3.OutlinedTextFieldDefaults.DecorationBox.<anonymous> (TextFieldDefaults.kt:873)");
                                                         }
-                                                        OutlinedTextFieldDefaults.INSTANCE.m2145Container4EFweAY(z, z7, interactionSource, Modifier.Companion, textFieldColors2, OutlinedTextFieldDefaults.INSTANCE.getShape(composer4, 6), OutlinedTextFieldDefaults.INSTANCE.m2149getFocusedBorderThicknessD9Ej5fM(), OutlinedTextFieldDefaults.INSTANCE.m2152getUnfocusedBorderThicknessD9Ej5fM(), composer4, 114822144, 0);
+                                                        OutlinedTextFieldDefaults.INSTANCE.m2452Container4EFweAY(z, z7, interactionSource, Modifier.Companion, textFieldColors2, OutlinedTextFieldDefaults.INSTANCE.getShape(composer4, 6), OutlinedTextFieldDefaults.INSTANCE.m2456getFocusedBorderThicknessD9Ej5fM(), OutlinedTextFieldDefaults.INSTANCE.m2459getUnfocusedBorderThicknessD9Ej5fM(), composer4, 114822144, 0);
                                                         if (ComposerKt.isTraceInProgress()) {
                                                             ComposerKt.traceEventEnd();
                                                             return;
@@ -1279,7 +1279,7 @@ public final class OutlinedTextFieldDefaults {
     }
 
     /* renamed from: contentPadding-a9UjIt4$default  reason: not valid java name */
-    public static /* synthetic */ PaddingValues m2144contentPaddinga9UjIt4$default(OutlinedTextFieldDefaults outlinedTextFieldDefaults, float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ PaddingValues m2451contentPaddinga9UjIt4$default(OutlinedTextFieldDefaults outlinedTextFieldDefaults, float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
             f = TextFieldImplKt.getTextFieldPadding();
         }
@@ -1292,12 +1292,12 @@ public final class OutlinedTextFieldDefaults {
         if ((i & 8) != 0) {
             f4 = TextFieldImplKt.getTextFieldPadding();
         }
-        return outlinedTextFieldDefaults.m2148contentPaddinga9UjIt4(f, f2, f3, f4);
+        return outlinedTextFieldDefaults.m2455contentPaddinga9UjIt4(f, f2, f3, f4);
     }
 
     /* renamed from: contentPadding-a9UjIt4  reason: not valid java name */
-    public final PaddingValues m2148contentPaddinga9UjIt4(float f, float f2, float f3, float f4) {
-        return PaddingKt.m734PaddingValuesa9UjIt4(f, f2, f3, f4);
+    public final PaddingValues m2455contentPaddinga9UjIt4(float f, float f2, float f3, float f4) {
+        return PaddingKt.m828PaddingValuesa9UjIt4(f, f2, f3, f4);
     }
 
     public final TextFieldColors colors(Composer composer, int i) {
@@ -1314,60 +1314,60 @@ public final class OutlinedTextFieldDefaults {
     }
 
     /* renamed from: colors-0hiis_0  reason: not valid java name */
-    public final TextFieldColors m2147colors0hiis_0(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, TextSelectionColors textSelectionColors, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, Composer composer, int i, int i2, int i3, int i4, int i5, int i6, int i7) {
+    public final TextFieldColors m2454colors0hiis_0(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, TextSelectionColors textSelectionColors, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, Composer composer, int i, int i2, int i3, int i4, int i5, int i6, int i7) {
         ComposerKt.sourceInformationMarkerStart(composer, 1767617725, "C(colors)P(30:c#ui.graphics.Color,41:c#ui.graphics.Color,9:c#ui.graphics.Color,20:c#ui.graphics.Color,23:c#ui.graphics.Color,34:c#ui.graphics.Color,2:c#ui.graphics.Color,12:c#ui.graphics.Color,0:c#ui.graphics.Color,13:c#ui.graphics.Color,32,22:c#ui.graphics.Color,33:c#ui.graphics.Color,1:c#ui.graphics.Color,11:c#ui.graphics.Color,25:c#ui.graphics.Color,36:c#ui.graphics.Color,4:c#ui.graphics.Color,15:c#ui.graphics.Color,31:c#ui.graphics.Color,42:c#ui.graphics.Color,10:c#ui.graphics.Color,21:c#ui.graphics.Color,24:c#ui.graphics.Color,35:c#ui.graphics.Color,3:c#ui.graphics.Color,14:c#ui.graphics.Color,26:c#ui.graphics.Color,37:c#ui.graphics.Color,5:c#ui.graphics.Color,16:c#ui.graphics.Color,29:c#ui.graphics.Color,40:c#ui.graphics.Color,8:c#ui.graphics.Color,19:c#ui.graphics.Color,27:c#ui.graphics.Color,38:c#ui.graphics.Color,6:c#ui.graphics.Color,17:c#ui.graphics.Color,28:c#ui.graphics.Color,39:c#ui.graphics.Color,7:c#ui.graphics.Color,18:c#ui.graphics.Color)1023@53240L11,1023@53252L30:TextFieldDefaults.kt#uh7d8r");
-        long m4114getUnspecified0d7_KjU = (i6 & 1) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j;
-        long m4114getUnspecified0d7_KjU2 = (i6 & 2) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j2;
-        long m4114getUnspecified0d7_KjU3 = (i6 & 4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j3;
-        long m4114getUnspecified0d7_KjU4 = (i6 & 8) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j4;
-        long m4114getUnspecified0d7_KjU5 = (i6 & 16) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j5;
-        long m4114getUnspecified0d7_KjU6 = (i6 & 32) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j6;
-        long m4114getUnspecified0d7_KjU7 = (i6 & 64) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j7;
-        long m4114getUnspecified0d7_KjU8 = (i6 & 128) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j8;
-        long m4114getUnspecified0d7_KjU9 = (i6 & 256) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j9;
-        long m4114getUnspecified0d7_KjU10 = (i6 & 512) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j10;
+        long m4573getUnspecified0d7_KjU = (i6 & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
+        long m4573getUnspecified0d7_KjU2 = (i6 & 2) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j2;
+        long m4573getUnspecified0d7_KjU3 = (i6 & 4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j3;
+        long m4573getUnspecified0d7_KjU4 = (i6 & 8) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4;
+        long m4573getUnspecified0d7_KjU5 = (i6 & 16) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j5;
+        long m4573getUnspecified0d7_KjU6 = (i6 & 32) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j6;
+        long m4573getUnspecified0d7_KjU7 = (i6 & 64) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j7;
+        long m4573getUnspecified0d7_KjU8 = (i6 & 128) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j8;
+        long m4573getUnspecified0d7_KjU9 = (i6 & 256) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j9;
+        long m4573getUnspecified0d7_KjU10 = (i6 & 512) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j10;
         TextSelectionColors textSelectionColors2 = (i6 & 1024) != 0 ? null : textSelectionColors;
-        long m4114getUnspecified0d7_KjU11 = (i6 & 2048) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j11;
-        long m4114getUnspecified0d7_KjU12 = (i6 & 4096) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j12;
-        long m4114getUnspecified0d7_KjU13 = (i6 & 8192) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j13;
-        long m4114getUnspecified0d7_KjU14 = (i6 & 16384) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j14;
-        long m4114getUnspecified0d7_KjU15 = (32768 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j15;
-        long m4114getUnspecified0d7_KjU16 = (65536 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j16;
-        long m4114getUnspecified0d7_KjU17 = (131072 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j17;
-        long m4114getUnspecified0d7_KjU18 = (262144 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j18;
-        long m4114getUnspecified0d7_KjU19 = (524288 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j19;
-        long m4114getUnspecified0d7_KjU20 = (1048576 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j20;
-        long m4114getUnspecified0d7_KjU21 = (2097152 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j21;
-        long m4114getUnspecified0d7_KjU22 = (4194304 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j22;
-        long m4114getUnspecified0d7_KjU23 = (8388608 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j23;
-        long m4114getUnspecified0d7_KjU24 = (16777216 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j24;
-        long m4114getUnspecified0d7_KjU25 = (33554432 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j25;
-        long m4114getUnspecified0d7_KjU26 = (67108864 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j26;
-        long m4114getUnspecified0d7_KjU27 = (134217728 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j27;
-        long m4114getUnspecified0d7_KjU28 = (268435456 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j28;
-        long m4114getUnspecified0d7_KjU29 = (536870912 & i6) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j29;
-        long m4114getUnspecified0d7_KjU30 = (i6 & 1073741824) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j30;
-        long m4114getUnspecified0d7_KjU31 = (i7 & 1) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j31;
-        long m4114getUnspecified0d7_KjU32 = (i7 & 2) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j32;
-        long m4114getUnspecified0d7_KjU33 = (i7 & 4) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j33;
-        long m4114getUnspecified0d7_KjU34 = (i7 & 8) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j34;
-        long m4114getUnspecified0d7_KjU35 = (i7 & 16) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j35;
-        long m4114getUnspecified0d7_KjU36 = (i7 & 32) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j36;
-        long m4114getUnspecified0d7_KjU37 = (i7 & 64) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j37;
-        long m4114getUnspecified0d7_KjU38 = (i7 & 128) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j38;
-        long m4114getUnspecified0d7_KjU39 = (i7 & 256) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j39;
-        long m4114getUnspecified0d7_KjU40 = (i7 & 512) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j40;
-        long m4114getUnspecified0d7_KjU41 = (i7 & 1024) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j41;
-        long m4114getUnspecified0d7_KjU42 = (i7 & 2048) != 0 ? Color.Companion.m4114getUnspecified0d7_KjU() : j42;
+        long m4573getUnspecified0d7_KjU11 = (i6 & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j11;
+        long m4573getUnspecified0d7_KjU12 = (i6 & 4096) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j12;
+        long m4573getUnspecified0d7_KjU13 = (i6 & 8192) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j13;
+        long m4573getUnspecified0d7_KjU14 = (i6 & 16384) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j14;
+        long m4573getUnspecified0d7_KjU15 = (32768 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j15;
+        long m4573getUnspecified0d7_KjU16 = (65536 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j16;
+        long m4573getUnspecified0d7_KjU17 = (131072 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j17;
+        long m4573getUnspecified0d7_KjU18 = (262144 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j18;
+        long m4573getUnspecified0d7_KjU19 = (524288 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j19;
+        long m4573getUnspecified0d7_KjU20 = (1048576 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j20;
+        long m4573getUnspecified0d7_KjU21 = (2097152 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j21;
+        long m4573getUnspecified0d7_KjU22 = (4194304 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j22;
+        long m4573getUnspecified0d7_KjU23 = (8388608 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j23;
+        long m4573getUnspecified0d7_KjU24 = (16777216 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j24;
+        long m4573getUnspecified0d7_KjU25 = (33554432 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j25;
+        long m4573getUnspecified0d7_KjU26 = (67108864 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j26;
+        long m4573getUnspecified0d7_KjU27 = (134217728 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j27;
+        long m4573getUnspecified0d7_KjU28 = (268435456 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j28;
+        long m4573getUnspecified0d7_KjU29 = (536870912 & i6) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j29;
+        long m4573getUnspecified0d7_KjU30 = (i6 & 1073741824) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j30;
+        long m4573getUnspecified0d7_KjU31 = (i7 & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j31;
+        long m4573getUnspecified0d7_KjU32 = (i7 & 2) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j32;
+        long m4573getUnspecified0d7_KjU33 = (i7 & 4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j33;
+        long m4573getUnspecified0d7_KjU34 = (i7 & 8) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j34;
+        long m4573getUnspecified0d7_KjU35 = (i7 & 16) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j35;
+        long m4573getUnspecified0d7_KjU36 = (i7 & 32) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j36;
+        long m4573getUnspecified0d7_KjU37 = (i7 & 64) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j37;
+        long m4573getUnspecified0d7_KjU38 = (i7 & 128) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j38;
+        long m4573getUnspecified0d7_KjU39 = (i7 & 256) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j39;
+        long m4573getUnspecified0d7_KjU40 = (i7 & 512) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j40;
+        long m4573getUnspecified0d7_KjU41 = (i7 & 1024) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j41;
+        long m4573getUnspecified0d7_KjU42 = (i7 & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j42;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1767617725, i, i2, "androidx.compose.material3.OutlinedTextFieldDefaults.colors (TextFieldDefaults.kt:1023)");
         }
-        TextFieldColors m2415copyejIjP34 = getDefaultOutlinedTextFieldColors(MaterialTheme.INSTANCE.getColorScheme(composer, 6), composer, (i5 >> 6) & 112).m2415copyejIjP34(m4114getUnspecified0d7_KjU, m4114getUnspecified0d7_KjU2, m4114getUnspecified0d7_KjU3, m4114getUnspecified0d7_KjU4, m4114getUnspecified0d7_KjU5, m4114getUnspecified0d7_KjU6, m4114getUnspecified0d7_KjU7, m4114getUnspecified0d7_KjU8, m4114getUnspecified0d7_KjU9, m4114getUnspecified0d7_KjU10, textSelectionColors2, m4114getUnspecified0d7_KjU11, m4114getUnspecified0d7_KjU12, m4114getUnspecified0d7_KjU13, m4114getUnspecified0d7_KjU14, m4114getUnspecified0d7_KjU15, m4114getUnspecified0d7_KjU16, m4114getUnspecified0d7_KjU17, m4114getUnspecified0d7_KjU18, m4114getUnspecified0d7_KjU19, m4114getUnspecified0d7_KjU20, m4114getUnspecified0d7_KjU21, m4114getUnspecified0d7_KjU22, m4114getUnspecified0d7_KjU23, m4114getUnspecified0d7_KjU24, m4114getUnspecified0d7_KjU25, m4114getUnspecified0d7_KjU26, m4114getUnspecified0d7_KjU27, m4114getUnspecified0d7_KjU28, m4114getUnspecified0d7_KjU29, m4114getUnspecified0d7_KjU30, m4114getUnspecified0d7_KjU31, m4114getUnspecified0d7_KjU32, m4114getUnspecified0d7_KjU33, m4114getUnspecified0d7_KjU34, m4114getUnspecified0d7_KjU35, m4114getUnspecified0d7_KjU36, m4114getUnspecified0d7_KjU37, m4114getUnspecified0d7_KjU38, m4114getUnspecified0d7_KjU39, m4114getUnspecified0d7_KjU40, m4114getUnspecified0d7_KjU41, m4114getUnspecified0d7_KjU42);
+        TextFieldColors m2722copyejIjP34 = getDefaultOutlinedTextFieldColors(MaterialTheme.INSTANCE.getColorScheme(composer, 6), composer, (i5 >> 6) & 112).m2722copyejIjP34(m4573getUnspecified0d7_KjU, m4573getUnspecified0d7_KjU2, m4573getUnspecified0d7_KjU3, m4573getUnspecified0d7_KjU4, m4573getUnspecified0d7_KjU5, m4573getUnspecified0d7_KjU6, m4573getUnspecified0d7_KjU7, m4573getUnspecified0d7_KjU8, m4573getUnspecified0d7_KjU9, m4573getUnspecified0d7_KjU10, textSelectionColors2, m4573getUnspecified0d7_KjU11, m4573getUnspecified0d7_KjU12, m4573getUnspecified0d7_KjU13, m4573getUnspecified0d7_KjU14, m4573getUnspecified0d7_KjU15, m4573getUnspecified0d7_KjU16, m4573getUnspecified0d7_KjU17, m4573getUnspecified0d7_KjU18, m4573getUnspecified0d7_KjU19, m4573getUnspecified0d7_KjU20, m4573getUnspecified0d7_KjU21, m4573getUnspecified0d7_KjU22, m4573getUnspecified0d7_KjU23, m4573getUnspecified0d7_KjU24, m4573getUnspecified0d7_KjU25, m4573getUnspecified0d7_KjU26, m4573getUnspecified0d7_KjU27, m4573getUnspecified0d7_KjU28, m4573getUnspecified0d7_KjU29, m4573getUnspecified0d7_KjU30, m4573getUnspecified0d7_KjU31, m4573getUnspecified0d7_KjU32, m4573getUnspecified0d7_KjU33, m4573getUnspecified0d7_KjU34, m4573getUnspecified0d7_KjU35, m4573getUnspecified0d7_KjU36, m4573getUnspecified0d7_KjU37, m4573getUnspecified0d7_KjU38, m4573getUnspecified0d7_KjU39, m4573getUnspecified0d7_KjU40, m4573getUnspecified0d7_KjU41, m4573getUnspecified0d7_KjU42);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2415copyejIjP34;
+        return m2722copyejIjP34;
     }
 
     public final TextFieldColors getDefaultOutlinedTextFieldColors(ColorScheme colorScheme, Composer composer, int i) {
@@ -1381,18 +1381,18 @@ public final class OutlinedTextFieldDefaults {
         if (defaultOutlinedTextFieldColorsCached$material3_release == null) {
             long fromToken = ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getFocusInputColor());
             long fromToken2 = ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputColor());
-            long m4077copywmQWz5c$default = Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledInputColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
+            long m4536copywmQWz5c$default = Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledInputColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
             long fromToken3 = ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getErrorInputColor());
-            long m4113getTransparent0d7_KjU = Color.Companion.m4113getTransparent0d7_KjU();
-            long m4113getTransparent0d7_KjU2 = Color.Companion.m4113getTransparent0d7_KjU();
-            long m4113getTransparent0d7_KjU3 = Color.Companion.m4113getTransparent0d7_KjU();
-            long m4113getTransparent0d7_KjU4 = Color.Companion.m4113getTransparent0d7_KjU();
+            long m4572getTransparent0d7_KjU = Color.Companion.m4572getTransparent0d7_KjU();
+            long m4572getTransparent0d7_KjU2 = Color.Companion.m4572getTransparent0d7_KjU();
+            long m4572getTransparent0d7_KjU3 = Color.Companion.m4572getTransparent0d7_KjU();
+            long m4572getTransparent0d7_KjU4 = Color.Companion.m4572getTransparent0d7_KjU();
             long fromToken4 = ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getCaretColor());
             long fromToken5 = ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getErrorFocusCaretColor());
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(TextSelectionColorsKt.getLocalTextSelectionColors());
             ComposerKt.sourceInformationMarkerEnd(composer);
-            TextFieldColors textFieldColors = new TextFieldColors(fromToken, fromToken2, m4077copywmQWz5c$default, fromToken3, m4113getTransparent0d7_KjU, m4113getTransparent0d7_KjU2, m4113getTransparent0d7_KjU3, m4113getTransparent0d7_KjU4, fromToken4, fromToken5, (TextSelectionColors) consume, ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getFocusOutlineColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getOutlineColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledOutlineColor()), 0.12f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getErrorOutlineColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getFocusLeadingIconColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getLeadingIconColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledLeadingIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getErrorLeadingIconColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getFocusTrailingIconColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getTrailingIconColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledTrailingIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getErrorTrailingIconColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getFocusLabelColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getLabelColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledLabelColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getErrorLabelColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPlaceholderColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPlaceholderColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledInputColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPlaceholderColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getFocusSupportingColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getSupportingColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledSupportingColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getErrorSupportingColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPrefixColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPrefixColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPrefixColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPrefixColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputSuffixColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputSuffixColor()), Color.m4077copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputSuffixColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputSuffixColor()), null);
+            TextFieldColors textFieldColors = new TextFieldColors(fromToken, fromToken2, m4536copywmQWz5c$default, fromToken3, m4572getTransparent0d7_KjU, m4572getTransparent0d7_KjU2, m4572getTransparent0d7_KjU3, m4572getTransparent0d7_KjU4, fromToken4, fromToken5, (TextSelectionColors) consume, ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getFocusOutlineColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getOutlineColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledOutlineColor()), 0.12f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getErrorOutlineColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getFocusLeadingIconColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getLeadingIconColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledLeadingIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getErrorLeadingIconColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getFocusTrailingIconColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getTrailingIconColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledTrailingIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getErrorTrailingIconColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getFocusLabelColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getLabelColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledLabelColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getErrorLabelColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPlaceholderColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPlaceholderColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledInputColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPlaceholderColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getFocusSupportingColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getSupportingColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getDisabledSupportingColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getErrorSupportingColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPrefixColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPrefixColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPrefixColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputPrefixColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputSuffixColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputSuffixColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputSuffixColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedTextFieldTokens.INSTANCE.getInputSuffixColor()), null);
             colorScheme.setDefaultOutlinedTextFieldColorsCached$material3_release(textFieldColors);
             defaultOutlinedTextFieldColorsCached$material3_release = textFieldColors;
         }
@@ -1434,7 +1434,7 @@ public final class OutlinedTextFieldDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2146ContainerBoxnbWgWpA(final boolean z, final boolean z2, final InteractionSource interactionSource, TextFieldColors textFieldColors, Shape shape, float f, float f2, Composer composer, final int i, final int i2) {
+    public final void m2453ContainerBoxnbWgWpA(final boolean z, final boolean z2, final InteractionSource interactionSource, TextFieldColors textFieldColors, Shape shape, float f, float f2, Composer composer, final int i, final int i2) {
         boolean z3;
         int i3;
         boolean z4;
@@ -1569,7 +1569,7 @@ public final class OutlinedTextFieldDefaults {
                         shape3 = shape2;
                         f5 = f3;
                         f6 = f4;
-                        m2145Container4EFweAY(z3, z4, interactionSource2, Modifier.Companion, textFieldColors3, shape3, f5, f6, startRestartGroup, i9, 0);
+                        m2452Container4EFweAY(z3, z4, interactionSource2, Modifier.Companion, textFieldColors3, shape3, f5, f6, startRestartGroup, i9, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -1608,7 +1608,7 @@ public final class OutlinedTextFieldDefaults {
                         }
 
                         public final void invoke(Composer composer2, int i10) {
-                            OutlinedTextFieldDefaults.this.m2146ContainerBoxnbWgWpA(z, z2, interactionSource, textFieldColors3, shape3, f5, f6, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                            OutlinedTextFieldDefaults.this.m2453ContainerBoxnbWgWpA(z, z2, interactionSource, textFieldColors3, shape3, f5, f6, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                         }
                     });
                     return;
@@ -1649,7 +1649,7 @@ public final class OutlinedTextFieldDefaults {
             shape3 = shape2;
             f5 = f3;
             f6 = f4;
-            m2145Container4EFweAY(z3, z4, interactionSource22, Modifier.Companion, textFieldColors3, shape3, f5, f6, startRestartGroup, i92, 0);
+            m2452Container4EFweAY(z3, z4, interactionSource22, Modifier.Companion, textFieldColors3, shape3, f5, f6, startRestartGroup, i92, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             endRestartGroup = startRestartGroup.endRestartGroup();
@@ -1693,7 +1693,7 @@ public final class OutlinedTextFieldDefaults {
         shape3 = shape2;
         f5 = f3;
         f6 = f4;
-        m2145Container4EFweAY(z3, z4, interactionSource222, Modifier.Companion, textFieldColors3, shape3, f5, f6, startRestartGroup, i922, 0);
+        m2452Container4EFweAY(z3, z4, interactionSource222, Modifier.Companion, textFieldColors3, shape3, f5, f6, startRestartGroup, i922, 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         endRestartGroup = startRestartGroup.endRestartGroup();

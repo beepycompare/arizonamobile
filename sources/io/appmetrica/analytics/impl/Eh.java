@@ -1,50 +1,58 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class Eh implements InterfaceC0444mn {
+public final class Eh extends AbstractC0358jh {
+    public final Jf b;
+    public final zo c;
+    public final SafePackageManager d;
+    public final TimeProvider e;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ E9 f419a;
-    public final /* synthetic */ Hh b;
-
-    public Eh(Hh hh, E9 e9) {
-        this.b = hh;
-        this.f419a = e9;
+    public Eh(C0572s5 c0572s5) {
+        this(c0572s5, c0572s5.t(), Ka.j().s(), new SafePackageManager(), new SystemTimeProvider());
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0444mn
-    public final void a(Object obj) {
-        List list = (List) obj;
-        E9 e9 = this.f419a;
-        if (io.a((Collection) list)) {
-            return;
+    @Override // io.appmetrica.analytics.impl.AbstractC0358jh
+    public final boolean a(C0399l6 c0399l6) {
+        C0399l6 a2;
+        C0572s5 c0572s5 = this.f925a;
+        if (this.c.d()) {
+            return false;
         }
-        e9.d = new C9[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            C0342il c0342il = (C0342il) list.get(i);
-            C9[] c9Arr = e9.d;
-            Map map = AbstractC0185cg.f798a;
-            C9 c9 = new C9();
-            Integer num = c0342il.f904a;
-            if (num != null) {
-                c9.f375a = num.intValue();
-            }
-            Integer num2 = c0342il.b;
-            if (num2 != null) {
-                c9.b = num2.intValue();
-            }
-            if (!TextUtils.isEmpty(c0342il.d)) {
-                c9.c = c0342il.d;
-            }
-            c9.d = c0342il.c;
-            c9Arr[i] = c9;
-            this.b.g += CodedOutputByteBufferNano.computeMessageSizeNoTag(e9.d[i]);
-            this.b.g += CodedOutputByteBufferNano.computeTagSize(10);
+        if (((Ch) c0572s5.k.a()).e) {
+            a2 = C0399l6.a(c0399l6, EnumC0728yb.EVENT_TYPE_APP_UPDATE);
+        } else {
+            a2 = C0399l6.a(c0399l6, EnumC0728yb.EVENT_TYPE_INIT);
         }
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("appInstaller", (String) WrapUtils.getOrDefault(this.d.getInstallerPackageName(c0572s5.f1054a, c0572s5.b.f949a), ""));
+            Jf jf = this.b;
+            jf.h.a(jf.f935a);
+            jSONObject.put("preloadInfo", ((Gf) jf.c()).b());
+        } catch (Throwable unused) {
+        }
+        a2.setValue(jSONObject.toString());
+        H9 h9 = c0572s5.n;
+        h9.a(a2, Xk.a(h9.c.b(a2), a2.i));
+        zo zoVar = this.c;
+        synchronized (zoVar) {
+            Ao ao = zoVar.f1187a;
+            ao.a(ao.a().put("init_event_done", true));
+        }
+        this.c.a(this.e.currentTimeMillis());
+        return false;
+    }
+
+    public Eh(C0572s5 c0572s5, zo zoVar, Jf jf, SafePackageManager safePackageManager, SystemTimeProvider systemTimeProvider) {
+        super(c0572s5);
+        this.c = zoVar;
+        this.b = jf;
+        this.d = safePackageManager;
+        this.e = systemTimeProvider;
     }
 }

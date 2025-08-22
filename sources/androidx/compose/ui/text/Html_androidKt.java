@@ -48,7 +48,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okio.Utf8;
 import org.xml.sax.XMLReader;
 /* compiled from: Html.android.kt */
-@Metadata(d1 = {"\u0000i\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000*\u0001\u0005\u001a\u0014\u0010\b\u001a\u0004\u0018\u00010\t2\b\u0010\n\u001a\u0004\u0018\u00010\u0001H\u0002\u001a8\u0010\u000b\u001a\u00020\f*\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00112\b\u0010\u0013\u001a\u0004\u0018\u00010\u00142\b\u0010\u0015\u001a\u0004\u0018\u00010\u0016H\u0002\u001a(\u0010\u0017\u001a\u00020\f*\u00020\r2\u0006\u0010\u0018\u001a\u00020\u00192\b\u0010\u0013\u001a\u0004\u0018\u00010\u00142\b\u0010\u0015\u001a\u0004\u0018\u00010\u0016H\u0002\u001a*\u0010\u001a\u001a\u00020\u001b*\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u00012\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u0016\u001a$\u0010\u001e\u001a\u00020\u001b*\u00020\u00192\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00142\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u0016H\u0001\u001a\f\u0010\u001f\u001a\u00020 *\u00020!H\u0002\u001a\u000e\u0010\"\u001a\u0004\u0018\u00010#*\u00020$H\u0002\u001a\f\u0010\"\u001a\u00020#*\u00020%H\u0002\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0003\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u0010\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0006\"\u000e\u0010\u0007\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000¨\u0006&"}, d2 = {"AnnotationTag", "", Html_androidKt.ContentHandlerReplacementTag, "Li", "TagHandler", "androidx/compose/ui/text/Html_androidKt$TagHandler$1", "Landroidx/compose/ui/text/Html_androidKt$TagHandler$1;", "Ul", "optionalFontFamilyFromName", "Landroidx/compose/ui/text/font/FontFamily;", "familyName", "addSpan", "", "Landroidx/compose/ui/text/AnnotatedString$Builder;", TtmlNode.TAG_SPAN, "", TtmlNode.START, "", TtmlNode.END, "linkStyles", "Landroidx/compose/ui/text/TextLinkStyles;", "linkInteractionListener", "Landroidx/compose/ui/text/LinkInteractionListener;", "addSpans", "spanned", "Landroid/text/Spanned;", "fromHtml", "Landroidx/compose/ui/text/AnnotatedString;", "Landroidx/compose/ui/text/AnnotatedString$Companion;", "htmlString", "toAnnotatedString", "toParagraphStyle", "Landroidx/compose/ui/text/ParagraphStyle;", "Landroid/text/style/AlignmentSpan;", "toSpanStyle", "Landroidx/compose/ui/text/SpanStyle;", "Landroid/text/style/StyleSpan;", "Landroid/text/style/TypefaceSpan;", "ui-text_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0007*\u0001 \u001a*\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00062\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b\u001a$\u0010\t\u001a\u00020\u0001*\u00020\n2\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00062\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\bH\u0001\u001a(\u0010\u000b\u001a\u00020\f*\u00020\r2\u0006\u0010\u000e\u001a\u00020\n2\b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\b\u0010\u0007\u001a\u0004\u0018\u00010\bH\u0002\u001a8\u0010\u000f\u001a\u00020\f*\u00020\r2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00132\b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\b\u0010\u0007\u001a\u0004\u0018\u00010\bH\u0002\u001a\f\u0010\u0015\u001a\u00020\u0016*\u00020\u0017H\u0002\u001a\u000e\u0010\u0018\u001a\u0004\u0018\u00010\u0019*\u00020\u001aH\u0002\u001a\f\u0010\u0018\u001a\u00020\u0019*\u00020\u001bH\u0002\u001a\u0014\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\b\u0010\u001e\u001a\u0004\u0018\u00010\u0004H\u0002\"\u0010\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0004\n\u0002\u0010!\"\u000e\u0010\"\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010#\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010$\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010%\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000¨\u0006&"}, d2 = {"fromHtml", "Landroidx/compose/ui/text/AnnotatedString;", "Landroidx/compose/ui/text/AnnotatedString$Companion;", "htmlString", "", "linkStyles", "Landroidx/compose/ui/text/TextLinkStyles;", "linkInteractionListener", "Landroidx/compose/ui/text/LinkInteractionListener;", "toAnnotatedString", "Landroid/text/Spanned;", "addSpans", "", "Landroidx/compose/ui/text/AnnotatedString$Builder;", "spanned", "addSpan", TtmlNode.TAG_SPAN, "", TtmlNode.START, "", TtmlNode.END, "toParagraphStyle", "Landroidx/compose/ui/text/ParagraphStyle;", "Landroid/text/style/AlignmentSpan;", "toSpanStyle", "Landroidx/compose/ui/text/SpanStyle;", "Landroid/text/style/StyleSpan;", "Landroid/text/style/TypefaceSpan;", "optionalFontFamilyFromName", "Landroidx/compose/ui/text/font/FontFamily;", "familyName", "TagHandler", "androidx/compose/ui/text/Html_androidKt$TagHandler$1", "Landroidx/compose/ui/text/Html_androidKt$TagHandler$1;", Html_androidKt.ContentHandlerReplacementTag, "AnnotationTag", "Li", "Ul", "ui-text"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class Html_androidKt {
     private static final String AnnotationTag = "annotation";
@@ -66,7 +66,7 @@ public final class Html_androidKt {
     private static final String Ul = "ul";
 
     /* compiled from: Html.android.kt */
-    @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -123,7 +123,7 @@ public final class Html_androidKt {
         Object[] spans;
         for (Object obj : spanned.getSpans(0, builder.getLength(), Object.class)) {
             long TextRange = TextRangeKt.TextRange(spanned.getSpanStart(obj), spanned.getSpanEnd(obj));
-            addSpan(builder, obj, TextRange.m6147getStartimpl(TextRange), TextRange.m6142getEndimpl(TextRange), textLinkStyles, linkInteractionListener);
+            addSpan(builder, obj, TextRange.m6713getStartimpl(TextRange), TextRange.m6708getEndimpl(TextRange), textLinkStyles, linkInteractionListener);
         }
     }
 
@@ -140,11 +140,11 @@ public final class Html_androidKt {
         } else if (obj instanceof BackgroundColorSpan) {
             builder.addStyle(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, ColorKt.Color(((BackgroundColorSpan) obj).getBackgroundColor()), (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 63487, (DefaultConstructorMarker) null), i, i2);
         } else if (obj instanceof BulletSpanWithLevel) {
-            long defaultBulletIndentation = BulletKt.getDefaultBulletIndentation();
+            long m6537getDefaultIndentationXSAIIZE = Bullet.Companion.m6537getDefaultIndentationXSAIIZE();
             BulletSpanWithLevel bulletSpanWithLevel = (BulletSpanWithLevel) obj;
             int indentationLevel = bulletSpanWithLevel.getIndentationLevel();
-            TextUnitKt.m6891checkArithmeticR2X_6o(defaultBulletIndentation);
-            builder.m5978addBulletr9BaKPg$ui_text_release(bulletSpanWithLevel.getBullet(), TextUnitKt.pack(TextUnit.m6876getRawTypeimpl(defaultBulletIndentation), TextUnit.m6878getValueimpl(defaultBulletIndentation) * indentationLevel), i, i2);
+            TextUnitKt.m7458checkArithmeticR2X_6o(m6537getDefaultIndentationXSAIIZE);
+            builder.m6527addBulletr9BaKPg(bulletSpanWithLevel.getBullet(), TextUnitKt.pack(TextUnit.m7443getRawTypeimpl(m6537getDefaultIndentationXSAIIZE), TextUnit.m7445getValueimpl(m6537getDefaultIndentationXSAIIZE) * indentationLevel), i, i2);
         } else if (obj instanceof ForegroundColorSpan) {
             builder.addStyle(new SpanStyle(ColorKt.Color(((ForegroundColorSpan) obj).getForegroundColor()), 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE, (DefaultConstructorMarker) null), i, i2);
         } else if (obj instanceof RelativeSizeSpan) {
@@ -157,9 +157,9 @@ public final class Html_androidKt {
                 builder.addStyle(spanStyle, i, i2);
             }
         } else if (obj instanceof SubscriptSpan) {
-            builder.addStyle(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, BaselineShift.m6440boximpl(BaselineShift.Companion.m6451getSubscripty9eOQZs()), (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65279, (DefaultConstructorMarker) null), i, i2);
+            builder.addStyle(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, BaselineShift.m7007boximpl(BaselineShift.Companion.m7018getSubscripty9eOQZs()), (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65279, (DefaultConstructorMarker) null), i, i2);
         } else if (obj instanceof SuperscriptSpan) {
-            builder.addStyle(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, BaselineShift.m6440boximpl(BaselineShift.Companion.m6452getSuperscripty9eOQZs()), (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65279, (DefaultConstructorMarker) null), i, i2);
+            builder.addStyle(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, BaselineShift.m7007boximpl(BaselineShift.Companion.m7019getSuperscripty9eOQZs()), (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65279, (DefaultConstructorMarker) null), i, i2);
         } else if (obj instanceof TypefaceSpan) {
             builder.addStyle(toSpanStyle((TypefaceSpan) obj), i, i2);
         } else if (obj instanceof UnderlineSpan) {
@@ -171,19 +171,19 @@ public final class Html_androidKt {
     }
 
     private static final ParagraphStyle toParagraphStyle(AlignmentSpan alignmentSpan) {
-        int m6573getStarte0LSkKk;
+        int m7140getStarte0LSkKk;
         Layout.Alignment alignment = alignmentSpan.getAlignment();
         int i = alignment == null ? -1 : WhenMappings.$EnumSwitchMapping$0[alignment.ordinal()];
         if (i == 1) {
-            m6573getStarte0LSkKk = TextAlign.Companion.m6573getStarte0LSkKk();
+            m7140getStarte0LSkKk = TextAlign.Companion.m7140getStarte0LSkKk();
         } else if (i == 2) {
-            m6573getStarte0LSkKk = TextAlign.Companion.m6568getCentere0LSkKk();
+            m7140getStarte0LSkKk = TextAlign.Companion.m7135getCentere0LSkKk();
         } else if (i == 3) {
-            m6573getStarte0LSkKk = TextAlign.Companion.m6569getEnde0LSkKk();
+            m7140getStarte0LSkKk = TextAlign.Companion.m7136getEnde0LSkKk();
         } else {
-            m6573getStarte0LSkKk = TextAlign.Companion.m6574getUnspecifiede0LSkKk();
+            m7140getStarte0LSkKk = TextAlign.Companion.m7141getUnspecifiede0LSkKk();
         }
-        return new ParagraphStyle(m6573getStarte0LSkKk, 0, 0L, (TextIndent) null, (PlatformParagraphStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, (int) TypedValues.PositionType.TYPE_POSITION_TYPE, (DefaultConstructorMarker) null);
+        return new ParagraphStyle(m7140getStarte0LSkKk, 0, 0L, (TextIndent) null, (PlatformParagraphStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, (int) TypedValues.PositionType.TYPE_POSITION_TYPE, (DefaultConstructorMarker) null);
     }
 
     private static final SpanStyle toSpanStyle(StyleSpan styleSpan) {
@@ -193,9 +193,9 @@ public final class Html_androidKt {
                 if (style != 3) {
                     return null;
                 }
-                return new SpanStyle(0L, 0L, FontWeight.Companion.getBold(), FontStyle.m6256boximpl(FontStyle.Companion.m6265getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65523, (DefaultConstructorMarker) null);
+                return new SpanStyle(0L, 0L, FontWeight.Companion.getBold(), FontStyle.m6823boximpl(FontStyle.Companion.m6832getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65523, (DefaultConstructorMarker) null);
             }
-            return new SpanStyle(0L, 0L, (FontWeight) null, FontStyle.m6256boximpl(FontStyle.Companion.m6265getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65527, (DefaultConstructorMarker) null);
+            return new SpanStyle(0L, 0L, (FontWeight) null, FontStyle.m6823boximpl(FontStyle.Companion.m6832getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65527, (DefaultConstructorMarker) null);
         }
         return new SpanStyle(0L, 0L, FontWeight.Companion.getBold(), (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65531, (DefaultConstructorMarker) null);
     }

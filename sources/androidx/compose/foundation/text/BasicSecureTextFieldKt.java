@@ -1,5 +1,7 @@
 package androidx.compose.foundation.text;
 
+import androidx.compose.foundation.ScrollKt;
+import androidx.compose.foundation.ScrollState;
 import androidx.compose.foundation.interaction.MutableInteractionSource;
 import androidx.compose.foundation.text.input.InputTransformation;
 import androidx.compose.foundation.text.input.InputTransformationKt;
@@ -8,6 +10,7 @@ import androidx.compose.foundation.text.input.TextFieldDecorator;
 import androidx.compose.foundation.text.input.TextFieldLineLimits;
 import androidx.compose.foundation.text.input.TextFieldState;
 import androidx.compose.foundation.text.input.TextObfuscationMode;
+import androidx.compose.foundation.text.input.TextObfuscationMode_androidKt;
 import androidx.compose.foundation.text.input.internal.CodepointTransformation;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
@@ -49,59 +52,85 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: BasicSecureTextField.kt */
-@Metadata(d1 = {"\u0000~\n\u0000\n\u0002\u0010\f\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\u001aÊ\u0001\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u001328\b\u0002\u0010\u0014\u001a2\u0012\u0004\u0012\u00020\u0016\u0012\u001b\u0012\u0019\u0012\u0006\u0012\u0004\u0018\u00010\u00180\u0017¢\u0006\f\b\u0019\u0012\b\b\u001a\u0012\u0004\b\b(\u001b\u0012\u0004\u0012\u00020\u0005\u0018\u00010\u0015¢\u0006\u0002\b\u001c2\n\b\u0002\u0010\u001d\u001a\u0004\u0018\u00010\u001e2\b\b\u0002\u0010\u001f\u001a\u00020 2\n\b\u0002\u0010!\u001a\u0004\u0018\u00010\"2\b\b\u0002\u0010#\u001a\u00020$2\b\b\u0002\u0010%\u001a\u00020\u0001H\u0007ø\u0001\u0000¢\u0006\u0004\b&\u0010'\u001aÔ\u0001\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010(\u001a\u00020\u000b2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u001328\b\u0002\u0010\u0014\u001a2\u0012\u0004\u0012\u00020\u0016\u0012\u001b\u0012\u0019\u0012\u0006\u0012\u0004\u0018\u00010\u00180\u0017¢\u0006\f\b\u0019\u0012\b\b\u001a\u0012\u0004\b\b(\u001b\u0012\u0004\u0012\u00020\u0005\u0018\u00010\u0015¢\u0006\u0002\b\u001c2\n\b\u0002\u0010\u001d\u001a\u0004\u0018\u00010\u001e2\b\b\u0002\u0010\u001f\u001a\u00020 2\n\b\u0002\u0010!\u001a\u0004\u0018\u00010\"2\b\b\u0002\u0010#\u001a\u00020$2\b\b\u0002\u0010%\u001a\u00020\u0001H\u0007ø\u0001\u0000¢\u0006\u0004\b)\u0010*\u001a \u0010+\u001a\u00020\u00052\u0011\u0010,\u001a\r\u0012\u0004\u0012\u00020\u00050\u0017¢\u0006\u0002\b-H\u0003¢\u0006\u0002\u0010.\u001a\u001a\u0010/\u001a\u0004\u0018\u00010\r*\u0004\u0018\u00010\r2\b\u00100\u001a\u0004\u0018\u00010\rH\u0002\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u00061"}, d2 = {"DefaultObfuscationCharacter", "", "LAST_TYPED_CHARACTER_REVEAL_DURATION_MILLIS", "", "BasicSecureTextField", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/text/input/TextFieldState;", "modifier", "Landroidx/compose/ui/Modifier;", "enabled", "", "inputTransformation", "Landroidx/compose/foundation/text/input/InputTransformation;", "textStyle", "Landroidx/compose/ui/text/TextStyle;", "keyboardOptions", "Landroidx/compose/foundation/text/KeyboardOptions;", "onKeyboardAction", "Landroidx/compose/foundation/text/input/KeyboardActionHandler;", "onTextLayout", "Lkotlin/Function2;", "Landroidx/compose/ui/unit/Density;", "Lkotlin/Function0;", "Landroidx/compose/ui/text/TextLayoutResult;", "Lkotlin/ParameterName;", "name", "getResult", "Lkotlin/ExtensionFunctionType;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "cursorBrush", "Landroidx/compose/ui/graphics/Brush;", "decorator", "Landroidx/compose/foundation/text/input/TextFieldDecorator;", "textObfuscationMode", "Landroidx/compose/foundation/text/input/TextObfuscationMode;", "textObfuscationCharacter", "BasicSecureTextField-Jb9bMDk", "(Landroidx/compose/foundation/text/input/TextFieldState;Landroidx/compose/ui/Modifier;ZLandroidx/compose/foundation/text/input/InputTransformation;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/input/KeyboardActionHandler;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/ui/graphics/Brush;Landroidx/compose/foundation/text/input/TextFieldDecorator;ICLandroidx/compose/runtime/Composer;III)V", "readOnly", "BasicSecureTextField-egD4TGM", "(Landroidx/compose/foundation/text/input/TextFieldState;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/foundation/text/input/InputTransformation;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/input/KeyboardActionHandler;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/ui/graphics/Brush;Landroidx/compose/foundation/text/input/TextFieldDecorator;ICLandroidx/compose/runtime/Composer;III)V", "DisableCutCopy", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/runtime/Composable;", "(Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "then", "next", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0088\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\f\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\u001aÛ\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u001028\b\u0002\u0010\u0011\u001a2\u0012\u0004\u0012\u00020\u0013\u0012\u001b\u0012\u0019\u0012\u0006\u0012\u0004\u0018\u00010\u00150\u0014¢\u0006\f\b\u0016\u0012\b\b\u0017\u0012\u0004\b\b(\u0018\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0012¢\u0006\u0002\b\u00192\n\b\u0002\u0010\u001a\u001a\u0004\u0018\u00010\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u001f2\b\b\u0002\u0010 \u001a\u00020!2\b\b\u0002\u0010\"\u001a\u00020#2\b\b\u0002\u0010$\u001a\u00020%H\u0007¢\u0006\u0004\b&\u0010'\u001a\u001a\u0010(\u001a\u0004\u0018\u00010\n*\u0004\u0018\u00010\n2\b\u0010)\u001a\u0004\u0018\u00010\nH\u0002\u001a \u0010-\u001a\u00020\u00012\u0011\u0010.\u001a\r\u0012\u0004\u0012\u00020\u00010\u0014¢\u0006\u0002\b/H\u0003¢\u0006\u0002\u00100\u001aÇ\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u001028\b\u0002\u0010\u0011\u001a2\u0012\u0004\u0012\u00020\u0013\u0012\u001b\u0012\u0019\u0012\u0006\u0012\u0004\u0018\u00010\u00150\u0014¢\u0006\f\b\u0016\u0012\b\b\u0017\u0012\u0004\b\b(\u0018\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0012¢\u0006\u0002\b\u00192\n\b\u0002\u0010\u001a\u001a\u0004\u0018\u00010\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u001f2\b\b\u0002\u0010 \u001a\u00020!2\b\b\u0002\u0010\"\u001a\u00020#H\u0007¢\u0006\u0004\b1\u00102\u001aÑ\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u001028\b\u0002\u0010\u0011\u001a2\u0012\u0004\u0012\u00020\u0013\u0012\u001b\u0012\u0019\u0012\u0006\u0012\u0004\u0018\u00010\u00150\u0014¢\u0006\f\b\u0016\u0012\b\b\u0017\u0012\u0004\b\b(\u0018\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0012¢\u0006\u0002\b\u00192\n\b\u0002\u0010\u001a\u001a\u0004\u0018\u00010\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u001f2\b\b\u0002\u0010 \u001a\u00020!2\b\b\u0002\u0010\"\u001a\u00020#H\u0007¢\u0006\u0004\b3\u00104\"\u000e\u0010*\u001a\u00020+X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010,\u001a\u00020#X\u0082T¢\u0006\u0002\n\u0000¨\u00065"}, d2 = {"BasicSecureTextField", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/text/input/TextFieldState;", "modifier", "Landroidx/compose/ui/Modifier;", "enabled", "", "readOnly", "inputTransformation", "Landroidx/compose/foundation/text/input/InputTransformation;", "textStyle", "Landroidx/compose/ui/text/TextStyle;", "keyboardOptions", "Landroidx/compose/foundation/text/KeyboardOptions;", "onKeyboardAction", "Landroidx/compose/foundation/text/input/KeyboardActionHandler;", "onTextLayout", "Lkotlin/Function2;", "Landroidx/compose/ui/unit/Density;", "Lkotlin/Function0;", "Landroidx/compose/ui/text/TextLayoutResult;", "Lkotlin/ParameterName;", "name", "getResult", "Lkotlin/ExtensionFunctionType;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "cursorBrush", "Landroidx/compose/ui/graphics/Brush;", "decorator", "Landroidx/compose/foundation/text/input/TextFieldDecorator;", "textObfuscationMode", "Landroidx/compose/foundation/text/input/TextObfuscationMode;", "textObfuscationCharacter", "", "scrollState", "Landroidx/compose/foundation/ScrollState;", "BasicSecureTextField-ltb6GB4", "(Landroidx/compose/foundation/text/input/TextFieldState;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/foundation/text/input/InputTransformation;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/input/KeyboardActionHandler;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/ui/graphics/Brush;Landroidx/compose/foundation/text/input/TextFieldDecorator;ICLandroidx/compose/foundation/ScrollState;Landroidx/compose/runtime/Composer;III)V", "then", "next", "LAST_TYPED_CHARACTER_REVEAL_DURATION_MILLIS", "", "DefaultObfuscationCharacter", "DisableCutCopy", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/runtime/Composable;", "(Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "BasicSecureTextField-Jb9bMDk", "(Landroidx/compose/foundation/text/input/TextFieldState;Landroidx/compose/ui/Modifier;ZLandroidx/compose/foundation/text/input/InputTransformation;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/input/KeyboardActionHandler;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/ui/graphics/Brush;Landroidx/compose/foundation/text/input/TextFieldDecorator;ICLandroidx/compose/runtime/Composer;III)V", "BasicSecureTextField-egD4TGM", "(Landroidx/compose/foundation/text/input/TextFieldState;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/foundation/text/input/InputTransformation;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/input/KeyboardActionHandler;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/ui/graphics/Brush;Landroidx/compose/foundation/text/input/TextFieldDecorator;ICLandroidx/compose/runtime/Composer;III)V", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BasicSecureTextFieldKt {
     private static final char DefaultObfuscationCharacter = 8226;
     private static final long LAST_TYPED_CHARACTER_REVEAL_DURATION_MILLIS = 1500;
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0133  */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0136  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0154  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x015b  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x017b  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x017e  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x01a0  */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x01a3  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x01c3  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x01c6  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x01ed  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x01ff  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x03ca  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x03e8  */
-    /* JADX WARN: Removed duplicated region for block: B:255:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0054  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0078  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0092  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0095  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00b1  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00b6  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00cf  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00d4  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00f0  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0110  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0113  */
-    /* renamed from: BasicSecureTextField-egD4TGM  reason: not valid java name */
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit BasicSecureTextField_Jb9bMDk$lambda$11(TextFieldState textFieldState, Modifier modifier, boolean z, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, int i2, int i3, int i4, Composer composer, int i5) {
+        m1206BasicSecureTextFieldJb9bMDk(textFieldState, modifier, z, inputTransformation, textStyle, keyboardOptions, keyboardActionHandler, function2, mutableInteractionSource, brush, textFieldDecorator, i, c, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit BasicSecureTextField_egD4TGM$lambda$12(TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, int i2, int i3, int i4, Composer composer, int i5) {
+        m1207BasicSecureTextFieldegD4TGM(textFieldState, modifier, z, z2, inputTransformation, textStyle, keyboardOptions, keyboardActionHandler, function2, mutableInteractionSource, brush, textFieldDecorator, i, c, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit BasicSecureTextField_ltb6GB4$lambda$8(TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, ScrollState scrollState, int i2, int i3, int i4, Composer composer, int i5) {
+        m1208BasicSecureTextFieldltb6GB4(textFieldState, modifier, z, z2, inputTransformation, textStyle, keyboardOptions, keyboardActionHandler, function2, mutableInteractionSource, brush, textFieldDecorator, i, c, scrollState, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit DisableCutCopy$lambda$10(Function2 function2, int i, Composer composer, int i2) {
+        DisableCutCopy(function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:100:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0132  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0150  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0157  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0177  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x017a  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0198  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x01ae  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x01b8  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x01bf  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x01db  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x01ef  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x0201  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x0213  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0051  */
+    /* JADX WARN: Removed duplicated region for block: B:279:0x04b0  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0054  */
+    /* JADX WARN: Removed duplicated region for block: B:282:0x04cf  */
+    /* JADX WARN: Removed duplicated region for block: B:284:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00d5  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00ee  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00f3  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x010c  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x010f  */
+    /* renamed from: BasicSecureTextField-ltb6GB4  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1040BasicSecureTextFieldegD4TGM(final TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2<? super Density, ? super Function0<TextLayoutResult>, Unit> function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, Composer composer, final int i2, final int i3, final int i4) {
-        Object obj;
+    public static final void m1208BasicSecureTextFieldltb6GB4(final TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2<? super Density, ? super Function0<TextLayoutResult>, Unit> function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, ScrollState scrollState, Composer composer, final int i2, final int i3, final int i4) {
+        final TextFieldState textFieldState2;
         int i5;
-        Object obj2;
+        Object obj;
         int i6;
         boolean z3;
         int i7;
         boolean z4;
         int i8;
-        Object obj3;
+        final Object obj2;
         int i9;
-        Object obj4;
+        Object obj3;
         int i10;
-        Object obj5;
+        final Object obj4;
         int i11;
         int i12;
         int i13;
@@ -114,43 +143,61 @@ public final class BasicSecureTextFieldKt {
         int i20;
         int i21;
         int i22;
-        int i23;
-        int i24;
-        final KeyboardActionHandler keyboardActionHandler2;
         final Function2<? super Density, ? super Function0<TextLayoutResult>, Unit> function22;
-        final int i25;
+        final int i23;
+        final char c2;
         Composer composer2;
         final boolean z5;
         final boolean z6;
         final InputTransformation inputTransformation2;
         final Modifier modifier2;
+        final TextStyle textStyle2;
+        final KeyboardActionHandler keyboardActionHandler2;
         final MutableInteractionSource mutableInteractionSource2;
         final Brush brush2;
         final TextFieldDecorator textFieldDecorator2;
-        final KeyboardOptions keyboardOptions2;
-        final TextStyle textStyle2;
-        final char c2;
+        final ScrollState scrollState2;
         ScopeUpdateScope endRestartGroup;
-        CodepointTransformation codepointTransformation;
         Modifier.Companion companion;
-        Composer startRestartGroup = composer.startRestartGroup(-817513499);
-        ComposerKt.sourceInformation(startRestartGroup, "C(BasicSecureTextField)P(10,6,2,9,3,13,5,7,8,4!2,12:c#foundation.text.input.TextObfuscationMode)134@7973L46,135@8056L60,136@8163L130,136@8121L172,147@8671L129,147@8632L168,154@8844L424,183@9940L852,183@9925L867:BasicSecureTextField.kt#423gt5");
+        KeyboardOptions keyboardOptions2;
+        boolean z7;
+        SolidColor solidColor;
+        int i24;
+        final KeyboardOptions keyboardOptions3;
+        final ScrollState scrollState3;
+        final Brush brush3;
+        final TextFieldDecorator textFieldDecorator3;
+        final KeyboardActionHandler keyboardActionHandler3;
+        final Function2<? super Density, ? super Function0<TextLayoutResult>, Unit> function23;
+        final MutableInteractionSource mutableInteractionSource3;
+        TextStyle textStyle3;
+        char c3;
+        final boolean z8;
+        int i25;
+        final boolean z9;
+        final boolean z10;
+        CodepointTransformation codepointTransformation;
+        Modifier.Companion companion2;
+        int i26;
+        Composer startRestartGroup = composer.startRestartGroup(1568790509);
+        ComposerKt.sourceInformation(startRestartGroup, "C(BasicSecureTextField)N(state,modifier,enabled,readOnly,inputTransformation,textStyle,keyboardOptions,onKeyboardAction,onTextLayout,interactionSource,cursorBrush,decorator,textObfuscationMode:c#foundation.text.input.TextObfuscationMode,textObfuscationCharacter,scrollState)140@8345L46,141@8428L60,142@8535L130,142@8493L172,155@9098L129,155@9059L168,162@9271L424,176@9771L38,177@9841L288,191@10367L891,191@10352L906:BasicSecureTextField.kt#423gt5");
         if ((i4 & 1) != 0) {
             i5 = i2 | 6;
-            obj = textFieldState;
-        } else if ((i2 & 6) == 0) {
-            obj = textFieldState;
-            i5 = (startRestartGroup.changed(obj) ? 4 : 2) | i2;
+            textFieldState2 = textFieldState;
         } else {
-            obj = textFieldState;
-            i5 = i2;
+            textFieldState2 = textFieldState;
+            if ((i2 & 6) == 0) {
+                i5 = (startRestartGroup.changed(textFieldState2) ? 4 : 2) | i2;
+            } else {
+                i5 = i2;
+            }
         }
-        int i26 = i4 & 2;
-        if (i26 != 0) {
+        int i27 = i4 & 2;
+        if (i27 != 0) {
             i5 |= 48;
         } else if ((i2 & 48) == 0) {
-            obj2 = modifier;
-            i5 |= startRestartGroup.changed(obj2) ? 32 : 16;
+            obj = modifier;
+            i5 |= startRestartGroup.changed(obj) ? 32 : 16;
             i6 = i4 & 4;
             if (i6 == 0) {
                 i5 |= RendererCapabilities.DECODER_SUPPORT_MASK;
@@ -164,362 +211,412 @@ public final class BasicSecureTextFieldKt {
                     z4 = z2;
                     i5 |= startRestartGroup.changed(z4) ? 2048 : 1024;
                     i8 = i4 & 16;
+                    int i28 = 8192;
                     if (i8 == 0) {
                         i5 |= 24576;
                     } else if ((i2 & 24576) == 0) {
-                        obj3 = inputTransformation;
-                        i5 |= startRestartGroup.changed(obj3) ? 16384 : 8192;
+                        obj2 = inputTransformation;
+                        i5 |= startRestartGroup.changed(obj2) ? 16384 : 8192;
                         i9 = i4 & 32;
                         if (i9 != 0) {
                             i5 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
-                            obj4 = textStyle;
+                            obj3 = textStyle;
                         } else {
-                            obj4 = textStyle;
+                            obj3 = textStyle;
                             if ((i2 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
-                                i5 |= startRestartGroup.changed(obj4) ? 131072 : 65536;
+                                i5 |= startRestartGroup.changed(obj3) ? 131072 : 65536;
                             }
                         }
                         i10 = i4 & 64;
                         if (i10 != 0) {
                             i5 |= 1572864;
-                            obj5 = keyboardOptions;
+                            obj4 = keyboardOptions;
                         } else {
-                            obj5 = keyboardOptions;
+                            obj4 = keyboardOptions;
                             if ((i2 & 1572864) == 0) {
-                                i5 |= startRestartGroup.changed(obj5) ? 1048576 : 524288;
+                                i5 |= startRestartGroup.changed(obj4) ? 1048576 : 524288;
                             }
                         }
                         i11 = i4 & 128;
                         if (i11 != 0) {
                             i5 |= 12582912;
                         } else if ((i2 & 12582912) == 0) {
-                            i12 = i11;
                             i5 |= startRestartGroup.changed(keyboardActionHandler) ? 8388608 : 4194304;
-                            i13 = i4 & 256;
-                            if (i13 == 0) {
-                                i5 |= 100663296;
-                            } else if ((i2 & 100663296) == 0) {
-                                i14 = i13;
-                                i5 |= startRestartGroup.changedInstance(function2) ? 67108864 : 33554432;
-                                i15 = i4 & 512;
-                                if (i15 != 0) {
-                                    i5 |= 805306368;
-                                } else if ((i2 & 805306368) == 0) {
-                                    i16 = i15;
-                                    i5 |= startRestartGroup.changed(mutableInteractionSource) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
-                                    i17 = i4 & 1024;
-                                    if (i17 == 0) {
-                                        i19 = i3 | 6;
-                                        i18 = i17;
-                                    } else if ((i3 & 6) == 0) {
-                                        i18 = i17;
-                                        i19 = i3 | (startRestartGroup.changed(brush) ? 4 : 2);
-                                    } else {
-                                        i18 = i17;
-                                        i19 = i3;
+                        }
+                        i12 = i4 & 256;
+                        if (i12 != 0) {
+                            i5 |= 100663296;
+                        } else if ((i2 & 100663296) == 0) {
+                            i13 = i12;
+                            i5 |= startRestartGroup.changedInstance(function2) ? 67108864 : 33554432;
+                            i14 = i4 & 512;
+                            if (i14 == 0) {
+                                i5 |= 805306368;
+                            } else if ((i2 & 805306368) == 0) {
+                                i15 = i14;
+                                i5 |= startRestartGroup.changed(mutableInteractionSource) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                                i16 = i4 & 1024;
+                                if (i16 != 0) {
+                                    i18 = i3 | 6;
+                                    i17 = i16;
+                                } else if ((i3 & 6) == 0) {
+                                    i17 = i16;
+                                    i18 = i3 | (startRestartGroup.changed(brush) ? 4 : 2);
+                                } else {
+                                    i17 = i16;
+                                    i18 = i3;
+                                }
+                                i19 = i4 & 2048;
+                                if (i19 != 0) {
+                                    i18 |= 48;
+                                } else if ((i3 & 48) == 0) {
+                                    i18 |= (i3 & 64) == 0 ? startRestartGroup.changed(textFieldDecorator) : startRestartGroup.changedInstance(textFieldDecorator) ? 32 : 16;
+                                }
+                                if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+                                    if ((i4 & 4096) == 0 && startRestartGroup.changed(i)) {
+                                        i26 = 256;
+                                        i18 |= i26;
                                     }
-                                    i20 = i4 & 2048;
-                                    if (i20 == 0) {
-                                        i19 |= 48;
-                                    } else if ((i3 & 48) == 0) {
-                                        i19 |= (i3 & 64) == 0 ? startRestartGroup.changed(textFieldDecorator) : startRestartGroup.changedInstance(textFieldDecorator) ? 32 : 16;
+                                    i26 = 128;
+                                    i18 |= i26;
+                                }
+                                int i29 = i18;
+                                i20 = i4 & 8192;
+                                if (i20 != 0) {
+                                    i21 = i29 | 3072;
+                                } else if ((i3 & 3072) == 0) {
+                                    i21 = i29 | (startRestartGroup.changed(c) ? 2048 : 1024);
+                                } else {
+                                    i21 = i29;
+                                }
+                                if ((i3 & 24576) == 0) {
+                                    if ((i4 & 16384) == 0 && startRestartGroup.changed(scrollState)) {
+                                        i28 = 16384;
                                     }
-                                    int i27 = i19;
-                                    i21 = i4 & 4096;
-                                    if (i21 == 0) {
-                                        i22 = i27 | RendererCapabilities.DECODER_SUPPORT_MASK;
-                                    } else {
-                                        int i28 = i27;
-                                        if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                                            i28 |= startRestartGroup.changed(i) ? 256 : 128;
+                                    i21 |= i28;
+                                }
+                                i22 = i21;
+                                if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 9363) != 9362, i5 & 1)) {
+                                    startRestartGroup.startDefaults();
+                                    ComposerKt.sourceInformation(startRestartGroup, "138@8287L21");
+                                    if ((i2 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                        startRestartGroup.skipToGroupEnd();
+                                        if ((i4 & 4096) != 0) {
+                                            i22 &= -897;
                                         }
-                                        i22 = i28;
-                                    }
-                                    i23 = i4 & 8192;
-                                    if (i23 == 0) {
-                                        i24 = i22 | 3072;
-                                    } else {
-                                        int i29 = i22;
-                                        if ((i3 & 3072) == 0) {
-                                            i24 = i29 | (startRestartGroup.changed(c) ? 2048 : 1024);
-                                        } else {
-                                            i24 = i29;
+                                        if ((i4 & 16384) != 0) {
+                                            i22 &= -57345;
                                         }
-                                    }
-                                    if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i24 & 1171) != 1170, i5 & 1)) {
-                                        Modifier.Companion companion2 = i26 != 0 ? Modifier.Companion : obj2;
-                                        final boolean z7 = i6 != 0 ? true : z3;
-                                        final boolean z8 = i7 != 0 ? false : z4;
-                                        final InputTransformation inputTransformation3 = i8 != 0 ? null : obj3;
-                                        final TextStyle textStyle3 = i9 != 0 ? TextStyle.Companion.getDefault() : obj4;
+                                        keyboardActionHandler3 = keyboardActionHandler;
+                                        function23 = function2;
+                                        mutableInteractionSource3 = mutableInteractionSource;
+                                        brush3 = brush;
+                                        textFieldDecorator3 = textFieldDecorator;
+                                        c3 = c;
+                                        scrollState3 = scrollState;
+                                        i25 = i22;
+                                        keyboardOptions3 = obj4;
+                                        z9 = z4;
+                                        companion = obj;
+                                        textStyle3 = obj3;
+                                        z8 = z3;
+                                        i24 = i;
+                                    } else {
+                                        companion = i27 != 0 ? Modifier.Companion : obj;
+                                        if (i6 != 0) {
+                                            z3 = true;
+                                        }
+                                        if (i7 != 0) {
+                                            z4 = false;
+                                        }
+                                        if (i8 != 0) {
+                                            obj2 = null;
+                                        }
+                                        if (i9 != 0) {
+                                            obj3 = TextStyle.Companion.getDefault();
+                                        }
                                         if (i10 != 0) {
-                                            obj5 = KeyboardOptions.Companion.getSecureTextField$foundation_release();
+                                            obj4 = KeyboardOptions.Companion.getSecureTextField$foundation_release();
                                         }
-                                        final KeyboardOptions keyboardOptions3 = obj5;
-                                        final KeyboardActionHandler keyboardActionHandler3 = i12 != 0 ? null : keyboardActionHandler;
-                                        final Function2<? super Density, ? super Function0<TextLayoutResult>, Unit> function23 = i14 != 0 ? null : function2;
-                                        final MutableInteractionSource mutableInteractionSource3 = i16 != 0 ? null : mutableInteractionSource;
-                                        final SolidColor solidColor = i18 != 0 ? new SolidColor(Color.Companion.m4104getBlack0d7_KjU(), null) : brush;
-                                        final TextFieldDecorator textFieldDecorator3 = i20 != 0 ? null : textFieldDecorator;
-                                        int m1226getRevealLastTypedvTwcZD0 = i21 != 0 ? TextObfuscationMode.Companion.m1226getRevealLastTypedvTwcZD0() : i;
-                                        char c3 = i23 != 0 ? (char) 8226 : c;
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(-817513499, i5, i24, "androidx.compose.foundation.text.BasicSecureTextField (BasicSecureTextField.kt:133)");
+                                        KeyboardActionHandler keyboardActionHandler4 = i11 != 0 ? null : keyboardActionHandler;
+                                        Function2<? super Density, ? super Function0<TextLayoutResult>, Unit> function24 = i13 != 0 ? null : function2;
+                                        MutableInteractionSource mutableInteractionSource4 = i15 != 0 ? null : mutableInteractionSource;
+                                        if (i17 != 0) {
+                                            keyboardOptions2 = obj4;
+                                            z7 = z3;
+                                            solidColor = new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null);
+                                        } else {
+                                            keyboardOptions2 = obj4;
+                                            z7 = z3;
+                                            solidColor = brush;
                                         }
-                                        final State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Character.valueOf(c3), startRestartGroup, (i24 >> 9) & 14);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 120990987, "CC(remember):BasicSecureTextField.kt#9igjgp");
-                                        Object rememberedValue = startRestartGroup.rememberedValue();
-                                        if (rememberedValue == Composer.Companion.getEmpty()) {
-                                            rememberedValue = new SecureTextFieldController(rememberUpdatedState);
-                                            startRestartGroup.updateRememberedValue(rememberedValue);
+                                        TextFieldDecorator textFieldDecorator4 = i19 != 0 ? null : textFieldDecorator;
+                                        if ((i4 & 4096) != 0) {
+                                            i24 = TextObfuscationMode_androidKt.getDefault(TextObfuscationMode.Companion);
+                                            i22 &= -897;
+                                        } else {
+                                            i24 = i;
                                         }
-                                        final SecureTextFieldController secureTextFieldController = (SecureTextFieldController) rememberedValue;
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 120994481, "CC(remember):BasicSecureTextField.kt#9igjgp");
-                                        boolean changedInstance = startRestartGroup.changedInstance(secureTextFieldController);
-                                        BasicSecureTextFieldKt$BasicSecureTextField$1$1 rememberedValue2 = startRestartGroup.rememberedValue();
-                                        if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
-                                            rememberedValue2 = new BasicSecureTextFieldKt$BasicSecureTextField$1$1(secureTextFieldController, null);
-                                            startRestartGroup.updateRememberedValue(rememberedValue2);
+                                        char c4 = i20 != 0 ? (char) 8226 : c;
+                                        int i30 = i22;
+                                        if ((i4 & 16384) != 0) {
+                                            brush3 = solidColor;
+                                            textFieldDecorator3 = textFieldDecorator4;
+                                            keyboardActionHandler3 = keyboardActionHandler4;
+                                            function23 = function24;
+                                            mutableInteractionSource3 = mutableInteractionSource4;
+                                            c3 = c4;
+                                            scrollState3 = ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1);
+                                            keyboardOptions3 = keyboardOptions2;
+                                            i25 = i30 & (-57345);
+                                            z9 = z4;
+                                            textStyle3 = obj3;
+                                            z8 = z7;
+                                        } else {
+                                            keyboardOptions3 = keyboardOptions2;
+                                            scrollState3 = scrollState;
+                                            brush3 = solidColor;
+                                            textFieldDecorator3 = textFieldDecorator4;
+                                            keyboardActionHandler3 = keyboardActionHandler4;
+                                            function23 = function24;
+                                            mutableInteractionSource3 = mutableInteractionSource4;
+                                            textStyle3 = obj3;
+                                            c3 = c4;
+                                            z8 = z7;
+                                            i25 = i30;
+                                            z9 = z4;
                                         }
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        EffectsKt.LaunchedEffect(secureTextFieldController, (Function2) rememberedValue2, startRestartGroup, 0);
-                                        final boolean m1221equalsimpl0 = TextObfuscationMode.m1221equalsimpl0(m1226getRevealLastTypedvTwcZD0, TextObfuscationMode.Companion.m1226getRevealLastTypedvTwcZD0());
-                                        Boolean valueOf = Boolean.valueOf(m1221equalsimpl0);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 121010736, "CC(remember):BasicSecureTextField.kt#9igjgp");
-                                        boolean changed = startRestartGroup.changed(m1221equalsimpl0) | startRestartGroup.changedInstance(secureTextFieldController);
-                                        BasicSecureTextFieldKt$BasicSecureTextField$2$1 rememberedValue3 = startRestartGroup.rememberedValue();
-                                        if (changed || rememberedValue3 == Composer.Companion.getEmpty()) {
-                                            rememberedValue3 = new BasicSecureTextFieldKt$BasicSecureTextField$2$1(m1221equalsimpl0, secureTextFieldController, null);
-                                            startRestartGroup.updateRememberedValue(rememberedValue3);
+                                    }
+                                    startRestartGroup.endDefaults();
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventStart(1568790509, i5, i25, "androidx.compose.foundation.text.BasicSecureTextField (BasicSecureTextField.kt:139)");
+                                    }
+                                    final State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Character.valueOf(c3), startRestartGroup, (i25 >> 9) & 14);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 74193289, "CC(remember):BasicSecureTextField.kt#9igjgp");
+                                    Object rememberedValue = startRestartGroup.rememberedValue();
+                                    if (rememberedValue == Composer.Companion.getEmpty()) {
+                                        rememberedValue = new SecureTextFieldController(rememberUpdatedState);
+                                        startRestartGroup.updateRememberedValue(rememberedValue);
+                                    }
+                                    final SecureTextFieldController secureTextFieldController = (SecureTextFieldController) rememberedValue;
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 74196783, "CC(remember):BasicSecureTextField.kt#9igjgp");
+                                    boolean changedInstance = startRestartGroup.changedInstance(secureTextFieldController);
+                                    BasicSecureTextFieldKt$BasicSecureTextField$1$1 rememberedValue2 = startRestartGroup.rememberedValue();
+                                    if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
+                                        rememberedValue2 = new BasicSecureTextFieldKt$BasicSecureTextField$1$1(secureTextFieldController, null);
+                                        startRestartGroup.updateRememberedValue(rememberedValue2);
+                                    }
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    EffectsKt.LaunchedEffect(secureTextFieldController, (Function2) rememberedValue2, startRestartGroup, 0);
+                                    if (TextObfuscationMode.m1455equalsimpl0(i24, TextObfuscationMode.Companion.m1460getRevealLastTypedvTwcZD0())) {
+                                        startRestartGroup.startReplaceGroup(74209068);
+                                        ComposerKt.sourceInformation(startRestartGroup, "152@8922L31");
+                                        z10 = BasicSecureTextField_androidKt.platformAllowsRevealLastTyped(startRestartGroup, 0);
+                                        startRestartGroup.endReplaceGroup();
+                                    } else {
+                                        startRestartGroup.startReplaceGroup(-1994484951);
+                                        startRestartGroup.endReplaceGroup();
+                                        z10 = false;
+                                    }
+                                    Boolean valueOf = Boolean.valueOf(z10);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 74214798, "CC(remember):BasicSecureTextField.kt#9igjgp");
+                                    boolean changed = startRestartGroup.changed(z10) | startRestartGroup.changedInstance(secureTextFieldController);
+                                    final TextStyle textStyle4 = textStyle3;
+                                    BasicSecureTextFieldKt$BasicSecureTextField$2$1 rememberedValue3 = startRestartGroup.rememberedValue();
+                                    if (changed || rememberedValue3 == Composer.Companion.getEmpty()) {
+                                        rememberedValue3 = new BasicSecureTextFieldKt$BasicSecureTextField$2$1(z10, secureTextFieldController, null);
+                                        startRestartGroup.updateRememberedValue(rememberedValue3);
+                                    }
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    EffectsKt.LaunchedEffect(valueOf, (Function2) rememberedValue3, startRestartGroup, 0);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 74220629, "CC(remember):BasicSecureTextField.kt#9igjgp");
+                                    boolean z11 = (((i25 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && startRestartGroup.changed(i24)) || (i25 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256;
+                                    Object rememberedValue4 = startRestartGroup.rememberedValue();
+                                    if (z11 || rememberedValue4 == Composer.Companion.getEmpty()) {
+                                        if (TextObfuscationMode.m1455equalsimpl0(i24, TextObfuscationMode.Companion.m1460getRevealLastTypedvTwcZD0())) {
+                                            codepointTransformation = secureTextFieldController.getCodepointTransformation();
+                                        } else {
+                                            codepointTransformation = TextObfuscationMode.m1455equalsimpl0(i24, TextObfuscationMode.Companion.m1459getHiddenvTwcZD0()) ? new CodepointTransformation() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda3
+                                                @Override // androidx.compose.foundation.text.input.internal.CodepointTransformation
+                                                public final int transform(int i31, int i32) {
+                                                    int BasicSecureTextField_ltb6GB4$lambda$4$lambda$3;
+                                                    BasicSecureTextField_ltb6GB4$lambda$4$lambda$3 = BasicSecureTextFieldKt.BasicSecureTextField_ltb6GB4$lambda$4$lambda$3(State.this, i31, i32);
+                                                    return BasicSecureTextField_ltb6GB4$lambda$4$lambda$3;
+                                                }
+                                            } : null;
                                         }
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        EffectsKt.LaunchedEffect(valueOf, (Function2) rememberedValue3, startRestartGroup, 0);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 121016567, "CC(remember):BasicSecureTextField.kt#9igjgp");
-                                        boolean z9 = (i24 & 896) == 256;
-                                        Object rememberedValue4 = startRestartGroup.rememberedValue();
-                                        if (z9 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                                            if (TextObfuscationMode.m1221equalsimpl0(m1226getRevealLastTypedvTwcZD0, TextObfuscationMode.Companion.m1226getRevealLastTypedvTwcZD0())) {
-                                                codepointTransformation = secureTextFieldController.getCodepointTransformation();
-                                            } else if (TextObfuscationMode.m1221equalsimpl0(m1226getRevealLastTypedvTwcZD0, TextObfuscationMode.Companion.m1225getHiddenvTwcZD0())) {
-                                                codepointTransformation = new CodepointTransformation() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda0
-                                                    @Override // androidx.compose.foundation.text.input.internal.CodepointTransformation
-                                                    public final int transform(int i30, int i31) {
-                                                        int BasicSecureTextField_egD4TGM$lambda$4$lambda$3;
-                                                        BasicSecureTextField_egD4TGM$lambda$4$lambda$3 = BasicSecureTextFieldKt.BasicSecureTextField_egD4TGM$lambda$4$lambda$3(State.this, i30, i31);
-                                                        return BasicSecureTextField_egD4TGM$lambda$4$lambda$3;
-                                                    }
-                                                };
-                                            } else {
-                                                rememberedValue4 = null;
-                                                startRestartGroup.updateRememberedValue(rememberedValue4);
-                                            }
-                                            rememberedValue4 = codepointTransformation;
-                                            startRestartGroup.updateRememberedValue(rememberedValue4);
-                                        }
-                                        final CodepointTransformation codepointTransformation2 = (CodepointTransformation) rememberedValue4;
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        Modifier onPreviewKeyEvent = KeyInputModifierKt.onPreviewKeyEvent(SemanticsModifierKt.semantics$default(companion2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$BasicSecureTextField$secureTextFieldModifier$1
+                                        startRestartGroup.updateRememberedValue(codepointTransformation);
+                                        rememberedValue4 = codepointTransformation;
+                                    }
+                                    final CodepointTransformation codepointTransformation2 = (CodepointTransformation) rememberedValue4;
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 74236243, "CC(remember):BasicSecureTextField.kt#9igjgp");
+                                    Object rememberedValue5 = startRestartGroup.rememberedValue();
+                                    if (rememberedValue5 == Composer.Companion.getEmpty()) {
+                                        rememberedValue5 = new Function1() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda4
                                             @Override // kotlin.jvm.functions.Function1
-                                            public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                                invoke2(semanticsPropertyReceiver);
-                                                return Unit.INSTANCE;
+                                            public final Object invoke(Object obj5) {
+                                                Unit BasicSecureTextField_ltb6GB4$lambda$6$lambda$5;
+                                                BasicSecureTextField_ltb6GB4$lambda$6$lambda$5 = BasicSecureTextFieldKt.BasicSecureTextField_ltb6GB4$lambda$6$lambda$5((SemanticsPropertyReceiver) obj5);
+                                                return BasicSecureTextField_ltb6GB4$lambda$6$lambda$5;
                                             }
-
-                                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                            public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                                SemanticsPropertiesKt.setContentType(semanticsPropertyReceiver, ContentType.Companion.getPassword());
-                                            }
-                                        }, 1, null), new Function1<KeyEvent, Boolean>() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$BasicSecureTextField$secureTextFieldModifier$2
+                                        };
+                                        startRestartGroup.updateRememberedValue(rememberedValue5);
+                                    }
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    Modifier semantics$default = SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue5, 1, null);
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 74238733, "CC(remember):BasicSecureTextField.kt#9igjgp");
+                                    BasicSecureTextFieldKt$BasicSecureTextField$secureTextFieldModifier$2$1 rememberedValue6 = startRestartGroup.rememberedValue();
+                                    if (rememberedValue6 == Composer.Companion.getEmpty()) {
+                                        rememberedValue6 = new Function1<KeyEvent, Boolean>() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$BasicSecureTextField$secureTextFieldModifier$2$1
                                             @Override // kotlin.jvm.functions.Function1
                                             public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-                                                return m1041invokeZmokQxo(keyEvent.m5158unboximpl());
+                                                return m1209invokeZmokQxo(keyEvent.m5671unboximpl());
                                             }
 
                                             /* renamed from: invoke-ZmokQxo  reason: not valid java name */
-                                            public final Boolean m1041invokeZmokQxo(android.view.KeyEvent keyEvent) {
-                                                KeyCommand mo1066mapZmokQxo = KeyMapping_androidKt.getPlatformDefaultKeyMapping().mo1066mapZmokQxo(keyEvent);
-                                                return Boolean.valueOf(mo1066mapZmokQxo == KeyCommand.COPY || mo1066mapZmokQxo == KeyCommand.CUT);
+                                            public final Boolean m1209invokeZmokQxo(android.view.KeyEvent keyEvent) {
+                                                KeyCommand mo1258mapZmokQxo = KeyMapping_androidKt.getPlatformDefaultKeyMapping().mo1258mapZmokQxo(keyEvent);
+                                                return Boolean.valueOf(mo1258mapZmokQxo == KeyCommand.COPY || mo1258mapZmokQxo == KeyCommand.CUT);
                                             }
-                                        });
-                                        if (m1221equalsimpl0) {
-                                            companion = secureTextFieldController.getFocusChangeModifier();
-                                        } else {
-                                            companion = Modifier.Companion;
-                                        }
-                                        final Modifier then = onPreviewKeyEvent.then(companion);
-                                        final TextFieldState textFieldState2 = obj;
-                                        DisableCutCopy(ComposableLambdaKt.rememberComposableLambda(252521481, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$BasicSecureTextField$3
-                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                            /* JADX WARN: Multi-variable type inference failed */
-                                            {
-                                                super(2);
-                                            }
-
-                                            @Override // kotlin.jvm.functions.Function2
-                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                                invoke(composer3, num.intValue());
-                                                return Unit.INSTANCE;
-                                            }
-
-                                            public final void invoke(Composer composer3, int i30) {
-                                                InputTransformation inputTransformation4;
-                                                ComposerKt.sourceInformation(composer3, "C184@9950L836:BasicSecureTextField.kt#423gt5");
-                                                if (composer3.shouldExecute((i30 & 3) != 2, i30 & 1)) {
-                                                    if (ComposerKt.isTraceInProgress()) {
-                                                        ComposerKt.traceEventStart(252521481, i30, -1, "androidx.compose.foundation.text.BasicSecureTextField.<anonymous> (BasicSecureTextField.kt:184)");
-                                                    }
-                                                    TextFieldState textFieldState3 = TextFieldState.this;
-                                                    Modifier modifier3 = then;
-                                                    boolean z10 = z7;
-                                                    boolean z11 = z8;
-                                                    if (m1221equalsimpl0) {
-                                                        inputTransformation4 = BasicSecureTextFieldKt.then(inputTransformation3, secureTextFieldController.getPasswordInputTransformation());
-                                                    } else {
-                                                        inputTransformation4 = inputTransformation3;
-                                                    }
-                                                    BasicTextFieldKt.BasicTextField(textFieldState3, modifier3, z10, z11, inputTransformation4, textStyle3, keyboardOptions3, keyboardActionHandler3, TextFieldLineLimits.SingleLine.INSTANCE, function23, mutableInteractionSource3, solidColor, codepointTransformation2, null, textFieldDecorator3, null, true, composer3, 100663296, 1572864, 40960);
-                                                    if (ComposerKt.isTraceInProgress()) {
-                                                        ComposerKt.traceEventEnd();
-                                                        return;
-                                                    }
-                                                    return;
-                                                }
-                                                composer3.skipToGroupEnd();
-                                            }
-                                        }, startRestartGroup, 54), startRestartGroup, 6);
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventEnd();
-                                        }
-                                        i25 = m1226getRevealLastTypedvTwcZD0;
-                                        composer2 = startRestartGroup;
-                                        c2 = c3;
-                                        z5 = z7;
-                                        z6 = z8;
-                                        inputTransformation2 = inputTransformation3;
-                                        textStyle2 = textStyle3;
-                                        keyboardOptions2 = keyboardOptions3;
-                                        keyboardActionHandler2 = keyboardActionHandler3;
-                                        function22 = function23;
-                                        mutableInteractionSource2 = mutableInteractionSource3;
-                                        brush2 = solidColor;
-                                        textFieldDecorator2 = textFieldDecorator3;
-                                        modifier2 = companion2;
+                                        };
+                                        startRestartGroup.updateRememberedValue(rememberedValue6);
+                                    }
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    Modifier onPreviewKeyEvent = KeyInputModifierKt.onPreviewKeyEvent(semantics$default, (Function1) rememberedValue6);
+                                    if (z10) {
+                                        companion2 = secureTextFieldController.getFocusChangeModifier();
                                     } else {
-                                        startRestartGroup.skipToGroupEnd();
-                                        keyboardActionHandler2 = keyboardActionHandler;
-                                        function22 = function2;
-                                        i25 = i;
-                                        composer2 = startRestartGroup;
-                                        z5 = z3;
-                                        z6 = z4;
-                                        inputTransformation2 = obj3;
-                                        modifier2 = obj2;
-                                        mutableInteractionSource2 = mutableInteractionSource;
-                                        brush2 = brush;
-                                        textFieldDecorator2 = textFieldDecorator;
-                                        keyboardOptions2 = obj5;
-                                        textStyle2 = obj4;
-                                        c2 = c;
+                                        companion2 = Modifier.Companion;
                                     }
-                                    endRestartGroup = composer2.endRestartGroup();
-                                    if (endRestartGroup == null) {
-                                        endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$BasicSecureTextField$4
-                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                            /* JADX WARN: Multi-variable type inference failed */
-                                            {
-                                                super(2);
-                                            }
+                                    final Modifier then = onPreviewKeyEvent.then(companion2);
+                                    DisableCutCopy(ComposableLambdaKt.rememberComposableLambda(135148049, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$BasicSecureTextField$3
+                                        @Override // kotlin.jvm.functions.Function2
+                                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
+                                            invoke(composer3, num.intValue());
+                                            return Unit.INSTANCE;
+                                        }
 
-                                            @Override // kotlin.jvm.functions.Function2
-                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                                invoke(composer3, num.intValue());
-                                                return Unit.INSTANCE;
+                                        public final void invoke(Composer composer3, int i31) {
+                                            InputTransformation inputTransformation3;
+                                            ComposerKt.sourceInformation(composer3, "C192@10377L875:BasicSecureTextField.kt#423gt5");
+                                            if (!composer3.shouldExecute((i31 & 3) != 2, i31 & 1)) {
+                                                composer3.skipToGroupEnd();
+                                                return;
                                             }
-
-                                            public final void invoke(Composer composer3, int i30) {
-                                                BasicSecureTextFieldKt.m1040BasicSecureTextFieldegD4TGM(TextFieldState.this, modifier2, z5, z6, inputTransformation2, textStyle2, keyboardOptions2, keyboardActionHandler2, function22, mutableInteractionSource2, brush2, textFieldDecorator2, i25, c2, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+                                            if (ComposerKt.isTraceInProgress()) {
+                                                ComposerKt.traceEventStart(135148049, i31, -1, "androidx.compose.foundation.text.BasicSecureTextField.<anonymous> (BasicSecureTextField.kt:192)");
                                             }
-                                        });
-                                        return;
+                                            if (z10) {
+                                                inputTransformation3 = BasicSecureTextFieldKt.then(obj2, secureTextFieldController.getPasswordInputTransformation());
+                                            } else {
+                                                inputTransformation3 = obj2;
+                                            }
+                                            BasicTextFieldKt.BasicTextField(textFieldState2, then, z8, z9, inputTransformation3, textStyle4, keyboardOptions3, keyboardActionHandler3, TextFieldLineLimits.SingleLine.INSTANCE, function23, mutableInteractionSource3, brush3, codepointTransformation2, null, textFieldDecorator3, scrollState3, true, composer3, 100663296, 1572864, 8192);
+                                            if (ComposerKt.isTraceInProgress()) {
+                                                ComposerKt.traceEventEnd();
+                                            }
+                                        }
+                                    }, startRestartGroup, 54), startRestartGroup, 6);
+                                    if (ComposerKt.isTraceInProgress()) {
+                                        ComposerKt.traceEventEnd();
                                     }
-                                    return;
-                                }
-                                i16 = i15;
-                                i17 = i4 & 1024;
-                                if (i17 == 0) {
-                                }
-                                i20 = i4 & 2048;
-                                if (i20 == 0) {
-                                }
-                                int i272 = i19;
-                                i21 = i4 & 4096;
-                                if (i21 == 0) {
-                                }
-                                i23 = i4 & 8192;
-                                if (i23 == 0) {
-                                }
-                                if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i24 & 1171) != 1170, i5 & 1)) {
+                                    c2 = c3;
+                                    composer2 = startRestartGroup;
+                                    i23 = i24;
+                                    inputTransformation2 = obj2;
+                                    z5 = z8;
+                                    z6 = z9;
+                                    textStyle2 = textStyle4;
+                                    obj4 = keyboardOptions3;
+                                    keyboardActionHandler2 = keyboardActionHandler3;
+                                    function22 = function23;
+                                    mutableInteractionSource2 = mutableInteractionSource3;
+                                    brush2 = brush3;
+                                    textFieldDecorator2 = textFieldDecorator3;
+                                    scrollState2 = scrollState3;
+                                    modifier2 = companion;
+                                } else {
+                                    startRestartGroup.skipToGroupEnd();
+                                    function22 = function2;
+                                    i23 = i;
+                                    c2 = c;
+                                    composer2 = startRestartGroup;
+                                    z5 = z3;
+                                    z6 = z4;
+                                    inputTransformation2 = obj2;
+                                    modifier2 = obj;
+                                    textStyle2 = obj3;
+                                    keyboardActionHandler2 = keyboardActionHandler;
+                                    mutableInteractionSource2 = mutableInteractionSource;
+                                    brush2 = brush;
+                                    textFieldDecorator2 = textFieldDecorator;
+                                    scrollState2 = scrollState;
                                 }
                                 endRestartGroup = composer2.endRestartGroup();
-                                if (endRestartGroup == null) {
+                                if (endRestartGroup != null) {
+                                    endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda5
+                                        @Override // kotlin.jvm.functions.Function2
+                                        public final Object invoke(Object obj5, Object obj6) {
+                                            Unit BasicSecureTextField_ltb6GB4$lambda$8;
+                                            BasicSecureTextField_ltb6GB4$lambda$8 = BasicSecureTextFieldKt.BasicSecureTextField_ltb6GB4$lambda$8(TextFieldState.this, modifier2, z5, z6, inputTransformation2, textStyle2, obj4, keyboardActionHandler2, function22, mutableInteractionSource2, brush2, textFieldDecorator2, i23, c2, scrollState2, i2, i3, i4, (Composer) obj5, ((Integer) obj6).intValue());
+                                            return BasicSecureTextField_ltb6GB4$lambda$8;
+                                        }
+                                    });
+                                    return;
                                 }
+                                return;
                             }
-                            i14 = i13;
-                            i15 = i4 & 512;
-                            if (i15 != 0) {
+                            i15 = i14;
+                            i16 = i4 & 1024;
+                            if (i16 != 0) {
                             }
-                            i16 = i15;
-                            i17 = i4 & 1024;
-                            if (i17 == 0) {
+                            i19 = i4 & 2048;
+                            if (i19 != 0) {
                             }
-                            i20 = i4 & 2048;
-                            if (i20 == 0) {
+                            if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
                             }
-                            int i2722 = i19;
-                            i21 = i4 & 4096;
-                            if (i21 == 0) {
+                            int i292 = i18;
+                            i20 = i4 & 8192;
+                            if (i20 != 0) {
                             }
-                            i23 = i4 & 8192;
-                            if (i23 == 0) {
+                            if ((i3 & 24576) == 0) {
                             }
-                            if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i24 & 1171) != 1170, i5 & 1)) {
+                            i22 = i21;
+                            if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 9363) != 9362, i5 & 1)) {
                             }
                             endRestartGroup = composer2.endRestartGroup();
-                            if (endRestartGroup == null) {
+                            if (endRestartGroup != null) {
                             }
                         }
-                        i12 = i11;
-                        i13 = i4 & 256;
-                        if (i13 == 0) {
+                        i13 = i12;
+                        i14 = i4 & 512;
+                        if (i14 == 0) {
                         }
-                        i14 = i13;
-                        i15 = i4 & 512;
-                        if (i15 != 0) {
+                        i15 = i14;
+                        i16 = i4 & 1024;
+                        if (i16 != 0) {
                         }
-                        i16 = i15;
-                        i17 = i4 & 1024;
-                        if (i17 == 0) {
+                        i19 = i4 & 2048;
+                        if (i19 != 0) {
                         }
-                        i20 = i4 & 2048;
-                        if (i20 == 0) {
+                        if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
                         }
-                        int i27222 = i19;
-                        i21 = i4 & 4096;
-                        if (i21 == 0) {
+                        int i2922 = i18;
+                        i20 = i4 & 8192;
+                        if (i20 != 0) {
                         }
-                        i23 = i4 & 8192;
-                        if (i23 == 0) {
+                        if ((i3 & 24576) == 0) {
                         }
-                        if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i24 & 1171) != 1170, i5 & 1)) {
+                        i22 = i21;
+                        if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 9363) != 9362, i5 & 1)) {
                         }
                         endRestartGroup = composer2.endRestartGroup();
-                        if (endRestartGroup == null) {
+                        if (endRestartGroup != null) {
                         }
                     }
-                    obj3 = inputTransformation;
+                    obj2 = inputTransformation;
                     i9 = i4 & 32;
                     if (i9 != 0) {
                     }
@@ -529,39 +626,41 @@ public final class BasicSecureTextFieldKt {
                     i11 = i4 & 128;
                     if (i11 != 0) {
                     }
-                    i12 = i11;
-                    i13 = i4 & 256;
-                    if (i13 == 0) {
+                    i12 = i4 & 256;
+                    if (i12 != 0) {
                     }
-                    i14 = i13;
-                    i15 = i4 & 512;
-                    if (i15 != 0) {
+                    i13 = i12;
+                    i14 = i4 & 512;
+                    if (i14 == 0) {
                     }
-                    i16 = i15;
-                    i17 = i4 & 1024;
-                    if (i17 == 0) {
+                    i15 = i14;
+                    i16 = i4 & 1024;
+                    if (i16 != 0) {
                     }
-                    i20 = i4 & 2048;
-                    if (i20 == 0) {
+                    i19 = i4 & 2048;
+                    if (i19 != 0) {
                     }
-                    int i272222 = i19;
-                    i21 = i4 & 4096;
-                    if (i21 == 0) {
+                    if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
                     }
-                    i23 = i4 & 8192;
-                    if (i23 == 0) {
+                    int i29222 = i18;
+                    i20 = i4 & 8192;
+                    if (i20 != 0) {
                     }
-                    if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i24 & 1171) != 1170, i5 & 1)) {
+                    if ((i3 & 24576) == 0) {
+                    }
+                    i22 = i21;
+                    if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 9363) != 9362, i5 & 1)) {
                     }
                     endRestartGroup = composer2.endRestartGroup();
-                    if (endRestartGroup == null) {
+                    if (endRestartGroup != null) {
                     }
                 }
                 z4 = z2;
                 i8 = i4 & 16;
+                int i282 = 8192;
                 if (i8 == 0) {
                 }
-                obj3 = inputTransformation;
+                obj2 = inputTransformation;
                 i9 = i4 & 32;
                 if (i9 != 0) {
                 }
@@ -571,32 +670,33 @@ public final class BasicSecureTextFieldKt {
                 i11 = i4 & 128;
                 if (i11 != 0) {
                 }
-                i12 = i11;
-                i13 = i4 & 256;
-                if (i13 == 0) {
+                i12 = i4 & 256;
+                if (i12 != 0) {
                 }
-                i14 = i13;
-                i15 = i4 & 512;
-                if (i15 != 0) {
+                i13 = i12;
+                i14 = i4 & 512;
+                if (i14 == 0) {
                 }
-                i16 = i15;
-                i17 = i4 & 1024;
-                if (i17 == 0) {
+                i15 = i14;
+                i16 = i4 & 1024;
+                if (i16 != 0) {
                 }
-                i20 = i4 & 2048;
-                if (i20 == 0) {
+                i19 = i4 & 2048;
+                if (i19 != 0) {
                 }
-                int i2722222 = i19;
-                i21 = i4 & 4096;
-                if (i21 == 0) {
+                if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
                 }
-                i23 = i4 & 8192;
-                if (i23 == 0) {
+                int i292222 = i18;
+                i20 = i4 & 8192;
+                if (i20 != 0) {
                 }
-                if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i24 & 1171) != 1170, i5 & 1)) {
+                if ((i3 & 24576) == 0) {
+                }
+                i22 = i21;
+                if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 9363) != 9362, i5 & 1)) {
                 }
                 endRestartGroup = composer2.endRestartGroup();
-                if (endRestartGroup == null) {
+                if (endRestartGroup != null) {
                 }
             }
             z3 = z;
@@ -605,9 +705,10 @@ public final class BasicSecureTextFieldKt {
             }
             z4 = z2;
             i8 = i4 & 16;
+            int i2822 = 8192;
             if (i8 == 0) {
             }
-            obj3 = inputTransformation;
+            obj2 = inputTransformation;
             i9 = i4 & 32;
             if (i9 != 0) {
             }
@@ -617,35 +718,36 @@ public final class BasicSecureTextFieldKt {
             i11 = i4 & 128;
             if (i11 != 0) {
             }
-            i12 = i11;
-            i13 = i4 & 256;
-            if (i13 == 0) {
+            i12 = i4 & 256;
+            if (i12 != 0) {
             }
-            i14 = i13;
-            i15 = i4 & 512;
-            if (i15 != 0) {
+            i13 = i12;
+            i14 = i4 & 512;
+            if (i14 == 0) {
             }
-            i16 = i15;
-            i17 = i4 & 1024;
-            if (i17 == 0) {
+            i15 = i14;
+            i16 = i4 & 1024;
+            if (i16 != 0) {
             }
-            i20 = i4 & 2048;
-            if (i20 == 0) {
+            i19 = i4 & 2048;
+            if (i19 != 0) {
             }
-            int i27222222 = i19;
-            i21 = i4 & 4096;
-            if (i21 == 0) {
+            if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             }
-            i23 = i4 & 8192;
-            if (i23 == 0) {
+            int i2922222 = i18;
+            i20 = i4 & 8192;
+            if (i20 != 0) {
             }
-            if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i24 & 1171) != 1170, i5 & 1)) {
+            if ((i3 & 24576) == 0) {
+            }
+            i22 = i21;
+            if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 9363) != 9362, i5 & 1)) {
             }
             endRestartGroup = composer2.endRestartGroup();
-            if (endRestartGroup == null) {
+            if (endRestartGroup != null) {
             }
         }
-        obj2 = modifier;
+        obj = modifier;
         i6 = i4 & 4;
         if (i6 == 0) {
         }
@@ -655,9 +757,10 @@ public final class BasicSecureTextFieldKt {
         }
         z4 = z2;
         i8 = i4 & 16;
+        int i28222 = 8192;
         if (i8 == 0) {
         }
-        obj3 = inputTransformation;
+        obj2 = inputTransformation;
         i9 = i4 & 32;
         if (i9 != 0) {
         }
@@ -667,38 +770,45 @@ public final class BasicSecureTextFieldKt {
         i11 = i4 & 128;
         if (i11 != 0) {
         }
-        i12 = i11;
-        i13 = i4 & 256;
-        if (i13 == 0) {
+        i12 = i4 & 256;
+        if (i12 != 0) {
         }
-        i14 = i13;
-        i15 = i4 & 512;
-        if (i15 != 0) {
+        i13 = i12;
+        i14 = i4 & 512;
+        if (i14 == 0) {
         }
-        i16 = i15;
-        i17 = i4 & 1024;
-        if (i17 == 0) {
+        i15 = i14;
+        i16 = i4 & 1024;
+        if (i16 != 0) {
         }
-        i20 = i4 & 2048;
-        if (i20 == 0) {
+        i19 = i4 & 2048;
+        if (i19 != 0) {
         }
-        int i272222222 = i19;
-        i21 = i4 & 4096;
-        if (i21 == 0) {
+        if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
         }
-        i23 = i4 & 8192;
-        if (i23 == 0) {
+        int i29222222 = i18;
+        i20 = i4 & 8192;
+        if (i20 != 0) {
         }
-        if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i24 & 1171) != 1170, i5 & 1)) {
+        if ((i3 & 24576) == 0) {
+        }
+        i22 = i21;
+        if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 9363) != 9362, i5 & 1)) {
         }
         endRestartGroup = composer2.endRestartGroup();
-        if (endRestartGroup == null) {
+        if (endRestartGroup != null) {
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int BasicSecureTextField_egD4TGM$lambda$4$lambda$3(State state, int i, int i2) {
+    public static final int BasicSecureTextField_ltb6GB4$lambda$4$lambda$3(State state, int i, int i2) {
         return ((Character) state.getValue()).charValue();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit BasicSecureTextField_ltb6GB4$lambda$6$lambda$5(SemanticsPropertyReceiver semanticsPropertyReceiver) {
+        SemanticsPropertiesKt.setContentType(semanticsPropertyReceiver, ContentType.Companion.getPassword());
+        return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -706,11 +816,10 @@ public final class BasicSecureTextFieldKt {
         return inputTransformation == null ? inputTransformation2 : inputTransformation2 == null ? inputTransformation : InputTransformationKt.then(inputTransformation, inputTransformation2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void DisableCutCopy(final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
+    private static final void DisableCutCopy(final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
         int i2;
-        Composer startRestartGroup = composer.startRestartGroup(-1085555050);
-        ComposerKt.sourceInformation(startRestartGroup, "C(DisableCutCopy)306@14490L7,308@14536L875,329@15416L80:BasicSecureTextField.kt#423gt5");
+        Composer startRestartGroup = composer.startRestartGroup(1141174275);
+        ComposerKt.sourceInformation(startRestartGroup, "C(DisableCutCopy)N(content)312@14862L7,314@14908L877,335@15790L80:BasicSecureTextField.kt#423gt5");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(function2) ? 4 : 2) | i;
         } else {
@@ -720,13 +829,13 @@ public final class BasicSecureTextFieldKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1085555050, i2, -1, "androidx.compose.foundation.text.DisableCutCopy (BasicSecureTextField.kt:305)");
+                ComposerKt.traceEventStart(1141174275, i2, -1, "androidx.compose.foundation.text.DisableCutCopy (BasicSecureTextField.kt:311)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalTextToolbar());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             final TextToolbar textToolbar = (TextToolbar) consume;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1202758015, "CC(remember):BasicSecureTextField.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1451823856, "CC(remember):BasicSecureTextField.kt#9igjgp");
             boolean changed = startRestartGroup.changed(textToolbar);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -768,22 +877,12 @@ public final class BasicSecureTextFieldKt {
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$DisableCutCopy$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                    invoke(composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer2, int i3) {
-                    BasicSecureTextFieldKt.DisableCutCopy(function2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit DisableCutCopy$lambda$10;
+                    DisableCutCopy$lambda$10 = BasicSecureTextFieldKt.DisableCutCopy$lambda$10(Function2.this, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return DisableCutCopy$lambda$10;
                 }
             });
         }
@@ -799,8 +898,8 @@ public final class BasicSecureTextFieldKt {
     /* JADX WARN: Removed duplicated region for block: B:138:0x01a0  */
     /* JADX WARN: Removed duplicated region for block: B:147:0x01c7  */
     /* JADX WARN: Removed duplicated region for block: B:154:0x01da  */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x02d3  */
-    /* JADX WARN: Removed duplicated region for block: B:203:0x02f0  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x02d5  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x02f2  */
     /* JADX WARN: Removed duplicated region for block: B:205:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0056  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0059  */
@@ -821,7 +920,7 @@ public final class BasicSecureTextFieldKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1039BasicSecureTextFieldJb9bMDk(final TextFieldState textFieldState, Modifier modifier, boolean z, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, Composer composer, final int i2, final int i3, final int i4) {
+    public static final /* synthetic */ void m1206BasicSecureTextFieldJb9bMDk(final TextFieldState textFieldState, Modifier modifier, boolean z, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, Composer composer, final int i2, final int i3, final int i4) {
         Object obj;
         int i5;
         Object obj2;
@@ -866,7 +965,7 @@ public final class BasicSecureTextFieldKt {
         int i25;
         TextStyle textStyle3;
         Composer startRestartGroup = composer.startRestartGroup(1399310985);
-        ComposerKt.sourceInformation(startRestartGroup, "C(BasicSecureTextField)P(9,6,2,3,12,5,7,8,4!2,11:c#foundation.text.input.TextObfuscationMode)355@16532L563:BasicSecureTextField.kt#423gt5");
+        ComposerKt.sourceInformation(startRestartGroup, "C(BasicSecureTextField)N(state,modifier,enabled,inputTransformation,textStyle,keyboardOptions,onKeyboardAction,onTextLayout,interactionSource,cursorBrush,decorator,textObfuscationMode:c#foundation.text.input.TextObfuscationMode,textObfuscationCharacter)364@17059L564:BasicSecureTextField.kt#423gt5");
         if ((i4 & 1) != 0) {
             i5 = i2 | 6;
             obj = textFieldState;
@@ -966,7 +1065,22 @@ public final class BasicSecureTextFieldKt {
                                     } else {
                                         i22 = i27;
                                     }
-                                    if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
+                                    if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
+                                        composer2 = startRestartGroup;
+                                        composer2.skipToGroupEnd();
+                                        function22 = function2;
+                                        i23 = i;
+                                        z3 = z2;
+                                        inputTransformation2 = obj3;
+                                        textStyle2 = obj4;
+                                        keyboardOptions2 = obj5;
+                                        modifier2 = obj2;
+                                        keyboardActionHandler2 = obj6;
+                                        mutableInteractionSource2 = mutableInteractionSource;
+                                        brush2 = brush;
+                                        textFieldDecorator2 = textFieldDecorator;
+                                        c2 = c;
+                                    } else {
                                         if (i26 != 0) {
                                             companion = Modifier.Companion;
                                             i24 = i7;
@@ -987,17 +1101,17 @@ public final class BasicSecureTextFieldKt {
                                         KeyboardActionHandler keyboardActionHandler3 = i10 != 0 ? null : obj6;
                                         Function2 function23 = i12 != 0 ? null : function2;
                                         MutableInteractionSource mutableInteractionSource3 = i14 != 0 ? null : mutableInteractionSource;
-                                        SolidColor solidColor = i16 != 0 ? new SolidColor(Color.Companion.m4104getBlack0d7_KjU(), null) : brush;
+                                        SolidColor solidColor = i16 != 0 ? new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null) : brush;
                                         TextFieldDecorator textFieldDecorator3 = i17 != 0 ? null : textFieldDecorator;
-                                        int m1226getRevealLastTypedvTwcZD0 = i20 != 0 ? TextObfuscationMode.Companion.m1226getRevealLastTypedvTwcZD0() : i;
+                                        int m1460getRevealLastTypedvTwcZD0 = i20 != 0 ? TextObfuscationMode.Companion.m1460getRevealLastTypedvTwcZD0() : i;
                                         char c3 = i21 != 0 ? (char) 8226 : c;
                                         if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(1399310985, i5, i22, "androidx.compose.foundation.text.BasicSecureTextField (BasicSecureTextField.kt:354)");
+                                            ComposerKt.traceEventStart(1399310985, i5, i22, "androidx.compose.foundation.text.BasicSecureTextField (BasicSecureTextField.kt:363)");
                                         }
                                         int i28 = i5 << 3;
                                         int i29 = i22 << 3;
                                         composer2 = startRestartGroup;
-                                        m1040BasicSecureTextFieldegD4TGM(obj, companion, z4, false, inputTransformation3, textStyle3, secureTextField$foundation_release, keyboardActionHandler3, function23, mutableInteractionSource3, solidColor, textFieldDecorator3, m1226getRevealLastTypedvTwcZD0, c3, composer2, (i5 & 14) | 3072 | (i5 & 112) | (i5 & 896) | (57344 & i28) | (458752 & i28) | (3670016 & i28) | (29360128 & i28) | (234881024 & i28) | (i28 & 1879048192), ((i5 >> 27) & 14) | (i29 & 112) | (i29 & 896) | (i29 & 7168), 0);
+                                        m1208BasicSecureTextFieldltb6GB4(obj, companion, z4, false, inputTransformation3, textStyle3, secureTextField$foundation_release, keyboardActionHandler3, function23, mutableInteractionSource3, solidColor, textFieldDecorator3, m1460getRevealLastTypedvTwcZD0, c3, null, composer2, (i5 & 14) | 3072 | (i5 & 112) | (i5 & 896) | (57344 & i28) | (458752 & i28) | (3670016 & i28) | (29360128 & i28) | (234881024 & i28) | (i28 & 1879048192), ((i5 >> 27) & 14) | (i29 & 112) | (i29 & 896) | (i29 & 7168), 16384);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -1011,42 +1125,17 @@ public final class BasicSecureTextFieldKt {
                                         mutableInteractionSource2 = mutableInteractionSource3;
                                         brush2 = solidColor;
                                         textFieldDecorator2 = textFieldDecorator3;
-                                        i23 = m1226getRevealLastTypedvTwcZD0;
+                                        i23 = m1460getRevealLastTypedvTwcZD0;
                                         c2 = c3;
-                                    } else {
-                                        composer2 = startRestartGroup;
-                                        composer2.skipToGroupEnd();
-                                        function22 = function2;
-                                        i23 = i;
-                                        z3 = z2;
-                                        inputTransformation2 = obj3;
-                                        textStyle2 = obj4;
-                                        keyboardOptions2 = obj5;
-                                        modifier2 = obj2;
-                                        keyboardActionHandler2 = obj6;
-                                        mutableInteractionSource2 = mutableInteractionSource;
-                                        brush2 = brush;
-                                        textFieldDecorator2 = textFieldDecorator;
-                                        c2 = c;
                                     }
                                     endRestartGroup = composer2.endRestartGroup();
                                     if (endRestartGroup == null) {
-                                        endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$BasicSecureTextField$5
-                                            /* JADX INFO: Access modifiers changed from: package-private */
-                                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                            /* JADX WARN: Multi-variable type inference failed */
-                                            {
-                                                super(2);
-                                            }
-
+                                        endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda2
                                             @Override // kotlin.jvm.functions.Function2
-                                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                                invoke(composer3, num.intValue());
-                                                return Unit.INSTANCE;
-                                            }
-
-                                            public final void invoke(Composer composer3, int i30) {
-                                                BasicSecureTextFieldKt.m1039BasicSecureTextFieldJb9bMDk(TextFieldState.this, modifier2, z3, inputTransformation2, textStyle2, keyboardOptions2, keyboardActionHandler2, function22, mutableInteractionSource2, brush2, textFieldDecorator2, i23, c2, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+                                            public final Object invoke(Object obj7, Object obj8) {
+                                                Unit BasicSecureTextField_Jb9bMDk$lambda$11;
+                                                BasicSecureTextField_Jb9bMDk$lambda$11 = BasicSecureTextFieldKt.BasicSecureTextField_Jb9bMDk$lambda$11(TextFieldState.this, modifier2, z3, inputTransformation2, textStyle2, keyboardOptions2, keyboardActionHandler2, function22, mutableInteractionSource2, brush2, textFieldDecorator2, i23, c2, i2, i3, i4, (Composer) obj7, ((Integer) obj8).intValue());
+                                                return BasicSecureTextField_Jb9bMDk$lambda$11;
                                             }
                                         });
                                         return;
@@ -1064,7 +1153,7 @@ public final class BasicSecureTextFieldKt {
                                 i21 = i4 & 4096;
                                 if (i21 == 0) {
                                 }
-                                if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
+                                if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
                                 }
                                 endRestartGroup = composer2.endRestartGroup();
                                 if (endRestartGroup == null) {
@@ -1085,7 +1174,7 @@ public final class BasicSecureTextFieldKt {
                             i21 = i4 & 4096;
                             if (i21 == 0) {
                             }
-                            if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
+                            if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
                             }
                             endRestartGroup = composer2.endRestartGroup();
                             if (endRestartGroup == null) {
@@ -1110,7 +1199,7 @@ public final class BasicSecureTextFieldKt {
                         i21 = i4 & 4096;
                         if (i21 == 0) {
                         }
-                        if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
+                        if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
                         }
                         endRestartGroup = composer2.endRestartGroup();
                         if (endRestartGroup == null) {
@@ -1145,7 +1234,7 @@ public final class BasicSecureTextFieldKt {
                     i21 = i4 & 4096;
                     if (i21 == 0) {
                     }
-                    if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
+                    if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
                     }
                     endRestartGroup = composer2.endRestartGroup();
                     if (endRestartGroup == null) {
@@ -1184,7 +1273,7 @@ public final class BasicSecureTextFieldKt {
                 i21 = i4 & 4096;
                 if (i21 == 0) {
                 }
-                if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
+                if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
                 }
                 endRestartGroup = composer2.endRestartGroup();
                 if (endRestartGroup == null) {
@@ -1227,7 +1316,7 @@ public final class BasicSecureTextFieldKt {
             i21 = i4 & 4096;
             if (i21 == 0) {
             }
-            if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
+            if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
             }
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup == null) {
@@ -1274,7 +1363,441 @@ public final class BasicSecureTextFieldKt {
         i21 = i4 & 4096;
         if (i21 == 0) {
         }
-        if (!startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
+        if (startRestartGroup.shouldExecute((i5 & 306783379) == 306783378 || (i22 & 147) != 146, i5 & 1)) {
+        }
+        endRestartGroup = composer2.endRestartGroup();
+        if (endRestartGroup == null) {
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0130  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0137  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0157  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x015a  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x017c  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x017f  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x019e  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x01a1  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x01c8  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x01da  */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x02d7  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x02f7  */
+    /* JADX WARN: Removed duplicated region for block: B:208:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0076  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00b0  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00d3  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00ec  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00ef  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0112  */
+    @Deprecated(level = DeprecationLevel.HIDDEN, message = "Please use the overload that takes in scrollState parameter.")
+    /* renamed from: BasicSecureTextField-egD4TGM  reason: not valid java name */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final /* synthetic */ void m1207BasicSecureTextFieldegD4TGM(final TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, Composer composer, final int i2, final int i3, final int i4) {
+        Object obj;
+        int i5;
+        Object obj2;
+        int i6;
+        boolean z3;
+        int i7;
+        Object obj3;
+        int i8;
+        Object obj4;
+        int i9;
+        Object obj5;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        int i22;
+        Composer composer2;
+        final boolean z4;
+        final KeyboardActionHandler keyboardActionHandler2;
+        final Function2 function22;
+        final int i23;
+        final char c2;
+        final boolean z5;
+        final InputTransformation inputTransformation2;
+        final TextStyle textStyle2;
+        final KeyboardOptions keyboardOptions2;
+        final Modifier modifier2;
+        final MutableInteractionSource mutableInteractionSource2;
+        final Brush brush2;
+        final TextFieldDecorator textFieldDecorator2;
+        ScopeUpdateScope endRestartGroup;
+        int i24;
+        Modifier.Companion companion;
+        int i25;
+        InputTransformation inputTransformation3;
+        int i26;
+        TextStyle textStyle3;
+        Composer startRestartGroup = composer.startRestartGroup(-817513499);
+        ComposerKt.sourceInformation(startRestartGroup, "C(BasicSecureTextField)N(state,modifier,enabled,readOnly,inputTransformation,textStyle,keyboardOptions,onKeyboardAction,onTextLayout,interactionSource,cursorBrush,decorator,textObfuscationMode:c#foundation.text.input.TextObfuscationMode,textObfuscationCharacter)421@19275L21,406@18694L609:BasicSecureTextField.kt#423gt5");
+        if ((i4 & 1) != 0) {
+            i5 = i2 | 6;
+            obj = textFieldState;
+        } else if ((i2 & 6) == 0) {
+            obj = textFieldState;
+            i5 = (startRestartGroup.changed(obj) ? 4 : 2) | i2;
+        } else {
+            obj = textFieldState;
+            i5 = i2;
+        }
+        int i27 = i4 & 2;
+        if (i27 != 0) {
+            i5 |= 48;
+        } else if ((i2 & 48) == 0) {
+            obj2 = modifier;
+            i5 |= startRestartGroup.changed(obj2) ? 32 : 16;
+            i6 = i4 & 4;
+            if (i6 == 0) {
+                i5 |= RendererCapabilities.DECODER_SUPPORT_MASK;
+            } else if ((i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+                z3 = z;
+                i5 |= startRestartGroup.changed(z3) ? 256 : 128;
+                i7 = i4 & 16;
+                if (i7 != 0) {
+                    i5 |= 24576;
+                } else if ((i2 & 24576) == 0) {
+                    obj3 = inputTransformation;
+                    i5 |= startRestartGroup.changed(obj3) ? 16384 : 8192;
+                    i8 = i4 & 32;
+                    if (i8 == 0) {
+                        i5 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                        obj4 = textStyle;
+                    } else {
+                        obj4 = textStyle;
+                        if ((i2 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
+                            i5 |= startRestartGroup.changed(obj4) ? 131072 : 65536;
+                        }
+                    }
+                    i9 = i4 & 64;
+                    if (i9 == 0) {
+                        i5 |= 1572864;
+                        obj5 = keyboardOptions;
+                    } else {
+                        obj5 = keyboardOptions;
+                        if ((i2 & 1572864) == 0) {
+                            i5 |= startRestartGroup.changed(obj5) ? 1048576 : 524288;
+                        }
+                    }
+                    i10 = i4 & 128;
+                    if (i10 == 0) {
+                        i5 |= 12582912;
+                    } else if ((i2 & 12582912) == 0) {
+                        i5 |= startRestartGroup.changed(keyboardActionHandler) ? 8388608 : 4194304;
+                    }
+                    i11 = i4 & 256;
+                    if (i11 == 0) {
+                        i5 |= 100663296;
+                    } else if ((i2 & 100663296) == 0) {
+                        i12 = i11;
+                        i5 |= startRestartGroup.changedInstance(function2) ? 67108864 : 33554432;
+                        i13 = i4 & 512;
+                        if (i13 != 0) {
+                            i5 |= 805306368;
+                        } else if ((i2 & 805306368) == 0) {
+                            i14 = i13;
+                            i5 |= startRestartGroup.changed(mutableInteractionSource) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                            i15 = i4 & 1024;
+                            if (i15 == 0) {
+                                i17 = i3 | 6;
+                                i16 = i15;
+                            } else if ((i3 & 6) == 0) {
+                                i16 = i15;
+                                i17 = i3 | (startRestartGroup.changed(brush) ? 4 : 2);
+                            } else {
+                                i16 = i15;
+                                i17 = i3;
+                            }
+                            i18 = i4 & 2048;
+                            if (i18 == 0) {
+                                i17 |= 48;
+                            } else if ((i3 & 48) == 0) {
+                                i17 |= (i3 & 64) == 0 ? startRestartGroup.changed(textFieldDecorator) : startRestartGroup.changedInstance(textFieldDecorator) ? 32 : 16;
+                            }
+                            int i28 = i17;
+                            i19 = i4 & 4096;
+                            if (i19 == 0) {
+                                i20 = i28 | RendererCapabilities.DECODER_SUPPORT_MASK;
+                            } else if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+                                i20 = i28 | (startRestartGroup.changed(i) ? 256 : 128);
+                            } else {
+                                i20 = i28;
+                            }
+                            i21 = i4 & 8192;
+                            if (i21 == 0) {
+                                i22 = i20 | 3072;
+                            } else {
+                                int i29 = i20;
+                                if ((i3 & 3072) == 0) {
+                                    i29 |= startRestartGroup.changed(c) ? 2048 : 1024;
+                                }
+                                i22 = i29;
+                            }
+                            if (startRestartGroup.shouldExecute((i5 & 306782355) == 306782354 || (i22 & 1171) != 1170, i5 & 1)) {
+                                composer2 = startRestartGroup;
+                                composer2.skipToGroupEnd();
+                                z4 = z2;
+                                keyboardActionHandler2 = keyboardActionHandler;
+                                function22 = function2;
+                                i23 = i;
+                                c2 = c;
+                                z5 = z3;
+                                inputTransformation2 = obj3;
+                                textStyle2 = obj4;
+                                keyboardOptions2 = obj5;
+                                modifier2 = obj2;
+                                mutableInteractionSource2 = mutableInteractionSource;
+                                brush2 = brush;
+                                textFieldDecorator2 = textFieldDecorator;
+                            } else {
+                                if (i27 != 0) {
+                                    companion = Modifier.Companion;
+                                    i24 = i7;
+                                } else {
+                                    i24 = i7;
+                                    companion = obj2;
+                                }
+                                boolean z6 = i6 != 0 ? true : z3;
+                                boolean z7 = (i4 & 8) != 0 ? false : z2;
+                                if (i24 != 0) {
+                                    i25 = i21;
+                                    inputTransformation3 = null;
+                                } else {
+                                    i25 = i21;
+                                    inputTransformation3 = obj3;
+                                }
+                                if (i8 != 0) {
+                                    textStyle3 = TextStyle.Companion.getDefault();
+                                    i26 = i9;
+                                } else {
+                                    i26 = i9;
+                                    textStyle3 = obj4;
+                                }
+                                KeyboardOptions secureTextField$foundation_release = i26 != 0 ? KeyboardOptions.Companion.getSecureTextField$foundation_release() : obj5;
+                                KeyboardActionHandler keyboardActionHandler3 = i10 != 0 ? null : keyboardActionHandler;
+                                Function2 function23 = i12 != 0 ? null : function2;
+                                MutableInteractionSource mutableInteractionSource3 = i14 != 0 ? null : mutableInteractionSource;
+                                SolidColor solidColor = i16 != 0 ? new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null) : brush;
+                                TextFieldDecorator textFieldDecorator3 = i18 != 0 ? null : textFieldDecorator;
+                                int m1460getRevealLastTypedvTwcZD0 = i19 != 0 ? TextObfuscationMode.Companion.m1460getRevealLastTypedvTwcZD0() : i;
+                                char c3 = i25 != 0 ? (char) 8226 : c;
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventStart(-817513499, i5, i22, "androidx.compose.foundation.text.BasicSecureTextField (BasicSecureTextField.kt:405)");
+                                }
+                                composer2 = startRestartGroup;
+                                m1208BasicSecureTextFieldltb6GB4(obj, companion, z6, false, inputTransformation3, textStyle3, secureTextField$foundation_release, keyboardActionHandler3, function23, mutableInteractionSource3, solidColor, textFieldDecorator3, m1460getRevealLastTypedvTwcZD0, c3, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), composer2, (i5 & 14) | 3072 | (i5 & 112) | (i5 & 896) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | (29360128 & i5) | (234881024 & i5) | (1879048192 & i5), i22 & 8190, 0);
+                                if (ComposerKt.isTraceInProgress()) {
+                                    ComposerKt.traceEventEnd();
+                                }
+                                z4 = z7;
+                                modifier2 = companion;
+                                z5 = z6;
+                                inputTransformation2 = inputTransformation3;
+                                textStyle2 = textStyle3;
+                                keyboardOptions2 = secureTextField$foundation_release;
+                                keyboardActionHandler2 = keyboardActionHandler3;
+                                function22 = function23;
+                                mutableInteractionSource2 = mutableInteractionSource3;
+                                brush2 = solidColor;
+                                textFieldDecorator2 = textFieldDecorator3;
+                                i23 = m1460getRevealLastTypedvTwcZD0;
+                                c2 = c3;
+                            }
+                            endRestartGroup = composer2.endRestartGroup();
+                            if (endRestartGroup == null) {
+                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda0
+                                    @Override // kotlin.jvm.functions.Function2
+                                    public final Object invoke(Object obj6, Object obj7) {
+                                        Unit BasicSecureTextField_egD4TGM$lambda$12;
+                                        BasicSecureTextField_egD4TGM$lambda$12 = BasicSecureTextFieldKt.BasicSecureTextField_egD4TGM$lambda$12(TextFieldState.this, modifier2, z5, z4, inputTransformation2, textStyle2, keyboardOptions2, keyboardActionHandler2, function22, mutableInteractionSource2, brush2, textFieldDecorator2, i23, c2, i2, i3, i4, (Composer) obj6, ((Integer) obj7).intValue());
+                                        return BasicSecureTextField_egD4TGM$lambda$12;
+                                    }
+                                });
+                                return;
+                            }
+                            return;
+                        }
+                        i14 = i13;
+                        i15 = i4 & 1024;
+                        if (i15 == 0) {
+                        }
+                        i18 = i4 & 2048;
+                        if (i18 == 0) {
+                        }
+                        int i282 = i17;
+                        i19 = i4 & 4096;
+                        if (i19 == 0) {
+                        }
+                        i21 = i4 & 8192;
+                        if (i21 == 0) {
+                        }
+                        if (startRestartGroup.shouldExecute((i5 & 306782355) == 306782354 || (i22 & 1171) != 1170, i5 & 1)) {
+                        }
+                        endRestartGroup = composer2.endRestartGroup();
+                        if (endRestartGroup == null) {
+                        }
+                    }
+                    i12 = i11;
+                    i13 = i4 & 512;
+                    if (i13 != 0) {
+                    }
+                    i14 = i13;
+                    i15 = i4 & 1024;
+                    if (i15 == 0) {
+                    }
+                    i18 = i4 & 2048;
+                    if (i18 == 0) {
+                    }
+                    int i2822 = i17;
+                    i19 = i4 & 4096;
+                    if (i19 == 0) {
+                    }
+                    i21 = i4 & 8192;
+                    if (i21 == 0) {
+                    }
+                    if (startRestartGroup.shouldExecute((i5 & 306782355) == 306782354 || (i22 & 1171) != 1170, i5 & 1)) {
+                    }
+                    endRestartGroup = composer2.endRestartGroup();
+                    if (endRestartGroup == null) {
+                    }
+                }
+                obj3 = inputTransformation;
+                i8 = i4 & 32;
+                if (i8 == 0) {
+                }
+                i9 = i4 & 64;
+                if (i9 == 0) {
+                }
+                i10 = i4 & 128;
+                if (i10 == 0) {
+                }
+                i11 = i4 & 256;
+                if (i11 == 0) {
+                }
+                i12 = i11;
+                i13 = i4 & 512;
+                if (i13 != 0) {
+                }
+                i14 = i13;
+                i15 = i4 & 1024;
+                if (i15 == 0) {
+                }
+                i18 = i4 & 2048;
+                if (i18 == 0) {
+                }
+                int i28222 = i17;
+                i19 = i4 & 4096;
+                if (i19 == 0) {
+                }
+                i21 = i4 & 8192;
+                if (i21 == 0) {
+                }
+                if (startRestartGroup.shouldExecute((i5 & 306782355) == 306782354 || (i22 & 1171) != 1170, i5 & 1)) {
+                }
+                endRestartGroup = composer2.endRestartGroup();
+                if (endRestartGroup == null) {
+                }
+            }
+            z3 = z;
+            i7 = i4 & 16;
+            if (i7 != 0) {
+            }
+            obj3 = inputTransformation;
+            i8 = i4 & 32;
+            if (i8 == 0) {
+            }
+            i9 = i4 & 64;
+            if (i9 == 0) {
+            }
+            i10 = i4 & 128;
+            if (i10 == 0) {
+            }
+            i11 = i4 & 256;
+            if (i11 == 0) {
+            }
+            i12 = i11;
+            i13 = i4 & 512;
+            if (i13 != 0) {
+            }
+            i14 = i13;
+            i15 = i4 & 1024;
+            if (i15 == 0) {
+            }
+            i18 = i4 & 2048;
+            if (i18 == 0) {
+            }
+            int i282222 = i17;
+            i19 = i4 & 4096;
+            if (i19 == 0) {
+            }
+            i21 = i4 & 8192;
+            if (i21 == 0) {
+            }
+            if (startRestartGroup.shouldExecute((i5 & 306782355) == 306782354 || (i22 & 1171) != 1170, i5 & 1)) {
+            }
+            endRestartGroup = composer2.endRestartGroup();
+            if (endRestartGroup == null) {
+            }
+        }
+        obj2 = modifier;
+        i6 = i4 & 4;
+        if (i6 == 0) {
+        }
+        z3 = z;
+        i7 = i4 & 16;
+        if (i7 != 0) {
+        }
+        obj3 = inputTransformation;
+        i8 = i4 & 32;
+        if (i8 == 0) {
+        }
+        i9 = i4 & 64;
+        if (i9 == 0) {
+        }
+        i10 = i4 & 128;
+        if (i10 == 0) {
+        }
+        i11 = i4 & 256;
+        if (i11 == 0) {
+        }
+        i12 = i11;
+        i13 = i4 & 512;
+        if (i13 != 0) {
+        }
+        i14 = i13;
+        i15 = i4 & 1024;
+        if (i15 == 0) {
+        }
+        i18 = i4 & 2048;
+        if (i18 == 0) {
+        }
+        int i2822222 = i17;
+        i19 = i4 & 4096;
+        if (i19 == 0) {
+        }
+        i21 = i4 & 8192;
+        if (i21 == 0) {
+        }
+        if (startRestartGroup.shouldExecute((i5 & 306782355) == 306782354 || (i22 & 1171) != 1170, i5 & 1)) {
         }
         endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup == null) {

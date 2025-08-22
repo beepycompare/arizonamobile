@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MergerBiFunction<T> implements BiFunction<List<T>, List<T>, List<T>> {
     final Comparator<? super T> comparator;
 

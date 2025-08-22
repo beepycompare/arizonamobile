@@ -14,7 +14,7 @@ public final class PackageManagerUtils {
     public static final PackageManagerUtils INSTANCE = new PackageManagerUtils();
 
     /* renamed from: a  reason: collision with root package name */
-    private static final SafePackageManager f282a = new SafePackageManager();
+    private static final SafePackageManager f290a = new SafePackageManager();
 
     private PackageManagerUtils() {
     }
@@ -42,12 +42,12 @@ public final class PackageManagerUtils {
 
     @JvmStatic
     public static final PackageInfo getPackageInfo(Context context) {
-        return f282a.getPackageInfo(context, context.getPackageName());
+        return f290a.getPackageInfo(context, context.getPackageName());
     }
 
     @JvmStatic
     public static final ServiceInfo getServiceInfo(Context context, Class<?> cls) {
-        return f282a.getServiceInfo(context, new ComponentName(context, cls), 4);
+        return f290a.getServiceInfo(context, new ComponentName(context, cls), 4);
     }
 
     @JvmStatic
@@ -57,6 +57,6 @@ public final class PackageManagerUtils {
 
     @JvmStatic
     public static final ProviderInfo resolveContentProvider(Context context, String str) {
-        return f282a.resolveContentProvider(context, str);
+        return f290a.resolveContentProvider(context, str);
     }
 }

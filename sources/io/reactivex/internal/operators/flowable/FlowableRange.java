@@ -6,7 +6,7 @@ import io.reactivex.internal.subscriptions.BasicQueueSubscription;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.internal.util.BackpressureHelper;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableRange extends Flowable<Integer> {
     final int end;
     final int start;
@@ -25,7 +25,7 @@ public final class FlowableRange extends Flowable<Integer> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static abstract class BaseRangeSubscription extends BasicQueueSubscription<Integer> {
         private static final long serialVersionUID = -2252972430506210021L;
         volatile boolean cancelled;
@@ -83,7 +83,7 @@ public final class FlowableRange extends Flowable<Integer> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class RangeSubscription extends BaseRangeSubscription {
         private static final long serialVersionUID = 2587302975077663557L;
         final Subscriber<? super Integer> downstream;
@@ -142,7 +142,7 @@ public final class FlowableRange extends Flowable<Integer> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class RangeConditionalSubscription extends BaseRangeSubscription {
         private static final long serialVersionUID = 2587302975077663557L;
         final ConditionalSubscriber<? super Integer> downstream;

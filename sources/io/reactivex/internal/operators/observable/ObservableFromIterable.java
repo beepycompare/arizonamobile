@@ -7,7 +7,7 @@ import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.observers.BasicQueueDisposable;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableFromIterable<T> extends Observable<T> {
     final Iterable<? extends T> source;
 
@@ -40,7 +40,7 @@ public final class ObservableFromIterable<T> extends Observable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FromIterableDisposable<T> extends BasicQueueDisposable<T> {
         boolean checkNext;
         volatile boolean disposed;

@@ -1,7 +1,7 @@
 package androidx.media3.extractor;
 
 import androidx.media3.extractor.SeekMap;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public class ForwardingSeekMap implements SeekMap {
     private final SeekMap seekMap;
 

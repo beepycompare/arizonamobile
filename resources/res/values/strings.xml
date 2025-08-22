@@ -75,7 +75,7 @@
     <string name="close_sheet">Close sheet</string>
     <string name="close_txt">Закрыто</string>
     <string name="res_0x7f13004a_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
-    <string name="res_0x7f13004b_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"3f9949edfcc765dd1446580ff14a6848dae103b2\"\n}\n</string>
+    <string name="res_0x7f13004b_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"ab21865559875b255136a474c0aed277904d905a\"\n}\n</string>
     <string name="common_google_play_services_enable_button">Enable</string>
     <string name="common_google_play_services_enable_text">%1$s won\'t work unless you enable Google Play services.</string>
     <string name="common_google_play_services_enable_title">Enable Google Play services</string>
@@ -108,6 +108,7 @@
     <string name="debug">debug</string>
     <string name="default_error_message">Invalid input</string>
     <string name="default_open_error">Не удалось открыть приложение</string>
+    <string name="default_percent_value">0%</string>
     <string name="default_ping">Ping: 999</string>
     <string name="default_popup_window_title">Pop-Up Window</string>
     <string name="default_server_address">Address: 90.170.76.34:7777</string>
@@ -206,7 +207,7 @@
     <string name="game_update">Обновление ресурсов игры</string>
     <string name="gcm_defaultSenderId">551532909837</string>
     <string name="google_api_key">AIzaSyAlNT6Qr1qEGgZu1_Aq3yet7cssDeLv95o</string>
-    <string name="google_app_id">1:551532909837:android:639dc64fff7a76e437cc44</string>
+    <string name="google_app_id">1:551532909837:android:f50b3e7944da32ab37cc44</string>
     <string name="google_crash_reporting_api_key">AIzaSyAlNT6Qr1qEGgZu1_Aq3yet7cssDeLv95o</string>
     <string name="google_storage_bucket">arizona-21.appspot.com</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -214,6 +215,7 @@
     <string name="hide_list">скрыть список</string>
     <string name="history">История</string>
     <string name="how_hear">Откуда узнали о проекте?</string>
+    <string name="i_percent">%1$s%%</string>
     <string name="icon_content_description">Dialog Icon</string>
     <string name="in_progress">In progress</string>
     <string name="indeterminate">Partially checked</string>
@@ -430,6 +432,7 @@
     <string name="not_in_fraction">Вы не состоите во фракции</string>
     <string name="not_selected">Not selected</string>
     <string name="not_set">Not set</string>
+    <string name="number_i">№%1$d</string>
     <string name="numbering">№%1d</string>
     <string name="of_these">Из них</string>
     <string name="official_site">Официальный сайт</string>
@@ -439,6 +442,7 @@
     <string name="open_txt">Открыто</string>
     <string name="open_website">Перейти на сайт</string>
     <string name="organization">Организация</string>
+    <string name="out_of">%1$s/%2$s</string>
     <string name="painting">покраска</string>
     <string name="pass">Пропустить</string>
     <string name="password">Пароль</string>
@@ -454,13 +458,14 @@
     <string name="plus_percent">+%1$d%%</string>
     <string name="preference_copied">\"%1$s\" copied to clipboard.</string>
     <string name="prepare_data">Prepare data</string>
-    <string name="progress">Progress:</string>
+    <string name="progress">прогресс</string>
     <string name="project_id">arizona-21</string>
     <string name="public_debug">public_debug</string>
     <string name="purchase_title">Покупка AZ-коинов</string>
     <string name="range_end">Range end</string>
     <string name="range_start">Range start</string>
     <string name="rcon_password">RCON Password</string>
+    <string name="recording">Запись \nсигнала</string>
     <string name="recovery_method">Способ восстановления</string>
     <string name="register">Зарегистрироваться</string>
     <string name="registration">Регистрация</string>
@@ -525,6 +530,7 @@
     <string name="tell_us">Расскажите откуда вы узнали о проекте Arizona?</string>
     <string name="template_percent">%1$d percent.</string>
     <string name="test_server">Тестовый сервер</string>
+    <string name="time_format">10:00</string>
     <string name="time_hour_minute">15ч. 15м.</string>
     <string name="time_minute">02:14</string>
     <string name="title">title</string>

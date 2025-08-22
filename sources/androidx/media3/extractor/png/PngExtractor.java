@@ -7,7 +7,7 @@ import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SingleSampleExtractor;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PngExtractor implements Extractor {
     private static final int PNG_FILE_SIGNATURE = 35152;
     private static final int PNG_FILE_SIGNATURE_LENGTH = 2;

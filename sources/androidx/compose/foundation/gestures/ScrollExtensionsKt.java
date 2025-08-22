@@ -3,6 +3,7 @@ package androidx.compose.foundation.gestures;
 import androidx.compose.animation.core.AnimationSpec;
 import androidx.compose.animation.core.AnimationSpecKt;
 import androidx.compose.foundation.MutatePriority;
+import androidx.compose.ui.geometry.Offset;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -11,7 +12,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.jvm.internal.Ref;
 /* compiled from: ScrollExtensions.kt */
-@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a*\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00012\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0086@¢\u0006\u0002\u0010\u0006\u001a\u001a\u0010\u0007\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0001H\u0086@¢\u0006\u0002\u0010\b\u001a\u001c\u0010\t\u001a\u00020\n*\u00020\u00022\b\b\u0002\u0010\u000b\u001a\u00020\fH\u0086@¢\u0006\u0002\u0010\r¨\u0006\u000e"}, d2 = {"animateScrollBy", "", "Landroidx/compose/foundation/gestures/ScrollableState;", "value", "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "(Landroidx/compose/foundation/gestures/ScrollableState;FLandroidx/compose/animation/core/AnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "scrollBy", "(Landroidx/compose/foundation/gestures/ScrollableState;FLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "stopScroll", "", "scrollPriority", "Landroidx/compose/foundation/MutatePriority;", "(Landroidx/compose/foundation/gestures/ScrollableState;Landroidx/compose/foundation/MutatePriority;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a*\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00012\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0086@¢\u0006\u0002\u0010\u0006\u001a,\u0010\u0000\u001a\u00020\u0007*\u00020\b2\u0006\u0010\u0003\u001a\u00020\u00072\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00070\u0005H\u0086@¢\u0006\u0004\b\t\u0010\n\u001a\u001a\u0010\u000b\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0001H\u0086@¢\u0006\u0002\u0010\f\u001a\u001c\u0010\u000b\u001a\u00020\u0007*\u00020\b2\u0006\u0010\u0003\u001a\u00020\u0007H\u0086@¢\u0006\u0004\b\r\u0010\u000e\u001a\u001c\u0010\u000f\u001a\u00020\u0010*\u00020\u00022\b\b\u0002\u0010\u0011\u001a\u00020\u0012H\u0086@¢\u0006\u0002\u0010\u0013\u001a\u001c\u0010\u000f\u001a\u00020\u0010*\u00020\b2\b\b\u0002\u0010\u0011\u001a\u00020\u0012H\u0086@¢\u0006\u0002\u0010\u0014¨\u0006\u0015"}, d2 = {"animateScrollBy", "", "Landroidx/compose/foundation/gestures/ScrollableState;", "value", "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "(Landroidx/compose/foundation/gestures/ScrollableState;FLandroidx/compose/animation/core/AnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/foundation/gestures/Scrollable2DState;", "animateScrollBy-ubNVwUQ", "(Landroidx/compose/foundation/gestures/Scrollable2DState;JLandroidx/compose/animation/core/AnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "scrollBy", "(Landroidx/compose/foundation/gestures/ScrollableState;FLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "scrollBy-d-4ec7I", "(Landroidx/compose/foundation/gestures/Scrollable2DState;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "stopScroll", "", "scrollPriority", "Landroidx/compose/foundation/MutatePriority;", "(Landroidx/compose/foundation/gestures/ScrollableState;Landroidx/compose/foundation/MutatePriority;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "(Landroidx/compose/foundation/gestures/Scrollable2DState;Landroidx/compose/foundation/MutatePriority;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ScrollExtensionsKt {
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
@@ -68,6 +69,61 @@ public final class ScrollExtensionsKt {
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0037  */
+    /* renamed from: animateScrollBy-ubNVwUQ  reason: not valid java name */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object m550animateScrollByubNVwUQ(Scrollable2DState scrollable2DState, long j, AnimationSpec<Offset> animationSpec, Continuation<? super Offset> continuation) {
+        ScrollExtensionsKt$animateScrollBy$3 scrollExtensionsKt$animateScrollBy$3;
+        int i;
+        Ref.LongRef longRef;
+        if (continuation instanceof ScrollExtensionsKt$animateScrollBy$3) {
+            scrollExtensionsKt$animateScrollBy$3 = (ScrollExtensionsKt$animateScrollBy$3) continuation;
+            if ((scrollExtensionsKt$animateScrollBy$3.label & Integer.MIN_VALUE) != 0) {
+                scrollExtensionsKt$animateScrollBy$3.label -= Integer.MIN_VALUE;
+                ScrollExtensionsKt$animateScrollBy$3 scrollExtensionsKt$animateScrollBy$32 = scrollExtensionsKt$animateScrollBy$3;
+                Object obj = scrollExtensionsKt$animateScrollBy$32.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = scrollExtensionsKt$animateScrollBy$32.label;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    Ref.LongRef longRef2 = new Ref.LongRef();
+                    longRef2.element = Offset.Companion.m4309getZeroF1C5BW0();
+                    scrollExtensionsKt$animateScrollBy$32.L$0 = longRef2;
+                    scrollExtensionsKt$animateScrollBy$32.label = 1;
+                    if (Scrollable2DState.scroll$default(scrollable2DState, null, new ScrollExtensionsKt$animateScrollBy$4(j, animationSpec, longRef2, null), scrollExtensionsKt$animateScrollBy$32, 1, null) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    longRef = longRef2;
+                } else if (i != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                } else {
+                    longRef = (Ref.LongRef) scrollExtensionsKt$animateScrollBy$32.L$0;
+                    ResultKt.throwOnFailure(obj);
+                }
+                return Offset.m4282boximpl(longRef.element);
+            }
+        }
+        scrollExtensionsKt$animateScrollBy$3 = new ScrollExtensionsKt$animateScrollBy$3(continuation);
+        ScrollExtensionsKt$animateScrollBy$3 scrollExtensionsKt$animateScrollBy$322 = scrollExtensionsKt$animateScrollBy$3;
+        Object obj2 = scrollExtensionsKt$animateScrollBy$322.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = scrollExtensionsKt$animateScrollBy$322.label;
+        if (i != 0) {
+        }
+        return Offset.m4282boximpl(longRef.element);
+    }
+
+    /* renamed from: animateScrollBy-ubNVwUQ$default  reason: not valid java name */
+    public static /* synthetic */ Object m551animateScrollByubNVwUQ$default(Scrollable2DState scrollable2DState, long j, AnimationSpec animationSpec, Continuation continuation, int i, Object obj) {
+        if ((i & 2) != 0) {
+            animationSpec = AnimationSpecKt.spring$default(0.0f, 0.0f, null, 7, null);
+        }
+        return m550animateScrollByubNVwUQ(scrollable2DState, j, animationSpec, continuation);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0037  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -111,6 +167,53 @@ public final class ScrollExtensionsKt {
         return Boxing.boxFloat(floatRef.element);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0037  */
+    /* renamed from: scrollBy-d-4ec7I  reason: not valid java name */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object m552scrollByd4ec7I(Scrollable2DState scrollable2DState, long j, Continuation<? super Offset> continuation) {
+        ScrollExtensionsKt$scrollBy$3 scrollExtensionsKt$scrollBy$3;
+        int i;
+        Ref.LongRef longRef;
+        if (continuation instanceof ScrollExtensionsKt$scrollBy$3) {
+            scrollExtensionsKt$scrollBy$3 = (ScrollExtensionsKt$scrollBy$3) continuation;
+            if ((scrollExtensionsKt$scrollBy$3.label & Integer.MIN_VALUE) != 0) {
+                scrollExtensionsKt$scrollBy$3.label -= Integer.MIN_VALUE;
+                ScrollExtensionsKt$scrollBy$3 scrollExtensionsKt$scrollBy$32 = scrollExtensionsKt$scrollBy$3;
+                Object obj = scrollExtensionsKt$scrollBy$32.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = scrollExtensionsKt$scrollBy$32.label;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    Ref.LongRef longRef2 = new Ref.LongRef();
+                    longRef2.element = Offset.Companion.m4309getZeroF1C5BW0();
+                    scrollExtensionsKt$scrollBy$32.L$0 = longRef2;
+                    scrollExtensionsKt$scrollBy$32.label = 1;
+                    if (Scrollable2DState.scroll$default(scrollable2DState, null, new ScrollExtensionsKt$scrollBy$4(longRef2, j, null), scrollExtensionsKt$scrollBy$32, 1, null) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    longRef = longRef2;
+                } else if (i != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                } else {
+                    longRef = (Ref.LongRef) scrollExtensionsKt$scrollBy$32.L$0;
+                    ResultKt.throwOnFailure(obj);
+                }
+                return Offset.m4282boximpl(longRef.element);
+            }
+        }
+        scrollExtensionsKt$scrollBy$3 = new ScrollExtensionsKt$scrollBy$3(continuation);
+        ScrollExtensionsKt$scrollBy$3 scrollExtensionsKt$scrollBy$322 = scrollExtensionsKt$scrollBy$3;
+        Object obj2 = scrollExtensionsKt$scrollBy$322.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = scrollExtensionsKt$scrollBy$322.label;
+        if (i != 0) {
+        }
+        return Offset.m4282boximpl(longRef.element);
+    }
+
     public static /* synthetic */ Object stopScroll$default(ScrollableState scrollableState, MutatePriority mutatePriority, Continuation continuation, int i, Object obj) {
         if ((i & 1) != 0) {
             mutatePriority = MutatePriority.Default;
@@ -120,6 +223,18 @@ public final class ScrollExtensionsKt {
 
     public static final Object stopScroll(ScrollableState scrollableState, MutatePriority mutatePriority, Continuation<? super Unit> continuation) {
         Object scroll = scrollableState.scroll(mutatePriority, new ScrollExtensionsKt$stopScroll$2(null), continuation);
+        return scroll == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? scroll : Unit.INSTANCE;
+    }
+
+    public static /* synthetic */ Object stopScroll$default(Scrollable2DState scrollable2DState, MutatePriority mutatePriority, Continuation continuation, int i, Object obj) {
+        if ((i & 1) != 0) {
+            mutatePriority = MutatePriority.Default;
+        }
+        return stopScroll(scrollable2DState, mutatePriority, continuation);
+    }
+
+    public static final Object stopScroll(Scrollable2DState scrollable2DState, MutatePriority mutatePriority, Continuation<? super Unit> continuation) {
+        Object scroll = scrollable2DState.scroll(mutatePriority, new ScrollExtensionsKt$stopScroll$4(null), continuation);
         return scroll == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? scroll : Unit.INSTANCE;
     }
 }

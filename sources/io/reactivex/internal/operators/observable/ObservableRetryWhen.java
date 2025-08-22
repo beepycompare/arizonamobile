@@ -15,7 +15,7 @@ import io.reactivex.subjects.PublishSubject;
 import io.reactivex.subjects.Subject;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableRetryWhen<T> extends AbstractObservableWithUpstream<T, T> {
     final Function<? super Observable<Throwable>, ? extends ObservableSource<?>> handler;
 
@@ -39,7 +39,7 @@ public final class ObservableRetryWhen<T> extends AbstractObservableWithUpstream
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class RepeatWhenObserver<T> extends AtomicInteger implements Observer<T>, Disposable {
         private static final long serialVersionUID = 802743776666017014L;
         volatile boolean active;
@@ -119,7 +119,7 @@ public final class ObservableRetryWhen<T> extends AbstractObservableWithUpstream
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class InnerRepeatObserver extends AtomicReference<Disposable> implements Observer<Object> {
             private static final long serialVersionUID = 3254781284376480842L;
 

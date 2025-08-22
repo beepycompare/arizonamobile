@@ -11,7 +11,7 @@ import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.subjects.PublishSubject;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservablePublishSelector<T, R> extends AbstractObservableWithUpstream<T, R> {
     final Function<? super Observable<T>, ? extends ObservableSource<R>> selector;
 
@@ -34,7 +34,7 @@ public final class ObservablePublishSelector<T, R> extends AbstractObservableWit
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SourceObserver<T, R> implements Observer<T> {
         final PublishSubject<T> subject;
         final AtomicReference<Disposable> target;
@@ -65,7 +65,7 @@ public final class ObservablePublishSelector<T, R> extends AbstractObservableWit
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TargetObserver<T, R> extends AtomicReference<Disposable> implements Observer<R>, Disposable {
         private static final long serialVersionUID = 854110278590336484L;
         final Observer<? super R> downstream;

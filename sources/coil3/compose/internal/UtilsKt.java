@@ -266,37 +266,37 @@ public final class UtilsKt {
     }
 
     /* renamed from: toSize-BRTryo0  reason: not valid java name */
-    public static final Size m7786toSizeBRTryo0(long j) {
-        return new Size(toDimension(Constraints.m6637getMaxWidthimpl(j)), toDimension(Constraints.m6636getMaxHeightimpl(j)));
+    public static final Size m8352toSizeBRTryo0(long j) {
+        return new Size(toDimension(Constraints.m7204getMaxWidthimpl(j)), toDimension(Constraints.m7203getMaxHeightimpl(j)));
     }
 
     /* renamed from: toSizeOrNull-uvyYCjk  reason: not valid java name */
-    public static final Size m7787toSizeOrNulluvyYCjk(long j) {
+    public static final Size m8353toSizeOrNulluvyYCjk(long j) {
         if (j == InlineClassHelperKt.UnspecifiedPackedFloats) {
             return Size.ORIGINAL;
         }
-        if (m7784isPositiveuvyYCjk(j)) {
+        if (m8350isPositiveuvyYCjk(j)) {
             return new Size(toDimension(Float.intBitsToFloat((int) (j >> 32))), toDimension(Float.intBitsToFloat((int) (j & 4294967295L))));
         }
         return null;
     }
 
     private static final Dimension toDimension(int i) {
-        return i != Integer.MAX_VALUE ? Dimension.Pixels.m7831boximpl(DimensionKt.Dimension(i)) : Dimension.Undefined.INSTANCE;
+        return i != Integer.MAX_VALUE ? Dimension.Pixels.m8397boximpl(DimensionKt.Dimension(i)) : Dimension.Undefined.INSTANCE;
     }
 
     private static final Dimension toDimension(float f) {
-        return Math.abs(f) <= Float.MAX_VALUE ? Dimension.Pixels.m7831boximpl(DimensionKt.Dimension(MathKt.roundToInt(f))) : Dimension.Undefined.INSTANCE;
+        return Math.abs(f) <= Float.MAX_VALUE ? Dimension.Pixels.m8397boximpl(DimensionKt.Dimension(MathKt.roundToInt(f))) : Dimension.Undefined.INSTANCE;
     }
 
     /* renamed from: constrainWidth-K40F9xA  reason: not valid java name */
-    public static final float m7783constrainWidthK40F9xA(long j, float f) {
-        return RangesKt.coerceIn(f, Constraints.m6639getMinWidthimpl(j), Constraints.m6637getMaxWidthimpl(j));
+    public static final float m8349constrainWidthK40F9xA(long j, float f) {
+        return RangesKt.coerceIn(f, Constraints.m7206getMinWidthimpl(j), Constraints.m7204getMaxWidthimpl(j));
     }
 
     /* renamed from: constrainHeight-K40F9xA  reason: not valid java name */
-    public static final float m7782constrainHeightK40F9xA(long j, float f) {
-        return RangesKt.coerceIn(f, Constraints.m6638getMinHeightimpl(j), Constraints.m6636getMaxHeightimpl(j));
+    public static final float m8348constrainHeightK40F9xA(long j, float f) {
+        return RangesKt.coerceIn(f, Constraints.m7205getMinHeightimpl(j), Constraints.m7203getMaxHeightimpl(j));
     }
 
     public static final float takeOrElse(float f, Function0<Float> function0) {
@@ -375,13 +375,13 @@ public final class UtilsKt {
     }
 
     /* renamed from: toIntSize-uvyYCjk  reason: not valid java name */
-    public static final long m7785toIntSizeuvyYCjk(long j) {
+    public static final long m8351toIntSizeuvyYCjk(long j) {
         int roundToInt = MathKt.roundToInt(Float.intBitsToFloat((int) (j >> 32)));
-        return IntSize.m6850constructorimpl((MathKt.roundToInt(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (roundToInt << 32));
+        return IntSize.m7417constructorimpl((MathKt.roundToInt(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (roundToInt << 32));
     }
 
     /* renamed from: isPositive-uvyYCjk  reason: not valid java name */
-    public static final boolean m7784isPositiveuvyYCjk(long j) {
+    public static final boolean m8350isPositiveuvyYCjk(long j) {
         return ((double) Float.intBitsToFloat((int) (j >> 32))) >= 0.5d && ((double) Float.intBitsToFloat((int) (j & 4294967295L))) >= 0.5d;
     }
 }

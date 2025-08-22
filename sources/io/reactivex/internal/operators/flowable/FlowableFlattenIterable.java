@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableFlattenIterable<T, R> extends AbstractFlowableWithUpstream<T, R> {
     final Function<? super T, ? extends Iterable<? extends R>> mapper;
     final int prefetch;
@@ -58,7 +58,7 @@ public final class FlowableFlattenIterable<T, R> extends AbstractFlowableWithUps
         this.source.subscribe((FlowableSubscriber) new FlattenIterableSubscriber(subscriber, this.mapper, this.prefetch));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FlattenIterableSubscriber<T, R> extends BasicIntQueueSubscription<R> implements FlowableSubscriber<T> {
         private static final long serialVersionUID = -3096000382929934955L;
         volatile boolean cancelled;

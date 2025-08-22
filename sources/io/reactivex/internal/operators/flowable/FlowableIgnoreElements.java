@@ -6,7 +6,7 @@ import io.reactivex.internal.fuseable.QueueSubscription;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableIgnoreElements<T> extends AbstractFlowableWithUpstream<T, T> {
     public FlowableIgnoreElements(Flowable<T> flowable) {
         super(flowable);
@@ -17,7 +17,7 @@ public final class FlowableIgnoreElements<T> extends AbstractFlowableWithUpstrea
         this.source.subscribe((FlowableSubscriber) new IgnoreElementsSubscriber(subscriber));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class IgnoreElementsSubscriber<T> implements FlowableSubscriber<T>, QueueSubscription<T> {
         final Subscriber<? super T> downstream;
         Subscription upstream;

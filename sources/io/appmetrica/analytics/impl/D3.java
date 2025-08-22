@@ -12,13 +12,13 @@ public final class D3 extends ECommerceEvent {
     /* renamed from: a  reason: collision with root package name */
     public final int f389a;
     public final G3 b;
-    public final InterfaceC0653v8 c;
+    public final InterfaceC0700x8 c;
 
     public D3(int i, ECommerceCartItem eCommerceCartItem) {
         this(i, new G3(eCommerceCartItem), new E3());
     }
 
-    public final InterfaceC0653v8 a() {
+    public final InterfaceC0700x8 a() {
         return this.c;
     }
 
@@ -34,8 +34,8 @@ public final class D3 extends ECommerceEvent {
         return "add cart item info";
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.Xf
-    public final List<Qi> toProto() {
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0177cg
+    public final List<Vi> toProto() {
         return (List) this.c.fromModel(this);
     }
 
@@ -43,9 +43,9 @@ public final class D3 extends ECommerceEvent {
         return "CartActionInfoEvent{eventType=" + this.f389a + ", cartItem=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public D3(int i, G3 g3, InterfaceC0653v8 interfaceC0653v8) {
+    public D3(int i, G3 g3, InterfaceC0700x8 interfaceC0700x8) {
         this.f389a = i;
         this.b = g3;
-        this.c = interfaceC0653v8;
+        this.c = interfaceC0700x8;
     }
 }

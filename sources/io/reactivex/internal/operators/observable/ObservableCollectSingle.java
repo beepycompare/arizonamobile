@@ -13,7 +13,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.fuseable.FuseToObservable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableCollectSingle<T, U> extends Single<U> implements FuseToObservable<U> {
     final BiConsumer<? super U, ? super T> collector;
     final Callable<? extends U> initialSupplier;
@@ -39,7 +39,7 @@ public final class ObservableCollectSingle<T, U> extends Single<U> implements Fu
         return RxJavaPlugins.onAssembly(new ObservableCollect(this.source, this.initialSupplier, this.collector));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class CollectObserver<T, U> implements Observer<T>, Disposable {
         final BiConsumer<? super U, ? super T> collector;
         boolean done;

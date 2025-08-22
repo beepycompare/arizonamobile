@@ -4,7 +4,7 @@ import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableTakeLastOne<T> extends AbstractObservableWithUpstream<T, T> {
     public ObservableTakeLastOne(ObservableSource<T> observableSource) {
         super(observableSource);
@@ -15,7 +15,7 @@ public final class ObservableTakeLastOne<T> extends AbstractObservableWithUpstre
         this.source.subscribe(new TakeLastOneObserver(observer));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TakeLastOneObserver<T> implements Observer<T>, Disposable {
         final Observer<? super T> downstream;
         Disposable upstream;

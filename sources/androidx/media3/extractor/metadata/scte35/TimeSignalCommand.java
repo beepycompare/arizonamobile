@@ -3,7 +3,7 @@ package androidx.media3.extractor.metadata.scte35;
 import androidx.media3.common.C;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.TimestampAdjuster;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TimeSignalCommand extends SpliceCommand {
     public final long playbackPositionUs;
     public final long ptsTime;

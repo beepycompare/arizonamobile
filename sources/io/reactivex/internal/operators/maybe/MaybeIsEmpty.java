@@ -4,7 +4,7 @@ import io.reactivex.MaybeObserver;
 import io.reactivex.MaybeSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeIsEmpty<T> extends AbstractMaybeWithUpstream<T, Boolean> {
     public MaybeIsEmpty(MaybeSource<T> maybeSource) {
         super(maybeSource);
@@ -15,7 +15,7 @@ public final class MaybeIsEmpty<T> extends AbstractMaybeWithUpstream<T, Boolean>
         this.source.subscribe(new IsEmptyMaybeObserver(maybeObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class IsEmptyMaybeObserver<T> implements MaybeObserver<T>, Disposable {
         final MaybeObserver<? super Boolean> downstream;
         Disposable upstream;

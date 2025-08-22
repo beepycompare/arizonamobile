@@ -10,7 +10,7 @@ import androidx.media3.extractor.text.CuesWithTiming;
 import androidx.media3.extractor.text.SubtitleParser;
 import java.util.ArrayList;
 import java.util.Collections;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Mp4WebvttParser implements SubtitleParser {
     private static final int BOX_HEADER_SIZE = 8;
     public static final int CUE_REPLACEMENT_BEHAVIOR = 2;

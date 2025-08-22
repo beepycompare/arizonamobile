@@ -11,7 +11,7 @@ import io.reactivex.internal.schedulers.SchedulerMultiWorkerSupport;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ComputationScheduler extends Scheduler implements SchedulerMultiWorkerSupport {
     private static final String KEY_COMPUTATION_PRIORITY = "rx2.computation-priority";
     static final String KEY_MAX_THREADS = "rx2.computation-threads";
@@ -39,7 +39,7 @@ public final class ComputationScheduler extends Scheduler implements SchedulerMu
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class FixedSchedulerPool implements SchedulerMultiWorkerSupport {
         final int cores;
         final PoolWorker[] eventLoops;
@@ -146,7 +146,7 @@ public final class ComputationScheduler extends Scheduler implements SchedulerMu
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class EventLoopWorker extends Scheduler.Worker {
         private final ListCompositeDisposable both;
         volatile boolean disposed;
@@ -198,7 +198,7 @@ public final class ComputationScheduler extends Scheduler implements SchedulerMu
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class PoolWorker extends NewThreadWorker {
         PoolWorker(ThreadFactory threadFactory) {
             super(threadFactory);

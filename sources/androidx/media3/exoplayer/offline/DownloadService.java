@@ -506,7 +506,7 @@ public abstract class DownloadService extends Service {
                 Util.createHandlerForCurrentOrMainLooper().postAtFrontOfQueue(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadService$DownloadManagerHelper$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DownloadService.DownloadManagerHelper.this.m7402xee6ee963(downloadService);
+                        DownloadService.DownloadManagerHelper.this.m7968xee6ee963(downloadService);
                     }
                 });
             }
@@ -514,7 +514,7 @@ public abstract class DownloadService extends Service {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$attachService$0$androidx-media3-exoplayer-offline-DownloadService$DownloadManagerHelper  reason: not valid java name */
-        public /* synthetic */ void m7402xee6ee963(DownloadService downloadService) {
+        public /* synthetic */ void m7968xee6ee963(DownloadService downloadService) {
             downloadService.notifyDownloads(this.downloadManager.getCurrentDownloads());
         }
 

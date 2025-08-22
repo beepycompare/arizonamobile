@@ -4,7 +4,7 @@ import androidx.media3.common.ParserException;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface ElementaryStreamReader {
     void consume(ParsableByteArray parsableByteArray) throws ParserException;
 

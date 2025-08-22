@@ -45,7 +45,7 @@ public final class SheetState {
             }
 
             public final Float invoke(float f) {
-                return Float.valueOf(Density.this.mo389toPx0680j_4(Dp.m6684constructorimpl(56)));
+                return Float.valueOf(Density.this.mo419toPx0680j_4(Dp.m7251constructorimpl(56)));
             }
 
             @Override // kotlin.jvm.functions.Function1
@@ -61,7 +61,7 @@ public final class SheetState {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(Density.this.mo389toPx0680j_4(Dp.m6684constructorimpl(125)));
+                return Float.valueOf(Density.this.mo419toPx0680j_4(Dp.m7251constructorimpl(125)));
             }
         }, animationSpec, function1);
     }

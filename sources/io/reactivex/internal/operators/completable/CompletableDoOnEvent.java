@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.CompositeException;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableDoOnEvent extends Completable {
     final Consumer<? super Throwable> onEvent;
     final CompletableSource source;
@@ -22,7 +22,7 @@ public final class CompletableDoOnEvent extends Completable {
         this.source.subscribe(new DoOnEvent(completableObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class DoOnEvent implements CompletableObserver {
         private final CompletableObserver observer;
 

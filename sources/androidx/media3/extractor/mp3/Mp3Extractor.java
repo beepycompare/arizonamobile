@@ -35,7 +35,7 @@ import java.lang.annotation.Target;
 import java.math.RoundingMode;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Mp3Extractor implements Extractor {
     public static final int FLAG_DISABLE_ID3_METADATA = 8;
     public static final int FLAG_ENABLE_CONSTANT_BITRATE_SEEKING = 1;
@@ -87,7 +87,7 @@ public final class Mp3Extractor implements Extractor {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Flags {
     }
 

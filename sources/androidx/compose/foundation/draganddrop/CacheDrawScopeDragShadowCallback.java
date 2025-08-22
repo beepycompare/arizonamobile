@@ -11,7 +11,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidDragAndDropSource.android.kt */
-@Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0000\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\u000e\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bJ\u000e\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fR\u0010\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Landroidx/compose/foundation/draganddrop/CacheDrawScopeDragShadowCallback;", "", "()V", "graphicsLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "cachePicture", "Landroidx/compose/ui/draw/DrawResult;", "scope", "Landroidx/compose/ui/draw/CacheDrawScope;", "drawDragShadow", "", "drawScope", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tJ\u000e\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rR\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Landroidx/compose/foundation/draganddrop/CacheDrawScopeDragShadowCallback;", "", "<init>", "()V", "graphicsLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "drawDragShadow", "", "drawScope", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "cachePicture", "Landroidx/compose/ui/draw/DrawResult;", "scope", "Landroidx/compose/ui/draw/CacheDrawScope;", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class CacheDrawScopeDragShadowCallback {
     public static final int $stable = 8;
@@ -25,40 +25,38 @@ public final class CacheDrawScopeDragShadowCallback {
         GraphicsLayerKt.drawLayer(drawScope, graphicsLayer);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit cachePicture$lambda$4$lambda$2$lambda$1(ContentDrawScope contentDrawScope) {
+        contentDrawScope.drawContent();
+        return Unit.INSTANCE;
+    }
+
     public final DrawResult cachePicture(CacheDrawScope cacheDrawScope) {
         GraphicsLayer obtainGraphicsLayer = cacheDrawScope.obtainGraphicsLayer();
-        CacheDrawScope.m3697recordTdoYBX4$default(cacheDrawScope, obtainGraphicsLayer, null, null, 0L, new Function1<ContentDrawScope, Unit>() { // from class: androidx.compose.foundation.draganddrop.CacheDrawScopeDragShadowCallback$cachePicture$1$1$1
+        CacheDrawScope.m4076recordTdoYBX4$default(cacheDrawScope, obtainGraphicsLayer, null, null, 0L, new Function1() { // from class: androidx.compose.foundation.draganddrop.CacheDrawScopeDragShadowCallback$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(ContentDrawScope contentDrawScope) {
-                invoke2(contentDrawScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(ContentDrawScope contentDrawScope) {
-                contentDrawScope.drawContent();
+            public final Object invoke(Object obj) {
+                Unit cachePicture$lambda$4$lambda$2$lambda$1;
+                cachePicture$lambda$4$lambda$2$lambda$1 = CacheDrawScopeDragShadowCallback.cachePicture$lambda$4$lambda$2$lambda$1((ContentDrawScope) obj);
+                return cachePicture$lambda$4$lambda$2$lambda$1;
             }
         }, 7, null);
         this.graphicsLayer = obtainGraphicsLayer;
-        return cacheDrawScope.onDrawWithContent(new Function1<ContentDrawScope, Unit>() { // from class: androidx.compose.foundation.draganddrop.CacheDrawScopeDragShadowCallback$cachePicture$1$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        return cacheDrawScope.onDrawWithContent(new Function1() { // from class: androidx.compose.foundation.draganddrop.CacheDrawScopeDragShadowCallback$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(ContentDrawScope contentDrawScope) {
-                invoke2(contentDrawScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(ContentDrawScope contentDrawScope) {
-                GraphicsLayer graphicsLayer;
-                graphicsLayer = CacheDrawScopeDragShadowCallback.this.graphicsLayer;
-                Intrinsics.checkNotNull(graphicsLayer);
-                GraphicsLayerKt.drawLayer(contentDrawScope, graphicsLayer);
+            public final Object invoke(Object obj) {
+                Unit cachePicture$lambda$4$lambda$3;
+                cachePicture$lambda$4$lambda$3 = CacheDrawScopeDragShadowCallback.cachePicture$lambda$4$lambda$3(CacheDrawScopeDragShadowCallback.this, (ContentDrawScope) obj);
+                return cachePicture$lambda$4$lambda$3;
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit cachePicture$lambda$4$lambda$3(CacheDrawScopeDragShadowCallback cacheDrawScopeDragShadowCallback, ContentDrawScope contentDrawScope) {
+        GraphicsLayer graphicsLayer = cacheDrawScopeDragShadowCallback.graphicsLayer;
+        Intrinsics.checkNotNull(graphicsLayer);
+        GraphicsLayerKt.drawLayer(contentDrawScope, graphicsLayer);
+        return Unit.INSTANCE;
     }
 }

@@ -4,43 +4,43 @@ import io.appmetrica.analytics.AppMetricaConfig;
 import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
 import java.util.Map;
 /* loaded from: classes4.dex */
-public final class H6 implements InterfaceC0507pb {
+public final class H6 implements InterfaceC0553rb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final I6 f466a;
-    public final Sh b;
+    public final I6 f471a;
+    public final Xh b;
 
     public H6(I6 i6) {
-        this.f466a = i6;
+        this.f471a = i6;
         this.b = i6.a();
-        C0699x4.l().getClass();
+        C0696x4.l().getClass();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0507pb
-    public final void a(Nn nn) {
-        Ji ji = this.f466a.f485a;
-        Ih a2 = ji.a(nn, this.b);
-        Sh sh = a2.e;
-        Pl pl = ji.e;
-        if (pl != null) {
-            sh.b.setUuid(((Ol) pl).g());
+    @Override // io.appmetrica.analytics.impl.InterfaceC0553rb
+    public final void a(Sn sn) {
+        Oi oi = this.f471a.f491a;
+        Nh a2 = oi.a(sn, this.b);
+        Xh xh = a2.e;
+        Ul ul = oi.e;
+        if (ul != null) {
+            xh.b.setUuid(((Tl) ul).g());
         } else {
-            sh.getClass();
+            xh.getClass();
         }
-        ji.c.b(a2);
-        LoggerStorage.getMainPublicOrAnonymousLogger().info("Unhandled exception received: " + nn, new Object[0]);
+        oi.c.b(a2);
+        LoggerStorage.getMainPublicOrAnonymousLogger().info("Unhandled exception received: " + sn, new Object[0]);
     }
 
     public final void a(AppMetricaConfig appMetricaConfig) {
         Map<String, String> map = appMetricaConfig.errorEnvironment;
         if (map != null) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
-                Sh sh = this.b;
+                Xh xh = this.b;
                 String key = entry.getKey();
                 String value = entry.getValue();
-                synchronized (sh) {
-                    W8 w8 = sh.c;
-                    w8.b.b(w8.f698a, key, value);
+                synchronized (xh) {
+                    Y8 y8 = xh.c;
+                    y8.b.b(y8.f738a, key, value);
                 }
             }
         }

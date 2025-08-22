@@ -7,8 +7,8 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateRepositoryImpl.kt */
 @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.data.repositories.DonateRepositoryImpl", f = "DonateRepositoryImpl.kt", i = {}, l = {32}, m = "getItems", n = {}, s = {})
-/* loaded from: classes5.dex */
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.data.repositories.DonateRepositoryImpl", f = "DonateRepositoryImpl.kt", i = {}, l = {35}, m = "getItems", n = {}, s = {})
+/* loaded from: classes6.dex */
 public final class DonateRepositoryImpl$getItems$1 extends ContinuationImpl {
     int label;
     /* synthetic */ Object result;

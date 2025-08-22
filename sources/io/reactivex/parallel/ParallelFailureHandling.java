@@ -1,7 +1,7 @@
 package io.reactivex.parallel;
 
 import io.reactivex.functions.BiFunction;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public enum ParallelFailureHandling implements BiFunction<Long, Throwable, ParallelFailureHandling> {
     STOP,
     ERROR,

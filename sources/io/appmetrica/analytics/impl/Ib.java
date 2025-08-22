@@ -1,31 +1,34 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreapi.internal.backport.Function;
-import java.io.File;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
 /* loaded from: classes4.dex */
-public final class Ib implements Function, Consumer {
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Function
-    /* renamed from: a */
-    public final Eb apply(File file) {
-        String a2 = AbstractC0231eb.a(file);
-        if (!TextUtils.isEmpty(a2)) {
-            try {
-                return new Eb(a2);
-            } catch (Throwable unused) {
-                return null;
-            }
-        }
-        return null;
+public final class Ib implements Converter {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final C0354jd f495a;
+
+    public Ib() {
+        this(new C0354jd(new Tn()));
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    /* renamed from: b */
-    public final void consume(File file) {
-        try {
-            file.delete();
-        } catch (Throwable unused) {
-        }
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final byte[] fromModel(Sn sn) {
+        return MessageNano.toByteArray((MessageNano) this.f495a.f923a.fromModel(sn));
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        byte[] bArr = (byte[]) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public Ib(C0354jd c0354jd) {
+        this.f495a = c0354jd;
+    }
+
+    public final Sn a(byte[] bArr) {
+        throw new UnsupportedOperationException();
     }
 }

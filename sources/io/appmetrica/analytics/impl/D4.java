@@ -3,22 +3,22 @@ package io.appmetrica.analytics.impl;
 import kotlin.NoWhenBranchMatchedException;
 /* loaded from: classes4.dex */
 public final class D4 {
-    public static B4 a(C0400l4 c0400l4) {
-        switch (C4.f370a[c0400l4.e.ordinal()]) {
+    public static B4 a(C0397l4 c0397l4) {
+        switch (C4.f373a[c0397l4.e.ordinal()]) {
             case 1:
-                return new C0657vc();
+                return new C0704xc();
             case 2:
-                return new C0664vj();
+                return new Aj();
             case 3:
-                return new C0739yj();
+                return new Dj();
             case 4:
-                return new Ph(new Rh());
+                return new Uh(new Wh());
             case 5:
-                return new Ph(new C0240ek());
+                return new Uh(new C0361jk());
             case 6:
-                return new Gc();
+                return new Ic();
             case 7:
-                return new Gc();
+                return new Ic();
             default:
                 throw new NoWhenBranchMatchedException();
         }

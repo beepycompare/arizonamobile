@@ -11,20 +11,29 @@ import androidx.compose.runtime.collection.MutableVector;
 import androidx.compose.runtime.collection.ScopeMap;
 import androidx.compose.runtime.external.kotlinx.collections.immutable.PersistentMap;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
+import androidx.compose.runtime.internal.Expect_jvmKt;
 import androidx.compose.runtime.internal.IntRef;
 import androidx.compose.runtime.internal.PersistentCompositionLocalMapKt;
 import androidx.compose.runtime.internal.Trace;
-import androidx.compose.runtime.internal.Utils_jvmKt;
 import androidx.compose.runtime.snapshots.ListUtilsKt;
 import androidx.compose.runtime.snapshots.SnapshotKt;
+import androidx.compose.runtime.tooling.ComposeStackTraceBuilderKt;
+import androidx.compose.runtime.tooling.ComposeStackTraceFrame;
+import androidx.compose.runtime.tooling.ComposeStackTraceKt;
 import androidx.compose.runtime.tooling.CompositionData;
+import androidx.compose.runtime.tooling.CompositionErrorContext;
+import androidx.compose.runtime.tooling.CompositionErrorContextImpl;
+import androidx.compose.runtime.tooling.CompositionErrorContextKt;
+import androidx.compose.runtime.tooling.CompositionObserver;
 import androidx.compose.runtime.tooling.InspectionTablesKt;
+import androidx.compose.runtime.tooling.ObjectLocation;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -38,27 +47,30 @@ import kotlin.Unit;
 import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.CoroutineContext;
+import kotlin.coroutines.EmptyCoroutineContext;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.TypeIntrinsics;
 /* compiled from: Composer.kt */
-@Metadata(d1 = {"\u0000û\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0005\n\u0002\u0010\f\n\u0002\u0010\u0006\n\u0002\u0010\u0007\n\u0002\u0010\t\n\u0002\u0010\n\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u001d\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b6\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0002\b-*\u0001B\b\u0000\u0018\u00002\u00020\u0001:\u0004ç\u0002è\u0002BG\u0012\n\u0010\u0002\u001a\u0006\u0012\u0002\b\u00030\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\n0\t\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\f\u0012\u0006\u0010\u000e\u001a\u00020\u000f¢\u0006\u0002\u0010\u0010J\n\u0010\u0092\u0001\u001a\u00030\u0093\u0001H\u0002J\n\u0010\u0094\u0001\u001a\u00030\u0093\u0001H\u0002JM\u0010\u0095\u0001\u001a\u00030\u0093\u0001\"\u0005\b\u0000\u0010\u0096\u0001\"\u0005\b\u0001\u0010\u0097\u00012\b\u0010\u0098\u0001\u001a\u0003H\u0096\u00012#\u0010\u0099\u0001\u001a\u001e\u0012\u0005\u0012\u0003H\u0097\u0001\u0012\u0005\u0012\u0003H\u0096\u0001\u0012\u0005\u0012\u00030\u0093\u00010\u009a\u0001¢\u0006\u0003\b\u009b\u0001H\u0016¢\u0006\u0003\u0010\u009c\u0001J\t\u0010\u009d\u0001\u001a\u00020\u0005H\u0016J2\u0010\u009e\u0001\u001a\u0003H\u0097\u0001\"\u0005\b\u0000\u0010\u0097\u00012\u0007\u0010\u009f\u0001\u001a\u00020\u001a2\u000f\u0010\u0099\u0001\u001a\n\u0012\u0005\u0012\u0003H\u0097\u00010 \u0001H\u0087\b¢\u0006\u0003\u0010¡\u0001J\u0015\u0010¢\u0001\u001a\u00020\u001a2\n\u0010\u0098\u0001\u001a\u0005\u0018\u00010\u0081\u0001H\u0017J\u0012\u0010¢\u0001\u001a\u00020\u001a2\u0007\u0010\u0098\u0001\u001a\u00020\u001aH\u0017J\u0013\u0010¢\u0001\u001a\u00020\u001a2\b\u0010\u0098\u0001\u001a\u00030£\u0001H\u0017J\u0013\u0010¢\u0001\u001a\u00020\u001a2\b\u0010\u0098\u0001\u001a\u00030¤\u0001H\u0017J\u0013\u0010¢\u0001\u001a\u00020\u001a2\b\u0010\u0098\u0001\u001a\u00030¥\u0001H\u0017J\u0013\u0010¢\u0001\u001a\u00020\u001a2\b\u0010\u0098\u0001\u001a\u00030¦\u0001H\u0017J\u0012\u0010¢\u0001\u001a\u00020\u001a2\u0007\u0010\u0098\u0001\u001a\u00020\u001eH\u0017J\u0013\u0010¢\u0001\u001a\u00020\u001a2\b\u0010\u0098\u0001\u001a\u00030§\u0001H\u0017J\u0013\u0010¢\u0001\u001a\u00020\u001a2\b\u0010\u0098\u0001\u001a\u00030¨\u0001H\u0017J\u0015\u0010©\u0001\u001a\u00020\u001a2\n\u0010\u0098\u0001\u001a\u0005\u0018\u00010\u0081\u0001H\u0017J\u0010\u0010ª\u0001\u001a\u00030\u0093\u0001H\u0000¢\u0006\u0003\b«\u0001J\n\u0010¬\u0001\u001a\u00030\u0093\u0001H\u0002J\n\u0010\u00ad\u0001\u001a\u00030\u0093\u0001H\u0002J\n\u0010®\u0001\u001a\u00030\u0093\u0001H\u0016JP\u0010¯\u0001\u001a\u00030\u0093\u00012\u0015\u0010°\u0001\u001a\u0010\u0012\u0004\u0012\u000206\u0012\u0005\u0012\u00030\u0081\u00010±\u00012\u0015\u0010²\u0001\u001a\u0010\u0012\u0005\u0012\u00030\u0093\u00010 \u0001¢\u0006\u0003\b³\u00012\n\u0010´\u0001\u001a\u0005\u0018\u00010\u0087\u0001H\u0000ø\u0001\u0000¢\u0006\u0006\bµ\u0001\u0010¶\u0001J$\u0010·\u0001\u001a\u00020\u001e2\u0007\u0010¸\u0001\u001a\u00020\u001e2\u0007\u0010¹\u0001\u001a\u00020\u001e2\u0007\u0010º\u0001\u001a\u00020\u001eH\u0002J(\u0010»\u0001\u001a\u0003H\u0097\u0001\"\u0005\b\u0000\u0010\u0097\u00012\u000f\u0010¼\u0001\u001a\n\u0012\u0005\u0012\u0003H\u0097\u00010½\u0001H\u0017¢\u0006\u0003\u0010¾\u0001J\n\u0010¿\u0001\u001a\u00030\u0093\u0001H\u0002J\"\u0010À\u0001\u001a\u00030\u0093\u0001\"\u0005\b\u0000\u0010\u0097\u00012\u000f\u0010Á\u0001\u001a\n\u0012\u0005\u0012\u0003H\u0097\u00010 \u0001H\u0016J\t\u0010Â\u0001\u001a\u00020jH\u0002J\u0012\u0010Â\u0001\u001a\u00020j2\u0007\u0010¸\u0001\u001a\u00020\u001eH\u0002J\u0010\u0010Ã\u0001\u001a\u00030\u0093\u0001H\u0000¢\u0006\u0003\bÄ\u0001J\u0013\u0010Å\u0001\u001a\u00030\u0093\u00012\u0007\u0010¢\u0001\u001a\u00020\u001aH\u0017J\n\u0010Æ\u0001\u001a\u00030\u0093\u0001H\u0016J\n\u0010Ç\u0001\u001a\u00030\u0093\u0001H\u0016J\u0010\u0010È\u0001\u001a\u00030\u0093\u0001H\u0000¢\u0006\u0003\bÉ\u0001JF\u0010Ê\u0001\u001a\u00030\u0093\u00012\u0015\u0010°\u0001\u001a\u0010\u0012\u0004\u0012\u000206\u0012\u0005\u0012\u00030\u0081\u00010±\u00012\u0017\u0010²\u0001\u001a\u0012\u0012\u0005\u0012\u00030\u0093\u0001\u0018\u00010 \u0001¢\u0006\u0003\b³\u0001H\u0002ø\u0001\u0000¢\u0006\u0006\bË\u0001\u0010Ì\u0001J\u001c\u0010Í\u0001\u001a\u00030\u0093\u00012\u0007\u0010¸\u0001\u001a\u00020\u001e2\u0007\u0010Î\u0001\u001a\u00020\u001eH\u0002J\n\u0010Ï\u0001\u001a\u00030\u0093\u0001H\u0016J\u0013\u0010Ð\u0001\u001a\u00030\u0093\u00012\u0007\u0010Ñ\u0001\u001a\u00020\u001aH\u0002J\n\u0010Ò\u0001\u001a\u00030\u0093\u0001H\u0017J\n\u0010Ó\u0001\u001a\u00030\u0093\u0001H\u0002J\n\u0010Ô\u0001\u001a\u00030\u0093\u0001H\u0017J\n\u0010Õ\u0001\u001a\u00030\u0093\u0001H\u0016J\n\u0010Ö\u0001\u001a\u00030\u0093\u0001H\u0017J\n\u0010×\u0001\u001a\u00030\u0093\u0001H\u0017J\n\u0010Ø\u0001\u001a\u00030\u0093\u0001H\u0017J\n\u0010Ù\u0001\u001a\u00030\u0093\u0001H\u0017J\f\u0010Ú\u0001\u001a\u0005\u0018\u00010Û\u0001H\u0017J\n\u0010Ü\u0001\u001a\u00030\u0093\u0001H\u0016J\b\u0010Ý\u0001\u001a\u00030\u0093\u0001J\n\u0010Þ\u0001\u001a\u00030\u0093\u0001H\u0002J\u0013\u0010ß\u0001\u001a\u00030\u0093\u00012\u0007\u0010à\u0001\u001a\u00020\u001eH\u0016J\n\u0010á\u0001\u001a\u00030\u0093\u0001H\u0002J\u001e\u0010â\u0001\u001a\u00030\u0093\u00012\u0007\u0010Ñ\u0001\u001a\u00020\u001a2\t\u0010ã\u0001\u001a\u0004\u0018\u00010nH\u0002J\u001b\u0010ä\u0001\u001a\u00030\u0093\u00012\u0007\u0010å\u0001\u001a\u00020\u001e2\u0006\u0010V\u001a\u00020\u001aH\u0002J\n\u0010æ\u0001\u001a\u00030\u0093\u0001H\u0002J\n\u0010ç\u0001\u001a\u00030\u0093\u0001H\u0002J\u000e\u0010F\u001a\u00020\u001aH\u0000¢\u0006\u0003\bè\u0001J$\u0010é\u0001\u001a\u00030\u0093\u00012\f\u0010\u0098\u0001\u001a\u0007\u0012\u0002\b\u00030ê\u00012\n\u0010ë\u0001\u001a\u0005\u0018\u00010\u0081\u0001H\u0017J+\u0010ì\u0001\u001a\u00030\u0093\u00012\u001f\u0010í\u0001\u001a\u001a\u0012\u0015\u0012\u0013\u0012\u0005\u0012\u00030ð\u0001\u0012\u0007\u0012\u0005\u0018\u00010ð\u00010ï\u00010î\u0001H\u0002J+\u0010ñ\u0001\u001a\u00030\u0093\u00012\u001f\u0010í\u0001\u001a\u001a\u0012\u0015\u0012\u0013\u0012\u0005\u0012\u00030ð\u0001\u0012\u0007\u0012\u0005\u0018\u00010ð\u00010ï\u00010î\u0001H\u0017J\u0012\u0010ò\u0001\u001a\u00020\u001e2\u0007\u0010ó\u0001\u001a\u00020\u001eH\u0002J;\u0010ô\u0001\u001a\u00030\u0093\u00012\u0011\u0010²\u0001\u001a\f\u0012\u0007\u0012\u0005\u0018\u00010\u0081\u00010ê\u00012\u0007\u0010õ\u0001\u001a\u00020j2\n\u0010ë\u0001\u001a\u0005\u0018\u00010\u0081\u00012\u0007\u0010ö\u0001\u001a\u00020\u001aH\u0002J\"\u0010÷\u0001\u001a\u00030\u0081\u00012\n\u0010ø\u0001\u001a\u0005\u0018\u00010\u0081\u00012\n\u0010ù\u0001\u001a\u0005\u0018\u00010\u0081\u0001H\u0017J\f\u0010ú\u0001\u001a\u0005\u0018\u00010\u0081\u0001H\u0001J\f\u0010û\u0001\u001a\u0005\u0018\u00010\u0081\u0001H\u0001J-\u0010ü\u0001\u001a\u00020\u001e2\u0007\u0010ý\u0001\u001a\u00020\u001e2\u0007\u0010¸\u0001\u001a\u00020\u001e2\u0007\u0010¹\u0001\u001a\u00020\u001e2\u0007\u0010þ\u0001\u001a\u00020\u001eH\u0002J\u000f\u0010ÿ\u0001\u001a\u00020\u001eH\u0001¢\u0006\u0003\b\u0080\u0002J!\u0010\u0081\u0002\u001a\u00030\u0093\u00012\u000f\u0010\u0099\u0001\u001a\n\u0012\u0005\u0012\u00030\u0093\u00010 \u0001H\u0000¢\u0006\u0003\b\u0082\u0002J\u0012\u0010\u0083\u0002\u001a\u00020\u001e2\u0007\u0010¸\u0001\u001a\u00020\u001eH\u0002J8\u0010\u0084\u0002\u001a\u00020\u001a2\u0015\u0010°\u0001\u001a\u0010\u0012\u0004\u0012\u000206\u0012\u0005\u0012\u00030\u0081\u00010±\u00012\n\u0010´\u0001\u001a\u0005\u0018\u00010\u0087\u0001H\u0000ø\u0001\u0000¢\u0006\u0006\b\u0085\u0002\u0010\u0086\u0002Jp\u0010\u0087\u0002\u001a\u0003H\u0088\u0002\"\u0005\b\u0000\u0010\u0088\u00022\u000b\b\u0002\u0010\u0089\u0002\u001a\u0004\u0018\u00010\u000f2\u000b\b\u0002\u0010\u008a\u0002\u001a\u0004\u0018\u00010\u000f2\u000b\b\u0002\u0010ó\u0001\u001a\u0004\u0018\u00010\u001e2\u001f\b\u0002\u0010\\\u001a\u0019\u0012\u0014\u0012\u0012\u0012\u0004\u0012\u000206\u0012\u0007\u0012\u0005\u0018\u00010\u0081\u00010ï\u00010î\u00012\u000f\u0010\u0099\u0001\u001a\n\u0012\u0005\u0012\u0003H\u0088\u00020 \u0001H\u0002¢\u0006\u0003\u0010\u008b\u0002J\n\u0010\u008c\u0002\u001a\u00030\u0093\u0001H\u0002J\n\u0010\u008d\u0002\u001a\u00030\u0093\u0001H\u0002J\u0013\u0010\u008e\u0002\u001a\u00030\u0093\u00012\u0007\u0010\u008f\u0002\u001a\u00020NH\u0002J\u0013\u0010\u0090\u0002\u001a\u00030\u0093\u00012\u0007\u0010\u0091\u0002\u001a\u00020jH\u0002J\u001b\u0010\u0092\u0002\u001a\u00030\u0093\u00012\u000f\u0010\u0093\u0002\u001a\n\u0012\u0005\u0012\u00030\u0093\u00010 \u0001H\u0016J%\u0010\u0094\u0002\u001a\u00030\u0093\u00012\u0007\u0010\u0095\u0002\u001a\u00020\u001e2\u0007\u0010\u0096\u0002\u001a\u00020\u001e2\u0007\u0010\u0097\u0002\u001a\u00020\u001eH\u0002J\u0013\u0010\u0098\u0002\u001a\u00030\u0093\u00012\u0007\u0010\u0099\u0002\u001a\u00020}H\u0016J\u000b\u0010\u009a\u0002\u001a\u0004\u0018\u00010NH\u0002J\f\u0010\u009b\u0002\u001a\u0005\u0018\u00010\u0081\u0001H\u0016J\n\u0010\u009c\u0002\u001a\u00030\u0093\u0001H\u0002J\u0013\u0010\u009d\u0002\u001a\u00030\u0093\u00012\u0007\u0010\u009e\u0002\u001a\u00020\u001eH\u0002J\u001b\u0010\u009f\u0002\u001a\u00020\u001a2\u0007\u0010 \u0002\u001a\u00020\u001a2\u0007\u0010¡\u0002\u001a\u00020\u001eH\u0017J\n\u0010¢\u0002\u001a\u00030\u0093\u0001H\u0017J\n\u0010£\u0002\u001a\u00030\u0093\u0001H\u0002J\n\u0010¤\u0002\u001a\u00030\u0093\u0001H\u0002J\n\u0010¥\u0002\u001a\u00030\u0093\u0001H\u0017J\u0014\u0010¦\u0002\u001a\u00030\u0093\u00012\b\u0010¦\u0002\u001a\u00030§\u0002H\u0017J\n\u0010¨\u0002\u001a\u00030\u0093\u0001H\u0017J\u001d\u0010©\u0002\u001a\u00030\u0093\u00012\u0007\u0010¼\u0001\u001a\u00020\u001e2\b\u0010¦\u0002\u001a\u00030§\u0002H\u0017J\u000f\u0010ª\u0002\u001a\u00020\u001eH\u0000¢\u0006\u0003\b«\u0002JA\u0010¬\u0002\u001a\u00030\u0093\u00012\u0007\u0010¼\u0001\u001a\u00020\u001e2\n\u0010\u00ad\u0002\u001a\u0005\u0018\u00010\u0081\u00012\b\u0010®\u0002\u001a\u00030¯\u00022\n\u0010°\u0002\u001a\u0005\u0018\u00010\u0081\u0001H\u0002ø\u0001\u0000¢\u0006\u0006\b±\u0002\u0010²\u0002J\n\u0010³\u0002\u001a\u00030\u0093\u0001H\u0017J\u0013\u0010´\u0002\u001a\u00030\u0093\u00012\u0007\u0010¼\u0001\u001a\u00020\u001eH\u0002J\u001f\u0010´\u0002\u001a\u00030\u0093\u00012\u0007\u0010¼\u0001\u001a\u00020\u001e2\n\u0010µ\u0002\u001a\u0005\u0018\u00010\u0081\u0001H\u0002J\u001f\u0010¶\u0002\u001a\u00030\u0093\u00012\u0007\u0010¼\u0001\u001a\u00020\u001e2\n\u0010µ\u0002\u001a\u0005\u0018\u00010\u0081\u0001H\u0017J\n\u0010·\u0002\u001a\u00030\u0093\u0001H\u0016J\u0018\u0010¸\u0002\u001a\u00030\u0093\u00012\f\u0010\u0098\u0001\u001a\u0007\u0012\u0002\b\u00030¹\u0002H\u0017J'\u0010º\u0002\u001a\u00030\u0093\u00012\u0015\u0010»\u0002\u001a\u0010\u0012\u000b\b\u0001\u0012\u0007\u0012\u0002\b\u00030¹\u00020¼\u0002H\u0017¢\u0006\u0003\u0010½\u0002J\u001f\u0010¾\u0002\u001a\u00030\u0093\u00012\u0007\u0010Ñ\u0001\u001a\u00020\u001a2\n\u0010°\u0002\u001a\u0005\u0018\u00010\u0081\u0001H\u0002J\u0013\u0010¿\u0002\u001a\u00030\u0093\u00012\u0007\u0010¼\u0001\u001a\u00020\u001eH\u0017J\u0013\u0010À\u0002\u001a\u00030\u0093\u00012\u0007\u0010¼\u0001\u001a\u00020\u001eH\u0017J\u0012\u0010Á\u0002\u001a\u00020\u00012\u0007\u0010¼\u0001\u001a\u00020\u001eH\u0017J\u001f\u0010Â\u0002\u001a\u00030\u0093\u00012\u0007\u0010¼\u0001\u001a\u00020\u001e2\n\u0010µ\u0002\u001a\u0005\u0018\u00010\u0081\u0001H\u0016J\n\u0010Ã\u0002\u001a\u00030\u0093\u0001H\u0016J\b\u0010Ä\u0002\u001a\u00030\u0093\u0001J\n\u0010Å\u0002\u001a\u00030\u0093\u0001H\u0002J$\u0010Æ\u0002\u001a\u00020\u001a2\u0007\u0010\u0099\u0002\u001a\u0002062\n\u0010Ç\u0002\u001a\u0005\u0018\u00010\u0081\u0001H\u0000¢\u0006\u0003\bÈ\u0002J\u0016\u0010É\u0002\u001a\u00030\u0093\u00012\n\u0010\u0098\u0001\u001a\u0005\u0018\u00010\u0081\u0001H\u0001J+\u0010Ê\u0002\u001a\u00030\u0093\u00012\u0015\u0010°\u0001\u001a\u0010\u0012\u0004\u0012\u000206\u0012\u0005\u0012\u00030\u0081\u00010±\u0001ø\u0001\u0000¢\u0006\u0006\bË\u0002\u0010Ì\u0002J4\u0010Í\u0002\u001a\u00030\u0093\u00012\u0007\u0010Î\u0002\u001a\u00020\u001e2\u0006\u0010u\u001a\u00020\u001e2\n\u0010µ\u0002\u001a\u0005\u0018\u00010\u0081\u00012\n\u0010°\u0002\u001a\u0005\u0018\u00010\u0081\u0001H\u0082\bJ\u001c\u0010Ï\u0002\u001a\u00030\u0093\u00012\u0007\u0010Ð\u0002\u001a\u00020\u001e2\u0006\u0010u\u001a\u00020\u001eH\u0082\bJ4\u0010Ñ\u0002\u001a\u00030\u0093\u00012\u0007\u0010Î\u0002\u001a\u00020\u001e2\u0006\u0010u\u001a\u00020\u001e2\n\u0010µ\u0002\u001a\u0005\u0018\u00010\u0081\u00012\n\u0010°\u0002\u001a\u0005\u0018\u00010\u0081\u0001H\u0082\bJ\u001c\u0010Ò\u0002\u001a\u00030\u0093\u00012\u0007\u0010Î\u0002\u001a\u00020\u001e2\u0006\u0010u\u001a\u00020\u001eH\u0082\bJ\u001c\u0010Ó\u0002\u001a\u00030\u0093\u00012\u0007\u0010¸\u0001\u001a\u00020\u001e2\u0007\u0010Ô\u0002\u001a\u00020\u001eH\u0002J\u001c\u0010Õ\u0002\u001a\u00030\u0093\u00012\u0007\u0010¸\u0001\u001a\u00020\u001e2\u0007\u0010Ö\u0002\u001a\u00020\u001eH\u0002J\u001b\u0010×\u0002\u001a\u00020j2\u0007\u0010Ø\u0002\u001a\u00020j2\u0007\u0010Ù\u0002\u001a\u00020jH\u0002J\u0016\u0010Ú\u0002\u001a\u00030\u0093\u00012\n\u0010\u0098\u0001\u001a\u0005\u0018\u00010\u0081\u0001H\u0016J\u0016\u0010Û\u0002\u001a\u00030\u0093\u00012\n\u0010\u0098\u0001\u001a\u0005\u0018\u00010\u0081\u0001H\u0002J\u0016\u0010Ü\u0002\u001a\u00030\u0093\u00012\n\u0010\u0098\u0001\u001a\u0005\u0018\u00010\u0081\u0001H\u0001J\u0012\u0010Ý\u0002\u001a\u00020\u001e2\u0007\u0010¸\u0001\u001a\u00020\u001eH\u0002J\n\u0010Þ\u0002\u001a\u00030\u0093\u0001H\u0016J\n\u0010ß\u0002\u001a\u00030\u0093\u0001H\u0002J\n\u0010à\u0002\u001a\u00030\u0093\u0001H\u0002J\u0010\u0010á\u0002\u001a\u00030\u0093\u0001H\u0000¢\u0006\u0003\bâ\u0002J1\u0010ã\u0002\u001a\u0003H\u0088\u0002\"\u0005\b\u0000\u0010\u0088\u00022\u0006\u0010v\u001a\u00020w2\u000f\u0010\u0099\u0001\u001a\n\u0012\u0005\u0012\u0003H\u0088\u00020 \u0001H\u0082\b¢\u0006\u0003\u0010ä\u0002J\u0016\u0010å\u0002\u001a\u00020\u001e*\u00020w2\u0007\u0010¸\u0001\u001a\u00020\u001eH\u0002J\u0019\u0010æ\u0002\u001a\u0005\u0018\u00010\u0081\u0001*\u00020w2\u0007\u0010ó\u0001\u001a\u00020\u001eH\u0002R\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\n0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u0002\u001a\u0006\u0012\u0002\b\u00030\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0014\u0010\u0015\u001a\u00020\u00168WX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0018R\u0014\u0010\u0019\u001a\u00020\u001a8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u001b\u0010\u001cR\u0014\u0010\u001d\u001a\u00020\u001e8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u001f\u0010 R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\u00020\u000fX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%R\u0014\u0010&\u001a\u00020\u00128VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b'\u0010(R\u000e\u0010)\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R&\u0010+\u001a\u00020\u001e2\u0006\u0010*\u001a\u00020\u001e8\u0016@RX\u0097\u000e¢\u0006\u000e\n\u0000\u0012\u0004\b,\u0010-\u001a\u0004\b.\u0010 R\u0014\u0010/\u001a\u0002008VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b1\u00102R\u0014\u00103\u001a\u00020\u001e8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b4\u0010 R\u0016\u00105\u001a\u0004\u0018\u0001068@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b7\u00108R\u001a\u00109\u001a\u00020\u001a8VX\u0097\u0004¢\u0006\f\u0012\u0004\b:\u0010-\u001a\u0004\b;\u0010\u001cR\u001c\u0010<\u001a\u0004\u0018\u00010\fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b=\u0010>\"\u0004\b?\u0010@R\u0010\u0010A\u001a\u00020BX\u0082\u0004¢\u0006\u0004\n\u0002\u0010CR\u000e\u0010D\u001a\u00020EX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010F\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010G\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010H\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010I\u001a\u00020\u001a8F¢\u0006\u0006\u001a\u0004\bJ\u0010\u001cR\u0014\u0010K\u001a\u00020\u001a8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bL\u0010\u001cR\u000e\u0010M\u001a\u00020NX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010O\u001a\u00020PX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010Q\u001a\u00020\u0007X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bR\u0010S\"\u0004\bT\u0010UR&\u0010V\u001a\u00020\u001a2\u0006\u0010*\u001a\u00020\u001a8\u0016@RX\u0097\u000e¢\u0006\u000e\n\u0000\u0012\u0004\bW\u0010-\u001a\u0004\bX\u0010\u001cR\u001c\u0010Y\u001a\b\u0012\u0004\u0012\u0002060ZX\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010[R\u0014\u0010\\\u001a\b\u0012\u0004\u0012\u00020^0]X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010_\u001a\u00020\u001a2\u0006\u0010*\u001a\u00020\u001a@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b`\u0010\u001cR\u001e\u0010a\u001a\u00020\u001a2\u0006\u0010*\u001a\u00020\u001a@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\bb\u0010\u001cR\u000e\u0010\r\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010c\u001a\u0004\u0018\u00010dX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010e\u001a\u0004\u0018\u00010fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010g\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010h\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010i\u001a\u00020jX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010k\u001a\u00020EX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010l\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010m\u001a\u0004\u0018\u00010nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010o\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010n0ZX\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010[R\u0010\u0010p\u001a\u0004\u0018\u00010jX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010q\u001a\n\u0012\u0004\u0012\u00020j\u0018\u00010rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010s\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010t\u001a\u00020EX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010u\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010v\u001a\u00020wX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bx\u0010y\"\u0004\bz\u0010{R\u0016\u0010|\u001a\u0004\u0018\u00010}8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b~\u0010\u007fR\u001a\u0010\u0080\u0001\u001a\u0005\u0018\u00010\u0081\u00018VX\u0096\u0004¢\u0006\b\u001a\u0006\b\u0082\u0001\u0010\u0083\u0001R\u000f\u0010\u0084\u0001\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0085\u0001\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0086\u0001\u001a\u0005\u0018\u00010\u0087\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u001d\u0010\u0088\u0001\u001a\u00020\u001a8VX\u0097\u0004¢\u0006\u000e\u0012\u0005\b\u0089\u0001\u0010-\u001a\u0005\b\u008a\u0001\u0010\u001cR\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000f\u0010\u008b\u0001\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u008c\u0001\u001a\u00030\u008d\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u008e\u0001\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u008f\u0001\u001a\u0005\u0018\u00010\u0081\u0001*\u00020w8BX\u0082\u0004¢\u0006\b\u001a\u0006\b\u0090\u0001\u0010\u0091\u0001\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006é\u0002"}, d2 = {"Landroidx/compose/runtime/ComposerImpl;", "Landroidx/compose/runtime/Composer;", "applier", "Landroidx/compose/runtime/Applier;", "parentContext", "Landroidx/compose/runtime/CompositionContext;", "slotTable", "Landroidx/compose/runtime/SlotTable;", "abandonSet", "", "Landroidx/compose/runtime/RememberObserver;", "changes", "Landroidx/compose/runtime/changelist/ChangeList;", "lateChanges", "composition", "Landroidx/compose/runtime/ControlledComposition;", "(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/CompositionContext;Landroidx/compose/runtime/SlotTable;Ljava/util/Set;Landroidx/compose/runtime/changelist/ChangeList;Landroidx/compose/runtime/changelist/ChangeList;Landroidx/compose/runtime/ControlledComposition;)V", "_compositionData", "Landroidx/compose/runtime/tooling/CompositionData;", "getApplier", "()Landroidx/compose/runtime/Applier;", "applyCoroutineContext", "Lkotlin/coroutines/CoroutineContext;", "getApplyCoroutineContext", "()Lkotlin/coroutines/CoroutineContext;", "areChildrenComposing", "", "getAreChildrenComposing$runtime_release", "()Z", "changeCount", "", "getChangeCount$runtime_release", "()I", "changeListWriter", "Landroidx/compose/runtime/changelist/ComposerChangeListWriter;", "childrenComposing", "getComposition", "()Landroidx/compose/runtime/ControlledComposition;", "compositionData", "getCompositionData", "()Landroidx/compose/runtime/tooling/CompositionData;", "compositionToken", "<set-?>", "compoundKeyHash", "getCompoundKeyHash$annotations", "()V", "getCompoundKeyHash", "currentCompositionLocalMap", "Landroidx/compose/runtime/CompositionLocalMap;", "getCurrentCompositionLocalMap", "()Landroidx/compose/runtime/CompositionLocalMap;", "currentMarker", "getCurrentMarker", "currentRecomposeScope", "Landroidx/compose/runtime/RecomposeScopeImpl;", "getCurrentRecomposeScope$runtime_release", "()Landroidx/compose/runtime/RecomposeScopeImpl;", "defaultsInvalid", "getDefaultsInvalid$annotations", "getDefaultsInvalid", "deferredChanges", "getDeferredChanges$runtime_release", "()Landroidx/compose/runtime/changelist/ChangeList;", "setDeferredChanges$runtime_release", "(Landroidx/compose/runtime/changelist/ChangeList;)V", "derivedStateObserver", "androidx/compose/runtime/ComposerImpl$derivedStateObserver$1", "Landroidx/compose/runtime/ComposerImpl$derivedStateObserver$1;", "entersStack", "Landroidx/compose/runtime/IntStack;", "forceRecomposeScopes", "forciblyRecompose", "groupNodeCount", "hasInvalidations", "getHasInvalidations", "hasPendingChanges", "getHasPendingChanges$runtime_release", "insertAnchor", "Landroidx/compose/runtime/Anchor;", "insertFixups", "Landroidx/compose/runtime/changelist/FixupList;", "insertTable", "getInsertTable$runtime_release", "()Landroidx/compose/runtime/SlotTable;", "setInsertTable$runtime_release", "(Landroidx/compose/runtime/SlotTable;)V", "inserting", "getInserting$annotations", "getInserting", "invalidateStack", "Landroidx/compose/runtime/Stack;", "Ljava/util/ArrayList;", "invalidations", "", "Landroidx/compose/runtime/Invalidation;", "isComposing", "isComposing$runtime_release", "isDisposed", "isDisposed$runtime_release", "nodeCountOverrides", "", "nodeCountVirtualOverrides", "Landroidx/collection/MutableIntIntMap;", "nodeExpected", "nodeIndex", "parentProvider", "Landroidx/compose/runtime/PersistentCompositionLocalMap;", "parentStateStack", "pausable", "pending", "Landroidx/compose/runtime/Pending;", "pendingStack", "providerCache", "providerUpdates", "Landroidx/collection/MutableIntObjectMap;", "providersInvalid", "providersInvalidStack", "rGroupIndex", "reader", "Landroidx/compose/runtime/SlotReader;", "getReader$runtime_release", "()Landroidx/compose/runtime/SlotReader;", "setReader$runtime_release", "(Landroidx/compose/runtime/SlotReader;)V", "recomposeScope", "Landroidx/compose/runtime/RecomposeScope;", "getRecomposeScope", "()Landroidx/compose/runtime/RecomposeScope;", "recomposeScopeIdentity", "", "getRecomposeScopeIdentity", "()Ljava/lang/Object;", "reusing", "reusingGroup", "shouldPauseCallback", "Landroidx/compose/runtime/ShouldPauseCallback;", "skipping", "getSkipping$annotations", "getSkipping", "sourceMarkersEnabled", "writer", "Landroidx/compose/runtime/SlotWriter;", "writerHasAProvider", "node", "getNode", "(Landroidx/compose/runtime/SlotReader;)Ljava/lang/Object;", "abortRoot", "", "addRecomposeScope", "apply", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, ExifInterface.GPS_DIRECTION_TRUE, "value", "block", "Lkotlin/Function2;", "Lkotlin/ExtensionFunctionType;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V", "buildContext", "cache", "invalid", "Lkotlin/Function0;", "(ZLkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "changed", "", "", "", "", "", "", "changedInstance", "changesApplied", "changesApplied$runtime_release", "cleanUpCompose", "clearUpdatedNodeCounts", "collectParameterInformation", "composeContent", "invalidationsRequested", "Landroidx/compose/runtime/collection/ScopeMap;", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/runtime/Composable;", "shouldPause", "composeContent--ZbOJvo$runtime_release", "(Landroidx/collection/MutableScatterMap;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/ShouldPauseCallback;)V", "compoundKeyOf", "group", "recomposeGroup", "recomposeKey", "consume", "key", "Landroidx/compose/runtime/CompositionLocal;", "(Landroidx/compose/runtime/CompositionLocal;)Ljava/lang/Object;", "createFreshInsertTable", "createNode", "factory", "currentCompositionLocalScope", "deactivate", "deactivate$runtime_release", "deactivateToEndGroup", "disableReusing", "disableSourceInformation", "dispose", "dispose$runtime_release", "doCompose", "doCompose-aFTiNEg", "(Landroidx/collection/MutableScatterMap;Lkotlin/jvm/functions/Function2;)V", "doRecordDownsFor", "nearestCommonRoot", "enableReusing", TtmlNode.END, "isNode", "endDefaults", "endGroup", "endMovableGroup", "endNode", "endProvider", "endProviders", "endReplaceGroup", "endReplaceableGroup", "endRestartGroup", "Landroidx/compose/runtime/ScopeUpdateScope;", "endReusableGroup", "endReuseFromRoot", "endRoot", "endToMarker", "marker", "ensureWriter", "enterGroup", "newPending", "exitGroup", "expectedNodeCount", "finalizeCompose", "forceFreshInsertTable", "forceRecomposeScopes$runtime_release", "insertMovableContent", "Landroidx/compose/runtime/MovableContent;", "parameter", "insertMovableContentGuarded", "references", "", "Lkotlin/Pair;", "Landroidx/compose/runtime/MovableContentStateReference;", "insertMovableContentReferences", "insertedGroupVirtualIndex", FirebaseAnalytics.Param.INDEX, "invokeMovableContentLambda", "locals", "force", "joinKey", TtmlNode.LEFT, TtmlNode.RIGHT, "nextSlot", "nextSlotForCache", "nodeIndexOf", "groupLocation", "recomposeIndex", "parentKey", "parentKey$runtime_release", "prepareCompose", "prepareCompose$runtime_release", "rGroupIndexOf", "recompose", "recompose-aFTiNEg$runtime_release", "(Landroidx/collection/MutableScatterMap;Landroidx/compose/runtime/ShouldPauseCallback;)Z", "recomposeMovableContent", "R", "from", TypedValues.TransitionType.S_TO, "(Landroidx/compose/runtime/ControlledComposition;Landroidx/compose/runtime/ControlledComposition;Ljava/lang/Integer;Ljava/util/List;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "recomposeToGroupEnd", "recordDelete", "recordInsert", "anchor", "recordProviderUpdate", "providers", "recordSideEffect", "effect", "recordUpsAndDowns", "oldGroup", "newGroup", "commonRoot", "recordUsed", "scope", "rememberObserverAnchor", "rememberedValue", "reportAllMovableContent", "reportFreeMovableContent", "groupBeingRemoved", "shouldExecute", "parametersChanged", DownloaderServiceMarshaller.PARAMS_FLAGS, "skipCurrentGroup", "skipGroup", "skipReaderToGroupEnd", "skipToGroupEnd", "sourceInformation", "", "sourceInformationMarkerEnd", "sourceInformationMarkerStart", "stacksSize", "stacksSize$runtime_release", TtmlNode.START, "objectKey", "kind", "Landroidx/compose/runtime/GroupKind;", "data", "start-BaiHCIY", "(ILjava/lang/Object;ILjava/lang/Object;)V", "startDefaults", "startGroup", "dataKey", "startMovableGroup", "startNode", "startProvider", "Landroidx/compose/runtime/ProvidedValue;", "startProviders", "values", "", "([Landroidx/compose/runtime/ProvidedValue;)V", "startReaderGroup", "startReplaceGroup", "startReplaceableGroup", "startRestartGroup", "startReusableGroup", "startReusableNode", "startReuseFromRoot", "startRoot", "tryImminentInvalidation", "instance", "tryImminentInvalidation$runtime_release", "updateCachedValue", "updateComposerInvalidations", "updateComposerInvalidations-RY85e9Y", "(Landroidx/collection/MutableScatterMap;)V", "updateCompoundKeyWhenWeEnterGroup", "groupKey", "updateCompoundKeyWhenWeEnterGroupKeyHash", "keyHash", "updateCompoundKeyWhenWeExitGroup", "updateCompoundKeyWhenWeExitGroupKeyHash", "updateNodeCount", "count", "updateNodeCountOverrides", "newCount", "updateProviderMapGroup", "parentScope", "currentProviders", "updateRememberedValue", "updateSlot", "updateValue", "updatedNodeCount", "useNode", "validateNodeExpected", "validateNodeNotExpected", "verifyConsistent", "verifyConsistent$runtime_release", "withReader", "(Landroidx/compose/runtime/SlotReader;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "groupCompoundKeyPart", "nodeAt", "CompositionContextHolder", "CompositionContextImpl", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0099\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0010\u0000\n\u0002\b\f\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\f\n\u0002\u0010\u0005\n\u0002\u0010\n\n\u0002\u0010\u0007\n\u0002\u0010\u0006\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0011\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b0\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b(\n\u0002\u0018\u0002\n\u0002\b\u000b*\u0001;\b\u0001\u0018\u00002\u00020\u0001:\u0004ý\u0002þ\u0002BQ\u0012\n\u0010\u0002\u001a\u0006\u0012\u0002\b\u00030\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\n0\t\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\f\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\u0006\u0010\u0010\u001a\u00020\u0011¢\u0006\u0004\b\u0012\u0010\u0013J\u0010\u0010n\u001a\u00020o2\u0006\u0010p\u001a\u00020\u001eH\u0017J\b\u0010q\u001a\u00020oH\u0017J\u0010\u0010r\u001a\u00020o2\u0006\u0010p\u001a\u00020\u001eH\u0017J\b\u0010s\u001a\u00020oH\u0017J\b\u0010t\u001a\u00020oH\u0017J\b\u0010u\u001a\u00020oH\u0017J\u001a\u0010z\u001a\u00020o2\u0006\u0010p\u001a\u00020\u001e2\b\u0010{\u001a\u0004\u0018\u00010|H\u0017J\b\u0010}\u001a\u00020oH\u0017J\b\u0010~\u001a\u00020oH\u0002J\b\u0010\u007f\u001a\u00020oH\u0002J\t\u0010\u0080\u0001\u001a\u00020oH\u0002J\u000f\u0010\u0081\u0001\u001a\u00020oH\u0000¢\u0006\u0003\b\u0082\u0001J\t\u0010\u0090\u0001\u001a\u00020oH\u0016J\u000f\u0010\u0091\u0001\u001a\u00020oH\u0000¢\u0006\u0003\b\u0092\u0001J\u000f\u0010\u0093\u0001\u001a\u00020oH\u0000¢\u0006\u0003\b\u0094\u0001J\u000e\u0010'\u001a\u00020(H\u0000¢\u0006\u0003\b\u0095\u0001J\u0011\u0010\u0096\u0001\u001a\u00020o2\u0006\u0010p\u001a\u00020\u001eH\u0002J\u001b\u0010\u0096\u0001\u001a\u00020o2\u0006\u0010p\u001a\u00020\u001e2\b\u0010{\u001a\u0004\u0018\u00010|H\u0002J\t\u0010\u0097\u0001\u001a\u00020oH\u0002J\t\u0010\u0098\u0001\u001a\u00020oH\u0002J\t\u0010\u0099\u0001\u001a\u00020oH\u0016J\t\u0010\u009a\u0001\u001a\u00020oH\u0016J!\u0010\u009b\u0001\u001a\u00020o\"\u0005\b\u0000\u0010\u009c\u00012\u000f\u0010\u009d\u0001\u001a\n\u0012\u0005\u0012\u0003H\u009c\u00010\u009e\u0001H\u0016J\t\u0010\u009f\u0001\u001a\u00020oH\u0016J\t\u0010 \u0001\u001a\u00020oH\u0016J\u001b\u0010¡\u0001\u001a\u00020o2\u0006\u0010p\u001a\u00020\u001e2\b\u0010{\u001a\u0004\u0018\u00010|H\u0016J\t\u0010¢\u0001\u001a\u00020oH\u0016J\t\u0010£\u0001\u001a\u00020oH\u0016J\t\u0010¤\u0001\u001a\u00020oH\u0016J\u0007\u0010¥\u0001\u001a\u00020oJ\u0007\u0010¦\u0001\u001a\u00020oJ\u0012\u0010ª\u0001\u001a\u00020o2\u0007\u0010«\u0001\u001a\u00020\u001eH\u0016JJ\u0010¬\u0001\u001a\u00020o\"\u0005\b\u0000\u0010\u00ad\u0001\"\u0005\b\u0001\u0010\u009c\u00012\u0007\u0010?\u001a\u0003H\u00ad\u00012\"\u0010®\u0001\u001a\u001d\u0012\u0005\u0012\u0003H\u009c\u0001\u0012\u0005\u0012\u0003H\u00ad\u0001\u0012\u0004\u0012\u00020o0¯\u0001¢\u0006\u0003\b°\u0001H\u0016¢\u0006\u0003\u0010±\u0001J\u001f\u0010²\u0001\u001a\u00020|2\t\u0010³\u0001\u001a\u0004\u0018\u00010|2\t\u0010´\u0001\u001a\u0004\u0018\u00010|H\u0017J\u000b\u0010µ\u0001\u001a\u0004\u0018\u00010|H\u0001J\u000b\u0010¶\u0001\u001a\u0004\u0018\u00010|H\u0001J\u0013\u0010·\u0001\u001a\u00020(2\b\u0010?\u001a\u0004\u0018\u00010|H\u0017J\u0013\u0010¸\u0001\u001a\u00020(2\b\u0010?\u001a\u0004\u0018\u00010|H\u0017J\u0012\u0010·\u0001\u001a\u00020(2\u0007\u0010?\u001a\u00030¹\u0001H\u0017J\u0012\u0010·\u0001\u001a\u00020(2\u0007\u0010?\u001a\u00030º\u0001H\u0017J\u0012\u0010·\u0001\u001a\u00020(2\u0007\u0010?\u001a\u00030»\u0001H\u0017J\u0011\u0010·\u0001\u001a\u00020(2\u0006\u0010?\u001a\u00020(H\u0017J\u0012\u0010·\u0001\u001a\u00020(2\u0007\u0010?\u001a\u00030¼\u0001H\u0017J\u0012\u0010·\u0001\u001a\u00020(2\u0007\u0010?\u001a\u00030\u0089\u0001H\u0017J\u0012\u0010·\u0001\u001a\u00020(2\u0007\u0010?\u001a\u00030½\u0001H\u0017J\u0011\u0010·\u0001\u001a\u00020(2\u0006\u0010?\u001a\u00020\u001eH\u0017J2\u0010¾\u0001\u001a\u0003H\u009c\u0001\"\u0005\b\u0000\u0010\u009c\u00012\u0007\u0010¿\u0001\u001a\u00020(2\u000f\u0010®\u0001\u001a\n\u0012\u0005\u0012\u0003H\u009c\u00010\u009e\u0001H\u0087\b¢\u0006\u0003\u0010À\u0001J\u0013\u0010Á\u0001\u001a\u00020o2\b\u0010?\u001a\u0004\u0018\u00010|H\u0002J\u0013\u0010Â\u0001\u001a\u00020o2\b\u0010?\u001a\u0004\u0018\u00010|H\u0001J\u0013\u0010Ã\u0001\u001a\u00020o2\b\u0010?\u001a\u0004\u0018\u00010|H\u0001J\u000b\u0010Ä\u0001\u001a\u0004\u0018\u00010`H\u0002J\u0019\u0010Ê\u0001\u001a\u00020o2\u000e\u0010Ë\u0001\u001a\t\u0012\u0004\u0012\u00020o0\u009e\u0001H\u0016J\t\u0010Ì\u0001\u001a\u000200H\u0002J\u0012\u0010Ì\u0001\u001a\u0002002\u0007\u0010Ñ\u0001\u001a\u00020\u001eH\u0002J\u001b\u0010Ò\u0001\u001a\u0002002\u0007\u0010Ó\u0001\u001a\u0002002\u0007\u0010Ô\u0001\u001a\u000200H\u0002J\u0016\u0010Õ\u0001\u001a\u00020o2\u000b\u0010?\u001a\u0007\u0012\u0002\b\u00030Ö\u0001H\u0017J\u0012\u0010×\u0001\u001a\u00020o2\u0007\u0010Ø\u0001\u001a\u000200H\u0002J\t\u0010Ù\u0001\u001a\u00020oH\u0017J&\u0010Ú\u0001\u001a\u00020o2\u0015\u0010Û\u0001\u001a\u0010\u0012\u000b\b\u0001\u0012\u0007\u0012\u0002\b\u00030Ö\u00010Ü\u0001H\u0017¢\u0006\u0003\u0010Ý\u0001J\t\u0010Þ\u0001\u001a\u00020oH\u0017J'\u0010ß\u0001\u001a\u0003H\u009c\u0001\"\u0005\b\u0000\u0010\u009c\u00012\u000e\u0010p\u001a\n\u0012\u0005\u0012\u0003H\u009c\u00010à\u0001H\u0017¢\u0006\u0003\u0010á\u0001J\t\u0010â\u0001\u001a\u00020\u0005H\u0016J\t\u0010è\u0001\u001a\u00020oH\u0002J\t\u0010é\u0001\u001a\u00020oH\u0002J\t\u0010ê\u0001\u001a\u00020oH\u0002J\u001d\u0010ë\u0001\u001a\u00020o2\u0007\u0010ì\u0001\u001a\u00020(2\t\u0010í\u0001\u001a\u0004\u0018\u00010|H\u0002J:\u0010î\u0001\u001a\u00020o2\u0006\u0010p\u001a\u00020\u001e2\t\u0010ï\u0001\u001a\u0004\u0018\u00010|2\b\u0010ð\u0001\u001a\u00030ñ\u00012\t\u0010í\u0001\u001a\u0004\u0018\u00010|H\u0002¢\u0006\u0006\bò\u0001\u0010ó\u0001J\u001d\u0010ô\u0001\u001a\u00020o2\u0007\u0010ì\u0001\u001a\u00020(2\t\u0010õ\u0001\u001a\u0004\u0018\u00010\u001aH\u0002J\u001b\u0010ö\u0001\u001a\u00020o2\u0007\u0010÷\u0001\u001a\u00020\u001e2\u0007\u0010\u0083\u0001\u001a\u00020(H\u0002J\u0012\u0010ø\u0001\u001a\u00020o2\u0007\u0010ì\u0001\u001a\u00020(H\u0002J\t\u0010ù\u0001\u001a\u00020oH\u0002J\u0012\u0010ú\u0001\u001a\u00020\u001e2\u0007\u0010û\u0001\u001a\u00020\u001eH\u0002J\u001b\u0010ü\u0001\u001a\u00020o2\u0007\u0010Ñ\u0001\u001a\u00020\u001e2\u0007\u0010ý\u0001\u001a\u00020\u001eH\u0002J-\u0010þ\u0001\u001a\u00020\u001e2\u0007\u0010ÿ\u0001\u001a\u00020\u001e2\u0007\u0010Ñ\u0001\u001a\u00020\u001e2\u0007\u0010\u0080\u0002\u001a\u00020\u001e2\u0007\u0010\u0081\u0002\u001a\u00020\u001eH\u0002J\u0012\u0010\u0082\u0002\u001a\u00020\u001e2\u0007\u0010Ñ\u0001\u001a\u00020\u001eH\u0002J\u0012\u0010\u0083\u0002\u001a\u00020\u001e2\u0007\u0010Ñ\u0001\u001a\u00020\u001eH\u0002J\u001b\u0010\u0084\u0002\u001a\u00020o2\u0007\u0010Ñ\u0001\u001a\u00020\u001e2\u0007\u0010\u0085\u0002\u001a\u00020\u001eH\u0002J\t\u0010\u0086\u0002\u001a\u00020oH\u0002J$\u0010\u0087\u0002\u001a\u00020o2\u0007\u0010\u0088\u0002\u001a\u00020\u001e2\u0007\u0010\u0089\u0002\u001a\u00020\u001e2\u0007\u0010\u008a\u0002\u001a\u00020\u001eH\u0002J\u001b\u0010\u008b\u0002\u001a\u00020o2\u0007\u0010Ñ\u0001\u001a\u00020\u001e2\u0007\u0010\u008c\u0002\u001a\u00020\u001eH\u0002J6\u0010\u008d\u0002\u001a\b0\u0089\u0001j\u0003`\u008a\u00012\u0007\u0010Ñ\u0001\u001a\u00020\u001e2\u0007\u0010\u0080\u0002\u001a\u00020\u001e2\r\u0010\u008e\u0002\u001a\b0\u0089\u0001j\u0003`\u008a\u0001H\u0002¢\u0006\u0003\u0010\u008f\u0002J\u0016\u0010\u0090\u0002\u001a\u00020\u001e*\u00020J2\u0007\u0010Ñ\u0001\u001a\u00020\u001eH\u0002J#\u0010\u0091\u0002\u001a\u00020(2\u0007\u0010\u0092\u0002\u001a\u00020>2\t\u0010\u0093\u0002\u001a\u0004\u0018\u00010|H\u0000¢\u0006\u0003\b\u0094\u0002J\u000f\u0010\u0095\u0002\u001a\u00020\u001eH\u0001¢\u0006\u0003\b\u0096\u0002J\t\u0010\u0097\u0002\u001a\u00020oH\u0017J\t\u0010\u0098\u0002\u001a\u00020oH\u0002J\u001b\u0010\u0099\u0002\u001a\u00020(2\u0007\u0010\u009a\u0002\u001a\u00020(2\u0007\u0010\u009b\u0002\u001a\u00020\u001eH\u0017J\t\u0010\u009c\u0002\u001a\u00020oH\u0017J\u0012\u0010\u009d\u0002\u001a\u00020o2\u0007\u0010·\u0001\u001a\u00020(H\u0017J\u0011\u0010\u009e\u0002\u001a\u00020\u00012\u0006\u0010p\u001a\u00020\u001eH\u0017J\t\u0010\u009f\u0002\u001a\u00020oH\u0002J\u0012\u0010 \u0002\u001a\u00020o2\u0007\u0010\u0092\u0002\u001a\u00020>H\u0002J\f\u0010¡\u0002\u001a\u0005\u0018\u00010¢\u0002H\u0017J\"\u0010£\u0002\u001a\u0012\u0012\u0005\u0012\u00030¥\u0002\u0012\u0004\u0012\u00020o\u0018\u00010¤\u00022\u0007\u0010\u0092\u0002\u001a\u00020>H\u0002J!\u0010¦\u0002\u001a\u00020o2\u000b\u0010?\u001a\u0007\u0012\u0002\b\u00030§\u00022\t\u0010¨\u0002\u001a\u0004\u0018\u00010|H\u0017J8\u0010©\u0002\u001a\u00020o2\u0010\u0010ª\u0002\u001a\u000b\u0012\u0006\u0012\u0004\u0018\u00010|0§\u00022\u0007\u0010«\u0002\u001a\u0002002\t\u0010¨\u0002\u001a\u0004\u0018\u00010|2\u0007\u0010¬\u0002\u001a\u00020(H\u0002J*\u0010\u00ad\u0002\u001a\u00020o2\u001f\u0010®\u0002\u001a\u001a\u0012\u0015\u0012\u0013\u0012\u0005\u0012\u00030±\u0002\u0012\u0007\u0012\u0005\u0018\u00010±\u00020°\u00020¯\u0002H\u0017J*\u0010²\u0002\u001a\u00020o2\u001f\u0010®\u0002\u001a\u001a\u0012\u0015\u0012\u0013\u0012\u0005\u0012\u00030±\u0002\u0012\u0007\u0012\u0005\u0018\u00010±\u00020°\u00020¯\u0002H\u0002J1\u0010³\u0002\u001a\u0003H´\u0002\"\u0005\b\u0000\u0010´\u00022\u0006\u0010I\u001a\u00020J2\u000f\u0010®\u0001\u001a\n\u0012\u0005\u0012\u0003H´\u00020\u009e\u0001H\u0082\b¢\u0006\u0003\u0010µ\u0002Jq\u0010¶\u0002\u001a\u0003H´\u0002\"\u0005\b\u0000\u0010´\u00022\f\b\u0002\u0010·\u0002\u001a\u0005\u0018\u00010¸\u00022\f\b\u0002\u0010¹\u0002\u001a\u0005\u0018\u00010¸\u00022\u000b\b\u0002\u0010û\u0001\u001a\u0004\u0018\u00010\u001e2\u001e\b\u0002\u0010+\u001a\u0018\u0012\u0013\u0012\u0011\u0012\u0004\u0012\u00020>\u0012\u0006\u0012\u0004\u0018\u00010|0°\u00020¯\u00022\u000f\u0010®\u0001\u001a\n\u0012\u0005\u0012\u0003H´\u00020\u009e\u0001H\u0002¢\u0006\u0003\u0010º\u0002J\u0013\u0010»\u0002\u001a\u00020o2\b\u0010»\u0002\u001a\u00030¼\u0002H\u0017J\u001b\u0010½\u0002\u001a\u00020o2\u0006\u0010p\u001a\u00020\u001e2\b\u0010»\u0002\u001a\u00030¼\u0002H\u0017J\t\u0010¾\u0002\u001a\u00020oH\u0017J\t\u0010¿\u0002\u001a\u00020oH\u0016J!\u0010À\u0002\u001a\n\u0012\u0005\u0012\u00030Á\u00020¯\u00022\b\u0010?\u001a\u0004\u0018\u00010|H\u0000¢\u0006\u0003\bÂ\u0002J\u0011\u0010Ã\u0002\u001a\n\u0012\u0005\u0012\u00030Á\u00020¯\u0002H\u0002J+\u0010Ä\u0002\u001a\n\u0012\u0005\u0012\u00030Á\u00020¯\u00022\u0007\u0010Ñ\u0001\u001a\u00020\u001e2\t\u0010Å\u0002\u001a\u0004\u0018\u00010\u001eH\u0002¢\u0006\u0003\u0010Æ\u0002J\u000f\u0010Ç\u0002\u001a\n\u0012\u0005\u0012\u00030Á\u00020¯\u0002JI\u0010È\u0002\u001a\u00020o2\u0014\u0010É\u0002\u001a\u000f\u0012\u0004\u0012\u00020>\u0012\u0004\u0012\u00020|0Ê\u00022\u0014\u0010ª\u0002\u001a\u000f\u0012\u0004\u0012\u00020o0\u009e\u0001¢\u0006\u0003\bË\u00022\t\u0010Ì\u0002\u001a\u0004\u0018\u00010eH\u0000¢\u0006\u0006\bÍ\u0002\u0010Î\u0002J\u001f\u0010Ï\u0002\u001a\u00020o2\u000e\u0010®\u0001\u001a\t\u0012\u0004\u0012\u00020o0\u009e\u0001H\u0000¢\u0006\u0003\bÐ\u0002J3\u0010Ñ\u0002\u001a\u00020(2\u0014\u0010É\u0002\u001a\u000f\u0012\u0004\u0012\u00020>\u0012\u0004\u0012\u00020|0Ê\u00022\t\u0010Ì\u0002\u001a\u0004\u0018\u00010eH\u0000¢\u0006\u0006\bÒ\u0002\u0010Ó\u0002J&\u0010Ô\u0002\u001a\u00020o2\u0014\u0010É\u0002\u001a\u000f\u0012\u0004\u0012\u00020>\u0012\u0004\u0012\u00020|0Ê\u0002¢\u0006\u0006\bÕ\u0002\u0010Ö\u0002J@\u0010×\u0002\u001a\u00020o2\u0014\u0010É\u0002\u001a\u000f\u0012\u0004\u0012\u00020>\u0012\u0004\u0012\u00020|0Ê\u00022\u0016\u0010ª\u0002\u001a\u0011\u0012\u0004\u0012\u00020o\u0018\u00010\u009e\u0001¢\u0006\u0003\bË\u0002H\u0002¢\u0006\u0006\bØ\u0002\u0010Ù\u0002J\u0018\u0010ß\u0002\u001a\u0004\u0018\u00010|*\u00020J2\u0007\u0010û\u0001\u001a\u00020\u001eH\u0002J\t\u0010à\u0002\u001a\u00020oH\u0002J\t\u0010á\u0002\u001a\u00020oH\u0002J\u0012\u0010â\u0002\u001a\u00020o2\u0007\u0010ã\u0002\u001a\u00020`H\u0002J\t\u0010ä\u0002\u001a\u00020oH\u0002J\u0012\u0010å\u0002\u001a\u00020o2\u0007\u0010æ\u0002\u001a\u00020\u001eH\u0002J\t\u0010ç\u0002\u001a\u00020oH\u0002J\t\u0010è\u0002\u001a\u00020oH\u0002J\t\u0010é\u0002\u001a\u00020oH\u0002J\u000f\u0010ê\u0002\u001a\u00020oH\u0000¢\u0006\u0003\bë\u0002J0\u0010ì\u0002\u001a\u00020o2\u0007\u0010í\u0002\u001a\u00020\u001e2\u0006\u0010 \u001a\u00020\u001e2\b\u0010{\u001a\u0004\u0018\u00010|2\t\u0010í\u0001\u001a\u0004\u0018\u00010|H\u0082\bJ\u001b\u0010î\u0002\u001a\u00020o2\u0007\u0010í\u0002\u001a\u00020\u001e2\u0006\u0010 \u001a\u00020\u001eH\u0082\bJ0\u0010ï\u0002\u001a\u00020o2\u0007\u0010í\u0002\u001a\u00020\u001e2\u0006\u0010 \u001a\u00020\u001e2\b\u0010{\u001a\u0004\u0018\u00010|2\t\u0010í\u0001\u001a\u0004\u0018\u00010|H\u0082\bJ\u001b\u0010ð\u0002\u001a\u00020o2\u0007\u0010í\u0002\u001a\u00020\u001e2\u0006\u0010 \u001a\u00020\u001eH\u0082\bJ\u000f\u0010ñ\u0002\u001a\u00020\u001eH\u0000¢\u0006\u0003\bò\u0002J\u000b\u0010ú\u0002\u001a\u0004\u0018\u00010|H\u0016J\u0013\u0010û\u0002\u001a\u00020o2\b\u0010?\u001a\u0004\u0018\u00010|H\u0016J\u0013\u0010ü\u0002\u001a\u00020o2\b\u0010\u0092\u0002\u001a\u00030ô\u0002H\u0016R\u0018\u0010\u0002\u001a\u0006\u0012\u0002\b\u00030\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\n0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\u00020\u0011X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0018\u0010\u0018\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u001a0\u0019X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001bR\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010#\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010%\u001a\u0004\u0018\u00010&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020-0,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010.\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u00101\u001a\n\u0012\u0004\u0012\u000200\u0018\u000102X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00106\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010:\u001a\u00020;X\u0082\u0004¢\u0006\u0004\n\u0002\u0010<R\u0016\u0010=\u001a\b\u0012\u0004\u0012\u00020>0\u0019X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001bR\u001e\u0010@\u001a\u00020(2\u0006\u0010?\u001a\u00020(@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\bA\u0010BR\u001e\u0010C\u001a\u00020(2\u0006\u0010?\u001a\u00020(@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\bD\u0010BR\u0014\u0010E\u001a\u00020(8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bF\u0010BR\u0014\u0010G\u001a\u00020(8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bH\u0010BR\u001a\u0010I\u001a\u00020JX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bK\u0010L\"\u0004\bM\u0010NR\u001a\u0010O\u001a\u00020\u0007X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bP\u0010Q\"\u0004\bR\u0010SR\u000e\u0010T\u001a\u00020UX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010V\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010W\u001a\u0004\u0018\u000100X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010X\u001a\u0004\u0018\u00010\fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bY\u0010Z\"\u0004\b[\u0010\\R\u000e\u0010]\u001a\u00020^X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010_\u001a\u00020`X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010a\u001a\u00020bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010c\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010d\u001a\u0004\u0018\u00010eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010f\u001a\u0004\u0018\u00010g8@X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bh\u0010iR\u0014\u0010j\u001a\u00020kX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bl\u0010mR\u001a\u0010v\u001a\u00020(8VX\u0097\u0004¢\u0006\f\u0012\u0004\bw\u0010x\u001a\u0004\by\u0010BR)\u0010\u0083\u0001\u001a\u00020(2\u0006\u0010?\u001a\u00020(8\u0016@RX\u0097\u000e¢\u0006\u0010\n\u0000\u0012\u0005\b\u0084\u0001\u0010x\u001a\u0005\b\u0085\u0001\u0010BR\u001d\u0010\u0086\u0001\u001a\u00020(8VX\u0097\u0004¢\u0006\u000e\u0012\u0005\b\u0087\u0001\u0010x\u001a\u0005\b\u0088\u0001\u0010BR9\u0010\u008b\u0001\u001a\b0\u0089\u0001j\u0003`\u008a\u00012\f\u0010?\u001a\b0\u0089\u0001j\u0003`\u008a\u00018\u0016@RX\u0097\u000e¢\u0006\u0014\n\u0003\u0010\u008f\u0001\u0012\u0005\b\u008c\u0001\u0010x\u001a\u0006\b\u008d\u0001\u0010\u008e\u0001R\u0017\u0010§\u0001\u001a\u00020\u001e8VX\u0096\u0004¢\u0006\b\u001a\u0006\b¨\u0001\u0010©\u0001R\u0012\u0010Å\u0001\u001a\u0005\u0018\u00010Æ\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010Ç\u0001\u001a\u00030Æ\u00018VX\u0096\u0004¢\u0006\b\u001a\u0006\bÈ\u0001\u0010É\u0001R\u0018\u0010Í\u0001\u001a\u00030Î\u00018VX\u0096\u0004¢\u0006\b\u001a\u0006\bÏ\u0001\u0010Ð\u0001R\u0017\u0010ã\u0001\u001a\u00020\u001e8@X\u0080\u0004¢\u0006\b\u001a\u0006\bä\u0001\u0010©\u0001R\u0019\u0010å\u0001\u001a\u0004\u0018\u00010>8@X\u0080\u0004¢\u0006\b\u001a\u0006\bæ\u0001\u0010ç\u0001R\u0013\u0010Ú\u0002\u001a\u00020(8F¢\u0006\u0007\u001a\u0005\bÛ\u0002\u0010BR\u001d\u0010Ü\u0002\u001a\u0004\u0018\u00010|*\u00020J8BX\u0082\u0004¢\u0006\b\u001a\u0006\bÝ\u0002\u0010Þ\u0002R\u001a\u0010ó\u0002\u001a\u0005\u0018\u00010ô\u00028VX\u0096\u0004¢\u0006\b\u001a\u0006\bõ\u0002\u0010ö\u0002R\u0019\u0010÷\u0002\u001a\u0004\u0018\u00010|8VX\u0096\u0004¢\u0006\b\u001a\u0006\bø\u0002\u0010ù\u0002¨\u0006ÿ\u0002"}, d2 = {"Landroidx/compose/runtime/ComposerImpl;", "Landroidx/compose/runtime/Composer;", "applier", "Landroidx/compose/runtime/Applier;", "parentContext", "Landroidx/compose/runtime/CompositionContext;", "slotTable", "Landroidx/compose/runtime/SlotTable;", "abandonSet", "", "Landroidx/compose/runtime/RememberObserver;", "changes", "Landroidx/compose/runtime/changelist/ChangeList;", "lateChanges", "observerHolder", "Landroidx/compose/runtime/CompositionObserverHolder;", "composition", "Landroidx/compose/runtime/CompositionImpl;", "<init>", "(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/CompositionContext;Landroidx/compose/runtime/SlotTable;Ljava/util/Set;Landroidx/compose/runtime/changelist/ChangeList;Landroidx/compose/runtime/changelist/ChangeList;Landroidx/compose/runtime/CompositionObserverHolder;Landroidx/compose/runtime/CompositionImpl;)V", "getApplier", "()Landroidx/compose/runtime/Applier;", "getComposition", "()Landroidx/compose/runtime/CompositionImpl;", "pendingStack", "Landroidx/compose/runtime/Stack;", "Landroidx/compose/runtime/Pending;", "Ljava/util/ArrayList;", "pending", "nodeIndex", "", "groupNodeCount", "rGroupIndex", "parentStateStack", "Landroidx/compose/runtime/IntStack;", "nodeCountOverrides", "", "nodeCountVirtualOverrides", "Landroidx/collection/MutableIntIntMap;", "forceRecomposeScopes", "", "forciblyRecompose", "nodeExpected", "invalidations", "", "Landroidx/compose/runtime/Invalidation;", "entersStack", "rootProvider", "Landroidx/compose/runtime/PersistentCompositionLocalMap;", "providerUpdates", "Landroidx/collection/MutableIntObjectMap;", "providersInvalid", "providersInvalidStack", "reusing", "reusingGroup", "childrenComposing", "compositionToken", "sourceMarkersEnabled", "derivedStateObserver", "androidx/compose/runtime/ComposerImpl$derivedStateObserver$1", "Landroidx/compose/runtime/ComposerImpl$derivedStateObserver$1;", "invalidateStack", "Landroidx/compose/runtime/RecomposeScopeImpl;", "value", "isComposing", "isComposing$runtime", "()Z", "isDisposed", "isDisposed$runtime", "areChildrenComposing", "getAreChildrenComposing$runtime", "hasPendingChanges", "getHasPendingChanges$runtime", "reader", "Landroidx/compose/runtime/SlotReader;", "getReader$runtime", "()Landroidx/compose/runtime/SlotReader;", "setReader$runtime", "(Landroidx/compose/runtime/SlotReader;)V", "insertTable", "getInsertTable$runtime", "()Landroidx/compose/runtime/SlotTable;", "setInsertTable$runtime", "(Landroidx/compose/runtime/SlotTable;)V", "writer", "Landroidx/compose/runtime/SlotWriter;", "writerHasAProvider", "providerCache", "deferredChanges", "getDeferredChanges$runtime", "()Landroidx/compose/runtime/changelist/ChangeList;", "setDeferredChanges$runtime", "(Landroidx/compose/runtime/changelist/ChangeList;)V", "changeListWriter", "Landroidx/compose/runtime/changelist/ComposerChangeListWriter;", "insertAnchor", "Landroidx/compose/runtime/Anchor;", "insertFixups", "Landroidx/compose/runtime/changelist/FixupList;", "pausable", "shouldPauseCallback", "Landroidx/compose/runtime/ShouldPauseCallback;", "errorContext", "Landroidx/compose/runtime/tooling/CompositionErrorContextImpl;", "getErrorContext$runtime", "()Landroidx/compose/runtime/tooling/CompositionErrorContextImpl;", "applyCoroutineContext", "Lkotlin/coroutines/CoroutineContext;", "getApplyCoroutineContext", "()Lkotlin/coroutines/CoroutineContext;", "startReplaceableGroup", "", "key", "endReplaceableGroup", "startReplaceGroup", "endReplaceGroup", "startDefaults", "endDefaults", "defaultsInvalid", "getDefaultsInvalid$annotations", "()V", "getDefaultsInvalid", "startMovableGroup", "dataKey", "", "endMovableGroup", "startRoot", "endRoot", "abortRoot", "changesApplied", "changesApplied$runtime", "inserting", "getInserting$annotations", "getInserting", "skipping", "getSkipping$annotations", "getSkipping", "", "Landroidx/compose/runtime/CompositeKeyHashCode;", "compositeKeyHashCode", "getCompositeKeyHashCode$annotations", "getCompositeKeyHashCode", "()J", "J", "collectParameterInformation", "dispose", "dispose$runtime", "deactivate", "deactivate$runtime", "forceRecomposeScopes$runtime", "startGroup", "endGroup", "skipGroup", "startNode", "startReusableNode", "createNode", ExifInterface.GPS_DIRECTION_TRUE, "factory", "Lkotlin/Function0;", "useNode", "endNode", "startReusableGroup", "endReusableGroup", "disableReusing", "enableReusing", "startReuseFromRoot", "endReuseFromRoot", "currentMarker", "getCurrentMarker", "()I", "endToMarker", "marker", "apply", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "block", "Lkotlin/Function2;", "Lkotlin/ExtensionFunctionType;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V", "joinKey", TtmlNode.LEFT, TtmlNode.RIGHT, "nextSlot", "nextSlotForCache", "changed", "changedInstance", "", "", "", "", "", "cache", "invalid", "(ZLkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "updateSlot", "updateValue", "updateCachedValue", "rememberObserverAnchor", "_compositionData", "Landroidx/compose/runtime/tooling/CompositionData;", "compositionData", "getCompositionData", "()Landroidx/compose/runtime/tooling/CompositionData;", "recordSideEffect", "effect", "currentCompositionLocalScope", "currentCompositionLocalMap", "Landroidx/compose/runtime/CompositionLocalMap;", "getCurrentCompositionLocalMap", "()Landroidx/compose/runtime/CompositionLocalMap;", "group", "updateProviderMapGroup", "parentScope", "currentProviders", "startProvider", "Landroidx/compose/runtime/ProvidedValue;", "recordProviderUpdate", "providers", "endProvider", "startProviders", "values", "", "([Landroidx/compose/runtime/ProvidedValue;)V", "endProviders", "consume", "Landroidx/compose/runtime/CompositionLocal;", "(Landroidx/compose/runtime/CompositionLocal;)Ljava/lang/Object;", "buildContext", "changeCount", "getChangeCount$runtime", "currentRecomposeScope", "getCurrentRecomposeScope$runtime", "()Landroidx/compose/runtime/RecomposeScopeImpl;", "ensureWriter", "createFreshInsertTable", "forceFreshInsertTable", "startReaderGroup", "isNode", "data", TtmlNode.START, "objectKey", "kind", "Landroidx/compose/runtime/GroupKind;", "start-BaiHCIY", "(ILjava/lang/Object;ILjava/lang/Object;)V", "enterGroup", "newPending", "exitGroup", "expectedNodeCount", TtmlNode.END, "recomposeToGroupEnd", "insertedGroupVirtualIndex", FirebaseAnalytics.Param.INDEX, "updateNodeCountOverrides", "newCount", "nodeIndexOf", "groupLocation", "recomposeGroup", "recomposeIndex", "rGroupIndexOf", "updatedNodeCount", "updateNodeCount", "count", "clearUpdatedNodeCounts", "recordUpsAndDowns", "oldGroup", "newGroup", "commonRoot", "doRecordDownsFor", "nearestCommonRoot", "compositeKeyOf", "recomposeKey", "(IIJ)J", "groupCompositeKeyPart", "tryImminentInvalidation", "scope", "instance", "tryImminentInvalidation$runtime", "parentKey", "parentKey$runtime", "skipCurrentGroup", "skipReaderToGroupEnd", "shouldExecute", "parametersChanged", DownloaderServiceMarshaller.PARAMS_FLAGS, "skipToGroupEnd", "deactivateToEndGroup", "startRestartGroup", "addRecomposeScope", "enterRecomposeScope", "endRestartGroup", "Landroidx/compose/runtime/ScopeUpdateScope;", "exitRecomposeScope", "Lkotlin/Function1;", "Landroidx/compose/runtime/Composition;", "insertMovableContent", "Landroidx/compose/runtime/MovableContent;", "parameter", "invokeMovableContentLambda", FirebaseAnalytics.Param.CONTENT, "locals", "force", "insertMovableContentReferences", "references", "", "Lkotlin/Pair;", "Landroidx/compose/runtime/MovableContentStateReference;", "insertMovableContentGuarded", "withReader", "R", "(Landroidx/compose/runtime/SlotReader;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "recomposeMovableContent", "from", "Landroidx/compose/runtime/ControlledComposition;", TypedValues.TransitionType.S_TO, "(Landroidx/compose/runtime/ControlledComposition;Landroidx/compose/runtime/ControlledComposition;Ljava/lang/Integer;Ljava/util/List;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "sourceInformation", "", "sourceInformationMarkerStart", "sourceInformationMarkerEnd", "disableSourceInformation", "stackTraceForValue", "Landroidx/compose/runtime/tooling/ComposeStackTraceFrame;", "stackTraceForValue$runtime", "currentStackTrace", "stackTraceForGroup", "dataOffset", "(ILjava/lang/Integer;)Ljava/util/List;", "parentStackTrace", "composeContent", "invalidationsRequested", "Landroidx/compose/runtime/collection/ScopeMap;", "Landroidx/compose/runtime/Composable;", "shouldPause", "composeContent--ZbOJvo$runtime", "(Landroidx/collection/MutableScatterMap;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/ShouldPauseCallback;)V", "prepareCompose", "prepareCompose$runtime", "recompose", "recompose-aFTiNEg$runtime", "(Landroidx/collection/MutableScatterMap;Landroidx/compose/runtime/ShouldPauseCallback;)Z", "updateComposerInvalidations", "updateComposerInvalidations-RY85e9Y", "(Landroidx/collection/MutableScatterMap;)V", "doCompose", "doCompose-aFTiNEg", "(Landroidx/collection/MutableScatterMap;Lkotlin/jvm/functions/Function2;)V", "hasInvalidations", "getHasInvalidations", "node", "getNode", "(Landroidx/compose/runtime/SlotReader;)Ljava/lang/Object;", "nodeAt", "validateNodeExpected", "validateNodeNotExpected", "recordInsert", "anchor", "recordDelete", "reportFreeMovableContent", "groupBeingRemoved", "reportAllMovableContent", "finalizeCompose", "cleanUpCompose", "verifyConsistent", "verifyConsistent$runtime", "updateCompositeKeyWhenWeEnterGroup", "groupKey", "updateCompositeKeyWhenWeEnterGroupKeyHash", "updateCompositeKeyWhenWeExitGroup", "updateCompositeKeyWhenWeExitGroupKeyHash", "stacksSize", "stacksSize$runtime", "recomposeScope", "Landroidx/compose/runtime/RecomposeScope;", "getRecomposeScope", "()Landroidx/compose/runtime/RecomposeScope;", "recomposeScopeIdentity", "getRecomposeScopeIdentity", "()Ljava/lang/Object;", "rememberedValue", "updateRememberedValue", "recordUsed", "CompositionContextHolder", "CompositionContextImpl", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposerImpl implements Composer {
     public static final int $stable = 8;
     private CompositionData _compositionData;
     private final Set<RememberObserver> abandonSet;
     private final Applier<?> applier;
+    private final CoroutineContext applyCoroutineContext;
     private final ComposerChangeListWriter changeListWriter;
     private ChangeList changes;
     private int childrenComposing;
-    private final ControlledComposition composition;
+    private long compositeKeyHashCode;
+    private final CompositionImpl composition;
     private int compositionToken;
-    private int compoundKeyHash;
     private ChangeList deferredChanges;
     private final ComposerImpl$derivedStateObserver$1 derivedStateObserver;
+    private final CompositionErrorContextImpl errorContext;
     private boolean forceRecomposeScopes;
     private boolean forciblyRecompose;
     private int groupNodeCount;
@@ -74,6 +86,7 @@ public final class ComposerImpl implements Composer {
     private MutableIntIntMap nodeCountVirtualOverrides;
     private boolean nodeExpected;
     private int nodeIndex;
+    private final CompositionObserverHolder observerHolder;
     private final CompositionContext parentContext;
     private boolean pausable;
     private Pending pending;
@@ -88,15 +101,15 @@ public final class ComposerImpl implements Composer {
     private boolean sourceMarkersEnabled;
     private SlotWriter writer;
     private boolean writerHasAProvider;
-    private final ArrayList<T> pendingStack = Stack.m3505constructorimpl$default(null, 1, null);
+    private final ArrayList<T> pendingStack = Stack.m3839constructorimpl$default(null, 1, null);
     private final IntStack parentStateStack = new IntStack();
     private final List<Invalidation> invalidations = new ArrayList();
     private final IntStack entersStack = new IntStack();
-    private PersistentCompositionLocalMap parentProvider = PersistentCompositionLocalMapKt.persistentCompositionLocalHashMapOf();
+    private PersistentCompositionLocalMap rootProvider = PersistentCompositionLocalMapKt.persistentCompositionLocalHashMapOf();
     private final IntStack providersInvalidStack = new IntStack();
     private int reusingGroup = -1;
 
-    public static /* synthetic */ void getCompoundKeyHash$annotations() {
+    public static /* synthetic */ void getCompositeKeyHashCode$annotations() {
     }
 
     @ComposeCompilerApi
@@ -116,15 +129,16 @@ public final class ComposerImpl implements Composer {
     }
 
     /* JADX WARN: Type inference failed for: r5v13, types: [androidx.compose.runtime.ComposerImpl$derivedStateObserver$1] */
-    public ComposerImpl(Applier<?> applier, CompositionContext compositionContext, SlotTable slotTable, Set<RememberObserver> set, ChangeList changeList, ChangeList changeList2, ControlledComposition controlledComposition) {
+    public ComposerImpl(Applier<?> applier, CompositionContext compositionContext, SlotTable slotTable, Set<RememberObserver> set, ChangeList changeList, ChangeList changeList2, CompositionObserverHolder compositionObserverHolder, CompositionImpl compositionImpl) {
         this.applier = applier;
         this.parentContext = compositionContext;
         this.slotTable = slotTable;
         this.abandonSet = set;
         this.changes = changeList;
         this.lateChanges = changeList2;
-        this.composition = controlledComposition;
-        this.sourceMarkersEnabled = compositionContext.getCollectingSourceInformation$runtime_release() || compositionContext.getCollectingCallByInformation$runtime_release();
+        this.observerHolder = compositionObserverHolder;
+        this.composition = compositionImpl;
+        this.sourceMarkersEnabled = compositionContext.getCollectingSourceInformation$runtime() || compositionContext.getCollectingCallByInformation$runtime();
         this.derivedStateObserver = new DerivedStateObserver() { // from class: androidx.compose.runtime.ComposerImpl$derivedStateObserver$1
             @Override // androidx.compose.runtime.DerivedStateObserver
             public void start(DerivedState<?> derivedState) {
@@ -133,19 +147,18 @@ public final class ComposerImpl implements Composer {
 
             @Override // androidx.compose.runtime.DerivedStateObserver
             public void done(DerivedState<?> derivedState) {
-                ComposerImpl composerImpl = ComposerImpl.this;
-                composerImpl.childrenComposing--;
+                ComposerImpl.this.childrenComposing--;
             }
         };
-        this.invalidateStack = Stack.m3505constructorimpl$default(null, 1, null);
+        this.invalidateStack = Stack.m3839constructorimpl$default(null, 1, null);
         SlotReader openReader = slotTable.openReader();
         openReader.close();
         this.reader = openReader;
         SlotTable slotTable2 = new SlotTable();
-        if (compositionContext.getCollectingSourceInformation$runtime_release()) {
+        if (compositionContext.getCollectingSourceInformation$runtime()) {
             slotTable2.collectSourceInformation();
         }
-        if (compositionContext.getCollectingCallByInformation$runtime_release()) {
+        if (compositionContext.getCollectingCallByInformation$runtime()) {
             slotTable2.collectCalledByInformation();
         }
         this.insertTable = slotTable2;
@@ -159,6 +172,10 @@ public final class ComposerImpl implements Composer {
             openReader2.close();
             this.insertAnchor = anchor;
             this.insertFixups = new FixupList();
+            this.errorContext = new CompositionErrorContextImpl(this);
+            CoroutineContext effectCoroutineContext = compositionContext.getEffectCoroutineContext();
+            CoroutineContext errorContext$runtime = getErrorContext$runtime();
+            this.applyCoroutineContext = effectCoroutineContext.plus(errorContext$runtime == null ? EmptyCoroutineContext.INSTANCE : errorContext$runtime);
         } catch (Throwable th) {
             openReader2.close();
             throw th;
@@ -171,59 +188,66 @@ public final class ComposerImpl implements Composer {
     }
 
     @Override // androidx.compose.runtime.Composer
-    public ControlledComposition getComposition() {
+    public CompositionImpl getComposition() {
         return this.composition;
     }
 
-    public final boolean isComposing$runtime_release() {
+    public final boolean isComposing$runtime() {
         return this.isComposing;
     }
 
-    public final boolean isDisposed$runtime_release() {
+    public final boolean isDisposed$runtime() {
         return this.isDisposed;
     }
 
-    public final boolean getAreChildrenComposing$runtime_release() {
+    public final boolean getAreChildrenComposing$runtime() {
         return this.childrenComposing > 0;
     }
 
-    public final boolean getHasPendingChanges$runtime_release() {
+    public final boolean getHasPendingChanges$runtime() {
         return this.changes.isNotEmpty();
     }
 
-    public final SlotReader getReader$runtime_release() {
+    public final SlotReader getReader$runtime() {
         return this.reader;
     }
 
-    public final void setReader$runtime_release(SlotReader slotReader) {
+    public final void setReader$runtime(SlotReader slotReader) {
         this.reader = slotReader;
     }
 
-    public final SlotTable getInsertTable$runtime_release() {
+    public final SlotTable getInsertTable$runtime() {
         return this.insertTable;
     }
 
-    public final void setInsertTable$runtime_release(SlotTable slotTable) {
+    public final void setInsertTable$runtime(SlotTable slotTable) {
         this.insertTable = slotTable;
     }
 
-    public final ChangeList getDeferredChanges$runtime_release() {
+    public final ChangeList getDeferredChanges$runtime() {
         return this.deferredChanges;
     }
 
-    public final void setDeferredChanges$runtime_release(ChangeList changeList) {
+    public final void setDeferredChanges$runtime(ChangeList changeList) {
         this.deferredChanges = changeList;
+    }
+
+    public final CompositionErrorContextImpl getErrorContext$runtime() {
+        if (this.sourceMarkersEnabled) {
+            return this.errorContext;
+        }
+        return null;
     }
 
     @Override // androidx.compose.runtime.Composer
     public CoroutineContext getApplyCoroutineContext() {
-        return this.parentContext.getEffectCoroutineContext();
+        return this.applyCoroutineContext;
     }
 
     @Override // androidx.compose.runtime.Composer
     @ComposeCompilerApi
     public void startReplaceableGroup(int i) {
-        m3460startBaiHCIY(i, null, GroupKind.Companion.m3474getGroupULZAiWs(), null);
+        m3784startBaiHCIY(i, null, GroupKind.Companion.m3801getGroupULZAiWs(), null);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -236,11 +260,11 @@ public final class ComposerImpl implements Composer {
     @ComposeCompilerApi
     public void startReplaceGroup(int i) {
         if (this.pending != null) {
-            m3460startBaiHCIY(i, null, GroupKind.Companion.m3474getGroupULZAiWs(), null);
+            m3784startBaiHCIY(i, null, GroupKind.Companion.m3801getGroupULZAiWs(), null);
             return;
         }
         validateNodeNotExpected();
-        this.compoundKeyHash = this.rGroupIndex ^ Integer.rotateLeft(Integer.rotateLeft(getCompoundKeyHash(), 3) ^ i, 3);
+        this.compositeKeyHashCode = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ i, 3) ^ this.rGroupIndex;
         this.rGroupIndex++;
         SlotReader slotReader = this.reader;
         if (getInserting()) {
@@ -280,30 +304,30 @@ public final class ComposerImpl implements Composer {
     @Override // androidx.compose.runtime.Composer
     @ComposeCompilerApi
     public void startDefaults() {
-        m3460startBaiHCIY(-127, null, GroupKind.Companion.m3474getGroupULZAiWs(), null);
+        m3784startBaiHCIY(ComposerKt.defaultsKey, null, GroupKind.Companion.m3801getGroupULZAiWs(), null);
     }
 
     @Override // androidx.compose.runtime.Composer
     @ComposeCompilerApi
     public void endDefaults() {
         endGroup();
-        RecomposeScopeImpl currentRecomposeScope$runtime_release = getCurrentRecomposeScope$runtime_release();
-        if (currentRecomposeScope$runtime_release == null || !currentRecomposeScope$runtime_release.getUsed()) {
+        RecomposeScopeImpl currentRecomposeScope$runtime = getCurrentRecomposeScope$runtime();
+        if (currentRecomposeScope$runtime == null || !currentRecomposeScope$runtime.getUsed()) {
             return;
         }
-        currentRecomposeScope$runtime_release.setDefaultsInScope(true);
+        currentRecomposeScope$runtime.setDefaultsInScope(true);
     }
 
     @Override // androidx.compose.runtime.Composer
     public boolean getDefaultsInvalid() {
-        RecomposeScopeImpl currentRecomposeScope$runtime_release;
-        return !getSkipping() || this.providersInvalid || ((currentRecomposeScope$runtime_release = getCurrentRecomposeScope$runtime_release()) != null && currentRecomposeScope$runtime_release.getDefaultsInvalid());
+        RecomposeScopeImpl currentRecomposeScope$runtime;
+        return !getSkipping() || this.providersInvalid || ((currentRecomposeScope$runtime = getCurrentRecomposeScope$runtime()) != null && currentRecomposeScope$runtime.getDefaultsInvalid());
     }
 
     @Override // androidx.compose.runtime.Composer
     @ComposeCompilerApi
     public void startMovableGroup(int i, Object obj) {
-        m3460startBaiHCIY(i, obj, GroupKind.Companion.m3474getGroupULZAiWs(), null);
+        m3784startBaiHCIY(i, obj, GroupKind.Companion.m3801getGroupULZAiWs(), null);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -317,31 +341,37 @@ public final class ComposerImpl implements Composer {
         this.rGroupIndex = 0;
         this.reader = this.slotTable.openReader();
         startGroup(100);
-        this.parentContext.startComposing$runtime_release();
-        this.parentProvider = this.parentContext.getCompositionLocalScope$runtime_release();
+        this.parentContext.startComposing$runtime();
+        PersistentCompositionLocalMap compositionLocalScope$runtime = this.parentContext.getCompositionLocalScope$runtime();
         IntStack intStack = this.providersInvalidStack;
         asInt = ComposerKt.asInt(this.providersInvalid);
         intStack.push(asInt);
-        this.providersInvalid = changed(this.parentProvider);
+        this.providersInvalid = changed(compositionLocalScope$runtime);
         this.providerCache = null;
         if (!this.forceRecomposeScopes) {
-            this.forceRecomposeScopes = this.parentContext.getCollectingParameterInformation$runtime_release();
+            this.forceRecomposeScopes = this.parentContext.getCollectingParameterInformation$runtime();
         }
         if (!this.sourceMarkersEnabled) {
-            this.sourceMarkersEnabled = this.parentContext.getCollectingSourceInformation$runtime_release();
+            this.sourceMarkersEnabled = this.parentContext.getCollectingSourceInformation$runtime();
         }
-        Set<CompositionData> set = (Set) CompositionLocalMapKt.read(this.parentProvider, InspectionTablesKt.getLocalInspectionTables());
+        if (this.sourceMarkersEnabled) {
+            CompositionLocal<CompositionErrorContext> localCompositionErrorContext = CompositionErrorContextKt.getLocalCompositionErrorContext();
+            Intrinsics.checkNotNull(localCompositionErrorContext, "null cannot be cast to non-null type androidx.compose.runtime.CompositionLocal<kotlin.Any?>");
+            compositionLocalScope$runtime = compositionLocalScope$runtime.putValue(localCompositionErrorContext, new StaticValueHolder(getErrorContext$runtime()));
+        }
+        this.rootProvider = compositionLocalScope$runtime;
+        Set<CompositionData> set = (Set) CompositionLocalMapKt.read(compositionLocalScope$runtime, InspectionTablesKt.getLocalInspectionTables());
         if (set != null) {
             set.add(getCompositionData());
-            this.parentContext.recordInspectionTable$runtime_release(set);
+            this.parentContext.recordInspectionTable$runtime(set);
         }
-        startGroup(this.parentContext.getCompoundHashKey$runtime_release());
+        startGroup(Long.hashCode(this.parentContext.getCompositeKeyHashCode$runtime()));
     }
 
     private final void endRoot() {
         boolean asBool;
         endGroup();
-        this.parentContext.doneComposing$runtime_release();
+        this.parentContext.doneComposing$runtime();
         endGroup();
         this.changeListWriter.endRoot();
         finalizeCompose();
@@ -353,13 +383,13 @@ public final class ComposerImpl implements Composer {
 
     private final void abortRoot() {
         cleanUpCompose();
-        Stack.m3503clearimpl(this.pendingStack);
+        Stack.m3837clearimpl(this.pendingStack);
         this.parentStateStack.clear();
         this.entersStack.clear();
         this.providersInvalidStack.clear();
         this.providerUpdates = null;
         this.insertFixups.clear();
-        this.compoundKeyHash = 0;
+        this.compositeKeyHashCode = 0;
         this.childrenComposing = 0;
         this.nodeExpected = false;
         this.inserting = false;
@@ -376,7 +406,7 @@ public final class ComposerImpl implements Composer {
         forceFreshInsertTable();
     }
 
-    public final void changesApplied$runtime_release() {
+    public final void changesApplied$runtime() {
         this.providerUpdates = null;
     }
 
@@ -387,13 +417,13 @@ public final class ComposerImpl implements Composer {
 
     @Override // androidx.compose.runtime.Composer
     public boolean getSkipping() {
-        RecomposeScopeImpl currentRecomposeScope$runtime_release;
-        return (getInserting() || this.reusing || this.providersInvalid || (currentRecomposeScope$runtime_release = getCurrentRecomposeScope$runtime_release()) == null || currentRecomposeScope$runtime_release.getRequiresRecompose() || this.forciblyRecompose) ? false : true;
+        RecomposeScopeImpl currentRecomposeScope$runtime;
+        return (getInserting() || this.reusing || this.providersInvalid || (currentRecomposeScope$runtime = getCurrentRecomposeScope$runtime()) == null || currentRecomposeScope$runtime.getRequiresRecompose() || this.forciblyRecompose) ? false : true;
     }
 
     @Override // androidx.compose.runtime.Composer
-    public int getCompoundKeyHash() {
-        return this.compoundKeyHash;
+    public long getCompositeKeyHashCode() {
+        return this.compositeKeyHashCode;
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -405,11 +435,11 @@ public final class ComposerImpl implements Composer {
         this.writer.updateToTableMaps();
     }
 
-    public final void dispose$runtime_release() {
+    public final void dispose$runtime() {
         Object beginSection = Trace.INSTANCE.beginSection("Compose:Composer.dispose");
         try {
-            this.parentContext.unregisterComposer$runtime_release(this);
-            deactivate$runtime_release();
+            this.parentContext.unregisterComposer$runtime(this);
+            deactivate$runtime();
             getApplier().clear();
             this.isDisposed = true;
             Unit unit = Unit.INSTANCE;
@@ -418,14 +448,14 @@ public final class ComposerImpl implements Composer {
         }
     }
 
-    public final void deactivate$runtime_release() {
-        Stack.m3503clearimpl(this.invalidateStack);
+    public final void deactivate$runtime() {
+        Stack.m3837clearimpl(this.invalidateStack);
         this.invalidations.clear();
         this.changes.clear();
         this.providerUpdates = null;
     }
 
-    public final boolean forceRecomposeScopes$runtime_release() {
+    public final boolean forceRecomposeScopes$runtime() {
         if (this.forceRecomposeScopes) {
             return false;
         }
@@ -435,11 +465,11 @@ public final class ComposerImpl implements Composer {
     }
 
     private final void startGroup(int i) {
-        m3460startBaiHCIY(i, null, GroupKind.Companion.m3474getGroupULZAiWs(), null);
+        m3784startBaiHCIY(i, null, GroupKind.Companion.m3801getGroupULZAiWs(), null);
     }
 
     private final void startGroup(int i, Object obj) {
-        m3460startBaiHCIY(i, obj, GroupKind.Companion.m3474getGroupULZAiWs(), null);
+        m3784startBaiHCIY(i, obj, GroupKind.Companion.m3801getGroupULZAiWs(), null);
     }
 
     private final void endGroup() {
@@ -452,13 +482,13 @@ public final class ComposerImpl implements Composer {
 
     @Override // androidx.compose.runtime.Composer
     public void startNode() {
-        m3460startBaiHCIY(125, null, GroupKind.Companion.m3475getNodeULZAiWs(), null);
+        m3784startBaiHCIY(125, null, GroupKind.Companion.m3802getNodeULZAiWs(), null);
         this.nodeExpected = true;
     }
 
     @Override // androidx.compose.runtime.Composer
     public void startReusableNode() {
-        m3460startBaiHCIY(125, null, GroupKind.Companion.m3476getReusableNodeULZAiWs(), null);
+        m3784startBaiHCIY(125, null, GroupKind.Companion.m3803getReusableNodeULZAiWs(), null);
         this.nodeExpected = true;
     }
 
@@ -499,7 +529,7 @@ public final class ComposerImpl implements Composer {
             this.reusingGroup = this.reader.getCurrentGroup();
             this.reusing = true;
         }
-        m3460startBaiHCIY(i, null, GroupKind.Companion.m3474getGroupULZAiWs(), obj);
+        m3784startBaiHCIY(i, null, GroupKind.Companion.m3801getGroupULZAiWs(), obj);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -852,7 +882,7 @@ public final class ComposerImpl implements Composer {
                 i = this.reader.parent(i);
             }
         }
-        PersistentCompositionLocalMap persistentCompositionLocalMap3 = this.parentProvider;
+        PersistentCompositionLocalMap persistentCompositionLocalMap3 = this.rootProvider;
         this.providerCache = persistentCompositionLocalMap3;
         return persistentCompositionLocalMap3;
     }
@@ -873,16 +903,16 @@ public final class ComposerImpl implements Composer {
         CompositionLocal<Object> compositionLocal = providedValue.getCompositionLocal();
         Intrinsics.checkNotNull(compositionLocal, "null cannot be cast to non-null type androidx.compose.runtime.CompositionLocal<kotlin.Any?>");
         Intrinsics.checkNotNull(providedValue, "null cannot be cast to non-null type androidx.compose.runtime.ProvidedValue<kotlin.Any?>");
-        ValueHolder<Object> updatedStateOf$runtime_release = compositionLocal.updatedStateOf$runtime_release(providedValue, valueHolder);
-        boolean areEqual = Intrinsics.areEqual(updatedStateOf$runtime_release, valueHolder);
+        ValueHolder<Object> updatedStateOf$runtime = compositionLocal.updatedStateOf$runtime(providedValue, valueHolder);
+        boolean areEqual = Intrinsics.areEqual(updatedStateOf$runtime, valueHolder);
         if (!areEqual) {
-            updateRememberedValue(updatedStateOf$runtime_release);
+            updateRememberedValue(updatedStateOf$runtime);
         }
         boolean z = true;
         boolean z2 = false;
         if (getInserting()) {
             if (providedValue.getCanOverride() || !CompositionLocalMapKt.contains(currentCompositionLocalScope, compositionLocal)) {
-                currentCompositionLocalScope = currentCompositionLocalScope.putValue(compositionLocal, updatedStateOf$runtime_release);
+                currentCompositionLocalScope = currentCompositionLocalScope.putValue(compositionLocal, updatedStateOf$runtime);
             }
             this.writerHasAProvider = true;
         } else {
@@ -891,7 +921,7 @@ public final class ComposerImpl implements Composer {
             Intrinsics.checkNotNull(groupAux, "null cannot be cast to non-null type androidx.compose.runtime.PersistentCompositionLocalMap");
             PersistentCompositionLocalMap persistentCompositionLocalMap = (PersistentCompositionLocalMap) groupAux;
             if ((!getSkipping() || !areEqual) && (providedValue.getCanOverride() || !CompositionLocalMapKt.contains(currentCompositionLocalScope, compositionLocal))) {
-                currentCompositionLocalScope = currentCompositionLocalScope.putValue(compositionLocal, updatedStateOf$runtime_release);
+                currentCompositionLocalScope = currentCompositionLocalScope.putValue(compositionLocal, updatedStateOf$runtime);
             } else if ((areEqual && !this.providersInvalid) || !this.providersInvalid) {
                 currentCompositionLocalScope = persistentCompositionLocalMap;
             }
@@ -908,7 +938,7 @@ public final class ComposerImpl implements Composer {
         intStack.push(asInt);
         this.providersInvalid = z2;
         this.providerCache = currentCompositionLocalScope;
-        m3460startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m3474getGroupULZAiWs(), currentCompositionLocalScope);
+        m3784startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m3801getGroupULZAiWs(), currentCompositionLocalScope);
     }
 
     private final void recordProviderUpdate(PersistentCompositionLocalMap persistentCompositionLocalMap) {
@@ -968,7 +998,7 @@ public final class ComposerImpl implements Composer {
         intStack.push(asInt);
         this.providersInvalid = z2;
         this.providerCache = updateProviderMapGroup;
-        m3460startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m3474getGroupULZAiWs(), updateProviderMapGroup);
+        m3784startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m3801getGroupULZAiWs(), updateProviderMapGroup);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -995,12 +1025,14 @@ public final class ComposerImpl implements Composer {
         Object nextSlot = nextSlot();
         CompositionContextHolder compositionContextHolder = nextSlot instanceof CompositionContextHolder ? (CompositionContextHolder) nextSlot : null;
         if (compositionContextHolder == null) {
-            int compoundKeyHash = getCompoundKeyHash();
+            long compositeKeyHashCode = getCompositeKeyHashCode();
             boolean z = this.forceRecomposeScopes;
             boolean z2 = this.sourceMarkersEnabled;
-            ControlledComposition composition = getComposition();
-            CompositionImpl compositionImpl = composition instanceof CompositionImpl ? (CompositionImpl) composition : null;
-            compositionContextHolder = new CompositionContextHolder(new CompositionContextImpl(compoundKeyHash, z, z2, compositionImpl != null ? compositionImpl.getObserverHolder$runtime_release() : null));
+            CompositionImpl composition = getComposition();
+            if (!(composition instanceof CompositionImpl)) {
+                composition = null;
+            }
+            compositionContextHolder = new CompositionContextHolder(new CompositionContextImpl(compositeKeyHashCode, z, z2, composition != null ? composition.getObserverHolder$runtime() : null));
             updateValue(compositionContextHolder);
         }
         compositionContextHolder.getRef().updateCompositionLocalScope(currentCompositionLocalScope());
@@ -1008,14 +1040,14 @@ public final class ComposerImpl implements Composer {
         return compositionContextHolder.getRef();
     }
 
-    public final int getChangeCount$runtime_release() {
+    public final int getChangeCount$runtime() {
         return this.changes.getSize();
     }
 
-    public final RecomposeScopeImpl getCurrentRecomposeScope$runtime_release() {
+    public final RecomposeScopeImpl getCurrentRecomposeScope$runtime() {
         ArrayList<T> arrayList = this.invalidateStack;
-        if (this.childrenComposing == 0 && Stack.m3511isNotEmptyimpl(arrayList)) {
-            return (RecomposeScopeImpl) Stack.m3512peekimpl(arrayList);
+        if (this.childrenComposing == 0 && Stack.m3845isNotEmptyimpl(arrayList)) {
+            return (RecomposeScopeImpl) Stack.m3846peekimpl(arrayList);
         }
         return null;
     }
@@ -1042,7 +1074,7 @@ public final class ComposerImpl implements Composer {
         if (this.sourceMarkersEnabled) {
             slotTable.collectSourceInformation();
         }
-        if (this.parentContext.getCollectingCallByInformation$runtime_release()) {
+        if (this.parentContext.getCollectingCallByInformation$runtime()) {
             slotTable.collectCalledByInformation();
         }
         this.insertTable = slotTable;
@@ -1062,27 +1094,27 @@ public final class ComposerImpl implements Composer {
         this.reader.startGroup();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0064  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0072  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x007d  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00db  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00e3  */
     /* renamed from: start-BaiHCIY  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private final void m3460startBaiHCIY(int i, Object obj, int i2, Object obj2) {
-        int rotateLeft;
+    private final void m3784startBaiHCIY(int i, Object obj, int i2, Object obj2) {
+        long rotateLeft;
         Object obj3 = obj;
         validateNodeNotExpected();
         int i3 = this.rGroupIndex;
         if (obj3 == null) {
             if (obj2 != null && i == 207 && !Intrinsics.areEqual(obj2, Composer.Companion.getEmpty())) {
-                this.compoundKeyHash = i3 ^ Integer.rotateLeft(obj2.hashCode() ^ Integer.rotateLeft(getCompoundKeyHash(), 3), 3);
+                this.compositeKeyHashCode = i3 ^ Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ obj2.hashCode(), 3);
                 if (obj3 == null) {
                     this.rGroupIndex++;
                 }
-                boolean z = i2 == GroupKind.Companion.m3474getGroupULZAiWs();
+                boolean z = i2 == GroupKind.Companion.m3801getGroupULZAiWs();
                 Pending pending = null;
                 if (!getInserting()) {
                     this.reader.beginEmpty();
@@ -1111,7 +1143,7 @@ public final class ComposerImpl implements Composer {
                     enterGroup(z, null);
                     return;
                 }
-                boolean z2 = i2 == GroupKind.Companion.m3475getNodeULZAiWs() && this.reusing;
+                boolean z2 = i2 == GroupKind.Companion.m3802getNodeULZAiWs() && this.reusing;
                 if (this.pending == null) {
                     int groupKey = this.reader.getGroupKey();
                     if (!z2 && groupKey == i && Intrinsics.areEqual(obj, this.reader.getGroupObjectKey())) {
@@ -1168,14 +1200,14 @@ public final class ComposerImpl implements Composer {
                 enterGroup(z, pending);
                 return;
             }
-            rotateLeft = i3 ^ Integer.rotateLeft(Integer.rotateLeft(getCompoundKeyHash(), 3) ^ i, 3);
+            rotateLeft = i3 ^ Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ i, 3);
         } else {
-            rotateLeft = Integer.rotateLeft((obj3 instanceof Enum ? ((Enum) obj3).ordinal() : obj.hashCode()) ^ Integer.rotateLeft(getCompoundKeyHash(), 3), 3);
+            rotateLeft = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ (obj3 instanceof Enum ? ((Enum) obj3).ordinal() : obj.hashCode()), 3) ^ 0;
         }
-        this.compoundKeyHash = rotateLeft;
+        this.compositeKeyHashCode = rotateLeft;
         if (obj3 == null) {
         }
-        if (i2 == GroupKind.Companion.m3474getGroupULZAiWs()) {
+        if (i2 == GroupKind.Companion.m3801getGroupULZAiWs()) {
         }
         Pending pending4 = null;
         if (!getInserting()) {
@@ -1183,7 +1215,7 @@ public final class ComposerImpl implements Composer {
     }
 
     private final void enterGroup(boolean z, Pending pending) {
-        Stack.m3515pushimpl(this.pendingStack, this.pending);
+        Stack.m3849pushimpl(this.pendingStack, this.pending);
         this.pending = pending;
         this.parentStateStack.push(this.groupNodeCount);
         this.parentStateStack.push(this.rGroupIndex);
@@ -1196,7 +1228,7 @@ public final class ComposerImpl implements Composer {
     }
 
     private final void exitGroup(int i, boolean z) {
-        Pending pending = (Pending) Stack.m3514popimpl(this.pendingStack);
+        Pending pending = (Pending) Stack.m3848popimpl(this.pendingStack);
         if (pending != null && !z) {
             pending.setGroupIndex(pending.getGroupIndex() + 1);
         }
@@ -1207,38 +1239,50 @@ public final class ComposerImpl implements Composer {
     }
 
     private final void end(boolean z) {
-        int hashCode;
+        long rotateRight;
+        long j;
         int remainingSlots;
         List<KeyInfo> list;
         List<KeyInfo> list2;
-        int hashCode2;
+        long rotateRight2;
+        long j2;
         int peek2 = this.parentStateStack.peek2() - 1;
         if (getInserting()) {
             int parent = this.writer.getParent();
             int groupKey = this.writer.groupKey(parent);
             Object groupObjectKey = this.writer.groupObjectKey(parent);
             Object groupAux = this.writer.groupAux(parent);
-            if (groupObjectKey != null) {
-                hashCode2 = Integer.hashCode(groupObjectKey instanceof Enum ? ((Enum) groupObjectKey).ordinal() : groupObjectKey.hashCode()) ^ Integer.rotateRight(getCompoundKeyHash(), 3);
-            } else if (groupAux == null || groupKey != 207 || Intrinsics.areEqual(groupAux, Composer.Companion.getEmpty())) {
-                hashCode2 = Integer.rotateRight(peek2 ^ getCompoundKeyHash(), 3) ^ Integer.hashCode(groupKey);
+            if (groupObjectKey == null) {
+                if (groupAux != null && groupKey == 207 && !Intrinsics.areEqual(groupAux, Composer.Companion.getEmpty())) {
+                    this.compositeKeyHashCode = Long.rotateRight(groupAux.hashCode() ^ Long.rotateRight(getCompositeKeyHashCode() ^ peek2, 3), 3);
+                } else {
+                    rotateRight2 = Long.rotateRight(getCompositeKeyHashCode() ^ peek2, 3);
+                    j2 = groupKey;
+                }
             } else {
-                this.compoundKeyHash = Integer.rotateRight(Integer.rotateRight(peek2 ^ getCompoundKeyHash(), 3) ^ Integer.hashCode(groupAux.hashCode()), 3);
+                int ordinal = groupObjectKey instanceof Enum ? ((Enum) groupObjectKey).ordinal() : groupObjectKey.hashCode();
+                rotateRight2 = Long.rotateRight(getCompositeKeyHashCode() ^ 0, 3);
+                j2 = ordinal;
             }
-            this.compoundKeyHash = Integer.rotateRight(hashCode2, 3);
+            this.compositeKeyHashCode = Long.rotateRight(rotateRight2 ^ j2, 3);
         } else {
             int parent2 = this.reader.getParent();
             int groupKey2 = this.reader.groupKey(parent2);
             Object groupObjectKey2 = this.reader.groupObjectKey(parent2);
             Object groupAux2 = this.reader.groupAux(parent2);
-            if (groupObjectKey2 != null) {
-                hashCode = Integer.hashCode(groupObjectKey2 instanceof Enum ? ((Enum) groupObjectKey2).ordinal() : groupObjectKey2.hashCode()) ^ Integer.rotateRight(getCompoundKeyHash(), 3);
-            } else if (groupAux2 == null || groupKey2 != 207 || Intrinsics.areEqual(groupAux2, Composer.Companion.getEmpty())) {
-                hashCode = Integer.rotateRight(peek2 ^ getCompoundKeyHash(), 3) ^ Integer.hashCode(groupKey2);
+            if (groupObjectKey2 == null) {
+                if (groupAux2 != null && groupKey2 == 207 && !Intrinsics.areEqual(groupAux2, Composer.Companion.getEmpty())) {
+                    this.compositeKeyHashCode = Long.rotateRight(groupAux2.hashCode() ^ Long.rotateRight(getCompositeKeyHashCode() ^ peek2, 3), 3);
+                } else {
+                    rotateRight = Long.rotateRight(getCompositeKeyHashCode() ^ peek2, 3);
+                    j = groupKey2;
+                }
             } else {
-                this.compoundKeyHash = Integer.rotateRight(Integer.rotateRight(peek2 ^ getCompoundKeyHash(), 3) ^ Integer.hashCode(groupAux2.hashCode()), 3);
+                int ordinal2 = groupObjectKey2 instanceof Enum ? ((Enum) groupObjectKey2).ordinal() : groupObjectKey2.hashCode();
+                rotateRight = Long.rotateRight(getCompositeKeyHashCode() ^ 0, 3);
+                j = ordinal2;
             }
-            this.compoundKeyHash = Integer.rotateRight(hashCode, 3);
+            this.compositeKeyHashCode = Long.rotateRight(rotateRight ^ j, 3);
         }
         int i = this.groupNodeCount;
         Pending pending = this.pending;
@@ -1254,7 +1298,16 @@ public final class ComposerImpl implements Composer {
             int i4 = 0;
             while (i2 < size2) {
                 KeyInfo keyInfo = keyInfos.get(i2);
-                if (fastToSet.contains(keyInfo)) {
+                if (!fastToSet.contains(keyInfo)) {
+                    this.changeListWriter.removeNode(pending.nodePositionOf(keyInfo) + pending.getStartIndex(), keyInfo.getNodes());
+                    pending.updateNodeCount(keyInfo.getLocation(), 0);
+                    this.changeListWriter.moveReaderRelativeTo(keyInfo.getLocation());
+                    this.reader.reposition(keyInfo.getLocation());
+                    recordDelete();
+                    this.reader.skipGroup();
+                    list = keyInfos;
+                    ComposerKt.removeRange(this.invalidations, keyInfo.getLocation(), keyInfo.getLocation() + this.reader.groupSize(keyInfo.getLocation()));
+                } else {
                     list = keyInfos;
                     if (!linkedHashSet.contains(keyInfo)) {
                         if (i3 < size) {
@@ -1281,15 +1334,6 @@ public final class ComposerImpl implements Composer {
                         }
                         keyInfos = list;
                     }
-                } else {
-                    this.changeListWriter.removeNode(pending.nodePositionOf(keyInfo) + pending.getStartIndex(), keyInfo.getNodes());
-                    pending.updateNodeCount(keyInfo.getLocation(), 0);
-                    this.changeListWriter.moveReaderRelativeTo(keyInfo.getLocation());
-                    this.reader.reposition(keyInfo.getLocation());
-                    recordDelete();
-                    this.reader.skipGroup();
-                    list = keyInfos;
-                    ComposerKt.removeRange(this.invalidations, keyInfo.getLocation(), keyInfo.getLocation() + this.reader.groupSize(keyInfo.getLocation()));
                 }
                 i2++;
                 keyInfos = list;
@@ -1355,14 +1399,15 @@ public final class ComposerImpl implements Composer {
         int parent = this.reader.getParent();
         int groupSize = this.reader.groupSize(parent) + parent;
         int i = this.nodeIndex;
-        int compoundKeyHash = getCompoundKeyHash();
+        long compositeKeyHashCode = getCompositeKeyHashCode();
         int i2 = this.groupNodeCount;
         int i3 = this.rGroupIndex;
         firstInRange = ComposerKt.firstInRange(this.invalidations, this.reader.getCurrentGroup(), groupSize);
-        int i4 = parent;
         boolean z2 = false;
+        int i4 = parent;
         while (firstInRange != null) {
             int location = firstInRange.getLocation();
+            RecomposeScopeImpl scope = firstInRange.getScope();
             ComposerKt.removeLocation(this.invalidations, location);
             if (firstInRange.isInvalid()) {
                 this.reader.reposition(location);
@@ -1370,24 +1415,27 @@ public final class ComposerImpl implements Composer {
                 recordUpsAndDowns(i4, currentGroup, parent);
                 this.nodeIndex = nodeIndexOf(location, currentGroup, parent, i);
                 this.rGroupIndex = rGroupIndexOf(currentGroup);
-                this.compoundKeyHash = compoundKeyOf(this.reader.parent(currentGroup), parent, compoundKeyHash);
+                this.compositeKeyHashCode = compositeKeyOf(this.reader.parent(currentGroup), parent, compositeKeyHashCode);
                 this.providerCache = null;
-                boolean z3 = !this.reusing && firstInRange.getScope().getReusing();
-                if (z3) {
-                    this.reusing = true;
-                }
-                firstInRange.getScope().compose(this);
-                if (z3) {
-                    this.reusing = false;
-                }
+                scope.compose(this);
                 this.providerCache = null;
                 this.reader.restoreParent(parent);
-                i4 = currentGroup;
                 z2 = true;
+                i4 = currentGroup;
             } else {
-                Stack.m3515pushimpl(this.invalidateStack, firstInRange.getScope());
-                firstInRange.getScope().rereadTrackedInstances();
-                Stack.m3514popimpl(this.invalidateStack);
+                Stack.m3849pushimpl(this.invalidateStack, scope);
+                CompositionObserver current = this.observerHolder.current();
+                if (current != null) {
+                    try {
+                        current.onScopeEnter(scope);
+                        scope.rereadTrackedInstances();
+                    } finally {
+                        current.onScopeExit(scope);
+                    }
+                } else {
+                    scope.rereadTrackedInstances();
+                }
+                Stack.m3848popimpl(this.invalidateStack);
             }
             firstInRange = ComposerKt.firstInRange(this.invalidations, this.reader.getCurrentGroup(), groupSize);
         }
@@ -1401,7 +1449,7 @@ public final class ComposerImpl implements Composer {
         } else {
             skipReaderToGroupEnd();
         }
-        this.compoundKeyHash = compoundKeyHash;
+        this.compositeKeyHashCode = compositeKeyHashCode;
         this.isComposing = z;
     }
 
@@ -1409,16 +1457,16 @@ public final class ComposerImpl implements Composer {
         int updatedNodeCount = updatedNodeCount(i);
         if (updatedNodeCount != i2) {
             int i3 = i2 - updatedNodeCount;
-            int m3508getSizeimpl = Stack.m3508getSizeimpl(this.pendingStack) - 1;
+            int m3842getSizeimpl = Stack.m3842getSizeimpl(this.pendingStack) - 1;
             while (i != -1) {
                 int updatedNodeCount2 = updatedNodeCount(i) + i3;
                 updateNodeCount(i, updatedNodeCount2);
-                int i4 = m3508getSizeimpl;
+                int i4 = m3842getSizeimpl;
                 while (true) {
                     if (-1 < i4) {
-                        Pending pending = (Pending) Stack.m3513peekimpl(this.pendingStack, i4);
+                        Pending pending = (Pending) Stack.m3847peekimpl(this.pendingStack, i4);
                         if (pending != null && pending.updateNodeCount(i, updatedNodeCount2)) {
-                            m3508getSizeimpl = i4 - 1;
+                            m3842getSizeimpl = i4 - 1;
                             break;
                         }
                         i4--;
@@ -1538,7 +1586,7 @@ public final class ComposerImpl implements Composer {
         }
     }
 
-    private final int groupCompoundKeyPart(SlotReader slotReader, int i) {
+    private final int groupCompositeKeyPart(SlotReader slotReader, int i) {
         Object groupAux;
         if (slotReader.hasObjectKey(i)) {
             Object groupObjectKey = slotReader.groupObjectKey(i);
@@ -1551,12 +1599,12 @@ public final class ComposerImpl implements Composer {
         return (groupKey != 207 || (groupAux = slotReader.groupAux(i)) == null || Intrinsics.areEqual(groupAux, Composer.Companion.getEmpty())) ? groupKey : groupAux.hashCode();
     }
 
-    public final boolean tryImminentInvalidation$runtime_release(RecomposeScopeImpl recomposeScopeImpl, Object obj) {
+    public final boolean tryImminentInvalidation$runtime(RecomposeScopeImpl recomposeScopeImpl, Object obj) {
         Anchor anchor = recomposeScopeImpl.getAnchor();
         if (anchor == null) {
             return false;
         }
-        int indexFor = anchor.toIndexFor(this.reader.getTable$runtime_release());
+        int indexFor = anchor.toIndexFor(this.reader.getTable$runtime());
         if (!this.isComposing || indexFor < this.reader.getCurrentGroup()) {
             return false;
         }
@@ -1564,7 +1612,7 @@ public final class ComposerImpl implements Composer {
         return true;
     }
 
-    public final int parentKey$runtime_release() {
+    public final int parentKey$runtime() {
         if (getInserting()) {
             SlotWriter slotWriter = this.writer;
             return slotWriter.groupKey(slotWriter.getParent());
@@ -1573,15 +1621,16 @@ public final class ComposerImpl implements Composer {
         return slotReader.groupKey(slotReader.getParent());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00c2  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00c8  */
     @Override // androidx.compose.runtime.Composer
     @ComposeCompilerApi
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void skipCurrentGroup() {
-        int rotateLeft;
+        long rotateLeft;
+        long j;
         if (this.invalidations.isEmpty()) {
             skipGroup();
             return;
@@ -1592,30 +1641,33 @@ public final class ComposerImpl implements Composer {
         Object groupAux = slotReader.getGroupAux();
         int i = this.rGroupIndex;
         if (groupObjectKey != null) {
-            rotateLeft = Integer.rotateLeft((groupObjectKey instanceof Enum ? ((Enum) groupObjectKey).ordinal() : groupObjectKey.hashCode()) ^ Integer.rotateLeft(getCompoundKeyHash(), 3), 3);
+            rotateLeft = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ (groupObjectKey instanceof Enum ? ((Enum) groupObjectKey).ordinal() : groupObjectKey.hashCode()), 3);
+            j = 0;
         } else if (groupAux != null && groupKey == 207 && !Intrinsics.areEqual(groupAux, Composer.Companion.getEmpty())) {
-            this.compoundKeyHash = Integer.rotateLeft(groupAux.hashCode() ^ Integer.rotateLeft(getCompoundKeyHash(), 3), 3) ^ i;
+            this.compositeKeyHashCode = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ groupAux.hashCode(), 3) ^ i;
             startReaderGroup(slotReader.isNode(), null);
             recomposeToGroupEnd();
             slotReader.endGroup();
             if (groupObjectKey == null) {
                 if (groupObjectKey instanceof Enum) {
-                    this.compoundKeyHash = Integer.rotateRight(Integer.hashCode(((Enum) groupObjectKey).ordinal()) ^ Integer.rotateRight(getCompoundKeyHash(), 3), 3);
+                    this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode() ^ 0, 3) ^ ((Enum) groupObjectKey).ordinal(), 3);
+                    return;
+                } else {
+                    this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode() ^ 0, 3) ^ groupObjectKey.hashCode(), 3);
                     return;
                 }
-                this.compoundKeyHash = Integer.rotateRight(Integer.hashCode(groupObjectKey.hashCode()) ^ Integer.rotateRight(getCompoundKeyHash(), 3), 3);
-                return;
             } else if (groupAux == null || groupKey != 207 || Intrinsics.areEqual(groupAux, Composer.Companion.getEmpty())) {
-                this.compoundKeyHash = Integer.rotateRight(Integer.rotateRight(getCompoundKeyHash() ^ i, 3) ^ Integer.hashCode(groupKey), 3);
+                this.compositeKeyHashCode = Long.rotateRight(groupKey ^ Long.rotateRight(getCompositeKeyHashCode() ^ i, 3), 3);
                 return;
             } else {
-                this.compoundKeyHash = Integer.rotateRight(Integer.hashCode(groupAux.hashCode()) ^ Integer.rotateRight(getCompoundKeyHash() ^ i, 3), 3);
+                this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode() ^ i, 3) ^ groupAux.hashCode(), 3);
                 return;
             }
         } else {
-            rotateLeft = Integer.rotateLeft(Integer.rotateLeft(getCompoundKeyHash(), 3) ^ groupKey, 3) ^ i;
+            rotateLeft = Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ groupKey, 3);
+            j = i;
         }
-        this.compoundKeyHash = rotateLeft;
+        this.compositeKeyHashCode = rotateLeft ^ j;
         startReaderGroup(slotReader.isNode(), null);
         recomposeToGroupEnd();
         slotReader.endGroup();
@@ -1631,19 +1683,19 @@ public final class ComposerImpl implements Composer {
     @Override // androidx.compose.runtime.Composer
     @ComposeCompilerApi
     public boolean shouldExecute(boolean z, int i) {
-        RecomposeScopeImpl currentRecomposeScope$runtime_release;
+        RecomposeScopeImpl currentRecomposeScope$runtime;
         if ((i & 1) != 0 || (!getInserting() && !this.reusing)) {
             return z || !getSkipping();
         }
         ShouldPauseCallback shouldPauseCallback = this.shouldPauseCallback;
-        if (shouldPauseCallback == null || (currentRecomposeScope$runtime_release = getCurrentRecomposeScope$runtime_release()) == null || !shouldPauseCallback.shouldPause()) {
+        if (shouldPauseCallback == null || (currentRecomposeScope$runtime = getCurrentRecomposeScope$runtime()) == null || !shouldPauseCallback.shouldPause()) {
             return true;
         }
-        currentRecomposeScope$runtime_release.setUsed(true);
-        currentRecomposeScope$runtime_release.setReusing(this.reusing);
-        currentRecomposeScope$runtime_release.setPaused(true);
-        this.changeListWriter.rememberPausingScope(currentRecomposeScope$runtime_release);
-        this.parentContext.reportPausedScope$runtime_release(currentRecomposeScope$runtime_release);
+        currentRecomposeScope$runtime.setUsed(true);
+        currentRecomposeScope$runtime.setReusing(this.reusing);
+        currentRecomposeScope$runtime.setPaused(true);
+        this.changeListWriter.rememberPausingScope(currentRecomposeScope$runtime);
+        this.parentContext.reportPausedScope$runtime(currentRecomposeScope$runtime);
         return false;
     }
 
@@ -1656,9 +1708,9 @@ public final class ComposerImpl implements Composer {
         if (getInserting()) {
             return;
         }
-        RecomposeScopeImpl currentRecomposeScope$runtime_release = getCurrentRecomposeScope$runtime_release();
-        if (currentRecomposeScope$runtime_release != null) {
-            currentRecomposeScope$runtime_release.scopeSkipped();
+        RecomposeScopeImpl currentRecomposeScope$runtime = getCurrentRecomposeScope$runtime();
+        if (currentRecomposeScope$runtime != null) {
+            currentRecomposeScope$runtime.scopeSkipped();
         }
         if (this.invalidations.isEmpty()) {
             skipReaderToGroupEnd();
@@ -1695,8 +1747,8 @@ public final class ComposerImpl implements Composer {
         return this;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1708,9 +1760,9 @@ public final class ComposerImpl implements Composer {
             removeLocation = ComposerKt.removeLocation(this.invalidations, this.reader.getParent());
             Object next = this.reader.next();
             if (Intrinsics.areEqual(next, Composer.Companion.getEmpty())) {
-                ControlledComposition composition = getComposition();
+                CompositionImpl composition = getComposition();
                 Intrinsics.checkNotNull(composition, "null cannot be cast to non-null type androidx.compose.runtime.CompositionImpl");
-                recomposeScopeImpl = new RecomposeScopeImpl((CompositionImpl) composition);
+                recomposeScopeImpl = new RecomposeScopeImpl(composition);
                 updateValue(recomposeScopeImpl);
             } else {
                 Intrinsics.checkNotNull(next, "null cannot be cast to non-null type androidx.compose.runtime.RecomposeScopeImpl");
@@ -1724,30 +1776,43 @@ public final class ComposerImpl implements Composer {
                 if (!forcedRecompose) {
                     z = false;
                     recomposeScopeImpl.setRequiresRecompose(z);
-                    Stack.m3515pushimpl(this.invalidateStack, recomposeScopeImpl);
-                    recomposeScopeImpl.start(this.compositionToken);
+                    Stack.m3849pushimpl(this.invalidateStack, recomposeScopeImpl);
+                    enterRecomposeScope(recomposeScopeImpl);
                     if (recomposeScopeImpl.getPaused()) {
                         return;
                     }
                     recomposeScopeImpl.setPaused(false);
                     recomposeScopeImpl.setResuming(true);
                     this.changeListWriter.startResumingScope(recomposeScopeImpl);
+                    if (this.reusing || !recomposeScopeImpl.getReusing()) {
+                        return;
+                    }
+                    this.reusing = true;
+                    recomposeScopeImpl.setResetReusing(true);
                     return;
                 }
             }
             z = true;
             recomposeScopeImpl.setRequiresRecompose(z);
-            Stack.m3515pushimpl(this.invalidateStack, recomposeScopeImpl);
-            recomposeScopeImpl.start(this.compositionToken);
+            Stack.m3849pushimpl(this.invalidateStack, recomposeScopeImpl);
+            enterRecomposeScope(recomposeScopeImpl);
             if (recomposeScopeImpl.getPaused()) {
             }
         } else {
-            ControlledComposition composition2 = getComposition();
+            CompositionImpl composition2 = getComposition();
             Intrinsics.checkNotNull(composition2, "null cannot be cast to non-null type androidx.compose.runtime.CompositionImpl");
-            RecomposeScopeImpl recomposeScopeImpl2 = new RecomposeScopeImpl((CompositionImpl) composition2);
-            Stack.m3515pushimpl(this.invalidateStack, recomposeScopeImpl2);
+            RecomposeScopeImpl recomposeScopeImpl2 = new RecomposeScopeImpl(composition2);
+            Stack.m3849pushimpl(this.invalidateStack, recomposeScopeImpl2);
             updateValue(recomposeScopeImpl2);
-            recomposeScopeImpl2.start(this.compositionToken);
+            enterRecomposeScope(recomposeScopeImpl2);
+        }
+    }
+
+    private final void enterRecomposeScope(RecomposeScopeImpl recomposeScopeImpl) {
+        recomposeScopeImpl.start(this.compositionToken);
+        CompositionObserver current = this.observerHolder.current();
+        if (current != null) {
+            current.onScopeEnter(recomposeScopeImpl);
         }
     }
 
@@ -1756,19 +1821,24 @@ public final class ComposerImpl implements Composer {
     public ScopeUpdateScope endRestartGroup() {
         Anchor anchor;
         RecomposeScopeImpl recomposeScopeImpl = null;
-        RecomposeScopeImpl recomposeScopeImpl2 = Stack.m3511isNotEmptyimpl(this.invalidateStack) ? (RecomposeScopeImpl) Stack.m3514popimpl(this.invalidateStack) : null;
+        RecomposeScopeImpl recomposeScopeImpl2 = Stack.m3845isNotEmptyimpl(this.invalidateStack) ? (RecomposeScopeImpl) Stack.m3848popimpl(this.invalidateStack) : null;
         if (recomposeScopeImpl2 != null) {
             recomposeScopeImpl2.setRequiresRecompose(false);
-            Function1<Composition, Unit> end = recomposeScopeImpl2.end(this.compositionToken);
-            if (end != null) {
-                this.changeListWriter.endCompositionScope(end, getComposition());
+            Function1<Composition, Unit> exitRecomposeScope = exitRecomposeScope(recomposeScopeImpl2);
+            if (exitRecomposeScope != null) {
+                this.changeListWriter.endCompositionScope(exitRecomposeScope, getComposition());
             }
             if (recomposeScopeImpl2.getResuming()) {
                 recomposeScopeImpl2.setResuming(false);
                 this.changeListWriter.endResumingScope(recomposeScopeImpl2);
+                recomposeScopeImpl2.setReusing(false);
+                if (recomposeScopeImpl2.getResetReusing()) {
+                    recomposeScopeImpl2.setResetReusing(false);
+                    this.reusing = false;
+                }
             }
         }
-        if (recomposeScopeImpl2 != null && !recomposeScopeImpl2.getSkipped$runtime_release() && (recomposeScopeImpl2.getUsed() || this.forceRecomposeScopes)) {
+        if (recomposeScopeImpl2 != null && !recomposeScopeImpl2.getSkipped$runtime() && (recomposeScopeImpl2.getUsed() || this.forceRecomposeScopes)) {
             if (recomposeScopeImpl2.getAnchor() == null) {
                 if (getInserting()) {
                     SlotWriter slotWriter = this.writer;
@@ -1786,25 +1856,32 @@ public final class ComposerImpl implements Composer {
         return recomposeScopeImpl;
     }
 
+    private final Function1<Composition, Unit> exitRecomposeScope(RecomposeScopeImpl recomposeScopeImpl) {
+        CompositionObserver current = this.observerHolder.current();
+        if (current != null) {
+            current.onScopeExit(recomposeScopeImpl);
+        }
+        return recomposeScopeImpl.end(this.compositionToken);
+    }
+
     @Override // androidx.compose.runtime.Composer
     public void insertMovableContent(MovableContent<?> movableContent, Object obj) {
         Intrinsics.checkNotNull(movableContent, "null cannot be cast to non-null type androidx.compose.runtime.MovableContent<kotlin.Any?>");
         invokeMovableContentLambda(movableContent, currentCompositionLocalScope(), obj, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0033, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0034, code lost:
         recordProviderUpdate(r14);
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void invokeMovableContentLambda(final MovableContent<Object> movableContent, PersistentCompositionLocalMap persistentCompositionLocalMap, final Object obj, boolean z) {
+    private final void invokeMovableContentLambda(final MovableContent<Object> movableContent, PersistentCompositionLocalMap persistentCompositionLocalMap, final Object obj, boolean z) {
         startMovableGroup(MovableContentKt.movableContentKey, movableContent);
         updateSlot(obj);
-        int compoundKeyHash = getCompoundKeyHash();
+        long compositeKeyHashCode = getCompositeKeyHashCode();
         try {
-            this.compoundKeyHash = MovableContentKt.movableContentKey;
+            this.compositeKeyHashCode = (long) MovableContentKt.movableContentKey;
             boolean z2 = false;
             if (getInserting()) {
                 SlotWriter.markGroup$default(this.writer, 0, 1, null);
@@ -1812,22 +1889,16 @@ public final class ComposerImpl implements Composer {
             if (!getInserting() && !Intrinsics.areEqual(this.reader.getGroupAux(), persistentCompositionLocalMap)) {
                 z2 = true;
             }
-            m3460startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m3474getGroupULZAiWs(), persistentCompositionLocalMap);
+            m3784startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m3801getGroupULZAiWs(), persistentCompositionLocalMap);
             this.providerCache = null;
             if (getInserting() && !z) {
                 this.writerHasAProvider = true;
                 SlotWriter slotWriter = this.writer;
-                this.parentContext.insertMovableContent$runtime_release(new MovableContentStateReference(movableContent, obj, getComposition(), this.insertTable, slotWriter.anchor(slotWriter.parent(slotWriter.getParent())), CollectionsKt.emptyList(), currentCompositionLocalScope(), null));
+                this.parentContext.insertMovableContent$runtime(new MovableContentStateReference(movableContent, obj, getComposition(), this.insertTable, slotWriter.anchor(slotWriter.parent(slotWriter.getParent())), CollectionsKt.emptyList(), currentCompositionLocalScope(), null));
             } else {
                 boolean z3 = this.providersInvalid;
                 this.providersInvalid = z2;
-                Utils_jvmKt.invokeComposable(this, ComposableLambdaKt.composableLambdaInstance(316014703, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.runtime.ComposerImpl$invokeMovableContentLambda$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(2);
-                    }
-
+                Expect_jvmKt.invokeComposable(this, ComposableLambdaKt.composableLambdaInstance(316014703, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.runtime.ComposerImpl$invokeMovableContentLambda$1
                     @Override // kotlin.jvm.functions.Function2
                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
                         invoke(composer, num.intValue());
@@ -1835,13 +1906,13 @@ public final class ComposerImpl implements Composer {
                     }
 
                     public final void invoke(Composer composer, int i) {
-                        ComposerKt.sourceInformation(composer, "C3386@136506L18:Composer.kt#9igjgp");
+                        ComposerKt.sourceInformation(composer, "C3477@141575L18:Composer.kt#9igjgp");
                         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
                             composer.skipToGroupEnd();
                             return;
                         }
                         if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(316014703, i, -1, "androidx.compose.runtime.ComposerImpl.invokeMovableContentLambda.<anonymous> (Composer.kt:3386)");
+                            ComposerKt.traceEventStart(316014703, i, -1, "androidx.compose.runtime.ComposerImpl.invokeMovableContentLambda.<anonymous> (Composer.kt:3477)");
                         }
                         movableContent.getContent().invoke(obj, composer, 0);
                         if (ComposerKt.isTraceInProgress()) {
@@ -1851,11 +1922,22 @@ public final class ComposerImpl implements Composer {
                 }));
                 this.providersInvalid = z3;
             }
-        } finally {
-            endGroup();
-            this.providerCache = null;
-            this.compoundKeyHash = compoundKeyHash;
-            endMovableGroup();
+        } catch (Throwable th) {
+            try {
+                throw ComposeStackTraceKt.attachComposeStackTrace(th, new Function0() { // from class: androidx.compose.runtime.ComposerImpl$$ExternalSyntheticLambda0
+                    @Override // kotlin.jvm.functions.Function0
+                    public final Object invoke() {
+                        List currentStackTrace;
+                        currentStackTrace = ComposerImpl.this.currentStackTrace();
+                        return currentStackTrace;
+                    }
+                });
+            } finally {
+                endGroup();
+                this.providerCache = null;
+                this.compositeKeyHashCode = compositeKeyHashCode;
+                endMovableGroup();
+            }
         }
     }
 
@@ -1875,16 +1957,16 @@ public final class ComposerImpl implements Composer {
         ChangeList changeList;
         ComposerChangeListWriter composerChangeListWriter2;
         ChangeList changeList2;
-        SlotTable slotTable$runtime_release;
-        Anchor anchor$runtime_release;
+        SlotTable slotTable$runtime;
+        Anchor anchor$runtime;
         List<? extends Object> collectNodesFrom;
         SlotReader slotReader;
-        MutableIntObjectMap mutableIntObjectMap;
+        MutableIntObjectMap<PersistentCompositionLocalMap> mutableIntObjectMap;
         ComposerChangeListWriter composerChangeListWriter3;
         ChangeList changeList3;
         int i;
         int i2;
-        SlotTable slotTable$runtime_release2;
+        SlotTable slotTable$runtime2;
         List<Pair<MovableContentStateReference, MovableContentStateReference>> list2 = list;
         ComposerChangeListWriter composerChangeListWriter4 = this.changeListWriter;
         ChangeList changeList4 = this.lateChanges;
@@ -1900,66 +1982,24 @@ public final class ComposerImpl implements Composer {
                     Pair<MovableContentStateReference, MovableContentStateReference> pair = list2.get(i4);
                     final MovableContentStateReference component1 = pair.component1();
                     MovableContentStateReference component2 = pair.component2();
-                    Anchor anchor$runtime_release2 = component1.getAnchor$runtime_release();
-                    int anchorIndex = component1.getSlotTable$runtime_release().anchorIndex(anchor$runtime_release2);
+                    Anchor anchor$runtime2 = component1.getAnchor$runtime();
+                    int anchorIndex = component1.getSlotTable$runtime().anchorIndex(anchor$runtime2);
                     IntRef intRef = new IntRef(i3, 1, null);
-                    this.changeListWriter.determineMovableContentNodeIndex(intRef, anchor$runtime_release2);
+                    this.changeListWriter.determineMovableContentNodeIndex(intRef, anchor$runtime2);
                     if (component2 == null) {
-                        if (Intrinsics.areEqual(component1.getSlotTable$runtime_release(), this.insertTable)) {
+                        if (Intrinsics.areEqual(component1.getSlotTable$runtime(), this.insertTable)) {
                             createFreshInsertTable();
                         }
-                        final SlotReader openReader = component1.getSlotTable$runtime_release().openReader();
+                        final SlotReader openReader = component1.getSlotTable$runtime().openReader();
                         openReader.reposition(anchorIndex);
                         this.changeListWriter.moveReaderToAbsolute(anchorIndex);
                         final ChangeList changeList6 = new ChangeList();
-                        recomposeMovableContent$default(this, null, null, null, null, new Function0<Unit>() { // from class: androidx.compose.runtime.ComposerImpl$insertMovableContentGuarded$1$1$1$1
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            {
-                                super(0);
-                            }
-
+                        recomposeMovableContent$default(this, null, null, null, null, new Function0() { // from class: androidx.compose.runtime.ComposerImpl$$ExternalSyntheticLambda1
                             @Override // kotlin.jvm.functions.Function0
-                            public /* bridge */ /* synthetic */ Unit invoke() {
-                                invoke2();
-                                return Unit.INSTANCE;
-                            }
-
-                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                            public final void invoke2() {
-                                ComposerChangeListWriter composerChangeListWriter5;
-                                ComposerChangeListWriter composerChangeListWriter6;
-                                composerChangeListWriter5 = ComposerImpl.this.changeListWriter;
-                                ChangeList changeList7 = changeList6;
-                                ComposerImpl composerImpl = ComposerImpl.this;
-                                SlotReader slotReader2 = openReader;
-                                MovableContentStateReference movableContentStateReference = component1;
-                                ChangeList changeList8 = composerChangeListWriter5.getChangeList();
-                                try {
-                                    composerChangeListWriter5.setChangeList(changeList7);
-                                    SlotReader reader$runtime_release = composerImpl.getReader$runtime_release();
-                                    int[] iArr = composerImpl.nodeCountOverrides;
-                                    MutableIntObjectMap mutableIntObjectMap2 = composerImpl.providerUpdates;
-                                    composerImpl.nodeCountOverrides = null;
-                                    composerImpl.providerUpdates = null;
-                                    composerImpl.setReader$runtime_release(slotReader2);
-                                    composerChangeListWriter6 = composerImpl.changeListWriter;
-                                    boolean implicitRootStart = composerChangeListWriter6.getImplicitRootStart();
-                                    try {
-                                        composerChangeListWriter6.setImplicitRootStart(false);
-                                        composerImpl.invokeMovableContentLambda(movableContentStateReference.getContent$runtime_release(), movableContentStateReference.getLocals$runtime_release(), movableContentStateReference.getParameter$runtime_release(), true);
-                                        composerChangeListWriter6.setImplicitRootStart(implicitRootStart);
-                                        Unit unit = Unit.INSTANCE;
-                                        composerImpl.setReader$runtime_release(reader$runtime_release);
-                                        composerImpl.nodeCountOverrides = iArr;
-                                        composerImpl.providerUpdates = mutableIntObjectMap2;
-                                    } catch (Throwable th) {
-                                        composerChangeListWriter6.setImplicitRootStart(implicitRootStart);
-                                        throw th;
-                                    }
-                                } finally {
-                                    composerChangeListWriter5.setChangeList(changeList8);
-                                }
+                            public final Object invoke() {
+                                Unit insertMovableContentGuarded$lambda$41$lambda$40$lambda$34$lambda$33;
+                                insertMovableContentGuarded$lambda$41$lambda$40$lambda$34$lambda$33 = ComposerImpl.insertMovableContentGuarded$lambda$41$lambda$40$lambda$34$lambda$33(ComposerImpl.this, changeList6, openReader, component1);
+                                return insertMovableContentGuarded$lambda$41$lambda$40$lambda$34$lambda$33;
                             }
                         }, 15, null);
                         this.changeListWriter.includeOperationsIn(changeList6, intRef);
@@ -1970,32 +2010,32 @@ public final class ComposerImpl implements Composer {
                         i = size;
                         i2 = i4;
                     } else {
-                        MovableContentState movableContentStateResolve$runtime_release = this.parentContext.movableContentStateResolve$runtime_release(component2);
-                        if (movableContentStateResolve$runtime_release == null || (slotTable$runtime_release = movableContentStateResolve$runtime_release.getSlotTable$runtime_release()) == null) {
-                            slotTable$runtime_release = component2.getSlotTable$runtime_release();
+                        MovableContentState movableContentStateResolve$runtime = this.parentContext.movableContentStateResolve$runtime(component2);
+                        if (movableContentStateResolve$runtime == null || (slotTable$runtime = movableContentStateResolve$runtime.getSlotTable$runtime()) == null) {
+                            slotTable$runtime = component2.getSlotTable$runtime();
                         }
-                        if (movableContentStateResolve$runtime_release == null || (slotTable$runtime_release2 = movableContentStateResolve$runtime_release.getSlotTable$runtime_release()) == null || (anchor$runtime_release = slotTable$runtime_release2.anchor(0)) == null) {
-                            anchor$runtime_release = component2.getAnchor$runtime_release();
+                        if (movableContentStateResolve$runtime == null || (slotTable$runtime2 = movableContentStateResolve$runtime.getSlotTable$runtime()) == null || (anchor$runtime = slotTable$runtime2.anchor(0)) == null) {
+                            anchor$runtime = component2.getAnchor$runtime();
                         }
-                        collectNodesFrom = ComposerKt.collectNodesFrom(slotTable$runtime_release, anchor$runtime_release);
+                        collectNodesFrom = ComposerKt.collectNodesFrom(slotTable$runtime, anchor$runtime);
                         if (!collectNodesFrom.isEmpty()) {
                             this.changeListWriter.copyNodesToNewAnchorLocation(collectNodesFrom, intRef);
-                            if (Intrinsics.areEqual(component1.getSlotTable$runtime_release(), this.slotTable)) {
-                                int anchorIndex2 = this.slotTable.anchorIndex(anchor$runtime_release2);
+                            if (Intrinsics.areEqual(component1.getSlotTable$runtime(), this.slotTable)) {
+                                int anchorIndex2 = this.slotTable.anchorIndex(anchor$runtime2);
                                 updateNodeCount(anchorIndex2, updatedNodeCount(anchorIndex2) + collectNodesFrom.size());
                             }
                         }
-                        this.changeListWriter.copySlotTableToAnchorLocation(movableContentStateResolve$runtime_release, this.parentContext, component2, component1);
-                        SlotReader openReader2 = slotTable$runtime_release.openReader();
+                        this.changeListWriter.copySlotTableToAnchorLocation(movableContentStateResolve$runtime, this.parentContext, component2, component1);
+                        SlotReader openReader2 = slotTable$runtime.openReader();
                         try {
-                            SlotReader reader$runtime_release = getReader$runtime_release();
+                            SlotReader slotReader2 = this.reader;
                             int[] iArr = this.nodeCountOverrides;
-                            MutableIntObjectMap mutableIntObjectMap2 = this.providerUpdates;
+                            MutableIntObjectMap<PersistentCompositionLocalMap> mutableIntObjectMap2 = this.providerUpdates;
                             this.nodeCountOverrides = null;
                             this.providerUpdates = null;
                             try {
-                                setReader$runtime_release(openReader2);
-                                int anchorIndex3 = slotTable$runtime_release.anchorIndex(anchor$runtime_release);
+                                this.reader = openReader2;
+                                int anchorIndex3 = slotTable$runtime.anchorIndex(anchor$runtime);
                                 openReader2.reposition(anchorIndex3);
                                 this.changeListWriter.moveReaderToAbsolute(anchorIndex3);
                                 ChangeList changeList7 = new ChangeList();
@@ -2010,99 +2050,97 @@ public final class ComposerImpl implements Composer {
                                         boolean implicitRootStart = composerChangeListWriter6.getImplicitRootStart();
                                         try {
                                             composerChangeListWriter6.setImplicitRootStart(false);
-                                            i2 = i4;
-                                            mutableIntObjectMap = mutableIntObjectMap2;
-                                            composerChangeListWriter2 = composerChangeListWriter4;
-                                            composerChangeListWriter3 = composerChangeListWriter5;
-                                            changeList2 = changeList5;
-                                            changeList3 = changeList8;
+                                            component2.transferPendingInvalidations$runtime();
                                             try {
-                                                recomposeMovableContent(component2.getComposition$runtime_release(), component1.getComposition$runtime_release(), Integer.valueOf(slotReader.getCurrentGroup()), component2.getInvalidations$runtime_release(), new Function0<Unit>() { // from class: androidx.compose.runtime.ComposerImpl$insertMovableContentGuarded$1$1$2$1$1$1$1
-                                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                                    {
-                                                        super(0);
-                                                    }
-
-                                                    @Override // kotlin.jvm.functions.Function0
-                                                    public /* bridge */ /* synthetic */ Unit invoke() {
-                                                        invoke2();
-                                                        return Unit.INSTANCE;
-                                                    }
-
-                                                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                                    public final void invoke2() {
-                                                        ComposerImpl.this.invokeMovableContentLambda(component1.getContent$runtime_release(), component1.getLocals$runtime_release(), component1.getParameter$runtime_release(), true);
-                                                    }
-                                                });
+                                                i2 = i4;
+                                                mutableIntObjectMap = mutableIntObjectMap2;
+                                                composerChangeListWriter2 = composerChangeListWriter4;
+                                                composerChangeListWriter3 = composerChangeListWriter5;
+                                                changeList2 = changeList5;
+                                                changeList3 = changeList8;
                                                 try {
-                                                    composerChangeListWriter6.setImplicitRootStart(implicitRootStart);
+                                                    recomposeMovableContent(component2.getComposition$runtime(), component1.getComposition$runtime(), Integer.valueOf(slotReader.getCurrentGroup()), component2.getInvalidations$runtime(), new Function0() { // from class: androidx.compose.runtime.ComposerImpl$$ExternalSyntheticLambda2
+                                                        @Override // kotlin.jvm.functions.Function0
+                                                        public final Object invoke() {
+                                                            Unit insertMovableContentGuarded$lambda$41$lambda$40$lambda$39$lambda$38$lambda$37$lambda$36$lambda$35;
+                                                            insertMovableContentGuarded$lambda$41$lambda$40$lambda$39$lambda$38$lambda$37$lambda$36$lambda$35 = ComposerImpl.insertMovableContentGuarded$lambda$41$lambda$40$lambda$39$lambda$38$lambda$37$lambda$36$lambda$35(ComposerImpl.this, component1);
+                                                            return insertMovableContentGuarded$lambda$41$lambda$40$lambda$39$lambda$38$lambda$37$lambda$36$lambda$35;
+                                                        }
+                                                    });
                                                     try {
-                                                        composerChangeListWriter3.setChangeList(changeList3);
-                                                        this.changeListWriter.includeOperationsIn(changeList7, intRef);
-                                                        Unit unit2 = Unit.INSTANCE;
+                                                        composerChangeListWriter6.setImplicitRootStart(implicitRootStart);
                                                         try {
-                                                            setReader$runtime_release(reader$runtime_release);
-                                                            this.nodeCountOverrides = iArr;
-                                                            this.providerUpdates = mutableIntObjectMap;
-                                                            Unit unit3 = Unit.INSTANCE;
+                                                            composerChangeListWriter3.setChangeList(changeList3);
+                                                            this.changeListWriter.includeOperationsIn(changeList7, intRef);
+                                                            Unit unit2 = Unit.INSTANCE;
                                                             try {
+                                                                this.reader = slotReader2;
+                                                                this.nodeCountOverrides = iArr;
+                                                                this.providerUpdates = mutableIntObjectMap;
+                                                                Unit unit3 = Unit.INSTANCE;
+                                                                try {
+                                                                    slotReader.close();
+                                                                } catch (Throwable th) {
+                                                                    th = th;
+                                                                    composerChangeListWriter = composerChangeListWriter2;
+                                                                    changeList = changeList2;
+                                                                    composerChangeListWriter.setChangeList(changeList);
+                                                                    throw th;
+                                                                }
+                                                            } catch (Throwable th2) {
+                                                                th = th2;
                                                                 slotReader.close();
-                                                            } catch (Throwable th) {
-                                                                th = th;
-                                                                composerChangeListWriter = composerChangeListWriter2;
-                                                                changeList = changeList2;
-                                                                composerChangeListWriter.setChangeList(changeList);
                                                                 throw th;
                                                             }
-                                                        } catch (Throwable th2) {
-                                                            th = th2;
-                                                            slotReader.close();
+                                                        } catch (Throwable th3) {
+                                                            th = th3;
+                                                            this.reader = slotReader2;
+                                                            this.nodeCountOverrides = iArr;
+                                                            this.providerUpdates = mutableIntObjectMap;
                                                             throw th;
                                                         }
-                                                    } catch (Throwable th3) {
-                                                        th = th3;
-                                                        setReader$runtime_release(reader$runtime_release);
-                                                        this.nodeCountOverrides = iArr;
-                                                        this.providerUpdates = mutableIntObjectMap;
+                                                    } catch (Throwable th4) {
+                                                        th = th4;
+                                                        composerChangeListWriter3.setChangeList(changeList3);
                                                         throw th;
                                                     }
-                                                } catch (Throwable th4) {
-                                                    th = th4;
-                                                    composerChangeListWriter3.setChangeList(changeList3);
+                                                } catch (Throwable th5) {
+                                                    th = th5;
+                                                    composerChangeListWriter6.setImplicitRootStart(implicitRootStart);
                                                     throw th;
                                                 }
-                                            } catch (Throwable th5) {
-                                                th = th5;
-                                                composerChangeListWriter6.setImplicitRootStart(implicitRootStart);
-                                                throw th;
+                                            } catch (Throwable th6) {
+                                                th = th6;
+                                                mutableIntObjectMap = mutableIntObjectMap2;
+                                                changeList3 = changeList8;
+                                                composerChangeListWriter3 = composerChangeListWriter5;
                                             }
-                                        } catch (Throwable th6) {
-                                            th = th6;
+                                        } catch (Throwable th7) {
+                                            th = th7;
                                             mutableIntObjectMap = mutableIntObjectMap2;
                                             composerChangeListWriter3 = composerChangeListWriter5;
                                             changeList3 = changeList8;
                                         }
-                                    } catch (Throwable th7) {
-                                        th = th7;
+                                    } catch (Throwable th8) {
+                                        th = th8;
                                         mutableIntObjectMap = mutableIntObjectMap2;
                                         composerChangeListWriter3 = composerChangeListWriter5;
                                         changeList3 = changeList8;
                                         composerChangeListWriter3.setChangeList(changeList3);
                                         throw th;
                                     }
-                                } catch (Throwable th8) {
-                                    th = th8;
+                                } catch (Throwable th9) {
+                                    th = th9;
                                     mutableIntObjectMap = mutableIntObjectMap2;
                                     slotReader = openReader2;
                                 }
-                            } catch (Throwable th9) {
-                                th = th9;
+                            } catch (Throwable th10) {
+                                th = th10;
                                 mutableIntObjectMap = mutableIntObjectMap2;
                                 slotReader = openReader2;
                             }
-                        } catch (Throwable th10) {
-                            th = th10;
+                        } catch (Throwable th11) {
+                            th = th11;
                             slotReader = openReader2;
                         }
                     }
@@ -2113,8 +2151,8 @@ public final class ComposerImpl implements Composer {
                     composerChangeListWriter4 = composerChangeListWriter2;
                     changeList5 = changeList2;
                     i3 = 0;
-                } catch (Throwable th11) {
-                    th = th11;
+                } catch (Throwable th12) {
+                    th = th12;
                     composerChangeListWriter2 = composerChangeListWriter4;
                     changeList2 = changeList5;
                 }
@@ -2124,24 +2162,59 @@ public final class ComposerImpl implements Composer {
             this.changeListWriter.endMovableContentPlacement();
             this.changeListWriter.moveReaderToAbsolute(0);
             composerChangeListWriter7.setChangeList(changeList9);
-        } catch (Throwable th12) {
-            th = th12;
+        } catch (Throwable th13) {
+            th = th13;
             composerChangeListWriter = composerChangeListWriter4;
             changeList = changeList5;
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit insertMovableContentGuarded$lambda$41$lambda$40$lambda$34$lambda$33(ComposerImpl composerImpl, ChangeList changeList, SlotReader slotReader, MovableContentStateReference movableContentStateReference) {
+        ComposerChangeListWriter composerChangeListWriter = composerImpl.changeListWriter;
+        ChangeList changeList2 = composerChangeListWriter.getChangeList();
+        try {
+            composerChangeListWriter.setChangeList(changeList);
+            SlotReader slotReader2 = composerImpl.reader;
+            int[] iArr = composerImpl.nodeCountOverrides;
+            MutableIntObjectMap<PersistentCompositionLocalMap> mutableIntObjectMap = composerImpl.providerUpdates;
+            composerImpl.nodeCountOverrides = null;
+            composerImpl.providerUpdates = null;
+            composerImpl.reader = slotReader;
+            ComposerChangeListWriter composerChangeListWriter2 = composerImpl.changeListWriter;
+            boolean implicitRootStart = composerChangeListWriter2.getImplicitRootStart();
+            composerChangeListWriter2.setImplicitRootStart(false);
+            composerImpl.invokeMovableContentLambda(movableContentStateReference.getContent$runtime(), movableContentStateReference.getLocals$runtime(), movableContentStateReference.getParameter$runtime(), true);
+            composerChangeListWriter2.setImplicitRootStart(implicitRootStart);
+            Unit unit = Unit.INSTANCE;
+            composerImpl.reader = slotReader2;
+            composerImpl.nodeCountOverrides = iArr;
+            composerImpl.providerUpdates = mutableIntObjectMap;
+            composerChangeListWriter.setChangeList(changeList2);
+            return Unit.INSTANCE;
+        } catch (Throwable th) {
+            composerChangeListWriter.setChangeList(changeList2);
+            throw th;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit insertMovableContentGuarded$lambda$41$lambda$40$lambda$39$lambda$38$lambda$37$lambda$36$lambda$35(ComposerImpl composerImpl, MovableContentStateReference movableContentStateReference) {
+        composerImpl.invokeMovableContentLambda(movableContentStateReference.getContent$runtime(), movableContentStateReference.getLocals$runtime(), movableContentStateReference.getParameter$runtime(), true);
+        return Unit.INSTANCE;
+    }
+
     private final <R> R withReader(SlotReader slotReader, Function0<? extends R> function0) {
-        SlotReader reader$runtime_release = getReader$runtime_release();
+        SlotReader slotReader2 = this.reader;
         int[] iArr = this.nodeCountOverrides;
-        MutableIntObjectMap mutableIntObjectMap = this.providerUpdates;
+        MutableIntObjectMap<PersistentCompositionLocalMap> mutableIntObjectMap = this.providerUpdates;
         this.nodeCountOverrides = null;
         this.providerUpdates = null;
         try {
-            setReader$runtime_release(slotReader);
+            this.reader = slotReader;
             return function0.invoke();
         } finally {
-            setReader$runtime_release(reader$runtime_release);
+            this.reader = slotReader2;
             this.nodeCountOverrides = iArr;
             this.providerUpdates = mutableIntObjectMap;
         }
@@ -2183,9 +2256,9 @@ public final class ComposerImpl implements Composer {
                 RecomposeScopeImpl component1 = pair.component1();
                 Object component2 = pair.component2();
                 if (component2 != null) {
-                    tryImminentInvalidation$runtime_release(component1, component2);
+                    tryImminentInvalidation$runtime(component1, component2);
                 } else {
-                    tryImminentInvalidation$runtime_release(component1, null);
+                    tryImminentInvalidation$runtime(component1, null);
                 }
             }
             if (controlledComposition != null) {
@@ -2228,20 +2301,87 @@ public final class ComposerImpl implements Composer {
         this.sourceMarkersEnabled = false;
     }
 
-    /* renamed from: composeContent--ZbOJvo$runtime_release  reason: not valid java name */
-    public final void m3461composeContentZbOJvo$runtime_release(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Composer, ? super Integer, Unit> function2, ShouldPauseCallback shouldPauseCallback) {
+    public final List<ComposeStackTraceFrame> stackTraceForValue$runtime(final Object obj) {
+        List<ComposeStackTraceFrame> plus;
+        if (this.sourceMarkersEnabled) {
+            ObjectLocation findLocation = ComposeStackTraceBuilderKt.findLocation(this.slotTable, new Function1() { // from class: androidx.compose.runtime.ComposerImpl$$ExternalSyntheticLambda4
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj2) {
+                    boolean stackTraceForValue$lambda$43;
+                    stackTraceForValue$lambda$43 = ComposerImpl.stackTraceForValue$lambda$43(obj, obj2);
+                    return Boolean.valueOf(stackTraceForValue$lambda$43);
+                }
+            });
+            return (findLocation == null || (plus = CollectionsKt.plus((Collection) stackTraceForGroup(findLocation.component1(), findLocation.component2()), (Iterable) parentStackTrace())) == null) ? CollectionsKt.emptyList() : plus;
+        }
+        return CollectionsKt.emptyList();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean stackTraceForValue$lambda$43(Object obj, Object obj2) {
+        if (obj2 != obj) {
+            RememberObserverHolder rememberObserverHolder = obj2 instanceof RememberObserverHolder ? (RememberObserverHolder) obj2 : null;
+            return (rememberObserverHolder != null ? rememberObserverHolder.getWrapped() : null) == obj;
+        }
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final List<ComposeStackTraceFrame> currentStackTrace() {
+        if (this.sourceMarkersEnabled) {
+            ArrayList arrayList = new ArrayList();
+            arrayList.addAll(ComposeStackTraceBuilderKt.buildTrace$default(this.writer, null, 0, null, 7, null));
+            arrayList.addAll(ComposeStackTraceBuilderKt.buildTrace(this.reader));
+            arrayList.addAll(parentStackTrace());
+            return arrayList;
+        }
+        return CollectionsKt.emptyList();
+    }
+
+    private final List<ComposeStackTraceFrame> stackTraceForGroup(int i, Integer num) {
+        if (this.sourceMarkersEnabled) {
+            SlotReader openReader = this.slotTable.openReader();
+            try {
+                return ComposeStackTraceBuilderKt.traceForGroup(openReader, i, num);
+            } finally {
+                openReader.close();
+            }
+        }
+        return CollectionsKt.emptyList();
+    }
+
+    public final List<ComposeStackTraceFrame> parentStackTrace() {
+        Composition composition$runtime = this.parentContext.getComposition$runtime();
+        CompositionImpl compositionImpl = composition$runtime instanceof CompositionImpl ? (CompositionImpl) composition$runtime : null;
+        if (compositionImpl == null) {
+            return CollectionsKt.emptyList();
+        }
+        Integer findSubcompositionContextGroup = ComposeStackTraceBuilderKt.findSubcompositionContextGroup(compositionImpl.getSlotTable$runtime(), this.parentContext);
+        if (findSubcompositionContextGroup == null) {
+            return CollectionsKt.emptyList();
+        }
+        SlotReader openReader = compositionImpl.getSlotTable$runtime().openReader();
+        try {
+            return ComposeStackTraceBuilderKt.traceForGroup(openReader, findSubcompositionContextGroup.intValue(), 0);
+        } finally {
+            openReader.close();
+        }
+    }
+
+    /* renamed from: composeContent--ZbOJvo$runtime  reason: not valid java name */
+    public final void m3785composeContentZbOJvo$runtime(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Composer, ? super Integer, Unit> function2, ShouldPauseCallback shouldPauseCallback) {
         if (!this.changes.isEmpty()) {
             ComposerKt.composeImmediateRuntimeError("Expected applyChanges() to have been called");
         }
         this.shouldPauseCallback = shouldPauseCallback;
         try {
-            m3459doComposeaFTiNEg(mutableScatterMap, function2);
+            m3783doComposeaFTiNEg(mutableScatterMap, function2);
         } finally {
             this.shouldPauseCallback = null;
         }
     }
 
-    public final void prepareCompose$runtime_release(Function0<Unit> function0) {
+    public final void prepareCompose$runtime(Function0<Unit> function0) {
         if (this.isComposing) {
             ComposerKt.composeImmediateRuntimeError("Preparing a composition while composing is not supported");
         }
@@ -2253,15 +2393,15 @@ public final class ComposerImpl implements Composer {
         }
     }
 
-    /* renamed from: recompose-aFTiNEg$runtime_release  reason: not valid java name */
-    public final boolean m3462recomposeaFTiNEg$runtime_release(MutableScatterMap<Object, Object> mutableScatterMap, ShouldPauseCallback shouldPauseCallback) {
+    /* renamed from: recompose-aFTiNEg$runtime  reason: not valid java name */
+    public final boolean m3786recomposeaFTiNEg$runtime(MutableScatterMap<Object, Object> mutableScatterMap, ShouldPauseCallback shouldPauseCallback) {
         if (!this.changes.isEmpty()) {
             ComposerKt.composeImmediateRuntimeError("Expected applyChanges() to have been called");
         }
-        if (ScopeMap.m3625getSizeimpl(mutableScatterMap) > 0 || !this.invalidations.isEmpty() || this.forciblyRecompose) {
+        if (ScopeMap.m3961getSizeimpl(mutableScatterMap) > 0 || !this.invalidations.isEmpty() || this.forciblyRecompose) {
             this.shouldPauseCallback = shouldPauseCallback;
             try {
-                m3459doComposeaFTiNEg(mutableScatterMap, null);
+                m3783doComposeaFTiNEg(mutableScatterMap, null);
                 this.shouldPauseCallback = null;
                 return this.changes.isNotEmpty();
             } catch (Throwable th) {
@@ -2273,8 +2413,19 @@ public final class ComposerImpl implements Composer {
     }
 
     /* renamed from: updateComposerInvalidations-RY85e9Y  reason: not valid java name */
-    public final void m3463updateComposerInvalidationsRY85e9Y(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public final void m3787updateComposerInvalidationsRY85e9Y(MutableScatterMap<Object, Object> mutableScatterMap) {
         Comparator comparator;
+        for (int lastIndex = CollectionsKt.getLastIndex(this.invalidations); -1 < lastIndex; lastIndex--) {
+            Invalidation invalidation = this.invalidations.get(lastIndex);
+            Anchor anchor = invalidation.getScope().getAnchor();
+            if (anchor != null && anchor.getValid()) {
+                if (invalidation.getLocation() != anchor.getLocation$runtime()) {
+                    invalidation.setLocation(anchor.getLocation$runtime());
+                }
+            } else {
+                this.invalidations.remove(lastIndex);
+            }
+        }
         MutableScatterMap<Object, Object> mutableScatterMap2 = mutableScatterMap;
         Object[] objArr = mutableScatterMap2.keys;
         Object[] objArr2 = mutableScatterMap2.values;
@@ -2293,14 +2444,14 @@ public final class ComposerImpl implements Composer {
                             Object obj2 = objArr2[i4];
                             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type androidx.compose.runtime.RecomposeScopeImpl");
                             RecomposeScopeImpl recomposeScopeImpl = (RecomposeScopeImpl) obj;
-                            Anchor anchor = recomposeScopeImpl.getAnchor();
-                            if (anchor != null) {
-                                int location$runtime_release = anchor.getLocation$runtime_release();
+                            Anchor anchor2 = recomposeScopeImpl.getAnchor();
+                            if (anchor2 != null) {
+                                int location$runtime = anchor2.getLocation$runtime();
                                 List<Invalidation> list = this.invalidations;
                                 if (obj2 == ScopeInvalidated.INSTANCE) {
                                     obj2 = null;
                                 }
-                                list.add(new Invalidation(recomposeScopeImpl, location$runtime_release, obj2));
+                                list.add(new Invalidation(recomposeScopeImpl, location$runtime, obj2));
                             }
                         }
                         j >>= 8;
@@ -2321,17 +2472,21 @@ public final class ComposerImpl implements Composer {
     }
 
     /* renamed from: doCompose-aFTiNEg  reason: not valid java name */
-    private final void m3459doComposeaFTiNEg(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Composer, ? super Integer, Unit> function2) {
+    private final void m3783doComposeaFTiNEg(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Composer, ? super Integer, Unit> function2) {
         if (this.isComposing) {
             ComposerKt.composeImmediateRuntimeError("Reentrant composition is not supported");
         }
+        CompositionObserver current = this.observerHolder.current();
         Object beginSection = Trace.INSTANCE.beginSection("Compose:recompose");
         try {
             this.compositionToken = Long.hashCode(SnapshotKt.currentSnapshot().getSnapshotId());
             this.providerUpdates = null;
-            m3463updateComposerInvalidationsRY85e9Y(mutableScatterMap);
+            m3787updateComposerInvalidationsRY85e9Y(mutableScatterMap);
             this.nodeIndex = 0;
             this.isComposing = true;
+            if (current != null) {
+                current.onBeginComposition(getComposition());
+            }
             startRoot();
             Object nextSlot = nextSlot();
             if (nextSlot != function2 && function2 != null) {
@@ -2339,29 +2494,27 @@ public final class ComposerImpl implements Composer {
             }
             ComposerImpl$derivedStateObserver$1 composerImpl$derivedStateObserver$1 = this.derivedStateObserver;
             MutableVector<DerivedStateObserver> derivedStateObservers = SnapshotStateKt.derivedStateObservers();
-            try {
-                derivedStateObservers.add(composerImpl$derivedStateObserver$1);
-                if (function2 != null) {
-                    startGroup(200, ComposerKt.getInvocation());
-                    Utils_jvmKt.invokeComposable(this, function2);
-                    endGroup();
-                } else if ((this.forciblyRecompose || this.providersInvalid) && nextSlot != null && !Intrinsics.areEqual(nextSlot, Composer.Companion.getEmpty())) {
-                    startGroup(200, ComposerKt.getInvocation());
-                    Utils_jvmKt.invokeComposable(this, (Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(nextSlot, 2));
-                    endGroup();
-                } else {
-                    skipCurrentGroup();
-                }
-                derivedStateObservers.removeAt(derivedStateObservers.getSize() - 1);
-                endRoot();
-                this.isComposing = false;
-                this.invalidations.clear();
-                createFreshInsertTable();
-                Unit unit = Unit.INSTANCE;
-            } catch (Throwable th) {
-                derivedStateObservers.removeAt(derivedStateObservers.getSize() - 1);
-                throw th;
+            derivedStateObservers.add(composerImpl$derivedStateObserver$1);
+            if (function2 != null) {
+                startGroup(200, ComposerKt.getInvocation());
+                Expect_jvmKt.invokeComposable(this, function2);
+                endGroup();
+            } else if ((this.forciblyRecompose || this.providersInvalid) && nextSlot != null && !Intrinsics.areEqual(nextSlot, Composer.Companion.getEmpty())) {
+                startGroup(200, ComposerKt.getInvocation());
+                Expect_jvmKt.invokeComposable(this, (Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(nextSlot, 2));
+                endGroup();
+            } else {
+                skipCurrentGroup();
             }
+            derivedStateObservers.removeAt(derivedStateObservers.getSize() - 1);
+            endRoot();
+            if (current != null) {
+                current.onEndComposition(getComposition());
+            }
+            this.isComposing = false;
+            this.invalidations.clear();
+            createFreshInsertTable();
+            Unit unit = Unit.INSTANCE;
         } finally {
             Trace.INSTANCE.endSection(beginSection);
         }
@@ -2407,17 +2560,19 @@ public final class ComposerImpl implements Composer {
     }
 
     private static final MovableContentStateReference reportFreeMovableContent$createMovableContentReferenceForGroup(ComposerImpl composerImpl, int i, List<MovableContentStateReference> list) {
-        List filterToRange;
         Object groupObjectKey = composerImpl.reader.groupObjectKey(i);
         Intrinsics.checkNotNull(groupObjectKey, "null cannot be cast to non-null type androidx.compose.runtime.MovableContent<kotlin.Any?>");
         MovableContent movableContent = (MovableContent) groupObjectKey;
         Object groupGet = composerImpl.reader.groupGet(i, 0);
         Anchor anchor = composerImpl.reader.anchor(i);
-        filterToRange = ComposerKt.filterToRange(composerImpl.invalidations, i, composerImpl.reader.groupSize(i) + i);
-        ArrayList arrayList = new ArrayList(filterToRange.size());
-        int size = filterToRange.size();
-        for (int i2 = 0; i2 < size; i2++) {
-            Invalidation invalidation = (Invalidation) filterToRange.get(i2);
+        int groupSize = composerImpl.reader.groupSize(i) + i;
+        ArrayList arrayList = new ArrayList();
+        List<Invalidation> list2 = composerImpl.invalidations;
+        for (int findInsertLocation = ComposerKt.findInsertLocation(list2, i); findInsertLocation < list2.size(); findInsertLocation++) {
+            Invalidation invalidation = list2.get(findInsertLocation);
+            if (invalidation.getLocation() >= groupSize) {
+                break;
+            }
             arrayList.add(TuplesKt.to(invalidation.getScope(), invalidation.getInstances()));
         }
         return new MovableContentStateReference(movableContent, groupGet, composerImpl.getComposition(), composerImpl.slotTable, anchor, arrayList, composerImpl.currentCompositionLocalScope(i), list);
@@ -2464,7 +2619,7 @@ public final class ComposerImpl implements Composer {
             if (groupKey == 126665345 && (groupObjectKey instanceof MovableContent)) {
                 MovableContentStateReference reportFreeMovableContent$movableContentReferenceFor = reportFreeMovableContent$movableContentReferenceFor(composerImpl, i2);
                 if (reportFreeMovableContent$movableContentReferenceFor != null) {
-                    composerImpl.parentContext.deletedMovableContent$runtime_release(reportFreeMovableContent$movableContentReferenceFor);
+                    composerImpl.parentContext.deletedMovableContent$runtime(reportFreeMovableContent$movableContentReferenceFor);
                     composerImpl.changeListWriter.recordSlotEditing();
                     composerImpl.changeListWriter.releaseMovableGroupAtCurrent(composerImpl.getComposition(), composerImpl.parentContext, reportFreeMovableContent$movableContentReferenceFor);
                 }
@@ -2479,7 +2634,7 @@ public final class ComposerImpl implements Composer {
                 if (compositionContextHolder != null) {
                     for (ComposerImpl composerImpl2 : compositionContextHolder.getRef().getComposers()) {
                         composerImpl2.reportAllMovableContent();
-                        composerImpl.parentContext.reportRemovedComposition$runtime_release(composerImpl2.getComposition());
+                        composerImpl.parentContext.reportRemovedComposition$runtime(composerImpl2.getComposition());
                     }
                 }
                 return slotReader.nodeCount(i2);
@@ -2529,9 +2684,7 @@ public final class ComposerImpl implements Composer {
 
     private final void reportAllMovableContent() {
         if (this.slotTable.containsMark()) {
-            ControlledComposition composition = getComposition();
-            Intrinsics.checkNotNull(composition, "null cannot be cast to non-null type androidx.compose.runtime.CompositionImpl");
-            ((CompositionImpl) composition).updateMovingInvalidations$runtime_release();
+            getComposition().updateMovingInvalidations$runtime();
             ChangeList changeList = new ChangeList();
             this.deferredChanges = changeList;
             SlotReader openReader = this.slotTable.openReader();
@@ -2552,7 +2705,7 @@ public final class ComposerImpl implements Composer {
 
     private final void finalizeCompose() {
         this.changeListWriter.finalizeComposition();
-        if (!Stack.m3510isEmptyimpl(this.pendingStack)) {
+        if (!Stack.m3844isEmptyimpl(this.pendingStack)) {
             ComposerKt.composeImmediateRuntimeError("Start/end imbalance");
         }
         cleanUpCompose();
@@ -2562,19 +2715,19 @@ public final class ComposerImpl implements Composer {
         this.pending = null;
         this.nodeIndex = 0;
         this.groupNodeCount = 0;
-        this.compoundKeyHash = 0;
+        this.compositeKeyHashCode = 0L;
         this.nodeExpected = false;
         this.changeListWriter.resetTransientState();
-        Stack.m3503clearimpl(this.invalidateStack);
+        Stack.m3837clearimpl(this.invalidateStack);
         clearUpdatedNodeCounts();
     }
 
-    public final void verifyConsistent$runtime_release() {
+    public final void verifyConsistent$runtime() {
         this.insertTable.verifyWellFormed();
     }
 
     /* compiled from: Composer.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001B\u0011\u0012\n\u0010\u0002\u001a\u00060\u0003R\u00020\u0004¢\u0006\u0002\u0010\u0005J\b\u0010\b\u001a\u00020\tH\u0016J\b\u0010\n\u001a\u00020\tH\u0016J\b\u0010\u000b\u001a\u00020\tH\u0016R\u0015\u0010\u0002\u001a\u00060\u0003R\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\f"}, d2 = {"Landroidx/compose/runtime/ComposerImpl$CompositionContextHolder;", "Landroidx/compose/runtime/ReusableRememberObserver;", "ref", "Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;", "Landroidx/compose/runtime/ComposerImpl;", "(Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;)V", "getRef", "()Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;", "onAbandoned", "", "onForgotten", "onRemembered", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u0001B\u0013\u0012\n\u0010\u0002\u001a\u00060\u0003R\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\b\u0010\t\u001a\u00020\nH\u0016J\b\u0010\u000b\u001a\u00020\nH\u0016J\b\u0010\f\u001a\u00020\nH\u0016R\u0015\u0010\u0002\u001a\u00060\u0003R\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b¨\u0006\r"}, d2 = {"Landroidx/compose/runtime/ComposerImpl$CompositionContextHolder;", "Landroidx/compose/runtime/ReusableRememberObserver;", "ref", "Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;", "Landroidx/compose/runtime/ComposerImpl;", "<init>", "(Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;)V", "getRef", "()Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;", "onRemembered", "", "onAbandoned", "onForgotten", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class CompositionContextHolder implements ReusableRememberObserver {
         public static final int $stable = 8;
@@ -2604,44 +2757,44 @@ public final class ComposerImpl implements Composer {
     }
 
     /* compiled from: Composer.kt */
-    @Metadata(d1 = {"\u0000\u0092\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u000f\b\u0080\u0004\u0018\u00002\u00020\u0001B'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\b\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\u0002\u0010\tJ*\u00102\u001a\u0002032\u0006\u0010\u0014\u001a\u0002042\u0011\u00105\u001a\r\u0012\u0004\u0012\u00020306¢\u0006\u0002\b7H\u0010¢\u0006\u0004\b8\u00109J8\u0010:\u001a\b\u0012\u0004\u0012\u00020<0;2\u0006\u0010\u0014\u001a\u0002042\u0006\u0010=\u001a\u00020>2\u0011\u00105\u001a\r\u0012\u0004\u0012\u00020306¢\u0006\u0002\b7H\u0010¢\u0006\u0004\b?\u0010@J\u0015\u0010A\u001a\u0002032\u0006\u0010B\u001a\u00020CH\u0010¢\u0006\u0002\bDJ\u0006\u0010E\u001a\u000203J\r\u0010F\u001a\u000203H\u0010¢\u0006\u0002\bGJ\r\u0010\u001b\u001a\u00020\u0019H\u0010¢\u0006\u0002\bHJ\u0015\u0010I\u001a\u0002032\u0006\u0010B\u001a\u00020CH\u0010¢\u0006\u0002\bJJ\u0015\u0010K\u001a\u0002032\u0006\u0010\u0014\u001a\u000204H\u0010¢\u0006\u0002\bLJ\u0015\u0010M\u001a\u0002032\u0006\u0010N\u001a\u00020<H\u0010¢\u0006\u0002\bOJ)\u0010P\u001a\u0002032\u0006\u0010B\u001a\u00020C2\u0006\u0010Q\u001a\u00020R2\n\u0010S\u001a\u0006\u0012\u0002\b\u00030TH\u0010¢\u0006\u0002\bUJ\u0017\u0010V\u001a\u0004\u0018\u00010R2\u0006\u0010B\u001a\u00020CH\u0010¢\u0006\u0002\bWJ1\u0010X\u001a\b\u0012\u0004\u0012\u00020<0;2\u0006\u0010\u0014\u001a\u0002042\u0006\u0010=\u001a\u00020>2\f\u0010Y\u001a\b\u0012\u0004\u0012\u00020<0;H\u0010¢\u0006\u0002\bZJ\u001b\u0010[\u001a\u0002032\f\u0010\\\u001a\b\u0012\u0004\u0012\u00020(0\u0010H\u0010¢\u0006\u0002\b]J\u0015\u0010^\u001a\u0002032\u0006\u0010_\u001a\u00020`H\u0010¢\u0006\u0002\baJ\u0015\u0010b\u001a\u0002032\u0006\u0010\u0014\u001a\u000204H\u0010¢\u0006\u0002\bcJ\u0015\u0010d\u001a\u0002032\u0006\u0010N\u001a\u00020<H\u0010¢\u0006\u0002\beJ\u0015\u0010f\u001a\u0002032\u0006\u0010\u0014\u001a\u000204H\u0010¢\u0006\u0002\bgJ\r\u0010h\u001a\u000203H\u0010¢\u0006\u0002\biJ\u0015\u0010j\u001a\u0002032\u0006\u0010_\u001a\u00020`H\u0010¢\u0006\u0002\bkJ\u0015\u0010l\u001a\u0002032\u0006\u0010\u0014\u001a\u000204H\u0010¢\u0006\u0002\bmJ\u000e\u0010n\u001a\u0002032\u0006\u0010N\u001a\u00020\u0019R\u0014\u0010\n\u001a\u00020\u00058PX\u0090\u0004¢\u0006\u0006\u001a\u0004\b\u000b\u0010\fR\u0014\u0010\u0004\u001a\u00020\u0005X\u0090\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\fR\u0014\u0010\u0006\u001a\u00020\u0005X\u0090\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\fR\u0017\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u00158PX\u0090\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017R+\u0010\u001a\u001a\u00020\u00192\u0006\u0010\u0018\u001a\u00020\u00198B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u001f\u0010 \u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR\u0014\u0010\u0002\u001a\u00020\u0003X\u0090\u0004¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\"R\u0014\u0010#\u001a\u00020$8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b%\u0010&R(\u0010'\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020(0\u0010\u0018\u00010\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b)\u0010\u0013\"\u0004\b*\u0010+R\u0016\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0090\u0004¢\u0006\b\n\u0000\u001a\u0004\b,\u0010-R\u001a\u0010.\u001a\u00020$8PX\u0090\u0004¢\u0006\f\u0012\u0004\b/\u00100\u001a\u0004\b1\u0010&¨\u0006o"}, d2 = {"Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;", "Landroidx/compose/runtime/CompositionContext;", "compoundHashKey", "", "collectingParameterInformation", "", "collectingSourceInformation", "observerHolder", "Landroidx/compose/runtime/CompositionObserverHolder;", "(Landroidx/compose/runtime/ComposerImpl;IZZLandroidx/compose/runtime/CompositionObserverHolder;)V", "collectingCallByInformation", "getCollectingCallByInformation$runtime_release", "()Z", "getCollectingParameterInformation$runtime_release", "getCollectingSourceInformation$runtime_release", "composers", "", "Landroidx/compose/runtime/ComposerImpl;", "getComposers", "()Ljava/util/Set;", "composition", "Landroidx/compose/runtime/Composition;", "getComposition$runtime_release", "()Landroidx/compose/runtime/Composition;", "<set-?>", "Landroidx/compose/runtime/PersistentCompositionLocalMap;", "compositionLocalScope", "getCompositionLocalScope", "()Landroidx/compose/runtime/PersistentCompositionLocalMap;", "setCompositionLocalScope", "(Landroidx/compose/runtime/PersistentCompositionLocalMap;)V", "compositionLocalScope$delegate", "Landroidx/compose/runtime/MutableState;", "getCompoundHashKey$runtime_release", "()I", "effectCoroutineContext", "Lkotlin/coroutines/CoroutineContext;", "getEffectCoroutineContext", "()Lkotlin/coroutines/CoroutineContext;", "inspectionTables", "Landroidx/compose/runtime/tooling/CompositionData;", "getInspectionTables", "setInspectionTables", "(Ljava/util/Set;)V", "getObserverHolder$runtime_release", "()Landroidx/compose/runtime/CompositionObserverHolder;", "recomposeCoroutineContext", "getRecomposeCoroutineContext$runtime_release$annotations", "()V", "getRecomposeCoroutineContext$runtime_release", "composeInitial", "", "Landroidx/compose/runtime/ControlledComposition;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "composeInitial$runtime_release", "(Landroidx/compose/runtime/ControlledComposition;Lkotlin/jvm/functions/Function2;)V", "composeInitialPaused", "Landroidx/collection/ScatterSet;", "Landroidx/compose/runtime/RecomposeScopeImpl;", "shouldPause", "Landroidx/compose/runtime/ShouldPauseCallback;", "composeInitialPaused$runtime_release", "(Landroidx/compose/runtime/ControlledComposition;Landroidx/compose/runtime/ShouldPauseCallback;Lkotlin/jvm/functions/Function2;)Landroidx/collection/ScatterSet;", "deletedMovableContent", TypedValues.Custom.S_REFERENCE, "Landroidx/compose/runtime/MovableContentStateReference;", "deletedMovableContent$runtime_release", "dispose", "doneComposing", "doneComposing$runtime_release", "getCompositionLocalScope$runtime_release", "insertMovableContent", "insertMovableContent$runtime_release", "invalidate", "invalidate$runtime_release", "invalidateScope", "scope", "invalidateScope$runtime_release", "movableContentStateReleased", "data", "Landroidx/compose/runtime/MovableContentState;", "applier", "Landroidx/compose/runtime/Applier;", "movableContentStateReleased$runtime_release", "movableContentStateResolve", "movableContentStateResolve$runtime_release", "recomposePaused", "invalidScopes", "recomposePaused$runtime_release", "recordInspectionTable", "table", "recordInspectionTable$runtime_release", "registerComposer", "composer", "Landroidx/compose/runtime/Composer;", "registerComposer$runtime_release", "registerComposition", "registerComposition$runtime_release", "reportPausedScope", "reportPausedScope$runtime_release", "reportRemovedComposition", "reportRemovedComposition$runtime_release", "startComposing", "startComposing$runtime_release", "unregisterComposer", "unregisterComposer$runtime_release", "unregisterComposition", "unregisterComposition$runtime_release", "updateCompositionLocalScope", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000¢\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0080\u0004\u0018\u00002\u00020\u0001B-\u0012\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\b\u0010\b\u001a\u0004\u0018\u00010\t¢\u0006\u0004\b\n\u0010\u000bJ\u0006\u0010 \u001a\u00020!J\u0015\u0010\"\u001a\u00020!2\u0006\u0010#\u001a\u00020$H\u0010¢\u0006\u0002\b%J\u0015\u0010&\u001a\u00020!2\u0006\u0010#\u001a\u00020$H\u0010¢\u0006\u0002\b'J\u0015\u0010(\u001a\u00020!2\u0006\u0010)\u001a\u00020*H\u0010¢\u0006\u0002\b+J\u0015\u0010,\u001a\u00020!2\u0006\u0010)\u001a\u00020*H\u0010¢\u0006\u0002\b-J\u0015\u0010.\u001a\u00020!2\u0006\u0010/\u001a\u000200H\u0010¢\u0006\u0002\b1J*\u0010:\u001a\u00020!2\u0006\u0010)\u001a\u00020*2\u0011\u0010;\u001a\r\u0012\u0004\u0012\u00020!0<¢\u0006\u0002\b=H\u0010¢\u0006\u0004\b>\u0010?J8\u0010@\u001a\b\u0012\u0004\u0012\u0002000A2\u0006\u0010)\u001a\u00020*2\u0006\u0010B\u001a\u00020C2\u0011\u0010;\u001a\r\u0012\u0004\u0012\u00020!0<¢\u0006\u0002\b=H\u0010¢\u0006\u0004\bD\u0010EJ1\u0010F\u001a\b\u0012\u0004\u0012\u0002000A2\u0006\u0010)\u001a\u00020*2\u0006\u0010B\u001a\u00020C2\f\u0010G\u001a\b\u0012\u0004\u0012\u0002000AH\u0010¢\u0006\u0002\bHJ\u0015\u0010I\u001a\u00020!2\u0006\u0010)\u001a\u00020*H\u0010¢\u0006\u0002\bJJ\u0015\u0010K\u001a\u00020!2\u0006\u0010/\u001a\u000200H\u0010¢\u0006\u0002\bLJ\r\u0010P\u001a\u00020NH\u0010¢\u0006\u0002\bVJ\u000e\u0010W\u001a\u00020!2\u0006\u0010/\u001a\u00020NJ\u001b\u0010X\u001a\u00020!2\f\u0010Y\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015H\u0010¢\u0006\u0002\bZJ\r\u0010[\u001a\u00020!H\u0010¢\u0006\u0002\b\\J\r\u0010]\u001a\u00020!H\u0010¢\u0006\u0002\b^J\u0015\u0010_\u001a\u00020!2\u0006\u0010`\u001a\u00020aH\u0010¢\u0006\u0002\bbJ\u0015\u0010c\u001a\u00020!2\u0006\u0010`\u001a\u00020aH\u0010¢\u0006\u0002\bdJ\u0017\u0010e\u001a\u0004\u0018\u00010f2\u0006\u0010`\u001a\u00020aH\u0010¢\u0006\u0002\bgJ)\u0010h\u001a\u00020!2\u0006\u0010`\u001a\u00020a2\u0006\u0010i\u001a\u00020f2\n\u0010j\u001a\u0006\u0012\u0002\b\u00030kH\u0010¢\u0006\u0002\blJ\u0015\u0010m\u001a\u00020!2\u0006\u0010)\u001a\u00020*H\u0010¢\u0006\u0002\bnR\u001a\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004X\u0090\u0004¢\u0006\n\n\u0002\u0010\u000e\u001a\u0004\b\f\u0010\rR\u0014\u0010\u0005\u001a\u00020\u0006X\u0090\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0014\u0010\u0007\u001a\u00020\u0006X\u0090\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0010R\u0016\u0010\b\u001a\u0004\u0018\u00010\tX\u0090\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R(\u0010\u0014\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00160\u0015\u0018\u00010\u0015X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aR\u0017\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001c0\u0015¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0018R\u0014\u0010\u001e\u001a\u00020\u00068PX\u0090\u0004¢\u0006\u0006\u001a\u0004\b\u001f\u0010\u0010R\u0014\u00102\u001a\u0002038VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b4\u00105R\u001a\u00106\u001a\u0002038PX\u0090\u0004¢\u0006\f\u0012\u0004\b7\u00108\u001a\u0004\b9\u00105R+\u0010O\u001a\u00020N2\u0006\u0010M\u001a\u00020N8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\bT\u0010U\u001a\u0004\bP\u0010Q\"\u0004\bR\u0010SR\u0014\u0010)\u001a\u00020o8PX\u0090\u0004¢\u0006\u0006\u001a\u0004\bp\u0010q¨\u0006r"}, d2 = {"Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;", "Landroidx/compose/runtime/CompositionContext;", "compositeKeyHashCode", "", "Landroidx/compose/runtime/CompositeKeyHashCode;", "collectingParameterInformation", "", "collectingSourceInformation", "observerHolder", "Landroidx/compose/runtime/CompositionObserverHolder;", "<init>", "(Landroidx/compose/runtime/ComposerImpl;JZZLandroidx/compose/runtime/CompositionObserverHolder;)V", "getCompositeKeyHashCode$runtime", "()J", "J", "getCollectingParameterInformation$runtime", "()Z", "getCollectingSourceInformation$runtime", "getObserverHolder$runtime", "()Landroidx/compose/runtime/CompositionObserverHolder;", "inspectionTables", "", "Landroidx/compose/runtime/tooling/CompositionData;", "getInspectionTables", "()Ljava/util/Set;", "setInspectionTables", "(Ljava/util/Set;)V", "composers", "Landroidx/compose/runtime/ComposerImpl;", "getComposers", "collectingCallByInformation", "getCollectingCallByInformation$runtime", "dispose", "", "registerComposer", "composer", "Landroidx/compose/runtime/Composer;", "registerComposer$runtime", "unregisterComposer", "unregisterComposer$runtime", "registerComposition", "composition", "Landroidx/compose/runtime/ControlledComposition;", "registerComposition$runtime", "unregisterComposition", "unregisterComposition$runtime", "reportPausedScope", "scope", "Landroidx/compose/runtime/RecomposeScopeImpl;", "reportPausedScope$runtime", "effectCoroutineContext", "Lkotlin/coroutines/CoroutineContext;", "getEffectCoroutineContext", "()Lkotlin/coroutines/CoroutineContext;", "recomposeCoroutineContext", "getRecomposeCoroutineContext$runtime$annotations", "()V", "getRecomposeCoroutineContext$runtime", "composeInitial", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "composeInitial$runtime", "(Landroidx/compose/runtime/ControlledComposition;Lkotlin/jvm/functions/Function2;)V", "composeInitialPaused", "Landroidx/collection/ScatterSet;", "shouldPause", "Landroidx/compose/runtime/ShouldPauseCallback;", "composeInitialPaused$runtime", "(Landroidx/compose/runtime/ControlledComposition;Landroidx/compose/runtime/ShouldPauseCallback;Lkotlin/jvm/functions/Function2;)Landroidx/collection/ScatterSet;", "recomposePaused", "invalidScopes", "recomposePaused$runtime", "invalidate", "invalidate$runtime", "invalidateScope", "invalidateScope$runtime", "<set-?>", "Landroidx/compose/runtime/PersistentCompositionLocalMap;", "compositionLocalScope", "getCompositionLocalScope", "()Landroidx/compose/runtime/PersistentCompositionLocalMap;", "setCompositionLocalScope", "(Landroidx/compose/runtime/PersistentCompositionLocalMap;)V", "compositionLocalScope$delegate", "Landroidx/compose/runtime/MutableState;", "getCompositionLocalScope$runtime", "updateCompositionLocalScope", "recordInspectionTable", "table", "recordInspectionTable$runtime", "startComposing", "startComposing$runtime", "doneComposing", "doneComposing$runtime", "insertMovableContent", TypedValues.Custom.S_REFERENCE, "Landroidx/compose/runtime/MovableContentStateReference;", "insertMovableContent$runtime", "deletedMovableContent", "deletedMovableContent$runtime", "movableContentStateResolve", "Landroidx/compose/runtime/MovableContentState;", "movableContentStateResolve$runtime", "movableContentStateReleased", "data", "applier", "Landroidx/compose/runtime/Applier;", "movableContentStateReleased$runtime", "reportRemovedComposition", "reportRemovedComposition$runtime", "Landroidx/compose/runtime/Composition;", "getComposition$runtime", "()Landroidx/compose/runtime/Composition;", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public final class CompositionContextImpl extends CompositionContext {
         private final boolean collectingParameterInformation;
         private final boolean collectingSourceInformation;
-        private final Set<ComposerImpl> composers = new LinkedHashSet();
-        private final MutableState compositionLocalScope$delegate = SnapshotStateKt.mutableStateOf(PersistentCompositionLocalMapKt.persistentCompositionLocalHashMapOf(), SnapshotStateKt.referentialEqualityPolicy());
-        private final int compoundHashKey;
+        private final long compositeKeyHashCode;
         private Set<Set<CompositionData>> inspectionTables;
         private final CompositionObserverHolder observerHolder;
+        private final Set<ComposerImpl> composers = new LinkedHashSet();
+        private final MutableState compositionLocalScope$delegate = SnapshotStateKt.mutableStateOf(PersistentCompositionLocalMapKt.persistentCompositionLocalHashMapOf(), SnapshotStateKt.referentialEqualityPolicy());
 
-        public static /* synthetic */ void getRecomposeCoroutineContext$runtime_release$annotations() {
+        public static /* synthetic */ void getRecomposeCoroutineContext$runtime$annotations() {
         }
 
-        public CompositionContextImpl(int i, boolean z, boolean z2, CompositionObserverHolder compositionObserverHolder) {
-            this.compoundHashKey = i;
+        public CompositionContextImpl(long j, boolean z, boolean z2, CompositionObserverHolder compositionObserverHolder) {
+            this.compositeKeyHashCode = j;
             this.collectingParameterInformation = z;
             this.collectingSourceInformation = z2;
             this.observerHolder = compositionObserverHolder;
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public int getCompoundHashKey$runtime_release() {
-            return this.compoundHashKey;
+        public long getCompositeKeyHashCode$runtime() {
+            return this.compositeKeyHashCode;
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public boolean getCollectingParameterInformation$runtime_release() {
+        public boolean getCollectingParameterInformation$runtime() {
             return this.collectingParameterInformation;
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public boolean getCollectingSourceInformation$runtime_release() {
+        public boolean getCollectingSourceInformation$runtime() {
             return this.collectingSourceInformation;
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public CompositionObserverHolder getObserverHolder$runtime_release() {
+        public CompositionObserverHolder getObserverHolder$runtime() {
             return this.observerHolder;
         }
 
@@ -2658,8 +2811,8 @@ public final class ComposerImpl implements Composer {
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public boolean getCollectingCallByInformation$runtime_release() {
-            return ComposerImpl.this.parentContext.getCollectingCallByInformation$runtime_release();
+        public boolean getCollectingCallByInformation$runtime() {
+            return ComposerImpl.this.parentContext.getCollectingCallByInformation$runtime();
         }
 
         public final void dispose() {
@@ -2678,14 +2831,14 @@ public final class ComposerImpl implements Composer {
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void registerComposer$runtime_release(Composer composer) {
+        public void registerComposer$runtime(Composer composer) {
             Intrinsics.checkNotNull(composer, "null cannot be cast to non-null type androidx.compose.runtime.ComposerImpl");
-            super.registerComposer$runtime_release((ComposerImpl) composer);
+            super.registerComposer$runtime((ComposerImpl) composer);
             this.composers.add(composer);
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void unregisterComposer$runtime_release(Composer composer) {
+        public void unregisterComposer$runtime(Composer composer) {
             Set<Set<CompositionData>> set = this.inspectionTables;
             if (set != null) {
                 Iterator<T> it = set.iterator();
@@ -2698,18 +2851,18 @@ public final class ComposerImpl implements Composer {
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void registerComposition$runtime_release(ControlledComposition controlledComposition) {
-            ComposerImpl.this.parentContext.registerComposition$runtime_release(controlledComposition);
+        public void registerComposition$runtime(ControlledComposition controlledComposition) {
+            ComposerImpl.this.parentContext.registerComposition$runtime(controlledComposition);
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void unregisterComposition$runtime_release(ControlledComposition controlledComposition) {
-            ComposerImpl.this.parentContext.unregisterComposition$runtime_release(controlledComposition);
+        public void unregisterComposition$runtime(ControlledComposition controlledComposition) {
+            ComposerImpl.this.parentContext.unregisterComposition$runtime(controlledComposition);
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void reportPausedScope$runtime_release(RecomposeScopeImpl recomposeScopeImpl) {
-            ComposerImpl.this.parentContext.reportPausedScope$runtime_release(recomposeScopeImpl);
+        public void reportPausedScope$runtime(RecomposeScopeImpl recomposeScopeImpl) {
+            ComposerImpl.this.parentContext.reportPausedScope$runtime(recomposeScopeImpl);
         }
 
         @Override // androidx.compose.runtime.CompositionContext
@@ -2718,34 +2871,34 @@ public final class ComposerImpl implements Composer {
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public CoroutineContext getRecomposeCoroutineContext$runtime_release() {
+        public CoroutineContext getRecomposeCoroutineContext$runtime() {
             return CompositionKt.getRecomposeCoroutineContext(ComposerImpl.this.getComposition());
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void composeInitial$runtime_release(ControlledComposition controlledComposition, Function2<? super Composer, ? super Integer, Unit> function2) {
-            ComposerImpl.this.parentContext.composeInitial$runtime_release(controlledComposition, function2);
+        public void composeInitial$runtime(ControlledComposition controlledComposition, Function2<? super Composer, ? super Integer, Unit> function2) {
+            ComposerImpl.this.parentContext.composeInitial$runtime(controlledComposition, function2);
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public ScatterSet<RecomposeScopeImpl> composeInitialPaused$runtime_release(ControlledComposition controlledComposition, ShouldPauseCallback shouldPauseCallback, Function2<? super Composer, ? super Integer, Unit> function2) {
-            return ComposerImpl.this.parentContext.composeInitialPaused$runtime_release(controlledComposition, shouldPauseCallback, function2);
+        public ScatterSet<RecomposeScopeImpl> composeInitialPaused$runtime(ControlledComposition controlledComposition, ShouldPauseCallback shouldPauseCallback, Function2<? super Composer, ? super Integer, Unit> function2) {
+            return ComposerImpl.this.parentContext.composeInitialPaused$runtime(controlledComposition, shouldPauseCallback, function2);
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public ScatterSet<RecomposeScopeImpl> recomposePaused$runtime_release(ControlledComposition controlledComposition, ShouldPauseCallback shouldPauseCallback, ScatterSet<RecomposeScopeImpl> scatterSet) {
-            return ComposerImpl.this.parentContext.recomposePaused$runtime_release(controlledComposition, shouldPauseCallback, scatterSet);
+        public ScatterSet<RecomposeScopeImpl> recomposePaused$runtime(ControlledComposition controlledComposition, ShouldPauseCallback shouldPauseCallback, ScatterSet<RecomposeScopeImpl> scatterSet) {
+            return ComposerImpl.this.parentContext.recomposePaused$runtime(controlledComposition, shouldPauseCallback, scatterSet);
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void invalidate$runtime_release(ControlledComposition controlledComposition) {
-            ComposerImpl.this.parentContext.invalidate$runtime_release(ComposerImpl.this.getComposition());
-            ComposerImpl.this.parentContext.invalidate$runtime_release(controlledComposition);
+        public void invalidate$runtime(ControlledComposition controlledComposition) {
+            ComposerImpl.this.parentContext.invalidate$runtime(ComposerImpl.this.getComposition());
+            ComposerImpl.this.parentContext.invalidate$runtime(controlledComposition);
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void invalidateScope$runtime_release(RecomposeScopeImpl recomposeScopeImpl) {
-            ComposerImpl.this.parentContext.invalidateScope$runtime_release(recomposeScopeImpl);
+        public void invalidateScope$runtime(RecomposeScopeImpl recomposeScopeImpl) {
+            ComposerImpl.this.parentContext.invalidateScope$runtime(recomposeScopeImpl);
         }
 
         private final PersistentCompositionLocalMap getCompositionLocalScope() {
@@ -2757,7 +2910,7 @@ public final class ComposerImpl implements Composer {
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public PersistentCompositionLocalMap getCompositionLocalScope$runtime_release() {
+        public PersistentCompositionLocalMap getCompositionLocalScope$runtime() {
             return getCompositionLocalScope();
         }
 
@@ -2766,7 +2919,7 @@ public final class ComposerImpl implements Composer {
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void recordInspectionTable$runtime_release(Set<CompositionData> set) {
+        public void recordInspectionTable$runtime(Set<CompositionData> set) {
             HashSet hashSet = this.inspectionTables;
             if (hashSet == null) {
                 hashSet = new HashSet();
@@ -2776,100 +2929,96 @@ public final class ComposerImpl implements Composer {
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void startComposing$runtime_release() {
+        public void startComposing$runtime() {
             ComposerImpl.this.childrenComposing++;
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void doneComposing$runtime_release() {
-            ComposerImpl composerImpl = ComposerImpl.this;
-            composerImpl.childrenComposing--;
+        public void doneComposing$runtime() {
+            ComposerImpl.this.childrenComposing--;
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void insertMovableContent$runtime_release(MovableContentStateReference movableContentStateReference) {
-            ComposerImpl.this.parentContext.insertMovableContent$runtime_release(movableContentStateReference);
+        public void insertMovableContent$runtime(MovableContentStateReference movableContentStateReference) {
+            ComposerImpl.this.parentContext.insertMovableContent$runtime(movableContentStateReference);
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void deletedMovableContent$runtime_release(MovableContentStateReference movableContentStateReference) {
-            ComposerImpl.this.parentContext.deletedMovableContent$runtime_release(movableContentStateReference);
+        public void deletedMovableContent$runtime(MovableContentStateReference movableContentStateReference) {
+            ComposerImpl.this.parentContext.deletedMovableContent$runtime(movableContentStateReference);
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public MovableContentState movableContentStateResolve$runtime_release(MovableContentStateReference movableContentStateReference) {
-            return ComposerImpl.this.parentContext.movableContentStateResolve$runtime_release(movableContentStateReference);
+        public MovableContentState movableContentStateResolve$runtime(MovableContentStateReference movableContentStateReference) {
+            return ComposerImpl.this.parentContext.movableContentStateResolve$runtime(movableContentStateReference);
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void movableContentStateReleased$runtime_release(MovableContentStateReference movableContentStateReference, MovableContentState movableContentState, Applier<?> applier) {
-            ComposerImpl.this.parentContext.movableContentStateReleased$runtime_release(movableContentStateReference, movableContentState, applier);
+        public void movableContentStateReleased$runtime(MovableContentStateReference movableContentStateReference, MovableContentState movableContentState, Applier<?> applier) {
+            ComposerImpl.this.parentContext.movableContentStateReleased$runtime(movableContentStateReference, movableContentState, applier);
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public void reportRemovedComposition$runtime_release(ControlledComposition controlledComposition) {
-            ComposerImpl.this.parentContext.reportRemovedComposition$runtime_release(controlledComposition);
+        public void reportRemovedComposition$runtime(ControlledComposition controlledComposition) {
+            ComposerImpl.this.parentContext.reportRemovedComposition$runtime(controlledComposition);
         }
 
         @Override // androidx.compose.runtime.CompositionContext
-        public Composition getComposition$runtime_release() {
+        public Composition getComposition$runtime() {
             return ComposerImpl.this.getComposition();
         }
     }
 
-    private final void updateCompoundKeyWhenWeEnterGroup(int i, int i2, Object obj, Object obj2) {
+    private final void updateCompositeKeyWhenWeEnterGroup(int i, int i2, Object obj, Object obj2) {
         if (obj == null) {
             if (obj2 != null && i == 207 && !Intrinsics.areEqual(obj2, Composer.Companion.getEmpty())) {
-                this.compoundKeyHash = Integer.rotateLeft(obj2.hashCode() ^ Integer.rotateLeft(getCompoundKeyHash(), 3), 3) ^ i2;
-            } else {
-                this.compoundKeyHash = Integer.rotateLeft(i ^ Integer.rotateLeft(getCompoundKeyHash(), 3), 3) ^ i2;
-            }
-        } else if (obj instanceof Enum) {
-            this.compoundKeyHash = Integer.rotateLeft(((Enum) obj).ordinal() ^ Integer.rotateLeft(getCompoundKeyHash(), 3), 3);
-        } else {
-            this.compoundKeyHash = Integer.rotateLeft(obj.hashCode() ^ Integer.rotateLeft(getCompoundKeyHash(), 3), 3);
-        }
-    }
-
-    private final void updateCompoundKeyWhenWeEnterGroupKeyHash(int i, int i2) {
-        this.compoundKeyHash = Integer.rotateLeft(i ^ Integer.rotateLeft(getCompoundKeyHash(), 3), 3) ^ i2;
-    }
-
-    private final void updateCompoundKeyWhenWeExitGroup(int i, int i2, Object obj, Object obj2) {
-        if (obj == null) {
-            if (obj2 != null && i == 207 && !Intrinsics.areEqual(obj2, Composer.Companion.getEmpty())) {
-                int hashCode = obj2.hashCode();
-                this.compoundKeyHash = Integer.rotateRight(Integer.hashCode(hashCode) ^ Integer.rotateRight(i2 ^ getCompoundKeyHash(), 3), 3);
+                this.compositeKeyHashCode = i2 ^ Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ obj2.hashCode(), 3);
                 return;
             }
-            this.compoundKeyHash = Integer.rotateRight(Integer.hashCode(i) ^ Integer.rotateRight(i2 ^ getCompoundKeyHash(), 3), 3);
+            this.compositeKeyHashCode = i2 ^ Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ i, 3);
         } else if (!(obj instanceof Enum)) {
-            int hashCode2 = obj.hashCode();
-            this.compoundKeyHash = Integer.rotateRight(Integer.hashCode(hashCode2) ^ Integer.rotateRight(getCompoundKeyHash(), 3), 3);
+            this.compositeKeyHashCode = 0 ^ Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ obj.hashCode(), 3);
         } else {
-            int ordinal = ((Enum) obj).ordinal();
-            this.compoundKeyHash = Integer.rotateRight(Integer.hashCode(ordinal) ^ Integer.rotateRight(getCompoundKeyHash(), 3), 3);
+            this.compositeKeyHashCode = 0 ^ Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ ((Enum) obj).ordinal(), 3);
         }
     }
 
-    private final void updateCompoundKeyWhenWeExitGroupKeyHash(int i, int i2) {
-        this.compoundKeyHash = Integer.rotateRight(Integer.hashCode(i) ^ Integer.rotateRight(i2 ^ getCompoundKeyHash(), 3), 3);
+    private final void updateCompositeKeyWhenWeEnterGroupKeyHash(int i, int i2) {
+        this.compositeKeyHashCode = i2 ^ Long.rotateLeft(Long.rotateLeft(getCompositeKeyHashCode(), 3) ^ i, 3);
     }
 
-    public final int stacksSize$runtime_release() {
-        return this.entersStack.tos + Stack.m3508getSizeimpl(this.invalidateStack) + this.providersInvalidStack.tos + Stack.m3508getSizeimpl(this.pendingStack) + this.parentStateStack.tos;
+    private final void updateCompositeKeyWhenWeExitGroup(int i, int i2, Object obj, Object obj2) {
+        if (obj == null) {
+            if (obj2 != null && i == 207 && !Intrinsics.areEqual(obj2, Composer.Companion.getEmpty())) {
+                this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode() ^ i2, 3) ^ obj2.hashCode(), 3);
+                return;
+            }
+            this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode() ^ i2, 3) ^ i, 3);
+        } else if (!(obj instanceof Enum)) {
+            this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode() ^ 0, 3) ^ obj.hashCode(), 3);
+        } else {
+            this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode() ^ 0, 3) ^ ((Enum) obj).ordinal(), 3);
+        }
+    }
+
+    private final void updateCompositeKeyWhenWeExitGroupKeyHash(int i, int i2) {
+        this.compositeKeyHashCode = Long.rotateRight(Long.rotateRight(getCompositeKeyHashCode() ^ i2, 3) ^ i, 3);
+    }
+
+    public final int stacksSize$runtime() {
+        return this.entersStack.tos + Stack.m3842getSizeimpl(this.invalidateStack) + this.providersInvalidStack.tos + Stack.m3842getSizeimpl(this.pendingStack) + this.parentStateStack.tos;
     }
 
     @Override // androidx.compose.runtime.Composer
     public RecomposeScope getRecomposeScope() {
-        return getCurrentRecomposeScope$runtime_release();
+        return getCurrentRecomposeScope$runtime();
     }
 
     @Override // androidx.compose.runtime.Composer
     public Object getRecomposeScopeIdentity() {
-        RecomposeScopeImpl currentRecomposeScope$runtime_release = getCurrentRecomposeScope$runtime_release();
-        if (currentRecomposeScope$runtime_release != null) {
-            return currentRecomposeScope$runtime_release.getAnchor();
+        RecomposeScopeImpl currentRecomposeScope$runtime = getCurrentRecomposeScope$runtime();
+        if (currentRecomposeScope$runtime != null) {
+            return currentRecomposeScope$runtime.getAnchor();
         }
         return null;
     }
@@ -2887,10 +3036,9 @@ public final class ComposerImpl implements Composer {
     @Override // androidx.compose.runtime.Composer
     public void recordUsed(RecomposeScope recomposeScope) {
         RecomposeScopeImpl recomposeScopeImpl = recomposeScope instanceof RecomposeScopeImpl ? (RecomposeScopeImpl) recomposeScope : null;
-        if (recomposeScopeImpl == null) {
-            return;
+        if (recomposeScopeImpl != null) {
+            recomposeScopeImpl.setUsed(true);
         }
-        recomposeScopeImpl.setUsed(true);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -2906,27 +3054,27 @@ public final class ComposerImpl implements Composer {
         return build;
     }
 
-    private final int compoundKeyOf(int i, int i2, int i3) {
-        int rotateLeft;
-        int i4 = 3;
-        int i5 = 0;
-        int i6 = 0;
+    private final long compositeKeyOf(int i, int i2, long j) {
+        long rotateLeft;
+        long j2 = 0;
+        int i3 = 3;
+        int i4 = 0;
         while (i >= 0) {
             if (i != i2) {
-                int groupCompoundKeyPart = groupCompoundKeyPart(this.reader, i);
-                if (groupCompoundKeyPart == 126665345) {
-                    rotateLeft = Integer.rotateLeft(groupCompoundKeyPart, i6);
+                int groupCompositeKeyPart = groupCompositeKeyPart(this.reader, i);
+                if (groupCompositeKeyPart == 126665345) {
+                    rotateLeft = Long.rotateLeft(groupCompositeKeyPart, i4);
                 } else {
-                    i5 = (i5 ^ Integer.rotateLeft(groupCompoundKeyPart, i4)) ^ Integer.rotateLeft(this.reader.hasObjectKey(i) ? 0 : rGroupIndexOf(i), i6);
-                    i4 = (i4 + 6) % 32;
-                    i6 = (i6 + 6) % 32;
+                    j2 = (j2 ^ Long.rotateLeft(groupCompositeKeyPart, i3)) ^ Long.rotateLeft(this.reader.hasObjectKey(i) ? 0 : rGroupIndexOf(i), i4);
+                    i3 = (i3 + 6) % 64;
+                    i4 = (i4 + 6) % 64;
                     i = this.reader.parent(i);
                 }
             } else {
-                rotateLeft = Integer.rotateLeft(i3, i6);
+                rotateLeft = Long.rotateLeft(j, i4);
             }
-            return rotateLeft ^ i5;
+            return rotateLeft ^ j2;
         }
-        return i5;
+        return j2;
     }
 }

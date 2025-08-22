@@ -18,7 +18,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.channels.ProduceKt;
 import kotlinx.coroutines.channels.ProducerScope;
 /* compiled from: Profiling.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/channels/ProducerScope;", "Landroid/os/ProfilingResult;"}, k = 3, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/channels/ProducerScope;", "Landroid/os/ProfilingResult;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.core.os.Profiling$registerForAllProfilingResults$1", f = "Profiling.kt", i = {}, l = {79}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes2.dex */
 final class Profiling$registerForAllProfilingResults$1 extends SuspendLambda implements Function2<ProducerScope<? super ProfilingResult>, Continuation<? super Unit>, Object> {
@@ -66,21 +66,12 @@ final class Profiling$registerForAllProfilingResults$1 extends SuspendLambda imp
                 }
             }, consumer);
             this.label = 1;
-            if (ProduceKt.awaitClose(producerScope, new Function0<Unit>() { // from class: androidx.core.os.Profiling$registerForAllProfilingResults$1.2
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(0);
-                }
-
+            if (ProduceKt.awaitClose(producerScope, new Function0() { // from class: androidx.core.os.Profiling$registerForAllProfilingResults$1$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
-                public /* bridge */ /* synthetic */ Unit invoke() {
-                    invoke2();
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2() {
-                    profilingManager.unregisterForAllProfilingResults(consumer);
+                public final Object invoke() {
+                    Unit invokeSuspend$lambda$2;
+                    invokeSuspend$lambda$2 = Profiling$registerForAllProfilingResults$1.invokeSuspend$lambda$2(profilingManager, consumer);
+                    return invokeSuspend$lambda$2;
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -94,8 +85,14 @@ final class Profiling$registerForAllProfilingResults$1 extends SuspendLambda imp
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void invokeSuspend$lambda$0(ProducerScope producerScope, ProfilingResult result) {
-        Intrinsics.checkNotNullExpressionValue(result, "result");
-        producerScope.mo7559trySendJP2dKIU(result);
+    public static final void invokeSuspend$lambda$0(ProducerScope producerScope, ProfilingResult profilingResult) {
+        Intrinsics.checkNotNull(profilingResult);
+        producerScope.mo8125trySendJP2dKIU(profilingResult);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$2(ProfilingManager profilingManager, Consumer consumer) {
+        profilingManager.unregisterForAllProfilingResults(consumer);
+        return Unit.INSTANCE;
     }
 }

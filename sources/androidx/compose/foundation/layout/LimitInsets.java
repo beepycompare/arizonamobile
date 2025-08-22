@@ -6,7 +6,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WindowInsets.kt */
-@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\b\u0003\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0001\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0002\u0010\u0005J\u0013\u0010\u000b\u001a\u00020\f2\b\u0010\r\u001a\u0004\u0018\u00010\u000eH\u0096\u0002J\u0010\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0016J\u0018\u0010\u0013\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0014\u001a\u00020\u0015H\u0016J\u0018\u0010\u0016\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0014\u001a\u00020\u0015H\u0016J\u0010\u0010\u0017\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0016J\b\u0010\u0018\u001a\u00020\u0010H\u0016J\b\u0010\u0019\u001a\u00020\u001aH\u0016R\u0011\u0010\u0002\u001a\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0019\u0010\u0003\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\b\u0010\t\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u001b"}, d2 = {"Landroidx/compose/foundation/layout/LimitInsets;", "Landroidx/compose/foundation/layout/WindowInsets;", "insets", "sides", "Landroidx/compose/foundation/layout/WindowInsetsSides;", "(Landroidx/compose/foundation/layout/WindowInsets;ILkotlin/jvm/internal/DefaultConstructorMarker;)V", "getInsets", "()Landroidx/compose/foundation/layout/WindowInsets;", "getSides-JoeWqyM", "()I", "I", "equals", "", "other", "", "getBottom", "", "density", "Landroidx/compose/ui/unit/Density;", "getLeft", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getRight", "getTop", "hashCode", "toString", "", "foundation-layout_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0003\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0001\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0018\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0010\u0010\u0012\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016J\u0018\u0010\u0013\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0010\u0010\u0014\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016J\u0013\u0010\u0015\u001a\u00020\u00162\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018H\u0096\u0002J\b\u0010\u0019\u001a\u00020\rH\u0016J\b\u0010\u001a\u001a\u00020\u001bH\u0016R\u0011\u0010\u0002\u001a\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0013\u0010\u0003\u001a\u00020\u0004¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\t\u0010\n¨\u0006\u001c"}, d2 = {"Landroidx/compose/foundation/layout/LimitInsets;", "Landroidx/compose/foundation/layout/WindowInsets;", "insets", "sides", "Landroidx/compose/foundation/layout/WindowInsetsSides;", "<init>", "(Landroidx/compose/foundation/layout/WindowInsets;ILkotlin/jvm/internal/DefaultConstructorMarker;)V", "getInsets", "()Landroidx/compose/foundation/layout/WindowInsets;", "getSides-JoeWqyM", "()I", "I", "getLeft", "", "density", "Landroidx/compose/ui/unit/Density;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getTop", "getRight", "getBottom", "equals", "", "other", "", "hashCode", "toString", "", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class LimitInsets implements WindowInsets {
     private final WindowInsets insets;
@@ -26,19 +26,19 @@ final class LimitInsets implements WindowInsets {
     }
 
     /* renamed from: getSides-JoeWqyM  reason: not valid java name */
-    public final int m692getSidesJoeWqyM() {
+    public final int m781getSidesJoeWqyM() {
         return this.sides;
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getLeft(Density density, LayoutDirection layoutDirection) {
-        int m828getAllowLeftInRtlJoeWqyM$foundation_layout_release;
+        int m931getAllowLeftInRtlJoeWqyM$foundation_layout;
         if (layoutDirection == LayoutDirection.Ltr) {
-            m828getAllowLeftInRtlJoeWqyM$foundation_layout_release = WindowInsetsSides.Companion.m827getAllowLeftInLtrJoeWqyM$foundation_layout_release();
+            m931getAllowLeftInRtlJoeWqyM$foundation_layout = WindowInsetsSides.Companion.m930getAllowLeftInLtrJoeWqyM$foundation_layout();
         } else {
-            m828getAllowLeftInRtlJoeWqyM$foundation_layout_release = WindowInsetsSides.Companion.m828getAllowLeftInRtlJoeWqyM$foundation_layout_release();
+            m931getAllowLeftInRtlJoeWqyM$foundation_layout = WindowInsetsSides.Companion.m931getAllowLeftInRtlJoeWqyM$foundation_layout();
         }
-        if (WindowInsetsSides.m821hasAnybkgdKaI$foundation_layout_release(this.sides, m828getAllowLeftInRtlJoeWqyM$foundation_layout_release)) {
+        if (WindowInsetsSides.m924hasAnybkgdKaI$foundation_layout(this.sides, m931getAllowLeftInRtlJoeWqyM$foundation_layout)) {
             return this.insets.getLeft(density, layoutDirection);
         }
         return 0;
@@ -46,7 +46,7 @@ final class LimitInsets implements WindowInsets {
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getTop(Density density) {
-        if (WindowInsetsSides.m821hasAnybkgdKaI$foundation_layout_release(this.sides, WindowInsetsSides.Companion.m837getTopJoeWqyM())) {
+        if (WindowInsetsSides.m924hasAnybkgdKaI$foundation_layout(this.sides, WindowInsetsSides.Companion.m940getTopJoeWqyM())) {
             return this.insets.getTop(density);
         }
         return 0;
@@ -54,13 +54,13 @@ final class LimitInsets implements WindowInsets {
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getRight(Density density, LayoutDirection layoutDirection) {
-        int m830getAllowRightInRtlJoeWqyM$foundation_layout_release;
+        int m933getAllowRightInRtlJoeWqyM$foundation_layout;
         if (layoutDirection == LayoutDirection.Ltr) {
-            m830getAllowRightInRtlJoeWqyM$foundation_layout_release = WindowInsetsSides.Companion.m829getAllowRightInLtrJoeWqyM$foundation_layout_release();
+            m933getAllowRightInRtlJoeWqyM$foundation_layout = WindowInsetsSides.Companion.m932getAllowRightInLtrJoeWqyM$foundation_layout();
         } else {
-            m830getAllowRightInRtlJoeWqyM$foundation_layout_release = WindowInsetsSides.Companion.m830getAllowRightInRtlJoeWqyM$foundation_layout_release();
+            m933getAllowRightInRtlJoeWqyM$foundation_layout = WindowInsetsSides.Companion.m933getAllowRightInRtlJoeWqyM$foundation_layout();
         }
-        if (WindowInsetsSides.m821hasAnybkgdKaI$foundation_layout_release(this.sides, m830getAllowRightInRtlJoeWqyM$foundation_layout_release)) {
+        if (WindowInsetsSides.m924hasAnybkgdKaI$foundation_layout(this.sides, m933getAllowRightInRtlJoeWqyM$foundation_layout)) {
             return this.insets.getRight(density, layoutDirection);
         }
         return 0;
@@ -68,7 +68,7 @@ final class LimitInsets implements WindowInsets {
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getBottom(Density density) {
-        if (WindowInsetsSides.m821hasAnybkgdKaI$foundation_layout_release(this.sides, WindowInsetsSides.Companion.m831getBottomJoeWqyM())) {
+        if (WindowInsetsSides.m924hasAnybkgdKaI$foundation_layout(this.sides, WindowInsetsSides.Companion.m934getBottomJoeWqyM())) {
             return this.insets.getBottom(density);
         }
         return 0;
@@ -80,16 +80,16 @@ final class LimitInsets implements WindowInsets {
         }
         if (obj instanceof LimitInsets) {
             LimitInsets limitInsets = (LimitInsets) obj;
-            return Intrinsics.areEqual(this.insets, limitInsets.insets) && WindowInsetsSides.m820equalsimpl0(this.sides, limitInsets.sides);
+            return Intrinsics.areEqual(this.insets, limitInsets.insets) && WindowInsetsSides.m923equalsimpl0(this.sides, limitInsets.sides);
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.insets.hashCode() * 31) + WindowInsetsSides.m822hashCodeimpl(this.sides);
+        return (this.insets.hashCode() * 31) + WindowInsetsSides.m925hashCodeimpl(this.sides);
     }
 
     public String toString() {
-        return "(" + this.insets + " only " + ((Object) WindowInsetsSides.m824toStringimpl(this.sides)) + ')';
+        return "(" + this.insets + " only " + ((Object) WindowInsetsSides.m927toStringimpl(this.sides)) + ')';
     }
 }

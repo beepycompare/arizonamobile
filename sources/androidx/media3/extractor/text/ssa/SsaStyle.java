@@ -18,7 +18,7 @@ import java.lang.annotation.Target;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SsaStyle {
     public static final int SSA_ALIGNMENT_BOTTOM_CENTER = 2;
     public static final int SSA_ALIGNMENT_BOTTOM_LEFT = 1;
@@ -48,14 +48,14 @@ public final class SsaStyle {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface SsaAlignment {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface SsaBorderStyle {
     }
 
@@ -192,7 +192,7 @@ public final class SsaStyle {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     static final class Format {
         public final int alignmentIndex;
         public final int boldIndex;
@@ -352,7 +352,7 @@ public final class SsaStyle {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     static final class Overrides {
         private static final String TAG = "SsaStyle.Overrides";
         public final int alignment;

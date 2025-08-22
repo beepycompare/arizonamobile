@@ -14,14 +14,14 @@ public final class MainEntrench_MembersInjector implements MembersInjector<MainE
         this.notificationStateHolderProvider = notificationStateHolderProvider;
     }
 
-    public static MembersInjector<MainEntrench> create(Provider<MainComponent.Factory> rootFactoryProvider, Provider<NotificationStateHolder> notificationStateHolderProvider) {
-        return new MainEntrench_MembersInjector(rootFactoryProvider, notificationStateHolderProvider);
-    }
-
     @Override // dagger.MembersInjector
     public void injectMembers(MainEntrench instance) {
         injectRootFactory(instance, this.rootFactoryProvider.get());
         injectNotificationStateHolder(instance, this.notificationStateHolderProvider.get());
+    }
+
+    public static MembersInjector<MainEntrench> create(Provider<MainComponent.Factory> rootFactoryProvider, Provider<NotificationStateHolder> notificationStateHolderProvider) {
+        return new MainEntrench_MembersInjector(rootFactoryProvider, notificationStateHolderProvider);
     }
 
     public static void injectRootFactory(MainEntrench instance, MainComponent.Factory rootFactory) {

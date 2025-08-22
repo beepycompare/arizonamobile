@@ -6,13 +6,12 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LazyGridState.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.lazy.grid.LazyGridState", f = "LazyGridState.kt", i = {0, 0, 0}, l = {377, 378}, m = "scroll", n = {"this", "scrollPriority", "block"}, s = {"L$0", "L$1", "L$2"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.lazy.grid.LazyGridState", f = "LazyGridState.kt", i = {0, 0}, l = {475, 476}, m = "scroll", n = {"scrollPriority", "block"}, s = {"L$0", "L$1"})
 /* loaded from: classes.dex */
 public final class LazyGridState$scroll$1 extends ContinuationImpl {
     Object L$0;
     Object L$1;
-    Object L$2;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ LazyGridState this$0;

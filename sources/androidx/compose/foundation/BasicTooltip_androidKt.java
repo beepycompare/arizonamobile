@@ -16,9 +16,15 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: BasicTooltip.android.kt */
-@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\u001ac\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0006\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\f2\u0011\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0004\b\u000f\u0010\u0010¨\u0006\u0011"}, d2 = {"BasicTooltipBoxAndroid", "", "positionProvider", "Landroidx/compose/ui/window/PopupPositionProvider;", "tooltip", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/BasicTooltipState;", "modifier", "Landroidx/compose/ui/Modifier;", "focusable", "", "enableUserInput", FirebaseAnalytics.Param.CONTENT, "BasicTooltipBox", "(Landroidx/compose/ui/window/PopupPositionProvider;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/BasicTooltipState;Landroidx/compose/ui/Modifier;ZZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\u001ac\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0006\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\f2\u0011\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0004\b\u000f\u0010\u0010¨\u0006\u0011"}, d2 = {"BasicTooltipBoxAndroid", "", "positionProvider", "Landroidx/compose/ui/window/PopupPositionProvider;", "tooltip", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/BasicTooltipState;", "modifier", "Landroidx/compose/ui/Modifier;", "focusable", "", "enableUserInput", FirebaseAnalytics.Param.CONTENT, "BasicTooltipBox", "(Landroidx/compose/ui/window/PopupPositionProvider;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/BasicTooltipState;Landroidx/compose/ui/Modifier;ZZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BasicTooltip_androidKt {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit BasicTooltipBoxAndroid$lambda$0(PopupPositionProvider popupPositionProvider, Function2 function2, BasicTooltipState basicTooltipState, Modifier modifier, boolean z, boolean z2, Function2 function22, int i, int i2, Composer composer, int i3) {
+        BasicTooltipBox(popupPositionProvider, function2, basicTooltipState, modifier, z, z2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:101:0x0131  */
     /* JADX WARN: Removed duplicated region for block: B:103:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:46:0x0081  */
@@ -49,8 +55,8 @@ public final class BasicTooltip_androidKt {
         final boolean z4;
         final boolean z5;
         ScopeUpdateScope endRestartGroup;
-        Composer startRestartGroup = composer.startRestartGroup(-2005652140);
-        ComposerKt.sourceInformation(startRestartGroup, "C(BasicTooltipBoxAndroid)P(4,6,5,3,2,1)62@2702L247:BasicTooltip.android.kt#71ulvw");
+        Composer startRestartGroup = composer.startRestartGroup(-1368136524);
+        ComposerKt.sourceInformation(startRestartGroup, "C(BasicTooltipBoxAndroid)N(positionProvider,tooltip,state,modifier,focusable,enableUserInput,content)62@2703L247:BasicTooltip.android.kt#71ulvw");
         if ((i2 & 1) != 0) {
             i3 = i | 6;
             popupPositionProvider2 = popupPositionProvider;
@@ -106,12 +112,17 @@ public final class BasicTooltip_androidKt {
                             i3 |= startRestartGroup.changedInstance(function24) ? 1048576 : 524288;
                         }
                     }
-                    if (!startRestartGroup.shouldExecute((599187 & i3) == 599186, i3 & 1)) {
+                    if (startRestartGroup.shouldExecute((599187 & i3) == 599186, i3 & 1)) {
+                        composer2 = startRestartGroup;
+                        composer2.skipToGroupEnd();
+                        z4 = z3;
+                        z5 = z2;
+                    } else {
                         Modifier.Companion companion = i6 != 0 ? Modifier.Companion : obj;
                         boolean z6 = i4 != 0 ? true : z3;
                         boolean z7 = i5 != 0 ? true : z2;
                         if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(-2005652140, i3, -1, "androidx.compose.foundation.BasicTooltipBoxAndroid (BasicTooltip.android.kt:61)");
+                            ComposerKt.traceEventStart(-1368136524, i3, -1, "androidx.compose.foundation.BasicTooltipBoxAndroid (BasicTooltip.android.kt:61)");
                         }
                         composer2 = startRestartGroup;
                         BasicTooltipKt.BasicTooltipBox(popupPositionProvider2, function23, basicTooltipState2, companion, z6, z7, function24, composer2, i3 & 4194302, 0);
@@ -121,30 +132,15 @@ public final class BasicTooltip_androidKt {
                         obj = companion;
                         z4 = z6;
                         z5 = z7;
-                    } else {
-                        composer2 = startRestartGroup;
-                        composer2.skipToGroupEnd();
-                        z4 = z3;
-                        z5 = z2;
                     }
                     endRestartGroup = composer2.endRestartGroup();
                     if (endRestartGroup == null) {
-                        endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.BasicTooltip_androidKt$BasicTooltipBoxAndroid$1
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            /* JADX WARN: Multi-variable type inference failed */
-                            {
-                                super(2);
-                            }
-
+                        endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.BasicTooltip_androidKt$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function2
-                            public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
-                                invoke(composer3, num.intValue());
-                                return Unit.INSTANCE;
-                            }
-
-                            public final void invoke(Composer composer3, int i7) {
-                                BasicTooltip_androidKt.BasicTooltipBox(PopupPositionProvider.this, function2, basicTooltipState, obj, z4, z5, function22, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                            public final Object invoke(Object obj2, Object obj3) {
+                                Unit BasicTooltipBoxAndroid$lambda$0;
+                                BasicTooltipBoxAndroid$lambda$0 = BasicTooltip_androidKt.BasicTooltipBoxAndroid$lambda$0(PopupPositionProvider.this, function2, basicTooltipState, obj, z4, z5, function22, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                                return BasicTooltipBoxAndroid$lambda$0;
                             }
                         });
                         return;
@@ -153,7 +149,7 @@ public final class BasicTooltip_androidKt {
                 }
                 if ((i2 & 64) == 0) {
                 }
-                if (!startRestartGroup.shouldExecute((599187 & i3) == 599186, i3 & 1)) {
+                if (startRestartGroup.shouldExecute((599187 & i3) == 599186, i3 & 1)) {
                 }
                 endRestartGroup = composer2.endRestartGroup();
                 if (endRestartGroup == null) {
@@ -165,7 +161,7 @@ public final class BasicTooltip_androidKt {
             }
             if ((i2 & 64) == 0) {
             }
-            if (!startRestartGroup.shouldExecute((599187 & i3) == 599186, i3 & 1)) {
+            if (startRestartGroup.shouldExecute((599187 & i3) == 599186, i3 & 1)) {
             }
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup == null) {
@@ -181,7 +177,7 @@ public final class BasicTooltip_androidKt {
         }
         if ((i2 & 64) == 0) {
         }
-        if (!startRestartGroup.shouldExecute((599187 & i3) == 599186, i3 & 1)) {
+        if (startRestartGroup.shouldExecute((599187 & i3) == 599186, i3 & 1)) {
         }
         endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup == null) {

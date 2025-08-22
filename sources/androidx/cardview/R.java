@@ -4,18 +4,18 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class attr {
-        public static int cardBackgroundColor = 0x7f0400b8;
-        public static int cardCornerRadius = 0x7f0400b9;
-        public static int cardElevation = 0x7f0400ba;
-        public static int cardMaxElevation = 0x7f0400bc;
-        public static int cardPreventCornerOverlap = 0x7f0400bd;
-        public static int cardUseCompatPadding = 0x7f0400be;
-        public static int cardViewStyle = 0x7f0400bf;
-        public static int contentPadding = 0x7f04016b;
-        public static int contentPaddingBottom = 0x7f04016c;
-        public static int contentPaddingLeft = 0x7f04016e;
-        public static int contentPaddingRight = 0x7f04016f;
-        public static int contentPaddingTop = 0x7f040171;
+        public static int cardBackgroundColor = 0x7f0400b9;
+        public static int cardCornerRadius = 0x7f0400ba;
+        public static int cardElevation = 0x7f0400bb;
+        public static int cardMaxElevation = 0x7f0400bd;
+        public static int cardPreventCornerOverlap = 0x7f0400be;
+        public static int cardUseCompatPadding = 0x7f0400bf;
+        public static int cardViewStyle = 0x7f0400c0;
+        public static int contentPadding = 0x7f04016c;
+        public static int contentPaddingBottom = 0x7f04016d;
+        public static int contentPaddingLeft = 0x7f04016f;
+        public static int contentPaddingRight = 0x7f040170;
+        public static int contentPaddingTop = 0x7f040172;
 
         private attr() {
         }
@@ -55,7 +55,7 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class styleable {
-        public static int[] CardView = {16843071, 16843072, com.arizona21.game.web.R.attr.cardBackgroundColor, com.arizona21.game.web.R.attr.cardCornerRadius, com.arizona21.game.web.R.attr.cardElevation, com.arizona21.game.web.R.attr.cardMaxElevation, com.arizona21.game.web.R.attr.cardPreventCornerOverlap, com.arizona21.game.web.R.attr.cardUseCompatPadding, com.arizona21.game.web.R.attr.contentPadding, com.arizona21.game.web.R.attr.contentPaddingBottom, com.arizona21.game.web.R.attr.contentPaddingLeft, com.arizona21.game.web.R.attr.contentPaddingRight, com.arizona21.game.web.R.attr.contentPaddingTop};
+        public static int[] CardView = {16843071, 16843072, com.arizona21.game.R.attr.cardBackgroundColor, com.arizona21.game.R.attr.cardCornerRadius, com.arizona21.game.R.attr.cardElevation, com.arizona21.game.R.attr.cardMaxElevation, com.arizona21.game.R.attr.cardPreventCornerOverlap, com.arizona21.game.R.attr.cardUseCompatPadding, com.arizona21.game.R.attr.contentPadding, com.arizona21.game.R.attr.contentPaddingBottom, com.arizona21.game.R.attr.contentPaddingLeft, com.arizona21.game.R.attr.contentPaddingRight, com.arizona21.game.R.attr.contentPaddingTop};
         public static int CardView_android_minHeight = 0x00000001;
         public static int CardView_android_minWidth = 0x00000000;
         public static int CardView_cardBackgroundColor = 0x00000002;

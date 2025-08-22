@@ -9,7 +9,7 @@ import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableDoOnEach<T> extends AbstractObservableWithUpstream<T, T> {
     final Action onAfterTerminate;
     final Action onComplete;
@@ -29,7 +29,7 @@ public final class ObservableDoOnEach<T> extends AbstractObservableWithUpstream<
         this.source.subscribe(new DoOnEachObserver(observer, this.onNext, this.onError, this.onComplete, this.onAfterTerminate));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DoOnEachObserver<T> implements Observer<T>, Disposable {
         boolean done;
         final Observer<? super T> downstream;

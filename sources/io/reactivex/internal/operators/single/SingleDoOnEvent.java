@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.CompositeException;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.BiConsumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleDoOnEvent<T> extends Single<T> {
     final BiConsumer<? super T, ? super Throwable> onEvent;
     final SingleSource<T> source;
@@ -22,7 +22,7 @@ public final class SingleDoOnEvent<T> extends Single<T> {
         this.source.subscribe(new DoOnEvent(singleObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class DoOnEvent implements SingleObserver<T> {
         private final SingleObserver<? super T> downstream;
 

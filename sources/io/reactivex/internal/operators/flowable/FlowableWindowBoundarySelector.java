@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableWindowBoundarySelector<T, B, V> extends AbstractFlowableWithUpstream<T, Flowable<T>> {
     final int bufferSize;
     final Function<? super B, ? extends Publisher<V>> close;
@@ -45,7 +45,7 @@ public final class FlowableWindowBoundarySelector<T, B, V> extends AbstractFlowa
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class WindowBoundaryMainSubscriber<T, B, V> extends QueueDrainSubscriber<T, Object, Flowable<T>> implements Subscription {
         final AtomicReference<Disposable> boundary;
         final int bufferSize;
@@ -264,7 +264,7 @@ public final class FlowableWindowBoundarySelector<T, B, V> extends AbstractFlowa
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class WindowOperation<T, B> {
         final B open;
         final UnicastProcessor<T> w;
@@ -275,7 +275,7 @@ public final class FlowableWindowBoundarySelector<T, B, V> extends AbstractFlowa
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OperatorWindowBoundaryOpenSubscriber<T, B> extends DisposableSubscriber<B> {
         final WindowBoundaryMainSubscriber<T, B, ?> parent;
 
@@ -300,7 +300,7 @@ public final class FlowableWindowBoundarySelector<T, B, V> extends AbstractFlowa
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class OperatorWindowBoundaryCloseSubscriber<T, V> extends DisposableSubscriber<V> {
         boolean done;
         final WindowBoundaryMainSubscriber<T, ?, V> parent;

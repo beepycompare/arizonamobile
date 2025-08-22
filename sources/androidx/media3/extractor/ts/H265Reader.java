@@ -16,7 +16,7 @@ import com.google.common.base.Preconditions;
 import java.util.Collections;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class H265Reader implements ElementaryStreamReader {
     private final String containerMimeType;
     private String formatId;
@@ -185,7 +185,7 @@ public final class H265Reader implements ElementaryStreamReader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class SampleReader {
         private static final int FIRST_SLICE_FLAG_OFFSET = 2;
         private boolean isFirstPrefixNalUnit;

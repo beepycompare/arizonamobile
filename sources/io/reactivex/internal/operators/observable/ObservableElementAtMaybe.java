@@ -9,7 +9,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.FuseToObservable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableElementAtMaybe<T> extends Maybe<T> implements FuseToObservable<T> {
     final long index;
     final ObservableSource<T> source;
@@ -29,7 +29,7 @@ public final class ObservableElementAtMaybe<T> extends Maybe<T> implements FuseT
         return RxJavaPlugins.onAssembly(new ObservableElementAt(this.source, this.index, null, false));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ElementAtObserver<T> implements Observer<T>, Disposable {
         long count;
         boolean done;

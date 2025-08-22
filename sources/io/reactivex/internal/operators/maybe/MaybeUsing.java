@@ -14,7 +14,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeUsing<T, D> extends Maybe<T> {
     final boolean eager;
     final Consumer<? super D> resourceDisposer;
@@ -62,7 +62,7 @@ public final class MaybeUsing<T, D> extends Maybe<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class UsingObserver<T, D> extends AtomicReference<Object> implements MaybeObserver<T>, Disposable {
         private static final long serialVersionUID = -674404550052917487L;
         final Consumer<? super D> disposer;

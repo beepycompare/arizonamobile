@@ -43,7 +43,7 @@ public final class SelectableChipColors {
     }
 
     /* renamed from: copy-daRQuJA$default  reason: not valid java name */
-    public static /* synthetic */ SelectableChipColors m2262copydaRQuJA$default(SelectableChipColors selectableChipColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, int i, Object obj) {
+    public static /* synthetic */ SelectableChipColors m2569copydaRQuJA$default(SelectableChipColors selectableChipColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, int i, Object obj) {
         long j14;
         long j15;
         long j16 = (i & 1) != 0 ? selectableChipColors.containerColor : j;
@@ -66,16 +66,16 @@ public final class SelectableChipColors {
             j14 = j13;
             j15 = j28;
         }
-        return selectableChipColors.m2264copydaRQuJA(j23, j17, j18, j19, j20, j21, j22, j24, j25, j26, j27, j15, j14);
+        return selectableChipColors.m2571copydaRQuJA(j23, j17, j18, j19, j20, j21, j22, j24, j25, j26, j27, j15, j14);
     }
 
     /* renamed from: copy-daRQuJA  reason: not valid java name */
-    public final SelectableChipColors m2264copydaRQuJA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13) {
+    public final SelectableChipColors m2571copydaRQuJA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13) {
         return new SelectableChipColors(j != 16 ? j : this.containerColor, j2 != 16 ? j2 : this.labelColor, j3 != 16 ? j3 : this.leadingIconColor, j4 != 16 ? j4 : this.trailingIconColor, j5 != 16 ? j5 : this.disabledContainerColor, j6 != 16 ? j6 : this.disabledLabelColor, j7 != 16 ? j7 : this.disabledLeadingIconColor, j8 != 16 ? j8 : this.disabledTrailingIconColor, j9 != 16 ? j9 : this.selectedContainerColor, j10 != 16 ? j10 : this.disabledSelectedContainerColor, j11 != 16 ? j11 : this.selectedLabelColor, j12 != 16 ? j12 : this.selectedLeadingIconColor, j13 != 16 ? j13 : this.selectedTrailingIconColor, null);
     }
 
     /* renamed from: containerColor-WaAFU9c$material3_release  reason: not valid java name */
-    public final long m2263containerColorWaAFU9c$material3_release(boolean z, boolean z2) {
+    public final long m2570containerColorWaAFU9c$material3_release(boolean z, boolean z2) {
         if (!z) {
             return z2 ? this.disabledSelectedContainerColor : this.disabledContainerColor;
         } else if (!z2) {
@@ -86,7 +86,7 @@ public final class SelectableChipColors {
     }
 
     /* renamed from: labelColor-WaAFU9c$material3_release  reason: not valid java name */
-    public final long m2265labelColorWaAFU9c$material3_release(boolean z, boolean z2) {
+    public final long m2572labelColorWaAFU9c$material3_release(boolean z, boolean z2) {
         if (z) {
             if (!z2) {
                 return this.labelColor;
@@ -97,7 +97,7 @@ public final class SelectableChipColors {
     }
 
     /* renamed from: leadingIconContentColor-WaAFU9c$material3_release  reason: not valid java name */
-    public final long m2266leadingIconContentColorWaAFU9c$material3_release(boolean z, boolean z2) {
+    public final long m2573leadingIconContentColorWaAFU9c$material3_release(boolean z, boolean z2) {
         if (z) {
             if (!z2) {
                 return this.leadingIconColor;
@@ -108,7 +108,7 @@ public final class SelectableChipColors {
     }
 
     /* renamed from: trailingIconContentColor-WaAFU9c$material3_release  reason: not valid java name */
-    public final long m2267trailingIconContentColorWaAFU9c$material3_release(boolean z, boolean z2) {
+    public final long m2574trailingIconContentColorWaAFU9c$material3_release(boolean z, boolean z2) {
         if (z) {
             if (!z2) {
                 return this.trailingIconColor;
@@ -126,10 +126,10 @@ public final class SelectableChipColors {
             return false;
         }
         SelectableChipColors selectableChipColors = (SelectableChipColors) obj;
-        return Color.m4079equalsimpl0(this.containerColor, selectableChipColors.containerColor) && Color.m4079equalsimpl0(this.labelColor, selectableChipColors.labelColor) && Color.m4079equalsimpl0(this.leadingIconColor, selectableChipColors.leadingIconColor) && Color.m4079equalsimpl0(this.trailingIconColor, selectableChipColors.trailingIconColor) && Color.m4079equalsimpl0(this.disabledContainerColor, selectableChipColors.disabledContainerColor) && Color.m4079equalsimpl0(this.disabledLabelColor, selectableChipColors.disabledLabelColor) && Color.m4079equalsimpl0(this.disabledLeadingIconColor, selectableChipColors.disabledLeadingIconColor) && Color.m4079equalsimpl0(this.disabledTrailingIconColor, selectableChipColors.disabledTrailingIconColor) && Color.m4079equalsimpl0(this.selectedContainerColor, selectableChipColors.selectedContainerColor) && Color.m4079equalsimpl0(this.disabledSelectedContainerColor, selectableChipColors.disabledSelectedContainerColor) && Color.m4079equalsimpl0(this.selectedLabelColor, selectableChipColors.selectedLabelColor) && Color.m4079equalsimpl0(this.selectedLeadingIconColor, selectableChipColors.selectedLeadingIconColor) && Color.m4079equalsimpl0(this.selectedTrailingIconColor, selectableChipColors.selectedTrailingIconColor);
+        return Color.m4538equalsimpl0(this.containerColor, selectableChipColors.containerColor) && Color.m4538equalsimpl0(this.labelColor, selectableChipColors.labelColor) && Color.m4538equalsimpl0(this.leadingIconColor, selectableChipColors.leadingIconColor) && Color.m4538equalsimpl0(this.trailingIconColor, selectableChipColors.trailingIconColor) && Color.m4538equalsimpl0(this.disabledContainerColor, selectableChipColors.disabledContainerColor) && Color.m4538equalsimpl0(this.disabledLabelColor, selectableChipColors.disabledLabelColor) && Color.m4538equalsimpl0(this.disabledLeadingIconColor, selectableChipColors.disabledLeadingIconColor) && Color.m4538equalsimpl0(this.disabledTrailingIconColor, selectableChipColors.disabledTrailingIconColor) && Color.m4538equalsimpl0(this.selectedContainerColor, selectableChipColors.selectedContainerColor) && Color.m4538equalsimpl0(this.disabledSelectedContainerColor, selectableChipColors.disabledSelectedContainerColor) && Color.m4538equalsimpl0(this.selectedLabelColor, selectableChipColors.selectedLabelColor) && Color.m4538equalsimpl0(this.selectedLeadingIconColor, selectableChipColors.selectedLeadingIconColor) && Color.m4538equalsimpl0(this.selectedTrailingIconColor, selectableChipColors.selectedTrailingIconColor);
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((((Color.m4085hashCodeimpl(this.containerColor) * 31) + Color.m4085hashCodeimpl(this.labelColor)) * 31) + Color.m4085hashCodeimpl(this.leadingIconColor)) * 31) + Color.m4085hashCodeimpl(this.trailingIconColor)) * 31) + Color.m4085hashCodeimpl(this.disabledContainerColor)) * 31) + Color.m4085hashCodeimpl(this.disabledLabelColor)) * 31) + Color.m4085hashCodeimpl(this.disabledLeadingIconColor)) * 31) + Color.m4085hashCodeimpl(this.disabledTrailingIconColor)) * 31) + Color.m4085hashCodeimpl(this.selectedContainerColor)) * 31) + Color.m4085hashCodeimpl(this.disabledSelectedContainerColor)) * 31) + Color.m4085hashCodeimpl(this.selectedLabelColor)) * 31) + Color.m4085hashCodeimpl(this.selectedLeadingIconColor)) * 31) + Color.m4085hashCodeimpl(this.selectedTrailingIconColor);
+        return (((((((((((((((((((((((Color.m4544hashCodeimpl(this.containerColor) * 31) + Color.m4544hashCodeimpl(this.labelColor)) * 31) + Color.m4544hashCodeimpl(this.leadingIconColor)) * 31) + Color.m4544hashCodeimpl(this.trailingIconColor)) * 31) + Color.m4544hashCodeimpl(this.disabledContainerColor)) * 31) + Color.m4544hashCodeimpl(this.disabledLabelColor)) * 31) + Color.m4544hashCodeimpl(this.disabledLeadingIconColor)) * 31) + Color.m4544hashCodeimpl(this.disabledTrailingIconColor)) * 31) + Color.m4544hashCodeimpl(this.selectedContainerColor)) * 31) + Color.m4544hashCodeimpl(this.disabledSelectedContainerColor)) * 31) + Color.m4544hashCodeimpl(this.selectedLabelColor)) * 31) + Color.m4544hashCodeimpl(this.selectedLeadingIconColor)) * 31) + Color.m4544hashCodeimpl(this.selectedTrailingIconColor);
     }
 }

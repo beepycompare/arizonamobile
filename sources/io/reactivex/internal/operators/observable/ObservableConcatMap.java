@@ -17,7 +17,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableConcatMap<T, U> extends AbstractObservableWithUpstream<T, U> {
     final int bufferSize;
     final ErrorMode delayErrors;
@@ -42,7 +42,7 @@ public final class ObservableConcatMap<T, U> extends AbstractObservableWithUpstr
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SourceObserver<T, U> extends AtomicInteger implements Observer<T>, Disposable {
         private static final long serialVersionUID = 8828587559905699186L;
         volatile boolean active;
@@ -183,7 +183,7 @@ public final class ObservableConcatMap<T, U> extends AbstractObservableWithUpstr
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class InnerObserver<U> extends AtomicReference<Disposable> implements Observer<U> {
             private static final long serialVersionUID = -7449079488798789337L;
             final Observer<? super U> downstream;
@@ -221,7 +221,7 @@ public final class ObservableConcatMap<T, U> extends AbstractObservableWithUpstr
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ConcatMapDelayErrorObserver<T, R> extends AtomicInteger implements Observer<T>, Disposable {
         private static final long serialVersionUID = -6951100001833242599L;
         volatile boolean active;
@@ -383,7 +383,7 @@ public final class ObservableConcatMap<T, U> extends AbstractObservableWithUpstr
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class DelayErrorInnerObserver<R> extends AtomicReference<Disposable> implements Observer<R> {
             private static final long serialVersionUID = 2620149119579502636L;
             final Observer<? super R> downstream;

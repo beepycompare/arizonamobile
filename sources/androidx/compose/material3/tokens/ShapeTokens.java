@@ -74,21 +74,21 @@ public final class ShapeTokens {
 
     static {
         float f = (float) 28.0d;
-        CornerExtraLarge = RoundedCornerShapeKt.m1032RoundedCornerShape0680j_4(Dp.m6684constructorimpl(f));
-        float m6684constructorimpl = Dp.m6684constructorimpl(f);
-        float m6684constructorimpl2 = Dp.m6684constructorimpl(f);
+        CornerExtraLarge = RoundedCornerShapeKt.m1197RoundedCornerShape0680j_4(Dp.m7251constructorimpl(f));
+        float m7251constructorimpl = Dp.m7251constructorimpl(f);
+        float m7251constructorimpl2 = Dp.m7251constructorimpl(f);
         float f2 = (float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        CornerExtraLargeTop = RoundedCornerShapeKt.m1033RoundedCornerShapea9UjIt4(m6684constructorimpl, m6684constructorimpl2, Dp.m6684constructorimpl(f2), Dp.m6684constructorimpl(f2));
+        CornerExtraLargeTop = RoundedCornerShapeKt.m1198RoundedCornerShapea9UjIt4(m7251constructorimpl, m7251constructorimpl2, Dp.m7251constructorimpl(f2), Dp.m7251constructorimpl(f2));
         float f3 = (float) 4.0d;
-        CornerExtraSmall = RoundedCornerShapeKt.m1032RoundedCornerShape0680j_4(Dp.m6684constructorimpl(f3));
-        CornerExtraSmallTop = RoundedCornerShapeKt.m1033RoundedCornerShapea9UjIt4(Dp.m6684constructorimpl(f3), Dp.m6684constructorimpl(f3), Dp.m6684constructorimpl(f2), Dp.m6684constructorimpl(f2));
+        CornerExtraSmall = RoundedCornerShapeKt.m1197RoundedCornerShape0680j_4(Dp.m7251constructorimpl(f3));
+        CornerExtraSmallTop = RoundedCornerShapeKt.m1198RoundedCornerShapea9UjIt4(Dp.m7251constructorimpl(f3), Dp.m7251constructorimpl(f3), Dp.m7251constructorimpl(f2), Dp.m7251constructorimpl(f2));
         CornerFull = RoundedCornerShapeKt.getCircleShape();
         float f4 = (float) 16.0d;
-        CornerLarge = RoundedCornerShapeKt.m1032RoundedCornerShape0680j_4(Dp.m6684constructorimpl(f4));
-        CornerLargeEnd = RoundedCornerShapeKt.m1033RoundedCornerShapea9UjIt4(Dp.m6684constructorimpl(f2), Dp.m6684constructorimpl(f4), Dp.m6684constructorimpl(f4), Dp.m6684constructorimpl(f2));
-        CornerLargeTop = RoundedCornerShapeKt.m1033RoundedCornerShapea9UjIt4(Dp.m6684constructorimpl(f4), Dp.m6684constructorimpl(f4), Dp.m6684constructorimpl(f2), Dp.m6684constructorimpl(f2));
-        CornerMedium = RoundedCornerShapeKt.m1032RoundedCornerShape0680j_4(Dp.m6684constructorimpl((float) 12.0d));
+        CornerLarge = RoundedCornerShapeKt.m1197RoundedCornerShape0680j_4(Dp.m7251constructorimpl(f4));
+        CornerLargeEnd = RoundedCornerShapeKt.m1198RoundedCornerShapea9UjIt4(Dp.m7251constructorimpl(f2), Dp.m7251constructorimpl(f4), Dp.m7251constructorimpl(f4), Dp.m7251constructorimpl(f2));
+        CornerLargeTop = RoundedCornerShapeKt.m1198RoundedCornerShapea9UjIt4(Dp.m7251constructorimpl(f4), Dp.m7251constructorimpl(f4), Dp.m7251constructorimpl(f2), Dp.m7251constructorimpl(f2));
+        CornerMedium = RoundedCornerShapeKt.m1197RoundedCornerShape0680j_4(Dp.m7251constructorimpl((float) 12.0d));
         CornerNone = RectangleShapeKt.getRectangleShape();
-        CornerSmall = RoundedCornerShapeKt.m1032RoundedCornerShape0680j_4(Dp.m6684constructorimpl((float) 8.0d));
+        CornerSmall = RoundedCornerShapeKt.m1197RoundedCornerShape0680j_4(Dp.m7251constructorimpl((float) 8.0d));
     }
 }

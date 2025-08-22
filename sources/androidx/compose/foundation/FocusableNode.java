@@ -32,7 +32,7 @@ import kotlin.jvm.internal.Ref;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.Job;
 /* compiled from: Focusable.kt */
-@Metadata(d1 = {"\u0000\u008a\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0000\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0000\u0018\u0000 92\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u0006:\u00019B1\u0012\b\u0010\u0007\u001a\u0004\u0018\u00010\b\u0012\b\b\u0002\u0010\t\u001a\u00020\n\u0012\u0016\b\u0002\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\f¢\u0006\u0002\u0010\u000fJ\b\u0010%\u001a\u00020\u000eH\u0002J\u0010\u0010&\u001a\u00020\u000e2\u0006\u0010'\u001a\u00020\rH\u0002J\b\u0010(\u001a\u00020\u000eH\u0002J\u0018\u0010)\u001a\u00020\u000e2\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020+H\u0002J\u0010\u0010-\u001a\u00020\u000e2\u0006\u0010.\u001a\u00020\u0019H\u0016J\b\u0010/\u001a\u00020\u000eH\u0016J\b\u00100\u001a\u00020\u000eH\u0016J\n\u00101\u001a\u0004\u0018\u000102H\u0002J\u0010\u00103\u001a\u00020\u000e2\b\u0010\u0007\u001a\u0004\u0018\u00010\bJ\f\u00104\u001a\u00020\u000e*\u000205H\u0016J\u0014\u00106\u001a\u00020\u000e*\u00020\b2\u0006\u00107\u001a\u000208H\u0002R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\u0004\u0018\u00010\u00138BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u001c\u001a\n\u0012\u0004\u0012\u00020\r\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001e\u001a\u00020\rX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 R\u0014\u0010!\u001a\u00020\"8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b#\u0010$¨\u0006:"}, d2 = {"Landroidx/compose/foundation/FocusableNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "Landroidx/compose/ui/node/GlobalPositionAwareModifierNode;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "Landroidx/compose/ui/node/ObserverModifierNode;", "Landroidx/compose/ui/node/TraversableNode;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "focusability", "Landroidx/compose/ui/focus/Focusability;", "onFocusChange", "Lkotlin/Function1;", "", "", "(Landroidx/compose/foundation/interaction/MutableInteractionSource;ILkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "focusTargetNode", "Landroidx/compose/ui/focus/FocusTargetModifierNode;", "focusedBoundsObserver", "Landroidx/compose/foundation/FocusedBoundsObserverNode;", "getFocusedBoundsObserver", "()Landroidx/compose/foundation/FocusedBoundsObserverNode;", "focusedInteraction", "Landroidx/compose/foundation/interaction/FocusInteraction$Focus;", "globalLayoutCoordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "pinnedHandle", "Landroidx/compose/ui/layout/PinnableContainer$PinnedHandle;", "requestFocus", "Lkotlin/Function0;", "shouldAutoInvalidate", "getShouldAutoInvalidate", "()Z", "traverseKey", "", "getTraverseKey", "()Ljava/lang/Object;", "disposeInteractionSource", "emitInteraction", "isFocused", "notifyObserverWhenAttached", "onFocusStateChange", "previousState", "Landroidx/compose/ui/focus/FocusState;", "currentState", "onGloballyPositioned", "coordinates", "onObservedReadsChanged", "onReset", "retrievePinnableContainer", "Landroidx/compose/ui/layout/PinnableContainer;", "update", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "emitWithFallback", "interaction", "Landroidx/compose/foundation/interaction/Interaction;", "TraverseKey", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0084\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u0000 <2\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u0006:\u0001<B3\u0012\b\u0010\u0007\u001a\u0004\u0018\u00010\b\u0012\b\b\u0002\u0010\t\u001a\u00020\n\u0012\u0016\b\u0002\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\f¢\u0006\u0004\b\u000f\u0010\u0010J\u0006\u0010 \u001a\u00020\rJ\u0010\u0010%\u001a\u00020\u000e2\b\u0010\u0007\u001a\u0004\u0018\u00010\bJ\u0018\u0010*\u001a\u00020\u000e2\u0006\u0010+\u001a\u00020'2\u0006\u0010,\u001a\u00020'H\u0002J\f\u0010-\u001a\u00020\u000e*\u00020.H\u0016J\b\u0010/\u001a\u00020\u000eH\u0016J\b\u00100\u001a\u00020\u000eH\u0016J\u0010\u00101\u001a\u00020\u000e2\u0006\u00102\u001a\u00020\u001dH\u0016J\n\u00103\u001a\u0004\u0018\u000104H\u0002J\b\u00105\u001a\u00020\u000eH\u0002J\u0010\u00106\u001a\u00020\u000e2\u0006\u00107\u001a\u00020\rH\u0002J\b\u00108\u001a\u00020\u000eH\u0002J\u0014\u00109\u001a\u00020\u000e*\u00020\b2\u0006\u0010:\u001a\u00020;H\u0002R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e\u0018\u00010\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\u00020\rX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u00158VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0017R\u0010\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010!\u001a\u0004\u0018\u00010\"8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b#\u0010$R\u0011\u0010&\u001a\u00020'8F¢\u0006\u0006\u001a\u0004\b(\u0010)¨\u0006="}, d2 = {"Landroidx/compose/foundation/FocusableNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "Landroidx/compose/ui/node/GlobalPositionAwareModifierNode;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "Landroidx/compose/ui/node/ObserverModifierNode;", "Landroidx/compose/ui/node/TraversableNode;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "focusability", "Landroidx/compose/ui/focus/Focusability;", "onFocusChange", "Lkotlin/Function1;", "", "", "<init>", "(Landroidx/compose/foundation/interaction/MutableInteractionSource;ILkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "shouldAutoInvalidate", "getShouldAutoInvalidate", "()Z", "traverseKey", "", "getTraverseKey", "()Ljava/lang/Object;", "focusedInteraction", "Landroidx/compose/foundation/interaction/FocusInteraction$Focus;", "pinnedHandle", "Landroidx/compose/ui/layout/PinnableContainer$PinnedHandle;", "globalLayoutCoordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "focusTargetNode", "Landroidx/compose/ui/focus/FocusTargetModifierNode;", "requestFocus", "focusedBoundsObserver", "Landroidx/compose/foundation/FocusedBoundsObserverNode;", "getFocusedBoundsObserver", "()Landroidx/compose/foundation/FocusedBoundsObserverNode;", "update", "focusState", "Landroidx/compose/ui/focus/FocusState;", "getFocusState", "()Landroidx/compose/ui/focus/FocusState;", "onFocusStateChange", "previousState", "currentState", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "onReset", "onObservedReadsChanged", "onGloballyPositioned", "coordinates", "retrievePinnableContainer", "Landroidx/compose/ui/layout/PinnableContainer;", "notifyObserverWhenAttached", "emitInteraction", "isFocused", "disposeInteractionSource", "emitWithFallback", "interaction", "Landroidx/compose/foundation/interaction/Interaction;", "TraverseKey", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class FocusableNode extends DelegatingNode implements SemanticsModifierNode, GlobalPositionAwareModifierNode, CompositionLocalConsumerModifierNode, ObserverModifierNode, TraversableNode {
     private final FocusTargetModifierNode focusTargetNode;
@@ -41,7 +41,6 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
     private MutableInteractionSource interactionSource;
     private final Function1<Boolean, Unit> onFocusChange;
     private PinnableContainer.PinnedHandle pinnedHandle;
-    private Function0<Boolean> requestFocus;
     private final boolean shouldAutoInvalidate;
     private static final TraverseKey TraverseKey = new TraverseKey(null);
     public static final int $stable = 8;
@@ -51,14 +50,14 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
     }
 
     public /* synthetic */ FocusableNode(MutableInteractionSource mutableInteractionSource, int i, Function1 function1, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(mutableInteractionSource, (i2 & 2) != 0 ? Focusability.Companion.m3773getAlwaysLCbbffg() : i, (i2 & 4) != 0 ? null : function1, null);
+        this(mutableInteractionSource, (i2 & 2) != 0 ? Focusability.Companion.m4227getAlwaysLCbbffg() : i, (i2 & 4) != 0 ? null : function1, null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     private FocusableNode(MutableInteractionSource mutableInteractionSource, int i, Function1<? super Boolean, Unit> function1) {
         this.interactionSource = mutableInteractionSource;
         this.onFocusChange = function1;
-        this.focusTargetNode = (FocusTargetModifierNode) delegate(FocusTargetModifierNodeKt.m3754FocusTargetModifierNodePYyLHbc(i, new FocusableNode$focusTargetNode$1(this)));
+        this.focusTargetNode = (FocusTargetModifierNode) delegate(FocusTargetModifierNodeKt.m4206FocusTargetModifierNodePYyLHbc(i, new FocusableNode$focusTargetNode$1(this)));
     }
 
     @Override // androidx.compose.ui.Modifier.Node
@@ -67,7 +66,7 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
     }
 
     /* compiled from: Focusable.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\b\u0082\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002¨\u0006\u0003"}, d2 = {"Landroidx/compose/foundation/FocusableNode$TraverseKey;", "", "()V", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0004"}, d2 = {"Landroidx/compose/foundation/FocusableNode$TraverseKey;", "", "<init>", "()V", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     private static final class TraverseKey {
         public /* synthetic */ TraverseKey(DefaultConstructorMarker defaultConstructorMarker) {
@@ -81,6 +80,10 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
     @Override // androidx.compose.ui.node.TraversableNode
     public Object getTraverseKey() {
         return TraverseKey;
+    }
+
+    public final boolean requestFocus() {
+        return FocusTargetModifierNode.m4202requestFocus3ESFkO8$default(this.focusTargetNode, 0, 1, null);
     }
 
     private final FocusedBoundsObserverNode getFocusedBoundsObserver() {
@@ -99,6 +102,10 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
         }
         disposeInteractionSource();
         this.interactionSource = mutableInteractionSource;
+    }
+
+    public final FocusState getFocusState() {
+        return this.focusTargetNode.getFocusState();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -133,23 +140,7 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
     @Override // androidx.compose.ui.node.SemanticsModifierNode
     public void applySemantics(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setFocused(semanticsPropertyReceiver, this.focusTargetNode.getFocusState().isFocused());
-        if (this.requestFocus == null) {
-            this.requestFocus = new Function0<Boolean>() { // from class: androidx.compose.foundation.FocusableNode$applySemantics$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(0);
-                }
-
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // kotlin.jvm.functions.Function0
-                public final Boolean invoke() {
-                    FocusTargetModifierNode focusTargetModifierNode;
-                    focusTargetModifierNode = FocusableNode.this.focusTargetNode;
-                    return Boolean.valueOf(FocusTargetModifierNode.m3750requestFocus3ESFkO8$default(focusTargetModifierNode, 0, 1, null));
-                }
-            };
-        }
-        SemanticsPropertiesKt.requestFocus$default(semanticsPropertyReceiver, null, this.requestFocus, 1, null);
+        SemanticsPropertiesKt.requestFocus$default(semanticsPropertyReceiver, null, new FocusableNode$applySemantics$1(this), 1, null);
     }
 
     @Override // androidx.compose.ui.Modifier.Node
@@ -190,26 +181,22 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
 
     private final PinnableContainer retrievePinnableContainer() {
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        ObserverModifierNodeKt.observeReads(this, new Function0<Unit>() { // from class: androidx.compose.foundation.FocusableNode$retrievePinnableContainer$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
-
+        ObserverModifierNodeKt.observeReads(this, new Function0() { // from class: androidx.compose.foundation.FocusableNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* JADX WARN: Type inference failed for: r1v2, types: [T, java.lang.Object] */
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                objectRef.element = CompositionLocalConsumerModifierNodeKt.currentValueOf(this, PinnableContainerKt.getLocalPinnableContainer());
+            public final Object invoke() {
+                Unit retrievePinnableContainer$lambda$0;
+                retrievePinnableContainer$lambda$0 = FocusableNode.retrievePinnableContainer$lambda$0(Ref.ObjectRef.this, this);
+                return retrievePinnableContainer$lambda$0;
             }
         });
         return (PinnableContainer) objectRef.element;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Type inference failed for: r2v2, types: [T, java.lang.Object] */
+    public static final Unit retrievePinnableContainer$lambda$0(Ref.ObjectRef objectRef, FocusableNode focusableNode) {
+        objectRef.element = CompositionLocalConsumerModifierNodeKt.currentValueOf(focusableNode, PinnableContainerKt.getLocalPinnableContainer());
+        return Unit.INSTANCE;
     }
 
     private final void notifyObserverWhenAttached() {
@@ -258,26 +245,22 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
     private final void emitWithFallback(final MutableInteractionSource mutableInteractionSource, final Interaction interaction) {
         if (isAttached()) {
             Job job = (Job) getCoroutineScope().getCoroutineContext().get(Job.Key);
-            BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new FocusableNode$emitWithFallback$1(mutableInteractionSource, interaction, job != null ? job.invokeOnCompletion(new Function1<Throwable, Unit>() { // from class: androidx.compose.foundation.FocusableNode$emitWithFallback$handler$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(1);
-                }
-
+            BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new FocusableNode$emitWithFallback$1(mutableInteractionSource, interaction, job != null ? job.invokeOnCompletion(new Function1() { // from class: androidx.compose.foundation.FocusableNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
-                    invoke2(th);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(Throwable th) {
-                    MutableInteractionSource.this.tryEmit(interaction);
+                public final Object invoke(Object obj) {
+                    Unit emitWithFallback$lambda$6;
+                    emitWithFallback$lambda$6 = FocusableNode.emitWithFallback$lambda$6(MutableInteractionSource.this, interaction, (Throwable) obj);
+                    return emitWithFallback$lambda$6;
                 }
             }) : null, null), 3, null);
             return;
         }
+        Boolean.valueOf(mutableInteractionSource.tryEmit(interaction));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit emitWithFallback$lambda$6(MutableInteractionSource mutableInteractionSource, Interaction interaction, Throwable th) {
         mutableInteractionSource.tryEmit(interaction);
+        return Unit.INSTANCE;
     }
 }

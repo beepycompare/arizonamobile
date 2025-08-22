@@ -1,44 +1,44 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.ecommerce.ECommerceCartItem;
+import io.appmetrica.analytics.ecommerce.ECommerceEvent;
 import io.appmetrica.analytics.ecommerce.ECommerceOrder;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.UUID;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
-public final class Ee {
+public final class Ee extends ECommerceEvent {
+    public static final int d = 6;
+    public static final int e = 7;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f417a;
-    public final String b;
-    public final List c;
-    public final Map d;
+    public final int f413a;
+    public final Ge b;
+    public final InterfaceC0700x8 c;
 
-    public Ee(ECommerceOrder eCommerceOrder) {
-        this(UUID.randomUUID().toString(), eCommerceOrder.getIdentifier(), a(eCommerceOrder.getCartItems()), CollectionUtils.mapCopyOfNullableMap(eCommerceOrder.getPayload()));
+    public Ee(int i, ECommerceOrder eCommerceOrder) {
+        this(i, new Ge(eCommerceOrder), new Fe());
     }
 
-    public static ArrayList a(List list) {
-        ArrayList arrayList = new ArrayList(list.size());
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            arrayList.add(new G3((ECommerceCartItem) it.next()));
-        }
-        return arrayList;
+    public final InterfaceC0700x8 a() {
+        return this.c;
+    }
+
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent
+    public final String getPublicDescription() {
+        return "order info";
+    }
+
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0177cg
+    public final List<Vi> toProto() {
+        return (List) this.c.fromModel(this);
     }
 
     public final String toString() {
-        return "OrderWrapper{uuid='" + this.f417a + "', identifier='" + this.b + "', cartItems=" + this.c + ", payload=" + this.d + AbstractJsonLexerKt.END_OBJ;
+        return "OrderInfoEvent{eventType=" + this.f413a + ", order=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public Ee(String str, String str2, ArrayList arrayList, Map map) {
-        this.f417a = str;
-        this.b = str2;
-        this.c = arrayList;
-        this.d = map;
+    public Ee(int i, Ge ge, InterfaceC0700x8 interfaceC0700x8) {
+        this.f413a = i;
+        this.b = ge;
+        this.c = interfaceC0700x8;
     }
 }

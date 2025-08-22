@@ -124,7 +124,7 @@ public abstract class BaseKeyFrameScope {
                 cLString.setEnd(charArray.length - 1);
                 arrayOrCreate.add(cLString);
             } else if (value instanceof Dp) {
-                arrayOrCreate.add(new CLNumber(((Dp) value).m6698unboximpl()));
+                arrayOrCreate.add(new CLNumber(((Dp) value).m7265unboximpl()));
             } else if (value instanceof Number) {
                 arrayOrCreate.add(new CLNumber(((Number) value).floatValue()));
             }

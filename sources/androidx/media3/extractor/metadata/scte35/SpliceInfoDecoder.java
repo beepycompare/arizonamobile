@@ -7,7 +7,7 @@ import androidx.media3.common.util.TimestampAdjuster;
 import androidx.media3.extractor.metadata.MetadataInputBuffer;
 import androidx.media3.extractor.metadata.SimpleMetadataDecoder;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SpliceInfoDecoder extends SimpleMetadataDecoder {
     private static final int TYPE_PRIVATE_COMMAND = 255;
     private static final int TYPE_SPLICE_INSERT = 5;

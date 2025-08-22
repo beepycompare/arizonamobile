@@ -4,7 +4,7 @@ import android.net.Uri;
 import androidx.media3.extractor.text.SubtitleParser;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public interface ExtractorsFactory {
     public static final ExtractorsFactory EMPTY = new ExtractorsFactory() { // from class: androidx.media3.extractor.ExtractorsFactory$$ExternalSyntheticLambda0
         @Override // androidx.media3.extractor.ExtractorsFactory

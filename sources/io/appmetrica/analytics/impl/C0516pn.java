@@ -1,0 +1,10 @@
+package io.appmetrica.analytics.impl;
+
+import java.util.ArrayList;
+/* renamed from: io.appmetrica.analytics.impl.pn  reason: case insensitive filesystem */
+/* loaded from: classes4.dex */
+public final class C0516pn {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final ArrayList f1016a = new ArrayList();
+}

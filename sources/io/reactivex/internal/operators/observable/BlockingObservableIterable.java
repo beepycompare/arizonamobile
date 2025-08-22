@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BlockingObservableIterable<T> implements Iterable<T> {
     final int bufferSize;
     final ObservableSource<? extends T> source;
@@ -30,7 +30,7 @@ public final class BlockingObservableIterable<T> implements Iterable<T> {
         return blockingObservableIterator;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BlockingObservableIterator<T> extends AtomicReference<Disposable> implements Observer<T>, Iterator<T>, Disposable {
         private static final long serialVersionUID = 6695226475494099826L;
         final Condition condition;

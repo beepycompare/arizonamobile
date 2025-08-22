@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeConcatArrayDelayError<T> extends Flowable<T> {
     final MaybeSource<? extends T>[] sources;
 
@@ -30,7 +30,7 @@ public final class MaybeConcatArrayDelayError<T> extends Flowable<T> {
         concatMaybeObserver.drain();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ConcatMaybeObserver<T> extends AtomicInteger implements MaybeObserver<T>, Subscription {
         private static final long serialVersionUID = 3520831347801429610L;
         final Subscriber<? super T> downstream;

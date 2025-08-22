@@ -1,11 +1,11 @@
 package androidx.compose.ui.node;
 
-import androidx.collection.MutableObjectFloatMap;
 import androidx.collection.MutableScatterMap;
 import androidx.collection.MutableScatterSet;
 import androidx.compose.ui.internal.InlineClassHelperKt;
 import androidx.compose.ui.layout.AlignmentLine;
 import androidx.compose.ui.layout.LayoutCoordinates;
+import androidx.compose.ui.layout.LayoutCoordinatesKt;
 import androidx.compose.ui.layout.MeasureResult;
 import androidx.compose.ui.layout.Placeable;
 import androidx.compose.ui.layout.PlaceableKt;
@@ -14,7 +14,10 @@ import androidx.compose.ui.layout.RulerScope;
 import androidx.compose.ui.layout.VerticalAlignmentLine;
 import androidx.compose.ui.layout.VerticalRuler;
 import androidx.compose.ui.node.LayoutNode;
+import androidx.compose.ui.node.LookaheadCapablePlaceable;
 import androidx.compose.ui.unit.IntOffset;
+import androidx.compose.ui.unit.IntOffsetKt;
+import androidx.compose.ui.unit.IntSize;
 import androidx.compose.ui.unit.LayoutDirection;
 import androidx.core.view.ViewCompat;
 import androidx.media3.extractor.text.ttml.TtmlNode;
@@ -26,8 +29,8 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LookaheadDelegate.kt */
-@Metadata(d1 = {"\u0000®\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0007\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0004\b \u0018\u0000 e2\u00020\u00012\u00020\u00022\u00020\u0003:\u0001eB\u0005¢\u0006\u0002\u0010\u0004J\u0018\u0010=\u001a\u00020>2\u0006\u0010 \u001a\u00020!2\u0006\u0010?\u001a\u000204H\u0002J\u0010\u0010@\u001a\u00020A2\u0006\u0010B\u001a\u00020CH&J\u0017\u0010D\u001a\u00020>2\b\u0010E\u001a\u0004\u0018\u00010%H\u0000¢\u0006\u0002\bFJ\u0010\u0010D\u001a\u00020>2\u0006\u0010G\u001a\u00020HH\u0002J\u0010\u0010I\u001a\u00020\u00002\u0006\u0010?\u001a\u000204H\u0002J\u0016\u0010J\u001a\u00020K2\u0006\u0010?\u001a\u0002042\u0006\u0010L\u001a\u00020KJ\u0011\u0010M\u001a\u00020A2\u0006\u0010B\u001a\u00020CH\u0086\u0002J\u0010\u0010N\u001a\u00020>2\u0006\u0010?\u001a\u000204H\u0002J`\u0010O\u001a\u00020%2\u0006\u0010P\u001a\u00020A2\u0006\u0010Q\u001a\u00020A2\u0012\u0010R\u001a\u000e\u0012\u0004\u0012\u00020C\u0012\u0004\u0012\u00020A0S2\u0019\u0010T\u001a\u0015\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020>\u0018\u00010U¢\u0006\u0002\bV2\u0017\u0010W\u001a\u0013\u0012\u0004\u0012\u00020+\u0012\u0004\u0012\u00020>0U¢\u0006\u0002\bVH\u0016J\u001c\u0010X\u001a\u00020>2\u0012\u0010Y\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020!0605H\u0002J\u0016\u0010Z\u001a\u00020>2\u0006\u0010?\u001a\u0002042\u0006\u0010[\u001a\u00020KJ\u0016\u0010\\\u001a\u00020>2\u0006\u0010?\u001a\u0002042\u0006\u0010[\u001a\u00020KJ\r\u0010]\u001a\u00020>H ¢\u0006\u0002\b^J\u0010\u0010_\u001a\u00020>2\u0006\u0010`\u001a\u00020\u0013H\u0016J\f\u0010a\u001a\u00020>*\u00020bH\u0004J\u0014\u0010c\u001a\u00020\u0013*\u00020!2\u0006\u0010d\u001a\u00020!H\u0002R\u0010\u0010\u0005\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0007\u001a\u00020\bX¦\u0004¢\u0006\u0006\u001a\u0004\b\t\u0010\nR\u0014\u0010\u000b\u001a\u0004\u0018\u00010\u0000X¦\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\rR\u0012\u0010\u000e\u001a\u00020\u000fX¦\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0011R\u0012\u0010\u0012\u001a\u00020\u0013X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u00138VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0015R\u001a\u0010\u0017\u001a\u00020\u0013X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0015\"\u0004\b\u0018\u0010\u0019R\u001a\u0010\u001a\u001a\u00020\u0013X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u0015\"\u0004\b\u001c\u0010\u0019R\u001a\u0010\u001d\u001a\u00020\u0013X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u0015\"\u0004\b\u001f\u0010\u0019R\u0012\u0010 \u001a\u00020!X¦\u0004¢\u0006\u0006\u001a\u0004\b\"\u0010#R\u0012\u0010$\u001a\u00020%X \u0004¢\u0006\u0006\u001a\u0004\b&\u0010'R\u0014\u0010(\u001a\u0004\u0018\u00010\u0000X¦\u0004¢\u0006\u0006\u001a\u0004\b)\u0010\rR\u0011\u0010*\u001a\u00020+¢\u0006\b\n\u0000\u001a\u0004\b,\u0010-R\u0018\u0010.\u001a\u00020/X¦\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b0\u00101R(\u00102\u001a\u001c\u0012\u0004\u0012\u000204\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020!0605\u0018\u000103X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u00107\u001a\u00020\u00068F¢\u0006\u0006\u001a\u0004\b8\u00109R\u0016\u0010:\u001a\n\u0012\u0004\u0012\u000204\u0018\u00010;X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010<\u001a\n\u0012\u0004\u0012\u000204\u0018\u00010;X\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006f"}, d2 = {"Landroidx/compose/ui/node/LookaheadCapablePlaceable;", "Landroidx/compose/ui/layout/Placeable;", "Landroidx/compose/ui/node/MeasureScopeWithLayoutNode;", "Landroidx/compose/ui/node/MotionReferencePlacementDelegate;", "()V", "_rulerScope", "Landroidx/compose/ui/layout/RulerScope;", "alignmentLinesOwner", "Landroidx/compose/ui/node/AlignmentLinesOwner;", "getAlignmentLinesOwner", "()Landroidx/compose/ui/node/AlignmentLinesOwner;", "child", "getChild", "()Landroidx/compose/ui/node/LookaheadCapablePlaceable;", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "getCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "hasMeasureResult", "", "getHasMeasureResult", "()Z", "isLookingAhead", "isPlacedUnderMotionFrameOfReference", "setPlacedUnderMotionFrameOfReference", "(Z)V", "isPlacingForAlignment", "isPlacingForAlignment$ui_release", "setPlacingForAlignment$ui_release", "isShallowPlacing", "isShallowPlacing$ui_release", "setShallowPlacing$ui_release", "layoutNode", "Landroidx/compose/ui/node/LayoutNode;", "getLayoutNode", "()Landroidx/compose/ui/node/LayoutNode;", "measureResult", "Landroidx/compose/ui/layout/MeasureResult;", "getMeasureResult$ui_release", "()Landroidx/compose/ui/layout/MeasureResult;", "parent", "getParent", "placementScope", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "getPlacementScope", "()Landroidx/compose/ui/layout/Placeable$PlacementScope;", "position", "Landroidx/compose/ui/unit/IntOffset;", "getPosition-nOcc-ac", "()J", "rulerReaders", "Landroidx/collection/MutableScatterMap;", "Landroidx/compose/ui/layout/Ruler;", "Landroidx/collection/MutableScatterSet;", "Landroidx/compose/ui/node/WeakReference;", "rulerScope", "getRulerScope", "()Landroidx/compose/ui/layout/RulerScope;", "rulerValues", "Landroidx/collection/MutableObjectFloatMap;", "rulerValuesCache", "addRulerReader", "", "ruler", "calculateAlignmentLine", "", "alignmentLine", "Landroidx/compose/ui/layout/AlignmentLine;", "captureRulers", "result", "captureRulers$ui_release", "placeableResult", "Landroidx/compose/ui/node/PlaceableResult;", "findAncestorRulerDefiner", "findRulerValue", "", "defaultValue", "get", "invalidateChildrenOfDefiningRuler", TtmlNode.TAG_LAYOUT, "width", "height", "alignmentLines", "", "rulers", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "placementBlock", "notifyRulerValueChange", "layoutNodes", "provideRelativeRulerValue", "value", "provideRulerValue", "replace", "replace$ui_release", "updatePlacedUnderMotionFrameOfReference", "newMFR", "invalidateAlignmentLinesFromPositionChange", "Landroidx/compose/ui/node/NodeCoordinator;", "isLayoutNodeAncestor", "ancestor", "Companion", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000²\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\f\n\u0002\u0010$\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\n\b!\u0018\u0000 p2\u00020\u00012\u00020\u00022\u00020\u0003:\u0002opB\u0007¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010'\u001a\u00020 2\u0006\u0010(\u001a\u00020\u0010H\u0016J\u0011\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020/H\u0086\u0002J\u0010\u00100\u001a\u00020-2\u0006\u0010.\u001a\u00020/H&J\r\u00108\u001a\u00020 H ¢\u0006\u0002\b9J\f\u0010E\u001a\u00020 *\u00020FH\u0004J\u0016\u0010O\u001a\u00020P2\u0006\u0010Q\u001a\u00020L2\u0006\u0010R\u001a\u00020PJ\u0018\u0010S\u001a\u00020 2\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010Q\u001a\u00020LH\u0002J\u0010\u0010T\u001a\u00020\u00002\u0006\u0010Q\u001a\u00020LH\u0002J\u0014\u0010U\u001a\u00020\u0010*\u00020\u00142\u0006\u0010V\u001a\u00020\u0014H\u0002J\u0015\u0010W\u001a\u00020 2\u0006\u0010Q\u001a\u00020LH\u0000¢\u0006\u0002\bXJ`\u0010Y\u001a\u0002052\u0006\u0010Z\u001a\u00020-2\u0006\u0010[\u001a\u00020-2\u0012\u0010\\\u001a\u000e\u0012\u0004\u0012\u00020/\u0012\u0004\u0012\u00020-0]2\u0019\u0010^\u001a\u0015\u0012\u0004\u0012\u00020\u001f\u0012\u0004\u0012\u00020 \u0018\u00010\u001e¢\u0006\u0002\b!2\u0017\u0010_\u001a\u0013\u0012\u0004\u0012\u00020B\u0012\u0004\u0012\u00020 0\u001e¢\u0006\u0002\b!H\u0016J\u0017\u0010`\u001a\u00020 2\b\u0010a\u001a\u0004\u0018\u000105H\u0000¢\u0006\u0002\bbJ+\u0010c\u001a\u00020 2\u0006\u0010d\u001a\u00020#2\b\b\u0002\u0010e\u001a\u00020\u00072\b\b\u0002\u0010f\u001a\u00020gH\u0002¢\u0006\u0004\bh\u0010iJ\u0010\u0010`\u001a\u00020 2\u0006\u0010d\u001a\u00020#H\u0002J\u001c\u0010j\u001a\u00020 2\u0012\u0010k\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00140N0MH\u0002J\u0016\u0010l\u001a\u00020 2\u0006\u0010Q\u001a\u00020L2\u0006\u0010m\u001a\u00020PJ\u0016\u0010n\u001a\u00020 2\u0006\u0010Q\u001a\u00020L2\u0006\u0010m\u001a\u00020PR\u0012\u0010\u0006\u001a\u00020\u0007X¦\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\tR\u0014\u0010\n\u001a\u0004\u0018\u00010\u0000X¦\u0004¢\u0006\u0006\u001a\u0004\b\u000b\u0010\fR\u0014\u0010\r\u001a\u0004\u0018\u00010\u0000X¦\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\fR\u0012\u0010\u000f\u001a\u00020\u0010X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u0012R\u0012\u0010\u0013\u001a\u00020\u0014X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0016R\u0012\u0010\u0017\u001a\u00020\u0018X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0019\u0010\u001aR\u0014\u0010\u001b\u001a\b\u0018\u00010\u001cR\u00020\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R!\u0010\u001d\u001a\u0015\u0012\u0004\u0012\u00020\u001f\u0012\u0004\u0012\u00020 \u0018\u00010\u001e¢\u0006\u0002\b!X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\"\u001a\u0004\u0018\u00010#X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010$\u001a\u00020\u0010X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b$\u0010\u0012\"\u0004\b%\u0010&R\u0018\u0010)\u001a\u00060\u001cR\u00020\u00008BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b*\u0010+R\u001a\u00101\u001a\u00020\u0010X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b2\u0010\u0012\"\u0004\b3\u0010&R\u0012\u00104\u001a\u000205X \u0004¢\u0006\u0006\u001a\u0004\b6\u00107R\u0012\u0010:\u001a\u00020;X¦\u0004¢\u0006\u0006\u001a\u0004\b<\u0010=R\u001a\u0010>\u001a\u00020\u0010X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b?\u0010\u0012\"\u0004\b@\u0010&R\u0011\u0010A\u001a\u00020B¢\u0006\b\n\u0000\u001a\u0004\bC\u0010DR\u0014\u0010G\u001a\u00020\u00108VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bG\u0010\u0012R\u0010\u0010H\u001a\u0004\u0018\u00010IX\u0082\u000e¢\u0006\u0002\n\u0000R(\u0010J\u001a\u001c\u0012\u0004\u0012\u00020L\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00140N0M\u0018\u00010KX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006q"}, d2 = {"Landroidx/compose/ui/node/LookaheadCapablePlaceable;", "Landroidx/compose/ui/layout/Placeable;", "Landroidx/compose/ui/node/MeasureScopeWithLayoutNode;", "Landroidx/compose/ui/node/MotionReferencePlacementDelegate;", "<init>", "()V", "position", "Landroidx/compose/ui/unit/IntOffset;", "getPosition-nOcc-ac", "()J", "child", "getChild", "()Landroidx/compose/ui/node/LookaheadCapablePlaceable;", "parent", "getParent", "hasMeasureResult", "", "getHasMeasureResult", "()Z", "layoutNode", "Landroidx/compose/ui/node/LayoutNode;", "getLayoutNode", "()Landroidx/compose/ui/node/LayoutNode;", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "getCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "_rulerScope", "Landroidx/compose/ui/node/LookaheadCapablePlaceable$ResettableRulerScope;", "rulersLambda", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/RulerScope;", "", "Lkotlin/ExtensionFunctionType;", "cachedRulerPlaceableResult", "Landroidx/compose/ui/node/PlaceableResult;", "isPlacedUnderMotionFrameOfReference", "setPlacedUnderMotionFrameOfReference", "(Z)V", "updatePlacedUnderMotionFrameOfReference", "newMFR", "rulerScope", "getRulerScope", "()Landroidx/compose/ui/node/LookaheadCapablePlaceable$ResettableRulerScope;", "get", "", "alignmentLine", "Landroidx/compose/ui/layout/AlignmentLine;", "calculateAlignmentLine", "isShallowPlacing", "isShallowPlacing$ui_release", "setShallowPlacing$ui_release", "measureResult", "Landroidx/compose/ui/layout/MeasureResult;", "getMeasureResult$ui_release", "()Landroidx/compose/ui/layout/MeasureResult;", "replace", "replace$ui_release", "alignmentLinesOwner", "Landroidx/compose/ui/node/AlignmentLinesOwner;", "getAlignmentLinesOwner", "()Landroidx/compose/ui/node/AlignmentLinesOwner;", "isPlacingForAlignment", "isPlacingForAlignment$ui_release", "setPlacingForAlignment$ui_release", "placementScope", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "getPlacementScope", "()Landroidx/compose/ui/layout/Placeable$PlacementScope;", "invalidateAlignmentLinesFromPositionChange", "Landroidx/compose/ui/node/NodeCoordinator;", "isLookingAhead", "rulerValues", "Landroidx/compose/ui/node/RulerTrackingMap;", "rulerReaders", "Landroidx/collection/MutableScatterMap;", "Landroidx/compose/ui/layout/Ruler;", "Landroidx/collection/MutableScatterSet;", "Landroidx/compose/ui/node/WeakReference;", "findRulerValue", "", "ruler", "defaultValue", "addRulerReader", "findAncestorRulerDefiner", "isLayoutNodeAncestor", "ancestor", "invalidateChildrenOfDefiningRuler", "invalidateChildrenOfDefiningRuler$ui_release", TtmlNode.TAG_LAYOUT, "width", "height", "alignmentLines", "", "rulers", "placementBlock", "captureRulersIfNeeded", "result", "captureRulersIfNeeded$ui_release", "captureRulers", "placeableResult", "positionOnScreen", "size", "Landroidx/compose/ui/unit/IntSize;", "captureRulers-OSxE8f4", "(Landroidx/compose/ui/node/PlaceableResult;JJ)V", "notifyRulerValueChange", "layoutNodes", "provideRulerValue", "value", "provideRelativeRulerValue", "ResettableRulerScope", "Companion", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public abstract class LookaheadCapablePlaceable extends Placeable implements MeasureScopeWithLayoutNode, MotionReferencePlacementDelegate {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
@@ -41,18 +44,19 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
         public final void invoke2(PlaceableResult placeableResult) {
             if (placeableResult.isValidOwnerScope()) {
-                placeableResult.getPlaceable().captureRulers(placeableResult);
+                placeableResult.getPlaceable().captureRulersIfNeeded(placeableResult);
             }
         }
     };
-    private RulerScope _rulerScope;
+    private ResettableRulerScope _rulerScope;
+    private PlaceableResult cachedRulerPlaceableResult;
     private boolean isPlacedUnderMotionFrameOfReference;
     private boolean isPlacingForAlignment;
     private boolean isShallowPlacing;
     private final Placeable.PlacementScope placementScope = PlaceableKt.PlacementScope(this);
     private MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> rulerReaders;
-    private MutableObjectFloatMap<Ruler> rulerValues;
-    private MutableObjectFloatMap<Ruler> rulerValuesCache;
+    private RulerTrackingMap rulerValues;
+    private Function1<? super RulerScope, Unit> rulersLambda;
 
     public abstract int calculateAlignmentLine(AlignmentLine alignmentLine);
 
@@ -72,7 +76,7 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
     public abstract LookaheadCapablePlaceable getParent();
 
     /* renamed from: getPosition-nOcc-ac  reason: not valid java name */
-    public abstract long mo5633getPositionnOccac();
+    public abstract long mo6174getPositionnOccac();
 
     @Override // androidx.compose.ui.layout.IntrinsicMeasureScope
     public boolean isLookingAhead() {
@@ -106,48 +110,28 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
         setPlacedUnderMotionFrameOfReference(z);
     }
 
-    public final RulerScope getRulerScope() {
-        RulerScope rulerScope = this._rulerScope;
-        return rulerScope == null ? new RulerScope() { // from class: androidx.compose.ui.node.LookaheadCapablePlaceable$rulerScope$1
-            @Override // androidx.compose.ui.layout.RulerScope
-            public LayoutCoordinates getCoordinates() {
-                LookaheadCapablePlaceable.this.getLayoutNode().getLayoutDelegate$ui_release().onCoordinatesUsed();
-                return LookaheadCapablePlaceable.this.getCoordinates();
-            }
-
-            @Override // androidx.compose.ui.layout.RulerScope
-            public void provides(Ruler ruler, float f) {
-                LookaheadCapablePlaceable.this.provideRulerValue(ruler, f);
-            }
-
-            @Override // androidx.compose.ui.layout.RulerScope
-            public void providesRelative(VerticalRuler verticalRuler, float f) {
-                LookaheadCapablePlaceable.this.provideRelativeRulerValue(verticalRuler, f);
-            }
-
-            @Override // androidx.compose.ui.unit.Density
-            public float getDensity() {
-                return LookaheadCapablePlaceable.this.getDensity();
-            }
-
-            @Override // androidx.compose.ui.unit.FontScaling
-            public float getFontScale() {
-                return LookaheadCapablePlaceable.this.getFontScale();
-            }
-        } : rulerScope;
+    /* JADX INFO: Access modifiers changed from: private */
+    public final ResettableRulerScope getRulerScope() {
+        ResettableRulerScope resettableRulerScope = this._rulerScope;
+        if (resettableRulerScope == null) {
+            ResettableRulerScope resettableRulerScope2 = new ResettableRulerScope();
+            this._rulerScope = resettableRulerScope2;
+            return resettableRulerScope2;
+        }
+        return resettableRulerScope;
     }
 
     @Override // androidx.compose.ui.layout.Measured
     public final int get(AlignmentLine alignmentLine) {
         int calculateAlignmentLine;
-        int m6813getYimpl;
+        int m7380getYimpl;
         if (getHasMeasureResult() && (calculateAlignmentLine = calculateAlignmentLine(alignmentLine)) != Integer.MIN_VALUE) {
             if (alignmentLine instanceof VerticalAlignmentLine) {
-                m6813getYimpl = IntOffset.m6812getXimpl(m5496getApparentToRealOffsetnOccac());
+                m7380getYimpl = IntOffset.m7379getXimpl(m6013getApparentToRealOffsetnOccac());
             } else {
-                m6813getYimpl = IntOffset.m6813getYimpl(m5496getApparentToRealOffsetnOccac());
+                m7380getYimpl = IntOffset.m7380getYimpl(m6013getApparentToRealOffsetnOccac());
             }
-            return calculateAlignmentLine + m6813getYimpl;
+            return calculateAlignmentLine + m7380getYimpl;
         }
         return Integer.MIN_VALUE;
     }
@@ -193,8 +177,8 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
         }
         LookaheadCapablePlaceable lookaheadCapablePlaceable = this;
         while (true) {
-            MutableObjectFloatMap<Ruler> mutableObjectFloatMap = lookaheadCapablePlaceable.rulerValues;
-            float orDefault = mutableObjectFloatMap != null ? mutableObjectFloatMap.getOrDefault(ruler, Float.NaN) : Float.NaN;
+            RulerTrackingMap rulerTrackingMap = lookaheadCapablePlaceable.rulerValues;
+            float orDefault = rulerTrackingMap != null ? rulerTrackingMap.getOrDefault(ruler, Float.NaN) : Float.NaN;
             if (!Float.isNaN(orDefault)) {
                 lookaheadCapablePlaceable.addRulerReader(getLayoutNode(), ruler);
                 return ruler.calculateCoordinate$ui_release(orDefault, lookaheadCapablePlaceable.getCoordinates(), getCoordinates());
@@ -429,8 +413,8 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
         LookaheadCapablePlaceable parent;
         LookaheadCapablePlaceable lookaheadCapablePlaceable = this;
         while (true) {
-            MutableObjectFloatMap<Ruler> mutableObjectFloatMap = lookaheadCapablePlaceable.rulerValues;
-            if ((mutableObjectFloatMap != null && mutableObjectFloatMap.containsKey(ruler)) || (parent = lookaheadCapablePlaceable.getParent()) == null) {
+            RulerTrackingMap rulerTrackingMap = lookaheadCapablePlaceable.rulerValues;
+            if ((rulerTrackingMap != null && rulerTrackingMap.contains(ruler)) || (parent = lookaheadCapablePlaceable.getParent()) == null) {
                 return lookaheadCapablePlaceable;
             }
             lookaheadCapablePlaceable = parent;
@@ -448,7 +432,7 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
         return false;
     }
 
-    private final void invalidateChildrenOfDefiningRuler(Ruler ruler) {
+    public final void invalidateChildrenOfDefiningRuler$ui_release(Ruler ruler) {
         MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> mutableScatterMap = findAncestorRulerDefiner(ruler).rulerReaders;
         MutableScatterSet<WeakReference<LayoutNode>> remove = mutableScatterMap != null ? mutableScatterMap.remove(ruler) : null;
         if (remove != null) {
@@ -456,13 +440,195 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
         }
     }
 
-    public final void captureRulers$ui_release(MeasureResult measureResult) {
+    public final void captureRulersIfNeeded$ui_release(MeasureResult measureResult) {
+        char c;
+        char c2;
+        MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> mutableScatterMap = this.rulerReaders;
+        char c3 = 7;
+        boolean z = false;
         if (measureResult != null) {
-            captureRulers(new PlaceableResult(measureResult, this));
+            if (this.isPlacingForAlignment) {
+                return;
+            }
+            Function1<RulerScope, Unit> rulers = measureResult.getRulers();
+            if (rulers != null) {
+                boolean z2 = this.rulersLambda != rulers;
+                long m7389getMaxnOccac = IntOffset.Companion.m7389getMaxnOccac();
+                long m7427getZeroYbymL2g = IntSize.Companion.m7427getZeroYbymL2g();
+                if (!z2 && getRulerScope().getCoordinatesAccessed()) {
+                    LayoutCoordinates coordinates = getCoordinates();
+                    m7389getMaxnOccac = IntOffsetKt.m7396roundk4lQ0M(LayoutCoordinatesKt.positionOnScreen(coordinates));
+                    m7427getZeroYbymL2g = coordinates.mo5962getSizeYbymL2g();
+                    z2 = (IntOffset.m7378equalsimpl0(m7389getMaxnOccac, getRulerScope().m6175getPositionOnScreennOccac()) && IntSize.m7420equalsimpl0(m7427getZeroYbymL2g, getRulerScope().m6176getSizeYbymL2g())) ? true : true;
+                }
+                long j = m7389getMaxnOccac;
+                long j2 = m7427getZeroYbymL2g;
+                if (z2) {
+                    PlaceableResult placeableResult = this.cachedRulerPlaceableResult;
+                    if (placeableResult != null) {
+                        placeableResult.setResult(measureResult);
+                    } else {
+                        placeableResult = new PlaceableResult(measureResult, this);
+                        this.cachedRulerPlaceableResult = placeableResult;
+                    }
+                    m6172captureRulersOSxE8f4(placeableResult, j, j2);
+                    this.rulersLambda = measureResult.getRulers();
+                    return;
+                }
+                return;
+            } else if (mutableScatterMap != null) {
+                MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> mutableScatterMap2 = mutableScatterMap;
+                Object[] objArr = mutableScatterMap2.values;
+                long[] jArr = mutableScatterMap2.metadata;
+                int length = jArr.length - 2;
+                if (length >= 0) {
+                    int i = 0;
+                    while (true) {
+                        long j3 = jArr[i];
+                        if ((((~j3) << c3) & j3 & (-9187201950435737472L)) != -9187201950435737472L) {
+                            int i2 = 8 - ((~(i - length)) >>> 31);
+                            int i3 = 0;
+                            while (i3 < i2) {
+                                if ((j3 & 255) < 128) {
+                                    c2 = c3;
+                                    notifyRulerValueChange((MutableScatterSet) objArr[(i << 3) + i3]);
+                                } else {
+                                    c2 = c3;
+                                }
+                                j3 >>= 8;
+                                i3++;
+                                c3 = c2;
+                            }
+                            c = c3;
+                            if (i2 != 8) {
+                                break;
+                            }
+                        } else {
+                            c = c3;
+                        }
+                        if (i == length) {
+                            break;
+                        }
+                        i++;
+                        c3 = c;
+                    }
+                }
+                mutableScatterMap.clear();
+                return;
+            } else {
+                return;
+            }
+        }
+        if (mutableScatterMap != null) {
+            MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> mutableScatterMap3 = mutableScatterMap;
+            Object[] objArr2 = mutableScatterMap3.values;
+            long[] jArr2 = mutableScatterMap3.metadata;
+            int length2 = jArr2.length - 2;
+            if (length2 >= 0) {
+                int i4 = 0;
+                while (true) {
+                    long j4 = jArr2[i4];
+                    if ((((~j4) << 7) & j4 & (-9187201950435737472L)) != -9187201950435737472L) {
+                        int i5 = 8 - ((~(i4 - length2)) >>> 31);
+                        for (int i6 = 0; i6 < i5; i6++) {
+                            if ((j4 & 255) < 128) {
+                                notifyRulerValueChange((MutableScatterSet) objArr2[(i4 << 3) + i6]);
+                            }
+                            j4 >>= 8;
+                        }
+                        if (i5 != 8) {
+                            break;
+                        }
+                    }
+                    if (i4 == length2) {
+                        break;
+                    }
+                    i4++;
+                }
+            }
+        }
+        if (mutableScatterMap != null) {
+            mutableScatterMap.clear();
+        }
+        RulerTrackingMap rulerTrackingMap = this.rulerValues;
+        if (rulerTrackingMap != null) {
+            rulerTrackingMap.clear();
+        }
+    }
+
+    /* renamed from: captureRulers-OSxE8f4$default  reason: not valid java name */
+    static /* synthetic */ void m6173captureRulersOSxE8f4$default(LookaheadCapablePlaceable lookaheadCapablePlaceable, PlaceableResult placeableResult, long j, long j2, int i, Object obj) {
+        if (obj != null) {
+            throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: captureRulers-OSxE8f4");
+        }
+        if ((i & 2) != 0) {
+            j = IntOffset.Companion.m7389getMaxnOccac();
+        }
+        long j3 = j;
+        if ((i & 4) != 0) {
+            j2 = IntSize.Companion.m7427getZeroYbymL2g();
+        }
+        lookaheadCapablePlaceable.m6172captureRulersOSxE8f4(placeableResult, j3, j2);
+    }
+
+    /* renamed from: captureRulers-OSxE8f4  reason: not valid java name */
+    private final void m6172captureRulersOSxE8f4(final PlaceableResult placeableResult, final long j, final long j2) {
+        OwnerSnapshotObserver snapshotObserver;
+        MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> mutableScatterMap = this.rulerReaders;
+        RulerTrackingMap rulerTrackingMap = this.rulerValues;
+        if (rulerTrackingMap == null) {
+            rulerTrackingMap = new RulerTrackingMap();
+            this.rulerValues = rulerTrackingMap;
+        }
+        Owner owner$ui_release = getLayoutNode().getOwner$ui_release();
+        if (owner$ui_release != null && (snapshotObserver = owner$ui_release.getSnapshotObserver()) != null) {
+            snapshotObserver.observeReads$ui_release(placeableResult, onCommitAffectingRuler, new Function0<Unit>() { // from class: androidx.compose.ui.node.LookaheadCapablePlaceable$captureRulers$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(0);
+                }
+
+                @Override // kotlin.jvm.functions.Function0
+                public /* bridge */ /* synthetic */ Unit invoke() {
+                    invoke2();
+                    return Unit.INSTANCE;
+                }
+
+                /* renamed from: invoke  reason: avoid collision after fix types in other method */
+                public final void invoke2() {
+                    LookaheadCapablePlaceable.ResettableRulerScope rulerScope;
+                    LookaheadCapablePlaceable.ResettableRulerScope rulerScope2;
+                    LookaheadCapablePlaceable.ResettableRulerScope rulerScope3;
+                    LookaheadCapablePlaceable.ResettableRulerScope rulerScope4;
+                    rulerScope = LookaheadCapablePlaceable.this.getRulerScope();
+                    rulerScope.setCoordinatesAccessed(false);
+                    rulerScope2 = LookaheadCapablePlaceable.this.getRulerScope();
+                    rulerScope2.m6177setPositionOnScreengyyYBs(j);
+                    rulerScope3 = LookaheadCapablePlaceable.this.getRulerScope();
+                    rulerScope3.m6178setSizeozmzZPI(j2);
+                    Function1<RulerScope, Unit> rulers = placeableResult.getResult().getRulers();
+                    if (rulers != null) {
+                        rulerScope4 = LookaheadCapablePlaceable.this.getRulerScope();
+                        rulers.invoke(rulerScope4);
+                    }
+                }
+            });
+        }
+        rulerTrackingMap.notifyChanged(isLookingAhead(), this, mutableScatterMap);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void captureRulersIfNeeded(PlaceableResult placeableResult) {
+        if (this.isPlacingForAlignment) {
             return;
         }
+        Function1<RulerScope, Unit> rulers = placeableResult.getResult().getRulers();
         MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> mutableScatterMap = this.rulerReaders;
-        if (mutableScatterMap != null) {
+        if (rulers != null) {
+            m6173captureRulersOSxE8f4$default(this, placeableResult, 0L, 0L, 6, null);
+            this.rulersLambda = rulers;
+        } else if (mutableScatterMap != null) {
             MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> mutableScatterMap2 = mutableScatterMap;
             Object[] objArr = mutableScatterMap2.values;
             long[] jArr = mutableScatterMap2.metadata;
@@ -489,203 +655,8 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
                     i++;
                 }
             }
+            mutableScatterMap.clear();
         }
-        MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> mutableScatterMap3 = this.rulerReaders;
-        if (mutableScatterMap3 != null) {
-            mutableScatterMap3.clear();
-        }
-        MutableObjectFloatMap<Ruler> mutableObjectFloatMap = this.rulerValues;
-        if (mutableObjectFloatMap != null) {
-            mutableObjectFloatMap.clear();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x013b  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void captureRulers(final PlaceableResult placeableResult) {
-        long j;
-        long j2;
-        int length;
-        LookaheadCapablePlaceable parent;
-        long j3;
-        MutableScatterSet<WeakReference<LayoutNode>> remove;
-        OwnerSnapshotObserver snapshotObserver;
-        char c;
-        char c2;
-        if (this.isPlacingForAlignment) {
-            return;
-        }
-        Function1<RulerScope, Unit> rulers = placeableResult.getResult().getRulers();
-        MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> mutableScatterMap = this.rulerReaders;
-        char c3 = 7;
-        int i = 8;
-        if (rulers == null) {
-            if (mutableScatterMap != null) {
-                MutableScatterMap<Ruler, MutableScatterSet<WeakReference<LayoutNode>>> mutableScatterMap2 = mutableScatterMap;
-                Object[] objArr = mutableScatterMap2.values;
-                long[] jArr = mutableScatterMap2.metadata;
-                int length2 = jArr.length - 2;
-                if (length2 >= 0) {
-                    int i2 = 0;
-                    while (true) {
-                        long j4 = jArr[i2];
-                        if ((((~j4) << c3) & j4 & (-9187201950435737472L)) != -9187201950435737472L) {
-                            int i3 = 8 - ((~(i2 - length2)) >>> 31);
-                            int i4 = 0;
-                            while (i4 < i3) {
-                                if ((j4 & 255) < 128) {
-                                    c2 = c3;
-                                    notifyRulerValueChange((MutableScatterSet) objArr[(i2 << 3) + i4]);
-                                } else {
-                                    c2 = c3;
-                                }
-                                j4 >>= 8;
-                                i4++;
-                                c3 = c2;
-                            }
-                            c = c3;
-                            if (i3 != 8) {
-                                break;
-                            }
-                        } else {
-                            c = c3;
-                        }
-                        if (i2 == length2) {
-                            break;
-                        }
-                        i2++;
-                        c3 = c;
-                    }
-                }
-                mutableScatterMap.clear();
-                return;
-            }
-            return;
-        }
-        long j5 = 128;
-        MutableObjectFloatMap<Ruler> mutableObjectFloatMap = this.rulerValuesCache;
-        if (mutableObjectFloatMap == null) {
-            mutableObjectFloatMap = new MutableObjectFloatMap<>(0, 1, null);
-            this.rulerValuesCache = mutableObjectFloatMap;
-        }
-        MutableObjectFloatMap<Ruler> mutableObjectFloatMap2 = this.rulerValues;
-        if (mutableObjectFloatMap2 == null) {
-            mutableObjectFloatMap2 = new MutableObjectFloatMap<>(0, 1, null);
-            this.rulerValues = mutableObjectFloatMap2;
-        }
-        MutableObjectFloatMap<Ruler> mutableObjectFloatMap3 = mutableObjectFloatMap2;
-        mutableObjectFloatMap.putAll(mutableObjectFloatMap3);
-        mutableObjectFloatMap2.clear();
-        Owner owner$ui_release = getLayoutNode().getOwner$ui_release();
-        if (owner$ui_release != null && (snapshotObserver = owner$ui_release.getSnapshotObserver()) != null) {
-            snapshotObserver.observeReads$ui_release(placeableResult, onCommitAffectingRuler, new Function0<Unit>() { // from class: androidx.compose.ui.node.LookaheadCapablePlaceable$captureRulers$3
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(0);
-                }
-
-                @Override // kotlin.jvm.functions.Function0
-                public /* bridge */ /* synthetic */ Unit invoke() {
-                    invoke2();
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2() {
-                    Function1<RulerScope, Unit> rulers2 = PlaceableResult.this.getResult().getRulers();
-                    if (rulers2 != null) {
-                        rulers2.invoke(this.getRulerScope());
-                    }
-                }
-            });
-        }
-        if (mutableScatterMap != null) {
-            MutableObjectFloatMap<Ruler> mutableObjectFloatMap4 = mutableObjectFloatMap;
-            Object[] objArr2 = mutableObjectFloatMap4.keys;
-            float[] fArr = mutableObjectFloatMap4.values;
-            long[] jArr2 = mutableObjectFloatMap4.metadata;
-            int length3 = jArr2.length - 2;
-            if (length3 >= 0) {
-                j = -9187201950435737472L;
-                int i5 = 0;
-                while (true) {
-                    long j6 = jArr2[i5];
-                    int i6 = i;
-                    if ((((~j6) << 7) & j6 & (-9187201950435737472L)) != -9187201950435737472L) {
-                        int i7 = 8 - ((~(i5 - length3)) >>> 31);
-                        int i8 = 0;
-                        while (i8 < i7) {
-                            if ((j6 & 255) < j5) {
-                                int i9 = (i5 << 3) + i8;
-                                Ruler ruler = (Ruler) objArr2[i9];
-                                j3 = j5;
-                                if (mutableObjectFloatMap2.getOrDefault(ruler, Float.NaN) != fArr[i9] && (remove = mutableScatterMap.remove(ruler)) != null) {
-                                    notifyRulerValueChange(remove);
-                                }
-                            } else {
-                                j3 = j5;
-                            }
-                            j6 >>= i6;
-                            i8++;
-                            j5 = j3;
-                        }
-                        j2 = j5;
-                        if (i7 != i6) {
-                            break;
-                        }
-                    } else {
-                        j2 = j5;
-                    }
-                    if (i5 == length3) {
-                        break;
-                    }
-                    i5++;
-                    j5 = j2;
-                    i = 8;
-                }
-                Object[] objArr3 = mutableObjectFloatMap3.keys;
-                long[] jArr3 = mutableObjectFloatMap3.metadata;
-                length = jArr3.length - 2;
-                if (length >= 0) {
-                    int i10 = 0;
-                    while (true) {
-                        long j7 = jArr3[i10];
-                        if ((((~j7) << 7) & j7 & j) != j) {
-                            int i11 = 8 - ((~(i10 - length)) >>> 31);
-                            for (int i12 = 0; i12 < i11; i12++) {
-                                if ((j7 & 255) < j2) {
-                                    Ruler ruler2 = (Ruler) objArr3[(i10 << 3) + i12];
-                                    if (!mutableObjectFloatMap.containsKey(ruler2) && (parent = getParent()) != null) {
-                                        parent.invalidateChildrenOfDefiningRuler(ruler2);
-                                    }
-                                }
-                                j7 >>= 8;
-                            }
-                            if (i11 != 8) {
-                                break;
-                            }
-                        }
-                        if (i10 == length) {
-                            break;
-                        }
-                        i10++;
-                    }
-                }
-                mutableObjectFloatMap.clear();
-            }
-        }
-        j = -9187201950435737472L;
-        j2 = 128;
-        Object[] objArr32 = mutableObjectFloatMap3.keys;
-        long[] jArr32 = mutableObjectFloatMap3.metadata;
-        length = jArr32.length - 2;
-        if (length >= 0) {
-        }
-        mutableObjectFloatMap.clear();
     }
 
     private final void notifyRulerValueChange(MutableScatterSet<WeakReference<LayoutNode>> mutableScatterSet) {
@@ -724,29 +695,102 @@ public abstract class LookaheadCapablePlaceable extends Placeable implements Mea
     }
 
     public final void provideRulerValue(Ruler ruler, float f) {
-        MutableObjectFloatMap<Ruler> mutableObjectFloatMap = this.rulerValues;
-        if (mutableObjectFloatMap == null) {
-            mutableObjectFloatMap = new MutableObjectFloatMap<>(0, 1, null);
-            this.rulerValues = mutableObjectFloatMap;
+        RulerTrackingMap rulerTrackingMap = this.rulerValues;
+        if (rulerTrackingMap == null) {
+            rulerTrackingMap = new RulerTrackingMap();
+            this.rulerValues = rulerTrackingMap;
         }
-        mutableObjectFloatMap.set(ruler, f);
+        rulerTrackingMap.set(ruler, f);
     }
 
     public final void provideRelativeRulerValue(Ruler ruler, float f) {
-        MutableObjectFloatMap<Ruler> mutableObjectFloatMap = this.rulerValues;
-        if (mutableObjectFloatMap == null) {
-            mutableObjectFloatMap = new MutableObjectFloatMap<>(0, 1, null);
-            this.rulerValues = mutableObjectFloatMap;
+        RulerTrackingMap rulerTrackingMap = this.rulerValues;
+        if (rulerTrackingMap == null) {
+            rulerTrackingMap = new RulerTrackingMap();
+            this.rulerValues = rulerTrackingMap;
         }
         if (getLayoutDirection() != LayoutDirection.Ltr) {
             f = getWidth() - f;
         }
-        mutableObjectFloatMap.set(ruler, f);
+        rulerTrackingMap.set(ruler, f);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* compiled from: LookaheadDelegate.kt */
+    @Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0015\u0010\u0019\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001dH\u0096\u0004J\u0015\u0010\u001e\u001a\u00020\u001a*\u00020\u001f2\u0006\u0010\u001c\u001a\u00020\u001dH\u0096\u0004R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001c\u0010\n\u001a\u00020\u000bX\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u0010\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u001c\u0010\u0011\u001a\u00020\u0012X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u0010\u001a\u0004\b\u0013\u0010\r\"\u0004\b\u0014\u0010\u000fR\u0014\u0010\u0015\u001a\u00020\u00168VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0018R\u0014\u0010 \u001a\u00020\u001d8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b!\u0010\"R\u0014\u0010#\u001a\u00020\u001d8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b$\u0010\"¨\u0006%"}, d2 = {"Landroidx/compose/ui/node/LookaheadCapablePlaceable$ResettableRulerScope;", "Landroidx/compose/ui/layout/RulerScope;", "<init>", "(Landroidx/compose/ui/node/LookaheadCapablePlaceable;)V", "coordinatesAccessed", "", "getCoordinatesAccessed", "()Z", "setCoordinatesAccessed", "(Z)V", "positionOnScreen", "Landroidx/compose/ui/unit/IntOffset;", "getPositionOnScreen-nOcc-ac", "()J", "setPositionOnScreen--gyyYBs", "(J)V", "J", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g", "setSize-ozmzZPI", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "getCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "provides", "", "Landroidx/compose/ui/layout/Ruler;", "value", "", "providesRelative", "Landroidx/compose/ui/layout/VerticalRuler;", "density", "getDensity", "()F", "fontScale", "getFontScale", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
+    public final class ResettableRulerScope implements RulerScope {
+        private boolean coordinatesAccessed;
+        private long positionOnScreen = IntOffset.Companion.m7389getMaxnOccac();
+        private long size = IntSize.Companion.m7427getZeroYbymL2g();
+
+        public ResettableRulerScope() {
+        }
+
+        public final boolean getCoordinatesAccessed() {
+            return this.coordinatesAccessed;
+        }
+
+        public final void setCoordinatesAccessed(boolean z) {
+            this.coordinatesAccessed = z;
+        }
+
+        /* renamed from: getPositionOnScreen-nOcc-ac  reason: not valid java name */
+        public final long m6175getPositionOnScreennOccac() {
+            return this.positionOnScreen;
+        }
+
+        /* renamed from: setPositionOnScreen--gyyYBs  reason: not valid java name */
+        public final void m6177setPositionOnScreengyyYBs(long j) {
+            this.positionOnScreen = j;
+        }
+
+        /* renamed from: getSize-YbymL2g  reason: not valid java name */
+        public final long m6176getSizeYbymL2g() {
+            return this.size;
+        }
+
+        /* renamed from: setSize-ozmzZPI  reason: not valid java name */
+        public final void m6178setSizeozmzZPI(long j) {
+            this.size = j;
+        }
+
+        @Override // androidx.compose.ui.layout.RulerScope
+        public LayoutCoordinates getCoordinates() {
+            this.coordinatesAccessed = true;
+            LayoutCoordinates coordinates = LookaheadCapablePlaceable.this.getCoordinates();
+            if (IntOffset.m7378equalsimpl0(this.positionOnScreen, IntOffset.Companion.m7389getMaxnOccac())) {
+                this.positionOnScreen = IntOffsetKt.m7396roundk4lQ0M(LayoutCoordinatesKt.positionOnScreen(coordinates));
+                this.size = coordinates.mo5962getSizeYbymL2g();
+            }
+            LookaheadCapablePlaceable.this.getLayoutNode().getLayoutDelegate$ui_release().onCoordinatesUsed();
+            return coordinates;
+        }
+
+        @Override // androidx.compose.ui.layout.RulerScope
+        public void provides(Ruler ruler, float f) {
+            LookaheadCapablePlaceable.this.provideRulerValue(ruler, f);
+        }
+
+        @Override // androidx.compose.ui.layout.RulerScope
+        public void providesRelative(VerticalRuler verticalRuler, float f) {
+            LookaheadCapablePlaceable.this.provideRelativeRulerValue(verticalRuler, f);
+        }
+
+        @Override // androidx.compose.ui.unit.Density
+        public float getDensity() {
+            return LookaheadCapablePlaceable.this.getDensity();
+        }
+
+        @Override // androidx.compose.ui.unit.FontScaling
+        public float getFontScale() {
+            return LookaheadCapablePlaceable.this.getFontScale();
+        }
     }
 
     /* compiled from: LookaheadDelegate.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Landroidx/compose/ui/node/LookaheadCapablePlaceable$Companion;", "", "()V", "onCommitAffectingRuler", "Lkotlin/Function1;", "Landroidx/compose/ui/node/PlaceableResult;", "", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Landroidx/compose/ui/node/LookaheadCapablePlaceable$Companion;", "", "<init>", "()V", "onCommitAffectingRuler", "Lkotlin/Function1;", "Landroidx/compose/ui/node/PlaceableResult;", "", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -39,7 +39,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u0000B\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\u001a±\u0001\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00062\u0013\b\u0002\u0010\u0007\u001a\r\u0012\u0004\u0012\u00020\u00040\b¢\u0006\u0002\b\t2\u0013\b\u0002\u0010\n\u001a\r\u0012\u0004\u0012\u00020\u00040\b¢\u0006\u0002\b\t2\u0013\b\u0002\u0010\u000b\u001a\r\u0012\u0004\u0012\u00020\u00040\b¢\u0006\u0002\b\t2\u0013\b\u0002\u0010\f\u001a\r\u0012\u0004\u0012\u00020\u00040\b¢\u0006\u0002\b\t2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102\b\b\u0002\u0010\u0012\u001a\u00020\u00132\u0017\u0010\u0014\u001a\u0013\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00040\u0015¢\u0006\u0002\b\tH\u0007ø\u0001\u0000¢\u0006\u0004\b\u0017\u0010\u0018\u001a\u0087\u0001\u0010\u0019\u001a\u00020\u00042\u0006\u0010\u001a\u001a\u00020\u000e2\u0011\u0010\u0007\u001a\r\u0012\u0004\u0012\u00020\u00040\b¢\u0006\u0002\b\t2\u0017\u0010\u0014\u001a\u0013\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00040\u0015¢\u0006\u0002\b\t2\u0011\u0010\u001b\u001a\r\u0012\u0004\u0012\u00020\u00040\b¢\u0006\u0002\b\t2\u0011\u0010\u001c\u001a\r\u0012\u0004\u0012\u00020\u00040\b¢\u0006\u0002\b\t2\u0006\u0010\u0012\u001a\u00020\u00132\u0011\u0010\n\u001a\r\u0012\u0004\u0012\u00020\u00040\b¢\u0006\u0002\b\tH\u0003ø\u0001\u0000¢\u0006\u0004\b\u001d\u0010\u001e\"\u0010\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u001f"}, d2 = {"FabSpacing", "Landroidx/compose/ui/unit/Dp;", "F", "Scaffold", "", "modifier", "Landroidx/compose/ui/Modifier;", "topBar", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "bottomBar", "snackbarHost", "floatingActionButton", "floatingActionButtonPosition", "Landroidx/compose/material3/FabPosition;", "containerColor", "Landroidx/compose/ui/graphics/Color;", "contentColor", "contentWindowInsets", "Landroidx/compose/foundation/layout/WindowInsets;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/PaddingValues;", "Scaffold-TvnljyQ", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;IJJLandroidx/compose/foundation/layout/WindowInsets;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "ScaffoldLayout", "fabPosition", "snackbar", "fab", "ScaffoldLayout-FMILGgc", "(ILkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/layout/WindowInsets;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ScaffoldKt {
-    private static final float FabSpacing = Dp.m6684constructorimpl(16);
+    private static final float FabSpacing = Dp.m7251constructorimpl(16);
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x011f  */
     /* JADX WARN: Removed duplicated region for block: B:101:0x0122  */
@@ -90,7 +90,7 @@ public final class ScaffoldKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2212ScaffoldTvnljyQ(Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, int i, long j, long j2, WindowInsets windowInsets, final Function3<? super PaddingValues, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i2, final int i3) {
+    public static final void m2519ScaffoldTvnljyQ(Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, int i, long j, long j2, WindowInsets windowInsets, final Function3<? super PaddingValues, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -102,11 +102,11 @@ public final class ScaffoldKt {
         int i8;
         int i9;
         Modifier.Companion companion;
-        Function2<Composer, Integer, Unit> m1777getLambda1$material3_release;
-        Function2<Composer, Integer, Unit> m1778getLambda2$material3_release;
-        Function2<Composer, Integer, Unit> m1779getLambda3$material3_release;
-        Function2<Composer, Integer, Unit> m1780getLambda4$material3_release;
-        int m1909getEndERTFSPs;
+        Function2<Composer, Integer, Unit> m2084getLambda1$material3_release;
+        Function2<Composer, Integer, Unit> m2085getLambda2$material3_release;
+        Function2<Composer, Integer, Unit> m2086getLambda3$material3_release;
+        Function2<Composer, Integer, Unit> m2087getLambda4$material3_release;
+        int m2216getEndERTFSPs;
         int i10;
         int i11;
         long j3;
@@ -195,23 +195,23 @@ public final class ScaffoldKt {
                                 startRestartGroup.startDefaults();
                                 if ((i2 & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                                     companion = i9 == 0 ? Modifier.Companion : modifier;
-                                    m1777getLambda1$material3_release = i17 == 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.m1777getLambda1$material3_release() : obj;
-                                    m1778getLambda2$material3_release = i5 == 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.m1778getLambda2$material3_release() : obj2;
-                                    m1779getLambda3$material3_release = i6 == 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.m1779getLambda3$material3_release() : obj3;
-                                    m1780getLambda4$material3_release = i7 == 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.m1780getLambda4$material3_release() : obj4;
-                                    m1909getEndERTFSPs = i8 == 0 ? FabPosition.Companion.m1909getEndERTFSPs() : i;
+                                    m2084getLambda1$material3_release = i17 == 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.m2084getLambda1$material3_release() : obj;
+                                    m2085getLambda2$material3_release = i5 == 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.m2085getLambda2$material3_release() : obj2;
+                                    m2086getLambda3$material3_release = i6 == 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.m2086getLambda3$material3_release() : obj3;
+                                    m2087getLambda4$material3_release = i7 == 0 ? ComposableSingletons$ScaffoldKt.INSTANCE.m2087getLambda4$material3_release() : obj4;
+                                    m2216getEndERTFSPs = i8 == 0 ? FabPosition.Companion.m2216getEndERTFSPs() : i;
                                     if ((i3 & 64) == 0) {
                                         i4 &= -3670017;
                                         i10 = -234881025;
                                         i11 = -29360129;
-                                        j3 = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m1695getBackground0d7_KjU();
+                                        j3 = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2002getBackground0d7_KjU();
                                     } else {
                                         i10 = -234881025;
                                         i11 = -29360129;
                                         j3 = j;
                                     }
                                     if ((i3 & 128) == 0) {
-                                        j4 = ColorSchemeKt.m1733contentColorForek8zF_U(j3, startRestartGroup, (i4 >> 18) & 14);
+                                        j4 = ColorSchemeKt.m2040contentColorForek8zF_U(j3, startRestartGroup, (i4 >> 18) & 14);
                                         i4 &= i11;
                                     } else {
                                         j4 = j2;
@@ -236,13 +236,13 @@ public final class ScaffoldKt {
                                         i4 &= -234881025;
                                     }
                                     companion = modifier;
-                                    m1909getEndERTFSPs = i;
+                                    m2216getEndERTFSPs = i;
                                     j3 = j;
                                     windowInsets2 = windowInsets;
-                                    m1777getLambda1$material3_release = obj;
-                                    m1778getLambda2$material3_release = obj2;
-                                    m1779getLambda3$material3_release = obj3;
-                                    m1780getLambda4$material3_release = obj4;
+                                    m2084getLambda1$material3_release = obj;
+                                    m2085getLambda2$material3_release = obj2;
+                                    m2086getLambda3$material3_release = obj3;
+                                    m2087getLambda4$material3_release = obj4;
                                     i12 = 100663296;
                                     j5 = j2;
                                 }
@@ -289,14 +289,14 @@ public final class ScaffoldKt {
                                     startRestartGroup.updateRememberedValue(rememberedValue2);
                                 }
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                final Function2<? super Composer, ? super Integer, Unit> function29 = m1777getLambda1$material3_release;
-                                final Function2<? super Composer, ? super Integer, Unit> function210 = m1778getLambda2$material3_release;
-                                final Function2<? super Composer, ? super Integer, Unit> function211 = m1779getLambda3$material3_release;
-                                final Function2<? super Composer, ? super Integer, Unit> function212 = m1780getLambda4$material3_release;
-                                final int i19 = m1909getEndERTFSPs;
+                                final Function2<? super Composer, ? super Integer, Unit> function29 = m2084getLambda1$material3_release;
+                                final Function2<? super Composer, ? super Integer, Unit> function210 = m2085getLambda2$material3_release;
+                                final Function2<? super Composer, ? super Integer, Unit> function211 = m2086getLambda3$material3_release;
+                                final Function2<? super Composer, ? super Integer, Unit> function212 = m2087getLambda4$material3_release;
+                                final int i19 = m2216getEndERTFSPs;
                                 int i20 = i4 >> 12;
                                 composer2 = startRestartGroup;
-                                SurfaceKt.m2347SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j8, j5, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1979205334, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
+                                SurfaceKt.m2654SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j8, j5, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1979205334, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
                                     /* JADX INFO: Access modifiers changed from: package-private */
                                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                     /* JADX WARN: Multi-variable type inference failed */
@@ -316,7 +316,7 @@ public final class ScaffoldKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(-1979205334, i21, -1, "androidx.compose.material3.Scaffold.<anonymous> (Scaffold.kt:105)");
                                             }
-                                            ScaffoldKt.m2213ScaffoldLayoutFMILGgc(i19, function29, function3, function211, function212, mutableWindowInsets, function210, composer3, 0);
+                                            ScaffoldKt.m2520ScaffoldLayoutFMILGgc(i19, function29, function3, function211, function212, mutableWindowInsets, function210, composer3, 0);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                                 return;
@@ -330,11 +330,11 @@ public final class ScaffoldKt {
                                     ComposerKt.traceEventEnd();
                                 }
                                 modifier2 = companion;
-                                function25 = m1777getLambda1$material3_release;
-                                function26 = m1778getLambda2$material3_release;
-                                function27 = m1779getLambda3$material3_release;
-                                function28 = m1780getLambda4$material3_release;
-                                i14 = m1909getEndERTFSPs;
+                                function25 = m2084getLambda1$material3_release;
+                                function26 = m2085getLambda2$material3_release;
+                                function27 = m2086getLambda3$material3_release;
+                                function28 = m2087getLambda4$material3_release;
+                                i14 = m2216getEndERTFSPs;
                                 j6 = j8;
                                 j7 = j5;
                             } else {
@@ -367,7 +367,7 @@ public final class ScaffoldKt {
                                     }
 
                                     public final void invoke(Composer composer3, int i21) {
-                                        ScaffoldKt.m2212ScaffoldTvnljyQ(Modifier.this, function25, function26, function27, function28, i14, j6, j7, windowInsets2, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                                        ScaffoldKt.m2519ScaffoldTvnljyQ(Modifier.this, function25, function26, function27, function28, i14, j6, j7, windowInsets2, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                                     }
                                 });
                                 return;
@@ -439,14 +439,14 @@ public final class ScaffoldKt {
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue2);
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        final Function2<? super Composer, ? super Integer, Unit> function292 = m1777getLambda1$material3_release;
-                        final Function2<? super Composer, ? super Integer, Unit> function2102 = m1778getLambda2$material3_release;
-                        final Function2<? super Composer, ? super Integer, Unit> function2112 = m1779getLambda3$material3_release;
-                        final Function2<? super Composer, ? super Integer, Unit> function2122 = m1780getLambda4$material3_release;
-                        final int i192 = m1909getEndERTFSPs;
+                        final Function2<? super Composer, ? super Integer, Unit> function292 = m2084getLambda1$material3_release;
+                        final Function2<? super Composer, ? super Integer, Unit> function2102 = m2085getLambda2$material3_release;
+                        final Function2<? super Composer, ? super Integer, Unit> function2112 = m2086getLambda3$material3_release;
+                        final Function2<? super Composer, ? super Integer, Unit> function2122 = m2087getLambda4$material3_release;
+                        final int i192 = m2216getEndERTFSPs;
                         int i202 = i4 >> 12;
                         composer2 = startRestartGroup;
-                        SurfaceKt.m2347SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j82, j5, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1979205334, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
+                        SurfaceKt.m2654SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j82, j5, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1979205334, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             /* JADX WARN: Multi-variable type inference failed */
@@ -466,7 +466,7 @@ public final class ScaffoldKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(-1979205334, i21, -1, "androidx.compose.material3.Scaffold.<anonymous> (Scaffold.kt:105)");
                                     }
-                                    ScaffoldKt.m2213ScaffoldLayoutFMILGgc(i192, function292, function3, function2112, function2122, mutableWindowInsets2, function2102, composer3, 0);
+                                    ScaffoldKt.m2520ScaffoldLayoutFMILGgc(i192, function292, function3, function2112, function2122, mutableWindowInsets2, function2102, composer3, 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                         return;
@@ -479,11 +479,11 @@ public final class ScaffoldKt {
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         modifier2 = companion;
-                        function25 = m1777getLambda1$material3_release;
-                        function26 = m1778getLambda2$material3_release;
-                        function27 = m1779getLambda3$material3_release;
-                        function28 = m1780getLambda4$material3_release;
-                        i14 = m1909getEndERTFSPs;
+                        function25 = m2084getLambda1$material3_release;
+                        function26 = m2085getLambda2$material3_release;
+                        function27 = m2086getLambda3$material3_release;
+                        function28 = m2087getLambda4$material3_release;
+                        i14 = m2216getEndERTFSPs;
                         j6 = j82;
                         j7 = j5;
                         endRestartGroup = composer2.endRestartGroup();
@@ -567,14 +567,14 @@ public final class ScaffoldKt {
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    final Function2<? super Composer, ? super Integer, Unit> function2922 = m1777getLambda1$material3_release;
-                    final Function2<? super Composer, ? super Integer, Unit> function21022 = m1778getLambda2$material3_release;
-                    final Function2<? super Composer, ? super Integer, Unit> function21122 = m1779getLambda3$material3_release;
-                    final Function2<? super Composer, ? super Integer, Unit> function21222 = m1780getLambda4$material3_release;
-                    final int i1922 = m1909getEndERTFSPs;
+                    final Function2<? super Composer, ? super Integer, Unit> function2922 = m2084getLambda1$material3_release;
+                    final Function2<? super Composer, ? super Integer, Unit> function21022 = m2085getLambda2$material3_release;
+                    final Function2<? super Composer, ? super Integer, Unit> function21122 = m2086getLambda3$material3_release;
+                    final Function2<? super Composer, ? super Integer, Unit> function21222 = m2087getLambda4$material3_release;
+                    final int i1922 = m2216getEndERTFSPs;
                     int i2022 = i4 >> 12;
                     composer2 = startRestartGroup;
-                    SurfaceKt.m2347SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j822, j5, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1979205334, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
+                    SurfaceKt.m2654SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j822, j5, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1979205334, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         /* JADX WARN: Multi-variable type inference failed */
@@ -594,7 +594,7 @@ public final class ScaffoldKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(-1979205334, i21, -1, "androidx.compose.material3.Scaffold.<anonymous> (Scaffold.kt:105)");
                                 }
-                                ScaffoldKt.m2213ScaffoldLayoutFMILGgc(i1922, function2922, function3, function21122, function21222, mutableWindowInsets22, function21022, composer3, 0);
+                                ScaffoldKt.m2520ScaffoldLayoutFMILGgc(i1922, function2922, function3, function21122, function21222, mutableWindowInsets22, function21022, composer3, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                     return;
@@ -607,11 +607,11 @@ public final class ScaffoldKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier2 = companion;
-                    function25 = m1777getLambda1$material3_release;
-                    function26 = m1778getLambda2$material3_release;
-                    function27 = m1779getLambda3$material3_release;
-                    function28 = m1780getLambda4$material3_release;
-                    i14 = m1909getEndERTFSPs;
+                    function25 = m2084getLambda1$material3_release;
+                    function26 = m2085getLambda2$material3_release;
+                    function27 = m2086getLambda3$material3_release;
+                    function28 = m2087getLambda4$material3_release;
+                    i14 = m2216getEndERTFSPs;
                     j6 = j822;
                     j7 = j5;
                     endRestartGroup = composer2.endRestartGroup();
@@ -699,14 +699,14 @@ public final class ScaffoldKt {
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                final Function2<? super Composer, ? super Integer, Unit> function29222 = m1777getLambda1$material3_release;
-                final Function2<? super Composer, ? super Integer, Unit> function210222 = m1778getLambda2$material3_release;
-                final Function2<? super Composer, ? super Integer, Unit> function211222 = m1779getLambda3$material3_release;
-                final Function2<? super Composer, ? super Integer, Unit> function212222 = m1780getLambda4$material3_release;
-                final int i19222 = m1909getEndERTFSPs;
+                final Function2<? super Composer, ? super Integer, Unit> function29222 = m2084getLambda1$material3_release;
+                final Function2<? super Composer, ? super Integer, Unit> function210222 = m2085getLambda2$material3_release;
+                final Function2<? super Composer, ? super Integer, Unit> function211222 = m2086getLambda3$material3_release;
+                final Function2<? super Composer, ? super Integer, Unit> function212222 = m2087getLambda4$material3_release;
+                final int i19222 = m2216getEndERTFSPs;
                 int i20222 = i4 >> 12;
                 composer2 = startRestartGroup;
-                SurfaceKt.m2347SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j8222, j5, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1979205334, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
+                SurfaceKt.m2654SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j8222, j5, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1979205334, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -726,7 +726,7 @@ public final class ScaffoldKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-1979205334, i21, -1, "androidx.compose.material3.Scaffold.<anonymous> (Scaffold.kt:105)");
                             }
-                            ScaffoldKt.m2213ScaffoldLayoutFMILGgc(i19222, function29222, function3, function211222, function212222, mutableWindowInsets222, function210222, composer3, 0);
+                            ScaffoldKt.m2520ScaffoldLayoutFMILGgc(i19222, function29222, function3, function211222, function212222, mutableWindowInsets222, function210222, composer3, 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                                 return;
@@ -739,11 +739,11 @@ public final class ScaffoldKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier2 = companion;
-                function25 = m1777getLambda1$material3_release;
-                function26 = m1778getLambda2$material3_release;
-                function27 = m1779getLambda3$material3_release;
-                function28 = m1780getLambda4$material3_release;
-                i14 = m1909getEndERTFSPs;
+                function25 = m2084getLambda1$material3_release;
+                function26 = m2085getLambda2$material3_release;
+                function27 = m2086getLambda3$material3_release;
+                function28 = m2087getLambda4$material3_release;
+                i14 = m2216getEndERTFSPs;
                 j6 = j8222;
                 j7 = j5;
                 endRestartGroup = composer2.endRestartGroup();
@@ -835,14 +835,14 @@ public final class ScaffoldKt {
             };
             startRestartGroup.updateRememberedValue(rememberedValue2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            final Function2<? super Composer, ? super Integer, Unit> function292222 = m1777getLambda1$material3_release;
-            final Function2<? super Composer, ? super Integer, Unit> function2102222 = m1778getLambda2$material3_release;
-            final Function2<? super Composer, ? super Integer, Unit> function2112222 = m1779getLambda3$material3_release;
-            final Function2<? super Composer, ? super Integer, Unit> function2122222 = m1780getLambda4$material3_release;
-            final int i192222 = m1909getEndERTFSPs;
+            final Function2<? super Composer, ? super Integer, Unit> function292222 = m2084getLambda1$material3_release;
+            final Function2<? super Composer, ? super Integer, Unit> function2102222 = m2085getLambda2$material3_release;
+            final Function2<? super Composer, ? super Integer, Unit> function2112222 = m2086getLambda3$material3_release;
+            final Function2<? super Composer, ? super Integer, Unit> function2122222 = m2087getLambda4$material3_release;
+            final int i192222 = m2216getEndERTFSPs;
             int i202222 = i4 >> 12;
             composer2 = startRestartGroup;
-            SurfaceKt.m2347SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j82222, j5, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1979205334, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
+            SurfaceKt.m2654SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j82222, j5, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1979205334, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -862,7 +862,7 @@ public final class ScaffoldKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1979205334, i21, -1, "androidx.compose.material3.Scaffold.<anonymous> (Scaffold.kt:105)");
                         }
-                        ScaffoldKt.m2213ScaffoldLayoutFMILGgc(i192222, function292222, function3, function2112222, function2122222, mutableWindowInsets2222, function2102222, composer3, 0);
+                        ScaffoldKt.m2520ScaffoldLayoutFMILGgc(i192222, function292222, function3, function2112222, function2122222, mutableWindowInsets2222, function2102222, composer3, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                             return;
@@ -875,11 +875,11 @@ public final class ScaffoldKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier2 = companion;
-            function25 = m1777getLambda1$material3_release;
-            function26 = m1778getLambda2$material3_release;
-            function27 = m1779getLambda3$material3_release;
-            function28 = m1780getLambda4$material3_release;
-            i14 = m1909getEndERTFSPs;
+            function25 = m2084getLambda1$material3_release;
+            function26 = m2085getLambda2$material3_release;
+            function27 = m2086getLambda3$material3_release;
+            function28 = m2087getLambda4$material3_release;
+            i14 = m2216getEndERTFSPs;
             j6 = j82222;
             j7 = j5;
             endRestartGroup = composer2.endRestartGroup();
@@ -975,14 +975,14 @@ public final class ScaffoldKt {
         };
         startRestartGroup.updateRememberedValue(rememberedValue2);
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        final Function2<? super Composer, ? super Integer, Unit> function2922222 = m1777getLambda1$material3_release;
-        final Function2<? super Composer, ? super Integer, Unit> function21022222 = m1778getLambda2$material3_release;
-        final Function2<? super Composer, ? super Integer, Unit> function21122222 = m1779getLambda3$material3_release;
-        final Function2<? super Composer, ? super Integer, Unit> function21222222 = m1780getLambda4$material3_release;
-        final int i1922222 = m1909getEndERTFSPs;
+        final Function2<? super Composer, ? super Integer, Unit> function2922222 = m2084getLambda1$material3_release;
+        final Function2<? super Composer, ? super Integer, Unit> function21022222 = m2085getLambda2$material3_release;
+        final Function2<? super Composer, ? super Integer, Unit> function21122222 = m2086getLambda3$material3_release;
+        final Function2<? super Composer, ? super Integer, Unit> function21222222 = m2087getLambda4$material3_release;
+        final int i1922222 = m2216getEndERTFSPs;
         int i2022222 = i4 >> 12;
         composer2 = startRestartGroup;
-        SurfaceKt.m2347SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j822222, j5, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1979205334, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
+        SurfaceKt.m2654SurfaceT9BRK9s(WindowInsetsPaddingKt.onConsumedWindowInsetsChanged(companion, (Function1) rememberedValue2), null, j822222, j5, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1979205334, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$Scaffold$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -1002,7 +1002,7 @@ public final class ScaffoldKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-1979205334, i21, -1, "androidx.compose.material3.Scaffold.<anonymous> (Scaffold.kt:105)");
                     }
-                    ScaffoldKt.m2213ScaffoldLayoutFMILGgc(i1922222, function2922222, function3, function21122222, function21222222, mutableWindowInsets22222, function21022222, composer3, 0);
+                    ScaffoldKt.m2520ScaffoldLayoutFMILGgc(i1922222, function2922222, function3, function21122222, function21222222, mutableWindowInsets22222, function21022222, composer3, 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                         return;
@@ -1015,11 +1015,11 @@ public final class ScaffoldKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier2 = companion;
-        function25 = m1777getLambda1$material3_release;
-        function26 = m1778getLambda2$material3_release;
-        function27 = m1779getLambda3$material3_release;
-        function28 = m1780getLambda4$material3_release;
-        i14 = m1909getEndERTFSPs;
+        function25 = m2084getLambda1$material3_release;
+        function26 = m2085getLambda2$material3_release;
+        function27 = m2086getLambda3$material3_release;
+        function28 = m2087getLambda4$material3_release;
+        i14 = m2216getEndERTFSPs;
         j6 = j822222;
         j7 = j5;
         endRestartGroup = composer2.endRestartGroup();
@@ -1029,7 +1029,7 @@ public final class ScaffoldKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: ScaffoldLayout-FMILGgc  reason: not valid java name */
-    public static final void m2213ScaffoldLayoutFMILGgc(final int i, final Function2<? super Composer, ? super Integer, Unit> function2, final Function3<? super PaddingValues, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final WindowInsets windowInsets, final Function2<? super Composer, ? super Integer, Unit> function24, Composer composer, final int i2) {
+    public static final void m2520ScaffoldLayoutFMILGgc(final int i, final Function2<? super Composer, ? super Integer, Unit> function2, final Function3<? super PaddingValues, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final WindowInsets windowInsets, final Function2<? super Composer, ? super Integer, Unit> function24, Composer composer, final int i2) {
         int i3;
         Object obj;
         Object obj2;
@@ -1090,11 +1090,11 @@ public final class ScaffoldKt {
 
                     @Override // kotlin.jvm.functions.Function2
                     public /* bridge */ /* synthetic */ MeasureResult invoke(SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-                        return m2215invoke0kLqBqw(subcomposeMeasureScope, constraints.m6643unboximpl());
+                        return m2522invoke0kLqBqw(subcomposeMeasureScope, constraints.m7210unboximpl());
                     }
 
                     /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                    public final MeasureResult m2215invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, long j) {
+                    public final MeasureResult m2522invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, long j) {
                         Object obj3;
                         Object obj4;
                         Object obj5;
@@ -1116,14 +1116,14 @@ public final class ScaffoldKt {
                         int i8;
                         float f5;
                         float f6;
-                        final int m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j);
-                        final int m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j);
-                        long m6627copyZbe2FdA$default = Constraints.m6627copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
+                        final int m7204getMaxWidthimpl = Constraints.m7204getMaxWidthimpl(j);
+                        final int m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j);
+                        long m7194copyZbe2FdA$default = Constraints.m7194copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
                         List<Measurable> subcompose = subcomposeMeasureScope.subcompose(ScaffoldLayoutContent.TopBar, function2);
                         ArrayList arrayList2 = new ArrayList(subcompose.size());
                         int size = subcompose.size();
                         for (int i9 = 0; i9 < size; i9++) {
-                            arrayList2.add(subcompose.get(i9).mo5438measureBRTryo0(m6627copyZbe2FdA$default));
+                            arrayList2.add(subcompose.get(i9).mo5954measureBRTryo0(m7194copyZbe2FdA$default));
                         }
                         ArrayList arrayList3 = arrayList2;
                         if (arrayList3.isEmpty()) {
@@ -1157,7 +1157,7 @@ public final class ScaffoldKt {
                         int i11 = 0;
                         while (i11 < size2) {
                             SubcomposeMeasureScope subcomposeMeasureScope2 = subcomposeMeasureScope;
-                            arrayList4.add(subcompose2.get(i11).mo5438measureBRTryo0(ConstraintsKt.m6656offsetNN6EwU(m6627copyZbe2FdA$default, (-windowInsets3.getLeft(subcomposeMeasureScope2, subcomposeMeasureScope.getLayoutDirection())) - windowInsets3.getRight(subcomposeMeasureScope2, subcomposeMeasureScope.getLayoutDirection()), -windowInsets3.getBottom(subcomposeMeasureScope2))));
+                            arrayList4.add(subcompose2.get(i11).mo5954measureBRTryo0(ConstraintsKt.m7223offsetNN6EwU(m7194copyZbe2FdA$default, (-windowInsets3.getLeft(subcomposeMeasureScope2, subcomposeMeasureScope.getLayoutDirection())) - windowInsets3.getRight(subcomposeMeasureScope2, subcomposeMeasureScope.getLayoutDirection()), -windowInsets3.getBottom(subcomposeMeasureScope2))));
                             i11++;
                             height3 = height3;
                             subcompose2 = subcompose2;
@@ -1230,10 +1230,10 @@ public final class ScaffoldKt {
                             SubcomposeMeasureScope subcomposeMeasureScope3 = subcomposeMeasureScope;
                             List<Measurable> list = subcompose3;
                             ArrayList arrayList8 = arrayList7;
-                            Placeable mo5438measureBRTryo0 = subcompose3.get(i17).mo5438measureBRTryo0(ConstraintsKt.m6656offsetNN6EwU(m6627copyZbe2FdA$default, (-windowInsets4.getLeft(subcomposeMeasureScope3, subcomposeMeasureScope.getLayoutDirection())) - windowInsets4.getRight(subcomposeMeasureScope3, subcomposeMeasureScope.getLayoutDirection()), -windowInsets4.getBottom(subcomposeMeasureScope3)));
-                            mo5438measureBRTryo0 = (mo5438measureBRTryo0.getHeight() == 0 || mo5438measureBRTryo0.getWidth() == 0) ? null : null;
-                            if (mo5438measureBRTryo0 != null) {
-                                arrayList8.add(mo5438measureBRTryo0);
+                            Placeable mo5954measureBRTryo0 = subcompose3.get(i17).mo5954measureBRTryo0(ConstraintsKt.m7223offsetNN6EwU(m7194copyZbe2FdA$default, (-windowInsets4.getLeft(subcomposeMeasureScope3, subcomposeMeasureScope.getLayoutDirection())) - windowInsets4.getRight(subcomposeMeasureScope3, subcomposeMeasureScope.getLayoutDirection()), -windowInsets4.getBottom(subcomposeMeasureScope3)));
+                            mo5954measureBRTryo0 = (mo5954measureBRTryo0.getHeight() == 0 || mo5954measureBRTryo0.getWidth() == 0) ? null : null;
+                            if (mo5954measureBRTryo0 != null) {
+                                arrayList8.add(mo5954measureBRTryo0);
                             }
                             i17++;
                             height6 = i18;
@@ -1306,29 +1306,29 @@ public final class ScaffoldKt {
                             Intrinsics.checkNotNull(obj8);
                             int height9 = ((Placeable) obj8).getHeight();
                             int i24 = i;
-                            if (FabPosition.m1904equalsimpl0(i24, FabPosition.Companion.m1911getStartERTFSPs())) {
+                            if (FabPosition.m2211equalsimpl0(i24, FabPosition.Companion.m2218getStartERTFSPs())) {
                                 if (subcomposeMeasureScope.getLayoutDirection() == LayoutDirection.Ltr) {
                                     f6 = ScaffoldKt.FabSpacing;
-                                    i7 = subcomposeMeasureScope.mo383roundToPx0680j_4(f6);
+                                    i7 = subcomposeMeasureScope.mo413roundToPx0680j_4(f6);
                                     fabPlacement = new FabPlacement(i7, width6, height9);
                                 } else {
                                     f5 = ScaffoldKt.FabSpacing;
-                                    i8 = subcomposeMeasureScope.mo383roundToPx0680j_4(f5);
-                                    i7 = (m6637getMaxWidthimpl - i8) - width6;
+                                    i8 = subcomposeMeasureScope.mo413roundToPx0680j_4(f5);
+                                    i7 = (m7204getMaxWidthimpl - i8) - width6;
                                     fabPlacement = new FabPlacement(i7, width6, height9);
                                 }
                             } else {
-                                if (FabPosition.m1904equalsimpl0(i24, FabPosition.Companion.m1909getEndERTFSPs()) ? true : FabPosition.m1904equalsimpl0(i24, FabPosition.Companion.m1910getEndOverlayERTFSPs())) {
+                                if (FabPosition.m2211equalsimpl0(i24, FabPosition.Companion.m2216getEndERTFSPs()) ? true : FabPosition.m2211equalsimpl0(i24, FabPosition.Companion.m2217getEndOverlayERTFSPs())) {
                                     if (subcomposeMeasureScope.getLayoutDirection() == LayoutDirection.Ltr) {
                                         f4 = ScaffoldKt.FabSpacing;
-                                        i8 = subcomposeMeasureScope.mo383roundToPx0680j_4(f4);
-                                        i7 = (m6637getMaxWidthimpl - i8) - width6;
+                                        i8 = subcomposeMeasureScope.mo413roundToPx0680j_4(f4);
+                                        i7 = (m7204getMaxWidthimpl - i8) - width6;
                                     } else {
                                         f3 = ScaffoldKt.FabSpacing;
-                                        i7 = subcomposeMeasureScope.mo383roundToPx0680j_4(f3);
+                                        i7 = subcomposeMeasureScope.mo413roundToPx0680j_4(f3);
                                     }
                                 } else {
-                                    i7 = (m6637getMaxWidthimpl - width6) / 2;
+                                    i7 = (m7204getMaxWidthimpl - width6) / 2;
                                 }
                                 fabPlacement = new FabPlacement(i7, width6, height9);
                             }
@@ -1367,7 +1367,7 @@ public final class ScaffoldKt {
                         ArrayList arrayList10 = new ArrayList(subcompose4.size());
                         int size4 = subcompose4.size();
                         for (int i25 = 0; i25 < size4; i25++) {
-                            arrayList10.add(subcompose4.get(i25).mo5438measureBRTryo0(m6627copyZbe2FdA$default));
+                            arrayList10.add(subcompose4.get(i25).mo5954measureBRTryo0(m7194copyZbe2FdA$default));
                         }
                         final ArrayList arrayList11 = arrayList10;
                         if (arrayList11.isEmpty()) {
@@ -1397,15 +1397,15 @@ public final class ScaffoldKt {
                         if (fabPlacement != null) {
                             int i27 = i;
                             WindowInsets windowInsets5 = windowInsets2;
-                            if (valueOf == null || FabPosition.m1904equalsimpl0(i27, FabPosition.Companion.m1910getEndOverlayERTFSPs())) {
+                            if (valueOf == null || FabPosition.m2211equalsimpl0(i27, FabPosition.Companion.m2217getEndOverlayERTFSPs())) {
                                 int height12 = fabPlacement.getHeight();
                                 f = ScaffoldKt.FabSpacing;
-                                i6 = height12 + subcomposeMeasureScope.mo383roundToPx0680j_4(f);
+                                i6 = height12 + subcomposeMeasureScope.mo413roundToPx0680j_4(f);
                                 bottom = windowInsets5.getBottom(subcomposeMeasureScope);
                             } else {
                                 i6 = valueOf.intValue() + fabPlacement.getHeight();
                                 f2 = ScaffoldKt.FabSpacing;
-                                bottom = subcomposeMeasureScope.mo383roundToPx0680j_4(f2);
+                                bottom = subcomposeMeasureScope.mo413roundToPx0680j_4(f2);
                             }
                             num = Integer.valueOf(i6 + bottom);
                         } else {
@@ -1440,7 +1440,7 @@ public final class ScaffoldKt {
 
                             public final void invoke(Composer composer2, int i28) {
                                 float f7;
-                                float mo687calculateBottomPaddingD9Ej5fM;
+                                float mo775calculateBottomPaddingD9Ej5fM;
                                 Integer num2;
                                 ComposerKt.sourceInformation(composer2, "C260@12377L21:Scaffold.kt#uh7d8r");
                                 if ((i28 & 3) != 2 || !composer2.getSkipping()) {
@@ -1449,16 +1449,16 @@ public final class ScaffoldKt {
                                     }
                                     PaddingValues asPaddingValues = WindowInsetsKt.asPaddingValues(WindowInsets.this, subcomposeMeasureScope);
                                     if (arrayList5.isEmpty()) {
-                                        f7 = asPaddingValues.mo690calculateTopPaddingD9Ej5fM();
+                                        f7 = asPaddingValues.mo778calculateTopPaddingD9Ej5fM();
                                     } else {
-                                        f7 = subcomposeMeasureScope.mo386toDpu2uoSUM(i12);
+                                        f7 = subcomposeMeasureScope.mo416toDpu2uoSUM(i12);
                                     }
                                     if (arrayList11.isEmpty() || (num2 = valueOf) == null) {
-                                        mo687calculateBottomPaddingD9Ej5fM = asPaddingValues.mo687calculateBottomPaddingD9Ej5fM();
+                                        mo775calculateBottomPaddingD9Ej5fM = asPaddingValues.mo775calculateBottomPaddingD9Ej5fM();
                                     } else {
-                                        mo687calculateBottomPaddingD9Ej5fM = subcomposeMeasureScope.mo386toDpu2uoSUM(num2.intValue());
+                                        mo775calculateBottomPaddingD9Ej5fM = subcomposeMeasureScope.mo416toDpu2uoSUM(num2.intValue());
                                     }
-                                    function33.invoke(PaddingKt.m734PaddingValuesa9UjIt4(PaddingKt.calculateStartPadding(asPaddingValues, subcomposeMeasureScope.getLayoutDirection()), f7, PaddingKt.calculateEndPadding(asPaddingValues, subcomposeMeasureScope.getLayoutDirection()), mo687calculateBottomPaddingD9Ej5fM), composer2, 0);
+                                    function33.invoke(PaddingKt.m828PaddingValuesa9UjIt4(PaddingKt.calculateStartPadding(asPaddingValues, subcomposeMeasureScope.getLayoutDirection()), f7, PaddingKt.calculateEndPadding(asPaddingValues, subcomposeMeasureScope.getLayoutDirection()), mo775calculateBottomPaddingD9Ej5fM), composer2, 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                         return;
@@ -1471,7 +1471,7 @@ public final class ScaffoldKt {
                         ArrayList arrayList12 = new ArrayList(subcompose5.size());
                         int size5 = subcompose5.size();
                         for (int i28 = 0; i28 < size5; i28++) {
-                            arrayList12.add(subcompose5.get(i28).mo5438measureBRTryo0(m6627copyZbe2FdA$default));
+                            arrayList12.add(subcompose5.get(i28).mo5954measureBRTryo0(m7194copyZbe2FdA$default));
                         }
                         final ArrayList arrayList13 = arrayList12;
                         final Integer num2 = valueOf;
@@ -1481,7 +1481,7 @@ public final class ScaffoldKt {
                         final int i30 = i5;
                         final FabPlacement fabPlacement2 = fabPlacement;
                         final ArrayList arrayList14 = arrayList;
-                        return MeasureScope.layout$default(subcomposeMeasureScope, m6637getMaxWidthimpl, m6636getMaxHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$ScaffoldLayout$1$1.1
+                        return MeasureScope.layout$default(subcomposeMeasureScope, m7204getMaxWidthimpl, m7203getMaxHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.ScaffoldKt$ScaffoldLayout$1$1.1
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             /* JADX WARN: Multi-variable type inference failed */
                             {
@@ -1507,18 +1507,18 @@ public final class ScaffoldKt {
                                     Placeable.PlacementScope.place$default(placementScope, list3.get(i32), 0, 0, 0.0f, 4, null);
                                 }
                                 List<Placeable> list4 = arrayList6;
-                                int i33 = m6637getMaxWidthimpl;
+                                int i33 = m7204getMaxWidthimpl;
                                 int i34 = i29;
                                 WindowInsets windowInsets8 = windowInsets7;
                                 SubcomposeMeasureScope subcomposeMeasureScope4 = subcomposeMeasureScope;
-                                int i35 = m6636getMaxHeightimpl;
+                                int i35 = m7203getMaxHeightimpl;
                                 int i36 = i30;
                                 int size8 = list4.size();
                                 for (int i37 = 0; i37 < size8; i37++) {
                                     Placeable.PlacementScope.place$default(placementScope, list4.get(i37), ((i33 - i34) / 2) + windowInsets8.getLeft(subcomposeMeasureScope4, subcomposeMeasureScope4.getLayoutDirection()), i35 - i36, 0.0f, 4, null);
                                 }
                                 List<Placeable> list5 = arrayList11;
-                                int i38 = m6636getMaxHeightimpl;
+                                int i38 = m7203getMaxHeightimpl;
                                 Integer num4 = num2;
                                 int size9 = list5.size();
                                 for (int i39 = 0; i39 < size9; i39++) {
@@ -1527,7 +1527,7 @@ public final class ScaffoldKt {
                                 FabPlacement fabPlacement3 = fabPlacement2;
                                 if (fabPlacement3 != null) {
                                     List<Placeable> list6 = arrayList14;
-                                    int i40 = m6636getMaxHeightimpl;
+                                    int i40 = m7203getMaxHeightimpl;
                                     Integer num5 = num3;
                                     int size10 = list6.size();
                                     for (int i41 = 0; i41 < size10; i41++) {
@@ -1569,7 +1569,7 @@ public final class ScaffoldKt {
                 }
 
                 public final void invoke(Composer composer2, int i5) {
-                    ScaffoldKt.m2213ScaffoldLayoutFMILGgc(i, function2, function3, function22, function23, windowInsets, function24, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+                    ScaffoldKt.m2520ScaffoldLayoutFMILGgc(i, function2, function3, function22, function23, windowInsets, function24, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
                 }
             });
         }

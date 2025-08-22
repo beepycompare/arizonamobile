@@ -8,7 +8,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.fuseable.FuseToObservable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableIgnoreElementsCompletable<T> extends Completable implements FuseToObservable<T> {
     final ObservableSource<T> source;
 
@@ -26,7 +26,7 @@ public final class ObservableIgnoreElementsCompletable<T> extends Completable im
         return RxJavaPlugins.onAssembly(new ObservableIgnoreElements(this.source));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class IgnoreObservable<T> implements Observer<T>, Disposable {
         final CompletableObserver downstream;
         Disposable upstream;

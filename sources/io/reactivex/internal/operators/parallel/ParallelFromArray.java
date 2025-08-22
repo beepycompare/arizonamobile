@@ -3,7 +3,7 @@ package io.reactivex.internal.operators.parallel;
 import io.reactivex.parallel.ParallelFlowable;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ParallelFromArray<T> extends ParallelFlowable<T> {
     final Publisher<T>[] sources;
 

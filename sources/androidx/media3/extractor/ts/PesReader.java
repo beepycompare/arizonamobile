@@ -10,7 +10,7 @@ import androidx.media3.common.util.TimestampAdjuster;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PesReader implements TsPayloadReader {
     private static final int HEADER_SIZE = 9;
     private static final int MAX_HEADER_EXTENSION_SIZE = 10;

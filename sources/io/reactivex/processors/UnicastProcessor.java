@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class UnicastProcessor<T> extends FlowableProcessor<T> {
     volatile boolean cancelled;
     final boolean delayError;
@@ -252,7 +252,7 @@ public final class UnicastProcessor<T> extends FlowableProcessor<T> {
         EmptySubscription.error(new IllegalStateException("This processor allows only a single Subscriber"), subscriber);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class UnicastQueueSubscription extends BasicIntQueueSubscription<T> {
         private static final long serialVersionUID = -4896760517184205454L;
 

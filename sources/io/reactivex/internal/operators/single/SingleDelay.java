@@ -7,7 +7,7 @@ import io.reactivex.SingleSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.SequentialDisposable;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleDelay<T> extends Single<T> {
     final boolean delayError;
     final Scheduler scheduler;
@@ -30,7 +30,7 @@ public final class SingleDelay<T> extends Single<T> {
         this.source.subscribe(new Delay(sequentialDisposable, singleObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class Delay implements SingleObserver<T> {
         final SingleObserver<? super T> downstream;
         private final SequentialDisposable sd;
@@ -55,7 +55,7 @@ public final class SingleDelay<T> extends Single<T> {
             this.sd.replace(SingleDelay.this.scheduler.scheduleDirect(new OnError(th), SingleDelay.this.delayError ? SingleDelay.this.time : 0L, SingleDelay.this.unit));
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class OnSuccess implements Runnable {
             private final T value;
 
@@ -69,7 +69,7 @@ public final class SingleDelay<T> extends Single<T> {
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class OnError implements Runnable {
             private final Throwable e;
 

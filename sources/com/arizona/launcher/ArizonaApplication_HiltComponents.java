@@ -45,14 +45,14 @@ import dagger.hilt.android.internal.managers.FragmentComponentManager;
 import dagger.hilt.android.internal.managers.HiltWrapper_ActivityRetainedComponentManager_ActivityRetainedComponentBuilderEntryPoint;
 import dagger.hilt.android.internal.managers.HiltWrapper_ActivityRetainedComponentManager_ActivityRetainedLifecycleEntryPoint;
 import dagger.hilt.android.internal.managers.HiltWrapper_ActivityRetainedComponentManager_LifecycleModule;
-import dagger.hilt.android.internal.managers.HiltWrapper_SavedStateHandleModule;
+import dagger.hilt.android.internal.managers.HiltWrapper_ActivitySavedStateHandleModule;
 import dagger.hilt.android.internal.managers.ServiceComponentManager;
 import dagger.hilt.android.internal.managers.ViewComponentManager;
 import dagger.hilt.android.internal.modules.ApplicationContextModule;
 import dagger.hilt.android.internal.modules.HiltWrapper_ActivityModule;
 import dagger.hilt.components.SingletonComponent;
 import dagger.hilt.internal.GeneratedComponent;
-import javax.inject.Singleton;
+import jakarta.inject.Singleton;
 /* loaded from: classes3.dex */
 public final class ArizonaApplication_HiltComponents {
 
@@ -73,7 +73,7 @@ public final class ArizonaApplication_HiltComponents {
         ActivityComponentBuilder bind(ActivityC.Builder builder);
     }
 
-    @Subcomponent(modules = {ActivityCBuilderModule.class, ViewModelCBuilderModule.class, HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class, HiltWrapper_SavedStateHandleModule.class, MainViewModel_HiltModules.KeyModule.class, NotificationsViewModel_HiltModules.KeyModule.class})
+    @Subcomponent(modules = {ActivityCBuilderModule.class, ViewModelCBuilderModule.class, HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class, HiltWrapper_ActivitySavedStateHandleModule.class, MainViewModel_HiltModules.KeyModule.class, NotificationsViewModel_HiltModules.KeyModule.class})
     /* loaded from: classes3.dex */
     public static abstract class ActivityRetainedC implements ActivityRetainedComponent, ActivityComponentManager.ActivityComponentBuilderEntryPoint, HiltWrapper_ActivityRetainedComponentManager_ActivityRetainedLifecycleEntryPoint, GeneratedComponent {
 
@@ -124,8 +124,9 @@ public final class ArizonaApplication_HiltComponents {
         ServiceComponentBuilder bind(ServiceC.Builder builder);
     }
 
-    @Component(modules = {ApplicationContextModule.class, ActivityRetainedCBuilderModule.class, ServiceCBuilderModule.class, ArizonaLauncherAPIModule.class, ConnectionResolverModule.class, CoreAppModule.class, DatabaseModule.class, DowndloaderModule.class, DowndloaderSyncModule.class, FavoriteServerModule.class, HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule.class, LauncherDBModule.class, LocalRepositoryModule.class, NetworkApiModule.class, PreferencesModule.class, UpdateApiModule.class})
     @Singleton
+    @Component(modules = {ApplicationContextModule.class, ActivityRetainedCBuilderModule.class, ServiceCBuilderModule.class, ArizonaLauncherAPIModule.class, ConnectionResolverModule.class, CoreAppModule.class, DatabaseModule.class, DowndloaderModule.class, DowndloaderSyncModule.class, FavoriteServerModule.class, HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule.class, LauncherDBModule.class, LocalRepositoryModule.class, NetworkApiModule.class, PreferencesModule.class, UpdateApiModule.class})
+    @javax.inject.Singleton
     /* loaded from: classes3.dex */
     public static abstract class SingletonC implements ArizonaApplication_GeneratedInjector, FragmentGetContextFix.FragmentGetContextFixEntryPoint, HiltWrapper_ActivityRetainedComponentManager_ActivityRetainedComponentBuilderEntryPoint, ServiceComponentManager.ServiceComponentBuilderEntryPoint, SingletonComponent, GeneratedComponent {
     }

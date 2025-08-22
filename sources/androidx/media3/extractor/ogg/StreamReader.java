@@ -15,7 +15,7 @@ import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class StreamReader {
     private static final int STATE_END_OF_INPUT = 3;
     private static final int STATE_READ_HEADERS = 0;
@@ -41,7 +41,7 @@ public abstract class StreamReader {
     protected abstract boolean readHeaders(ParsableByteArray parsableByteArray, long j, SetupData setupData) throws IOException;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class SetupData {
         Format format;
         OggSeeker oggSeeker;
@@ -197,7 +197,7 @@ public abstract class StreamReader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class UnseekableOggSeeker implements OggSeeker {
         @Override // androidx.media3.extractor.ogg.OggSeeker
         public long read(ExtractorInput extractorInput) {

@@ -6,7 +6,7 @@ import androidx.compose.ui.unit.LayoutDirection;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: WindowInsets.kt */
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\b\u0003\u0018\u00002\u00020\u0001B%\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003¢\u0006\u0002\u0010\u0007J\u0013\u0010\t\u001a\u00020\n2\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0096\u0002J\u0010\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016J\u0018\u0010\u0011\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0012\u001a\u00020\u0013H\u0016J\u0018\u0010\u0014\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0012\u001a\u00020\u0013H\u0016J\u0010\u0010\u0015\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016J\b\u0010\u0016\u001a\u00020\u000eH\u0016J\b\u0010\u0017\u001a\u00020\u0018H\u0016R\u0016\u0010\u0006\u001a\u00020\u0003X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\bR\u0016\u0010\u0002\u001a\u00020\u0003X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\bR\u0016\u0010\u0005\u001a\u00020\u0003X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\bR\u0016\u0010\u0004\u001a\u00020\u0003X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\b\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0019"}, d2 = {"Landroidx/compose/foundation/layout/FixedDpInsets;", "Landroidx/compose/foundation/layout/WindowInsets;", "leftDp", "Landroidx/compose/ui/unit/Dp;", "topDp", "rightDp", "bottomDp", "(FFFFLkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "equals", "", "other", "", "getBottom", "", "density", "Landroidx/compose/ui/unit/Density;", "getLeft", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getRight", "getTop", "hashCode", "toString", "", "foundation-layout_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\b\u0003\u0018\u00002\u00020\u0001B'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016J\u0010\u0010\u0010\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0016J\u0018\u0010\u0011\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016J\u0010\u0010\u0012\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0016J\b\u0010\u0013\u001a\u00020\u0014H\u0016J\u0013\u0010\u0015\u001a\u00020\u00162\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018H\u0096\u0002J\b\u0010\u0019\u001a\u00020\u000bH\u0016R\u0010\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\tR\u0010\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\tR\u0010\u0010\u0005\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\tR\u0010\u0010\u0006\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\t¨\u0006\u001a"}, d2 = {"Landroidx/compose/foundation/layout/FixedDpInsets;", "Landroidx/compose/foundation/layout/WindowInsets;", "leftDp", "Landroidx/compose/ui/unit/Dp;", "topDp", "rightDp", "bottomDp", "<init>", "(FFFFLkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "getLeft", "", "density", "Landroidx/compose/ui/unit/Density;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getTop", "getRight", "getBottom", "toString", "", "equals", "", "other", "", "hashCode", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class FixedDpInsets implements WindowInsets {
     private final float bottomDp;
@@ -27,26 +27,26 @@ final class FixedDpInsets implements WindowInsets {
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getLeft(Density density, LayoutDirection layoutDirection) {
-        return density.mo383roundToPx0680j_4(this.leftDp);
+        return density.mo413roundToPx0680j_4(this.leftDp);
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getTop(Density density) {
-        return density.mo383roundToPx0680j_4(this.topDp);
+        return density.mo413roundToPx0680j_4(this.topDp);
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getRight(Density density, LayoutDirection layoutDirection) {
-        return density.mo383roundToPx0680j_4(this.rightDp);
+        return density.mo413roundToPx0680j_4(this.rightDp);
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getBottom(Density density) {
-        return density.mo383roundToPx0680j_4(this.bottomDp);
+        return density.mo413roundToPx0680j_4(this.bottomDp);
     }
 
     public String toString() {
-        return "Insets(left=" + ((Object) Dp.m6695toStringimpl(this.leftDp)) + ", top=" + ((Object) Dp.m6695toStringimpl(this.topDp)) + ", right=" + ((Object) Dp.m6695toStringimpl(this.rightDp)) + ", bottom=" + ((Object) Dp.m6695toStringimpl(this.bottomDp)) + ')';
+        return "Insets(left=" + ((Object) Dp.m7262toStringimpl(this.leftDp)) + ", top=" + ((Object) Dp.m7262toStringimpl(this.topDp)) + ", right=" + ((Object) Dp.m7262toStringimpl(this.rightDp)) + ", bottom=" + ((Object) Dp.m7262toStringimpl(this.bottomDp)) + ')';
     }
 
     public boolean equals(Object obj) {
@@ -55,12 +55,12 @@ final class FixedDpInsets implements WindowInsets {
         }
         if (obj instanceof FixedDpInsets) {
             FixedDpInsets fixedDpInsets = (FixedDpInsets) obj;
-            return Dp.m6689equalsimpl0(this.leftDp, fixedDpInsets.leftDp) && Dp.m6689equalsimpl0(this.topDp, fixedDpInsets.topDp) && Dp.m6689equalsimpl0(this.rightDp, fixedDpInsets.rightDp) && Dp.m6689equalsimpl0(this.bottomDp, fixedDpInsets.bottomDp);
+            return Dp.m7256equalsimpl0(this.leftDp, fixedDpInsets.leftDp) && Dp.m7256equalsimpl0(this.topDp, fixedDpInsets.topDp) && Dp.m7256equalsimpl0(this.rightDp, fixedDpInsets.rightDp) && Dp.m7256equalsimpl0(this.bottomDp, fixedDpInsets.bottomDp);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((Dp.m6690hashCodeimpl(this.leftDp) * 31) + Dp.m6690hashCodeimpl(this.topDp)) * 31) + Dp.m6690hashCodeimpl(this.rightDp)) * 31) + Dp.m6690hashCodeimpl(this.bottomDp);
+        return (((((Dp.m7257hashCodeimpl(this.leftDp) * 31) + Dp.m7257hashCodeimpl(this.topDp)) * 31) + Dp.m7257hashCodeimpl(this.rightDp)) * 31) + Dp.m7257hashCodeimpl(this.bottomDp);
     }
 }

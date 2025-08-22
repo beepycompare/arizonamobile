@@ -8,7 +8,7 @@ import androidx.media3.common.MimeTypes;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import java.util.Locale;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DefaultTrackNameProvider implements TrackNameProvider {
     private final Resources resources;
 

@@ -4,7 +4,7 @@ import io.reactivex.MaybeObserver;
 import io.reactivex.MaybeSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeDetach<T> extends AbstractMaybeWithUpstream<T, T> {
     public MaybeDetach(MaybeSource<T> maybeSource) {
         super(maybeSource);
@@ -15,7 +15,7 @@ public final class MaybeDetach<T> extends AbstractMaybeWithUpstream<T, T> {
         this.source.subscribe(new DetachMaybeObserver(maybeObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DetachMaybeObserver<T> implements MaybeObserver<T>, Disposable {
         MaybeObserver<? super T> downstream;
         Disposable upstream;

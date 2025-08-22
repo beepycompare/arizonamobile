@@ -1,16 +1,16 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Mj implements InterfaceC0407lb {
+public final class Mj implements InterfaceC0454nb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Nn f550a;
+    public final /* synthetic */ String f563a;
 
-    public Mj(Nn nn) {
-        this.f550a = nn;
+    public Mj(String str) {
+        this.f563a = str;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0407lb
-    public final void a(InterfaceC0432mb interfaceC0432mb) {
-        interfaceC0432mb.a(this.f550a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0454nb
+    public final void a(InterfaceC0479ob interfaceC0479ob) {
+        interfaceC0479ob.setUserProfileID(this.f563a);
     }
 }

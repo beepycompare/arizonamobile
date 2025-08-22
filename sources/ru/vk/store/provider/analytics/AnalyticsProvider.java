@@ -8,11 +8,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
 import ru.vk.store.provider.analytics.AnalyticsProviderCallback;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public interface AnalyticsProvider extends IInterface {
     public static final String DESCRIPTOR = "ru.vk.store.provider.analytics.AnalyticsProvider";
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static class Default implements AnalyticsProvider {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -26,7 +26,7 @@ public interface AnalyticsProvider extends IInterface {
 
     void postAnalytcsEvent(String str, String str2, Bundle bundle, AnalyticsProviderCallback analyticsProviderCallback) throws RemoteException;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Stub extends Binder implements AnalyticsProvider {
         static final int TRANSACTION_postAnalytcsEvent = 1;
 
@@ -67,7 +67,7 @@ public interface AnalyticsProvider extends IInterface {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         private static class Proxy implements AnalyticsProvider {
             private IBinder mRemote;
 
@@ -104,7 +104,7 @@ public interface AnalyticsProvider extends IInterface {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static class _Parcel {
         /* JADX INFO: Access modifiers changed from: private */
         public static <T> T readTypedObject(Parcel parcel, Parcelable.Creator<T> creator) {

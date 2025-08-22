@@ -2,25 +2,20 @@ package androidx.compose.foundation.lazy.staggeredgrid;
 
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
-import androidx.exifinterface.media.ExifInterface;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.functions.Function5;
-import kotlin.jvm.internal.Lambda;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: LazyStaggeredGridDsl.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u000b¢\u0006\u0004\b\u0006\u0010\u0007"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridItemScope;", FirebaseAnalytics.Param.INDEX, "", "invoke", "(Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridItemScope;ILandroidx/compose/runtime/Composer;I)V"}, k = 3, mv = {1, 9, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
 /* loaded from: classes.dex */
-public final class LazyStaggeredGridDslKt$itemsIndexed$10 extends Lambda implements Function4<LazyStaggeredGridItemScope, Integer, Composer, Integer, Unit> {
+public final class LazyStaggeredGridDslKt$itemsIndexed$10 implements Function4<LazyStaggeredGridItemScope, Integer, Composer, Integer, Unit> {
     final /* synthetic */ Function5<LazyStaggeredGridItemScope, Integer, T, Composer, Integer, Unit> $itemContent;
     final /* synthetic */ T[] $items;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
     public LazyStaggeredGridDslKt$itemsIndexed$10(Function5<? super LazyStaggeredGridItemScope, ? super Integer, ? super T, ? super Composer, ? super Integer, Unit> function5, T[] tArr) {
-        super(4);
         this.$itemContent = function5;
         this.$items = tArr;
     }
@@ -33,7 +28,7 @@ public final class LazyStaggeredGridDslKt$itemsIndexed$10 extends Lambda impleme
 
     public final void invoke(LazyStaggeredGridItemScope lazyStaggeredGridItemScope, int i, Composer composer, int i2) {
         int i3;
-        ComposerKt.sourceInformation(composer, "C516@24276L32:LazyStaggeredGridDsl.kt#fzvcnm");
+        ComposerKt.sourceInformation(composer, "CN(index)508@24233L32:LazyStaggeredGridDsl.kt#fzvcnm");
         if ((i2 & 6) == 0) {
             i3 = (composer.changed(lazyStaggeredGridItemScope) ? 4 : 2) | i2;
         } else {
@@ -47,7 +42,7 @@ public final class LazyStaggeredGridDslKt$itemsIndexed$10 extends Lambda impleme
             return;
         }
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-804487775, i3, -1, "androidx.compose.foundation.lazy.staggeredgrid.itemsIndexed.<anonymous> (LazyStaggeredGridDsl.kt:516)");
+            ComposerKt.traceEventStart(425846862, i3, -1, "androidx.compose.foundation.lazy.staggeredgrid.itemsIndexed.<anonymous> (LazyStaggeredGridDsl.kt:508)");
         }
         this.$itemContent.invoke(lazyStaggeredGridItemScope, Integer.valueOf(i), this.$items[i], composer, Integer.valueOf(i3 & WebSocketProtocol.PAYLOAD_SHORT));
         if (ComposerKt.isTraceInProgress()) {

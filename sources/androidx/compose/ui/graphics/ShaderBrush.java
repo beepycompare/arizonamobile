@@ -6,40 +6,70 @@ import androidx.media3.extractor.text.ttml.TtmlNode;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Brush.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0006\b'\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J(\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\u00042\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fø\u0001\u0000¢\u0006\u0004\b\u0010\u0010\u0011J\u001e\u0010\u0012\u001a\u00060\u0007j\u0002`\b2\u0006\u0010\u000b\u001a\u00020\u0004H&ø\u0001\u0000¢\u0006\u0004\b\u0013\u0010\u0014R\u0016\u0010\u0003\u001a\u00020\u0004X\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\u0005R\u0016\u0010\u0006\u001a\n\u0018\u00010\u0007j\u0004\u0018\u0001`\bX\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0015"}, d2 = {"Landroidx/compose/ui/graphics/ShaderBrush;", "Landroidx/compose/ui/graphics/Brush;", "()V", "createdSize", "Landroidx/compose/ui/geometry/Size;", "J", "internalShader", "Landroid/graphics/Shader;", "Landroidx/compose/ui/graphics/Shader;", "applyTo", "", "size", TtmlNode.TAG_P, "Landroidx/compose/ui/graphics/Paint;", "alpha", "", "applyTo-Pq9zytI", "(JLandroidx/compose/ui/graphics/Paint;F)V", "createShader", "createShader-uvyYCjk", "(J)Landroid/graphics/Shader;", "ui-graphics_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0003\b'\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001b\u0010\u0011\u001a\u00060\u0012j\u0002`\u00132\u0006\u0010\u0014\u001a\u00020\u0007H&¢\u0006\u0004\b\u0015\u0010\u0016J\b\u0010\u0017\u001a\u00020\u0005H\u0002J%\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u0014\u001a\u00020\u00072\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d¢\u0006\u0004\b\u001e\u0010\u001fR\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\bR*\u0010\u000b\u001a\u0004\u0018\u00010\n2\b\u0010\t\u001a\u0004\u0018\u00010\n@FX\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u0010\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000f¨\u0006 "}, d2 = {"Landroidx/compose/ui/graphics/ShaderBrush;", "Landroidx/compose/ui/graphics/Brush;", "<init>", "()V", "internalTransformShader", "Landroidx/compose/ui/graphics/TransformShader;", "createdSize", "Landroidx/compose/ui/geometry/Size;", "J", "value", "Landroidx/compose/ui/graphics/Matrix;", "transform", "getTransform-3i98HWw", "()[F", "setTransform-Q8lPUPs", "([F)V", "[F", "createShader", "Landroid/graphics/Shader;", "Landroidx/compose/ui/graphics/Shader;", "size", "createShader-uvyYCjk", "(J)Landroid/graphics/Shader;", "obtainTransformShader", "applyTo", "", TtmlNode.TAG_P, "Landroidx/compose/ui/graphics/Paint;", "alpha", "", "applyTo-Pq9zytI", "(JLandroidx/compose/ui/graphics/Paint;F)V", "ui-graphics_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public abstract class ShaderBrush extends Brush {
     private long createdSize;
-    private Shader internalShader;
+    private TransformShader internalTransformShader;
+    private float[] transform;
 
     /* renamed from: createShader-uvyYCjk */
-    public abstract Shader mo4047createShaderuvyYCjk(long j);
+    public abstract Shader mo4506createShaderuvyYCjk(long j);
 
     public ShaderBrush() {
         super(null);
-        this.createdSize = Size.Companion.m3914getUnspecifiedNHjbRc();
+        this.createdSize = Size.Companion.m4370getUnspecifiedNHjbRc();
+    }
+
+    /* renamed from: getTransform-3i98HWw  reason: not valid java name */
+    public final float[] m4862getTransform3i98HWw() {
+        return this.transform;
+    }
+
+    /* renamed from: setTransform-Q8lPUPs  reason: not valid java name */
+    public final void m4863setTransformQ8lPUPs(float[] fArr) {
+        this.transform = fArr;
+        TransformShader transformShader = this.internalTransformShader;
+        if (transformShader != null) {
+            transformShader.m4946transformQ8lPUPs(fArr);
+        }
+    }
+
+    private final TransformShader obtainTransformShader() {
+        TransformShader transformShader = this.internalTransformShader;
+        if (transformShader == null) {
+            TransformShader transformShader2 = new TransformShader();
+            this.internalTransformShader = transformShader2;
+            return transformShader2;
+        }
+        return transformShader;
     }
 
     @Override // androidx.compose.ui.graphics.Brush
     /* renamed from: applyTo-Pq9zytI */
-    public final void mo4025applyToPq9zytI(long j, Paint paint, float f) {
-        Shader shader = this.internalShader;
-        if (shader == null || !Size.m3902equalsimpl0(this.createdSize, j)) {
-            if (Size.m3908isEmptyimpl(j)) {
-                shader = null;
-                this.internalShader = null;
-                this.createdSize = Size.Companion.m3914getUnspecifiedNHjbRc();
+    public final void mo4483applyToPq9zytI(long j, Paint paint, float f) {
+        TransformShader transformShader = this.internalTransformShader;
+        if (transformShader == null || !Size.m4358equalsimpl0(this.createdSize, j)) {
+            if (Size.m4364isEmptyimpl(j)) {
+                this.internalTransformShader = null;
+                this.createdSize = Size.Companion.m4370getUnspecifiedNHjbRc();
+                transformShader = null;
             } else {
-                shader = mo4047createShaderuvyYCjk(j);
-                this.internalShader = shader;
+                transformShader = obtainTransformShader();
+                float[] fArr = this.transform;
+                if (fArr != null) {
+                    transformShader.m4946transformQ8lPUPs(fArr);
+                }
+                transformShader.setShader(mo4506createShaderuvyYCjk(j));
+                this.internalTransformShader = transformShader;
                 this.createdSize = j;
             }
         }
-        if (!Color.m4079equalsimpl0(paint.mo3951getColor0d7_KjU(), Color.Companion.m4104getBlack0d7_KjU())) {
-            paint.mo3957setColor8_81llA(Color.Companion.m4104getBlack0d7_KjU());
+        if (!Color.m4538equalsimpl0(paint.mo4408getColor0d7_KjU(), Color.Companion.m4563getBlack0d7_KjU())) {
+            paint.mo4414setColor8_81llA(Color.Companion.m4563getBlack0d7_KjU());
         }
-        if (!Intrinsics.areEqual(paint.getShader(), shader)) {
-            paint.setShader(shader);
+        if (!Intrinsics.areEqual(paint.getShader(), transformShader != null ? transformShader.getShader() : null)) {
+            paint.setShader(transformShader != null ? transformShader.getShader() : null);
         }
         if (paint.getAlpha() == f) {
             return;

@@ -8,7 +8,7 @@ import io.reactivex.schedulers.Timed;
 import java.util.concurrent.TimeUnit;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableTimeInterval<T> extends AbstractFlowableWithUpstream<T, Timed<T>> {
     final Scheduler scheduler;
     final TimeUnit unit;
@@ -24,7 +24,7 @@ public final class FlowableTimeInterval<T> extends AbstractFlowableWithUpstream<
         this.source.subscribe((FlowableSubscriber) new TimeIntervalSubscriber(subscriber, this.unit, this.scheduler));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimeIntervalSubscriber<T> implements FlowableSubscriber<T>, Subscription {
         final Subscriber<? super Timed<T>> downstream;
         long lastTime;

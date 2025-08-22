@@ -3,41 +3,107 @@ package io.appmetrica.analytics.impl;
 public final class A7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Long f333a;
-    public final Wk b;
-    public final Long c;
-    public final EnumC0681wb d;
-    public final Long e;
-    public final Long f;
-    public final C0752z7 g;
+    public final Integer f341a;
+    public final String b;
+    public final String c;
+    public final Long d;
+    public final F7 e;
+    public final String f;
+    public final String g;
+    public final Long h;
+    public final Integer i;
+    public final Integer j;
+    public final String k;
+    public final EnumC0196d9 l;
+    public final String m;
+    public final Aa n;
+    public final J9 o;
+    public final Boolean p;
+    public final Integer q;
+    public final byte[] r;
 
-    public A7(Long l, Wk wk, Long l2, EnumC0681wb enumC0681wb, Long l3, Long l4, C0752z7 c0752z7) {
-        this.f333a = l;
-        this.b = wk;
-        this.c = l2;
-        this.d = enumC0681wb;
-        this.e = l3;
-        this.f = l4;
-        this.g = c0752z7;
+    public A7(Integer num, String str, String str2, Long l, F7 f7, String str3, String str4, Long l2, Integer num2, Integer num3, String str5, EnumC0196d9 enumC0196d9, String str6, Aa aa, J9 j9, Boolean bool, Integer num4, byte[] bArr) {
+        this.f341a = num;
+        this.b = str;
+        this.c = str2;
+        this.d = l;
+        this.e = f7;
+        this.f = str3;
+        this.g = str4;
+        this.h = l2;
+        this.i = num2;
+        this.j = num3;
+        this.k = str5;
+        this.l = enumC0196d9;
+        this.m = str6;
+        this.n = aa;
+        this.o = j9;
+        this.p = bool;
+        this.q = num4;
+        this.r = bArr;
     }
 
-    public final C0752z7 a() {
-        return this.g;
+    public final Boolean a() {
+        return this.p;
     }
 
-    public final Long b() {
-        return this.e;
+    public final String b() {
+        return this.k;
     }
 
-    public final Long c() {
-        return this.c;
+    public final Integer c() {
+        return this.j;
     }
 
-    public final Long d() {
+    public final Integer d() {
+        return this.f341a;
+    }
+
+    public final EnumC0196d9 e() {
+        return this.l;
+    }
+
+    public final String f() {
         return this.f;
     }
 
-    public final EnumC0681wb e() {
+    public final byte[] g() {
+        return this.r;
+    }
+
+    public final Aa h() {
+        return this.n;
+    }
+
+    public final F7 i() {
+        return this.e;
+    }
+
+    public final String j() {
+        return this.b;
+    }
+
+    public final Long k() {
         return this.d;
+    }
+
+    public final Integer l() {
+        return this.q;
+    }
+
+    public final String m() {
+        return this.m;
+    }
+
+    public final J9 n() {
+        return this.o;
+    }
+
+    public final Integer o() {
+        return this.i;
+    }
+
+    public final String p() {
+        return this.c;
     }
 }

@@ -1,25 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import androidx.fragment.app.FragmentTransaction;
+import android.content.Context;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* loaded from: classes4.dex */
-public final class Jc implements InterfaceC0711xg {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Kc f505a;
-
-    public Jc(Kc kc) {
-        this.f505a = kc;
+public final class Jc extends AbstractC0237f {
+    public Jc(Context context, Tg tg) {
+        super(context, tg);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0711xg
-    public final void a(Ag ag) {
-        if (ag == null) {
-            return;
+    @Override // io.appmetrica.analytics.impl.AbstractC0237f
+    public final void b(C0399l6 c0399l6, K4 k4) {
+        boolean booleanValue = ((Boolean) WrapUtils.getOrDefault(k4.b.b, Boolean.FALSE)).booleanValue();
+        InterfaceC0302hc l = Ka.F.l();
+        l.a(booleanValue);
+        l.a(k4.b.c);
+        Boolean bool = k4.b.n;
+        if (bool != null) {
+            Ka.F.b().b(bool.booleanValue());
         }
-        C0402l6 c0402l6 = new C0402l6("", "", 0);
-        c0402l6.setValueBytes(ag.a());
-        EnumC0681wb enumC0681wb = EnumC0681wb.EVENT_TYPE_UNDEFINED;
-        c0402l6.d = FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
-        this.f505a.a(c0402l6);
+        this.b.a(c0399l6, k4);
     }
 }

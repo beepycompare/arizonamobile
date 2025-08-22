@@ -1,21 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.jvm.functions.Function0;
-import kotlin.jvm.internal.Lambda;
+import android.content.Context;
+import android.location.LocationListener;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
+import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractor;
+import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider;
 /* loaded from: classes4.dex */
-public final class Sb extends Lambda implements Function0 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Tb f639a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Sb(Tb tb) {
-        super(0);
-        this.f639a = tb;
+public final class Sb implements LastKnownLocationExtractorProvider {
+    @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider
+    public final LastKnownLocationExtractor getExtractor(Context context, PermissionExtractor permissionExtractor, IHandlerExecutor iHandlerExecutor, LocationListener locationListener) {
+        return new Tb();
     }
 
-    @Override // kotlin.jvm.functions.Function0
-    public final Object invoke() {
-        return (C0712xh) this.f639a.f651a.k.a();
+    @Override // io.appmetrica.analytics.locationapi.internal.Identifiable
+    public final String getIdentifier() {
+        return "Last known extractor stub";
     }
 }

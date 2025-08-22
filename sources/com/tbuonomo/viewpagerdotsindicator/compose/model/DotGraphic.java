@@ -23,7 +23,7 @@ public final class DotGraphic {
     }
 
     /* renamed from: copy-e8K48GY$default  reason: not valid java name */
-    public static /* synthetic */ DotGraphic m8470copye8K48GY$default(DotGraphic dotGraphic, float f, long j, Shape shape, Dp dp, long j2, int i, Object obj) {
+    public static /* synthetic */ DotGraphic m9036copye8K48GY$default(DotGraphic dotGraphic, float f, long j, Shape shape, Dp dp, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
             f = dotGraphic.size;
         }
@@ -39,16 +39,16 @@ public final class DotGraphic {
         if ((i & 16) != 0) {
             j2 = dotGraphic.borderColor;
         }
-        return dotGraphic.m8475copye8K48GY(f, j, shape, dp, j2);
+        return dotGraphic.m9041copye8K48GY(f, j, shape, dp, j2);
     }
 
     /* renamed from: component1-D9Ej5fM  reason: not valid java name */
-    public final float m8471component1D9Ej5fM() {
+    public final float m9037component1D9Ej5fM() {
         return this.size;
     }
 
     /* renamed from: component2-0d7_KjU  reason: not valid java name */
-    public final long m8472component20d7_KjU() {
+    public final long m9038component20d7_KjU() {
         return this.color;
     }
 
@@ -57,17 +57,17 @@ public final class DotGraphic {
     }
 
     /* renamed from: component4-lTKBWiU  reason: not valid java name */
-    public final Dp m8473component4lTKBWiU() {
+    public final Dp m9039component4lTKBWiU() {
         return this.borderWidth;
     }
 
     /* renamed from: component5-0d7_KjU  reason: not valid java name */
-    public final long m8474component50d7_KjU() {
+    public final long m9040component50d7_KjU() {
         return this.borderColor;
     }
 
     /* renamed from: copy-e8K48GY  reason: not valid java name */
-    public final DotGraphic m8475copye8K48GY(float f, long j, Shape shape, Dp dp, long j2) {
+    public final DotGraphic m9041copye8K48GY(float f, long j, Shape shape, Dp dp, long j2) {
         Intrinsics.checkNotNullParameter(shape, "shape");
         return new DotGraphic(f, j, shape, dp, j2, null);
     }
@@ -78,23 +78,23 @@ public final class DotGraphic {
         }
         if (obj instanceof DotGraphic) {
             DotGraphic dotGraphic = (DotGraphic) obj;
-            return Dp.m6689equalsimpl0(this.size, dotGraphic.size) && Color.m4079equalsimpl0(this.color, dotGraphic.color) && Intrinsics.areEqual(this.shape, dotGraphic.shape) && Intrinsics.areEqual(this.borderWidth, dotGraphic.borderWidth) && Color.m4079equalsimpl0(this.borderColor, dotGraphic.borderColor);
+            return Dp.m7256equalsimpl0(this.size, dotGraphic.size) && Color.m4538equalsimpl0(this.color, dotGraphic.color) && Intrinsics.areEqual(this.shape, dotGraphic.shape) && Intrinsics.areEqual(this.borderWidth, dotGraphic.borderWidth) && Color.m4538equalsimpl0(this.borderColor, dotGraphic.borderColor);
         }
         return false;
     }
 
     public int hashCode() {
-        int m6690hashCodeimpl = ((((Dp.m6690hashCodeimpl(this.size) * 31) + Color.m4085hashCodeimpl(this.color)) * 31) + this.shape.hashCode()) * 31;
+        int m7257hashCodeimpl = ((((Dp.m7257hashCodeimpl(this.size) * 31) + Color.m4544hashCodeimpl(this.color)) * 31) + this.shape.hashCode()) * 31;
         Dp dp = this.borderWidth;
-        return ((m6690hashCodeimpl + (dp == null ? 0 : Dp.m6690hashCodeimpl(dp.m6698unboximpl()))) * 31) + Color.m4085hashCodeimpl(this.borderColor);
+        return ((m7257hashCodeimpl + (dp == null ? 0 : Dp.m7257hashCodeimpl(dp.m7265unboximpl()))) * 31) + Color.m4544hashCodeimpl(this.borderColor);
     }
 
     public String toString() {
-        String m6695toStringimpl = Dp.m6695toStringimpl(this.size);
-        String m4086toStringimpl = Color.m4086toStringimpl(this.color);
+        String m7262toStringimpl = Dp.m7262toStringimpl(this.size);
+        String m4545toStringimpl = Color.m4545toStringimpl(this.color);
         Shape shape = this.shape;
         Dp dp = this.borderWidth;
-        return "DotGraphic(size=" + m6695toStringimpl + ", color=" + m4086toStringimpl + ", shape=" + shape + ", borderWidth=" + dp + ", borderColor=" + Color.m4086toStringimpl(this.borderColor) + ")";
+        return "DotGraphic(size=" + m7262toStringimpl + ", color=" + m4545toStringimpl + ", shape=" + shape + ", borderWidth=" + dp + ", borderColor=" + Color.m4545toStringimpl(this.borderColor) + ")";
     }
 
     private DotGraphic(float f, long j, Shape shape, Dp dp, long j2) {
@@ -107,12 +107,12 @@ public final class DotGraphic {
     }
 
     /* renamed from: getSize-D9Ej5fM  reason: not valid java name */
-    public final float m8479getSizeD9Ej5fM() {
+    public final float m9045getSizeD9Ej5fM() {
         return this.size;
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m8478getColor0d7_KjU() {
+    public final long m9044getColor0d7_KjU() {
         return this.color;
     }
 
@@ -121,16 +121,16 @@ public final class DotGraphic {
     }
 
     /* renamed from: getBorderWidth-lTKBWiU  reason: not valid java name */
-    public final Dp m8477getBorderWidthlTKBWiU() {
+    public final Dp m9043getBorderWidthlTKBWiU() {
         return this.borderWidth;
     }
 
     /* renamed from: getBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m8476getBorderColor0d7_KjU() {
+    public final long m9042getBorderColor0d7_KjU() {
         return this.borderColor;
     }
 
     public /* synthetic */ DotGraphic(float f, long j, Shape shape, Dp dp, long j2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m6684constructorimpl(16) : f, (i & 2) != 0 ? Color.Companion.m4115getWhite0d7_KjU() : j, (i & 4) != 0 ? RoundedCornerShapeKt.getCircleShape() : shape, (i & 8) != 0 ? null : dp, (i & 16) != 0 ? Color.Companion.m4115getWhite0d7_KjU() : j2, null);
+        this((i & 1) != 0 ? Dp.m7251constructorimpl(16) : f, (i & 2) != 0 ? Color.Companion.m4574getWhite0d7_KjU() : j, (i & 4) != 0 ? RoundedCornerShapeKt.getCircleShape() : shape, (i & 8) != 0 ? null : dp, (i & 16) != 0 ? Color.Companion.m4574getWhite0d7_KjU() : j2, null);
     }
 }

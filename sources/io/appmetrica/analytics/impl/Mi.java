@@ -1,17 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import android.os.Bundle;
-import android.os.ResultReceiver;
 /* loaded from: classes4.dex */
-public final class Mi extends V4 {
-    public Mi(S4 s4) {
-        super(s4);
+public final class Mi implements Runnable {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ Ni f562a;
+
+    public Mi(Ni ni) {
+        this.f562a = ni;
     }
 
-    @Override // io.appmetrica.analytics.impl.V4
-    public final boolean a(C0402l6 c0402l6, P4 p4) {
-        Bundle bundle = c0402l6.m;
-        this.f681a.k.a(new R4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
-        return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.f562a.c();
     }
 }

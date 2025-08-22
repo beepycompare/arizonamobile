@@ -1,18 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.Revenue;
 /* loaded from: classes4.dex */
-public final class Jj implements InterfaceC0407lb {
+public final class Jj implements InterfaceC0454nb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Revenue f509a;
+    public final /* synthetic */ Throwable f518a;
 
-    public Jj(Revenue revenue) {
-        this.f509a = revenue;
+    public Jj(Throwable th) {
+        this.f518a = th;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0407lb
-    public final void a(InterfaceC0432mb interfaceC0432mb) {
-        interfaceC0432mb.reportRevenue(this.f509a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0454nb
+    public final void a(InterfaceC0479ob interfaceC0479ob) {
+        interfaceC0479ob.reportUnhandledException(this.f518a);
     }
 }

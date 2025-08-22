@@ -17,7 +17,7 @@ import io.reactivex.internal.util.ErrorMode;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.ArrayDeque;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableConcatMapEager<T, R> extends AbstractObservableWithUpstream<T, R> {
     final ErrorMode errorMode;
     final Function<? super T, ? extends ObservableSource<? extends R>> mapper;
@@ -37,7 +37,7 @@ public final class ObservableConcatMapEager<T, R> extends AbstractObservableWith
         this.source.subscribe(new ConcatMapEagerMainObserver(observer, this.mapper, this.maxConcurrency, this.prefetch, this.errorMode));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ConcatMapEagerMainObserver<T, R> extends AtomicInteger implements Observer<T>, Disposable, InnerQueuedObserverSupport<R> {
         private static final long serialVersionUID = 8080567949447303262L;
         int activeCount;

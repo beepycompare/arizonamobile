@@ -7,7 +7,7 @@ import io.reactivex.CompletableSource;
 import io.reactivex.disposables.Disposable;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableCache extends Completable implements CompletableObserver {
     static final InnerCompletableCache[] EMPTY = new InnerCompletableCache[0];
     static final InnerCompletableCache[] TERMINATED = new InnerCompletableCache[0];
@@ -118,7 +118,7 @@ public final class CompletableCache extends Completable implements CompletableOb
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public final class InnerCompletableCache extends AtomicBoolean implements Disposable {
         private static final long serialVersionUID = 8943152917179642732L;
         final CompletableObserver downstream;

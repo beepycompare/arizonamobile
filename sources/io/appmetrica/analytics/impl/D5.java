@@ -15,7 +15,7 @@ public final class D5 implements ModuleAdRevenueProcessor, ModuleAdRevenueProces
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
     public final String getDescription() {
-        return CollectionsKt.joinToString$default(this.f390a, null, "Composite processor with " + this.f390a.size() + " children: [", "]", 0, null, C5.f371a, 25, null);
+        return CollectionsKt.joinToString$default(this.f390a, null, "Composite processor with " + this.f390a.size() + " children: [", "]", 0, null, C5.f374a, 25, null);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor

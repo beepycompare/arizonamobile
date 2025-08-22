@@ -6,7 +6,7 @@ import io.reactivex.internal.subscriptions.SubscriptionArbiter;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSwitchIfEmpty<T> extends AbstractFlowableWithUpstream<T, T> {
     final Publisher<? extends T> other;
 
@@ -22,7 +22,7 @@ public final class FlowableSwitchIfEmpty<T> extends AbstractFlowableWithUpstream
         this.source.subscribe((FlowableSubscriber) switchIfEmptySubscriber);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SwitchIfEmptySubscriber<T> implements FlowableSubscriber<T> {
         final Subscriber<? super T> downstream;
         final Publisher<? extends T> other;

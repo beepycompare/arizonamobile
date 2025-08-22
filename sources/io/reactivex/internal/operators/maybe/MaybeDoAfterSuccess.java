@@ -7,7 +7,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Consumer;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeDoAfterSuccess<T> extends AbstractMaybeWithUpstream<T, T> {
     final Consumer<? super T> onAfterSuccess;
 
@@ -21,7 +21,7 @@ public final class MaybeDoAfterSuccess<T> extends AbstractMaybeWithUpstream<T, T
         this.source.subscribe(new DoAfterObserver(maybeObserver, this.onAfterSuccess));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DoAfterObserver<T> implements MaybeObserver<T>, Disposable {
         final MaybeObserver<? super T> downstream;
         final Consumer<? super T> onAfterSuccess;

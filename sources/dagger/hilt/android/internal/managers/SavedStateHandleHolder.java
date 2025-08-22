@@ -11,18 +11,16 @@ import dagger.hilt.internal.Preconditions;
 public final class SavedStateHandleHolder {
     private CreationExtras extras;
     private SavedStateHandle handle;
-    private final boolean nonComponentActivity;
+    private final boolean isComponentActivity;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public SavedStateHandleHolder(CreationExtras extras) {
-        this.nonComponentActivity = extras == null;
+        this.isComponentActivity = extras != null;
         this.extras = extras;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public SavedStateHandle getSavedStateHandle() {
         ThreadUtil.ensureMainThread();
-        Preconditions.checkState(!this.nonComponentActivity, "Activity that does not extend ComponentActivity cannot use SavedStateHandle", new Object[0]);
+        Preconditions.checkState(this.isComponentActivity, "Activity that does not extend ComponentActivity cannot use SavedStateHandle", new Object[0]);
         SavedStateHandle savedStateHandle = this.handle;
         if (savedStateHandle != null) {
             return savedStateHandle;
@@ -42,6 +40,7 @@ public final class SavedStateHandleHolder {
     }
 
     public void setExtras(CreationExtras extras) {
+        Preconditions.checkState(this.isComponentActivity, "setExtras should only be called for an Activity that extends ComponentActivity", new Object[0]);
         if (this.handle != null) {
             return;
         }

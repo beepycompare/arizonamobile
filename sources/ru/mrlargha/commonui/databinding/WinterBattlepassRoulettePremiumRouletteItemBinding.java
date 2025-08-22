@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class WinterBattlepassRoulettePremiumRouletteItemBinding implements ViewBinding {
     public final ImageView prise;
     public final ImageView priseBg;

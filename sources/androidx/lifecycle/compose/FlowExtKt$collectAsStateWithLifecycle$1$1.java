@@ -90,7 +90,7 @@ final class FlowExtKt$collectAsStateWithLifecycle$1$1<T> extends SuspendLambda i
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:13:0x003c, code lost:
-            if (r7.collect(new androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1.AnonymousClass1.C00521<>(), r6) == r0) goto L15;
+            if (r7.collect(new androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1.AnonymousClass1.C00441<>(), r6) == r0) goto L15;
          */
         /* JADX WARN: Code restructure failed: missing block: B:16:0x0056, code lost:
             if (kotlinx.coroutines.BuildersKt.withContext(r6.$context, new androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1.AnonymousClass1.AnonymousClass2(r6.$this_collectAsStateWithLifecycle, r6.$$this$produceState, null), r6) == r0) goto L15;

@@ -1,7 +1,7 @@
 package androidx.media3.extractor.metadata.dvbsi;
 
 import androidx.media3.common.Metadata;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AppInfoTable implements Metadata.Entry {
     public static final int CONTROL_CODE_AUTOSTART = 1;
     public static final int CONTROL_CODE_PRESENT = 2;

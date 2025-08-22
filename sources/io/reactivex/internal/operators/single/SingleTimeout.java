@@ -11,7 +11,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleTimeout<T> extends Single<T> {
     final SingleSource<? extends T> other;
     final Scheduler scheduler;
@@ -35,7 +35,7 @@ public final class SingleTimeout<T> extends Single<T> {
         this.source.subscribe(timeoutMainObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class TimeoutMainObserver<T> extends AtomicReference<Disposable> implements SingleObserver<T>, Runnable, Disposable {
         private static final long serialVersionUID = 37497744973048446L;
         final SingleObserver<? super T> downstream;
@@ -45,7 +45,7 @@ public final class SingleTimeout<T> extends Single<T> {
         final long timeout;
         final TimeUnit unit;
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         static final class TimeoutFallbackObserver<T> extends AtomicReference<Disposable> implements SingleObserver<T> {
             private static final long serialVersionUID = 2071387740092105509L;
             final SingleObserver<? super T> downstream;

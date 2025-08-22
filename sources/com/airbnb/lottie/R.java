@@ -4,30 +4,30 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int lottieAnimationViewStyle = 0x7f0403c7;
-        public static int lottie_applyOpacityToLayers = 0x7f0403c8;
-        public static int lottie_applyShadowToLayers = 0x7f0403c9;
-        public static int lottie_asyncUpdates = 0x7f0403ca;
-        public static int lottie_autoPlay = 0x7f0403cb;
-        public static int lottie_cacheComposition = 0x7f0403cc;
-        public static int lottie_clipTextToBoundingBox = 0x7f0403cd;
-        public static int lottie_clipToCompositionBounds = 0x7f0403ce;
-        public static int lottie_colorFilter = 0x7f0403cf;
-        public static int lottie_defaultFontFileExtension = 0x7f0403d0;
-        public static int lottie_enableMergePathsForKitKatAndAbove = 0x7f0403d1;
-        public static int lottie_fallbackRes = 0x7f0403d2;
-        public static int lottie_fileName = 0x7f0403d3;
-        public static int lottie_ignoreDisabledSystemAnimations = 0x7f0403d4;
-        public static int lottie_imageAssetsFolder = 0x7f0403d5;
-        public static int lottie_loop = 0x7f0403d6;
-        public static int lottie_progress = 0x7f0403d7;
-        public static int lottie_rawRes = 0x7f0403d8;
-        public static int lottie_renderMode = 0x7f0403d9;
-        public static int lottie_repeatCount = 0x7f0403da;
-        public static int lottie_repeatMode = 0x7f0403db;
-        public static int lottie_speed = 0x7f0403dc;
-        public static int lottie_url = 0x7f0403dd;
-        public static int lottie_useCompositionFrameRate = 0x7f0403de;
+        public static int lottieAnimationViewStyle = 0x7f0403c8;
+        public static int lottie_applyOpacityToLayers = 0x7f0403c9;
+        public static int lottie_applyShadowToLayers = 0x7f0403ca;
+        public static int lottie_asyncUpdates = 0x7f0403cb;
+        public static int lottie_autoPlay = 0x7f0403cc;
+        public static int lottie_cacheComposition = 0x7f0403cd;
+        public static int lottie_clipTextToBoundingBox = 0x7f0403ce;
+        public static int lottie_clipToCompositionBounds = 0x7f0403cf;
+        public static int lottie_colorFilter = 0x7f0403d0;
+        public static int lottie_defaultFontFileExtension = 0x7f0403d1;
+        public static int lottie_enableMergePathsForKitKatAndAbove = 0x7f0403d2;
+        public static int lottie_fallbackRes = 0x7f0403d3;
+        public static int lottie_fileName = 0x7f0403d4;
+        public static int lottie_ignoreDisabledSystemAnimations = 0x7f0403d5;
+        public static int lottie_imageAssetsFolder = 0x7f0403d6;
+        public static int lottie_loop = 0x7f0403d7;
+        public static int lottie_progress = 0x7f0403d8;
+        public static int lottie_rawRes = 0x7f0403d9;
+        public static int lottie_renderMode = 0x7f0403da;
+        public static int lottie_repeatCount = 0x7f0403db;
+        public static int lottie_repeatMode = 0x7f0403dc;
+        public static int lottie_speed = 0x7f0403dd;
+        public static int lottie_url = 0x7f0403de;
+        public static int lottie_useCompositionFrameRate = 0x7f0403df;
 
         private attr() {
         }
@@ -36,13 +36,13 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class id {
         public static int automatic = 0x7f0a0131;
-        public static int disabled = 0x7f0a03e3;
-        public static int enabled = 0x7f0a047c;
-        public static int hardware = 0x7f0a05fe;
-        public static int lottie_layer_name = 0x7f0a07de;
-        public static int restart = 0x7f0a0ac4;
-        public static int reverse = 0x7f0a0aca;
-        public static int software = 0x7f0a0c56;
+        public static int disabled = 0x7f0a03e5;
+        public static int enabled = 0x7f0a047e;
+        public static int hardware = 0x7f0a05f6;
+        public static int lottie_layer_name = 0x7f0a07dc;
+        public static int restart = 0x7f0a0ac5;
+        public static int reverse = 0x7f0a0acb;
+        public static int software = 0x7f0a0c52;
 
         private id() {
         }
@@ -50,7 +50,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class styleable {
-        public static int[] LottieAnimationView = {com.arizona21.game.web.R.attr.lottie_applyOpacityToLayers, com.arizona21.game.web.R.attr.lottie_applyShadowToLayers, com.arizona21.game.web.R.attr.lottie_asyncUpdates, com.arizona21.game.web.R.attr.lottie_autoPlay, com.arizona21.game.web.R.attr.lottie_cacheComposition, com.arizona21.game.web.R.attr.lottie_clipTextToBoundingBox, com.arizona21.game.web.R.attr.lottie_clipToCompositionBounds, com.arizona21.game.web.R.attr.lottie_colorFilter, com.arizona21.game.web.R.attr.lottie_defaultFontFileExtension, com.arizona21.game.web.R.attr.lottie_enableMergePathsForKitKatAndAbove, com.arizona21.game.web.R.attr.lottie_fallbackRes, com.arizona21.game.web.R.attr.lottie_fileName, com.arizona21.game.web.R.attr.lottie_ignoreDisabledSystemAnimations, com.arizona21.game.web.R.attr.lottie_imageAssetsFolder, com.arizona21.game.web.R.attr.lottie_loop, com.arizona21.game.web.R.attr.lottie_progress, com.arizona21.game.web.R.attr.lottie_rawRes, com.arizona21.game.web.R.attr.lottie_renderMode, com.arizona21.game.web.R.attr.lottie_repeatCount, com.arizona21.game.web.R.attr.lottie_repeatMode, com.arizona21.game.web.R.attr.lottie_speed, com.arizona21.game.web.R.attr.lottie_url, com.arizona21.game.web.R.attr.lottie_useCompositionFrameRate};
+        public static int[] LottieAnimationView = {com.arizona21.game.R.attr.lottie_applyOpacityToLayers, com.arizona21.game.R.attr.lottie_applyShadowToLayers, com.arizona21.game.R.attr.lottie_asyncUpdates, com.arizona21.game.R.attr.lottie_autoPlay, com.arizona21.game.R.attr.lottie_cacheComposition, com.arizona21.game.R.attr.lottie_clipTextToBoundingBox, com.arizona21.game.R.attr.lottie_clipToCompositionBounds, com.arizona21.game.R.attr.lottie_colorFilter, com.arizona21.game.R.attr.lottie_defaultFontFileExtension, com.arizona21.game.R.attr.lottie_enableMergePathsForKitKatAndAbove, com.arizona21.game.R.attr.lottie_fallbackRes, com.arizona21.game.R.attr.lottie_fileName, com.arizona21.game.R.attr.lottie_ignoreDisabledSystemAnimations, com.arizona21.game.R.attr.lottie_imageAssetsFolder, com.arizona21.game.R.attr.lottie_loop, com.arizona21.game.R.attr.lottie_progress, com.arizona21.game.R.attr.lottie_rawRes, com.arizona21.game.R.attr.lottie_renderMode, com.arizona21.game.R.attr.lottie_repeatCount, com.arizona21.game.R.attr.lottie_repeatMode, com.arizona21.game.R.attr.lottie_speed, com.arizona21.game.R.attr.lottie_url, com.arizona21.game.R.attr.lottie_useCompositionFrameRate};
         public static int LottieAnimationView_lottie_applyOpacityToLayers = 0x00000000;
         public static int LottieAnimationView_lottie_applyShadowToLayers = 0x00000001;
         public static int LottieAnimationView_lottie_asyncUpdates = 0x00000002;

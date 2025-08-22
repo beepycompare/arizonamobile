@@ -3,25 +3,25 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* loaded from: classes4.dex */
 public final class B3 implements ProtobufConverter {
-    public final C0518pm a(C0748z3 c0748z3) {
-        C0518pm c0518pm = new C0518pm();
-        c0518pm.f1007a = c0748z3.f1162a;
-        return c0518pm;
+    public final C0639um a(C0745z3 c0745z3) {
+        C0639um c0639um = new C0639um();
+        c0639um.f1093a = c0745z3.f1171a;
+        return c0639um;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object fromModel(Object obj) {
-        C0518pm c0518pm = new C0518pm();
-        c0518pm.f1007a = ((C0748z3) obj).f1162a;
-        return c0518pm;
+        C0639um c0639um = new C0639um();
+        c0639um.f1093a = ((C0745z3) obj).f1171a;
+        return c0639um;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        return new C0748z3(((C0518pm) obj).f1007a);
+        return new C0745z3(((C0639um) obj).f1093a);
     }
 
-    public final C0748z3 a(C0518pm c0518pm) {
-        return new C0748z3(c0518pm.f1007a);
+    public final C0745z3 a(C0639um c0639um) {
+        return new C0745z3(c0639um.f1093a);
     }
 }

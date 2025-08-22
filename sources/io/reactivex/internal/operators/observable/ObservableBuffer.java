@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableBuffer<T, U extends Collection<? super T>> extends AbstractObservableWithUpstream<T, U> {
     final Callable<U> bufferSupplier;
     final int count;
@@ -38,7 +38,7 @@ public final class ObservableBuffer<T, U extends Collection<? super T>> extends 
         this.source.subscribe(new BufferSkipObserver(observer, this.count, this.skip, this.bufferSupplier));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BufferExactObserver<T, U extends Collection<? super T>> implements Observer<T>, Disposable {
         U buffer;
         final Callable<U> bufferSupplier;
@@ -123,7 +123,7 @@ public final class ObservableBuffer<T, U extends Collection<? super T>> extends 
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BufferSkipObserver<T, U extends Collection<? super T>> extends AtomicBoolean implements Observer<T>, Disposable {
         private static final long serialVersionUID = -8223395059921494546L;
         final Callable<U> bufferSupplier;

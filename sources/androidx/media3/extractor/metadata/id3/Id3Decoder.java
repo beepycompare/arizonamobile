@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Id3Decoder extends SimpleMetadataDecoder {
     private static final int FRAME_FLAG_V3_HAS_GROUP_IDENTIFIER = 32;
     private static final int FRAME_FLAG_V3_IS_COMPRESSED = 128;
@@ -41,7 +41,7 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
     private static final String TAG = "Id3Decoder";
     private final FramePredicate framePredicate;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface FramePredicate {
         boolean evaluate(int i, int i2, int i3, int i4, int i5);
     }
@@ -803,7 +803,7 @@ public final class Id3Decoder extends SimpleMetadataDecoder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Id3Header {
         private final int framesSize;
         private final boolean isUnsynchronized;

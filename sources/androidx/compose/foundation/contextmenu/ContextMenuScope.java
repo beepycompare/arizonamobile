@@ -18,22 +18,29 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.text.StringsKt;
 /* compiled from: ContextMenuUi.android.kt */
-@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0000\u0018\u00002\u00020\u0001B\u0007\b\u0000¢\u0006\u0002\u0010\u0002J\u0017\u0010\f\u001a\u00020\n2\u0006\u0010\t\u001a\u00020\u0006H\u0001¢\u0006\u0004\b\r\u0010\u000eJ\r\u0010\u000f\u001a\u00020\nH\u0000¢\u0006\u0002\b\u0010Jl\u0010\u0011\u001a\u00020\n2\u0011\u0010\u0012\u001a\r\u0012\u0004\u0012\u00020\u00140\u0013¢\u0006\u0002\b\u000b2\b\b\u0002\u0010\u0015\u001a\u00020\u00162\b\b\u0002\u0010\u0017\u001a\u00020\u00182*\b\u0002\u0010\u0019\u001a$\u0012\u0013\u0012\u00110\u001a¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u001b\u0012\u0004\u0012\u00020\n\u0018\u00010\u0005¢\u0006\u0002\b\u000b2\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\n0\u0013¢\u0006\u0002\u0010\u001dR4\u0010\u0003\u001a(\u0012$\u0012\"\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\n0\u0005¢\u0006\u0002\b\u000b0\u0004X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001e"}, d2 = {"Landroidx/compose/foundation/contextmenu/ContextMenuScope;", "", "()V", "composables", "Landroidx/compose/runtime/snapshots/SnapshotStateList;", "Lkotlin/Function1;", "Landroidx/compose/foundation/contextmenu/ContextMenuColors;", "Lkotlin/ParameterName;", "name", "colors", "", "Landroidx/compose/runtime/Composable;", "Content", "Content$foundation_release", "(Landroidx/compose/foundation/contextmenu/ContextMenuColors;Landroidx/compose/runtime/Composer;I)V", "clear", "clear$foundation_release", "item", Constants.ScionAnalytics.PARAM_LABEL, "Lkotlin/Function0;", "", "modifier", "Landroidx/compose/ui/Modifier;", "enabled", "", "leadingIcon", "Landroidx/compose/ui/graphics/Color;", "iconColor", "onClick", "(Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function0;)V", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u00002\u00020\u0001B\t\b\u0000¢\u0006\u0004\b\u0002\u0010\u0003J\u0017\u0010\r\u001a\u00020\u000b2\u0006\u0010\n\u001a\u00020\u0007H\u0001¢\u0006\u0004\b\u000e\u0010\u000fJ\r\u0010\u0010\u001a\u00020\u000bH\u0000¢\u0006\u0002\b\u0011Jl\u0010\u0012\u001a\u00020\u000b2\u0011\u0010\u0013\u001a\r\u0012\u0004\u0012\u00020\u00150\u0014¢\u0006\u0002\b\f2\b\b\u0002\u0010\u0016\u001a\u00020\u00172\b\b\u0002\u0010\u0018\u001a\u00020\u00192*\b\u0002\u0010\u001a\u001a$\u0012\u0013\u0012\u00110\u001b¢\u0006\f\b\b\u0012\b\b\t\u0012\u0004\b\b(\u001c\u0012\u0004\u0012\u00020\u000b\u0018\u00010\u0006¢\u0006\u0002\b\f2\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0014¢\u0006\u0002\u0010\u001eJ\u0006\u0010\u001f\u001a\u00020\u000bR4\u0010\u0004\u001a(\u0012$\u0012\"\u0012\u0013\u0012\u00110\u0007¢\u0006\f\b\b\u0012\b\b\t\u0012\u0004\b\b(\n\u0012\u0004\u0012\u00020\u000b0\u0006¢\u0006\u0002\b\f0\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Landroidx/compose/foundation/contextmenu/ContextMenuScope;", "", "<init>", "()V", "composables", "Landroidx/compose/runtime/snapshots/SnapshotStateList;", "Lkotlin/Function1;", "Landroidx/compose/foundation/contextmenu/ContextMenuColors;", "Lkotlin/ParameterName;", "name", "colors", "", "Landroidx/compose/runtime/Composable;", "Content", "Content$foundation_release", "(Landroidx/compose/foundation/contextmenu/ContextMenuColors;Landroidx/compose/runtime/Composer;I)V", "clear", "clear$foundation_release", "item", Constants.ScionAnalytics.PARAM_LABEL, "Lkotlin/Function0;", "", "modifier", "Landroidx/compose/ui/Modifier;", "enabled", "", "leadingIcon", "Landroidx/compose/ui/graphics/Color;", "iconColor", "onClick", "(Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function0;)V", "separator", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ContextMenuScope {
     public static final int $stable = 0;
     private final SnapshotStateList<Function3<ContextMenuColors, Composer, Integer, Unit>> composables = SnapshotStateKt.mutableStateListOf();
 
+    public static final Unit Content$lambda$1(ContextMenuScope contextMenuScope, ContextMenuColors contextMenuColors, int i, Composer composer, int i2) {
+        contextMenuScope.Content$foundation_release(contextMenuColors, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        return Unit.INSTANCE;
+    }
+
     public final void Content$foundation_release(final ContextMenuColors contextMenuColors, Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(1320309496);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Content)*241@8836L18:ContextMenuUi.android.kt#3xeu6s");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Content)N(colors)*249@9130L18:ContextMenuUi.android.kt#3xeu6s");
         int i2 = (i & 6) == 0 ? (startRestartGroup.changed(contextMenuColors) ? 4 : 2) | i : i;
         if ((i & 48) == 0) {
             i2 |= startRestartGroup.changed(this) ? 32 : 16;
         }
-        if (startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
+        if (!startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1320309496, i2, -1, "androidx.compose.foundation.contextmenu.ContextMenuScope.Content (ContextMenuUi.android.kt:240)");
+                ComposerKt.traceEventStart(1320309496, i2, -1, "androidx.compose.foundation.contextmenu.ContextMenuScope.Content (ContextMenuUi.android.kt:248)");
             }
             SnapshotStateList<Function3<ContextMenuColors, Composer, Integer, Unit>> snapshotStateList = this.composables;
             int size = snapshotStateList.size();
@@ -43,26 +50,15 @@ public final class ContextMenuScope {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.contextmenu.ContextMenuScope$Content$2
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(2);
-                }
-
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.contextmenu.ContextMenuScope$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                    invoke(composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer2, int i4) {
-                    ContextMenuScope.this.Content$foundation_release(contextMenuColors, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit Content$lambda$1;
+                    Content$lambda$1 = ContextMenuScope.Content$lambda$1(ContextMenuScope.this, contextMenuColors, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return Content$lambda$1;
                 }
             });
         }
@@ -90,14 +86,7 @@ public final class ContextMenuScope {
     }
 
     public final void item(final Function2<? super Composer, ? super Integer, String> function2, final Modifier modifier, final boolean z, final Function3<? super Color, ? super Composer, ? super Integer, Unit> function3, final Function0<Unit> function0) {
-        this.composables.add(ComposableLambdaKt.composableLambdaInstance(262103052, true, new Function3<ContextMenuColors, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.contextmenu.ContextMenuScope$item$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            /* JADX WARN: Multi-variable type inference failed */
-            {
-                super(3);
-            }
-
+        this.composables.add(ComposableLambdaKt.composableLambdaInstance(424163756, true, new Function3<ContextMenuColors, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.contextmenu.ContextMenuScope$item$1
             @Override // kotlin.jvm.functions.Function3
             public /* bridge */ /* synthetic */ Unit invoke(ContextMenuColors contextMenuColors, Composer composer, Integer num) {
                 invoke(contextMenuColors, composer, num.intValue());
@@ -105,27 +94,30 @@ public final class ContextMenuScope {
             }
 
             public final void invoke(ContextMenuColors contextMenuColors, Composer composer, int i) {
-                ComposerKt.sourceInformation(composer, "C282@10636L7,284@10744L251:ContextMenuUi.android.kt#3xeu6s");
+                ComposerKt.sourceInformation(composer, "CN(colors)290@10930L7,292@11038L252:ContextMenuUi.android.kt#3xeu6s");
                 if ((i & 6) == 0) {
                     i |= composer.changed(contextMenuColors) ? 4 : 2;
                 }
-                if (composer.shouldExecute((i & 19) != 18, i & 1)) {
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(262103052, i, -1, "androidx.compose.foundation.contextmenu.ContextMenuScope.item.<anonymous> (ContextMenuUi.android.kt:282)");
-                    }
-                    String invoke = function2.invoke(composer, 0);
-                    if (StringsKt.isBlank(invoke)) {
-                        InlineClassHelperKt.throwIllegalStateException("Label must not be blank");
-                    }
-                    ContextMenuUi_androidKt.ContextMenuItem(invoke, z, contextMenuColors, modifier, function3, function0, composer, (i << 6) & 896, 0);
-                    if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventEnd();
-                        return;
-                    }
+                if (!composer.shouldExecute((i & 19) != 18, i & 1)) {
+                    composer.skipToGroupEnd();
                     return;
                 }
-                composer.skipToGroupEnd();
+                if (ComposerKt.isTraceInProgress()) {
+                    ComposerKt.traceEventStart(424163756, i, -1, "androidx.compose.foundation.contextmenu.ContextMenuScope.item.<anonymous> (ContextMenuUi.android.kt:290)");
+                }
+                String invoke = function2.invoke(composer, 0);
+                if (StringsKt.isBlank(invoke)) {
+                    InlineClassHelperKt.throwIllegalStateException("Label must not be blank");
+                }
+                ContextMenuUi_androidKt.ContextMenuItem(invoke, z, contextMenuColors, modifier, function3, function0, composer, (i << 6) & 896, 0);
+                if (ComposerKt.isTraceInProgress()) {
+                    ComposerKt.traceEventEnd();
+                }
             }
         }));
+    }
+
+    public final void separator() {
+        this.composables.add(ComposableSingletons$ContextMenuUi_androidKt.INSTANCE.m374getLambda$355168742$foundation_release());
     }
 }

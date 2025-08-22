@@ -27,7 +27,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: DragAndDropSource.kt */
-@Metadata(d1 = {"\u0000\\\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0000\u0018\u00002\u00020\u00012\u00020\u0002B]\u0012\u0017\u0010\u0003\u001a\u0013\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0002\b\u0007\u0012'\u0010\b\u001a#\b\u0001\u0012\u0004\u0012\u00020\n\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u000b\u0012\u0006\u0012\u0004\u0018\u00010\f0\t¢\u0006\u0002\b\u0007\u0012\u0014\u0010\r\u001a\u0010\u0012\u0004\u0012\u00020\u000e\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\u0004¢\u0006\u0002\u0010\u0010J\b\u0010#\u001a\u00020\u0006H\u0016J\b\u0010$\u001a\u00020\u0006H\u0016J\u0010\u0010%\u001a\u00020\u00062\u0006\u0010&\u001a\u00020'H\u0016J\u001a\u0010(\u001a\u00020\u00062\u0006\u0010\u001e\u001a\u00020\u001fH\u0016ø\u0001\u0000¢\u0006\u0004\b)\u0010*R=\u0010\b\u001a#\b\u0001\u0012\u0004\u0012\u00020\n\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u000b\u0012\u0006\u0012\u0004\u0018\u00010\f0\t¢\u0006\u0002\b\u0007X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u0015\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R+\u0010\u0003\u001a\u0013\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0002\b\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"\u0004\b\u001a\u0010\u001bR\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u001e\u001a\u00020\u001fX\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010 R(\u0010\r\u001a\u0010\u0012\u0004\u0012\u00020\u000e\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\u0019\"\u0004\b\"\u0010\u001b\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006+"}, d2 = {"Landroidx/compose/foundation/draganddrop/DragAndDropSourceNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/LayoutAwareModifierNode;", "drawDragDecoration", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "", "Lkotlin/ExtensionFunctionType;", "detectDragStart", "Lkotlin/Function2;", "Landroidx/compose/foundation/draganddrop/DragAndDropStartDetectorScope;", "Lkotlin/coroutines/Continuation;", "", "transferData", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/ui/draganddrop/DragAndDropTransferData;", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;)V", "getDetectDragStart", "()Lkotlin/jvm/functions/Function2;", "setDetectDragStart", "(Lkotlin/jvm/functions/Function2;)V", "Lkotlin/jvm/functions/Function2;", "dragAndDropModifierNode", "Landroidx/compose/ui/draganddrop/DragAndDropSourceModifierNode;", "getDrawDragDecoration", "()Lkotlin/jvm/functions/Function1;", "setDrawDragDecoration", "(Lkotlin/jvm/functions/Function1;)V", "inputModifierNode", "Landroidx/compose/ui/node/PointerInputModifierNode;", "size", "Landroidx/compose/ui/unit/IntSize;", "J", "getTransferData", "setTransferData", "onAttach", "onDetach", "onPlaced", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "onRemeasured", "onRemeasured-ozmzZPI", "(J)V", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u00012\u00020\u0002Bc\u0012\u0017\u0010\u0003\u001a\u0013\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0002\b\u0007\u0012+\u0010\b\u001a'\b\u0001\u0012\u0004\u0012\u00020\n\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u000b\u0012\u0006\u0012\u0004\u0018\u00010\f0\tj\u0002`\r¢\u0006\u0002\b\u0007\u0012\u0014\u0010\u000e\u001a\u0010\u0012\u0004\u0012\u00020\u000f\u0012\u0006\u0012\u0004\u0018\u00010\u00100\u0004¢\u0006\u0004\b\u0011\u0010\u0012J\b\u0010%\u001a\u00020\u0006H\u0016J\b\u0010&\u001a\u00020\u0006H\u0016J\u0010\u0010'\u001a\u00020\u00062\u0006\u0010(\u001a\u00020)H\u0016J\u0017\u0010*\u001a\u00020\u00062\u0006\u0010\u001e\u001a\u00020\u001fH\u0016¢\u0006\u0004\b+\u0010,R+\u0010\u0003\u001a\u0013\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0002\b\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016RA\u0010\b\u001a'\b\u0001\u0012\u0004\u0012\u00020\n\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u000b\u0012\u0006\u0012\u0004\u0018\u00010\f0\tj\u0002`\r¢\u0006\u0002\b\u0007X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u001b\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aR(\u0010\u000e\u001a\u0010\u0012\u0004\u0012\u00020\u000f\u0012\u0006\u0012\u0004\u0018\u00010\u00100\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u0014\"\u0004\b\u001d\u0010\u0016R\u0010\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0004\n\u0002\u0010 R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010#\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006-"}, d2 = {"Landroidx/compose/foundation/draganddrop/DragAndDropSourceNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/LayoutAwareModifierNode;", "drawDragDecoration", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "", "Lkotlin/ExtensionFunctionType;", "detectDragStart", "Lkotlin/Function2;", "Landroidx/compose/foundation/draganddrop/DragAndDropStartDetectorScope;", "Lkotlin/coroutines/Continuation;", "", "Landroidx/compose/foundation/draganddrop/DragAndDropStartDetector;", "transferData", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/ui/draganddrop/DragAndDropTransferData;", "<init>", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;)V", "getDrawDragDecoration", "()Lkotlin/jvm/functions/Function1;", "setDrawDragDecoration", "(Lkotlin/jvm/functions/Function1;)V", "getDetectDragStart", "()Lkotlin/jvm/functions/Function2;", "setDetectDragStart", "(Lkotlin/jvm/functions/Function2;)V", "Lkotlin/jvm/functions/Function2;", "getTransferData", "setTransferData", "size", "Landroidx/compose/ui/unit/IntSize;", "J", "dragAndDropModifierNode", "Landroidx/compose/ui/draganddrop/DragAndDropSourceModifierNode;", "inputModifierNode", "Landroidx/compose/ui/node/PointerInputModifierNode;", "onAttach", "onDetach", "onPlaced", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "onRemeasured", "onRemeasured-ozmzZPI", "(J)V", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class DragAndDropSourceNode extends DelegatingNode implements LayoutAwareModifierNode {
     public static final int $stable = 8;
@@ -35,27 +35,13 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
     private Function1<? super DrawScope, Unit> drawDragDecoration;
     private PointerInputModifierNode inputModifierNode;
     private Function1<? super Offset, DragAndDropTransferData> transferData;
-    private long size = IntSize.Companion.m6860getZeroYbymL2g();
-    private final DragAndDropSourceModifierNode dragAndDropModifierNode = (DragAndDropSourceModifierNode) delegate(DragAndDropNodeKt.DragAndDropSourceModifierNode(new Function2<DragAndDropStartTransferScope, Offset, Unit>() { // from class: androidx.compose.foundation.draganddrop.DragAndDropSourceNode$dragAndDropModifierNode$1
-        /* JADX INFO: Access modifiers changed from: package-private */
-        {
-            super(2);
-        }
-
+    private long size = IntSize.Companion.m7427getZeroYbymL2g();
+    private final DragAndDropSourceModifierNode dragAndDropModifierNode = (DragAndDropSourceModifierNode) delegate(DragAndDropNodeKt.DragAndDropSourceModifierNode(new Function2() { // from class: androidx.compose.foundation.draganddrop.DragAndDropSourceNode$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
-        public /* bridge */ /* synthetic */ Unit invoke(DragAndDropStartTransferScope dragAndDropStartTransferScope, Offset offset) {
-            m378invokeUv8p0NA(dragAndDropStartTransferScope, offset.m3847unboximpl());
-            return Unit.INSTANCE;
-        }
-
-        /* renamed from: invoke-Uv8p0NA  reason: not valid java name */
-        public final void m378invokeUv8p0NA(DragAndDropStartTransferScope dragAndDropStartTransferScope, long j) {
-            long j2;
-            DragAndDropTransferData invoke = DragAndDropSourceNode.this.getTransferData().invoke(Offset.m3826boximpl(j));
-            if (invoke != null) {
-                j2 = DragAndDropSourceNode.this.size;
-                dragAndDropStartTransferScope.mo3674startDragAndDropTransfer12SF9DM(invoke, IntSizeKt.m6867toSizeozmzZPI(j2), DragAndDropSourceNode.this.getDrawDragDecoration());
-            }
+        public final Object invoke(Object obj, Object obj2) {
+            Unit dragAndDropModifierNode$lambda$0;
+            dragAndDropModifierNode$lambda$0 = DragAndDropSourceNode.dragAndDropModifierNode$lambda$0(DragAndDropSourceNode.this, (DragAndDropStartTransferScope) obj, (Offset) obj2);
+            return dragAndDropModifierNode$lambda$0;
         }
     }));
 
@@ -89,13 +75,22 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
         this.transferData = function12;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit dragAndDropModifierNode$lambda$0(DragAndDropSourceNode dragAndDropSourceNode, DragAndDropStartTransferScope dragAndDropStartTransferScope, Offset offset) {
+        DragAndDropTransferData invoke = dragAndDropSourceNode.transferData.invoke(offset);
+        if (invoke != null) {
+            dragAndDropStartTransferScope.mo4047startDragAndDropTransfer12SF9DM(invoke, IntSizeKt.m7434toSizeozmzZPI(dragAndDropSourceNode.size), dragAndDropSourceNode.drawDragDecoration);
+        }
+        return Unit.INSTANCE;
+    }
+
     @Override // androidx.compose.ui.Modifier.Node
     public void onAttach() {
         if (this.dragAndDropModifierNode.isRequestDragAndDropTransferRequired()) {
             this.inputModifierNode = (PointerInputModifierNode) delegate(SuspendingPointerInputFilterKt.SuspendingPointerInputModifierNode(new PointerInputEventHandler() { // from class: androidx.compose.foundation.draganddrop.DragAndDropSourceNode$onAttach$1
 
                 /* compiled from: DragAndDropSource.kt */
-                @Metadata(d1 = {"\u0000\u0085\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b*\u0001\u0000\b\n\u0018\u00002\u00020\u00012\u00020\u0002J=\u0010\u001b\u001a\u0002H\u001c\"\u0004\b\u0000\u0010\u001c2'\u0010\u001d\u001a#\b\u0001\u0012\u0004\u0012\u00020\u001f\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u001c0 \u0012\u0006\u0012\u0004\u0018\u00010!0\u001e¢\u0006\u0002\b\"H\u0096A¢\u0006\u0002\u0010#J\u001a\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020'H\u0016ø\u0001\u0000¢\u0006\u0004\b(\u0010)J\u0017\u0010*\u001a\u00020+*\u00020,H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\b-\u0010.J\u0017\u0010*\u001a\u00020+*\u00020/H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\b0\u00101J\u0017\u00102\u001a\u00020,*\u00020/H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\b3\u00104J\u001a\u00102\u001a\u00020,*\u00020\u0004H\u0097\u0001ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b5\u00106J\u001a\u00102\u001a\u00020,*\u00020+H\u0097\u0001ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b5\u00107J\u0017\u00108\u001a\u000209*\u00020\bH\u0097\u0001ø\u0001\u0000¢\u0006\u0004\b:\u0010;J\u0017\u0010<\u001a\u00020\u0004*\u00020,H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\b=\u00106J\u0017\u0010<\u001a\u00020\u0004*\u00020/H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\b>\u00104J\r\u0010?\u001a\u00020@*\u00020AH\u0097\u0001J\u0017\u0010B\u001a\u00020\b*\u000209H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\bC\u0010;J\u0017\u0010D\u001a\u00020/*\u00020,H\u0097\u0001ø\u0001\u0000¢\u0006\u0004\bE\u0010FJ\u001a\u0010D\u001a\u00020/*\u00020\u0004H\u0097\u0001ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\bG\u0010FJ\u001a\u0010D\u001a\u00020/*\u00020+H\u0097\u0001ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\bG\u0010HR\u0014\u0010\u0003\u001a\u00020\u00048\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006R\u001a\u0010\u0007\u001a\u00020\b8VX\u0096\u0005ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\t\u0010\nR\u0014\u0010\u000b\u001a\u00020\u00048\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b\f\u0010\u0006R$\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\r\u001a\u00020\u000e8V@VX\u0096\u000f¢\u0006\f\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u0018\u0010\u0014\u001a\u00020\u0015X\u0096\u0005ø\u0001\u0000ø\u0001\u0001¢\u0006\u0006\u001a\u0004\b\u0016\u0010\nR\u0012\u0010\u0017\u001a\u00020\u0018X\u0096\u0005¢\u0006\u0006\u001a\u0004\b\u0019\u0010\u001a\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006I"}, d2 = {"androidx/compose/foundation/draganddrop/DragAndDropSourceNode$onAttach$1$1", "Landroidx/compose/foundation/draganddrop/DragAndDropStartDetectorScope;", "Landroidx/compose/ui/input/pointer/PointerInputScope;", "density", "", "getDensity", "()F", "extendedTouchPadding", "Landroidx/compose/ui/geometry/Size;", "getExtendedTouchPadding-NH-jbRc", "()J", "fontScale", "getFontScale", "<anonymous parameter 0>", "", "interceptOutOfBoundsChildEvents", "getInterceptOutOfBoundsChildEvents", "()Z", "setInterceptOutOfBoundsChildEvents", "(Z)V", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "getViewConfiguration", "()Landroidx/compose/ui/platform/ViewConfiguration;", "awaitPointerEventScope", "R", "block", "Lkotlin/Function2;", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "requestDragAndDropTransfer", "", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/ui/geometry/Offset;", "requestDragAndDropTransfer-k-4lQ0M", "(J)V", "roundToPx", "", "Landroidx/compose/ui/unit/Dp;", "roundToPx-0680j_4", "(F)I", "Landroidx/compose/ui/unit/TextUnit;", "roundToPx--R2X_6o", "(J)I", "toDp", "toDp-GaN1DYA", "(J)F", "toDp-u2uoSUM", "(F)F", "(I)F", "toDpSize", "Landroidx/compose/ui/unit/DpSize;", "toDpSize-k-rfVVM", "(J)J", "toPx", "toPx-0680j_4", "toPx--R2X_6o", "toRect", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/unit/DpRect;", "toSize", "toSize-XkaWNTQ", "toSp", "toSp-0xMU5do", "(F)J", "toSp-kPz2Gy4", "(I)J", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+                @Metadata(d1 = {"\u0000\u0083\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003*\u0001\u0000\b\n\u0018\u00002\u00020\u00012\u00020\u0002J\u0017\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0016¢\u0006\u0004\b\u0007\u0010\bJC\u0010\t\u001a\u0002H\n\"\n\b\u0000\u0010\n*\u0004\u0018\u00010\u000b2'\u0010\f\u001a#\b\u0001\u0012\u0004\u0012\u00020\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\n0\u000f\u0012\u0006\u0012\u0004\u0018\u00010\u000b0\r¢\u0006\u0002\b\u0010H\u0096A¢\u0006\u0002\u0010\u0011J\u0014\u0010\u0012\u001a\u00020\u0013*\u00020\u0014H\u0097\u0001¢\u0006\u0004\b\u0015\u0010\u0016J\u0014\u0010\u0012\u001a\u00020\u0013*\u00020\u0017H\u0097\u0001¢\u0006\u0004\b\u0018\u0010\u0019J\u0014\u0010\u001a\u001a\u00020\u0014*\u00020\u0013H\u0097\u0001¢\u0006\u0004\b\u001b\u0010\u001cJ\u0014\u0010\u001a\u001a\u00020\u0014*\u00020\u001dH\u0097\u0001¢\u0006\u0004\b\u001b\u0010\u001eJ\u0014\u0010\u001a\u001a\u00020\u0014*\u00020\u0017H\u0097\u0001¢\u0006\u0004\b\u001f\u0010 J\u0014\u0010!\u001a\u00020\"*\u00020#H\u0097\u0001¢\u0006\u0004\b$\u0010%J\u0014\u0010&\u001a\u00020\u001d*\u00020\u0014H\u0097\u0001¢\u0006\u0004\b'\u0010\u001eJ\u0014\u0010&\u001a\u00020\u001d*\u00020\u0017H\u0097\u0001¢\u0006\u0004\b(\u0010 J\r\u0010)\u001a\u00020**\u00020+H\u0097\u0001J\u0014\u0010,\u001a\u00020#*\u00020\"H\u0097\u0001¢\u0006\u0004\b-\u0010%J\u0014\u0010.\u001a\u00020\u0017*\u00020\u0013H\u0097\u0001¢\u0006\u0004\b/\u00100J\u0014\u0010.\u001a\u00020\u0017*\u00020\u001dH\u0097\u0001¢\u0006\u0004\b/\u00101J\u0014\u0010.\u001a\u00020\u0017*\u00020\u0014H\u0097\u0001¢\u0006\u0004\b2\u00101R\u0014\u00103\u001a\u00020\u001d8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b4\u00105R\u0014\u00106\u001a\u00020#8VX\u0096\u0005¢\u0006\u0006\u001a\u0004\b7\u00108R\u0014\u00109\u001a\u00020\u001d8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b:\u00105R$\u0010=\u001a\u00020<2\u0006\u0010;\u001a\u00020<8V@VX\u0096\u000f¢\u0006\f\u001a\u0004\b>\u0010?\"\u0004\b@\u0010AR\u0012\u0010B\u001a\u00020CX\u0096\u0005¢\u0006\u0006\u001a\u0004\bD\u00108R\u0012\u0010E\u001a\u00020FX\u0096\u0005¢\u0006\u0006\u001a\u0004\bG\u0010H¨\u0006I"}, d2 = {"androidx/compose/foundation/draganddrop/DragAndDropSourceNode$onAttach$1$1", "Landroidx/compose/foundation/draganddrop/DragAndDropStartDetectorScope;", "Landroidx/compose/ui/input/pointer/PointerInputScope;", "requestDragAndDropTransfer", "", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/ui/geometry/Offset;", "requestDragAndDropTransfer-k-4lQ0M", "(J)V", "awaitPointerEventScope", "R", "", "block", "Lkotlin/Function2;", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "Lkotlin/coroutines/Continuation;", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "roundToPx", "", "Landroidx/compose/ui/unit/Dp;", "roundToPx-0680j_4", "(F)I", "Landroidx/compose/ui/unit/TextUnit;", "roundToPx--R2X_6o", "(J)I", "toDp", "toDp-u2uoSUM", "(I)F", "", "(F)F", "toDp-GaN1DYA", "(J)F", "toDpSize", "Landroidx/compose/ui/unit/DpSize;", "Landroidx/compose/ui/geometry/Size;", "toDpSize-k-rfVVM", "(J)J", "toPx", "toPx-0680j_4", "toPx--R2X_6o", "toRect", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/unit/DpRect;", "toSize", "toSize-XkaWNTQ", "toSp", "toSp-kPz2Gy4", "(I)J", "(F)J", "toSp-0xMU5do", "density", "getDensity", "()F", "extendedTouchPadding", "getExtendedTouchPadding-NH-jbRc", "()J", "fontScale", "getFontScale", "_", "", "interceptOutOfBoundsChildEvents", "getInterceptOutOfBoundsChildEvents", "()Z", "setInterceptOutOfBoundsChildEvents", "(Z)V", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "getViewConfiguration", "()Landroidx/compose/ui/platform/ViewConfiguration;", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
                 /* renamed from: androidx.compose.foundation.draganddrop.DragAndDropSourceNode$onAttach$1$1  reason: invalid class name */
                 /* loaded from: classes.dex */
                 public static final class AnonymousClass1 implements DragAndDropStartDetectorScope, PointerInputScope {
@@ -114,8 +109,8 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
                     @Override // androidx.compose.ui.input.pointer.PointerInputScope
                     /* renamed from: getExtendedTouchPadding-NH-jbRc  reason: not valid java name */
-                    public long mo379getExtendedTouchPaddingNHjbRc() {
-                        return this.$$delegate_0.mo379getExtendedTouchPaddingNHjbRc();
+                    public long mo409getExtendedTouchPaddingNHjbRc() {
+                        return this.$$delegate_0.mo409getExtendedTouchPaddingNHjbRc();
                     }
 
                     @Override // androidx.compose.ui.unit.FontScaling
@@ -130,8 +125,8 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
                     @Override // androidx.compose.ui.input.pointer.PointerInputScope
                     /* renamed from: getSize-YbymL2g  reason: not valid java name */
-                    public long mo380getSizeYbymL2g() {
-                        return this.$$delegate_0.mo380getSizeYbymL2g();
+                    public long mo410getSizeYbymL2g() {
+                        return this.$$delegate_0.mo410getSizeYbymL2g();
                     }
 
                     @Override // androidx.compose.ui.input.pointer.PointerInputScope
@@ -141,14 +136,14 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-                    public int mo382roundToPxR2X_6o(long j) {
-                        return this.$$delegate_0.mo382roundToPxR2X_6o(j);
+                    public int mo412roundToPxR2X_6o(long j) {
+                        return this.$$delegate_0.mo412roundToPxR2X_6o(j);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-                    public int mo383roundToPx0680j_4(float f) {
-                        return this.$$delegate_0.mo383roundToPx0680j_4(f);
+                    public int mo413roundToPx0680j_4(float f) {
+                        return this.$$delegate_0.mo413roundToPx0680j_4(f);
                     }
 
                     @Override // androidx.compose.ui.input.pointer.PointerInputScope
@@ -158,38 +153,38 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
                     @Override // androidx.compose.ui.unit.FontScaling
                     /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-                    public float mo384toDpGaN1DYA(long j) {
-                        return this.$$delegate_0.mo384toDpGaN1DYA(j);
+                    public float mo414toDpGaN1DYA(long j) {
+                        return this.$$delegate_0.mo414toDpGaN1DYA(j);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-                    public float mo385toDpu2uoSUM(float f) {
-                        return this.$$delegate_0.mo385toDpu2uoSUM(f);
+                    public float mo415toDpu2uoSUM(float f) {
+                        return this.$$delegate_0.mo415toDpu2uoSUM(f);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-                    public float mo386toDpu2uoSUM(int i) {
-                        return this.$$delegate_0.mo386toDpu2uoSUM(i);
+                    public float mo416toDpu2uoSUM(int i) {
+                        return this.$$delegate_0.mo416toDpu2uoSUM(i);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-                    public long mo387toDpSizekrfVVM(long j) {
-                        return this.$$delegate_0.mo387toDpSizekrfVVM(j);
+                    public long mo417toDpSizekrfVVM(long j) {
+                        return this.$$delegate_0.mo417toDpSizekrfVVM(j);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toPx--R2X_6o  reason: not valid java name */
-                    public float mo388toPxR2X_6o(long j) {
-                        return this.$$delegate_0.mo388toPxR2X_6o(j);
+                    public float mo418toPxR2X_6o(long j) {
+                        return this.$$delegate_0.mo418toPxR2X_6o(j);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toPx-0680j_4  reason: not valid java name */
-                    public float mo389toPx0680j_4(float f) {
-                        return this.$$delegate_0.mo389toPx0680j_4(f);
+                    public float mo419toPx0680j_4(float f) {
+                        return this.$$delegate_0.mo419toPx0680j_4(f);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
@@ -199,26 +194,26 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-                    public long mo390toSizeXkaWNTQ(long j) {
-                        return this.$$delegate_0.mo390toSizeXkaWNTQ(j);
+                    public long mo420toSizeXkaWNTQ(long j) {
+                        return this.$$delegate_0.mo420toSizeXkaWNTQ(j);
                     }
 
                     @Override // androidx.compose.ui.unit.FontScaling
                     /* renamed from: toSp-0xMU5do  reason: not valid java name */
-                    public long mo391toSp0xMU5do(float f) {
-                        return this.$$delegate_0.mo391toSp0xMU5do(f);
+                    public long mo421toSp0xMU5do(float f) {
+                        return this.$$delegate_0.mo421toSp0xMU5do(f);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-                    public long mo392toSpkPz2Gy4(float f) {
-                        return this.$$delegate_0.mo392toSpkPz2Gy4(f);
+                    public long mo422toSpkPz2Gy4(float f) {
+                        return this.$$delegate_0.mo422toSpkPz2Gy4(f);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-                    public long mo393toSpkPz2Gy4(int i) {
-                        return this.$$delegate_0.mo393toSpkPz2Gy4(i);
+                    public long mo423toSpkPz2Gy4(int i) {
+                        return this.$$delegate_0.mo423toSpkPz2Gy4(i);
                     }
 
                     AnonymousClass1(PointerInputScope pointerInputScope, DragAndDropSourceNode dragAndDropSourceNode) {
@@ -228,10 +223,10 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
                     @Override // androidx.compose.foundation.draganddrop.DragAndDropStartDetectorScope
                     /* renamed from: requestDragAndDropTransfer-k-4lQ0M  reason: not valid java name */
-                    public void mo381requestDragAndDropTransferk4lQ0M(long j) {
+                    public void mo411requestDragAndDropTransferk4lQ0M(long j) {
                         DragAndDropSourceModifierNode dragAndDropSourceModifierNode;
                         dragAndDropSourceModifierNode = this.this$0.dragAndDropModifierNode;
-                        dragAndDropSourceModifierNode.mo3677requestDragAndDropTransferk4lQ0M(j);
+                        dragAndDropSourceModifierNode.mo4050requestDragAndDropTransferk4lQ0M(j);
                     }
                 }
 
@@ -259,8 +254,8 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI  reason: not valid java name */
-    public void mo377onRemeasuredozmzZPI(long j) {
+    public void mo408onRemeasuredozmzZPI(long j) {
         this.size = j;
-        this.dragAndDropModifierNode.mo377onRemeasuredozmzZPI(j);
+        this.dragAndDropModifierNode.mo408onRemeasuredozmzZPI(j);
     }
 }

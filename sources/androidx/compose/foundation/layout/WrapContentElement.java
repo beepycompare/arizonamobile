@@ -1,5 +1,6 @@
 package androidx.compose.foundation.layout;
 
+import androidx.compose.foundation.layout.WrapContentElement;
 import androidx.compose.ui.Alignment;
 import androidx.compose.ui.node.ModifierNodeElement;
 import androidx.compose.ui.platform.InspectorInfo;
@@ -11,7 +12,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Size.kt */
-@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0002\u0018\u0000 \u001b2\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u001bB?\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0018\u0010\u0007\u001a\u0014\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b0\b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f¢\u0006\u0002\u0010\u0010J\b\u0010\u0011\u001a\u00020\u0002H\u0016J\u0013\u0010\u0012\u001a\u00020\u00062\b\u0010\u0013\u001a\u0004\u0018\u00010\rH\u0096\u0002J\b\u0010\u0014\u001a\u00020\u0015H\u0016J\u0010\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0002H\u0016J\f\u0010\u0019\u001a\u00020\u0017*\u00020\u001aH\u0016R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0007\u001a\u0014\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b0\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Landroidx/compose/foundation/layout/WrapContentElement;", "Landroidx/compose/ui/node/ModifierNodeElement;", "Landroidx/compose/foundation/layout/WrapContentNode;", "direction", "Landroidx/compose/foundation/layout/Direction;", "unbounded", "", "alignmentCallback", "Lkotlin/Function2;", "Landroidx/compose/ui/unit/IntSize;", "Landroidx/compose/ui/unit/LayoutDirection;", "Landroidx/compose/ui/unit/IntOffset;", "align", "", "inspectorName", "", "(Landroidx/compose/foundation/layout/Direction;ZLkotlin/jvm/functions/Function2;Ljava/lang/Object;Ljava/lang/String;)V", "create", "equals", "other", "hashCode", "", "update", "", "node", "inspectableProperties", "Landroidx/compose/ui/platform/InspectorInfo;", "Companion", "foundation-layout_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\b\u0002\u0018\u0000 \u001c2\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u001cBA\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0018\u0010\u0007\u001a\u0014\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b0\b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f¢\u0006\u0004\b\u0010\u0010\u0011J\b\u0010\u0012\u001a\u00020\u0002H\u0016J\u0010\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0002H\u0016J\f\u0010\u0016\u001a\u00020\u0014*\u00020\u0017H\u0016J\u0013\u0010\u0018\u001a\u00020\u00062\b\u0010\u0019\u001a\u0004\u0018\u00010\rH\u0096\u0002J\b\u0010\u001a\u001a\u00020\u001bH\u0016R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0007\u001a\u0014\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u000b0\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001d"}, d2 = {"Landroidx/compose/foundation/layout/WrapContentElement;", "Landroidx/compose/ui/node/ModifierNodeElement;", "Landroidx/compose/foundation/layout/WrapContentNode;", "direction", "Landroidx/compose/foundation/layout/Direction;", "unbounded", "", "alignmentCallback", "Lkotlin/Function2;", "Landroidx/compose/ui/unit/IntSize;", "Landroidx/compose/ui/unit/LayoutDirection;", "Landroidx/compose/ui/unit/IntOffset;", "align", "", "inspectorName", "", "<init>", "(Landroidx/compose/foundation/layout/Direction;ZLkotlin/jvm/functions/Function2;Ljava/lang/Object;Ljava/lang/String;)V", "create", "update", "", "node", "inspectableProperties", "Landroidx/compose/ui/platform/InspectorInfo;", "equals", "other", "hashCode", "", "Companion", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class WrapContentElement extends ModifierNodeElement<WrapContentNode> {
     public static final Companion Companion = new Companion(null);
@@ -68,7 +69,7 @@ final class WrapContentElement extends ModifierNodeElement<WrapContentNode> {
     }
 
     /* compiled from: Size.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0018\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0007J\u0018\u0010\t\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\n2\u0006\u0010\u0007\u001a\u00020\bH\u0007J\u0018\u0010\u000b\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\f2\u0006\u0010\u0007\u001a\u00020\bH\u0007¨\u0006\r"}, d2 = {"Landroidx/compose/foundation/layout/WrapContentElement$Companion;", "", "()V", "height", "Landroidx/compose/foundation/layout/WrapContentElement;", "align", "Landroidx/compose/ui/Alignment$Vertical;", "unbounded", "", "size", "Landroidx/compose/ui/Alignment;", "width", "Landroidx/compose/ui/Alignment$Horizontal;", "foundation-layout_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0007J\u0018\u0010\n\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u000b2\u0006\u0010\b\u001a\u00020\tH\u0007J\u0018\u0010\f\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\r2\u0006\u0010\b\u001a\u00020\tH\u0007¨\u0006\u000e"}, d2 = {"Landroidx/compose/foundation/layout/WrapContentElement$Companion;", "", "<init>", "()V", "width", "Landroidx/compose/foundation/layout/WrapContentElement;", "align", "Landroidx/compose/ui/Alignment$Horizontal;", "unbounded", "", "height", "Landroidx/compose/ui/Alignment$Vertical;", "size", "Landroidx/compose/ui/Alignment;", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -79,60 +80,51 @@ final class WrapContentElement extends ModifierNodeElement<WrapContentNode> {
         }
 
         public final WrapContentElement width(final Alignment.Horizontal horizontal, boolean z) {
-            return new WrapContentElement(Direction.Horizontal, z, new Function2<IntSize, LayoutDirection, IntOffset>() { // from class: androidx.compose.foundation.layout.WrapContentElement$Companion$width$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(2);
-                }
-
+            return new WrapContentElement(Direction.Horizontal, z, new Function2() { // from class: androidx.compose.foundation.layout.WrapContentElement$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ IntOffset invoke(IntSize intSize, LayoutDirection layoutDirection) {
-                    return IntOffset.m6803boximpl(m841invoke5SAbXVA(intSize.m6859unboximpl(), layoutDirection));
-                }
-
-                /* renamed from: invoke-5SAbXVA  reason: not valid java name */
-                public final long m841invoke5SAbXVA(long j, LayoutDirection layoutDirection) {
-                    return IntOffset.m6806constructorimpl((0 & 4294967295L) | (Alignment.Horizontal.this.align(0, (int) (j >> 32), layoutDirection) << 32));
+                public final Object invoke(Object obj, Object obj2) {
+                    IntOffset width$lambda$0;
+                    width$lambda$0 = WrapContentElement.Companion.width$lambda$0(Alignment.Horizontal.this, (IntSize) obj, (LayoutDirection) obj2);
+                    return width$lambda$0;
                 }
             }, horizontal, "wrapContentWidth");
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final IntOffset width$lambda$0(Alignment.Horizontal horizontal, IntSize intSize, LayoutDirection layoutDirection) {
+            return IntOffset.m7370boximpl(IntOffset.m7373constructorimpl((horizontal.align(0, (int) (intSize.m7426unboximpl() >> 32), layoutDirection) << 32) | (0 & 4294967295L)));
+        }
+
         public final WrapContentElement height(final Alignment.Vertical vertical, boolean z) {
-            return new WrapContentElement(Direction.Vertical, z, new Function2<IntSize, LayoutDirection, IntOffset>() { // from class: androidx.compose.foundation.layout.WrapContentElement$Companion$height$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(2);
-                }
-
+            return new WrapContentElement(Direction.Vertical, z, new Function2() { // from class: androidx.compose.foundation.layout.WrapContentElement$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ IntOffset invoke(IntSize intSize, LayoutDirection layoutDirection) {
-                    return IntOffset.m6803boximpl(m839invoke5SAbXVA(intSize.m6859unboximpl(), layoutDirection));
-                }
-
-                /* renamed from: invoke-5SAbXVA  reason: not valid java name */
-                public final long m839invoke5SAbXVA(long j, LayoutDirection layoutDirection) {
-                    return IntOffset.m6806constructorimpl((0 << 32) | (4294967295L & Alignment.Vertical.this.align(0, (int) (j & 4294967295L))));
+                public final Object invoke(Object obj, Object obj2) {
+                    IntOffset height$lambda$1;
+                    height$lambda$1 = WrapContentElement.Companion.height$lambda$1(Alignment.Vertical.this, (IntSize) obj, (LayoutDirection) obj2);
+                    return height$lambda$1;
                 }
             }, vertical, "wrapContentHeight");
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final IntOffset height$lambda$1(Alignment.Vertical vertical, IntSize intSize, LayoutDirection layoutDirection) {
+            return IntOffset.m7370boximpl(IntOffset.m7373constructorimpl((0 << 32) | (4294967295L & vertical.align(0, (int) (intSize.m7426unboximpl() & 4294967295L)))));
+        }
+
         public final WrapContentElement size(final Alignment alignment, boolean z) {
-            return new WrapContentElement(Direction.Both, z, new Function2<IntSize, LayoutDirection, IntOffset>() { // from class: androidx.compose.foundation.layout.WrapContentElement$Companion$size$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(2);
-                }
-
+            return new WrapContentElement(Direction.Both, z, new Function2() { // from class: androidx.compose.foundation.layout.WrapContentElement$Companion$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ IntOffset invoke(IntSize intSize, LayoutDirection layoutDirection) {
-                    return IntOffset.m6803boximpl(m840invoke5SAbXVA(intSize.m6859unboximpl(), layoutDirection));
-                }
-
-                /* renamed from: invoke-5SAbXVA  reason: not valid java name */
-                public final long m840invoke5SAbXVA(long j, LayoutDirection layoutDirection) {
-                    return Alignment.this.mo3654alignKFBX0sM(IntSize.Companion.m6860getZeroYbymL2g(), j, layoutDirection);
+                public final Object invoke(Object obj, Object obj2) {
+                    IntOffset size$lambda$2;
+                    size$lambda$2 = WrapContentElement.Companion.size$lambda$2(Alignment.this, (IntSize) obj, (LayoutDirection) obj2);
+                    return size$lambda$2;
                 }
             }, alignment, "wrapContentSize");
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final IntOffset size$lambda$2(Alignment alignment, IntSize intSize, LayoutDirection layoutDirection) {
+            return IntOffset.m7370boximpl(alignment.mo4016alignKFBX0sM(IntSize.Companion.m7427getZeroYbymL2g(), intSize.m7426unboximpl(), layoutDirection));
         }
     }
 }

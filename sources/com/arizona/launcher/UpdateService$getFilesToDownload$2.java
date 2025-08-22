@@ -58,14 +58,14 @@ public final class UpdateService$getFilesToDownload$2 extends SuspendLambda impl
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x01ad  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0095 -> B:15:0x0098). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x00f4 -> B:35:0x01aa). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x0101 -> B:35:0x01aa). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x0103 -> B:35:0x01aa). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x013d -> B:35:0x01aa). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x0179 -> B:35:0x01aa). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x017b -> B:35:0x01aa). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x01af  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0096 -> B:15:0x0099). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x00f6 -> B:35:0x01ac). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x0103 -> B:35:0x01ac). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x0105 -> B:35:0x01ac). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x013f -> B:35:0x01ac). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x017b -> B:35:0x01ac). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x017d -> B:35:0x01ac). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.

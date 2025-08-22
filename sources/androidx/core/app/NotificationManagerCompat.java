@@ -373,6 +373,13 @@ public final class NotificationManagerCompat {
         return Api34Impl.canUseFullScreenIntent(this.mNotificationManager);
     }
 
+    public boolean canPostPromotedNotifications() {
+        if (Build.VERSION.SDK_INT >= 36) {
+            return Api36Impl.canPostPromotedNotifications(this.mNotificationManager);
+        }
+        return false;
+    }
+
     private static boolean useSideChannelForNotification(Notification notification) {
         Bundle extras = NotificationCompat.getExtras(notification);
         return extras != null && extras.getBoolean(EXTRA_USE_SIDE_CHANNEL);
@@ -812,6 +819,16 @@ public final class NotificationManagerCompat {
 
         static boolean canUseFullScreenIntent(NotificationManager notificationManager) {
             return notificationManager.canUseFullScreenIntent();
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    static class Api36Impl {
+        private Api36Impl() {
+        }
+
+        static boolean canPostPromotedNotifications(NotificationManager notificationManager) {
+            return notificationManager.canPostPromotedNotifications();
         }
     }
 }

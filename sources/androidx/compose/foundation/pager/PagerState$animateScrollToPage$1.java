@@ -7,14 +7,13 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PagerState.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.pager.PagerState", f = "PagerState.kt", i = {0, 0, 0, 0}, l = {TypedValues.MotionType.TYPE_QUANTIZE_MOTIONSTEPS, 617}, m = "animateScrollToPage", n = {"this", "animationSpec", "page", "pageOffsetFraction"}, s = {"L$0", "L$1", "I$0", "F$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.pager.PagerState", f = "PagerState.kt", i = {0, 0, 0}, l = {TypedValues.MotionType.TYPE_QUANTIZE_INTERPOLATOR_ID, 619}, m = "animateScrollToPage", n = {"animationSpec", "page", "pageOffsetFraction"}, s = {"L$0", "I$0", "F$0"})
 /* loaded from: classes.dex */
 public final class PagerState$animateScrollToPage$1 extends ContinuationImpl {
     float F$0;
     int I$0;
     Object L$0;
-    Object L$1;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ PagerState this$0;

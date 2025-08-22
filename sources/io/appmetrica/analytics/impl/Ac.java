@@ -1,18 +1,21 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.AppMetricaConfig;
 /* loaded from: classes4.dex */
-public final class Ac extends Tn {
-    public final AppMetricaConfig b;
+public final class Ac implements O9 {
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Ac(InterfaceC0482ob interfaceC0482ob, AppMetricaConfig appMetricaConfig) {
-        super(interfaceC0482ob);
-        String str = appMetricaConfig.apiKey;
-        this.b = appMetricaConfig;
+    /* renamed from: a  reason: collision with root package name */
+    public final F5 f345a;
+
+    public Ac(S9 s9, C0297h7 c0297h7, C0332ih c0332ih, J4 j4, C0398l5 c0398l5, C0433mf c0433mf) {
+        C0754zc c0754zc = new C0754zc(c0297h7, c0332ih, this, j4, c0433mf);
+        this.f345a = new F5(s9, c0754zc.a(), c0754zc.b(), c0398l5);
     }
 
-    public final InterfaceC0507pb a() {
-        return this.f659a.a().a(this.b);
+    @Override // io.appmetrica.analytics.impl.O9
+    public final N9 a() {
+        return this.f345a;
+    }
+
+    public final F5 b() {
+        return this.f345a;
     }
 }

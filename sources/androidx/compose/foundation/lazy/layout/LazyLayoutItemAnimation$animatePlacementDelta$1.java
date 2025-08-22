@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LazyLayoutItemAnimation.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animatePlacementDelta$1", f = "LazyLayoutItemAnimation.kt", i = {0}, l = {141, 148}, m = "invokeSuspend", n = {"finalSpec"}, s = {"L$0"})
 /* loaded from: classes.dex */
 public final class LazyLayoutItemAnimation$animatePlacementDelta$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -45,8 +45,8 @@ public final class LazyLayoutItemAnimation$animatePlacementDelta$1 extends Suspe
         return ((LazyLayoutItemAnimation$animatePlacementDelta$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x00b0, code lost:
-        if (androidx.compose.animation.core.Animatable.animateTo$default(r5, androidx.compose.ui.unit.IntOffset.m6803boximpl(r3), r1, null, new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animatePlacementDelta$1.AnonymousClass1(), r13, 4, null) != r0) goto L7;
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x00ad, code lost:
+        if (androidx.compose.animation.core.Animatable.animateTo$default(r5, androidx.compose.ui.unit.IntOffset.m7370boximpl(r3), r1, null, new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animatePlacementDelta$1$$ExternalSyntheticLambda0(r14, r3), r13, 4, null) != r0) goto L7;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -84,12 +84,12 @@ public final class LazyLayoutItemAnimation$animatePlacementDelta$1 extends Suspe
                 animatable3 = this.this$0.placementDeltaAnimation;
                 this.L$0 = finiteAnimationSpec;
                 this.label = 1;
-                if (animatable3.snapTo(IntOffset.m6803boximpl(this.$totalDelta), this) == coroutine_suspended) {
+                if (animatable3.snapTo(IntOffset.m7370boximpl(this.$totalDelta), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             }
             animatable4 = this.this$0.placementDeltaAnimation;
-            final long m6815minusqkQi6aY = IntOffset.m6815minusqkQi6aY(((IntOffset) animatable4.getValue()).m6821unboximpl(), this.$totalDelta);
+            final long m7382minusqkQi6aY = IntOffset.m7382minusqkQi6aY(((IntOffset) animatable4.getValue()).m7388unboximpl(), this.$totalDelta);
             animatable5 = this.this$0.placementDeltaAnimation;
             final LazyLayoutItemAnimation lazyLayoutItemAnimation = this.this$0;
             this.L$0 = null;
@@ -109,10 +109,19 @@ public final class LazyLayoutItemAnimation$animatePlacementDelta$1 extends Suspe
         function0 = this.this$0.onLayerPropertyChanged;
         function0.invoke();
         animatable4 = this.this$0.placementDeltaAnimation;
-        final long m6815minusqkQi6aY2 = IntOffset.m6815minusqkQi6aY(((IntOffset) animatable4.getValue()).m6821unboximpl(), this.$totalDelta);
+        final long m7382minusqkQi6aY2 = IntOffset.m7382minusqkQi6aY(((IntOffset) animatable4.getValue()).m7388unboximpl(), this.$totalDelta);
         animatable5 = this.this$0.placementDeltaAnimation;
         final LazyLayoutItemAnimation lazyLayoutItemAnimation2 = this.this$0;
         this.L$0 = null;
         this.label = 2;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(LazyLayoutItemAnimation lazyLayoutItemAnimation, long j, Animatable animatable) {
+        Function0 function0;
+        lazyLayoutItemAnimation.m1019setPlacementDeltagyyYBs(IntOffset.m7382minusqkQi6aY(((IntOffset) animatable.getValue()).m7388unboximpl(), j));
+        function0 = lazyLayoutItemAnimation.onLayerPropertyChanged;
+        function0.invoke();
+        return Unit.INSTANCE;
     }
 }

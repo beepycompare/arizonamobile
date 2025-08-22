@@ -1,30 +1,37 @@
 package io.appmetrica.analytics.impl;
 
-import com.google.firebase.remoteconfig.RemoteConfigConstants;
-import org.json.JSONObject;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
+import java.util.Map;
 /* loaded from: classes4.dex */
 public final class Tk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f657a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final String e;
-    public final int f;
-    public final int g;
+    public final String f665a;
+    public final Ok b;
+    public final Sk c;
+    public final IBinaryDataHelper d;
 
-    public Tk(JSONObject jSONObject) {
-        this.f657a = jSONObject.optString("analyticsSdkVersionName", "");
-        this.b = jSONObject.optString("kitBuildNumber", "");
-        this.c = jSONObject.optString("appVer", "");
-        this.d = jSONObject.optString(RemoteConfigConstants.RequestFieldKey.APP_BUILD, "");
-        this.e = jSONObject.optString("osVer", "");
-        this.f = jSONObject.optInt("osApiLev", -1);
-        this.g = jSONObject.optInt("attribution_id", 0);
+    public Tk(Context context, C0398l5 c0398l5) {
+        c0398l5.a();
+        this.f665a = "session_extras";
+        this.b = new Ok();
+        this.c = new Sk();
+        this.d = C0649v7.a(context).a(c0398l5);
     }
 
-    public final String toString() {
-        return "SessionRequestParams(kitVersionName='" + this.f657a + "', kitBuildNumber='" + this.b + "', appVersion='" + this.c + "', appBuild='" + this.d + "', osVersion='" + this.e + "', apiLevel=" + this.f + ", attributionId=" + this.g + ')';
+    public final Map a() {
+        try {
+            byte[] bArr = this.d.get(this.f665a);
+            if (bArr != null) {
+                if (!(bArr.length == 0)) {
+                    return this.b.toModel(this.c.toState(bArr));
+                }
+            }
+        } catch (Throwable unused) {
+        }
+        Ok ok = this.b;
+        this.c.getClass();
+        return ok.toModel(new Qk());
     }
 }

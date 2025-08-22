@@ -14,7 +14,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleScheduler extends Scheduler {
     private static final String KEY_SINGLE_PRIORITY = "rx2.single-priority";
     static final ScheduledExecutorService SHUTDOWN;
@@ -127,7 +127,7 @@ public final class SingleScheduler extends Scheduler {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ScheduledWorker extends Scheduler.Worker {
         volatile boolean disposed;
         final ScheduledExecutorService executor;

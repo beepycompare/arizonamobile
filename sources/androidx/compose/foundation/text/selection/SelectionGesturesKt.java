@@ -32,7 +32,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 /* compiled from: SelectionGestures.kt */
-@Metadata(d1 = {"\u0000Z\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\u001a \u0010\u0006\u001a\u00020\u00032\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\nH\u0002\u001a\u0012\u0010\f\u001a\u00020\u0004*\u00020\rH\u0082@¢\u0006\u0002\u0010\u000e\u001a*\u0010\u000f\u001a\u00020\u0010*\u00020\r2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0004H\u0082@¢\u0006\u0002\u0010\u0016\u001a*\u0010\u0017\u001a\u00020\u0010*\u00020\r2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0004H\u0082@¢\u0006\u0002\u0010\u0016\u001a\u001c\u0010\u0018\u001a\u00020\u0019*\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u00122\u0006\u0010\u001b\u001a\u00020\u001cH\u0000\u001a\"\u0010\u001d\u001a\u00020\u0010*\u00020\u001e2\u0006\u0010\u001a\u001a\u00020\u00122\u0006\u0010\u001b\u001a\u00020\u001cH\u0080@¢\u0006\u0002\u0010\u001f\u001a\"\u0010 \u001a\u00020\u0010*\u00020\r2\u0006\u0010\u0011\u001a\u00020\u001c2\u0006\u0010\u0015\u001a\u00020\u0004H\u0082@¢\u0006\u0002\u0010!\u001a\"\u0010\"\u001a\u00020\u0010*\u00020\r2\u0006\u0010\u0011\u001a\u00020\u001c2\u0006\u0010#\u001a\u00020\u0004H\u0082@¢\u0006\u0002\u0010!\u001a\"\u0010$\u001a\u00020\u0010*\u00020\r2\u0006\u0010\u0011\u001a\u00020\u001c2\u0006\u0010#\u001a\u00020\u0004H\u0082@¢\u0006\u0002\u0010!\u001a \u0010%\u001a\u00020\u0019*\u00020\u00192\u0012\u0010&\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00100'H\u0000\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u0018\u0010\u0002\u001a\u00020\u0003*\u00020\u00048@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0002\u0010\u0005¨\u0006("}, d2 = {"STATIC_KEY", "", "isPrecisePointer", "", "Landroidx/compose/ui/input/pointer/PointerEvent;", "(Landroidx/compose/ui/input/pointer/PointerEvent;)Z", "distanceIsTolerable", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "change1", "Landroidx/compose/ui/input/pointer/PointerInputChange;", "change2", "awaitDown", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "mouseSelection", "", "observer", "Landroidx/compose/foundation/text/selection/MouseSelectionObserver;", "clicksCounter", "Landroidx/compose/foundation/text/selection/ClicksCounter;", "down", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/foundation/text/selection/MouseSelectionObserver;Landroidx/compose/foundation/text/selection/ClicksCounter;Landroidx/compose/ui/input/pointer/PointerEvent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "mouseSelectionBtf2", "selectionGestureInput", "Landroidx/compose/ui/Modifier;", "mouseSelectionObserver", "textDragObserver", "Landroidx/compose/foundation/text/TextDragObserver;", "selectionGesturePointerInputBtf2", "Landroidx/compose/ui/input/pointer/PointerInputScope;", "(Landroidx/compose/ui/input/pointer/PointerInputScope;Landroidx/compose/foundation/text/selection/MouseSelectionObserver;Landroidx/compose/foundation/text/TextDragObserver;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "touchSelection", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/foundation/text/TextDragObserver;Landroidx/compose/ui/input/pointer/PointerEvent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "touchSelectionFirstPress", "downEvent", "touchSelectionSubsequentPress", "updateSelectionTouchMode", "updateTouchMode", "Lkotlin/Function1;", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000X\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a \u0010\u0002\u001a\u00020\u0003*\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005H\u0000\u001a\u001c\u0010\b\u001a\u00020\u0003*\u00020\u00032\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0000\u001a\"\u0010\r\u001a\u00020\u0007*\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0082@¢\u0006\u0002\u0010\u0012\u001a*\u0010\u0013\u001a\u00020\u0007*\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\n2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0010\u001a\u00020\u0011H\u0082@¢\u0006\u0002\u0010\u0016\u001a\"\u0010\u0017\u001a\u00020\u0007*\u00020\u00182\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0080@¢\u0006\u0002\u0010\u0019\u001a\"\u0010\u001a\u001a\u00020\u0007*\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\f2\u0006\u0010\u001b\u001a\u00020\u0011H\u0082@¢\u0006\u0002\u0010\u0012\u001a\"\u0010\u001c\u001a\u00020\u0007*\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\f2\u0006\u0010\u001b\u001a\u00020\u0011H\u0082@¢\u0006\u0002\u0010\u0012\u001a*\u0010\u001d\u001a\u00020\u0007*\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\n2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0010\u001a\u00020\u0011H\u0082@¢\u0006\u0002\u0010\u0016\u001a\u0012\u0010\u001e\u001a\u00020\u0011*\u00020\u000eH\u0082@¢\u0006\u0002\u0010\u001f\u001a \u0010 \u001a\u00020\u00062\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$H\u0002\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u0018\u0010&\u001a\u00020\u0006*\u00020\u00118@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b&\u0010'¨\u0006("}, d2 = {"STATIC_KEY", "", "updateSelectionTouchMode", "Landroidx/compose/ui/Modifier;", "updateTouchMode", "Lkotlin/Function1;", "", "", "selectionGestureInput", "mouseSelectionObserver", "Landroidx/compose/foundation/text/selection/MouseSelectionObserver;", "textDragObserver", "Landroidx/compose/foundation/text/TextDragObserver;", "touchSelection", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "observer", "down", "Landroidx/compose/ui/input/pointer/PointerEvent;", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/foundation/text/TextDragObserver;Landroidx/compose/ui/input/pointer/PointerEvent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "mouseSelection", "clicksCounter", "Landroidx/compose/foundation/text/selection/ClicksCounter;", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/foundation/text/selection/MouseSelectionObserver;Landroidx/compose/foundation/text/selection/ClicksCounter;Landroidx/compose/ui/input/pointer/PointerEvent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "selectionGesturePointerInputBtf2", "Landroidx/compose/ui/input/pointer/PointerInputScope;", "(Landroidx/compose/ui/input/pointer/PointerInputScope;Landroidx/compose/foundation/text/selection/MouseSelectionObserver;Landroidx/compose/foundation/text/TextDragObserver;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "touchSelectionFirstPress", "downEvent", "touchSelectionSubsequentPress", "mouseSelectionBtf2", "awaitDown", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "distanceIsTolerable", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "change1", "Landroidx/compose/ui/input/pointer/PointerInputChange;", "change2", "isPrecisePointer", "(Landroidx/compose/ui/input/pointer/PointerEvent;)Z", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SelectionGesturesKt {
     private static final int STATIC_KEY = 8675309;
@@ -41,7 +41,7 @@ public final class SelectionGesturesKt {
         return SuspendingPointerInputFilterKt.pointerInput(modifier, Integer.valueOf((int) STATIC_KEY), new PointerInputEventHandler() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$updateSelectionTouchMode$1
 
             /* compiled from: SelectionGestures.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
             @DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionGesturesKt$updateSelectionTouchMode$1$1", f = "SelectionGestures.kt", i = {0}, l = {94}, m = "invokeSuspend", n = {"$this$awaitPointerEventScope"}, s = {"L$0"})
             /* renamed from: androidx.compose.foundation.text.selection.SelectionGesturesKt$updateSelectionTouchMode$1$1  reason: invalid class name */
             /* loaded from: classes.dex */
@@ -137,7 +137,7 @@ public final class SelectionGesturesKt {
         return SuspendingPointerInputFilterKt.pointerInput(modifier, mouseSelectionObserver, textDragObserver, new PointerInputEventHandler() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$selectionGestureInput$1
 
             /* compiled from: SelectionGestures.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
             @DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionGesturesKt$selectionGestureInput$1$1", f = "SelectionGestures.kt", i = {0}, l = {107, 113, BuildConfig.API_LEVEL}, m = "invokeSuspend", n = {"$this$awaitEachGesture"}, s = {"L$0"})
             /* renamed from: androidx.compose.foundation.text.selection.SelectionGesturesKt$selectionGestureInput$1$1  reason: invalid class name */
             /* loaded from: classes.dex */
@@ -207,7 +207,7 @@ public final class SelectionGesturesKt {
                         ResultKt.throwOnFailure(obj);
                     }
                     PointerEvent pointerEvent = (PointerEvent) obj;
-                    if (SelectionGesturesKt.isPrecisePointer(pointerEvent) && PointerEvent_androidKt.m5286isPrimaryPressedaHzCxE(pointerEvent.m5253getButtonsry648PA())) {
+                    if (SelectionGesturesKt.isPrecisePointer(pointerEvent) && PointerEvent_androidKt.m5799isPrimaryPressedaHzCxE(pointerEvent.m5766getButtonsry648PA())) {
                         List<PointerInputChange> changes = pointerEvent.getChanges();
                         int size = changes.size();
                         for (int i2 = 0; i2 < size; i2++) {
@@ -236,7 +236,7 @@ public final class SelectionGesturesKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x009e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x009c, code lost:
         if (r11 != r1) goto L13;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
@@ -261,12 +261,12 @@ public final class SelectionGesturesKt {
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         pointerInputChange = (PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges());
-                        long m5311getIdJ3iCeTQ = pointerInputChange.m5311getIdJ3iCeTQ();
+                        long m5824getIdJ3iCeTQ = pointerInputChange.m5824getIdJ3iCeTQ();
                         selectionGesturesKt$touchSelection$1.L$0 = awaitPointerEventScope;
                         selectionGesturesKt$touchSelection$1.L$1 = textDragObserver;
                         selectionGesturesKt$touchSelection$1.L$2 = pointerInputChange;
                         selectionGesturesKt$touchSelection$1.label = 1;
-                        obj = DragGestureDetectorKt.m435awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, m5311getIdJ3iCeTQ, selectionGesturesKt$touchSelection$1);
+                        obj = DragGestureDetectorKt.m477awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, m5824getIdJ3iCeTQ, selectionGesturesKt$touchSelection$1);
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -301,29 +301,21 @@ public final class SelectionGesturesKt {
                     }
                     pointerInputChange2 = (PointerInputChange) obj;
                     if (pointerInputChange2 != null && distanceIsTolerable(awaitPointerEventScope.getViewConfiguration(), pointerInputChange, pointerInputChange2)) {
-                        textDragObserver.mo1148onStartk4lQ0M(pointerInputChange2.m5313getPositionF1C5BW0());
+                        textDragObserver.mo1339onStartk4lQ0M(pointerInputChange2.m5826getPositionF1C5BW0());
+                        long m5824getIdJ3iCeTQ2 = pointerInputChange2.m5824getIdJ3iCeTQ();
+                        Function1 function1 = new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$$ExternalSyntheticLambda0
+                            @Override // kotlin.jvm.functions.Function1
+                            public final Object invoke(Object obj2) {
+                                Unit unit;
+                                unit = SelectionGesturesKt.touchSelection$lambda$0(TextDragObserver.this, (PointerInputChange) obj2);
+                                return unit;
+                            }
+                        };
                         selectionGesturesKt$touchSelection$1.L$0 = awaitPointerEventScope;
                         selectionGesturesKt$touchSelection$1.L$1 = textDragObserver;
                         selectionGesturesKt$touchSelection$1.L$2 = null;
                         selectionGesturesKt$touchSelection$1.label = 2;
-                        obj = DragGestureDetectorKt.m445dragjO51t88(awaitPointerEventScope, pointerInputChange2.m5311getIdJ3iCeTQ(), new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$touchSelection$2
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            {
-                                super(1);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function1
-                            public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange5) {
-                                invoke2(pointerInputChange5);
-                                return Unit.INSTANCE;
-                            }
-
-                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                            public final void invoke2(PointerInputChange pointerInputChange5) {
-                                TextDragObserver.this.mo1147onDragk4lQ0M(PointerEventKt.positionChange(pointerInputChange5));
-                                pointerInputChange5.consume();
-                            }
-                        }, selectionGesturesKt$touchSelection$1);
+                        obj = DragGestureDetectorKt.m487dragjO51t88(awaitPointerEventScope, m5824getIdJ3iCeTQ2, function1, selectionGesturesKt$touchSelection$1);
                     }
                     return Unit.INSTANCE;
                 }
@@ -332,29 +324,21 @@ public final class SelectionGesturesKt {
             }
             pointerInputChange2 = (PointerInputChange) obj;
             if (pointerInputChange2 != null) {
-                textDragObserver.mo1148onStartk4lQ0M(pointerInputChange2.m5313getPositionF1C5BW0());
+                textDragObserver.mo1339onStartk4lQ0M(pointerInputChange2.m5826getPositionF1C5BW0());
+                long m5824getIdJ3iCeTQ22 = pointerInputChange2.m5824getIdJ3iCeTQ();
+                Function1 function12 = new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$$ExternalSyntheticLambda0
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj2) {
+                        Unit unit;
+                        unit = SelectionGesturesKt.touchSelection$lambda$0(TextDragObserver.this, (PointerInputChange) obj2);
+                        return unit;
+                    }
+                };
                 selectionGesturesKt$touchSelection$1.L$0 = awaitPointerEventScope;
                 selectionGesturesKt$touchSelection$1.L$1 = textDragObserver;
                 selectionGesturesKt$touchSelection$1.L$2 = null;
                 selectionGesturesKt$touchSelection$1.label = 2;
-                obj = DragGestureDetectorKt.m445dragjO51t88(awaitPointerEventScope, pointerInputChange2.m5311getIdJ3iCeTQ(), new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$touchSelection$2
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    {
-                        super(1);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange5) {
-                        invoke2(pointerInputChange5);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(PointerInputChange pointerInputChange5) {
-                        TextDragObserver.this.mo1147onDragk4lQ0M(PointerEventKt.positionChange(pointerInputChange5));
-                        pointerInputChange5.consume();
-                    }
-                }, selectionGesturesKt$touchSelection$1);
+                obj = DragGestureDetectorKt.m487dragjO51t88(awaitPointerEventScope, m5824getIdJ3iCeTQ22, function12, selectionGesturesKt$touchSelection$1);
             }
             return Unit.INSTANCE;
         } catch (CancellationException e) {
@@ -368,12 +352,19 @@ public final class SelectionGesturesKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0085, code lost:
-        if (r12 == r1) goto L49;
+    public static final Unit touchSelection$lambda$0(TextDragObserver textDragObserver, PointerInputChange pointerInputChange) {
+        textDragObserver.mo1338onDragk4lQ0M(PointerEventKt.positionChange(pointerInputChange));
+        pointerInputChange.consume();
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0083, code lost:
+        if (r13 == r1) goto L49;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x012b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -397,29 +388,20 @@ public final class SelectionGesturesKt {
                     clicksCounter.update(pointerEvent);
                     PointerInputChange pointerInputChange = pointerEvent.getChanges().get(0);
                     if (TextFieldSelectionManager_androidKt.isShiftPressed(pointerEvent)) {
-                        if (mouseSelectionObserver.mo1389onExtendk4lQ0M(pointerInputChange.m5313getPositionF1C5BW0())) {
+                        if (mouseSelectionObserver.mo1649onExtendk4lQ0M(pointerInputChange.m5826getPositionF1C5BW0())) {
+                            long m5824getIdJ3iCeTQ = pointerInputChange.m5824getIdJ3iCeTQ();
+                            Function1 function1 = new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$$ExternalSyntheticLambda4
+                                @Override // kotlin.jvm.functions.Function1
+                                public final Object invoke(Object obj2) {
+                                    Unit mouseSelection$lambda$2;
+                                    mouseSelection$lambda$2 = SelectionGesturesKt.mouseSelection$lambda$2(MouseSelectionObserver.this, (PointerInputChange) obj2);
+                                    return mouseSelection$lambda$2;
+                                }
+                            };
                             selectionGesturesKt$mouseSelection$1.L$0 = awaitPointerEventScope;
                             selectionGesturesKt$mouseSelection$1.L$1 = mouseSelectionObserver;
                             selectionGesturesKt$mouseSelection$1.label = 1;
-                            obj = DragGestureDetectorKt.m445dragjO51t88(awaitPointerEventScope, pointerInputChange.m5311getIdJ3iCeTQ(), new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$mouseSelection$shouldConsumeUp$1
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                {
-                                    super(1);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function1
-                                public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange2) {
-                                    invoke2(pointerInputChange2);
-                                    return Unit.INSTANCE;
-                                }
-
-                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                public final void invoke2(PointerInputChange pointerInputChange2) {
-                                    if (MouseSelectionObserver.this.mo1390onExtendDragk4lQ0M(pointerInputChange2.m5313getPositionF1C5BW0())) {
-                                        pointerInputChange2.consume();
-                                    }
-                                }
-                            }, selectionGesturesKt$mouseSelection$1);
+                            obj = DragGestureDetectorKt.m487dragjO51t88(awaitPointerEventScope, m5824getIdJ3iCeTQ, function1, selectionGesturesKt$mouseSelection$1);
                         }
                     } else {
                         int clicks = clicksCounter.getClicks();
@@ -430,34 +412,23 @@ public final class SelectionGesturesKt {
                         } else {
                             none = SelectionAdjustment.Companion.getParagraph();
                         }
-                        if (mouseSelectionObserver.mo1391onStart3MmeM6k(pointerInputChange.m5313getPositionF1C5BW0(), none)) {
+                        if (mouseSelectionObserver.mo1651onStart9KIMszo(pointerInputChange.m5826getPositionF1C5BW0(), none, clicksCounter.getClicks())) {
                             final Ref.BooleanRef booleanRef2 = new Ref.BooleanRef();
                             booleanRef2.element = !Intrinsics.areEqual(none, SelectionAdjustment.Companion.getNone());
+                            long m5824getIdJ3iCeTQ2 = pointerInputChange.m5824getIdJ3iCeTQ();
+                            Function1 function12 = new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$$ExternalSyntheticLambda5
+                                @Override // kotlin.jvm.functions.Function1
+                                public final Object invoke(Object obj2) {
+                                    Unit mouseSelection$lambda$4;
+                                    mouseSelection$lambda$4 = SelectionGesturesKt.mouseSelection$lambda$4(MouseSelectionObserver.this, none, booleanRef2, (PointerInputChange) obj2);
+                                    return mouseSelection$lambda$4;
+                                }
+                            };
                             selectionGesturesKt$mouseSelection$1.L$0 = awaitPointerEventScope;
                             selectionGesturesKt$mouseSelection$1.L$1 = mouseSelectionObserver;
                             selectionGesturesKt$mouseSelection$1.L$2 = booleanRef2;
                             selectionGesturesKt$mouseSelection$1.label = 2;
-                            obj = DragGestureDetectorKt.m445dragjO51t88(awaitPointerEventScope, pointerInputChange.m5311getIdJ3iCeTQ(), new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$mouseSelection$shouldConsumeUp$2
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                {
-                                    super(1);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function1
-                                public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange2) {
-                                    invoke2(pointerInputChange2);
-                                    return Unit.INSTANCE;
-                                }
-
-                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                public final void invoke2(PointerInputChange pointerInputChange2) {
-                                    if (MouseSelectionObserver.this.mo1388onDrag3MmeM6k(pointerInputChange2.m5313getPositionF1C5BW0(), none)) {
-                                        pointerInputChange2.consume();
-                                        booleanRef2.element = true;
-                                    }
-                                }
-                            }, selectionGesturesKt$mouseSelection$1);
+                            obj = DragGestureDetectorKt.m487dragjO51t88(awaitPointerEventScope, m5824getIdJ3iCeTQ2, function12, selectionGesturesKt$mouseSelection$1);
                             if (obj != coroutine_suspended) {
                                 awaitPointerEventScope2 = awaitPointerEventScope;
                                 booleanRef = booleanRef2;
@@ -521,13 +492,30 @@ public final class SelectionGesturesKt {
         return Unit.INSTANCE;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit mouseSelection$lambda$2(MouseSelectionObserver mouseSelectionObserver, PointerInputChange pointerInputChange) {
+        if (mouseSelectionObserver.mo1650onExtendDragk4lQ0M(pointerInputChange.m5826getPositionF1C5BW0())) {
+            pointerInputChange.consume();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit mouseSelection$lambda$4(MouseSelectionObserver mouseSelectionObserver, SelectionAdjustment selectionAdjustment, Ref.BooleanRef booleanRef, PointerInputChange pointerInputChange) {
+        if (mouseSelectionObserver.mo1648onDrag3MmeM6k(pointerInputChange.m5826getPositionF1C5BW0(), selectionAdjustment)) {
+            pointerInputChange.consume();
+            booleanRef.element = true;
+        }
+        return Unit.INSTANCE;
+    }
+
     public static final Object selectionGesturePointerInputBtf2(PointerInputScope pointerInputScope, MouseSelectionObserver mouseSelectionObserver, TextDragObserver textDragObserver, Continuation<? super Unit> continuation) {
         Object awaitEachGesture = ForEachGestureKt.awaitEachGesture(pointerInputScope, new SelectionGesturesKt$selectionGesturePointerInputBtf2$2(new ClicksCounter(pointerInputScope.getViewConfiguration()), mouseSelectionObserver, textDragObserver, null), continuation);
         return awaitEachGesture == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? awaitEachGesture : Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x009e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x009c, code lost:
         if (r11 != r1) goto L13;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
@@ -552,12 +540,12 @@ public final class SelectionGesturesKt {
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         pointerInputChange = (PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges());
-                        long m5311getIdJ3iCeTQ = pointerInputChange.m5311getIdJ3iCeTQ();
+                        long m5824getIdJ3iCeTQ = pointerInputChange.m5824getIdJ3iCeTQ();
                         selectionGesturesKt$touchSelectionFirstPress$1.L$0 = awaitPointerEventScope;
                         selectionGesturesKt$touchSelectionFirstPress$1.L$1 = textDragObserver;
                         selectionGesturesKt$touchSelectionFirstPress$1.L$2 = pointerInputChange;
                         selectionGesturesKt$touchSelectionFirstPress$1.label = 1;
-                        obj = DragGestureDetectorKt.m435awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, m5311getIdJ3iCeTQ, selectionGesturesKt$touchSelectionFirstPress$1);
+                        obj = DragGestureDetectorKt.m477awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, m5824getIdJ3iCeTQ, selectionGesturesKt$touchSelectionFirstPress$1);
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -592,29 +580,21 @@ public final class SelectionGesturesKt {
                     }
                     pointerInputChange2 = (PointerInputChange) obj;
                     if (pointerInputChange2 != null && distanceIsTolerable(awaitPointerEventScope.getViewConfiguration(), pointerInputChange, pointerInputChange2)) {
-                        textDragObserver.mo1148onStartk4lQ0M(pointerInputChange2.m5313getPositionF1C5BW0());
+                        textDragObserver.mo1339onStartk4lQ0M(pointerInputChange2.m5826getPositionF1C5BW0());
+                        long m5824getIdJ3iCeTQ2 = pointerInputChange2.m5824getIdJ3iCeTQ();
+                        Function1 function1 = new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$$ExternalSyntheticLambda6
+                            @Override // kotlin.jvm.functions.Function1
+                            public final Object invoke(Object obj2) {
+                                Unit unit;
+                                unit = SelectionGesturesKt.touchSelectionFirstPress$lambda$6(TextDragObserver.this, (PointerInputChange) obj2);
+                                return unit;
+                            }
+                        };
                         selectionGesturesKt$touchSelectionFirstPress$1.L$0 = awaitPointerEventScope;
                         selectionGesturesKt$touchSelectionFirstPress$1.L$1 = textDragObserver;
                         selectionGesturesKt$touchSelectionFirstPress$1.L$2 = null;
                         selectionGesturesKt$touchSelectionFirstPress$1.label = 2;
-                        obj = DragGestureDetectorKt.m445dragjO51t88(awaitPointerEventScope, pointerInputChange2.m5311getIdJ3iCeTQ(), new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$touchSelectionFirstPress$dragCompletedWithUp$1
-                            /* JADX INFO: Access modifiers changed from: package-private */
-                            {
-                                super(1);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function1
-                            public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange5) {
-                                invoke2(pointerInputChange5);
-                                return Unit.INSTANCE;
-                            }
-
-                            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                            public final void invoke2(PointerInputChange pointerInputChange5) {
-                                TextDragObserver.this.mo1147onDragk4lQ0M(PointerEventKt.positionChange(pointerInputChange5));
-                                pointerInputChange5.consume();
-                            }
-                        }, selectionGesturesKt$touchSelectionFirstPress$1);
+                        obj = DragGestureDetectorKt.m487dragjO51t88(awaitPointerEventScope, m5824getIdJ3iCeTQ2, function1, selectionGesturesKt$touchSelectionFirstPress$1);
                     }
                     return Unit.INSTANCE;
                 }
@@ -623,29 +603,21 @@ public final class SelectionGesturesKt {
             }
             pointerInputChange2 = (PointerInputChange) obj;
             if (pointerInputChange2 != null) {
-                textDragObserver.mo1148onStartk4lQ0M(pointerInputChange2.m5313getPositionF1C5BW0());
+                textDragObserver.mo1339onStartk4lQ0M(pointerInputChange2.m5826getPositionF1C5BW0());
+                long m5824getIdJ3iCeTQ22 = pointerInputChange2.m5824getIdJ3iCeTQ();
+                Function1 function12 = new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$$ExternalSyntheticLambda6
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj2) {
+                        Unit unit;
+                        unit = SelectionGesturesKt.touchSelectionFirstPress$lambda$6(TextDragObserver.this, (PointerInputChange) obj2);
+                        return unit;
+                    }
+                };
                 selectionGesturesKt$touchSelectionFirstPress$1.L$0 = awaitPointerEventScope;
                 selectionGesturesKt$touchSelectionFirstPress$1.L$1 = textDragObserver;
                 selectionGesturesKt$touchSelectionFirstPress$1.L$2 = null;
                 selectionGesturesKt$touchSelectionFirstPress$1.label = 2;
-                obj = DragGestureDetectorKt.m445dragjO51t88(awaitPointerEventScope, pointerInputChange2.m5311getIdJ3iCeTQ(), new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$touchSelectionFirstPress$dragCompletedWithUp$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    {
-                        super(1);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange5) {
-                        invoke2(pointerInputChange5);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(PointerInputChange pointerInputChange5) {
-                        TextDragObserver.this.mo1147onDragk4lQ0M(PointerEventKt.positionChange(pointerInputChange5));
-                        pointerInputChange5.consume();
-                    }
-                }, selectionGesturesKt$touchSelectionFirstPress$1);
+                obj = DragGestureDetectorKt.m487dragjO51t88(awaitPointerEventScope, m5824getIdJ3iCeTQ22, function12, selectionGesturesKt$touchSelectionFirstPress$1);
             }
             return Unit.INSTANCE;
         } catch (CancellationException e) {
@@ -659,14 +631,21 @@ public final class SelectionGesturesKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x00de, code lost:
+    public static final Unit touchSelectionFirstPress$lambda$6(TextDragObserver textDragObserver, PointerInputChange pointerInputChange) {
+        textDragObserver.mo1338onDragk4lQ0M(PointerEventKt.positionChange(pointerInputChange));
+        pointerInputChange.consume();
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x00dc, code lost:
         if (r15 == r1) goto L51;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00a6 A[Catch: CancellationException -> 0x0117, TryCatch #1 {CancellationException -> 0x0117, blocks: (B:13:0x0033, B:43:0x00e1, B:45:0x00e9, B:47:0x00fb, B:49:0x0107, B:50:0x010a, B:51:0x010d, B:52:0x0111, B:26:0x00a2, B:28:0x00a6, B:29:0x00a8, B:31:0x00ac, B:33:0x00af, B:35:0x00ba, B:37:0x00c0, B:39:0x00c4, B:40:0x00c9, B:23:0x0064), top: B:60:0x0024 }] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00ac A[Catch: CancellationException -> 0x0117, TryCatch #1 {CancellationException -> 0x0117, blocks: (B:13:0x0033, B:43:0x00e1, B:45:0x00e9, B:47:0x00fb, B:49:0x0107, B:50:0x010a, B:51:0x010d, B:52:0x0111, B:26:0x00a2, B:28:0x00a6, B:29:0x00a8, B:31:0x00ac, B:33:0x00af, B:35:0x00ba, B:37:0x00c0, B:39:0x00c4, B:40:0x00c9, B:23:0x0064), top: B:60:0x0024 }] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00af A[Catch: CancellationException -> 0x0117, TryCatch #1 {CancellationException -> 0x0117, blocks: (B:13:0x0033, B:43:0x00e1, B:45:0x00e9, B:47:0x00fb, B:49:0x0107, B:50:0x010a, B:51:0x010d, B:52:0x0111, B:26:0x00a2, B:28:0x00a6, B:29:0x00a8, B:31:0x00ac, B:33:0x00af, B:35:0x00ba, B:37:0x00c0, B:39:0x00c4, B:40:0x00c9, B:23:0x0064), top: B:60:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00a6 A[Catch: CancellationException -> 0x0115, TryCatch #1 {CancellationException -> 0x0115, blocks: (B:13:0x0033, B:43:0x00df, B:45:0x00e7, B:47:0x00f9, B:49:0x0105, B:50:0x0108, B:51:0x010b, B:52:0x010f, B:26:0x00a2, B:28:0x00a6, B:29:0x00a8, B:31:0x00ac, B:33:0x00af, B:35:0x00ba, B:37:0x00c0, B:39:0x00c4, B:40:0x00c9, B:23:0x0064), top: B:60:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00ac A[Catch: CancellationException -> 0x0115, TryCatch #1 {CancellationException -> 0x0115, blocks: (B:13:0x0033, B:43:0x00df, B:45:0x00e7, B:47:0x00f9, B:49:0x0105, B:50:0x0108, B:51:0x010b, B:52:0x010f, B:26:0x00a2, B:28:0x00a6, B:29:0x00a8, B:31:0x00ac, B:33:0x00af, B:35:0x00ba, B:37:0x00c0, B:39:0x00c4, B:40:0x00c9, B:23:0x0064), top: B:60:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00af A[Catch: CancellationException -> 0x0115, TryCatch #1 {CancellationException -> 0x0115, blocks: (B:13:0x0033, B:43:0x00df, B:45:0x00e7, B:47:0x00f9, B:49:0x0105, B:50:0x0108, B:51:0x010b, B:52:0x010f, B:26:0x00a2, B:28:0x00a6, B:29:0x00a8, B:31:0x00ac, B:33:0x00af, B:35:0x00ba, B:37:0x00c0, B:39:0x00c4, B:40:0x00c9, B:23:0x0064), top: B:60:0x0024 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -674,7 +653,7 @@ public final class SelectionGesturesKt {
         SelectionGesturesKt$touchSelectionSubsequentPress$1 selectionGesturesKt$touchSelectionSubsequentPress$1;
         int i;
         PointerInputChange pointerInputChange;
-        long m5311getIdJ3iCeTQ;
+        long m5824getIdJ3iCeTQ;
         Ref.LongRef longRef;
         Object withTimeoutOrNull;
         DownResolution downResolution;
@@ -689,16 +668,16 @@ public final class SelectionGesturesKt {
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         pointerInputChange = (PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges());
-                        m5311getIdJ3iCeTQ = pointerInputChange.m5311getIdJ3iCeTQ();
+                        m5824getIdJ3iCeTQ = pointerInputChange.m5824getIdJ3iCeTQ();
                         longRef = new Ref.LongRef();
-                        longRef.element = Offset.Companion.m3852getUnspecifiedF1C5BW0();
+                        longRef.element = Offset.Companion.m4308getUnspecifiedF1C5BW0();
                         selectionGesturesKt$touchSelectionSubsequentPress$1.L$0 = awaitPointerEventScope;
                         selectionGesturesKt$touchSelectionSubsequentPress$1.L$1 = textDragObserver;
                         selectionGesturesKt$touchSelectionSubsequentPress$1.L$2 = pointerInputChange;
                         selectionGesturesKt$touchSelectionSubsequentPress$1.L$3 = longRef;
-                        selectionGesturesKt$touchSelectionSubsequentPress$1.J$0 = m5311getIdJ3iCeTQ;
+                        selectionGesturesKt$touchSelectionSubsequentPress$1.J$0 = m5824getIdJ3iCeTQ;
                         selectionGesturesKt$touchSelectionSubsequentPress$1.label = 1;
-                        withTimeoutOrNull = awaitPointerEventScope.withTimeoutOrNull(awaitPointerEventScope.getViewConfiguration().getLongPressTimeoutMillis(), new SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1(m5311getIdJ3iCeTQ, longRef, null), selectionGesturesKt$touchSelectionSubsequentPress$1);
+                        withTimeoutOrNull = awaitPointerEventScope.withTimeoutOrNull(awaitPointerEventScope.getViewConfiguration().getLongPressTimeoutMillis(), new SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1(m5824getIdJ3iCeTQ, longRef, null), selectionGesturesKt$touchSelectionSubsequentPress$1);
                         if (withTimeoutOrNull == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -733,7 +712,7 @@ public final class SelectionGesturesKt {
                             ResultKt.throwOnFailure(obj);
                             longRef = longRef2;
                             withTimeoutOrNull = obj;
-                            m5311getIdJ3iCeTQ = j;
+                            m5824getIdJ3iCeTQ = j;
                             textDragObserver = textDragObserver2;
                             awaitPointerEventScope = awaitPointerEventScope2;
                         } catch (CancellationException e) {
@@ -750,37 +729,28 @@ public final class SelectionGesturesKt {
                     if (downResolution != DownResolution.Cancel) {
                         return Unit.INSTANCE;
                     }
-                    textDragObserver.mo1148onStartk4lQ0M(pointerInputChange.m5313getPositionF1C5BW0());
+                    textDragObserver.mo1339onStartk4lQ0M(pointerInputChange.m5826getPositionF1C5BW0());
                     if (downResolution == DownResolution.Up) {
                         textDragObserver.onStop();
                         return Unit.INSTANCE;
                     }
                     if (downResolution == DownResolution.Drag) {
-                        textDragObserver.mo1147onDragk4lQ0M(longRef.element);
+                        textDragObserver.mo1338onDragk4lQ0M(longRef.element);
                     }
+                    Function1 function1 = new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$$ExternalSyntheticLambda3
+                        @Override // kotlin.jvm.functions.Function1
+                        public final Object invoke(Object obj2) {
+                            Unit unit;
+                            unit = SelectionGesturesKt.touchSelectionSubsequentPress$lambda$8(TextDragObserver.this, (PointerInputChange) obj2);
+                            return unit;
+                        }
+                    };
                     selectionGesturesKt$touchSelectionSubsequentPress$1.L$0 = awaitPointerEventScope;
                     selectionGesturesKt$touchSelectionSubsequentPress$1.L$1 = textDragObserver;
                     selectionGesturesKt$touchSelectionSubsequentPress$1.L$2 = null;
                     selectionGesturesKt$touchSelectionSubsequentPress$1.L$3 = null;
                     selectionGesturesKt$touchSelectionSubsequentPress$1.label = 2;
-                    obj = DragGestureDetectorKt.m445dragjO51t88(awaitPointerEventScope, m5311getIdJ3iCeTQ, new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$touchSelectionSubsequentPress$dragCompletedWithUp$1
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        {
-                            super(1);
-                        }
-
-                        @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange3) {
-                            invoke2(pointerInputChange3);
-                            return Unit.INSTANCE;
-                        }
-
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(PointerInputChange pointerInputChange3) {
-                            TextDragObserver.this.mo1147onDragk4lQ0M(PointerEventKt.positionChange(pointerInputChange3));
-                            pointerInputChange3.consume();
-                        }
-                    }, selectionGesturesKt$touchSelectionSubsequentPress$1);
+                    obj = DragGestureDetectorKt.m487dragjO51t88(awaitPointerEventScope, m5824getIdJ3iCeTQ, function1, selectionGesturesKt$touchSelectionSubsequentPress$1);
                 }
             }
             if (i != 0) {
@@ -800,10 +770,17 @@ public final class SelectionGesturesKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit touchSelectionSubsequentPress$lambda$8(TextDragObserver textDragObserver, PointerInputChange pointerInputChange) {
+        textDragObserver.mo1338onDragk4lQ0M(PointerEventKt.positionChange(pointerInputChange));
+        pointerInputChange.consume();
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0096 A[Catch: all -> 0x0053, TryCatch #0 {all -> 0x0053, blocks: (B:20:0x004f, B:31:0x008e, B:33:0x0096, B:35:0x00a7, B:37:0x00b3, B:28:0x0072), top: B:69:0x0024 }] */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0136 A[Catch: all -> 0x003b, TryCatch #1 {all -> 0x003b, blocks: (B:13:0x0036, B:54:0x0119, B:56:0x0121, B:58:0x0125, B:60:0x0136, B:62:0x0142, B:50:0x00e8), top: B:69:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0094 A[Catch: all -> 0x0053, TryCatch #0 {all -> 0x0053, blocks: (B:20:0x004f, B:31:0x008c, B:33:0x0094, B:35:0x00a5, B:37:0x00b1, B:28:0x0072), top: B:69:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0137 A[Catch: all -> 0x003b, TryCatch #1 {all -> 0x003b, blocks: (B:13:0x0036, B:54:0x011a, B:56:0x0122, B:58:0x0126, B:60:0x0137, B:62:0x0143, B:50:0x00ea), top: B:69:0x0024 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -866,30 +843,21 @@ public final class SelectionGesturesKt {
                         ResultKt.throwOnFailure(obj);
                         PointerInputChange pointerInputChange3 = pointerEvent.getChanges().get(0);
                         if (TextFieldSelectionManager_androidKt.isShiftPressed(pointerEvent)) {
-                            if (mouseSelectionObserver.mo1389onExtendk4lQ0M(pointerInputChange3.m5313getPositionF1C5BW0())) {
+                            if (mouseSelectionObserver.mo1649onExtendk4lQ0M(pointerInputChange3.m5826getPositionF1C5BW0())) {
                                 pointerInputChange3.consume();
+                                long m5824getIdJ3iCeTQ = pointerInputChange3.m5824getIdJ3iCeTQ();
+                                Function1 function1 = new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$$ExternalSyntheticLambda1
+                                    @Override // kotlin.jvm.functions.Function1
+                                    public final Object invoke(Object obj2) {
+                                        Unit mouseSelectionBtf2$lambda$10;
+                                        mouseSelectionBtf2$lambda$10 = SelectionGesturesKt.mouseSelectionBtf2$lambda$10(MouseSelectionObserver.this, (PointerInputChange) obj2);
+                                        return mouseSelectionBtf2$lambda$10;
+                                    }
+                                };
                                 selectionGesturesKt$mouseSelectionBtf2$1.L$0 = awaitPointerEventScope;
                                 selectionGesturesKt$mouseSelectionBtf2$1.L$1 = mouseSelectionObserver;
                                 selectionGesturesKt$mouseSelectionBtf2$1.label = 1;
-                                obj = DragGestureDetectorKt.m445dragjO51t88(awaitPointerEventScope, pointerInputChange3.m5311getIdJ3iCeTQ(), new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$mouseSelectionBtf2$shouldConsumeUp$1
-                                    /* JADX INFO: Access modifiers changed from: package-private */
-                                    {
-                                        super(1);
-                                    }
-
-                                    @Override // kotlin.jvm.functions.Function1
-                                    public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange4) {
-                                        invoke2(pointerInputChange4);
-                                        return Unit.INSTANCE;
-                                    }
-
-                                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                    public final void invoke2(PointerInputChange pointerInputChange4) {
-                                        if (MouseSelectionObserver.this.mo1390onExtendDragk4lQ0M(pointerInputChange4.m5313getPositionF1C5BW0())) {
-                                            pointerInputChange4.consume();
-                                        }
-                                    }
-                                }, selectionGesturesKt$mouseSelectionBtf2$1);
+                                obj = DragGestureDetectorKt.m487dragjO51t88(awaitPointerEventScope, m5824getIdJ3iCeTQ, function1, selectionGesturesKt$mouseSelectionBtf2$1);
                                 if (obj == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
@@ -906,35 +874,24 @@ public final class SelectionGesturesKt {
                         } else {
                             none = SelectionAdjustment.Companion.getParagraph();
                         }
-                        if (mouseSelectionObserver.mo1391onStart3MmeM6k(pointerInputChange3.m5313getPositionF1C5BW0(), none)) {
+                        if (mouseSelectionObserver.mo1651onStart9KIMszo(pointerInputChange3.m5826getPositionF1C5BW0(), none, clicksCounter.getClicks())) {
                             pointerInputChange3.consume();
                             final Ref.BooleanRef booleanRef2 = new Ref.BooleanRef();
                             booleanRef2.element = !Intrinsics.areEqual(none, SelectionAdjustment.Companion.getNone());
+                            long m5824getIdJ3iCeTQ2 = pointerInputChange3.m5824getIdJ3iCeTQ();
+                            Function1 function12 = new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$$ExternalSyntheticLambda2
+                                @Override // kotlin.jvm.functions.Function1
+                                public final Object invoke(Object obj2) {
+                                    Unit mouseSelectionBtf2$lambda$12;
+                                    mouseSelectionBtf2$lambda$12 = SelectionGesturesKt.mouseSelectionBtf2$lambda$12(MouseSelectionObserver.this, none, booleanRef2, (PointerInputChange) obj2);
+                                    return mouseSelectionBtf2$lambda$12;
+                                }
+                            };
                             selectionGesturesKt$mouseSelectionBtf2$1.L$0 = awaitPointerEventScope;
                             selectionGesturesKt$mouseSelectionBtf2$1.L$1 = mouseSelectionObserver;
                             selectionGesturesKt$mouseSelectionBtf2$1.L$2 = booleanRef2;
                             selectionGesturesKt$mouseSelectionBtf2$1.label = 2;
-                            obj = DragGestureDetectorKt.m445dragjO51t88(awaitPointerEventScope, pointerInputChange3.m5311getIdJ3iCeTQ(), new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$mouseSelectionBtf2$shouldConsumeUp$2
-                                /* JADX INFO: Access modifiers changed from: package-private */
-                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                                {
-                                    super(1);
-                                }
-
-                                @Override // kotlin.jvm.functions.Function1
-                                public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange4) {
-                                    invoke2(pointerInputChange4);
-                                    return Unit.INSTANCE;
-                                }
-
-                                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                                public final void invoke2(PointerInputChange pointerInputChange4) {
-                                    if (MouseSelectionObserver.this.mo1388onDrag3MmeM6k(pointerInputChange4.m5313getPositionF1C5BW0(), none)) {
-                                        pointerInputChange4.consume();
-                                        booleanRef2.element = true;
-                                    }
-                                }
-                            }, selectionGesturesKt$mouseSelectionBtf2$1);
+                            obj = DragGestureDetectorKt.m487dragjO51t88(awaitPointerEventScope, m5824getIdJ3iCeTQ2, function12, selectionGesturesKt$mouseSelectionBtf2$1);
                             if (obj != coroutine_suspended) {
                                 awaitPointerEventScope2 = awaitPointerEventScope;
                                 booleanRef = booleanRef2;
@@ -962,6 +919,23 @@ public final class SelectionGesturesKt {
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = selectionGesturesKt$mouseSelectionBtf2$1.label;
         int i22 = 0;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit mouseSelectionBtf2$lambda$10(MouseSelectionObserver mouseSelectionObserver, PointerInputChange pointerInputChange) {
+        if (mouseSelectionObserver.mo1650onExtendDragk4lQ0M(pointerInputChange.m5826getPositionF1C5BW0())) {
+            pointerInputChange.consume();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit mouseSelectionBtf2$lambda$12(MouseSelectionObserver mouseSelectionObserver, SelectionAdjustment selectionAdjustment, Ref.BooleanRef booleanRef, PointerInputChange pointerInputChange) {
+        if (mouseSelectionObserver.mo1648onDrag3MmeM6k(pointerInputChange.m5826getPositionF1C5BW0(), selectionAdjustment)) {
+            pointerInputChange.consume();
+            booleanRef.element = true;
+        }
+        return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1042,14 +1016,14 @@ public final class SelectionGesturesKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean distanceIsTolerable(ViewConfiguration viewConfiguration, PointerInputChange pointerInputChange, PointerInputChange pointerInputChange2) {
-        return Offset.m3835getDistanceimpl(Offset.m3841minusMKHz9U(pointerInputChange.m5313getPositionF1C5BW0(), pointerInputChange2.m5313getPositionF1C5BW0())) < DragGestureDetectorKt.m448pointerSlopE8SPZFQ(viewConfiguration, pointerInputChange.m5316getTypeT8wyACA());
+        return Offset.m4291getDistanceimpl(Offset.m4297minusMKHz9U(pointerInputChange.m5826getPositionF1C5BW0(), pointerInputChange2.m5826getPositionF1C5BW0())) < DragGestureDetectorKt.m490pointerSlopE8SPZFQ(viewConfiguration, pointerInputChange.m5829getTypeT8wyACA());
     }
 
     public static final boolean isPrecisePointer(PointerEvent pointerEvent) {
         List<PointerInputChange> changes = pointerEvent.getChanges();
         int size = changes.size();
         for (int i = 0; i < size; i++) {
-            if (!PointerType.m5384equalsimpl0(changes.get(i).m5316getTypeT8wyACA(), PointerType.Companion.m5389getMouseT8wyACA())) {
+            if (!PointerType.m5897equalsimpl0(changes.get(i).m5829getTypeT8wyACA(), PointerType.Companion.m5902getMouseT8wyACA())) {
                 return false;
             }
         }

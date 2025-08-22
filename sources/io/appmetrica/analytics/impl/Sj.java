@@ -1,18 +1,18 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.AdRevenue;
 /* loaded from: classes4.dex */
-public final class Sj implements InterfaceC0407lb {
+public final class Sj implements InterfaceC0454nb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f641a;
-    public final /* synthetic */ byte[] b;
+    public final /* synthetic */ AdRevenue f650a;
 
-    public Sj(String str, byte[] bArr) {
-        this.f641a = str;
-        this.b = bArr;
+    public Sj(AdRevenue adRevenue) {
+        this.f650a = adRevenue;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0407lb
-    public final void a(InterfaceC0432mb interfaceC0432mb) {
-        interfaceC0432mb.setSessionExtra(this.f641a, this.b);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0454nb
+    public final void a(InterfaceC0479ob interfaceC0479ob) {
+        interfaceC0479ob.reportAdRevenue(this.f650a);
     }
 }

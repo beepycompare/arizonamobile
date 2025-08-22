@@ -4,56 +4,56 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: FocusDirection.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u00112\u00020\u0001:\u0001\u0011B\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001a\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\t\u0010\nJ\u0010\u0010\u000b\u001a\u00020\u0003HÖ\u0001¢\u0006\u0004\b\f\u0010\u0005J\u000f\u0010\r\u001a\u00020\u000eH\u0016¢\u0006\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0012"}, d2 = {"Landroidx/compose/ui/focus/FocusDirection;", "", "value", "", "constructor-impl", "(I)I", "equals", "", "other", "equals-impl", "(ILjava/lang/Object;)Z", "hashCode", "hashCode-impl", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "Companion", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u000e2\u00020\u0001:\u0001\u000eB\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\r\u001a\u00020\u0003HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/focus/FocusDirection;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "equals", "", "other", "hashCode", "Companion", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class FocusDirection {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Next = m3719constructorimpl(1);
-    private static final int Previous = m3719constructorimpl(2);
-    private static final int Left = m3719constructorimpl(3);
-    private static final int Right = m3719constructorimpl(4);
-    private static final int Up = m3719constructorimpl(5);
-    private static final int Down = m3719constructorimpl(6);
-    private static final int Enter = m3719constructorimpl(7);
-    private static final int Exit = m3719constructorimpl(8);
+    private static final int Next = m4170constructorimpl(1);
+    private static final int Previous = m4170constructorimpl(2);
+    private static final int Left = m4170constructorimpl(3);
+    private static final int Right = m4170constructorimpl(4);
+    private static final int Up = m4170constructorimpl(5);
+    private static final int Down = m4170constructorimpl(6);
+    private static final int Enter = m4170constructorimpl(7);
+    private static final int Exit = m4170constructorimpl(8);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ FocusDirection m3718boximpl(int i) {
+    public static final /* synthetic */ FocusDirection m4169boximpl(int i) {
         return new FocusDirection(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m3719constructorimpl(int i) {
+    public static int m4170constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m3720equalsimpl(int i, Object obj) {
-        return (obj instanceof FocusDirection) && i == ((FocusDirection) obj).m3724unboximpl();
+    public static boolean m4171equalsimpl(int i, Object obj) {
+        return (obj instanceof FocusDirection) && i == ((FocusDirection) obj).m4175unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m3721equalsimpl0(int i, int i2) {
+    public static final boolean m4172equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m3722hashCodeimpl(int i) {
+    public static int m4173hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m3720equalsimpl(this.value, obj);
+        return m4171equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m3722hashCodeimpl(this.value);
+        return m4173hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m3724unboximpl() {
+    public final /* synthetic */ int m4175unboximpl() {
         return this.value;
     }
 
@@ -62,16 +62,16 @@ public final class FocusDirection {
     }
 
     public String toString() {
-        return m3723toStringimpl(this.value);
+        return m4174toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m3723toStringimpl(int i) {
-        return m3721equalsimpl0(i, Next) ? "Next" : m3721equalsimpl0(i, Previous) ? "Previous" : m3721equalsimpl0(i, Left) ? "Left" : m3721equalsimpl0(i, Right) ? "Right" : m3721equalsimpl0(i, Up) ? "Up" : m3721equalsimpl0(i, Down) ? "Down" : m3721equalsimpl0(i, Enter) ? "Enter" : m3721equalsimpl0(i, Exit) ? "Exit" : "Invalid FocusDirection";
+    public static String m4174toStringimpl(int i) {
+        return m4172equalsimpl0(i, Next) ? "Next" : m4172equalsimpl0(i, Previous) ? "Previous" : m4172equalsimpl0(i, Left) ? "Left" : m4172equalsimpl0(i, Right) ? "Right" : m4172equalsimpl0(i, Up) ? "Up" : m4172equalsimpl0(i, Down) ? "Down" : m4172equalsimpl0(i, Enter) ? "Enter" : m4172equalsimpl0(i, Exit) ? "Exit" : "Invalid FocusDirection";
     }
 
     /* compiled from: FocusDirection.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0012\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0019\u0010\u0003\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0005\u0010\u0006R\u0019\u0010\b\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\t\u0010\u0006R\u0019\u0010\n\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u000b\u0010\u0006R\u0019\u0010\f\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\r\u0010\u0006R\u0019\u0010\u000e\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u000f\u0010\u0006R\u0019\u0010\u0010\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0011\u0010\u0006R\u0019\u0010\u0012\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0013\u0010\u0006R\u0019\u0010\u0014\u001a\u00020\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0007\u001a\u0004\b\u0015\u0010\u0006\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0016"}, d2 = {"Landroidx/compose/ui/focus/FocusDirection$Companion;", "", "()V", "Down", "Landroidx/compose/ui/focus/FocusDirection;", "getDown-dhqQ-8s", "()I", "I", "Enter", "getEnter-dhqQ-8s", "Exit", "getExit-dhqQ-8s", "Left", "getLeft-dhqQ-8s", "Next", "getNext-dhqQ-8s", "Previous", "getPrevious-dhqQ-8s", "Right", "getRight-dhqQ-8s", "Up", "getUp-dhqQ-8s", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0012\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007R\u0013\u0010\u000b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\f\u0010\u0007R\u0013\u0010\r\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u000e\u0010\u0007R\u0013\u0010\u000f\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0010\u0010\u0007R\u0013\u0010\u0011\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0012\u0010\u0007R\u0013\u0010\u0013\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0014\u0010\u0007R\u0013\u0010\u0015\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0016\u0010\u0007¨\u0006\u0017"}, d2 = {"Landroidx/compose/ui/focus/FocusDirection$Companion;", "", "<init>", "()V", "Next", "Landroidx/compose/ui/focus/FocusDirection;", "getNext-dhqQ-8s", "()I", "I", "Previous", "getPrevious-dhqQ-8s", "Left", "getLeft-dhqQ-8s", "Right", "getRight-dhqQ-8s", "Up", "getUp-dhqQ-8s", "Down", "getDown-dhqQ-8s", "Enter", "getEnter-dhqQ-8s", "Exit", "getExit-dhqQ-8s", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -82,42 +82,42 @@ public final class FocusDirection {
         }
 
         /* renamed from: getNext-dhqQ-8s  reason: not valid java name */
-        public final int m3729getNextdhqQ8s() {
+        public final int m4180getNextdhqQ8s() {
             return FocusDirection.Next;
         }
 
         /* renamed from: getPrevious-dhqQ-8s  reason: not valid java name */
-        public final int m3730getPreviousdhqQ8s() {
+        public final int m4181getPreviousdhqQ8s() {
             return FocusDirection.Previous;
         }
 
         /* renamed from: getLeft-dhqQ-8s  reason: not valid java name */
-        public final int m3728getLeftdhqQ8s() {
+        public final int m4179getLeftdhqQ8s() {
             return FocusDirection.Left;
         }
 
         /* renamed from: getRight-dhqQ-8s  reason: not valid java name */
-        public final int m3731getRightdhqQ8s() {
+        public final int m4182getRightdhqQ8s() {
             return FocusDirection.Right;
         }
 
         /* renamed from: getUp-dhqQ-8s  reason: not valid java name */
-        public final int m3732getUpdhqQ8s() {
+        public final int m4183getUpdhqQ8s() {
             return FocusDirection.Up;
         }
 
         /* renamed from: getDown-dhqQ-8s  reason: not valid java name */
-        public final int m3725getDowndhqQ8s() {
+        public final int m4176getDowndhqQ8s() {
             return FocusDirection.Down;
         }
 
         /* renamed from: getEnter-dhqQ-8s  reason: not valid java name */
-        public final int m3726getEnterdhqQ8s() {
+        public final int m4177getEnterdhqQ8s() {
             return FocusDirection.Enter;
         }
 
         /* renamed from: getExit-dhqQ-8s  reason: not valid java name */
-        public final int m3727getExitdhqQ8s() {
+        public final int m4178getExitdhqQ8s() {
             return FocusDirection.Exit;
         }
     }

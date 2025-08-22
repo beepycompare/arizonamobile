@@ -8,7 +8,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Consumer;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleDoAfterSuccess<T> extends Single<T> {
     final Consumer<? super T> onAfterSuccess;
     final SingleSource<T> source;
@@ -23,7 +23,7 @@ public final class SingleDoAfterSuccess<T> extends Single<T> {
         this.source.subscribe(new DoAfterObserver(singleObserver, this.onAfterSuccess));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DoAfterObserver<T> implements SingleObserver<T>, Disposable {
         final SingleObserver<? super T> downstream;
         final Consumer<? super T> onAfterSuccess;

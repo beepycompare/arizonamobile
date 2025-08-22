@@ -1,119 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import io.appmetrica.analytics.networktasks.internal.ConfigProvider;
+import kotlin.Lazy;
+import kotlin.LazyKt;
 /* loaded from: classes4.dex */
-public final class Vb extends MessageNano {
-    public static volatile Vb[] f;
+public final class Vb implements ConfigProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f684a;
-    public String b;
-    public boolean c;
-    public String d;
-    public String e;
+    public final C0572s5 f693a;
+    public final Lazy b = LazyKt.lazy(new Ub(this));
 
-    public Vb() {
-        a();
+    public Vb(C0572s5 c0572s5) {
+        this.f693a = c0572s5;
     }
 
-    public static Vb[] b() {
-        if (f == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (f == null) {
-                    f = new Vb[0];
-                }
-            }
-        }
-        return f;
-    }
-
-    public final Vb a() {
-        this.f684a = "";
-        this.b = "";
-        this.c = false;
-        this.d = "";
-        this.e = "";
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f684a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f684a);
-        }
-        if (!this.b.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(19, this.b);
-        }
-        boolean z = this.c;
-        if (z) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(22, z);
-        }
-        if (!this.d.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(25, this.d);
-        }
-        return !this.e.equals("") ? CodedOutputByteBufferNano.computeStringSize(26, this.e) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f684a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f684a);
-        }
-        if (!this.b.equals("")) {
-            codedOutputByteBufferNano.writeString(19, this.b);
-        }
-        boolean z = this.c;
-        if (z) {
-            codedOutputByteBufferNano.writeBool(22, z);
-        }
-        if (!this.d.equals("")) {
-            codedOutputByteBufferNano.writeString(25, this.d);
-        }
-        if (!this.e.equals("")) {
-            codedOutputByteBufferNano.writeString(26, this.e);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    @Override // io.appmetrica.analytics.networktasks.internal.ConfigProvider
     /* renamed from: a */
-    public final Vb mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 10) {
-                this.f684a = codedInputByteBufferNano.readString();
-            } else if (readTag == 154) {
-                this.b = codedInputByteBufferNano.readString();
-            } else if (readTag == 176) {
-                this.c = codedInputByteBufferNano.readBool();
-            } else if (readTag == 202) {
-                this.d = codedInputByteBufferNano.readString();
-            } else if (readTag != 210) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                this.e = codedInputByteBufferNano.readString();
-            }
-        }
-        return this;
-    }
-
-    public static Vb b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new Vb().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static Vb a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (Vb) MessageNano.mergeFrom(new Vb(), bArr);
+    public final Ch getConfig() {
+        return (Ch) this.b.getValue();
     }
 }

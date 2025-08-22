@@ -6,7 +6,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.SequentialDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableDelaySubscriptionOther<T, U> extends Observable<T> {
     final ObservableSource<? extends T> main;
     final ObservableSource<U> other;
@@ -23,7 +23,7 @@ public final class ObservableDelaySubscriptionOther<T, U> extends Observable<T> 
         this.other.subscribe(new DelayObserver(sequentialDisposable, observer));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class DelayObserver implements Observer<U> {
         final Observer<? super T> child;
         boolean done;
@@ -64,7 +64,7 @@ public final class ObservableDelaySubscriptionOther<T, U> extends Observable<T> 
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public final class OnComplete implements Observer<T> {
             OnComplete() {
             }

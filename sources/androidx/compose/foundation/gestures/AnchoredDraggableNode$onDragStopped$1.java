@@ -2,7 +2,6 @@ package androidx.compose.foundation.gestures;
 
 import androidx.compose.foundation.OverscrollEffect;
 import androidx.compose.ui.unit.Velocity;
-import androidx.exifinterface.media.ExifInterface;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -14,8 +13,8 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: AnchoredDraggable.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableNode$onDragStopped$1", f = "AnchoredDraggable.kt", i = {}, l = {434, 436}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableNode$onDragStopped$1", f = "AnchoredDraggable.kt", i = {}, l = {435, 437}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class AnchoredDraggableNode$onDragStopped$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ long $velocity;
@@ -40,55 +39,58 @@ final class AnchoredDraggableNode$onDragStopped$1 extends SuspendLambda implemen
         return ((AnchoredDraggableNode$onDragStopped$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x003d, code lost:
-        if (r8 == r0) goto L15;
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0040, code lost:
+        if (r8 == r0) goto L17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0062, code lost:
-        if (r1.mo225applyToFlingBMRW4eQ(r3, new androidx.compose.foundation.gestures.AnchoredDraggableNode$onDragStopped$1.AnonymousClass1(r7.this$0, null), r7) == r0) goto L15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0064, code lost:
-        return r0;
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0065, code lost:
+        if (r1.mo235applyToFlingBMRW4eQ(r3, new androidx.compose.foundation.gestures.AnchoredDraggableNode$onDragStopped$1.AnonymousClass1(r7.this$0, null), r7) == r0) goto L17;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        long m401reverseIfNeededAH228Gc;
-        float m403toFloatTH1AsA0;
+        long m432reverseIfNeededAH228Gc;
+        float m434toFloatTH1AsA0;
         OverscrollEffect overscrollEffect;
         OverscrollEffect overscrollEffect2;
-        long m406toVelocityadjELrA;
+        long m437toVelocityadjELrA;
         Object fling;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
-            AnchoredDraggableNode<T> anchoredDraggableNode = this.this$0;
-            m401reverseIfNeededAH228Gc = anchoredDraggableNode.m401reverseIfNeededAH228Gc(this.$velocity);
-            m403toFloatTH1AsA0 = anchoredDraggableNode.m403toFloatTH1AsA0(m401reverseIfNeededAH228Gc);
-            overscrollEffect = ((AnchoredDraggableNode) this.this$0).overscrollEffect;
-            if (overscrollEffect == null) {
-                this.label = 1;
-                fling = this.this$0.fling(m403toFloatTH1AsA0, this);
+        if (i != 0) {
+            if (i == 1) {
+                ResultKt.throwOnFailure(obj);
+                return Unit.INSTANCE;
+            } else if (i == 2) {
+                ResultKt.throwOnFailure(obj);
+                Unit unit = Unit.INSTANCE;
+                return Unit.INSTANCE;
             } else {
-                overscrollEffect2 = ((AnchoredDraggableNode) this.this$0).overscrollEffect;
-                Intrinsics.checkNotNull(overscrollEffect2);
-                m406toVelocityadjELrA = this.this$0.m406toVelocityadjELrA(m403toFloatTH1AsA0);
-                this.label = 2;
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-        } else if (i != 1 && i != 2) {
-            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-        } else {
-            ResultKt.throwOnFailure(obj);
         }
-        return Unit.INSTANCE;
+        ResultKt.throwOnFailure(obj);
+        AnchoredDraggableNode<T> anchoredDraggableNode = this.this$0;
+        m432reverseIfNeededAH228Gc = anchoredDraggableNode.m432reverseIfNeededAH228Gc(this.$velocity);
+        m434toFloatTH1AsA0 = anchoredDraggableNode.m434toFloatTH1AsA0(m432reverseIfNeededAH228Gc);
+        overscrollEffect = ((AnchoredDraggableNode) this.this$0).overscrollEffect;
+        if (overscrollEffect == null) {
+            this.label = 1;
+            fling = this.this$0.fling(m434toFloatTH1AsA0, this);
+        } else {
+            overscrollEffect2 = ((AnchoredDraggableNode) this.this$0).overscrollEffect;
+            Intrinsics.checkNotNull(overscrollEffect2);
+            m437toVelocityadjELrA = this.this$0.m437toVelocityadjELrA(m434toFloatTH1AsA0);
+            this.label = 2;
+        }
+        return coroutine_suspended;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: AnchoredDraggable.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u00020\u0001H\u008a@"}, d2 = {"<anonymous>", "Landroidx/compose/ui/unit/Velocity;", ExifInterface.GPS_DIRECTION_TRUE, "availableVelocity"}, k = 3, mv = {1, 9, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableNode$onDragStopped$1$1", f = "AnchoredDraggable.kt", i = {0}, l = {438}, m = "invokeSuspend", n = {"availableVelocity"}, s = {"J$0"})
+    @Metadata(d1 = {"\u0000\b\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", "Landroidx/compose/ui/unit/Velocity;", "availableVelocity"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableNode$onDragStopped$1$1", f = "AnchoredDraggable.kt", i = {0}, l = {439}, m = "invokeSuspend", n = {"availableVelocity"}, s = {"J$0"})
     /* renamed from: androidx.compose.foundation.gestures.AnchoredDraggableNode$onDragStopped$1$1  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<Velocity, Continuation<? super Velocity>, Object> {
@@ -105,23 +107,23 @@ final class AnchoredDraggableNode$onDragStopped$1 extends SuspendLambda implemen
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.this$0, continuation);
-            anonymousClass1.J$0 = ((Velocity) obj).m6931unboximpl();
+            anonymousClass1.J$0 = ((Velocity) obj).m7498unboximpl();
             return anonymousClass1;
         }
 
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Object invoke(Velocity velocity, Continuation<? super Velocity> continuation) {
-            return m410invokesFctU(velocity.m6931unboximpl(), continuation);
+            return m441invokesFctU(velocity.m7498unboximpl(), continuation);
         }
 
         /* renamed from: invoke-sF-c-tU  reason: not valid java name */
-        public final Object m410invokesFctU(long j, Continuation<? super Velocity> continuation) {
-            return ((AnonymousClass1) create(Velocity.m6913boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
+        public final Object m441invokesFctU(long j, Continuation<? super Velocity> continuation) {
+            return ((AnonymousClass1) create(Velocity.m7480boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            float m403toFloatTH1AsA0;
+            float m434toFloatTH1AsA0;
             long j;
             AnchoredDraggableState anchoredDraggableState;
             AnchoredDraggableState anchoredDraggableState2;
@@ -132,10 +134,10 @@ final class AnchoredDraggableNode$onDragStopped$1 extends SuspendLambda implemen
                 ResultKt.throwOnFailure(obj);
                 long j2 = this.J$0;
                 AnchoredDraggableNode<T> anchoredDraggableNode = this.this$0;
-                m403toFloatTH1AsA0 = anchoredDraggableNode.m403toFloatTH1AsA0(j2);
+                m434toFloatTH1AsA0 = anchoredDraggableNode.m434toFloatTH1AsA0(j2);
                 this.J$0 = j2;
                 this.label = 1;
-                obj = anchoredDraggableNode.fling(m403toFloatTH1AsA0, this);
+                obj = anchoredDraggableNode.fling(m434toFloatTH1AsA0, this);
                 if (obj == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -153,9 +155,9 @@ final class AnchoredDraggableNode$onDragStopped$1 extends SuspendLambda implemen
             float minPosition = anchoredDraggableState2.getAnchors().minPosition();
             anchoredDraggableState3 = ((AnchoredDraggableNode) this.this$0).state;
             if (requireOffset >= anchoredDraggableState3.getAnchors().maxPosition() || requireOffset <= minPosition) {
-                j = this.this$0.m406toVelocityadjELrA(floatValue);
+                j = this.this$0.m437toVelocityadjELrA(floatValue);
             }
-            return Velocity.m6913boximpl(j);
+            return Velocity.m7480boximpl(j);
         }
     }
 }

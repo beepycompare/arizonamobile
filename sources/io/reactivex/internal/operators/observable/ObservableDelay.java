@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.observers.SerializedObserver;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableDelay<T> extends AbstractObservableWithUpstream<T, T> {
     final long delay;
     final boolean delayError;
@@ -27,7 +27,7 @@ public final class ObservableDelay<T> extends AbstractObservableWithUpstream<T, 
         this.source.subscribe(new DelayObserver(this.delayError ? observer : new SerializedObserver(observer), this.delay, this.unit, this.scheduler.createWorker(), this.delayError));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DelayObserver<T> implements Observer<T>, Disposable {
         final long delay;
         final boolean delayError;
@@ -78,7 +78,7 @@ public final class ObservableDelay<T> extends AbstractObservableWithUpstream<T, 
             return this.w.isDisposed();
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class OnNext implements Runnable {
             private final T t;
 
@@ -92,7 +92,7 @@ public final class ObservableDelay<T> extends AbstractObservableWithUpstream<T, 
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class OnError implements Runnable {
             private final Throwable throwable;
 
@@ -110,7 +110,7 @@ public final class ObservableDelay<T> extends AbstractObservableWithUpstream<T, 
             }
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class OnComplete implements Runnable {
             OnComplete() {
             }

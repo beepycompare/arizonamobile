@@ -9,8 +9,8 @@ public final class BottomAppBarTokens {
     public static final int $stable = 0;
     public static final BottomAppBarTokens INSTANCE = new BottomAppBarTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m2979getLevel2D9Ej5fM();
-    private static final float ContainerHeight = Dp.m6684constructorimpl((float) 80.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3286getLevel2D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7251constructorimpl((float) 80.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
 
     private BottomAppBarTokens() {
@@ -21,12 +21,12 @@ public final class BottomAppBarTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2820getContainerElevationD9Ej5fM() {
+    public final float m3127getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m2821getContainerHeightD9Ej5fM() {
+    public final float m3128getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 

@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
 public interface Rc {
-    Cc a();
+    InterfaceC0118a9 a();
 }

@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableCache<T> extends AbstractObservableWithUpstream<T, T> implements Observer<T> {
     static final CacheDisposable[] EMPTY = new CacheDisposable[0];
     static final CacheDisposable[] TERMINATED = new CacheDisposable[0];
@@ -189,7 +189,7 @@ public final class ObservableCache<T> extends AbstractObservableWithUpstream<T, 
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class CacheDisposable<T> extends AtomicInteger implements Disposable {
         private static final long serialVersionUID = 6770240836423125754L;
         volatile boolean disposed;
@@ -221,7 +221,7 @@ public final class ObservableCache<T> extends AbstractObservableWithUpstream<T, 
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class Node<T> {
         volatile Node<T> next;
         final T[] values;

@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableConcatMapEager<T, R> extends AbstractFlowableWithUpstream<T, R> {
     final ErrorMode errorMode;
     final Function<? super T, ? extends Publisher<? extends R>> mapper;
@@ -40,7 +40,7 @@ public final class FlowableConcatMapEager<T, R> extends AbstractFlowableWithUpst
         this.source.subscribe((FlowableSubscriber) new ConcatMapEagerDelayErrorSubscriber(subscriber, this.mapper, this.maxConcurrency, this.prefetch, this.errorMode));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ConcatMapEagerDelayErrorSubscriber<T, R> extends AtomicInteger implements FlowableSubscriber<T>, Subscription, InnerQueuedSubscriberSupport<R> {
         private static final long serialVersionUID = -4255299542215038287L;
         volatile boolean cancelled;

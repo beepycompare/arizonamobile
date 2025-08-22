@@ -9,7 +9,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.QueueDisposable;
 import io.reactivex.internal.observers.BasicIntQueueDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableDoFinally<T> extends AbstractObservableWithUpstream<T, T> {
     final Action onFinally;
 
@@ -23,7 +23,7 @@ public final class ObservableDoFinally<T> extends AbstractObservableWithUpstream
         this.source.subscribe(new DoFinallyObserver(observer, this.onFinally));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DoFinallyObserver<T> extends BasicIntQueueDisposable<T> implements Observer<T> {
         private static final long serialVersionUID = 4109457741734051389L;
         final Observer<? super T> downstream;

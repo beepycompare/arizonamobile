@@ -10,7 +10,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableScalarXMap {
     private FlowableScalarXMap() {
         throw new IllegalStateException("No instances!");
@@ -62,7 +62,7 @@ public final class FlowableScalarXMap {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ScalarXMapFlowable<T, R> extends Flowable<R> {
         final Function<? super T, ? extends Publisher<? extends R>> mapper;
         final T value;

@@ -61,7 +61,7 @@ public final class CardElevation {
             ComposerKt.sourceInformationMarkerStart(composer, -734836858, "CC(remember):Card.kt#9igjgp");
             Object rememberedValue = composer.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m6682boximpl(this.defaultElevation), null, 2, null);
+                rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7249boximpl(this.defaultElevation), null, 2, null);
                 composer.updateRememberedValue(rememberedValue);
             }
             MutableState mutableState = (MutableState) rememberedValue;
@@ -122,13 +122,13 @@ public final class CardElevation {
         ComposerKt.sourceInformationMarkerStart(composer, -1719521869, "CC(remember):Card.kt#9igjgp");
         Object rememberedValue3 = composer.rememberedValue();
         if (rememberedValue3 == Composer.Companion.getEmpty()) {
-            Object animatable2 = new Animatable(Dp.m6682boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
+            Object animatable2 = new Animatable(Dp.m7249boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
             composer.updateRememberedValue(animatable2);
             rememberedValue3 = animatable2;
         }
         Object obj = (Animatable) rememberedValue3;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Dp m6682boximpl = Dp.m6682boximpl(f);
+        Dp m7249boximpl = Dp.m7249boximpl(f);
         ComposerKt.sourceInformationMarkerStart(composer, -1719518296, "CC(remember):Card.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(obj) | composer.changed(f) | ((((i & 14) ^ 6) > 4 && composer.changed(z)) || (i & 6) == 4);
         if ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !composer.changed(this)) && (i & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
@@ -144,7 +144,7 @@ public final class CardElevation {
             animatable = obj;
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        EffectsKt.LaunchedEffect(m6682boximpl, (Function2) rememberedValue4, composer, 0);
+        EffectsKt.LaunchedEffect(m7249boximpl, (Function2) rememberedValue4, composer, 0);
         State<Dp> asState = animatable.asState();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
@@ -161,10 +161,10 @@ public final class CardElevation {
             return false;
         }
         CardElevation cardElevation = (CardElevation) obj;
-        return Dp.m6689equalsimpl0(this.defaultElevation, cardElevation.defaultElevation) && Dp.m6689equalsimpl0(this.pressedElevation, cardElevation.pressedElevation) && Dp.m6689equalsimpl0(this.focusedElevation, cardElevation.focusedElevation) && Dp.m6689equalsimpl0(this.hoveredElevation, cardElevation.hoveredElevation) && Dp.m6689equalsimpl0(this.disabledElevation, cardElevation.disabledElevation);
+        return Dp.m7256equalsimpl0(this.defaultElevation, cardElevation.defaultElevation) && Dp.m7256equalsimpl0(this.pressedElevation, cardElevation.pressedElevation) && Dp.m7256equalsimpl0(this.focusedElevation, cardElevation.focusedElevation) && Dp.m7256equalsimpl0(this.hoveredElevation, cardElevation.hoveredElevation) && Dp.m7256equalsimpl0(this.disabledElevation, cardElevation.disabledElevation);
     }
 
     public int hashCode() {
-        return (((((((Dp.m6690hashCodeimpl(this.defaultElevation) * 31) + Dp.m6690hashCodeimpl(this.pressedElevation)) * 31) + Dp.m6690hashCodeimpl(this.focusedElevation)) * 31) + Dp.m6690hashCodeimpl(this.hoveredElevation)) * 31) + Dp.m6690hashCodeimpl(this.disabledElevation);
+        return (((((((Dp.m7257hashCodeimpl(this.defaultElevation) * 31) + Dp.m7257hashCodeimpl(this.pressedElevation)) * 31) + Dp.m7257hashCodeimpl(this.focusedElevation)) * 31) + Dp.m7257hashCodeimpl(this.hoveredElevation)) * 31) + Dp.m7257hashCodeimpl(this.disabledElevation);
     }
 }

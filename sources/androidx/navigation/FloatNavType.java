@@ -34,7 +34,7 @@ public final class FloatNavType extends NavType<Float> {
     public void put(Bundle bundle, String key, float f) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        SavedStateWriter.m7696putFloatimpl(SavedStateWriter.m7681constructorimpl(bundle), key, f);
+        SavedStateWriter.m8262putFloatimpl(SavedStateWriter.m8247constructorimpl(bundle), key, f);
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
@@ -42,6 +42,6 @@ public final class FloatNavType extends NavType<Float> {
     public Float get(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        return Float.valueOf(SavedStateReader.m7622getFloatimpl(SavedStateReader.m7595constructorimpl(bundle), key));
+        return Float.valueOf(SavedStateReader.m8188getFloatimpl(SavedStateReader.m8161constructorimpl(bundle), key));
     }
 }

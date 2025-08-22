@@ -10,7 +10,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybePeek<T> extends AbstractMaybeWithUpstream<T, T> {
     final Action onAfterTerminate;
     final Action onCompleteCall;
@@ -34,7 +34,7 @@ public final class MaybePeek<T> extends AbstractMaybeWithUpstream<T, T> {
         this.source.subscribe(new MaybePeekObserver(maybeObserver, this));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MaybePeekObserver<T> implements MaybeObserver<T>, Disposable {
         final MaybeObserver<? super T> downstream;
         final MaybePeek<T> parent;

@@ -1,25 +1,58 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.control.Toggle;
-import io.appmetrica.analytics.coreutils.internal.toggle.ConjunctiveCompositeThreadSafeToggle;
-import kotlin.collections.CollectionsKt;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+import java.util.List;
 /* loaded from: classes4.dex */
-public final class Hn {
+public final class Hn implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0121a4 f478a;
-    public final zo b;
-    public final ConjunctiveCompositeThreadSafeToggle c;
+    public final Gl f483a;
 
-    public Hn(Toggle toggle) {
-        C0121a4 c0121a4 = new C0121a4(Ia.j().x());
-        this.f478a = c0121a4;
-        zo zoVar = new zo();
-        this.b = zoVar;
-        Toggle[] toggleArr = new Toggle[3];
-        toggleArr[0] = c0121a4;
-        toggleArr[1] = zoVar;
-        toggleArr[2] = toggle == null ? new so() : toggle;
-        this.c = new ConjunctiveCompositeThreadSafeToggle(CollectionsKt.listOf((Object[]) toggleArr), "loc-def");
+    public Hn() {
+        this(new Gl());
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0698x6 fromModel(In in) {
+        C0698x6 c0698x6 = new C0698x6();
+        c0698x6.f1136a = (String) WrapUtils.getOrDefault(in.f503a, "");
+        c0698x6.b = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(in.b, ""));
+        List<Il> list = in.c;
+        if (list != null) {
+            c0698x6.c = this.f483a.fromModel(list);
+        }
+        In in2 = in.d;
+        if (in2 != null) {
+            c0698x6.d = fromModel(in2);
+        }
+        List<In> list2 = in.e;
+        int i = 0;
+        if (list2 == null) {
+            c0698x6.e = new C0698x6[0];
+            return c0698x6;
+        }
+        c0698x6.e = new C0698x6[list2.size()];
+        for (In in3 : list2) {
+            c0698x6.e[i] = fromModel(in3);
+            i++;
+        }
+        return c0698x6;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        C0698x6 c0698x6 = (C0698x6) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public Hn(Gl gl) {
+        this.f483a = gl;
+    }
+
+    public final In a(C0698x6 c0698x6) {
+        throw new UnsupportedOperationException();
     }
 }

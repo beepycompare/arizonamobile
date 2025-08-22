@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableConcatMapMaybe<T, R> extends Flowable<R> {
     final ErrorMode errorMode;
     final Function<? super T, ? extends MaybeSource<? extends R>> mapper;
@@ -41,7 +41,7 @@ public final class FlowableConcatMapMaybe<T, R> extends Flowable<R> {
         this.source.subscribe((FlowableSubscriber) new ConcatMapMaybeSubscriber(subscriber, this.mapper, this.prefetch, this.errorMode));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ConcatMapMaybeSubscriber<T, R> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
         static final int STATE_ACTIVE = 1;
         static final int STATE_INACTIVE = 0;
@@ -224,7 +224,7 @@ public final class FlowableConcatMapMaybe<T, R> extends Flowable<R> {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         public static final class ConcatMapMaybeObserver<R> extends AtomicReference<Disposable> implements MaybeObserver<R> {
             private static final long serialVersionUID = -3051469169682093892L;
             final ConcatMapMaybeSubscriber<?, R> parent;

@@ -1,28 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import java.util.LinkedHashMap;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationState;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateObserver;
+import io.appmetrica.analytics.coreutils.internal.toggle.SimpleThreadSafeToggle;
+import kotlin.Unit;
 /* loaded from: classes4.dex */
-public final class xo {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Context f1142a;
-    public final LinkedHashMap b = new LinkedHashMap();
-    public final to c;
-    public final to d;
-
-    public xo(Context context) {
-        this.f1142a = context;
-        C0680wa c0680wa = new C0680wa(context, "appmetrica_vital.dat");
-        this.c = new to(Ia.j().x(), c0680wa);
-        this.d = new to(new C0461nf(C0627u7.a(context).d()), c0680wa);
+public final class xo extends SimpleThreadSafeToggle implements ApplicationStateObserver {
+    public xo() {
+        super(false, "[VisibleAppStateOnlyTrackingStatusToggle]");
+        synchronized (this) {
+            a(Ka.j().d().registerStickyObserver(this));
+            Unit unit = Unit.INSTANCE;
+        }
     }
 
-    public final to a() {
-        return this.c;
+    public final void a(ApplicationState applicationState) {
+        updateState(applicationState == ApplicationState.VISIBLE);
     }
 
-    public final to b() {
-        return this.d;
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateObserver
+    public final synchronized void onApplicationStateChanged(ApplicationState applicationState) {
+        a(applicationState);
     }
 }

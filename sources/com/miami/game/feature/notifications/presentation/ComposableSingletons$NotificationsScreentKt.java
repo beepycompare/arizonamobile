@@ -24,7 +24,7 @@ public final class ComposableSingletons$NotificationsScreentKt {
     public static final ComposableSingletons$NotificationsScreentKt INSTANCE = new ComposableSingletons$NotificationsScreentKt();
 
     /* renamed from: lambda$-556808038  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f83lambda$556808038 = ComposableLambdaKt.composableLambdaInstance(-556808038, false, new Function3() { // from class: com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationsScreentKt$$ExternalSyntheticLambda0
+    private static Function3<BoxScope, Composer, Integer, Unit> f77lambda$556808038 = ComposableLambdaKt.composableLambdaInstance(-556808038, false, new Function3() { // from class: com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationsScreentKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__556808038$lambda$0;
@@ -33,9 +33,9 @@ public final class ComposableSingletons$NotificationsScreentKt {
         }
     });
 
-    /* renamed from: getLambda$-556808038$notifications_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8423getLambda$556808038$notifications_release_web() {
-        return f83lambda$556808038;
+    /* renamed from: getLambda$-556808038$notifications_release  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m8989getLambda$556808038$notifications_release() {
+        return f77lambda$556808038;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -48,7 +48,7 @@ public final class ComposableSingletons$NotificationsScreentKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-556808038, i, -1, "com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationsScreentKt.lambda$-556808038.<anonymous> (NotificationsScreent.kt:134)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m771height3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(72)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(72)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

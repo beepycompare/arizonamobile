@@ -1,16 +1,25 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.HashMap;
 /* loaded from: classes4.dex */
 public final class Nh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bn f565a = new Bn(new C0485oe("Event name"));
-    public final Bn b = new Bn(new C0485oe("Error message"));
-    public final Bn c = new Bn(new C0485oe("Error identifier"));
-    public final Bn d = new Bn(new C0535qe("Unhandled exception"));
-    public final Bn e = new Bn(new C0535qe("Throwable"));
-    public final Bn f = new Bn(new C0535qe("User profile"));
-    public final Bn g = new Bn(new C0535qe("Revenue"));
-    public final Bn h = new Bn(new C0535qe("AdRevenue"));
-    public final Bn i = new Bn(new C0535qe("ECommerceEvent"));
-    public final Bn j = new Bn(new C0535qe("ANR all threads"));
+    public final C0399l6 f580a;
+    public final boolean b;
+    public final int c;
+    public final HashMap d;
+    public final Xh e;
+
+    public Nh(C0399l6 c0399l6, boolean z, int i, HashMap hashMap, Xh xh) {
+        this.f580a = c0399l6;
+        this.b = z;
+        this.c = i;
+        this.d = hashMap;
+        this.e = xh;
+    }
+
+    public final String toString() {
+        return "ReportToSend(report=" + this.f580a + ", serviceDataReporterType=" + this.c + ", environment=" + this.e + ", isCrashReport=" + this.b + ", trimmedFields=" + this.d + ')';
+    }
 }

@@ -6,7 +6,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.internal.observers.DisposableLambdaObserver;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableDoOnLifecycle<T> extends AbstractObservableWithUpstream<T, T> {
     private final Action onDispose;
     private final Consumer<? super Disposable> onSubscribe;

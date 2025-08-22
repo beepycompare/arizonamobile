@@ -4,7 +4,7 @@ import androidx.media3.common.text.Cue;
 import androidx.media3.common.util.Assertions;
 import androidx.media3.decoder.DecoderOutputBuffer;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class SubtitleOutputBuffer extends DecoderOutputBuffer implements Subtitle {
     private long subsampleOffsetUs;
     private Subtitle subtitle;

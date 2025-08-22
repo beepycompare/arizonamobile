@@ -14,7 +14,7 @@ import androidx.viewbinding.ViewBindings;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class ItemTasksBinding implements ViewBinding {
     public final View bg;
     public final Button btnShowClue;

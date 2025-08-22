@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class PlayerNotificationManager {
     private static final String ACTION_DISMISS = "androidx.media3.ui.notification.dismiss";
     public static final String ACTION_FAST_FORWARD = "androidx.media3.ui.notification.ffwd";
@@ -86,7 +86,7 @@ public class PlayerNotificationManager {
     private boolean useStopAction;
     private int visibility;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface CustomActionReceiver {
         Map<String, NotificationCompat.Action> createCustomActions(Context context, int i);
 
@@ -95,7 +95,7 @@ public class PlayerNotificationManager {
         void onCustomAction(Player player, String str, Intent intent);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface MediaDescriptionAdapter {
         PendingIntent createCurrentContentIntent(Player player);
 
@@ -110,7 +110,7 @@ public class PlayerNotificationManager {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface NotificationListener {
         default void onNotificationCancelled(int i, boolean z) {
         }
@@ -122,18 +122,18 @@ public class PlayerNotificationManager {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public @interface Priority {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public @interface Visibility {
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
         protected int channelDescriptionResourceId;
         protected final String channelId;
@@ -261,7 +261,7 @@ public class PlayerNotificationManager {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public final class BitmapCallback {
         private final int notificationTag;
 
@@ -764,7 +764,7 @@ public class PlayerNotificationManager {
         builder.setLargeIcon(bitmap);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     private class PlayerListener implements Player.Listener {
         private PlayerListener() {
         }
@@ -778,7 +778,7 @@ public class PlayerNotificationManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class NotificationBroadcastReceiver extends BroadcastReceiver {
         private NotificationBroadcastReceiver() {
         }
@@ -826,7 +826,7 @@ public class PlayerNotificationManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class MediaStyle extends NotificationCompat.Style {
         private final int[] actionsToShowInCompact;
         private final MediaSession.Token token;

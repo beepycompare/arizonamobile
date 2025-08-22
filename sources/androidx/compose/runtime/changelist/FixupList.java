@@ -15,7 +15,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.TypeIntrinsics;
 /* compiled from: FixupList.kt */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0000\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\u0006\u0010\n\u001a\u00020\u000bJ&\u0010\f\u001a\u00020\u000b2\u000e\u0010\r\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\u000e2\u0006\u0010\u0010\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0012J\u0006\u0010\u0013\u001a\u00020\u000bJ\"\u0010\u0014\u001a\u00020\u000b2\n\u0010\u0015\u001a\u0006\u0012\u0002\b\u00030\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aJ\u0006\u0010\u001b\u001a\u00020\u001cJ\u0006\u0010\u001d\u001a\u00020\u001cJ\u0010\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020\u001fH\u0016J>\u0010!\u001a\u00020\u000b\"\u0004\b\u0000\u0010\"\"\u0004\b\u0001\u0010#2\u0006\u0010$\u001a\u0002H\"2\u001d\u0010%\u001a\u0019\u0012\u0004\u0012\u0002H#\u0012\u0004\u0012\u0002H\"\u0012\u0004\u0012\u00020\u000b0&¢\u0006\u0002\b'¢\u0006\u0002\u0010(R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0006\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b\b\u0010\t¨\u0006)"}, d2 = {"Landroidx/compose/runtime/changelist/FixupList;", "Landroidx/compose/runtime/changelist/OperationsDebugStringFormattable;", "()V", "operations", "Landroidx/compose/runtime/changelist/Operations;", "pendingOperations", "size", "", "getSize", "()I", "clear", "", "createAndInsertNode", "factory", "Lkotlin/Function0;", "", "insertIndex", "groupAnchor", "Landroidx/compose/runtime/Anchor;", "endNodeInsert", "executeAndFlushAllPendingFixups", "applier", "Landroidx/compose/runtime/Applier;", "slots", "Landroidx/compose/runtime/SlotWriter;", "rememberManager", "Landroidx/compose/runtime/RememberManager;", "isEmpty", "", "isNotEmpty", "toDebugString", "", "linePrefix", "updateNode", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, ExifInterface.GPS_DIRECTION_TRUE, "value", "block", "Lkotlin/Function2;", "Lkotlin/ExtensionFunctionType;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u000b\u001a\u00020\fJ\u0006\u0010\r\u001a\u00020\fJ\u0006\u0010\u000e\u001a\u00020\u000fJ,\u0010\u0010\u001a\u00020\u000f2\n\u0010\u0011\u001a\u0006\u0012\u0002\b\u00030\u00122\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018J&\u0010\u0019\u001a\u00020\u000f2\u000e\u0010\u001a\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u001c0\u001b2\u0006\u0010\u001d\u001a\u00020\b2\u0006\u0010\u001e\u001a\u00020\u001fJ\u0006\u0010 \u001a\u00020\u000fJ>\u0010!\u001a\u00020\u000f\"\u0004\b\u0000\u0010\"\"\u0004\b\u0001\u0010#2\u0006\u0010$\u001a\u0002H\"2\u001d\u0010%\u001a\u0019\u0012\u0004\u0012\u0002H#\u0012\u0004\u0012\u0002H\"\u0012\u0004\u0012\u00020\u000f0&¢\u0006\u0002\b'¢\u0006\u0002\u0010(J\u0010\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020*H\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0007\u001a\u00020\b8F¢\u0006\u0006\u001a\u0004\b\t\u0010\n¨\u0006,"}, d2 = {"Landroidx/compose/runtime/changelist/FixupList;", "Landroidx/compose/runtime/changelist/OperationsDebugStringFormattable;", "<init>", "()V", "operations", "Landroidx/compose/runtime/changelist/Operations;", "pendingOperations", "size", "", "getSize", "()I", "isEmpty", "", "isNotEmpty", "clear", "", "executeAndFlushAllPendingFixups", "applier", "Landroidx/compose/runtime/Applier;", "slots", "Landroidx/compose/runtime/SlotWriter;", "rememberManager", "Landroidx/compose/runtime/RememberManager;", "errorContext", "Landroidx/compose/runtime/changelist/OperationErrorContext;", "createAndInsertNode", "factory", "Lkotlin/Function0;", "", "insertIndex", "groupAnchor", "Landroidx/compose/runtime/Anchor;", "endNodeInsert", "updateNode", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, ExifInterface.GPS_DIRECTION_TRUE, "value", "block", "Lkotlin/Function2;", "Lkotlin/ExtensionFunctionType;", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V", "toDebugString", "", "linePrefix", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class FixupList extends OperationsDebugStringFormattable {
     public static final int $stable = 8;
@@ -39,33 +39,33 @@ public final class FixupList extends OperationsDebugStringFormattable {
         this.operations.clear();
     }
 
-    public final void executeAndFlushAllPendingFixups(Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager) {
+    public final void executeAndFlushAllPendingFixups(Applier<?> applier, SlotWriter slotWriter, RememberManager rememberManager, OperationErrorContext operationErrorContext) {
         if (!this.pendingOperations.isEmpty()) {
             ComposerKt.composeImmediateRuntimeError("FixupList has pending fixup operations that were not realized. Were there mismatched insertNode() and endNodeInsert() calls?");
         }
-        this.operations.executeAndFlushAllPendingOperations(applier, slotWriter, rememberManager);
+        this.operations.executeAndFlushAllPendingOperations(applier, slotWriter, rememberManager, operationErrorContext);
     }
 
     public final void createAndInsertNode(Function0<? extends Object> function0, int i, Anchor anchor) {
         Operations operations = this.operations;
         Operation.InsertNodeFixup insertNodeFixup = Operation.InsertNodeFixup.INSTANCE;
         operations.pushOp(insertNodeFixup);
-        Operations m3581constructorimpl = Operations.WriteScope.m3581constructorimpl(operations);
+        Operations m3917constructorimpl = Operations.WriteScope.m3917constructorimpl(operations);
         Operation.InsertNodeFixup insertNodeFixup2 = Operation.InsertNodeFixup.INSTANCE;
-        Operations.WriteScope.m3589setObjectDKhxnng(m3581constructorimpl, Operation.ObjectParameter.m3558constructorimpl(0), function0);
+        Operations.WriteScope.m3925setObjectDKhxnng(m3917constructorimpl, Operation.ObjectParameter.m3893constructorimpl(0), function0);
         Operation.InsertNodeFixup insertNodeFixup3 = Operation.InsertNodeFixup.INSTANCE;
-        m3581constructorimpl.intArgs[m3581constructorimpl.intArgsSize - m3581constructorimpl.opCodes[m3581constructorimpl.opCodesSize - 1].getInts()] = i;
+        m3917constructorimpl.intArgs[m3917constructorimpl.intArgsSize - m3917constructorimpl.opCodes[m3917constructorimpl.opCodesSize - 1].getInts()] = i;
         Operation.InsertNodeFixup insertNodeFixup4 = Operation.InsertNodeFixup.INSTANCE;
-        Operations.WriteScope.m3589setObjectDKhxnng(m3581constructorimpl, Operation.ObjectParameter.m3558constructorimpl(1), anchor);
+        Operations.WriteScope.m3925setObjectDKhxnng(m3917constructorimpl, Operation.ObjectParameter.m3893constructorimpl(1), anchor);
         operations.ensureAllArgumentsPushedFor(insertNodeFixup);
         Operations operations2 = this.pendingOperations;
         Operation.PostInsertNodeFixup postInsertNodeFixup = Operation.PostInsertNodeFixup.INSTANCE;
         operations2.pushOp(postInsertNodeFixup);
-        Operations m3581constructorimpl2 = Operations.WriteScope.m3581constructorimpl(operations2);
+        Operations m3917constructorimpl2 = Operations.WriteScope.m3917constructorimpl(operations2);
         Operation.PostInsertNodeFixup postInsertNodeFixup2 = Operation.PostInsertNodeFixup.INSTANCE;
-        m3581constructorimpl2.intArgs[m3581constructorimpl2.intArgsSize - m3581constructorimpl2.opCodes[m3581constructorimpl2.opCodesSize - 1].getInts()] = i;
+        m3917constructorimpl2.intArgs[m3917constructorimpl2.intArgsSize - m3917constructorimpl2.opCodes[m3917constructorimpl2.opCodesSize - 1].getInts()] = i;
         Operation.PostInsertNodeFixup postInsertNodeFixup3 = Operation.PostInsertNodeFixup.INSTANCE;
-        Operations.WriteScope.m3589setObjectDKhxnng(m3581constructorimpl2, Operation.ObjectParameter.m3558constructorimpl(0), anchor);
+        Operations.WriteScope.m3925setObjectDKhxnng(m3917constructorimpl2, Operation.ObjectParameter.m3893constructorimpl(0), anchor);
         operations2.ensureAllArgumentsPushedFor(postInsertNodeFixup);
     }
 
@@ -80,13 +80,13 @@ public final class FixupList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.UpdateNode updateNode = Operation.UpdateNode.INSTANCE;
         operations.pushOp(updateNode);
-        Operations m3581constructorimpl = Operations.WriteScope.m3581constructorimpl(operations);
+        Operations m3917constructorimpl = Operations.WriteScope.m3917constructorimpl(operations);
         Operation.UpdateNode updateNode2 = Operation.UpdateNode.INSTANCE;
-        Operations.WriteScope.m3589setObjectDKhxnng(m3581constructorimpl, Operation.ObjectParameter.m3558constructorimpl(0), v);
+        Operations.WriteScope.m3925setObjectDKhxnng(m3917constructorimpl, Operation.ObjectParameter.m3893constructorimpl(0), v);
         Operation.UpdateNode updateNode3 = Operation.UpdateNode.INSTANCE;
-        int m3558constructorimpl = Operation.ObjectParameter.m3558constructorimpl(1);
+        int m3893constructorimpl = Operation.ObjectParameter.m3893constructorimpl(1);
         Intrinsics.checkNotNull(function2, "null cannot be cast to non-null type @[ExtensionFunctionType] kotlin.Function2<kotlin.Any?, kotlin.Any?, kotlin.Unit>");
-        Operations.WriteScope.m3589setObjectDKhxnng(m3581constructorimpl, m3558constructorimpl, (Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(function2, 2));
+        Operations.WriteScope.m3925setObjectDKhxnng(m3917constructorimpl, m3893constructorimpl, (Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(function2, 2));
         operations.ensureAllArgumentsPushedFor(updateNode);
     }
 

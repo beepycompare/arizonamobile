@@ -5,7 +5,7 @@ import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableMaterialize<T> extends AbstractObservableWithUpstream<T, Notification<T>> {
     public ObservableMaterialize(ObservableSource<T> observableSource) {
         super(observableSource);
@@ -16,7 +16,7 @@ public final class ObservableMaterialize<T> extends AbstractObservableWithUpstre
         this.source.subscribe(new MaterializeObserver(observer));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MaterializeObserver<T> implements Observer<T>, Disposable {
         final Observer<? super Notification<T>> downstream;
         Disposable upstream;

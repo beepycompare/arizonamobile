@@ -7,11 +7,11 @@ import androidx.compose.ui.text.TextLayoutResult;
 import java.util.Comparator;
 import kotlin.Metadata;
 /* compiled from: MultiWidgetSelectionDelegate.kt */
-@Metadata(d1 = {"\u0000R\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\"\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0002ø\u0001\u0000¢\u0006\u0004\b\u0006\u0010\u0007\u001a\"\u0010\b\u001a\u00020\t2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u000bH\u0002ø\u0001\u0000¢\u0006\u0004\b\f\u0010\r\u001a\"\u0010\u000e\u001a\u00020\t2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u000bH\u0002ø\u0001\u0000¢\u0006\u0004\b\u000f\u0010\r\u001a\u0018\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\t2\u0006\u0010\u0013\u001a\u00020\tH\u0002\u001a6\u0010\u0014\u001a\u00020\u0015*\u00020\u00162\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\u00032\u0006\u0010\u0018\u001a\u00020\u00032\u0006\u0010\u0019\u001a\u00020\u001aH\u0000ø\u0001\u0000¢\u0006\u0004\b\u001b\u0010\u001c\u001a\u001c\u0010\u001d\u001a\u00020\t*\u00020\u00162\u0006\u0010\u001e\u001a\u00020\u001a2\u0006\u0010\u001f\u001a\u00020\u001aH\u0002\u001a4\u0010 \u001a\u00020\u0001*\u00020!2\u0016\u0010\"\u001a\u0012\u0012\u0004\u0012\u00020\u001a0#j\b\u0012\u0004\u0012\u00020\u001a`$2\u0006\u0010\u001f\u001a\u00020\u001a2\u0006\u0010%\u001a\u00020\u0001H\u0002\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006&"}, d2 = {"getOffsetForPosition", "", "position", "Landroidx/compose/ui/geometry/Offset;", "textLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "getOffsetForPosition-3MmeM6k", "(JLandroidx/compose/ui/text/TextLayoutResult;)I", "getXDirection", "Landroidx/compose/foundation/text/selection/Direction;", "bounds", "Landroidx/compose/ui/geometry/Rect;", "getXDirection-3MmeM6k", "(JLandroidx/compose/ui/geometry/Rect;)Landroidx/compose/foundation/text/selection/Direction;", "getYDirection", "getYDirection-3MmeM6k", "isSelected", "", "currentDirection", "otherDirection", "appendSelectableInfo", "", "Landroidx/compose/foundation/text/selection/SelectionLayoutBuilder;", "localPosition", "previousHandlePosition", "selectableId", "", "appendSelectableInfo-Parwq6A", "(Landroidx/compose/foundation/text/selection/SelectionLayoutBuilder;Landroidx/compose/ui/text/TextLayoutResult;JJJ)V", "getDirectionById", "anchorSelectableId", "currentSelectableId", "getPreviousAdjustedOffset", "Landroidx/compose/foundation/text/selection/Selection$AnchorInfo;", "selectableIdOrderingComparator", "Ljava/util/Comparator;", "Lkotlin/Comparator;", "currentTextLength", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000P\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0006\u001a3\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\tH\u0000¢\u0006\u0004\b\n\u0010\u000b\u001a4\u0010\f\u001a\u00020\r*\u00020\u000e2\u0016\u0010\u000f\u001a\u0012\u0012\u0004\u0012\u00020\t0\u0010j\b\u0012\u0004\u0012\u00020\t`\u00112\u0006\u0010\u0012\u001a\u00020\t2\u0006\u0010\u0013\u001a\u00020\rH\u0002\u001a\u001f\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u0018H\u0002¢\u0006\u0004\b\u0019\u0010\u001a\u001a\u001f\u0010\u001b\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u0018H\u0002¢\u0006\u0004\b\u001c\u0010\u001a\u001a\u001c\u0010\u001d\u001a\u00020\u0015*\u00020\u00022\u0006\u0010\u001e\u001a\u00020\t2\u0006\u0010\u0012\u001a\u00020\tH\u0002\u001a\u0018\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u00152\u0006\u0010\"\u001a\u00020\u0015H\u0002\u001a\u001f\u0010#\u001a\u00020\r2\u0006\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0003\u001a\u00020\u0004H\u0002¢\u0006\u0004\b$\u0010%¨\u0006&"}, d2 = {"appendSelectableInfo", "", "Landroidx/compose/foundation/text/selection/SelectionLayoutBuilder;", "textLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "localPosition", "Landroidx/compose/ui/geometry/Offset;", "previousHandlePosition", "selectableId", "", "appendSelectableInfo-Parwq6A", "(Landroidx/compose/foundation/text/selection/SelectionLayoutBuilder;Landroidx/compose/ui/text/TextLayoutResult;JJJ)V", "getPreviousAdjustedOffset", "", "Landroidx/compose/foundation/text/selection/Selection$AnchorInfo;", "selectableIdOrderingComparator", "Ljava/util/Comparator;", "Lkotlin/Comparator;", "currentSelectableId", "currentTextLength", "getXDirection", "Landroidx/compose/foundation/text/selection/Direction;", "position", "bounds", "Landroidx/compose/ui/geometry/Rect;", "getXDirection-3MmeM6k", "(JLandroidx/compose/ui/geometry/Rect;)Landroidx/compose/foundation/text/selection/Direction;", "getYDirection", "getYDirection-3MmeM6k", "getDirectionById", "anchorSelectableId", "isSelected", "", "currentDirection", "otherDirection", "getOffsetForPosition", "getOffsetForPosition-3MmeM6k", "(JLandroidx/compose/ui/text/TextLayoutResult;)I", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class MultiWidgetSelectionDelegateKt {
     /* renamed from: appendSelectableInfo-Parwq6A  reason: not valid java name */
-    public static final void m1455appendSelectableInfoParwq6A(SelectionLayoutBuilder selectionLayoutBuilder, TextLayoutResult textLayoutResult, long j, long j2, long j3) {
+    public static final void m1731appendSelectableInfoParwq6A(SelectionLayoutBuilder selectionLayoutBuilder, TextLayoutResult textLayoutResult, long j, long j2, long j3) {
         Direction direction;
         Direction direction2;
         long j4;
@@ -20,17 +20,17 @@ public final class MultiWidgetSelectionDelegateKt {
         Direction direction4;
         Direction direction5;
         Direction direction6;
-        int m1456getOffsetForPosition3MmeM6k;
+        int m1732getOffsetForPosition3MmeM6k;
         int previousAdjustedOffset;
         Selection.AnchorInfo start;
         Selection.AnchorInfo end;
-        Rect rect = new Rect(0.0f, 0.0f, (int) (textLayoutResult.m6118getSizeYbymL2g() >> 32), (int) (textLayoutResult.m6118getSizeYbymL2g() & 4294967295L));
-        Direction m1457getXDirection3MmeM6k = m1457getXDirection3MmeM6k(j, rect);
-        Direction m1458getYDirection3MmeM6k = m1458getYDirection3MmeM6k(j, rect);
+        Rect rect = new Rect(0.0f, 0.0f, (int) (textLayoutResult.m6684getSizeYbymL2g() >> 32), (int) (textLayoutResult.m6684getSizeYbymL2g() & 4294967295L));
+        Direction m1733getXDirection3MmeM6k = m1733getXDirection3MmeM6k(j, rect);
+        Direction m1734getYDirection3MmeM6k = m1734getYDirection3MmeM6k(j, rect);
         if (selectionLayoutBuilder.isStartHandle()) {
             Selection previousSelection = selectionLayoutBuilder.getPreviousSelection();
-            direction = m1458getYDirection3MmeM6k;
-            direction2 = m1457getXDirection3MmeM6k;
+            direction = m1734getYDirection3MmeM6k;
+            direction2 = m1733getXDirection3MmeM6k;
             j4 = j3;
             direction5 = direction2;
             direction4 = appendSelectableInfo_Parwq6A$otherDirection(direction2, direction, selectionLayoutBuilder, j3, previousSelection != null ? previousSelection.getEnd() : null);
@@ -38,8 +38,8 @@ public final class MultiWidgetSelectionDelegateKt {
             direction6 = direction3;
             appendSelectableInfo_Parwq6A$otherDirection = direction;
         } else {
-            direction = m1458getYDirection3MmeM6k;
-            direction2 = m1457getXDirection3MmeM6k;
+            direction = m1734getYDirection3MmeM6k;
+            direction2 = m1733getXDirection3MmeM6k;
             Selection previousSelection2 = selectionLayoutBuilder.getPreviousSelection();
             j4 = j3;
             appendSelectableInfo_Parwq6A$otherDirection = appendSelectableInfo_Parwq6A$otherDirection(direction2, direction, selectionLayoutBuilder, j4, previousSelection2 != null ? previousSelection2.getStart() : null);
@@ -51,15 +51,15 @@ public final class MultiWidgetSelectionDelegateKt {
         if (isSelected(SelectionLayoutKt.resolve2dDirection(direction2, direction), direction6)) {
             int length = textLayoutResult.getLayoutInput().getText().length();
             if (selectionLayoutBuilder.isStartHandle()) {
-                previousAdjustedOffset = m1456getOffsetForPosition3MmeM6k(j, textLayoutResult);
+                previousAdjustedOffset = m1732getOffsetForPosition3MmeM6k(j, textLayoutResult);
                 Selection previousSelection3 = selectionLayoutBuilder.getPreviousSelection();
-                m1456getOffsetForPosition3MmeM6k = (previousSelection3 == null || (end = previousSelection3.getEnd()) == null) ? previousAdjustedOffset : getPreviousAdjustedOffset(end, selectionLayoutBuilder.getSelectableIdOrderingComparator(), j4, length);
+                m1732getOffsetForPosition3MmeM6k = (previousSelection3 == null || (end = previousSelection3.getEnd()) == null) ? previousAdjustedOffset : getPreviousAdjustedOffset(end, selectionLayoutBuilder.getSelectableIdOrderingComparator(), j4, length);
             } else {
-                m1456getOffsetForPosition3MmeM6k = m1456getOffsetForPosition3MmeM6k(j, textLayoutResult);
+                m1732getOffsetForPosition3MmeM6k = m1732getOffsetForPosition3MmeM6k(j, textLayoutResult);
                 Selection previousSelection4 = selectionLayoutBuilder.getPreviousSelection();
-                previousAdjustedOffset = (previousSelection4 == null || (start = previousSelection4.getStart()) == null) ? m1456getOffsetForPosition3MmeM6k : getPreviousAdjustedOffset(start, selectionLayoutBuilder.getSelectableIdOrderingComparator(), j4, length);
+                previousAdjustedOffset = (previousSelection4 == null || (start = previousSelection4.getStart()) == null) ? m1732getOffsetForPosition3MmeM6k : getPreviousAdjustedOffset(start, selectionLayoutBuilder.getSelectableIdOrderingComparator(), j4, length);
             }
-            selectionLayoutBuilder.appendInfo(j4, previousAdjustedOffset, direction5, appendSelectableInfo_Parwq6A$otherDirection, m1456getOffsetForPosition3MmeM6k, direction3, direction4, (9223372034707292159L & j2) == InlineClassHelperKt.UnspecifiedPackedFloats ? -1 : m1456getOffsetForPosition3MmeM6k(j2, textLayoutResult), textLayoutResult);
+            selectionLayoutBuilder.appendInfo(j4, previousAdjustedOffset, direction5, appendSelectableInfo_Parwq6A$otherDirection, m1732getOffsetForPosition3MmeM6k, direction3, direction4, (9223372034707292159L & j2) == InlineClassHelperKt.UnspecifiedPackedFloats ? -1 : m1732getOffsetForPosition3MmeM6k(j2, textLayoutResult), textLayoutResult);
         }
     }
 
@@ -92,19 +92,19 @@ public final class MultiWidgetSelectionDelegateKt {
     }
 
     /* renamed from: getXDirection-3MmeM6k  reason: not valid java name */
-    private static final Direction m1457getXDirection3MmeM6k(long j, Rect rect) {
+    private static final Direction m1733getXDirection3MmeM6k(long j, Rect rect) {
         int i = (int) (j >> 32);
         return Float.intBitsToFloat(i) < rect.getLeft() ? Direction.BEFORE : Float.intBitsToFloat(i) > rect.getRight() ? Direction.AFTER : Direction.ON;
     }
 
     /* renamed from: getYDirection-3MmeM6k  reason: not valid java name */
-    private static final Direction m1458getYDirection3MmeM6k(long j, Rect rect) {
+    private static final Direction m1734getYDirection3MmeM6k(long j, Rect rect) {
         int i = (int) (j & 4294967295L);
         return Float.intBitsToFloat(i) < rect.getTop() ? Direction.BEFORE : Float.intBitsToFloat(i) > rect.getBottom() ? Direction.AFTER : Direction.ON;
     }
 
     /* renamed from: getOffsetForPosition-3MmeM6k  reason: not valid java name */
-    private static final int m1456getOffsetForPosition3MmeM6k(long j, TextLayoutResult textLayoutResult) {
+    private static final int m1732getOffsetForPosition3MmeM6k(long j, TextLayoutResult textLayoutResult) {
         int i = (int) (4294967295L & j);
         if (Float.intBitsToFloat(i) <= 0.0f) {
             return 0;
@@ -112,6 +112,6 @@ public final class MultiWidgetSelectionDelegateKt {
         if (Float.intBitsToFloat(i) >= textLayoutResult.getMultiParagraph().getHeight()) {
             return textLayoutResult.getLayoutInput().getText().length();
         }
-        return textLayoutResult.m6117getOffsetForPositionk4lQ0M(j);
+        return textLayoutResult.m6683getOffsetForPositionk4lQ0M(j);
     }
 }

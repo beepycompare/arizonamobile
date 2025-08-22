@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
 import io.reactivex.internal.observers.DeferredScalarDisposable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeToObservable<T> extends Observable<T> implements HasUpstreamMaybeSource<T> {
     final MaybeSource<T> source;
 
@@ -31,7 +31,7 @@ public final class MaybeToObservable<T> extends Observable<T> implements HasUpst
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class MaybeToObservableObserver<T> extends DeferredScalarDisposable<T> implements MaybeObserver<T> {
         private static final long serialVersionUID = 7603343402964826922L;
         Disposable upstream;

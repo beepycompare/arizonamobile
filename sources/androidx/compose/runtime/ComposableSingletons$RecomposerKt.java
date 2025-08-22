@@ -5,13 +5,13 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Recomposer.kt */
-@Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposableSingletons$RecomposerKt {
     public static final ComposableSingletons$RecomposerKt INSTANCE = new ComposableSingletons$RecomposerKt();
 
-    /* renamed from: lambda-1  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f59lambda1 = ComposableLambdaKt.composableLambdaInstance(-1091980426, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.runtime.ComposableSingletons$RecomposerKt$lambda-1$1
+    /* renamed from: lambda$-1091980426  reason: not valid java name */
+    private static Function2<Composer, Integer, Unit> f55lambda$1091980426 = ComposableLambdaKt.composableLambdaInstance(-1091980426, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.runtime.ComposableSingletons$RecomposerKt$lambda$-1091980426$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -25,7 +25,7 @@ public final class ComposableSingletons$RecomposerKt {
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1091980426, i, -1, "androidx.compose.runtime.ComposableSingletons$RecomposerKt.lambda-1.<anonymous> (Recomposer.kt:417)");
+                ComposerKt.traceEventStart(-1091980426, i, -1, "androidx.compose.runtime.ComposableSingletons$RecomposerKt.lambda$-1091980426.<anonymous> (Recomposer.kt:423)");
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -33,8 +33,8 @@ public final class ComposableSingletons$RecomposerKt {
         }
     });
 
-    /* renamed from: getLambda-1$runtime_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m3458getLambda1$runtime_release() {
-        return f59lambda1;
+    /* renamed from: getLambda$-1091980426$runtime  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m3781getLambda$1091980426$runtime() {
+        return f55lambda$1091980426;
     }
 }

@@ -68,7 +68,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlinx.coroutines.flow.MutableStateFlow;
 /* compiled from: UpdateActivity.kt */
-@Metadata(d1 = {"\u0000o\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005*\u00011\b\u0007\u0018\u0000 ?2\u00020\u0001:\u0002?@B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u001a\u001a\u00020\u001b2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001dH\u0015J\b\u0010\u001e\u001a\u00020\u001bH\u0014J\b\u0010\u001f\u001a\u00020\u001bH\u0014J\b\u0010 \u001a\u00020\u001bH\u0002J\u0010\u0010!\u001a\u00020\u001b2\u0006\u0010\"\u001a\u00020\u000bH\u0002J\b\u0010#\u001a\u00020\u000bH\u0002J\u0010\u0010$\u001a\u00020\u00052\u0006\u0010%\u001a\u00020\u000bH\u0002J\u0010\u0010&\u001a\u00020\u001b2\u0006\u0010'\u001a\u00020\u0011H\u0002J\u0010\u0010(\u001a\u00020\u001b2\u0006\u0010)\u001a\u00020*H\u0003J\b\u0010+\u001a\u00020\u001bH\u0002J\b\u0010,\u001a\u00020\u001bH\u0002J\b\u0010-\u001a\u00020\u0011H\u0002J\b\u0010.\u001a\u00020\u001bH\u0002J\b\u0010/\u001a\u00020\u001bH\u0002J\b\u00103\u001a\u00020\u001bH\u0002J\b\u00104\u001a\u00020\u001bH\u0002J\b\u00105\u001a\u00020\u001bH\u0002J\b\u00106\u001a\u00020\u001bH\u0002J\"\u00107\u001a\u00020\u001b2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u0002092\b\u0010;\u001a\u0004\u0018\u00010<H\u0015J\u0010\u0010=\u001a\u00020\u001b2\u0006\u0010>\u001a\u00020\u0005H\u0002R\u0016\u0010\u0004\u001a\n \u0006*\u0004\u0018\u00010\u00050\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082.¢\u0006\u0002\n\u0000R\u001e\u0010\u0014\u001a\u00020\u00158\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R\u0010\u00100\u001a\u000201X\u0082\u0004¢\u0006\u0004\n\u0002\u00102¨\u0006A"}, d2 = {"Lcom/arizona/launcher/UpdateActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "tag", "", "kotlin.jvm.PlatformType", "mService", "Landroid/os/Messenger;", "mMessenger", "SAMP_NEED_FREE_SPACE_BYTES", "", "exoplayer", "Landroidx/media3/exoplayer/ExoPlayer;", "mUpdateMode", "Lcom/arizona/launcher/UpdateMode;", "mIsStartingUpdate", "", "binding", "Lcom/arizona/game/databinding/ActivityUpdateBinding;", "rootFactory", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;", "getRootFactory", "()Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;", "setRootFactory", "(Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;)V", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "onResume", "onDestroy", "startDownloadLauncherUpdate", "checkFreeSpace", "needFreeSpaceSize", "freeSpace", "convertBytesToHumanReadable", "bytes", "downloadInfoVisibility", "isVisible", "updateViewInformation", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "requestUpdateGameData", "requestReUpdateGameData", "isOnline", "setUpdateServiceAsBackground", "resetProgress", "mConnection", "com/arizona/launcher/UpdateActivity$mConnection$1", "Lcom/arizona/launcher/UpdateActivity$mConnection$1;", "requestUpdateInfo", "requestUpdateStatus", "showDialog", "hideDialog", "onActivityResult", "requestCode", "", "resultCode", "data", "Landroid/content/Intent;", "installApk", "apkPath", "Companion", "IncomingHandler", "app_arizonaRelease_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000o\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005*\u00011\b\u0007\u0018\u0000 ?2\u00020\u0001:\u0002?@B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u001a\u001a\u00020\u001b2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001dH\u0015J\b\u0010\u001e\u001a\u00020\u001bH\u0014J\b\u0010\u001f\u001a\u00020\u001bH\u0014J\b\u0010 \u001a\u00020\u001bH\u0002J\u0010\u0010!\u001a\u00020\u001b2\u0006\u0010\"\u001a\u00020\u000bH\u0002J\b\u0010#\u001a\u00020\u000bH\u0002J\u0010\u0010$\u001a\u00020\u00052\u0006\u0010%\u001a\u00020\u000bH\u0002J\u0010\u0010&\u001a\u00020\u001b2\u0006\u0010'\u001a\u00020\u0011H\u0002J\u0010\u0010(\u001a\u00020\u001b2\u0006\u0010)\u001a\u00020*H\u0003J\b\u0010+\u001a\u00020\u001bH\u0002J\b\u0010,\u001a\u00020\u001bH\u0002J\b\u0010-\u001a\u00020\u0011H\u0002J\b\u0010.\u001a\u00020\u001bH\u0002J\b\u0010/\u001a\u00020\u001bH\u0002J\b\u00103\u001a\u00020\u001bH\u0002J\b\u00104\u001a\u00020\u001bH\u0002J\b\u00105\u001a\u00020\u001bH\u0002J\b\u00106\u001a\u00020\u001bH\u0002J\"\u00107\u001a\u00020\u001b2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u0002092\b\u0010;\u001a\u0004\u0018\u00010<H\u0015J\u0010\u0010=\u001a\u00020\u001b2\u0006\u0010>\u001a\u00020\u0005H\u0002R\u0016\u0010\u0004\u001a\n \u0006*\u0004\u0018\u00010\u00050\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082.¢\u0006\u0002\n\u0000R\u001e\u0010\u0014\u001a\u00020\u00158\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R\u0010\u00100\u001a\u000201X\u0082\u0004¢\u0006\u0004\n\u0002\u00102¨\u0006A"}, d2 = {"Lcom/arizona/launcher/UpdateActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "tag", "", "kotlin.jvm.PlatformType", "mService", "Landroid/os/Messenger;", "mMessenger", "SAMP_NEED_FREE_SPACE_BYTES", "", "exoplayer", "Landroidx/media3/exoplayer/ExoPlayer;", "mUpdateMode", "Lcom/arizona/launcher/UpdateMode;", "mIsStartingUpdate", "", "binding", "Lcom/arizona/game/databinding/ActivityUpdateBinding;", "rootFactory", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;", "getRootFactory", "()Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;", "setRootFactory", "(Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;)V", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "onResume", "onDestroy", "startDownloadLauncherUpdate", "checkFreeSpace", "needFreeSpaceSize", "freeSpace", "convertBytesToHumanReadable", "bytes", "downloadInfoVisibility", "isVisible", "updateViewInformation", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "requestUpdateGameData", "requestReUpdateGameData", "isOnline", "setUpdateServiceAsBackground", "resetProgress", "mConnection", "com/arizona/launcher/UpdateActivity$mConnection$1", "Lcom/arizona/launcher/UpdateActivity$mConnection$1;", "requestUpdateInfo", "requestUpdateStatus", "showDialog", "hideDialog", "onActivityResult", "requestCode", "", "resultCode", "data", "Landroid/content/Intent;", "installApk", "apkPath", "Companion", "IncomingHandler", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
 public final class UpdateActivity extends Hilt_UpdateActivity {
@@ -118,7 +118,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     };
 
     /* compiled from: UpdateActivity.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Lcom/arizona/launcher/UpdateActivity$Companion;", "", "<init>", "()V", "UPDATE_MODE", "", "INSTALL_LAUNCHER", "", "app_arizonaRelease_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Lcom/arizona/launcher/UpdateActivity$Companion;", "", "<init>", "()V", "UPDATE_MODE", "", "INSTALL_LAUNCHER", "", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -146,6 +146,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.arizona.launcher.Hilt_UpdateActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     public void onCreate(Bundle bundle) {
+        UpdateMode updateMode;
         super.onCreate(bundle);
         ActivityUpdateBinding inflate = ActivityUpdateBinding.inflate(getLayoutInflater());
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
@@ -169,13 +170,15 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
         }), 1, null);
         String stringExtra = getIntent().getStringExtra(UPDATE_MODE);
         if (stringExtra != null) {
-            this.mUpdateMode = UpdateMode.valueOf(stringExtra);
-            String stringExtra2 = getIntent().getStringExtra(UPDATE_MODE);
-            Intrinsics.checkNotNull(stringExtra2);
-            this.mUpdateMode = UpdateMode.valueOf(stringExtra2);
-            return;
+            updateMode = UpdateMode.valueOf(stringExtra);
+        } else {
+            Log.d("updateActivity", "onCreate: Update mode returned error: mode");
+            updateMode = UpdateMode.GameUpdate;
         }
-        throw new RuntimeException("Update mode returned error: mode");
+        this.mUpdateMode = updateMode;
+        String stringExtra2 = getIntent().getStringExtra(UPDATE_MODE);
+        Intrinsics.checkNotNull(stringExtra2);
+        this.mUpdateMode = UpdateMode.valueOf(stringExtra2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -276,7 +279,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     }
 
     /* compiled from: UpdateActivity.kt */
-    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0017R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00030\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/arizona/launcher/UpdateActivity$IncomingHandler;", "Landroid/os/Handler;", "ref", "Lcom/arizona/launcher/UpdateActivity;", "<init>", "(Lcom/arizona/launcher/UpdateActivity;)V", "activityRef", "Ljava/lang/ref/WeakReference;", "handleMessage", "", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "app_arizonaRelease_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0017R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00030\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/arizona/launcher/UpdateActivity$IncomingHandler;", "Landroid/os/Handler;", "ref", "Lcom/arizona/launcher/UpdateActivity;", "<init>", "(Lcom/arizona/launcher/UpdateActivity;)V", "activityRef", "Ljava/lang/ref/WeakReference;", "handleMessage", "", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     private static final class IncomingHandler extends Handler {
         private final WeakReference<UpdateActivity> activityRef;
@@ -510,8 +513,8 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                             } while (!stateStore9.compareAndSet(stateStore9.getValue(), new ErrorDialogExternalUiState(ErrorDialogType.ConnectionError, "Повторить", "Выйти", "Ошибка подключения", "Ошибка подключения к серверу обновления, \nпроверьте ваше интернет соединение")));
                             return;
                         }
-                        Log.d("HAVE_TO_CHECK_1", "We're waiting app-arizona-release_web.apk file");
-                        String absolutePath = new File(updateActivity.getExternalFilesDir(null), "app-arizona-release_web.apk").getAbsolutePath();
+                        Log.d("HAVE_TO_CHECK_1", "We're waiting app-arizona-release.apk file");
+                        String absolutePath = new File(updateActivity.getExternalFilesDir(null), "app-arizona-release.apk").getAbsolutePath();
                         Intrinsics.checkNotNullExpressionValue(absolutePath, "getAbsolutePath(...)");
                         updateActivity.installApk(absolutePath);
                         return;
@@ -835,7 +838,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     public final void installApk(String str) {
         File file = new File(str);
         Uri.fromFile(file);
-        Uri uriForFile = FileProvider.getUriForFile(this, "com.arizona21.game.web.fileprovider", file);
+        Uri uriForFile = FileProvider.getUriForFile(this, "com.arizona21.game.fileprovider", file);
         Intent intent = new Intent("android.intent.action.VIEW");
         intent.putExtra("android.intent.extra.NOT_UNKNOWN_SOURCE", true);
         intent.setDataAndType(uriForFile, "application/vnd.android.package-archive");

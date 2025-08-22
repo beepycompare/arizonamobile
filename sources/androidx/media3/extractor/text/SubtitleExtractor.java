@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class SubtitleExtractor implements Extractor {
     private static final int DEFAULT_BUFFER_SIZE = 1024;
     private static final int STATE_CREATED = 0;
@@ -147,7 +147,7 @@ public class SubtitleExtractor implements Extractor {
             this.subtitleParser.parse(this.subtitleData, 0, this.bytesRead, allCues, new Consumer() { // from class: androidx.media3.extractor.text.SubtitleExtractor$$ExternalSyntheticLambda0
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    SubtitleExtractor.this.m7475xdbba10ad((CuesWithTiming) obj);
+                    SubtitleExtractor.this.m8041xdbba10ad((CuesWithTiming) obj);
                 }
             });
             Collections.sort(this.samples);
@@ -163,7 +163,7 @@ public class SubtitleExtractor implements Extractor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$parseAndWriteToOutput$0$androidx-media3-extractor-text-SubtitleExtractor  reason: not valid java name */
-    public /* synthetic */ void m7475xdbba10ad(CuesWithTiming cuesWithTiming) {
+    public /* synthetic */ void m8041xdbba10ad(CuesWithTiming cuesWithTiming) {
         Sample sample = new Sample(cuesWithTiming.startTimeUs, this.cueEncoder.encode(cuesWithTiming.cues, cuesWithTiming.durationUs));
         this.samples.add(sample);
         if (this.seekTimeUs == C.TIME_UNSET || cuesWithTiming.endTimeUs >= this.seekTimeUs) {
@@ -187,7 +187,7 @@ public class SubtitleExtractor implements Extractor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Sample implements Comparable<Sample> {
         private final byte[] data;
         private final long timeUs;

@@ -1,41 +1,16 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Yb implements InterfaceC0168c {
+public final class Yb {
+    public final C0439ml c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0220e0 f732a;
-    public final An b = new An();
+    public final C0581se f740a = new C0581se("Context");
+    public final C0581se b = new C0581se("Config");
+    public final C0581se d = new C0581se("Sender");
+    public final C0581se e = new C0581se("Event");
+    public final C0581se f = new C0581se("Payload");
 
-    public Yb(InterfaceC0220e0 interfaceC0220e0) {
-        this.f732a = interfaceC0220e0;
-    }
-
-    public static final void a(Yb yb, U u) {
-        yb.f732a.a(u);
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0168c
-    public final void onAppNotResponding() {
-        StackTraceElement[] stackTraceElementArr;
-        An an = this.b;
-        Thread a2 = an.f345a.a();
-        try {
-            stackTraceElementArr = an.f345a.b();
-            if (stackTraceElementArr == null) {
-                try {
-                    stackTraceElementArr = a2.getStackTrace();
-                } catch (SecurityException unused) {
-                }
-            }
-        } catch (SecurityException unused2) {
-            stackTraceElementArr = null;
-        }
-        final U u = new U((C0618tn) an.b.apply(a2, stackTraceElementArr), an.a(a2, null), an.c.b());
-        ((U9) C0699x4.l().c.a()).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.Yb$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                Yb.a(Yb.this, u);
-            }
-        });
+    public Yb(C0617u0 c0617u0) {
+        this.c = new C0439ml(c0617u0);
     }
 }

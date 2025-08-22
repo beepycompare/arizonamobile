@@ -7,7 +7,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PlatformFontFamilyTypefaceAdapter.android.kt */
-@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\b\u0000\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002JB\u0010\u0005\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0012\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e0\f2\u0012\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00100\fH\u0016R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Landroidx/compose/ui/text/font/PlatformFontFamilyTypefaceAdapter;", "Landroidx/compose/ui/text/font/FontFamilyTypefaceAdapter;", "()V", "platformTypefaceResolver", "Landroidx/compose/ui/text/font/PlatformTypefaces;", "resolve", "Landroidx/compose/ui/text/font/TypefaceResult;", "typefaceRequest", "Landroidx/compose/ui/text/font/TypefaceRequest;", "platformFontLoader", "Landroidx/compose/ui/text/font/PlatformFontLoader;", "onAsyncCompletion", "Lkotlin/Function1;", "Landroidx/compose/ui/text/font/TypefaceResult$Immutable;", "", "createDefaultTypeface", "", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003JB\u0010\u0006\u001a\u0004\u0018\u00010\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0012\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u000f0\r2\u0012\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00110\rH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Landroidx/compose/ui/text/font/PlatformFontFamilyTypefaceAdapter;", "Landroidx/compose/ui/text/font/FontFamilyTypefaceAdapter;", "<init>", "()V", "platformTypefaceResolver", "Landroidx/compose/ui/text/font/PlatformTypefaces;", "resolve", "Landroidx/compose/ui/text/font/TypefaceResult;", "typefaceRequest", "Landroidx/compose/ui/text/font/TypefaceRequest;", "platformFontLoader", "Landroidx/compose/ui/text/font/PlatformFontLoader;", "onAsyncCompletion", "Lkotlin/Function1;", "Landroidx/compose/ui/text/font/TypefaceResult$Immutable;", "", "createDefaultTypeface", "", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class PlatformFontFamilyTypefaceAdapter implements FontFamilyTypefaceAdapter {
     public static final int $stable = 8;
@@ -15,19 +15,19 @@ public final class PlatformFontFamilyTypefaceAdapter implements FontFamilyTypefa
 
     @Override // androidx.compose.ui.text.font.FontFamilyTypefaceAdapter
     public TypefaceResult resolve(TypefaceRequest typefaceRequest, PlatformFontLoader platformFontLoader, Function1<? super TypefaceResult.Immutable, Unit> function1, Function1<? super TypefaceRequest, ? extends Object> function12) {
-        android.graphics.Typeface mo6401getNativeTypefacePYhJU0U;
+        android.graphics.Typeface mo6854createDefaultFO1MlWM;
         FontFamily fontFamily = typefaceRequest.getFontFamily();
-        if (fontFamily == null ? true : fontFamily instanceof DefaultFontFamily) {
-            mo6401getNativeTypefacePYhJU0U = this.platformTypefaceResolver.mo6286createDefaultFO1MlWM(typefaceRequest.getFontWeight(), typefaceRequest.m6304getFontStyle_LCdwA());
+        if (fontFamily == null || (fontFamily instanceof DefaultFontFamily)) {
+            mo6854createDefaultFO1MlWM = this.platformTypefaceResolver.mo6854createDefaultFO1MlWM(typefaceRequest.getFontWeight(), typefaceRequest.m6872getFontStyle_LCdwA());
         } else if (fontFamily instanceof GenericFontFamily) {
-            mo6401getNativeTypefacePYhJU0U = this.platformTypefaceResolver.mo6287createNamedRetOiIg((GenericFontFamily) typefaceRequest.getFontFamily(), typefaceRequest.getFontWeight(), typefaceRequest.m6304getFontStyle_LCdwA());
+            mo6854createDefaultFO1MlWM = this.platformTypefaceResolver.mo6855createNamedRetOiIg((GenericFontFamily) typefaceRequest.getFontFamily(), typefaceRequest.getFontWeight(), typefaceRequest.m6872getFontStyle_LCdwA());
         } else if (!(fontFamily instanceof LoadedFontFamily)) {
             return null;
         } else {
             Typeface typeface = ((LoadedFontFamily) typefaceRequest.getFontFamily()).getTypeface();
             Intrinsics.checkNotNull(typeface, "null cannot be cast to non-null type androidx.compose.ui.text.platform.AndroidTypeface");
-            mo6401getNativeTypefacePYhJU0U = ((AndroidTypeface) typeface).mo6401getNativeTypefacePYhJU0U(typefaceRequest.getFontWeight(), typefaceRequest.m6304getFontStyle_LCdwA(), typefaceRequest.m6305getFontSynthesisGVVA2EU());
+            mo6854createDefaultFO1MlWM = ((AndroidTypeface) typeface).mo6969getNativeTypefacePYhJU0U(typefaceRequest.getFontWeight(), typefaceRequest.m6872getFontStyle_LCdwA(), typefaceRequest.m6873getFontSynthesisGVVA2EU());
         }
-        return new TypefaceResult.Immutable(mo6401getNativeTypefacePYhJU0U, false, 2, null);
+        return new TypefaceResult.Immutable(mo6854createDefaultFO1MlWM, false, 2, null);
     }
 }

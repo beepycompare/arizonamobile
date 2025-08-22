@@ -20,17 +20,17 @@ import kotlin.ReplaceWith;
 public final class ProgressIndicatorDefaults {
     public static final int $stable = 0;
     public static final ProgressIndicatorDefaults INSTANCE = new ProgressIndicatorDefaults();
-    private static final float CircularStrokeWidth = ProgressIndicatorTokens.INSTANCE.m3272getTrackThicknessD9Ej5fM();
-    private static final int LinearStrokeCap = StrokeCap.Companion.m4433getRoundKaPHkGw();
-    private static final int CircularDeterminateStrokeCap = StrokeCap.Companion.m4433getRoundKaPHkGw();
-    private static final int CircularIndeterminateStrokeCap = StrokeCap.Companion.m4433getRoundKaPHkGw();
-    private static final float LinearTrackStopIndicatorSize = ProgressIndicatorTokens.INSTANCE.m3271getStopSizeD9Ej5fM();
-    private static final float LinearIndicatorTrackGapSize = ProgressIndicatorTokens.INSTANCE.m3268getActiveTrackSpaceD9Ej5fM();
-    private static final float CircularIndicatorTrackGapSize = ProgressIndicatorTokens.INSTANCE.m3268getActiveTrackSpaceD9Ej5fM();
+    private static final float CircularStrokeWidth = ProgressIndicatorTokens.INSTANCE.m3579getTrackThicknessD9Ej5fM();
+    private static final int LinearStrokeCap = StrokeCap.Companion.m4908getRoundKaPHkGw();
+    private static final int CircularDeterminateStrokeCap = StrokeCap.Companion.m4908getRoundKaPHkGw();
+    private static final int CircularIndeterminateStrokeCap = StrokeCap.Companion.m4908getRoundKaPHkGw();
+    private static final float LinearTrackStopIndicatorSize = ProgressIndicatorTokens.INSTANCE.m3578getStopSizeD9Ej5fM();
+    private static final float LinearIndicatorTrackGapSize = ProgressIndicatorTokens.INSTANCE.m3575getActiveTrackSpaceD9Ej5fM();
+    private static final float CircularIndicatorTrackGapSize = ProgressIndicatorTokens.INSTANCE.m3575getActiveTrackSpaceD9Ej5fM();
     private static final SpringSpec<Float> ProgressAnimationSpec = new SpringSpec<>(1.0f, 50.0f, Float.valueOf(0.001f));
 
     /* renamed from: getCircularIndicatorTrackGapSize-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m2157getCircularIndicatorTrackGapSizeD9Ej5fM$annotations() {
+    public static /* synthetic */ void m2464getCircularIndicatorTrackGapSizeD9Ej5fM$annotations() {
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Renamed to circularDeterminateTrackColor or circularIndeterminateTrackColor", replaceWith = @ReplaceWith(expression = "ProgressIndicatorDefaults.circularIndeterminateTrackColor", imports = {}))
@@ -38,11 +38,11 @@ public final class ProgressIndicatorDefaults {
     }
 
     /* renamed from: getLinearIndicatorTrackGapSize-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m2158getLinearIndicatorTrackGapSizeD9Ej5fM$annotations() {
+    public static /* synthetic */ void m2465getLinearIndicatorTrackGapSizeD9Ej5fM$annotations() {
     }
 
     /* renamed from: getLinearTrackStopIndicatorSize-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m2159getLinearTrackStopIndicatorSizeD9Ej5fM$annotations() {
+    public static /* synthetic */ void m2466getLinearTrackStopIndicatorSizeD9Ej5fM$annotations() {
     }
 
     private ProgressIndicatorDefaults() {
@@ -92,12 +92,12 @@ public final class ProgressIndicatorDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-404222247, i, -1, "androidx.compose.material3.ProgressIndicatorDefaults.<get-circularTrackColor> (ProgressIndicator.kt:860)");
         }
-        long m4113getTransparent0d7_KjU = Color.Companion.m4113getTransparent0d7_KjU();
+        long m4572getTransparent0d7_KjU = Color.Companion.m4572getTransparent0d7_KjU();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m4113getTransparent0d7_KjU;
+        return m4572getTransparent0d7_KjU;
     }
 
     public final long getCircularDeterminateTrackColor(Composer composer, int i) {
@@ -118,46 +118,46 @@ public final class ProgressIndicatorDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1947901123, i, -1, "androidx.compose.material3.ProgressIndicatorDefaults.<get-circularIndeterminateTrackColor> (ProgressIndicator.kt:868)");
         }
-        long m4113getTransparent0d7_KjU = Color.Companion.m4113getTransparent0d7_KjU();
+        long m4572getTransparent0d7_KjU = Color.Companion.m4572getTransparent0d7_KjU();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m4113getTransparent0d7_KjU;
+        return m4572getTransparent0d7_KjU;
     }
 
     /* renamed from: getCircularStrokeWidth-D9Ej5fM  reason: not valid java name */
-    public final float m2164getCircularStrokeWidthD9Ej5fM() {
+    public final float m2471getCircularStrokeWidthD9Ej5fM() {
         return CircularStrokeWidth;
     }
 
     /* renamed from: getLinearStrokeCap-KaPHkGw  reason: not valid java name */
-    public final int m2166getLinearStrokeCapKaPHkGw() {
+    public final int m2473getLinearStrokeCapKaPHkGw() {
         return LinearStrokeCap;
     }
 
     /* renamed from: getCircularDeterminateStrokeCap-KaPHkGw  reason: not valid java name */
-    public final int m2161getCircularDeterminateStrokeCapKaPHkGw() {
+    public final int m2468getCircularDeterminateStrokeCapKaPHkGw() {
         return CircularDeterminateStrokeCap;
     }
 
     /* renamed from: getCircularIndeterminateStrokeCap-KaPHkGw  reason: not valid java name */
-    public final int m2162getCircularIndeterminateStrokeCapKaPHkGw() {
+    public final int m2469getCircularIndeterminateStrokeCapKaPHkGw() {
         return CircularIndeterminateStrokeCap;
     }
 
     /* renamed from: getLinearTrackStopIndicatorSize-D9Ej5fM  reason: not valid java name */
-    public final float m2167getLinearTrackStopIndicatorSizeD9Ej5fM() {
+    public final float m2474getLinearTrackStopIndicatorSizeD9Ej5fM() {
         return LinearTrackStopIndicatorSize;
     }
 
     /* renamed from: getLinearIndicatorTrackGapSize-D9Ej5fM  reason: not valid java name */
-    public final float m2165getLinearIndicatorTrackGapSizeD9Ej5fM() {
+    public final float m2472getLinearIndicatorTrackGapSizeD9Ej5fM() {
         return LinearIndicatorTrackGapSize;
     }
 
     /* renamed from: getCircularIndicatorTrackGapSize-D9Ej5fM  reason: not valid java name */
-    public final float m2163getCircularIndicatorTrackGapSizeD9Ej5fM() {
+    public final float m2470getCircularIndicatorTrackGapSizeD9Ej5fM() {
         return CircularIndicatorTrackGapSize;
     }
 
@@ -166,14 +166,14 @@ public final class ProgressIndicatorDefaults {
     }
 
     /* renamed from: drawStopIndicator-EgI2THU  reason: not valid java name */
-    public final void m2160drawStopIndicatorEgI2THU(DrawScope drawScope, float f, long j, int i) {
-        float min = Math.min(drawScope.mo389toPx0680j_4(f), Size.m3903getHeightimpl(drawScope.mo4640getSizeNHjbRc()));
-        float m3903getHeightimpl = (Size.m3903getHeightimpl(drawScope.mo4640getSizeNHjbRc()) - min) / 2;
-        if (StrokeCap.m4428equalsimpl0(i, StrokeCap.Companion.m4433getRoundKaPHkGw())) {
+    public final void m2467drawStopIndicatorEgI2THU(DrawScope drawScope, float f, long j, int i) {
+        float min = Math.min(drawScope.mo419toPx0680j_4(f), Size.m4359getHeightimpl(drawScope.mo5116getSizeNHjbRc()));
+        float m4359getHeightimpl = (Size.m4359getHeightimpl(drawScope.mo5116getSizeNHjbRc()) - min) / 2;
+        if (StrokeCap.m4903equalsimpl0(i, StrokeCap.Companion.m4908getRoundKaPHkGw())) {
             float f2 = min / 2.0f;
-            DrawScope.m4621drawCircleVaOC9Bg$default(drawScope, j, f2, OffsetKt.Offset((Size.m3906getWidthimpl(drawScope.mo4640getSizeNHjbRc()) - f2) - m3903getHeightimpl, Size.m3903getHeightimpl(drawScope.mo4640getSizeNHjbRc()) / 2.0f), 0.0f, null, null, 0, MenuKt.InTransitionDuration, null);
+            DrawScope.m5097drawCircleVaOC9Bg$default(drawScope, j, f2, OffsetKt.Offset((Size.m4362getWidthimpl(drawScope.mo5116getSizeNHjbRc()) - f2) - m4359getHeightimpl, Size.m4359getHeightimpl(drawScope.mo5116getSizeNHjbRc()) / 2.0f), 0.0f, null, null, 0, MenuKt.InTransitionDuration, null);
             return;
         }
-        DrawScope.m4634drawRectnJ9OG0$default(drawScope, j, OffsetKt.Offset((Size.m3906getWidthimpl(drawScope.mo4640getSizeNHjbRc()) - min) - m3903getHeightimpl, (Size.m3903getHeightimpl(drawScope.mo4640getSizeNHjbRc()) - min) / 2.0f), SizeKt.Size(min, min), 0.0f, null, null, 0, MenuKt.InTransitionDuration, null);
+        DrawScope.m5110drawRectnJ9OG0$default(drawScope, j, OffsetKt.Offset((Size.m4362getWidthimpl(drawScope.mo5116getSizeNHjbRc()) - min) - m4359getHeightimpl, (Size.m4359getHeightimpl(drawScope.mo5116getSizeNHjbRc()) - min) / 2.0f), SizeKt.Size(min, min), 0.0f, null, null, 0, MenuKt.InTransitionDuration, null);
     }
 }

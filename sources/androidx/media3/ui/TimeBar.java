@@ -1,8 +1,8 @@
 package androidx.media3.ui;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface TimeBar {
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface OnScrubListener {
         void onScrubMove(TimeBar timeBar, long j);
 

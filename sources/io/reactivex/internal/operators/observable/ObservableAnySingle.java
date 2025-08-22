@@ -11,7 +11,7 @@ import io.reactivex.functions.Predicate;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.FuseToObservable;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableAnySingle<T> extends Single<Boolean> implements FuseToObservable<Boolean> {
     final Predicate<? super T> predicate;
     final ObservableSource<T> source;
@@ -31,7 +31,7 @@ public final class ObservableAnySingle<T> extends Single<Boolean> implements Fus
         return RxJavaPlugins.onAssembly(new ObservableAny(this.source, this.predicate));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class AnyObserver<T> implements Observer<T>, Disposable {
         boolean done;
         final SingleObserver<? super Boolean> downstream;

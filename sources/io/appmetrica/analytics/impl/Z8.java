@@ -1,7 +1,16 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public interface Z8 {
-    S8 a(C0402l6 c0402l6);
 
-    byte[] a(byte[] bArr);
+import io.appmetrica.analytics.ModuleEvent;
+/* loaded from: classes4.dex */
+public abstract /* synthetic */ class Z8 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final /* synthetic */ int[] f755a;
+
+    static {
+        int[] iArr = new int[ModuleEvent.Category.values().length];
+        iArr[ModuleEvent.Category.GENERAL.ordinal()] = 1;
+        iArr[ModuleEvent.Category.SYSTEM.ordinal()] = 2;
+        f755a = iArr;
+    }
 }

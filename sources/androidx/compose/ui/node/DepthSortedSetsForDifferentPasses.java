@@ -1,71 +1,119 @@
 package androidx.compose.ui.node;
 
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
-import kotlin.jvm.functions.Function2;
+import kotlin.jvm.functions.Function3;
 /* compiled from: DepthSortedSet.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\u0016\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u0003J\u000e\u0010\r\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u000bJ\u0016\u0010\r\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u0003J\u0006\u0010\u000e\u001a\u00020\u0003J\u000e\u0010\u000e\u001a\u00020\u00032\u0006\u0010\f\u001a\u00020\u0003J\u0006\u0010\u000f\u001a\u00020\u0003J\u0006\u0010\u0010\u001a\u00020\u000bJC\u0010\u0011\u001a\u00020\t28\b\u0004\u0010\u0012\u001a2\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0014\u0012\b\b\u0015\u0012\u0004\b\b(\n\u0012\u0013\u0012\u00110\u0003¢\u0006\f\b\u0014\u0012\b\b\u0015\u0012\u0004\b\b(\f\u0012\u0004\u0012\u00020\t0\u0013H\u0086\bJ\u000e\u0010\u0016\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u000bJ\u0016\u0010\u0016\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u0003R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;", "", "extraAssertions", "", "(Z)V", "lookaheadSet", "Landroidx/compose/ui/node/DepthSortedSet;", "set", "add", "", "node", "Landroidx/compose/ui/node/LayoutNode;", "affectsLookahead", "contains", "isEmpty", "isNotEmpty", "pop", "popEach", "block", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "remove", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\n\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u0003J\u000e\u0010\n\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\fJ\u0016\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0010\u001a\u00020\u0011J\u000e\u0010\u0012\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\fJX\u0010\u0013\u001a\u00020\u000f2M\b\u0004\u0010\u0014\u001aG\u0012\u0013\u0012\u00110\f¢\u0006\f\b\u0016\u0012\b\b\u0017\u0012\u0004\b\b(\u000b\u0012\u0013\u0012\u00110\u0003¢\u0006\f\b\u0016\u0012\b\b\u0017\u0012\u0004\b\b(\r\u0012\u0013\u0012\u00110\u0003¢\u0006\f\b\u0016\u0012\b\b\u0017\u0012\u0004\b\b(\u0018\u0012\u0004\u0012\u00020\u000f0\u0015H\u0086\bJ\u0006\u0010\u0019\u001a\u00020\u0003J\u0006\u0010\u001d\u001a\u00020\u0003R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u001a\u001a\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\u001b\u0010\u001c¨\u0006\u001e"}, d2 = {"Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;", "", "extraAssertions", "", "<init>", "(Z)V", "lookaheadAndAncestorMeasureSet", "Landroidx/compose/ui/node/DepthSortedSet;", "lookaheadAndAncestorPlaceSet", "approachSet", "contains", "node", "Landroidx/compose/ui/node/LayoutNode;", "affectsLookahead", "add", "", "invalidation", "Landroidx/compose/ui/node/Invalidation;", "remove", "popEach", "block", "Lkotlin/Function3;", "Lkotlin/ParameterName;", "name", "relayoutNeeded", "isEmpty", "affectsLookaheadMeasure", "getAffectsLookaheadMeasure", "()Z", "isNotEmpty", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class DepthSortedSetsForDifferentPasses {
     public static final int $stable = 8;
-    private final DepthSortedSet lookaheadSet;
-    private final DepthSortedSet set;
+    private final DepthSortedSet approachSet;
+    private final DepthSortedSet lookaheadAndAncestorMeasureSet;
+    private final DepthSortedSet lookaheadAndAncestorPlaceSet;
+
+    /* compiled from: DepthSortedSet.kt */
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
+    public /* synthetic */ class WhenMappings {
+        public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+
+        static {
+            int[] iArr = new int[Invalidation.values().length];
+            try {
+                iArr[Invalidation.LookaheadMeasurement.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[Invalidation.LookaheadPlacement.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[Invalidation.Measurement.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[Invalidation.Placement.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            $EnumSwitchMapping$0 = iArr;
+        }
+    }
 
     public DepthSortedSetsForDifferentPasses(boolean z) {
-        this.lookaheadSet = new DepthSortedSet(z);
-        this.set = new DepthSortedSet(z);
+        this.lookaheadAndAncestorMeasureSet = new DepthSortedSet(z);
+        this.lookaheadAndAncestorPlaceSet = new DepthSortedSet(z);
+        this.approachSet = new DepthSortedSet(z);
     }
 
     public final boolean contains(LayoutNode layoutNode, boolean z) {
-        boolean contains = this.lookaheadSet.contains(layoutNode);
-        return z ? contains : contains || this.set.contains(layoutNode);
+        boolean z2 = layoutNode.getLookaheadRoot$ui_release() == null;
+        boolean z3 = this.lookaheadAndAncestorMeasureSet.contains(layoutNode) || this.lookaheadAndAncestorPlaceSet.contains(layoutNode);
+        return z ? !z2 && z3 : (z2 && z3) || this.approachSet.contains(layoutNode);
     }
 
     public final boolean contains(LayoutNode layoutNode) {
-        return this.lookaheadSet.contains(layoutNode) || this.set.contains(layoutNode);
+        return this.lookaheadAndAncestorMeasureSet.contains(layoutNode) || this.lookaheadAndAncestorPlaceSet.contains(layoutNode) || this.approachSet.contains(layoutNode);
     }
 
-    public final void add(LayoutNode layoutNode, boolean z) {
-        if (z) {
-            this.lookaheadSet.add(layoutNode);
-            this.set.add(layoutNode);
-        } else if (this.lookaheadSet.contains(layoutNode)) {
+    public final void add(LayoutNode layoutNode, Invalidation invalidation) {
+        int i = WhenMappings.$EnumSwitchMapping$0[invalidation.ordinal()];
+        if (i == 1) {
+            this.lookaheadAndAncestorMeasureSet.add(layoutNode);
+            this.approachSet.add(layoutNode);
+        } else if (i == 2) {
+            this.lookaheadAndAncestorPlaceSet.add(layoutNode);
+            this.approachSet.add(layoutNode);
+        } else if (i == 3) {
+            if (layoutNode.getLookaheadRoot$ui_release() != null) {
+                this.approachSet.add(layoutNode);
+            } else {
+                this.lookaheadAndAncestorMeasureSet.add(layoutNode);
+            }
+        } else if (i != 4) {
+            throw new NoWhenBranchMatchedException();
         } else {
-            this.set.add(layoutNode);
+            if (layoutNode.getLookaheadRoot$ui_release() != null) {
+                this.approachSet.add(layoutNode);
+            } else {
+                this.lookaheadAndAncestorPlaceSet.add(layoutNode);
+            }
         }
-    }
-
-    public final boolean remove(LayoutNode layoutNode, boolean z) {
-        if (z) {
-            return this.lookaheadSet.remove(layoutNode);
-        }
-        return this.set.remove(layoutNode);
     }
 
     public final boolean remove(LayoutNode layoutNode) {
-        return this.set.remove(layoutNode) || this.lookaheadSet.remove(layoutNode);
+        return this.approachSet.remove(layoutNode) || this.lookaheadAndAncestorMeasureSet.remove(layoutNode) || this.lookaheadAndAncestorPlaceSet.remove(layoutNode);
     }
 
-    public final LayoutNode pop() {
-        if (!this.lookaheadSet.isEmpty()) {
-            return this.lookaheadSet.pop();
-        }
-        return this.set.pop();
-    }
-
-    public final void popEach(Function2<? super LayoutNode, ? super Boolean, Unit> function2) {
-        while (isNotEmpty()) {
-            boolean isEmpty = this.lookaheadSet.isEmpty();
-            function2.invoke((!isEmpty ? this.lookaheadSet : this.set).pop(), Boolean.valueOf(!isEmpty));
+    public final void popEach(Function3<? super LayoutNode, ? super Boolean, ? super Boolean, Unit> function3) {
+        LayoutNode pop;
+        while (true) {
+            boolean z = false;
+            if (!this.lookaheadAndAncestorMeasureSet.isEmpty()) {
+                pop = this.lookaheadAndAncestorMeasureSet.pop();
+                z = pop.getLookaheadRoot$ui_release() != null;
+                r1 = false;
+            } else if (!this.lookaheadAndAncestorPlaceSet.isEmpty()) {
+                pop = this.lookaheadAndAncestorPlaceSet.pop();
+                if (pop.getLookaheadRoot$ui_release() != null) {
+                    z = true;
+                }
+            } else if (this.approachSet.isEmpty()) {
+                return;
+            } else {
+                pop = this.approachSet.pop();
+            }
+            function3.invoke(pop, Boolean.valueOf(z), Boolean.valueOf(r1));
         }
     }
 
     public final boolean isEmpty() {
-        return this.set.isEmpty() && this.lookaheadSet.isEmpty();
+        return this.lookaheadAndAncestorMeasureSet.isEmpty() && this.approachSet.isEmpty() && this.lookaheadAndAncestorPlaceSet.isEmpty();
     }
 
-    public final boolean isEmpty(boolean z) {
-        return (z ? this.lookaheadSet : this.set).isEmpty();
+    public final boolean getAffectsLookaheadMeasure() {
+        return (this.approachSet.isEmpty() || this.lookaheadAndAncestorMeasureSet.isEmpty()) ? false : true;
     }
 
     public final boolean isNotEmpty() {

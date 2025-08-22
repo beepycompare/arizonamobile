@@ -9,7 +9,7 @@ import io.reactivex.internal.fuseable.FuseToFlowable;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableIgnoreElementsCompletable<T> extends Completable implements FuseToFlowable<T> {
     final Flowable<T> source;
 
@@ -27,7 +27,7 @@ public final class FlowableIgnoreElementsCompletable<T> extends Completable impl
         return RxJavaPlugins.onAssembly(new FlowableIgnoreElements(this.source));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class IgnoreElementsSubscriber<T> implements FlowableSubscriber<T>, Disposable {
         final CompletableObserver downstream;
         Subscription upstream;

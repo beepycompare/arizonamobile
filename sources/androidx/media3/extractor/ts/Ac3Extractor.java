@@ -12,7 +12,7 @@ import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.ts.TsPayloadReader;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Ac3Extractor implements Extractor {
     private static final int AC3_SYNC_WORD = 2935;
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: androidx.media3.extractor.ts.Ac3Extractor$$ExternalSyntheticLambda0

@@ -9,7 +9,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableAmb extends Completable {
     private final CompletableSource[] sources;
     private final Iterable<? extends CompletableSource> sourcesIterable;
@@ -74,7 +74,7 @@ public final class CompletableAmb extends Completable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class Amb implements CompletableObserver {
         final CompletableObserver downstream;
         final AtomicBoolean once;

@@ -1,19 +1,18 @@
 package androidx.compose.foundation.lazy.grid;
 
 import androidx.compose.foundation.gestures.Orientation;
+import androidx.compose.foundation.lazy.layout.LazyLayoutCacheWindow;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.saveable.RememberSaveableKt;
 import androidx.compose.runtime.saveable.Saver;
 import androidx.compose.ui.layout.AlignmentLine;
 import androidx.compose.ui.layout.MeasureResult;
-import androidx.compose.ui.unit.Constraints;
 import androidx.compose.ui.unit.DensityKt;
 import androidx.media3.exoplayer.RendererCapabilities;
 import java.util.List;
 import java.util.Map;
 import kotlin.Metadata;
-import kotlin.Pair;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt;
 import kotlin.coroutines.EmptyCoroutineContext;
@@ -21,13 +20,17 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlinx.coroutines.CoroutineScopeKt;
 /* compiled from: LazyGridState.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a!\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0007\u001a+\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00052\b\b\u0002\u0010\b\u001a\u00020\tH\u0007¢\u0006\u0002\u0010\n\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"EmptyLazyGridLayoutInfo", "Landroidx/compose/foundation/lazy/grid/LazyGridMeasureResult;", "rememberLazyGridState", "Landroidx/compose/foundation/lazy/grid/LazyGridState;", "initialFirstVisibleItemIndex", "", "initialFirstVisibleItemScrollOffset", "(IILandroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/lazy/grid/LazyGridState;", "prefetchStrategy", "Landroidx/compose/foundation/lazy/grid/LazyGridPrefetchStrategy;", "(IILandroidx/compose/foundation/lazy/grid/LazyGridPrefetchStrategy;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/lazy/grid/LazyGridState;", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u001a!\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0005\u001a+\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\u0010\b\u001a)\u0010\u0000\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u000b\"\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"rememberLazyGridState", "Landroidx/compose/foundation/lazy/grid/LazyGridState;", "initialFirstVisibleItemIndex", "", "initialFirstVisibleItemScrollOffset", "(IILandroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/lazy/grid/LazyGridState;", "prefetchStrategy", "Landroidx/compose/foundation/lazy/grid/LazyGridPrefetchStrategy;", "(IILandroidx/compose/foundation/lazy/grid/LazyGridPrefetchStrategy;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/lazy/grid/LazyGridState;", "cacheWindow", "Landroidx/compose/foundation/lazy/layout/LazyLayoutCacheWindow;", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutCacheWindow;IILandroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/lazy/grid/LazyGridState;", "EmptyLazyGridLayoutInfo", "Landroidx/compose/foundation/lazy/grid/LazyGridMeasureResult;", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyGridStateKt {
     private static final LazyGridMeasureResult EmptyLazyGridLayoutInfo;
 
+    public static final int EmptyLazyGridLayoutInfo$lambda$8(int i) {
+        return -1;
+    }
+
     public static final LazyGridState rememberLazyGridState(final int i, final int i2, Composer composer, int i3, int i4) {
-        ComposerKt.sourceInformationMarkerStart(composer, 29186956, "C(rememberLazyGridState)75@3491L96,75@3445L142:LazyGridState.kt#7791vq");
+        ComposerKt.sourceInformationMarkerStart(composer, 29186956, "C(rememberLazyGridState)N(initialFirstVisibleItemIndex,initialFirstVisibleItemScrollOffset)78@3737L96,78@3691L142:LazyGridState.kt#7791vq");
         if ((i4 & 1) != 0) {
             i = 0;
         }
@@ -35,31 +38,31 @@ public final class LazyGridStateKt {
             i2 = 0;
         }
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(29186956, i3, -1, "androidx.compose.foundation.lazy.grid.rememberLazyGridState (LazyGridState.kt:74)");
+            ComposerKt.traceEventStart(29186956, i3, -1, "androidx.compose.foundation.lazy.grid.rememberLazyGridState (LazyGridState.kt:77)");
         }
         Object[] objArr = new Object[0];
         Saver<LazyGridState, ?> saver = LazyGridState.Companion.getSaver();
-        ComposerKt.sourceInformationMarkerStart(composer, -890207390, "CC(remember):LazyGridState.kt#9igjgp");
-        boolean z = ((((i3 & 14) ^ 6) > 4 && composer.changed(i)) || (i3 & 6) == 4) | ((((i3 & 112) ^ 48) > 32 && composer.changed(i2)) || (i3 & 48) == 32);
+        ComposerKt.sourceInformationMarkerStart(composer, -2016099604, "CC(remember):LazyGridState.kt#9igjgp");
+        boolean z = true;
+        boolean z2 = (((i3 & 14) ^ 6) > 4 && composer.changed(i)) || (i3 & 6) == 4;
+        if ((((i3 & 112) ^ 48) <= 32 || !composer.changed(i2)) && (i3 & 48) != 32) {
+            z = false;
+        }
+        boolean z3 = z2 | z;
         Object rememberedValue = composer.rememberedValue();
-        if (z || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = (Function0) new Function0<LazyGridState>() { // from class: androidx.compose.foundation.lazy.grid.LazyGridStateKt$rememberLazyGridState$1$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(0);
-                }
-
-                /* JADX WARN: Can't rename method to resolve collision */
+        if (z3 || rememberedValue == Composer.Companion.getEmpty()) {
+            rememberedValue = new Function0() { // from class: androidx.compose.foundation.lazy.grid.LazyGridStateKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
-                public final LazyGridState invoke() {
-                    return new LazyGridState(i, i2);
+                public final Object invoke() {
+                    LazyGridState rememberLazyGridState$lambda$1$lambda$0;
+                    rememberLazyGridState$lambda$1$lambda$0 = LazyGridStateKt.rememberLazyGridState$lambda$1$lambda$0(i, i2);
+                    return rememberLazyGridState$lambda$1$lambda$0;
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m3635rememberSaveable(objArr, saver, (String) null, (Function0<? extends Object>) rememberedValue, composer, 0, 4);
+        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m3983rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -67,54 +70,108 @@ public final class LazyGridStateKt {
         return lazyGridState;
     }
 
-    public static final LazyGridState rememberLazyGridState(int i, int i2, LazyGridPrefetchStrategy lazyGridPrefetchStrategy, Composer composer, int i3, int i4) {
-        final LazyGridPrefetchStrategy lazyGridPrefetchStrategy2;
-        ComposerKt.sourceInformationMarkerStart(composer, -20335728, "C(rememberLazyGridState)97@4354L39,99@4507L161,99@4425L243:LazyGridState.kt#7791vq");
-        final int i5 = (i4 & 1) != 0 ? 0 : i;
-        final int i6 = (i4 & 2) != 0 ? 0 : i2;
+    public static final LazyGridState rememberLazyGridState$lambda$1$lambda$0(int i, int i2) {
+        return new LazyGridState(i, i2);
+    }
+
+    public static final LazyGridState rememberLazyGridState(final int i, final int i2, final LazyGridPrefetchStrategy lazyGridPrefetchStrategy, Composer composer, int i3, int i4) {
+        ComposerKt.sourceInformationMarkerStart(composer, -20335728, "C(rememberLazyGridState)N(initialFirstVisibleItemIndex,initialFirstVisibleItemScrollOffset,prefetchStrategy)100@4600L39,102@4753L161,102@4671L243:LazyGridState.kt#7791vq");
+        if ((i4 & 1) != 0) {
+            i = 0;
+        }
+        if ((i4 & 2) != 0) {
+            i2 = 0;
+        }
+        boolean z = true;
         if ((i4 & 4) != 0) {
-            ComposerKt.sourceInformationMarkerStart(composer, -890179831, "CC(remember):LazyGridState.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, 1932208567, "CC(remember):LazyGridState.kt#9igjgp");
             Object rememberedValue = composer.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = LazyGridPrefetchStrategyKt.LazyGridPrefetchStrategy$default(0, 1, null);
                 composer.updateRememberedValue(rememberedValue);
             }
-            lazyGridPrefetchStrategy2 = (LazyGridPrefetchStrategy) rememberedValue;
+            lazyGridPrefetchStrategy = (LazyGridPrefetchStrategy) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(composer);
-        } else {
-            lazyGridPrefetchStrategy2 = lazyGridPrefetchStrategy;
         }
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-20335728, i3, -1, "androidx.compose.foundation.lazy.grid.rememberLazyGridState (LazyGridState.kt:98)");
+            ComposerKt.traceEventStart(-20335728, i3, -1, "androidx.compose.foundation.lazy.grid.rememberLazyGridState (LazyGridState.kt:101)");
         }
-        Object[] objArr = {lazyGridPrefetchStrategy2};
-        Saver<LazyGridState, ?> saver$foundation_release = LazyGridState.Companion.saver$foundation_release(lazyGridPrefetchStrategy2);
-        ComposerKt.sourceInformationMarkerStart(composer, -890174813, "CC(remember):LazyGridState.kt#9igjgp");
-        boolean z = ((((i3 & 14) ^ 6) > 4 && composer.changed(i5)) || (i3 & 6) == 4) | ((((i3 & 112) ^ 48) > 32 && composer.changed(i6)) || (i3 & 48) == 32) | ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changedInstance(lazyGridPrefetchStrategy2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
+        Object[] objArr = {lazyGridPrefetchStrategy};
+        Saver<LazyGridState, ?> saver$foundation_release = LazyGridState.Companion.saver$foundation_release(lazyGridPrefetchStrategy);
+        ComposerKt.sourceInformationMarkerStart(composer, 1932213585, "CC(remember):LazyGridState.kt#9igjgp");
+        boolean z2 = ((((i3 & 14) ^ 6) > 4 && composer.changed(i)) || (i3 & 6) == 4) | ((((i3 & 112) ^ 48) > 32 && composer.changed(i2)) || (i3 & 48) == 32);
+        if ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !composer.changedInstance(lazyGridPrefetchStrategy)) && (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
+            z = false;
+        }
+        boolean z3 = z2 | z;
         Object rememberedValue2 = composer.rememberedValue();
-        if (z || rememberedValue2 == Composer.Companion.getEmpty()) {
-            rememberedValue2 = (Function0) new Function0<LazyGridState>() { // from class: androidx.compose.foundation.lazy.grid.LazyGridStateKt$rememberLazyGridState$3$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(0);
-                }
-
-                /* JADX WARN: Can't rename method to resolve collision */
+        if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
+            rememberedValue2 = new Function0() { // from class: androidx.compose.foundation.lazy.grid.LazyGridStateKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
-                public final LazyGridState invoke() {
-                    return new LazyGridState(i5, i6, lazyGridPrefetchStrategy2);
+                public final Object invoke() {
+                    LazyGridState rememberLazyGridState$lambda$4$lambda$3;
+                    rememberLazyGridState$lambda$4$lambda$3 = LazyGridStateKt.rememberLazyGridState$lambda$4$lambda$3(i, i2, lazyGridPrefetchStrategy);
+                    return rememberLazyGridState$lambda$4$lambda$3;
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m3635rememberSaveable(objArr, saver$foundation_release, (String) null, (Function0<? extends Object>) rememberedValue2, composer, 0, 4);
+        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m3983rememberSaveable(objArr, saver$foundation_release, (Function0<? extends Object>) rememberedValue2, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         return lazyGridState;
+    }
+
+    public static final LazyGridState rememberLazyGridState$lambda$4$lambda$3(int i, int i2, LazyGridPrefetchStrategy lazyGridPrefetchStrategy) {
+        return new LazyGridState(i, i2, lazyGridPrefetchStrategy);
+    }
+
+    public static final LazyGridState rememberLazyGridState(final LazyLayoutCacheWindow lazyLayoutCacheWindow, final int i, final int i2, Composer composer, int i3, int i4) {
+        ComposerKt.sourceInformationMarkerStart(composer, -1537306572, "C(rememberLazyGridState)N(cacheWindow,initialFirstVisibleItemIndex,initialFirstVisibleItemScrollOffset)130@5787L156,130@5715L228:LazyGridState.kt#7791vq");
+        if ((i4 & 2) != 0) {
+            i = 0;
+        }
+        if ((i4 & 4) != 0) {
+            i2 = 0;
+        }
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(-1537306572, i3, -1, "androidx.compose.foundation.lazy.grid.rememberLazyGridState (LazyGridState.kt:129)");
+        }
+        Object[] objArr = {lazyLayoutCacheWindow};
+        Saver<LazyGridState, ?> saver$foundation_release = LazyGridState.Companion.saver$foundation_release(lazyLayoutCacheWindow);
+        ComposerKt.sourceInformationMarkerStart(composer, 117143920, "CC(remember):LazyGridState.kt#9igjgp");
+        boolean z = true;
+        boolean z2 = ((((i3 & 14) ^ 6) > 4 && composer.changed(lazyLayoutCacheWindow)) || (i3 & 6) == 4) | ((((i3 & 112) ^ 48) > 32 && composer.changed(i)) || (i3 & 48) == 32);
+        if ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !composer.changed(i2)) && (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
+            z = false;
+        }
+        boolean z3 = z2 | z;
+        Object rememberedValue = composer.rememberedValue();
+        if (z3 || rememberedValue == Composer.Companion.getEmpty()) {
+            rememberedValue = new Function0() { // from class: androidx.compose.foundation.lazy.grid.LazyGridStateKt$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function0
+                public final Object invoke() {
+                    LazyGridState rememberLazyGridState$lambda$6$lambda$5;
+                    rememberLazyGridState$lambda$6$lambda$5 = LazyGridStateKt.rememberLazyGridState$lambda$6$lambda$5(LazyLayoutCacheWindow.this, i, i2);
+                    return rememberLazyGridState$lambda$6$lambda$5;
+                }
+            };
+            composer.updateRememberedValue(rememberedValue);
+        }
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m3983rememberSaveable(objArr, saver$foundation_release, (Function0<? extends Object>) rememberedValue, composer, 0);
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+        ComposerKt.sourceInformationMarkerEnd(composer);
+        return lazyGridState;
+    }
+
+    public static final LazyGridState rememberLazyGridState$lambda$6$lambda$5(LazyLayoutCacheWindow lazyLayoutCacheWindow, int i, int i2) {
+        return new LazyGridState(lazyLayoutCacheWindow, i, i2);
     }
 
     static {
@@ -148,15 +205,22 @@ public final class LazyGridStateKt {
         List emptyList = CollectionsKt.emptyList();
         Orientation orientation = Orientation.Vertical;
         MeasureResult measureResult2 = measureResult;
-        EmptyLazyGridLayoutInfo = new LazyGridMeasureResult(null, 0, false, 0.0f, measureResult2, 0.0f, false, CoroutineScopeKt.CoroutineScope(EmptyCoroutineContext.INSTANCE), DensityKt.Density$default(1.0f, 0.0f, 2, null), 0, new Function1<Integer, List<? extends Pair<? extends Integer, ? extends Constraints>>>() { // from class: androidx.compose.foundation.lazy.grid.LazyGridStateKt$EmptyLazyGridLayoutInfo$2
+        EmptyLazyGridLayoutInfo = new LazyGridMeasureResult(null, 0, false, 0.0f, measureResult2, 0.0f, false, CoroutineScopeKt.CoroutineScope(EmptyCoroutineContext.INSTANCE), DensityKt.Density$default(1.0f, 0.0f, 2, null), 0, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridStateKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ List<? extends Pair<? extends Integer, ? extends Constraints>> invoke(Integer num) {
-                return invoke(num.intValue());
+            public final Object invoke(Object obj) {
+                return LazyGridStateKt.EmptyLazyGridLayoutInfo$lambda$7(((Integer) obj).intValue());
             }
-
-            public final List<Pair<Integer, Constraints>> invoke(int i) {
-                return CollectionsKt.emptyList();
+        }, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridStateKt$$ExternalSyntheticLambda4
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                int EmptyLazyGridLayoutInfo$lambda$8;
+                EmptyLazyGridLayoutInfo$lambda$8 = LazyGridStateKt.EmptyLazyGridLayoutInfo$lambda$8(((Integer) obj).intValue());
+                return Integer.valueOf(EmptyLazyGridLayoutInfo$lambda$8);
             }
         }, emptyList, 0, 0, 0, false, orientation, 0, 0);
+    }
+
+    public static final List EmptyLazyGridLayoutInfo$lambda$7(int i) {
+        return CollectionsKt.emptyList();
     }
 }

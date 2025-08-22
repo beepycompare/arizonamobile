@@ -45,77 +45,77 @@ public final class TimePickerColors {
     }
 
     /* renamed from: getClockDialColor-0d7_KjU  reason: not valid java name */
-    public final long m2503getClockDialColor0d7_KjU() {
+    public final long m2810getClockDialColor0d7_KjU() {
         return this.clockDialColor;
     }
 
     /* renamed from: getSelectorColor-0d7_KjU  reason: not valid java name */
-    public final long m2512getSelectorColor0d7_KjU() {
+    public final long m2819getSelectorColor0d7_KjU() {
         return this.selectorColor;
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2506getContainerColor0d7_KjU() {
+    public final long m2813getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getPeriodSelectorBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2507getPeriodSelectorBorderColor0d7_KjU() {
+    public final long m2814getPeriodSelectorBorderColor0d7_KjU() {
         return this.periodSelectorBorderColor;
     }
 
     /* renamed from: getClockDialSelectedContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2504getClockDialSelectedContentColor0d7_KjU() {
+    public final long m2811getClockDialSelectedContentColor0d7_KjU() {
         return this.clockDialSelectedContentColor;
     }
 
     /* renamed from: getClockDialUnselectedContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2505getClockDialUnselectedContentColor0d7_KjU() {
+    public final long m2812getClockDialUnselectedContentColor0d7_KjU() {
         return this.clockDialUnselectedContentColor;
     }
 
     /* renamed from: getPeriodSelectorSelectedContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2508getPeriodSelectorSelectedContainerColor0d7_KjU() {
+    public final long m2815getPeriodSelectorSelectedContainerColor0d7_KjU() {
         return this.periodSelectorSelectedContainerColor;
     }
 
     /* renamed from: getPeriodSelectorUnselectedContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2510getPeriodSelectorUnselectedContainerColor0d7_KjU() {
+    public final long m2817getPeriodSelectorUnselectedContainerColor0d7_KjU() {
         return this.periodSelectorUnselectedContainerColor;
     }
 
     /* renamed from: getPeriodSelectorSelectedContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2509getPeriodSelectorSelectedContentColor0d7_KjU() {
+    public final long m2816getPeriodSelectorSelectedContentColor0d7_KjU() {
         return this.periodSelectorSelectedContentColor;
     }
 
     /* renamed from: getPeriodSelectorUnselectedContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2511getPeriodSelectorUnselectedContentColor0d7_KjU() {
+    public final long m2818getPeriodSelectorUnselectedContentColor0d7_KjU() {
         return this.periodSelectorUnselectedContentColor;
     }
 
     /* renamed from: getTimeSelectorSelectedContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2513getTimeSelectorSelectedContainerColor0d7_KjU() {
+    public final long m2820getTimeSelectorSelectedContainerColor0d7_KjU() {
         return this.timeSelectorSelectedContainerColor;
     }
 
     /* renamed from: getTimeSelectorUnselectedContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2515getTimeSelectorUnselectedContainerColor0d7_KjU() {
+    public final long m2822getTimeSelectorUnselectedContainerColor0d7_KjU() {
         return this.timeSelectorUnselectedContainerColor;
     }
 
     /* renamed from: getTimeSelectorSelectedContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2514getTimeSelectorSelectedContentColor0d7_KjU() {
+    public final long m2821getTimeSelectorSelectedContentColor0d7_KjU() {
         return this.timeSelectorSelectedContentColor;
     }
 
     /* renamed from: getTimeSelectorUnselectedContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2516getTimeSelectorUnselectedContentColor0d7_KjU() {
+    public final long m2823getTimeSelectorUnselectedContentColor0d7_KjU() {
         return this.timeSelectorUnselectedContentColor;
     }
 
     /* renamed from: copy-dVHXu7A$default  reason: not valid java name */
-    public static /* synthetic */ TimePickerColors m2500copydVHXu7A$default(TimePickerColors timePickerColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, int i, Object obj) {
+    public static /* synthetic */ TimePickerColors m2807copydVHXu7A$default(TimePickerColors timePickerColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, int i, Object obj) {
         long j15;
         long j16;
         long j17 = (i & 1) != 0 ? timePickerColors.containerColor : j;
@@ -139,16 +139,16 @@ public final class TimePickerColors {
             j15 = j14;
             j16 = j30;
         }
-        return timePickerColors.m2502copydVHXu7A(j24, j18, j19, j20, j21, j22, j23, j25, j26, j27, j28, j29, j16, j15);
+        return timePickerColors.m2809copydVHXu7A(j24, j18, j19, j20, j21, j22, j23, j25, j26, j27, j28, j29, j16, j15);
     }
 
     /* renamed from: copy-dVHXu7A  reason: not valid java name */
-    public final TimePickerColors m2502copydVHXu7A(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14) {
+    public final TimePickerColors m2809copydVHXu7A(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14) {
         return new TimePickerColors(j != 16 ? j : this.clockDialColor, j2 != 16 ? j2 : this.selectorColor, j3 != 16 ? j3 : this.containerColor, j4 != 16 ? j4 : this.periodSelectorBorderColor, j5 != 16 ? j5 : this.clockDialSelectedContentColor, j6 != 16 ? j6 : this.clockDialUnselectedContentColor, j7 != 16 ? j7 : this.periodSelectorSelectedContainerColor, j8 != 16 ? j8 : this.periodSelectorUnselectedContainerColor, j9 != 16 ? j9 : this.periodSelectorSelectedContentColor, j10 != 16 ? j10 : this.periodSelectorUnselectedContentColor, j11 != 16 ? j11 : this.timeSelectorSelectedContainerColor, j12 != 16 ? j12 : this.timeSelectorUnselectedContainerColor, j13 != 16 ? j13 : this.timeSelectorSelectedContentColor, j14 != 16 ? j14 : this.timeSelectorUnselectedContentColor, null);
     }
 
     /* renamed from: periodSelectorContainerColor-vNxB06k$material3_release  reason: not valid java name */
-    public final long m2517periodSelectorContainerColorvNxB06k$material3_release(boolean z) {
+    public final long m2824periodSelectorContainerColorvNxB06k$material3_release(boolean z) {
         if (z) {
             return this.periodSelectorSelectedContainerColor;
         }
@@ -156,7 +156,7 @@ public final class TimePickerColors {
     }
 
     /* renamed from: periodSelectorContentColor-vNxB06k$material3_release  reason: not valid java name */
-    public final long m2518periodSelectorContentColorvNxB06k$material3_release(boolean z) {
+    public final long m2825periodSelectorContentColorvNxB06k$material3_release(boolean z) {
         if (z) {
             return this.periodSelectorSelectedContentColor;
         }
@@ -164,7 +164,7 @@ public final class TimePickerColors {
     }
 
     /* renamed from: timeSelectorContainerColor-vNxB06k$material3_release  reason: not valid java name */
-    public final long m2519timeSelectorContainerColorvNxB06k$material3_release(boolean z) {
+    public final long m2826timeSelectorContainerColorvNxB06k$material3_release(boolean z) {
         if (z) {
             return this.timeSelectorSelectedContainerColor;
         }
@@ -172,7 +172,7 @@ public final class TimePickerColors {
     }
 
     /* renamed from: timeSelectorContentColor-vNxB06k$material3_release  reason: not valid java name */
-    public final long m2520timeSelectorContentColorvNxB06k$material3_release(boolean z) {
+    public final long m2827timeSelectorContentColorvNxB06k$material3_release(boolean z) {
         if (z) {
             return this.timeSelectorSelectedContentColor;
         }
@@ -180,7 +180,7 @@ public final class TimePickerColors {
     }
 
     /* renamed from: clockDialContentColor-vNxB06k$material3_release  reason: not valid java name */
-    public final long m2501clockDialContentColorvNxB06k$material3_release(boolean z) {
+    public final long m2808clockDialContentColorvNxB06k$material3_release(boolean z) {
         if (z) {
             return this.clockDialSelectedContentColor;
         }
@@ -193,12 +193,12 @@ public final class TimePickerColors {
         }
         if (obj != null && getClass() == obj.getClass()) {
             TimePickerColors timePickerColors = (TimePickerColors) obj;
-            return Color.m4079equalsimpl0(this.clockDialColor, timePickerColors.clockDialColor) && Color.m4079equalsimpl0(this.selectorColor, timePickerColors.selectorColor) && Color.m4079equalsimpl0(this.containerColor, timePickerColors.containerColor) && Color.m4079equalsimpl0(this.periodSelectorBorderColor, timePickerColors.periodSelectorBorderColor) && Color.m4079equalsimpl0(this.periodSelectorSelectedContainerColor, timePickerColors.periodSelectorSelectedContainerColor) && Color.m4079equalsimpl0(this.periodSelectorUnselectedContainerColor, timePickerColors.periodSelectorUnselectedContainerColor) && Color.m4079equalsimpl0(this.periodSelectorSelectedContentColor, timePickerColors.periodSelectorSelectedContentColor) && Color.m4079equalsimpl0(this.periodSelectorUnselectedContentColor, timePickerColors.periodSelectorUnselectedContentColor) && Color.m4079equalsimpl0(this.timeSelectorSelectedContainerColor, timePickerColors.timeSelectorSelectedContainerColor) && Color.m4079equalsimpl0(this.timeSelectorUnselectedContainerColor, timePickerColors.timeSelectorUnselectedContainerColor) && Color.m4079equalsimpl0(this.timeSelectorSelectedContentColor, timePickerColors.timeSelectorSelectedContentColor) && Color.m4079equalsimpl0(this.timeSelectorUnselectedContentColor, timePickerColors.timeSelectorUnselectedContentColor);
+            return Color.m4538equalsimpl0(this.clockDialColor, timePickerColors.clockDialColor) && Color.m4538equalsimpl0(this.selectorColor, timePickerColors.selectorColor) && Color.m4538equalsimpl0(this.containerColor, timePickerColors.containerColor) && Color.m4538equalsimpl0(this.periodSelectorBorderColor, timePickerColors.periodSelectorBorderColor) && Color.m4538equalsimpl0(this.periodSelectorSelectedContainerColor, timePickerColors.periodSelectorSelectedContainerColor) && Color.m4538equalsimpl0(this.periodSelectorUnselectedContainerColor, timePickerColors.periodSelectorUnselectedContainerColor) && Color.m4538equalsimpl0(this.periodSelectorSelectedContentColor, timePickerColors.periodSelectorSelectedContentColor) && Color.m4538equalsimpl0(this.periodSelectorUnselectedContentColor, timePickerColors.periodSelectorUnselectedContentColor) && Color.m4538equalsimpl0(this.timeSelectorSelectedContainerColor, timePickerColors.timeSelectorSelectedContainerColor) && Color.m4538equalsimpl0(this.timeSelectorUnselectedContainerColor, timePickerColors.timeSelectorUnselectedContainerColor) && Color.m4538equalsimpl0(this.timeSelectorSelectedContentColor, timePickerColors.timeSelectorSelectedContentColor) && Color.m4538equalsimpl0(this.timeSelectorUnselectedContentColor, timePickerColors.timeSelectorUnselectedContentColor);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((Color.m4085hashCodeimpl(this.clockDialColor) * 31) + Color.m4085hashCodeimpl(this.selectorColor)) * 31) + Color.m4085hashCodeimpl(this.containerColor)) * 31) + Color.m4085hashCodeimpl(this.periodSelectorBorderColor)) * 31) + Color.m4085hashCodeimpl(this.periodSelectorSelectedContainerColor)) * 31) + Color.m4085hashCodeimpl(this.periodSelectorUnselectedContainerColor)) * 31) + Color.m4085hashCodeimpl(this.periodSelectorSelectedContentColor)) * 31) + Color.m4085hashCodeimpl(this.periodSelectorUnselectedContentColor)) * 31) + Color.m4085hashCodeimpl(this.timeSelectorSelectedContainerColor)) * 31) + Color.m4085hashCodeimpl(this.timeSelectorUnselectedContainerColor)) * 31) + Color.m4085hashCodeimpl(this.timeSelectorSelectedContentColor)) * 31) + Color.m4085hashCodeimpl(this.timeSelectorUnselectedContentColor);
+        return (((((((((((((((((((((Color.m4544hashCodeimpl(this.clockDialColor) * 31) + Color.m4544hashCodeimpl(this.selectorColor)) * 31) + Color.m4544hashCodeimpl(this.containerColor)) * 31) + Color.m4544hashCodeimpl(this.periodSelectorBorderColor)) * 31) + Color.m4544hashCodeimpl(this.periodSelectorSelectedContainerColor)) * 31) + Color.m4544hashCodeimpl(this.periodSelectorUnselectedContainerColor)) * 31) + Color.m4544hashCodeimpl(this.periodSelectorSelectedContentColor)) * 31) + Color.m4544hashCodeimpl(this.periodSelectorUnselectedContentColor)) * 31) + Color.m4544hashCodeimpl(this.timeSelectorSelectedContainerColor)) * 31) + Color.m4544hashCodeimpl(this.timeSelectorUnselectedContainerColor)) * 31) + Color.m4544hashCodeimpl(this.timeSelectorSelectedContentColor)) * 31) + Color.m4544hashCodeimpl(this.timeSelectorUnselectedContentColor);
     }
 }

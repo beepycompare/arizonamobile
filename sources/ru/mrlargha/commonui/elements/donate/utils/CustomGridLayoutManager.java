@@ -1,8 +1,10 @@
 package ru.mrlargha.commonui.elements.donate.utils;
 
+import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.util.ArrayList;
@@ -11,29 +13,36 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* compiled from: CustomGridLayoutManager.kt */
-@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\t\u001a\u00020\nH\u0016J\b\u0010\u000b\u001a\u00020\fH\u0016J\u0010\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0005H\u0016J\u001c\u0010\u0010\u001a\u00020\u000e2\n\u0010\u0011\u001a\u00060\u0012R\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H\u0016J4\u0010\u0016\u001a\u00020\u000e2\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00190\u00182\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\n0\u00182\u0006\u0010\u001b\u001a\u00020\u00052\u0006\u0010\u001c\u001a\u00020\u0005H\u0002J$\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u001e\u001a\u00020\u00052\n\u0010\u0011\u001a\u00060\u0012R\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H\u0016J\b\u0010\u001f\u001a\u00020\fH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082D¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Lru/mrlargha/commonui/elements/donate/utils/CustomGridLayoutManager;", "Landroidx/recyclerview/widget/RecyclerView$LayoutManager;", "<init>", "()V", "verticalScrollOffset", "", "totalHeight", "TAG", "", "generateDefaultLayoutParams", "Landroidx/recyclerview/widget/RecyclerView$LayoutParams;", "canScrollVertically", "", "scrollToPosition", "", "position", "onLayoutChildren", "recycler", "Landroidx/recyclerview/widget/RecyclerView$Recycler;", "Landroidx/recyclerview/widget/RecyclerView;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/recyclerview/widget/RecyclerView$State;", "layoutLine", "views", "", "Landroid/view/View;", "paramsList", "offsetY", "lineMaxHeight", "scrollVerticallyBy", "dy", "canScrollHorizontally", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
-public final class CustomGridLayoutManager extends RecyclerView.LayoutManager {
-    private final String TAG = "TESTTAG";
+@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\u000b\u001a\u00020\fH\u0016J\b\u0010\r\u001a\u00020\u000eH\u0016J\u0010\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0007H\u0016J\u001c\u0010\u0012\u001a\u00020\u00102\n\u0010\u0013\u001a\u00060\u0014R\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0016J4\u0010\u0018\u001a\u00020\u00102\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001a2\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\f0\u001a2\u0006\u0010\u001d\u001a\u00020\u00072\u0006\u0010\u001e\u001a\u00020\u0007H\u0002J$\u0010\u001f\u001a\u00020\u00072\u0006\u0010 \u001a\u00020\u00072\n\u0010\u0013\u001a\u00060\u0014R\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0016J\b\u0010!\u001a\u00020\u000eH\u0016R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082D¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"Lru/mrlargha/commonui/elements/donate/utils/CustomGridLayoutManager;", "Landroidx/recyclerview/widget/LinearLayoutManager;", "context", "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "verticalScrollOffset", "", "totalHeight", "TAG", "", "generateDefaultLayoutParams", "Landroidx/recyclerview/widget/RecyclerView$LayoutParams;", "canScrollVertically", "", "scrollToPosition", "", "position", "onLayoutChildren", "recycler", "Landroidx/recyclerview/widget/RecyclerView$Recycler;", "Landroidx/recyclerview/widget/RecyclerView;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/recyclerview/widget/RecyclerView$State;", "layoutLine", "views", "", "Landroid/view/View;", "paramsList", "offsetY", "lineMaxHeight", "scrollVerticallyBy", "dy", "canScrollHorizontally", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes6.dex */
+public final class CustomGridLayoutManager extends LinearLayoutManager {
+    private final String TAG;
     private int totalHeight;
     private int verticalScrollOffset;
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
+    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public boolean canScrollHorizontally() {
         return false;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
+    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public boolean canScrollVertically() {
         return true;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public CustomGridLayoutManager(Context context) {
+        super(context);
+        Intrinsics.checkNotNullParameter(context, "context");
+        this.TAG = "TESTTAG";
+    }
+
+    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public RecyclerView.LayoutParams generateDefaultLayoutParams() {
         return new RecyclerView.LayoutParams(-1, -2);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
+    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void scrollToPosition(int i) {
         if (i == 0) {
             this.verticalScrollOffset = 0;
@@ -41,11 +50,18 @@ public final class CustomGridLayoutManager extends RecyclerView.LayoutManager {
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
+    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         Intrinsics.checkNotNullParameter(recycler, "recycler");
         Intrinsics.checkNotNullParameter(state, "state");
         detachAndScrapAttachedViews(recycler);
+        if (state.isPreLayout()) {
+            return;
+        }
+        if (getItemCount() == 0) {
+            this.verticalScrollOffset = 0;
+            return;
+        }
         int paddingTop = getPaddingTop();
         int paddingLeft = getPaddingLeft();
         ArrayList arrayList = new ArrayList();
@@ -56,27 +72,31 @@ public final class CustomGridLayoutManager extends RecyclerView.LayoutManager {
         int itemCount = getItemCount();
         int i = 0;
         for (int i2 = 0; i2 < itemCount; i2++) {
-            View viewForPosition = recycler.getViewForPosition(i2);
-            Intrinsics.checkNotNullExpressionValue(viewForPosition, "getViewForPosition(...)");
-            addView(viewForPosition);
-            measureChildWithMargins(viewForPosition, 0, 0);
-            ViewGroup.LayoutParams layoutParams = viewForPosition.getLayoutParams();
-            Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type androidx.recyclerview.widget.RecyclerView.LayoutParams");
-            RecyclerView.LayoutParams layoutParams2 = (RecyclerView.LayoutParams) layoutParams;
-            int decoratedMeasuredWidth = getDecoratedMeasuredWidth(viewForPosition) + layoutParams2.leftMargin + layoutParams2.rightMargin;
-            int decoratedMeasuredHeight = getDecoratedMeasuredHeight(viewForPosition) + layoutParams2.topMargin + layoutParams2.bottomMargin;
-            if (paddingLeft + decoratedMeasuredWidth > getWidth() - getPaddingRight() && !arrayList.isEmpty()) {
-                layoutLine(arrayList, arrayList2, paddingTop, i);
-                paddingTop += i;
-                paddingLeft = getPaddingLeft();
-                arrayList.clear();
-                arrayList2.clear();
-                i = 0;
+            try {
+                View viewForPosition = recycler.getViewForPosition(i2);
+                Intrinsics.checkNotNull(viewForPosition);
+                addView(viewForPosition);
+                measureChildWithMargins(viewForPosition, 0, 0);
+                ViewGroup.LayoutParams layoutParams = viewForPosition.getLayoutParams();
+                Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type androidx.recyclerview.widget.RecyclerView.LayoutParams");
+                RecyclerView.LayoutParams layoutParams2 = (RecyclerView.LayoutParams) layoutParams;
+                int decoratedMeasuredWidth = getDecoratedMeasuredWidth(viewForPosition) + layoutParams2.leftMargin + layoutParams2.rightMargin;
+                int decoratedMeasuredHeight = getDecoratedMeasuredHeight(viewForPosition) + layoutParams2.topMargin + layoutParams2.bottomMargin;
+                if (paddingLeft + decoratedMeasuredWidth > getWidth() - getPaddingRight() && !arrayList.isEmpty()) {
+                    layoutLine(arrayList, arrayList2, paddingTop, i);
+                    paddingTop += i;
+                    paddingLeft = getPaddingLeft();
+                    arrayList.clear();
+                    arrayList2.clear();
+                    i = 0;
+                }
+                arrayList.add(viewForPosition);
+                arrayList2.add(layoutParams2);
+                paddingLeft += decoratedMeasuredWidth;
+                i = Math.max(i, decoratedMeasuredHeight);
+            } catch (IndexOutOfBoundsException unused) {
+                Log.w(this.TAG, "View for position " + i2 + " not available, skipping");
             }
-            arrayList.add(viewForPosition);
-            arrayList2.add(layoutParams2);
-            paddingLeft += decoratedMeasuredWidth;
-            i = Math.max(i, decoratedMeasuredHeight);
         }
         if (!arrayList.isEmpty()) {
             layoutLine(arrayList, arrayList2, paddingTop, i);
@@ -101,7 +121,7 @@ public final class CustomGridLayoutManager extends RecyclerView.LayoutManager {
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
+    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public int scrollVerticallyBy(int i, RecyclerView.Recycler recycler, RecyclerView.State state) {
         Intrinsics.checkNotNullParameter(recycler, "recycler");
         Intrinsics.checkNotNullParameter(state, "state");

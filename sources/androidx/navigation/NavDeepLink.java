@@ -358,7 +358,7 @@ public final class NavDeepLink {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         final Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m7681constructorimpl(bundleOf);
+        SavedStateWriter.m8247constructorimpl(bundleOf);
         if (getMatchingPathArguments(matchEntire, bundleOf, arguments)) {
             if (!isParameterizedQuery() || getMatchingQueryArguments(deepLink, bundleOf, arguments)) {
                 getMatchingUriFragment(deepLink.getFragment(), bundleOf, arguments);
@@ -463,7 +463,7 @@ public final class NavDeepLink {
         if (navArgument != null) {
             navArgument.getType().parseAndPut(bundle, str, str2);
         } else {
-            SavedStateWriter.m7714putStringimpl(SavedStateWriter.m7681constructorimpl(bundle), str, str2);
+            SavedStateWriter.m8280putStringimpl(SavedStateWriter.m8247constructorimpl(bundle), str, str2);
         }
     }
 
@@ -856,7 +856,7 @@ public final class NavDeepLink {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m7681constructorimpl(bundleOf);
+        SavedStateWriter.m8247constructorimpl(bundleOf);
         if (uri != null && (pathPattern = getPathPattern()) != null && (matchEntire = pathPattern.matchEntire(uri.toString())) != null) {
             getMatchingPathArguments(matchEntire, bundleOf, arguments);
             if (isParameterizedQuery()) {
@@ -880,7 +880,7 @@ public final class NavDeepLink {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m7681constructorimpl(bundleOf);
+        SavedStateWriter.m8247constructorimpl(bundleOf);
         Iterator<T> it = paramQuery.getArguments().iterator();
         while (true) {
             if (!it.hasNext()) {
@@ -916,7 +916,7 @@ public final class NavDeepLink {
                 }
                 NavArgument navArgument2 = map.get(str3);
                 try {
-                    if (!SavedStateReader.m7596containsimpl(SavedStateReader.m7595constructorimpl(bundleOf), str3)) {
+                    if (!SavedStateReader.m8162containsimpl(SavedStateReader.m8161constructorimpl(bundleOf), str3)) {
                         parseArgument(bundleOf, str3, value, navArgument2);
                         obj = Unit.INSTANCE;
                     } else {
@@ -929,12 +929,12 @@ public final class NavDeepLink {
                 i = i2;
             }
         }
-        SavedStateWriter.m7685putAllimpl(SavedStateWriter.m7681constructorimpl(bundle), bundleOf);
+        SavedStateWriter.m8251putAllimpl(SavedStateWriter.m8247constructorimpl(bundle), bundleOf);
         return true;
     }
 
     private final boolean parseArgumentForRepeatedParam(Bundle bundle, String str, String str2, NavArgument navArgument) {
-        if (SavedStateReader.m7596containsimpl(SavedStateReader.m7595constructorimpl(bundle), str)) {
+        if (SavedStateReader.m8162containsimpl(SavedStateReader.m8161constructorimpl(bundle), str)) {
             if (navArgument != null) {
                 NavType<Object> type = navArgument.getType();
                 type.parseAndPut(bundle, str, str2, type.get(bundle, str));
@@ -948,6 +948,6 @@ public final class NavDeepLink {
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean getMatchingArguments$lambda$13(Bundle bundle, String argName) {
         Intrinsics.checkNotNullParameter(argName, "argName");
-        return !SavedStateReader.m7596containsimpl(SavedStateReader.m7595constructorimpl(bundle), argName);
+        return !SavedStateReader.m8162containsimpl(SavedStateReader.m8161constructorimpl(bundle), argName);
     }
 }

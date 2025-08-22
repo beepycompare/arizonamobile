@@ -39,11 +39,11 @@ public final class StringNavType extends NavType<String> {
     public void put(Bundle bundle, String key, String str) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        Bundle m7681constructorimpl = SavedStateWriter.m7681constructorimpl(bundle);
+        Bundle m8247constructorimpl = SavedStateWriter.m8247constructorimpl(bundle);
         if (str != null) {
-            SavedStateWriter.m7714putStringimpl(m7681constructorimpl, key, str);
+            SavedStateWriter.m8280putStringimpl(m8247constructorimpl, key, str);
         } else {
-            SavedStateWriter.m7704putNullimpl(m7681constructorimpl, key);
+            SavedStateWriter.m8270putNullimpl(m8247constructorimpl, key);
         }
     }
 
@@ -51,10 +51,10 @@ public final class StringNavType extends NavType<String> {
     public String get(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        Bundle m7595constructorimpl = SavedStateReader.m7595constructorimpl(bundle);
-        if (!SavedStateReader.m7596containsimpl(m7595constructorimpl, key) || SavedStateReader.m7674isNullimpl(m7595constructorimpl, key)) {
+        Bundle m8161constructorimpl = SavedStateReader.m8161constructorimpl(bundle);
+        if (!SavedStateReader.m8162containsimpl(m8161constructorimpl, key) || SavedStateReader.m8240isNullimpl(m8161constructorimpl, key)) {
             return null;
         }
-        return SavedStateReader.m7666getStringimpl(m7595constructorimpl, key);
+        return SavedStateReader.m8232getStringimpl(m8161constructorimpl, key);
     }
 }

@@ -6,7 +6,7 @@ import androidx.media3.common.MimeTypes;
 import androidx.media3.common.util.ParsableByteArray;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PictureFrame implements Metadata.Entry {
     public final int colors;
     public final int depth;

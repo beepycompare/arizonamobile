@@ -23,7 +23,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 /* compiled from: WindowInsetsConnection.android.kt */
-@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0010\u0006\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\u001a\"\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0001ø\u0001\u0000¢\u0006\u0004\b\u0012\u0010\u0013\u001a\f\u0010\u0014\u001a\u00020\u0015*\u00020\u0015H\u0007\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0005\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0006\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0007\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\b\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\t\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\n\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\u000b\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u0016"}, d2 = {"DecelMinusOne", "", "DecelerationRate", "EndTension", "", "GravityEarth", "InchesPerMeter", "Inflection", "P1", "P2", "PlatformFlingScrollFriction", "StartTension", "rememberWindowInsetsConnection", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "windowInsets", "Landroidx/compose/foundation/layout/AndroidWindowInsets;", "side", "Landroidx/compose/foundation/layout/WindowInsetsSides;", "rememberWindowInsetsConnection-VRgvIgI", "(Landroidx/compose/foundation/layout/AndroidWindowInsets;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "imeNestedScroll", "Landroidx/compose/ui/Modifier;", "foundation-layout_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0010\u0006\n\u0002\b\u0006\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0001H\u0007\u001a\u001f\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0001¢\u0006\u0004\b\b\u0010\t\"\u000e\u0010\n\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\f\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\r\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u000e\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\u0012\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0013\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0014\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0015\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"imeNestedScroll", "Landroidx/compose/ui/Modifier;", "rememberWindowInsetsConnection", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "windowInsets", "Landroidx/compose/foundation/layout/AndroidWindowInsets;", "side", "Landroidx/compose/foundation/layout/WindowInsetsSides;", "rememberWindowInsetsConnection-VRgvIgI", "(Landroidx/compose/foundation/layout/AndroidWindowInsets;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "Inflection", "", "PlatformFlingScrollFriction", "GravityEarth", "InchesPerMeter", "DecelerationRate", "", "DecelMinusOne", "StartTension", "EndTension", "P1", "P2", "foundation-layout"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class WindowInsetsConnection_androidKt {
     private static final double DecelMinusOne;
@@ -72,11 +72,11 @@ public final class WindowInsetsConnection_androidKt {
 
             public final Modifier invoke(Modifier modifier2, Composer composer, int i) {
                 composer.startReplaceGroup(-369978792);
-                ComposerKt.sourceInformation(composer, "C78@3217L9,77@3150L136:WindowInsetsConnection.android.kt#2w3rfo");
+                ComposerKt.sourceInformation(composer, "C78@3217L9,77@3150L137:WindowInsetsConnection.android.kt#2w3rfo");
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-369978792, i, -1, "androidx.compose.foundation.layout.imeNestedScroll.<anonymous> (WindowInsetsConnection.android.kt:76)");
                 }
-                Modifier nestedScroll$default = NestedScrollModifierKt.nestedScroll$default(modifier2, WindowInsetsConnection_androidKt.m808rememberWindowInsetsConnectionVRgvIgI(WindowInsetsHolder.Companion.current(composer, 6).getIme(), WindowInsetsSides.Companion.m831getBottomJoeWqyM(), composer, 48), null, 2, null);
+                Modifier nestedScroll$default = NestedScrollModifierKt.nestedScroll$default(modifier2, WindowInsetsConnection_androidKt.m909rememberWindowInsetsConnectionVRgvIgI(WindowInsetsHolder.Companion.current(composer, 6).getIme(), WindowInsetsSides.Companion.m934getBottomJoeWqyM(), composer, 48), null, 2, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -87,9 +87,9 @@ public final class WindowInsetsConnection_androidKt {
     }
 
     /* renamed from: rememberWindowInsetsConnection-VRgvIgI */
-    public static final NestedScrollConnection m808rememberWindowInsetsConnectionVRgvIgI(AndroidWindowInsets androidWindowInsets, int i, Composer composer, int i2) {
+    public static final NestedScrollConnection m909rememberWindowInsetsConnectionVRgvIgI(AndroidWindowInsets androidWindowInsets, int i, Composer composer, int i2) {
         composer.startReplaceGroup(-1011341039);
-        ComposerKt.sourceInformation(composer, "C(rememberWindowInsetsConnection)P(1,0:c#foundation.layout.WindowInsetsSides)109@4558L7,111@4671L7,112@4710L7,114@4747L157,117@4938L38,117@4909L67:WindowInsetsConnection.android.kt#2w3rfo");
+        ComposerKt.sourceInformation(composer, "C(rememberWindowInsetsConnection)N(windowInsets,side:c#foundation.layout.WindowInsetsSides)109@4560L7,111@4673L7,112@4712L7,114@4749L157,117@4940L38,117@4911L67:WindowInsetsConnection.android.kt#2w3rfo");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1011341039, i2, -1, "androidx.compose.foundation.layout.rememberWindowInsetsConnection (WindowInsetsConnection.android.kt:105)");
         }
@@ -104,7 +104,7 @@ public final class WindowInsetsConnection_androidKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalLayoutDirection());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        SideCalculator m768chooseCalculatorni1skBw = SideCalculator.Companion.m768chooseCalculatorni1skBw(i, (LayoutDirection) consume);
+        SideCalculator m867chooseCalculatorni1skBw = SideCalculator.Companion.m867chooseCalculatorni1skBw(i, (LayoutDirection) consume);
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume2 = composer.consume(AndroidCompositionLocals_androidKt.getLocalView());
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -113,34 +113,25 @@ public final class WindowInsetsConnection_androidKt {
         Object consume3 = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
         Density density = (Density) consume3;
-        ComposerKt.sourceInformationMarkerStart(composer, 786091576, "CC(remember):WindowInsetsConnection.android.kt#9igjgp");
-        boolean changed = ((((i2 & 14) ^ 6) > 4 && composer.changed(androidWindowInsets)) || (i2 & 6) == 4) | composer.changed(view) | composer.changed(m768chooseCalculatorni1skBw) | composer.changed(density);
+        ComposerKt.sourceInformationMarkerStart(composer, -1236112722, "CC(remember):WindowInsetsConnection.android.kt#9igjgp");
+        boolean changed = ((((i2 & 14) ^ 6) > 4 && composer.changed(androidWindowInsets)) || (i2 & 6) == 4) | composer.changed(view) | composer.changed(m867chooseCalculatorni1skBw) | composer.changed(density);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = new WindowInsetsNestedScrollConnection(androidWindowInsets, view, m768chooseCalculatorni1skBw, density);
+            rememberedValue = new WindowInsetsNestedScrollConnection(androidWindowInsets, view, m867chooseCalculatorni1skBw, density);
             composer.updateRememberedValue(rememberedValue);
         }
         final WindowInsetsNestedScrollConnection windowInsetsNestedScrollConnection = (WindowInsetsNestedScrollConnection) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, 786097569, "CC(remember):WindowInsetsConnection.android.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1236106729, "CC(remember):WindowInsetsConnection.android.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(windowInsetsNestedScrollConnection);
         Object rememberedValue2 = composer.rememberedValue();
         if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
-            rememberedValue2 = (Function1) new Function1<DisposableEffectScope, DisposableEffectResult>() { // from class: androidx.compose.foundation.layout.WindowInsetsConnection_androidKt$rememberWindowInsetsConnection$1$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(1);
-                }
-
+            rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsConnection_androidKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public final DisposableEffectResult invoke(DisposableEffectScope disposableEffectScope) {
-                    final WindowInsetsNestedScrollConnection windowInsetsNestedScrollConnection2 = WindowInsetsNestedScrollConnection.this;
-                    return new DisposableEffectResult() { // from class: androidx.compose.foundation.layout.WindowInsetsConnection_androidKt$rememberWindowInsetsConnection$1$1$invoke$$inlined$onDispose$1
-                        @Override // androidx.compose.runtime.DisposableEffectResult
-                        public void dispose() {
-                            WindowInsetsNestedScrollConnection.this.dispose();
-                        }
-                    };
+                public final Object invoke(Object obj) {
+                    DisposableEffectResult rememberWindowInsetsConnection_VRgvIgI$lambda$4$lambda$3;
+                    rememberWindowInsetsConnection_VRgvIgI$lambda$4$lambda$3 = WindowInsetsConnection_androidKt.rememberWindowInsetsConnection_VRgvIgI$lambda$4$lambda$3(WindowInsetsNestedScrollConnection.this, (DisposableEffectScope) obj);
+                    return rememberWindowInsetsConnection_VRgvIgI$lambda$4$lambda$3;
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
@@ -158,5 +149,14 @@ public final class WindowInsetsConnection_androidKt {
         double log = Math.log(0.78d) / Math.log(0.9d);
         DecelerationRate = log;
         DecelMinusOne = log - 1.0d;
+    }
+
+    public static final DisposableEffectResult rememberWindowInsetsConnection_VRgvIgI$lambda$4$lambda$3(final WindowInsetsNestedScrollConnection windowInsetsNestedScrollConnection, DisposableEffectScope disposableEffectScope) {
+        return new DisposableEffectResult() { // from class: androidx.compose.foundation.layout.WindowInsetsConnection_androidKt$rememberWindowInsetsConnection_VRgvIgI$lambda$4$lambda$3$$inlined$onDispose$1
+            @Override // androidx.compose.runtime.DisposableEffectResult
+            public void dispose() {
+                WindowInsetsNestedScrollConnection.this.dispose();
+            }
+        };
     }
 }

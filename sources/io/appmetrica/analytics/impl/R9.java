@@ -1,53 +1,151 @@
 package io.appmetrica.analytics.impl;
 
-import androidx.fragment.app.FragmentTransaction;
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import java.util.Arrays;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Set;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes4.dex */
-public abstract class R9 {
+public final class R9 extends MessageNano {
+    public static volatile R9[] e;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Set f620a;
-    public static final EnumSet b;
-    public static final EnumSet c;
-    public static final EnumSet d;
-    public static final EnumSet e;
-    public static final EnumSet f;
-    public static final EnumSet g;
-    public static final EnumSet h;
-    public static final List i;
-    public static final List j;
+    public boolean f632a;
+    public int b;
+    public int c;
+    public int[] d;
 
-    static {
-        EnumC0681wb enumC0681wb = EnumC0681wb.EVENT_TYPE_EXCEPTION_USER_PROTOBUF;
-        EnumC0681wb enumC0681wb2 = EnumC0681wb.EVENT_TYPE_EXCEPTION_USER_CUSTOM_PROTOBUF;
-        EnumC0681wb enumC0681wb3 = EnumC0681wb.EVENT_TYPE_EXCEPTION_UNHANDLED_PROTOBUF;
-        EnumC0681wb enumC0681wb4 = EnumC0681wb.EVENT_TYPE_EXCEPTION_UNHANDLED_FROM_FILE;
-        EnumC0681wb enumC0681wb5 = EnumC0681wb.EVENT_TYPE_PREV_SESSION_EXCEPTION_UNHANDLED_FROM_FILE;
-        EnumC0681wb enumC0681wb6 = EnumC0681wb.EVENT_TYPE_ANR;
-        f620a = CollectionUtils.unmodifiableSetOf(5892, 5896, 5891, 5889, 5890, 5968);
-        EnumC0681wb enumC0681wb7 = EnumC0681wb.EVENT_TYPE_UNDEFINED;
-        EnumC0681wb enumC0681wb8 = EnumC0681wb.EVENT_TYPE_PURGE_BUFFER;
-        EnumC0681wb enumC0681wb9 = EnumC0681wb.EVENT_TYPE_SEND_REFERRER;
-        EnumC0681wb enumC0681wb10 = EnumC0681wb.EVENT_TYPE_APP_ENVIRONMENT_UPDATED;
-        EnumC0681wb enumC0681wb11 = EnumC0681wb.EVENT_TYPE_APP_ENVIRONMENT_CLEARED;
-        EnumC0681wb enumC0681wb12 = EnumC0681wb.EVENT_TYPE_PREV_SESSION_NATIVE_CRASH_PROTOBUF;
-        EnumC0681wb enumC0681wb13 = EnumC0681wb.EVENT_TYPE_SET_SESSION_EXTRA;
-        b = EnumSet.of(enumC0681wb7, enumC0681wb8, enumC0681wb9, enumC0681wb10, enumC0681wb11, EnumC0681wb.EVENT_TYPE_ACTIVATION, enumC0681wb12, enumC0681wb5, enumC0681wb13);
-        EnumC0681wb enumC0681wb14 = EnumC0681wb.EVENT_TYPE_UPDATE_FOREGROUND_TIME;
-        EnumC0681wb enumC0681wb15 = EnumC0681wb.EVENT_TYPE_CURRENT_SESSION_NATIVE_CRASH_PROTOBUF;
-        c = EnumSet.of(enumC0681wb14, enumC0681wb4, enumC0681wb5, enumC0681wb12, enumC0681wb15);
-        EnumC0681wb enumC0681wb16 = EnumC0681wb.EVENT_TYPE_REGULAR;
-        d = EnumSet.of(enumC0681wb4, enumC0681wb5, enumC0681wb3, enumC0681wb, enumC0681wb2, enumC0681wb15, enumC0681wb12, enumC0681wb16, EnumC0681wb.EVENT_CLIENT_EXTERNAL_ATTRIBUTION, EnumC0681wb.EVENT_TYPE_SEND_ECOMMERCE_EVENT, EnumC0681wb.EVENT_TYPE_SEND_REVENUE_EVENT, EnumC0681wb.EVENT_TYPE_SEND_AD_REVENUE_EVENT, enumC0681wb8, EnumC0681wb.EVENT_TYPE_INIT, EnumC0681wb.EVENT_TYPE_SEND_USER_PROFILE, EnumC0681wb.EVENT_TYPE_SET_USER_PROFILE_ID, enumC0681wb9, enumC0681wb10, enumC0681wb11, EnumC0681wb.EVENT_TYPE_FIRST_ACTIVATION, EnumC0681wb.EVENT_TYPE_START, EnumC0681wb.EVENT_TYPE_APP_OPEN, EnumC0681wb.EVENT_TYPE_APP_UPDATE, enumC0681wb6);
-        e = EnumSet.of(enumC0681wb16);
-        f = EnumSet.of(enumC0681wb16);
-        g = EnumSet.of(enumC0681wb12);
-        h = EnumSet.of(EnumC0681wb.EVENT_TYPE_ALIVE, enumC0681wb8, enumC0681wb13, enumC0681wb5, enumC0681wb12);
-        i = Arrays.asList(0, 6145, Integer.valueOf((int) FragmentTransaction.TRANSIT_FRAGMENT_OPEN), 8224);
-        EnumC0681wb enumC0681wb17 = EnumC0681wb.EVENT_TYPE_UNDEFINED;
-        j = Arrays.asList(12290);
+    public R9() {
+        a();
+    }
+
+    public static R9[] b() {
+        if (e == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (e == null) {
+                    e = new R9[0];
+                }
+            }
+        }
+        return e;
+    }
+
+    public final R9 a() {
+        this.f632a = false;
+        this.b = 0;
+        this.c = 0;
+        this.d = WireFormatNano.EMPTY_INT_ARRAY;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeUInt32Size = CodedOutputByteBufferNano.computeUInt32Size(3, this.c) + CodedOutputByteBufferNano.computeUInt32Size(2, this.b) + CodedOutputByteBufferNano.computeBoolSize(1, this.f632a) + super.computeSerializedSize();
+        int[] iArr = this.d;
+        if (iArr == null || iArr.length <= 0) {
+            return computeUInt32Size;
+        }
+        int i = 0;
+        int i2 = 0;
+        while (true) {
+            int[] iArr2 = this.d;
+            if (i < iArr2.length) {
+                i2 += CodedOutputByteBufferNano.computeInt32SizeNoTag(iArr2[i]);
+                i++;
+            } else {
+                return computeUInt32Size + i2 + iArr2.length;
+            }
+        }
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        codedOutputByteBufferNano.writeBool(1, this.f632a);
+        codedOutputByteBufferNano.writeUInt32(2, this.b);
+        codedOutputByteBufferNano.writeUInt32(3, this.c);
+        int[] iArr = this.d;
+        if (iArr != null && iArr.length > 0) {
+            int i = 0;
+            while (true) {
+                int[] iArr2 = this.d;
+                if (i >= iArr2.length) {
+                    break;
+                }
+                codedOutputByteBufferNano.writeInt32(4, iArr2[i]);
+                i++;
+            }
+        }
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final R9 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 8) {
+                this.f632a = codedInputByteBufferNano.readBool();
+            } else if (readTag == 16) {
+                this.b = codedInputByteBufferNano.readUInt32();
+            } else if (readTag == 24) {
+                this.c = codedInputByteBufferNano.readUInt32();
+            } else if (readTag == 32) {
+                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 32);
+                int[] iArr = this.d;
+                int length = iArr == null ? 0 : iArr.length;
+                int i = repeatedFieldArrayLength + length;
+                int[] iArr2 = new int[i];
+                if (length != 0) {
+                    System.arraycopy(iArr, 0, iArr2, 0, length);
+                }
+                while (length < i - 1) {
+                    iArr2[length] = codedInputByteBufferNano.readInt32();
+                    codedInputByteBufferNano.readTag();
+                    length++;
+                }
+                iArr2[length] = codedInputByteBufferNano.readInt32();
+                this.d = iArr2;
+            } else if (readTag != 34) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                int pushLimit = codedInputByteBufferNano.pushLimit(codedInputByteBufferNano.readRawVarint32());
+                int position = codedInputByteBufferNano.getPosition();
+                int i2 = 0;
+                while (codedInputByteBufferNano.getBytesUntilLimit() > 0) {
+                    codedInputByteBufferNano.readInt32();
+                    i2++;
+                }
+                codedInputByteBufferNano.rewindToPosition(position);
+                int[] iArr3 = this.d;
+                int length2 = iArr3 == null ? 0 : iArr3.length;
+                int i3 = i2 + length2;
+                int[] iArr4 = new int[i3];
+                if (length2 != 0) {
+                    System.arraycopy(iArr3, 0, iArr4, 0, length2);
+                }
+                while (length2 < i3) {
+                    iArr4[length2] = codedInputByteBufferNano.readInt32();
+                    length2++;
+                }
+                this.d = iArr4;
+                codedInputByteBufferNano.popLimit(pushLimit);
+            }
+        }
+        return this;
+    }
+
+    public static R9 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new R9().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static R9 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (R9) MessageNano.mergeFrom(new R9(), bArr);
     }
 }

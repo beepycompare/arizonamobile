@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ReplayProcessor<T> extends FlowableProcessor<T> {
     final ReplayBuffer<T> buffer;
     boolean done;
@@ -26,7 +26,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
     static final ReplaySubscription[] TERMINATED = new ReplaySubscription[0];
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public interface ReplayBuffer<T> {
         void complete();
 
@@ -251,7 +251,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ReplaySubscription<T> extends AtomicInteger implements Subscription {
         private static final long serialVersionUID = 466549804534799122L;
         volatile boolean cancelled;
@@ -284,7 +284,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class UnboundedReplayBuffer<T> implements ReplayBuffer<T> {
         final List<T> buffer;
         volatile boolean done;
@@ -466,7 +466,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class Node<T> extends AtomicReference<Node<T>> {
         private static final long serialVersionUID = 6404226426336033100L;
         final T value;
@@ -477,7 +477,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class TimedNode<T> extends AtomicReference<TimedNode<T>> {
         private static final long serialVersionUID = 6404226426336033100L;
         final long time;
@@ -489,7 +489,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SizeBoundReplayBuffer<T> implements ReplayBuffer<T> {
         volatile boolean done;
         Throwable error;
@@ -672,7 +672,7 @@ public final class ReplayProcessor<T> extends FlowableProcessor<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SizeAndTimeBoundReplayBuffer<T> implements ReplayBuffer<T> {
         volatile boolean done;
         Throwable error;

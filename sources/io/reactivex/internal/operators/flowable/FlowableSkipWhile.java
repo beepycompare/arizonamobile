@@ -7,7 +7,7 @@ import io.reactivex.functions.Predicate;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableSkipWhile<T> extends AbstractFlowableWithUpstream<T, T> {
     final Predicate<? super T> predicate;
 
@@ -21,7 +21,7 @@ public final class FlowableSkipWhile<T> extends AbstractFlowableWithUpstream<T, 
         this.source.subscribe((FlowableSubscriber) new SkipWhileSubscriber(subscriber, this.predicate));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SkipWhileSubscriber<T> implements FlowableSubscriber<T>, Subscription {
         final Subscriber<? super T> downstream;
         boolean notSkipping;

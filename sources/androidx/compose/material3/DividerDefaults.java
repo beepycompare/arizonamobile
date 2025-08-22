@@ -10,13 +10,13 @@ import kotlin.Metadata;
 public final class DividerDefaults {
     public static final int $stable = 0;
     public static final DividerDefaults INSTANCE = new DividerDefaults();
-    private static final float Thickness = DividerTokens.INSTANCE.m2962getThicknessD9Ej5fM();
+    private static final float Thickness = DividerTokens.INSTANCE.m3269getThicknessD9Ej5fM();
 
     private DividerDefaults() {
     }
 
     /* renamed from: getThickness-D9Ej5fM  reason: not valid java name */
-    public final float m1874getThicknessD9Ej5fM() {
+    public final float m2181getThicknessD9Ej5fM() {
         return Thickness;
     }
 

@@ -36,7 +36,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class WebvttCueParser {
     private static final char CHAR_AMPERSAND = '&';
     private static final char CHAR_GREATER_THAN = '>';
@@ -770,7 +770,7 @@ public final class WebvttCueParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class WebvttCueInfoBuilder {
         public CharSequence text;
         public long startTimeUs = 0;
@@ -866,7 +866,7 @@ public final class WebvttCueParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class StyleMatch implements Comparable<StyleMatch> {
         public final int score;
         public final WebvttCssStyle style;
@@ -883,7 +883,7 @@ public final class WebvttCueParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class StartTag {
         public final Set<String> classes;
         public final String name;
@@ -924,7 +924,7 @@ public final class WebvttCueParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Element {
         private static final Comparator<Element> BY_START_POSITION_ASC = new Comparator() { // from class: androidx.media3.extractor.text.webvtt.WebvttCueParser$Element$$ExternalSyntheticLambda0
             @Override // java.util.Comparator

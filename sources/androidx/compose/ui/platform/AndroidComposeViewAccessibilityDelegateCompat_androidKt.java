@@ -2,12 +2,9 @@ package androidx.compose.ui.platform;
 
 import android.content.res.Resources;
 import androidx.collection.IntObjectMap;
-import androidx.collection.IntObjectMapKt;
 import androidx.collection.MutableIntIntMap;
-import androidx.collection.MutableIntObjectMap;
 import androidx.compose.ui.R;
 import androidx.compose.ui.contentcapture.ContentCaptureManager;
-import androidx.compose.ui.geometry.Rect;
 import androidx.compose.ui.node.LayoutNode;
 import androidx.compose.ui.semantics.AccessibilityAction;
 import androidx.compose.ui.semantics.ProgressBarRangeInfo;
@@ -15,39 +12,35 @@ import androidx.compose.ui.semantics.Role;
 import androidx.compose.ui.semantics.SemanticsConfiguration;
 import androidx.compose.ui.semantics.SemanticsConfigurationKt;
 import androidx.compose.ui.semantics.SemanticsNode;
+import androidx.compose.ui.semantics.SemanticsNodeWithAdjustedBounds;
+import androidx.compose.ui.semantics.SemanticsOwnerKt;
 import androidx.compose.ui.semantics.SemanticsProperties;
 import androidx.compose.ui.semantics.SemanticsPropertyKey;
+import androidx.compose.ui.semantics.SemanticsSortKt;
 import androidx.compose.ui.state.ToggleableState;
 import androidx.compose.ui.text.AnnotatedString;
 import androidx.compose.ui.unit.LayoutDirection;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import kotlin.Deprecated;
 import kotlin.DeprecationLevel;
 import kotlin.Metadata;
-import kotlin.Pair;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.ReplaceWith;
 import kotlin.collections.CollectionsKt;
-import kotlin.comparisons.ComparisonsKt;
-import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.ClosedFloatingPointRange;
 import kotlin.ranges.RangesKt;
 /* compiled from: AndroidComposeViewAccessibilityDelegateCompat.android.kt */
-@Metadata(d1 = {"\u0000¢\u0001\n\u0000\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010!\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u001a\u001a\u0010\u0014\u001a\u0004\u0018\u00010\u00152\u0006\u0010\u0016\u001a\u00020\u000b2\u0006\u0010\u0017\u001a\u00020\u0018H\u0002\u001aR\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u000b2\u0016\u0010\u001c\u001a\u0012\u0012\u0004\u0012\u00020\u000b0\u001dj\b\u0012\u0004\u0012\u00020\u000b`\u001e2\u0012\u0010\u001f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0!0 2\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020$0#2\u0006\u0010\u0017\u001a\u00020\u0018H\u0002\u001a\u0010\u0010%\u001a\u00020\u00012\u0006\u0010\u0016\u001a\u00020\u000bH\u0002\u001a\u001a\u0010&\u001a\u0004\u0018\u00010\u00152\u0006\u0010\u0016\u001a\u00020\u000b2\u0006\u0010\u0017\u001a\u00020\u0018H\u0002\u001a\u0012\u0010'\u001a\u0004\u0018\u00010(2\u0006\u0010\u0016\u001a\u00020\u000bH\u0002\u001a\u0018\u0010)\u001a\u00020\u00012\u0006\u0010\u0016\u001a\u00020\u000b2\u0006\u0010\u0017\u001a\u00020\u0018H\u0002\u001aL\u0010*\u001a\u00020\u00012:\u0010+\u001a6\u0012\u0016\u0012\u0014\u0012\u0004\u0012\u00020-\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0!0,0\u001dj\u001a\u0012\u0016\u0012\u0014\u0012\u0004\u0012\u00020-\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0!0,`\u001e2\u0006\u0010\u0016\u001a\u00020\u000bH\u0002\u001a.\u0010.\u001a\u00020\u001a2\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020$0#2\u0006\u0010/\u001a\u0002002\u0006\u00101\u001a\u0002002\u0006\u0010\u0017\u001a\u00020\u0018H\u0002\u001aL\u00102\u001a\b\u0012\u0004\u0012\u00020\u000b0!2\u0006\u00103\u001a\u00020\u00012\u0016\u00104\u001a\u0012\u0012\u0004\u0012\u00020\u000b0\u001dj\b\u0012\u0004\u0012\u00020\u000b`\u001e2\u0006\u0010\u0017\u001a\u00020\u00182\u0014\b\u0002\u00105\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0!0 H\u0002\u001a:\u00106\u001a\b\u0012\u0004\u0012\u00020\u000b0!2\u0006\u00103\u001a\u00020\u00012\f\u00107\u001a\b\u0012\u0004\u0012\u00020\u000b082\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020$0#2\u0006\u0010\u0017\u001a\u00020\u0018H\u0002\u001a\u001a\u00109\u001a\u00020\u0001*\u0006\u0012\u0002\b\u00030:2\b\u0010;\u001a\u0004\u0018\u00010<H\u0002\u001a\f\u0010=\u001a\u00020\u0001*\u00020\u000bH\u0002\u001a\f\u0010>\u001a\u00020\u0001*\u00020\u000bH\u0002\u001a\"\u0010?\u001a\u0004\u0018\u00010@*\u00020@2\u0012\u0010A\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020\u00010BH\u0002\u001a\u0014\u0010C\u001a\u00020\u0001*\u00020\u000b2\u0006\u0010D\u001a\u00020EH\u0002\"*\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0000\u001a\u00020\u00018G@GX\u0087\u000e¢\u0006\u0012\u0012\u0004\b\u0003\u0010\u0004\u001a\u0004\b\u0005\u0010\u0006\"\u0004\b\u0007\u0010\b\" \u0010\t\u001a\u0014\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\f0\nX\u0082\u0004¢\u0006\u0002\n\u0000\"&\u0010\r\u001a\u0018\u0012\u0014\u0012\u0012\u0012\u0004\u0012\u00020\u000b0\u000fj\b\u0012\u0004\u0012\u00020\u000b`\u00100\u000eX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0011\"\u0018\u0010\u0012\u001a\u00020\u0001*\u00020\u000b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013¨\u0006F"}, d2 = {"value", "", "DisableContentCapture", "getDisableContentCapture$annotations", "()V", "getDisableContentCapture", "()Z", "setDisableContentCapture", "(Z)V", "UnmergedConfigComparator", "Lkotlin/Function2;", "Landroidx/compose/ui/semantics/SemanticsNode;", "", "semanticComparators", "", "Ljava/util/Comparator;", "Lkotlin/Comparator;", "[Ljava/util/Comparator;", "isRtl", "(Landroidx/compose/ui/semantics/SemanticsNode;)Z", "createStateDescriptionForTextField", "", "node", "resources", "Landroid/content/res/Resources;", "geometryDepthFirstSearch", "", "currNode", "geometryList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "containerMapToChildren", "Landroidx/collection/MutableIntObjectMap;", "", "currentSemanticsNodes", "Landroidx/collection/IntObjectMap;", "Landroidx/compose/ui/platform/SemanticsNodeWithAdjustedBounds;", "getInfoIsCheckable", "getInfoStateDescriptionOrNull", "getInfoText", "Landroidx/compose/ui/text/AnnotatedString;", "isScreenReaderFocusable", "placedEntryRowOverlaps", "rowGroupings", "Lkotlin/Pair;", "Landroidx/compose/ui/geometry/Rect;", "setTraversalValues", "outputBeforeMap", "Landroidx/collection/MutableIntIntMap;", "outputAfterMap", "sortByGeometryGroupings", "layoutIsRtl", "parentListToSort", "containerChildrenMapping", "subtreeSortedByGeometryGrouping", "listToSort", "", "accessibilityEquals", "Landroidx/compose/ui/semantics/AccessibilityAction;", "other", "", "enabled", "excludeLineAndPageGranularities", "findClosestParentNode", "Landroidx/compose/ui/node/LayoutNode;", "selector", "Lkotlin/Function1;", "propertiesDeleted", "oldConfig", "Landroidx/compose/ui/semantics/SemanticsConfiguration;", "ui_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\\\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\t\u001a\"\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u00012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u0003H\u0002\u001a.\u0010\u0005\u001a\u00020\u00062\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\b2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0018\u0010\u000f\u001a\u00020\u00042\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0012\u0010\u0012\u001a\u0004\u0018\u00010\u00132\u0006\u0010\u0010\u001a\u00020\u0011H\u0002\u001a\u001a\u0010\u0014\u001a\u0004\u0018\u00010\u00152\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u001a\u0010\u0016\u001a\u0004\u0018\u00010\u00152\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0010\u0010\u0017\u001a\u00020\u00042\u0006\u0010\u0010\u001a\u00020\u0011H\u0002\u001a\f\u0010\u0018\u001a\u00020\u0004*\u00020\u0011H\u0002\u001a\u0014\u0010\u0019\u001a\u00020\u0004*\u00020\u00112\u0006\u0010\u001a\u001a\u00020\u001bH\u0002\u001a\f\u0010\u001e\u001a\u00020\u0004*\u00020\u0011H\u0002\u001a\u001a\u0010\u001f\u001a\u00020\u0004*\u0006\u0012\u0002\b\u00030 2\b\u0010!\u001a\u0004\u0018\u00010\"H\u0002\"\u0018\u0010\u001c\u001a\u00020\u0004*\u00020\u00118BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u001d\"*\u0010$\u001a\u00020\u00042\u0006\u0010#\u001a\u00020\u00048F@FX\u0087\u000e¢\u0006\u0012\u0012\u0004\b%\u0010&\u001a\u0004\b'\u0010(\"\u0004\b)\u0010*¨\u0006+"}, d2 = {"findClosestParentNode", "Landroidx/compose/ui/node/LayoutNode;", "selector", "Lkotlin/Function1;", "", "setTraversalValues", "", "currentSemanticsNodes", "Landroidx/collection/IntObjectMap;", "Landroidx/compose/ui/semantics/SemanticsNodeWithAdjustedBounds;", "outputBeforeMap", "Landroidx/collection/MutableIntIntMap;", "outputAfterMap", "resources", "Landroid/content/res/Resources;", "isScreenReaderFocusable", "node", "Landroidx/compose/ui/semantics/SemanticsNode;", "getInfoText", "Landroidx/compose/ui/text/AnnotatedString;", "getInfoStateDescriptionOrNull", "", "createStateDescriptionForTextField", "getInfoIsCheckable", "enabled", "propertiesDeleted", "oldConfig", "Landroidx/compose/ui/semantics/SemanticsConfiguration;", "isRtl", "(Landroidx/compose/ui/semantics/SemanticsNode;)Z", "excludeLineAndPageGranularities", "accessibilityEquals", "Landroidx/compose/ui/semantics/AccessibilityAction;", "other", "", "value", "DisableContentCapture", "getDisableContentCapture$annotations", "()V", "getDisableContentCapture", "()Z", "setDisableContentCapture", "(Z)V", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
-    private static final Function2<SemanticsNode, SemanticsNode, Integer> UnmergedConfigComparator;
-    private static final Comparator<SemanticsNode>[] semanticComparators;
 
     /* compiled from: AndroidComposeViewAccessibilityDelegateCompat.android.kt */
-    @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -84,61 +77,38 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
         return null;
     }
 
-    static {
-        Comparator comparator;
-        Comparator<SemanticsNode>[] comparatorArr = new Comparator[2];
-        for (int i = 0; i < 2; i++) {
-            if (i == 0) {
-                comparator = RtlBoundsComparator.INSTANCE;
-            } else {
-                comparator = LtrBoundsComparator.INSTANCE;
-            }
-            final Comparator comparator2 = comparator;
-            final Comparator<LayoutNode> zComparator$ui_release = LayoutNode.Companion.getZComparator$ui_release();
-            final Comparator comparator3 = new Comparator() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat_androidKt$special$$inlined$thenBy$1
-                @Override // java.util.Comparator
-                public final int compare(T t, T t2) {
-                    int compare = comparator2.compare(t, t2);
-                    return compare != 0 ? compare : zComparator$ui_release.compare(((SemanticsNode) t).getLayoutNode$ui_release(), ((SemanticsNode) t2).getLayoutNode$ui_release());
-                }
-            };
-            comparatorArr[i] = new Comparator() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat_androidKt$special$$inlined$thenBy$2
-                @Override // java.util.Comparator
-                public final int compare(T t, T t2) {
-                    int compare = comparator3.compare(t, t2);
-                    return compare != 0 ? compare : ComparisonsKt.compareValues(Integer.valueOf(((SemanticsNode) t).getId()), Integer.valueOf(((SemanticsNode) t2).getId()));
-                }
-            };
-        }
-        semanticComparators = comparatorArr;
-        UnmergedConfigComparator = new Function2<SemanticsNode, SemanticsNode, Integer>() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat_androidKt$UnmergedConfigComparator$1
-            @Override // kotlin.jvm.functions.Function2
-            public final Integer invoke(SemanticsNode semanticsNode, SemanticsNode semanticsNode2) {
-                return Integer.valueOf(Float.compare(((Number) semanticsNode.getUnmergedConfig$ui_release().getOrElse(SemanticsProperties.INSTANCE.getTraversalIndex(), new Function0<Float>() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat_androidKt$UnmergedConfigComparator$1.1
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // kotlin.jvm.functions.Function0
-                    public final Float invoke() {
-                        return Float.valueOf(0.0f);
-                    }
-                })).floatValue(), ((Number) semanticsNode2.getUnmergedConfig$ui_release().getOrElse(SemanticsProperties.INSTANCE.getTraversalIndex(), new Function0<Float>() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat_androidKt$UnmergedConfigComparator$1.2
-                    /* JADX WARN: Can't rename method to resolve collision */
-                    @Override // kotlin.jvm.functions.Function0
-                    public final Float invoke() {
-                        return Float.valueOf(0.0f);
-                    }
-                })).floatValue()));
-            }
-        };
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setTraversalValues(IntObjectMap<SemanticsNodeWithAdjustedBounds> intObjectMap, MutableIntIntMap mutableIntIntMap, MutableIntIntMap mutableIntIntMap2, Resources resources) {
+    public static final void setTraversalValues(final IntObjectMap<SemanticsNodeWithAdjustedBounds> intObjectMap, MutableIntIntMap mutableIntIntMap, MutableIntIntMap mutableIntIntMap2, final Resources resources) {
         mutableIntIntMap.clear();
         mutableIntIntMap2.clear();
         SemanticsNodeWithAdjustedBounds semanticsNodeWithAdjustedBounds = intObjectMap.get(-1);
         SemanticsNode semanticsNode = semanticsNodeWithAdjustedBounds != null ? semanticsNodeWithAdjustedBounds.getSemanticsNode() : null;
         Intrinsics.checkNotNull(semanticsNode);
-        List<SemanticsNode> subtreeSortedByGeometryGrouping = subtreeSortedByGeometryGrouping(isRtl(semanticsNode), CollectionsKt.listOf(semanticsNode), intObjectMap, resources);
+        List<SemanticsNode> subtreeSortedByGeometryGrouping = SemanticsSortKt.subtreeSortedByGeometryGrouping(semanticsNode, new Function1<SemanticsNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat_androidKt$setTraversalValues$semanticsOrderList$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(SemanticsNode semanticsNode2) {
+                return Boolean.valueOf(intObjectMap.containsKey(semanticsNode2.getId()));
+            }
+        }, new Function1<SemanticsNode, Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat_androidKt$setTraversalValues$semanticsOrderList$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(SemanticsNode semanticsNode2) {
+                boolean isScreenReaderFocusable;
+                isScreenReaderFocusable = AndroidComposeViewAccessibilityDelegateCompat_androidKt.isScreenReaderFocusable(semanticsNode2, resources);
+                return Boolean.valueOf(isScreenReaderFocusable);
+            }
+        }, CollectionsKt.listOf(semanticsNode));
         int lastIndex = CollectionsKt.getLastIndex(subtreeSortedByGeometryGrouping);
         int i = 1;
         if (1 > lastIndex) {
@@ -156,109 +126,10 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
         }
     }
 
-    private static final List<SemanticsNode> subtreeSortedByGeometryGrouping(boolean z, List<SemanticsNode> list, IntObjectMap<SemanticsNodeWithAdjustedBounds> intObjectMap, Resources resources) {
-        MutableIntObjectMap mutableIntObjectMapOf = IntObjectMapKt.mutableIntObjectMapOf();
-        ArrayList arrayList = new ArrayList();
-        int size = list.size();
-        for (int i = 0; i < size; i++) {
-            geometryDepthFirstSearch(list.get(i), arrayList, mutableIntObjectMapOf, intObjectMap, resources);
-        }
-        return sortByGeometryGroupings(z, arrayList, resources, mutableIntObjectMapOf);
-    }
-
-    private static final void geometryDepthFirstSearch(SemanticsNode semanticsNode, ArrayList<SemanticsNode> arrayList, MutableIntObjectMap<List<SemanticsNode>> mutableIntObjectMap, IntObjectMap<SemanticsNodeWithAdjustedBounds> intObjectMap, Resources resources) {
-        boolean isRtl = isRtl(semanticsNode);
-        boolean booleanValue = ((Boolean) semanticsNode.getUnmergedConfig$ui_release().getOrElse(SemanticsProperties.INSTANCE.getIsTraversalGroup(), new Function0<Boolean>() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat_androidKt$geometryDepthFirstSearch$isTraversalGroup$1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // kotlin.jvm.functions.Function0
-            public final Boolean invoke() {
-                return false;
-            }
-        })).booleanValue();
-        if ((booleanValue || isScreenReaderFocusable(semanticsNode, resources)) && intObjectMap.containsKey(semanticsNode.getId())) {
-            arrayList.add(semanticsNode);
-        }
-        if (booleanValue) {
-            mutableIntObjectMap.set(semanticsNode.getId(), subtreeSortedByGeometryGrouping(isRtl, semanticsNode.getChildren(), intObjectMap, resources));
-            return;
-        }
-        List<SemanticsNode> children = semanticsNode.getChildren();
-        int size = children.size();
-        for (int i = 0; i < size; i++) {
-            geometryDepthFirstSearch(children.get(i), arrayList, mutableIntObjectMap, intObjectMap, resources);
-        }
-    }
-
-    static /* synthetic */ List sortByGeometryGroupings$default(boolean z, ArrayList arrayList, Resources resources, MutableIntObjectMap mutableIntObjectMap, int i, Object obj) {
-        if ((i & 8) != 0) {
-            mutableIntObjectMap = IntObjectMapKt.mutableIntObjectMapOf();
-        }
-        return sortByGeometryGroupings(z, arrayList, resources, mutableIntObjectMap);
-    }
-
-    private static final List<SemanticsNode> sortByGeometryGroupings(boolean z, ArrayList<SemanticsNode> arrayList, Resources resources, MutableIntObjectMap<List<SemanticsNode>> mutableIntObjectMap) {
-        ArrayList arrayList2 = new ArrayList(arrayList.size() / 2);
-        int lastIndex = CollectionsKt.getLastIndex(arrayList);
-        int i = 0;
-        if (lastIndex >= 0) {
-            int i2 = 0;
-            while (true) {
-                SemanticsNode semanticsNode = arrayList.get(i2);
-                if (i2 == 0 || !placedEntryRowOverlaps(arrayList2, semanticsNode)) {
-                    arrayList2.add(new Pair(semanticsNode.getBoundsInWindow(), CollectionsKt.mutableListOf(semanticsNode)));
-                }
-                if (i2 == lastIndex) {
-                    break;
-                }
-                i2++;
-            }
-        }
-        ArrayList arrayList3 = arrayList2;
-        CollectionsKt.sortWith(arrayList3, TopBottomBoundsComparator.INSTANCE);
-        ArrayList arrayList4 = new ArrayList();
-        Comparator<SemanticsNode> comparator = semanticComparators[!z ? 1 : 0];
-        int size = arrayList3.size();
-        for (int i3 = 0; i3 < size; i3++) {
-            Pair pair = (Pair) arrayList3.get(i3);
-            CollectionsKt.sortWith((List) pair.getSecond(), comparator);
-            arrayList4.addAll((Collection) pair.getSecond());
-        }
-        ArrayList arrayList5 = arrayList4;
-        final Function2<SemanticsNode, SemanticsNode, Integer> function2 = UnmergedConfigComparator;
-        CollectionsKt.sortWith(arrayList5, new Comparator() { // from class: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat_androidKt$$ExternalSyntheticLambda0
-            @Override // java.util.Comparator
-            public final int compare(Object obj, Object obj2) {
-                int sortByGeometryGroupings$lambda$5;
-                sortByGeometryGroupings$lambda$5 = AndroidComposeViewAccessibilityDelegateCompat_androidKt.sortByGeometryGroupings$lambda$5(Function2.this, obj, obj2);
-                return sortByGeometryGroupings$lambda$5;
-            }
-        });
-        while (i <= CollectionsKt.getLastIndex(arrayList5)) {
-            List<SemanticsNode> list = mutableIntObjectMap.get(((SemanticsNode) arrayList4.get(i)).getId());
-            if (list != null) {
-                if (isScreenReaderFocusable((SemanticsNode) arrayList4.get(i), resources)) {
-                    i++;
-                } else {
-                    arrayList4.remove(i);
-                }
-                arrayList4.addAll(i, list);
-                i += list.size();
-            } else {
-                i++;
-            }
-        }
-        return arrayList5;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final int sortByGeometryGroupings$lambda$5(Function2 function2, Object obj, Object obj2) {
-        return ((Number) function2.invoke(obj, obj2)).intValue();
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean isScreenReaderFocusable(SemanticsNode semanticsNode, Resources resources) {
         List list = (List) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getContentDescription());
-        return !SemanticsUtils_androidKt.isHidden(semanticsNode) && (semanticsNode.getUnmergedConfig$ui_release().isMergingSemanticsOfDescendants() || (semanticsNode.isUnmergedLeafNode$ui_release() && ((list != null ? (String) CollectionsKt.firstOrNull((List<? extends Object>) list) : null) != null || getInfoText(semanticsNode) != null || getInfoStateDescriptionOrNull(semanticsNode, resources) != null || getInfoIsCheckable(semanticsNode))));
+        return !SemanticsOwnerKt.isHidden(semanticsNode) && (semanticsNode.getUnmergedConfig$ui_release().isMergingSemanticsOfDescendants() || (semanticsNode.isUnmergedLeafNode$ui_release() && ((list != null ? (String) CollectionsKt.firstOrNull((List<? extends Object>) list) : null) != null || getInfoText(semanticsNode) != null || getInfoStateDescriptionOrNull(semanticsNode, resources) != null || getInfoIsCheckable(semanticsNode))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -276,21 +147,25 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
         if (toggleableState != null) {
             int i = WhenMappings.$EnumSwitchMapping$0[toggleableState.ordinal()];
             if (i == 1) {
-                if ((role == null ? false : Role.m5907equalsimpl0(role.m5910unboximpl(), Role.Companion.m5917getSwitcho7Vup1c())) && orNull == null) {
+                if ((role == null ? false : Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6467getSwitcho7Vup1c())) && orNull == null) {
                     orNull = resources.getString(R.string.state_on);
                 }
             } else if (i == 2) {
-                if ((role == null ? false : Role.m5907equalsimpl0(role.m5910unboximpl(), Role.Companion.m5917getSwitcho7Vup1c())) && orNull == null) {
+                if ((role == null ? false : Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6467getSwitcho7Vup1c())) && orNull == null) {
                     orNull = resources.getString(R.string.state_off);
                 }
-            } else if (i == 3 && orNull == null) {
-                orNull = resources.getString(R.string.indeterminate);
+            } else if (i != 3) {
+                throw new NoWhenBranchMatchedException();
+            } else {
+                if (orNull == null) {
+                    orNull = resources.getString(R.string.indeterminate);
+                }
             }
         }
         Boolean bool = (Boolean) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getSelected());
         if (bool != null) {
             boolean booleanValue = bool.booleanValue();
-            if (!(role == null ? false : Role.m5907equalsimpl0(role.m5910unboximpl(), Role.Companion.m5918getTabo7Vup1c())) && orNull == null) {
+            if (!(role == null ? false : Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6468getTabo7Vup1c())) && orNull == null) {
                 if (booleanValue) {
                     orNull = resources.getString(R.string.selected);
                 } else {
@@ -350,35 +225,11 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
         Boolean bool = (Boolean) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getSelected());
         if (bool != null) {
             bool.booleanValue();
-            if (!(role != null ? Role.m5907equalsimpl0(role.m5910unboximpl(), Role.Companion.m5918getTabo7Vup1c()) : false)) {
+            if (!(role != null ? Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6468getTabo7Vup1c()) : false)) {
                 return true;
             }
         }
         return z;
-    }
-
-    private static final boolean placedEntryRowOverlaps(ArrayList<Pair<Rect, List<SemanticsNode>>> arrayList, SemanticsNode semanticsNode) {
-        float top = semanticsNode.getBoundsInWindow().getTop();
-        float bottom = semanticsNode.getBoundsInWindow().getBottom();
-        boolean z = top >= bottom;
-        int lastIndex = CollectionsKt.getLastIndex(arrayList);
-        if (lastIndex >= 0) {
-            int i = 0;
-            while (true) {
-                Rect first = arrayList.get(i).getFirst();
-                boolean z2 = first.getTop() >= first.getBottom();
-                if (!z && !z2 && Math.max(top, first.getTop()) < Math.min(bottom, first.getBottom())) {
-                    arrayList.set(i, new Pair<>(first.intersect(0.0f, top, Float.POSITIVE_INFINITY, bottom), arrayList.get(i).getSecond()));
-                    arrayList.get(i).getSecond().add(semanticsNode);
-                    return true;
-                } else if (i == lastIndex) {
-                    break;
-                } else {
-                    i++;
-                }
-            }
-        }
-        return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

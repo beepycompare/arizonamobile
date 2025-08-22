@@ -10,7 +10,7 @@ import io.reactivex.internal.functions.Functions;
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.Collection;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableToList<T, U extends Collection<? super T>> extends AbstractObservableWithUpstream<T, U> {
     final Callable<U> collectionSupplier;
 
@@ -34,7 +34,7 @@ public final class ObservableToList<T, U extends Collection<? super T>> extends 
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ToListObserver<T, U extends Collection<? super T>> implements Observer<T>, Disposable {
         U collection;
         final Observer<? super U> downstream;

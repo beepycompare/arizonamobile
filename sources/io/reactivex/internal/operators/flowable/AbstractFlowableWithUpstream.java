@@ -4,7 +4,7 @@ import io.reactivex.Flowable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.fuseable.HasUpstreamPublisher;
 import org.reactivestreams.Publisher;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 abstract class AbstractFlowableWithUpstream<T, R> extends Flowable<R> implements HasUpstreamPublisher<T> {
     protected final Flowable<T> source;
 

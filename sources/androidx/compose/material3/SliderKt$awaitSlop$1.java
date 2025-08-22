@@ -21,10 +21,10 @@ public final class SliderKt$awaitSlop$1 extends ContinuationImpl {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m2308awaitSlop8vUncbI;
+        Object m2615awaitSlop8vUncbI;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        m2308awaitSlop8vUncbI = SliderKt.m2308awaitSlop8vUncbI(null, 0L, 0, this);
-        return m2308awaitSlop8vUncbI;
+        m2615awaitSlop8vUncbI = SliderKt.m2615awaitSlop8vUncbI(null, 0L, 0, this);
+        return m2615awaitSlop8vUncbI;
     }
 }

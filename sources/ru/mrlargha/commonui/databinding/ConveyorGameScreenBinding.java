@@ -5,20 +5,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
+/* loaded from: classes3.dex */
 public final class ConveyorGameScreenBinding implements ViewBinding {
     public final FrameLayout btnCloseScreen;
     public final FrameLayout conveyorGameContainer;
     public final TextView gameTitle;
     public final FrameLayout itemContainer;
     public final ImageView ivDefaultItem;
-    public final LinearLayout leftContainer;
+    public final CustomCardView leftContainer;
     public final TextView leftItem;
     private final FrameLayout rootView;
     public final RecyclerView rvBoxes;
@@ -26,7 +26,7 @@ public final class ConveyorGameScreenBinding implements ViewBinding {
     public final FrameLayout topElementsContainer;
     public final TextView tvHint;
 
-    private ConveyorGameScreenBinding(FrameLayout rootView, FrameLayout btnCloseScreen, FrameLayout conveyorGameContainer, TextView gameTitle, FrameLayout itemContainer, ImageView ivDefaultItem, LinearLayout leftContainer, TextView leftItem, RecyclerView rvBoxes, RecyclerView rvItems, FrameLayout topElementsContainer, TextView tvHint) {
+    private ConveyorGameScreenBinding(FrameLayout rootView, FrameLayout btnCloseScreen, FrameLayout conveyorGameContainer, TextView gameTitle, FrameLayout itemContainer, ImageView ivDefaultItem, CustomCardView leftContainer, TextView leftItem, RecyclerView rvBoxes, RecyclerView rvItems, FrameLayout topElementsContainer, TextView tvHint) {
         this.rootView = rootView;
         this.btnCloseScreen = btnCloseScreen;
         this.conveyorGameContainer = conveyorGameContainer;
@@ -73,8 +73,8 @@ public final class ConveyorGameScreenBinding implements ViewBinding {
                     ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
                     if (imageView != null) {
                         i = R.id.left_container;
-                        LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                        if (linearLayout != null) {
+                        CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                        if (customCardView != null) {
                             i = R.id.left_item;
                             TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
                             if (textView2 != null) {
@@ -90,7 +90,7 @@ public final class ConveyorGameScreenBinding implements ViewBinding {
                                             i = R.id.tv_hint;
                                             TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                             if (textView3 != null) {
-                                                return new ConveyorGameScreenBinding(frameLayout2, frameLayout, frameLayout2, textView, frameLayout3, imageView, linearLayout, textView2, recyclerView, recyclerView2, frameLayout4, textView3);
+                                                return new ConveyorGameScreenBinding(frameLayout2, frameLayout, frameLayout2, textView, frameLayout3, imageView, customCardView, textView2, recyclerView, recyclerView2, frameLayout4, textView3);
                                             }
                                         }
                                     }

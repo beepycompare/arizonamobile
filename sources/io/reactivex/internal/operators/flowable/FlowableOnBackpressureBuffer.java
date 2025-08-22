@@ -14,7 +14,7 @@ import io.reactivex.internal.util.BackpressureHelper;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableOnBackpressureBuffer<T> extends AbstractFlowableWithUpstream<T, T> {
     final int bufferSize;
     final boolean delayError;
@@ -34,7 +34,7 @@ public final class FlowableOnBackpressureBuffer<T> extends AbstractFlowableWithU
         this.source.subscribe((FlowableSubscriber) new BackpressureBufferSubscriber(subscriber, this.bufferSize, this.unbounded, this.delayError, this.onOverflow));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BackpressureBufferSubscriber<T> extends BasicIntQueueSubscription<T> implements FlowableSubscriber<T> {
         private static final long serialVersionUID = -2514538129242366402L;
         volatile boolean cancelled;

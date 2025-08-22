@@ -6,7 +6,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.NoSuchElementException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableElementAt<T> extends AbstractObservableWithUpstream<T, T> {
     final T defaultValue;
     final boolean errorOnFewer;
@@ -24,7 +24,7 @@ public final class ObservableElementAt<T> extends AbstractObservableWithUpstream
         this.source.subscribe(new ElementAtObserver(observer, this.index, this.defaultValue, this.errorOnFewer));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ElementAtObserver<T> implements Observer<T>, Disposable {
         long count;
         final T defaultValue;

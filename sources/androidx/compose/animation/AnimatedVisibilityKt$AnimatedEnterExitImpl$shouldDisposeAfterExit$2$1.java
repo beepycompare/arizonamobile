@@ -4,7 +4,6 @@ import androidx.compose.animation.core.Transition;
 import androidx.compose.runtime.ProduceStateScope;
 import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.runtime.State;
-import androidx.exifinterface.media.ExifInterface;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -19,8 +18,8 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AnimatedVisibility.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u00020\u00040\u0003H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/runtime/ProduceStateScope;", ""}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.animation.AnimatedVisibilityKt$AnimatedEnterExitImpl$shouldDisposeAfterExit$2$1", f = "AnimatedVisibility.kt", i = {}, l = {739}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/runtime/ProduceStateScope;", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.animation.AnimatedVisibilityKt$AnimatedEnterExitImpl$shouldDisposeAfterExit$2$1", f = "AnimatedVisibility.kt", i = {}, l = {736}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class AnimatedVisibilityKt$AnimatedEnterExitImpl$shouldDisposeAfterExit$2$1 extends SuspendLambda implements Function2<ProduceStateScope<Boolean>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Transition<EnterExitState> $childTransition;
@@ -82,11 +81,11 @@ public final class AnimatedVisibilityKt$AnimatedEnterExitImpl$shouldDisposeAfter
 
                 public final Object emit(boolean z, Continuation<? super Unit> continuation) {
                     boolean z2;
-                    Function2 AnimatedEnterExitImpl$lambda$2;
+                    Function2 AnimatedEnterExitImpl$lambda$9;
                     ProduceStateScope<Boolean> produceStateScope2 = produceStateScope;
                     if (z) {
-                        AnimatedEnterExitImpl$lambda$2 = AnimatedVisibilityKt.AnimatedEnterExitImpl$lambda$2(state);
-                        z2 = ((Boolean) AnimatedEnterExitImpl$lambda$2.invoke(transition2.getCurrentState(), transition2.getTargetState())).booleanValue();
+                        AnimatedEnterExitImpl$lambda$9 = AnimatedVisibilityKt.AnimatedEnterExitImpl$lambda$9(state);
+                        z2 = ((Boolean) AnimatedEnterExitImpl$lambda$9.invoke(transition2.getCurrentState(), transition2.getTargetState())).booleanValue();
                     } else {
                         z2 = false;
                     }

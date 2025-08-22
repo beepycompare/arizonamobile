@@ -13,7 +13,7 @@ import io.reactivex.observables.ConnectableObservable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservablePublish<T> extends ConnectableObservable<T> implements HasUpstreamObservableSource<T>, ObservablePublishClassic<T> {
     final AtomicReference<PublishObserver<T>> current;
     final ObservableSource<T> onSubscribe;
@@ -75,7 +75,7 @@ public final class ObservablePublish<T> extends ConnectableObservable<T> impleme
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class PublishObserver<T> implements Observer<T>, Disposable {
         static final InnerDisposable[] EMPTY = new InnerDisposable[0];
         static final InnerDisposable[] TERMINATED = new InnerDisposable[0];
@@ -188,7 +188,7 @@ public final class ObservablePublish<T> extends ConnectableObservable<T> impleme
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class InnerDisposable<T> extends AtomicReference<Object> implements Disposable {
         private static final long serialVersionUID = -1100270633763673112L;
         final Observer<? super T> child;
@@ -220,7 +220,7 @@ public final class ObservablePublish<T> extends ConnectableObservable<T> impleme
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class PublishSource<T> implements ObservableSource<T> {
         private final AtomicReference<PublishObserver<T>> curr;
 

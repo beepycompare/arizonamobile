@@ -125,6 +125,8 @@
     </attr>
     <attr name="alwaysExpand" format="boolean">
     </attr>
+    <attr name="alwaysHint" format="string">
+    </attr>
     <attr name="animateCircleAngleTo">
         <enum name="bestChoice" value="0" />
         <enum name="closest" value="1" />

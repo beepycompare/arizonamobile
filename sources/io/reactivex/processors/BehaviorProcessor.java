@@ -18,7 +18,7 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BehaviorProcessor<T> extends FlowableProcessor<T> {
     long index;
     final ReadWriteLock lock;
@@ -284,7 +284,7 @@ public final class BehaviorProcessor<T> extends FlowableProcessor<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class BehaviorSubscription<T> extends AtomicLong implements Subscription, AppendOnlyLinkedArrayList.NonThrowingPredicate<Object> {
         private static final long serialVersionUID = 3293175281126227086L;
         volatile boolean cancelled;

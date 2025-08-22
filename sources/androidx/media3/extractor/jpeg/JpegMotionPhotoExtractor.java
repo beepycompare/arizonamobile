@@ -14,7 +14,7 @@ import androidx.media3.extractor.metadata.mp4.MotionPhotoMetadata;
 import androidx.media3.extractor.mp4.Mp4Extractor;
 import androidx.media3.extractor.text.SubtitleParser;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class JpegMotionPhotoExtractor implements Extractor {
     private static final String HEADER_XMP_APP1 = "http://ns.adobe.com/xap/1.0/";
     private static final int MARKER_APP0 = 65504;

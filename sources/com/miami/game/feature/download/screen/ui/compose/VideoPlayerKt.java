@@ -25,7 +25,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: VideoPlayer.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007²\u0006\n\u0010\b\u001a\u00020\tX\u008a\u0084\u0002"}, d2 = {"ExoPlayerView", "", "uri", "Landroid/net/Uri;", "isSoundOn", "", "(Landroid/net/Uri;ZLandroidx/compose/runtime/Composer;I)V", "download-screen_release_web", "exoPlayer", "Landroidx/media3/exoplayer/ExoPlayer;"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007²\u0006\n\u0010\b\u001a\u00020\tX\u008a\u0084\u0002"}, d2 = {"ExoPlayerView", "", "uri", "Landroid/net/Uri;", "isSoundOn", "", "(Landroid/net/Uri;ZLandroidx/compose/runtime/Composer;I)V", "download-screen_release", "exoPlayer", "Landroidx/media3/exoplayer/ExoPlayer;"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class VideoPlayerKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -38,7 +38,7 @@ public final class VideoPlayerKt {
         int i2;
         Intrinsics.checkNotNullParameter(uri, "uri");
         Composer startRestartGroup = composer.startRestartGroup(-794781196);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ExoPlayerView)P(1)28@1080L7,31@1138L63,34@1253L52,38@1337L60,38@1311L86,43@1467L175,43@1439L203,51@1702L69,51@1679L92,59@1882L446,58@1851L539:VideoPlayer.kt#k3v2wi");
+        ComposerKt.sourceInformation(startRestartGroup, "C(ExoPlayerView)N(uri,isSoundOn)28@1080L7,31@1138L63,34@1253L52,38@1337L60,38@1311L86,43@1467L175,43@1439L203,51@1702L69,51@1679L92,59@1882L446,58@1851L539:VideoPlayer.kt#k3v2wi");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(uri) ? 4 : 2) | i;
         } else {

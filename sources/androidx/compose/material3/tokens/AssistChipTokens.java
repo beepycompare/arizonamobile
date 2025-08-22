@@ -8,26 +8,26 @@ import kotlin.Metadata;
 public final class AssistChipTokens {
     public static final int $stable = 0;
     public static final AssistChipTokens INSTANCE = new AssistChipTokens();
-    private static final float ContainerHeight = Dp.m6684constructorimpl((float) 32.0d);
+    private static final float ContainerHeight = Dp.m7251constructorimpl((float) 32.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerSmall;
     private static final ColorSchemeKeyTokens DisabledLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledLabelTextOpacity = 0.38f;
-    private static final float DraggedContainerElevation = ElevationTokens.INSTANCE.m2981getLevel4D9Ej5fM();
+    private static final float DraggedContainerElevation = ElevationTokens.INSTANCE.m3288getLevel4D9Ej5fM();
     private static final ColorSchemeKeyTokens DraggedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ElevatedContainerColor = ColorSchemeKeyTokens.SurfaceContainerLow;
-    private static final float ElevatedContainerElevation = ElevationTokens.INSTANCE.m2978getLevel1D9Ej5fM();
+    private static final float ElevatedContainerElevation = ElevationTokens.INSTANCE.m3285getLevel1D9Ej5fM();
     private static final ColorSchemeKeyTokens ElevatedDisabledContainerColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float ElevatedDisabledContainerElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
+    private static final float ElevatedDisabledContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
     private static final float ElevatedDisabledContainerOpacity = 0.12f;
-    private static final float ElevatedFocusContainerElevation = ElevationTokens.INSTANCE.m2978getLevel1D9Ej5fM();
-    private static final float ElevatedHoverContainerElevation = ElevationTokens.INSTANCE.m2979getLevel2D9Ej5fM();
-    private static final float ElevatedPressedContainerElevation = ElevationTokens.INSTANCE.m2978getLevel1D9Ej5fM();
-    private static final float FlatContainerElevation = ElevationTokens.INSTANCE.m2977getLevel0D9Ej5fM();
+    private static final float ElevatedFocusContainerElevation = ElevationTokens.INSTANCE.m3285getLevel1D9Ej5fM();
+    private static final float ElevatedHoverContainerElevation = ElevationTokens.INSTANCE.m3286getLevel2D9Ej5fM();
+    private static final float ElevatedPressedContainerElevation = ElevationTokens.INSTANCE.m3285getLevel1D9Ej5fM();
+    private static final float FlatContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens FlatDisabledOutlineColor = ColorSchemeKeyTokens.OnSurface;
     private static final float FlatDisabledOutlineOpacity = 0.12f;
     private static final ColorSchemeKeyTokens FlatFocusOutlineColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FlatOutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float FlatOutlineWidth = Dp.m6684constructorimpl((float) 1.0d);
+    private static final float FlatOutlineWidth = Dp.m7251constructorimpl((float) 1.0d);
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ColorSchemeKeyTokens FocusLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens HoverLabelTextColor = ColorSchemeKeyTokens.OnSurface;
@@ -40,14 +40,14 @@ public final class AssistChipTokens {
     private static final ColorSchemeKeyTokens FocusIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens HoverIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.Primary;
-    private static final float IconSize = Dp.m6684constructorimpl((float) 18.0d);
+    private static final float IconSize = Dp.m7251constructorimpl((float) 18.0d);
     private static final ColorSchemeKeyTokens PressedIconColor = ColorSchemeKeyTokens.Primary;
 
     private AssistChipTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m2808getContainerHeightD9Ej5fM() {
+    public final float m3115getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -64,7 +64,7 @@ public final class AssistChipTokens {
     }
 
     /* renamed from: getDraggedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2809getDraggedContainerElevationD9Ej5fM() {
+    public final float m3116getDraggedContainerElevationD9Ej5fM() {
         return DraggedContainerElevation;
     }
 
@@ -77,7 +77,7 @@ public final class AssistChipTokens {
     }
 
     /* renamed from: getElevatedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2810getElevatedContainerElevationD9Ej5fM() {
+    public final float m3117getElevatedContainerElevationD9Ej5fM() {
         return ElevatedContainerElevation;
     }
 
@@ -86,7 +86,7 @@ public final class AssistChipTokens {
     }
 
     /* renamed from: getElevatedDisabledContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2811getElevatedDisabledContainerElevationD9Ej5fM() {
+    public final float m3118getElevatedDisabledContainerElevationD9Ej5fM() {
         return ElevatedDisabledContainerElevation;
     }
 
@@ -95,22 +95,22 @@ public final class AssistChipTokens {
     }
 
     /* renamed from: getElevatedFocusContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2812getElevatedFocusContainerElevationD9Ej5fM() {
+    public final float m3119getElevatedFocusContainerElevationD9Ej5fM() {
         return ElevatedFocusContainerElevation;
     }
 
     /* renamed from: getElevatedHoverContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2813getElevatedHoverContainerElevationD9Ej5fM() {
+    public final float m3120getElevatedHoverContainerElevationD9Ej5fM() {
         return ElevatedHoverContainerElevation;
     }
 
     /* renamed from: getElevatedPressedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2814getElevatedPressedContainerElevationD9Ej5fM() {
+    public final float m3121getElevatedPressedContainerElevationD9Ej5fM() {
         return ElevatedPressedContainerElevation;
     }
 
     /* renamed from: getFlatContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2815getFlatContainerElevationD9Ej5fM() {
+    public final float m3122getFlatContainerElevationD9Ej5fM() {
         return FlatContainerElevation;
     }
 
@@ -131,7 +131,7 @@ public final class AssistChipTokens {
     }
 
     /* renamed from: getFlatOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m2816getFlatOutlineWidthD9Ej5fM() {
+    public final float m3123getFlatOutlineWidthD9Ej5fM() {
         return FlatOutlineWidth;
     }
 
@@ -184,7 +184,7 @@ public final class AssistChipTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m2817getIconSizeD9Ej5fM() {
+    public final float m3124getIconSizeD9Ej5fM() {
         return IconSize;
     }
 

@@ -5,7 +5,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 /* compiled from: Constraints.kt */
-@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\b\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u000b\n\u0002\b\b\u001a5\u0010\u0013\u001a\u00020\u00142\b\b\u0002\u0010\u0015\u001a\u00020\u00032\b\b\u0002\u0010\u0016\u001a\u00020\u00032\b\b\u0002\u0010\u0017\u001a\u00020\u00032\b\b\u0002\u0010\u0018\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0019\u001a\u0019\u0010\u001a\u001a\u00020\u00032\u0006\u0010\u001b\u001a\u00020\u00032\u0006\u0010\u001c\u001a\u00020\u0003H\u0082\b\u001a\u0011\u0010\u001d\u001a\u00020\u00032\u0006\u0010\u001e\u001a\u00020\u0003H\u0082\b\u001a\u0010\u0010\u001f\u001a\u00020\u00032\u0006\u0010 \u001a\u00020\u0003H\u0000\u001a-\u0010!\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00032\u0006\u0010\u0016\u001a\u00020\u00032\u0006\u0010\u0017\u001a\u00020\u00032\u0006\u0010\u0018\u001a\u00020\u0003H\u0000¢\u0006\u0002\u0010\u0019\u001a\u0011\u0010\"\u001a\u00020\u00032\u0006\u0010#\u001a\u00020\u0003H\u0082\b\u001a\u0011\u0010$\u001a\u00020\u00032\u0006\u0010%\u001a\u00020\u0003H\u0082\b\u001a\u0011\u0010&\u001a\u00020\u00032\u0006\u0010 \u001a\u00020\u0003H\u0082\b\u001a\u0011\u0010'\u001a\u00020\u00032\u0006\u0010#\u001a\u00020\u0003H\u0082\b\u001a\u0018\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u0003H\u0000\u001a\u0010\u0010,\u001a\u00020-2\u0006\u0010 \u001a\u00020\u0003H\u0000\u001a\u0011\u0010.\u001a\u00020\u00032\u0006\u0010#\u001a\u00020\u0003H\u0082\b\u001a\u001c\u0010/\u001a\u00020\u0014*\u00020\u00142\u0006\u00100\u001a\u00020\u0014ø\u0001\u0000¢\u0006\u0004\b1\u00102\u001a\u001e\u0010/\u001a\u000203*\u00020\u00142\u0006\u0010 \u001a\u000203H\u0007ø\u0001\u0000¢\u0006\u0004\b4\u00102\u001a\u001e\u00105\u001a\u00020\u0003*\u00020\u00142\u0006\u00106\u001a\u00020\u0003H\u0007ø\u0001\u0000¢\u0006\u0004\b7\u00108\u001a\u001e\u00109\u001a\u00020\u0003*\u00020\u00142\u0006\u0010:\u001a\u00020\u0003H\u0007ø\u0001\u0000¢\u0006\u0004\b;\u00108\u001a\u001e\u0010<\u001a\u00020=*\u00020\u00142\u0006\u0010 \u001a\u000203H\u0007ø\u0001\u0000¢\u0006\u0004\b>\u0010?\u001a*\u0010@\u001a\u00020\u0014*\u00020\u00142\b\b\u0002\u0010A\u001a\u00020\u00032\b\b\u0002\u0010B\u001a\u00020\u0003H\u0007ø\u0001\u0000¢\u0006\u0004\bC\u0010D\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0004\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0005\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0006\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0007\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\"\u0016\u0010\b\u001a\u00020\u00018\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\b\t\u0010\n\"\u000e\u0010\u000b\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\f\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\r\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u000e\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u000f\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0010\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0011\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0012\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006E"}, d2 = {"FocusMask", "", "Infinity", "", "MaxAllowedForMaxFocusBits", "MaxAllowedForMaxNonFocusBits", "MaxAllowedForMinFocusBits", "MaxAllowedForMinNonFocusBits", "MaxDimensionsAndFocusMask", "getMaxDimensionsAndFocusMask$annotations", "()V", "MaxFocusBits", "MaxFocusMask", "MaxNonFocusBits", "MaxNonFocusMask", "MinFocusBits", "MinFocusMask", "MinNonFocusBits", "MinNonFocusMask", androidx.constraintlayout.widget.Constraints.TAG, "Landroidx/compose/ui/unit/Constraints;", "minWidth", "maxWidth", "minHeight", "maxHeight", "(IIII)J", "addMaxWithMinimum", "max", "value", "bitOffsetToIndex", "bits", "bitsNeedForSizeUnchecked", "size", "createConstraints", "heightMask", "bitOffset", "indexToBitOffset", FirebaseAnalytics.Param.INDEX, "maxAllowedForSize", "minHeightOffsets", "throwInvalidConstraintException", "", "widthVal", "heightVal", "throwInvalidConstraintsSizeException", "", "widthMask", "constrain", "otherConstraints", "constrain-N9IONVI", "(JJ)J", "Landroidx/compose/ui/unit/IntSize;", "constrain-4WqzIAM", "constrainHeight", "height", "constrainHeight-K40F9xA", "(JI)I", "constrainWidth", "width", "constrainWidth-K40F9xA", "isSatisfiedBy", "", "isSatisfiedBy-4WqzIAM", "(JJ)Z", TypedValues.CycleType.S_WAVE_OFFSET, "horizontal", "vertical", "offset-NN6Ew-U", "(JII)J", "ui-unit_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0010\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u000b\n\u0002\b\u0013\u001a\u0018\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00012\u0006\u0010\u0016\u001a\u00020\u0001H\u0000\u001a\u0010\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0001H\u0000\u001a-\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u00012\u0006\u0010\u001d\u001a\u00020\u00012\u0006\u0010\u001e\u001a\u00020\u00012\u0006\u0010\u001f\u001a\u00020\u0001H\u0000¢\u0006\u0002\u0010 \u001a\u0010\u0010!\u001a\u00020\u00012\u0006\u0010\u0019\u001a\u00020\u0001H\u0000\u001a\u0011\u0010\"\u001a\u00020\u00012\u0006\u0010\u0019\u001a\u00020\u0001H\u0082\b\u001a5\u0010#\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u00012\b\b\u0002\u0010\u001d\u001a\u00020\u00012\b\b\u0002\u0010\u001e\u001a\u00020\u00012\b\b\u0002\u0010\u001f\u001a\u00020\u0001H\u0007¢\u0006\u0002\u0010 \u001a\u0019\u0010$\u001a\u00020\u001b*\u00020\u001b2\u0006\u0010%\u001a\u00020\u001b¢\u0006\u0004\b&\u0010'\u001a\u001b\u0010$\u001a\u00020(*\u00020\u001b2\u0006\u0010\u0019\u001a\u00020(H\u0007¢\u0006\u0004\b)\u0010'\u001a\u001b\u0010*\u001a\u00020\u0001*\u00020\u001b2\u0006\u0010+\u001a\u00020\u0001H\u0007¢\u0006\u0004\b,\u0010-\u001a\u001b\u0010.\u001a\u00020\u0001*\u00020\u001b2\u0006\u0010/\u001a\u00020\u0001H\u0007¢\u0006\u0004\b0\u0010-\u001a\u001b\u00101\u001a\u000202*\u00020\u001b2\u0006\u0010\u0019\u001a\u00020(H\u0007¢\u0006\u0004\b3\u00104\u001a'\u00105\u001a\u00020\u001b*\u00020\u001b2\b\b\u0002\u00106\u001a\u00020\u00012\b\b\u0002\u00107\u001a\u00020\u0001H\u0007¢\u0006\u0004\b8\u00109\u001a\u0019\u0010:\u001a\u00020\u00012\u0006\u0010;\u001a\u00020\u00012\u0006\u0010<\u001a\u00020\u0001H\u0082\b\u001a\u0011\u0010=\u001a\u00020\u00012\u0006\u0010>\u001a\u00020\u0001H\u0082\b\u001a\u0011\u0010?\u001a\u00020\u00012\u0006\u0010@\u001a\u00020\u0001H\u0082\b\u001a\u0011\u0010A\u001a\u00020\u00012\u0006\u0010B\u001a\u00020\u0001H\u0082\b\u001a\u0011\u0010C\u001a\u00020\u00012\u0006\u0010B\u001a\u00020\u0001H\u0082\b\u001a\u0011\u0010D\u001a\u00020\u00012\u0006\u0010B\u001a\u00020\u0001H\u0082\b\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0004\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0005\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0006\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0007\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\b\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\t\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\n\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u000b\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\f\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\r\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u000e\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u000f\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u0016\u0010\u0010\u001a\u00020\u00038\u0000X\u0081T¢\u0006\b\n\u0000\u0012\u0004\b\u0011\u0010\u0012¨\u0006E"}, d2 = {"Infinity", "", "FocusMask", "", "MinFocusBits", "MaxAllowedForMinFocusBits", "MinFocusMask", "MinNonFocusBits", "MaxAllowedForMinNonFocusBits", "MinNonFocusMask", "MaxFocusBits", "MaxAllowedForMaxFocusBits", "MaxFocusMask", "MaxNonFocusBits", "MaxAllowedForMaxNonFocusBits", "MaxNonFocusMask", "MaxDimensionsAndFocusMask", "getMaxDimensionsAndFocusMask$annotations", "()V", "throwInvalidConstraintException", "", "widthVal", "heightVal", "throwInvalidConstraintsSizeException", "", "size", "createConstraints", "Landroidx/compose/ui/unit/Constraints;", "minWidth", "maxWidth", "minHeight", "maxHeight", "(IIII)J", "bitsNeedForSizeUnchecked", "maxAllowedForSize", androidx.constraintlayout.widget.Constraints.TAG, "constrain", "otherConstraints", "constrain-N9IONVI", "(JJ)J", "Landroidx/compose/ui/unit/IntSize;", "constrain-4WqzIAM", "constrainWidth", "width", "constrainWidth-K40F9xA", "(JI)I", "constrainHeight", "height", "constrainHeight-K40F9xA", "isSatisfiedBy", "", "isSatisfiedBy-4WqzIAM", "(JJ)Z", TypedValues.CycleType.S_WAVE_OFFSET, "horizontal", "vertical", "offset-NN6Ew-U", "(JII)J", "addMaxWithMinimum", "max", "value", "indexToBitOffset", FirebaseAnalytics.Param.INDEX, "bitOffsetToIndex", "bits", "minHeightOffsets", "bitOffset", "widthMask", "heightMask", "ui-unit"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ConstraintsKt {
     private static final long FocusMask = 3;
@@ -90,7 +90,7 @@ public final class ConstraintsKt {
         int i7 = i2 + 1;
         int i8 = i4 + 1;
         int i9 = bitsNeedForSizeUnchecked2 - 13;
-        return Constraints.m6625constructorimpl(((i7 & (~(i7 >> 31))) << 33) | ((i9 >> 1) + (i9 & 1)) | (i << 2) | (i3 << (bitsNeedForSizeUnchecked2 + 2)) | ((i8 & (~(i8 >> 31))) << (bitsNeedForSizeUnchecked2 + 33)));
+        return Constraints.m7192constructorimpl(((i7 & (~(i7 >> 31))) << 33) | ((i9 >> 1) + (i9 & 1)) | (i << 2) | (i3 << (bitsNeedForSizeUnchecked2 + 2)) | ((i8 & (~(i8 >> 31))) << (bitsNeedForSizeUnchecked2 + 33)));
     }
 
     private static final int maxAllowedForSize(int i) {
@@ -134,123 +134,123 @@ public final class ConstraintsKt {
     }
 
     /* renamed from: constrain-N9IONVI  reason: not valid java name */
-    public static final long m6652constrainN9IONVI(long j, long j2) {
-        int m6639getMinWidthimpl = Constraints.m6639getMinWidthimpl(j);
-        int m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j);
-        int m6638getMinHeightimpl = Constraints.m6638getMinHeightimpl(j);
-        int m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j);
-        int m6639getMinWidthimpl2 = Constraints.m6639getMinWidthimpl(j2);
-        if (m6639getMinWidthimpl2 < m6639getMinWidthimpl) {
-            m6639getMinWidthimpl2 = m6639getMinWidthimpl;
+    public static final long m7219constrainN9IONVI(long j, long j2) {
+        int m7206getMinWidthimpl = Constraints.m7206getMinWidthimpl(j);
+        int m7204getMaxWidthimpl = Constraints.m7204getMaxWidthimpl(j);
+        int m7205getMinHeightimpl = Constraints.m7205getMinHeightimpl(j);
+        int m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j);
+        int m7206getMinWidthimpl2 = Constraints.m7206getMinWidthimpl(j2);
+        if (m7206getMinWidthimpl2 < m7206getMinWidthimpl) {
+            m7206getMinWidthimpl2 = m7206getMinWidthimpl;
         }
-        if (m6639getMinWidthimpl2 > m6637getMaxWidthimpl) {
-            m6639getMinWidthimpl2 = m6637getMaxWidthimpl;
+        if (m7206getMinWidthimpl2 > m7204getMaxWidthimpl) {
+            m7206getMinWidthimpl2 = m7204getMaxWidthimpl;
         }
-        int m6637getMaxWidthimpl2 = Constraints.m6637getMaxWidthimpl(j2);
-        if (m6637getMaxWidthimpl2 >= m6639getMinWidthimpl) {
-            m6639getMinWidthimpl = m6637getMaxWidthimpl2;
+        int m7204getMaxWidthimpl2 = Constraints.m7204getMaxWidthimpl(j2);
+        if (m7204getMaxWidthimpl2 >= m7206getMinWidthimpl) {
+            m7206getMinWidthimpl = m7204getMaxWidthimpl2;
         }
-        if (m6639getMinWidthimpl <= m6637getMaxWidthimpl) {
-            m6637getMaxWidthimpl = m6639getMinWidthimpl;
+        if (m7206getMinWidthimpl <= m7204getMaxWidthimpl) {
+            m7204getMaxWidthimpl = m7206getMinWidthimpl;
         }
-        int m6638getMinHeightimpl2 = Constraints.m6638getMinHeightimpl(j2);
-        if (m6638getMinHeightimpl2 < m6638getMinHeightimpl) {
-            m6638getMinHeightimpl2 = m6638getMinHeightimpl;
+        int m7205getMinHeightimpl2 = Constraints.m7205getMinHeightimpl(j2);
+        if (m7205getMinHeightimpl2 < m7205getMinHeightimpl) {
+            m7205getMinHeightimpl2 = m7205getMinHeightimpl;
         }
-        if (m6638getMinHeightimpl2 > m6636getMaxHeightimpl) {
-            m6638getMinHeightimpl2 = m6636getMaxHeightimpl;
+        if (m7205getMinHeightimpl2 > m7203getMaxHeightimpl) {
+            m7205getMinHeightimpl2 = m7203getMaxHeightimpl;
         }
-        int m6636getMaxHeightimpl2 = Constraints.m6636getMaxHeightimpl(j2);
-        if (m6636getMaxHeightimpl2 >= m6638getMinHeightimpl) {
-            m6638getMinHeightimpl = m6636getMaxHeightimpl2;
+        int m7203getMaxHeightimpl2 = Constraints.m7203getMaxHeightimpl(j2);
+        if (m7203getMaxHeightimpl2 >= m7205getMinHeightimpl) {
+            m7205getMinHeightimpl = m7203getMaxHeightimpl2;
         }
-        if (m6638getMinHeightimpl <= m6636getMaxHeightimpl) {
-            m6636getMaxHeightimpl = m6638getMinHeightimpl;
+        if (m7205getMinHeightimpl <= m7203getMaxHeightimpl) {
+            m7203getMaxHeightimpl = m7205getMinHeightimpl;
         }
-        return Constraints(m6639getMinWidthimpl2, m6637getMaxWidthimpl, m6638getMinHeightimpl2, m6636getMaxHeightimpl);
+        return Constraints(m7206getMinWidthimpl2, m7204getMaxWidthimpl, m7205getMinHeightimpl2, m7203getMaxHeightimpl);
     }
 
     /* renamed from: constrain-4WqzIAM  reason: not valid java name */
-    public static final long m6651constrain4WqzIAM(long j, long j2) {
+    public static final long m7218constrain4WqzIAM(long j, long j2) {
         int i = (int) (j2 >> 32);
-        int m6639getMinWidthimpl = Constraints.m6639getMinWidthimpl(j);
-        int m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j);
-        if (i < m6639getMinWidthimpl) {
-            i = m6639getMinWidthimpl;
+        int m7206getMinWidthimpl = Constraints.m7206getMinWidthimpl(j);
+        int m7204getMaxWidthimpl = Constraints.m7204getMaxWidthimpl(j);
+        if (i < m7206getMinWidthimpl) {
+            i = m7206getMinWidthimpl;
         }
-        if (i <= m6637getMaxWidthimpl) {
-            m6637getMaxWidthimpl = i;
+        if (i <= m7204getMaxWidthimpl) {
+            m7204getMaxWidthimpl = i;
         }
         int i2 = (int) (j2 & 4294967295L);
-        int m6638getMinHeightimpl = Constraints.m6638getMinHeightimpl(j);
-        int m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j);
-        if (i2 < m6638getMinHeightimpl) {
-            i2 = m6638getMinHeightimpl;
+        int m7205getMinHeightimpl = Constraints.m7205getMinHeightimpl(j);
+        int m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j);
+        if (i2 < m7205getMinHeightimpl) {
+            i2 = m7205getMinHeightimpl;
         }
-        if (i2 <= m6636getMaxHeightimpl) {
-            m6636getMaxHeightimpl = i2;
+        if (i2 <= m7203getMaxHeightimpl) {
+            m7203getMaxHeightimpl = i2;
         }
-        return IntSize.m6850constructorimpl((m6637getMaxWidthimpl << 32) | (m6636getMaxHeightimpl & 4294967295L));
+        return IntSize.m7417constructorimpl((m7204getMaxWidthimpl << 32) | (m7203getMaxHeightimpl & 4294967295L));
     }
 
     /* renamed from: constrainWidth-K40F9xA  reason: not valid java name */
-    public static final int m6654constrainWidthK40F9xA(long j, int i) {
-        int m6639getMinWidthimpl = Constraints.m6639getMinWidthimpl(j);
-        int m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j);
-        if (i < m6639getMinWidthimpl) {
-            i = m6639getMinWidthimpl;
+    public static final int m7221constrainWidthK40F9xA(long j, int i) {
+        int m7206getMinWidthimpl = Constraints.m7206getMinWidthimpl(j);
+        int m7204getMaxWidthimpl = Constraints.m7204getMaxWidthimpl(j);
+        if (i < m7206getMinWidthimpl) {
+            i = m7206getMinWidthimpl;
         }
-        return i > m6637getMaxWidthimpl ? m6637getMaxWidthimpl : i;
+        return i > m7204getMaxWidthimpl ? m7204getMaxWidthimpl : i;
     }
 
     /* renamed from: constrainHeight-K40F9xA  reason: not valid java name */
-    public static final int m6653constrainHeightK40F9xA(long j, int i) {
-        int m6638getMinHeightimpl = Constraints.m6638getMinHeightimpl(j);
-        int m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j);
-        if (i < m6638getMinHeightimpl) {
-            i = m6638getMinHeightimpl;
+    public static final int m7220constrainHeightK40F9xA(long j, int i) {
+        int m7205getMinHeightimpl = Constraints.m7205getMinHeightimpl(j);
+        int m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j);
+        if (i < m7205getMinHeightimpl) {
+            i = m7205getMinHeightimpl;
         }
-        return i > m6636getMaxHeightimpl ? m6636getMaxHeightimpl : i;
+        return i > m7203getMaxHeightimpl ? m7203getMaxHeightimpl : i;
     }
 
     /* renamed from: isSatisfiedBy-4WqzIAM  reason: not valid java name */
-    public static final boolean m6655isSatisfiedBy4WqzIAM(long j, long j2) {
-        int m6639getMinWidthimpl = Constraints.m6639getMinWidthimpl(j);
-        int m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j);
+    public static final boolean m7222isSatisfiedBy4WqzIAM(long j, long j2) {
+        int m7206getMinWidthimpl = Constraints.m7206getMinWidthimpl(j);
+        int m7204getMaxWidthimpl = Constraints.m7204getMaxWidthimpl(j);
         int i = (int) (j2 >> 32);
-        if (m6639getMinWidthimpl > i || i > m6637getMaxWidthimpl) {
+        if (m7206getMinWidthimpl > i || i > m7204getMaxWidthimpl) {
             return false;
         }
         int i2 = (int) (j2 & 4294967295L);
-        return Constraints.m6638getMinHeightimpl(j) <= i2 && i2 <= Constraints.m6636getMaxHeightimpl(j);
+        return Constraints.m7205getMinHeightimpl(j) <= i2 && i2 <= Constraints.m7203getMaxHeightimpl(j);
     }
 
     /* renamed from: offset-NN6Ew-U$default  reason: not valid java name */
-    public static /* synthetic */ long m6657offsetNN6EwU$default(long j, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ long m7224offsetNN6EwU$default(long j, int i, int i2, int i3, Object obj) {
         if ((i3 & 1) != 0) {
             i = 0;
         }
         if ((i3 & 2) != 0) {
             i2 = 0;
         }
-        return m6656offsetNN6EwU(j, i, i2);
+        return m7223offsetNN6EwU(j, i, i2);
     }
 
     /* renamed from: offset-NN6Ew-U  reason: not valid java name */
-    public static final long m6656offsetNN6EwU(long j, int i, int i2) {
-        int m6639getMinWidthimpl = Constraints.m6639getMinWidthimpl(j) + i;
-        if (m6639getMinWidthimpl < 0) {
-            m6639getMinWidthimpl = 0;
+    public static final long m7223offsetNN6EwU(long j, int i, int i2) {
+        int m7206getMinWidthimpl = Constraints.m7206getMinWidthimpl(j) + i;
+        if (m7206getMinWidthimpl < 0) {
+            m7206getMinWidthimpl = 0;
         }
-        int m6637getMaxWidthimpl = Constraints.m6637getMaxWidthimpl(j);
-        if (m6637getMaxWidthimpl != Integer.MAX_VALUE && (m6637getMaxWidthimpl = m6637getMaxWidthimpl + i) < 0) {
-            m6637getMaxWidthimpl = 0;
+        int m7204getMaxWidthimpl = Constraints.m7204getMaxWidthimpl(j);
+        if (m7204getMaxWidthimpl != Integer.MAX_VALUE && (m7204getMaxWidthimpl = m7204getMaxWidthimpl + i) < 0) {
+            m7204getMaxWidthimpl = 0;
         }
-        int m6638getMinHeightimpl = Constraints.m6638getMinHeightimpl(j) + i2;
-        if (m6638getMinHeightimpl < 0) {
-            m6638getMinHeightimpl = 0;
+        int m7205getMinHeightimpl = Constraints.m7205getMinHeightimpl(j) + i2;
+        if (m7205getMinHeightimpl < 0) {
+            m7205getMinHeightimpl = 0;
         }
-        int m6636getMaxHeightimpl = Constraints.m6636getMaxHeightimpl(j);
-        return Constraints(m6639getMinWidthimpl, m6637getMaxWidthimpl, m6638getMinHeightimpl, (m6636getMaxHeightimpl == Integer.MAX_VALUE || (m6636getMaxHeightimpl = m6636getMaxHeightimpl + i2) >= 0) ? m6636getMaxHeightimpl : 0);
+        int m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j);
+        return Constraints(m7206getMinWidthimpl, m7204getMaxWidthimpl, m7205getMinHeightimpl, (m7203getMaxHeightimpl == Integer.MAX_VALUE || (m7203getMaxHeightimpl = m7203getMaxHeightimpl + i2) >= 0) ? m7203getMaxHeightimpl : 0);
     }
 }

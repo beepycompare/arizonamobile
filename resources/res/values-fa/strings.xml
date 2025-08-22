@@ -123,7 +123,7 @@
     <string name="exposed_dropdown_menu_content_description">نمایش منوی کرکره‌ای</string>
     <string name="icon_content_description">نماد کادر گفتگو</string>
     <string name="in_progress">درحال انجام</string>
-    <string name="indeterminate">برخی موارد علامت‌گذاری شده است</string>
+    <string name="indeterminate">ناقص علامت زده‌شده</string>
     <string name="installation_cancelled">نصب لغو شد.</string>
     <string name="installation_failed">نصب نشد.</string>
     <string name="installing_module">مدول نصب:</string>

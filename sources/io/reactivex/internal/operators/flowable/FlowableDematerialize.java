@@ -10,7 +10,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableDematerialize<T, R> extends AbstractFlowableWithUpstream<T, R> {
     final Function<? super T, ? extends Notification<R>> selector;
 
@@ -24,7 +24,7 @@ public final class FlowableDematerialize<T, R> extends AbstractFlowableWithUpstr
         this.source.subscribe((FlowableSubscriber) new DematerializeSubscriber(subscriber, this.selector));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DematerializeSubscriber<T, R> implements FlowableSubscriber<T>, Subscription {
         boolean done;
         final Subscriber<? super R> downstream;

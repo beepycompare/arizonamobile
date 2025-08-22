@@ -7,7 +7,7 @@ import io.reactivex.SingleSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.HasUpstreamSingleSource;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeFromSingle<T> extends Maybe<T> implements HasUpstreamSingleSource<T> {
     final SingleSource<T> source;
 
@@ -25,7 +25,7 @@ public final class MaybeFromSingle<T> extends Maybe<T> implements HasUpstreamSin
         this.source.subscribe(new FromSingleObserver(maybeObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FromSingleObserver<T> implements SingleObserver<T>, Disposable {
         final MaybeObserver<? super T> downstream;
         Disposable upstream;

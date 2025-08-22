@@ -13,7 +13,7 @@ import io.reactivex.subjects.UnicastSubject;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableWindowBoundary<T, B> extends AbstractObservableWithUpstream<T, Observable<T>> {
     final int capacityHint;
     final ObservableSource<B> other;
@@ -32,7 +32,7 @@ public final class ObservableWindowBoundary<T, B> extends AbstractObservableWith
         this.source.subscribe(windowBoundaryMainObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WindowBoundaryMainObserver<T, B> extends AtomicInteger implements Observer<T>, Disposable, Runnable {
         static final Object NEXT_WINDOW = new Object();
         private static final long serialVersionUID = 2233020065421370272L;
@@ -193,7 +193,7 @@ public final class ObservableWindowBoundary<T, B> extends AbstractObservableWith
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class WindowBoundaryInnerObserver<T, B> extends DisposableObserver<B> {
         boolean done;
         final WindowBoundaryMainObserver<T, B> parent;

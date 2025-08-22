@@ -7,7 +7,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonatePurchasePage.kt */
 @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final /* synthetic */ class DonatePurchasePage$purchaseAdapter$1 extends FunctionReferenceImpl implements Function1<Integer, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public DonatePurchasePage$purchaseAdapter$1(Object obj) {

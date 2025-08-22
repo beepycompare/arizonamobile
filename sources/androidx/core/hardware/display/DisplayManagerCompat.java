@@ -39,7 +39,7 @@ public final class DisplayManagerCompat {
 
     private static Display[] computeBuiltInDisplays(DisplayManager displayManager) {
         Display[] displays;
-        if (Build.VERSION.SDK_INT >= 32) {
+        if (Build.VERSION.SDK_INT >= 33) {
             displays = displayManager.getDisplays(DISPLAY_CATEGORY_ALL);
         } else {
             displays = displayManager.getDisplays();

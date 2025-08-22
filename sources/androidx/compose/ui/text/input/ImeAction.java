@@ -4,57 +4,57 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: ImeAction.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u00112\u00020\u0001:\u0001\u0011B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001a\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\t\u0010\nJ\u0010\u0010\u000b\u001a\u00020\u0003HÖ\u0001¢\u0006\u0004\b\f\u0010\u0005J\u000f\u0010\r\u001a\u00020\u000eH\u0016¢\u0006\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0012"}, d2 = {"Landroidx/compose/ui/text/input/ImeAction;", "", "value", "", "constructor-impl", "(I)I", "equals", "", "other", "equals-impl", "(ILjava/lang/Object;)Z", "hashCode", "hashCode-impl", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "Companion", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u000e2\u00020\u0001:\u0001\u000eB\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\r\u001a\u00020\u0003HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/text/input/ImeAction;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "equals", "", "other", "hashCode", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes2.dex */
 public final class ImeAction {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Unspecified = m6312constructorimpl(-1);
-    private static final int Default = m6312constructorimpl(1);
-    private static final int None = m6312constructorimpl(0);
-    private static final int Go = m6312constructorimpl(2);
-    private static final int Search = m6312constructorimpl(3);
-    private static final int Send = m6312constructorimpl(4);
-    private static final int Previous = m6312constructorimpl(5);
-    private static final int Next = m6312constructorimpl(6);
-    private static final int Done = m6312constructorimpl(7);
+    private static final int Unspecified = m6880constructorimpl(-1);
+    private static final int Default = m6880constructorimpl(1);
+    private static final int None = m6880constructorimpl(0);
+    private static final int Go = m6880constructorimpl(2);
+    private static final int Search = m6880constructorimpl(3);
+    private static final int Send = m6880constructorimpl(4);
+    private static final int Previous = m6880constructorimpl(5);
+    private static final int Next = m6880constructorimpl(6);
+    private static final int Done = m6880constructorimpl(7);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ImeAction m6311boximpl(int i) {
+    public static final /* synthetic */ ImeAction m6879boximpl(int i) {
         return new ImeAction(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m6312constructorimpl(int i) {
+    private static int m6880constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6313equalsimpl(int i, Object obj) {
-        return (obj instanceof ImeAction) && i == ((ImeAction) obj).m6317unboximpl();
+    public static boolean m6881equalsimpl(int i, Object obj) {
+        return (obj instanceof ImeAction) && i == ((ImeAction) obj).m6885unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6314equalsimpl0(int i, int i2) {
+    public static final boolean m6882equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6315hashCodeimpl(int i) {
+    public static int m6883hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m6313equalsimpl(this.value, obj);
+        return m6881equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6315hashCodeimpl(this.value);
+        return m6883hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6317unboximpl() {
+    public final /* synthetic */ int m6885unboximpl() {
         return this.value;
     }
 
@@ -63,16 +63,16 @@ public final class ImeAction {
     }
 
     public String toString() {
-        return m6316toStringimpl(this.value);
+        return m6884toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6316toStringimpl(int i) {
-        return m6314equalsimpl0(i, Unspecified) ? "Unspecified" : m6314equalsimpl0(i, None) ? "None" : m6314equalsimpl0(i, Default) ? "Default" : m6314equalsimpl0(i, Go) ? "Go" : m6314equalsimpl0(i, Search) ? "Search" : m6314equalsimpl0(i, Send) ? "Send" : m6314equalsimpl0(i, Previous) ? "Previous" : m6314equalsimpl0(i, Next) ? "Next" : m6314equalsimpl0(i, Done) ? "Done" : "Invalid";
+    public static String m6884toStringimpl(int i) {
+        return m6882equalsimpl0(i, Unspecified) ? "Unspecified" : m6882equalsimpl0(i, None) ? "None" : m6882equalsimpl0(i, Default) ? "Default" : m6882equalsimpl0(i, Go) ? "Go" : m6882equalsimpl0(i, Search) ? "Search" : m6882equalsimpl0(i, Send) ? "Send" : m6882equalsimpl0(i, Previous) ? "Previous" : m6882equalsimpl0(i, Next) ? "Next" : m6882equalsimpl0(i, Done) ? "Done" : "Invalid";
     }
 
     /* compiled from: ImeAction.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u001d\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R$\u0010\u0003\u001a\u00020\u00048\u0006X\u0087\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\b\u0012\u0004\b\u0005\u0010\u0002\u001a\u0004\b\u0006\u0010\u0007R$\u0010\t\u001a\u00020\u00048\u0006X\u0087\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\b\u0012\u0004\b\n\u0010\u0002\u001a\u0004\b\u000b\u0010\u0007R$\u0010\f\u001a\u00020\u00048\u0006X\u0087\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\b\u0012\u0004\b\r\u0010\u0002\u001a\u0004\b\u000e\u0010\u0007R$\u0010\u000f\u001a\u00020\u00048\u0006X\u0087\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\b\u0012\u0004\b\u0010\u0010\u0002\u001a\u0004\b\u0011\u0010\u0007R$\u0010\u0012\u001a\u00020\u00048\u0006X\u0087\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\b\u0012\u0004\b\u0013\u0010\u0002\u001a\u0004\b\u0014\u0010\u0007R$\u0010\u0015\u001a\u00020\u00048\u0006X\u0087\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\b\u0012\u0004\b\u0016\u0010\u0002\u001a\u0004\b\u0017\u0010\u0007R$\u0010\u0018\u001a\u00020\u00048\u0006X\u0087\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\b\u0012\u0004\b\u0019\u0010\u0002\u001a\u0004\b\u001a\u0010\u0007R$\u0010\u001b\u001a\u00020\u00048\u0006X\u0087\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\b\u0012\u0004\b\u001c\u0010\u0002\u001a\u0004\b\u001d\u0010\u0007R$\u0010\u001e\u001a\u00020\u00048\u0006X\u0087\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\b\u0012\u0004\b\u001f\u0010\u0002\u001a\u0004\b \u0010\u0007\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006!"}, d2 = {"Landroidx/compose/ui/text/input/ImeAction$Companion;", "", "()V", "Default", "Landroidx/compose/ui/text/input/ImeAction;", "getDefault-eUduSuo$annotations", "getDefault-eUduSuo", "()I", "I", "Done", "getDone-eUduSuo$annotations", "getDone-eUduSuo", "Go", "getGo-eUduSuo$annotations", "getGo-eUduSuo", "Next", "getNext-eUduSuo$annotations", "getNext-eUduSuo", "None", "getNone-eUduSuo$annotations", "getNone-eUduSuo", "Previous", "getPrevious-eUduSuo$annotations", "getPrevious-eUduSuo", "Search", "getSearch-eUduSuo$annotations", "getSearch-eUduSuo", "Send", "getSend-eUduSuo$annotations", "getSend-eUduSuo", "Unspecified", "getUnspecified-eUduSuo$annotations", "getUnspecified-eUduSuo", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u001d\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001e\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\bR\u001e\u0010\n\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u000b\u0010\u0003\u001a\u0004\b\f\u0010\bR\u001e\u0010\r\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u000e\u0010\u0003\u001a\u0004\b\u000f\u0010\bR\u001e\u0010\u0010\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u0011\u0010\u0003\u001a\u0004\b\u0012\u0010\bR\u001e\u0010\u0013\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u0014\u0010\u0003\u001a\u0004\b\u0015\u0010\bR\u001e\u0010\u0016\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u0017\u0010\u0003\u001a\u0004\b\u0018\u0010\bR\u001e\u0010\u0019\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u001a\u0010\u0003\u001a\u0004\b\u001b\u0010\bR\u001e\u0010\u001c\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u001d\u0010\u0003\u001a\u0004\b\u001e\u0010\bR\u001e\u0010\u001f\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b \u0010\u0003\u001a\u0004\b!\u0010\b¨\u0006\""}, d2 = {"Landroidx/compose/ui/text/input/ImeAction$Companion;", "", "<init>", "()V", "Unspecified", "Landroidx/compose/ui/text/input/ImeAction;", "getUnspecified-eUduSuo$annotations", "getUnspecified-eUduSuo", "()I", "I", "Default", "getDefault-eUduSuo$annotations", "getDefault-eUduSuo", "None", "getNone-eUduSuo$annotations", "getNone-eUduSuo", "Go", "getGo-eUduSuo$annotations", "getGo-eUduSuo", "Search", "getSearch-eUduSuo$annotations", "getSearch-eUduSuo", "Send", "getSend-eUduSuo$annotations", "getSend-eUduSuo", "Previous", "getPrevious-eUduSuo$annotations", "getPrevious-eUduSuo", "Next", "getNext-eUduSuo$annotations", "getNext-eUduSuo", "Done", "getDone-eUduSuo$annotations", "getDone-eUduSuo", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -80,86 +80,86 @@ public final class ImeAction {
         }
 
         /* renamed from: getDefault-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6318getDefaulteUduSuo$annotations() {
+        public static /* synthetic */ void m6886getDefaulteUduSuo$annotations() {
         }
 
         /* renamed from: getDone-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6319getDoneeUduSuo$annotations() {
+        public static /* synthetic */ void m6887getDoneeUduSuo$annotations() {
         }
 
         /* renamed from: getGo-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6320getGoeUduSuo$annotations() {
+        public static /* synthetic */ void m6888getGoeUduSuo$annotations() {
         }
 
         /* renamed from: getNext-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6321getNexteUduSuo$annotations() {
+        public static /* synthetic */ void m6889getNexteUduSuo$annotations() {
         }
 
         /* renamed from: getNone-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6322getNoneeUduSuo$annotations() {
+        public static /* synthetic */ void m6890getNoneeUduSuo$annotations() {
         }
 
         /* renamed from: getPrevious-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6323getPreviouseUduSuo$annotations() {
+        public static /* synthetic */ void m6891getPreviouseUduSuo$annotations() {
         }
 
         /* renamed from: getSearch-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6324getSearcheUduSuo$annotations() {
+        public static /* synthetic */ void m6892getSearcheUduSuo$annotations() {
         }
 
         /* renamed from: getSend-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6325getSendeUduSuo$annotations() {
+        public static /* synthetic */ void m6893getSendeUduSuo$annotations() {
         }
 
         /* renamed from: getUnspecified-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6326getUnspecifiedeUduSuo$annotations() {
+        public static /* synthetic */ void m6894getUnspecifiedeUduSuo$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getUnspecified-eUduSuo  reason: not valid java name */
-        public final int m6335getUnspecifiedeUduSuo() {
+        public final int m6903getUnspecifiedeUduSuo() {
             return ImeAction.Unspecified;
         }
 
         /* renamed from: getDefault-eUduSuo  reason: not valid java name */
-        public final int m6327getDefaulteUduSuo() {
+        public final int m6895getDefaulteUduSuo() {
             return ImeAction.Default;
         }
 
         /* renamed from: getNone-eUduSuo  reason: not valid java name */
-        public final int m6331getNoneeUduSuo() {
+        public final int m6899getNoneeUduSuo() {
             return ImeAction.None;
         }
 
         /* renamed from: getGo-eUduSuo  reason: not valid java name */
-        public final int m6329getGoeUduSuo() {
+        public final int m6897getGoeUduSuo() {
             return ImeAction.Go;
         }
 
         /* renamed from: getSearch-eUduSuo  reason: not valid java name */
-        public final int m6333getSearcheUduSuo() {
+        public final int m6901getSearcheUduSuo() {
             return ImeAction.Search;
         }
 
         /* renamed from: getSend-eUduSuo  reason: not valid java name */
-        public final int m6334getSendeUduSuo() {
+        public final int m6902getSendeUduSuo() {
             return ImeAction.Send;
         }
 
         /* renamed from: getPrevious-eUduSuo  reason: not valid java name */
-        public final int m6332getPreviouseUduSuo() {
+        public final int m6900getPreviouseUduSuo() {
             return ImeAction.Previous;
         }
 
         /* renamed from: getNext-eUduSuo  reason: not valid java name */
-        public final int m6330getNexteUduSuo() {
+        public final int m6898getNexteUduSuo() {
             return ImeAction.Next;
         }
 
         /* renamed from: getDone-eUduSuo  reason: not valid java name */
-        public final int m6328getDoneeUduSuo() {
+        public final int m6896getDoneeUduSuo() {
             return ImeAction.Done;
         }
     }

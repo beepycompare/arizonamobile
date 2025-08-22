@@ -13,7 +13,7 @@ import kotlin.collections.ArraysKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TrieNode.kt */
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0011\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u001a\n\u0002\u0010\u000b\n\u0002\b\u001f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0018\b\u0000\u0018\u0000 _*\u0004\b\u0000\u0010\u00012\u00020\u0002:\u0001_B\u001f\b\u0016\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u000e\u0010\u0005\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006¢\u0006\u0002\u0010\u0007B'\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u000e\u0010\u0005\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006\u0012\b\u0010\b\u001a\u0004\u0018\u00010\t¢\u0006\u0002\u0010\nJ)\u0010\u0018\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u0019\u001a\u00020\u00042\u0006\u0010\u001a\u001a\u00028\u00002\u0006\u0010\u001b\u001a\u00020\u0004¢\u0006\u0002\u0010\u001cJ#\u0010\u001d\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u001e\u001a\u00020\u00042\u0006\u0010\u001a\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010\u001fJ\b\u0010 \u001a\u00020\u0004H\u0002J\u001b\u0010!\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u001a\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010\"J\u0015\u0010#\u001a\u00020$2\u0006\u0010\u001a\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010%J\u001b\u0010&\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u001a\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010\"J\u0016\u0010'\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010(\u001a\u00020\u0004H\u0002J#\u0010)\u001a\u00020$2\u0006\u0010\u0019\u001a\u00020\u00042\u0006\u0010\u001a\u001a\u00028\u00002\u0006\u0010\u001b\u001a\u00020\u0004¢\u0006\u0002\u0010*J\u001c\u0010+\u001a\u00020$2\f\u0010,\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u001b\u001a\u00020\u0004J\u0015\u0010-\u001a\u00028\u00002\u0006\u0010.\u001a\u00020\u0004H\u0002¢\u0006\u0002\u0010/J\u0016\u00100\u001a\u00020$2\f\u0010,\u001a\b\u0012\u0004\u0012\u00028\u00000\u0000H\u0002J\u0010\u00101\u001a\u00020$2\u0006\u0010\u001e\u001a\u00020\u0004H\u0002J\u0015\u00102\u001a\u00020\u00042\u0006\u0010\u001e\u001a\u00020\u0004H\u0000¢\u0006\u0002\b3JE\u00104\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u00105\u001a\u00020\u00042\u0006\u00106\u001a\u00028\u00002\u0006\u00107\u001a\u00020\u00042\u0006\u00108\u001a\u00028\u00002\u0006\u0010\u001b\u001a\u00020\u00042\b\u00109\u001a\u0004\u0018\u00010\tH\u0002¢\u0006\u0002\u0010:J=\u0010;\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010<\u001a\u00020\u00042\u0006\u0010=\u001a\u00020\u00042\u0006\u0010>\u001a\u00028\u00002\u0006\u0010\u001b\u001a\u00020\u00042\b\u00109\u001a\u0004\u0018\u00010\tH\u0002¢\u0006\u0002\u0010?J3\u0010@\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010<\u001a\u00020\u00042\u0006\u0010=\u001a\u00020\u00042\u0006\u0010>\u001a\u00028\u00002\u0006\u0010\u001b\u001a\u00020\u0004H\u0002¢\u0006\u0002\u0010AJ5\u0010B\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u0019\u001a\u00020\u00042\u0006\u0010\u001a\u001a\u00028\u00002\u0006\u0010\u001b\u001a\u00020\u00042\n\u0010C\u001a\u0006\u0012\u0002\b\u00030D¢\u0006\u0002\u0010EJ6\u0010F\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\f\u0010,\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u001b\u001a\u00020\u00042\u0006\u0010G\u001a\u00020H2\n\u0010C\u001a\u0006\u0012\u0002\b\u00030DJ+\u0010I\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u001e\u001a\u00020\u00042\u0006\u0010\u001a\u001a\u00028\u00002\u0006\u00109\u001a\u00020\tH\u0002¢\u0006\u0002\u0010JJ'\u0010K\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u001a\u001a\u00028\u00002\n\u0010C\u001a\u0006\u0012\u0002\b\u00030DH\u0002¢\u0006\u0002\u0010LJ,\u0010M\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\f\u0010,\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010G\u001a\u00020H2\u0006\u00109\u001a\u00020\tH\u0002J'\u0010N\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u001a\u001a\u00028\u00002\n\u0010C\u001a\u0006\u0012\u0002\b\u00030DH\u0002¢\u0006\u0002\u0010LJ(\u0010O\u001a\u0004\u0018\u00010\u00022\f\u0010,\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010G\u001a\u00020H2\u0006\u00109\u001a\u00020\tH\u0002J\u001e\u0010P\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010(\u001a\u00020\u00042\u0006\u00109\u001a\u00020\tH\u0002J(\u0010Q\u001a\u0004\u0018\u00010\u00022\f\u0010,\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010G\u001a\u00020H2\u0006\u00109\u001a\u00020\tH\u0002J;\u0010R\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010<\u001a\u00020\u00042\u0006\u0010=\u001a\u00020\u00042\u0006\u0010>\u001a\u00028\u00002\u0006\u0010\u001b\u001a\u00020\u00042\u0006\u00109\u001a\u00020\tH\u0002¢\u0006\u0002\u0010?J5\u0010S\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u0019\u001a\u00020\u00042\u0006\u0010\u001a\u001a\u00028\u00002\u0006\u0010\u001b\u001a\u00020\u00042\n\u0010C\u001a\u0006\u0012\u0002\b\u00030D¢\u0006\u0002\u0010EJ2\u0010T\u001a\u0004\u0018\u00010\u00022\f\u0010,\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u001b\u001a\u00020\u00042\u0006\u0010G\u001a\u00020H2\n\u0010C\u001a\u0006\u0012\u0002\b\u00030DJ&\u0010U\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010V\u001a\u00020\u00042\u0006\u0010\u001e\u001a\u00020\u00042\u0006\u00109\u001a\u00020\tH\u0002J2\u0010W\u001a\u0004\u0018\u00010\u00022\f\u0010,\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u001b\u001a\u00020\u00042\u0006\u0010G\u001a\u00020H2\n\u0010C\u001a\u0006\u0012\u0002\b\u00030DJ,\u0010X\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010Y\u001a\u00020\u00042\f\u0010Z\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u00109\u001a\u00020\tH\u0002J\u0016\u0010[\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010.\u001a\u00020\u0004H\u0002J)\u0010\\\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u0019\u001a\u00020\u00042\u0006\u0010\u001a\u001a\u00028\u00002\u0006\u0010\u001b\u001a\u00020\u0004¢\u0006\u0002\u0010\u001cJ\u001e\u0010]\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010V\u001a\u00020\u00042\u0006\u0010\u001e\u001a\u00020\u0004H\u0002J$\u0010^\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010Y\u001a\u00020\u00042\f\u0010Z\u001a\b\u0012\u0004\u0012\u00028\u00000\u0000H\u0002R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR$\u0010\u0005\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u0013\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u001c\u0010\b\u001a\u0004\u0018\u00010\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017¨\u0006`"}, d2 = {"Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", ExifInterface.LONGITUDE_EAST, "", "bitmap", "", "buffer", "", "(I[Ljava/lang/Object;)V", "ownedBy", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;", "(I[Ljava/lang/Object;Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;)V", "getBitmap", "()I", "setBitmap", "(I)V", "getBuffer", "()[Ljava/lang/Object;", "setBuffer", "([Ljava/lang/Object;)V", "[Ljava/lang/Object;", "getOwnedBy", "()Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;", "setOwnedBy", "(Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;)V", "add", "elementHash", "element", "shift", "(ILjava/lang/Object;I)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "addElementAt", "positionMask", "(ILjava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "calculateSize", "collisionAdd", "(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "collisionContainsElement", "", "(Ljava/lang/Object;)Z", "collisionRemove", "collisionRemoveElementAtIndex", CmcdData.OBJECT_TYPE_INIT_SEGMENT, "contains", "(ILjava/lang/Object;I)Z", "containsAll", "otherNode", "elementAtIndex", FirebaseAnalytics.Param.INDEX, "(I)Ljava/lang/Object;", "elementsIdentityEquals", "hasNoCellAt", "indexOfCellAt", "indexOfCellAt$runtime_release", "makeNode", "elementHash1", "element1", "elementHash2", "element2", "owner", "(ILjava/lang/Object;ILjava/lang/Object;ILandroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "makeNodeAtIndex", "elementIndex", "newElementHash", "newElement", "(IILjava/lang/Object;ILandroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "moveElementToNode", "(IILjava/lang/Object;I)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "mutableAdd", "mutator", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;", "(ILjava/lang/Object;ILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "mutableAddAll", "intersectionSizeRef", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/DeltaCounter;", "mutableAddElementAt", "(ILjava/lang/Object;Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "mutableCollisionAdd", "(Ljava/lang/Object;Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "mutableCollisionAddAll", "mutableCollisionRemove", "mutableCollisionRemoveAll", "mutableCollisionRemoveElementAtIndex", "mutableCollisionRetainAll", "mutableMoveElementToNode", "mutableRemove", "mutableRemoveAll", "mutableRemoveCellAtIndex", "cellIndex", "mutableRetainAll", "mutableUpdateNodeAtIndex", "nodeIndex", "newNode", "nodeAtIndex", "remove", "removeCellAtIndex", "updateNodeAtIndex", "Companion", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0011\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0010\u000b\n\u0002\b,\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0013\b\u0001\u0018\u0000 `*\u0004\b\u0000\u0010\u00012\u00020\u0002:\u0001`B)\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u000e\u0010\u0005\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006\u0012\b\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\u0004\b\t\u0010\nB!\b\u0016\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u000e\u0010\u0005\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006¢\u0006\u0004\b\t\u0010\u000bJ\u0010\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u0004H\u0002J\u0015\u0010\u001c\u001a\u00020\u00042\u0006\u0010\u001b\u001a\u00020\u0004H\u0000¢\u0006\u0002\b\u001dJ\u0015\u0010\u001e\u001a\u00028\u00002\u0006\u0010\u001f\u001a\u00020\u0004H\u0002¢\u0006\u0002\u0010 J\u0016\u0010!\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u001f\u001a\u00020\u0004H\u0002J#\u0010\"\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u001b\u001a\u00020\u00042\u0006\u0010#\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010$J+\u0010%\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010\u001b\u001a\u00020\u00042\u0006\u0010#\u001a\u00028\u00002\u0006\u0010&\u001a\u00020\bH\u0002¢\u0006\u0002\u0010'J$\u0010(\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010)\u001a\u00020\u00042\f\u0010*\u001a\b\u0012\u0004\u0012\u00028\u00000\u0000H\u0002J,\u0010+\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010)\u001a\u00020\u00042\f\u0010*\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010&\u001a\u00020\bH\u0002J=\u0010,\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010-\u001a\u00020\u00042\u0006\u0010.\u001a\u00020\u00042\u0006\u0010/\u001a\u00028\u00002\u0006\u00100\u001a\u00020\u00042\b\u0010&\u001a\u0004\u0018\u00010\bH\u0002¢\u0006\u0002\u00101J3\u00102\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010-\u001a\u00020\u00042\u0006\u0010.\u001a\u00020\u00042\u0006\u0010/\u001a\u00028\u00002\u0006\u00100\u001a\u00020\u0004H\u0002¢\u0006\u0002\u00103J;\u00104\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010-\u001a\u00020\u00042\u0006\u0010.\u001a\u00020\u00042\u0006\u0010/\u001a\u00028\u00002\u0006\u00100\u001a\u00020\u00042\u0006\u0010&\u001a\u00020\bH\u0002¢\u0006\u0002\u00101JE\u00105\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u00106\u001a\u00020\u00042\u0006\u00107\u001a\u00028\u00002\u0006\u00108\u001a\u00020\u00042\u0006\u00109\u001a\u00028\u00002\u0006\u00100\u001a\u00020\u00042\b\u0010&\u001a\u0004\u0018\u00010\bH\u0002¢\u0006\u0002\u0010:J\u001e\u0010;\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010<\u001a\u00020\u00042\u0006\u0010\u001b\u001a\u00020\u0004H\u0002J&\u0010=\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010<\u001a\u00020\u00042\u0006\u0010\u001b\u001a\u00020\u00042\u0006\u0010&\u001a\u00020\bH\u0002J\u0016\u0010>\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010?\u001a\u00020\u0004H\u0002J\u001e\u0010@\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010?\u001a\u00020\u00042\u0006\u0010&\u001a\u00020\bH\u0002J\u0015\u0010A\u001a\u00020\u001a2\u0006\u0010#\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010BJ\u001b\u0010C\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010#\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010DJ'\u0010E\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010#\u001a\u00028\u00002\n\u0010F\u001a\u0006\u0012\u0002\b\u00030GH\u0002¢\u0006\u0002\u0010HJ\u001b\u0010I\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010#\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010DJ'\u0010J\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010#\u001a\u00028\u00002\n\u0010F\u001a\u0006\u0012\u0002\b\u00030GH\u0002¢\u0006\u0002\u0010HJ,\u0010K\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\f\u0010L\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010M\u001a\u00020N2\u0006\u0010&\u001a\u00020\bH\u0002J(\u0010O\u001a\u0004\u0018\u00010\u00022\f\u0010L\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010M\u001a\u00020N2\u0006\u0010&\u001a\u00020\bH\u0002J(\u0010P\u001a\u0004\u0018\u00010\u00022\f\u0010L\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010M\u001a\u00020N2\u0006\u0010&\u001a\u00020\bH\u0002J\b\u0010Q\u001a\u00020\u0004H\u0002J\u0016\u0010R\u001a\u00020\u001a2\f\u0010L\u001a\b\u0012\u0004\u0012\u00028\u00000\u0000H\u0002J#\u0010S\u001a\u00020\u001a2\u0006\u0010T\u001a\u00020\u00042\u0006\u0010#\u001a\u00028\u00002\u0006\u00100\u001a\u00020\u0004¢\u0006\u0002\u0010UJ6\u0010V\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\f\u0010L\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u00100\u001a\u00020\u00042\u0006\u0010M\u001a\u00020N2\n\u0010F\u001a\u0006\u0012\u0002\b\u00030GJ2\u0010W\u001a\u0004\u0018\u00010\u00022\f\u0010L\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u00100\u001a\u00020\u00042\u0006\u0010M\u001a\u00020N2\n\u0010F\u001a\u0006\u0012\u0002\b\u00030GJ2\u0010X\u001a\u0004\u0018\u00010\u00022\f\u0010L\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u00100\u001a\u00020\u00042\u0006\u0010M\u001a\u00020N2\n\u0010F\u001a\u0006\u0012\u0002\b\u00030GJ\u001c\u0010Y\u001a\u00020\u001a2\f\u0010L\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u00100\u001a\u00020\u0004J)\u0010Z\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010T\u001a\u00020\u00042\u0006\u0010#\u001a\u00028\u00002\u0006\u00100\u001a\u00020\u0004¢\u0006\u0002\u0010[J5\u0010\\\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010T\u001a\u00020\u00042\u0006\u0010#\u001a\u00028\u00002\u0006\u00100\u001a\u00020\u00042\n\u0010F\u001a\u0006\u0012\u0002\b\u00030G¢\u0006\u0002\u0010]J)\u0010^\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010T\u001a\u00020\u00042\u0006\u0010#\u001a\u00028\u00002\u0006\u00100\u001a\u00020\u0004¢\u0006\u0002\u0010[J5\u0010_\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\u0006\u0010T\u001a\u00020\u00042\u0006\u0010#\u001a\u00028\u00002\u0006\u00100\u001a\u00020\u00042\n\u0010F\u001a\u0006\u0012\u0002\b\u00030G¢\u0006\u0002\u0010]R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR$\u0010\u0005\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u0014\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018¨\u0006a"}, d2 = {"Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", ExifInterface.LONGITUDE_EAST, "", "bitmap", "", "buffer", "", "ownedBy", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;", "<init>", "(I[Ljava/lang/Object;Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;)V", "(I[Ljava/lang/Object;)V", "getBitmap", "()I", "setBitmap", "(I)V", "getBuffer", "()[Ljava/lang/Object;", "setBuffer", "([Ljava/lang/Object;)V", "[Ljava/lang/Object;", "getOwnedBy", "()Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;", "setOwnedBy", "(Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;)V", "hasNoCellAt", "", "positionMask", "indexOfCellAt", "indexOfCellAt$runtime", "elementAtIndex", FirebaseAnalytics.Param.INDEX, "(I)Ljava/lang/Object;", "nodeAtIndex", "addElementAt", "element", "(ILjava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "mutableAddElementAt", "owner", "(ILjava/lang/Object;Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "updateNodeAtIndex", "nodeIndex", "newNode", "mutableUpdateNodeAtIndex", "makeNodeAtIndex", "elementIndex", "newElementHash", "newElement", "shift", "(IILjava/lang/Object;ILandroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "moveElementToNode", "(IILjava/lang/Object;I)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "mutableMoveElementToNode", "makeNode", "elementHash1", "element1", "elementHash2", "element2", "(ILjava/lang/Object;ILjava/lang/Object;ILandroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "removeCellAtIndex", "cellIndex", "mutableRemoveCellAtIndex", "collisionRemoveElementAtIndex", CmcdData.OBJECT_TYPE_INIT_SEGMENT, "mutableCollisionRemoveElementAtIndex", "collisionContainsElement", "(Ljava/lang/Object;)Z", "collisionAdd", "(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "mutableCollisionAdd", "mutator", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;", "(Ljava/lang/Object;Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "collisionRemove", "mutableCollisionRemove", "mutableCollisionAddAll", "otherNode", "intersectionSizeRef", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/DeltaCounter;", "mutableCollisionRetainAll", "mutableCollisionRemoveAll", "calculateSize", "elementsIdentityEquals", "contains", "elementHash", "(ILjava/lang/Object;I)Z", "mutableAddAll", "mutableRetainAll", "mutableRemoveAll", "containsAll", "add", "(ILjava/lang/Object;I)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "mutableAdd", "(ILjava/lang/Object;ILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "remove", "mutableRemove", "Companion", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TrieNode<E> {
     private int bitmap;
@@ -61,7 +61,7 @@ public final class TrieNode<E> {
         return (i & this.bitmap) == 0;
     }
 
-    public final int indexOfCellAt$runtime_release(int i) {
+    public final int indexOfCellAt$runtime(int i) {
         return Integer.bitCount((i - 1) & this.bitmap);
     }
 
@@ -77,21 +77,21 @@ public final class TrieNode<E> {
 
     private final TrieNode<E> addElementAt(int i, E e) {
         Object[] addElementAtIndex;
-        addElementAtIndex = TrieNodeKt.addElementAtIndex(this.buffer, indexOfCellAt$runtime_release(i), e);
+        addElementAtIndex = TrieNodeKt.addElementAtIndex(this.buffer, indexOfCellAt$runtime(i), e);
         return new TrieNode<>(i | this.bitmap, addElementAtIndex);
     }
 
     private final TrieNode<E> mutableAddElementAt(int i, E e, MutabilityOwnership mutabilityOwnership) {
         Object[] addElementAtIndex;
         Object[] addElementAtIndex2;
-        int indexOfCellAt$runtime_release = indexOfCellAt$runtime_release(i);
+        int indexOfCellAt$runtime = indexOfCellAt$runtime(i);
         if (this.ownedBy == mutabilityOwnership) {
-            addElementAtIndex2 = TrieNodeKt.addElementAtIndex(this.buffer, indexOfCellAt$runtime_release, e);
+            addElementAtIndex2 = TrieNodeKt.addElementAtIndex(this.buffer, indexOfCellAt$runtime, e);
             this.buffer = addElementAtIndex2;
             this.bitmap = i | this.bitmap;
             return this;
         }
-        addElementAtIndex = TrieNodeKt.addElementAtIndex(this.buffer, indexOfCellAt$runtime_release, e);
+        addElementAtIndex = TrieNodeKt.addElementAtIndex(this.buffer, indexOfCellAt$runtime, e);
         return new TrieNode<>(i | this.bitmap, addElementAtIndex, mutabilityOwnership);
     }
 
@@ -237,13 +237,13 @@ public final class TrieNode<E> {
             return this;
         }
         persistentHashSetBuilder.setSize(persistentHashSetBuilder.size() + 1);
-        if (this.ownedBy == persistentHashSetBuilder.getOwnership$runtime_release()) {
+        if (this.ownedBy == persistentHashSetBuilder.getOwnership$runtime()) {
             addElementAtIndex2 = TrieNodeKt.addElementAtIndex(this.buffer, 0, e);
             this.buffer = addElementAtIndex2;
             return this;
         }
         addElementAtIndex = TrieNodeKt.addElementAtIndex(this.buffer, 0, e);
-        return new TrieNode<>(0, addElementAtIndex, persistentHashSetBuilder.getOwnership$runtime_release());
+        return new TrieNode<>(0, addElementAtIndex, persistentHashSetBuilder.getOwnership$runtime());
     }
 
     private final TrieNode<E> collisionRemove(E e) {
@@ -255,7 +255,7 @@ public final class TrieNode<E> {
         int indexOf = ArraysKt.indexOf((E[]) this.buffer, e);
         if (indexOf != -1) {
             persistentHashSetBuilder.setSize(persistentHashSetBuilder.size() - 1);
-            return mutableCollisionRemoveElementAtIndex(indexOf, persistentHashSetBuilder.getOwnership$runtime_release());
+            return mutableCollisionRemoveElementAtIndex(indexOf, persistentHashSetBuilder.getOwnership$runtime());
         }
         return this;
     }
@@ -273,11 +273,11 @@ public final class TrieNode<E> {
         int i = 0;
         int i2 = 0;
         while (i < objArr2.length) {
-            CommonFunctionsKt.m3633assert(i2 <= i);
+            CommonFunctionsKt.m3972assert(i2 <= i);
             if (!collisionContainsElement((E) objArr2[i])) {
                 copyOf[length + i2] = objArr2[i];
                 i2++;
-                CommonFunctionsKt.m3633assert(length + i2 <= copyOf.length);
+                CommonFunctionsKt.m3972assert(length + i2 <= copyOf.length);
             }
             i++;
         }
@@ -313,11 +313,11 @@ public final class TrieNode<E> {
             if (i >= objArr2.length) {
                 break;
             }
-            CommonFunctionsKt.m3633assert(i2 <= i);
+            CommonFunctionsKt.m3972assert(i2 <= i);
             if (trieNode.collisionContainsElement((E) objArr2[i])) {
                 objArr[i2] = objArr2[i];
                 i2++;
-                CommonFunctionsKt.m3633assert(i2 <= objArr.length);
+                CommonFunctionsKt.m3972assert(i2 <= objArr.length);
             }
             i++;
         }
@@ -355,11 +355,11 @@ public final class TrieNode<E> {
             if (i >= objArr2.length) {
                 break;
             }
-            CommonFunctionsKt.m3633assert(i2 <= i);
+            CommonFunctionsKt.m3972assert(i2 <= i);
             if (!trieNode.collisionContainsElement((E) objArr2[i])) {
                 objArr[i2] = objArr2[i];
                 i2++;
-                CommonFunctionsKt.m3633assert(i2 <= objArr.length);
+                CommonFunctionsKt.m3972assert(i2 <= objArr.length);
             }
             i++;
         }
@@ -414,10 +414,10 @@ public final class TrieNode<E> {
         if (hasNoCellAt(indexSegment)) {
             return false;
         }
-        int indexOfCellAt$runtime_release = indexOfCellAt$runtime_release(indexSegment);
-        Object obj = this.buffer[indexOfCellAt$runtime_release];
+        int indexOfCellAt$runtime = indexOfCellAt$runtime(indexSegment);
+        Object obj = this.buffer[indexOfCellAt$runtime];
         if (obj instanceof TrieNode) {
-            TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime_release);
+            TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime);
             if (i2 == 30) {
                 return nodeAtIndex.collisionContainsElement(e);
             }
@@ -434,25 +434,25 @@ public final class TrieNode<E> {
             deltaCounter.setCount(deltaCounter.getCount() + calculateSize());
             return this;
         } else if (i > 30) {
-            return mutableCollisionAddAll(trieNode, deltaCounter, persistentHashSetBuilder.getOwnership$runtime_release());
+            return mutableCollisionAddAll(trieNode, deltaCounter, persistentHashSetBuilder.getOwnership$runtime());
         } else {
             int i2 = this.bitmap;
             int i3 = trieNode.bitmap | i2;
-            TrieNode<E> trieNode2 = (i3 == i2 && Intrinsics.areEqual(this.ownedBy, persistentHashSetBuilder.getOwnership$runtime_release())) ? this : new TrieNode<>(i3, new Object[Integer.bitCount(i3)], persistentHashSetBuilder.getOwnership$runtime_release());
+            TrieNode<E> trieNode2 = (i3 == i2 && Intrinsics.areEqual(this.ownedBy, persistentHashSetBuilder.getOwnership$runtime())) ? this : new TrieNode<>(i3, new Object[Integer.bitCount(i3)], persistentHashSetBuilder.getOwnership$runtime());
             int i4 = i3;
             int i5 = 0;
             while (i4 != 0) {
                 int lowestOneBit = Integer.lowestOneBit(i4);
-                int indexOfCellAt$runtime_release = indexOfCellAt$runtime_release(lowestOneBit);
-                int indexOfCellAt$runtime_release2 = trieNode.indexOfCellAt$runtime_release(lowestOneBit);
+                int indexOfCellAt$runtime = indexOfCellAt$runtime(lowestOneBit);
+                int indexOfCellAt$runtime2 = trieNode.indexOfCellAt$runtime(lowestOneBit);
                 Object[] objArr2 = trieNode2.buffer;
                 if (hasNoCellAt(lowestOneBit)) {
-                    makeNode = (TrieNode<E>) trieNode.buffer[indexOfCellAt$runtime_release2];
+                    makeNode = (TrieNode<E>) trieNode.buffer[indexOfCellAt$runtime2];
                 } else if (trieNode.hasNoCellAt(lowestOneBit)) {
-                    makeNode = (E) this.buffer[indexOfCellAt$runtime_release];
+                    makeNode = (E) this.buffer[indexOfCellAt$runtime];
                 } else {
-                    E e = (E) this.buffer[indexOfCellAt$runtime_release];
-                    E e2 = (E) trieNode.buffer[indexOfCellAt$runtime_release2];
+                    E e = (E) this.buffer[indexOfCellAt$runtime];
+                    E e2 = (E) trieNode.buffer[indexOfCellAt$runtime2];
                     boolean z = e instanceof TrieNode;
                     boolean z2 = e2 instanceof TrieNode;
                     if (z && z2) {
@@ -485,7 +485,7 @@ public final class TrieNode<E> {
                         makeNode = e;
                     } else {
                         objArr = objArr2;
-                        makeNode = makeNode(e != null ? e.hashCode() : 0, e, e2 != null ? e2.hashCode() : 0, e2, i + 5, persistentHashSetBuilder.getOwnership$runtime_release());
+                        makeNode = makeNode(e != null ? e.hashCode() : 0, e, e2 != null ? e2.hashCode() : 0, e2, i + 5, persistentHashSetBuilder.getOwnership$runtime());
                         objArr[i5] = makeNode;
                         i5++;
                         i4 ^= lowestOneBit;
@@ -506,22 +506,22 @@ public final class TrieNode<E> {
             deltaCounter.plusAssign(calculateSize());
             return this;
         } else if (i > 30) {
-            return mutableCollisionRetainAll(trieNode, deltaCounter, persistentHashSetBuilder.getOwnership$runtime_release());
+            return mutableCollisionRetainAll(trieNode, deltaCounter, persistentHashSetBuilder.getOwnership$runtime());
         } else {
             int i2 = this.bitmap & trieNode.bitmap;
             if (i2 == 0) {
                 return EMPTY;
             }
-            TrieNode<E> trieNode2 = (Intrinsics.areEqual(this.ownedBy, persistentHashSetBuilder.getOwnership$runtime_release()) && i2 == this.bitmap) ? this : new TrieNode<>(i2, new Object[Integer.bitCount(i2)], persistentHashSetBuilder.getOwnership$runtime_release());
+            TrieNode<E> trieNode2 = (Intrinsics.areEqual(this.ownedBy, persistentHashSetBuilder.getOwnership$runtime()) && i2 == this.bitmap) ? this : new TrieNode<>(i2, new Object[Integer.bitCount(i2)], persistentHashSetBuilder.getOwnership$runtime());
             int i3 = i2;
             int i4 = 0;
             int i5 = 0;
             while (i3 != 0) {
                 int lowestOneBit = Integer.lowestOneBit(i3);
-                int indexOfCellAt$runtime_release = indexOfCellAt$runtime_release(lowestOneBit);
-                int indexOfCellAt$runtime_release2 = trieNode.indexOfCellAt$runtime_release(lowestOneBit);
-                Object obj = this.buffer[indexOfCellAt$runtime_release];
-                Object obj2 = trieNode.buffer[indexOfCellAt$runtime_release2];
+                int indexOfCellAt$runtime = indexOfCellAt$runtime(lowestOneBit);
+                int indexOfCellAt$runtime2 = trieNode.indexOfCellAt$runtime(lowestOneBit);
+                Object obj = this.buffer[indexOfCellAt$runtime];
+                Object obj2 = trieNode.buffer[indexOfCellAt$runtime2];
                 boolean z = obj instanceof TrieNode;
                 boolean z2 = obj2 instanceof TrieNode;
                 if (z && z2) {
@@ -562,23 +562,23 @@ public final class TrieNode<E> {
             if (i4 == i2) {
                 return trieNode2.elementsIdentityEquals(this) ? this : trieNode2.elementsIdentityEquals(trieNode) ? trieNode : trieNode2;
             } else if (bitCount == 1 && i != 0) {
-                Object obj3 = trieNode2.buffer[trieNode2.indexOfCellAt$runtime_release(i4)];
-                return obj3 instanceof TrieNode ? new TrieNode(i4, new Object[]{obj3}, persistentHashSetBuilder.getOwnership$runtime_release()) : obj3;
+                Object obj3 = trieNode2.buffer[trieNode2.indexOfCellAt$runtime(i4)];
+                return obj3 instanceof TrieNode ? new TrieNode(i4, new Object[]{obj3}, persistentHashSetBuilder.getOwnership$runtime()) : obj3;
             } else {
                 Object[] objArr = new Object[bitCount];
                 Object[] objArr2 = trieNode2.buffer;
                 int i6 = 0;
                 int i7 = 0;
                 while (i6 < objArr2.length) {
-                    CommonFunctionsKt.m3633assert(i7 <= i6);
-                    if (objArr2[i6] != Companion.getEMPTY$runtime_release()) {
+                    CommonFunctionsKt.m3972assert(i7 <= i6);
+                    if (objArr2[i6] != Companion.getEMPTY$runtime()) {
                         objArr[i7] = objArr2[i6];
                         i7++;
-                        CommonFunctionsKt.m3633assert(i7 <= bitCount);
+                        CommonFunctionsKt.m3972assert(i7 <= bitCount);
                     }
                     i6++;
                 }
-                return new TrieNode(i4, objArr, persistentHashSetBuilder.getOwnership$runtime_release());
+                return new TrieNode(i4, objArr, persistentHashSetBuilder.getOwnership$runtime());
             }
         }
     }
@@ -596,26 +596,26 @@ public final class TrieNode<E> {
             deltaCounter.plusAssign(calculateSize());
             return EMPTY;
         } else if (i > 30) {
-            return mutableCollisionRemoveAll(trieNode, deltaCounter, persistentHashSetBuilder.getOwnership$runtime_release());
+            return mutableCollisionRemoveAll(trieNode, deltaCounter, persistentHashSetBuilder.getOwnership$runtime());
         } else {
             int i2 = this.bitmap & trieNode.bitmap;
             if (i2 != 0) {
-                if (Intrinsics.areEqual(this.ownedBy, persistentHashSetBuilder.getOwnership$runtime_release())) {
+                if (Intrinsics.areEqual(this.ownedBy, persistentHashSetBuilder.getOwnership$runtime())) {
                     trieNode2 = this;
                 } else {
                     int i3 = this.bitmap;
                     Object[] objArr = this.buffer;
                     Object[] copyOf = Arrays.copyOf(objArr, objArr.length);
                     Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-                    trieNode2 = new TrieNode<>(i3, copyOf, persistentHashSetBuilder.getOwnership$runtime_release());
+                    trieNode2 = new TrieNode<>(i3, copyOf, persistentHashSetBuilder.getOwnership$runtime());
                 }
                 int i4 = this.bitmap;
                 while (i2 != 0) {
                     int lowestOneBit = Integer.lowestOneBit(i2);
-                    int indexOfCellAt$runtime_release = indexOfCellAt$runtime_release(lowestOneBit);
-                    int indexOfCellAt$runtime_release2 = trieNode.indexOfCellAt$runtime_release(lowestOneBit);
-                    Object obj = this.buffer[indexOfCellAt$runtime_release];
-                    Object obj2 = trieNode.buffer[indexOfCellAt$runtime_release2];
+                    int indexOfCellAt$runtime = indexOfCellAt$runtime(lowestOneBit);
+                    int indexOfCellAt$runtime2 = trieNode.indexOfCellAt$runtime(lowestOneBit);
+                    Object obj = this.buffer[indexOfCellAt$runtime];
+                    Object obj2 = trieNode.buffer[indexOfCellAt$runtime2];
                     boolean z = obj instanceof TrieNode;
                     boolean z2 = obj2 instanceof TrieNode;
                     if (z && z2) {
@@ -648,7 +648,7 @@ public final class TrieNode<E> {
                     if (obj == EMPTY) {
                         i4 ^= lowestOneBit;
                     }
-                    trieNode2.buffer[indexOfCellAt$runtime_release] = obj;
+                    trieNode2.buffer[indexOfCellAt$runtime] = obj;
                     i2 ^= lowestOneBit;
                 }
                 int bitCount = Integer.bitCount(i4);
@@ -657,23 +657,23 @@ public final class TrieNode<E> {
                 }
                 if (i4 != this.bitmap) {
                     if (bitCount == 1 && i != 0) {
-                        Object obj3 = trieNode2.buffer[trieNode2.indexOfCellAt$runtime_release(i4)];
-                        return obj3 instanceof TrieNode ? new TrieNode(i4, new Object[]{obj3}, persistentHashSetBuilder.getOwnership$runtime_release()) : obj3;
+                        Object obj3 = trieNode2.buffer[trieNode2.indexOfCellAt$runtime(i4)];
+                        return obj3 instanceof TrieNode ? new TrieNode(i4, new Object[]{obj3}, persistentHashSetBuilder.getOwnership$runtime()) : obj3;
                     }
                     Object[] objArr3 = new Object[bitCount];
                     Object[] objArr4 = trieNode2.buffer;
                     int i5 = 0;
                     int i6 = 0;
                     while (i5 < objArr4.length) {
-                        CommonFunctionsKt.m3633assert(i6 <= i5);
-                        if (objArr4[i5] != Companion.getEMPTY$runtime_release()) {
+                        CommonFunctionsKt.m3972assert(i6 <= i5);
+                        if (objArr4[i5] != Companion.getEMPTY$runtime()) {
                             objArr3[i6] = objArr4[i5];
                             i6++;
-                            CommonFunctionsKt.m3633assert(i6 <= bitCount);
+                            CommonFunctionsKt.m3972assert(i6 <= bitCount);
                         }
                         i5++;
                     }
-                    return new TrieNode(i4, objArr3, persistentHashSetBuilder.getOwnership$runtime_release());
+                    return new TrieNode(i4, objArr3, persistentHashSetBuilder.getOwnership$runtime());
                 } else if (!trieNode2.elementsIdentityEquals(this)) {
                     return trieNode2;
                 }
@@ -703,10 +703,10 @@ public final class TrieNode<E> {
         }
         while (i4 != 0) {
             int lowestOneBit = Integer.lowestOneBit(i4);
-            int indexOfCellAt$runtime_release = indexOfCellAt$runtime_release(lowestOneBit);
-            int indexOfCellAt$runtime_release2 = trieNode.indexOfCellAt$runtime_release(lowestOneBit);
-            Object obj2 = this.buffer[indexOfCellAt$runtime_release];
-            Object obj3 = trieNode.buffer[indexOfCellAt$runtime_release2];
+            int indexOfCellAt$runtime = indexOfCellAt$runtime(lowestOneBit);
+            int indexOfCellAt$runtime2 = trieNode.indexOfCellAt$runtime(lowestOneBit);
+            Object obj2 = this.buffer[indexOfCellAt$runtime];
+            Object obj3 = trieNode.buffer[indexOfCellAt$runtime2];
             boolean z = obj2 instanceof TrieNode;
             boolean z2 = obj3 instanceof TrieNode;
             if (z && z2) {
@@ -734,20 +734,20 @@ public final class TrieNode<E> {
         if (hasNoCellAt(indexSegment)) {
             return addElementAt(indexSegment, e);
         }
-        int indexOfCellAt$runtime_release = indexOfCellAt$runtime_release(indexSegment);
-        Object obj = this.buffer[indexOfCellAt$runtime_release];
+        int indexOfCellAt$runtime = indexOfCellAt$runtime(indexSegment);
+        Object obj = this.buffer[indexOfCellAt$runtime];
         if (obj instanceof TrieNode) {
-            TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime_release);
+            TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime);
             if (i2 == 30) {
                 add = nodeAtIndex.collisionAdd(e);
             } else {
                 add = nodeAtIndex.add(i, e, i2 + 5);
             }
             if (nodeAtIndex != add) {
-                return updateNodeAtIndex(indexOfCellAt$runtime_release, add);
+                return updateNodeAtIndex(indexOfCellAt$runtime, add);
             }
         } else if (!Intrinsics.areEqual(e, obj)) {
-            return moveElementToNode(indexOfCellAt$runtime_release, i, e, i2);
+            return moveElementToNode(indexOfCellAt$runtime, i, e, i2);
         }
         return this;
     }
@@ -757,23 +757,23 @@ public final class TrieNode<E> {
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
         if (hasNoCellAt(indexSegment)) {
             persistentHashSetBuilder.setSize(persistentHashSetBuilder.size() + 1);
-            return mutableAddElementAt(indexSegment, e, persistentHashSetBuilder.getOwnership$runtime_release());
+            return mutableAddElementAt(indexSegment, e, persistentHashSetBuilder.getOwnership$runtime());
         }
-        int indexOfCellAt$runtime_release = indexOfCellAt$runtime_release(indexSegment);
-        Object obj = this.buffer[indexOfCellAt$runtime_release];
+        int indexOfCellAt$runtime = indexOfCellAt$runtime(indexSegment);
+        Object obj = this.buffer[indexOfCellAt$runtime];
         if (obj instanceof TrieNode) {
-            TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime_release);
+            TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime);
             if (i2 == 30) {
                 mutableAdd = nodeAtIndex.mutableCollisionAdd(e, persistentHashSetBuilder);
             } else {
                 mutableAdd = nodeAtIndex.mutableAdd(i, e, i2 + 5, persistentHashSetBuilder);
             }
             if (nodeAtIndex != mutableAdd) {
-                return mutableUpdateNodeAtIndex(indexOfCellAt$runtime_release, mutableAdd, persistentHashSetBuilder.getOwnership$runtime_release());
+                return mutableUpdateNodeAtIndex(indexOfCellAt$runtime, mutableAdd, persistentHashSetBuilder.getOwnership$runtime());
             }
         } else if (!Intrinsics.areEqual(e, obj)) {
             persistentHashSetBuilder.setSize(persistentHashSetBuilder.size() + 1);
-            return mutableMoveElementToNode(indexOfCellAt$runtime_release, i, e, i2, persistentHashSetBuilder.getOwnership$runtime_release());
+            return mutableMoveElementToNode(indexOfCellAt$runtime, i, e, i2, persistentHashSetBuilder.getOwnership$runtime());
         }
         return this;
     }
@@ -782,20 +782,20 @@ public final class TrieNode<E> {
         TrieNode<E> remove;
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
         if (!hasNoCellAt(indexSegment)) {
-            int indexOfCellAt$runtime_release = indexOfCellAt$runtime_release(indexSegment);
-            Object obj = this.buffer[indexOfCellAt$runtime_release];
+            int indexOfCellAt$runtime = indexOfCellAt$runtime(indexSegment);
+            Object obj = this.buffer[indexOfCellAt$runtime];
             if (obj instanceof TrieNode) {
-                TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime_release);
+                TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime);
                 if (i2 == 30) {
                     remove = nodeAtIndex.collisionRemove(e);
                 } else {
                     remove = nodeAtIndex.remove(i, e, i2 + 5);
                 }
                 if (nodeAtIndex != remove) {
-                    return updateNodeAtIndex(indexOfCellAt$runtime_release, remove);
+                    return updateNodeAtIndex(indexOfCellAt$runtime, remove);
                 }
             } else if (Intrinsics.areEqual(e, obj)) {
-                return removeCellAtIndex(indexOfCellAt$runtime_release, indexSegment);
+                return removeCellAtIndex(indexOfCellAt$runtime, indexSegment);
             }
         }
         return this;
@@ -805,28 +805,28 @@ public final class TrieNode<E> {
         TrieNode<E> mutableRemove;
         int indexSegment = 1 << TrieNodeKt.indexSegment(i, i2);
         if (!hasNoCellAt(indexSegment)) {
-            int indexOfCellAt$runtime_release = indexOfCellAt$runtime_release(indexSegment);
-            Object obj = this.buffer[indexOfCellAt$runtime_release];
+            int indexOfCellAt$runtime = indexOfCellAt$runtime(indexSegment);
+            Object obj = this.buffer[indexOfCellAt$runtime];
             if (obj instanceof TrieNode) {
-                TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime_release);
+                TrieNode<E> nodeAtIndex = nodeAtIndex(indexOfCellAt$runtime);
                 if (i2 == 30) {
                     mutableRemove = nodeAtIndex.mutableCollisionRemove(e, persistentHashSetBuilder);
                 } else {
                     mutableRemove = nodeAtIndex.mutableRemove(i, e, i2 + 5, persistentHashSetBuilder);
                 }
-                if (this.ownedBy == persistentHashSetBuilder.getOwnership$runtime_release() || nodeAtIndex != mutableRemove) {
-                    return mutableUpdateNodeAtIndex(indexOfCellAt$runtime_release, mutableRemove, persistentHashSetBuilder.getOwnership$runtime_release());
+                if (this.ownedBy == persistentHashSetBuilder.getOwnership$runtime() || nodeAtIndex != mutableRemove) {
+                    return mutableUpdateNodeAtIndex(indexOfCellAt$runtime, mutableRemove, persistentHashSetBuilder.getOwnership$runtime());
                 }
             } else if (Intrinsics.areEqual(e, obj)) {
                 persistentHashSetBuilder.setSize(persistentHashSetBuilder.size() - 1);
-                return mutableRemoveCellAtIndex(indexOfCellAt$runtime_release, indexSegment, persistentHashSetBuilder.getOwnership$runtime_release());
+                return mutableRemoveCellAtIndex(indexOfCellAt$runtime, indexSegment, persistentHashSetBuilder.getOwnership$runtime());
             }
         }
         return this;
     }
 
     /* compiled from: TrieNode.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0001\n\u0002\b\u0003\b\u0080\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u001a\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode$Companion;", "", "()V", "EMPTY", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "", "getEMPTY$runtime_release", "()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u0001\n\u0002\b\u0003\b\u0080\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode$Companion;", "", "<init>", "()V", "EMPTY", "Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "", "getEMPTY$runtime", "()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -836,7 +836,7 @@ public final class TrieNode<E> {
         private Companion() {
         }
 
-        public final TrieNode getEMPTY$runtime_release() {
+        public final TrieNode getEMPTY$runtime() {
             return TrieNode.EMPTY;
         }
     }

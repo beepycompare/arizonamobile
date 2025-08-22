@@ -12,6 +12,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import kotlin.UByte$$ExternalSyntheticBackport0;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 /* loaded from: classes2.dex */
@@ -34,30 +35,35 @@ public class FontResourcesParserCompat {
 
     /* loaded from: classes2.dex */
     public static final class ProviderResourceEntry implements FamilyResourceEntry {
-        private final FontRequest mFallbackRequest;
-        private final FontRequest mRequest;
+        private final List<FontRequest> mRequests;
         private final int mStrategy;
         private final String mSystemFontFamilyName;
         private final int mTimeoutMs;
 
-        public ProviderResourceEntry(FontRequest fontRequest, FontRequest fontRequest2, int i, int i2, String str) {
-            this.mRequest = fontRequest;
-            this.mFallbackRequest = fontRequest2;
+        public ProviderResourceEntry(List<FontRequest> list, int i, int i2, String str) {
+            this.mRequests = list;
             this.mStrategy = i;
             this.mTimeoutMs = i2;
             this.mSystemFontFamilyName = str;
         }
 
         public ProviderResourceEntry(FontRequest fontRequest, int i, int i2) {
-            this(fontRequest, null, i, i2, null);
+            this(Collections.singletonList(fontRequest), i, i2, null);
+        }
+
+        public List<FontRequest> getRequests() {
+            return this.mRequests;
         }
 
         public FontRequest getRequest() {
-            return this.mRequest;
+            return this.mRequests.get(0);
         }
 
         public FontRequest getFallbackRequest() {
-            return this.mFallbackRequest;
+            if (this.mRequests.size() < 2) {
+                return null;
+            }
+            return this.mRequests.get(1);
         }
 
         public int getFetchStrategy() {
@@ -163,27 +169,44 @@ public class FontResourcesParserCompat {
         int integer2 = obtainAttributes.getInteger(R.styleable.FontFamily_fontProviderFetchTimeout, 500);
         String string5 = obtainAttributes.getString(R.styleable.FontFamily_fontProviderSystemFontFamily);
         obtainAttributes.recycle();
-        if (string != null && string2 != null && string3 != null) {
-            while (xmlPullParser.next() != 3) {
-                skip(xmlPullParser);
-            }
+        if (string != null && string2 != null) {
             List<List<byte[]>> readCerts = readCerts(resources, resourceId);
-            return new ProviderResourceEntry(new FontRequest(string, string2, string3, readCerts), string4 != null ? new FontRequest(string, string2, string4, readCerts) : null, integer, integer2, string5);
+            ArrayList arrayList = new ArrayList();
+            while (xmlPullParser.next() != 3) {
+                if (xmlPullParser.getEventType() == 2) {
+                    if (xmlPullParser.getName().equals("fallback")) {
+                        arrayList.add(readFallback(xmlPullParser, resources, string, string2, readCerts));
+                    } else {
+                        skip(xmlPullParser);
+                    }
+                }
+            }
+            if (arrayList.isEmpty()) {
+                if (string3 != null) {
+                    arrayList.add(new FontRequest(string, string2, string3, readCerts, null, null));
+                    if (string4 != null) {
+                        arrayList.add(new FontRequest(string, string2, string4, readCerts, null, null));
+                    }
+                    return new ProviderResourceEntry(arrayList, integer, integer2, string5);
+                }
+                throw new IllegalArgumentException("The provider font XML requires query attribute or fallback children.");
+            }
+            return new ProviderResourceEntry(arrayList, integer, integer2, string5);
         }
-        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
         while (xmlPullParser.next() != 3) {
             if (xmlPullParser.getEventType() == 2) {
                 if (xmlPullParser.getName().equals("font")) {
-                    arrayList.add(readFont(xmlPullParser, resources));
+                    arrayList2.add(readFont(xmlPullParser, resources));
                 } else {
                     skip(xmlPullParser);
                 }
             }
         }
-        if (arrayList.isEmpty()) {
+        if (arrayList2.isEmpty()) {
             return null;
         }
-        return new FontFamilyFilesResourceEntry((FontFileResourceEntry[]) arrayList.toArray(new FontFileResourceEntry[0]));
+        return new FontFamilyFilesResourceEntry((FontFileResourceEntry[]) arrayList2.toArray(new FontFileResourceEntry[0]));
     }
 
     private static int getType(TypedArray typedArray, int i) {
@@ -222,6 +245,35 @@ public class FontResourcesParserCompat {
             arrayList.add(Base64.decode(str, 0));
         }
         return arrayList;
+    }
+
+    private static FontRequest readFallback(XmlPullParser xmlPullParser, Resources resources, String str, String str2, List<List<byte[]>> list) throws XmlPullParserException, IOException {
+        TypedArray obtainAttributes = resources.obtainAttributes(Xml.asAttributeSet(xmlPullParser), R.styleable.FontFamilyProviderFallback);
+        try {
+            String string = obtainAttributes.getString(R.styleable.FontFamilyProviderFallback_fontProviderQuery);
+            String string2 = obtainAttributes.getString(R.styleable.FontFamilyProviderFallback_fontProviderSystemFontFamily);
+            String string3 = obtainAttributes.getString(R.styleable.FontFamilyProviderFallback_fontVariationSettings);
+            if (string == null) {
+                throw new XmlPullParserException("query attribute must be set in fallback element");
+            }
+            while (xmlPullParser.next() != 3) {
+                skip(xmlPullParser);
+            }
+            FontRequest fontRequest = new FontRequest(str, str2, string, list, string2, string3);
+            if (obtainAttributes != null) {
+                UByte$$ExternalSyntheticBackport0.m9138m((Object) obtainAttributes);
+            }
+            return fontRequest;
+        } catch (Throwable th) {
+            if (obtainAttributes != null) {
+                try {
+                    UByte$$ExternalSyntheticBackport0.m9138m((Object) obtainAttributes);
+                } catch (Throwable th2) {
+                    th.addSuppressed(th2);
+                }
+            }
+            throw th;
+        }
     }
 
     private static FontFileResourceEntry readFont(XmlPullParser xmlPullParser, Resources resources) throws XmlPullParserException, IOException {

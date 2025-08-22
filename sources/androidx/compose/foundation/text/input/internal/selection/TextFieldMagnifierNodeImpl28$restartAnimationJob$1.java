@@ -23,7 +23,7 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AndroidTextFieldMagnifier.android.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldMagnifierNodeImpl28$restartAnimationJob$1", f = "AndroidTextFieldMagnifier.android.kt", i = {}, l = {144}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class TextFieldMagnifierNodeImpl28$restartAnimationJob$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -58,36 +58,12 @@ public final class TextFieldMagnifierNodeImpl28$restartAnimationJob$1 extends Su
             ResultKt.throwOnFailure(obj);
             final CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
             final TextFieldMagnifierNodeImpl28 textFieldMagnifierNodeImpl28 = this.this$0;
-            Flow snapshotFlow = SnapshotStateKt.snapshotFlow(new Function0<Offset>() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldMagnifierNodeImpl28$restartAnimationJob$1.1
-                {
-                    super(0);
-                }
-
+            Flow snapshotFlow = SnapshotStateKt.snapshotFlow(new Function0() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldMagnifierNodeImpl28$restartAnimationJob$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
-                public /* bridge */ /* synthetic */ Offset invoke() {
-                    return Offset.m3826boximpl(m1368invokeF1C5BW0());
-                }
-
-                /* renamed from: invoke-F1C5BW0  reason: not valid java name */
-                public final long m1368invokeF1C5BW0() {
-                    boolean z;
-                    TransformedTextFieldState transformedTextFieldState;
-                    TextFieldSelectionState textFieldSelectionState;
-                    TextLayoutState textLayoutState;
-                    long m1364getMagnifierSizeYbymL2g;
-                    TextFieldSelectionState textFieldSelectionState2;
-                    z = TextFieldMagnifierNodeImpl28.this.visible;
-                    if (!z) {
-                        textFieldSelectionState2 = TextFieldMagnifierNodeImpl28.this.textFieldSelectionState;
-                        if (textFieldSelectionState2.getDirectDragGestureInitiator() != TextFieldSelectionState.InputType.Touch) {
-                            return Offset.Companion.m3852getUnspecifiedF1C5BW0();
-                        }
-                    }
-                    transformedTextFieldState = TextFieldMagnifierNodeImpl28.this.textFieldState;
-                    textFieldSelectionState = TextFieldMagnifierNodeImpl28.this.textFieldSelectionState;
-                    textLayoutState = TextFieldMagnifierNodeImpl28.this.textLayoutState;
-                    m1364getMagnifierSizeYbymL2g = TextFieldMagnifierNodeImpl28.this.m1364getMagnifierSizeYbymL2g();
-                    return TextFieldMagnifierKt.m1361calculateSelectionMagnifierCenterAndroidhUlJWOE(transformedTextFieldState, textFieldSelectionState, textLayoutState, m1364getMagnifierSizeYbymL2g);
+                public final Object invoke() {
+                    Offset invokeSuspend$lambda$0;
+                    invokeSuspend$lambda$0 = TextFieldMagnifierNodeImpl28$restartAnimationJob$1.invokeSuspend$lambda$0(TextFieldMagnifierNodeImpl28.this);
+                    return invokeSuspend$lambda$0;
                 }
             });
             final TextFieldMagnifierNodeImpl28 textFieldMagnifierNodeImpl282 = this.this$0;
@@ -95,30 +71,30 @@ public final class TextFieldMagnifierNodeImpl28$restartAnimationJob$1 extends Su
             if (snapshotFlow.collect(new FlowCollector() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldMagnifierNodeImpl28$restartAnimationJob$1.2
                 @Override // kotlinx.coroutines.flow.FlowCollector
                 public /* bridge */ /* synthetic */ Object emit(Object obj2, Continuation continuation) {
-                    return m1369emit3MmeM6k(((Offset) obj2).m3847unboximpl(), continuation);
+                    return m1624emit3MmeM6k(((Offset) obj2).m4303unboximpl(), continuation);
                 }
 
                 /* renamed from: emit-3MmeM6k  reason: not valid java name */
-                public final Object m1369emit3MmeM6k(long j, Continuation<? super Unit> continuation) {
+                public final Object m1624emit3MmeM6k(long j, Continuation<? super Unit> continuation) {
                     Animatable animatable;
                     Animatable animatable2;
                     Animatable animatable3;
                     animatable = TextFieldMagnifierNodeImpl28.this.animatable;
-                    if ((((Offset) animatable.getValue()).m3847unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (j & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+                    if ((((Offset) animatable.getValue()).m4303unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (j & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats) {
                         animatable3 = TextFieldMagnifierNodeImpl28.this.animatable;
-                        if (Float.intBitsToFloat((int) (((Offset) animatable3.getValue()).m3847unboximpl() & 4294967295L)) != Float.intBitsToFloat((int) (j & 4294967295L))) {
+                        if (Float.intBitsToFloat((int) (((Offset) animatable3.getValue()).m4303unboximpl() & 4294967295L)) != Float.intBitsToFloat((int) (j & 4294967295L))) {
                             BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new AnonymousClass1(TextFieldMagnifierNodeImpl28.this, j, null), 3, null);
                             return Unit.INSTANCE;
                         }
                     }
                     animatable2 = TextFieldMagnifierNodeImpl28.this.animatable;
-                    Object snapTo = animatable2.snapTo(Offset.m3826boximpl(j), continuation);
+                    Object snapTo = animatable2.snapTo(Offset.m4282boximpl(j), continuation);
                     return snapTo == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? snapTo : Unit.INSTANCE;
                 }
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* compiled from: AndroidTextFieldMagnifier.android.kt */
-                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
                 @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldMagnifierNodeImpl28$restartAnimationJob$1$2$1", f = "AndroidTextFieldMagnifier.android.kt", i = {}, l = {160}, m = "invokeSuspend", n = {}, s = {})
                 /* renamed from: androidx.compose.foundation.text.input.internal.selection.TextFieldMagnifierNodeImpl28$restartAnimationJob$1$2$1  reason: invalid class name */
                 /* loaded from: classes.dex */
@@ -153,7 +129,7 @@ public final class TextFieldMagnifierNodeImpl28$restartAnimationJob$1 extends Su
                             ResultKt.throwOnFailure(obj);
                             animatable = this.this$0.animatable;
                             this.label = 1;
-                            if (Animatable.animateTo$default(animatable, Offset.m3826boximpl(this.$targetValue), SelectionMagnifierKt.getMagnifierSpringSpec(), null, null, this, 12, null) == coroutine_suspended) {
+                            if (Animatable.animateTo$default(animatable, Offset.m4282boximpl(this.$targetValue), SelectionMagnifierKt.getMagnifierSpringSpec(), null, null, this, 12, null) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         } else if (i != 1) {
@@ -173,5 +149,27 @@ public final class TextFieldMagnifierNodeImpl28$restartAnimationJob$1 extends Su
             ResultKt.throwOnFailure(obj);
         }
         return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Offset invokeSuspend$lambda$0(TextFieldMagnifierNodeImpl28 textFieldMagnifierNodeImpl28) {
+        boolean z;
+        TransformedTextFieldState transformedTextFieldState;
+        TextFieldSelectionState textFieldSelectionState;
+        TextLayoutState textLayoutState;
+        long m1622getMagnifierSizeYbymL2g;
+        TextFieldSelectionState textFieldSelectionState2;
+        z = textFieldMagnifierNodeImpl28.visible;
+        if (!z) {
+            textFieldSelectionState2 = textFieldMagnifierNodeImpl28.textFieldSelectionState;
+            if (textFieldSelectionState2.getDirectDragGestureInitiator() != TextFieldSelectionState.InputType.Touch) {
+                return Offset.m4282boximpl(Offset.Companion.m4308getUnspecifiedF1C5BW0());
+            }
+        }
+        transformedTextFieldState = textFieldMagnifierNodeImpl28.textFieldState;
+        textFieldSelectionState = textFieldMagnifierNodeImpl28.textFieldSelectionState;
+        textLayoutState = textFieldMagnifierNodeImpl28.textLayoutState;
+        m1622getMagnifierSizeYbymL2g = textFieldMagnifierNodeImpl28.m1622getMagnifierSizeYbymL2g();
+        return Offset.m4282boximpl(TextFieldMagnifierKt.m1620calculateSelectionMagnifierCenterAndroidhUlJWOE(transformedTextFieldState, textFieldSelectionState, textLayoutState, m1622getMagnifierSizeYbymL2g));
     }
 }

@@ -9,10 +9,10 @@ public final class SearchBarTokens {
     public static final int $stable = 0;
     public static final SearchBarTokens INSTANCE = new SearchBarTokens();
     private static final ShapeKeyTokens AvatarShape = ShapeKeyTokens.CornerFull;
-    private static final float AvatarSize = Dp.m6684constructorimpl((float) 30.0d);
+    private static final float AvatarSize = Dp.m7251constructorimpl((float) 30.0d);
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainerHigh;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m2980getLevel3D9Ej5fM();
-    private static final float ContainerHeight = Dp.m6684constructorimpl((float) 56.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3287getLevel3D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7251constructorimpl((float) 56.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ColorSchemeKeyTokens HoverSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -32,7 +32,7 @@ public final class SearchBarTokens {
     }
 
     /* renamed from: getAvatarSize-D9Ej5fM  reason: not valid java name */
-    public final float m3276getAvatarSizeD9Ej5fM() {
+    public final float m3583getAvatarSizeD9Ej5fM() {
         return AvatarSize;
     }
 
@@ -41,12 +41,12 @@ public final class SearchBarTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3277getContainerElevationD9Ej5fM() {
+    public final float m3584getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3278getContainerHeightD9Ej5fM() {
+    public final float m3585getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 

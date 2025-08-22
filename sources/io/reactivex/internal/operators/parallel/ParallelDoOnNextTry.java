@@ -12,7 +12,7 @@ import io.reactivex.parallel.ParallelFlowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ParallelDoOnNextTry<T> extends ParallelFlowable<T> {
     final BiFunction<? super Long, ? super Throwable, ParallelFailureHandling> errorHandler;
     final Consumer<? super T> onNext;
@@ -46,7 +46,7 @@ public final class ParallelDoOnNextTry<T> extends ParallelFlowable<T> {
         return this.source.parallelism();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ParallelDoOnNextSubscriber<T> implements ConditionalSubscriber<T>, Subscription {
         boolean done;
         final Subscriber<? super T> downstream;
@@ -155,7 +155,7 @@ public final class ParallelDoOnNextTry<T> extends ParallelFlowable<T> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.reactivex.internal.operators.parallel.ParallelDoOnNextTry$1  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$io$reactivex$parallel$ParallelFailureHandling;
 
@@ -177,7 +177,7 @@ public final class ParallelDoOnNextTry<T> extends ParallelFlowable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ParallelDoOnNextConditionalSubscriber<T> implements ConditionalSubscriber<T>, Subscription {
         boolean done;
         final ConditionalSubscriber<? super T> downstream;

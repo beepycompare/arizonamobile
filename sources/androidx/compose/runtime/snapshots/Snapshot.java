@@ -19,7 +19,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: Snapshot.kt */
-@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u001c\n\u0002\u0018\u0002\n\u0002\b\u001b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b7\u0018\u0000 \\2\u00020\u0001:\u0001\\B\u0017\b\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0002\u0010\u0006B\u001b\b\u0004\u0012\n\u0010\u0007\u001a\u00060\bj\u0002`\t\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0002\u0010\nJ\r\u00109\u001a\u00020$H\u0000¢\u0006\u0002\b:J\r\u0010;\u001a\u00020$H\u0010¢\u0006\u0002\b<J\b\u0010=\u001a\u00020$H\u0016J\"\u0010>\u001a\u0002H?\"\u0004\b\u0000\u0010?2\f\u0010@\u001a\b\u0012\u0004\u0012\u0002H?0AH\u0086\b¢\u0006\u0002\u0010BJ\b\u0010C\u001a\u00020\fH&J\n\u0010D\u001a\u0004\u0018\u00010\u0000H\u0011J\u0015\u0010E\u001a\u00020$2\u0006\u0010F\u001a\u00020\u0000H ¢\u0006\u0002\bGJ\u0015\u0010H\u001a\u00020$2\u0006\u0010F\u001a\u00020\u0000H ¢\u0006\u0002\bIJ\r\u0010J\u001a\u00020$H ¢\u0006\u0002\bKJ\u0015\u0010L\u001a\u00020$2\u0006\u0010M\u001a\u00020\u001dH ¢\u0006\u0002\bNJ\r\u0010O\u001a\u00020$H\u0000¢\u0006\u0002\bPJ\r\u0010Q\u001a\u00020$H\u0010¢\u0006\u0002\bRJ\u0012\u0010S\u001a\u00020$2\b\u0010F\u001a\u0004\u0018\u00010\u0000H\u0011J \u0010T\u001a\u00020\u00002\u0016\b\u0002\u0010\"\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020$\u0018\u00010#H&J\r\u0010U\u001a\u00020\u0003H\u0000¢\u0006\u0002\bVJ\b\u0010W\u001a\u0004\u0018\u00010\u0000J\u0010\u0010X\u001a\u00020$2\b\u0010Y\u001a\u0004\u0018\u00010\u0000J\r\u0010Z\u001a\u00020$H\u0000¢\u0006\u0002\b[R\u001a\u0010\u000b\u001a\u00020\fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0002\u001a\u00020\u00038VX\u0097\u0004¢\u0006\f\u0012\u0004\b\u0011\u0010\u0012\u001a\u0004\b\u0013\u0010\u0014R\u001a\u0010\u0004\u001a\u00020\u0005X\u0090\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R\u0015\u0010\u0019\u001a\u00020\f8À\u0002X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u000eR\u001a\u0010\u001b\u001a\n\u0012\u0004\u0012\u00020\u001d\u0018\u00010\u001cX \u0004¢\u0006\u0006\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\u00020\u0003X\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\b!\u0010\u0012R(\u0010\"\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020$\u0018\u00010#8 X¡\u0004¢\u0006\f\u0012\u0004\b%\u0010\u0012\u001a\u0004\b&\u0010'R\u0012\u0010(\u001a\u00020\fX¦\u0004¢\u0006\u0006\u001a\u0004\b)\u0010\u000eR\u0012\u0010*\u001a\u00020\u0000X¦\u0004¢\u0006\u0006\u001a\u0004\b+\u0010,R,\u0010\u0007\u001a\u00060\bj\u0002`\t2\n\u0010-\u001a\u00060\bj\u0002`\t@PX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b.\u0010/\"\u0004\b0\u00101R$\u00103\u001a\u00020\u00032\u0006\u00102\u001a\u00020\u00038P@PX\u0090\u000e¢\u0006\f\u001a\u0004\b4\u0010\u0014\"\u0004\b5\u00106R \u00107\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020$\u0018\u00010#X \u0004¢\u0006\u0006\u001a\u0004\b8\u0010'\u0082\u0001\u0004]^_`¨\u0006a"}, d2 = {"Landroidx/compose/runtime/snapshots/Snapshot;", "", "id", "", "invalid", "Landroidx/compose/runtime/snapshots/SnapshotIdSet;", "(ILandroidx/compose/runtime/snapshots/SnapshotIdSet;)V", "snapshotId", "", "Landroidx/compose/runtime/snapshots/SnapshotId;", "(JLandroidx/compose/runtime/snapshots/SnapshotIdSet;)V", "disposed", "", "getDisposed$runtime_release", "()Z", "setDisposed$runtime_release", "(Z)V", "getId$annotations", "()V", "getId", "()I", "getInvalid$runtime_release", "()Landroidx/compose/runtime/snapshots/SnapshotIdSet;", "setInvalid$runtime_release", "(Landroidx/compose/runtime/snapshots/SnapshotIdSet;)V", "isPinned", "isPinned$runtime_release", "modified", "Landroidx/collection/MutableScatterSet;", "Landroidx/compose/runtime/snapshots/StateObject;", "getModified$runtime_release", "()Landroidx/collection/MutableScatterSet;", "pinningTrackingHandle", "getPinningTrackingHandle$annotations", "readObserver", "Lkotlin/Function1;", "", "getReadObserver$annotations", "getReadObserver", "()Lkotlin/jvm/functions/Function1;", "readOnly", "getReadOnly", "root", "getRoot", "()Landroidx/compose/runtime/snapshots/Snapshot;", "<set-?>", "getSnapshotId", "()J", "setSnapshotId$runtime_release", "(J)V", "value", "writeCount", "getWriteCount$runtime_release", "setWriteCount$runtime_release", "(I)V", "writeObserver", "getWriteObserver$runtime_release", "closeAndReleasePinning", "closeAndReleasePinning$runtime_release", "closeLocked", "closeLocked$runtime_release", "dispose", "enter", ExifInterface.GPS_DIRECTION_TRUE, "block", "Lkotlin/Function0;", "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "hasPendingChanges", "makeCurrent", "nestedActivated", "snapshot", "nestedActivated$runtime_release", "nestedDeactivated", "nestedDeactivated$runtime_release", "notifyObjectsInitialized", "notifyObjectsInitialized$runtime_release", "recordModified", RemoteConfigConstants.ResponseFieldKey.STATE, "recordModified$runtime_release", "releasePinnedSnapshotLocked", "releasePinnedSnapshotLocked$runtime_release", "releasePinnedSnapshotsForCloseLocked", "releasePinnedSnapshotsForCloseLocked$runtime_release", "restoreCurrent", "takeNestedSnapshot", "takeoverPinnedSnapshot", "takeoverPinnedSnapshot$runtime_release", "unsafeEnter", "unsafeLeave", "oldSnapshot", "validateNotDisposed", "validateNotDisposed$runtime_release", "Companion", "Landroidx/compose/runtime/snapshots/MutableSnapshot;", "Landroidx/compose/runtime/snapshots/NestedReadonlySnapshot;", "Landroidx/compose/runtime/snapshots/ReadonlySnapshot;", "Landroidx/compose/runtime/snapshots/TransparentObserverSnapshot;", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0017\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u001a\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b7\u0018\u0000 ]2\u00020\u0001:\u0001]B\u001d\b\u0004\u0012\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bB\u0019\b\u0015\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\u000bJ\b\u0010%\u001a\u00020&H\u0016J \u0010'\u001a\u00020\u00002\u0016\b\u0002\u0010(\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020&\u0018\u00010)H&J\b\u0010*\u001a\u00020\"H&J\"\u0010+\u001a\u0002H,\"\u0004\b\u0000\u0010,2\f\u0010-\u001a\b\u0012\u0004\u0012\u0002H,0.H\u0086\b¢\u0006\u0002\u0010/J\n\u00100\u001a\u0004\u0018\u00010\u0000H\u0011J\u0012\u00101\u001a\u00020&2\b\u00102\u001a\u0004\u0018\u00010\u0000H\u0011J\b\u00103\u001a\u0004\u0018\u00010\u0000J\u0010\u00104\u001a\u00020&2\b\u00105\u001a\u0004\u0018\u00010\u0000J\u0015\u0010C\u001a\u00020&2\u0006\u00102\u001a\u00020\u0000H ¢\u0006\u0002\bDJ\u0015\u0010E\u001a\u00020&2\u0006\u00102\u001a\u00020\u0000H ¢\u0006\u0002\bFJ\u0015\u0010G\u001a\u00020&2\u0006\u0010H\u001a\u00020IH ¢\u0006\u0002\bJJ\r\u0010O\u001a\u00020&H ¢\u0006\u0002\bPJ\r\u0010Q\u001a\u00020&H\u0000¢\u0006\u0002\bRJ\r\u0010S\u001a\u00020&H\u0010¢\u0006\u0002\bTJ\r\u0010U\u001a\u00020&H\u0010¢\u0006\u0002\bVJ\r\u0010W\u001a\u00020&H\u0000¢\u0006\u0002\bXJ\r\u0010Y\u001a\u00020&H\u0000¢\u0006\u0002\bZJ\r\u0010[\u001a\u00020\nH\u0000¢\u0006\u0002\b\\R\u001a\u0010\u0005\u001a\u00020\u0006X\u0090\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u001a\u0010\t\u001a\u00020\n8VX\u0097\u0004¢\u0006\f\u0012\u0004\b\u0010\u0010\u0011\u001a\u0004\b\u0012\u0010\u0013R.\u0010\u0002\u001a\u00060\u0003j\u0002`\u00042\n\u0010\u0014\u001a\u00060\u0003j\u0002`\u0004@PX\u0096\u000e¢\u0006\u0010\n\u0002\u0010\u0019\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R$\u0010\u001a\u001a\u00020\n2\u0006\u0010\u0014\u001a\u00020\n8P@PX\u0090\u000e¢\u0006\f\u001a\u0004\b\u001b\u0010\u0013\"\u0004\b\u001c\u0010\u001dR\u0012\u0010\u001e\u001a\u00020\u0000X¦\u0004¢\u0006\u0006\u001a\u0004\b\u001f\u0010 R\u0012\u0010!\u001a\u00020\"X¦\u0004¢\u0006\u0006\u001a\u0004\b#\u0010$R\u001a\u00106\u001a\u00020\"X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b7\u0010$\"\u0004\b8\u00109R\u0014\u0010:\u001a\u00020\nX\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\b;\u0010\u0011R\u0015\u0010<\u001a\u00020\"8À\u0002X\u0080\u0004¢\u0006\u0006\u001a\u0004\b=\u0010$R(\u0010(\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020&\u0018\u00010)8 X¡\u0004¢\u0006\f\u0012\u0004\b>\u0010\u0011\u001a\u0004\b?\u0010@R \u0010A\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020&\u0018\u00010)X \u0004¢\u0006\u0006\u001a\u0004\bB\u0010@R\u001a\u0010K\u001a\n\u0012\u0004\u0012\u00020I\u0018\u00010LX \u0004¢\u0006\u0006\u001a\u0004\bM\u0010N\u0082\u0001\u0004^_`a¨\u0006b"}, d2 = {"Landroidx/compose/runtime/snapshots/Snapshot;", "", "snapshotId", "", "Landroidx/compose/runtime/snapshots/SnapshotId;", "invalid", "Landroidx/compose/runtime/snapshots/SnapshotIdSet;", "<init>", "(JLandroidx/compose/runtime/snapshots/SnapshotIdSet;)V", "id", "", "(ILandroidx/compose/runtime/snapshots/SnapshotIdSet;)V", "getInvalid$runtime", "()Landroidx/compose/runtime/snapshots/SnapshotIdSet;", "setInvalid$runtime", "(Landroidx/compose/runtime/snapshots/SnapshotIdSet;)V", "getId$annotations", "()V", "getId", "()I", "value", "getSnapshotId", "()J", "setSnapshotId$runtime", "(J)V", "J", "writeCount", "getWriteCount$runtime", "setWriteCount$runtime", "(I)V", "root", "getRoot", "()Landroidx/compose/runtime/snapshots/Snapshot;", "readOnly", "", "getReadOnly", "()Z", "dispose", "", "takeNestedSnapshot", "readObserver", "Lkotlin/Function1;", "hasPendingChanges", "enter", ExifInterface.GPS_DIRECTION_TRUE, "block", "Lkotlin/Function0;", "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "makeCurrent", "restoreCurrent", "snapshot", "unsafeEnter", "unsafeLeave", "oldSnapshot", "disposed", "getDisposed$runtime", "setDisposed$runtime", "(Z)V", "pinningTrackingHandle", "getPinningTrackingHandle$annotations", "isPinned", "isPinned$runtime", "getReadObserver$annotations", "getReadObserver", "()Lkotlin/jvm/functions/Function1;", "writeObserver", "getWriteObserver$runtime", "nestedActivated", "nestedActivated$runtime", "nestedDeactivated", "nestedDeactivated$runtime", "recordModified", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/runtime/snapshots/StateObject;", "recordModified$runtime", "modified", "Landroidx/collection/MutableScatterSet;", "getModified$runtime", "()Landroidx/collection/MutableScatterSet;", "notifyObjectsInitialized", "notifyObjectsInitialized$runtime", "closeAndReleasePinning", "closeAndReleasePinning$runtime", "closeLocked", "closeLocked$runtime", "releasePinnedSnapshotsForCloseLocked", "releasePinnedSnapshotsForCloseLocked$runtime", "validateNotDisposed", "validateNotDisposed$runtime", "releasePinnedSnapshotLocked", "releasePinnedSnapshotLocked$runtime", "takeoverPinnedSnapshot", "takeoverPinnedSnapshot$runtime", "Companion", "Landroidx/compose/runtime/snapshots/MutableSnapshot;", "Landroidx/compose/runtime/snapshots/NestedReadonlySnapshot;", "Landroidx/compose/runtime/snapshots/ReadonlySnapshot;", "Landroidx/compose/runtime/snapshots/TransparentObserverSnapshot;", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public abstract class Snapshot {
     public static final int PreexistingSnapshotId = 1;
@@ -48,7 +48,7 @@ public abstract class Snapshot {
     public static /* synthetic */ void getReadObserver$annotations() {
     }
 
-    public abstract MutableScatterSet<StateObject> getModified$runtime_release();
+    public abstract MutableScatterSet<StateObject> getModified$runtime();
 
     public abstract Function1<Object, Unit> getReadObserver();
 
@@ -56,38 +56,38 @@ public abstract class Snapshot {
 
     public abstract Snapshot getRoot();
 
-    public int getWriteCount$runtime_release() {
+    public int getWriteCount$runtime() {
         return 0;
     }
 
-    public abstract Function1<Object, Unit> getWriteObserver$runtime_release();
+    public abstract Function1<Object, Unit> getWriteObserver$runtime();
 
     public abstract boolean hasPendingChanges();
 
-    /* renamed from: nestedActivated$runtime_release */
-    public abstract void mo3636nestedActivated$runtime_release(Snapshot snapshot);
+    /* renamed from: nestedActivated$runtime */
+    public abstract void mo3992nestedActivated$runtime(Snapshot snapshot);
 
-    /* renamed from: nestedDeactivated$runtime_release */
-    public abstract void mo3637nestedDeactivated$runtime_release(Snapshot snapshot);
+    /* renamed from: nestedDeactivated$runtime */
+    public abstract void mo3993nestedDeactivated$runtime(Snapshot snapshot);
 
-    public abstract void notifyObjectsInitialized$runtime_release();
+    public abstract void notifyObjectsInitialized$runtime();
 
-    /* renamed from: recordModified$runtime_release */
-    public abstract void mo3638recordModified$runtime_release(StateObject stateObject);
+    /* renamed from: recordModified$runtime */
+    public abstract void mo3994recordModified$runtime(StateObject stateObject);
 
     public abstract Snapshot takeNestedSnapshot(Function1<Object, Unit> function1);
 
     private Snapshot(long j, SnapshotIdSet snapshotIdSet) {
         this.invalid = snapshotIdSet;
         this.snapshotId = j;
-        this.pinningTrackingHandle = j != SnapshotKt.access$getINVALID_SNAPSHOT$p() ? SnapshotKt.trackPinning(j, getInvalid$runtime_release()) : -1;
+        this.pinningTrackingHandle = j != SnapshotKt.access$getINVALID_SNAPSHOT$p() ? SnapshotKt.trackPinning(j, getInvalid$runtime()) : -1;
     }
 
-    public SnapshotIdSet getInvalid$runtime_release() {
+    public SnapshotIdSet getInvalid$runtime() {
         return this.invalid;
     }
 
-    public void setInvalid$runtime_release(SnapshotIdSet snapshotIdSet) {
+    public void setInvalid$runtime(SnapshotIdSet snapshotIdSet) {
         this.invalid = snapshotIdSet;
     }
 
@@ -104,18 +104,18 @@ public abstract class Snapshot {
         return this.snapshotId;
     }
 
-    public void setSnapshotId$runtime_release(long j) {
+    public void setSnapshotId$runtime(long j) {
         this.snapshotId = j;
     }
 
-    public void setWriteCount$runtime_release(int i) {
+    public void setWriteCount$runtime(int i) {
         throw new IllegalStateException("Updating write count is not supported for this snapshot".toString());
     }
 
     public void dispose() {
         this.disposed = true;
         synchronized (SnapshotKt.getLock()) {
-            releasePinnedSnapshotLocked$runtime_release();
+            releasePinnedSnapshotLocked$runtime();
             Unit unit = Unit.INSTANCE;
         }
     }
@@ -161,33 +161,33 @@ public abstract class Snapshot {
         restoreCurrent(snapshot);
     }
 
-    public final boolean getDisposed$runtime_release() {
+    public final boolean getDisposed$runtime() {
         return this.disposed;
     }
 
-    public final void setDisposed$runtime_release(boolean z) {
+    public final void setDisposed$runtime(boolean z) {
         this.disposed = z;
     }
 
-    public final boolean isPinned$runtime_release() {
+    public final boolean isPinned$runtime() {
         return this.pinningTrackingHandle >= 0;
     }
 
-    public void closeLocked$runtime_release() {
+    public void closeLocked$runtime() {
         SnapshotKt.access$setOpenSnapshots$p(SnapshotKt.access$getOpenSnapshots$p().clear(getSnapshotId()));
     }
 
-    public void releasePinnedSnapshotsForCloseLocked$runtime_release() {
-        releasePinnedSnapshotLocked$runtime_release();
+    public void releasePinnedSnapshotsForCloseLocked$runtime() {
+        releasePinnedSnapshotLocked$runtime();
     }
 
-    public final void validateNotDisposed$runtime_release() {
+    public final void validateNotDisposed$runtime() {
         if (this.disposed) {
             PreconditionsKt.throwIllegalArgumentException("Cannot use a disposed snapshot");
         }
     }
 
-    public final void releasePinnedSnapshotLocked$runtime_release() {
+    public final void releasePinnedSnapshotLocked$runtime() {
         int i = this.pinningTrackingHandle;
         if (i >= 0) {
             SnapshotKt.releasePinningLocked(i);
@@ -195,14 +195,14 @@ public abstract class Snapshot {
         }
     }
 
-    public final int takeoverPinnedSnapshot$runtime_release() {
+    public final int takeoverPinnedSnapshot$runtime() {
         int i = this.pinningTrackingHandle;
         this.pinningTrackingHandle = -1;
         return i;
     }
 
     /* compiled from: Snapshot.kt */
-    @Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\"\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0017\u001a\u00020\u0007H\u0001J\"\u0010\u0018\u001a\u0002H\u0019\"\u0004\b\u0000\u0010\u00192\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u0002H\u00190\u001bH\u0086\b¢\u0006\u0002\u0010\u001cJ\u0012\u0010\u001d\u001a\u00020\u00072\b\u0010\u001e\u001a\u0004\u0018\u00010\u0007H\u0001J\u0006\u0010\u001f\u001a\u00020 JO\u0010!\u001a\u0002H\u0019\"\u0004\b\u0000\u0010\u00192\u0016\b\u0002\u0010\"\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020 \u0018\u00010#2\u0016\b\u0002\u0010$\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020 \u0018\u00010#2\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u0002H\u00190\u001b¢\u0006\u0002\u0010%J\b\u0010&\u001a\u00020\u0004H\u0007J&\u0010'\u001a\u00020(2\u001e\u0010)\u001a\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010+\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020 0*J\u001a\u0010,\u001a\u00020(2\u0012\u0010)\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020 0#J\n\u0010-\u001a\u0004\u0018\u00010\u0007H\u0001J\u0012\u0010.\u001a\u00020 2\b\u0010\u001e\u001a\u0004\u0018\u00010\u0007H\u0001J0\u0010/\u001a\u00020 2\b\u0010\u001e\u001a\u0004\u0018\u00010\u00072\u0006\u00100\u001a\u00020\u00072\u0014\u0010)\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020 \u0018\u00010#H\u0001J\u0006\u00101\u001a\u00020 J6\u00102\u001a\u0002032\u0016\b\u0002\u0010\"\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020 \u0018\u00010#2\u0016\b\u0002\u0010$\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020 \u0018\u00010#J\u001e\u00104\u001a\u00020\u00072\u0016\b\u0002\u0010\"\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020 \u0018\u00010#J\"\u00105\u001a\u0002H6\"\u0004\b\u0000\u001062\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u0002H60\u001bH\u0086\b¢\u0006\u0002\u0010\u001cJ4\u00107\u001a\u0002H\u0019\"\u0004\b\u0000\u0010\u00192\u0011\u0010\u001a\u001a\r\u0012\u0004\u0012\u0002H\u00190\u001b¢\u0006\u0002\b8H\u0086\b\u0082\u0002\n\n\b\b\u0001\u0012\u0002\u0010\u0001 \u0001¢\u0006\u0002\u0010\u001cR\u0014\u0010\u0003\u001a\u00020\u0004X\u0086T¢\u0006\b\n\u0000\u0012\u0004\b\u0005\u0010\u0002R\u0011\u0010\u0006\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b\b\u0010\tR\u001c\u0010\n\u001a\u0004\u0018\u00010\u00078@X\u0081\u0004¢\u0006\f\u0012\u0004\b\u000b\u0010\u0002\u001a\u0004\b\f\u0010\tR\u0011\u0010\r\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\r\u0010\u000fR\u0011\u0010\u0010\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u000fR\u0019\u0010\u0011\u001a\u00020\u000e*\u00020\u00128Â\u0002X\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0014R\u0019\u0010\u0011\u001a\u00020\u000e*\u00020\u00158Â\u0002X\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0016¨\u00069"}, d2 = {"Landroidx/compose/runtime/snapshots/Snapshot$Companion;", "", "()V", "PreexistingSnapshotId", "", "getPreexistingSnapshotId$annotations", "current", "Landroidx/compose/runtime/snapshots/Snapshot;", "getCurrent", "()Landroidx/compose/runtime/snapshots/Snapshot;", "currentThreadSnapshot", "getCurrentThreadSnapshot$annotations", "getCurrentThreadSnapshot", "isApplyObserverNotificationPending", "", "()Z", "isInSnapshot", "canBeReused", "Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;", "getCanBeReused", "(Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;)Z", "Landroidx/compose/runtime/snapshots/TransparentObserverSnapshot;", "(Landroidx/compose/runtime/snapshots/TransparentObserverSnapshot;)Z", "createNonObservableSnapshot", "global", ExifInterface.GPS_DIRECTION_TRUE, "block", "Lkotlin/Function0;", "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "makeCurrentNonObservable", "previous", "notifyObjectsInitialized", "", "observe", "readObserver", "Lkotlin/Function1;", "writeObserver", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "openSnapshotCount", "registerApplyObserver", "Landroidx/compose/runtime/snapshots/ObserverHandle;", "observer", "Lkotlin/Function2;", "", "registerGlobalWriteObserver", "removeCurrent", "restoreCurrent", "restoreNonObservable", "nonObservable", "sendApplyNotifications", "takeMutableSnapshot", "Landroidx/compose/runtime/snapshots/MutableSnapshot;", "takeSnapshot", "withMutableSnapshot", "R", "withoutReadObservation", "Landroidx/compose/runtime/DisallowComposableCalls;", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000d\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\"\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u000f\u001a\u00020\u00052\u0016\b\u0002\u0010\u0010\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u0012\u0018\u00010\u0011J6\u0010\u0013\u001a\u00020\u00142\u0016\b\u0002\u0010\u0010\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u0012\u0018\u00010\u00112\u0016\b\u0002\u0010\u0015\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u0012\u0018\u00010\u0011J\"\u0010\u0016\u001a\u0002H\u0017\"\u0004\b\u0000\u0010\u00172\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u0002H\u00170\u0019H\u0086\b¢\u0006\u0002\u0010\u001aJ\"\u0010\u001b\u001a\u0002H\u001c\"\u0004\b\u0000\u0010\u001c2\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u0002H\u001c0\u0019H\u0086\b¢\u0006\u0002\u0010\u001aJO\u0010\u001d\u001a\u0002H\u0017\"\u0004\b\u0000\u0010\u00172\u0016\b\u0002\u0010\u0010\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u0012\u0018\u00010\u00112\u0016\b\u0002\u0010\u0015\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u0012\u0018\u00010\u00112\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u0002H\u00170\u0019¢\u0006\u0002\u0010\u001eJ\b\u0010\u001f\u001a\u00020\u0005H\u0001J\u0012\u0010)\u001a\u00020\u00052\b\u0010*\u001a\u0004\u0018\u00010\u0005H\u0001J0\u0010+\u001a\u00020\u00122\b\u0010*\u001a\u0004\u0018\u00010\u00052\u0006\u0010,\u001a\u00020\u00052\u0014\u0010-\u001a\u0010\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u0012\u0018\u00010\u0011H\u0001J4\u0010.\u001a\u0002H\u0017\"\u0004\b\u0000\u0010\u00172\u0011\u0010\u0018\u001a\r\u0012\u0004\u0012\u0002H\u00170\u0019¢\u0006\u0002\b/H\u0086\b\u0082\u0002\n\n\b\b\u0001\u0012\u0002\u0010\u0001 \u0001¢\u0006\u0002\u0010\u001aJ&\u00100\u001a\u0002012\u001e\u0010-\u001a\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000103\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u001202J\u001a\u00104\u001a\u0002012\u0012\u0010-\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00120\u0011J\u0006\u00105\u001a\u00020\u0012J\u0006\u00106\u001a\u00020\u0012J\b\u00107\u001a\u00020\rH\u0007J\n\u00108\u001a\u0004\u0018\u00010\u0005H\u0001J\u0012\u00109\u001a\u00020\u00122\b\u0010*\u001a\u0004\u0018\u00010\u0005H\u0001R\u0011\u0010\u0004\u001a\u00020\u00058F¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\b\u0010\nR\u0011\u0010\u000b\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\u000b\u0010\nR\u0014\u0010\f\u001a\u00020\rX\u0086T¢\u0006\b\n\u0000\u0012\u0004\b\u000e\u0010\u0003R\u001c\u0010 \u001a\u0004\u0018\u00010\u00058@X\u0081\u0004¢\u0006\f\u0012\u0004\b!\u0010\u0003\u001a\u0004\b\"\u0010\u0007R\u0019\u0010#\u001a\u00020\t*\u00020$8Â\u0002X\u0082\u0004¢\u0006\u0006\u001a\u0004\b%\u0010&R\u0019\u0010#\u001a\u00020\t*\u00020'8Â\u0002X\u0082\u0004¢\u0006\u0006\u001a\u0004\b%\u0010(¨\u0006:"}, d2 = {"Landroidx/compose/runtime/snapshots/Snapshot$Companion;", "", "<init>", "()V", "current", "Landroidx/compose/runtime/snapshots/Snapshot;", "getCurrent", "()Landroidx/compose/runtime/snapshots/Snapshot;", "isInSnapshot", "", "()Z", "isApplyObserverNotificationPending", "PreexistingSnapshotId", "", "getPreexistingSnapshotId$annotations", "takeSnapshot", "readObserver", "Lkotlin/Function1;", "", "takeMutableSnapshot", "Landroidx/compose/runtime/snapshots/MutableSnapshot;", "writeObserver", "global", ExifInterface.GPS_DIRECTION_TRUE, "block", "Lkotlin/Function0;", "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "withMutableSnapshot", "R", "observe", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "createNonObservableSnapshot", "currentThreadSnapshot", "getCurrentThreadSnapshot$annotations", "getCurrentThreadSnapshot", "canBeReused", "Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;", "getCanBeReused", "(Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;)Z", "Landroidx/compose/runtime/snapshots/TransparentObserverSnapshot;", "(Landroidx/compose/runtime/snapshots/TransparentObserverSnapshot;)Z", "makeCurrentNonObservable", "previous", "restoreNonObservable", "nonObservable", "observer", "withoutReadObservation", "Landroidx/compose/runtime/DisallowComposableCalls;", "registerApplyObserver", "Landroidx/compose/runtime/snapshots/ObserverHandle;", "Lkotlin/Function2;", "", "registerGlobalWriteObserver", "notifyObjectsInitialized", "sendApplyNotifications", "openSnapshotCount", "removeCurrent", "restoreCurrent", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -304,16 +304,16 @@ public abstract class Snapshot {
             Snapshot snapshot = (Snapshot) SnapshotKt.access$getThreadSnapshot$p().get();
             if (snapshot instanceof TransparentObserverMutableSnapshot) {
                 TransparentObserverMutableSnapshot transparentObserverMutableSnapshot2 = (TransparentObserverMutableSnapshot) snapshot;
-                if (transparentObserverMutableSnapshot2.getThreadId$runtime_release() == Thread_jvmKt.currentThreadId()) {
+                if (transparentObserverMutableSnapshot2.getThreadId$runtime() == Thread_jvmKt.currentThreadId()) {
                     Function1<Object, Unit> readObserver = transparentObserverMutableSnapshot2.getReadObserver();
-                    Function1<Object, Unit> writeObserver$runtime_release = transparentObserverMutableSnapshot2.getWriteObserver$runtime_release();
+                    Function1<Object, Unit> writeObserver$runtime = transparentObserverMutableSnapshot2.getWriteObserver$runtime();
                     try {
-                        ((TransparentObserverMutableSnapshot) snapshot).setReadObserver(SnapshotKt.mergedReadObserver$default(function1, readObserver, false, 4, null));
-                        ((TransparentObserverMutableSnapshot) snapshot).setWriteObserver(SnapshotKt.access$mergedWriteObserver(function12, writeObserver$runtime_release));
+                        ((TransparentObserverMutableSnapshot) snapshot).setReadObserver$runtime(SnapshotKt.mergedReadObserver$default(function1, readObserver, false, 4, null));
+                        ((TransparentObserverMutableSnapshot) snapshot).setWriteObserver$runtime(SnapshotKt.access$mergedWriteObserver(function12, writeObserver$runtime));
                         return function0.invoke();
                     } finally {
-                        transparentObserverMutableSnapshot2.setReadObserver(readObserver);
-                        transparentObserverMutableSnapshot2.setWriteObserver(writeObserver$runtime_release);
+                        transparentObserverMutableSnapshot2.setReadObserver$runtime(readObserver);
+                        transparentObserverMutableSnapshot2.setWriteObserver$runtime(writeObserver$runtime);
                     }
                 }
             }
@@ -343,25 +343,25 @@ public abstract class Snapshot {
         }
 
         private final boolean getCanBeReused(TransparentObserverMutableSnapshot transparentObserverMutableSnapshot) {
-            return transparentObserverMutableSnapshot.getThreadId$runtime_release() == Thread_jvmKt.currentThreadId();
+            return transparentObserverMutableSnapshot.getThreadId$runtime() == Thread_jvmKt.currentThreadId();
         }
 
         private final boolean getCanBeReused(TransparentObserverSnapshot transparentObserverSnapshot) {
-            return transparentObserverSnapshot.getThreadId$runtime_release() == Thread_jvmKt.currentThreadId();
+            return transparentObserverSnapshot.getThreadId$runtime() == Thread_jvmKt.currentThreadId();
         }
 
         public final Snapshot makeCurrentNonObservable(Snapshot snapshot) {
             if (snapshot instanceof TransparentObserverMutableSnapshot) {
                 TransparentObserverMutableSnapshot transparentObserverMutableSnapshot = (TransparentObserverMutableSnapshot) snapshot;
-                if (transparentObserverMutableSnapshot.getThreadId$runtime_release() == Thread_jvmKt.currentThreadId()) {
-                    transparentObserverMutableSnapshot.setReadObserver(null);
+                if (transparentObserverMutableSnapshot.getThreadId$runtime() == Thread_jvmKt.currentThreadId()) {
+                    transparentObserverMutableSnapshot.setReadObserver$runtime(null);
                     return snapshot;
                 }
             }
             if (snapshot instanceof TransparentObserverSnapshot) {
                 TransparentObserverSnapshot transparentObserverSnapshot = (TransparentObserverSnapshot) snapshot;
-                if (transparentObserverSnapshot.getThreadId$runtime_release() == Thread_jvmKt.currentThreadId()) {
-                    transparentObserverSnapshot.setReadObserver(null);
+                if (transparentObserverSnapshot.getThreadId$runtime() == Thread_jvmKt.currentThreadId()) {
+                    transparentObserverSnapshot.setReadObserver$runtime(null);
                     return snapshot;
                 }
             }
@@ -373,10 +373,10 @@ public abstract class Snapshot {
         public final void restoreNonObservable(Snapshot snapshot, Snapshot snapshot2, Function1<Object, Unit> function1) {
             if (snapshot == snapshot2) {
                 if (snapshot instanceof TransparentObserverMutableSnapshot) {
-                    ((TransparentObserverMutableSnapshot) snapshot).setReadObserver(function1);
+                    ((TransparentObserverMutableSnapshot) snapshot).setReadObserver$runtime(function1);
                     return;
                 } else if (snapshot instanceof TransparentObserverSnapshot) {
-                    ((TransparentObserverSnapshot) snapshot).setReadObserver(function1);
+                    ((TransparentObserverSnapshot) snapshot).setReadObserver$runtime(function1);
                     return;
                 } else {
                     throw new IllegalStateException(("Non-transparent snapshot was reused: " + snapshot).toString());
@@ -406,13 +406,13 @@ public abstract class Snapshot {
             return new ObserverHandle() { // from class: androidx.compose.runtime.snapshots.Snapshot$Companion$$ExternalSyntheticLambda0
                 @Override // androidx.compose.runtime.snapshots.ObserverHandle
                 public final void dispose() {
-                    Snapshot.Companion.registerApplyObserver$lambda$4(Function2.this);
+                    Snapshot.Companion.registerApplyObserver$lambda$3(Function2.this);
                 }
             };
         }
 
         public final void notifyObjectsInitialized() {
-            SnapshotKt.currentSnapshot().notifyObjectsInitialized$runtime_release();
+            SnapshotKt.currentSnapshot().notifyObjectsInitialized$runtime();
         }
 
         public final int openSnapshotCount() {
@@ -442,7 +442,7 @@ public abstract class Snapshot {
             return new ObserverHandle() { // from class: androidx.compose.runtime.snapshots.Snapshot$Companion$$ExternalSyntheticLambda1
                 @Override // androidx.compose.runtime.snapshots.ObserverHandle
                 public final void dispose() {
-                    Snapshot.Companion.registerGlobalWriteObserver$lambda$7(Function1.this);
+                    Snapshot.Companion.registerGlobalWriteObserver$lambda$6(Function1.this);
                 }
             };
         }
@@ -458,7 +458,7 @@ public abstract class Snapshot {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void registerApplyObserver$lambda$4(Function2 function2) {
+        public static final void registerApplyObserver$lambda$3(Function2 function2) {
             synchronized (SnapshotKt.getLock()) {
                 SnapshotKt.access$setApplyObservers$p(CollectionsKt.minus(SnapshotKt.access$getApplyObservers$p(), function2));
                 Unit unit = Unit.INSTANCE;
@@ -466,7 +466,7 @@ public abstract class Snapshot {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void registerGlobalWriteObserver$lambda$7(Function1 function1) {
+        public static final void registerGlobalWriteObserver$lambda$6(Function1 function1) {
             synchronized (SnapshotKt.getLock()) {
                 SnapshotKt.access$setGlobalWriteObservers$p(CollectionsKt.minus(SnapshotKt.access$getGlobalWriteObservers$p(), function1));
                 Unit unit = Unit.INSTANCE;
@@ -475,10 +475,10 @@ public abstract class Snapshot {
         }
     }
 
-    public final void closeAndReleasePinning$runtime_release() {
+    public final void closeAndReleasePinning$runtime() {
         synchronized (SnapshotKt.getLock()) {
-            closeLocked$runtime_release();
-            releasePinnedSnapshotsForCloseLocked$runtime_release();
+            closeLocked$runtime();
+            releasePinnedSnapshotsForCloseLocked$runtime();
             Unit unit = Unit.INSTANCE;
         }
     }

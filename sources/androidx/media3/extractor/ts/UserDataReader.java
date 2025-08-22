@@ -11,7 +11,7 @@ import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class UserDataReader {
     private static final int USER_DATA_START_CODE = 434;
     private final List<Format> closedCaptionFormats;
@@ -26,7 +26,7 @@ public final class UserDataReader {
         ReorderingBufferQueue reorderingBufferQueue = new ReorderingBufferQueue(new ReorderingBufferQueue.OutputConsumer() { // from class: androidx.media3.extractor.ts.UserDataReader$$ExternalSyntheticLambda0
             @Override // androidx.media3.container.ReorderingBufferQueue.OutputConsumer
             public final void consume(long j, ParsableByteArray parsableByteArray) {
-                UserDataReader.this.m7479lambda$new$0$androidxmedia3extractortsUserDataReader(j, parsableByteArray);
+                UserDataReader.this.m8045lambda$new$0$androidxmedia3extractortsUserDataReader(j, parsableByteArray);
             }
         });
         this.reorderingBufferQueue = reorderingBufferQueue;
@@ -35,7 +35,7 @@ public final class UserDataReader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-extractor-ts-UserDataReader  reason: not valid java name */
-    public /* synthetic */ void m7479lambda$new$0$androidxmedia3extractortsUserDataReader(long j, ParsableByteArray parsableByteArray) {
+    public /* synthetic */ void m8045lambda$new$0$androidxmedia3extractortsUserDataReader(long j, ParsableByteArray parsableByteArray) {
         CeaUtil.consumeCcData(j, parsableByteArray, this.outputs);
     }
 

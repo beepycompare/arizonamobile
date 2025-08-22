@@ -3,7 +3,7 @@ package io.reactivex.internal.operators.observable;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.internal.observers.BasicIntQueueDisposable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableRangeLong extends Observable<Long> {
     private final long count;
     private final long start;
@@ -21,7 +21,7 @@ public final class ObservableRangeLong extends Observable<Long> {
         rangeDisposable.run();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class RangeDisposable extends BasicIntQueueDisposable<Long> {
         private static final long serialVersionUID = 396518478098735504L;
         final Observer<? super Long> downstream;

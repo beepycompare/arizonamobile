@@ -15,49 +15,49 @@ final class ByteStringNetworkRequestBody implements NetworkRequestBody {
     private final ByteString bytes;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ByteStringNetworkRequestBody m7793boximpl(ByteString byteString) {
+    public static final /* synthetic */ ByteStringNetworkRequestBody m8359boximpl(ByteString byteString) {
         return new ByteStringNetworkRequestBody(byteString);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static ByteString m7794constructorimpl(ByteString byteString) {
+    public static ByteString m8360constructorimpl(ByteString byteString) {
         return byteString;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7795equalsimpl(ByteString byteString, Object obj) {
-        return (obj instanceof ByteStringNetworkRequestBody) && Intrinsics.areEqual(byteString, ((ByteStringNetworkRequestBody) obj).m7800unboximpl());
+    public static boolean m8361equalsimpl(ByteString byteString, Object obj) {
+        return (obj instanceof ByteStringNetworkRequestBody) && Intrinsics.areEqual(byteString, ((ByteStringNetworkRequestBody) obj).m8366unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7796equalsimpl0(ByteString byteString, ByteString byteString2) {
+    public static final boolean m8362equalsimpl0(ByteString byteString, ByteString byteString2) {
         return Intrinsics.areEqual(byteString, byteString2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7797hashCodeimpl(ByteString byteString) {
+    public static int m8363hashCodeimpl(ByteString byteString) {
         return byteString.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7798toStringimpl(ByteString byteString) {
+    public static String m8364toStringimpl(ByteString byteString) {
         return "ByteStringNetworkRequestBody(bytes=" + byteString + ')';
     }
 
     public boolean equals(Object obj) {
-        return m7795equalsimpl(this.bytes, obj);
+        return m8361equalsimpl(this.bytes, obj);
     }
 
     public int hashCode() {
-        return m7797hashCodeimpl(this.bytes);
+        return m8363hashCodeimpl(this.bytes);
     }
 
     public String toString() {
-        return m7798toStringimpl(this.bytes);
+        return m8364toStringimpl(this.bytes);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ ByteString m7800unboximpl() {
+    public final /* synthetic */ ByteString m8366unboximpl() {
         return this.bytes;
     }
 
@@ -67,11 +67,11 @@ final class ByteStringNetworkRequestBody implements NetworkRequestBody {
 
     @Override // coil3.network.NetworkRequestBody
     public Object writeTo(BufferedSink bufferedSink, Continuation<? super Unit> continuation) {
-        return m7799writeToimpl(this.bytes, bufferedSink, continuation);
+        return m8365writeToimpl(this.bytes, bufferedSink, continuation);
     }
 
     /* renamed from: writeTo-impl  reason: not valid java name */
-    public static Object m7799writeToimpl(ByteString byteString, BufferedSink bufferedSink, Continuation<? super Unit> continuation) {
+    public static Object m8365writeToimpl(ByteString byteString, BufferedSink bufferedSink, Continuation<? super Unit> continuation) {
         bufferedSink.write(byteString);
         return Unit.INSTANCE;
     }

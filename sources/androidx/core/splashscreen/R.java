@@ -4,12 +4,12 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class attr {
-        public static int postSplashScreenTheme = 0x7f0404b8;
-        public static int splashScreenIconSize = 0x7f04055c;
-        public static int windowSplashScreenAnimatedIcon = 0x7f040684;
-        public static int windowSplashScreenAnimationDuration = 0x7f040685;
-        public static int windowSplashScreenBackground = 0x7f040686;
-        public static int windowSplashScreenIconBackgroundColor = 0x7f040687;
+        public static int postSplashScreenTheme = 0x7f0404b9;
+        public static int splashScreenIconSize = 0x7f04055d;
+        public static int windowSplashScreenAnimatedIcon = 0x7f040685;
+        public static int windowSplashScreenAnimationDuration = 0x7f040686;
+        public static int windowSplashScreenBackground = 0x7f040687;
+        public static int windowSplashScreenIconBackgroundColor = 0x7f040688;
 
         private attr() {
         }
@@ -31,9 +31,9 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class drawable {
-        public static int compat_splash_screen = 0x7f08053f;
-        public static int compat_splash_screen_no_icon_background = 0x7f080540;
-        public static int icon_background = 0x7f08099f;
+        public static int compat_splash_screen = 0x7f08054b;
+        public static int compat_splash_screen_no_icon_background = 0x7f08054c;
+        public static int icon_background = 0x7f0809d4;
 
         private drawable() {
         }
@@ -41,7 +41,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int splashscreen_icon_view = 0x7f0a0c6c;
+        public static int splashscreen_icon_view = 0x7f0a0c68;
 
         private id() {
         }
@@ -57,7 +57,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class layout {
-        public static int splash_screen_view = 0x7f0d0205;
+        public static int splash_screen_view = 0x7f0d020a;
 
         private layout() {
         }

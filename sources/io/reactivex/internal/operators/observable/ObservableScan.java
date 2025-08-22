@@ -8,7 +8,7 @@ import io.reactivex.functions.BiFunction;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableScan<T> extends AbstractObservableWithUpstream<T, T> {
     final BiFunction<T, T, T> accumulator;
 
@@ -22,7 +22,7 @@ public final class ObservableScan<T> extends AbstractObservableWithUpstream<T, T
         this.source.subscribe(new ScanObserver(observer, this.accumulator));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ScanObserver<T> implements Observer<T>, Disposable {
         final BiFunction<T, T, T> accumulator;
         boolean done;

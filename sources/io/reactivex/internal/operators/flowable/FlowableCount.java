@@ -6,7 +6,7 @@ import io.reactivex.internal.subscriptions.DeferredScalarSubscription;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableCount<T> extends AbstractFlowableWithUpstream<T, Long> {
     public FlowableCount(Flowable<T> flowable) {
         super(flowable);
@@ -17,7 +17,7 @@ public final class FlowableCount<T> extends AbstractFlowableWithUpstream<T, Long
         this.source.subscribe((FlowableSubscriber) new CountSubscriber(subscriber));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class CountSubscriber extends DeferredScalarSubscription<Long> implements FlowableSubscriber<Object> {
         private static final long serialVersionUID = 4973004223787171406L;
         long count;

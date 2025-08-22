@@ -97,7 +97,7 @@ public final class AndroidMenu_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1567DropdownMenuIlH_yew(final boolean z, final Function0<Unit> function0, Modifier modifier, long j, ScrollState scrollState, PopupProperties popupProperties, Shape shape, long j2, float f, float f2, BorderStroke borderStroke, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m1874DropdownMenuIlH_yew(final boolean z, final Function0<Unit> function0, Modifier modifier, long j, ScrollState scrollState, PopupProperties popupProperties, Shape shape, long j2, float f, float f2, BorderStroke borderStroke, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -232,7 +232,7 @@ public final class AndroidMenu_androidKt {
                             Modifier.Companion companion = i5 == 0 ? Modifier.Companion : obj2;
                             if (i6 != 0) {
                                 float f7 = 0;
-                                j3 = DpKt.m6705DpOffsetYgX7TsA(Dp.m6684constructorimpl(f7), Dp.m6684constructorimpl(f7));
+                                j3 = DpKt.m7272DpOffsetYgX7TsA(Dp.m7251constructorimpl(f7), Dp.m7251constructorimpl(f7));
                             }
                             if ((i3 & 16) == 0) {
                                 scrollState2 = ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1);
@@ -255,24 +255,24 @@ public final class AndroidMenu_androidKt {
                             } else {
                                 j4 = j2;
                             }
-                            float m2032getTonalElevationD9Ej5fM = i8 == 0 ? MenuDefaults.INSTANCE.m2032getTonalElevationD9Ej5fM() : f;
-                            float m2031getShadowElevationD9Ej5fM = i10 == 0 ? MenuDefaults.INSTANCE.m2031getShadowElevationD9Ej5fM() : f2;
+                            float m2339getTonalElevationD9Ej5fM = i8 == 0 ? MenuDefaults.INSTANCE.m2339getTonalElevationD9Ej5fM() : f;
+                            float m2338getShadowElevationD9Ej5fM = i10 == 0 ? MenuDefaults.INSTANCE.m2338getShadowElevationD9Ej5fM() : f2;
                             if (i12 == 0) {
                                 modifier2 = companion;
-                                f3 = m2032getTonalElevationD9Ej5fM;
+                                f3 = m2339getTonalElevationD9Ej5fM;
                                 shape4 = shape3;
                                 scrollState3 = scrollState2;
                                 j5 = j4;
-                                f4 = m2031getShadowElevationD9Ej5fM;
+                                f4 = m2338getShadowElevationD9Ej5fM;
                                 borderStroke2 = null;
                             } else {
                                 borderStroke2 = borderStroke;
                                 modifier2 = companion;
-                                f3 = m2032getTonalElevationD9Ej5fM;
+                                f3 = m2339getTonalElevationD9Ej5fM;
                                 shape4 = shape3;
                                 scrollState3 = scrollState2;
                                 j5 = j4;
-                                f4 = m2031getShadowElevationD9Ej5fM;
+                                f4 = m2338getShadowElevationD9Ej5fM;
                             }
                         } else {
                             startRestartGroup.skipToGroupEnd();
@@ -308,12 +308,12 @@ public final class AndroidMenu_androidKt {
                         }
                         mutableTransitionState = (MutableTransitionState) rememberedValue;
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        mutableTransitionState.setTargetState$animation_core_release(Boolean.valueOf(z));
+                        mutableTransitionState.setTargetState$animation_core(Boolean.valueOf(z));
                         if (!((Boolean) mutableTransitionState.getCurrentState()).booleanValue() || ((Boolean) mutableTransitionState.getTargetState()).booleanValue()) {
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1468219494, "CC(remember):AndroidMenu.android.kt#9igjgp");
                             rememberedValue2 = startRestartGroup.rememberedValue();
                             if (rememberedValue2 == Composer.Companion.getEmpty()) {
-                                rememberedValue2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TransformOrigin.m4457boximpl(TransformOrigin.Companion.m4470getCenterSzJe1aQ()), null, 2, null);
+                                rememberedValue2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TransformOrigin.m4932boximpl(TransformOrigin.Companion.m4945getCenterSzJe1aQ()), null, 2, null);
                                 startRestartGroup.updateRememberedValue(rememberedValue2);
                             }
                             final MutableState mutableState = (MutableState) rememberedValue2;
@@ -344,7 +344,7 @@ public final class AndroidMenu_androidKt {
 
                                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                     public final void invoke2(IntRect intRect, IntRect intRect2) {
-                                        mutableState.setValue(TransformOrigin.m4457boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
+                                        mutableState.setValue(TransformOrigin.m4932boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
                                     }
                                 }, 4, null);
                                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -370,7 +370,7 @@ public final class AndroidMenu_androidKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(2126968933, i16, -1, "androidx.compose.material3.DropdownMenu.<anonymous> (AndroidMenu.android.kt:73)");
                                         }
-                                        MenuKt.m2045DropdownMenuContentQj0Zi0g(Modifier.this, mutableTransitionState, mutableState, scrollState3, shape4, j5, f3, f4, borderStroke2, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
+                                        MenuKt.m2352DropdownMenuContentQj0Zi0g(Modifier.this, mutableTransitionState, mutableState, scrollState3, shape4, j5, f3, f4, borderStroke2, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                             return;
@@ -425,7 +425,7 @@ public final class AndroidMenu_androidKt {
                             }
 
                             public final void invoke(Composer composer3, int i16) {
-                                AndroidMenu_androidKt.m1567DropdownMenuIlH_yew(z, function0, modifier3, j6, scrollState4, popupProperties2, shape5, j7, f5, f6, borderStroke3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+                                AndroidMenu_androidKt.m1874DropdownMenuIlH_yew(z, function0, modifier3, j6, scrollState4, popupProperties2, shape5, j7, f5, f6, borderStroke3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
                             }
                         });
                         return;
@@ -471,7 +471,7 @@ public final class AndroidMenu_androidKt {
                 }
                 mutableTransitionState = (MutableTransitionState) rememberedValue;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                mutableTransitionState.setTargetState$animation_core_release(Boolean.valueOf(z));
+                mutableTransitionState.setTargetState$animation_core(Boolean.valueOf(z));
                 if (((Boolean) mutableTransitionState.getCurrentState()).booleanValue()) {
                 }
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1468219494, "CC(remember):AndroidMenu.android.kt#9igjgp");
@@ -506,7 +506,7 @@ public final class AndroidMenu_androidKt {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(IntRect intRect, IntRect intRect2) {
-                        mutableState2.setValue(TransformOrigin.m4457boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
+                        mutableState2.setValue(TransformOrigin.m4932boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
                     }
                 }, 4, null);
                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -531,7 +531,7 @@ public final class AndroidMenu_androidKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(2126968933, i16, -1, "androidx.compose.material3.DropdownMenu.<anonymous> (AndroidMenu.android.kt:73)");
                             }
-                            MenuKt.m2045DropdownMenuContentQj0Zi0g(Modifier.this, mutableTransitionState, mutableState2, scrollState3, shape4, j5, f3, f4, borderStroke2, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
+                            MenuKt.m2352DropdownMenuContentQj0Zi0g(Modifier.this, mutableTransitionState, mutableState2, scrollState3, shape4, j5, f3, f4, borderStroke2, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                                 return;
@@ -615,7 +615,7 @@ public final class AndroidMenu_androidKt {
             }
             mutableTransitionState = (MutableTransitionState) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            mutableTransitionState.setTargetState$animation_core_release(Boolean.valueOf(z));
+            mutableTransitionState.setTargetState$animation_core(Boolean.valueOf(z));
             if (((Boolean) mutableTransitionState.getCurrentState()).booleanValue()) {
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1468219494, "CC(remember):AndroidMenu.android.kt#9igjgp");
@@ -650,7 +650,7 @@ public final class AndroidMenu_androidKt {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(IntRect intRect, IntRect intRect2) {
-                    mutableState22.setValue(TransformOrigin.m4457boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
+                    mutableState22.setValue(TransformOrigin.m4932boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
                 }
             }, 4, null);
             startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -675,7 +675,7 @@ public final class AndroidMenu_androidKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(2126968933, i16, -1, "androidx.compose.material3.DropdownMenu.<anonymous> (AndroidMenu.android.kt:73)");
                         }
-                        MenuKt.m2045DropdownMenuContentQj0Zi0g(Modifier.this, mutableTransitionState, mutableState22, scrollState3, shape4, j5, f3, f4, borderStroke2, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
+                        MenuKt.m2352DropdownMenuContentQj0Zi0g(Modifier.this, mutableTransitionState, mutableState22, scrollState3, shape4, j5, f3, f4, borderStroke2, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                             return;
@@ -763,7 +763,7 @@ public final class AndroidMenu_androidKt {
         }
         mutableTransitionState = (MutableTransitionState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        mutableTransitionState.setTargetState$animation_core_release(Boolean.valueOf(z));
+        mutableTransitionState.setTargetState$animation_core(Boolean.valueOf(z));
         if (((Boolean) mutableTransitionState.getCurrentState()).booleanValue()) {
         }
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1468219494, "CC(remember):AndroidMenu.android.kt#9igjgp");
@@ -798,7 +798,7 @@ public final class AndroidMenu_androidKt {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(IntRect intRect, IntRect intRect2) {
-                mutableState222.setValue(TransformOrigin.m4457boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
+                mutableState222.setValue(TransformOrigin.m4932boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
             }
         }, 4, null);
         startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -823,7 +823,7 @@ public final class AndroidMenu_androidKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(2126968933, i16, -1, "androidx.compose.material3.DropdownMenu.<anonymous> (AndroidMenu.android.kt:73)");
                     }
-                    MenuKt.m2045DropdownMenuContentQj0Zi0g(Modifier.this, mutableTransitionState, mutableState222, scrollState3, shape4, j5, f3, f4, borderStroke2, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
+                    MenuKt.m2352DropdownMenuContentQj0Zi0g(Modifier.this, mutableTransitionState, mutableState222, scrollState3, shape4, j5, f3, f4, borderStroke2, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                         return;
@@ -873,7 +873,7 @@ public final class AndroidMenu_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1565DropdownMenu4kj_NE(final boolean z, final Function0 function0, Modifier modifier, long j, ScrollState scrollState, PopupProperties popupProperties, final Function3 function3, Composer composer, final int i, final int i2) {
+    public static final /* synthetic */ void m1872DropdownMenu4kj_NE(final boolean z, final Function0 function0, Modifier modifier, long j, ScrollState scrollState, PopupProperties popupProperties, final Function3 function3, Composer composer, final int i, final int i2) {
         boolean z2;
         int i3;
         Function0 function02;
@@ -959,7 +959,7 @@ public final class AndroidMenu_androidKt {
                                 Modifier.Companion companion = i8 != 0 ? Modifier.Companion : obj;
                                 if (i4 != 0) {
                                     float f = 0;
-                                    j2 = DpKt.m6705DpOffsetYgX7TsA(Dp.m6684constructorimpl(f), Dp.m6684constructorimpl(f));
+                                    j2 = DpKt.m7272DpOffsetYgX7TsA(Dp.m7251constructorimpl(f), Dp.m7251constructorimpl(f));
                                 }
                                 if ((i2 & 16) != 0) {
                                     i3 &= -57345;
@@ -976,7 +976,7 @@ public final class AndroidMenu_androidKt {
                                         ComposerKt.traceEventStart(i6, i3, -1, "androidx.compose.material3.DropdownMenu (AndroidMenu.android.kt:123)");
                                     }
                                     composer2 = startRestartGroup;
-                                    m1567DropdownMenuIlH_yew(z2, function02, obj4, j3, scrollState2, popupProperties2, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2032getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2031getShadowElevationD9Ej5fM(), null, function3, composer2, (i3 & 14) | 905969664 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3), ((i3 >> 15) & 112) | 6, 0);
+                                    m1874DropdownMenuIlH_yew(z2, function02, obj4, j3, scrollState2, popupProperties2, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2339getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2338getShadowElevationD9Ej5fM(), null, function3, composer2, (i3 & 14) | 905969664 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3), ((i3 >> 15) & 112) | 6, 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -1002,7 +1002,7 @@ public final class AndroidMenu_androidKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             composer2 = startRestartGroup;
-                            m1567DropdownMenuIlH_yew(z2, function02, obj4, j3, scrollState2, popupProperties2, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2032getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2031getShadowElevationD9Ej5fM(), null, function3, composer2, (i3 & 14) | 905969664 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3), ((i3 >> 15) & 112) | 6, 0);
+                            m1874DropdownMenuIlH_yew(z2, function02, obj4, j3, scrollState2, popupProperties2, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2339getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2338getShadowElevationD9Ej5fM(), null, function3, composer2, (i3 & 14) | 905969664 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3), ((i3 >> 15) & 112) | 6, 0);
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             modifier2 = obj4;
@@ -1034,7 +1034,7 @@ public final class AndroidMenu_androidKt {
                                 }
 
                                 public final void invoke(Composer composer3, int i9) {
-                                    AndroidMenu_androidKt.m1565DropdownMenu4kj_NE(z, function0, modifier2, j4, scrollState3, popupProperties3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                    AndroidMenu_androidKt.m1872DropdownMenu4kj_NE(z, function0, modifier2, j4, scrollState3, popupProperties3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                                 }
                             });
                             return;
@@ -1144,7 +1144,7 @@ public final class AndroidMenu_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1566DropdownMenuILWXrKs(final boolean z, final Function0 function0, Modifier modifier, long j, PopupProperties popupProperties, final Function3 function3, Composer composer, final int i, final int i2) {
+    public static final /* synthetic */ void m1873DropdownMenuILWXrKs(final boolean z, final Function0 function0, Modifier modifier, long j, PopupProperties popupProperties, final Function3 function3, Composer composer, final int i, final int i2) {
         boolean z2;
         int i3;
         Function0 function02;
@@ -1208,7 +1208,7 @@ public final class AndroidMenu_androidKt {
                             Modifier.Companion companion = i6 != 0 ? Modifier.Companion : obj;
                             if (i4 != 0) {
                                 float f = 0;
-                                j2 = DpKt.m6705DpOffsetYgX7TsA(Dp.m6684constructorimpl(f), Dp.m6684constructorimpl(f));
+                                j2 = DpKt.m7272DpOffsetYgX7TsA(Dp.m7251constructorimpl(f), Dp.m7251constructorimpl(f));
                             }
                             PopupProperties popupProperties3 = i5 != 0 ? new PopupProperties(true, false, false, false, 14, (DefaultConstructorMarker) null) : obj2;
                             if (ComposerKt.isTraceInProgress()) {
@@ -1217,7 +1217,7 @@ public final class AndroidMenu_androidKt {
                             composer2 = startRestartGroup;
                             Modifier modifier3 = companion;
                             long j4 = j2;
-                            m1567DropdownMenuIlH_yew(z2, function02, modifier3, j4, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj3, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
+                            m1874DropdownMenuIlH_yew(z2, function02, modifier3, j4, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj3, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -1248,7 +1248,7 @@ public final class AndroidMenu_androidKt {
                                 }
 
                                 public final void invoke(Composer composer3, int i7) {
-                                    AndroidMenu_androidKt.m1566DropdownMenuILWXrKs(z, function0, modifier2, j3, popupProperties2, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                    AndroidMenu_androidKt.m1873DropdownMenuILWXrKs(z, function0, modifier2, j3, popupProperties2, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                                 }
                             });
                             return;
@@ -1269,7 +1269,7 @@ public final class AndroidMenu_androidKt {
                     composer2 = startRestartGroup;
                     Modifier modifier32 = companion;
                     long j42 = j2;
-                    m1567DropdownMenuIlH_yew(z2, function02, modifier32, j42, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj3, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
+                    m1874DropdownMenuIlH_yew(z2, function02, modifier32, j42, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj3, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier2 = modifier32;
@@ -1296,7 +1296,7 @@ public final class AndroidMenu_androidKt {
                 composer2 = startRestartGroup;
                 Modifier modifier322 = companion;
                 long j422 = j2;
-                m1567DropdownMenuIlH_yew(z2, function02, modifier322, j422, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj3, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
+                m1874DropdownMenuIlH_yew(z2, function02, modifier322, j422, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj3, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier2 = modifier322;
@@ -1327,7 +1327,7 @@ public final class AndroidMenu_androidKt {
             composer2 = startRestartGroup;
             Modifier modifier3222 = companion;
             long j4222 = j2;
-            m1567DropdownMenuIlH_yew(z2, function02, modifier3222, j4222, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj3, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
+            m1874DropdownMenuIlH_yew(z2, function02, modifier3222, j4222, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj3, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier2 = modifier3222;
@@ -1362,7 +1362,7 @@ public final class AndroidMenu_androidKt {
         composer2 = startRestartGroup;
         Modifier modifier32222 = companion;
         long j42222 = j2;
-        m1567DropdownMenuIlH_yew(z2, function02, modifier32222, j42222, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj3, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
+        m1874DropdownMenuIlH_yew(z2, function02, modifier32222, j42222, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj3, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier2 = modifier32222;

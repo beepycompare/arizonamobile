@@ -13,7 +13,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.math.MathKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LazyLayoutPager.kt */
-@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0002\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0002\u0010\u0006J\u001a\u0010\u000b\u001a\u00020\f*\u00020\r2\u0006\u0010\u000e\u001a\u00020\fH\u0096@¢\u0006\u0002\u0010\u000fR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\n¨\u0006\u0010"}, d2 = {"Landroidx/compose/foundation/pager/PagerWrapperFlingBehavior;", "Landroidx/compose/foundation/gestures/FlingBehavior;", "originalFlingBehavior", "Landroidx/compose/foundation/gestures/TargetedFlingBehavior;", "pagerState", "Landroidx/compose/foundation/pager/PagerState;", "(Landroidx/compose/foundation/gestures/TargetedFlingBehavior;Landroidx/compose/foundation/pager/PagerState;)V", "getOriginalFlingBehavior", "()Landroidx/compose/foundation/gestures/TargetedFlingBehavior;", "getPagerState", "()Landroidx/compose/foundation/pager/PagerState;", "performFling", "", "Landroidx/compose/foundation/gestures/ScrollScope;", "initialVelocity", "(Landroidx/compose/foundation/gestures/ScrollScope;FLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0002\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u001a\u0010\f\u001a\u00020\r*\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\rH\u0096@¢\u0006\u0002\u0010\u0010R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000b¨\u0006\u0011"}, d2 = {"Landroidx/compose/foundation/pager/PagerWrapperFlingBehavior;", "Landroidx/compose/foundation/gestures/FlingBehavior;", "originalFlingBehavior", "Landroidx/compose/foundation/gestures/TargetedFlingBehavior;", "pagerState", "Landroidx/compose/foundation/pager/PagerState;", "<init>", "(Landroidx/compose/foundation/gestures/TargetedFlingBehavior;Landroidx/compose/foundation/pager/PagerState;)V", "getOriginalFlingBehavior", "()Landroidx/compose/foundation/gestures/TargetedFlingBehavior;", "getPagerState", "()Landroidx/compose/foundation/pager/PagerState;", "performFling", "", "Landroidx/compose/foundation/gestures/ScrollScope;", "initialVelocity", "(Landroidx/compose/foundation/gestures/ScrollScope;FLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PagerWrapperFlingBehavior implements FlingBehavior {
     private final TargetedFlingBehavior originalFlingBehavior;
@@ -33,7 +33,7 @@ public final class PagerWrapperFlingBehavior implements FlingBehavior {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
     @Override // androidx.compose.foundation.gestures.FlingBehavior
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -41,7 +41,6 @@ public final class PagerWrapperFlingBehavior implements FlingBehavior {
     public Object performFling(final ScrollScope scrollScope, float f, Continuation<? super Float> continuation) {
         PagerWrapperFlingBehavior$performFling$1 pagerWrapperFlingBehavior$performFling$1;
         int i;
-        PagerWrapperFlingBehavior pagerWrapperFlingBehavior;
         if (continuation instanceof PagerWrapperFlingBehavior$performFling$1) {
             pagerWrapperFlingBehavior$performFling$1 = (PagerWrapperFlingBehavior$performFling$1) continuation;
             if ((pagerWrapperFlingBehavior$performFling$1.label & Integer.MIN_VALUE) != 0) {
@@ -51,41 +50,31 @@ public final class PagerWrapperFlingBehavior implements FlingBehavior {
                 i = pagerWrapperFlingBehavior$performFling$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    pagerWrapperFlingBehavior$performFling$1.L$0 = this;
-                    pagerWrapperFlingBehavior$performFling$1.label = 1;
-                    obj = this.originalFlingBehavior.performFling(scrollScope, f, new Function1<Float, Unit>() { // from class: androidx.compose.foundation.pager.PagerWrapperFlingBehavior$performFling$resultVelocity$1$1
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        {
-                            super(1);
-                        }
-
+                    TargetedFlingBehavior targetedFlingBehavior = this.originalFlingBehavior;
+                    Function1<? super Float, Unit> function1 = new Function1() { // from class: androidx.compose.foundation.pager.PagerWrapperFlingBehavior$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(Float f2) {
-                            invoke(f2.floatValue());
-                            return Unit.INSTANCE;
+                        public final Object invoke(Object obj2) {
+                            Unit performFling$lambda$2$lambda$1;
+                            performFling$lambda$2$lambda$1 = PagerWrapperFlingBehavior.performFling$lambda$2$lambda$1(PagerWrapperFlingBehavior.this, scrollScope, ((Float) obj2).floatValue());
+                            return performFling$lambda$2$lambda$1;
                         }
-
-                        public final void invoke(float f2) {
-                            PagerWrapperFlingBehavior.this.getPagerState().updateTargetPage(scrollScope, MathKt.roundToInt(PagerWrapperFlingBehavior.this.getPagerState().getPageSizeWithSpacing$foundation_release() != 0 ? f2 / PagerWrapperFlingBehavior.this.getPagerState().getPageSizeWithSpacing$foundation_release() : 0.0f) + PagerWrapperFlingBehavior.this.getPagerState().getCurrentPage());
-                        }
-                    }, pagerWrapperFlingBehavior$performFling$1);
+                    };
+                    pagerWrapperFlingBehavior$performFling$1.label = 1;
+                    obj = targetedFlingBehavior.performFling(scrollScope, f, function1, pagerWrapperFlingBehavior$performFling$1);
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    pagerWrapperFlingBehavior = this;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    pagerWrapperFlingBehavior = (PagerWrapperFlingBehavior) pagerWrapperFlingBehavior$performFling$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 float floatValue = ((Number) obj).floatValue();
-                if (pagerWrapperFlingBehavior.pagerState.getCurrentPageOffsetFraction() != 0.0f && Math.abs(pagerWrapperFlingBehavior.pagerState.getCurrentPageOffsetFraction()) < 0.001d) {
-                    PagerState pagerState = pagerWrapperFlingBehavior.pagerState;
+                if (this.pagerState.getCurrentPageOffsetFraction() != 0.0f && Math.abs(this.pagerState.getCurrentPageOffsetFraction()) < 0.001d) {
+                    PagerState pagerState = this.pagerState;
                     PagerState.requestScrollToPage$default(pagerState, pagerState.getCurrentPage(), 0.0f, 2, null);
                 } else {
-                    pagerWrapperFlingBehavior.pagerState.getCurrentPageOffsetFraction();
+                    Boxing.boxFloat(this.pagerState.getCurrentPageOffsetFraction());
                 }
                 return Boxing.boxFloat(floatValue);
             }
@@ -97,12 +86,18 @@ public final class PagerWrapperFlingBehavior implements FlingBehavior {
         if (i != 0) {
         }
         float floatValue2 = ((Number) obj2).floatValue();
-        if (pagerWrapperFlingBehavior.pagerState.getCurrentPageOffsetFraction() != 0.0f) {
-            PagerState pagerState2 = pagerWrapperFlingBehavior.pagerState;
+        if (this.pagerState.getCurrentPageOffsetFraction() != 0.0f) {
+            PagerState pagerState2 = this.pagerState;
             PagerState.requestScrollToPage$default(pagerState2, pagerState2.getCurrentPage(), 0.0f, 2, null);
             return Boxing.boxFloat(floatValue2);
         }
-        pagerWrapperFlingBehavior.pagerState.getCurrentPageOffsetFraction();
+        Boxing.boxFloat(this.pagerState.getCurrentPageOffsetFraction());
         return Boxing.boxFloat(floatValue2);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit performFling$lambda$2$lambda$1(PagerWrapperFlingBehavior pagerWrapperFlingBehavior, ScrollScope scrollScope, float f) {
+        pagerWrapperFlingBehavior.pagerState.updateTargetPage(scrollScope, MathKt.roundToInt(pagerWrapperFlingBehavior.pagerState.getPageSizeWithSpacing$foundation_release() != 0 ? f / pagerWrapperFlingBehavior.pagerState.getPageSizeWithSpacing$foundation_release() : 0.0f) + pagerWrapperFlingBehavior.pagerState.getCurrentPage());
+        return Unit.INSTANCE;
     }
 }

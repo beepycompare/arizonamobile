@@ -1,6 +1,5 @@
 package androidx.compose.animation.core;
 
-import androidx.exifinterface.media.ExifInterface;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -12,8 +11,8 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Transition.kt */
-@Metadata(d1 = {"\u0000\b\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.LATITUDE_SOUTH}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.animation.core.SeekableTransitionState$snapTo$2", f = "Transition.kt", i = {}, l = {457}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.animation.core.SeekableTransitionState$snapTo$2", f = "Transition.kt", i = {}, l = {458}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class SeekableTransitionState$snapTo$2 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
     final /* synthetic */ S $targetState;
@@ -57,12 +56,12 @@ public final class SeekableTransitionState$snapTo$2 extends SuspendLambda implem
             } else {
                 f = Intrinsics.areEqual(s, this.this$0.getTargetState()) ? -5.0f : -3.0f;
             }
-            this.$transition.updateTarget$animation_core_release(this.$targetState);
+            this.$transition.updateTarget$animation_core(this.$targetState);
             this.$transition.setPlayTimeNanos(0L);
-            this.this$0.setTargetState$animation_core_release(this.$targetState);
+            this.this$0.setTargetState$animation_core(this.$targetState);
             this.this$0.setFraction(0.0f);
-            this.this$0.setCurrentState$animation_core_release(this.$targetState);
-            this.$transition.resetAnimationFraction$animation_core_release(f);
+            this.this$0.setCurrentState$animation_core(this.$targetState);
+            this.$transition.resetAnimationFraction$animation_core(f);
             if (f == -3.0f) {
                 this.label = 1;
                 waitForCompositionAfterTargetStateChange = this.this$0.waitForCompositionAfterTargetStateChange(this);
@@ -75,7 +74,7 @@ public final class SeekableTransitionState$snapTo$2 extends SuspendLambda implem
         } else {
             ResultKt.throwOnFailure(obj);
         }
-        this.$transition.onTransitionEnd$animation_core_release();
+        this.$transition.onTransitionEnd$animation_core();
         return Unit.INSTANCE;
     }
 }

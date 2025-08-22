@@ -7,7 +7,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Predicate;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableAny<T> extends AbstractObservableWithUpstream<T, Boolean> {
     final Predicate<? super T> predicate;
 
@@ -21,7 +21,7 @@ public final class ObservableAny<T> extends AbstractObservableWithUpstream<T, Bo
         this.source.subscribe(new AnyObserver(observer, this.predicate));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class AnyObserver<T> implements Observer<T>, Disposable {
         boolean done;
         final Observer<? super Boolean> downstream;

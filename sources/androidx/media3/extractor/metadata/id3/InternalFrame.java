@@ -1,7 +1,7 @@
 package androidx.media3.extractor.metadata.id3;
 
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class InternalFrame extends Id3Frame {
     public static final String ID = "----";
     public final String description;

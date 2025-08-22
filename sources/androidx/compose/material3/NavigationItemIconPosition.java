@@ -11,44 +11,44 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class NavigationItemIconPosition {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Top = m2107constructorimpl(0);
-    private static final int Start = m2107constructorimpl(1);
+    private static final int Top = m2414constructorimpl(0);
+    private static final int Start = m2414constructorimpl(1);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ NavigationItemIconPosition m2106boximpl(int i) {
+    public static final /* synthetic */ NavigationItemIconPosition m2413boximpl(int i) {
         return new NavigationItemIconPosition(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m2107constructorimpl(int i) {
+    private static int m2414constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2108equalsimpl(int i, Object obj) {
-        return (obj instanceof NavigationItemIconPosition) && i == ((NavigationItemIconPosition) obj).m2112unboximpl();
+    public static boolean m2415equalsimpl(int i, Object obj) {
+        return (obj instanceof NavigationItemIconPosition) && i == ((NavigationItemIconPosition) obj).m2419unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m2109equalsimpl0(int i, int i2) {
+    public static final boolean m2416equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2110hashCodeimpl(int i) {
+    public static int m2417hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m2108equalsimpl(this.value, obj);
+        return m2415equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m2110hashCodeimpl(this.value);
+        return m2417hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m2112unboximpl() {
+    public final /* synthetic */ int m2419unboximpl() {
         return this.value;
     }
 
@@ -64,12 +64,12 @@ public final class NavigationItemIconPosition {
         }
 
         /* renamed from: getTop--xw1Ddg  reason: not valid java name */
-        public final int m2114getTopxw1Ddg() {
+        public final int m2421getTopxw1Ddg() {
             return NavigationItemIconPosition.Top;
         }
 
         /* renamed from: getStart--xw1Ddg  reason: not valid java name */
-        public final int m2113getStartxw1Ddg() {
+        public final int m2420getStartxw1Ddg() {
             return NavigationItemIconPosition.Start;
         }
     }
@@ -79,11 +79,11 @@ public final class NavigationItemIconPosition {
     }
 
     public String toString() {
-        return m2111toStringimpl(this.value);
+        return m2418toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2111toStringimpl(int i) {
-        return m2109equalsimpl0(i, Top) ? "Top" : m2109equalsimpl0(i, Start) ? "Start" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m2418toStringimpl(int i) {
+        return m2416equalsimpl0(i, Top) ? "Top" : m2416equalsimpl0(i, Start) ? "Start" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

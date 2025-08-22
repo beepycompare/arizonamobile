@@ -9,7 +9,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.subscribers.SinglePostCompleteSubscriber;
 import java.util.concurrent.Callable;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableMapNotification<T, R> extends AbstractFlowableWithUpstream<T, R> {
     final Callable<? extends R> onCompleteSupplier;
     final Function<? super Throwable, ? extends R> onErrorMapper;
@@ -27,7 +27,7 @@ public final class FlowableMapNotification<T, R> extends AbstractFlowableWithUps
         this.source.subscribe((FlowableSubscriber) new MapNotificationSubscriber(subscriber, this.onNextMapper, this.onErrorMapper, this.onCompleteSupplier));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MapNotificationSubscriber<T, R> extends SinglePostCompleteSubscriber<T, R> {
         private static final long serialVersionUID = 2757120512858778108L;
         final Callable<? extends R> onCompleteSupplier;

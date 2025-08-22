@@ -8,7 +8,7 @@ import io.reactivex.internal.fuseable.QueueSubscription;
 import io.reactivex.internal.subscribers.BasicFuseableConditionalSubscriber;
 import io.reactivex.internal.subscribers.BasicFuseableSubscriber;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableFilter<T> extends AbstractFlowableWithUpstream<T, T> {
     final Predicate<? super T> predicate;
 
@@ -26,7 +26,7 @@ public final class FlowableFilter<T> extends AbstractFlowableWithUpstream<T, T> 
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FilterSubscriber<T> extends BasicFuseableSubscriber<T, T> implements ConditionalSubscriber<T> {
         final Predicate<? super T> filter;
 
@@ -88,7 +88,7 @@ public final class FlowableFilter<T> extends AbstractFlowableWithUpstream<T, T> 
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FilterConditionalSubscriber<T> extends BasicFuseableConditionalSubscriber<T, T> {
         final Predicate<? super T> filter;
 

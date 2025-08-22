@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SubripParser implements SubtitleParser {
     private static final String ALIGN_BOTTOM_LEFT = "{\\an1}";
     private static final String ALIGN_BOTTOM_MID = "{\\an2}";

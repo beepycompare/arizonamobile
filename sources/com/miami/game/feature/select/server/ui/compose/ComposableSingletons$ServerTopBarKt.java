@@ -24,7 +24,7 @@ public final class ComposableSingletons$ServerTopBarKt {
     public static final ComposableSingletons$ServerTopBarKt INSTANCE = new ComposableSingletons$ServerTopBarKt();
 
     /* renamed from: lambda$-1484463318  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f84lambda$1484463318 = ComposableLambdaKt.composableLambdaInstance(-1484463318, false, new Function3() { // from class: com.miami.game.feature.select.server.ui.compose.ComposableSingletons$ServerTopBarKt$$ExternalSyntheticLambda0
+    private static Function3<BoxScope, Composer, Integer, Unit> f78lambda$1484463318 = ComposableLambdaKt.composableLambdaInstance(-1484463318, false, new Function3() { // from class: com.miami.game.feature.select.server.ui.compose.ComposableSingletons$ServerTopBarKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             Unit lambda__1484463318$lambda$0;
@@ -33,9 +33,9 @@ public final class ComposableSingletons$ServerTopBarKt {
         }
     });
 
-    /* renamed from: getLambda$-1484463318$select_server_release_web  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8429getLambda$1484463318$select_server_release_web() {
-        return f84lambda$1484463318;
+    /* renamed from: getLambda$-1484463318$select_server_release  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m8995getLambda$1484463318$select_server_release() {
+        return f78lambda$1484463318;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -48,7 +48,7 @@ public final class ComposableSingletons$ServerTopBarKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1484463318, i, -1, "com.miami.game.feature.select.server.ui.compose.ComposableSingletons$ServerTopBarKt.lambda$-1484463318.<anonymous> (ServerTopBar.kt:51)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m771height3ABfNKs(Modifier.Companion, Dp.m6684constructorimpl(72)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(72)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

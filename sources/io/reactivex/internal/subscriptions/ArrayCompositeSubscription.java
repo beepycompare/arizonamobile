@@ -3,7 +3,7 @@ package io.reactivex.internal.subscriptions;
 import io.reactivex.disposables.Disposable;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ArrayCompositeSubscription extends AtomicReferenceArray<Subscription> implements Disposable {
     private static final long serialVersionUID = 2746389416410565408L;
 

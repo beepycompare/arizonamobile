@@ -30,7 +30,6 @@ import androidx.compose.ui.node.DrawModifierNode;
 import androidx.compose.ui.node.LayoutModifierNode;
 import androidx.compose.ui.unit.Constraints;
 import androidx.compose.ui.unit.ConstraintsKt;
-import androidx.compose.ui.unit.Density;
 import androidx.compose.ui.unit.Dp;
 import androidx.compose.ui.unit.IntSize;
 import androidx.compose.ui.unit.LayoutDirection;
@@ -48,10 +47,11 @@ import kotlin.math.MathKt;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.Job;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BasicMarquee.kt */
-@Metadata(d1 = {"\u0000\u0096\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0002\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004B5\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\u0006\u0012\u0006\u0010\n\u001a\u00020\u0006\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u000e¢\u0006\u0002\u0010\u000fJ\b\u0010<\u001a\u00020=H\u0016J\b\u0010>\u001a\u00020=H\u0016J\u0010\u0010?\u001a\u00020=2\u0006\u0010@\u001a\u00020AH\u0016J\b\u0010B\u001a\u00020=H\u0002J\u000e\u0010C\u001a\u00020=H\u0082@¢\u0006\u0002\u0010DJ@\u0010E\u001a\u00020=2\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eø\u0001\u0000¢\u0006\u0004\bF\u0010GJ\f\u0010H\u001a\u00020=*\u00020IH\u0016J\u001c\u0010J\u001a\u00020\u0006*\u00020K2\u0006\u0010L\u001a\u00020M2\u0006\u0010N\u001a\u00020\u0006H\u0016J\u001c\u0010O\u001a\u00020\u0006*\u00020K2\u0006\u0010L\u001a\u00020M2\u0006\u0010P\u001a\u00020\u0006H\u0016J&\u0010Q\u001a\u00020R*\u00020S2\u0006\u0010L\u001a\u00020T2\u0006\u0010U\u001a\u00020VH\u0016ø\u0001\u0000¢\u0006\u0004\bW\u0010XJ\u001c\u0010Y\u001a\u00020\u0006*\u00020K2\u0006\u0010L\u001a\u00020M2\u0006\u0010N\u001a\u00020\u0006H\u0016J\u001c\u0010Z\u001a\u00020\u0006*\u00020K2\u0006\u0010L\u001a\u00020M2\u0006\u0010P\u001a\u00020\u0006H\u0016R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R1\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0012\u001a\u00020\b8F@FX\u0086\u008e\u0002ø\u0001\u0000ø\u0001\u0001¢\u0006\u0012\n\u0004\b\u0017\u0010\u0018\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R+\u0010\u0019\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00068B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u001c\u0010\u001d\u001a\u0004\b\u001a\u0010\u0014\"\u0004\b\u001b\u0010\u0016R+\u0010\u001e\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00068B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b!\u0010\u001d\u001a\u0004\b\u001f\u0010\u0014\"\u0004\b \u0010\u0016R\u000e\u0010\t\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\"\u001a\u00020#8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b$\u0010%R+\u0010'\u001a\u00020&2\u0006\u0010\u0012\u001a\u00020&8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b,\u0010\u0018\u001a\u0004\b(\u0010)\"\u0004\b*\u0010+R\u000e\u0010\n\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010-\u001a\u0004\u0018\u00010.X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010/\u001a\u000e\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020100X\u0082\u0004¢\u0006\u0002\n\u0000R+\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0012\u001a\u00020\f8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b6\u0010\u0018\u001a\u0004\b2\u00103\"\u0004\b4\u00105R\u001b\u00107\u001a\u00020\u00068BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b9\u0010:\u001a\u0004\b8\u0010\u0014R\u0016\u0010\r\u001a\u00020\u000eX\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010;\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006["}, d2 = {"Landroidx/compose/foundation/MarqueeModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/focus/FocusEventModifierNode;", "iterations", "", "animationMode", "Landroidx/compose/foundation/MarqueeAnimationMode;", "delayMillis", "initialDelayMillis", "spacing", "Landroidx/compose/foundation/MarqueeSpacing;", "velocity", "Landroidx/compose/ui/unit/Dp;", "(IIIILandroidx/compose/foundation/MarqueeSpacing;FLkotlin/jvm/internal/DefaultConstructorMarker;)V", "animationJob", "Lkotlinx/coroutines/Job;", "<set-?>", "getAnimationMode-ZbEOnfQ", "()I", "setAnimationMode-97h66l8", "(I)V", "animationMode$delegate", "Landroidx/compose/runtime/MutableState;", "containerWidth", "getContainerWidth", "setContainerWidth", "containerWidth$delegate", "Landroidx/compose/runtime/MutableIntState;", "contentWidth", "getContentWidth", "setContentWidth", "contentWidth$delegate", "direction", "", "getDirection", "()F", "", "hasFocus", "getHasFocus", "()Z", "setHasFocus", "(Z)V", "hasFocus$delegate", "marqueeLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/animation/core/Animatable;", "Landroidx/compose/animation/core/AnimationVector1D;", "getSpacing", "()Landroidx/compose/foundation/MarqueeSpacing;", "setSpacing", "(Landroidx/compose/foundation/MarqueeSpacing;)V", "spacing$delegate", "spacingPx", "getSpacingPx", "spacingPx$delegate", "Landroidx/compose/runtime/State;", "F", "onAttach", "", "onDetach", "onFocusEvent", "focusState", "Landroidx/compose/ui/focus/FocusState;", "restartAnimation", "runAnimation", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "update", "update-lWfNwf4", "(IIIILandroidx/compose/foundation/MarqueeSpacing;F)V", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "maxIntrinsicHeight", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "measurable", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "width", "maxIntrinsicWidth", "height", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "minIntrinsicHeight", "minIntrinsicWidth", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0092\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0002\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004B7\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\u0006\u0012\u0006\u0010\n\u001a\u00020\u0006\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u000e¢\u0006\u0004\b\u000f\u0010\u0010J\b\u0010=\u001a\u00020>H\u0016J\b\u0010?\u001a\u00020>H\u0016J=\u0010@\u001a\u00020>2\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e¢\u0006\u0004\bA\u0010BJ\u0010\u0010C\u001a\u00020>2\u0006\u0010D\u001a\u00020EH\u0016J#\u0010F\u001a\u00020G*\u00020H2\u0006\u0010I\u001a\u00020J2\u0006\u0010K\u001a\u00020LH\u0016¢\u0006\u0004\bM\u0010NJ\u001c\u0010O\u001a\u00020\u0006*\u00020P2\u0006\u0010I\u001a\u00020Q2\u0006\u0010R\u001a\u00020\u0006H\u0016J\u001c\u0010S\u001a\u00020\u0006*\u00020P2\u0006\u0010I\u001a\u00020Q2\u0006\u0010R\u001a\u00020\u0006H\u0016J\u001c\u0010T\u001a\u00020\u0006*\u00020P2\u0006\u0010I\u001a\u00020Q2\u0006\u0010U\u001a\u00020\u0006H\u0016J\u001c\u0010V\u001a\u00020\u0006*\u00020P2\u0006\u0010I\u001a\u00020Q2\u0006\u0010U\u001a\u00020\u0006H\u0016J\f\u0010W\u001a\u00020>*\u00020XH\u0016J\b\u0010Y\u001a\u00020>H\u0002J\u000e\u0010Z\u001a\u00020>H\u0082@¢\u0006\u0002\u0010[R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0011R+\u0010\u0013\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00068B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u0018\u0010\u0019\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R+\u0010\u001a\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00068B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u001d\u0010\u0019\u001a\u0004\b\u001b\u0010\u0015\"\u0004\b\u001c\u0010\u0017R+\u0010\u001f\u001a\u00020\u001e2\u0006\u0010\u0012\u001a\u00020\u001e8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b$\u0010%\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#R\u0010\u0010&\u001a\u0004\u0018\u00010'X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010(\u001a\u0004\u0018\u00010)X\u0082\u000e¢\u0006\u0002\n\u0000R+\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0012\u001a\u00020\f8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b.\u0010%\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-R+\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0012\u001a\u00020\b8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b1\u0010%\u001a\u0004\b/\u0010\u0015\"\u0004\b0\u0010\u0017R\u001a\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u00020503X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00106\u001a\u0002048BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b7\u00108R\u001b\u00109\u001a\u00020\u00068BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b;\u0010<\u001a\u0004\b:\u0010\u0015¨\u0006\\"}, d2 = {"Landroidx/compose/foundation/MarqueeModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/focus/FocusEventModifierNode;", "iterations", "", "animationMode", "Landroidx/compose/foundation/MarqueeAnimationMode;", "delayMillis", "initialDelayMillis", "spacing", "Landroidx/compose/foundation/MarqueeSpacing;", "velocity", "Landroidx/compose/ui/unit/Dp;", "<init>", "(IIIILandroidx/compose/foundation/MarqueeSpacing;FLkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "<set-?>", "contentWidth", "getContentWidth", "()I", "setContentWidth", "(I)V", "contentWidth$delegate", "Landroidx/compose/runtime/MutableIntState;", "containerWidth", "getContainerWidth", "setContainerWidth", "containerWidth$delegate", "", "hasFocus", "getHasFocus", "()Z", "setHasFocus", "(Z)V", "hasFocus$delegate", "Landroidx/compose/runtime/MutableState;", "animationJob", "Lkotlinx/coroutines/Job;", "marqueeLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "getSpacing", "()Landroidx/compose/foundation/MarqueeSpacing;", "setSpacing", "(Landroidx/compose/foundation/MarqueeSpacing;)V", "spacing$delegate", "getAnimationMode-ZbEOnfQ", "setAnimationMode-97h66l8", "animationMode$delegate", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/animation/core/Animatable;", "", "Landroidx/compose/animation/core/AnimationVector1D;", "direction", "getDirection", "()F", "spacingPx", "getSpacingPx", "spacingPx$delegate", "Landroidx/compose/runtime/State;", "onAttach", "", "onDetach", "update", "update-lWfNwf4", "(IIIILandroidx/compose/foundation/MarqueeSpacing;F)V", "onFocusEvent", "focusState", "Landroidx/compose/ui/focus/FocusState;", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "minIntrinsicWidth", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "height", "maxIntrinsicWidth", "minIntrinsicHeight", "width", "maxIntrinsicHeight", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "restartAnimation", "runAnimation", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-final class MarqueeModifierNode extends Modifier.Node implements LayoutModifierNode, DrawModifierNode, FocusEventModifierNode {
+public final class MarqueeModifierNode extends Modifier.Node implements LayoutModifierNode, DrawModifierNode, FocusEventModifierNode {
     private Job animationJob;
     private final MutableState animationMode$delegate;
     private final MutableIntState containerWidth$delegate;
@@ -67,7 +67,7 @@ final class MarqueeModifierNode extends Modifier.Node implements LayoutModifierN
     private float velocity;
 
     /* compiled from: BasicMarquee.kt */
-    @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -109,27 +109,15 @@ final class MarqueeModifierNode extends Modifier.Node implements LayoutModifierN
         this.hasFocus$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(marqueeSpacing, null, 2, null);
         this.spacing$delegate = mutableStateOf$default2;
-        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(MarqueeAnimationMode.m319boximpl(i2), null, 2, null);
+        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(MarqueeAnimationMode.m339boximpl(i2), null, 2, null);
         this.animationMode$delegate = mutableStateOf$default3;
         this.offset = AnimatableKt.Animatable$default(0.0f, 0.0f, 2, null);
-        this.spacingPx$delegate = SnapshotStateKt.derivedStateOf(new Function0<Integer>() { // from class: androidx.compose.foundation.MarqueeModifierNode$spacingPx$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
-
-            /* JADX WARN: Can't rename method to resolve collision */
+        this.spacingPx$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.MarqueeModifierNode$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
-            public final Integer invoke() {
-                int contentWidth;
-                int containerWidth;
-                MarqueeSpacing marqueeSpacing2 = MarqueeSpacing.this;
-                MarqueeModifierNode marqueeModifierNode = this;
-                Density requireDensity = DelegatableNodeKt.requireDensity(marqueeModifierNode);
-                contentWidth = marqueeModifierNode.getContentWidth();
-                containerWidth = marqueeModifierNode.getContainerWidth();
-                return Integer.valueOf(marqueeSpacing2.calculateSpacing(requireDensity, contentWidth, containerWidth));
+            public final Object invoke() {
+                int spacingPx_delegate$lambda$1;
+                spacingPx_delegate$lambda$1 = MarqueeModifierNode.spacingPx_delegate$lambda$1(MarqueeSpacing.this, this);
+                return Integer.valueOf(spacingPx_delegate$lambda$1);
             }
         });
     }
@@ -170,17 +158,16 @@ final class MarqueeModifierNode extends Modifier.Node implements LayoutModifierN
     }
 
     /* renamed from: getAnimationMode-ZbEOnfQ  reason: not valid java name */
-    public final int m333getAnimationModeZbEOnfQ() {
-        return ((MarqueeAnimationMode) this.animationMode$delegate.getValue()).m325unboximpl();
+    public final int m354getAnimationModeZbEOnfQ() {
+        return ((MarqueeAnimationMode) this.animationMode$delegate.getValue()).m345unboximpl();
     }
 
     /* renamed from: setAnimationMode-97h66l8  reason: not valid java name */
-    public final void m334setAnimationMode97h66l8(int i) {
-        this.animationMode$delegate.setValue(MarqueeAnimationMode.m319boximpl(i));
+    public final void m355setAnimationMode97h66l8(int i) {
+        this.animationMode$delegate.setValue(MarqueeAnimationMode.m339boximpl(i));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final float getDirection() {
+    private final float getDirection() {
         float signum = Math.signum(this.velocity);
         int i = WhenMappings.$EnumSwitchMapping$0[DelegatableNodeKt.requireLayoutDirection(this).ordinal()];
         int i2 = 1;
@@ -196,6 +183,11 @@ final class MarqueeModifierNode extends Modifier.Node implements LayoutModifierN
     /* JADX INFO: Access modifiers changed from: private */
     public final int getSpacingPx() {
         return ((Number) this.spacingPx$delegate.getValue()).intValue();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final int spacingPx_delegate$lambda$1(MarqueeSpacing marqueeSpacing, MarqueeModifierNode marqueeModifierNode) {
+        return marqueeSpacing.calculateSpacing(DelegatableNodeKt.requireDensity(marqueeModifierNode), marqueeModifierNode.getContentWidth(), marqueeModifierNode.getContainerWidth());
     }
 
     @Override // androidx.compose.ui.Modifier.Node
@@ -224,10 +216,10 @@ final class MarqueeModifierNode extends Modifier.Node implements LayoutModifierN
     }
 
     /* renamed from: update-lWfNwf4  reason: not valid java name */
-    public final void m335updatelWfNwf4(int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f) {
+    public final void m356updatelWfNwf4(int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f) {
         setSpacing(marqueeSpacing);
-        m334setAnimationMode97h66l8(i2);
-        if (this.iterations == i && this.delayMillis == i3 && this.initialDelayMillis == i4 && Dp.m6689equalsimpl0(this.velocity, f)) {
+        m355setAnimationMode97h66l8(i2);
+        if (this.iterations == i && this.delayMillis == i3 && this.initialDelayMillis == i4 && Dp.m7256equalsimpl0(this.velocity, f)) {
             return;
         }
         this.iterations = i;
@@ -245,32 +237,23 @@ final class MarqueeModifierNode extends Modifier.Node implements LayoutModifierN
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5438measureBRTryo0 = measurable.mo5438measureBRTryo0(Constraints.m6627copyZbe2FdA$default(j, 0, Integer.MAX_VALUE, 0, 0, 13, null));
-        setContainerWidth(ConstraintsKt.m6654constrainWidthK40F9xA(j, mo5438measureBRTryo0.getWidth()));
-        setContentWidth(mo5438measureBRTryo0.getWidth());
-        return MeasureScope.layout$default(measureScope, getContainerWidth(), mo5438measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.foundation.MarqueeModifierNode$measure$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j, 0, Integer.MAX_VALUE, 0, 0, 13, null));
+        setContainerWidth(ConstraintsKt.m7221constrainWidthK40F9xA(j, mo5954measureBRTryo0.getWidth()));
+        setContentWidth(mo5954measureBRTryo0.getWidth());
+        return MeasureScope.layout$default(measureScope, getContainerWidth(), mo5954measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.MarqueeModifierNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                invoke2(placementScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Placeable.PlacementScope placementScope) {
-                Animatable animatable;
-                float direction;
-                Placeable placeable = Placeable.this;
-                animatable = this.offset;
-                direction = this.getDirection();
-                Placeable.PlacementScope.placeWithLayer$default(placementScope, placeable, MathKt.roundToInt((-((Number) animatable.getValue()).floatValue()) * direction), 0, 0.0f, (Function1) null, 12, (Object) null);
+            public final Object invoke(Object obj) {
+                Unit measure_3p2s80s$lambda$2;
+                measure_3p2s80s$lambda$2 = MarqueeModifierNode.measure_3p2s80s$lambda$2(Placeable.this, this, (Placeable.PlacementScope) obj);
+                return measure_3p2s80s$lambda$2;
             }
         }, 4, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit measure_3p2s80s$lambda$2(Placeable placeable, MarqueeModifierNode marqueeModifierNode, Placeable.PlacementScope placementScope) {
+        Placeable.PlacementScope.placeWithLayer$default(placementScope, placeable, MathKt.roundToInt((-marqueeModifierNode.offset.getValue().floatValue()) * marqueeModifierNode.getDirection()), 0, 0.0f, (Function1) null, 12, (Object) null);
+        return Unit.INSTANCE;
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
@@ -300,36 +283,27 @@ final class MarqueeModifierNode extends Modifier.Node implements LayoutModifierN
             spacingPx = (-getContentWidth()) - getSpacingPx();
         }
         float f = spacingPx;
-        float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope.mo4640getSizeNHjbRc() & 4294967295L));
+        float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope.mo5116getSizeNHjbRc() & 4294967295L));
         GraphicsLayer graphicsLayer = this.marqueeLayer;
         if (graphicsLayer != null) {
-            contentDrawScope.mo4641recordJVtK1S4(graphicsLayer, IntSize.m6850constructorimpl((getContentWidth() << 32) | (MathKt.roundToInt(intBitsToFloat) & 4294967295L)), new Function1<DrawScope, Unit>() { // from class: androidx.compose.foundation.MarqueeModifierNode$draw$1$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                {
-                    super(1);
-                }
-
+            contentDrawScope.mo5117recordJVtK1S4(graphicsLayer, IntSize.m7417constructorimpl((getContentWidth() << 32) | (MathKt.roundToInt(intBitsToFloat) & 4294967295L)), new Function1() { // from class: androidx.compose.foundation.MarqueeModifierNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(DrawScope drawScope) {
-                    invoke2(drawScope);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(DrawScope drawScope) {
-                    ContentDrawScope.this.drawContent();
+                public final Object invoke(Object obj) {
+                    Unit draw$lambda$4$lambda$3;
+                    draw$lambda$4$lambda$3 = MarqueeModifierNode.draw$lambda$4$lambda$3(ContentDrawScope.this, (DrawScope) obj);
+                    return draw$lambda$4$lambda$3;
                 }
             });
         }
         ContentDrawScope contentDrawScope2 = contentDrawScope;
         float containerWidth = floatValue + getContainerWidth();
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (4294967295L & contentDrawScope2.mo4640getSizeNHjbRc()));
-        int m4067getIntersectrtfAjoo = ClipOp.Companion.m4067getIntersectrtfAjoo();
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (4294967295L & contentDrawScope2.mo5116getSizeNHjbRc()));
+        int m4526getIntersectrtfAjoo = ClipOp.Companion.m4526getIntersectrtfAjoo();
         DrawContext drawContext = contentDrawScope2.getDrawContext();
-        long mo4561getSizeNHjbRc = drawContext.mo4561getSizeNHjbRc();
+        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo4564clipRectN_I0leg(floatValue, 0.0f, containerWidth, intBitsToFloat2, m4067getIntersectrtfAjoo);
+            drawContext.getTransform().mo5040clipRectN_I0leg(floatValue, 0.0f, containerWidth, intBitsToFloat2, m4526getIntersectrtfAjoo);
             GraphicsLayer graphicsLayer2 = this.marqueeLayer;
             if (graphicsLayer2 != null) {
                 if (z) {
@@ -352,8 +326,14 @@ final class MarqueeModifierNode extends Modifier.Node implements LayoutModifierN
             }
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo4562setSizeuvyYCjk(mo4561getSizeNHjbRc);
+            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit draw$lambda$4$lambda$3(ContentDrawScope contentDrawScope, DrawScope drawScope) {
+        contentDrawScope.drawContent();
+        return Unit.INSTANCE;
     }
 
     private final void restartAnimation() {

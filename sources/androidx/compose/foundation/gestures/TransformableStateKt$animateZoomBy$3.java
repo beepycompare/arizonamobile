@@ -4,7 +4,6 @@ import androidx.compose.animation.core.AnimationScope;
 import androidx.compose.animation.core.AnimationSpec;
 import androidx.compose.animation.core.AnimationState;
 import androidx.compose.animation.core.AnimationStateKt;
-import androidx.compose.animation.core.AnimationVector1D;
 import androidx.compose.animation.core.SuspendAnimationKt;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -18,7 +17,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 /* compiled from: TransformableState.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/TransformScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/TransformScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableStateKt$animateZoomBy$3", f = "TransformableState.kt", i = {}, l = {142}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class TransformableStateKt$animateZoomBy$3 extends SuspendLambda implements Function2<TransformScope, Continuation<? super Unit>, Object> {
@@ -61,22 +60,12 @@ final class TransformableStateKt$animateZoomBy$3 extends SuspendLambda implement
             AnimationSpec<Float> animationSpec = this.$animationSpec;
             final Ref.FloatRef floatRef = this.$previous;
             this.label = 1;
-            if (SuspendAnimationKt.animateTo$default(AnimationState$default, boxFloat, animationSpec, false, new Function1<AnimationScope<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.foundation.gestures.TransformableStateKt$animateZoomBy$3.1
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(1);
-                }
-
+            if (SuspendAnimationKt.animateTo$default(AnimationState$default, boxFloat, animationSpec, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableStateKt$animateZoomBy$3$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(AnimationScope<Float, AnimationVector1D> animationScope) {
-                    invoke2(animationScope);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(AnimationScope<Float, AnimationVector1D> animationScope) {
-                    TransformScope.m539transformByd4ec7I$default(transformScope, Ref.FloatRef.this.element == 0.0f ? 1.0f : animationScope.getValue().floatValue() / Ref.FloatRef.this.element, 0L, 0.0f, 6, null);
-                    Ref.FloatRef.this.element = animationScope.getValue().floatValue();
+                public final Object invoke(Object obj2) {
+                    Unit invokeSuspend$lambda$0;
+                    invokeSuspend$lambda$0 = TransformableStateKt$animateZoomBy$3.invokeSuspend$lambda$0(Ref.FloatRef.this, transformScope, (AnimationScope) obj2);
+                    return invokeSuspend$lambda$0;
                 }
             }, this, 4, null) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -86,6 +75,13 @@ final class TransformableStateKt$animateZoomBy$3 extends SuspendLambda implement
         } else {
             ResultKt.throwOnFailure(obj);
         }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(Ref.FloatRef floatRef, TransformScope transformScope, AnimationScope animationScope) {
+        TransformScope.m604transformByd4ec7I$default(transformScope, floatRef.element == 0.0f ? 1.0f : ((Number) animationScope.getValue()).floatValue() / floatRef.element, 0L, 0.0f, 6, null);
+        floatRef.element = ((Number) animationScope.getValue()).floatValue();
         return Unit.INSTANCE;
     }
 }

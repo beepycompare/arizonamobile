@@ -19,7 +19,7 @@ public interface Call extends Cloneable {
     void cancel();
 
     /* renamed from: clone */
-    Call mo10406clone();
+    Call mo10970clone();
 
     void enqueue(Callback callback);
 

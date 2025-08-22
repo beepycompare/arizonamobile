@@ -7,7 +7,7 @@ import io.reactivex.SingleObserver;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.Exceptions;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableToSingle<T> extends Single<T> {
     final T completionValue;
     final Callable<? extends T> completionValueSupplier;
@@ -24,7 +24,7 @@ public final class CompletableToSingle<T> extends Single<T> {
         this.source.subscribe(new ToSingle(singleObserver));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     final class ToSingle implements CompletableObserver {
         private final SingleObserver<? super T> observer;
 

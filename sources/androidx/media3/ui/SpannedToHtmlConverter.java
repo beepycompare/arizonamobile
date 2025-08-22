@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class SpannedToHtmlConverter {
     private static final Pattern NEWLINE_PATTERN = Pattern.compile("(&#13;)?&#10;");
 
@@ -233,7 +233,7 @@ public final class SpannedToHtmlConverter {
         return NEWLINE_PATTERN.matcher(Html.escapeHtml(charSequence)).replaceAll("<br>");
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class HtmlAndCss {
         public final Map<String, String> cssRuleSets;
         public final String html;
@@ -245,7 +245,7 @@ public final class SpannedToHtmlConverter {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class SpanInfo {
         public final String closingTag;
         public final int end;
@@ -293,7 +293,7 @@ public final class SpannedToHtmlConverter {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class Transition {
         private final List<SpanInfo> spansAdded = new ArrayList();
         private final List<SpanInfo> spansRemoved = new ArrayList();

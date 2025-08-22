@@ -51,7 +51,7 @@ public final /* synthetic */ class NavHostControllerKt__NavHostController_androi
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        NavHostController navHostController = (NavHostController) RememberSaveableKt.m3635rememberSaveable(copyOf, NavControllerSaver$NavHostControllerKt__NavHostController_androidKt, (String) null, (Function0<? extends Object>) rememberedValue, (Composer) composer, 0, 4);
+        NavHostController navHostController = (NavHostController) RememberSaveableKt.m3982rememberSaveable(copyOf, NavControllerSaver$NavHostControllerKt__NavHostController_androidKt, (String) null, (Function0<? extends Object>) rememberedValue, (Composer) composer, 0, 4);
         for (Navigator<? extends NavDestination> navigator : navigatorArr) {
             navHostController.getNavigatorProvider().addNavigator(navigator);
         }

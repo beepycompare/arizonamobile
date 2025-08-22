@@ -4,7 +4,7 @@ import io.reactivex.Maybe;
 import io.reactivex.MaybeObserver;
 import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.fuseable.ScalarCallable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeEmpty extends Maybe<Object> implements ScalarCallable<Object> {
     public static final MaybeEmpty INSTANCE = new MaybeEmpty();
 

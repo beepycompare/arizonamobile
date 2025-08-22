@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableDelaySubscriptionOther<T, U> extends Flowable<T> {
     final Publisher<? extends T> main;
     final Publisher<U> other;
@@ -26,7 +26,7 @@ public final class FlowableDelaySubscriptionOther<T, U> extends Flowable<T> {
         this.other.subscribe(mainSubscriber.other);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MainSubscriber<T> extends AtomicLong implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = 2259811067697317255L;
         final Subscriber<? super T> downstream;
@@ -76,7 +76,7 @@ public final class FlowableDelaySubscriptionOther<T, U> extends Flowable<T> {
             SubscriptionHelper.deferredSetOnce(this.upstream, this, subscription);
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         final class OtherSubscriber extends AtomicReference<Subscription> implements FlowableSubscriber<Object> {
             private static final long serialVersionUID = -3892798459447644106L;
 

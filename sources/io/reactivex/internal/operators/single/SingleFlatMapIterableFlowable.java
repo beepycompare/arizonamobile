@@ -14,7 +14,7 @@ import io.reactivex.internal.util.BackpressureHelper;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicLong;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleFlatMapIterableFlowable<T, R> extends Flowable<R> {
     final Function<? super T, ? extends Iterable<? extends R>> mapper;
     final SingleSource<T> source;
@@ -29,7 +29,7 @@ public final class SingleFlatMapIterableFlowable<T, R> extends Flowable<R> {
         this.source.subscribe(new FlatMapIterableObserver(subscriber, this.mapper));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class FlatMapIterableObserver<T, R> extends BasicIntQueueSubscription<R> implements SingleObserver<T> {
         private static final long serialVersionUID = -8938804753851907758L;
         volatile boolean cancelled;

@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TtmlParser implements SubtitleParser {
     private static final String ATTR_BEGIN = "begin";
     private static final String ATTR_DURATION = "dur";
@@ -259,10 +259,10 @@ public final class TtmlParser implements SubtitleParser {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x0223, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x0227, code lost:
         if (r0.equals("tb") == false) goto L55;
      */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x01f6  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01f7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -438,7 +438,7 @@ public final class TtmlParser implements SubtitleParser {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:110:0x01f7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:110:0x01fd, code lost:
         if (r3.equals("text") == false) goto L49;
      */
     /*
@@ -1101,7 +1101,7 @@ public final class TtmlParser implements SubtitleParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class FrameAndTickRate {
         final float effectiveFrameRate;
         final int subFrameRate;
@@ -1115,7 +1115,7 @@ public final class TtmlParser implements SubtitleParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class TtsExtent {
         final int height;
         final int width;

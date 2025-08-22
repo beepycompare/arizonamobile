@@ -6,7 +6,7 @@ import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.ExtractorUtil;
 import java.io.IOException;
 import java.util.Arrays;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class OggPacket {
     private boolean populated;
     private int segmentCount;

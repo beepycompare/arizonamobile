@@ -12,7 +12,7 @@ import io.reactivex.internal.util.AtomicThrowable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableMergeWithSingle<T> extends AbstractObservableWithUpstream<T, T> {
     final SingleSource<? extends T> other;
 
@@ -29,7 +29,7 @@ public final class ObservableMergeWithSingle<T> extends AbstractObservableWithUp
         this.other.subscribe(mergeWithObserver.otherObserver);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MergeWithObserver<T> extends AtomicInteger implements Observer<T>, Disposable {
         static final int OTHER_STATE_CONSUMED_OR_EMPTY = 2;
         static final int OTHER_STATE_HAS_VALUE = 1;
@@ -178,7 +178,7 @@ public final class ObservableMergeWithSingle<T> extends AbstractObservableWithUp
             this.queue = null;
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         static final class OtherObserver<T> extends AtomicReference<Disposable> implements SingleObserver<T> {
             private static final long serialVersionUID = -2935427570954647017L;
             final MergeWithObserver<T> parent;

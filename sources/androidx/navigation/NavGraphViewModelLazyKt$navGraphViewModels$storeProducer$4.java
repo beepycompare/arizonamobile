@@ -17,8 +17,8 @@ public final class NavGraphViewModelLazyKt$navGraphViewModels$storeProducer$4 im
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final ViewModelStore invoke() {
-        NavBackStackEntry m7513navGraphViewModels$lambda3;
-        m7513navGraphViewModels$lambda3 = NavGraphViewModelLazyKt.m7513navGraphViewModels$lambda3(this.$backStackEntry$delegate);
-        return m7513navGraphViewModels$lambda3.getViewModelStore();
+        NavBackStackEntry m8079navGraphViewModels$lambda3;
+        m8079navGraphViewModels$lambda3 = NavGraphViewModelLazyKt.m8079navGraphViewModels$lambda3(this.$backStackEntry$delegate);
+        return m8079navGraphViewModels$lambda3.getViewModelStore();
     }
 }

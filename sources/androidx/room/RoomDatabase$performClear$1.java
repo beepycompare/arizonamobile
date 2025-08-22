@@ -79,7 +79,7 @@ public final class RoomDatabase$performClear$1 extends SuspendLambda implements 
             if (r7.this$0.getInvalidationTracker().sync$room_runtime_release(r7) == r0) goto L13;
          */
         /* JADX WARN: Code restructure failed: missing block: B:22:0x0091, code lost:
-            if (r1.withTransaction(androidx.room.Transactor.SQLiteTransactionType.IMMEDIATE, new androidx.room.RoomDatabase$performClear$1.AnonymousClass1.C00611(r7.$hasForeignKeys, r7.$tableNames, null), r7) == r0) goto L13;
+            if (r1.withTransaction(androidx.room.Transactor.SQLiteTransactionType.IMMEDIATE, new androidx.room.RoomDatabase$performClear$1.AnonymousClass1.C00531(r7.$hasForeignKeys, r7.$tableNames, null), r7) == r0) goto L13;
          */
         /* JADX WARN: Code restructure failed: missing block: B:25:0x00a0, code lost:
             if (r8 == r0) goto L13;
@@ -170,7 +170,7 @@ public final class RoomDatabase$performClear$1 extends SuspendLambda implements 
         @DebugMetadata(c = "androidx.room.RoomDatabase$performClear$1$1$1", f = "RoomDatabase.android.kt", i = {0, 1, 1}, l = {InputDeviceCompat.SOURCE_DPAD, 515}, m = "invokeSuspend", n = {"$this$withTransaction", "$this$withTransaction", "$this$forEach$iv"}, s = {"L$0", "L$0", "L$1"})
         /* renamed from: androidx.room.RoomDatabase$performClear$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes3.dex */
-        public static final class C00611 extends SuspendLambda implements Function2<TransactionScope<Unit>, Continuation<? super Unit>, Object> {
+        public static final class C00531 extends SuspendLambda implements Function2<TransactionScope<Unit>, Continuation<? super Unit>, Object> {
             final /* synthetic */ boolean $hasForeignKeys;
             final /* synthetic */ String[] $tableNames;
             int I$0;
@@ -180,7 +180,7 @@ public final class RoomDatabase$performClear$1 extends SuspendLambda implements 
             int label;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C00611(boolean z, String[] strArr, Continuation<? super C00611> continuation) {
+            C00531(boolean z, String[] strArr, Continuation<? super C00531> continuation) {
                 super(2, continuation);
                 this.$hasForeignKeys = z;
                 this.$tableNames = strArr;
@@ -188,14 +188,14 @@ public final class RoomDatabase$performClear$1 extends SuspendLambda implements 
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                C00611 c00611 = new C00611(this.$hasForeignKeys, this.$tableNames, continuation);
-                c00611.L$0 = obj;
-                return c00611;
+                C00531 c00531 = new C00531(this.$hasForeignKeys, this.$tableNames, continuation);
+                c00531.L$0 = obj;
+                return c00531;
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(TransactionScope<Unit> transactionScope, Continuation<? super Unit> continuation) {
-                return ((C00611) create(transactionScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C00531) create(transactionScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             /* JADX WARN: Code restructure failed: missing block: B:13:0x004a, code lost:

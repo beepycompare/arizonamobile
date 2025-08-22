@@ -15,7 +15,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.Collection;
 import java.util.concurrent.Callable;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableToListSingle<T, U extends Collection<? super T>> extends Single<U> implements FuseToFlowable<U> {
     final Callable<U> collectionSupplier;
     final Flowable<T> source;
@@ -44,7 +44,7 @@ public final class FlowableToListSingle<T, U extends Collection<? super T>> exte
         return RxJavaPlugins.onAssembly(new FlowableToList(this.source, this.collectionSupplier));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ToListSubscriber<T, U extends Collection<? super T>> implements FlowableSubscriber<T>, Disposable {
         final SingleObserver<? super U> downstream;
         Subscription upstream;

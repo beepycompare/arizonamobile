@@ -28,6 +28,7 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.compose.LocalLifecycleOwnerKt;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.savedstate.SavedStateRegistryOwner;
+import androidx.savedstate.compose.LocalSavedStateRegistryOwnerKt;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
@@ -37,7 +38,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidView.android.kt */
-@Metadata(d1 = {"\u0000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001ay\u0010\u0007\u001a\u00020\u0003\"\b\b\u0000\u0010\b*\u00020\u00022\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u0002H\b0\u00012\b\b\u0002\u0010\u000b\u001a\u00020\f2\u0016\b\u0002\u0010\r\u001a\u0010\u0012\u0004\u0012\u0002H\b\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u00012\u0014\b\u0002\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u0002H\b\u0012\u0004\u0012\u00020\u00030\u00012\u0014\b\u0002\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u0002H\b\u0012\u0004\u0012\u00020\u00030\u0001H\u0007¢\u0006\u0002\u0010\u0010\u001aK\u0010\u0007\u001a\u00020\u0003\"\b\b\u0000\u0010\b*\u00020\u00022\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u0002H\b0\u00012\b\b\u0002\u0010\u000b\u001a\u00020\f2\u0014\b\u0002\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u0002H\b\u0012\u0004\u0012\u00020\u00030\u0001H\u0007¢\u0006\u0002\u0010\u0011\u001a1\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00140\u0013\"\b\b\u0000\u0010\b*\u00020\u00022\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u0002H\b0\u0001H\u0003¢\u0006\u0002\u0010\u0015\u001a\u001c\u0010\u0016\u001a\b\u0012\u0004\u0012\u0002H\b0\u0017\"\b\b\u0000\u0010\b*\u00020\u0002*\u00020\u0014H\u0002\u001a^\u0010\u0018\u001a\u00020\u0003\"\b\b\u0000\u0010\b*\u00020\u0002*\b\u0012\u0004\u0012\u00020\u00140\u00192\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020%H\u0002ø\u0001\u0000¢\u0006\u0004\b&\u0010'\"\"\u0010\u0000\u001a\u0013\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001¢\u0006\u0002\b\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006("}, d2 = {"NoOpUpdate", "Lkotlin/Function1;", "Landroid/view/View;", "", "Lkotlin/ExtensionFunctionType;", "getNoOpUpdate", "()Lkotlin/jvm/functions/Function1;", "AndroidView", ExifInterface.GPS_DIRECTION_TRUE, "factory", "Landroid/content/Context;", "modifier", "Landroidx/compose/ui/Modifier;", "onReset", "onRelease", "update", "(Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "(Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "createAndroidViewNodeFactory", "Lkotlin/Function0;", "Landroidx/compose/ui/node/LayoutNode;", "(Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)Lkotlin/jvm/functions/Function0;", "requireViewFactoryHolder", "Landroidx/compose/ui/viewinterop/ViewFactoryHolder;", "updateViewHolderParams", "Landroidx/compose/runtime/Updater;", "compositeKeyHash", "", "density", "Landroidx/compose/ui/unit/Density;", "lifecycleOwner", "Landroidx/lifecycle/LifecycleOwner;", "savedStateRegistryOwner", "Landroidx/savedstate/SavedStateRegistryOwner;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "compositionLocalMap", "Landroidx/compose/runtime/CompositionLocalMap;", "updateViewHolderParams-6NefGtU", "(Landroidx/compose/runtime/Composer;Landroidx/compose/ui/Modifier;ILandroidx/compose/ui/unit/Density;Landroidx/lifecycle/LifecycleOwner;Landroidx/savedstate/SavedStateRegistryOwner;Landroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/runtime/CompositionLocalMap;)V", "ui_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aK\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u0002H\u00020\u00052\b\b\u0002\u0010\u0007\u001a\u00020\b2\u0014\b\u0002\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\n\u001ay\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u0002H\u00020\u00052\b\b\u0002\u0010\u0007\u001a\u00020\b2\u0016\b\u0002\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u00052\u0014\b\u0002\u0010\f\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00010\u00052\u0014\b\u0002\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\r\u001a1\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00100\u000f\"\b\b\u0000\u0010\u0002*\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u0002H\u00020\u0005H\u0003¢\u0006\u0002\u0010\u0011\u001a[\u0010\u0012\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\b\u0012\u0004\u0012\u00020\u00100\u00132\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001fH\u0002¢\u0006\u0004\b \u0010!\u001a\u001c\u0010\"\u001a\b\u0012\u0004\u0012\u0002H\u00020#\"\b\b\u0000\u0010\u0002*\u00020\u0003*\u00020\u0010H\u0002\"\"\u0010$\u001a\u0013\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b%¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'¨\u0006("}, d2 = {"AndroidView", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroid/view/View;", "factory", "Lkotlin/Function1;", "Landroid/content/Context;", "modifier", "Landroidx/compose/ui/Modifier;", "update", "(Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "onReset", "onRelease", "(Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "createAndroidViewNodeFactory", "Lkotlin/Function0;", "Landroidx/compose/ui/node/LayoutNode;", "(Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)Lkotlin/jvm/functions/Function0;", "updateViewHolderParams", "Landroidx/compose/runtime/Updater;", "compositeKeyHash", "", "density", "Landroidx/compose/ui/unit/Density;", "lifecycleOwner", "Landroidx/lifecycle/LifecycleOwner;", "savedStateRegistryOwner", "Landroidx/savedstate/SavedStateRegistryOwner;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "compositionLocalMap", "Landroidx/compose/runtime/CompositionLocalMap;", "updateViewHolderParams-6NefGtU", "(Landroidx/compose/runtime/Composer;Landroidx/compose/ui/Modifier;ILandroidx/compose/ui/unit/Density;Landroidx/lifecycle/LifecycleOwner;Landroidx/savedstate/SavedStateRegistryOwner;Landroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/runtime/CompositionLocalMap;)V", "requireViewFactoryHolder", "Landroidx/compose/ui/viewinterop/ViewFactoryHolder;", "NoOpUpdate", "Lkotlin/ExtensionFunctionType;", "getNoOpUpdate", "()Lkotlin/jvm/functions/Function1;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidView_androidKt {
     private static final Function1<View, Unit> NoOpUpdate = new Function1<View, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$NoOpUpdate$1
@@ -57,7 +58,7 @@ public final class AndroidView_androidKt {
         final Modifier modifier2;
         final Function1<? super T, Unit> function13;
         Composer startRestartGroup = composer.startRestartGroup(-1783766393);
-        ComposerKt.sourceInformation(startRestartGroup, "C(AndroidView)105@5481L92:AndroidView.android.kt#z33iqn");
+        ComposerKt.sourceInformation(startRestartGroup, "C(AndroidView)105@5485L92:AndroidView.android.kt#z33iqn");
         if ((i2 & 1) != 0) {
             i3 = i | 6;
         } else if ((i & 6) == 0) {
@@ -77,7 +78,11 @@ public final class AndroidView_androidKt {
         } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i3 |= startRestartGroup.changedInstance(function12) ? 256 : 128;
         }
-        if (startRestartGroup.shouldExecute((i3 & 147) != 146, i3 & 1)) {
+        if (!startRestartGroup.shouldExecute((i3 & 147) != 146, i3 & 1)) {
+            startRestartGroup.skipToGroupEnd();
+            modifier2 = modifier;
+            function13 = function12;
+        } else {
             if (i4 != 0) {
                 modifier = Modifier.Companion;
             }
@@ -92,10 +97,6 @@ public final class AndroidView_androidKt {
             }
             modifier2 = modifier3;
             function13 = function14;
-        } else {
-            startRestartGroup.skipToGroupEnd();
-            modifier2 = modifier;
-            function13 = function12;
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
@@ -147,7 +148,7 @@ public final class AndroidView_androidKt {
         Modifier.Companion companion;
         ScopeUpdateScope endRestartGroup;
         Composer startRestartGroup = composer.startRestartGroup(-180024211);
-        ComposerKt.sourceInformation(startRestartGroup, "C(AndroidView)P(!2,3)200@11861L23,202@12008L7,203@12063L7,210@12519L7,211@12590L7:AndroidView.android.kt#z33iqn");
+        ComposerKt.sourceInformation(startRestartGroup, "C(AndroidView)P(!2,3)200@11866L27,202@12028L7,203@12083L7,210@12539L7,211@12610L7:AndroidView.android.kt#z33iqn");
         if ((i2 & 1) != 0) {
             i3 = i | 6;
         } else if ((i & 6) == 0) {
@@ -179,7 +180,10 @@ public final class AndroidView_androidKt {
                     } else if ((i & 24576) == 0) {
                         function16 = function14;
                         i3 |= startRestartGroup.changedInstance(function16) ? 16384 : 8192;
-                        if (startRestartGroup.shouldExecute((i3 & 9363) != 9362, i3 & 1)) {
+                        if (!startRestartGroup.shouldExecute((i3 & 9363) != 9362, i3 & 1)) {
+                            startRestartGroup.skipToGroupEnd();
+                            companion = obj;
+                        } else {
                             companion = i7 != 0 ? Modifier.Companion : obj;
                             if (i4 != 0) {
                                 obj2 = null;
@@ -193,7 +197,7 @@ public final class AndroidView_androidKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-180024211, i3, -1, "androidx.compose.ui.viewinterop.AndroidView (AndroidView.android.kt:199)");
                             }
-                            int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
+                            int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
                             Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, FocusGroupNode_androidKt.focusInteropModifier(companion));
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                             Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
@@ -209,14 +213,14 @@ public final class AndroidView_androidKt {
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             LifecycleOwner lifecycleOwner = (LifecycleOwner) consume3;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                            Object consume4 = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalSavedStateRegistryOwner());
+                            Object consume4 = startRestartGroup.consume(LocalSavedStateRegistryOwnerKt.getLocalSavedStateRegistryOwner());
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             SavedStateRegistryOwner savedStateRegistryOwner = (SavedStateRegistryOwner) consume4;
                             if (obj2 != null) {
-                                startRestartGroup.startReplaceGroup(607780130);
-                                ComposerKt.sourceInformation(startRestartGroup, "215@12700L37,214@12634L843");
+                                startRestartGroup.startReplaceGroup(1313943160);
+                                ComposerKt.sourceInformation(startRestartGroup, "215@12720L37,214@12654L845");
                                 Function0<LayoutNode> createAndroidViewNodeFactory = createAndroidViewNodeFactory(function1, startRestartGroup, i3 & 14);
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1405779621, "CC(ReusableComposeNode):Composables.kt#9igjgp");
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1405779621, "CC(ReusableComposeNode)N(factory,update):Composables.kt#9igjgp");
                                 if (!(startRestartGroup.getApplier() instanceof UiApplier)) {
                                     ComposablesKt.invalidApplier();
                                 }
@@ -226,9 +230,9 @@ public final class AndroidView_androidKt {
                                 } else {
                                     startRestartGroup.useNode();
                                 }
-                                Composer m3520constructorimpl = Updater.m3520constructorimpl(startRestartGroup);
-                                m6934updateViewHolderParams6NefGtU(m3520constructorimpl, materializeModifier, currentCompositeKeyHash, density, lifecycleOwner, savedStateRegistryOwner, layoutDirection, currentCompositionLocalMap);
-                                Updater.m3527setimpl(m3520constructorimpl, obj2, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$2$1
+                                Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
+                                m7501updateViewHolderParams6NefGtU(m3855constructorimpl, materializeModifier, hashCode, density, lifecycleOwner, savedStateRegistryOwner, layoutDirection, currentCompositionLocalMap);
+                                Updater.m3862setimpl(m3855constructorimpl, obj2, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$2$1
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Object obj3) {
                                         invoke(layoutNode, (Function1) ((Function1) obj3));
@@ -241,7 +245,7 @@ public final class AndroidView_androidKt {
                                         requireViewFactoryHolder.setResetBlock(function17);
                                     }
                                 });
-                                Updater.m3527setimpl(m3520constructorimpl, function16, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$2$2
+                                Updater.m3862setimpl(m3855constructorimpl, function16, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$2$2
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Object obj3) {
                                         invoke(layoutNode, (Function1) ((Function1) obj3));
@@ -254,7 +258,7 @@ public final class AndroidView_androidKt {
                                         requireViewFactoryHolder.setUpdateBlock(function17);
                                     }
                                 });
-                                Updater.m3527setimpl(m3520constructorimpl, function15, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$2$3
+                                Updater.m3862setimpl(m3855constructorimpl, function15, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$2$3
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Object obj3) {
                                         invoke(layoutNode, (Function1) ((Function1) obj3));
@@ -271,10 +275,10 @@ public final class AndroidView_androidKt {
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 startRestartGroup.endReplaceGroup();
                             } else {
-                                startRestartGroup.startReplaceGroup(608635513);
-                                ComposerKt.sourceInformation(startRestartGroup, "233@13557L37,232@13499L756");
+                                startRestartGroup.startReplaceGroup(1314800527);
+                                ComposerKt.sourceInformation(startRestartGroup, "233@13579L37,232@13521L758");
                                 Function0<LayoutNode> createAndroidViewNodeFactory2 = createAndroidViewNodeFactory(function1, startRestartGroup, i3 & 14);
-                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1886828752, "CC(ComposeNode):Composables.kt#9igjgp");
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1886828752, "CC(ComposeNode)N(factory,update):Composables.kt#9igjgp");
                                 if (!(startRestartGroup.getApplier() instanceof UiApplier)) {
                                     ComposablesKt.invalidApplier();
                                 }
@@ -284,9 +288,9 @@ public final class AndroidView_androidKt {
                                 } else {
                                     startRestartGroup.useNode();
                                 }
-                                Composer m3520constructorimpl2 = Updater.m3520constructorimpl(startRestartGroup);
-                                m6934updateViewHolderParams6NefGtU(m3520constructorimpl2, materializeModifier, currentCompositeKeyHash, density, lifecycleOwner, savedStateRegistryOwner, layoutDirection, currentCompositionLocalMap);
-                                Updater.m3527setimpl(m3520constructorimpl2, function16, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$3$1
+                                Composer m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
+                                m7501updateViewHolderParams6NefGtU(m3855constructorimpl2, materializeModifier, hashCode, density, lifecycleOwner, savedStateRegistryOwner, layoutDirection, currentCompositionLocalMap);
+                                Updater.m3862setimpl(m3855constructorimpl2, function16, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$3$1
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Object obj3) {
                                         invoke(layoutNode, (Function1) ((Function1) obj3));
@@ -299,7 +303,7 @@ public final class AndroidView_androidKt {
                                         requireViewFactoryHolder.setUpdateBlock(function17);
                                     }
                                 });
-                                Updater.m3527setimpl(m3520constructorimpl2, function15, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$3$2
+                                Updater.m3862setimpl(m3855constructorimpl2, function15, new Function2<LayoutNode, Function1<? super T, ? extends Unit>, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$AndroidView$3$2
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Object obj3) {
                                         invoke(layoutNode, (Function1) ((Function1) obj3));
@@ -319,9 +323,6 @@ public final class AndroidView_androidKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
-                        } else {
-                            startRestartGroup.skipToGroupEnd();
-                            companion = obj;
                         }
                         final Function1<? super T, Unit> function17 = obj2;
                         final Function1<? super T, Unit> function18 = function16;
@@ -352,7 +353,7 @@ public final class AndroidView_androidKt {
                         return;
                     }
                     function16 = function14;
-                    if (startRestartGroup.shouldExecute((i3 & 9363) != 9362, i3 & 1)) {
+                    if (!startRestartGroup.shouldExecute((i3 & 9363) != 9362, i3 & 1)) {
                     }
                     final Function1<? super T, Unit> function172 = obj2;
                     final Function1<? super T, Unit> function182 = function16;
@@ -365,7 +366,7 @@ public final class AndroidView_androidKt {
                 if (i6 == 0) {
                 }
                 function16 = function14;
-                if (startRestartGroup.shouldExecute((i3 & 9363) != 9362, i3 & 1)) {
+                if (!startRestartGroup.shouldExecute((i3 & 9363) != 9362, i3 & 1)) {
                 }
                 final Function1<? super T, Unit> function1722 = obj2;
                 final Function1<? super T, Unit> function1822 = function16;
@@ -382,7 +383,7 @@ public final class AndroidView_androidKt {
             if (i6 == 0) {
             }
             function16 = function14;
-            if (startRestartGroup.shouldExecute((i3 & 9363) != 9362, i3 & 1)) {
+            if (!startRestartGroup.shouldExecute((i3 & 9363) != 9362, i3 & 1)) {
             }
             final Function1<? super T, Unit> function17222 = obj2;
             final Function1<? super T, Unit> function18222 = function16;
@@ -403,7 +404,7 @@ public final class AndroidView_androidKt {
         if (i6 == 0) {
         }
         function16 = function14;
-        if (startRestartGroup.shouldExecute((i3 & 9363) != 9362, i3 & 1)) {
+        if (!startRestartGroup.shouldExecute((i3 & 9363) != 9362, i3 & 1)) {
         }
         final Function1<? super T, Unit> function172222 = obj2;
         final Function1<? super T, Unit> function182222 = function16;
@@ -413,11 +414,11 @@ public final class AndroidView_androidKt {
     }
 
     private static final <T extends View> Function0<LayoutNode> createAndroidViewNodeFactory(final Function1<? super Context, ? extends T> function1, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 2030558801, "C(createAndroidViewNodeFactory)253@14401L23,254@14456L7,255@14490L28,256@14570L7,257@14608L7,259@14628L338:AndroidView.android.kt#z33iqn");
+        ComposerKt.sourceInformationMarkerStart(composer, 2030558801, "C(createAndroidViewNodeFactory)253@14425L27,254@14495L7,255@14529L28,256@14609L7,257@14647L7,259@14667L339:AndroidView.android.kt#z33iqn");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(2030558801, i, -1, "androidx.compose.ui.viewinterop.createAndroidViewNodeFactory (AndroidView.android.kt:252)");
         }
-        final int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer, 0);
+        final int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(AndroidCompositionLocals_androidKt.getLocalContext());
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -431,8 +432,8 @@ public final class AndroidView_androidKt {
         Object consume3 = composer.consume(AndroidCompositionLocals_androidKt.getLocalView());
         ComposerKt.sourceInformationMarkerEnd(composer);
         final View view = (View) consume3;
-        ComposerKt.sourceInformationMarkerStart(composer, -1137330319, "CC(remember):AndroidView.android.kt#9igjgp");
-        boolean changedInstance = composer.changedInstance(context) | ((((i & 14) ^ 6) > 4 && composer.changed(function1)) || (i & 6) == 4) | composer.changedInstance(rememberCompositionContext) | composer.changedInstance(saveableStateRegistry) | composer.changed(currentCompositeKeyHash) | composer.changedInstance(view);
+        ComposerKt.sourceInformationMarkerStart(composer, 1451867812, "CC(remember):AndroidView.android.kt#9igjgp");
+        boolean changedInstance = composer.changedInstance(context) | ((((i & 14) ^ 6) > 4 && composer.changed(function1)) || (i & 6) == 4) | composer.changedInstance(rememberCompositionContext) | composer.changedInstance(saveableStateRegistry) | composer.changed(hashCode) | composer.changedInstance(view);
         Object rememberedValue = composer.rememberedValue();
         if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = (Function0) new Function0<LayoutNode>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$createAndroidViewNodeFactory$1$1
@@ -450,7 +451,7 @@ public final class AndroidView_androidKt {
                     Function1<Context, T> function12 = function1;
                     CompositionContext compositionContext = rememberCompositionContext;
                     SaveableStateRegistry saveableStateRegistry2 = saveableStateRegistry;
-                    int i2 = currentCompositeKeyHash;
+                    int i2 = hashCode;
                     View view2 = view;
                     Intrinsics.checkNotNull(view2, "null cannot be cast to non-null type androidx.compose.ui.node.Owner");
                     return new ViewFactoryHolder(context2, function12, compositionContext, saveableStateRegistry2, i2, (Owner) view2).getLayoutNode();
@@ -468,9 +469,9 @@ public final class AndroidView_androidKt {
     }
 
     /* renamed from: updateViewHolderParams-6NefGtU  reason: not valid java name */
-    private static final <T extends View> void m6934updateViewHolderParams6NefGtU(Composer composer, Modifier modifier, int i, Density density, LifecycleOwner lifecycleOwner, SavedStateRegistryOwner savedStateRegistryOwner, LayoutDirection layoutDirection, CompositionLocalMap compositionLocalMap) {
-        Updater.m3527setimpl(composer, compositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-        Updater.m3527setimpl(composer, modifier, new Function2<LayoutNode, Modifier, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$1
+    private static final <T extends View> void m7501updateViewHolderParams6NefGtU(Composer composer, Modifier modifier, int i, Density density, LifecycleOwner lifecycleOwner, SavedStateRegistryOwner savedStateRegistryOwner, LayoutDirection layoutDirection, CompositionLocalMap compositionLocalMap) {
+        Updater.m3862setimpl(composer, compositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Updater.m3862setimpl(composer, modifier, new Function2<LayoutNode, Modifier, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$1
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Modifier modifier2) {
                 invoke2(layoutNode, modifier2);
@@ -484,7 +485,7 @@ public final class AndroidView_androidKt {
                 requireViewFactoryHolder.setModifier(modifier2);
             }
         });
-        Updater.m3527setimpl(composer, density, new Function2<LayoutNode, Density, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$2
+        Updater.m3862setimpl(composer, density, new Function2<LayoutNode, Density, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$2
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, Density density2) {
                 invoke2(layoutNode, density2);
@@ -498,7 +499,7 @@ public final class AndroidView_androidKt {
                 requireViewFactoryHolder.setDensity(density2);
             }
         });
-        Updater.m3527setimpl(composer, lifecycleOwner, new Function2<LayoutNode, LifecycleOwner, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$3
+        Updater.m3862setimpl(composer, lifecycleOwner, new Function2<LayoutNode, LifecycleOwner, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$3
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, LifecycleOwner lifecycleOwner2) {
                 invoke2(layoutNode, lifecycleOwner2);
@@ -512,7 +513,7 @@ public final class AndroidView_androidKt {
                 requireViewFactoryHolder.setLifecycleOwner(lifecycleOwner2);
             }
         });
-        Updater.m3527setimpl(composer, savedStateRegistryOwner, new Function2<LayoutNode, SavedStateRegistryOwner, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$4
+        Updater.m3862setimpl(composer, savedStateRegistryOwner, new Function2<LayoutNode, SavedStateRegistryOwner, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$4
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(LayoutNode layoutNode, SavedStateRegistryOwner savedStateRegistryOwner2) {
                 invoke2(layoutNode, savedStateRegistryOwner2);
@@ -526,10 +527,10 @@ public final class AndroidView_androidKt {
                 requireViewFactoryHolder.setSavedStateRegistryOwner(savedStateRegistryOwner2);
             }
         });
-        Updater.m3527setimpl(composer, layoutDirection, new Function2<LayoutNode, LayoutDirection, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$5
+        Updater.m3862setimpl(composer, layoutDirection, new Function2<LayoutNode, LayoutDirection, Unit>() { // from class: androidx.compose.ui.viewinterop.AndroidView_androidKt$updateViewHolderParams$5
 
             /* compiled from: AndroidView.android.kt */
-            @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
             /* loaded from: classes2.dex */
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;

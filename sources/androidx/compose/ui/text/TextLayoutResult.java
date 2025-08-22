@@ -11,7 +11,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TextLayoutResult.kt */
-@Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\t\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u001d\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0002\u0010\bJ$\u0010'\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u0007ø\u0001\u0000¢\u0006\u0004\b(\u0010)J\u0013\u0010*\u001a\u00020\n2\b\u0010+\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\u000e\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u001aJ\u000e\u0010/\u001a\u00020!2\u0006\u0010.\u001a\u00020\u001aJ\u000e\u00100\u001a\u00020!2\u0006\u0010.\u001a\u00020\u001aJ\u0016\u00101\u001a\u00020\u00102\u0006\u0010.\u001a\u00020\u001a2\u0006\u00102\u001a\u00020\nJ\u000e\u00103\u001a\u00020\u00102\u0006\u00104\u001a\u00020\u001aJ\u000e\u00105\u001a\u00020\u00102\u0006\u00104\u001a\u00020\u001aJ\u0018\u00106\u001a\u00020\u001a2\u0006\u00104\u001a\u00020\u001a2\b\b\u0002\u00107\u001a\u00020\nJ\u000e\u00108\u001a\u00020\u001a2\u0006\u0010.\u001a\u00020\u001aJ\u000e\u00109\u001a\u00020\u001a2\u0006\u0010:\u001a\u00020\u0010J\u000e\u0010;\u001a\u00020\u00102\u0006\u00104\u001a\u00020\u001aJ\u000e\u0010<\u001a\u00020\u00102\u0006\u00104\u001a\u00020\u001aJ\u000e\u0010=\u001a\u00020\u001a2\u0006\u00104\u001a\u00020\u001aJ\u000e\u0010>\u001a\u00020\u00102\u0006\u00104\u001a\u00020\u001aJ\u0018\u0010?\u001a\u00020\u001a2\u0006\u0010@\u001a\u00020Aø\u0001\u0000¢\u0006\u0004\bB\u0010CJ\u000e\u0010D\u001a\u00020-2\u0006\u0010.\u001a\u00020\u001aJ\u0016\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020\u001a2\u0006\u0010H\u001a\u00020\u001aJ\u001b\u0010I\u001a\u00020J2\u0006\u0010.\u001a\u00020\u001aø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\bK\u0010LJ\b\u0010M\u001a\u00020\u001aH\u0016J\u000e\u0010N\u001a\u00020\n2\u0006\u00104\u001a\u00020\u001aJ\b\u0010O\u001a\u00020PH\u0016R\u0011\u0010\t\u001a\u00020\n8F¢\u0006\u0006\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\r\u001a\u00020\n8F¢\u0006\u0006\u001a\u0004\b\u000e\u0010\fR\u0011\u0010\u000f\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\u0013\u001a\u00020\n8F¢\u0006\u0006\u001a\u0004\b\u0014\u0010\fR\u0011\u0010\u0015\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0012R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u0011\u0010\u0019\u001a\u00020\u001a8F¢\u0006\u0006\u001a\u0004\b\u001b\u0010\u001cR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001eR\u0019\u0010\u001f\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010!0 ¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#R\u0019\u0010\u0006\u001a\u00020\u0007ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010&\u001a\u0004\b$\u0010%\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006Q"}, d2 = {"Landroidx/compose/ui/text/TextLayoutResult;", "", "layoutInput", "Landroidx/compose/ui/text/TextLayoutInput;", "multiParagraph", "Landroidx/compose/ui/text/MultiParagraph;", "size", "Landroidx/compose/ui/unit/IntSize;", "(Landroidx/compose/ui/text/TextLayoutInput;Landroidx/compose/ui/text/MultiParagraph;JLkotlin/jvm/internal/DefaultConstructorMarker;)V", "didOverflowHeight", "", "getDidOverflowHeight", "()Z", "didOverflowWidth", "getDidOverflowWidth", "firstBaseline", "", "getFirstBaseline", "()F", "hasVisualOverflow", "getHasVisualOverflow", "lastBaseline", "getLastBaseline", "getLayoutInput", "()Landroidx/compose/ui/text/TextLayoutInput;", "lineCount", "", "getLineCount", "()I", "getMultiParagraph", "()Landroidx/compose/ui/text/MultiParagraph;", "placeholderRects", "", "Landroidx/compose/ui/geometry/Rect;", "getPlaceholderRects", "()Ljava/util/List;", "getSize-YbymL2g", "()J", "J", "copy", "copy-O0kMr_c", "(Landroidx/compose/ui/text/TextLayoutInput;J)Landroidx/compose/ui/text/TextLayoutResult;", "equals", "other", "getBidiRunDirection", "Landroidx/compose/ui/text/style/ResolvedTextDirection;", TypedValues.CycleType.S_WAVE_OFFSET, "getBoundingBox", "getCursorRect", "getHorizontalPosition", "usePrimaryDirection", "getLineBaseline", "lineIndex", "getLineBottom", "getLineEnd", "visibleEnd", "getLineForOffset", "getLineForVerticalPosition", "vertical", "getLineLeft", "getLineRight", "getLineStart", "getLineTop", "getOffsetForPosition", "position", "Landroidx/compose/ui/geometry/Offset;", "getOffsetForPosition-k-4lQ0M", "(J)I", "getParagraphDirection", "getPathForRange", "Landroidx/compose/ui/graphics/Path;", TtmlNode.START, TtmlNode.END, "getWordBoundary", "Landroidx/compose/ui/text/TextRange;", "getWordBoundary--jx7JFs", "(I)J", "hashCode", "isLineEllipsized", "toString", "", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u000e\u0010(\u001a\u00020%2\u0006\u0010)\u001a\u00020%J\u0018\u0010*\u001a\u00020%2\u0006\u0010)\u001a\u00020%2\b\b\u0002\u0010+\u001a\u00020\u0018J\u000e\u0010,\u001a\u00020\u00182\u0006\u0010)\u001a\u00020%J\u000e\u0010-\u001a\u00020\u00122\u0006\u0010)\u001a\u00020%J\u000e\u0010.\u001a\u00020\u00122\u0006\u0010)\u001a\u00020%J\u000e\u0010/\u001a\u00020\u00122\u0006\u0010)\u001a\u00020%J\u000e\u00100\u001a\u00020\u00122\u0006\u0010)\u001a\u00020%J\u000e\u00101\u001a\u00020\u00122\u0006\u0010)\u001a\u00020%J\u000e\u00102\u001a\u00020%2\u0006\u00103\u001a\u00020%J\u000e\u00104\u001a\u00020%2\u0006\u00105\u001a\u00020\u0012J\u0016\u00106\u001a\u00020\u00122\u0006\u00103\u001a\u00020%2\u0006\u00107\u001a\u00020\u0018J\u000e\u00108\u001a\u0002092\u0006\u00103\u001a\u00020%J\u000e\u0010:\u001a\u0002092\u0006\u00103\u001a\u00020%J\u0015\u0010;\u001a\u00020%2\u0006\u0010<\u001a\u00020=¢\u0006\u0004\b>\u0010?J\u000e\u0010@\u001a\u00020!2\u0006\u00103\u001a\u00020%J\u0015\u0010A\u001a\u00020B2\u0006\u00103\u001a\u00020%¢\u0006\u0004\bC\u0010DJ\u000e\u0010E\u001a\u00020!2\u0006\u00103\u001a\u00020%J\u0016\u0010F\u001a\u00020G2\u0006\u0010H\u001a\u00020%2\u0006\u0010I\u001a\u00020%J!\u0010J\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\bK\u0010LJ\u0013\u0010M\u001a\u00020\u00182\b\u0010N\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010O\u001a\u00020%H\u0016J\b\u0010P\u001a\u00020QH\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0013\u0010\u0006\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010\u0010\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0011\u001a\u00020\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\u0015\u001a\u00020\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0014R\u0011\u0010\u0017\u001a\u00020\u00188F¢\u0006\u0006\u001a\u0004\b\u0019\u0010\u001aR\u0011\u0010\u001b\u001a\u00020\u00188F¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u001aR\u0011\u0010\u001d\u001a\u00020\u00188F¢\u0006\u0006\u001a\u0004\b\u001e\u0010\u001aR\u0019\u0010\u001f\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010!0 ¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#R\u0011\u0010$\u001a\u00020%8F¢\u0006\u0006\u001a\u0004\b&\u0010'¨\u0006R"}, d2 = {"Landroidx/compose/ui/text/TextLayoutResult;", "", "layoutInput", "Landroidx/compose/ui/text/TextLayoutInput;", "multiParagraph", "Landroidx/compose/ui/text/MultiParagraph;", "size", "Landroidx/compose/ui/unit/IntSize;", "<init>", "(Landroidx/compose/ui/text/TextLayoutInput;Landroidx/compose/ui/text/MultiParagraph;JLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getLayoutInput", "()Landroidx/compose/ui/text/TextLayoutInput;", "getMultiParagraph", "()Landroidx/compose/ui/text/MultiParagraph;", "getSize-YbymL2g", "()J", "J", "firstBaseline", "", "getFirstBaseline", "()F", "lastBaseline", "getLastBaseline", "didOverflowHeight", "", "getDidOverflowHeight", "()Z", "didOverflowWidth", "getDidOverflowWidth", "hasVisualOverflow", "getHasVisualOverflow", "placeholderRects", "", "Landroidx/compose/ui/geometry/Rect;", "getPlaceholderRects", "()Ljava/util/List;", "lineCount", "", "getLineCount", "()I", "getLineStart", "lineIndex", "getLineEnd", "visibleEnd", "isLineEllipsized", "getLineTop", "getLineBaseline", "getLineBottom", "getLineLeft", "getLineRight", "getLineForOffset", TypedValues.CycleType.S_WAVE_OFFSET, "getLineForVerticalPosition", "vertical", "getHorizontalPosition", "usePrimaryDirection", "getParagraphDirection", "Landroidx/compose/ui/text/style/ResolvedTextDirection;", "getBidiRunDirection", "getOffsetForPosition", "position", "Landroidx/compose/ui/geometry/Offset;", "getOffsetForPosition-k-4lQ0M", "(J)I", "getBoundingBox", "getWordBoundary", "Landroidx/compose/ui/text/TextRange;", "getWordBoundary--jx7JFs", "(I)J", "getCursorRect", "getPathForRange", "Landroidx/compose/ui/graphics/Path;", TtmlNode.START, TtmlNode.END, "copy", "copy-O0kMr_c", "(Landroidx/compose/ui/text/TextLayoutInput;J)Landroidx/compose/ui/text/TextLayoutResult;", "equals", "other", "hashCode", "toString", "", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class TextLayoutResult {
     public static final int $stable = 8;
@@ -44,7 +44,7 @@ public final class TextLayoutResult {
     }
 
     /* renamed from: getSize-YbymL2g  reason: not valid java name */
-    public final long m6118getSizeYbymL2g() {
+    public final long m6684getSizeYbymL2g() {
         return this.size;
     }
 
@@ -136,8 +136,8 @@ public final class TextLayoutResult {
     }
 
     /* renamed from: getOffsetForPosition-k-4lQ0M  reason: not valid java name */
-    public final int m6117getOffsetForPositionk4lQ0M(long j) {
-        return this.multiParagraph.m5998getOffsetForPositionk4lQ0M(j);
+    public final int m6683getOffsetForPositionk4lQ0M(long j) {
+        return this.multiParagraph.m6554getOffsetForPositionk4lQ0M(j);
     }
 
     public final Rect getBoundingBox(int i) {
@@ -145,8 +145,8 @@ public final class TextLayoutResult {
     }
 
     /* renamed from: getWordBoundary--jx7JFs  reason: not valid java name */
-    public final long m6119getWordBoundaryjx7JFs(int i) {
-        return this.multiParagraph.m6000getWordBoundaryjx7JFs(i);
+    public final long m6685getWordBoundaryjx7JFs(int i) {
+        return this.multiParagraph.m6556getWordBoundaryjx7JFs(i);
     }
 
     public final Rect getCursorRect(int i) {
@@ -158,18 +158,18 @@ public final class TextLayoutResult {
     }
 
     /* renamed from: copy-O0kMr_c$default  reason: not valid java name */
-    public static /* synthetic */ TextLayoutResult m6115copyO0kMr_c$default(TextLayoutResult textLayoutResult, TextLayoutInput textLayoutInput, long j, int i, Object obj) {
+    public static /* synthetic */ TextLayoutResult m6681copyO0kMr_c$default(TextLayoutResult textLayoutResult, TextLayoutInput textLayoutInput, long j, int i, Object obj) {
         if ((i & 1) != 0) {
             textLayoutInput = textLayoutResult.layoutInput;
         }
         if ((i & 2) != 0) {
             j = textLayoutResult.size;
         }
-        return textLayoutResult.m6116copyO0kMr_c(textLayoutInput, j);
+        return textLayoutResult.m6682copyO0kMr_c(textLayoutInput, j);
     }
 
     /* renamed from: copy-O0kMr_c  reason: not valid java name */
-    public final TextLayoutResult m6116copyO0kMr_c(TextLayoutInput textLayoutInput, long j) {
+    public final TextLayoutResult m6682copyO0kMr_c(TextLayoutInput textLayoutInput, long j) {
         return new TextLayoutResult(textLayoutInput, this.multiParagraph, j, null);
     }
 
@@ -179,16 +179,16 @@ public final class TextLayoutResult {
         }
         if (obj instanceof TextLayoutResult) {
             TextLayoutResult textLayoutResult = (TextLayoutResult) obj;
-            return Intrinsics.areEqual(this.layoutInput, textLayoutResult.layoutInput) && Intrinsics.areEqual(this.multiParagraph, textLayoutResult.multiParagraph) && IntSize.m6853equalsimpl0(this.size, textLayoutResult.size) && this.firstBaseline == textLayoutResult.firstBaseline && this.lastBaseline == textLayoutResult.lastBaseline && Intrinsics.areEqual(this.placeholderRects, textLayoutResult.placeholderRects);
+            return Intrinsics.areEqual(this.layoutInput, textLayoutResult.layoutInput) && Intrinsics.areEqual(this.multiParagraph, textLayoutResult.multiParagraph) && IntSize.m7420equalsimpl0(this.size, textLayoutResult.size) && this.firstBaseline == textLayoutResult.firstBaseline && this.lastBaseline == textLayoutResult.lastBaseline && Intrinsics.areEqual(this.placeholderRects, textLayoutResult.placeholderRects);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((this.layoutInput.hashCode() * 31) + this.multiParagraph.hashCode()) * 31) + IntSize.m6856hashCodeimpl(this.size)) * 31) + Float.hashCode(this.firstBaseline)) * 31) + Float.hashCode(this.lastBaseline)) * 31) + this.placeholderRects.hashCode();
+        return (((((((((this.layoutInput.hashCode() * 31) + this.multiParagraph.hashCode()) * 31) + IntSize.m7423hashCodeimpl(this.size)) * 31) + Float.hashCode(this.firstBaseline)) * 31) + Float.hashCode(this.lastBaseline)) * 31) + this.placeholderRects.hashCode();
     }
 
     public String toString() {
-        return "TextLayoutResult(layoutInput=" + this.layoutInput + ", multiParagraph=" + this.multiParagraph + ", size=" + ((Object) IntSize.m6858toStringimpl(this.size)) + ", firstBaseline=" + this.firstBaseline + ", lastBaseline=" + this.lastBaseline + ", placeholderRects=" + this.placeholderRects + ')';
+        return "TextLayoutResult(layoutInput=" + this.layoutInput + ", multiParagraph=" + this.multiParagraph + ", size=" + ((Object) IntSize.m7425toStringimpl(this.size)) + ", firstBaseline=" + this.firstBaseline + ", lastBaseline=" + this.lastBaseline + ", placeholderRects=" + this.placeholderRects + ')';
     }
 }

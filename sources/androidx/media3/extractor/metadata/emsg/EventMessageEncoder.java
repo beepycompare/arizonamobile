@@ -3,7 +3,7 @@ package androidx.media3.extractor.metadata.emsg;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class EventMessageEncoder {
     private final ByteArrayOutputStream byteArrayOutputStream;
     private final DataOutputStream dataOutputStream;

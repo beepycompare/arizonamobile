@@ -5,7 +5,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 final class DisposeOnCancel implements Future<Object> {
     final Disposable upstream;
 

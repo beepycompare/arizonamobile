@@ -4,7 +4,7 @@ import io.reactivex.Maybe;
 import io.reactivex.MaybeObserver;
 import io.reactivex.disposables.Disposables;
 import io.reactivex.internal.fuseable.ScalarCallable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeJust<T> extends Maybe<T> implements ScalarCallable<T> {
     final T value;
 

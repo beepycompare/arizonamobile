@@ -1,6 +1,5 @@
 package androidx.compose.foundation.gestures;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -13,8 +12,8 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: Draggable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.DraggableNode$onDragStopped$1", f = "Draggable.kt", i = {}, l = {TypedValues.AttributesType.TYPE_PATH_ROTATE}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.DraggableNode$onDragStopped$1", f = "Draggable.kt", i = {}, l = {319}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class DraggableNode$onDragStopped$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ long $velocity;
@@ -45,18 +44,18 @@ final class DraggableNode$onDragStopped$1 extends SuspendLambda implements Funct
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Function3 function3;
-        long m470reverseIfNeededAH228Gc;
+        long m510reverseIfNeededAH228Gc;
         Orientation orientation;
-        float m465toFloatsFctU;
+        float m505toFloatsFctU;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             function3 = this.this$0.onDragStopped;
-            m470reverseIfNeededAH228Gc = this.this$0.m470reverseIfNeededAH228Gc(this.$velocity);
+            m510reverseIfNeededAH228Gc = this.this$0.m510reverseIfNeededAH228Gc(this.$velocity);
             orientation = this.this$0.orientation;
-            m465toFloatsFctU = DraggableKt.m465toFloatsFctU(m470reverseIfNeededAH228Gc, orientation);
-            Float boxFloat = Boxing.boxFloat(m465toFloatsFctU);
+            m505toFloatsFctU = DraggableKt.m505toFloatsFctU(m510reverseIfNeededAH228Gc, orientation);
+            Float boxFloat = Boxing.boxFloat(m505toFloatsFctU);
             this.label = 1;
             if (function3.invoke((CoroutineScope) this.L$0, boxFloat, this) == coroutine_suspended) {
                 return coroutine_suspended;

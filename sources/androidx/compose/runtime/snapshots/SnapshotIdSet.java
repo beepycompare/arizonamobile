@@ -13,7 +13,7 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 import kotlin.sequences.SequencesKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: SnapshotIdSet.kt */
-@Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0010\u001c\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0016\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010(\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0001\u0018\u0000 &2\f\u0012\b\u0012\u00060\u0002j\u0002`\u00030\u0001:\u0001&B3\b\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0002\u0012\n\u0010\u0006\u001a\u00060\u0002j\u0002`\u0003\u0012\u000e\u0010\u0007\u001a\n\u0018\u00010\bj\u0004\u0018\u0001`\t¢\u0006\u0002\u0010\nJ\u000e\u0010\u000b\u001a\u00020\u00002\u0006\u0010\f\u001a\u00020\u0000J\u000e\u0010\r\u001a\u00020\u00002\u0006\u0010\f\u001a\u00020\u0000J\u0012\u0010\u000e\u001a\u00020\u00002\n\u0010\u000f\u001a\u00060\u0002j\u0002`\u0003J>\u0010\u0010\u001a\u00020\u00002\u0006\u0010\u0011\u001a\u00020\u00002+\u0010\u0012\u001a'\u0012\u0013\u0012\u00110\u0000¢\u0006\f\b\u0014\u0012\b\b\u0015\u0012\u0004\b\b(\u0016\u0012\b\u0012\u00060\u0002j\u0002`\u0003\u0012\u0004\u0012\u00020\u00000\u0013H\u0082\bJ!\u0010\u0017\u001a\u00020\u00182\u0016\u0010\u0019\u001a\u0012\u0012\b\u0012\u00060\u0002j\u0002`\u0003\u0012\u0004\u0012\u00020\u00180\u001aH\u0086\bJ\u0012\u0010\u001b\u001a\u00020\u001c2\n\u0010\u000f\u001a\u00060\u0002j\u0002`\u0003J\u0013\u0010\u001d\u001a\f\u0012\b\u0012\u00060\u0002j\u0002`\u00030\u001eH\u0096\u0002J\u0016\u0010\u001f\u001a\u00060\u0002j\u0002`\u00032\n\u0010 \u001a\u00060\u0002j\u0002`\u0003J\u000e\u0010!\u001a\u00020\u00002\u0006\u0010\"\u001a\u00020\u0000J\u0012\u0010#\u001a\u00020\u00002\n\u0010\u000f\u001a\u00060\u0002j\u0002`\u0003J\b\u0010$\u001a\u00020%H\u0016R\u0016\u0010\u0007\u001a\n\u0018\u00010\bj\u0004\u0018\u0001`\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\u0006\u001a\u00060\u0002j\u0002`\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0002X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0002X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006'"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotIdSet;", "", "", "Landroidx/compose/runtime/snapshots/SnapshotId;", "upperSet", "lowerSet", "lowerBound", "belowBound", "", "Landroidx/compose/runtime/snapshots/SnapshotIdArray;", "(JJJ[J)V", "and", "ids", "andNot", "clear", "id", "fastFold", "initial", "operation", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "acc", "fastForEach", "", "block", "Lkotlin/Function1;", "get", "", "iterator", "", "lowest", "default", "or", "bits", "set", "toString", "", "Companion", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0010\u001c\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0016\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u000b\n\u0002\u0010(\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0001\u0018\u0000 ,2\f\u0012\b\u0012\u00060\u0002j\u0002`\u00030\u0001:\u0001,B5\b\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0002\u0012\n\u0010\u0006\u001a\u00060\u0002j\u0002`\u0003\u0012\u000e\u0010\u0007\u001a\n\u0018\u00010\bj\u0004\u0018\u0001`\t¢\u0006\u0004\b\n\u0010\u000bJ\u0017\u0010\u000e\u001a\u00020\u000f2\n\u0010\u0010\u001a\u00060\u0002j\u0002`\u0003¢\u0006\u0002\u0010\u0011J\u0017\u0010\u0012\u001a\u00020\u00002\n\u0010\u0010\u001a\u00060\u0002j\u0002`\u0003¢\u0006\u0002\u0010\u0013J\u0017\u0010\u0014\u001a\u00020\u00002\n\u0010\u0010\u001a\u00060\u0002j\u0002`\u0003¢\u0006\u0002\u0010\u0013J\u000e\u0010\u0015\u001a\u00020\u00002\u0006\u0010\u0016\u001a\u00020\u0000J\u000e\u0010\u0017\u001a\u00020\u00002\u0006\u0010\u0016\u001a\u00020\u0000J\u000e\u0010\u0018\u001a\u00020\u00002\u0006\u0010\u0019\u001a\u00020\u0000J\u0013\u0010\u001a\u001a\f\u0012\b\u0012\u00060\u0002j\u0002`\u00030\u001bH\u0096\u0002J>\u0010\u001c\u001a\u00020\u00002\u0006\u0010\u001d\u001a\u00020\u00002+\u0010\u001e\u001a'\u0012\u0013\u0012\u00110\u0000¢\u0006\f\b \u0012\b\b!\u0012\u0004\b\b(\"\u0012\b\u0012\u00060\u0002j\u0002`\u0003\u0012\u0004\u0012\u00020\u00000\u001fH\u0082\bJ!\u0010#\u001a\u00020$2\u0016\u0010%\u001a\u0012\u0012\b\u0012\u00060\u0002j\u0002`\u0003\u0012\u0004\u0012\u00020$0&H\u0086\bJ\u001b\u0010'\u001a\u00060\u0002j\u0002`\u00032\n\u0010(\u001a\u00060\u0002j\u0002`\u0003¢\u0006\u0002\u0010)J\b\u0010*\u001a\u00020+H\u0016R\u000e\u0010\u0004\u001a\u00020\u0002X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0002X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\u00060\u0002j\u0002`\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\fR\u0018\u0010\u0007\u001a\n\u0018\u00010\bj\u0004\u0018\u0001`\tX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\r¨\u0006-"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotIdSet;", "", "", "Landroidx/compose/runtime/snapshots/SnapshotId;", "upperSet", "lowerSet", "lowerBound", "belowBound", "", "Landroidx/compose/runtime/snapshots/SnapshotIdArray;", "<init>", "(JJJ[J)V", "J", "[J", "get", "", "id", "(J)Z", "set", "(J)Landroidx/compose/runtime/snapshots/SnapshotIdSet;", "clear", "andNot", "ids", "and", "or", "bits", "iterator", "", "fastFold", "initial", "operation", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "acc", "fastForEach", "", "block", "Lkotlin/Function1;", "lowest", "default", "(J)J", "toString", "", "Companion", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SnapshotIdSet implements Iterable<Long>, KMappedMarker {
     public static final int $stable = 0;
@@ -34,84 +34,88 @@ public final class SnapshotIdSet implements Iterable<Long>, KMappedMarker {
     public final boolean get(long j) {
         long[] jArr;
         long j2 = j - this.lowerBound;
-        int i = (j2 > 0L ? 1 : (j2 == 0L ? 0 : -1));
-        return (i < 0 || j2 >= 64) ? (j2 < 64 || j2 >= 128) ? i <= 0 && (jArr = this.belowBound) != null && SnapshotId_jvmKt.binarySearch(jArr, j) >= 0 : ((1 << (((int) j2) + (-64))) & this.upperSet) != 0 : ((1 << ((int) j2)) & this.lowerSet) != 0;
+        long j3 = 0;
+        return (Intrinsics.compare(j2, j3) < 0 || Intrinsics.compare(j2, (long) 64) >= 0) ? (Intrinsics.compare(j2, (long) 64) < 0 || Intrinsics.compare(j2, (long) 128) >= 0) ? Intrinsics.compare(j2, j3) <= 0 && (jArr = this.belowBound) != null && SnapshotId_jvmKt.binarySearch(jArr, j) >= 0 : ((1 << (((int) j2) - 64)) & this.upperSet) != 0 : ((1 << ((int) j2)) & this.lowerSet) != 0;
     }
 
     public final SnapshotIdSet set(long j) {
         long j2;
         long j3;
         long[] jArr;
-        long j4 = this.lowerBound;
-        long j5 = j - j4;
-        long j6 = 0;
-        if (j5 >= 0 && j5 < 64) {
-            long j7 = 1 << ((int) j5);
-            long j8 = this.lowerSet;
-            if ((j8 & j7) == 0) {
-                return new SnapshotIdSet(this.upperSet, j8 | j7, j4, this.belowBound);
-            }
-        } else if (j5 >= 64 && j5 < 128) {
-            long j9 = 1 << (((int) j5) - 64);
-            long j10 = this.upperSet;
-            if ((j10 & j9) == 0) {
-                return new SnapshotIdSet(j10 | j9, this.lowerSet, j4, this.belowBound);
-            }
-        } else if (j5 >= 128) {
-            if (!get(j)) {
-                long j11 = this.upperSet;
-                long j12 = this.lowerSet;
-                long j13 = this.lowerBound;
-                long j14 = 64;
-                long j15 = ((j + 1) / j14) * j14;
-                if (j15 < 0) {
-                    j15 = 9223372036854775680L;
-                }
-                SnapshotIdArrayBuilder snapshotIdArrayBuilder = null;
-                long j16 = j11;
-                while (true) {
-                    if (j13 >= j15) {
-                        j2 = j12;
-                        j3 = j13;
-                        break;
-                    }
-                    if (j12 != j6) {
-                        if (snapshotIdArrayBuilder == null) {
-                            snapshotIdArrayBuilder = new SnapshotIdArrayBuilder(this.belowBound);
-                        }
-                        int i = 0;
-                        while (i < 64) {
-                            long j17 = j6;
-                            if ((j12 & (1 << i)) != j6) {
-                                snapshotIdArrayBuilder.add(j13 + i);
-                            }
-                            i++;
-                            j6 = j17;
-                        }
-                    }
-                    j2 = j6;
-                    if (j16 == j2) {
-                        j3 = j15;
-                        break;
-                    }
-                    j13 += j14;
-                    j12 = j16;
-                    j6 = j2;
-                    j16 = j6;
-                }
-                if (snapshotIdArrayBuilder == null || (jArr = snapshotIdArrayBuilder.toArray()) == null) {
-                    jArr = this.belowBound;
-                }
-                return new SnapshotIdSet(j16, j2, j3, jArr).set(j);
+        long j4 = j - this.lowerBound;
+        long j5 = 0;
+        if (Intrinsics.compare(j4, j5) >= 0 && Intrinsics.compare(j4, 64) < 0) {
+            long j6 = 1 << ((int) j4);
+            long j7 = this.lowerSet;
+            if ((j7 & j6) == 0) {
+                return new SnapshotIdSet(this.upperSet, j7 | j6, this.lowerBound, this.belowBound);
             }
         } else {
-            long[] jArr2 = this.belowBound;
-            if (jArr2 == null) {
-                return new SnapshotIdSet(this.upperSet, this.lowerSet, j4, new long[]{j});
-            }
-            int binarySearch = SnapshotId_jvmKt.binarySearch(jArr2, j);
-            if (binarySearch < 0) {
-                return new SnapshotIdSet(this.upperSet, this.lowerSet, this.lowerBound, SnapshotId_jvmKt.withIdInsertedAt(jArr2, -(binarySearch + 1), j));
+            long j8 = 64;
+            if (Intrinsics.compare(j4, j8) >= 0 && Intrinsics.compare(j4, 128) < 0) {
+                long j9 = 1 << (((int) j4) - 64);
+                long j10 = this.upperSet;
+                if ((j10 & j9) == 0) {
+                    return new SnapshotIdSet(j10 | j9, this.lowerSet, this.lowerBound, this.belowBound);
+                }
+            } else {
+                long j11 = 128;
+                if (Intrinsics.compare(j4, j11) >= 0) {
+                    if (!get(j)) {
+                        long j12 = this.upperSet;
+                        long j13 = this.lowerSet;
+                        long j14 = this.lowerBound;
+                        long j15 = 1;
+                        long j16 = ((j + j15) / j8) * j8;
+                        if (Intrinsics.compare(j16, j5) < 0) {
+                            j16 = (Long.MAX_VALUE - j11) + j15;
+                        }
+                        SnapshotIdArrayBuilder snapshotIdArrayBuilder = null;
+                        long j17 = j12;
+                        while (true) {
+                            if (Intrinsics.compare(j14, j16) >= 0) {
+                                j2 = j13;
+                                j3 = j14;
+                                break;
+                            }
+                            if (j13 != 0) {
+                                if (snapshotIdArrayBuilder == null) {
+                                    snapshotIdArrayBuilder = new SnapshotIdArrayBuilder(this.belowBound);
+                                }
+                                int i = 0;
+                                while (i < 64) {
+                                    long j18 = j13;
+                                    if ((j13 & (1 << i)) != 0) {
+                                        snapshotIdArrayBuilder.add(i + j14);
+                                    }
+                                    i++;
+                                    j13 = j18;
+                                }
+                            }
+                            if (j17 == 0) {
+                                j3 = j16;
+                                j2 = 0;
+                                break;
+                            }
+                            j14 += j8;
+                            j13 = j17;
+                            j17 = 0;
+                        }
+                        if (snapshotIdArrayBuilder == null || (jArr = snapshotIdArrayBuilder.toArray()) == null) {
+                            jArr = this.belowBound;
+                        }
+                        return new SnapshotIdSet(j17, j2, j3, jArr).set(j);
+                    }
+                } else {
+                    long[] jArr2 = this.belowBound;
+                    if (jArr2 == null) {
+                        return new SnapshotIdSet(this.upperSet, this.lowerSet, this.lowerBound, new long[]{j});
+                    }
+                    int binarySearch = SnapshotId_jvmKt.binarySearch(jArr2, j);
+                    if (binarySearch < 0) {
+                        return new SnapshotIdSet(this.upperSet, this.lowerSet, this.lowerBound, SnapshotId_jvmKt.withIdInsertedAt(jArr2, -(binarySearch + 1), j));
+                    }
+                }
             }
         }
         return this;
@@ -120,22 +124,21 @@ public final class SnapshotIdSet implements Iterable<Long>, KMappedMarker {
     public final SnapshotIdSet clear(long j) {
         long[] jArr;
         int binarySearch;
-        long j2 = this.lowerBound;
-        long j3 = j - j2;
-        int i = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
-        if (i >= 0 && j3 < 64) {
-            long j4 = 1 << ((int) j3);
+        long j2 = j - this.lowerBound;
+        long j3 = 0;
+        if (Intrinsics.compare(j2, j3) >= 0 && Intrinsics.compare(j2, 64) < 0) {
+            long j4 = 1 << ((int) j2);
             long j5 = this.lowerSet;
             if ((j5 & j4) != 0) {
-                return new SnapshotIdSet(this.upperSet, j5 & (~j4), j2, this.belowBound);
+                return new SnapshotIdSet(this.upperSet, j5 & (~j4), this.lowerBound, this.belowBound);
             }
-        } else if (j3 >= 64 && j3 < 128) {
-            long j6 = 1 << (((int) j3) - 64);
+        } else if (Intrinsics.compare(j2, 64) >= 0 && Intrinsics.compare(j2, 128) < 0) {
+            long j6 = 1 << (((int) j2) - 64);
             long j7 = this.upperSet;
             if ((j7 & j6) != 0) {
-                return new SnapshotIdSet(j7 & (~j6), this.lowerSet, j2, this.belowBound);
+                return new SnapshotIdSet(j7 & (~j6), this.lowerSet, this.lowerBound, this.belowBound);
             }
-        } else if (i < 0 && (jArr = this.belowBound) != null && (binarySearch = SnapshotId_jvmKt.binarySearch(jArr, j)) >= 0) {
+        } else if (Intrinsics.compare(j2, j3) < 0 && (jArr = this.belowBound) != null && (binarySearch = SnapshotId_jvmKt.binarySearch(jArr, j)) >= 0) {
             return new SnapshotIdSet(this.upperSet, this.lowerSet, this.lowerBound, SnapshotId_jvmKt.withIdRemovedAt(jArr, binarySearch));
         }
         return this;
@@ -393,7 +396,7 @@ public final class SnapshotIdSet implements Iterable<Long>, KMappedMarker {
     }
 
     /* compiled from: SnapshotIdSet.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006¨\u0006\u0007"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotIdSet$Companion;", "", "()V", "EMPTY", "Landroidx/compose/runtime/snapshots/SnapshotIdSet;", "getEMPTY", "()Landroidx/compose/runtime/snapshots/SnapshotIdSet;", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotIdSet$Companion;", "", "<init>", "()V", "EMPTY", "Landroidx/compose/runtime/snapshots/SnapshotIdSet;", "getEMPTY", "()Landroidx/compose/runtime/snapshots/SnapshotIdSet;", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

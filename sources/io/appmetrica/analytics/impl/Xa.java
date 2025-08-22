@@ -1,69 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
-import android.os.Bundle;
-import io.appmetrica.analytics.AdvIdentifiersResult;
-import io.appmetrica.analytics.AppMetricaConfig;
-import io.appmetrica.analytics.AppMetricaLibraryAdapterConfig;
-import io.appmetrica.analytics.DeferredDeeplinkListener;
-import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
-import io.appmetrica.analytics.ReporterConfig;
-import io.appmetrica.analytics.StartupParamsCallback;
-import java.util.List;
-import java.util.Map;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
+import io.appmetrica.analytics.coreapi.internal.identifiers.SimpleAdvertisingIdGetter;
 /* loaded from: classes4.dex */
-public interface Xa extends InterfaceC0182cd, V6, InterfaceC0482ob {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0482ob
-    /* synthetic */ InterfaceC0457nb a();
+public interface Xa extends SimpleAdvertisingIdGetter, InterfaceC0515pm {
+    AdvertisingIdsHolder a();
 
-    @Override // io.appmetrica.analytics.impl.V6
-    /* synthetic */ void a(int i, Bundle bundle);
+    AdvertisingIdsHolder a(Yi yi);
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
-    /* synthetic */ void a(Location location);
+    /* synthetic */ void a(C0389km c0389km);
 
-    void a(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig);
+    void b(boolean z);
 
-    void a(DeferredDeeplinkListener deferredDeeplinkListener);
+    void c(boolean z);
 
-    void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener);
+    AdvertisingIdsHolder getIdentifiers();
 
-    void a(ReporterConfig reporterConfig);
-
-    void a(StartupParamsCallback startupParamsCallback, List<String> list);
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
-    /* synthetic */ void a(String str, String str2);
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
-    /* synthetic */ void a(boolean z);
-
-    void b(AppMetricaConfig appMetricaConfig);
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
-    /* synthetic */ void b(boolean z);
-
-    InterfaceC0432mb c(ReporterConfig reporterConfig);
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
-    /* synthetic */ void clearAppEnvironment();
-
-    C0580sa d();
-
-    String e();
-
-    Map<String, String> g();
-
-    AdvIdentifiersResult h();
-
-    Ec i();
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
-    /* synthetic */ void putAppEnvironmentValue(String str, String str2);
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
-    /* synthetic */ void setDataSendingEnabled(boolean z);
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0182cd
-    /* synthetic */ void setUserProfileID(String str);
+    void init();
 }

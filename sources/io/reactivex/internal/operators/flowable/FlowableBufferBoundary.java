@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class FlowableBufferBoundary<T, U extends Collection<? super T>, Open, Close> extends AbstractFlowableWithUpstream<T, U> {
     final Function<? super Open, ? extends Publisher<? extends Close>> bufferClose;
     final Publisher<? extends Open> bufferOpen;
@@ -42,7 +42,7 @@ public final class FlowableBufferBoundary<T, U extends Collection<? super T>, Op
         this.source.subscribe((FlowableSubscriber) bufferBoundarySubscriber);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class BufferBoundarySubscriber<T, C extends Collection<? super T>, Open, Close> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
         private static final long serialVersionUID = -8466418554264089604L;
         final Function<? super Open, ? extends Publisher<? extends Close>> bufferClose;
@@ -283,7 +283,7 @@ public final class FlowableBufferBoundary<T, U extends Collection<? super T>, Op
             } while (i != 0);
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes5.dex */
         static final class BufferOpenSubscriber<Open> extends AtomicReference<Subscription> implements FlowableSubscriber<Open>, Disposable {
             private static final long serialVersionUID = -8498650778633225126L;
             final BufferBoundarySubscriber<?, ?, Open, ?> parent;
@@ -327,7 +327,7 @@ public final class FlowableBufferBoundary<T, U extends Collection<? super T>, Op
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class BufferCloseSubscriber<T, C extends Collection<? super T>> extends AtomicReference<Subscription> implements FlowableSubscriber<Object>, Disposable {
         private static final long serialVersionUID = -8498650778633225126L;
         final long index;

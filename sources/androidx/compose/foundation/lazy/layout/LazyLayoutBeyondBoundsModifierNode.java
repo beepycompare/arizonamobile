@@ -29,7 +29,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Ref;
 import kotlin.ranges.RangesKt;
 /* compiled from: LazyLayoutBeyondBoundsModifierLocal.kt */
-@Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0000\u0018\u0000 42\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u00014B%\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\f¢\u0006\u0002\u0010\rJ\"\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00132\u0006\u0010\u0015\u001a\u00020\u0016H\u0002ø\u0001\u0000¢\u0006\u0004\b\u0017\u0010\u0018J=\u0010\u0019\u001a\u0004\u0018\u0001H\u001a\"\u0004\b\u0000\u0010\u001a2\u0006\u0010\u0015\u001a\u00020\u00162\u0019\u0010\u001b\u001a\u0015\u0012\u0004\u0012\u00020\u001d\u0012\u0006\u0012\u0004\u0018\u0001H\u001a0\u001c¢\u0006\u0002\b\u001eH\u0016ø\u0001\u0000¢\u0006\u0004\b\u001f\u0010 J&\u0010!\u001a\u00020\"2\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fJ\u001e\u0010#\u001a\u00020\n*\u00020\u00132\u0006\u0010\u0015\u001a\u00020\u0016H\u0002ø\u0001\u0000¢\u0006\u0004\b$\u0010%J\u0016\u0010&\u001a\u00020\n*\u00020\u0016H\u0002ø\u0001\u0000¢\u0006\u0004\b'\u0010(J\u0016\u0010)\u001a\u00020\n*\u00020\u0016H\u0002ø\u0001\u0000¢\u0006\u0004\b*\u0010(J&\u0010+\u001a\u00020,*\u00020-2\u0006\u0010.\u001a\u00020/2\u0006\u00100\u001a\u000201H\u0016ø\u0001\u0000¢\u0006\u0004\b2\u00103R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\u00020\u000f8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0011R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u00065"}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/modifier/ModifierLocalModifierNode;", "Landroidx/compose/ui/layout/BeyondBoundsLayout;", "Landroidx/compose/ui/node/LayoutModifierNode;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsState;", "beyondBoundsInfo", "Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo;", "reverseLayout", "", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsState;Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo;ZLandroidx/compose/foundation/gestures/Orientation;)V", "providedValues", "Landroidx/compose/ui/modifier/ModifierLocalMap;", "getProvidedValues", "()Landroidx/compose/ui/modifier/ModifierLocalMap;", "addNextInterval", "Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo$Interval;", "currentInterval", "direction", "Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;", "addNextInterval-FR3nfPY", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo$Interval;I)Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo$Interval;", TtmlNode.TAG_LAYOUT, ExifInterface.GPS_DIRECTION_TRUE, "block", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/BeyondBoundsLayout$BeyondBoundsScope;", "Lkotlin/ExtensionFunctionType;", "layout-o7g1Pn8", "(ILkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "update", "", "hasMoreContent", "hasMoreContent-FR3nfPY", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo$Interval;I)Z", "isForward", "isForward-4vf7U8o", "(I)Z", "isOppositeToOrientation", "isOppositeToOrientation-4vf7U8o", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "Companion", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000v\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0002\n\u0002\b\u0002\b\u0001\u0018\u0000 52\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u00015B'\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b\r\u0010\u000eJ#\u0010\u000f\u001a\u00020\u0010*\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H\u0016¢\u0006\u0004\b\u0016\u0010\u0017J:\u0010\u001c\u001a\u0004\u0018\u0001H\u001d\"\u0004\b\u0000\u0010\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0019\u0010 \u001a\u0015\u0012\u0004\u0012\u00020\"\u0012\u0006\u0012\u0004\u0018\u0001H\u001d0!¢\u0006\u0002\b#H\u0016¢\u0006\u0004\b$\u0010%J\u0013\u0010&\u001a\u00020\n*\u00020\u001fH\u0002¢\u0006\u0004\b'\u0010(J\u001f\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020*2\u0006\u0010\u001e\u001a\u00020\u001fH\u0002¢\u0006\u0004\b,\u0010-J\u001b\u0010.\u001a\u00020\n*\u00020*2\u0006\u0010\u001e\u001a\u00020\u001fH\u0002¢\u0006\u0004\b/\u00100J\u0013\u00101\u001a\u00020\n*\u00020\u001fH\u0002¢\u0006\u0004\b2\u0010(J&\u00103\u001a\u0002042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\u00020\u00198VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001b¨\u00066"}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/modifier/ModifierLocalModifierNode;", "Landroidx/compose/ui/layout/BeyondBoundsLayout;", "Landroidx/compose/ui/node/LayoutModifierNode;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsState;", "beyondBoundsInfo", "Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo;", "reverseLayout", "", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "<init>", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsState;Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo;ZLandroidx/compose/foundation/gestures/Orientation;)V", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "providedValues", "Landroidx/compose/ui/modifier/ModifierLocalMap;", "getProvidedValues", "()Landroidx/compose/ui/modifier/ModifierLocalMap;", TtmlNode.TAG_LAYOUT, ExifInterface.GPS_DIRECTION_TRUE, "direction", "Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;", "block", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/BeyondBoundsLayout$BeyondBoundsScope;", "Lkotlin/ExtensionFunctionType;", "layout-o7g1Pn8", "(ILkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "isForward", "isForward-4vf7U8o", "(I)Z", "addNextInterval", "Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo$Interval;", "currentInterval", "addNextInterval-FR3nfPY", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo$Interval;I)Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo$Interval;", "hasMoreContent", "hasMoreContent-FR3nfPY", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsInfo$Interval;I)Z", "isOppositeToOrientation", "isOppositeToOrientation-4vf7U8o", "update", "", "Companion", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node implements ModifierLocalModifierNode, BeyondBoundsLayout, LayoutModifierNode {
     private LazyLayoutBeyondBoundsInfo beyondBoundsInfo;
@@ -48,7 +48,7 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
     };
 
     /* compiled from: LazyLayoutBeyondBoundsModifierLocal.kt */
-    @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -77,24 +77,21 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5438measureBRTryo0 = measurable.mo5438measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo5438measureBRTryo0.getWidth(), mo5438measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsModifierNode$measure$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), mo5954measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Placeable.PlacementScope placementScope) {
-                invoke2(placementScope);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Placeable.PlacementScope placementScope) {
-                Placeable.PlacementScope.place$default(placementScope, Placeable.this, 0, 0, 0.0f, 4, null);
+            public final Object invoke(Object obj) {
+                Unit measure_3p2s80s$lambda$0;
+                measure_3p2s80s$lambda$0 = LazyLayoutBeyondBoundsModifierNode.measure_3p2s80s$lambda$0(Placeable.this, (Placeable.PlacementScope) obj);
+                return measure_3p2s80s$lambda$0;
             }
         }, 4, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit measure_3p2s80s$lambda$0(Placeable placeable, Placeable.PlacementScope placementScope) {
+        Placeable.PlacementScope.place$default(placementScope, placeable, 0, 0, 0.0f, 4, null);
+        return Unit.INSTANCE;
     }
 
     @Override // androidx.compose.ui.modifier.ModifierLocalModifierNode
@@ -103,7 +100,7 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
     }
 
     /* compiled from: LazyLayoutBeyondBoundsModifierLocal.kt */
-    @Metadata(d1 = {"\u0000\u0013\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\b\u0003*\u0001\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0010\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0005¨\u0006\u0006"}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsModifierNode$Companion;", "", "()V", "emptyBeyondBoundsScope", "androidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsModifierNode$Companion$emptyBeyondBoundsScope$1", "Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsModifierNode$Companion$emptyBeyondBoundsScope$1;", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0013\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\b\u0003*\u0001\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0010\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsModifierNode$Companion;", "", "<init>", "()V", "emptyBeyondBoundsScope", "androidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsModifierNode$Companion$emptyBeyondBoundsScope$1", "Landroidx/compose/foundation/lazy/layout/LazyLayoutBeyondBoundsModifierNode$Companion$emptyBeyondBoundsScope$1;", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -116,12 +113,12 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
 
     @Override // androidx.compose.ui.layout.BeyondBoundsLayout
     /* renamed from: layout-o7g1Pn8  reason: not valid java name */
-    public <T> T mo894layouto7g1Pn8(final int i, Function1<? super BeyondBoundsLayout.BeyondBoundsScope, ? extends T> function1) {
+    public <T> T mo1015layouto7g1Pn8(final int i, Function1<? super BeyondBoundsLayout.BeyondBoundsScope, ? extends T> function1) {
         int firstPlacedIndex;
         if (this.state.getItemCount() <= 0 || !this.state.getHasVisibleItems() || !isAttached()) {
             return function1.invoke(emptyBeyondBoundsScope);
         }
-        if (m892isForward4vf7U8o(i)) {
+        if (m1013isForward4vf7U8o(i)) {
             firstPlacedIndex = this.state.getLastPlacedIndex();
         } else {
             firstPlacedIndex = this.state.getFirstPlacedIndex();
@@ -131,17 +128,17 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
         int coerceAtMost = RangesKt.coerceAtMost(this.state.itemsPerViewport() * 2, this.state.getItemCount());
         T t = null;
         int i2 = 0;
-        while (t == null && m891hasMoreContentFR3nfPY((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element, i) && i2 < coerceAtMost) {
+        while (t == null && m1012hasMoreContentFR3nfPY((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element, i) && i2 < coerceAtMost) {
             this.beyondBoundsInfo.removeInterval((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element);
-            objectRef.element = (T) m890addNextIntervalFR3nfPY((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element, i);
+            objectRef.element = (T) m1011addNextIntervalFR3nfPY((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element, i);
             i2++;
             LayoutModifierNodeKt.remeasureSync(this);
             t = function1.invoke(new BeyondBoundsLayout.BeyondBoundsScope() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsModifierNode$layout$2
                 @Override // androidx.compose.ui.layout.BeyondBoundsLayout.BeyondBoundsScope
                 public boolean getHasMoreContent() {
-                    boolean m891hasMoreContentFR3nfPY;
-                    m891hasMoreContentFR3nfPY = LazyLayoutBeyondBoundsModifierNode.this.m891hasMoreContentFR3nfPY(objectRef.element, i);
-                    return m891hasMoreContentFR3nfPY;
+                    boolean m1012hasMoreContentFR3nfPY;
+                    m1012hasMoreContentFR3nfPY = LazyLayoutBeyondBoundsModifierNode.this.m1012hasMoreContentFR3nfPY(objectRef.element, i);
+                    return m1012hasMoreContentFR3nfPY;
                 }
             });
         }
@@ -151,19 +148,19 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
     }
 
     /* renamed from: isForward-4vf7U8o  reason: not valid java name */
-    private final boolean m892isForward4vf7U8o(int i) {
-        if (BeyondBoundsLayout.LayoutDirection.m5420equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5426getBeforehoxUOeE())) {
+    private final boolean m1013isForward4vf7U8o(int i) {
+        if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5943getBeforehoxUOeE())) {
             return false;
         }
-        if (BeyondBoundsLayout.LayoutDirection.m5420equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5425getAfterhoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5942getAfterhoxUOeE())) {
             return true;
         }
-        if (BeyondBoundsLayout.LayoutDirection.m5420equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5424getAbovehoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5941getAbovehoxUOeE())) {
             return this.reverseLayout;
         }
-        if (BeyondBoundsLayout.LayoutDirection.m5420equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5427getBelowhoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5944getBelowhoxUOeE())) {
             return !this.reverseLayout;
-        } else if (BeyondBoundsLayout.LayoutDirection.m5420equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5428getLefthoxUOeE())) {
+        } else if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5945getLefthoxUOeE())) {
             int i2 = WhenMappings.$EnumSwitchMapping$0[DelegatableNodeKt.requireLayoutDirection(this).ordinal()];
             if (i2 != 1) {
                 if (i2 == 2) {
@@ -172,26 +169,26 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
                 throw new NoWhenBranchMatchedException();
             }
             return this.reverseLayout;
-        } else if (!BeyondBoundsLayout.LayoutDirection.m5420equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5429getRighthoxUOeE())) {
+        } else if (!BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5946getRighthoxUOeE())) {
             LazyLayoutBeyondBoundsModifierLocalKt.access$unsupportedDirection();
             throw new KotlinNothingValueException();
         } else {
             int i3 = WhenMappings.$EnumSwitchMapping$0[DelegatableNodeKt.requireLayoutDirection(this).ordinal()];
             if (i3 == 1) {
                 return !this.reverseLayout;
-            } else if (i3 == 2) {
-                return this.reverseLayout;
-            } else {
+            } else if (i3 != 2) {
                 throw new NoWhenBranchMatchedException();
+            } else {
+                return this.reverseLayout;
             }
         }
     }
 
     /* renamed from: addNextInterval-FR3nfPY  reason: not valid java name */
-    private final LazyLayoutBeyondBoundsInfo.Interval m890addNextIntervalFR3nfPY(LazyLayoutBeyondBoundsInfo.Interval interval, int i) {
+    private final LazyLayoutBeyondBoundsInfo.Interval m1011addNextIntervalFR3nfPY(LazyLayoutBeyondBoundsInfo.Interval interval, int i) {
         int start = interval.getStart();
         int end = interval.getEnd();
-        if (m892isForward4vf7U8o(i)) {
+        if (m1013isForward4vf7U8o(i)) {
             end++;
         } else {
             start--;
@@ -201,26 +198,25 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: hasMoreContent-FR3nfPY  reason: not valid java name */
-    public final boolean m891hasMoreContentFR3nfPY(LazyLayoutBeyondBoundsInfo.Interval interval, int i) {
-        if (m893isOppositeToOrientation4vf7U8o(i)) {
+    public final boolean m1012hasMoreContentFR3nfPY(LazyLayoutBeyondBoundsInfo.Interval interval, int i) {
+        if (m1014isOppositeToOrientation4vf7U8o(i)) {
             return false;
         }
-        return m892isForward4vf7U8o(i) ? interval.getEnd() < this.state.getItemCount() - 1 : interval.getStart() > 0;
+        return m1013isForward4vf7U8o(i) ? interval.getEnd() < this.state.getItemCount() - 1 : interval.getStart() > 0;
     }
 
     /* renamed from: isOppositeToOrientation-4vf7U8o  reason: not valid java name */
-    private final boolean m893isOppositeToOrientation4vf7U8o(int i) {
-        if (BeyondBoundsLayout.LayoutDirection.m5420equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5424getAbovehoxUOeE()) ? true : BeyondBoundsLayout.LayoutDirection.m5420equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5427getBelowhoxUOeE())) {
+    private final boolean m1014isOppositeToOrientation4vf7U8o(int i) {
+        if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5941getAbovehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5944getBelowhoxUOeE())) {
             return this.orientation == Orientation.Horizontal;
-        }
-        if (BeyondBoundsLayout.LayoutDirection.m5420equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5428getLefthoxUOeE()) ? true : BeyondBoundsLayout.LayoutDirection.m5420equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5429getRighthoxUOeE())) {
+        } else if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5945getLefthoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5946getRighthoxUOeE())) {
             return this.orientation == Orientation.Vertical;
-        }
-        if (BeyondBoundsLayout.LayoutDirection.m5420equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5426getBeforehoxUOeE()) ? true : BeyondBoundsLayout.LayoutDirection.m5420equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5425getAfterhoxUOeE())) {
+        } else if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5943getBeforehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5942getAfterhoxUOeE())) {
             return false;
+        } else {
+            LazyLayoutBeyondBoundsModifierLocalKt.access$unsupportedDirection();
+            throw new KotlinNothingValueException();
         }
-        LazyLayoutBeyondBoundsModifierLocalKt.access$unsupportedDirection();
-        throw new KotlinNothingValueException();
     }
 
     public final void update(LazyLayoutBeyondBoundsState lazyLayoutBeyondBoundsState, LazyLayoutBeyondBoundsInfo lazyLayoutBeyondBoundsInfo, boolean z, Orientation orientation) {

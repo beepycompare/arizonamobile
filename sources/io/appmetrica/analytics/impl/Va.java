@@ -1,20 +1,34 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
-import io.appmetrica.analytics.coreapi.internal.identifiers.SimpleAdvertisingIdGetter;
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.net.Uri;
+import android.text.TextUtils;
+import java.util.concurrent.Callable;
 /* loaded from: classes4.dex */
-public interface Va extends SimpleAdvertisingIdGetter, InterfaceC0393km {
-    AdvertisingIdsHolder a();
+public final class Va implements Callable {
 
-    AdvertisingIdsHolder a(Ti ti);
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ Wa f692a;
 
-    /* synthetic */ void a(C0268fm c0268fm);
+    public Va(Wa wa) {
+        this.f692a = wa;
+    }
 
-    void b(boolean z);
-
-    void c(boolean z);
-
-    AdvertisingIdsHolder getIdentifiers();
-
-    void init();
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        Uri parse = Uri.parse("content://com.huawei.appmarket.commondata/item/5");
+        ContentResolver contentResolver = this.f692a.f707a.getContentResolver();
+        Wa wa = this.f692a;
+        wa.b = contentResolver.query(parse, null, null, new String[]{wa.f707a.getPackageName()}, null);
+        Cursor cursor = this.f692a.b;
+        if (cursor == null || !cursor.moveToFirst()) {
+            return null;
+        }
+        String string = this.f692a.b.getString(0);
+        if (TextUtils.isEmpty(string)) {
+            return null;
+        }
+        return new Fg(string, this.f692a.b.getLong(1), this.f692a.b.getLong(2), Eg.d);
+    }
 }

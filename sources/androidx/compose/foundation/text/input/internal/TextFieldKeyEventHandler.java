@@ -2,6 +2,7 @@ package androidx.compose.foundation.text.input.internal;
 
 import android.view.KeyEvent;
 import androidx.collection.MutableLongSet;
+import androidx.compose.foundation.ComposeFoundationFlags;
 import androidx.compose.foundation.text.DeadKeyCombiner;
 import androidx.compose.foundation.text.KeyCommand;
 import androidx.compose.foundation.text.KeyEventHelpers_androidKt;
@@ -9,7 +10,7 @@ import androidx.compose.foundation.text.KeyMapping;
 import androidx.compose.foundation.text.KeyMapping_androidKt;
 import androidx.compose.foundation.text.StringHelpers_jvmKt;
 import androidx.compose.foundation.text.TextFieldKeyInput_androidKt;
-import androidx.compose.foundation.text.input.internal.selection.TextFieldPreparedSelection;
+import androidx.compose.foundation.text.input.internal.selection.SelectionMovementDeletionContext;
 import androidx.compose.foundation.text.input.internal.selection.TextFieldPreparedSelectionState;
 import androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState;
 import androidx.compose.ui.focus.FocusManager;
@@ -19,14 +20,15 @@ import androidx.compose.ui.input.key.KeyEvent_androidKt;
 import androidx.compose.ui.layout.LayoutCoordinates;
 import androidx.compose.ui.platform.SoftwareKeyboardController;
 import androidx.compose.ui.text.TextRange;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.NotificationCompat;
-import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 /* compiled from: TextFieldKeyEventHandler.kt */
-@Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0007\n\u0000\b \u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002JX\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\f2\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aH\u0016ø\u0001\u0000¢\u0006\u0004\b\u001c\u0010\u001dJ:\u0010\u001e\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\"H\u0016ø\u0001\u0000¢\u0006\u0004\b#\u0010$J:\u0010%\u001a\u00020\u001b2\u0006\u0010&\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010'\u001a\u00020\f2\u0017\u0010(\u001a\u0013\u0012\u0004\u0012\u00020*\u0012\u0004\u0012\u00020\u001b0)¢\u0006\u0002\b+H\u0082\bJP\u0010,\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\f2\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aH\u0002ø\u0001\u0000¢\u0006\u0004\b-\u0010.J\f\u0010/\u001a\u000200*\u00020\u0012H\u0002R\u0010\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u00061"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TextFieldKeyEventHandler;", "", "()V", "currentlyConsumedDownKeys", "Landroidx/collection/MutableLongSet;", "deadKeyCombiner", "Landroidx/compose/foundation/text/DeadKeyCombiner;", "keyMapping", "Landroidx/compose/foundation/text/KeyMapping;", "preparedSelectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldPreparedSelectionState;", "onKeyEvent", "", NotificationCompat.CATEGORY_EVENT, "Landroidx/compose/ui/input/key/KeyEvent;", "textFieldState", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "textLayoutState", "Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "textFieldSelectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "clipboardKeyCommandsHandler", "Landroidx/compose/foundation/text/input/internal/ClipboardKeyCommandsHandler;", "editable", "singleLine", "onSubmit", "Lkotlin/Function0;", "", "onKeyEvent-CJ9ybgU", "(Landroid/view/KeyEvent;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/TextLayoutState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Lkotlin/jvm/functions/Function1;ZZLkotlin/jvm/functions/Function0;)Z", "onPreKeyEvent", "focusManager", "Landroidx/compose/ui/focus/FocusManager;", "keyboardController", "Landroidx/compose/ui/platform/SoftwareKeyboardController;", "onPreKeyEvent-MyFupTE", "(Landroid/view/KeyEvent;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Landroidx/compose/ui/focus/FocusManager;Landroidx/compose/ui/platform/SoftwareKeyboardController;)Z", "preparedSelectionContext", RemoteConfigConstants.ResponseFieldKey.STATE, "isFromSoftKeyboard", "block", "Lkotlin/Function1;", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldPreparedSelection;", "Lkotlin/ExtensionFunctionType;", "processKeyDownEvent", "processKeyDownEvent-ZcWbMB8", "(Landroid/view/KeyEvent;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/TextLayoutState;Lkotlin/jvm/functions/Function1;ZZLkotlin/jvm/functions/Function0;)Z", "getVisibleTextLayoutHeight", "", "foundation_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0007\n\u0000\b!\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J7\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0016¢\u0006\u0004\b\u0018\u0010\u0019J]\u0010\u001a\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u001f\u001a\u00020\r2\u0006\u0010 \u001a\u00020\r2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\r0\"H\u0016¢\u0006\u0004\b#\u0010$JU\u0010%\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u001f\u001a\u00020\r2\u0006\u0010 \u001a\u00020\r2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\r0\"H\u0002¢\u0006\u0004\b&\u0010'J\f\u0010(\u001a\u00020)*\u00020\u001cH\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TextFieldKeyEventHandler;", "", "<init>", "()V", "preparedSelectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldPreparedSelectionState;", "deadKeyCombiner", "Landroidx/compose/foundation/text/DeadKeyCombiner;", "keyMapping", "Landroidx/compose/foundation/text/KeyMapping;", "currentlyConsumedDownKeys", "Landroidx/collection/MutableLongSet;", "onPreKeyEvent", "", NotificationCompat.CATEGORY_EVENT, "Landroidx/compose/ui/input/key/KeyEvent;", "textFieldState", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "textFieldSelectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "focusManager", "Landroidx/compose/ui/focus/FocusManager;", "keyboardController", "Landroidx/compose/ui/platform/SoftwareKeyboardController;", "onPreKeyEvent-MyFupTE", "(Landroid/view/KeyEvent;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Landroidx/compose/ui/focus/FocusManager;Landroidx/compose/ui/platform/SoftwareKeyboardController;)Z", "onKeyEvent", "textLayoutState", "Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "clipboardKeyCommandsHandler", "Landroidx/compose/foundation/text/input/internal/ClipboardKeyCommandsHandler;", "editable", "singleLine", "onSubmit", "Lkotlin/Function0;", "onKeyEvent-8zsqlwg", "(Landroid/view/KeyEvent;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/TextLayoutState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/platform/SoftwareKeyboardController;ZZLkotlin/jvm/functions/Function0;)Z", "processKeyDownEvent", "processKeyDownEvent-q0GpTC0", "(Landroid/view/KeyEvent;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/TextLayoutState;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/platform/SoftwareKeyboardController;ZZLkotlin/jvm/functions/Function0;)Z", "getVisibleTextLayoutHeight", "", "foundation_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public abstract class TextFieldKeyEventHandler {
     public static final int $stable = 8;
@@ -36,7 +38,7 @@ public abstract class TextFieldKeyEventHandler {
     private final KeyMapping keyMapping = KeyMapping_androidKt.getPlatformDefaultKeyMapping();
 
     /* compiled from: TextFieldKeyEventHandler.kt */
-    @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -235,315 +237,319 @@ public abstract class TextFieldKeyEventHandler {
                 iArr[KeyCommand.CHARACTER_PALETTE.ordinal()] = 48;
             } catch (NoSuchFieldError unused48) {
             }
+            try {
+                iArr[KeyCommand.CENTER.ordinal()] = 49;
+            } catch (NoSuchFieldError unused49) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
 
     /* renamed from: onPreKeyEvent-MyFupTE */
-    public boolean mo1230onPreKeyEventMyFupTE(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, FocusManager focusManager, SoftwareKeyboardController softwareKeyboardController) {
-        if (TextRange.m6141getCollapsedimpl(transformedTextFieldState.getVisualText().m1203getSelectiond9O1mEE()) || !KeyEventHelpers_androidKt.m1065cancelsTextSelectionZmokQxo(keyEvent)) {
+    public boolean mo1466onPreKeyEventMyFupTE(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, FocusManager focusManager, SoftwareKeyboardController softwareKeyboardController) {
+        if (TextRange.m6707getCollapsedimpl(transformedTextFieldState.getVisualText().m1436getSelectiond9O1mEE()) || !KeyEventHelpers_androidKt.m1257cancelsTextSelectionZmokQxo(keyEvent)) {
             return false;
         }
         textFieldSelectionState.deselect();
         return true;
     }
 
-    /* renamed from: onKeyEvent-CJ9ybgU */
-    public boolean mo1229onKeyEventCJ9ybgU(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, TextFieldSelectionState textFieldSelectionState, Function1<? super KeyCommand, ? extends Unit> function1, boolean z, boolean z2, Function0<Unit> function0) {
-        long m5169getKeyZmokQxo = KeyEvent_androidKt.m5169getKeyZmokQxo(keyEvent);
-        if (KeyEventType.m5162equalsimpl0(KeyEvent_androidKt.m5170getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5167getKeyUpCS__XNY())) {
+    /* renamed from: onKeyEvent-8zsqlwg */
+    public boolean mo1465onKeyEvent8zsqlwg(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, TextFieldSelectionState textFieldSelectionState, Function1<? super KeyCommand, ? extends Unit> function1, SoftwareKeyboardController softwareKeyboardController, boolean z, boolean z2, Function0<Boolean> function0) {
+        long m5682getKeyZmokQxo = KeyEvent_androidKt.m5682getKeyZmokQxo(keyEvent);
+        if (KeyEventType.m5675equalsimpl0(KeyEvent_androidKt.m5683getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5680getKeyUpCS__XNY())) {
             MutableLongSet mutableLongSet = this.currentlyConsumedDownKeys;
-            if (mutableLongSet == null || !mutableLongSet.contains(m5169getKeyZmokQxo)) {
+            if (mutableLongSet == null || !mutableLongSet.contains(m5682getKeyZmokQxo)) {
                 return false;
             }
             MutableLongSet mutableLongSet2 = this.currentlyConsumedDownKeys;
             if (mutableLongSet2 != null) {
-                mutableLongSet2.remove(m5169getKeyZmokQxo);
+                mutableLongSet2.remove(m5682getKeyZmokQxo);
             }
             return true;
-        } else if (!KeyEventType.m5162equalsimpl0(KeyEvent_androidKt.m5170getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5168getUnknownCS__XNY()) || TextFieldKeyInput_androidKt.m1167isTypedEventZmokQxo(keyEvent)) {
-            boolean m1306processKeyDownEventZcWbMB8 = m1306processKeyDownEventZcWbMB8(keyEvent, transformedTextFieldState, textLayoutState, function1, z, z2, function0);
-            if (m1306processKeyDownEventZcWbMB8) {
+        } else if (!KeyEventType.m5675equalsimpl0(KeyEvent_androidKt.m5683getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5681getUnknownCS__XNY()) || TextFieldKeyInput_androidKt.m1365isTypedEventZmokQxo(keyEvent)) {
+            boolean m1560processKeyDownEventq0GpTC0 = m1560processKeyDownEventq0GpTC0(keyEvent, transformedTextFieldState, textLayoutState, function1, softwareKeyboardController, z, z2, function0);
+            if (m1560processKeyDownEventq0GpTC0) {
                 MutableLongSet mutableLongSet3 = this.currentlyConsumedDownKeys;
                 if (mutableLongSet3 == null) {
                     mutableLongSet3 = new MutableLongSet(3);
                     this.currentlyConsumedDownKeys = mutableLongSet3;
                 }
-                mutableLongSet3.plusAssign(m5169getKeyZmokQxo);
+                mutableLongSet3.plusAssign(m5682getKeyZmokQxo);
             }
-            return m1306processKeyDownEventZcWbMB8;
+            return m1560processKeyDownEventq0GpTC0;
         } else {
             return false;
         }
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* renamed from: processKeyDownEvent-ZcWbMB8  reason: not valid java name */
-    private final boolean m1306processKeyDownEventZcWbMB8(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, Function1<? super KeyCommand, ? extends Unit> function1, boolean z, boolean z2, Function0<Unit> function0) {
+    /* renamed from: processKeyDownEvent-q0GpTC0  reason: not valid java name */
+    private final boolean m1560processKeyDownEventq0GpTC0(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, Function1<? super KeyCommand, ? extends Unit> function1, SoftwareKeyboardController softwareKeyboardController, boolean z, boolean z2, Function0<Boolean> function0) {
         WedgeAffinity wedgeAffinity;
-        Integer m1064consumeZmokQxo;
+        Integer m1255consumeZmokQxo;
         boolean z3 = false;
-        if (TextFieldKeyInput_androidKt.m1167isTypedEventZmokQxo(keyEvent) && (m1064consumeZmokQxo = this.deadKeyCombiner.m1064consumeZmokQxo(keyEvent)) != null) {
-            String sb = StringHelpers_jvmKt.appendCodePointX(new StringBuilder(2), m1064consumeZmokQxo.intValue()).toString();
+        if (TextFieldKeyInput_androidKt.m1365isTypedEventZmokQxo(keyEvent) && (m1255consumeZmokQxo = this.deadKeyCombiner.m1255consumeZmokQxo(keyEvent)) != null) {
+            String sb = StringHelpers_jvmKt.appendCodePointX(new StringBuilder(2), m1255consumeZmokQxo.intValue()).toString();
             if (z) {
-                TransformedTextFieldState.replaceSelectedText$default(transformedTextFieldState, sb, true, null, !TextFieldKeyEventHandler_androidKt.m1308isFromSoftKeyboardZmokQxo(keyEvent), 4, null);
+                TransformedTextFieldState.replaceSelectedText$default(transformedTextFieldState, sb, true, null, !TextFieldKeyEventHandler_androidKt.m1562isFromSoftKeyboardZmokQxo(keyEvent), 4, null);
                 this.preparedSelectionState.resetCachedX();
                 return true;
             }
             return false;
         }
-        KeyCommand mo1066mapZmokQxo = this.keyMapping.mo1066mapZmokQxo(keyEvent);
-        if (mo1066mapZmokQxo != null && (!mo1066mapZmokQxo.getEditsText() || z)) {
-            TextFieldPreparedSelection textFieldPreparedSelection = new TextFieldPreparedSelection(transformedTextFieldState, textLayoutState.getLayoutResult(), TextFieldKeyEventHandler_androidKt.m1308isFromSoftKeyboardZmokQxo(keyEvent), getVisibleTextLayoutHeight(textLayoutState), this.preparedSelectionState);
-            switch (WhenMappings.$EnumSwitchMapping$0[mo1066mapZmokQxo.ordinal()]) {
+        KeyCommand mo1258mapZmokQxo = this.keyMapping.mo1258mapZmokQxo(keyEvent);
+        if (mo1258mapZmokQxo != null && (!mo1258mapZmokQxo.getEditsText() || z)) {
+            SelectionMovementDeletionContext selectionMovementDeletionContext = new SelectionMovementDeletionContext(transformedTextFieldState, textLayoutState.getLayoutResult(), TextFieldKeyEventHandler_androidKt.m1562isFromSoftKeyboardZmokQxo(keyEvent), getVisibleTextLayoutHeight(textLayoutState), this.preparedSelectionState);
+            switch (WhenMappings.$EnumSwitchMapping$0[mo1258mapZmokQxo.ordinal()]) {
                 case 1:
                 case 2:
                 case 3:
-                    function1.invoke(mo1066mapZmokQxo);
+                    function1.invoke(mo1258mapZmokQxo);
+                    Unit unit = Unit.INSTANCE;
                     z3 = true;
                     break;
                 case 4:
-                    textFieldPreparedSelection.collapseLeftOr(new Function1<TextFieldPreparedSelection, Unit>() { // from class: androidx.compose.foundation.text.input.internal.TextFieldKeyEventHandler$processKeyDownEvent$1$1
+                    selectionMovementDeletionContext.collapseLeftOr(new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldKeyEventHandler$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(TextFieldPreparedSelection textFieldPreparedSelection2) {
-                            invoke2(textFieldPreparedSelection2);
-                            return Unit.INSTANCE;
-                        }
-
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(TextFieldPreparedSelection textFieldPreparedSelection2) {
-                            textFieldPreparedSelection2.moveCursorLeftByChar();
+                        public final Object invoke(Object obj) {
+                            Unit processKeyDownEvent_q0GpTC0$lambda$4$lambda$1;
+                            processKeyDownEvent_q0GpTC0$lambda$4$lambda$1 = TextFieldKeyEventHandler.processKeyDownEvent_q0GpTC0$lambda$4$lambda$1((SelectionMovementDeletionContext) obj);
+                            return processKeyDownEvent_q0GpTC0$lambda$4$lambda$1;
                         }
                     });
                     z3 = true;
                     break;
                 case 5:
-                    textFieldPreparedSelection.collapseRightOr(new Function1<TextFieldPreparedSelection, Unit>() { // from class: androidx.compose.foundation.text.input.internal.TextFieldKeyEventHandler$processKeyDownEvent$1$2
+                    selectionMovementDeletionContext.collapseRightOr(new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldKeyEventHandler$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function1
-                        public /* bridge */ /* synthetic */ Unit invoke(TextFieldPreparedSelection textFieldPreparedSelection2) {
-                            invoke2(textFieldPreparedSelection2);
-                            return Unit.INSTANCE;
-                        }
-
-                        /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                        public final void invoke2(TextFieldPreparedSelection textFieldPreparedSelection2) {
-                            textFieldPreparedSelection2.moveCursorRightByChar();
+                        public final Object invoke(Object obj) {
+                            Unit processKeyDownEvent_q0GpTC0$lambda$4$lambda$2;
+                            processKeyDownEvent_q0GpTC0$lambda$4$lambda$2 = TextFieldKeyEventHandler.processKeyDownEvent_q0GpTC0$lambda$4$lambda$2((SelectionMovementDeletionContext) obj);
+                            return processKeyDownEvent_q0GpTC0$lambda$4$lambda$2;
                         }
                     });
                     z3 = true;
                     break;
                 case 6:
-                    textFieldPreparedSelection.moveCursorLeftByWord();
+                    selectionMovementDeletionContext.moveCursorLeftByWord();
                     z3 = true;
                     break;
                 case 7:
-                    textFieldPreparedSelection.moveCursorRightByWord();
+                    selectionMovementDeletionContext.moveCursorRightByWord();
                     z3 = true;
                     break;
                 case 8:
-                    textFieldPreparedSelection.moveCursorPrevByParagraph();
+                    selectionMovementDeletionContext.moveCursorPrevByParagraph();
                     z3 = true;
                     break;
                 case 9:
-                    textFieldPreparedSelection.moveCursorNextByParagraph();
+                    selectionMovementDeletionContext.moveCursorNextByParagraph();
                     z3 = true;
                     break;
                 case 10:
-                    textFieldPreparedSelection.moveCursorUpByLine();
+                    selectionMovementDeletionContext.moveCursorUpByLine();
                     z3 = true;
                     break;
                 case 11:
-                    textFieldPreparedSelection.moveCursorDownByLine();
+                    selectionMovementDeletionContext.moveCursorDownByLine();
                     z3 = true;
                     break;
                 case 12:
-                    textFieldPreparedSelection.moveCursorUpByPage();
+                    selectionMovementDeletionContext.moveCursorUpByPage();
                     z3 = true;
                     break;
                 case 13:
-                    textFieldPreparedSelection.moveCursorDownByPage();
+                    selectionMovementDeletionContext.moveCursorDownByPage();
                     z3 = true;
                     break;
                 case 14:
-                    textFieldPreparedSelection.moveCursorToLineStart();
+                    selectionMovementDeletionContext.moveCursorToLineStart();
                     z3 = true;
                     break;
                 case 15:
-                    textFieldPreparedSelection.moveCursorToLineEnd();
+                    selectionMovementDeletionContext.moveCursorToLineEnd();
                     z3 = true;
                     break;
                 case 16:
-                    textFieldPreparedSelection.moveCursorToLineLeftSide();
+                    selectionMovementDeletionContext.moveCursorToLineLeftSide();
                     z3 = true;
                     break;
                 case 17:
-                    textFieldPreparedSelection.moveCursorToLineRightSide();
+                    selectionMovementDeletionContext.moveCursorToLineRightSide();
                     z3 = true;
                     break;
                 case 18:
-                    textFieldPreparedSelection.moveCursorToHome();
+                    selectionMovementDeletionContext.moveCursorToHome();
                     z3 = true;
                     break;
                 case 19:
-                    textFieldPreparedSelection.moveCursorToEnd();
+                    selectionMovementDeletionContext.moveCursorToEnd();
                     z3 = true;
                     break;
                 case 20:
-                    textFieldPreparedSelection.moveCursorPrevByChar().deleteMovement();
+                    selectionMovementDeletionContext.moveCursorPrevByCodePointOrEmoji().deleteMovement();
                     z3 = true;
                     break;
                 case 21:
-                    textFieldPreparedSelection.moveCursorNextByChar().deleteMovement();
+                    selectionMovementDeletionContext.moveCursorNextByChar().deleteMovement();
                     z3 = true;
                     break;
                 case 22:
-                    textFieldPreparedSelection.moveCursorPrevByWord().deleteMovement();
+                    selectionMovementDeletionContext.moveCursorPrevByWord().deleteMovement();
                     z3 = true;
                     break;
                 case 23:
-                    textFieldPreparedSelection.moveCursorNextByWord().deleteMovement();
+                    selectionMovementDeletionContext.moveCursorNextByWord().deleteMovement();
                     z3 = true;
                     break;
                 case 24:
-                    textFieldPreparedSelection.moveCursorToLineStart().deleteMovement();
+                    selectionMovementDeletionContext.moveCursorToLineStart().deleteMovement();
                     z3 = true;
                     break;
                 case 25:
-                    textFieldPreparedSelection.moveCursorToLineEnd().deleteMovement();
+                    selectionMovementDeletionContext.moveCursorToLineEnd().deleteMovement();
                     z3 = true;
                     break;
                 case 26:
                     if (!z2) {
-                        TransformedTextFieldState.replaceSelectedText$default(transformedTextFieldState, "\n", true, null, !TextFieldKeyEventHandler_androidKt.m1308isFromSoftKeyboardZmokQxo(keyEvent), 4, null);
+                        TransformedTextFieldState.replaceSelectedText$default(transformedTextFieldState, "\n", true, null, !TextFieldKeyEventHandler_androidKt.m1562isFromSoftKeyboardZmokQxo(keyEvent), 4, null);
+                        z3 = true;
                     } else {
-                        function0.invoke();
+                        z3 = function0.invoke().booleanValue();
                     }
-                    z3 = true;
+                    Unit unit2 = Unit.INSTANCE;
                     break;
                 case 27:
                     if (!z2) {
-                        TransformedTextFieldState.replaceSelectedText$default(transformedTextFieldState, "\t", true, null, !TextFieldKeyEventHandler_androidKt.m1308isFromSoftKeyboardZmokQxo(keyEvent), 4, null);
+                        TransformedTextFieldState.replaceSelectedText$default(transformedTextFieldState, "\t", true, null, !TextFieldKeyEventHandler_androidKt.m1562isFromSoftKeyboardZmokQxo(keyEvent), 4, null);
                         z3 = true;
-                        break;
                     }
+                    Unit unit3 = Unit.INSTANCE;
                     break;
                 case 28:
-                    textFieldPreparedSelection.selectAll();
+                    selectionMovementDeletionContext.selectAll();
                     z3 = true;
                     break;
                 case 29:
-                    textFieldPreparedSelection.moveCursorLeftByChar().selectMovement();
+                    selectionMovementDeletionContext.moveCursorLeftByChar().selectMovement();
                     z3 = true;
                     break;
                 case 30:
-                    textFieldPreparedSelection.moveCursorRightByChar().selectMovement();
+                    selectionMovementDeletionContext.moveCursorRightByChar().selectMovement();
                     z3 = true;
                     break;
                 case 31:
-                    textFieldPreparedSelection.moveCursorLeftByWord().selectMovement();
+                    selectionMovementDeletionContext.moveCursorLeftByWord().selectMovement();
                     z3 = true;
                     break;
                 case 32:
-                    textFieldPreparedSelection.moveCursorRightByWord().selectMovement();
+                    selectionMovementDeletionContext.moveCursorRightByWord().selectMovement();
                     z3 = true;
                     break;
                 case 33:
-                    textFieldPreparedSelection.moveCursorPrevByParagraph().selectMovement();
+                    selectionMovementDeletionContext.moveCursorPrevByParagraph().selectMovement();
                     z3 = true;
                     break;
                 case 34:
-                    textFieldPreparedSelection.moveCursorNextByParagraph().selectMovement();
+                    selectionMovementDeletionContext.moveCursorNextByParagraph().selectMovement();
                     z3 = true;
                     break;
                 case 35:
-                    textFieldPreparedSelection.moveCursorToLineStart().selectMovement();
+                    selectionMovementDeletionContext.moveCursorToLineStart().selectMovement();
                     z3 = true;
                     break;
                 case 36:
-                    textFieldPreparedSelection.moveCursorToLineEnd().selectMovement();
+                    selectionMovementDeletionContext.moveCursorToLineEnd().selectMovement();
                     z3 = true;
                     break;
                 case 37:
-                    textFieldPreparedSelection.moveCursorToLineLeftSide().selectMovement();
+                    selectionMovementDeletionContext.moveCursorToLineLeftSide().selectMovement();
                     z3 = true;
                     break;
                 case 38:
-                    textFieldPreparedSelection.moveCursorToLineRightSide().selectMovement();
+                    selectionMovementDeletionContext.moveCursorToLineRightSide().selectMovement();
                     z3 = true;
                     break;
                 case 39:
-                    textFieldPreparedSelection.moveCursorUpByLine().selectMovement();
+                    selectionMovementDeletionContext.moveCursorUpByLine().selectMovement();
                     z3 = true;
                     break;
                 case 40:
-                    textFieldPreparedSelection.moveCursorDownByLine().selectMovement();
+                    selectionMovementDeletionContext.moveCursorDownByLine().selectMovement();
                     z3 = true;
                     break;
                 case 41:
-                    textFieldPreparedSelection.moveCursorUpByPage().selectMovement();
+                    selectionMovementDeletionContext.moveCursorUpByPage().selectMovement();
                     z3 = true;
                     break;
                 case 42:
-                    textFieldPreparedSelection.moveCursorDownByPage().selectMovement();
+                    selectionMovementDeletionContext.moveCursorDownByPage().selectMovement();
                     z3 = true;
                     break;
                 case 43:
-                    textFieldPreparedSelection.moveCursorToHome().selectMovement();
+                    selectionMovementDeletionContext.moveCursorToHome().selectMovement();
                     z3 = true;
                     break;
                 case 44:
-                    textFieldPreparedSelection.moveCursorToEnd().selectMovement();
+                    selectionMovementDeletionContext.moveCursorToEnd().selectMovement();
                     z3 = true;
                     break;
                 case 45:
-                    textFieldPreparedSelection.deselect();
+                    selectionMovementDeletionContext.deselect();
                     z3 = true;
                     break;
                 case 46:
                     transformedTextFieldState.undo();
+                    Unit unit4 = Unit.INSTANCE;
                     z3 = true;
                     break;
                 case 47:
                     transformedTextFieldState.redo();
+                    Unit unit5 = Unit.INSTANCE;
                     z3 = true;
                     break;
                 case 48:
                     KeyEventHelpers_androidKt.showCharacterPalette();
+                    Unit unit6 = Unit.INSTANCE;
                     z3 = true;
+                    break;
+                case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+                    if (ComposeFoundationFlags.isTextFieldDpadNavigationEnabled) {
+                        softwareKeyboardController.show();
+                        z3 = true;
+                    }
+                    Unit unit7 = Unit.INSTANCE;
                     break;
                 default:
-                    z3 = true;
-                    break;
+                    throw new NoWhenBranchMatchedException();
             }
-            if (!TextRange.m6140equalsimpl0(textFieldPreparedSelection.m1370getSelectiond9O1mEE(), textFieldPreparedSelection.getInitialValue().m1203getSelectiond9O1mEE())) {
-                transformedTextFieldState.m1336selectCharsIn5zctL8(textFieldPreparedSelection.m1370getSelectiond9O1mEE());
+            if (ComposeFoundationFlags.isTextFieldDpadNavigationEnabled && (mo1258mapZmokQxo == KeyCommand.UP || mo1258mapZmokQxo == KeyCommand.DOWN || mo1258mapZmokQxo == KeyCommand.LEFT_CHAR || mo1258mapZmokQxo == KeyCommand.RIGHT_CHAR)) {
+                z3 = !TextRange.m6706equalsimpl0(selectionMovementDeletionContext.getInitialValue().m1436getSelectiond9O1mEE(), selectionMovementDeletionContext.m1613getSelectiond9O1mEE());
             }
-            if (textFieldPreparedSelection.getWedgeAffinity() != null && (wedgeAffinity = textFieldPreparedSelection.getWedgeAffinity()) != null) {
-                if (TextRange.m6141getCollapsedimpl(transformedTextFieldState.getUntransformedText().m1203getSelectiond9O1mEE())) {
+            if (!TextRange.m6706equalsimpl0(selectionMovementDeletionContext.m1613getSelectiond9O1mEE(), selectionMovementDeletionContext.getInitialValue().m1436getSelectiond9O1mEE())) {
+                transformedTextFieldState.m1593selectCharsIn5zctL8(selectionMovementDeletionContext.m1613getSelectiond9O1mEE());
+            }
+            if (selectionMovementDeletionContext.getWedgeAffinity() != null && (wedgeAffinity = selectionMovementDeletionContext.getWedgeAffinity()) != null) {
+                if (TextRange.m6707getCollapsedimpl(transformedTextFieldState.getUntransformedText().m1436getSelectiond9O1mEE())) {
                     transformedTextFieldState.setSelectionWedgeAffinity(new SelectionWedgeAffinity(wedgeAffinity));
                     return z3;
                 }
-                transformedTextFieldState.setSelectionWedgeAffinity(SelectionWedgeAffinity.copy$default(textFieldPreparedSelection.getInitialWedgeAffinity(), null, wedgeAffinity, 1, null));
+                transformedTextFieldState.setSelectionWedgeAffinity(SelectionWedgeAffinity.copy$default(selectionMovementDeletionContext.getInitialWedgeAffinity(), null, wedgeAffinity, 1, null));
             }
         }
         return z3;
     }
 
-    private final void preparedSelectionContext(TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, boolean z, Function1<? super TextFieldPreparedSelection, Unit> function1) {
-        WedgeAffinity wedgeAffinity;
-        TextFieldPreparedSelection textFieldPreparedSelection = new TextFieldPreparedSelection(transformedTextFieldState, textLayoutState.getLayoutResult(), z, getVisibleTextLayoutHeight(textLayoutState), this.preparedSelectionState);
-        function1.invoke(textFieldPreparedSelection);
-        if (!TextRange.m6140equalsimpl0(textFieldPreparedSelection.m1370getSelectiond9O1mEE(), textFieldPreparedSelection.getInitialValue().m1203getSelectiond9O1mEE())) {
-            transformedTextFieldState.m1336selectCharsIn5zctL8(textFieldPreparedSelection.m1370getSelectiond9O1mEE());
-        }
-        if (textFieldPreparedSelection.getWedgeAffinity() == null || (wedgeAffinity = textFieldPreparedSelection.getWedgeAffinity()) == null) {
-            return;
-        }
-        if (TextRange.m6141getCollapsedimpl(transformedTextFieldState.getUntransformedText().m1203getSelectiond9O1mEE())) {
-            transformedTextFieldState.setSelectionWedgeAffinity(new SelectionWedgeAffinity(wedgeAffinity));
-        } else {
-            transformedTextFieldState.setSelectionWedgeAffinity(SelectionWedgeAffinity.copy$default(textFieldPreparedSelection.getInitialWedgeAffinity(), null, wedgeAffinity, 1, null));
-        }
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit processKeyDownEvent_q0GpTC0$lambda$4$lambda$1(SelectionMovementDeletionContext selectionMovementDeletionContext) {
+        selectionMovementDeletionContext.moveCursorLeftByChar();
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit processKeyDownEvent_q0GpTC0$lambda$4$lambda$2(SelectionMovementDeletionContext selectionMovementDeletionContext) {
+        selectionMovementDeletionContext.moveCursorRightByChar();
+        return Unit.INSTANCE;
     }
 
     private final float getVisibleTextLayoutHeight(TextLayoutState textLayoutState) {
@@ -564,7 +570,7 @@ public abstract class TextFieldKeyEventHandler {
                     }
                 }
                 if (rect != null) {
-                    return Float.intBitsToFloat((int) (rect.m3870getSizeNHjbRc() & 4294967295L));
+                    return Float.intBitsToFloat((int) (rect.m4326getSizeNHjbRc() & 4294967295L));
                 }
                 return Float.NaN;
             }

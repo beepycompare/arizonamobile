@@ -61,10 +61,10 @@ import kotlin.text.StringsKt;
 /* loaded from: classes.dex */
 public final class DateInputKt {
     private static final PaddingValues InputTextFieldPadding;
-    private static final float InputTextNonErroneousBottomPadding = Dp.m6684constructorimpl(16);
+    private static final float InputTextNonErroneousBottomPadding = Dp.m7251constructorimpl(16);
 
     /* JADX WARN: Type inference failed for: r0v3 */
-    /* JADX WARN: Type inference failed for: r0v4, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r0v4, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r0v9 */
     public static final void DateInputContent(final Long l, final Function1<? super Long, Unit> function1, final CalendarModel calendarModel, final IntRange intRange, final DatePickerFormatter datePickerFormatter, final SelectableDates selectableDates, final DatePickerColors datePickerColors, Composer composer, final int i) {
         int i2;
@@ -118,11 +118,11 @@ public final class DateInputKt {
             DateInputFormat dateInputFormat2 = (DateInputFormat) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Strings.Companion companion = Strings.Companion;
-            String m2779getString2EP1pXo = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_input_invalid_for_pattern), startRestartGroup, 0);
+            String m3086getString2EP1pXo = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_input_invalid_for_pattern), startRestartGroup, 0);
             Strings.Companion companion2 = Strings.Companion;
-            String m2779getString2EP1pXo2 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_input_invalid_year_range), startRestartGroup, 0);
+            String m3086getString2EP1pXo2 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_input_invalid_year_range), startRestartGroup, 0);
             Strings.Companion companion3 = Strings.Companion;
-            String m2779getString2EP1pXo3 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_input_invalid_not_allowed), startRestartGroup, 0);
+            String m3086getString2EP1pXo3 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_input_invalid_not_allowed), startRestartGroup, 0);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1825166599, "CC(remember):DateInput.kt#9igjgp");
             boolean changed2 = startRestartGroup.changed(dateInputFormat2) | ((57344 & i2) == 16384 || ((i2 & 32768) != 0 && startRestartGroup.changed(datePickerFormatter)));
             Object rememberedValue2 = startRestartGroup.rememberedValue();
@@ -133,7 +133,7 @@ public final class DateInputKt {
                 IntRange intRange2 = obj;
                 dateInputFormat = dateInputFormat2;
                 r0 = 1;
-                DateInputValidator dateInputValidator = new DateInputValidator(intRange2, selectableDates, dateInputFormat, datePickerFormatter, m2779getString2EP1pXo, m2779getString2EP1pXo2, m2779getString2EP1pXo3, "", null, null, ViewUtils.EDGE_TO_EDGE_FLAGS, null);
+                DateInputValidator dateInputValidator = new DateInputValidator(intRange2, selectableDates, dateInputFormat, datePickerFormatter, m3086getString2EP1pXo, m3086getString2EP1pXo2, m3086getString2EP1pXo3, "", null, null, ViewUtils.EDGE_TO_EDGE_FLAGS, null);
                 composer2.updateRememberedValue(dateInputValidator);
                 rememberedValue2 = dateInputValidator;
             } else {
@@ -148,13 +148,13 @@ public final class DateInputKt {
             final String upperCase = dateInputFormat.getPatternWithDelimiters().toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
             Strings.Companion companion4 = Strings.Companion;
-            final String m2779getString2EP1pXo4 = Strings_androidKt.m2779getString2EP1pXo(Strings.m2709constructorimpl(R.string.m3c_date_input_label), composer2, 0);
+            final String m3086getString2EP1pXo4 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_input_label), composer2, 0);
             Modifier padding = PaddingKt.padding(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, r0, null), InputTextFieldPadding);
-            int m1979getSingleDateInputJ2x2o4M = InputIdentifier.Companion.m1979getSingleDateInputJ2x2o4M();
+            int m2286getSingleDateInputJ2x2o4M = InputIdentifier.Companion.m2286getSingleDateInputJ2x2o4M();
             dateInputValidator2.setCurrentStartDateMillis$material3_release(l);
             int i4 = i3 << 3;
             Composer composer4 = composer2;
-            m1796DateInputTextFieldtQNruF0(padding, l, function1, calendarModel, ComposableLambdaKt.rememberComposableLambda(-1819015125, r0, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateInputKt$DateInputContent$2
+            m2103DateInputTextFieldtQNruF0(padding, l, function1, calendarModel, ComposableLambdaKt.rememberComposableLambda(-1819015125, r0, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateInputKt$DateInputContent$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -173,11 +173,11 @@ public final class DateInputKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1819015125, i5, -1, "androidx.compose.material3.DateInputContent.<anonymous> (DateInput.kt:87)");
                         }
-                        String str = m2779getString2EP1pXo4;
+                        String str = m3086getString2EP1pXo4;
                         Modifier.Companion companion5 = Modifier.Companion;
                         ComposerKt.sourceInformationMarkerStart(composer5, -49706674, "CC(remember):DateInput.kt#9igjgp");
-                        boolean changed3 = composer5.changed(m2779getString2EP1pXo4) | composer5.changed(upperCase);
-                        final String str2 = m2779getString2EP1pXo4;
+                        boolean changed3 = composer5.changed(m3086getString2EP1pXo4) | composer5.changed(upperCase);
+                        final String str2 = m3086getString2EP1pXo4;
                         final String str3 = upperCase;
                         Object rememberedValue3 = composer5.rememberedValue();
                         if (changed3 || rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -202,7 +202,7 @@ public final class DateInputKt {
                             composer5.updateRememberedValue(rememberedValue3);
                         }
                         ComposerKt.sourceInformationMarkerEnd(composer5);
-                        TextKt.m2497Text4IGK_g(str, SemanticsModifierKt.semantics$default(companion5, false, (Function1) rememberedValue3, 1, null), 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer5, 0, 0, 131068);
+                        TextKt.m2804Text4IGK_g(str, SemanticsModifierKt.semantics$default(companion5, false, (Function1) rememberedValue3, 1, null), 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer5, 0, 0, 131068);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                             return;
@@ -233,7 +233,7 @@ public final class DateInputKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-564233108, i5, -1, "androidx.compose.material3.DateInputContent.<anonymous> (DateInput.kt:92)");
                     }
-                    TextKt.m2497Text4IGK_g(upperCase, SemanticsModifierKt.clearAndSetSemantics(Modifier.Companion, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.DateInputKt$DateInputContent$3.1
+                    TextKt.m2804Text4IGK_g(upperCase, SemanticsModifierKt.clearAndSetSemantics(Modifier.Companion, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.DateInputKt$DateInputContent$3.1
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                         }
@@ -248,7 +248,7 @@ public final class DateInputKt {
                         ComposerKt.traceEventEnd();
                     }
                 }
-            }, composer2, 54), m1979getSingleDateInputJ2x2o4M, dateInputValidator2, dateInputFormat, locale, datePickerColors, composer4, (i4 & 112) | 1794054 | (i4 & 896) | (i4 & 7168), (i3 >> 18) & 14);
+            }, composer2, 54), m2286getSingleDateInputJ2x2o4M, dateInputValidator2, dateInputFormat, locale, datePickerColors, composer4, (i4 & 112) | 1794054 | (i4 & 896) | (i4 & 7168), (i3 >> 18) & 14);
             composer3 = composer4;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -281,7 +281,7 @@ public final class DateInputKt {
     }
 
     /* renamed from: DateInputTextField-tQNruF0  reason: not valid java name */
-    public static final void m1796DateInputTextFieldtQNruF0(final Modifier modifier, final Long l, final Function1<? super Long, Unit> function1, final CalendarModel calendarModel, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, final int i, final DateInputValidator dateInputValidator, DateInputFormat dateInputFormat, final Locale locale, final DatePickerColors datePickerColors, Composer composer, final int i2, final int i3) {
+    public static final void m2103DateInputTextFieldtQNruF0(final Modifier modifier, final Long l, final Function1<? super Long, Unit> function1, final CalendarModel calendarModel, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, final int i, final DateInputValidator dateInputValidator, DateInputFormat dateInputFormat, final Locale locale, final DatePickerColors datePickerColors, Composer composer, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -336,7 +336,7 @@ public final class DateInputKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-857008589, i4, i5, "androidx.compose.material3.DateInputTextField (DateInput.kt:121)");
             }
-            MutableState mutableState2 = (MutableState) RememberSaveableKt.m3635rememberSaveable(new Object[0], (Saver<Object, ? extends Object>) null, (String) null, (Function0<? extends Object>) new Function0<MutableState<String>>() { // from class: androidx.compose.material3.DateInputKt$DateInputTextField$errorText$1
+            MutableState mutableState2 = (MutableState) RememberSaveableKt.m3982rememberSaveable(new Object[0], (Saver<Object, ? extends Object>) null, (String) null, (Function0<? extends Object>) new Function0<MutableState<String>>() { // from class: androidx.compose.material3.DateInputKt$DateInputTextField$errorText$1
                 /* JADX WARN: Can't rename method to resolve collision */
                 @Override // kotlin.jvm.functions.Function0
                 public final MutableState<String> invoke() {
@@ -425,7 +425,7 @@ public final class DateInputKt {
                                 return;
                             }
                             CalendarDate parse = calendarModel.parse(obj3, DateInputFormat.this.getPatternWithoutDelimiters());
-                            mutableState.setValue(dateInputValidator.m1797validateXivgLIo(parse, i, locale));
+                            mutableState.setValue(dateInputValidator.m2104validateXivgLIo(parse, i, locale));
                             Function1<Long, Unit> function13 = function12;
                             if (mutableState.getValue().length() == 0 && parse != null) {
                                 l2 = Long.valueOf(parse.getUtcTimeMillis());
@@ -446,9 +446,9 @@ public final class DateInputKt {
             if (StringsKt.isBlank((CharSequence) mutableState.getValue())) {
                 f = InputTextNonErroneousBottomPadding;
             } else {
-                f = Dp.m6684constructorimpl(0);
+                f = Dp.m7251constructorimpl(0);
             }
-            Modifier m742paddingqDBjuR0$default = PaddingKt.m742paddingqDBjuR0$default(modifier, 0.0f, 0.0f, 0.0f, f, 7, null);
+            Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(modifier, 0.0f, 0.0f, 0.0f, f, 7, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 236499728, "CC(remember):DateInput.kt#9igjgp");
             boolean changed2 = startRestartGroup.changed(mutableState);
             Object rememberedValue3 = startRestartGroup.rememberedValue();
@@ -478,7 +478,7 @@ public final class DateInputKt {
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             composer2 = startRestartGroup;
-            OutlinedTextFieldKt.OutlinedTextField(DateInputTextField_tQNruF0$lambda$4, (Function1<? super TextFieldValue, Unit>) function13, SemanticsModifierKt.semantics$default(m742paddingqDBjuR0$default, false, (Function1) rememberedValue3, 1, null), false, false, (TextStyle) null, function2, function22, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) ComposableLambdaKt.rememberComposableLambda(-591991974, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateInputKt$DateInputTextField$3
+            OutlinedTextFieldKt.OutlinedTextField(DateInputTextField_tQNruF0$lambda$4, (Function1<? super TextFieldValue, Unit>) function13, SemanticsModifierKt.semantics$default(m836paddingqDBjuR0$default, false, (Function1) rememberedValue3, 1, null), false, false, (TextStyle) null, function2, function22, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) ComposableLambdaKt.rememberComposableLambda(-591991974, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateInputKt$DateInputTextField$3
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -501,13 +501,13 @@ public final class DateInputKt {
                         ComposerKt.traceEventStart(-591991974, i8, -1, "androidx.compose.material3.DateInputTextField.<anonymous> (DateInput.kt:191)");
                     }
                     if (!StringsKt.isBlank(mutableState.getValue())) {
-                        TextKt.m2497Text4IGK_g(mutableState.getValue(), (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer3, 0, 0, 131070);
+                        TextKt.m2804Text4IGK_g(mutableState.getValue(), (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer3, 0, 0, 131070);
                     }
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
                 }
-            }, startRestartGroup, 54), !StringsKt.isBlank((CharSequence) mutableState.getValue()), (VisualTransformation) new DateVisualTransformation(dateInputFormat2), new KeyboardOptions(0, (Boolean) false, KeyboardType.Companion.m6384getNumberPjHm6EE(), ImeAction.Companion.m6328getDoneeUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 113, (DefaultConstructorMarker) null), (KeyboardActions) null, true, 0, 0, (MutableInteractionSource) null, (Shape) null, datePickerColors.getDateTextFieldColors(), composer2, (i6 << 6) & 33030144, 12779904, 0, 4001592);
+            }, startRestartGroup, 54), !StringsKt.isBlank((CharSequence) mutableState.getValue()), (VisualTransformation) new DateVisualTransformation(dateInputFormat2), new KeyboardOptions(0, (Boolean) false, KeyboardType.Companion.m6952getNumberPjHm6EE(), ImeAction.Companion.m6896getDoneeUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 113, (DefaultConstructorMarker) null), (KeyboardActions) null, true, 0, 0, (MutableInteractionSource) null, (Shape) null, datePickerColors.getDateTextFieldColors(), composer2, (i6 << 6) & 33030144, 12779904, 0, 4001592);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -532,7 +532,7 @@ public final class DateInputKt {
                 }
 
                 public final void invoke(Composer composer3, int i8) {
-                    DateInputKt.m1796DateInputTextFieldtQNruF0(Modifier.this, l, function1, calendarModel, function2, function22, i, dateInputValidator, dateInputFormat2, locale, datePickerColors, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3));
+                    DateInputKt.m2103DateInputTextFieldtQNruF0(Modifier.this, l, function1, calendarModel, function2, function22, i, dateInputValidator, dateInputFormat2, locale, datePickerColors, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3));
                 }
             });
         }
@@ -548,6 +548,6 @@ public final class DateInputKt {
 
     static {
         float f = 24;
-        InputTextFieldPadding = PaddingKt.m735PaddingValuesa9UjIt4$default(Dp.m6684constructorimpl(f), Dp.m6684constructorimpl(10), Dp.m6684constructorimpl(f), 0.0f, 8, null);
+        InputTextFieldPadding = PaddingKt.m829PaddingValuesa9UjIt4$default(Dp.m7251constructorimpl(f), Dp.m7251constructorimpl(10), Dp.m7251constructorimpl(f), 0.0f, 8, null);
     }
 }

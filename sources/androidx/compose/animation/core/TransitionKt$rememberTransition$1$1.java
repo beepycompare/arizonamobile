@@ -1,6 +1,5 @@
 package androidx.compose.animation.core;
 
-import androidx.exifinterface.media.ExifInterface;
 import kotlin.Metadata;
 import kotlin.Result;
 import kotlin.ResultKt;
@@ -15,8 +14,8 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.sync.Mutex;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Transition.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.animation.core.TransitionKt$rememberTransition$1$1", f = "Transition.kt", i = {0}, l = {2147}, m = "invokeSuspend", n = {"$this$withLock_u24default$iv"}, s = {"L$0"})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.animation.core.TransitionKt$rememberTransition$1$1", f = "Transition.kt", i = {0}, l = {2173}, m = "invokeSuspend", n = {"$this$withLock_u24default$iv"}, s = {"L$0"})
 /* loaded from: classes.dex */
 public final class TransitionKt$rememberTransition$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ TransitionState<T> $transitionState;
@@ -43,19 +42,19 @@ public final class TransitionKt$rememberTransition$1$1 extends SuspendLambda imp
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Mutex compositionContinuationMutex$animation_core_release;
+        Mutex compositionContinuationMutex$animation_core;
         TransitionState transitionState;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            ((SeekableTransitionState) this.$transitionState).observeTotalDuration$animation_core_release();
-            compositionContinuationMutex$animation_core_release = ((SeekableTransitionState) this.$transitionState).getCompositionContinuationMutex$animation_core_release();
+            ((SeekableTransitionState) this.$transitionState).observeTotalDuration$animation_core();
+            compositionContinuationMutex$animation_core = ((SeekableTransitionState) this.$transitionState).getCompositionContinuationMutex$animation_core();
             TransitionState transitionState2 = this.$transitionState;
-            this.L$0 = compositionContinuationMutex$animation_core_release;
+            this.L$0 = compositionContinuationMutex$animation_core;
             this.L$1 = transitionState2;
             this.label = 1;
-            if (compositionContinuationMutex$animation_core_release.lock(null, this) == coroutine_suspended) {
+            if (compositionContinuationMutex$animation_core.lock(null, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
             transitionState = transitionState2;
@@ -63,22 +62,22 @@ public final class TransitionKt$rememberTransition$1$1 extends SuspendLambda imp
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             transitionState = (TransitionState) this.L$1;
-            compositionContinuationMutex$animation_core_release = (Mutex) this.L$0;
+            compositionContinuationMutex$animation_core = (Mutex) this.L$0;
             ResultKt.throwOnFailure(obj);
         }
         try {
-            ((SeekableTransitionState) transitionState).setComposedTargetState$animation_core_release(transitionState.getTargetState());
-            CancellableContinuation compositionContinuation$animation_core_release = ((SeekableTransitionState) transitionState).getCompositionContinuation$animation_core_release();
-            if (compositionContinuation$animation_core_release != null) {
+            ((SeekableTransitionState) transitionState).setComposedTargetState$animation_core(((SeekableTransitionState) transitionState).getTargetState());
+            CancellableContinuation compositionContinuation$animation_core = ((SeekableTransitionState) transitionState).getCompositionContinuation$animation_core();
+            if (compositionContinuation$animation_core != null) {
                 Result.Companion companion = Result.Companion;
-                compositionContinuation$animation_core_release.resumeWith(Result.m8500constructorimpl(transitionState.getTargetState()));
+                compositionContinuation$animation_core.resumeWith(Result.m9065constructorimpl(((SeekableTransitionState) transitionState).getTargetState()));
             }
-            ((SeekableTransitionState) transitionState).setCompositionContinuation$animation_core_release(null);
+            ((SeekableTransitionState) transitionState).setCompositionContinuation$animation_core(null);
             Unit unit = Unit.INSTANCE;
-            compositionContinuationMutex$animation_core_release.unlock(null);
+            compositionContinuationMutex$animation_core.unlock(null);
             return Unit.INSTANCE;
         } catch (Throwable th) {
-            compositionContinuationMutex$animation_core_release.unlock(null);
+            compositionContinuationMutex$animation_core.unlock(null);
             throw th;
         }
     }

@@ -60,11 +60,11 @@ import kotlinx.coroutines.channels.ChannelKt;
 /* loaded from: classes2.dex */
 public final class MotionLayoutKt {
     /* renamed from: MotionLayout-T3LJ6Qw  reason: not valid java name */
-    public static final void m7100MotionLayoutT3LJ6Qw(ConstraintSet constraintSet, ConstraintSet constraintSet2, float f, Modifier modifier, Transition transition, int i, int i2, InvalidationStrategy invalidationStrategy, final Function3<? super MotionLayoutScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, int i3, int i4) {
+    public static final void m7666MotionLayoutT3LJ6Qw(ConstraintSet constraintSet, ConstraintSet constraintSet2, float f, Modifier modifier, Transition transition, int i, int i2, InvalidationStrategy invalidationStrategy, final Function3<? super MotionLayoutScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, int i3, int i4) {
         ComposerKt.sourceInformationMarkerStart(composer, -531105279, "CC(MotionLayout)P(7,2,6,4,8,1:androidx.constraintlayout.compose.DebugFlags,5,3)145@6151L53,146@6233L93,151@6488L627,166@7120L556:MotionLayout.kt#fysre8");
         Modifier.Companion companion = (i4 & 8) != 0 ? Modifier.Companion : modifier;
         Transition transition2 = (i4 & 16) != 0 ? null : transition;
-        int m7040getNonebfy_xzQ = (i4 & 32) != 0 ? DebugFlags.Companion.m7040getNonebfy_xzQ() : i;
+        int m7606getNonebfy_xzQ = (i4 & 32) != 0 ? DebugFlags.Companion.m7606getNonebfy_xzQ() : i;
         int i5 = (i4 & 64) != 0 ? 257 : i2;
         final InvalidationStrategy defaultInvalidationStrategy = (i4 & 128) != 0 ? InvalidationStrategy.Companion.getDefaultInvalidationStrategy() : invalidationStrategy;
         ComposerKt.sourceInformationMarkerStart(composer, 1692702995, "CC(remember):MotionLayout.kt#9igjgp");
@@ -86,7 +86,7 @@ public final class MotionLayoutKt {
         }
         final Ref ref2 = (Ref) obj;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        MotionLayoutCore(constraintSet, constraintSet2, transition2, f, null, i5, DebugFlags.m7033getShowBoundsimpl(m7040getNonebfy_xzQ), DebugFlags.m7035getShowPathsimpl(m7040getNonebfy_xzQ), DebugFlags.m7034getShowKeyPositionsimpl(m7040getNonebfy_xzQ), companion, mutableState, ref2, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(284503157, true, new Function3<MotionLayoutScope, Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionLayoutKt$MotionLayout$contentDelegate$1
+        MotionLayoutCore(constraintSet, constraintSet2, transition2, f, null, i5, DebugFlags.m7599getShowBoundsimpl(m7606getNonebfy_xzQ), DebugFlags.m7601getShowPathsimpl(m7606getNonebfy_xzQ), DebugFlags.m7600getShowKeyPositionsimpl(m7606getNonebfy_xzQ), companion, mutableState, ref2, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(284503157, true, new Function3<MotionLayoutScope, Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionLayoutKt$MotionLayout$contentDelegate$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
             {
@@ -118,7 +118,7 @@ public final class MotionLayoutKt {
     }
 
     /* renamed from: MotionLayout-6oYECBM  reason: not valid java name */
-    public static final void m7099MotionLayout6oYECBM(MotionScene motionScene, float f, Modifier modifier, String str, int i, int i2, InvalidationStrategy invalidationStrategy, final Function3<? super MotionLayoutScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, int i3, int i4) {
+    public static final void m7665MotionLayout6oYECBM(MotionScene motionScene, float f, Modifier modifier, String str, int i, int i2, InvalidationStrategy invalidationStrategy, final Function3<? super MotionLayoutScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, int i3, int i4) {
         ComposerKt.sourceInformationMarkerStart(composer, -808697931, "CC(MotionLayout)P(4,6,3,7,1:androidx.constraintlayout.compose.DebugFlags,5,2)255@11054L53,256@11136L93,261@11391L627,277@12024L412:MotionLayout.kt#fysre8");
         if ((i4 & 4) != 0) {
             modifier = Modifier.Companion;
@@ -128,7 +128,7 @@ public final class MotionLayoutKt {
             str = "default";
         }
         String str2 = str;
-        int m7040getNonebfy_xzQ = (i4 & 16) != 0 ? DebugFlags.Companion.m7040getNonebfy_xzQ() : i;
+        int m7606getNonebfy_xzQ = (i4 & 16) != 0 ? DebugFlags.Companion.m7606getNonebfy_xzQ() : i;
         int i5 = (i4 & 32) != 0 ? 257 : i2;
         final InvalidationStrategy defaultInvalidationStrategy = (i4 & 64) != 0 ? InvalidationStrategy.Companion.getDefaultInvalidationStrategy() : invalidationStrategy;
         ComposerKt.sourceInformationMarkerStart(composer, 1692859891, "CC(remember):MotionLayout.kt#9igjgp");
@@ -150,7 +150,7 @@ public final class MotionLayoutKt {
         }
         final Ref ref2 = (Ref) obj;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        m7102MotionLayoutCoreSehEMGo(motionScene, f, str2, i5, m7040getNonebfy_xzQ, modifier2, mutableState, ref2, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(-23317463, true, new Function3<MotionLayoutScope, Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionLayoutKt$MotionLayout$contentDelegate$2
+        m7668MotionLayoutCoreSehEMGo(motionScene, f, str2, i5, m7606getNonebfy_xzQ, modifier2, mutableState, ref2, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(-23317463, true, new Function3<MotionLayoutScope, Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionLayoutKt$MotionLayout$contentDelegate$2
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
             {
@@ -182,11 +182,11 @@ public final class MotionLayoutKt {
     }
 
     /* renamed from: MotionLayout-T3LJ6Qw  reason: not valid java name */
-    public static final void m7101MotionLayoutT3LJ6Qw(MotionScene motionScene, String str, AnimationSpec<Float> animationSpec, Modifier modifier, Function0<Unit> function0, int i, int i2, InvalidationStrategy invalidationStrategy, final Function3<? super MotionLayoutScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, int i3, int i4) {
+    public static final void m7667MotionLayoutT3LJ6Qw(MotionScene motionScene, String str, AnimationSpec<Float> animationSpec, Modifier modifier, Function0<Unit> function0, int i, int i2, InvalidationStrategy invalidationStrategy, final Function3<? super MotionLayoutScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, int i3, int i4) {
         ComposerKt.sourceInformationMarkerStart(composer, -267984822, "CC(MotionLayout)P(7,1!1,6,4,3:androidx.constraintlayout.compose.DebugFlags,8,5)381@16753L53,382@16835L93,387@17090L627,403@17723L491:MotionLayout.kt#fysre8");
         Modifier.Companion companion = (i4 & 8) != 0 ? Modifier.Companion : modifier;
         Function0<Unit> function02 = (i4 & 16) != 0 ? null : function0;
-        int m7040getNonebfy_xzQ = (i4 & 32) != 0 ? DebugFlags.Companion.m7040getNonebfy_xzQ() : i;
+        int m7606getNonebfy_xzQ = (i4 & 32) != 0 ? DebugFlags.Companion.m7606getNonebfy_xzQ() : i;
         int i5 = (i4 & 64) != 0 ? 257 : i2;
         final InvalidationStrategy defaultInvalidationStrategy = (i4 & 128) != 0 ? InvalidationStrategy.Companion.getDefaultInvalidationStrategy() : invalidationStrategy;
         ComposerKt.sourceInformationMarkerStart(composer, 1693042259, "CC(remember):MotionLayout.kt#9igjgp");
@@ -208,7 +208,7 @@ public final class MotionLayoutKt {
         }
         final Ref ref2 = (Ref) obj;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        m7103MotionLayoutCoreTEds9UA(motionScene, str, animationSpec, companion, function02, m7040getNonebfy_xzQ, i5, mutableState, ref2, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(1064705982, true, new Function3<MotionLayoutScope, Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionLayoutKt$MotionLayout$contentDelegate$3
+        m7669MotionLayoutCoreTEds9UA(motionScene, str, animationSpec, companion, function02, m7606getNonebfy_xzQ, i5, mutableState, ref2, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(1064705982, true, new Function3<MotionLayoutScope, Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionLayoutKt$MotionLayout$contentDelegate$3
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
             {
@@ -281,7 +281,7 @@ public final class MotionLayoutKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m7103MotionLayoutCoreTEds9UA(final MotionScene motionScene, final String str, final AnimationSpec<Float> animationSpec, Modifier modifier, Function0<Unit> function0, int i, int i2, final MutableState<Unit> mutableState, final Ref<CompositionSource> ref, final InvalidationStrategy invalidationStrategy, final Function3<? super MotionLayoutScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i3, final int i4, final int i5) {
+    public static final void m7669MotionLayoutCoreTEds9UA(final MotionScene motionScene, final String str, final AnimationSpec<Float> animationSpec, Modifier modifier, Function0<Unit> function0, int i, int i2, final MutableState<Unit> mutableState, final Ref<CompositionSource> ref, final InvalidationStrategy invalidationStrategy, final Function3<? super MotionLayoutScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i3, final int i4, final int i5) {
         int i6;
         Object obj;
         int i7;
@@ -397,7 +397,7 @@ public final class MotionLayoutKt {
                                 if (i13 != 0) {
                                     obj2 = null;
                                 }
-                                int m7040getNonebfy_xzQ = i8 == 0 ? DebugFlags.Companion.m7040getNonebfy_xzQ() : i9;
+                                int m7606getNonebfy_xzQ = i8 == 0 ? DebugFlags.Companion.m7606getNonebfy_xzQ() : i9;
                                 if (i10 != 0) {
                                     i11 = 257;
                                 }
@@ -459,7 +459,7 @@ public final class MotionLayoutKt {
                                     }
                                     endRestartGroup = startRestartGroup.endRestartGroup();
                                     if (endRestartGroup == null) {
-                                        final int i23 = m7040getNonebfy_xzQ;
+                                        final int i23 = m7606getNonebfy_xzQ;
                                         endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.constraintlayout.compose.MotionLayoutKt$MotionLayoutCore$1
                                             /* JADX INFO: Access modifiers changed from: package-private */
                                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -475,7 +475,7 @@ public final class MotionLayoutKt {
                                             }
 
                                             public final void invoke(Composer composer3, int i24) {
-                                                MotionLayoutKt.m7103MotionLayoutCoreTEds9UA(MotionScene.this, str, animationSpec, modifier3, function04, i23, i20, mutableState, ref, invalidationStrategy, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
+                                                MotionLayoutKt.m7669MotionLayoutCoreTEds9UA(MotionScene.this, str, animationSpec, modifier3, function04, i23, i20, mutableState, ref, invalidationStrategy, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
                                             }
                                         });
                                         return;
@@ -567,7 +567,7 @@ public final class MotionLayoutKt {
 
                                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                             public final void invoke2() {
-                                                channel2.mo7559trySendJP2dKIU(constraintSet3);
+                                                channel2.mo8125trySendJP2dKIU(constraintSet3);
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue11);
@@ -604,14 +604,14 @@ public final class MotionLayoutKt {
                                 startRestartGroup.endReplaceGroup();
                                 int i24 = i17 >> 21;
                                 composer2 = startRestartGroup;
-                                MotionLayoutCore(MotionLayoutCore_TEds9UA$lambda$14(mutableState2), MotionLayoutCore_TEds9UA$lambda$17(mutableState3), transition, ((Number) animatable.getValue()).floatValue(), motionScene instanceof LayoutInformationReceiver ? (LayoutInformationReceiver) motionScene : layoutInformationReceiver2, i20, DebugFlags.m7033getShowBoundsimpl(m7040getNonebfy_xzQ), DebugFlags.m7035getShowPathsimpl(m7040getNonebfy_xzQ), DebugFlags.m7034getShowKeyPositionsimpl(m7040getNonebfy_xzQ), modifier3, mutableState, ref, invalidationStrategy, function3, composer2, ((i17 >> 3) & 458752) | ((i17 << 18) & 1879048192), (i24 & 896) | (i24 & 14) | (Ref.$stable << 3) | (i24 & 112) | ((i16 << 9) & 7168));
+                                MotionLayoutCore(MotionLayoutCore_TEds9UA$lambda$14(mutableState2), MotionLayoutCore_TEds9UA$lambda$17(mutableState3), transition, ((Number) animatable.getValue()).floatValue(), motionScene instanceof LayoutInformationReceiver ? (LayoutInformationReceiver) motionScene : layoutInformationReceiver2, i20, DebugFlags.m7599getShowBoundsimpl(m7606getNonebfy_xzQ), DebugFlags.m7601getShowPathsimpl(m7606getNonebfy_xzQ), DebugFlags.m7600getShowKeyPositionsimpl(m7606getNonebfy_xzQ), modifier3, mutableState, ref, invalidationStrategy, function3, composer2, ((i17 >> 3) & 458752) | ((i17 << 18) & 1879048192), (i24 & 896) | (i24 & 14) | (Ref.$stable << 3) | (i24 & 112) | ((i16 << 9) & 7168));
                                 i11 = i20;
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
                                 modifier2 = modifier3;
                                 function03 = function02;
-                                i18 = m7040getNonebfy_xzQ;
+                                i18 = m7606getNonebfy_xzQ;
                             } else {
                                 startRestartGroup.skipToGroupEnd();
                                 i18 = i9;
@@ -636,7 +636,7 @@ public final class MotionLayoutKt {
                                     }
 
                                     public final void invoke(Composer composer3, int i25) {
-                                        MotionLayoutKt.m7103MotionLayoutCoreTEds9UA(MotionScene.this, str, animationSpec, modifier2, function03, i18, i11, mutableState, ref, invalidationStrategy, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
+                                        MotionLayoutKt.m7669MotionLayoutCoreTEds9UA(MotionScene.this, str, animationSpec, modifier2, function03, i18, i11, mutableState, ref, invalidationStrategy, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
                                     }
                                 });
                                 return;
@@ -1050,7 +1050,7 @@ public final class MotionLayoutKt {
     }
 
     /* renamed from: MotionLayoutCore-SehEMGo  reason: not valid java name */
-    public static final void m7102MotionLayoutCoreSehEMGo(final MotionScene motionScene, final float f, final String str, final int i, final int i2, final Modifier modifier, final MutableState<Unit> mutableState, final Ref<CompositionSource> ref, final InvalidationStrategy invalidationStrategy, final Function3<? super MotionLayoutScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i3) {
+    public static final void m7668MotionLayoutCoreSehEMGo(final MotionScene motionScene, final float f, final String str, final int i, final int i2, final Modifier modifier, final MutableState<Unit> mutableState, final Ref<CompositionSource> ref, final InvalidationStrategy invalidationStrategy, final Function3<? super MotionLayoutScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i3) {
         int i4;
         float f2;
         int i5;
@@ -1165,7 +1165,7 @@ public final class MotionLayoutKt {
                         }
 
                         public final void invoke(Composer composer3, int i9) {
-                            MotionLayoutKt.m7102MotionLayoutCoreSehEMGo(MotionScene.this, f, str, i, i2, modifier, mutableState, ref, invalidationStrategy, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1));
+                            MotionLayoutKt.m7668MotionLayoutCoreSehEMGo(MotionScene.this, f, str, i, i2, modifier, mutableState, ref, invalidationStrategy, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1));
                         }
                     });
                     return;
@@ -1174,7 +1174,7 @@ public final class MotionLayoutKt {
             }
             composer2 = startRestartGroup;
             int i9 = i8 >> 18;
-            MotionLayoutCore(constraintSet, constraintSet2, transition, f2, motionScene instanceof LayoutInformationReceiver ? (LayoutInformationReceiver) motionScene : null, i5, DebugFlags.m7033getShowBoundsimpl(i6), DebugFlags.m7035getShowPathsimpl(i2), DebugFlags.m7034getShowKeyPositionsimpl(i2), modifier, mutableState, ref, invalidationStrategy, function32, composer2, ((i8 << 6) & 465920) | ((i8 << 12) & 1879048192), (i9 & 14) | (Ref.$stable << 3) | (i9 & 112) | (i9 & 896) | (i9 & 7168));
+            MotionLayoutCore(constraintSet, constraintSet2, transition, f2, motionScene instanceof LayoutInformationReceiver ? (LayoutInformationReceiver) motionScene : null, i5, DebugFlags.m7599getShowBoundsimpl(i6), DebugFlags.m7601getShowPathsimpl(i2), DebugFlags.m7600getShowKeyPositionsimpl(i2), modifier, mutableState, ref, invalidationStrategy, function32, composer2, ((i8 << 6) & 465920) | ((i8 << 12) & 1879048192), (i9 & 14) | (Ref.$stable << 3) | (i9 & 112) | (i9 & 896) | (i9 & 7168));
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -1199,7 +1199,7 @@ public final class MotionLayoutKt {
                 }
 
                 public final void invoke(Composer composer3, int i10) {
-                    MotionLayoutKt.m7102MotionLayoutCoreSehEMGo(MotionScene.this, f, str, i, i2, modifier, mutableState, ref, invalidationStrategy, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1));
+                    MotionLayoutKt.m7668MotionLayoutCoreSehEMGo(MotionScene.this, f, str, i, i2, modifier, mutableState, ref, invalidationStrategy, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1));
                 }
             });
         }
@@ -1558,12 +1558,12 @@ public final class MotionLayoutKt {
                 if (value == null) {
                     value = CompositionSource.Unknown;
                 }
-                long m7126performInterpolationMeasureLzAeyeM = motionMeasurer2.m7126performInterpolationMeasureLzAeyeM(j, layoutDirection, constraintSet3, constraintSet4, transitionImpl2, list, linkedHashMap, i2, floatValue, value, invalidationStrategy.getShouldInvalidate$constraintlayout_compose_release());
+                long m7692performInterpolationMeasureLzAeyeM = motionMeasurer2.m7692performInterpolationMeasureLzAeyeM(j, layoutDirection, constraintSet3, constraintSet4, transitionImpl2, list, linkedHashMap, i2, floatValue, value, invalidationStrategy.getShouldInvalidate$constraintlayout_compose_release());
                 ref.setValue(CompositionSource.Unknown);
-                int m6855getWidthimpl = IntSize.m6855getWidthimpl(m7126performInterpolationMeasureLzAeyeM);
-                int m6854getHeightimpl = IntSize.m6854getHeightimpl(m7126performInterpolationMeasureLzAeyeM);
+                int m7422getWidthimpl = IntSize.m7422getWidthimpl(m7692performInterpolationMeasureLzAeyeM);
+                int m7421getHeightimpl = IntSize.m7421getHeightimpl(m7692performInterpolationMeasureLzAeyeM);
                 final MotionMeasurer motionMeasurer3 = motionMeasurer;
-                return MeasureScope.layout$default(measureScope, m6855getWidthimpl, m6854getHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.constraintlayout.compose.MotionLayoutKt$motionLayoutMeasurePolicy$1.1
+                return MeasureScope.layout$default(measureScope, m7422getWidthimpl, m7421getHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.constraintlayout.compose.MotionLayoutKt$motionLayoutMeasurePolicy$1.1
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
                     {

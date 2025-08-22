@@ -126,12 +126,12 @@
         <item name="android:windowExitAnimation">@anim/mtrl_bottom_sheet_slide_out</item>
     </style>
     <style name="AppTheme" parent="@style/Theme.MaterialComponents.NoActionBar">
+        <item name="android:textViewStyle">@style/Widget.App.TextView</item>
         <item name="android:navigationBarColor">@color/dark_blue</item>
         <item name="alertDialogTheme">@style/AlertDialogTheme</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/dark_blue</item>
-        <item name="fontFamily">@font/gotham</item>
         <item name="materialCardViewStyle">@style/Widget.App.CardView</item>
     </style>
     <style name="AppTheme.AppBarOverlay" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -3302,12 +3302,8 @@
         <item name="android:textColor">@color/exo_white_opacity_70</item>
         <item name="android:text">·</item>
     </style>
-    <style name="FloatingDialogTheme" parent="">
-        <item name="android:windowIsFloating">false</item>
-    </style>
     <style name="FloatingDialogWindowTheme" parent="">
         <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:dialogTheme">@style/FloatingDialogTheme</item>
         <item name="android:windowClipToOutline">false</item>
     </style>
     <style name="FullScreenGraph" parent="">
@@ -3451,6 +3447,10 @@
         <item name="android:textAlignment">center</item>
     </style>
     <style name="MyDenseOutlined" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
         <item name="materialThemeOverlay">@style/MyThemeOverlayOutlinedDense</item>
     </style>
     <style name="MyTextInputEditText_outlinedBox_dense_h" parent="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense">
@@ -3459,6 +3459,19 @@
     </style>
     <style name="MyThemeOverlayOutlinedDense" parent="">
         <item name="editTextStyle">@style/MyTextInputEditText_outlinedBox_dense_h</item>
+    </style>
+    <style name="NoPaddingTextInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:padding">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="boxCollapsedPaddingTop">0dp</item>
+        <item name="boxStrokeColor">@android:color/transparent</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
     </style>
     <style name="Platform.AppCompat" parent="@style/Platform.V21.AppCompat">
     </style>
@@ -3929,7 +3942,7 @@
     </style>
     <style name="TabServerText" parent="@style/TextAppearance.AppCompat">
         <item name="android:textSize">12sp</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:fontFamily">@font/dinpro_bold</item>
     </style>
     <style name="TextAppearance.AppCompat" parent="@style/Base.TextAppearance.AppCompat">
     </style>
@@ -4429,6 +4442,7 @@
     <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.MaterialComponents.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:textViewStyle">@style/Widget.App.TextView</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowActionBar">false</item>
         <item name="android:colorEdgeEffect">@color/arizona_accent</item>
@@ -5272,6 +5286,10 @@
     <style name="Widget.App.CardView" parent="@style/Widget.MaterialComponents.CardView">
         <item name="cardCornerRadius">8dp</item>
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Card</item>
+    </style>
+    <style name="Widget.App.TextView" parent="@style/Widget.MaterialComponents.TextView">
+        <item name="android:fontFamily">@font/dinpro_bold</item>
+        <item name="fontFamily">@font/dinpro_bold</item>
     </style>
     <style name="Widget.AppCompat.ActionBar" parent="@style/Base.Widget.AppCompat.ActionBar">
     </style>

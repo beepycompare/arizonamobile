@@ -14,7 +14,7 @@ import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
 import java.util.Arrays;
 import java.util.Collections;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class H263Reader implements ElementaryStreamReader {
     private static final float[] PIXEL_WIDTH_HEIGHT_RATIO_BY_ASPECT_RATIO_INFO = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
     private static final int START_CODE_VALUE_GROUP_OF_VOP = 179;
@@ -234,7 +234,7 @@ public final class H263Reader implements ElementaryStreamReader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class CsdBuffer {
         private static final byte[] START_CODE = {0, 0, 1};
         private static final int STATE_EXPECT_VIDEO_OBJECT_LAYER_START = 3;
@@ -315,7 +315,7 @@ public final class H263Reader implements ElementaryStreamReader {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class SampleReader {
         private static final int OFFSET_VOP_CODING_TYPE = 1;
         private static final int VOP_CODING_TYPE_INTRA = 0;

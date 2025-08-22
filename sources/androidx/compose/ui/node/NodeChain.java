@@ -18,8 +18,8 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NodeChain.kt */
-@Metadata(d1 = {"\u0000\u0082\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u001b\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\t\b\u0000\u0018\u00002\u00020\u0001:\u0002klB\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\u0018\u0010&\u001a\u00020\u00102\u0006\u0010'\u001a\u00020\u000b2\u0006\u0010(\u001a\u00020\u0010H\u0002J\u0010\u0010)\u001a\u00020\u00102\u0006\u0010*\u001a\u00020\u0010H\u0002J?\u0010+\u001a\u0004\u0018\u0001H,\"\u0006\b\u0000\u0010,\u0018\u00012\f\u0010-\u001a\b\u0012\u0004\u0012\u0002H,0.2\u0012\u0010/\u001a\u000e\u0012\u0004\u0012\u0002H,\u0012\u0004\u0012\u00020\u001900H\u0080\bø\u0001\u0000¢\u0006\u0004\b1\u00102J@\u00103\u001a\u00060\rR\u00020\u00002\u0006\u0010\u0011\u001a\u00020\u00102\u0006\u00104\u001a\u00020\u00062\f\u00105\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\f\u00106\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u00107\u001a\u00020\u0019H\u0002J\f\u00108\u001a\b\u0012\u0004\u0012\u00020:09J\u001e\u0010;\u001a\u00020\u00192\n\u0010-\u001a\u0006\u0012\u0002\b\u00030.H\u0000ø\u0001\u0000¢\u0006\u0004\b<\u0010=J\u0015\u0010;\u001a\u00020\u00192\u0006\u0010>\u001a\u00020\u0006H\u0000¢\u0006\u0002\b?J+\u0010\u0011\u001a\u0004\u0018\u0001H,\"\u0006\b\u0000\u0010,\u0018\u00012\f\u0010-\u001a\b\u0012\u0004\u0012\u0002H,0.H\u0080\bø\u0001\u0000¢\u0006\u0004\b@\u0010AJ\"\u0010B\u001a\u00020C2\u0012\u0010/\u001a\u000e\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020C00H\u0080\b¢\u0006\u0002\bDJ=\u0010B\u001a\u00020C\"\u0006\b\u0000\u0010,\u0018\u00012\f\u0010-\u001a\b\u0012\u0004\u0012\u0002H,0.2\u0012\u0010/\u001a\u000e\u0012\u0004\u0012\u0002H,\u0012\u0004\u0012\u00020C00H\u0080\bø\u0001\u0000¢\u0006\u0004\bE\u0010FJ*\u0010B\u001a\u00020C2\u0006\u0010>\u001a\u00020\u00062\u0012\u0010/\u001a\u000e\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020C00H\u0080\b¢\u0006\u0002\bDJ\"\u0010G\u001a\u00020C2\u0012\u0010/\u001a\u000e\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020C00H\u0080\b¢\u0006\u0002\bHJ\u0018\u0010I\u001a\u00020\u00102\u0006\u0010*\u001a\u00020\u00102\u0006\u0010(\u001a\u00020\u0010H\u0002J\u0006\u0010J\u001a\u00020CJ\r\u0010K\u001a\u00020CH\u0000¢\u0006\u0002\bLJ\b\u0010M\u001a\u00020\u0010H\u0002J\u0018\u0010N\u001a\u00020C2\u0006\u0010O\u001a\u00020\u00102\u0006\u0010P\u001a\u00020 H\u0002J\u0010\u0010Q\u001a\u00020\u00102\u0006\u0010*\u001a\u00020\u0010H\u0002J\r\u0010R\u001a\u00020CH\u0000¢\u0006\u0002\bSJ\u0006\u0010T\u001a\u00020CJ\r\u0010U\u001a\u00020CH\u0000¢\u0006\u0002\bVJ<\u0010W\u001a\u00020C2\u0006\u00104\u001a\u00020\u00062\f\u00105\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\f\u00106\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u0010$\u001a\u00020\u00102\u0006\u00107\u001a\u00020\u0019H\u0002J\b\u0010X\u001a\u00020CH\u0002J\u0006\u0010Y\u001a\u00020CJ+\u0010$\u001a\u0004\u0018\u0001H,\"\u0006\b\u0000\u0010,\u0018\u00012\f\u0010-\u001a\b\u0012\u0004\u0012\u0002H,0.H\u0080\bø\u0001\u0000¢\u0006\u0004\bZ\u0010AJ\"\u0010[\u001a\u00020C2\u0012\u0010/\u001a\u000e\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020C00H\u0080\b¢\u0006\u0002\b\\J=\u0010[\u001a\u00020C\"\u0006\b\u0000\u0010,\u0018\u00012\f\u0010-\u001a\b\u0012\u0004\u0012\u0002H,0.2\u0012\u0010/\u001a\u000e\u0012\u0004\u0012\u0002H,\u0012\u0004\u0012\u00020C00H\u0080\bø\u0001\u0000¢\u0006\u0004\b]\u0010FJ*\u0010[\u001a\u00020C2\u0006\u0010>\u001a\u00020\u00062\u0012\u0010/\u001a\u000e\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020C00H\u0080\b¢\u0006\u0002\b\\J\b\u0010^\u001a\u00020_H\u0016J\u0010\u0010`\u001a\u00020\u00102\u0006\u0010a\u001a\u00020\u0010H\u0002J\u0015\u0010b\u001a\u00020C2\u0006\u0010c\u001a\u00020dH\u0000¢\u0006\u0002\beJ \u0010f\u001a\u00020C2\u0006\u0010g\u001a\u00020\u000b2\u0006\u0010h\u001a\u00020\u000b2\u0006\u0010*\u001a\u00020\u0010H\u0002J\u0017\u0010i\u001a\u00020C2\b\u0010\u001e\u001a\u0004\u0018\u00010\u001fH\u0000¢\u0006\u0002\bjR\u0014\u0010\u0005\u001a\u00020\u00068BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0007\u0010\bR\u0016\u0010\t\u001a\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0018\u00010\rR\u00020\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u000f\u001a\u00020\u0010@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u0015X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0014\u0010\u0018\u001a\u00020\u00198@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010!\u001a\u00020 2\u0006\u0010\u000f\u001a\u00020 @BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#R\u0014\u0010$\u001a\u00020\u0010X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b%\u0010\u0013\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006m"}, d2 = {"Landroidx/compose/ui/node/NodeChain;", "", "layoutNode", "Landroidx/compose/ui/node/LayoutNode;", "(Landroidx/compose/ui/node/LayoutNode;)V", "aggregateChildKindSet", "", "getAggregateChildKindSet", "()I", "buffer", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/Modifier$Element;", "cachedDiffer", "Landroidx/compose/ui/node/NodeChain$Differ;", "current", "<set-?>", "Landroidx/compose/ui/Modifier$Node;", TtmlNode.TAG_HEAD, "getHead$ui_release", "()Landroidx/compose/ui/Modifier$Node;", "innerCoordinator", "Landroidx/compose/ui/node/InnerNodeCoordinator;", "getInnerCoordinator$ui_release", "()Landroidx/compose/ui/node/InnerNodeCoordinator;", "isUpdating", "", "isUpdating$ui_release", "()Z", "getLayoutNode", "()Landroidx/compose/ui/node/LayoutNode;", "logger", "Landroidx/compose/ui/node/NodeChain$Logger;", "Landroidx/compose/ui/node/NodeCoordinator;", "outerCoordinator", "getOuterCoordinator$ui_release", "()Landroidx/compose/ui/node/NodeCoordinator;", "tail", "getTail$ui_release", "createAndInsertNodeAsChild", "element", "parent", "detachAndRemoveNode", "node", "firstFromHead", ExifInterface.GPS_DIRECTION_TRUE, "type", "Landroidx/compose/ui/node/NodeKind;", "block", "Lkotlin/Function1;", "firstFromHead-aLcG6gQ$ui_release", "(ILkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "getDiffer", TypedValues.CycleType.S_WAVE_OFFSET, TtmlNode.ANNOTATION_POSITION_BEFORE, TtmlNode.ANNOTATION_POSITION_AFTER, "shouldAttachOnInsert", "getModifierInfo", "", "Landroidx/compose/ui/layout/ModifierInfo;", "has", "has-H91voCI$ui_release", "(I)Z", "mask", "has$ui_release", "head-H91voCI$ui_release", "(I)Ljava/lang/Object;", "headToTail", "", "headToTail$ui_release", "headToTail-aLcG6gQ$ui_release", "(ILkotlin/jvm/functions/Function1;)V", "headToTailExclusive", "headToTailExclusive$ui_release", "insertChild", "markAsAttached", "markAsDetached", "markAsDetached$ui_release", "padChain", "propagateCoordinator", TtmlNode.START, "coordinator", "removeNode", "resetState", "resetState$ui_release", "runAttachLifecycle", "runDetachLifecycle", "runDetachLifecycle$ui_release", "structuralUpdate", "syncAggregateChildKindSet", "syncCoordinators", "tail-H91voCI$ui_release", "tailToHead", "tailToHead$ui_release", "tailToHead-aLcG6gQ$ui_release", "toString", "", "trimChain", "paddedHead", "updateFrom", CmcdData.OBJECT_TYPE_MANIFEST, "Landroidx/compose/ui/Modifier;", "updateFrom$ui_release", "updateNode", "prev", "next", "useLogger", "useLogger$ui_release", "Differ", "Logger", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000\u0089\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u000e\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u001a\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0010\u000e\n\u0002\b\u0003*\u0001\t\b\u0001\u0018\u00002\u00020\u0001:\u0002pqB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0017\u0010,\u001a\u00020-2\b\u0010*\u001a\u0004\u0018\u00010+H\u0000¢\u0006\u0002\b.J\b\u0010/\u001a\u00020\u0015H\u0002J\u0010\u00100\u001a\u00020\u00152\u0006\u00101\u001a\u00020\u0015H\u0002J\u0015\u00102\u001a\u00020-2\u0006\u00103\u001a\u00020'H\u0000¢\u0006\u0002\b4J\r\u00105\u001a\u00020-H\u0000¢\u0006\u0002\b6J\u0006\u00107\u001a\u00020-J\b\u00108\u001a\u00020-H\u0002J\u0006\u00109\u001a\u00020-J\u0006\u0010:\u001a\u00020-J\f\u0010;\u001a\b\u0012\u0004\u0012\u00020=0<J\r\u0010>\u001a\u00020-H\u0000¢\u0006\u0002\b?J\r\u0010@\u001a\u00020-H\u0000¢\u0006\u0002\bAJ@\u0010B\u001a\u00060)R\u00020\u00002\u0006\u0010\u0018\u001a\u00020\u00152\u0006\u0010C\u001a\u00020\u001f2\f\u0010D\u001a\b\u0012\u0004\u0012\u00020$0#2\f\u0010E\u001a\b\u0012\u0004\u0012\u00020$0#2\u0006\u0010F\u001a\u00020\u001bH\u0002J\u0018\u0010G\u001a\u00020-2\u0006\u0010H\u001a\u00020\u00152\u0006\u0010I\u001a\u00020\u0010H\u0002J<\u0010J\u001a\u00020-2\u0006\u0010C\u001a\u00020\u001f2\f\u0010D\u001a\b\u0012\u0004\u0012\u00020$0#2\f\u0010E\u001a\b\u0012\u0004\u0012\u00020$0#2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010F\u001a\u00020\u001bH\u0002J\u0010\u0010K\u001a\u00020\u00152\u0006\u0010L\u001a\u00020\u0015H\u0002J\u0010\u0010M\u001a\u00020\u00152\u0006\u0010L\u001a\u00020\u0015H\u0002J\u0018\u0010N\u001a\u00020\u00152\u0006\u0010O\u001a\u00020$2\u0006\u0010P\u001a\u00020\u0015H\u0002J\u0018\u0010Q\u001a\u00020\u00152\u0006\u0010L\u001a\u00020\u00152\u0006\u0010P\u001a\u00020\u0015H\u0002J \u0010R\u001a\u00020-2\u0006\u0010S\u001a\u00020$2\u0006\u0010T\u001a\u00020$2\u0006\u0010L\u001a\u00020\u0015H\u0002J<\u0010U\u001a\u0004\u0018\u0001HV\"\u0006\b\u0000\u0010V\u0018\u00012\f\u0010W\u001a\b\u0012\u0004\u0012\u0002HV0X2\u0012\u0010Y\u001a\u000e\u0012\u0004\u0012\u0002HV\u0012\u0004\u0012\u00020\u001b0ZH\u0080\b¢\u0006\u0004\b[\u0010\\J:\u0010]\u001a\u00020-\"\u0006\b\u0000\u0010V\u0018\u00012\f\u0010W\u001a\b\u0012\u0004\u0012\u0002HV0X2\u0012\u0010Y\u001a\u000e\u0012\u0004\u0012\u0002HV\u0012\u0004\u0012\u00020-0ZH\u0080\b¢\u0006\u0004\b^\u0010_J*\u0010]\u001a\u00020-2\u0006\u0010`\u001a\u00020\u001f2\u0012\u0010Y\u001a\u000e\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020-0ZH\u0080\b¢\u0006\u0002\baJ\"\u0010]\u001a\u00020-2\u0012\u0010Y\u001a\u000e\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020-0ZH\u0080\b¢\u0006\u0002\baJ\"\u0010b\u001a\u00020-2\u0012\u0010Y\u001a\u000e\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020-0ZH\u0080\b¢\u0006\u0002\bcJ:\u0010d\u001a\u00020-\"\u0006\b\u0000\u0010V\u0018\u00012\f\u0010W\u001a\b\u0012\u0004\u0012\u0002HV0X2\u0012\u0010Y\u001a\u000e\u0012\u0004\u0012\u0002HV\u0012\u0004\u0012\u00020-0ZH\u0080\b¢\u0006\u0004\be\u0010_J*\u0010d\u001a\u00020-2\u0006\u0010`\u001a\u00020\u001f2\u0012\u0010Y\u001a\u000e\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020-0ZH\u0080\b¢\u0006\u0002\bfJ\"\u0010d\u001a\u00020-2\u0012\u0010Y\u001a\u000e\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020-0ZH\u0080\b¢\u0006\u0002\bfJ(\u0010\u0014\u001a\u0004\u0018\u0001HV\"\u0006\b\u0000\u0010V\u0018\u00012\f\u0010W\u001a\b\u0012\u0004\u0012\u0002HV0XH\u0080\b¢\u0006\u0004\bg\u0010hJ(\u0010\u0018\u001a\u0004\u0018\u0001HV\"\u0006\b\u0000\u0010V\u0018\u00012\f\u0010W\u001a\b\u0012\u0004\u0012\u0002HV0XH\u0080\b¢\u0006\u0004\bi\u0010hJ\u001b\u0010j\u001a\u00020\u001b2\n\u0010W\u001a\u0006\u0012\u0002\b\u00030XH\u0000¢\u0006\u0004\bk\u0010lJ\u0015\u0010j\u001a\u00020\u001b2\u0006\u0010`\u001a\u00020\u001fH\u0000¢\u0006\u0002\bmJ\b\u0010n\u001a\u00020oH\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0010\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\nR\u0014\u0010\u000b\u001a\u00020\fX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u001e\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u000f\u001a\u00020\u0010@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u0015X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u001e\u0010\u0018\u001a\u00020\u00152\u0006\u0010\u000f\u001a\u00020\u0015@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0017R\u0014\u0010\u001a\u001a\u00020\u001b8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u001dR\u0014\u0010\u001e\u001a\u00020\u001f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b \u0010!R\u0016\u0010\"\u001a\n\u0012\u0004\u0012\u00020$\u0018\u00010#X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010%\u001a\n\u0012\u0004\u0012\u00020$\u0018\u00010#X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\b\u0012\u0004\u0012\u00020'0#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0018\u00010)R\u00020\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010*\u001a\u0004\u0018\u00010+X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006r"}, d2 = {"Landroidx/compose/ui/node/NodeChain;", "", "layoutNode", "Landroidx/compose/ui/node/LayoutNode;", "<init>", "(Landroidx/compose/ui/node/LayoutNode;)V", "getLayoutNode", "()Landroidx/compose/ui/node/LayoutNode;", "sentinelHead", "androidx/compose/ui/node/NodeChain$sentinelHead$1", "Landroidx/compose/ui/node/NodeChain$sentinelHead$1;", "innerCoordinator", "Landroidx/compose/ui/node/InnerNodeCoordinator;", "getInnerCoordinator$ui_release", "()Landroidx/compose/ui/node/InnerNodeCoordinator;", "value", "Landroidx/compose/ui/node/NodeCoordinator;", "outerCoordinator", "getOuterCoordinator$ui_release", "()Landroidx/compose/ui/node/NodeCoordinator;", "tail", "Landroidx/compose/ui/Modifier$Node;", "getTail$ui_release", "()Landroidx/compose/ui/Modifier$Node;", TtmlNode.TAG_HEAD, "getHead$ui_release", "isUpdating", "", "isUpdating$ui_release", "()Z", "aggregateChildKindSet", "", "getAggregateChildKindSet", "()I", "current", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/Modifier$Element;", "buffer", "stack", "Landroidx/compose/ui/Modifier;", "cachedDiffer", "Landroidx/compose/ui/node/NodeChain$Differ;", "logger", "Landroidx/compose/ui/node/NodeChain$Logger;", "useLogger", "", "useLogger$ui_release", "padChain", "trimChain", "paddedHead", "updateFrom", CmcdData.OBJECT_TYPE_MANIFEST, "updateFrom$ui_release", "resetState", "resetState$ui_release", "syncCoordinators", "syncAggregateChildKindSet", "markAsAttached", "runAttachLifecycle", "getModifierInfo", "", "Landroidx/compose/ui/layout/ModifierInfo;", "markAsDetached", "markAsDetached$ui_release", "runDetachLifecycle", "runDetachLifecycle$ui_release", "getDiffer", TypedValues.CycleType.S_WAVE_OFFSET, TtmlNode.ANNOTATION_POSITION_BEFORE, TtmlNode.ANNOTATION_POSITION_AFTER, "shouldAttachOnInsert", "propagateCoordinator", TtmlNode.START, "coordinator", "structuralUpdate", "detachAndRemoveNode", "node", "removeNode", "createAndInsertNodeAsChild", "element", "parent", "insertChild", "updateNode", "prev", "next", "firstFromHead", ExifInterface.GPS_DIRECTION_TRUE, "type", "Landroidx/compose/ui/node/NodeKind;", "block", "Lkotlin/Function1;", "firstFromHead-aLcG6gQ$ui_release", "(ILkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "headToTail", "headToTail-aLcG6gQ$ui_release", "(ILkotlin/jvm/functions/Function1;)V", "mask", "headToTail$ui_release", "headToTailExclusive", "headToTailExclusive$ui_release", "tailToHead", "tailToHead-aLcG6gQ$ui_release", "tailToHead$ui_release", "tail-H91voCI$ui_release", "(I)Ljava/lang/Object;", "head-H91voCI$ui_release", "has", "has-H91voCI$ui_release", "(I)Z", "has$ui_release", "toString", "", "Differ", "Logger", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class NodeChain {
     public static final int $stable = 8;
     private MutableVector<Modifier.Element> buffer;
@@ -30,11 +30,13 @@ public final class NodeChain {
     private final LayoutNode layoutNode;
     private Logger logger;
     private NodeCoordinator outerCoordinator;
+    private final NodeChain$sentinelHead$1 sentinelHead;
+    private final MutableVector<Modifier> stack;
     private final Modifier.Node tail;
 
     /* compiled from: NodeChain.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\b`\u0018\u00002\u00020\u0001J(\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\nH&J0\u0010\u000b\u001a\u00020\u00032\u0006\u0010\f\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u00072\u0006\u0010\u000f\u001a\u00020\n2\u0006\u0010\u0010\u001a\u00020\nH&J \u0010\u0011\u001a\u00020\u00032\u0006\u0010\u0012\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\nH&J0\u0010\u0013\u001a\u00020\u00032\u0006\u0010\u0012\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\nH&J0\u0010\u0014\u001a\u00020\u00032\u0006\u0010\u0012\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\nH&ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0015À\u0006\u0001"}, d2 = {"Landroidx/compose/ui/node/NodeChain$Logger;", "", "linearDiffAborted", "", FirebaseAnalytics.Param.INDEX, "", "prev", "Landroidx/compose/ui/Modifier$Element;", "next", "node", "Landroidx/compose/ui/Modifier$Node;", "nodeInserted", "atIndex", "newIndex", "element", "child", "inserted", "nodeRemoved", "oldIndex", "nodeReused", "nodeUpdated", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\b`\u0018\u00002\u00020\u0001J(\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\nH&J0\u0010\u000b\u001a\u00020\u00032\u0006\u0010\f\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\nH&J0\u0010\u000e\u001a\u00020\u00032\u0006\u0010\f\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\nH&J0\u0010\u000f\u001a\u00020\u00032\u0006\u0010\u0010\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u0011\u001a\u00020\u00072\u0006\u0010\u0012\u001a\u00020\n2\u0006\u0010\u0013\u001a\u00020\nH&J \u0010\u0014\u001a\u00020\u00032\u0006\u0010\f\u001a\u00020\u00052\u0006\u0010\u0011\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\nH&ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0015À\u0006\u0001"}, d2 = {"Landroidx/compose/ui/node/NodeChain$Logger;", "", "linearDiffAborted", "", FirebaseAnalytics.Param.INDEX, "", "prev", "Landroidx/compose/ui/Modifier$Element;", "next", "node", "Landroidx/compose/ui/Modifier$Node;", "nodeUpdated", "oldIndex", "newIndex", "nodeReused", "nodeInserted", "atIndex", "element", "child", "inserted", "nodeRemoved", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public interface Logger {
         void linearDiffAborted(int i, Modifier.Element element, Modifier.Element element2, Modifier.Node node);
 
@@ -47,14 +49,23 @@ public final class NodeChain {
         void nodeUpdated(int i, int i2, Modifier.Element element, Modifier.Element element2, Modifier.Node node);
     }
 
+    /* JADX WARN: Type inference failed for: r0v0, types: [androidx.compose.ui.node.NodeChain$sentinelHead$1] */
     public NodeChain(LayoutNode layoutNode) {
         this.layoutNode = layoutNode;
+        ?? r0 = new Modifier.Node() { // from class: androidx.compose.ui.node.NodeChain$sentinelHead$1
+            public String toString() {
+                return "<Head>";
+            }
+        };
+        r0.setAggregateChildKindSet$ui_release(-1);
+        this.sentinelHead = r0;
         InnerNodeCoordinator innerNodeCoordinator = new InnerNodeCoordinator(layoutNode);
         this.innerCoordinator = innerNodeCoordinator;
         this.outerCoordinator = innerNodeCoordinator;
         TailModifierNode tail = innerNodeCoordinator.getTail();
         this.tail = tail;
         this.head = tail;
+        this.stack = new MutableVector<>(new Modifier[16], 0);
     }
 
     public final LayoutNode getLayoutNode() {
@@ -78,9 +89,7 @@ public final class NodeChain {
     }
 
     public final boolean isUpdating$ui_release() {
-        NodeChainKt$SentinelHead$1 nodeChainKt$SentinelHead$1;
-        nodeChainKt$SentinelHead$1 = NodeChainKt.SentinelHead;
-        return nodeChainKt$SentinelHead$1.getChild$ui_release() != null;
+        return getChild$ui_release() != null;
     }
 
     public final int getAggregateChildKindSet() {
@@ -92,57 +101,36 @@ public final class NodeChain {
     }
 
     private final Modifier.Node padChain() {
-        NodeChainKt$SentinelHead$1 nodeChainKt$SentinelHead$1;
-        NodeChainKt$SentinelHead$1 nodeChainKt$SentinelHead$12;
-        NodeChainKt$SentinelHead$1 nodeChainKt$SentinelHead$13;
-        NodeChainKt$SentinelHead$1 nodeChainKt$SentinelHead$14;
-        Modifier.Node node = this.head;
-        nodeChainKt$SentinelHead$1 = NodeChainKt.SentinelHead;
-        if (!(node != nodeChainKt$SentinelHead$1)) {
+        if (!(this.head != this.sentinelHead)) {
             InlineClassHelperKt.throwIllegalStateException("padChain called on already padded chain");
         }
-        Modifier.Node node2 = this.head;
-        nodeChainKt$SentinelHead$12 = NodeChainKt.SentinelHead;
-        node2.setParent$ui_release(nodeChainKt$SentinelHead$12);
-        nodeChainKt$SentinelHead$13 = NodeChainKt.SentinelHead;
-        nodeChainKt$SentinelHead$13.setChild$ui_release(node2);
-        nodeChainKt$SentinelHead$14 = NodeChainKt.SentinelHead;
-        return nodeChainKt$SentinelHead$14;
+        Modifier.Node node = this.head;
+        node.setParent$ui_release(this.sentinelHead);
+        setChild$ui_release(node);
+        return this.sentinelHead;
     }
 
     private final Modifier.Node trimChain(Modifier.Node node) {
-        NodeChainKt$SentinelHead$1 nodeChainKt$SentinelHead$1;
-        NodeChainKt$SentinelHead$1 nodeChainKt$SentinelHead$12;
-        NodeChainKt$SentinelHead$1 nodeChainKt$SentinelHead$13;
-        NodeChainKt$SentinelHead$1 nodeChainKt$SentinelHead$14;
-        NodeChainKt$SentinelHead$1 nodeChainKt$SentinelHead$15;
-        NodeChainKt$SentinelHead$1 nodeChainKt$SentinelHead$16;
-        nodeChainKt$SentinelHead$1 = NodeChainKt.SentinelHead;
-        if (!(node == nodeChainKt$SentinelHead$1)) {
+        if (!(node == this.sentinelHead)) {
             InlineClassHelperKt.throwIllegalStateException("trimChain called on already trimmed chain");
         }
-        nodeChainKt$SentinelHead$12 = NodeChainKt.SentinelHead;
-        Modifier.Node child$ui_release = nodeChainKt$SentinelHead$12.getChild$ui_release();
+        Modifier.Node child$ui_release = getChild$ui_release();
         if (child$ui_release == null) {
             child$ui_release = this.tail;
         }
         child$ui_release.setParent$ui_release(null);
-        nodeChainKt$SentinelHead$13 = NodeChainKt.SentinelHead;
-        nodeChainKt$SentinelHead$13.setChild$ui_release(null);
-        nodeChainKt$SentinelHead$14 = NodeChainKt.SentinelHead;
-        nodeChainKt$SentinelHead$14.setAggregateChildKindSet$ui_release(-1);
-        nodeChainKt$SentinelHead$15 = NodeChainKt.SentinelHead;
-        nodeChainKt$SentinelHead$15.updateCoordinator$ui_release(null);
-        nodeChainKt$SentinelHead$16 = NodeChainKt.SentinelHead;
-        if (!(child$ui_release != nodeChainKt$SentinelHead$16)) {
+        setChild$ui_release(null);
+        setAggregateChildKindSet$ui_release(-1);
+        updateCoordinator$ui_release(null);
+        if (!(child$ui_release != this.sentinelHead)) {
             InlineClassHelperKt.throwIllegalStateException("trimChain did not update the head");
         }
         return child$ui_release;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:136:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x015c  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x016a  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0095  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x015d  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x016b  */
     /* JADX WARN: Removed duplicated region for block: B:199:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -162,7 +150,7 @@ public final class NodeChain {
         if (mutableVector3 == null) {
             mutableVector3 = new MutableVector<>(new Modifier.Element[16], 0);
         }
-        fillVector = NodeChainKt.fillVector(modifier, mutableVector3);
+        fillVector = NodeChainKt.fillVector(modifier, mutableVector3, this.stack);
         MutableVector<Modifier.Element> mutableVector4 = null;
         if (fillVector.getSize() == size) {
             Modifier.Node child$ui_release = padChain.getChild$ui_release();
@@ -345,37 +333,10 @@ public final class NodeChain {
     }
 
     private final void syncAggregateChildKindSet() {
-        NodeChainKt$SentinelHead$1 nodeChainKt$SentinelHead$1;
         int i = 0;
-        for (Modifier.Node parent$ui_release = this.tail.getParent$ui_release(); parent$ui_release != null; parent$ui_release = parent$ui_release.getParent$ui_release()) {
-            nodeChainKt$SentinelHead$1 = NodeChainKt.SentinelHead;
-            if (parent$ui_release == nodeChainKt$SentinelHead$1) {
-                return;
-            }
+        for (Modifier.Node parent$ui_release = this.tail.getParent$ui_release(); parent$ui_release != null && parent$ui_release != this.sentinelHead; parent$ui_release = parent$ui_release.getParent$ui_release()) {
             i |= parent$ui_release.getKindSet$ui_release();
             parent$ui_release.setAggregateChildKindSet$ui_release(i);
-        }
-    }
-
-    public final void runAttachLifecycle() {
-        NodeCoordinator nodeCoordinator = this.outerCoordinator;
-        InnerNodeCoordinator innerNodeCoordinator = this.innerCoordinator;
-        while (nodeCoordinator != innerNodeCoordinator) {
-            nodeCoordinator.onAttach();
-            nodeCoordinator = nodeCoordinator.getWrapped$ui_release();
-            Intrinsics.checkNotNull(nodeCoordinator);
-        }
-        innerNodeCoordinator.onAttach();
-        for (Modifier.Node head$ui_release = getHead$ui_release(); head$ui_release != null; head$ui_release = head$ui_release.getChild$ui_release()) {
-            head$ui_release.runAttachLifecycle$ui_release();
-            if (head$ui_release.getInsertedNodeAwaitingAttachForInvalidation$ui_release()) {
-                NodeKindKt.autoInvalidateInsertedNode(head$ui_release);
-            }
-            if (head$ui_release.getUpdatedNodeAwaitingAttachForInvalidation$ui_release()) {
-                NodeKindKt.autoInvalidateUpdatedNode(head$ui_release);
-            }
-            head$ui_release.setInsertedNodeAwaitingAttachForInvalidation$ui_release(false);
-            head$ui_release.setUpdatedNodeAwaitingAttachForInvalidation$ui_release(false);
         }
     }
 
@@ -422,15 +383,13 @@ public final class NodeChain {
     }
 
     public final void propagateCoordinator(Modifier.Node node, NodeCoordinator nodeCoordinator) {
-        NodeChainKt$SentinelHead$1 nodeChainKt$SentinelHead$1;
         for (Modifier.Node parent$ui_release = node.getParent$ui_release(); parent$ui_release != null; parent$ui_release = parent$ui_release.getParent$ui_release()) {
-            nodeChainKt$SentinelHead$1 = NodeChainKt.SentinelHead;
-            if (parent$ui_release == nodeChainKt$SentinelHead$1) {
+            if (parent$ui_release == this.sentinelHead) {
                 LayoutNode parent$ui_release2 = this.layoutNode.getParent$ui_release();
                 nodeCoordinator.setWrappedBy$ui_release(parent$ui_release2 != null ? parent$ui_release2.getInnerCoordinator$ui_release() : null);
                 this.outerCoordinator = nodeCoordinator;
                 return;
-            } else if ((NodeKind.m5700constructorimpl(2) & parent$ui_release.getKindSet$ui_release()) != 0) {
+            } else if ((NodeKind.m6245constructorimpl(2) & parent$ui_release.getKindSet$ui_release()) != 0) {
                 return;
             } else {
                 parent$ui_release.updateCoordinator$ui_release(nodeCoordinator);
@@ -439,8 +398,8 @@ public final class NodeChain {
     }
 
     /* compiled from: NodeChain.kt */
-    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0017\n\u0002\u0010\u0002\n\u0002\b\u0004\b\u0082\u0004\u0018\u00002\u00020\u0001B9\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u0012\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u0012\u0006\u0010\n\u001a\u00020\u000b¢\u0006\u0002\u0010\fJ\u0018\u0010\u001f\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u0005H\u0016J\u0010\u0010\"\u001a\u00020#2\u0006\u0010!\u001a\u00020\u0005H\u0016J\u0018\u0010$\u001a\u00020#2\u0006\u0010%\u001a\u00020\u00052\u0006\u0010 \u001a\u00020\u0005H\u0016J\u0018\u0010&\u001a\u00020#2\u0006\u0010 \u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u0005H\u0016R \u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R \u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u000e\"\u0004\b\u0012\u0010\u0010R\u001a\u0010\u0002\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aR\u001a\u0010\n\u001a\u00020\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001e¨\u0006'"}, d2 = {"Landroidx/compose/ui/node/NodeChain$Differ;", "Landroidx/compose/ui/node/DiffCallback;", "node", "Landroidx/compose/ui/Modifier$Node;", TypedValues.CycleType.S_WAVE_OFFSET, "", TtmlNode.ANNOTATION_POSITION_BEFORE, "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/Modifier$Element;", TtmlNode.ANNOTATION_POSITION_AFTER, "shouldAttachOnInsert", "", "(Landroidx/compose/ui/node/NodeChain;Landroidx/compose/ui/Modifier$Node;ILandroidx/compose/runtime/collection/MutableVector;Landroidx/compose/runtime/collection/MutableVector;Z)V", "getAfter", "()Landroidx/compose/runtime/collection/MutableVector;", "setAfter", "(Landroidx/compose/runtime/collection/MutableVector;)V", "getBefore", "setBefore", "getNode", "()Landroidx/compose/ui/Modifier$Node;", "setNode", "(Landroidx/compose/ui/Modifier$Node;)V", "getOffset", "()I", "setOffset", "(I)V", "getShouldAttachOnInsert", "()Z", "setShouldAttachOnInsert", "(Z)V", "areItemsTheSame", "oldIndex", "newIndex", "insert", "", "remove", "atIndex", "same", "ui_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0018\n\u0002\u0010\u0002\n\u0002\b\u0004\b\u0082\u0004\u0018\u00002\u00020\u0001B;\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u0012\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u0012\u0006\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\f\u0010\rJ\u0018\u0010 \u001a\u00020\u000b2\u0006\u0010!\u001a\u00020\u00052\u0006\u0010\"\u001a\u00020\u0005H\u0016J\u0010\u0010#\u001a\u00020$2\u0006\u0010\"\u001a\u00020\u0005H\u0016J\u0018\u0010%\u001a\u00020$2\u0006\u0010&\u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u0005H\u0016J\u0018\u0010'\u001a\u00020$2\u0006\u0010!\u001a\u00020\u00052\u0006\u0010\"\u001a\u00020\u0005H\u0016R\u001a\u0010\u0002\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u000f\"\u0004\b\u0010\u0010\u0011R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R \u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R \u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u0017\"\u0004\b\u001b\u0010\u0019R\u001a\u0010\n\u001a\u00020\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001f¨\u0006("}, d2 = {"Landroidx/compose/ui/node/NodeChain$Differ;", "Landroidx/compose/ui/node/DiffCallback;", "node", "Landroidx/compose/ui/Modifier$Node;", TypedValues.CycleType.S_WAVE_OFFSET, "", TtmlNode.ANNOTATION_POSITION_BEFORE, "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/Modifier$Element;", TtmlNode.ANNOTATION_POSITION_AFTER, "shouldAttachOnInsert", "", "<init>", "(Landroidx/compose/ui/node/NodeChain;Landroidx/compose/ui/Modifier$Node;ILandroidx/compose/runtime/collection/MutableVector;Landroidx/compose/runtime/collection/MutableVector;Z)V", "getNode", "()Landroidx/compose/ui/Modifier$Node;", "setNode", "(Landroidx/compose/ui/Modifier$Node;)V", "getOffset", "()I", "setOffset", "(I)V", "getBefore", "()Landroidx/compose/runtime/collection/MutableVector;", "setBefore", "(Landroidx/compose/runtime/collection/MutableVector;)V", "getAfter", "setAfter", "getShouldAttachOnInsert", "()Z", "setShouldAttachOnInsert", "(Z)V", "areItemsTheSame", "oldIndex", "newIndex", "insert", "", "remove", "atIndex", "same", "ui_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public final class Differ implements DiffCallback {
         private MutableVector<Modifier.Element> after;
         private MutableVector<Modifier.Element> before;
@@ -544,7 +503,7 @@ public final class NodeChain {
             if (logger != null) {
                 logger.nodeRemoved(i2, this.before.content[this.offset + i2], child$ui_release);
             }
-            if ((NodeKind.m5700constructorimpl(2) & child$ui_release.getKindSet$ui_release()) != 0) {
+            if ((NodeKind.m6245constructorimpl(2) & child$ui_release.getKindSet$ui_release()) != 0) {
                 NodeCoordinator coordinator$ui_release = child$ui_release.getCoordinator$ui_release();
                 Intrinsics.checkNotNull(coordinator$ui_release);
                 NodeCoordinator wrappedBy$ui_release = coordinator$ui_release.getWrappedBy$ui_release();
@@ -703,7 +662,7 @@ public final class NodeChain {
     }
 
     /* renamed from: has-H91voCI$ui_release */
-    public final boolean m5661hasH91voCI$ui_release(int i) {
+    public final boolean m6206hasH91voCI$ui_release(int i) {
         return (i & getAggregateChildKindSet()) != 0;
     }
 
@@ -751,6 +710,20 @@ public final class NodeChain {
         }
     }
 
+    public final void runAttachLifecycle() {
+        for (Modifier.Node head$ui_release = getHead$ui_release(); head$ui_release != null; head$ui_release = head$ui_release.getChild$ui_release()) {
+            head$ui_release.runAttachLifecycle$ui_release();
+            if (head$ui_release.getInsertedNodeAwaitingAttachForInvalidation$ui_release()) {
+                NodeKindKt.autoInvalidateInsertedNode(head$ui_release);
+            }
+            if (head$ui_release.getUpdatedNodeAwaitingAttachForInvalidation$ui_release()) {
+                NodeKindKt.autoInvalidateUpdatedNode(head$ui_release);
+            }
+            head$ui_release.setInsertedNodeAwaitingAttachForInvalidation$ui_release(false);
+            head$ui_release.setUpdatedNodeAwaitingAttachForInvalidation$ui_release(false);
+        }
+    }
+
     public final void markAsDetached$ui_release() {
         for (Modifier.Node tail$ui_release = getTail$ui_release(); tail$ui_release != null; tail$ui_release = tail$ui_release.getParent$ui_release()) {
             if (tail$ui_release.isAttached()) {
@@ -765,19 +738,11 @@ public final class NodeChain {
                 tail$ui_release.runDetachLifecycle$ui_release();
             }
         }
-        InnerNodeCoordinator innerNodeCoordinator = this.innerCoordinator;
-        NodeCoordinator nodeCoordinator = this.outerCoordinator;
-        while (innerNodeCoordinator != nodeCoordinator) {
-            innerNodeCoordinator.onDetach();
-            innerNodeCoordinator = innerNodeCoordinator.getWrappedBy$ui_release();
-            Intrinsics.checkNotNull(innerNodeCoordinator);
-        }
-        nodeCoordinator.onDetach();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: firstFromHead-aLcG6gQ$ui_release */
-    public final /* synthetic */ <T> T m5660firstFromHeadaLcG6gQ$ui_release(int i, Function1<? super T, Boolean> function1) {
+    public final /* synthetic */ <T> T m6205firstFromHeadaLcG6gQ$ui_release(int i, Function1<? super T, Boolean> function1) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node head$ui_release = getHead$ui_release(); head$ui_release != null; head$ui_release = head$ui_release.getChild$ui_release()) {
                 if ((head$ui_release.getKindSet$ui_release() & i) != 0) {
@@ -831,7 +796,7 @@ public final class NodeChain {
     }
 
     /* renamed from: headToTail-aLcG6gQ$ui_release */
-    public final /* synthetic */ <T> void m5663headToTailaLcG6gQ$ui_release(int i, Function1<? super T, Unit> function1) {
+    public final /* synthetic */ <T> void m6208headToTailaLcG6gQ$ui_release(int i, Function1<? super T, Unit> function1) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node head$ui_release = getHead$ui_release(); head$ui_release != null; head$ui_release = head$ui_release.getChild$ui_release()) {
                 if ((head$ui_release.getKindSet$ui_release() & i) != 0) {
@@ -878,7 +843,7 @@ public final class NodeChain {
     }
 
     /* renamed from: tailToHead-aLcG6gQ$ui_release */
-    public final /* synthetic */ <T> void m5665tailToHeadaLcG6gQ$ui_release(int i, Function1<? super T, Unit> function1) {
+    public final /* synthetic */ <T> void m6210tailToHeadaLcG6gQ$ui_release(int i, Function1<? super T, Unit> function1) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node tail$ui_release = getTail$ui_release(); tail$ui_release != null; tail$ui_release = tail$ui_release.getParent$ui_release()) {
                 if ((tail$ui_release.getKindSet$ui_release() & i) != 0) {
@@ -926,7 +891,7 @@ public final class NodeChain {
     /* JADX WARN: Type inference failed for: r2v23 */
     /* JADX WARN: Type inference failed for: r2v25 */
     /* renamed from: tail-H91voCI$ui_release */
-    public final /* synthetic */ <T> T m5664tailH91voCI$ui_release(int i) {
+    public final /* synthetic */ <T> T m6209tailH91voCI$ui_release(int i) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node tail$ui_release = getTail$ui_release(); tail$ui_release != null; tail$ui_release = tail$ui_release.getParent$ui_release()) {
                 if ((tail$ui_release.getKindSet$ui_release() & i) != 0) {
@@ -979,7 +944,7 @@ public final class NodeChain {
     /* JADX WARN: Type inference failed for: r2v25 */
     /* JADX WARN: Type inference failed for: r2v27 */
     /* renamed from: head-H91voCI$ui_release */
-    public final /* synthetic */ <T> T m5662headH91voCI$ui_release(int i) {
+    public final /* synthetic */ <T> T m6207headH91voCI$ui_release(int i) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node head$ui_release = getHead$ui_release(); head$ui_release != null; head$ui_release = head$ui_release.getChild$ui_release()) {
                 if ((head$ui_release.getKindSet$ui_release() & i) != 0) {

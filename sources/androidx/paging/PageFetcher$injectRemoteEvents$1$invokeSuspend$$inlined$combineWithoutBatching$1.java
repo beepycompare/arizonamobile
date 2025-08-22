@@ -254,11 +254,11 @@ public final class PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combi
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             /* renamed from: androidx.paging.PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combineWithoutBatching$1$2$1$1  reason: invalid class name and collision with other inner class name */
             /* loaded from: classes3.dex */
-            public static final class C00561 extends ContinuationImpl {
+            public static final class C00481 extends ContinuationImpl {
                 int label;
                 /* synthetic */ Object result;
 
-                C00561(Continuation continuation) {
+                C00481(Continuation continuation) {
                     super(continuation);
                 }
 
@@ -291,20 +291,20 @@ public final class PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combi
                 Code decompiled incorrectly, please refer to instructions dump.
             */
             public final Object emit(Object obj, Continuation<? super Unit> continuation) {
-                C00561 c00561;
+                C00481 c00481;
                 int i;
-                if (continuation instanceof C00561) {
-                    c00561 = (C00561) continuation;
-                    if ((c00561.label & Integer.MIN_VALUE) != 0) {
-                        c00561.label -= Integer.MIN_VALUE;
-                        Object obj2 = c00561.result;
+                if (continuation instanceof C00481) {
+                    c00481 = (C00481) continuation;
+                    if ((c00481.label & Integer.MIN_VALUE) != 0) {
+                        c00481.label -= Integer.MIN_VALUE;
+                        Object obj2 = c00481.result;
                         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                        i = c00561.label;
+                        i = c00481.label;
                         if (i != 0) {
                             ResultKt.throwOnFailure(obj2);
                             UnbatchedFlowCombiner unbatchedFlowCombiner = this.$unbatchedFlowCombiner;
                             int i2 = this.$index;
-                            c00561.label = 1;
+                            c00481.label = 1;
                         } else if (i != 1) {
                             if (i == 2) {
                                 ResultKt.throwOnFailure(obj2);
@@ -314,16 +314,16 @@ public final class PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combi
                         } else {
                             ResultKt.throwOnFailure(obj2);
                         }
-                        c00561.label = 2;
+                        c00481.label = 2;
                     }
                 }
-                c00561 = new C00561(continuation);
-                Object obj22 = c00561.result;
+                c00481 = new C00481(continuation);
+                Object obj22 = c00481.result;
                 Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = c00561.label;
+                i = c00481.label;
                 if (i != 0) {
                 }
-                c00561.label = 2;
+                c00481.label = 2;
             }
         }
     }

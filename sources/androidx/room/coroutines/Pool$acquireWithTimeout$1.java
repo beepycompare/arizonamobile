@@ -29,6 +29,6 @@ public final class Pool$acquireWithTimeout$1 extends ContinuationImpl {
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.m7580acquireWithTimeoutKLykuaI(0L, null, this);
+        return this.this$0.m8146acquireWithTimeoutKLykuaI(0L, null, this);
     }
 }

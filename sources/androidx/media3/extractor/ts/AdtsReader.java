@@ -18,7 +18,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AdtsReader implements ElementaryStreamReader {
     private static final int CRC_SIZE = 2;
     private static final int HEADER_SIZE = 5;

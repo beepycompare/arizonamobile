@@ -10,7 +10,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeDelaySubscriptionOtherPublisher<T, U> extends AbstractMaybeWithUpstream<T, T> {
     final Publisher<U> other;
 
@@ -24,7 +24,7 @@ public final class MaybeDelaySubscriptionOtherPublisher<T, U> extends AbstractMa
         this.other.subscribe(new OtherSubscriber(maybeObserver, this.source));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OtherSubscriber<T> implements FlowableSubscriber<Object>, Disposable {
         final DelayMaybeObserver<T> main;
         MaybeSource<T> source;
@@ -91,7 +91,7 @@ public final class MaybeDelaySubscriptionOtherPublisher<T, U> extends AbstractMa
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class DelayMaybeObserver<T> extends AtomicReference<Disposable> implements MaybeObserver<T> {
         private static final long serialVersionUID = 706635022205076709L;
         final MaybeObserver<? super T> downstream;

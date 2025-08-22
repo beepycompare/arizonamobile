@@ -14,68 +14,59 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.ranges.RangesKt;
 /* compiled from: ImeEditCommand.android.kt */
-@Metadata(d1 = {"\u0000L\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\f\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\r\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0003H\u0002\u001a\u001c\u0010\u0005\u001a\u00020\u0006*\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0000\u001a\u001c\u0010\f\u001a\u00020\u0006*\u00020\u00072\u0006\u0010\r\u001a\u00020\u000b2\u0006\u0010\u000e\u001a\u00020\u000bH\u0000\u001a\u001c\u0010\u000f\u001a\u00020\u0006*\u00020\u00072\u0006\u0010\r\u001a\u00020\u000b2\u0006\u0010\u000e\u001a\u00020\u000bH\u0000\u001a\f\u0010\u0010\u001a\u00020\u0006*\u00020\u0007H\u0000\u001a\u001c\u0010\u0011\u001a\u00020\u0006*\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u000b2\u0006\u0010\u0014\u001a\u00020\u000bH\u0001\u001a$\u0010\u0015\u001a\u00020\u0006*\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u000b2\u0006\u0010\u0014\u001a\u00020\u000b2\u0006\u0010\b\u001a\u00020\u0016H\u0001\u001a\u001c\u0010\u0017\u001a\u00020\u0006*\u00020\u00072\u0006\u0010\u0013\u001a\u00020\u000b2\u0006\u0010\u0014\u001a\u00020\u000bH\u0000\u001a8\u0010\u0018\u001a\u00020\u0006*\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u001a\b\u0002\u0010\u0019\u001a\u0014\u0012\u000e\u0012\f\u0012\u0004\u0012\u00020\u001c0\u001bj\u0002`\u001d\u0018\u00010\u001aH\u0000\u001a\u001c\u0010\u001e\u001a\u00020\u0006*\u00020\u00072\u0006\u0010\u0013\u001a\u00020\u000b2\u0006\u0010\u0014\u001a\u00020\u000bH\u0000¨\u0006\u001f"}, d2 = {"isSurrogatePair", "", Constants.HIGH, "", Constants.LOW, "commitText", "", "Landroidx/compose/foundation/text/input/internal/ImeEditCommandScope;", "text", "", "newCursorPosition", "", "deleteSurroundingText", "lengthBeforeCursor", "lengthAfterCursor", "deleteSurroundingTextInCodePoints", "finishComposingText", "imeDelete", "Landroidx/compose/foundation/text/input/TextFieldBuffer;", TtmlNode.START, TtmlNode.END, "imeReplace", "", "setComposingRegion", "setComposingText", "annotations", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "Landroidx/compose/foundation/text/input/PlacedAnnotation;", "setSelection", "foundation_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\f\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\r\n\u0002\b\u0002\u001a\u001c\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0000\u001a\u001c\u0010\u0007\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u0006H\u0000\u001a8\u0010\n\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u001a\b\u0002\u0010\u000b\u001a\u0014\u0012\u000e\u0012\f\u0012\u0004\u0012\u00020\u000e0\rj\u0002`\u000f\u0018\u00010\fH\u0000\u001a\u001c\u0010\u0010\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0011\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u0006H\u0000\u001a\u001c\u0010\u0013\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0011\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u0006H\u0000\u001a\f\u0010\u0014\u001a\u00020\u0001*\u00020\u0002H\u0000\u001a\u001c\u0010\u0015\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u0006H\u0000\u001a\u0018\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0019H\u0002\u001a$\u0010\u001b\u001a\u00020\u0001*\u00020\u001c2\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\u0003\u001a\u00020\u001dH\u0001\u001a\u001c\u0010\u001e\u001a\u00020\u0001*\u00020\u001c2\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u0006H\u0001¨\u0006\u001f"}, d2 = {"commitText", "", "Landroidx/compose/foundation/text/input/internal/ImeEditCommandScope;", "text", "", "newCursorPosition", "", "setComposingRegion", TtmlNode.START, TtmlNode.END, "setComposingText", "annotations", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "Landroidx/compose/foundation/text/input/PlacedAnnotation;", "deleteSurroundingText", "lengthBeforeCursor", "lengthAfterCursor", "deleteSurroundingTextInCodePoints", "finishComposingText", "setSelection", "isSurrogatePair", "", Constants.HIGH, "", Constants.LOW, "imeReplace", "Landroidx/compose/foundation/text/input/TextFieldBuffer;", "", "imeDelete", "foundation_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ImeEditCommand_androidKt {
     public static final void commitText(ImeEditCommandScope imeEditCommandScope, final String str, final int i) {
-        imeEditCommandScope.edit(new Function1<TextFieldBuffer, Unit>() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$commitText$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(TextFieldBuffer textFieldBuffer) {
-                invoke2(textFieldBuffer);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(TextFieldBuffer textFieldBuffer) {
-                TextRange m1193getCompositionMzsxiRA$foundation_release = textFieldBuffer.m1193getCompositionMzsxiRA$foundation_release();
-                if (m1193getCompositionMzsxiRA$foundation_release != null) {
-                    ImeEditCommand_androidKt.imeReplace(textFieldBuffer, TextRange.m6147getStartimpl(m1193getCompositionMzsxiRA$foundation_release.m6151unboximpl()), TextRange.m6142getEndimpl(m1193getCompositionMzsxiRA$foundation_release.m6151unboximpl()), str);
-                } else {
-                    ImeEditCommand_androidKt.imeReplace(textFieldBuffer, TextRange.m6147getStartimpl(textFieldBuffer.m1195getSelectiond9O1mEE()), TextRange.m6142getEndimpl(textFieldBuffer.m1195getSelectiond9O1mEE()), str);
-                }
-                int m6147getStartimpl = TextRange.m6147getStartimpl(textFieldBuffer.m1195getSelectiond9O1mEE());
-                int i2 = i;
-                textFieldBuffer.m1197setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i2 > 0 ? (m6147getStartimpl + i2) - 1 : (m6147getStartimpl + i2) - str.length(), 0, textFieldBuffer.getLength())));
+            public final Object invoke(Object obj) {
+                Unit commitText$lambda$0;
+                commitText$lambda$0 = ImeEditCommand_androidKt.commitText$lambda$0(str, i, (TextFieldBuffer) obj);
+                return commitText$lambda$0;
             }
         });
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit commitText$lambda$0(String str, int i, TextFieldBuffer textFieldBuffer) {
+        TextRange m1426getCompositionMzsxiRA$foundation_release = textFieldBuffer.m1426getCompositionMzsxiRA$foundation_release();
+        if (m1426getCompositionMzsxiRA$foundation_release != null) {
+            imeReplace(textFieldBuffer, TextRange.m6713getStartimpl(m1426getCompositionMzsxiRA$foundation_release.m6717unboximpl()), TextRange.m6708getEndimpl(m1426getCompositionMzsxiRA$foundation_release.m6717unboximpl()), str);
+        } else {
+            imeReplace(textFieldBuffer, TextRange.m6713getStartimpl(textFieldBuffer.m1428getSelectiond9O1mEE()), TextRange.m6708getEndimpl(textFieldBuffer.m1428getSelectiond9O1mEE()), str);
+        }
+        int m6713getStartimpl = TextRange.m6713getStartimpl(textFieldBuffer.m1428getSelectiond9O1mEE());
+        textFieldBuffer.m1430setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i > 0 ? (m6713getStartimpl + i) - 1 : (m6713getStartimpl + i) - str.length(), 0, textFieldBuffer.getLength())));
+        return Unit.INSTANCE;
+    }
+
     public static final void setComposingRegion(ImeEditCommandScope imeEditCommandScope, final int i, final int i2) {
-        imeEditCommandScope.edit(new Function1<TextFieldBuffer, Unit>() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$setComposingRegion$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(TextFieldBuffer textFieldBuffer) {
-                invoke2(textFieldBuffer);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(TextFieldBuffer textFieldBuffer) {
-                if (textFieldBuffer.hasComposition$foundation_release()) {
-                    textFieldBuffer.commitComposition$foundation_release();
-                }
-                int coerceIn = RangesKt.coerceIn(i, 0, textFieldBuffer.getLength());
-                int coerceIn2 = RangesKt.coerceIn(i2, 0, textFieldBuffer.getLength());
-                if (coerceIn != coerceIn2) {
-                    if (coerceIn < coerceIn2) {
-                        TextFieldBuffer.setComposition$foundation_release$default(textFieldBuffer, coerceIn, coerceIn2, null, 4, null);
-                    } else {
-                        TextFieldBuffer.setComposition$foundation_release$default(textFieldBuffer, coerceIn2, coerceIn, null, 4, null);
-                    }
-                }
+            public final Object invoke(Object obj) {
+                Unit composingRegion$lambda$1;
+                composingRegion$lambda$1 = ImeEditCommand_androidKt.setComposingRegion$lambda$1(i, i2, (TextFieldBuffer) obj);
+                return composingRegion$lambda$1;
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit setComposingRegion$lambda$1(int i, int i2, TextFieldBuffer textFieldBuffer) {
+        if (textFieldBuffer.hasComposition$foundation_release()) {
+            textFieldBuffer.commitComposition$foundation_release();
+        }
+        int coerceIn = RangesKt.coerceIn(i, 0, textFieldBuffer.getLength());
+        int coerceIn2 = RangesKt.coerceIn(i2, 0, textFieldBuffer.getLength());
+        if (coerceIn != coerceIn2) {
+            if (coerceIn < coerceIn2) {
+                TextFieldBuffer.setComposition$foundation_release$default(textFieldBuffer, coerceIn, coerceIn2, null, 4, null);
+            } else {
+                TextFieldBuffer.setComposition$foundation_release$default(textFieldBuffer, coerceIn2, coerceIn, null, 4, null);
+            }
+        }
+        return Unit.INSTANCE;
     }
 
     public static /* synthetic */ void setComposingText$default(ImeEditCommandScope imeEditCommandScope, String str, int i, List list, int i2, Object obj) {
@@ -86,201 +77,173 @@ public final class ImeEditCommand_androidKt {
     }
 
     public static final void setComposingText(ImeEditCommandScope imeEditCommandScope, final String str, final int i, final List<AnnotatedString.Range<AnnotatedString.Annotation>> list) {
-        imeEditCommandScope.edit(new Function1<TextFieldBuffer, Unit>() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$setComposingText$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
+        imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(TextFieldBuffer textFieldBuffer) {
-                invoke2(textFieldBuffer);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(TextFieldBuffer textFieldBuffer) {
-                TextRange m1193getCompositionMzsxiRA$foundation_release = textFieldBuffer.m1193getCompositionMzsxiRA$foundation_release();
-                if (m1193getCompositionMzsxiRA$foundation_release != null) {
-                    ImeEditCommand_androidKt.imeReplace(textFieldBuffer, TextRange.m6147getStartimpl(m1193getCompositionMzsxiRA$foundation_release.m6151unboximpl()), TextRange.m6142getEndimpl(m1193getCompositionMzsxiRA$foundation_release.m6151unboximpl()), str);
-                    if (str.length() > 0) {
-                        textFieldBuffer.setComposition$foundation_release(TextRange.m6147getStartimpl(m1193getCompositionMzsxiRA$foundation_release.m6151unboximpl()), TextRange.m6147getStartimpl(m1193getCompositionMzsxiRA$foundation_release.m6151unboximpl()) + str.length(), list);
-                    }
-                } else {
-                    int m6147getStartimpl = TextRange.m6147getStartimpl(textFieldBuffer.m1195getSelectiond9O1mEE());
-                    ImeEditCommand_androidKt.imeReplace(textFieldBuffer, m6147getStartimpl, TextRange.m6142getEndimpl(textFieldBuffer.m1195getSelectiond9O1mEE()), str);
-                    if (str.length() > 0) {
-                        textFieldBuffer.setComposition$foundation_release(m6147getStartimpl, str.length() + m6147getStartimpl, list);
-                    }
-                }
-                int m6147getStartimpl2 = TextRange.m6147getStartimpl(textFieldBuffer.m1195getSelectiond9O1mEE());
-                int i2 = i;
-                textFieldBuffer.m1197setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i2 > 0 ? (m6147getStartimpl2 + i2) - 1 : (m6147getStartimpl2 + i2) - str.length(), 0, textFieldBuffer.getLength())));
-            }
-        });
-    }
-
-    public static final void deleteSurroundingText(ImeEditCommandScope imeEditCommandScope, final int i, final int i2) {
-        imeEditCommandScope.edit(new Function1<TextFieldBuffer, Unit>() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$deleteSurroundingText$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(TextFieldBuffer textFieldBuffer) {
-                invoke2(textFieldBuffer);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(TextFieldBuffer textFieldBuffer) {
-                int i3 = i;
-                boolean z = i3 >= 0 && i2 >= 0;
-                int i4 = i2;
-                if (!z) {
-                    InlineClassHelperKt.throwIllegalArgumentException("Expected lengthBeforeCursor and lengthAfterCursor to be non-negative, were " + i3 + " and " + i4 + " respectively.");
-                }
-                int m6142getEndimpl = TextRange.m6142getEndimpl(textFieldBuffer.m1195getSelectiond9O1mEE());
-                int i5 = i2;
-                int i6 = m6142getEndimpl + i5;
-                if (((m6142getEndimpl ^ i6) & (i5 ^ i6)) < 0) {
-                    i6 = textFieldBuffer.getLength();
-                }
-                ImeEditCommand_androidKt.imeDelete(textFieldBuffer, TextRange.m6142getEndimpl(textFieldBuffer.m1195getSelectiond9O1mEE()), Math.min(i6, textFieldBuffer.getLength()));
-                int m6147getStartimpl = TextRange.m6147getStartimpl(textFieldBuffer.m1195getSelectiond9O1mEE());
-                int i7 = i;
-                int i8 = m6147getStartimpl - i7;
-                if (((m6147getStartimpl ^ i8) & (i7 ^ m6147getStartimpl)) < 0) {
-                    i8 = 0;
-                }
-                ImeEditCommand_androidKt.imeDelete(textFieldBuffer, Math.max(0, i8), TextRange.m6147getStartimpl(textFieldBuffer.m1195getSelectiond9O1mEE()));
-            }
-        });
-    }
-
-    public static final void deleteSurroundingTextInCodePoints(ImeEditCommandScope imeEditCommandScope, final int i, final int i2) {
-        imeEditCommandScope.edit(new Function1<TextFieldBuffer, Unit>() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$deleteSurroundingTextInCodePoints$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(TextFieldBuffer textFieldBuffer) {
-                invoke2(textFieldBuffer);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(TextFieldBuffer textFieldBuffer) {
-                boolean isSurrogatePair;
-                boolean isSurrogatePair2;
-                int i3 = i;
-                int i4 = 0;
-                boolean z = i3 >= 0 && i2 >= 0;
-                int i5 = i2;
-                if (!z) {
-                    InlineClassHelperKt.throwIllegalArgumentException("Expected lengthBeforeCursor and lengthAfterCursor to be non-negative, were " + i3 + " and " + i5 + " respectively.");
-                }
-                int i6 = 0;
-                int i7 = 0;
-                while (true) {
-                    if (i6 < i) {
-                        int i8 = i7 + 1;
-                        if (TextRange.m6147getStartimpl(textFieldBuffer.m1195getSelectiond9O1mEE()) > i8) {
-                            isSurrogatePair2 = ImeEditCommand_androidKt.isSurrogatePair(textFieldBuffer.asCharSequence().charAt((TextRange.m6147getStartimpl(textFieldBuffer.m1195getSelectiond9O1mEE()) - i8) - 1), textFieldBuffer.asCharSequence().charAt(TextRange.m6147getStartimpl(textFieldBuffer.m1195getSelectiond9O1mEE()) - i8));
-                            i7 = isSurrogatePair2 ? i7 + 2 : i8;
-                            i6++;
-                        } else {
-                            i7 = TextRange.m6147getStartimpl(textFieldBuffer.m1195getSelectiond9O1mEE());
-                            break;
-                        }
-                    } else {
-                        break;
-                    }
-                }
-                int i9 = 0;
-                while (true) {
-                    if (i4 >= i2) {
-                        break;
-                    }
-                    int i10 = i9 + 1;
-                    if (TextRange.m6142getEndimpl(textFieldBuffer.m1195getSelectiond9O1mEE()) + i10 < textFieldBuffer.getLength()) {
-                        isSurrogatePair = ImeEditCommand_androidKt.isSurrogatePair(textFieldBuffer.asCharSequence().charAt((TextRange.m6142getEndimpl(textFieldBuffer.m1195getSelectiond9O1mEE()) + i10) - 1), textFieldBuffer.asCharSequence().charAt(TextRange.m6142getEndimpl(textFieldBuffer.m1195getSelectiond9O1mEE()) + i10));
-                        i9 = isSurrogatePair ? i9 + 2 : i10;
-                        i4++;
-                    } else {
-                        i9 = textFieldBuffer.getLength() - TextRange.m6142getEndimpl(textFieldBuffer.m1195getSelectiond9O1mEE());
-                        break;
-                    }
-                }
-                ImeEditCommand_androidKt.imeDelete(textFieldBuffer, TextRange.m6142getEndimpl(textFieldBuffer.m1195getSelectiond9O1mEE()), TextRange.m6142getEndimpl(textFieldBuffer.m1195getSelectiond9O1mEE()) + i9);
-                ImeEditCommand_androidKt.imeDelete(textFieldBuffer, TextRange.m6147getStartimpl(textFieldBuffer.m1195getSelectiond9O1mEE()) - i7, TextRange.m6147getStartimpl(textFieldBuffer.m1195getSelectiond9O1mEE()));
-            }
-        });
-    }
-
-    public static final void finishComposingText(ImeEditCommandScope imeEditCommandScope) {
-        imeEditCommandScope.edit(new Function1<TextFieldBuffer, Unit>() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$finishComposingText$1
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(TextFieldBuffer textFieldBuffer) {
-                invoke2(textFieldBuffer);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(TextFieldBuffer textFieldBuffer) {
-                textFieldBuffer.commitComposition$foundation_release();
-            }
-        });
-    }
-
-    public static final void setSelection(final ImeEditCommandScope imeEditCommandScope, final int i, final int i2) {
-        imeEditCommandScope.edit(new Function1<TextFieldBuffer, Unit>() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$setSelection$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(TextFieldBuffer textFieldBuffer) {
-                invoke2(textFieldBuffer);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(TextFieldBuffer textFieldBuffer) {
-                long mo1234mapToTransformedGEjPoXI = ImeEditCommandScope.this.mo1234mapToTransformedGEjPoXI(TextRangeKt.TextRange(0, textFieldBuffer.getLength()));
-                int i3 = i;
-                int m6145getMinimpl = TextRange.m6145getMinimpl(mo1234mapToTransformedGEjPoXI);
-                int m6144getMaximpl = TextRange.m6144getMaximpl(mo1234mapToTransformedGEjPoXI);
-                if (i3 < m6145getMinimpl) {
-                    i3 = m6145getMinimpl;
-                }
-                if (i3 <= m6144getMaximpl) {
-                    m6144getMaximpl = i3;
-                }
-                int i4 = i2;
-                int m6145getMinimpl2 = TextRange.m6145getMinimpl(mo1234mapToTransformedGEjPoXI);
-                int m6144getMaximpl2 = TextRange.m6144getMaximpl(mo1234mapToTransformedGEjPoXI);
-                if (i4 < m6145getMinimpl2) {
-                    i4 = m6145getMinimpl2;
-                }
-                if (i4 <= m6144getMaximpl2) {
-                    m6144getMaximpl2 = i4;
-                }
-                textFieldBuffer.m1197setSelection5zctL8(ImeEditCommandScope.this.mo1233mapFromTransformedGEjPoXI(TextRangeKt.TextRange(m6144getMaximpl, m6144getMaximpl2)));
+            public final Object invoke(Object obj) {
+                Unit composingText$lambda$2;
+                composingText$lambda$2 = ImeEditCommand_androidKt.setComposingText$lambda$2(str, list, i, (TextFieldBuffer) obj);
+                return composingText$lambda$2;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean isSurrogatePair(char c, char c2) {
+    public static final Unit setComposingText$lambda$2(String str, List list, int i, TextFieldBuffer textFieldBuffer) {
+        TextRange m1426getCompositionMzsxiRA$foundation_release = textFieldBuffer.m1426getCompositionMzsxiRA$foundation_release();
+        if (m1426getCompositionMzsxiRA$foundation_release != null) {
+            String str2 = str;
+            imeReplace(textFieldBuffer, TextRange.m6713getStartimpl(m1426getCompositionMzsxiRA$foundation_release.m6717unboximpl()), TextRange.m6708getEndimpl(m1426getCompositionMzsxiRA$foundation_release.m6717unboximpl()), str2);
+            if (str2.length() > 0) {
+                textFieldBuffer.setComposition$foundation_release(TextRange.m6713getStartimpl(m1426getCompositionMzsxiRA$foundation_release.m6717unboximpl()), TextRange.m6713getStartimpl(m1426getCompositionMzsxiRA$foundation_release.m6717unboximpl()) + str.length(), list);
+            }
+        } else {
+            int m6713getStartimpl = TextRange.m6713getStartimpl(textFieldBuffer.m1428getSelectiond9O1mEE());
+            String str3 = str;
+            imeReplace(textFieldBuffer, m6713getStartimpl, TextRange.m6708getEndimpl(textFieldBuffer.m1428getSelectiond9O1mEE()), str3);
+            if (str3.length() > 0) {
+                textFieldBuffer.setComposition$foundation_release(m6713getStartimpl, str.length() + m6713getStartimpl, list);
+            }
+        }
+        int m6713getStartimpl2 = TextRange.m6713getStartimpl(textFieldBuffer.m1428getSelectiond9O1mEE());
+        textFieldBuffer.m1430setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i > 0 ? (m6713getStartimpl2 + i) - 1 : (m6713getStartimpl2 + i) - str.length(), 0, textFieldBuffer.getLength())));
+        return Unit.INSTANCE;
+    }
+
+    public static final void deleteSurroundingText(ImeEditCommandScope imeEditCommandScope, final int i, final int i2) {
+        imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda4
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit deleteSurroundingText$lambda$6;
+                deleteSurroundingText$lambda$6 = ImeEditCommand_androidKt.deleteSurroundingText$lambda$6(i, i2, (TextFieldBuffer) obj);
+                return deleteSurroundingText$lambda$6;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit deleteSurroundingText$lambda$6(int i, int i2, TextFieldBuffer textFieldBuffer) {
+        if (!(i >= 0 && i2 >= 0)) {
+            InlineClassHelperKt.throwIllegalArgumentException("Expected lengthBeforeCursor and lengthAfterCursor to be non-negative, were " + i + " and " + i2 + " respectively.");
+        }
+        int m6708getEndimpl = TextRange.m6708getEndimpl(textFieldBuffer.m1428getSelectiond9O1mEE());
+        int i3 = m6708getEndimpl + i2;
+        if (((i2 ^ i3) & (m6708getEndimpl ^ i3)) < 0) {
+            i3 = textFieldBuffer.getLength();
+        }
+        imeDelete(textFieldBuffer, TextRange.m6708getEndimpl(textFieldBuffer.m1428getSelectiond9O1mEE()), Math.min(i3, textFieldBuffer.getLength()));
+        int m6713getStartimpl = TextRange.m6713getStartimpl(textFieldBuffer.m1428getSelectiond9O1mEE());
+        int i4 = m6713getStartimpl - i;
+        if (((i ^ m6713getStartimpl) & (m6713getStartimpl ^ i4)) < 0) {
+            i4 = 0;
+        }
+        imeDelete(textFieldBuffer, Math.max(0, i4), TextRange.m6713getStartimpl(textFieldBuffer.m1428getSelectiond9O1mEE()));
+        return Unit.INSTANCE;
+    }
+
+    public static final void deleteSurroundingTextInCodePoints(ImeEditCommandScope imeEditCommandScope, final int i, final int i2) {
+        imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda0
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit deleteSurroundingTextInCodePoints$lambda$8;
+                deleteSurroundingTextInCodePoints$lambda$8 = ImeEditCommand_androidKt.deleteSurroundingTextInCodePoints$lambda$8(i, i2, (TextFieldBuffer) obj);
+                return deleteSurroundingTextInCodePoints$lambda$8;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit deleteSurroundingTextInCodePoints$lambda$8(int i, int i2, TextFieldBuffer textFieldBuffer) {
+        int i3 = 0;
+        if (!(i >= 0 && i2 >= 0)) {
+            InlineClassHelperKt.throwIllegalArgumentException("Expected lengthBeforeCursor and lengthAfterCursor to be non-negative, were " + i + " and " + i2 + " respectively.");
+        }
+        int i4 = 0;
+        int i5 = 0;
+        while (true) {
+            if (i4 < i) {
+                int i6 = i5 + 1;
+                if (TextRange.m6713getStartimpl(textFieldBuffer.m1428getSelectiond9O1mEE()) > i6) {
+                    i5 = isSurrogatePair(textFieldBuffer.asCharSequence().charAt((TextRange.m6713getStartimpl(textFieldBuffer.m1428getSelectiond9O1mEE()) - i6) - 1), textFieldBuffer.asCharSequence().charAt(TextRange.m6713getStartimpl(textFieldBuffer.m1428getSelectiond9O1mEE()) - i6)) ? i5 + 2 : i6;
+                    i4++;
+                } else {
+                    i5 = TextRange.m6713getStartimpl(textFieldBuffer.m1428getSelectiond9O1mEE());
+                    break;
+                }
+            } else {
+                break;
+            }
+        }
+        int i7 = 0;
+        while (true) {
+            if (i3 >= i2) {
+                break;
+            }
+            int i8 = i7 + 1;
+            if (TextRange.m6708getEndimpl(textFieldBuffer.m1428getSelectiond9O1mEE()) + i8 < textFieldBuffer.getLength()) {
+                i7 = isSurrogatePair(textFieldBuffer.asCharSequence().charAt((TextRange.m6708getEndimpl(textFieldBuffer.m1428getSelectiond9O1mEE()) + i8) - 1), textFieldBuffer.asCharSequence().charAt(TextRange.m6708getEndimpl(textFieldBuffer.m1428getSelectiond9O1mEE()) + i8)) ? i7 + 2 : i8;
+                i3++;
+            } else {
+                i7 = textFieldBuffer.getLength() - TextRange.m6708getEndimpl(textFieldBuffer.m1428getSelectiond9O1mEE());
+                break;
+            }
+        }
+        imeDelete(textFieldBuffer, TextRange.m6708getEndimpl(textFieldBuffer.m1428getSelectiond9O1mEE()), TextRange.m6708getEndimpl(textFieldBuffer.m1428getSelectiond9O1mEE()) + i7);
+        imeDelete(textFieldBuffer, TextRange.m6713getStartimpl(textFieldBuffer.m1428getSelectiond9O1mEE()) - i5, TextRange.m6713getStartimpl(textFieldBuffer.m1428getSelectiond9O1mEE()));
+        return Unit.INSTANCE;
+    }
+
+    public static final void finishComposingText(ImeEditCommandScope imeEditCommandScope) {
+        imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda5
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit finishComposingText$lambda$9;
+                finishComposingText$lambda$9 = ImeEditCommand_androidKt.finishComposingText$lambda$9((TextFieldBuffer) obj);
+                return finishComposingText$lambda$9;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit finishComposingText$lambda$9(TextFieldBuffer textFieldBuffer) {
+        textFieldBuffer.commitComposition$foundation_release();
+        return Unit.INSTANCE;
+    }
+
+    public static final void setSelection(final ImeEditCommandScope imeEditCommandScope, final int i, final int i2) {
+        imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda1
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit selection$lambda$10;
+                selection$lambda$10 = ImeEditCommand_androidKt.setSelection$lambda$10(ImeEditCommandScope.this, i, i2, (TextFieldBuffer) obj);
+                return selection$lambda$10;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit setSelection$lambda$10(ImeEditCommandScope imeEditCommandScope, int i, int i2, TextFieldBuffer textFieldBuffer) {
+        long mo1469mapToTransformedGEjPoXI = imeEditCommandScope.mo1469mapToTransformedGEjPoXI(TextRangeKt.TextRange(0, textFieldBuffer.getLength()));
+        int m6711getMinimpl = TextRange.m6711getMinimpl(mo1469mapToTransformedGEjPoXI);
+        int m6710getMaximpl = TextRange.m6710getMaximpl(mo1469mapToTransformedGEjPoXI);
+        if (i < m6711getMinimpl) {
+            i = m6711getMinimpl;
+        }
+        if (i <= m6710getMaximpl) {
+            m6710getMaximpl = i;
+        }
+        int m6711getMinimpl2 = TextRange.m6711getMinimpl(mo1469mapToTransformedGEjPoXI);
+        int m6710getMaximpl2 = TextRange.m6710getMaximpl(mo1469mapToTransformedGEjPoXI);
+        if (i2 < m6711getMinimpl2) {
+            i2 = m6711getMinimpl2;
+        }
+        if (i2 <= m6710getMaximpl2) {
+            m6710getMaximpl2 = i2;
+        }
+        textFieldBuffer.m1430setSelection5zctL8(imeEditCommandScope.mo1468mapFromTransformedGEjPoXI(TextRangeKt.TextRange(m6710getMaximpl, m6710getMaximpl2)));
+        return Unit.INSTANCE;
+    }
+
+    private static final boolean isSurrogatePair(char c, char c2) {
         return Character.isHighSurrogate(c) && Character.isLowSurrogate(c2);
     }
 
@@ -309,21 +272,21 @@ public final class ImeEditCommand_androidKt {
             max--;
         }
         textFieldBuffer.replace(i4, max, charSequence.subSequence(i3, length));
-        textFieldBuffer.m1197setSelection5zctL8(TextRangeKt.TextRange(min + charSequence.length()));
+        textFieldBuffer.m1430setSelection5zctL8(TextRangeKt.TextRange(min + charSequence.length()));
     }
 
     public static final void imeDelete(TextFieldBuffer textFieldBuffer, int i, int i2) {
-        TextRange m1193getCompositionMzsxiRA$foundation_release = textFieldBuffer.m1193getCompositionMzsxiRA$foundation_release();
+        TextRange m1426getCompositionMzsxiRA$foundation_release = textFieldBuffer.m1426getCompositionMzsxiRA$foundation_release();
         int min = Math.min(i, i2);
         int max = Math.max(i, i2);
         TextFieldBufferKt.delete(textFieldBuffer, min, max);
-        if (m1193getCompositionMzsxiRA$foundation_release != null) {
-            m1193getCompositionMzsxiRA$foundation_release.m6151unboximpl();
-            long m1201adjustTextRangevJH6DeI = TextFieldBufferKt.m1201adjustTextRangevJH6DeI(m1193getCompositionMzsxiRA$foundation_release.m6151unboximpl(), min, max, 0);
-            if (TextRange.m6141getCollapsedimpl(m1201adjustTextRangevJH6DeI)) {
+        if (m1426getCompositionMzsxiRA$foundation_release != null) {
+            m1426getCompositionMzsxiRA$foundation_release.m6717unboximpl();
+            long m1434adjustTextRangevJH6DeI = TextFieldBufferKt.m1434adjustTextRangevJH6DeI(m1426getCompositionMzsxiRA$foundation_release.m6717unboximpl(), min, max, 0);
+            if (TextRange.m6707getCollapsedimpl(m1434adjustTextRangevJH6DeI)) {
                 textFieldBuffer.commitComposition$foundation_release();
             } else {
-                TextFieldBuffer.setComposition$foundation_release$default(textFieldBuffer, TextRange.m6145getMinimpl(m1201adjustTextRangevJH6DeI), TextRange.m6144getMaximpl(m1201adjustTextRangevJH6DeI), null, 4, null);
+                TextFieldBuffer.setComposition$foundation_release$default(textFieldBuffer, TextRange.m6711getMinimpl(m1434adjustTextRangevJH6DeI), TextRange.m6710getMaximpl(m1434adjustTextRangevJH6DeI), null, 4, null);
             }
         }
     }

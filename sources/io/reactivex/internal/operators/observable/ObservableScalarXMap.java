@@ -11,7 +11,7 @@ import io.reactivex.internal.fuseable.QueueDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableScalarXMap {
     private ObservableScalarXMap() {
         throw new IllegalStateException("No instances!");
@@ -65,7 +65,7 @@ public final class ObservableScalarXMap {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ScalarXMapObservable<T, R> extends Observable<R> {
         final Function<? super T, ? extends ObservableSource<? extends R>> mapper;
         final T value;
@@ -103,7 +103,7 @@ public final class ObservableScalarXMap {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ScalarDisposable<T> extends AtomicInteger implements QueueDisposable<T>, Runnable {
         static final int FUSED = 1;
         static final int ON_COMPLETE = 3;

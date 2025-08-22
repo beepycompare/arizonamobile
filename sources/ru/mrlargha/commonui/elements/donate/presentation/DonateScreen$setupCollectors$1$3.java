@@ -21,8 +21,8 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBoostModel
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3", f = "DonateScreen.kt", i = {}, l = {225}, m = "invokeSuspend", n = {}, s = {})
-/* loaded from: classes5.dex */
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3", f = "DonateScreen.kt", i = {}, l = {237}, m = "invokeSuspend", n = {}, s = {})
+/* loaded from: classes6.dex */
 public final class DonateScreen$setupCollectors$1$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
     final /* synthetic */ DonateScreen this$0;
@@ -47,9 +47,9 @@ public final class DonateScreen$setupCollectors$1$3 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: DonateScreen.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3$1", f = "DonateScreen.kt", i = {}, l = {226}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3$1", f = "DonateScreen.kt", i = {}, l = {238}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3$1  reason: invalid class name */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         int label;
         final /* synthetic */ DonateScreen this$0;

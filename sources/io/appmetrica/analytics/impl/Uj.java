@@ -1,18 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* loaded from: classes4.dex */
-public final class Uj implements InterfaceC0407lb {
+public final class Uj implements InterfaceC0454nb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Map f674a;
+    public final /* synthetic */ PluginErrorDetails f681a;
+    public final /* synthetic */ String b;
 
-    public Uj(Map map) {
-        this.f674a = map;
+    public Uj(PluginErrorDetails pluginErrorDetails, String str) {
+        this.f681a = pluginErrorDetails;
+        this.b = str;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0407lb
-    public final void a(InterfaceC0432mb interfaceC0432mb) {
-        interfaceC0432mb.reportAnr(this.f674a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0454nb
+    public final void a(InterfaceC0479ob interfaceC0479ob) {
+        interfaceC0479ob.getPluginExtension().reportError(this.f681a, this.b);
     }
 }

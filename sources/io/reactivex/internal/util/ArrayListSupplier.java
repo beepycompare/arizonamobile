@@ -4,7 +4,7 @@ import io.reactivex.functions.Function;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public enum ArrayListSupplier implements Callable<List<Object>>, Function<Object, List<Object>> {
     INSTANCE;
 

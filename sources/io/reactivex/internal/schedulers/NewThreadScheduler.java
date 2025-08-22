@@ -2,7 +2,7 @@ package io.reactivex.internal.schedulers;
 
 import io.reactivex.Scheduler;
 import java.util.concurrent.ThreadFactory;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class NewThreadScheduler extends Scheduler {
     final ThreadFactory threadFactory;
     private static final String THREAD_NAME_PREFIX = "RxNewThreadScheduler";

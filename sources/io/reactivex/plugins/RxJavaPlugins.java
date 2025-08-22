@@ -30,7 +30,7 @@ import io.reactivex.parallel.ParallelFlowable;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ThreadFactory;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class RxJavaPlugins {
     static volatile Consumer<? super Throwable> errorHandler;
     static volatile boolean failNonBlockingScheduler;

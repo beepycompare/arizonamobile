@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class WebvttCssParser {
     private static final String PROPERTY_BGCOLOR = "background-color";
     private static final String PROPERTY_COLOR = "color";

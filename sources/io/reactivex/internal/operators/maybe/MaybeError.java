@@ -3,7 +3,7 @@ package io.reactivex.internal.operators.maybe;
 import io.reactivex.Maybe;
 import io.reactivex.MaybeObserver;
 import io.reactivex.disposables.Disposables;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class MaybeError<T> extends Maybe<T> {
     final Throwable error;
 

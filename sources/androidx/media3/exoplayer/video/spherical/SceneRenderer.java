@@ -49,7 +49,7 @@ public final class SceneRenderer implements VideoFrameMetadataListener, CameraMo
         surfaceTexture.setOnFrameAvailableListener(new SurfaceTexture.OnFrameAvailableListener() { // from class: androidx.media3.exoplayer.video.spherical.SceneRenderer$$ExternalSyntheticLambda0
             @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
             public final void onFrameAvailable(SurfaceTexture surfaceTexture2) {
-                SceneRenderer.this.m7469x200ab998(surfaceTexture2);
+                SceneRenderer.this.m8035x200ab998(surfaceTexture2);
             }
         });
         return this.surfaceTexture;
@@ -57,7 +57,7 @@ public final class SceneRenderer implements VideoFrameMetadataListener, CameraMo
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$init$0$androidx-media3-exoplayer-video-spherical-SceneRenderer  reason: not valid java name */
-    public /* synthetic */ void m7469x200ab998(SurfaceTexture surfaceTexture) {
+    public /* synthetic */ void m8035x200ab998(SurfaceTexture surfaceTexture) {
         this.frameAvailable.set(true);
     }
 

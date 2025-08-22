@@ -25,6 +25,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.coroutines.ContinuationInterceptor;
 import kotlin.coroutines.CoroutineContext;
@@ -40,7 +41,7 @@ import kotlinx.coroutines.flow.FlowKt;
 import kotlinx.coroutines.flow.SharingStarted;
 import kotlinx.coroutines.flow.StateFlow;
 /* compiled from: WindowRecomposer.android.kt */
-@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0016\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\u0017\u001a\u00020\u0002H\u0002\u001a \u0010\u0018\u001a\u00020\u0011*\u00020\b2\b\b\u0002\u0010\u0019\u001a\u00020\u001a2\n\b\u0002\u0010\u001b\u001a\u0004\u0018\u00010\u001c\u001a\f\u0010\u001d\u001a\u0004\u0018\u00010\u0006*\u00020\b\" \u0010\u0000\u001a\u0014\u0012\u0004\u0012\u00020\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00040\u00030\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\",\u0010\u0007\u001a\u0004\u0018\u00010\u0006*\u00020\b2\b\u0010\u0005\u001a\u0004\u0018\u00010\u00068F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\f\"\u0018\u0010\r\u001a\u00020\b*\u00020\b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000f\"\u001e\u0010\u0010\u001a\u00020\u0011*\u00020\b8@X\u0080\u0004¢\u0006\f\u0012\u0004\b\u0012\u0010\u0013\u001a\u0004\b\u0014\u0010\u0015¨\u0006\u001e"}, d2 = {"animationScale", "", "Landroid/content/Context;", "Lkotlinx/coroutines/flow/StateFlow;", "", "value", "Landroidx/compose/runtime/CompositionContext;", "compositionContext", "Landroid/view/View;", "getCompositionContext", "(Landroid/view/View;)Landroidx/compose/runtime/CompositionContext;", "setCompositionContext", "(Landroid/view/View;Landroidx/compose/runtime/CompositionContext;)V", "contentChild", "getContentChild", "(Landroid/view/View;)Landroid/view/View;", "windowRecomposer", "Landroidx/compose/runtime/Recomposer;", "getWindowRecomposer$annotations", "(Landroid/view/View;)V", "getWindowRecomposer", "(Landroid/view/View;)Landroidx/compose/runtime/Recomposer;", "getAnimationScaleFlowFor", "applicationContext", "createLifecycleAwareWindowRecomposer", "coroutineContext", "Lkotlin/coroutines/CoroutineContext;", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "findViewTreeCompositionContext", "ui_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\f\u0010\b\u001a\u0004\u0018\u00010\u0001*\u00020\u0003\u001a\u0016\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\r0\f2\u0006\u0010\u000f\u001a\u00020\u000bH\u0002\u001a \u0010\u0019\u001a\u00020\u0014*\u00020\u00032\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u001d\",\u0010\u0002\u001a\u0004\u0018\u00010\u0001*\u00020\u00032\b\u0010\u0000\u001a\u0004\u0018\u00010\u00018F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b\u0004\u0010\u0005\"\u0004\b\u0006\u0010\u0007\" \u0010\t\u001a\u0014\u0012\u0004\u0012\u00020\u000b\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0\f0\nX\u0082\u0004¢\u0006\u0002\n\u0000\"\u0018\u0010\u0010\u001a\u00020\u0003*\u00020\u00038BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u0012\"\u001e\u0010\u0013\u001a\u00020\u0014*\u00020\u00038@X\u0080\u0004¢\u0006\f\u0012\u0004\b\u0015\u0010\u0016\u001a\u0004\b\u0017\u0010\u0018¨\u0006\u001e"}, d2 = {"value", "Landroidx/compose/runtime/CompositionContext;", "compositionContext", "Landroid/view/View;", "getCompositionContext", "(Landroid/view/View;)Landroidx/compose/runtime/CompositionContext;", "setCompositionContext", "(Landroid/view/View;Landroidx/compose/runtime/CompositionContext;)V", "findViewTreeCompositionContext", "animationScale", "", "Landroid/content/Context;", "Lkotlinx/coroutines/flow/StateFlow;", "", "getAnimationScaleFlowFor", "applicationContext", "contentChild", "getContentChild", "(Landroid/view/View;)Landroid/view/View;", "windowRecomposer", "Landroidx/compose/runtime/Recomposer;", "getWindowRecomposer$annotations", "(Landroid/view/View;)V", "getWindowRecomposer", "(Landroid/view/View;)Landroidx/compose/runtime/Recomposer;", "createLifecycleAwareWindowRecomposer", "coroutineContext", "Lkotlin/coroutines/CoroutineContext;", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "ui_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class WindowRecomposer_androidKt {
     private static final Map<Context, StateFlow<Float>> animationScale = new LinkedHashMap();
@@ -65,8 +66,11 @@ public final class WindowRecomposer_androidKt {
         if (compositionContext != null) {
             return compositionContext;
         }
-        for (ViewParent parent = view.getParent(); compositionContext == null && (parent instanceof View); parent = parent.getParent()) {
-            compositionContext = getCompositionContext((View) parent);
+        ViewParent parent = view.getParent();
+        while (compositionContext == null && (parent instanceof View)) {
+            View view2 = (View) parent;
+            compositionContext = getCompositionContext(view2);
+            parent = view2.getParent();
         }
         return compositionContext;
     }
@@ -86,7 +90,7 @@ public final class WindowRecomposer_androidKt {
                 stateFlow2 = FlowKt.stateIn(FlowKt.flow(new WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1(contentResolver, uriFor, new ContentObserver(createAsync) { // from class: androidx.compose.ui.platform.WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$contentObserver$1
                     @Override // android.database.ContentObserver
                     public void onChange(boolean z, Uri uri) {
-                        Channel$default.mo7559trySendJP2dKIU(Unit.INSTANCE);
+                        Channel$default.mo8125trySendJP2dKIU(Unit.INSTANCE);
                     }
                 }, Channel$default, context, null)), CoroutineScopeKt.MainScope(), SharingStarted.Companion.WhileSubscribed$default(SharingStarted.Companion, 0L, 0L, 3, null), Float.valueOf(Settings.Global.getFloat(context.getContentResolver(), "animator_duration_scale", 1.0f)));
                 map.put(context, stateFlow2);
@@ -178,7 +182,7 @@ public final class WindowRecomposer_androidKt {
             lifecycle.addObserver(new LifecycleEventObserver() { // from class: androidx.compose.ui.platform.WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2
 
                 /* compiled from: WindowRecomposer.android.kt */
-                @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+                @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
                 /* loaded from: classes2.dex */
                 public /* synthetic */ class WhenMappings {
                     public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -219,20 +223,29 @@ public final class WindowRecomposer_androidKt {
 
                 @Override // androidx.lifecycle.LifecycleEventObserver
                 public void onStateChanged(LifecycleOwner lifecycleOwner2, Lifecycle.Event event) {
-                    int i = WhenMappings.$EnumSwitchMapping$0[event.ordinal()];
-                    if (i == 1) {
-                        BuildersKt__Builders_commonKt.launch$default(CoroutineScope.this, null, CoroutineStart.UNDISPATCHED, new WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2$onStateChanged$1(objectRef, recomposer, lifecycleOwner2, this, view, null), 1, null);
-                    } else if (i == 2) {
-                        PausableMonotonicFrameClock pausableMonotonicFrameClock3 = pausableMonotonicFrameClock;
-                        if (pausableMonotonicFrameClock3 != null) {
-                            pausableMonotonicFrameClock3.resume();
-                        }
-                        recomposer.resumeCompositionFrameClock();
-                    } else if (i == 3) {
-                        recomposer.pauseCompositionFrameClock();
-                    } else if (i != 4) {
-                    } else {
-                        recomposer.cancel();
+                    switch (WhenMappings.$EnumSwitchMapping$0[event.ordinal()]) {
+                        case 1:
+                            BuildersKt__Builders_commonKt.launch$default(CoroutineScope.this, null, CoroutineStart.UNDISPATCHED, new WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2$onStateChanged$1(objectRef, recomposer, lifecycleOwner2, this, view, null), 1, null);
+                            return;
+                        case 2:
+                            PausableMonotonicFrameClock pausableMonotonicFrameClock3 = pausableMonotonicFrameClock;
+                            if (pausableMonotonicFrameClock3 != null) {
+                                pausableMonotonicFrameClock3.resume();
+                            }
+                            recomposer.resumeCompositionFrameClock();
+                            return;
+                        case 3:
+                            recomposer.pauseCompositionFrameClock();
+                            return;
+                        case 4:
+                            recomposer.cancel();
+                            return;
+                        case 5:
+                        case 6:
+                        case 7:
+                            return;
+                        default:
+                            throw new NoWhenBranchMatchedException();
                     }
                 }
             });

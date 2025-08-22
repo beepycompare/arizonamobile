@@ -33,6 +33,8 @@ public class WindowInsetsCompat {
     private WindowInsetsCompat(WindowInsets windowInsets) {
         if (Build.VERSION.SDK_INT >= 34) {
             this.mImpl = new Impl34(this, windowInsets);
+        } else if (Build.VERSION.SDK_INT >= 31) {
+            this.mImpl = new Impl31(this, windowInsets);
         } else if (Build.VERSION.SDK_INT >= 30) {
             this.mImpl = new Impl30(this, windowInsets);
         } else if (Build.VERSION.SDK_INT >= 29) {
@@ -49,6 +51,8 @@ public class WindowInsetsCompat {
             Impl impl = windowInsetsCompat.mImpl;
             if (Build.VERSION.SDK_INT >= 34 && (impl instanceof Impl34)) {
                 this.mImpl = new Impl34(this, (Impl34) impl);
+            } else if (Build.VERSION.SDK_INT >= 31 && (impl instanceof Impl31)) {
+                this.mImpl = new Impl31(this, (Impl31) impl);
             } else if (Build.VERSION.SDK_INT >= 30 && (impl instanceof Impl30)) {
                 this.mImpl = new Impl30(this, (Impl30) impl);
             } else if (Build.VERSION.SDK_INT >= 29 && (impl instanceof Impl29)) {
@@ -218,6 +222,14 @@ public class WindowInsetsCompat {
         return this.mImpl.isVisible(i);
     }
 
+    public RoundedCornerCompat getRoundedCorner(int i) {
+        return this.mImpl.getRoundedCorner(i);
+    }
+
+    public Rect getPrivacyIndicatorBounds() {
+        return this.mImpl.getPrivacyIndicatorBounds();
+    }
+
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -257,6 +269,14 @@ public class WindowInsetsCompat {
         }
 
         DisplayCutoutCompat getDisplayCutout() {
+            return null;
+        }
+
+        Rect getPrivacyIndicatorBounds() {
+            return null;
+        }
+
+        RoundedCornerCompat getRoundedCorner(int i) {
             return null;
         }
 
@@ -791,7 +811,32 @@ public class WindowInsetsCompat {
     }
 
     /* loaded from: classes2.dex */
-    private static class Impl34 extends Impl30 {
+    private static class Impl31 extends Impl30 {
+        Impl31(WindowInsetsCompat windowInsetsCompat, WindowInsets windowInsets) {
+            super(windowInsetsCompat, windowInsets);
+        }
+
+        Impl31(WindowInsetsCompat windowInsetsCompat, Impl31 impl31) {
+            super(windowInsetsCompat, impl31);
+        }
+
+        @Override // androidx.core.view.WindowInsetsCompat.Impl
+        RoundedCornerCompat getRoundedCorner(int i) {
+            return RoundedCornerCompat.toRoundedCornerCompat(this.mPlatformInsets.getRoundedCorner(i));
+        }
+
+        @Override // androidx.core.view.WindowInsetsCompat.Impl
+        Rect getPrivacyIndicatorBounds() {
+            Rect privacyIndicatorBounds = this.mPlatformInsets.getPrivacyIndicatorBounds();
+            if (privacyIndicatorBounds != null) {
+                return new Rect(privacyIndicatorBounds);
+            }
+            return null;
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    private static class Impl34 extends Impl31 {
         static final WindowInsetsCompat CONSUMED = WindowInsetsCompat.toWindowInsetsCompat(WindowInsets.CONSUMED);
 
         Impl34(WindowInsetsCompat windowInsetsCompat, WindowInsets windowInsets) {
@@ -825,6 +870,8 @@ public class WindowInsetsCompat {
         public Builder() {
             if (Build.VERSION.SDK_INT >= 34) {
                 this.mImpl = new BuilderImpl34();
+            } else if (Build.VERSION.SDK_INT >= 31) {
+                this.mImpl = new BuilderImpl31();
             } else if (Build.VERSION.SDK_INT >= 30) {
                 this.mImpl = new BuilderImpl30();
             } else if (Build.VERSION.SDK_INT >= 29) {
@@ -837,6 +884,8 @@ public class WindowInsetsCompat {
         public Builder(WindowInsetsCompat windowInsetsCompat) {
             if (Build.VERSION.SDK_INT >= 34) {
                 this.mImpl = new BuilderImpl34(windowInsetsCompat);
+            } else if (Build.VERSION.SDK_INT >= 31) {
+                this.mImpl = new BuilderImpl31(windowInsetsCompat);
             } else if (Build.VERSION.SDK_INT >= 30) {
                 this.mImpl = new BuilderImpl30(windowInsetsCompat);
             } else if (Build.VERSION.SDK_INT >= 29) {
@@ -896,6 +945,16 @@ public class WindowInsetsCompat {
             return this;
         }
 
+        public Builder setRoundedCorner(int i, RoundedCornerCompat roundedCornerCompat) {
+            this.mImpl.setRoundedCorner(i, roundedCornerCompat);
+            return this;
+        }
+
+        public Builder setPrivacyIndicatorBounds(Rect rect) {
+            this.mImpl.setPrivacyIndicatorBounds(rect);
+            return this;
+        }
+
         public WindowInsetsCompat build() {
             return this.mImpl.build();
         }
@@ -911,6 +970,12 @@ public class WindowInsetsCompat {
         }
 
         void setMandatorySystemGestureInsets(Insets insets) {
+        }
+
+        void setPrivacyIndicatorBounds(Rect rect) {
+        }
+
+        void setRoundedCorner(int i, RoundedCornerCompat roundedCornerCompat) {
         }
 
         void setStableInsets(Insets insets) {
@@ -1159,7 +1224,27 @@ public class WindowInsetsCompat {
     }
 
     /* loaded from: classes2.dex */
-    private static class BuilderImpl34 extends BuilderImpl30 {
+    private static class BuilderImpl31 extends BuilderImpl30 {
+        BuilderImpl31() {
+        }
+
+        BuilderImpl31(WindowInsetsCompat windowInsetsCompat) {
+            super(windowInsetsCompat);
+        }
+
+        @Override // androidx.core.view.WindowInsetsCompat.BuilderImpl
+        void setRoundedCorner(int i, RoundedCornerCompat roundedCornerCompat) {
+            this.mPlatBuilder.setRoundedCorner(RoundedCornerCompat.toPlatformPosition(i), RoundedCornerCompat.toPlatformRoundedCorner(roundedCornerCompat));
+        }
+
+        @Override // androidx.core.view.WindowInsetsCompat.BuilderImpl
+        void setPrivacyIndicatorBounds(Rect rect) {
+            this.mPlatBuilder.setPrivacyIndicatorBounds(rect != null ? new Rect(rect) : null);
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    private static class BuilderImpl34 extends BuilderImpl31 {
         BuilderImpl34() {
         }
 

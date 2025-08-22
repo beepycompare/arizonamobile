@@ -18,7 +18,7 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Job;
 /* compiled from: BringIntoViewResponder.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "Lkotlinx/coroutines/Job;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lkotlinx/coroutines/Job;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.relocation.BringIntoViewResponderNode$bringIntoView$2", f = "BringIntoViewResponder.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 final class BringIntoViewResponderNode$bringIntoView$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Job>, Object> {
@@ -67,7 +67,7 @@ final class BringIntoViewResponderNode$bringIntoView$2 extends SuspendLambda imp
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: BringIntoViewResponder.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
     @DebugMetadata(c = "androidx.compose.foundation.relocation.BringIntoViewResponderNode$bringIntoView$2$1", f = "BringIntoViewResponder.kt", i = {}, l = {183}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.foundation.relocation.BringIntoViewResponderNode$bringIntoView$2$1  reason: invalid class name */
     /* loaded from: classes.dex */
@@ -102,7 +102,7 @@ final class BringIntoViewResponderNode$bringIntoView$2 extends SuspendLambda imp
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 this.label = 1;
-                if (this.this$0.getResponder().bringChildIntoView(new C00171(this.this$0, this.$childCoordinates, this.$boundsProvider), this) == coroutine_suspended) {
+                if (this.this$0.getResponder().bringChildIntoView(new C00111(this.this$0, this.$childCoordinates, this.$boundsProvider), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {
@@ -115,16 +115,16 @@ final class BringIntoViewResponderNode$bringIntoView$2 extends SuspendLambda imp
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: BringIntoViewResponder.kt */
-        @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
+        @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
         /* renamed from: androidx.compose.foundation.relocation.BringIntoViewResponderNode$bringIntoView$2$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes.dex */
-        public /* synthetic */ class C00171 extends FunctionReferenceImpl implements Function0<Rect> {
+        public /* synthetic */ class C00111 extends FunctionReferenceImpl implements Function0<Rect> {
             final /* synthetic */ Function0<Rect> $boundsProvider;
             final /* synthetic */ LayoutCoordinates $childCoordinates;
             final /* synthetic */ BringIntoViewResponderNode this$0;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C00171(BringIntoViewResponderNode bringIntoViewResponderNode, LayoutCoordinates layoutCoordinates, Function0<Rect> function0) {
+            C00111(BringIntoViewResponderNode bringIntoViewResponderNode, LayoutCoordinates layoutCoordinates, Function0<Rect> function0) {
                 super(0, Intrinsics.Kotlin.class, "localRect", "bringIntoView$localRect(Landroidx/compose/foundation/relocation/BringIntoViewResponderNode;Landroidx/compose/ui/layout/LayoutCoordinates;Lkotlin/jvm/functions/Function0;)Landroidx/compose/ui/geometry/Rect;", 0);
                 this.this$0 = bringIntoViewResponderNode;
                 this.$childCoordinates = layoutCoordinates;
@@ -143,7 +143,7 @@ final class BringIntoViewResponderNode$bringIntoView$2 extends SuspendLambda imp
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: BringIntoViewResponder.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
     @DebugMetadata(c = "androidx.compose.foundation.relocation.BringIntoViewResponderNode$bringIntoView$2$2", f = "BringIntoViewResponder.kt", i = {}, l = {191}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.foundation.relocation.BringIntoViewResponderNode$bringIntoView$2$2  reason: invalid class name */
     /* loaded from: classes.dex */

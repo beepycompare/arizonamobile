@@ -14,44 +14,44 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FontListFontFamilyTypefaceAdapter.kt */
-@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001:\u0002\u001f B\u0005¢\u0006\u0002\u0010\u0002J#\u0010\r\u001a\u0004\u0018\u00010\u00042\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011ø\u0001\u0001ø\u0001\u0000¢\u0006\u0002\b\u0012J*\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\b\u0010\u0015\u001a\u0004\u0018\u00010\u00012\b\b\u0002\u0010\u0016\u001a\u00020\u0017JH\u0010\u0018\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0016\u001a\u00020\u00172\u001e\u0010\u0019\u001a\u001a\b\u0001\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u001b\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u001aH\u0086@¢\u0006\u0002\u0010\u001cJ+\u0010\u001d\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u000e\u0010\u0019\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u001eH\u0086\bR\u0016\u0010\u0003\u001a\u00020\u0004X\u0082\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\u0005R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00040\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00040\fX\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006!"}, d2 = {"Landroidx/compose/ui/text/font/AsyncTypefaceCache;", "", "()V", "PermanentFailure", "Landroidx/compose/ui/text/font/AsyncTypefaceCache$AsyncTypefaceResult;", "Ljava/lang/Object;", "cacheLock", "Landroidx/compose/ui/text/platform/SynchronizedObject;", "permanentCache", "Landroidx/collection/MutableScatterMap;", "Landroidx/compose/ui/text/font/AsyncTypefaceCache$Key;", "resultCache", "Landroidx/collection/LruCache;", "get", "font", "Landroidx/compose/ui/text/font/Font;", "platformFontLoader", "Landroidx/compose/ui/text/font/PlatformFontLoader;", "get-1ASDuI8", "put", "", "result", "forever", "", "runCached", "block", "Lkotlin/Function1;", "Lkotlin/coroutines/Continuation;", "(Landroidx/compose/ui/text/font/Font;Landroidx/compose/ui/text/font/PlatformFontLoader;ZLkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "runCachedBlocking", "Lkotlin/Function0;", "AsyncTypefaceResult", "Key", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u0001:\u0002 !B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J*\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\b\u0010\u0014\u001a\u0004\u0018\u00010\u00012\b\b\u0002\u0010\u0015\u001a\u00020\u0016J\u001d\u0010\u0017\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013¢\u0006\u0002\b\u0018JH\u0010\u0019\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0015\u001a\u00020\u00162\u001e\u0010\u001a\u001a\u001a\b\u0001\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u001c\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u001bH\u0086@¢\u0006\u0002\u0010\u001dJ+\u0010\u001e\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u000e\u0010\u001a\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u001fH\u0086\bR\u0010\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0006R\u001a\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00050\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00050\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"Landroidx/compose/ui/text/font/AsyncTypefaceCache;", "", "<init>", "()V", "PermanentFailure", "Landroidx/compose/ui/text/font/AsyncTypefaceCache$AsyncTypefaceResult;", "Ljava/lang/Object;", "resultCache", "Landroidx/collection/LruCache;", "Landroidx/compose/ui/text/font/AsyncTypefaceCache$Key;", "permanentCache", "Landroidx/collection/MutableScatterMap;", "cacheLock", "Landroidx/compose/ui/text/platform/SynchronizedObject;", "put", "", "font", "Landroidx/compose/ui/text/font/Font;", "platformFontLoader", "Landroidx/compose/ui/text/font/PlatformFontLoader;", "result", "forever", "", "get", "get-1ASDuI8", "runCached", "block", "Lkotlin/Function1;", "Lkotlin/coroutines/Continuation;", "(Landroidx/compose/ui/text/font/Font;Landroidx/compose/ui/text/font/PlatformFontLoader;ZLkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "runCachedBlocking", "Lkotlin/Function0;", "AsyncTypefaceResult", "Key", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AsyncTypefaceCache {
     public static final int $stable = 8;
-    private final Object PermanentFailure = AsyncTypefaceResult.m6215constructorimpl(null);
+    private final Object PermanentFailure = AsyncTypefaceResult.m6781constructorimpl(null);
     private final LruCache<Key, AsyncTypefaceResult> resultCache = new LruCache<>(16);
     private final MutableScatterMap<Key, AsyncTypefaceResult> permanentCache = ScatterMapKt.mutableScatterMapOf();
     private final SynchronizedObject cacheLock = new SynchronizedObject();
 
     /* compiled from: FontListFontFamilyTypefaceAdapter.kt */
-    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0081@\u0018\u00002\u00020\u0001B\u0011\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0001¢\u0006\u0004\b\u0003\u0010\u0004J\u001a\u0010\u000b\u001a\u00020\u00062\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\r\u0010\u000eJ\u0010\u0010\u000f\u001a\u00020\u0010HÖ\u0001¢\u0006\u0004\b\u0011\u0010\u0012J\u0010\u0010\u0013\u001a\u00020\u0014HÖ\u0001¢\u0006\u0004\b\u0015\u0010\u0016R\u0011\u0010\u0005\u001a\u00020\u00068F¢\u0006\u0006\u001a\u0004\b\u0007\u0010\bR\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0001¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\n\u0088\u0001\u0002¨\u0006\u0017"}, d2 = {"Landroidx/compose/ui/text/font/AsyncTypefaceCache$AsyncTypefaceResult;", "", "result", "constructor-impl", "(Ljava/lang/Object;)Ljava/lang/Object;", "isPermanentFailure", "", "isPermanentFailure-impl", "(Ljava/lang/Object;)Z", "getResult", "()Ljava/lang/Object;", "equals", "other", "equals-impl", "(Ljava/lang/Object;Ljava/lang/Object;)Z", "hashCode", "", "hashCode-impl", "(Ljava/lang/Object;)I", "toString", "", "toString-impl", "(Ljava/lang/Object;)Ljava/lang/String;", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0081@\u0018\u00002\u00020\u0001B\u0011\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0001¢\u0006\u0004\b\u0003\u0010\u0004J\u0013\u0010\u000b\u001a\u00020\b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\r\u001a\u00020\u000eHÖ\u0001J\t\u0010\u000f\u001a\u00020\u0010HÖ\u0001R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006R\u0011\u0010\u0007\u001a\u00020\b8F¢\u0006\u0006\u001a\u0004\b\t\u0010\n\u0088\u0001\u0002¨\u0006\u0011"}, d2 = {"Landroidx/compose/ui/text/font/AsyncTypefaceCache$AsyncTypefaceResult;", "", "result", "constructor-impl", "(Ljava/lang/Object;)Ljava/lang/Object;", "getResult", "()Ljava/lang/Object;", "isPermanentFailure", "", "isPermanentFailure-impl", "(Ljava/lang/Object;)Z", "equals", "other", "hashCode", "", "toString", "", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
     @JvmInline
     /* loaded from: classes2.dex */
     public static final class AsyncTypefaceResult {
         private final Object result;
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ AsyncTypefaceResult m6214boximpl(Object obj) {
+        public static final /* synthetic */ AsyncTypefaceResult m6780boximpl(Object obj) {
             return new AsyncTypefaceResult(obj);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static Object m6215constructorimpl(Object obj) {
+        public static Object m6781constructorimpl(Object obj) {
             return obj;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m6216equalsimpl(Object obj, Object obj2) {
-            return (obj2 instanceof AsyncTypefaceResult) && Intrinsics.areEqual(obj, ((AsyncTypefaceResult) obj2).m6221unboximpl());
+        public static boolean m6782equalsimpl(Object obj, Object obj2) {
+            return (obj2 instanceof AsyncTypefaceResult) && Intrinsics.areEqual(obj, ((AsyncTypefaceResult) obj2).m6787unboximpl());
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m6217equalsimpl0(Object obj, Object obj2) {
+        public static final boolean m6783equalsimpl0(Object obj, Object obj2) {
             return Intrinsics.areEqual(obj, obj2);
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m6218hashCodeimpl(Object obj) {
+        public static int m6784hashCodeimpl(Object obj) {
             if (obj == null) {
                 return 0;
             }
@@ -59,29 +59,29 @@ public final class AsyncTypefaceCache {
         }
 
         /* renamed from: isPermanentFailure-impl  reason: not valid java name */
-        public static final boolean m6219isPermanentFailureimpl(Object obj) {
+        public static final boolean m6785isPermanentFailureimpl(Object obj) {
             return obj == null;
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m6220toStringimpl(Object obj) {
+        public static String m6786toStringimpl(Object obj) {
             return "AsyncTypefaceResult(result=" + obj + ')';
         }
 
         public boolean equals(Object obj) {
-            return m6216equalsimpl(this.result, obj);
+            return m6782equalsimpl(this.result, obj);
         }
 
         public int hashCode() {
-            return m6218hashCodeimpl(this.result);
+            return m6784hashCodeimpl(this.result);
         }
 
         public String toString() {
-            return m6220toStringimpl(this.result);
+            return m6786toStringimpl(this.result);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ Object m6221unboximpl() {
+        public final /* synthetic */ Object m6787unboximpl() {
             return this.result;
         }
 
@@ -95,7 +95,7 @@ public final class AsyncTypefaceCache {
     }
 
     /* compiled from: FontListFontFamilyTypefaceAdapter.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0080\b\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0001¢\u0006\u0002\u0010\u0005J\t\u0010\n\u001a\u00020\u0003HÆ\u0003J\u000b\u0010\u000b\u001a\u0004\u0018\u00010\u0001HÆ\u0003J\u001f\u0010\f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0001HÆ\u0001J\u0013\u0010\r\u001a\u00020\u000e2\b\u0010\u000f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u0010\u001a\u00020\u0011HÖ\u0001J\t\u0010\u0012\u001a\u00020\u0013HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0001¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\t¨\u0006\u0014"}, d2 = {"Landroidx/compose/ui/text/font/AsyncTypefaceCache$Key;", "", "font", "Landroidx/compose/ui/text/font/Font;", "loaderKey", "(Landroidx/compose/ui/text/font/Font;Ljava/lang/Object;)V", "getFont", "()Landroidx/compose/ui/text/font/Font;", "getLoaderKey", "()Ljava/lang/Object;", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "", "ui-text_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0081\b\u0018\u00002\u00020\u0001B\u0019\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0001¢\u0006\u0004\b\u0005\u0010\u0006J\t\u0010\u000b\u001a\u00020\u0003HÆ\u0003J\u000b\u0010\f\u001a\u0004\u0018\u00010\u0001HÆ\u0003J\u001f\u0010\r\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0001HÆ\u0001J\u0013\u0010\u000e\u001a\u00020\u000f2\b\u0010\u0010\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u0011\u001a\u00020\u0012HÖ\u0001J\t\u0010\u0013\u001a\u00020\u0014HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0001¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\n¨\u0006\u0015"}, d2 = {"Landroidx/compose/ui/text/font/AsyncTypefaceCache$Key;", "", "font", "Landroidx/compose/ui/text/font/Font;", "loaderKey", "<init>", "(Landroidx/compose/ui/text/font/Font;Ljava/lang/Object;)V", "getFont", "()Landroidx/compose/ui/text/font/Font;", "getLoaderKey", "()Ljava/lang/Object;", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Key {
         public static final int $stable = 8;
@@ -171,13 +171,13 @@ public final class AsyncTypefaceCache {
         synchronized (this.cacheLock) {
             try {
                 if (obj == null) {
-                    this.permanentCache.set(key, AsyncTypefaceResult.m6214boximpl(this.PermanentFailure));
+                    this.permanentCache.set(key, AsyncTypefaceResult.m6780boximpl(this.PermanentFailure));
                     Unit unit = Unit.INSTANCE;
                 } else if (z) {
-                    this.permanentCache.set(key, AsyncTypefaceResult.m6214boximpl(AsyncTypefaceResult.m6215constructorimpl(obj)));
+                    this.permanentCache.set(key, AsyncTypefaceResult.m6780boximpl(AsyncTypefaceResult.m6781constructorimpl(obj)));
                     Unit unit2 = Unit.INSTANCE;
                 } else {
-                    this.resultCache.put(key, AsyncTypefaceResult.m6214boximpl(AsyncTypefaceResult.m6215constructorimpl(obj)));
+                    this.resultCache.put(key, AsyncTypefaceResult.m6780boximpl(AsyncTypefaceResult.m6781constructorimpl(obj)));
                 }
             } catch (Throwable th) {
                 throw th;
@@ -186,7 +186,7 @@ public final class AsyncTypefaceCache {
     }
 
     /* renamed from: get-1ASDuI8  reason: not valid java name */
-    public final AsyncTypefaceResult m6213get1ASDuI8(Font font, PlatformFontLoader platformFontLoader) {
+    public final AsyncTypefaceResult m6779get1ASDuI8(Font font, PlatformFontLoader platformFontLoader) {
         AsyncTypefaceResult asyncTypefaceResult;
         Key key = new Key(font, platformFontLoader.getCacheKey());
         synchronized (this.cacheLock) {
@@ -199,8 +199,8 @@ public final class AsyncTypefaceCache {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003c  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x007e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0077 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -208,7 +208,6 @@ public final class AsyncTypefaceCache {
         AsyncTypefaceCache$runCached$1 asyncTypefaceCache$runCached$1;
         int i;
         Key key;
-        AsyncTypefaceCache asyncTypefaceCache;
         if (continuation instanceof AsyncTypefaceCache$runCached$1) {
             asyncTypefaceCache$runCached$1 = (AsyncTypefaceCache$runCached$1) continuation;
             if ((asyncTypefaceCache$runCached$1.label & Integer.MIN_VALUE) != 0) {
@@ -225,11 +224,10 @@ public final class AsyncTypefaceCache {
                             asyncTypefaceResult = this.permanentCache.get(key2);
                         }
                         if (asyncTypefaceResult != null) {
-                            return asyncTypefaceResult.m6221unboximpl();
+                            return asyncTypefaceResult.m6787unboximpl();
                         }
                         Unit unit = Unit.INSTANCE;
-                        asyncTypefaceCache$runCached$1.L$0 = this;
-                        asyncTypefaceCache$runCached$1.L$1 = key2;
+                        asyncTypefaceCache$runCached$1.L$0 = key2;
                         asyncTypefaceCache$runCached$1.Z$0 = z;
                         asyncTypefaceCache$runCached$1.label = 1;
                         Object invoke = function1.invoke(asyncTypefaceCache$runCached$1);
@@ -238,24 +236,22 @@ public final class AsyncTypefaceCache {
                         }
                         obj = invoke;
                         key = key2;
-                        asyncTypefaceCache = this;
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     z = asyncTypefaceCache$runCached$1.Z$0;
-                    key = (Key) asyncTypefaceCache$runCached$1.L$1;
-                    asyncTypefaceCache = (AsyncTypefaceCache) asyncTypefaceCache$runCached$1.L$0;
+                    key = (Key) asyncTypefaceCache$runCached$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                synchronized (asyncTypefaceCache.cacheLock) {
+                synchronized (this.cacheLock) {
                     try {
                         if (obj == null) {
-                            asyncTypefaceCache.permanentCache.set(key, AsyncTypefaceResult.m6214boximpl(asyncTypefaceCache.PermanentFailure));
+                            this.permanentCache.set(key, AsyncTypefaceResult.m6780boximpl(this.PermanentFailure));
                         } else if (z) {
-                            asyncTypefaceCache.permanentCache.set(key, AsyncTypefaceResult.m6214boximpl(AsyncTypefaceResult.m6215constructorimpl(obj)));
+                            this.permanentCache.set(key, AsyncTypefaceResult.m6780boximpl(AsyncTypefaceResult.m6781constructorimpl(obj)));
                         } else {
-                            asyncTypefaceCache.resultCache.put(key, AsyncTypefaceResult.m6214boximpl(AsyncTypefaceResult.m6215constructorimpl(obj)));
+                            this.resultCache.put(key, AsyncTypefaceResult.m6780boximpl(AsyncTypefaceResult.m6781constructorimpl(obj)));
                         }
                         Unit unit2 = Unit.INSTANCE;
                     } catch (Throwable th) {
@@ -271,7 +267,7 @@ public final class AsyncTypefaceCache {
         i = asyncTypefaceCache$runCached$1.label;
         if (i != 0) {
         }
-        synchronized (asyncTypefaceCache.cacheLock) {
+        synchronized (this.cacheLock) {
         }
     }
 
@@ -283,7 +279,7 @@ public final class AsyncTypefaceCache {
                 asyncTypefaceResult = (AsyncTypefaceResult) this.permanentCache.get(key);
             }
             if (asyncTypefaceResult != null) {
-                return asyncTypefaceResult.m6221unboximpl();
+                return asyncTypefaceResult.m6787unboximpl();
             }
             Unit unit = Unit.INSTANCE;
             Object invoke = function0.invoke();

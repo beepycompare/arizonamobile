@@ -7,7 +7,7 @@ import androidx.media3.common.util.BundleCollectionUtil;
 import com.google.common.base.Function;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class CueEncoder {
     public byte[] encode(List<Cue> list, long j) {
         ArrayList<Bundle> bundleArrayList = BundleCollectionUtil.toBundleArrayList(list, new Function() { // from class: androidx.media3.extractor.text.CueEncoder$$ExternalSyntheticLambda0

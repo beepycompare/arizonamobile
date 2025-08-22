@@ -1,35 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 /* loaded from: classes4.dex */
-public final class Wm extends Z2 {
-    public Wm(int i, String str) {
-        this(i, str, PublicLogger.getAnonymousInstance());
+public abstract class Wm {
+    public final ProtobufStateStorage<Object> a(Context context) {
+        return a(context, c(context));
     }
 
-    public final int b() {
-        return this.f742a;
+    public abstract ProtobufStateStorage<Object> a(Context context, IBinaryDataHelper iBinaryDataHelper);
+
+    public final ProtobufStateStorage<Object> b(Context context) {
+        return a(context, d(context));
     }
 
-    public Wm(int i, String str, PublicLogger publicLogger) {
-        super(i, str, publicLogger);
-    }
+    public abstract IBinaryDataHelper c(Context context);
 
-    @Override // io.appmetrica.analytics.impl.In
-    public final String a(String str) {
-        if (str != null) {
-            int length = str.length();
-            int i = this.f742a;
-            if (length > i) {
-                String substring = str.substring(0, i);
-                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f742a));
-                return substring;
-            }
-        }
-        return str;
-    }
-
-    public final String a() {
-        return this.b;
-    }
+    public abstract IBinaryDataHelper d(Context context);
 }

@@ -15,15 +15,16 @@ import ru.mrlargha.commonui.elements.donate.domain.models.DonateBoostModel;
 import ru.mrlargha.commonui.elements.donate.domain.models.DonateCategoryModel;
 import ru.mrlargha.commonui.elements.donate.domain.models.DonateItemModel;
 import ru.mrlargha.commonui.elements.donate.domain.repositories.DonateRepository;
+import ru.mrlargha.commonui.utils.ProjectType;
 /* compiled from: DonateRepositoryImpl.kt */
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u001a\u0010\n\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0\f0\u000bH\u0096@¢\u0006\u0002\u0010\u000eJ\u001a\u0010\u000f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\f0\u000bH\u0096@¢\u0006\u0002\u0010\u000eJ\u001a\u0010\u0011\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\f0\u000bH\u0096@¢\u0006\u0002\u0010\u000eR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"Lru/mrlargha/commonui/elements/donate/data/repositories/DonateRepositoryImpl;", "Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;", "retrofitClient", "Lru/mrlargha/commonui/elements/donate/data/remote/DonateRetrofitClient;", "serverId", "", "project", "", "<init>", "(Lru/mrlargha/commonui/elements/donate/data/remote/DonateRetrofitClient;ILjava/lang/String;)V", "getCategories", "Lru/mrlargha/commonui/elements/donate/domain/ResultState;", "", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateCategoryModel;", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getItems", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;", "getBoost", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateBoostModel;", "CommonUI_release_web"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\b\u0010\n\u001a\u00020\u0007H\u0016J\u001a\u0010\u000b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000e0\r0\fH\u0096@¢\u0006\u0002\u0010\u000fJ\u001a\u0010\u0010\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\r0\fH\u0096@¢\u0006\u0002\u0010\u000fJ\u001a\u0010\u0012\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00130\r0\fH\u0096@¢\u0006\u0002\u0010\u000fR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lru/mrlargha/commonui/elements/donate/data/repositories/DonateRepositoryImpl;", "Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;", "retrofitClient", "Lru/mrlargha/commonui/elements/donate/data/remote/DonateRetrofitClient;", "serverId", "", "project", "Lru/mrlargha/commonui/utils/ProjectType;", "<init>", "(Lru/mrlargha/commonui/elements/donate/data/remote/DonateRetrofitClient;ILru/mrlargha/commonui/utils/ProjectType;)V", "getProjectType", "getCategories", "Lru/mrlargha/commonui/elements/donate/domain/ResultState;", "", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateCategoryModel;", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getItems", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;", "getBoost", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateBoostModel;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes6.dex */
 public final class DonateRepositoryImpl implements DonateRepository {
-    private final String project;
+    private final ProjectType project;
     private final DonateRetrofitClient retrofitClient;
     private final int serverId;
 
-    public DonateRepositoryImpl(DonateRetrofitClient retrofitClient, int i, String project) {
+    public DonateRepositoryImpl(DonateRetrofitClient retrofitClient, int i, ProjectType project) {
         Intrinsics.checkNotNullParameter(retrofitClient, "retrofitClient");
         Intrinsics.checkNotNullParameter(project, "project");
         this.retrofitClient = retrofitClient;
@@ -31,10 +32,15 @@ public final class DonateRepositoryImpl implements DonateRepository {
         this.project = project;
     }
 
+    @Override // ru.mrlargha.commonui.elements.donate.domain.repositories.DonateRepository
+    public ProjectType getProjectType() {
+        return this.project;
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0058 A[Catch: Exception -> 0x002b, TryCatch #0 {Exception -> 0x002b, blocks: (B:11:0x0027, B:21:0x0050, B:23:0x0058, B:25:0x0062, B:26:0x0069, B:28:0x006f, B:18:0x0039), top: B:35:0x0023 }] */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x006f A[Catch: Exception -> 0x002b, TRY_LEAVE, TryCatch #0 {Exception -> 0x002b, blocks: (B:11:0x0027, B:21:0x0050, B:23:0x0058, B:25:0x0062, B:26:0x0069, B:28:0x006f, B:18:0x0039), top: B:35:0x0023 }] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x005c A[Catch: Exception -> 0x002b, TryCatch #0 {Exception -> 0x002b, blocks: (B:11:0x0027, B:21:0x0054, B:23:0x005c, B:25:0x0066, B:26:0x006d, B:28:0x0073, B:18:0x0039), top: B:35:0x0023 }] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0073 A[Catch: Exception -> 0x002b, TRY_LEAVE, TryCatch #0 {Exception -> 0x002b, blocks: (B:11:0x0027, B:21:0x0054, B:23:0x005c, B:25:0x0066, B:26:0x006d, B:28:0x0073, B:18:0x0039), top: B:35:0x0023 }] */
     @Override // ru.mrlargha.commonui.elements.donate.domain.repositories.DonateRepository
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -56,9 +62,9 @@ public final class DonateRepositoryImpl implements DonateRepository {
                         ResultKt.throwOnFailure(obj);
                         DonateApiService donateApiService = this.retrofitClient.getDonateApiService();
                         int i2 = this.serverId;
-                        String str = this.project;
+                        String type = this.project.getType();
                         donateRepositoryImpl$getCategories$12.label = 1;
-                        obj = DonateApiService.getCategories$default(donateApiService, str, null, i2, donateRepositoryImpl$getCategories$12, 2, null);
+                        obj = DonateApiService.getCategories$default(donateApiService, type, null, i2, donateRepositoryImpl$getCategories$12, 2, null);
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -101,8 +107,8 @@ public final class DonateRepositoryImpl implements DonateRepository {
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0058 A[Catch: Exception -> 0x002b, TryCatch #0 {Exception -> 0x002b, blocks: (B:11:0x0027, B:21:0x0050, B:23:0x0058, B:25:0x0062, B:26:0x0069, B:28:0x006f, B:18:0x0039), top: B:35:0x0023 }] */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x006f A[Catch: Exception -> 0x002b, TRY_LEAVE, TryCatch #0 {Exception -> 0x002b, blocks: (B:11:0x0027, B:21:0x0050, B:23:0x0058, B:25:0x0062, B:26:0x0069, B:28:0x006f, B:18:0x0039), top: B:35:0x0023 }] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x005c A[Catch: Exception -> 0x002b, TryCatch #0 {Exception -> 0x002b, blocks: (B:11:0x0027, B:21:0x0054, B:23:0x005c, B:25:0x0066, B:26:0x006d, B:28:0x0073, B:18:0x0039), top: B:35:0x0023 }] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0073 A[Catch: Exception -> 0x002b, TRY_LEAVE, TryCatch #0 {Exception -> 0x002b, blocks: (B:11:0x0027, B:21:0x0054, B:23:0x005c, B:25:0x0066, B:26:0x006d, B:28:0x0073, B:18:0x0039), top: B:35:0x0023 }] */
     @Override // ru.mrlargha.commonui.elements.donate.domain.repositories.DonateRepository
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -124,9 +130,9 @@ public final class DonateRepositoryImpl implements DonateRepository {
                         ResultKt.throwOnFailure(obj);
                         DonateApiService donateApiService = this.retrofitClient.getDonateApiService();
                         int i2 = this.serverId;
-                        String str = this.project;
+                        String type = this.project.getType();
                         donateRepositoryImpl$getItems$12.label = 1;
-                        obj = DonateApiService.getItems$default(donateApiService, str, null, i2, donateRepositoryImpl$getItems$12, 2, null);
+                        obj = DonateApiService.getItems$default(donateApiService, type, null, i2, donateRepositoryImpl$getItems$12, 2, null);
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -169,8 +175,8 @@ public final class DonateRepositoryImpl implements DonateRepository {
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0058 A[Catch: Exception -> 0x002b, TryCatch #0 {Exception -> 0x002b, blocks: (B:11:0x0027, B:21:0x0050, B:23:0x0058, B:25:0x0062, B:26:0x0069, B:28:0x006f, B:18:0x0039), top: B:35:0x0023 }] */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x006f A[Catch: Exception -> 0x002b, TRY_LEAVE, TryCatch #0 {Exception -> 0x002b, blocks: (B:11:0x0027, B:21:0x0050, B:23:0x0058, B:25:0x0062, B:26:0x0069, B:28:0x006f, B:18:0x0039), top: B:35:0x0023 }] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x005c A[Catch: Exception -> 0x002b, TryCatch #0 {Exception -> 0x002b, blocks: (B:11:0x0027, B:21:0x0054, B:23:0x005c, B:25:0x0066, B:26:0x006d, B:28:0x0073, B:18:0x0039), top: B:35:0x0023 }] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0073 A[Catch: Exception -> 0x002b, TRY_LEAVE, TryCatch #0 {Exception -> 0x002b, blocks: (B:11:0x0027, B:21:0x0054, B:23:0x005c, B:25:0x0066, B:26:0x006d, B:28:0x0073, B:18:0x0039), top: B:35:0x0023 }] */
     @Override // ru.mrlargha.commonui.elements.donate.domain.repositories.DonateRepository
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -192,9 +198,9 @@ public final class DonateRepositoryImpl implements DonateRepository {
                         ResultKt.throwOnFailure(obj);
                         DonateApiService donateApiService = this.retrofitClient.getDonateApiService();
                         int i2 = this.serverId;
-                        String str = this.project;
+                        String type = this.project.getType();
                         donateRepositoryImpl$getBoost$12.label = 1;
-                        obj = DonateApiService.getBoost$default(donateApiService, str, null, i2, donateRepositoryImpl$getBoost$12, 2, null);
+                        obj = DonateApiService.getBoost$default(donateApiService, type, null, i2, donateRepositoryImpl$getBoost$12, 2, null);
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }

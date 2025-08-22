@@ -14,7 +14,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableUsing<T, D> extends Observable<T> {
     final Consumer<? super D> disposer;
     final boolean eager;
@@ -50,7 +50,7 @@ public final class ObservableUsing<T, D> extends Observable<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class UsingObserver<T, D> extends AtomicBoolean implements Observer<T>, Disposable {
         private static final long serialVersionUID = 5904473792286235046L;
         final Consumer<? super D> disposer;

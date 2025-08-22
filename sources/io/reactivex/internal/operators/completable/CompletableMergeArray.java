@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class CompletableMergeArray extends Completable {
     final CompletableSource[] sources;
 
@@ -36,7 +36,7 @@ public final class CompletableMergeArray extends Completable {
         innerCompletableObserver.onComplete();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class InnerCompletableObserver extends AtomicInteger implements CompletableObserver {
         private static final long serialVersionUID = -8360547806504310570L;
         final CompletableObserver downstream;

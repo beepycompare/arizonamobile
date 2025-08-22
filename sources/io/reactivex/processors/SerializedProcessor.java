@@ -6,7 +6,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SerializedProcessor<T> extends FlowableProcessor<T> {
     final FlowableProcessor<T> actual;
     volatile boolean done;

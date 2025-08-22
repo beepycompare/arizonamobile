@@ -6,7 +6,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import java.io.Serializable;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public enum NotificationLite {
     COMPLETE;
 
@@ -19,7 +19,7 @@ public enum NotificationLite {
         return t;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class ErrorNotification implements Serializable {
         private static final long serialVersionUID = -8759979445933046293L;
         final Throwable e;
@@ -44,7 +44,7 @@ public enum NotificationLite {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class SubscriptionNotification implements Serializable {
         private static final long serialVersionUID = -1322257508628817540L;
         final Subscription upstream;
@@ -58,7 +58,7 @@ public enum NotificationLite {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class DisposableNotification implements Serializable {
         private static final long serialVersionUID = -7482590109178395495L;
         final Disposable upstream;

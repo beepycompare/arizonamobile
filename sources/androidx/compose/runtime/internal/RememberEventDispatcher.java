@@ -1,6 +1,5 @@
 package androidx.compose.runtime.internal;
 
-import androidx.collection.MutableIntList;
 import androidx.collection.MutableScatterMap;
 import androidx.collection.MutableScatterSet;
 import androidx.collection.ScatterMapKt;
@@ -13,52 +12,92 @@ import androidx.compose.runtime.RememberObserver;
 import androidx.compose.runtime.RememberObserverHolder;
 import androidx.compose.runtime.Stack;
 import androidx.compose.runtime.collection.MutableVector;
+import androidx.compose.runtime.tooling.CompositionErrorContext;
+import androidx.exifinterface.media.ExifInterface;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 import kotlin.Metadata;
 import kotlin.Unit;
-import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
-import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.functions.Function1;
 /* compiled from: RememberEventDispatcher.kt */
-@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0011\b\u0000\u0018\u00002\u00020\u0001B\u0013\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0002\u0010\u0005J(\u0010\u001e\u001a\u00020\u001d2\u0006\u0010\u001f\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020!2\u0006\u0010#\u001a\u00020!H\u0016J\u0006\u0010$\u001a\u00020\u001dJ\u0016\u0010%\u001a\u00020\u001d2\f\u0010&\u001a\b\u0012\u0004\u0012\u00020\n0\tH\u0002J\u0006\u0010'\u001a\u00020\u001dJ\u0006\u0010(\u001a\u00020\u001dJ\u0010\u0010)\u001a\u00020\u001d2\u0006\u0010*\u001a\u00020\u0012H\u0016J(\u0010+\u001a\u00020\u001d2\u0006\u0010\u001f\u001a\u00020\n2\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020!2\u0006\u0010#\u001a\u00020!H\u0016J\u0010\u0010,\u001a\u00020\u001d2\u0006\u0010 \u001a\u00020!H\u0002J(\u0010-\u001a\u00020\u001d2\u0006\u0010\u001f\u001a\u00020\f2\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020!2\u0006\u0010#\u001a\u00020!H\u0002J(\u0010\u0017\u001a\u00020\u001d2\u0006\u0010\u001f\u001a\u00020\u00192\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020!2\u0006\u0010#\u001a\u00020!H\u0016J\u0010\u0010.\u001a\u00020\u001d2\u0006\u0010*\u001a\u00020\u0012H\u0016J\u0010\u0010\u001a\u001a\u00020\u001d2\u0006\u0010\u001f\u001a\u00020\nH\u0016J\u0016\u0010/\u001a\u00020\u001d2\f\u00100\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cH\u0016J\u0010\u00101\u001a\u00020\u001d2\u0006\u0010*\u001a\u00020\u0012H\u0016R\u0014\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\n0\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\f0\tX\u0082\u0004¢\u0006\u0002\n\u0000R$\u0010\r\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0\t\u0018\u00010\u000eX\u0082\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\n\u0002\u0010\u000fR\u001c\u0010\u0010\u001a\u0010\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0013\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\f0\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n\u0012\u0004\u0012\u00020\u0019\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\n0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001d0\u001c0\tX\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u00062"}, d2 = {"Landroidx/compose/runtime/internal/RememberEventDispatcher;", "Landroidx/compose/runtime/RememberManager;", "abandoning", "", "Landroidx/compose/runtime/RememberObserver;", "(Ljava/util/Set;)V", "afters", "Landroidx/collection/MutableIntList;", "currentRememberingList", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/runtime/RememberObserverHolder;", "leaving", "", "nestedRemembersLists", "Landroidx/compose/runtime/Stack;", "Ljava/util/ArrayList;", "pausedPlaceholders", "Landroidx/collection/MutableScatterMap;", "Landroidx/compose/runtime/RecomposeScopeImpl;", "Landroidx/compose/runtime/internal/PausedCompositionRemembers;", "pending", "", "priorities", "releasing", "Landroidx/collection/MutableScatterSet;", "Landroidx/compose/runtime/ComposeNodeLifecycleCallback;", "remembering", "sideEffects", "Lkotlin/Function0;", "", "deactivating", "instance", "endRelativeOrder", "", "priority", "endRelativeAfter", "dispatchAbandons", "dispatchRememberList", "list", "dispatchRememberObservers", "dispatchSideEffects", "endResumingScope", "scope", "forgetting", "processPendingLeaving", "recordLeaving", "rememberPausingScope", "sideEffect", "effect", "startResumingScope", "runtime_release"}, k = 1, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0018\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001f\u001a\u00020\u00132\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\b\u0010\u0007\u001a\u0004\u0018\u00010\bJ:\u0010 \u001a\u00020\u00132\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\b\u0010\u0007\u001a\u0004\u0018\u00010\b2\u0017\u0010!\u001a\u0013\u0012\u0004\u0012\u00020\u0000\u0012\u0004\u0012\u00020\u00130\"¢\u0006\u0002\b#H\u0086\bJ\u0006\u0010$\u001a\u00020\u0013J\u0010\u0010\t\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u000bH\u0016J\u0010\u0010&\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u000bH\u0016J\u0016\u0010'\u001a\u00020\u00132\f\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012H\u0016J\u0010\u0010)\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u0015H\u0016J\u0010\u0010\u0014\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u0015H\u0016J\u0010\u0010*\u001a\u00020\u00132\u0006\u0010+\u001a\u00020\u0018H\u0016J\u0010\u0010,\u001a\u00020\u00132\u0006\u0010+\u001a\u00020\u0018H\u0016J\u0010\u0010-\u001a\u00020\u00132\u0006\u0010+\u001a\u00020\u0018H\u0016J\u0006\u0010.\u001a\u00020\u0013J\u000e\u0010/\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u0015J\u0014\u00100\u001a\u00020\u00132\f\u00101\u001a\b\u0012\u0004\u0012\u00020\u000b0\u001eJ\u000e\u00102\u001a\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\u001eJ\u0016\u00103\u001a\u00020\u00132\f\u00104\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH\u0002J\u0006\u00105\u001a\u00020\u0013J\u0006\u00106\u001a\u00020\u0013J\u0010\u00107\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u0010H\u0002J*\u00108\u001a\u0002H9\"\u0004\b\u0000\u001092\u0006\u0010%\u001a\u00020\u00102\f\u0010!\u001a\b\u0012\u0004\u0012\u0002H90\u0012H\u0082\b¢\u0006\u0002\u0010:R\u0016\u0010\u0004\u001a\n\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000b0\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u000b0\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00100\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0011\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00130\u00120\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0014\u001a\n\u0012\u0004\u0012\u00020\u0015\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u0016\u001a\u0010\u0012\u0004\u0012\u00020\u0018\u0012\u0004\u0012\u00020\u0019\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u001a\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u001cR\u0016\u0010\u001d\u001a\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006;"}, d2 = {"Landroidx/compose/runtime/internal/RememberEventDispatcher;", "Landroidx/compose/runtime/RememberManager;", "<init>", "()V", "abandoning", "", "Landroidx/compose/runtime/RememberObserver;", "traceContext", "Landroidx/compose/runtime/tooling/CompositionErrorContext;", "remembering", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/runtime/RememberObserverHolder;", "rememberSet", "Landroidx/collection/MutableScatterSet;", "currentRememberingList", "leaving", "", "sideEffects", "Lkotlin/Function0;", "", "releasing", "Landroidx/compose/runtime/ComposeNodeLifecycleCallback;", "pausedPlaceholders", "Landroidx/collection/MutableScatterMap;", "Landroidx/compose/runtime/RecomposeScopeImpl;", "Landroidx/compose/runtime/internal/PausedCompositionRemembers;", "nestedRemembersLists", "Landroidx/compose/runtime/Stack;", "Ljava/util/ArrayList;", "ignoreLeavingSet", "Landroidx/collection/ScatterSet;", "prepare", "use", "block", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "clear", "instance", "forgetting", "sideEffect", "effect", "deactivating", "rememberPausingScope", "scope", "startResumingScope", "endResumingScope", "dispatchRememberObservers", "dispatchOnDeactivateIfNecessary", "ignoreForgotten", "ignoreSet", "extractRememberSet", "dispatchRememberList", "list", "dispatchSideEffects", "dispatchAbandons", "recordLeaving", "withComposeStackTrace", ExifInterface.GPS_DIRECTION_TRUE, "(Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class RememberEventDispatcher implements RememberManager {
     public static final int $stable = 8;
-    private final Set<RememberObserver> abandoning;
-    private final MutableIntList afters;
+    private Set<RememberObserver> abandoning;
     private MutableVector<RememberObserverHolder> currentRememberingList;
+    private ScatterSet<RememberObserverHolder> ignoreLeavingSet;
     private final MutableVector<Object> leaving;
     private ArrayList<T> nestedRemembersLists;
     private MutableScatterMap<RecomposeScopeImpl, PausedCompositionRemembers> pausedPlaceholders;
-    private final List<Object> pending;
-    private final MutableIntList priorities;
     private MutableScatterSet<ComposeNodeLifecycleCallback> releasing;
+    private MutableScatterSet<RememberObserverHolder> rememberSet;
     private final MutableVector<RememberObserverHolder> remembering;
     private final MutableVector<Function0<Unit>> sideEffects;
+    private CompositionErrorContext traceContext;
 
-    public RememberEventDispatcher(Set<RememberObserver> set) {
-        this.abandoning = set;
+    public RememberEventDispatcher() {
         MutableVector<RememberObserverHolder> mutableVector = new MutableVector<>(new RememberObserverHolder[16], 0);
         this.remembering = mutableVector;
+        this.rememberSet = ScatterSetKt.mutableScatterSetOf();
         this.currentRememberingList = mutableVector;
         this.leaving = new MutableVector<>(new Object[16], 0);
         this.sideEffects = new MutableVector<>(new Function0[16], 0);
-        this.pending = new ArrayList();
-        this.priorities = new MutableIntList(0, 1, null);
-        this.afters = new MutableIntList(0, 1, null);
+    }
+
+    public final void prepare(Set<RememberObserver> set, CompositionErrorContext compositionErrorContext) {
+        clear();
+        this.abandoning = set;
+        this.traceContext = compositionErrorContext;
+    }
+
+    public final void use(Set<RememberObserver> set, CompositionErrorContext compositionErrorContext, Function1<? super RememberEventDispatcher, Unit> function1) {
+        try {
+            prepare(set, compositionErrorContext);
+            function1.invoke(this);
+        } finally {
+            clear();
+        }
+    }
+
+    public final void clear() {
+        this.abandoning = null;
+        this.traceContext = null;
+        this.remembering.clear();
+        this.rememberSet.clear();
+        this.currentRememberingList = this.remembering;
+        this.leaving.clear();
+        this.sideEffects.clear();
+        this.releasing = null;
+        this.pausedPlaceholders = null;
+        this.nestedRemembersLists = null;
     }
 
     @Override // androidx.compose.runtime.RememberManager
     public void remembering(RememberObserverHolder rememberObserverHolder) {
         this.currentRememberingList.add(rememberObserverHolder);
+        this.rememberSet.add(rememberObserverHolder);
     }
 
     @Override // androidx.compose.runtime.RememberManager
-    public void forgetting(RememberObserverHolder rememberObserverHolder, int i, int i2, int i3) {
-        recordLeaving(rememberObserverHolder, i, i2, i3);
+    public void forgetting(RememberObserverHolder rememberObserverHolder) {
+        if (this.rememberSet.contains(rememberObserverHolder)) {
+            this.rememberSet.remove(rememberObserverHolder);
+            if (!this.currentRememberingList.remove(rememberObserverHolder) && !this.remembering.remove(rememberObserverHolder)) {
+                forgetting$removeFrom(rememberObserverHolder, this.remembering);
+            }
+            Set<RememberObserver> set = this.abandoning;
+            if (set == null) {
+                return;
+            }
+            set.add(rememberObserverHolder.getWrapped());
+        }
+        ScatterSet<RememberObserverHolder> scatterSet = this.ignoreLeavingSet;
+        if (scatterSet == null || !scatterSet.contains(rememberObserverHolder)) {
+            recordLeaving(rememberObserverHolder);
+        }
     }
 
     @Override // androidx.compose.runtime.RememberManager
@@ -67,24 +106,28 @@ public final class RememberEventDispatcher implements RememberManager {
     }
 
     @Override // androidx.compose.runtime.RememberManager
-    public void deactivating(ComposeNodeLifecycleCallback composeNodeLifecycleCallback, int i, int i2, int i3) {
-        recordLeaving(composeNodeLifecycleCallback, i, i2, i3);
+    public void deactivating(ComposeNodeLifecycleCallback composeNodeLifecycleCallback) {
+        recordLeaving(composeNodeLifecycleCallback);
     }
 
     @Override // androidx.compose.runtime.RememberManager
-    public void releasing(ComposeNodeLifecycleCallback composeNodeLifecycleCallback, int i, int i2, int i3) {
+    public void releasing(ComposeNodeLifecycleCallback composeNodeLifecycleCallback) {
         MutableScatterSet<ComposeNodeLifecycleCallback> mutableScatterSet = this.releasing;
         if (mutableScatterSet == null) {
             mutableScatterSet = ScatterSetKt.mutableScatterSetOf();
             this.releasing = mutableScatterSet;
         }
         mutableScatterSet.plusAssign((MutableScatterSet<ComposeNodeLifecycleCallback>) composeNodeLifecycleCallback);
-        recordLeaving(composeNodeLifecycleCallback, i, i2, i3);
+        recordLeaving(composeNodeLifecycleCallback);
     }
 
     @Override // androidx.compose.runtime.RememberManager
     public void rememberPausingScope(RecomposeScopeImpl recomposeScopeImpl) {
-        PausedCompositionRemembers pausedCompositionRemembers = new PausedCompositionRemembers(this.abandoning);
+        Set<RememberObserver> set = this.abandoning;
+        if (set == null) {
+            return;
+        }
+        PausedCompositionRemembers pausedCompositionRemembers = new PausedCompositionRemembers(set);
         MutableScatterMap<RecomposeScopeImpl, PausedCompositionRemembers> mutableScatterMap = this.pausedPlaceholders;
         if (mutableScatterMap == null) {
             mutableScatterMap = ScatterMapKt.mutableScatterMapOf();
@@ -101,10 +144,10 @@ public final class RememberEventDispatcher implements RememberManager {
         if (pausedCompositionRemembers != null) {
             ArrayList arrayList = this.nestedRemembersLists;
             if (arrayList == null) {
-                arrayList = Stack.m3505constructorimpl$default(null, 1, null);
+                arrayList = Stack.m3839constructorimpl$default(null, 1, null);
                 this.nestedRemembersLists = arrayList;
             }
-            Stack.m3515pushimpl(arrayList, this.currentRememberingList);
+            Stack.m3849pushimpl(arrayList, this.currentRememberingList);
             this.currentRememberingList = pausedCompositionRemembers.getPausedRemembers();
         }
     }
@@ -117,7 +160,7 @@ public final class RememberEventDispatcher implements RememberManager {
             return;
         }
         ArrayList<T> arrayList = this.nestedRemembersLists;
-        if (arrayList != 0 && (mutableVector = (MutableVector) Stack.m3514popimpl(arrayList)) != null) {
+        if (arrayList != 0 && (mutableVector = (MutableVector) Stack.m3848popimpl(arrayList)) != null) {
             this.currentRememberingList = mutableVector;
         }
         mutableScatterMap.remove(recomposeScopeImpl);
@@ -125,16 +168,25 @@ public final class RememberEventDispatcher implements RememberManager {
 
     public final void dispatchRememberObservers() {
         Object beginSection;
-        processPendingLeaving(Integer.MIN_VALUE);
+        Set<RememberObserver> set = this.abandoning;
+        if (set == null) {
+            return;
+        }
+        this.ignoreLeavingSet = null;
         if (this.leaving.getSize() != 0) {
             beginSection = Trace.INSTANCE.beginSection("Compose:onForgotten");
             try {
                 ScatterSet scatterSet = this.releasing;
-                for (int size = this.leaving.getSize() - 1; -1 < size; size--) {
+                int size = this.leaving.getSize();
+                while (true) {
+                    size--;
+                    if (-1 >= size) {
+                        break;
+                    }
                     Object obj = this.leaving.content[size];
                     if (obj instanceof RememberObserverHolder) {
                         RememberObserver wrapped = ((RememberObserverHolder) obj).getWrapped();
-                        this.abandoning.remove(wrapped);
+                        set.remove(wrapped);
                         wrapped.onForgotten();
                     }
                     if (obj instanceof ComposeNodeLifecycleCallback) {
@@ -144,8 +196,9 @@ public final class RememberEventDispatcher implements RememberManager {
                             ((ComposeNodeLifecycleCallback) obj).onDeactivate();
                         }
                     }
+                    Unit unit = Unit.INSTANCE;
                 }
-                Unit unit = Unit.INSTANCE;
+                Unit unit2 = Unit.INSTANCE;
             } finally {
             }
         }
@@ -153,8 +206,52 @@ public final class RememberEventDispatcher implements RememberManager {
             beginSection = Trace.INSTANCE.beginSection("Compose:onRemembered");
             try {
                 dispatchRememberList(this.remembering);
-                Unit unit2 = Unit.INSTANCE;
+                Unit unit3 = Unit.INSTANCE;
             } finally {
+            }
+        }
+    }
+
+    public final void dispatchOnDeactivateIfNecessary(ComposeNodeLifecycleCallback composeNodeLifecycleCallback) {
+        if (this.leaving.remove(composeNodeLifecycleCallback)) {
+            composeNodeLifecycleCallback.onDeactivate();
+        }
+    }
+
+    public final void ignoreForgotten(ScatterSet<RememberObserverHolder> scatterSet) {
+        this.ignoreLeavingSet = scatterSet;
+    }
+
+    public final ScatterSet<RememberObserverHolder> extractRememberSet() {
+        if (this.rememberSet.isNotEmpty()) {
+            MutableScatterSet<RememberObserverHolder> mutableScatterSet = this.rememberSet;
+            this.rememberSet = ScatterSetKt.mutableScatterSetOf();
+            this.remembering.clear();
+            return mutableScatterSet;
+        }
+        return null;
+    }
+
+    private final void dispatchRememberList(MutableVector<RememberObserverHolder> mutableVector) {
+        Set<RememberObserver> set = this.abandoning;
+        if (set == null) {
+            return;
+        }
+        RememberObserverHolder[] rememberObserverHolderArr = mutableVector.content;
+        int size = mutableVector.getSize();
+        for (int i = 0; i < size; i++) {
+            RememberObserverHolder rememberObserverHolder = rememberObserverHolderArr[i];
+            RememberObserver wrapped = rememberObserverHolder.getWrapped();
+            set.remove(wrapped);
+            try {
+                wrapped.onRemembered();
+                Unit unit = Unit.INSTANCE;
+            } catch (Throwable th) {
+                CompositionErrorContext compositionErrorContext = this.traceContext;
+                if (compositionErrorContext != null) {
+                    compositionErrorContext.attachComposeStackTrace(th, rememberObserverHolder);
+                }
+                throw th;
             }
         }
     }
@@ -178,12 +275,13 @@ public final class RememberEventDispatcher implements RememberManager {
     }
 
     public final void dispatchAbandons() {
-        if (this.abandoning.isEmpty()) {
+        Set<RememberObserver> set = this.abandoning;
+        if (set == null || set.isEmpty()) {
             return;
         }
         Object beginSection = Trace.INSTANCE.beginSection("Compose:abandons");
         try {
-            Iterator<RememberObserver> it = this.abandoning.iterator();
+            Iterator<RememberObserver> it = set.iterator();
             while (it.hasNext()) {
                 it.remove();
                 it.next().onAbandoned();
@@ -194,78 +292,34 @@ public final class RememberEventDispatcher implements RememberManager {
         }
     }
 
-    private final void recordLeaving(Object obj, int i, int i2, int i3) {
-        processPendingLeaving(i);
-        if (i3 >= 0 && i3 < i) {
-            this.pending.add(obj);
-            this.priorities.add(i2);
-            this.afters.add(i3);
-            return;
-        }
+    private final void recordLeaving(Object obj) {
         this.leaving.add(obj);
     }
 
-    private final void processPendingLeaving(int i) {
-        if (this.pending.isEmpty()) {
-            return;
-        }
-        int i2 = 0;
-        int i3 = 0;
-        List<? extends Object> list = null;
-        MutableIntList mutableIntList = null;
-        MutableIntList mutableIntList2 = null;
-        while (i3 < this.afters._size) {
-            if (i <= this.afters.get(i3)) {
-                Object remove = this.pending.remove(i3);
-                int removeAt = this.afters.removeAt(i3);
-                int removeAt2 = this.priorities.removeAt(i3);
-                if (list == null) {
-                    list = CollectionsKt.mutableListOf(remove);
-                    mutableIntList2 = new MutableIntList(0, 1, null);
-                    mutableIntList2.add(removeAt);
-                    mutableIntList = new MutableIntList(0, 1, null);
-                    mutableIntList.add(removeAt2);
-                } else {
-                    Intrinsics.checkNotNull(mutableIntList, "null cannot be cast to non-null type androidx.collection.MutableIntList");
-                    Intrinsics.checkNotNull(mutableIntList2, "null cannot be cast to non-null type androidx.collection.MutableIntList");
-                    list.add(remove);
-                    mutableIntList2.add(removeAt);
-                    mutableIntList.add(removeAt2);
-                }
-            } else {
-                i3++;
+    private final <T> T withComposeStackTrace(Object obj, Function0<? extends T> function0) {
+        try {
+            return function0.invoke();
+        } catch (Throwable th) {
+            CompositionErrorContext compositionErrorContext = this.traceContext;
+            if (compositionErrorContext != null) {
+                compositionErrorContext.attachComposeStackTrace(th, obj);
             }
-        }
-        if (list != null) {
-            Intrinsics.checkNotNull(mutableIntList, "null cannot be cast to non-null type androidx.collection.MutableIntList");
-            Intrinsics.checkNotNull(mutableIntList2, "null cannot be cast to non-null type androidx.collection.MutableIntList");
-            int size = list.size() - 1;
-            while (i2 < size) {
-                int i4 = i2 + 1;
-                int size2 = list.size();
-                for (int i5 = i4; i5 < size2; i5++) {
-                    int i6 = mutableIntList2.get(i2);
-                    int i7 = mutableIntList2.get(i5);
-                    if (i6 < i7 || (i7 == i6 && mutableIntList.get(i2) < mutableIntList.get(i5))) {
-                        RememberEventDispatcherKt.swap(list, i2, i5);
-                        RememberEventDispatcherKt.swap(mutableIntList, i2, i5);
-                        RememberEventDispatcherKt.swap(mutableIntList2, i2, i5);
-                    }
-                }
-                i2 = i4;
-            }
-            MutableVector<Object> mutableVector = this.leaving;
-            mutableVector.addAll(mutableVector.getSize(), list);
+            throw th;
         }
     }
 
-    private final void dispatchRememberList(MutableVector<RememberObserverHolder> mutableVector) {
+    private static final boolean forgetting$removeFrom(RememberObserverHolder rememberObserverHolder, MutableVector<RememberObserverHolder> mutableVector) {
         RememberObserverHolder[] rememberObserverHolderArr = mutableVector.content;
         int size = mutableVector.getSize();
         for (int i = 0; i < size; i++) {
             RememberObserver wrapped = rememberObserverHolderArr[i].getWrapped();
-            this.abandoning.remove(wrapped);
-            wrapped.onRemembered();
+            if (wrapped instanceof PausedCompositionRemembers) {
+                MutableVector<RememberObserverHolder> pausedRemembers = ((PausedCompositionRemembers) wrapped).getPausedRemembers();
+                if (pausedRemembers.remove(rememberObserverHolder) || forgetting$removeFrom(rememberObserverHolder, pausedRemembers)) {
+                    return true;
+                }
+            }
         }
+        return false;
     }
 }

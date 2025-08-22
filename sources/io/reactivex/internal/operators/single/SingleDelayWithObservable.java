@@ -10,7 +10,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.observers.ResumeSingleObserver;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SingleDelayWithObservable<T, U> extends Single<T> {
     final ObservableSource<U> other;
     final SingleSource<T> source;
@@ -25,7 +25,7 @@ public final class SingleDelayWithObservable<T, U> extends Single<T> {
         this.other.subscribe(new OtherSubscriber(singleObserver, this.source));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class OtherSubscriber<T, U> extends AtomicReference<Disposable> implements Observer<U>, Disposable {
         private static final long serialVersionUID = -8565274649390031272L;
         boolean done;

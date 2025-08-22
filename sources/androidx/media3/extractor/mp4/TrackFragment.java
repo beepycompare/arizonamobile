@@ -3,7 +3,7 @@ package androidx.media3.extractor.mp4;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.ExtractorInput;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class TrackFragment {
     public long atomPosition;
     public long auxiliaryDataPosition;

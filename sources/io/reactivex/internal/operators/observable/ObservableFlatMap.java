@@ -21,7 +21,7 @@ import java.util.Queue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ObservableFlatMap<T, U> extends AbstractObservableWithUpstream<T, U> {
     final int bufferSize;
     final boolean delayErrors;
@@ -44,7 +44,7 @@ public final class ObservableFlatMap<T, U> extends AbstractObservableWithUpstrea
         this.source.subscribe(new MergeObserver(observer, this.mapper, this.delayErrors, this.maxConcurrency, this.bufferSize));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static final class MergeObserver<T, U> extends AtomicInteger implements Disposable, Observer<T> {
         private static final long serialVersionUID = -2117620485640801370L;
         final int bufferSize;
@@ -468,7 +468,7 @@ public final class ObservableFlatMap<T, U> extends AbstractObservableWithUpstrea
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class InnerObserver<T, U> extends AtomicReference<Disposable> implements Observer<U> {
         private static final long serialVersionUID = -4606175640614850599L;
         volatile boolean done;

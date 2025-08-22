@@ -1,6 +1,7 @@
 package androidx.compose.foundation.lazy.layout;
 
 import androidx.compose.animation.core.Animatable;
+import androidx.compose.animation.core.AnimationResult;
 import androidx.compose.animation.core.FiniteAnimationSpec;
 import androidx.compose.ui.graphics.layer.GraphicsLayer;
 import kotlin.Metadata;
@@ -11,11 +12,13 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LazyLayoutItemAnimation.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animateAppearance$2", f = "LazyLayoutItemAnimation.kt", i = {}, l = {183, 185}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class LazyLayoutItemAnimation$animateAppearance$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -45,8 +48,8 @@ public final class LazyLayoutItemAnimation$animateAppearance$2 extends SuspendLa
         return ((LazyLayoutItemAnimation$animateAppearance$2) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0069, code lost:
-        if (androidx.compose.animation.core.Animatable.animateTo$default(r4, kotlin.coroutines.jvm.internal.Boxing.boxFloat(1.0f), r12.$spec, null, new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animateAppearance$2.AnonymousClass1(), r12, 4, null) == r0) goto L15;
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0066, code lost:
+        if (r13 == r0) goto L17;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -70,6 +73,7 @@ public final class LazyLayoutItemAnimation$animateAppearance$2 extends SuspendLa
             } else if (i != 1) {
                 if (i == 2) {
                     ResultKt.throwOnFailure(obj);
+                    AnimationResult animationResult = (AnimationResult) obj;
                     this.this$0.setAppearanceAnimationInProgress(false);
                     return Unit.INSTANCE;
                 }
@@ -78,12 +82,31 @@ public final class LazyLayoutItemAnimation$animateAppearance$2 extends SuspendLa
                 ResultKt.throwOnFailure(obj);
             }
             animatable2 = this.this$0.visibilityAnimation;
+            Float boxFloat = Boxing.boxFloat(1.0f);
+            FiniteAnimationSpec<Float> finiteAnimationSpec = this.$spec;
             final GraphicsLayer graphicsLayer = this.$layer;
             final LazyLayoutItemAnimation lazyLayoutItemAnimation = this.this$0;
             this.label = 2;
+            obj = Animatable.animateTo$default(animatable2, boxFloat, finiteAnimationSpec, null, new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animateAppearance$2$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj2) {
+                    Unit invokeSuspend$lambda$0;
+                    invokeSuspend$lambda$0 = LazyLayoutItemAnimation$animateAppearance$2.invokeSuspend$lambda$0(GraphicsLayer.this, lazyLayoutItemAnimation, (Animatable) obj2);
+                    return invokeSuspend$lambda$0;
+                }
+            }, this, 4, null);
         } catch (Throwable th) {
             this.this$0.setAppearanceAnimationInProgress(false);
             throw th;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invokeSuspend$lambda$0(GraphicsLayer graphicsLayer, LazyLayoutItemAnimation lazyLayoutItemAnimation, Animatable animatable) {
+        Function0 function0;
+        graphicsLayer.setAlpha(((Number) animatable.getValue()).floatValue());
+        function0 = lazyLayoutItemAnimation.onLayerPropertyChanged;
+        function0.invoke();
+        return Unit.INSTANCE;
     }
 }

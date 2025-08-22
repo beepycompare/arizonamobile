@@ -41,11 +41,11 @@ public final class ComposableSingletons$CacheUpdateDialogKt {
         }
     });
 
-    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$1292262873$dialogs_release_web() {
+    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$1292262873$dialogs_release() {
         return lambda$1292262873;
     }
 
-    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$2143907042$dialogs_release_web() {
+    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$2143907042$dialogs_release() {
         return lambda$2143907042;
     }
 
@@ -59,7 +59,7 @@ public final class ComposableSingletons$CacheUpdateDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2143907042, i, -1, "com.miami.game.feature.download.dialog.ui.download.ComposableSingletons$CacheUpdateDialogKt.lambda$2143907042.<anonymous> (CacheUpdateDialog.kt:87)");
             }
-            TextKt.m2497Text4IGK_g("ОТМЕНА", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
+            TextKt.m2804Text4IGK_g("ОТМЕНА", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -77,7 +77,7 @@ public final class ComposableSingletons$CacheUpdateDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1292262873, i, -1, "com.miami.game.feature.download.dialog.ui.download.ComposableSingletons$CacheUpdateDialogKt.lambda$1292262873.<anonymous> (CacheUpdateDialog.kt:93)");
             }
-            TextKt.m2497Text4IGK_g("ЗАГРУЗИТЬ", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
+            TextKt.m2804Text4IGK_g("ЗАГРУЗИТЬ", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

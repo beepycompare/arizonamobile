@@ -1,17 +1,30 @@
 package io.appmetrica.analytics.impl;
+
+import com.google.firebase.remoteconfig.RemoteConfigConstants;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class Yk extends W2 {
-    public Yk(InterfaceC0498p2 interfaceC0498p2) {
-        super(interfaceC0498p2);
+public final class Yk {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f746a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final int f;
+    public final int g;
+
+    public Yk(JSONObject jSONObject) {
+        this.f746a = jSONObject.optString("analyticsSdkVersionName", "");
+        this.b = jSONObject.optString("kitBuildNumber", "");
+        this.c = jSONObject.optString("appVer", "");
+        this.d = jSONObject.optString(RemoteConfigConstants.RequestFieldKey.APP_BUILD, "");
+        this.e = jSONObject.optString("osVer", "");
+        this.f = jSONObject.optInt("osApiLev", -1);
+        this.g = jSONObject.optInt("attribution_id", 0);
     }
 
-    @Override // io.appmetrica.analytics.impl.W2
-    public final C0193co a(C0141ao c0141ao, C0193co c0193co, InterfaceC0473o2 interfaceC0473o2) {
-        if (c0193co == null || c0193co.c.b) {
-            C0193co a2 = ((Pd) interfaceC0473o2).a();
-            a2.c.f821a = true;
-            return this.f693a.a(c0141ao, a2);
-        }
-        return null;
+    public final String toString() {
+        return "SessionRequestParams(kitVersionName='" + this.f746a + "', kitBuildNumber='" + this.b + "', appVersion='" + this.c + "', appBuild='" + this.d + "', osVersion='" + this.e + "', apiLevel=" + this.f + ", attributionId=" + this.g + ')';
     }
 }
