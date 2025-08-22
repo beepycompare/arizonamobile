@@ -38,7 +38,7 @@ jobs:
       - name: Download APK
         if: steps.check_version.outcome == 'success'
         run: |
-          curl -L -o app.apk https://mob.maz-ins.com/game/release/launcher_new/app-arizona-release_web.apk
+          curl -L -o app.apk https://mob.maz-ins.com/game/release/launcher_new/app-arizona-release.apk
 
       - name: Install jadx
         if: steps.check_version.outcome == 'success'
