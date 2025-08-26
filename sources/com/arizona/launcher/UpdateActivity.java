@@ -176,9 +176,6 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
             updateMode = UpdateMode.GameUpdate;
         }
         this.mUpdateMode = updateMode;
-        String stringExtra2 = getIntent().getStringExtra(UPDATE_MODE);
-        Intrinsics.checkNotNull(stringExtra2);
-        this.mUpdateMode = UpdateMode.valueOf(stringExtra2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

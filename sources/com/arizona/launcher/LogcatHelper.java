@@ -146,26 +146,78 @@ public final class LogcatHelper {
             this.mRunning = true;
         }
 
+        /* JADX WARN: Code restructure failed: missing block: B:30:0x0088, code lost:
+            r4.flush();
+            r0 = kotlin.Unit.INSTANCE;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:32:0x008e, code lost:
+            r0 = kotlin.Unit.INSTANCE;
+         */
         @Override // java.lang.Thread, java.lang.Runnable
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
         public void run() {
-            BufferedReader bufferedReader;
+            String readLine;
             try {
                 Process exec = Runtime.getRuntime().exec(this.command);
                 this.logcatProc = exec;
                 try {
                     try {
-                        bufferedReader = new BufferedReader(new InputStreamReader(exec.getInputStream(), Charsets.UTF_8), 1024);
+                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(exec.getInputStream(), Charsets.UTF_8), 4096);
+                        FileOutputStream fileOutputStream = this.out;
+                        BufferedWriter bufferedWriter = fileOutputStream != null ? new BufferedWriter(new OutputStreamWriter(fileOutputStream, Charsets.UTF_8), 8192) : null;
+                        while (this.mRunning && (readLine = bufferedReader.readLine()) != null && readLine != null) {
+                            try {
+                                if (readLine.length() != 0 && !StringsKt.contains$default((CharSequence) readLine, (CharSequence) "AudioTrack", false, 2, (Object) null) && bufferedWriter != null && StringsKt.contains$default((CharSequence) readLine, (CharSequence) this.mPID, false, 2, (Object) null)) {
+                                    if (readLine.length() > 8192) {
+                                        readLine = readLine.substring(0, 8192);
+                                        Intrinsics.checkNotNullExpressionValue(readLine, "substring(...)");
+                                    }
+                                    bufferedWriter.write(readLine);
+                                    bufferedWriter.newLine();
+                                }
+                            } finally {
+                                try {
+                                    bufferedReader.close();
+                                } catch (IOException unused) {
+                                }
+                                if (bufferedWriter != null) {
+                                    try {
+                                        bufferedWriter.close();
+                                    } catch (IOException unused2) {
+                                    }
+                                }
+                            }
+                        }
+                        if (bufferedWriter != null) {
+                            try {
+                                bufferedWriter.close();
+                            } catch (IOException unused3) {
+                            }
+                        }
+                        try {
+                            Process process = this.logcatProc;
+                            if (process != null) {
+                                process.destroy();
+                            }
+                        } catch (Throwable unused4) {
+                        }
+                        this.logcatProc = null;
                     } catch (IOException e) {
                         e.printStackTrace();
-                        Process process = this.logcatProc;
-                        if (process != null) {
-                            process.destroy();
+                        try {
+                            Process process2 = this.logcatProc;
+                            if (process2 != null) {
+                                process2.destroy();
+                            }
+                        } catch (Throwable unused5) {
                         }
                         this.logcatProc = null;
                         try {
-                            FileOutputStream fileOutputStream = this.out;
-                            if (fileOutputStream != null) {
-                                fileOutputStream.close();
+                            FileOutputStream fileOutputStream2 = this.out;
+                            if (fileOutputStream2 != null) {
+                                fileOutputStream2.close();
                             }
                         } catch (IOException e2) {
                             e = e2;
@@ -174,45 +226,23 @@ public final class LogcatHelper {
                         }
                     }
                     try {
-                        for (String str : TextStreamsKt.lineSequence(bufferedReader)) {
-                            if (!this.mRunning) {
-                                break;
-                            } else if (str.length() != 0 && !StringsKt.contains$default((CharSequence) str, (CharSequence) "AudioTrack", false, 2, (Object) null) && this.out != null && StringsKt.contains$default((CharSequence) str, (CharSequence) this.mPID, false, 2, (Object) null)) {
-                                try {
-                                    FileOutputStream fileOutputStream2 = this.out;
-                                    Intrinsics.checkNotNull(fileOutputStream2);
-                                    byte[] bytes = (str + "\n").getBytes(Charsets.UTF_8);
-                                    Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
-                                    fileOutputStream2.write(bytes);
-                                } catch (IOException e3) {
-                                    e3.printStackTrace();
-                                }
-                            }
+                        FileOutputStream fileOutputStream3 = this.out;
+                        if (fileOutputStream3 != null) {
+                            fileOutputStream3.close();
                         }
-                        Unit unit = Unit.INSTANCE;
-                        CloseableKt.closeFinally(bufferedReader, null);
-                        Process process2 = this.logcatProc;
-                        if (process2 != null) {
-                            process2.destroy();
-                        }
-                        this.logcatProc = null;
-                        try {
-                            FileOutputStream fileOutputStream3 = this.out;
-                            if (fileOutputStream3 != null) {
-                                fileOutputStream3.close();
-                            }
-                        } catch (IOException e4) {
-                            e = e4;
-                            e.printStackTrace();
-                            this.out = null;
-                        }
+                    } catch (IOException e3) {
+                        e = e3;
+                        e.printStackTrace();
                         this.out = null;
-                    } finally {
                     }
+                    this.out = null;
                 } catch (Throwable th) {
-                    Process process3 = this.logcatProc;
-                    if (process3 != null) {
-                        process3.destroy();
+                    try {
+                        Process process3 = this.logcatProc;
+                        if (process3 != null) {
+                            process3.destroy();
+                        }
+                    } catch (Throwable unused6) {
                     }
                     this.logcatProc = null;
                     try {
@@ -220,14 +250,14 @@ public final class LogcatHelper {
                         if (fileOutputStream4 != null) {
                             fileOutputStream4.close();
                         }
-                    } catch (IOException e5) {
-                        e5.printStackTrace();
+                    } catch (IOException e4) {
+                        e4.printStackTrace();
                     }
                     this.out = null;
                     throw th;
                 }
-            } catch (IOException e6) {
-                e6.printStackTrace();
+            } catch (IOException e5) {
+                e5.printStackTrace();
             }
         }
     }

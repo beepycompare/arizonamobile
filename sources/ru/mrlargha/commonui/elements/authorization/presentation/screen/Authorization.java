@@ -409,7 +409,8 @@ public final class Authorization implements InterfaceController {
         });
     }
 
-    /* JADX WARN: Type inference failed for: r10v20, types: [ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$onServerMessage$2] */
+    /* JADX WARN: Type inference failed for: r10v121, types: [ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$onServerMessage$1] */
+    /* JADX WARN: Type inference failed for: r10v20, types: [ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$onServerMessage$3] */
     public final void onServerMessage(int i, String data) {
         String obj;
         String obj2;
@@ -444,6 +445,24 @@ public final class Authorization implements InterfaceController {
                     disableLoading();
                     enableError();
                     Toast.makeText(this.targetActivity, "Неправильный логин или пароль. Попробуйте ещё!", 0).show();
+                    new CountDownTimer() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$onServerMessage$1
+                        @Override // android.os.CountDownTimer
+                        public void onTick(long j) {
+                        }
+
+                        /* JADX INFO: Access modifiers changed from: package-private */
+                        {
+                            super(5000L, 1000L);
+                        }
+
+                        @Override // android.os.CountDownTimer
+                        public void onFinish() {
+                            Authorization.this.isLoginError = false;
+                            Authorization.this.enableLoginButton();
+                            Authorization.this.disableError();
+                            cancel();
+                        }
+                    }.start();
                 }
                 if (Intrinsics.areEqual(data, "user_not_found")) {
                     if (this.timer != null) {
@@ -553,7 +572,7 @@ public final class Authorization implements InterfaceController {
                     this.authorizationBinding.authSurnameError.setVisibility(0);
                     this.isLoginError = true;
                     disableLoginButton();
-                    new CountDownTimer() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$onServerMessage$2
+                    new CountDownTimer() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$onServerMessage$3
                         @Override // android.os.CountDownTimer
                         public void onTick(long j) {
                         }
@@ -608,7 +627,8 @@ public final class Authorization implements InterfaceController {
         this.isLoginError = true;
     }
 
-    private final void disableError() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void disableError() {
         this.authorizationBinding.authPasswordError.setVisibility(4);
         this.authorizationBinding.authUsernameError.setVisibility(4);
         this.authorizationBinding.authSurnameError.setVisibility(4);

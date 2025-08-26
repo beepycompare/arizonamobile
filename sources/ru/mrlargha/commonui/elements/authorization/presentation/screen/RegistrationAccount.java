@@ -2,6 +2,7 @@ package ru.mrlargha.commonui.elements.authorization.presentation.screen;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -507,8 +508,29 @@ public final class RegistrationAccount implements InterfaceController {
         this.registrationAccountBinding.registrationAccountNextButton.setBackgroundResource(R.drawable.authorization_border_red);
     }
 
+    /* JADX WARN: Type inference failed for: r0v2, types: [ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$disableRegistrationButton$1] */
     private final void disableRegistrationButton() {
         this.registrationAccountBinding.registrationAccountNextButton.setBackgroundResource(R.drawable.authorization_border);
+        new CountDownTimer() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$disableRegistrationButton$1
+            @Override // android.os.CountDownTimer
+            public void onTick(long j) {
+            }
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(5000L, 1000L);
+            }
+
+            @Override // android.os.CountDownTimer
+            public void onFinish() {
+                RegistrationAccount.this.enableRegistrationButton();
+                RegistrationAccount.this.disableInviteError();
+                RegistrationAccount.this.disablePasswordError();
+                RegistrationAccount.this.disableSurnameError();
+                RegistrationAccount.this.disableUsernameError();
+                cancel();
+            }
+        }.start();
     }
 
     private final void addRegData(String str, String str2) {

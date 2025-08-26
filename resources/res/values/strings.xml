@@ -75,7 +75,7 @@
     <string name="close_sheet">Close sheet</string>
     <string name="close_txt">Закрыто</string>
     <string name="res_0x7f13004a_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
-    <string name="res_0x7f13004b_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"ab21865559875b255136a474c0aed277904d905a\"\n}\n</string>
+    <string name="res_0x7f13004b_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"fb7eb0957c9d912f9871f5db05933b14f6b9213a\"\n}\n</string>
     <string name="common_google_play_services_enable_button">Enable</string>
     <string name="common_google_play_services_enable_text">%1$s won\'t work unless you enable Google Play services.</string>
     <string name="common_google_play_services_enable_title">Enable Google Play services</string>

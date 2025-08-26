@@ -185,8 +185,8 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
                     throw new NoWhenBranchMatchedException();
                 }
                 this.videoBackgroundBinding.videoBg.stopPlayback();
-                if (this.videoBackgroundBinding.videoBg.getVisibility() != 8) {
-                    this.videoBackgroundBinding.videoBg.setVisibility(8);
+                if (this.videoBackgroundBinding.videoBg.getVisibility() != 4) {
+                    this.videoBackgroundBinding.videoBg.setVisibility(4);
                     return;
                 }
                 return;
@@ -198,8 +198,8 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
             if (this.videoBackgroundBinding.video.getVisibility() != 8) {
                 this.videoBackgroundBinding.video.setVisibility(8);
             }
-            if (this.videoBackgroundBinding.videoBg.getVisibility() != 8) {
-                this.videoBackgroundBinding.videoBg.setVisibility(8);
+            if (this.videoBackgroundBinding.videoBg.getVisibility() != 4) {
+                this.videoBackgroundBinding.videoBg.setVisibility(4);
             }
         } else {
             this.lastChoseVideo = videoMode;
