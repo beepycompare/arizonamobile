@@ -1,15 +1,11 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 /* loaded from: classes4.dex */
-public final class Ha implements InterfaceC0407le {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0407le
-    public final A9 a(Integer num, String str) {
-        A9 a9 = new A9();
-        if (num != null) {
-            a9.f343a = num.intValue();
-        }
-        if (str != null) {
-            a9.b = str;
-        }
-        return a9;
+public final class Ha extends AbstractC0263g {
+    public static final String g = "foreground";
+
+    public Ha(C0651v5 c0651v5, C0130al c0130al, C0233el c0233el, C0413lk c0413lk, SystemTimeProvider systemTimeProvider) {
+        super(c0651v5, c0130al, c0233el, Zk.a(EnumC0259fl.FOREGROUND).a(), c0413lk, systemTimeProvider);
     }
 }

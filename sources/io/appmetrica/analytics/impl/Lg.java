@@ -1,40 +1,34 @@
 package io.appmetrica.analytics.impl;
-
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.ResultReceiver;
-import com.adjust.sdk.Constants;
 /* loaded from: classes4.dex */
-public final class Lg extends ResultReceiver {
+public class Lg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0708xg f545a;
+    public final InterfaceC0456nb f556a;
+    public final Gg b;
+    public final InterfaceC0404lb c;
 
-    public Lg(Handler handler, InterfaceC0708xg interfaceC0708xg) {
-        super(handler);
-        this.f545a = interfaceC0708xg;
+    public Lg(InterfaceC0456nb interfaceC0456nb, Gg gg, InterfaceC0404lb interfaceC0404lb) {
+        this.f556a = interfaceC0456nb;
+        this.b = gg;
+        this.c = interfaceC0404lb;
     }
 
-    public static void a(ResultReceiver resultReceiver, Fg fg) {
-        if (resultReceiver != null) {
-            Bundle bundle = new Bundle();
-            bundle.putByteArray(Constants.REFERRER, fg == null ? null : fg.a());
-            resultReceiver.send(1, bundle);
+    public final void a(Jg jg) {
+        if (this.f556a.a(jg)) {
+            this.b.a(jg);
+            this.c.a();
         }
     }
 
-    @Override // android.os.ResultReceiver
-    public final void onReceiveResult(int i, Bundle bundle) {
-        if (i == 1) {
-            Fg fg = null;
-            try {
-                byte[] byteArray = bundle.getByteArray(Constants.REFERRER);
-                if (byteArray != null && byteArray.length != 0) {
-                    fg = new Fg(byteArray);
-                }
-            } catch (Throwable unused) {
-            }
-            this.f545a.a(fg);
-        }
+    public final Gg b() {
+        return this.b;
+    }
+
+    public final InterfaceC0404lb c() {
+        return this.c;
+    }
+
+    public final InterfaceC0456nb a() {
+        return this.f556a;
     }
 }

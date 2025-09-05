@@ -10,7 +10,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class NativeCrash {
 
     /* renamed from: a  reason: collision with root package name */
-    private final NativeCrashSource f1226a;
+    private final NativeCrashSource f1231a;
     private final String b;
     private final String c;
     private final String d;
@@ -22,7 +22,7 @@ public final class NativeCrash {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final NativeCrashSource f1227a;
+        private final NativeCrashSource f1232a;
         private final String b;
         private final String c;
         private final String d;
@@ -30,7 +30,7 @@ public final class NativeCrash {
         private final String f;
 
         public Builder(NativeCrashSource nativeCrashSource, String str, String str2, String str3, long j, String str4) {
-            this.f1227a = nativeCrashSource;
+            this.f1232a = nativeCrashSource;
             this.b = str;
             this.c = str2;
             this.d = str3;
@@ -39,7 +39,7 @@ public final class NativeCrash {
         }
 
         public final NativeCrash build() {
-            return new NativeCrash(this.f1227a, this.b, this.c, this.d, this.e, this.f, null);
+            return new NativeCrash(this.f1232a, this.b, this.c, this.d, this.e, this.f, null);
         }
     }
 
@@ -64,7 +64,7 @@ public final class NativeCrash {
     }
 
     public final NativeCrashSource getSource() {
-        return this.f1226a;
+        return this.f1231a;
     }
 
     public final String getUuid() {
@@ -72,7 +72,7 @@ public final class NativeCrash {
     }
 
     private NativeCrash(NativeCrashSource nativeCrashSource, String str, String str2, String str3, long j, String str4) {
-        this.f1226a = nativeCrashSource;
+        this.f1231a = nativeCrashSource;
         this.b = str;
         this.c = str2;
         this.d = str3;

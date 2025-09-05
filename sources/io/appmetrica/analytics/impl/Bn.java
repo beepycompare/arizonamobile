@@ -1,6 +1,10 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import java.util.List;
 /* loaded from: classes4.dex */
-public final class Bn {
-    public Bn(U1 u1) {
-    }
+public abstract class Bn {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final List f372a = CollectionUtils.createSortedListWithoutRepetitions("id", "scope", "data", "timestamp");
 }

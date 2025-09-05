@@ -5,9 +5,9 @@ import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
+import androidx.appcompat.R;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.TintTypedArray;
-import com.google.android.material.R;
 /* loaded from: classes4.dex */
 public class MaterialResources {
     private static final float FONT_SCALE_1_3 = 1.3f;
@@ -70,6 +70,25 @@ public class MaterialResources {
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(i, R.styleable.TextAppearance);
             TypedValue typedValue = new TypedValue();
             boolean value = obtainStyledAttributes.getValue(R.styleable.TextAppearance_android_textSize, typedValue);
+            obtainStyledAttributes.recycle();
+            if (value) {
+                if (getComplexUnit(typedValue) == 2) {
+                    return Math.round(TypedValue.complexToFloat(typedValue.data) * context.getResources().getDisplayMetrics().density);
+                }
+                return TypedValue.complexToDimensionPixelSize(typedValue.data, context.getResources().getDisplayMetrics());
+            }
+        }
+        return i2;
+    }
+
+    public static int getUnscaledLineHeight(Context context, int i, int i2) {
+        if (i != 0) {
+            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(i, com.google.android.material.R.styleable.MaterialTextAppearance);
+            TypedValue typedValue = new TypedValue();
+            boolean value = obtainStyledAttributes.getValue(com.google.android.material.R.styleable.MaterialTextAppearance_lineHeight, typedValue);
+            if (!value) {
+                value = obtainStyledAttributes.getValue(com.google.android.material.R.styleable.MaterialTextAppearance_android_lineHeight, typedValue);
+            }
             obtainStyledAttributes.recycle();
             if (value) {
                 if (getComplexUnit(typedValue) == 2) {

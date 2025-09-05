@@ -1,5 +1,6 @@
 package com.google.android.material.progressindicator;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
 import com.google.android.material.R;
@@ -8,8 +9,15 @@ import java.lang.annotation.RetentionPolicy;
 /* loaded from: classes4.dex */
 public class CircularProgressIndicator extends BaseProgressIndicator<CircularProgressIndicatorSpec> {
     public static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_CircularProgressIndicator;
+    public static final int INDETERMINATE_ANIMATION_TYPE_ADVANCE = 0;
+    public static final int INDETERMINATE_ANIMATION_TYPE_RETREAT = 1;
     public static final int INDICATOR_DIRECTION_CLOCKWISE = 0;
     public static final int INDICATOR_DIRECTION_COUNTERCLOCKWISE = 1;
+
+    @Retention(RetentionPolicy.SOURCE)
+    /* loaded from: classes4.dex */
+    public @interface IndeterminateAnimationType {
+    }
 
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes4.dex */
@@ -27,6 +35,7 @@ public class CircularProgressIndicator extends BaseProgressIndicator<CircularPro
     public CircularProgressIndicator(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i, DEF_STYLE_RES);
         initializeDrawables();
+        this.initialized = true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -70,6 +79,30 @@ public class CircularProgressIndicator extends BaseProgressIndicator<CircularPro
             requestLayout();
             invalidate();
         }
+    }
+
+    public int getIndeterminateAnimationType() {
+        return ((CircularProgressIndicatorSpec) this.spec).indeterminateAnimationType;
+    }
+
+    public void setIndeterminateAnimationType(int i) {
+        IndeterminateAnimatorDelegate<ObjectAnimator> circularIndeterminateAdvanceAnimatorDelegate;
+        if (((CircularProgressIndicatorSpec) this.spec).indeterminateAnimationType == i) {
+            return;
+        }
+        if (visibleToUser() && isIndeterminate()) {
+            throw new IllegalStateException("Cannot change indeterminate animation type while the progress indicator is show in indeterminate mode.");
+        }
+        ((CircularProgressIndicatorSpec) this.spec).indeterminateAnimationType = i;
+        ((CircularProgressIndicatorSpec) this.spec).validateSpec();
+        if (i == 1) {
+            circularIndeterminateAdvanceAnimatorDelegate = new CircularIndeterminateRetreatAnimatorDelegate(getContext(), (CircularProgressIndicatorSpec) this.spec);
+        } else {
+            circularIndeterminateAdvanceAnimatorDelegate = new CircularIndeterminateAdvanceAnimatorDelegate((CircularProgressIndicatorSpec) this.spec);
+        }
+        getIndeterminateDrawable().setAnimatorDelegate(circularIndeterminateAdvanceAnimatorDelegate);
+        registerSwitchIndeterminateModeCallback();
+        invalidate();
     }
 
     public int getIndicatorDirection() {

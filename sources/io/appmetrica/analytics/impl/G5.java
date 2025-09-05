@@ -1,26 +1,57 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
+import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor;
+import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import kotlin.collections.CollectionsKt;
 /* loaded from: classes4.dex */
-public final class G5 implements Runnable {
+public final class G5 implements ModuleAdRevenueProcessor, ModuleAdRevenueProcessorsHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ InterfaceC0556re f449a;
-    public final /* synthetic */ H5 b;
+    public final ArrayList f451a = new ArrayList();
 
-    public G5(H5 h5, InterfaceC0556re interfaceC0556re) {
-        this.b = h5;
-        this.f449a = interfaceC0556re;
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
+    public final String getDescription() {
+        return CollectionsKt.joinToString$default(this.f451a, null, "Composite processor with " + this.f451a.size() + " children: [", "]", 0, null, F5.f434a, 25, null);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        synchronized (this.b) {
-            H5 h5 = this.b;
-            Object obj = h5.f470a;
-            if (obj == null) {
-                h5.b.add(this.f449a);
-            } else {
-                this.f449a.consume(obj);
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
+    public final boolean process(Object... objArr) {
+        Object obj;
+        boolean process;
+        LoggerStorage.getMainPublicOrAnonymousLogger().info("Processing Ad Revenue for " + Arrays.toString(objArr), new Object[0]);
+        Iterator it = this.f451a.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                obj = null;
+                break;
+            }
+            obj = it.next();
+            ModuleAdRevenueProcessor moduleAdRevenueProcessor = (ModuleAdRevenueProcessor) obj;
+            try {
+                process = moduleAdRevenueProcessor.process(Arrays.copyOf(objArr, objArr.length));
+                if (!process) {
+                    LoggerStorage.getMainPublicOrAnonymousLogger().info("Ad Revenue was not processed by " + moduleAdRevenueProcessor.getDescription(), new Object[0]);
+                }
+            } catch (Throwable th) {
+                LoggerStorage.getMainPublicOrAnonymousLogger().error(th, "Got exception from processor " + moduleAdRevenueProcessor.getDescription(), new Object[0]);
+            }
+            if (process) {
+                break;
             }
         }
+        boolean z = ((ModuleAdRevenueProcessor) obj) != null;
+        if (!z) {
+            LoggerStorage.getMainPublicOrAnonymousLogger().info("Ad Revenue was not processed by " + getDescription() + " since processor for " + Arrays.toString(objArr) + " was not found", new Object[0]);
+        }
+        return z;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder
+    public final void register(ModuleAdRevenueProcessor moduleAdRevenueProcessor) {
+        this.f451a.add(moduleAdRevenueProcessor);
     }
 }

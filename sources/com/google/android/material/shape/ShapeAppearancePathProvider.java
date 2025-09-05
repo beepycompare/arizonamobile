@@ -6,6 +6,10 @@ import android.graphics.PointF;
 import android.graphics.RectF;
 /* loaded from: classes4.dex */
 public class ShapeAppearancePathProvider {
+    protected static final int BOTTOM_LEFT_CORNER_INDEX = 2;
+    protected static final int BOTTOM_RIGHT_CORNER_INDEX = 1;
+    protected static final int TOP_LEFT_CORNER_INDEX = 3;
+    protected static final int TOP_RIGHT_CORNER_INDEX = 0;
     private final ShapePath[] cornerPaths = new ShapePath[4];
     private final Matrix[] cornerTransforms = new Matrix[4];
     private final Matrix[] edgeTransforms = new Matrix[4];
@@ -51,13 +55,17 @@ public class ShapeAppearancePathProvider {
     }
 
     public void calculatePath(ShapeAppearanceModel shapeAppearanceModel, float f, RectF rectF, PathListener pathListener, Path path) {
+        calculatePath(shapeAppearanceModel, null, f, rectF, pathListener, path);
+    }
+
+    public void calculatePath(ShapeAppearanceModel shapeAppearanceModel, float[] fArr, float f, RectF rectF, PathListener pathListener, Path path) {
         path.rewind();
         this.overlappedEdgePath.rewind();
         this.boundsPath.rewind();
         this.boundsPath.addRect(rectF, Path.Direction.CW);
         ShapeAppearancePathSpec shapeAppearancePathSpec = new ShapeAppearancePathSpec(shapeAppearanceModel, f, rectF, pathListener, path);
         for (int i = 0; i < 4; i++) {
-            setCornerPathAndTransform(shapeAppearancePathSpec, i);
+            setCornerPathAndTransform(shapeAppearancePathSpec, i, fArr);
             setEdgePathAndTransform(i);
         }
         for (int i2 = 0; i2 < 4; i2++) {
@@ -72,8 +80,14 @@ public class ShapeAppearancePathProvider {
         path.op(this.overlappedEdgePath, Path.Op.UNION);
     }
 
-    private void setCornerPathAndTransform(ShapeAppearancePathSpec shapeAppearancePathSpec, int i) {
-        getCornerTreatmentForIndex(i, shapeAppearancePathSpec.shapeAppearanceModel).getCornerPath(this.cornerPaths[i], 90.0f, shapeAppearancePathSpec.interpolation, shapeAppearancePathSpec.bounds, getCornerSizeForIndex(i, shapeAppearancePathSpec.shapeAppearanceModel));
+    private void setCornerPathAndTransform(ShapeAppearancePathSpec shapeAppearancePathSpec, int i, float[] fArr) {
+        ClampedCornerSize clampedCornerSize;
+        if (fArr == null) {
+            clampedCornerSize = getCornerSizeForIndex(i, shapeAppearancePathSpec.shapeAppearanceModel);
+        } else {
+            clampedCornerSize = new ClampedCornerSize(fArr[i]);
+        }
+        getCornerTreatmentForIndex(i, shapeAppearancePathSpec.shapeAppearanceModel).getCornerPath(this.cornerPaths[i], 90.0f, shapeAppearancePathSpec.interpolation, shapeAppearancePathSpec.bounds, clampedCornerSize);
         float angleOfEdge = angleOfEdge(i);
         this.cornerTransforms[i].reset();
         getCoordinatesOfCorner(i, shapeAppearancePathSpec.bounds, this.pointF);
@@ -182,7 +196,8 @@ public class ShapeAppearancePathProvider {
         return shapeAppearanceModel.getBottomRightCorner();
     }
 
-    private CornerSize getCornerSizeForIndex(int i, ShapeAppearanceModel shapeAppearanceModel) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public CornerSize getCornerSizeForIndex(int i, ShapeAppearanceModel shapeAppearanceModel) {
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {

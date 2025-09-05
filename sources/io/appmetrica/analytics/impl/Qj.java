@@ -1,16 +1,16 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Qj implements InterfaceC0454nb {
+public final class Qj implements InterfaceC0533qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ boolean f623a;
+    public final /* synthetic */ String f638a;
 
-    public Qj(boolean z) {
-        this.f623a = z;
+    public Qj(String str) {
+        this.f638a = str;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0454nb
-    public final void a(InterfaceC0479ob interfaceC0479ob) {
-        interfaceC0479ob.setDataSendingEnabled(this.f623a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
+    public final void a(InterfaceC0557rb interfaceC0557rb) {
+        interfaceC0557rb.setUserProfileID(this.f638a);
     }
 }

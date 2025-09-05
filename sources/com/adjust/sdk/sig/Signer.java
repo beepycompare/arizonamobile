@@ -14,7 +14,7 @@ import java.util.Map;
 public class Signer {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f178a = false;
+    public boolean f179a = false;
     public d b;
     public a c;
     public c d;
@@ -24,13 +24,13 @@ public class Signer {
     }
 
     public final synchronized void a() {
-        if (this.f178a) {
+        if (this.f179a) {
             return;
         }
         this.b = new d();
         this.d = new c(Build.VERSION.SDK_INT);
         this.c = new NativeLibHelper();
-        this.f178a = true;
+        this.f179a = true;
     }
 
     public synchronized void onResume() {
@@ -38,7 +38,7 @@ public class Signer {
         d dVar = this.b;
         a aVar = this.c;
         dVar.getClass();
-        if (!d.f180a) {
+        if (!d.f181a) {
             ((NativeLibHelper) aVar).a();
         }
     }

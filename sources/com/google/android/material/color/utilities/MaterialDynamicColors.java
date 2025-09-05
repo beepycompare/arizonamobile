@@ -1,10 +1,20 @@
 package com.google.android.material.color.utilities;
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import io.appmetrica.analytics.impl.L2;
+import io.appmetrica.analytics.impl.O2;
 import java.util.function.Function;
 /* loaded from: classes4.dex */
 public final class MaterialDynamicColors {
+    private final boolean isExtendedFidelity;
+
+    public MaterialDynamicColors() {
+        this.isExtendedFidelity = false;
+    }
+
+    public MaterialDynamicColors(boolean z) {
+        this.isExtendedFidelity = z;
+    }
+
     public DynamicColor highestSurface(DynamicScheme dynamicScheme) {
         return dynamicScheme.isDark ? surfaceBright() : surfaceDim();
     }
@@ -100,7 +110,7 @@ public final class MaterialDynamicColors {
     }
 
     public DynamicColor background() {
-        return new DynamicColor(L2.g, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda100
+        return new DynamicColor(O2.g, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda100
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
                 TonalPalette tonalPalette;
@@ -137,14 +147,14 @@ public final class MaterialDynamicColors {
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda106
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8680x24678954((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8687x24678954((DynamicScheme) obj);
             }
         }, null, new ContrastCurve(3.0d, 3.0d, 4.5d, 7.0d), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onBackground$14$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8680x24678954(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8687x24678954(DynamicScheme dynamicScheme) {
         return background();
     }
 
@@ -179,8 +189,7 @@ public final class MaterialDynamicColors {
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
                 Double valueOf;
-                DynamicScheme dynamicScheme = (DynamicScheme) obj;
-                valueOf = Double.valueOf(r2.isDark ? 6.0d : 87.0d);
+                valueOf = Double.valueOf(r11.isDark ? 6.0d : new ContrastCurve(87.0d, 87.0d, 80.0d, 75.0d).get(((DynamicScheme) obj).contrastLevel));
                 return valueOf;
             }
         }, true, null, null, null, null);
@@ -198,8 +207,7 @@ public final class MaterialDynamicColors {
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
                 Double valueOf;
-                DynamicScheme dynamicScheme = (DynamicScheme) obj;
-                valueOf = Double.valueOf(r2.isDark ? 24.0d : 98.0d);
+                valueOf = Double.valueOf(r10.isDark ? new ContrastCurve(24.0d, 24.0d, 29.0d, 34.0d).get(((DynamicScheme) obj).contrastLevel) : 98.0d);
                 return valueOf;
             }
         }, true, null, null, null, null);
@@ -217,8 +225,7 @@ public final class MaterialDynamicColors {
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
                 Double valueOf;
-                DynamicScheme dynamicScheme = (DynamicScheme) obj;
-                valueOf = Double.valueOf(r2.isDark ? 4.0d : 100.0d);
+                valueOf = Double.valueOf(r10.isDark ? new ContrastCurve(4.0d, 4.0d, 2.0d, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE).get(((DynamicScheme) obj).contrastLevel) : 100.0d);
                 return valueOf;
             }
         }, true, null, null, null, null);
@@ -235,12 +242,20 @@ public final class MaterialDynamicColors {
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda82
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                Double valueOf;
-                DynamicScheme dynamicScheme = (DynamicScheme) obj;
-                valueOf = Double.valueOf(r2.isDark ? 10.0d : 96.0d);
-                return valueOf;
+                return MaterialDynamicColors.lambda$surfaceContainerLow$24((DynamicScheme) obj);
             }
         }, true, null, null, null, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ Double lambda$surfaceContainerLow$24(DynamicScheme dynamicScheme) {
+        double d;
+        if (dynamicScheme.isDark) {
+            d = new ContrastCurve(10.0d, 10.0d, 11.0d, 12.0d).get(dynamicScheme.contrastLevel);
+        } else {
+            d = new ContrastCurve(96.0d, 96.0d, 96.0d, 95.0d).get(dynamicScheme.contrastLevel);
+        }
+        return Double.valueOf(d);
     }
 
     public DynamicColor surfaceContainer() {
@@ -254,12 +269,20 @@ public final class MaterialDynamicColors {
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda39
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                Double valueOf;
-                DynamicScheme dynamicScheme = (DynamicScheme) obj;
-                valueOf = Double.valueOf(r2.isDark ? 12.0d : 94.0d);
-                return valueOf;
+                return MaterialDynamicColors.lambda$surfaceContainer$26((DynamicScheme) obj);
             }
         }, true, null, null, null, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ Double lambda$surfaceContainer$26(DynamicScheme dynamicScheme) {
+        double d;
+        if (dynamicScheme.isDark) {
+            d = new ContrastCurve(12.0d, 12.0d, 16.0d, 20.0d).get(dynamicScheme.contrastLevel);
+        } else {
+            d = new ContrastCurve(94.0d, 94.0d, 92.0d, 90.0d).get(dynamicScheme.contrastLevel);
+        }
+        return Double.valueOf(d);
     }
 
     public DynamicColor surfaceContainerHigh() {
@@ -273,12 +296,20 @@ public final class MaterialDynamicColors {
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda103
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                Double valueOf;
-                DynamicScheme dynamicScheme = (DynamicScheme) obj;
-                valueOf = Double.valueOf(r2.isDark ? 17.0d : 92.0d);
-                return valueOf;
+                return MaterialDynamicColors.lambda$surfaceContainerHigh$28((DynamicScheme) obj);
             }
         }, true, null, null, null, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ Double lambda$surfaceContainerHigh$28(DynamicScheme dynamicScheme) {
+        double d;
+        if (dynamicScheme.isDark) {
+            d = new ContrastCurve(17.0d, 17.0d, 21.0d, 25.0d).get(dynamicScheme.contrastLevel);
+        } else {
+            d = new ContrastCurve(92.0d, 92.0d, 88.0d, 85.0d).get(dynamicScheme.contrastLevel);
+        }
+        return Double.valueOf(d);
     }
 
     public DynamicColor surfaceContainerHighest() {
@@ -292,12 +323,20 @@ public final class MaterialDynamicColors {
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda152
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                Double valueOf;
-                DynamicScheme dynamicScheme = (DynamicScheme) obj;
-                valueOf = Double.valueOf(r2.isDark ? 22.0d : 90.0d);
-                return valueOf;
+                return MaterialDynamicColors.lambda$surfaceContainerHighest$30((DynamicScheme) obj);
             }
         }, true, null, null, null, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ Double lambda$surfaceContainerHighest$30(DynamicScheme dynamicScheme) {
+        double d;
+        if (dynamicScheme.isDark) {
+            d = new ContrastCurve(22.0d, 22.0d, 26.0d, 30.0d).get(dynamicScheme.contrastLevel);
+        } else {
+            d = new ContrastCurve(90.0d, 90.0d, 84.0d, 80.0d).get(dynamicScheme.contrastLevel);
+        }
+        return Double.valueOf(d);
     }
 
     public DynamicColor onSurface() {
@@ -395,14 +434,14 @@ public final class MaterialDynamicColors {
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda20
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8678xcbcaf83d((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8685xcbcaf83d((DynamicScheme) obj);
             }
         }, null, new ContrastCurve(4.5d, 7.0d, 11.0d, 21.0d), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$inverseOnSurface$41$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8678xcbcaf83d(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8685xcbcaf83d(DynamicScheme dynamicScheme) {
         return inverseSurface();
     }
 
@@ -441,7 +480,7 @@ public final class MaterialDynamicColors {
                 valueOf = Double.valueOf(r2.isDark ? 30.0d : 80.0d);
                 return valueOf;
             }
-        }, false, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 7.0d), null);
+        }, false, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 4.5d), null);
     }
 
     public DynamicColor shadow() {
@@ -514,10 +553,10 @@ public final class MaterialDynamicColors {
             public final Object apply(Object obj) {
                 return MaterialDynamicColors.lambda$primary$53((DynamicScheme) obj);
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(3.0d, 4.5d, 7.0d, 11.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda59
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(3.0d, 4.5d, 7.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda59
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8704x39203b5((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8711x39203b5((DynamicScheme) obj);
             }
         });
     }
@@ -532,8 +571,8 @@ public final class MaterialDynamicColors {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$primary$54$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8704x39203b5(DynamicScheme dynamicScheme) {
-        return new ToneDeltaPair(primaryContainer(), primary(), 15.0d, TonePolarity.NEARER, false);
+    public /* synthetic */ ToneDeltaPair m8711x39203b5(DynamicScheme dynamicScheme) {
+        return new ToneDeltaPair(primaryContainer(), primary(), 10.0d, TonePolarity.NEARER, false);
     }
 
     public DynamicColor onPrimary() {
@@ -552,7 +591,7 @@ public final class MaterialDynamicColors {
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda114
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8683x16f20f37((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8690x16f20f37((DynamicScheme) obj);
             }
         }, null, new ContrastCurve(4.5d, 7.0d, 11.0d, 21.0d), null);
     }
@@ -567,7 +606,7 @@ public final class MaterialDynamicColors {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onPrimary$57$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8683x16f20f37(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8690x16f20f37(DynamicScheme dynamicScheme) {
         return primary();
     }
 
@@ -582,20 +621,21 @@ public final class MaterialDynamicColors {
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda98
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.lambda$primaryContainer$59((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8712x9fd70f23((DynamicScheme) obj);
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda99
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 4.5d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda99
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8705x8277b1b9((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8713x8277b1b9((DynamicScheme) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Double lambda$primaryContainer$59(DynamicScheme dynamicScheme) {
+    /* renamed from: lambda$primaryContainer$59$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
+    public /* synthetic */ Double m8712x9fd70f23(DynamicScheme dynamicScheme) {
         if (isFidelity(dynamicScheme)) {
-            return Double.valueOf(performAlbers(dynamicScheme.sourceColorHct, dynamicScheme));
+            return Double.valueOf(dynamicScheme.sourceColorHct.getTone());
         }
         if (isMonochrome(dynamicScheme)) {
             return Double.valueOf(dynamicScheme.isDark ? 85.0d : 25.0d);
@@ -605,8 +645,8 @@ public final class MaterialDynamicColors {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$primaryContainer$60$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8705x8277b1b9(DynamicScheme dynamicScheme) {
-        return new ToneDeltaPair(primaryContainer(), primary(), 15.0d, TonePolarity.NEARER, false);
+    public /* synthetic */ ToneDeltaPair m8713x8277b1b9(DynamicScheme dynamicScheme) {
+        return new ToneDeltaPair(primaryContainer(), primary(), 10.0d, TonePolarity.NEARER, false);
     }
 
     public DynamicColor onPrimaryContainer() {
@@ -620,31 +660,31 @@ public final class MaterialDynamicColors {
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda136
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8684x617ce7dc((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8691x617ce7dc((DynamicScheme) obj);
             }
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda137
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8685x3d3e639d((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8692x3d3e639d((DynamicScheme) obj);
             }
-        }, null, new ContrastCurve(4.5d, 7.0d, 11.0d, 21.0d), null);
+        }, null, new ContrastCurve(3.0d, 4.5d, 7.0d, 11.0d), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onPrimaryContainer$62$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ Double m8684x617ce7dc(DynamicScheme dynamicScheme) {
+    public /* synthetic */ Double m8691x617ce7dc(DynamicScheme dynamicScheme) {
         if (isFidelity(dynamicScheme)) {
             return Double.valueOf(DynamicColor.foregroundTone(primaryContainer().tone.apply(dynamicScheme).doubleValue(), 4.5d));
         }
         if (isMonochrome(dynamicScheme)) {
             return Double.valueOf(dynamicScheme.isDark ? FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE : 100.0d);
         }
-        return Double.valueOf(dynamicScheme.isDark ? 90.0d : 10.0d);
+        return Double.valueOf(dynamicScheme.isDark ? 90.0d : 30.0d);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onPrimaryContainer$63$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8685x3d3e639d(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8692x3d3e639d(DynamicScheme dynamicScheme) {
         return primaryContainer();
     }
 
@@ -667,14 +707,14 @@ public final class MaterialDynamicColors {
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda117
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8679x6f94cccc((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8686x6f94cccc((DynamicScheme) obj);
             }
-        }, null, new ContrastCurve(3.0d, 4.5d, 7.0d, 11.0d), null);
+        }, null, new ContrastCurve(3.0d, 4.5d, 7.0d, 7.0d), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$inversePrimary$66$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8679x6f94cccc(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8686x6f94cccc(DynamicScheme dynamicScheme) {
         return inverseSurface();
     }
 
@@ -694,18 +734,18 @@ public final class MaterialDynamicColors {
                 valueOf = Double.valueOf(r2.isDark ? 80.0d : 40.0d);
                 return valueOf;
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(3.0d, 4.5d, 7.0d, 11.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda6
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(3.0d, 4.5d, 7.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda6
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8708x991d7367((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8716x991d7367((DynamicScheme) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$secondary$69$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8708x991d7367(DynamicScheme dynamicScheme) {
-        return new ToneDeltaPair(secondaryContainer(), secondary(), 15.0d, TonePolarity.NEARER, false);
+    public /* synthetic */ ToneDeltaPair m8716x991d7367(DynamicScheme dynamicScheme) {
+        return new ToneDeltaPair(secondaryContainer(), secondary(), 10.0d, TonePolarity.NEARER, false);
     }
 
     public DynamicColor onSecondary() {
@@ -724,7 +764,7 @@ public final class MaterialDynamicColors {
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda3
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8690x1ad791fe((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8697x1ad791fe((DynamicScheme) obj);
             }
         }, null, new ContrastCurve(4.5d, 7.0d, 11.0d, 21.0d), null);
     }
@@ -739,7 +779,7 @@ public final class MaterialDynamicColors {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onSecondary$72$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8690x1ad791fe(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8697x1ad791fe(DynamicScheme dynamicScheme) {
         return secondary();
     }
 
@@ -754,32 +794,33 @@ public final class MaterialDynamicColors {
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda84
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.lambda$secondaryContainer$74((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8717x6c9b544e((DynamicScheme) obj);
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda86
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 4.5d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda86
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8709x485cd00f((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8718x485cd00f((DynamicScheme) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Double lambda$secondaryContainer$74(DynamicScheme dynamicScheme) {
+    /* renamed from: lambda$secondaryContainer$74$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
+    public /* synthetic */ Double m8717x6c9b544e(DynamicScheme dynamicScheme) {
         double d = dynamicScheme.isDark ? 30.0d : 90.0d;
         if (isMonochrome(dynamicScheme)) {
             return Double.valueOf(dynamicScheme.isDark ? 30.0d : 85.0d);
         } else if (!isFidelity(dynamicScheme)) {
             return Double.valueOf(d);
         } else {
-            return Double.valueOf(performAlbers(dynamicScheme.secondaryPalette.getHct(findDesiredChromaByTone(dynamicScheme.secondaryPalette.getHue(), dynamicScheme.secondaryPalette.getChroma(), d, !dynamicScheme.isDark)), dynamicScheme));
+            return Double.valueOf(findDesiredChromaByTone(dynamicScheme.secondaryPalette.getHue(), dynamicScheme.secondaryPalette.getChroma(), d, !dynamicScheme.isDark));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$secondaryContainer$75$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8709x485cd00f(DynamicScheme dynamicScheme) {
-        return new ToneDeltaPair(secondaryContainer(), secondary(), 15.0d, TonePolarity.NEARER, false);
+    public /* synthetic */ ToneDeltaPair m8718x485cd00f(DynamicScheme dynamicScheme) {
+        return new ToneDeltaPair(secondaryContainer(), secondary(), 10.0d, TonePolarity.NEARER, false);
     }
 
     public DynamicColor onSecondaryContainer() {
@@ -793,28 +834,31 @@ public final class MaterialDynamicColors {
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda26
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8691x4fcce1f2((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8698x4fcce1f2((DynamicScheme) obj);
             }
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda27
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8692x2b8e5db3((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8699x2b8e5db3((DynamicScheme) obj);
             }
-        }, null, new ContrastCurve(4.5d, 7.0d, 11.0d, 21.0d), null);
+        }, null, new ContrastCurve(3.0d, 4.5d, 7.0d, 11.0d), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onSecondaryContainer$77$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ Double m8691x4fcce1f2(DynamicScheme dynamicScheme) {
-        if (isFidelity(dynamicScheme)) {
+    public /* synthetic */ Double m8698x4fcce1f2(DynamicScheme dynamicScheme) {
+        if (isMonochrome(dynamicScheme)) {
+            return Double.valueOf(dynamicScheme.isDark ? 90.0d : 10.0d);
+        } else if (isFidelity(dynamicScheme)) {
             return Double.valueOf(DynamicColor.foregroundTone(secondaryContainer().tone.apply(dynamicScheme).doubleValue(), 4.5d));
+        } else {
+            return Double.valueOf(dynamicScheme.isDark ? 90.0d : 30.0d);
         }
-        return Double.valueOf(dynamicScheme.isDark ? 90.0d : 10.0d);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onSecondaryContainer$78$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8692x2b8e5db3(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8699x2b8e5db3(DynamicScheme dynamicScheme) {
         return secondaryContainer();
     }
 
@@ -831,10 +875,10 @@ public final class MaterialDynamicColors {
             public final Object apply(Object obj) {
                 return MaterialDynamicColors.lambda$tertiary$80((DynamicScheme) obj);
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(3.0d, 4.5d, 7.0d, 11.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda69
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(3.0d, 4.5d, 7.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda69
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8712x1f6aa165((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8721x1f6aa165((DynamicScheme) obj);
             }
         });
     }
@@ -849,8 +893,8 @@ public final class MaterialDynamicColors {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$tertiary$81$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8712x1f6aa165(DynamicScheme dynamicScheme) {
-        return new ToneDeltaPair(tertiaryContainer(), tertiary(), 15.0d, TonePolarity.NEARER, false);
+    public /* synthetic */ ToneDeltaPair m8721x1f6aa165(DynamicScheme dynamicScheme) {
+        return new ToneDeltaPair(tertiaryContainer(), tertiary(), 10.0d, TonePolarity.NEARER, false);
     }
 
     public DynamicColor onTertiary() {
@@ -869,7 +913,7 @@ public final class MaterialDynamicColors {
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda129
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8697x36068449((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8704x36068449((DynamicScheme) obj);
             }
         }, null, new ContrastCurve(4.5d, 7.0d, 11.0d, 21.0d), null);
     }
@@ -884,7 +928,7 @@ public final class MaterialDynamicColors {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onTertiary$84$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8697x36068449(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8704x36068449(DynamicScheme dynamicScheme) {
         return tertiary();
     }
 
@@ -899,22 +943,23 @@ public final class MaterialDynamicColors {
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda160
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.lambda$tertiaryContainer$86((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8722x59bc65e7((DynamicScheme) obj);
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda161
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 4.5d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda161
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8713x357de1a8((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8723x357de1a8((DynamicScheme) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Double lambda$tertiaryContainer$86(DynamicScheme dynamicScheme) {
+    /* renamed from: lambda$tertiaryContainer$86$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
+    public /* synthetic */ Double m8722x59bc65e7(DynamicScheme dynamicScheme) {
         if (isMonochrome(dynamicScheme)) {
             return Double.valueOf(dynamicScheme.isDark ? 60.0d : 49.0d);
         } else if (isFidelity(dynamicScheme)) {
-            return Double.valueOf(DislikeAnalyzer.fixIfDisliked(dynamicScheme.tertiaryPalette.getHct(performAlbers(dynamicScheme.tertiaryPalette.getHct(dynamicScheme.sourceColorHct.getTone()), dynamicScheme))).getTone());
+            return Double.valueOf(DislikeAnalyzer.fixIfDisliked(dynamicScheme.tertiaryPalette.getHct(dynamicScheme.sourceColorHct.getTone())).getTone());
         } else {
             return Double.valueOf(dynamicScheme.isDark ? 30.0d : 90.0d);
         }
@@ -922,8 +967,8 @@ public final class MaterialDynamicColors {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$tertiaryContainer$87$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8713x357de1a8(DynamicScheme dynamicScheme) {
-        return new ToneDeltaPair(tertiaryContainer(), tertiary(), 15.0d, TonePolarity.NEARER, false);
+    public /* synthetic */ ToneDeltaPair m8723x357de1a8(DynamicScheme dynamicScheme) {
+        return new ToneDeltaPair(tertiaryContainer(), tertiary(), 10.0d, TonePolarity.NEARER, false);
     }
 
     public DynamicColor onTertiaryContainer() {
@@ -937,31 +982,31 @@ public final class MaterialDynamicColors {
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda23
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8698xb5c66ea9((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8705xb5c66ea9((DynamicScheme) obj);
             }
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda24
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8699x9867113f((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8706x9867113f((DynamicScheme) obj);
             }
-        }, null, new ContrastCurve(4.5d, 7.0d, 11.0d, 21.0d), null);
+        }, null, new ContrastCurve(3.0d, 4.5d, 7.0d, 11.0d), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onTertiaryContainer$89$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ Double m8698xb5c66ea9(DynamicScheme dynamicScheme) {
+    public /* synthetic */ Double m8705xb5c66ea9(DynamicScheme dynamicScheme) {
         if (isMonochrome(dynamicScheme)) {
             return Double.valueOf(dynamicScheme.isDark ? FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE : 100.0d);
         } else if (isFidelity(dynamicScheme)) {
             return Double.valueOf(DynamicColor.foregroundTone(tertiaryContainer().tone.apply(dynamicScheme).doubleValue(), 4.5d));
         } else {
-            return Double.valueOf(dynamicScheme.isDark ? 90.0d : 10.0d);
+            return Double.valueOf(dynamicScheme.isDark ? 90.0d : 30.0d);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onTertiaryContainer$90$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8699x9867113f(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8706x9867113f(DynamicScheme dynamicScheme) {
         return tertiaryContainer();
     }
 
@@ -981,18 +1026,18 @@ public final class MaterialDynamicColors {
                 valueOf = Double.valueOf(r2.isDark ? 80.0d : 40.0d);
                 return valueOf;
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(3.0d, 4.5d, 7.0d, 11.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda35
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(3.0d, 4.5d, 7.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda35
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8676x590ec46a((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8683x590ec46a((DynamicScheme) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$error$93$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8676x590ec46a(DynamicScheme dynamicScheme) {
-        return new ToneDeltaPair(errorContainer(), error(), 15.0d, TonePolarity.NEARER, false);
+    public /* synthetic */ ToneDeltaPair m8683x590ec46a(DynamicScheme dynamicScheme) {
+        return new ToneDeltaPair(errorContainer(), error(), 10.0d, TonePolarity.NEARER, false);
     }
 
     public DynamicColor onError() {
@@ -1014,14 +1059,14 @@ public final class MaterialDynamicColors {
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda132
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8681xb6a5d3ac((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8688xb6a5d3ac((DynamicScheme) obj);
             }
         }, null, new ContrastCurve(4.5d, 7.0d, 11.0d, 21.0d), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onError$96$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8681xb6a5d3ac(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8688xb6a5d3ac(DynamicScheme dynamicScheme) {
         return error();
     }
 
@@ -1041,18 +1086,18 @@ public final class MaterialDynamicColors {
                 valueOf = Double.valueOf(r2.isDark ? 30.0d : 90.0d);
                 return valueOf;
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda52
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 4.5d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda52
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8677x33346ee5((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8684x33346ee5((DynamicScheme) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$errorContainer$99$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8677x33346ee5(DynamicScheme dynamicScheme) {
-        return new ToneDeltaPair(errorContainer(), error(), 15.0d, TonePolarity.NEARER, false);
+    public /* synthetic */ ToneDeltaPair m8684x33346ee5(DynamicScheme dynamicScheme) {
+        return new ToneDeltaPair(errorContainer(), error(), 10.0d, TonePolarity.NEARER, false);
     }
 
     public DynamicColor onErrorContainer() {
@@ -1066,22 +1111,27 @@ public final class MaterialDynamicColors {
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda46
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                Double valueOf;
-                DynamicScheme dynamicScheme = (DynamicScheme) obj;
-                valueOf = Double.valueOf(r2.isDark ? 90.0d : 10.0d);
-                return valueOf;
+                return MaterialDynamicColors.lambda$onErrorContainer$101((DynamicScheme) obj);
             }
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda47
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8682x2dffdbdb((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8689x2dffdbdb((DynamicScheme) obj);
             }
-        }, null, new ContrastCurve(4.5d, 7.0d, 11.0d, 21.0d), null);
+        }, null, new ContrastCurve(3.0d, 4.5d, 7.0d, 11.0d), null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ Double lambda$onErrorContainer$101(DynamicScheme dynamicScheme) {
+        if (isMonochrome(dynamicScheme)) {
+            return Double.valueOf(dynamicScheme.isDark ? 90.0d : 10.0d);
+        }
+        return Double.valueOf(dynamicScheme.isDark ? 90.0d : 30.0d);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onErrorContainer$102$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8682x2dffdbdb(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8689x2dffdbdb(DynamicScheme dynamicScheme) {
         return errorContainer();
     }
 
@@ -1101,17 +1151,17 @@ public final class MaterialDynamicColors {
                 valueOf = Double.valueOf(MaterialDynamicColors.isMonochrome(r2) ? 40.0d : 90.0d);
                 return valueOf;
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda155
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 4.5d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda155
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8706xcb141198((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8714xcb141198((DynamicScheme) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$primaryFixed$105$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8706xcb141198(DynamicScheme dynamicScheme) {
+    public /* synthetic */ ToneDeltaPair m8714xcb141198(DynamicScheme dynamicScheme) {
         return new ToneDeltaPair(primaryFixed(), primaryFixedDim(), 10.0d, TonePolarity.LIGHTER, true);
     }
 
@@ -1131,17 +1181,17 @@ public final class MaterialDynamicColors {
                 valueOf = Double.valueOf(MaterialDynamicColors.isMonochrome(r2) ? 30.0d : 80.0d);
                 return valueOf;
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda158
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 4.5d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda158
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8707x8f195ac5((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8715x8f195ac5((DynamicScheme) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$primaryFixedDim$108$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8707x8f195ac5(DynamicScheme dynamicScheme) {
+    public /* synthetic */ ToneDeltaPair m8715x8f195ac5(DynamicScheme dynamicScheme) {
         return new ToneDeltaPair(primaryFixed(), primaryFixedDim(), 10.0d, TonePolarity.LIGHTER, true);
     }
 
@@ -1164,25 +1214,25 @@ public final class MaterialDynamicColors {
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda30
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8686x702e4bf2((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8693x702e4bf2((DynamicScheme) obj);
             }
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda31
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8687x4befc7b3((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8694x4befc7b3((DynamicScheme) obj);
             }
         }, new ContrastCurve(4.5d, 7.0d, 11.0d, 21.0d), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onPrimaryFixed$111$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8686x702e4bf2(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8693x702e4bf2(DynamicScheme dynamicScheme) {
         return primaryFixedDim();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onPrimaryFixed$112$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8687x4befc7b3(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8694x4befc7b3(DynamicScheme dynamicScheme) {
         return primaryFixed();
     }
 
@@ -1205,25 +1255,25 @@ public final class MaterialDynamicColors {
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda124
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8688x19d0bbbf((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8695x19d0bbbf((DynamicScheme) obj);
             }
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda125
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8689xf5923780((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8696xf5923780((DynamicScheme) obj);
             }
         }, new ContrastCurve(3.0d, 4.5d, 7.0d, 11.0d), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onPrimaryFixedVariant$115$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8688x19d0bbbf(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8695x19d0bbbf(DynamicScheme dynamicScheme) {
         return primaryFixedDim();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onPrimaryFixedVariant$116$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8689xf5923780(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8696xf5923780(DynamicScheme dynamicScheme) {
         return primaryFixed();
     }
 
@@ -1243,17 +1293,17 @@ public final class MaterialDynamicColors {
                 valueOf = Double.valueOf(MaterialDynamicColors.isMonochrome(r2) ? 80.0d : 90.0d);
                 return valueOf;
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda121
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 4.5d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda121
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8710x75ece309((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8719x75ece309((DynamicScheme) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$secondaryFixed$119$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8710x75ece309(DynamicScheme dynamicScheme) {
+    public /* synthetic */ ToneDeltaPair m8719x75ece309(DynamicScheme dynamicScheme) {
         return new ToneDeltaPair(secondaryFixed(), secondaryFixedDim(), 10.0d, TonePolarity.LIGHTER, true);
     }
 
@@ -1273,17 +1323,17 @@ public final class MaterialDynamicColors {
                 valueOf = Double.valueOf(MaterialDynamicColors.isMonochrome(r2) ? 70.0d : 80.0d);
                 return valueOf;
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda141
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 4.5d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda141
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8711x801c242f((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8720x801c242f((DynamicScheme) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$secondaryFixedDim$122$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8711x801c242f(DynamicScheme dynamicScheme) {
+    public /* synthetic */ ToneDeltaPair m8720x801c242f(DynamicScheme dynamicScheme) {
         return new ToneDeltaPair(secondaryFixed(), secondaryFixedDim(), 10.0d, TonePolarity.LIGHTER, true);
     }
 
@@ -1306,25 +1356,25 @@ public final class MaterialDynamicColors {
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda16
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8693xf72fd9a3((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8700xf72fd9a3((DynamicScheme) obj);
             }
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda17
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8694xd2f15564((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8701xd2f15564((DynamicScheme) obj);
             }
         }, new ContrastCurve(4.5d, 7.0d, 11.0d, 21.0d), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onSecondaryFixed$125$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8693xf72fd9a3(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8700xf72fd9a3(DynamicScheme dynamicScheme) {
         return secondaryFixedDim();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onSecondaryFixed$126$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8694xd2f15564(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8701xd2f15564(DynamicScheme dynamicScheme) {
         return secondaryFixed();
     }
 
@@ -1347,25 +1397,25 @@ public final class MaterialDynamicColors {
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda64
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8695x26187114((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8702x26187114((DynamicScheme) obj);
             }
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda65
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8696x8b913aa((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8703x8b913aa((DynamicScheme) obj);
             }
         }, new ContrastCurve(3.0d, 4.5d, 7.0d, 11.0d), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onSecondaryFixedVariant$129$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8695x26187114(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8702x26187114(DynamicScheme dynamicScheme) {
         return secondaryFixedDim();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onSecondaryFixedVariant$130$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8696x8b913aa(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8703x8b913aa(DynamicScheme dynamicScheme) {
         return secondaryFixed();
     }
 
@@ -1385,17 +1435,17 @@ public final class MaterialDynamicColors {
                 valueOf = Double.valueOf(MaterialDynamicColors.isMonochrome(r2) ? 40.0d : 90.0d);
                 return valueOf;
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda56
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 4.5d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda56
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8714x59237289((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8724x59237289((DynamicScheme) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$tertiaryFixed$133$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8714x59237289(DynamicScheme dynamicScheme) {
+    public /* synthetic */ ToneDeltaPair m8724x59237289(DynamicScheme dynamicScheme) {
         return new ToneDeltaPair(tertiaryFixed(), tertiaryFixedDim(), 10.0d, TonePolarity.LIGHTER, true);
     }
 
@@ -1415,17 +1465,17 @@ public final class MaterialDynamicColors {
                 valueOf = Double.valueOf(MaterialDynamicColors.isMonochrome(r2) ? 30.0d : 80.0d);
                 return valueOf;
             }
-        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 7.0d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda128
+        }, true, new MaterialDynamicColors$$ExternalSyntheticLambda162(this), null, new ContrastCurve(1.0d, 1.0d, 3.0d, 4.5d), new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda128
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8715x24c02d4a((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8725x24c02d4a((DynamicScheme) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$tertiaryFixedDim$136$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ ToneDeltaPair m8715x24c02d4a(DynamicScheme dynamicScheme) {
+    public /* synthetic */ ToneDeltaPair m8725x24c02d4a(DynamicScheme dynamicScheme) {
         return new ToneDeltaPair(tertiaryFixed(), tertiaryFixedDim(), 10.0d, TonePolarity.LIGHTER, true);
     }
 
@@ -1448,25 +1498,25 @@ public final class MaterialDynamicColors {
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda89
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8700xfe3fcbf0((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8707xfe3fcbf0((DynamicScheme) obj);
             }
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda90
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8701xe0e06e86((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8708xe0e06e86((DynamicScheme) obj);
             }
         }, new ContrastCurve(4.5d, 7.0d, 11.0d, 21.0d), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onTertiaryFixed$139$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8700xfe3fcbf0(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8707xfe3fcbf0(DynamicScheme dynamicScheme) {
         return tertiaryFixedDim();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onTertiaryFixed$140$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8701xe0e06e86(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8708xe0e06e86(DynamicScheme dynamicScheme) {
         return tertiaryFixed();
     }
 
@@ -1489,25 +1539,25 @@ public final class MaterialDynamicColors {
         }, false, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda77
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8702x702fc122((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8709x702fc122((DynamicScheme) obj);
             }
         }, new Function() { // from class: com.google.android.material.color.utilities.MaterialDynamicColors$$ExternalSyntheticLambda78
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
-                return MaterialDynamicColors.this.m8703x4bf13ce3((DynamicScheme) obj);
+                return MaterialDynamicColors.this.m8710x4bf13ce3((DynamicScheme) obj);
             }
         }, new ContrastCurve(3.0d, 4.5d, 7.0d, 11.0d), null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onTertiaryFixedVariant$143$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8702x702fc122(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8709x702fc122(DynamicScheme dynamicScheme) {
         return tertiaryFixedDim();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onTertiaryFixedVariant$144$com-google-android-material-color-utilities-MaterialDynamicColors  reason: not valid java name */
-    public /* synthetic */ DynamicColor m8703x4bf13ce3(DynamicScheme dynamicScheme) {
+    public /* synthetic */ DynamicColor m8710x4bf13ce3(DynamicScheme dynamicScheme) {
         return tertiaryFixed();
     }
 
@@ -1671,12 +1721,8 @@ public final class MaterialDynamicColors {
         });
     }
 
-    private static ViewingConditions viewingConditionsForAlbers(DynamicScheme dynamicScheme) {
-        return ViewingConditions.defaultWithBackgroundLstar(dynamicScheme.isDark ? 30.0d : 80.0d);
-    }
-
-    private static boolean isFidelity(DynamicScheme dynamicScheme) {
-        return dynamicScheme.variant == Variant.FIDELITY || dynamicScheme.variant == Variant.CONTENT;
+    private boolean isFidelity(DynamicScheme dynamicScheme) {
+        return !(!this.isExtendedFidelity || dynamicScheme.variant == Variant.MONOCHROME || dynamicScheme.variant == Variant.NEUTRAL) || dynamicScheme.variant == Variant.FIDELITY || dynamicScheme.variant == Variant.CONTENT;
     }
 
     private static boolean isMonochrome(DynamicScheme dynamicScheme) {
@@ -1700,13 +1746,5 @@ public final class MaterialDynamicColors {
             }
         }
         return d3;
-    }
-
-    static double performAlbers(Hct hct, DynamicScheme dynamicScheme) {
-        Hct inViewingConditions = hct.inViewingConditions(viewingConditionsForAlbers(dynamicScheme));
-        if (DynamicColor.tonePrefersLightForeground(hct.getTone()) && !DynamicColor.toneAllowsLightForeground(inViewingConditions.getTone())) {
-            return DynamicColor.enableLightForeground(hct.getTone());
-        }
-        return DynamicColor.enableLightForeground(inViewingConditions.getTone());
     }
 }

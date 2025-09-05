@@ -63,11 +63,11 @@ public final class BoolArrayNavType extends CollectionNavType<boolean[]> {
     public void put(Bundle bundle, String key, boolean[] zArr) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        Bundle m8247constructorimpl = SavedStateWriter.m8247constructorimpl(bundle);
+        Bundle m8249constructorimpl = SavedStateWriter.m8249constructorimpl(bundle);
         if (zArr != null) {
-            SavedStateWriter.m8254putBooleanArrayimpl(m8247constructorimpl, key, zArr);
+            SavedStateWriter.m8256putBooleanArrayimpl(m8249constructorimpl, key, zArr);
         } else {
-            SavedStateWriter.m8270putNullimpl(m8247constructorimpl, key);
+            SavedStateWriter.m8272putNullimpl(m8249constructorimpl, key);
         }
     }
 
@@ -75,10 +75,10 @@ public final class BoolArrayNavType extends CollectionNavType<boolean[]> {
     public boolean[] get(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        Bundle m8161constructorimpl = SavedStateReader.m8161constructorimpl(bundle);
-        if (!SavedStateReader.m8162containsimpl(m8161constructorimpl, key) || SavedStateReader.m8240isNullimpl(m8161constructorimpl, key)) {
+        Bundle m8163constructorimpl = SavedStateReader.m8163constructorimpl(bundle);
+        if (!SavedStateReader.m8164containsimpl(m8163constructorimpl, key) || SavedStateReader.m8242isNullimpl(m8163constructorimpl, key)) {
             return null;
         }
-        return SavedStateReader.m8171getBooleanArrayimpl(m8161constructorimpl, key);
+        return SavedStateReader.m8173getBooleanArrayimpl(m8163constructorimpl, key);
     }
 }

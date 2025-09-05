@@ -16,13 +16,12 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
-import ru.mrlargha.commonui.elements.employmentNote.domain.FractionTasks;
 import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.MapperKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Utils.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.util.UtilsKt$getItemsJson$1", f = "Utils.kt", i = {0, 0, 0}, l = {84}, m = "invokeSuspend", n = {"fileName", "jsonFile", "json"}, s = {"L$0", "L$1", "L$2"})
+@DebugMetadata(c = "com.arizona.launcher.util.UtilsKt$getItemsJson$1", f = "Utils.kt", i = {0, 0, 0}, l = {83}, m = "invokeSuspend", n = {"fileName", "jsonFile", "json"}, s = {"L$0", "L$1", "L$2"})
 /* loaded from: classes3.dex */
 public final class UtilsKt$getItemsJson$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ File $baseDir;
@@ -134,8 +133,6 @@ public final class UtilsKt$getItemsJson$1 extends SuspendLambda implements Funct
             if (i == 1) {
                 ru.mrlargha.commonui.utils.UtilsKt.setItemsName(MapperKt.toListModel(this.$json, ItemsInfo.class));
                 UtilsKt.getItemsJson(this.$context, 2, this.$baseDir);
-            } else if (i == 2) {
-                ru.mrlargha.commonui.utils.UtilsKt.setFractionTasks(MapperKt.toListModel(this.$json, FractionTasks.class));
             } else if (i == 3) {
                 ru.mrlargha.commonui.utils.UtilsKt.setItemsName(MapperKt.toListModel(this.$json, ItemsInfo.class));
                 UtilsKt.getItemsJson(this.$context, 2, this.$baseDir);

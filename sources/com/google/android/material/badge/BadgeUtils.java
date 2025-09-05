@@ -20,7 +20,6 @@ import com.google.android.material.internal.ToolbarUtils;
 /* loaded from: classes4.dex */
 public class BadgeUtils {
     private static final String LOG_TAG = "BadgeUtils";
-    public static final boolean USE_COMPAT_PARENT = false;
 
     private BadgeUtils() {
     }
@@ -37,8 +36,6 @@ public class BadgeUtils {
         setBadgeDrawableBounds(badgeDrawable, view, frameLayout);
         if (badgeDrawable.getCustomBadgeParent() != null) {
             badgeDrawable.getCustomBadgeParent().setForeground(badgeDrawable);
-        } else if (USE_COMPAT_PARENT) {
-            throw new IllegalArgumentException("Trying to reference null customBadgeParent");
         } else {
             view.getOverlay().add(badgeDrawable);
         }
@@ -63,13 +60,13 @@ public class BadgeUtils {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void attachBadgeContentDescription(final BadgeDrawable badgeDrawable, View view) {
+    public static void attachBadgeContentDescription(final BadgeDrawable badgeDrawable, final View view) {
         if (Build.VERSION.SDK_INT >= 29 && ViewCompat.hasAccessibilityDelegate(view)) {
             ViewCompat.setAccessibilityDelegate(view, new AccessibilityDelegateCompat(view.getAccessibilityDelegate()) { // from class: com.google.android.material.badge.BadgeUtils.2
                 @Override // androidx.core.view.AccessibilityDelegateCompat
                 public void onInitializeAccessibilityNodeInfo(View view2, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
                     super.onInitializeAccessibilityNodeInfo(view2, accessibilityNodeInfoCompat);
-                    accessibilityNodeInfoCompat.setContentDescription(badgeDrawable.getContentDescription());
+                    accessibilityNodeInfoCompat.setContentDescription(BadgeUtils.getBadgeAnchorContentDescription(view, badgeDrawable));
                 }
             });
         } else {
@@ -77,17 +74,23 @@ public class BadgeUtils {
                 @Override // androidx.core.view.AccessibilityDelegateCompat
                 public void onInitializeAccessibilityNodeInfo(View view2, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
                     super.onInitializeAccessibilityNodeInfo(view2, accessibilityNodeInfoCompat);
-                    accessibilityNodeInfoCompat.setContentDescription(BadgeDrawable.this.getContentDescription());
+                    accessibilityNodeInfoCompat.setContentDescription(BadgeUtils.getBadgeAnchorContentDescription(view, badgeDrawable));
                 }
             });
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static CharSequence getBadgeAnchorContentDescription(View view, BadgeDrawable badgeDrawable) {
+        CharSequence contentDescription = badgeDrawable.getContentDescription();
+        return contentDescription != null ? contentDescription : view.getContentDescription();
     }
 
     public static void detachBadgeDrawable(BadgeDrawable badgeDrawable, View view) {
         if (badgeDrawable == null) {
             return;
         }
-        if (USE_COMPAT_PARENT || badgeDrawable.getCustomBadgeParent() != null) {
+        if (badgeDrawable.getCustomBadgeParent() != null) {
             badgeDrawable.getCustomBadgeParent().setForeground(null);
         } else {
             view.getOverlay().remove(badgeDrawable);
@@ -108,13 +111,13 @@ public class BadgeUtils {
         Log.w(LOG_TAG, "Trying to remove badge from a null menuItemView: " + i);
     }
 
-    private static void detachBadgeContentDescription(View view) {
+    private static void detachBadgeContentDescription(final View view) {
         if (Build.VERSION.SDK_INT >= 29 && ViewCompat.hasAccessibilityDelegate(view)) {
             ViewCompat.setAccessibilityDelegate(view, new AccessibilityDelegateCompat(view.getAccessibilityDelegate()) { // from class: com.google.android.material.badge.BadgeUtils.4
                 @Override // androidx.core.view.AccessibilityDelegateCompat
                 public void onInitializeAccessibilityNodeInfo(View view2, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
                     super.onInitializeAccessibilityNodeInfo(view2, accessibilityNodeInfoCompat);
-                    accessibilityNodeInfoCompat.setContentDescription(null);
+                    accessibilityNodeInfoCompat.setContentDescription(view.getContentDescription());
                 }
             });
         } else {

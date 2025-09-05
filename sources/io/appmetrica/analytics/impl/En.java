@@ -1,11 +1,17 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
+import java.lang.Thread;
+import java.util.concurrent.CopyOnWriteArrayList;
 /* loaded from: classes4.dex */
-public interface En {
-    Thread a();
+public final class En implements Thread.UncaughtExceptionHandler {
 
-    StackTraceElement[] b();
+    /* renamed from: a  reason: collision with root package name */
+    public final CopyOnWriteArrayList f428a = new CopyOnWriteArrayList();
 
-    Map c();
+    @Override // java.lang.Thread.UncaughtExceptionHandler
+    public final void uncaughtException(Thread thread, Throwable th) {
+        for (Thread.UncaughtExceptionHandler uncaughtExceptionHandler : this.f428a) {
+            uncaughtExceptionHandler.uncaughtException(thread, th);
+        }
+    }
 }

@@ -25,7 +25,7 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBoostModel
 /* compiled from: DonateStates.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateStates$setBoosts$1", f = "DonateStates.kt", i = {1, 2}, l = {218, 220, 224}, m = "invokeSuspend", n = {RemoteConfigConstants.ResponseFieldKey.STATE, RemoteConfigConstants.ResponseFieldKey.STATE}, s = {"L$0", "L$0"})
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public final class DonateStates$setBoosts$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
     int label;

@@ -2,10 +2,13 @@ package com.google.android.material.motion;
 
 import android.animation.TimeInterpolator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.TypedValue;
 import android.view.animation.AnimationUtils;
+import android.view.animation.PathInterpolator;
 import androidx.core.graphics.PathParser;
-import androidx.core.view.animation.PathInterpolatorCompat;
+import androidx.dynamicanimation.animation.SpringForce;
+import com.google.android.material.R;
 import com.google.android.material.resources.MaterialAttributes;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 /* loaded from: classes4.dex */
@@ -16,6 +19,32 @@ public class MotionUtils {
     private static final String EASING_TYPE_PATH = "path";
 
     private MotionUtils() {
+    }
+
+    public static SpringForce resolveThemeSpringForce(Context context, int i, int i2) {
+        TypedArray obtainStyledAttributes;
+        TypedValue resolve = MaterialAttributes.resolve(context, i);
+        if (resolve == null) {
+            obtainStyledAttributes = context.obtainStyledAttributes(null, R.styleable.MaterialSpring, 0, i2);
+        } else {
+            obtainStyledAttributes = context.obtainStyledAttributes(resolve.resourceId, R.styleable.MaterialSpring);
+        }
+        SpringForce springForce = new SpringForce();
+        try {
+            float f = obtainStyledAttributes.getFloat(R.styleable.MaterialSpring_stiffness, Float.MIN_VALUE);
+            if (f == Float.MIN_VALUE) {
+                throw new IllegalArgumentException("A MaterialSpring style must have stiffness value.");
+            }
+            float f2 = obtainStyledAttributes.getFloat(R.styleable.MaterialSpring_damping, Float.MIN_VALUE);
+            if (f2 == Float.MIN_VALUE) {
+                throw new IllegalArgumentException("A MaterialSpring style must have a damping value.");
+            }
+            springForce.setStiffness(f);
+            springForce.setDampingRatio(f2);
+            return springForce;
+        } finally {
+            obtainStyledAttributes.recycle();
+        }
     }
 
     public static int resolveThemeDuration(Context context, int i, int i2) {
@@ -43,9 +72,9 @@ public class MotionUtils {
             if (split.length != 4) {
                 throw new IllegalArgumentException("Motion easing theme attribute must have 4 control points if using bezier curve format; instead got: " + split.length);
             }
-            return PathInterpolatorCompat.create(getLegacyControlPoint(split, 0), getLegacyControlPoint(split, 1), getLegacyControlPoint(split, 2), getLegacyControlPoint(split, 3));
+            return new PathInterpolator(getLegacyControlPoint(split, 0), getLegacyControlPoint(split, 1), getLegacyControlPoint(split, 2), getLegacyControlPoint(split, 3));
         } else if (isLegacyEasingType(str, EASING_TYPE_PATH)) {
-            return PathInterpolatorCompat.create(PathParser.createPathFromPathData(getLegacyEasingContent(str, EASING_TYPE_PATH)));
+            return new PathInterpolator(PathParser.createPathFromPathData(getLegacyEasingContent(str, EASING_TYPE_PATH)));
         } else {
             throw new IllegalArgumentException("Invalid motion easing type: " + str);
         }

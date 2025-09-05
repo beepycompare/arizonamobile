@@ -1,8 +1,8 @@
 package androidx.dynamicanimation.animation;
 
-import android.os.Looper;
 import android.util.AndroidRuntimeException;
 import android.view.View;
+import androidx.collection.SieveCacheKt;
 import androidx.constraintlayout.motion.widget.Key;
 import androidx.core.view.ViewCompat;
 import androidx.dynamicanimation.animation.AnimationHandler;
@@ -16,6 +16,7 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
     public static final float MIN_VISIBLE_CHANGE_SCALE = 0.002f;
     private static final float THRESHOLD_MULTIPLIER = 0.75f;
     private static final float UNSET = Float.MAX_VALUE;
+    private AnimationHandler mAnimationHandler;
     private final ArrayList<OnAnimationEndListener> mEndListeners;
     private long mLastFrameTime;
     float mMaxValue;
@@ -258,7 +259,7 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
         } else if (floatPropertyCompat == ALPHA) {
             this.mMinVisibleChange = 0.00390625f;
         } else if (floatPropertyCompat == SCALE_X || floatPropertyCompat == SCALE_Y) {
-            this.mMinVisibleChange = 0.00390625f;
+            this.mMinVisibleChange = 0.002f;
         } else {
             this.mMinVisibleChange = 1.0f;
         }
@@ -339,8 +340,8 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
     }
 
     public void start() {
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            throw new AndroidRuntimeException("Animations may only be started on the main thread");
+        if (!getAnimationHandler().isCurrentThread()) {
+            throw new AndroidRuntimeException("Animations may only be started on the same thread as the animation handler");
         }
         if (this.mRunning) {
             return;
@@ -349,8 +350,8 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
     }
 
     public void cancel() {
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            throw new AndroidRuntimeException("Animations may only be canceled on the main thread");
+        if (!getAnimationHandler().isCurrentThread()) {
+            throw new AndroidRuntimeException("Animations may only be canceled from the same thread as the animation handler");
         }
         if (this.mRunning) {
             endAnimationInternal(true);
@@ -373,7 +374,7 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
         if (f > this.mMaxValue || f < this.mMinValue) {
             throw new IllegalArgumentException("Starting value need to be in between min value and max value");
         }
-        AnimationHandler.getInstance().addAnimationFrameCallback(this, 0L);
+        getAnimationHandler().addAnimationFrameCallback(this, 0L);
     }
 
     @Override // androidx.dynamicanimation.animation.AnimationHandler.AnimationFrameCallback
@@ -384,8 +385,10 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
             setPropertyValue(this.mValue);
             return false;
         }
+        long j3 = j - j2;
         this.mLastFrameTime = j;
-        boolean updateValueAndVelocity = updateValueAndVelocity(j - j2);
+        float durationScale = getAnimationHandler().getDurationScale();
+        boolean updateValueAndVelocity = updateValueAndVelocity(durationScale == 0.0f ? SieveCacheKt.NodeLinkMask : ((float) j3) / durationScale);
         float min = Math.min(this.mValue, this.mMaxValue);
         this.mValue = min;
         float max = Math.max(min, this.mMinValue);
@@ -399,7 +402,7 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
 
     private void endAnimationInternal(boolean z) {
         this.mRunning = false;
-        AnimationHandler.getInstance().removeCallback(this);
+        getAnimationHandler().removeCallback(this);
         this.mLastFrameTime = 0L;
         this.mStartValueIsSet = false;
         for (int i = 0; i < this.mEndListeners.size(); i++) {
@@ -427,5 +430,25 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
 
     private float getPropertyValue() {
         return this.mProperty.getValue(this.mTarget);
+    }
+
+    public AnimationHandler getAnimationHandler() {
+        AnimationHandler animationHandler = this.mAnimationHandler;
+        return animationHandler != null ? animationHandler : AnimationHandler.getInstance();
+    }
+
+    public FrameCallbackScheduler getScheduler() {
+        AnimationHandler animationHandler = this.mAnimationHandler;
+        return animationHandler != null ? animationHandler.getScheduler() : AnimationHandler.getInstance().getScheduler();
+    }
+
+    public void setScheduler(FrameCallbackScheduler frameCallbackScheduler) {
+        AnimationHandler animationHandler = this.mAnimationHandler;
+        if (animationHandler == null || animationHandler.getScheduler() != frameCallbackScheduler) {
+            if (this.mRunning) {
+                throw new AndroidRuntimeException("Animations are still running and the animationhandler should not be set at this timming");
+            }
+            this.mAnimationHandler = new AnimationHandler(frameCallbackScheduler);
+        }
     }
 }

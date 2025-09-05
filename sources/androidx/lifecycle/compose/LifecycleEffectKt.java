@@ -138,8 +138,8 @@ public final class LifecycleEffectKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x0081, code lost:
-        if ((r12 & 2) != 0) goto L53;
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0081, code lost:
+        if ((r12 & 2) != 0) goto L51;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -163,14 +163,12 @@ public final class LifecycleEffectKt {
         } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i3 |= startRestartGroup.changedInstance(function0) ? 256 : 128;
         }
-        if ((i3 & 147) == 146 && startRestartGroup.getSkipping()) {
-            startRestartGroup.skipToGroupEnd();
-        } else {
+        if (startRestartGroup.shouldExecute((i3 & 147) != 146, i3 & 1)) {
             startRestartGroup.startDefaults();
             ComposerKt.sourceInformation(startRestartGroup, "53@2411L7");
             if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                 if ((i2 & 2) != 0) {
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume = startRestartGroup.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     lifecycleOwner = (LifecycleOwner) consume;
@@ -185,7 +183,7 @@ public final class LifecycleEffectKt {
                 }
                 final State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(function0, startRestartGroup, (i3 >> 6) & 14);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1176425409, "CC(remember):LifecycleEffect.kt#9igjgp");
-                boolean changed = ((i3 & 14) == 4) | startRestartGroup.changed(rememberUpdatedState) | startRestartGroup.changedInstance(lifecycleOwner);
+                boolean changed = startRestartGroup.changed(rememberUpdatedState) | ((i3 & 14) == 4) | startRestartGroup.changedInstance(lifecycleOwner);
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                     rememberedValue = new Function1() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda3
@@ -206,6 +204,8 @@ public final class LifecycleEffectKt {
             } else {
                 startRestartGroup.skipToGroupEnd();
             }
+        } else {
+            startRestartGroup.skipToGroupEnd();
         }
         final LifecycleOwner lifecycleOwner2 = lifecycleOwner;
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
@@ -245,8 +245,8 @@ public final class LifecycleEffectKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x0079, code lost:
-        if ((r12 & 2) != 0) goto L45;
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0077, code lost:
+        if ((r12 & 2) != 0) goto L44;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -270,12 +270,12 @@ public final class LifecycleEffectKt {
         } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i3 |= startRestartGroup.changedInstance(function1) ? 256 : 128;
         }
-        if ((i3 & 147) != 146 || !startRestartGroup.getSkipping()) {
+        if (startRestartGroup.shouldExecute((i3 & 147) != 146, i3 & 1)) {
             startRestartGroup.startDefaults();
             ComposerKt.sourceInformation(startRestartGroup, "127@5836L7");
             if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                 if ((i2 & 2) != 0) {
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume = startRestartGroup.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     lifecycleOwner = (LifecycleOwner) consume;
@@ -317,8 +317,8 @@ public final class LifecycleEffectKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x0090, code lost:
-        if ((r14 & 4) != 0) goto L48;
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x008e, code lost:
+        if ((r14 & 4) != 0) goto L47;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -347,12 +347,12 @@ public final class LifecycleEffectKt {
         } else if ((i & 3072) == 0) {
             i3 |= startRestartGroup.changedInstance(function1) ? 2048 : 1024;
         }
-        if ((i3 & 1171) != 1170 || !startRestartGroup.getSkipping()) {
+        if (startRestartGroup.shouldExecute((i3 & 1171) != 1170, i3 & 1)) {
             startRestartGroup.startDefaults();
             ComposerKt.sourceInformation(startRestartGroup, "185@8863L7");
             if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                 if ((i2 & 4) != 0) {
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume = startRestartGroup.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     lifecycleOwner = (LifecycleOwner) consume;
@@ -394,8 +394,8 @@ public final class LifecycleEffectKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x00a7, code lost:
-        if ((r15 & 8) != 0) goto L51;
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x00a5, code lost:
+        if ((r15 & 8) != 0) goto L50;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -429,12 +429,12 @@ public final class LifecycleEffectKt {
         } else if ((i & 24576) == 0) {
             i3 |= startRestartGroup.changedInstance(function1) ? 16384 : 8192;
         }
-        if ((i3 & 9363) != 9362 || !startRestartGroup.getSkipping()) {
+        if (startRestartGroup.shouldExecute((i3 & 9363) != 9362, i3 & 1)) {
             startRestartGroup.startDefaults();
             ComposerKt.sourceInformation(startRestartGroup, "248@12018L7");
             if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                 if ((i2 & 8) != 0) {
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume = startRestartGroup.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     lifecycleOwner = (LifecycleOwner) consume;
@@ -476,8 +476,8 @@ public final class LifecycleEffectKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x009d, code lost:
-        if ((r12 & 2) != 0) goto L61;
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x009b, code lost:
+        if ((r12 & 2) != 0) goto L60;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -501,12 +501,12 @@ public final class LifecycleEffectKt {
         if ((i4 & 14) == 0) {
             i4 |= 2;
         }
-        if ((i4 & 147) != 146 || !startRestartGroup.getSkipping()) {
+        if (startRestartGroup.shouldExecute((i4 & 147) != 146, i4 & 1)) {
             startRestartGroup.startDefaults();
             ComposerKt.sourceInformation(startRestartGroup, "");
             if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                 if ((i2 & 2) != 0) {
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume = startRestartGroup.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     lifecycleOwner = (LifecycleOwner) consume;
@@ -520,7 +520,7 @@ public final class LifecycleEffectKt {
                 spreadBuilder.addSpread(objArr);
                 spreadBuilder.add(lifecycleOwner);
                 Object[] array = spreadBuilder.toArray(new Object[spreadBuilder.size()]);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -568225417, "CC(remember)P(1):Composables.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -568225417, "CC(remember)N(keys,calculation):Composables.kt#9igjgp");
                 boolean z = false;
                 for (Object obj2 : array) {
                     z |= startRestartGroup.changed(obj2);
@@ -555,8 +555,8 @@ public final class LifecycleEffectKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x003f, code lost:
-        if ((r7 & 1) != 0) goto L22;
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0030, code lost:
+        if ((r8 & 1) != 0) goto L18;
      */
     @Deprecated(level = DeprecationLevel.ERROR, message = LifecycleStartEffectNoParamError)
     /*
@@ -566,7 +566,7 @@ public final class LifecycleEffectKt {
         Composer startRestartGroup = composer.startRestartGroup(-50807951);
         ComposerKt.sourceInformation(startRestartGroup, "C(LifecycleStartEffect)P(1):LifecycleEffect.kt#2vxrgp");
         int i3 = i & 1;
-        if (i3 == 0 && startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute(i3 != 0, i3)) {
             startRestartGroup.skipToGroupEnd();
             ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup != null) {
@@ -587,7 +587,7 @@ public final class LifecycleEffectKt {
         if (i3 != 0 && !startRestartGroup.getDefaultsInvalid()) {
             startRestartGroup.skipToGroupEnd();
         } else if ((i2 & 1) != 0) {
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             LifecycleOwner lifecycleOwner2 = (LifecycleOwner) consume;
@@ -615,9 +615,7 @@ public final class LifecycleEffectKt {
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i2 |= startRestartGroup.changedInstance(function1) ? 256 : 128;
         }
-        if ((i2 & 147) == 146 && startRestartGroup.getSkipping()) {
-            startRestartGroup.skipToGroupEnd();
-        } else {
+        if (startRestartGroup.shouldExecute((i2 & 147) != 146, i2 & 1)) {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(228371534, i2, -1, "androidx.lifecycle.compose.LifecycleStartEffectImpl (LifecycleEffect.kt:340)");
             }
@@ -640,6 +638,8 @@ public final class LifecycleEffectKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
+        } else {
+            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
@@ -692,8 +692,8 @@ public final class LifecycleEffectKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x0079, code lost:
-        if ((r12 & 2) != 0) goto L45;
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0077, code lost:
+        if ((r12 & 2) != 0) goto L44;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -717,12 +717,12 @@ public final class LifecycleEffectKt {
         } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i3 |= startRestartGroup.changedInstance(function1) ? 256 : 128;
         }
-        if ((i3 & 147) != 146 || !startRestartGroup.getSkipping()) {
+        if (startRestartGroup.shouldExecute((i3 & 147) != 146, i3 & 1)) {
             startRestartGroup.startDefaults();
             ComposerKt.sourceInformation(startRestartGroup, "445@21233L7");
             if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                 if ((i2 & 2) != 0) {
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume = startRestartGroup.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     lifecycleOwner = (LifecycleOwner) consume;
@@ -764,8 +764,8 @@ public final class LifecycleEffectKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x0090, code lost:
-        if ((r14 & 4) != 0) goto L48;
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x008e, code lost:
+        if ((r14 & 4) != 0) goto L47;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -794,12 +794,12 @@ public final class LifecycleEffectKt {
         } else if ((i & 3072) == 0) {
             i3 |= startRestartGroup.changedInstance(function1) ? 2048 : 1024;
         }
-        if ((i3 & 1171) != 1170 || !startRestartGroup.getSkipping()) {
+        if (startRestartGroup.shouldExecute((i3 & 1171) != 1170, i3 & 1)) {
             startRestartGroup.startDefaults();
             ComposerKt.sourceInformation(startRestartGroup, "504@24309L7");
             if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                 if ((i2 & 4) != 0) {
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume = startRestartGroup.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     lifecycleOwner = (LifecycleOwner) consume;
@@ -841,8 +841,8 @@ public final class LifecycleEffectKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x00a7, code lost:
-        if ((r15 & 8) != 0) goto L51;
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x00a5, code lost:
+        if ((r15 & 8) != 0) goto L50;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -876,12 +876,12 @@ public final class LifecycleEffectKt {
         } else if ((i & 24576) == 0) {
             i3 |= startRestartGroup.changedInstance(function1) ? 16384 : 8192;
         }
-        if ((i3 & 9363) != 9362 || !startRestartGroup.getSkipping()) {
+        if (startRestartGroup.shouldExecute((i3 & 9363) != 9362, i3 & 1)) {
             startRestartGroup.startDefaults();
             ComposerKt.sourceInformation(startRestartGroup, "568@27507L7");
             if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                 if ((i2 & 8) != 0) {
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume = startRestartGroup.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     lifecycleOwner = (LifecycleOwner) consume;
@@ -923,8 +923,8 @@ public final class LifecycleEffectKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x009d, code lost:
-        if ((r12 & 2) != 0) goto L61;
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x009b, code lost:
+        if ((r12 & 2) != 0) goto L60;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -948,12 +948,12 @@ public final class LifecycleEffectKt {
         if ((i4 & 14) == 0) {
             i4 |= 2;
         }
-        if ((i4 & 147) != 146 || !startRestartGroup.getSkipping()) {
+        if (startRestartGroup.shouldExecute((i4 & 147) != 146, i4 & 1)) {
             startRestartGroup.startDefaults();
             ComposerKt.sourceInformation(startRestartGroup, "");
             if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                 if ((i2 & 2) != 0) {
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume = startRestartGroup.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     lifecycleOwner = (LifecycleOwner) consume;
@@ -967,7 +967,7 @@ public final class LifecycleEffectKt {
                 spreadBuilder.addSpread(objArr);
                 spreadBuilder.add(lifecycleOwner);
                 Object[] array = spreadBuilder.toArray(new Object[spreadBuilder.size()]);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -568225417, "CC(remember)P(1):Composables.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -568225417, "CC(remember)N(keys,calculation):Composables.kt#9igjgp");
                 boolean z = false;
                 for (Object obj2 : array) {
                     z |= startRestartGroup.changed(obj2);
@@ -1002,8 +1002,8 @@ public final class LifecycleEffectKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x003f, code lost:
-        if ((r7 & 1) != 0) goto L22;
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0030, code lost:
+        if ((r8 & 1) != 0) goto L18;
      */
     @Deprecated(level = DeprecationLevel.ERROR, message = LifecycleResumeEffectNoParamError)
     /*
@@ -1013,7 +1013,7 @@ public final class LifecycleEffectKt {
         Composer startRestartGroup = composer.startRestartGroup(-747476210);
         ComposerKt.sourceInformation(startRestartGroup, "C(LifecycleResumeEffect)P(1):LifecycleEffect.kt#2vxrgp");
         int i3 = i & 1;
-        if (i3 == 0 && startRestartGroup.getSkipping()) {
+        if (!startRestartGroup.shouldExecute(i3 != 0, i3)) {
             startRestartGroup.skipToGroupEnd();
             ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup != null) {
@@ -1034,7 +1034,7 @@ public final class LifecycleEffectKt {
         if (i3 != 0 && !startRestartGroup.getDefaultsInvalid()) {
             startRestartGroup.skipToGroupEnd();
         } else if ((i2 & 1) != 0) {
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             LifecycleOwner lifecycleOwner2 = (LifecycleOwner) consume;
@@ -1062,9 +1062,7 @@ public final class LifecycleEffectKt {
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i2 |= startRestartGroup.changedInstance(function1) ? 256 : 128;
         }
-        if ((i2 & 147) == 146 && startRestartGroup.getSkipping()) {
-            startRestartGroup.skipToGroupEnd();
-        } else {
+        if (startRestartGroup.shouldExecute((i2 & 147) != 146, i2 & 1)) {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(912823238, i2, -1, "androidx.lifecycle.compose.LifecycleResumeEffectImpl (LifecycleEffect.kt:663)");
             }
@@ -1087,6 +1085,8 @@ public final class LifecycleEffectKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
+        } else {
+            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {

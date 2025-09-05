@@ -40,12 +40,12 @@ public final class ConnectionPoolImpl implements ConnectionPool {
     }
 
     /* renamed from: getTimeout-UwyO8pc$room_runtime_release  reason: not valid java name */
-    public final long m8144getTimeoutUwyO8pc$room_runtime_release() {
+    public final long m8146getTimeoutUwyO8pc$room_runtime_release() {
         return this.timeout;
     }
 
     /* renamed from: setTimeout-LRDsOJo$room_runtime_release  reason: not valid java name */
-    public final void m8145setTimeoutLRDsOJo$room_runtime_release(long j) {
+    public final void m8147setTimeoutLRDsOJo$room_runtime_release(long j) {
         this.timeout = j;
     }
 
@@ -135,7 +135,7 @@ public final class ConnectionPoolImpl implements ConnectionPool {
         Throwable th;
         Ref.ObjectRef objectRef2;
         CoroutineContext context;
-        Object m8146acquireWithTimeoutKLykuaI;
+        Object m8148acquireWithTimeoutKLykuaI;
         ConnectionPoolImpl connectionPoolImpl;
         Function2<? super Transactor, ? super Continuation<? super R>, ? extends Object> function22;
         Ref.ObjectRef objectRef3;
@@ -166,7 +166,7 @@ public final class ConnectionPoolImpl implements ConnectionPool {
                             connectionPoolImpl = (ConnectionPoolImpl) connectionPoolImpl$useConnection$1.L$0;
                             try {
                                 ResultKt.throwOnFailure(obj);
-                                m8146acquireWithTimeoutKLykuaI = obj;
+                                m8148acquireWithTimeoutKLykuaI = obj;
                                 pool = pool3;
                                 context = coroutineContext;
                                 objectRef = objectRef4;
@@ -266,8 +266,8 @@ public final class ConnectionPoolImpl implements ConnectionPool {
                         connectionPoolImpl$useConnection$1.L$5 = objectRef;
                         connectionPoolImpl$useConnection$1.Z$0 = z;
                         connectionPoolImpl$useConnection$1.label = 3;
-                        m8146acquireWithTimeoutKLykuaI = pool.m8146acquireWithTimeoutKLykuaI(j, function0, connectionPoolImpl$useConnection$1);
-                        if (m8146acquireWithTimeoutKLykuaI != coroutine_suspended) {
+                        m8148acquireWithTimeoutKLykuaI = pool.m8148acquireWithTimeoutKLykuaI(j, function0, connectionPoolImpl$useConnection$1);
+                        if (m8148acquireWithTimeoutKLykuaI != coroutine_suspended) {
                             connectionPoolImpl = this;
                             function22 = function2;
                             objectRef3 = objectRef;
@@ -279,7 +279,7 @@ public final class ConnectionPoolImpl implements ConnectionPool {
                     }
                 }
                 return coroutine_suspended;
-                ConnectionWithLock markAcquired = ((ConnectionWithLock) m8146acquireWithTimeoutKLykuaI).markAcquired(context);
+                ConnectionWithLock markAcquired = ((ConnectionWithLock) m8148acquireWithTimeoutKLykuaI).markAcquired(context);
                 if (connectionPoolImpl.readers != connectionPoolImpl.writers || !z) {
                     z2 = false;
                 }
@@ -314,7 +314,7 @@ public final class ConnectionPoolImpl implements ConnectionPool {
         boolean z22 = true;
         if (i == 0) {
         }
-        ConnectionWithLock markAcquired2 = ((ConnectionWithLock) m8146acquireWithTimeoutKLykuaI).markAcquired(context);
+        ConnectionWithLock markAcquired2 = ((ConnectionWithLock) m8148acquireWithTimeoutKLykuaI).markAcquired(context);
         if (connectionPoolImpl.readers != connectionPoolImpl.writers) {
         }
         z22 = false;

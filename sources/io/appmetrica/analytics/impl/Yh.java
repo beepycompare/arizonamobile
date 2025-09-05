@@ -1,24 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import java.util.List;
+import android.content.Context;
 /* loaded from: classes4.dex */
-public final class Yh implements Runnable {
+public final class Yh implements E4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f744a;
-    public final /* synthetic */ List b;
-    public final /* synthetic */ C0735yi c;
+    public final InterfaceC0676w5 f754a;
 
-    public Yh(C0735yi c0735yi, String str, List list) {
-        this.c = c0735yi;
-        this.f744a = str;
-        this.b = list;
+    public Yh(InterfaceC0676w5 interfaceC0676w5) {
+        this.f754a = interfaceC0676w5;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        C0735yi c0735yi = this.c;
-        C0735yi.a(c0735yi.f1162a, c0735yi.d, c0735yi.e).reportEvent(this.f744a, CollectionUtils.getMapFromList(this.b));
+    @Override // io.appmetrica.analytics.impl.E4
+    /* renamed from: b */
+    public final Wg a(Context context, B5 b5, C0475o4 c0475o4, N4 n4) {
+        Xg xg;
+        C0476o5 c0476o5 = new C0476o5(c0475o4.b, c0475o4.f1011a);
+        Yg yg = new Yg(this.f754a);
+        synchronized (b5) {
+            xg = (Xg) b5.a(c0476o5, n4, yg, b5.f359a);
+        }
+        return new Wg(context, xg);
     }
 }

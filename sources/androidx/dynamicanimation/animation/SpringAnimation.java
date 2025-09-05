@@ -1,6 +1,5 @@
 package androidx.dynamicanimation.animation;
 
-import android.os.Looper;
 import android.util.AndroidRuntimeException;
 import androidx.dynamicanimation.animation.DynamicAnimation;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
@@ -20,6 +19,14 @@ public final class SpringAnimation extends DynamicAnimation<SpringAnimation> {
         this.mSpring = null;
         this.mPendingPosition = Float.MAX_VALUE;
         this.mEndRequested = false;
+    }
+
+    public SpringAnimation(FloatValueHolder floatValueHolder, float f) {
+        super(floatValueHolder);
+        this.mSpring = null;
+        this.mPendingPosition = Float.MAX_VALUE;
+        this.mEndRequested = false;
+        this.mSpring = new SpringForce(f);
     }
 
     public <K> SpringAnimation(K k, FloatPropertyCompat<K> floatPropertyCompat) {
@@ -65,12 +72,27 @@ public final class SpringAnimation extends DynamicAnimation<SpringAnimation> {
         start();
     }
 
+    @Override // androidx.dynamicanimation.animation.DynamicAnimation
+    public void cancel() {
+        super.cancel();
+        float f = this.mPendingPosition;
+        if (f != Float.MAX_VALUE) {
+            SpringForce springForce = this.mSpring;
+            if (springForce == null) {
+                this.mSpring = new SpringForce(this.mPendingPosition);
+            } else {
+                springForce.setFinalPosition(f);
+            }
+            this.mPendingPosition = Float.MAX_VALUE;
+        }
+    }
+
     public void skipToEnd() {
         if (!canSkipToEnd()) {
             throw new UnsupportedOperationException("Spring animations can only come to an end when there is damping");
         }
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            throw new AndroidRuntimeException("Animations may only be started on the main thread");
+        if (!getAnimationHandler().isCurrentThread()) {
+            throw new AndroidRuntimeException("Animations may only be started on the same thread as the animation handler");
         }
         if (this.mRunning) {
             this.mEndRequested = true;
@@ -109,7 +131,6 @@ public final class SpringAnimation extends DynamicAnimation<SpringAnimation> {
             return true;
         }
         if (this.mPendingPosition != Float.MAX_VALUE) {
-            this.mSpring.getFinalPosition();
             long j2 = j / 2;
             DynamicAnimation.MassState updateValues = this.mSpring.updateValues(this.mValue, this.mVelocity, j2);
             this.mSpring.setFinalPosition(this.mPendingPosition);

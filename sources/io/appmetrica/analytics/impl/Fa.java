@@ -1,33 +1,43 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
-import kotlin.collections.CollectionsKt;
-import kotlin.text.Charsets;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* loaded from: classes4.dex */
-public final class Fa implements InterfaceC0377ka {
+public final class Fa implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0221e9 f432a = new C0221e9();
+    public final He f439a;
 
-    public final C0751z9[] a(byte[] bArr) {
-        int i = 0;
-        if (bArr != null) {
-            Map<String, byte[]> model = this.f432a.toModel(bArr);
-            C0751z9[] c0751z9Arr = new C0751z9[model.size()];
-            for (Object obj : model.entrySet()) {
-                int i2 = i + 1;
-                if (i < 0) {
-                    CollectionsKt.throwIndexOverflow();
-                }
-                Map.Entry entry = (Map.Entry) obj;
-                C0751z9 c0751z9 = new C0751z9();
-                c0751z9.f1176a = ((String) entry.getKey()).getBytes(Charsets.UTF_8);
-                c0751z9.b = (byte[]) entry.getValue();
-                c0751z9Arr[i] = c0751z9;
-                i = i2;
-            }
-            return c0751z9Arr;
-        }
-        return new C0751z9[0];
+    public Fa() {
+        this(new C0157bm());
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Bm fromModel(J4 j4) {
+        Bm bm = new Bm();
+        bm.b = j4.b;
+        bm.f371a = j4.f505a;
+        bm.c = j4.c;
+        bm.d = j4.d;
+        bm.e = j4.e;
+        bm.f = this.f439a.a(j4.f);
+        return bm;
+    }
+
+    public Fa(C0157bm c0157bm) {
+        this.f439a = c0157bm;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final J4 toModel(Bm bm) {
+        H4 h4 = new H4();
+        h4.d = bm.d;
+        h4.c = bm.c;
+        h4.b = bm.b;
+        h4.f467a = bm.f371a;
+        h4.e = bm.e;
+        h4.f = this.f439a.a(bm.f);
+        return new J4(h4);
     }
 }

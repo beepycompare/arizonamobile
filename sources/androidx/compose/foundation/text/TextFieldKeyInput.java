@@ -15,7 +15,6 @@ import androidx.compose.ui.text.input.FinishComposingTextCommand;
 import androidx.compose.ui.text.input.ImeAction;
 import androidx.compose.ui.text.input.OffsetMapping;
 import androidx.compose.ui.text.input.TextFieldValue;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.NotificationCompat;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.util.Collection;
@@ -632,7 +631,7 @@ public final class TextFieldKeyInput {
                 break;
             case 48:
                 KeyEventHelpers_androidKt.showCharacterPalette();
-            case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+            case 49:
                 Unit unit11 = Unit.INSTANCE;
                 break;
             default:

@@ -20,7 +20,6 @@ import androidx.compose.ui.input.key.KeyEvent_androidKt;
 import androidx.compose.ui.layout.LayoutCoordinates;
 import androidx.compose.ui.platform.SoftwareKeyboardController;
 import androidx.compose.ui.text.TextRange;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.NotificationCompat;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
@@ -513,7 +512,7 @@ public abstract class TextFieldKeyEventHandler {
                     Unit unit6 = Unit.INSTANCE;
                     z3 = true;
                     break;
-                case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+                case 49:
                     if (ComposeFoundationFlags.isTextFieldDpadNavigationEnabled) {
                         softwareKeyboardController.show();
                         z3 = true;

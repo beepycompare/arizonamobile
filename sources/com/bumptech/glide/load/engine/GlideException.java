@@ -85,9 +85,9 @@ public final class GlideException extends Exception {
             for (Throwable th2 : ((GlideException) th).getCauses()) {
                 addRootCauses(th2, list);
             }
-            return;
+        } else if (th != null) {
+            list.add(th);
         }
-        list.add(th);
     }
 
     @Override // java.lang.Throwable

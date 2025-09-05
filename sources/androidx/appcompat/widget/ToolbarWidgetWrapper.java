@@ -24,6 +24,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewPropertyAnimatorCompat;
 import androidx.core.view.ViewPropertyAnimatorListenerAdapter;
+import com.google.android.material.navigation.NavigationBarView;
 /* loaded from: classes.dex */
 public class ToolbarWidgetWrapper implements DecorToolbar {
     private static final int AFFECTS_LOGO_MASK = 3;
@@ -458,7 +459,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
     private void ensureSpinner() {
         if (this.mSpinner == null) {
             this.mSpinner = new AppCompatSpinner(getContext(), null, R.attr.actionDropDownStyle);
-            this.mSpinner.setLayoutParams(new Toolbar.LayoutParams(-2, -2, 8388627));
+            this.mSpinner.setLayoutParams(new Toolbar.LayoutParams(-2, -2, NavigationBarView.ITEM_GRAVITY_START_CENTER));
         }
     }
 

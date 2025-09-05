@@ -43,6 +43,9 @@ public class MaterialBottomContainerBackHelper extends MaterialBackAnimationHelp
         }
         float lerp = 1.0f - AnimationUtils.lerp(0.0f, this.maxScaleXDistance / width, interpolateProgress);
         float lerp2 = 1.0f - AnimationUtils.lerp(0.0f, this.maxScaleYDistance / height, interpolateProgress);
+        if (Float.isNaN(lerp) || Float.isNaN(lerp2)) {
+            return;
+        }
         this.view.setScaleX(lerp);
         this.view.setPivotY(height);
         this.view.setScaleY(lerp2);

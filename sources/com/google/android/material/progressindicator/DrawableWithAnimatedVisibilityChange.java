@@ -7,7 +7,9 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
 import android.util.Property;
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat;
 import com.google.android.material.animation.AnimationUtils;
@@ -17,6 +19,7 @@ import java.util.List;
 /* loaded from: classes4.dex */
 public abstract class DrawableWithAnimatedVisibilityChange extends Drawable implements Animatable2Compat {
     private static final boolean DEFAULT_DRAWABLE_RESTART = false;
+    private static final float DEFAULT_MOCK_PHASE_FRACTION = -1.0f;
     private static final int GROW_DURATION = 500;
     private static final Property<DrawableWithAnimatedVisibilityChange, Float> GROW_FRACTION = new Property<DrawableWithAnimatedVisibilityChange, Float>(Float.class, "growFraction") { // from class: com.google.android.material.progressindicator.DrawableWithAnimatedVisibilityChange.3
         @Override // android.util.Property
@@ -41,7 +44,9 @@ public abstract class DrawableWithAnimatedVisibilityChange extends Drawable impl
     private boolean mockShowAnimationRunning;
     private ValueAnimator showAnimator;
     private int totalAlpha;
+    private float mockPhaseFraction = DEFAULT_MOCK_PHASE_FRACTION;
     final Paint paint = new Paint();
+    Rect clipBounds = new Rect();
     AnimatorDurationScaleProvider animatorDurationScaleProvider = new AnimatorDurationScaleProvider();
 
     @Override // android.graphics.drawable.Drawable
@@ -302,5 +307,36 @@ public abstract class DrawableWithAnimatedVisibilityChange extends Drawable impl
     void setMockHideAnimationRunning(boolean z, float f) {
         this.mockHideAnimationRunning = z;
         this.mockGrowFraction = f;
+    }
+
+    void setMockPhaseFraction(float f) {
+        this.mockPhaseFraction = f;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public float getPhaseFraction() {
+        int i;
+        float f = this.mockPhaseFraction;
+        if (f > 0.0f) {
+            return f;
+        }
+        if (this.baseSpec.hasWavyEffect(isDeterminateDrawable()) && this.baseSpec.waveSpeed != 0) {
+            float systemAnimatorDurationScale = this.animatorDurationScaleProvider.getSystemAnimatorDurationScale(this.context.getContentResolver());
+            if (systemAnimatorDurationScale > 0.0f) {
+                if (isDeterminateDrawable()) {
+                    i = this.baseSpec.wavelengthDeterminate;
+                } else {
+                    i = this.baseSpec.wavelengthIndeterminate;
+                }
+                int i2 = (int) (((i * 1000.0f) / this.baseSpec.waveSpeed) * systemAnimatorDurationScale);
+                float uptimeMillis = ((float) (SystemClock.uptimeMillis() % i2)) / i2;
+                return uptimeMillis < 0.0f ? (uptimeMillis % 1.0f) + 1.0f : uptimeMillis;
+            }
+        }
+        return 0.0f;
+    }
+
+    private boolean isDeterminateDrawable() {
+        return this instanceof DeterminateDrawable;
     }
 }

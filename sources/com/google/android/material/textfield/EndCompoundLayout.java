@@ -21,9 +21,6 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.TintTypedArray;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.MarginLayoutParamsCompat;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.accessibility.AccessibilityManagerCompat;
 import androidx.core.widget.TextViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.internal.CheckableImageButton;
@@ -58,7 +55,7 @@ public class EndCompoundLayout extends LinearLayout {
     private CharSequence suffixText;
     private final TextView suffixTextView;
     final TextInputLayout textInputLayout;
-    private AccessibilityManagerCompat.TouchExplorationStateChangeListener touchExplorationStateChangeListener;
+    private AccessibilityManager.TouchExplorationStateChangeListener touchExplorationStateChangeListener;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public EndCompoundLayout(TextInputLayout textInputLayout, TintTypedArray tintTypedArray) {
@@ -141,7 +138,7 @@ public class EndCompoundLayout extends LinearLayout {
         checkableImageButton.setId(i);
         IconHelper.setCompatRippleBackgroundIfNeeded(checkableImageButton);
         if (MaterialResources.isFontScaleAtLeast1_3(getContext())) {
-            MarginLayoutParamsCompat.setMarginStart((ViewGroup.MarginLayoutParams) checkableImageButton.getLayoutParams(), 0);
+            ((ViewGroup.MarginLayoutParams) checkableImageButton.getLayoutParams()).setMarginStart(0);
         }
         return checkableImageButton;
     }
@@ -157,9 +154,10 @@ public class EndCompoundLayout extends LinearLayout {
             setErrorIconDrawable(tintTypedArray.getDrawable(R.styleable.TextInputLayout_errorIconDrawable));
         }
         this.errorIconView.setContentDescription(getResources().getText(R.string.error_icon_content_description));
-        ViewCompat.setImportantForAccessibility(this.errorIconView, 2);
+        this.errorIconView.setImportantForAccessibility(2);
         this.errorIconView.setClickable(false);
         this.errorIconView.setPressable(false);
+        this.errorIconView.setCheckable(false);
         this.errorIconView.setFocusable(false);
     }
 
@@ -198,7 +196,7 @@ public class EndCompoundLayout extends LinearLayout {
         this.suffixTextView.setVisibility(8);
         this.suffixTextView.setId(R.id.textinput_suffix_text);
         this.suffixTextView.setLayoutParams(new LinearLayout.LayoutParams(-2, -2, 80.0f));
-        ViewCompat.setAccessibilityLiveRegion(this.suffixTextView, 1);
+        this.suffixTextView.setAccessibilityLiveRegion(1);
         setSuffixTextAppearance(tintTypedArray.getResourceId(R.styleable.TextInputLayout_suffixTextAppearance, 0));
         if (tintTypedArray.hasValue(R.styleable.TextInputLayout_suffixTextColor)) {
             setSuffixTextColor(tintTypedArray.getColorStateList(R.styleable.TextInputLayout_suffixTextColor));
@@ -326,20 +324,20 @@ public class EndCompoundLayout extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void addTouchExplorationStateChangeListenerIfNeeded() {
-        if (this.touchExplorationStateChangeListener == null || this.accessibilityManager == null || !ViewCompat.isAttachedToWindow(this)) {
+        if (this.touchExplorationStateChangeListener == null || this.accessibilityManager == null || !isAttachedToWindow()) {
             return;
         }
-        AccessibilityManagerCompat.addTouchExplorationStateChangeListener(this.accessibilityManager, this.touchExplorationStateChangeListener);
+        this.accessibilityManager.addTouchExplorationStateChangeListener(this.touchExplorationStateChangeListener);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void removeTouchExplorationStateChangeListenerIfNeeded() {
         AccessibilityManager accessibilityManager;
-        AccessibilityManagerCompat.TouchExplorationStateChangeListener touchExplorationStateChangeListener = this.touchExplorationStateChangeListener;
+        AccessibilityManager.TouchExplorationStateChangeListener touchExplorationStateChangeListener = this.touchExplorationStateChangeListener;
         if (touchExplorationStateChangeListener == null || (accessibilityManager = this.accessibilityManager) == null) {
             return;
         }
-        AccessibilityManagerCompat.removeTouchExplorationStateChangeListener(accessibilityManager, touchExplorationStateChangeListener);
+        accessibilityManager.removeTouchExplorationStateChangeListener(touchExplorationStateChangeListener);
     }
 
     private int getIconResId(EndIconDelegate endIconDelegate) {
@@ -660,12 +658,12 @@ public class EndCompoundLayout extends LinearLayout {
         if (this.textInputLayout.editText == null) {
             return;
         }
-        ViewCompat.setPaddingRelative(this.suffixTextView, getContext().getResources().getDimensionPixelSize(R.dimen.material_input_text_to_prefix_suffix_padding), this.textInputLayout.editText.getPaddingTop(), (isEndIconVisible() || isErrorIconVisible()) ? 0 : ViewCompat.getPaddingEnd(this.textInputLayout.editText), this.textInputLayout.editText.getPaddingBottom());
+        this.suffixTextView.setPaddingRelative(getContext().getResources().getDimensionPixelSize(R.dimen.material_input_text_to_prefix_suffix_padding), this.textInputLayout.editText.getPaddingTop(), (isEndIconVisible() || isErrorIconVisible()) ? 0 : this.textInputLayout.editText.getPaddingEnd(), this.textInputLayout.editText.getPaddingBottom());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int getSuffixTextEndOffset() {
-        return ViewCompat.getPaddingEnd(this) + ViewCompat.getPaddingEnd(this.suffixTextView) + ((isEndIconVisible() || isErrorIconVisible()) ? this.endIconView.getMeasuredWidth() + MarginLayoutParamsCompat.getMarginStart((ViewGroup.MarginLayoutParams) this.endIconView.getLayoutParams()) : 0);
+        return getPaddingEnd() + this.suffixTextView.getPaddingEnd() + ((isEndIconVisible() || isErrorIconVisible()) ? this.endIconView.getMeasuredWidth() + ((ViewGroup.MarginLayoutParams) this.endIconView.getLayoutParams()).getMarginStart() : 0);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -714,7 +712,7 @@ public class EndCompoundLayout extends LinearLayout {
     private void tintEndIconOnError(boolean z) {
         if (z && getEndIconDrawable() != null) {
             Drawable mutate = DrawableCompat.wrap(getEndIconDrawable()).mutate();
-            DrawableCompat.setTint(mutate, this.textInputLayout.getErrorCurrentTextColors());
+            mutate.setTint(this.textInputLayout.getErrorCurrentTextColors());
             this.endIconView.setImageDrawable(mutate);
             return;
         }

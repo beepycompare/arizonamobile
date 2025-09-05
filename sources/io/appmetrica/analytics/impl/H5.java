@@ -1,10 +1,28 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
+import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
+import java.util.Arrays;
 /* loaded from: classes4.dex */
-public final class H5 {
+public final class H5 implements PermissionStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    public Object f470a;
-    public final ArrayList b = new ArrayList();
+    public final PermissionStrategy[] f468a;
+
+    public H5(PermissionStrategy... permissionStrategyArr) {
+        this.f468a = permissionStrategyArr;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy
+    public final boolean forbidUsePermission(String str) {
+        for (PermissionStrategy permissionStrategy : this.f468a) {
+            if (permissionStrategy.forbidUsePermission(str)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final String toString() {
+        return "CompositePermissionStrategy(strategies=" + Arrays.toString(this.f468a) + ')';
+    }
 }

@@ -83,7 +83,7 @@ public final class _CacheControlCommonKt {
         Intrinsics.checkNotNullParameter(companion, "<this>");
         CacheControl.Builder onlyIfCached = new CacheControl.Builder().onlyIfCached();
         Duration.Companion companion2 = Duration.Companion;
-        return onlyIfCached.m10843maxStaleLRDsOJo(DurationKt.toDuration(Integer.MAX_VALUE, DurationUnit.SECONDS)).build();
+        return onlyIfCached.m10862maxStaleLRDsOJo(DurationKt.toDuration(Integer.MAX_VALUE, DurationUnit.SECONDS)).build();
     }
 
     public static final CacheControl commonBuild(CacheControl.Builder builder) {

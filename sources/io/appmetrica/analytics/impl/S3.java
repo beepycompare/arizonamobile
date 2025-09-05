@@ -1,122 +1,114 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.Pair;
+import kotlin.TuplesKt;
+import kotlin.collections.MapsKt;
+import kotlin.ranges.RangesKt;
 /* loaded from: classes4.dex */
-public final class S3 extends MessageNano {
-    public static volatile S3[] b;
-
-    /* renamed from: a  reason: collision with root package name */
-    public R3[] f645a;
-
-    public S3() {
-        a();
-    }
-
-    public static S3[] b() {
-        if (b == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (b == null) {
-                    b = new S3[0];
-                }
-            }
-        }
-        return b;
-    }
-
-    public final S3 a() {
-        this.f645a = R3.b();
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        R3[] r3Arr = this.f645a;
-        if (r3Arr != null && r3Arr.length > 0) {
-            int i = 0;
-            while (true) {
-                R3[] r3Arr2 = this.f645a;
-                if (i >= r3Arr2.length) {
-                    break;
-                }
-                R3 r3 = r3Arr2[i];
-                if (r3 != null) {
-                    computeSerializedSize = CodedOutputByteBufferNano.computeMessageSize(1, r3) + computeSerializedSize;
-                }
-                i++;
-            }
-        }
-        return computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        R3[] r3Arr = this.f645a;
-        if (r3Arr != null && r3Arr.length > 0) {
-            int i = 0;
-            while (true) {
-                R3[] r3Arr2 = this.f645a;
-                if (i >= r3Arr2.length) {
-                    break;
-                }
-                R3 r3 = r3Arr2[i];
-                if (r3 != null) {
-                    codedOutputByteBufferNano.writeMessage(1, r3);
-                }
-                i++;
-            }
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+public final class S3 implements ProtobufConverter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final S3 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag != 10) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
+    public final W3 fromModel(R3 r3) {
+        W3 w3 = new W3();
+        w3.f717a = a(r3.f645a);
+        int size = r3.b.size();
+        T3[] t3Arr = new T3[size];
+        for (int i = 0; i < size; i++) {
+            t3Arr[i] = a((Q3) r3.b.get(i));
+        }
+        w3.b = t3Arr;
+        return w3;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final R3 toModel(W3 w3) {
+        T3 t3 = w3.f717a;
+        if (t3 == null) {
+            t3 = new T3();
+        }
+        Q3 a2 = a(t3);
+        T3[] t3Arr = w3.b;
+        ArrayList arrayList = new ArrayList(t3Arr.length);
+        for (T3 t32 : t3Arr) {
+            arrayList.add(a(t32));
+        }
+        return new R3(a2, arrayList);
+    }
+
+    public static T3 a(Q3 q3) {
+        V3 v3;
+        T3 t3 = new T3();
+        Map map = q3.f630a;
+        int i = 0;
+        if (map != null) {
+            v3 = new V3();
+            int size = map.size();
+            U3[] u3Arr = new U3[size];
+            for (int i2 = 0; i2 < size; i2++) {
+                u3Arr[i2] = new U3();
+            }
+            v3.f704a = u3Arr;
+            int i3 = 0;
+            for (Map.Entry entry : map.entrySet()) {
+                U3 u3 = v3.f704a[i3];
+                u3.f688a = (String) entry.getKey();
+                u3.b = (String) entry.getValue();
+                i3++;
+            }
+        } else {
+            v3 = null;
+        }
+        t3.f674a = v3;
+        int ordinal = q3.b.ordinal();
+        if (ordinal != 0) {
+            if (ordinal != 1) {
+                i = 2;
+                if (ordinal != 2) {
+                    i = 3;
+                    if (ordinal != 3) {
+                        throw new NoWhenBranchMatchedException();
+                    }
                 }
             } else {
-                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
-                R3[] r3Arr = this.f645a;
-                int length = r3Arr == null ? 0 : r3Arr.length;
-                int i = repeatedFieldArrayLength + length;
-                R3[] r3Arr2 = new R3[i];
-                if (length != 0) {
-                    System.arraycopy(r3Arr, 0, r3Arr2, 0, length);
-                }
-                while (length < i - 1) {
-                    R3 r3 = new R3();
-                    r3Arr2[length] = r3;
-                    codedInputByteBufferNano.readMessage(r3);
-                    codedInputByteBufferNano.readTag();
-                    length++;
-                }
-                R3 r32 = new R3();
-                r3Arr2[length] = r32;
-                codedInputByteBufferNano.readMessage(r32);
-                this.f645a = r3Arr2;
+                i = 1;
             }
         }
-        return this;
+        t3.b = i;
+        return t3;
     }
 
-    public static S3 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new S3().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static S3 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (S3) MessageNano.mergeFrom(new S3(), bArr);
+    public static Q3 a(T3 t3) {
+        LinkedHashMap linkedHashMap;
+        EnumC0530q8 enumC0530q8;
+        V3 v3 = t3.f674a;
+        if (v3 != null) {
+            U3[] u3Arr = v3.f704a;
+            linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(u3Arr.length), 16));
+            for (U3 u3 : u3Arr) {
+                Pair pair = TuplesKt.to(u3.f688a, u3.b);
+                linkedHashMap.put(pair.getFirst(), pair.getSecond());
+            }
+        } else {
+            linkedHashMap = null;
+        }
+        int i = t3.b;
+        if (i == 0) {
+            enumC0530q8 = EnumC0530q8.b;
+        } else if (i == 1) {
+            enumC0530q8 = EnumC0530q8.c;
+        } else if (i == 2) {
+            enumC0530q8 = EnumC0530q8.d;
+        } else if (i != 3) {
+            enumC0530q8 = EnumC0530q8.b;
+        } else {
+            enumC0530q8 = EnumC0530q8.e;
+        }
+        return new Q3(linkedHashMap, enumC0530q8);
     }
 }

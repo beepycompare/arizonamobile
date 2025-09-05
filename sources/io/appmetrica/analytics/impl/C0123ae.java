@@ -1,87 +1,68 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrash;
-import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashHandler;
-import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashSource;
+import io.appmetrica.analytics.coreapi.internal.backport.Function;
+import io.appmetrica.analytics.coreutils.internal.io.Base64Utils;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import java.io.Closeable;
 import java.io.File;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.Reflection;
+import java.io.FileInputStream;
+import kotlin.io.ByteStreamsKt;
 /* renamed from: io.appmetrica.analytics.impl.ae  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0123ae implements NativeCrashHandler {
+public final class C0123ae implements Function {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Function1 f777a;
-    public final IHandlerExecutor b = Ka.j().w().e();
-    public final C0201de c;
+    public final C0175ce f788a;
+    public final Zd b;
 
-    public C0123ae(Context context, C0384kh c0384kh, Function1<? super String, Unit> function1, InterfaceC0330ie interfaceC0330ie, EnumC0728yb enumC0728yb, String str) {
-        this.f777a = function1;
-        this.c = new C0201de(context, c0384kh, interfaceC0330ie, enumC0728yb);
+    public C0123ae(C0175ce c0175ce, Zd zd) {
+        this.f788a = c0175ce;
+        this.b = zd;
     }
 
-    public static final void a(C0123ae c0123ae, NativeCrash nativeCrash, File file) {
-        c0123ae.f777a.invoke(nativeCrash.getUuid());
-    }
-
-    @Override // io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashHandler
-    public final void newCrash(final NativeCrash nativeCrash) {
-        B0 b0;
-        C0677wa c0677wa;
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0020 A[Catch: all -> 0x0041, TryCatch #0 {all -> 0x0041, blocks: (B:3:0x0001, B:5:0x0007, B:8:0x0015, B:13:0x0020, B:21:0x002c, B:10:0x001a), top: B:25:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.Function
+    /* renamed from: a */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String apply(File file) {
+        byte[] bArr;
+        FileInputStream fileInputStream;
         try {
-            NativeCrashSource source = nativeCrash.getSource();
-            String handlerVersion = nativeCrash.getHandlerVersion();
-            String uuid = nativeCrash.getUuid();
-            String dumpFile = nativeCrash.getDumpFile();
-            long creationTime = nativeCrash.getCreationTime();
-            C0 a2 = D0.a(nativeCrash.getMetadata());
-            Intrinsics.checkNotNull(a2);
-            b0 = new B0(source, handlerVersion, uuid, dumpFile, creationTime, a2);
-        } catch (Throwable unused) {
-            b0 = null;
-        }
-        if (b0 != null) {
-            LoggerStorage.getOrCreatePublicLogger(b0.f.f370a).info("Detected native crash with uuid = " + b0.c, new Object[0]);
-            IHandlerExecutor iHandlerExecutor = this.b;
-            C0201de c0201de = this.c;
-            Consumer consumer = new Consumer() { // from class: io.appmetrica.analytics.impl.ae$$ExternalSyntheticLambda0
-                @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-                public final void consume(Object obj) {
-                    C0123ae.a(C0123ae.this, nativeCrash, (File) obj);
+            String absolutePath = file.getAbsolutePath();
+            if (absolutePath != null) {
+                try {
+                    fileInputStream = new FileInputStream(new File(absolutePath));
+                } catch (Throwable unused) {
+                    fileInputStream = null;
                 }
-            };
-            c0201de.getClass();
-            Wd wd = new Wd(new Yd(b0.f354a, b0.b), c0201de.f);
-            Td td = new Td(c0201de.b, b0.f, new C0175ce(b0, c0201de.d));
-            C0702xa c0702xa = c0201de.e;
-            String str = b0.d;
-            c0702xa.getClass();
-            File file = new File(str);
-            Context context = c0201de.f830a;
-            if (C0677wa.c == null) {
-                synchronized (Reflection.getOrCreateKotlinClass(C0677wa.class)) {
-                    if (C0677wa.c == null) {
-                        C0677wa.c = new C0677wa(context);
+                try {
+                    bArr = ByteStreamsKt.readBytes(fileInputStream);
+                    ro.a((Closeable) fileInputStream);
+                } catch (Throwable unused2) {
+                    ro.a((Closeable) fileInputStream);
+                    bArr = null;
+                    if (bArr != null) {
                     }
-                    Unit unit = Unit.INSTANCE;
                 }
+                if (bArr != null) {
+                    if (bArr.length == 0) {
+                        bArr = null;
+                    }
+                    if (bArr != null) {
+                        return Base64Utils.compressBase64(MessageNano.toByteArray(this.b.fromModel(new C0252fe(bArr, this.f788a))));
+                    }
+                    return null;
+                }
+                return null;
             }
-            C0677wa c0677wa2 = C0677wa.c;
-            if (c0677wa2 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("INSTANCE");
-                c0677wa = null;
-            } else {
-                c0677wa = c0677wa2;
+            bArr = null;
+            if (bArr != null) {
             }
-            iHandlerExecutor.execute(new RunnableC0409lg(file, wd, consumer, td, c0677wa, c0201de.c.a(b0)));
-            return;
+        } catch (Throwable unused3) {
+            return null;
         }
-        this.f777a.invoke(nativeCrash.getUuid());
     }
 }

@@ -92,13 +92,13 @@ public final class DrawablePainter extends Painter implements RememberObserver {
     }
 
     /* renamed from: getDrawableIntrinsicSize-NH-jbRc  reason: not valid java name */
-    private final long m8641getDrawableIntrinsicSizeNHjbRc() {
+    private final long m8643getDrawableIntrinsicSizeNHjbRc() {
         return ((Size) this.drawableIntrinsicSize$delegate.getValue()).m4367unboximpl();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setDrawableIntrinsicSize-uvyYCjk  reason: not valid java name */
-    public final void m8642setDrawableIntrinsicSizeuvyYCjk(long j) {
+    public final void m8644setDrawableIntrinsicSizeuvyYCjk(long j) {
         this.drawableIntrinsicSize$delegate.setValue(Size.m4350boximpl(j));
     }
 
@@ -119,7 +119,7 @@ public final class DrawablePainter extends Painter implements RememberObserver {
                 DrawablePainter.this.setDrawInvalidateTick(drawInvalidateTick + 1);
                 DrawablePainter drawablePainter2 = DrawablePainter.this;
                 intrinsicSize = DrawablePainterKt.getIntrinsicSize(drawablePainter2.getDrawable());
-                drawablePainter2.m8642setDrawableIntrinsicSizeuvyYCjk(intrinsicSize);
+                drawablePainter2.m8644setDrawableIntrinsicSizeuvyYCjk(intrinsicSize);
             }
 
             @Override // android.graphics.drawable.Drawable.Callback
@@ -196,7 +196,7 @@ public final class DrawablePainter extends Painter implements RememberObserver {
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
     public long mo5236getIntrinsicSizeNHjbRc() {
-        return m8641getDrawableIntrinsicSizeNHjbRc();
+        return m8643getDrawableIntrinsicSizeNHjbRc();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

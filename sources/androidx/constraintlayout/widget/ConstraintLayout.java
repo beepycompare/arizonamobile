@@ -1964,7 +1964,7 @@ public class ConstraintLayout extends ViewGroup {
                             case 48:
                                 this.verticalChainStyle = obtainStyledAttributes.getInt(index, 0);
                                 continue;
-                            case Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+                            case 49:
                                 this.editorAbsoluteX = obtainStyledAttributes.getDimensionPixelOffset(index, this.editorAbsoluteX);
                                 continue;
                             case 50:

@@ -2,7 +2,7 @@ package com.google.android.material.carousel;
 
 import androidx.core.math.MathUtils;
 /* loaded from: classes4.dex */
-final class Arrangement {
+public final class Arrangement {
     private static final float MEDIUM_ITEM_FLEX_PERCENTAGE = 0.1f;
     final float cost;
     final int largeCount;
@@ -21,7 +21,6 @@ final class Arrangement {
         return (f - ((i + f3) * f2)) / (i3 + f3);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public Arrangement(int i, float f, float f2, float f3, int i2, float f4, int i3, float f5, int i4, float f6) {
         this.priority = i;
         this.smallSize = MathUtils.clamp(f, f2, f3);
@@ -91,7 +90,6 @@ final class Arrangement {
         return Float.MAX_VALUE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static Arrangement findLowestCostArrangement(float f, float f2, float f3, float f4, int[] iArr, float f5, int[] iArr2, float f6, int[] iArr3) {
         Arrangement arrangement = null;
         int i = 1;

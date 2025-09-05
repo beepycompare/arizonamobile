@@ -2,16 +2,13 @@ package ru.mrlargha.commonui.elements.employmentNote.presentation.viewHolder;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
 import kotlin.Metadata;
 import kotlin.Unit;
-import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
@@ -19,11 +16,11 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.ItemTasksBinding;
 import ru.mrlargha.commonui.elements.employmentNote.domain.FractionTasks;
 import ru.mrlargha.commonui.elements.employmentNote.domain.TaskInfo;
+import ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen;
 import ru.mrlargha.commonui.elements.employmentNote.presentation.adapter.TaskRewardAdapter;
-import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: TaskViewHolder.kt */
 @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0000\u0018\u00002\u00020\u0001BE\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0018\u0010\u0004\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005\u0012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\b0\n\u0012\u0006\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ&\u0010\u0010\u001a\u00020\b2\u0006\u0010\u0011\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00072\u0006\u0010\u0013\u001a\u00020\u00072\u0006\u0010\u0014\u001a\u00020\u0015R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0004\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\b0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lru/mrlargha/commonui/elements/employmentNote/presentation/viewHolder/TaskViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemTasksBinding;", "onItemClicked", "Lkotlin/Function2;", "Lru/mrlargha/commonui/elements/employmentNote/domain/TaskInfo;", "", "", "onShowClueClicked", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/employmentNote/domain/FractionTasks;", "context", "Landroid/content/Context;", "<init>", "(Lru/mrlargha/commonui/databinding/ItemTasksBinding;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Landroid/content/Context;)V", "bind", "item", "position", "selectedItemPosition", "isVisible", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public final class TaskViewHolder extends RecyclerView.ViewHolder {
     private final ItemTasksBinding binding;
     private final Context context;
@@ -45,26 +42,24 @@ public final class TaskViewHolder extends RecyclerView.ViewHolder {
     }
 
     public final void bind(final TaskInfo item, final int i, int i2, boolean z) {
+        Object obj;
         Intrinsics.checkNotNullParameter(item, "item");
         ItemTasksBinding itemTasksBinding = this.binding;
-        ArrayList arrayList = new ArrayList();
-        int i3 = 0;
-        for (Object obj : UtilsKt.getFractionTasks()) {
-            int i4 = i3 + 1;
-            if (i3 < 0) {
-                CollectionsKt.throwIndexOverflow();
-            }
-            FractionTasks fractionTasks = (FractionTasks) obj;
-            if (item.getId() == i3) {
-                arrayList.add(obj);
-            }
-            i3 = i4;
-        }
-        final ArrayList arrayList2 = arrayList;
         TaskRewardAdapter taskRewardAdapter = new TaskRewardAdapter();
         itemTasksBinding.rvTaskRewards.setAdapter(taskRewardAdapter);
-        if (!arrayList2.isEmpty()) {
-            Log.d("frontend", "bind: " + arrayList2);
+        Iterator<T> it = EmploymentTaskScreen.Companion.getFractionTasks().iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                obj = null;
+                break;
+            }
+            obj = it.next();
+            if (((FractionTasks) obj).getId() == item.getId()) {
+                break;
+            }
+        }
+        final FractionTasks fractionTasks = (FractionTasks) obj;
+        if (fractionTasks != null) {
             itemTasksBinding.bg.setBackground(null);
             if (item.getCompleted() == 1) {
                 itemTasksBinding.parentLayout.setBackgroundTintList(ColorStateList.valueOf(this.context.getColor(R.color.green_type5)));
@@ -77,7 +72,7 @@ public final class TaskViewHolder extends RecyclerView.ViewHolder {
                 Button btnShowClue2 = itemTasksBinding.btnShowClue;
                 Intrinsics.checkNotNullExpressionValue(btnShowClue2, "btnShowClue");
                 btnShowClue2.setVisibility(0);
-                switch (((FractionTasks) arrayList2.get(0)).getType()) {
+                switch (fractionTasks.getType()) {
                     case 0:
                     case 1:
                     case 2:
@@ -100,12 +95,12 @@ public final class TaskViewHolder extends RecyclerView.ViewHolder {
             itemTasksBinding.btnShowClue.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.viewHolder.TaskViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TaskViewHolder.bind$lambda$3$lambda$1(TaskViewHolder.this, arrayList2, view);
+                    TaskViewHolder.bind$lambda$4$lambda$2$lambda$1(TaskViewHolder.this, fractionTasks, view);
                 }
             });
-            itemTasksBinding.tvTaskInfo.setText(((FractionTasks) arrayList2.get(0)).getTitle());
-            itemTasksBinding.tvTaskDescription.setText(((FractionTasks) arrayList2.get(0)).getDescription());
-            taskRewardAdapter.submitList(((FractionTasks) arrayList2.get(0)).getRedwards());
+            itemTasksBinding.tvTaskInfo.setText(fractionTasks.getTitle());
+            itemTasksBinding.tvTaskDescription.setText(fractionTasks.getDescription());
+            taskRewardAdapter.submitList(fractionTasks.getRedwards());
         }
         itemTasksBinding.tvTasksDone.setText(String.valueOf(item.getProgress()));
         itemTasksBinding.tvTasksRemain.setText("/" + item.getMax());
@@ -114,7 +109,7 @@ public final class TaskViewHolder extends RecyclerView.ViewHolder {
         itemTasksBinding.linearItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.viewHolder.TaskViewHolder$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TaskViewHolder.bind$lambda$3$lambda$2(TaskViewHolder.this, item, i, view);
+                TaskViewHolder.bind$lambda$4$lambda$3(TaskViewHolder.this, item, i, view);
             }
         });
         if (i == i2) {
@@ -138,13 +133,12 @@ public final class TaskViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Multi-variable type inference failed */
-    public static final void bind$lambda$3$lambda$1(TaskViewHolder taskViewHolder, List list, View view) {
-        taskViewHolder.onShowClueClicked.invoke(list.get(0));
+    public static final void bind$lambda$4$lambda$2$lambda$1(TaskViewHolder taskViewHolder, FractionTasks fractionTasks, View view) {
+        taskViewHolder.onShowClueClicked.invoke(fractionTasks);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$3$lambda$2(TaskViewHolder taskViewHolder, TaskInfo taskInfo, int i, View view) {
+    public static final void bind$lambda$4$lambda$3(TaskViewHolder taskViewHolder, TaskInfo taskInfo, int i, View view) {
         taskViewHolder.onItemClicked.invoke(taskInfo, Integer.valueOf(i));
     }
 }

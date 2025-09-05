@@ -1,19 +1,29 @@
 package io.appmetrica.analytics.impl;
-
-import android.util.SparseArray;
-import java.util.HashMap;
 /* renamed from: io.appmetrica.analytics.impl.fo  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0262fo {
-    public static final int[] c = {0, 1, 2, 3};
+public final class C0262fo extends Y4 {
+    public final C0194d7 b;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final SparseArray f860a = new SparseArray();
-    public int b = 0;
+    public C0262fo(V4 v4, C0194d7 c0194d7) {
+        super(v4);
+        this.b = c0194d7;
+    }
 
-    public C0262fo(int[] iArr) {
-        for (int i : iArr) {
-            this.f860a.put(i, new HashMap());
+    @Override // io.appmetrica.analytics.impl.Y4
+    public final boolean a(C0477o6 c0477o6, S4 s4) {
+        M4 m4 = s4.b.d.f710a;
+        this.b.a(m4.i);
+        InterfaceC0379kc l = Na.F.l();
+        if (Boolean.TRUE.equals(m4.b)) {
+            l.a(true);
+        } else {
+            if (Boolean.FALSE.equals(m4.b)) {
+                l.a(false);
+            }
         }
+        l.a(m4.c);
+        Boolean bool = m4.n;
+        Na.F.b().b(bool != null ? bool.booleanValue() : true);
+        return false;
     }
 }

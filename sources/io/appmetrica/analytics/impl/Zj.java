@@ -1,18 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* loaded from: classes4.dex */
-public final class Zj implements InterfaceC0454nb {
+public final class Zj implements InterfaceC0533qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Map f762a;
+    public final /* synthetic */ String f773a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ PluginErrorDetails c;
 
-    public Zj(Map map) {
-        this.f762a = map;
+    public Zj(String str, String str2, PluginErrorDetails pluginErrorDetails) {
+        this.f773a = str;
+        this.b = str2;
+        this.c = pluginErrorDetails;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0454nb
-    public final void a(InterfaceC0479ob interfaceC0479ob) {
-        interfaceC0479ob.reportAnr(this.f762a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
+    public final void a(InterfaceC0557rb interfaceC0557rb) {
+        interfaceC0557rb.getPluginExtension().reportError(this.f773a, this.b, this.c);
     }
 }

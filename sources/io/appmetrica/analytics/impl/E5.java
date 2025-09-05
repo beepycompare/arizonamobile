@@ -1,28 +1,32 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
-import java.util.Arrays;
+import java.util.List;
+import kotlin.Pair;
 /* loaded from: classes4.dex */
-public final class E5 implements PermissionStrategy {
+public final class E5 implements Ho {
 
     /* renamed from: a  reason: collision with root package name */
-    public final PermissionStrategy[] f408a;
+    public final List f418a;
 
-    public E5(PermissionStrategy... permissionStrategyArr) {
-        this.f408a = permissionStrategyArr;
+    public E5(List<? extends Pair<String, ? extends Ho>> list) {
+        this.f418a = list;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy
-    public final boolean forbidUsePermission(String str) {
-        for (PermissionStrategy permissionStrategy : this.f408a) {
-            if (permissionStrategy.forbidUsePermission(str)) {
-                return true;
+    @Override // io.appmetrica.analytics.impl.Ho
+    public final String a() {
+        for (Pair pair : this.f418a) {
+            String a2 = ((Ho) pair.getSecond()).a();
+            if (a2 != null && a2.length() > 0) {
+                return a2;
             }
         }
-        return false;
+        return null;
     }
 
-    public final String toString() {
-        return "CompositePermissionStrategy(strategies=" + Arrays.toString(this.f408a) + ')';
+    @Override // io.appmetrica.analytics.impl.Ho
+    public final void a(String str) {
+        for (Pair pair : this.f418a) {
+            ((Ho) pair.getSecond()).a(str);
+        }
     }
 }

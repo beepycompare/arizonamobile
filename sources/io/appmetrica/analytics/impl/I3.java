@@ -1,72 +1,53 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.content.pm.Signature;
-import android.content.pm.SigningInfo;
-import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import java.security.MessageDigest;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
 /* loaded from: classes4.dex */
-public final class I3 {
+public final class I3 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f489a;
-    public final C0433mf b;
-    public final String c;
-    public final SafePackageManager d;
+    public final C0125ag f483a;
+    public final V7 b;
+    public final Rf c;
+    public final Cg d;
 
-    public I3(Context context, C0433mf c0433mf, String str, SafePackageManager safePackageManager) {
-        this.f489a = context;
-        this.b = c0433mf;
-        this.c = str;
-        this.d = safePackageManager;
+    public I3() {
+        this(new C0125ag(), new V7(), new Rf(), new Cg());
     }
 
-    public final List a() {
-        Signature[] signatureArr;
-        String str;
-        List<String> f = this.b.f();
-        boolean isEmpty = f.isEmpty();
-        ArrayList arrayList = f;
-        if (isEmpty) {
-            ArrayList arrayList2 = new ArrayList();
-            try {
-                if (AndroidUtils.isApiAchieved(28)) {
-                    SigningInfo signingInfo = this.d.getPackageInfo(this.f489a, this.c, androidx.media3.common.C.BUFFER_FLAG_FIRST_SAMPLE).signingInfo;
-                    if (signingInfo.hasMultipleSigners()) {
-                        signatureArr = signingInfo.getApkContentsSigners();
-                    } else {
-                        signatureArr = signingInfo.getSigningCertificateHistory();
-                    }
-                } else {
-                    signatureArr = this.d.getPackageInfo(this.f489a, this.c, 64).signatures;
-                }
-                if (signatureArr != null) {
-                    for (Signature signature : signatureArr) {
-                        try {
-                            str = StringUtils.formatSha1(MessageDigest.getInstance("SHA1").digest(signature.toByteArray()));
-                        } catch (Throwable unused) {
-                            str = null;
-                        }
-                        if (str != null) {
-                            arrayList2.add(str);
-                        }
-                    }
-                }
-            } catch (Throwable unused2) {
-            }
-            Collections.sort(arrayList2);
-            boolean isEmpty2 = arrayList2.isEmpty();
-            arrayList = arrayList2;
-            if (!isEmpty2) {
-                this.b.a(arrayList2).b();
-                arrayList = arrayList2;
-            }
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Zi fromModel(J3 j3) {
+        Zi zi;
+        D8 d8 = new D8();
+        Zi fromModel = this.f483a.fromModel(j3.f504a);
+        d8.f401a = (M8) fromModel.f772a;
+        d8.c = this.b.fromModel(j3.b);
+        Zi fromModel2 = this.c.fromModel(j3.c);
+        d8.d = (L8) fromModel2.f772a;
+        Tg tg = j3.d;
+        if (tg != null) {
+            zi = this.d.fromModel(tg);
+            d8.b = (O8) zi.f772a;
+        } else {
+            zi = null;
         }
-        return arrayList;
+        return new Zi(d8, new C0749z3(C0749z3.b(fromModel, fromModel2, zi)));
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        Zi zi = (Zi) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public I3(C0125ag c0125ag, V7 v7, Rf rf, Cg cg) {
+        this.f483a = c0125ag;
+        this.b = v7;
+        this.c = rf;
+        this.d = cg;
+    }
+
+    public final J3 a(Zi zi) {
+        throw new UnsupportedOperationException();
     }
 }

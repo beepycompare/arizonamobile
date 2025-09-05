@@ -60,11 +60,11 @@ final class AsyncImagePreviewHandler$Companion$Default$1 implements AsyncImagePr
                 imageResult = (ImageResult) obj;
                 if (!(imageResult instanceof SuccessResult)) {
                     SuccessResult successResult = (SuccessResult) imageResult;
-                    return new AsyncImagePainter.State.Success(ImagePainter_androidKt.m8329asPainter55t9rM$default(successResult.getImage(), imageRequest.getContext(), 0, 2, null), successResult);
+                    return new AsyncImagePainter.State.Success(ImagePainter_androidKt.m8331asPainter55t9rM$default(successResult.getImage(), imageRequest.getContext(), 0, 2, null), successResult);
                 } else if (imageResult instanceof ErrorResult) {
                     ErrorResult errorResult = (ErrorResult) imageResult;
                     Image image = errorResult.getImage();
-                    return new AsyncImagePainter.State.Error(image != null ? ImagePainter_androidKt.m8329asPainter55t9rM$default(image, imageRequest.getContext(), 0, 2, null) : null, errorResult);
+                    return new AsyncImagePainter.State.Error(image != null ? ImagePainter_androidKt.m8331asPainter55t9rM$default(image, imageRequest.getContext(), 0, 2, null) : null, errorResult);
                 } else {
                     throw new NoWhenBranchMatchedException();
                 }

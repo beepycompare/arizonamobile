@@ -446,8 +446,8 @@ public final class zzav extends zzos {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00e8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -463,51 +463,51 @@ public final class zzav extends zzos {
             zzpjVar = 0;
             cursor2 = null;
             cursor2 = null;
+        } catch (SQLiteException e) {
+            e = e;
+            cursor2 = null;
+        } catch (Throwable th) {
+            th = th;
+            cursor = null;
+        }
+        try {
+            cursor3 = zze().query("upload_queue", new String[]{"rowId", "app_id", "measurement_batch", "upload_uri", "upload_headers", "upload_type", "retry_count", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "associated_row_id", "last_upload_timestamp"}, "rowId=?", new String[]{String.valueOf(j)}, null, null, null, "1");
             try {
-                cursor3 = zze().query("upload_queue", new String[]{"rowId", "app_id", "measurement_batch", "upload_uri", "upload_headers", "upload_type", "retry_count", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "associated_row_id", "last_upload_timestamp"}, "rowId=?", new String[]{String.valueOf(j)}, null, null, null, "1");
+            } catch (SQLiteException e2) {
+                e = e2;
                 try {
-                } catch (SQLiteException e) {
-                    e = e;
-                    try {
-                        this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. rowId", Long.valueOf(j), e);
-                        zzpjVar = cursor2;
-                        if (cursor3 != null) {
-                        }
-                        return zzpjVar;
-                    } catch (Throwable th) {
-                        th = th;
-                        if (cursor3 != null) {
-                            cursor3.close();
-                        }
-                        throw th;
+                    this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. rowId", Long.valueOf(j), e);
+                    zzpjVar = cursor2;
+                    if (cursor3 != null) {
                     }
+                    return zzpjVar;
                 } catch (Throwable th2) {
                     th = th2;
                     if (cursor3 != null) {
+                        cursor3.close();
                     }
                     throw th;
                 }
-            } catch (SQLiteException e2) {
-                e = e2;
-                cursor3 = cursor2;
-                this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. rowId", Long.valueOf(j), e);
-                zzpjVar = cursor2;
-                if (cursor3 != null) {
-                }
-                return zzpjVar;
             } catch (Throwable th3) {
                 th = th3;
-                cursor3 = cursor;
                 if (cursor3 != null) {
                 }
                 throw th;
             }
         } catch (SQLiteException e3) {
             e = e3;
-            cursor2 = null;
+            cursor3 = cursor2;
+            this.zzu.zzaV().zzb().zzc("Error to querying MeasurementBatch from upload_queue. rowId", Long.valueOf(j), e);
+            zzpjVar = cursor2;
+            if (cursor3 != null) {
+            }
+            return zzpjVar;
         } catch (Throwable th4) {
             th = th4;
-            cursor = null;
+            cursor3 = cursor;
+            if (cursor3 != null) {
+            }
+            throw th;
         }
         if (!cursor3.moveToFirst()) {
             if (cursor3 != null) {
@@ -522,8 +522,8 @@ public final class zzav extends zzos {
         return zzaF;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0154  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x014d  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0156  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -667,8 +667,8 @@ public final class zzav extends zzos {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0034  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x003e  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x003f  */
     /* JADX WARN: Type inference failed for: r1v0 */
     /* JADX WARN: Type inference failed for: r1v1, types: [android.database.Cursor] */
     /* JADX WARN: Type inference failed for: r1v3 */
@@ -861,16 +861,16 @@ public final class zzav extends zzos {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Can't wrap try/catch for region: R(10:1|(3:2|3|4)|(2:6|(3:8|9|10)(1:14))|15|16|(1:18)(2:21|22)|19|9|10|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x00a8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x00a9, code lost:
         r15 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x00a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x00aa, code lost:
         r2 = r9;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x00ae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x00af, code lost:
         r13.zzu.zzaV().zzb().zzd("Error inserting column. appId", com.google.android.gms.measurement.internal.zzgu.zzl(r14), "first_open_count", r15);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x00c1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x00c2, code lost:
         r7 = r2;
      */
     /*
@@ -968,9 +968,9 @@ public final class zzav extends zzos {
         }
     }
 
-    /* JADX WARN: Not initialized variable reg: 1, insn: 0x0085: MOVE  (r0 I:??[OBJECT, ARRAY]) = (r1 I:??[OBJECT, ARRAY]), block:B:27:0x0085 */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0080  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0088  */
+    /* JADX WARN: Not initialized variable reg: 1, insn: 0x0086: MOVE  (r0 I:??[OBJECT, ARRAY]) = (r1 I:??[OBJECT, ARRAY]), block:B:27:0x0086 */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0089  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1042,22 +1042,22 @@ public final class zzav extends zzos {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0087, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0088, code lost:
         if (r3 != null) goto L21;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0089, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x008a, code lost:
         r3.close();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x00db, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x00dc, code lost:
         if (r3 == null) goto L22;
      */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x012c A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0149  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x01d6  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x01f7  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x01fd  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x02bc A[Catch: SQLiteException -> 0x02d2, TRY_LEAVE, TryCatch #4 {SQLiteException -> 0x02d2, blocks: (B:93:0x02a0, B:95:0x02bc), top: B:108:0x02a0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x012d A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x01d7  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x01f8  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x01fe  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x02be A[Catch: SQLiteException -> 0x02d4, TRY_LEAVE, TryCatch #2 {SQLiteException -> 0x02d4, blocks: (B:93:0x02a1, B:95:0x02be), top: B:106:0x02a1 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1266,13 +1266,13 @@ public final class zzav extends zzos {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x003e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x003f, code lost:
         if (r6 != null) goto L10;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0058, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0059, code lost:
         if (r6 == null) goto L11;
      */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x006b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1409,23 +1409,23 @@ public final class zzav extends zzos {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x0345, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x0346, code lost:
         if (zze().insertWithOnConflict("property_filters", null, r13, 5) != (-1)) goto L128;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:102:0x0347, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x0348, code lost:
         r25.zzu.zzaV().zzb().zzb("Failed to insert property filter (got -1). appId", com.google.android.gms.measurement.internal.zzgu.zzl(r26));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:104:0x035b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:104:0x035c, code lost:
         r0 = r22;
         r3 = r24;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:105:0x0361, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x0362, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:106:0x0362, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x0363, code lost:
         r25.zzu.zzaV().zzb().zzc("Error storing property filter. appId", com.google.android.gms.measurement.internal.zzgu.zzl(r26), r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:107:0x0375, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x0376, code lost:
         zzaw();
         zzg();
         com.google.android.gms.common.internal.Preconditions.checkNotEmpty(r26);
@@ -1433,16 +1433,16 @@ public final class zzav extends zzos {
         r0.delete("property_filters", "app_id=? and audience_id=?", new java.lang.String[]{r26, java.lang.String.valueOf(r11)});
         r0.delete("event_filters", "app_id=? and audience_id=?", new java.lang.String[]{r26, java.lang.String.valueOf(r11)});
      */
-    /* JADX WARN: Code restructure failed: missing block: B:108:0x039f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x03a0, code lost:
         r7 = r23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:134:0x049e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:134:0x04a0, code lost:
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:138:0x04a3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:138:0x04a5, code lost:
         r23.endTransaction();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:139:0x04a6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:139:0x04a8, code lost:
         throw r0;
      */
     /* JADX WARN: Code restructure failed: missing block: B:47:0x0174, code lost:
@@ -1464,155 +1464,155 @@ public final class zzav extends zzos {
         r22 = r0;
         r0 = "app_id";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x01c1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x01c2, code lost:
         if (r12.hasNext() == false) goto L112;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x01c3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x01c4, code lost:
         r13 = (com.google.android.gms.internal.measurement.zzff) r12.next();
         zzaw();
         zzg();
         com.google.android.gms.common.internal.Preconditions.checkNotEmpty(r26);
         com.google.android.gms.common.internal.Preconditions.checkNotNull(r13);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x01dd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x01de, code lost:
         if (r13.zzc().isEmpty() == false) goto L77;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x01df, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x01e0, code lost:
         r0 = r25.zzu.zzaV().zze();
         r10 = com.google.android.gms.measurement.internal.zzgu.zzl(r26);
         r12 = java.lang.Integer.valueOf(r11);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x01f7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x01f8, code lost:
         if (r13.zza() == false) goto L111;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x01f9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x01fa, code lost:
         r13 = java.lang.Integer.valueOf(r13.zzb());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x0202, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x0203, code lost:
         r13 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x0203, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x0204, code lost:
         r0.zzd("Event filter had no event name. Audience definition ignored. appId, audienceId, filterId", r10, r12, java.lang.String.valueOf(r13));
         r23 = r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x020e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x020f, code lost:
         r3 = r13.zzcc();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x0212, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x0213, code lost:
         r23 = r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x0214, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x0215, code lost:
         r7 = new android.content.ContentValues();
         r7.put("app_id", r26);
         r7.put("audience_id", java.lang.Integer.valueOf(r11));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x0227, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x0228, code lost:
         if (r13.zza() == false) goto L101;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x0229, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x022a, code lost:
         r0 = java.lang.Integer.valueOf(r13.zzb());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x0232, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x0233, code lost:
         r0 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x0233, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x0234, code lost:
         r7.put("filter_id", r0);
         r7.put("event_name", r13.zzc());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x0243, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x0244, code lost:
         if (r13.zzk() == false) goto L100;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x0245, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x0246, code lost:
         r0 = java.lang.Boolean.valueOf(r13.zzm());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x024e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x024f, code lost:
         r0 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x024f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x0250, code lost:
         r7.put("session_scoped", r0);
         r7.put("data", r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x0261, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x0262, code lost:
         if (zze().insertWithOnConflict("event_filters", null, r7, 5) != (-1)) goto L93;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:77:0x0263, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:77:0x0264, code lost:
         r25.zzu.zzaV().zzb().zzb("Failed to insert event filter (got -1). appId", com.google.android.gms.measurement.internal.zzgu.zzl(r26));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x0276, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x0277, code lost:
         r0 = r22;
         r7 = r23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x027e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x027f, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x027f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x0280, code lost:
         r25.zzu.zzaV().zzb().zzc("Error storing event filter. appId", com.google.android.gms.measurement.internal.zzgu.zzl(r26), r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:81:0x0294, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x0295, code lost:
         r23 = r7;
         r3 = r22.zzc().iterator();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:83:0x02a2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x02a3, code lost:
         if (r3.hasNext() == false) goto L142;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x02a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x02a5, code lost:
         r7 = (com.google.android.gms.internal.measurement.zzfn) r3.next();
         zzaw();
         zzg();
         com.google.android.gms.common.internal.Preconditions.checkNotEmpty(r26);
         com.google.android.gms.common.internal.Preconditions.checkNotNull(r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x02be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x02bf, code lost:
         if (r7.zzc().isEmpty() == false) goto L118;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:86:0x02c0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x02c1, code lost:
         r0 = r25.zzu.zzaV().zze();
         r9 = com.google.android.gms.measurement.internal.zzgu.zzl(r26);
         r10 = java.lang.Integer.valueOf(r11);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:87:0x02d8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:87:0x02d9, code lost:
         if (r7.zza() == false) goto L141;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:88:0x02da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:88:0x02db, code lost:
         r21 = java.lang.Integer.valueOf(r7.zzb());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:89:0x02e5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x02e6, code lost:
         r21 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x02e7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x02e8, code lost:
         r0.zzd("Property filter had no property name. Audience definition ignored. appId, audienceId, filterId", r9, r10, java.lang.String.valueOf(r21));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:91:0x02f0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:91:0x02f1, code lost:
         r12 = r7.zzcc();
         r13 = new android.content.ContentValues();
         r13.put(r0, r26);
         r22 = r0;
         r13.put("audience_id", java.lang.Integer.valueOf(r11));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x0309, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x030a, code lost:
         if (r7.zza() == false) goto L135;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x030b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x030c, code lost:
         r0 = java.lang.Integer.valueOf(r7.zzb());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:94:0x0314, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x0315, code lost:
         r0 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x0315, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x0316, code lost:
         r13.put("filter_id", r0);
         r24 = r3;
         r13.put("property_name", r7.zzc());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:96:0x0327, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x0328, code lost:
         if (r7.zzg() == false) goto L134;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x0329, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x032a, code lost:
         r0 = java.lang.Boolean.valueOf(r7.zzh());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:98:0x0332, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:98:0x0333, code lost:
         r0 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x0333, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x0334, code lost:
         r13.put("session_scoped", r0);
         r13.put("data", r12);
      */
@@ -1789,66 +1789,66 @@ public final class zzav extends zzos {
         return this.zzn;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(16:1|2|3|4|5|(6:7|(1:9)(1:113)|(1:11)|12|13|(2:15|(2:17|18)(1:20))(3:21|22|23))(6:114|(1:116)(1:125)|(1:118)|119|120|(2:122|(0)(0))(2:123|124))|25|26|27|28|29|31|32|(1:34)(15:35|36|37|38|(1:40)|41|42|(10:44|(2:46|(1:48)(1:80))(1:83)|49|(1:(1:79))(1:53)|54|55|56|57|(2:59|(8:60|61|62|63|64|(2:72|73)|66|(2:69|70)(1:68)))(1:77)|71)(2:84|(7:86|82|55|56|57|(0)(0)|71)(1:87))|81|82|55|56|57|(0)(0)|71)|(0)(0)|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x0266, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(16:1|2|3|4|5|(6:7|(1:9)(1:113)|(1:11)|12|13|(2:15|(2:17|18)(1:20))(3:21|22|23))(6:114|(1:116)(1:125)|(1:118)|119|120|(2:122|(0)(0))(2:123|124))|25|26|27|28|29|30|31|(1:33)(15:34|35|36|37|(1:39)|40|41|(10:43|(2:45|(1:47)(1:79))(1:82)|48|(1:(1:78))(1:52)|53|54|55|56|(2:58|(8:59|60|61|62|63|(2:71|72)|65|(2:68|69)(1:67)))(1:76)|70)(2:83|(7:85|81|54|55|56|(0)(0)|70)(1:86))|80|81|54|55|56|(0)(0)|70)|(0)(0)|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x026d, code lost:
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:102:0x0267, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x026e, code lost:
         r23 = r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x0269, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x0270, code lost:
         r6 = r23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:104:0x026c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:104:0x0273, code lost:
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:105:0x026d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x0274, code lost:
         r23 = r3;
         r22 = r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:106:0x0271, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x0278, code lost:
         r4 = r22;
         r6 = r23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:108:0x0277, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x027e, code lost:
         r6 = r3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:110:0x027a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:110:0x0281, code lost:
         r4 = r22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:119:0x029b, code lost:
-        if (r6 != null) goto L101;
+    /* JADX WARN: Code restructure failed: missing block: B:119:0x02a2, code lost:
+        if (r6 != null) goto L100;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:120:0x029d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:120:0x02a4, code lost:
         r6.close();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:121:0x02a0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:121:0x02a7, code lost:
         throw r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x025c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x0263, code lost:
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:94:0x025d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x0264, code lost:
         r3 = r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x025f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x0266, code lost:
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:96:0x0260, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x0267, code lost:
         r3 = r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x0262, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x0269, code lost:
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x0264, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x026b, code lost:
         r0 = e;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x0297  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x029d  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x029e  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x02a4  */
     /* JADX WARN: Removed duplicated region for block: B:137:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x01df  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0232 A[Catch: all -> 0x0244, SQLiteException -> 0x027e, TRY_LEAVE, TryCatch #2 {all -> 0x0244, blocks: (B:3:0x0016, B:8:0x002b, B:12:0x0046, B:70:0x01d9, B:73:0x01e1, B:74:0x01e9, B:76:0x01f5, B:81:0x0227, B:80:0x0212, B:85:0x0232, B:114:0x0281, B:9:0x003a, B:23:0x007d, B:27:0x0090, B:24:0x0088), top: B:123:0x0016 }] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01e6  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0239 A[Catch: all -> 0x024b, SQLiteException -> 0x0285, TRY_LEAVE, TryCatch #6 {all -> 0x024b, blocks: (B:3:0x0018, B:8:0x002d, B:12:0x0049, B:70:0x01e0, B:73:0x01e8, B:74:0x01f0, B:76:0x01fc, B:81:0x022e, B:80:0x0219, B:85:0x0239, B:114:0x0288, B:9:0x003c, B:23:0x0080, B:27:0x0093, B:24:0x008b), top: B:127:0x0018 }] */
     /* JADX WARN: Type inference failed for: r3v0, types: [java.lang.String] */
     /* JADX WARN: Type inference failed for: r3v10 */
     /* JADX WARN: Type inference failed for: r3v11 */
@@ -2385,13 +2385,13 @@ public final class zzav extends zzos {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x00bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x00bd, code lost:
         r0 = r13.zzaV().zzb();
         r13.zzc();
         r0.zzb("Read more than the max allowed user properties, ignoring excess", 1000);
      */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0143  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0144  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x014b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2713,85 +2713,88 @@ public final class zzav extends zzos {
         return zzt(sb.toString(), (String[]) arrayList.toArray(new String[arrayList.size()]));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x008d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x008e, code lost:
         r3 = r11.zzaV().zzb();
         r11.zzc();
         r3.zzb("Read more than the max allowed conditional properties, ignoring extra", 1000);
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x016a  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0171  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x016b  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0172  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final List zzt(String str, String[] strArr) {
         Cursor cursor;
         Cursor cursor2;
+        int i;
+        int i2;
+        zzic zzicVar;
         zzg();
         zzaw();
         List arrayList = new ArrayList();
         try {
             SQLiteDatabase zze2 = zze();
-            int i = 0;
-            int i2 = 1;
+            i = 0;
+            i2 = 1;
             String[] strArr2 = {"app_id", "origin", "name", "value", AppMeasurementSdk.ConditionalUserProperty.ACTIVE, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT, "timed_out_event", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "triggered_event", AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP, AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE, "expired_event"};
-            zzic zzicVar = this.zzu;
+            zzicVar = this.zzu;
             zzicVar.zzc();
             cursor2 = zze2.query("conditional_properties", strArr2, str, strArr, null, null, "rowid", "1001");
-            try {
-                if (cursor2.moveToFirst()) {
-                    while (true) {
-                        int size = arrayList.size();
-                        zzicVar.zzc();
-                        if (size >= 1000) {
-                            break;
-                        }
-                        String string = cursor2.getString(i);
-                        String string2 = cursor2.getString(i2);
-                        String string3 = cursor2.getString(2);
-                        Object zzL = zzL(cursor2, 3);
-                        boolean z = cursor2.getInt(4) != 0 ? i2 : i;
-                        String string4 = cursor2.getString(5);
-                        long j = cursor2.getLong(6);
-                        zzpg zzpgVar = this.zzg;
-                        arrayList.add(new zzah(string, string2, new zzpl(string3, cursor2.getLong(10), zzL, string2), cursor2.getLong(8), z, string4, (zzbg) zzpgVar.zzp().zzl(cursor2.getBlob(7), zzbg.CREATOR), j, (zzbg) zzpgVar.zzp().zzl(cursor2.getBlob(9), zzbg.CREATOR), cursor2.getLong(11), (zzbg) zzpgVar.zzp().zzl(cursor2.getBlob(12), zzbg.CREATOR)));
-                        if (!cursor2.moveToNext()) {
-                            break;
-                        }
-                        i = 0;
-                        i2 = 1;
+        } catch (SQLiteException e) {
+            e = e;
+            cursor = null;
+        } catch (Throwable th) {
+            th = th;
+            cursor = null;
+        }
+        try {
+            if (cursor2.moveToFirst()) {
+                while (true) {
+                    int size = arrayList.size();
+                    zzicVar.zzc();
+                    if (size >= 1000) {
+                        break;
                     }
-                }
-            } catch (SQLiteException e) {
-                e = e;
-                cursor = cursor2;
-                try {
-                    this.zzu.zzaV().zzb().zzb("Error querying conditional user property value", e);
-                    arrayList = Collections.emptyList();
-                    cursor2 = cursor;
-                    if (cursor2 != null) {
+                    String string = cursor2.getString(i);
+                    String string2 = cursor2.getString(i2);
+                    String string3 = cursor2.getString(2);
+                    Object zzL = zzL(cursor2, 3);
+                    boolean z = cursor2.getInt(4) != 0 ? i2 : i;
+                    String string4 = cursor2.getString(5);
+                    long j = cursor2.getLong(6);
+                    zzpg zzpgVar = this.zzg;
+                    arrayList.add(new zzah(string, string2, new zzpl(string3, cursor2.getLong(10), zzL, string2), cursor2.getLong(8), z, string4, (zzbg) zzpgVar.zzp().zzl(cursor2.getBlob(7), zzbg.CREATOR), j, (zzbg) zzpgVar.zzp().zzl(cursor2.getBlob(9), zzbg.CREATOR), cursor2.getLong(11), (zzbg) zzpgVar.zzp().zzl(cursor2.getBlob(12), zzbg.CREATOR)));
+                    if (!cursor2.moveToNext()) {
+                        break;
                     }
-                    return arrayList;
-                } catch (Throwable th) {
-                    th = th;
-                    if (cursor != null) {
-                        cursor.close();
-                    }
-                    throw th;
+                    i = 0;
+                    i2 = 1;
                 }
-            } catch (Throwable th2) {
-                th = th2;
-                cursor = cursor2;
-                if (cursor != null) {
-                }
-                throw th;
             }
         } catch (SQLiteException e2) {
             e = e2;
-            cursor = null;
+            cursor = cursor2;
+            try {
+                this.zzu.zzaV().zzb().zzb("Error querying conditional user property value", e);
+                arrayList = Collections.emptyList();
+                cursor2 = cursor;
+                if (cursor2 != null) {
+                }
+                return arrayList;
+            } catch (Throwable th2) {
+                th = th2;
+                if (cursor != null) {
+                    cursor.close();
+                }
+                throw th;
+            }
         } catch (Throwable th3) {
             th = th3;
-            cursor = null;
+            cursor = cursor2;
+            if (cursor != null) {
+            }
+            throw th;
         }
         if (cursor2 != null) {
             cursor2.close();
@@ -2800,27 +2803,27 @@ public final class zzav extends zzos {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Not initialized variable reg: 4, insn: 0x03c6: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY]), block:B:101:0x03c6 */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x03c9  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0207  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x020b A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0254  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0257 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0266 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0282 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0293 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x02d4 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x02ee A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0302  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0305 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x032d  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0330 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0345 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0358 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0374 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0384 A[Catch: SQLiteException -> 0x039b, all -> 0x03c5, TRY_LEAVE, TryCatch #2 {all -> 0x03c5, blocks: (B:6:0x013d, B:9:0x0145, B:11:0x015c, B:12:0x0163, B:14:0x0176, B:15:0x017d, B:17:0x01bc, B:22:0x01c6, B:26:0x0210, B:28:0x023f, B:33:0x0249, B:37:0x025b, B:39:0x0266, B:40:0x0278, B:42:0x0282, B:43:0x028b, B:45:0x0293, B:49:0x029c, B:51:0x02d4, B:52:0x02e6, B:54:0x02ee, B:58:0x02f7, B:65:0x0310, B:69:0x033a, B:71:0x0345, B:72:0x0350, B:74:0x0358, B:75:0x0363, B:77:0x0374, B:78:0x037b, B:80:0x0384, B:68:0x0330, B:61:0x0305, B:64:0x030c, B:36:0x0257, B:25:0x020b, B:96:0x03ac), top: B:105:0x000d }] */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0397  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x03c1  */
+    /* JADX WARN: Not initialized variable reg: 4, insn: 0x03ca: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY]), block:B:101:0x03ca */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x03cd  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x020b  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x020f A[Catch: SQLiteException -> 0x039f, all -> 0x03c9, TryCatch #3 {all -> 0x03c9, blocks: (B:6:0x0141, B:9:0x0149, B:11:0x0160, B:12:0x0167, B:14:0x017a, B:15:0x0181, B:17:0x01c0, B:22:0x01ca, B:26:0x0214, B:28:0x0243, B:33:0x024d, B:37:0x025f, B:39:0x026a, B:40:0x027c, B:42:0x0286, B:43:0x028f, B:45:0x0297, B:49:0x02a0, B:51:0x02d8, B:52:0x02ea, B:54:0x02f2, B:58:0x02fb, B:65:0x0314, B:69:0x033e, B:71:0x0349, B:72:0x0354, B:74:0x035c, B:75:0x0367, B:77:0x0378, B:78:0x037f, B:80:0x0388, B:68:0x0334, B:61:0x0309, B:64:0x0310, B:36:0x025b, B:25:0x020f, B:96:0x03b0), top: B:105:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0258  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x025b A[Catch: SQLiteException -> 0x039f, all -> 0x03c9, TryCatch #3 {all -> 0x03c9, blocks: (B:6:0x0141, B:9:0x0149, B:11:0x0160, B:12:0x0167, B:14:0x017a, B:15:0x0181, B:17:0x01c0, B:22:0x01ca, B:26:0x0214, B:28:0x0243, B:33:0x024d, B:37:0x025f, B:39:0x026a, B:40:0x027c, B:42:0x0286, B:43:0x028f, B:45:0x0297, B:49:0x02a0, B:51:0x02d8, B:52:0x02ea, B:54:0x02f2, B:58:0x02fb, B:65:0x0314, B:69:0x033e, B:71:0x0349, B:72:0x0354, B:74:0x035c, B:75:0x0367, B:77:0x0378, B:78:0x037f, B:80:0x0388, B:68:0x0334, B:61:0x0309, B:64:0x0310, B:36:0x025b, B:25:0x020f, B:96:0x03b0), top: B:105:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x026a A[Catch: SQLiteException -> 0x039f, all -> 0x03c9, TryCatch #3 {all -> 0x03c9, blocks: (B:6:0x0141, B:9:0x0149, B:11:0x0160, B:12:0x0167, B:14:0x017a, B:15:0x0181, B:17:0x01c0, B:22:0x01ca, B:26:0x0214, B:28:0x0243, B:33:0x024d, B:37:0x025f, B:39:0x026a, B:40:0x027c, B:42:0x0286, B:43:0x028f, B:45:0x0297, B:49:0x02a0, B:51:0x02d8, B:52:0x02ea, B:54:0x02f2, B:58:0x02fb, B:65:0x0314, B:69:0x033e, B:71:0x0349, B:72:0x0354, B:74:0x035c, B:75:0x0367, B:77:0x0378, B:78:0x037f, B:80:0x0388, B:68:0x0334, B:61:0x0309, B:64:0x0310, B:36:0x025b, B:25:0x020f, B:96:0x03b0), top: B:105:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0286 A[Catch: SQLiteException -> 0x039f, all -> 0x03c9, TryCatch #3 {all -> 0x03c9, blocks: (B:6:0x0141, B:9:0x0149, B:11:0x0160, B:12:0x0167, B:14:0x017a, B:15:0x0181, B:17:0x01c0, B:22:0x01ca, B:26:0x0214, B:28:0x0243, B:33:0x024d, B:37:0x025f, B:39:0x026a, B:40:0x027c, B:42:0x0286, B:43:0x028f, B:45:0x0297, B:49:0x02a0, B:51:0x02d8, B:52:0x02ea, B:54:0x02f2, B:58:0x02fb, B:65:0x0314, B:69:0x033e, B:71:0x0349, B:72:0x0354, B:74:0x035c, B:75:0x0367, B:77:0x0378, B:78:0x037f, B:80:0x0388, B:68:0x0334, B:61:0x0309, B:64:0x0310, B:36:0x025b, B:25:0x020f, B:96:0x03b0), top: B:105:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0297 A[Catch: SQLiteException -> 0x039f, all -> 0x03c9, TryCatch #3 {all -> 0x03c9, blocks: (B:6:0x0141, B:9:0x0149, B:11:0x0160, B:12:0x0167, B:14:0x017a, B:15:0x0181, B:17:0x01c0, B:22:0x01ca, B:26:0x0214, B:28:0x0243, B:33:0x024d, B:37:0x025f, B:39:0x026a, B:40:0x027c, B:42:0x0286, B:43:0x028f, B:45:0x0297, B:49:0x02a0, B:51:0x02d8, B:52:0x02ea, B:54:0x02f2, B:58:0x02fb, B:65:0x0314, B:69:0x033e, B:71:0x0349, B:72:0x0354, B:74:0x035c, B:75:0x0367, B:77:0x0378, B:78:0x037f, B:80:0x0388, B:68:0x0334, B:61:0x0309, B:64:0x0310, B:36:0x025b, B:25:0x020f, B:96:0x03b0), top: B:105:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x02d8 A[Catch: SQLiteException -> 0x039f, all -> 0x03c9, TryCatch #3 {all -> 0x03c9, blocks: (B:6:0x0141, B:9:0x0149, B:11:0x0160, B:12:0x0167, B:14:0x017a, B:15:0x0181, B:17:0x01c0, B:22:0x01ca, B:26:0x0214, B:28:0x0243, B:33:0x024d, B:37:0x025f, B:39:0x026a, B:40:0x027c, B:42:0x0286, B:43:0x028f, B:45:0x0297, B:49:0x02a0, B:51:0x02d8, B:52:0x02ea, B:54:0x02f2, B:58:0x02fb, B:65:0x0314, B:69:0x033e, B:71:0x0349, B:72:0x0354, B:74:0x035c, B:75:0x0367, B:77:0x0378, B:78:0x037f, B:80:0x0388, B:68:0x0334, B:61:0x0309, B:64:0x0310, B:36:0x025b, B:25:0x020f, B:96:0x03b0), top: B:105:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x02f2 A[Catch: SQLiteException -> 0x039f, all -> 0x03c9, TryCatch #3 {all -> 0x03c9, blocks: (B:6:0x0141, B:9:0x0149, B:11:0x0160, B:12:0x0167, B:14:0x017a, B:15:0x0181, B:17:0x01c0, B:22:0x01ca, B:26:0x0214, B:28:0x0243, B:33:0x024d, B:37:0x025f, B:39:0x026a, B:40:0x027c, B:42:0x0286, B:43:0x028f, B:45:0x0297, B:49:0x02a0, B:51:0x02d8, B:52:0x02ea, B:54:0x02f2, B:58:0x02fb, B:65:0x0314, B:69:0x033e, B:71:0x0349, B:72:0x0354, B:74:0x035c, B:75:0x0367, B:77:0x0378, B:78:0x037f, B:80:0x0388, B:68:0x0334, B:61:0x0309, B:64:0x0310, B:36:0x025b, B:25:0x020f, B:96:0x03b0), top: B:105:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0306  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0309 A[Catch: SQLiteException -> 0x039f, all -> 0x03c9, TryCatch #3 {all -> 0x03c9, blocks: (B:6:0x0141, B:9:0x0149, B:11:0x0160, B:12:0x0167, B:14:0x017a, B:15:0x0181, B:17:0x01c0, B:22:0x01ca, B:26:0x0214, B:28:0x0243, B:33:0x024d, B:37:0x025f, B:39:0x026a, B:40:0x027c, B:42:0x0286, B:43:0x028f, B:45:0x0297, B:49:0x02a0, B:51:0x02d8, B:52:0x02ea, B:54:0x02f2, B:58:0x02fb, B:65:0x0314, B:69:0x033e, B:71:0x0349, B:72:0x0354, B:74:0x035c, B:75:0x0367, B:77:0x0378, B:78:0x037f, B:80:0x0388, B:68:0x0334, B:61:0x0309, B:64:0x0310, B:36:0x025b, B:25:0x020f, B:96:0x03b0), top: B:105:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0331  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0334 A[Catch: SQLiteException -> 0x039f, all -> 0x03c9, TryCatch #3 {all -> 0x03c9, blocks: (B:6:0x0141, B:9:0x0149, B:11:0x0160, B:12:0x0167, B:14:0x017a, B:15:0x0181, B:17:0x01c0, B:22:0x01ca, B:26:0x0214, B:28:0x0243, B:33:0x024d, B:37:0x025f, B:39:0x026a, B:40:0x027c, B:42:0x0286, B:43:0x028f, B:45:0x0297, B:49:0x02a0, B:51:0x02d8, B:52:0x02ea, B:54:0x02f2, B:58:0x02fb, B:65:0x0314, B:69:0x033e, B:71:0x0349, B:72:0x0354, B:74:0x035c, B:75:0x0367, B:77:0x0378, B:78:0x037f, B:80:0x0388, B:68:0x0334, B:61:0x0309, B:64:0x0310, B:36:0x025b, B:25:0x020f, B:96:0x03b0), top: B:105:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0349 A[Catch: SQLiteException -> 0x039f, all -> 0x03c9, TryCatch #3 {all -> 0x03c9, blocks: (B:6:0x0141, B:9:0x0149, B:11:0x0160, B:12:0x0167, B:14:0x017a, B:15:0x0181, B:17:0x01c0, B:22:0x01ca, B:26:0x0214, B:28:0x0243, B:33:0x024d, B:37:0x025f, B:39:0x026a, B:40:0x027c, B:42:0x0286, B:43:0x028f, B:45:0x0297, B:49:0x02a0, B:51:0x02d8, B:52:0x02ea, B:54:0x02f2, B:58:0x02fb, B:65:0x0314, B:69:0x033e, B:71:0x0349, B:72:0x0354, B:74:0x035c, B:75:0x0367, B:77:0x0378, B:78:0x037f, B:80:0x0388, B:68:0x0334, B:61:0x0309, B:64:0x0310, B:36:0x025b, B:25:0x020f, B:96:0x03b0), top: B:105:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x035c A[Catch: SQLiteException -> 0x039f, all -> 0x03c9, TryCatch #3 {all -> 0x03c9, blocks: (B:6:0x0141, B:9:0x0149, B:11:0x0160, B:12:0x0167, B:14:0x017a, B:15:0x0181, B:17:0x01c0, B:22:0x01ca, B:26:0x0214, B:28:0x0243, B:33:0x024d, B:37:0x025f, B:39:0x026a, B:40:0x027c, B:42:0x0286, B:43:0x028f, B:45:0x0297, B:49:0x02a0, B:51:0x02d8, B:52:0x02ea, B:54:0x02f2, B:58:0x02fb, B:65:0x0314, B:69:0x033e, B:71:0x0349, B:72:0x0354, B:74:0x035c, B:75:0x0367, B:77:0x0378, B:78:0x037f, B:80:0x0388, B:68:0x0334, B:61:0x0309, B:64:0x0310, B:36:0x025b, B:25:0x020f, B:96:0x03b0), top: B:105:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0378 A[Catch: SQLiteException -> 0x039f, all -> 0x03c9, TryCatch #3 {all -> 0x03c9, blocks: (B:6:0x0141, B:9:0x0149, B:11:0x0160, B:12:0x0167, B:14:0x017a, B:15:0x0181, B:17:0x01c0, B:22:0x01ca, B:26:0x0214, B:28:0x0243, B:33:0x024d, B:37:0x025f, B:39:0x026a, B:40:0x027c, B:42:0x0286, B:43:0x028f, B:45:0x0297, B:49:0x02a0, B:51:0x02d8, B:52:0x02ea, B:54:0x02f2, B:58:0x02fb, B:65:0x0314, B:69:0x033e, B:71:0x0349, B:72:0x0354, B:74:0x035c, B:75:0x0367, B:77:0x0378, B:78:0x037f, B:80:0x0388, B:68:0x0334, B:61:0x0309, B:64:0x0310, B:36:0x025b, B:25:0x020f, B:96:0x03b0), top: B:105:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0388 A[Catch: SQLiteException -> 0x039f, all -> 0x03c9, TRY_LEAVE, TryCatch #3 {all -> 0x03c9, blocks: (B:6:0x0141, B:9:0x0149, B:11:0x0160, B:12:0x0167, B:14:0x017a, B:15:0x0181, B:17:0x01c0, B:22:0x01ca, B:26:0x0214, B:28:0x0243, B:33:0x024d, B:37:0x025f, B:39:0x026a, B:40:0x027c, B:42:0x0286, B:43:0x028f, B:45:0x0297, B:49:0x02a0, B:51:0x02d8, B:52:0x02ea, B:54:0x02f2, B:58:0x02fb, B:65:0x0314, B:69:0x033e, B:71:0x0349, B:72:0x0354, B:74:0x035c, B:75:0x0367, B:77:0x0378, B:78:0x037f, B:80:0x0388, B:68:0x0334, B:61:0x0309, B:64:0x0310, B:36:0x025b, B:25:0x020f, B:96:0x03b0), top: B:105:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x039b  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x03c5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2866,73 +2869,73 @@ public final class zzav extends zzos {
                 }
                 throw th;
             }
-        } catch (SQLiteException e) {
-            e = e;
-            cursor2 = null;
-        } catch (Throwable th2) {
-            th = th2;
-            cursor = null;
-        }
-        try {
-            strArr[10] = "measurement_enabled";
-            strArr[11] = "day";
-            strArr[12] = "daily_public_events_count";
-            strArr[13] = "daily_events_count";
-            strArr[14] = "daily_conversions_count";
-            strArr[15] = "config_fetched_time";
-            strArr[16] = "failed_config_fetch_time";
-            strArr[17] = "app_version_int";
-            strArr[18] = "firebase_instance_id";
-            strArr[19] = "daily_error_events_count";
-            strArr[20] = "daily_realtime_events_count";
-            strArr[21] = "health_monitor_sample";
-            strArr[22] = "android_id";
-            strArr[23] = "adid_reporting_enabled";
-            strArr[24] = "admob_app_id";
-            strArr[25] = "dynamite_version";
-            strArr[26] = "safelisted_events";
-            strArr[27] = "ga_app_id";
-            strArr[28] = "session_stitching_token";
-            strArr[29] = "sgtm_upload_enabled";
-            strArr[30] = "target_os_version";
-            strArr[31] = "session_stitching_token_hash";
-            strArr[32] = "ad_services_version";
-            strArr[33] = "unmatched_first_open_without_ad_id";
-            strArr[34] = "npa_metadata_value";
-            strArr[35] = "attribution_eligibility_status";
-            strArr[36] = "sgtm_preview_key";
-            strArr[37] = "dma_consent_state";
-            strArr[38] = "daily_realtime_dcu_count";
-            strArr[39] = "bundle_delivery_index";
-            strArr[40] = "serialized_npa_metadata";
-            strArr[41] = "unmatched_pfo";
-            strArr[42] = "unmatched_uwa";
-            strArr[43] = "ad_campaign_info";
-            strArr[44] = "client_upload_eligibility";
-            cursor5 = zze2.query("apps", strArr, "app_id=?", new String[]{str}, null, null, null);
             try {
+                strArr[10] = "measurement_enabled";
+                strArr[11] = "day";
+                strArr[12] = "daily_public_events_count";
+                strArr[13] = "daily_events_count";
+                strArr[14] = "daily_conversions_count";
+                strArr[15] = "config_fetched_time";
+                strArr[16] = "failed_config_fetch_time";
+                strArr[17] = "app_version_int";
+                strArr[18] = "firebase_instance_id";
+                strArr[19] = "daily_error_events_count";
+                strArr[20] = "daily_realtime_events_count";
+                strArr[21] = "health_monitor_sample";
+                strArr[22] = "android_id";
+                strArr[23] = "adid_reporting_enabled";
+                strArr[24] = "admob_app_id";
+                strArr[25] = "dynamite_version";
+                strArr[26] = "safelisted_events";
+                strArr[27] = "ga_app_id";
+                strArr[28] = "session_stitching_token";
+                strArr[29] = "sgtm_upload_enabled";
+                strArr[30] = "target_os_version";
+                strArr[31] = "session_stitching_token_hash";
+                strArr[32] = "ad_services_version";
+                strArr[33] = "unmatched_first_open_without_ad_id";
+                strArr[34] = "npa_metadata_value";
+                strArr[35] = "attribution_eligibility_status";
+                strArr[36] = "sgtm_preview_key";
+                strArr[37] = "dma_consent_state";
+                strArr[38] = "daily_realtime_dcu_count";
+                strArr[39] = "bundle_delivery_index";
+                strArr[40] = "serialized_npa_metadata";
+                strArr[41] = "unmatched_pfo";
+                strArr[42] = "unmatched_uwa";
+                strArr[43] = "ad_campaign_info";
+                strArr[44] = "client_upload_eligibility";
+                cursor5 = zze2.query("apps", strArr, "app_id=?", new String[]{str}, null, null, null);
+                try {
+                } catch (SQLiteException e) {
+                    e = e;
+                    this.zzu.zzaV().zzb().zzc("Error querying app. appId", zzgu.zzl(str), e);
+                    zzhVar = cursor2;
+                    if (cursor5 != null) {
+                    }
+                    return zzhVar;
+                }
             } catch (SQLiteException e2) {
                 e = e2;
+                cursor5 = cursor2;
                 this.zzu.zzaV().zzb().zzc("Error querying app. appId", zzgu.zzl(str), e);
                 zzhVar = cursor2;
                 if (cursor5 != null) {
                 }
                 return zzhVar;
+            } catch (Throwable th2) {
+                th = th2;
+                cursor4 = cursor;
+                if (cursor4 != null) {
+                }
+                throw th;
             }
         } catch (SQLiteException e3) {
             e = e3;
-            cursor5 = cursor2;
-            this.zzu.zzaV().zzb().zzc("Error querying app. appId", zzgu.zzl(str), e);
-            zzhVar = cursor2;
-            if (cursor5 != null) {
-            }
-            return zzhVar;
+            cursor2 = null;
         } catch (Throwable th3) {
             th = th3;
-            cursor4 = cursor;
-            if (cursor4 != null) {
-            }
-            throw th;
+            cursor = null;
         }
         if (!cursor5.moveToFirst()) {
             if (cursor5 != null) {

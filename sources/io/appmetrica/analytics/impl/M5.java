@@ -1,49 +1,59 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.jvm.internal.Intrinsics;
+import io.appmetrica.analytics.networktasks.internal.ArgumentsMerger;
+import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 /* loaded from: classes4.dex */
-public final class M5 implements InterfaceC0481od {
+public abstract class M5 implements InterfaceC0765zj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f555a;
+    public BaseRequestConfig f567a;
+    public final BaseRequestConfig.RequestConfigLoader b;
+    public C0373k6 c;
 
-    public M5(String str) {
-        this.f555a = str;
+    public M5(BaseRequestConfig.RequestConfigLoader<Object, C0373k6> requestConfigLoader, C0493om c0493om, ArgumentsMerger<Object, Object> argumentsMerger) {
+        this.b = requestConfigLoader;
+        Na.j().u().a(this);
+        a(new C0373k6(c0493om, Na.j().u(), Na.j().r(), argumentsMerger));
     }
 
-    public final M5 a(String str) {
-        return new M5(str);
+    public final synchronized void a(C0373k6 c0373k6) {
+        this.c = c0373k6;
     }
 
-    public final String b() {
-        return this.f555a;
+    public final synchronized ArgumentsMerger<Object, Object> b() {
+        return (ArgumentsMerger) this.c.componentArguments;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final synchronized C0493om c() {
+        return this.c.f945a;
+    }
+
+    public final void d() {
+        synchronized (this) {
+            this.f567a = null;
         }
-        return (obj instanceof M5) && Intrinsics.areEqual(this.f555a, ((M5) obj).f555a);
     }
 
-    public final int hashCode() {
-        return this.f555a.hashCode();
+    public final synchronized void e() {
+        this.f567a = null;
     }
 
-    public final String toString() {
-        return "ConstantModuleEntryPointProvider(className=" + this.f555a + ')';
-    }
-
-    public static M5 a(M5 m5, String str, int i, Object obj) {
-        if ((i & 1) != 0) {
-            str = m5.f555a;
+    public synchronized void a(Object obj) {
+        if (!((ArgumentsMerger) this.c.componentArguments).compareWithOtherArguments(obj)) {
+            a(new C0373k6(c(), Na.F.u(), Na.F.r(), (ArgumentsMerger) ((ArgumentsMerger) this.c.componentArguments).mergeFrom(obj)));
+            e();
         }
-        m5.getClass();
-        return new M5(str);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0481od
-    public final String a() {
-        return this.f555a;
+    public final synchronized void a(C0493om c0493om) {
+        a(new C0373k6(c0493om, Na.F.u(), Na.F.r(), b()));
+        e();
+    }
+
+    public final synchronized BaseRequestConfig a() {
+        if (this.f567a == null) {
+            this.f567a = this.b.load(this.c);
+        }
+        return this.f567a;
     }
 }

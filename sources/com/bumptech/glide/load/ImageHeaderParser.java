@@ -16,6 +16,10 @@ public interface ImageHeaderParser {
 
     ImageType getType(ByteBuffer byteBuffer) throws IOException;
 
+    boolean hasJpegMpf(InputStream inputStream, ArrayPool arrayPool) throws IOException;
+
+    boolean hasJpegMpf(ByteBuffer byteBuffer, ArrayPool arrayPool) throws IOException;
+
     /* loaded from: classes3.dex */
     public enum ImageType {
         GIF(true),

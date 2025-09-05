@@ -6,14 +6,11 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Pair;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.drawable.DrawableUtils;
 import com.google.android.material.internal.ThemeEnforcement;
@@ -36,7 +33,7 @@ public class MaterialToolbar extends Toolbar {
     }
 
     public MaterialToolbar(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.toolbarStyle);
+        this(context, attributeSet, androidx.appcompat.R.attr.toolbarStyle);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -65,19 +62,6 @@ public class MaterialToolbar extends Toolbar {
         }
         obtainStyledAttributes.recycle();
         initBackground(context2);
-    }
-
-    @Override // androidx.appcompat.widget.Toolbar
-    public void inflateMenu(int i) {
-        Menu menu = getMenu();
-        boolean z = menu instanceof MenuBuilder;
-        if (z) {
-            ((MenuBuilder) menu).stopDispatchingItemsChanged();
-        }
-        super.inflateMenu(i);
-        if (z) {
-            ((MenuBuilder) menu).startDispatchingItemsChanged();
-        }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -207,7 +191,7 @@ public class MaterialToolbar extends Toolbar {
         this.navigationIconTint = null;
         Drawable navigationIcon = getNavigationIcon();
         if (navigationIcon != null) {
-            DrawableCompat.setTintList(DrawableCompat.wrap(navigationIcon.mutate()), null);
+            DrawableCompat.wrap(navigationIcon.mutate()).setTintList(null);
             setNavigationIcon(navigationIcon);
         }
     }
@@ -250,8 +234,8 @@ public class MaterialToolbar extends Toolbar {
             MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable();
             materialShapeDrawable.setFillColor(colorStateListOrNull);
             materialShapeDrawable.initializeElevationOverlay(context);
-            materialShapeDrawable.setElevation(ViewCompat.getElevation(this));
-            ViewCompat.setBackground(this, materialShapeDrawable);
+            materialShapeDrawable.setElevation(getElevation());
+            setBackground(materialShapeDrawable);
         }
     }
 
@@ -260,7 +244,7 @@ public class MaterialToolbar extends Toolbar {
             return drawable;
         }
         Drawable wrap = DrawableCompat.wrap(drawable.mutate());
-        DrawableCompat.setTint(wrap, this.navigationIconTint.intValue());
+        wrap.setTint(this.navigationIconTint.intValue());
         return wrap;
     }
 }

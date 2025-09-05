@@ -7,7 +7,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityNodeInfo;
-import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.R;
 import com.google.android.material.internal.CheckableGroup;
@@ -95,7 +94,7 @@ public class ChipGroup extends FlowLayout {
             }
         });
         super.setOnHierarchyChangeListener(passThroughHierarchyChangeListener);
-        ViewCompat.setImportantForAccessibility(this, 1);
+        setImportantForAccessibility(1);
     }
 
     @Override // android.view.View
@@ -317,7 +316,7 @@ public class ChipGroup extends FlowLayout {
         public void onChildViewAdded(View view, View view2) {
             if (view == ChipGroup.this && (view2 instanceof Chip)) {
                 if (view2.getId() == -1) {
-                    view2.setId(ViewCompat.generateViewId());
+                    view2.setId(View.generateViewId());
                 }
                 ChipGroup.this.checkableGroup.addCheckable((Chip) view2);
             }

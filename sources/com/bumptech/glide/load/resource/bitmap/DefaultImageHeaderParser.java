@@ -11,6 +11,7 @@ import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 /* loaded from: classes3.dex */
 public final class DefaultImageHeaderParser implements ImageHeaderParser {
+    static final int APP2_SEGMENT_TYPE = 226;
     private static final int AVIF_BRAND = 1635150182;
     private static final int AVIS_BRAND = 1635150195;
     static final int EXIF_MAGIC_NUMBER = 65496;
@@ -37,6 +38,8 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
     private static final int WEBP_LOSSLESS_ALPHA_FLAG = 8;
     private static final String JPEG_EXIF_SEGMENT_PREAMBLE = "Exif\u0000\u0000";
     static final byte[] JPEG_EXIF_SEGMENT_PREAMBLE_BYTES = JPEG_EXIF_SEGMENT_PREAMBLE.getBytes(Charset.forName("UTF-8"));
+    private static final String JPEG_MPF_SEGMENT_PREAMBLE = "MPF";
+    static final byte[] JPEG_MPF_SEGMENT_PREAMBLE_BYTES = JPEG_MPF_SEGMENT_PREAMBLE.getBytes(Charset.forName("UTF-8"));
     private static final int[] BYTES_PER_FORMAT = {0, 1, 1, 2, 4, 8, 1, 1, 2, 4, 8, 4, 8};
 
     private static int calcTagOffset(int i, int i2) {
@@ -65,6 +68,41 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
     @Override // com.bumptech.glide.load.ImageHeaderParser
     public int getOrientation(ByteBuffer byteBuffer, ArrayPool arrayPool) throws IOException {
         return getOrientation(new ByteBufferReader((ByteBuffer) Preconditions.checkNotNull(byteBuffer)), (ArrayPool) Preconditions.checkNotNull(arrayPool));
+    }
+
+    @Override // com.bumptech.glide.load.ImageHeaderParser
+    public boolean hasJpegMpf(InputStream inputStream, ArrayPool arrayPool) throws IOException {
+        return hasJpegMpf(new StreamReader((InputStream) Preconditions.checkNotNull(inputStream)), (ArrayPool) Preconditions.checkNotNull(arrayPool));
+    }
+
+    @Override // com.bumptech.glide.load.ImageHeaderParser
+    public boolean hasJpegMpf(ByteBuffer byteBuffer, ArrayPool arrayPool) throws IOException {
+        return hasJpegMpf(new ByteBufferReader((ByteBuffer) Preconditions.checkNotNull(byteBuffer)), (ArrayPool) Preconditions.checkNotNull(arrayPool));
+    }
+
+    private boolean hasJpegMpf(Reader reader, ArrayPool arrayPool) throws IOException {
+        if (getType(reader) != ImageHeaderParser.ImageType.JPEG) {
+            return false;
+        }
+        int moveToApp2SegmentAndGetLength = moveToApp2SegmentAndGetLength(reader);
+        while (moveToApp2SegmentAndGetLength > 0) {
+            byte[] bArr = (byte[]) arrayPool.get(moveToApp2SegmentAndGetLength, byte[].class);
+            try {
+                if (hasJpegMpfPreamble(reader, bArr, moveToApp2SegmentAndGetLength)) {
+                    arrayPool.put(bArr);
+                    return true;
+                }
+                arrayPool.put(bArr);
+                moveToApp2SegmentAndGetLength = moveToApp2SegmentAndGetLength(reader);
+            } catch (Throwable th) {
+                arrayPool.put(bArr);
+                throw th;
+            }
+        }
+        if (Log.isLoggable(TAG, 2)) {
+            Log.v(TAG, "hasMpf: Failed to parse APP2 segment length, or no APP2 segment with MPF metadata not found");
+        }
+        return false;
     }
 
     private ImageHeaderParser.ImageType getType(Reader reader) throws IOException {
@@ -190,17 +228,15 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
     }
 
     private boolean hasJpegExifPreamble(byte[] bArr, int i) {
-        boolean z = bArr != null && i > JPEG_EXIF_SEGMENT_PREAMBLE_BYTES.length;
+        return hasMatchingBytes(bArr, i, JPEG_EXIF_SEGMENT_PREAMBLE_BYTES);
+    }
+
+    private boolean hasMatchingBytes(byte[] bArr, int i, byte[] bArr2) {
+        boolean z = (bArr == null || bArr2 == null || i <= bArr2.length) ? false : true;
         if (z) {
-            int i2 = 0;
-            while (true) {
-                byte[] bArr2 = JPEG_EXIF_SEGMENT_PREAMBLE_BYTES;
-                if (i2 >= bArr2.length) {
-                    break;
-                } else if (bArr[i2] != bArr2[i2]) {
+            for (int i2 = 0; i2 < bArr2.length; i2++) {
+                if (bArr[i2] != bArr2[i2]) {
                     return false;
-                } else {
-                    i2++;
                 }
             }
         }
@@ -208,6 +244,26 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
     }
 
     private int moveToExifSegmentAndGetLength(Reader reader) throws IOException {
+        return moveToSegmentAndGetLength(reader, EXIF_SEGMENT_TYPE);
+    }
+
+    private boolean hasJpegMpfPreamble(Reader reader, byte[] bArr, int i) throws IOException {
+        int read = reader.read(bArr, i);
+        if (read != i) {
+            if (Log.isLoggable(TAG, 3)) {
+                Log.d(TAG, "Unable to read APP2 segment data, length: " + i + ", actually read: " + read);
+                return false;
+            }
+            return false;
+        }
+        return hasMatchingBytes(bArr, i, JPEG_MPF_SEGMENT_PREAMBLE_BYTES);
+    }
+
+    private int moveToApp2SegmentAndGetLength(Reader reader) throws IOException {
+        return moveToSegmentAndGetLength(reader, APP2_SEGMENT_TYPE);
+    }
+
+    private int moveToSegmentAndGetLength(Reader reader, int i) throws IOException {
         short uInt8;
         short uInt82;
         int uInt16;
@@ -226,12 +282,12 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
             }
             if (uInt82 == MARKER_EOI) {
                 if (Log.isLoggable(TAG, 3)) {
-                    Log.d(TAG, "Found MARKER_EOI in exif segment");
+                    Log.d(TAG, "Found MARKER_EOI in " + i + " segment");
                 }
                 return -1;
             }
             uInt16 = reader.getUInt16() - 2;
-            if (uInt82 == EXIF_SEGMENT_TYPE) {
+            if (uInt82 == i) {
                 return uInt16;
             }
             j = uInt16;

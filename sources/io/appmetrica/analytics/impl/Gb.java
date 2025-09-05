@@ -1,129 +1,162 @@
 package io.appmetrica.analytics.impl;
 
-import android.util.Base64;
-import androidx.core.app.NotificationCompat;
-import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
-import io.appmetrica.analytics.internal.CounterConfiguration;
-import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
+import android.text.TextUtils;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import io.appmetrica.analytics.coreapi.internal.model.ScreenInfo;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
-import org.json.JSONException;
+import org.json.JSONArray;
 import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class Gb {
+public abstract class Gb {
+    public static String a(HashMap hashMap) {
+        if (hashMap == null) {
+            return null;
+        }
+        if (hashMap.isEmpty()) {
+            return "";
+        }
+        return b(hashMap);
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public final byte[] f454a;
-    public final String b;
-    public final int c;
-    public final HashMap d;
-    public final String e;
-    public final Integer f;
-    public final String g;
-    public final String h;
-    public final CounterConfigurationReporterType i;
-    public final String j;
+    public static String b(Map map) {
+        if (ro.a(map)) {
+            return null;
+        }
+        return new JSONObject(map).toString();
+    }
 
-    public Gb(String str) throws JSONException {
+    public static HashMap c(String str) {
+        if (TextUtils.isEmpty(str)) {
+            return null;
+        }
+        try {
+            JSONObject jSONObject = new JSONObject(str);
+            HashMap hashMap = new HashMap();
+            if (!JSONObject.NULL.equals(jSONObject)) {
+                Iterator<String> keys = jSONObject.keys();
+                while (keys.hasNext()) {
+                    String next = keys.next();
+                    hashMap.put(next, jSONObject.optString(next));
+                }
+            }
+            return hashMap;
+        } catch (Throwable unused) {
+            return null;
+        }
+    }
+
+    public static HashMap d(String str) {
         JSONObject jSONObject = new JSONObject(str);
-        JSONObject jSONObject2 = jSONObject.getJSONObject(NotificationCompat.CATEGORY_EVENT);
-        this.f454a = Base64.decode(jSONObject2.getString("jvm_crash"), 0);
-        this.b = jSONObject2.getString("name");
-        this.c = jSONObject2.getInt("bytes_truncated");
-        this.j = JsonUtils.optStringOrNull(jSONObject2, "environment");
-        String optString = jSONObject2.optString("trimmed_fields");
-        this.d = new HashMap();
-        if (optString != null) {
+        HashMap hashMap = new HashMap();
+        if (!JSONObject.NULL.equals(jSONObject)) {
+            Iterator<String> keys = jSONObject.keys();
+            while (keys.hasNext()) {
+                String next = keys.next();
+                hashMap.put(next, jSONObject.optString(next));
+            }
+        }
+        return hashMap;
+    }
+
+    public static ScreenInfo e(String str) {
+        try {
+            if (TextUtils.isEmpty(str)) {
+                return null;
+            }
+            JSONObject jSONObject = new JSONObject(str);
+            return new ScreenInfo(jSONObject.optInt("width"), jSONObject.optInt("height"), jSONObject.optInt("dpi"), (float) jSONObject.optDouble("scaleFactor", FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE));
+        } catch (Throwable unused) {
+            return null;
+        }
+    }
+
+    public static HashMap a(String str) {
+        if (str == null) {
+            return null;
+        }
+        if (str.isEmpty()) {
+            return new HashMap();
+        }
+        return c(str);
+    }
+
+    public static ArrayList b(String str) {
+        if (!TextUtils.isEmpty(str)) {
             try {
-                HashMap c = Db.c(optString);
-                if (c != null) {
-                    for (Map.Entry entry : c.entrySet()) {
-                        this.d.put(EnumC0294h4.valueOf((String) entry.getKey()), Integer.valueOf(Integer.parseInt((String) entry.getValue())));
+                JSONArray jSONArray = new JSONArray(str);
+                ArrayList arrayList = new ArrayList(jSONArray.length());
+                for (int i = 0; i < jSONArray.length(); i++) {
+                    try {
+                        arrayList.add(jSONArray.getString(i));
+                    } catch (Throwable unused) {
+                        return arrayList;
                     }
                 }
+                return arrayList;
+            } catch (Throwable unused2) {
+            }
+        }
+        return null;
+    }
+
+    public static Integer a(JSONObject jSONObject, String str, Integer num) {
+        if (jSONObject != null && jSONObject.has(str)) {
+            try {
+                return Integer.valueOf(jSONObject.getInt(str));
             } catch (Throwable unused) {
             }
         }
-        JSONObject jSONObject3 = jSONObject.getJSONObject("process_configuration");
-        this.e = jSONObject3.getString("package_name");
-        this.f = Integer.valueOf(jSONObject3.getInt("pid"));
-        this.g = jSONObject3.getString("psid");
-        JSONObject jSONObject4 = jSONObject.getJSONObject("reporter_configuration");
-        this.h = jSONObject4.getString("api_key");
-        this.i = a(jSONObject4);
+        return num;
     }
 
-    public final String a() {
-        return this.h;
-    }
-
-    public final int b() {
-        return this.c;
-    }
-
-    public final byte[] c() {
-        return this.f454a;
-    }
-
-    public final String d() {
-        return this.j;
-    }
-
-    public final String e() {
-        return this.b;
-    }
-
-    public final String f() {
-        return this.e;
-    }
-
-    public final Integer g() {
-        return this.f;
-    }
-
-    public final String h() {
-        return this.g;
-    }
-
-    public final CounterConfigurationReporterType i() {
-        return this.i;
-    }
-
-    public final HashMap<EnumC0294h4, Integer> j() {
-        return this.d;
-    }
-
-    public final String k() throws JSONException {
-        HashMap hashMap = new HashMap();
-        for (Map.Entry entry : this.d.entrySet()) {
-            hashMap.put(((EnumC0294h4) entry.getKey()).name(), (Integer) entry.getValue());
+    public static ArrayList a(JSONArray jSONArray) {
+        if (jSONArray == null || jSONArray.length() <= 0) {
+            return null;
         }
-        return new JSONObject().put("process_configuration", new JSONObject().put("pid", this.f).put("psid", this.g).put("package_name", this.e)).put("reporter_configuration", new JSONObject().put("api_key", this.h).put("reporter_type", this.i.getStringValue())).put(NotificationCompat.CATEGORY_EVENT, new JSONObject().put("jvm_crash", Base64.encodeToString(this.f454a, 0)).put("name", this.b).put("bytes_truncated", this.c).put("trimmed_fields", Db.b(hashMap)).putOpt("environment", this.j)).toString();
-    }
-
-    public static CounterConfigurationReporterType a(JSONObject jSONObject) {
-        if (jSONObject.has("reporter_type")) {
-            return CounterConfigurationReporterType.fromStringValue(jSONObject.getString("reporter_type"));
+        ArrayList arrayList = new ArrayList(jSONArray.length());
+        for (int i = 0; i < jSONArray.length(); i++) {
+            arrayList.add(jSONArray.getString(i));
         }
-        return CounterConfigurationReporterType.MAIN;
+        return arrayList;
     }
 
-    public Gb(C0399l6 c0399l6, C0191d4 c0191d4, HashMap<EnumC0294h4, Integer> hashMap) {
-        this.f454a = c0399l6.getValueBytes();
-        this.b = c0399l6.getName();
-        this.c = c0399l6.getBytesTruncated();
-        if (hashMap != null) {
-            this.d = hashMap;
+    public static String a(ScreenInfo screenInfo) {
+        JSONObject jSONObject;
+        if (screenInfo == null) {
+            jSONObject = null;
         } else {
-            this.d = new HashMap();
+            jSONObject = new JSONObject();
+            try {
+                jSONObject.put("width", screenInfo.getWidth()).put("height", screenInfo.getHeight()).put("dpi", screenInfo.getDpi()).put("scaleFactor", screenInfo.getScaleFactor());
+            } catch (Throwable unused) {
+            }
         }
-        Rf a2 = c0191d4.a();
-        this.e = a2.e();
-        this.f = a2.f();
-        this.g = a2.g();
-        CounterConfiguration b = c0191d4.b();
-        this.h = b.getApiKey();
-        this.i = b.getReporterType();
-        this.j = c0399l6.f();
+        if (jSONObject == null) {
+            return null;
+        }
+        return jSONObject.toString();
+    }
+
+    public static String a(Map map) {
+        if (map == null) {
+            return null;
+        }
+        JSONObject jSONObject = new JSONObject();
+        try {
+            for (Map.Entry entry : map.entrySet()) {
+                List list = (List) entry.getValue();
+                JSONArray jSONArray = ro.a((Collection) list) ? null : new JSONArray((Collection) list);
+                if (jSONArray != null) {
+                    jSONObject.put((String) entry.getKey(), jSONArray.toString());
+                }
+            }
+        } catch (Throwable unused) {
+        }
+        return jSONObject.toString();
     }
 }

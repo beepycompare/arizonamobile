@@ -68,6 +68,10 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
         return makeInternal(null, view, charSequence, i);
     }
 
+    public static Snackbar make(View view, int i, int i2) {
+        return make(view, view.getResources().getText(i), i2);
+    }
+
     public static Snackbar make(Context context, View view, CharSequence charSequence, int i) {
         return makeInternal(context, view, charSequence, i);
     }
@@ -108,10 +112,6 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
         int resourceId2 = obtainStyledAttributes.getResourceId(1, -1);
         obtainStyledAttributes.recycle();
         return (resourceId == -1 || resourceId2 == -1) ? false : true;
-    }
-
-    public static Snackbar make(View view, int i, int i2) {
-        return make(view, view.getResources().getText(i), i2);
     }
 
     private static ViewGroup findSuitableParent(View view) {
@@ -167,7 +167,7 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
         actionView.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.snackbar.Snackbar$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Snackbar.this.m8742lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(onClickListener, view);
+                Snackbar.this.m8760lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(onClickListener, view);
             }
         });
         return this;
@@ -175,7 +175,7 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setAction$0$com-google-android-material-snackbar-Snackbar  reason: not valid java name */
-    public /* synthetic */ void m8742lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(View.OnClickListener onClickListener, View view) {
+    public /* synthetic */ void m8760lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(View.OnClickListener onClickListener, View view) {
         onClickListener.onClick(view);
         dispatchDismiss(1);
     }

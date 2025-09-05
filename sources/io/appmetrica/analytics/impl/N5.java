@@ -1,10 +1,34 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import java.util.List;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy;
+import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
+import java.util.EnumSet;
 /* loaded from: classes4.dex */
-public abstract class N5 {
+public final class N5 implements IExecutionPolicy {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final List f573a = CollectionUtils.createSortedListWithoutRepetitions("data_key", "value");
+    public final Context f585a;
+    public final O5 b = new O5();
+    public final EnumSet c = EnumSet.of(Ze.OFFLINE);
+    public final String d = "connection based";
+
+    public N5(Context context) {
+        this.f585a = context;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy
+    public final boolean canBeExecuted() {
+        O5 o5 = this.b;
+        Context context = this.f585a;
+        o5.getClass();
+        Ve ve = AbstractC0124af.f789a;
+        return !this.c.contains((Ze) SystemServiceUtils.accessSystemServiceSafelyOrDefault((ConnectivityManager) context.getSystemService("connectivity"), "getting connection type", "ConnectivityManager", Ze.UNDEFINED, new Ye()));
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy
+    public final String description() {
+        return this.d;
+    }
 }

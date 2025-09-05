@@ -1,69 +1,89 @@
 package io.appmetrica.analytics.impl;
 
+import android.content.Context;
 import android.content.Intent;
-import com.google.firebase.analytics.FirebaseAnalytics;
+import android.content.IntentFilter;
+import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
 import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.BatteryInfo;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeType;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeChangeListener;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeProvider;
 import java.util.ArrayList;
+import java.util.Iterator;
 /* renamed from: io.appmetrica.analytics.impl.e3  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0215e3 implements ChargeTypeProvider {
-    public static final ChargeType d = ChargeType.UNKNOWN;
+public final class C0215e3 implements Bk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ICommonExecutor f837a;
-    public volatile BatteryInfo b;
-    public final ArrayList c = new ArrayList();
+    public final ArrayList f851a;
+    public Intent b;
+    public final Context c;
+    public final C0244f6 d;
 
-    public C0215e3(ICommonExecutor iCommonExecutor, C0138b3 c0138b3) {
-        C0190d3 c0190d3 = new C0190d3(this);
-        this.f837a = iCommonExecutor;
-        this.b = a(c0138b3.a(c0190d3));
+    public C0215e3(Context context, ICommonExecutor iCommonExecutor) {
+        this(context, iCommonExecutor, 0);
     }
 
-    public static BatteryInfo a(Intent intent) {
-        ChargeType chargeType = d;
-        Integer num = null;
-        if (intent != null) {
-            int intExtra = intent.getIntExtra(FirebaseAnalytics.Param.LEVEL, -1);
-            int intExtra2 = intent.getIntExtra("scale", -1);
-            if (intExtra > 0 && intExtra2 > 0) {
-                num = Integer.valueOf((intExtra * 100) / intExtra2);
-            }
-            int intExtra3 = intent.getIntExtra("plugged", -1);
-            chargeType = ChargeType.NONE;
-            if (intExtra3 == 1) {
-                chargeType = ChargeType.AC;
-            } else if (intExtra3 == 2) {
-                chargeType = ChargeType.USB;
-            } else if (intExtra3 == 4) {
-                chargeType = ChargeType.WIRELESS;
+    public final synchronized Intent a(Consumer<Intent> consumer) {
+        this.f851a.add(consumer);
+        return this.b;
+    }
+
+    public final void b() {
+        this.b = null;
+        C0244f6 c0244f6 = this.d;
+        Context context = this.c;
+        synchronized (c0244f6) {
+            if (c0244f6.b) {
+                try {
+                    context.unregisterReceiver(c0244f6.f869a);
+                    c0244f6.b = false;
+                } catch (Throwable unused) {
+                }
             }
         }
-        return new BatteryInfo(num, chargeType);
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeProvider
-    public final Integer getBatteryLevel() {
-        BatteryInfo batteryInfo = this.b;
-        if (batteryInfo == null) {
-            return null;
+    @Override // io.appmetrica.analytics.impl.Bk
+    public final synchronized void onCreate() {
+        Intent a2 = a();
+        this.b = a2;
+        Iterator it = this.f851a.iterator();
+        while (it.hasNext()) {
+            ((Consumer) it.next()).consume(a2);
         }
-        return batteryInfo.batteryLevel;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeProvider
-    public final ChargeType getChargeType() {
-        BatteryInfo batteryInfo = this.b;
-        return batteryInfo == null ? ChargeType.UNKNOWN : batteryInfo.chargeType;
+    @Override // io.appmetrica.analytics.impl.Bk
+    public final synchronized void onDestroy() {
+        this.b = null;
+        b();
+        Iterator it = this.f851a.iterator();
+        while (it.hasNext()) {
+            ((Consumer) it.next()).consume(null);
+        }
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeProvider
-    public final synchronized void registerChargeTypeListener(ChargeTypeChangeListener chargeTypeChangeListener) {
-        this.c.add(chargeTypeChangeListener);
-        chargeTypeChangeListener.onChargeTypeChanged(getChargeType());
+    public C0215e3(Context context, ICommonExecutor iCommonExecutor, int i) {
+        this.f851a = new ArrayList();
+        this.b = null;
+        this.c = context;
+        this.d = AbstractC0218e6.a(new I2(new C0190d3(this), iCommonExecutor));
+    }
+
+    public final Intent a() {
+        Intent intent;
+        IntentFilter intentFilter = new IntentFilter("android.intent.action.BATTERY_CHANGED");
+        C0244f6 c0244f6 = this.d;
+        Context context = this.c;
+        synchronized (c0244f6) {
+            try {
+                intent = context.registerReceiver(c0244f6.f869a, intentFilter);
+                try {
+                    c0244f6.b = true;
+                } catch (Throwable unused) {
+                }
+            } catch (Throwable unused2) {
+                intent = null;
+            }
+        }
+        return intent;
     }
 }

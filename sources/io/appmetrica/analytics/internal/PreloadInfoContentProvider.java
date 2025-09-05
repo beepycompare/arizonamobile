@@ -7,35 +7,35 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import io.appmetrica.analytics.impl.AbstractC0711xj;
-import io.appmetrica.analytics.impl.Ba;
-import io.appmetrica.analytics.impl.C0682wf;
-import io.appmetrica.analytics.impl.C0707xf;
-import io.appmetrica.analytics.impl.L3;
-import io.appmetrica.analytics.impl.M3;
-import io.appmetrica.analytics.impl.W5;
-import io.appmetrica.analytics.impl.X5;
+import io.appmetrica.analytics.impl.Af;
+import io.appmetrica.analytics.impl.Bf;
+import io.appmetrica.analytics.impl.Bj;
+import io.appmetrica.analytics.impl.C0115a6;
+import io.appmetrica.analytics.impl.Ea;
+import io.appmetrica.analytics.impl.O3;
+import io.appmetrica.analytics.impl.P3;
+import io.appmetrica.analytics.impl.Z5;
 import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 import java.util.concurrent.CountDownLatch;
 /* loaded from: classes4.dex */
 public class PreloadInfoContentProvider extends ContentProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f1191a = false;
+    private boolean f1196a = false;
     private final UriMatcher b = new UriMatcher(-1);
 
-    private void a(X5 x5, ContentValues contentValues) {
+    private void a(C0115a6 c0115a6, ContentValues contentValues) {
         Context context = getContext();
         Context applicationContext = context == null ? null : context.getApplicationContext();
         if (applicationContext != null) {
             try {
-                Object invoke = x5.f720a.invoke(contentValues);
+                Object invoke = c0115a6.f782a.invoke(contentValues);
                 if (invoke != null) {
-                    x5.c.b(applicationContext);
-                    if (((Boolean) x5.b.invoke(invoke)).booleanValue()) {
-                        AbstractC0711xj.a("Successfully saved " + x5.d, new Object[0]);
+                    c0115a6.c.b(applicationContext);
+                    if (((Boolean) c0115a6.b.invoke(invoke)).booleanValue()) {
+                        Bj.a("Successfully saved " + c0115a6.d, new Object[0]);
                     } else {
-                        AbstractC0711xj.a("Did not save " + x5.d + " because data is already present", new Object[0]);
+                        Bj.a("Did not save " + c0115a6.d + " because data is already present", new Object[0]);
                     }
                 }
             } catch (Throwable th) {
@@ -46,12 +46,12 @@ public class PreloadInfoContentProvider extends ContentProvider {
 
     @Override // android.content.ContentProvider
     public int delete(Uri uri, String str, String[] strArr) {
-        AbstractC0711xj.a("Deleting is not supported", new Object[0]);
+        Bj.a("Deleting is not supported", new Object[0]);
         return -1;
     }
 
     public synchronized void disable() {
-        this.f1191a = true;
+        this.f1196a = true;
     }
 
     @Override // android.content.ContentProvider
@@ -62,20 +62,20 @@ public class PreloadInfoContentProvider extends ContentProvider {
     @Override // android.content.ContentProvider
     public Uri insert(Uri uri, ContentValues contentValues) {
         synchronized (this) {
-            if (this.f1191a) {
+            if (this.f1196a) {
                 return null;
             }
             if (contentValues != null) {
                 int match = this.b.match(uri);
                 if (match == 1) {
-                    a(new X5(new C0682wf(), new C0707xf(), Ba.d, "preload info"), contentValues);
+                    a(new C0115a6(new Af(), new Bf(), Ea.d, "preload info"), contentValues);
                 } else if (match != 2) {
-                    AbstractC0711xj.a("Bad content provider uri.", new Object[0]);
+                    Bj.a("Bad content provider uri.", new Object[0]);
                 } else {
-                    a(new X5(new L3(), new M3(), Ba.d, "clids"), contentValues);
+                    a(new C0115a6(new O3(), new P3(), Ea.d, "clids"), contentValues);
                 }
             }
-            CountDownLatch countDownLatch = W5.f704a;
+            CountDownLatch countDownLatch = Z5.f765a;
             if (countDownLatch != null) {
                 countDownLatch.countDown();
             }
@@ -96,20 +96,20 @@ public class PreloadInfoContentProvider extends ContentProvider {
         String str2 = str + ".appmetrica.preloadinfo.retail";
         this.b.addURI(str2, "preloadinfo", 1);
         this.b.addURI(str2, "clids", 2);
-        W5.f704a = new CountDownLatch(1);
-        W5.b = this;
+        Z5.f765a = new CountDownLatch(1);
+        Z5.b = this;
         return true;
     }
 
     @Override // android.content.ContentProvider
     public Cursor query(Uri uri, String[] strArr, String str, String[] strArr2, String str2) {
-        AbstractC0711xj.a("Query is not supported", new Object[0]);
+        Bj.a("Query is not supported", new Object[0]);
         return null;
     }
 
     @Override // android.content.ContentProvider
     public int update(Uri uri, ContentValues contentValues, String str, String[] strArr) {
-        AbstractC0711xj.a("Updating is not supported", new Object[0]);
+        Bj.a("Updating is not supported", new Object[0]);
         return -1;
     }
 }

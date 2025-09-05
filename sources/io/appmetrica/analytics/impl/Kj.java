@@ -1,8 +1,7 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Kj implements InterfaceC0454nb {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0454nb
-    public final void a(InterfaceC0479ob interfaceC0479ob) {
-        interfaceC0479ob.resumeSession();
-    }
+public abstract class Kj {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final C0413lk f538a = new C0413lk();
 }

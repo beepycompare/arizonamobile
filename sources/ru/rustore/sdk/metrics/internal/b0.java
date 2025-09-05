@@ -3,18 +3,18 @@ package ru.rustore.sdk.metrics.internal;
 import android.content.SharedPreferences;
 import java.util.UUID;
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class b0 {
     public static final Object c = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Y f1440a;
+    public final Y f1445a;
     public final c0 b;
 
     public b0(Y sharedPreferenceProvider, c0 uuidFactory) {
         Intrinsics.checkNotNullParameter(sharedPreferenceProvider, "sharedPreferenceProvider");
         Intrinsics.checkNotNullParameter(uuidFactory, "uuidFactory");
-        this.f1440a = sharedPreferenceProvider;
+        this.f1445a = sharedPreferenceProvider;
         this.b = uuidFactory;
     }
 
@@ -22,7 +22,7 @@ public final class b0 {
         this.b.getClass();
         String value = UUID.randomUUID().toString();
         Intrinsics.checkNotNullExpressionValue(value, "randomUUID().toString()");
-        SharedPreferences sharedPreferences = this.f1440a.f1436a;
+        SharedPreferences sharedPreferences = this.f1445a.f1441a;
         Intrinsics.checkNotNullExpressionValue(sharedPreferences, "sharedPreferences");
         SharedPreferences.Editor edit = sharedPreferences.edit();
         edit.putString("USER_ID_KEY", value);

@@ -1,31 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import org.json.JSONObject;
+import android.os.HandlerThread;
+import io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread;
 /* loaded from: classes4.dex */
-public final class Cb extends JSONObject {
-    public Cb() {
-    }
+public final class Cb extends HandlerThread implements IInterruptionSafeThread {
 
-    public final Long a(String str) {
-        try {
-            return Long.valueOf(getLong(str));
-        } catch (Throwable unused) {
-            return null;
-        }
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public volatile boolean f384a;
 
     public Cb(String str) {
         super(str);
+        this.f384a = true;
     }
 
-    public final String b(String str) {
-        if (has(str)) {
-            try {
-                return getString(str);
-            } catch (Throwable unused) {
-                return "";
-            }
-        }
-        return "";
+    @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
+    public final synchronized boolean isRunning() {
+        return this.f384a;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
+    public final synchronized void stopRunning() {
+        this.f384a = false;
+        interrupt();
     }
 }

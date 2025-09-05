@@ -8,7 +8,7 @@ import androidx.room.util.DBUtil;
 import androidx.room.util.SQLiteStatementUtil;
 import androidx.sqlite.SQLiteConnection;
 import androidx.sqlite.SQLiteStatement;
-import io.appmetrica.analytics.impl.L2;
+import io.appmetrica.analytics.impl.O2;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -44,101 +44,101 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             public void bind(SQLiteStatement statement, InventoryItemEntity entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo8149bindLong(1, entity.getSlot());
+                statement.mo8151bindLong(1, entity.getSlot());
                 Integer item = entity.getItem();
                 if (item == null) {
-                    statement.mo8150bindNull(2);
+                    statement.mo8152bindNull(2);
                 } else {
-                    statement.mo8149bindLong(2, item.intValue());
+                    statement.mo8151bindLong(2, item.intValue());
                 }
-                statement.mo8149bindLong(3, entity.getId());
+                statement.mo8151bindLong(3, entity.getId());
                 String text = entity.getText();
                 if (text == null) {
-                    statement.mo8150bindNull(4);
+                    statement.mo8152bindNull(4);
                 } else {
-                    statement.mo8151bindText(4, text);
+                    statement.mo8153bindText(4, text);
                 }
                 Integer item_type = entity.getItem_type();
                 if (item_type == null) {
-                    statement.mo8150bindNull(5);
+                    statement.mo8152bindNull(5);
                 } else {
-                    statement.mo8149bindLong(5, item_type.intValue());
+                    statement.mo8151bindLong(5, item_type.intValue());
                 }
                 Integer amount = entity.getAmount();
                 if (amount == null) {
-                    statement.mo8150bindNull(6);
+                    statement.mo8152bindNull(6);
                 } else {
-                    statement.mo8149bindLong(6, amount.intValue());
+                    statement.mo8151bindLong(6, amount.intValue());
                 }
                 Integer background = entity.getBackground();
                 if (background == null) {
-                    statement.mo8150bindNull(7);
+                    statement.mo8152bindNull(7);
                 } else {
-                    statement.mo8149bindLong(7, background.intValue());
+                    statement.mo8151bindLong(7, background.intValue());
                 }
                 Integer color = entity.getColor();
                 if (color == null) {
-                    statement.mo8150bindNull(8);
+                    statement.mo8152bindNull(8);
                 } else {
-                    statement.mo8149bindLong(8, color.intValue());
+                    statement.mo8151bindLong(8, color.intValue());
                 }
                 Integer bits = entity.getBits();
                 if (bits == null) {
-                    statement.mo8150bindNull(9);
+                    statement.mo8152bindNull(9);
                 } else {
-                    statement.mo8149bindLong(9, bits.intValue());
+                    statement.mo8151bindLong(9, bits.intValue());
                 }
                 Integer available = entity.getAvailable();
                 if (available == null) {
-                    statement.mo8150bindNull(10);
+                    statement.mo8152bindNull(10);
                 } else {
-                    statement.mo8149bindLong(10, available.intValue());
+                    statement.mo8151bindLong(10, available.intValue());
                 }
                 Integer enchant = entity.getEnchant();
                 if (enchant == null) {
-                    statement.mo8150bindNull(11);
+                    statement.mo8152bindNull(11);
                 } else {
-                    statement.mo8149bindLong(11, enchant.intValue());
+                    statement.mo8151bindLong(11, enchant.intValue());
                 }
                 Integer breaks = entity.getBreaks();
                 if (breaks == null) {
-                    statement.mo8150bindNull(12);
+                    statement.mo8152bindNull(12);
                 } else {
-                    statement.mo8149bindLong(12, breaks.intValue());
+                    statement.mo8151bindLong(12, breaks.intValue());
                 }
                 Integer isActive = entity.isActive();
                 if (isActive == null) {
-                    statement.mo8150bindNull(13);
+                    statement.mo8152bindNull(13);
                 } else {
-                    statement.mo8149bindLong(13, isActive.intValue());
+                    statement.mo8151bindLong(13, isActive.intValue());
                 }
                 Integer itemStrength = entity.getItemStrength();
                 if (itemStrength == null) {
-                    statement.mo8150bindNull(14);
+                    statement.mo8152bindNull(14);
                 } else {
-                    statement.mo8149bindLong(14, itemStrength.intValue());
+                    statement.mo8151bindLong(14, itemStrength.intValue());
                 }
                 Integer blackout = entity.getBlackout();
                 if (blackout == null) {
-                    statement.mo8150bindNull(15);
+                    statement.mo8152bindNull(15);
                 } else {
-                    statement.mo8149bindLong(15, blackout.intValue());
+                    statement.mo8151bindLong(15, blackout.intValue());
                 }
                 Long time = entity.getTime();
                 if (time == null) {
-                    statement.mo8150bindNull(16);
+                    statement.mo8152bindNull(16);
                 } else {
-                    statement.mo8149bindLong(16, time.longValue());
+                    statement.mo8151bindLong(16, time.longValue());
                 }
                 Integer acsSlot = entity.getAcsSlot();
                 if (acsSlot == null) {
-                    statement.mo8150bindNull(17);
+                    statement.mo8152bindNull(17);
                 } else {
-                    statement.mo8149bindLong(17, acsSlot.intValue());
+                    statement.mo8151bindLong(17, acsSlot.intValue());
                 }
-                statement.mo8149bindLong(18, entity.getInventoryType());
-                statement.mo8149bindLong(19, entity.isColored() ? 1L : 0L);
-                statement.mo8149bindLong(20, entity.isLocked() ? 1L : 0L);
+                statement.mo8151bindLong(18, entity.getInventoryType());
+                statement.mo8151bindLong(19, entity.isColored() ? 1L : 0L);
+                statement.mo8151bindLong(20, entity.isLocked() ? 1L : 0L);
             }
         };
         this.__updateAdapterOfInventoryItemEntity = new EntityDeleteOrUpdateAdapter<InventoryItemEntity>() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl.2
@@ -152,102 +152,102 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             public void bind(SQLiteStatement statement, InventoryItemEntity entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo8149bindLong(1, entity.getSlot());
+                statement.mo8151bindLong(1, entity.getSlot());
                 Integer item = entity.getItem();
                 if (item == null) {
-                    statement.mo8150bindNull(2);
+                    statement.mo8152bindNull(2);
                 } else {
-                    statement.mo8149bindLong(2, item.intValue());
+                    statement.mo8151bindLong(2, item.intValue());
                 }
-                statement.mo8149bindLong(3, entity.getId());
+                statement.mo8151bindLong(3, entity.getId());
                 String text = entity.getText();
                 if (text == null) {
-                    statement.mo8150bindNull(4);
+                    statement.mo8152bindNull(4);
                 } else {
-                    statement.mo8151bindText(4, text);
+                    statement.mo8153bindText(4, text);
                 }
                 Integer item_type = entity.getItem_type();
                 if (item_type == null) {
-                    statement.mo8150bindNull(5);
+                    statement.mo8152bindNull(5);
                 } else {
-                    statement.mo8149bindLong(5, item_type.intValue());
+                    statement.mo8151bindLong(5, item_type.intValue());
                 }
                 Integer amount = entity.getAmount();
                 if (amount == null) {
-                    statement.mo8150bindNull(6);
+                    statement.mo8152bindNull(6);
                 } else {
-                    statement.mo8149bindLong(6, amount.intValue());
+                    statement.mo8151bindLong(6, amount.intValue());
                 }
                 Integer background = entity.getBackground();
                 if (background == null) {
-                    statement.mo8150bindNull(7);
+                    statement.mo8152bindNull(7);
                 } else {
-                    statement.mo8149bindLong(7, background.intValue());
+                    statement.mo8151bindLong(7, background.intValue());
                 }
                 Integer color = entity.getColor();
                 if (color == null) {
-                    statement.mo8150bindNull(8);
+                    statement.mo8152bindNull(8);
                 } else {
-                    statement.mo8149bindLong(8, color.intValue());
+                    statement.mo8151bindLong(8, color.intValue());
                 }
                 Integer bits = entity.getBits();
                 if (bits == null) {
-                    statement.mo8150bindNull(9);
+                    statement.mo8152bindNull(9);
                 } else {
-                    statement.mo8149bindLong(9, bits.intValue());
+                    statement.mo8151bindLong(9, bits.intValue());
                 }
                 Integer available = entity.getAvailable();
                 if (available == null) {
-                    statement.mo8150bindNull(10);
+                    statement.mo8152bindNull(10);
                 } else {
-                    statement.mo8149bindLong(10, available.intValue());
+                    statement.mo8151bindLong(10, available.intValue());
                 }
                 Integer enchant = entity.getEnchant();
                 if (enchant == null) {
-                    statement.mo8150bindNull(11);
+                    statement.mo8152bindNull(11);
                 } else {
-                    statement.mo8149bindLong(11, enchant.intValue());
+                    statement.mo8151bindLong(11, enchant.intValue());
                 }
                 Integer breaks = entity.getBreaks();
                 if (breaks == null) {
-                    statement.mo8150bindNull(12);
+                    statement.mo8152bindNull(12);
                 } else {
-                    statement.mo8149bindLong(12, breaks.intValue());
+                    statement.mo8151bindLong(12, breaks.intValue());
                 }
                 Integer isActive = entity.isActive();
                 if (isActive == null) {
-                    statement.mo8150bindNull(13);
+                    statement.mo8152bindNull(13);
                 } else {
-                    statement.mo8149bindLong(13, isActive.intValue());
+                    statement.mo8151bindLong(13, isActive.intValue());
                 }
                 Integer itemStrength = entity.getItemStrength();
                 if (itemStrength == null) {
-                    statement.mo8150bindNull(14);
+                    statement.mo8152bindNull(14);
                 } else {
-                    statement.mo8149bindLong(14, itemStrength.intValue());
+                    statement.mo8151bindLong(14, itemStrength.intValue());
                 }
                 Integer blackout = entity.getBlackout();
                 if (blackout == null) {
-                    statement.mo8150bindNull(15);
+                    statement.mo8152bindNull(15);
                 } else {
-                    statement.mo8149bindLong(15, blackout.intValue());
+                    statement.mo8151bindLong(15, blackout.intValue());
                 }
                 Long time = entity.getTime();
                 if (time == null) {
-                    statement.mo8150bindNull(16);
+                    statement.mo8152bindNull(16);
                 } else {
-                    statement.mo8149bindLong(16, time.longValue());
+                    statement.mo8151bindLong(16, time.longValue());
                 }
                 Integer acsSlot = entity.getAcsSlot();
                 if (acsSlot == null) {
-                    statement.mo8150bindNull(17);
+                    statement.mo8152bindNull(17);
                 } else {
-                    statement.mo8149bindLong(17, acsSlot.intValue());
+                    statement.mo8151bindLong(17, acsSlot.intValue());
                 }
-                statement.mo8149bindLong(18, entity.getInventoryType());
-                statement.mo8149bindLong(19, entity.isColored() ? 1L : 0L);
-                statement.mo8149bindLong(20, entity.isLocked() ? 1L : 0L);
-                statement.mo8149bindLong(21, entity.getSlot());
+                statement.mo8151bindLong(18, entity.getInventoryType());
+                statement.mo8151bindLong(19, entity.isColored() ? 1L : 0L);
+                statement.mo8151bindLong(20, entity.isLocked() ? 1L : 0L);
+                statement.mo8151bindLong(21, entity.getSlot());
             }
         };
     }
@@ -326,7 +326,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "text");
             int columnIndexOrThrow5 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item_type");
             int columnIndexOrThrow6 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "amount");
-            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, L2.g);
+            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, O2.g);
             int columnIndexOrThrow8 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "color");
             int columnIndexOrThrow9 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "bits");
             int columnIndexOrThrow10 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "available");
@@ -457,7 +457,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "text");
             int columnIndexOrThrow5 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item_type");
             int columnIndexOrThrow6 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "amount");
-            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, L2.g);
+            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, O2.g);
             int columnIndexOrThrow8 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "color");
             int columnIndexOrThrow9 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "bits");
             int columnIndexOrThrow10 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "available");
@@ -573,14 +573,14 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            prepare.mo8149bindLong(1, i);
+            prepare.mo8151bindLong(1, i);
             int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "slot");
             int columnIndexOrThrow2 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item");
             int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "id");
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "text");
             int columnIndexOrThrow5 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item_type");
             int columnIndexOrThrow6 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "amount");
-            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, L2.g);
+            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, O2.g);
             int columnIndexOrThrow8 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "color");
             int columnIndexOrThrow9 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "bits");
             int columnIndexOrThrow10 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "available");
@@ -628,7 +628,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            prepare.mo8149bindLong(1, i);
+            prepare.mo8151bindLong(1, i);
             prepare.step();
             prepare.close();
             return Unit.INSTANCE;

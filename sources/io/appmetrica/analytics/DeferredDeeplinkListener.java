@@ -11,14 +11,14 @@ public interface DeferredDeeplinkListener {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f190a;
+        private final String f191a;
 
         Error(String str) {
-            this.f190a = str;
+            this.f191a = str;
         }
 
         public String getDescription() {
-            return this.f190a;
+            return this.f191a;
         }
     }
 

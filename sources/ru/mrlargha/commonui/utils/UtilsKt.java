@@ -79,15 +79,14 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
-import ru.mrlargha.commonui.elements.employmentNote.domain.FractionTasks;
 import ru.mrlargha.commonui.elements.hud.presentation.models.ServerInfoItem;
 import ru.mrlargha.commonui.elements.inventory.domain.ChangeFromSlot;
 import ru.mrlargha.commonui.elements.inventory.domain.ChangeToSlot;
 import ru.mrlargha.commonui.elements.inventory.domain.InventorySendRequest;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 /* compiled from: Utils.kt */
-@Metadata(d1 = {"\u0000¬\u0001\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\u001a\u0012\u0010\u0011\u001a\u00020\u0012*\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015\u001a\n\u0010\u0016\u001a\u00020\u0017*\u00020\u0018\u001a\n\u0010\u0019\u001a\u00020\u0015*\u00020\u0018\u001a\"\u0010\u001a\u001a\u0004\u0018\u00010\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u00152\b\b\u0002\u0010\u001f\u001a\u00020\u001d\u001a\u0018\u0010\u001a\u001a\u0004\u0018\u00010\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001d\u001a\u0012\u0010!\u001a\u0004\u0018\u00010\u001b2\u0006\u0010\"\u001a\u00020#H\u0002\u001a \u0010$\u001a\u00020\u00152\u0006\u0010%\u001a\u00020\u00152\u0006\u0010&\u001a\u00020\u00152\u0006\u0010'\u001a\u00020\u0015H\u0002\u001aM\u0010(\u001a\u0002H)\"\u0004\b\u0000\u0010)*\u0002H)2\u0017\u0010*\u001a\u0013\u0012\u0004\u0012\u0002H)\u0012\u0004\u0012\u00020,0+¢\u0006\u0002\b-2\u0017\u0010.\u001a\u0013\u0012\u0004\u0012\u0002H)\u0012\u0004\u0012\u00020\u00120+¢\u0006\u0002\b-H\u0086\bø\u0001\u0000¢\u0006\u0002\u0010/\u001a\u0016\u00100\u001a\u00020\u001b2\u0006\u00101\u001a\u0002022\u0006\u00103\u001a\u00020\u0015\u001a\u0018\u00104\u001a\u00020,2\u0006\u00105\u001a\u0002062\u0006\u00107\u001a\u000208H\u0007\u001a\u000e\u00109\u001a\u00020\u001d2\u0006\u0010:\u001a\u00020\u001d\u001a\u000e\u0010;\u001a\u00020\u00152\u0006\u0010<\u001a\u00020\u0015\u001a\u0018\u0010=\u001a\u0004\u0018\u00010\u001d2\u0006\u00101\u001a\u0002022\u0006\u0010>\u001a\u00020\u001d\u001a\u000e\u0010?\u001a\u00020\u00152\u0006\u0010@\u001a\u00020\u0015\u001a\u0014\u0010A\u001a\b\u0012\u0004\u0012\u00020\u001d0\u00012\u0006\u0010B\u001a\u00020\u0018\u001a\u001e\u0010C\u001a\u00020\u00122\u0006\u00107\u001a\u00020\u00132\u0006\u0010D\u001a\u00020\u00152\u0006\u0010B\u001a\u00020\u0018\u001a\u001e\u0010C\u001a\u00020\u00122\u0006\u00107\u001a\u00020E2\u0006\u0010D\u001a\u00020\u00152\u0006\u0010B\u001a\u00020\u0018\u001a\u000e\u0010F\u001a\u00020\u001d2\u0006\u0010G\u001a\u00020\u001d\u001a\u0016\u0010H\u001a\u00020\u00122\u0006\u0010I\u001a\u00020J2\u0006\u0010K\u001a\u00020\u001b\u001a\u0016\u0010L\u001a\u00020\u00122\u0006\u0010I\u001a\u00020J2\u0006\u00101\u001a\u000202\u001a\u0016\u0010M\u001a\u00020\u00122\u0006\u00101\u001a\u0002022\u0006\u0010N\u001a\u00020,\u001a\"\u0010O\u001a\u00020\u00122\u0006\u00101\u001a\u0002022\u0006\u0010P\u001a\u00020\u00152\n\b\u0002\u0010Q\u001a\u0004\u0018\u00010R\u001a&\u0010S\u001a\u00020\u00122\u0006\u0010T\u001a\u00020U2\u0006\u0010V\u001a\u00020\u00152\u0006\u0010W\u001a\u0002062\u0006\u0010X\u001a\u000206\u001a\u001a\u0010Y\u001a\u0004\u0018\u0001062\b\u0010Z\u001a\u0004\u0018\u0001062\u0006\u0010[\u001a\u000206\u001a\u000e\u0010\\\u001a\u00020\u001d2\u0006\u0010]\u001a\u00020\u001d\u001a\u000e\u0010^\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u0015\u001a\u000e\u0010_\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u0015\u001a\u001e\u0010e\u001a\u00020\u00122\u0006\u00101\u001a\u0002022\u0006\u0010f\u001a\u00020\u001d2\u0006\u0010g\u001a\u00020\u0015\u001a\u000e\u0010h\u001a\u00020\u00122\u0006\u0010i\u001a\u00020\u001d\u001a\u0018\u0010j\u001a\u00020\u00122\u0006\u00101\u001a\u0002022\u0006\u0010f\u001a\u00020\u001dH\u0002\u001a\u0015\u0010k\u001a\u00020,*\u00020\u00152\u0006\u0010l\u001a\u00020\u0015H\u0082\u0004\u001a\u0006\u0010m\u001a\u00020\u001d\u001a\u0012\u0010n\u001a\u00020\u001d2\b\u0010o\u001a\u0004\u0018\u00010\u001dH\u0002\u001a\u0016\u0010p\u001a\u00020\u00122\u0006\u00101\u001a\u0002022\u0006\u0010f\u001a\u00020\u001d\u001a\u0016\u0010q\u001a\u00020\u00122\u0006\u00101\u001a\u0002022\u0006\u0010r\u001a\u00020\u001d\u001a\u0016\u0010s\u001a\u00020\u00122\u0006\u00101\u001a\u0002022\u0006\u0010r\u001a\u00020\u001d\u001a\u0016\u0010t\u001a\u00020\u00122\u0006\u00101\u001a\u0002022\u0006\u0010u\u001a\u00020\u0015\u001a\n\u0010v\u001a\u00020w*\u000202\u001a\u000e\u0010x\u001a\u00020,2\u0006\u00101\u001a\u000202\u001a\u000e\u0010y\u001a\u00020z2\u0006\u00101\u001a\u000202\u001a\u000e\u0010{\u001a\u00020\u001d2\u0006\u0010|\u001a\u00020}\" \u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0004\b\u0005\u0010\u0006\" \u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\b0\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\u0004\"\u0004\b\n\u0010\u0006\"\u001c\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010\"\u000e\u0010 \u001a\u00020\u0015X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010`\u001a\u00020\u0015X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010a\u001a\u00020\u0015X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010b\u001a\u00020\u0015X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010c\u001a\u00020\u0015X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010d\u001a\u00020\u0015X\u0086T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006~"}, d2 = {"fractionTasks", "", "Lru/mrlargha/commonui/elements/employmentNote/domain/FractionTasks;", "getFractionTasks", "()Ljava/util/List;", "setFractionTasks", "(Ljava/util/List;)V", "itemsName", "Lru/mrlargha/commonui/utils/ItemsInfo;", "getItemsName", "setItemsName", "zipFileIcons", "Ljava/util/zip/ZipFile;", "getZipFileIcons", "()Ljava/util/zip/ZipFile;", "setZipFileIcons", "(Ljava/util/zip/ZipFile;)V", "setTextTimeFormat", "", "Landroid/widget/TextView;", "time", "", "getAnimationScale", "", "Landroid/app/Activity;", "getKeyboardHeightOrNull", "getIconFromArchive", "Landroid/graphics/Bitmap;", "folderName", "", "item", "gearsIconName", "MAX_DIM", "getBitmapFromEntry", "entry", "Ljava/util/zip/ZipEntry;", "calculateInSampleSizeToMax", "srcW", "srcH", "maxDim", "applyIf", ExifInterface.GPS_DIRECTION_TRUE, "predicate", "Lkotlin/Function1;", "", "Lkotlin/ExtensionFunctionType;", "block", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "getBitmapFromVectorDrawable", "context", "Landroid/content/Context;", "drawableId", "setDragClick", "itemVal", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "view", "Landroid/view/View;", "updateJsonString", "jsonString", "getColorTint", "color", "getJsonFromAssets", "fileName", "nextMultipleOfFive", "x", "getItemsDescription", "targetActivity", "setDrawableEnd", "viewInt", "Landroid/widget/EditText;", "deleteSvgWord", "svg", "setImage", "imageView", "Landroid/widget/ImageView;", "bitmap", "setNotLoadedImage", "checkItemsName", "isArizona", "getItemsJson", "type", "dir", "Ljava/io/File;", "sendData", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "backendID", "fromItem", "toItem", "updateInventoryItem", "originalItem", "newItem", "convertPngToWebp", "png", "defineArzMenuText", "defineRodMenuText", "DEFAULT_ANALYTICS", "TRACK_US", "APP_METRIKA", "APP_ADJUST", "APP_METRIKA_COMMERCE", "sendDataAnalytics", NotificationCompat.CATEGORY_EVENT, "analyticsType", "sendPurchaseToAppMetrika", "data", "handleAdjustAnalytics", "hasFlag", "flag", "getDeviceName", "capitalize", CmcdData.STREAMING_FORMAT_SS, "sendAnalytics", "sendTrackUsRequest", "action", "sendAppMetricaAnalytics", "sendAdjustAnalytics", "eventId", "getBaseShredPref", "Landroid/content/SharedPreferences;", "getArizonaType", "getServerId", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "formatTime", "millisUntilFinished", "", "CommonUI_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes6.dex */
+@Metadata(d1 = {"\u0000¤\u0001\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\u001a\u0012\u0010\r\u001a\u00020\u000e*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011\u001a\n\u0010\u0012\u001a\u00020\u0013*\u00020\u0014\u001a\n\u0010\u0015\u001a\u00020\u0011*\u00020\u0014\u001a\"\u0010\u0016\u001a\u0004\u0018\u00010\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u00112\b\b\u0002\u0010\u001b\u001a\u00020\u0019\u001a\u0018\u0010\u0016\u001a\u0004\u0018\u00010\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0019\u001a\u0012\u0010\u001d\u001a\u0004\u0018\u00010\u00172\u0006\u0010\u001e\u001a\u00020\u001fH\u0002\u001a \u0010 \u001a\u00020\u00112\u0006\u0010!\u001a\u00020\u00112\u0006\u0010\"\u001a\u00020\u00112\u0006\u0010#\u001a\u00020\u0011H\u0002\u001aM\u0010$\u001a\u0002H%\"\u0004\b\u0000\u0010%*\u0002H%2\u0017\u0010&\u001a\u0013\u0012\u0004\u0012\u0002H%\u0012\u0004\u0012\u00020(0'¢\u0006\u0002\b)2\u0017\u0010*\u001a\u0013\u0012\u0004\u0012\u0002H%\u0012\u0004\u0012\u00020\u000e0'¢\u0006\u0002\b)H\u0086\bø\u0001\u0000¢\u0006\u0002\u0010+\u001a\u0016\u0010,\u001a\u00020\u00172\u0006\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u00020\u0011\u001a\u0018\u00100\u001a\u00020(2\u0006\u00101\u001a\u0002022\u0006\u00103\u001a\u000204H\u0007\u001a\u000e\u00105\u001a\u00020\u00192\u0006\u00106\u001a\u00020\u0019\u001a\u000e\u00107\u001a\u00020\u00112\u0006\u00108\u001a\u00020\u0011\u001a\u0018\u00109\u001a\u0004\u0018\u00010\u00192\u0006\u0010-\u001a\u00020.2\u0006\u0010:\u001a\u00020\u0019\u001a\u000e\u0010;\u001a\u00020\u00112\u0006\u0010<\u001a\u00020\u0011\u001a\u0014\u0010=\u001a\b\u0012\u0004\u0012\u00020\u00190\u00012\u0006\u0010>\u001a\u00020\u0014\u001a\u001e\u0010?\u001a\u00020\u000e2\u0006\u00103\u001a\u00020\u000f2\u0006\u0010@\u001a\u00020\u00112\u0006\u0010>\u001a\u00020\u0014\u001a\u001e\u0010?\u001a\u00020\u000e2\u0006\u00103\u001a\u00020A2\u0006\u0010@\u001a\u00020\u00112\u0006\u0010>\u001a\u00020\u0014\u001a\u000e\u0010B\u001a\u00020\u00192\u0006\u0010C\u001a\u00020\u0019\u001a\u0016\u0010D\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020\u0017\u001a\u0016\u0010H\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020F2\u0006\u0010-\u001a\u00020.\u001a\u0016\u0010I\u001a\u00020\u000e2\u0006\u0010-\u001a\u00020.2\u0006\u0010J\u001a\u00020(\u001a\"\u0010K\u001a\u00020\u000e2\u0006\u0010-\u001a\u00020.2\u0006\u0010L\u001a\u00020\u00112\n\b\u0002\u0010M\u001a\u0004\u0018\u00010N\u001a&\u0010O\u001a\u00020\u000e2\u0006\u0010P\u001a\u00020Q2\u0006\u0010R\u001a\u00020\u00112\u0006\u0010S\u001a\u0002022\u0006\u0010T\u001a\u000202\u001a\u001a\u0010U\u001a\u0004\u0018\u0001022\b\u0010V\u001a\u0004\u0018\u0001022\u0006\u0010W\u001a\u000202\u001a\u000e\u0010X\u001a\u00020\u00192\u0006\u0010Y\u001a\u00020\u0019\u001a\u000e\u0010Z\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011\u001a\u000e\u0010[\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011\u001a\u001e\u0010a\u001a\u00020\u000e2\u0006\u0010-\u001a\u00020.2\u0006\u0010b\u001a\u00020\u00192\u0006\u0010c\u001a\u00020\u0011\u001a\u000e\u0010d\u001a\u00020\u000e2\u0006\u0010e\u001a\u00020\u0019\u001a\u0018\u0010f\u001a\u00020\u000e2\u0006\u0010-\u001a\u00020.2\u0006\u0010b\u001a\u00020\u0019H\u0002\u001a\u0015\u0010g\u001a\u00020(*\u00020\u00112\u0006\u0010h\u001a\u00020\u0011H\u0082\u0004\u001a\u0006\u0010i\u001a\u00020\u0019\u001a\u0012\u0010j\u001a\u00020\u00192\b\u0010k\u001a\u0004\u0018\u00010\u0019H\u0002\u001a\u0016\u0010l\u001a\u00020\u000e2\u0006\u0010-\u001a\u00020.2\u0006\u0010b\u001a\u00020\u0019\u001a\u0016\u0010m\u001a\u00020\u000e2\u0006\u0010-\u001a\u00020.2\u0006\u0010n\u001a\u00020\u0019\u001a\u0016\u0010o\u001a\u00020\u000e2\u0006\u0010-\u001a\u00020.2\u0006\u0010n\u001a\u00020\u0019\u001a\u0016\u0010p\u001a\u00020\u000e2\u0006\u0010-\u001a\u00020.2\u0006\u0010q\u001a\u00020\u0011\u001a\n\u0010r\u001a\u00020s*\u00020.\u001a\u000e\u0010t\u001a\u00020(2\u0006\u0010-\u001a\u00020.\u001a\u000e\u0010u\u001a\u00020v2\u0006\u0010-\u001a\u00020.\u001a\u000e\u0010w\u001a\u00020\u00192\u0006\u0010x\u001a\u00020y\" \u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0004\b\u0005\u0010\u0006\"\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\f\"\u000e\u0010\u001c\u001a\u00020\u0011X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\\\u001a\u00020\u0011X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010]\u001a\u00020\u0011X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010^\u001a\u00020\u0011X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010_\u001a\u00020\u0011X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010`\u001a\u00020\u0011X\u0086T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006z"}, d2 = {"itemsName", "", "Lru/mrlargha/commonui/utils/ItemsInfo;", "getItemsName", "()Ljava/util/List;", "setItemsName", "(Ljava/util/List;)V", "zipFileIcons", "Ljava/util/zip/ZipFile;", "getZipFileIcons", "()Ljava/util/zip/ZipFile;", "setZipFileIcons", "(Ljava/util/zip/ZipFile;)V", "setTextTimeFormat", "", "Landroid/widget/TextView;", "time", "", "getAnimationScale", "", "Landroid/app/Activity;", "getKeyboardHeightOrNull", "getIconFromArchive", "Landroid/graphics/Bitmap;", "folderName", "", "item", "gearsIconName", "MAX_DIM", "getBitmapFromEntry", "entry", "Ljava/util/zip/ZipEntry;", "calculateInSampleSizeToMax", "srcW", "srcH", "maxDim", "applyIf", ExifInterface.GPS_DIRECTION_TRUE, "predicate", "Lkotlin/Function1;", "", "Lkotlin/ExtensionFunctionType;", "block", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "getBitmapFromVectorDrawable", "context", "Landroid/content/Context;", "drawableId", "setDragClick", "itemVal", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "view", "Landroid/view/View;", "updateJsonString", "jsonString", "getColorTint", "color", "getJsonFromAssets", "fileName", "nextMultipleOfFive", "x", "getItemsDescription", "targetActivity", "setDrawableEnd", "viewInt", "Landroid/widget/EditText;", "deleteSvgWord", "svg", "setImage", "imageView", "Landroid/widget/ImageView;", "bitmap", "setNotLoadedImage", "checkItemsName", "isArizona", "getItemsJson", "type", "dir", "Ljava/io/File;", "sendData", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "backendID", "fromItem", "toItem", "updateInventoryItem", "originalItem", "newItem", "convertPngToWebp", "png", "defineArzMenuText", "defineRodMenuText", "DEFAULT_ANALYTICS", "TRACK_US", "APP_METRIKA", "APP_ADJUST", "APP_METRIKA_COMMERCE", "sendDataAnalytics", NotificationCompat.CATEGORY_EVENT, "analyticsType", "sendPurchaseToAppMetrika", "data", "handleAdjustAnalytics", "hasFlag", "flag", "getDeviceName", "capitalize", CmcdData.STREAMING_FORMAT_SS, "sendAnalytics", "sendTrackUsRequest", "action", "sendAppMetricaAnalytics", "sendAdjustAnalytics", "eventId", "getBaseShredPref", "Landroid/content/SharedPreferences;", "getArizonaType", "getServerId", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "formatTime", "millisUntilFinished", "", "CommonUI_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes3.dex */
 public final class UtilsKt {
     public static final int APP_ADJUST = 8;
     public static final int APP_METRIKA = 4;
@@ -95,21 +94,11 @@ public final class UtilsKt {
     public static final int DEFAULT_ANALYTICS = 1;
     private static final int MAX_DIM = 1024;
     public static final int TRACK_US = 2;
-    private static List<FractionTasks> fractionTasks = CollectionsKt.emptyList();
     private static List<ItemsInfo> itemsName = CollectionsKt.emptyList();
     private static ZipFile zipFileIcons;
 
     private static final boolean hasFlag(int i, int i2) {
         return (i & i2) != 0;
-    }
-
-    public static final List<FractionTasks> getFractionTasks() {
-        return fractionTasks;
-    }
-
-    public static final void setFractionTasks(List<FractionTasks> list) {
-        Intrinsics.checkNotNullParameter(list, "<set-?>");
-        fractionTasks = list;
     }
 
     public static final List<ItemsInfo> getItemsName() {
@@ -216,73 +205,65 @@ public final class UtilsKt {
         return getBitmapFromEntry(entry);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x00f3  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x00f6  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     private static final Bitmap getBitmapFromEntry(ZipEntry zipEntry) {
-        Bitmap bitmap;
-        int i;
-        int i2;
         try {
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inJustDecodeBounds = true;
             options.inScaled = false;
             ZipFile zipFile = zipFileIcons;
             InputStream inputStream = zipFile != null ? zipFile.getInputStream(zipEntry) : null;
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream, 32768);
-            BitmapFactory.decodeStream(bufferedInputStream, null, options);
-            CloseableKt.closeFinally(bufferedInputStream, null);
-            CloseableKt.closeFinally(inputStream, null);
-            i = options.outWidth;
-            i2 = options.outHeight;
+            try {
+                BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream, 32768);
+                BitmapFactory.decodeStream(bufferedInputStream, null, options);
+                CloseableKt.closeFinally(bufferedInputStream, null);
+                CloseableKt.closeFinally(inputStream, null);
+                int i = options.outWidth;
+                int i2 = options.outHeight;
+                if (i > 0 && i2 > 0) {
+                    int calculateInSampleSizeToMax = calculateInSampleSizeToMax(i, i2, 1024);
+                    BitmapFactory.Options options2 = new BitmapFactory.Options();
+                    options2.inJustDecodeBounds = false;
+                    options2.inSampleSize = calculateInSampleSizeToMax;
+                    options2.inPreferredConfig = Bitmap.Config.ARGB_8888;
+                    options2.inDither = true;
+                    options2.inScaled = false;
+                    ZipFile zipFile2 = zipFileIcons;
+                    inputStream = zipFile2 != null ? zipFile2.getInputStream(zipEntry) : null;
+                    try {
+                        BufferedInputStream bufferedInputStream2 = new BufferedInputStream(inputStream, 32768);
+                        Bitmap decodeStream = BitmapFactory.decodeStream(bufferedInputStream2, null, options2);
+                        CloseableKt.closeFinally(bufferedInputStream2, null);
+                        CloseableKt.closeFinally(inputStream, null);
+                        if (decodeStream == null) {
+                            return null;
+                        }
+                        if (decodeStream.getWidth() <= 1024 && decodeStream.getHeight() <= 1024) {
+                            return decodeStream;
+                        }
+                        float min = Math.min(1024.0f / decodeStream.getWidth(), 1024.0f / decodeStream.getHeight());
+                        Bitmap createScaledBitmap = Bitmap.createScaledBitmap(decodeStream, RangesKt.coerceAtLeast((int) (decodeStream.getWidth() * min), 1), RangesKt.coerceAtLeast((int) (decodeStream.getHeight() * min), 1), true);
+                        Intrinsics.checkNotNullExpressionValue(createScaledBitmap, "createScaledBitmap(...)");
+                        if (createScaledBitmap != decodeStream) {
+                            decodeStream.recycle();
+                        }
+                        return createScaledBitmap;
+                    } finally {
+                    }
+                }
+                return null;
+            } finally {
+                try {
+                    throw th;
+                } finally {
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
-            bitmap = null;
-            if (bitmap != null) {
-            }
-            Log.d("getIconFromArchive", "getIconFromArchive: " + (bitmap != null ? Integer.valueOf(bitmap.getHeight()) : null) + " " + (bitmap != null ? Integer.valueOf(bitmap.getWidth()) : null));
-            return bitmap;
+            return null;
         } catch (OutOfMemoryError e2) {
             e2.printStackTrace();
-            bitmap = null;
-            if (bitmap != null) {
-            }
-            Log.d("getIconFromArchive", "getIconFromArchive: " + (bitmap != null ? Integer.valueOf(bitmap.getHeight()) : null) + " " + (bitmap != null ? Integer.valueOf(bitmap.getWidth()) : null));
-            return bitmap;
+            return null;
         }
-        if (i > 0 && i2 > 0) {
-            int calculateInSampleSizeToMax = calculateInSampleSizeToMax(i, i2, 1024);
-            BitmapFactory.Options options2 = new BitmapFactory.Options();
-            options2.inJustDecodeBounds = false;
-            options2.inSampleSize = calculateInSampleSizeToMax;
-            options2.inPreferredConfig = Bitmap.Config.ARGB_8888;
-            options2.inDither = true;
-            options2.inScaled = false;
-            ZipFile zipFile2 = zipFileIcons;
-            InputStream inputStream2 = zipFile2 != null ? zipFile2.getInputStream(zipEntry) : null;
-            BufferedInputStream bufferedInputStream2 = new BufferedInputStream(inputStream2, 32768);
-            bitmap = BitmapFactory.decodeStream(bufferedInputStream2, null, options2);
-            CloseableKt.closeFinally(bufferedInputStream2, null);
-            CloseableKt.closeFinally(inputStream2, null);
-            if (bitmap == null) {
-                return null;
-            }
-            if (bitmap.getWidth() > 1024 || bitmap.getHeight() > 1024) {
-                float min = Math.min(1024.0f / bitmap.getWidth(), 1024.0f / bitmap.getHeight());
-                Bitmap createScaledBitmap = Bitmap.createScaledBitmap(bitmap, RangesKt.coerceAtLeast((int) (bitmap.getWidth() * min), 1), RangesKt.coerceAtLeast((int) (bitmap.getHeight() * min), 1), true);
-                Intrinsics.checkNotNullExpressionValue(createScaledBitmap, "createScaledBitmap(...)");
-                if (createScaledBitmap != bitmap) {
-                    bitmap.recycle();
-                }
-                bitmap = createScaledBitmap;
-            }
-            Log.d("getIconFromArchive", "getIconFromArchive: " + (bitmap != null ? Integer.valueOf(bitmap.getHeight()) : null) + " " + (bitmap != null ? Integer.valueOf(bitmap.getWidth()) : null));
-            return bitmap;
-        }
-        return null;
     }
 
     private static final int calculateInSampleSizeToMax(int i, int i2, int i3) {

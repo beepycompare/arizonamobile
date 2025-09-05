@@ -1,23 +1,18 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
-import android.content.Intent;
 /* loaded from: classes4.dex */
-public final class E2 implements Runnable {
+public final class E2 implements InterfaceC0678w7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f405a;
-    public final /* synthetic */ Intent b;
-    public final /* synthetic */ F2 c;
+    public final String f417a = "auto_inapp.db";
+    public final String b = "metrica_aip.db";
 
-    public E2(F2 f2, Context context, Intent intent) {
-        this.c = f2;
-        this.f405a = context;
-        this.b = intent;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0678w7
+    public final String a() {
+        return this.b;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        this.c.f424a.consume(this.f405a, this.b);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0678w7
+    public final String b() {
+        return this.f417a;
     }
 }

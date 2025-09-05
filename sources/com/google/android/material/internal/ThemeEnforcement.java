@@ -4,15 +4,15 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import androidx.appcompat.R;
 import androidx.appcompat.widget.TintTypedArray;
-import com.google.android.material.R;
 import com.google.android.material.resources.MaterialAttributes;
 /* loaded from: classes4.dex */
 public final class ThemeEnforcement {
     private static final String APPCOMPAT_THEME_NAME = "Theme.AppCompat";
     private static final String MATERIAL_THEME_NAME = "Theme.MaterialComponents";
     private static final int[] APPCOMPAT_CHECK_ATTRS = {R.attr.colorPrimary};
-    private static final int[] MATERIAL_CHECK_ATTRS = {R.attr.colorPrimaryVariant};
+    private static final int[] MATERIAL_CHECK_ATTRS = {com.google.android.material.R.attr.colorPrimaryVariant};
 
     private ThemeEnforcement() {
     }
@@ -30,12 +30,12 @@ public final class ThemeEnforcement {
     }
 
     private static void checkCompatibleTheme(Context context, AttributeSet attributeSet, int i, int i2) {
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ThemeEnforcement, i, i2);
-        boolean z = obtainStyledAttributes.getBoolean(R.styleable.ThemeEnforcement_enforceMaterialTheme, false);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, com.google.android.material.R.styleable.ThemeEnforcement, i, i2);
+        boolean z = obtainStyledAttributes.getBoolean(com.google.android.material.R.styleable.ThemeEnforcement_enforceMaterialTheme, false);
         obtainStyledAttributes.recycle();
         if (z) {
             TypedValue typedValue = new TypedValue();
-            if (!context.getTheme().resolveAttribute(R.attr.isMaterialTheme, typedValue, true) || (typedValue.type == 18 && typedValue.data == 0)) {
+            if (!context.getTheme().resolveAttribute(com.google.android.material.R.attr.isMaterialTheme, typedValue, true) || (typedValue.type == 18 && typedValue.data == 0)) {
                 checkMaterialTheme(context);
             }
         }
@@ -44,13 +44,13 @@ public final class ThemeEnforcement {
 
     private static void checkTextAppearance(Context context, AttributeSet attributeSet, int[] iArr, int i, int i2, int... iArr2) {
         boolean z;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ThemeEnforcement, i, i2);
-        if (!obtainStyledAttributes.getBoolean(R.styleable.ThemeEnforcement_enforceTextAppearance, false)) {
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, com.google.android.material.R.styleable.ThemeEnforcement, i, i2);
+        if (!obtainStyledAttributes.getBoolean(com.google.android.material.R.styleable.ThemeEnforcement_enforceTextAppearance, false)) {
             obtainStyledAttributes.recycle();
             return;
         }
         if (iArr2 == null || iArr2.length == 0) {
-            z = obtainStyledAttributes.getResourceId(R.styleable.ThemeEnforcement_android_textAppearance, -1) != -1;
+            z = obtainStyledAttributes.getResourceId(com.google.android.material.R.styleable.ThemeEnforcement_android_textAppearance, -1) != -1;
         } else {
             z = isCustomTextAppearanceValid(context, attributeSet, iArr, i, i2, iArr2);
         }
@@ -89,7 +89,7 @@ public final class ThemeEnforcement {
     }
 
     public static boolean isMaterial3Theme(Context context) {
-        return MaterialAttributes.resolveBoolean(context, R.attr.isMaterial3Theme, false);
+        return MaterialAttributes.resolveBoolean(context, com.google.android.material.R.attr.isMaterial3Theme, false);
     }
 
     private static boolean isTheme(Context context, int[] iArr) {

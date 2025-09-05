@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class CompositeException extends RuntimeException {
     private static final long serialVersionUID = 3026362227162912146L;
     private Throwable cause;
@@ -126,7 +126,7 @@ public final class CompositeException extends RuntimeException {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class PrintStreamOrWriter {
         abstract void println(Object obj);
 
@@ -135,7 +135,7 @@ public final class CompositeException extends RuntimeException {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class WrappedPrintStream extends PrintStreamOrWriter {
         private final PrintStream printStream;
 
@@ -149,7 +149,7 @@ public final class CompositeException extends RuntimeException {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static final class WrappedPrintWriter extends PrintStreamOrWriter {
         private final PrintWriter printWriter;
 
@@ -163,7 +163,7 @@ public final class CompositeException extends RuntimeException {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static final class CompositeExceptionCausalChain extends RuntimeException {
         static final String MESSAGE = "Chain of Causes for CompositeException In Order Received =>";
         private static final long serialVersionUID = 3875212506787802066L;

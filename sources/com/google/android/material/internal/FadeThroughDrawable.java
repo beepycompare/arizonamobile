@@ -3,6 +3,7 @@ package com.google.android.material.internal;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
+import androidx.core.graphics.drawable.DrawableCompat;
 /* loaded from: classes4.dex */
 public class FadeThroughDrawable extends Drawable {
     private final float[] alphas;
@@ -16,10 +17,25 @@ public class FadeThroughDrawable extends Drawable {
     }
 
     public FadeThroughDrawable(Drawable drawable, Drawable drawable2) {
-        this.fadeOutDrawable = drawable.getConstantState().newDrawable().mutate();
-        Drawable mutate = drawable2.getConstantState().newDrawable().mutate();
-        this.fadeInDrawable = mutate;
-        mutate.setAlpha(0);
+        Drawable emptyDrawable;
+        Drawable emptyDrawable2;
+        if (drawable != null) {
+            emptyDrawable = drawable.getConstantState().newDrawable().mutate();
+        } else {
+            emptyDrawable = new EmptyDrawable();
+        }
+        this.fadeOutDrawable = emptyDrawable;
+        if (drawable2 != null) {
+            emptyDrawable2 = drawable2.getConstantState().newDrawable().mutate();
+        } else {
+            emptyDrawable2 = new EmptyDrawable();
+        }
+        this.fadeInDrawable = emptyDrawable2;
+        int layoutDirection = drawable != null ? DrawableCompat.getLayoutDirection(drawable) : 3;
+        int layoutDirection2 = drawable2 != null ? DrawableCompat.getLayoutDirection(drawable2) : 3;
+        DrawableCompat.setLayoutDirection(emptyDrawable, layoutDirection);
+        DrawableCompat.setLayoutDirection(emptyDrawable2, layoutDirection2);
+        emptyDrawable2.setAlpha(0);
         this.alphas = new float[2];
     }
 
@@ -92,6 +108,29 @@ public class FadeThroughDrawable extends Drawable {
             this.fadeOutDrawable.setAlpha((int) (this.alphas[0] * 255.0f));
             this.fadeInDrawable.setAlpha((int) (this.alphas[1] * 255.0f));
             invalidateSelf();
+        }
+    }
+
+    /* loaded from: classes4.dex */
+    private static class EmptyDrawable extends Drawable {
+        @Override // android.graphics.drawable.Drawable
+        public void draw(Canvas canvas) {
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public int getOpacity() {
+            return -2;
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void setAlpha(int i) {
+        }
+
+        @Override // android.graphics.drawable.Drawable
+        public void setColorFilter(ColorFilter colorFilter) {
+        }
+
+        private EmptyDrawable() {
         }
     }
 }

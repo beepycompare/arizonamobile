@@ -7,7 +7,6 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
 import androidx.core.content.ContextCompat;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.resources.MaterialResources;
@@ -66,7 +65,7 @@ public class MaterialDivider extends View {
         int width;
         int i;
         super.onDraw(canvas);
-        boolean z = ViewCompat.getLayoutDirection(this) == 1;
+        boolean z = getLayoutDirection() == 1;
         int i2 = z ? this.insetEnd : this.insetStart;
         if (z) {
             width = getWidth();

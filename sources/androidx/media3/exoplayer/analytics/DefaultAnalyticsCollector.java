@@ -110,14 +110,14 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         this.listeners = this.listeners.copy(looper, new ListenerSet.IterationFinishedEvent() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda16
             @Override // androidx.media3.common.util.ListenerSet.IterationFinishedEvent
             public final void invoke(Object obj, FlagSet flagSet) {
-                DefaultAnalyticsCollector.this.m7923xfeaa50a6(player, (AnalyticsListener) obj, flagSet);
+                DefaultAnalyticsCollector.this.m7925xfeaa50a6(player, (AnalyticsListener) obj, flagSet);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setPlayer$1$androidx-media3-exoplayer-analytics-DefaultAnalyticsCollector  reason: not valid java name */
-    public /* synthetic */ void m7923xfeaa50a6(Player player, AnalyticsListener analyticsListener, FlagSet flagSet) {
+    public /* synthetic */ void m7925xfeaa50a6(Player player, AnalyticsListener analyticsListener, FlagSet flagSet) {
         analyticsListener.onEvents(player, new AnalyticsListener.Events(flagSet, this.eventTimes));
     }
 

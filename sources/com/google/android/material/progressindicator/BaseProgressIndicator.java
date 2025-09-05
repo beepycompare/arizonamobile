@@ -9,7 +9,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewParent;
 import android.widget.ProgressBar;
-import androidx.core.view.ViewCompat;
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat;
 import com.google.android.material.R;
 import com.google.android.material.color.MaterialColors;
@@ -36,6 +35,7 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
     private final Runnable delayedHide;
     private final Runnable delayedShow;
     private final Animatable2Compat.AnimationCallback hideAnimationCallback;
+    boolean initialized;
     private boolean isIndeterminateModeChangeRequested;
     private boolean isParentDoneInitializing;
     private long lastShowStartTime;
@@ -108,15 +108,21 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
     }
 
     private void registerAnimationCallbacks() {
-        if (getProgressDrawable() != null && getIndeterminateDrawable() != null) {
-            getIndeterminateDrawable().getAnimatorDelegate().registerAnimatorsCompleteCallback(this.switchIndeterminateModeCallback);
-        }
+        registerSwitchIndeterminateModeCallback();
         if (getProgressDrawable() != null) {
             getProgressDrawable().registerAnimationCallback(this.hideAnimationCallback);
         }
         if (getIndeterminateDrawable() != null) {
             getIndeterminateDrawable().registerAnimationCallback(this.hideAnimationCallback);
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void registerSwitchIndeterminateModeCallback() {
+        if (getProgressDrawable() == null || getIndeterminateDrawable() == null) {
+            return;
+        }
+        getIndeterminateDrawable().getAnimatorDelegate().registerAnimatorsCompleteCallback(this.switchIndeterminateModeCallback);
     }
 
     private void unregisterAnimationCallbacks() {
@@ -247,6 +253,13 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // android.view.View
+    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        getCurrentDrawingDelegate().invalidateCachedPaths();
+    }
+
     @Override // android.widget.ProgressBar
     public Drawable getCurrentDrawable() {
         return isIndeterminate() ? getIndeterminateDrawable() : getProgressDrawable();
@@ -267,13 +280,13 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
 
     @Override // android.widget.ProgressBar
     public void setProgressDrawable(Drawable drawable) {
-        if (drawable == null) {
-            super.setProgressDrawable(null);
-        } else if (drawable instanceof DeterminateDrawable) {
+        if (drawable instanceof DeterminateDrawable) {
             DeterminateDrawable determinateDrawable = (DeterminateDrawable) drawable;
             determinateDrawable.hideNow();
             super.setProgressDrawable(determinateDrawable);
             determinateDrawable.setLevelByFraction(getProgress() / getMax());
+        } else if (!this.initialized) {
+            super.setProgressDrawable(drawable);
         } else {
             throw new IllegalArgumentException("Cannot set framework drawable as progress drawable.");
         }
@@ -281,10 +294,10 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
 
     @Override // android.widget.ProgressBar
     public void setIndeterminateDrawable(Drawable drawable) {
-        if (drawable == null) {
-            super.setIndeterminateDrawable(null);
-        } else if (drawable instanceof IndeterminateDrawable) {
+        if (drawable instanceof IndeterminateDrawable) {
             ((DrawableWithAnimatedVisibilityChange) drawable).hideNow();
+            super.setIndeterminateDrawable(drawable);
+        } else if (!this.initialized) {
             super.setIndeterminateDrawable(drawable);
         } else {
             throw new IllegalArgumentException("Cannot set framework drawable as indeterminate drawable.");
@@ -303,7 +316,7 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean visibleToUser() {
-        return ViewCompat.isAttachedToWindow(this) && getWindowVisibility() == 0 && isEffectivelyVisible();
+        return isAttachedToWindow() && getWindowVisibility() == 0 && isEffectivelyVisible();
     }
 
     boolean isEffectivelyVisible() {
@@ -365,7 +378,7 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
 
     public void setIndicatorColor(int... iArr) {
         if (iArr.length == 0) {
-            iArr = new int[]{MaterialColors.getColor(getContext(), R.attr.colorPrimary, -1)};
+            iArr = new int[]{MaterialColors.getColor(getContext(), androidx.appcompat.R.attr.colorPrimary, -1)};
         }
         if (Arrays.equals(getIndicatorColor(), iArr)) {
             return;
@@ -394,6 +407,19 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
         if (this.spec.trackCornerRadius != i) {
             S s = this.spec;
             s.trackCornerRadius = Math.min(i, s.trackThickness / 2);
+            this.spec.useRelativeTrackCornerRadius = false;
+            invalidate();
+        }
+    }
+
+    public float getTrackCornerRadiusFraction() {
+        return this.spec.trackCornerRadiusFraction;
+    }
+
+    public void setTrackCornerRadiusFraction(float f) {
+        if (this.spec.trackCornerRadiusFraction != f) {
+            this.spec.trackCornerRadiusFraction = Math.min(f, 0.5f);
+            this.spec.useRelativeTrackCornerRadius = true;
             invalidate();
         }
     }
@@ -408,6 +434,58 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
             this.spec.validateSpec();
             invalidate();
         }
+    }
+
+    public int getWaveAmplitude() {
+        return this.spec.waveAmplitude;
+    }
+
+    public void setWaveAmplitude(int i) {
+        if (this.spec.waveAmplitude != i) {
+            this.spec.waveAmplitude = Math.abs(i);
+            requestLayout();
+        }
+    }
+
+    public int getWavelengthDeterminate() {
+        return this.spec.wavelengthDeterminate;
+    }
+
+    public void setWavelengthDeterminate(int i) {
+        if (this.spec.wavelengthDeterminate != i) {
+            this.spec.wavelengthDeterminate = Math.abs(i);
+            if (isIndeterminate()) {
+                return;
+            }
+            requestLayout();
+        }
+    }
+
+    public int getWavelengthIndeterminate() {
+        return this.spec.wavelengthIndeterminate;
+    }
+
+    public void setWavelengthIndeterminate(int i) {
+        if (this.spec.wavelengthIndeterminate != i) {
+            this.spec.wavelengthIndeterminate = Math.abs(i);
+            if (isIndeterminate()) {
+                requestLayout();
+            }
+        }
+    }
+
+    public void setWavelength(int i) {
+        setWavelengthDeterminate(i);
+        setWavelengthIndeterminate(i);
+    }
+
+    public int getWaveSpeed() {
+        return this.spec.waveSpeed;
+    }
+
+    public void setWaveSpeed(int i) {
+        this.spec.waveSpeed = i;
+        getProgressDrawable().setEnforcedDrawing(this.spec.waveSpeed != 0);
     }
 
     public int getShowAnimationBehavior() {
@@ -464,6 +542,13 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
             throw new IllegalArgumentException("The component's visibility must be one of VISIBLE, INVISIBLE, and GONE defined in View.");
         }
         this.visibilityAfterHide = i;
+    }
+
+    public void setIndeterminateAnimatorDurationScale(float f) {
+        if (this.spec.indeterminateAnimatorDurationScale != f) {
+            this.spec.indeterminateAnimatorDurationScale = f;
+            getIndeterminateDrawable().getAnimatorDelegate().invalidateSpecValues();
+        }
     }
 
     public void setAnimatorDurationScaleProvider(AnimatorDurationScaleProvider animatorDurationScaleProvider) {

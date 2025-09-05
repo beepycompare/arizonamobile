@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class color {
-        public static int vector_tint_color = 0x7f060388;
-        public static int vector_tint_theme_color = 0x7f060389;
+        public static int vector_tint_color = 0x7f060433;
+        public static int vector_tint_theme_color = 0x7f060434;
 
         private color() {
         }
@@ -45,12 +45,12 @@ public final class R {
         public static int accessibility_custom_action_7 = 0x7f0a0040;
         public static int accessibility_custom_action_8 = 0x7f0a0041;
         public static int accessibility_custom_action_9 = 0x7f0a0042;
-        public static int androidx_compose_ui_view_composition_context = 0x7f0a00cf;
-        public static int compose_view_saveable_id_tag = 0x7f0a0347;
-        public static int consume_window_insets_tag = 0x7f0a034e;
-        public static int hide_in_inspector_tag = 0x7f0a0608;
-        public static int inspection_slot_table_set = 0x7f0a06ae;
-        public static int wrapped_composition_tag = 0x7f0a0ef9;
+        public static int androidx_compose_ui_view_composition_context = 0x7f0a00d0;
+        public static int compose_view_saveable_id_tag = 0x7f0a034b;
+        public static int consume_window_insets_tag = 0x7f0a0352;
+        public static int hide_in_inspector_tag = 0x7f0a060e;
+        public static int inspection_slot_table_set = 0x7f0a06b4;
+        public static int wrapped_composition_tag = 0x7f0a0f07;
 
         private id() {
         }
@@ -59,25 +59,25 @@ public final class R {
     /* loaded from: classes.dex */
     public static final class string {
         public static int autofill = 0x7f130028;
-        public static int close_drawer = 0x7f130047;
-        public static int close_sheet = 0x7f130048;
-        public static int default_error_message = 0x7f13006a;
-        public static int default_popup_window_title = 0x7f13006e;
-        public static int dropdown_menu = 0x7f130078;
-        public static int in_progress = 0x7f1300d9;
-        public static int indeterminate = 0x7f1300da;
-        public static int navigation_menu = 0x7f13019d;
-        public static int not_selected = 0x7f1301ae;
-        public static int range_end = 0x7f1301ce;
-        public static int range_start = 0x7f1301cf;
-        public static int selected = 0x7f1301ea;
-        public static int snackbar_pane_title = 0x7f1301fc;
-        public static int state_empty = 0x7f130201;
-        public static int state_off = 0x7f130202;
-        public static int state_on = 0x7f130203;
-        public static int switch_role = 0x7f13020a;
-        public static int tab = 0x7f13020b;
-        public static int template_percent = 0x7f130210;
+        public static int close_drawer = 0x7f130046;
+        public static int close_sheet = 0x7f130047;
+        public static int default_error_message = 0x7f130069;
+        public static int default_popup_window_title = 0x7f13006d;
+        public static int dropdown_menu = 0x7f130077;
+        public static int in_progress = 0x7f1300d8;
+        public static int indeterminate = 0x7f1300d9;
+        public static int navigation_menu = 0x7f1301a3;
+        public static int not_selected = 0x7f1301b4;
+        public static int range_end = 0x7f1301d4;
+        public static int range_start = 0x7f1301d5;
+        public static int selected = 0x7f1301f0;
+        public static int snackbar_pane_title = 0x7f130202;
+        public static int state_empty = 0x7f130207;
+        public static int state_off = 0x7f130208;
+        public static int state_on = 0x7f130209;
+        public static int switch_role = 0x7f130210;
+        public static int tab = 0x7f130211;
+        public static int template_percent = 0x7f130216;
 
         private string() {
         }
@@ -85,8 +85,8 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class style {
-        public static int DialogWindowTheme = 0x7f140134;
-        public static int FloatingDialogWindowTheme = 0x7f140157;
+        public static int DialogWindowTheme = 0x7f140137;
+        public static int FloatingDialogWindowTheme = 0x7f14015a;
 
         private style() {
         }

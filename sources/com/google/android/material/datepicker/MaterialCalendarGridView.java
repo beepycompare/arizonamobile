@@ -64,7 +64,8 @@ public final class MaterialCalendarGridView extends GridView {
     @Override // android.widget.GridView, android.widget.AbsListView, android.view.View, android.view.KeyEvent.Callback
     public boolean onKeyDown(int i, KeyEvent keyEvent) {
         if (super.onKeyDown(i, keyEvent)) {
-            if (getSelectedItemPosition() == -1 || getSelectedItemPosition() >= getAdapter2().firstPositionInMonth()) {
+            int selectedItemPosition = getSelectedItemPosition();
+            if (selectedItemPosition == -1 || (selectedItemPosition >= getAdapter2().firstPositionInMonth() && selectedItemPosition <= getAdapter2().lastPositionInMonth())) {
                 return true;
             }
             if (19 == i) {

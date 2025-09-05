@@ -1,18 +1,13 @@
 package io.appmetrica.analytics.impl;
-
-import android.os.Bundle;
 /* loaded from: classes4.dex */
-public final class Rl implements W6 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Tl f640a;
-
-    public Rl(Tl tl) {
-        this.f640a = tl;
+public final class Rl extends M5 {
+    public Rl(C0363jm c0363jm, C0493om c0493om, C0337im c0337im) {
+        super(c0363jm, c0493om, c0337im);
     }
 
-    @Override // io.appmetrica.analytics.impl.W6
-    public final void a(int i, Bundle bundle) {
-        this.f640a.b(bundle);
+    @Override // io.appmetrica.analytics.impl.M5
+    public final synchronized void a(C0337im c0337im) {
+        a(new C0373k6(c(), Na.F.u(), Na.F.r(), ((C0337im) b()).mergeFrom(c0337im)));
+        e();
     }
 }

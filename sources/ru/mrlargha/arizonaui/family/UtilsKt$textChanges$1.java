@@ -63,7 +63,7 @@ final class UtilsKt$textChanges$1 extends SuspendLambda implements Function2<Pro
 
                 @Override // android.text.TextWatcher
                 public void afterTextChanged(Editable editable) {
-                    producerScope.mo8125trySendJP2dKIU(String.valueOf(editable));
+                    producerScope.mo8127trySendJP2dKIU(String.valueOf(editable));
                 }
             };
             this.$this_textChanges.addTextChangedListener((TextWatcher) r7);

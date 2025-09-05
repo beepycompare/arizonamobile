@@ -9,10 +9,10 @@ public enum ChargeType {
     
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f260a;
+    private final int f261a;
 
     ChargeType(int i) {
-        this.f260a = i;
+        this.f261a = i;
     }
 
     public static ChargeType fromId(Integer num) {
@@ -28,6 +28,6 @@ public enum ChargeType {
     }
 
     public int getId() {
-        return this.f260a;
+        return this.f261a;
     }
 }

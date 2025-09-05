@@ -1,26 +1,40 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ecommerce.ECommerceReferrer;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.ResultReceiver;
+import com.adjust.sdk.Constants;
 /* loaded from: classes4.dex */
-public final class Pg {
+public final class Pg extends ResultReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f606a;
-    public final String b;
-    public final C0636uj c;
+    public final Bg f622a;
 
-    public Pg(ECommerceReferrer eCommerceReferrer) {
-        this(eCommerceReferrer.getType(), eCommerceReferrer.getIdentifier(), eCommerceReferrer.getScreen() == null ? null : new C0636uj(eCommerceReferrer.getScreen()));
+    public Pg(Handler handler, Bg bg) {
+        super(handler);
+        this.f622a = bg;
     }
 
-    public final String toString() {
-        return "ReferrerWrapper{type='" + this.f606a + "', identifier='" + this.b + "', screen=" + this.c + AbstractJsonLexerKt.END_OBJ;
+    public static void a(ResultReceiver resultReceiver, Jg jg) {
+        if (resultReceiver != null) {
+            Bundle bundle = new Bundle();
+            bundle.putByteArray(Constants.REFERRER, jg == null ? null : jg.a());
+            resultReceiver.send(1, bundle);
+        }
     }
 
-    public Pg(String str, String str2, C0636uj c0636uj) {
-        this.f606a = str;
-        this.b = str2;
-        this.c = c0636uj;
+    @Override // android.os.ResultReceiver
+    public final void onReceiveResult(int i, Bundle bundle) {
+        if (i == 1) {
+            Jg jg = null;
+            try {
+                byte[] byteArray = bundle.getByteArray(Constants.REFERRER);
+                if (byteArray != null && byteArray.length != 0) {
+                    jg = new Jg(byteArray);
+                }
+            } catch (Throwable unused) {
+            }
+            this.f622a.a(jg);
+        }
     }
 }

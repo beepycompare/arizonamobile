@@ -1,22 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
 /* renamed from: io.appmetrica.analytics.impl.he  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0304he implements Rc {
+public final class C0304he {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0118a9 f887a = new InterfaceC0118a9() { // from class: io.appmetrica.analytics.impl.he$$ExternalSyntheticLambda0
-        @Override // io.appmetrica.analytics.impl.InterfaceC0118a9
-        public final boolean b() {
-            return C0304he.b();
-        }
-    };
+    public final Context f905a;
+    public final C0488oh b;
+    public final InterfaceC0433me c;
+    public final Bb d;
+    public final Aa e = new Aa();
+    public final Zd f = new Zd();
 
-    public static final boolean b() {
-        return true;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Rc
-    public final InterfaceC0118a9 a() {
-        return this.f887a;
+    public C0304he(Context context, C0488oh c0488oh, InterfaceC0433me interfaceC0433me, Bb bb) {
+        this.f905a = context;
+        this.b = c0488oh;
+        this.c = interfaceC0433me;
+        this.d = bb;
     }
 }

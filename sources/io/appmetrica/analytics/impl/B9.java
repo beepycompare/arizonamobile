@@ -1,9 +1,7 @@
 package io.appmetrica.analytics.impl;
 
-import androidx.compose.material3.MenuKt;
-import androidx.compose.runtime.ComposerKt;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.extractor.ts.TsExtractor;
+import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
 import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
 import io.appmetrica.analytics.protobuf.nano.InternalNano;
@@ -11,254 +9,172 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
-import java.util.Arrays;
 /* loaded from: classes4.dex */
 public final class B9 extends MessageNano {
-    public static final int A = 17;
-    public static final int B = 18;
-    public static final int C = 19;
-    public static final int D = 20;
-    public static final int E = 21;
-    public static final int F = 25;
-    public static final int G = 26;
-    public static final int H = 27;
-    public static final int I = 29;
-    public static final int J = 35;
-    public static final int K = 38;
-    public static final int L = 40;
-    public static final int M = 42;
-    public static final int N = 0;
-    public static final int O = 1;
-    public static final int P = 2;
-    public static final int Q = 0;
-    public static final int R = 1;
-    public static final int S = 2;
-    public static volatile B9[] T = null;
-    public static final int t = 1;
-    public static final int u = 2;
-    public static final int v = 4;
-    public static final int w = 5;
-    public static final int x = 7;
-    public static final int y = 13;
-    public static final int z = 16;
+    public static volatile B9[] n;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f360a;
-    public long b;
-    public int c;
-    public String d;
-    public byte[] e;
-    public C0676w9 f;
-    public A9 g;
-    public String h;
-    public int i;
-    public int j;
+    public String f362a;
+    public String b;
+    public String c;
+    public int d;
+    public String e;
+    public String f;
+    public boolean g;
+    public int h;
+    public String i;
+    public String j;
     public int k;
-    public byte[] l;
-    public int m;
-    public long n;
-    public long o;
-    public int p;
-    public boolean q;
-    public long r;
-    public C0751z9[] s;
+    public A9[] l;
+    public String m;
 
     public B9() {
         a();
     }
 
     public static B9[] b() {
-        if (T == null) {
+        if (n == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (T == null) {
-                    T = new B9[0];
+                if (n == null) {
+                    n = new B9[0];
                 }
             }
         }
-        return T;
+        return n;
     }
 
     public final B9 a() {
-        this.f360a = 0L;
-        this.b = 0L;
-        this.c = 0;
-        this.d = "";
-        byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.e = bArr;
-        this.f = null;
-        this.g = null;
-        this.h = "";
-        this.i = 0;
-        this.j = 0;
-        this.k = -1;
-        this.l = bArr;
-        this.m = -1;
-        this.n = 0L;
-        this.o = 0L;
-        this.p = 0;
-        this.q = false;
-        this.r = 1L;
-        this.s = C0751z9.b();
+        this.f362a = "";
+        this.b = "";
+        this.c = "";
+        this.d = 0;
+        this.e = "";
+        this.f = "";
+        this.g = false;
+        this.h = 0;
+        this.i = "";
+        this.j = "";
+        this.k = 0;
+        this.l = A9.b();
+        this.m = "";
         this.cachedSize = -1;
         return this;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        int computeUInt32Size = CodedOutputByteBufferNano.computeUInt32Size(3, this.c) + CodedOutputByteBufferNano.computeUInt64Size(2, this.b) + CodedOutputByteBufferNano.computeUInt64Size(1, this.f360a) + super.computeSerializedSize();
-        if (!this.d.equals("")) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeStringSize(4, this.d);
+        int computeSerializedSize = super.computeSerializedSize();
+        if (!this.f362a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f362a);
         }
-        byte[] bArr = this.e;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeBytesSize(5, this.e);
+        if (!this.b.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
         }
-        C0676w9 c0676w9 = this.f;
-        if (c0676w9 != null) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeMessageSize(6, c0676w9);
+        if (!this.c.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(4, this.c);
         }
-        A9 a9 = this.g;
-        if (a9 != null) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeMessageSize(7, a9);
-        }
-        if (!this.h.equals("")) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeStringSize(8, this.h);
-        }
-        int i = this.i;
+        int i = this.d;
         if (i != 0) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeUInt32Size(10, i);
+            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(5, i);
         }
-        int i2 = this.j;
+        if (!this.e.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(10, this.e);
+        }
+        if (!this.f.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(15, this.f);
+        }
+        boolean z = this.g;
+        if (z) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(17, z);
+        }
+        int i2 = this.h;
         if (i2 != 0) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeInt32Size(12, i2);
+            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(18, i2);
+        }
+        if (!this.i.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(19, this.i);
+        }
+        if (!this.j.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(21, this.j);
         }
         int i3 = this.k;
-        if (i3 != -1) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeInt32Size(13, i3);
+        if (i3 != 0) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(22, i3);
         }
-        if (!Arrays.equals(this.l, bArr2)) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeBytesSize(14, this.l);
-        }
-        int i4 = this.m;
-        if (i4 != -1) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeInt32Size(15, i4);
-        }
-        long j = this.n;
-        if (j != 0) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeUInt64Size(16, j);
-        }
-        long j2 = this.o;
-        if (j2 != 0) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeUInt64Size(17, j2);
-        }
-        int i5 = this.p;
-        if (i5 != 0) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeInt32Size(22, i5);
-        }
-        boolean z2 = this.q;
-        if (z2) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeBoolSize(23, z2);
-        }
-        long j3 = this.r;
-        if (j3 != 1) {
-            computeUInt32Size += CodedOutputByteBufferNano.computeUInt64Size(24, j3);
-        }
-        C0751z9[] c0751z9Arr = this.s;
-        if (c0751z9Arr != null && c0751z9Arr.length > 0) {
-            int i6 = 0;
+        A9[] a9Arr = this.l;
+        if (a9Arr != null && a9Arr.length > 0) {
+            int i4 = 0;
             while (true) {
-                C0751z9[] c0751z9Arr2 = this.s;
-                if (i6 >= c0751z9Arr2.length) {
+                A9[] a9Arr2 = this.l;
+                if (i4 >= a9Arr2.length) {
                     break;
                 }
-                C0751z9 c0751z9 = c0751z9Arr2[i6];
-                if (c0751z9 != null) {
-                    computeUInt32Size = CodedOutputByteBufferNano.computeMessageSize(25, c0751z9) + computeUInt32Size;
+                A9 a9 = a9Arr2[i4];
+                if (a9 != null) {
+                    computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(23, a9);
                 }
-                i6++;
+                i4++;
             }
         }
-        return computeUInt32Size;
+        return !this.m.equals("") ? CodedOutputByteBufferNano.computeStringSize(24, this.m) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeUInt64(1, this.f360a);
-        codedOutputByteBufferNano.writeUInt64(2, this.b);
-        codedOutputByteBufferNano.writeUInt32(3, this.c);
-        if (!this.d.equals("")) {
-            codedOutputByteBufferNano.writeString(4, this.d);
+        if (!this.f362a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f362a);
         }
-        byte[] bArr = this.e;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(5, this.e);
+        if (!this.b.equals("")) {
+            codedOutputByteBufferNano.writeString(2, this.b);
         }
-        C0676w9 c0676w9 = this.f;
-        if (c0676w9 != null) {
-            codedOutputByteBufferNano.writeMessage(6, c0676w9);
+        if (!this.c.equals("")) {
+            codedOutputByteBufferNano.writeString(4, this.c);
         }
-        A9 a9 = this.g;
-        if (a9 != null) {
-            codedOutputByteBufferNano.writeMessage(7, a9);
-        }
-        if (!this.h.equals("")) {
-            codedOutputByteBufferNano.writeString(8, this.h);
-        }
-        int i = this.i;
+        int i = this.d;
         if (i != 0) {
-            codedOutputByteBufferNano.writeUInt32(10, i);
+            codedOutputByteBufferNano.writeUInt32(5, i);
         }
-        int i2 = this.j;
+        if (!this.e.equals("")) {
+            codedOutputByteBufferNano.writeString(10, this.e);
+        }
+        if (!this.f.equals("")) {
+            codedOutputByteBufferNano.writeString(15, this.f);
+        }
+        boolean z = this.g;
+        if (z) {
+            codedOutputByteBufferNano.writeBool(17, z);
+        }
+        int i2 = this.h;
         if (i2 != 0) {
-            codedOutputByteBufferNano.writeInt32(12, i2);
+            codedOutputByteBufferNano.writeUInt32(18, i2);
+        }
+        if (!this.i.equals("")) {
+            codedOutputByteBufferNano.writeString(19, this.i);
+        }
+        if (!this.j.equals("")) {
+            codedOutputByteBufferNano.writeString(21, this.j);
         }
         int i3 = this.k;
-        if (i3 != -1) {
-            codedOutputByteBufferNano.writeInt32(13, i3);
+        if (i3 != 0) {
+            codedOutputByteBufferNano.writeUInt32(22, i3);
         }
-        if (!Arrays.equals(this.l, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(14, this.l);
-        }
-        int i4 = this.m;
-        if (i4 != -1) {
-            codedOutputByteBufferNano.writeInt32(15, i4);
-        }
-        long j = this.n;
-        if (j != 0) {
-            codedOutputByteBufferNano.writeUInt64(16, j);
-        }
-        long j2 = this.o;
-        if (j2 != 0) {
-            codedOutputByteBufferNano.writeUInt64(17, j2);
-        }
-        int i5 = this.p;
-        if (i5 != 0) {
-            codedOutputByteBufferNano.writeInt32(22, i5);
-        }
-        boolean z2 = this.q;
-        if (z2) {
-            codedOutputByteBufferNano.writeBool(23, z2);
-        }
-        long j3 = this.r;
-        if (j3 != 1) {
-            codedOutputByteBufferNano.writeUInt64(24, j3);
-        }
-        C0751z9[] c0751z9Arr = this.s;
-        if (c0751z9Arr != null && c0751z9Arr.length > 0) {
-            int i6 = 0;
+        A9[] a9Arr = this.l;
+        if (a9Arr != null && a9Arr.length > 0) {
+            int i4 = 0;
             while (true) {
-                C0751z9[] c0751z9Arr2 = this.s;
-                if (i6 >= c0751z9Arr2.length) {
+                A9[] a9Arr2 = this.l;
+                if (i4 >= a9Arr2.length) {
                     break;
                 }
-                C0751z9 c0751z9 = c0751z9Arr2[i6];
-                if (c0751z9 != null) {
-                    codedOutputByteBufferNano.writeMessage(25, c0751z9);
+                A9 a9 = a9Arr2[i4];
+                if (a9 != null) {
+                    codedOutputByteBufferNano.writeMessage(23, a9);
                 }
-                i6++;
+                i4++;
             }
+        }
+        if (!this.m.equals("")) {
+            codedOutputByteBufferNano.writeString(24, this.m);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -275,106 +191,62 @@ public final class B9 extends MessageNano {
             switch (readTag) {
                 case 0:
                     break;
-                case 8:
-                    this.f360a = codedInputByteBufferNano.readUInt64();
+                case 10:
+                    this.f362a = codedInputByteBufferNano.readString();
                     break;
-                case 16:
-                    this.b = codedInputByteBufferNano.readUInt64();
-                    break;
-                case 24:
-                    this.c = codedInputByteBufferNano.readUInt32();
+                case 18:
+                    this.b = codedInputByteBufferNano.readString();
                     break;
                 case 34:
-                    this.d = codedInputByteBufferNano.readString();
+                    this.c = codedInputByteBufferNano.readString();
                     break;
-                case 42:
-                    this.e = codedInputByteBufferNano.readBytes();
+                case 40:
+                    this.d = codedInputByteBufferNano.readUInt32();
                     break;
-                case 50:
-                    if (this.f == null) {
-                        this.f = new C0676w9();
-                    }
-                    codedInputByteBufferNano.readMessage(this.f);
+                case 82:
+                    this.e = codedInputByteBufferNano.readString();
                     break;
-                case 58:
-                    if (this.g == null) {
-                        this.g = new A9();
-                    }
-                    codedInputByteBufferNano.readMessage(this.g);
-                    break;
-                case ConstraintLayout.LayoutParams.Table.LAYOUT_WRAP_BEHAVIOR_IN_PARENT /* 66 */:
-                    this.h = codedInputByteBufferNano.readString();
-                    break;
-                case 80:
-                    this.i = codedInputByteBufferNano.readUInt32();
-                    break;
-                case 96:
-                    int readInt32 = codedInputByteBufferNano.readInt32();
-                    if (readInt32 != 0 && readInt32 != 1 && readInt32 != 2) {
-                        break;
-                    } else {
-                        this.j = readInt32;
-                        break;
-                    }
-                case 104:
-                    int readInt322 = codedInputByteBufferNano.readInt32();
-                    if (readInt322 != -1 && readInt322 != 0 && readInt322 != 1) {
-                        break;
-                    } else {
-                        this.k = readInt322;
-                        break;
-                    }
-                case 114:
-                    this.l = codedInputByteBufferNano.readBytes();
-                    break;
-                case MenuKt.InTransitionDuration /* 120 */:
-                    int readInt323 = codedInputByteBufferNano.readInt32();
-                    if (readInt323 != -1 && readInt323 != 0 && readInt323 != 1) {
-                        break;
-                    } else {
-                        this.m = readInt323;
-                        break;
-                    }
-                case 128:
-                    this.n = codedInputByteBufferNano.readUInt64();
+                case 122:
+                    this.f = codedInputByteBufferNano.readString();
                     break;
                 case TsExtractor.TS_STREAM_TYPE_DTS_HD /* 136 */:
-                    this.o = codedInputByteBufferNano.readUInt64();
+                    this.g = codedInputByteBufferNano.readBool();
+                    break;
+                case 144:
+                    this.h = codedInputByteBufferNano.readUInt32();
+                    break;
+                case 154:
+                    this.i = codedInputByteBufferNano.readString();
+                    break;
+                case 170:
+                    this.j = codedInputByteBufferNano.readString();
                     break;
                 case 176:
-                    int readInt324 = codedInputByteBufferNano.readInt32();
-                    if (readInt324 != 0 && readInt324 != 1 && readInt324 != 2) {
-                        break;
-                    } else {
-                        this.p = readInt324;
-                        break;
-                    }
-                case 184:
-                    this.q = codedInputByteBufferNano.readBool();
+                    this.k = codedInputByteBufferNano.readUInt32();
                     break;
-                case 192:
-                    this.r = codedInputByteBufferNano.readUInt64();
-                    break;
-                case ComposerKt.compositionLocalMapKey /* 202 */:
-                    int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, ComposerKt.compositionLocalMapKey);
-                    C0751z9[] c0751z9Arr = this.s;
-                    int length = c0751z9Arr == null ? 0 : c0751z9Arr.length;
+                case 186:
+                    int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 186);
+                    A9[] a9Arr = this.l;
+                    int length = a9Arr == null ? 0 : a9Arr.length;
                     int i = repeatedFieldArrayLength + length;
-                    C0751z9[] c0751z9Arr2 = new C0751z9[i];
+                    A9[] a9Arr2 = new A9[i];
                     if (length != 0) {
-                        System.arraycopy(c0751z9Arr, 0, c0751z9Arr2, 0, length);
+                        System.arraycopy(a9Arr, 0, a9Arr2, 0, length);
                     }
                     while (length < i - 1) {
-                        C0751z9 c0751z9 = new C0751z9();
-                        c0751z9Arr2[length] = c0751z9;
-                        codedInputByteBufferNano.readMessage(c0751z9);
+                        A9 a9 = new A9();
+                        a9Arr2[length] = a9;
+                        codedInputByteBufferNano.readMessage(a9);
                         codedInputByteBufferNano.readTag();
                         length++;
                     }
-                    C0751z9 c0751z92 = new C0751z9();
-                    c0751z9Arr2[length] = c0751z92;
-                    codedInputByteBufferNano.readMessage(c0751z92);
-                    this.s = c0751z9Arr2;
+                    A9 a92 = new A9();
+                    a9Arr2[length] = a92;
+                    codedInputByteBufferNano.readMessage(a92);
+                    this.l = a9Arr2;
+                    break;
+                case DownloaderService.STATUS_WAITING_TO_RETRY /* 194 */:
+                    this.m = codedInputByteBufferNano.readString();
                     break;
                 default:
                     if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {

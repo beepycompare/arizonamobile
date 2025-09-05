@@ -4,7 +4,7 @@ import android.os.Looper;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class MainThreadDisposable implements Disposable {
     private final AtomicBoolean unsubscribed = new AtomicBoolean();
 

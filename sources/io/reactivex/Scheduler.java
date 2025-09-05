@@ -11,7 +11,7 @@ import io.reactivex.internal.util.ExceptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.SchedulerRunnableIntrospection;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class Scheduler {
     static boolean IS_DRIFT_USE_NANOTIME = Boolean.getBoolean("rx2.scheduler.use-nanotime");
     static final long CLOCK_DRIFT_TOLERANCE_NANOSECONDS = TimeUnit.MINUTES.toNanos(Long.getLong("rx2.scheduler.drift-tolerance", 15).longValue());
@@ -61,7 +61,7 @@ public abstract class Scheduler {
         return new SchedulerWhen(function, this);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static abstract class Worker implements Disposable {
         public abstract Disposable schedule(Runnable runnable, long j, TimeUnit timeUnit);
 
@@ -88,7 +88,7 @@ public abstract class Scheduler {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes3.dex */
         public final class PeriodicTask implements Runnable, SchedulerRunnableIntrospection {
             long count;
             final Runnable decoratedRun;
@@ -138,7 +138,7 @@ public abstract class Scheduler {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     static final class PeriodicDirectTask implements Disposable, Runnable, SchedulerRunnableIntrospection {
         volatile boolean disposed;
         final Runnable run;
@@ -181,7 +181,7 @@ public abstract class Scheduler {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class DisposeTask implements Disposable, Runnable, SchedulerRunnableIntrospection {
         final Runnable decoratedRun;
         Thread runner;

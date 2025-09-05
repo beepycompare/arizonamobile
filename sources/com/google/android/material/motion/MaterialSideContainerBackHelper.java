@@ -7,11 +7,10 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.res.Resources;
 import android.util.Property;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.activity.BackEventCompat;
-import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
@@ -66,8 +65,11 @@ public class MaterialSideContainerBackHelper extends MaterialBackAnimationHelper
             }
             float lerp = AnimationUtils.lerp(0.0f, f5, interpolateProgress);
             float f7 = lerp + 1.0f;
-            this.view.setScaleX(f7);
             float lerp2 = 1.0f - AnimationUtils.lerp(0.0f, f6, interpolateProgress);
+            if (Float.isNaN(f7) || Float.isNaN(lerp2)) {
+                return;
+            }
+            this.view.setScaleX(f7);
             this.view.setScaleY(lerp2);
             if (this.view instanceof ViewGroup) {
                 ViewGroup viewGroup = (ViewGroup) this.view;
@@ -82,8 +84,10 @@ public class MaterialSideContainerBackHelper extends MaterialBackAnimationHelper
                     childAt.setPivotY(-childAt.getTop());
                     float f8 = z2 ? 1.0f - lerp : 1.0f;
                     float f9 = lerp2 != 0.0f ? (f7 / lerp2) * f8 : 1.0f;
-                    childAt.setScaleX(f8);
-                    childAt.setScaleY(f9);
+                    if (!Float.isNaN(f8) && !Float.isNaN(f9)) {
+                        childAt.setScaleX(f8);
+                        childAt.setScaleY(f9);
+                    }
                 }
             }
         }
@@ -134,7 +138,7 @@ public class MaterialSideContainerBackHelper extends MaterialBackAnimationHelper
     }
 
     private boolean checkAbsoluteGravity(int i, int i2) {
-        return (GravityCompat.getAbsoluteGravity(i, ViewCompat.getLayoutDirection(this.view)) & i2) == i2;
+        return (Gravity.getAbsoluteGravity(i, this.view.getLayoutDirection()) & i2) == i2;
     }
 
     private int getEdgeMargin(boolean z) {

@@ -1,59 +1,26 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.networktasks.internal.ArgumentsMerger;
-import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 /* loaded from: classes4.dex */
-public abstract class J5 implements InterfaceC0661vj {
+public final class J5 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public BaseRequestConfig f509a;
-    public final BaseRequestConfig.RequestConfigLoader b;
-    public C0296h6 c;
+    public final /* synthetic */ InterfaceC0660ve f506a;
+    public final /* synthetic */ K5 b;
 
-    public J5(BaseRequestConfig.RequestConfigLoader<Object, C0296h6> requestConfigLoader, C0389km c0389km, ArgumentsMerger<Object, Object> argumentsMerger) {
-        this.b = requestConfigLoader;
-        Ka.j().u().a(this);
-        a(new C0296h6(c0389km, Ka.j().u(), Ka.j().r(), argumentsMerger));
+    public J5(K5 k5, InterfaceC0660ve interfaceC0660ve) {
+        this.b = k5;
+        this.f506a = interfaceC0660ve;
     }
 
-    public final synchronized void a(C0296h6 c0296h6) {
-        this.c = c0296h6;
-    }
-
-    public final synchronized ArgumentsMerger<Object, Object> b() {
-        return (ArgumentsMerger) this.c.componentArguments;
-    }
-
-    public final synchronized C0389km c() {
-        return this.c.f882a;
-    }
-
-    public final void d() {
-        synchronized (this) {
-            this.f509a = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        synchronized (this.b) {
+            K5 k5 = this.b;
+            Object obj = k5.f528a;
+            if (obj == null) {
+                k5.b.add(this.f506a);
+            } else {
+                this.f506a.consume(obj);
+            }
         }
-    }
-
-    public final synchronized void e() {
-        this.f509a = null;
-    }
-
-    public synchronized void a(Object obj) {
-        if (!((ArgumentsMerger) this.c.componentArguments).compareWithOtherArguments(obj)) {
-            a(new C0296h6(c(), Ka.F.u(), Ka.F.r(), (ArgumentsMerger) ((ArgumentsMerger) this.c.componentArguments).mergeFrom(obj)));
-            e();
-        }
-    }
-
-    public final synchronized void a(C0389km c0389km) {
-        a(new C0296h6(c0389km, Ka.F.u(), Ka.F.r(), b()));
-        e();
-    }
-
-    public final synchronized BaseRequestConfig a() {
-        if (this.f509a == null) {
-            this.f509a = this.b.load(this.c);
-        }
-        return this.f509a;
     }
 }

@@ -17,7 +17,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.core.view.ViewCompat;
 import androidx.fragment.app.DialogFragment;
 import com.google.android.material.R;
 import com.google.android.material.button.MaterialButton;
@@ -131,7 +130,7 @@ public final class MaterialTimePicker extends DialogFragment implements TimePick
         window.setBackgroundDrawable(materialShapeDrawable);
         window.requestFeature(1);
         window.setLayout(-2, -2);
-        materialShapeDrawable.setElevation(ViewCompat.getElevation(window.getDecorView()));
+        materialShapeDrawable.setElevation(window.getDecorView().getElevation());
         return dialog;
     }
 
@@ -246,7 +245,7 @@ public final class MaterialTimePicker extends DialogFragment implements TimePick
             view.postDelayed(new Runnable() { // from class: com.google.android.material.timepicker.MaterialTimePicker$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MaterialTimePicker.this.m8758xac73da03();
+                    MaterialTimePicker.this.m8777xac73da03();
                 }
             }, 100L);
         }
@@ -254,7 +253,7 @@ public final class MaterialTimePicker extends DialogFragment implements TimePick
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onViewCreated$0$com-google-android-material-timepicker-MaterialTimePicker  reason: not valid java name */
-    public /* synthetic */ void m8758xac73da03() {
+    public /* synthetic */ void m8777xac73da03() {
         TimePickerPresenter timePickerPresenter = this.activePresenter;
         if (timePickerPresenter instanceof TimePickerTextInputPresenter) {
             ((TimePickerTextInputPresenter) timePickerPresenter).resetChecked();

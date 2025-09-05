@@ -216,7 +216,7 @@ public final class MutableLongLongMap extends LongLongMap {
     public final void adjustStorage$collection() {
         int compare;
         if (this._capacity > 8) {
-            compare = Long.compare(ULong.m9244constructorimpl(ULong.m9244constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m9244constructorimpl(ULong.m9244constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
+            compare = Long.compare(ULong.m9263constructorimpl(ULong.m9263constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m9263constructorimpl(ULong.m9263constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
             if (compare <= 0) {
                 dropDeletes$collection();
                 return;

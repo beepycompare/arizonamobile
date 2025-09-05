@@ -1,78 +1,91 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.os.Bundle;
+import android.os.Handler;
+import androidx.core.view.InputDeviceCompat;
+import io.appmetrica.analytics.DeferredDeeplinkListener;
+import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import java.util.Set;
 /* loaded from: classes4.dex */
-public final class Fg {
+public final class Fg implements Bg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f436a;
-    public final long b;
-    public final long c;
-    public final Eg d;
+    public final boolean f443a;
+    public final Si b;
+    public final C0512pf c;
+    public final C0349j8 d;
+    public final Ng e;
+    public final Handler f;
 
-    public Fg(byte[] bArr) {
-        Gg a2 = Gg.a(bArr);
-        this.f436a = a2.f458a;
-        this.b = a2.c;
-        this.c = a2.b;
-        this.d = a(a2.d);
+    public Fg(Si si, C0512pf c0512pf, Handler handler) {
+        this(si, c0512pf, handler, c0512pf.s());
     }
 
-    public final byte[] a() {
-        Gg gg = new Gg();
-        gg.f458a = this.f436a;
-        gg.c = this.b;
-        gg.b = this.c;
-        int ordinal = this.d.ordinal();
-        int i = 1;
-        if (ordinal != 1) {
-            i = 2;
-            if (ordinal != 2) {
-                i = 0;
-            }
+    public final void a() {
+        if (this.f443a) {
+            return;
         }
-        gg.d = i;
-        return MessageNano.toByteArray(gg);
+        Si si = this.b;
+        Pg pg = new Pg(this.f, this);
+        si.getClass();
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver", pg);
+        PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
+        Set set = W9.f721a;
+        Bb bb = Bb.EVENT_TYPE_UNDEFINED;
+        C0397l4 c0397l4 = new C0397l4("", "", InputDeviceCompat.SOURCE_TOUCHSCREEN, 0, anonymousInstance);
+        c0397l4.m = bundle;
+        C0192d5 c0192d5 = si.f668a;
+        si.a(Si.a(c0397l4, c0192d5), c0192d5, 1, null);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public Fg(Si si, C0512pf c0512pf, Handler handler, boolean z) {
+        this(si, c0512pf, handler, z, new C0349j8(z), new Ng());
+    }
+
+    public Fg(Si si, C0512pf c0512pf, Handler handler, boolean z, C0349j8 c0349j8, Ng ng) {
+        this.b = si;
+        this.c = c0512pf;
+        this.f443a = z;
+        this.d = c0349j8;
+        this.e = ng;
+        this.f = handler;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Bg
+    public final void a(Jg jg) {
+        String str = jg == null ? null : jg.f515a;
+        if (this.f443a) {
+            return;
         }
-        if (obj != null && Fg.class == obj.getClass()) {
-            Fg fg = (Fg) obj;
-            if (this.b == fg.b && this.c == fg.c && this.f436a.equals(fg.f436a) && this.d == fg.d) {
-                return true;
-            }
+        synchronized (this) {
+            C0349j8 c0349j8 = this.d;
+            this.e.getClass();
+            c0349j8.d = Ng.a(str);
+            c0349j8.a();
         }
-        return false;
     }
 
-    public final int hashCode() {
-        long j = this.b;
-        long j2 = this.c;
-        return this.d.hashCode() + (((((this.f436a.hashCode() * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31);
-    }
-
-    public final String toString() {
-        return "ReferrerInfo{installReferrer='" + this.f436a + "', referrerClickTimestampSeconds=" + this.b + ", installBeginTimestampSeconds=" + this.c + ", source=" + this.d + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public Fg(String str, long j, long j2, Eg eg) {
-        this.f436a = str;
-        this.b = j;
-        this.c = j2;
-        this.d = eg;
-    }
-
-    public static Eg a(int i) {
-        if (i != 1) {
-            if (i != 2) {
-                return Eg.b;
-            }
-            return Eg.d;
+    public final synchronized void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
+        C0349j8 c0349j8 = this.d;
+        c0349j8.c = deferredDeeplinkParametersListener;
+        if (c0349j8.f932a) {
+            c0349j8.a(1);
+        } else {
+            c0349j8.a();
         }
-        return Eg.c;
+        this.c.u();
+    }
+
+    public final synchronized void a(DeferredDeeplinkListener deferredDeeplinkListener) {
+        C0349j8 c0349j8 = this.d;
+        c0349j8.b = deferredDeeplinkListener;
+        if (c0349j8.f932a) {
+            c0349j8.a(1);
+        } else {
+            c0349j8.a();
+        }
+        this.c.u();
     }
 }

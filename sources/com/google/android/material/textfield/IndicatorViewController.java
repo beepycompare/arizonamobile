@@ -17,7 +17,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatTextView;
-import androidx.core.view.ViewCompat;
 import androidx.core.widget.TextViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
@@ -131,7 +130,7 @@ public final class IndicatorViewController {
     }
 
     private boolean shouldAnimateCaptionView(TextView textView, CharSequence charSequence) {
-        if (ViewCompat.isLaidOut(this.textInputView) && this.textInputView.isEnabled()) {
+        if (this.textInputView.isLaidOut() && this.textInputView.isEnabled()) {
             return (this.captionToShow == this.captionDisplayed && textView != null && TextUtils.equals(textView.getText(), charSequence)) ? false : true;
         }
         return false;
@@ -276,7 +275,7 @@ public final class IndicatorViewController {
         if (canAdjustIndicatorPadding()) {
             EditText editText = this.textInputView.getEditText();
             boolean isFontScaleAtLeast1_3 = MaterialResources.isFontScaleAtLeast1_3(this.context);
-            ViewCompat.setPaddingRelative(this.indicatorArea, getIndicatorPadding(isFontScaleAtLeast1_3, R.dimen.material_helper_text_font_1_3_padding_horizontal, ViewCompat.getPaddingStart(editText)), getIndicatorPadding(isFontScaleAtLeast1_3, R.dimen.material_helper_text_font_1_3_padding_top, this.context.getResources().getDimensionPixelSize(R.dimen.material_helper_text_default_padding_top)), getIndicatorPadding(isFontScaleAtLeast1_3, R.dimen.material_helper_text_font_1_3_padding_horizontal, ViewCompat.getPaddingEnd(editText)), 0);
+            this.indicatorArea.setPaddingRelative(getIndicatorPadding(isFontScaleAtLeast1_3, R.dimen.material_helper_text_font_1_3_padding_horizontal, editText.getPaddingStart()), getIndicatorPadding(isFontScaleAtLeast1_3, R.dimen.material_helper_text_font_1_3_padding_top, this.context.getResources().getDimensionPixelSize(R.dimen.material_helper_text_default_padding_top)), getIndicatorPadding(isFontScaleAtLeast1_3, R.dimen.material_helper_text_font_1_3_padding_horizontal, editText.getPaddingEnd()), 0);
         }
     }
 
@@ -390,7 +389,7 @@ public final class IndicatorViewController {
                 this.helperTextView.setTypeface(typeface);
             }
             this.helperTextView.setVisibility(4);
-            ViewCompat.setAccessibilityLiveRegion(this.helperTextView, 1);
+            this.helperTextView.setAccessibilityLiveRegion(1);
             setHelperTextAppearance(this.helperTextTextAppearance);
             setHelperTextViewTextColor(this.helperTextViewTextColor);
             addIndicator(this.helperTextView, 1);
@@ -521,7 +520,7 @@ public final class IndicatorViewController {
         this.errorViewAccessibilityLiveRegion = i;
         TextView textView = this.errorView;
         if (textView != null) {
-            ViewCompat.setAccessibilityLiveRegion(textView, i);
+            textView.setAccessibilityLiveRegion(i);
         }
     }
 

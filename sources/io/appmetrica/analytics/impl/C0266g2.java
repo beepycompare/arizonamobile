@@ -1,52 +1,27 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.appsetid.internal.IAppSetIdRetriever;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AppSetId;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AppSetIdProvider;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AppSetIdScope;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import java.io.IOException;
 /* renamed from: io.appmetrica.analytics.impl.g2  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0266g2 implements AppSetIdProvider {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Context f864a;
-    public final IAppSetIdRetriever b;
-    public volatile AppSetId c;
-    public CountDownLatch d;
-    public final long e;
-    public final C0240f2 f;
-
-    public C0266g2(Context context, IAppSetIdRetriever iAppSetIdRetriever) {
-        this.f864a = context;
-        this.b = iAppSetIdRetriever;
-        this.d = new CountDownLatch(1);
-        this.e = 20L;
-        this.f = new C0240f2(this);
+public final class C0266g2 extends T2 {
+    @Override // io.appmetrica.analytics.impl.T2
+    public final MessageNano a() {
+        return new C0240f2();
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.identifiers.AppSetIdProvider
-    public final synchronized AppSetId getAppSetId() {
-        AppSetId appSetId;
-        if (this.c == null) {
-            try {
-                this.d = new CountDownLatch(1);
-                this.b.retrieveAppSetId(this.f864a, this.f);
-                this.d.await(this.e, TimeUnit.SECONDS);
-            } catch (Throwable unused) {
-            }
-        }
-        appSetId = this.c;
-        if (appSetId == null) {
-            appSetId = new AppSetId(null, AppSetIdScope.UNKNOWN);
-            this.c = appSetId;
-        }
-        return appSetId;
+    public final C0240f2 b() {
+        return new C0240f2();
     }
 
-    public C0266g2(Context context) {
-        this(context, AbstractC0292h2.a());
+    @Override // io.appmetrica.analytics.impl.T2, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    public final Object defaultValue() {
+        return new C0240f2();
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    /* renamed from: a */
+    public final C0240f2 toState(byte[] bArr) throws IOException {
+        return (C0240f2) MessageNano.mergeFrom(new C0240f2(), bArr);
     }
 }

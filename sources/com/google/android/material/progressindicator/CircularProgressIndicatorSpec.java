@@ -8,6 +8,8 @@ import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.resources.MaterialResources;
 /* loaded from: classes4.dex */
 public final class CircularProgressIndicatorSpec extends BaseProgressIndicatorSpec {
+    public int indeterminateAnimationType;
+    public boolean indeterminateTrackVisible;
     public int indicatorDirection;
     public int indicatorInset;
     public int indicatorSize;
@@ -25,17 +27,12 @@ public final class CircularProgressIndicatorSpec extends BaseProgressIndicatorSp
         int dimensionPixelSize = context.getResources().getDimensionPixelSize(R.dimen.mtrl_progress_circular_size_medium);
         int dimensionPixelSize2 = context.getResources().getDimensionPixelSize(R.dimen.mtrl_progress_circular_inset_medium);
         TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, R.styleable.CircularProgressIndicator, i, i2, new int[0]);
+        this.indeterminateAnimationType = obtainStyledAttributes.getInt(R.styleable.CircularProgressIndicator_indeterminateAnimationTypeCircular, 0);
         this.indicatorSize = Math.max(MaterialResources.getDimensionPixelSize(context, obtainStyledAttributes, R.styleable.CircularProgressIndicator_indicatorSize, dimensionPixelSize), this.trackThickness * 2);
         this.indicatorInset = MaterialResources.getDimensionPixelSize(context, obtainStyledAttributes, R.styleable.CircularProgressIndicator_indicatorInset, dimensionPixelSize2);
         this.indicatorDirection = obtainStyledAttributes.getInt(R.styleable.CircularProgressIndicator_indicatorDirectionCircular, 0);
+        this.indeterminateTrackVisible = obtainStyledAttributes.getBoolean(R.styleable.CircularProgressIndicator_indeterminateTrackVisible, true);
         obtainStyledAttributes.recycle();
         validateSpec();
-    }
-
-    int getIndicatorTrackGapSizeDegree() {
-        if (this.indicatorTrackGapSize == 0) {
-            return 0;
-        }
-        return (int) Math.round(360.0d / ((((this.indicatorSize - (this.indicatorInset * 2)) - this.trackThickness) * 3.141592653589793d) / (this.indicatorTrackGapSize + this.trackCornerRadius)));
     }
 }

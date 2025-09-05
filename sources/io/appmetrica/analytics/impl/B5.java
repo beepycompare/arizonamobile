@@ -1,32 +1,27 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
-import kotlin.Pair;
+import android.content.Context;
+import java.util.HashMap;
 /* loaded from: classes4.dex */
-public final class B5 implements Do {
+public final class B5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f357a;
+    public final HashMap f359a = new HashMap();
+    public final HashMap b = new HashMap();
+    public final Context c;
 
-    public B5(List<? extends Pair<String, ? extends Do>> list) {
-        this.f357a = list;
+    public B5(Context context) {
+        this.c = context.getApplicationContext();
     }
 
-    @Override // io.appmetrica.analytics.impl.Do
-    public final String a() {
-        for (Pair pair : this.f357a) {
-            String a2 = ((Do) pair.getSecond()).a();
-            if (a2 != null && a2.length() > 0) {
-                return a2;
-            }
+    public final InterfaceC0275gb a(C0476o5 c0476o5, N4 n4, InterfaceC0427m8 interfaceC0427m8, HashMap hashMap) {
+        InterfaceC0275gb interfaceC0275gb = (InterfaceC0275gb) hashMap.get(c0476o5.toString());
+        if (interfaceC0275gb == null) {
+            InterfaceC0275gb a2 = interfaceC0427m8.a(this.c, c0476o5, n4);
+            hashMap.put(c0476o5.toString(), a2);
+            return a2;
         }
-        return null;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Do
-    public final void a(String str) {
-        for (Pair pair : this.f357a) {
-            ((Do) pair.getSecond()).a(str);
-        }
+        interfaceC0275gb.a(n4);
+        return interfaceC0275gb;
     }
 }

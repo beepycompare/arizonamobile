@@ -1,26 +1,56 @@
 package io.appmetrica.analytics.impl;
+
+import android.os.Handler;
+import com.google.android.vending.expansion.downloader.Constants;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.coreapi.internal.executors.InterruptionSafeThread;
+import io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider;
+import java.util.concurrent.Executor;
 /* loaded from: classes4.dex */
-public final class Y9 {
+public final class Y9 implements ExecutorProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f739a;
+    public final Ak f750a;
+    public final IHandlerExecutor b;
 
-    public Y9(long j) {
-        this.f739a = j;
+    public Y9() {
+        Ak w = Na.j().w();
+        this.f750a = w;
+        this.b = w.c();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
+    public final IHandlerExecutor getDefaultExecutor() {
+        return this.f750a.a();
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
+    public final InterruptionSafeThread getInterruptionThread(String str, String str2, Runnable runnable) {
+        return new InterruptionSafeThread(runnable, (str + '-' + str2) + Constants.FILENAME_SEQUENCE_SEPARATOR + Ud.f695a.incrementAndGet());
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
+    public final IHandlerExecutor getModuleExecutor() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
+    public final IHandlerExecutor getSupportIOExecutor() {
+        Ak ak = this.f750a;
+        if (ak.f == null) {
+            synchronized (ak) {
+                if (ak.f == null) {
+                    ak.f349a.getClass();
+                    Cb a2 = Z9.a("IAA-SIO");
+                    ak.f = new Z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
+                }
+            }
         }
-        return (obj instanceof Y9) && this.f739a == ((Y9) obj).f739a;
+        return ak.f;
     }
 
-    public final int hashCode() {
-        return Long.hashCode(this.f739a);
-    }
-
-    public final String toString() {
-        return "ExternalAttributionConfig(collectingInterval=" + this.f739a + ')';
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ExecutorProvider
+    public final Executor getUiExecutor() {
+        return this.f750a.f();
     }
 }

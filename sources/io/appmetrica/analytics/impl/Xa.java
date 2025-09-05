@@ -1,20 +1,33 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
-import io.appmetrica.analytics.coreapi.internal.identifiers.SimpleAdvertisingIdGetter;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public interface Xa extends SimpleAdvertisingIdGetter, InterfaceC0515pm {
-    AdvertisingIdsHolder a();
+public final class Xa {
 
-    AdvertisingIdsHolder a(Yi yi);
+    /* renamed from: a  reason: collision with root package name */
+    public static final HashSet f736a;
 
-    /* synthetic */ void a(C0389km c0389km);
+    static {
+        HashSet hashSet = new HashSet();
+        f736a = hashSet;
+        hashSet.add("get_ad");
+        hashSet.add("report");
+        hashSet.add("report_ad");
+        hashSet.add("startup");
+        hashSet.add("diagnostic");
+    }
 
-    void b(boolean z);
-
-    void c(boolean z);
-
-    AdvertisingIdsHolder getIdentifiers();
-
-    void init();
+    public static ArrayList a(JSONObject jSONObject, String str) {
+        try {
+            JSONObject optJSONObject = jSONObject.optJSONObject(str);
+            if (optJSONObject != null) {
+                return Gb.a(optJSONObject.getJSONArray("urls"));
+            }
+            return null;
+        } catch (Throwable unused) {
+            return null;
+        }
+    }
 }

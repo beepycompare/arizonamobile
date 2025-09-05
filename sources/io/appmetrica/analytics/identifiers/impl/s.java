@@ -5,14 +5,14 @@ import android.os.IBinder;
 public final class s implements u {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IBinder f333a;
+    public final IBinder f334a;
 
     public s(IBinder iBinder) {
-        this.f333a = iBinder;
+        this.f334a = iBinder;
     }
 
     @Override // android.os.IInterface
     public final IBinder asBinder() {
-        return this.f333a;
+        return this.f334a;
     }
 }

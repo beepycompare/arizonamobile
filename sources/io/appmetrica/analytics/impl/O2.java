@@ -1,18 +1,11 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 /* loaded from: classes4.dex */
-public abstract class O2 implements Qa {
+public final class O2 extends AbstractC0263g {
+    public static final String g = "background";
 
-    /* renamed from: a  reason: collision with root package name */
-    public final int f584a;
-
-    public O2(int i) {
-        this.f584a = i;
+    public O2(C0651v5 c0651v5, C0130al c0130al, C0233el c0233el, C0413lk c0413lk, SystemTimeProvider systemTimeProvider) {
+        super(c0651v5, c0130al, c0233el, Zk.a(EnumC0259fl.BACKGROUND).b().a(), c0413lk, systemTimeProvider);
     }
-
-    public final int a() {
-        return this.f584a;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Qa
-    public abstract /* synthetic */ On a(Object obj);
 }

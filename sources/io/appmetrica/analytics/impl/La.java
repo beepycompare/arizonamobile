@@ -1,19 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
+import io.appmetrica.analytics.coreapi.internal.backport.BiFunction;
+import java.util.Arrays;
 /* loaded from: classes4.dex */
-public abstract class La {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Ji f541a;
-
-    public La(Ji ji) {
-        this.f541a = ji;
+public final class La implements BiFunction {
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.BiFunction
+    /* renamed from: a */
+    public final Cn apply(Thread thread, StackTraceElement[] stackTraceElementArr) {
+        String name = thread.getName();
+        int priority = thread.getPriority();
+        long id = thread.getId();
+        ThreadGroup threadGroup = thread.getThreadGroup();
+        return new Cn(name, priority, id, threadGroup != null ? threadGroup.getName() : "", Integer.valueOf(thread.getState().ordinal()), stackTraceElementArr == null ? null : Arrays.asList(stackTraceElementArr));
     }
-
-    public final Ji a() {
-        return this.f541a;
-    }
-
-    public abstract void a(List list);
 }

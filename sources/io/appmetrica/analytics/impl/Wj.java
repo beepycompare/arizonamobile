@@ -1,18 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ModuleEvent;
+import io.appmetrica.analytics.AdRevenue;
 /* loaded from: classes4.dex */
-public final class Wj implements InterfaceC0454nb {
+public final class Wj implements InterfaceC0533qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ModuleEvent f712a;
+    public final /* synthetic */ AdRevenue f725a;
 
-    public Wj(ModuleEvent moduleEvent) {
-        this.f712a = moduleEvent;
+    public Wj(AdRevenue adRevenue) {
+        this.f725a = adRevenue;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0454nb
-    public final void a(InterfaceC0479ob interfaceC0479ob) {
-        interfaceC0479ob.reportEvent(this.f712a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
+    public final void a(InterfaceC0557rb interfaceC0557rb) {
+        interfaceC0557rb.reportAdRevenue(this.f725a);
     }
 }

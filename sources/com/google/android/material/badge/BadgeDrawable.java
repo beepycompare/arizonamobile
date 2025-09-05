@@ -11,8 +11,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.FrameLayout;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.badge.BadgeState;
@@ -30,6 +30,8 @@ import java.util.Locale;
 /* loaded from: classes4.dex */
 public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDrawableDelegate {
     public static final int BADGE_CONTENT_NOT_TRUNCATED = -2;
+    public static final int BADGE_FIXED_EDGE_END = 1;
+    public static final int BADGE_FIXED_EDGE_START = 0;
     static final int BADGE_RADIUS_NOT_SPECIFIED = -1;
     @Deprecated
     public static final int BOTTOM_END = 8388693;
@@ -102,12 +104,14 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
     }
 
     private void onVisibilityUpdated() {
-        boolean isVisible = this.state.isVisible();
-        setVisible(isVisible, false);
-        if (!BadgeUtils.USE_COMPAT_PARENT || getCustomBadgeParent() == null || isVisible) {
-            return;
+        setVisible(this.state.isVisible(), false);
+    }
+
+    public void setBadgeFixedEdge(int i) {
+        if (this.state.badgeFixedEdge != i) {
+            this.state.badgeFixedEdge = i;
+            updateCenterAndBounds();
         }
-        ((ViewGroup) getCustomBadgeParent().getParent()).invalidate();
     }
 
     private void restoreState() {
@@ -162,21 +166,10 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
 
     public void updateBadgeCoordinates(View view, FrameLayout frameLayout) {
         this.anchorViewRef = new WeakReference<>(view);
-        if (BadgeUtils.USE_COMPAT_PARENT && frameLayout == null) {
-            tryWrapAnchorInCompatParent(view);
-        } else {
-            this.customBadgeParentRef = new WeakReference<>(frameLayout);
-        }
-        if (!BadgeUtils.USE_COMPAT_PARENT) {
-            updateAnchorParentToNotClip(view);
-        }
+        this.customBadgeParentRef = new WeakReference<>(frameLayout);
+        updateAnchorParentToNotClip(view);
         updateCenterAndBounds();
         invalidateSelf();
-    }
-
-    private boolean isAnchorViewWrappedInCompatParent() {
-        FrameLayout customBadgeParent = getCustomBadgeParent();
-        return customBadgeParent != null && customBadgeParent.getId() == R.id.mtrl_anchor_parent;
     }
 
     public FrameLayout getCustomBadgeParent() {
@@ -185,35 +178,6 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
             return weakReference.get();
         }
         return null;
-    }
-
-    private void tryWrapAnchorInCompatParent(final View view) {
-        ViewGroup viewGroup = (ViewGroup) view.getParent();
-        if (viewGroup == null || viewGroup.getId() != R.id.mtrl_anchor_parent) {
-            WeakReference<FrameLayout> weakReference = this.customBadgeParentRef;
-            if (weakReference == null || weakReference.get() != viewGroup) {
-                updateAnchorParentToNotClip(view);
-                final FrameLayout frameLayout = new FrameLayout(view.getContext());
-                frameLayout.setId(R.id.mtrl_anchor_parent);
-                frameLayout.setClipChildren(false);
-                frameLayout.setClipToPadding(false);
-                frameLayout.setLayoutParams(view.getLayoutParams());
-                frameLayout.setMinimumWidth(view.getWidth());
-                frameLayout.setMinimumHeight(view.getHeight());
-                int indexOfChild = viewGroup.indexOfChild(view);
-                viewGroup.removeViewAt(indexOfChild);
-                view.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
-                frameLayout.addView(view);
-                viewGroup.addView(frameLayout, indexOfChild);
-                this.customBadgeParentRef = new WeakReference<>(frameLayout);
-                frameLayout.post(new Runnable() { // from class: com.google.android.material.badge.BadgeDrawable.1
-                    @Override // java.lang.Runnable
-                    public void run() {
-                        BadgeDrawable.this.updateBadgeCoordinates(view, frameLayout);
-                    }
-                });
-            }
-        }
     }
 
     private static void updateAnchorParentToNotClip(View view) {
@@ -581,6 +545,7 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
         return this.state.getAdditionalVerticalOffset();
     }
 
+    @Deprecated
     public void setAutoAdjustToWithinGrandparentBounds(boolean z) {
         if (this.state.isAutoAdjustedToGrandparentBounds() == z) {
             return;
@@ -665,10 +630,7 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
         view.getDrawingRect(rect2);
         WeakReference<FrameLayout> weakReference2 = this.customBadgeParentRef;
         FrameLayout frameLayout = weakReference2 != null ? weakReference2.get() : null;
-        if (frameLayout != null || BadgeUtils.USE_COMPAT_PARENT) {
-            if (frameLayout == null) {
-                frameLayout = (ViewGroup) view.getParent();
-            }
+        if (frameLayout != null) {
             frameLayout.offsetDescendantRectToMyCoords(view, rect2);
         }
         calculateCenterAndBounds(rect2, view);
@@ -740,85 +702,112 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
         int totalHorizontalOffsetForState = getTotalHorizontalOffsetForState();
         int badgeGravity2 = this.state.getBadgeGravity();
         if (badgeGravity2 == 8388659 || badgeGravity2 == 8388691) {
-            if (ViewCompat.getLayoutDirection(view) == 0) {
+            if (this.state.badgeFixedEdge == 0) {
+                if (view.getLayoutDirection() == 0) {
+                    f = (rect.left + this.halfBadgeWidth) - ((this.halfBadgeHeight * 2.0f) - totalHorizontalOffsetForState);
+                } else {
+                    f = (rect.right - this.halfBadgeWidth) + ((this.halfBadgeHeight * 2.0f) - totalHorizontalOffsetForState);
+                }
+            } else if (view.getLayoutDirection() == 0) {
                 f = (rect.left - this.halfBadgeWidth) + totalHorizontalOffsetForState;
             } else {
                 f = (rect.right + this.halfBadgeWidth) - totalHorizontalOffsetForState;
             }
             this.badgeCenterX = f;
         } else {
-            if (ViewCompat.getLayoutDirection(view) == 0) {
-                f2 = (rect.right + this.halfBadgeWidth) - totalHorizontalOffsetForState;
+            if (this.state.badgeFixedEdge == 0) {
+                if (view.getLayoutDirection() == 0) {
+                    f2 = (rect.right + this.halfBadgeWidth) - totalHorizontalOffsetForState;
+                } else {
+                    f2 = (rect.left - this.halfBadgeWidth) + totalHorizontalOffsetForState;
+                }
+            } else if (view.getLayoutDirection() == 0) {
+                f2 = (rect.right - this.halfBadgeWidth) + ((this.halfBadgeHeight * 2.0f) - totalHorizontalOffsetForState);
             } else {
-                f2 = (rect.left - this.halfBadgeWidth) + totalHorizontalOffsetForState;
+                f2 = (rect.left + this.halfBadgeWidth) - ((this.halfBadgeHeight * 2.0f) - totalHorizontalOffsetForState);
             }
             this.badgeCenterX = f2;
         }
         if (this.state.isAutoAdjustedToGrandparentBounds()) {
             autoAdjustWithinGrandparentBounds(view);
+        } else {
+            autoAdjustWithinViewBounds(view, null);
+        }
+    }
+
+    private void autoAdjustWithinViewBounds(View view, View view2) {
+        float f;
+        float f2;
+        boolean z;
+        ViewParent customBadgeParent = getCustomBadgeParent();
+        if (customBadgeParent == null) {
+            float y = view.getY();
+            f2 = view.getX();
+            customBadgeParent = view.getParent();
+            f = y;
+        } else {
+            f = 0.0f;
+            f2 = 0.0f;
+        }
+        while (true) {
+            z = customBadgeParent instanceof View;
+            if (!z || customBadgeParent == view2) {
+                break;
+            }
+            ViewParent parent = customBadgeParent.getParent();
+            if (!(parent instanceof ViewGroup) || ((ViewGroup) parent).getClipChildren()) {
+                break;
+            }
+            View view3 = (View) customBadgeParent;
+            f += view3.getY();
+            f2 += view3.getX();
+            customBadgeParent = customBadgeParent.getParent();
+        }
+        if (z) {
+            float topCutOff = getTopCutOff(f);
+            float leftCutOff = getLeftCutOff(f2);
+            View view4 = (View) customBadgeParent;
+            float bottomCutOff = getBottomCutOff(view4.getHeight(), f);
+            float rightCutoff = getRightCutoff(view4.getWidth(), f2);
+            if (topCutOff < 0.0f) {
+                this.badgeCenterY += Math.abs(topCutOff);
+            }
+            if (leftCutOff < 0.0f) {
+                this.badgeCenterX += Math.abs(leftCutOff);
+            }
+            if (bottomCutOff > 0.0f) {
+                this.badgeCenterY -= Math.abs(bottomCutOff);
+            }
+            if (rightCutoff > 0.0f) {
+                this.badgeCenterX -= Math.abs(rightCutoff);
+            }
         }
     }
 
     private void autoAdjustWithinGrandparentBounds(View view) {
-        float f;
-        float f2;
-        View customBadgeParent = getCustomBadgeParent();
+        ViewParent customBadgeParent = getCustomBadgeParent();
         if (customBadgeParent == null) {
-            if (!(view.getParent() instanceof View)) {
-                return;
-            }
-            float y = view.getY();
-            f2 = view.getX();
-            customBadgeParent = (View) view.getParent();
-            f = y;
-        } else if (!isAnchorViewWrappedInCompatParent()) {
-            f = 0.0f;
-            f2 = 0.0f;
-        } else if (!(customBadgeParent.getParent() instanceof View)) {
-            return;
-        } else {
-            f = customBadgeParent.getY();
-            f2 = customBadgeParent.getX();
-            customBadgeParent = (View) customBadgeParent.getParent();
+            customBadgeParent = view.getParent();
         }
-        float topCutOff = getTopCutOff(customBadgeParent, f);
-        float leftCutOff = getLeftCutOff(customBadgeParent, f2);
-        float bottomCutOff = getBottomCutOff(customBadgeParent, f);
-        float rightCutoff = getRightCutoff(customBadgeParent, f2);
-        if (topCutOff < 0.0f) {
-            this.badgeCenterY += Math.abs(topCutOff);
-        }
-        if (leftCutOff < 0.0f) {
-            this.badgeCenterX += Math.abs(leftCutOff);
-        }
-        if (bottomCutOff > 0.0f) {
-            this.badgeCenterY -= Math.abs(bottomCutOff);
-        }
-        if (rightCutoff > 0.0f) {
-            this.badgeCenterX -= Math.abs(rightCutoff);
+        if ((customBadgeParent instanceof View) && (customBadgeParent.getParent() instanceof View)) {
+            autoAdjustWithinViewBounds(view, (View) customBadgeParent.getParent());
         }
     }
 
-    private float getTopCutOff(View view, float f) {
-        return (this.badgeCenterY - this.halfBadgeHeight) + view.getY() + f;
+    private float getTopCutOff(float f) {
+        return (this.badgeCenterY - this.halfBadgeHeight) + f;
     }
 
-    private float getLeftCutOff(View view, float f) {
-        return (this.badgeCenterX - this.halfBadgeWidth) + view.getX() + f;
+    private float getLeftCutOff(float f) {
+        return (this.badgeCenterX - this.halfBadgeWidth) + f;
     }
 
-    private float getBottomCutOff(View view, float f) {
-        if (view.getParent() instanceof View) {
-            return ((this.badgeCenterY + this.halfBadgeHeight) - (((View) view.getParent()).getHeight() - view.getY())) + f;
-        }
-        return 0.0f;
+    private float getBottomCutOff(float f, float f2) {
+        return ((this.badgeCenterY + this.halfBadgeHeight) - f) + f2;
     }
 
-    private float getRightCutoff(View view, float f) {
-        if (view.getParent() instanceof View) {
-            return ((this.badgeCenterX + this.halfBadgeWidth) - (((View) view.getParent()).getWidth() - view.getX())) + f;
-        }
-        return 0.0f;
+    private float getRightCutoff(float f, float f2) {
+        return ((this.badgeCenterX + this.halfBadgeWidth) - f) + f2;
     }
 
     private void drawBadgeContent(Canvas canvas) {

@@ -9,34 +9,30 @@ import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 /* loaded from: classes4.dex */
 public final class T3 extends MessageNano {
-    public static final int c = 0;
-    public static final int d = 1;
-    public static final int e = 2;
-    public static final int f = 3;
-    public static volatile T3[] g;
+    public static volatile T3[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public Q3 f655a;
-    public Q3[] b;
+    public V3 f674a;
+    public int b;
 
     public T3() {
         a();
     }
 
     public static T3[] b() {
-        if (g == null) {
+        if (c == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (g == null) {
-                    g = new T3[0];
+                if (c == null) {
+                    c = new T3[0];
                 }
             }
         }
-        return g;
+        return c;
     }
 
     public final T3 a() {
-        this.f655a = null;
-        this.b = Q3.b();
+        this.f674a = null;
+        this.b = 0;
         this.cachedSize = -1;
         return this;
     }
@@ -44,48 +40,23 @@ public final class T3 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        Q3 q3 = this.f655a;
-        if (q3 != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, q3);
+        V3 v3 = this.f674a;
+        if (v3 != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, v3);
         }
-        Q3[] q3Arr = this.b;
-        if (q3Arr != null && q3Arr.length > 0) {
-            int i = 0;
-            while (true) {
-                Q3[] q3Arr2 = this.b;
-                if (i >= q3Arr2.length) {
-                    break;
-                }
-                Q3 q32 = q3Arr2[i];
-                if (q32 != null) {
-                    computeSerializedSize = CodedOutputByteBufferNano.computeMessageSize(2, q32) + computeSerializedSize;
-                }
-                i++;
-            }
-        }
-        return computeSerializedSize;
+        int i = this.b;
+        return i != 0 ? CodedOutputByteBufferNano.computeInt32Size(2, i) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        Q3 q3 = this.f655a;
-        if (q3 != null) {
-            codedOutputByteBufferNano.writeMessage(1, q3);
+        V3 v3 = this.f674a;
+        if (v3 != null) {
+            codedOutputByteBufferNano.writeMessage(1, v3);
         }
-        Q3[] q3Arr = this.b;
-        if (q3Arr != null && q3Arr.length > 0) {
-            int i = 0;
-            while (true) {
-                Q3[] q3Arr2 = this.b;
-                if (i >= q3Arr2.length) {
-                    break;
-                }
-                Q3 q32 = q3Arr2[i];
-                if (q32 != null) {
-                    codedOutputByteBufferNano.writeMessage(2, q32);
-                }
-                i++;
-            }
+        int i = this.b;
+        if (i != 0) {
+            codedOutputByteBufferNano.writeInt32(2, i);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -98,34 +69,19 @@ public final class T3 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f655a == null) {
-                    this.f655a = new Q3();
+                if (this.f674a == null) {
+                    this.f674a = new V3();
                 }
-                codedInputByteBufferNano.readMessage(this.f655a);
-            } else if (readTag != 18) {
+                codedInputByteBufferNano.readMessage(this.f674a);
+            } else if (readTag != 16) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 18);
-                Q3[] q3Arr = this.b;
-                int length = q3Arr == null ? 0 : q3Arr.length;
-                int i = repeatedFieldArrayLength + length;
-                Q3[] q3Arr2 = new Q3[i];
-                if (length != 0) {
-                    System.arraycopy(q3Arr, 0, q3Arr2, 0, length);
+                int readInt32 = codedInputByteBufferNano.readInt32();
+                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2 || readInt32 == 3) {
+                    this.b = readInt32;
                 }
-                while (length < i - 1) {
-                    Q3 q3 = new Q3();
-                    q3Arr2[length] = q3;
-                    codedInputByteBufferNano.readMessage(q3);
-                    codedInputByteBufferNano.readTag();
-                    length++;
-                }
-                Q3 q32 = new Q3();
-                q3Arr2[length] = q32;
-                codedInputByteBufferNano.readMessage(q32);
-                this.b = q3Arr2;
             }
         }
         return this;

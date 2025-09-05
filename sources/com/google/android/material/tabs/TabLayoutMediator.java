@@ -65,16 +65,18 @@ public final class TabLayoutMediator {
 
     public void detach() {
         RecyclerView.Adapter<?> adapter;
-        if (this.autoRefresh && (adapter = this.adapter) != null) {
-            adapter.unregisterAdapterDataObserver(this.pagerAdapterObserver);
-            this.pagerAdapterObserver = null;
+        if (this.attached) {
+            if (this.autoRefresh && (adapter = this.adapter) != null) {
+                adapter.unregisterAdapterDataObserver(this.pagerAdapterObserver);
+                this.pagerAdapterObserver = null;
+            }
+            this.tabLayout.removeOnTabSelectedListener(this.onTabSelectedListener);
+            this.viewPager.unregisterOnPageChangeCallback(this.onPageChangeCallback);
+            this.onTabSelectedListener = null;
+            this.onPageChangeCallback = null;
+            this.adapter = null;
+            this.attached = false;
         }
-        this.tabLayout.removeOnTabSelectedListener(this.onTabSelectedListener);
-        this.viewPager.unregisterOnPageChangeCallback(this.onPageChangeCallback);
-        this.onTabSelectedListener = null;
-        this.onPageChangeCallback = null;
-        this.adapter = null;
-        this.attached = false;
     }
 
     public boolean isAttached() {

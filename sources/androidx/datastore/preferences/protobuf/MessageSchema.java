@@ -880,7 +880,7 @@ public final class MessageSchema<T> implements Schema<T> {
             case 46:
             case 47:
             case 48:
-            case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+            case 49:
                 return SchemaUtil.safeEquals(UnsafeUtil.getObject(message, offset), UnsafeUtil.getObject(other, offset));
             case 50:
                 return SchemaUtil.safeEquals(UnsafeUtil.getObject(message, offset), UnsafeUtil.getObject(other, offset));
@@ -1045,7 +1045,7 @@ public final class MessageSchema<T> implements Schema<T> {
                 case 46:
                 case 47:
                 case 48:
-                case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+                case 49:
                     i = i2 * 53;
                     hashLong = UnsafeUtil.getObject(message, offset).hashCode();
                     i2 = i + hashLong;
@@ -1390,7 +1390,7 @@ public final class MessageSchema<T> implements Schema<T> {
             case 46:
             case 47:
             case 48:
-            case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+            case 49:
                 this.listFieldSchema.mergeListsAt(message, other, offset);
                 return;
             case 50:
@@ -1980,7 +1980,7 @@ public final class MessageSchema<T> implements Schema<T> {
                     }
                     i5 = i9;
                     break;
-                case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+                case 49:
                     computeDoubleSize = SchemaUtil.computeSizeGroupList(numberAt, (List) unsafe.getObject(t, offset), messageSchema.getMessageFieldSchema(i3));
                     i5 = i9 + computeDoubleSize;
                     break;
@@ -2431,7 +2431,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         case 48:
                             SchemaUtil.writeSInt64List(messageSchema.numberAt(i), (List) unsafe.getObject(message, offset), writer, z);
                             break;
-                        case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+                        case 49:
                             SchemaUtil.writeGroupList(messageSchema.numberAt(i), (List) unsafe.getObject(message, offset), writer, messageSchema.getMessageFieldSchema(i));
                             break;
                         case 50:
@@ -2796,7 +2796,7 @@ public final class MessageSchema<T> implements Schema<T> {
                         case 48:
                             SchemaUtil.writeSInt64List(numberAt(length), (List) UnsafeUtil.getObject(message, offset(typeAndOffsetAt)), writer, true);
                             break;
-                        case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+                        case 49:
                             SchemaUtil.writeGroupList(numberAt(length), (List) UnsafeUtil.getObject(message, offset(typeAndOffsetAt)), writer, getMessageFieldSchema(length));
                             break;
                         case 50:
@@ -3594,7 +3594,7 @@ public final class MessageSchema<T> implements Schema<T> {
                                         throw th;
                                     }
                                     break;
-                                case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+                                case 49:
                                     try {
                                         t = message;
                                     } catch (Throwable th9) {
@@ -4351,7 +4351,7 @@ public final class MessageSchema<T> implements Schema<T> {
                     return ArrayDecoders.decodeSInt64List(tag, data, position, limit, protobufList2, registers);
                 }
                 break;
-            case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+            case 49:
                 if (wireType == 3) {
                     return ArrayDecoders.decodeGroupList(getMessageFieldSchema(bufferPosition), tag, data, position, limit, protobufList2, registers);
                 }
@@ -5755,7 +5755,7 @@ public final class MessageSchema<T> implements Schema<T> {
                             case 46:
                             case 47:
                             case 48:
-                            case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+                            case 49:
                                 this.listFieldSchema.makeImmutableListAt(message, offset);
                                 break;
                             case 50:

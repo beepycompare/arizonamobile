@@ -1,15 +1,48 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Function;
+import io.appmetrica.analytics.AppMetricaConfig;
+import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
+import java.util.Map;
 /* loaded from: classes4.dex */
-public final class K6 implements Function {
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Function
-    /* renamed from: a */
-    public final C0740yn apply(Thread thread) {
-        String name = thread.getName();
-        int priority = thread.getPriority();
-        long id = thread.getId();
-        ThreadGroup threadGroup = thread.getThreadGroup();
-        return new C0740yn(name, priority, id, threadGroup != null ? threadGroup.getName() : "", null, null);
+public final class K6 implements InterfaceC0632ub {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final L6 f529a;
+    public final C0153bi b;
+
+    public K6(L6 l6) {
+        this.f529a = l6;
+        this.b = l6.a();
+        A4.l().getClass();
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0632ub
+    public final void a(Wn wn) {
+        Si si = this.f529a.f549a;
+        Rh a2 = si.a(wn, this.b);
+        C0153bi c0153bi = a2.e;
+        Yl yl = si.e;
+        if (yl != null) {
+            c0153bi.b.setUuid(((Xl) yl).g());
+        } else {
+            c0153bi.getClass();
+        }
+        si.c.b(a2);
+        LoggerStorage.getMainPublicOrAnonymousLogger().info("Unhandled exception received: " + wn, new Object[0]);
+    }
+
+    public final void a(AppMetricaConfig appMetricaConfig) {
+        Map<String, String> map = appMetricaConfig.errorEnvironment;
+        if (map != null) {
+            for (Map.Entry<String, String> entry : map.entrySet()) {
+                C0153bi c0153bi = this.b;
+                String key = entry.getKey();
+                String value = entry.getValue();
+                synchronized (c0153bi) {
+                    C0144b9 c0144b9 = c0153bi.c;
+                    c0144b9.b.b(c0144b9.f803a, key, value);
+                }
+            }
+        }
     }
 }

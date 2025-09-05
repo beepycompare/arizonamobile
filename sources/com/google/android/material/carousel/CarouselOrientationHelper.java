@@ -13,8 +13,7 @@ abstract class CarouselOrientationHelper {
 
     abstract int getDecoratedCrossAxisMeasurement(View view);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract float getMaskMargins(RecyclerView.LayoutParams layoutParams);
+    abstract float getMaskMargins(RecyclerView.LayoutParams layoutParams);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract RectF getMaskRect(float f, float f2, float f3, float f4);
@@ -22,8 +21,7 @@ abstract class CarouselOrientationHelper {
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract int getParentBottom();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract int getParentEnd();
+    abstract int getParentEnd();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract int getParentLeft();

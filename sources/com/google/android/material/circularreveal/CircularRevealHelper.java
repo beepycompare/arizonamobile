@@ -1,13 +1,10 @@
 package com.google.android.material.circularreveal;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
-import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import androidx.core.internal.view.SupportMenu;
@@ -46,6 +43,12 @@ public class CircularRevealHelper {
     public @interface Strategy {
     }
 
+    public void buildCircularRevealCache() {
+    }
+
+    public void destroyCircularRevealCache() {
+    }
+
     public CircularRevealHelper(Delegate delegate) {
         this.delegate = delegate;
         View view = (View) delegate;
@@ -56,33 +59,6 @@ public class CircularRevealHelper {
         Paint paint = new Paint(1);
         this.scrimPaint = paint;
         paint.setColor(0);
-    }
-
-    public void buildCircularRevealCache() {
-        if (STRATEGY == 0) {
-            this.buildingCircularRevealCache = true;
-            this.hasCircularRevealCache = false;
-            this.view.buildDrawingCache();
-            Bitmap drawingCache = this.view.getDrawingCache();
-            if (drawingCache == null && this.view.getWidth() != 0 && this.view.getHeight() != 0) {
-                drawingCache = Bitmap.createBitmap(this.view.getWidth(), this.view.getHeight(), Bitmap.Config.ARGB_8888);
-                this.view.draw(new Canvas(drawingCache));
-            }
-            if (drawingCache != null) {
-                this.revealPaint.setShader(new BitmapShader(drawingCache, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-            }
-            this.buildingCircularRevealCache = false;
-            this.hasCircularRevealCache = true;
-        }
-    }
-
-    public void destroyCircularRevealCache() {
-        if (STRATEGY == 0) {
-            this.hasCircularRevealCache = false;
-            this.view.destroyDrawingCache();
-            this.revealPaint.setShader(null);
-            this.view.invalidate();
-        }
     }
 
     public void setRevealInfo(CircularRevealWidget.RevealInfo revealInfo) {
@@ -132,13 +108,6 @@ public class CircularRevealHelper {
     }
 
     private void invalidateRevealInfo() {
-        if (STRATEGY == 1) {
-            this.revealPath.rewind();
-            CircularRevealWidget.RevealInfo revealInfo = this.revealInfo;
-            if (revealInfo != null) {
-                this.revealPath.addCircle(revealInfo.centerX, this.revealInfo.centerY, this.revealInfo.radius, Path.Direction.CW);
-            }
-        }
         this.view.invalidate();
     }
 
@@ -149,32 +118,12 @@ public class CircularRevealHelper {
     public void draw(Canvas canvas) {
         Canvas canvas2;
         if (shouldDrawCircularReveal()) {
-            int i = STRATEGY;
-            if (i == 0) {
+            this.delegate.actualDraw(canvas);
+            if (shouldDrawScrim()) {
                 canvas2 = canvas;
-                canvas2.drawCircle(this.revealInfo.centerX, this.revealInfo.centerY, this.revealInfo.radius, this.revealPaint);
-                if (shouldDrawScrim()) {
-                    canvas2.drawCircle(this.revealInfo.centerX, this.revealInfo.centerY, this.revealInfo.radius, this.scrimPaint);
-                }
-            } else if (i == 1) {
-                canvas2 = canvas;
-                int save = canvas2.save();
-                canvas2.clipPath(this.revealPath);
-                this.delegate.actualDraw(canvas2);
-                if (shouldDrawScrim()) {
-                    canvas2.drawRect(0.0f, 0.0f, this.view.getWidth(), this.view.getHeight(), this.scrimPaint);
-                }
-                canvas2.restoreToCount(save);
-            } else if (i == 2) {
-                this.delegate.actualDraw(canvas);
-                if (shouldDrawScrim()) {
-                    canvas.drawRect(0.0f, 0.0f, this.view.getWidth(), this.view.getHeight(), this.scrimPaint);
-                    canvas2 = canvas;
-                } else {
-                    canvas2 = canvas;
-                }
+                canvas2.drawRect(0.0f, 0.0f, this.view.getWidth(), this.view.getHeight(), this.scrimPaint);
             } else {
-                throw new IllegalStateException("Unsupported strategy " + i);
+                canvas2 = canvas;
             }
         } else {
             canvas2 = canvas;
@@ -203,8 +152,7 @@ public class CircularRevealHelper {
 
     private boolean shouldDrawCircularReveal() {
         CircularRevealWidget.RevealInfo revealInfo = this.revealInfo;
-        boolean z = revealInfo == null || revealInfo.isInvalid();
-        return STRATEGY == 0 ? !z && this.hasCircularRevealCache : !z;
+        return !(revealInfo == null || revealInfo.isInvalid());
     }
 
     private boolean shouldDrawScrim() {

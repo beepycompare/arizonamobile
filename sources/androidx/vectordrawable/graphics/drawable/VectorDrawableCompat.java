@@ -628,9 +628,8 @@ public class VectorDrawableCompat extends VectorDrawableCommon {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
-    public static class VectorDrawableDelegateState extends Drawable.ConstantState {
+    private static class VectorDrawableDelegateState extends Drawable.ConstantState {
         private final Drawable.ConstantState mDelegateState;
 
         public VectorDrawableDelegateState(Drawable.ConstantState constantState) {

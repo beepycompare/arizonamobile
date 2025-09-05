@@ -10,7 +10,7 @@ public final class PackageManagerUtilsTiramisu {
     public static final PackageManagerUtilsTiramisu INSTANCE = new PackageManagerUtilsTiramisu();
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f291a = "[PackageManagerUtilsTiramisu]";
+    private static final String f292a = "[PackageManagerUtilsTiramisu]";
 
     private PackageManagerUtilsTiramisu() {
     }

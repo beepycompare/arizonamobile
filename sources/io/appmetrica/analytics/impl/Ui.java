@@ -1,31 +1,84 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import android.os.Bundle;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 /* loaded from: classes4.dex */
-public abstract class Ui {
+public final class Ui implements InterfaceC0641uk {
+    public static final Ti e = new Ti();
+    public static final long f = TimeUnit.SECONDS.toMillis(4);
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Context f680a;
-    public final String b;
-    public final String c;
+    public final C0471o0 f697a;
+    public final C0566rk b;
+    public final TimeProvider c;
+    public final ICommonExecutor d;
 
-    public Ui(Context context, String str, String str2) {
-        this.f680a = context;
-        this.b = str;
-        this.c = str2;
+    public Ui(C0471o0 c0471o0, C0566rk c0566rk, TimeProvider timeProvider) {
+        this.f697a = c0471o0;
+        this.b = c0566rk;
+        this.c = timeProvider;
+        this.d = A4.l().g().b();
     }
 
-    public final Object a() {
-        int identifier = this.f680a.getResources().getIdentifier(this.b, this.c, this.f680a.getPackageName());
-        if (identifier != 0) {
+    public final void a(Rh rh) {
+        Callable c0410lh;
+        ICommonExecutor iCommonExecutor = this.d;
+        if (rh.b) {
+            C0566rk c0566rk = this.b;
+            c0410lh = new B6(c0566rk.f1065a, c0566rk.b, c0566rk.c, rh);
+        } else {
+            C0566rk c0566rk2 = this.b;
+            c0410lh = new C0410lh(c0566rk2.b, c0566rk2.c, rh);
+        }
+        iCommonExecutor.submit(c0410lh);
+    }
+
+    public final void b(Rh rh) {
+        long uptimeMillis = this.c.uptimeMillis();
+        C0566rk c0566rk = this.b;
+        B6 b6 = new B6(c0566rk.f1065a, c0566rk.b, c0566rk.c, rh);
+        if (this.f697a.a()) {
             try {
-                return a(identifier);
+                this.d.submit(b6).get(f, TimeUnit.MILLISECONDS);
             } catch (Throwable unused) {
-                return null;
             }
         }
-        return null;
+        if (!b6.c) {
+            try {
+                b6.a();
+            } catch (Throwable unused2) {
+            }
+        }
+        try {
+            Thread.sleep(Math.max(0L, f - (this.c.uptimeMillis() - uptimeMillis)));
+        } catch (Throwable unused3) {
+        }
     }
 
-    public abstract Object a(int i);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0641uk
+    public final void reportData(int i, Bundle bundle) {
+        ICommonExecutor iCommonExecutor = this.d;
+        C0566rk c0566rk = this.b;
+        iCommonExecutor.submit(new Tn(c0566rk.b, c0566rk.c, i, bundle));
+    }
+
+    public Ui(C0471o0 c0471o0, C0566rk c0566rk) {
+        this(c0471o0, c0566rk, new SystemTimeProvider());
+    }
+
+    public final void a(Vf vf) {
+        ICommonExecutor iCommonExecutor = this.d;
+        C0566rk c0566rk = this.b;
+        iCommonExecutor.submit(new Le(c0566rk.b, c0566rk.c, vf));
+    }
+
+    public final void b(Vf vf) {
+        ICommonExecutor iCommonExecutor = this.d;
+        C0566rk c0566rk = this.b;
+        iCommonExecutor.submit(new C0128aj(c0566rk.b, c0566rk.c, vf));
+    }
 }

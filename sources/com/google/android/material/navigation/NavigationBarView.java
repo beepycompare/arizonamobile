@@ -12,13 +12,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.appcompat.view.SupportMenuInflater;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.view.menu.MenuView;
 import androidx.appcompat.widget.TintTypedArray;
-import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.core.view.ViewCompat;
 import androidx.customview.view.AbsSavedState;
 import com.google.android.material.R;
 import com.google.android.material.badge.BadgeDrawable;
@@ -33,6 +32,13 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 /* loaded from: classes4.dex */
 public abstract class NavigationBarView extends FrameLayout {
+    public static final int ACTIVE_INDICATOR_WIDTH_MATCH_PARENT = -1;
+    public static final int ACTIVE_INDICATOR_WIDTH_WRAP_CONTENT = -2;
+    public static final int ITEM_GRAVITY_CENTER = 17;
+    public static final int ITEM_GRAVITY_START_CENTER = 8388627;
+    public static final int ITEM_GRAVITY_TOP_CENTER = 49;
+    public static final int ITEM_ICON_GRAVITY_START = 1;
+    public static final int ITEM_ICON_GRAVITY_TOP = 0;
     public static final int LABEL_VISIBILITY_AUTO = -1;
     public static final int LABEL_VISIBILITY_LABELED = 1;
     public static final int LABEL_VISIBILITY_SELECTED = 0;
@@ -44,6 +50,16 @@ public abstract class NavigationBarView extends FrameLayout {
     private final NavigationBarPresenter presenter;
     private OnItemReselectedListener reselectedListener;
     private OnItemSelectedListener selectedListener;
+
+    @Retention(RetentionPolicy.SOURCE)
+    /* loaded from: classes4.dex */
+    public @interface ItemGravity {
+    }
+
+    @Retention(RetentionPolicy.SOURCE)
+    /* loaded from: classes4.dex */
+    public @interface ItemIconGravity {
+    }
 
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes4.dex */
@@ -64,16 +80,32 @@ public abstract class NavigationBarView extends FrameLayout {
 
     public abstract int getMaxItemCount();
 
+    protected boolean isSubMenuSupported() {
+        return false;
+    }
+
+    public boolean shouldAddMenuView() {
+        return false;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0249  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x024b  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0259  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public NavigationBarView(Context context, AttributeSet attributeSet, int i, int i2) {
         super(MaterialThemeOverlay.wrap(context, attributeSet, i, i2), attributeSet, i);
         NavigationBarPresenter navigationBarPresenter = new NavigationBarPresenter();
         this.presenter = navigationBarPresenter;
         Context context2 = getContext();
         TintTypedArray obtainTintedStyledAttributes = ThemeEnforcement.obtainTintedStyledAttributes(context2, attributeSet, R.styleable.NavigationBarView, i, i2, R.styleable.NavigationBarView_itemTextAppearanceInactive, R.styleable.NavigationBarView_itemTextAppearanceActive);
-        NavigationBarMenu navigationBarMenu = new NavigationBarMenu(context2, getClass(), getMaxItemCount());
+        NavigationBarMenu navigationBarMenu = new NavigationBarMenu(context2, getClass(), getMaxItemCount(), isSubMenuSupported());
         this.menu = navigationBarMenu;
         NavigationBarMenuView createNavigationBarMenuView = createNavigationBarMenuView(context2);
         this.menuView = createNavigationBarMenuView;
+        createNavigationBarMenuView.setMinimumHeight(getSuggestedMinimumHeight());
+        createNavigationBarMenuView.setCollapsedMaxItemCount(getCollapsedMaxItemCount());
         navigationBarPresenter.setMenuView(createNavigationBarMenuView);
         navigationBarPresenter.setId(1);
         createNavigationBarMenuView.setPresenter(navigationBarPresenter);
@@ -91,6 +123,12 @@ public abstract class NavigationBarView extends FrameLayout {
         if (obtainTintedStyledAttributes.hasValue(R.styleable.NavigationBarView_itemTextAppearanceActive)) {
             setItemTextAppearanceActive(obtainTintedStyledAttributes.getResourceId(R.styleable.NavigationBarView_itemTextAppearanceActive, 0));
         }
+        if (obtainTintedStyledAttributes.hasValue(R.styleable.NavigationBarView_horizontalItemTextAppearanceInactive)) {
+            setHorizontalItemTextAppearanceInactive(obtainTintedStyledAttributes.getResourceId(R.styleable.NavigationBarView_horizontalItemTextAppearanceInactive, 0));
+        }
+        if (obtainTintedStyledAttributes.hasValue(R.styleable.NavigationBarView_horizontalItemTextAppearanceActive)) {
+            setHorizontalItemTextAppearanceActive(obtainTintedStyledAttributes.getResourceId(R.styleable.NavigationBarView_horizontalItemTextAppearanceActive, 0));
+        }
         setItemTextAppearanceActiveBoldEnabled(obtainTintedStyledAttributes.getBoolean(R.styleable.NavigationBarView_itemTextAppearanceActiveBoldEnabled, true));
         if (obtainTintedStyledAttributes.hasValue(R.styleable.NavigationBarView_itemTextColor)) {
             setItemTextColor(obtainTintedStyledAttributes.getColorStateList(R.styleable.NavigationBarView_itemTextColor));
@@ -103,7 +141,7 @@ public abstract class NavigationBarView extends FrameLayout {
                 materialShapeDrawable.setFillColor(colorStateListOrNull);
             }
             materialShapeDrawable.initializeElevationOverlay(context2);
-            ViewCompat.setBackground(this, materialShapeDrawable);
+            setBackground(materialShapeDrawable);
         }
         if (obtainTintedStyledAttributes.hasValue(R.styleable.NavigationBarView_itemPaddingTop)) {
             setItemPaddingTop(obtainTintedStyledAttributes.getDimensionPixelSize(R.styleable.NavigationBarView_itemPaddingTop, 0));
@@ -114,24 +152,61 @@ public abstract class NavigationBarView extends FrameLayout {
         if (obtainTintedStyledAttributes.hasValue(R.styleable.NavigationBarView_activeIndicatorLabelPadding)) {
             setActiveIndicatorLabelPadding(obtainTintedStyledAttributes.getDimensionPixelSize(R.styleable.NavigationBarView_activeIndicatorLabelPadding, 0));
         }
+        if (obtainTintedStyledAttributes.hasValue(R.styleable.NavigationBarView_iconLabelHorizontalSpacing)) {
+            setIconLabelHorizontalSpacing(obtainTintedStyledAttributes.getDimensionPixelSize(R.styleable.NavigationBarView_iconLabelHorizontalSpacing, 0));
+        }
         if (obtainTintedStyledAttributes.hasValue(R.styleable.NavigationBarView_elevation)) {
             setElevation(obtainTintedStyledAttributes.getDimensionPixelSize(R.styleable.NavigationBarView_elevation, 0));
         }
-        DrawableCompat.setTintList(getBackground().mutate(), MaterialResources.getColorStateList(context2, obtainTintedStyledAttributes, R.styleable.NavigationBarView_backgroundTint));
+        getBackground().mutate().setTintList(MaterialResources.getColorStateList(context2, obtainTintedStyledAttributes, R.styleable.NavigationBarView_backgroundTint));
+        int i3 = -1;
         setLabelVisibilityMode(obtainTintedStyledAttributes.getInteger(R.styleable.NavigationBarView_labelVisibilityMode, -1));
+        setItemIconGravity(obtainTintedStyledAttributes.getInteger(R.styleable.NavigationBarView_itemIconGravity, 0));
+        setItemGravity(obtainTintedStyledAttributes.getInteger(R.styleable.NavigationBarView_itemGravity, 49));
         int resourceId = obtainTintedStyledAttributes.getResourceId(R.styleable.NavigationBarView_itemBackground, 0);
         if (resourceId != 0) {
             createNavigationBarMenuView.setItemBackgroundRes(resourceId);
         } else {
             setItemRippleColor(MaterialResources.getColorStateList(context2, obtainTintedStyledAttributes, R.styleable.NavigationBarView_itemRippleColor));
         }
+        setMeasureBottomPaddingFromLabelBaseline(obtainTintedStyledAttributes.getBoolean(R.styleable.NavigationBarView_measureBottomPaddingFromLabelBaseline, true));
+        setLabelFontScalingEnabled(obtainTintedStyledAttributes.getBoolean(R.styleable.NavigationBarView_labelFontScalingEnabled, false));
+        setLabelMaxLines(obtainTintedStyledAttributes.getInteger(R.styleable.NavigationBarView_labelMaxLines, 1));
         int resourceId2 = obtainTintedStyledAttributes.getResourceId(R.styleable.NavigationBarView_itemActiveIndicatorStyle, 0);
         if (resourceId2 != 0) {
             setItemActiveIndicatorEnabled(true);
             TypedArray obtainStyledAttributes = context2.obtainStyledAttributes(resourceId2, R.styleable.NavigationBarActiveIndicator);
-            setItemActiveIndicatorWidth(obtainStyledAttributes.getDimensionPixelSize(R.styleable.NavigationBarActiveIndicator_android_width, 0));
+            int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(R.styleable.NavigationBarActiveIndicator_android_width, 0);
+            setItemActiveIndicatorWidth(dimensionPixelSize);
             setItemActiveIndicatorHeight(obtainStyledAttributes.getDimensionPixelSize(R.styleable.NavigationBarActiveIndicator_android_height, 0));
-            setItemActiveIndicatorMarginHorizontal(obtainStyledAttributes.getDimensionPixelOffset(R.styleable.NavigationBarActiveIndicator_marginHorizontal, 0));
+            int dimensionPixelOffset = obtainStyledAttributes.getDimensionPixelOffset(R.styleable.NavigationBarActiveIndicator_marginHorizontal, 0);
+            setItemActiveIndicatorMarginHorizontal(dimensionPixelOffset);
+            String string = obtainStyledAttributes.getString(R.styleable.NavigationBarActiveIndicator_expandedWidth);
+            if (string != null) {
+                if (!String.valueOf(-1).equals(string)) {
+                    if (!String.valueOf(-2).equals(string)) {
+                        i3 = obtainStyledAttributes.getDimensionPixelSize(R.styleable.NavigationBarActiveIndicator_expandedWidth, -2);
+                    }
+                }
+                setItemActiveIndicatorExpandedWidth(i3);
+                setItemActiveIndicatorExpandedHeight(obtainStyledAttributes.getDimensionPixelSize(R.styleable.NavigationBarActiveIndicator_expandedHeight, dimensionPixelSize));
+                setItemActiveIndicatorExpandedMarginHorizontal(obtainStyledAttributes.getDimensionPixelOffset(R.styleable.NavigationBarActiveIndicator_expandedMarginHorizontal, dimensionPixelOffset));
+                int dimensionPixelSize2 = getResources().getDimensionPixelSize(R.dimen.m3_navigation_item_leading_trailing_space);
+                int dimensionPixelOffset2 = obtainStyledAttributes.getDimensionPixelOffset(R.styleable.NavigationBarActiveIndicator_expandedActiveIndicatorPaddingStart, dimensionPixelSize2);
+                int dimensionPixelOffset3 = obtainStyledAttributes.getDimensionPixelOffset(R.styleable.NavigationBarActiveIndicator_expandedActiveIndicatorPaddingEnd, dimensionPixelSize2);
+                setItemActiveIndicatorExpandedPadding(getLayoutDirection() != 1 ? dimensionPixelOffset3 : dimensionPixelOffset2, obtainStyledAttributes.getDimensionPixelOffset(R.styleable.NavigationBarActiveIndicator_expandedActiveIndicatorPaddingTop, 0), getLayoutDirection() != 1 ? dimensionPixelOffset3 : dimensionPixelOffset2, obtainStyledAttributes.getDimensionPixelOffset(R.styleable.NavigationBarActiveIndicator_expandedActiveIndicatorPaddingBottom, 0));
+                setItemActiveIndicatorColor(MaterialResources.getColorStateList(context2, obtainStyledAttributes, R.styleable.NavigationBarActiveIndicator_android_color));
+                setItemActiveIndicatorShapeAppearance(ShapeAppearanceModel.builder(context2, obtainStyledAttributes.getResourceId(R.styleable.NavigationBarActiveIndicator_shapeAppearance, 0), 0).build());
+                obtainStyledAttributes.recycle();
+            }
+            i3 = -2;
+            setItemActiveIndicatorExpandedWidth(i3);
+            setItemActiveIndicatorExpandedHeight(obtainStyledAttributes.getDimensionPixelSize(R.styleable.NavigationBarActiveIndicator_expandedHeight, dimensionPixelSize));
+            setItemActiveIndicatorExpandedMarginHorizontal(obtainStyledAttributes.getDimensionPixelOffset(R.styleable.NavigationBarActiveIndicator_expandedMarginHorizontal, dimensionPixelOffset));
+            int dimensionPixelSize22 = getResources().getDimensionPixelSize(R.dimen.m3_navigation_item_leading_trailing_space);
+            int dimensionPixelOffset22 = obtainStyledAttributes.getDimensionPixelOffset(R.styleable.NavigationBarActiveIndicator_expandedActiveIndicatorPaddingStart, dimensionPixelSize22);
+            int dimensionPixelOffset32 = obtainStyledAttributes.getDimensionPixelOffset(R.styleable.NavigationBarActiveIndicator_expandedActiveIndicatorPaddingEnd, dimensionPixelSize22);
+            setItemActiveIndicatorExpandedPadding(getLayoutDirection() != 1 ? dimensionPixelOffset32 : dimensionPixelOffset22, obtainStyledAttributes.getDimensionPixelOffset(R.styleable.NavigationBarActiveIndicator_expandedActiveIndicatorPaddingTop, 0), getLayoutDirection() != 1 ? dimensionPixelOffset32 : dimensionPixelOffset22, obtainStyledAttributes.getDimensionPixelOffset(R.styleable.NavigationBarActiveIndicator_expandedActiveIndicatorPaddingBottom, 0));
             setItemActiveIndicatorColor(MaterialResources.getColorStateList(context2, obtainStyledAttributes, R.styleable.NavigationBarActiveIndicator_android_color));
             setItemActiveIndicatorShapeAppearance(ShapeAppearanceModel.builder(context2, obtainStyledAttributes.getResourceId(R.styleable.NavigationBarActiveIndicator_shapeAppearance, 0), 0).build());
             obtainStyledAttributes.recycle();
@@ -140,7 +215,9 @@ public abstract class NavigationBarView extends FrameLayout {
             inflateMenu(obtainTintedStyledAttributes.getResourceId(R.styleable.NavigationBarView_menu, 0));
         }
         obtainTintedStyledAttributes.recycle();
-        addView(createNavigationBarMenuView);
+        if (!shouldAddMenuView()) {
+            addView(createNavigationBarMenuView);
+        }
         navigationBarMenu.setCallback(new MenuBuilder.Callback() { // from class: com.google.android.material.navigation.NavigationBarView.1
             @Override // androidx.appcompat.view.menu.MenuBuilder.Callback
             public void onMenuModeChange(MenuBuilder menuBuilder) {
@@ -182,6 +259,10 @@ public abstract class NavigationBarView extends FrameLayout {
     }
 
     public MenuView getMenuView() {
+        return this.menuView;
+    }
+
+    public ViewGroup getMenuViewGroup() {
         return this.menuView;
     }
 
@@ -261,12 +342,40 @@ public abstract class NavigationBarView extends FrameLayout {
         this.menuView.setItemPaddingBottom(i);
     }
 
+    private void setMeasureBottomPaddingFromLabelBaseline(boolean z) {
+        this.menuView.setMeasurePaddingFromLabelBaseline(z);
+    }
+
+    public void setLabelFontScalingEnabled(boolean z) {
+        this.menuView.setLabelFontScalingEnabled(z);
+    }
+
+    public boolean getScaleLabelTextWithFont() {
+        return this.menuView.getScaleLabelTextWithFont();
+    }
+
+    public void setLabelMaxLines(int i) {
+        this.menuView.setLabelMaxLines(i);
+    }
+
+    public int getLabelMaxLines(int i) {
+        return this.menuView.getLabelMaxLines();
+    }
+
     public void setActiveIndicatorLabelPadding(int i) {
         this.menuView.setActiveIndicatorLabelPadding(i);
     }
 
     public int getActiveIndicatorLabelPadding() {
         return this.menuView.getActiveIndicatorLabelPadding();
+    }
+
+    public void setIconLabelHorizontalSpacing(int i) {
+        this.menuView.setIconLabelHorizontalSpacing(i);
+    }
+
+    public int getIconLabelHorizontalSpacing() {
+        return this.menuView.getIconLabelHorizontalSpacing();
     }
 
     public boolean isItemActiveIndicatorEnabled() {
@@ -301,6 +410,45 @@ public abstract class NavigationBarView extends FrameLayout {
         this.menuView.setItemActiveIndicatorMarginHorizontal(i);
     }
 
+    public void setItemGravity(int i) {
+        if (this.menuView.getItemGravity() != i) {
+            this.menuView.setItemGravity(i);
+            this.presenter.updateMenuView(false);
+        }
+    }
+
+    public int getItemGravity() {
+        return this.menuView.getItemGravity();
+    }
+
+    public int getItemActiveIndicatorExpandedWidth() {
+        return this.menuView.getItemActiveIndicatorExpandedWidth();
+    }
+
+    public void setItemActiveIndicatorExpandedWidth(int i) {
+        this.menuView.setItemActiveIndicatorExpandedWidth(i);
+    }
+
+    public int getItemActiveIndicatorExpandedHeight() {
+        return this.menuView.getItemActiveIndicatorExpandedHeight();
+    }
+
+    public void setItemActiveIndicatorExpandedHeight(int i) {
+        this.menuView.setItemActiveIndicatorExpandedHeight(i);
+    }
+
+    public int getItemActiveIndicatorExpandedMarginHorizontal() {
+        return this.menuView.getItemActiveIndicatorExpandedMarginHorizontal();
+    }
+
+    public void setItemActiveIndicatorExpandedMarginHorizontal(int i) {
+        this.menuView.setItemActiveIndicatorExpandedMarginHorizontal(i);
+    }
+
+    public void setItemActiveIndicatorExpandedPadding(int i, int i2, int i3, int i4) {
+        this.menuView.setItemActiveIndicatorExpandedPadding(i, i2, i3, i4);
+    }
+
     public ShapeAppearanceModel getItemActiveIndicatorShapeAppearance() {
         return this.menuView.getItemActiveIndicatorShapeAppearance();
     }
@@ -323,10 +471,14 @@ public abstract class NavigationBarView extends FrameLayout {
 
     public void setSelectedItemId(int i) {
         MenuItem findItem = this.menu.findItem(i);
-        if (findItem == null || this.menu.performItemAction(findItem, this.presenter, 0)) {
-            return;
+        if (findItem != null) {
+            boolean performItemAction = this.menu.performItemAction(findItem, this.presenter, 0);
+            if (findItem.isCheckable()) {
+                if (!performItemAction || findItem.isChecked()) {
+                    this.menuView.setCheckedItem(findItem);
+                }
+            }
         }
-        findItem.setChecked(true);
     }
 
     public void setLabelVisibilityMode(int i) {
@@ -338,6 +490,17 @@ public abstract class NavigationBarView extends FrameLayout {
 
     public int getLabelVisibilityMode() {
         return this.menuView.getLabelVisibilityMode();
+    }
+
+    public void setItemIconGravity(int i) {
+        if (this.menuView.getItemIconGravity() != i) {
+            this.menuView.setItemIconGravity(i);
+            this.presenter.updateMenuView(false);
+        }
+    }
+
+    public int getItemIconGravity() {
+        return this.menuView.getItemIconGravity();
     }
 
     public void setItemTextAppearanceInactive(int i) {
@@ -352,12 +515,28 @@ public abstract class NavigationBarView extends FrameLayout {
         this.menuView.setItemTextAppearanceActive(i);
     }
 
-    public void setItemTextAppearanceActiveBoldEnabled(boolean z) {
-        this.menuView.setItemTextAppearanceActiveBoldEnabled(z);
-    }
-
     public int getItemTextAppearanceActive() {
         return this.menuView.getItemTextAppearanceActive();
+    }
+
+    public void setHorizontalItemTextAppearanceInactive(int i) {
+        this.menuView.setHorizontalItemTextAppearanceInactive(i);
+    }
+
+    public int getHorizontalItemTextAppearanceInactive() {
+        return this.menuView.getHorizontalItemTextAppearanceInactive();
+    }
+
+    public void setHorizontalItemTextAppearanceActive(int i) {
+        this.menuView.setHorizontalItemTextAppearanceActive(i);
+    }
+
+    public int getHorizontalItemTextAppearanceActive() {
+        return this.menuView.getHorizontalItemTextAppearanceActive();
+    }
+
+    public void setItemTextAppearanceActiveBoldEnabled(boolean z) {
+        this.menuView.setItemTextAppearanceActiveBoldEnabled(z);
     }
 
     public void setItemOnTouchListener(int i, View.OnTouchListener onTouchListener) {
@@ -374,6 +553,10 @@ public abstract class NavigationBarView extends FrameLayout {
 
     public void removeBadge(int i) {
         this.menuView.removeBadge(i);
+    }
+
+    public int getCollapsedMaxItemCount() {
+        return getMaxItemCount();
     }
 
     private MenuInflater getMenuInflater() {

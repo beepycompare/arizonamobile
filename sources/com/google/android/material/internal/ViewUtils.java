@@ -5,6 +5,7 @@ import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -140,7 +141,7 @@ public class ViewUtils {
     }
 
     public static boolean isLayoutRtl(View view) {
-        return ViewCompat.getLayoutDirection(view) == 1;
+        return view.getLayoutDirection() == 1;
     }
 
     public static float dpToPx(Context context, int i) {
@@ -169,7 +170,7 @@ public class ViewUtils {
         }
 
         public void applyToView(View view) {
-            ViewCompat.setPaddingRelative(view, this.start, this.top, this.end, this.bottom);
+            view.setPaddingRelative(this.start, this.top, this.end, this.bottom);
         }
     }
 
@@ -212,7 +213,7 @@ public class ViewUtils {
     }
 
     public static void doOnApplyWindowInsets(View view, final OnApplyWindowInsetsListener onApplyWindowInsetsListener) {
-        final RelativePadding relativePadding = new RelativePadding(ViewCompat.getPaddingStart(view), view.getPaddingTop(), ViewCompat.getPaddingEnd(view), view.getPaddingBottom());
+        final RelativePadding relativePadding = new RelativePadding(view.getPaddingStart(), view.getPaddingTop(), view.getPaddingEnd(), view.getPaddingBottom());
         ViewCompat.setOnApplyWindowInsetsListener(view, new androidx.core.view.OnApplyWindowInsetsListener() { // from class: com.google.android.material.internal.ViewUtils.2
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public WindowInsetsCompat onApplyWindowInsets(View view2, WindowInsetsCompat windowInsetsCompat) {
@@ -223,8 +224,8 @@ public class ViewUtils {
     }
 
     public static void requestApplyInsetsWhenAttached(View view) {
-        if (ViewCompat.isAttachedToWindow(view)) {
-            ViewCompat.requestApplyInsets(view);
+        if (view.isAttachedToWindow()) {
+            view.requestApplyInsets();
         } else {
             view.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: com.google.android.material.internal.ViewUtils.3
                 @Override // android.view.View.OnAttachStateChangeListener
@@ -234,7 +235,7 @@ public class ViewUtils {
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewAttachedToWindow(View view2) {
                     view2.removeOnAttachStateChangeListener(this);
-                    ViewCompat.requestApplyInsets(view2);
+                    view2.requestApplyInsets();
                 }
             });
         }
@@ -243,16 +244,27 @@ public class ViewUtils {
     public static float getParentAbsoluteElevation(View view) {
         float f = 0.0f;
         for (ViewParent parent = view.getParent(); parent instanceof View; parent = parent.getParent()) {
-            f += ViewCompat.getElevation((View) parent);
+            f += ((View) parent).getElevation();
         }
         return f;
     }
 
-    public static ViewOverlayImpl getOverlay(View view) {
+    @Deprecated
+    public static ViewOverlayImpl getOverlay(final View view) {
         if (view == null) {
             return null;
         }
-        return new ViewOverlayApi18(view);
+        return new ViewOverlayImpl() { // from class: com.google.android.material.internal.ViewUtils.4
+            @Override // com.google.android.material.internal.ViewOverlayImpl
+            public void add(Drawable drawable) {
+                view.getOverlay().add(drawable);
+            }
+
+            @Override // com.google.android.material.internal.ViewOverlayImpl
+            public void remove(Drawable drawable) {
+                view.getOverlay().remove(drawable);
+            }
+        };
     }
 
     public static ViewGroup getContentView(View view) {
@@ -270,6 +282,7 @@ public class ViewUtils {
         return (ViewGroup) rootView;
     }
 
+    @Deprecated
     public static ViewOverlayImpl getContentViewOverlay(View view) {
         return getOverlay(getContentView(view));
     }

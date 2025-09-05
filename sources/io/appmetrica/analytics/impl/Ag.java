@@ -1,35 +1,65 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import com.android.installreferrer.api.InstallReferrerClient;
-import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
+import java.util.ArrayList;
+import kotlin.Lazy;
+import kotlin.LazyKt;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
-public final class Ag implements InterfaceC0404lb {
+public final class Ag {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ICommonExecutor f347a;
-    public final InstallReferrerClient b;
+    public final Hg f346a;
+    public final Za b;
+    public final Sg c;
+    public final Lazy d = LazyKt.lazy(new C0712xg(this));
+    public final Lazy e = LazyKt.lazy(new C0662vg(this));
+    public final Lazy f = LazyKt.lazy(new C0762zg(this));
+    public final ArrayList g = new ArrayList();
 
-    public Ag(Context context, ICommonExecutor iCommonExecutor) {
-        this.f347a = iCommonExecutor;
-        this.b = InstallReferrerClient.newBuilder(context).build();
+    public Ag(Hg hg, Rg rg, Za za, Sg sg) {
+        this.f346a = hg;
+        this.b = za;
+        this.c = sg;
     }
 
-    public static final void b(Kg kg, Throwable th) {
-        kg.a(th);
+    public static final InterfaceC0587sg a(Ag ag) {
+        return (InterfaceC0587sg) ag.d.getValue();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0404lb
-    public final void a(Kg kg) throws Throwable {
-        this.b.startConnection(new C0758zg(this, kg));
-    }
-
-    public final void a(final Kg kg, final Throwable th) {
-        this.f347a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.Ag$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                Ag.b(Kg.this, th);
+    public static final void a(Ag ag, Jg jg, InterfaceC0587sg interfaceC0587sg) {
+        boolean areEqual;
+        ag.g.add(jg);
+        Sg sg = ag.c;
+        if (jg == null) {
+            sg.getClass();
+        } else {
+            SafePackageManager safePackageManager = sg.b;
+            Context context = sg.f667a;
+            String installerPackageName = safePackageManager.getInstallerPackageName(context, context.getPackageName());
+            int ordinal = jg.d.ordinal();
+            if (ordinal == 1) {
+                areEqual = Intrinsics.areEqual(sg.f, installerPackageName);
+            } else if (ordinal == 2) {
+                areEqual = Intrinsics.areEqual(sg.g, installerPackageName);
             }
-        });
+            if (areEqual) {
+                ag.a(jg);
+                return;
+            }
+        }
+        interfaceC0587sg.a();
+    }
+
+    public final void a(Jg jg) {
+        Hg hg = this.f346a;
+        synchronized (hg) {
+            hg.b = jg;
+            hg.c = true;
+            hg.d.a(jg);
+            hg.d.d();
+            hg.a(hg.b);
+        }
     }
 }

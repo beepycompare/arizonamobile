@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.CONSTRUCTOR, ElementType.METHOD, ElementType.TYPE})
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public @interface SchedulerSupport {
     public static final String COMPUTATION = "io.reactivex:computation";
     public static final String CUSTOM = "custom";

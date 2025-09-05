@@ -256,8 +256,8 @@ public final class ServerButtonKt {
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, 1583302100, "C82@3445L28,83@3498L273:ServerButton.kt#dswm0d");
                 float f2 = 16;
-                AnimatedLoadingKt.m8906AnimatedLoadinguFdPcIQ(true, Dp.m7251constructorimpl(f2), null, composer, 54, 4);
-                SingletonAsyncImageKt.m8332AsyncImage10Xjiaw(homeUiState.getCurrentServer().getIcon(), null, SizeKt.m884size3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(f)), null, null, null, contentScale, 0.0f, null, 0, false, composer, 432, 0, 1976);
+                AnimatedLoadingKt.m8925AnimatedLoadinguFdPcIQ(true, Dp.m7251constructorimpl(f2), null, composer, 54, 4);
+                SingletonAsyncImageKt.m8334AsyncImage10Xjiaw(homeUiState.getCurrentServer().getIcon(), null, SizeKt.m884size3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(f)), null, null, null, contentScale, 0.0f, null, 0, false, composer, 432, 0, 1976);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 composer.endNode();
@@ -294,8 +294,8 @@ public final class ServerButtonKt {
                 ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
                 ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, -1442354001, "C100@4318L10,101@4379L13,102@4435L13,96@4104L370,106@4601L11,107@4672L10,108@4733L12,104@4499L272:ServerButton.kt#dswm0d");
-                TextKt.m2804Text4IGK_g(String.valueOf(homeUiState.getCurrentServer().getName()), (Modifier) null, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9022dpToSp8Feqmps(Dp.m7251constructorimpl(f2), composer, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9022dpToSp8Feqmps(Dp.m7251constructorimpl(17), composer, 6), 0, false, 1, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 3072, 56306);
-                TextKt.m2804Text4IGK_g("ВЫБРАТЬ СЕРВЕР", (Modifier) null, MaterialTheme.INSTANCE.getColorScheme(composer, MaterialTheme.$stable).m2021getPrimary0d7_KjU(), TypeKt.m9022dpToSp8Feqmps(Dp.m7251constructorimpl(9), composer, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 65522);
+                TextKt.m2804Text4IGK_g(String.valueOf(homeUiState.getCurrentServer().getName()), (Modifier) null, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f2), composer, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(17), composer, 6), 0, false, 1, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 3072, 56306);
+                TextKt.m2804Text4IGK_g("ВЫБРАТЬ СЕРВЕР", (Modifier) null, MaterialTheme.INSTANCE.getColorScheme(composer, MaterialTheme.$stable).m2021getPrimary0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(9), composer, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 65522);
                 composer2 = composer;
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 ComposerKt.sourceInformationMarkerEnd(composer2);

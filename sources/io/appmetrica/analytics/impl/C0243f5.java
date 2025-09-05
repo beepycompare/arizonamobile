@@ -1,18 +1,33 @@
 package io.appmetrica.analytics.impl;
 
-import android.database.sqlite.SQLiteDatabase;
-import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
+import java.util.Arrays;
+import kotlinx.metadata.internal.metadata.jvm.deserialization.JvmProtoBufUtil;
 /* renamed from: io.appmetrica.analytics.impl.f5  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0243f5 extends DatabaseScript {
+public final class C0243f5 implements InterfaceC0678w7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0217e5 f852a = new C0217e5();
-    public final C0192d5 b = new C0192d5();
+    public final String f868a;
+    public final String b;
 
-    @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
-    public final void runScript(SQLiteDatabase sQLiteDatabase) {
-        this.f852a.runScript(sQLiteDatabase);
-        this.b.runScript(sQLiteDatabase);
+    public C0243f5(C0476o5 c0476o5) {
+        String b;
+        if (c0476o5.d()) {
+            b = JvmProtoBufUtil.DEFAULT_MODULE_NAME;
+        } else {
+            b = c0476o5.b();
+        }
+        this.f868a = String.format("component_%s.db", Arrays.copyOf(new Object[]{b}, 1));
+        this.b = "db_metrica_" + c0476o5;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0678w7
+    public final String a() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0678w7
+    public final String b() {
+        return this.f868a;
     }
 }

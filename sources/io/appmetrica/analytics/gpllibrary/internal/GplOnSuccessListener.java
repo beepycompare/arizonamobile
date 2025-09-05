@@ -7,15 +7,15 @@ import com.google.android.gms.tasks.OnSuccessListener;
 class GplOnSuccessListener implements OnSuccessListener<Location> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LocationListener f320a;
+    private final LocationListener f321a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public GplOnSuccessListener(LocationListener locationListener) {
-        this.f320a = locationListener;
+        this.f321a = locationListener;
     }
 
     @Override // com.google.android.gms.tasks.OnSuccessListener
     public void onSuccess(Location location) {
-        this.f320a.onLocationChanged(location);
+        this.f321a.onLocationChanged(location);
     }
 }

@@ -438,7 +438,7 @@ public final class TtmlParser implements SubtitleParser {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:110:0x01fd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:110:0x01ff, code lost:
         if (r3.equals("text") == false) goto L49;
      */
     /*

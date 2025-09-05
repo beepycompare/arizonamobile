@@ -12,11 +12,15 @@ public class FileDescriptorLocalUriFetcher extends LocalUriFetcher<ParcelFileDes
         super(contentResolver, uri);
     }
 
+    public FileDescriptorLocalUriFetcher(ContentResolver contentResolver, Uri uri, boolean z) {
+        super(contentResolver, uri, z);
+    }
+
     /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // com.bumptech.glide.load.data.LocalUriFetcher
     public ParcelFileDescriptor loadResource(Uri uri, ContentResolver contentResolver) throws FileNotFoundException {
-        AssetFileDescriptor openAssetFileDescriptor = contentResolver.openAssetFileDescriptor(uri, "r");
+        AssetFileDescriptor openAssetFileDescriptor = openAssetFileDescriptor(uri);
         if (openAssetFileDescriptor == null) {
             throw new FileNotFoundException("FileDescriptor is null for: " + uri);
         }

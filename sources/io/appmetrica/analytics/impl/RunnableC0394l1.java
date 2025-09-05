@@ -1,24 +1,19 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import java.util.List;
 /* renamed from: io.appmetrica.analytics.impl.l1  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
 public final class RunnableC0394l1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f947a;
-    public final /* synthetic */ List b;
-    public final /* synthetic */ C0494p1 c;
+    public final /* synthetic */ String f957a;
+    public final /* synthetic */ C0547r1 b;
 
-    public RunnableC0394l1(C0494p1 c0494p1, String str, List list) {
-        this.c = c0494p1;
-        this.f947a = str;
-        this.b = list;
+    public RunnableC0394l1(C0547r1 c0547r1, String str) {
+        this.b = c0547r1;
+        this.f957a = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0494p1.a(this.c).reportEvent(this.f947a, CollectionUtils.getMapFromList(this.b));
+        C0547r1.a(this.b).reportEvent(this.f957a);
     }
 }

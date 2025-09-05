@@ -1,13 +1,12 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public abstract class W2 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0495p2 f702a;
-
-    public W2(InterfaceC0495p2 interfaceC0495p2) {
-        this.f702a = interfaceC0495p2;
+public final class W2 implements yo {
+    @Override // io.appmetrica.analytics.impl.yo
+    public final wo a(Object obj) {
+        C0417lo[] c0417loArr = ((C0495oo) obj).f1022a;
+        if (c0417loArr != null && c0417loArr.length != 0) {
+            return new wo(this, true, "");
+        }
+        return new wo(this, false, "attributes list is empty");
     }
-
-    public abstract C0314ho a(C0262fo c0262fo, C0314ho c0314ho, InterfaceC0470o2 interfaceC0470o2);
 }

@@ -1,23 +1,14 @@
 package io.appmetrica.analytics.impl;
-
-import android.os.Bundle;
-import io.appmetrica.analytics.internal.IAppMetricaService;
 /* loaded from: classes4.dex */
-public final class Wi extends Ph {
-    public final Rf e;
-
-    public Wi(C0418m0 c0418m0, InterfaceC0233el interfaceC0233el, Rf rf) {
-        super(c0418m0, interfaceC0233el);
-        this.e = rf;
+public final class Wi extends Z2 {
+    public Wi(InterfaceC0548r2 interfaceC0548r2) {
+        super(interfaceC0548r2);
     }
 
-    @Override // io.appmetrica.analytics.impl.Ph
-    public final void a(IAppMetricaService iAppMetricaService) {
-        Bundle bundle = new Bundle();
-        Rf rf = this.e;
-        synchronized (rf) {
-            bundle.putParcelable("PROCESS_CFG_OBJ", rf);
-        }
-        iAppMetricaService.resumeUserSession(bundle);
+    @Override // io.appmetrica.analytics.impl.Z2
+    public final C0417lo a(C0365jo c0365jo, C0417lo c0417lo, InterfaceC0524q2 interfaceC0524q2) {
+        C0417lo a2 = ((Vd) interfaceC0524q2).a();
+        a2.c.b = true;
+        return this.f763a.a(c0365jo, a2);
     }
 }

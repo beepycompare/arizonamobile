@@ -1,16 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.networktasks.internal.ConfigProvider;
+import kotlin.Lazy;
+import kotlin.LazyKt;
 /* loaded from: classes4.dex */
-public final class Yb {
-    public final C0439ml c;
+public final class Yb implements ConfigProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0581se f740a = new C0581se("Context");
-    public final C0581se b = new C0581se("Config");
-    public final C0581se d = new C0581se("Sender");
-    public final C0581se e = new C0581se("Event");
-    public final C0581se f = new C0581se("Payload");
+    public final C0651v5 f752a;
+    public final Lazy b = LazyKt.lazy(new Xb(this));
 
-    public Yb(C0617u0 c0617u0) {
-        this.c = new C0439ml(c0617u0);
+    public Yb(C0651v5 c0651v5) {
+        this.f752a = c0651v5;
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.ConfigProvider
+    /* renamed from: a */
+    public final Gh getConfig() {
+        return (Gh) this.b.getValue();
     }
 }

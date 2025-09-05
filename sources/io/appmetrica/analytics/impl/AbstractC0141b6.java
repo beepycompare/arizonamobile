@@ -1,8 +1,17 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 /* renamed from: io.appmetrica.analytics.impl.b6  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public abstract class AbstractC0141b6 {
-    public static C0167c6 a(F2 f2) {
-        return new C0167c6(f2);
+public abstract /* synthetic */ class AbstractC0141b6 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final /* synthetic */ int[] f801a;
+
+    static {
+        int[] iArr = new int[ActivityEvent.values().length];
+        iArr[ActivityEvent.RESUMED.ordinal()] = 1;
+        iArr[ActivityEvent.PAUSED.ordinal()] = 2;
+        f801a = iArr;
     }
 }

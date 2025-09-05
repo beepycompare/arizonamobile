@@ -37,10 +37,13 @@
     <integer name="m3_sys_motion_duration_short3">150</integer>
     <integer name="m3_sys_motion_duration_short4">200</integer>
     <integer name="m3_sys_motion_path">0</integer>
+    <integer name="m3_sys_shape_corner_extra_extra_large_corner_family">0</integer>
     <integer name="m3_sys_shape_corner_extra_large_corner_family">0</integer>
+    <integer name="m3_sys_shape_corner_extra_large_increased_corner_family">0</integer>
     <integer name="m3_sys_shape_corner_extra_small_corner_family">0</integer>
     <integer name="m3_sys_shape_corner_full_corner_family">0</integer>
     <integer name="m3_sys_shape_corner_large_corner_family">0</integer>
+    <integer name="m3_sys_shape_corner_large_increased_corner_family">0</integer>
     <integer name="m3_sys_shape_corner_medium_corner_family">0</integer>
     <integer name="m3_sys_shape_corner_small_corner_family">0</integer>
     <integer name="m3c_window_layout_in_display_cutout_mode">1</integer>

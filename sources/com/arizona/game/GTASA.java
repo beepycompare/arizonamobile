@@ -36,7 +36,6 @@ import ru.mrlargha.commonui.core.UIElementFactory;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.core.UIElementStore;
 import ru.mrlargha.commonui.elements.ArizonaSnackbar;
-import ru.mrlargha.commonui.elements.CommonElementsFactory;
 import ru.mrlargha.commonui.elements.CustomKeyboard;
 import ru.mrlargha.commonui.elements.EmptyScreen;
 import ru.mrlargha.commonui.elements.InputPopup;
@@ -52,6 +51,7 @@ import ru.mrlargha.commonui.elements.dialogs.playerlist.PlayerListDialog;
 import ru.mrlargha.commonui.elements.hud.presentation.Hud;
 import ru.mrlargha.commonui.elements.video.StreamVideo;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.feature.common_factory.CommonElementsFactory;
 /* loaded from: classes3.dex */
 public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener, CommandBinder.BinderListener, IBackendNotifier, IAutocompleteStateProvider, ArizonaSnackbar.SnackBarListener, Hud.HudListener {
     private static final String TAG = "GTASAMainClass";
@@ -333,8 +333,8 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         try {
             String channelsState = FirebaseConfigHelper.INSTANCE.getChannelsState();
             String str = Build.MANUFACTURER + StringUtils.PROCESS_POSTFIX_DELIMITER + Build.MODEL + StringUtils.PROCESS_POSTFIX_DELIMITER + getUniqueID() + StringUtils.PROCESS_POSTFIX_DELIMITER + (this.notifyChecker.isNotificationEnabled() ? "notify_on" : "notify_off");
-            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false) + "\n5. Version: (release) 2.1 - v16.4.8\n6. Last element ID: " + UIElementID.getLastUIElementID() + "\n7. Device name: " + str + "\n8. Token: " + getSettingsPreferences().getString("token", "") + "\n9. Channels state: " + channelsState);
-            InitSetting(true, show_fps, true, PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false), "(release) 2.1 - v16.4.8", UIElementID.getLastUIElementID(), str, getSettingsPreferences().getString("token", ""), channelsState);
+            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false) + "\n5. Version: (release) 2.1 - v16.5.0\n6. Last element ID: " + UIElementID.getLastUIElementID() + "\n7. Device name: " + str + "\n8. Token: " + getSettingsPreferences().getString("token", "") + "\n9. Channels state: " + channelsState);
+            InitSetting(true, show_fps, true, PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false), "(release) 2.1 - v16.5.0", UIElementID.getLastUIElementID(), str, getSettingsPreferences().getString("token", ""), channelsState);
             FirebaseCrashlytics.getInstance().setUserId(getUniqueID());
         } catch (LinkageError e) {
             Log.w(TAG, "Unable to call native method", e);

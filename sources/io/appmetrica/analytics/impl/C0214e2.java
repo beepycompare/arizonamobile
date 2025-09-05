@@ -1,27 +1,80 @@
 package io.appmetrica.analytics.impl;
 
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 /* renamed from: io.appmetrica.analytics.impl.e2  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0214e2 extends Q2 {
-    @Override // io.appmetrica.analytics.impl.Q2
-    public final MessageNano a() {
-        return new C0189d2();
+public final class C0214e2 extends MessageNano {
+    public static volatile C0214e2[] c;
+
+    /* renamed from: a  reason: collision with root package name */
+    public String f850a;
+    public boolean b;
+
+    public C0214e2() {
+        a();
     }
 
-    public final C0189d2 b() {
-        return new C0189d2();
+    public static C0214e2[] b() {
+        if (c == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (c == null) {
+                    c = new C0214e2[0];
+                }
+            }
+        }
+        return c;
     }
 
-    @Override // io.appmetrica.analytics.impl.Q2, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final Object defaultValue() {
-        return new C0189d2();
+    public final C0214e2 a() {
+        this.f850a = "";
+        this.b = false;
+        this.cachedSize = -1;
+        return this;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        return CodedOutputByteBufferNano.computeBoolSize(2, this.b) + CodedOutputByteBufferNano.computeStringSize(1, this.f850a) + super.computeSerializedSize();
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        codedOutputByteBufferNano.writeString(1, this.f850a);
+        codedOutputByteBufferNano.writeBool(2, this.b);
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     /* renamed from: a */
-    public final C0189d2 toState(byte[] bArr) throws IOException {
-        return (C0189d2) MessageNano.mergeFrom(new C0189d2(), bArr);
+    public final C0214e2 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 10) {
+                this.f850a = codedInputByteBufferNano.readString();
+            } else if (readTag != 16) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                this.b = codedInputByteBufferNano.readBool();
+            }
+        }
+        return this;
+    }
+
+    public static C0214e2 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new C0214e2().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static C0214e2 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (C0214e2) MessageNano.mergeFrom(new C0214e2(), bArr);
     }
 }

@@ -1,26 +1,69 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.billinginterface.internal.ProductInfo;
-import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
+import android.content.Intent;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.BatteryInfo;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeType;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeChangeListener;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeProvider;
+import java.util.ArrayList;
 /* renamed from: io.appmetrica.analytics.impl.h3  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0293h3 extends SafeRunnable {
+public final class C0293h3 implements ChargeTypeProvider {
+    public static final ChargeType d = ChargeType.UNKNOWN;
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ProductInfo f879a;
-    public final /* synthetic */ C0319i3 b;
+    public final ICommonExecutor f901a;
+    public volatile BatteryInfo b;
+    public final ArrayList c = new ArrayList();
 
-    public C0293h3(C0319i3 c0319i3, ProductInfo productInfo) {
-        this.b = c0319i3;
-        this.f879a = productInfo;
+    public C0293h3(ICommonExecutor iCommonExecutor, C0215e3 c0215e3) {
+        C0267g3 c0267g3 = new C0267g3(this);
+        this.f901a = iCommonExecutor;
+        this.b = a(c0215e3.a(c0267g3));
     }
 
-    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
-    public final void runSafety() {
-        C0319i3 c0319i3 = this.b;
-        InterfaceC0429mb interfaceC0429mb = c0319i3.f899a;
-        ProductInfo productInfo = this.f879a;
-        c0319i3.getClass();
-        ((C0572s5) interfaceC0429mb).a(C0399l6.a(new Yf(productInfo)));
+    public static BatteryInfo a(Intent intent) {
+        ChargeType chargeType = d;
+        Integer num = null;
+        if (intent != null) {
+            int intExtra = intent.getIntExtra(FirebaseAnalytics.Param.LEVEL, -1);
+            int intExtra2 = intent.getIntExtra("scale", -1);
+            if (intExtra > 0 && intExtra2 > 0) {
+                num = Integer.valueOf((intExtra * 100) / intExtra2);
+            }
+            int intExtra3 = intent.getIntExtra("plugged", -1);
+            chargeType = ChargeType.NONE;
+            if (intExtra3 == 1) {
+                chargeType = ChargeType.AC;
+            } else if (intExtra3 == 2) {
+                chargeType = ChargeType.USB;
+            } else if (intExtra3 == 4) {
+                chargeType = ChargeType.WIRELESS;
+            }
+        }
+        return new BatteryInfo(num, chargeType);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeProvider
+    public final Integer getBatteryLevel() {
+        BatteryInfo batteryInfo = this.b;
+        if (batteryInfo == null) {
+            return null;
+        }
+        return batteryInfo.batteryLevel;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeProvider
+    public final ChargeType getChargeType() {
+        BatteryInfo batteryInfo = this.b;
+        return batteryInfo == null ? ChargeType.UNKNOWN : batteryInfo.chargeType;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeProvider
+    public final synchronized void registerChargeTypeListener(ChargeTypeChangeListener chargeTypeChangeListener) {
+        this.c.add(chargeTypeChangeListener);
+        chargeTypeChangeListener.onChargeTypeChanged(getChargeType());
     }
 }

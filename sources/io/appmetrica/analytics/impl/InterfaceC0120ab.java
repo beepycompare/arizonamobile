@@ -1,12 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.plugins.IPluginReporter;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
+import io.appmetrica.analytics.coreapi.internal.identifiers.SimpleAdvertisingIdGetter;
 /* renamed from: io.appmetrica.analytics.impl.ab  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public interface InterfaceC0120ab extends InterfaceC0479ob, IPluginReporter {
-    void a(String str);
+public interface InterfaceC0120ab extends SimpleAdvertisingIdGetter, InterfaceC0618tm {
+    AdvertisingIdsHolder a();
 
-    void b(String str, String str2);
+    AdvertisingIdsHolder a(InterfaceC0180cj interfaceC0180cj);
 
-    boolean b();
+    /* synthetic */ void a(C0493om c0493om);
+
+    void b(boolean z);
+
+    void c(boolean z);
+
+    AdvertisingIdsHolder getIdentifiers();
+
+    void init();
 }

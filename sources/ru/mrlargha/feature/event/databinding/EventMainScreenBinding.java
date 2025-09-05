@@ -12,7 +12,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import ru.mrlargha.feature.event.R;
-/* loaded from: classes6.dex */
+/* loaded from: classes3.dex */
 public final class EventMainScreenBinding implements ViewBinding {
     public final ImageView ivVideo;
     public final LinearLayout levelContainer;

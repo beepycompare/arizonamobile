@@ -32,9 +32,9 @@ public final class DrawableUtils {
 
     public static void setTint(Drawable drawable, int i) {
         if (i != 0) {
-            DrawableCompat.setTint(drawable, i);
+            drawable.setTint(i);
         } else {
-            DrawableCompat.setTintList(drawable, null);
+            drawable.setTintList(null);
         }
     }
 
@@ -93,7 +93,7 @@ public final class DrawableUtils {
         }
         Drawable mutate = DrawableCompat.wrap(drawable).mutate();
         if (mode != null) {
-            DrawableCompat.setTintMode(mutate, mode);
+            mutate.setTintMode(mode);
         }
         return mutate;
     }

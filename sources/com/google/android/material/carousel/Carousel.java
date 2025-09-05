@@ -1,6 +1,6 @@
 package com.google.android.material.carousel;
 /* loaded from: classes4.dex */
-interface Carousel {
+public interface Carousel {
     int getCarouselAlignment();
 
     int getContainerHeight();

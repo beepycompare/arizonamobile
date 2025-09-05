@@ -3,14 +3,20 @@ package com.google.android.material.progressindicator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import com.google.android.material.R;
 import com.google.android.material.internal.ThemeEnforcement;
 /* loaded from: classes4.dex */
 public final class LinearProgressIndicatorSpec extends BaseProgressIndicatorSpec {
     boolean drawHorizontallyInverse;
+    public boolean hasInnerCornerRadius;
     public int indeterminateAnimationType;
     public int indicatorDirection;
+    public int trackInnerCornerRadius;
+    public float trackInnerCornerRadiusFraction;
+    public Integer trackStopIndicatorPadding;
     public int trackStopIndicatorSize;
+    public boolean useRelativeTrackInnerCornerRadius;
 
     public LinearProgressIndicatorSpec(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, R.attr.linearProgressIndicatorStyle);
@@ -26,9 +32,39 @@ public final class LinearProgressIndicatorSpec extends BaseProgressIndicatorSpec
         this.indeterminateAnimationType = obtainStyledAttributes.getInt(R.styleable.LinearProgressIndicator_indeterminateAnimationType, 1);
         this.indicatorDirection = obtainStyledAttributes.getInt(R.styleable.LinearProgressIndicator_indicatorDirectionLinear, 0);
         this.trackStopIndicatorSize = Math.min(obtainStyledAttributes.getDimensionPixelSize(R.styleable.LinearProgressIndicator_trackStopIndicatorSize, 0), this.trackThickness);
+        if (obtainStyledAttributes.hasValue(R.styleable.LinearProgressIndicator_trackStopIndicatorPadding)) {
+            this.trackStopIndicatorPadding = Integer.valueOf(obtainStyledAttributes.getDimensionPixelSize(R.styleable.LinearProgressIndicator_trackStopIndicatorPadding, 0));
+        }
+        TypedValue peekValue = obtainStyledAttributes.peekValue(R.styleable.LinearProgressIndicator_trackInnerCornerRadius);
+        if (peekValue != null) {
+            if (peekValue.type == 5) {
+                this.trackInnerCornerRadius = Math.min(TypedValue.complexToDimensionPixelSize(peekValue.data, obtainStyledAttributes.getResources().getDisplayMetrics()), this.trackThickness / 2);
+                this.useRelativeTrackInnerCornerRadius = false;
+                this.hasInnerCornerRadius = true;
+            } else if (peekValue.type == 6) {
+                this.trackInnerCornerRadiusFraction = Math.min(peekValue.getFraction(1.0f, 1.0f), 0.5f);
+                this.useRelativeTrackInnerCornerRadius = true;
+                this.hasInnerCornerRadius = true;
+            }
+        }
         obtainStyledAttributes.recycle();
         validateSpec();
         this.drawHorizontallyInverse = this.indicatorDirection == 1;
+    }
+
+    public int getTrackInnerCornerRadiusInPx() {
+        if (!this.hasInnerCornerRadius) {
+            return getTrackCornerRadiusInPx();
+        }
+        if (this.useRelativeTrackInnerCornerRadius) {
+            return (int) (this.trackThickness * this.trackInnerCornerRadiusFraction);
+        }
+        return this.trackInnerCornerRadius;
+    }
+
+    @Override // com.google.android.material.progressindicator.BaseProgressIndicatorSpec
+    public boolean useStrokeCap() {
+        return super.useStrokeCap() && getTrackInnerCornerRadiusInPx() == getTrackCornerRadiusInPx();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -39,7 +75,7 @@ public final class LinearProgressIndicatorSpec extends BaseProgressIndicatorSpec
             throw new IllegalArgumentException("Stop indicator size must be >= 0.");
         }
         if (this.indeterminateAnimationType == 0) {
-            if (this.trackCornerRadius > 0 && this.indicatorTrackGapSize == 0) {
+            if ((getTrackCornerRadiusInPx() > 0 || (this.hasInnerCornerRadius && getTrackInnerCornerRadiusInPx() > 0)) && this.indicatorTrackGapSize == 0) {
                 throw new IllegalArgumentException("Rounded corners without gap are not supported in contiguous indeterminate animation.");
             }
             if (this.indicatorColors.length < 3) {

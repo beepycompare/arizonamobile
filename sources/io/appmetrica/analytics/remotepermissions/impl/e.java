@@ -7,14 +7,14 @@ import kotlin.collections.SetsKt;
 public final class e implements PermissionStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    public Set f1278a = SetsKt.emptySet();
+    public Set f1283a = SetsKt.emptySet();
 
     public final synchronized void a(Set<String> set) {
-        this.f1278a = set;
+        this.f1283a = set;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy
     public final synchronized boolean forbidUsePermission(String str) {
-        return !this.f1278a.contains(str);
+        return !this.f1283a.contains(str);
     }
 }

@@ -1,20 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.AdRevenue;
 /* loaded from: classes4.dex */
 public final class T0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f654a;
-    public final /* synthetic */ C0494p1 b;
+    public final /* synthetic */ C0547r1 f673a;
 
-    public T0(C0494p1 c0494p1, AdRevenue adRevenue) {
-        this.b = c0494p1;
-        this.f654a = adRevenue;
+    public T0(C0547r1 c0547r1) {
+        this.f673a = c0547r1;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0494p1.a(this.b).reportAdRevenue(this.f654a);
+        C0547r1.a(this.f673a).sendEventsBuffer();
     }
 }

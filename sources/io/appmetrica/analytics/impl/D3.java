@@ -1,51 +1,34 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ecommerce.ECommerceCartItem;
-import io.appmetrica.analytics.ecommerce.ECommerceEvent;
-import java.util.List;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import io.appmetrica.analytics.modulesapi.internal.network.NetworkClientWithCacheControl;
+import io.appmetrica.analytics.networktasks.internal.CacheControlHttpsConnectionPerformer;
 /* loaded from: classes4.dex */
-public final class D3 extends ECommerceEvent {
-    public static final int d = 4;
-    public static final int e = 5;
+public final class D3 implements CacheControlHttpsConnectionPerformer.Client {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f389a;
-    public final G3 b;
-    public final InterfaceC0700x8 c;
+    public final NetworkClientWithCacheControl f397a;
 
-    public D3(int i, ECommerceCartItem eCommerceCartItem) {
-        this(i, new G3(eCommerceCartItem), new E3());
+    public D3(NetworkClientWithCacheControl networkClientWithCacheControl) {
+        this.f397a = networkClientWithCacheControl;
     }
 
-    public final InterfaceC0700x8 a() {
-        return this.c;
+    @Override // io.appmetrica.analytics.networktasks.internal.CacheControlHttpsConnectionPerformer.Client
+    public final String getOldETag() {
+        return this.f397a.getETag();
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent
-    public final String getPublicDescription() {
-        int i = this.f389a;
-        if (i != 4) {
-            if (i != 5) {
-                return "unknown cart action info";
-            }
-            return "remove cart item info";
-        }
-        return "add cart item info";
+    @Override // io.appmetrica.analytics.networktasks.internal.CacheControlHttpsConnectionPerformer.Client
+    public final void onError() {
+        this.f397a.onError();
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0177cg
-    public final List<Vi> toProto() {
-        return (List) this.c.fromModel(this);
+    @Override // io.appmetrica.analytics.networktasks.internal.CacheControlHttpsConnectionPerformer.Client
+    public final void onNotModified() {
+        this.f397a.onNotModified();
     }
 
-    public final String toString() {
-        return "CartActionInfoEvent{eventType=" + this.f389a + ", cartItem=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public D3(int i, G3 g3, InterfaceC0700x8 interfaceC0700x8) {
-        this.f389a = i;
-        this.b = g3;
-        this.c = interfaceC0700x8;
+    @Override // io.appmetrica.analytics.networktasks.internal.CacheControlHttpsConnectionPerformer.Client
+    public final void onResponse(String str, byte[] bArr) {
+        this.f397a.onResponse(str, bArr);
     }
 }

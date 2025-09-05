@@ -1,14 +1,10 @@
 package com.google.android.material.textfield;
 
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.view.View;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -85,69 +81,6 @@ public class CutoutDrawable extends MaterialShapeDrawable {
             }
             super.drawStrokeShape(canvas);
             canvas.restore();
-        }
-    }
-
-    /* loaded from: classes4.dex */
-    private static class ImplApi14 extends CutoutDrawable {
-        private Paint cutoutPaint;
-        private int savedLayer;
-
-        ImplApi14(CutoutDrawableState cutoutDrawableState) {
-            super(cutoutDrawableState);
-        }
-
-        @Override // com.google.android.material.shape.MaterialShapeDrawable, android.graphics.drawable.Drawable
-        public void draw(Canvas canvas) {
-            preDraw(canvas);
-            super.draw(canvas);
-            postDraw(canvas);
-        }
-
-        /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.android.material.shape.MaterialShapeDrawable
-        public void drawStrokeShape(Canvas canvas) {
-            super.drawStrokeShape(canvas);
-            canvas.drawRect(this.drawableState.cutoutBounds, getCutoutPaint());
-        }
-
-        private Paint getCutoutPaint() {
-            if (this.cutoutPaint == null) {
-                Paint paint = new Paint(1);
-                this.cutoutPaint = paint;
-                paint.setStyle(Paint.Style.FILL_AND_STROKE);
-                this.cutoutPaint.setColor(-1);
-                this.cutoutPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-            }
-            return this.cutoutPaint;
-        }
-
-        private void preDraw(Canvas canvas) {
-            Drawable.Callback callback = getCallback();
-            if (useHardwareLayer(callback)) {
-                View view = (View) callback;
-                if (view.getLayerType() != 2) {
-                    view.setLayerType(2, null);
-                    return;
-                }
-                return;
-            }
-            saveCanvasLayer(canvas);
-        }
-
-        private void saveCanvasLayer(Canvas canvas) {
-            this.savedLayer = canvas.saveLayer(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), null);
-        }
-
-        private void postDraw(Canvas canvas) {
-            if (useHardwareLayer(getCallback())) {
-                return;
-            }
-            canvas.restoreToCount(this.savedLayer);
-        }
-
-        private boolean useHardwareLayer(Drawable.Callback callback) {
-            return callback instanceof View;
         }
     }
 

@@ -15,7 +15,6 @@ import android.util.Pair;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.internal.ViewUtils;
@@ -88,8 +87,30 @@ public class ClockHandView extends View {
         paint.setColor(color);
         setHandRotation(0.0f);
         this.scaledTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
-        ViewCompat.setImportantForAccessibility(this, 2);
+        setImportantForAccessibility(2);
         obtainStyledAttributes.recycle();
+        initRotationAnimator();
+    }
+
+    private void initRotationAnimator() {
+        this.rotationAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.timepicker.ClockHandView$$ExternalSyntheticLambda0
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                ClockHandView.this.m8776xce3565b6(valueAnimator);
+            }
+        });
+        this.rotationAnimator.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.timepicker.ClockHandView.1
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationCancel(Animator animator) {
+                animator.end();
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$initRotationAnimator$0$com-google-android-material-timepicker-ClockHandView  reason: not valid java name */
+    public /* synthetic */ void m8776xce3565b6(ValueAnimator valueAnimator) {
+        setHandRotationInternal(((Float) valueAnimator.getAnimatedValue()).floatValue(), true);
     }
 
     @Override // android.view.View
@@ -106,10 +127,7 @@ public class ClockHandView extends View {
     }
 
     public void setHandRotation(float f, boolean z) {
-        ValueAnimator valueAnimator = this.rotationAnimator;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
+        this.rotationAnimator.cancel();
         if (!z) {
             setHandRotationInternal(f, false);
             return;
@@ -118,25 +136,7 @@ public class ClockHandView extends View {
         this.rotationAnimator.setFloatValues(((Float) valuesForAnimation.first).floatValue(), ((Float) valuesForAnimation.second).floatValue());
         this.rotationAnimator.setDuration(this.animationDuration);
         this.rotationAnimator.setInterpolator(this.animationInterpolator);
-        this.rotationAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.timepicker.ClockHandView$$ExternalSyntheticLambda0
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                ClockHandView.this.m8757xb17f7076(valueAnimator2);
-            }
-        });
-        this.rotationAnimator.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.timepicker.ClockHandView.1
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationCancel(Animator animator) {
-                animator.end();
-            }
-        });
         this.rotationAnimator.start();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* renamed from: lambda$setHandRotation$0$com-google-android-material-timepicker-ClockHandView  reason: not valid java name */
-    public /* synthetic */ void m8757xb17f7076(ValueAnimator valueAnimator) {
-        setHandRotationInternal(((Float) valueAnimator.getAnimatedValue()).floatValue(), true);
     }
 
     private Pair<Float, Float> getValuesForAnimation(float f) {

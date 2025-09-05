@@ -1,16 +1,7 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
 /* loaded from: classes4.dex */
-public final class E4 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f407a = F4.f426a;
-    public boolean b = F4.b;
-    public boolean c = F4.c;
-    public boolean d = F4.d;
-    public boolean e = F4.e;
-    public Boolean f = null;
-
-    public final G4 a() {
-        return new G4(this);
-    }
+public interface E4 {
+    D4 a(Context context, B5 b5, C0475o4 c0475o4, N4 n4);
 }

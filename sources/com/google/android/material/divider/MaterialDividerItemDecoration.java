@@ -82,7 +82,7 @@ public class MaterialDividerItemDecoration extends RecyclerView.ItemDecoration {
         this.color = i;
         Drawable wrap = DrawableCompat.wrap(this.dividerDrawable);
         this.dividerDrawable = wrap;
-        DrawableCompat.setTint(wrap, i);
+        wrap.setTint(i);
     }
 
     public void setDividerColorResource(Context context, int i) {

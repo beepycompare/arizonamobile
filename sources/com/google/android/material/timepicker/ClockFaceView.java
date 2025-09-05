@@ -89,7 +89,7 @@ class ClockFaceView extends RadialViewGroup implements ClockHandView.OnRotateLis
                 return true;
             }
         });
-        setFocusable(true);
+        setFocusable(false);
         obtainStyledAttributes.recycle();
         this.valueAccessibilityDelegate = new AccessibilityDelegateCompat() { // from class: com.google.android.material.timepicker.ClockFaceView.2
             @Override // androidx.core.view.AccessibilityDelegateCompat

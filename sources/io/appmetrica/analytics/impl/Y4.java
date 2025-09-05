@@ -1,16 +1,17 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Y4 implements R2 {
+public abstract class Y4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ P4 f735a;
+    public final V4 f748a;
 
-    public Y4(P4 p4) {
-        this.f735a = p4;
+    public Y4(V4 v4) {
+        this.f748a = v4;
     }
 
-    @Override // io.appmetrica.analytics.impl.R2
-    public final boolean a(Object obj, C0399l6 c0399l6) {
-        return ((V4) obj).a(c0399l6, this.f735a);
+    public final V4 a() {
+        return this.f748a;
     }
+
+    public abstract boolean a(C0477o6 c0477o6, S4 s4);
 }

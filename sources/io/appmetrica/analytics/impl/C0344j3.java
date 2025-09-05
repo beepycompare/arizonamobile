@@ -1,43 +1,39 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
 import io.appmetrica.analytics.billinginterface.internal.BillingInfo;
-import io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoStorage;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
-import java.util.List;
+import io.appmetrica.analytics.billinginterface.internal.ProductType;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* renamed from: io.appmetrica.analytics.impl.j3  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0344j3 implements BillingInfoStorage {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ProtobufStateStorage f916a;
-    public C0669w2 b;
-
-    public C0344j3(Context context) {
-        this(Vm.a(C0669w2.class).a(context));
+public final class C0344j3 implements ProtobufConverter {
+    public static B2 a(BillingInfo billingInfo) {
+        B2 b2 = new B2();
+        int i = AbstractC0319i3.f913a[billingInfo.type.ordinal()];
+        b2.f356a = i != 1 ? i != 2 ? 1 : 3 : 2;
+        b2.b = billingInfo.productId;
+        b2.c = billingInfo.purchaseToken;
+        b2.d = billingInfo.purchaseTime;
+        b2.e = billingInfo.sendTime;
+        return b2;
     }
 
-    @Override // io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoStorage
-    public final List<BillingInfo> getBillingInfo() {
-        return this.b.f1112a;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final /* bridge */ /* synthetic */ Object fromModel(Object obj) {
+        return a((BillingInfo) obj);
     }
 
-    @Override // io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoStorage
-    public final boolean isFirstInappCheckOccurred() {
-        return this.b.b;
-    }
-
-    @Override // io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoStorage
-    public final void saveInfo(List<BillingInfo> list, boolean z) {
-        for (BillingInfo billingInfo : list) {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        ProductType productType;
+        B2 b2 = (B2) obj;
+        int i = b2.f356a;
+        if (i == 2) {
+            productType = ProductType.INAPP;
+        } else if (i != 3) {
+            productType = ProductType.UNKNOWN;
+        } else {
+            productType = ProductType.SUBS;
         }
-        C0669w2 c0669w2 = new C0669w2(list, z);
-        this.b = c0669w2;
-        this.f916a.save(c0669w2);
-    }
-
-    public C0344j3(ProtobufStateStorage protobufStateStorage) {
-        this.f916a = protobufStateStorage;
-        this.b = (C0669w2) protobufStateStorage.read();
+        return new BillingInfo(productType, b2.b, b2.c, b2.d, b2.e);
     }
 }

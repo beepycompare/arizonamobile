@@ -7,19 +7,19 @@ import kotlin.jvm.internal.Lambda;
 public final class P extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ T f595a;
+    public final /* synthetic */ T f611a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public P(T t) {
         super(0);
-        this.f595a = t;
+        this.f611a = t;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        T t = this.f595a;
+        T t = this.f611a;
         M m = t.f;
-        Context context = t.f653a;
+        Context context = t.f672a;
         m.getClass();
         return M.a(new K(m, context));
     }

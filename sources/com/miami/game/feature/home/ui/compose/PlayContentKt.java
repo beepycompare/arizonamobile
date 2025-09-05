@@ -168,7 +168,7 @@ public final class PlayContentKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1066622857, "C63@2527L27,64@2615L339,64@2567L387:PlayContent.kt#dswm0d");
-            AnimatedLoadingKt.m8906AnimatedLoadinguFdPcIQ(isCheckingFiles, 0.0f, null, startRestartGroup, 0, 6);
+            AnimatedLoadingKt.m8925AnimatedLoadinguFdPcIQ(isCheckingFiles, 0.0f, null, startRestartGroup, 0, 6);
             ScalingButtonKt.ScalingButtonLong(onClickGame, onLongClickGame, null, ComposableLambdaKt.rememberComposableLambda(775434495, true, new Function3() { // from class: com.miami.game.feature.home.ui.compose.PlayContentKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
@@ -187,7 +187,7 @@ public final class PlayContentKt {
                 startRestartGroup.startReplaceGroup(-676667625);
                 ComposerKt.sourceInformation(startRestartGroup, "79@3072L10,80@3125L13,81@3169L13,78@3003L392");
                 float f = 13;
-                TextKt.m2804Text4IGK_g((String) mutableState.getValue(), SizeKt.m870height3ABfNKs(OffsetKt.m787offsetVpY3zN4$default(columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getStart()), Dp.m7251constructorimpl(62), 0.0f, 2, null), Dp.m7251constructorimpl(24)), ColorKt.Color(4294046193L), TypeKt.m9022dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9022dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getHeadlineSmall(), startRestartGroup, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64496);
+                TextKt.m2804Text4IGK_g((String) mutableState.getValue(), SizeKt.m870height3ABfNKs(OffsetKt.m787offsetVpY3zN4$default(columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getStart()), Dp.m7251constructorimpl(62), 0.0f, 2, null), Dp.m7251constructorimpl(24)), ColorKt.Color(4294046193L), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getHeadlineSmall(), startRestartGroup, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64496);
                 startRestartGroup = startRestartGroup;
                 startRestartGroup.endReplaceGroup();
             } else {

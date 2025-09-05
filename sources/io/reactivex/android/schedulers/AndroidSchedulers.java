@@ -5,7 +5,7 @@ import android.os.Looper;
 import io.reactivex.Scheduler;
 import io.reactivex.android.plugins.RxAndroidPlugins;
 import java.util.concurrent.Callable;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class AndroidSchedulers {
     private static final Scheduler MAIN_THREAD = RxAndroidPlugins.initMainThreadScheduler(new Callable<Scheduler>() { // from class: io.reactivex.android.schedulers.AndroidSchedulers.1
         /* JADX WARN: Can't rename method to resolve collision */
@@ -16,7 +16,7 @@ public final class AndroidSchedulers {
     });
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static final class MainHolder {
         static final Scheduler DEFAULT = new HandlerScheduler(new Handler(Looper.getMainLooper()), false);
 

@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.RelativeCornerSize;
@@ -41,7 +40,7 @@ public class RadialViewGroup extends ConstraintLayout {
     public RadialViewGroup(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         LayoutInflater.from(context).inflate(R.layout.material_radial_view_group, this);
-        ViewCompat.setBackground(this, createBackground());
+        setBackground(createBackground());
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.RadialViewGroup, i, 0);
         this.radius = obtainStyledAttributes.getDimensionPixelSize(R.styleable.RadialViewGroup_materialCircleRadius, 0);
         this.updateLayoutParametersRunnable = new Runnable() { // from class: com.google.android.material.timepicker.RadialViewGroup$$ExternalSyntheticLambda0
@@ -70,7 +69,7 @@ public class RadialViewGroup extends ConstraintLayout {
     public void addView(View view, int i, ViewGroup.LayoutParams layoutParams) {
         super.addView(view, i, layoutParams);
         if (view.getId() == -1) {
-            view.setId(ViewCompat.generateViewId());
+            view.setId(View.generateViewId());
         }
         updateLayoutParamsAsync();
     }

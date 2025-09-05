@@ -1,47 +1,48 @@
 package io.appmetrica.analytics.impl;
 
+import io.appmetrica.analytics.coreapi.internal.backport.BiFunction;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 /* loaded from: classes4.dex */
-public abstract class Jn {
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0044  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static In a(Throwable th, int i, int i2) {
-        StackTraceElement[] stackTraceElementArr;
-        In in;
-        String name = th.getClass().getName();
-        String message = th.getMessage();
+public final class Jn {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final In f521a;
+    public final BiFunction b;
+    public final Wf c;
+
+    public Jn() {
+        this(new Gn(), new La(), A4.l().n());
+    }
+
+    public final ArrayList a(Thread thread, Thread thread2) {
+        Map map;
+        ArrayList arrayList = new ArrayList();
+        TreeMap treeMap = new TreeMap(new Hn());
         try {
-            stackTraceElementArr = th.getStackTrace();
-        } catch (Throwable unused) {
-            stackTraceElementArr = new StackTraceElement[0];
+            map = this.f521a.c();
+        } catch (SecurityException unused) {
+            map = null;
         }
-        ArrayList arrayList = new ArrayList(stackTraceElementArr.length);
-        for (StackTraceElement stackTraceElement : stackTraceElementArr) {
-            arrayList.add(new Il(stackTraceElement));
+        if (map != null) {
+            treeMap.putAll(map);
         }
-        Throwable cause = th.getCause();
-        ArrayList arrayList2 = null;
-        if (cause != null) {
-            if (i2 >= i) {
-                cause = null;
-            }
-            if (cause != null) {
-                in = a(cause, 30, i2 + 1);
-                if (i2 < i) {
-                    Throwable[] suppressed = th.getSuppressed();
-                    arrayList2 = new ArrayList(suppressed.length);
-                    for (Throwable th2 : suppressed) {
-                        arrayList2.add(a(th2, 1, i2));
-                    }
-                }
-                return new In(name, message, arrayList, in, arrayList2);
+        if (thread2 != null) {
+            treeMap.remove(thread2);
+        }
+        for (Map.Entry entry : treeMap.entrySet()) {
+            Thread thread3 = (Thread) entry.getKey();
+            if (thread3 != thread && thread3 != thread2) {
+                arrayList.add((Cn) this.b.apply(thread3, (StackTraceElement[]) entry.getValue()));
             }
         }
-        in = null;
-        if (i2 < i) {
-        }
-        return new In(name, message, arrayList, in, arrayList2);
+        return arrayList;
+    }
+
+    public Jn(In in, La la, Q6 q6) {
+        this.f521a = in;
+        this.b = la;
+        this.c = q6;
     }
 }

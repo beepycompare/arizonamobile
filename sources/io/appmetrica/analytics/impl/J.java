@@ -6,5 +6,5 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfoResult
 public interface J {
     AdTrackingInfoResult a(Context context);
 
-    AdTrackingInfoResult a(Context context, Yi yi);
+    AdTrackingInfoResult a(Context context, InterfaceC0180cj interfaceC0180cj);
 }

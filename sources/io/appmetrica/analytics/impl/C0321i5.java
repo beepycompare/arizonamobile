@@ -1,28 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
-import kotlin.collections.CollectionsKt;
+import android.database.sqlite.SQLiteDatabase;
+import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
 /* renamed from: io.appmetrica.analytics.impl.i5  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0321i5 {
+public final class C0321i5 extends DatabaseScript {
 
     /* renamed from: a  reason: collision with root package name */
-    public final T5 f900a;
-    public final C0148bd b;
-    public final C0148bd c;
+    public final C0295h5 f914a = new C0295h5();
+    public final C0269g5 b = new C0269g5();
 
-    public C0321i5(C0297h7 c0297h7, C0332ih c0332ih) {
-        Je je = new Je(c0297h7);
-        this.f900a = new T5(c0297h7);
-        this.b = new C0148bd(je, new C0295h5(c0332ih));
-        this.c = new C0148bd(je, C0269g5.f866a);
-    }
-
-    public final List<InterfaceC0118a9> a() {
-        return CollectionsKt.listOf((Object[]) new InterfaceC0118a9[]{this.f900a, this.b});
-    }
-
-    public final List<InterfaceC0118a9> b() {
-        return CollectionsKt.listOf(this.c);
+    @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
+    public final void runScript(SQLiteDatabase sQLiteDatabase) {
+        this.f914a.runScript(sQLiteDatabase);
+        this.b.runScript(sQLiteDatabase);
     }
 }

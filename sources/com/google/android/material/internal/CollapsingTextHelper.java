@@ -3,7 +3,6 @@ package com.google.android.material.internal;
 import android.animation.TimeInterpolator;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -16,13 +15,13 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import androidx.core.math.MathUtils;
 import androidx.core.text.TextDirectionHeuristicCompat;
 import androidx.core.text.TextDirectionHeuristicsCompat;
 import androidx.core.util.Preconditions;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
 import androidx.media3.extractor.ts.TsExtractor;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.color.MaterialColors;
@@ -33,11 +32,16 @@ import com.google.android.material.resources.TypefaceUtils;
 /* loaded from: classes4.dex */
 public final class CollapsingTextHelper {
     private static final boolean DEBUG_DRAW = false;
+    private static final Paint DEBUG_DRAW_PAINT = null;
     private static final String ELLIPSIS_NORMAL = "…";
     private static final float FADE_MODE_THRESHOLD_FRACTION_RELATIVE = 0.5f;
+    private static final int ONE_LINE = 1;
+    public static final int SEMITRANSPARENT_MAGENTA = 1090453759;
     private static final String TAG = "CollapsingTextHelper";
+    private boolean alignBaselineAtBottom;
     private boolean boundsChanged;
     private final Rect collapsedBounds;
+    private Rect collapsedBoundsForPlacement;
     private float collapsedDrawX;
     private float collapsedDrawY;
     private CancelableFontCallback collapsedFontCallback;
@@ -56,6 +60,7 @@ public final class CollapsingTextHelper {
     private float currentDrawX;
     private float currentDrawY;
     private float currentLetterSpacing;
+    private int currentMaxLines;
     private int currentOffsetY;
     private int currentShadowColor;
     private float currentShadowDx;
@@ -76,7 +81,6 @@ public final class CollapsingTextHelper {
     private float expandedShadowRadius;
     private float expandedTextBlend;
     private ColorStateList expandedTextColor;
-    private Bitmap expandedTitleTexture;
     private Typeface expandedTypeface;
     private Typeface expandedTypefaceBold;
     private Typeface expandedTypefaceDefault;
@@ -94,22 +98,21 @@ public final class CollapsingTextHelper {
     private TimeInterpolator textSizeInterpolator;
     private CharSequence textToDraw;
     private CharSequence textToDrawCollapsed;
-    private Paint texturePaint;
     private final TextPaint tmpPaint;
-    private boolean useTexture;
     private final View view;
-    private static final boolean USE_SCALING_TEXTURE = false;
-    private static final Paint DEBUG_DRAW_PAINT = null;
     private int expandedTextGravity = 16;
     private int collapsedTextGravity = 16;
     private float expandedTextSize = 15.0f;
     private float collapsedTextSize = 15.0f;
     private TextUtils.TruncateAt titleTextEllipsize = TextUtils.TruncateAt.END;
     private boolean isRtlTextDirectionHeuristicsEnabled = true;
-    private int maxLines = 1;
+    private int expandedMaxLines = 1;
+    private int collapsedMaxLines = 1;
     private float lineSpacingAdd = 0.0f;
     private float lineSpacingMultiplier = 1.0f;
     private int hyphenationFrequency = StaticLayoutBuilderCompat.DEFAULT_HYPHENATION_FREQUENCY;
+    private int collapsedHeight = -1;
+    private int expandedHeight = -1;
 
     public CollapsingTextHelper(View view) {
         this.view = view;
@@ -121,6 +124,13 @@ public final class CollapsingTextHelper {
         this.currentBounds = new RectF();
         this.fadeModeThresholdFraction = calculateFadeModeThresholdFraction();
         maybeUpdateFontWeightAdjustment(view.getContext().getResources().getConfiguration());
+    }
+
+    public void setCollapsedMaxLines(int i) {
+        if (i != this.collapsedMaxLines) {
+            this.collapsedMaxLines = i;
+            recalculate();
+        }
     }
 
     public void setTextSizeInterpolator(TimeInterpolator timeInterpolator) {
@@ -181,12 +191,17 @@ public final class CollapsingTextHelper {
         }
     }
 
-    public void setExpandedBounds(int i, int i2, int i3, int i4) {
-        if (rectEquals(this.expandedBounds, i, i2, i3, i4)) {
+    public void setExpandedBounds(int i, int i2, int i3, int i4, boolean z) {
+        if (rectEquals(this.expandedBounds, i, i2, i3, i4) && z == this.alignBaselineAtBottom) {
             return;
         }
         this.expandedBounds.set(i, i2, i3, i4);
         this.boundsChanged = true;
+        this.alignBaselineAtBottom = z;
+    }
+
+    public void setExpandedBounds(int i, int i2, int i3, int i4) {
+        setExpandedBounds(i, i2, i3, i4, true);
     }
 
     public void setExpandedBounds(Rect rect) {
@@ -205,12 +220,34 @@ public final class CollapsingTextHelper {
         setCollapsedBounds(rect.left, rect.top, rect.right, rect.bottom);
     }
 
-    public void getCollapsedTextActualBounds(RectF rectF, int i, int i2) {
+    public void setCollapsedBoundsForOffsets(int i, int i2, int i3, int i4) {
+        if (this.collapsedBoundsForPlacement == null) {
+            this.collapsedBoundsForPlacement = new Rect(i, i2, i3, i4);
+            this.boundsChanged = true;
+        }
+        if (rectEquals(this.collapsedBoundsForPlacement, i, i2, i3, i4)) {
+            return;
+        }
+        this.collapsedBoundsForPlacement.set(i, i2, i3, i4);
+        this.boundsChanged = true;
+    }
+
+    public void getCollapsedTextBottomTextBounds(RectF rectF, int i, int i2) {
         this.isRtl = calculateIsRtl(this.text);
         rectF.left = Math.max(getCollapsedTextLeftBound(i, i2), this.collapsedBounds.left);
         rectF.top = this.collapsedBounds.top;
         rectF.right = Math.min(getCollapsedTextRightBound(rectF, i, i2), this.collapsedBounds.right);
         rectF.bottom = this.collapsedBounds.top + getCollapsedTextHeight();
+        if (this.textLayout == null || shouldTruncateCollapsedToSingleLine()) {
+            return;
+        }
+        StaticLayout staticLayout = this.textLayout;
+        float lineWidth = staticLayout.getLineWidth(staticLayout.getLineCount() - 1) * (this.collapsedTextSize / this.expandedTextSize);
+        if (this.isRtl) {
+            rectF.left = rectF.right - lineWidth;
+        } else {
+            rectF.right = rectF.left + lineWidth;
+        }
     }
 
     private float getCollapsedTextLeftBound(int i, int i2) {
@@ -227,19 +264,42 @@ public final class CollapsingTextHelper {
         return ((i2 & GravityCompat.END) == 8388613 || (i2 & 5) == 5) ? this.isRtl ? rectF.left + this.collapsedTextWidth : this.collapsedBounds.right : this.isRtl ? this.collapsedBounds.right : rectF.left + this.collapsedTextWidth;
     }
 
-    public float getExpandedTextHeight() {
+    public float getExpandedTextSingleLineHeight() {
         getTextPaintExpanded(this.tmpPaint);
         return -this.tmpPaint.ascent();
     }
 
-    public float getExpandedTextFullHeight() {
+    public float getExpandedTextFullSingleLineHeight() {
         getTextPaintExpanded(this.tmpPaint);
         return (-this.tmpPaint.ascent()) + this.tmpPaint.descent();
     }
 
+    public void updateTextHeights(int i) {
+        getTextPaintCollapsed(this.tmpPaint);
+        float f = i;
+        this.collapsedHeight = createStaticLayout(this.collapsedMaxLines, this.tmpPaint, this.text, f * (this.collapsedTextSize / this.expandedTextSize), this.isRtl).getHeight();
+        getTextPaintExpanded(this.tmpPaint);
+        this.expandedHeight = createStaticLayout(this.expandedMaxLines, this.tmpPaint, this.text, f, this.isRtl).getHeight();
+    }
+
     public float getCollapsedTextHeight() {
+        int i = this.collapsedHeight;
+        return i != -1 ? i : getCollapsedSingleLineHeight();
+    }
+
+    public float getExpandedTextHeight() {
+        int i = this.expandedHeight;
+        return i != -1 ? i : getExpandedTextSingleLineHeight();
+    }
+
+    public float getCollapsedSingleLineHeight() {
         getTextPaintCollapsed(this.tmpPaint);
         return -this.tmpPaint.ascent();
+    }
+
+    public float getCollapsedFullSingleLineHeight() {
+        getTextPaintCollapsed(this.tmpPaint);
+        return (-this.tmpPaint.ascent()) + this.tmpPaint.descent();
     }
 
     public void setCurrentOffsetY(int i) {
@@ -553,7 +613,7 @@ public final class CollapsingTextHelper {
                 textPaint.setShadowLayer(this.currentShadowRadius, this.currentShadowDx, this.currentShadowDy, MaterialColors.compositeARGBWithAlpha(this.currentShadowColor, textPaint.getAlpha()));
             }
         }
-        ViewCompat.postInvalidateOnAnimation(this.view);
+        this.view.postInvalidateOnAnimation();
     }
 
     private float calculateFadeModeTextAlpha(float f) {
@@ -583,69 +643,88 @@ public final class CollapsingTextHelper {
         return colorStateList.getDefaultColor();
     }
 
+    private boolean shouldTruncateCollapsedToSingleLine() {
+        return this.collapsedMaxLines == 1;
+    }
+
     private void calculateBaseOffsets(boolean z) {
         StaticLayout staticLayout;
-        StaticLayout staticLayout2;
+        float measureTextWidth;
+        CharSequence charSequence;
         calculateUsingTextSize(1.0f, z);
-        CharSequence charSequence = this.textToDraw;
-        if (charSequence != null && (staticLayout2 = this.textLayout) != null) {
-            this.textToDrawCollapsed = TextUtils.ellipsize(charSequence, this.textPaint, staticLayout2.getWidth(), this.titleTextEllipsize);
+        if (this.textToDraw != null && this.textLayout != null) {
+            if (shouldTruncateCollapsedToSingleLine()) {
+                charSequence = TextUtils.ellipsize(this.textToDraw, this.textPaint, this.textLayout.getWidth(), this.titleTextEllipsize);
+            } else {
+                charSequence = this.textToDraw;
+            }
+            this.textToDrawCollapsed = charSequence;
         }
         CharSequence charSequence2 = this.textToDrawCollapsed;
-        float f = 0.0f;
         if (charSequence2 != null) {
             this.collapsedTextWidth = measureTextWidth(this.textPaint, charSequence2);
         } else {
             this.collapsedTextWidth = 0.0f;
         }
-        int absoluteGravity = GravityCompat.getAbsoluteGravity(this.collapsedTextGravity, this.isRtl ? 1 : 0);
+        int absoluteGravity = Gravity.getAbsoluteGravity(this.collapsedTextGravity, this.isRtl ? 1 : 0);
+        Rect rect = this.collapsedBoundsForPlacement;
+        if (rect == null) {
+            rect = this.collapsedBounds;
+        }
         int i = absoluteGravity & 112;
         if (i == 48) {
-            this.collapsedDrawY = this.collapsedBounds.top;
+            this.collapsedDrawY = rect.top;
         } else if (i == 80) {
-            this.collapsedDrawY = this.collapsedBounds.bottom + this.textPaint.ascent();
+            this.collapsedDrawY = rect.bottom + this.textPaint.ascent();
         } else {
-            this.collapsedDrawY = this.collapsedBounds.centerY() - ((this.textPaint.descent() - this.textPaint.ascent()) / 2.0f);
+            this.collapsedDrawY = rect.centerY() - ((this.textPaint.descent() - this.textPaint.ascent()) / 2.0f);
         }
         int i2 = absoluteGravity & GravityCompat.RELATIVE_HORIZONTAL_GRAVITY_MASK;
         if (i2 == 1) {
-            this.collapsedDrawX = this.collapsedBounds.centerX() - (this.collapsedTextWidth / 2.0f);
+            this.collapsedDrawX = rect.centerX() - (this.collapsedTextWidth / 2.0f);
         } else if (i2 == 5) {
-            this.collapsedDrawX = this.collapsedBounds.right - this.collapsedTextWidth;
+            this.collapsedDrawX = rect.right - this.collapsedTextWidth;
         } else {
-            this.collapsedDrawX = this.collapsedBounds.left;
+            this.collapsedDrawX = rect.left;
+        }
+        if (this.collapsedTextWidth <= this.collapsedBounds.width()) {
+            float max = this.collapsedDrawX + Math.max(0.0f, this.collapsedBounds.left - this.collapsedDrawX);
+            this.collapsedDrawX = max;
+            this.collapsedDrawX = max + Math.min(0.0f, this.collapsedBounds.right - (this.collapsedDrawX + this.collapsedTextWidth));
+        }
+        if (getCollapsedFullSingleLineHeight() <= this.collapsedBounds.height()) {
+            float max2 = this.collapsedDrawY + Math.max(0.0f, this.collapsedBounds.top - this.collapsedDrawY);
+            this.collapsedDrawY = max2;
+            this.collapsedDrawY = max2 + Math.min(0.0f, this.collapsedBounds.bottom - (this.collapsedDrawY + getCollapsedTextHeight()));
         }
         calculateUsingTextSize(0.0f, z);
         float height = this.textLayout != null ? staticLayout.getHeight() : 0.0f;
-        StaticLayout staticLayout3 = this.textLayout;
-        if (staticLayout3 != null && this.maxLines > 1) {
-            f = staticLayout3.getWidth();
+        StaticLayout staticLayout2 = this.textLayout;
+        if (staticLayout2 != null && this.expandedMaxLines > 1) {
+            measureTextWidth = staticLayout2.getWidth();
         } else {
             CharSequence charSequence3 = this.textToDraw;
-            if (charSequence3 != null) {
-                f = measureTextWidth(this.textPaint, charSequence3);
-            }
+            measureTextWidth = charSequence3 != null ? measureTextWidth(this.textPaint, charSequence3) : 0.0f;
         }
-        StaticLayout staticLayout4 = this.textLayout;
-        this.expandedLineCount = staticLayout4 != null ? staticLayout4.getLineCount() : 0;
-        int absoluteGravity2 = GravityCompat.getAbsoluteGravity(this.expandedTextGravity, this.isRtl ? 1 : 0);
+        StaticLayout staticLayout3 = this.textLayout;
+        this.expandedLineCount = staticLayout3 != null ? staticLayout3.getLineCount() : 0;
+        int absoluteGravity2 = Gravity.getAbsoluteGravity(this.expandedTextGravity, this.isRtl ? 1 : 0);
         int i3 = absoluteGravity2 & 112;
         if (i3 == 48) {
             this.expandedDrawY = this.expandedBounds.top;
         } else if (i3 != 80) {
             this.expandedDrawY = this.expandedBounds.centerY() - (height / 2.0f);
         } else {
-            this.expandedDrawY = (this.expandedBounds.bottom - height) + this.textPaint.descent();
+            this.expandedDrawY = (this.expandedBounds.bottom - height) + (this.alignBaselineAtBottom ? this.textPaint.descent() : 0.0f);
         }
         int i4 = absoluteGravity2 & GravityCompat.RELATIVE_HORIZONTAL_GRAVITY_MASK;
         if (i4 == 1) {
-            this.expandedDrawX = this.expandedBounds.centerX() - (f / 2.0f);
+            this.expandedDrawX = this.expandedBounds.centerX() - (measureTextWidth / 2.0f);
         } else if (i4 == 5) {
-            this.expandedDrawX = this.expandedBounds.right - f;
+            this.expandedDrawX = this.expandedBounds.right - measureTextWidth;
         } else {
             this.expandedDrawX = this.expandedBounds.left;
         }
-        clearTexture();
         setInterpolatedTextSize(this.expandedFraction);
     }
 
@@ -666,12 +745,12 @@ public final class CollapsingTextHelper {
 
     private void setCollapsedTextBlend(float f) {
         this.collapsedTextBlend = f;
-        ViewCompat.postInvalidateOnAnimation(this.view);
+        this.view.postInvalidateOnAnimation();
     }
 
     private void setExpandedTextBlend(float f) {
         this.expandedTextBlend = f;
-        ViewCompat.postInvalidateOnAnimation(this.view);
+        this.view.postInvalidateOnAnimation();
     }
 
     public void draw(Canvas canvas) {
@@ -682,17 +761,11 @@ public final class CollapsingTextHelper {
         this.textPaint.setTextSize(this.currentTextSize);
         float f = this.currentDrawX;
         float f2 = this.currentDrawY;
-        boolean z = this.useTexture && this.expandedTitleTexture != null;
         float f3 = this.scale;
         if (f3 != 1.0f && !this.fadeModeEnabled) {
             canvas.scale(f3, f3, f, f2);
         }
-        if (z) {
-            canvas.drawBitmap(this.expandedTitleTexture, f, f2, this.texturePaint);
-            canvas.restoreToCount(save);
-            return;
-        }
-        if (shouldDrawMultiline() && (!this.fadeModeEnabled || this.expandedFraction > this.fadeModeThresholdFraction)) {
+        if (shouldDrawMultiline() && shouldTruncateCollapsedToSingleLine() && (!this.fadeModeEnabled || this.expandedFraction > this.fadeModeThresholdFraction)) {
             drawMultilineTransition(canvas, this.currentDrawX - this.textLayout.getLineStart(0), f2);
         } else {
             canvas.translate(f, f2);
@@ -702,8 +775,8 @@ public final class CollapsingTextHelper {
     }
 
     private boolean shouldDrawMultiline() {
-        if (this.maxLines > 1) {
-            return (!this.isRtl || this.fadeModeEnabled) && !this.useTexture;
+        if (this.expandedMaxLines > 1 || this.collapsedMaxLines > 1) {
+            return !this.isRtl || this.fadeModeEnabled;
         }
         return false;
     }
@@ -751,7 +824,7 @@ public final class CollapsingTextHelper {
     }
 
     private boolean isDefaultIsRtl() {
-        return ViewCompat.getLayoutDirection(this.view) == 1;
+        return this.view.getLayoutDirection() == 1;
     }
 
     private boolean isTextDirectionHeuristicsIsRtl(CharSequence charSequence, boolean z) {
@@ -766,12 +839,7 @@ public final class CollapsingTextHelper {
 
     private void setInterpolatedTextSize(float f) {
         calculateUsingTextSize(f);
-        boolean z = USE_SCALING_TEXTURE && this.scale != 1.0f;
-        this.useTexture = z;
-        if (z) {
-            ensureExpandedTexture();
-        }
-        ViewCompat.postInvalidateOnAnimation(this.view);
+        this.view.postInvalidateOnAnimation();
     }
 
     private void calculateUsingTextSize(float f) {
@@ -779,44 +847,52 @@ public final class CollapsingTextHelper {
     }
 
     private void calculateUsingTextSize(float f, boolean z) {
+        Typeface typeface;
         float f2;
         float f3;
-        Typeface typeface;
         if (this.text == null) {
             return;
         }
         float width = this.collapsedBounds.width();
         float width2 = this.expandedBounds.width();
         if (isClose(f, 1.0f)) {
-            f2 = this.collapsedTextSize;
-            f3 = this.collapsedLetterSpacing;
-            this.scale = 1.0f;
+            f2 = shouldTruncateCollapsedToSingleLine() ? this.collapsedTextSize : this.expandedTextSize;
+            f3 = shouldTruncateCollapsedToSingleLine() ? this.collapsedLetterSpacing : this.expandedLetterSpacing;
+            this.scale = shouldTruncateCollapsedToSingleLine() ? 1.0f : lerp(this.expandedTextSize, this.collapsedTextSize, f, this.textSizeInterpolator) / this.expandedTextSize;
+            if (!shouldTruncateCollapsedToSingleLine()) {
+                width = width2;
+            }
             typeface = this.collapsedTypeface;
+            width2 = width;
         } else {
             float f4 = this.expandedTextSize;
             float f5 = this.expandedLetterSpacing;
-            Typeface typeface2 = this.expandedTypeface;
+            typeface = this.expandedTypeface;
             if (isClose(f, 0.0f)) {
                 this.scale = 1.0f;
             } else {
                 this.scale = lerp(this.expandedTextSize, this.collapsedTextSize, f, this.textSizeInterpolator) / this.expandedTextSize;
             }
             float f6 = this.collapsedTextSize / this.expandedTextSize;
-            width = (z || this.fadeModeEnabled || width2 * f6 <= width) ? width2 : Math.min(width / f6, width2);
+            float f7 = width2 * f6;
+            if (!z && !this.fadeModeEnabled && f7 > width && shouldTruncateCollapsedToSingleLine()) {
+                width2 = Math.min(width / f6, width2);
+            }
             f2 = f4;
             f3 = f5;
-            typeface = typeface2;
         }
-        if (width > 0.0f) {
+        int i = f < 0.5f ? this.expandedMaxLines : this.collapsedMaxLines;
+        if (width2 > 0.0f) {
             boolean z2 = this.currentTextSize != f2;
             boolean z3 = this.currentLetterSpacing != f3;
             boolean z4 = this.currentTypeface != typeface;
             StaticLayout staticLayout = this.textLayout;
-            boolean z5 = z2 || z3 || (staticLayout != null && (width > ((float) staticLayout.getWidth()) ? 1 : (width == ((float) staticLayout.getWidth()) ? 0 : -1)) != 0) || z4 || this.boundsChanged;
+            boolean z5 = z2 || z3 || (staticLayout != null && (width2 > ((float) staticLayout.getWidth()) ? 1 : (width2 == ((float) staticLayout.getWidth()) ? 0 : -1)) != 0) || z4 || (this.currentMaxLines != i) || this.boundsChanged;
             this.currentTextSize = f2;
             this.currentLetterSpacing = f3;
             this.currentTypeface = typeface;
             this.boundsChanged = false;
+            this.currentMaxLines = i;
             this.textPaint.setLinearText(this.scale != 1.0f);
             r5 = z5;
         }
@@ -825,16 +901,16 @@ public final class CollapsingTextHelper {
             this.textPaint.setTypeface(this.currentTypeface);
             this.textPaint.setLetterSpacing(this.currentLetterSpacing);
             this.isRtl = calculateIsRtl(this.text);
-            StaticLayout createStaticLayout = createStaticLayout(shouldDrawMultiline() ? this.maxLines : 1, width, this.isRtl);
+            StaticLayout createStaticLayout = createStaticLayout(shouldDrawMultiline() ? i : 1, this.textPaint, this.text, width2 * (shouldTruncateCollapsedToSingleLine() ? 1.0f : this.scale), this.isRtl);
             this.textLayout = createStaticLayout;
             this.textToDraw = createStaticLayout.getText();
         }
     }
 
-    private StaticLayout createStaticLayout(int i, float f, boolean z) {
+    private StaticLayout createStaticLayout(int i, TextPaint textPaint, CharSequence charSequence, float f, boolean z) {
         StaticLayout staticLayout;
         try {
-            staticLayout = StaticLayoutBuilderCompat.obtain(this.text, this.textPaint, (int) f).setEllipsize(this.titleTextEllipsize).setIsRtl(z).setAlignment(i == 1 ? Layout.Alignment.ALIGN_NORMAL : getMultilineTextLayoutAlignment()).setIncludePad(false).setMaxLines(i).setLineSpacing(this.lineSpacingAdd, this.lineSpacingMultiplier).setHyphenationFrequency(this.hyphenationFrequency).setStaticLayoutBuilderConfigurer(this.staticLayoutBuilderConfigurer).build();
+            staticLayout = StaticLayoutBuilderCompat.obtain(charSequence, textPaint, (int) f).setEllipsize(this.titleTextEllipsize).setIsRtl(z).setAlignment(i == 1 ? Layout.Alignment.ALIGN_NORMAL : getMultilineTextLayoutAlignment()).setIncludePad(false).setMaxLines(i).setLineSpacing(this.lineSpacingAdd, this.lineSpacingMultiplier).setHyphenationFrequency(this.hyphenationFrequency).setStaticLayoutBuilderConfigurer(this.staticLayoutBuilderConfigurer).build();
         } catch (StaticLayoutBuilderCompat.StaticLayoutBuilderCompatException e) {
             Log.e(TAG, e.getCause().getMessage(), e);
             staticLayout = null;
@@ -843,28 +919,11 @@ public final class CollapsingTextHelper {
     }
 
     private Layout.Alignment getMultilineTextLayoutAlignment() {
-        int absoluteGravity = GravityCompat.getAbsoluteGravity(this.expandedTextGravity, this.isRtl ? 1 : 0) & 7;
+        int absoluteGravity = Gravity.getAbsoluteGravity(this.expandedTextGravity, this.isRtl ? 1 : 0) & 7;
         if (absoluteGravity != 1) {
             return absoluteGravity != 5 ? this.isRtl ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL : this.isRtl ? Layout.Alignment.ALIGN_NORMAL : Layout.Alignment.ALIGN_OPPOSITE;
         }
         return Layout.Alignment.ALIGN_CENTER;
-    }
-
-    private void ensureExpandedTexture() {
-        if (this.expandedTitleTexture != null || this.expandedBounds.isEmpty() || TextUtils.isEmpty(this.textToDraw)) {
-            return;
-        }
-        calculateOffsets(0.0f);
-        int width = this.textLayout.getWidth();
-        int height = this.textLayout.getHeight();
-        if (width <= 0 || height <= 0) {
-            return;
-        }
-        this.expandedTitleTexture = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-        this.textLayout.draw(new Canvas(this.expandedTitleTexture));
-        if (this.texturePaint == null) {
-            this.texturePaint = new Paint(3);
-        }
     }
 
     public void recalculate() {
@@ -883,7 +942,6 @@ public final class CollapsingTextHelper {
         if (charSequence == null || !TextUtils.equals(this.text, charSequence)) {
             this.text = charSequence;
             this.textToDraw = null;
-            clearTexture();
             recalculate();
         }
     }
@@ -892,24 +950,15 @@ public final class CollapsingTextHelper {
         return this.text;
     }
 
-    private void clearTexture() {
-        Bitmap bitmap = this.expandedTitleTexture;
-        if (bitmap != null) {
-            bitmap.recycle();
-            this.expandedTitleTexture = null;
-        }
-    }
-
-    public void setMaxLines(int i) {
-        if (i != this.maxLines) {
-            this.maxLines = i;
-            clearTexture();
+    public void setExpandedMaxLines(int i) {
+        if (i != this.expandedMaxLines) {
+            this.expandedMaxLines = i;
             recalculate();
         }
     }
 
-    public int getMaxLines() {
-        return this.maxLines;
+    public int getExpandedMaxLines() {
+        return this.expandedMaxLines;
     }
 
     public int getLineCount() {

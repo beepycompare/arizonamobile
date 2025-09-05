@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.expandable.ExpandableWidget;
 import java.util.List;
 @Deprecated
@@ -34,7 +33,7 @@ public abstract class ExpandableBehavior extends CoordinatorLayout.Behavior<View
     @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public boolean onLayoutChild(CoordinatorLayout coordinatorLayout, final View view, int i) {
         final ExpandableWidget findExpandableWidget;
-        if (ViewCompat.isLaidOut(view) || (findExpandableWidget = findExpandableWidget(coordinatorLayout, view)) == null || !didStateChange(findExpandableWidget.isExpanded())) {
+        if (view.isLaidOut() || (findExpandableWidget = findExpandableWidget(coordinatorLayout, view)) == null || !didStateChange(findExpandableWidget.isExpanded())) {
             return false;
         }
         final int i2 = findExpandableWidget.isExpanded() ? 1 : 2;

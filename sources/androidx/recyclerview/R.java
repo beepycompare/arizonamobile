@@ -4,16 +4,16 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int fastScrollEnabled = 0x7f040240;
-        public static int fastScrollHorizontalThumbDrawable = 0x7f040241;
-        public static int fastScrollHorizontalTrackDrawable = 0x7f040242;
-        public static int fastScrollVerticalThumbDrawable = 0x7f040243;
-        public static int fastScrollVerticalTrackDrawable = 0x7f040244;
-        public static int layoutManager = 0x7f04033f;
-        public static int recyclerViewStyle = 0x7f0404f6;
-        public static int reverseLayout = 0x7f040503;
-        public static int spanCount = 0x7f040559;
-        public static int stackFromEnd = 0x7f04056a;
+        public static int fastScrollEnabled = 0x7f040271;
+        public static int fastScrollHorizontalThumbDrawable = 0x7f040272;
+        public static int fastScrollHorizontalTrackDrawable = 0x7f040273;
+        public static int fastScrollVerticalThumbDrawable = 0x7f040274;
+        public static int fastScrollVerticalTrackDrawable = 0x7f040275;
+        public static int layoutManager = 0x7f040382;
+        public static int recyclerViewStyle = 0x7f04054c;
+        public static int reverseLayout = 0x7f040559;
+        public static int spanCount = 0x7f0405bb;
+        public static int stackFromEnd = 0x7f0405cc;
 
         private attr() {
         }
@@ -21,12 +21,12 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class dimen {
-        public static int fastscroll_default_thickness = 0x7f070350;
-        public static int fastscroll_margin = 0x7f070351;
-        public static int fastscroll_minimum_range = 0x7f070352;
-        public static int item_touch_helper_max_drag_scroll_per_frame = 0x7f07035d;
-        public static int item_touch_helper_swipe_escape_max_velocity = 0x7f07035e;
-        public static int item_touch_helper_swipe_escape_velocity = 0x7f07035f;
+        public static int fastscroll_default_thickness = 0x7f070352;
+        public static int fastscroll_margin = 0x7f070353;
+        public static int fastscroll_minimum_range = 0x7f070354;
+        public static int item_touch_helper_max_drag_scroll_per_frame = 0x7f07035f;
+        public static int item_touch_helper_swipe_escape_max_velocity = 0x7f070360;
+        public static int item_touch_helper_swipe_escape_velocity = 0x7f070361;
 
         private dimen() {
         }
@@ -34,7 +34,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int item_touch_helper_previous_elevation = 0x7f0a06fa;
+        public static int item_touch_helper_previous_elevation = 0x7f0a0700;
 
         private id() {
         }

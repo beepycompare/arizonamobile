@@ -7,12 +7,12 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class ECommerceOrder {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f310a;
+    private final String f311a;
     private final List b;
     private Map c;
 
     public ECommerceOrder(String str, List<ECommerceCartItem> list) {
-        this.f310a = str;
+        this.f311a = str;
         this.b = list;
     }
 
@@ -21,7 +21,7 @@ public class ECommerceOrder {
     }
 
     public String getIdentifier() {
-        return this.f310a;
+        return this.f311a;
     }
 
     public Map<String, String> getPayload() {
@@ -34,6 +34,6 @@ public class ECommerceOrder {
     }
 
     public String toString() {
-        return "ECommerceOrder{identifier='" + this.f310a + "', cartItems=" + this.b + ", payload=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "ECommerceOrder{identifier='" + this.f311a + "', cartItems=" + this.b + ", payload=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 }

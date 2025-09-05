@@ -23,10 +23,11 @@ public class MaterialDialogs {
         int dimensionPixelSize3 = obtainStyledAttributes.getDimensionPixelSize(R.styleable.MaterialAlertDialog_backgroundInsetEnd, context.getResources().getDimensionPixelSize(R.dimen.mtrl_alert_dialog_background_inset_end));
         int dimensionPixelSize4 = obtainStyledAttributes.getDimensionPixelSize(R.styleable.MaterialAlertDialog_backgroundInsetBottom, context.getResources().getDimensionPixelSize(R.dimen.mtrl_alert_dialog_background_inset_bottom));
         obtainStyledAttributes.recycle();
-        if (context.getResources().getConfiguration().getLayoutDirection() == 1) {
-            dimensionPixelSize3 = dimensionPixelSize;
+        int layoutDirection = context.getResources().getConfiguration().getLayoutDirection();
+        int i3 = layoutDirection == 1 ? dimensionPixelSize3 : dimensionPixelSize;
+        if (layoutDirection != 1) {
             dimensionPixelSize = dimensionPixelSize3;
         }
-        return new Rect(dimensionPixelSize, dimensionPixelSize2, dimensionPixelSize3, dimensionPixelSize4);
+        return new Rect(i3, dimensionPixelSize2, dimensionPixelSize, dimensionPixelSize4);
     }
 }

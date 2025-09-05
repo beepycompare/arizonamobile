@@ -12,8 +12,8 @@ public final class A9 extends MessageNano {
     public static volatile A9[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f343a;
-    public String b;
+    public String f343a;
+    public long b;
 
     public A9() {
         a();
@@ -31,31 +31,21 @@ public final class A9 extends MessageNano {
     }
 
     public final A9 a() {
-        this.f343a = 2;
-        this.b = "";
+        this.f343a = "";
+        this.b = 0L;
         this.cachedSize = -1;
         return this;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f343a;
-        if (i != 2) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(3, i);
-        }
-        return !this.b.equals("") ? CodedOutputByteBufferNano.computeStringSize(4, this.b) + computeSerializedSize : computeSerializedSize;
+        return CodedOutputByteBufferNano.computeUInt64Size(2, this.b) + CodedOutputByteBufferNano.computeStringSize(1, this.f343a) + super.computeSerializedSize();
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f343a;
-        if (i != 2) {
-            codedOutputByteBufferNano.writeInt32(3, i);
-        }
-        if (!this.b.equals("")) {
-            codedOutputByteBufferNano.writeString(4, this.b);
-        }
+        codedOutputByteBufferNano.writeString(1, this.f343a);
+        codedOutputByteBufferNano.writeUInt64(2, this.b);
         super.writeTo(codedOutputByteBufferNano);
     }
 
@@ -64,32 +54,16 @@ public final class A9 extends MessageNano {
     public final A9 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
         while (true) {
             int readTag = codedInputByteBufferNano.readTag();
-            if (readTag != 0) {
-                if (readTag == 24) {
-                    int readInt32 = codedInputByteBufferNano.readInt32();
-                    switch (readInt32) {
-                        case 0:
-                        case 1:
-                        case 2:
-                        case 3:
-                        case 4:
-                        case 5:
-                        case 6:
-                        case 7:
-                        case 8:
-                        case 9:
-                        case 10:
-                        case 11:
-                        case 12:
-                            this.f343a = readInt32;
-                            continue;
-                    }
-                } else if (readTag != 34) {
-                    if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    }
-                } else {
-                    this.b = codedInputByteBufferNano.readString();
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 10) {
+                this.f343a = codedInputByteBufferNano.readString();
+            } else if (readTag != 16) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
                 }
+            } else {
+                this.b = codedInputByteBufferNano.readUInt64();
             }
         }
         return this;

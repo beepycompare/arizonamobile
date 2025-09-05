@@ -1,42 +1,47 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentsInitializer;
-import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
-import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceEntryPoint;
+import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
+import java.io.File;
+import kotlin.io.FilesKt;
 /* loaded from: classes4.dex */
-public final class Ba {
-    public static final Ba d = new Ba();
+public final class Ba implements Ho {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Kd f361a = new Kd();
-    public final ServiceComponentsInitializer b = AbstractC0488ok.a();
-    public boolean c = false;
+    public final Context f363a;
+    public final String b;
 
-    public final void a(Context context) {
-        Ka.a(context);
-        this.b.onCreate(context);
-        this.f361a.getClass();
-        for (String str : Ka.F.s.a()) {
-            ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
-            Object loadAndInstantiateClassWithDefaultConstructor = ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor(str, ModuleServiceEntryPoint.class);
-            if (loadAndInstantiateClassWithDefaultConstructor != null) {
-                Ka.F.o().a((ModuleServiceEntryPoint) loadAndInstantiateClassWithDefaultConstructor);
-            }
-        }
-        new C0762zk(Ka.j().B().b()).a(context);
-        Ka.F.p().a();
+    public Ba(Context context, String str) {
+        this.f363a = context;
+        this.b = str;
     }
 
-    public final void b(Context context) {
-        if (this.c) {
-            return;
-        }
-        synchronized (this) {
-            if (!this.c) {
-                a(context);
-                this.c = true;
+    @Override // io.appmetrica.analytics.impl.Ho
+    public final String a() {
+        try {
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f363a, this.b);
+            if (fileFromSdkStorage != null) {
+                fileFromSdkStorage.exists();
+                File fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f363a, this.b);
+                if (fileFromAppStorage != null) {
+                    FileUtils.copyToNullable(fileFromAppStorage, fileFromSdkStorage);
+                }
+                return FilesKt.readText$default(fileFromSdkStorage, null, 1, null);
             }
+            return null;
+        } catch (Throwable unused) {
+            return null;
+        }
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ho
+    public final void a(String str) {
+        try {
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f363a, this.b);
+            if (fileFromSdkStorage != null) {
+                FilesKt.writeText$default(fileFromSdkStorage, str, null, 2, null);
+            }
+        } catch (Throwable unused) {
         }
     }
 }

@@ -1,22 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ecommerce.ECommerceEvent;
+import io.appmetrica.analytics.profile.UserProfile;
 /* renamed from: io.appmetrica.analytics.impl.ji  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
 public final class RunnableC0359ji implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ECommerceEvent f926a;
-    public final /* synthetic */ C0735yi b;
+    public final /* synthetic */ UserProfile f936a;
+    public final /* synthetic */ Ci b;
 
-    public RunnableC0359ji(C0735yi c0735yi, ECommerceEvent eCommerceEvent) {
-        this.b = c0735yi;
-        this.f926a = eCommerceEvent;
+    public RunnableC0359ji(Ci ci, UserProfile userProfile) {
+        this.b = ci;
+        this.f936a = userProfile;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0735yi c0735yi = this.b;
-        C0735yi.a(c0735yi.f1162a, c0735yi.d, c0735yi.e).reportECommerce(this.f926a);
+        Ci ci = this.b;
+        Ci.a(ci.f388a, ci.d, ci.e).reportUserProfile(this.f936a);
     }
 }

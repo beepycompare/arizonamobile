@@ -1,18 +1,30 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.ResultReceiver;
+import java.util.HashMap;
 /* loaded from: classes4.dex */
-public final class R4 implements InterfaceC0708xg {
+public abstract class R4 extends Vd {
+    public final Object f;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ResultReceiver f628a;
-
-    public R4(ResultReceiver resultReceiver) {
-        this.f628a = resultReceiver;
+    public R4(int i, String str, Object obj, yo yoVar, Z2 z2) {
+        super(i, str, yoVar, z2);
+        this.f = obj;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0708xg
-    public final void a(Fg fg) {
-        Lg.a(this.f628a, fg);
+    @Override // io.appmetrica.analytics.impl.Vd, io.appmetrica.analytics.impl.InterfaceC0391ko
+    public final void a(C0365jo c0365jo) {
+        if (f()) {
+            Z2 z2 = this.d;
+            int i = this.b;
+            C0417lo a2 = z2.a(c0365jo, (C0417lo) ((HashMap) c0365jo.f939a.get(i)).get(this.f707a), this);
+            if (a2 != null) {
+                a(a2);
+            }
+        }
+    }
+
+    public abstract void a(C0417lo c0417lo);
+
+    public final Object g() {
+        return this.f;
     }
 }

@@ -83,7 +83,7 @@ public final class ContentPainterElement extends ModifierNodeElement<ContentPain
     }
 
     /* renamed from: component6-f-v9h1I  reason: not valid java name */
-    private final int m8345component6fv9h1I() {
+    private final int m8347component6fv9h1I() {
         return this.filterQuality;
     }
 
@@ -101,15 +101,15 @@ public final class ContentPainterElement extends ModifierNodeElement<ContentPain
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: copy-3ECvelE$default  reason: not valid java name */
-    public static /* synthetic */ ContentPainterElement m8346copy3ECvelE$default(ContentPainterElement contentPainterElement, ImageRequest imageRequest, ImageLoader imageLoader, AsyncImageModelEqualityDelegate asyncImageModelEqualityDelegate, Function1 function1, Function1 function12, int i, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, boolean z, AsyncImagePreviewHandler asyncImagePreviewHandler, String str, int i2, Object obj) {
+    public static /* synthetic */ ContentPainterElement m8348copy3ECvelE$default(ContentPainterElement contentPainterElement, ImageRequest imageRequest, ImageLoader imageLoader, AsyncImageModelEqualityDelegate asyncImageModelEqualityDelegate, Function1 function1, Function1 function12, int i, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, boolean z, AsyncImagePreviewHandler asyncImagePreviewHandler, String str, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             imageRequest = contentPainterElement.request;
         }
-        return contentPainterElement.m8347copy3ECvelE(imageRequest, (i2 & 2) != 0 ? contentPainterElement.imageLoader : imageLoader, (i2 & 4) != 0 ? contentPainterElement.modelEqualityDelegate : asyncImageModelEqualityDelegate, (i2 & 8) != 0 ? contentPainterElement.transform : function1, (i2 & 16) != 0 ? contentPainterElement.onState : function12, (i2 & 32) != 0 ? contentPainterElement.filterQuality : i, (i2 & 64) != 0 ? contentPainterElement.alignment : alignment, (i2 & 128) != 0 ? contentPainterElement.contentScale : contentScale, (i2 & 256) != 0 ? contentPainterElement.alpha : f, (i2 & 512) != 0 ? contentPainterElement.colorFilter : colorFilter, (i2 & 1024) != 0 ? contentPainterElement.clipToBounds : z, (i2 & 2048) != 0 ? contentPainterElement.previewHandler : asyncImagePreviewHandler, (i2 & 4096) != 0 ? contentPainterElement.contentDescription : str);
+        return contentPainterElement.m8349copy3ECvelE(imageRequest, (i2 & 2) != 0 ? contentPainterElement.imageLoader : imageLoader, (i2 & 4) != 0 ? contentPainterElement.modelEqualityDelegate : asyncImageModelEqualityDelegate, (i2 & 8) != 0 ? contentPainterElement.transform : function1, (i2 & 16) != 0 ? contentPainterElement.onState : function12, (i2 & 32) != 0 ? contentPainterElement.filterQuality : i, (i2 & 64) != 0 ? contentPainterElement.alignment : alignment, (i2 & 128) != 0 ? contentPainterElement.contentScale : contentScale, (i2 & 256) != 0 ? contentPainterElement.alpha : f, (i2 & 512) != 0 ? contentPainterElement.colorFilter : colorFilter, (i2 & 1024) != 0 ? contentPainterElement.clipToBounds : z, (i2 & 2048) != 0 ? contentPainterElement.previewHandler : asyncImagePreviewHandler, (i2 & 4096) != 0 ? contentPainterElement.contentDescription : str);
     }
 
     /* renamed from: copy-3ECvelE  reason: not valid java name */
-    public final ContentPainterElement m8347copy3ECvelE(ImageRequest imageRequest, ImageLoader imageLoader, AsyncImageModelEqualityDelegate asyncImageModelEqualityDelegate, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, int i, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, boolean z, AsyncImagePreviewHandler asyncImagePreviewHandler, String str) {
+    public final ContentPainterElement m8349copy3ECvelE(ImageRequest imageRequest, ImageLoader imageLoader, AsyncImageModelEqualityDelegate asyncImageModelEqualityDelegate, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, int i, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, boolean z, AsyncImagePreviewHandler asyncImagePreviewHandler, String str) {
         return new ContentPainterElement(imageRequest, imageLoader, asyncImageModelEqualityDelegate, function1, function12, i, alignment, contentScale, f, colorFilter, z, asyncImagePreviewHandler, str, null);
     }
 
@@ -178,7 +178,7 @@ public final class ContentPainterElement extends ModifierNodeElement<ContentPain
         asyncImagePainter.setTransform$coil_compose_core_release(this.transform);
         asyncImagePainter.setOnState$coil_compose_core_release(this.onState);
         asyncImagePainter.setContentScale$coil_compose_core_release(this.contentScale);
-        asyncImagePainter.m8318setFilterQualityvDHp3xo$coil_compose_core_release(this.filterQuality);
+        asyncImagePainter.m8320setFilterQualityvDHp3xo$coil_compose_core_release(this.filterQuality);
         asyncImagePainter.setPreviewHandler$coil_compose_core_release(this.previewHandler);
         asyncImagePainter.set_input$coil_compose_core_release(input);
         SizeResolver sizeResolver = this.request.getSizeResolver();
@@ -194,7 +194,7 @@ public final class ContentPainterElement extends ModifierNodeElement<ContentPain
         painter.setTransform$coil_compose_core_release(this.transform);
         painter.setOnState$coil_compose_core_release(this.onState);
         painter.setContentScale$coil_compose_core_release(this.contentScale);
-        painter.m8318setFilterQualityvDHp3xo$coil_compose_core_release(this.filterQuality);
+        painter.m8320setFilterQualityvDHp3xo$coil_compose_core_release(this.filterQuality);
         painter.setPreviewHandler$coil_compose_core_release(this.previewHandler);
         painter.set_input$coil_compose_core_release(input);
         boolean m4358equalsimpl0 = Size.m4358equalsimpl0(mo5236getIntrinsicSizeNHjbRc, painter.mo5236getIntrinsicSizeNHjbRc());

@@ -15,6 +15,7 @@ import java.util.Locale;
 /* loaded from: classes4.dex */
 public final class BadgeState {
     private static final String BADGE_RESOURCE_TAG = "badge";
+    int badgeFixedEdge;
     final float badgeHeight;
     final float badgeRadius;
     final float badgeWidth;
@@ -67,6 +68,7 @@ public final class BadgeState {
         this.badgeWithTextHeight = generateTypedArray.getDimension(R.styleable.Badge_badgeWithTextHeight, resources.getDimension(R.dimen.m3_badge_with_text_size));
         boolean z = true;
         this.offsetAlignmentMode = generateTypedArray.getInt(R.styleable.Badge_offsetAlignmentMode, 1);
+        this.badgeFixedEdge = generateTypedArray.getInt(R.styleable.Badge_badgeFixedEdge, 0);
         state2.alpha = state.alpha == -2 ? 255 : state.alpha;
         if (state.number == -2) {
             if (generateTypedArray.hasValue(R.styleable.Badge_number)) {
@@ -576,11 +578,13 @@ public final class BadgeState {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
+    @Deprecated
     public boolean isAutoAdjustedToGrandparentBounds() {
         return this.currentState.autoAdjustToWithinGrandparentBounds.booleanValue();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
+    @Deprecated
     public void setAutoAdjustToGrandparentBounds(boolean z) {
         this.overridingState.autoAdjustToWithinGrandparentBounds = Boolean.valueOf(z);
         this.currentState.autoAdjustToWithinGrandparentBounds = Boolean.valueOf(z);
@@ -612,6 +616,7 @@ public final class BadgeState {
         private int alpha;
         private Boolean autoAdjustToWithinGrandparentBounds;
         private Integer backgroundColor;
+        private Integer badgeFixedEdge;
         private Integer badgeGravity;
         private Integer badgeHorizontalPadding;
         private int badgeResId;
@@ -686,6 +691,7 @@ public final class BadgeState {
             this.isVisible = (Boolean) parcel.readSerializable();
             this.numberLocale = (Locale) parcel.readSerializable();
             this.autoAdjustToWithinGrandparentBounds = (Boolean) parcel.readSerializable();
+            this.badgeFixedEdge = (Integer) parcel.readSerializable();
         }
 
         @Override // android.os.Parcelable
@@ -721,6 +727,7 @@ public final class BadgeState {
             parcel.writeSerializable(this.isVisible);
             parcel.writeSerializable(this.numberLocale);
             parcel.writeSerializable(this.autoAdjustToWithinGrandparentBounds);
+            parcel.writeSerializable(this.badgeFixedEdge);
         }
     }
 }

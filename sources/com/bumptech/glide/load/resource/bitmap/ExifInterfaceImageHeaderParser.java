@@ -10,6 +10,16 @@ import java.nio.ByteBuffer;
 /* loaded from: classes3.dex */
 public final class ExifInterfaceImageHeaderParser implements ImageHeaderParser {
     @Override // com.bumptech.glide.load.ImageHeaderParser
+    public boolean hasJpegMpf(InputStream inputStream, ArrayPool arrayPool) throws IOException {
+        return false;
+    }
+
+    @Override // com.bumptech.glide.load.ImageHeaderParser
+    public boolean hasJpegMpf(ByteBuffer byteBuffer, ArrayPool arrayPool) throws IOException {
+        return false;
+    }
+
+    @Override // com.bumptech.glide.load.ImageHeaderParser
     public ImageHeaderParser.ImageType getType(InputStream inputStream) {
         return ImageHeaderParser.ImageType.UNKNOWN;
     }

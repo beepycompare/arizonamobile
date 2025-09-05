@@ -1,13 +1,14 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.AdRevenueConstants;
-import java.util.Map;
 /* renamed from: io.appmetrica.analytics.impl.ge  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0278ge implements InterfaceC0566s {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0566s
-    public final Map<String, String> a(Map<String, String> map) {
-        map.put(AdRevenueConstants.LAYER_KEY, "native");
-        return map;
+public final class C0278ge {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final D0 f891a;
+    public final Bb b;
+
+    public C0278ge(D0 d0, Bb bb) {
+        this.f891a = d0;
+        this.b = bb;
     }
 }

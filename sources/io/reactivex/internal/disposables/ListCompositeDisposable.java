@@ -8,7 +8,7 @@ import io.reactivex.internal.util.ExceptionHelper;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ListCompositeDisposable implements Disposable, DisposableContainer {
     volatile boolean disposed;
     List<Disposable> resources;

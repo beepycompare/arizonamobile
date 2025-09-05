@@ -1,26 +1,40 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.ComponentName;
-import android.content.Context;
-import io.appmetrica.analytics.internal.PreloadInfoContentProvider;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.List;
 /* loaded from: classes4.dex */
-public final class K3 implements V6 {
-    @Override // io.appmetrica.analytics.impl.V6
-    public final void a(Context context) {
-        CountDownLatch countDownLatch = W5.f704a;
-        if (countDownLatch != null) {
-            countDownLatch.await(1L, TimeUnit.SECONDS);
-            try {
-                context.getPackageManager().setComponentEnabledSetting(new ComponentName(context, PreloadInfoContentProvider.class), 2, 1);
-                PreloadInfoContentProvider preloadInfoContentProvider = W5.b;
-                if (preloadInfoContentProvider != null) {
-                    preloadInfoContentProvider.disable();
-                }
-            } catch (Throwable unused) {
-            }
-            W5.f704a = null;
-        }
+public final class K3 implements Converter {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Ra f526a;
+
+    public K3() {
+        this(new Ra(20, 100));
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Zi fromModel(List<String> list) {
+        Sn a2 = this.f526a.a((List<Object>) list);
+        E8 e8 = new E8();
+        e8.f420a = StringUtils.getUTF8Bytes((List) a2.f671a);
+        A3 a3 = a2.b;
+        int i = ((L4) a3).f1177a;
+        return new Zi(e8, a3);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        Zi zi = (Zi) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public K3(Ra ra) {
+        this.f526a = ra;
+    }
+
+    public final List<String> a(Zi zi) {
+        throw new UnsupportedOperationException();
     }
 }

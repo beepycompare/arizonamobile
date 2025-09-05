@@ -4,16 +4,16 @@ import android.content.Context;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import ru.rustore.sdk.metrics.MetricsClient;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class X {
     public static final a c = new a();
     public static X d;
 
     /* renamed from: a  reason: collision with root package name */
-    public final U f1435a;
+    public final U f1440a;
     public final MetricsClient b;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class a {
         public final X a(Context context) {
             X x;
@@ -31,9 +31,9 @@ public final class X {
         }
     }
 
-    /* loaded from: classes6.dex */
-    public static final class b implements InterfaceC0824g {
-        @Override // ru.rustore.sdk.metrics.internal.InterfaceC0824g
+    /* loaded from: classes4.dex */
+    public static final class b implements InterfaceC0828g {
+        @Override // ru.rustore.sdk.metrics.internal.InterfaceC0828g
         public final void a(Function0<String> messageBuilder) {
             Intrinsics.checkNotNullParameter(messageBuilder, "messageBuilder");
         }
@@ -43,9 +43,9 @@ public final class X {
         Z z = new Z();
         b bVar = new b();
         Y y = new Y(context);
-        N n = new N(new I(new C0832o(context, new B(new C0839w(), new C0840x(), new C0842z(new a0()), new A())), bVar), new K(new C0836t(), new c0()), new L(new C0836t()), bVar);
-        U u = new U(n, new T(n, new S(new b0(y, new c0()), new C(context), new O(new C0835s(new C0819b(), new Q(), bVar)), new e0(context))));
-        this.f1435a = u;
-        this.b = new MetricsClient(new C0831n(u, new C0820c(n), new V(context, new C0821d(new C0823f(new C0822e()))), z, bVar));
+        N n = new N(new I(new C0836o(context, new B(new C0843w(), new C0844x(), new C0846z(new a0()), new A())), bVar), new K(new C0840t(), new c0()), new L(new C0840t()), bVar);
+        U u = new U(n, new T(n, new S(new b0(y, new c0()), new C(context), new O(new C0839s(new C0823b(), new Q(), bVar)), new e0(context))));
+        this.f1440a = u;
+        this.b = new MetricsClient(new C0835n(u, new C0824c(n), new V(context, new C0825d(new C0827f(new C0826e()))), z, bVar));
     }
 }

@@ -34,7 +34,7 @@ public final class ComposableSingletons$SettingsTopBarKt {
     });
 
     /* renamed from: getLambda$-1729539213$settings_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9010getLambda$1729539213$settings_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9029getLambda$1729539213$settings_release() {
         return f81lambda$1729539213;
     }
 

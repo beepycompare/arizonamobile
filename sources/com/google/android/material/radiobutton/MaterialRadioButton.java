@@ -23,7 +23,7 @@ public class MaterialRadioButton extends AppCompatRadioButton {
     }
 
     public MaterialRadioButton(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.radioButtonStyle);
+        this(context, attributeSet, androidx.appcompat.R.attr.radioButtonStyle);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -65,7 +65,7 @@ public class MaterialRadioButton extends AppCompatRadioButton {
 
     private ColorStateList getMaterialThemeColorsTintList() {
         if (this.materialThemeColorsTintList == null) {
-            int color = MaterialColors.getColor(this, R.attr.colorControlActivated);
+            int color = MaterialColors.getColor(this, androidx.appcompat.R.attr.colorControlActivated);
             int color2 = MaterialColors.getColor(this, R.attr.colorOnSurface);
             int color3 = MaterialColors.getColor(this, R.attr.colorSurface);
             int[][] iArr = ENABLED_CHECKED_STATES;

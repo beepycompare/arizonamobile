@@ -358,7 +358,7 @@ public abstract class zzcq extends zzbm implements zzcr {
                 break;
             case 41:
             case 47:
-            case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+            case 49:
             default:
                 return false;
             case 42:

@@ -1,26 +1,27 @@
 package io.appmetrica.analytics.impl;
-
-import android.os.Bundle;
 /* loaded from: classes4.dex */
-public final class Da extends V4 {
-    public Da(S4 s4) {
-        super(s4);
+public enum Da {
+    UNKNOWN(0),
+    FIRST_OCCURRENCE(1),
+    NON_FIRST_OCCURENCE(2);
+    
+
+    /* renamed from: a  reason: collision with root package name */
+    public final int f403a;
+
+    Da(int i) {
+        this.f403a = i;
     }
 
-    @Override // io.appmetrica.analytics.impl.V4
-    public final boolean a(C0399l6 c0399l6, P4 p4) {
-        Bundle bundle = c0399l6.m;
-        C0628ub c0628ub = bundle != null ? (C0628ub) bundle.getParcelable("io.appmetrica.analytics.impl.IdentifiersData") : null;
-        if (c0628ub != null) {
-            if (c0628ub.d) {
-                J4 j4 = p4.b.d.f637a;
-                Boolean bool = j4.n;
-                Boolean bool2 = j4.i;
-                Ka.F.b().c(bool != null ? bool.booleanValue() : true);
-                Ka.F.g().b(bool2);
+    public static Da a(Integer num) {
+        Da[] values;
+        if (num != null) {
+            for (Da da : values()) {
+                if (da.f403a == num.intValue()) {
+                    return da;
+                }
             }
         }
-        this.f689a.a(c0628ub);
-        return false;
+        return UNKNOWN;
     }
 }

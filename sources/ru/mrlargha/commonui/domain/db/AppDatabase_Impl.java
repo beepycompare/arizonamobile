@@ -9,7 +9,7 @@ import androidx.room.util.DBUtil;
 import androidx.room.util.TableInfo;
 import androidx.sqlite.SQLite;
 import androidx.sqlite.SQLiteConnection;
-import io.appmetrica.analytics.impl.L2;
+import io.appmetrica.analytics.impl.O2;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -98,7 +98,7 @@ public final class AppDatabase_Impl extends AppDatabase {
                 linkedHashMap.put("text", new TableInfo.Column("text", "TEXT", false, 0, null, 1));
                 linkedHashMap.put("item_type", new TableInfo.Column("item_type", "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("amount", new TableInfo.Column("amount", "INTEGER", false, 0, null, 1));
-                linkedHashMap.put(L2.g, new TableInfo.Column(L2.g, "INTEGER", false, 0, null, 1));
+                linkedHashMap.put(O2.g, new TableInfo.Column(O2.g, "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("color", new TableInfo.Column("color", "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("bits", new TableInfo.Column("bits", "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("available", new TableInfo.Column("available", "INTEGER", false, 0, null, 1));

@@ -1,16 +1,27 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.List;
 /* renamed from: io.appmetrica.analytics.impl.ba  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0145ba extends Fb {
-    public C0145ba(Ji ji) {
-        super(ji);
+public final class C0145ba {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final long f804a;
+
+    public C0145ba(long j) {
+        this.f804a = j;
     }
 
-    @Override // io.appmetrica.analytics.impl.Fb, io.appmetrica.analytics.impl.La
-    public final void a(List<AbstractC0358jh> list) {
-        list.add(this.f541a.u);
-        super.a(list);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return (obj instanceof C0145ba) && this.f804a == ((C0145ba) obj).f804a;
+    }
+
+    public final int hashCode() {
+        return Long.hashCode(this.f804a);
+    }
+
+    public final String toString() {
+        return "ExternalAttributionConfig(collectingInterval=" + this.f804a + ')';
     }
 }

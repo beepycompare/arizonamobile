@@ -1,42 +1,36 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import java.util.HashMap;
+import io.appmetrica.analytics.AppMetricaConfig;
+import io.appmetrica.analytics.ReporterConfig;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public final class Gi {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final HashMap f459a = new HashMap();
-    public final C0617u0 b;
-
-    public Gi(C0617u0 c0617u0) {
-        this.b = c0617u0;
+public final class Gi implements InterfaceC0582sb {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0582sb, io.appmetrica.analytics.impl.InterfaceC0607tb
+    public final InterfaceC0582sb a() {
+        return this;
     }
 
-    public static Gi a() {
-        return Fi.f437a;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0582sb
+    public final void a(ReporterConfig reporterConfig) {
     }
 
-    public final C0735yi a(Context context, String str) {
-        C0735yi c0735yi;
-        C0735yi c0735yi2 = (C0735yi) this.f459a.get(str);
-        if (c0735yi2 == null) {
-            synchronized (this.f459a) {
-                c0735yi = (C0735yi) this.f459a.get(str);
-                if (c0735yi == null) {
-                    IHandlerExecutor a2 = C0696x4.l().c.a();
-                    this.b.getClass();
-                    if (C0592t0.e == null) {
-                        ((W9) a2).b.post(new Ei(this, context));
-                    }
-                    c0735yi = new C0735yi(context.getApplicationContext(), str, new C0617u0());
-                    this.f459a.put(str, c0735yi);
-                    c0735yi.c(str);
-                }
-            }
-            return c0735yi;
-        }
-        return c0735yi2;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0582sb
+    public final InterfaceC0327ib b(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0367k0 c0367k0) {
+        return new Xc();
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0582sb
+    public final InterfaceC0557rb b(ReporterConfig reporterConfig) {
+        return new Di();
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0582sb
+    public final InterfaceC0327ib a(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0367k0 c0367k0) {
+        return new Xc();
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0582sb
+    public final InterfaceC0632ub a(AppMetricaConfig appMetricaConfig) {
+        return new Di();
     }
 }

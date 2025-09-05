@@ -3,6 +3,7 @@ package com.google.android.material.navigation;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
@@ -15,57 +16,81 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.view.menu.MenuItemImpl;
-import androidx.appcompat.view.menu.MenuView;
 import androidx.appcompat.widget.TooltipCompat;
-import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.core.view.PointerIconCompat;
-import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.widget.TextViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.badge.BadgeUtils;
+import com.google.android.material.internal.BaselineLayout;
 import com.google.android.material.motion.MotionUtils;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.ripple.RippleUtils;
 /* loaded from: classes4.dex */
-public abstract class NavigationBarItemView extends FrameLayout implements MenuView.ItemView {
+public abstract class NavigationBarItemView extends FrameLayout implements NavigationBarMenuItemView {
     private static final int INVALID_ITEM_POSITION = -1;
     private ValueAnimator activeIndicatorAnimator;
     private int activeIndicatorDesiredHeight;
     private int activeIndicatorDesiredWidth;
     private boolean activeIndicatorEnabled;
+    private int activeIndicatorExpandedDesiredHeight;
+    private int activeIndicatorExpandedDesiredWidth;
+    private int activeIndicatorExpandedMarginHorizontal;
     private int activeIndicatorLabelPadding;
     private int activeIndicatorMarginHorizontal;
     private float activeIndicatorProgress;
     private boolean activeIndicatorResizeable;
     private ActiveIndicatorTransform activeIndicatorTransform;
     private final View activeIndicatorView;
-    private int activeTextAppearance;
     private BadgeDrawable badgeDrawable;
+    private int badgeFixedEdge;
+    private boolean boldText;
+    private final LinearLayout contentContainer;
+    private BaselineLayout currentLabelGroup;
+    private boolean expanded;
+    private BaselineLayout expandedLabelGroup;
+    private float expandedLabelScaleDownFactor;
+    private float expandedLabelScaleUpFactor;
+    private float expandedLabelShiftAmountY;
+    private TextView expandedLargeLabel;
+    private TextView expandedSmallLabel;
+    private int horizontalTextAppearanceActive;
+    private int horizontalTextAppearanceInactive;
     private final ImageView icon;
     private final FrameLayout iconContainer;
+    private int iconLabelHorizontalSpacing;
     private ColorStateList iconTint;
     private boolean initialized;
+    private final LinearLayout innerContentContainer;
     private boolean isShifting;
+    private Rect itemActiveIndicatorExpandedPadding;
     Drawable itemBackground;
     private MenuItemImpl itemData;
+    private int itemGravity;
+    private int itemIconGravity;
     private int itemPaddingBottom;
     private int itemPaddingTop;
     private int itemPosition;
     private ColorStateList itemRippleColor;
-    private final ViewGroup labelGroup;
+    private final BaselineLayout labelGroup;
     private int labelVisibilityMode;
     private final TextView largeLabel;
+    private boolean measurePaddingFromBaseline;
+    private boolean onlyShowWhenExpanded;
     private Drawable originalIconDrawable;
     private float scaleDownFactor;
+    private boolean scaleLabelSizeWithFont;
     private float scaleUpFactor;
-    private float shiftAmount;
+    private float shiftAmountY;
     private final TextView smallLabel;
+    private int textAppearanceActive;
+    private int textAppearanceInactive;
+    private ColorStateList textColor;
     private Drawable wrappedIconDrawable;
     private static final int[] CHECKED_STATE_SET = {16842912};
     private static final ActiveIndicatorTransform ACTIVE_INDICATOR_LABELED_TRANSFORM = new ActiveIndicatorTransform();
@@ -91,56 +116,107 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         super(context);
         this.initialized = false;
         this.itemPosition = -1;
-        this.activeTextAppearance = 0;
+        this.textAppearanceActive = 0;
+        this.textAppearanceInactive = 0;
+        this.horizontalTextAppearanceActive = 0;
+        this.horizontalTextAppearanceInactive = 0;
+        this.boldText = false;
         this.activeIndicatorTransform = ACTIVE_INDICATOR_LABELED_TRANSFORM;
         this.activeIndicatorProgress = 0.0f;
         this.activeIndicatorEnabled = false;
         this.activeIndicatorDesiredWidth = 0;
         this.activeIndicatorDesiredHeight = 0;
+        this.activeIndicatorExpandedDesiredWidth = -2;
+        this.activeIndicatorExpandedDesiredHeight = 0;
         this.activeIndicatorResizeable = false;
         this.activeIndicatorMarginHorizontal = 0;
+        this.activeIndicatorExpandedMarginHorizontal = 0;
+        this.badgeFixedEdge = 0;
+        this.itemGravity = 49;
+        this.expanded = false;
+        this.onlyShowWhenExpanded = false;
+        this.measurePaddingFromBaseline = false;
+        this.scaleLabelSizeWithFont = false;
+        this.itemActiveIndicatorExpandedPadding = new Rect();
         LayoutInflater.from(context).inflate(getItemLayoutResId(), (ViewGroup) this, true);
-        this.iconContainer = (FrameLayout) findViewById(R.id.navigation_bar_item_icon_container);
+        this.contentContainer = (LinearLayout) findViewById(R.id.navigation_bar_item_content_container);
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.navigation_bar_item_inner_content_container);
+        this.innerContentContainer = linearLayout;
         this.activeIndicatorView = findViewById(R.id.navigation_bar_item_active_indicator_view);
-        ImageView imageView = (ImageView) findViewById(R.id.navigation_bar_item_icon_view);
-        this.icon = imageView;
-        ViewGroup viewGroup = (ViewGroup) findViewById(R.id.navigation_bar_item_labels_group);
-        this.labelGroup = viewGroup;
+        this.iconContainer = (FrameLayout) findViewById(R.id.navigation_bar_item_icon_container);
+        this.icon = (ImageView) findViewById(R.id.navigation_bar_item_icon_view);
+        BaselineLayout baselineLayout = (BaselineLayout) findViewById(R.id.navigation_bar_item_labels_group);
+        this.labelGroup = baselineLayout;
         TextView textView = (TextView) findViewById(R.id.navigation_bar_item_small_label_view);
         this.smallLabel = textView;
         TextView textView2 = (TextView) findViewById(R.id.navigation_bar_item_large_label_view);
         this.largeLabel = textView2;
+        initializeDefaultExpandedLabelGroupViews();
+        this.currentLabelGroup = baselineLayout;
         setBackgroundResource(getItemBackgroundResId());
         this.itemPaddingTop = getResources().getDimensionPixelSize(getItemDefaultMarginResId());
-        this.itemPaddingBottom = viewGroup.getPaddingBottom();
-        this.activeIndicatorLabelPadding = getResources().getDimensionPixelSize(R.dimen.m3_navigation_item_active_indicator_label_padding);
-        ViewCompat.setImportantForAccessibility(textView, 2);
-        ViewCompat.setImportantForAccessibility(textView2, 2);
+        this.itemPaddingBottom = baselineLayout.getPaddingBottom();
+        this.activeIndicatorLabelPadding = 0;
+        this.iconLabelHorizontalSpacing = 0;
+        textView.setImportantForAccessibility(2);
+        textView2.setImportantForAccessibility(2);
+        this.expandedSmallLabel.setImportantForAccessibility(2);
+        this.expandedLargeLabel.setImportantForAccessibility(2);
         setFocusable(true);
-        calculateTextScaleFactors(textView.getTextSize(), textView2.getTextSize());
-        if (imageView != null) {
-            imageView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.google.android.material.navigation.NavigationBarItemView.1
-                @Override // android.view.View.OnLayoutChangeListener
-                public void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-                    if (NavigationBarItemView.this.icon.getVisibility() == 0) {
-                        NavigationBarItemView navigationBarItemView = NavigationBarItemView.this;
-                        navigationBarItemView.tryUpdateBadgeBounds(navigationBarItemView.icon);
-                    }
-                }
-            });
+        calculateTextScaleFactors();
+        this.activeIndicatorExpandedDesiredHeight = getResources().getDimensionPixelSize(R.dimen.m3_navigation_item_expanded_active_indicator_height_default);
+        linearLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.google.android.material.navigation.NavigationBarItemView$$ExternalSyntheticLambda0
+            @Override // android.view.View.OnLayoutChangeListener
+            public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+                NavigationBarItemView.this.m8733xe6e25373(view, i, i2, i3, i4, i5, i6, i7, i8);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$new$0$com-google-android-material-navigation-NavigationBarItemView  reason: not valid java name */
+    public /* synthetic */ void m8733xe6e25373(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+        boolean z;
+        if (this.icon.getVisibility() == 0) {
+            tryUpdateBadgeBounds(this.icon);
+        }
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.innerContentContainer.getLayoutParams();
+        int i9 = (i3 - i) + layoutParams.rightMargin + layoutParams.leftMargin;
+        int i10 = (i4 - i2) + layoutParams.topMargin + layoutParams.bottomMargin;
+        boolean z2 = true;
+        if (this.itemIconGravity == 1 && this.activeIndicatorExpandedDesiredWidth == -2) {
+            FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.activeIndicatorView.getLayoutParams();
+            if (this.activeIndicatorExpandedDesiredWidth != -2 || this.activeIndicatorView.getMeasuredWidth() == i9) {
+                z = false;
+            } else {
+                layoutParams2.width = Math.max(i9, Math.min(this.activeIndicatorDesiredWidth, getMeasuredWidth() - (this.activeIndicatorMarginHorizontal * 2)));
+                z = true;
+            }
+            if (this.activeIndicatorView.getMeasuredHeight() < i10) {
+                layoutParams2.height = i10;
+            } else {
+                z2 = z;
+            }
+            if (z2) {
+                this.activeIndicatorView.setLayoutParams(layoutParams2);
+            }
         }
     }
 
     @Override // android.view.View
     protected int getSuggestedMinimumWidth() {
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.labelGroup.getLayoutParams();
-        return Math.max(getSuggestedIconWidth(), layoutParams.leftMargin + this.labelGroup.getMeasuredWidth() + layoutParams.rightMargin);
+        if (this.itemIconGravity == 1) {
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.innerContentContainer.getLayoutParams();
+            return this.innerContentContainer.getMeasuredWidth() + layoutParams.leftMargin + layoutParams.rightMargin;
+        }
+        LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) this.labelGroup.getLayoutParams();
+        return Math.max(getSuggestedIconWidth(), layoutParams2.leftMargin + this.labelGroup.getMeasuredWidth() + layoutParams2.rightMargin);
     }
 
     @Override // android.view.View
     protected int getSuggestedMinimumHeight() {
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.labelGroup.getLayoutParams();
-        return getSuggestedIconHeight() + (this.labelGroup.getVisibility() == 0 ? this.activeIndicatorLabelPadding : 0) + layoutParams.topMargin + this.labelGroup.getMeasuredHeight() + layoutParams.bottomMargin;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.contentContainer.getLayoutParams();
+        return this.contentContainer.getMeasuredHeight() + layoutParams.topMargin + layoutParams.bottomMargin;
     }
 
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
@@ -162,8 +238,15 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
             title = menuItemImpl.getTitle();
         }
         TooltipCompat.setTooltipText(this, title);
-        setVisibility(menuItemImpl.isVisible() ? 0 : 8);
+        updateVisibility();
         this.initialized = true;
+    }
+
+    private void updateVisibility() {
+        MenuItemImpl menuItemImpl = this.itemData;
+        if (menuItemImpl != null) {
+            setVisibility((!menuItemImpl.isVisible() || (!this.expanded && this.onlyShowWhenExpanded)) ? 8 : 0);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -174,17 +257,20 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         this.initialized = false;
     }
 
-    private View getIconOrContainer() {
-        FrameLayout frameLayout = this.iconContainer;
-        return frameLayout != null ? frameLayout : this.icon;
-    }
-
     public void setItemPosition(int i) {
         this.itemPosition = i;
     }
 
     public int getItemPosition() {
         return this.itemPosition;
+    }
+
+    public BaselineLayout getLabelGroup() {
+        return this.labelGroup;
+    }
+
+    public BaselineLayout getExpandedLabelGroup() {
+        return this.expandedLabelGroup;
     }
 
     public void setShifting(boolean z) {
@@ -203,6 +289,119 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         }
     }
 
+    private void initializeDefaultExpandedLabelGroupViews() {
+        float dimension = getResources().getDimension(R.dimen.default_navigation_text_size);
+        float dimension2 = getResources().getDimension(R.dimen.default_navigation_active_text_size);
+        BaselineLayout baselineLayout = new BaselineLayout(getContext());
+        this.expandedLabelGroup = baselineLayout;
+        baselineLayout.setVisibility(8);
+        this.expandedLabelGroup.setDuplicateParentStateEnabled(true);
+        this.expandedLabelGroup.setMeasurePaddingFromBaseline(this.measurePaddingFromBaseline);
+        TextView textView = new TextView(getContext());
+        this.expandedSmallLabel = textView;
+        textView.setMaxLines(1);
+        this.expandedSmallLabel.setEllipsize(TextUtils.TruncateAt.END);
+        this.expandedSmallLabel.setDuplicateParentStateEnabled(true);
+        this.expandedSmallLabel.setIncludeFontPadding(false);
+        this.expandedSmallLabel.setGravity(16);
+        this.expandedSmallLabel.setTextSize(dimension);
+        TextView textView2 = new TextView(getContext());
+        this.expandedLargeLabel = textView2;
+        textView2.setMaxLines(1);
+        this.expandedLargeLabel.setEllipsize(TextUtils.TruncateAt.END);
+        this.expandedLargeLabel.setDuplicateParentStateEnabled(true);
+        this.expandedLargeLabel.setVisibility(4);
+        this.expandedLargeLabel.setIncludeFontPadding(false);
+        this.expandedLargeLabel.setGravity(16);
+        this.expandedLargeLabel.setTextSize(dimension2);
+        this.expandedLabelGroup.addView(this.expandedSmallLabel);
+        this.expandedLabelGroup.addView(this.expandedLargeLabel);
+    }
+
+    private void addDefaultExpandedLabelGroupViews() {
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
+        layoutParams.gravity = 17;
+        this.innerContentContainer.addView(this.expandedLabelGroup, layoutParams);
+        setExpandedLabelGroupMargins();
+    }
+
+    private void updateItemIconGravity() {
+        int i;
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        this.badgeFixedEdge = 0;
+        this.currentLabelGroup = this.labelGroup;
+        int i7 = 8;
+        if (this.itemIconGravity == 1) {
+            if (this.expandedLabelGroup.getParent() == null) {
+                addDefaultExpandedLabelGroupViews();
+            }
+            i = this.itemActiveIndicatorExpandedPadding.left;
+            int i8 = this.itemActiveIndicatorExpandedPadding.right;
+            int i9 = this.itemActiveIndicatorExpandedPadding.top;
+            int i10 = this.itemActiveIndicatorExpandedPadding.bottom;
+            this.badgeFixedEdge = 1;
+            int i11 = this.activeIndicatorExpandedMarginHorizontal;
+            this.currentLabelGroup = this.expandedLabelGroup;
+            i5 = i10;
+            i4 = i9;
+            i3 = i8;
+            i2 = i11;
+            i6 = 0;
+        } else {
+            i = 0;
+            i2 = 0;
+            i3 = 0;
+            i4 = 0;
+            i5 = 0;
+            i6 = 8;
+            i7 = 0;
+        }
+        this.labelGroup.setVisibility(i7);
+        this.expandedLabelGroup.setVisibility(i6);
+        ((FrameLayout.LayoutParams) this.contentContainer.getLayoutParams()).gravity = this.itemGravity;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.innerContentContainer.getLayoutParams();
+        layoutParams.leftMargin = i;
+        layoutParams.rightMargin = i3;
+        layoutParams.topMargin = i4;
+        layoutParams.bottomMargin = i5;
+        setPadding(i2, 0, i2, 0);
+        updateActiveIndicatorLayoutParams(getWidth());
+    }
+
+    public void setItemIconGravity(int i) {
+        if (this.itemIconGravity != i) {
+            this.itemIconGravity = i;
+            updateItemIconGravity();
+            refreshItemBackground();
+        }
+    }
+
+    @Override // com.google.android.material.navigation.NavigationBarMenuItemView
+    public void setExpanded(boolean z) {
+        this.expanded = z;
+        updateVisibility();
+    }
+
+    @Override // com.google.android.material.navigation.NavigationBarMenuItemView
+    public boolean isExpanded() {
+        return this.expanded;
+    }
+
+    @Override // com.google.android.material.navigation.NavigationBarMenuItemView
+    public void setOnlyShowWhenExpanded(boolean z) {
+        this.onlyShowWhenExpanded = z;
+        updateVisibility();
+    }
+
+    @Override // com.google.android.material.navigation.NavigationBarMenuItemView
+    public boolean isOnlyVisibleWhenExpanded() {
+        return this.onlyShowWhenExpanded;
+    }
+
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
     public MenuItemImpl getItemData() {
         return this.itemData;
@@ -212,6 +411,8 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
     public void setTitle(CharSequence charSequence) {
         this.smallLabel.setText(charSequence);
         this.largeLabel.setText(charSequence);
+        this.expandedSmallLabel.setText(charSequence);
+        this.expandedLargeLabel.setText(charSequence);
         MenuItemImpl menuItemImpl = this.itemData;
         if (menuItemImpl == null || TextUtils.isEmpty(menuItemImpl.getContentDescription())) {
             setContentDescription(charSequence);
@@ -231,7 +432,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
     @Override // android.view.View
     protected void onSizeChanged(final int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
-        post(new Runnable() { // from class: com.google.android.material.navigation.NavigationBarItemView.2
+        post(new Runnable() { // from class: com.google.android.material.navigation.NavigationBarItemView.1
             @Override // java.lang.Runnable
             public void run() {
                 NavigationBarItemView.this.updateActiveIndicatorLayoutParams(i);
@@ -249,15 +450,12 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
 
     /* JADX INFO: Access modifiers changed from: private */
     public void setActiveIndicatorProgress(float f, float f2) {
-        View view = this.activeIndicatorView;
-        if (view != null) {
-            this.activeIndicatorTransform.updateForProgress(f, f2, view);
-        }
+        this.activeIndicatorTransform.updateForProgress(f, f2, this.activeIndicatorView);
         this.activeIndicatorProgress = f;
     }
 
     private void maybeAnimateActiveIndicatorToProgress(final float f) {
-        if (!this.activeIndicatorEnabled || !this.initialized || !ViewCompat.isAttachedToWindow(this)) {
+        if (!this.activeIndicatorEnabled || !this.initialized || !isAttachedToWindow()) {
             setActiveIndicatorProgress(f, f);
             return;
         }
@@ -268,7 +466,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.activeIndicatorProgress, f);
         this.activeIndicatorAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.navigation.NavigationBarItemView.3
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.navigation.NavigationBarItemView.2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 NavigationBarItemView.this.setActiveIndicatorProgress(((Float) valueAnimator2.getAnimatedValue()).floatValue(), f);
@@ -286,76 +484,75 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         }
     }
 
+    private void setLayoutConfigurationIconAndLabel(View view, View view2, float f, float f2) {
+        setViewMarginAndGravity(this.contentContainer, this.itemIconGravity == 0 ? (int) (this.itemPaddingTop + f2) : 0, 0, this.itemGravity);
+        setViewMarginAndGravity(this.innerContentContainer, this.itemIconGravity == 0 ? 0 : this.itemActiveIndicatorExpandedPadding.top, this.itemIconGravity == 0 ? 0 : this.itemActiveIndicatorExpandedPadding.bottom, this.itemIconGravity == 0 ? 17 : NavigationBarView.ITEM_GRAVITY_START_CENTER);
+        updateViewPaddingBottom(this.labelGroup, this.itemPaddingBottom);
+        this.currentLabelGroup.setVisibility(0);
+        setViewScaleValues(view, 1.0f, 1.0f, 0);
+        setViewScaleValues(view2, f, f, 4);
+    }
+
+    private void setLayoutConfigurationIconOnly() {
+        LinearLayout linearLayout = this.contentContainer;
+        int i = this.itemPaddingTop;
+        setViewMarginAndGravity(linearLayout, i, i, this.itemIconGravity == 0 ? 17 : this.itemGravity);
+        setViewMarginAndGravity(this.innerContentContainer, 0, 0, 17);
+        updateViewPaddingBottom(this.labelGroup, 0);
+        this.currentLabelGroup.setVisibility(8);
+    }
+
+    private void setLabelPivots(TextView textView) {
+        textView.setPivotX(textView.getWidth() / 2);
+        textView.setPivotY(textView.getBaseline());
+    }
+
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
     public void setChecked(boolean z) {
-        TextView textView = this.largeLabel;
-        textView.setPivotX(textView.getWidth() / 2);
-        TextView textView2 = this.largeLabel;
-        textView2.setPivotY(textView2.getBaseline());
-        TextView textView3 = this.smallLabel;
-        textView3.setPivotX(textView3.getWidth() / 2);
-        TextView textView4 = this.smallLabel;
-        textView4.setPivotY(textView4.getBaseline());
+        setLabelPivots(this.largeLabel);
+        setLabelPivots(this.smallLabel);
+        setLabelPivots(this.expandedLargeLabel);
+        setLabelPivots(this.expandedSmallLabel);
         maybeAnimateActiveIndicatorToProgress(z ? 1.0f : 0.0f);
+        TextView textView = this.largeLabel;
+        TextView textView2 = this.smallLabel;
+        float f = this.shiftAmountY;
+        float f2 = this.scaleUpFactor;
+        float f3 = this.scaleDownFactor;
+        if (this.itemIconGravity == 1) {
+            textView = this.expandedLargeLabel;
+            textView2 = this.expandedSmallLabel;
+            f = this.expandedLabelShiftAmountY;
+            f2 = this.expandedLabelScaleUpFactor;
+            f3 = this.expandedLabelScaleDownFactor;
+        }
         int i = this.labelVisibilityMode;
         if (i != -1) {
-            if (i == 0) {
-                if (z) {
-                    setViewTopMarginAndGravity(getIconOrContainer(), this.itemPaddingTop, 49);
-                    updateViewPaddingBottom(this.labelGroup, this.itemPaddingBottom);
-                    this.largeLabel.setVisibility(0);
+            if (i != 0) {
+                if (i != 1) {
+                    if (i == 2) {
+                        setLayoutConfigurationIconOnly();
+                    }
+                } else if (z) {
+                    setLayoutConfigurationIconAndLabel(textView, textView2, f2, f);
                 } else {
-                    setViewTopMarginAndGravity(getIconOrContainer(), this.itemPaddingTop, 17);
-                    updateViewPaddingBottom(this.labelGroup, 0);
-                    this.largeLabel.setVisibility(4);
+                    setLayoutConfigurationIconAndLabel(textView2, textView, f3, 0.0f);
                 }
-                this.smallLabel.setVisibility(4);
-            } else if (i == 1) {
-                updateViewPaddingBottom(this.labelGroup, this.itemPaddingBottom);
-                if (z) {
-                    setViewTopMarginAndGravity(getIconOrContainer(), (int) (this.itemPaddingTop + this.shiftAmount), 49);
-                    setViewScaleValues(this.largeLabel, 1.0f, 1.0f, 0);
-                    TextView textView5 = this.smallLabel;
-                    float f = this.scaleUpFactor;
-                    setViewScaleValues(textView5, f, f, 4);
-                } else {
-                    setViewTopMarginAndGravity(getIconOrContainer(), this.itemPaddingTop, 49);
-                    TextView textView6 = this.largeLabel;
-                    float f2 = this.scaleDownFactor;
-                    setViewScaleValues(textView6, f2, f2, 4);
-                    setViewScaleValues(this.smallLabel, 1.0f, 1.0f, 0);
-                }
-            } else if (i == 2) {
-                setViewTopMarginAndGravity(getIconOrContainer(), this.itemPaddingTop, 17);
-                this.largeLabel.setVisibility(8);
-                this.smallLabel.setVisibility(8);
+            } else if (z) {
+                setLayoutConfigurationIconAndLabel(textView, textView2, f2, 0.0f);
+            } else {
+                setLayoutConfigurationIconOnly();
             }
         } else if (this.isShifting) {
             if (z) {
-                setViewTopMarginAndGravity(getIconOrContainer(), this.itemPaddingTop, 49);
-                updateViewPaddingBottom(this.labelGroup, this.itemPaddingBottom);
-                this.largeLabel.setVisibility(0);
+                setLayoutConfigurationIconAndLabel(textView, textView2, f2, 0.0f);
             } else {
-                setViewTopMarginAndGravity(getIconOrContainer(), this.itemPaddingTop, 17);
-                updateViewPaddingBottom(this.labelGroup, 0);
-                this.largeLabel.setVisibility(4);
+                setLayoutConfigurationIconOnly();
             }
-            this.smallLabel.setVisibility(4);
+        } else if (z) {
+            setLayoutConfigurationIconAndLabel(textView, textView2, f2, f);
         } else {
-            updateViewPaddingBottom(this.labelGroup, this.itemPaddingBottom);
-            if (z) {
-                setViewTopMarginAndGravity(getIconOrContainer(), (int) (this.itemPaddingTop + this.shiftAmount), 49);
-                setViewScaleValues(this.largeLabel, 1.0f, 1.0f, 0);
-                TextView textView7 = this.smallLabel;
-                float f3 = this.scaleUpFactor;
-                setViewScaleValues(textView7, f3, f3, 4);
-            } else {
-                setViewTopMarginAndGravity(getIconOrContainer(), this.itemPaddingTop, 49);
-                TextView textView8 = this.largeLabel;
-                float f4 = this.scaleDownFactor;
-                setViewScaleValues(textView8, f4, f4, 4);
-                setViewScaleValues(this.smallLabel, 1.0f, 1.0f, 0);
-            }
+            setLayoutConfigurationIconAndLabel(textView2, textView, f3, 0.0f);
         }
         refreshDrawableState();
         setSelected(z);
@@ -394,11 +591,11 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         return i;
     }
 
-    private static void setViewTopMarginAndGravity(View view, int i, int i2) {
+    private static void setViewMarginAndGravity(View view, int i, int i2, int i3) {
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
         layoutParams.topMargin = i;
-        layoutParams.bottomMargin = i;
-        layoutParams.gravity = i2;
+        layoutParams.bottomMargin = i2;
+        layoutParams.gravity = i3;
         view.setLayoutParams(layoutParams);
     }
 
@@ -417,12 +614,9 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         super.setEnabled(z);
         this.smallLabel.setEnabled(z);
         this.largeLabel.setEnabled(z);
+        this.expandedSmallLabel.setEnabled(z);
+        this.expandedLargeLabel.setEnabled(z);
         this.icon.setEnabled(z);
-        if (z) {
-            ViewCompat.setPointerIcon(this, PointerIconCompat.getSystemIcon(getContext(), 1002));
-        } else {
-            ViewCompat.setPointerIcon(this, null);
-        }
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -450,7 +644,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
             this.wrappedIconDrawable = drawable;
             ColorStateList colorStateList = this.iconTint;
             if (colorStateList != null) {
-                DrawableCompat.setTintList(drawable, colorStateList);
+                drawable.setTintList(colorStateList);
             }
         }
         this.icon.setImageDrawable(drawable);
@@ -462,32 +656,121 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         if (this.itemData == null || (drawable = this.wrappedIconDrawable) == null) {
             return;
         }
-        DrawableCompat.setTintList(drawable, colorStateList);
+        drawable.setTintList(colorStateList);
         this.wrappedIconDrawable.invalidateSelf();
     }
 
     public void setIconSize(int i) {
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.icon.getLayoutParams();
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.icon.getLayoutParams();
         layoutParams.width = i;
         layoutParams.height = i;
         this.icon.setLayoutParams(layoutParams);
+        setExpandedLabelGroupMargins();
+    }
+
+    private void setExpandedLabelGroupMargins() {
+        int i = this.icon.getLayoutParams().width > 0 ? this.iconLabelHorizontalSpacing : 0;
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.expandedLabelGroup.getLayoutParams();
+        if (layoutParams != null) {
+            layoutParams.rightMargin = getLayoutDirection() == 1 ? i : 0;
+            layoutParams.leftMargin = getLayoutDirection() != 1 ? i : 0;
+        }
+    }
+
+    public void setMeasureBottomPaddingFromLabelBaseline(boolean z) {
+        this.measurePaddingFromBaseline = z;
+        this.labelGroup.setMeasurePaddingFromBaseline(z);
+        this.smallLabel.setIncludeFontPadding(z);
+        this.largeLabel.setIncludeFontPadding(z);
+        this.expandedLabelGroup.setMeasurePaddingFromBaseline(z);
+        this.expandedSmallLabel.setIncludeFontPadding(z);
+        this.expandedLargeLabel.setIncludeFontPadding(z);
+        requestLayout();
+    }
+
+    public void setLabelFontScalingEnabled(boolean z) {
+        this.scaleLabelSizeWithFont = z;
+        setTextAppearanceActive(this.textAppearanceActive);
+        setTextAppearanceInactive(this.textAppearanceInactive);
+        setHorizontalTextAppearanceActive(this.horizontalTextAppearanceActive);
+        setHorizontalTextAppearanceInactive(this.horizontalTextAppearanceInactive);
+    }
+
+    private void setTextAppearanceForLabel(TextView textView, int i) {
+        if (this.scaleLabelSizeWithFont) {
+            TextViewCompat.setTextAppearance(textView, i);
+        } else {
+            setTextAppearanceWithoutFontScaling(textView, i);
+        }
+    }
+
+    private void updateInactiveLabelTextAppearance(TextView textView, int i) {
+        if (textView == null) {
+            return;
+        }
+        setTextAppearanceForLabel(textView, i);
+        calculateTextScaleFactors();
+        textView.setMinimumHeight(MaterialResources.getUnscaledLineHeight(textView.getContext(), i, 0));
+        ColorStateList colorStateList = this.textColor;
+        if (colorStateList != null) {
+            textView.setTextColor(colorStateList);
+        }
+    }
+
+    private void updateActiveLabelTextAppearance(TextView textView, int i) {
+        if (textView == null) {
+            return;
+        }
+        setTextAppearanceForLabel(textView, i);
+        calculateTextScaleFactors();
+        textView.setMinimumHeight(MaterialResources.getUnscaledLineHeight(textView.getContext(), i, 0));
+        ColorStateList colorStateList = this.textColor;
+        if (colorStateList != null) {
+            textView.setTextColor(colorStateList);
+        }
+        updateActiveLabelBoldness();
     }
 
     public void setTextAppearanceInactive(int i) {
-        setTextAppearanceWithoutFontScaling(this.smallLabel, i);
-        calculateTextScaleFactors(this.smallLabel.getTextSize(), this.largeLabel.getTextSize());
+        this.textAppearanceInactive = i;
+        updateInactiveLabelTextAppearance(this.smallLabel, i);
     }
 
     public void setTextAppearanceActive(int i) {
-        this.activeTextAppearance = i;
-        setTextAppearanceWithoutFontScaling(this.largeLabel, i);
-        calculateTextScaleFactors(this.smallLabel.getTextSize(), this.largeLabel.getTextSize());
+        this.textAppearanceActive = i;
+        updateActiveLabelTextAppearance(this.largeLabel, i);
+    }
+
+    public void setHorizontalTextAppearanceInactive(int i) {
+        this.horizontalTextAppearanceInactive = i;
+        TextView textView = this.expandedSmallLabel;
+        if (i == 0) {
+            i = this.textAppearanceInactive;
+        }
+        updateInactiveLabelTextAppearance(textView, i);
+    }
+
+    public void setHorizontalTextAppearanceActive(int i) {
+        this.horizontalTextAppearanceActive = i;
+        TextView textView = this.expandedLargeLabel;
+        if (i == 0) {
+            i = this.textAppearanceActive;
+        }
+        updateActiveLabelTextAppearance(textView, i);
     }
 
     public void setTextAppearanceActiveBoldEnabled(boolean z) {
-        setTextAppearanceActive(this.activeTextAppearance);
+        this.boldText = z;
+        setTextAppearanceActive(this.textAppearanceActive);
+        setHorizontalTextAppearanceActive(this.horizontalTextAppearanceActive);
+        updateActiveLabelBoldness();
+    }
+
+    private void updateActiveLabelBoldness() {
         TextView textView = this.largeLabel;
-        textView.setTypeface(textView.getTypeface(), z ? 1 : 0);
+        textView.setTypeface(textView.getTypeface(), this.boldText ? 1 : 0);
+        TextView textView2 = this.expandedLargeLabel;
+        textView2.setTypeface(textView2.getTypeface(), this.boldText ? 1 : 0);
     }
 
     private static void setTextAppearanceWithoutFontScaling(TextView textView, int i) {
@@ -498,21 +781,51 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         }
     }
 
+    public void setLabelMaxLines(int i) {
+        this.smallLabel.setMaxLines(i);
+        this.largeLabel.setMaxLines(i);
+        this.expandedSmallLabel.setMaxLines(i);
+        this.expandedLargeLabel.setMaxLines(i);
+        if (Build.VERSION.SDK_INT > 34) {
+            this.smallLabel.setGravity(17);
+            this.largeLabel.setGravity(17);
+        } else if (i > 1) {
+            this.smallLabel.setEllipsize(null);
+            this.largeLabel.setEllipsize(null);
+            this.smallLabel.setGravity(17);
+            this.largeLabel.setGravity(17);
+        } else {
+            this.smallLabel.setGravity(16);
+            this.largeLabel.setGravity(16);
+        }
+        requestLayout();
+    }
+
     public void setTextColor(ColorStateList colorStateList) {
+        this.textColor = colorStateList;
         if (colorStateList != null) {
             this.smallLabel.setTextColor(colorStateList);
             this.largeLabel.setTextColor(colorStateList);
+            this.expandedSmallLabel.setTextColor(colorStateList);
+            this.expandedLargeLabel.setTextColor(colorStateList);
         }
     }
 
-    private void calculateTextScaleFactors(float f, float f2) {
-        this.shiftAmount = f - f2;
-        this.scaleUpFactor = (f2 * 1.0f) / f;
-        this.scaleDownFactor = (f * 1.0f) / f2;
+    private void calculateTextScaleFactors() {
+        float textSize = this.smallLabel.getTextSize();
+        float textSize2 = this.largeLabel.getTextSize();
+        this.shiftAmountY = textSize - textSize2;
+        this.scaleUpFactor = (textSize2 * 1.0f) / textSize;
+        this.scaleDownFactor = (textSize * 1.0f) / textSize2;
+        float textSize3 = this.expandedSmallLabel.getTextSize();
+        float textSize4 = this.expandedLargeLabel.getTextSize();
+        this.expandedLabelShiftAmountY = textSize3 - textSize4;
+        this.expandedLabelScaleUpFactor = (textSize4 * 1.0f) / textSize3;
+        this.expandedLabelScaleDownFactor = (textSize3 * 1.0f) / textSize4;
     }
 
     public void setItemBackground(int i) {
-        setItemBackground(i == 0 ? null : ContextCompat.getDrawable(getContext(), i));
+        setItemBackground(i == 0 ? null : getContext().getDrawable(i));
     }
 
     public void setItemBackground(Drawable drawable) {
@@ -534,19 +847,16 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         boolean z = true;
         if (this.itemRippleColor != null) {
             Drawable activeIndicatorDrawable = getActiveIndicatorDrawable();
-            if (this.activeIndicatorEnabled && getActiveIndicatorDrawable() != null && this.iconContainer != null && activeIndicatorDrawable != null) {
+            if (this.activeIndicatorEnabled && getActiveIndicatorDrawable() != null && activeIndicatorDrawable != null) {
                 rippleDrawable = new RippleDrawable(RippleUtils.sanitizeRippleDrawableColor(this.itemRippleColor), null, activeIndicatorDrawable);
                 z = false;
             } else if (drawable == null) {
                 drawable = createItemBackgroundCompat(this.itemRippleColor);
             }
         }
-        FrameLayout frameLayout = this.iconContainer;
-        if (frameLayout != null) {
-            frameLayout.setPadding(0, 0, 0, 0);
-            this.iconContainer.setForeground(rippleDrawable);
-        }
-        ViewCompat.setBackground(this, drawable);
+        this.iconContainer.setPadding(0, 0, 0, 0);
+        this.iconContainer.setForeground(rippleDrawable);
+        setBackground(drawable);
         if (Build.VERSION.SDK_INT >= 26) {
             setDefaultFocusHighlightEnabled(z);
         }
@@ -573,18 +883,37 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
     public void setActiveIndicatorLabelPadding(int i) {
         if (this.activeIndicatorLabelPadding != i) {
             this.activeIndicatorLabelPadding = i;
-            refreshChecked();
+            ((LinearLayout.LayoutParams) this.labelGroup.getLayoutParams()).topMargin = i;
+            if (this.expandedLabelGroup.getLayoutParams() != null) {
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.expandedLabelGroup.getLayoutParams();
+                layoutParams.rightMargin = getLayoutDirection() == 1 ? i : 0;
+                if (getLayoutDirection() == 1) {
+                    i = 0;
+                }
+                layoutParams.leftMargin = i;
+                requestLayout();
+            }
+        }
+    }
+
+    public void setIconLabelHorizontalSpacing(int i) {
+        if (this.iconLabelHorizontalSpacing != i) {
+            this.iconLabelHorizontalSpacing = i;
+            setExpandedLabelGroupMargins();
+            requestLayout();
         }
     }
 
     public void setActiveIndicatorEnabled(boolean z) {
         this.activeIndicatorEnabled = z;
         refreshItemBackground();
-        View view = this.activeIndicatorView;
-        if (view != null) {
-            view.setVisibility(z ? 0 : 8);
-            requestLayout();
-        }
+        this.activeIndicatorView.setVisibility(z ? 0 : 8);
+        requestLayout();
+    }
+
+    public void setItemGravity(int i) {
+        this.itemGravity = i;
+        requestLayout();
     }
 
     public void setActiveIndicatorWidth(int i) {
@@ -592,16 +921,45 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         updateActiveIndicatorLayoutParams(getWidth());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    public void setActiveIndicatorExpandedWidth(int i) {
+        this.activeIndicatorExpandedDesiredWidth = i;
+        updateActiveIndicatorLayoutParams(getWidth());
+    }
+
+    public void setActiveIndicatorExpandedHeight(int i) {
+        this.activeIndicatorExpandedDesiredHeight = i;
+        updateActiveIndicatorLayoutParams(getWidth());
+    }
+
+    public void setActiveIndicatorExpandedPadding(Rect rect) {
+        this.itemActiveIndicatorExpandedPadding = rect;
+    }
+
     public void updateActiveIndicatorLayoutParams(int i) {
-        if (this.activeIndicatorView == null || i <= 0) {
-            return;
+        if (i > 0 || getVisibility() != 0) {
+            int min = Math.min(this.activeIndicatorDesiredWidth, i - (this.activeIndicatorMarginHorizontal * 2));
+            int i2 = this.activeIndicatorDesiredHeight;
+            if (this.itemIconGravity == 1) {
+                int i3 = i - (this.activeIndicatorExpandedMarginHorizontal * 2);
+                int i4 = this.activeIndicatorExpandedDesiredWidth;
+                if (i4 != -1) {
+                    if (i4 == -2) {
+                        i3 = this.contentContainer.getMeasuredWidth();
+                    } else {
+                        i3 = Math.min(i4, i3);
+                    }
+                }
+                min = i3;
+                i2 = Math.max(this.activeIndicatorExpandedDesiredHeight, this.innerContentContainer.getMeasuredHeight());
+            }
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.activeIndicatorView.getLayoutParams();
+            if (isActiveIndicatorResizeableAndUnlabeled()) {
+                i2 = min;
+            }
+            layoutParams.height = i2;
+            layoutParams.width = Math.max(0, min);
+            this.activeIndicatorView.setLayoutParams(layoutParams);
         }
-        int min = Math.min(this.activeIndicatorDesiredWidth, i - (this.activeIndicatorMarginHorizontal * 2));
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.activeIndicatorView.getLayoutParams();
-        layoutParams.height = isActiveIndicatorResizeableAndUnlabeled() ? min : this.activeIndicatorDesiredHeight;
-        layoutParams.width = min;
-        this.activeIndicatorView.setLayoutParams(layoutParams);
     }
 
     private boolean isActiveIndicatorResizeableAndUnlabeled() {
@@ -618,28 +976,27 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         updateActiveIndicatorLayoutParams(getWidth());
     }
 
-    public Drawable getActiveIndicatorDrawable() {
-        View view = this.activeIndicatorView;
-        if (view == null) {
-            return null;
+    public void setActiveIndicatorExpandedMarginHorizontal(int i) {
+        this.activeIndicatorExpandedMarginHorizontal = i;
+        if (this.itemIconGravity == 1) {
+            setPadding(i, 0, i, 0);
         }
-        return view.getBackground();
+        updateActiveIndicatorLayoutParams(getWidth());
+    }
+
+    public Drawable getActiveIndicatorDrawable() {
+        return this.activeIndicatorView.getBackground();
     }
 
     public void setActiveIndicatorDrawable(Drawable drawable) {
-        View view = this.activeIndicatorView;
-        if (view == null) {
-            return;
-        }
-        view.setBackgroundDrawable(drawable);
+        this.activeIndicatorView.setBackground(drawable);
         refreshItemBackground();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        FrameLayout frameLayout = this.iconContainer;
-        if (frameLayout != null && this.activeIndicatorEnabled) {
-            frameLayout.dispatchTouchEvent(motionEvent);
+        if (this.activeIndicatorEnabled) {
+            this.iconContainer.dispatchTouchEvent(motionEvent);
         }
         return super.dispatchTouchEvent(motionEvent);
     }
@@ -658,6 +1015,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
             tryRemoveBadgeFromAnchor(this.icon);
         }
         this.badgeDrawable = badgeDrawable;
+        badgeDrawable.setBadgeFixedEdge(this.badgeFixedEdge);
         ImageView imageView = this.icon;
         if (imageView != null) {
             tryAttachBadgeToAnchor(imageView);
@@ -677,10 +1035,9 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         return this.badgeDrawable != null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void tryUpdateBadgeBounds(View view) {
+    private void tryUpdateBadgeBounds(View view) {
         if (hasBadge()) {
-            BadgeUtils.setBadgeDrawableBounds(this.badgeDrawable, view, getCustomParentForBadge(view));
+            BadgeUtils.setBadgeDrawableBounds(this.badgeDrawable, view, null);
         }
     }
 
@@ -688,7 +1045,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         if (hasBadge() && view != null) {
             setClipChildren(false);
             setClipToPadding(false);
-            BadgeUtils.attachBadgeDrawable(this.badgeDrawable, view, getCustomParentForBadge(view));
+            BadgeUtils.attachBadgeDrawable(this.badgeDrawable, view);
         }
     }
 
@@ -703,22 +1060,11 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         }
     }
 
-    private FrameLayout getCustomParentForBadge(View view) {
-        if (view == this.icon && BadgeUtils.USE_COMPAT_PARENT) {
-            return (FrameLayout) this.icon.getParent();
-        }
-        return null;
-    }
-
     private int getSuggestedIconWidth() {
         BadgeDrawable badgeDrawable = this.badgeDrawable;
         int minimumWidth = badgeDrawable == null ? 0 : badgeDrawable.getMinimumWidth() - this.badgeDrawable.getHorizontalOffset();
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) getIconOrContainer().getLayoutParams();
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.iconContainer.getLayoutParams();
         return Math.max(minimumWidth, layoutParams.leftMargin) + this.icon.getMeasuredWidth() + Math.max(minimumWidth, layoutParams.rightMargin);
-    }
-
-    private int getSuggestedIconHeight() {
-        return ((FrameLayout.LayoutParams) getIconOrContainer().getLayoutParams()).topMargin + getIconOrContainer().getMeasuredHeight();
     }
 
     protected int getItemBackgroundResId() {
@@ -736,7 +1082,7 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         private static final float SCALE_X_HIDDEN = 0.4f;
         private static final float SCALE_X_SHOWN = 1.0f;
 
-        protected float calculateScaleY(float f, float f2) {
+        protected float calculateScaleY(float f) {
             return 1.0f;
         }
 
@@ -748,13 +1094,13 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
             return AnimationUtils.lerp(0.0f, 1.0f, i == 0 ? 0.8f : 0.0f, i == 0 ? 1.0f : 0.2f, f);
         }
 
-        protected float calculateScaleX(float f, float f2) {
+        protected float calculateScaleX(float f) {
             return AnimationUtils.lerp(0.4f, 1.0f, f);
         }
 
         public void updateForProgress(float f, float f2, View view) {
-            view.setScaleX(calculateScaleX(f, f2));
-            view.setScaleY(calculateScaleY(f, f2));
+            view.setScaleX(calculateScaleX(f));
+            view.setScaleY(calculateScaleY(f));
             view.setAlpha(calculateAlpha(f, f2));
         }
     }
@@ -766,8 +1112,8 @@ public abstract class NavigationBarItemView extends FrameLayout implements MenuV
         }
 
         @Override // com.google.android.material.navigation.NavigationBarItemView.ActiveIndicatorTransform
-        protected float calculateScaleY(float f, float f2) {
-            return calculateScaleX(f, f2);
+        protected float calculateScaleY(float f) {
+            return calculateScaleX(f);
         }
     }
 }

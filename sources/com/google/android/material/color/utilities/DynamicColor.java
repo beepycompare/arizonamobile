@@ -120,31 +120,31 @@ public final class DynamicColor {
             DynamicColor dynamicColor2 = z ? roleB : roleA;
             boolean equals = this.name.equals(dynamicColor.name);
             double d3 = dynamicScheme.isDark ? 1.0d : -1.0d;
-            double contrast = dynamicColor.contrastCurve.getContrast(dynamicScheme.contrastLevel);
-            double d4 = 60.0d;
-            double contrast2 = dynamicColor2.contrastCurve.getContrast(dynamicScheme.contrastLevel);
+            double d4 = dynamicColor.contrastCurve.get(dynamicScheme.contrastLevel);
+            double d5 = 60.0d;
+            double d6 = dynamicColor2.contrastCurve.get(dynamicScheme.contrastLevel);
             double doubleValue = dynamicColor.tone.apply(dynamicScheme).doubleValue();
-            if (Contrast.ratioOfTones(tone, doubleValue) < contrast) {
-                doubleValue = foregroundTone(tone, contrast);
+            if (Contrast.ratioOfTones(tone, doubleValue) < d4) {
+                doubleValue = foregroundTone(tone, d4);
             }
             double doubleValue2 = dynamicColor2.tone.apply(dynamicScheme).doubleValue();
-            if (Contrast.ratioOfTones(tone, doubleValue2) < contrast2) {
-                doubleValue2 = foregroundTone(tone, contrast2);
+            if (Contrast.ratioOfTones(tone, doubleValue2) < d6) {
+                doubleValue2 = foregroundTone(tone, d6);
             }
             if (z2) {
-                doubleValue = foregroundTone(tone, contrast);
-                doubleValue2 = foregroundTone(tone, contrast2);
+                doubleValue = foregroundTone(tone, d4);
+                doubleValue2 = foregroundTone(tone, d6);
             }
             if ((doubleValue2 - doubleValue) * d3 < delta) {
-                double d5 = delta * d3;
-                doubleValue2 = MathUtils.clampDouble(FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, 100.0d, doubleValue + d5);
+                double d7 = delta * d3;
+                doubleValue2 = MathUtils.clampDouble(FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, 100.0d, doubleValue + d7);
                 if ((doubleValue2 - doubleValue) * d3 < delta) {
-                    doubleValue = MathUtils.clampDouble(FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, 100.0d, doubleValue2 - d5);
+                    doubleValue = MathUtils.clampDouble(FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, 100.0d, doubleValue2 - d7);
                 }
             }
             if (50.0d > doubleValue || doubleValue >= 60.0d) {
                 if (50.0d > doubleValue2 || doubleValue2 >= 60.0d) {
-                    d4 = doubleValue;
+                    d5 = doubleValue;
                     d2 = doubleValue2;
                 } else if (stayTogether) {
                     if (d3 > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
@@ -152,13 +152,13 @@ public final class DynamicColor {
                     } else {
                         min = Math.min(doubleValue2, (delta * d3) + 49.0d);
                         d2 = min;
-                        d4 = 49.0d;
+                        d5 = 49.0d;
                     }
                 } else if (d3 > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
-                    d4 = doubleValue;
+                    d5 = doubleValue;
                     d2 = 60.0d;
                 } else {
-                    d4 = doubleValue;
+                    d5 = doubleValue;
                     d2 = 49.0d;
                 }
             } else if (d3 > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
@@ -166,9 +166,9 @@ public final class DynamicColor {
             } else {
                 min = Math.min(doubleValue2, (delta * d3) + 49.0d);
                 d2 = min;
-                d4 = 49.0d;
+                d5 = 49.0d;
             }
-            return equals ? d4 : d2;
+            return equals ? d5 : d2;
         }
         double doubleValue3 = this.tone.apply(dynamicScheme).doubleValue();
         Function<DynamicScheme, DynamicColor> function2 = this.background;
@@ -176,26 +176,26 @@ public final class DynamicColor {
             return doubleValue3;
         }
         double tone2 = function2.apply(dynamicScheme).getTone(dynamicScheme);
-        double contrast3 = this.contrastCurve.getContrast(dynamicScheme.contrastLevel);
-        if (Contrast.ratioOfTones(tone2, doubleValue3) < contrast3) {
-            doubleValue3 = foregroundTone(tone2, contrast3);
+        double d8 = this.contrastCurve.get(dynamicScheme.contrastLevel);
+        if (Contrast.ratioOfTones(tone2, doubleValue3) < d8) {
+            doubleValue3 = foregroundTone(tone2, d8);
         }
         if (z2) {
-            doubleValue3 = foregroundTone(tone2, contrast3);
+            doubleValue3 = foregroundTone(tone2, d8);
         }
         if (!this.isBackground || 50.0d > doubleValue3 || doubleValue3 >= 60.0d) {
             d = doubleValue3;
         } else {
-            d = Contrast.ratioOfTones(49.0d, tone2) >= contrast3 ? 49.0d : 60.0d;
+            d = Contrast.ratioOfTones(49.0d, tone2) >= d8 ? 49.0d : 60.0d;
         }
         if (this.secondBackground != null) {
             double tone3 = this.background.apply(dynamicScheme).getTone(dynamicScheme);
             double tone4 = this.secondBackground.apply(dynamicScheme).getTone(dynamicScheme);
             double max = Math.max(tone3, tone4);
             double min2 = Math.min(tone3, tone4);
-            if (Contrast.ratioOfTones(max, d) < contrast3 || Contrast.ratioOfTones(min2, d) < contrast3) {
-                double lighter = Contrast.lighter(max, contrast3);
-                double darker = Contrast.darker(min2, contrast3);
+            if (Contrast.ratioOfTones(max, d) < d8 || Contrast.ratioOfTones(min2, d) < d8) {
+                double lighter = Contrast.lighter(max, d8);
+                double darker = Contrast.darker(min2, d8);
                 ArrayList arrayList = new ArrayList();
                 int i = (lighter > (-1.0d) ? 1 : (lighter == (-1.0d) ? 0 : -1));
                 if (i != 0) {

@@ -24,6 +24,7 @@ import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.view.ViewParent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatCheckBox;
@@ -35,7 +36,8 @@ import com.google.android.material.animation.MotionSpec;
 import com.google.android.material.chip.ChipDrawable;
 import com.google.android.material.internal.MaterialCheckable;
 import com.google.android.material.internal.ThemeEnforcement;
-import com.google.android.material.internal.ViewUtils;
+import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.resources.MaterialAttributes;
 import com.google.android.material.resources.TextAppearance;
 import com.google.android.material.resources.TextAppearanceFontCallback;
 import com.google.android.material.ripple.RippleUtils;
@@ -43,7 +45,7 @@ import com.google.android.material.shape.MaterialShapeUtils;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.Shapeable;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
-import io.appmetrica.analytics.impl.L2;
+import io.appmetrica.analytics.impl.O2;
 import java.util.List;
 /* loaded from: classes4.dex */
 public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Shapeable, MaterialCheckable<Chip> {
@@ -51,7 +53,6 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
     private static final int CHIP_BODY_VIRTUAL_ID = 0;
     private static final int CLOSE_ICON_VIRTUAL_ID = 1;
     private static final String GENERIC_VIEW_ACCESSIBILITY_CLASS_NAME = "android.view.View";
-    private static final int MIN_TOUCH_TARGET_DP = 48;
     private static final String NAMESPACE_ANDROID = "http://schemas.android.com/apk/res/android";
     private static final String RADIO_BUTTON_ACCESSIBILITY_CLASS_NAME = "android.widget.RadioButton";
     private static final String TAG = "Chip";
@@ -114,7 +115,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         ChipDrawable createFromAttributes = ChipDrawable.createFromAttributes(context2, attributeSet, i, i2);
         initMinTouchTarget(context2, attributeSet, i);
         setChipDrawable(createFromAttributes);
-        createFromAttributes.setElevation(ViewCompat.getElevation(this));
+        createFromAttributes.setElevation(getElevation());
         TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, R.styleable.Chip, i, i2, new int[0]);
         boolean hasValue = obtainStyledAttributes.hasValue(R.styleable.Chip_shapeAppearance);
         obtainStyledAttributes.recycle();
@@ -131,23 +132,23 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
             setLines(1);
             setHorizontallyScrolling(true);
         }
-        setGravity(8388627);
+        setGravity(NavigationBarView.ITEM_GRAVITY_START_CENTER);
         updatePaddingInternal();
         if (shouldEnsureMinTouchTargetSize()) {
             setMinHeight(this.minTouchTargetSize);
         }
-        this.lastLayoutDirection = ViewCompat.getLayoutDirection(this);
+        this.lastLayoutDirection = getLayoutDirection();
         super.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.google.android.material.chip.Chip$$ExternalSyntheticLambda0
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public final void onCheckedChanged(CompoundButton compoundButton, boolean z) {
-                Chip.this.m8675lambda$new$0$comgoogleandroidmaterialchipChip(compoundButton, z);
+                Chip.this.m8682lambda$new$0$comgoogleandroidmaterialchipChip(compoundButton, z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-chip-Chip  reason: not valid java name */
-    public /* synthetic */ void m8675lambda$new$0$comgoogleandroidmaterialchipChip(CompoundButton compoundButton, boolean z) {
+    public /* synthetic */ void m8682lambda$new$0$comgoogleandroidmaterialchipChip(CompoundButton compoundButton, boolean z) {
         MaterialCheckable.OnCheckedChangeListener<Chip> onCheckedChangeListener = this.onCheckedChangeListenerInternal;
         if (onCheckedChangeListener != null) {
             onCheckedChangeListener.onCheckedChanged(this, z);
@@ -198,7 +199,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
     private void initMinTouchTarget(Context context, AttributeSet attributeSet, int i) {
         TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, R.styleable.Chip, i, DEF_STYLE_RES, new int[0]);
         this.ensureMinTouchTargetSize = obtainStyledAttributes.getBoolean(R.styleable.Chip_ensureMinTouchTargetSize, false);
-        this.minTouchTargetSize = (int) Math.ceil(obtainStyledAttributes.getDimension(R.styleable.Chip_chipMinTouchTargetSize, (float) Math.ceil(ViewUtils.dpToPx(getContext(), 48))));
+        this.minTouchTargetSize = (int) Math.ceil(obtainStyledAttributes.getDimension(R.styleable.Chip_chipMinTouchTargetSize, MaterialAttributes.resolveMinimumAccessibleTouchTarget(context)));
         obtainStyledAttributes.recycle();
     }
 
@@ -215,7 +216,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
             chipStartPadding += rect.left;
             chipEndPadding += rect.right;
         }
-        ViewCompat.setPaddingRelative(this, chipStartPadding, getPaddingTop(), chipEndPadding, getPaddingBottom());
+        setPaddingRelative(chipStartPadding, getPaddingTop(), chipEndPadding, getPaddingBottom());
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -231,7 +232,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         if (attributeSet == null) {
             return;
         }
-        if (attributeSet.getAttributeValue(NAMESPACE_ANDROID, L2.g) != null) {
+        if (attributeSet.getAttributeValue(NAMESPACE_ANDROID, O2.g) != null) {
             Log.w(TAG, "Do not set the background; Chip manages its own background drawable.");
         }
         if (attributeSet.getAttributeValue(NAMESPACE_ANDROID, "drawableLeft") != null) {
@@ -249,7 +250,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         if (!attributeSet.getAttributeBooleanValue(NAMESPACE_ANDROID, "singleLine", true) || attributeSet.getAttributeIntValue(NAMESPACE_ANDROID, "lines", 1) != 1 || attributeSet.getAttributeIntValue(NAMESPACE_ANDROID, "minLines", 1) != 1 || attributeSet.getAttributeIntValue(NAMESPACE_ANDROID, "maxLines", 1) != 1) {
             throw new UnsupportedOperationException("Chip does not support multi-line text");
         }
-        if (attributeSet.getAttributeIntValue(NAMESPACE_ANDROID, "gravity", 8388627) != 8388627) {
+        if (attributeSet.getAttributeIntValue(NAMESPACE_ANDROID, "gravity", NavigationBarView.ITEM_GRAVITY_START_CENTER) != 8388627) {
             Log.w(TAG, "Chip text must be vertically center and start aligned");
         }
     }
@@ -283,20 +284,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
     }
 
     private void updateBackgroundDrawable() {
-        if (RippleUtils.USE_FRAMEWORK_RIPPLE) {
-            updateFrameworkRippleBackground();
-            return;
-        }
-        this.chipDrawable.setUseCompatRipple(true);
-        ViewCompat.setBackground(this, getBackgroundDrawable());
-        updatePaddingInternal();
-        ensureChipDrawableHasCallback();
-    }
-
-    private void ensureChipDrawableHasCallback() {
-        if (getBackgroundDrawable() == this.insetBackgroundDrawable && this.chipDrawable.getCallback() == null) {
-            this.chipDrawable.setCallback(this.insetBackgroundDrawable);
-        }
+        updateFrameworkRippleBackground();
     }
 
     public Drawable getBackgroundDrawable() {
@@ -307,7 +295,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
     private void updateFrameworkRippleBackground() {
         this.ripple = new RippleDrawable(RippleUtils.sanitizeRippleDrawableColor(this.chipDrawable.getRippleColor()), getBackgroundDrawable(), null);
         this.chipDrawable.setUseCompatRipple(false);
-        ViewCompat.setBackground(this, this.ripple);
+        setBackground(this.ripple);
         updatePaddingInternal();
     }
 
@@ -662,7 +650,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         }
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r0v0, types: [boolean, int] */
     private int[] createCloseIconDrawableState() {
         ?? isEnabled = isEnabled();
         int i = isEnabled;
@@ -764,6 +752,8 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         protected void onVirtualViewKeyboardFocusChanged(int i, boolean z) {
             if (i == 1) {
                 Chip.this.closeIconFocused = z;
+            }
+            if (Chip.this.chipDrawable.refreshCloseIconFocus(Chip.this.closeIconFocused)) {
                 Chip.this.refreshDrawableState();
             }
         }
@@ -781,6 +771,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
                 accessibilityNodeInfoCompat.setBoundsInParent(Chip.this.getCloseIconTouchBoundsInt());
                 accessibilityNodeInfoCompat.addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_CLICK);
                 accessibilityNodeInfoCompat.setEnabled(Chip.this.isEnabled());
+                accessibilityNodeInfoCompat.setClassName(Button.class.getName());
                 return;
             }
             accessibilityNodeInfoCompat.setContentDescription("");

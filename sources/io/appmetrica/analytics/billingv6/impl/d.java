@@ -6,17 +6,17 @@ import java.util.LinkedHashSet;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final BillingClient f221a;
+    public final BillingClient f222a;
     public final LinkedHashSet b = new LinkedHashSet();
 
     public d(BillingClient billingClient) {
-        this.f221a = billingClient;
+        this.f222a = billingClient;
     }
 
     public final void a(Object obj) {
         this.b.remove(obj);
         if (this.b.size() == 0) {
-            this.f221a.endConnection();
+            this.f222a.endConnection();
         }
     }
 }

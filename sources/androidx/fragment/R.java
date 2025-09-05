@@ -12,12 +12,12 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class animator {
-        public static int fragment_close_enter = 0x7f020003;
-        public static int fragment_close_exit = 0x7f020004;
-        public static int fragment_fade_enter = 0x7f020005;
-        public static int fragment_fade_exit = 0x7f020006;
-        public static int fragment_open_enter = 0x7f020007;
-        public static int fragment_open_exit = 0x7f020008;
+        public static int fragment_close_enter = 0x7f020005;
+        public static int fragment_close_exit = 0x7f020006;
+        public static int fragment_fade_enter = 0x7f020007;
+        public static int fragment_fade_exit = 0x7f020008;
+        public static int fragment_open_enter = 0x7f020009;
+        public static int fragment_open_exit = 0x7f02000a;
 
         private animator() {
         }
@@ -25,9 +25,9 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int fragment_container_view_tag = 0x7f0a051b;
-        public static int special_effects_controller_view_tag = 0x7f0a0c62;
-        public static int visible_removing_fragment_view_tag = 0x7f0a0eda;
+        public static int fragment_container_view_tag = 0x7f0a0520;
+        public static int special_effects_controller_view_tag = 0x7f0a0c6e;
+        public static int visible_removing_fragment_view_tag = 0x7f0a0ee8;
 
         private id() {
         }

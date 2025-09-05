@@ -16,6 +16,12 @@ public final class ImageHeaderParserUtils {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
+    public interface JpegMpfReader {
+        boolean getHasJpegMpfAndRewind(ImageHeaderParser imageHeaderParser) throws IOException;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes3.dex */
     public interface OrientationReader {
         int getOrientationAndRewind(ImageHeaderParser imageHeaderParser) throws IOException;
     }
@@ -177,5 +183,79 @@ public final class ImageHeaderParserUtils {
             }
         }
         return -1;
+    }
+
+    public static boolean hasJpegMpf(List<ImageHeaderParser> list, final ByteBuffer byteBuffer, final ArrayPool arrayPool) throws IOException {
+        if (byteBuffer == null) {
+            return false;
+        }
+        return hasJpegMpfInternal(list, new JpegMpfReader() { // from class: com.bumptech.glide.load.ImageHeaderParserUtils.7
+            @Override // com.bumptech.glide.load.ImageHeaderParserUtils.JpegMpfReader
+            public boolean getHasJpegMpfAndRewind(ImageHeaderParser imageHeaderParser) throws IOException {
+                try {
+                    return imageHeaderParser.hasJpegMpf(byteBuffer, arrayPool);
+                } finally {
+                    ByteBufferUtil.rewind(byteBuffer);
+                }
+            }
+        });
+    }
+
+    public static boolean hasJpegMpf(List<ImageHeaderParser> list, final InputStream inputStream, final ArrayPool arrayPool) throws IOException {
+        if (inputStream == null) {
+            return false;
+        }
+        if (!inputStream.markSupported()) {
+            inputStream = new RecyclableBufferedInputStream(inputStream, arrayPool);
+        }
+        inputStream.mark(MARK_READ_LIMIT);
+        return hasJpegMpfInternal(list, new JpegMpfReader() { // from class: com.bumptech.glide.load.ImageHeaderParserUtils.8
+            @Override // com.bumptech.glide.load.ImageHeaderParserUtils.JpegMpfReader
+            public boolean getHasJpegMpfAndRewind(ImageHeaderParser imageHeaderParser) throws IOException {
+                try {
+                    return imageHeaderParser.hasJpegMpf(inputStream, arrayPool);
+                } finally {
+                    inputStream.reset();
+                }
+            }
+        });
+    }
+
+    public static boolean hasJpegMpf(List<ImageHeaderParser> list, final ParcelFileDescriptorRewinder parcelFileDescriptorRewinder, final ArrayPool arrayPool) throws IOException {
+        return hasJpegMpfInternal(list, new JpegMpfReader() { // from class: com.bumptech.glide.load.ImageHeaderParserUtils.9
+            @Override // com.bumptech.glide.load.ImageHeaderParserUtils.JpegMpfReader
+            public boolean getHasJpegMpfAndRewind(ImageHeaderParser imageHeaderParser) throws IOException {
+                RecyclableBufferedInputStream recyclableBufferedInputStream = null;
+                try {
+                    RecyclableBufferedInputStream recyclableBufferedInputStream2 = new RecyclableBufferedInputStream(new FileInputStream(ParcelFileDescriptorRewinder.this.rewindAndGet().getFileDescriptor()), arrayPool);
+                    try {
+                        boolean hasJpegMpf = imageHeaderParser.hasJpegMpf(recyclableBufferedInputStream2, arrayPool);
+                        recyclableBufferedInputStream2.release();
+                        ParcelFileDescriptorRewinder.this.rewindAndGet();
+                        return hasJpegMpf;
+                    } catch (Throwable th) {
+                        th = th;
+                        recyclableBufferedInputStream = recyclableBufferedInputStream2;
+                        if (recyclableBufferedInputStream != null) {
+                            recyclableBufferedInputStream.release();
+                        }
+                        ParcelFileDescriptorRewinder.this.rewindAndGet();
+                        throw th;
+                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                }
+            }
+        });
+    }
+
+    private static boolean hasJpegMpfInternal(List<ImageHeaderParser> list, JpegMpfReader jpegMpfReader) throws IOException {
+        int size = list.size();
+        for (int i = 0; i < size; i++) {
+            if (jpegMpfReader.getHasJpegMpfAndRewind(list.get(i))) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -9,6 +9,7 @@ import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseIntArray;
@@ -78,7 +79,10 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
     private int childHeight;
     int collapsedOffset;
     private final ViewDragHelper.Callback dragCallback;
+    WeakReference<View> dragHandleViewRef;
     private boolean draggable;
+    private boolean draggableOnNestedScroll;
+    private boolean draggableOnNestedScrollLastDragIgnored;
     float elevation;
     final SparseIntArray expandHalfwayActionIds;
     private boolean expandedCornersRemoved;
@@ -190,6 +194,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         this.halfExpandedRatio = 0.5f;
         this.elevation = -1.0f;
         this.draggable = true;
+        this.draggableOnNestedScroll = true;
         this.state = 4;
         this.lastStableState = 4;
         this.hideFriction = 0.1f;
@@ -210,7 +215,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                         return false;
                     }
                 }
-                this.viewCapturedMillis = System.currentTimeMillis();
+                this.viewCapturedMillis = SystemClock.uptimeMillis();
                 return BottomSheetBehavior.this.viewRef != null && BottomSheetBehavior.this.viewRef.get() == view;
             }
 
@@ -260,7 +265,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                 if (f2 < 0.0f) {
                     if (!BottomSheetBehavior.this.fitToContents) {
                         int top = view.getTop();
-                        long currentTimeMillis = System.currentTimeMillis() - this.viewCapturedMillis;
+                        long uptimeMillis = SystemClock.uptimeMillis() - this.viewCapturedMillis;
                         if (BottomSheetBehavior.this.shouldSkipHalfExpandedStateWhenDragging()) {
                         }
                     }
@@ -329,6 +334,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         this.halfExpandedRatio = 0.5f;
         this.elevation = -1.0f;
         this.draggable = true;
+        this.draggableOnNestedScroll = true;
         this.state = 4;
         this.lastStableState = 4;
         this.hideFriction = 0.1f;
@@ -349,7 +355,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                         return false;
                     }
                 }
-                this.viewCapturedMillis = System.currentTimeMillis();
+                this.viewCapturedMillis = SystemClock.uptimeMillis();
                 return BottomSheetBehavior.this.viewRef != null && BottomSheetBehavior.this.viewRef.get() == view;
             }
 
@@ -399,7 +405,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                 if (f2 < 0.0f) {
                     if (!BottomSheetBehavior.this.fitToContents) {
                         int top = view.getTop();
-                        long currentTimeMillis = System.currentTimeMillis() - this.viewCapturedMillis;
+                        long uptimeMillis = SystemClock.uptimeMillis() - this.viewCapturedMillis;
                         if (BottomSheetBehavior.this.shouldSkipHalfExpandedStateWhenDragging()) {
                         }
                     }
@@ -483,6 +489,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         setFitToContents(obtainStyledAttributes.getBoolean(R.styleable.BottomSheetBehavior_Layout_behavior_fitToContents, true));
         setSkipCollapsed(obtainStyledAttributes.getBoolean(R.styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed, false));
         setDraggable(obtainStyledAttributes.getBoolean(R.styleable.BottomSheetBehavior_Layout_behavior_draggable, true));
+        setDraggableOnNestedScroll(obtainStyledAttributes.getBoolean(R.styleable.BottomSheetBehavior_Layout_behavior_draggableOnNestedScroll, true));
         setSaveFlags(obtainStyledAttributes.getInt(R.styleable.BottomSheetBehavior_Layout_behavior_saveFlags, 0));
         setHalfExpandedRatio(obtainStyledAttributes.getFloat(R.styleable.BottomSheetBehavior_Layout_behavior_halfExpandedRatio, 0.5f));
         TypedValue peekValue2 = obtainStyledAttributes.peekValue(R.styleable.BottomSheetBehavior_Layout_behavior_expandedOffset);
@@ -565,7 +572,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
 
     @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public boolean onLayoutChild(CoordinatorLayout coordinatorLayout, V v, int i) {
-        if (ViewCompat.getFitsSystemWindows(coordinatorLayout) && !ViewCompat.getFitsSystemWindows(v)) {
+        if (coordinatorLayout.getFitsSystemWindows() && !v.getFitsSystemWindows()) {
             v.setFitsSystemWindows(true);
         }
         if (this.viewRef == null) {
@@ -576,11 +583,11 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
             this.bottomContainerBackHelper = new MaterialBottomContainerBackHelper(v);
             MaterialShapeDrawable materialShapeDrawable = this.materialShapeDrawable;
             if (materialShapeDrawable != null) {
-                ViewCompat.setBackground(v, materialShapeDrawable);
+                v.setBackground(materialShapeDrawable);
                 MaterialShapeDrawable materialShapeDrawable2 = this.materialShapeDrawable;
                 float f = this.elevation;
                 if (f == -1.0f) {
-                    f = ViewCompat.getElevation(v);
+                    f = v.getElevation();
                 }
                 materialShapeDrawable2.setElevation(f);
             } else {
@@ -590,8 +597,8 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                 }
             }
             updateAccessibilityActions();
-            if (ViewCompat.getImportantForAccessibility(v) == 0) {
-                ViewCompat.setImportantForAccessibility(v, 1);
+            if (v.getImportantForAccessibility() == 0) {
+                v.setImportantForAccessibility(1);
             }
         }
         if (this.viewDragHelper == null) {
@@ -663,12 +670,11 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         this.velocityTracker.addMovement(motionEvent);
         if (actionMasked == 0) {
             int x = (int) motionEvent.getX();
-            this.initialY = (int) motionEvent.getY();
-            if (this.state != 2) {
-                WeakReference<View> weakReference = this.nestedScrollingChildRef;
-                View view = weakReference != null ? weakReference.get() : null;
-                if (view != null && coordinatorLayout.isPointInChildBounds(view, x, this.initialY)) {
-                    this.activePointerId = motionEvent.getPointerId(motionEvent.getActionIndex());
+            int y = (int) motionEvent.getY();
+            this.initialY = y;
+            if (this.state != 2 && isTouchingScrollingChild(coordinatorLayout, x, y)) {
+                this.activePointerId = motionEvent.getPointerId(motionEvent.getActionIndex());
+                if (!isTouchingDragHandle(coordinatorLayout, x, this.initialY)) {
                     this.touchingScrollingChild = true;
                 }
             }
@@ -682,9 +688,9 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
             }
         }
         if (this.ignoreEvents || (viewDragHelper = this.viewDragHelper) == null || !viewDragHelper.shouldInterceptTouchEvent(motionEvent)) {
-            WeakReference<View> weakReference2 = this.nestedScrollingChildRef;
-            View view2 = weakReference2 != null ? weakReference2.get() : null;
-            return (actionMasked != 2 || view2 == null || this.ignoreEvents || this.state == 1 || coordinatorLayout.isPointInChildBounds(view2, (int) motionEvent.getX(), (int) motionEvent.getY()) || this.viewDragHelper == null || (i = this.initialY) == -1 || Math.abs(((float) i) - motionEvent.getY()) <= ((float) this.viewDragHelper.getTouchSlop())) ? false : true;
+            WeakReference<View> weakReference = this.nestedScrollingChildRef;
+            View view = weakReference != null ? weakReference.get() : null;
+            return (actionMasked != 2 || view == null || this.ignoreEvents || this.state == 1 || coordinatorLayout.isPointInChildBounds(view, (int) motionEvent.getX(), (int) motionEvent.getY()) || this.viewDragHelper == null || (i = this.initialY) == -1 || Math.abs(((float) i) - motionEvent.getY()) <= ((float) this.viewDragHelper.getTouchSlop())) ? false : true;
         }
         return true;
     }
@@ -732,7 +738,10 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
             int top = v.getTop();
             int i4 = top - i2;
             if (i2 > 0) {
-                if (i4 < getExpandedOffset()) {
+                if (!this.nestedScrolled && !this.draggableOnNestedScroll && view == view2 && view.canScrollVertically(1)) {
+                    this.draggableOnNestedScrollLastDragIgnored = true;
+                    return;
+                } else if (i4 < getExpandedOffset()) {
                     int expandedOffset = top - getExpandedOffset();
                     iArr[1] = expandedOffset;
                     ViewCompat.offsetTopAndBottom(v, -expandedOffset);
@@ -744,24 +753,31 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                     ViewCompat.offsetTopAndBottom(v, -i2);
                     setStateInternal(1);
                 }
-            } else if (i2 < 0 && !view.canScrollVertically(-1)) {
-                if (i4 <= this.collapsedOffset || canBeHiddenByDragging()) {
-                    if (!this.draggable) {
-                        return;
+            } else if (i2 < 0) {
+                boolean canScrollVertically = view.canScrollVertically(-1);
+                if (!this.nestedScrolled && !this.draggableOnNestedScroll && view == view2 && canScrollVertically) {
+                    this.draggableOnNestedScrollLastDragIgnored = true;
+                    return;
+                } else if (!canScrollVertically) {
+                    if (i4 <= this.collapsedOffset || canBeHiddenByDragging()) {
+                        if (!this.draggable) {
+                            return;
+                        }
+                        iArr[1] = i2;
+                        ViewCompat.offsetTopAndBottom(v, -i2);
+                        setStateInternal(1);
+                    } else {
+                        int i5 = top - this.collapsedOffset;
+                        iArr[1] = i5;
+                        ViewCompat.offsetTopAndBottom(v, -i5);
+                        setStateInternal(4);
                     }
-                    iArr[1] = i2;
-                    ViewCompat.offsetTopAndBottom(v, -i2);
-                    setStateInternal(1);
-                } else {
-                    int i5 = top - this.collapsedOffset;
-                    iArr[1] = i5;
-                    ViewCompat.offsetTopAndBottom(v, -i5);
-                    setStateInternal(4);
                 }
             }
             dispatchOnSlide(v.getTop());
             this.lastNestedScrollDy = i2;
             this.nestedScrolled = true;
+            this.draggableOnNestedScrollLastDragIgnored = false;
         }
     }
 
@@ -824,7 +840,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
     @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public boolean onNestedPreFling(CoordinatorLayout coordinatorLayout, V v, View view, float f, float f2) {
         WeakReference<View> weakReference;
-        return isNestedScrollingCheckEnabled() && (weakReference = this.nestedScrollingChildRef) != null && view == weakReference.get() && (this.state != 3 || super.onNestedPreFling(coordinatorLayout, v, view, f, f2));
+        return isNestedScrollingCheckEnabled() && (weakReference = this.nestedScrollingChildRef) != null && view == weakReference.get() && (!(this.state == 3 || this.draggableOnNestedScrollLastDragIgnored) || super.onNestedPreFling(coordinatorLayout, v, view, f, f2));
     }
 
     public boolean isFitToContents() {
@@ -969,6 +985,14 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         return this.draggable;
     }
 
+    public void setDraggableOnNestedScroll(boolean z) {
+        this.draggableOnNestedScroll = z;
+    }
+
+    public boolean isDraggableOnNestedScroll() {
+        return this.draggableOnNestedScroll;
+    }
+
     public void setSignificantVelocityThreshold(int i) {
         this.significantVelocityThreshold = i;
     }
@@ -1045,7 +1069,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
 
     private boolean isLayouting(V v) {
         ViewParent parent = v.getParent();
-        return parent != null && parent.isLayoutRequested() && ViewCompat.isAttachedToWindow(v);
+        return parent != null && parent.isLayoutRequested() && v.isAttachedToWindow();
     }
 
     public void setGestureInsetBottomIgnored(boolean z) {
@@ -1140,6 +1164,18 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
             }
         }
         return 0.0f;
+    }
+
+    private boolean isTouchingScrollingChild(CoordinatorLayout coordinatorLayout, int i, int i2) {
+        WeakReference<View> weakReference = this.nestedScrollingChildRef;
+        View view = weakReference != null ? weakReference.get() : null;
+        return view != null && coordinatorLayout.isPointInChildBounds(view, i, i2);
+    }
+
+    private boolean isTouchingDragHandle(CoordinatorLayout coordinatorLayout, int i, int i2) {
+        WeakReference<View> weakReference = this.dragHandleViewRef;
+        View view = weakReference != null ? weakReference.get() : null;
+        return view != null && coordinatorLayout.isPointInChildBounds(view, i, i2);
     }
 
     private boolean isAtTopOfScreen() {
@@ -1304,7 +1340,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         if (view.getVisibility() != 0) {
             return null;
         }
-        if (ViewCompat.isNestedScrollingEnabled(view)) {
+        if (view.isNestedScrollingEnabled()) {
             return view;
         }
         if (view instanceof ViewGroup) {
@@ -1522,7 +1558,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
             if (this.isContinueSettlingRunnablePosted) {
                 return;
             }
-            ViewCompat.postOnAnimation(BottomSheetBehavior.this.viewRef.get(), this.continueSettlingRunnable);
+            BottomSheetBehavior.this.viewRef.get().postOnAnimation(this.continueSettlingRunnable);
             this.isContinueSettlingRunnablePosted = true;
         }
     }
@@ -1630,10 +1666,10 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                     if (z) {
                         this.importantForAccessibilityMap.put(childAt, Integer.valueOf(childAt.getImportantForAccessibility()));
                         if (this.updateImportantForAccessibilityOnSiblings) {
-                            ViewCompat.setImportantForAccessibility(childAt, 4);
+                            childAt.setImportantForAccessibility(4);
                         }
                     } else if (this.updateImportantForAccessibilityOnSiblings && (map = this.importantForAccessibilityMap) != null && map.containsKey(childAt)) {
-                        ViewCompat.setImportantForAccessibility(childAt, this.importantForAccessibilityMap.get(childAt).intValue());
+                        childAt.setImportantForAccessibility(this.importantForAccessibilityMap.get(childAt).intValue());
                     }
                 }
             }
@@ -1643,6 +1679,11 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                 this.viewRef.get().sendAccessibilityEvent(8);
             }
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void setDragHandleView(BottomSheetDragHandleView bottomSheetDragHandleView) {
+        this.dragHandleViewRef = bottomSheetDragHandleView != null ? new WeakReference<>(bottomSheetDragHandleView) : null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

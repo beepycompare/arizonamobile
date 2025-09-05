@@ -228,8 +228,8 @@ public class GifDrawable extends Drawable implements GifFrameLoader.FrameCallbac
         if (i == -1 || this.loopCount < i) {
             return;
         }
-        notifyAnimationEndToListeners();
         stop();
+        notifyAnimationEndToListeners();
     }
 
     private void notifyAnimationEndToListeners() {

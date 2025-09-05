@@ -11,7 +11,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TaskThreadHelper.kt */
 @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\bÀ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u001b\u0010\u0003\u001a\u00020\u00048FX\u0086\u0084\u0002¢\u0006\f\n\u0004\b\u0007\u0010\b\u001a\u0004\b\u0005\u0010\u0006R\u001b\u0010\t\u001a\u00020\n8FX\u0086\u0084\u0002¢\u0006\f\n\u0004\b\r\u0010\b\u001a\u0004\b\u000b\u0010\f¨\u0006\u000e"}, d2 = {"Lru/rustore/sdk/core/tasks/TaskThreadHelper;", "", "()V", "executorService", "Ljava/util/concurrent/ExecutorService;", "getExecutorService", "()Ljava/util/concurrent/ExecutorService;", "executorService$delegate", "Lkotlin/Lazy;", "mainHandler", "Landroid/os/Handler;", "getMainHandler", "()Landroid/os/Handler;", "mainHandler$delegate", "sdk-public-core_release"}, k = 1, mv = {1, 7, 0}, xi = 48)
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class TaskThreadHelper {
     public static final TaskThreadHelper INSTANCE = new TaskThreadHelper();
     private static final Lazy executorService$delegate = LazyKt.lazy(new Function0<ExecutorService>() { // from class: ru.rustore.sdk.core.tasks.TaskThreadHelper$executorService$2

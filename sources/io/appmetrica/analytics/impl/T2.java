@@ -1,12 +1,19 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateSerializer;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
 /* loaded from: classes4.dex */
-public final class T2 implements uo {
-    @Override // io.appmetrica.analytics.impl.uo
-    public final so a(Object obj) {
-        C0314ho[] c0314hoArr = ((C0391ko) obj).f944a;
-        if (c0314hoArr != null && c0314hoArr.length != 0) {
-            return new so(this, true, "");
-        }
-        return new so(this, false, "attributes list is empty");
+public abstract class T2 implements ProtobufStateSerializer {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    /* renamed from: a */
+    public abstract MessageNano defaultValue();
+
+    public final byte[] a(MessageNano messageNano) {
+        return MessageNano.toByteArray(messageNano);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    public final byte[] toByteArray(Object obj) {
+        return MessageNano.toByteArray((MessageNano) obj);
     }
 }

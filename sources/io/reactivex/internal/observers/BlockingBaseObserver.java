@@ -5,7 +5,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.util.BlockingHelper;
 import io.reactivex.internal.util.ExceptionHelper;
 import java.util.concurrent.CountDownLatch;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class BlockingBaseObserver<T> extends CountDownLatch implements Observer<T>, Disposable {
     volatile boolean cancelled;
     Throwable error;

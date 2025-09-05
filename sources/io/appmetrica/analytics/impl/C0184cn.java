@@ -1,21 +1,19 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
 /* renamed from: io.appmetrica.analytics.impl.cn  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0184cn extends O4 {
-    public final Nn g;
-
-    public C0184cn(String str, String str2, Nn nn, uo uoVar, W2 w2) {
-        super(0, str, str2, uoVar, w2);
-        this.g = nn;
+public final class C0184cn extends Yi {
+    public C0184cn(Context context, String str) {
+        super(context, str, "array");
     }
 
-    @Override // io.appmetrica.analytics.impl.O4
-    public final void a(C0314ho c0314ho) {
-        String str = (String) this.g.a((String) this.f);
-        c0314ho.d.f930a = str == null ? new byte[0] : str.getBytes();
+    @Override // io.appmetrica.analytics.impl.Yi
+    public final Object a(int i) {
+        return this.f755a.getResources().getStringArray(i);
     }
 
-    public final Nn h() {
-        return this.g;
+    public final String[] b(int i) {
+        return this.f755a.getResources().getStringArray(i);
     }
 }

@@ -1,340 +1,678 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import com.google.common.net.HttpHeaders;
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.coreutils.internal.executors.SynchronizedBlockingExecutor;
-import io.appmetrica.analytics.networktasks.internal.AllHostsExponentialBackoffPolicy;
-import io.appmetrica.analytics.networktasks.internal.DefaultResponseValidityChecker;
-import io.appmetrica.analytics.networktasks.internal.FinalConfigProvider;
-import io.appmetrica.analytics.networktasks.internal.FullUrlFormer;
-import io.appmetrica.analytics.networktasks.internal.NetworkTask;
-import io.appmetrica.analytics.networktasks.internal.RequestDataHolder;
-import io.appmetrica.analytics.networktasks.internal.ResponseDataHolder;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
-import kotlin.Unit;
-import kotlin.collections.CollectionsKt;
-import kotlin.text.StringsKt;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.media3.extractor.ts.TsExtractor;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import com.google.android.vending.expansion.downloader.impl.DownloaderService;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes4.dex */
-public final class Gm {
+public final class Gm extends MessageNano {
+    public static final int E = -1;
+    public static final int F = 0;
+    public static final int G = 1;
+    public static volatile Gm[] H;
+    public C0693wm A;
+    public Em B;
+    public Cm[] C;
+    public Am D;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Hm f462a;
-    public volatile NetworkTask b;
+    public String f460a;
+    public long b;
+    public String[] c;
+    public String d;
+    public String e;
+    public String[] f;
+    public String[] g;
+    public C0768zm[] h;
+    public Bm i;
+    public String j;
+    public String k;
+    public String l;
+    public boolean m;
+    public String n;
+    public String[] o;
+    public Fm p;
+    public boolean q;
+    public String r;
+    public long s;
+    public long t;
+    public boolean u;
+    public Dm v;
+    public int w;
+    public int x;
+    public C0743ym y;
+    public C0718xm z;
 
-    public Gm(Hm hm) {
-        this.f462a = hm;
+    public Gm() {
+        a();
     }
 
-    public final Context b() {
-        return this.f462a.f482a;
-    }
-
-    public final synchronized NetworkTask c() {
-        NetworkTask networkTask;
-        try {
-            try {
-                if (g()) {
-                    networkTask = this.b;
-                    if (networkTask != null && !networkTask.isRemoved()) {
-                    }
-                    C0286gm d = d();
-                    C0432me c0432me = C0432me.f967a;
-                    C0183cm c0183cm = new C0183cm(new C0706xe(), Ka.F.o());
-                    FinalConfigProvider finalConfigProvider = new FinalConfigProvider(d);
-                    try {
-                        NetworkTask networkTask2 = new NetworkTask(new SynchronizedBlockingExecutor(), new K5(this.f462a.f482a), new AllHostsExponentialBackoffPolicy(C0432me.f967a.a(EnumC0381ke.STARTUP)), new Em(this, new Wl(), new FullUrlFormer(c0183cm, finalConfigProvider), new RequestDataHolder(), new ResponseDataHolder(new DefaultResponseValidityChecker()), finalConfigProvider), CollectionsKt.emptyList(), C0432me.c);
-                        this.b = networkTask2;
-                        networkTask = networkTask2;
-                    } catch (Throwable th) {
-                        th = th;
-                        throw th;
-                    }
-                } else {
-                    networkTask = null;
-                }
-                return networkTask;
-            } catch (Throwable th2) {
-                th = th2;
-            }
-        } catch (Throwable th3) {
-            th = th3;
-        }
-    }
-
-    public final C0286gm d() {
-        return (C0286gm) this.f462a.l.a();
-    }
-
-    public final C0389km e() {
-        C0389km c0389km;
-        Nl nl = this.f462a.l;
-        synchronized (nl) {
-            c0389km = nl.c.f882a;
-        }
-        return c0389km;
-    }
-
-    public final void f() {
-        C0389km c0389km;
-        Nl nl = this.f462a.l;
-        synchronized (nl) {
-            c0389km = nl.c.f882a;
-        }
-        C0490om c0490om = c0389km.c;
-        C0465nm a2 = c0490om.a(c0490om.m);
-        String str = c0389km.f942a;
-        String str2 = c0389km.b;
-        ro roVar = this.f462a.n;
-        String str3 = c0389km.d;
-        roVar.getClass();
-        if (!ro.a(str3)) {
-            a2.f988a = this.f462a.m.a().id;
-        }
-        String str4 = c0389km.f942a;
-        if (str4 == null || str4.length() == 0) {
-            str = this.f462a.h.a();
-            str2 = "";
-        }
-        List<String> list = this.f462a.c.e;
-        a2.g = (list == null || list.isEmpty()) ? null : null;
-        C0389km c0389km2 = new C0389km(str, str2, new C0490om(a2));
-        b(c0389km2);
-        a(c0389km2);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0065, code lost:
-        if (r0 == false) goto L26;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0033 A[Catch: all -> 0x006b, TryCatch #0 {, blocks: (B:3:0x0001, B:8:0x0010, B:10:0x001b, B:16:0x0033, B:18:0x003b, B:20:0x0043, B:23:0x004c), top: B:33:0x0001 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final synchronized boolean g() {
-        boolean z;
-        boolean z2 = false;
-        if (Ka.F.g().isRestrictedForSdk()) {
-            return false;
-        }
-        C0389km e = e();
-        Set set = AbstractC0312hm.f894a;
-        boolean z3 = true;
-        if (!e.w) {
-            if (AbstractC0312hm.b.currentTimeSeconds() <= e.o + e.A.f502a) {
-                z = false;
-                if (!z) {
-                    if (AbstractC0312hm.a(e.d) && AbstractC0312hm.a(e.f942a) && AbstractC0312hm.a(e.b)) {
-                        z2 = true;
-                    }
-                    z = !z2;
-                    Y3 y3 = this.f462a.k;
-                    Map map = d().h;
-                    V3 v3 = this.f462a.j;
-                    y3.getClass();
-                    boolean a2 = Y3.a(map, e, v3);
-                    if (z2) {
-                    }
-                }
-                z3 = z;
-                return z3;
-            }
-        }
-        z = true;
-        if (!z) {
-        }
-        z3 = z;
-        return z3;
-    }
-
-    public final synchronized void h() {
-        this.b = null;
-    }
-
-    public final C0398l5 a() {
-        return this.f462a.f;
-    }
-
-    public final synchronized void b(C0389km c0389km) {
-        this.f462a.l.a(c0389km);
-        C0363jm c0363jm = this.f462a.g;
-        c0363jm.b.a(c0389km.f942a);
-        c0363jm.b.b(c0389km.b);
-        c0363jm.f928a.save(c0389km.c);
-        this.f462a.e.a(c0389km);
-    }
-
-    public final synchronized boolean a(List<String> list, Map<String, String> map) {
-        return !AbstractC0312hm.a(e(), list, map, new Fm(this));
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x003a, code lost:
-        if (r5 == null) goto L23;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final C0389km a(C0337im c0337im, C0286gm c0286gm, long j) {
-        String str;
-        boolean equals;
-        String a2 = Lm.a(c0286gm.h);
-        Map map = c0286gm.i.f572a;
-        String str2 = c0337im.j;
-        String str3 = e().k;
-        if (!Lm.a(Lm.a(str2))) {
-            str2 = Lm.a(Lm.a(str3)) ? str3 : null;
-        }
-        String str4 = e().f942a;
-        if (str4 != null) {
-            str = StringsKt.isBlank(str4) ? null : str4;
-        }
-        str = c0337im.h;
-        C0465nm c0465nm = new C0465nm(c0337im.b);
-        String str5 = c0337im.i;
-        c0465nm.o = this.f462a.i.currentTimeSeconds();
-        c0465nm.f988a = e().d;
-        c0465nm.c = c0337im.d;
-        c0465nm.f = c0337im.c;
-        c0465nm.g = c0286gm.e;
-        c0465nm.b = c0337im.e;
-        c0465nm.d = c0337im.f;
-        c0465nm.e = c0337im.g;
-        c0465nm.h = c0337im.n;
-        c0465nm.i = c0337im.o;
-        c0465nm.j = str2;
-        c0465nm.k = a2;
-        this.f462a.k.getClass();
-        HashMap a3 = Lm.a(str2);
-        if (no.a(map)) {
-            equals = no.a((Map) a3);
-        } else {
-            equals = a3.equals(map);
-        }
-        c0465nm.q = equals;
-        c0465nm.l = Lm.a(map);
-        c0465nm.r = c0337im.m;
-        c0465nm.n = c0337im.k;
-        c0465nm.s = c0337im.p;
-        c0465nm.p = true;
-        c0465nm.t = j;
-        C0286gm d = d();
-        if (d.n == 0) {
-            d.n = j;
-        }
-        c0465nm.u = d.n;
-        c0465nm.v = false;
-        c0465nm.w = c0337im.q;
-        c0465nm.y = c0337im.s;
-        c0465nm.x = c0337im.r;
-        c0465nm.z = c0337im.t;
-        c0465nm.A = c0337im.u;
-        c0465nm.B = c0337im.v;
-        c0465nm.C = c0337im.w;
-        return new C0389km(str, str5, new C0490om(c0465nm));
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0035 A[Catch: all -> 0x0054, TRY_ENTER, TryCatch #1 {, blocks: (B:3:0x0001, B:5:0x0007, B:12:0x0035, B:14:0x003c), top: B:24:0x0001 }] */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x003a  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(C0337im c0337im, C0286gm c0286gm, Map<String, ? extends List<String>> map) {
-        Long l;
-        C0389km a2;
-        synchronized (this) {
-            if (!no.a((Map) map)) {
-                List list = (List) CollectionUtils.getFromMapIgnoreCase(map, HttpHeaders.DATE);
-                if (!no.a((Collection) list)) {
-                    try {
-                        l = Long.valueOf(new SimpleDateFormat("E, d MMM yyyy HH:mm:ss z", Locale.US).parse((String) list.get(0)).getTime());
-                    } catch (Throwable unused) {
-                    }
-                    long longValue = l == null ? l.longValue() : 0L;
-                    AbstractC0413lk.f955a.a(longValue, c0337im.l);
-                    a2 = a(c0337im, c0286gm, longValue);
-                    h();
-                    b(a2);
-                    Unit unit = Unit.INSTANCE;
+    public static Gm[] b() {
+        if (H == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (H == null) {
+                    H = new Gm[0];
                 }
             }
-            l = null;
-            if (l == null) {
-            }
-            AbstractC0413lk.f955a.a(longValue, c0337im.l);
-            a2 = a(c0337im, c0286gm, longValue);
-            h();
-            b(a2);
-            Unit unit2 = Unit.INSTANCE;
         }
-        a(a2);
+        return H;
     }
 
-    public final void a(C0389km c0389km) {
-        ArrayList arrayList;
-        Hm hm = this.f462a;
-        Kl kl = hm.d;
-        String str = hm.b;
-        synchronized (kl.f533a.b) {
-            Ml ml = kl.f533a;
-            ml.c = c0389km;
-            Collection collection = (Collection) ml.f565a.f558a.get(str);
-            if (collection == null) {
-                arrayList = new ArrayList();
-            } else {
-                arrayList = new ArrayList(collection);
-            }
-        }
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            ((Vl) it.next()).a(c0389km);
-        }
+    public final Gm a() {
+        this.f460a = "";
+        this.b = 0L;
+        String[] strArr = WireFormatNano.EMPTY_STRING_ARRAY;
+        this.c = strArr;
+        this.d = "";
+        this.e = "";
+        this.f = strArr;
+        this.g = strArr;
+        this.h = C0768zm.b();
+        this.i = null;
+        this.j = "";
+        this.k = "";
+        this.l = "";
+        this.m = false;
+        this.n = "";
+        this.o = strArr;
+        this.p = null;
+        this.q = false;
+        this.r = "";
+        this.s = 0L;
+        this.t = 0L;
+        this.u = false;
+        this.v = null;
+        this.w = 600;
+        this.x = 1;
+        this.y = null;
+        this.z = null;
+        this.A = null;
+        this.B = null;
+        this.C = Cm.b();
+        this.D = null;
+        this.cachedSize = -1;
+        return this;
     }
 
-    public final void a(Ol ol) {
-        synchronized (this) {
-            this.b = null;
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        if (!this.f460a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f460a);
         }
-        Hm hm = this.f462a;
-        hm.d.a(hm.f.f949a, ol, e());
-    }
-
-    public final synchronized void a(C0234em c0234em) {
-        this.f462a.l.a(c0234em);
-        C0286gm d = d();
-        if (d.k) {
-            List list = d.j;
-            if (list != null && !list.isEmpty()) {
-                if (!no.a(list, d.e)) {
-                    C0389km e = e();
-                    C0490om c0490om = e.c;
-                    C0465nm a2 = c0490om.a(c0490om.m);
-                    String str = e.f942a;
-                    String str2 = e.b;
-                    a2.g = list;
-                    C0389km c0389km = new C0389km(str, str2, new C0490om(a2));
-                    b(c0389km);
-                    a(c0389km);
+        int computeInt64Size = CodedOutputByteBufferNano.computeInt64Size(2, this.b) + computeSerializedSize;
+        String[] strArr = this.c;
+        int i = 0;
+        if (strArr != null && strArr.length > 0) {
+            int i2 = 0;
+            int i3 = 0;
+            int i4 = 0;
+            while (true) {
+                String[] strArr2 = this.c;
+                if (i2 >= strArr2.length) {
+                    break;
                 }
+                String str = strArr2[i2];
+                if (str != null) {
+                    i4++;
+                    i3 += CodedOutputByteBufferNano.computeStringSizeNoTag(str);
+                }
+                i2++;
             }
-            List list2 = d.e;
-            if (list2 != null && (!list2.isEmpty())) {
-                C0389km e2 = e();
-                C0490om c0490om2 = e2.c;
-                C0465nm a3 = c0490om2.a(c0490om2.m);
-                String str3 = e2.f942a;
-                String str4 = e2.b;
-                a3.g = null;
-                C0389km c0389km2 = new C0389km(str3, str4, new C0490om(a3));
-                b(c0389km2);
-                a(c0389km2);
+            computeInt64Size = computeInt64Size + i3 + i4;
+        }
+        if (!this.d.equals("")) {
+            computeInt64Size += CodedOutputByteBufferNano.computeStringSize(4, this.d);
+        }
+        if (!this.e.equals("")) {
+            computeInt64Size += CodedOutputByteBufferNano.computeStringSize(5, this.e);
+        }
+        String[] strArr3 = this.f;
+        if (strArr3 != null && strArr3.length > 0) {
+            int i5 = 0;
+            int i6 = 0;
+            int i7 = 0;
+            while (true) {
+                String[] strArr4 = this.f;
+                if (i5 >= strArr4.length) {
+                    break;
+                }
+                String str2 = strArr4[i5];
+                if (str2 != null) {
+                    i7++;
+                    i6 += CodedOutputByteBufferNano.computeStringSizeNoTag(str2);
+                }
+                i5++;
+            }
+            computeInt64Size = computeInt64Size + i6 + i7;
+        }
+        String[] strArr5 = this.g;
+        if (strArr5 != null && strArr5.length > 0) {
+            int i8 = 0;
+            int i9 = 0;
+            int i10 = 0;
+            while (true) {
+                String[] strArr6 = this.g;
+                if (i8 >= strArr6.length) {
+                    break;
+                }
+                String str3 = strArr6[i8];
+                if (str3 != null) {
+                    i10++;
+                    i9 += CodedOutputByteBufferNano.computeStringSizeNoTag(str3);
+                }
+                i8++;
+            }
+            computeInt64Size = computeInt64Size + i9 + i10;
+        }
+        C0768zm[] c0768zmArr = this.h;
+        if (c0768zmArr != null && c0768zmArr.length > 0) {
+            int i11 = 0;
+            while (true) {
+                C0768zm[] c0768zmArr2 = this.h;
+                if (i11 >= c0768zmArr2.length) {
+                    break;
+                }
+                C0768zm c0768zm = c0768zmArr2[i11];
+                if (c0768zm != null) {
+                    computeInt64Size += CodedOutputByteBufferNano.computeMessageSize(8, c0768zm);
+                }
+                i11++;
             }
         }
+        Bm bm = this.i;
+        if (bm != null) {
+            computeInt64Size += CodedOutputByteBufferNano.computeMessageSize(9, bm);
+        }
+        if (!this.j.equals("")) {
+            computeInt64Size += CodedOutputByteBufferNano.computeStringSize(10, this.j);
+        }
+        if (!this.k.equals("")) {
+            computeInt64Size += CodedOutputByteBufferNano.computeStringSize(11, this.k);
+        }
+        if (!this.l.equals("")) {
+            computeInt64Size += CodedOutputByteBufferNano.computeStringSize(12, this.l);
+        }
+        int computeBoolSize = CodedOutputByteBufferNano.computeBoolSize(13, this.m) + computeInt64Size;
+        if (!this.n.equals("")) {
+            computeBoolSize += CodedOutputByteBufferNano.computeStringSize(14, this.n);
+        }
+        String[] strArr7 = this.o;
+        if (strArr7 != null && strArr7.length > 0) {
+            int i12 = 0;
+            int i13 = 0;
+            int i14 = 0;
+            while (true) {
+                String[] strArr8 = this.o;
+                if (i12 >= strArr8.length) {
+                    break;
+                }
+                String str4 = strArr8[i12];
+                if (str4 != null) {
+                    i14++;
+                    i13 += CodedOutputByteBufferNano.computeStringSizeNoTag(str4);
+                }
+                i12++;
+            }
+            computeBoolSize = computeBoolSize + i13 + i14;
+        }
+        Fm fm = this.p;
+        if (fm != null) {
+            computeBoolSize += CodedOutputByteBufferNano.computeMessageSize(16, fm);
+        }
+        boolean z = this.q;
+        if (z) {
+            computeBoolSize += CodedOutputByteBufferNano.computeBoolSize(17, z);
+        }
+        if (!this.r.equals("")) {
+            computeBoolSize += CodedOutputByteBufferNano.computeStringSize(20, this.r);
+        }
+        int computeInt64Size2 = CodedOutputByteBufferNano.computeInt64Size(22, this.t) + CodedOutputByteBufferNano.computeInt64Size(21, this.s) + computeBoolSize;
+        boolean z2 = this.u;
+        if (z2) {
+            computeInt64Size2 += CodedOutputByteBufferNano.computeBoolSize(23, z2);
+        }
+        Dm dm = this.v;
+        if (dm != null) {
+            computeInt64Size2 += CodedOutputByteBufferNano.computeMessageSize(24, dm);
+        }
+        int computeInt32Size = CodedOutputByteBufferNano.computeInt32Size(26, this.x) + CodedOutputByteBufferNano.computeInt32Size(25, this.w) + computeInt64Size2;
+        C0743ym c0743ym = this.y;
+        if (c0743ym != null) {
+            computeInt32Size += CodedOutputByteBufferNano.computeMessageSize(27, c0743ym);
+        }
+        C0718xm c0718xm = this.z;
+        if (c0718xm != null) {
+            computeInt32Size += CodedOutputByteBufferNano.computeMessageSize(28, c0718xm);
+        }
+        C0693wm c0693wm = this.A;
+        if (c0693wm != null) {
+            computeInt32Size += CodedOutputByteBufferNano.computeMessageSize(29, c0693wm);
+        }
+        Em em = this.B;
+        if (em != null) {
+            computeInt32Size += CodedOutputByteBufferNano.computeMessageSize(30, em);
+        }
+        Cm[] cmArr = this.C;
+        if (cmArr != null && cmArr.length > 0) {
+            while (true) {
+                Cm[] cmArr2 = this.C;
+                if (i >= cmArr2.length) {
+                    break;
+                }
+                Cm cm = cmArr2[i];
+                if (cm != null) {
+                    computeInt32Size += CodedOutputByteBufferNano.computeMessageSize(31, cm);
+                }
+                i++;
+            }
+        }
+        Am am = this.D;
+        return am != null ? CodedOutputByteBufferNano.computeMessageSize(32, am) + computeInt32Size : computeInt32Size;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        if (!this.f460a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f460a);
+        }
+        codedOutputByteBufferNano.writeInt64(2, this.b);
+        String[] strArr = this.c;
+        int i = 0;
+        if (strArr != null && strArr.length > 0) {
+            int i2 = 0;
+            while (true) {
+                String[] strArr2 = this.c;
+                if (i2 >= strArr2.length) {
+                    break;
+                }
+                String str = strArr2[i2];
+                if (str != null) {
+                    codedOutputByteBufferNano.writeString(3, str);
+                }
+                i2++;
+            }
+        }
+        if (!this.d.equals("")) {
+            codedOutputByteBufferNano.writeString(4, this.d);
+        }
+        if (!this.e.equals("")) {
+            codedOutputByteBufferNano.writeString(5, this.e);
+        }
+        String[] strArr3 = this.f;
+        if (strArr3 != null && strArr3.length > 0) {
+            int i3 = 0;
+            while (true) {
+                String[] strArr4 = this.f;
+                if (i3 >= strArr4.length) {
+                    break;
+                }
+                String str2 = strArr4[i3];
+                if (str2 != null) {
+                    codedOutputByteBufferNano.writeString(6, str2);
+                }
+                i3++;
+            }
+        }
+        String[] strArr5 = this.g;
+        if (strArr5 != null && strArr5.length > 0) {
+            int i4 = 0;
+            while (true) {
+                String[] strArr6 = this.g;
+                if (i4 >= strArr6.length) {
+                    break;
+                }
+                String str3 = strArr6[i4];
+                if (str3 != null) {
+                    codedOutputByteBufferNano.writeString(7, str3);
+                }
+                i4++;
+            }
+        }
+        C0768zm[] c0768zmArr = this.h;
+        if (c0768zmArr != null && c0768zmArr.length > 0) {
+            int i5 = 0;
+            while (true) {
+                C0768zm[] c0768zmArr2 = this.h;
+                if (i5 >= c0768zmArr2.length) {
+                    break;
+                }
+                C0768zm c0768zm = c0768zmArr2[i5];
+                if (c0768zm != null) {
+                    codedOutputByteBufferNano.writeMessage(8, c0768zm);
+                }
+                i5++;
+            }
+        }
+        Bm bm = this.i;
+        if (bm != null) {
+            codedOutputByteBufferNano.writeMessage(9, bm);
+        }
+        if (!this.j.equals("")) {
+            codedOutputByteBufferNano.writeString(10, this.j);
+        }
+        if (!this.k.equals("")) {
+            codedOutputByteBufferNano.writeString(11, this.k);
+        }
+        if (!this.l.equals("")) {
+            codedOutputByteBufferNano.writeString(12, this.l);
+        }
+        codedOutputByteBufferNano.writeBool(13, this.m);
+        if (!this.n.equals("")) {
+            codedOutputByteBufferNano.writeString(14, this.n);
+        }
+        String[] strArr7 = this.o;
+        if (strArr7 != null && strArr7.length > 0) {
+            int i6 = 0;
+            while (true) {
+                String[] strArr8 = this.o;
+                if (i6 >= strArr8.length) {
+                    break;
+                }
+                String str4 = strArr8[i6];
+                if (str4 != null) {
+                    codedOutputByteBufferNano.writeString(15, str4);
+                }
+                i6++;
+            }
+        }
+        Fm fm = this.p;
+        if (fm != null) {
+            codedOutputByteBufferNano.writeMessage(16, fm);
+        }
+        boolean z = this.q;
+        if (z) {
+            codedOutputByteBufferNano.writeBool(17, z);
+        }
+        if (!this.r.equals("")) {
+            codedOutputByteBufferNano.writeString(20, this.r);
+        }
+        codedOutputByteBufferNano.writeInt64(21, this.s);
+        codedOutputByteBufferNano.writeInt64(22, this.t);
+        boolean z2 = this.u;
+        if (z2) {
+            codedOutputByteBufferNano.writeBool(23, z2);
+        }
+        Dm dm = this.v;
+        if (dm != null) {
+            codedOutputByteBufferNano.writeMessage(24, dm);
+        }
+        codedOutputByteBufferNano.writeInt32(25, this.w);
+        codedOutputByteBufferNano.writeInt32(26, this.x);
+        C0743ym c0743ym = this.y;
+        if (c0743ym != null) {
+            codedOutputByteBufferNano.writeMessage(27, c0743ym);
+        }
+        C0718xm c0718xm = this.z;
+        if (c0718xm != null) {
+            codedOutputByteBufferNano.writeMessage(28, c0718xm);
+        }
+        C0693wm c0693wm = this.A;
+        if (c0693wm != null) {
+            codedOutputByteBufferNano.writeMessage(29, c0693wm);
+        }
+        Em em = this.B;
+        if (em != null) {
+            codedOutputByteBufferNano.writeMessage(30, em);
+        }
+        Cm[] cmArr = this.C;
+        if (cmArr != null && cmArr.length > 0) {
+            while (true) {
+                Cm[] cmArr2 = this.C;
+                if (i >= cmArr2.length) {
+                    break;
+                }
+                Cm cm = cmArr2[i];
+                if (cm != null) {
+                    codedOutputByteBufferNano.writeMessage(31, cm);
+                }
+                i++;
+            }
+        }
+        Am am = this.D;
+        if (am != null) {
+            codedOutputByteBufferNano.writeMessage(32, am);
+        }
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    public static Gm b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new Gm().mergeFrom(codedInputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final Gm mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            switch (readTag) {
+                case 0:
+                    break;
+                case 10:
+                    this.f460a = codedInputByteBufferNano.readString();
+                    break;
+                case 16:
+                    this.b = codedInputByteBufferNano.readInt64();
+                    break;
+                case 26:
+                    int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 26);
+                    String[] strArr = this.c;
+                    int length = strArr == null ? 0 : strArr.length;
+                    int i = repeatedFieldArrayLength + length;
+                    String[] strArr2 = new String[i];
+                    if (length != 0) {
+                        System.arraycopy(strArr, 0, strArr2, 0, length);
+                    }
+                    while (length < i - 1) {
+                        strArr2[length] = codedInputByteBufferNano.readString();
+                        codedInputByteBufferNano.readTag();
+                        length++;
+                    }
+                    strArr2[length] = codedInputByteBufferNano.readString();
+                    this.c = strArr2;
+                    break;
+                case 34:
+                    this.d = codedInputByteBufferNano.readString();
+                    break;
+                case 42:
+                    this.e = codedInputByteBufferNano.readString();
+                    break;
+                case 50:
+                    int repeatedFieldArrayLength2 = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 50);
+                    String[] strArr3 = this.f;
+                    int length2 = strArr3 == null ? 0 : strArr3.length;
+                    int i2 = repeatedFieldArrayLength2 + length2;
+                    String[] strArr4 = new String[i2];
+                    if (length2 != 0) {
+                        System.arraycopy(strArr3, 0, strArr4, 0, length2);
+                    }
+                    while (length2 < i2 - 1) {
+                        strArr4[length2] = codedInputByteBufferNano.readString();
+                        codedInputByteBufferNano.readTag();
+                        length2++;
+                    }
+                    strArr4[length2] = codedInputByteBufferNano.readString();
+                    this.f = strArr4;
+                    break;
+                case 58:
+                    int repeatedFieldArrayLength3 = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 58);
+                    String[] strArr5 = this.g;
+                    int length3 = strArr5 == null ? 0 : strArr5.length;
+                    int i3 = repeatedFieldArrayLength3 + length3;
+                    String[] strArr6 = new String[i3];
+                    if (length3 != 0) {
+                        System.arraycopy(strArr5, 0, strArr6, 0, length3);
+                    }
+                    while (length3 < i3 - 1) {
+                        strArr6[length3] = codedInputByteBufferNano.readString();
+                        codedInputByteBufferNano.readTag();
+                        length3++;
+                    }
+                    strArr6[length3] = codedInputByteBufferNano.readString();
+                    this.g = strArr6;
+                    break;
+                case ConstraintLayout.LayoutParams.Table.LAYOUT_WRAP_BEHAVIOR_IN_PARENT /* 66 */:
+                    int repeatedFieldArrayLength4 = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 66);
+                    C0768zm[] c0768zmArr = this.h;
+                    int length4 = c0768zmArr == null ? 0 : c0768zmArr.length;
+                    int i4 = repeatedFieldArrayLength4 + length4;
+                    C0768zm[] c0768zmArr2 = new C0768zm[i4];
+                    if (length4 != 0) {
+                        System.arraycopy(c0768zmArr, 0, c0768zmArr2, 0, length4);
+                    }
+                    while (length4 < i4 - 1) {
+                        C0768zm c0768zm = new C0768zm();
+                        c0768zmArr2[length4] = c0768zm;
+                        codedInputByteBufferNano.readMessage(c0768zm);
+                        codedInputByteBufferNano.readTag();
+                        length4++;
+                    }
+                    C0768zm c0768zm2 = new C0768zm();
+                    c0768zmArr2[length4] = c0768zm2;
+                    codedInputByteBufferNano.readMessage(c0768zm2);
+                    this.h = c0768zmArr2;
+                    break;
+                case 74:
+                    if (this.i == null) {
+                        this.i = new Bm();
+                    }
+                    codedInputByteBufferNano.readMessage(this.i);
+                    break;
+                case 82:
+                    this.j = codedInputByteBufferNano.readString();
+                    break;
+                case 90:
+                    this.k = codedInputByteBufferNano.readString();
+                    break;
+                case 98:
+                    this.l = codedInputByteBufferNano.readString();
+                    break;
+                case 104:
+                    this.m = codedInputByteBufferNano.readBool();
+                    break;
+                case 114:
+                    this.n = codedInputByteBufferNano.readString();
+                    break;
+                case 122:
+                    int repeatedFieldArrayLength5 = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 122);
+                    String[] strArr7 = this.o;
+                    int length5 = strArr7 == null ? 0 : strArr7.length;
+                    int i5 = repeatedFieldArrayLength5 + length5;
+                    String[] strArr8 = new String[i5];
+                    if (length5 != 0) {
+                        System.arraycopy(strArr7, 0, strArr8, 0, length5);
+                    }
+                    while (length5 < i5 - 1) {
+                        strArr8[length5] = codedInputByteBufferNano.readString();
+                        codedInputByteBufferNano.readTag();
+                        length5++;
+                    }
+                    strArr8[length5] = codedInputByteBufferNano.readString();
+                    this.o = strArr8;
+                    break;
+                case TsExtractor.TS_STREAM_TYPE_HDMV_DTS /* 130 */:
+                    if (this.p == null) {
+                        this.p = new Fm();
+                    }
+                    codedInputByteBufferNano.readMessage(this.p);
+                    break;
+                case TsExtractor.TS_STREAM_TYPE_DTS_HD /* 136 */:
+                    this.q = codedInputByteBufferNano.readBool();
+                    break;
+                case 162:
+                    this.r = codedInputByteBufferNano.readString();
+                    break;
+                case 168:
+                    this.s = codedInputByteBufferNano.readInt64();
+                    break;
+                case 176:
+                    this.t = codedInputByteBufferNano.readInt64();
+                    break;
+                case 184:
+                    this.u = codedInputByteBufferNano.readBool();
+                    break;
+                case DownloaderService.STATUS_WAITING_TO_RETRY /* 194 */:
+                    if (this.v == null) {
+                        this.v = new Dm();
+                    }
+                    codedInputByteBufferNano.readMessage(this.v);
+                    break;
+                case 200:
+                    this.w = codedInputByteBufferNano.readInt32();
+                    break;
+                case 208:
+                    this.x = codedInputByteBufferNano.readInt32();
+                    break;
+                case 218:
+                    if (this.y == null) {
+                        this.y = new C0743ym();
+                    }
+                    codedInputByteBufferNano.readMessage(this.y);
+                    break;
+                case 226:
+                    if (this.z == null) {
+                        this.z = new C0718xm();
+                    }
+                    codedInputByteBufferNano.readMessage(this.z);
+                    break;
+                case 234:
+                    if (this.A == null) {
+                        this.A = new C0693wm();
+                    }
+                    codedInputByteBufferNano.readMessage(this.A);
+                    break;
+                case 242:
+                    if (this.B == null) {
+                        this.B = new Em();
+                    }
+                    codedInputByteBufferNano.readMessage(this.B);
+                    break;
+                case ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION /* 250 */:
+                    int repeatedFieldArrayLength6 = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION);
+                    Cm[] cmArr = this.C;
+                    int length6 = cmArr == null ? 0 : cmArr.length;
+                    int i6 = repeatedFieldArrayLength6 + length6;
+                    Cm[] cmArr2 = new Cm[i6];
+                    if (length6 != 0) {
+                        System.arraycopy(cmArr, 0, cmArr2, 0, length6);
+                    }
+                    while (length6 < i6 - 1) {
+                        Cm cm = new Cm();
+                        cmArr2[length6] = cm;
+                        codedInputByteBufferNano.readMessage(cm);
+                        codedInputByteBufferNano.readTag();
+                        length6++;
+                    }
+                    Cm cm2 = new Cm();
+                    cmArr2[length6] = cm2;
+                    codedInputByteBufferNano.readMessage(cm2);
+                    this.C = cmArr2;
+                    break;
+                case 258:
+                    if (this.D == null) {
+                        this.D = new Am();
+                    }
+                    codedInputByteBufferNano.readMessage(this.D);
+                    break;
+                default:
+                    if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                        break;
+                    } else {
+                        break;
+                    }
+            }
+        }
+        return this;
+    }
+
+    public static Gm a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (Gm) MessageNano.mergeFrom(new Gm(), bArr);
     }
 }

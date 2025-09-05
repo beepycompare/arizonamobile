@@ -187,12 +187,12 @@ public final class SettingsTopBarKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -782216321, "C45@1654L377,55@2075L42,54@2048L277,61@2342L28,64@2515L13,62@2387L159:SettingsTopBar.kt#1gr92h");
-            ScalingButtonKt.ScalingButton(onBack, null, ComposableSingletons$SettingsTopBarKt.INSTANCE.m9010getLambda$1729539213$settings_release(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onBack, null, ComposableSingletons$SettingsTopBarKt.INSTANCE.m9029getLambda$1729539213$settings_release(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             float f = 36;
             float f2 = 12;
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.settings_label, startRestartGroup, 0), (String) null, OffsetKt.m787offsetVpY3zN4$default(SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(f)), Dp.m7251constructorimpl(-Dp.m7251constructorimpl(f2)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 25008, 104);
             SpacerKt.Spacer(SizeKt.m889width3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(6)), startRestartGroup, 6);
-            TextKt.m2804Text4IGK_g("ВЕРСИЯ " + uiState.getVersion(), (Modifier) Modifier.Companion, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9022dpToSp8Feqmps(Dp.m7251constructorimpl(11), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, startRestartGroup, 432, 0, 131056);
+            TextKt.m2804Text4IGK_g("ВЕРСИЯ " + uiState.getVersion(), (Modifier) Modifier.Companion, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(11), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, startRestartGroup, 432, 0, 131056);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

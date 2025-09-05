@@ -9,29 +9,29 @@ public final class MultiBrowseCarouselStrategy extends CarouselStrategy {
     private static final int[] SMALL_COUNTS = {1};
     private static final int[] MEDIUM_COUNTS = {1, 0};
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.material.carousel.CarouselStrategy
     public KeylineState onFirstChildMeasuredWithMargins(Carousel carousel, View view) {
-        float containerHeight = carousel.getContainerHeight();
+        boolean z;
+        int containerHeight = carousel.getContainerHeight();
         if (carousel.isHorizontal()) {
             containerHeight = carousel.getContainerWidth();
         }
-        float f = containerHeight;
         RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) view.getLayoutParams();
-        float f2 = layoutParams.topMargin + layoutParams.bottomMargin;
+        float f = layoutParams.topMargin + layoutParams.bottomMargin;
         float measuredHeight = view.getMeasuredHeight();
         if (carousel.isHorizontal()) {
-            f2 = layoutParams.leftMargin + layoutParams.rightMargin;
+            f = layoutParams.leftMargin + layoutParams.rightMargin;
             measuredHeight = view.getMeasuredWidth();
         }
-        float f3 = f2;
-        float smallItemSizeMin = getSmallItemSizeMin() + f3;
-        float max = Math.max(getSmallItemSizeMax() + f3, smallItemSizeMin);
-        float min = Math.min(measuredHeight + f3, f);
-        float clamp = MathUtils.clamp((measuredHeight / 3.0f) + f3, smallItemSizeMin + f3, max + f3);
-        float f4 = (min + clamp) / 2.0f;
+        float smallItemSizeMin = getSmallItemSizeMin() + f;
+        float max = Math.max(getSmallItemSizeMax() + f, smallItemSizeMin);
+        float f2 = containerHeight;
+        float min = Math.min(measuredHeight + f, f2);
+        float clamp = MathUtils.clamp((measuredHeight / 3.0f) + f, smallItemSizeMin + f, max + f);
+        float f3 = (min + clamp) / 2.0f;
         int[] iArr = SMALL_COUNTS;
-        if (f < 2.0f * smallItemSizeMin) {
+        float f4 = 2.0f * smallItemSizeMin;
+        if (f2 <= f4) {
             iArr = new int[]{0};
         }
         int[] iArr2 = MEDIUM_COUNTS;
@@ -41,18 +41,26 @@ public final class MultiBrowseCarouselStrategy extends CarouselStrategy {
         }
         int[] iArr3 = iArr2;
         int[] iArr4 = iArr;
-        int ceil = (int) Math.ceil(f / min);
-        int max2 = (ceil - ((int) Math.max(1.0d, Math.floor(((f - (CarouselStrategyHelper.maxValue(iArr3) * f4)) - (CarouselStrategyHelper.maxValue(iArr4) * max)) / min)))) + 1;
+        float f5 = f;
+        int ceil = (int) Math.ceil(f2 / min);
+        int max2 = (ceil - ((int) Math.max(1.0d, Math.floor(((f2 - (CarouselStrategyHelper.maxValue(iArr3) * f3)) - (CarouselStrategyHelper.maxValue(iArr4) * max)) / min)))) + 1;
         int[] iArr5 = new int[max2];
         for (int i = 0; i < max2; i++) {
             iArr5[i] = ceil - i;
         }
-        Arrangement findLowestCostArrangement = Arrangement.findLowestCostArrangement(f, clamp, smallItemSizeMin, max, iArr4, f4, iArr3, min, iArr5);
+        Arrangement findLowestCostArrangement = Arrangement.findLowestCostArrangement(f2, clamp, smallItemSizeMin, max, iArr4, f3, iArr3, min, iArr5);
         this.keylineCount = findLowestCostArrangement.getItemCount();
-        if (ensureArrangementFitsItemCount(findLowestCostArrangement, carousel.getItemCount())) {
-            findLowestCostArrangement = Arrangement.findLowestCostArrangement(f, clamp, smallItemSizeMin, max, new int[]{findLowestCostArrangement.smallCount}, f4, new int[]{findLowestCostArrangement.mediumCount}, min, new int[]{findLowestCostArrangement.largeCount});
+        boolean ensureArrangementFitsItemCount = ensureArrangementFitsItemCount(findLowestCostArrangement, carousel.getItemCount());
+        if (findLowestCostArrangement.mediumCount == 0 && findLowestCostArrangement.smallCount == 0 && f2 > f4) {
+            findLowestCostArrangement.smallCount = 1;
+            z = true;
+        } else {
+            z = ensureArrangementFitsItemCount;
         }
-        return CarouselStrategyHelper.createKeylineState(view.getContext(), f3, f, findLowestCostArrangement, carousel.getCarouselAlignment());
+        if (z) {
+            findLowestCostArrangement = Arrangement.findLowestCostArrangement(f2, clamp, smallItemSizeMin, max, new int[]{findLowestCostArrangement.smallCount}, f3, new int[]{findLowestCostArrangement.mediumCount}, min, new int[]{findLowestCostArrangement.largeCount});
+        }
+        return CarouselStrategyHelper.createKeylineState(view.getContext(), f5, containerHeight, findLowestCostArrangement, carousel.getCarouselAlignment());
     }
 
     boolean ensureArrangementFitsItemCount(Arrangement arrangement, int i) {
@@ -69,7 +77,6 @@ public final class MultiBrowseCarouselStrategy extends CarouselStrategy {
         return z;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.material.carousel.CarouselStrategy
     public boolean shouldRefreshKeylineState(Carousel carousel, int i) {
         if (i >= this.keylineCount || carousel.getItemCount() < this.keylineCount) {

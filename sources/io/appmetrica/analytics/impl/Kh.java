@@ -1,15 +1,13 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Kh {
+public final class Kh extends AbstractC0462nh {
+    public Kh(C0651v5 c0651v5) {
+        super(c0651v5);
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public final D9 f531a;
-    public final C0264g0 b;
-    public final boolean c;
-
-    public Kh(D9 d9, C0264g0 c0264g0, boolean z) {
-        this.f531a = d9;
-        this.b = c0264g0;
-        this.c = z;
+    @Override // io.appmetrica.analytics.impl.AbstractC0462nh
+    public final boolean a(C0477o6 c0477o6) {
+        this.f1001a.j.c(c0477o6);
+        return false;
     }
 }

@@ -9,7 +9,6 @@ public class HeroCarouselStrategy extends CarouselStrategy {
     private static final int[] SMALL_COUNTS = {1};
     private static final int[] MEDIUM_COUNTS = {0, 1};
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.material.carousel.CarouselStrategy
     public KeylineState onFirstChildMeasuredWithMargins(Carousel carousel, View view) {
         int[] iArr;
@@ -53,10 +52,9 @@ public class HeroCarouselStrategy extends CarouselStrategy {
         } else {
             i = i3;
         }
-        return CarouselStrategyHelper.createKeylineState(view.getContext(), f, f2, findLowestCostArrangement, i);
+        return CarouselStrategyHelper.createKeylineState(view.getContext(), f, containerHeight, findLowestCostArrangement, i);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.material.carousel.CarouselStrategy
     public boolean shouldRefreshKeylineState(Carousel carousel, int i) {
         if (carousel.getCarouselAlignment() == 1) {

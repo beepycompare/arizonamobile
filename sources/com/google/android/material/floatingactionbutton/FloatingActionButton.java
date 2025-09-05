@@ -47,6 +47,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.List;
 /* loaded from: classes4.dex */
 public class FloatingActionButton extends VisibilityAwareImageButton implements TintableBackgroundView, TintableImageSourceView, ExpandableTransformationWidget, Shapeable, CoordinatorLayout.AttachedBehavior {
+    static final String ACCESSIBIILTY_FAB_ROLE = "com.google.android.material.floatingactionbutton.FloatingActionButton";
     private static final int AUTO_MINI_LARGEST_SCREEN_WIDTH = 470;
     private static final int DEF_STYLE_RES = R.style.Widget_Design_FloatingActionButton;
     private static final String EXPANDABLE_WIDGET_HELPER_KEY = "expandableWidgetHelper";
@@ -494,13 +495,11 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
     @Override // android.widget.ImageView, android.view.View
     protected void drawableStateChanged() {
         super.drawableStateChanged();
-        getImpl().onDrawableStateChanged(getDrawableState());
     }
 
     @Override // android.widget.ImageView, android.view.View
     public void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
-        getImpl().jumpDrawableToCurrentState();
     }
 
     @Override // android.view.View
@@ -527,7 +526,7 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
 
     @Deprecated
     public boolean getContentRect(Rect rect) {
-        if (ViewCompat.isLaidOut(this)) {
+        if (isLaidOut()) {
             rect.set(0, 0, getWidth(), getHeight());
             offsetRectWithShadow(rect);
             return true;
@@ -566,6 +565,11 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
             }
         }
         return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.ImageButton, android.widget.ImageView, android.view.View
+    public CharSequence getAccessibilityClassName() {
+        return ACCESSIBIILTY_FAB_ROLE;
     }
 
     /* loaded from: classes4.dex */
@@ -671,37 +675,37 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
             this.internalAutoHideListener = onVisibilityChangedListener;
         }
 
-        private boolean shouldUpdateVisibility(View view, FloatingActionButton floatingActionButton) {
-            return this.autoHideEnabled && ((CoordinatorLayout.LayoutParams) floatingActionButton.getLayoutParams()).getAnchorId() == view.getId() && floatingActionButton.getUserSetVisibility() == 0;
+        private boolean ignoreUpdateVisibility(View view, FloatingActionButton floatingActionButton) {
+            return (this.autoHideEnabled && ((CoordinatorLayout.LayoutParams) floatingActionButton.getLayoutParams()).getAnchorId() == view.getId() && floatingActionButton.getUserSetVisibility() == 0) ? false : true;
         }
 
         private boolean updateFabVisibilityForAppBarLayout(CoordinatorLayout coordinatorLayout, AppBarLayout appBarLayout, FloatingActionButton floatingActionButton) {
-            if (shouldUpdateVisibility(appBarLayout, floatingActionButton)) {
-                if (this.tmpRect == null) {
-                    this.tmpRect = new Rect();
-                }
-                Rect rect = this.tmpRect;
-                DescendantOffsetUtils.getDescendantRect(coordinatorLayout, appBarLayout, rect);
-                if (rect.bottom <= appBarLayout.getMinimumHeightForVisibleOverlappingContent()) {
-                    floatingActionButton.hide(this.internalAutoHideListener, false);
-                    return true;
-                }
-                floatingActionButton.show(this.internalAutoHideListener, false);
+            if (ignoreUpdateVisibility(appBarLayout, floatingActionButton)) {
+                return false;
+            }
+            if (this.tmpRect == null) {
+                this.tmpRect = new Rect();
+            }
+            Rect rect = this.tmpRect;
+            DescendantOffsetUtils.getDescendantRect(coordinatorLayout, appBarLayout, rect);
+            if (rect.bottom <= appBarLayout.getMinimumHeightForVisibleOverlappingContent()) {
+                floatingActionButton.hide(this.internalAutoHideListener, false);
                 return true;
             }
-            return false;
+            floatingActionButton.show(this.internalAutoHideListener, false);
+            return true;
         }
 
         private boolean updateFabVisibilityForBottomSheet(View view, FloatingActionButton floatingActionButton) {
-            if (shouldUpdateVisibility(view, floatingActionButton)) {
-                if (view.getTop() < (floatingActionButton.getHeight() / 2) + ((CoordinatorLayout.LayoutParams) floatingActionButton.getLayoutParams()).topMargin) {
-                    floatingActionButton.hide(this.internalAutoHideListener, false);
-                    return true;
-                }
-                floatingActionButton.show(this.internalAutoHideListener, false);
+            if (ignoreUpdateVisibility(view, floatingActionButton)) {
+                return false;
+            }
+            if (view.getTop() < (floatingActionButton.getHeight() / 2) + ((CoordinatorLayout.LayoutParams) floatingActionButton.getLayoutParams()).topMargin) {
+                floatingActionButton.hide(this.internalAutoHideListener, false);
                 return true;
             }
-            return false;
+            floatingActionButton.show(this.internalAutoHideListener, false);
+            return true;
         }
 
         @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
@@ -735,7 +739,7 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
         private void offsetIfNeeded(CoordinatorLayout coordinatorLayout, FloatingActionButton floatingActionButton) {
             int i;
             Rect rect = floatingActionButton.shadowPadding;
-            if (rect == null || rect.centerX() <= 0 || rect.centerY() <= 0) {
+            if (rect.centerX() <= 0 || rect.centerY() <= 0) {
                 return;
             }
             CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) floatingActionButton.getLayoutParams();
@@ -898,13 +902,9 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
 
     private FloatingActionButtonImpl getImpl() {
         if (this.impl == null) {
-            this.impl = createImpl();
+            this.impl = new FloatingActionButtonImpl(this, new ShadowDelegateImpl());
         }
         return this.impl;
-    }
-
-    private FloatingActionButtonImpl createImpl() {
-        return new FloatingActionButtonImplLollipop(this, new ShadowDelegateImpl());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -1,21 +1,14 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.ModuleEvent;
-import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 /* loaded from: classes4.dex */
-public final class Bd extends SafeRunnable {
+public final class Bd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Fd f362a;
-    public final /* synthetic */ ModuleEvent b;
+    public final C0315i f366a;
+    public final Kn b = new Kn(new C0685we("Context"));
+    public final Kn c = new Kn(new C0685we("Session extra key"));
+    public final Kn d = new Kn(new C0264g0());
 
-    public Bd(Fd fd, ModuleEvent moduleEvent) {
-        this.f362a = fd;
-        this.b = moduleEvent;
-    }
-
-    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
-    public final void runSafety() {
-        Fd.a(this.f362a).reportEvent(this.b);
+    public Bd(C0671w0 c0671w0) {
+        this.f366a = new C0315i(c0671w0);
     }
 }

@@ -1,22 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.List;
 /* loaded from: classes4.dex */
-public final class Oa extends Na {
-    public Oa(int i, int i2) {
-        this(i, new Pa(i2));
+public abstract class Oa {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Ni f603a;
+
+    public Oa(Ni ni) {
+        this.f603a = ni;
     }
 
-    public final int a(String str) {
-        return StringUtils.getUTF8Bytes(str).length;
+    public final Ni a() {
+        return this.f603a;
     }
 
-    @Override // io.appmetrica.analytics.impl.Na
-    public final int b(Object obj) {
-        return StringUtils.getUTF8Bytes((String) obj).length;
-    }
-
-    public Oa(int i, Pa pa) {
-        super(i, pa);
-    }
+    public abstract void a(List list);
 }

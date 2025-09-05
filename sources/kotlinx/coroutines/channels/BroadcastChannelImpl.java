@@ -61,7 +61,7 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
                 return subscriberConflated;
             }
             if (this.lastConflatedElement != BroadcastChannelKt.access$getNO_ELEMENT$p()) {
-                subscriberConflated.mo8125trySendJP2dKIU(getValue());
+                subscriberConflated.mo8127trySendJP2dKIU(getValue());
             }
             this.subscribers = CollectionsKt.plus((Collection<? extends BufferedChannel>) this.subscribers, subscriberConflated);
             reentrantLock.unlock();
@@ -177,19 +177,19 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
 
     @Override // kotlinx.coroutines.channels.BufferedChannel, kotlinx.coroutines.channels.SendChannel
     /* renamed from: trySend-JP2dKIU */
-    public Object mo8125trySendJP2dKIU(E e) {
+    public Object mo8127trySendJP2dKIU(E e) {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();
         try {
             if (isClosedForSend()) {
-                return super.mo8125trySendJP2dKIU(e);
+                return super.mo8127trySendJP2dKIU(e);
             }
             List<? extends BufferedChannel<E>> list = this.subscribers;
             if (!(list instanceof Collection) || !list.isEmpty()) {
                 Iterator<T> it = list.iterator();
                 while (it.hasNext()) {
                     if (((BufferedChannel) it.next()).shouldSendSuspend$kotlinx_coroutines_core()) {
-                        return ChannelResult.Companion.m10605failurePtdJZtk();
+                        return ChannelResult.Companion.m10624failurePtdJZtk();
                     }
                 }
             }
@@ -198,9 +198,9 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
             }
             Iterator<T> it2 = this.subscribers.iterator();
             while (it2.hasNext()) {
-                ((BufferedChannel) it2.next()).mo8125trySendJP2dKIU(e);
+                ((BufferedChannel) it2.next()).mo8127trySendJP2dKIU(e);
             }
-            return ChannelResult.Companion.m10606successJP2dKIU(Unit.INSTANCE);
+            return ChannelResult.Companion.m10625successJP2dKIU(Unit.INSTANCE);
         } finally {
             reentrantLock.unlock();
         }

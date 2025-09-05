@@ -1,30 +1,59 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences;
 /* loaded from: classes4.dex */
-public abstract class S2 {
+public abstract class S2 implements ModulePreferences {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Vf f644a;
-    public final InterfaceC0146bb b;
+    public final Dl f659a;
 
-    public S2(Vf vf, InterfaceC0146bb interfaceC0146bb) {
-        this.f644a = vf;
-        this.b = interfaceC0146bb;
+    public S2(Dl dl) {
+        this.f659a = dl;
     }
 
-    public final boolean a(C0399l6 c0399l6, R2 r2) {
-        for (Object obj : ((C0576s9) this.f644a.a(c0399l6.d)).f1057a) {
-            if (r2.a(obj, c0399l6)) {
-                return true;
-            }
-        }
-        return false;
+    public abstract String a(String str);
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final boolean getBoolean(String str, boolean z) {
+        return ((Td) this.f659a).c(str, z);
     }
 
-    public final Vf b() {
-        return this.f644a;
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final int getInt(String str, int i) {
+        return ((Td) this.f659a).c(str, i);
     }
 
-    public final InterfaceC0146bb a() {
-        return this.b;
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final long getLong(String str, long j) {
+        return ((Td) this.f659a).c(a(str), j);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final String getString(String str, String str2) {
+        return ((Td) this.f659a).c(a(str), str2);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final void putBoolean(String str, boolean z) {
+        Td td = (Td) this.f659a;
+        ((AbstractC0561rf) ((Dl) td.b(td.f(a(str)), z))).b();
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final void putInt(String str, int i) {
+        Td td = (Td) this.f659a;
+        ((AbstractC0561rf) ((Dl) td.b(td.f(str), i))).b();
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final void putLong(String str, long j) {
+        Td td = (Td) this.f659a;
+        ((AbstractC0561rf) ((Dl) td.b(td.f(a(str)), j))).b();
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final void putString(String str, String str2) {
+        Td td = (Td) this.f659a;
+        ((AbstractC0561rf) ((Dl) td.b(td.f(a(str)), str2))).b();
     }
 }

@@ -1,16 +1,32 @@
 package io.appmetrica.analytics.impl;
+
+import androidx.media3.exoplayer.upstream.CmcdConfiguration;
+import androidx.media3.exoplayer.upstream.CmcdData;
+import java.util.HashMap;
 /* loaded from: classes4.dex */
-public final class Be implements InterfaceC0378kb {
+public final class Be {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0352jb f363a;
+    public final HashMap f367a;
 
-    public Be(InterfaceC0352jb interfaceC0352jb) {
-        this.f363a = interfaceC0352jb;
+    public Be() {
+        HashMap hashMap = new HashMap();
+        this.f367a = hashMap;
+        hashMap.put("google_aid", "g");
+        hashMap.put("huawei_oaid", CmcdData.STREAMING_FORMAT_HLS);
+        hashMap.put("sim_info", "si");
+        hashMap.put("features_collecting", "fc");
+        hashMap.put("permissions_collecting", "pc");
+        hashMap.put("retry_policy", "rp");
+        hashMap.put("cache_control", "cc");
+        hashMap.put("auto_inapp_collecting", "aic");
+        hashMap.put("attribution", "at");
+        hashMap.put("startup_update", CmcdConfiguration.KEY_STARTUP);
+        hashMap.put("ssl_pinning", "sp");
+        hashMap.put("external_attribution", "exta");
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0378kb
-    public final boolean a(Fg fg) {
-        return (fg == null || ((Mc) this.f363a).C()) ? false : true;
+    public final String a(String str) {
+        return this.f367a.containsKey(str) ? (String) this.f367a.get(str) : str;
     }
 }

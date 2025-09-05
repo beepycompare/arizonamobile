@@ -1,16 +1,13 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.List;
 /* loaded from: classes4.dex */
-public final class Zg extends Yg {
-    public Zg(Ji ji) {
-        super(ji);
-    }
+public final class Zg {
 
-    @Override // io.appmetrica.analytics.impl.Yg, io.appmetrica.analytics.impl.La
-    public final void a(List<AbstractC0358jh> list) {
-        list.add(this.f541a.i);
-        list.add(this.f541a.j);
-        super.a(list);
+    /* renamed from: a  reason: collision with root package name */
+    public final String f771a;
+    public final Wn b;
+
+    public Zg(String str, Wn wn) {
+        this.f771a = str;
+        this.b = wn;
     }
 }

@@ -1,20 +1,28 @@
 package io.appmetrica.analytics.impl;
-
-import android.os.Bundle;
-import io.appmetrica.analytics.internal.IAppMetricaService;
 /* loaded from: classes4.dex */
-public final class Pn extends Ph {
-    public final int e;
-    public final Bundle f;
+public class Pn implements InterfaceC0180cj {
 
-    public Pn(C0418m0 c0418m0, InterfaceC0233el interfaceC0233el, int i, Bundle bundle) {
-        super(c0418m0, interfaceC0233el);
-        this.e = i;
-        this.f = bundle;
+    /* renamed from: a  reason: collision with root package name */
+    public final int f626a;
+    public final int b;
+    public int c = 0;
+
+    public Pn(int i, int i2) {
+        this.f626a = i;
+        this.b = i2;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ph
-    public final void a(IAppMetricaService iAppMetricaService) {
-        iAppMetricaService.reportData(this.e, this.f);
+    public final int a() {
+        return this.b;
+    }
+
+    public final boolean b() {
+        int i = this.c;
+        this.c = i + 1;
+        return i < this.f626a;
+    }
+
+    public final void c() {
+        this.c = 0;
     }
 }

@@ -1,16 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
+import io.appmetrica.analytics.coreapi.internal.crypto.CryptoProvider;
+import io.appmetrica.analytics.coreapi.internal.crypto.Encrypter;
+import io.appmetrica.analytics.coreutils.internal.encryption.AESRSAEncrypter;
 /* loaded from: classes4.dex */
-public final class O6 extends La {
-    public O6(Ji ji) {
-        super(ji);
-    }
+public final class O6 implements CryptoProvider {
 
-    @Override // io.appmetrica.analytics.impl.La
-    public final void a(List<AbstractC0358jh> list) {
-        list.add(this.f541a.b);
-        list.add(this.f541a.f517a);
-        list.add(this.f541a.d);
+    /* renamed from: a  reason: collision with root package name */
+    public final AESRSAEncrypter f599a = new AESRSAEncrypter();
+
+    @Override // io.appmetrica.analytics.coreapi.internal.crypto.CryptoProvider
+    public final Encrypter getAesRsaEncrypter() {
+        return this.f599a;
     }
 }

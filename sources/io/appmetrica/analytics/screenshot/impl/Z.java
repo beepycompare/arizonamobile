@@ -7,7 +7,7 @@ public final class Z implements Converter {
     /* renamed from: a */
     public final M fromModel(X x) {
         M m = new M();
-        m.f1292a = x.f1300a;
+        m.f1297a = x.f1305a;
         m.b = x.b;
         return m;
     }
@@ -15,10 +15,10 @@ public final class Z implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
         M m = (M) obj;
-        return new X(m.f1292a, m.b);
+        return new X(m.f1297a, m.b);
     }
 
     public final X a(M m) {
-        return new X(m.f1292a, m.b);
+        return new X(m.f1297a, m.b);
     }
 }

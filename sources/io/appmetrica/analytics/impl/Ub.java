@@ -1,21 +1,30 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.jvm.functions.Function0;
-import kotlin.jvm.internal.Lambda;
+import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider;
+import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory;
 /* loaded from: classes4.dex */
-public final class Ub extends Lambda implements Function0 {
+public final class Ub implements LastKnownLocationExtractorProviderFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Vb f677a;
+    public final Vb f694a = new Vb();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Ub(Vb vb) {
-        super(0);
-        this.f677a = vb;
+    @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
+    public final LastKnownLocationExtractorProvider getGplLastKnownLocationExtractorProvider() {
+        return this.f694a;
     }
 
-    @Override // kotlin.jvm.functions.Function0
-    public final Object invoke() {
-        return (Ch) this.f677a.f693a.k.a();
+    @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
+    public final LastKnownLocationExtractorProvider getGpsLastKnownLocationExtractorProvider() {
+        return this.f694a;
+    }
+
+    @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
+    public final LastKnownLocationExtractorProvider getNetworkLastKnownLocationExtractorProvider() {
+        return this.f694a;
+    }
+
+    @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
+    public final LastKnownLocationExtractorProvider getPassiveLastKnownLocationExtractorProvider() {
+        return this.f694a;
     }
 }

@@ -1,9 +1,11 @@
 package com.adjust.sdk;
 
+import android.net.Uri;
 import io.appmetrica.analytics.plugins.PluginErrorDetails;
 import org.json.JSONObject;
 /* loaded from: classes3.dex */
 public class SessionResponseData extends ResponseData {
+    public Uri deeplink;
     private String sdkPlatform;
 
     public SessionResponseData(ActivityPackage activityPackage) {

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -11,7 +12,6 @@ import android.widget.FrameLayout;
 import androidx.appcompat.app.AppCompatDialog;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.AccessibilityDelegateCompat;
-import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.R;
@@ -205,7 +205,7 @@ public abstract class SheetDialog<C extends SheetCallback> extends AppCompatDial
         coordinatorLayout.findViewById(TOUCH_OUTSIDE_ID).setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.sidesheet.SheetDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                SheetDialog.this.m8737x401f75dd(view2);
+                SheetDialog.this.m8752x401f75dd(view2);
             }
         });
         ViewCompat.setAccessibilityDelegate(getSheet(), new AccessibilityDelegateCompat() { // from class: com.google.android.material.sidesheet.SheetDialog.1
@@ -234,7 +234,7 @@ public abstract class SheetDialog<C extends SheetCallback> extends AppCompatDial
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$wrapInSheet$0$com-google-android-material-sidesheet-SheetDialog  reason: not valid java name */
-    public /* synthetic */ void m8737x401f75dd(View view) {
+    public /* synthetic */ void m8752x401f75dd(View view) {
         if (this.cancelable && isShowing() && shouldWindowCloseOnTouchOutside()) {
             cancel();
         }
@@ -245,7 +245,7 @@ public abstract class SheetDialog<C extends SheetCallback> extends AppCompatDial
         if (frameLayout == null) {
             throw new IllegalStateException("Sheet view reference is null; sheet edge cannot be changed if the sheet view is null.");
         }
-        if (ViewCompat.isLaidOut(frameLayout)) {
+        if (frameLayout.isLaidOut()) {
             throw new IllegalStateException("Sheet view has been laid out; sheet edge cannot be changed once the sheet has been laid out.");
         }
         ViewGroup.LayoutParams layoutParams = this.sheet.getLayoutParams();
@@ -262,7 +262,7 @@ public abstract class SheetDialog<C extends SheetCallback> extends AppCompatDial
         if (window == null || (frameLayout = this.sheet) == null || !(frameLayout.getLayoutParams() instanceof CoordinatorLayout.LayoutParams)) {
             return;
         }
-        if (GravityCompat.getAbsoluteGravity(((CoordinatorLayout.LayoutParams) this.sheet.getLayoutParams()).gravity, ViewCompat.getLayoutDirection(this.sheet)) == 3) {
+        if (Gravity.getAbsoluteGravity(((CoordinatorLayout.LayoutParams) this.sheet.getLayoutParams()).gravity, this.sheet.getLayoutDirection()) == 3) {
             i = R.style.Animation_Material3_SideSheetDialog_Left;
         } else {
             i = R.style.Animation_Material3_SideSheetDialog_Right;

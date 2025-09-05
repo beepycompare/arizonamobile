@@ -8,12 +8,12 @@ import java.util.List;
 public final class U {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0740yn f668a;
+    public final Cn f686a;
     public final List b;
     public final String c;
 
-    public U(C0740yn c0740yn, ArrayList arrayList, String str) {
-        this.f668a = c0740yn;
+    public U(Cn cn, ArrayList arrayList, String str) {
+        this.f686a = cn;
         this.b = arrayList == null ? Collections.emptyList() : CollectionUtils.unmodifiableListCopy(arrayList);
         this.c = str;
     }

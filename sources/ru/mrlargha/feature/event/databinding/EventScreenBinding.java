@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.event.R;
-/* loaded from: classes6.dex */
+/* loaded from: classes3.dex */
 public final class EventScreenBinding implements ViewBinding {
     public final LinearLayout bg;
     public final ConstraintLayout easterBattlepassChoose;

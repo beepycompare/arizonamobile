@@ -1,11 +1,15 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Z4 extends S2 {
-    public Z4(Vf vf, S4 s4) {
-        super(vf, s4);
-    }
+public final class Z4 {
 
-    public final boolean a(C0399l6 c0399l6, P4 p4) {
-        return a(c0399l6, new Y4(p4));
+    /* renamed from: a  reason: collision with root package name */
+    public final Ga f764a;
+    public final Vi b;
+    public final C0262fo c;
+
+    public Z4(V4 v4) {
+        this.f764a = new Ga(v4);
+        this.b = new Vi(v4);
+        this.c = new C0262fo(v4, Na.j().g());
     }
 }

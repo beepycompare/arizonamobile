@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
+import com.google.android.material.carousel.CarouselStrategy;
 import com.google.android.material.carousel.KeylineState;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -58,8 +59,8 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-carousel-CarouselLayoutManager  reason: not valid java name */
-    public /* synthetic */ void m8672x2ff337cb(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-        if (i == i5 && i2 == i6 && i3 == i7 && i4 == i8) {
+    public /* synthetic */ void m8680x2ff337cb(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+        if (i3 - i == i7 - i5 && i4 - i2 == i8 - i6) {
             return;
         }
         view.post(new Runnable() { // from class: com.google.android.material.carousel.CarouselLayoutManager$$ExternalSyntheticLambda0
@@ -101,7 +102,7 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
         this.recyclerViewSizeChangeListener = new View.OnLayoutChangeListener() { // from class: com.google.android.material.carousel.CarouselLayoutManager$$ExternalSyntheticLambda1
             @Override // android.view.View.OnLayoutChangeListener
             public final void onLayoutChange(View view, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9) {
-                CarouselLayoutManager.this.m8672x2ff337cb(view, i2, i3, i4, i5, i6, i7, i8, i9);
+                CarouselLayoutManager.this.m8680x2ff337cb(view, i2, i3, i4, i5, i6, i7, i8, i9);
             }
         };
         this.currentEstimatedPosition = -1;
@@ -117,7 +118,7 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
         this.recyclerViewSizeChangeListener = new View.OnLayoutChangeListener() { // from class: com.google.android.material.carousel.CarouselLayoutManager$$ExternalSyntheticLambda1
             @Override // android.view.View.OnLayoutChangeListener
             public final void onLayoutChange(View view, int i22, int i3, int i4, int i5, int i6, int i7, int i8, int i9) {
-                CarouselLayoutManager.this.m8672x2ff337cb(view, i22, i3, i4, i5, i6, i7, i8, i9);
+                CarouselLayoutManager.this.m8680x2ff337cb(view, i22, i3, i4, i5, i6, i7, i8, i9);
             }
         };
         this.currentEstimatedPosition = -1;
@@ -130,9 +131,13 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
         if (attributeSet != null) {
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.Carousel);
             setCarouselAlignment(obtainStyledAttributes.getInt(R.styleable.Carousel_carousel_alignment, 0));
-            setOrientation(obtainStyledAttributes.getInt(R.styleable.RecyclerView_android_orientation, 0));
+            setOrientation(obtainStyledAttributes.getInt(androidx.recyclerview.R.styleable.RecyclerView_android_orientation, 0));
             obtainStyledAttributes.recycle();
         }
+    }
+
+    public void notifyItemSizeChanged() {
+        refreshKeylineState();
     }
 
     public void setCarouselAlignment(int i) {
@@ -146,7 +151,7 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
     }
 
     private int getLeftOrTopPaddingForKeylineShift() {
-        if (getClipToPadding() || !this.carouselStrategy.isContained()) {
+        if (getClipToPadding()) {
             return 0;
         }
         if (getOrientation() == 1) {
@@ -156,7 +161,7 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
     }
 
     private int getRightOrBottomPaddingForKeylineShift() {
-        if (getClipToPadding() || !this.carouselStrategy.isContained()) {
+        if (getClipToPadding()) {
             return 0;
         }
         if (getOrientation() == 1) {
@@ -197,8 +202,9 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
             return;
         }
         boolean isLayoutRtl = isLayoutRtl();
-        boolean z = this.keylineStateList == null;
-        if (z) {
+        KeylineStateList keylineStateList = this.keylineStateList;
+        boolean z = keylineStateList == null;
+        if (z || keylineStateList.getDefaultState().getCarouselSize() != getContainerSize()) {
             recalculateKeylineStateList(recycler);
         }
         int calculateStartScroll = calculateStartScroll(this.keylineStateList);
@@ -232,7 +238,7 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
         if (isLayoutRtl()) {
             onFirstChildMeasuredWithMargins = KeylineState.reverse(onFirstChildMeasuredWithMargins, getContainerSize());
         }
-        this.keylineStateList = KeylineStateList.from(this, onFirstChildMeasuredWithMargins, getItemMargins(), getLeftOrTopPaddingForKeylineShift(), getRightOrBottomPaddingForKeylineShift());
+        this.keylineStateList = KeylineStateList.from(this, onFirstChildMeasuredWithMargins, getItemMargins(), getLeftOrTopPaddingForKeylineShift(), getRightOrBottomPaddingForKeylineShift(), this.carouselStrategy.getStrategyType());
     }
 
     private int getItemMargins() {
@@ -286,13 +292,16 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
     private void addViewsStart(RecyclerView.Recycler recycler, int i) {
         float calculateChildStartForFill = calculateChildStartForFill(i);
         while (i >= 0) {
-            ChildCalculations makeChildCalculations = makeChildCalculations(recycler, calculateChildStartForFill, i);
-            if (isLocOffsetOutOfFillBoundsStart(makeChildCalculations.offsetCenter, makeChildCalculations.range)) {
+            float addEnd = addEnd(calculateChildStartForFill, this.currentKeylineState.getItemSize() / 2.0f);
+            KeylineRange surroundingKeylineRange = getSurroundingKeylineRange(this.currentKeylineState.getKeylines(), addEnd, false);
+            float calculateChildOffsetCenterForLocation = calculateChildOffsetCenterForLocation(addEnd, surroundingKeylineRange);
+            if (isLocOffsetOutOfFillBoundsStart(calculateChildOffsetCenterForLocation, surroundingKeylineRange)) {
                 return;
             }
             calculateChildStartForFill = addStart(calculateChildStartForFill, this.currentKeylineState.getItemSize());
-            if (!isLocOffsetOutOfFillBoundsEnd(makeChildCalculations.offsetCenter, makeChildCalculations.range)) {
-                addAndLayoutView(makeChildCalculations.child, 0, makeChildCalculations);
+            if (!isLocOffsetOutOfFillBoundsEnd(calculateChildOffsetCenterForLocation, surroundingKeylineRange)) {
+                View viewForPosition = recycler.getViewForPosition(i);
+                addAndLayoutView(viewForPosition, 0, new ChildCalculations(viewForPosition, addEnd, calculateChildOffsetCenterForLocation, surroundingKeylineRange));
             }
             i--;
         }
@@ -309,13 +318,16 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
     private void addViewsEnd(RecyclerView.Recycler recycler, RecyclerView.State state, int i) {
         float calculateChildStartForFill = calculateChildStartForFill(i);
         while (i < state.getItemCount()) {
-            ChildCalculations makeChildCalculations = makeChildCalculations(recycler, calculateChildStartForFill, i);
-            if (isLocOffsetOutOfFillBoundsEnd(makeChildCalculations.offsetCenter, makeChildCalculations.range)) {
+            float addEnd = addEnd(calculateChildStartForFill, this.currentKeylineState.getItemSize() / 2.0f);
+            KeylineRange surroundingKeylineRange = getSurroundingKeylineRange(this.currentKeylineState.getKeylines(), addEnd, false);
+            float calculateChildOffsetCenterForLocation = calculateChildOffsetCenterForLocation(addEnd, surroundingKeylineRange);
+            if (isLocOffsetOutOfFillBoundsEnd(calculateChildOffsetCenterForLocation, surroundingKeylineRange)) {
                 return;
             }
             calculateChildStartForFill = addEnd(calculateChildStartForFill, this.currentKeylineState.getItemSize());
-            if (!isLocOffsetOutOfFillBoundsStart(makeChildCalculations.offsetCenter, makeChildCalculations.range)) {
-                addAndLayoutView(makeChildCalculations.child, -1, makeChildCalculations);
+            if (!isLocOffsetOutOfFillBoundsStart(calculateChildOffsetCenterForLocation, surroundingKeylineRange)) {
+                View viewForPosition = recycler.getViewForPosition(i);
+                addAndLayoutView(viewForPosition, -1, new ChildCalculations(viewForPosition, addEnd, calculateChildOffsetCenterForLocation, surroundingKeylineRange));
             }
             i++;
         }
@@ -354,12 +366,13 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
         measureChildWithMargins(viewForPosition, 0, 0);
         float addEnd = addEnd(f, this.currentKeylineState.getItemSize() / 2.0f);
         KeylineRange surroundingKeylineRange = getSurroundingKeylineRange(this.currentKeylineState.getKeylines(), addEnd, false);
-        return new ChildCalculations(viewForPosition, addEnd, calculateChildOffsetCenterForLocation(viewForPosition, addEnd, surroundingKeylineRange), surroundingKeylineRange);
+        return new ChildCalculations(viewForPosition, addEnd, calculateChildOffsetCenterForLocation(addEnd, surroundingKeylineRange), surroundingKeylineRange);
     }
 
     private void addAndLayoutView(View view, int i, ChildCalculations childCalculations) {
         float itemSize = this.currentKeylineState.getItemSize() / 2.0f;
         addView(view, i);
+        measureChildWithMargins(view, 0, 0);
         int i2 = (int) (childCalculations.offsetCenter + itemSize);
         this.orientationHelper.layoutDecoratedWithMargins(view, (int) (childCalculations.offsetCenter - itemSize), i2);
         updateChildMaskForLocation(view, childCalculations.center, childCalculations.range);
@@ -463,11 +476,15 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
         return new KeylineRange(list.get(i), list.get(i3));
     }
 
+    private KeylineState getKeylineStartingState(KeylineStateList keylineStateList) {
+        return isLayoutRtl() ? keylineStateList.getEndState() : keylineStateList.getStartState();
+    }
+
     private void updateCurrentKeylineStateForScrollOffset(KeylineStateList keylineStateList) {
         int i = this.maxScroll;
         int i2 = this.minScroll;
         if (i <= i2) {
-            this.currentKeylineState = isLayoutRtl() ? keylineStateList.getEndState() : keylineStateList.getStartState();
+            this.currentKeylineState = getKeylineStartingState(keylineStateList);
         } else {
             this.currentKeylineState = keylineStateList.getShiftedState(this.scrollOffset, i2, i);
         }
@@ -484,21 +501,17 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
         boolean isLayoutRtl = isLayoutRtl();
         KeylineState startState = isLayoutRtl ? keylineStateList.getStartState() : keylineStateList.getEndState();
         KeylineState.Keyline firstFocalKeyline = isLayoutRtl ? startState.getFirstFocalKeyline() : startState.getLastFocalKeyline();
-        float itemCount = (state.getItemCount() - 1) * startState.getItemSize() * (isLayoutRtl ? -1.0f : 1.0f);
-        int parentStart = (int) ((itemCount - (firstFocalKeyline.loc - getParentStart())) + (getParentEnd() - firstFocalKeyline.loc) + (isLayoutRtl ? -firstFocalKeyline.leftOrTopPaddingShift : firstFocalKeyline.rightOrBottomPaddingShift));
-        return isLayoutRtl ? Math.min(0, parentStart) : Math.max(0, parentStart);
+        int itemCount = (int) (((((state.getItemCount() - 1) * startState.getItemSize()) * (isLayoutRtl ? -1.0f : 1.0f)) - (firstFocalKeyline.loc - getParentStart())) + (((isLayoutRtl ? -1 : 1) * firstFocalKeyline.maskedItemSize) / 2.0f));
+        return isLayoutRtl ? Math.min(0, itemCount) : Math.max(0, itemCount);
     }
 
     private float calculateChildStartForFill(int i) {
         return addEnd(getParentStart() - this.scrollOffset, this.currentKeylineState.getItemSize() * i);
     }
 
-    private float calculateChildOffsetCenterForLocation(View view, float f, KeylineRange keylineRange) {
+    private float calculateChildOffsetCenterForLocation(float f, KeylineRange keylineRange) {
         float lerp = AnimationUtils.lerp(keylineRange.leftOrTop.locOffset, keylineRange.rightOrBottom.locOffset, keylineRange.leftOrTop.loc, keylineRange.rightOrBottom.loc, f);
-        if (keylineRange.rightOrBottom == this.currentKeylineState.getFirstKeyline() || keylineRange.leftOrTop == this.currentKeylineState.getLastKeyline()) {
-            return lerp + ((f - keylineRange.rightOrBottom.loc) * ((1.0f - keylineRange.rightOrBottom.mask) + (this.orientationHelper.getMaskMargins((RecyclerView.LayoutParams) view.getLayoutParams()) / this.currentKeylineState.getItemSize())));
-        }
-        return lerp;
+        return (keylineRange.rightOrBottom == this.currentKeylineState.getFirstKeyline() || keylineRange.leftOrTop == this.currentKeylineState.getLastKeyline()) ? lerp + ((f - keylineRange.rightOrBottom.loc) * (1.0f - keylineRange.rightOrBottom.mask)) : lerp;
     }
 
     private float getMaskedItemSizeForLocOffset(float f, KeylineRange keylineRange) {
@@ -511,10 +524,10 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
             float height = view.getHeight();
             float width = view.getWidth();
             RectF maskRect = this.orientationHelper.getMaskRect(height, width, AnimationUtils.lerp(0.0f, height / 2.0f, 0.0f, 1.0f, lerp), AnimationUtils.lerp(0.0f, width / 2.0f, 0.0f, 1.0f, lerp));
-            float calculateChildOffsetCenterForLocation = calculateChildOffsetCenterForLocation(view, f, keylineRange);
+            float calculateChildOffsetCenterForLocation = calculateChildOffsetCenterForLocation(f, keylineRange);
             RectF rectF = new RectF(calculateChildOffsetCenterForLocation - (maskRect.width() / 2.0f), calculateChildOffsetCenterForLocation - (maskRect.height() / 2.0f), calculateChildOffsetCenterForLocation + (maskRect.width() / 2.0f), (maskRect.height() / 2.0f) + calculateChildOffsetCenterForLocation);
             RectF rectF2 = new RectF(getParentLeft(), getParentTop(), getParentRight(), getParentBottom());
-            if (this.carouselStrategy.isContained()) {
+            if (this.carouselStrategy.getStrategyType() == CarouselStrategy.StrategyType.CONTAINED) {
                 this.orientationHelper.containMaskWithinBounds(maskRect, rectF, rectF2);
             }
             this.orientationHelper.moveMaskOnEdgeOutsideBounds(maskRect, rectF, rectF2);
@@ -559,10 +572,6 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
     /* JADX INFO: Access modifiers changed from: private */
     public int getParentRight() {
         return this.orientationHelper.getParentRight();
-    }
-
-    private int getParentEnd() {
-        return this.orientationHelper.getParentEnd();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -832,6 +841,9 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
         if (this.keylineStateList == null) {
             recalculateKeylineStateList(recycler);
         }
+        if (getItemCount() <= getKeylineStartingState(this.keylineStateList).getTotalVisibleFocalItems()) {
+            return 0;
+        }
         int calculateShouldScrollBy = calculateShouldScrollBy(i, this.scrollOffset, this.minScroll, this.maxScroll);
         this.scrollOffset += calculateShouldScrollBy;
         updateCurrentKeylineStateForScrollOffset(this.keylineStateList);
@@ -860,7 +872,7 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
     private float offsetChild(View view, float f, float f2, Rect rect) {
         float addEnd = addEnd(f, f2);
         KeylineRange surroundingKeylineRange = getSurroundingKeylineRange(this.currentKeylineState.getKeylines(), addEnd, false);
-        float calculateChildOffsetCenterForLocation = calculateChildOffsetCenterForLocation(view, addEnd, surroundingKeylineRange);
+        float calculateChildOffsetCenterForLocation = calculateChildOffsetCenterForLocation(addEnd, surroundingKeylineRange);
         super.getDecoratedBoundsWithMargins(view, rect);
         updateChildMaskForLocation(view, addEnd, surroundingKeylineRange);
         this.orientationHelper.offsetChild(view, rect, f2, calculateChildOffsetCenterForLocation);
@@ -928,6 +940,12 @@ public class CarouselLayoutManager extends RecyclerView.LayoutManager implements
     @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onItemsRemoved(RecyclerView recyclerView, int i, int i2) {
         super.onItemsRemoved(recyclerView, i, i2);
+        updateItemCount();
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
+    public void onItemsChanged(RecyclerView recyclerView) {
+        super.onItemsChanged(recyclerView);
         updateItemCount();
     }
 

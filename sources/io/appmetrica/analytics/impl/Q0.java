@@ -1,20 +1,21 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.profile.UserProfile;
 /* loaded from: classes4.dex */
 public final class Q0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ UserProfile f611a;
-    public final /* synthetic */ C0494p1 b;
+    public final /* synthetic */ boolean f628a;
+    public final /* synthetic */ C0547r1 b;
 
-    public Q0(C0494p1 c0494p1, UserProfile userProfile) {
-        this.b = c0494p1;
-        this.f611a = userProfile;
+    public Q0(C0547r1 c0547r1, boolean z) {
+        this.b = c0547r1;
+        this.f628a = z;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0494p1.a(this.b).reportUserProfile(this.f611a);
+        C0671w0 c0671w0 = this.b.f1054a;
+        boolean z = this.f628a;
+        c0671w0.getClass();
+        C0646v0.c().setDataSendingEnabled(z);
     }
 }

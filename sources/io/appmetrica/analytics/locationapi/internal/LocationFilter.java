@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class LocationFilter {
 
     /* renamed from: a  reason: collision with root package name */
-    private final long f1213a;
+    private final long f1218a;
     private final float b;
 
     public LocationFilter() {
@@ -23,7 +23,7 @@ public final class LocationFilter {
         if (Intrinsics.areEqual(LocationFilter.class, obj != null ? obj.getClass() : null)) {
             if (obj != null) {
                 LocationFilter locationFilter = (LocationFilter) obj;
-                return this.f1213a == locationFilter.f1213a && this.b == locationFilter.b;
+                return this.f1218a == locationFilter.f1218a && this.b == locationFilter.b;
             }
             throw new NullPointerException("null cannot be cast to non-null type io.appmetrica.analytics.locationapi.internal.LocationFilter");
         }
@@ -35,19 +35,19 @@ public final class LocationFilter {
     }
 
     public final long getUpdateTimeInterval() {
-        return this.f1213a;
+        return this.f1218a;
     }
 
     public int hashCode() {
-        return Float.hashCode(this.b) + (Long.hashCode(this.f1213a) * 31);
+        return Float.hashCode(this.b) + (Long.hashCode(this.f1218a) * 31);
     }
 
     public String toString() {
-        return "LocationFilter(updateTimeInterval=" + this.f1213a + ", updateDistanceInterval=" + this.b + ')';
+        return "LocationFilter(updateTimeInterval=" + this.f1218a + ", updateDistanceInterval=" + this.b + ')';
     }
 
     public LocationFilter(long j, float f) {
-        this.f1213a = j;
+        this.f1218a = j;
         this.b = f;
     }
 

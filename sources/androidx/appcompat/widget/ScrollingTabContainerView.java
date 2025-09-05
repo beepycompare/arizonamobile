@@ -27,6 +27,7 @@ import androidx.appcompat.R;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.view.ActionBarPolicy;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import com.google.android.material.navigation.NavigationBarView;
 /* loaded from: classes.dex */
 public class ScrollingTabContainerView extends HorizontalScrollView implements AdapterView.OnItemSelectedListener {
     private static final int FADE_DURATION = 200;
@@ -345,7 +346,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
             }
             obtainStyledAttributes.recycle();
             if (z) {
-                setGravity(8388627);
+                setGravity(NavigationBarView.ITEM_GRAVITY_START_CENTER);
             }
             update();
         }

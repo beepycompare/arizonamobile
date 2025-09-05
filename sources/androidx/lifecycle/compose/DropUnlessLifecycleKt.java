@@ -16,7 +16,7 @@ public final class DropUnlessLifecycleKt {
     private static final Function0<Unit> dropUnlessStateIsAtLeast(final Lifecycle.State state, final LifecycleOwner lifecycleOwner, final Function0<Unit> function0, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -2057956404, "C(dropUnlessStateIsAtLeast)P(2,1)45@1919L7,53@2217L107:DropUnlessLifecycle.kt#2vxrgp");
         if ((i2 & 2) != 0) {
-            ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
             ComposerKt.sourceInformationMarkerEnd(composer);
             lifecycleOwner = (LifecycleOwner) consume;
@@ -61,7 +61,7 @@ public final class DropUnlessLifecycleKt {
     public static final Function0<Unit> dropUnlessStarted(LifecycleOwner lifecycleOwner, Function0<Unit> function0, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1207869935, "C(dropUnlessStarted)P(1)75@3053L7,77@3101L62:DropUnlessLifecycle.kt#2vxrgp");
         if ((i2 & 1) != 0) {
-            ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
             ComposerKt.sourceInformationMarkerEnd(composer);
             lifecycleOwner = (LifecycleOwner) consume;
@@ -82,7 +82,7 @@ public final class DropUnlessLifecycleKt {
     public static final Function0<Unit> dropUnlessResumed(LifecycleOwner lifecycleOwner, Function0<Unit> function0, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1331131589, "C(dropUnlessResumed)P(1)97@4047L7,99@4095L62:DropUnlessLifecycle.kt#2vxrgp");
         if ((i2 & 1) != 0) {
-            ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
             ComposerKt.sourceInformationMarkerEnd(composer);
             lifecycleOwner = (LifecycleOwner) consume;

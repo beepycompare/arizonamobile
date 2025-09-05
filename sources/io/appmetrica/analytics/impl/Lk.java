@@ -3,17 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class Lk {
 
     /* renamed from: a  reason: collision with root package name */
-    public Long f547a;
-    public final EnumC0156bl b;
-    public Long c;
-    public Long d;
-    public final Integer e;
-    public Long f;
-    public Boolean g;
-    public Long h;
+    public final U1 f559a;
 
-    public Lk(Vk vk) {
-        this.b = vk.b();
-        this.e = vk.a();
+    public Lk(U1 u1) {
+        this.f559a = u1;
     }
 }

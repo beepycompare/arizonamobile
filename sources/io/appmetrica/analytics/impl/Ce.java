@@ -1,41 +1,51 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import java.lang.reflect.Field;
 import kotlin.NoWhenBranchMatchedException;
-import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.Charsets;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class Ce implements Converter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Integer fromModel(Boolean bool) {
+public final class Ce {
+    public static final C0119aa a(Ce ce, EnumC0351ja enumC0351ja, Object obj) {
         int i;
-        if (bool == null) {
-            i = -1;
-        } else if (Intrinsics.areEqual(bool, Boolean.TRUE)) {
-            i = 1;
-        } else if (!Intrinsics.areEqual(bool, Boolean.FALSE)) {
-            throw new NoWhenBranchMatchedException();
-        } else {
-            i = 0;
+        Field[] fields;
+        ce.getClass();
+        C0119aa c0119aa = new C0119aa();
+        switch (enumC0351ja.ordinal()) {
+            case 0:
+                i = 0;
+                break;
+            case 1:
+                i = 1;
+                break;
+            case 2:
+                i = 2;
+                break;
+            case 3:
+                i = 3;
+                break;
+            case 4:
+                i = 4;
+                break;
+            case 5:
+                i = 5;
+                break;
+            case 6:
+                i = 6;
+                break;
+            default:
+                throw new NoWhenBranchMatchedException();
         }
-        return Integer.valueOf(i);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final /* bridge */ /* synthetic */ Object toModel(Object obj) {
-        return a(((Number) obj).intValue());
-    }
-
-    public final Boolean a(int i) {
-        if (i != -1) {
-            if (i != 0) {
-                if (i != 1) {
-                    return null;
-                }
-                return Boolean.TRUE;
+        c0119aa.f786a = i;
+        De.b.getClass();
+        JSONObject jSONObject = new JSONObject();
+        for (Field field : obj.getClass().getFields()) {
+            try {
+                jSONObject.put(field.getName(), field.get(obj));
+            } catch (Throwable unused) {
             }
-            return Boolean.FALSE;
         }
-        return null;
+        c0119aa.b = jSONObject.toString().getBytes(Charsets.UTF_8);
+        return c0119aa;
     }
 }

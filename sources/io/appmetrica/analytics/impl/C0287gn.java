@@ -1,14 +1,21 @@
 package io.appmetrica.analytics.impl;
 /* renamed from: io.appmetrica.analytics.impl.gn  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0287gn extends AbstractC0358jh {
-    public C0287gn(C0572s5 c0572s5) {
-        super(c0572s5);
+public final class C0287gn extends R4 {
+    public final Rn g;
+
+    public C0287gn(String str, String str2, Rn rn, yo yoVar, Z2 z2) {
+        super(0, str, str2, yoVar, z2);
+        this.g = rn;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0358jh
-    public final boolean a(C0399l6 c0399l6) {
-        this.f925a.B();
-        return false;
+    @Override // io.appmetrica.analytics.impl.R4
+    public final void a(C0417lo c0417lo) {
+        String str = (String) this.g.a((String) this.f);
+        c0417lo.d.f1006a = str == null ? new byte[0] : str.getBytes();
+    }
+
+    public final Rn h() {
+        return this.g;
     }
 }

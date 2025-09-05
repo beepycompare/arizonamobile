@@ -191,13 +191,7 @@ public final class TransformationUtils {
         if (isExifOrientationRequired(i)) {
             Matrix matrix = new Matrix();
             initializeMatrixForRotation(i, matrix);
-            RectF rectF = new RectF(0.0f, 0.0f, bitmap.getWidth(), bitmap.getHeight());
-            matrix.mapRect(rectF);
-            Bitmap bitmap2 = bitmapPool.get(Math.round(rectF.width()), Math.round(rectF.height()), getNonNullConfig(bitmap));
-            matrix.postTranslate(-rectF.left, -rectF.top);
-            bitmap2.setHasAlpha(bitmap.hasAlpha());
-            applyMatrix(bitmap, bitmap2, matrix);
-            return bitmap2;
+            return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
         }
         return bitmap;
     }

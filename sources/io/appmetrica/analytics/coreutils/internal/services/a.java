@@ -6,17 +6,17 @@ import io.appmetrica.analytics.coreutils.internal.services.WaitForActivationDela
 public final class a implements ActivationBarrierCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Runnable f296a;
+    public final /* synthetic */ Runnable f297a;
     public final /* synthetic */ WaitForActivationDelayBarrier.ActivationBarrierHelper b;
 
     public a(WaitForActivationDelayBarrier.ActivationBarrierHelper activationBarrierHelper, Runnable runnable) {
         this.b = activationBarrierHelper;
-        this.f296a = runnable;
+        this.f297a = runnable;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback
     public final void onWaitFinished() {
-        this.b.f295a = true;
-        this.f296a.run();
+        this.b.f296a = true;
+        this.f297a.run();
     }
 }

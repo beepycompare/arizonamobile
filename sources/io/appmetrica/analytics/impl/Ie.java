@@ -1,52 +1,44 @@
 package io.appmetrica.analytics.impl;
 
-import androidx.media3.datasource.cache.CacheDataSink;
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import java.util.Map;
+import io.appmetrica.analytics.ecommerce.ECommerceEvent;
+import io.appmetrica.analytics.ecommerce.ECommerceOrder;
+import java.util.List;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
-public final class Ie implements Converter {
+public final class Ie extends ECommerceEvent {
+    public static final int d = 6;
+    public static final int e = 7;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Sa f497a;
+    public final int f493a;
+    public final Ke b;
+    public final A8 c;
 
-    public Ie() {
-        this(new Sa((int) CacheDataSink.DEFAULT_BUFFER_SIZE, 100, 1000));
+    public Ie(int i, ECommerceOrder eCommerceOrder) {
+        this(i, new Ke(eCommerceOrder), new Je());
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Vi fromModel(Map<String, String> map) {
-        On a2 = this.f497a.a(map);
-        H8 h8 = new H8();
-        h8.b = ((I4) a2.b).b;
-        Map map2 = (Map) a2.f594a;
-        if (map2 != null) {
-            h8.f473a = new G8[map2.size()];
-            int i = 0;
-            for (Map.Entry entry : map2.entrySet()) {
-                h8.f473a[i] = new G8();
-                h8.f473a[i].f452a = StringUtils.getUTF8Bytes((String) entry.getKey());
-                h8.f473a[i].b = StringUtils.getUTF8Bytes((String) entry.getValue());
-                i++;
-            }
-        }
-        InterfaceC0695x3 interfaceC0695x3 = a2.b;
-        int i2 = ((I4) interfaceC0695x3).f1113a;
-        return new Vi(h8, interfaceC0695x3);
+    public final A8 a() {
+        return this.c;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        Vi vi = (Vi) obj;
-        throw new UnsupportedOperationException();
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent
+    public final String getPublicDescription() {
+        return "order info";
     }
 
-    public Ie(Sa sa) {
-        this.f497a = sa;
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0280gg
+    public final List<Zi> toProto() {
+        return (List) this.c.fromModel(this);
     }
 
-    public final Map<String, String> a(Vi vi) {
-        throw new UnsupportedOperationException();
+    public final String toString() {
+        return "OrderInfoEvent{eventType=" + this.f493a + ", order=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
+    }
+
+    public Ie(int i, Ke ke, A8 a8) {
+        this.f493a = i;
+        this.b = ke;
+        this.c = a8;
     }
 }

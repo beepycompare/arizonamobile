@@ -1,46 +1,73 @@
 package io.appmetrica.analytics.impl;
 
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.app.ActivityManager;
+import android.app.usage.UsageStatsManager;
+import android.content.Context;
+import androidx.media3.exoplayer.upstream.CmcdData;
+import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
+import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
+import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
+import kotlin.Metadata;
+import kotlin.jvm.JvmStatic;
+@Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\b\u0010\tJ\u0018\u0010\u0007\u001a\u00020\u00062\u0006\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0004H\u0007¨\u0006\n"}, d2 = {"Lio/appmetrica/analytics/impl/J2;", "", "Landroid/content/Context;", "context", "Lio/appmetrica/analytics/impl/k2;", "converter", "Lio/appmetrica/analytics/impl/M2;", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "<init>", "()V", "analytics_binaryProdRelease"}, k = 1, mv = {1, 6, 0})
 /* loaded from: classes4.dex */
 public final class J2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final I2 f507a;
-    public final Boolean b;
+    public static final J2 f503a = new J2();
 
-    public J2(I2 i2, Boolean bool) {
-        this.f507a = i2;
-        this.b = bool;
+    private J2() {
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @JvmStatic
+    public static final M2 a(Context context, final C0369k2 c0369k2) {
+        return new M2((L2) SystemServiceUtils.accessSystemServiceByNameSafely(context, "usagestats", "getting app standby bucket", "usageStatsManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.impl.J2$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
+            public final Object apply(Object obj) {
+                L2 a2;
+                a2 = J2.a(C0369k2.this, (UsageStatsManager) obj);
+                return a2;
+            }
+        }), (Boolean) SystemServiceUtils.accessSystemServiceByNameSafely(context, "activity", "getting is background restricted", "activityManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.impl.J2$$ExternalSyntheticLambda1
+            @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
+            public final Object apply(Object obj) {
+                Boolean a2;
+                a2 = J2.a((ActivityManager) obj);
+                return a2;
+            }
+        }));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final L2 a(C0369k2 c0369k2, UsageStatsManager usageStatsManager) {
+        int appStandbyBucket = usageStatsManager.getAppStandbyBucket();
+        c0369k2.getClass();
+        if (AndroidUtils.isApiAchieved(28)) {
+            if (AndroidUtils.isApiAchieved(30) && appStandbyBucket == 45) {
+                return L2.RESTRICTED;
+            }
+            if (appStandbyBucket == 5) {
+                return L2.EXEMPTED;
+            }
+            if (appStandbyBucket == 10) {
+                return L2.ACTIVE;
+            }
+            if (appStandbyBucket == 30) {
+                return L2.FREQUENT;
+            }
+            if (appStandbyBucket == 20) {
+                return L2.WORKING_SET;
+            }
+            if (appStandbyBucket == 40) {
+                return L2.RARE;
+            }
+            return L2.UNKNOWN;
         }
-        if (obj != null && J2.class == obj.getClass()) {
-            J2 j2 = (J2) obj;
-            if (this.f507a != j2.f507a) {
-                return false;
-            }
-            Boolean bool = this.b;
-            if (bool != null) {
-                return bool.equals(j2.b);
-            }
-            if (j2.b == null) {
-                return true;
-            }
-        }
-        return false;
+        return null;
     }
 
-    public final int hashCode() {
-        I2 i2 = this.f507a;
-        int hashCode = (i2 != null ? i2.hashCode() : 0) * 31;
-        Boolean bool = this.b;
-        return hashCode + (bool != null ? bool.hashCode() : 0);
-    }
-
-    public final String toString() {
-        return "BackgroundRestrictionsState{mAppStandByBucket=" + this.f507a + ", mBackgroundRestricted=" + this.b + AbstractJsonLexerKt.END_OBJ;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Boolean a(ActivityManager activityManager) {
+        return Boolean.valueOf(activityManager.isBackgroundRestricted());
     }
 }

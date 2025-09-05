@@ -1,11 +1,22 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
 /* loaded from: classes4.dex */
-public final class Nc implements InterfaceC0597t5 {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0597t5
-    /* renamed from: b */
-    public final Mc a(Context context, C0398l5 c0398l5, J4 j4, Gm gm) {
-        return new Mc(context, gm.e(), c0398l5, j4, Ka.F.t(), Ka.F.g(), new Xg(gm));
+public final class Nc extends C0476o5 {
+    public Nc(String str, String str2) {
+        super(str, str2);
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0476o5
+    public final boolean d() {
+        return true;
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0476o5
+    public final String e() {
+        return this.f1012a;
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0476o5
+    public final String toString() {
+        return this.f1012a;
     }
 }

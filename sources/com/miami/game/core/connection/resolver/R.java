@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class xml {
-        public static int remote_config_defaults = 0x7f170004;
+        public static int remote_config_defaults = 0x7f170008;
 
         private xml() {
         }

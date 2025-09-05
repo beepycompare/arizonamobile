@@ -1,60 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import io.appmetrica.analytics.coreapi.internal.identifiers.PlatformIdentifiers;
+import io.appmetrica.analytics.coreapi.internal.identifiers.SdkIdentifiers;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.SdkEnvironmentProvider;
+import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 /* renamed from: io.appmetrica.analytics.impl.k6  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0373k6 implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        J9 j9;
-        Bundle readBundle = parcel.readBundle(X6.class.getClassLoader());
-        if (readBundle.containsKey("CounterReport.Source")) {
-            int i = readBundle.getInt("CounterReport.Source");
-            J9[] values = J9.values();
-            int length = values.length;
-            int i2 = 0;
-            while (true) {
-                if (i2 < length) {
-                    j9 = values[i2];
-                    if (j9.f513a == i) {
-                        break;
-                    }
-                    i2++;
-                } else {
-                    j9 = J9.NATIVE;
-                    break;
-                }
-            }
-        } else {
-            j9 = null;
-        }
-        C0399l6 c0399l6 = new C0399l6("", "", 0);
-        EnumC0728yb enumC0728yb = EnumC0728yb.EVENT_TYPE_UNDEFINED;
-        c0399l6.d = readBundle.getInt("CounterReport.Type", -1);
-        c0399l6.e = readBundle.getInt("CounterReport.CustomType");
-        c0399l6.b = StringUtils.ifIsNullToDef(readBundle.getString("CounterReport.Value"), "");
-        c0399l6.c = readBundle.getString("CounterReport.Environment");
-        c0399l6.f950a = readBundle.getString("CounterReport.Event");
-        c0399l6.f = C0399l6.a(readBundle);
-        c0399l6.g = readBundle.getInt("CounterReport.TRUNCATED");
-        c0399l6.h = readBundle.getString("CounterReport.ProfileID");
-        c0399l6.i = readBundle.getLong("CounterReport.CreationElapsedRealtime");
-        c0399l6.j = readBundle.getLong("CounterReport.CreationTimestamp");
-        c0399l6.k = Aa.a(Integer.valueOf(readBundle.getInt("CounterReport.UniquenessStatus")));
-        c0399l6.l = j9;
-        c0399l6.m = readBundle.getBundle("CounterReport.Payload");
-        c0399l6.n = readBundle.containsKey("CounterReport.AttributionIdChanged") ? Boolean.valueOf(readBundle.getBoolean("CounterReport.AttributionIdChanged")) : null;
-        c0399l6.o = readBundle.containsKey("CounterReport.OpenId") ? Integer.valueOf(readBundle.getInt("CounterReport.OpenId")) : null;
-        c0399l6.p = CollectionUtils.bundleToMap(readBundle.getBundle("CounterReport.Extras"));
-        return c0399l6;
-    }
+public final class C0373k6 extends BaseRequestConfig.DataSource {
 
-    @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i) {
-        return new C0399l6[i];
+    /* renamed from: a  reason: collision with root package name */
+    public final C0493om f945a;
+    public final SdkEnvironmentProvider b;
+
+    public C0373k6(C0493om c0493om, SdkEnvironmentProvider sdkEnvironmentProvider, PlatformIdentifiers platformIdentifiers, Object obj) {
+        super(new SdkIdentifiers(c0493om.e(), c0493om.a(), c0493om.b()), sdkEnvironmentProvider, platformIdentifiers, obj);
+        this.f945a = c0493om;
+        this.b = sdkEnvironmentProvider;
     }
 }

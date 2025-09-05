@@ -15,8 +15,6 @@ import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.TintTypedArray;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.MarginLayoutParamsCompat;
-import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.widget.TextViewCompat;
 import com.google.android.material.R;
@@ -57,7 +55,7 @@ public class StartCompoundLayout extends LinearLayout {
 
     private void initStartIconView(TintTypedArray tintTypedArray) {
         if (MaterialResources.isFontScaleAtLeast1_3(getContext())) {
-            MarginLayoutParamsCompat.setMarginEnd((ViewGroup.MarginLayoutParams) this.startIconView.getLayoutParams(), 0);
+            ((ViewGroup.MarginLayoutParams) this.startIconView.getLayoutParams()).setMarginEnd(0);
         }
         setStartIconOnClickListener(null);
         setStartIconOnLongClickListener(null);
@@ -84,7 +82,7 @@ public class StartCompoundLayout extends LinearLayout {
         this.prefixTextView.setVisibility(8);
         this.prefixTextView.setId(R.id.textinput_prefix_text);
         this.prefixTextView.setLayoutParams(new LinearLayout.LayoutParams(-2, -2));
-        ViewCompat.setAccessibilityLiveRegion(this.prefixTextView, 1);
+        this.prefixTextView.setAccessibilityLiveRegion(1);
         setPrefixTextAppearance(tintTypedArray.getResourceId(R.styleable.TextInputLayout_prefixTextAppearance, 0));
         if (tintTypedArray.hasValue(R.styleable.TextInputLayout_prefixTextColor)) {
             setPrefixTextColor(tintTypedArray.getColorStateList(R.styleable.TextInputLayout_prefixTextColor));
@@ -260,12 +258,12 @@ public class StartCompoundLayout extends LinearLayout {
         if (editText == null) {
             return;
         }
-        ViewCompat.setPaddingRelative(this.prefixTextView, isStartIconVisible() ? 0 : ViewCompat.getPaddingStart(editText), editText.getCompoundPaddingTop(), getContext().getResources().getDimensionPixelSize(R.dimen.material_input_text_to_prefix_suffix_padding), editText.getCompoundPaddingBottom());
+        this.prefixTextView.setPaddingRelative(isStartIconVisible() ? 0 : editText.getPaddingStart(), editText.getCompoundPaddingTop(), getContext().getResources().getDimensionPixelSize(R.dimen.material_input_text_to_prefix_suffix_padding), editText.getCompoundPaddingBottom());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int getPrefixTextStartOffset() {
-        return ViewCompat.getPaddingStart(this) + ViewCompat.getPaddingStart(this.prefixTextView) + (isStartIconVisible() ? this.startIconView.getMeasuredWidth() + MarginLayoutParamsCompat.getMarginEnd((ViewGroup.MarginLayoutParams) this.startIconView.getLayoutParams()) : 0);
+        return getPaddingStart() + this.prefixTextView.getPaddingStart() + (isStartIconVisible() ? this.startIconView.getMeasuredWidth() + ((ViewGroup.MarginLayoutParams) this.startIconView.getLayoutParams()).getMarginEnd() : 0);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

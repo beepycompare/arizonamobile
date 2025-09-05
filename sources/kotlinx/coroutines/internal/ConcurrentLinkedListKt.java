@@ -28,11 +28,11 @@ public final class ConcurrentLinkedListKt {
     public static final <S extends Segment<S>> Object findSegmentInternal(S s, long j, Function2<? super Long, ? super S, ? extends S> function2) {
         while (true) {
             if (s.id >= j && !s.isRemoved()) {
-                return SegmentOrClosed.m10647constructorimpl(s);
+                return SegmentOrClosed.m10666constructorimpl(s);
             }
             Object nextOrClosed = s.getNextOrClosed();
             if (nextOrClosed == CLOSED) {
-                return SegmentOrClosed.m10647constructorimpl(CLOSED);
+                return SegmentOrClosed.m10666constructorimpl(CLOSED);
             }
             S s2 = (S) ((ConcurrentLinkedListNode) nextOrClosed);
             if (s2 == null) {
@@ -110,24 +110,24 @@ public final class ConcurrentLinkedListKt {
     public static final /* synthetic */ <S extends Segment<S>> Object findSegmentAndMoveForward$atomicfu$ATOMIC_ARRAY$Any(AtomicReferenceArray atomicReferenceArray, int i, long j, S s, Function2<? super Long, ? super S, ? extends S> function2) {
         while (true) {
             Object findSegmentInternal = findSegmentInternal(s, j, function2);
-            if (SegmentOrClosed.m10652isClosedimpl(findSegmentInternal)) {
+            if (SegmentOrClosed.m10671isClosedimpl(findSegmentInternal)) {
                 return findSegmentInternal;
             }
-            Segment m10650getSegmentimpl = SegmentOrClosed.m10650getSegmentimpl(findSegmentInternal);
+            Segment m10669getSegmentimpl = SegmentOrClosed.m10669getSegmentimpl(findSegmentInternal);
             while (true) {
                 Segment segment = (Segment) atomicReferenceArray.get(i);
-                if (segment.id >= m10650getSegmentimpl.id) {
+                if (segment.id >= m10669getSegmentimpl.id) {
                     return findSegmentInternal;
                 }
-                if (!m10650getSegmentimpl.tryIncPointers$kotlinx_coroutines_core()) {
+                if (!m10669getSegmentimpl.tryIncPointers$kotlinx_coroutines_core()) {
                     break;
-                } else if (Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceArray, i, segment, m10650getSegmentimpl)) {
+                } else if (Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceArray, i, segment, m10669getSegmentimpl)) {
                     if (segment.decPointers$kotlinx_coroutines_core()) {
                         segment.remove();
                     }
                     return findSegmentInternal;
-                } else if (m10650getSegmentimpl.decPointers$kotlinx_coroutines_core()) {
-                    m10650getSegmentimpl.remove();
+                } else if (m10669getSegmentimpl.decPointers$kotlinx_coroutines_core()) {
+                    m10669getSegmentimpl.remove();
                 }
             }
         }
@@ -136,24 +136,24 @@ public final class ConcurrentLinkedListKt {
     public static final /* synthetic */ <S extends Segment<S>> Object findSegmentAndMoveForward$atomicfu$ATOMIC_FIELD_UPDATER$Any(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, Object obj, long j, S s, Function2<? super Long, ? super S, ? extends S> function2) {
         while (true) {
             Object findSegmentInternal = findSegmentInternal(s, j, function2);
-            if (SegmentOrClosed.m10652isClosedimpl(findSegmentInternal)) {
+            if (SegmentOrClosed.m10671isClosedimpl(findSegmentInternal)) {
                 return findSegmentInternal;
             }
-            Segment m10650getSegmentimpl = SegmentOrClosed.m10650getSegmentimpl(findSegmentInternal);
+            Segment m10669getSegmentimpl = SegmentOrClosed.m10669getSegmentimpl(findSegmentInternal);
             while (true) {
                 Segment segment = (Segment) atomicReferenceFieldUpdater.get(obj);
-                if (segment.id >= m10650getSegmentimpl.id) {
+                if (segment.id >= m10669getSegmentimpl.id) {
                     return findSegmentInternal;
                 }
-                if (!m10650getSegmentimpl.tryIncPointers$kotlinx_coroutines_core()) {
+                if (!m10669getSegmentimpl.tryIncPointers$kotlinx_coroutines_core()) {
                     break;
-                } else if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceFieldUpdater, obj, segment, m10650getSegmentimpl)) {
+                } else if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceFieldUpdater, obj, segment, m10669getSegmentimpl)) {
                     if (segment.decPointers$kotlinx_coroutines_core()) {
                         segment.remove();
                     }
                     return findSegmentInternal;
-                } else if (m10650getSegmentimpl.decPointers$kotlinx_coroutines_core()) {
-                    m10650getSegmentimpl.remove();
+                } else if (m10669getSegmentimpl.decPointers$kotlinx_coroutines_core()) {
+                    m10669getSegmentimpl.remove();
                 }
             }
         }
@@ -162,24 +162,24 @@ public final class ConcurrentLinkedListKt {
     public static final /* synthetic */ <S extends Segment<S>> Object findSegmentAndMoveForward$atomicfu$BOXED_ATOMIC$Any(AtomicReference atomicReference, long j, S s, Function2<? super Long, ? super S, ? extends S> function2) {
         while (true) {
             Object findSegmentInternal = findSegmentInternal(s, j, function2);
-            if (SegmentOrClosed.m10652isClosedimpl(findSegmentInternal)) {
+            if (SegmentOrClosed.m10671isClosedimpl(findSegmentInternal)) {
                 return findSegmentInternal;
             }
-            Segment m10650getSegmentimpl = SegmentOrClosed.m10650getSegmentimpl(findSegmentInternal);
+            Segment m10669getSegmentimpl = SegmentOrClosed.m10669getSegmentimpl(findSegmentInternal);
             while (true) {
                 Segment segment = (Segment) atomicReference.get();
-                if (segment.id >= m10650getSegmentimpl.id) {
+                if (segment.id >= m10669getSegmentimpl.id) {
                     return findSegmentInternal;
                 }
-                if (!m10650getSegmentimpl.tryIncPointers$kotlinx_coroutines_core()) {
+                if (!m10669getSegmentimpl.tryIncPointers$kotlinx_coroutines_core()) {
                     break;
-                } else if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(atomicReference, segment, m10650getSegmentimpl)) {
+                } else if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(atomicReference, segment, m10669getSegmentimpl)) {
                     if (segment.decPointers$kotlinx_coroutines_core()) {
                         segment.remove();
                     }
                     return findSegmentInternal;
-                } else if (m10650getSegmentimpl.decPointers$kotlinx_coroutines_core()) {
-                    m10650getSegmentimpl.remove();
+                } else if (m10669getSegmentimpl.decPointers$kotlinx_coroutines_core()) {
+                    m10669getSegmentimpl.remove();
                 }
             }
         }

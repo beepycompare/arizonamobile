@@ -1,17 +1,16 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import java.util.HashMap;
 /* loaded from: classes4.dex */
-public final class Ej {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Fj f417a;
-    public final Context b;
-    public final HashMap c = new HashMap();
-
-    public Ej(Context context, Fj fj) {
-        this.b = context;
-        this.f417a = fj;
+public final class Ej implements E4 {
+    @Override // io.appmetrica.analytics.impl.E4
+    /* renamed from: b */
+    public final Dj a(Context context, B5 b5, C0475o4 c0475o4, N4 n4) {
+        Xg xg;
+        Nc nc = new Nc(c0475o4.b, c0475o4.f1011a);
+        synchronized (b5) {
+            xg = (Xg) b5.f359a.get(nc.toString());
+        }
+        return new Dj(xg);
     }
 }

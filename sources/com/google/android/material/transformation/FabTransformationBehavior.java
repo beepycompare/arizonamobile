@@ -18,7 +18,6 @@ import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.animation.AnimatorSetCompat;
@@ -29,7 +28,6 @@ import com.google.android.material.animation.MotionSpec;
 import com.google.android.material.animation.MotionTiming;
 import com.google.android.material.animation.Positioning;
 import com.google.android.material.circularreveal.CircularRevealCompat;
-import com.google.android.material.circularreveal.CircularRevealHelper;
 import com.google.android.material.circularreveal.CircularRevealWidget;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.math.MathUtils;
@@ -138,7 +136,7 @@ public abstract class FabTransformationBehavior extends ExpandableTransformation
 
     private void createElevationAnimation(View view, View view2, boolean z, boolean z2, FabTransformationSpec fabTransformationSpec, List<Animator> list, List<Animator.AnimatorListener> list2) {
         ObjectAnimator ofFloat;
-        float elevation = ViewCompat.getElevation(view2) - ViewCompat.getElevation(view);
+        float elevation = view2.getElevation() - view.getElevation();
         if (z) {
             if (!z2) {
                 view2.setTranslationZ(-elevation);
@@ -250,7 +248,7 @@ public abstract class FabTransformationBehavior extends ExpandableTransformation
             final CircularRevealWidget circularRevealWidget = (CircularRevealWidget) view2;
             float calculateRevealCenterX = calculateRevealCenterX(view, view2, fabTransformationSpec.positioning);
             float calculateRevealCenterY = calculateRevealCenterY(view, view2, fabTransformationSpec.positioning);
-            ((FloatingActionButton) view).getContentRect(this.tmpRect);
+            ((FloatingActionButton) view).getMeasuredContentRect(this.tmpRect);
             float width = this.tmpRect.width() / 2.0f;
             MotionTiming timing = fabTransformationSpec.timings.getTiming("expansion");
             if (z) {
@@ -306,10 +304,11 @@ public abstract class FabTransformationBehavior extends ExpandableTransformation
     }
 
     private void createChildrenFadeAnimation(View view, View view2, boolean z, boolean z2, FabTransformationSpec fabTransformationSpec, List<Animator> list, List<Animator.AnimatorListener> list2) {
-        ViewGroup calculateChildContentContainer;
         ObjectAnimator ofFloat;
         if (view2 instanceof ViewGroup) {
-            if (((view2 instanceof CircularRevealWidget) && CircularRevealHelper.STRATEGY == 0) || (calculateChildContentContainer = calculateChildContentContainer(view2)) == null) {
+            boolean z3 = view2 instanceof CircularRevealWidget;
+            ViewGroup calculateChildContentContainer = calculateChildContentContainer(view2);
+            if (calculateChildContentContainer == null) {
                 return;
             }
             if (z) {
@@ -465,7 +464,7 @@ public abstract class FabTransformationBehavior extends ExpandableTransformation
     }
 
     private int getBackgroundTint(View view) {
-        ColorStateList backgroundTintList = ViewCompat.getBackgroundTintList(view);
+        ColorStateList backgroundTintList = view.getBackgroundTintList();
         if (backgroundTintList != null) {
             return backgroundTintList.getColorForState(view.getDrawableState(), backgroundTintList.getDefaultColor());
         }

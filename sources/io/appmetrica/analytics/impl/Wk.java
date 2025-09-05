@@ -1,27 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import okhttp3.internal.connection.RealConnection;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
 /* loaded from: classes4.dex */
-public final class Wk {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final zo f713a;
-
-    public Wk(zo zoVar) {
-        this.f713a = zoVar;
+public final class Wk extends T2 {
+    @Override // io.appmetrica.analytics.impl.T2
+    public final MessageNano a() {
+        return new Uk();
     }
 
-    public final long a() {
-        long optLong;
-        zo zoVar = this.f713a;
-        synchronized (zoVar) {
-            optLong = zoVar.f1187a.a().optLong("session_id", -1L);
-        }
-        long j = RealConnection.IDLE_CONNECTION_HEALTHY_NS;
-        if (optLong >= RealConnection.IDLE_CONNECTION_HEALTHY_NS) {
-            j = 1 + optLong;
-        }
-        this.f713a.c(j);
-        return j;
+    public final Uk b() {
+        return new Uk();
+    }
+
+    @Override // io.appmetrica.analytics.impl.T2, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    public final Object defaultValue() {
+        return new Uk();
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    /* renamed from: a */
+    public final Uk toState(byte[] bArr) {
+        return (Uk) MessageNano.mergeFrom(new Uk(), bArr);
     }
 }

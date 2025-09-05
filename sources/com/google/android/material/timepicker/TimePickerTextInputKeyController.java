@@ -69,9 +69,12 @@ class TimePickerTextInputKeyController implements TextView.OnEditorActionListene
         if (i == 67 && keyEvent.getAction() == 0 && TextUtils.isEmpty(editText.getText())) {
             moveSelection(10);
             return true;
+        } else if (i < 7 || i > 16) {
+            return false;
+        } else {
+            clearPrefilledText(editText);
+            return false;
         }
-        clearPrefilledText(editText);
-        return false;
     }
 
     private boolean onHourKeyPress(int i, KeyEvent keyEvent, EditText editText) {
@@ -83,7 +86,9 @@ class TimePickerTextInputKeyController implements TextView.OnEditorActionListene
             moveSelection(12);
             return true;
         }
-        clearPrefilledText(editText);
+        if (i >= 7 && i <= 16) {
+            clearPrefilledText(editText);
+        }
         return false;
     }
 

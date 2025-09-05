@@ -1,40 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy;
-import io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider;
-import io.appmetrica.analytics.modulesapi.internal.network.SimpleNetworkApi;
-import io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext;
+import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashServiceModule;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashServiceModuleDummy;
 /* renamed from: io.appmetrica.analytics.impl.je  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0355je implements ServiceNetworkContext {
+public final class C0355je {
 
     /* renamed from: a  reason: collision with root package name */
-    public final A5 f924a;
-    public final String b = new C0236eo().a();
-    public final C0713xl c = new C0713xl();
+    public final NativeCrashServiceModule f935a;
+    public final C0201de b;
 
-    public C0355je(Context context) {
-        this.f924a = new A5(new K5(context), new Hi(Ka.j().g()));
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
-    public final IExecutionPolicy getExecutionPolicy() {
-        return this.f924a;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
-    public final SimpleNetworkApi getNetworkApi() {
-        return this.c;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
-    public final SslSocketFactoryProvider getSslSocketFactoryProvider() {
-        return Ka.F.y();
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
-    public final String getUserAgent() {
-        return this.b;
+    public C0355je() {
+        ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
+        NativeCrashServiceModule nativeCrashServiceModule = (NativeCrashServiceModule) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor("io.appmetrica.analytics.ndkcrashes.NativeCrashServiceModuleImpl", NativeCrashServiceModule.class);
+        this.f935a = nativeCrashServiceModule == null ? new NativeCrashServiceModuleDummy() : nativeCrashServiceModule;
+        this.b = new C0201de(new C0330ie(this));
     }
 }

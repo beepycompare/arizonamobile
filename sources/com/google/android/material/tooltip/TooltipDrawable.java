@@ -40,7 +40,7 @@ public class TooltipDrawable extends MaterialShapeDrawable implements TextDrawab
     private boolean showMarker;
     private CharSequence text;
     private final TextDrawableHelper textDrawableHelper;
-    private final float tooltipPivotX;
+    private float tooltipPivotX;
     private float tooltipPivotY;
     private float tooltipScaleX;
     private float tooltipScaleY;
@@ -172,10 +172,15 @@ public class TooltipDrawable extends MaterialShapeDrawable implements TextDrawab
     }
 
     public void setRevealFraction(float f) {
-        this.tooltipPivotY = 1.2f;
         this.tooltipScaleX = f;
         this.tooltipScaleY = f;
         this.labelOpacity = AnimationUtils.lerp(0.0f, 1.0f, 0.19f, 1.0f, f);
+        invalidateSelf();
+    }
+
+    public void setPivots(float f, float f2) {
+        this.tooltipPivotX = f;
+        this.tooltipPivotY = f2;
         invalidateSelf();
     }
 
@@ -207,7 +212,7 @@ public class TooltipDrawable extends MaterialShapeDrawable implements TextDrawab
     @Override // com.google.android.material.shape.MaterialShapeDrawable, android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         canvas.save();
-        canvas.scale(this.tooltipScaleX, this.tooltipScaleY, getBounds().left + (getBounds().width() * 0.5f), getBounds().top + (getBounds().height() * this.tooltipPivotY));
+        canvas.scale(this.tooltipScaleX, this.tooltipScaleY, getBounds().left + (getBounds().width() * this.tooltipPivotX), getBounds().top + (getBounds().height() * this.tooltipPivotY));
         canvas.translate(calculatePointerOffset(), (float) (-((this.arrowSize * Math.sqrt(2.0d)) - this.arrowSize)));
         super.draw(canvas);
         drawText(canvas);
@@ -254,7 +259,7 @@ public class TooltipDrawable extends MaterialShapeDrawable implements TextDrawab
     }
 
     private EdgeTreatment createMarkerEdge() {
-        float width = ((float) (getBounds().width() - (this.arrowSize * Math.sqrt(2.0d)))) / 2.0f;
+        float width = (float) ((getBounds().width() - (this.arrowSize * Math.sqrt(2.0d))) / 2.0d);
         return new OffsetEdgeTreatment(new MarkerEdgeTreatment(this.arrowSize), Math.min(Math.max(-calculatePointerOffset(), -width), width));
     }
 

@@ -56,7 +56,7 @@ public final class LinearIndeterminateDisjointAnimatorDelegate extends Indetermi
         if (this.animator == null) {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, ANIMATION_FRACTION, 0.0f, 1.0f);
             this.animator = ofFloat;
-            ofFloat.setDuration(1800L);
+            ofFloat.setDuration(this.baseSpec.indeterminateAnimatorDurationScale * 1800.0f);
             this.animator.setInterpolator(null);
             this.animator.setRepeatCount(-1);
             this.animator.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.progressindicator.LinearIndeterminateDisjointAnimatorDelegate.1
@@ -72,7 +72,7 @@ public final class LinearIndeterminateDisjointAnimatorDelegate extends Indetermi
         if (this.completeEndAnimator == null) {
             ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this, ANIMATION_FRACTION, 1.0f);
             this.completeEndAnimator = ofFloat2;
-            ofFloat2.setDuration(1800L);
+            ofFloat2.setDuration(this.baseSpec.indeterminateAnimatorDurationScale * 1800.0f);
             this.completeEndAnimator.setInterpolator(null);
             this.completeEndAnimator.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.progressindicator.LinearIndeterminateDisjointAnimatorDelegate.2
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -85,6 +85,12 @@ public final class LinearIndeterminateDisjointAnimatorDelegate extends Indetermi
                 }
             });
         }
+    }
+
+    private void updateAnimatorsDuration() {
+        maybeInitializeAnimators();
+        this.animator.setDuration(this.baseSpec.indeterminateAnimatorDurationScale * 1800.0f);
+        this.completeEndAnimator.setDuration(this.baseSpec.indeterminateAnimatorDurationScale * 1800.0f);
     }
 
     @Override // com.google.android.material.progressindicator.IndeterminateAnimatorDelegate
@@ -111,6 +117,7 @@ public final class LinearIndeterminateDisjointAnimatorDelegate extends Indetermi
 
     @Override // com.google.android.material.progressindicator.IndeterminateAnimatorDelegate
     public void invalidateSpecValues() {
+        updateAnimatorsDuration();
         resetPropertiesForNewStart();
     }
 

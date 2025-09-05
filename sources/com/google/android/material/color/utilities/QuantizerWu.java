@@ -126,7 +126,7 @@ public final class QuantizerWu implements Quantizer {
         int i2;
         this.cubes = new Box[i];
         for (int i3 = 0; i3 < i; i3++) {
-            this.cubes[i3] = new Box(null);
+            this.cubes[i3] = new Box();
         }
         double[] dArr = new double[i];
         Box box = this.cubes[0];
@@ -213,18 +213,18 @@ public final class QuantizerWu implements Quantizer {
         box2.r1 = box.r1;
         box2.g1 = box.g1;
         box2.b1 = box.b1;
-        int i = AnonymousClass1.$SwitchMap$com$google$android$material$color$utilities$QuantizerWu$Direction[direction.ordinal()];
-        if (i == 1) {
+        int ordinal = direction.ordinal();
+        if (ordinal == 0) {
             box.r1 = maximize.cutLocation;
             box2.r0 = box.r1;
             box2.g0 = box.g0;
             box2.b0 = box.b0;
-        } else if (i == 2) {
+        } else if (ordinal == 1) {
             box.g1 = maximize2.cutLocation;
             box2.r0 = box.r0;
             box2.g0 = box.g1;
             box2.b0 = box.b0;
-        } else if (i == 3) {
+        } else if (ordinal == 2) {
             box.b1 = maximize3.cutLocation;
             box2.r0 = box.r0;
             box2.g0 = box.g0;
@@ -233,30 +233,6 @@ public final class QuantizerWu implements Quantizer {
         box.vol = (box.r1 - box.r0) * (box.g1 - box.g0) * (box.b1 - box.b0);
         box2.vol = (box2.r1 - box2.r0) * (box2.g1 - box2.g0) * (box2.b1 - box2.b0);
         return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* renamed from: com.google.android.material.color.utilities.QuantizerWu$1  reason: invalid class name */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class AnonymousClass1 {
-        static final /* synthetic */ int[] $SwitchMap$com$google$android$material$color$utilities$QuantizerWu$Direction;
-
-        static {
-            int[] iArr = new int[Direction.values().length];
-            $SwitchMap$com$google$android$material$color$utilities$QuantizerWu$Direction = iArr;
-            try {
-                iArr[Direction.RED.ordinal()] = 1;
-            } catch (NoSuchFieldError unused) {
-            }
-            try {
-                $SwitchMap$com$google$android$material$color$utilities$QuantizerWu$Direction[Direction.GREEN.ordinal()] = 2;
-            } catch (NoSuchFieldError unused2) {
-            }
-            try {
-                $SwitchMap$com$google$android$material$color$utilities$QuantizerWu$Direction[Direction.BLUE.ordinal()] = 3;
-            } catch (NoSuchFieldError unused3) {
-            }
-        }
     }
 
     MaximizeResult maximize(Box box, Direction direction, int i, int i2, int i3, int i4, int i5, int i6) {
@@ -302,14 +278,14 @@ public final class QuantizerWu implements Quantizer {
     static int bottom(Box box, Direction direction, int[] iArr) {
         int i;
         int i2;
-        int i3 = AnonymousClass1.$SwitchMap$com$google$android$material$color$utilities$QuantizerWu$Direction[direction.ordinal()];
-        if (i3 == 1) {
+        int ordinal = direction.ordinal();
+        if (ordinal == 0) {
             i = (-iArr[getIndex(box.r0, box.g1, box.b1)]) + iArr[getIndex(box.r0, box.g1, box.b0)] + iArr[getIndex(box.r0, box.g0, box.b1)];
             i2 = iArr[getIndex(box.r0, box.g0, box.b0)];
-        } else if (i3 == 2) {
+        } else if (ordinal == 1) {
             i = (-iArr[getIndex(box.r1, box.g0, box.b1)]) + iArr[getIndex(box.r1, box.g0, box.b0)] + iArr[getIndex(box.r0, box.g0, box.b1)];
             i2 = iArr[getIndex(box.r0, box.g0, box.b0)];
-        } else if (i3 == 3) {
+        } else if (ordinal == 2) {
             i = (-iArr[getIndex(box.r1, box.g1, box.b0)]) + iArr[getIndex(box.r1, box.g0, box.b0)] + iArr[getIndex(box.r0, box.g1, box.b0)];
             i2 = iArr[getIndex(box.r0, box.g0, box.b0)];
         } else {
@@ -321,14 +297,14 @@ public final class QuantizerWu implements Quantizer {
     static int top(Box box, Direction direction, int i, int[] iArr) {
         int i2;
         int i3;
-        int i4 = AnonymousClass1.$SwitchMap$com$google$android$material$color$utilities$QuantizerWu$Direction[direction.ordinal()];
-        if (i4 == 1) {
+        int ordinal = direction.ordinal();
+        if (ordinal == 0) {
             i2 = (iArr[getIndex(i, box.g1, box.b1)] - iArr[getIndex(i, box.g1, box.b0)]) - iArr[getIndex(i, box.g0, box.b1)];
             i3 = iArr[getIndex(i, box.g0, box.b0)];
-        } else if (i4 == 2) {
+        } else if (ordinal == 1) {
             i2 = (iArr[getIndex(box.r1, i, box.b1)] - iArr[getIndex(box.r1, i, box.b0)]) - iArr[getIndex(box.r0, i, box.b1)];
             i3 = iArr[getIndex(box.r0, i, box.b0)];
-        } else if (i4 == 3) {
+        } else if (ordinal == 2) {
             i2 = (iArr[getIndex(box.r1, box.g1, i)] - iArr[getIndex(box.r1, box.g0, i)]) - iArr[getIndex(box.r0, box.g1, i)];
             i3 = iArr[getIndex(box.r0, box.g0, i)];
         } else {
@@ -378,10 +354,6 @@ public final class QuantizerWu implements Quantizer {
             this.b0 = 0;
             this.b1 = 0;
             this.vol = 0;
-        }
-
-        /* synthetic */ Box(AnonymousClass1 anonymousClass1) {
-            this();
         }
     }
 }

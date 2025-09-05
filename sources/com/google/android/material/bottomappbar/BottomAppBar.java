@@ -22,7 +22,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.customview.view.AbsSavedState;
 import com.google.android.material.R;
@@ -212,9 +211,9 @@ public class BottomAppBar extends Toolbar implements CoordinatorLayout.AttachedB
         }
         materialShapeDrawable.setPaintStyle(Paint.Style.FILL);
         materialShapeDrawable.initializeElevationOverlay(context2);
+        materialShapeDrawable.setTintList(colorStateList);
         setElevation(dimensionPixelSize);
-        DrawableCompat.setTintList(materialShapeDrawable, colorStateList);
-        ViewCompat.setBackground(this, materialShapeDrawable);
+        setBackground(materialShapeDrawable);
         ViewUtils.doOnApplyWindowInsets(this, attributeSet, i, i2, new ViewUtils.OnApplyWindowInsetsListener() { // from class: com.google.android.material.bottomappbar.BottomAppBar.3
             @Override // com.google.android.material.internal.ViewUtils.OnApplyWindowInsetsListener
             public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat, ViewUtils.RelativePadding relativePadding) {
@@ -324,7 +323,7 @@ public class BottomAppBar extends Toolbar implements CoordinatorLayout.AttachedB
     }
 
     public void setBackgroundTint(ColorStateList colorStateList) {
-        DrawableCompat.setTintList(this.materialShapeDrawable, colorStateList);
+        this.materialShapeDrawable.setTintList(colorStateList);
     }
 
     public ColorStateList getBackgroundTint() {
@@ -495,7 +494,7 @@ public class BottomAppBar extends Toolbar implements CoordinatorLayout.AttachedB
     }
 
     private void maybeAnimateModeChange(int i) {
-        if (this.fabAlignmentMode == i || !ViewCompat.isLaidOut(this)) {
+        if (this.fabAlignmentMode == i || !isLaidOut()) {
             return;
         }
         Animator animator = this.modeAnimator;
@@ -595,13 +594,13 @@ public class BottomAppBar extends Toolbar implements CoordinatorLayout.AttachedB
             return drawable;
         }
         Drawable wrap = DrawableCompat.wrap(drawable.mutate());
-        DrawableCompat.setTint(wrap, this.navigationIconTint.intValue());
+        wrap.setTint(this.navigationIconTint.intValue());
         return wrap;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void maybeAnimateMenuView(int i, boolean z) {
-        if (!ViewCompat.isLaidOut(this)) {
+        if (!isLaidOut()) {
             this.menuAnimatingWithFabAlignmentMode = false;
             replaceMenu(this.pendingMenuResId);
             return;
@@ -781,7 +780,7 @@ public class BottomAppBar extends Toolbar implements CoordinatorLayout.AttachedB
             cancelAnimations();
             setCutoutStateAndTranslateFab();
             final View findDependentView = findDependentView();
-            if (findDependentView != null && ViewCompat.isLaidOut(findDependentView)) {
+            if (findDependentView != null && findDependentView.isLaidOut()) {
                 findDependentView.post(new Runnable() { // from class: com.google.android.material.bottomappbar.BottomAppBar$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -958,13 +957,13 @@ public class BottomAppBar extends Toolbar implements CoordinatorLayout.AttachedB
         public boolean onLayoutChild(CoordinatorLayout coordinatorLayout, BottomAppBar bottomAppBar, int i) {
             this.viewRef = new WeakReference<>(bottomAppBar);
             View findDependentView = bottomAppBar.findDependentView();
-            if (findDependentView != null && !ViewCompat.isLaidOut(findDependentView)) {
+            if (findDependentView != null && !findDependentView.isLaidOut()) {
                 BottomAppBar.updateFabAnchorGravity(bottomAppBar, findDependentView);
                 this.originalBottomMargin = ((CoordinatorLayout.LayoutParams) findDependentView.getLayoutParams()).bottomMargin;
                 if (findDependentView instanceof FloatingActionButton) {
                     FloatingActionButton floatingActionButton = (FloatingActionButton) findDependentView;
                     if (bottomAppBar.fabAnchorMode == 0 && bottomAppBar.removeEmbeddedFabElevation) {
-                        ViewCompat.setElevation(floatingActionButton, 0.0f);
+                        floatingActionButton.setElevation(0.0f);
                         floatingActionButton.setCompatElevation(0.0f);
                     }
                     if (floatingActionButton.getShowMotionSpec() == null) {

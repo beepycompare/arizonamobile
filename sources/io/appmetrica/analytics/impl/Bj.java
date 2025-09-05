@@ -1,22 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
+import android.text.TextUtils;
+import io.appmetrica.analytics.BuildConfig;
+import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 /* loaded from: classes4.dex */
-public abstract /* synthetic */ class Bj {
+public abstract class Bj {
+    public static void a(String str, Object... objArr) {
+        ImportantLogger.INSTANCE.info("AppMetrica-Attribution", String.format(str, objArr), new Object[0]);
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f367a;
-
-    static {
-        int[] iArr = new int[CounterConfigurationReporterType.values().length];
-        f367a = iArr;
-        try {
-            iArr[CounterConfigurationReporterType.MAIN.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+    public static String a() {
+        StringBuilder sb = new StringBuilder(BuildConfig.SDK_BUILD_FLAVOR);
+        if (!TextUtils.isEmpty("binary")) {
+            sb.append("_binary");
         }
-        try {
-            f367a[CounterConfigurationReporterType.MANUAL.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
+        if (!TextUtils.isEmpty("")) {
+            sb.append("_");
         }
+        return sb.toString();
     }
 }

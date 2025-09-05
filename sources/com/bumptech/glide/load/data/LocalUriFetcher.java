@@ -1,11 +1,13 @@
 package com.bumptech.glide.load.data;
 
 import android.content.ContentResolver;
+import android.content.res.AssetFileDescriptor;
 import android.net.Uri;
 import android.util.Log;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.data.DataFetcher;
+import com.bumptech.glide.load.data.mediastore.MediaStoreUtil;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 /* loaded from: classes3.dex */
@@ -14,6 +16,7 @@ public abstract class LocalUriFetcher<T> implements DataFetcher<T> {
     private final ContentResolver contentResolver;
     private T data;
     private final Uri uri;
+    protected final boolean useMediaStoreApisIfAvailable;
 
     @Override // com.bumptech.glide.load.data.DataFetcher
     public void cancel() {
@@ -24,8 +27,14 @@ public abstract class LocalUriFetcher<T> implements DataFetcher<T> {
     protected abstract T loadResource(Uri uri, ContentResolver contentResolver) throws FileNotFoundException;
 
     public LocalUriFetcher(ContentResolver contentResolver, Uri uri) {
+        this(contentResolver, uri, false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public LocalUriFetcher(ContentResolver contentResolver, Uri uri, boolean z) {
         this.contentResolver = contentResolver;
         this.uri = uri;
+        this.useMediaStoreApisIfAvailable = z;
     }
 
     @Override // com.bumptech.glide.load.data.DataFetcher
@@ -56,5 +65,13 @@ public abstract class LocalUriFetcher<T> implements DataFetcher<T> {
     @Override // com.bumptech.glide.load.data.DataFetcher
     public DataSource getDataSource() {
         return DataSource.LOCAL;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public AssetFileDescriptor openAssetFileDescriptor(Uri uri) throws FileNotFoundException {
+        if (this.useMediaStoreApisIfAvailable && MediaStoreUtil.isMediaStoreUri(uri) && MediaStoreUtil.isMediaStoreOpenFileApisAvailable()) {
+            return MediaStoreUtil.openAssetFileDescriptor(uri, this.contentResolver);
+        }
+        return this.contentResolver.openAssetFileDescriptor(uri, "r");
     }
 }

@@ -1,16 +1,18 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.profile.UserProfile;
 /* loaded from: classes4.dex */
-public final class Rj implements InterfaceC0454nb {
+public final class Rj implements InterfaceC0533qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Sn f638a;
+    public final /* synthetic */ UserProfile f654a;
 
-    public Rj(Sn sn) {
-        this.f638a = sn;
+    public Rj(UserProfile userProfile) {
+        this.f654a = userProfile;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0454nb
-    public final void a(InterfaceC0479ob interfaceC0479ob) {
-        interfaceC0479ob.a(this.f638a);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
+    public final void a(InterfaceC0557rb interfaceC0557rb) {
+        interfaceC0557rb.reportUserProfile(this.f654a);
     }
 }

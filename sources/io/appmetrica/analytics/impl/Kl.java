@@ -1,31 +1,32 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+import io.appmetrica.analytics.coreapi.internal.data.ListConverter;
+import java.util.List;
 /* loaded from: classes4.dex */
-public final class Kl {
+public final class Kl implements ListConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Ml f533a;
+    public final Ll f539a = new Ll();
 
-    public Kl(Ml ml) {
-        this.f533a = ml;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0727y6[] fromModel(List<Ml> list) {
+        C0727y6[] c0727y6Arr = new C0727y6[list.size()];
+        int i = 0;
+        for (Ml ml : list) {
+            c0727y6Arr[i] = this.f539a.fromModel(ml);
+            i++;
+        }
+        return c0727y6Arr;
     }
 
-    public final void a(String str, Ol ol, C0389km c0389km) {
-        ArrayList arrayList;
-        synchronized (this.f533a.b) {
-            Collection collection = (Collection) this.f533a.f565a.f558a.get(str);
-            if (collection == null) {
-                arrayList = new ArrayList();
-            } else {
-                arrayList = new ArrayList(collection);
-            }
-        }
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            ((Vl) it.next()).a(ol, c0389km);
-        }
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        C0727y6[] c0727y6Arr = (C0727y6[]) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public final List<Ml> a(C0727y6[] c0727y6Arr) {
+        throw new UnsupportedOperationException();
     }
 }

@@ -34,7 +34,6 @@ import androidx.appcompat.widget.TooltipCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.util.Pools;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.MarginLayoutParamsCompat;
 import androidx.core.view.PointerIconCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -148,6 +147,7 @@ public class TabLayout extends HorizontalScrollView {
         void onTabUnselected(T t);
     }
 
+    @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes4.dex */
     public @interface LabelVisibility {
     }
@@ -210,8 +210,8 @@ public class TabLayout extends HorizontalScrollView {
             MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable();
             materialShapeDrawable.setFillColor(colorStateListOrNull);
             materialShapeDrawable.initializeElevationOverlay(context2);
-            materialShapeDrawable.setElevation(ViewCompat.getElevation(this));
-            ViewCompat.setBackground(this, materialShapeDrawable);
+            materialShapeDrawable.setElevation(getElevation());
+            setBackground(materialShapeDrawable);
         }
         setSelectedTabIndicator(MaterialResources.getDrawable(context2, obtainStyledAttributes, R.styleable.TabLayout_tabIndicator));
         setSelectedTabIndicatorColor(obtainStyledAttributes.getColor(R.styleable.TabLayout_tabIndicatorColor, 0));
@@ -319,7 +319,7 @@ public class TabLayout extends HorizontalScrollView {
         int calculateScrollXForTab = calculateScrollXForTab(i, f);
         int scrollX = getScrollX();
         boolean z4 = (i < getSelectedTabPosition() && calculateScrollXForTab >= scrollX) || (i > getSelectedTabPosition() && calculateScrollXForTab <= scrollX) || i == getSelectedTabPosition();
-        if (ViewCompat.getLayoutDirection(this) == 1) {
+        if (getLayoutDirection() == 1) {
             z4 = (i < getSelectedTabPosition() && calculateScrollXForTab <= scrollX) || (i > getSelectedTabPosition() && calculateScrollXForTab >= scrollX) || i == getSelectedTabPosition();
         }
         if (z4 || this.viewPagerScrollState == 1 || z3) {
@@ -539,7 +539,7 @@ public class TabLayout extends HorizontalScrollView {
     public void setSelectedTabIndicatorGravity(int i) {
         if (this.tabIndicatorGravity != i) {
             this.tabIndicatorGravity = i;
-            ViewCompat.postInvalidateOnAnimation(this.slidingTabIndicator);
+            this.slidingTabIndicator.postInvalidateOnAnimation();
         }
     }
 
@@ -567,7 +567,7 @@ public class TabLayout extends HorizontalScrollView {
     public void setTabIndicatorFullWidth(boolean z) {
         this.tabIndicatorFullWidth = z;
         this.slidingTabIndicator.jumpIndicatorToSelectedPosition();
-        ViewCompat.postInvalidateOnAnimation(this.slidingTabIndicator);
+        this.slidingTabIndicator.postInvalidateOnAnimation();
     }
 
     public boolean isTabIndicatorFullWidth() {
@@ -982,7 +982,7 @@ public class TabLayout extends HorizontalScrollView {
         if (i == -1) {
             return;
         }
-        if (getWindowToken() == null || !ViewCompat.isLaidOut(this) || this.slidingTabIndicator.childrenNeedLayout()) {
+        if (getWindowToken() == null || !isLaidOut() || this.slidingTabIndicator.childrenNeedLayout()) {
             setScrollPosition(i, 0.0f, true);
             return;
         }
@@ -1099,14 +1099,14 @@ public class TabLayout extends HorizontalScrollView {
             int width2 = childAt2 != null ? childAt2.getWidth() : 0;
             int left = (childAt.getLeft() + (width / 2)) - (getWidth() / 2);
             int i4 = (int) ((width + width2) * 0.5f * f);
-            return ViewCompat.getLayoutDirection(this) == 0 ? left + i4 : left - i4;
+            return getLayoutDirection() == 0 ? left + i4 : left - i4;
         }
         return 0;
     }
 
     private void applyModeAndGravity() {
         int i = this.mode;
-        ViewCompat.setPaddingRelative(this.slidingTabIndicator, (i == 0 || i == 2) ? Math.max(0, this.contentInsetStart - this.tabPaddingStart) : 0, 0, 0, 0);
+        this.slidingTabIndicator.setPaddingRelative((i == 0 || i == 2) ? Math.max(0, this.contentInsetStart - this.tabPaddingStart) : 0, 0, 0, 0);
         int i2 = this.mode;
         if (i2 == 0) {
             applyGravityForModeScrollable(this.tabGravity);
@@ -1214,9 +1214,6 @@ public class TabLayout extends HorizontalScrollView {
                 this.parent.updateTabViews(true);
             }
             updateView();
-            if (BadgeUtils.USE_COMPAT_PARENT && this.view.hasBadgeDrawable() && this.view.badgeDrawable.isVisible()) {
-                this.view.invalidate();
-            }
             return this;
         }
 
@@ -1263,9 +1260,6 @@ public class TabLayout extends HorizontalScrollView {
                 this.parent.updateTabViews(true);
             }
             updateView();
-            if (BadgeUtils.USE_COMPAT_PARENT && this.view.hasBadgeDrawable() && this.view.badgeDrawable.isVisible()) {
-                this.view.invalidate();
-            }
             return this;
         }
 
@@ -1349,7 +1343,7 @@ public class TabLayout extends HorizontalScrollView {
             super(context);
             this.defaultMaxLines = 2;
             updateBackgroundDrawable(context);
-            ViewCompat.setPaddingRelative(this, TabLayout.this.tabPaddingStart, TabLayout.this.tabPaddingTop, TabLayout.this.tabPaddingEnd, TabLayout.this.tabPaddingBottom);
+            setPaddingRelative(TabLayout.this.tabPaddingStart, TabLayout.this.tabPaddingTop, TabLayout.this.tabPaddingEnd, TabLayout.this.tabPaddingBottom);
             setGravity(17);
             setOrientation(!TabLayout.this.inlineLabel ? 1 : 0);
             setClickable(true);
@@ -1359,6 +1353,7 @@ public class TabLayout extends HorizontalScrollView {
         /* JADX INFO: Access modifiers changed from: private */
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Type inference failed for: r3v0, types: [android.graphics.drawable.RippleDrawable] */
+        /* JADX WARN: Type inference failed for: r5v0, types: [com.google.android.material.tabs.TabLayout$TabView] */
         public void updateBackgroundDrawable(Context context) {
             if (TabLayout.this.tabBackgroundResId != 0) {
                 Drawable drawable = AppCompatResources.getDrawable(context, TabLayout.this.tabBackgroundResId);
@@ -1381,7 +1376,7 @@ public class TabLayout extends HorizontalScrollView {
                 }
                 gradientDrawable = new RippleDrawable(convertToRippleDrawableColor, gradientDrawable, TabLayout.this.unboundedRipple ? null : gradientDrawable2);
             }
-            ViewCompat.setBackground(this, gradientDrawable);
+            setBackground(gradientDrawable);
             TabLayout.this.invalidate();
         }
 
@@ -1464,6 +1459,9 @@ public class TabLayout extends HorizontalScrollView {
             super.onMeasure(i, i2);
             if (this.textView != null) {
                 float f = TabLayout.this.tabTextSize;
+                if (isSelected() && TabLayout.this.selectedTabTextAppearance != -1) {
+                    f = TabLayout.this.selectedTabTextSize;
+                }
                 int i3 = this.defaultMaxLines;
                 ImageView imageView = this.iconView;
                 if (imageView == null || imageView.getVisibility() != 0) {
@@ -1476,7 +1474,7 @@ public class TabLayout extends HorizontalScrollView {
                 }
                 float textSize = this.textView.getTextSize();
                 int lineCount = this.textView.getLineCount();
-                int maxLines = TextViewCompat.getMaxLines(this.textView);
+                int maxLines = this.textView.getMaxLines();
                 int i4 = (f > textSize ? 1 : (f == textSize ? 0 : -1));
                 if (i4 != 0 || (maxLines >= 0 && i3 != maxLines)) {
                     if (TabLayout.this.mode != 1 || i4 <= 0 || lineCount != 1 || ((layout = this.textView.getLayout()) != null && approximateLineWidth(layout, 0, f) <= (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight())) {
@@ -1529,7 +1527,7 @@ public class TabLayout extends HorizontalScrollView {
                 TextView textView2 = (TextView) customView.findViewById(16908308);
                 this.customTextView = textView2;
                 if (textView2 != null) {
-                    this.defaultMaxLines = TextViewCompat.getMaxLines(textView2);
+                    this.defaultMaxLines = textView2.getMaxLines();
                 }
                 this.customIconView = (ImageView) customView.findViewById(16908294);
             } else {
@@ -1547,7 +1545,7 @@ public class TabLayout extends HorizontalScrollView {
                 }
                 if (this.textView == null) {
                     inflateAndAddDefaultTextView();
-                    this.defaultMaxLines = TextViewCompat.getMaxLines(this.textView);
+                    this.defaultMaxLines = this.textView.getMaxLines();
                 }
                 TextViewCompat.setTextAppearance(this.textView, TabLayout.this.defaultTabTextAppearance);
                 if (!isSelected() || TabLayout.this.selectedTabTextAppearance == -1) {
@@ -1580,38 +1578,16 @@ public class TabLayout extends HorizontalScrollView {
             setSelected(tab != null && tab.isSelected());
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
         private void inflateAndAddDefaultIconView() {
-            FrameLayout frameLayout;
-            if (BadgeUtils.USE_COMPAT_PARENT) {
-                frameLayout = createPreApi18BadgeAnchorRoot();
-                addView(frameLayout, 0);
-            } else {
-                frameLayout = this;
-            }
-            ImageView imageView = (ImageView) LayoutInflater.from(getContext()).inflate(R.layout.design_layout_tab_icon, (ViewGroup) frameLayout, false);
+            ImageView imageView = (ImageView) LayoutInflater.from(getContext()).inflate(R.layout.design_layout_tab_icon, (ViewGroup) this, false);
             this.iconView = imageView;
-            frameLayout.addView(imageView, 0);
+            addView(imageView, 0);
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
         private void inflateAndAddDefaultTextView() {
-            FrameLayout frameLayout;
-            if (BadgeUtils.USE_COMPAT_PARENT) {
-                frameLayout = createPreApi18BadgeAnchorRoot();
-                addView(frameLayout);
-            } else {
-                frameLayout = this;
-            }
-            TextView textView = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.design_layout_tab_text, (ViewGroup) frameLayout, false);
+            TextView textView = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.design_layout_tab_text, (ViewGroup) this, false);
             this.textView = textView;
-            frameLayout.addView(textView);
-        }
-
-        private FrameLayout createPreApi18BadgeAnchorRoot() {
-            FrameLayout frameLayout = new FrameLayout(getContext());
-            frameLayout.setLayoutParams(new FrameLayout.LayoutParams(-2, -2));
-            return frameLayout;
+            addView(textView);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1687,7 +1663,7 @@ public class TabLayout extends HorizontalScrollView {
         private void tryAttachBadgeToAnchor(View view) {
             if (hasBadgeDrawable() && view != null) {
                 clipViewToPaddingForBadge(false);
-                BadgeUtils.attachBadgeDrawable(this.badgeDrawable, view, getCustomParentForBadge(view));
+                BadgeUtils.attachBadgeDrawable(this.badgeDrawable, view, (FrameLayout) null);
                 this.badgeAnchorView = view;
             }
         }
@@ -1734,9 +1710,9 @@ public class TabLayout extends HorizontalScrollView {
             Tab tab = this.tab;
             Drawable mutate = (tab == null || tab.getIcon() == null) ? null : DrawableCompat.wrap(this.tab.getIcon()).mutate();
             if (mutate != null) {
-                DrawableCompat.setTintList(mutate, TabLayout.this.tabIconTint);
+                mutate.setTintList(TabLayout.this.tabIconTint);
                 if (TabLayout.this.tabIconTintMode != null) {
-                    DrawableCompat.setTintMode(mutate, TabLayout.this.tabIconTintMode);
+                    mutate.setTintMode(TabLayout.this.tabIconTintMode);
                 }
             }
             Tab tab2 = this.tab;
@@ -1769,15 +1745,15 @@ public class TabLayout extends HorizontalScrollView {
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) imageView.getLayoutParams();
                 int dpToPx = (z2 && imageView.getVisibility() == 0) ? (int) ViewUtils.dpToPx(getContext(), 8) : 0;
                 if (TabLayout.this.inlineLabel) {
-                    if (dpToPx != MarginLayoutParamsCompat.getMarginEnd(marginLayoutParams)) {
-                        MarginLayoutParamsCompat.setMarginEnd(marginLayoutParams, dpToPx);
+                    if (dpToPx != marginLayoutParams.getMarginEnd()) {
+                        marginLayoutParams.setMarginEnd(dpToPx);
                         marginLayoutParams.bottomMargin = 0;
                         imageView.setLayoutParams(marginLayoutParams);
                         imageView.requestLayout();
                     }
                 } else if (dpToPx != marginLayoutParams.bottomMargin) {
                     marginLayoutParams.bottomMargin = dpToPx;
-                    MarginLayoutParamsCompat.setMarginEnd(marginLayoutParams, 0);
+                    marginLayoutParams.setMarginEnd(0);
                     imageView.setLayoutParams(marginLayoutParams);
                     imageView.requestLayout();
                 }
@@ -1793,20 +1769,12 @@ public class TabLayout extends HorizontalScrollView {
         /* JADX INFO: Access modifiers changed from: private */
         public void tryUpdateBadgeDrawableBounds(View view) {
             if (hasBadgeDrawable() && view == this.badgeAnchorView) {
-                BadgeUtils.setBadgeDrawableBounds(this.badgeDrawable, view, getCustomParentForBadge(view));
+                BadgeUtils.setBadgeDrawableBounds(this.badgeDrawable, view, null);
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public boolean hasBadgeDrawable() {
+        private boolean hasBadgeDrawable() {
             return this.badgeDrawable != null;
-        }
-
-        private FrameLayout getCustomParentForBadge(View view) {
-            if ((view == this.iconView || view == this.textView) && BadgeUtils.USE_COMPAT_PARENT) {
-                return (FrameLayout) view.getParent();
-            }
-            return null;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -1977,7 +1945,7 @@ public class TabLayout extends HorizontalScrollView {
             } else {
                 TabLayout.this.tabSelectedIndicator.setBounds(-1, TabLayout.this.tabSelectedIndicator.getBounds().top, -1, TabLayout.this.tabSelectedIndicator.getBounds().bottom);
             }
-            ViewCompat.postInvalidateOnAnimation(this);
+            postInvalidateOnAnimation();
         }
 
         void animateIndicatorToPosition(int i, int i2) {

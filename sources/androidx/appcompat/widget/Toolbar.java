@@ -44,6 +44,7 @@ import androidx.core.view.ViewCompat;
 import androidx.customview.view.AbsSavedState;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
+import com.google.android.material.navigation.NavigationBarView;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -190,7 +191,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
 
     public Toolbar(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.mGravity = 8388627;
+        this.mGravity = NavigationBarView.ITEM_GRAVITY_START_CENTER;
         this.mTempViews = new ArrayList<>();
         this.mHiddenViews = new ArrayList<>();
         this.mTempMargins = new int[2];
@@ -1019,8 +1020,9 @@ public class Toolbar extends ViewGroup implements MenuHost {
         post(this.mShowOverflowMenuRunnable);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    protected void onDetachedFromWindow() {
+    public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         removeCallbacks(this.mShowOverflowMenuRunnable);
         updateBackInvokedCallbackState();
@@ -1783,7 +1785,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
         public LayoutParams(int i, int i2) {
             super(i, i2);
             this.mViewType = 0;
-            this.gravity = 8388627;
+            this.gravity = NavigationBarView.ITEM_GRAVITY_START_CENTER;
         }
 
         public LayoutParams(int i, int i2, int i3) {

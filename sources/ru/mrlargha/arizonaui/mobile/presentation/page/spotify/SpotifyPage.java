@@ -53,7 +53,7 @@ import ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyGenreAdapte
 import ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage;
 import ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyTrackListAdapter;
 import ru.mrlargha.arizonaui.mobile.presentation.page.spotify.api.SpotifyApi;
-import ru.mrlargha.arizonaui.mobile.presentation.page.spotify.api.obj.SpotifyTrackResponse;
+import ru.mrlargha.arizonaui.mobile.presentation.page.spotify.api.obj.ArizonaSpotifyTrackResponse;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.ConverterKt;
@@ -172,19 +172,19 @@ public final class SpotifyPage implements MobileController {
                 try {
                     SpotifyPage spotifyPage = SpotifyPage.this;
                     for (Object obj : SpotifyPage.this.spotifyTrackListAdapter.getCurrentTrackList()) {
-                        int id = ((SpotifyTrackResponse) obj).getId();
+                        int id = ((ArizonaSpotifyTrackResponse) obj).getId();
                         num = spotifyPage.playingTrackId;
                         if (num != null && id == num.intValue()) {
-                            SpotifyTrackResponse spotifyTrackResponse = (SpotifyTrackResponse) obj;
-                            int floor = (int) Math.floor((spotifyTrackResponse.getDuration() / 100.0d) * seekBar.getProgress());
+                            ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse = (ArizonaSpotifyTrackResponse) obj;
+                            int floor = (int) Math.floor((arizonaSpotifyTrackResponse.getDuration() / 100.0d) * seekBar.getProgress());
                             IBackendNotifier iBackendNotifier2 = SpotifyPage.this.sendFrontedMessage;
                             int id2 = UIElementID.ARIZONA_MOBILE_PHONE.getId();
-                            int id3 = spotifyTrackResponse.getId();
-                            int id4 = spotifyTrackResponse.getId();
+                            int id3 = arizonaSpotifyTrackResponse.getId();
+                            int id4 = arizonaSpotifyTrackResponse.getId();
                             byte[] bytes = (id4 + StringUtils.COMMA + floor + StringUtils.COMMA + SpotifyPage.this.currentCategoryId).getBytes(Charsets.UTF_8);
                             Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
                             iBackendNotifier2.clickedWrapper(id2, id3, 17, bytes);
-                            SpotifyPage.this.addPlayedTrack(spotifyTrackResponse.getId(), floor);
+                            SpotifyPage.this.addPlayedTrack(arizonaSpotifyTrackResponse.getId(), floor);
                             return;
                         }
                     }
@@ -204,14 +204,14 @@ public final class SpotifyPage implements MobileController {
                 spotifyPage.currentCategoryId = spotifyPage.getCategoryIdByName(genre);
                 if (Intrinsics.areEqual(genre, "favourites")) {
                     SpotifyPage.this.spotifyTrackListAdapter.clearTrackList();
-                    Call<List<SpotifyTrackResponse>> trackListByFavourites = SpotifyPage.this.api.getTrackListByFavourites(SpotifyPage.this.spotifyTrackListAdapter.getFavourites());
+                    Call<List<ArizonaSpotifyTrackResponse>> trackListByFavourites = SpotifyPage.this.api.getTrackListByFavourites(SpotifyPage.this.spotifyTrackListAdapter.getFavourites());
                     final SpotifyPage spotifyPage2 = SpotifyPage.this;
-                    trackListByFavourites.enqueue((Callback) new Callback<List<? extends SpotifyTrackResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$2$callback$1
+                    trackListByFavourites.enqueue((Callback) new Callback<List<? extends ArizonaSpotifyTrackResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$2$callback$1
                         @Override // retrofit2.Callback
-                        public void onResponse(Call<List<? extends SpotifyTrackResponse>> call, Response<List<? extends SpotifyTrackResponse>> response) {
+                        public void onResponse(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Response<List<? extends ArizonaSpotifyTrackResponse>> response) {
                             Intrinsics.checkNotNullParameter(call, "call");
                             Intrinsics.checkNotNullParameter(response, "response");
-                            List<? extends SpotifyTrackResponse> body = response.body();
+                            List<? extends ArizonaSpotifyTrackResponse> body = response.body();
                             if (body != null) {
                                 SpotifyPage spotifyPage3 = SpotifyPage.this;
                                 String str = genre;
@@ -233,21 +233,21 @@ public final class SpotifyPage implements MobileController {
                         }
 
                         @Override // retrofit2.Callback
-                        public void onFailure(Call<List<? extends SpotifyTrackResponse>> call, Throwable t) {
+                        public void onFailure(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Throwable t) {
                             Intrinsics.checkNotNullParameter(call, "call");
                             Intrinsics.checkNotNullParameter(t, "t");
                             Log.w("SpotifyPage", "error get favourite tracks");
                         }
                     });
                 } else {
-                    Call<List<SpotifyTrackResponse>> trackListByCategory = SpotifyPage.this.api.getTrackListByCategory(genre);
+                    Call<List<ArizonaSpotifyTrackResponse>> trackListByCategory = SpotifyPage.this.api.getTrackListByCategory(genre);
                     final SpotifyPage spotifyPage3 = SpotifyPage.this;
-                    trackListByCategory.enqueue((Callback) new Callback<List<? extends SpotifyTrackResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$2$callback$2
+                    trackListByCategory.enqueue((Callback) new Callback<List<? extends ArizonaSpotifyTrackResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$2$callback$2
                         @Override // retrofit2.Callback
-                        public void onResponse(Call<List<? extends SpotifyTrackResponse>> call, Response<List<? extends SpotifyTrackResponse>> response) {
+                        public void onResponse(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Response<List<? extends ArizonaSpotifyTrackResponse>> response) {
                             Intrinsics.checkNotNullParameter(call, "call");
                             Intrinsics.checkNotNullParameter(response, "response");
-                            List<? extends SpotifyTrackResponse> body = response.body();
+                            List<? extends ArizonaSpotifyTrackResponse> body = response.body();
                             if (body != null) {
                                 SpotifyPage spotifyPage4 = SpotifyPage.this;
                                 String str = genre;
@@ -269,7 +269,7 @@ public final class SpotifyPage implements MobileController {
                         }
 
                         @Override // retrofit2.Callback
-                        public void onFailure(Call<List<? extends SpotifyTrackResponse>> call, Throwable t) {
+                        public void onFailure(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Throwable t) {
                             Intrinsics.checkNotNullParameter(call, "call");
                             Intrinsics.checkNotNullParameter(t, "t");
                             Log.w("SpotifyPage", "error get track category");
@@ -534,12 +534,12 @@ public final class SpotifyPage implements MobileController {
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean spotifyState$lambda$10$lambda$9(final SpotifyPage spotifyPage, final MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding, TextView textView, int i, KeyEvent keyEvent) {
         if (i == 5 || i == 6) {
-            spotifyPage.api.searchTrackListByParam(textView.getText().toString()).enqueue((Callback) new Callback<List<? extends SpotifyTrackResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$spotifyState$2$3$1
+            spotifyPage.api.searchTrackListByParam(textView.getText().toString()).enqueue((Callback) new Callback<List<? extends ArizonaSpotifyTrackResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$spotifyState$2$3$1
                 @Override // retrofit2.Callback
-                public void onResponse(Call<List<? extends SpotifyTrackResponse>> call, Response<List<? extends SpotifyTrackResponse>> response) {
+                public void onResponse(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Response<List<? extends ArizonaSpotifyTrackResponse>> response) {
                     Intrinsics.checkNotNullParameter(call, "call");
                     Intrinsics.checkNotNullParameter(response, "response");
-                    List<? extends SpotifyTrackResponse> body = response.body();
+                    List<? extends ArizonaSpotifyTrackResponse> body = response.body();
                     if (body != null) {
                         SpotifyPage spotifyPage2 = SpotifyPage.this;
                         MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding2 = mobilePhoneSpotifyPageBinding;
@@ -568,7 +568,7 @@ public final class SpotifyPage implements MobileController {
                 }
 
                 @Override // retrofit2.Callback
-                public void onFailure(Call<List<? extends SpotifyTrackResponse>> call, Throwable t) {
+                public void onFailure(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Throwable t) {
                     Intrinsics.checkNotNullParameter(call, "call");
                     Intrinsics.checkNotNullParameter(t, "t");
                     Log.w("SpotifyPage", "error search track");
@@ -638,10 +638,10 @@ public final class SpotifyPage implements MobileController {
             }
             countDownTimer.cancel();
         }
-        for (SpotifyTrackResponse spotifyTrackResponse : this.spotifyTrackListAdapter.getCurrentTrackList()) {
-            if (spotifyTrackResponse.getId() == i) {
+        for (ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse : this.spotifyTrackListAdapter.getCurrentTrackList()) {
+            if (arizonaSpotifyTrackResponse.getId() == i) {
                 MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding = this.spotifyPageBinding;
-                mobilePhoneSpotifyPageBinding.mpSpotifySingerName.setText(spotifyTrackResponse.getSongName());
+                mobilePhoneSpotifyPageBinding.mpSpotifySingerName.setText(arizonaSpotifyTrackResponse.getSongName());
                 mobilePhoneSpotifyPageBinding.mpSpotifySongName.setText("");
                 mobilePhoneSpotifyPageBinding.mpSpotifySongTime.setText("live");
                 mobilePhoneSpotifyPageBinding.mpSpotifySongTime.setVisibility(0);
@@ -683,19 +683,19 @@ public final class SpotifyPage implements MobileController {
         }
         try {
             if (!this.spotifyTrackListAdapter.getCurrentTrackList().isEmpty()) {
-                List<SpotifyTrackResponse> currentTrackList = this.spotifyTrackListAdapter.getCurrentTrackList();
+                List<ArizonaSpotifyTrackResponse> currentTrackList = this.spotifyTrackListAdapter.getCurrentTrackList();
                 if (currentTrackList instanceof Collection) {
                 }
-                for (SpotifyTrackResponse spotifyTrackResponse : currentTrackList) {
-                    if (spotifyTrackResponse.getId() == i) {
+                for (ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse : currentTrackList) {
+                    if (arizonaSpotifyTrackResponse.getId() == i) {
                         for (Object obj : this.spotifyTrackListAdapter.getCurrentTrackList()) {
-                            if (((SpotifyTrackResponse) obj).getId() == i) {
-                                final SpotifyTrackResponse spotifyTrackResponse2 = (SpotifyTrackResponse) obj;
+                            if (((ArizonaSpotifyTrackResponse) obj).getId() == i) {
+                                final ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse2 = (ArizonaSpotifyTrackResponse) obj;
                                 final MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding = this.spotifyPageBinding;
-                                mobilePhoneSpotifyPageBinding.mpSpotifySingerName.setText(spotifyTrackResponse2.getArtistName());
-                                mobilePhoneSpotifyPageBinding.mpSpotifySongName.setText(spotifyTrackResponse2.getSongName());
+                                mobilePhoneSpotifyPageBinding.mpSpotifySingerName.setText(arizonaSpotifyTrackResponse2.getArtistName());
+                                mobilePhoneSpotifyPageBinding.mpSpotifySongName.setText(arizonaSpotifyTrackResponse2.getSongName());
                                 mobilePhoneSpotifyPageBinding.mpSpotifySongLive.setVisibility(8);
-                                final double duration = 100.0d / spotifyTrackResponse2.getDuration();
+                                final double duration = 100.0d / arizonaSpotifyTrackResponse2.getDuration();
                                 playerInfoVisible(true);
                                 final Ref.IntRef intRef = new Ref.IntRef();
                                 mobilePhoneSpotifyPageBinding.mpSpotifySeekBar.setVisibility(0);
@@ -704,7 +704,7 @@ public final class SpotifyPage implements MobileController {
                                 mobilePhoneSpotifyPageBinding.mpSpotifySeekBar.setProgress((int) Math.floor(doubleRef.element));
                                 this.spotifyPageBinding.mpSpotifyPlay.setImageResource(R.drawable.spotify_play_off);
                                 this.currentTrackProgressInSec = i2;
-                                final long duration2 = (spotifyTrackResponse2.getDuration() - i2) * 1000;
+                                final long duration2 = (arizonaSpotifyTrackResponse2.getDuration() - i2) * 1000;
                                 CountDownTimer countDownTimer2 = new CountDownTimer(duration2) { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$addPlayedTrack$3$1
                                     @Override // android.os.CountDownTimer
                                     public void onTick(long j) {
@@ -718,7 +718,7 @@ public final class SpotifyPage implements MobileController {
                                     @Override // android.os.CountDownTimer
                                     public void onFinish() {
                                         SpotifyPage.this.playerInfoVisible(false);
-                                        int indexOf = arrayList.indexOf(spotifyTrackResponse2) + 1;
+                                        int indexOf = arrayList.indexOf(arizonaSpotifyTrackResponse2) + 1;
                                         if (indexOf < arrayList.size()) {
                                             mobilePhoneSpotifyPageBinding.mpSpotifySeekBar.setProgress(0);
                                             IBackendNotifier iBackendNotifier = SpotifyPage.this.sendFrontedMessage;
@@ -744,19 +744,19 @@ public final class SpotifyPage implements MobileController {
                     }
                 }
             }
-            this.api.getTrackListByFavourites(CollectionsKt.listOf(Integer.valueOf(i))).enqueue((Callback) new Callback<List<? extends SpotifyTrackResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$addPlayedTrack$2
+            this.api.getTrackListByFavourites(CollectionsKt.listOf(Integer.valueOf(i))).enqueue((Callback) new Callback<List<? extends ArizonaSpotifyTrackResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$addPlayedTrack$2
                 @Override // retrofit2.Callback
-                public void onResponse(Call<List<? extends SpotifyTrackResponse>> call, Response<List<? extends SpotifyTrackResponse>> response) {
+                public void onResponse(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Response<List<? extends ArizonaSpotifyTrackResponse>> response) {
                     CountDownTimer countDownTimer3;
                     Object obj2;
                     Intrinsics.checkNotNullParameter(call, "call");
                     Intrinsics.checkNotNullParameter(response, "response");
-                    List<? extends SpotifyTrackResponse> body = response.body();
+                    List<? extends ArizonaSpotifyTrackResponse> body = response.body();
                     if (body != null) {
                         final SpotifyPage spotifyPage = SpotifyPage.this;
                         int i3 = i;
                         final int i4 = i2;
-                        final ArrayList<SpotifyTrackResponse> arrayList2 = arrayList;
+                        final ArrayList<ArizonaSpotifyTrackResponse> arrayList2 = arrayList;
                         Iterator<T> it = body.iterator();
                         while (true) {
                             countDownTimer3 = null;
@@ -765,17 +765,17 @@ public final class SpotifyPage implements MobileController {
                                 break;
                             }
                             obj2 = it.next();
-                            if (((SpotifyTrackResponse) obj2).getId() == i3) {
+                            if (((ArizonaSpotifyTrackResponse) obj2).getId() == i3) {
                                 break;
                             }
                         }
-                        final SpotifyTrackResponse spotifyTrackResponse3 = (SpotifyTrackResponse) obj2;
+                        final ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse3 = (ArizonaSpotifyTrackResponse) obj2;
                         final MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding2 = spotifyPage.spotifyPageBinding;
-                        mobilePhoneSpotifyPageBinding2.mpSpotifySingerName.setText(spotifyTrackResponse3 != null ? spotifyTrackResponse3.getArtistName() : null);
-                        mobilePhoneSpotifyPageBinding2.mpSpotifySongName.setText(spotifyTrackResponse3 != null ? spotifyTrackResponse3.getSongName() : null);
+                        mobilePhoneSpotifyPageBinding2.mpSpotifySingerName.setText(arizonaSpotifyTrackResponse3 != null ? arizonaSpotifyTrackResponse3.getArtistName() : null);
+                        mobilePhoneSpotifyPageBinding2.mpSpotifySongName.setText(arizonaSpotifyTrackResponse3 != null ? arizonaSpotifyTrackResponse3.getSongName() : null);
                         mobilePhoneSpotifyPageBinding2.mpSpotifySongLive.setVisibility(8);
-                        Integer valueOf = spotifyTrackResponse3 != null ? Integer.valueOf((spotifyTrackResponse3.getDuration() - i4) * 1000) : null;
-                        final double duration3 = 100.0d / (spotifyTrackResponse3 != null ? spotifyTrackResponse3.getDuration() : 0);
+                        Integer valueOf = arizonaSpotifyTrackResponse3 != null ? Integer.valueOf((arizonaSpotifyTrackResponse3.getDuration() - i4) * 1000) : null;
+                        final double duration3 = 100.0d / (arizonaSpotifyTrackResponse3 != null ? arizonaSpotifyTrackResponse3.getDuration() : 0);
                         spotifyPage.playerInfoVisible(true);
                         final Ref.IntRef intRef2 = new Ref.IntRef();
                         mobilePhoneSpotifyPageBinding2.mpSpotifySeekBar.setVisibility(0);
@@ -798,7 +798,7 @@ public final class SpotifyPage implements MobileController {
                             @Override // android.os.CountDownTimer
                             public void onFinish() {
                                 SpotifyPage.this.playerInfoVisible(false);
-                                int indexOf = CollectionsKt.indexOf((List<? extends SpotifyTrackResponse>) arrayList2, spotifyTrackResponse3) + 1;
+                                int indexOf = CollectionsKt.indexOf((List<? extends ArizonaSpotifyTrackResponse>) arrayList2, arizonaSpotifyTrackResponse3) + 1;
                                 if (indexOf < arrayList2.size()) {
                                     mobilePhoneSpotifyPageBinding2.mpSpotifySeekBar.setProgress(0);
                                     IBackendNotifier iBackendNotifier = SpotifyPage.this.sendFrontedMessage;
@@ -826,7 +826,7 @@ public final class SpotifyPage implements MobileController {
                 }
 
                 @Override // retrofit2.Callback
-                public void onFailure(Call<List<? extends SpotifyTrackResponse>> call, Throwable t) {
+                public void onFailure(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Throwable t) {
                     Intrinsics.checkNotNullParameter(call, "call");
                     Intrinsics.checkNotNullParameter(t, "t");
                     Log.d("SpotifyPage", "error get track by id");

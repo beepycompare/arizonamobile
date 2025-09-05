@@ -1,73 +1,54 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleRegistry;
-import io.appmetrica.analytics.modulesapi.internal.client.ClientStorageProvider;
-import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientActivator;
-import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientExecutorProvider;
-import io.appmetrica.analytics.modulesapi.internal.client.ProcessDetector;
-import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext;
-import io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFacade;
+import android.os.Bundle;
+import io.appmetrica.analytics.AppMetrica;
+import io.appmetrica.analytics.internal.CounterConfiguration;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.g4  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0268g4 implements InterfaceC0193d6 {
+public class C0268g4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f865a;
-    public final C0270g6 b = new C0270g6(new D5());
-    public final C0721y4 c = new C0721y4(C0696x4.l().b(getContext()));
-    public final C0703xb d = new C0703xb();
-    public final C0442n e = C0696x4.l().a();
-    public final C0216e4 f = new C0216e4();
-    public final C0456nd g = new C0456nd();
-    public final C0242f4 h = new C0242f4();
+    public final Vf f884a;
+    public final CounterConfiguration b;
 
-    public C0268g4(Context context) {
-        this.f865a = context;
+    public C0268g4(Vf vf, CounterConfiguration counterConfiguration) {
+        this.f884a = vf;
+        this.b = counterConfiguration;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
-    public final ActivityLifecycleRegistry getActivityLifecycleRegistry() {
-        return this.e;
+    public static C0268g4 a(Context context, Bundle bundle) {
+        Vf vf;
+        CounterConfiguration fromBundle;
+        String str = Vf.c;
+        if (bundle != null) {
+            try {
+                vf = (Vf) bundle.getParcelable("PROCESS_CFG_OBJ");
+            } catch (Throwable unused) {
+            }
+            fromBundle = CounterConfiguration.fromBundle(bundle);
+            if (fromBundle == null && vf != null && context.getPackageName().equals(vf.f708a.getAsString("PROCESS_CFG_PACKAGE_NAME")) && vf.f708a.getAsInteger("PROCESS_CFG_SDK_API_LEVEL").intValue() == AppMetrica.getLibraryApiLevel()) {
+                return new C0268g4(vf, fromBundle);
+            }
+            return null;
+        }
+        vf = null;
+        fromBundle = CounterConfiguration.fromBundle(bundle);
+        if (fromBundle == null) {
+        }
+        return null;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
-    public final ModuleClientActivator getClientActivator() {
-        return this.f;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
-    public final ModuleClientExecutorProvider getClientExecutorProvider() {
-        return this.g;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
-    public final ClientStorageProvider getClientStorageProvider() {
-        return this.c;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
-    public final Context getContext() {
-        return this.f865a;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
-    public final InternalClientModuleFacade getInternalClientModuleFacade() {
-        return this.d;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0193d6, io.appmetrica.analytics.modulesapi.internal.client.ClientContext
-    public final InterfaceC0244f6 getModuleAdRevenueContext() {
+    public final CounterConfiguration b() {
         return this.b;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
-    public final ProcessDetector getProcessDetector() {
-        return this.h;
+    public final String toString() {
+        return "ClientConfiguration{mProcessConfiguration=" + this.f884a + ", mCounterConfiguration=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
-    public final ModuleAdRevenueContext getModuleAdRevenueContext() {
-        return this.b;
+    public final Vf a() {
+        return this.f884a;
     }
 }

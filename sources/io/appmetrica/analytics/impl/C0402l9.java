@@ -1,27 +1,55 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import java.io.IOException;
+import android.content.ContentValues;
 /* renamed from: io.appmetrica.analytics.impl.l9  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0402l9 extends Q2 {
-    @Override // io.appmetrica.analytics.impl.Q2
-    public final MessageNano a() {
-        return new R9();
-    }
+public final class C0402l9 {
 
-    public final R9 b() {
-        return new R9();
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public final String f964a;
+    public String b;
+    public final Long c;
+    public final Long d;
+    public final Long e;
+    public final Long f;
+    public final I7 g;
+    public final Bb h;
+    public final Integer i;
+    public final String j;
+    public final Integer k;
+    public final Integer l;
+    public final String m;
+    public final String n;
+    public final EnumC0273g9 o;
+    public final Da p;
+    public final M9 q;
+    public final Boolean r;
+    public final Integer s;
+    public final byte[] t;
 
-    @Override // io.appmetrica.analytics.impl.Q2, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final Object defaultValue() {
-        return new R9();
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    /* renamed from: a */
-    public final R9 toState(byte[] bArr) throws IOException {
-        return (R9) MessageNano.mergeFrom(new R9(), bArr);
+    public C0402l9(ContentValues contentValues) {
+        E7 model = new F7(null, 1, null).toModel(contentValues);
+        this.f964a = model.a().j();
+        this.b = model.a().p();
+        this.c = model.c();
+        this.d = model.b();
+        this.e = model.a().k();
+        this.f = model.d();
+        this.g = model.a().i();
+        this.h = model.e();
+        this.i = model.a().d();
+        this.j = model.a().f();
+        this.k = model.a().o();
+        this.l = model.a().c();
+        this.m = model.a().b();
+        this.n = model.a().m();
+        EnumC0273g9 e = model.a().e();
+        this.o = e == null ? EnumC0273g9.a(null) : e;
+        Da h = model.a().h();
+        this.p = h == null ? Da.a(null) : h;
+        this.q = model.a().n();
+        this.r = model.a().a();
+        this.s = model.a().l();
+        this.t = model.a().g();
     }
 }

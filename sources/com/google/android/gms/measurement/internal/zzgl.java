@@ -29,16 +29,16 @@ public final class zzgl extends zzg {
         this.zzb = new zzgj(this, zzaY, "google_app_measurement_local.db");
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:108:0x016a A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x016a A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x016a A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00eb  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0141  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0164  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0174  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0179  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0113 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x016c A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x016c A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x016c A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00ed  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0143  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0166  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0176  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x017b  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0115 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -320,15 +320,17 @@ public final class zzgl extends zzg {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:122:0x022e A[Catch: SQLiteException -> 0x0309, SQLiteDatabaseLockedException -> 0x030e, SQLiteFullException -> 0x0312, all -> 0x041f, TryCatch #56 {all -> 0x041f, blocks: (B:49:0x011a, B:51:0x0120, B:53:0x0131, B:55:0x0137, B:60:0x014f, B:65:0x0167, B:67:0x016c, B:224:0x040f, B:213:0x03e1, B:215:0x03e7, B:216:0x03ea, B:235:0x042e, B:78:0x0195, B:79:0x0198, B:75:0x018c, B:90:0x01b4, B:92:0x01c8, B:99:0x01e3, B:100:0x01ec, B:101:0x01ef, B:97:0x01dd, B:108:0x01f7, B:112:0x020d, B:122:0x022e, B:123:0x0238, B:124:0x023b, B:120:0x0228, B:127:0x0241, B:129:0x0255, B:136:0x0270, B:137:0x027a, B:138:0x027d, B:134:0x026a, B:141:0x0281, B:142:0x0291, B:149:0x02c6, B:151:0x02d9, B:153:0x02e5, B:154:0x02f4), top: B:257:0x011a }] */
-    /* JADX WARN: Removed duplicated region for block: B:213:0x03e1 A[Catch: all -> 0x041f, TRY_ENTER, TryCatch #56 {all -> 0x041f, blocks: (B:49:0x011a, B:51:0x0120, B:53:0x0131, B:55:0x0137, B:60:0x014f, B:65:0x0167, B:67:0x016c, B:224:0x040f, B:213:0x03e1, B:215:0x03e7, B:216:0x03ea, B:235:0x042e, B:78:0x0195, B:79:0x0198, B:75:0x018c, B:90:0x01b4, B:92:0x01c8, B:99:0x01e3, B:100:0x01ec, B:101:0x01ef, B:97:0x01dd, B:108:0x01f7, B:112:0x020d, B:122:0x022e, B:123:0x0238, B:124:0x023b, B:120:0x0228, B:127:0x0241, B:129:0x0255, B:136:0x0270, B:137:0x027a, B:138:0x027d, B:134:0x026a, B:141:0x0281, B:142:0x0291, B:149:0x02c6, B:151:0x02d9, B:153:0x02e5, B:154:0x02f4), top: B:257:0x011a }] */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x03fc  */
-    /* JADX WARN: Removed duplicated region for block: B:227:0x0416  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x0440  */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x039d A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:305:0x0446 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:306:0x0446 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:308:0x0446 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0232 A[Catch: SQLiteException -> 0x030e, SQLiteDatabaseLockedException -> 0x0313, SQLiteFullException -> 0x0317, all -> 0x0424, TryCatch #2 {all -> 0x0424, blocks: (B:49:0x011e, B:51:0x0124, B:53:0x0135, B:55:0x013b, B:60:0x0153, B:65:0x016b, B:67:0x0170, B:224:0x0414, B:213:0x03e6, B:215:0x03ec, B:216:0x03ef, B:235:0x0433, B:78:0x0199, B:79:0x019c, B:75:0x0190, B:90:0x01b8, B:92:0x01cc, B:99:0x01e7, B:100:0x01f0, B:101:0x01f3, B:97:0x01e1, B:108:0x01fb, B:112:0x0211, B:122:0x0232, B:123:0x023c, B:124:0x023f, B:120:0x022c, B:127:0x0245, B:129:0x0259, B:136:0x0274, B:137:0x027e, B:138:0x0281, B:134:0x026e, B:141:0x0285, B:142:0x0295, B:149:0x02ca, B:151:0x02de, B:153:0x02ea, B:154:0x02f9), top: B:256:0x0414 }] */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x03e6 A[Catch: all -> 0x0424, TRY_ENTER, TryCatch #2 {all -> 0x0424, blocks: (B:49:0x011e, B:51:0x0124, B:53:0x0135, B:55:0x013b, B:60:0x0153, B:65:0x016b, B:67:0x0170, B:224:0x0414, B:213:0x03e6, B:215:0x03ec, B:216:0x03ef, B:235:0x0433, B:78:0x0199, B:79:0x019c, B:75:0x0190, B:90:0x01b8, B:92:0x01cc, B:99:0x01e7, B:100:0x01f0, B:101:0x01f3, B:97:0x01e1, B:108:0x01fb, B:112:0x0211, B:122:0x0232, B:123:0x023c, B:124:0x023f, B:120:0x022c, B:127:0x0245, B:129:0x0259, B:136:0x0274, B:137:0x027e, B:138:0x0281, B:134:0x026e, B:141:0x0285, B:142:0x0295, B:149:0x02ca, B:151:0x02de, B:153:0x02ea, B:154:0x02f9), top: B:256:0x0414 }] */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x0401  */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x041b  */
+    /* JADX WARN: Removed duplicated region for block: B:237:0x0445  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x045d  */
+    /* JADX WARN: Removed duplicated region for block: B:245:0x0462  */
+    /* JADX WARN: Removed duplicated region for block: B:293:0x03a2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x044b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:306:0x044b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:308:0x044b A[SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r6v0 */
     /* JADX WARN: Type inference failed for: r6v1, types: [java.util.List, java.lang.String] */
     /* JADX WARN: Type inference failed for: r6v4 */
@@ -354,12 +356,13 @@ public final class zzgl extends zzg {
         int i4;
         zzfx zzfxVar;
         int i5;
+        int i6;
         long j3;
         String str5;
         Parcel obtain;
         zzfx zzfxVar2;
-        int i6;
         int i7;
+        int i8;
         zzbe zzbeVar;
         zzah zzahVar;
         zzpl zzplVar;
@@ -373,32 +376,32 @@ public final class zzgl extends zzg {
         }
         ArrayList arrayList = new ArrayList();
         if (zzq()) {
-            int i8 = 5;
-            int i9 = 0;
-            int i10 = 5;
-            int i11 = 0;
-            while (i11 < i8) {
-                int i12 = 1;
+            int i9 = 5;
+            int i10 = 0;
+            int i11 = 5;
+            int i12 = 0;
+            while (i12 < i9) {
+                int i13 = 1;
                 try {
                     sQLiteDatabase = zzp();
+                    if (sQLiteDatabase == null) {
+                        this.zzc = true;
+                        return r6;
+                    }
                     try {
-                        if (sQLiteDatabase == null) {
-                            this.zzc = true;
-                            return r6;
-                        }
                         try {
                             sQLiteDatabase.beginTransaction();
                             try {
                                 String[] strArr3 = new String[1];
-                                strArr3[i9] = str8;
+                                strArr3[i10] = str8;
                                 try {
                                     String[] strArr4 = new String[1];
-                                    strArr4[i9] = ExifInterface.GPS_MEASUREMENT_3D;
+                                    strArr4[i10] = ExifInterface.GPS_MEASUREMENT_3D;
                                     cursor3 = sQLiteDatabase.query("messages", strArr3, "type=?", strArr4, null, null, "rowid desc", "1");
                                     try {
                                         j = -1;
                                         if (cursor3.moveToFirst()) {
-                                            j2 = cursor3.getLong(i9);
+                                            j2 = cursor3.getLong(i10);
                                             if (cursor3 != null) {
                                                 try {
                                                     cursor3.close();
@@ -406,29 +409,41 @@ public final class zzgl extends zzg {
                                                     str = str6;
                                                     str2 = str7;
                                                     str3 = str8;
-                                                    i3 = i9;
+                                                    i3 = i10;
                                                     i2 = 5;
                                                     cursor2 = null;
-                                                    SystemClock.sleep(i10);
-                                                    i10 += 20;
-                                                    if (cursor2 != null) {
+                                                    try {
+                                                        SystemClock.sleep(i11);
+                                                        i11 += 20;
+                                                        if (cursor2 != null) {
+                                                        }
+                                                        if (sQLiteDatabase == null) {
+                                                        }
+                                                        sQLiteDatabase.close();
+                                                        i12++;
+                                                        i10 = i3;
+                                                        str6 = str;
+                                                        str7 = str2;
+                                                        str8 = str3;
+                                                        i9 = i2;
+                                                        r6 = 0;
+                                                    } catch (Throwable th) {
+                                                        th = th;
+                                                        cursor = cursor2;
+                                                        if (cursor != null) {
+                                                            cursor.close();
+                                                        }
+                                                        if (sQLiteDatabase != null) {
+                                                            sQLiteDatabase.close();
+                                                        }
+                                                        throw th;
                                                     }
-                                                    if (sQLiteDatabase == null) {
-                                                    }
-                                                    sQLiteDatabase.close();
-                                                    i11++;
-                                                    i9 = i3;
-                                                    str6 = str;
-                                                    str7 = str2;
-                                                    str8 = str3;
-                                                    i8 = i2;
-                                                    r6 = 0;
                                                 } catch (SQLiteFullException e) {
                                                     e = e;
                                                     str = str6;
                                                     str2 = str7;
                                                     str3 = str8;
-                                                    i3 = i9;
+                                                    i3 = i10;
                                                     i2 = 5;
                                                     cursor2 = null;
                                                     this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
@@ -438,19 +453,19 @@ public final class zzgl extends zzg {
                                                     if (sQLiteDatabase == null) {
                                                     }
                                                     sQLiteDatabase.close();
-                                                    i11++;
-                                                    i9 = i3;
+                                                    i12++;
+                                                    i10 = i3;
                                                     str6 = str;
                                                     str7 = str2;
                                                     str8 = str3;
-                                                    i8 = i2;
+                                                    i9 = i2;
                                                     r6 = 0;
                                                 } catch (SQLiteException e2) {
                                                     e = e2;
                                                     str = str6;
                                                     str2 = str7;
                                                     str3 = str8;
-                                                    i3 = i9;
+                                                    i3 = i10;
                                                     i2 = 5;
                                                     cursor2 = null;
                                                     if (sQLiteDatabase != null) {
@@ -462,12 +477,12 @@ public final class zzgl extends zzg {
                                                     if (sQLiteDatabase == null) {
                                                     }
                                                     sQLiteDatabase.close();
-                                                    i11++;
-                                                    i9 = i3;
+                                                    i12++;
+                                                    i10 = i3;
                                                     str6 = str;
                                                     str7 = str2;
                                                     str8 = str3;
-                                                    i8 = i2;
+                                                    i9 = i2;
                                                     r6 = 0;
                                                 }
                                             }
@@ -479,7 +494,7 @@ public final class zzgl extends zzg {
                                         }
                                         if (j2 != -1) {
                                             String[] strArr5 = new String[1];
-                                            strArr5[i9] = String.valueOf(j2);
+                                            strArr5[i10] = String.valueOf(j2);
                                             str4 = "rowid<?";
                                             strArr = strArr5;
                                         } else {
@@ -487,7 +502,7 @@ public final class zzgl extends zzg {
                                             strArr = str4;
                                         }
                                         strArr2 = new String[3];
-                                        strArr2[i9] = str8;
+                                        strArr2[i10] = str8;
                                         strArr2[1] = str7;
                                         strArr2[2] = str6;
                                         zzicVar = this.zzu;
@@ -497,7 +512,7 @@ public final class zzgl extends zzg {
                                         if (zzc.zzp(r6, zzfxVar)) {
                                             try {
                                                 strArr2 = new String[5];
-                                                strArr2[i9] = str8;
+                                                strArr2[i10] = str8;
                                                 strArr2[1] = str7;
                                                 strArr2[2] = str6;
                                                 strArr2[3] = "app_version";
@@ -507,29 +522,29 @@ public final class zzgl extends zzg {
                                                 str = str6;
                                                 str2 = str7;
                                                 str3 = str8;
-                                                i3 = i9;
+                                                i3 = i10;
                                                 i2 = 5;
                                                 cursor2 = null;
-                                                SystemClock.sleep(i10);
-                                                i10 += 20;
+                                                SystemClock.sleep(i11);
+                                                i11 += 20;
                                                 if (cursor2 != null) {
                                                 }
                                                 if (sQLiteDatabase == null) {
                                                 }
                                                 sQLiteDatabase.close();
-                                                i11++;
-                                                i9 = i3;
+                                                i12++;
+                                                i10 = i3;
                                                 str6 = str;
                                                 str7 = str2;
                                                 str8 = str3;
-                                                i8 = i2;
+                                                i9 = i2;
                                                 r6 = 0;
                                             } catch (SQLiteFullException e3) {
                                                 e = e3;
                                                 str = str6;
                                                 str2 = str7;
                                                 str3 = str8;
-                                                i3 = i9;
+                                                i3 = i10;
                                                 i2 = 5;
                                                 cursor2 = null;
                                                 this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
@@ -539,19 +554,19 @@ public final class zzgl extends zzg {
                                                 if (sQLiteDatabase == null) {
                                                 }
                                                 sQLiteDatabase.close();
-                                                i11++;
-                                                i9 = i3;
+                                                i12++;
+                                                i10 = i3;
                                                 str6 = str;
                                                 str7 = str2;
                                                 str8 = str3;
-                                                i8 = i2;
+                                                i9 = i2;
                                                 r6 = 0;
                                             } catch (SQLiteException e4) {
                                                 e = e4;
                                                 str = str6;
                                                 str2 = str7;
                                                 str3 = str8;
-                                                i3 = i9;
+                                                i3 = i10;
                                                 i2 = 5;
                                                 cursor2 = null;
                                                 if (sQLiteDatabase != null) {
@@ -563,45 +578,116 @@ public final class zzgl extends zzg {
                                                 if (sQLiteDatabase == null) {
                                                 }
                                                 sQLiteDatabase.close();
-                                                i11++;
-                                                i9 = i3;
+                                                i12++;
+                                                i10 = i3;
                                                 str6 = str;
                                                 str7 = str2;
                                                 str8 = str3;
-                                                i8 = i2;
+                                                i9 = i2;
                                                 r6 = 0;
                                             }
                                         } else {
                                             i5 = 5;
                                         }
-                                    } catch (Throwable th) {
-                                        th = th;
+                                        try {
+                                            i2 = i5;
+                                            i6 = 2;
+                                        } catch (SQLiteDatabaseLockedException unused3) {
+                                            str = str6;
+                                            str3 = str8;
+                                            i3 = i10;
+                                            i2 = i5;
+                                            str2 = str7;
+                                            cursor2 = null;
+                                            SystemClock.sleep(i11);
+                                            i11 += 20;
+                                            if (cursor2 != null) {
+                                            }
+                                            if (sQLiteDatabase == null) {
+                                            }
+                                            sQLiteDatabase.close();
+                                            i12++;
+                                            i10 = i3;
+                                            str6 = str;
+                                            str7 = str2;
+                                            str8 = str3;
+                                            i9 = i2;
+                                            r6 = 0;
+                                        } catch (SQLiteFullException e5) {
+                                            e = e5;
+                                            str = str6;
+                                            str3 = str8;
+                                            i3 = i10;
+                                            i2 = i5;
+                                            str2 = str7;
+                                            cursor2 = null;
+                                            this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                            this.zzc = true;
+                                            if (cursor2 != null) {
+                                            }
+                                            if (sQLiteDatabase == null) {
+                                            }
+                                            sQLiteDatabase.close();
+                                            i12++;
+                                            i10 = i3;
+                                            str6 = str;
+                                            str7 = str2;
+                                            str8 = str3;
+                                            i9 = i2;
+                                            r6 = 0;
+                                        } catch (SQLiteException e6) {
+                                            e = e6;
+                                            str = str6;
+                                            str3 = str8;
+                                            i3 = i10;
+                                            i2 = i5;
+                                            str2 = str7;
+                                            cursor2 = null;
+                                            if (sQLiteDatabase != null) {
+                                            }
+                                            this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                            this.zzc = true;
+                                            if (cursor2 != null) {
+                                            }
+                                            if (sQLiteDatabase == null) {
+                                            }
+                                            sQLiteDatabase.close();
+                                            i12++;
+                                            i10 = i3;
+                                            str6 = str;
+                                            str7 = str2;
+                                            str8 = str3;
+                                            i9 = i2;
+                                            r6 = 0;
+                                        }
+                                    } catch (Throwable th2) {
+                                        th = th2;
                                         str = str6;
                                         str2 = str7;
                                         str3 = str8;
-                                        i3 = i9;
+                                        i3 = i10;
                                         i2 = 5;
                                         if (cursor3 != null) {
                                             try {
                                                 cursor3.close();
-                                            } catch (SQLiteDatabaseLockedException unused3) {
+                                            } catch (SQLiteDatabaseLockedException unused4) {
                                                 cursor2 = null;
-                                                SystemClock.sleep(i10);
-                                                i10 += 20;
+                                                SystemClock.sleep(i11);
+                                                i11 += 20;
                                                 if (cursor2 != null) {
                                                 }
                                                 if (sQLiteDatabase == null) {
                                                 }
                                                 sQLiteDatabase.close();
-                                                i11++;
-                                                i9 = i3;
+                                                i12++;
+                                                i10 = i3;
                                                 str6 = str;
                                                 str7 = str2;
                                                 str8 = str3;
-                                                i8 = i2;
+                                                i9 = i2;
                                                 r6 = 0;
-                                            } catch (SQLiteFullException e5) {
-                                                e = e5;
+                                            } catch (SQLiteFullException e7) {
+                                                e = e7;
                                                 cursor2 = null;
                                                 this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
                                                 this.zzc = true;
@@ -610,15 +696,15 @@ public final class zzgl extends zzg {
                                                 if (sQLiteDatabase == null) {
                                                 }
                                                 sQLiteDatabase.close();
-                                                i11++;
-                                                i9 = i3;
+                                                i12++;
+                                                i10 = i3;
                                                 str6 = str;
                                                 str7 = str2;
                                                 str8 = str3;
-                                                i8 = i2;
+                                                i9 = i2;
                                                 r6 = 0;
-                                            } catch (SQLiteException e6) {
-                                                e = e6;
+                                            } catch (SQLiteException e8) {
+                                                e = e8;
                                                 cursor2 = null;
                                                 if (sQLiteDatabase != null) {
                                                 }
@@ -629,24 +715,24 @@ public final class zzgl extends zzg {
                                                 if (sQLiteDatabase == null) {
                                                 }
                                                 sQLiteDatabase.close();
-                                                i11++;
-                                                i9 = i3;
+                                                i12++;
+                                                i10 = i3;
                                                 str6 = str;
                                                 str7 = str2;
                                                 str8 = str3;
-                                                i8 = i2;
+                                                i9 = i2;
                                                 r6 = 0;
                                             }
                                         }
                                         throw th;
                                         break;
                                     }
-                                } catch (Throwable th2) {
-                                    th = th2;
+                                } catch (Throwable th3) {
+                                    th = th3;
                                     str = str6;
                                     str2 = str7;
                                     str3 = str8;
-                                    i3 = i9;
+                                    i3 = i10;
                                     i2 = 5;
                                     cursor3 = null;
                                     if (cursor3 != null) {
@@ -655,629 +741,551 @@ public final class zzgl extends zzg {
                                     break;
                                     break;
                                 }
-                            } catch (Throwable th3) {
-                                th = th3;
+                            } catch (Throwable th4) {
+                                th = th4;
                                 str = str6;
                                 str2 = str7;
                                 str3 = str8;
-                                i2 = i8;
-                                i3 = i9;
+                                i2 = i9;
+                                i3 = i10;
                             }
-                        } catch (SQLiteDatabaseLockedException unused4) {
-                            str = str6;
-                            str2 = str7;
-                            str3 = str8;
-                            i2 = i8;
-                        } catch (SQLiteFullException e7) {
-                            e = e7;
-                            str = str6;
-                            str2 = str7;
-                            str3 = str8;
-                            i2 = i8;
-                        } catch (SQLiteException e8) {
-                            e = e8;
-                            str = str6;
-                            str2 = str7;
-                            str3 = str8;
-                            i2 = i8;
+                        } catch (Throwable th5) {
+                            th = th5;
+                            cursor = null;
+                            if (cursor != null) {
+                            }
+                            if (sQLiteDatabase != null) {
+                            }
+                            throw th;
                         }
-                        try {
-                            i2 = i5;
-                            int i13 = 2;
+                    } catch (SQLiteDatabaseLockedException unused5) {
+                        str = str6;
+                        str2 = str7;
+                        str3 = str8;
+                        i2 = i9;
+                    } catch (SQLiteFullException e9) {
+                        e = e9;
+                        str = str6;
+                        str2 = str7;
+                        str3 = str8;
+                        i2 = i9;
+                    } catch (SQLiteException e10) {
+                        e = e10;
+                        str = str6;
+                        str2 = str7;
+                        str3 = str8;
+                        i2 = i9;
+                    }
+                    try {
+                        cursor2 = sQLiteDatabase.query("messages", strArr2, str4, strArr, null, null, "rowid asc", Integer.toString(100));
+                        while (cursor2.moveToNext()) {
                             try {
-                                cursor2 = sQLiteDatabase.query("messages", strArr2, str4, strArr, null, null, "rowid asc", Integer.toString(100));
-                                while (cursor2.moveToNext()) {
+                                try {
                                     try {
+                                        j = cursor2.getLong(i10);
+                                        int i14 = cursor2.getInt(i13);
+                                        byte[] blob = cursor2.getBlob(i6);
                                         try {
-                                            try {
+                                            if (zzicVar.zzc().zzp(null, zzfxVar)) {
+                                                str5 = cursor2.getString(i4);
+                                                j3 = cursor2.getLong(4);
+                                            } else {
+                                                j3 = 0;
+                                                str5 = null;
+                                            }
+                                            String str9 = str6;
+                                            long j4 = j3;
+                                            str2 = str7;
+                                            if (i14 == 0) {
                                                 try {
-                                                    j = cursor2.getLong(i9);
-                                                    int i14 = cursor2.getInt(i12);
-                                                    byte[] blob = cursor2.getBlob(i13);
+                                                    obtain = Parcel.obtain();
+                                                    zzfxVar2 = zzfxVar;
                                                     try {
-                                                        if (zzicVar.zzc().zzp(null, zzfxVar)) {
-                                                            str5 = cursor2.getString(i4);
-                                                            j3 = cursor2.getLong(4);
-                                                        } else {
-                                                            j3 = 0;
-                                                            str5 = null;
-                                                        }
-                                                        String str9 = str6;
-                                                        long j4 = j3;
-                                                        str2 = str7;
-                                                        if (i14 == 0) {
+                                                        str3 = str8;
+                                                        try {
                                                             try {
-                                                                obtain = Parcel.obtain();
-                                                                zzfxVar2 = zzfxVar;
+                                                                obtain.unmarshall(blob, 0, blob.length);
+                                                                obtain.setDataPosition(0);
+                                                                zzbg createFromParcel = zzbg.CREATOR.createFromParcel(obtain);
                                                                 try {
-                                                                    str3 = str8;
-                                                                    try {
-                                                                        try {
-                                                                            obtain.unmarshall(blob, 0, blob.length);
-                                                                            obtain.setDataPosition(0);
-                                                                            zzbg createFromParcel = zzbg.CREATOR.createFromParcel(obtain);
-                                                                            try {
-                                                                                if (createFromParcel != null) {
-                                                                                    arrayList.add(new zzgk(createFromParcel, str5, j4));
-                                                                                }
-                                                                            } catch (SQLiteDatabaseLockedException unused5) {
-                                                                                str = str9;
-                                                                                i3 = 0;
-                                                                                SystemClock.sleep(i10);
-                                                                                i10 += 20;
-                                                                                if (cursor2 != null) {
-                                                                                    cursor2.close();
-                                                                                }
-                                                                                if (sQLiteDatabase == null) {
-                                                                                    i11++;
-                                                                                    i9 = i3;
-                                                                                    str6 = str;
-                                                                                    str7 = str2;
-                                                                                    str8 = str3;
-                                                                                    i8 = i2;
-                                                                                    r6 = 0;
-                                                                                }
-                                                                                sQLiteDatabase.close();
-                                                                                i11++;
-                                                                                i9 = i3;
-                                                                                str6 = str;
-                                                                                str7 = str2;
-                                                                                str8 = str3;
-                                                                                i8 = i2;
-                                                                                r6 = 0;
-                                                                            } catch (SQLiteFullException e9) {
-                                                                                e = e9;
-                                                                                str = str9;
-                                                                                i3 = 0;
-                                                                                this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
-                                                                                this.zzc = true;
-                                                                                if (cursor2 != null) {
-                                                                                    cursor2.close();
-                                                                                }
-                                                                                if (sQLiteDatabase == null) {
-                                                                                    i11++;
-                                                                                    i9 = i3;
-                                                                                    str6 = str;
-                                                                                    str7 = str2;
-                                                                                    str8 = str3;
-                                                                                    i8 = i2;
-                                                                                    r6 = 0;
-                                                                                }
-                                                                                sQLiteDatabase.close();
-                                                                                i11++;
-                                                                                i9 = i3;
-                                                                                str6 = str;
-                                                                                str7 = str2;
-                                                                                str8 = str3;
-                                                                                i8 = i2;
-                                                                                r6 = 0;
-                                                                            } catch (SQLiteException e10) {
-                                                                                e = e10;
-                                                                                str = str9;
-                                                                                i3 = 0;
-                                                                                if (sQLiteDatabase != null && sQLiteDatabase.inTransaction()) {
-                                                                                    sQLiteDatabase.endTransaction();
-                                                                                }
-                                                                                this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
-                                                                                this.zzc = true;
-                                                                                if (cursor2 != null) {
-                                                                                    cursor2.close();
-                                                                                }
-                                                                                if (sQLiteDatabase == null) {
-                                                                                    i11++;
-                                                                                    i9 = i3;
-                                                                                    str6 = str;
-                                                                                    str7 = str2;
-                                                                                    str8 = str3;
-                                                                                    i8 = i2;
-                                                                                    r6 = 0;
-                                                                                }
-                                                                                sQLiteDatabase.close();
-                                                                                i11++;
-                                                                                i9 = i3;
-                                                                                str6 = str;
-                                                                                str7 = str2;
-                                                                                str8 = str3;
-                                                                                i8 = i2;
-                                                                                r6 = 0;
-                                                                            }
-                                                                        } catch (SafeParcelReader.ParseException unused6) {
-                                                                            this.zzu.zzaV().zzb().zza("Failed to load event from local database");
-                                                                            str = str9;
-                                                                            i7 = 2;
-                                                                            i6 = 3;
-                                                                            i4 = i6;
-                                                                            str6 = str;
-                                                                            str7 = str2;
-                                                                            str8 = str3;
-                                                                            i9 = 0;
-                                                                            i12 = 1;
-                                                                            i13 = i7;
-                                                                            zzfxVar = zzfxVar2;
-                                                                        }
-                                                                    } catch (Throwable th4) {
-                                                                        th = th4;
-                                                                        throw th;
+                                                                    if (createFromParcel != null) {
+                                                                        arrayList.add(new zzgk(createFromParcel, str5, j4));
                                                                     }
-                                                                } catch (SafeParcelReader.ParseException unused7) {
-                                                                    str3 = str8;
-                                                                } catch (Throwable th5) {
-                                                                    th = th5;
-                                                                }
-                                                            } catch (SQLiteDatabaseLockedException unused8) {
-                                                                str3 = str8;
-                                                            } catch (SQLiteFullException e11) {
-                                                                e = e11;
-                                                                str3 = str8;
-                                                            } catch (SQLiteException e12) {
-                                                                e = e12;
-                                                                str3 = str8;
-                                                            }
-                                                        } else {
-                                                            zzfxVar2 = zzfxVar;
-                                                            str3 = str8;
-                                                            if (i14 == 1) {
-                                                                obtain = Parcel.obtain();
-                                                                try {
-                                                                    try {
-                                                                        obtain.unmarshall(blob, 0, blob.length);
-                                                                        obtain.setDataPosition(0);
-                                                                        zzplVar = zzpl.CREATOR.createFromParcel(obtain);
-                                                                    } finally {
-                                                                    }
-                                                                } catch (SafeParcelReader.ParseException unused9) {
-                                                                    this.zzu.zzaV().zzb().zza("Failed to load user property from local database");
-                                                                    obtain.recycle();
-                                                                    zzplVar = null;
-                                                                }
-                                                                if (zzplVar != null) {
-                                                                    arrayList.add(new zzgk(zzplVar, str5, j4));
-                                                                }
-                                                            } else {
-                                                                i7 = 2;
-                                                                if (i14 == 2) {
-                                                                    obtain = Parcel.obtain();
-                                                                    try {
-                                                                        str = str9;
-                                                                        try {
-                                                                            try {
-                                                                                obtain.unmarshall(blob, 0, blob.length);
-                                                                                obtain.setDataPosition(0);
-                                                                                zzahVar = zzah.CREATOR.createFromParcel(obtain);
-                                                                            } catch (SafeParcelReader.ParseException unused10) {
-                                                                                this.zzu.zzaV().zzb().zza("Failed to load conditional user property from local database");
-                                                                                obtain.recycle();
-                                                                                zzahVar = null;
-                                                                                if (zzahVar != null) {
-                                                                                }
-                                                                                i6 = 3;
-                                                                                i4 = i6;
-                                                                                str6 = str;
-                                                                                str7 = str2;
-                                                                                str8 = str3;
-                                                                                i9 = 0;
-                                                                                i12 = 1;
-                                                                                i13 = i7;
-                                                                                zzfxVar = zzfxVar2;
-                                                                            }
-                                                                        } catch (Throwable th6) {
-                                                                            th = th6;
-                                                                            throw th;
-                                                                        }
-                                                                    } catch (SafeParcelReader.ParseException unused11) {
-                                                                        str = str9;
-                                                                    } catch (Throwable th7) {
-                                                                        th = th7;
-                                                                    }
-                                                                    try {
-                                                                        if (zzahVar != null) {
-                                                                            arrayList.add(new zzgk(zzahVar, str5, j4));
-                                                                        }
-                                                                    } catch (SQLiteDatabaseLockedException unused12) {
-                                                                        i3 = 0;
-                                                                        SystemClock.sleep(i10);
-                                                                        i10 += 20;
-                                                                        if (cursor2 != null) {
-                                                                        }
-                                                                        if (sQLiteDatabase == null) {
-                                                                        }
-                                                                        sQLiteDatabase.close();
-                                                                        i11++;
-                                                                        i9 = i3;
-                                                                        str6 = str;
-                                                                        str7 = str2;
-                                                                        str8 = str3;
-                                                                        i8 = i2;
-                                                                        r6 = 0;
-                                                                    } catch (SQLiteFullException e13) {
-                                                                        e = e13;
-                                                                        i3 = 0;
-                                                                        this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
-                                                                        this.zzc = true;
-                                                                        if (cursor2 != null) {
-                                                                        }
-                                                                        if (sQLiteDatabase == null) {
-                                                                        }
-                                                                        sQLiteDatabase.close();
-                                                                        i11++;
-                                                                        i9 = i3;
-                                                                        str6 = str;
-                                                                        str7 = str2;
-                                                                        str8 = str3;
-                                                                        i8 = i2;
-                                                                        r6 = 0;
-                                                                    } catch (SQLiteException e14) {
-                                                                        e = e14;
-                                                                        i3 = 0;
-                                                                        if (sQLiteDatabase != null) {
-                                                                            sQLiteDatabase.endTransaction();
-                                                                        }
-                                                                        this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
-                                                                        this.zzc = true;
-                                                                        if (cursor2 != null) {
-                                                                        }
-                                                                        if (sQLiteDatabase == null) {
-                                                                        }
-                                                                        sQLiteDatabase.close();
-                                                                        i11++;
-                                                                        i9 = i3;
-                                                                        str6 = str;
-                                                                        str7 = str2;
-                                                                        str8 = str3;
-                                                                        i8 = i2;
-                                                                        r6 = 0;
-                                                                    }
-                                                                } else {
+                                                                } catch (SQLiteDatabaseLockedException unused6) {
                                                                     str = str9;
-                                                                    if (i14 == 4) {
-                                                                        obtain = Parcel.obtain();
-                                                                        try {
-                                                                            try {
-                                                                                obtain.unmarshall(blob, 0, blob.length);
-                                                                                obtain.setDataPosition(0);
-                                                                                zzbeVar = zzbe.CREATOR.createFromParcel(obtain);
-                                                                            } finally {
-                                                                            }
-                                                                        } catch (SafeParcelReader.ParseException unused13) {
-                                                                            this.zzu.zzaV().zzb().zza("Failed to load default event parameters from local database");
-                                                                            obtain.recycle();
-                                                                            zzbeVar = null;
-                                                                        }
-                                                                        if (zzbeVar != null) {
-                                                                            arrayList.add(new zzgk(zzbeVar, str5, j4));
-                                                                        }
-                                                                    } else {
-                                                                        i6 = 3;
-                                                                        if (i14 == 3) {
-                                                                            this.zzu.zzaV().zzk().zza("Skipping app launch break");
-                                                                        } else {
-                                                                            this.zzu.zzaV().zzb().zza("Unknown record type in local database");
-                                                                        }
-                                                                        i4 = i6;
-                                                                        str6 = str;
-                                                                        str7 = str2;
-                                                                        str8 = str3;
-                                                                        i9 = 0;
-                                                                        i12 = 1;
-                                                                        i13 = i7;
-                                                                        zzfxVar = zzfxVar2;
+                                                                    i3 = 0;
+                                                                    SystemClock.sleep(i11);
+                                                                    i11 += 20;
+                                                                    if (cursor2 != null) {
                                                                     }
+                                                                    if (sQLiteDatabase == null) {
+                                                                    }
+                                                                    sQLiteDatabase.close();
+                                                                    i12++;
+                                                                    i10 = i3;
+                                                                    str6 = str;
+                                                                    str7 = str2;
+                                                                    str8 = str3;
+                                                                    i9 = i2;
+                                                                    r6 = 0;
+                                                                } catch (SQLiteFullException e11) {
+                                                                    e = e11;
+                                                                    str = str9;
+                                                                    i3 = 0;
+                                                                    this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                                    this.zzc = true;
+                                                                    if (cursor2 != null) {
+                                                                    }
+                                                                    if (sQLiteDatabase == null) {
+                                                                    }
+                                                                    sQLiteDatabase.close();
+                                                                    i12++;
+                                                                    i10 = i3;
+                                                                    str6 = str;
+                                                                    str7 = str2;
+                                                                    str8 = str3;
+                                                                    i9 = i2;
+                                                                    r6 = 0;
+                                                                } catch (SQLiteException e12) {
+                                                                    e = e12;
+                                                                    str = str9;
+                                                                    i3 = 0;
+                                                                    if (sQLiteDatabase != null) {
+                                                                        sQLiteDatabase.endTransaction();
+                                                                    }
+                                                                    this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                                    this.zzc = true;
+                                                                    if (cursor2 != null) {
+                                                                    }
+                                                                    if (sQLiteDatabase == null) {
+                                                                    }
+                                                                    sQLiteDatabase.close();
+                                                                    i12++;
+                                                                    i10 = i3;
+                                                                    str6 = str;
+                                                                    str7 = str2;
+                                                                    str8 = str3;
+                                                                    i9 = i2;
+                                                                    r6 = 0;
                                                                 }
-                                                                i6 = 3;
-                                                                i4 = i6;
+                                                            } catch (SafeParcelReader.ParseException unused7) {
+                                                                this.zzu.zzaV().zzb().zza("Failed to load event from local database");
+                                                                str = str9;
+                                                                i8 = 2;
+                                                                i7 = 3;
+                                                                i4 = i7;
                                                                 str6 = str;
                                                                 str7 = str2;
                                                                 str8 = str3;
-                                                                i9 = 0;
-                                                                i12 = 1;
-                                                                i13 = i7;
+                                                                i10 = 0;
+                                                                i13 = 1;
+                                                                i6 = i8;
                                                                 zzfxVar = zzfxVar2;
                                                             }
+                                                        } catch (Throwable th6) {
+                                                            th = th6;
+                                                            throw th;
                                                         }
-                                                        str = str9;
-                                                        i7 = 2;
-                                                        i6 = 3;
-                                                        i4 = i6;
-                                                        str6 = str;
-                                                        str7 = str2;
-                                                        str8 = str3;
-                                                        i9 = 0;
-                                                        i12 = 1;
-                                                        i13 = i7;
-                                                        zzfxVar = zzfxVar2;
-                                                    } catch (SQLiteDatabaseLockedException unused14) {
-                                                        str = str6;
-                                                        str2 = str7;
+                                                    } catch (SafeParcelReader.ParseException unused8) {
                                                         str3 = str8;
+                                                    } catch (Throwable th7) {
+                                                        th = th7;
                                                     }
-                                                } catch (SQLiteFullException e15) {
-                                                    e = e15;
-                                                    str = str6;
-                                                    str2 = str7;
+                                                } catch (SQLiteDatabaseLockedException unused9) {
                                                     str3 = str8;
-                                                } catch (SQLiteException e16) {
-                                                    e = e16;
-                                                    str = str6;
-                                                    str2 = str7;
+                                                } catch (SQLiteFullException e13) {
+                                                    e = e13;
+                                                    str3 = str8;
+                                                } catch (SQLiteException e14) {
+                                                    e = e14;
                                                     str3 = str8;
                                                 }
-                                            } catch (SQLiteDatabaseLockedException unused15) {
-                                                str = str6;
-                                                str2 = str7;
+                                            } else {
+                                                zzfxVar2 = zzfxVar;
                                                 str3 = str8;
-                                                i3 = i9;
+                                                if (i14 == 1) {
+                                                    obtain = Parcel.obtain();
+                                                    try {
+                                                        try {
+                                                            obtain.unmarshall(blob, 0, blob.length);
+                                                            obtain.setDataPosition(0);
+                                                            zzplVar = zzpl.CREATOR.createFromParcel(obtain);
+                                                        } finally {
+                                                        }
+                                                    } catch (SafeParcelReader.ParseException unused10) {
+                                                        this.zzu.zzaV().zzb().zza("Failed to load user property from local database");
+                                                        obtain.recycle();
+                                                        zzplVar = null;
+                                                    }
+                                                    if (zzplVar != null) {
+                                                        arrayList.add(new zzgk(zzplVar, str5, j4));
+                                                    }
+                                                } else {
+                                                    i8 = 2;
+                                                    if (i14 == 2) {
+                                                        obtain = Parcel.obtain();
+                                                        try {
+                                                            str = str9;
+                                                            try {
+                                                                try {
+                                                                    obtain.unmarshall(blob, 0, blob.length);
+                                                                    obtain.setDataPosition(0);
+                                                                    zzahVar = zzah.CREATOR.createFromParcel(obtain);
+                                                                } catch (SafeParcelReader.ParseException unused11) {
+                                                                    this.zzu.zzaV().zzb().zza("Failed to load conditional user property from local database");
+                                                                    obtain.recycle();
+                                                                    zzahVar = null;
+                                                                    if (zzahVar != null) {
+                                                                    }
+                                                                    i7 = 3;
+                                                                    i4 = i7;
+                                                                    str6 = str;
+                                                                    str7 = str2;
+                                                                    str8 = str3;
+                                                                    i10 = 0;
+                                                                    i13 = 1;
+                                                                    i6 = i8;
+                                                                    zzfxVar = zzfxVar2;
+                                                                }
+                                                            } catch (Throwable th8) {
+                                                                th = th8;
+                                                                throw th;
+                                                            }
+                                                        } catch (SafeParcelReader.ParseException unused12) {
+                                                            str = str9;
+                                                        } catch (Throwable th9) {
+                                                            th = th9;
+                                                        }
+                                                        try {
+                                                            if (zzahVar != null) {
+                                                                arrayList.add(new zzgk(zzahVar, str5, j4));
+                                                            }
+                                                        } catch (SQLiteDatabaseLockedException unused13) {
+                                                            i3 = 0;
+                                                            SystemClock.sleep(i11);
+                                                            i11 += 20;
+                                                            if (cursor2 != null) {
+                                                            }
+                                                            if (sQLiteDatabase == null) {
+                                                            }
+                                                            sQLiteDatabase.close();
+                                                            i12++;
+                                                            i10 = i3;
+                                                            str6 = str;
+                                                            str7 = str2;
+                                                            str8 = str3;
+                                                            i9 = i2;
+                                                            r6 = 0;
+                                                        } catch (SQLiteFullException e15) {
+                                                            e = e15;
+                                                            i3 = 0;
+                                                            this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                            this.zzc = true;
+                                                            if (cursor2 != null) {
+                                                            }
+                                                            if (sQLiteDatabase == null) {
+                                                            }
+                                                            sQLiteDatabase.close();
+                                                            i12++;
+                                                            i10 = i3;
+                                                            str6 = str;
+                                                            str7 = str2;
+                                                            str8 = str3;
+                                                            i9 = i2;
+                                                            r6 = 0;
+                                                        } catch (SQLiteException e16) {
+                                                            e = e16;
+                                                            i3 = 0;
+                                                            if (sQLiteDatabase != null) {
+                                                            }
+                                                            this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                            this.zzc = true;
+                                                            if (cursor2 != null) {
+                                                            }
+                                                            if (sQLiteDatabase == null) {
+                                                            }
+                                                            sQLiteDatabase.close();
+                                                            i12++;
+                                                            i10 = i3;
+                                                            str6 = str;
+                                                            str7 = str2;
+                                                            str8 = str3;
+                                                            i9 = i2;
+                                                            r6 = 0;
+                                                        }
+                                                    } else {
+                                                        str = str9;
+                                                        if (i14 == 4) {
+                                                            obtain = Parcel.obtain();
+                                                            try {
+                                                                try {
+                                                                    obtain.unmarshall(blob, 0, blob.length);
+                                                                    obtain.setDataPosition(0);
+                                                                    zzbeVar = zzbe.CREATOR.createFromParcel(obtain);
+                                                                } finally {
+                                                                }
+                                                            } catch (SafeParcelReader.ParseException unused14) {
+                                                                this.zzu.zzaV().zzb().zza("Failed to load default event parameters from local database");
+                                                                obtain.recycle();
+                                                                zzbeVar = null;
+                                                            }
+                                                            if (zzbeVar != null) {
+                                                                arrayList.add(new zzgk(zzbeVar, str5, j4));
+                                                            }
+                                                        } else {
+                                                            i7 = 3;
+                                                            if (i14 == 3) {
+                                                                this.zzu.zzaV().zzk().zza("Skipping app launch break");
+                                                            } else {
+                                                                this.zzu.zzaV().zzb().zza("Unknown record type in local database");
+                                                            }
+                                                            i4 = i7;
+                                                            str6 = str;
+                                                            str7 = str2;
+                                                            str8 = str3;
+                                                            i10 = 0;
+                                                            i13 = 1;
+                                                            i6 = i8;
+                                                            zzfxVar = zzfxVar2;
+                                                        }
+                                                    }
+                                                    i7 = 3;
+                                                    i4 = i7;
+                                                    str6 = str;
+                                                    str7 = str2;
+                                                    str8 = str3;
+                                                    i10 = 0;
+                                                    i13 = 1;
+                                                    i6 = i8;
+                                                    zzfxVar = zzfxVar2;
+                                                }
                                             }
-                                        } catch (Throwable th8) {
-                                            th = th8;
-                                            cursor = cursor2;
-                                            if (cursor != null) {
-                                                cursor.close();
-                                            }
-                                            if (sQLiteDatabase != null) {
-                                                sQLiteDatabase.close();
-                                            }
-                                            throw th;
+                                            str = str9;
+                                            i8 = 2;
+                                            i7 = 3;
+                                            i4 = i7;
+                                            str6 = str;
+                                            str7 = str2;
+                                            str8 = str3;
+                                            i10 = 0;
+                                            i13 = 1;
+                                            i6 = i8;
+                                            zzfxVar = zzfxVar2;
+                                        } catch (SQLiteDatabaseLockedException unused15) {
+                                            str = str6;
+                                            str2 = str7;
+                                            str3 = str8;
                                         }
                                     } catch (SQLiteFullException e17) {
                                         e = e17;
                                         str = str6;
                                         str2 = str7;
                                         str3 = str8;
-                                        i3 = i9;
                                     } catch (SQLiteException e18) {
                                         e = e18;
                                         str = str6;
                                         str2 = str7;
                                         str3 = str8;
-                                        i3 = i9;
                                     }
-                                }
-                                str = str6;
-                                str2 = str7;
-                                str3 = str8;
-                                String[] strArr6 = new String[1];
-                                i3 = 0;
-                                try {
-                                    strArr6[0] = Long.toString(j);
-                                    if (sQLiteDatabase.delete("messages", "rowid <= ?", strArr6) < arrayList.size()) {
-                                        this.zzu.zzaV().zzb().zza("Fewer entries removed from local database than expected");
-                                    }
-                                    sQLiteDatabase.setTransactionSuccessful();
-                                    sQLiteDatabase.endTransaction();
-                                    if (cursor2 != null) {
-                                        cursor2.close();
-                                    }
-                                    sQLiteDatabase.close();
-                                    return arrayList;
                                 } catch (SQLiteDatabaseLockedException unused16) {
-                                    SystemClock.sleep(i10);
-                                    i10 += 20;
-                                    if (cursor2 != null) {
-                                    }
-                                    if (sQLiteDatabase == null) {
-                                    }
-                                    sQLiteDatabase.close();
-                                    i11++;
-                                    i9 = i3;
-                                    str6 = str;
-                                    str7 = str2;
-                                    str8 = str3;
-                                    i8 = i2;
-                                    r6 = 0;
-                                } catch (SQLiteFullException e19) {
-                                    e = e19;
-                                    this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
-                                    this.zzc = true;
-                                    if (cursor2 != null) {
-                                    }
-                                    if (sQLiteDatabase == null) {
-                                    }
-                                    sQLiteDatabase.close();
-                                    i11++;
-                                    i9 = i3;
-                                    str6 = str;
-                                    str7 = str2;
-                                    str8 = str3;
-                                    i8 = i2;
-                                    r6 = 0;
-                                } catch (SQLiteException e20) {
-                                    e = e20;
-                                    if (sQLiteDatabase != null) {
-                                    }
-                                    this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
-                                    this.zzc = true;
-                                    if (cursor2 != null) {
-                                    }
-                                    if (sQLiteDatabase == null) {
-                                    }
-                                    sQLiteDatabase.close();
-                                    i11++;
-                                    i9 = i3;
-                                    str6 = str;
-                                    str7 = str2;
-                                    str8 = str3;
-                                    i8 = i2;
-                                    r6 = 0;
+                                    str = str6;
+                                    str2 = str7;
+                                    str3 = str8;
+                                    i3 = i10;
                                 }
-                            } catch (SQLiteDatabaseLockedException unused17) {
+                            } catch (SQLiteFullException e19) {
+                                e = e19;
                                 str = str6;
                                 str2 = str7;
                                 str3 = str8;
-                                i3 = i9;
-                                cursor2 = null;
-                                SystemClock.sleep(i10);
-                                i10 += 20;
-                                if (cursor2 != null) {
-                                }
-                                if (sQLiteDatabase == null) {
-                                }
-                                sQLiteDatabase.close();
-                                i11++;
-                                i9 = i3;
-                                str6 = str;
-                                str7 = str2;
-                                str8 = str3;
-                                i8 = i2;
-                                r6 = 0;
-                            } catch (SQLiteFullException e21) {
-                                e = e21;
+                                i3 = i10;
+                            } catch (SQLiteException e20) {
+                                e = e20;
                                 str = str6;
                                 str2 = str7;
                                 str3 = str8;
-                                i3 = i9;
-                                cursor2 = null;
-                                this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
-                                this.zzc = true;
-                                if (cursor2 != null) {
-                                }
-                                if (sQLiteDatabase == null) {
-                                }
-                                sQLiteDatabase.close();
-                                i11++;
-                                i9 = i3;
-                                str6 = str;
-                                str7 = str2;
-                                str8 = str3;
-                                i8 = i2;
-                                r6 = 0;
-                            } catch (SQLiteException e22) {
-                                e = e22;
-                                str = str6;
-                                str2 = str7;
-                                str3 = str8;
-                                i3 = i9;
-                                cursor2 = null;
-                                if (sQLiteDatabase != null) {
-                                }
-                                this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
-                                this.zzc = true;
-                                if (cursor2 != null) {
-                                }
-                                if (sQLiteDatabase == null) {
-                                }
-                                sQLiteDatabase.close();
-                                i11++;
-                                i9 = i3;
-                                str6 = str;
-                                str7 = str2;
-                                str8 = str3;
-                                i8 = i2;
-                                r6 = 0;
+                                i3 = i10;
                             }
-                        } catch (SQLiteDatabaseLockedException unused18) {
-                            str = str6;
-                            str3 = str8;
-                            i3 = i9;
-                            i2 = i5;
-                            str2 = str7;
-                            cursor2 = null;
-                            SystemClock.sleep(i10);
-                            i10 += 20;
+                        }
+                        str = str6;
+                        str2 = str7;
+                        str3 = str8;
+                        String[] strArr6 = new String[1];
+                        i3 = 0;
+                        try {
+                            strArr6[0] = Long.toString(j);
+                            if (sQLiteDatabase.delete("messages", "rowid <= ?", strArr6) < arrayList.size()) {
+                                this.zzu.zzaV().zzb().zza("Fewer entries removed from local database than expected");
+                            }
+                            sQLiteDatabase.setTransactionSuccessful();
+                            sQLiteDatabase.endTransaction();
                             if (cursor2 != null) {
-                            }
-                            if (sQLiteDatabase == null) {
+                                cursor2.close();
                             }
                             sQLiteDatabase.close();
-                            i11++;
-                            i9 = i3;
+                            return arrayList;
+                        } catch (SQLiteDatabaseLockedException unused17) {
+                            SystemClock.sleep(i11);
+                            i11 += 20;
+                            if (cursor2 != null) {
+                                cursor2.close();
+                            }
+                            if (sQLiteDatabase == null) {
+                                i12++;
+                                i10 = i3;
+                                str6 = str;
+                                str7 = str2;
+                                str8 = str3;
+                                i9 = i2;
+                                r6 = 0;
+                            }
+                            sQLiteDatabase.close();
+                            i12++;
+                            i10 = i3;
                             str6 = str;
                             str7 = str2;
                             str8 = str3;
-                            i8 = i2;
+                            i9 = i2;
                             r6 = 0;
-                        } catch (SQLiteFullException e23) {
-                            e = e23;
-                            str = str6;
-                            str3 = str8;
-                            i3 = i9;
-                            i2 = i5;
-                            str2 = str7;
-                            cursor2 = null;
+                        } catch (SQLiteFullException e21) {
+                            e = e21;
                             this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
                             this.zzc = true;
                             if (cursor2 != null) {
+                                cursor2.close();
                             }
                             if (sQLiteDatabase == null) {
+                                i12++;
+                                i10 = i3;
+                                str6 = str;
+                                str7 = str2;
+                                str8 = str3;
+                                i9 = i2;
+                                r6 = 0;
                             }
                             sQLiteDatabase.close();
-                            i11++;
-                            i9 = i3;
+                            i12++;
+                            i10 = i3;
                             str6 = str;
                             str7 = str2;
                             str8 = str3;
-                            i8 = i2;
+                            i9 = i2;
                             r6 = 0;
-                        } catch (SQLiteException e24) {
-                            e = e24;
-                            str = str6;
-                            str3 = str8;
-                            i3 = i9;
-                            i2 = i5;
-                            str2 = str7;
-                            cursor2 = null;
-                            if (sQLiteDatabase != null) {
+                        } catch (SQLiteException e22) {
+                            e = e22;
+                            if (sQLiteDatabase != null && sQLiteDatabase.inTransaction()) {
+                                sQLiteDatabase.endTransaction();
                             }
                             this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
                             this.zzc = true;
                             if (cursor2 != null) {
+                                cursor2.close();
                             }
                             if (sQLiteDatabase == null) {
+                                i12++;
+                                i10 = i3;
+                                str6 = str;
+                                str7 = str2;
+                                str8 = str3;
+                                i9 = i2;
+                                r6 = 0;
                             }
                             sQLiteDatabase.close();
-                            i11++;
-                            i9 = i3;
+                            i12++;
+                            i10 = i3;
                             str6 = str;
                             str7 = str2;
                             str8 = str3;
-                            i8 = i2;
+                            i9 = i2;
                             r6 = 0;
                         }
-                    } catch (Throwable th9) {
-                        th = th9;
-                        cursor = null;
+                    } catch (SQLiteDatabaseLockedException unused18) {
+                        str = str6;
+                        str2 = str7;
+                        str3 = str8;
+                        i3 = i10;
+                        cursor2 = null;
+                        SystemClock.sleep(i11);
+                        i11 += 20;
+                        if (cursor2 != null) {
+                        }
+                        if (sQLiteDatabase == null) {
+                        }
+                        sQLiteDatabase.close();
+                        i12++;
+                        i10 = i3;
+                        str6 = str;
+                        str7 = str2;
+                        str8 = str3;
+                        i9 = i2;
+                        r6 = 0;
+                    } catch (SQLiteFullException e23) {
+                        e = e23;
+                        str = str6;
+                        str2 = str7;
+                        str3 = str8;
+                        i3 = i10;
+                        cursor2 = null;
+                        this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                        this.zzc = true;
+                        if (cursor2 != null) {
+                        }
+                        if (sQLiteDatabase == null) {
+                        }
+                        sQLiteDatabase.close();
+                        i12++;
+                        i10 = i3;
+                        str6 = str;
+                        str7 = str2;
+                        str8 = str3;
+                        i9 = i2;
+                        r6 = 0;
+                    } catch (SQLiteException e24) {
+                        e = e24;
+                        str = str6;
+                        str2 = str7;
+                        str3 = str8;
+                        i3 = i10;
+                        cursor2 = null;
+                        if (sQLiteDatabase != null) {
+                        }
+                        this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                        this.zzc = true;
+                        if (cursor2 != null) {
+                        }
+                        if (sQLiteDatabase == null) {
+                        }
+                        sQLiteDatabase.close();
+                        i12++;
+                        i10 = i3;
+                        str6 = str;
+                        str7 = str2;
+                        str8 = str3;
+                        i9 = i2;
+                        r6 = 0;
                     }
                 } catch (SQLiteDatabaseLockedException unused19) {
                     str = str6;
                     str2 = str7;
                     str3 = str8;
-                    i2 = i8;
-                    i3 = i9;
+                    i2 = i9;
+                    i3 = i10;
                     sQLiteDatabase = null;
                 } catch (SQLiteFullException e25) {
                     e = e25;
                     str = str6;
                     str2 = str7;
                     str3 = str8;
-                    i2 = i8;
-                    i3 = i9;
+                    i2 = i9;
+                    i3 = i10;
                     sQLiteDatabase = null;
                 } catch (SQLiteException e26) {
                     e = e26;
                     str = str6;
                     str2 = str7;
                     str3 = str8;
-                    i2 = i8;
-                    i3 = i9;
+                    i2 = i9;
+                    i3 = i10;
                     sQLiteDatabase = null;
                 } catch (Throwable th10) {
                     th = th10;

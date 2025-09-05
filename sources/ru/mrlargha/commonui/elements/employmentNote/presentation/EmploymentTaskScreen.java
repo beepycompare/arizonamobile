@@ -14,6 +14,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
+import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -22,10 +23,22 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
+import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.CoroutineExceptionHandler;
+import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.CoroutineScopeKt;
+import kotlinx.coroutines.Dispatchers;
+import kotlinx.coroutines.Job;
+import kotlinx.coroutines.SupervisorKt;
+import okhttp3.OkHttpClient;
 import okhttp3.internal.ws.WebSocketProtocol;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.SAMPUIElement;
@@ -46,17 +59,25 @@ import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: EmploymentTaskScreen.kt */
-@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u00012\u00020\u0002:\u00012B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u0017H\u0016J\b\u0010\u001f\u001a\u00020\u001dH\u0002J\u0010\u0010 \u001a\u00020\u001d2\u0006\u0010!\u001a\u00020\u0006H\u0002J\b\u0010\"\u001a\u00020\u001dH\u0002J\u0018\u0010#\u001a\u00020\u001d2\u0006\u0010$\u001a\u00020\u001b2\u0006\u0010%\u001a\u00020\u0006H\u0016J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0002J\u0010\u0010*\u001a\u00020\u001d2\u0006\u0010+\u001a\u00020\u0017H\u0002J\u0010\u0010,\u001a\u00020\u001d2\u0006\u0010-\u001a\u00020.H\u0002J\u0010\u0010/\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u0017H\u0002J\u0018\u00100\u001a\u00020\u001d2\u0006\u0010$\u001a\u00020\u001b2\u0006\u0010%\u001a\u00020\u0006H\u0002J\b\u00101\u001a\u00020\u001dH\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u00063"}, d2 = {"Lru/mrlargha/commonui/elements/employmentNote/presentation/EmploymentTaskScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/EmploymentTasksScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "taskAdapter", "Lru/mrlargha/commonui/elements/employmentNote/presentation/adapter/TaskAdapter;", "employmentHistoryAdapter", "Lru/mrlargha/commonui/elements/employmentNote/presentation/adapter/EmploymentHistoryAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "isEmptyTasks", "isEmptyHistory", "currentMemberName", "", "setVisible", "", "visible", "initAdapters", "screenButtonStatus", "btnType", "showDefaultEmptyFractionView", "onBackendMessage", "data", "subId", "showTaskStats", "Lru/mrlargha/commonui/databinding/LayoutEmploymentInfoBinding;", "taskStats", "Lru/mrlargha/commonui/elements/employmentNote/domain/TaskStats;", "blockClickable", "isBlock", "showTasksUi", "response", "Lru/mrlargha/commonui/elements/employmentNote/domain/TaskListResponse;", "isVisibleHistoryLayout", "sendData", "closeScreen", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes6.dex */
+@Metadata(d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 A2\u00020\u00012\u00020\u0002:\u0002@AB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020\u0017H\u0016J\b\u0010,\u001a\u00020*H\u0002J\b\u0010-\u001a\u00020*H\u0002J\u0010\u0010.\u001a\u00020*2\u0006\u0010/\u001a\u00020\u0006H\u0002J\b\u00100\u001a\u00020*H\u0002J\u0018\u00101\u001a\u00020*2\u0006\u00102\u001a\u00020\u001b2\u0006\u00103\u001a\u00020\u0006H\u0016J\u0010\u00104\u001a\u0002052\u0006\u00106\u001a\u000207H\u0002J\u0010\u00108\u001a\u00020*2\u0006\u00109\u001a\u00020\u0017H\u0002J\u0010\u0010:\u001a\u00020*2\u0006\u0010;\u001a\u00020<H\u0002J\u0010\u0010=\u001a\u00020*2\u0006\u0010+\u001a\u00020\u0017H\u0002J\u0018\u0010>\u001a\u00020*2\u0006\u00102\u001a\u00020\u001b2\u0006\u00103\u001a\u00020\u0006H\u0002J\b\u0010?\u001a\u00020*H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010%\u001a\u0004\u0018\u00010\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\u00020\u001b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b'\u0010(¨\u0006B"}, d2 = {"Lru/mrlargha/commonui/elements/employmentNote/presentation/EmploymentTaskScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/EmploymentTasksScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "taskAdapter", "Lru/mrlargha/commonui/elements/employmentNote/presentation/adapter/TaskAdapter;", "employmentHistoryAdapter", "Lru/mrlargha/commonui/elements/employmentNote/presentation/adapter/EmploymentHistoryAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "isEmptyTasks", "isEmptyHistory", "currentMemberName", "", "retrofit", "Lretrofit2/Retrofit;", "api", "Lru/mrlargha/commonui/elements/employmentNote/presentation/TaskApi;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "serverId", "_token", "token", "getToken", "()Ljava/lang/String;", "setVisible", "", "visible", "initRetrofit", "initAdapters", "screenButtonStatus", "btnType", "showDefaultEmptyFractionView", "onBackendMessage", "data", "subId", "showTaskStats", "Lru/mrlargha/commonui/databinding/LayoutEmploymentInfoBinding;", "taskStats", "Lru/mrlargha/commonui/elements/employmentNote/domain/TaskStats;", "blockClickable", "isBlock", "showTasksUi", "response", "Lru/mrlargha/commonui/elements/employmentNote/domain/TaskListResponse;", "isVisibleHistoryLayout", "sendData", "closeScreen", "Spawner", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes5.dex */
 public final class EmploymentTaskScreen extends SAMPUIElement implements InterfaceController {
+    public static final Companion Companion = new Companion(null);
+    private static List<FractionTasks> fractionTasks = CollectionsKt.emptyList();
+    private final String _token;
+    private TaskApi api;
     private final EmploymentTasksScreenBinding binding;
     private String currentMemberName;
     private final EmploymentHistoryAdapter employmentHistoryAdapter;
     private final IBackendNotifier frontendNotifier;
+    private final CoroutineExceptionHandler handler;
     private final boolean isArizonaType;
     private boolean isEmptyHistory;
     private boolean isEmptyTasks;
+    private Retrofit retrofit;
+    private final CoroutineScope scope;
     private final ConstraintLayout screen;
+    private final int serverId;
     private final SharedPreferences sharedPref;
     private TaskAdapter taskAdapter;
 
@@ -78,25 +99,31 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
         boolean z = sharedPreferences.getBoolean("isArizonaType", false);
         this.isArizonaType = z;
         this.currentMemberName = "";
+        EmploymentTaskScreen$special$$inlined$CoroutineExceptionHandler$1 employmentTaskScreen$special$$inlined$CoroutineExceptionHandler$1 = new EmploymentTaskScreen$special$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.Key, targetActivity, i);
+        this.handler = employmentTaskScreen$special$$inlined$CoroutineExceptionHandler$1;
+        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getMain().plus(SupervisorKt.SupervisorJob((Job) null)).plus(employmentTaskScreen$special$$inlined$CoroutineExceptionHandler$1));
+        this.serverId = sharedPreferences.getInt("server_id", 0);
+        this._token = sharedPreferences.getString("api_token", "");
+        initRetrofit();
         addViewToConstraintLayout(constraintLayout, -1, -1);
         UtilsKt.checkItemsName(targetActivity, z);
         initAdapters();
         bind.btnMenu.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$0(EmploymentTaskScreen.this, targetActivity, view);
+                EmploymentTaskScreen._init_$lambda$1(EmploymentTaskScreen.this, targetActivity, view);
             }
         });
         bind.btnHistory.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$1(EmploymentTaskScreen.this, targetActivity, view);
+                EmploymentTaskScreen._init_$lambda$2(EmploymentTaskScreen.this, targetActivity, view);
             }
         });
         bind.btnStats.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$2(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$3(EmploymentTaskScreen.this, view);
             }
         });
         bind.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda9
@@ -108,45 +135,50 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
         bind.btnUpdate.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$4(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$5(EmploymentTaskScreen.this, view);
             }
         });
         bind.itemTaskInfo.itemInfo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$5(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$6(EmploymentTaskScreen.this, view);
             }
         });
         bind.itemTaskInfo.itemRespect.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$6(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$7(EmploymentTaskScreen.this, view);
             }
         });
         bind.itemTaskInfo.itemLevelInfo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$7(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$8(EmploymentTaskScreen.this, view);
             }
         });
         bind.itemTaskInfo.itemBonus.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$8(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$9(EmploymentTaskScreen.this, view);
             }
         });
         bind.itemTaskInfo.itemBlacklist.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$9(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$10(EmploymentTaskScreen.this, view);
             }
         });
         bind.itemTaskInfo.itemPension.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$10(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$11(EmploymentTaskScreen.this, view);
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final String getToken() {
+        return "Bearer " + this._token;
     }
 
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
@@ -155,7 +187,7 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$0(EmploymentTaskScreen employmentTaskScreen, Activity activity, View view) {
+    public static final void _init_$lambda$1(EmploymentTaskScreen employmentTaskScreen, Activity activity, View view) {
         employmentTaskScreen.screenButtonStatus(0);
         employmentTaskScreen.isVisibleHistoryLayout(false);
         ConstraintLayout parentLayout = employmentTaskScreen.binding.itemTaskInfo.parentLayout;
@@ -196,7 +228,7 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$1(EmploymentTaskScreen employmentTaskScreen, Activity activity, View view) {
+    public static final void _init_$lambda$2(EmploymentTaskScreen employmentTaskScreen, Activity activity, View view) {
         ConstraintLayout parentLayout = employmentTaskScreen.binding.itemTaskInfo.parentLayout;
         Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
         parentLayout.setVisibility(8);
@@ -222,44 +254,61 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$2(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$3(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(""), 3);
         employmentTaskScreen.screenButtonStatus(2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$4(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$5(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(""), 2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$5(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$6(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(new DataRequest(0)), 4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$6(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$7(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(new DataRequest(1)), 4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$7(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$8(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(new DataRequest(2)), 4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$8(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$9(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(new DataRequest(3)), 4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$9(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$10(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(new DataRequest(4)), 4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$10(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$11(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(new DataRequest(5)), 4);
+    }
+
+    private final void initRetrofit() {
+        String serverApiUrl = FirebaseConfigHelper.INSTANCE.getServerApiUrl();
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.NONE);
+        Retrofit build = new Retrofit.Builder().baseUrl(serverApiUrl).client(new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build()).addConverterFactory(GsonConverterFactory.create()).build();
+        Intrinsics.checkNotNullExpressionValue(build, "build(...)");
+        this.retrofit = build;
+        if (build == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("retrofit");
+            build = null;
+        }
+        Object create = build.create(TaskApi.class);
+        Intrinsics.checkNotNullExpressionValue(create, "create(...)");
+        this.api = (TaskApi) create;
+        BuildersKt__Builders_commonKt.launch$default(this.scope, Dispatchers.getIO(), null, new EmploymentTaskScreen$initRetrofit$1(this, null), 2, null);
     }
 
     private final void initAdapters() {
@@ -267,16 +316,16 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
         this.taskAdapter = new TaskAdapter(getTargetActivity(), new Function2() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initAdapters$lambda$11;
-                initAdapters$lambda$11 = EmploymentTaskScreen.initAdapters$lambda$11(EmploymentTaskScreen.this, (TaskInfo) obj, ((Integer) obj2).intValue());
-                return initAdapters$lambda$11;
+                Unit initAdapters$lambda$12;
+                initAdapters$lambda$12 = EmploymentTaskScreen.initAdapters$lambda$12(EmploymentTaskScreen.this, (TaskInfo) obj, ((Integer) obj2).intValue());
+                return initAdapters$lambda$12;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit initAdapters$lambda$12;
-                initAdapters$lambda$12 = EmploymentTaskScreen.initAdapters$lambda$12(EmploymentTaskScreen.this, (FractionTasks) obj);
-                return initAdapters$lambda$12;
+                Unit initAdapters$lambda$13;
+                initAdapters$lambda$13 = EmploymentTaskScreen.initAdapters$lambda$13(EmploymentTaskScreen.this, (FractionTasks) obj);
+                return initAdapters$lambda$13;
             }
         });
         RecyclerView recyclerView = this.binding.rvEmploymentTasks;
@@ -297,7 +346,7 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Unit initAdapters$lambda$11(EmploymentTaskScreen employmentTaskScreen, TaskInfo item, int i) {
+    public static final Unit initAdapters$lambda$12(EmploymentTaskScreen employmentTaskScreen, TaskInfo item, int i) {
         TaskAdapter taskAdapter;
         TaskAdapter taskAdapter2;
         TaskAdapter taskAdapter3;
@@ -377,7 +426,7 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit initAdapters$lambda$12(EmploymentTaskScreen employmentTaskScreen, FractionTasks it) {
+    public static final Unit initAdapters$lambda$13(EmploymentTaskScreen employmentTaskScreen, FractionTasks it) {
         Intrinsics.checkNotNullParameter(it, "it");
         employmentTaskScreen.sendData(StringKt.toStringJson(String.valueOf(it.getId())), 1);
         return Unit.INSTANCE;
@@ -430,12 +479,12 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
         ivNoFraction.setVisibility(0);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0142  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0174  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0197  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x01a0  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x01bb  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0144  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x014d  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0176  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0199  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01a2  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x01bd  */
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -696,12 +745,33 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
 
     /* compiled from: EmploymentTaskScreen.kt */
     @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/employmentNote/presentation/EmploymentTaskScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-    /* loaded from: classes6.dex */
+    /* loaded from: classes5.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         @Override // ru.mrlargha.commonui.core.UIElementAbstractSpawner
         public SAMPUIElement create(Activity targetActivity, int i) {
             Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
             return new EmploymentTaskScreen(targetActivity, i);
+        }
+    }
+
+    /* compiled from: EmploymentTaskScreen.kt */
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R \u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\n¨\u0006\u000b"}, d2 = {"Lru/mrlargha/commonui/elements/employmentNote/presentation/EmploymentTaskScreen$Companion;", "", "<init>", "()V", "fractionTasks", "", "Lru/mrlargha/commonui/elements/employmentNote/domain/FractionTasks;", "getFractionTasks", "()Ljava/util/List;", "setFractionTasks", "(Ljava/util/List;)V", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    /* loaded from: classes5.dex */
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+
+        public final List<FractionTasks> getFractionTasks() {
+            return EmploymentTaskScreen.fractionTasks;
+        }
+
+        public final void setFractionTasks(List<FractionTasks> list) {
+            Intrinsics.checkNotNullParameter(list, "<set-?>");
+            EmploymentTaskScreen.fractionTasks = list;
         }
     }
 }

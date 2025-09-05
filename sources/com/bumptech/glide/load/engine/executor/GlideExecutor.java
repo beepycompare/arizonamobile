@@ -22,6 +22,7 @@ public final class GlideExecutor implements ExecutorService {
     static final String DEFAULT_ANIMATION_EXECUTOR_NAME = "animation";
     static final String DEFAULT_DISK_CACHE_EXECUTOR_NAME = "disk-cache";
     static final int DEFAULT_DISK_CACHE_EXECUTOR_THREADS = 1;
+    public static final int DEFAULT_PRIORITY = 9;
     static final String DEFAULT_SOURCE_EXECUTOR_NAME = "source";
     private static final String DEFAULT_SOURCE_UNLIMITED_EXECUTOR_NAME = "source-unlimited";
     private static final long KEEP_ALIVE_TIME_MS = TimeUnit.SECONDS.toMillis(10);
@@ -205,8 +206,6 @@ public final class GlideExecutor implements ExecutorService {
 
     /* loaded from: classes3.dex */
     private static final class DefaultPriorityThreadFactory implements ThreadFactory {
-        private static final int DEFAULT_PRIORITY = 9;
-
         private DefaultPriorityThreadFactory() {
         }
 

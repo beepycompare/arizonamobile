@@ -1,45 +1,35 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Provider;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import io.appmetrica.analytics.plugins.IPluginReporter;
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
-import java.util.Collection;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback;
+import java.util.concurrent.TimeUnit;
 /* renamed from: io.appmetrica.analytics.impl.ef  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0227ef implements IPluginReporter {
+public final class C0227ef implements Uc, ActivationBarrierCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0305hf f841a = new C0305hf();
-    public final Cif b = new Cif();
-    public final IHandlerExecutor c = C0696x4.l().g().a();
-    public final Provider d;
+    public final R9 f857a;
+    public final Tc b;
+    public final Tc c;
 
-    public C0227ef(Provider<InterfaceC0479ob> provider) {
-        this.d = provider;
-    }
-
-    @Override // io.appmetrica.analytics.plugins.IPluginReporter
-    public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
-        C0305hf c0305hf = this.f841a;
-        c0305hf.f888a.a(pluginErrorDetails);
-        if (c0305hf.c.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f1067a) {
-            this.b.getClass();
-            this.c.execute(new RunnableC0176cf(this, pluginErrorDetails, str));
+    public C0227ef(R9 r9, C0436mh c0436mh, M4 m4, C0537qf c0537qf) {
+        this.f857a = r9;
+        Tc tc = new Tc(c0436mh, m4, c0537qf);
+        this.b = tc;
+        this.c = tc;
+        if (tc.b()) {
+            return;
         }
+        Na.j().a().subscribe(TimeUnit.SECONDS.toMillis(AbstractC0272g8.f887a.longValue()), Na.j().w().a(), this);
     }
 
-    @Override // io.appmetrica.analytics.plugins.IPluginReporter
-    public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
-        this.f841a.f888a.a(pluginErrorDetails);
-        this.b.getClass();
-        this.c.execute(new RunnableC0150bf(this, pluginErrorDetails));
+    @Override // io.appmetrica.analytics.impl.Uc
+    public final InterfaceC0196d9 a() {
+        return this.c;
     }
 
-    @Override // io.appmetrica.analytics.plugins.IPluginReporter
-    public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        this.f841a.b.a(str);
-        this.b.getClass();
-        this.c.execute(new RunnableC0202df(this, str, str2, pluginErrorDetails));
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback
+    public final void onWaitFinished() {
+        this.b.a();
+        ((I5) this.f857a.a()).e();
     }
 }

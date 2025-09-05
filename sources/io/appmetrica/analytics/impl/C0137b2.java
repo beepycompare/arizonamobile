@@ -1,95 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import java.util.List;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.b2  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0137b2 extends MessageNano {
-    public static final int c = 0;
-    public static final int d = 1;
-    public static final int e = 2;
-    public static final int f = 3;
-    public static final int g = 4;
-    public static final int h = 5;
-    public static final int i = -1;
-    public static final int j = 0;
-    public static final int k = 1;
-    public static volatile C0137b2[] l;
+public final class C0137b2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f788a;
-    public int b;
+    public final List f798a;
+    public final M2 b;
+    public final List c;
 
-    public C0137b2() {
-        a();
+    public C0137b2(List list, M2 m2, List list2) {
+        this.f798a = list;
+        this.b = m2;
+        this.c = list2;
     }
 
-    public static C0137b2[] b() {
-        if (l == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (l == null) {
-                    l = new C0137b2[0];
-                }
-            }
-        }
-        return l;
-    }
-
-    public final C0137b2 a() {
-        this.f788a = 0;
-        this.b = -1;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        return CodedOutputByteBufferNano.computeInt32Size(3, this.b) + CodedOutputByteBufferNano.computeInt32Size(2, this.f788a) + super.computeSerializedSize();
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeInt32(2, this.f788a);
-        codedOutputByteBufferNano.writeInt32(3, this.b);
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final C0137b2 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 16) {
-                int readInt32 = codedInputByteBufferNano.readInt32();
-                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2 || readInt32 == 3 || readInt32 == 4 || readInt32 == 5) {
-                    this.f788a = readInt32;
-                }
-            } else if (readTag != 24) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                int readInt322 = codedInputByteBufferNano.readInt32();
-                if (readInt322 == -1 || readInt322 == 0 || readInt322 == 1) {
-                    this.b = readInt322;
-                }
-            }
-        }
-        return this;
-    }
-
-    public static C0137b2 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new C0137b2().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static C0137b2 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (C0137b2) MessageNano.mergeFrom(new C0137b2(), bArr);
+    public final String toString() {
+        return "AppPermissionsState{mPermissionStateList=" + this.f798a + ", mBackgroundRestrictionsState=" + this.b + ", mAvailableProviders=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 }

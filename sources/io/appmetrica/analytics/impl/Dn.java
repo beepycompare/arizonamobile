@@ -1,16 +1,49 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import java.util.Comparator;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import java.util.ArrayList;
+import java.util.List;
 /* loaded from: classes4.dex */
-public final class Dn implements Comparator {
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        Thread thread = (Thread) obj;
-        Thread thread2 = (Thread) obj2;
-        if (thread == thread2) {
-            return 0;
+public final class Dn implements ProtobufConverter {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Kl f412a;
+
+    public Dn() {
+        this(new Kl());
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0752z6 fromModel(Cn cn) {
+        C0752z6 c0752z6 = new C0752z6();
+        Integer num = cn.e;
+        c0752z6.e = num == null ? -1 : num.intValue();
+        c0752z6.d = cn.d;
+        c0752z6.b = cn.b;
+        c0752z6.f1180a = cn.f392a;
+        c0752z6.c = cn.c;
+        Kl kl = this.f412a;
+        List<StackTraceElement> list = cn.f;
+        ArrayList arrayList = new ArrayList();
+        for (StackTraceElement stackTraceElement : list) {
+            arrayList.add(new Ml(stackTraceElement));
         }
-        return StringUtils.compare(thread.getName(), thread2.getName());
+        c0752z6.f = kl.fromModel(arrayList);
+        return c0752z6;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        C0752z6 c0752z6 = (C0752z6) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public Dn(Kl kl) {
+        this.f412a = kl;
+    }
+
+    public final Cn a(C0752z6 c0752z6) {
+        throw new UnsupportedOperationException();
     }
 }

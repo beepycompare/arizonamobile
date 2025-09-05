@@ -1,46 +1,28 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
 /* loaded from: classes4.dex */
-public final class Zm extends Z2 {
-    public Zm(int i, String str) {
-        this(i, str, PublicLogger.getAnonymousInstance());
+public final class Zm {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final HashMap f775a;
+
+    public Zm() {
+        HashMap hashMap = new HashMap();
+        this.f775a = hashMap;
+        Tm tm = new Tm();
+        Um um = new Um();
+        Vm vm = new Vm();
+        Wm wm = new Wm();
+        Xm xm = new Xm();
+        hashMap.put(C0593sm.class, tm);
+        hashMap.put(C0137b2.class, um);
+        hashMap.put(C0711xf.class, vm);
+        hashMap.put(C0748z2.class, wm);
+        hashMap.put(R3.class, xm);
     }
 
-    public final int b() {
-        return this.f752a;
-    }
-
-    public Zm(int i, String str, PublicLogger publicLogger) {
-        super(i, str, publicLogger);
-    }
-
-    public final String a() {
-        return this.b;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Nn
-    public final String a(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return str;
-        }
-        try {
-            byte[] bytes = str.getBytes("UTF-8");
-            int length = bytes.length;
-            int i = this.f752a;
-            if (length > i) {
-                String str2 = new String(bytes, 0, i, "UTF-8");
-                try {
-                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f752a));
-                } catch (UnsupportedEncodingException unused) {
-                }
-                return str2;
-            }
-            return str;
-        } catch (UnsupportedEncodingException unused2) {
-            return str;
-        }
+    public static AbstractC0132an a(Class cls) {
+        return (AbstractC0132an) Ym.f758a.f775a.get(cls);
     }
 }

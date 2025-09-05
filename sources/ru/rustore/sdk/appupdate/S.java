@@ -6,15 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import kotlin.jvm.internal.Intrinsics;
 import ru.rustore.sdk.appupdate.model.InstallState;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class S extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Q f1358a;
+    public final Q f1363a;
 
     public S(Q installStateProvider) {
         Intrinsics.checkNotNullParameter(installStateProvider, "installStateProvider");
-        this.f1358a = installStateProvider;
+        this.f1363a = installStateProvider;
     }
 
     @Override // android.content.BroadcastReceiver
@@ -26,9 +26,9 @@ public final class S extends BroadcastReceiver {
         if (extras == null || (state = InstallState.Companion.of$sdk_public_appupdate_release(extras)) == null) {
             return;
         }
-        Q q = this.f1358a;
+        Q q = this.f1363a;
         q.getClass();
         Intrinsics.checkNotNullParameter(state, "state");
-        q.f1357a.setValue(state);
+        q.f1362a.setValue(state);
     }
 }

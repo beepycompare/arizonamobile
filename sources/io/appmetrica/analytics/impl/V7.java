@@ -1,24 +1,39 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.jvm.internal.Intrinsics;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import kotlin.Pair;
+import kotlin.TuplesKt;
 /* loaded from: classes4.dex */
-public final class V7 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0249fb f690a;
-    public String b = "";
-
-    public V7(InterfaceC0249fb interfaceC0249fb) {
-        this.f690a = interfaceC0249fb;
+public final class V7 implements ProtobufConverter {
+    public final BigDecimal a(F8 f8) {
+        throw new UnsupportedOperationException();
     }
 
-    public final void a(String str, boolean z) {
-        if (str != null) {
-            if ((str.length() > 0 ? str : null) == null || Intrinsics.areEqual(this.b, str)) {
-                return;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        F8 f8 = (F8) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final F8 fromModel(BigDecimal bigDecimal) {
+        BigInteger bigInteger = X7.f733a;
+        int i = -bigDecimal.scale();
+        BigInteger unscaledValue = bigDecimal.unscaledValue();
+        while (true) {
+            if (unscaledValue.compareTo(X7.f733a) <= 0 && unscaledValue.compareTo(X7.b) >= 0) {
+                Pair pair = TuplesKt.to(Long.valueOf(unscaledValue.longValue()), Integer.valueOf(i));
+                W7 w7 = new W7(((Number) pair.getSecond()).intValue(), ((Number) pair.getFirst()).longValue());
+                F8 f8 = new F8();
+                f8.f437a = w7.f720a;
+                f8.b = w7.b;
+                return f8;
             }
-            this.b = str;
-            this.f690a.a(str, z);
+            unscaledValue = unscaledValue.divide(BigInteger.TEN);
+            i++;
         }
     }
 }

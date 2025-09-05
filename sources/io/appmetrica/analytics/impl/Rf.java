@@ -1,148 +1,53 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.Process;
-import android.os.ResultReceiver;
-import android.text.TextUtils;
-import io.appmetrica.analytics.AppMetrica;
-import io.appmetrica.analytics.AppMetricaConfig;
-import java.util.ArrayList;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-import org.json.JSONArray;
 /* loaded from: classes4.dex */
-public final class Rf implements Parcelable {
+public final class Rf implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ContentValues f635a;
-    public final ResultReceiver b;
-    public static final String c = UUID.randomUUID().toString();
-    public static final Parcelable.Creator<Rf> CREATOR = new Qf();
+    public final X f652a;
+    public final Sf b;
 
-    public Rf(Context context, ResultReceiver resultReceiver) {
-        ContentValues contentValues = new ContentValues();
-        this.f635a = contentValues;
-        contentValues.put("PROCESS_CFG_PROCESS_ID", Integer.valueOf(Process.myPid()));
-        contentValues.put("PROCESS_CFG_PROCESS_SESSION_ID", c);
-        contentValues.put("PROCESS_CFG_SDK_API_LEVEL", Integer.valueOf(AppMetrica.getLibraryApiLevel()));
-        contentValues.put("PROCESS_CFG_PACKAGE_NAME", context.getPackageName());
-        this.b = resultReceiver;
+    public Rf() {
+        this(new X(), new Sf(30));
     }
 
-    public final void a(AppMetricaConfig appMetricaConfig) {
-        Object obj = appMetricaConfig.additionalConfig.get("YMM_clids");
-        Map map = obj instanceof Map ? (Map) obj : null;
-        if (map != null) {
-            HashMap b = Lm.b(map);
-            synchronized (this) {
-                this.f635a.put("PROCESS_CFG_CLIDS", Db.b(b));
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Zi fromModel(Tf tf) {
+        int i;
+        L8 l8 = new L8();
+        Zi fromModel = this.f652a.fromModel(tf.f681a);
+        l8.f551a = (B8) fromModel.f772a;
+        Sn a2 = this.b.a(tf.b);
+        if (ro.a((Collection) a2.f671a)) {
+            i = 0;
+        } else {
+            l8.b = new B8[((List) a2.f671a).size()];
+            i = 0;
+            for (int i2 = 0; i2 < ((List) a2.f671a).size(); i2++) {
+                Zi fromModel2 = this.f652a.fromModel((Y) ((List) a2.f671a).get(i2));
+                l8.b[i2] = (B8) fromModel2.f772a;
+                i += fromModel2.b.getBytesTruncated();
             }
         }
+        return new Zi(l8, new C0749z3(C0749z3.b(fromModel, a2, new C0749z3(i))));
     }
 
-    public final void b(AppMetricaConfig appMetricaConfig) {
-        List<String> list = appMetricaConfig.customHosts;
-        if (list != null) {
-            synchronized (this) {
-                this.f635a.put("PROCESS_CFG_CUSTOM_HOSTS", no.a((Collection) list) ? null : new JSONArray((Collection) list).toString());
-            }
-        }
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        Zi zi = (Zi) obj;
+        throw new UnsupportedOperationException();
     }
 
-    public final void c(AppMetricaConfig appMetricaConfig) {
-        String str = (String) appMetricaConfig.additionalConfig.get("YMM_distributionReferrer");
-        if (str != null) {
-            synchronized (this) {
-                this.f635a.put("PROCESS_CFG_DISTRIBUTION_REFERRER", str);
-            }
-            i();
-        }
+    public Rf(X x, Sf sf) {
+        this.f652a = x;
+        this.b = sf;
     }
 
-    public final void d(AppMetricaConfig appMetricaConfig) {
-        if (appMetricaConfig != null) {
-            synchronized (this) {
-                b(appMetricaConfig);
-                a(appMetricaConfig);
-                c(appMetricaConfig);
-            }
-        }
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final String e() {
-        return this.f635a.getAsString("PROCESS_CFG_PACKAGE_NAME");
-    }
-
-    public final Integer f() {
-        return this.f635a.getAsInteger("PROCESS_CFG_PROCESS_ID");
-    }
-
-    public final String g() {
-        return this.f635a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
-    }
-
-    public final boolean h() {
-        return this.f635a.containsKey("PROCESS_CFG_CUSTOM_HOSTS");
-    }
-
-    public final synchronized void i() {
-        this.f635a.put("PROCESS_CFG_INSTALL_REFERRER_SOURCE", "api");
-    }
-
-    public final String toString() {
-        return "ProcessConfiguration{mParamsMapping=" + this.f635a + ", mDataResultReceiver=" + this.b + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        Bundle bundle = new Bundle();
-        bundle.putParcelable("CFG_KEY_PROCESS_ENVIRONMENT", this.f635a);
-        bundle.putParcelable("CFG_KEY_PROCESS_ENVIRONMENT_RECEIVER", this.b);
-        parcel.writeBundle(bundle);
-    }
-
-    public final HashMap a() {
-        return Db.c(this.f635a.getAsString("PROCESS_CFG_CLIDS"));
-    }
-
-    public final String c() {
-        return this.f635a.getAsString("PROCESS_CFG_DISTRIBUTION_REFERRER");
-    }
-
-    public final String d() {
-        return this.f635a.getAsString("PROCESS_CFG_INSTALL_REFERRER_SOURCE");
-    }
-
-    public Rf(Rf rf) {
-        synchronized (rf) {
-            this.f635a = new ContentValues(rf.f635a);
-            this.b = rf.b;
-        }
-    }
-
-    public final ArrayList b() {
-        String asString = this.f635a.getAsString("PROCESS_CFG_CUSTOM_HOSTS");
-        if (TextUtils.isEmpty(asString)) {
-            return null;
-        }
-        return Db.b(asString);
-    }
-
-    public Rf(ContentValues contentValues, ResultReceiver resultReceiver) {
-        this.f635a = contentValues == null ? new ContentValues() : contentValues;
-        this.b = resultReceiver;
+    public final Tf a(Zi zi) {
+        throw new UnsupportedOperationException();
     }
 }

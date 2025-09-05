@@ -77,7 +77,6 @@ public class NavigationMenuItemView extends ForegroundLinearLayout implements Me
         setIconSize(context.getResources().getDimensionPixelSize(R.dimen.design_navigation_icon_size));
         CheckedTextView checkedTextView = (CheckedTextView) findViewById(R.id.design_menu_item_text);
         this.textView = checkedTextView;
-        checkedTextView.setDuplicateParentStateEnabled(true);
         ViewCompat.setAccessibilityDelegate(checkedTextView, accessibilityDelegateCompat);
     }
 
@@ -89,7 +88,7 @@ public class NavigationMenuItemView extends ForegroundLinearLayout implements Me
         }
         setVisibility(menuItemImpl.isVisible() ? 0 : 8);
         if (getBackground() == null) {
-            ViewCompat.setBackground(this, createDefaultBackground());
+            setBackground(createDefaultBackground());
         }
         setCheckable(menuItemImpl.isCheckable());
         setChecked(menuItemImpl.isChecked());
@@ -200,7 +199,7 @@ public class NavigationMenuItemView extends ForegroundLinearLayout implements Me
                     drawable = constantState.newDrawable();
                 }
                 drawable = DrawableCompat.wrap(drawable).mutate();
-                DrawableCompat.setTintList(drawable, this.iconTintList);
+                drawable.setTintList(this.iconTintList);
             }
             int i = this.iconSize;
             drawable.setBounds(0, 0, i, i);
@@ -215,7 +214,7 @@ public class NavigationMenuItemView extends ForegroundLinearLayout implements Me
             }
             drawable = this.emptyDrawable;
         }
-        TextViewCompat.setCompoundDrawablesRelative(this.textView, drawable, null, null, null);
+        this.textView.setCompoundDrawablesRelative(drawable, null, null, null);
     }
 
     public void setIconSize(int i) {

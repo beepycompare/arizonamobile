@@ -1,32 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Set;
+import android.content.Context;
+import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 /* renamed from: io.appmetrica.analytics.impl.eb  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
 public interface InterfaceC0223eb {
-    InterfaceC0223eb a(int i, String str);
+    void a(M4 m4);
 
-    InterfaceC0223eb a(String str, float f);
+    /* synthetic */ C0476o5 b();
 
-    InterfaceC0223eb a(String str, long j);
+    CounterConfigurationReporterType c();
 
-    InterfaceC0223eb a(String str, String str2);
-
-    InterfaceC0223eb a(String str, boolean z);
-
-    Set a();
-
-    boolean a(String str);
-
-    void b();
-
-    boolean getBoolean(String str, boolean z);
-
-    int getInt(String str, int i);
-
-    long getLong(String str, long j);
-
-    String getString(String str, String str2);
-
-    InterfaceC0223eb remove(String str);
+    /* synthetic */ Context getContext();
 }

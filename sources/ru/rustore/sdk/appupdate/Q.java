@@ -4,16 +4,16 @@ import ru.rustore.sdk.appupdate.model.InstallState;
 import ru.rustore.sdk.reactive.subject.MutableStateSubject;
 import ru.rustore.sdk.reactive.subject.StateSubject;
 import ru.rustore.sdk.reactive.subject.SubjectExtensionsKt;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class Q {
 
     /* renamed from: a  reason: collision with root package name */
-    public final MutableStateSubject<InstallState> f1357a;
+    public final MutableStateSubject<InstallState> f1362a;
     public final StateSubject<InstallState> b;
 
     public Q() {
         MutableStateSubject<InstallState> mutableStateSubject = new MutableStateSubject<>(InstallState.Companion.empty$sdk_public_appupdate_release());
-        this.f1357a = mutableStateSubject;
+        this.f1362a = mutableStateSubject;
         this.b = SubjectExtensionsKt.asStateSubject(mutableStateSubject);
     }
 }

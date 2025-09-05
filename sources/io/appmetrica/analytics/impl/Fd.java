@@ -1,30 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import kotlin.jvm.internal.Intrinsics;
+import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 /* loaded from: classes4.dex */
-public final class Fd {
+public final class Fd extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0617u0 f434a;
-    public final C0730yd b;
-    public final Ld c;
-    public final IHandlerExecutor d;
+    public final /* synthetic */ Jd f440a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ String c;
 
-    public Fd() {
-        C0617u0 d = C0696x4.l().d();
-        this.f434a = d;
-        this.b = new C0730yd(d);
-        this.c = new Ld();
-        this.d = C0696x4.l().g().a();
+    public Fd(Jd jd, int i, String str) {
+        this.f440a = jd;
+        this.b = i;
+        this.c = str;
     }
 
-    public static final InterfaceC0249fb a(Fd fd) {
-        fd.f434a.getClass();
-        C0592t0 c0592t0 = C0592t0.e;
-        Intrinsics.checkNotNull(c0592t0);
-        Gc i = c0592t0.f().i();
-        Intrinsics.checkNotNull(i);
-        return i.f455a;
+    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
+    public final void runSafety() {
+        Jd.a(this.f440a).a(new C0248fa(this.b, this.c));
     }
 }

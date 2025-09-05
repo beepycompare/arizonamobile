@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.appcompat.widget.ActionMenuView;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.animation.AnimatableView;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.appbar.AppBarLayout;
@@ -204,14 +203,14 @@ public class SearchBarAnimationHelper {
         view.post(new Runnable() { // from class: com.google.android.material.search.SearchBarAnimationHelper$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                SearchBarAnimationHelper.this.m8725x1b96b119(searchBar, view, appBarLayout, z);
+                SearchBarAnimationHelper.this.m8738x1b96b119(searchBar, view, appBarLayout, z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startExpandAnimation$0$com-google-android-material-search-SearchBarAnimationHelper  reason: not valid java name */
-    public /* synthetic */ void m8725x1b96b119(SearchBar searchBar, View view, AppBarLayout appBarLayout, boolean z) {
+    public /* synthetic */ void m8738x1b96b119(SearchBar searchBar, View view, AppBarLayout appBarLayout, boolean z) {
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playSequentially(getFadeOutChildrenAnimator(searchBar, view), getExpandAnimator(searchBar, view, appBarLayout));
         animatorSet.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.search.SearchBarAnimationHelper.3
@@ -321,7 +320,7 @@ public class SearchBarAnimationHelper {
     private ValueAnimator.AnimatorUpdateListener getExpandedViewBackgroundUpdateListener(SearchBar searchBar, final View view) {
         final MaterialShapeDrawable createWithElevationOverlay = MaterialShapeDrawable.createWithElevationOverlay(view.getContext());
         createWithElevationOverlay.setCornerSize(searchBar.getCornerSize());
-        createWithElevationOverlay.setElevation(ViewCompat.getElevation(searchBar));
+        createWithElevationOverlay.setElevation(searchBar.getElevation());
         return new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchBarAnimationHelper$$ExternalSyntheticLambda4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -333,7 +332,7 @@ public class SearchBarAnimationHelper {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void lambda$getExpandedViewBackgroundUpdateListener$1(MaterialShapeDrawable materialShapeDrawable, View view, ValueAnimator valueAnimator) {
         materialShapeDrawable.setInterpolation(1.0f - valueAnimator.getAnimatedFraction());
-        ViewCompat.setBackground(view, materialShapeDrawable);
+        view.setBackground(materialShapeDrawable);
         view.setAlpha(1.0f);
     }
 

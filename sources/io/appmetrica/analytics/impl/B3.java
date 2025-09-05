@@ -1,27 +1,31 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import android.util.Base64;
 /* loaded from: classes4.dex */
-public final class B3 implements ProtobufConverter {
-    public final C0639um a(C0745z3 c0745z3) {
-        C0639um c0639um = new C0639um();
-        c0639um.f1093a = c0745z3.f1171a;
-        return c0639um;
+public final class B3 implements zo {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final C0247f9 f357a;
+
+    public B3() {
+        this(new C0247f9());
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object fromModel(Object obj) {
-        C0639um c0639um = new C0639um();
-        c0639um.f1093a = ((C0745z3) obj).f1171a;
-        return c0639um;
+    @Override // io.appmetrica.analytics.impl.zo
+    public final byte[] a(C0402l9 c0402l9, Gh gh) {
+        byte[] bArr = new byte[0];
+        String str = c0402l9.b;
+        if (str != null) {
+            try {
+                bArr = Base64.decode(str, 0);
+            } catch (Throwable unused) {
+            }
+        }
+        C0247f9 c0247f9 = this.f357a;
+        return ((InterfaceC0221e9) c0247f9.f871a.a(c0402l9.o)).a(bArr);
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        return new C0745z3(((C0639um) obj).f1093a);
-    }
-
-    public final C0745z3 a(C0639um c0639um) {
-        return new C0745z3(c0639um.f1093a);
+    public B3(C0247f9 c0247f9) {
+        this.f357a = c0247f9;
     }
 }

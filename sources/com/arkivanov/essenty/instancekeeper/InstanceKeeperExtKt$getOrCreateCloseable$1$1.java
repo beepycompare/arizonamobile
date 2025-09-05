@@ -24,6 +24,6 @@ public final class InstanceKeeperExtKt$getOrCreateCloseable$1$1 implements Insta
 
     @Override // com.arkivanov.essenty.instancekeeper.InstanceKeeper.Instance
     public void onDestroy() {
-        UByte$$ExternalSyntheticBackport0.m9138m((Object) this.$instance);
+        UByte$$ExternalSyntheticBackport0.m9157m((Object) this.$instance);
     }
 }

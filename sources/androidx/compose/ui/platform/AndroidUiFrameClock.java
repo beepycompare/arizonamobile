@@ -69,17 +69,17 @@ public final class AndroidUiFrameClock implements MonotonicFrameClock {
         final Choreographer.FrameCallback frameCallback = new Choreographer.FrameCallback() { // from class: androidx.compose.ui.platform.AndroidUiFrameClock$withFrameNanos$2$callback$1
             @Override // android.view.Choreographer.FrameCallback
             public final void doFrame(long j) {
-                Object m9065constructorimpl;
+                Object m9084constructorimpl;
                 Continuation continuation2 = cancellableContinuationImpl2;
                 Function1<Long, R> function12 = function1;
                 try {
                     Result.Companion companion = Result.Companion;
-                    m9065constructorimpl = Result.m9065constructorimpl(function12.invoke(Long.valueOf(j)));
+                    m9084constructorimpl = Result.m9084constructorimpl(function12.invoke(Long.valueOf(j)));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9065constructorimpl = Result.m9065constructorimpl(ResultKt.createFailure(th));
+                    m9084constructorimpl = Result.m9084constructorimpl(ResultKt.createFailure(th));
                 }
-                continuation2.resumeWith(m9065constructorimpl);
+                continuation2.resumeWith(m9084constructorimpl);
             }
         };
         if (androidUiDispatcher != null && Intrinsics.areEqual(androidUiDispatcher.getChoreographer(), getChoreographer())) {

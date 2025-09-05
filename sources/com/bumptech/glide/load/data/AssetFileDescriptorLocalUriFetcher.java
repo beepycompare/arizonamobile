@@ -11,11 +11,15 @@ public final class AssetFileDescriptorLocalUriFetcher extends LocalUriFetcher<As
         super(contentResolver, uri);
     }
 
+    public AssetFileDescriptorLocalUriFetcher(ContentResolver contentResolver, Uri uri, boolean z) {
+        super(contentResolver, uri, z);
+    }
+
     /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // com.bumptech.glide.load.data.LocalUriFetcher
     public AssetFileDescriptor loadResource(Uri uri, ContentResolver contentResolver) throws FileNotFoundException {
-        AssetFileDescriptor openAssetFileDescriptor = contentResolver.openAssetFileDescriptor(uri, "r");
+        AssetFileDescriptor openAssetFileDescriptor = openAssetFileDescriptor(uri);
         if (openAssetFileDescriptor != null) {
             return openAssetFileDescriptor;
         }

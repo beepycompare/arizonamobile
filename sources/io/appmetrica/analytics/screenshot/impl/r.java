@@ -7,17 +7,17 @@ import kotlin.jvm.internal.Lambda;
 public final class r extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0785u f1322a;
+    public final /* synthetic */ C0789u f1327a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r(C0785u c0785u) {
+    public r(C0789u c0789u) {
         super(0);
-        this.f1322a = c0785u;
+        this.f1327a = c0789u;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        ((C0786v) this.f1322a.b).a("ContentObserverScreenshotCaptor");
+        ((C0790v) this.f1327a.b).a("ContentObserverScreenshotCaptor");
         return Unit.INSTANCE;
     }
 }

@@ -1,59 +1,44 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
-import java.util.concurrent.atomic.AtomicLong;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Process;
+import io.appmetrica.analytics.coreapi.internal.model.ScreenInfo;
+import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
+import io.appmetrica.analytics.internal.AppMetricaService;
 /* loaded from: classes4.dex */
-public final class Jk {
+public abstract class Jk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0572s5 f519a;
-    public final C0130al b;
-    public final Mk c;
-    public long d;
-    public long e;
-    public AtomicLong f;
-    public boolean g;
-    public volatile Yk h;
-    public long i;
-    public long j;
-    public final SystemTimeProvider k;
+    public static final SafePackageManager f518a = new SafePackageManager();
 
-    public Jk(C0572s5 c0572s5, C0130al c0130al, Mk mk, SystemTimeProvider systemTimeProvider) {
-        this.f519a = c0572s5;
-        this.b = c0130al;
-        this.c = mk;
-        this.k = systemTimeProvider;
-        a();
-    }
-
-    public final void a() {
-        Mk mk = this.c;
-        long elapsedRealtime = this.k.elapsedRealtime();
-        Long l = mk.c;
-        if (l != null) {
-            elapsedRealtime = l.longValue();
+    public static Intent a(Context context) {
+        Bundle bundle;
+        C0715xj c0715xj;
+        Intent addFlags = new Intent(context, AppMetricaService.class).setAction("io.appmetrica.analytics.IAppMetricaService").setData(new Uri.Builder().scheme("appmetrica").authority(context.getPackageName()).build()).addFlags(32);
+        try {
+            bundle = f518a.getApplicationInfo(context, context.getPackageName(), 128).metaData;
+            if (bundle == null) {
+                bundle = new Bundle();
+            }
+        } catch (Throwable unused) {
+            bundle = new Bundle();
         }
-        this.e = elapsedRealtime;
-        Long l2 = this.c.b;
-        this.d = l2 == null ? -1L : l2.longValue();
-        Long l3 = this.c.e;
-        this.f = new AtomicLong(l3 == null ? 0L : l3.longValue());
-        Boolean bool = this.c.f;
-        this.g = bool == null ? true : bool.booleanValue();
-        Long l4 = this.c.g;
-        long longValue = l4 != null ? l4.longValue() : 0L;
-        this.i = longValue;
-        Mk mk2 = this.c;
-        long j = longValue - this.e;
-        Long l5 = mk2.h;
-        if (l5 != null) {
-            j = l5.longValue();
+        Intent putExtras = addFlags.putExtras(bundle);
+        putExtras.setData(putExtras.getData().buildUpon().path("client").appendQueryParameter("pid", String.valueOf(Process.myPid())).appendQueryParameter("psid", Vf.c).build());
+        A4 l = A4.l();
+        synchronized (l) {
+            if (l.o == null) {
+                C0715xj c0715xj2 = new C0715xj();
+                l.o = c0715xj2;
+                l.h.a(c0715xj2);
+            }
+            c0715xj = l.o;
         }
-        this.j = j;
-    }
-
-    public final String toString() {
-        return "Session{id=" + this.d + ", creationTime=" + this.e + ", currentReportId=" + this.f + ", sessionRequestParams=" + this.h + ", sleepStart=" + this.i + AbstractJsonLexerKt.END_OBJ;
+        ScreenInfo a2 = c0715xj.a(context);
+        putExtras.putExtra("screen_size", a2 == null ? null : Gb.a(a2));
+        return putExtras.setPackage(context.getApplicationContext().getPackageName());
     }
 }

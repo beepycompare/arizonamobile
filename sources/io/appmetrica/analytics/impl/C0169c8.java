@@ -1,16 +1,15 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.AppMetricaConfig;
+import java.util.Map;
+import org.json.JSONObject;
 /* renamed from: io.appmetrica.analytics.impl.c8  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
 public final class C0169c8 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Ym f807a;
-
-    public C0169c8(Ym ym) {
-        this.f807a = ym;
+    public final void a(JSONObject jSONObject, AppMetricaConfig.Builder builder) {
     }
 
-    public C0169c8() {
-        this(new Ym(Ka.j().f(), "appmetrica_startup_hosts"));
+    public final JSONObject a(Map<String, ? extends Object> map) {
+        return new JSONObject();
     }
 }

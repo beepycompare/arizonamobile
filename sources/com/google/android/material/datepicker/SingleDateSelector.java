@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import androidx.core.util.Pair;
 import com.google.android.material.R;
+import com.google.android.material.color.MaterialColors;
 import com.google.android.material.internal.ManufacturerUtils;
 import com.google.android.material.resources.MaterialAttributes;
 import com.google.android.material.textfield.TextInputLayout;
@@ -99,6 +100,10 @@ public class SingleDateSelector implements DateSelector<Long> {
         View inflate = layoutInflater.inflate(R.layout.mtrl_picker_text_input_date, viewGroup, false);
         final TextInputLayout textInputLayout = (TextInputLayout) inflate.findViewById(R.id.mtrl_picker_text_input_date);
         EditText editText = textInputLayout.getEditText();
+        Integer colorOrNull = MaterialColors.getColorOrNull(inflate.getContext(), R.attr.colorOnSurfaceVariant);
+        if (colorOrNull != null) {
+            editText.setHintTextColor(colorOrNull.intValue());
+        }
         if (ManufacturerUtils.isDateInputKeyboardMissingSeparatorCharacters()) {
             editText.setInputType(17);
         }
@@ -137,7 +142,9 @@ public class SingleDateSelector implements DateSelector<Long> {
                 onSelectionChangedListener.onIncompleteSelectionChanged();
             }
         });
-        DateSelector.showKeyboardWithAutoHideBehavior(editText);
+        if (!DateSelector.isTouchExplorationEnabled(inflate.getContext())) {
+            DateSelector.showKeyboardWithAutoHideBehavior(editText);
+        }
         return inflate;
     }
 

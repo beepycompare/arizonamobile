@@ -18,33 +18,13 @@ public final class TonalPalette {
     }
 
     public static TonalPalette fromHueAndChroma(double d, double d2) {
-        return new TonalPalette(d, d2, createKeyColor(d, d2));
+        return new TonalPalette(d, d2, new KeyColor(d, d2).create());
     }
 
     private TonalPalette(double d, double d2, Hct hct) {
         this.hue = d;
         this.chroma = d2;
         this.keyColor = hct;
-    }
-
-    private static Hct createKeyColor(double d, double d2) {
-        Hct from = Hct.from(d, d2, 50.0d);
-        double abs = Math.abs(from.getChroma() - d2);
-        for (double d3 = 1.0d; d3 < 50.0d && Math.round(d2) != Math.round(from.getChroma()); d3 += 1.0d) {
-            Hct from2 = Hct.from(d, d2, 50.0d + d3);
-            double abs2 = Math.abs(from2.getChroma() - d2);
-            if (abs2 < abs) {
-                abs = abs2;
-                from = from2;
-            }
-            Hct from3 = Hct.from(d, d2, 50.0d - d3);
-            double abs3 = Math.abs(from3.getChroma() - d2);
-            if (abs3 < abs) {
-                abs = abs3;
-                from = from3;
-            }
-        }
-        return from;
     }
 
     public int tone(int i) {
@@ -70,5 +50,50 @@ public final class TonalPalette {
 
     public Hct getKeyColor() {
         return this.keyColor;
+    }
+
+    /* loaded from: classes4.dex */
+    private static final class KeyColor {
+        private static final double MAX_CHROMA_VALUE = 200.0d;
+        private final Map<Integer, Double> chromaCache = new HashMap();
+        private final double hue;
+        private final double requestedChroma;
+
+        public KeyColor(double d, double d2) {
+            this.hue = d;
+            this.requestedChroma = d2;
+        }
+
+        public Hct create() {
+            int i = 100;
+            int i2 = 0;
+            while (i2 < i) {
+                int i3 = (i2 + i) / 2;
+                int i4 = i3 + 1;
+                boolean z = maxChroma(i3) < maxChroma(i4);
+                if (maxChroma(i3) >= this.requestedChroma - 0.01d) {
+                    if (Math.abs(i2 - 50) < Math.abs(i - 50)) {
+                        i = i3;
+                    } else if (i2 == i3) {
+                        return Hct.from(this.hue, this.requestedChroma, i2);
+                    } else {
+                        i2 = i3;
+                    }
+                } else if (z) {
+                    i2 = i4;
+                } else {
+                    i = i3;
+                }
+            }
+            return Hct.from(this.hue, this.requestedChroma, i2);
+        }
+
+        private double maxChroma(int i) {
+            Double valueOf;
+            if (this.chromaCache.get(Integer.valueOf(i)) == null && (valueOf = Double.valueOf(Hct.from(this.hue, 200.0d, i).getChroma())) != null) {
+                this.chromaCache.put(Integer.valueOf(i), valueOf);
+            }
+            return this.chromaCache.get(Integer.valueOf(i)).doubleValue();
+        }
     }
 }

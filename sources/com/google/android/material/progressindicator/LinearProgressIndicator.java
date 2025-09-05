@@ -2,10 +2,10 @@ package com.google.android.material.progressindicator;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.Objects;
 /* loaded from: classes4.dex */
 public class LinearProgressIndicator extends BaseProgressIndicator<LinearProgressIndicatorSpec> {
     public static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_LinearProgressIndicator;
@@ -37,6 +37,7 @@ public class LinearProgressIndicator extends BaseProgressIndicator<LinearProgres
     public LinearProgressIndicator(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i, DEF_STYLE_RES);
         initializeDrawables();
+        this.initialized = true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -45,12 +46,12 @@ public class LinearProgressIndicator extends BaseProgressIndicator<LinearProgres
         return new LinearProgressIndicatorSpec(context, attributeSet);
     }
 
-    @Override // android.view.View
+    @Override // com.google.android.material.progressindicator.BaseProgressIndicator, android.view.View
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         LinearProgressIndicatorSpec linearProgressIndicatorSpec = (LinearProgressIndicatorSpec) this.spec;
         boolean z2 = true;
-        if (((LinearProgressIndicatorSpec) this.spec).indicatorDirection != 1 && ((ViewCompat.getLayoutDirection(this) != 1 || ((LinearProgressIndicatorSpec) this.spec).indicatorDirection != 2) && (ViewCompat.getLayoutDirection(this) != 0 || ((LinearProgressIndicatorSpec) this.spec).indicatorDirection != 3))) {
+        if (((LinearProgressIndicatorSpec) this.spec).indicatorDirection != 1 && ((getLayoutDirection() != 1 || ((LinearProgressIndicatorSpec) this.spec).indicatorDirection != 2) && (getLayoutDirection() != 0 || ((LinearProgressIndicatorSpec) this.spec).indicatorDirection != 3))) {
             z2 = false;
         }
         linearProgressIndicatorSpec.drawHorizontallyInverse = z2;
@@ -89,6 +90,30 @@ public class LinearProgressIndicator extends BaseProgressIndicator<LinearProgres
         invalidate();
     }
 
+    public int getTrackInnerCornerRadius() {
+        return ((LinearProgressIndicatorSpec) this.spec).trackInnerCornerRadius;
+    }
+
+    public void setTrackInnerCornerRadius(int i) {
+        if (((LinearProgressIndicatorSpec) this.spec).trackInnerCornerRadius != i) {
+            ((LinearProgressIndicatorSpec) this.spec).trackInnerCornerRadius = Math.round(Math.min(i, ((LinearProgressIndicatorSpec) this.spec).trackThickness / 2.0f));
+            ((LinearProgressIndicatorSpec) this.spec).useRelativeTrackInnerCornerRadius = false;
+            ((LinearProgressIndicatorSpec) this.spec).hasInnerCornerRadius = true;
+            ((LinearProgressIndicatorSpec) this.spec).validateSpec();
+            invalidate();
+        }
+    }
+
+    public void setTrackInnerCornerRadiusFraction(float f) {
+        if (((LinearProgressIndicatorSpec) this.spec).trackInnerCornerRadiusFraction != f) {
+            ((LinearProgressIndicatorSpec) this.spec).trackInnerCornerRadiusFraction = Math.min(f, 0.5f);
+            ((LinearProgressIndicatorSpec) this.spec).useRelativeTrackInnerCornerRadius = true;
+            ((LinearProgressIndicatorSpec) this.spec).hasInnerCornerRadius = true;
+            ((LinearProgressIndicatorSpec) this.spec).validateSpec();
+            invalidate();
+        }
+    }
+
     public int getTrackStopIndicatorSize() {
         return ((LinearProgressIndicatorSpec) this.spec).trackStopIndicatorSize;
     }
@@ -99,6 +124,18 @@ public class LinearProgressIndicator extends BaseProgressIndicator<LinearProgres
             ((LinearProgressIndicatorSpec) this.spec).validateSpec();
             invalidate();
         }
+    }
+
+    public Integer getTrackStopIndicatorPadding() {
+        return ((LinearProgressIndicatorSpec) this.spec).trackStopIndicatorPadding;
+    }
+
+    public void setTrackStopIndicatorPadding(Integer num) {
+        if (Objects.equals(((LinearProgressIndicatorSpec) this.spec).trackStopIndicatorPadding, num)) {
+            return;
+        }
+        ((LinearProgressIndicatorSpec) this.spec).trackStopIndicatorPadding = num;
+        invalidate();
     }
 
     public int getIndeterminateAnimationType() {
@@ -119,6 +156,7 @@ public class LinearProgressIndicator extends BaseProgressIndicator<LinearProgres
         } else {
             getIndeterminateDrawable().setAnimatorDelegate(new LinearIndeterminateDisjointAnimatorDelegate(getContext(), (LinearProgressIndicatorSpec) this.spec));
         }
+        registerSwitchIndeterminateModeCallback();
         invalidate();
     }
 
@@ -130,7 +168,7 @@ public class LinearProgressIndicator extends BaseProgressIndicator<LinearProgres
         ((LinearProgressIndicatorSpec) this.spec).indicatorDirection = i;
         LinearProgressIndicatorSpec linearProgressIndicatorSpec = (LinearProgressIndicatorSpec) this.spec;
         boolean z = true;
-        if (i != 1 && ((ViewCompat.getLayoutDirection(this) != 1 || ((LinearProgressIndicatorSpec) this.spec).indicatorDirection != 2) && (ViewCompat.getLayoutDirection(this) != 0 || i != 3))) {
+        if (i != 1 && ((getLayoutDirection() != 1 || ((LinearProgressIndicatorSpec) this.spec).indicatorDirection != 2) && (getLayoutDirection() != 0 || i != 3))) {
             z = false;
         }
         linearProgressIndicatorSpec.drawHorizontallyInverse = z;

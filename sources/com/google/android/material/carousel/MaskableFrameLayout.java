@@ -6,6 +6,8 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import androidx.core.math.MathUtils;
 import com.google.android.material.animation.AnimationUtils;
@@ -19,10 +21,13 @@ import com.google.android.material.shape.ShapeableDelegate;
 /* loaded from: classes4.dex */
 public class MaskableFrameLayout extends FrameLayout implements Maskable, Shapeable {
     private static final int NOT_SET = -1;
+    private View.OnHoverListener hoverListener;
+    private boolean isHovered;
     private final RectF maskRect;
     private float maskXPercentage;
     private OnMaskChangedListener onMaskChangedListener;
     private Boolean savedForceCompatClippingEnabled;
+    private final Rect screenBoundsRect;
     private ShapeAppearanceModel shapeAppearanceModel;
     private final ShapeableDelegate shapeableDelegate;
 
@@ -38,8 +43,10 @@ public class MaskableFrameLayout extends FrameLayout implements Maskable, Shapea
         super(context, attributeSet, i);
         this.maskXPercentage = -1.0f;
         this.maskRect = new RectF();
+        this.screenBoundsRect = new Rect();
         this.shapeableDelegate = ShapeableDelegate.create(this);
         this.savedForceCompatClippingEnabled = null;
+        this.isHovered = false;
         setShapeAppearanceModel(ShapeAppearanceModel.builder(context, attributeSet, i, 0, 0).build());
     }
 
@@ -155,19 +162,79 @@ public class MaskableFrameLayout extends FrameLayout implements Maskable, Shapea
         return super.onTouchEvent(motionEvent);
     }
 
+    @Override // android.view.ViewGroup
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (!this.maskRect.isEmpty()) {
+            if (!this.maskRect.contains(motionEvent.getX(), motionEvent.getY())) {
+                return true;
+            }
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         this.shapeableDelegate.maybeClip(canvas, new CanvasCompat.CanvasOperation() { // from class: com.google.android.material.carousel.MaskableFrameLayout$$ExternalSyntheticLambda1
             @Override // com.google.android.material.canvas.CanvasCompat.CanvasOperation
             public final void run(Canvas canvas2) {
-                MaskableFrameLayout.this.m8673x418c47c0(canvas2);
+                MaskableFrameLayout.this.m8681x418c47c0(canvas2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$dispatchDraw$1$com-google-android-material-carousel-MaskableFrameLayout  reason: not valid java name */
-    public /* synthetic */ void m8673x418c47c0(Canvas canvas) {
+    public /* synthetic */ void m8681x418c47c0(Canvas canvas) {
         super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.getBoundsInScreen(this.screenBoundsRect);
+        if (getX() > 0.0f) {
+            Rect rect = this.screenBoundsRect;
+            rect.left = (int) (rect.left + this.maskRect.left);
+        }
+        if (getY() > 0.0f) {
+            Rect rect2 = this.screenBoundsRect;
+            rect2.top = (int) (rect2.top + this.maskRect.top);
+        }
+        Rect rect3 = this.screenBoundsRect;
+        rect3.right = rect3.left + Math.round(this.maskRect.width());
+        Rect rect4 = this.screenBoundsRect;
+        rect4.bottom = rect4.top + Math.round(this.maskRect.height());
+        accessibilityNodeInfo.setBoundsInScreen(this.screenBoundsRect);
+    }
+
+    @Override // android.view.View
+    public void setOnHoverListener(View.OnHoverListener onHoverListener) {
+        this.hoverListener = onHoverListener;
+    }
+
+    @Override // android.view.View
+    public boolean onHoverEvent(MotionEvent motionEvent) {
+        int action = motionEvent.getAction();
+        if (!this.maskRect.isEmpty() && (action == 9 || action == 10 || action == 7)) {
+            if (!this.maskRect.contains(motionEvent.getX(), motionEvent.getY())) {
+                if (this.isHovered && this.hoverListener != null) {
+                    motionEvent.setAction(10);
+                    this.hoverListener.onHover(this, motionEvent);
+                }
+                this.isHovered = false;
+                return false;
+            }
+        }
+        if (this.hoverListener != null) {
+            if (!this.isHovered && action == 7) {
+                motionEvent.setAction(9);
+                this.isHovered = true;
+            }
+            if (action == 7 || action == 9) {
+                this.isHovered = true;
+            }
+            this.hoverListener.onHover(this, motionEvent);
+        }
+        return super.onHoverEvent(motionEvent);
     }
 }

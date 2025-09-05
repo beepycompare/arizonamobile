@@ -1,14 +1,18 @@
 package com.bumptech.glide.load.engine;
 
 import android.os.Build;
+import android.os.Process;
 import android.util.Log;
 import androidx.core.util.Pools;
+import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.GlideContext;
+import com.bumptech.glide.GlideExperiments;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.Registry;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.EncodeStrategy;
 import com.bumptech.glide.load.Key;
+import com.bumptech.glide.load.Option;
 import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.ResourceEncoder;
 import com.bumptech.glide.load.Transformation;
@@ -25,8 +29,10 @@ import com.bumptech.glide.util.pool.StateVerifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Supplier;
 /* loaded from: classes3.dex */
 class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnable, Comparable<DecodeJob<?>>, FactoryPools.Poolable {
+    public static final Option<Supplier<Integer>> GLIDE_THREAD_PRIORITY_OVERRIDE = Option.memory("glide_thread_priority_override");
     private static final String TAG = "DecodeJob";
     private Callback<R> callback;
     private Key currentAttemptingKey;
@@ -38,7 +44,9 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
     private Thread currentThread;
     private final DiskCacheProvider diskCacheProvider;
     private DiskCacheStrategy diskCacheStrategy;
+    private GlideExperiments experiments;
     private GlideContext glideContext;
+    private Supplier<Integer> glideThreadPriorityOverride;
     private int height;
     private volatile boolean isCallbackNotified;
     private volatile boolean isCancelled;
@@ -118,6 +126,8 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
         this.order = i3;
         this.runReason = RunReason.INITIALIZE;
         this.model = obj;
+        this.experiments = glideContext.getExperiments();
+        this.glideThreadPriorityOverride = (Supplier) options.get(GLIDE_THREAD_PRIORITY_OVERRIDE);
         return this;
     }
 
@@ -263,13 +273,37 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
         }
     }
 
+    private void restoreThreadPriority() {
+        if (!this.experiments.isEnabled(GlideBuilder.OverrideGlideThreadPriority.class)) {
+            throw new IllegalStateException("OverrideGlideThreadPriority experiment is not enabled.");
+        }
+        Supplier<Integer> supplier = this.glideThreadPriorityOverride;
+        if (supplier == null || supplier.get() == null) {
+            return;
+        }
+        try {
+            Process.setThreadPriority(Process.myTid(), 9);
+        } catch (IllegalArgumentException | SecurityException e) {
+            this.glideThreadPriorityOverride = null;
+            if (Log.isLoggable(TAG, 2)) {
+                Log.v(TAG, "Failed to set thread priority; using default priority for any subsequent jobs.", e);
+            }
+        }
+    }
+
     private void notifyFailed() {
+        if (this.experiments.isEnabled(GlideBuilder.OverrideGlideThreadPriority.class)) {
+            restoreThreadPriority();
+        }
         setNotifiedOrThrow();
         this.callback.onLoadFailed(new GlideException("Failed to load resource", new ArrayList(this.throwables)));
         onLoadFailed();
     }
 
     private void notifyComplete(Resource<R> resource, DataSource dataSource, boolean z) {
+        if (this.experiments.isEnabled(GlideBuilder.OverrideGlideThreadPriority.class)) {
+            restoreThreadPriority();
+        }
         setNotifiedOrThrow();
         this.callback.onResourceReady(resource, dataSource, z);
     }
@@ -355,16 +389,26 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
     }
 
     private void decodeFromRetrievedData() {
-        Resource<R> resource;
+        Supplier<Integer> supplier;
         if (Log.isLoggable(TAG, 2)) {
             logWithTimeAndKey("Retrieved data", this.startFetchTime, "data: " + this.currentData + ", cache key: " + this.currentSourceKey + ", fetcher: " + this.currentFetcher);
         }
+        Resource<R> resource = null;
+        if (this.experiments.isEnabled(GlideBuilder.OverrideGlideThreadPriority.class) && (supplier = this.glideThreadPriorityOverride) != null && supplier.get() != null) {
+            try {
+                Process.setThreadPriority(Process.myTid(), this.glideThreadPriorityOverride.get().intValue());
+            } catch (IllegalArgumentException | SecurityException e) {
+                this.glideThreadPriorityOverride = null;
+                if (Log.isLoggable(TAG, 2)) {
+                    Log.v(TAG, "Failed to set thread priority; using default priority for any subsequent jobs.", e);
+                }
+            }
+        }
         try {
             resource = decodeFromData(this.currentFetcher, this.currentData, this.currentDataSource);
-        } catch (GlideException e) {
-            e.setLoggingDetails(this.currentAttemptingKey, this.currentDataSource);
-            this.throwables.add(e);
-            resource = null;
+        } catch (GlideException e2) {
+            e2.setLoggingDetails(this.currentAttemptingKey, this.currentDataSource);
+            this.throwables.add(e2);
         }
         if (resource != null) {
             notifyEncodeAndRelease(resource, this.currentDataSource, this.isLoadingFromAlternateCacheKey);

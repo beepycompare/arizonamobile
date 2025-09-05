@@ -1,19 +1,17 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
-public final class L4 extends M4 {
-    public L4(Ji ji) {
-        super(ji);
+public final class L4 extends C0749z3 {
+    public final int b;
+
+    public L4(int i, int i2) {
+        super(i2);
+        this.b = i;
     }
 
-    public final void a(EnumC0728yb enumC0728yb, List<AbstractC0358jh> list) {
-        if (!T9.h.contains(enumC0728yb)) {
-            list.add(this.f554a.s);
-        }
-        if (T9.b.contains(enumC0728yb)) {
-            return;
-        }
-        list.add(this.f554a.c);
+    @Override // io.appmetrica.analytics.impl.C0749z3
+    public final String toString() {
+        return "CollectionTrimInfo{itemsDropped=" + this.b + ", bytesTruncated=" + this.f1177a + AbstractJsonLexerKt.END_OBJ;
     }
 }

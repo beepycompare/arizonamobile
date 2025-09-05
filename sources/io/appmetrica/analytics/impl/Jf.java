@@ -1,10 +1,37 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
 /* loaded from: classes4.dex */
-public final class Jf extends AbstractC0375k8 {
-    public Jf(Context context, ProtobufStateStorage<C0607tf> protobufStateStorage, AbstractC0426m8 abstractC0426m8, Cdo cdo, Om om, InterfaceC0437mj interfaceC0437mj, InterfaceC0386kj interfaceC0386kj, V6 v6, C0607tf c0607tf, String str) {
-        super(context, protobufStateStorage, abstractC0426m8, cdo, om, interfaceC0437mj, interfaceC0386kj, v6, c0607tf);
+public final class Jf implements Converter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Integer fromModel(EnumC0530q8 enumC0530q8) {
+        int ordinal = enumC0530q8.ordinal();
+        if (ordinal != 1) {
+            if (ordinal != 2) {
+                if (ordinal != 3) {
+                    return 0;
+                }
+                return 2;
+            }
+            return 3;
+        }
+        return 1;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final EnumC0530q8 toModel(Integer num) {
+        int intValue = num.intValue();
+        if (intValue != 1) {
+            if (intValue != 2) {
+                if (intValue != 3) {
+                    return EnumC0530q8.b;
+                }
+                return EnumC0530q8.d;
+            }
+            return EnumC0530q8.e;
+        }
+        return EnumC0530q8.c;
     }
 }

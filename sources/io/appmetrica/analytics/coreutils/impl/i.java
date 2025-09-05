@@ -10,19 +10,19 @@ import kotlin.jvm.internal.Lambda;
 public final class i extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f269a;
+    public final /* synthetic */ Context f270a;
     public final /* synthetic */ String b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public i(Context context, String str) {
         super(0);
-        this.f269a = context;
+        this.f270a = context;
         this.b = str;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        PackageManager packageManager = this.f269a.getPackageManager();
+        PackageManager packageManager = this.f270a.getPackageManager();
         if (AndroidUtils.isApiAchieved(33)) {
             return PackageManagerUtilsTiramisu.INSTANCE.resolveContentProvider(packageManager, this.b);
         }

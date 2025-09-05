@@ -1,87 +1,106 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
-import io.appmetrica.analytics.coreutils.internal.io.CloseableUtilsKt;
-import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import android.os.Handler;
+import android.os.Looper;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import java.util.HashMap;
+import java.util.concurrent.Executor;
 /* loaded from: classes4.dex */
-public final class Ak implements InterfaceC0251fd {
+public final class Ak {
 
     /* renamed from: a  reason: collision with root package name */
-    public final yo f349a;
-    public final String b = "startup_state";
-    public final AESEncrypter c;
+    public final C0766zk f349a;
+    public volatile Z9 b;
+    public volatile Z9 c;
+    public volatile Z9 d;
+    public volatile Z9 e;
+    public volatile Z9 f;
+    public volatile Z9 g;
+    public volatile ExecutorC0741yk h;
 
-    public Ak(yo yoVar) {
-        this.f349a = yoVar;
-        C0108a c0108a = new C0108a(Ka.j().f());
-        this.c = new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, c0108a.b(), c0108a.a());
+    public Ak() {
+        this(new C0766zk());
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0251fd
-    public final void a(Context context) {
-        SQLiteDatabase readableDatabase = C0649v7.a(context).h().getReadableDatabase();
-        if (readableDatabase != null) {
-            try {
-                Xb a2 = a(readableDatabase);
-                C0465nm c0465nm = new C0465nm(new G4(new E4()));
-                if (a2 != null) {
-                    a(this.f349a, c0465nm, a2);
-                    c0465nm.p = a2.c;
-                    c0465nm.r = a2.b;
-                }
-                C0490om c0490om = new C0490om(c0465nm);
-                Wm a3 = Vm.a(C0490om.class);
-                a3.a(context, a3.d(context)).save(c0490om);
-            } catch (Throwable unused) {
-            }
-        }
-    }
-
-    public static void a(yo yoVar, C0465nm c0465nm, Xb xb) {
-        String optStringOrNull;
-        synchronized (yoVar) {
-            optStringOrNull = JsonUtils.optStringOrNull(yoVar.f1167a.a(), "device_id");
-        }
-        if (TextUtils.isEmpty(optStringOrNull)) {
-            if (!TextUtils.isEmpty(xb.d)) {
-                yoVar.a(xb.d);
-            }
-            if (!TextUtils.isEmpty(xb.e)) {
-                yoVar.b(xb.e);
-            }
-            if (TextUtils.isEmpty(xb.f725a)) {
-                return;
-            }
-            c0465nm.f988a = xb.f725a;
-        }
-    }
-
-    public final Xb a(SQLiteDatabase sQLiteDatabase) {
-        Cursor cursor;
-        try {
-            cursor = sQLiteDatabase.query("binary_data", new String[]{"value"}, "data_key = ?", new String[]{this.b}, null, null, null);
-            if (cursor != null) {
-                try {
-                    if (cursor.getCount() == 1 && cursor.moveToFirst()) {
-                        Xb xb = (Xb) MessageNano.mergeFrom(new Xb(), this.c.decrypt(cursor.getBlob(cursor.getColumnIndexOrThrow("value"))));
-                        CloseableUtilsKt.closeSafely(cursor);
-                        return xb;
-                    }
-                } catch (Throwable unused) {
+    public final IHandlerExecutor a() {
+        if (this.g == null) {
+            synchronized (this) {
+                if (this.g == null) {
+                    this.f349a.getClass();
+                    Cb a2 = Z9.a("IAA-SDE");
+                    this.g = new Z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
             }
-            if (cursor != null) {
-                cursor.getCount();
-            }
-        } catch (Throwable unused2) {
-            cursor = null;
         }
-        CloseableUtilsKt.closeSafely(cursor);
-        return null;
+        return this.g;
+    }
+
+    public final IHandlerExecutor b() {
+        if (this.b == null) {
+            synchronized (this) {
+                if (this.b == null) {
+                    this.f349a.getClass();
+                    Cb a2 = Z9.a("IAA-SC");
+                    this.b = new Z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
+                }
+            }
+        }
+        return this.b;
+    }
+
+    public final IHandlerExecutor c() {
+        if (this.d == null) {
+            synchronized (this) {
+                if (this.d == null) {
+                    this.f349a.getClass();
+                    Cb a2 = Z9.a("IAA-SMH-1");
+                    this.d = new Z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
+                }
+            }
+        }
+        return this.d;
+    }
+
+    public final IHandlerExecutor d() {
+        if (this.e == null) {
+            synchronized (this) {
+                if (this.e == null) {
+                    this.f349a.getClass();
+                    Cb a2 = Z9.a("IAA-SNTPE");
+                    this.e = new Z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
+                }
+            }
+        }
+        return this.e;
+    }
+
+    public final IHandlerExecutor e() {
+        if (this.c == null) {
+            synchronized (this) {
+                if (this.c == null) {
+                    this.f349a.getClass();
+                    Cb a2 = Z9.a("IAA-STE");
+                    this.c = new Z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
+                }
+            }
+        }
+        return this.c;
+    }
+
+    public final Executor f() {
+        if (this.h == null) {
+            synchronized (this) {
+                if (this.h == null) {
+                    this.f349a.getClass();
+                    this.h = new ExecutorC0741yk(new Handler(Looper.getMainLooper()));
+                }
+            }
+        }
+        return this.h;
+    }
+
+    public Ak(C0766zk c0766zk) {
+        new HashMap();
+        this.f349a = c0766zk;
     }
 }

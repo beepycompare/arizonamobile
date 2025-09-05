@@ -1,25 +1,34 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Handler;
-import android.os.SystemClock;
-import com.google.firebase.messaging.ServiceStarter;
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
 /* loaded from: classes4.dex */
-public final class Lb {
+public final class Lb implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Handler f542a;
-    public final V2 b;
-    public final Mb c;
+    public final C0432md f553a;
 
-    public Lb(Handler handler, V2 v2) {
-        this.f542a = handler;
-        this.b = v2;
-        this.c = new Mb(handler, v2);
+    public Lb() {
+        this(new C0432md(new Xn()));
     }
 
-    public static void a(Handler handler, V2 v2, Runnable runnable) {
-        handler.removeCallbacks(runnable, v2.b.b.getApiKey());
-        handler.postAtTime(runnable, v2.b.b.getApiKey(), SystemClock.uptimeMillis() + (((Integer) WrapUtils.getOrDefault(v2.b.b.getSessionTimeout(), 10)).intValue() * ServiceStarter.ERROR_UNKNOWN));
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final byte[] fromModel(Wn wn) {
+        return MessageNano.toByteArray((MessageNano) this.f553a.f988a.fromModel(wn));
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        byte[] bArr = (byte[]) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public Lb(C0432md c0432md) {
+        this.f553a = c0432md;
+    }
+
+    public final Wn a(byte[] bArr) {
+        throw new UnsupportedOperationException();
     }
 }

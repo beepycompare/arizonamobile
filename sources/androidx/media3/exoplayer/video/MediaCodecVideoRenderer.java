@@ -2974,7 +2974,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                             case '.':
                             case '/':
                             case '0':
-                            case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+                            case '1':
                             case '2':
                             case ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_TAG /* 51 */:
                             case ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_TOP_OF /* 52 */:

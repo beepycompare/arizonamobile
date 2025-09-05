@@ -7,10 +7,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1240a;
+    public final String f1245a;
 
     public c(String str) {
-        this.f1240a = a(str);
+        this.f1245a = a(str);
     }
 
     public static String a(String str) {

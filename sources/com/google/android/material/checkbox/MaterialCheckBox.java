@@ -20,7 +20,6 @@ import android.widget.CompoundButton;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.appcompat.widget.TintTypedArray;
-import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.widget.CompoundButtonCompat;
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat;
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
@@ -82,15 +81,12 @@ public class MaterialCheckBox extends AppCompatCheckBox {
         void onErrorChanged(MaterialCheckBox materialCheckBox, boolean z);
     }
 
-    private void updateIconTintIfNeeded() {
-    }
-
     public MaterialCheckBox(Context context) {
         this(context, null);
     }
 
     public MaterialCheckBox(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.checkboxStyle);
+        this(context, attributeSet, androidx.appcompat.R.attr.checkboxStyle);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -108,7 +104,7 @@ public class MaterialCheckBox extends AppCompatCheckBox {
             public void onAnimationStart(Drawable drawable) {
                 super.onAnimationStart(drawable);
                 if (MaterialCheckBox.this.buttonTintList != null) {
-                    DrawableCompat.setTint(drawable, MaterialCheckBox.this.buttonTintList.getColorForState(MaterialCheckBox.this.currentStateChecked, MaterialCheckBox.this.buttonTintList.getDefaultColor()));
+                    drawable.setTint(MaterialCheckBox.this.buttonTintList.getColorForState(MaterialCheckBox.this.currentStateChecked, MaterialCheckBox.this.buttonTintList.getDefaultColor()));
                 }
             }
 
@@ -116,7 +112,7 @@ public class MaterialCheckBox extends AppCompatCheckBox {
             public void onAnimationEnd(Drawable drawable) {
                 super.onAnimationEnd(drawable);
                 if (MaterialCheckBox.this.buttonTintList != null) {
-                    DrawableCompat.setTintList(drawable, MaterialCheckBox.this.buttonTintList);
+                    drawable.setTintList(MaterialCheckBox.this.buttonTintList);
                 }
             }
         };
@@ -147,12 +143,6 @@ public class MaterialCheckBox extends AppCompatCheckBox {
         refreshButtonDrawable();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* renamed from: lambda$new$0$com-google-android-material-checkbox-MaterialCheckBox  reason: not valid java name */
-    public /* synthetic */ void m8674xdf87d0bf() {
-        this.buttonIconDrawable.jumpToCurrentState();
-    }
-
     @Override // android.widget.CompoundButton, android.widget.TextView, android.view.View
     protected void onDraw(Canvas canvas) {
         Drawable buttonDrawable;
@@ -164,7 +154,7 @@ public class MaterialCheckBox extends AppCompatCheckBox {
             canvas.restoreToCount(save);
             if (getBackground() != null) {
                 Rect bounds = buttonDrawable.getBounds();
-                DrawableCompat.setHotspotBounds(getBackground(), bounds.left + width, bounds.top, bounds.right + width, bounds.bottom);
+                getBackground().setHotspotBounds(bounds.left + width, bounds.top, bounds.right + width, bounds.bottom);
                 return;
             }
             return;
@@ -190,14 +180,7 @@ public class MaterialCheckBox extends AppCompatCheckBox {
             mergeDrawableStates(onCreateDrawableState, ERROR_STATE_SET);
         }
         this.currentStateChecked = DrawableUtils.getCheckedState(onCreateDrawableState);
-        updateIconTintIfNeeded();
         return onCreateDrawableState;
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void setEnabled(boolean z) {
-        super.setEnabled(z);
-        updateIconTintIfNeeded();
     }
 
     @Override // android.widget.CompoundButton, android.widget.Checkable
@@ -438,13 +421,13 @@ public class MaterialCheckBox extends AppCompatCheckBox {
         ColorStateList colorStateList2;
         Drawable drawable = this.buttonDrawable;
         if (drawable != null && (colorStateList2 = this.buttonTintList) != null) {
-            DrawableCompat.setTintList(drawable, colorStateList2);
+            drawable.setTintList(colorStateList2);
         }
         Drawable drawable2 = this.buttonIconDrawable;
         if (drawable2 == null || (colorStateList = this.buttonIconTintList) == null) {
             return;
         }
-        DrawableCompat.setTintList(drawable2, colorStateList);
+        drawable2.setTintList(colorStateList);
     }
 
     @Override // android.widget.CompoundButton, android.view.View
@@ -494,8 +477,8 @@ public class MaterialCheckBox extends AppCompatCheckBox {
         if (this.materialThemeColorsTintList == null) {
             int[][] iArr = CHECKBOX_STATES;
             int[] iArr2 = new int[iArr.length];
-            int color = MaterialColors.getColor(this, R.attr.colorControlActivated);
-            int color2 = MaterialColors.getColor(this, R.attr.colorError);
+            int color = MaterialColors.getColor(this, androidx.appcompat.R.attr.colorControlActivated);
+            int color2 = MaterialColors.getColor(this, androidx.appcompat.R.attr.colorError);
             int color3 = MaterialColors.getColor(this, R.attr.colorSurface);
             int color4 = MaterialColors.getColor(this, R.attr.colorOnSurface);
             iArr2[0] = MaterialColors.layer(color3, color2, 1.0f);

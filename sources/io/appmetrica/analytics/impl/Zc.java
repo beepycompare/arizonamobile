@@ -1,25 +1,74 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.Pair;
+import kotlin.TuplesKt;
+import kotlin.collections.CollectionsKt;
+import kotlin.collections.MapsKt;
+import kotlin.ranges.RangesKt;
+import kotlin.text.Charsets;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
 public final class Zc {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final C0158bn f756a;
-    public final C0158bn b;
-    public final H4 c;
-    public final PublicLogger d;
-    public final String e;
-
-    public Zc(String str, PublicLogger publicLogger) {
-        this(new H4(30), new C0158bn(50, str.concat("map key"), publicLogger), new C0158bn(4000, str.concat("map value"), publicLogger), str, publicLogger);
-    }
-
-    public Zc(H4 h4, C0158bn c0158bn, C0158bn c0158bn2, String str, PublicLogger publicLogger) {
-        this.c = h4;
-        this.f756a = c0158bn;
-        this.b = c0158bn2;
-        this.e = str;
-        this.d = publicLogger;
+    public static final C0119aa a(Zc zc, EnumC0351ja enumC0351ja, Map map) {
+        int i;
+        Object value;
+        zc.getClass();
+        C0119aa c0119aa = new C0119aa();
+        switch (enumC0351ja.ordinal()) {
+            case 0:
+                i = 0;
+                break;
+            case 1:
+                i = 1;
+                break;
+            case 2:
+                i = 2;
+                break;
+            case 3:
+                i = 3;
+                break;
+            case 4:
+                i = 4;
+                break;
+            case 5:
+                i = 5;
+                break;
+            case 6:
+                i = 6;
+                break;
+            default:
+                throw new NoWhenBranchMatchedException();
+        }
+        c0119aa.f786a = i;
+        C0122ad.b.getClass();
+        Set<Map.Entry> entrySet = map.entrySet();
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(entrySet, 10)), 16));
+        for (Map.Entry entry : entrySet) {
+            Object key = entry.getKey();
+            if (entry.getValue() instanceof Number) {
+                Object value2 = entry.getValue();
+                if (value2 == null) {
+                    throw new NullPointerException("null cannot be cast to non-null type kotlin.Number");
+                }
+                double doubleValue = ((Number) value2).doubleValue();
+                if (Double.isInfinite(doubleValue) || Double.isNaN(doubleValue)) {
+                    value = null;
+                    Pair pair = TuplesKt.to(key, value);
+                    linkedHashMap.put(pair.getFirst(), pair.getSecond());
+                }
+            }
+            value = entry.getValue();
+            Pair pair2 = TuplesKt.to(key, value);
+            linkedHashMap.put(pair2.getFirst(), pair2.getSecond());
+        }
+        String jSONObject = new JSONObject(linkedHashMap).toString();
+        if (jSONObject != null) {
+            c0119aa.b = jSONObject.getBytes(Charsets.UTF_8);
+        }
+        return c0119aa;
     }
 }

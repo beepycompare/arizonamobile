@@ -9,7 +9,6 @@ import android.graphics.drawable.InsetDrawable;
 import android.graphics.drawable.RippleDrawable;
 import android.widget.TextView;
 import androidx.core.util.Preconditions;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.shape.MaterialShapeDrawable;
@@ -70,7 +69,7 @@ final class CalendarItemStyle {
             colorStateList2 = this.textColor;
         }
         textView.setTextColor(colorStateList2);
-        ViewCompat.setBackground(textView, new InsetDrawable((Drawable) new RippleDrawable(this.textColor.withAlpha(30), materialShapeDrawable, materialShapeDrawable2), this.insets.left, this.insets.top, this.insets.right, this.insets.bottom));
+        textView.setBackground(new InsetDrawable((Drawable) new RippleDrawable(this.textColor.withAlpha(30), materialShapeDrawable, materialShapeDrawable2), this.insets.left, this.insets.top, this.insets.right, this.insets.bottom));
     }
 
     int getLeftInset() {

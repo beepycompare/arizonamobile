@@ -1,28 +1,18 @@
 package io.appmetrica.analytics.impl;
+
+import android.os.ResultReceiver;
 /* loaded from: classes4.dex */
-public final class U4 {
+public final class U4 implements Bg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0173cc f672a;
+    public final /* synthetic */ ResultReceiver f689a;
 
-    public U4() {
-        this(Ka.j().k());
+    public U4(ResultReceiver resultReceiver) {
+        this.f689a = resultReceiver;
     }
 
-    public static Z4 a(S4 s4) {
-        return new Z4(new X4(s4), s4);
-    }
-
-    public U4(C0173cc c0173cc) {
-        this.f672a = c0173cc;
-    }
-
-    public final C0491on a(S4 s4, Gm gm) {
-        C0491on c0491on = new C0491on(s4, new C0126ah(gm));
-        C0173cc c0173cc = this.f672a;
-        synchronized (c0173cc) {
-            c0173cc.c.add(c0491on);
-        }
-        return c0491on;
+    @Override // io.appmetrica.analytics.impl.Bg
+    public final void a(Jg jg) {
+        Pg.a(this.f689a, jg);
     }
 }

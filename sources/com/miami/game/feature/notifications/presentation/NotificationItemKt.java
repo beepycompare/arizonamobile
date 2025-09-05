@@ -165,8 +165,8 @@ public final class NotificationItemKt {
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1889896846, "C56@2172L78,57@2264L255:NotificationItem.kt#21zkme");
             float f3 = 32;
-            AnimatedLoadingKt.m8906AnimatedLoadinguFdPcIQ(true, Dp.m7251constructorimpl(40), OffsetKt.m786offsetVpY3zN4(Modifier.Companion, Dp.m7251constructorimpl(f3), Dp.m7251constructorimpl(f3)), startRestartGroup, 438, 0);
-            SingletonAsyncImageKt.m8332AsyncImage10Xjiaw(notificationModel.getImageUrl(), null, SizeKt.m884size3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(160)), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
+            AnimatedLoadingKt.m8925AnimatedLoadinguFdPcIQ(true, Dp.m7251constructorimpl(40), OffsetKt.m786offsetVpY3zN4(Modifier.Companion, Dp.m7251constructorimpl(f3), Dp.m7251constructorimpl(f3)), startRestartGroup, 438, 0);
+            SingletonAsyncImageKt.m8334AsyncImage10Xjiaw(notificationModel.getImageUrl(), null, SizeKt.m884size3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(160)), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -265,9 +265,9 @@ public final class NotificationItemKt {
             SpacerKt.Spacer(SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(2)), startRestartGroup, 6);
             float f4 = 24;
             composer2 = startRestartGroup;
-            TextKt.m2804Text4IGK_g(notificationModel.getTitle(), (Modifier) null, ColorKt.Color(4294046193L), TypeKt.m9022dpToSp8Feqmps(Dp.m7251constructorimpl(f4), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9022dpToSp8Feqmps(Dp.m7251constructorimpl(f4), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
+            TextKt.m2804Text4IGK_g(notificationModel.getTitle(), (Modifier) null, ColorKt.Color(4294046193L), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f4), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f4), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
             float f5 = 11;
-            TextKt.m2804Text4IGK_g(notificationModel.getText(), (Modifier) null, ColorKt.Color(4291150552L), TypeKt.m9022dpToSp8Feqmps(Dp.m7251constructorimpl(f5), composer2, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9022dpToSp8Feqmps(Dp.m7251constructorimpl(f5), composer2, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
+            TextKt.m2804Text4IGK_g(notificationModel.getText(), (Modifier) null, ColorKt.Color(4291150552L), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f5), composer2, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f5), composer2, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();

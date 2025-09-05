@@ -125,6 +125,10 @@ public final class Util {
         getUiThreadHandler().post(runnable);
     }
 
+    public static void postAtFrontOfQueueOnUiThread(Runnable runnable) {
+        getUiThreadHandler().postAtFrontOfQueue(runnable);
+    }
+
     public static void removeCallbacksOnUiThread(Runnable runnable) {
         getUiThreadHandler().removeCallbacks(runnable);
     }

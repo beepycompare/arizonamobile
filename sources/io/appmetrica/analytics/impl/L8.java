@@ -7,36 +7,32 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
-import java.util.Arrays;
 /* loaded from: classes4.dex */
 public final class L8 extends MessageNano {
-    public static volatile L8[] d;
+    public static volatile L8[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f539a;
-    public byte[] b;
-    public M8 c;
+    public B8 f551a;
+    public B8[] b;
 
     public L8() {
         a();
     }
 
     public static L8[] b() {
-        if (d == null) {
+        if (c == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (d == null) {
-                    d = new L8[0];
+                if (c == null) {
+                    c = new L8[0];
                 }
             }
         }
-        return d;
+        return c;
     }
 
     public final L8 a() {
-        byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f539a = bArr;
-        this.b = bArr;
-        this.c = null;
+        this.f551a = null;
+        this.b = B8.b();
         this.cachedSize = -1;
         return this;
     }
@@ -44,31 +40,48 @@ public final class L8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f539a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f539a);
+        B8 b8 = this.f551a;
+        if (b8 != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, b8);
         }
-        if (!Arrays.equals(this.b, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(2, this.b);
+        B8[] b8Arr = this.b;
+        if (b8Arr != null && b8Arr.length > 0) {
+            int i = 0;
+            while (true) {
+                B8[] b8Arr2 = this.b;
+                if (i >= b8Arr2.length) {
+                    break;
+                }
+                B8 b82 = b8Arr2[i];
+                if (b82 != null) {
+                    computeSerializedSize = CodedOutputByteBufferNano.computeMessageSize(2, b82) + computeSerializedSize;
+                }
+                i++;
+            }
         }
-        M8 m8 = this.c;
-        return m8 != null ? CodedOutputByteBufferNano.computeMessageSize(3, m8) + computeSerializedSize : computeSerializedSize;
+        return computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f539a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f539a);
+        B8 b8 = this.f551a;
+        if (b8 != null) {
+            codedOutputByteBufferNano.writeMessage(1, b8);
         }
-        if (!Arrays.equals(this.b, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(2, this.b);
-        }
-        M8 m8 = this.c;
-        if (m8 != null) {
-            codedOutputByteBufferNano.writeMessage(3, m8);
+        B8[] b8Arr = this.b;
+        if (b8Arr != null && b8Arr.length > 0) {
+            int i = 0;
+            while (true) {
+                B8[] b8Arr2 = this.b;
+                if (i >= b8Arr2.length) {
+                    break;
+                }
+                B8 b82 = b8Arr2[i];
+                if (b82 != null) {
+                    codedOutputByteBufferNano.writeMessage(2, b82);
+                }
+                i++;
+            }
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -81,18 +94,34 @@ public final class L8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f539a = codedInputByteBufferNano.readBytes();
-            } else if (readTag == 18) {
-                this.b = codedInputByteBufferNano.readBytes();
-            } else if (readTag != 26) {
+                if (this.f551a == null) {
+                    this.f551a = new B8();
+                }
+                codedInputByteBufferNano.readMessage(this.f551a);
+            } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                if (this.c == null) {
-                    this.c = new M8();
+                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 18);
+                B8[] b8Arr = this.b;
+                int length = b8Arr == null ? 0 : b8Arr.length;
+                int i = repeatedFieldArrayLength + length;
+                B8[] b8Arr2 = new B8[i];
+                if (length != 0) {
+                    System.arraycopy(b8Arr, 0, b8Arr2, 0, length);
                 }
-                codedInputByteBufferNano.readMessage(this.c);
+                while (length < i - 1) {
+                    B8 b8 = new B8();
+                    b8Arr2[length] = b8;
+                    codedInputByteBufferNano.readMessage(b8);
+                    codedInputByteBufferNano.readTag();
+                    length++;
+                }
+                B8 b82 = new B8();
+                b8Arr2[length] = b82;
+                codedInputByteBufferNano.readMessage(b82);
+                this.b = b8Arr2;
             }
         }
         return this;

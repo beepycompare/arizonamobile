@@ -1,76 +1,63 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import io.appmetrica.analytics.coreapi.internal.permission.PermissionState;
+import android.app.Activity;
+import android.content.Intent;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener;
+import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 import java.util.ArrayList;
+import java.util.Iterator;
 /* renamed from: io.appmetrica.analytics.impl.a2  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0111a2 implements ProtobufConverter {
+public final class C0111a2 implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final H2 f768a;
+    public final ArrayList f779a = new ArrayList();
+    public volatile Y7 b = null;
 
-    public C0111a2() {
-        this(new H2());
+    public final void a(Y7 y7) {
+        ArrayList a2;
+        synchronized (this) {
+            this.b = y7;
+            a2 = a();
+        }
+        Iterator it = a2.iterator();
+        while (it.hasNext()) {
+            ((InterfaceC0660ve) it.next()).consume(y7);
+        }
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0189d2 fromModel(Z1 z1) {
-        C0189d2 c0189d2 = new C0189d2();
-        c0189d2.f821a = new C0163c2[z1.f751a.size()];
-        int i = 0;
-        int i2 = 0;
-        for (PermissionState permissionState : z1.f751a) {
-            C0163c2[] c0163c2Arr = c0189d2.f821a;
-            C0163c2 c0163c2 = new C0163c2();
-            c0163c2.f803a = permissionState.name;
-            c0163c2.b = permissionState.granted;
-            c0163c2Arr[i2] = c0163c2;
-            i2++;
-        }
-        J2 j2 = z1.b;
-        if (j2 != null) {
-            c0189d2.b = this.f768a.fromModel(j2);
-        }
-        c0189d2.c = new String[z1.c.size()];
-        for (String str : z1.c) {
-            c0189d2.c[i] = str;
-            i++;
-        }
-        return c0189d2;
+    public final void b() {
+        A4.l().e.registerListener(this, ActivityEvent.CREATED);
     }
 
-    public C0111a2(H2 h2) {
-        this.f768a = h2;
+    public final void c() {
+        A4.l().e.unregisterListener(this, ActivityEvent.CREATED);
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Z1 toModel(C0189d2 c0189d2) {
-        ArrayList arrayList = new ArrayList();
-        int i = 0;
-        int i2 = 0;
-        while (true) {
-            C0163c2[] c0163c2Arr = c0189d2.f821a;
-            if (i2 >= c0163c2Arr.length) {
-                break;
-            }
-            C0163c2 c0163c2 = c0163c2Arr[i2];
-            arrayList.add(new PermissionState(c0163c2.f803a, c0163c2.b));
-            i2++;
+    @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
+    public final void onEvent(Activity activity, ActivityEvent activityEvent) {
+        Intent intent = (Intent) SystemServiceUtils.accessSystemServiceSafely(activity, "getting intent", "activity", new Y1());
+        String dataString = intent == null ? null : intent.getDataString();
+        if (TextUtils.isEmpty(dataString)) {
+            return;
         }
-        C0137b2 c0137b2 = c0189d2.b;
-        J2 model = c0137b2 != null ? this.f768a.toModel(c0137b2) : null;
-        ArrayList arrayList2 = new ArrayList();
-        while (true) {
-            String[] strArr = c0189d2.c;
-            if (i < strArr.length) {
-                arrayList2.add(strArr[i]);
-                i++;
+        Z1 z1 = new Z1(dataString);
+        synchronized (this) {
+            Y7 y7 = this.b;
+            if (y7 == null) {
+                this.f779a.add(z1);
             } else {
-                return new Z1(arrayList, model, arrayList2);
+                ((Z9) A4.l().c.a()).b.post(new X1(z1, y7));
             }
         }
+    }
+
+    public final synchronized ArrayList a() {
+        ArrayList arrayList;
+        arrayList = new ArrayList(this.f779a);
+        this.f779a.clear();
+        return arrayList;
     }
 }

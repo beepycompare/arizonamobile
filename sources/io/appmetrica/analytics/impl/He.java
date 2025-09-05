@@ -1,23 +1,35 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import io.appmetrica.analytics.internal.IAppMetricaService;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
-public final class He extends Ph {
-    public final Rf e;
+public abstract class He {
 
-    public He(C0418m0 c0418m0, InterfaceC0233el interfaceC0233el, Rf rf) {
-        super(c0418m0, interfaceC0233el);
-        this.e = rf;
+    /* renamed from: a  reason: collision with root package name */
+    public final int f473a = -1;
+    public final int b = 0;
+    public final int c = 1;
+
+    public final int a(Boolean bool) {
+        if (bool == null) {
+            return this.f473a;
+        }
+        if (Intrinsics.areEqual(bool, Boolean.FALSE)) {
+            return this.b;
+        }
+        if (Intrinsics.areEqual(bool, Boolean.TRUE)) {
+            return this.c;
+        }
+        throw new NoWhenBranchMatchedException();
     }
 
-    @Override // io.appmetrica.analytics.impl.Ph
-    public final void a(IAppMetricaService iAppMetricaService) {
-        Bundle bundle = new Bundle();
-        Rf rf = this.e;
-        synchronized (rf) {
-            bundle.putParcelable("PROCESS_CFG_OBJ", rf);
+    public final Boolean a(int i) {
+        if (i == this.b) {
+            return Boolean.FALSE;
         }
-        iAppMetricaService.pauseUserSession(bundle);
+        if (i == this.c) {
+            return Boolean.TRUE;
+        }
+        return null;
     }
 }

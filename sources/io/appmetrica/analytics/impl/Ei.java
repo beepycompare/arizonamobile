@@ -1,23 +1,15 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
 /* loaded from: classes4.dex */
-public final class Ei implements Runnable {
+public final class Ei implements InterfaceC0336il {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f416a;
-    public final /* synthetic */ Gi b;
+    public final /* synthetic */ Hc f425a;
 
-    public Ei(Gi gi, Context context) {
-        this.b = gi;
-        this.f416a = context;
+    public Ei(Hc hc) {
+        this.f425a = hc;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        C0617u0 c0617u0 = this.b.b;
-        Context context = this.f416a;
-        c0617u0.getClass();
-        C0592t0.a(context);
+    public final boolean a() {
+        return this.f425a.b.f();
     }
 }

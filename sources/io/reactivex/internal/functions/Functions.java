@@ -32,7 +32,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import org.reactivestreams.Subscription;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Functions {
     static final Function<Object, Object> IDENTITY = new Identity();
     public static final Runnable EMPTY_RUNNABLE = new EmptyRunnable();
@@ -115,7 +115,7 @@ public final class Functions {
         return (Comparator<T>) NATURAL_COMPARATOR;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class FutureAction implements Action {
         final Future<?> future;
 
@@ -133,7 +133,7 @@ public final class Functions {
         return new FutureAction(future);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class JustValue<T, U> implements Callable<U>, Function<T, U> {
         final U value;
 
@@ -160,7 +160,7 @@ public final class Functions {
         return new JustValue(u);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class CastToClass<T, U> implements Function<T, U> {
         final Class<U> clazz;
 
@@ -178,7 +178,7 @@ public final class Functions {
         return new CastToClass(cls);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ArrayListCapacityCallable<T> implements Callable<List<T>> {
         final int capacity;
 
@@ -196,7 +196,7 @@ public final class Functions {
         return new ArrayListCapacityCallable(i);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class EqualsPredicate<T> implements Predicate<T> {
         final T value;
 
@@ -214,7 +214,7 @@ public final class Functions {
         return new EqualsPredicate(t);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     enum HashSetCallable implements Callable<Set<Object>> {
         INSTANCE;
 
@@ -228,7 +228,7 @@ public final class Functions {
         return HashSetCallable.INSTANCE;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class NotificationOnNext<T> implements Consumer<T> {
         final Consumer<? super Notification<T>> onNotification;
 
@@ -242,7 +242,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class NotificationOnError<T> implements Consumer<Throwable> {
         final Consumer<? super Notification<T>> onNotification;
 
@@ -256,7 +256,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class NotificationOnComplete<T> implements Action {
         final Consumer<? super Notification<T>> onNotification;
 
@@ -282,7 +282,7 @@ public final class Functions {
         return new NotificationOnComplete(consumer);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ActionConsumer<T> implements Consumer<T> {
         final Action action;
 
@@ -300,7 +300,7 @@ public final class Functions {
         return new ActionConsumer(action);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ClassFilter<T, U> implements Predicate<T> {
         final Class<U> clazz;
 
@@ -318,7 +318,7 @@ public final class Functions {
         return new ClassFilter(cls);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class BooleanSupplierPredicateReverse<T> implements Predicate<T> {
         final BooleanSupplier supplier;
 
@@ -336,7 +336,7 @@ public final class Functions {
         return new BooleanSupplierPredicateReverse(booleanSupplier);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class TimestampFunction<T> implements Function<T, Timed<T>> {
         final Scheduler scheduler;
         final TimeUnit unit;
@@ -362,7 +362,7 @@ public final class Functions {
         return new TimestampFunction(timeUnit, scheduler);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ToMapKeySelector<K, T> implements BiConsumer<Map<K, T>, T> {
         private final Function<? super T, ? extends K> keySelector;
 
@@ -385,7 +385,7 @@ public final class Functions {
         return new ToMapKeySelector(function);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ToMapKeyValueSelector<K, V, T> implements BiConsumer<Map<K, V>, T> {
         private final Function<? super T, ? extends K> keySelector;
         private final Function<? super T, ? extends V> valueSelector;
@@ -410,7 +410,7 @@ public final class Functions {
         return new ToMapKeyValueSelector(function2, function);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ToMultimapKeyValueSelector<K, V, T> implements BiConsumer<Map<K, Collection<V>>, T> {
         private final Function<? super K, ? extends Collection<? super V>> collectionFactory;
         private final Function<? super T, ? extends K> keySelector;
@@ -443,7 +443,7 @@ public final class Functions {
         return new ToMultimapKeyValueSelector(function3, function2, function);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     enum NaturalComparator implements Comparator<Object> {
         INSTANCE;
 
@@ -457,7 +457,7 @@ public final class Functions {
         return NaturalComparator.INSTANCE;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ListSorter<T> implements Function<List<T>, List<T>> {
         final Comparator<? super T> comparator;
 
@@ -480,7 +480,7 @@ public final class Functions {
         return new ListSorter(comparator);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Array2Func<T1, T2, R> implements Function<Object[], R> {
         final BiFunction<? super T1, ? super T2, ? extends R> f;
 
@@ -497,7 +497,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Array3Func<T1, T2, T3, R> implements Function<Object[], R> {
         final Function3<T1, T2, T3, R> f;
 
@@ -515,7 +515,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Array4Func<T1, T2, T3, T4, R> implements Function<Object[], R> {
         final Function4<T1, T2, T3, T4, R> f;
 
@@ -533,7 +533,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Array5Func<T1, T2, T3, T4, T5, R> implements Function<Object[], R> {
         private final Function5<T1, T2, T3, T4, T5, R> f;
 
@@ -551,7 +551,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Array6Func<T1, T2, T3, T4, T5, T6, R> implements Function<Object[], R> {
         final Function6<T1, T2, T3, T4, T5, T6, R> f;
 
@@ -569,7 +569,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Array7Func<T1, T2, T3, T4, T5, T6, T7, R> implements Function<Object[], R> {
         final Function7<T1, T2, T3, T4, T5, T6, T7, R> f;
 
@@ -587,7 +587,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Array8Func<T1, T2, T3, T4, T5, T6, T7, T8, R> implements Function<Object[], R> {
         final Function8<T1, T2, T3, T4, T5, T6, T7, T8, R> f;
 
@@ -605,7 +605,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Array9Func<T1, T2, T3, T4, T5, T6, T7, T8, T9, R> implements Function<Object[], R> {
         final Function9<T1, T2, T3, T4, T5, T6, T7, T8, T9, R> f;
 
@@ -623,7 +623,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Identity implements Function<Object, Object> {
         @Override // io.reactivex.functions.Function
         public Object apply(Object obj) {
@@ -638,7 +638,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class EmptyRunnable implements Runnable {
         @Override // java.lang.Runnable
         public void run() {
@@ -652,7 +652,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class EmptyAction implements Action {
         @Override // io.reactivex.functions.Action
         public void run() {
@@ -666,7 +666,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class EmptyConsumer implements Consumer<Object> {
         @Override // io.reactivex.functions.Consumer
         public void accept(Object obj) {
@@ -680,7 +680,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ErrorConsumer implements Consumer<Throwable> {
         ErrorConsumer() {
         }
@@ -691,7 +691,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class OnErrorMissingConsumer implements Consumer<Throwable> {
         OnErrorMissingConsumer() {
         }
@@ -702,7 +702,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class EmptyLongConsumer implements LongConsumer {
         @Override // io.reactivex.functions.LongConsumer
         public void accept(long j) {
@@ -712,7 +712,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class TruePredicate implements Predicate<Object> {
         @Override // io.reactivex.functions.Predicate
         public boolean test(Object obj) {
@@ -723,7 +723,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class FalsePredicate implements Predicate<Object> {
         @Override // io.reactivex.functions.Predicate
         public boolean test(Object obj) {
@@ -734,7 +734,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class NullCallable implements Callable<Object> {
         @Override // java.util.concurrent.Callable
         public Object call() {
@@ -745,7 +745,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class NaturalObjectComparator implements Comparator<Object> {
         NaturalObjectComparator() {
         }
@@ -756,7 +756,7 @@ public final class Functions {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class MaxRequestSubscription implements Consumer<Subscription> {
         MaxRequestSubscription() {
         }
@@ -771,7 +771,7 @@ public final class Functions {
         return new BoundedConsumer(i);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BoundedConsumer implements Consumer<Subscription> {
         final int bufferSize;
 

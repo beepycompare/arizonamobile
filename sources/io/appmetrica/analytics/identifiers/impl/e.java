@@ -9,12 +9,12 @@ import android.os.IBinder;
 public final class e implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Intent f324a;
+    public final Intent f325a;
     public IBinder b;
     public final Object c = new Object();
 
     public e(Intent intent, String str) {
-        this.f324a = intent;
+        this.f325a = intent;
         String.format("[AdvServiceConnection-%s]", str);
     }
 

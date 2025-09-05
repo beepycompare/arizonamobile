@@ -1,46 +1,61 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashSource;
-import java.util.Map;
-import kotlin.TuplesKt;
-import kotlin.collections.MapsKt;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public final class Vd implements ProtobufConverter {
+public abstract class Vd implements InterfaceC0391ko, InterfaceC0524q2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Ud f694a = new Ud();
-    public static final Map b = MapsKt.mapOf(TuplesKt.to(NativeCrashSource.UNKNOWN, 0), TuplesKt.to(NativeCrashSource.CRASHPAD, 3));
+    public final String f707a;
+    public final int b;
+    public final yo c;
+    public final Z2 d;
+    public PublicLogger e = PublicLogger.getAnonymousInstance();
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0548r6 fromModel(C0149be c0149be) {
-        C0548r6 c0548r6 = new C0548r6();
-        c0548r6.f = 1;
-        C0524q6 c0524q6 = new C0524q6();
-        c0524q6.f1022a = c0149be.f794a;
-        C0623u6 c0623u6 = new C0623u6();
-        Integer num = (Integer) b.get(c0149be.b.f742a);
-        if (num != null) {
-            c0623u6.f1083a = num.intValue();
-        }
-        String str = c0149be.b.b;
-        if (str == null) {
-            str = "";
-        }
-        c0623u6.b = str;
-        c0524q6.b = c0623u6;
-        c0548r6.g = c0524q6;
-        return c0548r6;
+    public Vd(int i, String str, yo yoVar, Z2 z2) {
+        this.b = i;
+        this.f707a = str;
+        this.c = yoVar;
+        this.d = z2;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        C0548r6 c0548r6 = (C0548r6) obj;
-        throw new UnsupportedOperationException();
+    public final C0417lo a() {
+        C0417lo c0417lo = new C0417lo();
+        c0417lo.b = this.b;
+        c0417lo.f976a = this.f707a.getBytes();
+        c0417lo.d = new C0469no();
+        c0417lo.c = new C0443mo();
+        return c0417lo;
     }
 
-    public final C0149be a(C0548r6 c0548r6) {
-        throw new UnsupportedOperationException();
+    @Override // io.appmetrica.analytics.impl.InterfaceC0391ko
+    public abstract /* synthetic */ void a(C0365jo c0365jo);
+
+    public final Z2 b() {
+        return this.d;
+    }
+
+    public final String c() {
+        return this.f707a;
+    }
+
+    public final yo d() {
+        return this.c;
+    }
+
+    public final int e() {
+        return this.b;
+    }
+
+    public final boolean f() {
+        wo a2 = this.c.a(this.f707a);
+        if (a2.f1141a) {
+            return true;
+        }
+        this.e.warning("Attribute " + this.f707a + " of type " + ((String) Un.f700a.get(this.b)) + " is skipped because " + a2.b, new Object[0]);
+        return false;
+    }
+
+    public final void a(PublicLogger publicLogger) {
+        this.e = publicLogger;
     }
 }

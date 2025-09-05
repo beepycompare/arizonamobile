@@ -13,7 +13,7 @@ import kotlinx.coroutines.TimeoutCancellationException;
 import kotlinx.coroutines.TimeoutKt;
 /* compiled from: WithTimeoutOrThrow.kt */
 @Metadata(d1 = {"\u00004\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a_\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0018\b\u0002\u0010\u0004\u001a\u0012\u0012\u0004\u0012\u00020\u0006\u0012\b\u0012\u00060\u0007j\u0002`\b0\u00052'\u0010\t\u001a#\b\u0001\u0012\u0004\u0012\u00020\u000b\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010\f\u0012\u0006\u0012\u0004\u0018\u00010\r0\n¢\u0006\u0002\b\u000eH\u0086@¢\u0006\u0002\u0010\u000f¨\u0006\u0010"}, d2 = {"withTimeoutOrThrow", ExifInterface.GPS_DIRECTION_TRUE, "timeMillis", "", "exceptionFactory", "Lkotlin/Function1;", "Lkotlinx/coroutines/TimeoutCancellationException;", "Ljava/lang/Exception;", "Lkotlin/Exception;", "block", "Lkotlin/Function2;", "Lkotlinx/coroutines/CoroutineScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(JLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "sdk-public-core_release"}, k = 2, mv = {1, 7, 0}, xi = 48)
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class WithTimeoutOrThrowKt {
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0037  */

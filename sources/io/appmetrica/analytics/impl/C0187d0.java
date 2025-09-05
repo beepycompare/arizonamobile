@@ -1,16 +1,30 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Looper;
 import java.util.Map;
 /* renamed from: io.appmetrica.analytics.impl.d0  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0187d0 {
+public final class C0187d0 implements In {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f819a;
-    public final Thread b = Looper.getMainLooper().getThread();
+    public final /* synthetic */ C0212e0 f828a;
 
-    public C0187d0(InterfaceC0212e0 interfaceC0212e0, Map map) {
-        this.f819a = map;
+    public C0187d0(C0212e0 c0212e0) {
+        this.f828a = c0212e0;
+    }
+
+    @Override // io.appmetrica.analytics.impl.In
+    public final Thread a() {
+        return this.f828a.b;
+    }
+
+    @Override // io.appmetrica.analytics.impl.In
+    public final StackTraceElement[] b() {
+        C0212e0 c0212e0 = this.f828a;
+        return (StackTraceElement[]) c0212e0.f848a.get(c0212e0.b);
+    }
+
+    @Override // io.appmetrica.analytics.impl.In
+    public final Map<Thread, StackTraceElement[]> c() {
+        return this.f828a.f848a;
     }
 }

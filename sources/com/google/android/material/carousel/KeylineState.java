@@ -4,19 +4,27 @@ import com.google.android.material.animation.AnimationUtils;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
 public final class KeylineState {
+    private final int carouselSize;
     private final int firstFocalKeylineIndex;
     private final float itemSize;
     private final List<Keyline> keylines;
     private final int lastFocalKeylineIndex;
+    private int totalVisibleFocalItems;
 
-    private KeylineState(float f, List<Keyline> list, int i, int i2) {
+    private KeylineState(float f, List<Keyline> list, int i, int i2, int i3) {
         this.itemSize = f;
         this.keylines = Collections.unmodifiableList(list);
         this.firstFocalKeylineIndex = i;
         this.lastFocalKeylineIndex = i2;
+        while (i <= i2) {
+            if (list.get(i).cutoff == 0.0f) {
+                this.totalVisibleFocalItems++;
+            }
+            i++;
+        }
+        this.carouselSize = i3;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -27,6 +35,11 @@ public final class KeylineState {
     /* JADX INFO: Access modifiers changed from: package-private */
     public List<Keyline> getKeylines() {
         return this.keylines;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public int getTotalVisibleFocalItems() {
+        return this.totalVisibleFocalItems;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -99,6 +112,11 @@ public final class KeylineState {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
+    public int getCarouselSize() {
+        return this.carouselSize;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static KeylineState lerp(KeylineState keylineState, KeylineState keylineState2, float f) {
         if (keylineState.getItemSize() != keylineState2.getItemSize()) {
             throw new IllegalArgumentException("Keylines being linearly interpolated must have the same item size.");
@@ -112,28 +130,28 @@ public final class KeylineState {
         for (int i = 0; i < keylineState.getKeylines().size(); i++) {
             arrayList.add(Keyline.lerp(keylines.get(i), keylines2.get(i), f));
         }
-        return new KeylineState(keylineState.getItemSize(), arrayList, AnimationUtils.lerp(keylineState.getFirstFocalKeylineIndex(), keylineState2.getFirstFocalKeylineIndex(), f), AnimationUtils.lerp(keylineState.getLastFocalKeylineIndex(), keylineState2.getLastFocalKeylineIndex(), f));
+        return new KeylineState(keylineState.getItemSize(), arrayList, AnimationUtils.lerp(keylineState.getFirstFocalKeylineIndex(), keylineState2.getFirstFocalKeylineIndex(), f), AnimationUtils.lerp(keylineState.getLastFocalKeylineIndex(), keylineState2.getLastFocalKeylineIndex(), f), keylineState.carouselSize);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static KeylineState reverse(KeylineState keylineState, float f) {
-        Builder builder = new Builder(keylineState.getItemSize(), f);
-        float f2 = (f - keylineState.getLastKeyline().locOffset) - (keylineState.getLastKeyline().maskedItemSize / 2.0f);
+    public static KeylineState reverse(KeylineState keylineState, int i) {
+        Builder builder = new Builder(keylineState.getItemSize(), i);
+        float f = (i - keylineState.getLastKeyline().locOffset) - (keylineState.getLastKeyline().maskedItemSize / 2.0f);
         int size = keylineState.getKeylines().size() - 1;
         while (size >= 0) {
             Keyline keyline = keylineState.getKeylines().get(size);
-            builder.addKeyline((keyline.maskedItemSize / 2.0f) + f2, keyline.mask, keyline.maskedItemSize, size >= keylineState.getFirstFocalKeylineIndex() && size <= keylineState.getLastFocalKeylineIndex(), keyline.isAnchor);
-            f2 += keyline.maskedItemSize;
+            builder.addKeyline((keyline.maskedItemSize / 2.0f) + f, keyline.mask, keyline.maskedItemSize, size >= keylineState.getFirstFocalKeylineIndex() && size <= keylineState.getLastFocalKeylineIndex(), keyline.isAnchor);
+            f += keyline.maskedItemSize;
             size--;
         }
         return builder.build();
     }
 
     /* loaded from: classes4.dex */
-    static final class Builder {
+    public static final class Builder {
         private static final int NO_INDEX = -1;
         private static final float UNKNOWN_LOC = Float.MIN_VALUE;
-        private final float availableSpace;
+        private final int carouselSize;
         private final float itemSize;
         private Keyline tmpFirstFocalKeyline;
         private Keyline tmpLastFocalKeyline;
@@ -147,23 +165,19 @@ public final class KeylineState {
             return (f - (i * f2)) + (i2 * f2);
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
-        public Builder(float f, float f2) {
+        public Builder(float f, int i) {
             this.itemSize = f;
-            this.availableSpace = f2;
+            this.carouselSize = i;
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
         public Builder addKeyline(float f, float f2, float f3, boolean z) {
             return addKeyline(f, f2, f3, z, false);
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
         public Builder addKeyline(float f, float f2, float f3) {
             return addKeyline(f, f2, f3, false);
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
         public Builder addKeyline(float f, float f2, float f3, boolean z, boolean z2, float f4, float f5, float f6) {
             if (f3 <= 0.0f) {
                 return this;
@@ -204,19 +218,18 @@ public final class KeylineState {
             return this;
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
         public Builder addKeyline(float f, float f2, float f3, boolean z, boolean z2, float f4) {
             return addKeyline(f, f2, f3, z, z2, f4, 0.0f, 0.0f);
         }
 
-        Builder addKeyline(float f, float f2, float f3, boolean z, boolean z2) {
+        public Builder addKeyline(float f, float f2, float f3, boolean z, boolean z2) {
             float f4;
             float f5 = f3 / 2.0f;
             float f6 = f - f5;
             float f7 = f5 + f;
-            float f8 = this.availableSpace;
-            if (f7 > f8) {
-                f4 = Math.abs(f7 - Math.max(f7 - f3, f8));
+            int i = this.carouselSize;
+            if (f7 > i) {
+                f4 = Math.abs(f7 - Math.max(f7 - f3, i));
             } else {
                 f4 = 0.0f;
                 if (f6 < 0.0f) {
@@ -226,17 +239,14 @@ public final class KeylineState {
             return addKeyline(f, f2, f3, z, z2, f4);
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
         public Builder addAnchorKeyline(float f, float f2, float f3) {
             return addKeyline(f, f2, f3, false, true);
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
         public Builder addKeylineRange(float f, float f2, float f3, int i) {
             return addKeylineRange(f, f2, f3, i, false);
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
         public Builder addKeylineRange(float f, float f2, float f3, int i, boolean z) {
             if (i > 0 && f3 > 0.0f) {
                 for (int i2 = 0; i2 < i; i2++) {
@@ -246,7 +256,6 @@ public final class KeylineState {
             return this;
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
         public KeylineState build() {
             if (this.tmpFirstFocalKeyline == null) {
                 throw new IllegalStateException("There must be a keyline marked as focal.");
@@ -256,7 +265,7 @@ public final class KeylineState {
                 Keyline keyline = this.tmpKeylines.get(i);
                 arrayList.add(new Keyline(calculateKeylineLocationForItemPosition(this.tmpFirstFocalKeyline.locOffset, this.itemSize, this.firstFocalKeylineIndex, i), keyline.locOffset, keyline.mask, keyline.maskedItemSize, keyline.isAnchor, keyline.cutoff, keyline.leftOrTopPaddingShift, keyline.rightOrBottomPaddingShift));
             }
-            return new KeylineState(this.itemSize, arrayList, this.firstFocalKeylineIndex, this.lastFocalKeylineIndex);
+            return new KeylineState(this.itemSize, arrayList, this.firstFocalKeylineIndex, this.lastFocalKeylineIndex, this.carouselSize);
         }
     }
 

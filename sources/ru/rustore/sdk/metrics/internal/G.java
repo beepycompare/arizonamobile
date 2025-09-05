@@ -3,11 +3,11 @@ package ru.rustore.sdk.metrics.internal;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class G extends Lambda implements Function1<J, CharSequence> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final G f1417a = new G();
+    public static final G f1422a = new G();
 
     public G() {
         super(1);
@@ -17,6 +17,6 @@ public final class G extends Lambda implements Function1<J, CharSequence> {
     public final CharSequence invoke(J j) {
         J it = j;
         Intrinsics.checkNotNullParameter(it, "it");
-        return "'" + it.f1422a + '\'';
+        return "'" + it.f1427a + '\'';
     }
 }

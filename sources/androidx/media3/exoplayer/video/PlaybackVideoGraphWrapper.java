@@ -467,7 +467,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             ((HandlerWrapper) Assertions.checkStateNotNull(this.handler)).post(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.this.m8023x92e2e5d9();
+                    PlaybackVideoGraphWrapper.this.m8025x92e2e5d9();
                 }
             });
         }
@@ -475,7 +475,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$flush$1$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper  reason: not valid java name */
-    public /* synthetic */ void m8023x92e2e5d9() {
+    public /* synthetic */ void m8025x92e2e5d9() {
         this.pendingFlushCount--;
     }
 
@@ -817,14 +817,14 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             this.listenerExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$InputVideoSink$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.InputVideoSink.this.m8024x167f068a(listener, videoFrameProcessingException);
+                    PlaybackVideoGraphWrapper.InputVideoSink.this.m8026x167f068a(listener, videoFrameProcessingException);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onError$1$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper$InputVideoSink  reason: not valid java name */
-        public /* synthetic */ void m8024x167f068a(VideoSink.Listener listener, VideoFrameProcessingException videoFrameProcessingException) {
+        public /* synthetic */ void m8026x167f068a(VideoSink.Listener listener, VideoFrameProcessingException videoFrameProcessingException) {
             listener.onError(new VideoSink.VideoSinkException(videoFrameProcessingException, (Format) Assertions.checkStateNotNull(this.inputFormat)));
         }
 

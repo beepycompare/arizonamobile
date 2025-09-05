@@ -1,12 +1,26 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.ValidationException;
 /* loaded from: classes4.dex */
-public abstract class Kn {
-    public static long a() {
-        long j;
-        C0438mk c0438mk = AbstractC0413lk.f955a;
-        synchronized (c0438mk) {
-            j = c0438mk.f971a;
+public class Kn implements yo {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final yo f541a;
+
+    public Kn(yo yoVar) {
+        this.f541a = yoVar;
+    }
+
+    @Override // io.appmetrica.analytics.impl.yo
+    public final wo a(Object obj) {
+        wo a2 = this.f541a.a(obj);
+        if (a2.f1141a) {
+            return a2;
         }
-        return j;
+        throw new ValidationException(a2.b);
+    }
+
+    public final yo a() {
+        return this.f541a;
     }
 }

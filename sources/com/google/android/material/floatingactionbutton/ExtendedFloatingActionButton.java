@@ -14,7 +14,6 @@ import android.util.Property;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.animation.MotionSpec;
 import com.google.android.material.appbar.AppBarLayout;
@@ -39,6 +38,7 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
     private static final int SHRINK = 2;
     private int animState;
     private boolean animateShowBeforeLayout;
+    private boolean animationEnabled;
     private final CoordinatorLayout.Behavior<ExtendedFloatingActionButton> behavior;
     private final AnimatorTracker changeVisibilityTracker;
     private final int collapsedSize;
@@ -82,23 +82,23 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
     static final Property<View, Float> PADDING_START = new Property<View, Float>(Float.class, "paddingStart") { // from class: com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton.8
         @Override // android.util.Property
         public void set(View view, Float f) {
-            ViewCompat.setPaddingRelative(view, f.intValue(), view.getPaddingTop(), ViewCompat.getPaddingEnd(view), view.getPaddingBottom());
+            view.setPaddingRelative(f.intValue(), view.getPaddingTop(), view.getPaddingEnd(), view.getPaddingBottom());
         }
 
         @Override // android.util.Property
         public Float get(View view) {
-            return Float.valueOf(ViewCompat.getPaddingStart(view));
+            return Float.valueOf(view.getPaddingStart());
         }
     };
     static final Property<View, Float> PADDING_END = new Property<View, Float>(Float.class, "paddingEnd") { // from class: com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton.9
         @Override // android.util.Property
         public void set(View view, Float f) {
-            ViewCompat.setPaddingRelative(view, ViewCompat.getPaddingStart(view), view.getPaddingTop(), f.intValue(), view.getPaddingBottom());
+            view.setPaddingRelative(view.getPaddingStart(), view.getPaddingTop(), f.intValue(), view.getPaddingBottom());
         }
 
         @Override // android.util.Property
         public Float get(View view) {
-            return Float.valueOf(ViewCompat.getPaddingEnd(view));
+            return Float.valueOf(view.getPaddingEnd());
         }
     };
 
@@ -147,6 +147,7 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
         super(MaterialThemeOverlay.wrap(context, attributeSet, i, r5), attributeSet, i);
         int i2 = DEF_STYLE_RES;
         this.animState = 0;
+        this.animationEnabled = true;
         AnimatorTracker animatorTracker = new AnimatorTracker();
         this.changeVisibilityTracker = animatorTracker;
         ShowStrategy showStrategy = new ShowStrategy(animatorTracker);
@@ -166,8 +167,8 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
         this.collapsedSize = obtainStyledAttributes.getDimensionPixelSize(R.styleable.ExtendedFloatingActionButton_collapsedSize, -1);
         int i3 = obtainStyledAttributes.getInt(R.styleable.ExtendedFloatingActionButton_extendStrategy, 1);
         this.extendStrategyType = i3;
-        this.extendedPaddingStart = ViewCompat.getPaddingStart(this);
-        this.extendedPaddingEnd = ViewCompat.getPaddingEnd(this);
+        this.extendedPaddingStart = getPaddingStart();
+        this.extendedPaddingEnd = getPaddingEnd();
         AnimatorTracker animatorTracker2 = new AnimatorTracker();
         ChangeSizeStrategy changeSizeStrategy = new ChangeSizeStrategy(animatorTracker2, getSizeFromExtendStrategyType(i3), true);
         this.extendStrategy = changeSizeStrategy;
@@ -211,7 +212,7 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
         final Size size = new Size() { // from class: com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton.2
             @Override // com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton.Size
             public int getWidth() {
-                return (ExtendedFloatingActionButton.this.getMeasuredWidth() - (ExtendedFloatingActionButton.this.getCollapsedPadding() * 2)) + ExtendedFloatingActionButton.this.extendedPaddingStart + ExtendedFloatingActionButton.this.extendedPaddingEnd;
+                return ((ExtendedFloatingActionButton.this.getMeasuredWidth() - ExtendedFloatingActionButton.this.getPaddingStart()) - ExtendedFloatingActionButton.this.getPaddingEnd()) + ExtendedFloatingActionButton.this.extendedPaddingStart + ExtendedFloatingActionButton.this.extendedPaddingEnd;
             }
 
             @Override // com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton.Size
@@ -395,8 +396,13 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
         if (!this.isExtended || this.isTransforming) {
             return;
         }
-        this.extendedPaddingStart = ViewCompat.getPaddingStart(this);
-        this.extendedPaddingEnd = ViewCompat.getPaddingEnd(this);
+        this.extendedPaddingStart = getPaddingStart();
+        this.extendedPaddingEnd = getPaddingEnd();
+    }
+
+    @Override // android.widget.Button, android.widget.TextView, android.view.View
+    public CharSequence getAccessibilityClassName() {
+        return "com.google.android.material.floatingactionbutton.FloatingActionButton";
     }
 
     public void addOnShowAnimationListener(Animator.AnimatorListener animatorListener) {
@@ -585,13 +591,24 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
         return getVisibility() == 0 ? this.animState == 1 : this.animState != 2;
     }
 
+    public void setAnimationEnabled(boolean z) {
+        this.animationEnabled = z;
+    }
+
+    public boolean isAnimationEnabled() {
+        return this.animationEnabled;
+    }
+
     private boolean shouldAnimateVisibilityChange() {
-        return (ViewCompat.isLaidOut(this) || (!isOrWillBeShown() && this.animateShowBeforeLayout)) && !isInEditMode();
+        if (this.animationEnabled) {
+            return (isLaidOut() || (!isOrWillBeShown() && this.animateShowBeforeLayout)) && !isInEditMode();
+        }
+        return false;
     }
 
     int getCollapsedSize() {
         int i = this.collapsedSize;
-        return i < 0 ? (Math.min(ViewCompat.getPaddingStart(this), ViewCompat.getPaddingEnd(this)) * 2) + getIconSize() : i;
+        return i < 0 ? (Math.min(getPaddingStart(), getPaddingEnd()) * 2) + getIconSize() : i;
     }
 
     int getCollapsedPadding() {
@@ -778,7 +795,13 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
             }
             layoutParams.width = this.size.getLayoutParams().width;
             layoutParams.height = this.size.getLayoutParams().height;
-            ViewCompat.setPaddingRelative(ExtendedFloatingActionButton.this, this.size.getPaddingStart(), ExtendedFloatingActionButton.this.getPaddingTop(), this.size.getPaddingEnd(), ExtendedFloatingActionButton.this.getPaddingBottom());
+            if (this.extending) {
+                ExtendedFloatingActionButton extendedFloatingActionButton = ExtendedFloatingActionButton.this;
+                extendedFloatingActionButton.silentlyUpdateTextColor(extendedFloatingActionButton.originalTextCsl);
+            } else if (ExtendedFloatingActionButton.this.getText() != null && ExtendedFloatingActionButton.this.getText() != "") {
+                ExtendedFloatingActionButton.this.silentlyUpdateTextColor(ColorStateList.valueOf(0));
+            }
+            ExtendedFloatingActionButton.this.setPaddingRelative(this.size.getPaddingStart(), ExtendedFloatingActionButton.this.getPaddingTop(), this.size.getPaddingEnd(), ExtendedFloatingActionButton.this.getPaddingBottom());
             ExtendedFloatingActionButton.this.requestLayout();
         }
 
@@ -817,12 +840,12 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
             }
             if (currentMotionSpec.hasPropertyValues("paddingStart")) {
                 PropertyValuesHolder[] propertyValues3 = currentMotionSpec.getPropertyValues("paddingStart");
-                propertyValues3[0].setFloatValues(ViewCompat.getPaddingStart(ExtendedFloatingActionButton.this), this.size.getPaddingStart());
+                propertyValues3[0].setFloatValues(ExtendedFloatingActionButton.this.getPaddingStart(), this.size.getPaddingStart());
                 currentMotionSpec.setPropertyValues("paddingStart", propertyValues3);
             }
             if (currentMotionSpec.hasPropertyValues("paddingEnd")) {
                 PropertyValuesHolder[] propertyValues4 = currentMotionSpec.getPropertyValues("paddingEnd");
-                propertyValues4[0].setFloatValues(ViewCompat.getPaddingEnd(ExtendedFloatingActionButton.this), this.size.getPaddingEnd());
+                propertyValues4[0].setFloatValues(ExtendedFloatingActionButton.this.getPaddingEnd(), this.size.getPaddingEnd());
                 currentMotionSpec.setPropertyValues("paddingEnd", propertyValues4);
             }
             if (currentMotionSpec.hasPropertyValues("labelOpacity")) {

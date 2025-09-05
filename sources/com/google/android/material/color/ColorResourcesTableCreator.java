@@ -5,7 +5,7 @@ import android.util.Pair;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -47,7 +47,7 @@ public final class ColorResourcesTableCreator {
         HashMap hashMap = new HashMap();
         ColorResource colorResource = null;
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            ColorResource colorResource2 = new ColorResource(entry.getKey().intValue(), context.getResources().getResourceName(entry.getKey().intValue()), entry.getValue().intValue());
+            ColorResource colorResource2 = new ColorResource(entry.getKey().intValue(), context.getResources().getResourceEntryName(entry.getKey().intValue()), entry.getValue().intValue());
             if (!context.getResources().getResourceTypeName(entry.getKey().intValue()).equals("color")) {
                 throw new IllegalArgumentException("Non color resource found: name=" + colorResource2.name + ", typeId=" + Integer.toHexString(colorResource2.typeId & 255));
             }
@@ -257,21 +257,45 @@ public final class ColorResourcesTableCreator {
     public static class PackageChunk {
         private static final short HEADER_SIZE = 288;
         private static final int PACKAGE_NAME_MAX_LENGTH = 128;
-        private final ResChunkHeader header;
+        private final ResChunkHeader header = new ResChunkHeader(ColorResourcesTableCreator.HEADER_TYPE_PACKAGE, HEADER_SIZE, getChunkSize());
         private final StringPoolChunk keyStrings;
         private final PackageInfo packageInfo;
         private final TypeSpecChunk typeSpecChunk;
-        private final StringPoolChunk typeStrings = new StringPoolChunk(false, "?1", "?2", "?3", "?4", "?5", "color");
+        private final StringPoolChunk typeStrings;
 
         PackageChunk(PackageInfo packageInfo, List<ColorResource> list) {
             this.packageInfo = packageInfo;
+            this.typeStrings = new StringPoolChunk(false, generateTypeStrings(list));
+            this.keyStrings = new StringPoolChunk(true, generateKeyStrings(list));
+            this.typeSpecChunk = new TypeSpecChunk(list);
+        }
+
+        private String[] generateTypeStrings(List<ColorResource> list) {
+            int i = 0;
+            if (list.isEmpty()) {
+                return new String[0];
+            }
+            int i2 = list.get(0).typeId;
+            String[] strArr = new String[i2];
+            while (true) {
+                int i3 = i2 - 1;
+                if (i < i3) {
+                    int i4 = i + 1;
+                    strArr[i] = "?" + i4;
+                    i = i4;
+                } else {
+                    strArr[i3] = "color";
+                    return strArr;
+                }
+            }
+        }
+
+        private String[] generateKeyStrings(List<ColorResource> list) {
             String[] strArr = new String[list.size()];
             for (int i = 0; i < list.size(); i++) {
                 strArr[i] = list.get(i).name;
             }
-            this.keyStrings = new StringPoolChunk(true, strArr);
-            this.typeSpecChunk = new TypeSpecChunk(list);
-            this.header = new ResChunkHeader(ColorResourcesTableCreator.HEADER_TYPE_PACKAGE, HEADER_SIZE, getChunkSize());
+            return strArr;
         }
 
         void writeTo(ByteArrayOutputStream byteArrayOutputStream) throws IOException {
@@ -498,14 +522,25 @@ public final class ColorResourcesTableCreator {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static byte[] stringToByteArrayUtf8(String str) {
-        byte[] bytes = str.getBytes(Charset.forName("UTF-8"));
-        byte length = (byte) bytes.length;
-        int length2 = bytes.length;
-        byte[] bArr = new byte[length2 + 3];
-        System.arraycopy(bytes, 0, bArr, 2, length);
-        bArr[1] = length;
-        bArr[0] = length;
-        bArr[length2 + 2] = 0;
-        return bArr;
+        byte[] bytes = str.getBytes(StandardCharsets.UTF_8);
+        return concat(encodeLengthUtf8((short) str.length()), encodeLengthUtf8((short) bytes.length), bytes, new byte[]{0});
+    }
+
+    private static byte[] encodeLengthUtf8(short s) {
+        return s > 127 ? new byte[]{(byte) ((127 & (s >> 8)) | 128), (byte) (s & 255)} : new byte[]{(byte) (s & 255)};
+    }
+
+    private static byte[] concat(byte[]... bArr) {
+        int i = 0;
+        for (byte[] bArr2 : bArr) {
+            i += bArr2.length;
+        }
+        byte[] bArr3 = new byte[i];
+        int i2 = 0;
+        for (byte[] bArr4 : bArr) {
+            System.arraycopy(bArr4, 0, bArr3, i2, bArr4.length);
+            i2 += bArr4.length;
+        }
+        return bArr3;
     }
 }

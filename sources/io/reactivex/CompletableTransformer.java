@@ -1,5 +1,5 @@
 package io.reactivex;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface CompletableTransformer {
     CompletableSource apply(Completable completable);
 }

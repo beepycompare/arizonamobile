@@ -1,5 +1,11 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public interface O9 {
-    N9 a();
+public final class O9 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f602a;
+
+    public O9(String str) {
+        this.f602a = str;
+    }
 }

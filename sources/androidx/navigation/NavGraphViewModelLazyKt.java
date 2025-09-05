@@ -50,7 +50,7 @@ public final class NavGraphViewModelLazyKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: navGraphViewModels$lambda-0  reason: not valid java name */
-    public static final NavBackStackEntry m8076navGraphViewModels$lambda0(Lazy<NavBackStackEntry> lazy) {
+    public static final NavBackStackEntry m8078navGraphViewModels$lambda0(Lazy<NavBackStackEntry> lazy) {
         return lazy.getValue();
     }
 
@@ -88,7 +88,7 @@ public final class NavGraphViewModelLazyKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: navGraphViewModels$lambda-1  reason: not valid java name */
-    public static final NavBackStackEntry m8077navGraphViewModels$lambda1(Lazy<NavBackStackEntry> lazy) {
+    public static final NavBackStackEntry m8079navGraphViewModels$lambda1(Lazy<NavBackStackEntry> lazy) {
         return lazy.getValue();
     }
 
@@ -126,7 +126,7 @@ public final class NavGraphViewModelLazyKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: navGraphViewModels$lambda-2  reason: not valid java name */
-    public static final NavBackStackEntry m8078navGraphViewModels$lambda2(Lazy<NavBackStackEntry> lazy) {
+    public static final NavBackStackEntry m8080navGraphViewModels$lambda2(Lazy<NavBackStackEntry> lazy) {
         return lazy.getValue();
     }
 
@@ -166,7 +166,7 @@ public final class NavGraphViewModelLazyKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: navGraphViewModels$lambda-3  reason: not valid java name */
-    public static final NavBackStackEntry m8079navGraphViewModels$lambda3(Lazy<NavBackStackEntry> lazy) {
+    public static final NavBackStackEntry m8081navGraphViewModels$lambda3(Lazy<NavBackStackEntry> lazy) {
         return lazy.getValue();
     }
 }

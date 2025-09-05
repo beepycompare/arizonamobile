@@ -1,24 +1,20 @@
 package com.google.android.material.timepicker;
 
-import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.R;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.internal.TextWatcherAdapter;
 import com.google.android.material.internal.ViewUtils;
 import com.google.android.material.timepicker.TimePickerView;
-import java.lang.reflect.Field;
 import java.util.Locale;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
@@ -61,13 +57,17 @@ public class TimePickerTextInputPresenter implements TimePickerView.OnSelectionC
     public TimePickerTextInputPresenter(LinearLayout linearLayout, final TimeModel timeModel) {
         this.timePickerView = linearLayout;
         this.time = timeModel;
-        Resources resources = linearLayout.getResources();
+        final Resources resources = linearLayout.getResources();
         ChipTextInputComboView chipTextInputComboView = (ChipTextInputComboView) linearLayout.findViewById(R.id.material_minute_text_input);
         this.minuteTextInput = chipTextInputComboView;
         ChipTextInputComboView chipTextInputComboView2 = (ChipTextInputComboView) linearLayout.findViewById(R.id.material_hour_text_input);
         this.hourTextInput = chipTextInputComboView2;
-        ((TextView) chipTextInputComboView.findViewById(R.id.material_label)).setText(resources.getString(R.string.material_timepicker_minute));
-        ((TextView) chipTextInputComboView2.findViewById(R.id.material_label)).setText(resources.getString(R.string.material_timepicker_hour));
+        TextView textView = (TextView) chipTextInputComboView.findViewById(R.id.material_label);
+        TextView textView2 = (TextView) chipTextInputComboView2.findViewById(R.id.material_label);
+        textView.setText(resources.getString(R.string.material_timepicker_minute));
+        textView.setImportantForAccessibility(2);
+        textView2.setText(resources.getString(R.string.material_timepicker_hour));
+        textView2.setImportantForAccessibility(2);
         chipTextInputComboView.setTag(R.id.selection_type, 12);
         chipTextInputComboView2.setTag(R.id.selection_type, 10);
         if (timeModel.format == 0) {
@@ -83,24 +83,38 @@ public class TimePickerTextInputPresenter implements TimePickerView.OnSelectionC
         chipTextInputComboView.setOnClickListener(onClickListener);
         chipTextInputComboView2.addInputFilter(timeModel.getHourInputValidator());
         chipTextInputComboView.addInputFilter(timeModel.getMinuteInputValidator());
-        this.hourEditText = chipTextInputComboView2.getTextInput().getEditText();
-        this.minuteEditText = chipTextInputComboView.getTextInput().getEditText();
+        EditText editText = chipTextInputComboView2.getTextInput().getEditText();
+        this.hourEditText = editText;
+        editText.setAccessibilityDelegate(setTimeUnitAccessiblityLabel(linearLayout.getResources(), R.string.material_timepicker_hour));
+        EditText editText2 = chipTextInputComboView.getTextInput().getEditText();
+        this.minuteEditText = editText2;
+        editText2.setAccessibilityDelegate(setTimeUnitAccessiblityLabel(linearLayout.getResources(), R.string.material_timepicker_minute));
         this.controller = new TimePickerTextInputKeyController(chipTextInputComboView2, chipTextInputComboView, timeModel);
         chipTextInputComboView2.setChipDelegate(new ClickActionDelegate(linearLayout.getContext(), R.string.material_hour_selection) { // from class: com.google.android.material.timepicker.TimePickerTextInputPresenter.4
             @Override // com.google.android.material.timepicker.ClickActionDelegate, androidx.core.view.AccessibilityDelegateCompat
             public void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
                 super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfoCompat);
-                accessibilityNodeInfoCompat.setContentDescription(view.getResources().getString(timeModel.getHourContentDescriptionResId(), String.valueOf(timeModel.getHourForDisplay())));
+                accessibilityNodeInfoCompat.setContentDescription(resources.getString(R.string.material_timepicker_hour) + " " + view.getResources().getString(timeModel.getHourContentDescriptionResId(), String.valueOf(timeModel.getHourForDisplay())));
             }
         });
         chipTextInputComboView.setChipDelegate(new ClickActionDelegate(linearLayout.getContext(), R.string.material_minute_selection) { // from class: com.google.android.material.timepicker.TimePickerTextInputPresenter.5
             @Override // com.google.android.material.timepicker.ClickActionDelegate, androidx.core.view.AccessibilityDelegateCompat
             public void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
                 super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfoCompat);
-                accessibilityNodeInfoCompat.setContentDescription(view.getResources().getString(R.string.material_minute_suffix, String.valueOf(timeModel.minute)));
+                accessibilityNodeInfoCompat.setContentDescription(resources.getString(R.string.material_timepicker_minute) + " " + view.getResources().getString(R.string.material_minute_suffix, String.valueOf(timeModel.minute)));
             }
         });
         initialize();
+    }
+
+    private View.AccessibilityDelegate setTimeUnitAccessiblityLabel(final Resources resources, final int i) {
+        return new View.AccessibilityDelegate() { // from class: com.google.android.material.timepicker.TimePickerTextInputPresenter.6
+            @Override // android.view.View.AccessibilityDelegate
+            public void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                accessibilityNodeInfo.setText(resources.getString(i));
+            }
+        };
     }
 
     @Override // com.google.android.material.timepicker.TimePickerPresenter
@@ -137,7 +151,7 @@ public class TimePickerTextInputPresenter implements TimePickerView.OnSelectionC
         materialButtonToggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() { // from class: com.google.android.material.timepicker.TimePickerTextInputPresenter$$ExternalSyntheticLambda0
             @Override // com.google.android.material.button.MaterialButtonToggleGroup.OnButtonCheckedListener
             public final void onButtonChecked(MaterialButtonToggleGroup materialButtonToggleGroup2, int i, boolean z) {
-                TimePickerTextInputPresenter.this.m8759xf2085e95(materialButtonToggleGroup2, i, z);
+                TimePickerTextInputPresenter.this.m8778xf2085e95(materialButtonToggleGroup2, i, z);
             }
         });
         this.toggle.setVisibility(0);
@@ -146,7 +160,7 @@ public class TimePickerTextInputPresenter implements TimePickerView.OnSelectionC
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setupPeriodToggle$0$com-google-android-material-timepicker-TimePickerTextInputPresenter  reason: not valid java name */
-    public /* synthetic */ void m8759xf2085e95(MaterialButtonToggleGroup materialButtonToggleGroup, int i, boolean z) {
+    public /* synthetic */ void m8778xf2085e95(MaterialButtonToggleGroup materialButtonToggleGroup, int i, boolean z) {
         if (z) {
             this.time.setPeriod(i == R.id.material_clock_period_pm_button ? 1 : 0);
         }
@@ -192,24 +206,6 @@ public class TimePickerTextInputPresenter implements TimePickerView.OnSelectionC
     @Override // com.google.android.material.timepicker.TimePickerPresenter
     public void invalidate() {
         setTime(this.time);
-    }
-
-    private static void setCursorDrawableColor(EditText editText, int i) {
-        try {
-            Context context = editText.getContext();
-            Field declaredField = TextView.class.getDeclaredField("mCursorDrawableRes");
-            declaredField.setAccessible(true);
-            int i2 = declaredField.getInt(editText);
-            Field declaredField2 = TextView.class.getDeclaredField("mEditor");
-            declaredField2.setAccessible(true);
-            Object obj = declaredField2.get(editText);
-            Field declaredField3 = obj.getClass().getDeclaredField("mCursorDrawable");
-            declaredField3.setAccessible(true);
-            Drawable drawable = AppCompatResources.getDrawable(context, i2);
-            drawable.setColorFilter(i, PorterDuff.Mode.SRC_IN);
-            declaredField3.set(obj, new Drawable[]{drawable, drawable});
-        } catch (Throwable unused) {
-        }
     }
 
     public void resetChecked() {

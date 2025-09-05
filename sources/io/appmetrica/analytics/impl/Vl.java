@@ -1,7 +1,18 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes4.dex */
-public interface Vl {
-    void a(Ol ol, C0389km c0389km);
 
-    void a(C0389km c0389km);
+import android.os.Bundle;
+/* loaded from: classes4.dex */
+public final class Vl implements Z6 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ Xl f713a;
+
+    public Vl(Xl xl) {
+        this.f713a = xl;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Z6
+    public final void a(int i, Bundle bundle) {
+        this.f713a.b(bundle);
+    }
 }

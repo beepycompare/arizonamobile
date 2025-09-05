@@ -51,7 +51,7 @@ public final class AngleMeasurer implements Measurer {
     public static final float findCubicCutPoint$lambda$1(Cubic c, AngleMeasurer this$0, float f, float f2, float f3) {
         Intrinsics.checkNotNullParameter(c, "$c");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        long m7798pointOnCurveOOQOV4g$graphics_shapes_release = c.m7798pointOnCurveOOQOV4g$graphics_shapes_release(f3);
-        return Math.abs(Utils.positiveModulo(Utils.angle(PointKt.m7810getXDnnuFBc(m7798pointOnCurveOOQOV4g$graphics_shapes_release) - this$0.centerX, PointKt.m7811getYDnnuFBc(m7798pointOnCurveOOQOV4g$graphics_shapes_release) - this$0.centerY) - f, Utils.getTwoPi()) - f2);
+        long m7800pointOnCurveOOQOV4g$graphics_shapes_release = c.m7800pointOnCurveOOQOV4g$graphics_shapes_release(f3);
+        return Math.abs(Utils.positiveModulo(Utils.angle(PointKt.m7812getXDnnuFBc(m7800pointOnCurveOOQOV4g$graphics_shapes_release) - this$0.centerX, PointKt.m7813getYDnnuFBc(m7800pointOnCurveOOQOV4g$graphics_shapes_release) - this$0.centerY) - f, Utils.getTwoPi()) - f2);
     }
 }

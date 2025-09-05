@@ -1,78 +1,72 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-import java.util.Arrays;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
+import java.util.HashMap;
+import java.util.Map;
 /* loaded from: classes4.dex */
-public final class K9 extends MessageNano {
-    public static volatile K9[] b;
+public final class K9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f528a;
+    public final C0537qf f532a;
+    public final Do b;
+    public final C0156bl c;
+    public final C0374k7 d;
+    public final C0247f9 e;
+    public final Tk f;
+    public final C0316i0 g;
+    public final C0555r9 h;
+    public final C0701x5 i;
+    public final TimeProvider j;
+    public final int k;
+    public long l;
+    public int m;
 
-    public K9() {
-        a();
+    public K9(C0537qf c0537qf, Do r2, C0156bl c0156bl, C0374k7 c0374k7, C0316i0 c0316i0, C0247f9 c0247f9, Tk tk, int i, C0701x5 c0701x5, C0555r9 c0555r9, SystemTimeProvider systemTimeProvider) {
+        this.f532a = c0537qf;
+        this.b = r2;
+        this.c = c0156bl;
+        this.d = c0374k7;
+        this.g = c0316i0;
+        this.e = c0247f9;
+        this.f = tk;
+        this.k = i;
+        this.h = c0555r9;
+        this.j = systemTimeProvider;
+        this.i = c0701x5;
+        this.l = c0537qf.i();
+        this.m = c0537qf.h();
     }
 
-    public static K9[] b() {
-        if (b == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (b == null) {
-                    b = new K9[0];
-                }
+    public final void a(C0477o6 c0477o6, C0208dl c0208dl) {
+        Map map = c0477o6.p;
+        Tk tk = this.f;
+        tk.getClass();
+        map.putAll(new HashMap(tk.b));
+        c0477o6.c(this.f532a.j());
+        c0477o6.o = Integer.valueOf(this.b.b());
+        C0290h0 a2 = this.g.a();
+        C0247f9 c0247f9 = this.e;
+        c0247f9.getClass();
+        Bb a3 = Bb.a(c0477o6.d);
+        C0374k7 c0374k7 = this.d;
+        X8 a4 = ((InterfaceC0221e9) c0247f9.b.a(a3)).a(c0477o6);
+        int i = c0477o6.d;
+        C0555r9 c0555r9 = this.h;
+        H7 h7 = new H7(c0374k7.g, c0208dl, i, c0555r9, a4, (Gh) c0374k7.h.k.a(), a2);
+        Long valueOf = Long.valueOf(c0208dl.f845a);
+        EnumC0259fl enumC0259fl = c0208dl.d;
+        Long valueOf2 = Long.valueOf(c0208dl.b);
+        Bb a5 = Bb.a(h7.h.d);
+        long j = 0;
+        if (!W9.g.contains(Bb.a(i))) {
+            Do r3 = c0555r9.b;
+            synchronized (r3) {
+                j = r3.f413a.a().optLong("global_number", 0L);
             }
+            c0555r9.b.b(1 + j);
         }
-        return b;
-    }
-
-    public final K9 a() {
-        this.f528a = WireFormatNano.EMPTY_BYTES;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        return !Arrays.equals(this.f528a, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(1, this.f528a) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!Arrays.equals(this.f528a, WireFormatNano.EMPTY_BYTES)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f528a);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final K9 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag != 10) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                this.f528a = codedInputByteBufferNano.readBytes();
-            }
-        }
-        return this;
-    }
-
-    public static K9 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new K9().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static K9 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (K9) MessageNano.mergeFrom(new K9(), bArr);
+        c0374k7.a(c0374k7.l.fromModel(new E7(valueOf, enumC0259fl, valueOf2, a5, Long.valueOf(j), Long.valueOf(c0208dl.c), h7.a())));
+        this.i.f1145a.h();
     }
 }

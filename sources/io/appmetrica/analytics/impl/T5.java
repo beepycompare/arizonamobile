@@ -1,60 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Collection;
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
 import java.util.List;
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicLong;
-import kotlin.collections.CollectionsKt;
-import kotlin.collections.SetsKt;
+import java.util.Locale;
 /* loaded from: classes4.dex */
-public final class T5 implements InterfaceC0118a9, InterfaceC0452n9 {
+public abstract class T5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0297h7 f656a;
-    public final Set b;
-    public final AtomicLong c;
+    public static final List f675a = CollectionUtils.createSortedListWithoutRepetitions("id", "type", "report_request_parameters", "session_description");
+    public static final String b;
+    public static final String c;
 
-    public T5(C0297h7 c0297h7) {
-        this.f656a = c0297h7;
-        Set of = SetsKt.setOf((Object[]) new Integer[]{Integer.valueOf(EnumC0728yb.EVENT_CLIENT_EXTERNAL_ATTRIBUTION.a()), Integer.valueOf(EnumC0728yb.EVENT_TYPE_APP_UPDATE.a()), Integer.valueOf(EnumC0728yb.EVENT_TYPE_FIRST_ACTIVATION.a()), Integer.valueOf(EnumC0728yb.EVENT_TYPE_INIT.a()), Integer.valueOf(EnumC0728yb.EVENT_TYPE_SEND_AD_REVENUE_EVENT.a()), Integer.valueOf(EnumC0728yb.EVENT_TYPE_SEND_ECOMMERCE_EVENT.a()), Integer.valueOf(EnumC0728yb.EVENT_TYPE_SEND_REFERRER.a()), Integer.valueOf(EnumC0728yb.EVENT_TYPE_SEND_REVENUE_EVENT.a())});
-        this.b = of;
-        this.c = new AtomicLong(c0297h7.a(of));
-        c0297h7.a(this);
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0452n9
-    public final void a() {
-        this.c.set(this.f656a.a(this.b));
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0118a9
-    public final boolean b() {
-        return this.c.get() > 0;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0452n9
-    public final void b(List<Integer> list) {
-        int i = 0;
-        if (!(list instanceof Collection) || !list.isEmpty()) {
-            for (Number number : list) {
-                if (this.b.contains(Integer.valueOf(number.intValue())) && (i = i + 1) < 0) {
-                    CollectionsKt.throwCountOverflow();
-                }
-            }
-        }
-        this.c.addAndGet(-i);
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0452n9
-    public final void a(List<Integer> list) {
-        int i = 0;
-        if (!(list instanceof Collection) || !list.isEmpty()) {
-            for (Number number : list) {
-                if (this.b.contains(Integer.valueOf(number.intValue())) && (i = i + 1) < 0) {
-                    CollectionsKt.throwCountOverflow();
-                }
-            }
-        }
-        this.c.addAndGet(i);
+    static {
+        Locale locale = Locale.US;
+        b = String.format(locale, "SELECT DISTINCT %s  FROM %s WHERE %s >=0 AND (SELECT count() FROM %5$s WHERE %5$s.%6$s = %2$s.%3$s AND %5$s.%7$s = %2$s.%4$s) > 0 ORDER BY %3$s LIMIT 1", "report_request_parameters", "sessions", "id", "type", "events", "session_id", "session_type");
+        c = String.format(locale, "(select count(%s.%s) from %s where %s.%s = %s.%s) = 0 and cast(%s as integer) < ?", "events", "id", "events", "events", "session_id", "sessions", "id", "id");
     }
 }

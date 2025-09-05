@@ -11,12 +11,12 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public abstract class SimpleThreadSafeToggle implements Toggle {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f307a;
+    private final String f308a;
     private boolean b;
     private final ArrayList c;
 
     public SimpleThreadSafeToggle(boolean z, String str) {
-        this.f307a = str;
+        this.f308a = str;
         this.b = z;
         this.c = new ArrayList();
     }
@@ -27,7 +27,7 @@ public abstract class SimpleThreadSafeToggle implements Toggle {
     }
 
     protected final String getTag() {
-        return this.f307a;
+        return this.f308a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.control.Toggle

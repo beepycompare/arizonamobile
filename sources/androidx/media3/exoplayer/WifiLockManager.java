@@ -30,14 +30,14 @@ public final class WifiLockManager {
         this.wifiLockHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.WifiLockManager$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                WifiLockManager.this.m7921lambda$setEnabled$0$androidxmedia3exoplayerWifiLockManager(z, z2);
+                WifiLockManager.this.m7923lambda$setEnabled$0$androidxmedia3exoplayerWifiLockManager(z, z2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setEnabled$0$androidx-media3-exoplayer-WifiLockManager  reason: not valid java name */
-    public /* synthetic */ void m7921lambda$setEnabled$0$androidxmedia3exoplayerWifiLockManager(boolean z, boolean z2) {
+    public /* synthetic */ void m7923lambda$setEnabled$0$androidxmedia3exoplayerWifiLockManager(boolean z, boolean z2) {
         this.wifiLockManagerInternal.updateWifiLock(z, z2);
     }
 
@@ -50,7 +50,7 @@ public final class WifiLockManager {
             this.wifiLockHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.WifiLockManager$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WifiLockManager.this.m7922lambda$setStayAwake$1$androidxmedia3exoplayerWifiLockManager(z);
+                    WifiLockManager.this.m7924lambda$setStayAwake$1$androidxmedia3exoplayerWifiLockManager(z);
                 }
             });
         }
@@ -58,7 +58,7 @@ public final class WifiLockManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setStayAwake$1$androidx-media3-exoplayer-WifiLockManager  reason: not valid java name */
-    public /* synthetic */ void m7922lambda$setStayAwake$1$androidxmedia3exoplayerWifiLockManager(boolean z) {
+    public /* synthetic */ void m7924lambda$setStayAwake$1$androidxmedia3exoplayerWifiLockManager(boolean z) {
         this.wifiLockManagerInternal.updateWifiLock(true, z);
     }
 

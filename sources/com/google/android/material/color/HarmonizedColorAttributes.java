@@ -1,9 +1,9 @@
 package com.google.android.material.color;
 
-import com.google.android.material.R;
+import androidx.appcompat.R;
 /* loaded from: classes4.dex */
 public final class HarmonizedColorAttributes {
-    private static final int[] HARMONIZED_MATERIAL_ATTRIBUTES = {R.attr.colorError, R.attr.colorOnError, R.attr.colorErrorContainer, R.attr.colorOnErrorContainer};
+    private static final int[] HARMONIZED_MATERIAL_ATTRIBUTES = {R.attr.colorError, com.google.android.material.R.attr.colorOnError, com.google.android.material.R.attr.colorErrorContainer, com.google.android.material.R.attr.colorOnErrorContainer};
     private final int[] attributes;
     private final int themeOverlay;
 
@@ -16,7 +16,7 @@ public final class HarmonizedColorAttributes {
     }
 
     public static HarmonizedColorAttributes createMaterialDefaults() {
-        return create(HARMONIZED_MATERIAL_ATTRIBUTES, R.style.ThemeOverlay_Material3_HarmonizedColors);
+        return create(HARMONIZED_MATERIAL_ATTRIBUTES, com.google.android.material.R.style.ThemeOverlay_Material3_HarmonizedColors);
     }
 
     private HarmonizedColorAttributes(int[] iArr, int i) {

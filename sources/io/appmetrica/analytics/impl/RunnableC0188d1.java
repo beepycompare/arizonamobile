@@ -4,15 +4,22 @@ package io.appmetrica.analytics.impl;
 public final class RunnableC0188d1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0494p1 f820a;
+    public final /* synthetic */ String f829a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ C0547r1 c;
 
-    public RunnableC0188d1(C0494p1 c0494p1) {
-        this.f820a = c0494p1;
+    public RunnableC0188d1(C0547r1 c0547r1, String str, String str2) {
+        this.c = c0547r1;
+        this.f829a = str;
+        this.b = str2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f820a.f1005a.getClass();
-        C0592t0.c().clearAppEnvironment();
+        C0671w0 c0671w0 = this.c.f1054a;
+        String str = this.f829a;
+        String str2 = this.b;
+        c0671w0.getClass();
+        C0646v0.c().putAppEnvironmentValue(str, str2);
     }
 }

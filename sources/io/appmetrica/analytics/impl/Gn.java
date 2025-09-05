@@ -1,26 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ValidationException;
+import android.os.Looper;
+import java.util.Map;
 /* loaded from: classes4.dex */
-public class Gn implements uo {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final uo f463a;
-
-    public Gn(uo uoVar) {
-        this.f463a = uoVar;
+public final class Gn implements In {
+    @Override // io.appmetrica.analytics.impl.In
+    public final Thread a() {
+        return Looper.getMainLooper().getThread();
     }
 
-    @Override // io.appmetrica.analytics.impl.uo
-    public final so a(Object obj) {
-        so a2 = this.f463a.a(obj);
-        if (a2.f1067a) {
-            return a2;
-        }
-        throw new ValidationException(a2.b);
+    @Override // io.appmetrica.analytics.impl.In
+    public final StackTraceElement[] b() {
+        return null;
     }
 
-    public final uo a() {
-        return this.f463a;
+    @Override // io.appmetrica.analytics.impl.In
+    public final Map c() {
+        return Thread.getAllStackTraces();
     }
 }

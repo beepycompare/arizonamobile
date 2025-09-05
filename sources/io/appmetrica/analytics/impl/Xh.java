@@ -1,47 +1,17 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import io.appmetrica.analytics.internal.CounterConfiguration;
-import org.json.JSONObject;
+import android.content.Context;
+import io.appmetrica.analytics.ICrashTransformer;
 /* loaded from: classes4.dex */
-public class Xh extends C0191d4 {
-    protected Y8 c;
-    protected Kf d;
-    public boolean e;
-    public String f;
+public final class Xh extends I6 {
+    public final AbstractC0185co d;
 
-    public Xh(Rf rf, CounterConfiguration counterConfiguration, Y8 y8) {
-        this(rf, counterConfiguration, y8, null);
+    public Xh(Context context, AbstractC0185co abstractC0185co, H6 h6, ICrashTransformer iCrashTransformer) {
+        this(abstractC0185co, h6, iCrashTransformer, new C0429ma(context));
     }
 
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        this.b.toBundle(bundle);
-        Rf rf = this.f823a;
-        synchronized (rf) {
-            bundle.putParcelable("PROCESS_CFG_OBJ", rf);
-        }
-        return bundle;
-    }
-
-    public final synchronized String d() {
-        Y8 y8;
-        y8 = this.c;
-        return y8.f738a.isEmpty() ? null : new JSONObject(y8.f738a).toString();
-    }
-
-    public final synchronized String e() {
-        return this.f;
-    }
-
-    public boolean f() {
-        return this.e;
-    }
-
-    public Xh(Rf rf, CounterConfiguration counterConfiguration, Y8 y8, String str) {
-        super(rf, counterConfiguration);
-        this.e = true;
-        this.f = str;
-        this.c = y8;
+    public Xh(AbstractC0185co abstractC0185co, H6 h6, ICrashTransformer iCrashTransformer, C0429ma c0429ma) {
+        super(h6, iCrashTransformer, c0429ma);
+        this.d = abstractC0185co;
     }
 }

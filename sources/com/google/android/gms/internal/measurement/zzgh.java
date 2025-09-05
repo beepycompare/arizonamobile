@@ -17,6 +17,10 @@ public final class zzgh extends zzmf implements zznn {
     private zzgh() {
     }
 
+    public static /* synthetic */ zzgh zzb() {
+        return zzg;
+    }
+
     public final String zza() {
         return this.zzd;
     }

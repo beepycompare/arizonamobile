@@ -7,9 +7,11 @@ import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import androidx.core.graphics.drawable.TintAwareDrawable;
+import androidx.dynamicanimation.animation.SpringForce;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.Shapeable;
+import com.google.android.material.shape.StateListShapeAppearanceModel;
 /* loaded from: classes4.dex */
 public class RippleDrawableCompat extends Drawable implements Shapeable, TintAwareDrawable {
     private RippleDrawableCompatState drawableState;
@@ -50,6 +52,22 @@ public class RippleDrawableCompat extends Drawable implements Shapeable, TintAwa
     @Override // com.google.android.material.shape.Shapeable
     public ShapeAppearanceModel getShapeAppearanceModel() {
         return this.drawableState.delegate.getShapeAppearanceModel();
+    }
+
+    public void setStateListShapeAppearanceModel(StateListShapeAppearanceModel stateListShapeAppearanceModel) {
+        this.drawableState.delegate.setStateListShapeAppearanceModel(stateListShapeAppearanceModel);
+    }
+
+    public StateListShapeAppearanceModel getStateListShapeAppearanceModel() {
+        return this.drawableState.delegate.getStateListShapeAppearanceModel();
+    }
+
+    public void setCornerSpringForce(SpringForce springForce) {
+        this.drawableState.delegate.setCornerSpringForce(springForce);
+    }
+
+    public SpringForce getCornerSpringForce() {
+        return this.drawableState.delegate.getCornerSpringForce();
     }
 
     @Override // android.graphics.drawable.Drawable

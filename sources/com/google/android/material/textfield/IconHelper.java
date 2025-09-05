@@ -6,7 +6,6 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.internal.CheckableImageButton;
 import java.util.Arrays;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -32,7 +31,7 @@ public class IconHelper {
     }
 
     private static void setIconClickable(CheckableImageButton checkableImageButton, View.OnLongClickListener onLongClickListener) {
-        boolean hasOnClickListeners = ViewCompat.hasOnClickListeners(checkableImageButton);
+        boolean hasOnClickListeners = checkableImageButton.hasOnClickListeners();
         boolean z = false;
         boolean z2 = onLongClickListener != null;
         if (hasOnClickListeners || z2) {
@@ -42,7 +41,7 @@ public class IconHelper {
         checkableImageButton.setClickable(hasOnClickListeners);
         checkableImageButton.setPressable(hasOnClickListeners);
         checkableImageButton.setLongClickable(z2);
-        ViewCompat.setImportantForAccessibility(checkableImageButton, z ? 1 : 2);
+        checkableImageButton.setImportantForAccessibility(z ? 1 : 2);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -51,12 +50,12 @@ public class IconHelper {
         if (drawable != null) {
             drawable = DrawableCompat.wrap(drawable).mutate();
             if (colorStateList != null && colorStateList.isStateful()) {
-                DrawableCompat.setTintList(drawable, ColorStateList.valueOf(colorStateList.getColorForState(mergeIconState(textInputLayout, checkableImageButton), colorStateList.getDefaultColor())));
+                drawable.setTintList(ColorStateList.valueOf(colorStateList.getColorForState(mergeIconState(textInputLayout, checkableImageButton), colorStateList.getDefaultColor())));
             } else {
-                DrawableCompat.setTintList(drawable, colorStateList);
+                drawable.setTintList(colorStateList);
             }
             if (mode != null) {
-                DrawableCompat.setTintMode(drawable, mode);
+                drawable.setTintMode(mode);
             }
         }
         if (checkableImageButton.getDrawable() != drawable) {
@@ -72,7 +71,7 @@ public class IconHelper {
         }
         int colorForState = colorStateList.getColorForState(mergeIconState(textInputLayout, checkableImageButton), colorStateList.getDefaultColor());
         Drawable mutate = DrawableCompat.wrap(drawable).mutate();
-        DrawableCompat.setTintList(mutate, ColorStateList.valueOf(colorForState));
+        mutate.setTintList(ColorStateList.valueOf(colorForState));
         checkableImageButton.setImageDrawable(mutate);
     }
 

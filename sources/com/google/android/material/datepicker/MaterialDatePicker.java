@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.activity.result.ActivityResultCaller;
 import androidx.appcompat.content.res.AppCompatResources;
+import androidx.core.graphics.Insets;
 import androidx.core.util.Pair;
 import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
@@ -41,7 +42,7 @@ import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 /* loaded from: classes4.dex */
-public final class MaterialDatePicker<S> extends DialogFragment {
+public class MaterialDatePicker<S> extends DialogFragment {
     private static final String CALENDAR_CONSTRAINTS_KEY = "CALENDAR_CONSTRAINTS_KEY";
     private static final String DATE_SELECTOR_KEY = "DATE_SELECTOR_KEY";
     private static final String DAY_VIEW_DECORATOR_KEY = "DAY_VIEW_DECORATOR_KEY";
@@ -203,7 +204,7 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         obtainStyledAttributes.recycle();
         this.background.initializeElevationOverlay(context);
         this.background.setFillColor(ColorStateList.valueOf(color));
-        this.background.setElevation(ViewCompat.getElevation(dialog.getWindow().getDecorView()));
+        this.background.setElevation(dialog.getWindow().getDecorView().getElevation());
         return dialog;
     }
 
@@ -222,7 +223,7 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         }
         TextView textView = (TextView) inflate.findViewById(R.id.mtrl_picker_header_selection_text);
         this.headerSelectionText = textView;
-        ViewCompat.setAccessibilityLiveRegion(textView, 1);
+        textView.setAccessibilityLiveRegion(1);
         this.headerToggleButton = (CheckableImageButton) inflate.findViewById(R.id.mtrl_picker_header_toggle);
         this.headerTitleTextView = (TextView) inflate.findViewById(R.id.mtrl_picker_title_text);
         initHeaderToggle(context);
@@ -248,15 +249,10 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         } else if (this.positiveButtonContentDescriptionResId != 0) {
             this.confirmButton.setContentDescription(getContext().getResources().getText(this.positiveButtonContentDescriptionResId));
         }
-        this.confirmButton.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialDatePicker.1
-            /* JADX WARN: Multi-variable type inference failed */
+        this.confirmButton.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialDatePicker$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
-            public void onClick(View view) {
-                Iterator it = MaterialDatePicker.this.onPositiveButtonClickListeners.iterator();
-                while (it.hasNext()) {
-                    ((MaterialPickerOnPositiveButtonClickListener) it.next()).onPositiveButtonClick(MaterialDatePicker.this.getSelection());
-                }
-                MaterialDatePicker.this.dismiss();
+            public final void onClick(View view) {
+                MaterialDatePicker.this.onPositiveButtonClick(view);
             }
         });
         Button button = (Button) inflate.findViewById(R.id.cancel_button);
@@ -276,17 +272,29 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         } else if (this.negativeButtonContentDescriptionResId != 0) {
             button.setContentDescription(getContext().getResources().getText(this.negativeButtonContentDescriptionResId));
         }
-        button.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialDatePicker.2
+        button.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialDatePicker$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
-            public void onClick(View view) {
-                Iterator it = MaterialDatePicker.this.onNegativeButtonClickListeners.iterator();
-                while (it.hasNext()) {
-                    ((View.OnClickListener) it.next()).onClick(view);
-                }
-                MaterialDatePicker.this.dismiss();
+            public final void onClick(View view) {
+                MaterialDatePicker.this.onNegativeButtonClick(view);
             }
         });
         return inflate;
+    }
+
+    public void onPositiveButtonClick(View view) {
+        Iterator<MaterialPickerOnPositiveButtonClickListener<? super S>> it = this.onPositiveButtonClickListeners.iterator();
+        while (it.hasNext()) {
+            it.next().onPositiveButtonClick(getSelection());
+        }
+        dismiss();
+    }
+
+    public void onNegativeButtonClick(View view) {
+        Iterator<View.OnClickListener> it = this.onNegativeButtonClickListeners.iterator();
+        while (it.hasNext()) {
+            it.next().onClick(view);
+        }
+        dismiss();
     }
 
     @Override // androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
@@ -350,18 +358,19 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         final View findViewById = requireView().findViewById(R.id.fullscreen_header);
         EdgeToEdgeUtils.applyEdgeToEdge(window, true, ViewUtils.getBackgroundColor(findViewById), null);
         final int paddingTop = findViewById.getPaddingTop();
+        final int paddingLeft = findViewById.getPaddingLeft();
+        final int paddingRight = findViewById.getPaddingRight();
         final int i = findViewById.getLayoutParams().height;
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById, new OnApplyWindowInsetsListener() { // from class: com.google.android.material.datepicker.MaterialDatePicker.3
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById, new OnApplyWindowInsetsListener() { // from class: com.google.android.material.datepicker.MaterialDatePicker.1
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-                int i2 = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).top;
+                Insets insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars());
                 if (i >= 0) {
-                    findViewById.getLayoutParams().height = i + i2;
+                    findViewById.getLayoutParams().height = i + insets.top;
                     View view2 = findViewById;
                     view2.setLayoutParams(view2.getLayoutParams());
                 }
-                View view3 = findViewById;
-                view3.setPadding(view3.getPaddingLeft(), paddingTop + i2, findViewById.getPaddingRight(), findViewById.getPaddingBottom());
+                findViewById.setPadding(paddingLeft + insets.left, paddingTop + insets.top, paddingRight + insets.right, findViewById.getPaddingBottom());
                 return windowInsetsCompat;
             }
         });
@@ -395,7 +404,7 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         FragmentTransaction beginTransaction = getChildFragmentManager().beginTransaction();
         beginTransaction.replace(R.id.mtrl_calendar_frame, this.pickerFragment);
         beginTransaction.commitNow();
-        this.pickerFragment.addOnSelectionChangedListener(new OnSelectionChangedListener<S>() { // from class: com.google.android.material.datepicker.MaterialDatePicker.4
+        this.pickerFragment.addOnSelectionChangedListener(new OnSelectionChangedListener<S>() { // from class: com.google.android.material.datepicker.MaterialDatePicker.2
             @Override // com.google.android.material.datepicker.OnSelectionChangedListener
             public void onSelectionChanged(S s) {
                 MaterialDatePicker materialDatePicker = MaterialDatePicker.this;
@@ -419,14 +428,14 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         this.headerToggleButton.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialDatePicker$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MaterialDatePicker.this.m8720x8a93f18a(view);
+                MaterialDatePicker.this.m8730x8a93f18a(view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$initHeaderToggle$0$com-google-android-material-datepicker-MaterialDatePicker  reason: not valid java name */
-    public /* synthetic */ void m8720x8a93f18a(View view) {
+    public /* synthetic */ void m8730x8a93f18a(View view) {
         this.confirmButton.setEnabled(getDateSelector().isSelectionComplete());
         this.headerToggleButton.toggle();
         this.inputMode = this.inputMode == 1 ? 0 : 1;

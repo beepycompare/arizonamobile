@@ -14,26 +14,26 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
 public final class UStringsKt {
     /* renamed from: toString-LxnNnR4  reason: not valid java name */
-    public static final String m10404toStringLxnNnR4(byte b, int i) {
+    public static final String m10423toStringLxnNnR4(byte b, int i) {
         String num = Integer.toString(b & 255, CharsKt.checkRadix(i));
         Intrinsics.checkNotNullExpressionValue(num, "toString(...)");
         return num;
     }
 
     /* renamed from: toString-olVBNx4  reason: not valid java name */
-    public static final String m10406toStringolVBNx4(short s, int i) {
+    public static final String m10425toStringolVBNx4(short s, int i) {
         String num = Integer.toString(s & UShort.MAX_VALUE, CharsKt.checkRadix(i));
         Intrinsics.checkNotNullExpressionValue(num, "toString(...)");
         return num;
     }
 
     /* renamed from: toString-V7xB4Y4  reason: not valid java name */
-    public static final String m10405toStringV7xB4Y4(int i, int i2) {
+    public static final String m10424toStringV7xB4Y4(int i, int i2) {
         return UnsignedKt.ulongToString(i & 4294967295L, CharsKt.checkRadix(i2));
     }
 
     /* renamed from: toString-JSWoG40  reason: not valid java name */
-    public static final String m10403toStringJSWoG40(long j, int i) {
+    public static final String m10422toStringJSWoG40(long j, int i) {
         return UnsignedKt.ulongToString(j, CharsKt.checkRadix(i));
     }
 
@@ -41,7 +41,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UByte uByteOrNull = toUByteOrNull(str);
         if (uByteOrNull != null) {
-            return uByteOrNull.m9133unboximpl();
+            return uByteOrNull.m9152unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -51,7 +51,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UByte uByteOrNull = toUByteOrNull(str, i);
         if (uByteOrNull != null) {
-            return uByteOrNull.m9133unboximpl();
+            return uByteOrNull.m9152unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -61,7 +61,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UShort uShortOrNull = toUShortOrNull(str);
         if (uShortOrNull != null) {
-            return uShortOrNull.m9401unboximpl();
+            return uShortOrNull.m9420unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -71,7 +71,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UShort uShortOrNull = toUShortOrNull(str, i);
         if (uShortOrNull != null) {
-            return uShortOrNull.m9401unboximpl();
+            return uShortOrNull.m9420unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -81,7 +81,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UInt uIntOrNull = toUIntOrNull(str);
         if (uIntOrNull != null) {
-            return uIntOrNull.m9217unboximpl();
+            return uIntOrNull.m9236unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -91,7 +91,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UInt uIntOrNull = toUIntOrNull(str, i);
         if (uIntOrNull != null) {
-            return uIntOrNull.m9217unboximpl();
+            return uIntOrNull.m9236unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -101,7 +101,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         ULong uLongOrNull = toULongOrNull(str);
         if (uLongOrNull != null) {
-            return uLongOrNull.m9296unboximpl();
+            return uLongOrNull.m9315unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -111,7 +111,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         ULong uLongOrNull = toULongOrNull(str, i);
         if (uLongOrNull != null) {
-            return uLongOrNull.m9296unboximpl();
+            return uLongOrNull.m9315unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -127,12 +127,12 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UInt uIntOrNull = toUIntOrNull(str, i);
         if (uIntOrNull != null) {
-            int m9217unboximpl = uIntOrNull.m9217unboximpl();
-            compare = Integer.compare(m9217unboximpl ^ Integer.MIN_VALUE, UInt.m9165constructorimpl(255) ^ Integer.MIN_VALUE);
+            int m9236unboximpl = uIntOrNull.m9236unboximpl();
+            compare = Integer.compare(m9236unboximpl ^ Integer.MIN_VALUE, UInt.m9184constructorimpl(255) ^ Integer.MIN_VALUE);
             if (compare > 0) {
                 return null;
             }
-            return UByte.m9077boximpl(UByte.m9083constructorimpl((byte) m9217unboximpl));
+            return UByte.m9096boximpl(UByte.m9102constructorimpl((byte) m9236unboximpl));
         }
         return null;
     }
@@ -147,12 +147,12 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UInt uIntOrNull = toUIntOrNull(str, i);
         if (uIntOrNull != null) {
-            int m9217unboximpl = uIntOrNull.m9217unboximpl();
-            compare = Integer.compare(m9217unboximpl ^ Integer.MIN_VALUE, UInt.m9165constructorimpl(65535) ^ Integer.MIN_VALUE);
+            int m9236unboximpl = uIntOrNull.m9236unboximpl();
+            compare = Integer.compare(m9236unboximpl ^ Integer.MIN_VALUE, UInt.m9184constructorimpl(65535) ^ Integer.MIN_VALUE);
             if (compare > 0) {
                 return null;
             }
-            return UShort.m9345boximpl(UShort.m9351constructorimpl((short) m9217unboximpl));
+            return UShort.m9364boximpl(UShort.m9370constructorimpl((short) m9236unboximpl));
         }
         return null;
     }
@@ -183,7 +183,7 @@ public final class UStringsKt {
         } else {
             i2 = 0;
         }
-        int m9165constructorimpl = UInt.m9165constructorimpl(i);
+        int m9184constructorimpl = UInt.m9184constructorimpl(i);
         int i4 = 119304647;
         while (i2 < length) {
             int digitOf = CharsKt.digitOf(str.charAt(i2), i);
@@ -193,23 +193,23 @@ public final class UStringsKt {
             compare = Integer.compare(i3 ^ Integer.MIN_VALUE, i4 ^ Integer.MIN_VALUE);
             if (compare > 0) {
                 if (i4 == 119304647) {
-                    i4 = UByte$$ExternalSyntheticBackport0.m(-1, m9165constructorimpl);
+                    i4 = UByte$$ExternalSyntheticBackport0.m(-1, m9184constructorimpl);
                     compare3 = Integer.compare(i3 ^ Integer.MIN_VALUE, i4 ^ Integer.MIN_VALUE);
                     if (compare3 > 0) {
                     }
                 }
                 return null;
             }
-            int m9165constructorimpl2 = UInt.m9165constructorimpl(i3 * m9165constructorimpl);
-            int m9165constructorimpl3 = UInt.m9165constructorimpl(UInt.m9165constructorimpl(digitOf) + m9165constructorimpl2);
-            compare2 = Integer.compare(m9165constructorimpl3 ^ Integer.MIN_VALUE, m9165constructorimpl2 ^ Integer.MIN_VALUE);
+            int m9184constructorimpl2 = UInt.m9184constructorimpl(i3 * m9184constructorimpl);
+            int m9184constructorimpl3 = UInt.m9184constructorimpl(UInt.m9184constructorimpl(digitOf) + m9184constructorimpl2);
+            compare2 = Integer.compare(m9184constructorimpl3 ^ Integer.MIN_VALUE, m9184constructorimpl2 ^ Integer.MIN_VALUE);
             if (compare2 < 0) {
                 return null;
             }
             i2++;
-            i3 = m9165constructorimpl3;
+            i3 = m9184constructorimpl3;
         }
-        return UInt.m9159boximpl(i3);
+        return UInt.m9178boximpl(i3);
     }
 
     public static final ULong toULongOrNull(String str) {
@@ -236,7 +236,7 @@ public final class UStringsKt {
                 return null;
             }
         }
-        long m9244constructorimpl = ULong.m9244constructorimpl(i);
+        long m9263constructorimpl = ULong.m9263constructorimpl(i);
         long j = 0;
         long j2 = 512409557603043100L;
         while (i2 < length) {
@@ -246,22 +246,22 @@ public final class UStringsKt {
             compare = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
             if (compare > 0) {
                 if (j2 == 512409557603043100L) {
-                    j2 = UByte$$ExternalSyntheticBackport0.m$1(-1L, m9244constructorimpl);
+                    j2 = UByte$$ExternalSyntheticBackport0.m$1(-1L, m9263constructorimpl);
                     compare3 = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
                     if (compare3 > 0) {
                     }
                 }
                 return null;
             }
-            long m9244constructorimpl2 = ULong.m9244constructorimpl(j * m9244constructorimpl);
-            long m9244constructorimpl3 = ULong.m9244constructorimpl(ULong.m9244constructorimpl(UInt.m9165constructorimpl(digitOf) & 4294967295L) + m9244constructorimpl2);
-            compare2 = Long.compare(m9244constructorimpl3 ^ Long.MIN_VALUE, m9244constructorimpl2 ^ Long.MIN_VALUE);
+            long m9263constructorimpl2 = ULong.m9263constructorimpl(j * m9263constructorimpl);
+            long m9263constructorimpl3 = ULong.m9263constructorimpl(ULong.m9263constructorimpl(UInt.m9184constructorimpl(digitOf) & 4294967295L) + m9263constructorimpl2);
+            compare2 = Long.compare(m9263constructorimpl3 ^ Long.MIN_VALUE, m9263constructorimpl2 ^ Long.MIN_VALUE);
             if (compare2 < 0) {
                 return null;
             }
             i2++;
-            j = m9244constructorimpl3;
+            j = m9263constructorimpl3;
         }
-        return ULong.m9238boximpl(j);
+        return ULong.m9257boximpl(j);
     }
 }

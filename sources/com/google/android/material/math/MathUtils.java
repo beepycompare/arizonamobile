@@ -42,4 +42,17 @@ public final class MathUtils {
         }
         return i - (i3 * i2);
     }
+
+    public static boolean areAllElementsEqual(float[] fArr) {
+        if (fArr.length <= 1) {
+            return true;
+        }
+        float f = fArr[0];
+        for (int i = 1; i < fArr.length; i++) {
+            if (fArr[i] != f) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

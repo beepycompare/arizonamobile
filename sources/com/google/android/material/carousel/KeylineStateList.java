@@ -2,13 +2,13 @@ package com.google.android.material.carousel;
 
 import androidx.core.math.MathUtils;
 import com.google.android.material.animation.AnimationUtils;
+import com.google.android.material.carousel.CarouselStrategy;
 import com.google.android.material.carousel.KeylineState;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
 public class KeylineStateList {
     private static final int NO_INDEX = -1;
@@ -33,8 +33,8 @@ public class KeylineStateList {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static KeylineStateList from(Carousel carousel, KeylineState keylineState, float f, float f2, float f3) {
-        return new KeylineStateList(keylineState, getStateStepsStart(carousel, keylineState, f, f2), getStateStepsEnd(carousel, keylineState, f, f3));
+    public static KeylineStateList from(Carousel carousel, KeylineState keylineState, float f, float f2, float f3, CarouselStrategy.StrategyType strategyType) {
+        return new KeylineStateList(keylineState, getStateStepsStart(carousel, keylineState, f, f2, strategyType), getStateStepsEnd(carousel, keylineState, f, f3, strategyType));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -66,7 +66,7 @@ public class KeylineStateList {
         float f4 = this.startShiftRange + f2;
         float f5 = f3 - this.endShiftRange;
         float f6 = getStartState().getFirstFocalKeyline().leftOrTopPaddingShift;
-        float f7 = getEndState().getLastFocalKeyline().rightOrBottomPaddingShift;
+        float f7 = getEndState().getFirstFocalKeyline().rightOrBottomPaddingShift;
         if (this.startShiftRange == f6) {
             f4 += f6;
         }
@@ -150,114 +150,171 @@ public class KeylineStateList {
         return keylineState.getLastFocalKeyline().locOffset + (keylineState.getLastFocalKeyline().maskedItemSize / 2.0f) <= ((float) containerHeight) && keylineState.getLastFocalKeyline() == keylineState.getLastNonAnchorKeyline();
     }
 
-    private static KeylineState shiftKeylineStateForPadding(KeylineState keylineState, float f, float f2, boolean z, float f3) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: com.google.android.material.carousel.KeylineStateList$1  reason: invalid class name */
+    /* loaded from: classes4.dex */
+    public static /* synthetic */ class AnonymousClass1 {
+        static final /* synthetic */ int[] $SwitchMap$com$google$android$material$carousel$CarouselStrategy$StrategyType;
+
+        static {
+            int[] iArr = new int[CarouselStrategy.StrategyType.values().length];
+            $SwitchMap$com$google$android$material$carousel$CarouselStrategy$StrategyType = iArr;
+            try {
+                iArr[CarouselStrategy.StrategyType.CONTAINED.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+        }
+    }
+
+    private static KeylineState shiftKeylineStateForPadding(KeylineState keylineState, float f, int i, boolean z, float f2, CarouselStrategy.StrategyType strategyType) {
+        if (AnonymousClass1.$SwitchMap$com$google$android$material$carousel$CarouselStrategy$StrategyType[strategyType.ordinal()] == 1) {
+            return shiftKeylineStateForPaddingContained(keylineState, f, i, z, f2);
+        }
+        return shiftKeylineStateForPaddingUncontained(keylineState, f, i, z);
+    }
+
+    private static KeylineState shiftKeylineStateForPaddingUncontained(KeylineState keylineState, float f, int i, boolean z) {
+        float min;
         ArrayList arrayList = new ArrayList(keylineState.getKeylines());
-        KeylineState.Builder builder = new KeylineState.Builder(keylineState.getItemSize(), f2);
-        float numberOfNonAnchorKeylines = f / keylineState.getNumberOfNonAnchorKeylines();
-        float f4 = z ? f : 0.0f;
-        int i = 0;
-        while (i < arrayList.size()) {
-            KeylineState.Keyline keyline = (KeylineState.Keyline) arrayList.get(i);
-            if (keyline.isAnchor) {
+        KeylineState.Builder builder = new KeylineState.Builder(keylineState.getItemSize(), i);
+        int size = z ? 0 : arrayList.size() - 1;
+        int i2 = 0;
+        while (i2 < arrayList.size()) {
+            KeylineState.Keyline keyline = (KeylineState.Keyline) arrayList.get(i2);
+            if (keyline.isAnchor && i2 == size) {
                 builder.addKeyline(keyline.locOffset, keyline.mask, keyline.maskedItemSize, false, true, keyline.cutoff);
             } else {
-                boolean z2 = i >= keylineState.getFirstFocalKeylineIndex() && i <= keylineState.getLastFocalKeylineIndex();
-                float f5 = keyline.maskedItemSize - numberOfNonAnchorKeylines;
-                float childMaskPercentage = CarouselStrategy.getChildMaskPercentage(f5, keylineState.getItemSize(), f3);
-                float f6 = (f5 / 2.0f) + f4;
-                float f7 = f6 - keyline.locOffset;
-                builder.addKeyline(f6, childMaskPercentage, f5, z2, false, keyline.cutoff, z ? f7 : 0.0f, z ? 0.0f : f7);
-                f4 += f5;
+                float f2 = keyline.locOffset;
+                float f3 = z ? f2 + f : f2 - f;
+                float f4 = z ? f : 0.0f;
+                float f5 = z ? 0.0f : f;
+                boolean z2 = i2 >= keylineState.getFirstFocalKeylineIndex() && i2 <= keylineState.getLastFocalKeylineIndex();
+                float f6 = f3;
+                float f7 = keyline.mask;
+                float f8 = keyline.maskedItemSize;
+                boolean z3 = keyline.isAnchor;
+                if (z) {
+                    min = Math.max(0.0f, ((keyline.maskedItemSize / 2.0f) + f6) - i);
+                } else {
+                    min = Math.min(0.0f, f6 - (keyline.maskedItemSize / 2.0f));
+                }
+                builder.addKeyline(f6, f7, f8, z2, z3, Math.abs(min), f4, f5);
             }
-            i++;
+            i2++;
         }
         return builder.build();
     }
 
-    private static List<KeylineState> getStateStepsStart(Carousel carousel, KeylineState keylineState, float f, float f2) {
+    private static KeylineState shiftKeylineStateForPaddingContained(KeylineState keylineState, float f, int i, boolean z, float f2) {
+        ArrayList arrayList = new ArrayList(keylineState.getKeylines());
+        KeylineState.Builder builder = new KeylineState.Builder(keylineState.getItemSize(), i);
+        float numberOfNonAnchorKeylines = f / keylineState.getNumberOfNonAnchorKeylines();
+        float f3 = z ? f : 0.0f;
+        int i2 = 0;
+        while (i2 < arrayList.size()) {
+            KeylineState.Keyline keyline = (KeylineState.Keyline) arrayList.get(i2);
+            if (keyline.isAnchor) {
+                builder.addKeyline(keyline.locOffset, keyline.mask, keyline.maskedItemSize, false, true, keyline.cutoff);
+            } else {
+                boolean z2 = i2 >= keylineState.getFirstFocalKeylineIndex() && i2 <= keylineState.getLastFocalKeylineIndex();
+                float f4 = keyline.maskedItemSize - numberOfNonAnchorKeylines;
+                float childMaskPercentage = CarouselStrategy.getChildMaskPercentage(f4, keylineState.getItemSize(), f2);
+                float f5 = (f4 / 2.0f) + f3;
+                float abs = Math.abs(f5 - keyline.locOffset);
+                builder.addKeyline(f5, childMaskPercentage, f4, z2, false, keyline.cutoff, z ? abs : 0.0f, z ? 0.0f : abs);
+                f3 += f4;
+            }
+            i2++;
+        }
+        return builder.build();
+    }
+
+    private static List<KeylineState> getStateStepsStart(Carousel carousel, KeylineState keylineState, float f, float f2, CarouselStrategy.StrategyType strategyType) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(keylineState);
         int findFirstNonAnchorKeylineIndex = findFirstNonAnchorKeylineIndex(keylineState);
-        float containerWidth = carousel.isHorizontal() ? carousel.getContainerWidth() : carousel.getContainerHeight();
+        int containerWidth = carousel.isHorizontal() ? carousel.getContainerWidth() : carousel.getContainerHeight();
         if (!isFirstFocalItemAtLeftOfContainer(keylineState) && findFirstNonAnchorKeylineIndex != -1) {
             int firstFocalKeylineIndex = keylineState.getFirstFocalKeylineIndex() - findFirstNonAnchorKeylineIndex;
             float f3 = keylineState.getFirstKeyline().locOffset - (keylineState.getFirstKeyline().maskedItemSize / 2.0f);
             if (firstFocalKeylineIndex <= 0 && keylineState.getFirstFocalKeyline().cutoff > 0.0f) {
-                arrayList.add(shiftKeylinesAndCreateKeylineState(keylineState, f3 + keylineState.getFirstFocalKeyline().cutoff, containerWidth));
+                arrayList.add(shiftKeylinesAndCreateKeylineState(keylineState, f3 + keylineState.getFirstFocalKeyline().cutoff + f2, containerWidth));
                 return arrayList;
             }
-            int i = 0;
             float f4 = 0.0f;
-            while (i < firstFocalKeylineIndex) {
+            for (int i = 0; i < firstFocalKeylineIndex; i++) {
                 KeylineState keylineState2 = (KeylineState) arrayList.get(arrayList.size() - 1);
                 int i2 = findFirstNonAnchorKeylineIndex + i;
                 int size = keylineState.getKeylines().size() - 1;
-                float f5 = f4 + keylineState.getKeylines().get(i2).cutoff;
+                f4 += keylineState.getKeylines().get(i2).cutoff;
                 int i3 = i2 - 1;
                 if (i3 >= 0) {
                     size = findFirstIndexAfterLastFocalKeylineWithMask(keylineState2, keylineState.getKeylines().get(i3).mask) - 1;
                 }
-                KeylineState moveKeylineAndCreateKeylineState = moveKeylineAndCreateKeylineState(keylineState2, findFirstNonAnchorKeylineIndex, size, f3 + f5, (keylineState.getFirstFocalKeylineIndex() - i) - 1, (keylineState.getLastFocalKeylineIndex() - i) - 1, containerWidth);
+                int i4 = containerWidth;
+                KeylineState moveKeylineAndCreateKeylineState = moveKeylineAndCreateKeylineState(keylineState2, findFirstNonAnchorKeylineIndex, size, f3 + f4, (keylineState.getFirstFocalKeylineIndex() - i) - 1, (keylineState.getLastFocalKeylineIndex() - i) - 1, i4);
+                containerWidth = i4;
                 if (i == firstFocalKeylineIndex - 1 && f2 > 0.0f) {
-                    moveKeylineAndCreateKeylineState = shiftKeylineStateForPadding(moveKeylineAndCreateKeylineState, f2, containerWidth, true, f);
+                    moveKeylineAndCreateKeylineState = shiftKeylineStateForPadding(moveKeylineAndCreateKeylineState, f2, containerWidth, true, f, strategyType);
                 }
                 arrayList.add(moveKeylineAndCreateKeylineState);
-                i++;
-                f4 = f5;
             }
         } else if (f2 > 0.0f) {
-            arrayList.add(shiftKeylineStateForPadding(keylineState, f2, containerWidth, true, f));
+            arrayList.add(shiftKeylineStateForPadding(keylineState, f2, containerWidth, true, f, strategyType));
         }
         return arrayList;
     }
 
-    private static List<KeylineState> getStateStepsEnd(Carousel carousel, KeylineState keylineState, float f, float f2) {
+    private static List<KeylineState> getStateStepsEnd(Carousel carousel, KeylineState keylineState, float f, float f2, CarouselStrategy.StrategyType strategyType) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(keylineState);
         int findLastNonAnchorKeylineIndex = findLastNonAnchorKeylineIndex(keylineState);
-        float containerWidth = carousel.isHorizontal() ? carousel.getContainerWidth() : carousel.getContainerHeight();
+        int containerWidth = carousel.isHorizontal() ? carousel.getContainerWidth() : carousel.getContainerHeight();
         if (!isLastFocalItemVisibleAtRightOfContainer(carousel, keylineState) && findLastNonAnchorKeylineIndex != -1) {
             int lastFocalKeylineIndex = findLastNonAnchorKeylineIndex - keylineState.getLastFocalKeylineIndex();
             float f3 = keylineState.getFirstKeyline().locOffset - (keylineState.getFirstKeyline().maskedItemSize / 2.0f);
             if (lastFocalKeylineIndex <= 0 && keylineState.getLastFocalKeyline().cutoff > 0.0f) {
-                arrayList.add(shiftKeylinesAndCreateKeylineState(keylineState, f3 - keylineState.getLastFocalKeyline().cutoff, containerWidth));
+                arrayList.add(shiftKeylinesAndCreateKeylineState(keylineState, (f3 - keylineState.getLastFocalKeyline().cutoff) - f2, containerWidth));
                 return arrayList;
             }
-            int i = 0;
             float f4 = 0.0f;
+            int i = 0;
             while (i < lastFocalKeylineIndex) {
                 KeylineState keylineState2 = (KeylineState) arrayList.get(arrayList.size() - 1);
                 int i2 = findLastNonAnchorKeylineIndex - i;
                 float f5 = f4 + keylineState.getKeylines().get(i2).cutoff;
                 int i3 = i2 + 1;
-                KeylineState moveKeylineAndCreateKeylineState = moveKeylineAndCreateKeylineState(keylineState2, findLastNonAnchorKeylineIndex, i3 < keylineState.getKeylines().size() ? findLastIndexBeforeFirstFocalKeylineWithMask(keylineState2, keylineState.getKeylines().get(i3).mask) + 1 : 0, f3 - f5, keylineState.getFirstFocalKeylineIndex() + i + 1, keylineState.getLastFocalKeylineIndex() + i + 1, containerWidth);
+                int i4 = containerWidth;
+                KeylineState moveKeylineAndCreateKeylineState = moveKeylineAndCreateKeylineState(keylineState2, findLastNonAnchorKeylineIndex, i3 < keylineState.getKeylines().size() ? findLastIndexBeforeFirstFocalKeylineWithMask(keylineState2, keylineState.getKeylines().get(i3).mask) + 1 : 0, f3 - f5, keylineState.getFirstFocalKeylineIndex() + i + 1, keylineState.getLastFocalKeylineIndex() + i + 1, i4);
                 if (i == lastFocalKeylineIndex - 1 && f2 > 0.0f) {
-                    moveKeylineAndCreateKeylineState = shiftKeylineStateForPadding(moveKeylineAndCreateKeylineState, f2, containerWidth, false, f);
+                    moveKeylineAndCreateKeylineState = shiftKeylineStateForPadding(moveKeylineAndCreateKeylineState, f2, i4, false, f, strategyType);
+                    i4 = i4;
                 }
                 arrayList.add(moveKeylineAndCreateKeylineState);
                 i++;
+                containerWidth = i4;
                 f4 = f5;
             }
         } else if (f2 > 0.0f) {
-            arrayList.add(shiftKeylineStateForPadding(keylineState, f2, containerWidth, false, f));
+            arrayList.add(shiftKeylineStateForPadding(keylineState, f2, containerWidth, false, f, strategyType));
         }
         return arrayList;
     }
 
-    private static KeylineState shiftKeylinesAndCreateKeylineState(KeylineState keylineState, float f, float f2) {
-        return moveKeylineAndCreateKeylineState(keylineState, 0, 0, f, keylineState.getFirstFocalKeylineIndex(), keylineState.getLastFocalKeylineIndex(), f2);
+    private static KeylineState shiftKeylinesAndCreateKeylineState(KeylineState keylineState, float f, int i) {
+        return moveKeylineAndCreateKeylineState(keylineState, 0, 0, f, keylineState.getFirstFocalKeylineIndex(), keylineState.getLastFocalKeylineIndex(), i);
     }
 
-    private static KeylineState moveKeylineAndCreateKeylineState(KeylineState keylineState, int i, int i2, float f, int i3, int i4, float f2) {
+    private static KeylineState moveKeylineAndCreateKeylineState(KeylineState keylineState, int i, int i2, float f, int i3, int i4, int i5) {
         ArrayList arrayList = new ArrayList(keylineState.getKeylines());
         arrayList.add(i2, (KeylineState.Keyline) arrayList.remove(i));
-        KeylineState.Builder builder = new KeylineState.Builder(keylineState.getItemSize(), f2);
-        int i5 = 0;
-        while (i5 < arrayList.size()) {
-            KeylineState.Keyline keyline = (KeylineState.Keyline) arrayList.get(i5);
-            builder.addKeyline(f + (keyline.maskedItemSize / 2.0f), keyline.mask, keyline.maskedItemSize, i5 >= i3 && i5 <= i4, keyline.isAnchor, keyline.cutoff);
+        KeylineState.Builder builder = new KeylineState.Builder(keylineState.getItemSize(), i5);
+        int i6 = 0;
+        while (i6 < arrayList.size()) {
+            KeylineState.Keyline keyline = (KeylineState.Keyline) arrayList.get(i6);
+            builder.addKeyline(f + (keyline.maskedItemSize / 2.0f), keyline.mask, keyline.maskedItemSize, i6 >= i3 && i6 <= i4, keyline.isAnchor, keyline.cutoff);
             f += keyline.maskedItemSize;
-            i5++;
+            i6++;
         }
         return builder.build();
     }

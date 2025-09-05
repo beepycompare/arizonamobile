@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class style {
-        public static int Theme_PlayCore_Transparent = 0x7f1402de;
+        public static int Theme_PlayCore_Transparent = 0x7f140322;
 
         private style() {
         }

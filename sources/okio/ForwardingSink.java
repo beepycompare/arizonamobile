@@ -48,7 +48,7 @@ public abstract class ForwardingSink implements Sink {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "delegate", imports = {}))
     /* renamed from: -deprecated_delegate  reason: not valid java name */
-    public final Sink m10996deprecated_delegate() {
+    public final Sink m11015deprecated_delegate() {
         return this.delegate;
     }
 }

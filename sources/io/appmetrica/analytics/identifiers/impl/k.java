@@ -5,5 +5,5 @@ import android.content.Intent;
 public abstract class k {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Intent f328a = new Intent("com.uodis.opendevice.OPENIDS_SERVICE").setPackage("com.huawei.hwid");
+    public static final Intent f329a = new Intent("com.uodis.opendevice.OPENIDS_SERVICE").setPackage("com.huawei.hwid");
 }

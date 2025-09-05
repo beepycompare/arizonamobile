@@ -60,7 +60,7 @@ public final class LinearIndeterminateContiguousAnimatorDelegate extends Indeter
         if (this.animator == null) {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, ANIMATION_FRACTION, 0.0f, 1.0f);
             this.animator = ofFloat;
-            ofFloat.setDuration(333L);
+            ofFloat.setDuration(this.baseSpec.indeterminateAnimatorDurationScale * 333.0f);
             this.animator.setInterpolator(null);
             this.animator.setRepeatCount(-1);
             this.animator.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.progressindicator.LinearIndeterminateContiguousAnimatorDelegate.1
@@ -75,6 +75,11 @@ public final class LinearIndeterminateContiguousAnimatorDelegate extends Indeter
         }
     }
 
+    private void updateAnimatorsDuration() {
+        maybeInitializeAnimators();
+        this.animator.setDuration(this.baseSpec.indeterminateAnimatorDurationScale * 333.0f);
+    }
+
     @Override // com.google.android.material.progressindicator.IndeterminateAnimatorDelegate
     public void cancelAnimatorImmediately() {
         ObjectAnimator objectAnimator = this.animator;
@@ -85,6 +90,7 @@ public final class LinearIndeterminateContiguousAnimatorDelegate extends Indeter
 
     @Override // com.google.android.material.progressindicator.IndeterminateAnimatorDelegate
     public void invalidateSpecValues() {
+        updateAnimatorsDuration();
         resetPropertiesForNewStart();
     }
 

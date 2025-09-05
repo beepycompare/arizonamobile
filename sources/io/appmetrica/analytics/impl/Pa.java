@@ -1,22 +1,37 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 /* loaded from: classes4.dex */
-public final class Pa extends O2 {
-    public Pa(int i) {
-        super(i);
+public final class Pa {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final HashMap f619a;
+    public final boolean b;
+
+    public Pa() {
+        this(false);
     }
 
-    @Override // io.appmetrica.analytics.impl.O2, io.appmetrica.analytics.impl.Qa
-    public final On a(String str) {
-        int i = 0;
-        if (str != null) {
-            int length = str.length();
-            int i2 = this.f584a;
-            if (length > i2) {
-                String substring = str.substring(0, i2);
-                i = str.getBytes().length - substring.getBytes().length;
-                str = substring;
-            }
+    public final void a(Object obj, Object obj2) {
+        ArrayList arrayList;
+        Collection collection = (Collection) this.f619a.get(obj);
+        if (collection == null) {
+            arrayList = new ArrayList();
+        } else {
+            arrayList = new ArrayList(collection);
         }
-        return new On(str, new C0670w3(i));
+        arrayList.add(obj2);
+        Collection collection2 = (Collection) this.f619a.put(obj, arrayList);
+    }
+
+    public final String toString() {
+        return this.f619a.toString();
+    }
+
+    public Pa(boolean z) {
+        this.f619a = new HashMap();
+        this.b = z;
     }
 }

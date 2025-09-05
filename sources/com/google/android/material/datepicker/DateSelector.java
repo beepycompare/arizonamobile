@@ -6,6 +6,7 @@ import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.accessibility.AccessibilityManager;
 import android.widget.EditText;
 import androidx.core.util.Pair;
 import com.google.android.material.internal.ViewUtils;
@@ -68,5 +69,10 @@ public interface DateSelector<S> extends Parcelable {
             }
         }
         ViewUtils.hideKeyboard(view, false);
+    }
+
+    static boolean isTouchExplorationEnabled(Context context) {
+        AccessibilityManager accessibilityManager = (AccessibilityManager) context.getSystemService("accessibility");
+        return accessibilityManager != null && accessibilityManager.isTouchExplorationEnabled();
     }
 }

@@ -3,11 +3,10 @@ package com.google.android.material.appbar;
 import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.View;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.math.MathUtils;
-import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -56,7 +55,7 @@ public abstract class HeaderScrollingViewBehavior extends ViewOffsetBehavior<Vie
         if ((i5 == -1 || i5 == -2) && (findFirstDependency = findFirstDependency(coordinatorLayout.getDependencies(view))) != null) {
             int size = View.MeasureSpec.getSize(i3);
             if (size > 0) {
-                if (ViewCompat.getFitsSystemWindows(findFirstDependency) && (lastWindowInsets = coordinatorLayout.getLastWindowInsets()) != null) {
+                if (findFirstDependency.getFitsSystemWindows() && (lastWindowInsets = coordinatorLayout.getLastWindowInsets()) != null) {
                     size += lastWindowInsets.getSystemWindowInsetTop() + lastWindowInsets.getSystemWindowInsetBottom();
                 }
             } else {
@@ -85,12 +84,12 @@ public abstract class HeaderScrollingViewBehavior extends ViewOffsetBehavior<Vie
             Rect rect = this.tempRect1;
             rect.set(coordinatorLayout.getPaddingLeft() + layoutParams.leftMargin, findFirstDependency.getBottom() + layoutParams.topMargin, (coordinatorLayout.getWidth() - coordinatorLayout.getPaddingRight()) - layoutParams.rightMargin, ((coordinatorLayout.getHeight() + findFirstDependency.getBottom()) - coordinatorLayout.getPaddingBottom()) - layoutParams.bottomMargin);
             WindowInsetsCompat lastWindowInsets = coordinatorLayout.getLastWindowInsets();
-            if (lastWindowInsets != null && ViewCompat.getFitsSystemWindows(coordinatorLayout) && !ViewCompat.getFitsSystemWindows(view)) {
+            if (lastWindowInsets != null && coordinatorLayout.getFitsSystemWindows() && !view.getFitsSystemWindows()) {
                 rect.left += lastWindowInsets.getSystemWindowInsetLeft();
                 rect.right -= lastWindowInsets.getSystemWindowInsetRight();
             }
             Rect rect2 = this.tempRect2;
-            GravityCompat.apply(resolveGravity(layoutParams.gravity), view.getMeasuredWidth(), view.getMeasuredHeight(), rect, rect2, i);
+            Gravity.apply(resolveGravity(layoutParams.gravity), view.getMeasuredWidth(), view.getMeasuredHeight(), rect, rect2, i);
             int overlapPixelsForOffset = getOverlapPixelsForOffset(findFirstDependency);
             view.layout(rect2.left, rect2.top - overlapPixelsForOffset, rect2.right, rect2.bottom - overlapPixelsForOffset);
             this.verticalLayoutGap = rect2.top - findFirstDependency.getBottom();

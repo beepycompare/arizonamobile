@@ -1,5 +1,5 @@
 package io.reactivex;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface ObservableTransformer<Upstream, Downstream> {
     ObservableSource<Downstream> apply(Observable<Upstream> observable);
 }

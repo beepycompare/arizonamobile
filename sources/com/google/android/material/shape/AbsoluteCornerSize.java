@@ -29,4 +29,8 @@ public final class AbsoluteCornerSize implements CornerSize {
     public int hashCode() {
         return Arrays.hashCode(new Object[]{Float.valueOf(this.size)});
     }
+
+    public String toString() {
+        return getCornerSize() + "px";
+    }
 }

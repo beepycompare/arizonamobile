@@ -1,7 +1,7 @@
 package io.reactivex;
 
 import io.reactivex.disposables.Disposable;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface CompletableObserver {
     void onComplete();
 

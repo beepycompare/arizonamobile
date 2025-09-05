@@ -1,24 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
 /* loaded from: classes4.dex */
 public final class X0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f716a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ C0494p1 c;
+    public final /* synthetic */ DeferredDeeplinkParametersListener f729a;
+    public final /* synthetic */ C0547r1 b;
 
-    public X0(C0494p1 c0494p1, String str, String str2) {
-        this.c = c0494p1;
-        this.f716a = str;
-        this.b = str2;
+    public X0(C0547r1 c0547r1, DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
+        this.b = c0547r1;
+        this.f729a = deferredDeeplinkParametersListener;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0617u0 c0617u0 = this.c.f1005a;
-        String str = this.f716a;
-        String str2 = this.b;
-        c0617u0.getClass();
-        C0592t0.c().a(str, str2);
+        this.b.f1054a.getClass();
+        C0646v0 c0646v0 = C0646v0.e;
+        c0646v0.f().a(this.f729a);
     }
 }

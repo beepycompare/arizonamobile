@@ -1,34 +1,50 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
+import java.util.HashSet;
+import java.util.Iterator;
 /* loaded from: classes4.dex */
-public class Hg {
+public final class Hg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0378kb f478a;
-    public final Cg b;
-    public final InterfaceC0327ib c;
+    public final HashSet f475a = new HashSet();
+    public Jg b;
+    public boolean c;
+    public final Co d;
+    public final Context e;
 
-    public Hg(InterfaceC0378kb interfaceC0378kb, Cg cg, InterfaceC0327ib interfaceC0327ib) {
-        this.f478a = interfaceC0378kb;
-        this.b = cg;
-        this.c = interfaceC0327ib;
+    public Hg(Context context, Co co) {
+        this.e = context;
+        this.d = co;
+        this.b = co.b();
+        this.c = co.c();
     }
 
-    public final void a(Fg fg) {
-        if (this.f478a.a(fg)) {
-            this.b.a(fg);
-            this.c.a();
+    public final void a() {
+        if (this.c) {
+            return;
+        }
+        Context context = this.e;
+        InterfaceC0482ob a2 = Rg.a(context, Na.F.d.a());
+        Og og = (Og) new Ag(this, new Rg(a2), new Za(context), new Sg(context)).f.getValue();
+        try {
+            a2.a(og);
+        } catch (Throwable th) {
+            og.a(th);
         }
     }
 
-    public final Cg b() {
-        return this.b;
+    public final synchronized void a(Lg lg) {
+        this.f475a.add(lg);
+        if (this.c) {
+            lg.a(this.b);
+        }
     }
 
-    public final InterfaceC0327ib c() {
-        return this.c;
-    }
-
-    public final InterfaceC0378kb a() {
-        return this.f478a;
+    public final synchronized void a(Jg jg) {
+        Iterator it = this.f475a.iterator();
+        while (it.hasNext()) {
+            ((Lg) it.next()).a(jg);
+        }
     }
 }

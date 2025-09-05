@@ -4,8 +4,8 @@ import android.content.Context;
 import android.text.Editable;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
 import android.widget.EditText;
-import androidx.core.view.accessibility.AccessibilityManagerCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.internal.CheckableImageButton;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -50,7 +50,7 @@ public abstract class EndIconDelegate {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public AccessibilityManagerCompat.TouchExplorationStateChangeListener getTouchExplorationStateChangeListener() {
+    public AccessibilityManager.TouchExplorationStateChangeListener getTouchExplorationStateChangeListener() {
         return null;
     }
 

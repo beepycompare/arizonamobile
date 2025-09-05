@@ -464,14 +464,14 @@ public final class MediaPeriodQueue {
         this.analyticsCollectorHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.MediaPeriodQueue$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MediaPeriodQueue.this.m7892x6b40a91a(builder, mediaPeriodId);
+                MediaPeriodQueue.this.m7894x6b40a91a(builder, mediaPeriodId);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$notifyQueueUpdate$0$androidx-media3-exoplayer-MediaPeriodQueue  reason: not valid java name */
-    public /* synthetic */ void m7892x6b40a91a(ImmutableList.Builder builder, MediaSource.MediaPeriodId mediaPeriodId) {
+    public /* synthetic */ void m7894x6b40a91a(ImmutableList.Builder builder, MediaSource.MediaPeriodId mediaPeriodId) {
         this.analyticsCollector.updateMediaPeriodQueueInfo(builder.build(), mediaPeriodId);
     }
 

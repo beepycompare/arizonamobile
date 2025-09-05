@@ -11,9 +11,8 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.widget.CompoundButtonCompat;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public class AppCompatCompoundButtonHelper {
+class AppCompatCompoundButtonHelper {
     private ColorStateList mButtonTintList = null;
     private PorterDuff.Mode mButtonTintMode = null;
     private boolean mHasButtonTint = false;

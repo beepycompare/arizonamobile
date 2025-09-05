@@ -40,4 +40,8 @@ public final class RelativeCornerSize implements CornerSize {
     public int hashCode() {
         return Arrays.hashCode(new Object[]{Float.valueOf(this.percent)});
     }
+
+    public String toString() {
+        return ((int) (getRelativePercent() * 100.0f)) + "%";
+    }
 }

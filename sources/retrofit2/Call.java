@@ -8,7 +8,7 @@ public interface Call<T> extends Cloneable {
     void cancel();
 
     /* renamed from: clone */
-    Call<T> mo8916clone();
+    Call<T> mo8935clone();
 
     void enqueue(Callback<T> callback);
 

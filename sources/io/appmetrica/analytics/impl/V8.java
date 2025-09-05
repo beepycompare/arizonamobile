@@ -1,11 +1,8 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateSerializer;
-import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
 /* loaded from: classes4.dex */
-public final class V8 extends W8 implements ProtobufStateSerializer {
-    public V8(ProtobufStateSerializer<MessageNano> protobufStateSerializer, AESEncrypter aESEncrypter) {
-        super(protobufStateSerializer, aESEncrypter);
+public final class V8 implements zo {
+    @Override // io.appmetrica.analytics.impl.zo
+    public final byte[] a(C0402l9 c0402l9, Gh gh) {
+        return new byte[0];
     }
 }

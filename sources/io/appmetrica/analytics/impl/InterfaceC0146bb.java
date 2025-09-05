@@ -1,15 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
+import android.os.Handler;
+import io.appmetrica.analytics.AppMetricaConfig;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* renamed from: io.appmetrica.analytics.impl.bb  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
 public interface InterfaceC0146bb {
-    void a(J4 j4);
+    C4 a();
 
-    /* synthetic */ C0398l5 b();
+    void a(AppMetricaConfig appMetricaConfig, InterfaceC0607tb interfaceC0607tb);
 
-    CounterConfigurationReporterType c();
+    Handler b();
 
-    /* synthetic */ Context getContext();
+    C0111a2 c();
+
+    Kb d();
+
+    ICommonExecutor getDefaultExecutor();
 }

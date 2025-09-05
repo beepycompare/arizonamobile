@@ -5,7 +5,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewParent;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.animation.MotionSpec;
 import com.google.android.material.animation.Positioning;
@@ -60,11 +59,11 @@ public class FabTransformationSheetBehavior extends FabTransformationBehavior {
                     if (!z) {
                         Map<View, Integer> map = this.importantForAccessibilityMap;
                         if (map != null && map.containsKey(childAt)) {
-                            ViewCompat.setImportantForAccessibility(childAt, this.importantForAccessibilityMap.get(childAt).intValue());
+                            childAt.setImportantForAccessibility(this.importantForAccessibilityMap.get(childAt).intValue());
                         }
                     } else {
                         this.importantForAccessibilityMap.put(childAt, Integer.valueOf(childAt.getImportantForAccessibility()));
-                        ViewCompat.setImportantForAccessibility(childAt, 4);
+                        childAt.setImportantForAccessibility(4);
                     }
                 }
             }

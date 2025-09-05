@@ -1,5 +1,5 @@
 package io.reactivex;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface ObservableConverter<T, R> {
     R apply(Observable<T> observable);
 }

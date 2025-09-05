@@ -8,7 +8,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class NetworkClient {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Integer f1234a;
+    private final Integer f1239a;
     private final Integer b;
     private final SSLSocketFactory c;
     private final Boolean d;
@@ -19,7 +19,7 @@ public class NetworkClient {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private Integer f1235a;
+        private Integer f1240a;
         private Integer b;
         private SSLSocketFactory c;
         private Boolean d;
@@ -27,11 +27,11 @@ public class NetworkClient {
         private Integer f;
 
         public NetworkClient build() {
-            return new NetworkClient(this.f1235a, this.b, this.c, this.d, this.e, this.f, 0);
+            return new NetworkClient(this.f1240a, this.b, this.c, this.d, this.e, this.f, 0);
         }
 
         public Builder withConnectTimeout(int i) {
-            this.f1235a = Integer.valueOf(i);
+            this.f1240a = Integer.valueOf(i);
             return this;
         }
 
@@ -66,7 +66,7 @@ public class NetworkClient {
     }
 
     public Integer getConnectTimeout() {
-        return this.f1234a;
+        return this.f1239a;
     }
 
     public Boolean getInstanceFollowRedirects() {
@@ -94,11 +94,11 @@ public class NetworkClient {
     }
 
     public String toString() {
-        return "NetworkClient{connectTimeout=" + this.f1234a + ", readTimeout=" + this.b + ", sslSocketFactory=" + this.c + ", useCaches=" + this.d + ", instanceFollowRedirects=" + this.e + ", maxResponseSize=" + this.f + AbstractJsonLexerKt.END_OBJ;
+        return "NetworkClient{connectTimeout=" + this.f1239a + ", readTimeout=" + this.b + ", sslSocketFactory=" + this.c + ", useCaches=" + this.d + ", instanceFollowRedirects=" + this.e + ", maxResponseSize=" + this.f + AbstractJsonLexerKt.END_OBJ;
     }
 
     private NetworkClient(Integer num, Integer num2, SSLSocketFactory sSLSocketFactory, Boolean bool, Boolean bool2, Integer num3) {
-        this.f1234a = num;
+        this.f1239a = num;
         this.b = num2;
         this.c = sSLSocketFactory;
         this.d = bool;

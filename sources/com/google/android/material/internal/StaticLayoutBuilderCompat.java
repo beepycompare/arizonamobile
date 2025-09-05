@@ -8,14 +8,10 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import java.lang.reflect.Constructor;
 /* loaded from: classes4.dex */
-final class StaticLayoutBuilderCompat {
+public final class StaticLayoutBuilderCompat {
     static final int DEFAULT_HYPHENATION_FREQUENCY = 1;
     static final float DEFAULT_LINE_SPACING_ADD = 0.0f;
     static final float DEFAULT_LINE_SPACING_MULTIPLIER = 1.0f;
-    private static final String TEXT_DIRS_CLASS = "android.text.TextDirectionHeuristics";
-    private static final String TEXT_DIR_CLASS = "android.text.TextDirectionHeuristic";
-    private static final String TEXT_DIR_CLASS_LTR = "LTR";
-    private static final String TEXT_DIR_CLASS_RTL = "RTL";
     private static Constructor<StaticLayout> constructor;
     private static boolean initialized;
     private static Object textDirection;
@@ -154,7 +150,7 @@ final class StaticLayoutBuilderCompat {
     }
 
     /* loaded from: classes4.dex */
-    static class StaticLayoutBuilderCompatException extends Exception {
+    public static class StaticLayoutBuilderCompatException extends Exception {
         StaticLayoutBuilderCompatException(Throwable th) {
             super("Error thrown initializing StaticLayout " + th.getMessage(), th);
         }

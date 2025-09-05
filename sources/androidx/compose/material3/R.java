@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class integer {
-        public static int m3c_window_layout_in_display_cutout_mode = 0x7f0b002b;
+        public static int m3c_window_layout_in_display_cutout_mode = 0x7f0b002e;
 
         private integer() {
         }
@@ -76,8 +76,8 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class style {
-        public static int EdgeToEdgeFloatingDialogTheme = 0x7f140135;
-        public static int EdgeToEdgeFloatingDialogWindowTheme = 0x7f140136;
+        public static int EdgeToEdgeFloatingDialogTheme = 0x7f140138;
+        public static int EdgeToEdgeFloatingDialogWindowTheme = 0x7f140139;
 
         private style() {
         }

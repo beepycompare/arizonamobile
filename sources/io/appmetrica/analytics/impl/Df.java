@@ -1,141 +1,77 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
+import android.text.TextUtils;
+import com.facebook.internal.NativeProtocol;
+import io.appmetrica.analytics.coreutils.internal.parsing.ParseUtils;
+import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class Df extends MessageNano {
-    public static final int c = 0;
-    public static final int d = 1;
-    public static final int e = 2;
-    public static final int f = 3;
-    public static volatile Df[] g;
+public final class Df implements InterfaceC0541qj {
 
     /* renamed from: a  reason: collision with root package name */
-    public Bf f397a;
-    public Cf[] b;
+    public final Context f406a;
+    public final String b = NativeProtocol.CONTENT_SCHEME + a() + "/preload_info";
+    public final String c = "tracking_id";
+    public final String d = "additional_parameters";
 
-    public Df() {
-        a();
+    public Df(Context context) {
+        this.f406a = context;
     }
 
-    public static Df[] b() {
-        if (g == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (g == null) {
-                    g = new Df[0];
+    public final String a() {
+        return "com.yandex.preinstallsatellite.appmetrica.provider";
+    }
+
+    @Override // kotlin.jvm.functions.Function0
+    /* renamed from: b */
+    public final Kf invoke() {
+        Cursor cursor;
+        JSONObject jSONObject;
+        if (!PackageManagerUtils.hasContentProvider(this.f406a, "com.yandex.preinstallsatellite.appmetrica.provider")) {
+            Bj.a("Satellite content provider with preload info was not found.", new Object[0]);
+            return null;
+        }
+        try {
+            cursor = this.f406a.getContentResolver().query(Uri.parse(this.b), null, null, null, null);
+            try {
+                if (cursor != null) {
+                    if (cursor.moveToFirst()) {
+                        String string = cursor.getString(cursor.getColumnIndexOrThrow(this.c));
+                        String string2 = cursor.getString(cursor.getColumnIndexOrThrow(this.d));
+                        if (string2 != null && string2.length() != 0) {
+                            jSONObject = new JSONObject(string2);
+                            JSONObject jSONObject2 = jSONObject;
+                            if (!TextUtils.isEmpty(string) && ParseUtils.parseLong(string) == null) {
+                                Bj.a("Tracking id from Satellite is not a number.", new Object[0]);
+                            }
+                            Bj.a("Preload info from Satellite: {tracking id = %s, additional parameters = %s}", string, jSONObject2);
+                            Kf kf = new Kf(string, jSONObject2, !TextUtils.isEmpty(string), false, EnumC0530q8.d);
+                            ro.a(cursor);
+                            return kf;
+                        }
+                        jSONObject = new JSONObject();
+                        JSONObject jSONObject22 = jSONObject;
+                        if (!TextUtils.isEmpty(string)) {
+                            Bj.a("Tracking id from Satellite is not a number.", new Object[0]);
+                        }
+                        Bj.a("Preload info from Satellite: {tracking id = %s, additional parameters = %s}", string, jSONObject22);
+                        Kf kf2 = new Kf(string, jSONObject22, !TextUtils.isEmpty(string), false, EnumC0530q8.d);
+                        ro.a(cursor);
+                        return kf2;
+                    }
+                    Bj.a("No Preload Info data in Satellite content provider", new Object[0]);
+                } else {
+                    Bj.a("No Satellite content provider found", new Object[0]);
                 }
+            } catch (Throwable unused) {
             }
+        } catch (Throwable unused2) {
+            cursor = null;
         }
-        return g;
-    }
-
-    public final Df a() {
-        this.f397a = null;
-        this.b = Cf.b();
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        Bf bf = this.f397a;
-        if (bf != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, bf);
-        }
-        Cf[] cfArr = this.b;
-        if (cfArr != null && cfArr.length > 0) {
-            int i = 0;
-            while (true) {
-                Cf[] cfArr2 = this.b;
-                if (i >= cfArr2.length) {
-                    break;
-                }
-                Cf cf = cfArr2[i];
-                if (cf != null) {
-                    computeSerializedSize = CodedOutputByteBufferNano.computeMessageSize(2, cf) + computeSerializedSize;
-                }
-                i++;
-            }
-        }
-        return computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        Bf bf = this.f397a;
-        if (bf != null) {
-            codedOutputByteBufferNano.writeMessage(1, bf);
-        }
-        Cf[] cfArr = this.b;
-        if (cfArr != null && cfArr.length > 0) {
-            int i = 0;
-            while (true) {
-                Cf[] cfArr2 = this.b;
-                if (i >= cfArr2.length) {
-                    break;
-                }
-                Cf cf = cfArr2[i];
-                if (cf != null) {
-                    codedOutputByteBufferNano.writeMessage(2, cf);
-                }
-                i++;
-            }
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final Df mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 10) {
-                if (this.f397a == null) {
-                    this.f397a = new Bf();
-                }
-                codedInputByteBufferNano.readMessage(this.f397a);
-            } else if (readTag != 18) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 18);
-                Cf[] cfArr = this.b;
-                int length = cfArr == null ? 0 : cfArr.length;
-                int i = repeatedFieldArrayLength + length;
-                Cf[] cfArr2 = new Cf[i];
-                if (length != 0) {
-                    System.arraycopy(cfArr, 0, cfArr2, 0, length);
-                }
-                while (length < i - 1) {
-                    Cf cf = new Cf();
-                    cfArr2[length] = cf;
-                    codedInputByteBufferNano.readMessage(cf);
-                    codedInputByteBufferNano.readTag();
-                    length++;
-                }
-                Cf cf2 = new Cf();
-                cfArr2[length] = cf2;
-                codedInputByteBufferNano.readMessage(cf2);
-                this.b = cfArr2;
-            }
-        }
-        return this;
-    }
-
-    public static Df b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new Df().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static Df a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (Df) MessageNano.mergeFrom(new Df(), bArr);
+        ro.a(cursor);
+        return null;
     }
 }

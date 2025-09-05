@@ -1,15 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
+import android.content.Context;
 /* loaded from: classes4.dex */
-public class Yg extends La {
-    public Yg(Ji ji) {
-        super(ji);
+public final class Yg implements InterfaceC0427m8 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final InterfaceC0676w5 f753a;
+
+    public Yg(InterfaceC0676w5 interfaceC0676w5) {
+        this.f753a = interfaceC0676w5;
     }
 
-    @Override // io.appmetrica.analytics.impl.La
-    public void a(List<AbstractC0358jh> list) {
-        list.add(this.f541a.m);
-        list.add(this.f541a.b);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0427m8
+    /* renamed from: b */
+    public final Xg a(Context context, C0476o5 c0476o5, N4 n4) {
+        return new Xg(context, c0476o5, n4, this.f753a, new C0502p5(), Ql.a());
+    }
+
+    public final InterfaceC0676w5 a() {
+        return this.f753a;
     }
 }

@@ -7,20 +7,21 @@ import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.activity.BackEventCompat;
 import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.core.view.MarginLayoutParamsCompat;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.internal.ClippableRoundedCornerLayout;
 import com.google.android.material.internal.FadeThroughDrawable;
@@ -51,6 +52,7 @@ public class SearchViewAnimationHelper {
     private static final long SHOW_CONTENT_ALPHA_START_DELAY_MS = 75;
     private static final long SHOW_CONTENT_SCALE_DURATION_MS = 300;
     private static final long SHOW_DURATION_MS = 300;
+    private static final long SHOW_SCRIM_ALPHA_DURATION_MS = 100;
     private static final long SHOW_TRANSLATE_DURATION_MS = 350;
     private static final long SHOW_TRANSLATE_KEYBOARD_START_DELAY_MS = 150;
     private final MaterialMainContainerBackHelper backHelper;
@@ -66,6 +68,7 @@ public class SearchViewAnimationHelper {
     private SearchBar searchBar;
     private final TextView searchPrefix;
     private final SearchView searchView;
+    private final LinearLayout textContainer;
     private final Toolbar toolbar;
     private final FrameLayout toolbarContainer;
 
@@ -84,6 +87,7 @@ public class SearchViewAnimationHelper {
         this.clearButton = searchView.clearButton;
         this.divider = searchView.divider;
         this.contentContainer = searchView.contentContainer;
+        this.textContainer = searchView.textContainer;
         this.backHelper = new MaterialMainContainerBackHelper(clippableRoundedCornerLayout);
     }
 
@@ -119,17 +123,17 @@ public class SearchViewAnimationHelper {
         EditText editText = this.editText;
         editText.setSelection(editText.getText().length());
         this.rootView.setVisibility(4);
-        this.rootView.post(new Runnable() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda2
+        this.rootView.post(new Runnable() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                SearchViewAnimationHelper.this.m8735x94743afc();
+                SearchViewAnimationHelper.this.m8750x94743afc();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startShowAnimationExpand$0$com-google-android-material-search-SearchViewAnimationHelper  reason: not valid java name */
-    public /* synthetic */ void m8735x94743afc() {
+    public /* synthetic */ void m8750x94743afc() {
         AnimatorSet expandCollapseAnimatorSet = getExpandCollapseAnimatorSet(true);
         expandCollapseAnimatorSet.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.search.SearchViewAnimationHelper.1
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -177,7 +181,7 @@ public class SearchViewAnimationHelper {
         if (this.searchView.isAdjustNothingSoftInputMode()) {
             final SearchView searchView = this.searchView;
             Objects.requireNonNull(searchView);
-            searchView.postDelayed(new Runnable() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda4
+            searchView.postDelayed(new Runnable() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
                     SearchView.this.requestFocusAndShowKeyboardIfNeeded();
@@ -185,17 +189,17 @@ public class SearchViewAnimationHelper {
             }, 150L);
         }
         this.rootView.setVisibility(4);
-        this.rootView.post(new Runnable() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda5
+        this.rootView.post(new Runnable() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                SearchViewAnimationHelper.this.m8736x4df249eb();
+                SearchViewAnimationHelper.this.m8751x4df249eb();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startShowAnimationTranslate$1$com-google-android-material-search-SearchViewAnimationHelper  reason: not valid java name */
-    public /* synthetic */ void m8736x4df249eb() {
+    public /* synthetic */ void m8751x4df249eb() {
         ClippableRoundedCornerLayout clippableRoundedCornerLayout = this.rootView;
         clippableRoundedCornerLayout.setTranslationY(clippableRoundedCornerLayout.getHeight());
         AnimatorSet translateAnimatorSet = getTranslateAnimatorSet(true);
@@ -261,7 +265,7 @@ public class SearchViewAnimationHelper {
         if (this.backProgressAnimatorSet == null) {
             animatorSet.playTogether(getButtonsProgressAnimator(z), getButtonsTranslationAnimator(z));
         }
-        animatorSet.playTogether(getScrimAlphaAnimator(z), getRootViewAnimator(z), getClearButtonAnimator(z), getContentAnimator(z), getHeaderContainerAnimator(z), getDummyToolbarAnimator(z), getActionMenuViewsAlphaAnimator(z), getEditTextAnimator(z), getSearchPrefixAnimator(z));
+        animatorSet.playTogether(getScrimAlphaAnimator(z), getRootViewAnimator(z), getClearButtonAnimator(z), getContentAnimator(z), getHeaderContainerAnimator(z), getDummyToolbarAnimator(z), getActionMenuViewsAlphaAnimator(z), getEditTextAnimator(z), getSearchPrefixAnimator(z), getTextAnimator(z));
         animatorSet.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.search.SearchViewAnimationHelper.5
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator) {
@@ -271,7 +275,16 @@ public class SearchViewAnimationHelper {
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 SearchViewAnimationHelper.this.setContentViewsAlpha(z ? 1.0f : 0.0f);
-                SearchViewAnimationHelper.this.rootView.resetClipBoundsAndCornerRadius();
+                SearchViewAnimationHelper.this.editText.setAlpha(1.0f);
+                if (SearchViewAnimationHelper.this.searchBar != null) {
+                    SearchViewAnimationHelper.this.searchBar.getTextView().setAlpha(1.0f);
+                }
+                SearchViewAnimationHelper.this.editText.setClipBounds(null);
+                SearchViewAnimationHelper.this.rootView.resetClipBoundsAndCornerRadii();
+                if (z) {
+                    return;
+                }
+                SearchViewAnimationHelper.this.backHelper.clearExpandedCornerRadii();
             }
         });
         return animatorSet;
@@ -297,6 +310,7 @@ public class SearchViewAnimationHelper {
         TimeInterpolator timeInterpolator = z ? AnimationUtils.LINEAR_INTERPOLATOR : AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.setDuration(z ? 300L : 250L);
+        ofFloat.setStartDelay(z ? SHOW_SCRIM_ALPHA_DURATION_MS : 0L);
         ofFloat.setInterpolator(ReversableAnimatedValueInterpolator.of(z, timeInterpolator));
         ofFloat.addUpdateListener(MultiViewUpdateListener.alphaListener(this.scrim));
         return ofFloat;
@@ -313,12 +327,12 @@ public class SearchViewAnimationHelper {
         }
         final Rect rect = new Rect(initialHideFromClipBounds);
         final float cornerSize = this.searchBar.getCornerSize();
-        final float max = Math.max(this.rootView.getCornerRadius(), this.backHelper.getExpandedCornerSize());
+        final float[] maxCornerRadii = maxCornerRadii(this.rootView.getCornerRadii(), this.backHelper.getExpandedCornerRadii());
         ValueAnimator ofObject = ValueAnimator.ofObject(new RectEvaluator(rect), initialHideFromClipBounds, initialHideToClipBounds);
-        ofObject.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda0
+        ofObject.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                SearchViewAnimationHelper.this.m8734xa183b80f(cornerSize, max, rect, valueAnimator);
+                SearchViewAnimationHelper.this.m8749xa183b80f(cornerSize, maxCornerRadii, rect, valueAnimator);
             }
         });
         ofObject.setDuration(z ? 300L : 250L);
@@ -328,8 +342,16 @@ public class SearchViewAnimationHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getRootViewAnimator$2$com-google-android-material-search-SearchViewAnimationHelper  reason: not valid java name */
-    public /* synthetic */ void m8734xa183b80f(float f, float f2, Rect rect, ValueAnimator valueAnimator) {
-        this.rootView.updateClipBoundsAndCornerRadius(rect, AnimationUtils.lerp(f, f2, valueAnimator.getAnimatedFraction()));
+    public /* synthetic */ void m8749xa183b80f(float f, float[] fArr, Rect rect, ValueAnimator valueAnimator) {
+        this.rootView.updateClipBoundsAndCornerRadii(rect, lerpCornerRadii(f, fArr, valueAnimator.getAnimatedFraction()));
+    }
+
+    private static float[] maxCornerRadii(float[] fArr, float[] fArr2) {
+        return new float[]{Math.max(fArr[0], fArr2[0]), Math.max(fArr[1], fArr2[1]), Math.max(fArr[2], fArr2[2]), Math.max(fArr[3], fArr2[3]), Math.max(fArr[4], fArr2[4]), Math.max(fArr[5], fArr2[5]), Math.max(fArr[6], fArr2[6]), Math.max(fArr[7], fArr2[7])};
+    }
+
+    private static float[] lerpCornerRadii(float f, float[] fArr, float f2) {
+        return new float[]{AnimationUtils.lerp(f, fArr[0], f2), AnimationUtils.lerp(f, fArr[1], f2), AnimationUtils.lerp(f, fArr[2], f2), AnimationUtils.lerp(f, fArr[3], f2), AnimationUtils.lerp(f, fArr[4], f2), AnimationUtils.lerp(f, fArr[5], f2), AnimationUtils.lerp(f, fArr[6], f2), AnimationUtils.lerp(f, fArr[7], f2)};
     }
 
     private Animator getClearButtonAnimator(boolean z) {
@@ -363,7 +385,7 @@ public class SearchViewAnimationHelper {
         if (navigationIconButton == null) {
             return;
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(getFromTranslationXStart(navigationIconButton), 0.0f);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(getTranslationXBetweenViews(ToolbarUtils.getNavigationIconButton(this.searchBar), navigationIconButton), 0.0f);
         ofFloat.addUpdateListener(MultiViewUpdateListener.translationXListener(navigationIconButton));
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(getFromTranslationY(), 0.0f);
         ofFloat2.addUpdateListener(MultiViewUpdateListener.translationYListener(navigationIconButton));
@@ -379,16 +401,32 @@ public class SearchViewAnimationHelper {
         if (this.searchView.isAnimatedNavigationIcon()) {
             addDrawerArrowDrawableAnimatorIfNeeded(animatorSet, unwrap);
             addFadeThroughDrawableAnimatorIfNeeded(animatorSet, unwrap);
+            addBackButtonAnimatorIfNeeded(animatorSet, navigationIconButton);
             return;
         }
         setFullDrawableProgressIfNeeded(unwrap);
+    }
+
+    private void addBackButtonAnimatorIfNeeded(AnimatorSet animatorSet, final ImageButton imageButton) {
+        SearchBar searchBar = this.searchBar;
+        if (searchBar == null || searchBar.getNavigationIcon() != null) {
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda8
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                imageButton.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+            }
+        });
+        animatorSet.playTogether(ofFloat);
     }
 
     private void addDrawerArrowDrawableAnimatorIfNeeded(AnimatorSet animatorSet, Drawable drawable) {
         if (drawable instanceof DrawerArrowDrawable) {
             final DrawerArrowDrawable drawerArrowDrawable = (DrawerArrowDrawable) drawable;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda1
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda2
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     DrawerArrowDrawable.this.setProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
@@ -402,7 +440,7 @@ public class SearchViewAnimationHelper {
         if (drawable instanceof FadeThroughDrawable) {
             final FadeThroughDrawable fadeThroughDrawable = (FadeThroughDrawable) drawable;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda3
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda4
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     FadeThroughDrawable.this.setProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
@@ -426,7 +464,7 @@ public class SearchViewAnimationHelper {
         if (actionMenuView == null) {
             return;
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(getFromTranslationXEnd(actionMenuView), 0.0f);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(getTranslationXBetweenViews(ToolbarUtils.getActionMenuView(this.searchBar), actionMenuView), 0.0f);
         ofFloat.addUpdateListener(MultiViewUpdateListener.translationXListener(actionMenuView));
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(getFromTranslationY(), 0.0f);
         ofFloat2.addUpdateListener(MultiViewUpdateListener.translationYListener(actionMenuView));
@@ -434,11 +472,13 @@ public class SearchViewAnimationHelper {
     }
 
     private Animator getDummyToolbarAnimator(boolean z) {
-        return getTranslationAnimator(z, false, this.dummyToolbar);
+        Toolbar toolbar = this.dummyToolbar;
+        return getTranslationAnimator(z, toolbar, getFromTranslationXEnd(toolbar), getFromTranslationY());
     }
 
     private Animator getHeaderContainerAnimator(boolean z) {
-        return getTranslationAnimator(z, false, this.headerContainer);
+        FrameLayout frameLayout = this.headerContainer;
+        return getTranslationAnimator(z, frameLayout, getFromTranslationXEnd(frameLayout), getFromTranslationY());
     }
 
     private Animator getActionMenuViewsAlphaAnimator(boolean z) {
@@ -452,11 +492,87 @@ public class SearchViewAnimationHelper {
     }
 
     private Animator getSearchPrefixAnimator(boolean z) {
-        return getTranslationAnimator(z, true, this.searchPrefix);
+        return getTranslationAnimatorForText(z, this.searchPrefix);
     }
 
     private Animator getEditTextAnimator(boolean z) {
-        return getTranslationAnimator(z, true, this.editText);
+        return getTranslationAnimatorForText(z, this.editText);
+    }
+
+    private AnimatorSet getTextAnimator(boolean z) {
+        AnimatorSet animatorSet = new AnimatorSet();
+        addTextFadeAnimatorIfNeeded(animatorSet);
+        addEditTextClipAnimator(animatorSet);
+        animatorSet.setDuration(z ? 300L : 250L);
+        animatorSet.setInterpolator(ReversableAnimatedValueInterpolator.of(z, AnimationUtils.LINEAR_INTERPOLATOR));
+        return animatorSet;
+    }
+
+    private void addEditTextClipAnimator(AnimatorSet animatorSet) {
+        if (this.searchBar == null || !TextUtils.equals(this.editText.getText(), this.searchBar.getText())) {
+            return;
+        }
+        final Rect rect = new Rect(0, 0, this.editText.getWidth(), this.editText.getHeight());
+        ValueAnimator ofInt = ValueAnimator.ofInt(this.searchBar.getTextView().getWidth(), this.editText.getWidth());
+        ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda0
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                SearchViewAnimationHelper.this.m8747xc2294c40(rect, valueAnimator);
+            }
+        });
+        animatorSet.playTogether(ofInt);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$addEditTextClipAnimator$6$com-google-android-material-search-SearchViewAnimationHelper  reason: not valid java name */
+    public /* synthetic */ void m8747xc2294c40(Rect rect, ValueAnimator valueAnimator) {
+        rect.right = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+        this.editText.setClipBounds(rect);
+    }
+
+    private void addTextFadeAnimatorIfNeeded(AnimatorSet animatorSet) {
+        if (this.searchBar == null || TextUtils.equals(this.editText.getText(), this.searchBar.getText())) {
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda5
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                SearchViewAnimationHelper.this.m8748xbfb6df0b(valueAnimator);
+            }
+        });
+        animatorSet.playTogether(ofFloat);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$addTextFadeAnimatorIfNeeded$7$com-google-android-material-search-SearchViewAnimationHelper  reason: not valid java name */
+    public /* synthetic */ void m8748xbfb6df0b(ValueAnimator valueAnimator) {
+        this.editText.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+        this.searchBar.getTextView().setAlpha(1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue());
+    }
+
+    private Animator getTranslationAnimatorForText(boolean z, View view) {
+        TextView placeholderTextView = this.searchBar.getPlaceholderTextView();
+        if (TextUtils.isEmpty(placeholderTextView.getText()) || z) {
+            placeholderTextView = this.searchBar.getTextView();
+        }
+        return getTranslationAnimator(z, view, getViewLeftFromSearchViewParent(placeholderTextView) - (view.getLeft() + this.textContainer.getLeft()), getFromTranslationY());
+    }
+
+    private int getViewLeftFromSearchViewParent(View view) {
+        int left = view.getLeft();
+        for (ViewParent parent = view.getParent(); (parent instanceof View) && parent != this.searchView.getParent(); parent = parent.getParent()) {
+            left += ((View) parent).getLeft();
+        }
+        return left;
+    }
+
+    private int getViewTopFromSearchViewParent(View view) {
+        int top = view.getTop();
+        for (ViewParent parent = view.getParent(); (parent instanceof View) && parent != this.searchView.getParent(); parent = parent.getParent()) {
+            top += ((View) parent).getTop();
+        }
+        return top;
     }
 
     private Animator getContentAnimator(boolean z) {
@@ -490,10 +606,10 @@ public class SearchViewAnimationHelper {
         return ofFloat;
     }
 
-    private Animator getTranslationAnimator(boolean z, boolean z2, View view) {
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(z2 ? getFromTranslationXStart(view) : getFromTranslationXEnd(view), 0.0f);
+    private Animator getTranslationAnimator(boolean z, View view, int i, int i2) {
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(i, 0.0f);
         ofFloat.addUpdateListener(MultiViewUpdateListener.translationXListener(view));
-        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(getFromTranslationY(), 0.0f);
+        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(i2, 0.0f);
         ofFloat2.addUpdateListener(MultiViewUpdateListener.translationYListener(view));
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(ofFloat, ofFloat2);
@@ -502,25 +618,24 @@ public class SearchViewAnimationHelper {
         return animatorSet;
     }
 
-    private int getFromTranslationXStart(View view) {
-        int marginStart = MarginLayoutParamsCompat.getMarginStart((ViewGroup.MarginLayoutParams) view.getLayoutParams());
-        int paddingStart = ViewCompat.getPaddingStart(this.searchBar);
-        if (ViewUtils.isLayoutRtl(this.searchBar)) {
-            return ((this.searchBar.getWidth() - this.searchBar.getRight()) + marginStart) - paddingStart;
+    private int getTranslationXBetweenViews(View view, View view2) {
+        if (view == null) {
+            int marginStart = ((ViewGroup.MarginLayoutParams) view2.getLayoutParams()).getMarginStart();
+            int paddingStart = this.searchBar.getPaddingStart();
+            int viewLeftFromSearchViewParent = getViewLeftFromSearchViewParent(this.searchBar);
+            return ViewUtils.isLayoutRtl(this.searchBar) ? (((viewLeftFromSearchViewParent + this.searchBar.getWidth()) + marginStart) - paddingStart) - this.searchView.getRight() : (viewLeftFromSearchViewParent - marginStart) + paddingStart;
         }
-        return (this.searchBar.getLeft() - marginStart) + paddingStart;
+        return getViewLeftFromSearchViewParent(view) - getViewLeftFromSearchViewParent(view2);
     }
 
     private int getFromTranslationXEnd(View view) {
-        int marginEnd = MarginLayoutParamsCompat.getMarginEnd((ViewGroup.MarginLayoutParams) view.getLayoutParams());
-        if (ViewUtils.isLayoutRtl(this.searchBar)) {
-            return this.searchBar.getLeft() - marginEnd;
-        }
-        return (this.searchBar.getRight() - this.searchView.getWidth()) + marginEnd;
+        int marginEnd = ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).getMarginEnd();
+        int viewLeftFromSearchViewParent = getViewLeftFromSearchViewParent(this.searchBar);
+        return ViewUtils.isLayoutRtl(this.searchBar) ? viewLeftFromSearchViewParent - marginEnd : ((viewLeftFromSearchViewParent + this.searchBar.getWidth()) + marginEnd) - this.searchView.getWidth();
     }
 
     private int getFromTranslationY() {
-        return ((this.searchBar.getTop() + this.searchBar.getBottom()) / 2) - ((this.toolbarContainer.getTop() + this.toolbarContainer.getBottom()) / 2);
+        return (getViewTopFromSearchViewParent(this.searchBar) + (this.searchBar.getHeight() / 2)) - (this.toolbarContainer.getTop() + (this.toolbarContainer.getHeight() / 2));
     }
 
     private void setUpDummyToolbarIfNeeded() {

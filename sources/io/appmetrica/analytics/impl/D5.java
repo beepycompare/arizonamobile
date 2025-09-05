@@ -1,57 +1,45 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor;
-import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import kotlin.collections.CollectionsKt;
+import io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy;
+import kotlin.collections.ArraysKt;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
-public final class D5 implements ModuleAdRevenueProcessor, ModuleAdRevenueProcessorsHolder {
+public final class D5 implements IExecutionPolicy {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f390a = new ArrayList();
+    public final IExecutionPolicy[] f398a;
+    public final String b;
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
-    public final String getDescription() {
-        return CollectionsKt.joinToString$default(this.f390a, null, "Composite processor with " + this.f390a.size() + " children: [", "]", 0, null, C5.f374a, 25, null);
+    public D5(IExecutionPolicy... iExecutionPolicyArr) {
+        this.f398a = iExecutionPolicyArr;
+        this.b = "Composite of {" + ArraysKt.joinToString$default(iExecutionPolicyArr, ", ", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, C5.f379a, 30, (Object) null) + AbstractJsonLexerKt.END_OBJ;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
-    public final boolean process(Object... objArr) {
-        Object obj;
-        boolean process;
-        LoggerStorage.getMainPublicOrAnonymousLogger().info("Processing Ad Revenue for " + Arrays.toString(objArr), new Object[0]);
-        Iterator it = this.f390a.iterator();
+    @Override // io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy
+    public final boolean canBeExecuted() {
+        IExecutionPolicy iExecutionPolicy;
+        IExecutionPolicy[] iExecutionPolicyArr = this.f398a;
+        if (iExecutionPolicyArr.length == 0) {
+            return false;
+        }
+        int length = iExecutionPolicyArr.length;
+        int i = 0;
         while (true) {
-            if (!it.hasNext()) {
-                obj = null;
+            if (i >= length) {
+                iExecutionPolicy = null;
                 break;
             }
-            obj = it.next();
-            ModuleAdRevenueProcessor moduleAdRevenueProcessor = (ModuleAdRevenueProcessor) obj;
-            try {
-                process = moduleAdRevenueProcessor.process(Arrays.copyOf(objArr, objArr.length));
-                if (!process) {
-                    LoggerStorage.getMainPublicOrAnonymousLogger().info("Ad Revenue was not processed by " + moduleAdRevenueProcessor.getDescription(), new Object[0]);
-                }
-            } catch (Throwable th) {
-                LoggerStorage.getMainPublicOrAnonymousLogger().error(th, "Got exception from processor " + moduleAdRevenueProcessor.getDescription(), new Object[0]);
-            }
-            if (process) {
+            iExecutionPolicy = iExecutionPolicyArr[i];
+            if (!iExecutionPolicy.canBeExecuted()) {
                 break;
             }
+            i++;
         }
-        boolean z = ((ModuleAdRevenueProcessor) obj) != null;
-        if (!z) {
-            LoggerStorage.getMainPublicOrAnonymousLogger().info("Ad Revenue was not processed by " + getDescription() + " since processor for " + Arrays.toString(objArr) + " was not found", new Object[0]);
-        }
-        return z;
+        return iExecutionPolicy == null;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder
-    public final void register(ModuleAdRevenueProcessor moduleAdRevenueProcessor) {
-        this.f390a.add(moduleAdRevenueProcessor);
+    @Override // io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy
+    public final String description() {
+        return this.b;
     }
 }

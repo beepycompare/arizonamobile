@@ -1,12 +1,47 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.StartupParamsCallback;
+import android.content.Context;
 import java.util.HashMap;
 /* loaded from: classes4.dex */
-public final class Ql extends HashMap {
-    public Ql() {
-        put(Ol.UNKNOWN, StartupParamsCallback.Reason.UNKNOWN);
-        put(Ol.NETWORK, StartupParamsCallback.Reason.NETWORK);
-        put(Ol.PARSE, StartupParamsCallback.Reason.INVALID_RESPONSE);
+public final class Ql {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Pa f640a = new Pa();
+    public final HashMap b = new HashMap();
+    public C0493om c = null;
+    public final Ol d = new Ol(this);
+
+    public static final Ql a() {
+        return Pl.f625a;
+    }
+
+    public final Km a(Context context, C0476o5 c0476o5, C0337im c0337im) {
+        Km km = (Km) this.b.get(c0476o5.f1012a);
+        boolean z = true;
+        if (km == null) {
+            synchronized (this.b) {
+                km = (Km) this.b.get(c0476o5.f1012a);
+                if (km == null) {
+                    km = new Km(new Lm(context, c0476o5.f1012a, c0337im, this.d));
+                    km.f();
+                    this.b.put(c0476o5.f1012a, km);
+                    z = false;
+                }
+            }
+        }
+        if (z) {
+            km.a(c0337im);
+        }
+        return km;
+    }
+
+    public final void a(C0476o5 c0476o5, Zl zl) {
+        synchronized (this.b) {
+            this.f640a.a(c0476o5.f1012a, zl);
+            C0493om c0493om = this.c;
+            if (c0493om != null) {
+                zl.a(c0493om);
+            }
+        }
     }
 }

@@ -1,50 +1,47 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import java.util.HashSet;
-import java.util.Iterator;
+import com.android.installreferrer.api.InstallReferrerStateListener;
+import com.android.installreferrer.api.ReferrerDetails;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* loaded from: classes4.dex */
-public final class Dg {
+public final class Dg implements InstallReferrerStateListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashSet f398a = new HashSet();
-    public Fg b;
-    public boolean c;
-    public final yo d;
-    public final Context e;
+    public final /* synthetic */ Eg f407a;
+    public final /* synthetic */ Og b;
 
-    public Dg(Context context, yo yoVar) {
-        this.e = context;
-        this.d = yoVar;
-        this.b = yoVar.b();
-        this.c = yoVar.c();
+    public Dg(Eg eg, Og og) {
+        this.f407a = eg;
+        this.b = og;
     }
 
-    public final void a() {
-        if (this.c) {
+    public static final void a(Eg eg, Og og) {
+        try {
+            ReferrerDetails installReferrer = eg.b.getInstallReferrer();
+            og.a(new Jg(installReferrer.getInstallReferrer(), installReferrer.getReferrerClickTimestampSeconds(), installReferrer.getInstallBeginTimestampSeconds(), Ig.c));
+            eg.b.endConnection();
+        } catch (Throwable unused) {
+        }
+    }
+
+    @Override // com.android.installreferrer.api.InstallReferrerStateListener
+    public final void onInstallReferrerServiceDisconnected() {
+    }
+
+    @Override // com.android.installreferrer.api.InstallReferrerStateListener
+    public final void onInstallReferrerSetupFinished(int i) {
+        if (i == 0) {
+            final Eg eg = this.f407a;
+            ICommonExecutor iCommonExecutor = eg.f424a;
+            final Og og = this.b;
+            iCommonExecutor.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.Dg$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    Dg.a(Eg.this, og);
+                }
+            });
             return;
         }
-        Context context = this.e;
-        InterfaceC0404lb a2 = Ng.a(context, Ka.F.d.a());
-        Kg kg = (Kg) new C0683wg(this, new Ng(a2), new Wa(context), new Og(context)).f.getValue();
-        try {
-            a2.a(kg);
-        } catch (Throwable th) {
-            kg.a(th);
-        }
-    }
-
-    public final synchronized void a(Hg hg) {
-        this.f398a.add(hg);
-        if (this.c) {
-            hg.a(this.b);
-        }
-    }
-
-    public final synchronized void a(Fg fg) {
-        Iterator it = this.f398a.iterator();
-        while (it.hasNext()) {
-            ((Hg) it.next()).a(fg);
-        }
+        this.f407a.a(this.b, new IllegalStateException("Referrer check failed with error " + i));
     }
 }

@@ -1,16 +1,18 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class X1 implements InterfaceC0556re {
+public final class X1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f717a;
+    public final /* synthetic */ InterfaceC0660ve f730a;
+    public final /* synthetic */ Y7 b;
 
-    public X1(String str) {
-        this.f717a = str;
+    public X1(Z1 z1, Y7 y7) {
+        this.f730a = z1;
+        this.b = y7;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0556re
-    public final void consume(Object obj) {
-        ((V7) obj).a(this.f717a, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.f730a.consume(this.b);
     }
 }

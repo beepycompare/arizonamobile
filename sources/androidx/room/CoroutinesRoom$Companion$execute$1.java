@@ -1,6 +1,5 @@
 package androidx.room;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.room.CoroutinesRoom;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
@@ -9,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CoroutinesRoom.android.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.room.CoroutinesRoom$Companion", f = "CoroutinesRoom.android.kt", i = {0}, l = {48, ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX}, m = "execute", n = {"callable"}, s = {"L$0"})
+@DebugMetadata(c = "androidx.room.CoroutinesRoom$Companion", f = "CoroutinesRoom.android.kt", i = {0}, l = {48, 49}, m = "execute", n = {"callable"}, s = {"L$0"})
 /* loaded from: classes3.dex */
 public final class CoroutinesRoom$Companion$execute$1<R> extends ContinuationImpl {
     Object L$0;

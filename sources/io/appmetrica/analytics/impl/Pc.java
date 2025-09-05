@@ -1,106 +1,69 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import io.appmetrica.analytics.AppMetricaConfig;
-import io.appmetrica.analytics.PreloadInfo;
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.internal.CounterConfiguration;
+import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
+import io.appmetrica.analytics.coreutils.internal.time.TimePassedChecker;
 import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public final class Pc {
+public final class Pc extends C0651v5 implements InterfaceC0430mb, InterfaceC0404lb {
+    public final Hg w;
+    public final Lg x;
+    public final C0194d7 y;
+    public final C0525q3 z;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Context f604a;
-    public final Oi b;
-    public final Sd c;
-    public final C0351ja d;
-    public final Y8 e;
-    public final Xh f;
-    public final C0369k2 g;
-    public final N6 h;
-    public final C0492p i;
-    public final Ze j;
-    public final Tn k;
-    public final Wg l;
-    public final R6 m;
-    public final C0135b0 n;
-
-    public Pc(Context context, Rf rf, Oi oi, Tl tl) {
-        this.f604a = context;
-        this.b = oi;
-        this.c = new Sd(rf);
-        C0351ja c0351ja = new C0351ja(context);
-        this.d = c0351ja;
-        Y8 y8 = new Y8(new C0688wl(LoggerStorage.getMainPublicOrAnonymousLogger(), "Crash Environment"));
-        this.e = y8;
-        this.f = new Xh(rf, new CounterConfiguration(CounterConfigurationReporterType.MAIN), y8);
-        this.g = new C0369k2();
-        this.h = C0696x4.l().n();
-        this.i = new C0492p();
-        this.j = new Ze(c0351ja);
-        this.k = new Tn();
-        this.l = new Wg();
-        this.m = new R6();
-        this.n = new C0135b0();
+    public Pc(Context context, C0493om c0493om, C0476o5 c0476o5, M4 m4, Hg hg, C0194d7 c0194d7, AbstractC0601t5 abstractC0601t5) {
+        this(context, c0476o5, c0493om, m4, new C0341j0(), new TimePassedChecker(), new Rc(context, c0476o5, m4, abstractC0601t5, c0493om, new Kc(c0194d7), Na.j().w().d(), PackageManagerUtils.getAppVersionCodeInt(context), Na.j().w(), Na.j().k(), new Ec()), hg, c0194d7);
     }
 
-    public final C0135b0 a() {
-        return this.n;
+    @Override // io.appmetrica.analytics.impl.C0651v5
+    public final void C() {
+        this.w.a(this.x);
     }
 
-    public final Context b() {
-        return this.f604a;
-    }
-
-    public final R6 c() {
-        return this.m;
-    }
-
-    public final C0351ja d() {
-        return this.d;
-    }
-
-    public final Ze e() {
-        return this.j;
-    }
-
-    public final N6 f() {
-        return this.h;
-    }
-
-    public final Wg g() {
-        return this.l;
-    }
-
-    public final Xh h() {
-        return this.f;
-    }
-
-    public final Oi i() {
-        return this.b;
-    }
-
-    public final Tn j() {
-        return this.k;
-    }
-
-    public final void a(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger) {
-        this.f.b.applyFromConfig(appMetricaConfig);
-        Xh xh = this.f;
-        String str = appMetricaConfig.userProfileID;
-        synchronized (xh) {
-            xh.f = str;
+    public final boolean D() {
+        boolean optBoolean;
+        Do r0 = this.t;
+        synchronized (r0) {
+            optBoolean = r0.f413a.a().optBoolean("referrer_handled", false);
         }
-        Xh xh2 = this.f;
-        PreloadInfo preloadInfo = appMetricaConfig.preloadInfo;
-        Boolean bool = (Boolean) appMetricaConfig.additionalConfig.get("YMM_preloadInfoAutoTracking");
-        xh2.d = new Kf(preloadInfo, publicLogger, bool != null ? bool.booleanValue() : false);
-        StringBuilder sb = new StringBuilder("Actual session timeout is ");
-        Integer num = appMetricaConfig.sessionTimeout;
-        if (num == null) {
-            num = 10;
+        return optBoolean;
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0651v5, io.appmetrica.analytics.impl.InterfaceC0508pb, io.appmetrica.analytics.impl.InterfaceC0223eb
+    public final synchronized void a(M4 m4) {
+        super.a(m4);
+        this.y.a(m4.i);
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0651v5, io.appmetrica.analytics.impl.InterfaceC0223eb
+    public final CounterConfigurationReporterType c() {
+        return CounterConfigurationReporterType.MAIN;
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0651v5, io.appmetrica.analytics.impl.InterfaceC0508pb, io.appmetrica.analytics.impl.Zl
+    public final void a(C0493om c0493om) {
+        super.a(c0493om);
+        this.z.a(c0493om);
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0404lb
+    public final void a() {
+        Do r0 = this.t;
+        synchronized (r0) {
+            Eo eo = r0.f413a;
+            eo.a(eo.a().put("referrer_handled", true));
         }
-        publicLogger.info(sb.append(num.intValue()).toString(), new Object[0]);
+    }
+
+    public Pc(Context context, C0476o5 c0476o5, C0493om c0493om, M4 m4, C0341j0 c0341j0, TimePassedChecker timePassedChecker, Rc rc, Hg hg, C0194d7 c0194d7) {
+        super(context, c0476o5, c0341j0, timePassedChecker, rc, m4);
+        this.w = hg;
+        C0705x9 k = k();
+        k.a(Bb.EVENT_TYPE_REGULAR, new C0204dh(k.b()));
+        this.x = rc.b(this);
+        this.y = c0194d7;
+        C0525q3 a2 = rc.a(this);
+        this.z = a2;
+        a2.a(c0493om, m4.m);
     }
 }

@@ -9,6 +9,7 @@ import android.view.ContextThemeWrapper;
 import com.google.android.material.R;
 /* loaded from: classes4.dex */
 public class ShapeAppearanceModel {
+    public static final int NUM_CORNERS = 4;
     public static final CornerSize PILL = new RelativeCornerSize(0.5f);
     EdgeTreatment bottomEdge;
     CornerTreatment bottomLeftCorner;
@@ -279,7 +280,7 @@ public class ShapeAppearanceModel {
     private static Builder builder(Context context, int i, int i2, CornerSize cornerSize) {
         ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, i);
         if (i2 != 0) {
-            contextThemeWrapper = new ContextThemeWrapper(contextThemeWrapper, i2);
+            contextThemeWrapper.getTheme().applyStyle(i2, true);
         }
         TypedArray obtainStyledAttributes = contextThemeWrapper.obtainStyledAttributes(R.styleable.ShapeAppearance);
         try {
@@ -298,7 +299,7 @@ public class ShapeAppearanceModel {
         }
     }
 
-    private static CornerSize getCornerSize(TypedArray typedArray, int i, CornerSize cornerSize) {
+    public static CornerSize getCornerSize(TypedArray typedArray, int i, CornerSize cornerSize) {
         TypedValue peekValue = typedArray.peekValue(i);
         if (peekValue != null) {
             if (peekValue.type == 5) {
@@ -408,6 +409,14 @@ public class ShapeAppearanceModel {
     public boolean isRoundRect(RectF rectF) {
         boolean z = this.leftEdge.getClass().equals(EdgeTreatment.class) && this.rightEdge.getClass().equals(EdgeTreatment.class) && this.topEdge.getClass().equals(EdgeTreatment.class) && this.bottomEdge.getClass().equals(EdgeTreatment.class);
         float cornerSize = this.topLeftCornerSize.getCornerSize(rectF);
-        return z && ((this.topRightCornerSize.getCornerSize(rectF) > cornerSize ? 1 : (this.topRightCornerSize.getCornerSize(rectF) == cornerSize ? 0 : -1)) == 0 && (this.bottomLeftCornerSize.getCornerSize(rectF) > cornerSize ? 1 : (this.bottomLeftCornerSize.getCornerSize(rectF) == cornerSize ? 0 : -1)) == 0 && (this.bottomRightCornerSize.getCornerSize(rectF) > cornerSize ? 1 : (this.bottomRightCornerSize.getCornerSize(rectF) == cornerSize ? 0 : -1)) == 0) && ((this.topRightCorner instanceof RoundedCornerTreatment) && (this.topLeftCorner instanceof RoundedCornerTreatment) && (this.bottomRightCorner instanceof RoundedCornerTreatment) && (this.bottomLeftCorner instanceof RoundedCornerTreatment));
+        return z && ((this.topRightCornerSize.getCornerSize(rectF) > cornerSize ? 1 : (this.topRightCornerSize.getCornerSize(rectF) == cornerSize ? 0 : -1)) == 0 && (this.bottomLeftCornerSize.getCornerSize(rectF) > cornerSize ? 1 : (this.bottomLeftCornerSize.getCornerSize(rectF) == cornerSize ? 0 : -1)) == 0 && (this.bottomRightCornerSize.getCornerSize(rectF) > cornerSize ? 1 : (this.bottomRightCornerSize.getCornerSize(rectF) == cornerSize ? 0 : -1)) == 0) && hasRoundedCorners();
+    }
+
+    public boolean hasRoundedCorners() {
+        return (this.topRightCorner instanceof RoundedCornerTreatment) && (this.topLeftCorner instanceof RoundedCornerTreatment) && (this.bottomRightCorner instanceof RoundedCornerTreatment) && (this.bottomLeftCorner instanceof RoundedCornerTreatment);
+    }
+
+    public String toString() {
+        return "[" + getTopLeftCornerSize() + ", " + getTopRightCornerSize() + ", " + getBottomRightCornerSize() + ", " + getBottomLeftCornerSize() + "]";
     }
 }

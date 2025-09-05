@@ -55,11 +55,11 @@ public class AttributionHandler implements IAttributionHandler, IActivityPackage
     /* JADX INFO: Access modifiers changed from: private */
     public void checkAttributionResponseI(IActivityHandler iActivityHandler, AttributionResponseData attributionResponseData) {
         checkAttributionI(iActivityHandler, attributionResponseData);
-        checkDeeplinkI(attributionResponseData);
+        checkDeeplinkInAttributionResponseI(attributionResponseData);
         iActivityHandler.launchAttributionResponseTasks(attributionResponseData);
     }
 
-    private void checkDeeplinkI(AttributionResponseData attributionResponseData) {
+    private void checkDeeplinkInAttributionResponseI(AttributionResponseData attributionResponseData) {
         JSONObject optJSONObject;
         String optString;
         JSONObject jSONObject = attributionResponseData.jsonResponse;
@@ -67,6 +67,15 @@ public class AttributionHandler implements IAttributionHandler, IActivityPackage
             return;
         }
         attributionResponseData.deeplink = Uri.parse(optString);
+    }
+
+    private void checkDeeplinkInSessionResponseI(SessionResponseData sessionResponseData) {
+        String optString;
+        JSONObject jSONObject = sessionResponseData.jsonResponse;
+        if (jSONObject == null || (optString = jSONObject.optString(Constants.DEEPLINK, null)) == null) {
+            return;
+        }
+        sessionResponseData.deeplink = Uri.parse(optString);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -78,6 +87,7 @@ public class AttributionHandler implements IAttributionHandler, IActivityPackage
     /* JADX INFO: Access modifiers changed from: private */
     public void checkSessionResponseI(IActivityHandler iActivityHandler, SessionResponseData sessionResponseData) {
         checkAttributionI(iActivityHandler, sessionResponseData);
+        checkDeeplinkInSessionResponseI(sessionResponseData);
         iActivityHandler.launchSessionResponseTasks(sessionResponseData);
     }
 

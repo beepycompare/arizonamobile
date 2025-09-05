@@ -61,14 +61,14 @@ public final class DataSourceBitmapLoader implements BitmapLoader {
         return this.listeningExecutorService.submit(new Callable() { // from class: androidx.media3.datasource.DataSourceBitmapLoader$$ExternalSyntheticLambda1
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                return DataSourceBitmapLoader.this.m7871xcc09b2d8(bArr);
+                return DataSourceBitmapLoader.this.m7873xcc09b2d8(bArr);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$decodeBitmap$1$androidx-media3-datasource-DataSourceBitmapLoader  reason: not valid java name */
-    public /* synthetic */ Bitmap m7871xcc09b2d8(byte[] bArr) throws Exception {
+    public /* synthetic */ Bitmap m7873xcc09b2d8(byte[] bArr) throws Exception {
         return BitmapUtil.decode(bArr, bArr.length, this.options, this.maximumOutputDimension);
     }
 
@@ -77,14 +77,14 @@ public final class DataSourceBitmapLoader implements BitmapLoader {
         return this.listeningExecutorService.submit(new Callable() { // from class: androidx.media3.datasource.DataSourceBitmapLoader$$ExternalSyntheticLambda2
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                return DataSourceBitmapLoader.this.m7872x731908d1(uri);
+                return DataSourceBitmapLoader.this.m7874x731908d1(uri);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$loadBitmap$2$androidx-media3-datasource-DataSourceBitmapLoader  reason: not valid java name */
-    public /* synthetic */ Bitmap m7872x731908d1(Uri uri) throws Exception {
+    public /* synthetic */ Bitmap m7874x731908d1(Uri uri) throws Exception {
         return load(this.dataSourceFactory.createDataSource(), uri, this.options, this.maximumOutputDimension);
     }
 

@@ -1,15 +1,19 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Ai implements InterfaceC0233el {
+public final class Ai implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Ec f348a;
+    public final /* synthetic */ String f347a;
+    public final /* synthetic */ Ci b;
 
-    public Ai(Ec ec) {
-        this.f348a = ec;
+    public Ai(Ci ci, String str) {
+        this.b = ci;
+        this.f347a = str;
     }
 
-    public final boolean a() {
-        return this.f348a.b.f();
+    @Override // java.lang.Runnable
+    public final void run() {
+        Ci ci = this.b;
+        Ci.a(ci.f388a, ci.d, ci.e).reportEvent(this.f347a);
     }
 }

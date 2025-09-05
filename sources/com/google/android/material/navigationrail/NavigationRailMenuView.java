@@ -8,11 +8,13 @@ import com.google.android.material.navigation.NavigationBarMenuView;
 /* loaded from: classes4.dex */
 public class NavigationRailMenuView extends NavigationBarMenuView {
     private int itemMinimumHeight;
+    private int itemSpacing;
     private final FrameLayout.LayoutParams layoutParams;
 
     public NavigationRailMenuView(Context context) {
         super(context);
         this.itemMinimumHeight = -1;
+        this.itemSpacing = 0;
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2);
         this.layoutParams = layoutParams;
         layoutParams.gravity = 49;
@@ -24,11 +26,11 @@ public class NavigationRailMenuView extends NavigationBarMenuView {
     protected void onMeasure(int i, int i2) {
         int measureSharedChildHeights;
         int size = View.MeasureSpec.getSize(i2);
-        int size2 = getMenu().getVisibleItems().size();
-        if (size2 > 1 && isShifting(getLabelVisibilityMode(), size2)) {
-            measureSharedChildHeights = measureShiftingChildHeights(i, size, size2);
+        int currentVisibleContentItemCount = getCurrentVisibleContentItemCount();
+        if (currentVisibleContentItemCount > 1 && isShifting(getLabelVisibilityMode(), currentVisibleContentItemCount)) {
+            measureSharedChildHeights = measureShiftingChildHeights(i, size, currentVisibleContentItemCount);
         } else {
-            measureSharedChildHeights = measureSharedChildHeights(i, size, size2, null);
+            measureSharedChildHeights = measureSharedChildHeights(i, size, currentVisibleContentItemCount, null);
         }
         setMeasuredDimension(View.MeasureSpec.getSize(i), View.resolveSizeAndState(measureSharedChildHeights, i2, 0));
     }
@@ -38,12 +40,22 @@ public class NavigationRailMenuView extends NavigationBarMenuView {
         int childCount = getChildCount();
         int i5 = i3 - i;
         int i6 = 0;
-        for (int i7 = 0; i7 < childCount; i7++) {
-            View childAt = getChildAt(i7);
+        int i7 = 0;
+        for (int i8 = 0; i8 < childCount; i8++) {
+            View childAt = getChildAt(i8);
             if (childAt.getVisibility() != 8) {
-                int measuredHeight = childAt.getMeasuredHeight() + i6;
-                childAt.layout(0, i6, i5, measuredHeight);
-                i6 = measuredHeight;
+                i7 += childAt.getMeasuredHeight();
+                i6++;
+            }
+        }
+        int max = i6 <= 1 ? 0 : Math.max(0, Math.min((getMeasuredHeight() - i7) / (i6 - 1), this.itemSpacing));
+        int i9 = 0;
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt2 = getChildAt(i10);
+            if (childAt2.getVisibility() != 8) {
+                int measuredHeight = childAt2.getMeasuredHeight();
+                childAt2.layout(0, i9, i5, measuredHeight + i9);
+                i9 += measuredHeight + max;
             }
         }
     }
@@ -77,25 +89,39 @@ public class NavigationRailMenuView extends NavigationBarMenuView {
 
     private int measureSharedChildHeights(int i, int i2, int i3, View view) {
         int makeMeasureSpec;
-        if (view == null) {
-            makeMeasureSpec = makeSharedHeightSpec(i, i2, i3);
-        } else {
-            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(view.getMeasuredHeight(), 0);
-        }
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i2, 0);
         int childCount = getChildCount();
         int i4 = 0;
         for (int i5 = 0; i5 < childCount; i5++) {
             View childAt = getChildAt(i5);
-            if (childAt != view) {
-                i4 += measureChildHeight(childAt, i, makeMeasureSpec);
+            if (!(childAt instanceof NavigationBarItemView)) {
+                int measureChildHeight = measureChildHeight(childAt, i, makeMeasureSpec2);
+                i2 -= measureChildHeight;
+                i4 += measureChildHeight;
             }
         }
-        return i4;
+        int max = Math.max(i2, 0);
+        if (view == null) {
+            makeMeasureSpec = makeSharedHeightSpec(i, max, i3);
+        } else {
+            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(view.getMeasuredHeight(), 0);
+        }
+        int i6 = 0;
+        for (int i7 = 0; i7 < childCount; i7++) {
+            View childAt2 = getChildAt(i7);
+            if (childAt2.getVisibility() == 0) {
+                i6++;
+            }
+            if ((childAt2 instanceof NavigationBarItemView) && childAt2 != view) {
+                i4 += measureChildHeight(childAt2, i, makeMeasureSpec);
+            }
+        }
+        return i4 + (Math.max(0, i6 - 1) * this.itemSpacing);
     }
 
     private int measureChildHeight(View view, int i, int i2) {
+        view.measure(i, i2);
         if (view.getVisibility() != 8) {
-            view.measure(i, i2);
             return view.getMeasuredHeight();
         }
         return 0;
@@ -125,8 +151,14 @@ public class NavigationRailMenuView extends NavigationBarMenuView {
         return this.itemMinimumHeight;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public boolean isTopGravity() {
-        return (this.layoutParams.gravity & 112) == 48;
+    public void setItemSpacing(int i) {
+        if (this.itemSpacing != i) {
+            this.itemSpacing = i;
+            requestLayout();
+        }
+    }
+
+    public int getItemSpacing() {
+        return this.itemSpacing;
     }
 }

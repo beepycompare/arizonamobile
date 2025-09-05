@@ -73,7 +73,7 @@ public final class FlowKt__ShareKt$launchSharingDeferred$1 extends SuspendLambda
                             CompletableDeferred<Result<StateFlow<T>>> completableDeferred2 = completableDeferred;
                             T t2 = (T) StateFlowKt.MutableStateFlow(t);
                             Result.Companion companion = Result.Companion;
-                            completableDeferred2.complete(Result.m9064boximpl(Result.m9065constructorimpl(new ReadonlyStateFlow((StateFlow) t2, JobKt.getJob(coroutineScope2.getCoroutineContext())))));
+                            completableDeferred2.complete(Result.m9083boximpl(Result.m9084constructorimpl(new ReadonlyStateFlow((StateFlow) t2, JobKt.getJob(coroutineScope2.getCoroutineContext())))));
                             objectRef3.element = t2;
                         }
                         return Unit.INSTANCE;
@@ -91,7 +91,7 @@ public final class FlowKt__ShareKt$launchSharingDeferred$1 extends SuspendLambda
             if (objectRef.element == 0) {
                 CompletableDeferred<Result<StateFlow<T>>> completableDeferred2 = this.$result;
                 Result.Companion companion = Result.Companion;
-                completableDeferred2.complete(Result.m9064boximpl(Result.m9065constructorimpl(ResultKt.createFailure(new NoSuchElementException("Flow is empty")))));
+                completableDeferred2.complete(Result.m9083boximpl(Result.m9084constructorimpl(ResultKt.createFailure(new NoSuchElementException("Flow is empty")))));
             }
             return Unit.INSTANCE;
         } catch (Throwable th) {

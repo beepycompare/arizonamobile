@@ -1,6 +1,15 @@
 package io.appmetrica.analytics.impl;
-
-import kotlin.jvm.functions.Function2;
 /* loaded from: classes4.dex */
-public interface Om extends Function2 {
+public final class Om {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Nm f610a;
+
+    public Om(Nm nm) {
+        this.f610a = nm;
+    }
+
+    public Om() {
+        this(new Nm());
+    }
 }

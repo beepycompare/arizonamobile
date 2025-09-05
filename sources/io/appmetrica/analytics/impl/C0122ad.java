@@ -1,30 +1,12 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.HashMap;
 import java.util.Map;
 /* renamed from: io.appmetrica.analytics.impl.ad  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public class C0122ad {
+public final class C0122ad extends Q2 {
+    public static final Zc b = new Zc();
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Map f776a;
-    public final Object b;
-
-    public C0122ad(Object obj) {
-        this(new HashMap(), obj);
-    }
-
-    public final void a(Object obj, Object obj2) {
-        this.f776a.put(obj, obj2);
-    }
-
-    public C0122ad(HashMap hashMap, Object obj) {
-        this.f776a = hashMap;
-        this.b = obj;
-    }
-
-    public final Object a(Object obj) {
-        Object obj2 = this.f776a.get(obj);
-        return obj2 == null ? this.b : obj2;
+    public C0122ad(EnumC0351ja enumC0351ja, Map<String, ? extends Object> map) {
+        super(Zc.a(b, enumC0351ja, map));
     }
 }

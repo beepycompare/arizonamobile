@@ -15,31 +15,31 @@ import ru.rustore.sdk.activitylauncher.OnReceiveResultCallback;
 import ru.rustore.sdk.appupdate.errors.RuStoreInstallException;
 import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 import ru.rustore.sdk.reactive.single.SingleEmitter;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class C extends Lambda implements Function1<SingleEmitter<Integer>, Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0809r f1342a;
+    public final /* synthetic */ C0813r f1347a;
     public final /* synthetic */ AppUpdateInfo b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public C(C0809r c0809r, AppUpdateInfo appUpdateInfo) {
+    public C(C0813r c0813r, AppUpdateInfo appUpdateInfo) {
         super(1);
-        this.f1342a = c0809r;
+        this.f1347a = c0813r;
         this.b = appUpdateInfo;
     }
 
     public final void a(final SingleEmitter<Integer> emitter) {
-        Object m9065constructorimpl;
+        Object m9084constructorimpl;
         Intrinsics.checkNotNullParameter(emitter, "emitter");
-        C0809r c0809r = this.f1342a;
+        C0813r c0813r = this.f1347a;
         AppUpdateInfo appUpdateInfo = this.b;
         try {
             Result.Companion companion = Result.Companion;
-            Context context = c0809r.f1400a;
+            Context context = c0813r.f1405a;
             Intent intent = new Intent("ru.vk.store.FlexibleAppUpdate");
-            c0809r.b.getClass();
-            intent.putExtras(C0806o.a(appUpdateInfo));
+            c0813r.b.getClass();
+            intent.putExtras(C0810o.a(appUpdateInfo));
             ContextExtensionKt.openActivityForResult(context, intent, new OnReceiveResultCallback() { // from class: ru.rustore.sdk.appupdate.C$$ExternalSyntheticLambda0
                 @Override // ru.rustore.sdk.activitylauncher.OnReceiveResultCallback
                 public final void onReceiveResult(ActivityLauncherResult activityLauncherResult, Bundle bundle) {
@@ -47,14 +47,14 @@ public final class C extends Lambda implements Function1<SingleEmitter<Integer>,
                 }
             });
             appUpdateInfo.markIsUsed$sdk_public_appupdate_release();
-            m9065constructorimpl = Result.m9065constructorimpl(Unit.INSTANCE);
+            m9084constructorimpl = Result.m9084constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9065constructorimpl = Result.m9065constructorimpl(ResultKt.createFailure(th));
+            m9084constructorimpl = Result.m9084constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9068exceptionOrNullimpl = Result.m9068exceptionOrNullimpl(m9065constructorimpl);
-        if (m9068exceptionOrNullimpl != null) {
-            emitter.error(m9068exceptionOrNullimpl);
+        Throwable m9087exceptionOrNullimpl = Result.m9087exceptionOrNullimpl(m9084constructorimpl);
+        if (m9087exceptionOrNullimpl != null) {
+            emitter.error(m9087exceptionOrNullimpl);
         }
     }
 

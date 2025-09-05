@@ -7,14 +7,14 @@ import java.util.Map;
 public class PreloadInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f196a;
+    private final String f197a;
     private final Map b;
 
     /* loaded from: classes4.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f197a;
+        private final String f198a;
         private final HashMap b;
 
         /* synthetic */ Builder(String str, int i) {
@@ -33,7 +33,7 @@ public class PreloadInfo {
         }
 
         private Builder(String str) {
-            this.f197a = str;
+            this.f198a = str;
             this.b = new HashMap();
         }
     }
@@ -51,11 +51,11 @@ public class PreloadInfo {
     }
 
     public String getTrackingId() {
-        return this.f196a;
+        return this.f197a;
     }
 
     private PreloadInfo(Builder builder) {
-        this.f196a = builder.f197a;
+        this.f197a = builder.f198a;
         this.b = CollectionUtils.unmodifiableMapCopy(builder.b);
     }
 }

@@ -1,17 +1,20 @@
 package io.appmetrica.analytics.impl;
-
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
-public final class I4 extends C0670w3 {
-    public final int b;
+public abstract class I4 {
 
-    public I4(int i, int i2) {
-        super(i2);
-        this.b = i;
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public static final boolean f484a;
+    public static final boolean b;
+    public static final boolean c;
+    public static final boolean d;
+    public static final boolean e;
 
-    @Override // io.appmetrica.analytics.impl.C0670w3
-    public final String toString() {
-        return "CollectionTrimInfo{itemsDropped=" + this.b + ", bytesTruncated=" + this.f1113a + AbstractJsonLexerKt.END_OBJ;
+    static {
+        Bm bm = new Bm();
+        f484a = bm.f371a;
+        b = bm.b;
+        c = bm.c;
+        d = bm.d;
+        e = bm.e;
     }
 }

@@ -127,8 +127,8 @@ public final class MaterialBackOrchestrator {
 
         @Override // com.google.android.material.motion.MaterialBackOrchestrator.BackCallbackDelegate
         public void stopListeningForBackCallbacks(View view) {
-            OnBackInvokedDispatcher findOnBackInvokedDispatcher = view.findOnBackInvokedDispatcher();
-            if (findOnBackInvokedDispatcher == null) {
+            OnBackInvokedDispatcher findOnBackInvokedDispatcher;
+            if (this.onBackInvokedCallback == null || (findOnBackInvokedDispatcher = view.findOnBackInvokedDispatcher()) == null) {
                 return;
             }
             findOnBackInvokedDispatcher.unregisterOnBackInvokedCallback(this.onBackInvokedCallback);

@@ -14,6 +14,7 @@ import android.widget.EditText;
 import androidx.core.util.Pair;
 import androidx.core.util.Preconditions;
 import com.google.android.material.R;
+import com.google.android.material.color.MaterialColors;
 import com.google.android.material.internal.ManufacturerUtils;
 import com.google.android.material.resources.MaterialAttributes;
 import com.google.android.material.textfield.TextInputLayout;
@@ -190,6 +191,11 @@ public class RangeDateSelector implements DateSelector<Pair<Long, Long>> {
         final TextInputLayout textInputLayout2 = (TextInputLayout) inflate.findViewById(R.id.mtrl_picker_text_input_range_end);
         EditText editText = textInputLayout.getEditText();
         EditText editText2 = textInputLayout2.getEditText();
+        Integer colorOrNull = MaterialColors.getColorOrNull(inflate.getContext(), R.attr.colorOnSurfaceVariant);
+        if (colorOrNull != null) {
+            editText.setHintTextColor(colorOrNull.intValue());
+            editText2.setHintTextColor(colorOrNull.intValue());
+        }
         if (ManufacturerUtils.isDateInputKeyboardMissingSeparatorCharacters()) {
             editText.setInputType(17);
             editText2.setInputType(17);
@@ -245,7 +251,9 @@ public class RangeDateSelector implements DateSelector<Pair<Long, Long>> {
                 RangeDateSelector.this.updateIfValidTextProposal(textInputLayout, textInputLayout2, onSelectionChangedListener);
             }
         });
-        DateSelector.showKeyboardWithAutoHideBehavior(editText, editText2);
+        if (!DateSelector.isTouchExplorationEnabled(inflate.getContext())) {
+            DateSelector.showKeyboardWithAutoHideBehavior(editText, editText2);
+        }
         return inflate;
     }
 

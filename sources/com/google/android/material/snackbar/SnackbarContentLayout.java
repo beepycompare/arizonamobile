@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.color.MaterialColors;
@@ -92,8 +91,8 @@ public class SnackbarContentLayout extends LinearLayout implements ContentViewCa
     }
 
     private static void updateTopBottomPadding(View view, int i, int i2) {
-        if (ViewCompat.isPaddingRelative(view)) {
-            ViewCompat.setPaddingRelative(view, ViewCompat.getPaddingStart(view), i, ViewCompat.getPaddingEnd(view), i2);
+        if (view.isPaddingRelative()) {
+            view.setPaddingRelative(view.getPaddingStart(), i, view.getPaddingEnd(), i2);
         } else {
             view.setPadding(view.getPaddingLeft(), i, view.getPaddingRight(), i2);
         }

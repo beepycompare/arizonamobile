@@ -1,30 +1,32 @@
 package io.appmetrica.analytics.impl;
 
+import android.content.Context;
 import android.content.Intent;
+import io.appmetrica.analytics.coreapi.internal.backport.BiConsumer;
 import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.BatteryInfo;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeType;
+import java.util.Iterator;
 /* renamed from: io.appmetrica.analytics.impl.d3  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0190d3 implements Consumer {
+public final class C0190d3 implements BiConsumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0215e3 f822a;
+    public final /* synthetic */ C0215e3 f831a;
 
     public C0190d3(C0215e3 c0215e3) {
-        this.f822a = c0215e3;
+        this.f831a = c0215e3;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    public final void consume(Object obj) {
-        Intent intent = (Intent) obj;
-        BatteryInfo batteryInfo = this.f822a.b;
-        ChargeType chargeType = batteryInfo == null ? null : batteryInfo.chargeType;
-        this.f822a.getClass();
-        BatteryInfo a2 = C0215e3.a(intent);
-        this.f822a.b = a2;
-        if (chargeType != a2.chargeType) {
-            this.f822a.f837a.execute(new C0164c3(this, a2));
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.BiConsumer
+    public final void consume(Object obj, Object obj2) {
+        Context context = (Context) obj;
+        Intent intent = (Intent) obj2;
+        synchronized (this.f831a) {
+            C0215e3 c0215e3 = this.f831a;
+            c0215e3.b = intent;
+            Iterator it = c0215e3.f851a.iterator();
+            while (it.hasNext()) {
+                ((Consumer) it.next()).consume(intent);
+            }
         }
     }
 }

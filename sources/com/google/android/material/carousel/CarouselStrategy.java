@@ -7,20 +7,18 @@ public abstract class CarouselStrategy {
     private float smallSizeMax;
     private float smallSizeMin;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes4.dex */
+    enum StrategyType {
+        CONTAINED,
+        UNCONTAINED
+    }
+
     public static float getChildMaskPercentage(float f, float f2, float f3) {
         return 1.0f - ((f - f3) / (f2 - f3));
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public boolean isContained() {
-        return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
     public abstract KeylineState onFirstChildMeasuredWithMargins(Carousel carousel, View view);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public boolean shouldRefreshKeylineState(Carousel carousel, int i) {
         return false;
     }
@@ -47,6 +45,11 @@ public abstract class CarouselStrategy {
             iArr2[i] = iArr[i] * 2;
         }
         return iArr2;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public StrategyType getStrategyType() {
+        return StrategyType.CONTAINED;
     }
 
     public void setSmallItemSizeMin(float f) {

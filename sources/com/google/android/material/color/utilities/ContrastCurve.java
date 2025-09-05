@@ -15,7 +15,7 @@ public final class ContrastCurve {
         this.high = d4;
     }
 
-    public double getContrast(double d) {
+    public double get(double d) {
         if (d <= -1.0d) {
             return this.low;
         }

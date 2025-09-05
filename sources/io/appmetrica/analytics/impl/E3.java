@@ -1,39 +1,27 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Collections;
-import java.util.List;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* loaded from: classes4.dex */
-public final class E3 implements InterfaceC0700x8 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final F3 f406a;
-
-    public E3() {
-        this(new F3());
+public final class E3 implements ProtobufConverter {
+    public final C0743ym a(C3 c3) {
+        C0743ym c0743ym = new C0743ym();
+        c0743ym.f1172a = c3.f377a;
+        return c0743ym;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final List<Vi> fromModel(D3 d3) {
-        Q8 q8 = new Q8();
-        q8.e = new C0750z8();
-        Vi fromModel = this.f406a.fromModel(d3.b);
-        q8.e.f1175a = (A8) fromModel.f697a;
-        q8.f617a = d3.f389a;
-        return Collections.singletonList(new Vi(q8, new C0670w3(C0670w3.b(fromModel))));
+    public final Object fromModel(Object obj) {
+        C0743ym c0743ym = new C0743ym();
+        c0743ym.f1172a = ((C3) obj).f377a;
+        return c0743ym;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        List list = (List) obj;
-        throw new UnsupportedOperationException();
+        return new C3(((C0743ym) obj).f1172a);
     }
 
-    public E3(F3 f3) {
-        this.f406a = f3;
-    }
-
-    public final D3 a(List<Vi> list) {
-        throw new UnsupportedOperationException();
+    public final C3 a(C0743ym c0743ym) {
+        return new C3(c0743ym.f1172a);
     }
 }

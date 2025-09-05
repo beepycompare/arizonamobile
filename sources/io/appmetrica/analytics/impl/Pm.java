@@ -1,49 +1,65 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
-import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.coreutils.internal.parsing.ParseUtils;
+import java.util.HashMap;
+import java.util.Map;
 /* loaded from: classes4.dex */
-public final class Pm extends Wm {
-    @Override // io.appmetrica.analytics.impl.Wm
-    public final ProtobufStateStorage a(Context context, IBinaryDataHelper iBinaryDataHelper) {
-        byte[] bArr;
-        byte[] bArr2;
-        Dm dm = new Dm();
-        try {
-            bArr = AbstractC0736yj.a(context.getPackageName());
-        } catch (Throwable unused) {
-            bArr = new byte[16];
-        }
-        try {
-            bArr2 = AbstractC0736yj.a(new StringBuilder(context.getPackageName()).reverse().toString());
-        } catch (Throwable unused2) {
-            bArr2 = new byte[16];
-        }
-        return new C0228eg("startup_state", iBinaryDataHelper, new V8(dm, new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, bArr, bArr2)), new C0415lm());
-    }
-
-    @Override // io.appmetrica.analytics.impl.Wm
-    public final IBinaryDataHelper c(Context context) {
-        C0496p3 c0496p3;
-        C0649v7 a2 = C0649v7.a(context);
-        synchronized (a2) {
-            if (a2.i == null) {
-                a2.i = new C0496p3(a2.g());
+public abstract class Pm {
+    public static HashMap b(Map map) {
+        HashMap hashMap = new HashMap();
+        if (map != null) {
+            for (Map.Entry entry : map.entrySet()) {
+                String str = (String) entry.getKey();
+                if (!TextUtils.isEmpty(str) && !str.contains(StringUtils.PROCESS_POSTFIX_DELIMITER) && !str.contains(StringUtils.COMMA) && !str.contains("&")) {
+                    String str2 = (String) entry.getValue();
+                    if (!TextUtils.isEmpty(str2) && ParseUtils.parseLong(str2, -1L) != -1) {
+                        hashMap.put((String) entry.getKey(), (String) entry.getValue());
+                    }
+                }
             }
-            c0496p3 = a2.i;
         }
-        return c0496p3;
+        return hashMap;
     }
 
-    @Override // io.appmetrica.analytics.impl.Wm
-    public final IBinaryDataHelper d(Context context) {
-        IBinaryDataHelper g;
-        C0649v7 a2 = C0649v7.a(context);
-        synchronized (a2) {
-            g = a2.g();
+    public static String a(Map map) {
+        if (ro.a(map)) {
+            return "";
         }
-        return g;
+        StringBuilder sb = new StringBuilder();
+        for (Map.Entry entry : map.entrySet()) {
+            sb.append((String) entry.getKey()).append(StringUtils.PROCESS_POSTFIX_DELIMITER).append((String) entry.getValue()).append(StringUtils.COMMA);
+        }
+        sb.setLength(sb.length() - 1);
+        return sb.toString();
+    }
+
+    public static HashMap a(String str) {
+        String[] split;
+        HashMap hashMap = new HashMap();
+        if (!TextUtils.isEmpty(str)) {
+            for (String str2 : str.split(StringUtils.COMMA)) {
+                int indexOf = str2.indexOf(StringUtils.PROCESS_POSTFIX_DELIMITER);
+                if (indexOf != -1) {
+                    hashMap.put(str2.substring(0, indexOf), str2.substring(indexOf + 1));
+                }
+            }
+        }
+        return hashMap;
+    }
+
+    public static boolean a(HashMap hashMap) {
+        if (hashMap == null || hashMap.isEmpty()) {
+            return false;
+        }
+        for (Map.Entry entry : hashMap.entrySet()) {
+            try {
+                Integer.parseInt((String) entry.getValue());
+            } catch (Throwable unused) {
+                return false;
+            }
+        }
+        return true;
     }
 }

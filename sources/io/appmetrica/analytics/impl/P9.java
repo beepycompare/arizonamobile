@@ -1,5 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* loaded from: classes4.dex */
-public interface P9 {
-    O9 a(S9 s9, C0297h7 c0297h7, C0332ih c0332ih, J4 j4, C0398l5 c0398l5, C0433mf c0433mf);
+public final class P9 implements ProtobufConverter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final N9 fromModel(O9 o9) {
+        N9 n9 = new N9();
+        String str = o9.f602a;
+        if (str != null) {
+            n9.f588a = str.getBytes();
+        }
+        return n9;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final O9 toModel(N9 n9) {
+        return new O9(new String(n9.f588a));
+    }
 }

@@ -1,31 +1,30 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.StartupParamsCallback;
-import java.util.List;
+import android.app.Activity;
 /* renamed from: io.appmetrica.analytics.impl.e1  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
 public final class RunnableC0213e1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f836a;
-    public final /* synthetic */ StartupParamsCallback b;
-    public final /* synthetic */ List c;
-    public final /* synthetic */ C0494p1 d;
+    public final /* synthetic */ Activity f849a;
+    public final /* synthetic */ C0547r1 b;
 
-    public RunnableC0213e1(C0494p1 c0494p1, Context context, StartupParamsCallback startupParamsCallback, List list) {
-        this.d = c0494p1;
-        this.f836a = context;
-        this.b = startupParamsCallback;
-        this.c = list;
+    public RunnableC0213e1(C0547r1 c0547r1, Activity activity) {
+        this.b = c0547r1;
+        this.f849a = activity;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0617u0 c0617u0 = this.d.f1005a;
-        Context applicationContext = this.f836a.getApplicationContext();
-        c0617u0.getClass();
-        C0592t0 a2 = C0592t0.a(applicationContext);
-        a2.f().a(this.b, this.c);
+        C0547r1 c0547r1 = this.b;
+        C0285gl c0285gl = c0547r1.h;
+        Activity activity = this.f849a;
+        InterfaceC0327ib interfaceC0327ib = c0547r1.d().f512a;
+        if (activity != null) {
+            c0285gl.f.a(activity);
+        }
+        if (c0285gl.e.a(activity, EnumC0470o.RESUMED)) {
+            interfaceC0327ib.a(activity);
+        }
     }
 }

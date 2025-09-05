@@ -4,12 +4,15 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.content.res.XmlResourceParser;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.text.TextPaint;
 import android.util.Log;
+import android.util.Xml;
+import androidx.appcompat.R;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.view.ViewCompat;
-import com.google.android.material.R;
 /* loaded from: classes4.dex */
 public class TextAppearance {
     private static final String TAG = "TextAppearance";
@@ -19,7 +22,7 @@ public class TextAppearance {
     private Typeface font;
     public final String fontFamily;
     private final int fontFamilyResourceId;
-    private boolean fontResolved = false;
+    public String fontVariationSettings;
     public final boolean hasLetterSpacing;
     public final float letterSpacing;
     public final ColorStateList shadowColor;
@@ -33,6 +36,8 @@ public class TextAppearance {
     private float textSize;
     public final int textStyle;
     public final int typeface;
+    private boolean fontResolved = false;
+    private boolean systemFontLoadAttempted = false;
 
     public TextAppearance(Context context, int i) {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(i, R.styleable.TextAppearance);
@@ -51,9 +56,12 @@ public class TextAppearance {
         this.shadowDy = obtainStyledAttributes.getFloat(R.styleable.TextAppearance_android_shadowDy, 0.0f);
         this.shadowRadius = obtainStyledAttributes.getFloat(R.styleable.TextAppearance_android_shadowRadius, 0.0f);
         obtainStyledAttributes.recycle();
-        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(i, R.styleable.MaterialTextAppearance);
-        this.hasLetterSpacing = obtainStyledAttributes2.hasValue(R.styleable.MaterialTextAppearance_android_letterSpacing);
-        this.letterSpacing = obtainStyledAttributes2.getFloat(R.styleable.MaterialTextAppearance_android_letterSpacing, 0.0f);
+        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(i, com.google.android.material.R.styleable.MaterialTextAppearance);
+        this.hasLetterSpacing = obtainStyledAttributes2.hasValue(com.google.android.material.R.styleable.MaterialTextAppearance_android_letterSpacing);
+        this.letterSpacing = obtainStyledAttributes2.getFloat(com.google.android.material.R.styleable.MaterialTextAppearance_android_letterSpacing, 0.0f);
+        if (Build.VERSION.SDK_INT >= 26) {
+            this.fontVariationSettings = obtainStyledAttributes2.getString(MaterialResources.getIndexWithValue(obtainStyledAttributes2, com.google.android.material.R.styleable.MaterialTextAppearance_fontVariationSettings, com.google.android.material.R.styleable.MaterialTextAppearance_android_fontVariationSettings));
+        }
         obtainStyledAttributes2.recycle();
     }
 
@@ -79,9 +87,7 @@ public class TextAppearance {
     }
 
     public void getFontAsync(Context context, final TextAppearanceFontCallback textAppearanceFontCallback) {
-        if (shouldLoadFontSynchronously(context)) {
-            getFont(context);
-        } else {
+        if (!maybeLoadFontSynchronously(context)) {
             createFallbackFont();
         }
         int i = this.fontFamilyResourceId;
@@ -171,8 +177,9 @@ public class TextAppearance {
     }
 
     public void updateMeasureState(Context context, TextPaint textPaint, TextAppearanceFontCallback textAppearanceFontCallback) {
-        if (shouldLoadFontSynchronously(context)) {
-            updateTextPaintMeasureState(context, textPaint, getFont(context));
+        Typeface typeface;
+        if (maybeLoadFontSynchronously(context) && this.fontResolved && (typeface = this.font) != null) {
+            updateTextPaintMeasureState(context, textPaint, typeface);
         } else {
             getFontAsync(context, textPaint, textAppearanceFontCallback);
         }
@@ -188,6 +195,9 @@ public class TextAppearance {
         textPaint.setFakeBoldText((i & 1) != 0);
         textPaint.setTextSkewX((i & 2) != 0 ? -0.25f : 0.0f);
         textPaint.setTextSize(this.textSize);
+        if (Build.VERSION.SDK_INT >= 26) {
+            textPaint.setFontVariationSettings(this.fontVariationSettings);
+        }
         if (this.hasLetterSpacing) {
             textPaint.setLetterSpacing(this.letterSpacing);
         }
@@ -209,11 +219,71 @@ public class TextAppearance {
         this.textSize = f;
     }
 
-    private boolean shouldLoadFontSynchronously(Context context) {
+    public String getFontVariationSettings() {
+        return this.fontVariationSettings;
+    }
+
+    public void setFontVariationSettings(String str) {
+        this.fontVariationSettings = str;
+    }
+
+    private boolean maybeLoadFontSynchronously(Context context) {
         if (TextAppearanceConfig.shouldLoadFontSynchronously()) {
+            getFont(context);
             return true;
+        } else if (this.fontResolved) {
+            return true;
+        } else {
+            int i = this.fontFamilyResourceId;
+            if (i == 0) {
+                return false;
+            }
+            Typeface cachedFont = ResourcesCompat.getCachedFont(context, i);
+            if (cachedFont != null) {
+                this.font = cachedFont;
+                this.fontResolved = true;
+                return true;
+            }
+            Typeface systemTypeface = getSystemTypeface(context);
+            if (systemTypeface != null) {
+                this.font = systemTypeface;
+                this.fontResolved = true;
+                return true;
+            }
+            return false;
         }
-        int i = this.fontFamilyResourceId;
-        return (i != 0 ? ResourcesCompat.getCachedFont(context, i) : null) != null;
+    }
+
+    private Typeface getSystemTypeface(Context context) {
+        Typeface create;
+        if (this.systemFontLoadAttempted) {
+            return null;
+        }
+        this.systemFontLoadAttempted = true;
+        String readFontProviderSystemFontFamily = readFontProviderSystemFontFamily(context, this.fontFamilyResourceId);
+        if (readFontProviderSystemFontFamily == null || (create = Typeface.create(readFontProviderSystemFontFamily, 0)) == Typeface.DEFAULT) {
+            return null;
+        }
+        return Typeface.create(create, this.textStyle);
+    }
+
+    private static String readFontProviderSystemFontFamily(Context context, int i) {
+        Resources resources = context.getResources();
+        if (i != 0 && resources.getResourceTypeName(i).equals("font")) {
+            try {
+                XmlResourceParser xml = resources.getXml(i);
+                while (xml.getEventType() != 1) {
+                    if (xml.getEventType() == 2 && xml.getName().equals("font-family")) {
+                        TypedArray obtainAttributes = resources.obtainAttributes(Xml.asAttributeSet(xml), androidx.core.R.styleable.FontFamily);
+                        String string = obtainAttributes.getString(androidx.core.R.styleable.FontFamily_fontProviderSystemFontFamily);
+                        obtainAttributes.recycle();
+                        return string;
+                    }
+                    xml.next();
+                }
+            } catch (Throwable unused) {
+            }
+        }
+        return null;
     }
 }

@@ -1,15 +1,10 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
-import io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrategyModuleProvider;
+import java.math.BigInteger;
 /* loaded from: classes4.dex */
-public final class X7 implements AskForPermissionStrategyModuleProvider {
+public abstract class X7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0457ne f722a = new C0457ne();
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrategyModuleProvider
-    public final PermissionStrategy getAskForPermissionStrategy() {
-        return this.f722a;
-    }
+    public static final BigInteger f733a = BigInteger.valueOf(Long.MAX_VALUE);
+    public static final BigInteger b = BigInteger.valueOf(Long.MIN_VALUE);
 }

@@ -1,39 +1,20 @@
 package io.appmetrica.analytics.impl;
+
+import android.text.TextUtils;
+import java.util.UUID;
 /* renamed from: io.appmetrica.analytics.impl.g0  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0264g0 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f862a;
-    public final long b;
-
-    public C0264g0(String str, long j) {
-        this.f862a = str;
-        this.b = j;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+public final class C0264g0 implements yo {
+    @Override // io.appmetrica.analytics.impl.yo
+    public final wo a(String str) {
+        if (TextUtils.isEmpty(str)) {
+            return new wo(this, false, "ApiKey is empty. Please, read official documentation how to obtain one: https://appmetrica.io/docs/mobile-sdk-dg/android/about/android-initialize.html");
         }
-        if (obj != null && C0264g0.class == obj.getClass()) {
-            C0264g0 c0264g0 = (C0264g0) obj;
-            if (this.b != c0264g0.b) {
-                return false;
-            }
-            String str = this.f862a;
-            String str2 = c0264g0.f862a;
-            if (str == null ? str2 == null : str.equals(str2)) {
-                return true;
-            }
+        try {
+            UUID.fromString(str);
+            return new wo(this, true, "");
+        } catch (Throwable unused) {
+            return new wo(this, false, "Invalid ApiKey=" + str + ". Please, read official documentation how to obtain one: https://appmetrica.io/docs/mobile-sdk-dg/android/about/android-initialize.html");
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        String str = this.f862a;
-        int hashCode = str != null ? str.hashCode() : 0;
-        long j = this.b;
-        return (hashCode * 31) + ((int) (j ^ (j >>> 32)));
     }
 }

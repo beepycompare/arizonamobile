@@ -35,7 +35,7 @@ public class ResourceLoader<Data> implements ModelLoader<Integer, Data> {
 
     private Uri getResourceUri(Integer num) {
         try {
-            return Uri.parse("android.resource://" + this.resources.getResourcePackageName(num.intValue()) + '/' + this.resources.getResourceTypeName(num.intValue()) + '/' + this.resources.getResourceEntryName(num.intValue()));
+            return Uri.parse("android.resource://" + this.resources.getResourcePackageName(num.intValue()) + '/' + num);
         } catch (Resources.NotFoundException e) {
             if (Log.isLoggable(TAG, 5)) {
                 Log.w(TAG, "Received invalid resource id: " + num, e);

@@ -1,18 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import android.text.TextUtils;
+import io.appmetrica.analytics.PreloadInfo;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class Of extends Na {
-    public Of(int i) {
-        super(i);
-    }
+public final class Of {
 
-    @Override // io.appmetrica.analytics.impl.Na
-    /* renamed from: a */
-    public final int b(Y y) {
-        if (y == null) {
-            return 0;
+    /* renamed from: a  reason: collision with root package name */
+    public final Kf f606a;
+
+    public Of(PreloadInfo preloadInfo, PublicLogger publicLogger, boolean z) {
+        if (preloadInfo != null) {
+            if (TextUtils.isEmpty(preloadInfo.getTrackingId())) {
+                publicLogger.error("Required field \"PreloadInfo.trackingId\" is empty!\nThis preload info will be skipped.", new Object[0]);
+            } else {
+                this.f606a = new Kf(preloadInfo.getTrackingId(), new JSONObject(preloadInfo.getAdditionalParams()), true, z, EnumC0530q8.c);
+            }
         }
-        return StringUtils.getUtf8BytesLength(y.b) + 12;
     }
 }

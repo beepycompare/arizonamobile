@@ -17,11 +17,12 @@ class StrictLineReader implements Closeable {
     private final InputStream in;
     private int pos;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     public StrictLineReader(InputStream inputStream, Charset charset) {
         this(inputStream, 8192, charset);
     }
 
-    public StrictLineReader(InputStream inputStream, int i, Charset charset) {
+    StrictLineReader(InputStream inputStream, int i, Charset charset) {
         if (inputStream == null || charset == null) {
             throw null;
         }
@@ -46,6 +47,7 @@ class StrictLineReader implements Closeable {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     public String readLine() throws IOException {
         int i;
         byte[] bArr;
@@ -112,6 +114,7 @@ class StrictLineReader implements Closeable {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     public boolean hasUnterminatedLine() {
         return this.end == -1;
     }

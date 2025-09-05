@@ -2,6 +2,7 @@ package com.google.android.material.navigation;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.SparseArray;
 import android.util.TypedValue;
@@ -9,12 +10,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.TextView;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.view.menu.MenuItemImpl;
 import androidx.appcompat.view.menu.MenuView;
 import androidx.core.util.Pools;
-import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
@@ -29,14 +30,24 @@ import com.google.android.material.shape.ShapeAppearanceModel;
 import java.util.HashSet;
 /* loaded from: classes4.dex */
 public abstract class NavigationBarMenuView extends ViewGroup implements MenuView {
-    private static final int[] CHECKED_STATE_SET = {16842912};
-    private static final int[] DISABLED_STATE_SET = {-16842910};
-    private static final int ITEM_POOL_SIZE = 5;
+    private static final int DEFAULT_COLLAPSED_MAX_COUNT = 7;
     private static final int NO_PADDING = -1;
+    private static final int NO_SELECTED_ITEM = -1;
     private final SparseArray<BadgeDrawable> badgeDrawables;
-    private NavigationBarItemView[] buttons;
+    private NavigationBarMenuItemView[] buttons;
+    private MenuItem checkedItem;
+    private int collapsedMaxItemCount;
+    private boolean dividersEnabled;
+    private boolean expanded;
+    private int horizontalItemTextAppearanceActive;
+    private int horizontalItemTextAppearanceInactive;
+    private int iconLabelHorizontalSpacing;
     private ColorStateList itemActiveIndicatorColor;
     private boolean itemActiveIndicatorEnabled;
+    private int itemActiveIndicatorExpandedHeight;
+    private int itemActiveIndicatorExpandedMarginHorizontal;
+    private final Rect itemActiveIndicatorExpandedPadding;
+    private int itemActiveIndicatorExpandedWidth;
     private int itemActiveIndicatorHeight;
     private int itemActiveIndicatorLabelPadding;
     private int itemActiveIndicatorMarginHorizontal;
@@ -45,25 +56,33 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
     private int itemActiveIndicatorWidth;
     private Drawable itemBackground;
     private int itemBackgroundRes;
+    private int itemGravity;
+    private int itemIconGravity;
     private int itemIconSize;
     private ColorStateList itemIconTint;
     private int itemPaddingBottom;
     private int itemPaddingTop;
-    private final Pools.Pool<NavigationBarItemView> itemPool;
+    private Pools.Pool<NavigationBarItemView> itemPool;
+    private int itemPoolSize;
     private ColorStateList itemRippleColor;
     private int itemTextAppearanceActive;
     private boolean itemTextAppearanceActiveBoldEnabled;
     private int itemTextAppearanceInactive;
     private final ColorStateList itemTextColorDefault;
     private ColorStateList itemTextColorFromUser;
+    private int labelMaxLines;
     private int labelVisibilityMode;
-    private MenuBuilder menu;
+    private boolean measurePaddingFromLabelBaseline;
+    private NavigationBarMenuBuilder menu;
     private final View.OnClickListener onClickListener;
     private final SparseArray<View.OnTouchListener> onTouchListeners;
     private NavigationBarPresenter presenter;
+    private boolean scaleLabelWithFont;
     private int selectedItemId;
     private int selectedItemPosition;
     private final TransitionSet set;
+    private static final int[] CHECKED_STATE_SET = {16842912};
+    private static final int[] DISABLED_STATE_SET = {-16842910};
 
     private boolean isValidId(int i) {
         return i != -1;
@@ -83,15 +102,22 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public NavigationBarMenuView(Context context) {
         super(context);
-        this.itemPool = new Pools.SynchronizedPool(5);
-        this.onTouchListeners = new SparseArray<>(5);
-        this.selectedItemId = 0;
-        this.selectedItemPosition = 0;
-        this.badgeDrawables = new SparseArray<>(5);
+        this.onTouchListeners = new SparseArray<>();
+        this.selectedItemId = -1;
+        this.selectedItemPosition = -1;
+        this.badgeDrawables = new SparseArray<>();
         this.itemPaddingTop = -1;
         this.itemPaddingBottom = -1;
         this.itemActiveIndicatorLabelPadding = -1;
+        this.iconLabelHorizontalSpacing = -1;
+        this.itemGravity = 49;
         this.itemActiveIndicatorResizeable = false;
+        this.labelMaxLines = 1;
+        this.itemPoolSize = 0;
+        this.checkedItem = null;
+        this.collapsedMaxItemCount = 7;
+        this.dividersEnabled = false;
+        this.itemActiveIndicatorExpandedPadding = new Rect();
         this.itemTextColorDefault = createDefaultColorStateList(16842808);
         if (isInEditMode()) {
             this.set = null;
@@ -99,6 +125,7 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
             AutoTransition autoTransition = new AutoTransition();
             this.set = autoTransition;
             autoTransition.setOrdering(0);
+            autoTransition.excludeTarget(TextView.class, true);
             autoTransition.setDuration(MotionUtils.resolveThemeDuration(getContext(), R.attr.motionDurationMedium4, getResources().getInteger(R.integer.material_motion_duration_long_1)));
             autoTransition.setInterpolator(MotionUtils.resolveThemeInterpolator(getContext(), R.attr.motionEasingStandard, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
             autoTransition.addTransition(new TextScale());
@@ -107,32 +134,63 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 MenuItemImpl itemData = ((NavigationBarItemView) view).getItemData();
-                if (NavigationBarMenuView.this.menu.performItemAction(itemData, NavigationBarMenuView.this.presenter, 0)) {
+                boolean performItemAction = NavigationBarMenuView.this.menu.performItemAction(itemData, NavigationBarMenuView.this.presenter, 0);
+                if (itemData == null || !itemData.isCheckable()) {
                     return;
                 }
-                itemData.setChecked(true);
+                if (!performItemAction || itemData.isChecked()) {
+                    NavigationBarMenuView.this.setCheckedItem(itemData);
+                }
             }
         };
-        ViewCompat.setImportantForAccessibility(this, 1);
+        setImportantForAccessibility(1);
+    }
+
+    public void setCheckedItem(MenuItem menuItem) {
+        if (this.checkedItem == menuItem || !menuItem.isCheckable()) {
+            return;
+        }
+        MenuItem menuItem2 = this.checkedItem;
+        if (menuItem2 != null && menuItem2.isChecked()) {
+            this.checkedItem.setChecked(false);
+        }
+        menuItem.setChecked(true);
+        this.checkedItem = menuItem;
+    }
+
+    public void setExpanded(boolean z) {
+        this.expanded = z;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                navigationBarMenuItemView.setExpanded(z);
+            }
+        }
+    }
+
+    public boolean isExpanded() {
+        return this.expanded;
     }
 
     @Override // androidx.appcompat.view.menu.MenuView
     public void initialize(MenuBuilder menuBuilder) {
-        this.menu = menuBuilder;
+        this.menu = new NavigationBarMenuBuilder(menuBuilder);
     }
 
     @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        AccessibilityNodeInfoCompat.wrap(accessibilityNodeInfo).setCollectionInfo(AccessibilityNodeInfoCompat.CollectionInfoCompat.obtain(1, this.menu.getVisibleItems().size(), false, 1));
+        AccessibilityNodeInfoCompat.wrap(accessibilityNodeInfo).setCollectionInfo(AccessibilityNodeInfoCompat.CollectionInfoCompat.obtain(1, getCurrentVisibleContentItemCount(), false, 1));
     }
 
     public void setIconTintList(ColorStateList colorStateList) {
         this.itemIconTint = colorStateList;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setIconTintList(colorStateList);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setIconTintList(colorStateList);
+                }
             }
         }
     }
@@ -143,10 +201,12 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemIconSize(int i) {
         this.itemIconSize = i;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setIconSize(i);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setIconSize(i);
+                }
             }
         }
     }
@@ -157,10 +217,12 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemTextColor(ColorStateList colorStateList) {
         this.itemTextColorFromUser = colorStateList;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setTextColor(colorStateList);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setTextColor(colorStateList);
+                }
             }
         }
     }
@@ -171,13 +233,11 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemTextAppearanceInactive(int i) {
         this.itemTextAppearanceInactive = i;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setTextAppearanceInactive(i);
-                ColorStateList colorStateList = this.itemTextColorFromUser;
-                if (colorStateList != null) {
-                    navigationBarItemView.setTextColor(colorStateList);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setTextAppearanceInactive(i);
                 }
             }
         }
@@ -189,13 +249,11 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemTextAppearanceActive(int i) {
         this.itemTextAppearanceActive = i;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setTextAppearanceActive(i);
-                ColorStateList colorStateList = this.itemTextColorFromUser;
-                if (colorStateList != null) {
-                    navigationBarItemView.setTextColor(colorStateList);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setTextAppearanceActive(i);
                 }
             }
         }
@@ -203,10 +261,12 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemTextAppearanceActiveBoldEnabled(boolean z) {
         this.itemTextAppearanceActiveBoldEnabled = z;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setTextAppearanceActiveBoldEnabled(z);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setTextAppearanceActiveBoldEnabled(z);
+                }
             }
         }
     }
@@ -215,12 +275,46 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
         return this.itemTextAppearanceActive;
     }
 
+    public void setHorizontalItemTextAppearanceInactive(int i) {
+        this.horizontalItemTextAppearanceInactive = i;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setHorizontalTextAppearanceInactive(i);
+                }
+            }
+        }
+    }
+
+    public int getHorizontalItemTextAppearanceInactive() {
+        return this.horizontalItemTextAppearanceInactive;
+    }
+
+    public void setHorizontalItemTextAppearanceActive(int i) {
+        this.horizontalItemTextAppearanceActive = i;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setHorizontalTextAppearanceActive(i);
+                }
+            }
+        }
+    }
+
+    public int getHorizontalItemTextAppearanceActive() {
+        return this.horizontalItemTextAppearanceActive;
+    }
+
     public void setItemBackgroundRes(int i) {
         this.itemBackgroundRes = i;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setItemBackground(i);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setItemBackground(i);
+                }
             }
         }
     }
@@ -231,10 +325,12 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemPaddingTop(int i) {
         this.itemPaddingTop = i;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setItemPaddingTop(i);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setItemPaddingTop(i);
+                }
             }
         }
     }
@@ -245,12 +341,58 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemPaddingBottom(int i) {
         this.itemPaddingBottom = i;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setItemPaddingBottom(i);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setItemPaddingBottom(this.itemPaddingBottom);
+                }
             }
         }
+    }
+
+    public void setMeasurePaddingFromLabelBaseline(boolean z) {
+        this.measurePaddingFromLabelBaseline = z;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setMeasureBottomPaddingFromLabelBaseline(z);
+                }
+            }
+        }
+    }
+
+    public void setLabelFontScalingEnabled(boolean z) {
+        this.scaleLabelWithFont = z;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setLabelFontScalingEnabled(z);
+                }
+            }
+        }
+    }
+
+    public boolean getScaleLabelTextWithFont() {
+        return this.scaleLabelWithFont;
+    }
+
+    public void setLabelMaxLines(int i) {
+        this.labelMaxLines = i;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setLabelMaxLines(i);
+                }
+            }
+        }
+    }
+
+    public int getLabelMaxLines() {
+        return this.labelMaxLines;
     }
 
     public int getActiveIndicatorLabelPadding() {
@@ -259,10 +401,28 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setActiveIndicatorLabelPadding(int i) {
         this.itemActiveIndicatorLabelPadding = i;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setActiveIndicatorLabelPadding(i);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setActiveIndicatorLabelPadding(i);
+                }
+            }
+        }
+    }
+
+    public int getIconLabelHorizontalSpacing() {
+        return this.iconLabelHorizontalSpacing;
+    }
+
+    public void setIconLabelHorizontalSpacing(int i) {
+        this.iconLabelHorizontalSpacing = i;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setIconLabelHorizontalSpacing(i);
+                }
             }
         }
     }
@@ -273,10 +433,12 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemActiveIndicatorEnabled(boolean z) {
         this.itemActiveIndicatorEnabled = z;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setActiveIndicatorEnabled(z);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setActiveIndicatorEnabled(z);
+                }
             }
         }
     }
@@ -287,10 +449,12 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemActiveIndicatorWidth(int i) {
         this.itemActiveIndicatorWidth = i;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setActiveIndicatorWidth(i);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setActiveIndicatorWidth(i);
+                }
             }
         }
     }
@@ -301,10 +465,60 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemActiveIndicatorHeight(int i) {
         this.itemActiveIndicatorHeight = i;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setActiveIndicatorHeight(i);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setActiveIndicatorHeight(i);
+                }
+            }
+        }
+    }
+
+    public void setItemGravity(int i) {
+        this.itemGravity = i;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setItemGravity(i);
+                }
+            }
+        }
+    }
+
+    public int getItemGravity() {
+        return this.itemGravity;
+    }
+
+    public int getItemActiveIndicatorExpandedWidth() {
+        return this.itemActiveIndicatorExpandedWidth;
+    }
+
+    public void setItemActiveIndicatorExpandedWidth(int i) {
+        this.itemActiveIndicatorExpandedWidth = i;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setActiveIndicatorExpandedWidth(i);
+                }
+            }
+        }
+    }
+
+    public int getItemActiveIndicatorExpandedHeight() {
+        return this.itemActiveIndicatorExpandedHeight;
+    }
+
+    public void setItemActiveIndicatorExpandedHeight(int i) {
+        this.itemActiveIndicatorExpandedHeight = i;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setActiveIndicatorExpandedHeight(i);
+                }
             }
         }
     }
@@ -315,10 +529,43 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemActiveIndicatorMarginHorizontal(int i) {
         this.itemActiveIndicatorMarginHorizontal = i;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setActiveIndicatorMarginHorizontal(i);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setActiveIndicatorMarginHorizontal(i);
+                }
+            }
+        }
+    }
+
+    public int getItemActiveIndicatorExpandedMarginHorizontal() {
+        return this.itemActiveIndicatorExpandedMarginHorizontal;
+    }
+
+    public void setItemActiveIndicatorExpandedMarginHorizontal(int i) {
+        this.itemActiveIndicatorExpandedMarginHorizontal = i;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setActiveIndicatorExpandedMarginHorizontal(i);
+                }
+            }
+        }
+    }
+
+    public void setItemActiveIndicatorExpandedPadding(int i, int i2, int i3, int i4) {
+        this.itemActiveIndicatorExpandedPadding.left = i;
+        this.itemActiveIndicatorExpandedPadding.top = i2;
+        this.itemActiveIndicatorExpandedPadding.right = i3;
+        this.itemActiveIndicatorExpandedPadding.bottom = i4;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setActiveIndicatorExpandedPadding(this.itemActiveIndicatorExpandedPadding);
+                }
             }
         }
     }
@@ -329,10 +576,12 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemActiveIndicatorShapeAppearance(ShapeAppearanceModel shapeAppearanceModel) {
         this.itemActiveIndicatorShapeAppearance = shapeAppearanceModel;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setActiveIndicatorDrawable(createItemActiveIndicatorDrawable());
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setActiveIndicatorDrawable(createItemActiveIndicatorDrawable());
+                }
             }
         }
     }
@@ -344,10 +593,12 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
     /* JADX INFO: Access modifiers changed from: protected */
     public void setItemActiveIndicatorResizeable(boolean z) {
         this.itemActiveIndicatorResizeable = z;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setActiveIndicatorResizeable(z);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setActiveIndicatorResizeable(z);
+                }
             }
         }
     }
@@ -358,10 +609,12 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemActiveIndicatorColor(ColorStateList colorStateList) {
         this.itemActiveIndicatorColor = colorStateList;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setActiveIndicatorDrawable(createItemActiveIndicatorDrawable());
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setActiveIndicatorDrawable(createItemActiveIndicatorDrawable());
+                }
             }
         }
     }
@@ -382,20 +635,24 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public void setItemBackground(Drawable drawable) {
         this.itemBackground = drawable;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setItemBackground(drawable);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setItemBackground(drawable);
+                }
             }
         }
     }
 
     public void setItemRippleColor(ColorStateList colorStateList) {
         this.itemRippleColor = colorStateList;
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                navigationBarItemView.setItemRippleColor(colorStateList);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setItemRippleColor(colorStateList);
+                }
             }
         }
     }
@@ -405,9 +662,13 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
     }
 
     public Drawable getItemBackground() {
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null && navigationBarItemViewArr.length > 0) {
-            return navigationBarItemViewArr[0].getBackground();
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null && navigationBarMenuItemViewArr.length > 0) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    return ((NavigationBarItemView) navigationBarMenuItemView).getBackground();
+                }
+            }
         }
         return this.itemBackground;
     }
@@ -420,17 +681,33 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
         return this.labelVisibilityMode;
     }
 
+    public void setItemIconGravity(int i) {
+        this.itemIconGravity = i;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setItemIconGravity(i);
+                }
+            }
+        }
+    }
+
+    public int getItemIconGravity() {
+        return this.itemIconGravity;
+    }
+
     public void setItemOnTouchListener(int i, View.OnTouchListener onTouchListener) {
         if (onTouchListener == null) {
             this.onTouchListeners.remove(i);
         } else {
             this.onTouchListeners.put(i, onTouchListener);
         }
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                if (navigationBarItemView.getItemData().getItemId() == i) {
-                    navigationBarItemView.setOnTouchListener(onTouchListener);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if ((navigationBarMenuItemView instanceof NavigationBarItemView) && navigationBarMenuItemView.getItemData() != null && navigationBarMenuItemView.getItemData().getItemId() == i) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).setOnTouchListener(onTouchListener);
                 }
             }
         }
@@ -455,119 +732,262 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
         this.presenter = navigationBarPresenter;
     }
 
-    public void buildMenuView() {
-        removeAllViews();
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                if (navigationBarItemView != null) {
-                    this.itemPool.release(navigationBarItemView);
-                    navigationBarItemView.clear();
-                }
+    private void releaseItemPool() {
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr == null || this.itemPool == null) {
+            return;
+        }
+        for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+            if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                NavigationBarItemView navigationBarItemView = (NavigationBarItemView) navigationBarMenuItemView;
+                this.itemPool.release(navigationBarItemView);
+                navigationBarItemView.clear();
             }
         }
-        if (this.menu.size() == 0) {
+    }
+
+    private NavigationBarItemView createMenuItem(int i, MenuItemImpl menuItemImpl, boolean z, boolean z2) {
+        this.presenter.setUpdateSuspended(true);
+        menuItemImpl.setCheckable(true);
+        this.presenter.setUpdateSuspended(false);
+        NavigationBarItemView newItem = getNewItem();
+        newItem.setShifting(z);
+        newItem.setLabelMaxLines(this.labelMaxLines);
+        newItem.setIconTintList(this.itemIconTint);
+        newItem.setIconSize(this.itemIconSize);
+        newItem.setTextColor(this.itemTextColorDefault);
+        newItem.setTextAppearanceInactive(this.itemTextAppearanceInactive);
+        newItem.setTextAppearanceActive(this.itemTextAppearanceActive);
+        newItem.setHorizontalTextAppearanceInactive(this.horizontalItemTextAppearanceInactive);
+        newItem.setHorizontalTextAppearanceActive(this.horizontalItemTextAppearanceActive);
+        newItem.setTextAppearanceActiveBoldEnabled(this.itemTextAppearanceActiveBoldEnabled);
+        newItem.setTextColor(this.itemTextColorFromUser);
+        int i2 = this.itemPaddingTop;
+        if (i2 != -1) {
+            newItem.setItemPaddingTop(i2);
+        }
+        int i3 = this.itemPaddingBottom;
+        if (i3 != -1) {
+            newItem.setItemPaddingBottom(i3);
+        }
+        newItem.setMeasureBottomPaddingFromLabelBaseline(this.measurePaddingFromLabelBaseline);
+        newItem.setLabelFontScalingEnabled(this.scaleLabelWithFont);
+        int i4 = this.itemActiveIndicatorLabelPadding;
+        if (i4 != -1) {
+            newItem.setActiveIndicatorLabelPadding(i4);
+        }
+        int i5 = this.iconLabelHorizontalSpacing;
+        if (i5 != -1) {
+            newItem.setIconLabelHorizontalSpacing(i5);
+        }
+        newItem.setActiveIndicatorWidth(this.itemActiveIndicatorWidth);
+        newItem.setActiveIndicatorHeight(this.itemActiveIndicatorHeight);
+        newItem.setActiveIndicatorExpandedWidth(this.itemActiveIndicatorExpandedWidth);
+        newItem.setActiveIndicatorExpandedHeight(this.itemActiveIndicatorExpandedHeight);
+        newItem.setActiveIndicatorMarginHorizontal(this.itemActiveIndicatorMarginHorizontal);
+        newItem.setItemGravity(this.itemGravity);
+        newItem.setActiveIndicatorExpandedPadding(this.itemActiveIndicatorExpandedPadding);
+        newItem.setActiveIndicatorExpandedMarginHorizontal(this.itemActiveIndicatorExpandedMarginHorizontal);
+        newItem.setActiveIndicatorDrawable(createItemActiveIndicatorDrawable());
+        newItem.setActiveIndicatorResizeable(this.itemActiveIndicatorResizeable);
+        newItem.setActiveIndicatorEnabled(this.itemActiveIndicatorEnabled);
+        Drawable drawable = this.itemBackground;
+        if (drawable != null) {
+            newItem.setItemBackground(drawable);
+        } else {
+            newItem.setItemBackground(this.itemBackgroundRes);
+        }
+        newItem.setItemRippleColor(this.itemRippleColor);
+        newItem.setLabelVisibilityMode(this.labelVisibilityMode);
+        newItem.setItemIconGravity(this.itemIconGravity);
+        newItem.setOnlyShowWhenExpanded(z2);
+        newItem.setExpanded(this.expanded);
+        newItem.initialize(menuItemImpl, 0);
+        newItem.setItemPosition(i);
+        int itemId = menuItemImpl.getItemId();
+        newItem.setOnTouchListener(this.onTouchListeners.get(itemId));
+        newItem.setOnClickListener(this.onClickListener);
+        int i6 = this.selectedItemId;
+        if (i6 != 0 && itemId == i6) {
+            this.selectedItemPosition = i;
+        }
+        setBadgeIfNeeded(newItem);
+        return newItem;
+    }
+
+    public void buildMenuView() {
+        NavigationBarDividerView navigationBarDividerView;
+        removeAllViews();
+        releaseItemPool();
+        this.presenter.setUpdateSuspended(true);
+        this.menu.refreshItems();
+        this.presenter.setUpdateSuspended(false);
+        int contentItemCount = this.menu.getContentItemCount();
+        if (contentItemCount == 0) {
             this.selectedItemId = 0;
             this.selectedItemPosition = 0;
             this.buttons = null;
+            this.itemPool = null;
             return;
         }
-        removeUnusedBadges();
-        this.buttons = new NavigationBarItemView[this.menu.size()];
-        boolean isShifting = isShifting(this.labelVisibilityMode, this.menu.getVisibleItems().size());
-        for (int i = 0; i < this.menu.size(); i++) {
-            this.presenter.setUpdateSuspended(true);
-            this.menu.getItem(i).setCheckable(true);
-            this.presenter.setUpdateSuspended(false);
-            NavigationBarItemView newItem = getNewItem();
-            this.buttons[i] = newItem;
-            newItem.setIconTintList(this.itemIconTint);
-            newItem.setIconSize(this.itemIconSize);
-            newItem.setTextColor(this.itemTextColorDefault);
-            newItem.setTextAppearanceInactive(this.itemTextAppearanceInactive);
-            newItem.setTextAppearanceActive(this.itemTextAppearanceActive);
-            newItem.setTextAppearanceActiveBoldEnabled(this.itemTextAppearanceActiveBoldEnabled);
-            newItem.setTextColor(this.itemTextColorFromUser);
-            int i2 = this.itemPaddingTop;
-            if (i2 != -1) {
-                newItem.setItemPaddingTop(i2);
-            }
-            int i3 = this.itemPaddingBottom;
-            if (i3 != -1) {
-                newItem.setItemPaddingBottom(i3);
-            }
-            int i4 = this.itemActiveIndicatorLabelPadding;
-            if (i4 != -1) {
-                newItem.setActiveIndicatorLabelPadding(i4);
-            }
-            newItem.setActiveIndicatorWidth(this.itemActiveIndicatorWidth);
-            newItem.setActiveIndicatorHeight(this.itemActiveIndicatorHeight);
-            newItem.setActiveIndicatorMarginHorizontal(this.itemActiveIndicatorMarginHorizontal);
-            newItem.setActiveIndicatorDrawable(createItemActiveIndicatorDrawable());
-            newItem.setActiveIndicatorResizeable(this.itemActiveIndicatorResizeable);
-            newItem.setActiveIndicatorEnabled(this.itemActiveIndicatorEnabled);
-            Drawable drawable = this.itemBackground;
-            if (drawable != null) {
-                newItem.setItemBackground(drawable);
-            } else {
-                newItem.setItemBackground(this.itemBackgroundRes);
-            }
-            newItem.setItemRippleColor(this.itemRippleColor);
-            newItem.setShifting(isShifting);
-            newItem.setLabelVisibilityMode(this.labelVisibilityMode);
-            MenuItemImpl menuItemImpl = (MenuItemImpl) this.menu.getItem(i);
-            newItem.initialize(menuItemImpl, 0);
-            newItem.setItemPosition(i);
-            int itemId = menuItemImpl.getItemId();
-            newItem.setOnTouchListener(this.onTouchListeners.get(itemId));
-            newItem.setOnClickListener(this.onClickListener);
-            int i5 = this.selectedItemId;
-            if (i5 != 0 && itemId == i5) {
-                this.selectedItemPosition = i;
-            }
-            setBadgeIfNeeded(newItem);
-            addView(newItem);
+        if (this.itemPool == null || this.itemPoolSize != contentItemCount) {
+            this.itemPoolSize = contentItemCount;
+            this.itemPool = new Pools.SynchronizedPool(contentItemCount);
         }
-        int min = Math.min(this.menu.size() - 1, this.selectedItemPosition);
+        removeUnusedBadges();
+        int size = this.menu.size();
+        this.buttons = new NavigationBarMenuItemView[size];
+        boolean isShifting = isShifting(this.labelVisibilityMode, getCurrentVisibleContentItemCount());
+        int i = 0;
+        int i2 = 0;
+        for (int i3 = 0; i3 < size; i3++) {
+            MenuItem itemAt = this.menu.getItemAt(i3);
+            boolean z = itemAt instanceof DividerMenuItem;
+            if (z) {
+                NavigationBarDividerView navigationBarDividerView2 = new NavigationBarDividerView(getContext());
+                navigationBarDividerView2.setOnlyShowWhenExpanded(true);
+                navigationBarDividerView2.setDividersEnabled(this.dividersEnabled);
+                navigationBarDividerView = navigationBarDividerView2;
+            } else if (itemAt.hasSubMenu()) {
+                if (i > 0) {
+                    throw new IllegalArgumentException("Only one layer of submenu is supported; a submenu inside a submenu is not supported by the Navigation Bar.");
+                }
+                NavigationBarSubheaderView navigationBarSubheaderView = new NavigationBarSubheaderView(getContext());
+                int i4 = this.horizontalItemTextAppearanceActive;
+                if (i4 == 0) {
+                    i4 = this.itemTextAppearanceActive;
+                }
+                navigationBarSubheaderView.setTextAppearance(i4);
+                navigationBarSubheaderView.setTextColor(this.itemTextColorFromUser);
+                navigationBarSubheaderView.setOnlyShowWhenExpanded(true);
+                navigationBarSubheaderView.initialize((MenuItemImpl) itemAt, 0);
+                i = itemAt.getSubMenu().size();
+                navigationBarDividerView = navigationBarSubheaderView;
+            } else if (i > 0) {
+                i--;
+                navigationBarDividerView = createMenuItem(i3, (MenuItemImpl) itemAt, isShifting, true);
+            } else {
+                MenuItemImpl menuItemImpl = (MenuItemImpl) itemAt;
+                boolean z2 = i2 >= this.collapsedMaxItemCount;
+                i2++;
+                navigationBarDividerView = createMenuItem(i3, menuItemImpl, isShifting, z2);
+            }
+            if (!z && itemAt.isCheckable() && this.selectedItemPosition == -1) {
+                this.selectedItemPosition = i3;
+            }
+            this.buttons[i3] = navigationBarDividerView;
+            addView(navigationBarDividerView);
+        }
+        int min = Math.min(size - 1, this.selectedItemPosition);
         this.selectedItemPosition = min;
-        this.menu.getItem(min).setChecked(true);
+        setCheckedItem(this.buttons[min].getItemData());
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0068, code lost:
+        return false;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private boolean isMenuStructureSame() {
+        NavigationBarMenuBuilder navigationBarMenuBuilder;
+        if (this.buttons == null || (navigationBarMenuBuilder = this.menu) == null || navigationBarMenuBuilder.size() != this.buttons.length) {
+            return false;
+        }
+        int i = 0;
+        while (true) {
+            boolean z = true;
+            if (i >= this.buttons.length) {
+                return true;
+            }
+            if ((this.menu.getItemAt(i) instanceof DividerMenuItem) && !(this.buttons[i] instanceof NavigationBarDividerView)) {
+                return false;
+            }
+            boolean z2 = this.menu.getItemAt(i).hasSubMenu() && !(this.buttons[i] instanceof NavigationBarSubheaderView);
+            if (this.menu.getItemAt(i).hasSubMenu() || (this.buttons[i] instanceof NavigationBarItemView)) {
+                z = false;
+            }
+            if ((this.menu.getItemAt(i) instanceof DividerMenuItem) || (!z2 && !z)) {
+                i++;
+            }
+        }
     }
 
     public void updateMenuView() {
         TransitionSet transitionSet;
-        MenuBuilder menuBuilder = this.menu;
-        if (menuBuilder == null || this.buttons == null) {
+        if (this.menu == null || this.buttons == null) {
             return;
         }
-        int size = menuBuilder.size();
-        if (size != this.buttons.length) {
+        this.presenter.setUpdateSuspended(true);
+        this.menu.refreshItems();
+        this.presenter.setUpdateSuspended(false);
+        if (!isMenuStructureSame()) {
             buildMenuView();
             return;
         }
         int i = this.selectedItemId;
+        int size = this.menu.size();
         for (int i2 = 0; i2 < size; i2++) {
-            MenuItem item = this.menu.getItem(i2);
-            if (item.isChecked()) {
-                this.selectedItemId = item.getItemId();
+            MenuItem itemAt = this.menu.getItemAt(i2);
+            if (itemAt.isChecked()) {
+                setCheckedItem(itemAt);
+                this.selectedItemId = itemAt.getItemId();
                 this.selectedItemPosition = i2;
             }
         }
         if (i != this.selectedItemId && (transitionSet = this.set) != null) {
             TransitionManager.beginDelayedTransition(this, transitionSet);
         }
-        boolean isShifting = isShifting(this.labelVisibilityMode, this.menu.getVisibleItems().size());
+        boolean isShifting = isShifting(this.labelVisibilityMode, getCurrentVisibleContentItemCount());
         for (int i3 = 0; i3 < size; i3++) {
             this.presenter.setUpdateSuspended(true);
-            this.buttons[i3].setLabelVisibilityMode(this.labelVisibilityMode);
-            this.buttons[i3].setShifting(isShifting);
-            this.buttons[i3].initialize((MenuItemImpl) this.menu.getItem(i3), 0);
+            this.buttons[i3].setExpanded(this.expanded);
+            NavigationBarMenuItemView navigationBarMenuItemView = this.buttons[i3];
+            if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                NavigationBarItemView navigationBarItemView = (NavigationBarItemView) navigationBarMenuItemView;
+                navigationBarItemView.setLabelVisibilityMode(this.labelVisibilityMode);
+                navigationBarItemView.setItemIconGravity(this.itemIconGravity);
+                navigationBarItemView.setItemGravity(this.itemGravity);
+                navigationBarItemView.setShifting(isShifting);
+            }
+            if (this.menu.getItemAt(i3) instanceof MenuItemImpl) {
+                this.buttons[i3].initialize((MenuItemImpl) this.menu.getItemAt(i3), 0);
+            }
             this.presenter.setUpdateSuspended(false);
         }
     }
 
     private NavigationBarItemView getNewItem() {
-        NavigationBarItemView acquire = this.itemPool.acquire();
+        Pools.Pool<NavigationBarItemView> pool = this.itemPool;
+        NavigationBarItemView acquire = pool != null ? pool.acquire() : null;
         return acquire == null ? createNavigationBarItemView(getContext()) : acquire;
+    }
+
+    public void setSubmenuDividersEnabled(boolean z) {
+        if (this.dividersEnabled == z) {
+            return;
+        }
+        this.dividersEnabled = z;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarDividerView) {
+                    ((NavigationBarDividerView) navigationBarMenuItemView).setDividersEnabled(z);
+                }
+            }
+        }
+    }
+
+    public void setCollapsedMaxItemCount(int i) {
+        this.collapsedMaxItemCount = i;
+    }
+
+    private int getCollapsedVisibleItemCount() {
+        return Math.min(this.collapsedMaxItemCount, this.menu.getVisibleMainContentItemCount());
+    }
+
+    public int getCurrentVisibleContentItemCount() {
+        return this.expanded ? this.menu.getVisibleContentItemCount() : getCollapsedVisibleItemCount();
     }
 
     public int getSelectedItemId() {
@@ -578,11 +998,11 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
     public void tryRestoreSelectedItemId(int i) {
         int size = this.menu.size();
         for (int i2 = 0; i2 < size; i2++) {
-            MenuItem item = this.menu.getItem(i2);
-            if (i == item.getItemId()) {
+            MenuItem itemAt = this.menu.getItemAt(i2);
+            if (i == itemAt.getItemId()) {
                 this.selectedItemId = i;
                 this.selectedItemPosition = i2;
-                item.setChecked(true);
+                setCheckedItem(itemAt);
                 return;
             }
         }
@@ -601,12 +1021,15 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
                 this.badgeDrawables.append(keyAt, sparseArray.get(keyAt));
             }
         }
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                BadgeDrawable badgeDrawable = this.badgeDrawables.get(navigationBarItemView.getId());
-                if (badgeDrawable != null) {
-                    navigationBarItemView.setBadge(badgeDrawable);
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    NavigationBarItemView navigationBarItemView = (NavigationBarItemView) navigationBarMenuItemView;
+                    BadgeDrawable badgeDrawable = this.badgeDrawables.get(navigationBarItemView.getId());
+                    if (badgeDrawable != null) {
+                        navigationBarItemView.setBadge(badgeDrawable);
+                    }
                 }
             }
         }
@@ -652,7 +1075,7 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
     private void removeUnusedBadges() {
         HashSet hashSet = new HashSet();
         for (int i = 0; i < this.menu.size(); i++) {
-            hashSet.add(Integer.valueOf(this.menu.getItem(i).getItemId()));
+            hashSet.add(Integer.valueOf(this.menu.getItemAt(i).getItemId()));
         }
         for (int i2 = 0; i2 < this.badgeDrawables.size(); i2++) {
             int keyAt = this.badgeDrawables.keyAt(i2);
@@ -664,11 +1087,14 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
 
     public NavigationBarItemView findItemView(int i) {
         validateMenuItemId(i);
-        NavigationBarItemView[] navigationBarItemViewArr = this.buttons;
-        if (navigationBarItemViewArr != null) {
-            for (NavigationBarItemView navigationBarItemView : navigationBarItemViewArr) {
-                if (navigationBarItemView.getId() == i) {
-                    return navigationBarItemView;
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    NavigationBarItemView navigationBarItemView = (NavigationBarItemView) navigationBarMenuItemView;
+                    if (navigationBarItemView.getId() == i) {
+                        return navigationBarItemView;
+                    }
                 }
             }
             return null;
@@ -681,14 +1107,24 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
         return this.selectedItemPosition;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public MenuBuilder getMenu() {
+    protected NavigationBarMenuBuilder getMenu() {
         return this.menu;
     }
 
     private void validateMenuItemId(int i) {
         if (!isValidId(i)) {
             throw new IllegalArgumentException(i + " is not a valid view id");
+        }
+    }
+
+    public void updateActiveIndicator(int i) {
+        NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
+        if (navigationBarMenuItemViewArr != null) {
+            for (NavigationBarMenuItemView navigationBarMenuItemView : navigationBarMenuItemViewArr) {
+                if (navigationBarMenuItemView instanceof NavigationBarItemView) {
+                    ((NavigationBarItemView) navigationBarMenuItemView).updateActiveIndicatorLayoutParams(i);
+                }
+            }
         }
     }
 }

@@ -17,6 +17,7 @@ import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Pair;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -30,9 +31,6 @@ import androidx.appcompat.view.SupportMenuInflater;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.view.menu.MenuItemImpl;
 import androidx.appcompat.widget.TintTypedArray;
-import androidx.core.content.ContextCompat;
-import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.customview.view.AbsSavedState;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -66,6 +64,7 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
     private int drawerLayoutCornerSize;
     private final boolean drawerLayoutCornerSizeBackAnimationEnabled;
     private final int drawerLayoutCornerSizeBackAnimationMax;
+    private boolean endInsetScrimEnabled;
     OnNavigationItemSelectedListener listener;
     private final int maxWidth;
     private final NavigationMenu menu;
@@ -74,6 +73,7 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
     private final NavigationMenuPresenter presenter;
     private final ShapeableDelegate shapeableDelegate;
     private final MaterialSideContainerBackHelper sideContainerBackHelper;
+    private boolean startInsetScrimEnabled;
     private final int[] tmpLocation;
     private boolean topInsetScrimEnabled;
     private static final int[] CHECKED_STATE_SET = {16842912};
@@ -108,6 +108,8 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
         this.tmpLocation = new int[2];
         this.topInsetScrimEnabled = true;
         this.bottomInsetScrimEnabled = true;
+        this.startInsetScrimEnabled = true;
+        this.endInsetScrimEnabled = true;
         this.drawerLayoutCornerSize = 0;
         this.shapeableDelegate = ShapeableDelegate.create(this);
         this.sideContainerBackHelper = new MaterialSideContainerBackHelper(this);
@@ -142,7 +144,7 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
         this.menu = navigationMenu;
         TintTypedArray obtainTintedStyledAttributes = ThemeEnforcement.obtainTintedStyledAttributes(context2, attributeSet, R.styleable.NavigationView, i, i4, new int[0]);
         if (obtainTintedStyledAttributes.hasValue(R.styleable.NavigationView_android_background)) {
-            ViewCompat.setBackground(this, obtainTintedStyledAttributes.getDrawable(R.styleable.NavigationView_android_background));
+            setBackground(obtainTintedStyledAttributes.getDrawable(R.styleable.NavigationView_android_background));
         }
         int dimensionPixelSize = obtainTintedStyledAttributes.getDimensionPixelSize(R.styleable.NavigationView_drawerLayoutCornerSize, 0);
         this.drawerLayoutCornerSize = dimensionPixelSize;
@@ -156,7 +158,7 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
                 materialShapeDrawable.setFillColor(colorStateListOrNull);
             }
             materialShapeDrawable.initializeElevationOverlay(context2);
-            ViewCompat.setBackground(this, materialShapeDrawable);
+            setBackground(materialShapeDrawable);
         }
         if (obtainTintedStyledAttributes.hasValue(R.styleable.NavigationView_elevation)) {
             setElevation(obtainTintedStyledAttributes.getDimensionPixelSize(R.styleable.NavigationView_elevation, 0));
@@ -205,7 +207,9 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
         setSubheaderInsetEnd(obtainTintedStyledAttributes.getDimensionPixelSize(R.styleable.NavigationView_subheaderInsetEnd, i2));
         setTopInsetScrimEnabled(obtainTintedStyledAttributes.getBoolean(R.styleable.NavigationView_topInsetScrimEnabled, this.topInsetScrimEnabled));
         setBottomInsetScrimEnabled(obtainTintedStyledAttributes.getBoolean(R.styleable.NavigationView_bottomInsetScrimEnabled, this.bottomInsetScrimEnabled));
-        int dimensionPixelSize2 = obtainTintedStyledAttributes.getDimensionPixelSize(R.styleable.NavigationView_itemIconPadding, i2);
+        setStartInsetScrimEnabled(obtainTintedStyledAttributes.getBoolean(R.styleable.NavigationView_startInsetScrimEnabled, this.startInsetScrimEnabled));
+        setEndInsetScrimEnabled(obtainTintedStyledAttributes.getBoolean(R.styleable.NavigationView_endInsetScrimEnabled, this.endInsetScrimEnabled));
+        int dimensionPixelSize2 = obtainTintedStyledAttributes.getDimensionPixelSize(R.styleable.NavigationView_itemIconPadding, 0);
         setItemMaxLines(obtainTintedStyledAttributes.getInt(R.styleable.NavigationView_itemMaxLines, 1));
         navigationMenu.setCallback(new MenuBuilder.Callback() { // from class: com.google.android.material.navigation.NavigationView.2
             @Override // androidx.appcompat.view.menu.MenuBuilder.Callback
@@ -263,7 +267,7 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
     private void maybeUpdateCornerSizeForDrawerLayout(int i, int i2) {
         if ((getParent() instanceof DrawerLayout) && (getLayoutParams() instanceof DrawerLayout.LayoutParams)) {
             if ((this.drawerLayoutCornerSize > 0 || this.drawerLayoutCornerSizeBackAnimationEnabled) && (getBackground() instanceof MaterialShapeDrawable)) {
-                boolean z = GravityCompat.getAbsoluteGravity(((DrawerLayout.LayoutParams) getLayoutParams()).gravity, ViewCompat.getLayoutDirection(this)) == 3;
+                boolean z = Gravity.getAbsoluteGravity(((DrawerLayout.LayoutParams) getLayoutParams()).gravity, getLayoutDirection()) == 3;
                 MaterialShapeDrawable materialShapeDrawable = (MaterialShapeDrawable) getBackground();
                 ShapeAppearanceModel.Builder allCornerSizes = materialShapeDrawable.getShapeAppearanceModel().toBuilder().setAllCornerSizes(this.drawerLayoutCornerSize);
                 if (z) {
@@ -320,6 +324,7 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
         if (parent instanceof DrawerLayout) {
             ((DrawerLayout) parent).removeDrawerListener(this.backDrawerListener);
         }
+        this.backOrchestrator.stopListeningForBackCallbacks();
     }
 
     @Override // android.view.View
@@ -383,14 +388,14 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
         this.shapeableDelegate.maybeClip(canvas, new CanvasCompat.CanvasOperation() { // from class: com.google.android.material.navigation.NavigationView$$ExternalSyntheticLambda0
             @Override // com.google.android.material.canvas.CanvasCompat.CanvasOperation
             public final void run(Canvas canvas2) {
-                NavigationView.this.m8722xb790515(canvas2);
+                NavigationView.this.m8734xb790515(canvas2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$dispatchDraw$0$com-google-android-material-navigation-NavigationView  reason: not valid java name */
-    public /* synthetic */ void m8722xb790515(Canvas canvas) {
+    public /* synthetic */ void m8734xb790515(Canvas canvas) {
         super.dispatchDraw(canvas);
     }
 
@@ -451,7 +456,7 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
     }
 
     public void setItemBackgroundResource(int i) {
-        setItemBackground(ContextCompat.getDrawable(getContext(), i));
+        setItemBackground(getContext().getDrawable(i));
     }
 
     public void setItemBackground(Drawable drawable) {
@@ -548,6 +553,22 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
 
     public void setBottomInsetScrimEnabled(boolean z) {
         this.bottomInsetScrimEnabled = z;
+    }
+
+    public boolean isStartInsetScrimEnabled() {
+        return this.startInsetScrimEnabled;
+    }
+
+    public void setStartInsetScrimEnabled(boolean z) {
+        this.startInsetScrimEnabled = z;
+    }
+
+    public boolean isEndInsetScrimEnabled() {
+        return this.endInsetScrimEnabled;
+    }
+
+    public void setEndInsetScrimEnabled(boolean z) {
+        this.endInsetScrimEnabled = z;
     }
 
     public int getDividerInsetStart() {
@@ -662,18 +683,23 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
                 NavigationView.this.presenter.setBehindStatusBar(z2);
                 NavigationView navigationView2 = NavigationView.this;
                 navigationView2.setDrawTopInsetForeground(z2 && navigationView2.isTopInsetScrimEnabled());
-                NavigationView.this.setDrawLeftInsetForeground(NavigationView.this.tmpLocation[0] == 0 || NavigationView.this.tmpLocation[0] + NavigationView.this.getWidth() == 0);
+                boolean z3 = NavigationView.this.getLayoutDirection() == 1;
+                boolean z4 = NavigationView.this.tmpLocation[0] == 0 || NavigationView.this.tmpLocation[0] + NavigationView.this.getWidth() == 0;
+                NavigationView navigationView3 = NavigationView.this;
+                navigationView3.setDrawLeftInsetForeground(z4 && (!z3 ? !navigationView3.isStartInsetScrimEnabled() : !navigationView3.isEndInsetScrimEnabled()));
                 Activity activity = ContextUtils.getActivity(NavigationView.this.getContext());
                 if (activity != null) {
                     Rect currentWindowBounds = WindowUtils.getCurrentWindowBounds(activity);
-                    boolean z3 = currentWindowBounds.height() - NavigationView.this.getHeight() == NavigationView.this.tmpLocation[1];
-                    boolean z4 = Color.alpha(activity.getWindow().getNavigationBarColor()) != 0;
-                    NavigationView navigationView3 = NavigationView.this;
-                    navigationView3.setDrawBottomInsetForeground(z3 && z4 && navigationView3.isBottomInsetScrimEnabled());
-                    if (currentWindowBounds.width() != NavigationView.this.tmpLocation[0] && currentWindowBounds.width() - NavigationView.this.getWidth() != NavigationView.this.tmpLocation[0]) {
+                    boolean z5 = currentWindowBounds.height() - NavigationView.this.getHeight() == NavigationView.this.tmpLocation[1];
+                    boolean z6 = Color.alpha(activity.getWindow().getNavigationBarColor()) != 0;
+                    NavigationView navigationView4 = NavigationView.this;
+                    navigationView4.setDrawBottomInsetForeground(z5 && z6 && navigationView4.isBottomInsetScrimEnabled());
+                    boolean z7 = currentWindowBounds.width() == NavigationView.this.tmpLocation[0] || currentWindowBounds.width() - NavigationView.this.getWidth() == NavigationView.this.tmpLocation[0];
+                    NavigationView navigationView5 = NavigationView.this;
+                    if (!z7 || (!z3 ? !navigationView5.isEndInsetScrimEnabled() : !navigationView5.isStartInsetScrimEnabled())) {
                         z = false;
                     }
-                    NavigationView.this.setDrawRightInsetForeground(z);
+                    navigationView5.setDrawRightInsetForeground(z);
                 }
             }
         };

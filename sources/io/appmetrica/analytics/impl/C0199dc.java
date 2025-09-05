@@ -1,30 +1,42 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.HashMap;
 /* renamed from: io.appmetrica.analytics.impl.dc  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0199dc implements InterfaceC0495p2 {
+public final class C0199dc implements InterfaceC0160c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final H4 f828a;
+    public final InterfaceC0238f0 f837a;
+    public final Jn b = new Jn();
 
-    public C0199dc(H4 h4) {
-        this.f828a = h4;
+    public C0199dc(InterfaceC0238f0 interfaceC0238f0) {
+        this.f837a = interfaceC0238f0;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0495p2
-    public final C0314ho a(C0262fo c0262fo, C0314ho c0314ho) {
-        int i = c0262fo.b;
-        int i2 = this.f828a.f469a;
-        if (i == i2) {
-            if (((C0314ho) ((HashMap) c0262fo.f860a.get(c0314ho.b)).get(new String(c0314ho.f896a))) != null) {
-                ((HashMap) c0262fo.f860a.get(c0314ho.b)).put(new String(c0314ho.f896a), c0314ho);
-                return c0314ho;
+    public static final void a(C0199dc c0199dc, U u) {
+        c0199dc.f837a.a(u);
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0160c
+    public final void onAppNotResponding() {
+        StackTraceElement[] stackTraceElementArr;
+        Jn jn = this.b;
+        Thread a2 = jn.f521a.a();
+        try {
+            stackTraceElementArr = jn.f521a.b();
+            if (stackTraceElementArr == null) {
+                try {
+                    stackTraceElementArr = a2.getStackTrace();
+                } catch (SecurityException unused) {
+                }
             }
-        } else if (i < i2) {
-            ((HashMap) c0262fo.f860a.get(c0314ho.b)).put(new String(c0314ho.f896a), c0314ho);
-            c0262fo.b++;
+        } catch (SecurityException unused2) {
+            stackTraceElementArr = null;
         }
-        return c0314ho;
+        final U u = new U((Cn) jn.b.apply(a2, stackTraceElementArr), jn.a(a2, null), jn.c.a());
+        ((Z9) A4.l().c.a()).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.dc$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                C0199dc.a(C0199dc.this, u);
+            }
+        });
     }
 }

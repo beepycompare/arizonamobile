@@ -1,21 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Looper;
-import java.util.Map;
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes4.dex */
-public final class Cn implements En {
-    @Override // io.appmetrica.analytics.impl.En
-    public final Thread a() {
-        return Looper.getMainLooper().getThread();
-    }
+public final class Cn {
 
-    @Override // io.appmetrica.analytics.impl.En
-    public final StackTraceElement[] b() {
-        return null;
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public final String f392a;
+    public final int b;
+    public final long c;
+    public final String d;
+    public final Integer e;
+    public final List f;
 
-    @Override // io.appmetrica.analytics.impl.En
-    public final Map c() {
-        return Thread.getAllStackTraces();
+    public Cn(String str, int i, long j, String str2, Integer num, List list) {
+        this.f392a = str;
+        this.b = i;
+        this.c = j;
+        this.d = str2;
+        this.e = num;
+        this.f = list == null ? Collections.emptyList() : CollectionUtils.unmodifiableListCopy(list);
     }
 }

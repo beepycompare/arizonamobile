@@ -58,8 +58,26 @@ public final class GlideBuilder {
     public static final class LogRequestOrigins implements GlideExperiments.Experiment {
     }
 
+    /* loaded from: classes3.dex */
+    public static final class OverrideGlideThreadPriority implements GlideExperiments.Experiment {
+    }
+
+    /* loaded from: classes3.dex */
+    public static final class UseMediaStoreOpenFileApisIfPossible implements GlideExperiments.Experiment {
+    }
+
     @Deprecated
     public GlideBuilder setDisableHardwareBitmapsOnO(boolean z) {
+        return this;
+    }
+
+    @Deprecated
+    public GlideBuilder setEnableHardwareGainmapFixOnU(boolean z) {
+        return this;
+    }
+
+    @Deprecated
+    public GlideBuilder setPreserveGainmapAndColorSpaceForTransformations(boolean z) {
         return this;
     }
 
@@ -165,6 +183,16 @@ public final class GlideBuilder {
 
     public GlideBuilder setImageDecoderEnabledForBitmaps(boolean z) {
         this.glideExperimentsBuilder.update(new EnableImageDecoderForBitmaps(), z && Build.VERSION.SDK_INT >= 29);
+        return this;
+    }
+
+    public GlideBuilder setOverrideGlideThreadPriority(boolean z) {
+        this.glideExperimentsBuilder.update(new OverrideGlideThreadPriority(), z);
+        return this;
+    }
+
+    public GlideBuilder setUseMediaStoreOpenFileApisIfPossible(boolean z) {
+        this.glideExperimentsBuilder.update(new UseMediaStoreOpenFileApisIfPossible(), z);
         return this;
     }
 

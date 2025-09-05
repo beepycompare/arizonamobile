@@ -1,88 +1,98 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
-import kotlin.jvm.internal.Intrinsics;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-import org.json.JSONObject;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes4.dex */
-public final class Gf implements InterfaceC0476o8 {
+public final class Gf extends MessageNano {
+    public static volatile Gf[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f457a;
-    public final JSONObject b;
-    public final boolean c;
-    public final boolean d;
-    public final EnumC0451n8 e;
+    public String f457a;
+    public String b;
+    public int c;
 
-    public Gf(String str, JSONObject jSONObject, boolean z, boolean z2, EnumC0451n8 enumC0451n8) {
-        this.f457a = str;
-        this.b = jSONObject;
-        this.c = z;
-        this.d = z2;
-        this.e = enumC0451n8;
+    public Gf() {
+        a();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0476o8
-    public final EnumC0451n8 a() {
-        return this.e;
-    }
-
-    public final JSONObject b() {
-        if (this.c) {
-            JSONObject jSONObject = new JSONObject();
-            try {
-                jSONObject.put("trackingId", this.f457a);
-                if (this.b.length() > 0) {
-                    jSONObject.put("additionalParams", this.b);
+    public static Gf[] b() {
+        if (d == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (d == null) {
+                    d = new Gf[0];
                 }
-            } catch (Throwable unused) {
             }
-            return jSONObject;
         }
-        return null;
+        return d;
     }
 
-    public final JSONObject c() {
-        JSONObject jSONObject = new JSONObject();
-        try {
-            jSONObject.put("trackingId", this.f457a);
-            jSONObject.put("additionalParams", this.b);
-            jSONObject.put("wasSet", this.c);
-            jSONObject.put("autoTracking", this.d);
-            jSONObject.put("source", this.e.f981a);
-        } catch (Throwable unused) {
+    public final Gf a() {
+        this.f457a = "";
+        this.b = "";
+        this.c = 0;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        if (!this.f457a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f457a);
         }
-        return jSONObject;
+        if (!this.b.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
+        }
+        return CodedOutputByteBufferNano.computeInt32Size(3, this.c) + computeSerializedSize;
     }
 
-    public final String toString() {
-        return "PreloadInfoState{trackingId='" + this.f457a + "', additionalParameters=" + this.b + ", wasSet=" + this.c + ", autoTrackingEnabled=" + this.d + ", source=" + this.e + AbstractJsonLexerKt.END_OBJ;
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        if (!this.f457a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f457a);
+        }
+        if (!this.b.equals("")) {
+            codedOutputByteBufferNano.writeString(2, this.b);
+        }
+        codedOutputByteBufferNano.writeInt32(3, this.c);
+        super.writeTo(codedOutputByteBufferNano);
     }
 
-    public static Gf a(JSONObject jSONObject) {
-        EnumC0451n8 enumC0451n8;
-        String optStringOrNull = JsonUtils.optStringOrNull(jSONObject, "trackingId");
-        JSONObject optJsonObjectOrDefault = JsonUtils.optJsonObjectOrDefault(jSONObject, "additionalParams", new JSONObject());
-        int i = 0;
-        boolean optBooleanOrDefault = JsonUtils.optBooleanOrDefault(jSONObject, "wasSet", false);
-        boolean optBooleanOrDefault2 = JsonUtils.optBooleanOrDefault(jSONObject, "autoTracking", false);
-        String optStringOrNull2 = JsonUtils.optStringOrNull(jSONObject, "source");
-        EnumC0451n8[] values = EnumC0451n8.values();
-        int length = values.length;
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final Gf mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
         while (true) {
-            if (i >= length) {
-                enumC0451n8 = null;
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
                 break;
+            } else if (readTag == 10) {
+                this.f457a = codedInputByteBufferNano.readString();
+            } else if (readTag == 18) {
+                this.b = codedInputByteBufferNano.readString();
+            } else if (readTag != 24) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                int readInt32 = codedInputByteBufferNano.readInt32();
+                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2 || readInt32 == 3) {
+                    this.c = readInt32;
+                }
             }
-            enumC0451n8 = values[i];
-            if (Intrinsics.areEqual(enumC0451n8.f981a, optStringOrNull2)) {
-                break;
-            }
-            i++;
         }
-        if (enumC0451n8 == null) {
-            enumC0451n8 = EnumC0451n8.b;
-        }
-        return new Gf(optStringOrNull, optJsonObjectOrDefault, optBooleanOrDefault, optBooleanOrDefault2, enumC0451n8);
+        return this;
+    }
+
+    public static Gf b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new Gf().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static Gf a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (Gf) MessageNano.mergeFrom(new Gf(), bArr);
     }
 }

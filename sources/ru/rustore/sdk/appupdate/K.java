@@ -11,14 +11,14 @@ import kotlin.ResultKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class K {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1350a;
+    public final Context f1355a;
     public final Lazy b;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class a extends Lambda implements Function0<String> {
         public a() {
             super(0);
@@ -26,29 +26,29 @@ public final class K {
 
         @Override // kotlin.jvm.functions.Function0
         public final String invoke() {
-            Object m9065constructorimpl;
+            Object m9084constructorimpl;
             K k = K.this;
             try {
                 Result.Companion companion = Result.Companion;
-                PackageManager packageManager = k.f1350a.getPackageManager();
+                PackageManager packageManager = k.f1355a.getPackageManager();
                 Intrinsics.checkNotNullExpressionValue(packageManager, "context.packageManager");
-                String packageName = k.f1350a.getPackageName();
+                String packageName = k.f1355a.getPackageName();
                 Intrinsics.checkNotNullExpressionValue(packageName, "context.packageName");
-                m9065constructorimpl = Result.m9065constructorimpl(K.a(k, packageManager, packageName).versionName);
+                m9084constructorimpl = Result.m9084constructorimpl(K.a(k, packageManager, packageName).versionName);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9065constructorimpl = Result.m9065constructorimpl(ResultKt.createFailure(th));
+                m9084constructorimpl = Result.m9084constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9071isFailureimpl(m9065constructorimpl)) {
-                m9065constructorimpl = null;
+            if (Result.m9090isFailureimpl(m9084constructorimpl)) {
+                m9084constructorimpl = null;
             }
-            return (String) m9065constructorimpl;
+            return (String) m9084constructorimpl;
         }
     }
 
     public K(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        this.f1350a = context;
+        this.f1355a = context;
         this.b = LazyKt.lazy(new a());
     }
 

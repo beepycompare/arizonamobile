@@ -1,87 +1,72 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import java.util.List;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
-public final class R3 extends MessageNano {
-    public static volatile R3[] c;
+public final class R3 implements InterfaceC0479o8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f627a;
-    public String b;
+    public final Q3 f645a;
+    public final List b;
 
-    public R3() {
-        a();
+    public R3(Q3 q3, List<Q3> list) {
+        this.f645a = q3;
+        this.b = list;
     }
 
-    public static R3[] b() {
-        if (c == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (c == null) {
-                    c = new R3[0];
-                }
-            }
+    public final R3 a(Q3 q3, List<Q3> list) {
+        return new R3(q3, list);
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0479o8
+    public final Object b() {
+        return this.f645a;
+    }
+
+    public final Q3 c() {
+        return this.f645a;
+    }
+
+    public final List<Q3> d() {
+        return this.b;
+    }
+
+    public final Q3 e() {
+        return this.f645a;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return c;
-    }
-
-    public final R3 a() {
-        this.f627a = "";
-        this.b = "";
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f627a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f627a);
+        if (obj instanceof R3) {
+            R3 r3 = (R3) obj;
+            return Intrinsics.areEqual(this.f645a, r3.f645a) && Intrinsics.areEqual(this.b, r3.b);
         }
-        return !this.b.equals("") ? CodedOutputByteBufferNano.computeStringSize(2, this.b) + computeSerializedSize : computeSerializedSize;
+        return false;
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f627a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f627a);
+    public final int hashCode() {
+        return this.b.hashCode() + (this.f645a.hashCode() * 31);
+    }
+
+    public final String toString() {
+        return "ClidsInfo(chosen=" + this.f645a + ", candidates=" + this.b + ')';
+    }
+
+    public static R3 a(R3 r3, Q3 q3, List list, int i, Object obj) {
+        if ((i & 1) != 0) {
+            q3 = r3.f645a;
         }
-        if (!this.b.equals("")) {
-            codedOutputByteBufferNano.writeString(2, this.b);
+        if ((i & 2) != 0) {
+            list = r3.b;
         }
-        super.writeTo(codedOutputByteBufferNano);
+        r3.getClass();
+        return new R3(q3, list);
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final R3 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 10) {
-                this.f627a = codedInputByteBufferNano.readString();
-            } else if (readTag != 18) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                this.b = codedInputByteBufferNano.readString();
-            }
-        }
-        return this;
-    }
-
-    public static R3 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new R3().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static R3 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (R3) MessageNano.mergeFrom(new R3(), bArr);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0479o8
+    public final List<Q3> a() {
+        return this.b;
     }
 }

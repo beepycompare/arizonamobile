@@ -1,25 +1,17 @@
 package io.appmetrica.analytics.impl;
 
-import androidx.fragment.app.FragmentTransaction;
+import android.content.Context;
 /* loaded from: classes4.dex */
-public final class Lc implements Cg {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Mc f543a;
-
-    public Lc(Mc mc) {
-        this.f543a = mc;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Cg
-    public final void a(Fg fg) {
-        if (fg == null) {
-            return;
+public final class Lc implements E4 {
+    @Override // io.appmetrica.analytics.impl.E4
+    /* renamed from: b */
+    public final Mc a(Context context, B5 b5, C0475o4 c0475o4, N4 n4) {
+        Xg xg;
+        Nc nc = new Nc(c0475o4.b, c0475o4.f1011a);
+        Yg yg = new Yg(new Qc());
+        synchronized (b5) {
+            xg = (Xg) b5.a(nc, n4, yg, b5.f359a);
         }
-        C0399l6 c0399l6 = new C0399l6("", "", 0);
-        c0399l6.setValueBytes(fg.a());
-        EnumC0728yb enumC0728yb = EnumC0728yb.EVENT_TYPE_UNDEFINED;
-        c0399l6.d = FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
-        this.f543a.a(c0399l6);
+        return new Mc(context, xg);
     }
 }

@@ -1,6 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.ecommerce.ECommerceEvent;
+import io.appmetrica.analytics.ecommerce.ECommerceProduct;
 import io.appmetrica.analytics.ecommerce.ECommerceScreen;
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
@@ -9,33 +10,35 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0388kl extends ECommerceEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0636uj f941a;
-    public final InterfaceC0700x8 b;
+    public final C0203dg f954a;
+    public final C0740yj b;
+    public final A8 c;
 
-    public C0388kl(ECommerceScreen eCommerceScreen) {
-        this(new C0636uj(eCommerceScreen), new C0414ll());
+    public C0388kl(ECommerceProduct eCommerceProduct, ECommerceScreen eCommerceScreen) {
+        this(new C0203dg(eCommerceProduct), new C0740yj(eCommerceScreen), new C0414ll());
     }
 
-    public final InterfaceC0700x8 a() {
-        return this.b;
+    public final A8 a() {
+        return this.c;
     }
 
     @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent
     public final String getPublicDescription() {
-        return "shown screen info";
+        return "shown product card info";
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0177cg
-    public final List<Vi> toProto() {
-        return (List) this.b.fromModel(this);
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0280gg
+    public final List<Zi> toProto() {
+        return (List) this.c.fromModel(this);
     }
 
     public final String toString() {
-        return "ShownScreenInfoEvent{screen=" + this.f941a + ", converter=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "ShownProductCardInfoEvent{product=" + this.f954a + ", screen=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public C0388kl(C0636uj c0636uj, InterfaceC0700x8 interfaceC0700x8) {
-        this.f941a = c0636uj;
-        this.b = interfaceC0700x8;
+    public C0388kl(C0203dg c0203dg, C0740yj c0740yj, A8 a8) {
+        this.f954a = c0203dg;
+        this.b = c0740yj;
+        this.c = a8;
     }
 }

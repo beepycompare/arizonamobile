@@ -104,7 +104,7 @@ public final class MotionDragHandlerKt$motionPointerInput$2$2$1 extends SuspendL
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2() {
-                    channel.mo8125trySendJP2dKIU(MotionDragState.Companion.m7664onDragEndTH1AsA0(velocityTracker.m5924calculateVelocity9UxMQ8M()));
+                    channel.mo8127trySendJP2dKIU(MotionDragState.Companion.m7664onDragEndTH1AsA0(velocityTracker.m5924calculateVelocity9UxMQ8M()));
                 }
             }, new Function0<Unit>() { // from class: androidx.constraintlayout.compose.MotionDragHandlerKt$motionPointerInput$2$2$1.4
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -120,7 +120,7 @@ public final class MotionDragHandlerKt$motionPointerInput$2$2$1 extends SuspendL
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2() {
-                    channel2.mo8125trySendJP2dKIU(MotionDragState.Companion.m7664onDragEndTH1AsA0(velocityTracker.m5924calculateVelocity9UxMQ8M()));
+                    channel2.mo8127trySendJP2dKIU(MotionDragState.Companion.m7664onDragEndTH1AsA0(velocityTracker.m5924calculateVelocity9UxMQ8M()));
                 }
             }, new Function2<PointerInputChange, Offset, Unit>() { // from class: androidx.constraintlayout.compose.MotionDragHandlerKt$motionPointerInput$2$2$1.5
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -137,7 +137,7 @@ public final class MotionDragHandlerKt$motionPointerInput$2$2$1 extends SuspendL
                 /* renamed from: invoke-Uv8p0NA  reason: not valid java name */
                 public final void m7656invokeUv8p0NA(PointerInputChange pointerInputChange, long j) {
                     VelocityTrackerKt.addPointerInputChange(VelocityTracker.this, pointerInputChange);
-                    channel3.mo8125trySendJP2dKIU(MotionDragState.Companion.m7663onDragk4lQ0M(j));
+                    channel3.mo8127trySendJP2dKIU(MotionDragState.Companion.m7663onDragk4lQ0M(j));
                 }
             }, this);
             if (detectDragGesturesWhenNeeded == coroutine_suspended) {

@@ -1,6 +1,7 @@
 package com.google.android.material.shape;
 
 import android.graphics.RectF;
+import androidx.core.math.MathUtils;
 import java.util.Arrays;
 /* loaded from: classes4.dex */
 public final class ClampedCornerSize implements CornerSize {
@@ -20,7 +21,7 @@ public final class ClampedCornerSize implements CornerSize {
 
     @Override // com.google.android.material.shape.CornerSize
     public float getCornerSize(RectF rectF) {
-        return Math.min(this.target, getMaxCornerSize(rectF));
+        return MathUtils.clamp(this.target, 0.0f, getMaxCornerSize(rectF));
     }
 
     public boolean equals(Object obj) {

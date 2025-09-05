@@ -21,20 +21,26 @@ import android.view.inspector.PropertyReader;
 import android.widget.Button;
 import android.widget.Checkable;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
-import androidx.core.widget.TextViewCompat;
 import androidx.customview.view.AbsSavedState;
+import androidx.dynamicanimation.animation.FloatPropertyCompat;
+import androidx.dynamicanimation.animation.SpringAnimation;
+import androidx.dynamicanimation.animation.SpringForce;
 import com.google.android.material.R;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.internal.ViewUtils;
+import com.google.android.material.motion.MotionUtils;
 import com.google.android.material.resources.MaterialResources;
+import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.MaterialShapeUtils;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.Shapeable;
+import com.google.android.material.shape.StateListShapeAppearanceModel;
+import com.google.android.material.shape.StateListSizeChange;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -42,9 +48,6 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 /* loaded from: classes4.dex */
 public class MaterialButton extends AppCompatButton implements Checkable, Shapeable {
-    private static final int[] CHECKABLE_STATE_SET = {16842911};
-    private static final int[] CHECKED_STATE_SET = {16842912};
-    private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_Button;
     public static final int ICON_GRAVITY_END = 3;
     public static final int ICON_GRAVITY_START = 1;
     public static final int ICON_GRAVITY_TEXT_END = 4;
@@ -52,9 +55,14 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
     public static final int ICON_GRAVITY_TEXT_TOP = 32;
     public static final int ICON_GRAVITY_TOP = 16;
     private static final String LOG_TAG = "MaterialButton";
+    private static final float OPTICAL_CENTER_RATIO = 0.11f;
+    private static final int UNSET = -1;
     private String accessibilityClassName;
+    int allowedWidthDecrease;
     private boolean broadcasting;
     private boolean checked;
+    private float displayedWidthDecrease;
+    private float displayedWidthIncrease;
     private Drawable icon;
     private int iconGravity;
     private int iconLeft;
@@ -63,9 +71,35 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
     private ColorStateList iconTint;
     private PorterDuff.Mode iconTintMode;
     private int iconTop;
+    private boolean isInHorizontalButtonGroup;
     private final MaterialButtonHelper materialButtonHelper;
     private final LinkedHashSet<OnCheckedChangeListener> onCheckedChangeListeners;
     private OnPressedChangeListener onPressedChangeListenerInternal;
+    private boolean opticalCenterEnabled;
+    private int opticalCenterShift;
+    private int orientation;
+    private LinearLayout.LayoutParams originalLayoutParams;
+    private int originalPaddingEnd;
+    private int originalPaddingStart;
+    private float originalWidth;
+    StateListSizeChange sizeChange;
+    int widthChangeMax;
+    private SpringAnimation widthIncreaseSpringAnimation;
+    private static final int[] CHECKABLE_STATE_SET = {16842911};
+    private static final int[] CHECKED_STATE_SET = {16842912};
+    private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_Button;
+    private static final int MATERIAL_SIZE_OVERLAY_ATTR = R.attr.materialSizeOverlay;
+    private static final FloatPropertyCompat<MaterialButton> WIDTH_INCREASE = new FloatPropertyCompat<MaterialButton>("widthIncrease") { // from class: com.google.android.material.button.MaterialButton.1
+        @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
+        public float getValue(MaterialButton materialButton) {
+            return materialButton.getDisplayedWidthIncrease();
+        }
+
+        @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
+        public void setValue(MaterialButton materialButton, float f) {
+            materialButton.setDisplayedWidthIncrease(f);
+        }
+    };
 
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes4.dex */
@@ -115,11 +149,17 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public MaterialButton(Context context, AttributeSet attributeSet, int i) {
-        super(MaterialThemeOverlay.wrap(context, attributeSet, i, r4), attributeSet, i);
+        super(MaterialThemeOverlay.wrap(context, attributeSet, i, r4, new int[]{MATERIAL_SIZE_OVERLAY_ATTR}), attributeSet, i);
+        ShapeAppearanceModel build;
         int i2 = DEF_STYLE_RES;
         this.onCheckedChangeListeners = new LinkedHashSet<>();
         this.checked = false;
         this.broadcasting = false;
+        this.orientation = -1;
+        this.originalWidth = -1.0f;
+        this.originalPaddingStart = -1;
+        this.originalPaddingEnd = -1;
+        this.allowedWidthDecrease = -1;
         Context context2 = getContext();
         TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, R.styleable.MaterialButton, i, i2, new int[0]);
         this.iconPadding = obtainStyledAttributes.getDimensionPixelSize(R.styleable.MaterialButton_iconPadding, 0);
@@ -128,12 +168,35 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         this.icon = MaterialResources.getDrawable(getContext(), obtainStyledAttributes, R.styleable.MaterialButton_icon);
         this.iconGravity = obtainStyledAttributes.getInteger(R.styleable.MaterialButton_iconGravity, 1);
         this.iconSize = obtainStyledAttributes.getDimensionPixelSize(R.styleable.MaterialButton_iconSize, 0);
-        MaterialButtonHelper materialButtonHelper = new MaterialButtonHelper(this, ShapeAppearanceModel.builder(context2, attributeSet, i, i2).build());
+        StateListShapeAppearanceModel create = StateListShapeAppearanceModel.create(context2, obtainStyledAttributes, R.styleable.MaterialButton_shapeAppearance);
+        if (create != null) {
+            build = create.getDefaultShape(true);
+        } else {
+            build = ShapeAppearanceModel.builder(context2, attributeSet, i, i2).build();
+        }
+        boolean z = obtainStyledAttributes.getBoolean(R.styleable.MaterialButton_opticalCenterEnabled, false);
+        MaterialButtonHelper materialButtonHelper = new MaterialButtonHelper(this, build);
         this.materialButtonHelper = materialButtonHelper;
         materialButtonHelper.loadFromAttributes(obtainStyledAttributes);
+        setCheckedInternal(obtainStyledAttributes.getBoolean(R.styleable.MaterialButton_android_checked, false));
+        if (create != null) {
+            materialButtonHelper.setCornerSpringForce(createSpringForce());
+            materialButtonHelper.setStateListShapeAppearanceModel(create);
+        }
+        setOpticalCenterEnabled(z);
         obtainStyledAttributes.recycle();
         setCompoundDrawablePadding(this.iconPadding);
         updateIcon(this.icon != null);
+    }
+
+    private void initializeSizeAnimation() {
+        SpringAnimation springAnimation = new SpringAnimation(this, WIDTH_INCREASE);
+        this.widthIncreaseSpringAnimation = springAnimation;
+        springAnimation.setSpring(createSpringForce());
+    }
+
+    private SpringForce createSpringForce() {
+        return MotionUtils.resolveThemeSpringForce(getContext(), R.attr.motionSpringFastSpatial, R.style.Motion_Material3_Spring_Standard_Fast_Spatial);
     }
 
     String getA11yClassName() {
@@ -143,7 +206,6 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         return this.accessibilityClassName;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public void setA11yClassName(String str) {
         this.accessibilityClassName = str;
     }
@@ -273,8 +335,59 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.appcompat.widget.AppCompatButton, android.widget.TextView, android.view.View
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int i5;
         super.onLayout(z, i, i2, i3, i4);
         updateIconPosition(getMeasuredWidth(), getMeasuredHeight());
+        int i6 = getResources().getConfiguration().orientation;
+        if (this.orientation != i6) {
+            this.orientation = i6;
+            this.originalWidth = -1.0f;
+        }
+        if (this.originalWidth == -1.0f) {
+            this.originalWidth = getMeasuredWidth();
+            if (this.originalLayoutParams == null && (getParent() instanceof MaterialButtonGroup) && ((MaterialButtonGroup) getParent()).getButtonSizeChange() != null) {
+                this.originalLayoutParams = (LinearLayout.LayoutParams) getLayoutParams();
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(this.originalLayoutParams);
+                layoutParams.width = (int) this.originalWidth;
+                setLayoutParams(layoutParams);
+            }
+        }
+        if (this.allowedWidthDecrease == -1) {
+            if (this.icon == null) {
+                i5 = 0;
+            } else {
+                int iconPadding = getIconPadding();
+                int i7 = this.iconSize;
+                if (i7 == 0) {
+                    i7 = this.icon.getIntrinsicWidth();
+                }
+                i5 = iconPadding + i7;
+            }
+            this.allowedWidthDecrease = (getMeasuredWidth() - getTextLayoutWidth()) - i5;
+        }
+        if (this.originalPaddingStart == -1) {
+            this.originalPaddingStart = getPaddingStart();
+        }
+        if (this.originalPaddingEnd == -1) {
+            this.originalPaddingEnd = getPaddingEnd();
+        }
+        this.isInHorizontalButtonGroup = isInHorizontalButtonGroup();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void recoverOriginalLayoutParams() {
+        LinearLayout.LayoutParams layoutParams = this.originalLayoutParams;
+        if (layoutParams != null) {
+            setLayoutParams(layoutParams);
+            this.originalLayoutParams = null;
+            this.originalWidth = -1.0f;
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setWidth(int i) {
+        this.originalWidth = -1.0f;
+        super.setWidth(i);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -359,7 +472,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
             if (i4 == 0) {
                 i4 = this.icon.getIntrinsicWidth();
             }
-            int textLayoutWidth = ((((i - getTextLayoutWidth()) - ViewCompat.getPaddingEnd(this)) - i4) - this.iconPadding) - ViewCompat.getPaddingStart(this);
+            int textLayoutWidth = ((((i - getTextLayoutWidth()) - getPaddingEnd()) - i4) - this.iconPadding) - getPaddingStart();
             if (actualTextAlignment == Layout.Alignment.ALIGN_CENTER) {
                 textLayoutWidth /= 2;
             }
@@ -413,7 +526,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
     }
 
     private boolean isLayoutRTL() {
-        return ViewCompat.getLayoutDirection(this) == 1;
+        return getLayoutDirection() == 1;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -493,10 +606,10 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         if (drawable != null) {
             Drawable mutate = DrawableCompat.wrap(drawable).mutate();
             this.icon = mutate;
-            DrawableCompat.setTintList(mutate, this.iconTint);
+            mutate.setTintList(this.iconTint);
             PorterDuff.Mode mode = this.iconTintMode;
             if (mode != null) {
-                DrawableCompat.setTintMode(this.icon, mode);
+                this.icon.setTintMode(mode);
             }
             int i = this.iconSize;
             if (i == 0) {
@@ -516,7 +629,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
             resetIconDrawable();
             return;
         }
-        Drawable[] compoundDrawablesRelative = TextViewCompat.getCompoundDrawablesRelative(this);
+        Drawable[] compoundDrawablesRelative = getCompoundDrawablesRelative();
         Drawable drawable3 = compoundDrawablesRelative[0];
         Drawable drawable4 = compoundDrawablesRelative[1];
         Drawable drawable5 = compoundDrawablesRelative[2];
@@ -528,11 +641,11 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
 
     private void resetIconDrawable() {
         if (isIconStart()) {
-            TextViewCompat.setCompoundDrawablesRelative(this, this.icon, null, null, null);
+            setCompoundDrawablesRelative(this.icon, null, null, null);
         } else if (isIconEnd()) {
-            TextViewCompat.setCompoundDrawablesRelative(this, null, null, this.icon, null);
+            setCompoundDrawablesRelative(null, null, this.icon, null);
         } else if (isIconTop()) {
-            TextViewCompat.setCompoundDrawablesRelative(this, null, this.icon, null, null);
+            setCompoundDrawablesRelative(null, this.icon, null, null);
         }
     }
 
@@ -680,22 +793,27 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
 
     @Override // android.widget.Checkable
     public void setChecked(boolean z) {
-        if (isCheckable() && isEnabled() && this.checked != z) {
-            this.checked = z;
-            refreshDrawableState();
-            if (getParent() instanceof MaterialButtonToggleGroup) {
-                ((MaterialButtonToggleGroup) getParent()).onButtonCheckedStateChanged(this, this.checked);
-            }
-            if (this.broadcasting) {
-                return;
-            }
-            this.broadcasting = true;
-            Iterator<OnCheckedChangeListener> it = this.onCheckedChangeListeners.iterator();
-            while (it.hasNext()) {
-                it.next().onCheckedChanged(this, this.checked);
-            }
-            this.broadcasting = false;
+        setCheckedInternal(z);
+    }
+
+    private void setCheckedInternal(boolean z) {
+        if (!isCheckable() || this.checked == z) {
+            return;
         }
+        this.checked = z;
+        refreshDrawableState();
+        if (getParent() instanceof MaterialButtonToggleGroup) {
+            ((MaterialButtonToggleGroup) getParent()).onButtonCheckedStateChanged(this, this.checked);
+        }
+        if (this.broadcasting) {
+            return;
+        }
+        this.broadcasting = true;
+        Iterator<OnCheckedChangeListener> it = this.onCheckedChangeListeners.iterator();
+        while (it.hasNext()) {
+            it.next().onCheckedChanged(this, this.checked);
+        }
+        this.broadcasting = false;
     }
 
     @Override // android.widget.Checkable
@@ -710,7 +828,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
 
     @Override // android.view.View
     public boolean performClick() {
-        if (this.materialButtonHelper.isToggleCheckedStateOnClick()) {
+        if (isEnabled() && this.materialButtonHelper.isToggleCheckedStateOnClick()) {
             toggle();
         }
         return super.performClick();
@@ -752,6 +870,32 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         throw new IllegalStateException("Attempted to get ShapeAppearanceModel from a MaterialButton which has an overwritten background.");
     }
 
+    public void setStateListShapeAppearanceModel(StateListShapeAppearanceModel stateListShapeAppearanceModel) {
+        if (isUsingOriginalBackground()) {
+            if (this.materialButtonHelper.getCornerSpringForce() == null && stateListShapeAppearanceModel.isStateful()) {
+                this.materialButtonHelper.setCornerSpringForce(createSpringForce());
+            }
+            this.materialButtonHelper.setStateListShapeAppearanceModel(stateListShapeAppearanceModel);
+            return;
+        }
+        throw new IllegalStateException("Attempted to set StateListShapeAppearanceModel on a MaterialButton which has an overwritten background.");
+    }
+
+    public StateListShapeAppearanceModel getStateListShapeAppearanceModel() {
+        if (isUsingOriginalBackground()) {
+            return this.materialButtonHelper.getStateListShapeAppearanceModel();
+        }
+        throw new IllegalStateException("Attempted to get StateListShapeAppearanceModel from a MaterialButton which has an overwritten background.");
+    }
+
+    public void setCornerSpringForce(SpringForce springForce) {
+        this.materialButtonHelper.setCornerSpringForce(springForce);
+    }
+
+    public SpringForce getCornerSpringForce() {
+        return this.materialButtonHelper.getCornerSpringForce();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public void setOnPressedChangeListenerInternal(OnPressedChangeListener onPressedChangeListener) {
         this.onPressedChangeListenerInternal = onPressedChangeListener;
@@ -764,6 +908,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
             onPressedChangeListener.onPressedChanged(this, z);
         }
         super.setPressed(z);
+        maybeAnimateSize(false);
     }
 
     private boolean isUsingOriginalBackground() {
@@ -776,6 +921,130 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         if (isUsingOriginalBackground()) {
             this.materialButtonHelper.setShouldDrawSurfaceColorStroke(z);
         }
+    }
+
+    private void maybeAnimateSize(boolean z) {
+        if (this.sizeChange == null) {
+            return;
+        }
+        if (this.widthIncreaseSpringAnimation == null) {
+            initializeSizeAnimation();
+        }
+        if (this.isInHorizontalButtonGroup) {
+            this.widthIncreaseSpringAnimation.animateToFinalPosition(Math.min(this.widthChangeMax, this.sizeChange.getSizeChangeForState(getDrawableState()).widthChange.getChange(getWidth())));
+            if (z) {
+                this.widthIncreaseSpringAnimation.skipToEnd();
+            }
+        }
+    }
+
+    private boolean isInHorizontalButtonGroup() {
+        return (getParent() instanceof MaterialButtonGroup) && ((MaterialButtonGroup) getParent()).getOrientation() == 0;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void setSizeChange(StateListSizeChange stateListSizeChange) {
+        if (this.sizeChange != stateListSizeChange) {
+            this.sizeChange = stateListSizeChange;
+            maybeAnimateSize(true);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void setWidthChangeMax(int i) {
+        if (this.widthChangeMax != i) {
+            this.widthChangeMax = i;
+            maybeAnimateSize(true);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public int getAllowedWidthDecrease() {
+        return this.allowedWidthDecrease;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public float getDisplayedWidthIncrease() {
+        return this.displayedWidthIncrease;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setDisplayedWidthIncrease(float f) {
+        if (this.displayedWidthIncrease != f) {
+            this.displayedWidthIncrease = f;
+            updatePaddingsAndSizeForWidthAnimation();
+            invalidate();
+            if (getParent() instanceof MaterialButtonGroup) {
+                ((MaterialButtonGroup) getParent()).onButtonWidthChanged(this, (int) this.displayedWidthIncrease);
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void setDisplayedWidthDecrease(int i) {
+        this.displayedWidthDecrease = Math.min(i, this.allowedWidthDecrease);
+        updatePaddingsAndSizeForWidthAnimation();
+        invalidate();
+    }
+
+    public void setOpticalCenterEnabled(boolean z) {
+        if (this.opticalCenterEnabled != z) {
+            this.opticalCenterEnabled = z;
+            if (z) {
+                this.materialButtonHelper.setCornerSizeChangeListener(new MaterialShapeDrawable.OnCornerSizeChangeListener() { // from class: com.google.android.material.button.MaterialButton$$ExternalSyntheticLambda0
+                    @Override // com.google.android.material.shape.MaterialShapeDrawable.OnCornerSizeChangeListener
+                    public final void onCornerSizeChange(float f) {
+                        MaterialButton.this.m8675x61790e35(f);
+                    }
+                });
+            } else {
+                this.materialButtonHelper.setCornerSizeChangeListener(null);
+            }
+            post(new Runnable() { // from class: com.google.android.material.button.MaterialButton$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    MaterialButton.this.m8676xa5042bf6();
+                }
+            });
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$setOpticalCenterEnabled$0$com-google-android-material-button-MaterialButton  reason: not valid java name */
+    public /* synthetic */ void m8675x61790e35(float f) {
+        int i = (int) (f * OPTICAL_CENTER_RATIO);
+        if (this.opticalCenterShift != i) {
+            this.opticalCenterShift = i;
+            updatePaddingsAndSizeForWidthAnimation();
+            invalidate();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$setOpticalCenterEnabled$1$com-google-android-material-button-MaterialButton  reason: not valid java name */
+    public /* synthetic */ void m8676xa5042bf6() {
+        this.opticalCenterShift = getOpticalCenterShift();
+        updatePaddingsAndSizeForWidthAnimation();
+        invalidate();
+    }
+
+    public boolean isOpticalCenterEnabled() {
+        return this.opticalCenterEnabled;
+    }
+
+    private void updatePaddingsAndSizeForWidthAnimation() {
+        int i = (int) (this.displayedWidthIncrease - this.displayedWidthDecrease);
+        int i2 = (i / 2) + this.opticalCenterShift;
+        getLayoutParams().width = (int) (this.originalWidth + i);
+        setPaddingRelative(this.originalPaddingStart + i2, getPaddingTop(), (this.originalPaddingEnd + i) - i2, getPaddingBottom());
+    }
+
+    private int getOpticalCenterShift() {
+        MaterialShapeDrawable materialShapeDrawable;
+        if (this.opticalCenterEnabled && this.isInHorizontalButtonGroup && (materialShapeDrawable = this.materialButtonHelper.getMaterialShapeDrawable()) != null) {
+            return (int) (materialShapeDrawable.getCornerSizeDiffX() * OPTICAL_CENTER_RATIO);
+        }
+        return 0;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

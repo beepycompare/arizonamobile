@@ -11,7 +11,13 @@ public final class Executors {
             Util.postOnUiThread(runnable);
         }
     };
-    private static final Executor DIRECT_EXECUTOR = new Executor() { // from class: com.bumptech.glide.util.Executors.2
+    private static final Executor MAIN_THREAD_EXECUTOR_FRONT = new Executor() { // from class: com.bumptech.glide.util.Executors.2
+        @Override // java.util.concurrent.Executor
+        public void execute(Runnable runnable) {
+            Util.postAtFrontOfQueueOnUiThread(runnable);
+        }
+    };
+    private static final Executor DIRECT_EXECUTOR = new Executor() { // from class: com.bumptech.glide.util.Executors.3
         @Override // java.util.concurrent.Executor
         public void execute(Runnable runnable) {
             runnable.run();
@@ -23,6 +29,10 @@ public final class Executors {
 
     public static Executor mainThreadExecutor() {
         return MAIN_THREAD_EXECUTOR;
+    }
+
+    public static Executor mainThreadExecutorFront() {
+        return MAIN_THREAD_EXECUTOR_FRONT;
     }
 
     public static Executor directExecutor() {

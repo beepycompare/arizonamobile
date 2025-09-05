@@ -1959,7 +1959,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 161:
             case 210:
                 return new int[]{4, 2, 4, 4, 2, 2};
-            case ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX /* 49 */:
+            case '1':
                 return new int[]{2, 3, 0, 1, 2, 2};
             case ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_TOP_OF /* 52 */:
                 return new int[]{1, 0, 1, 0, 0, 2};

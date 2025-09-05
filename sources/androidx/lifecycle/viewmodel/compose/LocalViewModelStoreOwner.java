@@ -36,7 +36,7 @@ public final class LocalViewModelStoreOwner {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-584162872, i, -1, "androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner.<get-current> (LocalViewModelStoreOwner.kt:34)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(LocalViewModelStoreOwner);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ViewModelStoreOwner viewModelStoreOwner = (ViewModelStoreOwner) consume;

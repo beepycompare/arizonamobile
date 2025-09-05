@@ -40,9 +40,16 @@ import kotlin.ranges.IntRange;
 import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.CoroutineExceptionHandler;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
+import kotlinx.coroutines.Job;
+import kotlinx.coroutines.SupervisorKt;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.SAMPUIElement;
@@ -59,6 +66,7 @@ import ru.mrlargha.commonui.elements.inventory.domain.ChangeToSlotGuard;
 import ru.mrlargha.commonui.elements.inventory.domain.GuardInfoResponse;
 import ru.mrlargha.commonui.elements.inventory.domain.GuardInventorySendRequest;
 import ru.mrlargha.commonui.elements.inventory.domain.GuardItemRequest;
+import ru.mrlargha.commonui.elements.inventory.domain.InventoryApi;
 import ru.mrlargha.commonui.elements.inventory.domain.InventoryEditResponse;
 import ru.mrlargha.commonui.elements.inventory.domain.InventoryResponse;
 import ru.mrlargha.commonui.elements.inventory.domain.InventorySendRequest;
@@ -85,12 +93,14 @@ import ru.mrlargha.commonui.utils.RodinaItemTypes;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: InventoryScreen.kt */
-@Metadata(d1 = {"\u0000Ä\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0010\u000e\n\u0002\b\u000e\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000b\u0018\u0000 £\u00012\u00020\u00012\u00020\u0002:\u0004¢\u0001£\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010G\u001a\u00020HH\u0002J\u0018\u0010I\u001a\u00020H2\u0006\u0010J\u001a\u00020\u00062\u0006\u0010K\u001a\u00020\u0006H\u0002J\u0010\u0010L\u001a\u00020H2\u0006\u0010M\u001a\u00020\u0018H\u0002J\u0010\u0010N\u001a\u00020H2\u0006\u0010M\u001a\u00020\u0018H\u0002J\b\u0010O\u001a\u00020HH\u0002J\b\u0010P\u001a\u00020HH\u0002J\b\u0010Q\u001a\u00020HH\u0002J\b\u0010R\u001a\u00020HH\u0002J\u0010\u0010S\u001a\u00020H2\u0006\u0010M\u001a\u00020\u0012H\u0002J\b\u0010T\u001a\u00020HH\u0002J\b\u0010U\u001a\u00020HH\u0002J\u0016\u0010V\u001a\u00020H2\f\u0010W\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011H\u0002J\u0016\u0010X\u001a\u00020H2\f\u0010W\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011H\u0002J\b\u0010Y\u001a\u00020HH\u0002J\u0010\u0010Z\u001a\u00020H2\u0006\u0010[\u001a\u00020\u0006H\u0002J\u0018\u0010\\\u001a\u00020H2\u0006\u0010]\u001a\u00020^2\u0006\u0010_\u001a\u00020\u0006H\u0002J\b\u0010`\u001a\u00020HH\u0002J\b\u0010a\u001a\u00020HH\u0002J \u0010b\u001a\u00020H2\u0006\u0010c\u001a\u00020\u00062\u0006\u0010d\u001a\u00020\u00062\u0006\u0010e\u001a\u00020\u0006H\u0002J\u0016\u0010f\u001a\u00020H2\f\u0010W\u001a\b\u0012\u0004\u0012\u00020$0\u0011H\u0002J\b\u0010g\u001a\u00020HH\u0002J\b\u0010h\u001a\u00020HH\u0002J\b\u0010i\u001a\u00020HH\u0002J\b\u0010j\u001a\u00020HH\u0002J\b\u0010k\u001a\u00020HH\u0002J\b\u0010l\u001a\u00020HH\u0002J\u0018\u0010m\u001a\u00020H2\u0006\u0010n\u001a\u00020o2\u0006\u0010J\u001a\u00020\u0006H\u0016J\u0010\u0010p\u001a\u00020H2\u0006\u0010q\u001a\u00020\u0006H\u0002J\u0010\u0010r\u001a\u00020H2\u0006\u0010q\u001a\u00020\u0006H\u0002J\b\u0010s\u001a\u00020HH\u0002J\b\u0010t\u001a\u00020HH\u0002J\b\u0010u\u001a\u00020HH\u0002J\u0010\u0010v\u001a\u00020H2\u0006\u0010w\u001a\u00020\u0006H\u0002J\u0010\u0010x\u001a\u00020H2\u0006\u0010w\u001a\u00020\u0006H\u0002J\u0016\u0010y\u001a\u00020H2\f\u0010W\u001a\b\u0012\u0004\u0012\u00020\u00060\u0011H\u0002J\u0016\u0010z\u001a\u00020H2\f\u0010W\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011H\u0002J\u0012\u0010{\u001a\u00020H2\b\u0010M\u001a\u0004\u0018\u00010\u0012H\u0002J\b\u0010|\u001a\u00020HH\u0002J\u0017\u0010}\u001a\b\u0012\u0004\u0012\u00020\u00120~2\u0007\u0010\u007f\u001a\u00030\u0080\u0001H\u0002J\u001a\u0010\u0081\u0001\u001a\u00020H2\u0006\u0010M\u001a\u00020\u00122\u0007\u0010\u0082\u0001\u001a\u000204H\u0002J\u0012\u0010\u0083\u0001\u001a\u00020H2\u0007\u0010\u0082\u0001\u001a\u000204H\u0002J\u001a\u0010\u0084\u0001\u001a\u00020H2\u0006\u0010M\u001a\u00020\u00122\u0007\u0010\u0082\u0001\u001a\u000204H\u0002J\u0012\u0010\u0085\u0001\u001a\u00020H2\u0007\u0010\u0082\u0001\u001a\u000204H\u0002J\u001a\u0010\u0086\u0001\u001a\u00020H2\u0006\u0010M\u001a\u00020\u00122\u0007\u0010\u0082\u0001\u001a\u000204H\u0002J\u0012\u0010\u0087\u0001\u001a\u00020H2\u0007\u0010\u0082\u0001\u001a\u000204H\u0002J\u001a\u0010\u0088\u0001\u001a\u00020H2\u0006\u0010M\u001a\u00020\u00122\u0007\u0010\u0082\u0001\u001a\u000204H\u0002J\u0012\u0010\u0089\u0001\u001a\u00020H2\u0007\u0010\u0082\u0001\u001a\u000204H\u0002J\u0012\u0010\u008a\u0001\u001a\u00020H2\u0007\u0010\u0082\u0001\u001a\u000204H\u0002J\u0013\u0010\u008b\u0001\u001a\u00020H2\b\u0010\u008c\u0001\u001a\u00030\u008d\u0001H\u0002J\t\u0010\u008e\u0001\u001a\u00020HH\u0002J\t\u0010\u008f\u0001\u001a\u00020HH\u0002J\u001a\u0010\u0090\u0001\u001a\u00020H2\u0006\u0010n\u001a\u00020\u00062\u0007\u0010\u0091\u0001\u001a\u00020\u0006H\u0016J\u001b\u0010\u0090\u0001\u001a\u00020H2\u0006\u0010n\u001a\u00020\u00062\b\u0010\u0091\u0001\u001a\u00030\u0092\u0001H\u0016J&\u0010\u0093\u0001\u001a\u00020H2\u0007\u0010]\u001a\u00030\u0094\u00012\u0007\u0010\u0095\u0001\u001a\u00020o2\t\b\u0002\u0010\u0096\u0001\u001a\u00020\u0006H\u0002J\u0013\u0010\u0097\u0001\u001a\u00020H2\b\u0010\u0098\u0001\u001a\u00030\u0099\u0001H\u0002J\u001b\u0010\u009a\u0001\u001a\u00020H2\u0007\u0010\u009b\u0001\u001a\u00020\u00122\u0007\u0010\u009c\u0001\u001a\u00020\u0012H\u0002J\u001b\u0010\u009d\u0001\u001a\u00020H2\u0007\u0010\u009b\u0001\u001a\u00020\u00122\u0007\u0010\u009c\u0001\u001a\u00020\u0012H\u0002J\t\u0010\u009e\u0001\u001a\u00020HH\u0002J\u0019\u0010\u009f\u0001\u001a\u00020H2\u0006\u0010n\u001a\u00020o2\u0006\u0010J\u001a\u00020\u0006H\u0002J\u0012\u0010 \u0001\u001a\u00020H2\u0007\u0010¡\u0001\u001a\u000204H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00180\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\b\u0012\u0004\u0012\u00020$0\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010,\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010.\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00101\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00106\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00109\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010:\u001a\u00020;X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010<\u001a\n >*\u0004\u0018\u00010=0=X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010?\u001a\u000204X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010@\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010B\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010C\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010D\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010E\u001a\u00020FX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006¤\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "inventoryScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/MainInventoryBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "currentBackendId", "mainInventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "subCaseArmorSkinList", "subAccessoriesList", "subUpgradesList", "walletInventoryList", "menuItemList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryMenuData;", "inventoryMenuAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/InventoryMenuAdapter;", "mainInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "subInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "accessoriesInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "upgradesInventoryAdapter", "walletInventoryAdapter", "guardInfoList", "Lru/mrlargha/commonui/elements/inventory/domain/models/GuardInfo;", "guardAccessoriesList", "guardInventoryList", "guardWeaponList", "guardNumber", "guardSubInventoryAdapter", "guardInventoryAdapter", "vehicleSubList", "vehicleTechnicalList", "vehicleVisualList", "vehicleAccessoriesAdapter", "vehicleTechAdapter", "vehicleVisualAdapter", "warehouseList", "warehouseAdapter", "isAccessoriesListVisible", "", "isUpgradesListVisible", "isWalletListVisible", "isTechnicalListVisible", "isVisualListVisible", "selectedInventoryItem", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "currentWarehouse", "vehicleVisibilityState", "currentModSkin", "currentSkin", "clickedMenuButtons", "scope", "Lkotlinx/coroutines/CoroutineScope;", "initClickListeners", "", "sendRequestToClicks", "subId", "button", "menuClickHandlerArz", "item", "menuClickHandlerRod", "initViewSize", "observeClickBtnInventoryGuard", "initAdapters", "defaultInventoryScreen", "showSelectorDialog", "btnTechnicalPressed", "btnVisualPressed", "addItemsVehicleTechList", "list", "addItemsVehicleVisList", "guardsTypeClickListeners", "openRecyclerView", "type", "setItemBackground", "view", "Landroid/view/View;", "res", "setVisibilityBtnGuards", "defaultGuardScreen", "editMainUi", "viewParent", "margin", "viewItem", "guardInfoSetUi", "observeGuardAccessories", "btnAccessoriesPressed", "btnUpgradesPressed", "btnWalletPressed", "initObservers", "refreshItemVisibility", "onBackendMessage", "data", "", "getArzWarehouseType", "id", "getRodWarehouseType", "showGuardScreen", "showVehicleScreen", "showWarehouseScreen", "getAndShowMenuButtonsArz", "bits", "getAndShowMenuButtonsRod", "addMenuCategories", "addInfoToDatabase", "updateInfoToDatabase", "addLockedItems", "editResponseInfo", "", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "colorItem", "isColorItem", "changeGuardSubList", "changeAccessoriesItem", "changeGunImprovementsItem", "changeCaseArmorItem", "changeSkinItem", "changeVehicleSubList", "changeVisualVehicleList", "changeTechVehicleList", "addTopBars", "skin", "Lru/mrlargha/commonui/elements/inventory/domain/models/Skin;", "closeWallet", "getUserInfo", "onUpdateData", "value", "", "observeUserSkin", "Landroid/widget/ImageView;", "url", "defaultImage", "addVehicleInfo", "userBars", "Lru/mrlargha/commonui/elements/inventory/domain/models/VehicleInfoBars;", "sendData", "fromItem", "toItem", "sendGuardData", "closeAllInventoryScreens", "sendRequestTo", "setVisible", "visible", "Spawner", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes6.dex */
+@Metadata(d1 = {"\u0000Ø\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0002\b\u001e\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000b\u0018\u0000 ¯\u00012\u00020\u00012\u00020\u0002:\u0004®\u0001¯\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010S\u001a\u00020TH\u0002J\b\u0010U\u001a\u00020TH\u0002J\u0018\u0010V\u001a\u00020T2\u0006\u0010W\u001a\u00020\u00062\u0006\u0010X\u001a\u00020\u0006H\u0002J\u0010\u0010Y\u001a\u00020T2\u0006\u0010Z\u001a\u00020\u0018H\u0002J\u0010\u0010[\u001a\u00020T2\u0006\u0010Z\u001a\u00020\u0018H\u0002J\b\u0010\\\u001a\u00020TH\u0002J\b\u0010]\u001a\u00020TH\u0002J\b\u0010^\u001a\u00020TH\u0002J\b\u0010_\u001a\u00020TH\u0002J\u0010\u0010`\u001a\u00020T2\u0006\u0010Z\u001a\u00020\u0012H\u0002J\b\u0010a\u001a\u00020TH\u0002J\b\u0010b\u001a\u00020TH\u0002J\u0016\u0010c\u001a\u00020T2\f\u0010d\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011H\u0002J\u0016\u0010e\u001a\u00020T2\f\u0010d\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011H\u0002J\b\u0010f\u001a\u00020TH\u0002J\u0010\u0010g\u001a\u00020T2\u0006\u0010h\u001a\u00020\u0006H\u0002J\u0018\u0010i\u001a\u00020T2\u0006\u0010j\u001a\u00020k2\u0006\u0010l\u001a\u00020\u0006H\u0002J\b\u0010m\u001a\u00020TH\u0002J\b\u0010n\u001a\u00020TH\u0002J \u0010o\u001a\u00020T2\u0006\u0010p\u001a\u00020\u00062\u0006\u0010q\u001a\u00020\u00062\u0006\u0010r\u001a\u00020\u0006H\u0002J\u0016\u0010s\u001a\u00020T2\f\u0010d\u001a\b\u0012\u0004\u0012\u00020$0\u0011H\u0002J\b\u0010t\u001a\u00020TH\u0002J\b\u0010u\u001a\u00020TH\u0002J\b\u0010v\u001a\u00020TH\u0002J\b\u0010w\u001a\u00020TH\u0002J\b\u0010x\u001a\u00020TH\u0002J\b\u0010y\u001a\u00020TH\u0002J\u0018\u0010z\u001a\u00020T2\u0006\u0010{\u001a\u00020O2\u0006\u0010W\u001a\u00020\u0006H\u0016J\u0010\u0010|\u001a\u00020T2\u0006\u0010}\u001a\u00020\u0006H\u0002J\u0010\u0010~\u001a\u00020T2\u0006\u0010}\u001a\u00020\u0006H\u0002J\b\u0010\u007f\u001a\u00020TH\u0002J\t\u0010\u0080\u0001\u001a\u00020TH\u0002J\t\u0010\u0081\u0001\u001a\u00020TH\u0002J\u0012\u0010\u0082\u0001\u001a\u00020T2\u0007\u0010\u0083\u0001\u001a\u00020\u0006H\u0002J\u0012\u0010\u0084\u0001\u001a\u00020T2\u0007\u0010\u0083\u0001\u001a\u00020\u0006H\u0002J\u0017\u0010\u0085\u0001\u001a\u00020T2\f\u0010d\u001a\b\u0012\u0004\u0012\u00020\u00060\u0011H\u0002J\u0017\u0010\u0086\u0001\u001a\u00020T2\f\u0010d\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011H\u0002J\u0013\u0010\u0087\u0001\u001a\u00020T2\b\u0010Z\u001a\u0004\u0018\u00010\u0012H\u0002J\t\u0010\u0088\u0001\u001a\u00020TH\u0002J\u001a\u0010\u0089\u0001\u001a\t\u0012\u0004\u0012\u00020\u00120\u008a\u00012\b\u0010\u008b\u0001\u001a\u00030\u008c\u0001H\u0002J\u001a\u0010\u008d\u0001\u001a\u00020T2\u0006\u0010Z\u001a\u00020\u00122\u0007\u0010\u008e\u0001\u001a\u000204H\u0002J\u0012\u0010\u008f\u0001\u001a\u00020T2\u0007\u0010\u008e\u0001\u001a\u000204H\u0002J\u001a\u0010\u0090\u0001\u001a\u00020T2\u0006\u0010Z\u001a\u00020\u00122\u0007\u0010\u008e\u0001\u001a\u000204H\u0002J\u0012\u0010\u0091\u0001\u001a\u00020T2\u0007\u0010\u008e\u0001\u001a\u000204H\u0002J\u001a\u0010\u0092\u0001\u001a\u00020T2\u0006\u0010Z\u001a\u00020\u00122\u0007\u0010\u008e\u0001\u001a\u000204H\u0002J\u0012\u0010\u0093\u0001\u001a\u00020T2\u0007\u0010\u008e\u0001\u001a\u000204H\u0002J\u001a\u0010\u0094\u0001\u001a\u00020T2\u0006\u0010Z\u001a\u00020\u00122\u0007\u0010\u008e\u0001\u001a\u000204H\u0002J\u0012\u0010\u0095\u0001\u001a\u00020T2\u0007\u0010\u008e\u0001\u001a\u000204H\u0002J\u0012\u0010\u0096\u0001\u001a\u00020T2\u0007\u0010\u008e\u0001\u001a\u000204H\u0002J\u0013\u0010\u0097\u0001\u001a\u00020T2\b\u0010\u0098\u0001\u001a\u00030\u0099\u0001H\u0002J\t\u0010\u009a\u0001\u001a\u00020TH\u0002J\t\u0010\u009b\u0001\u001a\u00020TH\u0002J\u001a\u0010\u009c\u0001\u001a\u00020T2\u0006\u0010{\u001a\u00020\u00062\u0007\u0010\u009d\u0001\u001a\u00020\u0006H\u0016J\u001b\u0010\u009c\u0001\u001a\u00020T2\u0006\u0010{\u001a\u00020\u00062\b\u0010\u009d\u0001\u001a\u00030\u009e\u0001H\u0016J&\u0010\u009f\u0001\u001a\u00020T2\u0007\u0010j\u001a\u00030 \u00012\u0007\u0010¡\u0001\u001a\u00020O2\t\b\u0002\u0010¢\u0001\u001a\u00020\u0006H\u0002J\u0013\u0010£\u0001\u001a\u00020T2\b\u0010¤\u0001\u001a\u00030¥\u0001H\u0002J\u001b\u0010¦\u0001\u001a\u00020T2\u0007\u0010§\u0001\u001a\u00020\u00122\u0007\u0010¨\u0001\u001a\u00020\u0012H\u0002J\u001b\u0010©\u0001\u001a\u00020T2\u0007\u0010§\u0001\u001a\u00020\u00122\u0007\u0010¨\u0001\u001a\u00020\u0012H\u0002J\t\u0010ª\u0001\u001a\u00020TH\u0002J\u0019\u0010«\u0001\u001a\u00020T2\u0006\u0010{\u001a\u00020O2\u0006\u0010W\u001a\u00020\u0006H\u0002J\u0012\u0010¬\u0001\u001a\u00020T2\u0007\u0010\u00ad\u0001\u001a\u000204H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00180\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\b\u0012\u0004\u0012\u00020$0\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010,\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010.\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00101\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00106\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00109\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010:\u001a\u00020;X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010<\u001a\n >*\u0004\u0018\u00010=0=X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010?\u001a\u000204X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010@\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010B\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010C\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010D\u001a\u000204X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010E\u001a\u00020FX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010G\u001a\u00020HX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010I\u001a\u00020JX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010K\u001a\u00020LX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010M\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010N\u001a\u0004\u0018\u00010OX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010P\u001a\u00020O8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bQ\u0010R¨\u0006°\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "inventoryScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/MainInventoryBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "currentBackendId", "mainInventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "subCaseArmorSkinList", "subAccessoriesList", "subUpgradesList", "walletInventoryList", "menuItemList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryMenuData;", "inventoryMenuAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/InventoryMenuAdapter;", "mainInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "subInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "accessoriesInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "upgradesInventoryAdapter", "walletInventoryAdapter", "guardInfoList", "Lru/mrlargha/commonui/elements/inventory/domain/models/GuardInfo;", "guardAccessoriesList", "guardInventoryList", "guardWeaponList", "guardNumber", "guardSubInventoryAdapter", "guardInventoryAdapter", "vehicleSubList", "vehicleTechnicalList", "vehicleVisualList", "vehicleAccessoriesAdapter", "vehicleTechAdapter", "vehicleVisualAdapter", "warehouseList", "warehouseAdapter", "isAccessoriesListVisible", "", "isUpgradesListVisible", "isWalletListVisible", "isTechnicalListVisible", "isVisualListVisible", "selectedInventoryItem", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "currentWarehouse", "vehicleVisibilityState", "currentModSkin", "currentSkin", "clickedMenuButtons", "retrofit", "Lretrofit2/Retrofit;", "api", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "serverId", "_token", "", "token", "getToken", "()Ljava/lang/String;", "initRetrofit", "", "initClickListeners", "sendRequestToClicks", "subId", "button", "menuClickHandlerArz", "item", "menuClickHandlerRod", "initViewSize", "observeClickBtnInventoryGuard", "initAdapters", "defaultInventoryScreen", "showSelectorDialog", "btnTechnicalPressed", "btnVisualPressed", "addItemsVehicleTechList", "list", "addItemsVehicleVisList", "guardsTypeClickListeners", "openRecyclerView", "type", "setItemBackground", "view", "Landroid/view/View;", "res", "setVisibilityBtnGuards", "defaultGuardScreen", "editMainUi", "viewParent", "margin", "viewItem", "guardInfoSetUi", "observeGuardAccessories", "btnAccessoriesPressed", "btnUpgradesPressed", "btnWalletPressed", "initObservers", "refreshItemVisibility", "onBackendMessage", "data", "getArzWarehouseType", "id", "getRodWarehouseType", "showGuardScreen", "showVehicleScreen", "showWarehouseScreen", "getAndShowMenuButtonsArz", "bits", "getAndShowMenuButtonsRod", "addMenuCategories", "addInfoToDatabase", "updateInfoToDatabase", "addLockedItems", "editResponseInfo", "", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "colorItem", "isColorItem", "changeGuardSubList", "changeAccessoriesItem", "changeGunImprovementsItem", "changeCaseArmorItem", "changeSkinItem", "changeVehicleSubList", "changeVisualVehicleList", "changeTechVehicleList", "addTopBars", "skin", "Lru/mrlargha/commonui/elements/inventory/domain/models/Skin;", "closeWallet", "getUserInfo", "onUpdateData", "value", "", "observeUserSkin", "Landroid/widget/ImageView;", "url", "defaultImage", "addVehicleInfo", "userBars", "Lru/mrlargha/commonui/elements/inventory/domain/models/VehicleInfoBars;", "sendData", "fromItem", "toItem", "sendGuardData", "closeAllInventoryScreens", "sendRequestTo", "setVisible", "visible", "Spawner", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes5.dex */
 public final class InventoryScreen extends SAMPUIElement implements InterfaceController {
     public static final Companion Companion = new Companion(null);
     private static boolean isDialogVisible;
+    private final String _token;
     private final UpgradesInventoryAdapter accessoriesInventoryAdapter;
+    private InventoryApi api;
     private final MainInventoryBinding binding;
     private boolean clickedMenuButtons;
     private int currentBackendId;
@@ -106,6 +116,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     private int guardNumber;
     private final UpgradesInventoryAdapter guardSubInventoryAdapter;
     private List<InventoryItem> guardWeaponList;
+    private final CoroutineExceptionHandler handler;
     private InventoryMenuAdapter inventoryMenuAdapter;
     private final ConstraintLayout inventoryScreen;
     private boolean isAccessoriesListVisible;
@@ -117,8 +128,10 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     private final MainInventoryAdapter mainInventoryAdapter;
     private List<InventoryItem> mainInventoryList;
     private List<InventoryMenuData> menuItemList;
+    private Retrofit retrofit;
     private final CoroutineScope scope;
     private InventoryItem selectedInventoryItem;
+    private final int serverId;
     private final SharedPreferences sharedPref;
     private List<InventoryItem> subAccessoriesList;
     private List<InventoryItem> subCaseArmorSkinList;
@@ -138,11 +151,11 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     private List<InventoryItem> warehouseList;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$58$lambda$48(View view) {
+    public static final void initClickListeners$lambda$59$lambda$49(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$58$lambda$49(View view) {
+    public static final void initClickListeners$lambda$59$lambda$50(View view) {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
@@ -443,12 +456,17 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         this.sharedPref = sharedPreferences;
         boolean z = sharedPreferences.getBoolean("isArizonaType", false);
         this.isArizonaType = z;
-        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO());
+        InventoryScreen$special$$inlined$CoroutineExceptionHandler$1 inventoryScreen$special$$inlined$CoroutineExceptionHandler$1 = new InventoryScreen$special$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.Key, targetActivity, i);
+        this.handler = inventoryScreen$special$$inlined$CoroutineExceptionHandler$1;
+        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getMain().plus(SupervisorKt.SupervisorJob((Job) null)).plus(inventoryScreen$special$$inlined$CoroutineExceptionHandler$1));
+        this.serverId = sharedPreferences.getInt("server_id", 0);
+        this._token = sharedPreferences.getString("api_token", "");
         addViewToConstraintLayout(constraintLayout, -1, -1);
         UtilsKt.checkItemsName(activity, z);
         initAdapters();
         initClickListeners();
         setVisible(false);
+        initRetrofit();
         Group groupCharacter = bind.groupCharacter;
         Intrinsics.checkNotNullExpressionValue(groupCharacter, "groupCharacter");
         groupCharacter.setVisibility(0);
@@ -477,16 +495,16 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         bind.layoutGuards.layoutGuardInfo.setOnDragListener(new View.OnDragListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda26
             @Override // android.view.View.OnDragListener
             public final boolean onDrag(View view, DragEvent dragEvent) {
-                boolean _init_$lambda$37;
-                _init_$lambda$37 = InventoryScreen._init_$lambda$37(InventoryScreen.this, view, dragEvent);
-                return _init_$lambda$37;
+                boolean _init_$lambda$38;
+                _init_$lambda$38 = InventoryScreen._init_$lambda$38(InventoryScreen.this, view, dragEvent);
+                return _init_$lambda$38;
             }
         });
         this.currentBackendId = i;
         bind.getRoot().post(new Runnable() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
-                InventoryScreen._init_$lambda$38(InventoryScreen.this);
+                InventoryScreen._init_$lambda$39(InventoryScreen.this);
             }
         });
     }
@@ -772,7 +790,12 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean _init_$lambda$37(InventoryScreen inventoryScreen, View view, DragEvent dragEvent) {
+    public final String getToken() {
+        return "Bearer " + this._token;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean _init_$lambda$38(InventoryScreen inventoryScreen, View view, DragEvent dragEvent) {
         Integer id;
         int action = dragEvent.getAction();
         if (action != 1) {
@@ -802,7 +825,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$38(InventoryScreen inventoryScreen) {
+    public static final void _init_$lambda$39(InventoryScreen inventoryScreen) {
         inventoryScreen.binding.getRoot().getViewTreeObserver().addOnWindowAttachListener(new ViewTreeObserver.OnWindowAttachListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$2$1
             @Override // android.view.ViewTreeObserver.OnWindowAttachListener
             public void onWindowAttached() {
@@ -816,36 +839,53 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         });
     }
 
+    private final void initRetrofit() {
+        String serverApiUrl = FirebaseConfigHelper.INSTANCE.getServerApiUrl();
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        Retrofit build = new Retrofit.Builder().baseUrl(serverApiUrl).client(new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build()).addConverterFactory(GsonConverterFactory.create()).build();
+        Intrinsics.checkNotNullExpressionValue(build, "build(...)");
+        this.retrofit = build;
+        if (build == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("retrofit");
+            build = null;
+        }
+        Object create = build.create(InventoryApi.class);
+        Intrinsics.checkNotNullExpressionValue(create, "create(...)");
+        this.api = (InventoryApi) create;
+        BuildersKt__Builders_commonKt.launch$default(this.scope, Dispatchers.getIO(), null, new InventoryScreen$initRetrofit$1(this, null), 2, null);
+    }
+
     private final void initClickListeners() {
         final MainInventoryBinding mainInventoryBinding = this.binding;
         mainInventoryBinding.btnAccessories.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda36
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$58$lambda$39(InventoryScreen.this, view);
+                InventoryScreen.initClickListeners$lambda$59$lambda$40(InventoryScreen.this, view);
             }
         });
         mainInventoryBinding.btnUpgrades.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda45
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$58$lambda$40(InventoryScreen.this, view);
+                InventoryScreen.initClickListeners$lambda$59$lambda$41(InventoryScreen.this, view);
             }
         });
         mainInventoryBinding.btnWallet.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda46
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$58$lambda$41(InventoryScreen.this, view);
+                InventoryScreen.initClickListeners$lambda$59$lambda$42(InventoryScreen.this, view);
             }
         });
         mainInventoryBinding.layoutGuards.btnGuardMenu.btnGuardMenu.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda47
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$58$lambda$43(InventoryScreen.this, view);
+                InventoryScreen.initClickListeners$lambda$59$lambda$44(InventoryScreen.this, view);
             }
         });
         mainInventoryBinding.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda48
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$58$lambda$44(MainInventoryBinding.this, this, view);
+                InventoryScreen.initClickListeners$lambda$59$lambda$45(MainInventoryBinding.this, this, view);
             }
         });
         mainInventoryBinding.layoutGuards.btnGuardInventory.btnGuardInventory.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda49
@@ -857,31 +897,31 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         mainInventoryBinding.layoutGuards.layoutGuardInfo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda50
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$58$lambda$47(InventoryScreen.this, view);
+                InventoryScreen.initClickListeners$lambda$59$lambda$48(InventoryScreen.this, view);
             }
         });
         mainInventoryBinding.layoutGuards.parentLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda51
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$58$lambda$48(view);
+                InventoryScreen.initClickListeners$lambda$59$lambda$49(view);
             }
         });
         mainInventoryBinding.parentLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda52
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$58$lambda$49(view);
+                InventoryScreen.initClickListeners$lambda$59$lambda$50(view);
             }
         });
         mainInventoryBinding.layoutVehicle.btnVehicleTechnical.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda53
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$58$lambda$50(InventoryScreen.this, mainInventoryBinding, view);
+                InventoryScreen.initClickListeners$lambda$59$lambda$51(InventoryScreen.this, mainInventoryBinding, view);
             }
         });
         mainInventoryBinding.layoutVehicle.btnVehicleVisual.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda37
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$58$lambda$51(InventoryScreen.this, mainInventoryBinding, view);
+                InventoryScreen.initClickListeners$lambda$59$lambda$52(InventoryScreen.this, mainInventoryBinding, view);
             }
         });
         mainInventoryBinding.btnStats.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda38
@@ -925,7 +965,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$58$lambda$39(InventoryScreen inventoryScreen, View view) {
+    public static final void initClickListeners$lambda$59$lambda$40(InventoryScreen inventoryScreen, View view) {
         if (inventoryScreen.isAccessoriesListVisible) {
             inventoryScreen.binding.btnAccessories.setBackgroundResource(R.drawable.ic_btn_accessories_red);
             RecyclerView rvAccessoriesInventory = inventoryScreen.binding.rvAccessoriesInventory;
@@ -949,7 +989,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$58$lambda$40(InventoryScreen inventoryScreen, View view) {
+    public static final void initClickListeners$lambda$59$lambda$41(InventoryScreen inventoryScreen, View view) {
         if (inventoryScreen.isUpgradesListVisible) {
             inventoryScreen.binding.btnUpgrades.setBackgroundResource(R.drawable.ic_btn_upgrades);
             RecyclerView rvUpgradesInventory = inventoryScreen.binding.rvUpgradesInventory;
@@ -973,7 +1013,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$58$lambda$41(InventoryScreen inventoryScreen, View view) {
+    public static final void initClickListeners$lambda$59$lambda$42(InventoryScreen inventoryScreen, View view) {
         boolean z = inventoryScreen.isWalletListVisible;
         Log.e("wallet", "initClickListeners: " + z + " " + inventoryScreen.walletInventoryList);
         if (inventoryScreen.isWalletListVisible) {
@@ -1013,7 +1053,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$58$lambda$43(InventoryScreen inventoryScreen, View view) {
+    public static final void initClickListeners$lambda$59$lambda$44(InventoryScreen inventoryScreen, View view) {
         GuardInfo guardInfo;
         int size = inventoryScreen.guardInfoList.size();
         int i = inventoryScreen.guardNumber;
@@ -1026,7 +1066,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$58$lambda$44(MainInventoryBinding mainInventoryBinding, InventoryScreen inventoryScreen, View view) {
+    public static final void initClickListeners$lambda$59$lambda$45(MainInventoryBinding mainInventoryBinding, InventoryScreen inventoryScreen, View view) {
         RecyclerView rvGuardInventory = mainInventoryBinding.rvGuardInventory;
         Intrinsics.checkNotNullExpressionValue(rvGuardInventory, "rvGuardInventory");
         if (rvGuardInventory.getVisibility() == 0) {
@@ -1046,7 +1086,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$58$lambda$47(InventoryScreen inventoryScreen, View view) {
+    public static final void initClickListeners$lambda$59$lambda$48(InventoryScreen inventoryScreen, View view) {
         GuardInfo guardInfo = (GuardInfo) CollectionsKt.getOrNull(inventoryScreen.guardInfoList, inventoryScreen.guardNumber);
         if (guardInfo != null) {
             inventoryScreen.sendRequestTo(StringKt.toStringJson(new SendId(guardInfo.getId())), 4);
@@ -1054,7 +1094,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$58$lambda$50(InventoryScreen inventoryScreen, MainInventoryBinding mainInventoryBinding, View view) {
+    public static final void initClickListeners$lambda$59$lambda$51(InventoryScreen inventoryScreen, MainInventoryBinding mainInventoryBinding, View view) {
         Log.e("inventory", "initClickListeners: " + inventoryScreen.isTechnicalListVisible);
         if (inventoryScreen.isTechnicalListVisible) {
             view.setBackgroundResource(R.drawable.btn_technical_grey);
@@ -1078,7 +1118,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$58$lambda$51(InventoryScreen inventoryScreen, MainInventoryBinding mainInventoryBinding, View view) {
+    public static final void initClickListeners$lambda$59$lambda$52(InventoryScreen inventoryScreen, MainInventoryBinding mainInventoryBinding, View view) {
         if (inventoryScreen.isVisualListVisible) {
             view.setBackgroundResource(R.drawable.btn_visual_grey);
             ConstraintLayout constraintTechVis = mainInventoryBinding.layoutVehicle.constraintTechVis;
@@ -1400,31 +1440,31 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         this.binding.layoutGuards.btnGuardTypeOne.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda22
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.guardsTypeClickListeners$lambda$64(InventoryScreen.this, view);
+                InventoryScreen.guardsTypeClickListeners$lambda$65(InventoryScreen.this, view);
             }
         });
         this.binding.layoutGuards.btnGuardTypeTwo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda33
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.guardsTypeClickListeners$lambda$65(InventoryScreen.this, view);
+                InventoryScreen.guardsTypeClickListeners$lambda$66(InventoryScreen.this, view);
             }
         });
         this.binding.layoutGuards.btnGuardTypeThree.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda44
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.guardsTypeClickListeners$lambda$66(InventoryScreen.this, view);
+                InventoryScreen.guardsTypeClickListeners$lambda$67(InventoryScreen.this, view);
             }
         });
         this.binding.layoutGuards.btnGuardTypeFour.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda54
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.guardsTypeClickListeners$lambda$67(InventoryScreen.this, view);
+                InventoryScreen.guardsTypeClickListeners$lambda$68(InventoryScreen.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void guardsTypeClickListeners$lambda$64(InventoryScreen inventoryScreen, View view) {
+    public static final void guardsTypeClickListeners$lambda$65(InventoryScreen inventoryScreen, View view) {
         inventoryScreen.guardNumber = 0;
         Intrinsics.checkNotNull(view);
         inventoryScreen.setItemBackground(view, R.drawable.btn_guard_1_white);
@@ -1441,7 +1481,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void guardsTypeClickListeners$lambda$65(InventoryScreen inventoryScreen, View view) {
+    public static final void guardsTypeClickListeners$lambda$66(InventoryScreen inventoryScreen, View view) {
         inventoryScreen.guardNumber = 1;
         Intrinsics.checkNotNull(view);
         inventoryScreen.setItemBackground(view, R.drawable.btn_guard_2_white);
@@ -1458,7 +1498,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void guardsTypeClickListeners$lambda$66(InventoryScreen inventoryScreen, View view) {
+    public static final void guardsTypeClickListeners$lambda$67(InventoryScreen inventoryScreen, View view) {
         inventoryScreen.guardNumber = 2;
         Intrinsics.checkNotNull(view);
         inventoryScreen.setItemBackground(view, R.drawable.btn_guard_3_white);
@@ -1475,7 +1515,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void guardsTypeClickListeners$lambda$67(InventoryScreen inventoryScreen, View view) {
+    public static final void guardsTypeClickListeners$lambda$68(InventoryScreen inventoryScreen, View view) {
         inventoryScreen.guardNumber = 3;
         Intrinsics.checkNotNull(view);
         inventoryScreen.setItemBackground(view, R.drawable.btn_guard_4_white);
@@ -1772,6 +1812,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         int id8;
         int id9;
         int id10;
+        int id11;
         List<InventoryItem> items;
         List<InventoryItem> items2;
         List<InventoryItem> items3;
@@ -1789,7 +1830,6 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         Object obj6;
         Object obj7;
         Object obj8;
-        int id11;
         int id12;
         int id13;
         int id14;
@@ -1797,6 +1837,8 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         int id16;
         int id17;
         int id18;
+        int id19;
+        int id20;
         Intrinsics.checkNotNullParameter(data, "data");
         Log.d("TAG_INVENTORY", "subID: " + i + " ===== data: " + data);
         boolean z = true;
@@ -1813,16 +1855,16 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
                         new Handler().postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                InventoryScreen.onBackendMessage$lambda$80(InventoryScreen.this);
+                                InventoryScreen.onBackendMessage$lambda$81(InventoryScreen.this);
                             }
                         }, 1000L);
                     }
                     CollectionsKt.removeAll((List) this.mainInventoryList, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda11
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj9) {
-                            boolean onBackendMessage$lambda$81;
-                            onBackendMessage$lambda$81 = InventoryScreen.onBackendMessage$lambda$81((InventoryItem) obj9);
-                            return Boolean.valueOf(onBackendMessage$lambda$81);
+                            boolean onBackendMessage$lambda$82;
+                            onBackendMessage$lambda$82 = InventoryScreen.onBackendMessage$lambda$82((InventoryItem) obj9);
+                            return Boolean.valueOf(onBackendMessage$lambda$82);
                         }
                     });
                     CollectionsKt.addAll(this.mainInventoryList, editResponseInfo(inventoryResponse));
@@ -1834,22 +1876,22 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
                     this.subAccessoriesList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
                 } else {
                     if (!this.isArizonaType) {
-                        id11 = RodinaBlockType.BLOCK_TYPE_IMPROV_GUN.getId();
+                        id12 = RodinaBlockType.BLOCK_TYPE_IMPROV_GUN.getId();
                     } else {
-                        id11 = ArizonaBlockType.BLOCK_TYPE_GUN.getId();
+                        id12 = ArizonaBlockType.BLOCK_TYPE_GUN.getId();
                     }
-                    if (type == id11) {
+                    if (type == id12) {
                         if (inventoryResponse.getItems().get(0).getSlot() == 0) {
                             this.subUpgradesList.clear();
                         }
                         this.subUpgradesList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
                     } else {
                         if (!this.isArizonaType) {
-                            id12 = RodinaBlockType.BLOCK_TYPE_IMPROV.getId();
+                            id13 = RodinaBlockType.BLOCK_TYPE_IMPROV.getId();
                         } else {
-                            id12 = ArizonaBlockType.BLOCK_TYPE_IMPROV.getId();
+                            id13 = ArizonaBlockType.BLOCK_TYPE_IMPROV.getId();
                         }
-                        if (type == id12) {
+                        if (type == id13) {
                             if (this.isArizonaType) {
                                 CollectionsKt.addAll(this.subCaseArmorSkinList, editResponseInfo(inventoryResponse));
                                 if (this.subCaseArmorSkinList.size() >= 3) {
@@ -1862,11 +1904,11 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
                             }
                         } else {
                             if (!this.isArizonaType) {
-                                id13 = RodinaBlockType.BLOCK_TYPE_SKIN.getId();
+                                id14 = RodinaBlockType.BLOCK_TYPE_SKIN.getId();
                             } else {
-                                id13 = ArizonaBlockType.BLOCK_TYPE_SKIN.getId();
+                                id14 = ArizonaBlockType.BLOCK_TYPE_SKIN.getId();
                             }
-                            if (type == id13) {
+                            if (type == id14) {
                                 List<InventoryItem> items11 = inventoryResponse.getItems();
                                 ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(items11, 10));
                                 for (InventoryItem inventoryItem : items11) {
@@ -1902,59 +1944,66 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
                                 }
                             } else {
                                 if (!this.isArizonaType) {
-                                    id14 = RodinaBlockType.BLOCK_TYPE_WALLET.getId();
+                                    id15 = RodinaBlockType.BLOCK_TYPE_WALLET.getId();
                                 } else {
-                                    id14 = ArizonaBlockType.BLOCK_TYPE_WALLET.getId();
+                                    id15 = ArizonaBlockType.BLOCK_TYPE_WALLET.getId();
                                 }
-                                if (type != id14 && type != ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId()) {
+                                if (type != id15 && type != ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId()) {
                                     if (type == ArizonaBlockType.BLOCK_TYPE_ACTOR_ATTACH.getId()) {
                                         this.guardAccessoriesList.addAll(editResponseInfo(inventoryResponse));
                                     } else {
                                         if (!this.isArizonaType) {
-                                            id15 = RodinaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
+                                            id16 = RodinaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
                                         } else {
-                                            id15 = ArizonaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
+                                            id16 = ArizonaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
                                         }
-                                        if (type == id15) {
+                                        if (type == id16) {
                                             this.guardInventoryList.addAll(editResponseInfo(inventoryResponse));
                                         } else {
                                             if (!this.isArizonaType) {
-                                                id16 = RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
+                                                id17 = RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
                                             } else {
-                                                id16 = ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
+                                                id17 = ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
                                             }
-                                            if (type == id16) {
+                                            if (type == id17) {
                                                 this.guardWeaponList.clear();
                                                 this.guardWeaponList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
                                             } else {
-                                                if (type != ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId() && type != ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId() && type != ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId()) {
-                                                    if (type == RodinaBlockType.BLOCK_TYPE_VEH_SKIN.getId()) {
-                                                        if (!this.isArizonaType) {
-                                                            this.vehicleSubList.clear();
-                                                            CollectionsKt.addAll(this.vehicleSubList, CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
-                                                        }
+                                                if (type != ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId() && type != ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
+                                                    if (this.isArizonaType) {
+                                                        id18 = ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
                                                     } else {
-                                                        if (!this.isArizonaType) {
-                                                            id17 = RodinaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
-                                                        } else {
-                                                            id17 = ArizonaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
-                                                        }
-                                                        if (type == id17) {
-                                                            if (inventoryResponse.getItems().get(0).getSlot() == 0) {
-                                                                this.vehicleTechnicalList.clear();
+                                                        id18 = RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
+                                                    }
+                                                    if (type != id18) {
+                                                        if (type == RodinaBlockType.BLOCK_TYPE_VEH_SKIN.getId()) {
+                                                            if (!this.isArizonaType) {
+                                                                this.vehicleSubList.clear();
+                                                                CollectionsKt.addAll(this.vehicleSubList, CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
                                                             }
-                                                            this.vehicleTechnicalList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
                                                         } else {
                                                             if (!this.isArizonaType) {
-                                                                id18 = RodinaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
+                                                                id19 = RodinaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
                                                             } else {
-                                                                id18 = ArizonaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
+                                                                id19 = ArizonaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
                                                             }
-                                                            if (type == id18) {
+                                                            if (type == id19) {
                                                                 if (inventoryResponse.getItems().get(0).getSlot() == 0) {
-                                                                    this.vehicleVisualList.clear();
+                                                                    this.vehicleTechnicalList.clear();
                                                                 }
-                                                                this.vehicleVisualList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
+                                                                this.vehicleTechnicalList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
+                                                            } else {
+                                                                if (!this.isArizonaType) {
+                                                                    id20 = RodinaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
+                                                                } else {
+                                                                    id20 = ArizonaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
+                                                                }
+                                                                if (type == id20) {
+                                                                    if (inventoryResponse.getItems().get(0).getSlot() == 0) {
+                                                                        this.vehicleVisualList.clear();
+                                                                    }
+                                                                    this.vehicleVisualList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
+                                                                }
                                                             }
                                                         }
                                                     }
@@ -2070,18 +2119,18 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
                     for (GuardInfo guardInfo : list4) {
                         ArrayList arrayList7 = new ArrayList();
                         for (Object obj9 : this.guardAccessoriesList) {
-                            int id19 = ((InventoryItem) obj9).getId();
-                            Integer id20 = guardInfo.getId();
-                            if (id20 != null && id19 == id20.intValue()) {
+                            int id21 = ((InventoryItem) obj9).getId();
+                            Integer id22 = guardInfo.getId();
+                            if (id22 != null && id21 == id22.intValue()) {
                                 arrayList7.add(obj9);
                             }
                         }
                         List mutableList2 = CollectionsKt.toMutableList((Collection) arrayList7);
                         ArrayList arrayList8 = new ArrayList();
                         for (Object obj10 : this.guardInventoryList) {
-                            int id21 = ((InventoryItem) obj10).getId();
-                            Integer id22 = guardInfo.getId();
-                            if (id22 != null && id21 == id22.intValue()) {
+                            int id23 = ((InventoryItem) obj10).getId();
+                            Integer id24 = guardInfo.getId();
+                            if (id24 != null && id23 == id24.intValue()) {
                                 arrayList8.add(obj10);
                             }
                         }
@@ -2093,9 +2142,9 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
                                 break;
                             }
                             obj8 = it.next();
-                            int id23 = ((InventoryItem) obj8).getId();
-                            Integer id24 = guardInfo.getId();
-                            if (id24 != null && id23 == id24.intValue()) {
+                            int id25 = ((InventoryItem) obj8).getId();
+                            Integer id26 = guardInfo.getId();
+                            if (id26 != null && id25 == id26.intValue()) {
                                 break;
                             }
                         }
@@ -2127,9 +2176,9 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
                                 break;
                             }
                             obj6 = it2.next();
-                            int id25 = ((ItemsInfo) obj6).getId();
+                            int id27 = ((ItemsInfo) obj6).getId();
                             Integer item = inventoryItem6.getItem();
-                            if (item != null && id25 == item.intValue()) {
+                            if (item != null && id27 == item.intValue()) {
                                 break;
                             }
                         }
@@ -2142,9 +2191,9 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
                                 break;
                             }
                             obj7 = it3.next();
-                            int id26 = ((ItemsInfo) obj7).getId();
+                            int id28 = ((ItemsInfo) obj7).getId();
                             Integer item2 = inventoryItem6.getItem();
-                            if (item2 != null && id26 == item2.intValue()) {
+                            if (item2 != null && id28 == item2.intValue()) {
                                 break;
                             }
                         }
@@ -2631,27 +2680,34 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
                                                             }
                                                             Unit unit13 = Unit.INSTANCE;
                                                         }
-                                                    } else if (type4 == ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId() && !this.vehicleSubList.isEmpty() && (items = inventoryEditResponse2.getItems()) != null) {
-                                                        for (InventoryItem inventoryItem20 : items) {
-                                                            Iterator<InventoryItem> it21 = this.vehicleSubList.iterator();
-                                                            int i16 = 0;
-                                                            while (true) {
-                                                                if (!it21.hasNext()) {
-                                                                    i16 = -1;
-                                                                    break;
-                                                                } else if (it21.next().getInventoryType() == ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId()) {
-                                                                    break;
-                                                                } else {
+                                                    } else {
+                                                        if (this.isArizonaType) {
+                                                            id11 = ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
+                                                        } else {
+                                                            id11 = RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
+                                                        }
+                                                        if (type4 == id11 && !this.vehicleSubList.isEmpty() && (items = inventoryEditResponse2.getItems()) != null) {
+                                                            for (InventoryItem inventoryItem20 : items) {
+                                                                Iterator<InventoryItem> it21 = this.vehicleSubList.iterator();
+                                                                int i16 = 0;
+                                                                while (true) {
+                                                                    if (!it21.hasNext()) {
+                                                                        i16 = -1;
+                                                                        break;
+                                                                    }
+                                                                    if (it21.next().getInventoryType() == (this.isArizonaType ? ArizonaBlockType.BLOCK_TYPE_VEH_NUMBER.getId() : RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId())) {
+                                                                        break;
+                                                                    }
                                                                     i16++;
                                                                 }
+                                                                if (i16 >= 0) {
+                                                                    this.vehicleSubList.set(i16, inventoryItem20);
+                                                                }
+                                                                this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
+                                                                this.vehicleAccessoriesAdapter.notifyItemChanged(i16);
                                                             }
-                                                            if (i16 >= 0) {
-                                                                this.vehicleSubList.set(i16, inventoryItem20);
-                                                            }
-                                                            this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
-                                                            this.vehicleAccessoriesAdapter.notifyItemChanged(i16);
+                                                            Unit unit14 = Unit.INSTANCE;
                                                         }
-                                                        Unit unit14 = Unit.INSTANCE;
                                                     }
                                                 }
                                             }
@@ -2852,14 +2908,14 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackendMessage$lambda$80(InventoryScreen inventoryScreen) {
+    public static final void onBackendMessage$lambda$81(InventoryScreen inventoryScreen) {
         inventoryScreen.addLockedItems();
         inventoryScreen.mainInventoryAdapter.notifyDataSetChanged();
         inventoryScreen.addInfoToDatabase(inventoryScreen.mainInventoryList);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean onBackendMessage$lambda$81(InventoryItem it) {
+    public static final boolean onBackendMessage$lambda$82(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.isLocked();
     }
@@ -3568,7 +3624,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
 
     /* compiled from: InventoryScreen.kt */
     @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-    /* loaded from: classes6.dex */
+    /* loaded from: classes5.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         @Override // ru.mrlargha.commonui.core.UIElementAbstractSpawner
         public SAMPUIElement create(Activity targetActivity, int i) {
@@ -3593,7 +3649,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
 
     /* compiled from: InventoryScreen.kt */
     @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0004\u0010\u0006\"\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen$Companion;", "", "<init>", "()V", "isDialogVisible", "", "()Z", "setDialogVisible", "(Z)V", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-    /* loaded from: classes6.dex */
+    /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

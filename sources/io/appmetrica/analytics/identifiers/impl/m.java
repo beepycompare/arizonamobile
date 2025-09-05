@@ -6,10 +6,10 @@ import android.os.Parcel;
 public final class m implements o {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IBinder f329a;
+    public final IBinder f330a;
 
     public m(IBinder iBinder) {
-        this.f329a = iBinder;
+        this.f330a = iBinder;
     }
 
     public final String a() {
@@ -17,7 +17,7 @@ public final class m implements o {
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("com.uodis.opendevice.aidl.OpenDeviceIdentifierService");
-            this.f329a.transact(1, obtain, obtain2, 0);
+            this.f330a.transact(1, obtain, obtain2, 0);
             obtain2.readException();
             return obtain2.readString();
         } finally {
@@ -28,7 +28,7 @@ public final class m implements o {
 
     @Override // android.os.IInterface
     public final IBinder asBinder() {
-        return this.f329a;
+        return this.f330a;
     }
 
     public final boolean b() {
@@ -36,7 +36,7 @@ public final class m implements o {
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("com.uodis.opendevice.aidl.OpenDeviceIdentifierService");
-            this.f329a.transact(2, obtain, obtain2, 0);
+            this.f330a.transact(2, obtain, obtain2, 0);
             obtain2.readException();
             return obtain2.readInt() != 0;
         } finally {

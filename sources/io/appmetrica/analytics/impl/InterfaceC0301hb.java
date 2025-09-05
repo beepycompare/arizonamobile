@@ -1,8 +1,32 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import java.util.Set;
 /* renamed from: io.appmetrica.analytics.impl.hb  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
 public interface InterfaceC0301hb {
-    String a(Context context);
+    InterfaceC0301hb a(int i, String str);
+
+    InterfaceC0301hb a(String str, float f);
+
+    InterfaceC0301hb a(String str, long j);
+
+    InterfaceC0301hb a(String str, String str2);
+
+    InterfaceC0301hb a(String str, boolean z);
+
+    Set a();
+
+    boolean a(String str);
+
+    void b();
+
+    boolean getBoolean(String str, boolean z);
+
+    int getInt(String str, int i);
+
+    long getLong(String str, long j);
+
+    String getString(String str, String str2);
+
+    InterfaceC0301hb remove(String str);
 }

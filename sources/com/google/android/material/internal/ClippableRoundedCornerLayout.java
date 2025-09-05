@@ -9,19 +9,22 @@ import android.util.AttributeSet;
 import android.widget.FrameLayout;
 /* loaded from: classes4.dex */
 public class ClippableRoundedCornerLayout extends FrameLayout {
-    private float cornerRadius;
+    private float[] cornerRadii;
     private Path path;
 
     public ClippableRoundedCornerLayout(Context context) {
         super(context);
+        this.cornerRadii = new float[]{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
     }
 
     public ClippableRoundedCornerLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
+        this.cornerRadii = new float[]{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
     }
 
     public ClippableRoundedCornerLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
+        this.cornerRadii = new float[]{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -36,35 +39,35 @@ public class ClippableRoundedCornerLayout extends FrameLayout {
         canvas.restoreToCount(save);
     }
 
-    public void resetClipBoundsAndCornerRadius() {
+    public void resetClipBoundsAndCornerRadii() {
         this.path = null;
-        this.cornerRadius = 0.0f;
+        this.cornerRadii = new float[]{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
         invalidate();
     }
 
-    public float getCornerRadius() {
-        return this.cornerRadius;
+    public float[] getCornerRadii() {
+        return this.cornerRadii;
     }
 
-    public void updateCornerRadius(float f) {
-        updateClipBoundsAndCornerRadius(getLeft(), getTop(), getRight(), getBottom(), f);
+    public void updateCornerRadii(float[] fArr) {
+        updateClipBoundsAndCornerRadii(getLeft(), getTop(), getRight(), getBottom(), fArr);
     }
 
-    public void updateClipBoundsAndCornerRadius(Rect rect, float f) {
-        updateClipBoundsAndCornerRadius(rect.left, rect.top, rect.right, rect.bottom, f);
+    public void updateClipBoundsAndCornerRadii(Rect rect, float[] fArr) {
+        updateClipBoundsAndCornerRadii(rect.left, rect.top, rect.right, rect.bottom, fArr);
     }
 
-    public void updateClipBoundsAndCornerRadius(float f, float f2, float f3, float f4, float f5) {
-        updateClipBoundsAndCornerRadius(new RectF(f, f2, f3, f4), f5);
+    public void updateClipBoundsAndCornerRadii(float f, float f2, float f3, float f4, float[] fArr) {
+        updateClipBoundsAndCornerRadii(new RectF(f, f2, f3, f4), fArr);
     }
 
-    public void updateClipBoundsAndCornerRadius(RectF rectF, float f) {
+    public void updateClipBoundsAndCornerRadii(RectF rectF, float[] fArr) {
         if (this.path == null) {
             this.path = new Path();
         }
-        this.cornerRadius = f;
+        this.cornerRadii = fArr;
         this.path.reset();
-        this.path.addRoundRect(rectF, f, f, Path.Direction.CW);
+        this.path.addRoundRect(rectF, fArr, Path.Direction.CW);
         this.path.close();
         invalidate();
     }

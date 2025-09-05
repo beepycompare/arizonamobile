@@ -6,35 +6,35 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class X implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final S7 f715a;
-    public final Pa b;
+    public final V7 f728a;
+    public final Sa b;
 
     public X() {
-        this(new S7(), new Pa(20));
+        this(new V7(), new Sa(20));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Vi fromModel(Y y) {
-        C0725y8 c0725y8 = new C0725y8();
-        c0725y8.b = this.f715a.fromModel(y.f731a);
-        On a2 = this.b.a(y.b);
-        c0725y8.f1154a = StringUtils.getUTF8Bytes((String) a2.f594a);
-        return new Vi(c0725y8, new C0670w3(C0670w3.b(a2)));
+    public final Zi fromModel(Y y) {
+        B8 b8 = new B8();
+        b8.b = this.f728a.fromModel(y.f745a);
+        Sn a2 = this.b.a(y.b);
+        b8.f361a = StringUtils.getUTF8Bytes((String) a2.f671a);
+        return new Zi(b8, new C0749z3(C0749z3.b(a2)));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        Vi vi = (Vi) obj;
+        Zi zi = (Zi) obj;
         throw new UnsupportedOperationException();
     }
 
-    public X(S7 s7, Pa pa) {
-        this.f715a = s7;
-        this.b = pa;
+    public X(V7 v7, Sa sa) {
+        this.f728a = v7;
+        this.b = sa;
     }
 
-    public final Y a(Vi vi) {
+    public final Y a(Zi zi) {
         throw new UnsupportedOperationException();
     }
 }

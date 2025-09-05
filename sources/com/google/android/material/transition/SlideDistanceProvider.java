@@ -7,7 +7,6 @@ import android.animation.PropertyValuesHolder;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -131,6 +130,6 @@ public final class SlideDistanceProvider implements VisibilityAnimatorProvider {
     }
 
     private static boolean isRtl(View view) {
-        return ViewCompat.getLayoutDirection(view) == 1;
+        return view.getLayoutDirection() == 1;
     }
 }

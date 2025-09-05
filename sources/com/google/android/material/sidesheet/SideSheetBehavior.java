@@ -11,6 +11,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
@@ -20,7 +21,6 @@ import android.view.ViewParent;
 import androidx.activity.BackEventCompat;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.math.MathUtils;
-import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityViewCommand;
@@ -213,7 +213,7 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
     }
 
     private void setSheetEdge(V v, int i) {
-        setSheetEdge(GravityCompat.getAbsoluteGravity(((CoordinatorLayout.LayoutParams) v.getLayoutParams()).gravity, i) == 3 ? 1 : 0);
+        setSheetEdge(Gravity.getAbsoluteGravity(((CoordinatorLayout.LayoutParams) v.getLayoutParams()).gravity, i) == 3 ? 1 : 0);
     }
 
     private void setSheetEdge(int i) {
@@ -337,7 +337,7 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
 
     @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public boolean onLayoutChild(CoordinatorLayout coordinatorLayout, V v, int i) {
-        if (ViewCompat.getFitsSystemWindows(coordinatorLayout) && !ViewCompat.getFitsSystemWindows(v)) {
+        if (coordinatorLayout.getFitsSystemWindows() && !v.getFitsSystemWindows()) {
             v.setFitsSystemWindows(true);
         }
         if (this.viewRef == null) {
@@ -345,11 +345,11 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
             this.sideContainerBackHelper = new MaterialSideContainerBackHelper(v);
             MaterialShapeDrawable materialShapeDrawable = this.materialShapeDrawable;
             if (materialShapeDrawable != null) {
-                ViewCompat.setBackground(v, materialShapeDrawable);
+                v.setBackground(materialShapeDrawable);
                 MaterialShapeDrawable materialShapeDrawable2 = this.materialShapeDrawable;
                 float f = this.elevation;
                 if (f == -1.0f) {
-                    f = ViewCompat.getElevation(v);
+                    f = v.getElevation();
                 }
                 materialShapeDrawable2.setElevation(f);
             } else {
@@ -360,8 +360,8 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
             }
             updateSheetVisibility(v);
             updateAccessibilityActions();
-            if (ViewCompat.getImportantForAccessibility(v) == 0) {
-                ViewCompat.setImportantForAccessibility(v, 1);
+            if (v.getImportantForAccessibility() == 0) {
+                v.setImportantForAccessibility(1);
             }
             ensureAccessibilityPaneTitleIsSet(v);
         }
@@ -547,7 +547,7 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
             runAfterLayout(this.viewRef.get(), new Runnable() { // from class: com.google.android.material.sidesheet.SideSheetBehavior$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SideSheetBehavior.this.m8740xc0f1d0a9(i);
+                    SideSheetBehavior.this.m8755xc0f1d0a9(i);
                 }
             });
         }
@@ -555,7 +555,7 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setState$0$com-google-android-material-sidesheet-SideSheetBehavior  reason: not valid java name */
-    public /* synthetic */ void m8740xc0f1d0a9(int i) {
+    public /* synthetic */ void m8755xc0f1d0a9(int i) {
         V v = this.viewRef.get();
         if (v != null) {
             startSettling(v, i, false);
@@ -572,7 +572,7 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
 
     private boolean isLayingOut(V v) {
         ViewParent parent = v.getParent();
-        return parent != null && parent.isLayoutRequested() && ViewCompat.isAttachedToWindow(v);
+        return parent != null && parent.isLayoutRequested() && v.isAttachedToWindow();
     }
 
     @Override // com.google.android.material.sidesheet.Sheet
@@ -714,7 +714,7 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
         WeakReference<V> weakReference = this.viewRef;
         if (weakReference != null) {
             V v = weakReference.get();
-            if (i == -1 || !ViewCompat.isLaidOut(v)) {
+            if (i == -1 || !v.isLaidOut()) {
                 return;
             }
             v.requestLayout();
@@ -731,7 +731,7 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
         WeakReference<V> weakReference = this.viewRef;
         if (weakReference != null) {
             V v = weakReference.get();
-            if (ViewCompat.isLaidOut(v)) {
+            if (v.isLaidOut()) {
                 v.requestLayout();
             }
         }
@@ -824,14 +824,14 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
         return new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.sidesheet.SideSheetBehavior$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                SideSheetBehavior.this.m8739xc3af8fb4(marginLayoutParams, coplanarSiblingAdjacentMargin, coplanarSiblingView, valueAnimator);
+                SideSheetBehavior.this.m8754xc3af8fb4(marginLayoutParams, coplanarSiblingAdjacentMargin, coplanarSiblingView, valueAnimator);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getCoplanarFinishAnimatorUpdateListener$1$com-google-android-material-sidesheet-SideSheetBehavior  reason: not valid java name */
-    public /* synthetic */ void m8739xc3af8fb4(ViewGroup.MarginLayoutParams marginLayoutParams, int i, View view, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8754xc3af8fb4(ViewGroup.MarginLayoutParams marginLayoutParams, int i, View view, ValueAnimator valueAnimator) {
         this.sheetDelegate.updateCoplanarSiblingAdjacentMargin(marginLayoutParams, AnimationUtils.lerp(i, 0, valueAnimator.getAnimatedFraction()));
         view.requestLayout();
     }
@@ -855,7 +855,7 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
         private final Runnable continueSettlingRunnable = new Runnable() { // from class: com.google.android.material.sidesheet.SideSheetBehavior$StateSettlingTracker$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SideSheetBehavior.StateSettlingTracker.this.m8741xe5f914a3();
+                SideSheetBehavior.StateSettlingTracker.this.m8756xe5f914a3();
             }
         };
         private boolean isContinueSettlingRunnablePosted;
@@ -866,7 +866,7 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$new$0$com-google-android-material-sidesheet-SideSheetBehavior$StateSettlingTracker  reason: not valid java name */
-        public /* synthetic */ void m8741xe5f914a3() {
+        public /* synthetic */ void m8756xe5f914a3() {
             this.isContinueSettlingRunnablePosted = false;
             if (SideSheetBehavior.this.viewDragHelper == null || !SideSheetBehavior.this.viewDragHelper.continueSettling(true)) {
                 if (SideSheetBehavior.this.state == 2) {
@@ -886,7 +886,7 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
             if (this.isContinueSettlingRunnablePosted) {
                 return;
             }
-            ViewCompat.postOnAnimation((View) SideSheetBehavior.this.viewRef.get(), this.continueSettlingRunnable);
+            ((View) SideSheetBehavior.this.viewRef.get()).postOnAnimation(this.continueSettlingRunnable);
             this.isContinueSettlingRunnablePosted = true;
         }
     }
@@ -970,14 +970,14 @@ public class SideSheetBehavior<V extends View> extends CoordinatorLayout.Behavio
         return new AccessibilityViewCommand() { // from class: com.google.android.material.sidesheet.SideSheetBehavior$$ExternalSyntheticLambda1
             @Override // androidx.core.view.accessibility.AccessibilityViewCommand
             public final boolean perform(View view, AccessibilityViewCommand.CommandArguments commandArguments) {
-                return SideSheetBehavior.this.m8738x564aa398(i, view, commandArguments);
+                return SideSheetBehavior.this.m8753x564aa398(i, view, commandArguments);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$createAccessibilityViewCommandForState$2$com-google-android-material-sidesheet-SideSheetBehavior  reason: not valid java name */
-    public /* synthetic */ boolean m8738x564aa398(int i, View view, AccessibilityViewCommand.CommandArguments commandArguments) {
+    public /* synthetic */ boolean m8753x564aa398(int i, View view, AccessibilityViewCommand.CommandArguments commandArguments) {
         setState(i);
         return true;
     }

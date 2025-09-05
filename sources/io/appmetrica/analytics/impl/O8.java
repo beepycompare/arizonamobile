@@ -7,32 +7,36 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
+import java.util.Arrays;
 /* loaded from: classes4.dex */
 public final class O8 extends MessageNano {
-    public static volatile O8[] c;
+    public static volatile O8[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public J8 f588a;
-    public L8 b;
+    public byte[] f601a;
+    public byte[] b;
+    public P8 c;
 
     public O8() {
         a();
     }
 
     public static O8[] b() {
-        if (c == null) {
+        if (d == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (c == null) {
-                    c = new O8[0];
+                if (d == null) {
+                    d = new O8[0];
                 }
             }
         }
-        return c;
+        return d;
     }
 
     public final O8 a() {
-        this.f588a = null;
-        this.b = null;
+        byte[] bArr = WireFormatNano.EMPTY_BYTES;
+        this.f601a = bArr;
+        this.b = bArr;
+        this.c = null;
         this.cachedSize = -1;
         return this;
     }
@@ -40,23 +44,31 @@ public final class O8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        J8 j8 = this.f588a;
-        if (j8 != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, j8);
+        byte[] bArr = this.f601a;
+        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
+        if (!Arrays.equals(bArr, bArr2)) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f601a);
         }
-        L8 l8 = this.b;
-        return l8 != null ? CodedOutputByteBufferNano.computeMessageSize(2, l8) + computeSerializedSize : computeSerializedSize;
+        if (!Arrays.equals(this.b, bArr2)) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(2, this.b);
+        }
+        P8 p8 = this.c;
+        return p8 != null ? CodedOutputByteBufferNano.computeMessageSize(3, p8) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        J8 j8 = this.f588a;
-        if (j8 != null) {
-            codedOutputByteBufferNano.writeMessage(1, j8);
+        byte[] bArr = this.f601a;
+        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
+        if (!Arrays.equals(bArr, bArr2)) {
+            codedOutputByteBufferNano.writeBytes(1, this.f601a);
         }
-        L8 l8 = this.b;
-        if (l8 != null) {
-            codedOutputByteBufferNano.writeMessage(2, l8);
+        if (!Arrays.equals(this.b, bArr2)) {
+            codedOutputByteBufferNano.writeBytes(2, this.b);
+        }
+        P8 p8 = this.c;
+        if (p8 != null) {
+            codedOutputByteBufferNano.writeMessage(3, p8);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -69,19 +81,18 @@ public final class O8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f588a == null) {
-                    this.f588a = new J8();
-                }
-                codedInputByteBufferNano.readMessage(this.f588a);
-            } else if (readTag != 18) {
+                this.f601a = codedInputByteBufferNano.readBytes();
+            } else if (readTag == 18) {
+                this.b = codedInputByteBufferNano.readBytes();
+            } else if (readTag != 26) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                if (this.b == null) {
-                    this.b = new L8();
+                if (this.c == null) {
+                    this.c = new P8();
                 }
-                codedInputByteBufferNano.readMessage(this.b);
+                codedInputByteBufferNano.readMessage(this.c);
             }
         }
         return this;

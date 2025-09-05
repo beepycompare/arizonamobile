@@ -51,7 +51,7 @@ public final class FirebaseSessions {
         Intrinsics.checkNotNullParameter(sessionsActivityLifecycleCallbacks, "sessionsActivityLifecycleCallbacks");
         this.firebaseApp = firebaseApp;
         this.settings = settings;
-        Log.d(TAG, "Initializing Firebase Sessions 3.0.0.");
+        Log.d(TAG, "Initializing Firebase Sessions 3.0.1.");
         Context applicationContext = firebaseApp.getApplicationContext().getApplicationContext();
         if (applicationContext instanceof Application) {
             ((Application) applicationContext).registerActivityLifecycleCallbacks(sessionsActivityLifecycleCallbacks);

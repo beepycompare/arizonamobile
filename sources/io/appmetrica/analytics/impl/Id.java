@@ -1,22 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.Lambda;
+import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 /* loaded from: classes4.dex */
-public final class Id extends Lambda implements Function1 {
+public final class Id extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Cb f496a;
+    public final /* synthetic */ String f492a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Id(Cb cb) {
-        super(1);
-        this.f496a = cb;
+    public Id(String str) {
+        this.f492a = str;
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public final Object invoke(Object obj) {
-        return ((C0655vd) ((Map.Entry) obj).getValue()).b.parse(this.f496a);
+    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
+    public final void runSafety() {
+        C0671w0 c0671w0 = A4.l().p;
+        String str = this.f492a;
+        c0671w0.getClass();
+        C0646v0.c().a(str);
     }
 }

@@ -16,15 +16,15 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.arizonaui.R;
 import ru.mrlargha.arizonaui.databinding.SpotifyTracklistItemBinding;
 import ru.mrlargha.arizonaui.mobile.domain.obj.ChangeArtistNameRadioRequest;
-import ru.mrlargha.arizonaui.mobile.presentation.page.spotify.api.obj.SpotifyTrackResponse;
+import ru.mrlargha.arizonaui.mobile.presentation.page.spotify.api.obj.ArizonaSpotifyTrackResponse;
 /* compiled from: SpotifyTrackListAdapter.kt */
-@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002,-B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u000e\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0005\u001a\u00020\u0006J\u000e\u0010\u000b\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\nJ\u0018\u0010\u0016\u001a\u00020\u00022\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0011H\u0016J\u0018\u0010\u001a\u001a\u00020\b2\u0006\u0010\u001b\u001a\u00020\u00022\u0006\u0010\u001c\u001a\u00020\u0011H\u0016J\u0014\u0010\u001d\u001a\u00020\b*\u00020\u001e2\u0006\u0010\u001c\u001a\u00020\u0011H\u0002J\b\u0010\u001f\u001a\u00020\u0011H\u0016J\u001c\u0010 \u001a\u00020\b2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0!2\u0006\u0010\"\u001a\u00020\u0013J\u0014\u0010#\u001a\u00020\b2\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00110!J\u000e\u0010$\u001a\u00020\b2\u0006\u0010%\u001a\u00020\u0011J\u0014\u0010&\u001a\u00020\b2\f\u0010'\u001a\b\u0012\u0004\u0012\u00020(0!J\u0006\u0010)\u001a\u00020\bJ\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u000e0!J\u0016\u0010+\u001a\u0012\u0012\u0004\u0012\u00020\u00110\rj\b\u0012\u0004\u0012\u00020\u0011`\u000fR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082.¢\u0006\u0002\n\u0000R\u001e\u0010\f\u001a\u0012\u0012\u0004\u0012\u00020\u000e0\rj\b\u0012\u0004\u0012\u00020\u000e`\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u0010\u001a\u0012\u0012\u0004\u0012\u00020\u00110\rj\b\u0012\u0004\u0012\u00020\u0011`\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0014\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0015¨\u0006."}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/spotify/SpotifyTrackListAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/arizonaui/mobile/presentation/page/spotify/SpotifyTrackListViewHolder;", "<init>", "()V", "onPlayTrackClickListener", "Lru/mrlargha/arizonaui/mobile/presentation/page/spotify/SpotifyTrackListAdapter$OnPlayTrackClickListener;", "setOnPlayTrackClickListener", "", "onFavouriteClickListener", "Lru/mrlargha/arizonaui/mobile/presentation/page/spotify/SpotifyTrackListAdapter$OnFavouriteClickListener;", "setOnFavouriteClickListener", "trackList", "Ljava/util/ArrayList;", "Lru/mrlargha/arizonaui/mobile/presentation/page/spotify/api/obj/SpotifyTrackResponse;", "Lkotlin/collections/ArrayList;", "favouriteList", "", "currentGenre", "", "currentTrackId", "Ljava/lang/Integer;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "changePlayingState", "Lru/mrlargha/arizonaui/databinding/SpotifyTracklistItemBinding;", "getItemCount", "addTrackList", "", "genre", "addFavourites", "removeFromFavourite", "favouriteId", "changeArtistNameRadio", "changeArtistNameRadioRequest", "Lru/mrlargha/arizonaui/mobile/domain/obj/ChangeArtistNameRadioRequest;", "clearTrackList", "getCurrentTrackList", "getFavourites", "OnPlayTrackClickListener", "OnFavouriteClickListener", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002,-B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u000e\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0005\u001a\u00020\u0006J\u000e\u0010\u000b\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\nJ\u0018\u0010\u0016\u001a\u00020\u00022\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0011H\u0016J\u0018\u0010\u001a\u001a\u00020\b2\u0006\u0010\u001b\u001a\u00020\u00022\u0006\u0010\u001c\u001a\u00020\u0011H\u0016J\u0014\u0010\u001d\u001a\u00020\b*\u00020\u001e2\u0006\u0010\u001c\u001a\u00020\u0011H\u0002J\b\u0010\u001f\u001a\u00020\u0011H\u0016J\u001c\u0010 \u001a\u00020\b2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0!2\u0006\u0010\"\u001a\u00020\u0013J\u0014\u0010#\u001a\u00020\b2\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00110!J\u000e\u0010$\u001a\u00020\b2\u0006\u0010%\u001a\u00020\u0011J\u0014\u0010&\u001a\u00020\b2\f\u0010'\u001a\b\u0012\u0004\u0012\u00020(0!J\u0006\u0010)\u001a\u00020\bJ\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u000e0!J\u0016\u0010+\u001a\u0012\u0012\u0004\u0012\u00020\u00110\rj\b\u0012\u0004\u0012\u00020\u0011`\u000fR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082.¢\u0006\u0002\n\u0000R\u001e\u0010\f\u001a\u0012\u0012\u0004\u0012\u00020\u000e0\rj\b\u0012\u0004\u0012\u00020\u000e`\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u0010\u001a\u0012\u0012\u0004\u0012\u00020\u00110\rj\b\u0012\u0004\u0012\u00020\u0011`\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0014\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0015¨\u0006."}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/spotify/SpotifyTrackListAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/arizonaui/mobile/presentation/page/spotify/SpotifyTrackListViewHolder;", "<init>", "()V", "onPlayTrackClickListener", "Lru/mrlargha/arizonaui/mobile/presentation/page/spotify/SpotifyTrackListAdapter$OnPlayTrackClickListener;", "setOnPlayTrackClickListener", "", "onFavouriteClickListener", "Lru/mrlargha/arizonaui/mobile/presentation/page/spotify/SpotifyTrackListAdapter$OnFavouriteClickListener;", "setOnFavouriteClickListener", "trackList", "Ljava/util/ArrayList;", "Lru/mrlargha/arizonaui/mobile/presentation/page/spotify/api/obj/ArizonaSpotifyTrackResponse;", "Lkotlin/collections/ArrayList;", "favouriteList", "", "currentGenre", "", "currentTrackId", "Ljava/lang/Integer;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "changePlayingState", "Lru/mrlargha/arizonaui/databinding/SpotifyTracklistItemBinding;", "getItemCount", "addTrackList", "", "genre", "addFavourites", "removeFromFavourite", "favouriteId", "changeArtistNameRadio", "changeArtistNameRadioRequest", "Lru/mrlargha/arizonaui/mobile/domain/obj/ChangeArtistNameRadioRequest;", "clearTrackList", "getCurrentTrackList", "getFavourites", "OnPlayTrackClickListener", "OnFavouriteClickListener", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class SpotifyTrackListAdapter extends RecyclerView.Adapter<SpotifyTrackListViewHolder> {
     private Integer currentTrackId;
     private OnFavouriteClickListener onFavouriteClickListener;
     private OnPlayTrackClickListener onPlayTrackClickListener;
-    private final ArrayList<SpotifyTrackResponse> trackList = new ArrayList<>();
+    private final ArrayList<ArizonaSpotifyTrackResponse> trackList = new ArrayList<>();
     private final ArrayList<Integer> favouriteList = new ArrayList<>();
     private String currentGenre = "";
 
@@ -63,9 +63,9 @@ public final class SpotifyTrackListAdapter extends RecyclerView.Adapter<SpotifyT
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onBindViewHolder(SpotifyTrackListViewHolder holder, final int i) {
         Intrinsics.checkNotNullParameter(holder, "holder");
-        SpotifyTrackResponse spotifyTrackResponse = this.trackList.get(i);
-        Intrinsics.checkNotNullExpressionValue(spotifyTrackResponse, "get(...)");
-        final SpotifyTrackResponse spotifyTrackResponse2 = spotifyTrackResponse;
+        ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse = this.trackList.get(i);
+        Intrinsics.checkNotNullExpressionValue(arizonaSpotifyTrackResponse, "get(...)");
+        final ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse2 = arizonaSpotifyTrackResponse;
         final SpotifyTracklistItemBinding binding = holder.getBinding();
         binding.spotifyFavourite.setImageResource(R.drawable.ic_favorites_disabled);
         binding.spotifySingerName.setText(this.trackList.get(i).getArtistName());
@@ -92,55 +92,55 @@ public final class SpotifyTrackListAdapter extends RecyclerView.Adapter<SpotifyT
         binding.spotifyTracklistItem.getBackground().setTint(Color.parseColor("#70FFFFFF"));
         for (Number number : this.favouriteList) {
             int intValue = number.intValue();
-            if (spotifyTrackResponse2.getId() == intValue) {
-                System.out.println((Object) ("init true " + spotifyTrackResponse2.getId() + " == " + intValue));
+            if (arizonaSpotifyTrackResponse2.getId() == intValue) {
+                System.out.println((Object) ("init true " + arizonaSpotifyTrackResponse2.getId() + " == " + intValue));
                 binding.spotifyFavourite.setImageResource(R.drawable.ic_favorites_enabled_white);
             }
         }
         binding.spotifyTracklistItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyTrackListAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SpotifyTrackListAdapter.onBindViewHolder$lambda$7$lambda$3(SpotifyTrackListAdapter.this, spotifyTrackResponse2, binding, i, view);
+                SpotifyTrackListAdapter.onBindViewHolder$lambda$7$lambda$3(SpotifyTrackListAdapter.this, arizonaSpotifyTrackResponse2, binding, i, view);
             }
         });
         binding.spotifyPlay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyTrackListAdapter$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SpotifyTrackListAdapter.onBindViewHolder$lambda$7$lambda$4(SpotifyTrackResponse.this, this, binding, i, view);
+                SpotifyTrackListAdapter.onBindViewHolder$lambda$7$lambda$4(ArizonaSpotifyTrackResponse.this, this, binding, i, view);
             }
         });
         binding.spotifyFavourite.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyTrackListAdapter$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SpotifyTrackListAdapter.onBindViewHolder$lambda$7$lambda$6(SpotifyTrackListAdapter.this, spotifyTrackResponse2, view);
+                SpotifyTrackListAdapter.onBindViewHolder$lambda$7$lambda$6(SpotifyTrackListAdapter.this, arizonaSpotifyTrackResponse2, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$7$lambda$3(SpotifyTrackListAdapter spotifyTrackListAdapter, SpotifyTrackResponse spotifyTrackResponse, SpotifyTracklistItemBinding spotifyTracklistItemBinding, int i, View view) {
+    public static final void onBindViewHolder$lambda$7$lambda$3(SpotifyTrackListAdapter spotifyTrackListAdapter, ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse, SpotifyTracklistItemBinding spotifyTracklistItemBinding, int i, View view) {
         view.getBackground().setTint(Color.parseColor("#FFFFFF"));
-        ArrayList<SpotifyTrackResponse> arrayList = new ArrayList();
+        ArrayList<ArizonaSpotifyTrackResponse> arrayList = new ArrayList();
         for (Object obj : spotifyTrackListAdapter.trackList) {
-            if (((SpotifyTrackResponse) obj).isTrackActive()) {
+            if (((ArizonaSpotifyTrackResponse) obj).isTrackActive()) {
                 arrayList.add(obj);
             }
         }
-        for (SpotifyTrackResponse spotifyTrackResponse2 : arrayList) {
-            spotifyTrackListAdapter.notifyItemChanged(spotifyTrackListAdapter.trackList.indexOf(spotifyTrackResponse2));
+        for (ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse2 : arrayList) {
+            spotifyTrackListAdapter.notifyItemChanged(spotifyTrackListAdapter.trackList.indexOf(arizonaSpotifyTrackResponse2));
         }
-        spotifyTrackResponse.setTrackActive(!spotifyTrackResponse.isTrackActive());
+        arizonaSpotifyTrackResponse.setTrackActive(!arizonaSpotifyTrackResponse.isTrackActive());
         spotifyTrackListAdapter.changePlayingState(spotifyTracklistItemBinding, i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$7$lambda$4(SpotifyTrackResponse spotifyTrackResponse, SpotifyTrackListAdapter spotifyTrackListAdapter, SpotifyTracklistItemBinding spotifyTracklistItemBinding, int i, View view) {
-        spotifyTrackResponse.setTrackActive(!spotifyTrackResponse.isTrackActive());
+    public static final void onBindViewHolder$lambda$7$lambda$4(ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse, SpotifyTrackListAdapter spotifyTrackListAdapter, SpotifyTracklistItemBinding spotifyTracklistItemBinding, int i, View view) {
+        arizonaSpotifyTrackResponse.setTrackActive(!arizonaSpotifyTrackResponse.isTrackActive());
         spotifyTrackListAdapter.changePlayingState(spotifyTracklistItemBinding, i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$7$lambda$6(SpotifyTrackListAdapter spotifyTrackListAdapter, SpotifyTrackResponse spotifyTrackResponse, View view) {
+    public static final void onBindViewHolder$lambda$7$lambda$6(SpotifyTrackListAdapter spotifyTrackListAdapter, ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse, View view) {
         try {
             ArrayList<Integer> arrayList = spotifyTrackListAdapter.favouriteList;
             boolean z = false;
@@ -149,23 +149,23 @@ public final class SpotifyTrackListAdapter extends RecyclerView.Adapter<SpotifyT
                 while (true) {
                     if (!it.hasNext()) {
                         break;
-                    } else if (((Number) it.next()).intValue() == spotifyTrackResponse.getId()) {
+                    } else if (((Number) it.next()).intValue() == arizonaSpotifyTrackResponse.getId()) {
                         z = true;
                         break;
                     }
                 }
             }
             if (z) {
-                spotifyTrackListAdapter.removeFromFavourite(spotifyTrackResponse.getId());
+                spotifyTrackListAdapter.removeFromFavourite(arizonaSpotifyTrackResponse.getId());
             } else {
-                spotifyTrackListAdapter.addFavourites(CollectionsKt.listOf(Integer.valueOf(spotifyTrackResponse.getId())));
+                spotifyTrackListAdapter.addFavourites(CollectionsKt.listOf(Integer.valueOf(arizonaSpotifyTrackResponse.getId())));
             }
             OnFavouriteClickListener onFavouriteClickListener = spotifyTrackListAdapter.onFavouriteClickListener;
             if (onFavouriteClickListener == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("onFavouriteClickListener");
                 onFavouriteClickListener = null;
             }
-            onFavouriteClickListener.callback(spotifyTrackResponse.getId(), z);
+            onFavouriteClickListener.callback(arizonaSpotifyTrackResponse.getId(), z);
         } catch (Exception e) {
             e.printStackTrace();
             Log.e("Spotify", "Track ID incorrect | spotifyFavourite");
@@ -211,8 +211,8 @@ public final class SpotifyTrackListAdapter extends RecyclerView.Adapter<SpotifyT
                 this.currentTrackId = Integer.valueOf(this.trackList.get(i).getId());
             }
             spotifyTracklistItemBinding.spotifyPlay.setImageResource(R.drawable.spotify_play_off);
-            ArrayList<SpotifyTrackResponse> arrayList = this.trackList;
-            ArrayList<SpotifyTrackResponse> arrayList2 = arrayList;
+            ArrayList<ArizonaSpotifyTrackResponse> arrayList = this.trackList;
+            ArrayList<ArizonaSpotifyTrackResponse> arrayList2 = arrayList;
             Iterator<T> it = arrayList.iterator();
             while (true) {
                 if (!it.hasNext()) {
@@ -220,7 +220,7 @@ public final class SpotifyTrackListAdapter extends RecyclerView.Adapter<SpotifyT
                     break;
                 }
                 obj = it.next();
-                int id4 = ((SpotifyTrackResponse) obj).getId();
+                int id4 = ((ArizonaSpotifyTrackResponse) obj).getId();
                 Integer num3 = this.currentTrackId;
                 if (num3 != null && id4 == num3.intValue()) {
                     break;
@@ -252,7 +252,7 @@ public final class SpotifyTrackListAdapter extends RecyclerView.Adapter<SpotifyT
         return this.trackList.size();
     }
 
-    public final void addTrackList(List<SpotifyTrackResponse> trackList, String genre) {
+    public final void addTrackList(List<ArizonaSpotifyTrackResponse> trackList, String genre) {
         Intrinsics.checkNotNullParameter(trackList, "trackList");
         Intrinsics.checkNotNullParameter(genre, "genre");
         this.currentGenre = genre;
@@ -270,9 +270,9 @@ public final class SpotifyTrackListAdapter extends RecyclerView.Adapter<SpotifyT
             if (i < 0) {
                 CollectionsKt.throwIndexOverflow();
             }
-            SpotifyTrackResponse spotifyTrackResponse = (SpotifyTrackResponse) obj;
+            ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse = (ArizonaSpotifyTrackResponse) obj;
             for (Number number : favouriteList) {
-                if (spotifyTrackResponse.getId() == number.intValue()) {
+                if (arizonaSpotifyTrackResponse.getId() == number.intValue()) {
                     notifyItemChanged(i);
                 }
             }
@@ -288,7 +288,7 @@ public final class SpotifyTrackListAdapter extends RecyclerView.Adapter<SpotifyT
             if (i2 < 0) {
                 CollectionsKt.throwIndexOverflow();
             }
-            if (i == ((SpotifyTrackResponse) obj).getId()) {
+            if (i == ((ArizonaSpotifyTrackResponse) obj).getId()) {
                 notifyItemChanged(i2);
             }
             i2 = i3;
@@ -303,12 +303,12 @@ public final class SpotifyTrackListAdapter extends RecyclerView.Adapter<SpotifyT
             if (i < 0) {
                 CollectionsKt.throwIndexOverflow();
             }
-            SpotifyTrackResponse spotifyTrackResponse = (SpotifyTrackResponse) obj;
+            ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse = (ArizonaSpotifyTrackResponse) obj;
             for (ChangeArtistNameRadioRequest changeArtistNameRadioRequest2 : changeArtistNameRadioRequest) {
-                if (spotifyTrackResponse.getId() == changeArtistNameRadioRequest2.getId()) {
-                    int id = spotifyTrackResponse.getId();
+                if (arizonaSpotifyTrackResponse.getId() == changeArtistNameRadioRequest2.getId()) {
+                    int id = arizonaSpotifyTrackResponse.getId();
                     System.out.println((Object) ("track.id = " + id + " :  req.id = " + changeArtistNameRadioRequest2.getId()));
-                    spotifyTrackResponse.setArtistName(changeArtistNameRadioRequest2.getArtistName());
+                    arizonaSpotifyTrackResponse.setArtistName(changeArtistNameRadioRequest2.getArtistName());
                     notifyItemChanged(i);
                 }
             }
@@ -321,7 +321,7 @@ public final class SpotifyTrackListAdapter extends RecyclerView.Adapter<SpotifyT
         notifyDataSetChanged();
     }
 
-    public final List<SpotifyTrackResponse> getCurrentTrackList() {
+    public final List<ArizonaSpotifyTrackResponse> getCurrentTrackList() {
         return this.trackList;
     }
 

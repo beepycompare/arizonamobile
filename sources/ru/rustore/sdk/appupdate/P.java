@@ -13,18 +13,18 @@ import ru.rustore.sdk.appupdate.model.AppUpdateParams;
 import ru.rustore.sdk.appupdate.model.AppUpdateParamsKt;
 import ru.rustore.sdk.core.exception.RuStoreException;
 import ru.rustore.sdk.core.util.ContextExtKt;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class P implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1355a;
-    public final C0806o b;
+    public final Context f1360a;
+    public final C0810o b;
     public final String c;
     public final AppUpdateParams d;
     public final Function1<AppUpdateInfo, Unit> e;
     public final Function1<RuStoreException, Unit> f;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class a extends O {
         public final /* synthetic */ P b;
 
@@ -33,14 +33,14 @@ public final class P implements ServiceConnection {
         }
     }
 
-    public P(Context context, C0806o appUpdateInfoMapper, String applicationId, AppUpdateParams appUpdateParams, C0817z onSuccess, A onError) {
+    public P(Context context, C0810o appUpdateInfoMapper, String applicationId, AppUpdateParams appUpdateParams, C0821z onSuccess, A onError) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(appUpdateInfoMapper, "appUpdateInfoMapper");
         Intrinsics.checkNotNullParameter(applicationId, "applicationId");
         Intrinsics.checkNotNullParameter(appUpdateParams, "appUpdateParams");
         Intrinsics.checkNotNullParameter(onSuccess, "onSuccess");
         Intrinsics.checkNotNullParameter(onError, "onError");
-        this.f1355a = context;
+        this.f1360a = context;
         this.b = appUpdateInfoMapper;
         this.c = applicationId;
         this.d = appUpdateParams;
@@ -61,13 +61,13 @@ public final class P implements ServiceConnection {
                 message = "";
             }
             function1.invoke(new RuStoreException(message));
-            ContextExtKt.unbindServiceSafely(this.f1355a, this);
+            ContextExtKt.unbindServiceSafely(this.f1360a, this);
         }
     }
 
     @Override // android.content.ServiceConnection
     public final void onServiceDisconnected(ComponentName componentName) {
         this.f.invoke(new RuStoreException("onServiceDisconnected"));
-        ContextExtKt.unbindServiceSafely(this.f1355a, this);
+        ContextExtKt.unbindServiceSafely(this.f1360a, this);
     }
 }

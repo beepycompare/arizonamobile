@@ -93,25 +93,25 @@ public final class MultipartBody extends RequestBody {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "type", imports = {}))
     /* renamed from: -deprecated_type  reason: not valid java name */
-    public final MediaType m10905deprecated_type() {
+    public final MediaType m10924deprecated_type() {
         return this.type;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "boundary", imports = {}))
     /* renamed from: -deprecated_boundary  reason: not valid java name */
-    public final String m10902deprecated_boundary() {
+    public final String m10921deprecated_boundary() {
         return boundary();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "size", imports = {}))
     /* renamed from: -deprecated_size  reason: not valid java name */
-    public final int m10904deprecated_size() {
+    public final int m10923deprecated_size() {
         return size();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "parts", imports = {}))
     /* renamed from: -deprecated_parts  reason: not valid java name */
-    public final List<Part> m10903deprecated_parts() {
+    public final List<Part> m10922deprecated_parts() {
         return this.parts;
     }
 
@@ -238,13 +238,13 @@ public final class MultipartBody extends RequestBody {
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "headers", imports = {}))
         /* renamed from: -deprecated_headers  reason: not valid java name */
-        public final Headers m10907deprecated_headers() {
+        public final Headers m10926deprecated_headers() {
             return this.headers;
         }
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = TtmlNode.TAG_BODY, imports = {}))
         /* renamed from: -deprecated_body  reason: not valid java name */
-        public final RequestBody m10906deprecated_body() {
+        public final RequestBody m10925deprecated_body() {
             return this.body;
         }
 

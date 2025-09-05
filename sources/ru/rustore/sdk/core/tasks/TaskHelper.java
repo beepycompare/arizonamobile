@@ -23,7 +23,7 @@ import kotlinx.coroutines.JobKt__JobKt;
 import ru.rustore.sdk.core.tasks.Task;
 /* compiled from: TaskHelper.kt */
 @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\bÆ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u001e\u0010\u0003\u001a\b\u0012\u0004\u0012\u0002H\u00050\u0004\"\u0004\b\u0000\u0010\u00052\n\u0010\u0006\u001a\u00060\u0007j\u0002`\bJ?\u0010\t\u001a\b\u0012\u0004\u0012\u0002H\u00050\u0004\"\u0004\b\u0000\u0010\u00052\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00050\u000e\u0012\u0006\u0012\u0004\u0018\u00010\u00010\r¢\u0006\u0002\u0010\u000f¨\u0006\u0010"}, d2 = {"Lru/rustore/sdk/core/tasks/TaskHelper;", "", "()V", "forException", "Lru/rustore/sdk/core/tasks/Task;", ExifInterface.GPS_DIRECTION_TRUE, "exception", "Ljava/lang/Exception;", "Lkotlin/Exception;", "wrap", "taskDispatcher", "Lkotlinx/coroutines/CoroutineDispatcher;", "task", "Lkotlin/Function1;", "Lkotlin/coroutines/Continuation;", "(Lkotlinx/coroutines/CoroutineDispatcher;Lkotlin/jvm/functions/Function1;)Lru/rustore/sdk/core/tasks/Task;", "sdk-public-core_release"}, k = 1, mv = {1, 7, 0}, xi = 48)
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class TaskHelper {
     public static final TaskHelper INSTANCE = new TaskHelper();
 
@@ -62,7 +62,7 @@ public final class TaskHelper {
             @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 7, 0}, xi = 48)
             @DebugMetadata(c = "ru.rustore.sdk.core.tasks.TaskHelper$wrap$1$1", f = "TaskHelper.kt", i = {}, l = {20}, m = "invokeSuspend", n = {}, s = {})
             /* renamed from: ru.rustore.sdk.core.tasks.TaskHelper$wrap$1$1  reason: invalid class name */
-            /* loaded from: classes6.dex */
+            /* loaded from: classes4.dex */
             public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                 final /* synthetic */ Function1<Continuation<? super T>, Object> $task;
                 final /* synthetic */ Task<T>.TaskResultProvider $this_create;
@@ -91,7 +91,7 @@ public final class TaskHelper {
 
                 @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                 public final Object invokeSuspend(Object obj) {
-                    Object m9065constructorimpl;
+                    Object m9084constructorimpl;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     int i = this.label;
                     try {
@@ -110,19 +110,19 @@ public final class TaskHelper {
                         } else {
                             ResultKt.throwOnFailure(obj);
                         }
-                        m9065constructorimpl = Result.m9065constructorimpl(obj);
+                        m9084constructorimpl = Result.m9084constructorimpl(obj);
                     } catch (Throwable th) {
                         Result.Companion companion2 = Result.Companion;
-                        m9065constructorimpl = Result.m9065constructorimpl(ResultKt.createFailure(th));
+                        m9084constructorimpl = Result.m9084constructorimpl(ResultKt.createFailure(th));
                     }
                     Task<T>.TaskResultProvider taskResultProvider = this.$this_create;
-                    if (Result.m9072isSuccessimpl(m9065constructorimpl)) {
-                        taskResultProvider.setTaskSuccessResult(m9065constructorimpl);
+                    if (Result.m9091isSuccessimpl(m9084constructorimpl)) {
+                        taskResultProvider.setTaskSuccessResult(m9084constructorimpl);
                     }
                     Task<T>.TaskResultProvider taskResultProvider2 = this.$this_create;
-                    Throwable m9068exceptionOrNullimpl = Result.m9068exceptionOrNullimpl(m9065constructorimpl);
-                    if (m9068exceptionOrNullimpl != null) {
-                        taskResultProvider2.setTaskErrorResult(m9068exceptionOrNullimpl);
+                    Throwable m9087exceptionOrNullimpl = Result.m9087exceptionOrNullimpl(m9084constructorimpl);
+                    if (m9087exceptionOrNullimpl != null) {
+                        taskResultProvider2.setTaskErrorResult(m9087exceptionOrNullimpl);
                     }
                     return Unit.INSTANCE;
                 }

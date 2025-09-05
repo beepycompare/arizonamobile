@@ -1,10 +1,12 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import java.util.List;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 /* loaded from: classes4.dex */
-public abstract class O5 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final List f586a = CollectionUtils.createSortedListWithoutRepetitions("id", "session_id", "session_type", "number_in_session", "type", "global_number", "time", "event_description");
+public final class O5 {
+    public final Ze a(Context context) {
+        Ve ve = AbstractC0124af.f789a;
+        return (Ze) SystemServiceUtils.accessSystemServiceSafelyOrDefault((ConnectivityManager) context.getSystemService("connectivity"), "getting connection type", "ConnectivityManager", Ze.UNDEFINED, new Ye());
+    }
 }

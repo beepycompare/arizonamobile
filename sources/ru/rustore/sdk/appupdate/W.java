@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 import ru.rustore.sdk.core.exception.RuStoreException;
 import ru.rustore.sdk.reactive.single.SingleEmitter;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class W extends Lambda implements Function1<SingleEmitter<Integer>, Unit> {
     public W() {
         super(1);

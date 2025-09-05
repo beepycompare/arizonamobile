@@ -53,7 +53,7 @@ public class ScrimInsetsFrameLayout extends FrameLayout {
                 ScrimInsetsFrameLayout.this.insets.set(windowInsetsCompat.getSystemWindowInsetLeft(), windowInsetsCompat.getSystemWindowInsetTop(), windowInsetsCompat.getSystemWindowInsetRight(), windowInsetsCompat.getSystemWindowInsetBottom());
                 ScrimInsetsFrameLayout.this.onInsetsChanged(windowInsetsCompat);
                 ScrimInsetsFrameLayout.this.setWillNotDraw(!windowInsetsCompat.hasSystemWindowInsets() || ScrimInsetsFrameLayout.this.insetForeground == null);
-                ViewCompat.postInvalidateOnAnimation(ScrimInsetsFrameLayout.this);
+                ScrimInsetsFrameLayout.this.postInvalidateOnAnimation();
                 return windowInsetsCompat.consumeSystemWindowInsets();
             }
         });

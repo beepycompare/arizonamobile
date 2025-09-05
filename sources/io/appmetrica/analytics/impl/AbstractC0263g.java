@@ -7,59 +7,59 @@ import java.util.concurrent.TimeUnit;
 public abstract class AbstractC0263g {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0572s5 f861a;
-    public final Wk b;
-    public final C0130al c;
-    public final Vk d;
-    public final InterfaceC0479ob e;
+    public final C0651v5 f881a;
+    public final C0130al b;
+    public final C0233el c;
+    public final Zk d;
+    public final InterfaceC0557rb e;
     public final SystemTimeProvider f;
 
-    public AbstractC0263g(C0572s5 c0572s5, Wk wk, C0130al c0130al, Vk vk, InterfaceC0479ob interfaceC0479ob, SystemTimeProvider systemTimeProvider) {
-        this.f861a = c0572s5;
-        this.b = wk;
-        this.c = c0130al;
-        this.d = vk;
-        this.e = interfaceC0479ob;
+    public AbstractC0263g(C0651v5 c0651v5, C0130al c0130al, C0233el c0233el, Zk zk, InterfaceC0557rb interfaceC0557rb, SystemTimeProvider systemTimeProvider) {
+        this.f881a = c0651v5;
+        this.b = c0130al;
+        this.c = c0233el;
+        this.d = zk;
+        this.e = interfaceC0557rb;
         this.f = systemTimeProvider;
     }
 
-    public final /* bridge */ Jk a(Object obj) {
-        return a((Kk) obj);
+    public final /* bridge */ Nk a(Object obj) {
+        return a((Ok) obj);
     }
 
-    public final Jk b() {
+    public final Nk b() {
         if (this.c.h()) {
-            return new Jk(this.f861a, this.c, a(), this.f);
+            return new Nk(this.f881a, this.c, a(), this.f);
         }
         return null;
     }
 
-    public final Jk a(Kk kk) {
+    public final Nk a(Ok ok) {
         if (this.c.h()) {
             this.e.reportEvent("create session with non-empty storage");
         }
-        C0572s5 c0572s5 = this.f861a;
-        C0130al c0130al = this.c;
+        C0651v5 c0651v5 = this.f881a;
+        C0233el c0233el = this.c;
         long a2 = this.b.a();
-        C0130al c0130al2 = this.c;
-        c0130al2.a(C0130al.f, Long.valueOf(a2));
-        c0130al2.a(C0130al.d, Long.valueOf(kk.f532a));
-        c0130al2.a(C0130al.h, Long.valueOf(kk.f532a));
-        c0130al2.a(C0130al.g, 0L);
-        c0130al2.a(C0130al.i, Boolean.TRUE);
-        c0130al2.b();
-        this.f861a.e.a(a2, this.d.f699a, TimeUnit.MILLISECONDS.toSeconds(kk.b));
-        return new Jk(c0572s5, c0130al, a(), new SystemTimeProvider());
+        C0233el c0233el2 = this.c;
+        c0233el2.a(C0233el.f, Long.valueOf(a2));
+        c0233el2.a(C0233el.d, Long.valueOf(ok.f608a));
+        c0233el2.a(C0233el.h, Long.valueOf(ok.f608a));
+        c0233el2.a(C0233el.g, 0L);
+        c0233el2.a(C0233el.i, Boolean.TRUE);
+        c0233el2.b();
+        this.f881a.e.a(a2, this.d.f774a, TimeUnit.MILLISECONDS.toSeconds(ok.b));
+        return new Nk(c0651v5, c0233el, a(), new SystemTimeProvider());
     }
 
-    public final Mk a() {
-        Lk lk = new Lk(this.d);
-        lk.g = this.c.i();
-        lk.f = this.c.c.a(C0130al.g);
-        lk.d = this.c.c.a(C0130al.h);
-        lk.c = this.c.c.a(C0130al.f);
-        lk.h = this.c.c.a(C0130al.d);
-        lk.f547a = this.c.c.a(C0130al.e);
-        return new Mk(lk);
+    public final Qk a() {
+        Pk pk = new Pk(this.d);
+        pk.g = this.c.i();
+        pk.f = this.c.c.a(C0233el.g);
+        pk.d = this.c.c.a(C0233el.h);
+        pk.c = this.c.c.a(C0233el.f);
+        pk.h = this.c.c.a(C0233el.d);
+        pk.f624a = this.c.c.a(C0233el.e);
+        return new Qk(pk);
     }
 }

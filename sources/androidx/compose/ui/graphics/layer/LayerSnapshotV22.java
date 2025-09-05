@@ -75,7 +75,7 @@ public final class LayerSnapshotV22 implements LayerSnapshotImpl {
                             @Override // android.media.ImageReader.OnImageAvailableListener
                             public final void onImageAvailable(ImageReader imageReader3) {
                                 Result.Companion companion = Result.Companion;
-                                cancellableContinuationImpl2.resumeWith(Result.m9065constructorimpl(imageReader3.acquireLatestImage()));
+                                cancellableContinuationImpl2.resumeWith(Result.m9084constructorimpl(imageReader3.acquireLatestImage()));
                             }
                         }, HandlerCompat.createAsync(myLooper));
                         Surface surface = imageReader2.getSurface();

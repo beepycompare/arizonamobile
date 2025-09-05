@@ -8,27 +8,35 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
+import android.view.accessibility.AccessibilityManager;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.content.ContextCompat;
 import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.motion.MotionUtils;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+@Deprecated
 /* loaded from: classes4.dex */
 public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorLayout.Behavior<V> {
     private static final int DEFAULT_ENTER_ANIMATION_DURATION_MS = 225;
     private static final int DEFAULT_EXIT_ANIMATION_DURATION_MS = 175;
     public static final int STATE_SCROLLED_DOWN = 1;
     public static final int STATE_SCROLLED_UP = 2;
+    private AccessibilityManager accessibilityManager;
     private int additionalHiddenOffsetY;
     private ViewPropertyAnimator currentAnimator;
     private int currentState;
+    private boolean disableOnTouchExploration;
     private int enterAnimDuration;
     private TimeInterpolator enterAnimInterpolator;
     private int exitAnimDuration;
     private TimeInterpolator exitAnimInterpolator;
     private int height;
     private final LinkedHashSet<OnScrollStateChangedListener> onScrollStateChangedListeners;
+    private AccessibilityManager.TouchExplorationStateChangeListener touchExplorationListener;
     private static final int ENTER_ANIM_DURATION_ATTR = R.attr.motionDurationLong2;
     private static final int EXIT_ANIM_DURATION_ATTR = R.attr.motionDurationMedium4;
     private static final int ENTER_EXIT_ANIM_EASING_ATTR = R.attr.motionEasingEmphasizedInterpolator;
@@ -38,6 +46,7 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
         void onStateChanged(View view, int i);
     }
 
+    @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes4.dex */
     public @interface ScrollState {
     }
@@ -50,6 +59,7 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
     public HideBottomViewOnScrollBehavior() {
         this.onScrollStateChangedListeners = new LinkedHashSet<>();
         this.height = 0;
+        this.disableOnTouchExploration = true;
         this.currentState = 2;
         this.additionalHiddenOffsetY = 0;
     }
@@ -58,6 +68,7 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
         super(context, attributeSet);
         this.onScrollStateChangedListeners = new LinkedHashSet<>();
         this.height = 0;
+        this.disableOnTouchExploration = true;
         this.currentState = 2;
         this.additionalHiddenOffsetY = 0;
     }
@@ -71,7 +82,48 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
         int i2 = ENTER_EXIT_ANIM_EASING_ATTR;
         this.enterAnimInterpolator = MotionUtils.resolveThemeInterpolator(context, i2, AnimationUtils.LINEAR_OUT_SLOW_IN_INTERPOLATOR);
         this.exitAnimInterpolator = MotionUtils.resolveThemeInterpolator(v.getContext(), i2, AnimationUtils.FAST_OUT_LINEAR_IN_INTERPOLATOR);
+        disableIfTouchExplorationEnabled(v);
         return super.onLayoutChild(coordinatorLayout, v, i);
+    }
+
+    private void disableIfTouchExplorationEnabled(final V v) {
+        if (this.accessibilityManager == null) {
+            this.accessibilityManager = (AccessibilityManager) ContextCompat.getSystemService(v.getContext(), AccessibilityManager.class);
+        }
+        if (this.accessibilityManager == null || this.touchExplorationListener != null) {
+            return;
+        }
+        AccessibilityManager.TouchExplorationStateChangeListener touchExplorationStateChangeListener = new AccessibilityManager.TouchExplorationStateChangeListener() { // from class: com.google.android.material.behavior.HideBottomViewOnScrollBehavior$$ExternalSyntheticLambda0
+            @Override // android.view.accessibility.AccessibilityManager.TouchExplorationStateChangeListener
+            public final void onTouchExplorationStateChanged(boolean z) {
+                HideBottomViewOnScrollBehavior.this.m8672x79d795e8(v, z);
+            }
+        };
+        this.touchExplorationListener = touchExplorationStateChangeListener;
+        this.accessibilityManager.addTouchExplorationStateChangeListener(touchExplorationStateChangeListener);
+        v.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: com.google.android.material.behavior.HideBottomViewOnScrollBehavior.1
+            @Override // android.view.View.OnAttachStateChangeListener
+            public void onViewAttachedToWindow(View view) {
+            }
+
+            @Override // android.view.View.OnAttachStateChangeListener
+            public void onViewDetachedFromWindow(View view) {
+                if (HideBottomViewOnScrollBehavior.this.touchExplorationListener == null || HideBottomViewOnScrollBehavior.this.accessibilityManager == null) {
+                    return;
+                }
+                HideBottomViewOnScrollBehavior.this.accessibilityManager.removeTouchExplorationStateChangeListener(HideBottomViewOnScrollBehavior.this.touchExplorationListener);
+                HideBottomViewOnScrollBehavior.this.touchExplorationListener = null;
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* renamed from: lambda$disableIfTouchExplorationEnabled$0$com-google-android-material-behavior-HideBottomViewOnScrollBehavior  reason: not valid java name */
+    public /* synthetic */ void m8672x79d795e8(View view, boolean z) {
+        if (z && isScrolledDown()) {
+            slideUp(view);
+        }
     }
 
     public void setAdditionalHiddenOffsetY(V v, int i) {
@@ -124,7 +176,11 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
     }
 
     public void slideDown(V v, boolean z) {
+        AccessibilityManager accessibilityManager;
         if (isScrolledDown()) {
+            return;
+        }
+        if (this.disableOnTouchExploration && (accessibilityManager = this.accessibilityManager) != null && accessibilityManager.isTouchExplorationEnabled()) {
             return;
         }
         ViewPropertyAnimator viewPropertyAnimator = this.currentAnimator;
@@ -150,7 +206,7 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
     }
 
     private void animateChildTo(V v, int i, long j, TimeInterpolator timeInterpolator) {
-        this.currentAnimator = v.animate().translationY(i).setInterpolator(timeInterpolator).setDuration(j).setListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.behavior.HideBottomViewOnScrollBehavior.1
+        this.currentAnimator = v.animate().translationY(i).setInterpolator(timeInterpolator).setDuration(j).setListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.behavior.HideBottomViewOnScrollBehavior.2
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 HideBottomViewOnScrollBehavior.this.currentAnimator = null;
@@ -168,5 +224,13 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
 
     public void clearOnScrollStateChangedListeners() {
         this.onScrollStateChangedListeners.clear();
+    }
+
+    public void disableOnTouchExploration(boolean z) {
+        this.disableOnTouchExploration = z;
+    }
+
+    public boolean isDisabledOnTouchExploration() {
+        return this.disableOnTouchExploration;
     }
 }

@@ -5,11 +5,11 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class attr {
         public static int action = 0x7f040002;
-        public static int data = 0x7f04019f;
-        public static int dataPattern = 0x7f0401a0;
-        public static int graph = 0x7f040285;
-        public static int navGraph = 0x7f040468;
-        public static int targetPackage = 0x7f0405c0;
+        public static int data = 0x7f0401bd;
+        public static int dataPattern = 0x7f0401be;
+        public static int graph = 0x7f0402b9;
+        public static int navGraph = 0x7f0404bd;
+        public static int targetPackage = 0x7f040625;
 
         private attr() {
         }
@@ -17,7 +17,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int nav_controller_view_tag = 0x7f0a0945;
+        public static int nav_controller_view_tag = 0x7f0a094a;
 
         private id() {
         }

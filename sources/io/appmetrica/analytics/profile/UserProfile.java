@@ -1,36 +1,36 @@
 package io.appmetrica.analytics.profile;
 
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.InterfaceC0288go;
+import io.appmetrica.analytics.impl.InterfaceC0391ko;
 import java.util.LinkedList;
 import java.util.List;
 /* loaded from: classes4.dex */
 public class UserProfile {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List f1272a;
+    private final List f1277a;
 
     /* loaded from: classes4.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final LinkedList f1273a;
+        private final LinkedList f1278a;
 
         /* synthetic */ Builder(int i) {
             this();
         }
 
-        public Builder apply(UserProfileUpdate<? extends InterfaceC0288go> userProfileUpdate) {
-            this.f1273a.add(userProfileUpdate);
+        public Builder apply(UserProfileUpdate<? extends InterfaceC0391ko> userProfileUpdate) {
+            this.f1278a.add(userProfileUpdate);
             return this;
         }
 
         public UserProfile build() {
-            return new UserProfile(this.f1273a, 0);
+            return new UserProfile(this.f1278a, 0);
         }
 
         private Builder() {
-            this.f1273a = new LinkedList();
+            this.f1278a = new LinkedList();
         }
     }
 
@@ -42,11 +42,11 @@ public class UserProfile {
         return new Builder(0);
     }
 
-    public List<UserProfileUpdate<? extends InterfaceC0288go>> getUserProfileUpdates() {
-        return this.f1272a;
+    public List<UserProfileUpdate<? extends InterfaceC0391ko>> getUserProfileUpdates() {
+        return this.f1277a;
     }
 
     private UserProfile(LinkedList linkedList) {
-        this.f1272a = CollectionUtils.unmodifiableListCopy(linkedList);
+        this.f1277a = CollectionUtils.unmodifiableListCopy(linkedList);
     }
 }

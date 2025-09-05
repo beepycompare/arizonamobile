@@ -11,16 +11,16 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.rustore.sdk.appupdate.J;
 import ru.rustore.sdk.core.exception.RuStoreException;
 import ru.rustore.sdk.core.util.ContextExtKt;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class N implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1353a;
+    public final Context f1358a;
     public final String b;
     public final Function0<Unit> c;
     public final Function1<RuStoreException, Unit> d;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes4.dex */
     public static final class a extends M {
         public final /* synthetic */ N b;
 
@@ -29,12 +29,12 @@ public final class N implements ServiceConnection {
         }
     }
 
-    public N(Context context, String applicationId, C0810s onSuccess, C0811t onError) {
+    public N(Context context, String applicationId, C0814s onSuccess, C0815t onError) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(applicationId, "applicationId");
         Intrinsics.checkNotNullParameter(onSuccess, "onSuccess");
         Intrinsics.checkNotNullParameter(onError, "onError");
-        this.f1353a = context;
+        this.f1358a = context;
         this.b = applicationId;
         this.c = onSuccess;
         this.d = onError;
@@ -53,13 +53,13 @@ public final class N implements ServiceConnection {
                 message = "";
             }
             function1.invoke(new RuStoreException(message));
-            ContextExtKt.unbindServiceSafely(this.f1353a, this);
+            ContextExtKt.unbindServiceSafely(this.f1358a, this);
         }
     }
 
     @Override // android.content.ServiceConnection
     public final void onServiceDisconnected(ComponentName componentName) {
         this.d.invoke(new RuStoreException("onServiceDisconnected"));
-        ContextExtKt.unbindServiceSafely(this.f1353a, this);
+        ContextExtKt.unbindServiceSafely(this.f1358a, this);
     }
 }

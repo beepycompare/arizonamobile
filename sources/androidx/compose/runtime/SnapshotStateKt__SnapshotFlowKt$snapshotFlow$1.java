@@ -116,11 +116,11 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                                     intersects$SnapshotStateKt__SnapshotFlowKt = SnapshotStateKt__SnapshotFlowKt.intersects$SnapshotStateKt__SnapshotFlowKt(mutableScatterSet2, set);
                                     if (!intersects$SnapshotStateKt__SnapshotFlowKt) {
                                         i = 0;
-                                        set = (Set) ChannelResult.m10596getOrNullimpl(channel.mo10584tryReceivePtdJZtk());
+                                        set = (Set) ChannelResult.m10615getOrNullimpl(channel.mo10603tryReceivePtdJZtk());
                                     }
                                 }
                                 i = 1;
-                                set = (Set) ChannelResult.m10596getOrNullimpl(channel.mo10584tryReceivePtdJZtk());
+                                set = (Set) ChannelResult.m10615getOrNullimpl(channel.mo10603tryReceivePtdJZtk());
                             } while (set != null);
                             if (i != 0) {
                                 try {
@@ -227,7 +227,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                     if (i == 0) {
                     }
                     i = 1;
-                    set = (Set) ChannelResult.m10596getOrNullimpl(channel.mo10584tryReceivePtdJZtk());
+                    set = (Set) ChannelResult.m10615getOrNullimpl(channel.mo10603tryReceivePtdJZtk());
                 } while (set != null);
                 if (i != 0) {
                 }
@@ -310,7 +310,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                         if (((StateObjectImpl) t).m4013isReadInh_f27i8$runtime(ReaderKind.m3996constructorimpl(4))) {
                         }
                     }
-                    channel.mo8125trySendJP2dKIU(set);
+                    channel.mo8127trySendJP2dKIU(set);
                 }
             }
         }

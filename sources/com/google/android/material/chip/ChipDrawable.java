@@ -157,9 +157,7 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
         setState(iArr);
         setCloseIconState(iArr);
         this.shouldDrawText = true;
-        if (RippleUtils.USE_FRAMEWORK_RIPPLE) {
-            closeIconRippleMask.setTint(-1);
-        }
+        closeIconRippleMask.setTint(-1);
     }
 
     private void loadFromAttributes(AttributeSet attributeSet, int i, int i2) {
@@ -459,13 +457,9 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
             float f2 = this.rectF.top;
             canvas.translate(f, f2);
             this.closeIcon.setBounds(0, 0, (int) this.rectF.width(), (int) this.rectF.height());
-            if (RippleUtils.USE_FRAMEWORK_RIPPLE) {
-                this.closeIconRipple.setBounds(this.closeIcon.getBounds());
-                this.closeIconRipple.jumpToCurrentState();
-                this.closeIconRipple.draw(canvas);
-            } else {
-                this.closeIcon.draw(canvas);
-            }
+            this.closeIconRipple.setBounds(this.closeIcon.getBounds());
+            this.closeIconRipple.jumpToCurrentState();
+            this.closeIconRipple.draw(canvas);
             canvas.translate(-f, -f2);
         }
     }
@@ -715,7 +709,7 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
             System.arraycopy(iArr2, 0, iArr3, iArr.length, iArr2.length);
             z2 |= this.closeIcon.setState(iArr3);
         }
-        if (RippleUtils.USE_FRAMEWORK_RIPPLE && isStateful(this.closeIconRipple)) {
+        if (isStateful(this.closeIconRipple)) {
             z2 |= this.closeIconRipple.setState(iArr2);
         }
         if (z2) {
@@ -897,12 +891,12 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
             if (drawable.isStateful()) {
                 drawable.setState(getCloseIconState());
             }
-            DrawableCompat.setTintList(drawable, this.closeIconTint);
+            drawable.setTintList(this.closeIconTint);
             return;
         }
         Drawable drawable2 = this.chipIcon;
         if (drawable == drawable2 && this.hasChipIconTint) {
-            DrawableCompat.setTintList(drawable2, this.chipIconTint);
+            drawable2.setTintList(this.chipIconTint);
         }
         if (drawable.isStateful()) {
             drawable.setState(getState());
@@ -956,6 +950,14 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
             textAppearance.setTextColor(colorStateList);
             invalidateSelf();
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public boolean refreshCloseIconFocus(boolean z) {
+        if (this.closeIcon != null) {
+            return setCloseIconState(z ? new int[]{16842919, 16842910} : DEFAULT_STATE);
+        }
+        return false;
     }
 
     public ColorStateList getChipBackgroundColor() {
@@ -1182,7 +1184,7 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
         if (this.chipIconTint != colorStateList) {
             this.chipIconTint = colorStateList;
             if (showsChipIcon()) {
-                DrawableCompat.setTintList(this.chipIcon, colorStateList);
+                this.chipIcon.setTintList(colorStateList);
             }
             onStateChange(getState());
         }
@@ -1265,9 +1267,7 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
         if (closeIcon != drawable) {
             float calculateCloseIconWidth = calculateCloseIconWidth();
             this.closeIcon = drawable != null ? DrawableCompat.wrap(drawable).mutate() : null;
-            if (RippleUtils.USE_FRAMEWORK_RIPPLE) {
-                updateFrameworkCloseIconRipple();
-            }
+            updateFrameworkCloseIconRipple();
             float calculateCloseIconWidth2 = calculateCloseIconWidth();
             unapplyChildDrawable(closeIcon);
             if (showsCloseIcon()) {
@@ -1296,7 +1296,7 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
         if (this.closeIconTint != colorStateList) {
             this.closeIconTint = colorStateList;
             if (showsCloseIcon()) {
-                DrawableCompat.setTintList(this.closeIcon, colorStateList);
+                this.closeIcon.setTintList(colorStateList);
             }
             onStateChange(getState());
         }
@@ -1428,7 +1428,7 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
         if (this.checkedIconTint != colorStateList) {
             this.checkedIconTint = colorStateList;
             if (canShowCheckedIcon()) {
-                DrawableCompat.setTintList(this.checkedIcon, colorStateList);
+                this.checkedIcon.setTintList(colorStateList);
             }
             onStateChange(getState());
         }

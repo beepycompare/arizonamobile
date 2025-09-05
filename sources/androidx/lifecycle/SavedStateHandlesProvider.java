@@ -60,13 +60,13 @@ public final class SavedStateHandlesProvider implements SavedStateRegistry.Saved
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        Bundle m8247constructorimpl = SavedStateWriter.m8247constructorimpl(bundleOf);
+        Bundle m8249constructorimpl = SavedStateWriter.m8249constructorimpl(bundleOf);
         Bundle bundle = this.restoredState;
         if (bundle != null) {
-            SavedStateWriter.m8251putAllimpl(m8247constructorimpl, bundle);
+            SavedStateWriter.m8253putAllimpl(m8249constructorimpl, bundle);
         }
         if (consumeRestoredStateForKey != null) {
-            SavedStateWriter.m8251putAllimpl(m8247constructorimpl, consumeRestoredStateForKey);
+            SavedStateWriter.m8253putAllimpl(m8249constructorimpl, consumeRestoredStateForKey);
         }
         this.restoredState = bundleOf;
         this.restored = true;
@@ -78,9 +78,9 @@ public final class SavedStateHandlesProvider implements SavedStateRegistry.Saved
         Intrinsics.checkNotNullParameter(key, "key");
         performRestore();
         Bundle bundle = this.restoredState;
-        if (bundle != null && SavedStateReader.m8162containsimpl(SavedStateReader.m8161constructorimpl(bundle), key)) {
-            Bundle m8223getSavedStateOrNullimpl = SavedStateReader.m8223getSavedStateOrNullimpl(SavedStateReader.m8161constructorimpl(bundle), key);
-            if (m8223getSavedStateOrNullimpl == null) {
+        if (bundle != null && SavedStateReader.m8164containsimpl(SavedStateReader.m8163constructorimpl(bundle), key)) {
+            Bundle m8225getSavedStateOrNullimpl = SavedStateReader.m8225getSavedStateOrNullimpl(SavedStateReader.m8163constructorimpl(bundle), key);
+            if (m8225getSavedStateOrNullimpl == null) {
                 Map emptyMap = MapsKt.emptyMap();
                 if (emptyMap.isEmpty()) {
                     pairArr = new Pair[0];
@@ -91,14 +91,14 @@ public final class SavedStateHandlesProvider implements SavedStateRegistry.Saved
                     }
                     pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
                 }
-                m8223getSavedStateOrNullimpl = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-                SavedStateWriter.m8247constructorimpl(m8223getSavedStateOrNullimpl);
+                m8225getSavedStateOrNullimpl = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
+                SavedStateWriter.m8249constructorimpl(m8225getSavedStateOrNullimpl);
             }
-            SavedStateWriter.m8283removeimpl(SavedStateWriter.m8247constructorimpl(bundle), key);
-            if (SavedStateReader.m8239isEmptyimpl(SavedStateReader.m8161constructorimpl(bundle))) {
+            SavedStateWriter.m8285removeimpl(SavedStateWriter.m8249constructorimpl(bundle), key);
+            if (SavedStateReader.m8241isEmptyimpl(SavedStateReader.m8163constructorimpl(bundle))) {
                 this.restoredState = null;
             }
-            return m8223getSavedStateOrNullimpl;
+            return m8225getSavedStateOrNullimpl;
         }
         return null;
     }
@@ -117,16 +117,16 @@ public final class SavedStateHandlesProvider implements SavedStateRegistry.Saved
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        Bundle m8247constructorimpl = SavedStateWriter.m8247constructorimpl(bundleOf);
+        Bundle m8249constructorimpl = SavedStateWriter.m8249constructorimpl(bundleOf);
         Bundle bundle = this.restoredState;
         if (bundle != null) {
-            SavedStateWriter.m8251putAllimpl(m8247constructorimpl, bundle);
+            SavedStateWriter.m8253putAllimpl(m8249constructorimpl, bundle);
         }
         for (Map.Entry<String, SavedStateHandle> entry2 : getViewModel().getHandles().entrySet()) {
             String key = entry2.getKey();
             Bundle saveState = entry2.getValue().savedStateProvider().saveState();
-            if (!SavedStateReader.m8239isEmptyimpl(SavedStateReader.m8161constructorimpl(saveState))) {
-                SavedStateWriter.m8274putSavedStateimpl(m8247constructorimpl, key, saveState);
+            if (!SavedStateReader.m8241isEmptyimpl(SavedStateReader.m8163constructorimpl(saveState))) {
+                SavedStateWriter.m8276putSavedStateimpl(m8249constructorimpl, key, saveState);
             }
         }
         this.restored = false;

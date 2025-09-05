@@ -18,27 +18,27 @@ public final class InlineList<E> {
     private final Object holder;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ InlineList m10633boximpl(Object obj) {
+    public static final /* synthetic */ InlineList m10652boximpl(Object obj) {
         return new InlineList(obj);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <E> Object m10634constructorimpl(Object obj) {
+    public static <E> Object m10653constructorimpl(Object obj) {
         return obj;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m10636equalsimpl(Object obj, Object obj2) {
-        return (obj2 instanceof InlineList) && Intrinsics.areEqual(obj, ((InlineList) obj2).m10642unboximpl());
+    public static boolean m10655equalsimpl(Object obj, Object obj2) {
+        return (obj2 instanceof InlineList) && Intrinsics.areEqual(obj, ((InlineList) obj2).m10661unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m10637equalsimpl0(Object obj, Object obj2) {
+    public static final boolean m10656equalsimpl0(Object obj, Object obj2) {
         return Intrinsics.areEqual(obj, obj2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m10639hashCodeimpl(Object obj) {
+    public static int m10658hashCodeimpl(Object obj) {
         if (obj == null) {
             return 0;
         }
@@ -46,24 +46,24 @@ public final class InlineList<E> {
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m10641toStringimpl(Object obj) {
+    public static String m10660toStringimpl(Object obj) {
         return "InlineList(holder=" + obj + ')';
     }
 
     public boolean equals(Object obj) {
-        return m10636equalsimpl(this.holder, obj);
+        return m10655equalsimpl(this.holder, obj);
     }
 
     public int hashCode() {
-        return m10639hashCodeimpl(this.holder);
+        return m10658hashCodeimpl(this.holder);
     }
 
     public String toString() {
-        return m10641toStringimpl(this.holder);
+        return m10660toStringimpl(this.holder);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Object m10642unboximpl() {
+    public final /* synthetic */ Object m10661unboximpl() {
         return this.holder;
     }
 
@@ -72,34 +72,34 @@ public final class InlineList<E> {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ Object m10635constructorimpl$default(Object obj, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ Object m10654constructorimpl$default(Object obj, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             obj = null;
         }
-        return m10634constructorimpl(obj);
+        return m10653constructorimpl(obj);
     }
 
     /* renamed from: plus-FjFbRPM  reason: not valid java name */
-    public static final Object m10640plusFjFbRPM(Object obj, E e) {
+    public static final Object m10659plusFjFbRPM(Object obj, E e) {
         if (DebugKt.getASSERTIONS_ENABLED() && (e instanceof List)) {
             throw new AssertionError();
         }
         if (obj == null) {
-            return m10634constructorimpl(e);
+            return m10653constructorimpl(e);
         }
         if (obj instanceof ArrayList) {
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type java.util.ArrayList<E of kotlinx.coroutines.internal.InlineList>");
             ((ArrayList) obj).add(e);
-            return m10634constructorimpl(obj);
+            return m10653constructorimpl(obj);
         }
         ArrayList arrayList = new ArrayList(4);
         arrayList.add(obj);
         arrayList.add(e);
-        return m10634constructorimpl(arrayList);
+        return m10653constructorimpl(arrayList);
     }
 
     /* renamed from: forEachReversed-impl  reason: not valid java name */
-    public static final void m10638forEachReversedimpl(Object obj, Function1<? super E, Unit> function1) {
+    public static final void m10657forEachReversedimpl(Object obj, Function1<? super E, Unit> function1) {
         if (obj == null) {
             return;
         }

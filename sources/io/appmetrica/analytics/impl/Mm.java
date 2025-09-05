@@ -1,29 +1,26 @@
 package io.appmetrica.analytics.impl;
-
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
 public final class Mm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f566a;
+    public final int f578a;
 
-    public Mm(long j) {
-        this.f566a = j;
+    public Mm(int i) {
+        this.f578a = i;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return obj != null && Mm.class == obj.getClass() && this.f566a == ((Mm) obj).f566a;
+        return (obj instanceof Mm) && this.f578a == ((Mm) obj).f578a;
     }
 
     public final int hashCode() {
-        long j = this.f566a;
-        return (int) (j ^ (j >>> 32));
+        return Integer.hashCode(this.f578a);
     }
 
     public final String toString() {
-        return "StatSending{disabledReportingInterval=" + this.f566a + AbstractJsonLexerKt.END_OBJ;
+        return "StartupUpdateConfig(intervalSeconds=" + this.f578a + ')';
     }
 }

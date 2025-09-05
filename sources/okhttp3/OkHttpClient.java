@@ -399,157 +399,157 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "dispatcher", imports = {}))
     /* renamed from: -deprecated_dispatcher  reason: not valid java name */
-    public final Dispatcher m10916deprecated_dispatcher() {
+    public final Dispatcher m10935deprecated_dispatcher() {
         return this.dispatcher;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "connectionPool", imports = {}))
     /* renamed from: -deprecated_connectionPool  reason: not valid java name */
-    public final ConnectionPool m10913deprecated_connectionPool() {
+    public final ConnectionPool m10932deprecated_connectionPool() {
         return this.connectionPool;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "interceptors", imports = {}))
     /* renamed from: -deprecated_interceptors  reason: not valid java name */
-    public final List<Interceptor> m10922deprecated_interceptors() {
+    public final List<Interceptor> m10941deprecated_interceptors() {
         return this.interceptors;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "networkInterceptors", imports = {}))
     /* renamed from: -deprecated_networkInterceptors  reason: not valid java name */
-    public final List<Interceptor> m10923deprecated_networkInterceptors() {
+    public final List<Interceptor> m10942deprecated_networkInterceptors() {
         return this.networkInterceptors;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "eventListenerFactory", imports = {}))
     /* renamed from: -deprecated_eventListenerFactory  reason: not valid java name */
-    public final EventListener.Factory m10918deprecated_eventListenerFactory() {
+    public final EventListener.Factory m10937deprecated_eventListenerFactory() {
         return this.eventListenerFactory;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "retryOnConnectionFailure", imports = {}))
     /* renamed from: -deprecated_retryOnConnectionFailure  reason: not valid java name */
-    public final boolean m10930deprecated_retryOnConnectionFailure() {
+    public final boolean m10949deprecated_retryOnConnectionFailure() {
         return this.retryOnConnectionFailure;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "authenticator", imports = {}))
     /* renamed from: -deprecated_authenticator  reason: not valid java name */
-    public final Authenticator m10908deprecated_authenticator() {
+    public final Authenticator m10927deprecated_authenticator() {
         return this.authenticator;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "followRedirects", imports = {}))
     /* renamed from: -deprecated_followRedirects  reason: not valid java name */
-    public final boolean m10919deprecated_followRedirects() {
+    public final boolean m10938deprecated_followRedirects() {
         return this.followRedirects;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "followSslRedirects", imports = {}))
     /* renamed from: -deprecated_followSslRedirects  reason: not valid java name */
-    public final boolean m10920deprecated_followSslRedirects() {
+    public final boolean m10939deprecated_followSslRedirects() {
         return this.followSslRedirects;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "cookieJar", imports = {}))
     /* renamed from: -deprecated_cookieJar  reason: not valid java name */
-    public final CookieJar m10915deprecated_cookieJar() {
+    public final CookieJar m10934deprecated_cookieJar() {
         return this.cookieJar;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "cache", imports = {}))
     /* renamed from: -deprecated_cache  reason: not valid java name */
-    public final Cache m10909deprecated_cache() {
+    public final Cache m10928deprecated_cache() {
         return this.cache;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "dns", imports = {}))
     /* renamed from: -deprecated_dns  reason: not valid java name */
-    public final Dns m10917deprecated_dns() {
+    public final Dns m10936deprecated_dns() {
         return this.dns;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "proxy", imports = {}))
     /* renamed from: -deprecated_proxy  reason: not valid java name */
-    public final Proxy m10926deprecated_proxy() {
+    public final Proxy m10945deprecated_proxy() {
         return this.proxy;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "proxySelector", imports = {}))
     /* renamed from: -deprecated_proxySelector  reason: not valid java name */
-    public final ProxySelector m10928deprecated_proxySelector() {
+    public final ProxySelector m10947deprecated_proxySelector() {
         return this.proxySelector;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "proxyAuthenticator", imports = {}))
     /* renamed from: -deprecated_proxyAuthenticator  reason: not valid java name */
-    public final Authenticator m10927deprecated_proxyAuthenticator() {
+    public final Authenticator m10946deprecated_proxyAuthenticator() {
         return this.proxyAuthenticator;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "socketFactory", imports = {}))
     /* renamed from: -deprecated_socketFactory  reason: not valid java name */
-    public final SocketFactory m10931deprecated_socketFactory() {
+    public final SocketFactory m10950deprecated_socketFactory() {
         return this.socketFactory;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "sslSocketFactory", imports = {}))
     /* renamed from: -deprecated_sslSocketFactory  reason: not valid java name */
-    public final SSLSocketFactory m10932deprecated_sslSocketFactory() {
+    public final SSLSocketFactory m10951deprecated_sslSocketFactory() {
         return sslSocketFactory();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "connectionSpecs", imports = {}))
     /* renamed from: -deprecated_connectionSpecs  reason: not valid java name */
-    public final List<ConnectionSpec> m10914deprecated_connectionSpecs() {
+    public final List<ConnectionSpec> m10933deprecated_connectionSpecs() {
         return this.connectionSpecs;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "protocols", imports = {}))
     /* renamed from: -deprecated_protocols  reason: not valid java name */
-    public final List<Protocol> m10925deprecated_protocols() {
+    public final List<Protocol> m10944deprecated_protocols() {
         return this.protocols;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "hostnameVerifier", imports = {}))
     /* renamed from: -deprecated_hostnameVerifier  reason: not valid java name */
-    public final HostnameVerifier m10921deprecated_hostnameVerifier() {
+    public final HostnameVerifier m10940deprecated_hostnameVerifier() {
         return this.hostnameVerifier;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "certificatePinner", imports = {}))
     /* renamed from: -deprecated_certificatePinner  reason: not valid java name */
-    public final CertificatePinner m10911deprecated_certificatePinner() {
+    public final CertificatePinner m10930deprecated_certificatePinner() {
         return this.certificatePinner;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "callTimeoutMillis", imports = {}))
     /* renamed from: -deprecated_callTimeoutMillis  reason: not valid java name */
-    public final int m10910deprecated_callTimeoutMillis() {
+    public final int m10929deprecated_callTimeoutMillis() {
         return this.callTimeoutMillis;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "connectTimeoutMillis", imports = {}))
     /* renamed from: -deprecated_connectTimeoutMillis  reason: not valid java name */
-    public final int m10912deprecated_connectTimeoutMillis() {
+    public final int m10931deprecated_connectTimeoutMillis() {
         return this.connectTimeoutMillis;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "readTimeoutMillis", imports = {}))
     /* renamed from: -deprecated_readTimeoutMillis  reason: not valid java name */
-    public final int m10929deprecated_readTimeoutMillis() {
+    public final int m10948deprecated_readTimeoutMillis() {
         return this.readTimeoutMillis;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "writeTimeoutMillis", imports = {}))
     /* renamed from: -deprecated_writeTimeoutMillis  reason: not valid java name */
-    public final int m10933deprecated_writeTimeoutMillis() {
+    public final int m10952deprecated_writeTimeoutMillis() {
         return this.writeTimeoutMillis;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "pingIntervalMillis", imports = {}))
     /* renamed from: -deprecated_pingIntervalMillis  reason: not valid java name */
-    public final int m10924deprecated_pingIntervalMillis() {
+    public final int m10943deprecated_pingIntervalMillis() {
         return this.pingIntervalMillis;
     }
 
@@ -947,7 +947,7 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: -addInterceptor  reason: not valid java name */
-        public final Builder m10934addInterceptor(final Function1<? super Interceptor.Chain, Response> block) {
+        public final Builder m10953addInterceptor(final Function1<? super Interceptor.Chain, Response> block) {
             Intrinsics.checkNotNullParameter(block, "block");
             return addInterceptor(new Interceptor() { // from class: okhttp3.OkHttpClient$Builder$addInterceptor$2
                 @Override // okhttp3.Interceptor
@@ -969,7 +969,7 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: -addNetworkInterceptor  reason: not valid java name */
-        public final Builder m10935addNetworkInterceptor(final Function1<? super Interceptor.Chain, Response> block) {
+        public final Builder m10954addNetworkInterceptor(final Function1<? super Interceptor.Chain, Response> block) {
             Intrinsics.checkNotNullParameter(block, "block");
             return addNetworkInterceptor(new Interceptor() { // from class: okhttp3.OkHttpClient$Builder$addNetworkInterceptor$2
                 @Override // okhttp3.Interceptor
@@ -1179,8 +1179,8 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: callTimeout-LRDsOJo  reason: not valid java name */
-        public final Builder m10936callTimeoutLRDsOJo(long j) {
-            this.callTimeout = _UtilJvmKt.m10964checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
+        public final Builder m10955callTimeoutLRDsOJo(long j) {
+            this.callTimeout = _UtilJvmKt.m10983checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
             return this;
         }
 
@@ -1197,8 +1197,8 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: connectTimeout-LRDsOJo  reason: not valid java name */
-        public final Builder m10937connectTimeoutLRDsOJo(long j) {
-            this.connectTimeout = _UtilJvmKt.m10964checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
+        public final Builder m10956connectTimeoutLRDsOJo(long j) {
+            this.connectTimeout = _UtilJvmKt.m10983checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
             return this;
         }
 
@@ -1215,8 +1215,8 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: readTimeout-LRDsOJo  reason: not valid java name */
-        public final Builder m10939readTimeoutLRDsOJo(long j) {
-            this.readTimeout = _UtilJvmKt.m10964checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
+        public final Builder m10958readTimeoutLRDsOJo(long j) {
+            this.readTimeout = _UtilJvmKt.m10983checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
             return this;
         }
 
@@ -1233,8 +1233,8 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: writeTimeout-LRDsOJo  reason: not valid java name */
-        public final Builder m10941writeTimeoutLRDsOJo(long j) {
-            this.writeTimeout = _UtilJvmKt.m10964checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
+        public final Builder m10960writeTimeoutLRDsOJo(long j) {
+            this.writeTimeout = _UtilJvmKt.m10983checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
             return this;
         }
 
@@ -1251,8 +1251,8 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: pingInterval-LRDsOJo  reason: not valid java name */
-        public final Builder m10938pingIntervalLRDsOJo(long j) {
-            this.pingInterval = _UtilJvmKt.m10964checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
+        public final Builder m10957pingIntervalLRDsOJo(long j) {
+            this.pingInterval = _UtilJvmKt.m10983checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
             return this;
         }
 
@@ -1269,8 +1269,8 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory {
         }
 
         /* renamed from: webSocketCloseTimeout-LRDsOJo  reason: not valid java name */
-        public final Builder m10940webSocketCloseTimeoutLRDsOJo(long j) {
-            this.webSocketCloseTimeout = _UtilJvmKt.m10964checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
+        public final Builder m10959webSocketCloseTimeoutLRDsOJo(long j) {
+            this.webSocketCloseTimeout = _UtilJvmKt.m10983checkDurationHG0u8IE(TypedValues.TransitionType.S_DURATION, j);
             return this;
         }
 

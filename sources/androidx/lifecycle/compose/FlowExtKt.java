@@ -21,7 +21,7 @@ public final class FlowExtKt {
         LifecycleOwner lifecycleOwner2;
         ComposerKt.sourceInformationMarkerStart(composer, 743249048, "C(collectAsStateWithLifecycle)P(1,2)58@2561L7,62@2705L182:FlowExt.kt#2vxrgp");
         if ((i2 & 1) != 0) {
-            ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
             ComposerKt.sourceInformationMarkerEnd(composer);
             lifecycleOwner2 = (LifecycleOwner) consume;
@@ -68,7 +68,7 @@ public final class FlowExtKt {
         LifecycleOwner lifecycleOwner2;
         ComposerKt.sourceInformationMarkerStart(composer, -1485997211, "C(collectAsStateWithLifecycle)P(1,2,3)134@5911L7,138@6055L184:FlowExt.kt#2vxrgp");
         if ((i2 & 2) != 0) {
-            ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(LocalLifecycleOwnerKt.getLocalLifecycleOwner());
             ComposerKt.sourceInformationMarkerEnd(composer);
             lifecycleOwner2 = (LifecycleOwner) consume;

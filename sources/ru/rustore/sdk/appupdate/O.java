@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.rustore.sdk.appupdate.P;
 import ru.rustore.sdk.appupdate.errors.RemoteProviderErrors;
 import ru.rustore.sdk.core.util.ContextExtKt;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public abstract class O extends Binder implements IInterface {
     public O() {
         attachInterface(this, "ru.vk.store.provider.appupdate.GetAppUpdateInfoCallback");
@@ -34,7 +34,7 @@ public abstract class O extends Binder implements IInterface {
             P.a aVar = (P.a) this;
             Intrinsics.checkNotNullParameter(updateInfoBundle, "updateInfoBundle");
             P.this.e.invoke(P.this.b.a(updateInfoBundle));
-            ContextExtKt.unbindServiceSafely(P.this.f1355a, aVar.b);
+            ContextExtKt.unbindServiceSafely(P.this.f1360a, aVar.b);
         } else if (i != 2) {
             return super.onTransact(i, parcel, parcel2, i2);
         } else {
@@ -43,7 +43,7 @@ public abstract class O extends Binder implements IInterface {
             P.a aVar2 = (P.a) this;
             Intrinsics.checkNotNullParameter(errorMessage, "errorMessage");
             P.this.f.invoke(RemoteProviderErrors.INSTANCE.toRuStoreException(readInt, errorMessage));
-            ContextExtKt.unbindServiceSafely(P.this.f1355a, aVar2.b);
+            ContextExtKt.unbindServiceSafely(P.this.f1360a, aVar2.b);
         }
         parcel2.writeNoException();
         return true;

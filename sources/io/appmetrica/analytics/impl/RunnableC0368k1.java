@@ -1,21 +1,30 @@
 package io.appmetrica.analytics.impl;
+
+import android.app.Activity;
 /* renamed from: io.appmetrica.analytics.impl.k1  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
 public final class RunnableC0368k1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f932a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ C0494p1 c;
+    public final /* synthetic */ Activity f941a;
+    public final /* synthetic */ C0547r1 b;
 
-    public RunnableC0368k1(C0494p1 c0494p1, String str, String str2) {
-        this.c = c0494p1;
-        this.f932a = str;
-        this.b = str2;
+    public RunnableC0368k1(C0547r1 c0547r1, Activity activity) {
+        this.b = c0547r1;
+        this.f941a = activity;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0494p1.a(this.c).reportEvent(this.f932a, this.b);
+        C0547r1 c0547r1 = this.b;
+        C0285gl c0285gl = c0547r1.h;
+        Activity activity = this.f941a;
+        InterfaceC0327ib interfaceC0327ib = c0547r1.d().f512a;
+        if (activity != null) {
+            c0285gl.f.a(activity);
+        }
+        if (c0285gl.e.a(activity, EnumC0470o.PAUSED)) {
+            interfaceC0327ib.b(activity);
+        }
     }
 }

@@ -1,44 +1,41 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.ecommerce.ECommerceCartItem;
-import io.appmetrica.analytics.ecommerce.ECommerceOrder;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
-public final class Ge {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f456a;
-    public final String b;
-    public final List c;
-    public final Map d;
-
-    public Ge(ECommerceOrder eCommerceOrder) {
-        this(UUID.randomUUID().toString(), eCommerceOrder.getIdentifier(), a(eCommerceOrder.getCartItems()), CollectionUtils.mapCopyOfNullableMap(eCommerceOrder.getPayload()));
-    }
-
-    public static ArrayList a(List list) {
-        ArrayList arrayList = new ArrayList(list.size());
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            arrayList.add(new G3((ECommerceCartItem) it.next()));
+public final class Ge implements Converter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Integer fromModel(Boolean bool) {
+        int i;
+        if (bool == null) {
+            i = -1;
+        } else if (Intrinsics.areEqual(bool, Boolean.TRUE)) {
+            i = 1;
+        } else if (!Intrinsics.areEqual(bool, Boolean.FALSE)) {
+            throw new NoWhenBranchMatchedException();
+        } else {
+            i = 0;
         }
-        return arrayList;
+        return Integer.valueOf(i);
     }
 
-    public final String toString() {
-        return "OrderWrapper{uuid='" + this.f456a + "', identifier='" + this.b + "', cartItems=" + this.c + ", payload=" + this.d + AbstractJsonLexerKt.END_OBJ;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final /* bridge */ /* synthetic */ Object toModel(Object obj) {
+        return a(((Number) obj).intValue());
     }
 
-    public Ge(String str, String str2, ArrayList arrayList, Map map) {
-        this.f456a = str;
-        this.b = str2;
-        this.c = arrayList;
-        this.d = map;
+    public final Boolean a(int i) {
+        if (i != -1) {
+            if (i != 0) {
+                if (i != 1) {
+                    return null;
+                }
+                return Boolean.TRUE;
+            }
+            return Boolean.FALSE;
+        }
+        return null;
     }
 }

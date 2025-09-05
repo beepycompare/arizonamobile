@@ -1,149 +1,149 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.BuildConfig;
+import android.net.Uri;
+import android.text.TextUtils;
+import com.adjust.sdk.Constants;
+import io.appmetrica.analytics.coreapi.internal.control.DataSendingRestrictionController;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfoResult;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
+import io.appmetrica.analytics.networktasks.internal.IParamsAppender;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedHashSet;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import kotlin.text.StringsKt;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* renamed from: io.appmetrica.analytics.impl.gm  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0286gm extends C0347j6 {
-    public List d;
-    public List e;
-    public String f;
-    public String g;
-    public Map h;
-    public N3 i;
-    public List j;
-    public boolean k;
-    public boolean l;
-    public String m;
-    public long n;
-    public final Dg o;
-    public final C0169c8 p;
+public final class C0286gm implements IParamsAppender {
 
-    public C0286gm() {
-        this(Ka.j().t(), new C0169c8());
+    /* renamed from: a  reason: collision with root package name */
+    public final Be f897a;
+    public final Kd b;
+    public final C0302hc c = new C0302hc();
+
+    public C0286gm(Be be, Kd kd) {
+        this.f897a = be;
+        this.b = kd;
     }
 
-    public final long a(long j) {
-        if (this.n == 0) {
-            this.n = j;
+    @Override // io.appmetrica.analytics.networktasks.internal.IParamsAppender
+    /* renamed from: a */
+    public final void appendParams(Uri.Builder builder, C0389km c0389km) {
+        String str;
+        Jg jg;
+        builder.path("analytics/startup");
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.DEVICE_ID), c0389km.getDeviceId());
+        a(builder, Na.F.g(), this.c);
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.APP_SET_ID), c0389km.getAppSetId());
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.APP_SET_ID_SCOPE), c0389km.getAppSetIdScope());
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.APP_PLATFORM), c0389km.getAppPlatform());
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.PROTOCOL_VERSION), c0389km.getProtocolVersion());
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.ANALYTICS_SDK_VERSION_NAME), c0389km.getAnalyticsSdkVersionName());
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.MODEL), c0389km.getModel());
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.MANUFACTURER), c0389km.getManufacturer());
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.OS_VERSION), c0389km.getOsVersion());
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.SCREEN_WIDTH), String.valueOf(c0389km.getScreenWidth()));
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.SCREEN_HEIGHT), String.valueOf(c0389km.getScreenHeight()));
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.SCREEN_DPI), String.valueOf(c0389km.getScreenDpi()));
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.SCALE_FACTOR), String.valueOf(c0389km.getScaleFactor()));
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.LOCALE), c0389km.getLocale());
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.DEVICE_TYPE), c0389km.getDeviceType());
+        builder.appendQueryParameter(this.f897a.a("queries"), String.valueOf(1));
+        builder.appendQueryParameter(this.f897a.a("query_hosts"), String.valueOf(2));
+        String a2 = this.f897a.a("features");
+        List<String> h = ((Hk) this.b).h();
+        String[] strArr = {this.f897a.a("permissions_collecting"), this.f897a.a("features_collecting"), this.f897a.a("google_aid"), this.f897a.a("huawei_oaid"), this.f897a.a("sim_info"), this.f897a.a("ssl_pinning")};
+        ArrayList arrayList = new ArrayList(h);
+        arrayList.addAll(Arrays.asList(strArr));
+        builder.appendQueryParameter(a2, StringUtils.wrapFeatures((String[]) arrayList.toArray(new String[0])));
+        builder.appendQueryParameter(this.f897a.a("app_id"), c0389km.getPackageName());
+        builder.appendQueryParameter(this.f897a.a("app_debuggable"), ((C0425m6) c0389km).f984a);
+        if (c0389km.l) {
+            String str2 = c0389km.m;
+            if (!TextUtils.isEmpty(str2)) {
+                builder.appendQueryParameter(this.f897a.a("country_init"), str2);
+            }
+        } else {
+            builder.appendQueryParameter(this.f897a.a("detect_locale"), String.valueOf(1));
         }
-        return this.n;
-    }
-
-    public final N3 c() {
-        return this.i;
-    }
-
-    public final Map<String, String> d() {
-        return this.h;
-    }
-
-    public final String e() {
-        return this.m;
-    }
-
-    public final String f() {
-        return this.f;
-    }
-
-    public final long g() {
-        return this.n;
-    }
-
-    public final String h() {
-        return this.g;
-    }
-
-    public final List<String> i() {
-        return this.j;
-    }
-
-    public final Dg j() {
-        return this.o;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0052, code lost:
-        if (r4 != null) goto L26;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final List<String> k() {
-        ArrayList arrayList;
-        LinkedHashSet linkedHashSet = new LinkedHashSet();
-        if (!no.a((Collection) this.d)) {
-            linkedHashSet.addAll(this.d);
-        }
-        if (!no.a((Collection) this.e)) {
-            linkedHashSet.addAll(this.e);
-        }
-        String[] strArr = (String[]) this.p.f807a.a();
-        if (strArr != null) {
-            arrayList = new ArrayList();
-            for (String str : strArr) {
-                str = (str == null || StringsKt.isBlank(str)) ? null : null;
-                if (str != null) {
-                    arrayList.add(str);
+        Q3 q3 = c0389km.i;
+        if (!ro.a(q3.f630a)) {
+            builder.appendQueryParameter(this.f897a.a("distribution_customization"), String.valueOf(1));
+            builder.appendQueryParameter(this.f897a.a("clids_set"), Pm.a(q3.f630a));
+            int ordinal = q3.b.ordinal();
+            if (ordinal == 1) {
+                str = "api";
+            } else if (ordinal == 2) {
+                str = "satellite";
+            } else if (ordinal != 3) {
+                str = "";
+            } else {
+                str = "retail";
+            }
+            builder.appendQueryParameter(this.f897a.a("clids_set_source"), str);
+            String str3 = c0389km.f;
+            String str4 = c0389km.g;
+            if (TextUtils.isEmpty(str3) && (jg = c0389km.o.b) != null) {
+                str3 = jg.f515a;
+                str4 = jg.d.f495a;
+            }
+            if (!TextUtils.isEmpty(str3)) {
+                builder.appendQueryParameter(this.f897a.a(Constants.INSTALL_REFERRER), str3);
+                if (str4 == null) {
+                    str4 = AbstractJsonLexerKt.NULL;
                 }
-            }
-            if (arrayList.isEmpty()) {
-                arrayList = null;
+                builder.appendQueryParameter(this.f897a.a("install_referrer_source"), str4);
             }
         }
-        String[] strArr2 = BuildConfig.DEFAULT_HOSTS;
-        arrayList = new ArrayList();
-        for (String str2 : strArr2) {
-            str2 = (str2 == null || StringsKt.isBlank(str2)) ? null : null;
-            if (str2 != null) {
-                arrayList.add(str2);
+        String uuid = c0389km.getUuid();
+        if (!TextUtils.isEmpty(uuid)) {
+            builder.appendQueryParameter(this.f897a.a(CommonUrlParts.UUID), uuid);
+        }
+        builder.appendQueryParameter(this.f897a.a("time"), String.valueOf(1));
+        builder.appendQueryParameter(this.f897a.a("stat_sending"), String.valueOf(1));
+        builder.appendQueryParameter(this.f897a.a("retry_policy"), String.valueOf(1));
+        builder.appendQueryParameter(this.f897a.a("cache_control"), String.valueOf(1));
+        builder.appendQueryParameter(this.f897a.a("permissions_collecting"), String.valueOf(1));
+        builder.appendQueryParameter(this.f897a.a("app_system_flag"), ((C0425m6) c0389km).b);
+        builder.appendQueryParameter(this.f897a.a("auto_inapp_collecting"), String.valueOf(1));
+        builder.appendQueryParameter(this.f897a.a("attribution"), String.valueOf(1));
+        builder.appendQueryParameter(this.f897a.a("startup_update"), String.valueOf(1));
+        builder.appendQueryParameter(this.f897a.a("external_attribution"), String.valueOf(1));
+        Map<String, Integer> d = ((Hk) this.b).d();
+        for (String str5 : d.keySet()) {
+            builder.appendQueryParameter(str5, String.valueOf(d.get(str5)));
+        }
+    }
+
+    public final void a(Uri.Builder builder, DataSendingRestrictionController dataSendingRestrictionController, C0302hc c0302hc) {
+        c0302hc.getClass();
+        AdvertisingIdsHolder identifiers = Na.F.b().getIdentifiers();
+        if (identifiers != null && !dataSendingRestrictionController.isRestrictedForSdk()) {
+            AdTrackingInfoResult google = identifiers.getGoogle();
+            if (!google.isValid()) {
+                builder.appendQueryParameter(this.f897a.a(CommonUrlParts.ADV_ID), "");
+            } else {
+                builder.appendQueryParameter(this.f897a.a(CommonUrlParts.ADV_ID), google.mAdTrackingInfo.advId);
+            }
+            AdTrackingInfoResult huawei = identifiers.getHuawei();
+            if (!huawei.isValid()) {
+                builder.appendQueryParameter(this.f897a.a(CommonUrlParts.HUAWEI_OAID), "");
+            } else {
+                builder.appendQueryParameter(this.f897a.a(CommonUrlParts.HUAWEI_OAID), huawei.mAdTrackingInfo.advId);
+            }
+            AdTrackingInfoResult yandex = identifiers.getYandex();
+            if (!yandex.isValid()) {
+                builder.appendQueryParameter(this.f897a.a(CommonUrlParts.YANDEX_ADV_ID), "");
+                return;
+            } else {
+                builder.appendQueryParameter(this.f897a.a(CommonUrlParts.YANDEX_ADV_ID), yandex.mAdTrackingInfo.advId);
+                return;
             }
         }
-        linkedHashSet.addAll(arrayList);
-        return new ArrayList(linkedHashSet);
-    }
-
-    public final List<String> l() {
-        return this.e;
-    }
-
-    public final List<String> m() {
-        return this.d;
-    }
-
-    public final boolean n() {
-        return this.k;
-    }
-
-    public final boolean o() {
-        return this.l;
-    }
-
-    @Override // io.appmetrica.analytics.impl.C0347j6, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig
-    public final String toString() {
-        return "StartupRequestConfig{mStartupHostsFromStartup=" + this.d + ", mStartupHostsFromClient=" + this.e + ", mDistributionReferrer='" + this.f + "', mInstallReferrerSource='" + this.g + "', mClidsFromClient=" + this.h + ", mNewCustomHosts=" + this.j + ", mHasNewCustomHosts=" + this.k + ", mSuccessfulStartup=" + this.l + ", mCountryInit='" + this.m + "', mFirstStartupTime=" + this.n + "} " + super.toString();
-    }
-
-    public C0286gm(Dg dg, C0169c8 c0169c8) {
-        this.i = new N3(null, EnumC0451n8.c);
-        this.n = 0L;
-        this.o = dg;
-        this.p = c0169c8;
-    }
-
-    public final void a(List<String> list) {
-        this.j = list;
-    }
-
-    public final void a(boolean z) {
-        this.k = z;
-    }
-
-    public final void a(String str) {
-        this.m = str;
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.ADV_ID), "");
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.HUAWEI_OAID), "");
+        builder.appendQueryParameter(this.f897a.a(CommonUrlParts.YANDEX_ADV_ID), "");
     }
 }

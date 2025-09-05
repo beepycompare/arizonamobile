@@ -1,17 +1,28 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import io.appmetrica.analytics.AnrListener;
 /* loaded from: classes4.dex */
-public final class Ic implements B4 {
-    @Override // io.appmetrica.analytics.impl.B4
-    /* renamed from: b */
-    public final Jc a(Context context, C0722y5 c0722y5, C0397l4 c0397l4, K4 k4) {
-        Tg tg;
-        Kc kc = new Kc(c0397l4.b, c0397l4.f948a);
-        Ug ug = new Ug(new Nc());
-        synchronized (c0722y5) {
-            tg = (Tg) c0722y5.a(kc, k4, ug, c0722y5.f1152a);
-        }
-        return new Jc(context, tg);
+public final class Ic {
+
+    /* renamed from: a  reason: collision with root package name */
+    public int f491a = 5;
+    public final C0211e b;
+
+    public Ic(InterfaceC0238f0 interfaceC0238f0) {
+        this.b = new C0211e(new C0199dc(interfaceC0238f0));
+    }
+
+    public static final void b(AnrListener anrListener) {
+        anrListener.onAppNotResponding();
+    }
+
+    public final void a(final AnrListener anrListener) {
+        C0211e c0211e = this.b;
+        c0211e.f847a.add(new InterfaceC0160c() { // from class: io.appmetrica.analytics.impl.Ic$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.impl.InterfaceC0160c
+            public final void onAppNotResponding() {
+                Ic.b(AnrListener.this);
+            }
+        });
     }
 }

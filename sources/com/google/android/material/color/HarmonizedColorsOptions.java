@@ -1,6 +1,6 @@
 package com.google.android.material.color;
 
-import com.google.android.material.R;
+import androidx.appcompat.R;
 /* loaded from: classes4.dex */
 public class HarmonizedColorsOptions {
     private final int colorAttributeToHarmonizeWith;

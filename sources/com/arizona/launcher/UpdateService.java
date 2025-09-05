@@ -407,7 +407,7 @@ public final class UpdateService extends Hilt_UpdateService {
         }
         UpdateService updateService = this;
         long j = 1024;
-        Notification build = new NotificationCompat.Builder(updateService, UPDATE_SERVICE_CHANNEL_ID).setContentTitle(getString(R.string.update)).setContentText("Осталось времени: " + timeLeft()).setSmallIcon(R.mipmap.ic_launcher).setContentIntent(PendingIntent.getActivity(updateService, 0, intent2, 67108864)).setProgress((int) (this.mTotalLength / j), (int) (this.mDownloadedLength / j), z).build();
+        Notification build = new NotificationCompat.Builder(updateService, UPDATE_SERVICE_CHANNEL_ID).setContentTitle(getString(R.string.update)).setContentText("Осталось времени: " + timeLeft()).setSmallIcon(R.mipmap.ic_launcher_foreground).setContentIntent(PendingIntent.getActivity(updateService, 0, intent2, 67108864)).setProgress((int) (this.mTotalLength / j), (int) (this.mDownloadedLength / j), z).build();
         Intrinsics.checkNotNullExpressionValue(build, "build(...)");
         return build;
     }
@@ -1255,7 +1255,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void checkLauncherUpdate$lambda$14(UpdateService updateService, String str) {
         try {
-            boolean z = new JSONObject(str).getInt("launcherVersion") > 1648;
+            boolean z = new JSONObject(str).getInt("launcherVersion") > 1650;
             Message obtain = Message.obtain(updateService.mInHandler, 3);
             obtain.getData().putBoolean(NEED_UPDATE_MSG, z);
             obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);

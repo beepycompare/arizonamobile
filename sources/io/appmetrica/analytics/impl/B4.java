@@ -1,7 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import io.appmetrica.analytics.modulesapi.internal.client.ClientStorageProvider;
+import io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences;
 /* loaded from: classes4.dex */
-public interface B4 {
-    A4 a(Context context, C0722y5 c0722y5, C0397l4 c0397l4, K4 k4);
+public final class B4 implements ClientStorageProvider {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Dl f358a;
+
+    public B4(Dl dl) {
+        this.f358a = dl;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientStorageProvider
+    public final ModulePreferences modulePreferences(String str) {
+        return new C0709xd(str, this.f358a);
+    }
 }

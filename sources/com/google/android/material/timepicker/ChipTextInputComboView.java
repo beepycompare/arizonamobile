@@ -58,8 +58,8 @@ public class ChipTextInputComboView extends FrameLayout implements Checkable {
         addView(chip);
         addView(textInputLayout);
         this.label = (TextView) findViewById(R.id.material_label);
-        editText.setId(ViewCompat.generateViewId());
-        ViewCompat.setLabelFor(this.label, editText.getId());
+        editText.setId(View.generateViewId());
+        this.label.setLabelFor(editText.getId());
         editText.setSaveEnabled(false);
         editText.setLongClickable(false);
     }

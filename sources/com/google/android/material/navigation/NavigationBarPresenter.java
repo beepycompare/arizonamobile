@@ -14,7 +14,6 @@ import com.google.android.material.internal.ParcelableSparseArray;
 /* loaded from: classes4.dex */
 public class NavigationBarPresenter implements MenuPresenter {
     private int id;
-    private MenuBuilder menu;
     private NavigationBarMenuView menuView;
     private boolean updateSuspended = false;
 
@@ -52,7 +51,6 @@ public class NavigationBarPresenter implements MenuPresenter {
 
     @Override // androidx.appcompat.view.menu.MenuPresenter
     public void initForMenu(Context context, MenuBuilder menuBuilder) {
-        this.menu = menuBuilder;
         this.menuView.initialize(menuBuilder);
     }
 

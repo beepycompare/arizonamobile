@@ -1,15 +1,28 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import android.content.Context;
+import java.util.LinkedHashMap;
 /* loaded from: classes4.dex */
-public final class Go implements Consumer {
+public final class Go {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f464a = "WebView interface setup failed because javascript is disabled for the WebView.";
+    public final Context f461a;
+    public final LinkedHashMap b = new LinkedHashMap();
+    public final Co c;
+    public final Co d;
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    public final void consume(Object obj) {
-        ((PublicLogger) obj).warning(this.f464a, new Object[0]);
+    public Go(Context context) {
+        this.f461a = context;
+        Ba ba = new Ba(context, "appmetrica_vital.dat");
+        this.c = new Co(Na.j().x(), ba);
+        this.d = new Co(new C0611tf(C0728y7.a(context).d()), ba);
+    }
+
+    public final Co a() {
+        return this.c;
+    }
+
+    public final Co b() {
+        return this.d;
     }
 }

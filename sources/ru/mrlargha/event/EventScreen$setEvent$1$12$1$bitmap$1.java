@@ -14,7 +14,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: EventScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroid/graphics/Bitmap;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.event.EventScreen$setEvent$1$12$1$bitmap$1", f = "EventScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
-/* loaded from: classes6.dex */
+/* loaded from: classes3.dex */
 final class EventScreen$setEvent$1$12$1$bitmap$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Bitmap>, Object> {
     final /* synthetic */ String $it;
     int label;

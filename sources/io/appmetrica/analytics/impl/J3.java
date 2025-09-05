@@ -1,32 +1,29 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import kotlin.collections.CollectionsKt;
+import io.appmetrica.analytics.ecommerce.ECommerceCartItem;
+import java.math.BigDecimal;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes4.dex */
-public final class J3 implements Cdo {
-    @Override // kotlin.jvm.functions.Function2
-    /* renamed from: a */
-    public final List<N3> invoke(List<N3> list, N3 n3) {
-        if (!(list instanceof Collection) || !list.isEmpty()) {
-            for (N3 n32 : list) {
-                EnumC0451n8 enumC0451n8 = n32.b;
-                EnumC0451n8 enumC0451n82 = n3.b;
-                if (enumC0451n8 == enumC0451n82) {
-                    if (enumC0451n82 == EnumC0451n8.c) {
-                        ArrayList arrayList = new ArrayList();
-                        for (Object obj : list) {
-                            if (((N3) obj).b != EnumC0451n8.c) {
-                                arrayList.add(obj);
-                            }
-                        }
-                        return CollectionsKt.plus((Collection<? extends N3>) arrayList, n3);
-                    }
-                    return null;
-                }
-            }
-        }
-        return CollectionsKt.plus((Collection<? extends N3>) list, n3);
+public final class J3 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final C0203dg f504a;
+    public final BigDecimal b;
+    public final Tf c;
+    public final Tg d;
+
+    public J3(ECommerceCartItem eCommerceCartItem) {
+        this(new C0203dg(eCommerceCartItem.getProduct()), eCommerceCartItem.getQuantity(), new Tf(eCommerceCartItem.getRevenue()), eCommerceCartItem.getReferrer() == null ? null : new Tg(eCommerceCartItem.getReferrer()));
+    }
+
+    public final String toString() {
+        return "CartItemWrapper{product=" + this.f504a + ", quantity=" + this.b + ", revenue=" + this.c + ", referrer=" + this.d + AbstractJsonLexerKt.END_OBJ;
+    }
+
+    public J3(C0203dg c0203dg, BigDecimal bigDecimal, Tf tf, Tg tg) {
+        this.f504a = c0203dg;
+        this.b = bigDecimal;
+        this.c = tf;
+        this.d = tg;
     }
 }

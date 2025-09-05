@@ -1,25 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationState;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateObserver;
-import io.appmetrica.analytics.coreutils.internal.toggle.SimpleThreadSafeToggle;
-import kotlin.Unit;
+import android.text.TextUtils;
+import java.util.LinkedList;
+import java.util.List;
 /* loaded from: classes4.dex */
-public final class xo extends SimpleThreadSafeToggle implements ApplicationStateObserver {
-    public xo() {
-        super(false, "[VisibleAppStateOnlyTrackingStatusToggle]");
-        synchronized (this) {
-            a(Ka.j().d().registerStickyObserver(this));
-            Unit unit = Unit.INSTANCE;
+public final class xo implements yo {
+    @Override // io.appmetrica.analytics.impl.yo
+    public final wo a(List<wo> list) {
+        LinkedList linkedList = new LinkedList();
+        boolean z = true;
+        for (wo woVar : list) {
+            if (!woVar.f1141a) {
+                linkedList.add(woVar.b);
+                z = false;
+            }
         }
-    }
-
-    public final void a(ApplicationState applicationState) {
-        updateState(applicationState == ApplicationState.VISIBLE);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateObserver
-    public final synchronized void onApplicationStateChanged(ApplicationState applicationState) {
-        a(applicationState);
+        if (z) {
+            return new wo(this, true, "");
+        }
+        return new wo(this, false, TextUtils.join(", ", linkedList));
     }
 }

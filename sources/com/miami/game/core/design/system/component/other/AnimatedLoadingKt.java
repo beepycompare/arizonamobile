@@ -24,17 +24,17 @@ import androidx.compose.ui.res.PainterResources_androidKt;
 import androidx.compose.ui.unit.Dp;
 import androidx.constraintlayout.motion.widget.Key;
 import androidx.media3.exoplayer.RendererCapabilities;
+import com.miami.game.core.design.system.R;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
-import ru.ayagroup.android.core.design.system.R;
 /* compiled from: AnimatedLoading.kt */
 @Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0007\u001a+\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0004\b\b\u0010\t¨\u0006\n²\u0006\n\u0010\u000b\u001a\u00020\fX\u008a\u0084\u0002"}, d2 = {"AnimatedLoading", "", "isChecking", "", "width", "Landroidx/compose/ui/unit/Dp;", "modifier", "Landroidx/compose/ui/Modifier;", "AnimatedLoading-uFdPcIQ", "(ZFLandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "design-system_release", Key.ROTATION, ""}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class AnimatedLoadingKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit AnimatedLoading_uFdPcIQ$lambda$1(boolean z, float f, Modifier modifier, int i, int i2, Composer composer, int i3) {
-        m8906AnimatedLoadinguFdPcIQ(z, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m8925AnimatedLoadinguFdPcIQ(z, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -50,7 +50,7 @@ public final class AnimatedLoadingKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m8906AnimatedLoadinguFdPcIQ(final boolean z, float f, Modifier modifier, Composer composer, final int i, final int i2) {
+    public static final void m8925AnimatedLoadinguFdPcIQ(final boolean z, float f, Modifier modifier, Composer composer, final int i, final int i2) {
         int i3;
         float f2;
         int i4;
@@ -90,7 +90,7 @@ public final class AnimatedLoadingKt {
                     }
                     if (z) {
                         startRestartGroup.startReplaceGroup(-1133432296);
-                        ComposerKt.sourceInformation(startRestartGroup, "23@1004L28,24@1076L418,39@1629L84,35@1503L260");
+                        ComposerKt.sourceInformation(startRestartGroup, "23@999L28,24@1071L418,39@1624L84,35@1498L260");
                         modifier3 = companion;
                         ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.loading_animated_icon, startRestartGroup, 0), (String) null, RotateKt.rotate(SizeKt.m889width3ABfNKs(companion, m7251constructorimpl), AnimatedLoading_uFdPcIQ$lambda$0(InfiniteTransitionKt.animateFloat(InfiniteTransitionKt.rememberInfiniteTransition(null, startRestartGroup, 0, 1), 0.0f, 360.0f, AnimationSpecKt.m151infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(1000, 0, EasingKt.getLinearEasing(), 2, null), RepeatMode.Restart, 0L, 4, null), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8))), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, 48, (int) MenuKt.InTransitionDuration);
                         startRestartGroup = startRestartGroup;
@@ -98,7 +98,7 @@ public final class AnimatedLoadingKt {
                     } else {
                         modifier3 = companion;
                         startRestartGroup.startReplaceGroup(-1132647469);
-                        ComposerKt.sourceInformation(startRestartGroup, "47@1793L53");
+                        ComposerKt.sourceInformation(startRestartGroup, "47@1788L53");
                         SpacerKt.Spacer(SizeKt.m889width3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(60)), startRestartGroup, 6);
                         startRestartGroup.endReplaceGroup();
                     }

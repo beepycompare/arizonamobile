@@ -25,7 +25,7 @@ public class SwitchMaterial extends SwitchCompat {
     }
 
     public SwitchMaterial(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.switchStyle);
+        this(context, attributeSet, androidx.appcompat.R.attr.switchStyle);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -71,7 +71,7 @@ public class SwitchMaterial extends SwitchCompat {
     private ColorStateList getMaterialThemeColorsThumbTintList() {
         if (this.materialThemeColorsThumbTintList == null) {
             int color = MaterialColors.getColor(this, R.attr.colorSurface);
-            int color2 = MaterialColors.getColor(this, R.attr.colorControlActivated);
+            int color2 = MaterialColors.getColor(this, androidx.appcompat.R.attr.colorControlActivated);
             float dimension = getResources().getDimension(R.dimen.mtrl_switch_thumb_elevation);
             if (this.elevationOverlayProvider.isThemeElevationOverlayEnabled()) {
                 dimension += ViewUtils.getParentAbsoluteElevation(this);
@@ -93,7 +93,7 @@ public class SwitchMaterial extends SwitchCompat {
             int[][] iArr = ENABLED_CHECKED_STATES;
             int[] iArr2 = new int[iArr.length];
             int color = MaterialColors.getColor(this, R.attr.colorSurface);
-            int color2 = MaterialColors.getColor(this, R.attr.colorControlActivated);
+            int color2 = MaterialColors.getColor(this, androidx.appcompat.R.attr.colorControlActivated);
             int color3 = MaterialColors.getColor(this, R.attr.colorOnSurface);
             iArr2[0] = MaterialColors.layer(color, color2, 0.54f);
             iArr2[1] = MaterialColors.layer(color, color3, 0.32f);

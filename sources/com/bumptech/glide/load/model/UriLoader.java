@@ -44,18 +44,24 @@ public class UriLoader<Data> implements ModelLoader<Uri, Data> {
     /* loaded from: classes3.dex */
     public static class StreamFactory implements ModelLoaderFactory<Uri, InputStream>, LocalUriFetcherFactory<InputStream> {
         private final ContentResolver contentResolver;
+        private final boolean useMediaStoreApisIfAvailable;
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public void teardown() {
         }
 
         public StreamFactory(ContentResolver contentResolver) {
+            this(contentResolver, false);
+        }
+
+        public StreamFactory(ContentResolver contentResolver, boolean z) {
             this.contentResolver = contentResolver;
+            this.useMediaStoreApisIfAvailable = z;
         }
 
         @Override // com.bumptech.glide.load.model.UriLoader.LocalUriFetcherFactory
         public DataFetcher<InputStream> build(Uri uri) {
-            return new StreamLocalUriFetcher(this.contentResolver, uri);
+            return new StreamLocalUriFetcher(this.contentResolver, uri, this.useMediaStoreApisIfAvailable);
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -67,18 +73,24 @@ public class UriLoader<Data> implements ModelLoader<Uri, Data> {
     /* loaded from: classes3.dex */
     public static class FileDescriptorFactory implements ModelLoaderFactory<Uri, ParcelFileDescriptor>, LocalUriFetcherFactory<ParcelFileDescriptor> {
         private final ContentResolver contentResolver;
+        private final boolean useMediaStoreApisIfAvailable;
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public void teardown() {
         }
 
         public FileDescriptorFactory(ContentResolver contentResolver) {
+            this(contentResolver, false);
+        }
+
+        public FileDescriptorFactory(ContentResolver contentResolver, boolean z) {
             this.contentResolver = contentResolver;
+            this.useMediaStoreApisIfAvailable = z;
         }
 
         @Override // com.bumptech.glide.load.model.UriLoader.LocalUriFetcherFactory
         public DataFetcher<ParcelFileDescriptor> build(Uri uri) {
-            return new FileDescriptorLocalUriFetcher(this.contentResolver, uri);
+            return new FileDescriptorLocalUriFetcher(this.contentResolver, uri, this.useMediaStoreApisIfAvailable);
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -90,13 +102,19 @@ public class UriLoader<Data> implements ModelLoader<Uri, Data> {
     /* loaded from: classes3.dex */
     public static final class AssetFileDescriptorFactory implements ModelLoaderFactory<Uri, AssetFileDescriptor>, LocalUriFetcherFactory<AssetFileDescriptor> {
         private final ContentResolver contentResolver;
+        private final boolean useMediaStoreApisIfAvailable;
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public void teardown() {
         }
 
         public AssetFileDescriptorFactory(ContentResolver contentResolver) {
+            this(contentResolver, false);
+        }
+
+        public AssetFileDescriptorFactory(ContentResolver contentResolver, boolean z) {
             this.contentResolver = contentResolver;
+            this.useMediaStoreApisIfAvailable = z;
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -106,7 +124,7 @@ public class UriLoader<Data> implements ModelLoader<Uri, Data> {
 
         @Override // com.bumptech.glide.load.model.UriLoader.LocalUriFetcherFactory
         public DataFetcher<AssetFileDescriptor> build(Uri uri) {
-            return new AssetFileDescriptorLocalUriFetcher(this.contentResolver, uri);
+            return new AssetFileDescriptorLocalUriFetcher(this.contentResolver, uri, this.useMediaStoreApisIfAvailable);
         }
     }
 }

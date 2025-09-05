@@ -2,7 +2,7 @@ package io.reactivex;
 
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Cancellable;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface CompletableEmitter {
     boolean isDisposed();
 

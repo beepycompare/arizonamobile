@@ -1,62 +1,71 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import io.appmetrica.analytics.internal.AppMetricaService;
-import io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock;
-import java.util.HashMap;
+import android.database.sqlite.SQLiteOpenHelper;
+import io.appmetrica.analytics.coreapi.internal.data.TempCacheStorage;
+import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
+import io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences;
+import io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider;
+import java.io.File;
 /* loaded from: classes4.dex */
-public final class Ik implements ServiceWakeLock {
+public final class Ik implements ServiceStorageProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f500a;
-    public final Hk b;
-    public final HashMap c = new HashMap();
+    public final Context f498a;
+    public final Dl b;
+    public final SQLiteOpenHelper c;
 
-    public Ik(Context context, Hk hk) {
-        this.f500a = context;
-        this.b = hk;
+    public Ik(Context context, Dl dl, SQLiteOpenHelper sQLiteOpenHelper) {
+        this.f498a = context;
+        this.b = dl;
+        this.c = sQLiteOpenHelper;
     }
 
-    public final String a(String str) {
-        return "io.appmetrica.analytics.ACTION_SERVICE_WAKELOCK." + str;
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final File getAppDataStorage() {
+        return FileUtils.getAppDataDir(this.f498a);
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock
-    public final synchronized boolean acquireWakeLock(String str) {
-        if (this.c.get(str) == null) {
-            HashMap hashMap = this.c;
-            Hk hk = this.b;
-            Context context = this.f500a;
-            String a2 = a(str);
-            hk.f481a.getClass();
-            Intent intent = new Intent(context, AppMetricaService.class);
-            intent.setAction(a2);
-            Gk gk = new Gk();
-            try {
-                context.bindService(intent, gk, 1);
-            } catch (Throwable unused) {
-                gk = null;
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final File getAppFileStorage() {
+        return FileUtils.getAppStorageDirectory(this.f498a);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final SQLiteOpenHelper getDbStorage() {
+        return this.c;
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final File getSdkDataStorage() {
+        return FileUtils.sdkStorage(this.f498a);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final TempCacheStorage getTempCacheStorage() {
+        C0769zn c0769zn;
+        C0728y7 a2 = C0728y7.a(this.f498a);
+        synchronized (a2) {
+            if (a2.o == null) {
+                Context context = a2.e;
+                EnumC0158bn enumC0158bn = EnumC0158bn.SERVICE;
+                if (a2.n == null) {
+                    a2.n = new C0744yn(new C0767zl(a2.h()), "temp_cache");
+                }
+                a2.o = new C0769zn(context, enumC0158bn, a2.n);
             }
-            hashMap.put(str, gk);
+            c0769zn = a2.o;
         }
-        return this.c.get(str) != null;
+        return c0769zn;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock
-    public final synchronized void releaseWakeLock(String str) {
-        ServiceConnection serviceConnection = (ServiceConnection) this.c.get(str);
-        if (serviceConnection != null) {
-            Hk hk = this.b;
-            a(str);
-            Context context = this.f500a;
-            hk.getClass();
-            try {
-                context.unbindService(serviceConnection);
-            } catch (Throwable unused) {
-            }
-            ServiceConnection serviceConnection2 = (ServiceConnection) this.c.remove(str);
-        }
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final ModulePreferences legacyModulePreferences() {
+        return new Zb(this.b);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
+    public final ModulePreferences modulePreferences(String str) {
+        return new C0709xd(str, this.b);
     }
 }

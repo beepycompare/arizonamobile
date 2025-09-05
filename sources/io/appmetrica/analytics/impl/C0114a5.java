@@ -1,18 +1,28 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.internal.CounterConfiguration;
-import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
+import java.util.ArrayList;
 /* renamed from: io.appmetrica.analytics.impl.a5  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
-public final class C0114a5 extends Xh {
-    public C0114a5(Rf rf) {
-        super(rf, new CounterConfiguration(), new Y8(new C0688wl(LoggerStorage.getMainPublicOrAnonymousLogger(), "Crash Environment")));
-        b().setReporterType(CounterConfigurationReporterType.COMMUTATION);
+public final class C0114a5 extends Zf {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Z4 f781a;
+
+    public C0114a5(V4 v4) {
+        this.f781a = new Z4(v4);
     }
 
-    @Override // io.appmetrica.analytics.impl.Xh
-    public final boolean f() {
-        return true;
+    @Override // io.appmetrica.analytics.impl.Zf
+    public final AbstractC0680w9 a(int i) {
+        ArrayList arrayList = new ArrayList();
+        int ordinal = Bb.a(i).ordinal();
+        if (ordinal == 12) {
+            arrayList.add(this.f781a.f764a);
+        } else if (ordinal == 14) {
+            arrayList.add(this.f781a.b);
+        } else if (ordinal == 34) {
+            arrayList.add(this.f781a.c);
+        }
+        return new C0655v9(arrayList);
     }
 }

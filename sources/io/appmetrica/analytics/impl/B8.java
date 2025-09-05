@@ -7,30 +7,33 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
+import java.util.Arrays;
 /* loaded from: classes4.dex */
 public final class B8 extends MessageNano {
-    public static volatile B8[] b;
+    public static volatile B8[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[][] f359a;
+    public byte[] f361a;
+    public F8 b;
 
     public B8() {
         a();
     }
 
     public static B8[] b() {
-        if (b == null) {
+        if (c == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (b == null) {
-                    b = new B8[0];
+                if (c == null) {
+                    c = new B8[0];
                 }
             }
         }
-        return b;
+        return c;
     }
 
     public final B8 a() {
-        this.f359a = WireFormatNano.EMPTY_BYTES_ARRAY;
+        this.f361a = WireFormatNano.EMPTY_BYTES;
+        this.b = null;
         this.cachedSize = -1;
         return this;
     }
@@ -38,43 +41,21 @@ public final class B8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[][] bArr = this.f359a;
-        if (bArr == null || bArr.length <= 0) {
-            return computeSerializedSize;
+        if (!Arrays.equals(this.f361a, WireFormatNano.EMPTY_BYTES)) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f361a);
         }
-        int i = 0;
-        int i2 = 0;
-        int i3 = 0;
-        while (true) {
-            byte[][] bArr2 = this.f359a;
-            if (i >= bArr2.length) {
-                return computeSerializedSize + i2 + i3;
-            }
-            byte[] bArr3 = bArr2[i];
-            if (bArr3 != null) {
-                i3++;
-                i2 = CodedOutputByteBufferNano.computeBytesSizeNoTag(bArr3) + i2;
-            }
-            i++;
-        }
+        F8 f8 = this.b;
+        return f8 != null ? CodedOutputByteBufferNano.computeMessageSize(2, f8) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[][] bArr = this.f359a;
-        if (bArr != null && bArr.length > 0) {
-            int i = 0;
-            while (true) {
-                byte[][] bArr2 = this.f359a;
-                if (i >= bArr2.length) {
-                    break;
-                }
-                byte[] bArr3 = bArr2[i];
-                if (bArr3 != null) {
-                    codedOutputByteBufferNano.writeBytes(1, bArr3);
-                }
-                i++;
-            }
+        if (!Arrays.equals(this.f361a, WireFormatNano.EMPTY_BYTES)) {
+            codedOutputByteBufferNano.writeBytes(1, this.f361a);
+        }
+        F8 f8 = this.b;
+        if (f8 != null) {
+            codedOutputByteBufferNano.writeMessage(2, f8);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -86,26 +67,17 @@ public final class B8 extends MessageNano {
             int readTag = codedInputByteBufferNano.readTag();
             if (readTag == 0) {
                 break;
-            } else if (readTag != 10) {
+            } else if (readTag == 10) {
+                this.f361a = codedInputByteBufferNano.readBytes();
+            } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
-                byte[][] bArr = this.f359a;
-                int length = bArr == null ? 0 : bArr.length;
-                int i = repeatedFieldArrayLength + length;
-                byte[][] bArr2 = new byte[i];
-                if (length != 0) {
-                    System.arraycopy(bArr, 0, bArr2, 0, length);
+                if (this.b == null) {
+                    this.b = new F8();
                 }
-                while (length < i - 1) {
-                    bArr2[length] = codedInputByteBufferNano.readBytes();
-                    codedInputByteBufferNano.readTag();
-                    length++;
-                }
-                bArr2[length] = codedInputByteBufferNano.readBytes();
-                this.f359a = bArr2;
+                codedInputByteBufferNano.readMessage(this.b);
             }
         }
         return this;

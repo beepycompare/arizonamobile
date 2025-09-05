@@ -1,7 +1,7 @@
 package io.appmetrica.analytics;
 
-import io.appmetrica.analytics.impl.C0581se;
-import io.appmetrica.analytics.impl.Gn;
+import io.appmetrica.analytics.impl.C0685we;
+import io.appmetrica.analytics.impl.Kn;
 import java.util.Currency;
 /* loaded from: classes4.dex */
 public class Revenue {
@@ -14,10 +14,10 @@ public class Revenue {
 
     /* loaded from: classes4.dex */
     public static class Builder {
-        private static final Gn g = new Gn(new C0581se("revenue currency"));
+        private static final Kn g = new Kn(new C0685we("revenue currency"));
 
         /* renamed from: a  reason: collision with root package name */
-        final long f199a;
+        final long f200a;
         final Currency b;
         Integer c;
         String d;
@@ -54,7 +54,7 @@ public class Revenue {
 
         private Builder(long j, Currency currency) {
             g.a(currency);
-            this.f199a = j;
+            this.f200a = j;
             this.b = currency;
         }
     }
@@ -68,7 +68,7 @@ public class Revenue {
         public static class Builder {
 
             /* renamed from: a  reason: collision with root package name */
-            private String f200a;
+            private String f201a;
             private String b;
 
             /* synthetic */ Builder(int i) {
@@ -80,7 +80,7 @@ public class Revenue {
             }
 
             public Builder withData(String str) {
-                this.f200a = str;
+                this.f201a = str;
                 return this;
             }
 
@@ -102,7 +102,7 @@ public class Revenue {
         }
 
         private Receipt(Builder builder) {
-            this.data = builder.f200a;
+            this.data = builder.f201a;
             this.signature = builder.b;
         }
     }
@@ -116,7 +116,7 @@ public class Revenue {
     }
 
     private Revenue(Builder builder) {
-        this.priceMicros = builder.f199a;
+        this.priceMicros = builder.f200a;
         this.currency = builder.b;
         this.quantity = builder.c;
         this.productID = builder.d;

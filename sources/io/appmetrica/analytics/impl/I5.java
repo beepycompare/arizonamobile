@@ -1,26 +1,77 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicBoolean;
 /* loaded from: classes4.dex */
-public final class I5 {
+public final class I5 implements Q9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final PublicLogger f490a;
+    public final V9 f485a;
+    public final List b;
+    public final List c;
+    public final AtomicBoolean d;
 
-    public I5(String str) {
-        this.f490a = LoggerStorage.getOrCreatePublicLogger(str);
+    public I5(V9 v9, List<? extends InterfaceC0196d9> list, List<? extends InterfaceC0196d9> list2, C0476o5 c0476o5) {
+        this.f485a = v9;
+        this.b = list;
+        this.c = list2;
+        Objects.toString(c0476o5);
+        this.d = new AtomicBoolean(true);
     }
 
-    public final int a(int i) {
-        if (i < 100) {
-            this.f490a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be greater than or equal to 100, but was: " + i + ". Default value (100) will be used", new Object[0]);
-            return 100;
-        } else if (i > 10000) {
-            this.f490a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be less than or equal to 10000, but was: " + i + ". Default value (10000) will be used", new Object[0]);
-            return 10000;
-        } else {
-            return i;
+    public final boolean a() {
+        List<InterfaceC0196d9> list = this.c;
+        if (!list.isEmpty() && !list.isEmpty()) {
+            for (InterfaceC0196d9 interfaceC0196d9 : list) {
+                if (!interfaceC0196d9.b()) {
+                    return false;
+                }
+            }
+        }
+        List<InterfaceC0196d9> list2 = this.b;
+        if (list2.isEmpty() || list2.isEmpty()) {
+            return false;
+        }
+        for (InterfaceC0196d9 interfaceC0196d92 : list2) {
+            if (interfaceC0196d92.b()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final void b() {
+        this.d.set(false);
+    }
+
+    public final void c() {
+        this.d.set(true);
+    }
+
+    public final void d() {
+        if (this.d.get()) {
+            List<InterfaceC0196d9> list = this.c;
+            if (!list.isEmpty() && !list.isEmpty()) {
+                for (InterfaceC0196d9 interfaceC0196d9 : list) {
+                    if (!interfaceC0196d9.b()) {
+                        return;
+                    }
+                }
+            }
+            ((C0594sn) this.f485a).c();
+        }
+    }
+
+    public final void e() {
+        if (this.d.get() && a()) {
+            ((C0594sn) this.f485a).c();
+        }
+    }
+
+    public final void f() {
+        if (this.d.get() && a()) {
+            ((C0594sn) this.f485a).b();
         }
     }
 }

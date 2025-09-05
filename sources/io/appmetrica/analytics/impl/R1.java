@@ -1,4 +1,7 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Intent;
 /* loaded from: classes4.dex */
-public final class R1 {
+public interface R1 {
+    void a(Intent intent);
 }

@@ -1,21 +1,54 @@
 package io.appmetrica.analytics.impl;
 
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
-import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
+import android.content.Context;
+import com.google.android.vending.expansion.downloader.Constants;
+import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Locale;
+import java.util.UUID;
+import kotlin.text.StringsKt;
 /* loaded from: classes4.dex */
-public final class Ue implements FunctionWithThrowable {
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
-    public final Object apply(Object obj) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) obj;
-        if (AndroidUtils.isApiAchieved(23)) {
-            return We.a(connectivityManager);
+public final class Ue {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Context f696a;
+    public final uo b;
+    public final vo c;
+
+    public Ue(Context context) {
+        this(context, new uo(), new vo());
+    }
+
+    public final String a(String str) {
+        try {
+            this.c.getClass();
+            if (!vo.a(str)) {
+                this.b.getClass();
+                str = StringsKt.replace$default(UUID.randomUUID().toString(), Constants.FILENAME_SEQUENCE_SEPARATOR, "", false, 4, (Object) null).toLowerCase(Locale.US);
+            }
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f696a, "uuid.dat");
+            if (fileFromSdkStorage != null && str != null) {
+                AbstractC0352jb.a(str, new FileOutputStream(fileFromSdkStorage));
+            }
+            return str;
+        } catch (Throwable unused) {
+            return null;
         }
-        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
-            return (Ve) We.f709a.a(Integer.valueOf(activeNetworkInfo.getType()));
+    }
+
+    public Ue(Context context, uo uoVar, vo voVar) {
+        this.f696a = context;
+        this.b = uoVar;
+        this.c = voVar;
+    }
+
+    public final void a() {
+        File fileFromAppStorage;
+        File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f696a, "uuid.dat");
+        if (fileFromSdkStorage == null || fileFromSdkStorage.exists() || (fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f696a, "uuid.dat")) == null || !fileFromAppStorage.exists()) {
+            return;
         }
-        return Ve.OFFLINE;
+        FileUtils.copyToNullable(fileFromAppStorage, fileFromSdkStorage);
     }
 }

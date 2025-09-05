@@ -47,7 +47,7 @@ public final class MessagingService extends FirebaseMessagingService {
             saveNotificationData(companion, title, body, imageUrl);
         }
         PendingIntent activity = PendingIntent.getActivity(messagingService, 0, new Intent(messagingService, MainEntrench.class), 67108864);
-        NotificationCompat.Builder smallIcon = new NotificationCompat.Builder(messagingService, "Default").setSmallIcon(R.mipmap.ic_launcher);
+        NotificationCompat.Builder smallIcon = new NotificationCompat.Builder(messagingService, "Default").setSmallIcon(R.mipmap.ic_launcher_foreground);
         RemoteMessage.Notification notification2 = message.getNotification();
         NotificationCompat.Builder contentTitle = smallIcon.setContentTitle(notification2 != null ? notification2.getTitle() : null);
         RemoteMessage.Notification notification3 = message.getNotification();

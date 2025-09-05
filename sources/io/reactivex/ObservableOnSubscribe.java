@@ -1,5 +1,5 @@
 package io.reactivex;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public interface ObservableOnSubscribe<T> {
     void subscribe(ObservableEmitter<T> observableEmitter) throws Exception;
 }

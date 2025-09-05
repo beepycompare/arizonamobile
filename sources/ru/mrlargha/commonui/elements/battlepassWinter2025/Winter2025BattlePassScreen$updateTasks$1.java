@@ -19,8 +19,8 @@ import ru.mrlargha.commonui.elements.battlepassWinter2025.data.CommonTaskInfo;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Winter2025BattlePass.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$updateTasks$1", f = "Winter2025BattlePass.kt", i = {2}, l = {893, 897, TypedValues.Custom.TYPE_FLOAT}, m = "invokeSuspend", n = {"commonList"}, s = {"L$0"})
-/* loaded from: classes6.dex */
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$updateTasks$1", f = "Winter2025BattlePass.kt", i = {0, 1, 2}, l = {897, TypedValues.Custom.TYPE_COLOR, TypedValues.Custom.TYPE_REFERENCE}, m = "invokeSuspend", n = {"url", "url", "commonList"}, s = {"L$0", "L$0", "L$0"})
+/* loaded from: classes5.dex */
 public final class Winter2025BattlePassScreen$updateTasks$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
     int label;
@@ -43,69 +43,97 @@ public final class Winter2025BattlePassScreen$updateTasks$1 extends SuspendLambd
         return ((Winter2025BattlePassScreen$updateTasks$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0051, code lost:
-        if (r8 == r0) goto L16;
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0082, code lost:
+        if (r14 == r0) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x007c, code lost:
-        if (r8 == r0) goto L16;
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x00d6, code lost:
+        if (r14 == r0) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x00b8, code lost:
-        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$updateTasks$1.AnonymousClass1(r7.this$0, r8, null), r7) == r0) goto L16;
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x0112, code lost:
+        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$updateTasks$1.AnonymousClass1(r13.this$0, r14, null), r13) == r0) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x00ba, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x0114, code lost:
         return r0;
      */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0099  */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         List list;
+        boolean z;
         WinterBattlePassApi winterBattlePassApi;
-        List list2;
         WinterBattlePassApi winterBattlePassApi2;
+        String str;
+        int i;
+        String token;
+        List list2;
+        boolean z2;
+        WinterBattlePassApi winterBattlePassApi3;
+        WinterBattlePassApi winterBattlePassApi4;
+        String str2;
+        int i2;
+        String token2;
         List list3;
         List list4;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.label;
-        if (i == 0) {
+        int i3 = this.label;
+        if (i3 == 0) {
             ResultKt.throwOnFailure(obj);
             list = this.this$0._taskUsualData;
             if (list.isEmpty()) {
+                z = this.this$0.isArizonaType;
+                String str3 = z ? "battlepass_mission_default" : "battlepass_task_everyday";
                 winterBattlePassApi = this.this$0.api;
                 if (winterBattlePassApi == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("api");
-                    winterBattlePassApi = null;
+                    winterBattlePassApi2 = null;
+                } else {
+                    winterBattlePassApi2 = winterBattlePassApi;
                 }
+                str = this.this$0.project;
+                i = this.this$0.serverId;
+                token = this.this$0.getToken();
+                this.L$0 = SpillingKt.nullOutSpilledVariable(str3);
                 this.label = 1;
-                obj = winterBattlePassApi.getCommonTasks(this);
+                obj = winterBattlePassApi2.getCommonTasks(token, str, i, str3, this);
             }
             list2 = this.this$0._taskPremData;
             if (list2.isEmpty()) {
-                winterBattlePassApi2 = this.this$0.api;
-                if (winterBattlePassApi2 == null) {
+                z2 = this.this$0.isArizonaType;
+                String str4 = z2 ? "battlepass_mission_premium" : "battlepass_task_premium";
+                winterBattlePassApi3 = this.this$0.api;
+                if (winterBattlePassApi3 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("api");
-                    winterBattlePassApi2 = null;
+                    winterBattlePassApi4 = null;
+                } else {
+                    winterBattlePassApi4 = winterBattlePassApi3;
                 }
+                str2 = this.this$0.project;
+                i2 = this.this$0.serverId;
+                token2 = this.this$0.getToken();
+                this.L$0 = SpillingKt.nullOutSpilledVariable(str4);
                 this.label = 2;
-                obj = winterBattlePassApi2.getPremiumTasks(this);
+                obj = winterBattlePassApi4.getPremiumTasks(token2, str2, i2, str4, this);
             }
             list3 = this.this$0._taskUsualData;
             list4 = this.this$0._taskPremData;
             List plus = CollectionsKt.plus((Collection) list3, (Iterable) list4);
             this.L$0 = SpillingKt.nullOutSpilledVariable(plus);
             this.label = 3;
-        } else if (i == 1) {
+        } else if (i3 == 1) {
+            String str5 = (String) this.L$0;
             ResultKt.throwOnFailure(obj);
-        } else if (i != 2) {
-            if (i == 3) {
+        } else if (i3 != 2) {
+            if (i3 == 3) {
                 List list5 = (List) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 return Unit.INSTANCE;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
+            String str6 = (String) this.L$0;
             ResultKt.throwOnFailure(obj);
             this.this$0._taskPremData = (List) obj;
             list3 = this.this$0._taskUsualData;
@@ -130,7 +158,7 @@ public final class Winter2025BattlePassScreen$updateTasks$1 extends SuspendLambd
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
     @DebugMetadata(c = "ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$updateTasks$1$1", f = "Winter2025BattlePass.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$updateTasks$1$1  reason: invalid class name */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes5.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<CommonTaskInfo> $commonList;
         int label;

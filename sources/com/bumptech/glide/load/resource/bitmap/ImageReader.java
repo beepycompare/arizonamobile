@@ -17,13 +17,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.List;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
-interface ImageReader {
+public interface ImageReader {
     Bitmap decodeBitmap(BitmapFactory.Options options) throws IOException;
 
     int getImageOrientation() throws IOException;
 
     ImageHeaderParser.ImageType getImageType() throws IOException;
+
+    boolean hasJpegMpf() throws IOException;
 
     void stopGrowingBuffers();
 
@@ -46,8 +49,7 @@ interface ImageReader {
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public Bitmap decodeBitmap(BitmapFactory.Options options) {
-            byte[] bArr = this.bytes;
-            return BitmapFactory.decodeByteArray(bArr, 0, bArr.length, options);
+            return GlideBitmapFactory.decodeByteArray(this.bytes, options, this);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
@@ -58,6 +60,11 @@ interface ImageReader {
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public int getImageOrientation() throws IOException {
             return ImageHeaderParserUtils.getOrientation(this.parsers, ByteBuffer.wrap(this.bytes), this.byteArrayPool);
+        }
+
+        @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
+        public boolean hasJpegMpf() throws IOException {
+            return ImageHeaderParserUtils.hasJpegMpf(this.parsers, ByteBuffer.wrap(this.bytes), this.byteArrayPool);
         }
     }
 
@@ -84,7 +91,7 @@ interface ImageReader {
             try {
                 RecyclableBufferedInputStream recyclableBufferedInputStream2 = new RecyclableBufferedInputStream(new FileInputStream(this.file), this.byteArrayPool);
                 try {
-                    Bitmap decodeStream = BitmapFactory.decodeStream(recyclableBufferedInputStream2, null, options);
+                    Bitmap decodeStream = GlideBitmapFactory.decodeStream(recyclableBufferedInputStream2, options, this);
                     try {
                         recyclableBufferedInputStream2.close();
                     } catch (IOException unused) {
@@ -163,6 +170,35 @@ interface ImageReader {
                 th = th3;
             }
         }
+
+        @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
+        public boolean hasJpegMpf() throws IOException {
+            FileInputStream fileInputStream;
+            Throwable th;
+            try {
+                fileInputStream = new FileInputStream(this.file);
+                try {
+                    boolean hasJpegMpf = ImageHeaderParserUtils.hasJpegMpf(this.parsers, fileInputStream, this.byteArrayPool);
+                    try {
+                        fileInputStream.close();
+                    } catch (IOException unused) {
+                    }
+                    return hasJpegMpf;
+                } catch (Throwable th2) {
+                    th = th2;
+                    if (fileInputStream != null) {
+                        try {
+                            fileInputStream.close();
+                        } catch (IOException unused2) {
+                        }
+                    }
+                    throw th;
+                }
+            } catch (Throwable th3) {
+                fileInputStream = null;
+                th = th3;
+            }
+        }
     }
 
     /* loaded from: classes3.dex */
@@ -184,7 +220,7 @@ interface ImageReader {
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public Bitmap decodeBitmap(BitmapFactory.Options options) {
-            return BitmapFactory.decodeStream(stream(), null, options);
+            return GlideBitmapFactory.decodeStream(stream(), options, this);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
@@ -195,6 +231,11 @@ interface ImageReader {
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public int getImageOrientation() throws IOException {
             return ImageHeaderParserUtils.getOrientation(this.parsers, ByteBufferUtil.rewind(this.buffer), this.byteArrayPool);
+        }
+
+        @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
+        public boolean hasJpegMpf() throws IOException {
+            return ImageHeaderParserUtils.hasJpegMpf(this.parsers, ByteBufferUtil.rewind(this.buffer), this.byteArrayPool);
         }
 
         private InputStream stream() {
@@ -217,7 +258,7 @@ interface ImageReader {
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public Bitmap decodeBitmap(BitmapFactory.Options options) throws IOException {
-            return BitmapFactory.decodeStream(this.dataRewinder.rewindAndGet(), null, options);
+            return GlideBitmapFactory.decodeStream(this.dataRewinder.rewindAndGet(), options, this);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
@@ -228,6 +269,11 @@ interface ImageReader {
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public int getImageOrientation() throws IOException {
             return ImageHeaderParserUtils.getOrientation(this.parsers, this.dataRewinder.rewindAndGet(), this.byteArrayPool);
+        }
+
+        @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
+        public boolean hasJpegMpf() throws IOException {
+            return ImageHeaderParserUtils.hasJpegMpf(this.parsers, this.dataRewinder.rewindAndGet(), this.byteArrayPool);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
@@ -255,7 +301,7 @@ interface ImageReader {
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public Bitmap decodeBitmap(BitmapFactory.Options options) throws IOException {
-            return BitmapFactory.decodeFileDescriptor(this.dataRewinder.rewindAndGet().getFileDescriptor(), null, options);
+            return GlideBitmapFactory.decodeFileDescriptor(this.dataRewinder.rewindAndGet().getFileDescriptor(), options, this);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
@@ -266,6 +312,11 @@ interface ImageReader {
         @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
         public int getImageOrientation() throws IOException {
             return ImageHeaderParserUtils.getOrientation(this.parsers, this.dataRewinder, this.byteArrayPool);
+        }
+
+        @Override // com.bumptech.glide.load.resource.bitmap.ImageReader
+        public boolean hasJpegMpf() throws IOException {
+            return ImageHeaderParserUtils.hasJpegMpf(this.parsers, this.dataRewinder, this.byteArrayPool);
         }
     }
 }

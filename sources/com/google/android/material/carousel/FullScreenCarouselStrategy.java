@@ -4,10 +4,9 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 /* loaded from: classes4.dex */
 public class FullScreenCarouselStrategy extends CarouselStrategy {
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.material.carousel.CarouselStrategy
     public KeylineState onFirstChildMeasuredWithMargins(Carousel carousel, View view) {
-        float containerHeight;
+        int containerHeight;
         int i;
         int i2;
         RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) view.getLayoutParams();
@@ -22,6 +21,6 @@ public class FullScreenCarouselStrategy extends CarouselStrategy {
         }
         float f = i + i2;
         float f2 = containerHeight;
-        return CarouselStrategyHelper.createLeftAlignedKeylineState(view.getContext(), f, f2, new Arrangement(0, 0.0f, 0.0f, 0.0f, 0, 0.0f, 0, Math.min(f2 + f, f2), 1, f2));
+        return CarouselStrategyHelper.createLeftAlignedKeylineState(view.getContext(), f, containerHeight, new Arrangement(0, 0.0f, 0.0f, 0.0f, 0, 0.0f, 0, Math.min(f2 + f, f2), 1, f2));
     }
 }

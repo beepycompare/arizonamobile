@@ -101,7 +101,7 @@ public final class UIElementID {
     public static final UIElementID ARIZONA_FISHING = new UIElementID("ARIZONA_FISHING", 78, 81, ProjectType.ARIZONA);
     public static final UIElementID ARIZONA_NEW_CONTAINER = new UIElementID("ARIZONA_NEW_CONTAINER", 79, 82, ProjectType.COMMON);
     public static final UIElementID ARIZONA_BANNERS = new UIElementID("ARIZONA_BANNERS", 80, 83, ProjectType.COMMON);
-    public static final UIElementID ARIZONA_BUSINESS = new UIElementID("ARIZONA_BUSINESS", 81, 84, ProjectType.ARIZONA);
+    public static final UIElementID ARIZONA_BUSINESS = new UIElementID("ARIZONA_BUSINESS", 81, 84, ProjectType.COMMON);
     public static final UIElementID TRAIN_JOB = new UIElementID("TRAIN_JOB", 82, 85, ProjectType.RODINA);
     public static final UIElementID COLLECTOR_JOB = new UIElementID("COLLECTOR_JOB", 83, 86, ProjectType.RODINA);
     public static final UIElementID HINTS = new UIElementID("HINTS", 84, 87, ProjectType.COMMON);

@@ -1,6 +1,5 @@
 package androidx.privacysandbox.ads.adservices.java.appsetid;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.privacysandbox.ads.adservices.appsetid.AppSetId;
 import androidx.privacysandbox.ads.adservices.appsetid.AppSetIdManager;
 import androidx.privacysandbox.ads.adservices.java.appsetid.AppSetIdManagerFutures;
@@ -15,7 +14,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: AppSetIdManagerFutures.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "Landroidx/privacysandbox/ads/adservices/appsetid/AppSetId;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.privacysandbox.ads.adservices.java.appsetid.AppSetIdManagerFutures$Api33Ext4JavaImpl$getAppSetIdAsync$1", f = "AppSetIdManagerFutures.kt", i = {}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_EDITOR_ABSOLUTEX}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.privacysandbox.ads.adservices.java.appsetid.AppSetIdManagerFutures$Api33Ext4JavaImpl$getAppSetIdAsync$1", f = "AppSetIdManagerFutures.kt", i = {}, l = {49}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes3.dex */
 final class AppSetIdManagerFutures$Api33Ext4JavaImpl$getAppSetIdAsync$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super AppSetId>, Object> {
     int label;

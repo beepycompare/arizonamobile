@@ -12,6 +12,7 @@ import android.widget.SpinnerAdapter;
 import androidx.appcompat.R;
 import androidx.appcompat.view.ActionMode;
 import androidx.fragment.app.FragmentTransaction;
+import com.google.android.material.navigation.NavigationBarView;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 /* loaded from: classes.dex */
@@ -335,7 +336,7 @@ public abstract class ActionBar {
 
         public LayoutParams(int i, int i2) {
             super(i, i2);
-            this.gravity = 8388627;
+            this.gravity = NavigationBarView.ITEM_GRAVITY_START_CENTER;
         }
 
         public LayoutParams(int i, int i2, int i3) {

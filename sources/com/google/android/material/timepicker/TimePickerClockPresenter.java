@@ -65,7 +65,7 @@ class TimePickerClockPresenter implements ClockHandView.OnRotateListener, TimePi
 
     @Override // com.google.android.material.timepicker.ClockHandView.OnRotateListener
     public void onRotate(float f, boolean z) {
-        if (this.broadcasting) {
+        if (this.broadcasting || z) {
             return;
         }
         int i = this.time.hour;
@@ -84,9 +84,6 @@ class TimePickerClockPresenter implements ClockHandView.OnRotateListener, TimePi
             }
             this.time.setHour(i3);
             this.hourRotation = getHourRotation();
-        }
-        if (z) {
-            return;
         }
         updateTime();
         performHapticFeedback(i, i2);
@@ -171,6 +168,7 @@ class TimePickerClockPresenter implements ClockHandView.OnRotateListener, TimePi
 
     private void updateValues() {
         updateValues(HOUR_CLOCK_VALUES, TimeModel.NUMBER_FORMAT);
+        updateValues(HOUR_CLOCK_24_VALUES, TimeModel.NUMBER_FORMAT);
         updateValues(MINUTE_CLOCK_VALUES, TimeModel.ZERO_LEADING_NUMBER_FORMAT);
     }
 

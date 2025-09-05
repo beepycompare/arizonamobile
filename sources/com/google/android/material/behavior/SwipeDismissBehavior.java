@@ -82,7 +82,7 @@ public class SwipeDismissBehavior<V extends View> extends CoordinatorLayout.Beha
                 z = false;
             }
             if (SwipeDismissBehavior.this.viewDragHelper.settleCapturedViewAt(i, view.getTop())) {
-                ViewCompat.postOnAnimation(view, new SettleRunnable(view, z));
+                view.postOnAnimation(new SettleRunnable(view, z));
             } else if (!z || SwipeDismissBehavior.this.listener == null) {
             } else {
                 SwipeDismissBehavior.this.listener.onDismiss(view);
@@ -94,7 +94,7 @@ public class SwipeDismissBehavior<V extends View> extends CoordinatorLayout.Beha
             if (i == 0) {
                 return Math.abs(view.getLeft() - this.originalCapturedViewLeft) >= Math.round(((float) view.getWidth()) * SwipeDismissBehavior.this.dragDismissThreshold);
             }
-            boolean z = ViewCompat.getLayoutDirection(view) == 1;
+            boolean z = view.getLayoutDirection() == 1;
             if (SwipeDismissBehavior.this.swipeDirection == 2) {
                 return true;
             }
@@ -121,7 +121,7 @@ public class SwipeDismissBehavior<V extends View> extends CoordinatorLayout.Beha
             int width;
             int width2;
             int width3;
-            boolean z = ViewCompat.getLayoutDirection(view) == 1;
+            boolean z = view.getLayoutDirection() == 1;
             if (SwipeDismissBehavior.this.swipeDirection == 0) {
                 if (z) {
                     width = this.originalCapturedViewLeft - view.getWidth();
@@ -212,8 +212,8 @@ public class SwipeDismissBehavior<V extends View> extends CoordinatorLayout.Beha
     @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public boolean onLayoutChild(CoordinatorLayout coordinatorLayout, V v, int i) {
         boolean onLayoutChild = super.onLayoutChild(coordinatorLayout, v, i);
-        if (ViewCompat.getImportantForAccessibility(v) == 0) {
-            ViewCompat.setImportantForAccessibility(v, 1);
+        if (v.getImportantForAccessibility() == 0) {
+            v.setImportantForAccessibility(1);
             updateAccessibilityActions(v);
         }
         return onLayoutChild;
@@ -275,7 +275,7 @@ public class SwipeDismissBehavior<V extends View> extends CoordinatorLayout.Beha
         @Override // java.lang.Runnable
         public void run() {
             if (SwipeDismissBehavior.this.viewDragHelper != null && SwipeDismissBehavior.this.viewDragHelper.continueSettling(true)) {
-                ViewCompat.postOnAnimation(this.view, this);
+                this.view.postOnAnimation(this);
             } else if (!this.dismiss || SwipeDismissBehavior.this.listener == null) {
             } else {
                 SwipeDismissBehavior.this.listener.onDismiss(this.view);
@@ -290,7 +290,7 @@ public class SwipeDismissBehavior<V extends View> extends CoordinatorLayout.Beha
                 @Override // androidx.core.view.accessibility.AccessibilityViewCommand
                 public boolean perform(View view2, AccessibilityViewCommand.CommandArguments commandArguments) {
                     if (SwipeDismissBehavior.this.canSwipeDismissView(view2)) {
-                        boolean z = ViewCompat.getLayoutDirection(view2) == 1;
+                        boolean z = view2.getLayoutDirection() == 1;
                         ViewCompat.offsetLeftAndRight(view2, (!(SwipeDismissBehavior.this.swipeDirection == 0 && z) && (SwipeDismissBehavior.this.swipeDirection != 1 || z)) ? view2.getWidth() : -view2.getWidth());
                         view2.setAlpha(0.0f);
                         if (SwipeDismissBehavior.this.listener != null) {

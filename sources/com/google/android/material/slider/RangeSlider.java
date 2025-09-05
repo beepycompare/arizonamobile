@@ -10,6 +10,7 @@ import android.util.AttributeSet;
 import android.view.AbsSavedState;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
 import com.google.android.material.R;
 import com.google.android.material.internal.ThemeEnforcement;
 import java.util.ArrayList;
@@ -165,13 +166,58 @@ public class RangeSlider extends BaseSlider<RangeSlider, OnChangeListener, OnSli
     }
 
     @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ int getTickVisibilityMode() {
+        return super.getTickVisibilityMode();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
     public /* bridge */ /* synthetic */ ColorStateList getTrackActiveTintList() {
         return super.getTrackActiveTintList();
     }
 
     @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ int getTrackCornerSize() {
+        return super.getTrackCornerSize();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
     public /* bridge */ /* synthetic */ int getTrackHeight() {
         return super.getTrackHeight();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ ColorStateList getTrackIconActiveColor() {
+        return super.getTrackIconActiveColor();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ Drawable getTrackIconActiveEnd() {
+        return super.getTrackIconActiveEnd();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ Drawable getTrackIconActiveStart() {
+        return super.getTrackIconActiveStart();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ ColorStateList getTrackIconInactiveColor() {
+        return super.getTrackIconInactiveColor();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ Drawable getTrackIconInactiveEnd() {
+        return super.getTrackIconInactiveEnd();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ Drawable getTrackIconInactiveStart() {
+        return super.getTrackIconInactiveStart();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ int getTrackIconSize() {
+        return super.getTrackIconSize();
     }
 
     @Override // com.google.android.material.slider.BaseSlider
@@ -220,8 +266,23 @@ public class RangeSlider extends BaseSlider<RangeSlider, OnChangeListener, OnSli
     }
 
     @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ boolean isCentered() {
+        return super.isCentered();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
     public /* bridge */ /* synthetic */ boolean isTickVisible() {
         return super.isTickVisible();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ boolean isVertical() {
+        return super.isVertical();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider, android.view.View
+    public /* bridge */ /* synthetic */ void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
     }
 
     @Override // com.google.android.material.slider.BaseSlider, android.view.View, android.view.KeyEvent.Callback
@@ -239,6 +300,11 @@ public class RangeSlider extends BaseSlider<RangeSlider, OnChangeListener, OnSli
         return super.onTouchEvent(motionEvent);
     }
 
+    @Override // com.google.android.material.slider.BaseSlider, android.view.View
+    public /* bridge */ /* synthetic */ void onVisibilityAggregated(boolean z) {
+        super.onVisibilityAggregated(z);
+    }
+
     @Override // com.google.android.material.slider.BaseSlider
     public /* bridge */ /* synthetic */ void removeOnChangeListener(OnChangeListener onChangeListener) {
         super.removeOnChangeListener(onChangeListener);
@@ -247,6 +313,16 @@ public class RangeSlider extends BaseSlider<RangeSlider, OnChangeListener, OnSli
     @Override // com.google.android.material.slider.BaseSlider
     public /* bridge */ /* synthetic */ void removeOnSliderTouchListener(OnSliderTouchListener onSliderTouchListener) {
         super.removeOnSliderTouchListener(onSliderTouchListener);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void scheduleTooltipTimeout() {
+        super.scheduleTooltipTimeout();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setCentered(boolean z) {
+        super.setCentered(z);
     }
 
     @Override // com.google.android.material.slider.BaseSlider, android.view.View
@@ -282,6 +358,11 @@ public class RangeSlider extends BaseSlider<RangeSlider, OnChangeListener, OnSli
     @Override // com.google.android.material.slider.BaseSlider
     public /* bridge */ /* synthetic */ void setLabelFormatter(LabelFormatter labelFormatter) {
         super.setLabelFormatter(labelFormatter);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setOrientation(int i) {
+        super.setOrientation(i);
     }
 
     @Override // com.google.android.material.slider.BaseSlider
@@ -385,6 +466,12 @@ public class RangeSlider extends BaseSlider<RangeSlider, OnChangeListener, OnSli
     }
 
     @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setTickVisibilityMode(int i) {
+        super.setTickVisibilityMode(i);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    @Deprecated
     public /* bridge */ /* synthetic */ void setTickVisible(boolean z) {
         super.setTickVisible(z);
     }
@@ -395,8 +482,68 @@ public class RangeSlider extends BaseSlider<RangeSlider, OnChangeListener, OnSli
     }
 
     @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setTrackCornerSize(int i) {
+        super.setTrackCornerSize(i);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
     public /* bridge */ /* synthetic */ void setTrackHeight(int i) {
         super.setTrackHeight(i);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setTrackIconActiveColor(ColorStateList colorStateList) {
+        super.setTrackIconActiveColor(colorStateList);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setTrackIconActiveEnd(int i) {
+        super.setTrackIconActiveEnd(i);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setTrackIconActiveEnd(Drawable drawable) {
+        super.setTrackIconActiveEnd(drawable);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setTrackIconActiveStart(int i) {
+        super.setTrackIconActiveStart(i);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setTrackIconActiveStart(Drawable drawable) {
+        super.setTrackIconActiveStart(drawable);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setTrackIconInactiveColor(ColorStateList colorStateList) {
+        super.setTrackIconInactiveColor(colorStateList);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setTrackIconInactiveEnd(int i) {
+        super.setTrackIconInactiveEnd(i);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setTrackIconInactiveEnd(Drawable drawable) {
+        super.setTrackIconInactiveEnd(drawable);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setTrackIconInactiveStart(int i) {
+        super.setTrackIconInactiveStart(i);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setTrackIconInactiveStart(Drawable drawable) {
+        super.setTrackIconInactiveStart(drawable);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setTrackIconSize(int i) {
+        super.setTrackIconSize(i);
     }
 
     @Override // com.google.android.material.slider.BaseSlider

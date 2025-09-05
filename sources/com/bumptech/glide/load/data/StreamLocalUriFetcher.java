@@ -2,8 +2,10 @@ package com.bumptech.glide.load.data;
 
 import android.content.ContentResolver;
 import android.content.UriMatcher;
+import android.content.res.AssetFileDescriptor;
 import android.net.Uri;
 import android.provider.ContactsContract;
+import com.bumptech.glide.load.data.mediastore.MediaStoreUtil;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,6 +33,10 @@ public class StreamLocalUriFetcher extends LocalUriFetcher<InputStream> {
         super(contentResolver, uri);
     }
 
+    public StreamLocalUriFetcher(ContentResolver contentResolver, Uri uri, boolean z) {
+        super(contentResolver, uri, z);
+    }
+
     /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // com.bumptech.glide.load.data.LocalUriFetcher
@@ -49,6 +55,9 @@ public class StreamLocalUriFetcher extends LocalUriFetcher<InputStream> {
                 return openContactPhotoInputStream(contentResolver, uri);
             }
             if (match != 5) {
+                if (this.useMediaStoreApisIfAvailable && MediaStoreUtil.isMediaStoreUri(uri) && MediaStoreUtil.isMediaStoreOpenFileApisAvailable()) {
+                    return openMediaStoreFileInputStream(uri, contentResolver);
+                }
                 return contentResolver.openInputStream(uri);
             }
         }
@@ -61,6 +70,22 @@ public class StreamLocalUriFetcher extends LocalUriFetcher<InputStream> {
 
     private InputStream openContactPhotoInputStream(ContentResolver contentResolver, Uri uri) {
         return ContactsContract.Contacts.openContactPhotoInputStream(contentResolver, uri, true);
+    }
+
+    private InputStream openMediaStoreFileInputStream(Uri uri, ContentResolver contentResolver) throws FileNotFoundException {
+        AssetFileDescriptor openAssetFileDescriptor = MediaStoreUtil.openAssetFileDescriptor(uri, contentResolver);
+        if (openAssetFileDescriptor == null) {
+            throw new FileNotFoundException("FileDescriptor is null for: " + uri);
+        }
+        try {
+            return openAssetFileDescriptor.createInputStream();
+        } catch (IOException e) {
+            try {
+                openAssetFileDescriptor.close();
+            } catch (Exception unused) {
+            }
+            throw ((FileNotFoundException) new FileNotFoundException("Unable to create stream").initCause(e));
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

@@ -44,7 +44,7 @@ public class BottomSheetDialog extends AppCompatDialog {
 
     public BottomSheetDialog(Context context) {
         this(context, 0);
-        this.edgeToEdgeEnabled = getContext().getTheme().obtainStyledAttributes(new int[]{R.attr.enableEdgeToEdge}).getBoolean(0, false);
+        initialize();
     }
 
     public BottomSheetDialog(Context context, int i) {
@@ -64,7 +64,7 @@ public class BottomSheetDialog extends AppCompatDialog {
             }
         };
         supportRequestWindowFeature(1);
-        this.edgeToEdgeEnabled = getContext().getTheme().obtainStyledAttributes(new int[]{R.attr.enableEdgeToEdge}).getBoolean(0, false);
+        initialize();
     }
 
     protected BottomSheetDialog(Context context, boolean z, DialogInterface.OnCancelListener onCancelListener) {
@@ -85,7 +85,13 @@ public class BottomSheetDialog extends AppCompatDialog {
         };
         supportRequestWindowFeature(1);
         this.cancelable = z;
-        this.edgeToEdgeEnabled = getContext().getTheme().obtainStyledAttributes(new int[]{R.attr.enableEdgeToEdge}).getBoolean(0, false);
+        initialize();
+    }
+
+    private void initialize() {
+        TypedArray obtainStyledAttributes = getContext().getTheme().obtainStyledAttributes(new int[]{R.attr.enableEdgeToEdge});
+        this.edgeToEdgeEnabled = obtainStyledAttributes.getBoolean(0, false);
+        obtainStyledAttributes.recycle();
     }
 
     @Override // androidx.appcompat.app.AppCompatDialog, androidx.activity.ComponentDialog, android.app.Dialog
@@ -238,7 +244,7 @@ public class BottomSheetDialog extends AppCompatDialog {
             view = getLayoutInflater().inflate(i, (ViewGroup) coordinatorLayout, false);
         }
         if (this.edgeToEdgeEnabled) {
-            ViewCompat.setOnApplyWindowInsetsListener(this.bottomSheet, new OnApplyWindowInsetsListener() { // from class: com.google.android.material.bottomsheet.BottomSheetDialog.1
+            ViewCompat.setOnApplyWindowInsetsListener(this.container, new OnApplyWindowInsetsListener() { // from class: com.google.android.material.bottomsheet.BottomSheetDialog.1
                 @Override // androidx.core.view.OnApplyWindowInsetsListener
                 public WindowInsetsCompat onApplyWindowInsets(View view2, WindowInsetsCompat windowInsetsCompat) {
                     if (BottomSheetDialog.this.edgeToEdgeCallback != null) {
@@ -349,7 +355,7 @@ public class BottomSheetDialog extends AppCompatDialog {
             if (materialShapeDrawable != null) {
                 backgroundTintList = materialShapeDrawable.getFillColor();
             } else {
-                backgroundTintList = ViewCompat.getBackgroundTintList(view);
+                backgroundTintList = view.getBackgroundTintList();
             }
             if (backgroundTintList != null) {
                 this.lightBottomSheet = Boolean.valueOf(MaterialColors.isColorLight(backgroundTintList.getDefaultColor()));

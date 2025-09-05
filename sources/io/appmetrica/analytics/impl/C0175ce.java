@@ -1,14 +1,16 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashSource;
 /* renamed from: io.appmetrica.analytics.impl.ce  reason: case insensitive filesystem */
 /* loaded from: classes4.dex */
 public final class C0175ce {
 
     /* renamed from: a  reason: collision with root package name */
-    public final B0 f811a;
-    public final EnumC0728yb b;
+    public final NativeCrashSource f820a;
+    public final String b;
 
-    public C0175ce(B0 b0, EnumC0728yb enumC0728yb) {
-        this.f811a = b0;
-        this.b = enumC0728yb;
+    public C0175ce(NativeCrashSource nativeCrashSource, String str) {
+        this.f820a = nativeCrashSource;
+        this.b = str;
     }
 }

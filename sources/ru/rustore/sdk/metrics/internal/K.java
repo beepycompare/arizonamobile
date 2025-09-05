@@ -4,17 +4,17 @@ import java.util.UUID;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
 import ru.rustore.sdk.metrics.MetricsEvent;
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public final class K {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0836t f1423a;
+    public final C0840t f1428a;
     public final c0 b;
 
-    public K(C0836t metricsEventSerializer, c0 uuidFactory) {
+    public K(C0840t metricsEventSerializer, c0 uuidFactory) {
         Intrinsics.checkNotNullParameter(metricsEventSerializer, "metricsEventSerializer");
         Intrinsics.checkNotNullParameter(uuidFactory, "uuidFactory");
-        this.f1423a = metricsEventSerializer;
+        this.f1428a = metricsEventSerializer;
         this.b = uuidFactory;
     }
 
@@ -24,8 +24,8 @@ public final class K {
         String value = UUID.randomUUID().toString();
         Intrinsics.checkNotNullExpressionValue(value, "randomUUID().toString()");
         Intrinsics.checkNotNullParameter(value, "value");
-        this.f1423a.getClass();
-        byte[] bytes = C0836t.a(metricsEvent).getBytes(Charsets.UTF_8);
+        this.f1428a.getClass();
+        byte[] bytes = C0840t.a(metricsEvent).getBytes(Charsets.UTF_8);
         Intrinsics.checkNotNullExpressionValue(bytes, "this as java.lang.String).getBytes(charset)");
         return new J(value, bytes);
     }

@@ -3,9 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class H4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f469a;
+    public boolean f467a = I4.f484a;
+    public boolean b = I4.b;
+    public boolean c = I4.c;
+    public boolean d = I4.d;
+    public boolean e = I4.e;
+    public Boolean f = null;
 
-    public H4(int i) {
-        this.f469a = i;
+    public final J4 a() {
+        return new J4(this);
     }
 }

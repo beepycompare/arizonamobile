@@ -184,9 +184,9 @@ class TransitionUtils {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static RectF getLocationOnScreen(View view) {
+    public static RectF getLocationInWindow(View view) {
         int[] iArr = new int[2];
-        view.getLocationOnScreen(iArr);
+        view.getLocationInWindow(iArr);
         int i = iArr[0];
         int i2 = iArr[1];
         return new RectF(i, i2, view.getWidth() + i, view.getHeight() + i2);

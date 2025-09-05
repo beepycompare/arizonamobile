@@ -261,13 +261,13 @@ public class FontResourcesParserCompat {
             }
             FontRequest fontRequest = new FontRequest(str, str2, string, list, string2, string3);
             if (obtainAttributes != null) {
-                UByte$$ExternalSyntheticBackport0.m9138m((Object) obtainAttributes);
+                UByte$$ExternalSyntheticBackport0.m9157m((Object) obtainAttributes);
             }
             return fontRequest;
         } catch (Throwable th) {
             if (obtainAttributes != null) {
                 try {
-                    UByte$$ExternalSyntheticBackport0.m9138m((Object) obtainAttributes);
+                    UByte$$ExternalSyntheticBackport0.m9157m((Object) obtainAttributes);
                 } catch (Throwable th2) {
                     th.addSuppressed(th2);
                 }

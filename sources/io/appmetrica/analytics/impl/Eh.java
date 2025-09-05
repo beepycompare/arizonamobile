@@ -1,58 +1,70 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
-import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
-import org.json.JSONObject;
+import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
+import java.util.Map;
 /* loaded from: classes4.dex */
-public final class Eh extends AbstractC0358jh {
-    public final Jf b;
-    public final zo c;
-    public final SafePackageManager d;
-    public final TimeProvider e;
+public final class Eh extends AbstractC0399l6 {
+    public final C0651v5 b;
+    public final Dh c;
+    public final C0139b4 d;
 
-    public Eh(C0572s5 c0572s5) {
-        this(c0572s5, c0572s5.t(), Ka.j().s(), new SafePackageManager(), new SystemTimeProvider());
+    public Eh(C0651v5 c0651v5, Dh dh) {
+        this(c0651v5, dh, new C0139b4());
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0358jh
-    public final boolean a(C0399l6 c0399l6) {
-        C0399l6 a2;
-        C0572s5 c0572s5 = this.f925a;
-        if (this.c.d()) {
-            return false;
+    @Override // io.appmetrica.analytics.impl.AbstractC0399l6, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig.ComponentLoader, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig.RequestConfigLoader
+    /* renamed from: b */
+    public final Gh load(C0373k6 c0373k6) {
+        Gh gh = (Gh) super.load(c0373k6);
+        gh.m = ((Bh) c0373k6.componentArguments).f368a;
+        gh.r = this.b.t.a();
+        gh.w = this.b.q.a();
+        Bh bh = (Bh) c0373k6.componentArguments;
+        gh.d = bh.b;
+        gh.e = bh.c;
+        gh.f = bh.d;
+        gh.i = bh.e;
+        gh.g = bh.f;
+        gh.h = bh.g;
+        Boolean valueOf = Boolean.valueOf(bh.h);
+        Dh dh = this.c;
+        gh.j = valueOf;
+        gh.k = dh;
+        Bh bh2 = (Bh) c0373k6.componentArguments;
+        gh.v = bh2.j;
+        C0493om c0493om = c0373k6.f945a;
+        J4 j4 = c0493om.n;
+        gh.n = j4.f505a;
+        Re re = c0493om.s;
+        if (re != null) {
+            gh.s = re.f651a;
+            gh.t = re.b;
         }
-        if (((Ch) c0572s5.k.a()).e) {
-            a2 = C0399l6.a(c0399l6, EnumC0728yb.EVENT_TYPE_APP_UPDATE);
-        } else {
-            a2 = C0399l6.a(c0399l6, EnumC0728yb.EVENT_TYPE_INIT);
-        }
-        JSONObject jSONObject = new JSONObject();
-        try {
-            jSONObject.put("appInstaller", (String) WrapUtils.getOrDefault(this.d.getInstallerPackageName(c0572s5.f1054a, c0572s5.b.f949a), ""));
-            Jf jf = this.b;
-            jf.h.a(jf.f935a);
-            jSONObject.put("preloadInfo", ((Gf) jf.c()).b());
-        } catch (Throwable unused) {
-        }
-        a2.setValue(jSONObject.toString());
-        H9 h9 = c0572s5.n;
-        h9.a(a2, Xk.a(h9.c.b(a2), a2.i));
-        zo zoVar = this.c;
-        synchronized (zoVar) {
-            Ao ao = zoVar.f1187a;
-            ao.a(ao.a().put("init_event_done", true));
-        }
-        this.c.a(this.e.currentTimeMillis());
-        return false;
+        gh.o = j4.b;
+        gh.q = c0493om.e;
+        gh.p = c0493om.k;
+        C0139b4 c0139b4 = this.d;
+        Map<String, String> map = bh2.i;
+        Y3 e = Na.F.e();
+        c0139b4.getClass();
+        gh.u = C0139b4.a(map, c0493om, e);
+        gh.x = this.b.v.e.keySet();
+        return gh;
     }
 
-    public Eh(C0572s5 c0572s5, zo zoVar, Jf jf, SafePackageManager safePackageManager, SystemTimeProvider systemTimeProvider) {
-        super(c0572s5);
-        this.c = zoVar;
-        this.b = jf;
-        this.d = safePackageManager;
-        this.e = systemTimeProvider;
+    @Override // io.appmetrica.analytics.networktasks.internal.BaseRequestConfig.ComponentLoader
+    public final BaseRequestConfig createBlankConfig() {
+        return new Gh(this.b);
+    }
+
+    public Eh(C0651v5 c0651v5, Dh dh, C0139b4 c0139b4) {
+        super(c0651v5.getContext(), c0651v5.b().c());
+        this.b = c0651v5;
+        this.c = dh;
+        this.d = c0139b4;
+    }
+
+    public final Gh a() {
+        return new Gh(this.b);
     }
 }

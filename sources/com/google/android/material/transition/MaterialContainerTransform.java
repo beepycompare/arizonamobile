@@ -22,7 +22,6 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import androidx.core.util.Preconditions;
 import androidx.core.view.InputDeviceCompat;
-import androidx.core.view.ViewCompat;
 import androidx.transition.ArcMotion;
 import androidx.transition.PathMotion;
 import androidx.transition.Transition;
@@ -30,7 +29,6 @@ import androidx.transition.TransitionValues;
 import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.canvas.CanvasCompat;
-import com.google.android.material.internal.ViewUtils;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.Shapeable;
@@ -362,10 +360,10 @@ public final class MaterialContainerTransform extends Transition {
             transitionValues.view = (View) transitionValues.view.getTag(R.id.mtrl_motion_snapshot_view);
         }
         View view2 = transitionValues.view;
-        if (!ViewCompat.isLaidOut(view2) && view2.getWidth() == 0 && view2.getHeight() == 0) {
+        if (!view2.isLaidOut() && view2.getWidth() == 0 && view2.getHeight() == 0) {
             return;
         }
-        RectF relativeBounds = view2.getParent() == null ? TransitionUtils.getRelativeBounds(view2) : TransitionUtils.getLocationOnScreen(view2);
+        RectF relativeBounds = view2.getParent() == null ? TransitionUtils.getRelativeBounds(view2) : TransitionUtils.getLocationInWindow(view2);
         transitionValues.values.put(PROP_BOUNDS, relativeBounds);
         transitionValues.values.put(PROP_SHAPE_APPEARANCE, captureShapeAppearance(view2, relativeBounds, shapeAppearanceModel));
     }
@@ -424,9 +422,9 @@ public final class MaterialContainerTransform extends Transition {
                 } else {
                     findAncestorById = TransitionUtils.findAncestorById(view4, this.drawingViewId);
                 }
-                RectF locationOnScreen = TransitionUtils.getLocationOnScreen(findAncestorById);
-                float f = -locationOnScreen.left;
-                float f2 = -locationOnScreen.top;
+                RectF locationInWindow = TransitionUtils.getLocationInWindow(findAncestorById);
+                float f = -locationInWindow.left;
+                float f2 = -locationInWindow.top;
                 RectF calculateDrawableBounds = calculateDrawableBounds(findAncestorById, view, f, f2);
                 rectF.offset(f, f2);
                 rectF2.offset(f, f2);
@@ -446,7 +444,7 @@ public final class MaterialContainerTransform extends Transition {
                 addListener(new TransitionListenerAdapter() { // from class: com.google.android.material.transition.MaterialContainerTransform.2
                     @Override // com.google.android.material.transition.TransitionListenerAdapter, androidx.transition.Transition.TransitionListener
                     public void onTransitionStart(Transition transition) {
-                        ViewUtils.getOverlay(findAncestorById).add(transitionDrawable);
+                        findAncestorById.getOverlay().add(transitionDrawable);
                         view2.setAlpha(0.0f);
                         view3.setAlpha(0.0f);
                     }
@@ -459,7 +457,7 @@ public final class MaterialContainerTransform extends Transition {
                         }
                         view2.setAlpha(1.0f);
                         view3.setAlpha(1.0f);
-                        ViewUtils.getOverlay(findAncestorById).remove(transitionDrawable);
+                        findAncestorById.getOverlay().remove(transitionDrawable);
                     }
                 });
                 return ofFloat;
@@ -478,14 +476,14 @@ public final class MaterialContainerTransform extends Transition {
     }
 
     private static float getElevationOrDefault(float f, View view) {
-        return f != ELEVATION_NOT_SET ? f : ViewCompat.getElevation(view);
+        return f != ELEVATION_NOT_SET ? f : view.getElevation();
     }
 
     private static RectF calculateDrawableBounds(View view, View view2, float f, float f2) {
         if (view2 != null) {
-            RectF locationOnScreen = TransitionUtils.getLocationOnScreen(view2);
-            locationOnScreen.offset(f, f2);
-            return locationOnScreen;
+            RectF locationInWindow = TransitionUtils.getLocationInWindow(view2);
+            locationInWindow.offset(f, f2);
+            return locationInWindow;
         }
         return new RectF(0.0f, 0.0f, view.getWidth(), view.getHeight());
     }

@@ -9,7 +9,6 @@ import android.view.ViewConfiguration;
 import android.widget.OverScroller;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.math.MathUtils;
-import androidx.core.view.ViewCompat;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
 public abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<V> {
@@ -186,7 +185,7 @@ public abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<
         if (this.scroller.computeScrollOffset()) {
             FlingRunnable flingRunnable = new FlingRunnable(coordinatorLayout, v);
             this.flingRunnable = flingRunnable;
-            ViewCompat.postOnAnimation(v, flingRunnable);
+            v.postOnAnimation(flingRunnable);
             return true;
         }
         onFlingFinished(coordinatorLayout, v);
@@ -226,7 +225,7 @@ public abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<
             if (HeaderBehavior.this.scroller.computeScrollOffset()) {
                 HeaderBehavior headerBehavior = HeaderBehavior.this;
                 headerBehavior.setHeaderTopBottomOffset(this.parent, this.layout, headerBehavior.scroller.getCurrY());
-                ViewCompat.postOnAnimation(this.layout, this);
+                this.layout.postOnAnimation(this);
                 return;
             }
             HeaderBehavior.this.onFlingFinished(this.parent, this.layout);

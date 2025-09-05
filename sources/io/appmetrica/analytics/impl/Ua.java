@@ -1,33 +1,17 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.json.JSONObject;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.Comparator;
+import java.util.Map;
 /* loaded from: classes4.dex */
-public final class Ua {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final HashSet f676a;
-
-    static {
-        HashSet hashSet = new HashSet();
-        f676a = hashSet;
-        hashSet.add("get_ad");
-        hashSet.add("report");
-        hashSet.add("report_ad");
-        hashSet.add("startup");
-        hashSet.add("diagnostic");
-    }
-
-    public static ArrayList a(JSONObject jSONObject, String str) {
-        try {
-            JSONObject optJSONObject = jSONObject.optJSONObject(str);
-            if (optJSONObject != null) {
-                return Db.a(optJSONObject.getJSONArray("urls"));
-            }
-            return null;
-        } catch (Throwable unused) {
-            return null;
+public final class Ua implements Comparator {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int utf8BytesLength = StringUtils.getUtf8BytesLength((String) ((Map.Entry) obj).getValue());
+        int utf8BytesLength2 = StringUtils.getUtf8BytesLength((String) ((Map.Entry) obj2).getValue());
+        if (utf8BytesLength < utf8BytesLength2) {
+            return -1;
         }
+        return utf8BytesLength == utf8BytesLength2 ? 0 : 1;
     }
 }

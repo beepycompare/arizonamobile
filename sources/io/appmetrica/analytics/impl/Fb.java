@@ -1,14 +1,31 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
+import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public class Fb extends La {
-    public Fb(Ji ji) {
-        super(ji);
+public final class Fb extends JSONObject {
+    public Fb() {
     }
 
-    @Override // io.appmetrica.analytics.impl.La
-    public void a(List<AbstractC0358jh> list) {
-        list.add(this.f541a.b);
+    public final Long a(String str) {
+        try {
+            return Long.valueOf(getLong(str));
+        } catch (Throwable unused) {
+            return null;
+        }
+    }
+
+    public Fb(String str) {
+        super(str);
+    }
+
+    public final String b(String str) {
+        if (has(str)) {
+            try {
+                return getString(str);
+            } catch (Throwable unused) {
+                return "";
+            }
+        }
+        return "";
     }
 }

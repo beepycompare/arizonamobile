@@ -10,19 +10,16 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.InsetDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.RippleDrawable;
-import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
+import androidx.cardview.R;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
-import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.color.MaterialColors;
 import com.google.android.material.motion.MotionUtils;
 import com.google.android.material.resources.MaterialResources;
-import com.google.android.material.ripple.RippleUtils;
 import com.google.android.material.shape.CornerTreatment;
 import com.google.android.material.shape.CutCornerTreatment;
 import com.google.android.material.shape.MaterialShapeDrawable;
@@ -45,7 +42,6 @@ public class MaterialCardViewHelper {
     private int checkedIconSize;
     private ColorStateList checkedIconTint;
     private LayerDrawable clickableForegroundDrawable;
-    private MaterialShapeDrawable compatRippleDrawable;
     private Drawable fgDrawable;
     private final MaterialShapeDrawable foregroundContentDrawable;
     private MaterialShapeDrawable foregroundShapeDrawable;
@@ -80,34 +76,34 @@ public class MaterialCardViewHelper {
         }
         this.foregroundContentDrawable = new MaterialShapeDrawable();
         setShapeAppearanceModel(builder.build());
-        this.iconFadeAnimInterpolator = MotionUtils.resolveThemeInterpolator(materialCardView.getContext(), R.attr.motionEasingLinearInterpolator, AnimationUtils.LINEAR_INTERPOLATOR);
-        this.iconFadeInAnimDuration = MotionUtils.resolveThemeDuration(materialCardView.getContext(), R.attr.motionDurationShort2, 300);
-        this.iconFadeOutAnimDuration = MotionUtils.resolveThemeDuration(materialCardView.getContext(), R.attr.motionDurationShort1, 300);
+        this.iconFadeAnimInterpolator = MotionUtils.resolveThemeInterpolator(materialCardView.getContext(), com.google.android.material.R.attr.motionEasingLinearInterpolator, AnimationUtils.LINEAR_INTERPOLATOR);
+        this.iconFadeInAnimDuration = MotionUtils.resolveThemeDuration(materialCardView.getContext(), com.google.android.material.R.attr.motionDurationShort2, 300);
+        this.iconFadeOutAnimDuration = MotionUtils.resolveThemeDuration(materialCardView.getContext(), com.google.android.material.R.attr.motionDurationShort1, 300);
         obtainStyledAttributes.recycle();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void loadFromAttributes(TypedArray typedArray) {
-        ColorStateList colorStateList = MaterialResources.getColorStateList(this.materialCardView.getContext(), typedArray, R.styleable.MaterialCardView_strokeColor);
+        ColorStateList colorStateList = MaterialResources.getColorStateList(this.materialCardView.getContext(), typedArray, com.google.android.material.R.styleable.MaterialCardView_strokeColor);
         this.strokeColor = colorStateList;
         if (colorStateList == null) {
             this.strokeColor = ColorStateList.valueOf(-1);
         }
-        this.strokeWidth = typedArray.getDimensionPixelSize(R.styleable.MaterialCardView_strokeWidth, 0);
-        boolean z = typedArray.getBoolean(R.styleable.MaterialCardView_android_checkable, false);
+        this.strokeWidth = typedArray.getDimensionPixelSize(com.google.android.material.R.styleable.MaterialCardView_strokeWidth, 0);
+        boolean z = typedArray.getBoolean(com.google.android.material.R.styleable.MaterialCardView_android_checkable, false);
         this.checkable = z;
         this.materialCardView.setLongClickable(z);
-        this.checkedIconTint = MaterialResources.getColorStateList(this.materialCardView.getContext(), typedArray, R.styleable.MaterialCardView_checkedIconTint);
-        setCheckedIcon(MaterialResources.getDrawable(this.materialCardView.getContext(), typedArray, R.styleable.MaterialCardView_checkedIcon));
-        setCheckedIconSize(typedArray.getDimensionPixelSize(R.styleable.MaterialCardView_checkedIconSize, 0));
-        setCheckedIconMargin(typedArray.getDimensionPixelSize(R.styleable.MaterialCardView_checkedIconMargin, 0));
-        this.checkedIconGravity = typedArray.getInteger(R.styleable.MaterialCardView_checkedIconGravity, 8388661);
-        ColorStateList colorStateList2 = MaterialResources.getColorStateList(this.materialCardView.getContext(), typedArray, R.styleable.MaterialCardView_rippleColor);
+        this.checkedIconTint = MaterialResources.getColorStateList(this.materialCardView.getContext(), typedArray, com.google.android.material.R.styleable.MaterialCardView_checkedIconTint);
+        setCheckedIcon(MaterialResources.getDrawable(this.materialCardView.getContext(), typedArray, com.google.android.material.R.styleable.MaterialCardView_checkedIcon));
+        setCheckedIconSize(typedArray.getDimensionPixelSize(com.google.android.material.R.styleable.MaterialCardView_checkedIconSize, 0));
+        setCheckedIconMargin(typedArray.getDimensionPixelSize(com.google.android.material.R.styleable.MaterialCardView_checkedIconMargin, 0));
+        this.checkedIconGravity = typedArray.getInteger(com.google.android.material.R.styleable.MaterialCardView_checkedIconGravity, 8388661);
+        ColorStateList colorStateList2 = MaterialResources.getColorStateList(this.materialCardView.getContext(), typedArray, com.google.android.material.R.styleable.MaterialCardView_rippleColor);
         this.rippleColor = colorStateList2;
         if (colorStateList2 == null) {
-            this.rippleColor = ColorStateList.valueOf(MaterialColors.getColor(this.materialCardView, R.attr.colorControlHighlight));
+            this.rippleColor = ColorStateList.valueOf(MaterialColors.getColor(this.materialCardView, androidx.appcompat.R.attr.colorControlHighlight));
         }
-        setCardForegroundColor(MaterialResources.getColorStateList(this.materialCardView.getContext(), typedArray, R.styleable.MaterialCardView_cardForegroundColor));
+        setCardForegroundColor(MaterialResources.getColorStateList(this.materialCardView.getContext(), typedArray, com.google.android.material.R.styleable.MaterialCardView_cardForegroundColor));
         updateRippleColor();
         updateElevation();
         updateStroke();
@@ -228,7 +224,7 @@ public class MaterialCardViewHelper {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.card.MaterialCardViewHelper$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                MaterialCardViewHelper.this.m8671xa4d79c2b(valueAnimator2);
+                MaterialCardViewHelper.this.m8679xa4d79c2b(valueAnimator2);
             }
         });
         this.iconAnimator.setInterpolator(this.iconFadeAnimInterpolator);
@@ -244,7 +240,7 @@ public class MaterialCardViewHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$animateCheckedIcon$0$com-google-android-material-card-MaterialCardViewHelper  reason: not valid java name */
-    public /* synthetic */ void m8671xa4d79c2b(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8679xa4d79c2b(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.checkedIcon.setAlpha((int) (255.0f * floatValue));
         this.checkedAnimationProgress = floatValue;
@@ -329,7 +325,7 @@ public class MaterialCardViewHelper {
         this.checkedIconTint = colorStateList;
         Drawable drawable = this.checkedIcon;
         if (drawable != null) {
-            DrawableCompat.setTintList(drawable, colorStateList);
+            drawable.setTintList(colorStateList);
         }
     }
 
@@ -353,14 +349,14 @@ public class MaterialCardViewHelper {
         if (drawable != null) {
             Drawable mutate = DrawableCompat.wrap(drawable).mutate();
             this.checkedIcon = mutate;
-            DrawableCompat.setTintList(mutate, this.checkedIconTint);
+            mutate.setTintList(this.checkedIconTint);
             setChecked(this.materialCardView.isChecked());
         } else {
             this.checkedIcon = CHECKED_ICON_NONE;
         }
         LayerDrawable layerDrawable = this.clickableForegroundDrawable;
         if (layerDrawable != null) {
-            layerDrawable.setDrawableByLayerId(R.id.mtrl_card_checked_layer_id, this.checkedIcon);
+            layerDrawable.setDrawableByLayerId(com.google.android.material.R.id.mtrl_card_checked_layer_id, this.checkedIcon);
         }
     }
 
@@ -424,7 +420,7 @@ public class MaterialCardViewHelper {
                 i8 = this.checkedIconMargin;
             }
             int i12 = i8;
-            if (ViewCompat.getLayoutDirection(this.materialCardView) == 1) {
+            if (this.materialCardView.getLayoutDirection() == 1) {
                 i10 = i7;
                 i9 = i5;
             } else {
@@ -459,10 +455,6 @@ public class MaterialCardViewHelper {
         MaterialShapeDrawable materialShapeDrawable3 = this.foregroundShapeDrawable;
         if (materialShapeDrawable3 != null) {
             materialShapeDrawable3.setShapeAppearanceModel(shapeAppearanceModel);
-        }
-        MaterialShapeDrawable materialShapeDrawable4 = this.compatRippleDrawable;
-        if (materialShapeDrawable4 != null) {
-            materialShapeDrawable4.setShapeAppearanceModel(shapeAppearanceModel);
         }
     }
 
@@ -566,42 +558,21 @@ public class MaterialCardViewHelper {
         if (this.clickableForegroundDrawable == null) {
             LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{this.rippleDrawable, this.foregroundContentDrawable, this.checkedIcon});
             this.clickableForegroundDrawable = layerDrawable;
-            layerDrawable.setId(2, R.id.mtrl_card_checked_layer_id);
+            layerDrawable.setId(2, com.google.android.material.R.id.mtrl_card_checked_layer_id);
         }
         return this.clickableForegroundDrawable;
     }
 
     private Drawable createForegroundRippleDrawable() {
-        if (RippleUtils.USE_FRAMEWORK_RIPPLE) {
-            this.foregroundShapeDrawable = createForegroundShapeDrawable();
-            return new RippleDrawable(this.rippleColor, null, this.foregroundShapeDrawable);
-        }
-        return createCompatRippleDrawable();
-    }
-
-    private Drawable createCompatRippleDrawable() {
-        StateListDrawable stateListDrawable = new StateListDrawable();
-        MaterialShapeDrawable createForegroundShapeDrawable = createForegroundShapeDrawable();
-        this.compatRippleDrawable = createForegroundShapeDrawable;
-        createForegroundShapeDrawable.setFillColor(this.rippleColor);
-        stateListDrawable.addState(new int[]{16842919}, this.compatRippleDrawable);
-        return stateListDrawable;
+        this.foregroundShapeDrawable = new MaterialShapeDrawable(this.shapeAppearanceModel);
+        return new RippleDrawable(this.rippleColor, null, this.foregroundShapeDrawable);
     }
 
     private void updateRippleColor() {
-        Drawable drawable;
-        if (RippleUtils.USE_FRAMEWORK_RIPPLE && (drawable = this.rippleDrawable) != null) {
+        Drawable drawable = this.rippleDrawable;
+        if (drawable != null) {
             ((RippleDrawable) drawable).setColor(this.rippleColor);
-            return;
         }
-        MaterialShapeDrawable materialShapeDrawable = this.compatRippleDrawable;
-        if (materialShapeDrawable != null) {
-            materialShapeDrawable.setFillColor(this.rippleColor);
-        }
-    }
-
-    private MaterialShapeDrawable createForegroundShapeDrawable() {
-        return new MaterialShapeDrawable(this.shapeAppearanceModel);
     }
 
     public void setChecked(boolean z) {

@@ -3,25 +3,20 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* loaded from: classes4.dex */
 public final class Nm implements ProtobufConverter {
-    public final Bm a(Mm mm) {
-        Bm bm = new Bm();
-        bm.f368a = mm.f566a;
-        return bm;
-    }
-
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object fromModel(Object obj) {
-        Bm bm = new Bm();
-        bm.f368a = ((Mm) obj).f566a;
-        return bm;
+    /* renamed from: a */
+    public final Em fromModel(Mm mm) {
+        Em em = new Em();
+        em.f427a = mm.f578a;
+        return em;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        return new Mm(((Bm) obj).f368a);
+        return new Mm(((Em) obj).f427a);
     }
 
-    public final Mm a(Bm bm) {
-        return new Mm(bm.f368a);
+    public final Mm a(Em em) {
+        return new Mm(em.f427a);
     }
 }

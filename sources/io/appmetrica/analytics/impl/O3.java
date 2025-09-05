@@ -1,72 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
-import kotlin.jvm.internal.Intrinsics;
+import android.content.ContentValues;
+import java.util.HashMap;
+import java.util.Map;
 /* loaded from: classes4.dex */
-public final class O3 implements InterfaceC0401l8 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final N3 f585a;
-    public final List b;
-
-    public O3(N3 n3, List<N3> list) {
-        this.f585a = n3;
-        this.b = list;
-    }
-
-    public final O3 a(N3 n3, List<N3> list) {
-        return new O3(n3, list);
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0401l8
-    public final Object b() {
-        return this.f585a;
-    }
-
-    public final N3 c() {
-        return this.f585a;
-    }
-
-    public final List<N3> d() {
-        return this.b;
-    }
-
-    public final N3 e() {
-        return this.f585a;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+public final class O3 implements X5 {
+    @Override // kotlin.jvm.functions.Function1
+    /* renamed from: a */
+    public final Map<String, String> invoke(ContentValues contentValues) {
+        String asString = contentValues.getAsString("clids");
+        HashMap c = Gb.c(asString);
+        if (Pm.a(c)) {
+            return c;
         }
-        if (obj instanceof O3) {
-            O3 o3 = (O3) obj;
-            return Intrinsics.areEqual(this.f585a, o3.f585a) && Intrinsics.areEqual(this.b, o3.b);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + (this.f585a.hashCode() * 31);
-    }
-
-    public final String toString() {
-        return "ClidsInfo(chosen=" + this.f585a + ", candidates=" + this.b + ')';
-    }
-
-    public static O3 a(O3 o3, N3 n3, List list, int i, Object obj) {
-        if ((i & 1) != 0) {
-            n3 = o3.f585a;
-        }
-        if ((i & 2) != 0) {
-            list = o3.b;
-        }
-        o3.getClass();
-        return new O3(n3, list);
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0401l8
-    public final List<N3> a() {
-        return this.b;
+        Bj.a("Passed clids (" + asString + ") are invalid.", new Object[0]);
+        return null;
     }
 }

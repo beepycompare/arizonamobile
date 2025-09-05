@@ -40,7 +40,7 @@ public final class InternalNavType {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
             if (num == null) {
-                SavedStateWriter.m8270putNullimpl(SavedStateWriter.m8247constructorimpl(bundle), key);
+                SavedStateWriter.m8272putNullimpl(SavedStateWriter.m8249constructorimpl(bundle), key);
             } else {
                 NavType.IntType.put(bundle, key, num);
             }
@@ -51,11 +51,11 @@ public final class InternalNavType {
         public Integer get(Bundle bundle, String key) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8161constructorimpl = SavedStateReader.m8161constructorimpl(bundle);
-            if (!SavedStateReader.m8162containsimpl(m8161constructorimpl, key) || SavedStateReader.m8240isNullimpl(m8161constructorimpl, key)) {
+            Bundle m8163constructorimpl = SavedStateReader.m8163constructorimpl(bundle);
+            if (!SavedStateReader.m8164containsimpl(m8163constructorimpl, key) || SavedStateReader.m8242isNullimpl(m8163constructorimpl, key)) {
                 return null;
             }
-            return Integer.valueOf(SavedStateReader.m8192getIntimpl(m8161constructorimpl, key));
+            return Integer.valueOf(SavedStateReader.m8194getIntimpl(m8163constructorimpl, key));
         }
     };
     private static final NavType<Boolean> BoolNullableType = new NavType<Boolean>() { // from class: androidx.navigation.serialization.InternalNavType$BoolNullableType$1
@@ -79,7 +79,7 @@ public final class InternalNavType {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
             if (bool == null) {
-                SavedStateWriter.m8270putNullimpl(SavedStateWriter.m8247constructorimpl(bundle), key);
+                SavedStateWriter.m8272putNullimpl(SavedStateWriter.m8249constructorimpl(bundle), key);
             } else {
                 NavType.BoolType.put(bundle, key, bool);
             }
@@ -90,11 +90,11 @@ public final class InternalNavType {
         public Boolean get(Bundle bundle, String key) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8161constructorimpl = SavedStateReader.m8161constructorimpl(bundle);
-            if (!SavedStateReader.m8162containsimpl(m8161constructorimpl, key) || SavedStateReader.m8240isNullimpl(m8161constructorimpl, key)) {
+            Bundle m8163constructorimpl = SavedStateReader.m8163constructorimpl(bundle);
+            if (!SavedStateReader.m8164containsimpl(m8163constructorimpl, key) || SavedStateReader.m8242isNullimpl(m8163constructorimpl, key)) {
                 return null;
             }
-            return Boolean.valueOf(SavedStateReader.m8170getBooleanimpl(m8161constructorimpl, key));
+            return Boolean.valueOf(SavedStateReader.m8172getBooleanimpl(m8163constructorimpl, key));
         }
     };
     private static final NavType<Double> DoubleType = new NavType<Double>() { // from class: androidx.navigation.serialization.InternalNavType$DoubleType$1
@@ -118,7 +118,7 @@ public final class InternalNavType {
         public void put(Bundle bundle, String key, double d) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            SavedStateWriter.m8260putDoubleimpl(SavedStateWriter.m8247constructorimpl(bundle), key, d);
+            SavedStateWriter.m8262putDoubleimpl(SavedStateWriter.m8249constructorimpl(bundle), key, d);
         }
 
         /* JADX WARN: Can't rename method to resolve collision */
@@ -126,7 +126,7 @@ public final class InternalNavType {
         public Double get(Bundle bundle, String key) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            return Double.valueOf(SavedStateReader.m8184getDoubleimpl(SavedStateReader.m8161constructorimpl(bundle), key));
+            return Double.valueOf(SavedStateReader.m8186getDoubleimpl(SavedStateReader.m8163constructorimpl(bundle), key));
         }
     };
     private static final NavType<Double> DoubleNullableType = new NavType<Double>() { // from class: androidx.navigation.serialization.InternalNavType$DoubleNullableType$1
@@ -150,7 +150,7 @@ public final class InternalNavType {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
             if (d == null) {
-                SavedStateWriter.m8270putNullimpl(SavedStateWriter.m8247constructorimpl(bundle), key);
+                SavedStateWriter.m8272putNullimpl(SavedStateWriter.m8249constructorimpl(bundle), key);
             } else {
                 InternalNavType.INSTANCE.getDoubleType().put(bundle, key, d);
             }
@@ -161,11 +161,11 @@ public final class InternalNavType {
         public Double get(Bundle bundle, String key) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8161constructorimpl = SavedStateReader.m8161constructorimpl(bundle);
-            if (!SavedStateReader.m8162containsimpl(m8161constructorimpl, key) || SavedStateReader.m8240isNullimpl(m8161constructorimpl, key)) {
+            Bundle m8163constructorimpl = SavedStateReader.m8163constructorimpl(bundle);
+            if (!SavedStateReader.m8164containsimpl(m8163constructorimpl, key) || SavedStateReader.m8242isNullimpl(m8163constructorimpl, key)) {
                 return null;
             }
-            return Double.valueOf(SavedStateReader.m8184getDoubleimpl(m8161constructorimpl, key));
+            return Double.valueOf(SavedStateReader.m8186getDoubleimpl(m8163constructorimpl, key));
         }
     };
     private static final NavType<Float> FloatNullableType = new NavType<Float>() { // from class: androidx.navigation.serialization.InternalNavType$FloatNullableType$1
@@ -189,7 +189,7 @@ public final class InternalNavType {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
             if (f == null) {
-                SavedStateWriter.m8270putNullimpl(SavedStateWriter.m8247constructorimpl(bundle), key);
+                SavedStateWriter.m8272putNullimpl(SavedStateWriter.m8249constructorimpl(bundle), key);
             } else {
                 NavType.FloatType.put(bundle, key, f);
             }
@@ -200,11 +200,11 @@ public final class InternalNavType {
         public Float get(Bundle bundle, String key) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8161constructorimpl = SavedStateReader.m8161constructorimpl(bundle);
-            if (!SavedStateReader.m8162containsimpl(m8161constructorimpl, key) || SavedStateReader.m8240isNullimpl(m8161constructorimpl, key)) {
+            Bundle m8163constructorimpl = SavedStateReader.m8163constructorimpl(bundle);
+            if (!SavedStateReader.m8164containsimpl(m8163constructorimpl, key) || SavedStateReader.m8242isNullimpl(m8163constructorimpl, key)) {
                 return null;
             }
-            return Float.valueOf(SavedStateReader.m8188getFloatimpl(m8161constructorimpl, key));
+            return Float.valueOf(SavedStateReader.m8190getFloatimpl(m8163constructorimpl, key));
         }
     };
     private static final NavType<Long> LongNullableType = new NavType<Long>() { // from class: androidx.navigation.serialization.InternalNavType$LongNullableType$1
@@ -228,7 +228,7 @@ public final class InternalNavType {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
             if (l == null) {
-                SavedStateWriter.m8270putNullimpl(SavedStateWriter.m8247constructorimpl(bundle), key);
+                SavedStateWriter.m8272putNullimpl(SavedStateWriter.m8249constructorimpl(bundle), key);
             } else {
                 NavType.LongType.put(bundle, key, l);
             }
@@ -239,11 +239,11 @@ public final class InternalNavType {
         public Long get(Bundle bundle, String key) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8161constructorimpl = SavedStateReader.m8161constructorimpl(bundle);
-            if (!SavedStateReader.m8162containsimpl(m8161constructorimpl, key) || SavedStateReader.m8240isNullimpl(m8161constructorimpl, key)) {
+            Bundle m8163constructorimpl = SavedStateReader.m8163constructorimpl(bundle);
+            if (!SavedStateReader.m8164containsimpl(m8163constructorimpl, key) || SavedStateReader.m8242isNullimpl(m8163constructorimpl, key)) {
                 return null;
             }
-            return Long.valueOf(SavedStateReader.m8202getLongimpl(m8161constructorimpl, key));
+            return Long.valueOf(SavedStateReader.m8204getLongimpl(m8163constructorimpl, key));
         }
     };
     private static final NavType<String> StringNonNullableType = new NavType<String>() { // from class: androidx.navigation.serialization.InternalNavType$StringNonNullableType$1
@@ -269,15 +269,15 @@ public final class InternalNavType {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
             Intrinsics.checkNotNullParameter(value, "value");
-            SavedStateWriter.m8280putStringimpl(SavedStateWriter.m8247constructorimpl(bundle), key, value);
+            SavedStateWriter.m8282putStringimpl(SavedStateWriter.m8249constructorimpl(bundle), key, value);
         }
 
         @Override // androidx.navigation.NavType
         public String get(Bundle bundle, String key) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8161constructorimpl = SavedStateReader.m8161constructorimpl(bundle);
-            return (!SavedStateReader.m8162containsimpl(m8161constructorimpl, key) || SavedStateReader.m8240isNullimpl(m8161constructorimpl, key)) ? AbstractJsonLexerKt.NULL : SavedStateReader.m8232getStringimpl(m8161constructorimpl, key);
+            Bundle m8163constructorimpl = SavedStateReader.m8163constructorimpl(bundle);
+            return (!SavedStateReader.m8164containsimpl(m8163constructorimpl, key) || SavedStateReader.m8242isNullimpl(m8163constructorimpl, key)) ? AbstractJsonLexerKt.NULL : SavedStateReader.m8234getStringimpl(m8163constructorimpl, key);
         }
     };
     private static final NavType<String[]> StringNullableArrayType = new CollectionNavType<String[]>() { // from class: androidx.navigation.serialization.InternalNavType$StringNullableArrayType$1
@@ -313,9 +313,9 @@ public final class InternalNavType {
         public void put(Bundle bundle, String key, String[] strArr) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8247constructorimpl = SavedStateWriter.m8247constructorimpl(bundle);
+            Bundle m8249constructorimpl = SavedStateWriter.m8249constructorimpl(bundle);
             if (strArr == null) {
-                SavedStateWriter.m8270putNullimpl(m8247constructorimpl, key);
+                SavedStateWriter.m8272putNullimpl(m8249constructorimpl, key);
                 return;
             }
             ArrayList arrayList = new ArrayList(strArr.length);
@@ -325,20 +325,20 @@ public final class InternalNavType {
                 }
                 arrayList.add(str);
             }
-            SavedStateWriter.m8281putStringArrayimpl(m8247constructorimpl, key, (String[]) arrayList.toArray(new String[0]));
+            SavedStateWriter.m8283putStringArrayimpl(m8249constructorimpl, key, (String[]) arrayList.toArray(new String[0]));
         }
 
         @Override // androidx.navigation.NavType
         public String[] get(Bundle bundle, String key) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8161constructorimpl = SavedStateReader.m8161constructorimpl(bundle);
-            if (!SavedStateReader.m8162containsimpl(m8161constructorimpl, key) || SavedStateReader.m8240isNullimpl(m8161constructorimpl, key)) {
+            Bundle m8163constructorimpl = SavedStateReader.m8163constructorimpl(bundle);
+            if (!SavedStateReader.m8164containsimpl(m8163constructorimpl, key) || SavedStateReader.m8242isNullimpl(m8163constructorimpl, key)) {
                 return null;
             }
-            String[] m8233getStringArrayimpl = SavedStateReader.m8233getStringArrayimpl(m8161constructorimpl, key);
-            ArrayList arrayList = new ArrayList(m8233getStringArrayimpl.length);
-            for (String str : m8233getStringArrayimpl) {
+            String[] m8235getStringArrayimpl = SavedStateReader.m8235getStringArrayimpl(m8163constructorimpl, key);
+            ArrayList arrayList = new ArrayList(m8235getStringArrayimpl.length);
+            for (String str : m8235getStringArrayimpl) {
                 arrayList.add(NavType.StringType.parseValue(str));
             }
             return (String[]) arrayList.toArray(new String[0]);
@@ -415,9 +415,9 @@ public final class InternalNavType {
         public void put(Bundle bundle, String key, List<String> list) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8247constructorimpl = SavedStateWriter.m8247constructorimpl(bundle);
+            Bundle m8249constructorimpl = SavedStateWriter.m8249constructorimpl(bundle);
             if (list == null) {
-                SavedStateWriter.m8270putNullimpl(m8247constructorimpl, key);
+                SavedStateWriter.m8272putNullimpl(m8249constructorimpl, key);
                 return;
             }
             List<String> list2 = list;
@@ -428,18 +428,18 @@ public final class InternalNavType {
                 }
                 arrayList.add(str);
             }
-            SavedStateWriter.m8281putStringArrayimpl(m8247constructorimpl, key, (String[]) arrayList.toArray(new String[0]));
+            SavedStateWriter.m8283putStringArrayimpl(m8249constructorimpl, key, (String[]) arrayList.toArray(new String[0]));
         }
 
         @Override // androidx.navigation.NavType
         public List<String> get(Bundle bundle, String key) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8161constructorimpl = SavedStateReader.m8161constructorimpl(bundle);
-            if (!SavedStateReader.m8162containsimpl(m8161constructorimpl, key) || SavedStateReader.m8240isNullimpl(m8161constructorimpl, key)) {
+            Bundle m8163constructorimpl = SavedStateReader.m8163constructorimpl(bundle);
+            if (!SavedStateReader.m8164containsimpl(m8163constructorimpl, key) || SavedStateReader.m8242isNullimpl(m8163constructorimpl, key)) {
                 return null;
             }
-            List<String> list = ArraysKt.toList(SavedStateReader.m8233getStringArrayimpl(m8161constructorimpl, key));
+            List<String> list = ArraysKt.toList(SavedStateReader.m8235getStringArrayimpl(m8163constructorimpl, key));
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
             for (String str : list) {
                 arrayList.add(NavType.StringType.parseValue(str));
@@ -494,11 +494,11 @@ public final class InternalNavType {
         public void put(Bundle bundle, String key, double[] dArr) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8247constructorimpl = SavedStateWriter.m8247constructorimpl(bundle);
+            Bundle m8249constructorimpl = SavedStateWriter.m8249constructorimpl(bundle);
             if (dArr == null) {
-                SavedStateWriter.m8270putNullimpl(m8247constructorimpl, key);
+                SavedStateWriter.m8272putNullimpl(m8249constructorimpl, key);
             } else {
-                SavedStateWriter.m8261putDoubleArrayimpl(m8247constructorimpl, key, dArr);
+                SavedStateWriter.m8263putDoubleArrayimpl(m8249constructorimpl, key, dArr);
             }
         }
 
@@ -506,11 +506,11 @@ public final class InternalNavType {
         public double[] get(Bundle bundle, String key) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8161constructorimpl = SavedStateReader.m8161constructorimpl(bundle);
-            if (!SavedStateReader.m8162containsimpl(m8161constructorimpl, key) || SavedStateReader.m8240isNullimpl(m8161constructorimpl, key)) {
+            Bundle m8163constructorimpl = SavedStateReader.m8163constructorimpl(bundle);
+            if (!SavedStateReader.m8164containsimpl(m8163constructorimpl, key) || SavedStateReader.m8242isNullimpl(m8163constructorimpl, key)) {
                 return null;
             }
-            return SavedStateReader.m8185getDoubleArrayimpl(m8161constructorimpl, key);
+            return SavedStateReader.m8187getDoubleArrayimpl(m8163constructorimpl, key);
         }
     };
     private static final NavType<List<Double>> DoubleListType = new CollectionNavType<List<? extends Double>>() { // from class: androidx.navigation.serialization.InternalNavType$DoubleListType$1
@@ -564,11 +564,11 @@ public final class InternalNavType {
         public void put(Bundle bundle, String key, List<Double> list) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8247constructorimpl = SavedStateWriter.m8247constructorimpl(bundle);
+            Bundle m8249constructorimpl = SavedStateWriter.m8249constructorimpl(bundle);
             if (list == null) {
-                SavedStateWriter.m8270putNullimpl(m8247constructorimpl, key);
+                SavedStateWriter.m8272putNullimpl(m8249constructorimpl, key);
             } else {
-                SavedStateWriter.m8261putDoubleArrayimpl(m8247constructorimpl, key, CollectionsKt.toDoubleArray(list));
+                SavedStateWriter.m8263putDoubleArrayimpl(m8249constructorimpl, key, CollectionsKt.toDoubleArray(list));
             }
         }
 
@@ -576,11 +576,11 @@ public final class InternalNavType {
         public List<Double> get(Bundle bundle, String key) {
             Intrinsics.checkNotNullParameter(bundle, "bundle");
             Intrinsics.checkNotNullParameter(key, "key");
-            Bundle m8161constructorimpl = SavedStateReader.m8161constructorimpl(bundle);
-            if (!SavedStateReader.m8162containsimpl(m8161constructorimpl, key) || SavedStateReader.m8240isNullimpl(m8161constructorimpl, key)) {
+            Bundle m8163constructorimpl = SavedStateReader.m8163constructorimpl(bundle);
+            if (!SavedStateReader.m8164containsimpl(m8163constructorimpl, key) || SavedStateReader.m8242isNullimpl(m8163constructorimpl, key)) {
                 return null;
             }
-            return ArraysKt.toList(SavedStateReader.m8185getDoubleArrayimpl(m8161constructorimpl, key));
+            return ArraysKt.toList(SavedStateReader.m8187getDoubleArrayimpl(m8163constructorimpl, key));
         }
     };
 

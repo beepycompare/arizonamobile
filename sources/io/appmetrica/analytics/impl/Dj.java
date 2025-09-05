@@ -1,16 +1,23 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
 /* loaded from: classes4.dex */
-public final class Dj implements B4 {
-    @Override // io.appmetrica.analytics.impl.B4
-    /* renamed from: b */
-    public final C0761zj a(Context context, C0722y5 c0722y5, C0397l4 c0397l4, K4 k4) {
-        Tg tg;
-        C0398l5 c0398l5 = new C0398l5(c0397l4.b, c0397l4.f948a);
-        synchronized (c0722y5) {
-            tg = (Tg) c0722y5.f1152a.get(c0398l5.toString());
+public final class Dj implements D4 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Xg f409a;
+
+    public Dj(Xg xg) {
+        this.f409a = xg;
+    }
+
+    @Override // io.appmetrica.analytics.impl.D4
+    public final void a() {
+    }
+
+    @Override // io.appmetrica.analytics.impl.D4
+    public final void a(C0477o6 c0477o6, N4 n4) {
+        Xg xg = this.f409a;
+        if (xg != null) {
+            xg.a(c0477o6, n4);
         }
-        return new C0761zj(tg);
     }
 }

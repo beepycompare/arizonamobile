@@ -43,19 +43,19 @@ public final class Route {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "address", imports = {}))
     /* renamed from: -deprecated_address  reason: not valid java name */
-    public final Address m10960deprecated_address() {
+    public final Address m10979deprecated_address() {
         return this.address;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "proxy", imports = {}))
     /* renamed from: -deprecated_proxy  reason: not valid java name */
-    public final Proxy m10961deprecated_proxy() {
+    public final Proxy m10980deprecated_proxy() {
         return this.proxy;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "socketAddress", imports = {}))
     /* renamed from: -deprecated_socketAddress  reason: not valid java name */
-    public final InetSocketAddress m10962deprecated_socketAddress() {
+    public final InetSocketAddress m10981deprecated_socketAddress() {
         return this.socketAddress;
     }
 

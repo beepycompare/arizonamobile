@@ -5,22 +5,22 @@ import java.util.List;
 public final class S {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f1295a;
+    public final List f1300a;
 
     public S(List list) {
-        this.f1295a = list;
+        this.f1300a = list;
     }
 
-    public final void a(C0776k c0776k) {
-        for (P p : this.f1295a) {
-            C0777l c0777l = null;
-            if (c0776k != null) {
-                C0776k c0776k2 = Boolean.valueOf(c0776k.f1317a).booleanValue() ? c0776k : null;
-                if (c0776k2 != null) {
-                    c0777l = c0776k2.b;
+    public final void a(C0780k c0780k) {
+        for (P p : this.f1300a) {
+            C0781l c0781l = null;
+            if (c0780k != null) {
+                C0780k c0780k2 = Boolean.valueOf(c0780k.f1322a).booleanValue() ? c0780k : null;
+                if (c0780k2 != null) {
+                    c0781l = c0780k2.b;
                 }
             }
-            p.a(c0777l);
+            p.a(c0781l);
         }
     }
 }

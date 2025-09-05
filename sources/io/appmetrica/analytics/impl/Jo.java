@@ -1,15 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
+import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes4.dex */
-public final class Jo extends Location {
-    public static final /* synthetic */ int b = 0;
+public final class Jo implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f520a;
+    public final /* synthetic */ String f522a = "WebView interface setup is successful.";
 
-    public Jo(Location location, String str) {
-        super(location);
-        this.f520a = str;
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
+    public final void consume(Object obj) {
+        ((PublicLogger) obj).info(this.f522a, new Object[0]);
     }
 }
