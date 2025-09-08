@@ -12,6 +12,7 @@ import androidx.compose.ui.input.pointer.PointerEventKt;
 import androidx.compose.ui.input.pointer.PointerInputChange;
 import androidx.compose.ui.input.pointer.PointerInputScope;
 import androidx.core.app.NotificationCompat;
+import com.arizona.game.BuildConfig;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.Pair;
@@ -32,7 +33,7 @@ import kotlinx.coroutines.CoroutineScopeKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Slider.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/PointerInputScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.SliderKt$rangeSliderPressDragModifier$1", f = "Slider.kt", i = {}, l = {1651}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.compose.material3.SliderKt$rangeSliderPressDragModifier$1", f = "Slider.kt", i = {}, l = {BuildConfig.VERSION_CODE}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes.dex */
 public final class SliderKt$rangeSliderPressDragModifier$1 extends SuspendLambda implements Function2<PointerInputScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ MutableInteractionSource $endInteractionSource;
